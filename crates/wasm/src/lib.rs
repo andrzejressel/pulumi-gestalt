@@ -10,7 +10,6 @@ use std::collections::HashMap;
 use std::rc::Rc;
 use pulumi_gestalt_wit::pulumi_gestalt_bindings::component::pulumi_gestalt_external::external_world;
 
-
 use pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gestalt::output_interface::{
     GuestOutput, GuestCompositeOutput, Output, CompositeOutput,
 };

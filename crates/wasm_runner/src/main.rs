@@ -107,7 +107,7 @@ async fn main() -> Result<(), Error> {
                 pulumi_engine_url,
                 pulumi_stack,
                 pulumi_project,
-                pulumi_preview
+                pulumi_preview,
             )
             .await?;
             log::info!("Invoking main");

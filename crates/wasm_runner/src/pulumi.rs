@@ -28,7 +28,7 @@ struct SimplePluginCtx {
 
 struct MyState {
     pulumi_state: PulumiState,
-    in_preview: bool
+    in_preview: bool,
 }
 
 impl Host for MyState {
@@ -75,7 +75,7 @@ impl Host for MyState {
         }
         Ok(outputs)
     }
-    
+
     async fn in_preview(&mut self) -> wasmtime::Result<bool> {
         Ok(self.in_preview)
     }
@@ -154,7 +154,7 @@ impl Pulumi {
         pulumi_engine_url: String,
         pulumi_stack: String,
         pulumi_project: String,
-        in_preview: bool
+        in_preview: bool,
     ) -> Result<Pulumi, Error> {
         let mut engine_config = wasmtime::Config::new();
         engine_config.wasm_component_model(true);
@@ -192,7 +192,10 @@ impl Pulumi {
                 // logger: SimpleLogger {},
                 table,
                 context: wasi_ctx,
-                my_state: MyState { pulumi_state, in_preview },
+                my_state: MyState {
+                    pulumi_state,
+                    in_preview,
+                },
             },
         );
 
