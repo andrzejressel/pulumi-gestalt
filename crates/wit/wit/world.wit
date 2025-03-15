@@ -80,7 +80,7 @@ interface context {
     use types.{register-resource-request, resource-invoke-request, function-invocation-result, function-invocation-request};
 
     resource context {
-        constructor(in-preview: bool);
+        constructor();
         create-output: func(value: string, secret:bool) -> output;
         register-resource: func(request: register-resource-request) -> composite-output;
         invoke-resource: func(request: resource-invoke-request) -> composite-output;
