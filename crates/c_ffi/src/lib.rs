@@ -1,6 +1,7 @@
 use pulumi_gestalt_rust_integration as integration;
 use std::cell::RefCell;
 use std::ffi::{CStr, CString, c_char, c_void};
+use std::ptr::{null, null_mut};
 use std::rc::{Rc, Weak};
 
 pub struct CustomOutputId {
@@ -21,6 +22,12 @@ pub struct InnerPulumiContext {
 
 pub struct PulumiContext {
     inner: Rc<RefCell<InnerPulumiContext>>,
+}
+
+#[repr(C)]
+pub enum ConfigValue {
+    PlainValue(*mut c_char),
+    Secret(*mut CustomOutputId),
 }
 
 #[repr(C)]
@@ -290,6 +297,62 @@ extern "C" fn pulumi_composite_output_get_field(
     let raw = Box::into_raw(Box::new(output));
     engine.outputs.push(raw);
     raw
+}
+
+/// Receives value from configuration
+/// `name`: Configuration bag's logical name. If null, the default (project name) is used.
+/// `key`: Config key. Cannot be null
+///
+/// Returns null then the value is not found
+#[unsafe(no_mangle)]
+extern "C" fn pulumi_config_get_value(
+    ctx: *mut PulumiContext,
+    name: *const c_char,
+    key: *const c_char,
+) -> *mut ConfigValue {
+    let engine = unsafe { &mut *ctx };
+
+    let name = if (name as *const c_void).is_null() {
+        None
+    } else {
+        Some(unsafe { CStr::from_ptr(name) }.to_str().unwrap())
+    };
+    let key = unsafe { CStr::from_ptr(key) }.to_str().unwrap();
+
+    let mut inner_engine = engine.inner.borrow_mut();
+
+    match inner_engine.ctx.get_config_value(name, key) {
+        None => null_mut(),
+        Some(pulumi_gestalt_rust_integration::ConfigValue::PlainText(s)) => {
+            let value = CString::new(s).unwrap();
+            let config_value = ConfigValue::PlainValue(value.into_raw());
+            Box::into_raw(Box::new(config_value))
+        }
+        Some(pulumi_gestalt_rust_integration::ConfigValue::Secret(output)) => {
+            let output = CustomOutputId {
+                native: output,
+                ctx: Rc::downgrade(&engine.inner),
+            };
+            let output = Box::into_raw(Box::new(output));
+            let config_value = ConfigValue::Secret(output);
+            Box::into_raw(Box::new(config_value))
+        }
+    }
+}
+
+#[unsafe(no_mangle)]
+extern "C" fn pulumi_config_free(value: *mut ConfigValue) {
+    unsafe {
+        match &*value {
+            ConfigValue::PlainValue(s) => {
+                let _ = CString::from_raw(*s);
+            }
+            ConfigValue::Secret(output) => {
+                let _ = Box::from_raw(*output);
+            }
+        }
+        let _ = Box::from_raw(value);
+    }
 }
 
 fn extract_field<'a>(

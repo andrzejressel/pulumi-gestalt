@@ -41,6 +41,23 @@ typedef struct pulumi_invoke_resource_request_t {
  */
 typedef char *(*pulumi_mapping_function_t)(const void*, const void*, const char*);
 
+typedef enum pulumi_config_value_t_Tag {
+  PlainValue,
+  Secret,
+} pulumi_config_value_t_Tag;
+
+typedef struct pulumi_config_value_t {
+  pulumi_config_value_t_Tag tag;
+  union {
+    struct {
+      char *plain_value;
+    };
+    struct {
+      struct pulumi_output_t *secret;
+    };
+  };
+} pulumi_config_value_t;
+
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
@@ -74,6 +91,19 @@ void pulumi_output_add_to_export(const struct pulumi_output_t *value, const char
 
 struct pulumi_output_t *pulumi_composite_output_get_field(struct pulumi_composite_output_t *output,
                                                           const char *field_name);
+
+/**
+ * Receives value from configuration
+ * `name`: Configuration bag's logical name. If null, the default (project name) is used.
+ * `key`: Config key. Cannot be null
+ *
+ * Returns null then the value is not found
+ */
+struct pulumi_config_value_t *pulumi_config_get_value(struct pulumi_context_t *ctx,
+                                                      const char *name,
+                                                      const char *key);
+
+void pulumi_config_free(struct pulumi_config_value_t *value);
 
 #ifdef __cplusplus
 }  // extern "C"

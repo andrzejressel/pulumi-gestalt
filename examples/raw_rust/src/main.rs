@@ -1,6 +1,4 @@
-use pulumi_gestalt_rust_integration::{
-    Context, InvokeResourceRequest, ObjectField, RegisterResourceRequest,
-};
+use pulumi_gestalt_rust_integration::{ConfigValue, Context, InvokeResourceRequest, ObjectField, RegisterResourceRequest};
 
 fn generate_random_value(ctx: &Context) {
     let output = ctx.create_output("16".to_string(), false);
@@ -58,12 +56,69 @@ fn perform_operations_on_outputs(ctx: &Context) {
     output_4.add_export("combined".to_string());
 }
 
+fn perform_operations_on_default_config(ctx: &Context) {
+    if let Some(_) = ctx.get_config_value(None, "test") {
+        panic!("NULL was expected but not returned");
+    }
+
+    let plaintext = ctx.get_config_value(None, "plaintext")
+        .expect("Expected plaintext value");
+    if let ConfigValue::PlainText(plain_value) = plaintext {
+        if plain_value != "plain_value" {
+            panic!(
+                "plain_value was expected but not returned. Returned value is [{}]",
+                plain_value
+            );
+        }
+    } else {
+        panic!("PlainText tag was expected but not returned");
+    }
+
+    let secret = ctx.get_config_value(None, "secret").expect("Expected secret value");
+    if let ConfigValue::Secret(secret_output) = secret {
+        secret_output.add_export("secret".to_string());
+    } else {
+        panic!("Secret tag was expected but not returned");
+    }
+}
+
+fn perform_operations_on_custom_config(ctx: &Context) {
+    if let Some(_) = ctx.get_config_value(Some("namespace"), "test") {
+        panic!("NULL was expected but not returned");
+    }
+
+    let plaintext = ctx
+        .get_config_value(Some("namespace"), "plaintext")
+        .expect("Expected plaintext value");
+    if let ConfigValue::PlainText(plain_value) = plaintext {
+        if plain_value != "plain_value_namespace" {
+            panic!(
+                "plain_value_namespace was expected but not returned. Returned value is [{}]",
+                plain_value
+            );
+        }
+    } else {
+        panic!("PlainText tag was expected but not returned");
+    }
+
+    let secret = ctx
+        .get_config_value(Some("namespace"), "secret")
+        .expect("Expected secret value");
+    if let ConfigValue::Secret(secret_output) = secret {
+        secret_output.add_export("secret_namespace".to_string());
+    } else {
+        panic!("Secret tag was expected but not returned");
+    }
+}
+
 fn main() {
     let ctx = Context::create_context();
 
     generate_random_value(&ctx);
     run_command(&ctx);
     perform_operations_on_outputs(&ctx);
+    perform_operations_on_default_config(&ctx);
+    perform_operations_on_custom_config(&ctx);
 
     ctx.finish();
 }

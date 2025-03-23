@@ -26,7 +26,7 @@ struct LocalPulumiContext(Rc<RefCell<Engine>>);
 
 impl context::GuestContext for LocalPulumiContext {
     fn new(in_preview: bool) -> Self {
-        let rc = Rc::new(RefCell::new(Engine::new(PulumiServiceImpl::new(
+        let rc = Rc::new(RefCell::new(Engine::new_without_configs(PulumiServiceImpl::new(
             pulumi_connector_impl::PulumiConnectorImpl {},
             in_preview,
         ))));

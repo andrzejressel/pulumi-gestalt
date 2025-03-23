@@ -1,19 +1,23 @@
 mod native_pulumi_connector;
 
-use pulumi_gestalt_core::{
-    Engine, FieldName, ForeignFunctionToInvoke, FunctionName, OutputId, PulumiServiceImpl,
-};
+use pulumi_gestalt_core::{Config, Engine, FieldName, ForeignFunctionToInvoke, FunctionName, OutputId, PulumiServiceImpl};
 use serde_json::Value;
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::ops::Deref;
 use std::rc::Rc;
+use anyhow::Context as AnyHowContext;
 use uuid::Uuid;
 
 #[derive(Clone)]
 pub struct Output {
     output_id: OutputId,
     engine: Rc<RefCell<InnerPulumiEngine>>,
+}
+
+pub enum ConfigValue {
+    PlainText(String),
+    Secret(Output),
 }
 
 pub struct ObjectField<'a> {
@@ -33,6 +37,7 @@ pub(crate) struct InnerPulumiEngine {
 
 pub struct Context {
     inner: Rc<RefCell<InnerPulumiEngine>>,
+    project_name: String
 }
 
 pub struct RegisterResourceRequest<'a> {
@@ -51,12 +56,14 @@ pub struct InvokeResourceRequest<'a> {
 impl Context {
     pub fn create_context() -> Context {
         let engine = get_engine();
+        let project_name = std::env::var("PULUMI_PROJECT").unwrap();
         let inner = InnerPulumiEngine {
             engine,
             functions: HashMap::new(),
         };
         Context {
             inner: Rc::new(RefCell::new(inner)),
+            project_name
         }
     }
 
@@ -149,6 +156,29 @@ impl Context {
             }
         }
     }
+    
+    pub fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
+        let pulumi_engine = &self.inner;
+        let name = name.unwrap_or(&self.project_name);
+        
+        match pulumi_engine
+            .borrow_mut()
+            .engine
+            .get_config_value(name, key)
+        {
+            None => None,
+            Some(pulumi_gestalt_core::ConfigValue::PlainText(value)) => {
+                Some(ConfigValue::PlainText(value))
+            }
+            Some(pulumi_gestalt_core::ConfigValue::Secret(output_id)) => {
+                let output = Output {
+                    output_id,
+                    engine: Rc::clone(pulumi_engine),
+                };
+                Some(ConfigValue::Secret(output))
+            }
+        }
+    }
 }
 
 impl Output {
@@ -236,6 +266,10 @@ fn get_engine() -> Engine {
         pulumi_project,
         pulumi_stack,
     );
+    
+    let config = Config::from_env_vars()
+        .context("Failed to crate config instance")
+        .unwrap();
 
-    Engine::new(PulumiServiceImpl::new(native_pulumi_connector, in_preview))
+    Engine::new(PulumiServiceImpl::new(native_pulumi_connector, in_preview), config)
 }
