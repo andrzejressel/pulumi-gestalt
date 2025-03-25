@@ -1386,10 +1386,7 @@ mod tests {
 
         #[test]
         fn should_return_none_when_config_is_not_set() {
-            let config = Config::new(
-                HashMap::new(),
-                HashSet::new(),
-            );
+            let config = Config::new(HashMap::new(), HashSet::new());
             let mut engine = Engine::new(MockPulumiService::new(), config);
             let value = engine.get_config_value("name", "key");
             assert_eq!(value, None);

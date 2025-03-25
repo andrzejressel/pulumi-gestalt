@@ -33,7 +33,8 @@ impl context::GuestContext for LocalPulumiContext {
             PulumiServiceImpl::new(pulumi_connector_impl::PulumiConnectorImpl {}, in_preview),
             config,
         )));
-        let project_name = std::env::var("PULUMI_PROJECT").expect("The 'PULUMI_PROJECT' environment variable must be set");
+        let project_name = std::env::var("PULUMI_PROJECT")
+            .expect("The 'PULUMI_PROJECT' environment variable must be set");
         LocalPulumiContext(rc, project_name)
     }
     fn create_output(&self, value: String, secret: bool) -> Output {
