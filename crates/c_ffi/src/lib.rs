@@ -303,7 +303,7 @@ extern "C" fn pulumi_composite_output_get_field(
 /// `name`: Configuration bag's logical name. If null, the default (project name) is used.
 /// `key`: Config key. Cannot be null
 ///
-/// Returns null then the value is not found
+/// Returns null when the value is not found
 #[unsafe(no_mangle)]
 extern "C" fn pulumi_config_get_value(
     ctx: *mut PulumiContext,
