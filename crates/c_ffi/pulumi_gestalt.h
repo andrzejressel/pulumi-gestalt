@@ -97,7 +97,7 @@ struct pulumi_output_t *pulumi_composite_output_get_field(struct pulumi_composit
  * `name`: Configuration bag's logical name. If null, the default (project name) is used.
  * `key`: Config key. Cannot be null
  *
- * Returns null then the value is not found
+ * Returns null when the value is not found
  */
 struct pulumi_config_value_t *pulumi_config_get_value(struct pulumi_context_t *ctx,
                                                       const char *name,
