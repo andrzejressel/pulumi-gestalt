@@ -20,9 +20,7 @@ impl Config {
     pub fn from_env_vars() -> Result<Self> {
         let config_map = match std::env::var(CONFIG_ENV_KEY) {
             Ok(v) => v,
-            Err(VarError::NotPresent) => {
-                "{}".to_string()
-            }
+            Err(VarError::NotPresent) => "{}".to_string(),
             Err(VarError::NotUnicode(v)) => {
                 anyhow::bail!(
                     "{} env var with value [{:?}] is not a valid UTF-8 string",
@@ -36,9 +34,7 @@ impl Config {
 
         let secret = match std::env::var(CONFIG_SECRET_KEYS_ENV_KEY) {
             Ok(v) => v,
-            Err(VarError::NotPresent) => {
-                "[]".to_string()
-            }
+            Err(VarError::NotPresent) => "[]".to_string(),
             Err(VarError::NotUnicode(v)) => {
                 anyhow::bail!(
                     "{} env var with value [{:?}] is not a valid UTF-8 string",
@@ -59,7 +55,7 @@ impl Config {
     }
 
     pub(crate) fn get(&self, name: &str, key: &str) -> Option<RawConfigValue> {
-        let full_key = Self::full_key(&name, &key);
+        let full_key = Self::full_key(name, key);
         match self.config_map.get(&full_key) {
             Some(value) => {
                 if self.secret.contains(&full_key) {
@@ -94,7 +90,7 @@ mod tests {
         assert_eq!(different_name, None);
         assert_eq!(different_name_and_key, None);
     }
-    
+
     #[test]
     fn should_return_plain_text_value() {
         let config = Config {
@@ -104,7 +100,7 @@ mod tests {
         let value = config.get("name", "key");
         assert_eq!(value, Some(RawConfigValue::PlainText("value".to_string())));
     }
-    
+
     #[test]
     fn should_return_secret_value() {
         let config = Config {

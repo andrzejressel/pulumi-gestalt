@@ -1,4 +1,6 @@
-use pulumi_gestalt_examples_common::{export_stack, export_stack_secret, init_stack, select_stack, up_stack};
+use pulumi_gestalt_examples_common::{
+    export_stack, export_stack_secret, init_stack, select_stack, up_stack,
+};
 
 #[test]
 #[cfg_attr(not(feature = "example_test"), ignore)]

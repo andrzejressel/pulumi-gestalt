@@ -1,4 +1,6 @@
-use pulumi_gestalt_rust_integration::{ConfigValue, Context, InvokeResourceRequest, ObjectField, RegisterResourceRequest};
+use pulumi_gestalt_rust_integration::{
+    ConfigValue, Context, InvokeResourceRequest, ObjectField, RegisterResourceRequest,
+};
 
 fn generate_random_value(ctx: &Context) {
     let output = ctx.create_output("16".to_string(), false);
@@ -61,7 +63,8 @@ fn perform_operations_on_default_config(ctx: &Context) {
         panic!("NULL was expected but not returned");
     }
 
-    let plaintext = ctx.get_config_value(None, "plaintext")
+    let plaintext = ctx
+        .get_config_value(None, "plaintext")
         .expect("Expected plaintext value");
     if let ConfigValue::PlainText(plain_value) = plaintext {
         if plain_value != "plain_value" {
@@ -74,7 +77,9 @@ fn perform_operations_on_default_config(ctx: &Context) {
         panic!("PlainText tag was expected but not returned");
     }
 
-    let secret = ctx.get_config_value(None, "secret").expect("Expected secret value");
+    let secret = ctx
+        .get_config_value(None, "secret")
+        .expect("Expected secret value");
     if let ConfigValue::Secret(secret_output) = secret {
         secret_output.add_export("secret".to_string());
     } else {

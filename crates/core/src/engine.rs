@@ -1380,8 +1380,8 @@ mod tests {
         use super::*;
         use crate::config::Config;
         use crate::engine::ConfigValue;
-        use crate::model::{MaybeNodeValue, NodeValue};
-        use mockall::predicate::eq;
+        use crate::model::NodeValue;
+
         use std::collections::HashSet;
 
         #[test]

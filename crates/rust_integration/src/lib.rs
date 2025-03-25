@@ -1,12 +1,14 @@
 mod native_pulumi_connector;
 
-use pulumi_gestalt_core::{Config, Engine, FieldName, ForeignFunctionToInvoke, FunctionName, OutputId, PulumiServiceImpl};
+use anyhow::Context as AnyHowContext;
+use pulumi_gestalt_core::{
+    Config, Engine, FieldName, ForeignFunctionToInvoke, FunctionName, OutputId, PulumiServiceImpl,
+};
 use serde_json::Value;
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::ops::Deref;
 use std::rc::Rc;
-use anyhow::Context as AnyHowContext;
 use uuid::Uuid;
 
 #[derive(Clone)]
@@ -37,7 +39,7 @@ pub(crate) struct InnerPulumiEngine {
 
 pub struct Context {
     inner: Rc<RefCell<InnerPulumiEngine>>,
-    project_name: String
+    project_name: String,
 }
 
 pub struct RegisterResourceRequest<'a> {
@@ -63,7 +65,7 @@ impl Context {
         };
         Context {
             inner: Rc::new(RefCell::new(inner)),
-            project_name
+            project_name,
         }
     }
 
@@ -156,11 +158,11 @@ impl Context {
             }
         }
     }
-    
+
     pub fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
         let pulumi_engine = &self.inner;
         let name = name.unwrap_or(&self.project_name);
-        
+
         match pulumi_engine
             .borrow_mut()
             .engine
@@ -266,10 +268,13 @@ fn get_engine() -> Engine {
         pulumi_project,
         pulumi_stack,
     );
-    
+
     let config = Config::from_env_vars()
         .context("Failed to crate config instance")
         .unwrap();
 
-    Engine::new(PulumiServiceImpl::new(native_pulumi_connector, in_preview), config)
+    Engine::new(
+        PulumiServiceImpl::new(native_pulumi_connector, in_preview),
+        config,
+    )
 }

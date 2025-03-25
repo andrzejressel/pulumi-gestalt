@@ -15,8 +15,12 @@ pub trait GestaltContext {
         &self,
         request: InvokeResourceRequest<Self::Output<()>>,
     ) -> Self::CompositeOutput;
-    
-    fn get_config(&self, name: Option<&str>, key: &str) -> Option<ConfigValue<Self::Output<String>>>;
+
+    fn get_config(
+        &self,
+        name: Option<&str>,
+        key: &str,
+    ) -> Option<ConfigValue<Self::Output<String>>>;
 }
 
 pub trait GestaltOutput<T>: Clone {

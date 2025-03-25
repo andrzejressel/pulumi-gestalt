@@ -57,12 +57,10 @@ fn pulumi_main(context: &Context) -> Result<()> {
             panic!("Unexpected config value");
         }
     }
-    
+
     let secret_config = context.get_config(None, "secret");
     let secret_config = match secret_config {
-        Some(ConfigValue::Secret(s)) => {
-            s
-        }
+        Some(ConfigValue::Secret(s)) => s,
         _ => {
             println!("Unexpected secret config value");
             panic!("Unexpected secret config value");

@@ -27,10 +27,10 @@ struct LocalPulumiContext(Rc<RefCell<Engine>>, String);
 impl context::GuestContext for LocalPulumiContext {
     fn new(in_preview: bool) -> Self {
         let config = Config::from_env_vars().unwrap();
-        let rc = Rc::new(RefCell::new(Engine::new(PulumiServiceImpl::new(
-            pulumi_connector_impl::PulumiConnectorImpl {},
-            in_preview,
-        ), config)));
+        let rc = Rc::new(RefCell::new(Engine::new(
+            PulumiServiceImpl::new(pulumi_connector_impl::PulumiConnectorImpl {}, in_preview),
+            config,
+        )));
         let project_name = std::env::var("PULUMI_PROJECT").unwrap();
         LocalPulumiContext(rc, project_name)
     }
@@ -114,8 +114,8 @@ impl context::GuestContext for LocalPulumiContext {
             })
             .collect()
     }
-    
-    fn get_config(&self, name: Option<String>, key: String) -> Option<pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gestalt::types::ConfigValue> {
+
+    fn get_config(&self, name: Option<String>, key: String) -> Option<pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gestalt::types::ConfigValue>{
         let rc = Rc::clone(&self.0);
         let refcell: &RefCell<Engine> = &self.0;
         let name = name.unwrap_or(self.1.clone());

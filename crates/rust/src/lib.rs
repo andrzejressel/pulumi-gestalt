@@ -13,13 +13,13 @@ pub use oneof::OneOf2;
 pub use oneof::OneOf3;
 pub use oneof::OneOf4;
 
+pub use pulumi_gestalt_rust_adapter::ConfigValue;
 pub use pulumi_gestalt_rust_adapter::GestaltCompositeOutput;
 pub use pulumi_gestalt_rust_adapter::GestaltContext;
 pub use pulumi_gestalt_rust_adapter::GestaltOutput;
 pub use pulumi_gestalt_rust_adapter::InvokeResourceRequest;
 pub use pulumi_gestalt_rust_adapter::RegisterResourceRequest;
 pub use pulumi_gestalt_rust_adapter::ResourceRequestObjectField;
-pub use pulumi_gestalt_rust_adapter::ConfigValue;
 
 #[cfg(target_arch = "wasm32")]
 pub type Context = pulumi_gestalt_rust_adapter_wasm::WasmContext;

@@ -1,7 +1,7 @@
 use pulumi_gestalt_rust_integration as integration;
 use std::cell::RefCell;
 use std::ffi::{CStr, CString, c_char, c_void};
-use std::ptr::{null, null_mut};
+use std::ptr::null_mut;
 use std::rc::{Rc, Weak};
 
 pub struct CustomOutputId {
@@ -319,7 +319,7 @@ extern "C" fn pulumi_config_get_value(
     };
     let key = unsafe { CStr::from_ptr(key) }.to_str().unwrap();
 
-    let mut inner_engine = engine.inner.borrow_mut();
+    let inner_engine = engine.inner.borrow_mut();
 
     match inner_engine.ctx.get_config_value(name, key) {
         None => null_mut(),

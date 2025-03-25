@@ -1,7 +1,11 @@
 pub mod runner;
 
 use anyhow::{Error, Result, anyhow};
-use pulumi_gestalt_rust_adapter::{ConfigValue, GestaltCompositeOutput, GestaltContext, GestaltOutput, InvokeResourceRequest, RegisterResourceRequest};
+use pulumi_gestalt_rust_adapter::{
+    ConfigValue, GestaltCompositeOutput, GestaltContext, GestaltOutput, InvokeResourceRequest,
+    RegisterResourceRequest,
+};
+use pulumi_gestalt_wit::client_bindings;
 use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::context::Context as WitContext;
 use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::output_interface;
 use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::types::FunctionInvocationResult;
@@ -16,7 +20,6 @@ use std::marker::PhantomData;
 use std::rc::Rc;
 use std::sync::RwLock;
 use uuid::Uuid;
-use pulumi_gestalt_wit::client_bindings;
 
 type Function = Box<dyn Fn(&String) -> Result<String, Error> + Send>;
 
@@ -114,7 +117,11 @@ impl GestaltContext for WasmContext {
         }
     }
 
-    fn get_config(&self, name: Option<&str>, key: &str) -> Option<ConfigValue<Self::Output<String>>> {
+    fn get_config(
+        &self,
+        name: Option<&str>,
+        key: &str,
+    ) -> Option<ConfigValue<Self::Output<String>>> {
         let context = self.context.clone();
         let context = context.read().unwrap();
         let result = context.wit_context.get_config(name, key);
