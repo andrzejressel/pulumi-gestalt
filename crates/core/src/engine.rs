@@ -1392,6 +1392,7 @@ mod tests {
             );
             let mut engine = Engine::new(MockPulumiService::new(), config);
             let value = engine.get_config_value("name", "key");
+            assert_eq!(value, None);
         }
 
         #[test]

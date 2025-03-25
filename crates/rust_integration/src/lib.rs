@@ -270,7 +270,7 @@ fn get_engine() -> Engine {
     );
 
     let config = Config::from_env_vars()
-        .context("Failed to crate config instance")
+        .context("Failed to create config instance")
         .unwrap();
 
     Engine::new(
