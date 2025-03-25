@@ -4,13 +4,12 @@ use log::{error, info};
 use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::types::FunctionInvocationRequest;
 use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::types::FunctionInvocationResult;
 
-pub fn run<F>(in_preview_u8: u8, f: F) -> Result<(), Error>
+pub fn run<F>(f: F) -> Result<(), Error>
 where
     F: Fn(&WasmContext) -> Result<(), Error>,
 {
-    let in_preview = in_preview_u8 == 1;
     let main = || {
-        let context = WasmContext::new(in_preview);
+        let context = WasmContext::new();
         pulumi_gestalt_rust_common::setup_logger();
         f(&context)?;
         run_loop(&context)?;

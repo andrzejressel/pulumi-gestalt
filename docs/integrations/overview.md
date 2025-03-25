@@ -25,20 +25,10 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
 !!! abstract "Initializes a new context. This should be called at the start of your program."
 
-    **🛠️ Signature (non-WASM):**
+    **🛠️ Signature:**
     ```python
     def create_context() -> Context;
     ```
-    **🛠️ Signature (WASM):**
-    ```python
-    def create_context(in_preview: bool) -> Context;
-    ```
-
-    **📥 Parameters:**
-
-    | Name         | Type   | Description                         |
-    |--------------|--------|-------------------------------------|
-    | `in_preview` | `bool` | Value passed to `pulumi-main::main` |
 
     **📤 Returns:**
     

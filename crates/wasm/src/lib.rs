@@ -8,6 +8,7 @@ use pulumi_gestalt_core::{Config, ConfigValue, Engine, OutputId, PulumiServiceIm
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::rc::Rc;
+use pulumi_gestalt_wit::pulumi_gestalt_bindings::component::pulumi_gestalt_external::external_world;
 
 use pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gestalt::output_interface::{
     GuestOutput, GuestCompositeOutput, Output, CompositeOutput,
@@ -25,7 +26,8 @@ struct CustomCompositeOutputId(OutputId, Rc<RefCell<Engine>>);
 struct LocalPulumiContext(Rc<RefCell<Engine>>, String);
 
 impl context::GuestContext for LocalPulumiContext {
-    fn new(in_preview: bool) -> Self {
+    fn new() -> Self {
+        let in_preview = external_world::in_preview();
         let config = Config::from_env_vars().unwrap();
         let rc = Rc::new(RefCell::new(Engine::new(
             PulumiServiceImpl::new(pulumi_connector_impl::PulumiConnectorImpl {}, in_preview),

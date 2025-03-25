@@ -142,8 +142,8 @@ impl GestaltContext for WasmContext {
 }
 
 impl WasmContext {
-    fn new(in_preview: bool) -> WasmContext {
-        let wit_context = WitContext::new(in_preview);
+    fn new() -> WasmContext {
+        let wit_context = WitContext::new();
         let context = InnerWasmContext {
             wit_context,
             functions: HashMap::new(),

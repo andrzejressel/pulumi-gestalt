@@ -21,6 +21,7 @@ interface external-world {
     resource-invoke: func(request: resource-invoke-request);
     register-resource: func(request: register-resource-request);
     wait-for-resource-operations: func() -> list<registered-resource>;
+    in-preview: func() -> bool;
 }
 
 interface log {
@@ -46,5 +47,5 @@ interface log {
 }
 
 interface pulumi-main {
-    main: func(in-preview: bool);
+    main: func();
 }

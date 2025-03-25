@@ -75,11 +75,8 @@ macro_rules! pulumi_main {
     () => {
         #[cfg(target_arch = "wasm32")]
         #[unsafe(export_name = "component:pulumi-gestalt-external/pulumi-main@0.0.0-STABLE-DEV#main")]
-        unsafe extern "C" fn __exported(arg: i32) {
-            let mapped = arg as u8;
-
+        unsafe extern "C" fn __exported() {
             pulumi_gestalt_rust::__private::pulumi_gestalt_rust_adapter_wasm::runner::run(
-                mapped,
                 |engine| pulumi_main(&engine),
             )
             .unwrap();
