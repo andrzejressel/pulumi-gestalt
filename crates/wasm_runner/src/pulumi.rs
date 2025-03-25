@@ -170,6 +170,7 @@ impl Pulumi {
         let wasi_ctx = WasiCtxBuilder::new()
             .inherit_stdin()
             .inherit_stdout()
+            .inherit_env()
             .build();
 
         let pulumi_state = PulumiState::new(

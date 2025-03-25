@@ -111,6 +111,7 @@ impl Engine {
         }
     }
 
+    #[cfg(test)]
     pub fn new_without_configs(pulumi: impl PulumiService + 'static) -> Self {
         let config = Config::new(HashMap::new(), HashSet::new());
         Self::new(pulumi, config)

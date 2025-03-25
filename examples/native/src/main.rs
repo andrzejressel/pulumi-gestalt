@@ -1,6 +1,7 @@
 use anyhow::Result;
 use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
+use pulumi_gestalt_rust::ConfigValue;
 use pulumi_gestalt_rust::GestaltContext;
 use pulumi_gestalt_rust::GestaltOutput;
 use pulumi_gestalt_rust::ToOutput;
@@ -44,6 +45,29 @@ fn pulumi_main(context: &Context) -> Result<()> {
             .build_struct(),
     );
 
+    let config_value = context.get_config(None, "plain_text");
+    match config_value {
+        Some(ConfigValue::PlainText(s)) => {
+            if s != "plain_value" {
+                panic!("Unexpected config value: {}", s);
+            }
+        }
+        _ => {
+            panic!("Unexpected config value");
+        }
+    }
+
+    let secret_config = context.get_config(None, "secret");
+    let secret_config = match secret_config {
+        Some(ConfigValue::Secret(s)) => {
+            s
+        }
+        _ => {
+            println!("Unexpected secret config value");
+            panic!("Unexpected secret config value");
+        }
+    };
+
     add_export("result", &random_string.result);
     add_export("transformed_result", &t);
     add_export("number", &number);
@@ -51,5 +75,6 @@ fn pulumi_main(context: &Context) -> Result<()> {
     add_export("combined_2_string", &combined_2_string);
     add_export("keepers", &keepers);
     add_export("result_2", &random_string_2.result);
+    add_export("secret_config", &secret_config);
     Ok(())
 }
