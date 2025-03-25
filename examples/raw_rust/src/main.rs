@@ -59,7 +59,7 @@ fn perform_operations_on_outputs(ctx: &Context) {
 }
 
 fn perform_operations_on_default_config(ctx: &Context) {
-    if let Some(_) = ctx.get_config_value(None, "test") {
+    if ctx.get_config_value(None, "test").is_some() {
         panic!("NULL was expected but not returned");
     }
 
@@ -88,7 +88,7 @@ fn perform_operations_on_default_config(ctx: &Context) {
 }
 
 fn perform_operations_on_custom_config(ctx: &Context) {
-    if let Some(_) = ctx.get_config_value(Some("namespace"), "test") {
+    if ctx.get_config_value(Some("namespace"), "test").is_some() {
         panic!("NULL was expected but not returned");
     }
 

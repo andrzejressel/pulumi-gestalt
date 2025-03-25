@@ -1391,7 +1391,7 @@ mod tests {
                 HashSet::new(),
             );
             let mut engine = Engine::new(MockPulumiService::new(), config);
-            let value = engine.get_config_value("name", "key");
+            let value = engine.get_config_value("name", "invalid_key");
             assert_eq!(value, None);
         }
 

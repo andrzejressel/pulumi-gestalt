@@ -131,8 +131,8 @@ impl GestaltContext for NativeContext {
         key: &str,
     ) -> Option<ConfigValue<Self::Output<String>>> {
         self.inner.get_config_value(name, key).map(|v| match v {
-            pulumi_gestalt_rust_integration::ConfigValue::PlainText(plainText) => {
-                ConfigValue::PlainText(plainText)
+            pulumi_gestalt_rust_integration::ConfigValue::PlainText(plain_text) => {
+                ConfigValue::PlainText(plain_text)
             }
             pulumi_gestalt_rust_integration::ConfigValue::Secret(secret) => {
                 ConfigValue::Secret(NativeOutput {
