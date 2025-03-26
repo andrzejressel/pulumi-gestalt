@@ -1,1 +1,5 @@
 encryptionsalt: v1:bBYmvuM1zu4=:v1:wcfRBO5+pEhKsHPm:ilCUcgZLePzhLhNyzrJYgrAZkhP0hQ==
+config:
+  Pulumi_Gestalt_Examples_Native:plain_text: plain_value
+  Pulumi_Gestalt_Examples_Native:secret:
+    secure: v1:9P9hfHBaT3gVU5u5:ejsGP4nMcpTLoDezLzDI1U1V1zXuFOv1dLCZIQ==

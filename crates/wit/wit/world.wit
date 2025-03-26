@@ -73,11 +73,16 @@ interface types {
         object: list<object-field>,
     }
     
+    variant config-value {
+        plaintext(string),
+        secret(output),
+    }
+    
 }
 
 interface context {
     use output-interface.{output, composite-output};
-    use types.{register-resource-request, resource-invoke-request, function-invocation-result, function-invocation-request};
+    use types.{register-resource-request, resource-invoke-request, function-invocation-result, function-invocation-request, config-value};
 
     resource context {
         constructor();
@@ -85,5 +90,6 @@ interface context {
         register-resource: func(request: register-resource-request) -> composite-output;
         invoke-resource: func(request: resource-invoke-request) -> composite-output;
         finish: func(functions: list<function-invocation-result>) -> list<function-invocation-request>;
+        get-config: func(name: option<string>, key: string) -> option<config-value>;
     }
 }

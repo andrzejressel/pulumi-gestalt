@@ -93,12 +93,64 @@ static void perform_operations_on_outputs(pulumi_context_t* ctx) {
 	pulumi_output_add_to_export(output_4, "combined");
 }
 
+static void perform_operations_on_default_config(pulumi_context_t* ctx) {
+	pulumi_config_value_t* non_existing = pulumi_config_get_value(ctx, NULL, "test");
+	if (non_existing != NULL) {
+		printf("NULL was expected but not returned");
+		exit(2);
+	}
+	pulumi_config_value_t* plaintext = pulumi_config_get_value(ctx, NULL, "plaintext");
+	if (plaintext->tag != PlainValue) {
+		printf("PlainText tag was expected but not returned");
+		exit(2);
+	}
+	if (strcmp(plaintext->plain_value, "plain_value")) {
+		printf("plain_value was expected but not returned. Returned value is [%s]", plaintext->plain_value);
+		exit(2);
+	}
+	pulumi_config_free(plaintext);
+	pulumi_config_value_t* secret = pulumi_config_get_value(ctx, NULL, "secret");
+	if (secret->tag != Secret) {
+		printf("Secret tag was expected but not returned");
+		exit(2);
+	}
+	pulumi_output_add_to_export(secret->secret, "secret");
+	pulumi_config_free(secret);
+}
+
+static void perform_operations_on_custom_config(pulumi_context_t* ctx) {
+	pulumi_config_value_t* non_existing = pulumi_config_get_value(ctx, "namespace", "test");
+	if (non_existing != NULL) {
+		printf("NULL was expected but not returned");
+		exit(2);
+	}
+	pulumi_config_value_t* plaintext = pulumi_config_get_value(ctx, "namespace", "plaintext");
+	if (plaintext->tag != PlainValue) {
+		printf("PlainText tag was expected but not returned");
+		exit(2);
+	}
+	if (strcmp(plaintext->plain_value, "plain_value_namespace")) {
+		printf("plain_value_namespace was expected but not returned. Returned value is [%s]", plaintext->plain_value);
+		exit(2);
+	}
+	pulumi_config_free(plaintext);
+	pulumi_config_value_t* secret = pulumi_config_get_value(ctx, "namespace", "secret");
+	if (secret->tag != Secret) {
+		printf("Secret tag was expected but not returned");
+		exit(2);
+	}
+	pulumi_output_add_to_export(secret->secret, "secret_namespace");
+	pulumi_config_free(secret);
+}
+
 int main() {
 	pulumi_context_t* ctx = pulumi_create_context(NULL);
 
 	run_command(ctx);
 	perform_operations_on_outputs(ctx);
 	generate_random_value(ctx);
+	perform_operations_on_default_config(ctx);
+	perform_operations_on_custom_config(ctx);
 
 	pulumi_finish(ctx);
 	pulumi_destroy_context(ctx);

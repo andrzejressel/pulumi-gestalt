@@ -2,10 +2,7 @@ use std::cell::{Ref, RefCell, RefMut};
 use std::collections::{HashMap, HashSet, VecDeque};
 use std::ops::Deref;
 
-use log::error;
-use serde_json::{Value, json};
-use uuid::Uuid;
-
+use crate::config::{Config, RawConfigValue};
 use crate::model::NodeValue::Exists;
 use crate::model::{FieldName, FunctionName, MaybeNodeValue, NodeValue, OutputId};
 use crate::nodes::{
@@ -14,12 +11,21 @@ use crate::nodes::{
     ResourceRequestOperation,
 };
 use crate::pulumi::service::PulumiService;
+use log::error;
+use serde_json::{Value, json};
+use uuid::Uuid;
 
 #[derive(Clone, Debug, PartialEq)]
 pub struct ForeignFunctionToInvoke {
     pub output_id: OutputId,
     pub function_name: FunctionName,
     pub value: Value,
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub enum ConfigValue {
+    PlainText(String),
+    Secret(OutputId),
 }
 
 enum EngineNode {
@@ -89,10 +95,11 @@ pub struct Engine {
 
     pulumi: Box<dyn PulumiService>,
     nodes: NodesMap,
+    config: Config,
 }
 
 impl Engine {
-    pub fn new(pulumi: impl PulumiService + 'static) -> Self {
+    pub fn new(pulumi: impl PulumiService + 'static, config: Config) -> Self {
         Self {
             done_node_ids: VecDeque::new(),
             ready_foreign_function_ids: HashSet::new(),
@@ -100,7 +107,14 @@ impl Engine {
             outputs: HashMap::new(),
             nodes: HashMap::new(),
             pulumi: Box::new(pulumi),
+            config,
         }
+    }
+
+    #[cfg(test)]
+    pub fn new_without_configs(pulumi: impl PulumiService + 'static) -> Self {
+        let config = Config::new(HashMap::new(), HashSet::new());
+        Self::new(pulumi, config)
     }
 
     pub fn run(
@@ -836,6 +850,18 @@ impl Engine {
             .insert(output_id, EngineNode::CombineOutputs(node).into());
         output_id
     }
+
+    pub fn get_config_value(&mut self, name: &str, key: &str) -> Option<ConfigValue> {
+        match self.config.get(name, key) {
+            None => None,
+            Some(RawConfigValue::PlainText(value)) => Some(ConfigValue::PlainText(value.clone())),
+            Some(RawConfigValue::Secret(secret)) => {
+                let value = Value::String(secret.clone());
+                let output_id = self.create_done_node(value, true);
+                Some(ConfigValue::Secret(output_id))
+            }
+        }
+    }
 }
 
 #[cfg(test)]
@@ -851,7 +877,7 @@ mod tests {
 
     #[test]
     fn create_done_node_create_node_in_map() {
-        let mut engine = Engine::new(MockPulumiService::new());
+        let mut engine = Engine::new_without_configs(MockPulumiService::new());
         let value: Value = 1.into();
         let output_id = engine.create_done_node(value.clone(), false);
 
@@ -864,7 +890,7 @@ mod tests {
 
     #[test]
     fn create_native_function_node_create_node_in_map() {
-        let mut engine = Engine::new(MockPulumiService::new());
+        let mut engine = Engine::new_without_configs(MockPulumiService::new());
         let value: Value = 1.into();
         let done_node_output_id = engine.create_done_node(value.clone(), false);
         let native_node_output_id =
@@ -893,7 +919,7 @@ mod tests {
 
         #[test]
         fn run_return_native_functions() {
-            let mut engine = Engine::new(MockPulumiService::new());
+            let mut engine = Engine::new_without_configs(MockPulumiService::new());
             let value: Value = 1.into();
             let done_node_output_id = engine.create_done_node(value.clone(), false);
             let native_node_output_id =
@@ -916,7 +942,7 @@ mod tests {
 
         #[test]
         fn sets_native_function_results() {
-            let mut engine = Engine::new(MockPulumiService::new());
+            let mut engine = Engine::new_without_configs(MockPulumiService::new());
             let value: Value = 1.into();
             let done_node_output_id = engine.create_done_node(value.clone(), false);
             let native_node_output_id =
@@ -940,7 +966,7 @@ mod tests {
 
         #[test]
         fn native_function_passes_unknown_value_downstream() {
-            let mut engine = Engine::new(MockPulumiService::new());
+            let mut engine = Engine::new_without_configs(MockPulumiService::new());
             let value: Value = 1.into();
             let done_node_output_id = engine.create_done_node(value.clone(), false);
             let native_node_output_id =
@@ -964,7 +990,7 @@ mod tests {
 
         #[test]
         fn native_function_can_be_run_from_another_native_function() {
-            let mut engine = Engine::new(MockPulumiService::new());
+            let mut engine = Engine::new_without_configs(MockPulumiService::new());
             let value: Value = 1.into();
             let done_node_output_id = engine.create_done_node(value.clone(), false);
             let native_node_output_id_1 =
@@ -1002,7 +1028,7 @@ mod tests {
         fn extract_field_extract_field_from_map() {
             let mut mock = MockPulumiService::new();
             mock.expect_is_in_preview().times(1).returning(|| true);
-            let mut engine = Engine::new(mock);
+            let mut engine = Engine::new_without_configs(mock);
             let value = Value::Object([("key".into(), 1.into())].into_iter().collect());
             let done_node_output_id = engine.create_done_node(value.clone(), false);
             let extract_field_node_output_id =
@@ -1058,7 +1084,7 @@ mod tests {
 
         #[test]
         fn should_create_required_nodes() {
-            let mut engine = Engine::new(MockPulumiService::new());
+            let mut engine = Engine::new_without_configs(MockPulumiService::new());
             let done_node_output_id = engine.create_done_node(1.into(), false);
             let register_resource_node_output_id = engine.create_register_resource_node(
                 "type".into(),
@@ -1147,7 +1173,7 @@ mod tests {
                     )])
                 });
 
-            let mut engine = Engine::new(mock);
+            let mut engine = Engine::new_without_configs(mock);
             let done_node_output_id = engine.create_done_node(1.into(), false);
             let register_resource_node_output_id = engine.create_register_resource_node(
                 "type".into(),
@@ -1188,7 +1214,7 @@ mod tests {
 
         #[test]
         fn should_create_required_nodes() {
-            let mut engine = Engine::new(MockPulumiService::new());
+            let mut engine = Engine::new_without_configs(MockPulumiService::new());
             let done_node_output_id = engine.create_done_node(1.into(), false);
             let invoke_resource_node_output_id = engine.create_resource_invoke_node(
                 "token".into(),
@@ -1275,7 +1301,7 @@ mod tests {
                     )])
                 });
 
-            let mut engine = Engine::new(mock);
+            let mut engine = Engine::new_without_configs(mock);
             let done_node_output_id = engine.create_done_node(1.into(), false);
             let invoke_resource_node_output_id = engine.create_resource_invoke_node(
                 "token".into(),
@@ -1302,7 +1328,7 @@ mod tests {
 
         #[test]
         fn combine_outputs_with_done_node() {
-            let mut engine = Engine::new(MockPulumiService::new());
+            let mut engine = Engine::new_without_configs(MockPulumiService::new());
             let value1 = engine.create_done_node("key".into(), false);
             let value2 = engine.create_done_node(1.into(), false);
 
@@ -1340,13 +1366,64 @@ mod tests {
                 .with(eq(HashMap::from([("output".into(), 1.into())])))
                 .returning(|_| ());
 
-            let mut engine = Engine::new(mock);
+            let mut engine = Engine::new_without_configs(mock);
 
             let output_id = engine.create_done_node(1.into(), false);
             engine.add_output("output".into(), output_id);
 
             let result = engine.run(HashMap::new());
             assert_eq!(result, None);
+        }
+    }
+
+    mod config {
+        use super::*;
+        use crate::config::Config;
+        use crate::engine::ConfigValue;
+        use crate::model::NodeValue;
+
+        use std::collections::HashSet;
+
+        #[test]
+        fn should_return_none_when_config_is_not_set() {
+            let config = Config::new(HashMap::new(), HashSet::new());
+            let mut engine = Engine::new(MockPulumiService::new(), config);
+            let value = engine.get_config_value("name", "key");
+            assert_eq!(value, None);
+        }
+
+        #[test]
+        fn should_return_value_when_config_is_plain_text() {
+            let config = Config::new(
+                HashMap::from([("name:key".to_string(), "value".to_string())]),
+                HashSet::new(),
+            );
+            let mut engine = Engine::new(MockPulumiService::new(), config);
+            let value = engine.get_config_value("name", "key");
+            assert_eq!(value, Some(ConfigValue::PlainText("value".to_string())));
+        }
+
+        #[test]
+        fn should_return_secret_output_when_config_is_secret() {
+            let config = Config::new(
+                HashMap::from([("name:key".to_string(), "secret".to_string())]),
+                HashSet::from(["name:key".to_string()]),
+            );
+            let mut engine = Engine::new(MockPulumiService::new(), config);
+            let value = engine.get_config_value("name", "key");
+            assert!(matches!(value, Some(ConfigValue::Secret(_))));
+            let output_id = match value {
+                Some(ConfigValue::Secret(output_id)) => output_id,
+                _ => panic!("Expected secret output"),
+            };
+            let output = engine.get_done(output_id);
+            assert_eq!(
+                output.get_value(),
+                &NodeValue::Exists {
+                    value: "secret".into(),
+                    secret: true,
+                }
+            );
         }
     }
 }

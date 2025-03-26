@@ -4,7 +4,7 @@ use pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gest
 use pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gestalt::context::FunctionInvocationResult;
 use pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gestalt::types::FunctionInvocationRequest;
 use pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gestalt::output_interface::OutputBorrow;
-use pulumi_gestalt_core::{Engine, OutputId, PulumiServiceImpl};
+use pulumi_gestalt_core::{Config, ConfigValue, Engine, OutputId, PulumiServiceImpl};
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::rc::Rc;
@@ -23,16 +23,19 @@ mod pulumi_connector_impl;
 struct CustomOutputId(OutputId, Rc<RefCell<Engine>>);
 struct CustomCompositeOutputId(OutputId, Rc<RefCell<Engine>>);
 
-struct LocalPulumiContext(Rc<RefCell<Engine>>);
+struct LocalPulumiContext(Rc<RefCell<Engine>>, String);
 
 impl context::GuestContext for LocalPulumiContext {
     fn new() -> Self {
         let in_preview = external_world::in_preview();
-        let rc = Rc::new(RefCell::new(Engine::new(PulumiServiceImpl::new(
-            pulumi_connector_impl::PulumiConnectorImpl {},
-            in_preview,
-        ))));
-        LocalPulumiContext(rc)
+        let config = Config::from_env_vars().unwrap();
+        let rc = Rc::new(RefCell::new(Engine::new(
+            PulumiServiceImpl::new(pulumi_connector_impl::PulumiConnectorImpl {}, in_preview),
+            config,
+        )));
+        let project_name = std::env::var("PULUMI_PROJECT")
+            .expect("The 'PULUMI_PROJECT' environment variable must be set");
+        LocalPulumiContext(rc, project_name)
     }
     fn create_output(&self, value: String, secret: bool) -> Output {
         pulumi_gestalt_rust_common::setup_logger();
@@ -113,6 +116,22 @@ impl context::GuestContext for LocalPulumiContext {
                 }
             })
             .collect()
+    }
+
+    fn get_config(&self, name: Option<String>, key: String) -> Option<pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gestalt::types::ConfigValue>{
+        let rc = Rc::clone(&self.0);
+        let refcell: &RefCell<Engine> = &self.0;
+        let name = name.unwrap_or(self.1.clone());
+        let config = refcell.borrow_mut().get_config_value(&name, &key);
+        config.map(|cv| match cv {
+            ConfigValue::PlainText(pt) => {
+                pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gestalt::types::ConfigValue::Plaintext(pt)
+            }
+            ConfigValue::Secret(s) => {
+                let output = Output::new::<CustomOutputId>(CustomOutputId(s, rc));
+                pulumi_gestalt_wit::pulumi_gestalt_bindings::exports::component::pulumi_gestalt::types::ConfigValue::Secret(output)
+            }
+        })
     }
 }
 

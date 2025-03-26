@@ -162,6 +162,39 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     |------------------|-------------------------------------------------------------------------------------------------------------------|
     | `CompositeOutput` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
 
+#### `get_config`
+
+!!! abstract "Receives value from [config](https://www.pulumi.com/docs/iac/concepts/config/)"
+
+    **🛠️ Signature:**
+    ```python
+    def get_config(ctx: Context, name: Option[String], key: String) -> Option[ConfigValue]
+    ```
+
+    **ConfigValue**
+
+    | Name      | Type              | Description         |
+    |-----------|-------------------|---------------------|
+    | plaintext | string            | Config value if it is not secret       |
+    | secret    | Output            | Config value hidden in output if it is a secret      |
+
+
+    **📥 Parameters:**
+
+    | Name      | Type              | Description                                                       |
+    |-----------|-------------------|-------------------------------------------------------------------|
+    | `ctx`     | `Context`         | Instance of context                                               |
+    | `name`    | `Option[string]`  | Config namespace |
+    | `key`     | `string`          | Config key                                       |
+
+
+    **📤 Returns:**
+
+    | Type             | Description                                                                                                       |
+    |------------------|-------------------------------------------------------------------------------------------------------------------|
+    | `Option[ConfigValue]` | None if config does not exist, String if it is plaintext, String hidden in output if it is secret |
+
+
 ### Output
 
 #### map

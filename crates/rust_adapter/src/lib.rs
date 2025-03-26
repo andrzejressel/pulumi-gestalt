@@ -15,6 +15,12 @@ pub trait GestaltContext {
         &self,
         request: InvokeResourceRequest<Self::Output<()>>,
     ) -> Self::CompositeOutput;
+
+    fn get_config(
+        &self,
+        name: Option<&str>,
+        key: &str,
+    ) -> Option<ConfigValue<Self::Output<String>>>;
 }
 
 pub trait GestaltOutput<T>: Clone {
@@ -70,4 +76,9 @@ pub struct InvokeResourceRequest<'a, OUTPUT> {
 pub struct ResourceRequestObjectField<'a, OUTPUT> {
     pub name: String,
     pub value: &'a OUTPUT,
+}
+
+pub enum ConfigValue<OUTPUT> {
+    PlainText(String),
+    Secret(OUTPUT),
 }

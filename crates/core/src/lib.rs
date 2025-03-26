@@ -1,3 +1,4 @@
+mod config;
 mod constants;
 mod engine;
 mod model;
@@ -5,6 +6,8 @@ mod nodes;
 mod pulumi;
 
 // pub use crate::nodes::ResourceOperation;
+pub use crate::config::Config;
+pub use crate::engine::ConfigValue;
 pub use crate::engine::Engine;
 pub use crate::engine::ForeignFunctionToInvoke;
 pub use crate::model::FieldName;

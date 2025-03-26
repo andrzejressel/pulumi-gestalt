@@ -889,6 +889,7 @@ dependencies = [
 name = "pulumi_gestalt_core"
 version = "0.0.0-DEV"
 dependencies = [
+ "anyhow",
  "log",
  "prost",
  "prost-types",
@@ -975,6 +976,7 @@ dependencies = [
 name = "pulumi_gestalt_rust_integration"
 version = "0.0.0-DEV"
 dependencies = [
+ "anyhow",
  "pulumi_gestalt_core",
  "pulumi_gestalt_grpc_connection",
  "pulumi_gestalt_proto",

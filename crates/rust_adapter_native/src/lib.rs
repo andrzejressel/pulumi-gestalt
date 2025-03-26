@@ -1,5 +1,5 @@
 use pulumi_gestalt_rust_adapter::{
-    GestaltCompositeOutput, GestaltContext, GestaltOutput, InvokeResourceRequest,
+    ConfigValue, GestaltCompositeOutput, GestaltContext, GestaltOutput, InvokeResourceRequest,
     RegisterResourceRequest,
 };
 use pulumi_gestalt_rust_integration as integration;
@@ -123,6 +123,24 @@ impl GestaltContext for NativeContext {
             });
 
         NativeCompositeOutput { inner: result }
+    }
+
+    fn get_config(
+        &self,
+        name: Option<&str>,
+        key: &str,
+    ) -> Option<ConfigValue<Self::Output<String>>> {
+        self.inner.get_config_value(name, key).map(|v| match v {
+            pulumi_gestalt_rust_integration::ConfigValue::PlainText(plain_text) => {
+                ConfigValue::PlainText(plain_text)
+            }
+            pulumi_gestalt_rust_integration::ConfigValue::Secret(secret) => {
+                ConfigValue::Secret(NativeOutput {
+                    inner: secret,
+                    tpe: PhantomData,
+                })
+            }
+        })
     }
 }
 

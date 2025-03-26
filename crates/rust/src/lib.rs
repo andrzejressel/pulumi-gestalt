@@ -13,6 +13,7 @@ pub use oneof::OneOf2;
 pub use oneof::OneOf3;
 pub use oneof::OneOf4;
 
+pub use pulumi_gestalt_rust_adapter::ConfigValue;
 pub use pulumi_gestalt_rust_adapter::GestaltCompositeOutput;
 pub use pulumi_gestalt_rust_adapter::GestaltContext;
 pub use pulumi_gestalt_rust_adapter::GestaltOutput;

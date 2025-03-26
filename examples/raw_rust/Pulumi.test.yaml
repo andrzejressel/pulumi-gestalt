@@ -1,1 +1,8 @@
 encryptionsalt: v1:bBYmvuM1zu4=:v1:wcfRBO5+pEhKsHPm:ilCUcgZLePzhLhNyzrJYgrAZkhP0hQ==
+config:
+  Pulumi-raw-rust-Sample:plaintext: plain_value
+  Pulumi-raw-rust-Sample:secret:
+    secure: v1:9P9hfHBaT3gVU5u5:ejsGP4nMcpTLoDezLzDI1U1V1zXuFOv1dLCZIQ==
+  namespace:plaintext: plain_value_namespace
+  namespace:secret:
+    secure: v1:ms1EJgLJQYj2R18b:70Oy7xSXV8aZAVNg5bW5MXRjZLvapd0vxBtEHxjEn1amOu372pQ=
