@@ -1,6 +1,6 @@
 use crate::model::Package;
 use anyhow::Context;
-use rinja::Template;
+use askama::Template;
 use serde::Serialize;
 
 #[derive(Template)]
