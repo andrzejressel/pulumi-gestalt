@@ -1,7 +1,5 @@
-use crate::pulumi::runner::Runner;
-use crate::pulumi::runner::component::pulumi_gestalt_external::external_world;
-use crate::pulumi::runner::component::pulumi_gestalt_external::external_world::Host;
-use crate::pulumi::runner::component::pulumi_gestalt_external::external_world::RegisteredResource;
+use std::sync::Arc;
+use crate::pulumi::runner::Client;
 use anyhow::Error;
 use log::info;
 use prost::Message;
@@ -12,11 +10,16 @@ use pulumi_gestalt_proto::mini::pulumirpc::{
 };
 use pulumi_gestalt_wit::bindings_runner as runner;
 use wasmtime::Store;
-use wasmtime::component::{Component, Linker, ResourceTable};
+use wasmtime::component::{Component, Linker, Resource, ResourceTable};
 use wasmtime_wasi::{IoView, WasiCtx, WasiCtxBuilder, WasiView};
+use wasmtime_wasi::bindings::sync::io::streams::HostInputStream;
+use pulumi_gestalt_rust_integration::ObjectField;
+use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::{context, output_interface, types};
+use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::context::{CompositeOutput, ConfigValue, Context, FunctionInvocationRequest, FunctionInvocationResult, HostContext, Output};
+use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::output_interface::{HostCompositeOutput, HostOutput};
 
 pub struct Pulumi {
-    plugin: Runner,
+    plugin: Client,
     store: Store<SimplePluginCtx>,
 }
 
@@ -29,110 +32,114 @@ struct SimplePluginCtx {
 struct MyState {
     pulumi_state: PulumiState,
     in_preview: bool,
+    table: ResourceTable
 }
 
-impl Host for MyState {
-    async fn register_resource_outputs(&mut self, request: Vec<u8>) -> wasmtime::Result<()> {
-        self.register_resource_outputs_async(request).await
+impl HostContext for MyState {
+    fn new(&mut self) -> anyhow::Result<Resource<Context>> {
+        let context = Context::create_context();
+        let id = self.table.push(context)?;
+        Ok(id)
     }
 
-    async fn resource_invoke(
-        &mut self,
-        request: external_world::ResourceInvokeRequest,
-    ) -> wasmtime::Result<()> {
-        let b = ResourceInvokeRequest::decode(&*(request.body)).unwrap();
-
-        info!("registering resource: {:?}", b);
-
-        self.pulumi_state
-            .send_resource_invoke_request(request.output_id.into(), b);
-
-        Ok(())
+    fn create_output(&mut self, context: Resource<Context>, value: String, secret: bool) -> anyhow::Result<Resource<Output>> {
+        assert!(!context.owned());
+        let context = self.table.get_mut(&context)?;
+        let output = context.create_output(value, secret);
+        let id = self.table.push(output)?;
+        Ok(id)
     }
 
-    async fn register_resource(
-        &mut self,
-        request: external_world::RegisterResourceRequest,
-    ) -> wasmtime::Result<()> {
-        let b = RegisterResourceRequest::decode(&*(request.body)).unwrap();
-
-        info!("registering resource: {:?}", b);
-
-        self.pulumi_state
-            .send_register_resource_request(request.output_id.into(), b);
-
-        Ok(())
-    }
-
-    async fn wait_for_resource_operations(&mut self) -> wasmtime::Result<Vec<RegisteredResource>> {
-        let mut outputs = Vec::new();
-        for (output_id, body) in self.pulumi_state.get_created_resources().await {
-            let b = RegisterResourceResponse::decode(&*body).unwrap();
-            outputs.push(RegisteredResource {
-                output_id: output_id.0,
-                body: b.encode_to_vec(),
-            });
+    fn register_resource(&mut self, context: Resource<Context>, request: context::RegisterResourceRequest) -> anyhow::Result<Resource<CompositeOutput>> {
+        assert!(!context.owned());
+        let mut table = &mut self.table;
+        
+        let mut inputs = Vec::new();
+        for field in request.object {
+            let output = table.get(&field.value)?;
+            inputs.push(ObjectField {
+                name: field.name,
+                value: output
+            })
         }
-        Ok(outputs)
+
+        let context = table.get(&context)?;
+
+        let result = context.register_resource(pulumi_gestalt_rust_integration::RegisterResourceRequest {
+            type_: request.type_,
+            name: request.name,
+            version: request.version,
+            inputs: &inputs,
+        });
+        
+        let id = self.table.push(result)?;
+        Ok(id)
     }
 
-    async fn in_preview(&mut self) -> wasmtime::Result<bool> {
-        Ok(self.in_preview)
+    fn invoke_resource(&mut self, context: Resource<Context>, request: context::ResourceInvokeRequest) -> anyhow::Result<Resource<CompositeOutput>> {
+        assert!(!context.owned());
+        todo!()
     }
-}
 
-impl runner::component::pulumi_gestalt_external::log::Host for MyState {
-    async fn log(
-        &mut self,
-        content: runner::component::pulumi_gestalt_external::log::Content,
-    ) -> wasmtime::Result<()> {
-        log::logger().log(
-            &log::Record::builder()
-                .metadata(
-                    log::Metadata::builder()
-                        .level(match content.level {
-                            runner::component::pulumi_gestalt_external::log::Level::Trace => {
-                                log::Level::Trace
-                            }
-                            runner::component::pulumi_gestalt_external::log::Level::Debug => {
-                                log::Level::Debug
-                            }
-                            runner::component::pulumi_gestalt_external::log::Level::Info => {
-                                log::Level::Info
-                            }
-                            runner::component::pulumi_gestalt_external::log::Level::Error => {
-                                log::Level::Error
-                            }
-                            runner::component::pulumi_gestalt_external::log::Level::Warn => {
-                                log::Level::Warn
-                            }
-                        })
-                        .target(&content.target)
-                        .build(),
-                )
-                .args(format_args!("{}", content.args))
-                .module_path(content.module_path.as_deref())
-                .file(content.file.as_deref())
-                .line(content.line)
-                .key_values(
-                    &content
-                        .key_values
-                        .iter()
-                        .map(|(k, v)| (k.as_str(), v.as_str()))
-                        .collect::<Vec<(&str, &str)>>(),
-                )
-                .build(),
-        );
+    fn finish(&mut self, context: Resource<Context>, functions: Vec<FunctionInvocationResult>) -> anyhow::Result<Vec<FunctionInvocationRequest>> {
+        assert!(!context.owned());
+        todo!()
+    }
 
+    fn get_config(&mut self, context: Resource<Context>, name: Option<String>, key: String) -> anyhow::Result<Option<ConfigValue>> {
+        assert!(!context.owned());
+        todo!()
+    }
+
+    fn drop(&mut self, context: Resource<Context>) -> anyhow::Result<()> {
+        assert!(context.owned());
+        self.table.delete(context)?;
         Ok(())
     }
 }
 
-impl MyState {
-    async fn register_resource_outputs_async(&mut self, request: Vec<u8>) -> wasmtime::Result<()> {
-        let request = RegisterResourceOutputsRequest::decode(&mut request.as_slice())?;
-        self.pulumi_state.register_resource_outputs(request).await
+impl types::Host for MyState {
+    
+}
+
+impl context::Host for MyState {
+    
+}
+
+impl HostOutput for MyState {
+    fn map(&mut self, self_: Resource<output_interface::Output>, function_name: String) -> anyhow::Result<Resource<output_interface::Output>> {
+        todo!()
     }
+
+    fn clone(&mut self, self_: Resource<output_interface::Output>) -> anyhow::Result<Resource<output_interface::Output>> {
+        todo!()
+    }
+
+    fn combine(&mut self, self_: Resource<output_interface::Output>, outputs: Vec<Resource<output_interface::Output>>) -> anyhow::Result<Resource<output_interface::Output>> {
+        todo!()
+    }
+
+    fn add_to_export(&mut self, self_: Resource<output_interface::Output>, name: String) -> anyhow::Result<()> {
+        todo!()
+    }
+
+    fn drop(&mut self, rep: Resource<output_interface::Output>) -> anyhow::Result<()> {
+        todo!()
+    }
+}
+
+impl HostCompositeOutput for MyState {
+    fn get_field(&mut self, self_: Resource<output_interface::CompositeOutput>, field_name: String) -> anyhow::Result<Resource<output_interface::Output>> {
+        todo!()
+    }
+
+    fn drop(&mut self, rep: Resource<output_interface::CompositeOutput>) -> anyhow::Result<()> {
+        todo!()
+    }
+}
+
+impl output_interface::Host for MyState {
+    
 }
 
 impl IoView for SimplePluginCtx {
@@ -165,13 +172,14 @@ impl Pulumi {
         let engine = wasmtime::Engine::new(&engine_config)?;
 
         let mut linker: Linker<SimplePluginCtx> = Linker::new(&engine);
-        Runner::add_to_linker(&mut linker, |state: &mut SimplePluginCtx| {
+        Client::add_to_linker(&mut linker, |state: &mut SimplePluginCtx| {
             &mut state.my_state
         })?;
 
         wasmtime_wasi::add_to_linker_async(&mut linker)?;
 
         let table = ResourceTable::new();
+        let table2 = ResourceTable::new();
 
         let wasi_ctx = WasiCtxBuilder::new()
             .inherit_stdin()
@@ -196,6 +204,7 @@ impl Pulumi {
                 my_state: MyState {
                     pulumi_state,
                     in_preview,
+                    table: table2,
                 },
             },
         );
@@ -203,7 +212,7 @@ impl Pulumi {
         info!("Creating Wasm component");
         let component = Component::from_binary(&engine, &pulumi_gestalt_file)?;
         info!("Instantiating Wasm component");
-        let plugin = Runner::instantiate_async(&mut store, &component, &linker).await?;
+        let plugin = Client::instantiate(&mut store, &component, &linker)?;
         info!("Wasm component instantiated");
 
         Ok(Pulumi { plugin, store })
@@ -212,8 +221,7 @@ impl Pulumi {
     pub async fn start(&mut self) -> Result<(), Error> {
         self.plugin
             .component_pulumi_gestalt_external_pulumi_main()
-            .call_main(&mut self.store)
-            .await?;
+            .call_main(&mut self.store)?;
 
         Ok(())
     }

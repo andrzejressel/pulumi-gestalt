@@ -15,9 +15,10 @@ targets = ["x86_64-apple-darwin", "x86_64-pc-windows-msvc", "i686-unknown-linux-
 [features]
 client = []
 logger = []
-runner = ["dep:wasmtime"]
+runner = ["dep:wasmtime", "dep:pulumi_gestalt_rust_integration"]
 pulumi_gestalt = []
 
 [dependencies]
 wit-bindgen.workspace = true
 wasmtime = { workspace = true, optional = true }
+pulumi_gestalt_rust_integration = { workspace = true, optional = true }

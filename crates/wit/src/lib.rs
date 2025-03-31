@@ -42,8 +42,13 @@ pub mod pulumi_gestalt_bindings {
 #[cfg(feature = "runner")]
 pub mod bindings_runner {
     wasmtime::component::bindgen!({
-        world: "runner",
-        async: true,
+        world: "client",
+        async: false,
         trappable_imports: true,
+        with: {
+            "component:pulumi-gestalt/context/context": pulumi_gestalt_rust_integration::Context,
+            "component:pulumi-gestalt/output-interface/output": pulumi_gestalt_rust_integration::Output,
+            "component:pulumi-gestalt/output-interface/composite-output": pulumi_gestalt_rust_integration::CompositeOutput,
+        }
     });
 }

@@ -26,7 +26,6 @@ world runner {
     import component:pulumi-gestalt-external/log@0.0.0-STABLE-DEV;
 }
 
-
 interface output-interface {
 
     resource output {
@@ -65,7 +64,6 @@ interface types {
         version: string,
         object: list<object-field>,
     }
-
 
     record resource-invoke-request {
         token: string,
