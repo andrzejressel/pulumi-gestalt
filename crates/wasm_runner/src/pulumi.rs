@@ -1,15 +1,6 @@
-use std::collections::HashMap;
-use std::ops::Deref;
-use std::path::{Path, PathBuf};
 use crate::pulumi::runner::PulumiGestalt;
-use anyhow::{bail, Error};
+use anyhow::Error;
 use log::info;
-use prost::Message;
-use pulumi_gestalt_grpc_connection::pulumi_state::PulumiState;
-use pulumi_gestalt_proto::mini::pulumirpc::{
-    RegisterResourceOutputsRequest, RegisterResourceRequest, RegisterResourceResponse,
-    ResourceInvokeRequest,
-};
 use pulumi_gestalt_wit::bindings_runner as runner;
 use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::context::{
     CompositeOutput, ConfigValue, Context, FunctionInvocationRequest, FunctionInvocationResult,
@@ -24,10 +15,10 @@ use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::{
 use pulumi_gestalt_wit::bindings_runner::{
     SingleThreadedCompositeOutput, SingleThreadedContext, SingleThreadedOutput,
 };
-use std::sync::Arc;
+use std::collections::HashMap;
+use std::path::Path;
 use wasmtime::Store;
 use wasmtime::component::{Component, Linker, Resource, ResourceTable};
-use wasmtime_wasi::bindings::sync::io::streams::HostInputStream;
 use wasmtime_wasi::{IoView, WasiCtx, WasiCtxBuilder, WasiView};
 
 pub struct Pulumi {
@@ -49,7 +40,7 @@ impl HostContext for MyState {
     fn new(&mut self) -> anyhow::Result<Resource<Context>> {
         let engine = pulumi_gestalt_rust_integration::get_engine();
         let project_name = std::env::var("PULUMI_PROJECT").unwrap();
-        
+
         let context = SingleThreadedContext::new(engine, project_name);
         let id = self.table.push(context)?;
         Ok(id)
@@ -83,19 +74,15 @@ impl HostContext for MyState {
         let mut inputs = HashMap::new();
         for field in request.object {
             let output = table.get(&field.value)?;
-            inputs.insert(field.name.clone().into(), output.output_id.clone());
+            inputs.insert(field.name.clone().into(), output.output_id);
         }
-        
-        let result =
-            context
-                .engine
-                .borrow_mut()
-                .create_register_resource_node(
-                    request.type_,
-                    request.name,
-                    inputs,
-                    request.version
-                );
+
+        let result = context.engine.borrow_mut().create_register_resource_node(
+            request.type_,
+            request.name,
+            inputs,
+            request.version,
+        );
 
         let output = SingleThreadedCompositeOutput::new(result, context.engine.clone());
         let id = self.table.push(output)?;
@@ -108,51 +95,52 @@ impl HostContext for MyState {
         request: context::ResourceInvokeRequest,
     ) -> anyhow::Result<Resource<CompositeOutput>> {
         assert!(!context.owned());
-        let mut table = &mut self.table;
+        let table = &mut self.table;
 
         let mut inputs = HashMap::new();
         for field in request.object {
             let output = table.get(&field.value)?;
-            inputs.insert(field.name.clone().into(), output.output_id.clone());
+            inputs.insert(field.name.clone().into(), output.output_id);
         }
 
         let context = table.get(&context)?;
 
-        let result =
-            context
-                .engine
-                .borrow_mut()
-                .create_resource_invoke_node(
-                    request.token,
-                    inputs,
-                    request.version,
-                );
+        let result = context.engine.borrow_mut().create_resource_invoke_node(
+            request.token,
+            inputs,
+            request.version,
+        );
 
         let output = SingleThreadedCompositeOutput::new(result, context.engine.clone());
         let id = self.table.push(output)?;
         Ok(id)
     }
 
-    fn finish(&mut self, self_: Resource<Context>, functions: Vec<FunctionInvocationResult>) -> anyhow::Result<Vec<FunctionInvocationRequest>> {
+    fn finish(
+        &mut self,
+        self_: Resource<Context>,
+        functions: Vec<FunctionInvocationResult>,
+    ) -> anyhow::Result<Vec<FunctionInvocationRequest>> {
         assert!(!self_.owned());
-        let mut table = &mut self.table;
+        let table = &mut self.table;
         let mut function_invocations = HashMap::new();
         for function in functions {
             let v = serde_json::from_str(function.value.as_str()).unwrap();
             let output = function.id;
             let output = table.get(&output)?;
-            function_invocations.insert(output.output_id.clone(), v);
+            function_invocations.insert(output.output_id, v);
         }
 
         let context = table.get_mut(&self_)?;
         let engine = context.engine.clone();
 
-        let results = context.engine
+        let results = context
+            .engine
             .borrow_mut()
             .run(function_invocations)
             .unwrap_or_default()
             .clone();
-        
+
         Ok(results
             .into_iter()
             .map(|result| {
@@ -162,11 +150,10 @@ impl HostContext for MyState {
                 FunctionInvocationRequest {
                     id,
                     function_name: result.function_name.into(),
-                    value:  v,
+                    value: v,
                 }
             })
-            .collect()
-        )
+            .collect())
     }
 
     fn get_config(
@@ -179,11 +166,12 @@ impl HostContext for MyState {
         let context = self.table.get_mut(&context)?;
         let project_name = context.project_name.clone();
         let engine = &context.engine.clone();
-        let result = engine.clone().borrow_mut().get_config_value(&name.unwrap_or(project_name), &key);
+        let result = engine
+            .clone()
+            .borrow_mut()
+            .get_config_value(&name.unwrap_or(project_name), &key);
         let result = result.map(|value| match value {
-            pulumi_gestalt_core::ConfigValue::PlainText(pt) => {
-                ConfigValue::Plaintext(pt.clone())
-            }
+            pulumi_gestalt_core::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt.clone()),
             pulumi_gestalt_core::ConfigValue::Secret(s) => {
                 let output = SingleThreadedOutput::new(s, engine.clone());
                 let id = self.table.push(output).unwrap();
@@ -193,8 +181,6 @@ impl HostContext for MyState {
         Ok(result)
     }
 
-    
-    
     fn drop(&mut self, context: Resource<Context>) -> anyhow::Result<()> {
         assert!(context.owned());
         self.table.delete(context)?;
@@ -212,15 +198,14 @@ impl HostOutput for MyState {
         self_: Resource<SingleThreadedOutput>,
         function_name: String,
     ) -> anyhow::Result<Resource<SingleThreadedOutput>> {
-        
-        let mut table = &mut self.table;
+        let table = &mut self.table;
         let output = table.get_mut(&self_)?;
         let engine = &output.engine;
         let output = &output.output_id;
         let output = engine
             .borrow_mut()
-            .create_native_function_node(function_name.clone().into(), output.clone());
-        
+            .create_native_function_node(function_name.clone().into(), *output);
+
         let output = SingleThreadedOutput::new(output, engine.clone());
         let id = table.push(output)?;
         Ok(id)
@@ -232,7 +217,7 @@ impl HostOutput for MyState {
     ) -> anyhow::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
         let output = self.table.get_mut(&self_)?;
-        let output_id = output.output_id.clone();
+        let output_id = output.output_id;
         let output = SingleThreadedOutput::new(output_id, output.engine.clone());
         let id = self.table.push(output)?;
         Ok(id)
@@ -244,24 +229,22 @@ impl HostOutput for MyState {
         outputs: Vec<Resource<output_interface::Output>>,
     ) -> anyhow::Result<Resource<output_interface::Output>> {
         assert!(!self_.owned());
-        let mut table = &mut self.table;
+        let table = &mut self.table;
         let st_output = table.get(&self_)?;
         let output = &st_output.output_id;
 
         let mut outputs2 = Vec::new();
-        outputs2.push(output.clone());
+        outputs2.push(*output);
         for field in outputs {
             let output = table.get(&field)?;
             let output = &output.output_id;
-            outputs2.push(output.clone())
+            outputs2.push(*output)
         }
 
         let result = st_output
             .engine
             .borrow_mut()
-            .create_combine_outputs(
-                outputs2
-            );
+            .create_combine_outputs(outputs2);
         let output = SingleThreadedOutput::new(result, st_output.engine.clone());
         let id = table.push(output)?;
         Ok(id)
@@ -273,13 +256,11 @@ impl HostOutput for MyState {
         name: String,
     ) -> anyhow::Result<()> {
         assert!(!self_.owned());
-        let mut table = &mut self.table;
+        let table = &mut self.table;
         let output = table.get_mut(&self_)?;
         let engine = &output.engine;
         let output = &output.output_id;
-        engine
-            .borrow_mut()
-            .add_output(name.clone().into(), output.clone());
+        engine.borrow_mut().add_output(name.clone().into(), *output);
         Ok(())
     }
 
@@ -302,7 +283,7 @@ impl HostCompositeOutput for MyState {
         let output = &output.output_id;
         let output = engine
             .borrow_mut()
-            .create_extract_field(field_name.clone().into(), output.clone());
+            .create_extract_field(field_name.clone().into(), *output);
         let output = SingleThreadedOutput::new(output, engine.clone());
         let id = self.table.push(output)?;
         Ok(id)
@@ -330,9 +311,7 @@ impl WasiView for SimplePluginCtx {
 }
 
 impl Pulumi {
-    pub fn create(
-        program: &Path,
-    ) -> Result<Pulumi, Error> {
+    pub fn create(program: &Path) -> Result<Pulumi, Error> {
         let mut engine_config = wasmtime::Config::new();
         engine_config.wasm_component_model(true);
         // engine_config.async_support(true);
@@ -363,14 +342,12 @@ impl Pulumi {
                 // logger: SimpleLogger {},
                 table,
                 context: wasi_ctx,
-                my_state: MyState {
-                    table: table2,
-                },
+                my_state: MyState { table: table2 },
             },
         );
 
         info!("Creating Wasm component");
-        let component = Component::from_file(&engine, &program)?;
+        let component = Component::from_file(&engine, program)?;
         info!("Instantiating Wasm component");
         let plugin = PulumiGestalt::instantiate(&mut store, &component, &linker)?;
         info!("Wasm component instantiated");

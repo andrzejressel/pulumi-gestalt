@@ -23,12 +23,12 @@ pub mod bindings_runner {
         pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
         pub project_name: String,
     }
-    
+
     impl SingleThreadedContext {
         pub fn new(engine: pulumi_gestalt_core::Engine, project_name: String) -> Self {
             Self {
-                engine: Rc::new(RefCell::new(engine)), 
-                project_name
+                engine: Rc::new(RefCell::new(engine)),
+                project_name,
             }
         }
     }
@@ -36,22 +36,28 @@ pub mod bindings_runner {
 
     pub struct SingleThreadedOutput {
         pub output_id: pulumi_gestalt_core::OutputId,
-        pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>
+        pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
     }
     unsafe impl Send for SingleThreadedOutput {}
     impl SingleThreadedOutput {
-        pub fn new(output_id: pulumi_gestalt_core::OutputId, engine: Rc<RefCell<pulumi_gestalt_core::Engine>>) -> Self {
+        pub fn new(
+            output_id: pulumi_gestalt_core::OutputId,
+            engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
+        ) -> Self {
             Self { output_id, engine }
         }
     }
 
     pub struct SingleThreadedCompositeOutput {
         pub output_id: pulumi_gestalt_core::OutputId,
-        pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>
+        pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
     }
     unsafe impl Send for SingleThreadedCompositeOutput {}
     impl SingleThreadedCompositeOutput {
-        pub fn new(output_id: pulumi_gestalt_core::OutputId, engine: Rc<RefCell<pulumi_gestalt_core::Engine>>) -> Self {
+        pub fn new(
+            output_id: pulumi_gestalt_core::OutputId,
+            engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
+        ) -> Self {
             Self { output_id, engine }
         }
     }

@@ -57,10 +57,8 @@ fn main() -> Result<(), Error> {
     let _handle = log4rs::init_config(config)?;
 
     match &args.command {
-        Command::Run {
-            program,
-        } => {
-            let mut pulumi = Pulumi::create(program, )?;
+        Command::Run { program } => {
+            let mut pulumi = Pulumi::create(program)?;
             log::info!("Invoking main");
             pulumi.start()?;
         }
