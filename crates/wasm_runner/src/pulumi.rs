@@ -1,6 +1,5 @@
-use std::sync::Arc;
 use crate::pulumi::runner::Client;
-use anyhow::Error;
+use anyhow::{bail, Error};
 use log::info;
 use prost::Message;
 use pulumi_gestalt_grpc_connection::pulumi_state::PulumiState;
@@ -8,15 +7,27 @@ use pulumi_gestalt_proto::mini::pulumirpc::{
     RegisterResourceOutputsRequest, RegisterResourceRequest, RegisterResourceResponse,
     ResourceInvokeRequest,
 };
+use pulumi_gestalt_rust_integration::ObjectField;
 use pulumi_gestalt_wit::bindings_runner as runner;
+use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::context::{
+    CompositeOutput, ConfigValue, Context, FunctionInvocationRequest, FunctionInvocationResult,
+    HostContext, Output,
+};
+use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::output_interface::{
+    CustomFunction, HostCompositeOutput, HostOutput,
+};
+use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::{
+    context, output_interface, types,
+};
+use pulumi_gestalt_wit::bindings_runner::{
+    SingleThreadedCompositeOutput, SingleThreadedContext, SingleThreadedOutput,
+};
+use std::sync::Arc;
 use wasmtime::Store;
 use wasmtime::component::{Component, Linker, Resource, ResourceTable};
-use wasmtime_wasi::{IoView, WasiCtx, WasiCtxBuilder, WasiView};
 use wasmtime_wasi::bindings::sync::io::streams::HostInputStream;
-use pulumi_gestalt_rust_integration::ObjectField;
-use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::{context, output_interface, types};
-use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::context::{CompositeOutput, ConfigValue, Context, FunctionInvocationRequest, FunctionInvocationResult, HostContext, Output};
-use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::output_interface::{HostCompositeOutput, HostOutput};
+use wasmtime_wasi::{IoView, WasiCtx, WasiCtxBuilder, WasiView};
+use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::custom_function::HostCustomFunction;
 
 pub struct Pulumi {
     plugin: Client,
@@ -32,63 +43,128 @@ struct SimplePluginCtx {
 struct MyState {
     pulumi_state: PulumiState,
     in_preview: bool,
-    table: ResourceTable
+    table: ResourceTable,
 }
 
 impl HostContext for MyState {
     fn new(&mut self) -> anyhow::Result<Resource<Context>> {
-        let context = Context::create_context();
-        let id = self.table.push(context)?;
+        let context = pulumi_gestalt_rust_integration::Context::create_context();
+        let single_threaded_context = SingleThreadedContext::new(context);
+        let id = self.table.push(single_threaded_context)?;
         Ok(id)
     }
 
-    fn create_output(&mut self, context: Resource<Context>, value: String, secret: bool) -> anyhow::Result<Resource<Output>> {
+    fn create_output(
+        &mut self,
+        context: Resource<Context>,
+        value: String,
+        secret: bool,
+    ) -> anyhow::Result<Resource<Output>> {
         assert!(!context.owned());
         let context = self.table.get_mut(&context)?;
+        let context = &context.0;
         let output = context.create_output(value, secret);
+        let output = SingleThreadedOutput::new(output);
         let id = self.table.push(output)?;
         Ok(id)
     }
 
-    fn register_resource(&mut self, context: Resource<Context>, request: context::RegisterResourceRequest) -> anyhow::Result<Resource<CompositeOutput>> {
+    fn register_resource(
+        &mut self,
+        context: Resource<Context>,
+        request: context::RegisterResourceRequest,
+    ) -> anyhow::Result<Resource<CompositeOutput>> {
         assert!(!context.owned());
         let mut table = &mut self.table;
-        
+
         let mut inputs = Vec::new();
         for field in request.object {
             let output = table.get(&field.value)?;
             inputs.push(ObjectField {
                 name: field.name,
-                value: output
+                value: &output.0,
             })
         }
 
         let context = table.get(&context)?;
 
-        let result = context.register_resource(pulumi_gestalt_rust_integration::RegisterResourceRequest {
-            type_: request.type_,
-            name: request.name,
-            version: request.version,
-            inputs: &inputs,
-        });
-        
-        let id = self.table.push(result)?;
+        let result =
+            context
+                .0
+                .register_resource(pulumi_gestalt_rust_integration::RegisterResourceRequest {
+                    type_: request.type_,
+                    name: request.name,
+                    version: request.version,
+                    inputs: &inputs,
+                });
+
+        let output = SingleThreadedCompositeOutput::new(result);
+        let id = self.table.push(output)?;
         Ok(id)
     }
 
-    fn invoke_resource(&mut self, context: Resource<Context>, request: context::ResourceInvokeRequest) -> anyhow::Result<Resource<CompositeOutput>> {
+    fn invoke_resource(
+        &mut self,
+        context: Resource<Context>,
+        request: context::ResourceInvokeRequest,
+    ) -> anyhow::Result<Resource<CompositeOutput>> {
         assert!(!context.owned());
-        todo!()
+        let mut table = &mut self.table;
+
+        let mut inputs = Vec::new();
+        for field in request.object {
+            let output = table.get(&field.value)?;
+            inputs.push(ObjectField {
+                name: field.name,
+                value: &output.0,
+            })
+        }
+
+        let context = table.get(&context)?;
+
+        let result =
+            context
+                .0
+                .invoke_resource(pulumi_gestalt_rust_integration::InvokeResourceRequest {
+                    token: request.token,
+                    version: request.version,
+                    inputs: &inputs,
+                });
+
+        let output = SingleThreadedCompositeOutput::new(result);
+        let id = self.table.push(output)?;
+        Ok(id)
     }
 
-    fn finish(&mut self, context: Resource<Context>, functions: Vec<FunctionInvocationResult>) -> anyhow::Result<Vec<FunctionInvocationRequest>> {
+    fn finish(&mut self, context: Resource<Context>) -> anyhow::Result<()> {
         assert!(!context.owned());
-        todo!()
+        let context = self.table.get_mut(&context)?;
+        let context = &context.0;
+        context.finish();
+        Ok(())
     }
 
-    fn get_config(&mut self, context: Resource<Context>, name: Option<String>, key: String) -> anyhow::Result<Option<ConfigValue>> {
+    fn get_config(
+        &mut self,
+        context: Resource<Context>,
+        name: Option<String>,
+        key: String,
+    ) -> anyhow::Result<Option<ConfigValue>> {
         assert!(!context.owned());
-        todo!()
+        let context = self.table.get_mut(&context)?;
+        let context = &context.0;
+        let result = context.get_config_value(name.as_deref(), &key);
+        let result = result.map(|value| match value {
+            pulumi_gestalt_rust_integration::ConfigValue::PlainText(pt) => {
+                ConfigValue::Plaintext(pt.clone())
+            }
+            pulumi_gestalt_rust_integration::ConfigValue::Secret(s) => {
+                let output = SingleThreadedOutput::new(s);
+                let id = self.table.push(output).unwrap();
+                ConfigValue::Secret(id)
+            }
+        });
+        Ok(result)
     }
 
     fn drop(&mut self, context: Resource<Context>) -> anyhow::Result<()> {
@@ -98,48 +174,120 @@ impl HostContext for MyState {
     }
 }
 
-impl types::Host for MyState {
-    
-}
+impl types::Host for MyState {}
 
-impl context::Host for MyState {
-    
-}
+impl context::Host for MyState {}
 
 impl HostOutput for MyState {
-    fn map(&mut self, self_: Resource<output_interface::Output>, function_name: String) -> anyhow::Result<Resource<output_interface::Output>> {
-        todo!()
+    fn map(
+        &mut self,
+        self_: Resource<SingleThreadedOutput>,
+        function_name: Resource<CustomFunction>,
+    ) -> anyhow::Result<Resource<SingleThreadedOutput>> {
+        bail!("TEST")
     }
 
-    fn clone(&mut self, self_: Resource<output_interface::Output>) -> anyhow::Result<Resource<output_interface::Output>> {
-        todo!()
+    fn clone(
+        &mut self,
+        self_: Resource<output_interface::Output>,
+    ) -> anyhow::Result<Resource<output_interface::Output>> {
+        assert!(!self_.owned());
+        let output = self.table.get_mut(&self_)?;
+        let output = &output.0;
+        let result = output.clone();
+        let output = SingleThreadedOutput::new(result);
+        let id = self.table.push(output)?;
+        Ok(id)
     }
 
-    fn combine(&mut self, self_: Resource<output_interface::Output>, outputs: Vec<Resource<output_interface::Output>>) -> anyhow::Result<Resource<output_interface::Output>> {
-        todo!()
+    fn combine(
+        &mut self,
+        self_: Resource<output_interface::Output>,
+        outputs: Vec<Resource<output_interface::Output>>,
+    ) -> anyhow::Result<Resource<output_interface::Output>> {
+        assert!(!self_.owned());
+        let mut table = &mut self.table;
+        let output = table.get(&self_)?;
+        let output = &output.0;
+
+        let mut outputs2 = Vec::new();
+        for field in outputs {
+            let output = table.get(&field)?;
+            let output = &output.0;
+            outputs2.push(output)
+        }
+
+        let result = output.combine(&outputs2);
+        let output = SingleThreadedOutput::new(result);
+        let id = table.push(output)?;
+        Ok(id)
     }
 
-    fn add_to_export(&mut self, self_: Resource<output_interface::Output>, name: String) -> anyhow::Result<()> {
-        todo!()
+    fn add_to_export(
+        &mut self,
+        self_: Resource<output_interface::Output>,
+        name: String,
+    ) -> anyhow::Result<()> {
+        assert!(!self_.owned());
+        let mut table = &mut self.table;
+        let output = table.get_mut(&self_)?;
+        let output = &output.0;
+        output.add_export(name);
+        Ok(())
     }
 
     fn drop(&mut self, rep: Resource<output_interface::Output>) -> anyhow::Result<()> {
-        todo!()
+        assert!(rep.owned());
+        self.table.delete(rep)?;
+        Ok(())
     }
 }
 
 impl HostCompositeOutput for MyState {
-    fn get_field(&mut self, self_: Resource<output_interface::CompositeOutput>, field_name: String) -> anyhow::Result<Resource<output_interface::Output>> {
-        todo!()
+    fn get_field(
+        &mut self,
+        self_: Resource<output_interface::CompositeOutput>,
+        field_name: String,
+    ) -> anyhow::Result<Resource<output_interface::Output>> {
+        assert!(!self_.owned());
+        let output = self.table.get_mut(&self_)?;
+        let output = &output.0;
+        let result = output.get_field(field_name);
+        let output = SingleThreadedOutput::new(result);
+        let id = self.table.push(output)?;
+        Ok(id)
     }
 
     fn drop(&mut self, rep: Resource<output_interface::CompositeOutput>) -> anyhow::Result<()> {
+        assert!(rep.owned());
+        self.table.delete(rep)?;
+        Ok(())
+    }
+}
+
+impl output_interface::Host for MyState {}
+// 
+// impl HostCustomFunction for MyState {
+//     fn my_map(&mut self, self_: Resource<runner::component::pulumi_gestalt::custom_function::CustomFunction>, value: String) -> anyhow::Result<String> {
+//         todo!()
+//     }
+// 
+//     fn drop(&mut self, rep: Resource<runner::component::pulumi_gestalt::custom_function::CustomFunction>) -> anyhow::Result<()> {
+//         todo!()
+//     }
+// }
+
+impl HostCustomFunction for MyState {
+    fn my_map(&mut self, self_: Resource<runner::component::pulumi_gestalt::custom_function::CustomFunction>, value: String) -> anyhow::Result<String> {
+        todo!()
+    }
+
+    fn drop(&mut self, rep: Resource<runner::component::pulumi_gestalt::custom_function::CustomFunction>) -> anyhow::Result<()> {
         todo!()
     }
 }
 
-impl output_interface::Host for MyState {
-    
+impl pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::custom_function::Host for MyState {
 }
 
 impl IoView for SimplePluginCtx {

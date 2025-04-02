@@ -41,14 +41,39 @@ pub mod pulumi_gestalt_bindings {
 #[allow(unused_unsafe)]
 #[cfg(feature = "runner")]
 pub mod bindings_runner {
+    
+    pub struct SingleThreadedContext(pub pulumi_gestalt_rust_integration::Context);
+    impl SingleThreadedContext {
+        pub fn new(context: pulumi_gestalt_rust_integration::Context) -> Self {
+            Self(context)
+        }
+    }
+    unsafe impl Send for SingleThreadedContext {}
+    
+    pub struct SingleThreadedOutput(pub pulumi_gestalt_rust_integration::Output);
+    unsafe impl Send for SingleThreadedOutput {}
+    impl SingleThreadedOutput {
+        pub fn new(output: pulumi_gestalt_rust_integration::Output) -> Self {
+            Self(output)
+        }
+    }
+    
+    pub struct SingleThreadedCompositeOutput(pub pulumi_gestalt_rust_integration::CompositeOutput);
+    unsafe impl Send for SingleThreadedCompositeOutput {}
+    impl SingleThreadedCompositeOutput {
+        pub fn new(output: pulumi_gestalt_rust_integration::CompositeOutput) -> Self {
+            Self(output)
+        }
+    }
+    
     wasmtime::component::bindgen!({
         world: "client",
         async: false,
         trappable_imports: true,
         with: {
-            "component:pulumi-gestalt/context/context": pulumi_gestalt_rust_integration::Context,
-            "component:pulumi-gestalt/output-interface/output": pulumi_gestalt_rust_integration::Output,
-            "component:pulumi-gestalt/output-interface/composite-output": pulumi_gestalt_rust_integration::CompositeOutput,
+            "component:pulumi-gestalt/context/context":SingleThreadedContext,
+            "component:pulumi-gestalt/output-interface/output": SingleThreadedOutput,
+            "component:pulumi-gestalt/output-interface/composite-output": SingleThreadedCompositeOutput,
         }
     });
 }
