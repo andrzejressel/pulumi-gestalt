@@ -74,22 +74,22 @@ async fn main() -> Result<(), Error> {
             program,
         } => {
             use pulumi_gestalt_wasm_component_creator::source::FileSource;
-            log::info!("Debug set to {debug}");
-            log::info!("Creating final component");
-            let pulumi_gestalt_source: Box<dyn WasmComponentSource> = match pulumi_gestalt {
-                None => Box::new(GithubWasmComponentSource {}),
-                Some(location) => Box::new(FileSource::new(location.clone())),
-            };
+            // log::info!("Debug set to {debug}");
+            // log::info!("Creating final component");
+            // let pulumi_gestalt_source: Box<dyn WasmComponentSource> = match pulumi_gestalt {
+            //     None => Box::new(GithubWasmComponentSource {}),
+            //     Some(location) => Box::new(FileSource::new(location.clone())),
+            // };
 
-            let component = pulumi_gestalt_wasm_component_creator::create(
-                pulumi_gestalt_source.as_ref(),
-                fs::read(program)
-                    .context(format!("Cannot read program {}", program.to_str().unwrap()))?,
-                *debug,
-            )
-            .await?;
-            log::info!("Created final component");
-            let wasm = component;
+            // let component = pulumi_gestalt_wasm_component_creator::create(
+            //     pulumi_gestalt_source.as_ref(),
+            //     fs::read(program)
+            //         .context(format!("Cannot read program {}", program.to_str().unwrap()))?,
+            //     *debug,
+            // )
+            // .await?;
+            // log::info!("Created final component");
+            // let wasm = component;
 
             let pulumi_engine_url = std::env::var("PULUMI_ENGINE")?;
             let pulumi_monitor_url = std::env::var("PULUMI_MONITOR")?;
@@ -102,7 +102,7 @@ async fn main() -> Result<(), Error> {
             };
 
             let mut pulumi = Pulumi::create(
-                wasm,
+                program,
                 pulumi_monitor_url,
                 pulumi_engine_url,
                 pulumi_stack,

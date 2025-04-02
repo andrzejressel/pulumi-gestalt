@@ -10,7 +10,6 @@ world pulumi-gestalt {
 }
 
 world client {
-    export custom-function;
     import output-interface;
     import types;
     import context;
@@ -27,17 +26,10 @@ world runner {
     import component:pulumi-gestalt-external/log@0.0.0-STABLE-DEV;
 }
 
-interface custom-function {
-    resource custom-function {
-        my-map: func(value: string) -> string;
-    }
-}
-
 interface output-interface {
-    use custom-function.{custom-function};
 
     resource output {
-        map: func(function-name: custom-function) -> output;
+        map: func(function-name: string) -> output;
         clone: func() -> output;
         combine: func(outputs: list<borrow<output>>) -> output;
         add-to-export: func(name: string);
@@ -95,7 +87,7 @@ interface context {
         create-output: func(value: string, secret:bool) -> output;
         register-resource: func(request: register-resource-request) -> composite-output;
         invoke-resource: func(request: resource-invoke-request) -> composite-output;
-        finish: func();
+        finish: func(functions: list<function-invocation-result>) -> list<function-invocation-request>;
         get-config: func(name: option<string>, key: string) -> option<config-value>;
     }
 }

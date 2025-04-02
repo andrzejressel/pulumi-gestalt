@@ -3754,6 +3754,7 @@ dependencies = [
  "log",
  "log4rs",
  "prost",
+ "pulumi_gestalt_core",
  "pulumi_gestalt_grpc_connection",
  "pulumi_gestalt_proto",
  "pulumi_gestalt_rust_integration",
@@ -3772,7 +3773,7 @@ dependencies = [
 name = "pulumi_gestalt_wit"
 version = "0.0.0-DEV"
 dependencies = [
- "pulumi_gestalt_rust_integration",
+ "pulumi_gestalt_core",
  "wasmtime",
  "wit-bindgen",
 ]

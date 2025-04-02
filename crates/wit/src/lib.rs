@@ -41,31 +41,46 @@ pub mod pulumi_gestalt_bindings {
 #[allow(unused_unsafe)]
 #[cfg(feature = "runner")]
 pub mod bindings_runner {
+    use std::cell::RefCell;
+    use std::rc::Rc;
+
+    pub struct SingleThreadedContext {
+        pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>,
+        pub project_name: String,
+    }
     
-    pub struct SingleThreadedContext(pub pulumi_gestalt_rust_integration::Context);
     impl SingleThreadedContext {
-        pub fn new(context: pulumi_gestalt_rust_integration::Context) -> Self {
-            Self(context)
+        pub fn new(engine: pulumi_gestalt_core::Engine, project_name: String) -> Self {
+            Self {
+                engine: Rc::new(RefCell::new(engine)), 
+                project_name
+            }
         }
     }
     unsafe impl Send for SingleThreadedContext {}
-    
-    pub struct SingleThreadedOutput(pub pulumi_gestalt_rust_integration::Output);
+
+    pub struct SingleThreadedOutput {
+        pub output_id: pulumi_gestalt_core::OutputId,
+        pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>
+    }
     unsafe impl Send for SingleThreadedOutput {}
     impl SingleThreadedOutput {
-        pub fn new(output: pulumi_gestalt_rust_integration::Output) -> Self {
-            Self(output)
+        pub fn new(output_id: pulumi_gestalt_core::OutputId, engine: Rc<RefCell<pulumi_gestalt_core::Engine>>) -> Self {
+            Self { output_id, engine }
         }
     }
-    
-    pub struct SingleThreadedCompositeOutput(pub pulumi_gestalt_rust_integration::CompositeOutput);
+
+    pub struct SingleThreadedCompositeOutput {
+        pub output_id: pulumi_gestalt_core::OutputId,
+        pub engine: Rc<RefCell<pulumi_gestalt_core::Engine>>
+    }
     unsafe impl Send for SingleThreadedCompositeOutput {}
     impl SingleThreadedCompositeOutput {
-        pub fn new(output: pulumi_gestalt_rust_integration::CompositeOutput) -> Self {
-            Self(output)
+        pub fn new(output_id: pulumi_gestalt_core::OutputId, engine: Rc<RefCell<pulumi_gestalt_core::Engine>>) -> Self {
+            Self { output_id, engine }
         }
     }
-    
+
     wasmtime::component::bindgen!({
         world: "client",
         async: false,
