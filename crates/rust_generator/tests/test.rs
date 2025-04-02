@@ -1,7 +1,7 @@
 use anyhow::{Context, Result};
+use askama::Template;
 use assert_cmd::assert::OutputAssertExt;
 use pulumi_gestalt_generator::generate_combined;
-use rinja::Template;
 use std::fs;
 use std::fs::{File, FileTimes};
 use std::path::{Path, PathBuf};
