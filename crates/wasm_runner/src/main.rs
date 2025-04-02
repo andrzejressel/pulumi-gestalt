@@ -6,8 +6,6 @@ use log4rs::Config;
 use log4rs::append::file::FileAppender;
 use log4rs::config::{Appender, Root};
 use log4rs::encode::json::JsonEncoder;
-use pulumi_gestalt_wasm_component_creator::source::GithubWasmComponentSource;
-use pulumi_gestalt_wasm_component_creator::source::WasmComponentSource;
 use std::fs;
 use std::fs::File;
 use std::io::Write;
@@ -27,14 +25,6 @@ struct App {
 #[derive(Debug, Subcommand)]
 enum Command {
     Run {
-        #[arg(long)]
-        pulumi_gestalt: Option<PathBuf>,
-        #[clap(
-            long,
-            action,
-            help = "When set to true, Wasm components with debug symbols will be used. Should be only used for debugging - it will massively increase execution time"
-        )]
-        debug: bool,
         program: PathBuf,
     },
     Plugins {
@@ -52,8 +42,7 @@ struct GlobalOpts {
     cwasm: Option<String>,
 }
 
-#[tokio::main]
-async fn main() -> Result<(), Error> {
+fn main() -> Result<(), Error> {
     let args = App::parse();
 
     let logfile = FileAppender::builder()
@@ -69,49 +58,11 @@ async fn main() -> Result<(), Error> {
 
     match &args.command {
         Command::Run {
-            pulumi_gestalt,
-            debug,
             program,
         } => {
-            use pulumi_gestalt_wasm_component_creator::source::FileSource;
-            // log::info!("Debug set to {debug}");
-            // log::info!("Creating final component");
-            // let pulumi_gestalt_source: Box<dyn WasmComponentSource> = match pulumi_gestalt {
-            //     None => Box::new(GithubWasmComponentSource {}),
-            //     Some(location) => Box::new(FileSource::new(location.clone())),
-            // };
-
-            // let component = pulumi_gestalt_wasm_component_creator::create(
-            //     pulumi_gestalt_source.as_ref(),
-            //     fs::read(program)
-            //         .context(format!("Cannot read program {}", program.to_str().unwrap()))?,
-            //     *debug,
-            // )
-            // .await?;
-            // log::info!("Created final component");
-            // let wasm = component;
-
-            let pulumi_engine_url = std::env::var("PULUMI_ENGINE")?;
-            let pulumi_monitor_url = std::env::var("PULUMI_MONITOR")?;
-            let pulumi_stack = std::env::var("PULUMI_STACK")?;
-            let pulumi_project = std::env::var("PULUMI_PROJECT")?;
-            let pulumi_preview = match std::env::var("PULUMI_DRY_RUN") {
-                Ok(preview) if preview == "true" => true,
-                Ok(preview) if preview == "false" => false,
-                _ => false,
-            };
-
-            let mut pulumi = Pulumi::create(
-                program,
-                pulumi_monitor_url,
-                pulumi_engine_url,
-                pulumi_stack,
-                pulumi_project,
-                pulumi_preview,
-            )
-            .await?;
+            let mut pulumi = Pulumi::create(program, )?;
             log::info!("Invoking main");
-            pulumi.start().await?;
+            pulumi.start()?;
         }
         Command::Plugins {
             program,

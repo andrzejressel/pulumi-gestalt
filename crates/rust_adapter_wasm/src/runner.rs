@@ -10,7 +10,6 @@ where
 {
     let main = || {
         let context = WasmContext::new();
-        pulumi_gestalt_rust_common::setup_logger();
         f(&context)?;
         run_loop(&context)?;
         Ok(())

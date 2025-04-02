@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::ops::Deref;
 use std::path::{Path, PathBuf};
-use crate::pulumi::runner::Client;
+use crate::pulumi::runner::PulumiGestalt;
 use anyhow::{bail, Error};
 use log::info;
 use prost::Message;
@@ -31,7 +31,7 @@ use wasmtime_wasi::bindings::sync::io::streams::HostInputStream;
 use wasmtime_wasi::{IoView, WasiCtx, WasiCtxBuilder, WasiView};
 
 pub struct Pulumi {
-    plugin: Client,
+    plugin: PulumiGestalt,
     store: Store<SimplePluginCtx>,
 }
 
@@ -42,8 +42,6 @@ struct SimplePluginCtx {
 }
 
 struct MyState {
-    pulumi_state: PulumiState,
-    in_preview: bool,
     table: ResourceTable,
 }
 
@@ -332,28 +330,23 @@ impl WasiView for SimplePluginCtx {
 }
 
 impl Pulumi {
-    pub async fn create(
+    pub fn create(
         program: &Path,
-        pulumi_monitor_url: String,
-        pulumi_engine_url: String,
-        pulumi_stack: String,
-        pulumi_project: String,
-        in_preview: bool,
     ) -> Result<Pulumi, Error> {
         let mut engine_config = wasmtime::Config::new();
         engine_config.wasm_component_model(true);
-        engine_config.async_support(true);
+        // engine_config.async_support(true);
         engine_config.wasm_backtrace_details(wasmtime::WasmBacktraceDetails::Enable);
         engine_config.debug_info(true);
 
         let engine = wasmtime::Engine::new(&engine_config)?;
 
         let mut linker: Linker<SimplePluginCtx> = Linker::new(&engine);
-        Client::add_to_linker(&mut linker, |state: &mut SimplePluginCtx| {
+        PulumiGestalt::add_to_linker(&mut linker, |state: &mut SimplePluginCtx| {
             &mut state.my_state
         })?;
 
-        wasmtime_wasi::add_to_linker_async(&mut linker)?;
+        wasmtime_wasi::add_to_linker_sync(&mut linker)?;
 
         let table = ResourceTable::new();
         let table2 = ResourceTable::new();
@@ -364,14 +357,6 @@ impl Pulumi {
             .inherit_env()
             .build();
 
-        let pulumi_state = PulumiState::new(
-            pulumi_monitor_url.clone(),
-            pulumi_engine_url.clone(),
-            pulumi_project.clone(),
-            pulumi_stack.clone(),
-        )
-        .await?;
-
         let mut store = Store::new(
             &engine,
             SimplePluginCtx {
@@ -379,8 +364,6 @@ impl Pulumi {
                 table,
                 context: wasi_ctx,
                 my_state: MyState {
-                    pulumi_state,
-                    in_preview,
                     table: table2,
                 },
             },
@@ -389,15 +372,15 @@ impl Pulumi {
         info!("Creating Wasm component");
         let component = Component::from_file(&engine, &program)?;
         info!("Instantiating Wasm component");
-        let plugin = Client::instantiate(&mut store, &component, &linker)?;
+        let plugin = PulumiGestalt::instantiate(&mut store, &component, &linker)?;
         info!("Wasm component instantiated");
 
         Ok(Pulumi { plugin, store })
     }
 
-    pub async fn start(&mut self) -> Result<(), Error> {
+    pub fn start(&mut self) -> Result<(), Error> {
         self.plugin
-            .component_pulumi_gestalt_external_pulumi_main()
+            .component_pulumi_gestalt_pulumi_main()
             .call_main(&mut self.store)?;
 
         Ok(())
