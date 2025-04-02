@@ -8,26 +8,22 @@ In Pulumi Gestalt, Wasm support is based on the [Component Model](https://compon
 
 ## Artifacts
 
-Several artifacts related to Wasm support can be found on
+Artifacts related to Wasm support can be found on
 the [releases](https://github.com/andrzejressel/pulumi-gestalt/releases/) page:
 
-- **Wasm implementation** (`pulumi_gestalt-debug.wasm` / `pulumi_gestalt-release.wasm`)
 - **Runner** (`pulumi_gestalt_wasm_runner`)
-- **WIT files** (`world.wit`, `pulumi-gestalt-external.wit`)
-
-The key artifacts are the **Runner** and **WIT files**. The Runner automatically downloads the corresponding Wasm
-implementation from the releases page when the program is executed.
+- **WIT files** (`world.wit`)
 
 ## Versioning
 
-Currently, WIT files follow nightly versioning. Integrations should select a nightly version of Pulumi Gestalt to ensure
-compatibility. The Runner downloads the corresponding Wasm implementation and merges them into a single Wasm file.
+Runner and WIT files are versioned after the whole project without any 
+forward or backward compatibility. This means that if you want to use a specific version of the Runner, you need to use WIT
+files from the same version.
 
 ## Entrypoint
 
-The entry point is managed by the `component:pulumi-gestalt-external/pulumi-main` interface. This function is invoked by
-`pulumi-gestalt-runner`. It takes a single argument, `in-preview`, which should be passed to
-the context constructor.
+The entry point is managed by the `component:pulumi-gestal/pulumi-main#pulumi-main` interface. This function is invoked by
+`pulumi-gestalt-runner`.
 
 ## Callback Emulation
 
@@ -99,17 +95,8 @@ To execute a Pulumi Gestalt Wasm program using the Runner, use:
 pulumi_wasm_runner run <WASM_FILE>
 ```
 
-This downloads the corresponding Wasm implementation, merges it with the specified Wasm file, and runs the program. To
-use the debug version of Wasm, add the `--debug` flag.
-
 ## WIT Files
 
 ```title="world.wit"
 --8<-- "crates/wit/wit/world.wit"
 ```
-
-```title="pulumi-gestalt-external.wit"
---8<-- "crates/wit/wit/deps/pulumi-gestalt-external.wit"
-```
-
-The relevant integration world for Pulumi Gestalt is `client`.

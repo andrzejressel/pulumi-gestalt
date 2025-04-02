@@ -1,22 +1,28 @@
-use crate::pulumi::runner::Runner;
-use crate::pulumi::runner::component::pulumi_gestalt_external::external_world;
-use crate::pulumi::runner::component::pulumi_gestalt_external::external_world::Host;
-use crate::pulumi::runner::component::pulumi_gestalt_external::external_world::RegisteredResource;
+use crate::pulumi::runner::PulumiGestalt;
 use anyhow::Error;
 use log::info;
-use prost::Message;
-use pulumi_gestalt_grpc_connection::pulumi_state::PulumiState;
-use pulumi_gestalt_proto::mini::pulumirpc::{
-    RegisterResourceOutputsRequest, RegisterResourceRequest, RegisterResourceResponse,
-    ResourceInvokeRequest,
-};
 use pulumi_gestalt_wit::bindings_runner as runner;
+use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::context::{
+    CompositeOutput, ConfigValue, Context, FunctionInvocationRequest, FunctionInvocationResult,
+    HostContext, Output,
+};
+use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::output_interface::{
+    HostCompositeOutput, HostOutput,
+};
+use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::{
+    context, output_interface, types,
+};
+use pulumi_gestalt_wit::bindings_runner::{
+    SingleThreadedCompositeOutput, SingleThreadedContext, SingleThreadedOutput,
+};
+use std::collections::HashMap;
+use std::path::Path;
 use wasmtime::Store;
-use wasmtime::component::{Component, Linker, ResourceTable};
+use wasmtime::component::{Component, Linker, Resource, ResourceTable};
 use wasmtime_wasi::{IoView, WasiCtx, WasiCtxBuilder, WasiView};
 
 pub struct Pulumi {
-    plugin: Runner,
+    plugin: PulumiGestalt,
     store: Store<SimplePluginCtx>,
 }
 
@@ -27,113 +33,270 @@ struct SimplePluginCtx {
 }
 
 struct MyState {
-    pulumi_state: PulumiState,
-    in_preview: bool,
+    table: ResourceTable,
 }
 
-impl Host for MyState {
-    async fn register_resource_outputs(&mut self, request: Vec<u8>) -> wasmtime::Result<()> {
-        self.register_resource_outputs_async(request).await
+impl HostContext for MyState {
+    fn new(&mut self) -> anyhow::Result<Resource<Context>> {
+        let engine = pulumi_gestalt_rust_integration::get_engine();
+        let project_name = std::env::var("PULUMI_PROJECT").unwrap();
+
+        let context = SingleThreadedContext::new(engine, project_name);
+        let id = self.table.push(context)?;
+        Ok(id)
     }
 
-    async fn resource_invoke(
+    fn create_output(
         &mut self,
-        request: external_world::ResourceInvokeRequest,
-    ) -> wasmtime::Result<()> {
-        let b = ResourceInvokeRequest::decode(&*(request.body)).unwrap();
-
-        info!("registering resource: {:?}", b);
-
-        self.pulumi_state
-            .send_resource_invoke_request(request.output_id.into(), b);
-
-        Ok(())
+        context: Resource<Context>,
+        value: String,
+        secret: bool,
+    ) -> anyhow::Result<Resource<Output>> {
+        assert!(!context.owned());
+        let context = self.table.get_mut(&context)?;
+        let value = serde_json::from_str(&value).unwrap();
+        let refcell = &context.engine;
+        let output_id = refcell.borrow_mut().create_done_node(value, secret);
+        let output = SingleThreadedOutput::new(output_id, context.engine.clone());
+        let id = self.table.push(output)?;
+        Ok(id)
     }
 
-    async fn register_resource(
+    fn register_resource(
         &mut self,
-        request: external_world::RegisterResourceRequest,
-    ) -> wasmtime::Result<()> {
-        let b = RegisterResourceRequest::decode(&*(request.body)).unwrap();
+        context: Resource<Context>,
+        request: context::RegisterResourceRequest,
+    ) -> anyhow::Result<Resource<CompositeOutput>> {
+        assert!(!context.owned());
+        let table = &self.table;
+        let context = table.get(&context)?;
 
-        info!("registering resource: {:?}", b);
-
-        self.pulumi_state
-            .send_register_resource_request(request.output_id.into(), b);
-
-        Ok(())
-    }
-
-    async fn wait_for_resource_operations(&mut self) -> wasmtime::Result<Vec<RegisteredResource>> {
-        let mut outputs = Vec::new();
-        for (output_id, body) in self.pulumi_state.get_created_resources().await {
-            let b = RegisterResourceResponse::decode(&*body).unwrap();
-            outputs.push(RegisteredResource {
-                output_id: output_id.0,
-                body: b.encode_to_vec(),
-            });
+        let mut inputs = HashMap::new();
+        for field in request.object {
+            let output = table.get(&field.value)?;
+            inputs.insert(field.name.clone().into(), output.output_id);
         }
-        Ok(outputs)
-    }
 
-    async fn in_preview(&mut self) -> wasmtime::Result<bool> {
-        Ok(self.in_preview)
-    }
-}
-
-impl runner::component::pulumi_gestalt_external::log::Host for MyState {
-    async fn log(
-        &mut self,
-        content: runner::component::pulumi_gestalt_external::log::Content,
-    ) -> wasmtime::Result<()> {
-        log::logger().log(
-            &log::Record::builder()
-                .metadata(
-                    log::Metadata::builder()
-                        .level(match content.level {
-                            runner::component::pulumi_gestalt_external::log::Level::Trace => {
-                                log::Level::Trace
-                            }
-                            runner::component::pulumi_gestalt_external::log::Level::Debug => {
-                                log::Level::Debug
-                            }
-                            runner::component::pulumi_gestalt_external::log::Level::Info => {
-                                log::Level::Info
-                            }
-                            runner::component::pulumi_gestalt_external::log::Level::Error => {
-                                log::Level::Error
-                            }
-                            runner::component::pulumi_gestalt_external::log::Level::Warn => {
-                                log::Level::Warn
-                            }
-                        })
-                        .target(&content.target)
-                        .build(),
-                )
-                .args(format_args!("{}", content.args))
-                .module_path(content.module_path.as_deref())
-                .file(content.file.as_deref())
-                .line(content.line)
-                .key_values(
-                    &content
-                        .key_values
-                        .iter()
-                        .map(|(k, v)| (k.as_str(), v.as_str()))
-                        .collect::<Vec<(&str, &str)>>(),
-                )
-                .build(),
+        let result = context.engine.borrow_mut().create_register_resource_node(
+            request.type_,
+            request.name,
+            inputs,
+            request.version,
         );
 
+        let output = SingleThreadedCompositeOutput::new(result, context.engine.clone());
+        let id = self.table.push(output)?;
+        Ok(id)
+    }
+
+    fn invoke_resource(
+        &mut self,
+        context: Resource<Context>,
+        request: context::ResourceInvokeRequest,
+    ) -> anyhow::Result<Resource<CompositeOutput>> {
+        assert!(!context.owned());
+        let table = &mut self.table;
+
+        let mut inputs = HashMap::new();
+        for field in request.object {
+            let output = table.get(&field.value)?;
+            inputs.insert(field.name.clone().into(), output.output_id);
+        }
+
+        let context = table.get(&context)?;
+
+        let result = context.engine.borrow_mut().create_resource_invoke_node(
+            request.token,
+            inputs,
+            request.version,
+        );
+
+        let output = SingleThreadedCompositeOutput::new(result, context.engine.clone());
+        let id = self.table.push(output)?;
+        Ok(id)
+    }
+
+    fn finish(
+        &mut self,
+        self_: Resource<Context>,
+        functions: Vec<FunctionInvocationResult>,
+    ) -> anyhow::Result<Vec<FunctionInvocationRequest>> {
+        assert!(!self_.owned());
+        let table = &mut self.table;
+        let mut function_invocations = HashMap::new();
+        for function in functions {
+            let v = serde_json::from_str(function.value.as_str()).unwrap();
+            let output = function.id;
+            let output = table.get(&output)?;
+            function_invocations.insert(output.output_id, v);
+        }
+
+        let context = table.get_mut(&self_)?;
+        let engine = context.engine.clone();
+
+        let results = context
+            .engine
+            .borrow_mut()
+            .run(function_invocations)
+            .unwrap_or_default()
+            .clone();
+
+        Ok(results
+            .into_iter()
+            .map(|result| {
+                let v = serde_json::to_string(&result.value).unwrap();
+                let output = SingleThreadedOutput::new(result.output_id, engine.clone());
+                let id = table.push(output).unwrap();
+                FunctionInvocationRequest {
+                    id,
+                    function_name: result.function_name.into(),
+                    value: v,
+                }
+            })
+            .collect())
+    }
+
+    fn get_config(
+        &mut self,
+        context: Resource<Context>,
+        name: Option<String>,
+        key: String,
+    ) -> anyhow::Result<Option<ConfigValue>> {
+        assert!(!context.owned());
+        let context = self.table.get_mut(&context)?;
+        let project_name = context.project_name.clone();
+        let engine = &context.engine.clone();
+        let result = engine
+            .clone()
+            .borrow_mut()
+            .get_config_value(&name.unwrap_or(project_name), &key);
+        let result = result.map(|value| match value {
+            pulumi_gestalt_core::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt.clone()),
+            pulumi_gestalt_core::ConfigValue::Secret(s) => {
+                let output = SingleThreadedOutput::new(s, engine.clone());
+                let id = self.table.push(output).unwrap();
+                ConfigValue::Secret(id)
+            }
+        });
+        Ok(result)
+    }
+
+    fn drop(&mut self, context: Resource<Context>) -> anyhow::Result<()> {
+        assert!(context.owned());
+        self.table.delete(context)?;
         Ok(())
     }
 }
 
-impl MyState {
-    async fn register_resource_outputs_async(&mut self, request: Vec<u8>) -> wasmtime::Result<()> {
-        let request = RegisterResourceOutputsRequest::decode(&mut request.as_slice())?;
-        self.pulumi_state.register_resource_outputs(request).await
+impl types::Host for MyState {}
+
+impl context::Host for MyState {}
+
+impl HostOutput for MyState {
+    fn map(
+        &mut self,
+        self_: Resource<SingleThreadedOutput>,
+        function_name: String,
+    ) -> anyhow::Result<Resource<SingleThreadedOutput>> {
+        let table = &mut self.table;
+        let output = table.get_mut(&self_)?;
+        let engine = &output.engine;
+        let output = &output.output_id;
+        let output = engine
+            .borrow_mut()
+            .create_native_function_node(function_name.clone().into(), *output);
+
+        let output = SingleThreadedOutput::new(output, engine.clone());
+        let id = table.push(output)?;
+        Ok(id)
+    }
+
+    fn clone(
+        &mut self,
+        self_: Resource<output_interface::Output>,
+    ) -> anyhow::Result<Resource<output_interface::Output>> {
+        assert!(!self_.owned());
+        let output = self.table.get_mut(&self_)?;
+        let output_id = output.output_id;
+        let output = SingleThreadedOutput::new(output_id, output.engine.clone());
+        let id = self.table.push(output)?;
+        Ok(id)
+    }
+
+    fn combine(
+        &mut self,
+        self_: Resource<output_interface::Output>,
+        outputs: Vec<Resource<output_interface::Output>>,
+    ) -> anyhow::Result<Resource<output_interface::Output>> {
+        assert!(!self_.owned());
+        let table = &mut self.table;
+        let st_output = table.get(&self_)?;
+        let output = &st_output.output_id;
+
+        let mut outputs2 = Vec::new();
+        outputs2.push(*output);
+        for field in outputs {
+            let output = table.get(&field)?;
+            let output = &output.output_id;
+            outputs2.push(*output)
+        }
+
+        let result = st_output
+            .engine
+            .borrow_mut()
+            .create_combine_outputs(outputs2);
+        let output = SingleThreadedOutput::new(result, st_output.engine.clone());
+        let id = table.push(output)?;
+        Ok(id)
+    }
+
+    fn add_to_export(
+        &mut self,
+        self_: Resource<output_interface::Output>,
+        name: String,
+    ) -> anyhow::Result<()> {
+        assert!(!self_.owned());
+        let table = &mut self.table;
+        let output = table.get_mut(&self_)?;
+        let engine = &output.engine;
+        let output = &output.output_id;
+        engine.borrow_mut().add_output(name.clone().into(), *output);
+        Ok(())
+    }
+
+    fn drop(&mut self, rep: Resource<output_interface::Output>) -> anyhow::Result<()> {
+        assert!(rep.owned());
+        self.table.delete(rep)?;
+        Ok(())
     }
 }
+
+impl HostCompositeOutput for MyState {
+    fn get_field(
+        &mut self,
+        self_: Resource<output_interface::CompositeOutput>,
+        field_name: String,
+    ) -> anyhow::Result<Resource<output_interface::Output>> {
+        assert!(!self_.owned());
+        let output = self.table.get_mut(&self_)?;
+        let engine = &output.engine;
+        let output = &output.output_id;
+        let output = engine
+            .borrow_mut()
+            .create_extract_field(field_name.clone().into(), *output);
+        let output = SingleThreadedOutput::new(output, engine.clone());
+        let id = self.table.push(output)?;
+        Ok(id)
+    }
+
+    fn drop(&mut self, rep: Resource<output_interface::CompositeOutput>) -> anyhow::Result<()> {
+        assert!(rep.owned());
+        self.table.delete(rep)?;
+        Ok(())
+    }
+}
+
+impl output_interface::Host for MyState {}
 
 impl IoView for SimplePluginCtx {
     fn table(&mut self) -> &mut ResourceTable {
@@ -148,30 +311,24 @@ impl WasiView for SimplePluginCtx {
 }
 
 impl Pulumi {
-    pub async fn create(
-        pulumi_gestalt_file: Vec<u8>,
-        pulumi_monitor_url: String,
-        pulumi_engine_url: String,
-        pulumi_stack: String,
-        pulumi_project: String,
-        in_preview: bool,
-    ) -> Result<Pulumi, Error> {
+    pub fn create(program: &Path) -> Result<Pulumi, Error> {
         let mut engine_config = wasmtime::Config::new();
         engine_config.wasm_component_model(true);
-        engine_config.async_support(true);
+        // engine_config.async_support(true);
         engine_config.wasm_backtrace_details(wasmtime::WasmBacktraceDetails::Enable);
         engine_config.debug_info(true);
 
         let engine = wasmtime::Engine::new(&engine_config)?;
 
         let mut linker: Linker<SimplePluginCtx> = Linker::new(&engine);
-        Runner::add_to_linker(&mut linker, |state: &mut SimplePluginCtx| {
+        PulumiGestalt::add_to_linker(&mut linker, |state: &mut SimplePluginCtx| {
             &mut state.my_state
         })?;
 
-        wasmtime_wasi::add_to_linker_async(&mut linker)?;
+        wasmtime_wasi::add_to_linker_sync(&mut linker)?;
 
         let table = ResourceTable::new();
+        let table2 = ResourceTable::new();
 
         let wasi_ctx = WasiCtxBuilder::new()
             .inherit_stdin()
@@ -179,41 +336,29 @@ impl Pulumi {
             .inherit_env()
             .build();
 
-        let pulumi_state = PulumiState::new(
-            pulumi_monitor_url.clone(),
-            pulumi_engine_url.clone(),
-            pulumi_project.clone(),
-            pulumi_stack.clone(),
-        )
-        .await?;
-
         let mut store = Store::new(
             &engine,
             SimplePluginCtx {
                 // logger: SimpleLogger {},
                 table,
                 context: wasi_ctx,
-                my_state: MyState {
-                    pulumi_state,
-                    in_preview,
-                },
+                my_state: MyState { table: table2 },
             },
         );
 
         info!("Creating Wasm component");
-        let component = Component::from_binary(&engine, &pulumi_gestalt_file)?;
+        let component = Component::from_file(&engine, program)?;
         info!("Instantiating Wasm component");
-        let plugin = Runner::instantiate_async(&mut store, &component, &linker).await?;
+        let plugin = PulumiGestalt::instantiate(&mut store, &component, &linker)?;
         info!("Wasm component instantiated");
 
         Ok(Pulumi { plugin, store })
     }
 
-    pub async fn start(&mut self) -> Result<(), Error> {
+    pub fn start(&mut self) -> Result<(), Error> {
         self.plugin
-            .component_pulumi_gestalt_external_pulumi_main()
-            .call_main(&mut self.store)
-            .await?;
+            .component_pulumi_gestalt_pulumi_main()
+            .call_main(&mut self.store)?;
 
         Ok(())
     }

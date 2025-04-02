@@ -251,7 +251,7 @@ impl CompositeOutput {
     }
 }
 
-fn get_engine() -> Engine {
+pub fn get_engine() -> Engine {
     let pulumi_engine_url = std::env::var("PULUMI_ENGINE").unwrap();
     let pulumi_monitor_url = std::env::var("PULUMI_MONITOR").unwrap();
     let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();

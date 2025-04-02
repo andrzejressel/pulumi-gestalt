@@ -55,7 +55,6 @@ build-native-examples:
 # Compiling everything together causes linking issues
 build-wasm-components:
     cargo build -p pulumi_gestalt_wasm_runner
-    cargo build -p pulumi_gestalt --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_dependencies --target={{WASI_TARGET}}
@@ -65,7 +64,6 @@ build-wasm-components:
 
 build-wasm-components-release:
     cargo build -p pulumi_gestalt_wasm_runner --release
-    cargo build -p pulumi_gestalt --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_dependencies --target={{WASI_TARGET}} --release
@@ -118,7 +116,6 @@ publish:
     just publish-app pulumi_gestalt_rust
     just publish-app pulumi_gestalt_generator
     just publish-app pulumi_gestalt_build
-    just publish-app pulumi_gestalt_wasm_component_creator
     just publish-app pulumi_gestalt_wasm_runner
 
 test-provider-compilation COMPILATION_NAME:
