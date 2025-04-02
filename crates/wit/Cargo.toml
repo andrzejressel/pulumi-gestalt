@@ -14,9 +14,7 @@ targets = ["x86_64-apple-darwin", "x86_64-pc-windows-msvc", "i686-unknown-linux-
 
 [features]
 client = []
-logger = []
 runner = ["dep:wasmtime", "dep:pulumi_gestalt_core"]
-pulumi_gestalt = []
 
 [dependencies]
 wit-bindgen.workspace = true
