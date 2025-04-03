@@ -104,10 +104,9 @@ publish-app APP_NAME:
     cargo publish -p {{APP_NAME}} --all-features
 
 publish:
-    just publish-app pulumi_gestalt_wit
     just publish-app pulumi_gestalt_proto
     just publish-app pulumi_gestalt_core
-    just publish-app pulumi_gestalt_rust_common
+    just publish-app pulumi_gestalt_wit
     just publish-app pulumi_gestalt_grpc_connection
     just publish-app pulumi_gestalt_rust_adapter
     just publish-app pulumi_gestalt_rust_adapter_wasm
