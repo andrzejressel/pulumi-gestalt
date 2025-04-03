@@ -1,4 +1,80 @@
-## v0.0.1
+## [v0.0.2](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.1...vv0.0.2)
+<details>
+<summary><h3>🤖 Dependency Update Commits</h3></summary>
+
+- chore(deps): update rust to v1.86.0 ([#1021](https://github.com/andrzejressel/pulumi-gestalt/pull/1021)) [0acfc65](https://github.com/andrzejressel/pulumi-gestalt/commit/0acfc653f33d25daff865ec9d8f4f008c36537ee)
+- fix(deps): update module github.com/pulumi/pulumi/sdk/v3 to v3.160.0 ([#1019](https://github.com/andrzejressel/pulumi-gestalt/pull/1019)) [e951762](https://github.com/andrzejressel/pulumi-gestalt/commit/e9517620281f60c01877b537adaa0f75a9e1c514)
+- chore(deps): update wasm-tools to 0.228.0 ([#1018](https://github.com/andrzejressel/pulumi-gestalt/pull/1018)) [b3f7151](https://github.com/andrzejressel/pulumi-gestalt/commit/b3f715195e6fa5c81720fa2c9c9aca0a5692b155)
+- chore(deps): update rust crate wat to v1.228.0 ([#1017](https://github.com/andrzejressel/pulumi-gestalt/pull/1017)) [4aabc15](https://github.com/andrzejressel/pulumi-gestalt/commit/4aabc157d1159221c1f2f59bb9114b6bdad41809)
+- chore(deps): update rust crate clap to v4.5.35 ([#1016](https://github.com/andrzejressel/pulumi-gestalt/pull/1016)) [fa305c8](https://github.com/andrzejressel/pulumi-gestalt/commit/fa305c82a261ee5e373d7a634ebcc4faad3523fd)
+- chore(deps): update dependency go to v1.24.2 ([#1015](https://github.com/andrzejressel/pulumi-gestalt/pull/1015)) [e9d1441](https://github.com/andrzejressel/pulumi-gestalt/commit/e9d14412e380be54a82ccb9b077e79971f6d1180)
+- fix(deps): update module google.golang.org/grpc to v1.71.1 ([#1014](https://github.com/andrzejressel/pulumi-gestalt/pull/1014)) [1f67fc5](https://github.com/andrzejressel/pulumi-gestalt/commit/1f67fc57ef60ccbd49a9f8d569a186173ac839f9)
+- chore(deps): update squidfunk/mkdocs-material docker tag to v9.6.11 ([#1013](https://github.com/andrzejressel/pulumi-gestalt/pull/1013)) [b266b56](https://github.com/andrzejressel/pulumi-gestalt/commit/b266b56efa5a0ea5239081a809e190d535e221b4)
+- chore(deps): update dependency mkdocs-material to v9.6.11 ([#1012](https://github.com/andrzejressel/pulumi-gestalt/pull/1012)) [674508a](https://github.com/andrzejressel/pulumi-gestalt/commit/674508a2282d7ea25c54f015249ba92d8a1a4316)
+- chore(deps): update mkdocs-material to v9.6.10 ([#1011](https://github.com/andrzejressel/pulumi-gestalt/pull/1011)) [3289fd1](https://github.com/andrzejressel/pulumi-gestalt/commit/3289fd15e3ff529877d07db6ea5a9d37232cac4a)
+- chore(deps): update rust crate rinja to 0.4.0 ([#1010](https://github.com/andrzejressel/pulumi-gestalt/pull/1010)) [19a4fb3](https://github.com/andrzejressel/pulumi-gestalt/commit/19a4fb3a20301db5a854d566ae388b9ddaaef97d)
+- chore(deps): update rust crate once_cell to v1.21.3 ([#1008](https://github.com/andrzejressel/pulumi-gestalt/pull/1008)) [4b6f321](https://github.com/andrzejressel/pulumi-gestalt/commit/4b6f3211f3f27868413604a0d220cc621fbed06b)
+- fix(deps): update module github.com/pulumi/pulumi/sdk/v3 to v3.159.0 ([#1007](https://github.com/andrzejressel/pulumi-gestalt/pull/1007)) [e69e614](https://github.com/andrzejressel/pulumi-gestalt/commit/e69e614d56d5b9547a7cd6b65e4532bae0c240a8)
+- chore(deps): update rust crate once_cell to v1.21.2 ([#1006](https://github.com/andrzejressel/pulumi-gestalt/pull/1006)) [9714709](https://github.com/andrzejressel/pulumi-gestalt/commit/9714709befdd6cf73899c9963920c25bdd2a1ab5)
+- chore(deps): update rust crate clap to v4.5.34 ([#1004](https://github.com/andrzejressel/pulumi-gestalt/pull/1004)) [3ada4d4](https://github.com/andrzejressel/pulumi-gestalt/commit/3ada4d41f106d52758108801c8ec3236f3d3e747)
+- chore(deps): update rust crate clap to v4.5.33 ([#1002](https://github.com/andrzejressel/pulumi-gestalt/pull/1002)) [6772236](https://github.com/andrzejressel/pulumi-gestalt/commit/677223643f49d0e1ddeff8f80cf2331f6ba96438)
+- chore(deps): update tonic monorepo to 0.13.0 ([#999](https://github.com/andrzejressel/pulumi-gestalt/pull/999)) [6300997](https://github.com/andrzejressel/pulumi-gestalt/commit/630099768a17c14f68c3e6f4bd8400ada9954b0d)
+- fix(deps): update module github.com/pulumi/pulumi/sdk/v3 to v3.158.0 ([#996](https://github.com/andrzejressel/pulumi-gestalt/pull/996)) [9345efa](https://github.com/andrzejressel/pulumi-gestalt/commit/9345efa769a448e9c2e75b091c366f78dc4c3da7)
+- chore(deps): update github/codeql-action digest to 1b549b9 ([#995](https://github.com/andrzejressel/pulumi-gestalt/pull/995)) [3fa439e](https://github.com/andrzejressel/pulumi-gestalt/commit/3fa439ec1709d905ee4af568367e2c65daf0440a)
+- chore(deps): update rust crate log to v0.4.27 ([#994](https://github.com/andrzejressel/pulumi-gestalt/pull/994)) [e93a783](https://github.com/andrzejressel/pulumi-gestalt/commit/e93a78348b93650606bc69961162b5d9348b6988)
+- chore(deps): update wasmtime to v31 (major) ([#993](https://github.com/andrzejressel/pulumi-gestalt/pull/993)) [2c07f9e](https://github.com/andrzejressel/pulumi-gestalt/commit/2c07f9e1023dd28a89ab6a5e1c1399c214c371a1)
+- fix(deps): update module github.com/pulumi/pulumi/sdk/v3 to v3.157.0 ([#992](https://github.com/andrzejressel/pulumi-gestalt/pull/992)) [1f4f257](https://github.com/andrzejressel/pulumi-gestalt/commit/1f4f257449faef5ad8bb64995b02506509bc3565)
+- chore(deps): update rust crate tempfile to v3.19.1 ([#991](https://github.com/andrzejressel/pulumi-gestalt/pull/991)) [074a3da](https://github.com/andrzejressel/pulumi-gestalt/commit/074a3da638e5a609c6d997e2718fcb70206714bd)
+- chore(deps): update rust crate bon to v3.5.1 ([#990](https://github.com/andrzejressel/pulumi-gestalt/pull/990)) [f5ca417](https://github.com/andrzejressel/pulumi-gestalt/commit/f5ca417e4deecc17382c1ac67fa256f8a943980b)
+- chore(deps): update swatinem/rust-cache digest to 9d47c6a ([#989](https://github.com/andrzejressel/pulumi-gestalt/pull/989)) [e9972d8](https://github.com/andrzejressel/pulumi-gestalt/commit/e9972d8f1e7b5085e7c22109ac0418ce40ba7eed)
+- chore(deps): update github/codeql-action digest to 5f8171a ([#988](https://github.com/andrzejressel/pulumi-gestalt/pull/988)) [9d92dca](https://github.com/andrzejressel/pulumi-gestalt/commit/9d92dcacda79b84b792f83f9727bbd5a789bcb39)
+- chore(deps): update actions/setup-go digest to 0aaccfd ([#987](https://github.com/andrzejressel/pulumi-gestalt/pull/987)) [608c25a](https://github.com/andrzejressel/pulumi-gestalt/commit/608c25a58471c7ad27d07e26a26fa9abdcd6ce23)
+- chore(deps): update actions/cache digest to 5a3ec84 ([#986](https://github.com/andrzejressel/pulumi-gestalt/pull/986)) [935c147](https://github.com/andrzejressel/pulumi-gestalt/commit/935c1474f5ce871ad5f1fdf56d020be530572895)
+- chore(deps): update rust to v1.85.1 ([#985](https://github.com/andrzejressel/pulumi-gestalt/pull/985)) [eb6ffac](https://github.com/andrzejressel/pulumi-gestalt/commit/eb6ffac351b45c1286debea0bd3264b7d206bf92)
+- chore(deps): update rust crate reqwest to v0.12.15 ([#984](https://github.com/andrzejressel/pulumi-gestalt/pull/984)) [a78905b](https://github.com/andrzejressel/pulumi-gestalt/commit/a78905b3c0e1eed7f960a4bf99cd7d0d796f7da6)
+- chore(deps): update mkdocs-material to v9.6.9 ([#983](https://github.com/andrzejressel/pulumi-gestalt/pull/983)) [6fb9af2](https://github.com/andrzejressel/pulumi-gestalt/commit/6fb9af2bef9b86000ca159f532d4789b1d149204)
+- chore(deps): update rust crate bon to v3.5.0 ([#982](https://github.com/andrzejressel/pulumi-gestalt/pull/982)) [f819d7c](https://github.com/andrzejressel/pulumi-gestalt/commit/f819d7c6e3ab7d795c1d0d6656d0207416e07f2b)
+- chore(deps): update rust crate handlebars to v6.3.2 ([#981](https://github.com/andrzejressel/pulumi-gestalt/pull/981)) [daf4464](https://github.com/andrzejressel/pulumi-gestalt/commit/daf44642f4a0b484099c96ddaae47c5df088e869)
+- chore(deps): update extractions/setup-just action to v3 ([#980](https://github.com/andrzejressel/pulumi-gestalt/pull/980)) [cf29cf3](https://github.com/andrzejressel/pulumi-gestalt/commit/cf29cf3098540100bcc821037fb729523d5598a6)
+- fix(deps): update module github.com/pulumi/pulumi/sdk/v3 to v3.156.0 ([#979](https://github.com/andrzejressel/pulumi-gestalt/pull/979)) [71aacf3](https://github.com/andrzejressel/pulumi-gestalt/commit/71aacf397890a28721c95b9292bd361a35332f51)
+- chore(deps): update rust crate wit-bindgen to 0.41.0 ([#977](https://github.com/andrzejressel/pulumi-gestalt/pull/977)) [047ee1d](https://github.com/andrzejressel/pulumi-gestalt/commit/047ee1df9d6a1412cd5220ce9074db80506b3574)
+- chore(deps): update rust crate uuid to v1.16.0 ([#975](https://github.com/andrzejressel/pulumi-gestalt/pull/975)) [a9a226a](https://github.com/andrzejressel/pulumi-gestalt/commit/a9a226a40c2e6c867a0e9b6add4afc8a152be52b)
+- chore(deps): update rust crate tempfile to v3.19.0 ([#974](https://github.com/andrzejressel/pulumi-gestalt/pull/974)) [d8e4ac3](https://github.com/andrzejressel/pulumi-gestalt/commit/d8e4ac3a52951bf8e8c35816a3430a1a2128ebd7)
+- chore(deps): update rust crate tokio to v1.44.1 ([#973](https://github.com/andrzejressel/pulumi-gestalt/pull/973)) [715e6cb](https://github.com/andrzejressel/pulumi-gestalt/commit/715e6cbd90dfb2002aeb2b741e8eab8f918a445b)
+- chore(deps): update rust crate reqwest to v0.12.14 ([#971](https://github.com/andrzejressel/pulumi-gestalt/pull/971)) [3d22569](https://github.com/andrzejressel/pulumi-gestalt/commit/3d2256906c71ba0941c43c97fd0b0bc19a200c6b)
+- chore(deps): update rust crate prettyplease to v0.2.31 ([#970](https://github.com/andrzejressel/pulumi-gestalt/pull/970)) [b12aa10](https://github.com/andrzejressel/pulumi-gestalt/commit/b12aa10843ca2a008ef3d73bde9ba155ea7bfa70)
+- chore(deps): update rust crate once_cell to v1.21.1 ([#968](https://github.com/andrzejressel/pulumi-gestalt/pull/968)) [1ac4435](https://github.com/andrzejressel/pulumi-gestalt/commit/1ac44354693ae34c236bbaab6bae7cc9e3c3cbe0)
+- Bump golang.org/x/net from 0.34.0 to 0.36.0 in /pulumi-language-gestalt ([#965](https://github.com/andrzejressel/pulumi-gestalt/pull/965)) [5497305](https://github.com/andrzejressel/pulumi-gestalt/commit/5497305d1544b8b68c23e14bd4a5c6e29d1caa18)
+- chore(deps): update rust crate async-trait to v0.1.88 ([#967](https://github.com/andrzejressel/pulumi-gestalt/pull/967)) [1fff880](https://github.com/andrzejressel/pulumi-gestalt/commit/1fff880a26640e28a81f5b70ac3d44b3878f594a)
+- chore(deps): update mkdocs-material to v9.6.8 ([#966](https://github.com/andrzejressel/pulumi-gestalt/pull/966)) [8d86cc4](https://github.com/andrzejressel/pulumi-gestalt/commit/8d86cc42eeea305d78f4b1f7e914b907013b4f6b)
+- chore(deps): update rust crate quote to v1.0.40 ([#964](https://github.com/andrzejressel/pulumi-gestalt/pull/964)) [179accc](https://github.com/andrzejressel/pulumi-gestalt/commit/179acccdffb39117ef354f9b82bace7dcd6daf53)
+- chore(deps): update rust crate reqwest to v0.12.13 ([#963](https://github.com/andrzejressel/pulumi-gestalt/pull/963)) [5bf69ca](https://github.com/andrzejressel/pulumi-gestalt/commit/5bf69cab2cc4af0e5893217bb8e2478316e201fb)
+- chore(deps): update codecov/test-results-action digest to f2dba72 ([#962](https://github.com/andrzejressel/pulumi-gestalt/pull/962)) [7186ddf](https://github.com/andrzejressel/pulumi-gestalt/commit/7186ddf6f0020bdc62508fbbb679dad37e589ed3)
+- chore(deps): update rust crate libc to v0.2.171 ([#961](https://github.com/andrzejressel/pulumi-gestalt/pull/961)) [f4a4477](https://github.com/andrzejressel/pulumi-gestalt/commit/f4a4477acd4870fc292834453473a311ed01b980)
+- chore(deps): update rust crate clap to v4.5.32 ([#960](https://github.com/andrzejressel/pulumi-gestalt/pull/960)) [3e2eabf](https://github.com/andrzejressel/pulumi-gestalt/commit/3e2eabf746030d1593b9eecc4a13c8075081676e)
+- chore(deps): update rust crate once_cell to v1.21.0 ([#959](https://github.com/andrzejressel/pulumi-gestalt/pull/959)) [e3a6230](https://github.com/andrzejressel/pulumi-gestalt/commit/e3a6230fca6bfcbea3a966823ae33aa9d9ca2bae)
+- chore(deps): update rust crate syn to v2.0.100 ([#953](https://github.com/andrzejressel/pulumi-gestalt/pull/953)) [9ea8c31](https://github.com/andrzejressel/pulumi-gestalt/commit/9ea8c31c5c997b37ad5f86adaa5bb48dbc647e01)
+- fix(deps): update rust crate serde to v1.0.219 ([#943](https://github.com/andrzejressel/pulumi-gestalt/pull/943)) [3e84323](https://github.com/andrzejressel/pulumi-gestalt/commit/3e843238466dbd62dcc0a17472ae418136624352)
+</details>
+
+<details>
+<summary><h3>📝 Other Commits</h3></summary>
+
+- Update version to 0.0.2 [c1cec17](https://github.com/andrzejressel/pulumi-gestalt/commit/c1cec177abaa3c720c609a59ac1da67d2c9ee209)
+- Remove Wasm component ([#1020](https://github.com/andrzejressel/pulumi-gestalt/pull/1020)) [72c5677](https://github.com/andrzejressel/pulumi-gestalt/commit/72c567737da22a95146ce4b957b328f9a7e71952)
+- Basic Config abstraction ([#998](https://github.com/andrzejressel/pulumi-gestalt/pull/998)) [10fc101](https://github.com/andrzejressel/pulumi-gestalt/commit/10fc1010ee6b7d9e869e7280b7800c47065c8bd1)
+- Remove in_preview argument from Wasm Context constructor ([#978](https://github.com/andrzejressel/pulumi-gestalt/pull/978)) [5c1b0d4](https://github.com/andrzejressel/pulumi-gestalt/commit/5c1b0d43f686f3e5fca616b928c0cc1b539970fe)
+- Remove references to prerelease versions ([#972](https://github.com/andrzejressel/pulumi-gestalt/pull/972)) [959b5ed](https://github.com/andrzejressel/pulumi-gestalt/commit/959b5ed6d039050dcc45e8aa104acf37133b7c6b)
+- Use serde from workspace ([#969](https://github.com/andrzejressel/pulumi-gestalt/pull/969)) [a9b1005](https://github.com/andrzejressel/pulumi-gestalt/commit/a9b1005b6a0866991a03b40672cd5a2580f1f59e)
+- Rewrite C++ example to C ([#952](https://github.com/andrzejressel/pulumi-gestalt/pull/952)) [e8370ed](https://github.com/andrzejressel/pulumi-gestalt/commit/e8370edc2158ddc044c16b6a3c3f35a23d1344d6)
+- Example for Rust integration ([#950](https://github.com/andrzejressel/pulumi-gestalt/pull/950)) [b6e937c](https://github.com/andrzejressel/pulumi-gestalt/commit/b6e937c6afd353edf06efca0ea6fb29b2cd70f18)
+- Add link to C++ example ([#946](https://github.com/andrzejressel/pulumi-gestalt/pull/946)) [c8dc358](https://github.com/andrzejressel/pulumi-gestalt/commit/c8dc358bded51d0f969bf28e1242578fefeb9a44)
+- Update rust integration docs ([#945](https://github.com/andrzejressel/pulumi-gestalt/pull/945)) [8c05a76](https://github.com/andrzejressel/pulumi-gestalt/commit/8c05a769f82fad331b1969d7929ad9aeffed72db)
+- Set resolver to 3 ([#944](https://github.com/andrzejressel/pulumi-gestalt/pull/944)) [576f12c](https://github.com/andrzejressel/pulumi-gestalt/commit/576f12c8d7361a80a5e6efe76b684261cb27a4a5)
+- Restore version to 0.0.0-DEV [e43c80a](https://github.com/andrzejressel/pulumi-gestalt/commit/e43c80abe0e43a1b970a3b1d2d8711db0d910c26)
+</details>
+
+## 0.0.1
 <details>
 <summary><h3>🤖 Dependency Update Commits</h3></summary>
 
@@ -38,6 +114,8 @@
 <details>
 <summary><h3>📝 Other Commits</h3></summary>
 
+- Release v0.0.1 [adac49c](https://github.com/andrzejressel/pulumi-gestalt/commit/adac49c56475e5da703be5604ae2a03406426a54)
+- Update changelog for version 0.0.1 [719d3fe](https://github.com/andrzejressel/pulumi-gestalt/commit/719d3fe5a0d8ab7bf5a47c4dd0f791de7d9363e8)
 - Update version to 0.0.1 [9415050](https://github.com/andrzejressel/pulumi-gestalt/commit/9415050669372d5d472347a05f27251ffca35816)
 - Reset changelog ([#941](https://github.com/andrzejressel/pulumi-gestalt/pull/941)) [743e26e](https://github.com/andrzejressel/pulumi-gestalt/commit/743e26e49864e8ddf1a293517f63c5ab905981ec)
 - Remove Cloudsmith ([#940](https://github.com/andrzejressel/pulumi-gestalt/pull/940)) [4176879](https://github.com/andrzejressel/pulumi-gestalt/commit/417687945c7e1d25532240d450249a0b406d5e52)
