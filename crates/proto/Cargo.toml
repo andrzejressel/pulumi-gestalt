@@ -12,6 +12,7 @@ all-features = true
 
 [features]
 connectivity = ["dep:tonic"]
+pulumi_gestalt = []
 
 [dependencies]
 prost.workspace = true
