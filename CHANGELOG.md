@@ -1,4 +1,31 @@
-## [v0.0.2](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.1...vv0.0.2)
+## [0.2.0-fix-changelog](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.2...v0.2.0-fix-changelog)
+### Fixed
+- Fix changelog generation [76da92b](https://github.com/andrzejressel/pulumi-gestalt/commit/76da92ba8cf65942996262ab10fe4dcfd40dcc07)
+
+<details>
+<summary><h3>📝 Other Commits</h3></summary>
+
+- Update version to 0.2.0-fix-changelog [a923f34](https://github.com/andrzejressel/pulumi-gestalt/commit/a923f34eaf119bd9cd8017db9bbc1b1afd804f19)
+- Fix changelog generation [76f42db](https://github.com/andrzejressel/pulumi-gestalt/commit/76f42db0be001d6a422b8287235e3d48aa4bad59)
+- Fix changelog generation [113f903](https://github.com/andrzejressel/pulumi-gestalt/commit/113f9039d031ac5447cc152983835c8bc76e5c6f)
+- Fix changelog generation [868eac3](https://github.com/andrzejressel/pulumi-gestalt/commit/868eac3c9c6d17af209dfe54a75a4702d0917bda)
+- Fix changelog generation [76da92b](https://github.com/andrzejressel/pulumi-gestalt/commit/76da92ba8cf65942996262ab10fe4dcfd40dcc07)
+- Fix publish recipe ([#1022](https://github.com/andrzejressel/pulumi-gestalt/pull/1022)) [8a3e941](https://github.com/andrzejressel/pulumi-gestalt/commit/8a3e941ae3a5f5c3d66f0f317ed4deade5213017)
+- Restore version to 0.0.0-DEV [d1101b1](https://github.com/andrzejressel/pulumi-gestalt/commit/d1101b15e42bb49018920426a1ef4e018ec8ecb2)
+</details>
+
+## [0.0.2](https://github.com/andrzejressel/pulumi-gestalt/compare/v0.0.1...v0.0.2)
+### Added
+- Added an example for Rust integration ([#950](https://github.com/andrzejressel/pulumi-gestalt/pull/950)) [b6e937c](https://github.com/andrzejressel/pulumi-gestalt/commit/b6e937c6afd353edf06efca0ea6fb29b2cd70f18)
+- Added basic API for obtaining config values ([#998](https://github.com/andrzejressel/pulumi-gestalt/pull/998)) [10fc101](https://github.com/andrzejressel/pulumi-gestalt/commit/10fc1010ee6b7d9e869e7280b7800c47065c8bd1)
+
+### Changed
+- Simplify WIT files, remove separate Wasm component ([#1020](https://github.com/andrzejressel/pulumi-gestalt/pull/1020)) [72c5677](https://github.com/andrzejressel/pulumi-gestalt/commit/72c567737da22a95146ce4b957b328f9a7e71952)
+- Rewrite C++ example to C ([#952](https://github.com/andrzejressel/pulumi-gestalt/pull/952)) [e8370ed](https://github.com/andrzejressel/pulumi-gestalt/commit/e8370edc2158ddc044c16b6a3c3f35a23d1344d6)
+
+### Removed
+- Remove `in_preview` argument from Wasm Context constructor ([#978](https://github.com/andrzejressel/pulumi-gestalt/pull/978)) [5c1b0d4](https://github.com/andrzejressel/pulumi-gestalt/commit/5c1b0d43f686f3e5fca616b928c0cc1b539970fe)
+
 <details>
 <summary><h3>🤖 Dependency Update Commits</h3></summary>
 
@@ -60,6 +87,8 @@
 <details>
 <summary><h3>📝 Other Commits</h3></summary>
 
+- Release v0.0.2 [43d54df](https://github.com/andrzejressel/pulumi-gestalt/commit/43d54df6b48beecd5a449fcc17651d2f042257c1)
+- Update changelog for version 0.0.2 [d4d74c7](https://github.com/andrzejressel/pulumi-gestalt/commit/d4d74c78f9c593647102767751adece97044d5d5)
 - Update version to 0.0.2 [c1cec17](https://github.com/andrzejressel/pulumi-gestalt/commit/c1cec177abaa3c720c609a59ac1da67d2c9ee209)
 - Remove Wasm component ([#1020](https://github.com/andrzejressel/pulumi-gestalt/pull/1020)) [72c5677](https://github.com/andrzejressel/pulumi-gestalt/commit/72c567737da22a95146ce4b957b328f9a7e71952)
 - Basic Config abstraction ([#998](https://github.com/andrzejressel/pulumi-gestalt/pull/998)) [10fc101](https://github.com/andrzejressel/pulumi-gestalt/commit/10fc1010ee6b7d9e869e7280b7800c47065c8bd1)
