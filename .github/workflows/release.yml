@@ -101,10 +101,9 @@ jobs:
           git add -A
           git commit -m "Update version to ${{ github.event.inputs.version }}"
 
-      - name: Generate and commit new changelog
+      - name: Generate new changelog
         run: |
           just changelog-generate-for-repo "${{ github.event.inputs.version }}"
-          cp target/github_changelog.md github_changelog.md
 
       - name: Copy changelog to new version directory
         run: |
