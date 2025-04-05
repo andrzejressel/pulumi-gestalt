@@ -1,4 +1,4 @@
-package component:pulumi-gestalt@0.0.0-DEV;
+package component:pulumi-gestalt@0.2.0-fix-changelog;
 
 world pulumi-gestalt {
     import output-interface;
