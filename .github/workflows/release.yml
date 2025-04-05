@@ -111,7 +111,7 @@ jobs:
           rm .changelog/${{ github.event.inputs.version }}/.gitkeep
           mkdir .changelog/unreleased
           touch .changelog/unreleased/.gitkeep
-          
+
       - name: Commit changes
         run: |
           git add -A
