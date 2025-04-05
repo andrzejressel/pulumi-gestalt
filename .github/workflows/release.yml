@@ -104,6 +104,7 @@ jobs:
       - name: Generate and commit new changelog
         run: |
           just changelog-generate-for-repo "${{ github.event.inputs.version }}"
+          cp target/github_changelog.md github_changelog.md
 
       - name: Copy changelog to new version directory
         run: |
