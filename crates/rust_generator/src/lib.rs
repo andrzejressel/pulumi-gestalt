@@ -12,6 +12,7 @@ mod model;
 mod output;
 mod schema;
 mod utils;
+mod converter;
 
 pub fn generate_combined(
     schema_json: &Path,

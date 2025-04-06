@@ -3403,6 +3403,7 @@ dependencies = [
  "pathdiff",
  "prettyplease",
  "proc-macro2",
+ "pulumi_gestalt_proto",
  "pulumi_gestalt_rust",
  "quote",
  "regex",

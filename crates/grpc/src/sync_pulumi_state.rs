@@ -1,7 +1,7 @@
 use crate::output_id::OutputId;
 use crate::pulumi_state::PulumiState;
-use pulumi_gestalt_proto::mini::pulumirpc::ResourceInvokeRequest;
-use pulumi_gestalt_proto::mini::pulumirpc::{
+use pulumi_gestalt_proto::pulumi::pulumirpc::ResourceInvokeRequest;
+use pulumi_gestalt_proto::pulumi::pulumirpc::{
     RegisterResourceOutputsRequest, RegisterResourceRequest,
 };
 use tokio::runtime::{Builder, Runtime};
@@ -70,7 +70,7 @@ impl PulumiStateSync {
 #[cfg(test)]
 mod tests {
     use crate::output_id::OutputId;
-    use pulumi_gestalt_proto::full::pulumirpc::engine_server::EngineServer;
+    use pulumi_gestalt_proto::pulumi::pulumirpc::engine_server::EngineServer;
     use std::time::Instant;
     use tokio::net::TcpListener;
 
@@ -80,8 +80,8 @@ mod tests {
     use crate::sync_pulumi_state::PulumiStateSync;
     use crate::test_server::{MyResourceEngineServer, MyResourceMonitorServer};
     use pulumi_gestalt_proto::IntoMini;
-    use pulumi_gestalt_proto::full::pulumirpc::RegisterResourceRequest;
-    use pulumi_gestalt_proto::full::pulumirpc::resource_monitor_server::ResourceMonitorServer;
+    use pulumi_gestalt_proto::pulumi::pulumirpc::RegisterResourceRequest;
+    use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_server::ResourceMonitorServer;
 
     #[test]
     fn test() -> Result<(), anyhow::Error> {
@@ -118,12 +118,9 @@ mod tests {
         let output_id_2 = OutputId::new("2".into());
         let output_id_3 = OutputId::new("3".into());
 
-        pulumi_state
-            .send_register_resource_request(output_id_1, create_request("test1").into_mini());
-        pulumi_state
-            .send_register_resource_request(output_id_2, create_request("test2").into_mini());
-        pulumi_state
-            .send_register_resource_request(output_id_3, create_request("test3").into_mini());
+        pulumi_state.send_register_resource_request(output_id_1, create_request("test1"));
+        pulumi_state.send_register_resource_request(output_id_2, create_request("test2"));
+        pulumi_state.send_register_resource_request(output_id_3, create_request("test3"));
 
         std::thread::sleep(std::time::Duration::from_secs(2));
 

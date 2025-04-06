@@ -1,6 +1,6 @@
-use pulumi_gestalt_proto::full::pulumirpc::engine_server::Engine;
-use pulumi_gestalt_proto::full::pulumirpc::resource_monitor_server::ResourceMonitor;
-use pulumi_gestalt_proto::full::pulumirpc::{
+use pulumi_gestalt_proto::pulumi::pulumirpc::engine_server::Engine;
+use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_server::ResourceMonitor;
+use pulumi_gestalt_proto::pulumi::pulumirpc::{
     CallResponse, Callback, GetRootResourceRequest, GetRootResourceResponse, InvokeResponse,
     LogRequest, ReadResourceRequest, ReadResourceResponse, RegisterPackageRequest,
     RegisterPackageResponse, RegisterResourceOutputsRequest, RegisterResourceRequest,

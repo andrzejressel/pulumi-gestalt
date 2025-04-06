@@ -10,7 +10,7 @@ description = "Abstarction layer for gRPC connections in Pulumi Gestalt"
 [dependencies]
 prost.workspace = true
 tonic = { workspace = true, default-features = true }
-pulumi_gestalt_proto = { workspace = true, features = ["connectivity"] }
+pulumi_gestalt_proto = { workspace = true, features = ["pulumi"] }
 tokio.workspace = true
 futures.workspace = true
 anyhow.workspace = true

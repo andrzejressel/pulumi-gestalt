@@ -6,17 +6,17 @@ pub(crate) fn regenerate_proto() -> Result<()> {
     let pulumi_gestalt_proto_dir = "proto";
 
     let out_location = "crates/proto/src";
-    let full_location = format!("{}/full", out_location);
+    let pulumi_location = format!("{}/pulumi", out_location);
     let pulumi_gestalt_location = format!("{}/pulumi_gestalt", out_location);
 
-    fs::create_dir_all(&full_location)?;
+    fs::create_dir_all(&pulumi_location)?;
     fs::create_dir_all(&pulumi_gestalt_location)?;
 
     tonic_build::configure()
         .build_transport(true)
         .build_client(true)
         .build_server(true)
-        .out_dir(full_location)
+        .out_dir(pulumi_location)
         .compile_protos(
             &[
                 format!("{}/pulumi/plugin.proto", pulumi_proto_dir),
@@ -32,11 +32,9 @@ pub(crate) fn regenerate_proto() -> Result<()> {
         .build_server(false)
         .out_dir(pulumi_gestalt_location)
         .compile_protos(
-            &[
-                format!("{}/pulumi_gestalt.proto", pulumi_gestalt_proto_dir)
-            ],
-            &Vec::<String>::new()
+            &[format!("{}/pulumi_gestalt.proto", pulumi_gestalt_proto_dir)],
+            &Vec::<String>::new(),
         )?;
-    
+
     Ok(())
 }

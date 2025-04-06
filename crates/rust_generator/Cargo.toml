@@ -104,6 +104,7 @@ itertools.workspace = true
 askama.workspace = true
 pulumi_gestalt_rust.workspace = true
 pathdiff.workspace = true
+pulumi_gestalt_proto = { workspace = true, features = ["pulumi_gestalt"] }
 
 [dev-dependencies]
 assert_cmd.workspace = true
