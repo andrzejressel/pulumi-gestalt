@@ -6,10 +6,10 @@ use std::io::BufReader;
 use std::path::Path;
 
 mod code_generation;
-pub mod converter;
+mod converter;
 mod description;
 mod filter;
-pub mod model;
+mod model;
 mod output;
 mod schema;
 mod utils;

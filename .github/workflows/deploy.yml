@@ -368,3 +368,4 @@ jobs:
           files: |
             ./crates/c_ffi/pulumi_gestalt.h
             ./crates/wit/wit/world.wit
+            ./proto/pulumi_gestalt.proto
