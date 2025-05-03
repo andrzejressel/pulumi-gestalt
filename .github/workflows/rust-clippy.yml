@@ -66,7 +66,7 @@ jobs:
     - name: Run rust-clippy
       run: just clippy-to-file
     - name: Upload analysis results to GitHub
-      uses: github/codeql-action/upload-sarif@1b549b9259bda1cb5ddde3b41741a82a2d15a841 # v3
+      uses: github/codeql-action/upload-sarif@60168efe1c415ce0f5521ea06d5c2062adbeed1b # v3
       with:
         sarif_file: rust-clippy-results.sarif
         wait-for-processing: true
