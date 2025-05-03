@@ -1,52 +1,48 @@
 use crate::model::{
-    ElementId, Function, GlobalType, GlobalTypeProperty, InputProperty, IntegerEnumElement,
-    NumberEnumElement, OutputProperty, Package, Ref, Resource, StringEnumElement, Type,
+    ElementId, Function, GlobalType, GlobalTypeProperty, GlobalTypeValue, InputProperty,
+    IntegerEnumElement, NumberEnumElement, OutputProperty, Package, Ref, Resource,
+    StringEnumElement, Type,
 };
 use anyhow::{Context, Result};
 use pulumi_gestalt_proto::pulumi_gestalt::pulumi_model as pulumi;
-use std::collections::{BTreeMap, HashMap};
+use std::collections::BTreeMap;
 use std::rc::Rc;
 
 /// Convert from our Rust Package to protobuf Package
 pub fn package_to_proto(package: &Package) -> Result<pulumi::Package> {
-    let mut proto_package = pulumi::Package {
+    let resources = package
+        .resources
+        .iter()
+        .map(|(id, resource)| {
+            resource_to_proto(resource).context("Failed to convert resource to proto")
+        })
+        .collect::<Result<Vec<_>>>()?;
+
+    let functions = package
+        .functions
+        .iter()
+        .map(|(id, function)| {
+            function_to_proto(function).context("Failed to convert function to proto")
+        })
+        .collect::<Result<Vec<_>>>()?;
+
+    let types = package
+        .types
+        .iter()
+        .map(|(id, global_type)| {
+            global_type_to_proto(global_type).context("Failed to convert global type to proto")
+        })
+        .collect::<Result<Vec<_>>>()?;
+
+    let proto_package = pulumi::Package {
         name: package.name.clone(),
         display_name: package.display_name.clone(),
         plugin_download_url: package.plugin_download_url.clone(),
         version: package.version.clone(),
-        resources: HashMap::new(),
-        functions: HashMap::new(),
-        types: HashMap::new(),
+        resources,
+        functions,
+        types,
     };
-
-    // Convert resources
-    for (id, resource) in &package.resources {
-        proto_package.resources.insert(
-            id.raw.clone(),
-            resource_to_proto(resource).context("Failed to convert resource to proto")?,
-        );
-    }
-
-    // Convert functions
-    for (id, function) in &package.functions {
-        proto_package.functions.insert(
-            id.raw.clone(),
-            function_to_proto(function).context("Failed to convert function to proto")?,
-        );
-    }
-
-    // Convert types
-    for (id, global_type) in &package.types {
-        let global_type_value =
-            global_type_to_proto(global_type).context("Failed to convert global type to proto")?;
-        proto_package.types.insert(
-            id.raw.clone(),
-            pulumi::GlobalType {
-                element_id: Some(element_id_to_proto(id)),
-                global_type_value: Some(global_type_value),
-            },
-        );
-    }
 
     Ok(proto_package)
 }
@@ -55,7 +51,7 @@ pub fn package_to_proto(package: &Package) -> Result<pulumi::Package> {
 pub fn proto_to_package(proto: &pulumi::Package) -> Result<Package> {
     // Convert resources
     let mut resources = BTreeMap::new();
-    for proto_resource in proto.resources.values() {
+    for proto_resource in &proto.resources {
         let resource =
             proto_to_resource(proto_resource).context("Failed to convert proto to resource")?;
         resources.insert(resource.element_id.clone(), resource);
@@ -63,7 +59,7 @@ pub fn proto_to_package(proto: &pulumi::Package) -> Result<Package> {
 
     // Convert functions
     let mut functions = BTreeMap::new();
-    for proto_function in proto.functions.values() {
+    for proto_function in &proto.functions {
         let function =
             proto_to_function(proto_function).context("Failed to convert proto to function")?;
         functions.insert(function.element_id.clone(), function);
@@ -71,9 +67,13 @@ pub fn proto_to_package(proto: &pulumi::Package) -> Result<Package> {
 
     // Convert types
     let mut types = BTreeMap::new();
-    for proto_type in proto.types.values() {
+    for proto_type in &proto.types {
         let (id, global_type) =
             proto_to_global_type(proto_type).context("Failed to convert proto to global type")?;
+        let global_type = GlobalType {
+            element_id: id.clone(),
+            value: global_type,
+        };
         types.insert(id, global_type);
     }
 
@@ -319,9 +319,9 @@ fn proto_to_ref(proto: &pulumi::RefType) -> Result<Ref> {
     }
 }
 
-fn global_type_to_proto(global_type: &Rc<GlobalType>) -> Result<pulumi::GlobalTypeValue> {
-    let global_type_value = match global_type.as_ref() {
-        GlobalType::Object(desc, props) => {
+fn global_type_to_proto(global_type: &Rc<GlobalType>) -> Result<pulumi::GlobalType> {
+    let global_type_value = match &global_type.as_ref().value {
+        GlobalTypeValue::Object(desc, props) => {
             let mut proto_props = Vec::new();
             for prop in props {
                 proto_props.push(global_type_property_to_proto(prop)?);
@@ -331,7 +331,7 @@ fn global_type_to_proto(global_type: &Rc<GlobalType>) -> Result<pulumi::GlobalTy
                 properties: proto_props,
             })
         }
-        GlobalType::StringEnum(desc, elements) => {
+        GlobalTypeValue::StringEnum(desc, elements) => {
             let mut proto_elements = Vec::new();
             for elem in elements {
                 proto_elements.push(string_enum_element_to_proto(elem));
@@ -341,7 +341,7 @@ fn global_type_to_proto(global_type: &Rc<GlobalType>) -> Result<pulumi::GlobalTy
                 elements: proto_elements,
             })
         }
-        GlobalType::NumberEnum(desc, elements) => {
+        GlobalTypeValue::NumberEnum(desc, elements) => {
             let mut proto_elements = Vec::new();
             for elem in elements {
                 proto_elements.push(number_enum_element_to_proto(elem));
@@ -351,7 +351,7 @@ fn global_type_to_proto(global_type: &Rc<GlobalType>) -> Result<pulumi::GlobalTy
                 elements: proto_elements,
             })
         }
-        GlobalType::IntegerEnum(desc, elements) => {
+        GlobalTypeValue::IntegerEnum(desc, elements) => {
             let mut proto_elements = Vec::new();
             for elem in elements {
                 proto_elements.push(integer_enum_element_to_proto(elem));
@@ -363,12 +363,19 @@ fn global_type_to_proto(global_type: &Rc<GlobalType>) -> Result<pulumi::GlobalTy
         }
     };
 
-    Ok(pulumi::GlobalTypeValue {
-        value: Some(global_type_value),
+    Ok(pulumi::GlobalType {
+        element_id: Some(element_id_to_proto(&global_type.element_id)),
+        global_type_value: Some(pulumi::GlobalTypeValue {
+            value: Some(global_type_value),
+        }),
     })
+
+    // Ok(pulumi::GlobalTypeValue {
+    //     value: Some(global_type_value),
+    // })
 }
 
-fn proto_to_global_type(proto: &pulumi::GlobalType) -> Result<(ElementId, GlobalType)> {
+fn proto_to_global_type(proto: &pulumi::GlobalType) -> Result<(ElementId, GlobalTypeValue)> {
     // Note: For simplicity, we're assuming we'll extract the element_id from elsewhere
     // This is a placeholder implementation
     // let element_id = ElementId::new("placeholder:id:Name")?;
@@ -386,28 +393,28 @@ fn proto_to_global_type(proto: &pulumi::GlobalType) -> Result<(ElementId, Global
             for prop in &obj.properties {
                 props.push(proto_to_global_type_property(prop)?);
             }
-            GlobalType::Object(obj.description.clone(), props)
+            GlobalTypeValue::Object(obj.description.clone(), props)
         }
         Some(pulumi::global_type_value::Value::StringEnum(enum_type)) => {
             let mut elements = Vec::new();
             for elem in &enum_type.elements {
                 elements.push(proto_to_string_enum_element(elem));
             }
-            GlobalType::StringEnum(enum_type.description.clone(), elements)
+            GlobalTypeValue::StringEnum(enum_type.description.clone(), elements)
         }
         Some(pulumi::global_type_value::Value::NumberEnum(enum_type)) => {
             let mut elements = Vec::new();
             for elem in &enum_type.elements {
                 elements.push(proto_to_number_enum_element(elem));
             }
-            GlobalType::NumberEnum(enum_type.description.clone(), elements)
+            GlobalTypeValue::NumberEnum(enum_type.description.clone(), elements)
         }
         Some(pulumi::global_type_value::Value::IntegerEnum(enum_type)) => {
             let mut elements = Vec::new();
             for elem in &enum_type.elements {
                 elements.push(proto_to_integer_enum_element(elem));
             }
-            GlobalType::IntegerEnum(enum_type.description.clone(), elements)
+            GlobalTypeValue::IntegerEnum(enum_type.description.clone(), elements)
         }
     };
 
@@ -491,12 +498,14 @@ mod tests {
     use crate::converter::tests::prop::arbitrary::any;
     use crate::model;
     use crate::model::Function;
-    use crate::model::GlobalType;
     use crate::model::GlobalTypeProperty;
+    use crate::model::GlobalTypeValue;
     use crate::model::InputProperty;
+    use crate::model::NumberEnumElement;
     use crate::model::OutputProperty;
     use crate::model::Ref;
-    use crate::model::Type;
+    use crate::model::StringEnumElement;
+    use crate::model::*;
     use crate::model::{ElementId, Resource};
     use itertools::Itertools;
     use proptest::prelude::Just;
@@ -554,8 +563,7 @@ mod tests {
                 string_strategy(),
                 vec_strategy::<Resource>(),
                 vec_strategy::<Function>(),
-                map_strategy::<ElementId, GlobalType>()
-                    .prop_map(|m| m.into_iter().collect::<BTreeMap<_, _>>()),
+                vec_strategy::<GlobalType>(),
             )
                 .prop_map(
                     |(
@@ -577,6 +585,11 @@ mod tests {
                             function_name_map.insert(function.element_id.clone(), function);
                         }
 
+                        let mut types_map = BTreeMap::new();
+                        for global_type in types {
+                            types_map.insert(global_type.element_id.clone(), global_type);
+                        }
+
                         model::Package::new(
                             name,
                             display_name,
@@ -584,7 +597,7 @@ mod tests {
                             version,
                             resource_name_map,
                             function_name_map,
-                            types,
+                            types_map,
                         )
                     },
                 )
@@ -708,5 +721,149 @@ mod tests {
             .boxed()
         }
     }
-    
+
+    impl Arbitrary for GlobalTypeValue {
+        type Parameters = ();
+        type Strategy = BoxedStrategy<Self>;
+
+        fn arbitrary_with(_args: Self::Parameters) -> Self::Strategy {
+            prop_oneof![
+                (
+                    prop::option::of(string_strategy()),
+                    vec_strategy::<GlobalTypeProperty>()
+                )
+                    .prop_map(|(desc, props)| GlobalTypeValue::Object(desc, props)),
+                (
+                    prop::option::of(string_strategy()),
+                    vec_strategy::<StringEnumElement>()
+                )
+                    .prop_map(|(desc, elements)| GlobalTypeValue::StringEnum(desc, elements)),
+                (
+                    prop::option::of(string_strategy()),
+                    vec_strategy::<NumberEnumElement>()
+                )
+                    .prop_map(|(desc, elements)| GlobalTypeValue::NumberEnum(desc, elements)),
+                (
+                    prop::option::of(string_strategy()),
+                    vec_strategy::<IntegerEnumElement>()
+                )
+                    .prop_map(|(desc, elements)| GlobalTypeValue::IntegerEnum(desc, elements))
+            ]
+            .boxed()
+        }
+    }
+
+    impl Arbitrary for GlobalType {
+        type Parameters = ();
+        type Strategy = BoxedStrategy<Self>;
+
+        fn arbitrary_with(_args: Self::Parameters) -> Self::Strategy {
+            (any::<ElementId>(), any::<GlobalTypeValue>())
+                .prop_map(|(element_id, value)| GlobalType { element_id, value })
+                .boxed()
+        }
+    }
+
+    impl Arbitrary for StringEnumElement {
+        type Parameters = ();
+        type Strategy = BoxedStrategy<Self>;
+
+        fn arbitrary_with(_args: Self::Parameters) -> Self::Strategy {
+            (
+                string_strategy(),
+                prop::option::of(string_strategy()),
+                prop::option::of(string_strategy()),
+            )
+                .prop_map(|(name, value, description)| StringEnumElement {
+                    name,
+                    value,
+                    description,
+                })
+                .boxed()
+        }
+    }
+
+    impl Arbitrary for NumberEnumElement {
+        type Parameters = ();
+        type Strategy = BoxedStrategy<Self>;
+
+        fn arbitrary_with(_args: Self::Parameters) -> Self::Strategy {
+            (
+                string_strategy(),
+                prop::num::f64::NORMAL,
+                prop::option::of(string_strategy()),
+            )
+                .prop_map(|(name, value, description)| NumberEnumElement {
+                    name,
+                    value,
+                    description,
+                })
+                .boxed()
+        }
+    }
+
+    impl Arbitrary for IntegerEnumElement {
+        type Parameters = ();
+        type Strategy = BoxedStrategy<Self>;
+
+        fn arbitrary_with(_args: Self::Parameters) -> Self::Strategy {
+            (
+                string_strategy(),
+                prop::num::i64::ANY,
+                prop::option::of(string_strategy()),
+            )
+                .prop_map(|(name, value, description)| IntegerEnumElement {
+                    name,
+                    value,
+                    description,
+                })
+                .boxed()
+        }
+    }
+
+    impl Arbitrary for Resource {
+        type Parameters = ();
+        type Strategy = BoxedStrategy<Self>;
+
+        fn arbitrary_with(_args: Self::Parameters) -> Self::Strategy {
+            (
+                any::<ElementId>(),
+                prop::option::of(string_strategy()),
+                vec_strategy::<InputProperty>(),
+                vec_strategy::<OutputProperty>(),
+            )
+                .prop_map(
+                    |(element_id, description, input_properties, output_properties)| Resource {
+                        element_id,
+                        description,
+                        input_properties,
+                        output_properties,
+                    },
+                )
+                .boxed()
+        }
+    }
+
+    impl Arbitrary for Function {
+        type Parameters = ();
+        type Strategy = BoxedStrategy<Self>;
+
+        fn arbitrary_with(_args: Self::Parameters) -> Self::Strategy {
+            (
+                any::<ElementId>(),
+                prop::option::of(string_strategy()),
+                vec_strategy::<InputProperty>(),
+                vec_strategy::<OutputProperty>(),
+            )
+                .prop_map(
+                    |(element_id, description, input_properties, output_properties)| Function {
+                        element_id,
+                        description,
+                        input_properties,
+                        output_properties,
+                    },
+                )
+                .boxed()
+        }
+    }
 }

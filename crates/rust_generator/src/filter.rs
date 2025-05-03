@@ -1,4 +1,4 @@
-use crate::model::{ElementId, GlobalType, InputProperty, OutputProperty, Package, Ref, Type};
+use crate::model::{ElementId, GlobalTypeValue, InputProperty, OutputProperty, Package, Ref, Type};
 use std::collections::{BTreeMap, HashSet};
 use std::ops::Deref;
 use std::rc::Rc;
@@ -56,15 +56,15 @@ fn collect_type(package: &Package, r#type: &Type, used_types: &mut HashSet<Eleme
             if used_types.insert(id.clone()) {
                 // Recursively collect types used by this type
                 if let Some(t) = package.types.get(id) {
-                    match t.deref() {
-                        GlobalType::Object(_, props) => {
+                    match &t.deref().value {
+                        GlobalTypeValue::Object(_, props) => {
                             for prop in props {
                                 collect_type(package, &prop.r#type, used_types);
                             }
                         }
-                        GlobalType::IntegerEnum(_, _) => {}
-                        GlobalType::StringEnum(_, _) => {}
-                        GlobalType::NumberEnum(_, _) => {}
+                        GlobalTypeValue::IntegerEnum(_, _) => {}
+                        GlobalTypeValue::StringEnum(_, _) => {}
+                        GlobalTypeValue::NumberEnum(_, _) => {}
                     }
                 }
             }

@@ -1,5 +1,5 @@
 use crate::model::{
-    ElementId, GlobalType, GlobalTypeProperty, InputProperty, IntegerEnumElement,
+    ElementId, GlobalType, GlobalTypeProperty, GlobalTypeValue, InputProperty, IntegerEnumElement,
     NumberEnumElement, OutputProperty, Ref, StringEnumElement,
 };
 use crate::utils::sanitize_identifier;
@@ -396,7 +396,8 @@ pub(crate) fn to_model(package: &Package) -> Result<crate::model::Package> {
         .iter()
         .map(|(type_name, type_)| {
             //TODO: Enums, support non objects
-            convert_to_global_type(type_name, &type_)
+            let r = convert_to_global_type(type_name, &type_)?;
+            Ok((r.element_id.clone(), r))
         })
         .collect::<Result<BTreeMap<_, _>>>()
         .context("Cannot handle types")?;
@@ -411,17 +412,14 @@ pub(crate) fn to_model(package: &Package) -> Result<crate::model::Package> {
     ))
 }
 
-fn convert_to_global_type(
-    type_name: &String,
-    type_: &&ComplexType,
-) -> Result<(ElementId, GlobalType)> {
+fn convert_to_global_type(type_name: &String, type_: &&ComplexType) -> Result<GlobalType> {
     let element_id = ElementId::new(type_name)?;
     let tpe = match &type_.object_type {
         ObjectType { r#type: None, .. } => Err(anyhow!("Unknown complex type")),
         ObjectType {
             r#type: Some(TypeEnum::Object),
             ..
-        } => Ok(GlobalType::Object(
+        } => Ok(GlobalTypeValue::Object(
             type_.object_type.description.clone(),
             convert_output_property_object_type(&element_id, &type_.object_type)?
                 .iter()
@@ -497,14 +495,18 @@ fn convert_to_global_type(
         } => Err(anyhow!("Invalid string without enum")),
     }
     .context(format!("Cannot convert type [{type_name}]"))?;
-    Ok((element_id, tpe))
+    Ok(GlobalType {
+        element_id: element_id.clone(),
+        value: tpe,
+    })
+    // Ok((element_id, tpe))
 }
 
 fn create_number_integer_enum(
     description: &Option<String>,
     enum_values: &[IntegerEnumValue],
-) -> GlobalType {
-    GlobalType::NumberEnum(
+) -> GlobalTypeValue {
+    GlobalTypeValue::NumberEnum(
         description.clone(),
         enum_values
             .iter()
@@ -517,8 +519,11 @@ fn create_number_integer_enum(
     )
 }
 
-fn create_string_enum(description: &Option<String>, enum_values: &[StringEnumValue]) -> GlobalType {
-    GlobalType::StringEnum(
+fn create_string_enum(
+    description: &Option<String>,
+    enum_values: &[StringEnumValue],
+) -> GlobalTypeValue {
+    GlobalTypeValue::StringEnum(
         description.clone(),
         enum_values
             .iter()
@@ -551,8 +556,8 @@ fn create_string_enum(description: &Option<String>, enum_values: &[StringEnumVal
 fn create_integer_enum(
     description: &Option<String>,
     enum_values: &[IntegerEnumValue],
-) -> GlobalType {
-    GlobalType::IntegerEnum(
+) -> GlobalTypeValue {
+    GlobalTypeValue::IntegerEnum(
         description.clone(),
         enum_values
             .iter()
@@ -565,8 +570,11 @@ fn create_integer_enum(
     )
 }
 
-fn create_number_enum(description: &Option<String>, enum_values: &[NumberEnumValue]) -> GlobalType {
-    GlobalType::NumberEnum(
+fn create_number_enum(
+    description: &Option<String>,
+    enum_values: &[NumberEnumValue],
+) -> GlobalTypeValue {
+    GlobalTypeValue::NumberEnum(
         description.clone(),
         enum_values
             .iter()

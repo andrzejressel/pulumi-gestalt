@@ -8,9 +8,9 @@ message Package {
   optional string display_name = 2;
   optional string plugin_download_url = 3;
   string version = 4;
-  map<string, Resource> resources = 5;
-  map<string, Function> functions = 6;
-  map<string, GlobalType> types = 7;
+  repeated Resource resources = 5;
+  repeated Function functions = 6;
+  repeated GlobalType types = 7;
 }
 
 // Resource definition

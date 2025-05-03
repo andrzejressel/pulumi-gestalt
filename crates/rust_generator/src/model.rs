@@ -3,10 +3,6 @@ use anyhow::{Context, Result};
 use convert_case::Case;
 use convert_case::Case::UpperCamel;
 use convert_case::Casing;
-#[cfg(test)]
-use proptest::prelude::*;
-#[cfg(test)]
-use proptest_derive::Arbitrary;
 use std::collections::{BTreeMap, HashMap};
 use std::rc::Rc;
 
@@ -135,8 +131,13 @@ impl GlobalTypeProperty {
 }
 
 #[derive(Debug, PartialEq, PartialOrd)]
-#[cfg_attr(test, derive(Arbitrary))]
-pub(crate) enum GlobalType {
+pub(crate) struct GlobalType {
+    pub(crate) element_id: ElementId,
+    pub(crate) value: GlobalTypeValue,
+}
+
+#[derive(Debug, PartialEq, PartialOrd)]
+pub(crate) enum GlobalTypeValue {
     Object(Option<String>, Vec<GlobalTypeProperty>),
     StringEnum(Option<String>, Vec<StringEnumElement>),
     NumberEnum(Option<String>, Vec<NumberEnumElement>),
@@ -144,7 +145,6 @@ pub(crate) enum GlobalType {
 }
 
 #[derive(Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
-#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) struct StringEnumElement {
     pub(crate) name: String,
     pub(crate) value: Option<String>,
@@ -152,7 +152,6 @@ pub(crate) struct StringEnumElement {
 }
 
 #[derive(Debug, PartialEq, PartialOrd)]
-#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) struct NumberEnumElement {
     pub(crate) name: String,
     pub(crate) value: f64,
@@ -160,7 +159,6 @@ pub(crate) struct NumberEnumElement {
 }
 
 #[derive(Debug, PartialEq, PartialOrd)]
-#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) struct IntegerEnumElement {
     pub(crate) name: String,
     pub(crate) value: i64,
@@ -168,7 +166,6 @@ pub(crate) struct IntegerEnumElement {
 }
 
 #[derive(Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
-#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) struct Resource {
     pub(crate) element_id: ElementId,
     // pub(crate) name: String,
@@ -178,7 +175,6 @@ pub(crate) struct Resource {
 }
 
 #[derive(Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
-#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) struct Function {
     pub(crate) element_id: ElementId,
     // pub(crate) name: String,
@@ -240,9 +236,10 @@ impl Package {
             function_name_map.insert(name.clone(), rc.clone());
         }
 
-        let mut all_types = BTreeMap::new();
+        let mut new_types = BTreeMap::new();
         for (element_id, t) in types {
-            all_types.insert(element_id.clone(), Rc::new(t));
+            let rc = Rc::new(t);
+            new_types.insert(element_id.clone(), rc.clone());
         }
 
         Self {
@@ -252,10 +249,10 @@ impl Package {
             plugin_download_url,
             resources: new_resources,
             functions: new_function,
-            types: all_types.clone(),
+            types: new_types.clone(),
             resource_name_map,
             function_name_map,
-            all_types,
+            all_types: new_types,
         }
     }
 }

@@ -1,4 +1,4 @@
-use crate::model::{ElementId, GlobalType, Type};
+use crate::model::{ElementId, GlobalTypeValue, Type};
 use convert_case::{Case, Casing};
 use handlebars::Handlebars;
 use serde::Serialize;
@@ -87,8 +87,8 @@ enum GenerateResource {
 fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> GenerateResource {
     let resource = package.types.get(element_id).unwrap();
     let depth = element_id.namespace.len() + 1;
-    match resource.deref() {
-        GlobalType::Object(description, properties) => {
+    match &resource.deref().value {
+        GlobalTypeValue::Object(description, properties) => {
             let ref_type = RefType {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
@@ -116,7 +116,7 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
             };
             GenerateResource::RealType(ref_type)
         }
-        GlobalType::StringEnum(description, enum_values) => {
+        GlobalTypeValue::StringEnum(description, enum_values) => {
             let enum_type = StringEnum {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
@@ -136,7 +136,7 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
             };
             GenerateResource::StringEnum(enum_type)
         }
-        GlobalType::NumberEnum(description, enum_values) => {
+        GlobalTypeValue::NumberEnum(description, enum_values) => {
             let enum_type = NumberEnum {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
@@ -156,7 +156,7 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
             };
             GenerateResource::NumberEnum(enum_type)
         }
-        GlobalType::IntegerEnum(description, enum_values) => {
+        GlobalTypeValue::IntegerEnum(description, enum_values) => {
             let enum_type = IntegerEnum {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),

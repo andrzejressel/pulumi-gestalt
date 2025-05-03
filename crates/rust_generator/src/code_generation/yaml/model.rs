@@ -2,7 +2,7 @@ use crate::code_generation::yaml::model::Variable::FnInvokeVariable;
 use crate::code_generation::yaml::yaml_model::{
     YamlExpression, YamlFile, YamlFnInvoke, YamlResource, YamlVariable,
 };
-use crate::model::{ElementId, GlobalType, Package, Ref, Type};
+use crate::model::{ElementId, GlobalTypeValue, Package, Ref, Type};
 use anyhow::Result;
 use anyhow::{Context, anyhow};
 use std::collections::BTreeMap;
@@ -254,11 +254,17 @@ fn map_type(
 
     let tpe = &context.all_types[element_id];
 
-    let gtp = match tpe.deref() {
-        GlobalType::Object(_, gtp) => gtp,
-        GlobalType::NumberEnum(_, _) => return Err(anyhow!("NumberEnum type is not supported")),
-        GlobalType::IntegerEnum(_, _) => return Err(anyhow!("IntegerEnum type is not supported")),
-        GlobalType::StringEnum(_, _) => return Err(anyhow!("StringEnum type is not supported")),
+    let gtp = match &tpe.deref().value {
+        GlobalTypeValue::Object(_, gtp) => gtp,
+        GlobalTypeValue::NumberEnum(_, _) => {
+            return Err(anyhow!("NumberEnum type is not supported"));
+        }
+        GlobalTypeValue::IntegerEnum(_, _) => {
+            return Err(anyhow!("IntegerEnum type is not supported"));
+        }
+        GlobalTypeValue::StringEnum(_, _) => {
+            return Err(anyhow!("StringEnum type is not supported"));
+        }
     };
 
     let mut new_properties = BTreeMap::new();

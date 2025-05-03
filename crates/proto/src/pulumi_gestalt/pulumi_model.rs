@@ -10,12 +10,12 @@ pub struct Package {
     pub plugin_download_url: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, tag = "4")]
     pub version: ::prost::alloc::string::String,
-    #[prost(map = "string, message", tag = "5")]
-    pub resources: ::std::collections::HashMap<::prost::alloc::string::String, Resource>,
-    #[prost(map = "string, message", tag = "6")]
-    pub functions: ::std::collections::HashMap<::prost::alloc::string::String, Function>,
-    #[prost(map = "string, message", tag = "7")]
-    pub types: ::std::collections::HashMap<::prost::alloc::string::String, GlobalType>,
+    #[prost(message, repeated, tag = "5")]
+    pub resources: ::prost::alloc::vec::Vec<Resource>,
+    #[prost(message, repeated, tag = "6")]
+    pub functions: ::prost::alloc::vec::Vec<Function>,
+    #[prost(message, repeated, tag = "7")]
+    pub types: ::prost::alloc::vec::Vec<GlobalType>,
 }
 /// Resource definition
 #[derive(Clone, PartialEq, ::prost::Message)]
