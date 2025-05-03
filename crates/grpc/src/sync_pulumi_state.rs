@@ -79,7 +79,6 @@ mod tests {
 
     use crate::sync_pulumi_state::PulumiStateSync;
     use crate::test_server::{MyResourceEngineServer, MyResourceMonitorServer};
-    use pulumi_gestalt_proto::IntoMini;
     use pulumi_gestalt_proto::pulumi::pulumirpc::RegisterResourceRequest;
     use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_server::ResourceMonitorServer;
 

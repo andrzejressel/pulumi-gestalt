@@ -6,13 +6,13 @@ use std::io::BufReader;
 use std::path::Path;
 
 mod code_generation;
+pub mod converter;
 mod description;
 mod filter;
-mod model;
+pub mod model;
 mod output;
 mod schema;
 mod utils;
-mod converter;
 
 pub fn generate_combined(
     schema_json: &Path,

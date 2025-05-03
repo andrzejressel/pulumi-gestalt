@@ -3,6 +3,10 @@ use anyhow::{Context, Result};
 use convert_case::Case;
 use convert_case::Case::UpperCamel;
 use convert_case::Casing;
+#[cfg(test)]
+use proptest::prelude::*;
+#[cfg(test)]
+use proptest_derive::Arbitrary;
 use std::collections::{BTreeMap, HashMap};
 use std::rc::Rc;
 
@@ -131,6 +135,7 @@ impl GlobalTypeProperty {
 }
 
 #[derive(Debug, PartialEq, PartialOrd)]
+#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) enum GlobalType {
     Object(Option<String>, Vec<GlobalTypeProperty>),
     StringEnum(Option<String>, Vec<StringEnumElement>),
@@ -139,6 +144,7 @@ pub(crate) enum GlobalType {
 }
 
 #[derive(Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
+#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) struct StringEnumElement {
     pub(crate) name: String,
     pub(crate) value: Option<String>,
@@ -146,6 +152,7 @@ pub(crate) struct StringEnumElement {
 }
 
 #[derive(Debug, PartialEq, PartialOrd)]
+#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) struct NumberEnumElement {
     pub(crate) name: String,
     pub(crate) value: f64,
@@ -153,6 +160,7 @@ pub(crate) struct NumberEnumElement {
 }
 
 #[derive(Debug, PartialEq, PartialOrd)]
+#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) struct IntegerEnumElement {
     pub(crate) name: String,
     pub(crate) value: i64,
@@ -160,6 +168,7 @@ pub(crate) struct IntegerEnumElement {
 }
 
 #[derive(Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
+#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) struct Resource {
     pub(crate) element_id: ElementId,
     // pub(crate) name: String,
@@ -169,6 +178,7 @@ pub(crate) struct Resource {
 }
 
 #[derive(Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
+#[cfg_attr(test, derive(Arbitrary))]
 pub(crate) struct Function {
     pub(crate) element_id: ElementId,
     // pub(crate) name: String,
@@ -193,7 +203,7 @@ pub(crate) struct Package {
 }
 
 impl Package {
-    pub(crate) fn new(
+    pub fn new(
         name: String,
         display_name: Option<String>,
         plugin_download_url: Option<String>,
@@ -259,7 +269,7 @@ pub(crate) enum Ref {
 }
 
 #[derive(Clone, Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
-pub(crate) struct ElementId {
+pub struct ElementId {
     pub(crate) namespace: Vec<String>,
     pub(crate) name: String,
     pub(crate) raw: String,
