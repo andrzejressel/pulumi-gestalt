@@ -10,7 +10,7 @@ use log::error;
 use prost::Message;
 use prost_types::value::Kind;
 use prost_types::{ListValue, Struct};
-use pulumi_gestalt_proto::mini::pulumirpc;
+use pulumi_gestalt_proto::pulumi::pulumirpc;
 use serde_json::{Number, Value};
 
 enum RequestType {

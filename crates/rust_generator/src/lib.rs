@@ -6,6 +6,7 @@ use std::io::BufReader;
 use std::path::Path;
 
 mod code_generation;
+mod converter;
 mod description;
 mod filter;
 mod model;

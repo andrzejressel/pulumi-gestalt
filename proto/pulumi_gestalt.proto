@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+package pulumi_model;
+
+// Main Package definition
+message Package {
+  string name = 1;
+  optional string display_name = 2;
+  optional string plugin_download_url = 3;
+  string version = 4;
+  repeated Resource resources = 5;
+  repeated Function functions = 6;
+  repeated GlobalType types = 7;
+}
+
+// Resource definition
+message Resource {
+  ElementId element_id = 1;
+  optional string description = 2;
+  repeated InputProperty input_properties = 3;
+  repeated OutputProperty output_properties = 4;
+}
+
+// Function definition
+message Function {
+  ElementId element_id = 1;
+  optional string description = 2;
+  repeated InputProperty input_properties = 3;
+  repeated OutputProperty output_properties = 4;
+}
+
+// ElementId definition
+message ElementId {
+  repeated string namespace = 1;
+  string name = 2;
+  string raw = 3;
+}
+
+// InputProperty definition
+message InputProperty {
+  string name = 1;
+  Type type = 2;
+  optional string description = 3;
+}
+
+// OutputProperty definition
+message OutputProperty {
+  string name = 1;
+  Type type = 2;
+  optional string description = 3;
+}
+
+// Type definition
+message Type {
+  oneof type_value {
+    Empty boolean = 1;
+    Empty integer = 2;
+    Empty number = 3;
+    Empty string = 4;
+    Type array_type = 5;
+    Type object_type = 6;
+    RefType ref_type = 7;
+    Type option_type = 8;
+    DiscriminatedUnion discriminated_union = 9;
+    string const_string = 10;
+  }
+}
+
+// Empty message for types that don't need additional fields
+message Empty {}
+
+// RefType definition
+message RefType {
+  oneof ref_value {
+    ElementId type_ref = 1;
+    Empty archive = 2;
+    Empty asset = 3;
+    Empty any = 4;
+  }
+}
+
+// DiscriminatedUnion definition
+message DiscriminatedUnion {
+  repeated Type types = 1;
+}
+
+message GlobalType {
+  ElementId element_id = 1;
+  GlobalTypeValue global_type_value = 2;
+}
+
+// GlobalType definition
+message GlobalTypeValue {
+  oneof value {
+    ObjectType object = 1;
+    StringEnum string_enum = 2;
+    NumberEnum number_enum = 3;
+    IntegerEnum integer_enum = 4;
+  }
+}
+
+// ObjectType definition
+message ObjectType {
+  optional string description = 1;
+  repeated GlobalTypeProperty properties = 2;
+}
+
+// StringEnum definition
+message StringEnum {
+  optional string description = 1;
+  repeated StringEnumElement elements = 2;
+}
+
+// NumberEnum definition
+message NumberEnum {
+  optional string description = 1;
+  repeated NumberEnumElement elements = 2;
+}
+
+// IntegerEnum definition
+message IntegerEnum {
+  optional string description = 1;
+  repeated IntegerEnumElement elements = 2;
+}
+
+// GlobalTypeProperty definition
+message GlobalTypeProperty {
+  string name = 1;
+  Type type = 2;
+  optional string description = 3;
+}
+
+// StringEnumElement definition
+message StringEnumElement {
+  string name = 1;
+  optional string value = 2;
+  optional string description = 3;
+}
+
+// NumberEnumElement definition
+message NumberEnumElement {
+  string name = 1;
+  double value = 2;
+  optional string description = 3;
+}
+
+// IntegerEnumElement definition
+message IntegerEnumElement {
+  string name = 1;
+  int64 value = 2;
+  optional string description = 3;
+}

@@ -1,4 +1,4 @@
-use crate::model::{ElementId, GlobalType, Package};
+use crate::model::{ElementId, GlobalTypeValue, Package};
 use crate::output::types::generate_types_code;
 use convert_case::Case::UpperCamel;
 use convert_case::{Case, Casing};
@@ -174,7 +174,7 @@ fn find_consts(package: &crate::model::Package) -> Vec<String> {
         }
     }
     for type_ in package.types.values() {
-        if let GlobalType::Object(_, obj) = type_.deref() {
+        if let GlobalTypeValue::Object(_, obj) = &type_.deref().value {
             for gtp in obj {
                 consts.extend(gtp.r#type.get_consts().clone());
             }

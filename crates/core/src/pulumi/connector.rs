@@ -1,4 +1,4 @@
-use pulumi_gestalt_proto::mini::pulumirpc::{
+use pulumi_gestalt_proto::pulumi::pulumirpc::{
     RegisterResourceOutputsRequest, RegisterResourceRequest, ResourceInvokeRequest,
 };
 

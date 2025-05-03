@@ -11,7 +11,8 @@ description = "Generated Pulumi Protobuf bindings for Pulumi Gestalt"
 all-features = true
 
 [features]
-connectivity = ["dep:tonic"]
+pulumi = ["dep:tonic"]
+pulumi_gestalt = []
 
 [dependencies]
 prost.workspace = true
