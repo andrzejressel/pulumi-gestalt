@@ -542,11 +542,6 @@ mod tests {
         .prop_map(|chars| chars.into_iter().collect::<String>())
     }
 
-    pub fn map_strategy<K: Arbitrary + Ord, V: Arbitrary>() -> impl Strategy<Value = BTreeMap<K, V>>
-    {
-        prop::collection::btree_map(any::<K>(), any::<V>(), 0..=5)
-    }
-
     pub fn vec_strategy<T: Arbitrary>() -> impl Strategy<Value = Vec<T>> {
         prop::collection::vec(any::<T>(), 0..=5)
     }
