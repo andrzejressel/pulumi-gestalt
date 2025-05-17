@@ -2,11 +2,11 @@ use crate::code_generation::yaml::model::Variable::FnInvokeVariable;
 use crate::code_generation::yaml::yaml_model::{
     YamlExpression, YamlFile, YamlFnInvoke, YamlResource, YamlVariable,
 };
-use crate::model::{ElementId, GlobalTypeValue, Package, Ref, Type};
 use anyhow::Result;
 use anyhow::{Context, anyhow};
 use std::collections::BTreeMap;
 use std::ops::Deref;
+use pulumi_gestalt_schema::model::*;
 
 pub(crate) fn yaml_to_model(yaml_file: YamlFile, package: &Package) -> Result<Example> {
     let mut resources = BTreeMap::new();

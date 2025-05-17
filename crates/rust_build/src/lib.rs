@@ -49,9 +49,10 @@
 //! ```
 
 use anyhow::{Context, Result};
-use pulumi_gestalt_generator::{extract_micro_package, generate_combined};
+use pulumi_gestalt_generator::{generate_combined, generate_rust};
 use std::path::Path;
 use std::{env, fs};
+use pulumi_gestalt_schema::{deserialize_package, extract_micro_package};
 
 /// Generates glue code for given provider, version and modules. Can be included using [`pulumi_gestalt_rust::include_provider!(provider_name)`]
 /// Modules for provider can be found in Pulumi registry on left side with (M) icon:
@@ -97,8 +98,11 @@ fn generate_from_schema_with_optional_filter(
         .to_str()
         .context(format!("Failed to convert [{:?}] to string", out_dir))?;
     let location = Path::new(out_dir).join("pulumi").join(provider_name);
+    
+    let package = deserialize_package(schema_file, modules)
+        .context("Failed to deserialize package")?;
 
-    generate_combined(schema_file, &location, modules).context("Failed to generate glue files")?;
+    generate_rust(&package, &location).context("Failed to generate glue files")?;
     println!("cargo::rerun-if-changed=build.rs");
     println!("cargo::rerun-if-changed={}", schema_file.display());
     Ok(())
@@ -130,8 +134,10 @@ fn generate_with_optional_filter(
     let file = temp_dir.path().join("schema.json");
     fs::write(&file, &schema).context("Failed to write schema")?;
 
-    generate_combined(file.as_path(), &location, modules)
-        .context("Failed to generate glue files")?;
+    let package = deserialize_package(file.as_path(), modules)
+        .context("Failed to deserialize package")?;
+    generate_rust(&package, &location).context("Failed to generate glue files")?;
+    
     println!("cargo::rerun-if-changed=build.rs");
 
     Ok(())

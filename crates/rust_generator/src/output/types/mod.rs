@@ -1,12 +1,13 @@
 mod source_code_types_code;
 
-use crate::model::Package;
 use crate::output::TreeNode;
 use crate::output::types::source_code_types_code::generate_single_type_source_file;
 use convert_case::{Case, Casing};
 use std::fs::{File, FileTimes};
 use std::io::Write;
 use std::time::SystemTime;
+use pulumi_gestalt_schema::model::Package;
+use crate::model::ElementIdExt;
 
 pub(crate) fn generate_types_code(package: &Package, result_path: &std::path::Path) {
     if package.types.is_empty() {

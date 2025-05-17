@@ -10,6 +10,23 @@ description = "Pulumi schema reader"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-pulumi_gestalt_generator.workspace = true
+serde.workspace = true
+serde_json.workspace = true
 anyhow.workspace = true
-tempfile.workspace = true
+handlebars.workspace = true
+regex.workspace = true
+convert_case.workspace = true
+serde_yaml.workspace = true
+prettyplease.workspace = true
+syn.workspace = true
+quote.workspace = true
+proc-macro2.workspace = true
+itertools.workspace = true
+askama.workspace = true
+pulumi_gestalt_rust.workspace = true
+pathdiff.workspace = true
+pulumi_gestalt_proto = { workspace = true, features = ["pulumi_gestalt"] }
+
+[dev-dependencies]
+assert_cmd.workspace = true
+proptest.workspace = true

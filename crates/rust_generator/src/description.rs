@@ -1,8 +1,8 @@
+use pulumi_gestalt_schema::model::Package;
 use crate::code_generation::generate_code_from_string;
 use crate::description::State::{
     Examples, Initial, LanguageInExamples, LanguageOutsideExamples, Shell, Yaml,
 };
-use crate::model::Package;
 
 struct DescriptionState {
     state: State,

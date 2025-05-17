@@ -1,10 +1,11 @@
-use crate::model::{ElementId, Type};
 use crate::output::get_register_interface;
 use crate::utils::access_root;
 use convert_case::{Case, Casing};
 use handlebars::Handlebars;
 use serde::Serialize;
 use serde_json::json;
+use pulumi_gestalt_schema::model::{ElementId, Package, Type};
+use crate::model::{ElementIdExt, InputPropertyExt, OutputPropertyExt, TypeExt};
 
 static TEMPLATE: &str = include_str!("function_code.rs.handlebars");
 
@@ -41,7 +42,7 @@ struct Function {
     get_version: String,
 }
 
-fn convert_function(package: &crate::model::Package, element_id: &ElementId) -> Function {
+fn convert_function(package: &Package, element_id: &ElementId) -> Function {
     let function = package.functions.get(element_id).unwrap();
     let depth = element_id.namespace.len() + 2;
     let get_version = format!("{}get_version()", access_root(depth));
@@ -93,7 +94,7 @@ fn convert_function(package: &crate::model::Package, element_id: &ElementId) -> 
 }
 
 pub(crate) fn generate_single_function_source_code(
-    package: &crate::model::Package,
+    package: &Package,
     element_id: &ElementId,
 ) -> String {
     let handlebars = Handlebars::new();

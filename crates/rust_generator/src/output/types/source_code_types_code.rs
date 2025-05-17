@@ -1,10 +1,11 @@
-use crate::model::{ElementId, GlobalTypeValue, Type};
 use convert_case::{Case, Casing};
 use handlebars::Handlebars;
 use serde::Serialize;
 use serde_json::json;
 use std::collections::BTreeSet;
 use std::ops::Deref;
+use pulumi_gestalt_schema::model::{ElementId, GlobalTypeValue, Package, Type};
+use crate::model::{ElementIdExt, GlobalTypePropertyExt, TypeExt};
 
 static TEMPLATE: &str = include_str!("types_code.rs.handlebars");
 static STRING_ENUM_TEMPLATE: &str = include_str!("types_code_string_enum.rs.handlebars");
@@ -84,7 +85,7 @@ enum GenerateResource {
     IntegerEnum(IntegerEnum),
 }
 
-fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> GenerateResource {
+fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResource {
     let resource = package.types.get(element_id).unwrap();
     let depth = element_id.namespace.len() + 1;
     match &resource.deref().value {
@@ -180,7 +181,7 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
 }
 
 pub(crate) fn generate_single_type_source_file(
-    package: &crate::model::Package,
+    package: &Package,
     element_id: &ElementId,
 ) -> String {
     let handlebars = Handlebars::new();

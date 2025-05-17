@@ -3353,6 +3353,7 @@ version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_generator",
+ "pulumi_gestalt_schema",
  "tempfile",
 ]
 
@@ -3491,8 +3492,8 @@ dependencies = [
  "prettyplease",
  "proc-macro2",
  "proptest",
- "pulumi_gestalt_proto",
  "pulumi_gestalt_rust",
+ "pulumi_gestalt_schema",
  "quote",
  "regex",
  "serde",
@@ -3654,6 +3655,39 @@ dependencies = [
  "pulumi_gestalt_proto",
  "serde_json",
  "uuid",
+]
+
+[[package]]
+name = "pulumi_gestalt_schema"
+version = "0.0.0-DEV"
+dependencies = [
+ "anyhow",
+ "askama",
+ "assert_cmd",
+ "convert_case",
+ "handlebars",
+ "itertools 0.14.0",
+ "pathdiff",
+ "prettyplease",
+ "proc-macro2",
+ "proptest",
+ "pulumi_gestalt_proto",
+ "pulumi_gestalt_rust",
+ "quote",
+ "regex",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "syn 2.0.101",
+]
+
+[[package]]
+name = "pulumi_gestalt_schema_protobuf"
+version = "0.0.0-DEV"
+dependencies = [
+ "anyhow",
+ "pulumi_gestalt_generator",
+ "tempfile",
 ]
 
 [[package]]

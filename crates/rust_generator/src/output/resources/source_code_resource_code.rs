@@ -1,9 +1,10 @@
-use crate::model::{ElementId, Type};
 use crate::output::get_register_interface;
 use crate::utils::access_root;
 use handlebars::Handlebars;
 use serde::Serialize;
 use serde_json::json;
+use pulumi_gestalt_schema::model::{ElementId, Package, Type};
+use crate::model::{ElementIdExt, InputPropertyExt, OutputPropertyExt, TypeExt};
 
 static TEMPLATE: &str = include_str!("resource_code.rs.handlebars");
 
@@ -40,7 +41,7 @@ struct Resource {
     get_version: String,
 }
 
-fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> Resource {
+fn convert_resource(package: &Package, element_id: &ElementId) -> Resource {
     let resource = package.resources.get(element_id).unwrap();
     let depth = element_id.namespace.len() + 1;
     let get_version = format!("{}get_version()", access_root(depth));
@@ -92,7 +93,7 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
 }
 
 pub(crate) fn generate_single_resource_source_code(
-    package: &crate::model::Package,
+    package: &Package,
     element_id: &ElementId,
 ) -> String {
     let handlebars = Handlebars::new();

@@ -37,6 +37,8 @@ members = [
     "crates/rust_adapter_wasm",
     "crates/rust_adapter_native",
     "crates/rust_integration",
+    "crates/schema",
+    "crates/schema_protobuf",
     "examples/raw_rust"
 ]
 
@@ -63,6 +65,8 @@ pulumi_gestalt_rust_adapter = { version = "=0.0.0-DEV", path = "crates/rust_adap
 pulumi_gestalt_rust_adapter_wasm = { version = "=0.0.0-DEV", path = "crates/rust_adapter_wasm" }
 pulumi_gestalt_rust_integration = { version = "=0.0.0-DEV", path = "crates/rust_integration" }
 pulumi_gestalt_rust_adapter_native = { version = "=0.0.0-DEV", path = "crates/rust_adapter_native" }
+pulumi_gestalt_schema = { version = "=0.0.0-DEV", path = "crates/schema" }
+pulumi_gestalt_schema_protobuf = { version = "=0.0.0-DEV", path = "crates/schema_protobuf" }
 changelog_lib = { version = "=0.0.0-DEV", path = "changelog_lib" }
 
 anyhow = "1.0.82"
