@@ -109,4 +109,3 @@ pulumi_gestalt_proto = { workspace = true, features = ["pulumi_gestalt"] }
 [dev-dependencies]
 assert_cmd.workspace = true
 proptest.workspace = true
-proptest-derive.workspace = true
