@@ -1,14 +1,14 @@
+use crate::model::{ElementIdExt, TypeExt};
 use crate::output::types::generate_types_code;
 use convert_case::Case::UpperCamel;
 use convert_case::{Case, Casing};
 use itertools::Itertools;
+use pulumi_gestalt_schema::model::{ElementId, GlobalTypeValue, Package};
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs::{File, FileTimes};
 use std::io::Write;
 use std::ops::Deref;
 use std::time::SystemTime;
-use pulumi_gestalt_schema::model::{ElementId, GlobalTypeValue, Package};
-use crate::model::{ElementIdExt, TypeExt};
 
 pub(crate) mod functions;
 mod main;

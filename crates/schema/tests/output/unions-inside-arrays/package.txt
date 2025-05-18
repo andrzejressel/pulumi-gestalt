@@ -1,0 +1,234 @@
+Package {
+    name: "example",
+    display_name: None,
+    plugin_download_url: None,
+    version: "1.0.0",
+    resources: {
+        ElementId {
+            namespace: [],
+            name: "ExampleServer",
+            raw: "example:index:ExampleServer",
+        }: Resource {
+            element_id: ElementId {
+                namespace: [],
+                name: "ExampleServer",
+                raw: "example:index:ExampleServer",
+            },
+            description: None,
+            input_properties: [
+                InputProperty {
+                    name: "propertiesCollection",
+                    type: Option(
+                        Array(
+                            DiscriminatedUnion(
+                                [
+                                    Ref(
+                                        Type(
+                                            ElementId {
+                                                namespace: [],
+                                                name: "ServerPropertiesForReplica",
+                                                raw: "example:index:ServerPropertiesForReplica",
+                                            },
+                                        ),
+                                    ),
+                                    Ref(
+                                        Type(
+                                            ElementId {
+                                                namespace: [],
+                                                name: "ServerPropertiesForRestore",
+                                                raw: "example:index:ServerPropertiesForRestore",
+                                            },
+                                        ),
+                                    ),
+                                ],
+                            ),
+                        ),
+                    ),
+                    description: None,
+                },
+            ],
+            output_properties: [
+                OutputProperty {
+                    name: "name",
+                    type: Option(
+                        String,
+                    ),
+                    description: None,
+                },
+            ],
+        },
+    },
+    functions: {},
+    types: {
+        ElementId {
+            namespace: [],
+            name: "ServerPropertiesForReplica",
+            raw: "example:index:ServerPropertiesForReplica",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "ServerPropertiesForReplica",
+                raw: "example:index:ServerPropertiesForReplica",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "createMode",
+                        type: ConstString(
+                            "Replica",
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "version",
+                        type: Option(
+                            String,
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "ServerPropertiesForRestore",
+            raw: "example:index:ServerPropertiesForRestore",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "ServerPropertiesForRestore",
+                raw: "example:index:ServerPropertiesForRestore",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "createMode",
+                        type: ConstString(
+                            "PointInTimeRestore",
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "restorePointInTime",
+                        type: String,
+                        description: None,
+                    },
+                ],
+            ),
+        },
+    },
+    resource_name_map: {
+        "example:ExampleServer": Resource {
+            element_id: ElementId {
+                namespace: [],
+                name: "ExampleServer",
+                raw: "example:index:ExampleServer",
+            },
+            description: None,
+            input_properties: [
+                InputProperty {
+                    name: "propertiesCollection",
+                    type: Option(
+                        Array(
+                            DiscriminatedUnion(
+                                [
+                                    Ref(
+                                        Type(
+                                            ElementId {
+                                                namespace: [],
+                                                name: "ServerPropertiesForReplica",
+                                                raw: "example:index:ServerPropertiesForReplica",
+                                            },
+                                        ),
+                                    ),
+                                    Ref(
+                                        Type(
+                                            ElementId {
+                                                namespace: [],
+                                                name: "ServerPropertiesForRestore",
+                                                raw: "example:index:ServerPropertiesForRestore",
+                                            },
+                                        ),
+                                    ),
+                                ],
+                            ),
+                        ),
+                    ),
+                    description: None,
+                },
+            ],
+            output_properties: [
+                OutputProperty {
+                    name: "name",
+                    type: Option(
+                        String,
+                    ),
+                    description: None,
+                },
+            ],
+        },
+    },
+    function_name_map: {},
+    all_types: {
+        ElementId {
+            namespace: [],
+            name: "ServerPropertiesForReplica",
+            raw: "example:index:ServerPropertiesForReplica",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "ServerPropertiesForReplica",
+                raw: "example:index:ServerPropertiesForReplica",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "createMode",
+                        type: ConstString(
+                            "Replica",
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "version",
+                        type: Option(
+                            String,
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "ServerPropertiesForRestore",
+            raw: "example:index:ServerPropertiesForRestore",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "ServerPropertiesForRestore",
+                raw: "example:index:ServerPropertiesForRestore",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "createMode",
+                        type: ConstString(
+                            "PointInTimeRestore",
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "restorePointInTime",
+                        type: String,
+                        description: None,
+                    },
+                ],
+            ),
+        },
+    },
+}

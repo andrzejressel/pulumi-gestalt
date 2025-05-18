@@ -1,0 +1,1012 @@
+Package {
+    name: "example",
+    display_name: None,
+    plugin_download_url: None,
+    version: "0.0.1",
+    resources: {
+        ElementId {
+            namespace: [],
+            name: "Foo",
+            raw: "example:index:Foo",
+        }: Resource {
+            element_id: ElementId {
+                namespace: [],
+                name: "Foo",
+                raw: "example:index:Foo",
+            },
+            description: Some(
+                "test new feature with resoruces",
+            ),
+            input_properties: [
+                InputProperty {
+                    name: "argument",
+                    type: Option(
+                        String,
+                    ),
+                    description: None,
+                },
+                InputProperty {
+                    name: "backupKubeClientSettings",
+                    type: Ref(
+                        Type(
+                            ElementId {
+                                namespace: [],
+                                name: "KubeClientSettings",
+                                raw: "example:index:KubeClientSettings",
+                            },
+                        ),
+                    ),
+                    description: Some(
+                        "Options for tuning the Kubernetes client used by a Provider.",
+                    ),
+                },
+                InputProperty {
+                    name: "kubeClientSettings",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "KubeClientSettings",
+                                    raw: "example:index:KubeClientSettings",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: Some(
+                        "Options for tuning the Kubernetes client used by a Provider.",
+                    ),
+                },
+                InputProperty {
+                    name: "settings",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "LayeredType",
+                                    raw: "example:index:LayeredType",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: Some(
+                        "describing things",
+                    ),
+                },
+            ],
+            output_properties: [
+                OutputProperty {
+                    name: "defaultKubeClientSettings",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "KubeClientSettings",
+                                    raw: "example:index:KubeClientSettings",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: Some(
+                        "A test for plain types",
+                    ),
+                },
+            ],
+        },
+        ElementId {
+            namespace: [],
+            name: "moduleTest",
+            raw: "example:index:moduleTest",
+        }: Resource {
+            element_id: ElementId {
+                namespace: [],
+                name: "moduleTest",
+                raw: "example:index:moduleTest",
+            },
+            description: None,
+            input_properties: [
+                InputProperty {
+                    name: "mod1",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [
+                                        "mod1",
+                                    ],
+                                    name: "typ",
+                                    raw: "example:mod1:typ",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: None,
+                },
+                InputProperty {
+                    name: "val",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "typ",
+                                    raw: "example:index:typ",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: None,
+                },
+            ],
+            output_properties: [],
+        },
+    },
+    functions: {
+        ElementId {
+            namespace: [],
+            name: "funcWithAllOptionalInputs",
+            raw: "mypkg::funcWithAllOptionalInputs",
+        }: Function {
+            element_id: ElementId {
+                namespace: [],
+                name: "funcWithAllOptionalInputs",
+                raw: "mypkg::funcWithAllOptionalInputs",
+            },
+            description: Some(
+                "Check codegen of functions with all optional inputs.",
+            ),
+            input_properties: [
+                InputProperty {
+                    name: "a",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "HelmReleaseSettings",
+                                    raw: "example:index:HelmReleaseSettings",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: Some(
+                        "Property A",
+                    ),
+                },
+                InputProperty {
+                    name: "b",
+                    type: Option(
+                        String,
+                    ),
+                    description: Some(
+                        "Property B",
+                    ),
+                },
+            ],
+            output_properties: [
+                OutputProperty {
+                    name: "r",
+                    type: String,
+                    description: None,
+                },
+            ],
+        },
+    },
+    types: {
+        ElementId {
+            namespace: [],
+            name: "HelmReleaseSettings",
+            raw: "example:index:HelmReleaseSettings",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "HelmReleaseSettings",
+                raw: "example:index:HelmReleaseSettings",
+            },
+            value: Object(
+                Some(
+                    "BETA FEATURE - Options to configure the Helm Release resource.",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "driver",
+                        type: Option(
+                            String,
+                        ),
+                        description: Some(
+                            "The backend storage driver for Helm. Values are: configmap, secret, memory, sql.",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "pluginsPath",
+                        type: Option(
+                            String,
+                        ),
+                        description: Some(
+                            "The path to the helm plugins directory.",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "requiredArg",
+                        type: String,
+                        description: Some(
+                            "to test required args",
+                        ),
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "KubeClientSettings",
+            raw: "example:index:KubeClientSettings",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "KubeClientSettings",
+                raw: "example:index:KubeClientSettings",
+            },
+            value: Object(
+                Some(
+                    "Options for tuning the Kubernetes client used by a Provider.",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "burst",
+                        type: Option(
+                            Integer,
+                        ),
+                        description: Some(
+                            "Maximum burst for throttle. Default value is 10.",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "qps",
+                        type: Option(
+                            Number,
+                        ),
+                        description: Some(
+                            "Maximum queries per second (QPS) to the API server from this client. Default value is 5.",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "recTest",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [],
+                                        name: "KubeClientSettings",
+                                        raw: "example:index:KubeClientSettings",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "LayeredType",
+            raw: "example:index:LayeredType",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "LayeredType",
+                raw: "example:index:LayeredType",
+            },
+            value: Object(
+                Some(
+                    "Make sure that defaults propagate through types",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "answer",
+                        type: Option(
+                            Number,
+                        ),
+                        description: Some(
+                            "The answer to the question",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "other",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "HelmReleaseSettings",
+                                    raw: "example:index:HelmReleaseSettings",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "plainOther",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [],
+                                        name: "HelmReleaseSettings",
+                                        raw: "example:index:HelmReleaseSettings",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: Some(
+                            "Test how plain types interact",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "question",
+                        type: Option(
+                            String,
+                        ),
+                        description: Some(
+                            "The question already answered",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "recursive",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [],
+                                        name: "LayeredType",
+                                        raw: "example:index:LayeredType",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "thinker",
+                        type: String,
+                        description: Some(
+                            "To ask and answer",
+                        ),
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "typ",
+            raw: "example:index:typ",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "typ",
+                raw: "example:index:typ",
+            },
+            value: Object(
+                Some(
+                    "A test for namespaces (mod main)",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "mod1",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [
+                                            "mod1",
+                                        ],
+                                        name: "typ",
+                                        raw: "example:mod1:typ",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "mod2",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [
+                                            "mod2",
+                                        ],
+                                        name: "typ",
+                                        raw: "example:mod2:typ",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "val",
+                        type: Option(
+                            String,
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [
+                "mod1",
+            ],
+            name: "typ",
+            raw: "example:mod1:typ",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [
+                    "mod1",
+                ],
+                name: "typ",
+                raw: "example:mod1:typ",
+            },
+            value: Object(
+                Some(
+                    "A test for namespaces (mod 1)",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "val",
+                        type: Option(
+                            String,
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [
+                "mod2",
+            ],
+            name: "typ",
+            raw: "example:mod2:typ",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [
+                    "mod2",
+                ],
+                name: "typ",
+                raw: "example:mod2:typ",
+            },
+            value: Object(
+                Some(
+                    "A test for namespaces (mod 2)",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "mod1",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [
+                                            "mod1",
+                                        ],
+                                        name: "typ",
+                                        raw: "example:mod1:typ",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "val",
+                        type: Option(
+                            String,
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+    },
+    resource_name_map: {
+        "example:moduleTest": Resource {
+            element_id: ElementId {
+                namespace: [],
+                name: "moduleTest",
+                raw: "example:index:moduleTest",
+            },
+            description: None,
+            input_properties: [
+                InputProperty {
+                    name: "mod1",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [
+                                        "mod1",
+                                    ],
+                                    name: "typ",
+                                    raw: "example:mod1:typ",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: None,
+                },
+                InputProperty {
+                    name: "val",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "typ",
+                                    raw: "example:index:typ",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: None,
+                },
+            ],
+            output_properties: [],
+        },
+        "example:Foo": Resource {
+            element_id: ElementId {
+                namespace: [],
+                name: "Foo",
+                raw: "example:index:Foo",
+            },
+            description: Some(
+                "test new feature with resoruces",
+            ),
+            input_properties: [
+                InputProperty {
+                    name: "argument",
+                    type: Option(
+                        String,
+                    ),
+                    description: None,
+                },
+                InputProperty {
+                    name: "backupKubeClientSettings",
+                    type: Ref(
+                        Type(
+                            ElementId {
+                                namespace: [],
+                                name: "KubeClientSettings",
+                                raw: "example:index:KubeClientSettings",
+                            },
+                        ),
+                    ),
+                    description: Some(
+                        "Options for tuning the Kubernetes client used by a Provider.",
+                    ),
+                },
+                InputProperty {
+                    name: "kubeClientSettings",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "KubeClientSettings",
+                                    raw: "example:index:KubeClientSettings",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: Some(
+                        "Options for tuning the Kubernetes client used by a Provider.",
+                    ),
+                },
+                InputProperty {
+                    name: "settings",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "LayeredType",
+                                    raw: "example:index:LayeredType",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: Some(
+                        "describing things",
+                    ),
+                },
+            ],
+            output_properties: [
+                OutputProperty {
+                    name: "defaultKubeClientSettings",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "KubeClientSettings",
+                                    raw: "example:index:KubeClientSettings",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: Some(
+                        "A test for plain types",
+                    ),
+                },
+            ],
+        },
+    },
+    function_name_map: {
+        "example:funcWithAllOptionalInputs": Function {
+            element_id: ElementId {
+                namespace: [],
+                name: "funcWithAllOptionalInputs",
+                raw: "mypkg::funcWithAllOptionalInputs",
+            },
+            description: Some(
+                "Check codegen of functions with all optional inputs.",
+            ),
+            input_properties: [
+                InputProperty {
+                    name: "a",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "HelmReleaseSettings",
+                                    raw: "example:index:HelmReleaseSettings",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: Some(
+                        "Property A",
+                    ),
+                },
+                InputProperty {
+                    name: "b",
+                    type: Option(
+                        String,
+                    ),
+                    description: Some(
+                        "Property B",
+                    ),
+                },
+            ],
+            output_properties: [
+                OutputProperty {
+                    name: "r",
+                    type: String,
+                    description: None,
+                },
+            ],
+        },
+    },
+    all_types: {
+        ElementId {
+            namespace: [],
+            name: "HelmReleaseSettings",
+            raw: "example:index:HelmReleaseSettings",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "HelmReleaseSettings",
+                raw: "example:index:HelmReleaseSettings",
+            },
+            value: Object(
+                Some(
+                    "BETA FEATURE - Options to configure the Helm Release resource.",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "driver",
+                        type: Option(
+                            String,
+                        ),
+                        description: Some(
+                            "The backend storage driver for Helm. Values are: configmap, secret, memory, sql.",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "pluginsPath",
+                        type: Option(
+                            String,
+                        ),
+                        description: Some(
+                            "The path to the helm plugins directory.",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "requiredArg",
+                        type: String,
+                        description: Some(
+                            "to test required args",
+                        ),
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "KubeClientSettings",
+            raw: "example:index:KubeClientSettings",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "KubeClientSettings",
+                raw: "example:index:KubeClientSettings",
+            },
+            value: Object(
+                Some(
+                    "Options for tuning the Kubernetes client used by a Provider.",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "burst",
+                        type: Option(
+                            Integer,
+                        ),
+                        description: Some(
+                            "Maximum burst for throttle. Default value is 10.",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "qps",
+                        type: Option(
+                            Number,
+                        ),
+                        description: Some(
+                            "Maximum queries per second (QPS) to the API server from this client. Default value is 5.",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "recTest",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [],
+                                        name: "KubeClientSettings",
+                                        raw: "example:index:KubeClientSettings",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "LayeredType",
+            raw: "example:index:LayeredType",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "LayeredType",
+                raw: "example:index:LayeredType",
+            },
+            value: Object(
+                Some(
+                    "Make sure that defaults propagate through types",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "answer",
+                        type: Option(
+                            Number,
+                        ),
+                        description: Some(
+                            "The answer to the question",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "other",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "HelmReleaseSettings",
+                                    raw: "example:index:HelmReleaseSettings",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "plainOther",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [],
+                                        name: "HelmReleaseSettings",
+                                        raw: "example:index:HelmReleaseSettings",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: Some(
+                            "Test how plain types interact",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "question",
+                        type: Option(
+                            String,
+                        ),
+                        description: Some(
+                            "The question already answered",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "recursive",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [],
+                                        name: "LayeredType",
+                                        raw: "example:index:LayeredType",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "thinker",
+                        type: String,
+                        description: Some(
+                            "To ask and answer",
+                        ),
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "typ",
+            raw: "example:index:typ",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "typ",
+                raw: "example:index:typ",
+            },
+            value: Object(
+                Some(
+                    "A test for namespaces (mod main)",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "mod1",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [
+                                            "mod1",
+                                        ],
+                                        name: "typ",
+                                        raw: "example:mod1:typ",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "mod2",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [
+                                            "mod2",
+                                        ],
+                                        name: "typ",
+                                        raw: "example:mod2:typ",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "val",
+                        type: Option(
+                            String,
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [
+                "mod1",
+            ],
+            name: "typ",
+            raw: "example:mod1:typ",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [
+                    "mod1",
+                ],
+                name: "typ",
+                raw: "example:mod1:typ",
+            },
+            value: Object(
+                Some(
+                    "A test for namespaces (mod 1)",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "val",
+                        type: Option(
+                            String,
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [
+                "mod2",
+            ],
+            name: "typ",
+            raw: "example:mod2:typ",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [
+                    "mod2",
+                ],
+                name: "typ",
+                raw: "example:mod2:typ",
+            },
+            value: Object(
+                Some(
+                    "A test for namespaces (mod 2)",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "mod1",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [
+                                            "mod1",
+                                        ],
+                                        name: "typ",
+                                        raw: "example:mod1:typ",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "val",
+                        type: Option(
+                            String,
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+    },
+}

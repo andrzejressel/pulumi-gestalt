@@ -1,7 +1,7 @@
 use anyhow::Context;
 use askama::Template;
-use serde::Serialize;
 use pulumi_gestalt_schema::model::Package;
+use serde::Serialize;
 
 #[derive(Template)]
 #[template(path = "main.rs.jinja")]

@@ -1,0 +1,398 @@
+Package {
+    name: "example",
+    display_name: None,
+    plugin_download_url: None,
+    version: "0.0.1",
+    resources: {},
+    functions: {},
+    types: {
+        ElementId {
+            namespace: [],
+            name: "AcyclicReferent",
+            raw: "example::AcyclicReferent",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "AcyclicReferent",
+                raw: "example::AcyclicReferent",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "bar",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "IndirectCycleS",
+                                    raw: "example::IndirectCycleS",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "baz",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "IndirectCycleT",
+                                    raw: "example::IndirectCycleT",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "foo4",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "DirectCycle",
+                                    raw: "example::DirectCycle",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "AcyclicS",
+            raw: "example::AcyclicS",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "AcyclicS",
+                raw: "example::AcyclicS",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "foo5",
+                        type: String,
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "AcyclicT",
+            raw: "example::AcyclicT",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "AcyclicT",
+                raw: "example::AcyclicT",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "foo6",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "AcyclicS",
+                                    raw: "example::AcyclicS",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "DirectCycle",
+            raw: "example::DirectCycle",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "DirectCycle",
+                raw: "example::DirectCycle",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "foo",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "DirectCycle",
+                                    raw: "example::DirectCycle",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "IndirectCycleS",
+            raw: "example::IndirectCycleS",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "IndirectCycleS",
+                raw: "example::IndirectCycleS",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "foo2",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "IndirectCycleT",
+                                    raw: "example::IndirectCycleT",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "IndirectCycleT",
+            raw: "example::IndirectCycleT",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "IndirectCycleT",
+                raw: "example::IndirectCycleT",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "foo3",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "IndirectCycleS",
+                                    raw: "example::IndirectCycleS",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+    },
+    resource_name_map: {},
+    function_name_map: {},
+    all_types: {
+        ElementId {
+            namespace: [],
+            name: "AcyclicReferent",
+            raw: "example::AcyclicReferent",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "AcyclicReferent",
+                raw: "example::AcyclicReferent",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "bar",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "IndirectCycleS",
+                                    raw: "example::IndirectCycleS",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "baz",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "IndirectCycleT",
+                                    raw: "example::IndirectCycleT",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                    GlobalTypeProperty {
+                        name: "foo4",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "DirectCycle",
+                                    raw: "example::DirectCycle",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "AcyclicS",
+            raw: "example::AcyclicS",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "AcyclicS",
+                raw: "example::AcyclicS",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "foo5",
+                        type: String,
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "AcyclicT",
+            raw: "example::AcyclicT",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "AcyclicT",
+                raw: "example::AcyclicT",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "foo6",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "AcyclicS",
+                                    raw: "example::AcyclicS",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "DirectCycle",
+            raw: "example::DirectCycle",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "DirectCycle",
+                raw: "example::DirectCycle",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "foo",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "DirectCycle",
+                                    raw: "example::DirectCycle",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "IndirectCycleS",
+            raw: "example::IndirectCycleS",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "IndirectCycleS",
+                raw: "example::IndirectCycleS",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "foo2",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "IndirectCycleT",
+                                    raw: "example::IndirectCycleT",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [],
+            name: "IndirectCycleT",
+            raw: "example::IndirectCycleT",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [],
+                name: "IndirectCycleT",
+                raw: "example::IndirectCycleT",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "foo3",
+                        type: Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [],
+                                    name: "IndirectCycleS",
+                                    raw: "example::IndirectCycleS",
+                                },
+                            ),
+                        ),
+                        description: None,
+                    },
+                ],
+            ),
+        },
+    },
+}

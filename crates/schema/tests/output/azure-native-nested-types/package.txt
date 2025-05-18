@@ -1,0 +1,332 @@
+Package {
+    name: "azure-native",
+    display_name: Some(
+        "Azure Native",
+    ),
+    plugin_download_url: None,
+    version: "0.0.1",
+    resources: {
+        ElementId {
+            namespace: [
+                "documentdb",
+            ],
+            name: "SqlResourceSqlContainer",
+            raw: "azure-native:documentdb:SqlResourceSqlContainer",
+        }: Resource {
+            element_id: ElementId {
+                namespace: [
+                    "documentdb",
+                ],
+                name: "SqlResourceSqlContainer",
+                raw: "azure-native:documentdb:SqlResourceSqlContainer",
+            },
+            description: Some(
+                "An Azure Cosmos DB container.\nAPI Version: 2021-03-15.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n### CosmosDBSqlContainerCreateUpdate\n```csharp\nusing Pulumi;\nusing AzureNative = Pulumi.AzureNative;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var sqlResourceSqlContainer = new AzureNative.DocumentDB.SqlResourceSqlContainer(\"sqlResourceSqlContainer\", new AzureNative.DocumentDB.SqlResourceSqlContainerArgs\n        {\n            AccountName = \"ddb1\",\n            ContainerName = \"containerName\",\n            DatabaseName = \"databaseName\",\n            Location = \"West US\",\n            Options = ,\n            Resource = new AzureNative.DocumentDB.Inputs.SqlContainerResourceArgs\n            {\n                ConflictResolutionPolicy = new AzureNative.DocumentDB.Inputs.ConflictResolutionPolicyArgs\n                {\n                    ConflictResolutionPath = \"/path\",\n                    Mode = \"LastWriterWins\",\n                },\n                DefaultTtl = 100,\n                Id = \"containerName\",\n                IndexingPolicy = new AzureNative.DocumentDB.Inputs.IndexingPolicyArgs\n                {\n                    Automatic = true,\n                    ExcludedPaths = {},\n                    IncludedPaths = \n                    {\n                        new AzureNative.DocumentDB.Inputs.IncludedPathArgs\n                        {\n                            Indexes = \n                            {\n                                new AzureNative.DocumentDB.Inputs.IndexesArgs\n                                {\n                                    DataType = \"String\",\n                                    Kind = \"Range\",\n                                    Precision = -1,\n                                },\n                                new AzureNative.DocumentDB.Inputs.IndexesArgs\n                                {\n                                    DataType = \"Number\",\n                                    Kind = \"Range\",\n                                    Precision = -1,\n                                },\n                            },\n                            Path = \"/*\",\n                        },\n                    },\n                    IndexingMode = \"consistent\",\n                },\n                PartitionKey = new AzureNative.DocumentDB.Inputs.ContainerPartitionKeyArgs\n                {\n                    Kind = \"Hash\",\n                    Paths = \n                    {\n                        \"/AccountNumber\",\n                    },\n                },\n                UniqueKeyPolicy = new AzureNative.DocumentDB.Inputs.UniqueKeyPolicyArgs\n                {\n                    UniqueKeys = \n                    {\n                        new AzureNative.DocumentDB.Inputs.UniqueKeyArgs\n                        {\n                            Paths = \n                            {\n                                \"/testPath\",\n                            },\n                        },\n                    },\n                },\n            },\n            ResourceGroupName = \"rg1\",\n            Tags = ,\n        });\n    }\n\n}\n\n```\n\n```go\npackage main\n\nimport (\n\tdocumentdb \"github.com/pulumi/pulumi-azure-native/sdk/go/azure/documentdb\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := documentdb.NewSqlResourceSqlContainer(ctx, \"sqlResourceSqlContainer\", &documentdb.SqlResourceSqlContainerArgs{\n\t\t\tAccountName:   pulumi.String(\"ddb1\"),\n\t\t\tContainerName: pulumi.String(\"containerName\"),\n\t\t\tDatabaseName:  pulumi.String(\"databaseName\"),\n\t\t\tLocation:      pulumi.String(\"West US\"),\n\t\t\tOptions:       nil,\n\t\t\tResource: &documentdb.SqlContainerResourceArgs{\n\t\t\t\tConflictResolutionPolicy: &documentdb.ConflictResolutionPolicyArgs{\n\t\t\t\t\tConflictResolutionPath: pulumi.String(\"/path\"),\n\t\t\t\t\tMode:                   pulumi.String(\"LastWriterWins\"),\n\t\t\t\t},\n\t\t\t\tDefaultTtl: pulumi.Int(100),\n\t\t\t\tId:         pulumi.String(\"containerName\"),\n\t\t\t\tIndexingPolicy: &documentdb.IndexingPolicyArgs{\n\t\t\t\t\tAutomatic:     pulumi.Bool(true),\n\t\t\t\t\tExcludedPaths: documentdb.ExcludedPathArray{},\n\t\t\t\t\tIncludedPaths: documentdb.IncludedPathArray{\n\t\t\t\t\t\t&documentdb.IncludedPathArgs{\n\t\t\t\t\t\t\tIndexes: documentdb.IndexesArray{\n\t\t\t\t\t\t\t\t&documentdb.IndexesArgs{\n\t\t\t\t\t\t\t\t\tDataType:  pulumi.String(\"String\"),\n\t\t\t\t\t\t\t\t\tKind:      pulumi.String(\"Range\"),\n\t\t\t\t\t\t\t\t\tPrecision: -1,\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t&documentdb.IndexesArgs{\n\t\t\t\t\t\t\t\t\tDataType:  pulumi.String(\"Number\"),\n\t\t\t\t\t\t\t\t\tKind:      pulumi.String(\"Range\"),\n\t\t\t\t\t\t\t\t\tPrecision: -1,\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\tPath: pulumi.String(\"/*\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t\tIndexingMode: pulumi.String(\"consistent\"),\n\t\t\t\t},\n\t\t\t\tPartitionKey: &documentdb.ContainerPartitionKeyArgs{\n\t\t\t\t\tKind: pulumi.String(\"Hash\"),\n\t\t\t\t\tPaths: pulumi.StringArray{\n\t\t\t\t\t\tpulumi.String(\"/AccountNumber\"),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t\tUniqueKeyPolicy: &documentdb.UniqueKeyPolicyArgs{\n\t\t\t\t\tUniqueKeys: documentdb.UniqueKeyArray{\n\t\t\t\t\t\t&documentdb.UniqueKeyArgs{\n\t\t\t\t\t\t\tPaths: pulumi.StringArray{\n\t\t\t\t\t\t\t\tpulumi.String(\"/testPath\"),\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t\tResourceGroupName: pulumi.String(\"rg1\"),\n\t\t\tTags:              nil,\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n\n```\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as azure_native from \"@pulumi/azure-native\";\n\nconst sqlResourceSqlContainer = new azure_native.documentdb.SqlResourceSqlContainer(\"sqlResourceSqlContainer\", {\n    accountName: \"ddb1\",\n    containerName: \"containerName\",\n    databaseName: \"databaseName\",\n    location: \"West US\",\n    options: {},\n    resource: {\n        conflictResolutionPolicy: {\n            conflictResolutionPath: \"/path\",\n            mode: \"LastWriterWins\",\n        },\n        defaultTtl: 100,\n        id: \"containerName\",\n        indexingPolicy: {\n            automatic: true,\n            excludedPaths: [],\n            includedPaths: [{\n                indexes: [\n                    {\n                        dataType: \"String\",\n                        kind: \"Range\",\n                        precision: -1,\n                    },\n                    {\n                        dataType: \"Number\",\n                        kind: \"Range\",\n                        precision: -1,\n                    },\n                ],\n                path: \"/*\",\n            }],\n            indexingMode: \"consistent\",\n        },\n        partitionKey: {\n            kind: \"Hash\",\n            paths: [\"/AccountNumber\"],\n        },\n        uniqueKeyPolicy: {\n            uniqueKeys: [{\n                paths: [\"/testPath\"],\n            }],\n        },\n    },\n    resourceGroupName: \"rg1\",\n    tags: {},\n});\n\n```\n\n```python\nimport pulumi\nimport pulumi_azure_native as azure_native\n\nsql_resource_sql_container = azure_native.documentdb.SqlResourceSqlContainer(\"sqlResourceSqlContainer\",\n    account_name=\"ddb1\",\n    container_name=\"containerName\",\n    database_name=\"databaseName\",\n    location=\"West US\",\n    options=azure_native.documentdb.CreateUpdateOptionsArgs(),\n    resource=azure_native.documentdb.SqlContainerResourceArgs(\n        conflict_resolution_policy=azure_native.documentdb.ConflictResolutionPolicyArgs(\n            conflict_resolution_path=\"/path\",\n            mode=\"LastWriterWins\",\n        ),\n        default_ttl=100,\n        id=\"containerName\",\n        indexing_policy=azure_native.documentdb.IndexingPolicyArgs(\n            automatic=True,\n            excluded_paths=[],\n            included_paths=[azure_native.documentdb.IncludedPathArgs(\n                indexes=[\n                    azure_native.documentdb.IndexesArgs(\n                        data_type=\"String\",\n                        kind=\"Range\",\n                        precision=-1,\n                    ),\n                    azure_native.documentdb.IndexesArgs(\n                        data_type=\"Number\",\n                        kind=\"Range\",\n                        precision=-1,\n                    ),\n                ],\n                path=\"/*\",\n            )],\n            indexing_mode=\"consistent\",\n        ),\n        partition_key=azure_native.documentdb.ContainerPartitionKeyArgs(\n            kind=\"Hash\",\n            paths=[\"/AccountNumber\"],\n        ),\n        unique_key_policy=azure_native.documentdb.UniqueKeyPolicyArgs(\n            unique_keys=[azure_native.documentdb.UniqueKeyArgs(\n                paths=[\"/testPath\"],\n            )],\n        ),\n    ),\n    resource_group_name=\"rg1\",\n    tags={})\n\n```\n\n{{% /example %}}\n{{% /examples %}}\n\n## Import\n\nAn existing resource can be imported using its type token, name, and identifier, e.g.\n\n```sh\n$ pulumi import azure-native:documentdb:SqlResourceSqlContainer containerName /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.DocumentDB/databaseAccounts/ddb1/sqlDatabases/databaseName/sqlContainers/containerName \n```\n",
+            ),
+            input_properties: [],
+            output_properties: [
+                OutputProperty {
+                    name: "resource",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [
+                                        "documentdb",
+                                    ],
+                                    name: "SqlContainerGetPropertiesResponseResource",
+                                    raw: "azure-native:documentdb:SqlContainerGetPropertiesResponseResource",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: None,
+                },
+            ],
+        },
+    },
+    functions: {},
+    types: {
+        ElementId {
+            namespace: [
+                "documentdb",
+            ],
+            name: "CompositePathResponse",
+            raw: "azure-native:documentdb:CompositePathResponse",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [
+                    "documentdb",
+                ],
+                name: "CompositePathResponse",
+                raw: "azure-native:documentdb:CompositePathResponse",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "order",
+                        type: Option(
+                            String,
+                        ),
+                        description: Some(
+                            "Sort order for composite paths.",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "path",
+                        type: Option(
+                            String,
+                        ),
+                        description: Some(
+                            "The path for which the indexing behavior applies to. Index paths typically start with root and end with wildcard (/path/*)",
+                        ),
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [
+                "documentdb",
+            ],
+            name: "IndexingPolicyResponse",
+            raw: "azure-native:documentdb:IndexingPolicyResponse",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [
+                    "documentdb",
+                ],
+                name: "IndexingPolicyResponse",
+                raw: "azure-native:documentdb:IndexingPolicyResponse",
+            },
+            value: Object(
+                Some(
+                    "Cosmos DB indexing policy",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "compositeIndexes",
+                        type: Option(
+                            Array(
+                                Array(
+                                    Ref(
+                                        Type(
+                                            ElementId {
+                                                namespace: [
+                                                    "documentdb",
+                                                ],
+                                                name: "CompositePathResponse",
+                                                raw: "azure-native:documentdb:CompositePathResponse",
+                                            },
+                                        ),
+                                    ),
+                                ),
+                            ),
+                        ),
+                        description: Some(
+                            "List of composite path list",
+                        ),
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [
+                "documentdb",
+            ],
+            name: "SqlContainerGetPropertiesResponseResource",
+            raw: "azure-native:documentdb:SqlContainerGetPropertiesResponseResource",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [
+                    "documentdb",
+                ],
+                name: "SqlContainerGetPropertiesResponseResource",
+                raw: "azure-native:documentdb:SqlContainerGetPropertiesResponseResource",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "indexingPolicy",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [
+                                            "documentdb",
+                                        ],
+                                        name: "IndexingPolicyResponse",
+                                        raw: "azure-native:documentdb:IndexingPolicyResponse",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: Some(
+                            "The configuration of the indexing policy. By default, the indexing is automatic for all document paths within the container",
+                        ),
+                    },
+                ],
+            ),
+        },
+    },
+    resource_name_map: {
+        "azure-native:documentdb:SqlResourceSqlContainer": Resource {
+            element_id: ElementId {
+                namespace: [
+                    "documentdb",
+                ],
+                name: "SqlResourceSqlContainer",
+                raw: "azure-native:documentdb:SqlResourceSqlContainer",
+            },
+            description: Some(
+                "An Azure Cosmos DB container.\nAPI Version: 2021-03-15.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n### CosmosDBSqlContainerCreateUpdate\n```csharp\nusing Pulumi;\nusing AzureNative = Pulumi.AzureNative;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var sqlResourceSqlContainer = new AzureNative.DocumentDB.SqlResourceSqlContainer(\"sqlResourceSqlContainer\", new AzureNative.DocumentDB.SqlResourceSqlContainerArgs\n        {\n            AccountName = \"ddb1\",\n            ContainerName = \"containerName\",\n            DatabaseName = \"databaseName\",\n            Location = \"West US\",\n            Options = ,\n            Resource = new AzureNative.DocumentDB.Inputs.SqlContainerResourceArgs\n            {\n                ConflictResolutionPolicy = new AzureNative.DocumentDB.Inputs.ConflictResolutionPolicyArgs\n                {\n                    ConflictResolutionPath = \"/path\",\n                    Mode = \"LastWriterWins\",\n                },\n                DefaultTtl = 100,\n                Id = \"containerName\",\n                IndexingPolicy = new AzureNative.DocumentDB.Inputs.IndexingPolicyArgs\n                {\n                    Automatic = true,\n                    ExcludedPaths = {},\n                    IncludedPaths = \n                    {\n                        new AzureNative.DocumentDB.Inputs.IncludedPathArgs\n                        {\n                            Indexes = \n                            {\n                                new AzureNative.DocumentDB.Inputs.IndexesArgs\n                                {\n                                    DataType = \"String\",\n                                    Kind = \"Range\",\n                                    Precision = -1,\n                                },\n                                new AzureNative.DocumentDB.Inputs.IndexesArgs\n                                {\n                                    DataType = \"Number\",\n                                    Kind = \"Range\",\n                                    Precision = -1,\n                                },\n                            },\n                            Path = \"/*\",\n                        },\n                    },\n                    IndexingMode = \"consistent\",\n                },\n                PartitionKey = new AzureNative.DocumentDB.Inputs.ContainerPartitionKeyArgs\n                {\n                    Kind = \"Hash\",\n                    Paths = \n                    {\n                        \"/AccountNumber\",\n                    },\n                },\n                UniqueKeyPolicy = new AzureNative.DocumentDB.Inputs.UniqueKeyPolicyArgs\n                {\n                    UniqueKeys = \n                    {\n                        new AzureNative.DocumentDB.Inputs.UniqueKeyArgs\n                        {\n                            Paths = \n                            {\n                                \"/testPath\",\n                            },\n                        },\n                    },\n                },\n            },\n            ResourceGroupName = \"rg1\",\n            Tags = ,\n        });\n    }\n\n}\n\n```\n\n```go\npackage main\n\nimport (\n\tdocumentdb \"github.com/pulumi/pulumi-azure-native/sdk/go/azure/documentdb\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := documentdb.NewSqlResourceSqlContainer(ctx, \"sqlResourceSqlContainer\", &documentdb.SqlResourceSqlContainerArgs{\n\t\t\tAccountName:   pulumi.String(\"ddb1\"),\n\t\t\tContainerName: pulumi.String(\"containerName\"),\n\t\t\tDatabaseName:  pulumi.String(\"databaseName\"),\n\t\t\tLocation:      pulumi.String(\"West US\"),\n\t\t\tOptions:       nil,\n\t\t\tResource: &documentdb.SqlContainerResourceArgs{\n\t\t\t\tConflictResolutionPolicy: &documentdb.ConflictResolutionPolicyArgs{\n\t\t\t\t\tConflictResolutionPath: pulumi.String(\"/path\"),\n\t\t\t\t\tMode:                   pulumi.String(\"LastWriterWins\"),\n\t\t\t\t},\n\t\t\t\tDefaultTtl: pulumi.Int(100),\n\t\t\t\tId:         pulumi.String(\"containerName\"),\n\t\t\t\tIndexingPolicy: &documentdb.IndexingPolicyArgs{\n\t\t\t\t\tAutomatic:     pulumi.Bool(true),\n\t\t\t\t\tExcludedPaths: documentdb.ExcludedPathArray{},\n\t\t\t\t\tIncludedPaths: documentdb.IncludedPathArray{\n\t\t\t\t\t\t&documentdb.IncludedPathArgs{\n\t\t\t\t\t\t\tIndexes: documentdb.IndexesArray{\n\t\t\t\t\t\t\t\t&documentdb.IndexesArgs{\n\t\t\t\t\t\t\t\t\tDataType:  pulumi.String(\"String\"),\n\t\t\t\t\t\t\t\t\tKind:      pulumi.String(\"Range\"),\n\t\t\t\t\t\t\t\t\tPrecision: -1,\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t&documentdb.IndexesArgs{\n\t\t\t\t\t\t\t\t\tDataType:  pulumi.String(\"Number\"),\n\t\t\t\t\t\t\t\t\tKind:      pulumi.String(\"Range\"),\n\t\t\t\t\t\t\t\t\tPrecision: -1,\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\tPath: pulumi.String(\"/*\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t\tIndexingMode: pulumi.String(\"consistent\"),\n\t\t\t\t},\n\t\t\t\tPartitionKey: &documentdb.ContainerPartitionKeyArgs{\n\t\t\t\t\tKind: pulumi.String(\"Hash\"),\n\t\t\t\t\tPaths: pulumi.StringArray{\n\t\t\t\t\t\tpulumi.String(\"/AccountNumber\"),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t\tUniqueKeyPolicy: &documentdb.UniqueKeyPolicyArgs{\n\t\t\t\t\tUniqueKeys: documentdb.UniqueKeyArray{\n\t\t\t\t\t\t&documentdb.UniqueKeyArgs{\n\t\t\t\t\t\t\tPaths: pulumi.StringArray{\n\t\t\t\t\t\t\t\tpulumi.String(\"/testPath\"),\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t\tResourceGroupName: pulumi.String(\"rg1\"),\n\t\t\tTags:              nil,\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n\n```\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as azure_native from \"@pulumi/azure-native\";\n\nconst sqlResourceSqlContainer = new azure_native.documentdb.SqlResourceSqlContainer(\"sqlResourceSqlContainer\", {\n    accountName: \"ddb1\",\n    containerName: \"containerName\",\n    databaseName: \"databaseName\",\n    location: \"West US\",\n    options: {},\n    resource: {\n        conflictResolutionPolicy: {\n            conflictResolutionPath: \"/path\",\n            mode: \"LastWriterWins\",\n        },\n        defaultTtl: 100,\n        id: \"containerName\",\n        indexingPolicy: {\n            automatic: true,\n            excludedPaths: [],\n            includedPaths: [{\n                indexes: [\n                    {\n                        dataType: \"String\",\n                        kind: \"Range\",\n                        precision: -1,\n                    },\n                    {\n                        dataType: \"Number\",\n                        kind: \"Range\",\n                        precision: -1,\n                    },\n                ],\n                path: \"/*\",\n            }],\n            indexingMode: \"consistent\",\n        },\n        partitionKey: {\n            kind: \"Hash\",\n            paths: [\"/AccountNumber\"],\n        },\n        uniqueKeyPolicy: {\n            uniqueKeys: [{\n                paths: [\"/testPath\"],\n            }],\n        },\n    },\n    resourceGroupName: \"rg1\",\n    tags: {},\n});\n\n```\n\n```python\nimport pulumi\nimport pulumi_azure_native as azure_native\n\nsql_resource_sql_container = azure_native.documentdb.SqlResourceSqlContainer(\"sqlResourceSqlContainer\",\n    account_name=\"ddb1\",\n    container_name=\"containerName\",\n    database_name=\"databaseName\",\n    location=\"West US\",\n    options=azure_native.documentdb.CreateUpdateOptionsArgs(),\n    resource=azure_native.documentdb.SqlContainerResourceArgs(\n        conflict_resolution_policy=azure_native.documentdb.ConflictResolutionPolicyArgs(\n            conflict_resolution_path=\"/path\",\n            mode=\"LastWriterWins\",\n        ),\n        default_ttl=100,\n        id=\"containerName\",\n        indexing_policy=azure_native.documentdb.IndexingPolicyArgs(\n            automatic=True,\n            excluded_paths=[],\n            included_paths=[azure_native.documentdb.IncludedPathArgs(\n                indexes=[\n                    azure_native.documentdb.IndexesArgs(\n                        data_type=\"String\",\n                        kind=\"Range\",\n                        precision=-1,\n                    ),\n                    azure_native.documentdb.IndexesArgs(\n                        data_type=\"Number\",\n                        kind=\"Range\",\n                        precision=-1,\n                    ),\n                ],\n                path=\"/*\",\n            )],\n            indexing_mode=\"consistent\",\n        ),\n        partition_key=azure_native.documentdb.ContainerPartitionKeyArgs(\n            kind=\"Hash\",\n            paths=[\"/AccountNumber\"],\n        ),\n        unique_key_policy=azure_native.documentdb.UniqueKeyPolicyArgs(\n            unique_keys=[azure_native.documentdb.UniqueKeyArgs(\n                paths=[\"/testPath\"],\n            )],\n        ),\n    ),\n    resource_group_name=\"rg1\",\n    tags={})\n\n```\n\n{{% /example %}}\n{{% /examples %}}\n\n## Import\n\nAn existing resource can be imported using its type token, name, and identifier, e.g.\n\n```sh\n$ pulumi import azure-native:documentdb:SqlResourceSqlContainer containerName /subscriptions/subid/resourceGroups/rg1/providers/Microsoft.DocumentDB/databaseAccounts/ddb1/sqlDatabases/databaseName/sqlContainers/containerName \n```\n",
+            ),
+            input_properties: [],
+            output_properties: [
+                OutputProperty {
+                    name: "resource",
+                    type: Option(
+                        Ref(
+                            Type(
+                                ElementId {
+                                    namespace: [
+                                        "documentdb",
+                                    ],
+                                    name: "SqlContainerGetPropertiesResponseResource",
+                                    raw: "azure-native:documentdb:SqlContainerGetPropertiesResponseResource",
+                                },
+                            ),
+                        ),
+                    ),
+                    description: None,
+                },
+            ],
+        },
+    },
+    function_name_map: {},
+    all_types: {
+        ElementId {
+            namespace: [
+                "documentdb",
+            ],
+            name: "CompositePathResponse",
+            raw: "azure-native:documentdb:CompositePathResponse",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [
+                    "documentdb",
+                ],
+                name: "CompositePathResponse",
+                raw: "azure-native:documentdb:CompositePathResponse",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "order",
+                        type: Option(
+                            String,
+                        ),
+                        description: Some(
+                            "Sort order for composite paths.",
+                        ),
+                    },
+                    GlobalTypeProperty {
+                        name: "path",
+                        type: Option(
+                            String,
+                        ),
+                        description: Some(
+                            "The path for which the indexing behavior applies to. Index paths typically start with root and end with wildcard (/path/*)",
+                        ),
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [
+                "documentdb",
+            ],
+            name: "IndexingPolicyResponse",
+            raw: "azure-native:documentdb:IndexingPolicyResponse",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [
+                    "documentdb",
+                ],
+                name: "IndexingPolicyResponse",
+                raw: "azure-native:documentdb:IndexingPolicyResponse",
+            },
+            value: Object(
+                Some(
+                    "Cosmos DB indexing policy",
+                ),
+                [
+                    GlobalTypeProperty {
+                        name: "compositeIndexes",
+                        type: Option(
+                            Array(
+                                Array(
+                                    Ref(
+                                        Type(
+                                            ElementId {
+                                                namespace: [
+                                                    "documentdb",
+                                                ],
+                                                name: "CompositePathResponse",
+                                                raw: "azure-native:documentdb:CompositePathResponse",
+                                            },
+                                        ),
+                                    ),
+                                ),
+                            ),
+                        ),
+                        description: Some(
+                            "List of composite path list",
+                        ),
+                    },
+                ],
+            ),
+        },
+        ElementId {
+            namespace: [
+                "documentdb",
+            ],
+            name: "SqlContainerGetPropertiesResponseResource",
+            raw: "azure-native:documentdb:SqlContainerGetPropertiesResponseResource",
+        }: GlobalType {
+            element_id: ElementId {
+                namespace: [
+                    "documentdb",
+                ],
+                name: "SqlContainerGetPropertiesResponseResource",
+                raw: "azure-native:documentdb:SqlContainerGetPropertiesResponseResource",
+            },
+            value: Object(
+                None,
+                [
+                    GlobalTypeProperty {
+                        name: "indexingPolicy",
+                        type: Option(
+                            Ref(
+                                Type(
+                                    ElementId {
+                                        namespace: [
+                                            "documentdb",
+                                        ],
+                                        name: "IndexingPolicyResponse",
+                                        raw: "azure-native:documentdb:IndexingPolicyResponse",
+                                    },
+                                ),
+                            ),
+                        ),
+                        description: Some(
+                            "The configuration of the indexing policy. By default, the indexing is automatic for all document paths within the container",
+                        ),
+                    },
+                ],
+            ),
+        },
+    },
+}

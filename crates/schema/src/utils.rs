@@ -1,5 +1,4 @@
 use crate::model::ElementId;
-use anyhow::Context;
 use regex::Regex;
 use std::collections::HashMap;
 use std::fs;
@@ -19,10 +18,7 @@ pub(crate) fn sanitize_identifier(input: &str) -> String {
         .collect()
 }
 
-pub(crate) fn fix_description(
-    s: Option<String>,
-    element_id: Option<ElementId>,
-) -> Option<String> {
+pub(crate) fn fix_description(s: Option<String>, element_id: Option<ElementId>) -> Option<String> {
     s.map(|s| fix_pulumi_docker_docs(s, element_id))
 }
 

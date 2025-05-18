@@ -1,10 +1,10 @@
+use crate::model::{ElementIdExt, InputPropertyExt, OutputPropertyExt, TypeExt};
 use crate::output::get_register_interface;
 use crate::utils::access_root;
 use handlebars::Handlebars;
+use pulumi_gestalt_schema::model::{ElementId, Package, Type};
 use serde::Serialize;
 use serde_json::json;
-use pulumi_gestalt_schema::model::{ElementId, Package, Type};
-use crate::model::{ElementIdExt, InputPropertyExt, OutputPropertyExt, TypeExt};
 
 static TEMPLATE: &str = include_str!("resource_code.rs.handlebars");
 

@@ -107,7 +107,7 @@ impl GlobalTypePropertyExt for GlobalTypeProperty {
                 .from_case(Case::Camel)
                 .to_case(Case::Snake),
         )
-            .to_string()
+        .to_string()
     }
 }
 
@@ -118,7 +118,9 @@ pub(crate) trait ElementIdExt {
     fn get_rust_package_name(&self) -> String;
     fn get_rust_namespace_name(&self) -> String;
     fn create_valid_id(s: &str) -> String;
-    fn new(raw: &str) -> Result<Self> where Self: Sized;
+    fn new(raw: &str) -> Result<Self>
+    where
+        Self: Sized;
 }
 
 impl ElementIdExt for ElementId {
@@ -162,8 +164,8 @@ impl ElementIdExt for ElementId {
 
         let result = replace_multiple_dashes(&result);
         let result = result.trim_matches('-').to_string();
-        let result = result.replace("-", "_");
-        result
+        
+        result.replace("-", "_")
     }
 
     fn new(raw: &str) -> Result<Self> {

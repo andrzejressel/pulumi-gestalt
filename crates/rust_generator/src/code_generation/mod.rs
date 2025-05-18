@@ -8,10 +8,7 @@ pub(crate) mod rust_generation;
 mod tests;
 pub(crate) mod yaml;
 
-pub fn generate_code_from_string(
-    yaml: String,
-    package: &Package,
-) -> anyhow::Result<String> {
+pub fn generate_code_from_string(yaml: String, package: &Package) -> anyhow::Result<String> {
     let yaml_file =
         YamlFile::from_yaml(yaml.as_str()).context(format!("Failed to parse YAML: {}", yaml))?;
     let example = yaml_to_model(yaml_file, package)

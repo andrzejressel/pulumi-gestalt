@@ -10,10 +10,7 @@ pub mod model;
 mod schema;
 mod utils;
 
-pub fn deserialize_package(
-    schema_json: &Path,
-    filter: Option<&[&str]>,
-) -> Result<model::Package> {
+pub fn deserialize_package(schema_json: &Path, filter: Option<&[&str]>) -> Result<model::Package> {
     let schema_package: schema::Package = extract_schema_from_file(schema_json)?;
     let mut package = schema::to_model(&schema_package)?;
     if let Some(filter) = filter {

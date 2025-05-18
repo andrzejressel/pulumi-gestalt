@@ -1,10 +1,10 @@
 use crate::description::Description;
 use anyhow::Context;
+use pulumi_gestalt_schema::model::{ElementId, Package};
 use regex::Regex;
 use std::collections::HashMap;
 use std::fs;
 use std::sync::LazyLock;
-use pulumi_gestalt_schema::model::{ElementId, Package};
 
 pub(crate) fn replace_multiple_dashes(s: &str) -> String {
     let re = Regex::new("-+").unwrap();

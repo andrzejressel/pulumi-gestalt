@@ -1,0 +1,58 @@
+Package {
+    name: "example",
+    display_name: None,
+    plugin_download_url: None,
+    version: "1.0.0",
+    resources: {
+        ElementId {
+            namespace: [],
+            name: "PulumiTerraformBridge2801",
+            raw: "example:index:PulumiTerraformBridge2801",
+        }: Resource {
+            element_id: ElementId {
+                namespace: [],
+                name: "PulumiTerraformBridge2801",
+                raw: "example:index:PulumiTerraformBridge2801",
+            },
+            description: None,
+            input_properties: [
+                InputProperty {
+                    name: "type",
+                    type: Option(
+                        String,
+                    ),
+                    description: Some(
+                        "Soak time after each batch gets drained.\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tA duration in seconds with up to nine fractional digits, ending with 's'. Example: \"3.5s\".",
+                    ),
+                },
+            ],
+            output_properties: [],
+        },
+    },
+    functions: {},
+    types: {},
+    resource_name_map: {
+        "example:PulumiTerraformBridge2801": Resource {
+            element_id: ElementId {
+                namespace: [],
+                name: "PulumiTerraformBridge2801",
+                raw: "example:index:PulumiTerraformBridge2801",
+            },
+            description: None,
+            input_properties: [
+                InputProperty {
+                    name: "type",
+                    type: Option(
+                        String,
+                    ),
+                    description: Some(
+                        "Soak time after each batch gets drained.\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tA duration in seconds with up to nine fractional digits, ending with 's'. Example: \"3.5s\".",
+                    ),
+                },
+            ],
+            output_properties: [],
+        },
+    },
+    function_name_map: {},
+    all_types: {},
+}

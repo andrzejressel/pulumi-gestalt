@@ -1,0 +1,102 @@
+Package {
+    name: "mypkg",
+    display_name: None,
+    plugin_download_url: None,
+    version: "0.0.1",
+    resources: {},
+    functions: {
+        ElementId {
+            namespace: [],
+            name: "funcWithSecrets",
+            raw: "mypkg::funcWithSecrets",
+        }: Function {
+            element_id: ElementId {
+                namespace: [],
+                name: "funcWithSecrets",
+                raw: "mypkg::funcWithSecrets",
+            },
+            description: None,
+            input_properties: [
+                InputProperty {
+                    name: "cryptoKey",
+                    type: String,
+                    description: None,
+                },
+                InputProperty {
+                    name: "plaintext",
+                    type: String,
+                    description: None,
+                },
+            ],
+            output_properties: [
+                OutputProperty {
+                    name: "ciphertext",
+                    type: String,
+                    description: None,
+                },
+                OutputProperty {
+                    name: "cryptoKey",
+                    type: String,
+                    description: None,
+                },
+                OutputProperty {
+                    name: "id",
+                    type: String,
+                    description: None,
+                },
+                OutputProperty {
+                    name: "plaintext",
+                    type: String,
+                    description: None,
+                },
+            ],
+        },
+    },
+    types: {},
+    resource_name_map: {},
+    function_name_map: {
+        "mypkg:funcWithSecrets": Function {
+            element_id: ElementId {
+                namespace: [],
+                name: "funcWithSecrets",
+                raw: "mypkg::funcWithSecrets",
+            },
+            description: None,
+            input_properties: [
+                InputProperty {
+                    name: "cryptoKey",
+                    type: String,
+                    description: None,
+                },
+                InputProperty {
+                    name: "plaintext",
+                    type: String,
+                    description: None,
+                },
+            ],
+            output_properties: [
+                OutputProperty {
+                    name: "ciphertext",
+                    type: String,
+                    description: None,
+                },
+                OutputProperty {
+                    name: "cryptoKey",
+                    type: String,
+                    description: None,
+                },
+                OutputProperty {
+                    name: "id",
+                    type: String,
+                    description: None,
+                },
+                OutputProperty {
+                    name: "plaintext",
+                    type: String,
+                    description: None,
+                },
+            ],
+        },
+    },
+    all_types: {},
+}

@@ -1,11 +1,11 @@
+use crate::model::{ElementIdExt, GlobalTypePropertyExt, TypeExt};
 use convert_case::{Case, Casing};
 use handlebars::Handlebars;
+use pulumi_gestalt_schema::model::{ElementId, GlobalTypeValue, Package, Type};
 use serde::Serialize;
 use serde_json::json;
 use std::collections::BTreeSet;
 use std::ops::Deref;
-use pulumi_gestalt_schema::model::{ElementId, GlobalTypeValue, Package, Type};
-use crate::model::{ElementIdExt, GlobalTypePropertyExt, TypeExt};
 
 static TEMPLATE: &str = include_str!("types_code.rs.handlebars");
 static STRING_ENUM_TEMPLATE: &str = include_str!("types_code_string_enum.rs.handlebars");
