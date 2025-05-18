@@ -2,30 +2,27 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    "github>andrzejressel/renovate-config//rust/updateToolchain"
+    "github>andrzejressel/renovate-config//rust/updateToolchain",
+    "helpers:pinGitHubActionDigestsToSemver"
   ],
   "prConcurrentLimit": 1,
   "prHourlyLimit": 0,
-  "labels": ["dependencies"],
+  "labels": [
+    "dependencies"
+  ],
   "packageRules": [
     {
-      "matchDepTypes": [
-        "action"
-      ],
-      "pinDigests": true
-    },
-    { 
       "matchPackageNames": [
         "wasmtime",
-        "wasmtime-*" 
+        "wasmtime-*"
       ],
       "groupName": "wasmtime"
     },
-    { 
+    {
       "matchPackageNames": "^wit-bindgen*",
       "groupName": "wit-bindgen"
     },
-    { 
+    {
       "matchPackageNames": "^rmp*",
       "groupName": "rmp"
     },
@@ -57,7 +54,9 @@
     {
       "customType": "regex",
       "description": "Update _VERSION variables in justfile",
-      "fileMatch": ["(^|/|\\.)justfile"],
+      "managerFilePatterns": [
+        "/(^|/|\\.)justfile/"
+      ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?\\s.+?_VERSION := \"(?<currentValue>.+?)\"\\s"
       ]
