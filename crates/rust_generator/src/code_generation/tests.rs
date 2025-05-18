@@ -2,12 +2,12 @@
 use crate::code_generation::YamlFile;
 use crate::code_generation::yaml::model::yaml_to_model;
 use crate::code_generation::yaml::tests::*;
-use crate::{extract_schema_from_file, schema};
 
 use crate::code_generation::rust_generation::generate_code;
 use crate::code_generation::yaml::tests::{
     example_array, example_empty_properties, example_escape_string, example_numbers,
 };
+use pulumi_gestalt_schema::deserialize_package;
 
 macro_rules! yaml_deserialization_test {
     ($test_name:ident, $test_module:ident) => {
@@ -30,12 +30,12 @@ macro_rules! full_pipeline_test {
             let expected_yaml_file = $test_module::get_yaml_file();
             assert_eq!(yaml_file, expected_yaml_file);
 
-            let schema_package: schema::Package = extract_schema_from_file(
+            let package = deserialize_package(
                 concat!("tests/test_cases/", $package_name, ".json").as_ref(),
+                None,
             )
             .unwrap();
 
-            let package = schema::to_model(&schema_package).unwrap();
             let yaml_file = $test_module::get_yaml_file();
             let result = yaml_to_model(yaml_file, &package)?;
             assert_eq!(result, $test_module::get_model());

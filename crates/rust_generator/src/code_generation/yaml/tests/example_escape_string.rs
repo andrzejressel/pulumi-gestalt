@@ -1,8 +1,8 @@
 use crate::code_generation::YamlFile;
 use crate::code_generation::yaml::model::Expression;
 use crate::code_generation::yaml::model::{Example, Resource};
-use crate::model::ElementId;
 use crate::utils::reformat_code;
+use pulumi_gestalt_schema::model::ElementId;
 use std::collections::BTreeMap;
 
 //language=YAML

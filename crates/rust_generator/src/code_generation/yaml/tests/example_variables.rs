@@ -3,8 +3,8 @@ use crate::code_generation::yaml::model::Example;
 use crate::code_generation::yaml::model::Variable::FnInvokeVariable;
 use crate::code_generation::yaml::model::{Expression, FnInvoke};
 use crate::code_generation::yaml::yaml_model::{YamlExpression, YamlFnInvoke, YamlVariable};
-use crate::model::ElementId;
 use crate::utils::reformat_code;
+use pulumi_gestalt_schema::model::ElementId;
 use std::collections::BTreeMap;
 
 //language=YAML

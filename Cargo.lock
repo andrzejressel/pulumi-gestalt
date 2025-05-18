@@ -3664,6 +3664,7 @@ name = "pulumi_gestalt_schema_protobuf"
 version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
+ "pathdiff",
  "proptest",
  "prost",
  "pulumi_gestalt_proto",

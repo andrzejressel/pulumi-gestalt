@@ -135,7 +135,7 @@ fn main() {
 fn update_tests(tests: &[&str], filtered_tests: &[FilteredTest]) {
     update_github_actions_build(tests, filtered_tests);
     update_rust_generator_test_rs(tests, filtered_tests);
-    update_schema_test_rs(tests, filtered_tests);
+    update_schema_protobuf_test_rs(tests, filtered_tests);
 }
 
 fn update_github_actions_build(tests: &[&str], filtered_tests: &[FilteredTest]) {
@@ -209,9 +209,9 @@ fn {method_name}() -> Result<()> {{
         .expect("Failed to write to crates/rust_generator/tests/test.rs");
 }
 
-fn update_schema_test_rs(tests: &[&str], filtered_tests: &[FilteredTest]) {
-    let content = fs::read_to_string("crates/schema/tests/test.rs")
-        .expect("Failed to read crates/schema/tests/test.rs");
+fn update_schema_protobuf_test_rs(tests: &[&str], filtered_tests: &[FilteredTest]) {
+    let content = fs::read_to_string("crates/schema_protobuf/tests/test.rs")
+        .expect("Failed to read crates/schema_protobuf/tests/test.rs");
 
     let mut replacement = String::new();
     for test_directory in tests {
@@ -232,7 +232,6 @@ fn {method_name}() -> Result<()> {{
     for filtered_test in filtered_tests {
         for (index, filter) in filtered_test.filters.iter().enumerate() {
             let provider_name = filtered_test.name;
-            let feature_name = format!("generator_{}-{}", filtered_test.name, index);
             let directory_name = format!("{}-{}", filtered_test.name, index);
             let method_name = directory_name.replace("-", "_");
             let filter_name = filter.iter().map(|s| format!("\"{s}\"")).join(",");
@@ -252,8 +251,8 @@ fn {method_name}() -> Result<()> {{
     let end_marker = "// DO NOT EDIT - END";
     let new_content = replace_between_markers(&content, start_marker, end_marker, &replacement);
 
-    fs::write("crates/schema/tests/test.rs", new_content)
-        .expect("Failed to write to crates/schema/tests/test.rs");
+    fs::write("crates/schema_protobuf/tests/test.rs", new_content)
+        .expect("Failed to write to crates/schema_protobuf/tests/test.rs");
 }
 
 fn update_generator_cargo_toml(tests: &[&str], filtered_tests: &[FilteredTest]) {
