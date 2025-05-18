@@ -55,7 +55,7 @@ jobs:
         if: runner.os == 'macOS'
       - run: pulumi version
       - run: pulumi login --local
-      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2
+      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
       - name: Cache Pulumi providers
         uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
@@ -109,7 +109,7 @@ jobs:
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2
+      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
         with:
           lookup-only: "true"
           save-if: "false"
@@ -171,7 +171,7 @@ jobs:
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
-      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2
+      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
       - name: Install Protoc
         uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b
         with:
@@ -226,7 +226,7 @@ jobs:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
-      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2
+      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
       - name: Cache Pulumi providers
         uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
@@ -290,7 +290,7 @@ jobs:
         run: just install-requirements
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2
+      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
         with:
           shared-key: build-examples
       - run: just examples-ci-flow
@@ -352,7 +352,7 @@ jobs:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
-      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2
+      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
       - run: just c-ci-flow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -399,7 +399,7 @@ jobs:
           version: "25.3"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
-      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2
+      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # v2.7.8
       - run: just build-native-examples
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
