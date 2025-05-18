@@ -164,7 +164,7 @@ impl ElementIdExt for ElementId {
 
         let result = replace_multiple_dashes(&result);
         let result = result.trim_matches('-').to_string();
-        
+
         result.replace("-", "_")
     }
 

@@ -4,7 +4,8 @@ use std::fs::File;
 use std::io::BufReader;
 use std::path::Path;
 
-mod converter;
+#[cfg(feature = "arbitrary")]
+mod arbitrary;
 mod filter;
 pub mod model;
 mod schema;
