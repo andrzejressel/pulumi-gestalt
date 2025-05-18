@@ -127,7 +127,7 @@ jobs:
           git push
 
       - name: Release
-        uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631 # v2
+        uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631 # v2.2.2
         with:
           name: ${{ github.event.inputs.version }}
           tag_name: "v${{ github.event.inputs.version }}"
