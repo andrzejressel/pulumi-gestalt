@@ -17,6 +17,8 @@ github.com/anmitsu/go-shlex v0.0.0-20200514113438-38f4b401e2be h1:9AeTilPcZAjCFI
 github.com/anmitsu/go-shlex v0.0.0-20200514113438-38f4b401e2be/go.mod h1:ySMOLuWl6zY27l47sB3qLNK6tF2fkHG55UZxx8oIVo4=
 github.com/apparentlymart/go-textseg/v13 v13.0.0 h1:Y+KvPE1NYz0xl601PVImeQfFyEy6iT90AvPUL1NNfNw=
 github.com/apparentlymart/go-textseg/v13 v13.0.0/go.mod h1:ZK2fH7c4NqDTLtiYLvIkEghdlcqw7yxLeM89kiTRPUo=
+github.com/apparentlymart/go-textseg/v15 v15.0.0 h1:uYvfpb3DyLSCGWnctWKGj857c6ew1u1fNQOlOtuGxQY=
+github.com/apparentlymart/go-textseg/v15 v15.0.0/go.mod h1:K8XmNZdhEBkdlyDdvbmmsvpAG721bKi0joRfFdHIWJ4=
 github.com/armon/go-socks5 v0.0.0-20160902184237-e75332964ef5 h1:0CwZNZbxp69SHPdPJAN/hZIm0C4OItdklCFmMRWYpio=
 github.com/armon/go-socks5 v0.0.0-20160902184237-e75332964ef5/go.mod h1:wHh0iHkYZB8zMSxRWpUBQtwG5a7fFgvEO+odwuTv2gs=
 github.com/atotto/clipboard v0.1.4 h1:EH0zSVneZPSuFR11BlR9YppQTVDbh5+16AmcJi4g1z4=
@@ -87,6 +89,8 @@ github.com/hashicorp/go-multierror v1.1.1 h1:H5DkEtf6CXdFp0N0Em5UCwQpXMWke8IA0+l
 github.com/hashicorp/go-multierror v1.1.1/go.mod h1:iw975J/qwKPdAO1clOe2L8331t/9/fmwbPZ6JB6eMoM=
 github.com/hashicorp/hcl/v2 v2.17.0 h1:z1XvSUyXd1HP10U4lrLg5e0JMVz6CPaJvAgxM0KNZVY=
 github.com/hashicorp/hcl/v2 v2.17.0/go.mod h1:gJyW2PTShkJqQBKpAmPO3yxMxIuoXkOF2TpqXzrQyx4=
+github.com/hashicorp/hcl/v2 v2.22.0 h1:hkZ3nCtqeJsDhPRFz5EA9iwcG1hNWGePOTw6oyul12M=
+github.com/hashicorp/hcl/v2 v2.22.0/go.mod h1:62ZYHrXgPoX8xBnzl8QzbWq4dyDsDtfCRgIq1rbJEvA=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
 github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 h1:BQSFePA1RWJOlocH6Fxy8MmwDt+yVQYULKfN0RoTN8A=
@@ -151,6 +155,8 @@ github.com/pulumi/appdash v0.0.0-20231130102222-75f619a67231 h1:vkHw5I/plNdTr435
 github.com/pulumi/appdash v0.0.0-20231130102222-75f619a67231/go.mod h1:murToZ2N9hNJzewjHBgfFdXhZKjY3z5cYC1VXk+lbFE=
 github.com/pulumi/esc v0.13.0 h1:O2MPR2koScaQ2fXwyer8Q3Dd7z+DCnaDfsgNl5mVNMk=
 github.com/pulumi/esc v0.13.0/go.mod h1:IIQo6W6Uzajt6f1RW4QvNxIRDlbK3TNQysnrwBHNo3U=
+github.com/pulumi/esc v0.14.2 h1:xHpjJXzKs1hk/QPpgwe1Rmif3VWA0QcZ7jDvTFYX/jM=
+github.com/pulumi/esc v0.14.2/go.mod h1:0dNzCWIiRUmdfFrhHdeBzU4GiDPBhSfpeWDNApZwZ08=
 github.com/pulumi/pulumi/sdk/v3 v3.162.0 h1:0XjCLqmBvxmz1WrhSZj6VT6H+GY85PxIzk5d28xfrMY=
 github.com/pulumi/pulumi/sdk/v3 v3.162.0/go.mod h1:GAaHrdv3kWJHbzkFFFflGbTBQXUYu6SF1ZCo+O9jo44=
 github.com/pulumi/pulumi/sdk/v3 v3.163.0 h1:yiT1nPelxXILVrN0yRn0I3NO8Yybba2IvWArYBstZJ8=
@@ -163,6 +169,8 @@ github.com/pulumi/pulumi/sdk/v3 v3.167.0 h1:QJXsg/ObMIyd+Iao3+rZqdBz2PCyz8y8BAck
 github.com/pulumi/pulumi/sdk/v3 v3.167.0/go.mod h1:GAaHrdv3kWJHbzkFFFflGbTBQXUYu6SF1ZCo+O9jo44=
 github.com/pulumi/pulumi/sdk/v3 v3.170.0 h1:jwouot8dwuGngG6br6M9sP1NwwC4e6OBtkeJp0h4bSQ=
 github.com/pulumi/pulumi/sdk/v3 v3.170.0/go.mod h1:Qhe4dOjqedyLr47kGGnG6ULIbzaPTlmjAvPqNQ1Ollo=
+github.com/pulumi/pulumi/sdk/v3 v3.171.0 h1:YoSsza9vHnH1HenX/LW9utFsol2JpiLBj0DX8WV/QYY=
+github.com/pulumi/pulumi/sdk/v3 v3.171.0/go.mod h1:AD2BrIxFG4wdCLCFODrOasXhURwrD/8hHrwBcjzyU9Y=
 github.com/rivo/uniseg v0.1.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
 github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
 github.com/rivo/uniseg v0.4.4 h1:8TfxU8dW6PdqD27gjM8MVNuicgxIjxpm4K7x4jp8sis=
@@ -306,6 +314,8 @@ google.golang.org/grpc v1.72.1 h1:HR03wO6eyZ7lknl75XlxABNVLLFc2PAb6mHlYh756mA=
 google.golang.org/grpc v1.72.1/go.mod h1:wH5Aktxcg25y1I3w7H69nHfXdOG3UiadoBtjh3izSDM=
 google.golang.org/protobuf v1.36.5 h1:tPhr+woSbjfYvY6/GPufUoYizxw1cF/yFoxJ2fmpwlM=
 google.golang.org/protobuf v1.36.5/go.mod h1:9fA7Ob0pmnwhb644+1+CVWFRbNajQ6iRojtC/QF5bRE=
+google.golang.org/protobuf v1.36.6 h1:z1NpPI8ku2WgiWnf+t9wTPsn6eP1L7ksHUlkfLvd9xY=
+google.golang.org/protobuf v1.36.6/go.mod h1:jduwjTPXsFjZGTmRluh+L6NjiWu7pchiJ2/5YcXBHnY=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c h1:Hei/4ADfdWqJk1ZMxUNpqntNwaWcugrBjAiHlqqRiVk=
