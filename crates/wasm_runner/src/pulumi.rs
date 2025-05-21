@@ -19,7 +19,7 @@ use std::collections::HashMap;
 use std::path::Path;
 use wasmtime::Store;
 use wasmtime::component::{Component, Linker, Resource, ResourceTable};
-use wasmtime_wasi::{IoView, WasiCtx, WasiCtxBuilder, WasiView};
+use wasmtime_wasi::p2::{IoView, WasiCtx, WasiCtxBuilder, WasiView};
 
 pub struct Pulumi {
     plugin: PulumiGestalt,
@@ -325,7 +325,7 @@ impl Pulumi {
             &mut state.my_state
         })?;
 
-        wasmtime_wasi::add_to_linker_sync(&mut linker)?;
+        wasmtime_wasi::p2::add_to_linker_sync(&mut linker)?;
 
         let table = ResourceTable::new();
         let table2 = ResourceTable::new();
