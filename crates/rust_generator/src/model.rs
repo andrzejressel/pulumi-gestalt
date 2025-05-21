@@ -129,7 +129,7 @@ impl ElementIdExt for ElementId {
     }
 
     fn get_rust_absolute_name(&self) -> String {
-        let mut parts = self.namespace.clone();
+        let mut parts = self.namespace.clone().iter().map(|s| escape_rust_name(&s).to_string()).collect::<Vec<String>>();
         parts.push(self.name.clone().to_case(Case::Pascal));
         parts.join("::")
     }
