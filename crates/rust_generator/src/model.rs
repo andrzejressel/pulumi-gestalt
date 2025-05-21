@@ -316,8 +316,7 @@ impl ElementId {
             .collect();
 
         let result = replace_multiple_dashes(&result);
-        let result = result.trim_matches('-').to_string();
-        result
+        result.trim_matches('-').to_string()
     }
 
     fn create_valid_id(s: &str) -> String {
