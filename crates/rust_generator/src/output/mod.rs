@@ -1,5 +1,6 @@
 use crate::model::{ElementIdExt, TypeExt};
 use crate::output::types::generate_types_code;
+use crate::utils::escape_rust_name;
 use convert_case::Case::UpperCamel;
 use convert_case::{Case, Casing};
 use itertools::Itertools;
@@ -9,7 +10,6 @@ use std::fs::{File, FileTimes};
 use std::io::Write;
 use std::ops::Deref;
 use std::time::SystemTime;
-use crate::utils::escape_rust_name;
 
 pub(crate) mod functions;
 mod main;
