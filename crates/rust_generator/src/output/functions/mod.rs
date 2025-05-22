@@ -1,7 +1,7 @@
-use crate::model::{ElementId, Package};
 use crate::output::functions::source_code_function_code::generate_single_function_source_code;
 use crate::utils::reformat_code;
 use anyhow::Context;
+use pulumi_gestalt_schema::model::{ElementId, Package};
 
 mod source_code_function_code;
 

@@ -1,12 +1,13 @@
 use crate::code_generation::yaml::model::Expression;
 use crate::code_generation::yaml::model::Resource;
 use crate::code_generation::yaml::model::{Example, FnInvoke, Variable};
-use crate::model::ElementId;
+use crate::model::ElementIdExt;
 use crate::utils::{escape_rust_name, reformat_code};
 use anyhow::Context;
 use anyhow::Result;
 use convert_case::Case;
 use convert_case::Casing;
+use pulumi_gestalt_schema::model::ElementId;
 use quote::ToTokens;
 use std::collections::BTreeMap;
 use syn::LitStr;

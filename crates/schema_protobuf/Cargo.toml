@@ -1,0 +1,21 @@
+[package]
+name = "pulumi_gestalt_schema_protobuf"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+license.workspace = true
+readme.workspace = true
+description = "Pulumi schema returned as protobuf"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+pulumi_gestalt_schema.workspace = true
+anyhow.workspace = true
+pulumi_gestalt_proto = { workspace = true, features = ["pulumi_gestalt"] }
+prost.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+pulumi_gestalt_schema = {workspace = true, features = ["arbitrary"]}
+pathdiff.workspace = true

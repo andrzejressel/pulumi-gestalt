@@ -1,8 +1,9 @@
-use crate::model::{ElementId, Type};
+use crate::model::{ElementIdExt, InputPropertyExt, OutputPropertyExt, TypeExt};
 use crate::output::get_register_interface;
 use crate::utils::access_root;
 use convert_case::{Case, Casing};
 use handlebars::Handlebars;
+use pulumi_gestalt_schema::model::{ElementId, Package, Type};
 use serde::Serialize;
 use serde_json::json;
 
@@ -41,7 +42,7 @@ struct Function {
     get_version: String,
 }
 
-fn convert_function(package: &crate::model::Package, element_id: &ElementId) -> Function {
+fn convert_function(package: &Package, element_id: &ElementId) -> Function {
     let function = package.functions.get(element_id).unwrap();
     let depth = element_id.namespace.len() + 2;
     let get_version = format!("{}get_version()", access_root(depth));
@@ -53,11 +54,7 @@ fn convert_function(package: &crate::model::Package, element_id: &ElementId) -> 
         register_interface: get_register_interface(element_id),
         function_name: element_id.get_rust_function_name(),
         get_version,
-        description_lines: crate::utils::to_lines(
-            function.description.clone(),
-            package,
-            Some(element_id.clone()),
-        ),
+        description_lines: crate::utils::to_lines(function.description.clone(), package),
         input_properties: function
             .input_properties
             .iter()
@@ -71,7 +68,6 @@ fn convert_function(package: &crate::model::Package, element_id: &ElementId) -> 
                 description_lines: crate::utils::to_lines(
                     input_property.description.clone(),
                     package,
-                    None,
                 ),
             })
             .collect(),
@@ -85,7 +81,6 @@ fn convert_function(package: &crate::model::Package, element_id: &ElementId) -> 
                 description_lines: crate::utils::to_lines(
                     output_property.description.clone(),
                     package,
-                    None,
                 ),
             })
             .collect(),
@@ -93,7 +88,7 @@ fn convert_function(package: &crate::model::Package, element_id: &ElementId) -> 
 }
 
 pub(crate) fn generate_single_function_source_code(
-    package: &crate::model::Package,
+    package: &Package,
     element_id: &ElementId,
 ) -> String {
     let handlebars = Handlebars::new();

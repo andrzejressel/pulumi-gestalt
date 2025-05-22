@@ -1,6 +1,7 @@
-use crate::model::{ElementId, GlobalTypeValue, Type};
+use crate::model::{ElementIdExt, GlobalTypePropertyExt, TypeExt};
 use convert_case::{Case, Casing};
 use handlebars::Handlebars;
+use pulumi_gestalt_schema::model::{ElementId, GlobalTypeValue, Package, Type};
 use serde::Serialize;
 use serde_json::json;
 use std::collections::BTreeSet;
@@ -84,7 +85,7 @@ enum GenerateResource {
     IntegerEnum(IntegerEnum),
 }
 
-fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> GenerateResource {
+fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResource {
     let resource = package.types.get(element_id).unwrap();
     let depth = element_id.namespace.len() + 1;
     match &resource.deref().value {
@@ -92,7 +93,7 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
             let ref_type = RefType {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
-                description_lines: crate::utils::to_lines(description.clone(), package, None),
+                description_lines: crate::utils::to_lines(description.clone(), package),
                 fields: properties
                     .iter()
                     .map(|global_type_property| Property {
@@ -105,7 +106,6 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
                         description_lines: crate::utils::to_lines(
                             global_type_property.description.clone(),
                             package,
-                            None,
                         ),
                     })
                     .collect(),
@@ -120,7 +120,7 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
             let enum_type = StringEnum {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
-                description_lines: crate::utils::to_lines(description.clone(), package, None),
+                description_lines: crate::utils::to_lines(description.clone(), package),
                 values: enum_values
                     .iter()
                     .map(|enum_value| StringEnumValue {
@@ -129,7 +129,6 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
                         description_lines: crate::utils::to_lines(
                             enum_value.description.clone(),
                             package,
-                            None,
                         ),
                     })
                     .collect(),
@@ -140,7 +139,7 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
             let enum_type = NumberEnum {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
-                description_lines: crate::utils::to_lines(description.clone(), package, None),
+                description_lines: crate::utils::to_lines(description.clone(), package),
                 values: enum_values
                     .iter()
                     .map(|enum_value| NumberEnumValue {
@@ -149,7 +148,6 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
                         description_lines: crate::utils::to_lines(
                             enum_value.description.clone(),
                             package,
-                            None,
                         ),
                     })
                     .collect(),
@@ -160,7 +158,7 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
             let enum_type = IntegerEnum {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
-                description_lines: crate::utils::to_lines(description.clone(), package, None),
+                description_lines: crate::utils::to_lines(description.clone(), package),
                 values: enum_values
                     .iter()
                     .map(|enum_value| IntegerEnumValue {
@@ -169,7 +167,6 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
                         description_lines: crate::utils::to_lines(
                             enum_value.description.clone(),
                             package,
-                            None,
                         ),
                     })
                     .collect(),
@@ -180,7 +177,7 @@ fn convert_resource(package: &crate::model::Package, element_id: &ElementId) -> 
 }
 
 pub(crate) fn generate_single_type_source_file(
-    package: &crate::model::Package,
+    package: &Package,
     element_id: &ElementId,
 ) -> String {
     let handlebars = Handlebars::new();

@@ -134,7 +134,8 @@ fn main() {
 
 fn update_tests(tests: &[&str], filtered_tests: &[FilteredTest]) {
     update_github_actions_build(tests, filtered_tests);
-    update_test_rs(tests, filtered_tests);
+    update_rust_generator_test_rs(tests, filtered_tests);
+    update_schema_protobuf_test_rs(tests, filtered_tests);
 }
 
 fn update_github_actions_build(tests: &[&str], filtered_tests: &[FilteredTest]) {
@@ -159,7 +160,7 @@ fn update_github_actions_build(tests: &[&str], filtered_tests: &[FilteredTest]) 
         .expect("Failed to write to .github/workflows/build.yml");
 }
 
-fn update_test_rs(tests: &[&str], filtered_tests: &[FilteredTest]) {
+fn update_rust_generator_test_rs(tests: &[&str], filtered_tests: &[FilteredTest]) {
     let content = fs::read_to_string("crates/rust_generator/tests/test.rs")
         .expect("Failed to read crates/rust_generator/tests/test.rs");
 
@@ -206,6 +207,52 @@ fn {method_name}() -> Result<()> {{
 
     fs::write("crates/rust_generator/tests/test.rs", new_content)
         .expect("Failed to write to crates/rust_generator/tests/test.rs");
+}
+
+fn update_schema_protobuf_test_rs(tests: &[&str], filtered_tests: &[FilteredTest]) {
+    let content = fs::read_to_string("crates/schema_protobuf/tests/test.rs")
+        .expect("Failed to read crates/schema_protobuf/tests/test.rs");
+
+    let mut replacement = String::new();
+    for test_directory in tests {
+        let method_name = test_directory.replace("-", "_");
+
+        let code = format!(
+            r#"
+#[test]
+fn {method_name}() -> Result<()> {{
+    run_pulumi_generator_test("{test_directory}", "{test_directory}", None)
+}}
+"#
+        );
+
+        replacement.push_str(&code);
+    }
+
+    for filtered_test in filtered_tests {
+        for (index, filter) in filtered_test.filters.iter().enumerate() {
+            let provider_name = filtered_test.name;
+            let directory_name = format!("{}-{}", filtered_test.name, index);
+            let method_name = directory_name.replace("-", "_");
+            let filter_name = filter.iter().map(|s| format!("\"{s}\"")).join(",");
+            let code = format!(
+                r#"
+#[test]
+fn {method_name}() -> Result<()> {{
+    run_pulumi_generator_test("{provider_name}", "{directory_name}", Some(&[{filter_name}]))
+}}
+"#
+            );
+            replacement.push_str(&code);
+        }
+    }
+
+    let start_marker = "// DO NOT EDIT - START";
+    let end_marker = "// DO NOT EDIT - END";
+    let new_content = replace_between_markers(&content, start_marker, end_marker, &replacement);
+
+    fs::write("crates/schema_protobuf/tests/test.rs", new_content)
+        .expect("Failed to write to crates/schema_protobuf/tests/test.rs");
 }
 
 fn update_generator_cargo_toml(tests: &[&str], filtered_tests: &[FilteredTest]) {

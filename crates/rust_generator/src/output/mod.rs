@@ -1,8 +1,10 @@
-use crate::model::{ElementId, GlobalTypeValue, Package};
+use crate::model::{ElementIdExt, TypeExt};
 use crate::output::types::generate_types_code;
+use crate::utils::escape_rust_name;
 use convert_case::Case::UpperCamel;
 use convert_case::{Case, Casing};
 use itertools::Itertools;
+use pulumi_gestalt_schema::model::{ElementId, GlobalTypeValue, Package};
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs::{File, FileTimes};
 use std::io::Write;
@@ -36,7 +38,7 @@ impl TreeNode {
                     children_elements.insert(element.clone());
                 } else {
                     let next_node = children
-                        .entry(element.namespace[index].clone())
+                        .entry(escape_rust_name(&element.namespace[index]).to_string())
                         .or_insert_with(TreeNode::new);
                     next_node.insert_priv(element, index + 1);
                 }
@@ -155,7 +157,7 @@ fn generate_includes_looper(tree_node: &TreeNode, current_path: &std::path::Path
     }
 }
 
-fn find_consts(package: &crate::model::Package) -> Vec<String> {
+fn find_consts(package: &Package) -> Vec<String> {
     let mut consts = BTreeSet::new();
     for resource in package.resources.values() {
         for input in &resource.input_properties {

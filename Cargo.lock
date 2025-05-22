@@ -3211,17 +3211,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "proptest-derive"
-version = "0.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4ee1c9ac207483d5e7db4940700de86a9aae46ef90c48b57f99fe7edb8345e49"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.101",
-]
-
-[[package]]
 name = "prost"
 version = "0.13.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3299,6 +3288,7 @@ version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_generator",
+ "pulumi_gestalt_schema",
  "tempfile",
 ]
 
@@ -3436,10 +3426,7 @@ dependencies = [
  "pathdiff",
  "prettyplease",
  "proc-macro2",
- "proptest",
- "proptest-derive",
- "pulumi_gestalt_proto",
- "pulumi_gestalt_rust",
+ "pulumi_gestalt_schema",
  "quote",
  "regex",
  "serde",
@@ -3601,6 +3588,34 @@ dependencies = [
  "pulumi_gestalt_proto",
  "serde_json",
  "uuid",
+]
+
+[[package]]
+name = "pulumi_gestalt_schema"
+version = "0.0.0-DEV"
+dependencies = [
+ "anyhow",
+ "convert_case",
+ "itertools",
+ "pathdiff",
+ "proptest",
+ "pulumi_gestalt_rust",
+ "regex",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+]
+
+[[package]]
+name = "pulumi_gestalt_schema_protobuf"
+version = "0.0.0-DEV"
+dependencies = [
+ "anyhow",
+ "pathdiff",
+ "proptest",
+ "prost",
+ "pulumi_gestalt_proto",
+ "pulumi_gestalt_schema",
 ]
 
 [[package]]

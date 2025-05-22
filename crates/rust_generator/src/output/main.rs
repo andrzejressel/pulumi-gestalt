@@ -1,6 +1,6 @@
-use crate::model::Package;
 use anyhow::Context;
 use askama::Template;
+use pulumi_gestalt_schema::model::Package;
 use serde::Serialize;
 
 #[derive(Template)]

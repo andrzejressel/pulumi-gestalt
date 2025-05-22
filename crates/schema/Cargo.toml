@@ -1,0 +1,25 @@
+[package]
+name = "pulumi_gestalt_schema"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+license.workspace = true
+readme.workspace = true
+description = "Pulumi schema reader"
+
+[features]
+arbitrary = ["dep:proptest"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+regex.workspace = true
+convert_case.workspace = true
+serde_yaml.workspace = true
+itertools.workspace = true
+pulumi_gestalt_rust.workspace = true
+pathdiff.workspace = true
+proptest = { workspace = true, optional = true }

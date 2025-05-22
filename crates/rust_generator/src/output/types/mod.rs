@@ -1,9 +1,10 @@
 mod source_code_types_code;
 
-use crate::model::Package;
+use crate::model::ElementIdExt;
 use crate::output::TreeNode;
 use crate::output::types::source_code_types_code::generate_single_type_source_file;
 use convert_case::{Case, Casing};
+use pulumi_gestalt_schema::model::Package;
 use std::fs::{File, FileTimes};
 use std::io::Write;
 use std::time::SystemTime;

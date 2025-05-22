@@ -113,6 +113,8 @@ publish:
     just publish-app pulumi_gestalt_rust_integration
     just publish-app pulumi_gestalt_rust_adapter_native
     just publish-app pulumi_gestalt_rust
+    just publish-app pulumi_gestalt_schema
+    just publish-app pulumi_gestalt_schema_protobuf
     just publish-app pulumi_gestalt_generator
     just publish-app pulumi_gestalt_build
     just publish-app pulumi_gestalt_wasm_runner
