@@ -2,7 +2,7 @@ use crate::model::{
     ElementId, GlobalType, GlobalTypeProperty, GlobalTypeValue, InputProperty, IntegerEnumElement,
     NumberEnumElement, OutputProperty, Ref, StringEnumElement,
 };
-use crate::utils::sanitize_identifier;
+use crate::utils::{fix_description, sanitize_identifier};
 use anyhow::{Context, Result, anyhow};
 use convert_case::{Case, Casing};
 use pulumi_gestalt_rust::generate_string_const;
@@ -284,7 +284,7 @@ fn resource_to_model(
         crate::model::Resource {
             element_id: element_id.clone(),
             // name: resource_name.clone(),
-            description: resource.object_type.description.clone(),
+            description: fix_description(resource.object_type.description.clone(), &element_id),
             input_properties: resource
                 .input_properties
                 .iter()
@@ -319,7 +319,7 @@ fn function_to_model(
         element_id.clone(),
         crate::model::Function {
             element_id: element_id.clone(),
-            description: function.description.clone(),
+            description: fix_description(function.description.clone(), &element_id),
             input_properties: match &function.inputs {
                 None => vec![],
                 Some(input) => convert_input_property_object_type(input)?,
@@ -342,7 +342,7 @@ fn convert_input_property_object_type(object_type: &ObjectType) -> Result<Vec<In
             if !object_type.required.contains(output_name) {
                 type_ = crate::model::Type::Option(Box::new(type_));
             }
-            Ok(crate::model::InputProperty {
+            Ok(InputProperty {
                 name: output_name.clone(),
                 r#type: type_,
                 description: output_property.r#type.description.clone(),

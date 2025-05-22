@@ -54,11 +54,7 @@ fn convert_function(package: &Package, element_id: &ElementId) -> Function {
         register_interface: get_register_interface(element_id),
         function_name: element_id.get_rust_function_name(),
         get_version,
-        description_lines: crate::utils::to_lines(
-            function.description.clone(),
-            package,
-            Some(element_id.clone()),
-        ),
+        description_lines: crate::utils::to_lines(function.description.clone(), package),
         input_properties: function
             .input_properties
             .iter()
@@ -72,7 +68,6 @@ fn convert_function(package: &Package, element_id: &ElementId) -> Function {
                 description_lines: crate::utils::to_lines(
                     input_property.description.clone(),
                     package,
-                    None,
                 ),
             })
             .collect(),
@@ -86,7 +81,6 @@ fn convert_function(package: &Package, element_id: &ElementId) -> Function {
                 description_lines: crate::utils::to_lines(
                     output_property.description.clone(),
                     package,
-                    None,
                 ),
             })
             .collect(),

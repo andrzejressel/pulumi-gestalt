@@ -93,7 +93,7 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
             let ref_type = RefType {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
-                description_lines: crate::utils::to_lines(description.clone(), package, None),
+                description_lines: crate::utils::to_lines(description.clone(), package),
                 fields: properties
                     .iter()
                     .map(|global_type_property| Property {
@@ -106,7 +106,6 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
                         description_lines: crate::utils::to_lines(
                             global_type_property.description.clone(),
                             package,
-                            None,
                         ),
                     })
                     .collect(),
@@ -121,7 +120,7 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
             let enum_type = StringEnum {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
-                description_lines: crate::utils::to_lines(description.clone(), package, None),
+                description_lines: crate::utils::to_lines(description.clone(), package),
                 values: enum_values
                     .iter()
                     .map(|enum_value| StringEnumValue {
@@ -130,7 +129,6 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
                         description_lines: crate::utils::to_lines(
                             enum_value.description.clone(),
                             package,
-                            None,
                         ),
                     })
                     .collect(),
@@ -141,7 +139,7 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
             let enum_type = NumberEnum {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
-                description_lines: crate::utils::to_lines(description.clone(), package, None),
+                description_lines: crate::utils::to_lines(description.clone(), package),
                 values: enum_values
                     .iter()
                     .map(|enum_value| NumberEnumValue {
@@ -150,7 +148,6 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
                         description_lines: crate::utils::to_lines(
                             enum_value.description.clone(),
                             package,
-                            None,
                         ),
                     })
                     .collect(),
@@ -161,7 +158,7 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
             let enum_type = IntegerEnum {
                 struct_name: element_id.get_rust_struct_name(),
                 file_name: element_id.get_rust_struct_name().to_case(Case::Snake),
-                description_lines: crate::utils::to_lines(description.clone(), package, None),
+                description_lines: crate::utils::to_lines(description.clone(), package),
                 values: enum_values
                     .iter()
                     .map(|enum_value| IntegerEnumValue {
@@ -170,7 +167,6 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
                         description_lines: crate::utils::to_lines(
                             enum_value.description.clone(),
                             package,
-                            None,
                         ),
                     })
                     .collect(),

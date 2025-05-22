@@ -1,14 +1,7 @@
 use crate::model::ElementId;
-use regex::Regex;
 use std::collections::HashMap;
 use std::fs;
 use std::sync::LazyLock;
-
-pub(crate) fn replace_multiple_dashes(s: &str) -> String {
-    let re = Regex::new("-+").unwrap();
-    let result = re.replace_all(s, "-");
-    result.to_string()
-}
 
 pub(crate) fn sanitize_identifier(input: &str) -> String {
     // Filter characters that are valid for an identifier in Rust
@@ -18,7 +11,7 @@ pub(crate) fn sanitize_identifier(input: &str) -> String {
         .collect()
 }
 
-pub(crate) fn fix_description(s: Option<String>, element_id: Option<ElementId>) -> Option<String> {
+pub(crate) fn fix_description(s: Option<String>, element_id: &ElementId) -> Option<String> {
     s.map(|s| fix_pulumi_docker_docs(s, element_id))
 }
 
@@ -70,21 +63,19 @@ static DOCKER_SERVICE_REPLACEMENTS: LazyLock<HashMap<ElementId, Vec<(&str, &str)
         ])
     });
 
-fn fix_pulumi_docker_docs(s: String, element_id: Option<ElementId>) -> String {
-    if let Some(id) = element_id {
-        let replacement = &DOCKER_SERVICE_REPLACEMENTS;
-        if let Some(replacements) = replacement.get(&id) {
-            for (origin, fixed) in replacements {
-                if s.contains(origin) {
-                    return fixed.to_string();
-                }
+fn fix_pulumi_docker_docs(s: String, element_id: &ElementId) -> String {
+    let replacement = &DOCKER_SERVICE_REPLACEMENTS;
+    if let Some(replacements) = replacement.get(element_id) {
+        for (origin, fixed) in replacements {
+            if s.contains(origin) {
+                return fixed.to_string();
             }
-            fs::write("error.md", s).unwrap();
-            panic!(
-                "ElementId {:?} does not have valid replacement. Original markdown was saved to error.md",
-                id
-            );
         }
+        fs::write("error.md", s).unwrap();
+        panic!(
+            "ElementId {:?} does not have valid replacement. Original markdown was saved to error.md",
+            element_id
+        );
     }
 
     s

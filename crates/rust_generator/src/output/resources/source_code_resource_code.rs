@@ -53,11 +53,7 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> Resource {
         struct_name: element_id.name.clone(),
         get_version,
         function_name: element_id.get_rust_function_name(),
-        description_lines: crate::utils::to_lines(
-            resource.description.clone(),
-            package,
-            Some(element_id.clone()),
-        ),
+        description_lines: crate::utils::to_lines(resource.description.clone(), package),
         input_properties: resource
             .input_properties
             .iter()
@@ -71,7 +67,6 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> Resource {
                 description_lines: crate::utils::to_lines(
                     input_property.description.clone(),
                     package,
-                    None,
                 ),
             })
             .collect(),
@@ -85,7 +80,6 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> Resource {
                 description_lines: crate::utils::to_lines(
                     output_property.description.clone(),
                     package,
-                    None,
                 ),
             })
             .collect(),
