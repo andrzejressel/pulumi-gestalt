@@ -1,5 +1,4 @@
 use crate::utils::{access_root, escape_rust_name, replace_multiple_dashes};
-use anyhow::Result;
 use convert_case::Case;
 use convert_case::Case::UpperCamel;
 use convert_case::Casing;
@@ -118,9 +117,6 @@ pub(crate) trait ElementIdExt {
     fn get_rust_package_name(&self) -> String;
     fn get_rust_namespace_name(&self) -> String;
     fn create_valid_id(s: &str) -> String;
-    fn new(raw: &str) -> Result<Self>
-    where
-        Self: Sized;
 }
 
 impl ElementIdExt for ElementId {
@@ -171,37 +167,5 @@ impl ElementIdExt for ElementId {
         let result = result.trim_matches('-').to_string();
 
         result.replace("-", "_")
-    }
-
-    fn new(raw: &str) -> Result<Self> {
-        let raw = raw.replace("%2F", "/");
-        let parts: Vec<&str> = raw.split(':').collect();
-        if parts.len() != 3 {
-            return Err(anyhow::anyhow!("Cannot generate element id from [{raw}]"));
-        }
-        let name = parts[2].to_string();
-        let namespace = parts[1].split('/').collect::<Vec<_>>();
-
-        let mut final_namespaces = Vec::new();
-
-        for (i, s) in namespace.iter().enumerate() {
-            if i == 0 && s == &"index" {
-                continue;
-            }
-            if i == namespace.len() - 1 && s.to_lowercase() == name.to_lowercase() {
-                continue;
-            }
-            if s.is_empty() {
-                continue;
-            }
-
-            final_namespaces.push(escape_rust_name(&s.replace("-", "_")).to_string());
-        }
-
-        Ok(ElementId {
-            namespace: final_namespaces,
-            name,
-            raw: raw.to_string(),
-        })
     }
 }
