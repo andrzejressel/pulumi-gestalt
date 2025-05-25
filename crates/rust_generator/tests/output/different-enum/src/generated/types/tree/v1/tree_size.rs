@@ -3,9 +3,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub enum TreeSize {
     #[serde(rename = "small")]
-    SMALL,
+    Small,
     #[serde(rename = "medium")]
-    MEDIUM,
+    Medium,
     #[serde(rename = "large")]
-    LARGE,
+    Large,
 }

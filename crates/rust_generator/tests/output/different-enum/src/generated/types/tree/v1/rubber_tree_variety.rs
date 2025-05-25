@@ -4,11 +4,11 @@
 pub enum RubberTreeVariety {
     /// A burgundy rubber tree.
     #[serde(rename = "Burgundy")]
-    BURGUNDY,
+    Burgundy,
     /// A ruby rubber tree.
     #[serde(rename = "Ruby")]
-    RUBY,
+    Ruby,
     /// A tineke rubber tree.
     #[serde(rename = "Tineke")]
-    TINEKE,
+    Tineke,
 }

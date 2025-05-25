@@ -3,9 +3,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub enum ContainerColor {
     #[serde(rename = "red")]
-    RED,
+    Red,
     #[serde(rename = "blue")]
-    BLUE,
+    Blue,
     #[serde(rename = "yellow")]
-    YELLOW,
+    Yellow,
 }
