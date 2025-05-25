@@ -1,4 +1,5 @@
 use crate::model::{ElementIdExt, GlobalTypePropertyExt, TypeExt};
+use crate::utils::sanitize_rust_identifier;
 use convert_case::{Case, Casing};
 use handlebars::Handlebars;
 use pulumi_gestalt_schema::model::{ElementId, GlobalTypeValue, Package, Type};
@@ -45,7 +46,7 @@ struct StringEnum {
 struct StringEnumValue {
     name: String,
     description_lines: Vec<String>,
-    value: Option<String>,
+    value: String,
 }
 
 #[derive(Serialize)]
@@ -124,7 +125,7 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
                 values: enum_values
                     .iter()
                     .map(|enum_value| StringEnumValue {
-                        name: enum_value.name.clone(),
+                        name: sanitize_rust_identifier(&enum_value.name),
                         value: enum_value.value.clone(),
                         description_lines: crate::utils::to_lines(
                             enum_value.description.clone(),

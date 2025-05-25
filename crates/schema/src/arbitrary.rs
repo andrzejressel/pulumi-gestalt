@@ -253,7 +253,7 @@ impl Arbitrary for StringEnumElement {
     fn arbitrary_with(_args: Self::Parameters) -> Self::Strategy {
         (
             string_strategy(),
-            prop::option::of(string_strategy()),
+            string_strategy(),
             prop::option::of(string_strategy()),
         )
             .prop_map(|(name, value, description)| StringEnumElement {

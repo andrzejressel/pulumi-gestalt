@@ -2,7 +2,7 @@ use crate::model::{
     ElementId, GlobalType, GlobalTypeProperty, GlobalTypeValue, InputProperty, IntegerEnumElement,
     NumberEnumElement, OutputProperty, Ref, StringEnumElement,
 };
-use crate::utils::{fix_description, sanitize_identifier};
+use crate::utils::fix_description;
 use anyhow::{Context, Result, anyhow};
 use convert_case::{Case, Casing};
 use pulumi_gestalt_rust::generate_string_const;
@@ -529,23 +529,17 @@ fn create_string_enum(
             .iter()
             .map(|enum_value| {
                 let (name, value) = match (&enum_value.name, &enum_value.value) {
-                    (Some(name), Some(value)) => (sanitize_identifier(name), value.clone()),
-                    (Some(name), None) => (sanitize_identifier(name), name.clone()),
-                    (None, Some(value)) => (sanitize_identifier(value), value.clone()),
+                    (Some(name), Some(value)) => (name, value),
+                    (Some(name), None) => (name, name),
+                    (None, Some(value)) => (value, value),
                     (None, None) => {
                         panic!("Invalid enum value: {enum_value:?}")
                     }
                 };
 
-                let (real_name, real_value) = if name == value {
-                    (name, None)
-                } else {
-                    (name, Some(value))
-                };
-
                 StringEnumElement {
-                    name: real_name,
-                    value: real_value,
+                    name: name.clone(),
+                    value: value.clone(),
                     description: enum_value.description.clone(),
                 }
             })

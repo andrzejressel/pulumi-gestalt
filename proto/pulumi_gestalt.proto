@@ -133,7 +133,7 @@ message GlobalTypeProperty {
 // StringEnumElement definition
 message StringEnumElement {
   string name = 1;
-  optional string value = 2;
+  string value = 2;
   optional string description = 3;
 }
 

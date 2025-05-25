@@ -3,14 +3,6 @@ use std::collections::HashMap;
 use std::fs;
 use std::sync::LazyLock;
 
-pub(crate) fn sanitize_identifier(input: &str) -> String {
-    // Filter characters that are valid for an identifier in Rust
-    input
-        .chars()
-        .filter(|c| c.is_alphanumeric() || *c == '_') // Keep letters, digits, and underscores
-        .collect()
-}
-
 pub(crate) fn fix_description(s: Option<String>, element_id: &ElementId) -> Option<String> {
     s.map(|s| fix_pulumi_docker_docs(s, element_id))
 }

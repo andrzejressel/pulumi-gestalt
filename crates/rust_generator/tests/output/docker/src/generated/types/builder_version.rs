@@ -3,7 +3,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub enum BuilderVersion {
     /// The first generation builder for Docker Daemon
+    #[serde(rename = "BuilderV1")]
     BuilderV1,
     /// The builder based on moby/buildkit project
+    #[serde(rename = "BuilderBuildKit")]
     BuilderBuildKit,
 }

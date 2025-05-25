@@ -2,7 +2,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub enum ContainerColor {
-    red,
-    blue,
-    yellow,
+    #[serde(rename = "red")]
+    Red,
+    #[serde(rename = "blue")]
+    Blue,
+    #[serde(rename = "yellow")]
+    Yellow,
 }
