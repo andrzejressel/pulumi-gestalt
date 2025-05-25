@@ -54,7 +54,7 @@ pub enum GlobalTypeValue {
 #[derive(Debug, PartialEq, Hash, Ord, PartialOrd, Eq)]
 pub struct StringEnumElement {
     pub name: String,
-    pub value: Option<String>,
+    pub value: String,
     pub description: Option<String>,
 }
 

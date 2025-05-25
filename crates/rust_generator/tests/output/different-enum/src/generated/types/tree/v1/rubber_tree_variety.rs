@@ -3,9 +3,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub enum RubberTreeVariety {
     /// A burgundy rubber tree.
-    Burgundy,
+    #[serde(rename = "Burgundy")]
+    BURGUNDY,
     /// A ruby rubber tree.
-    Ruby,
+    #[serde(rename = "Ruby")]
+    RUBY,
     /// A tineke rubber tree.
-    Tineke,
+    #[serde(rename = "Tineke")]
+    TINEKE,
 }

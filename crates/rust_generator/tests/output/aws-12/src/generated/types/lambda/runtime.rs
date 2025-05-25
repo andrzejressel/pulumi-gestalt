@@ -13,63 +13,63 @@ pub enum Runtime {
     #[serde(rename = "java21")]
     Java21,
     #[serde(rename = "java8.al2")]
-    Java8AL2,
+    Java8Al2,
     #[serde(rename = "nodejs18.x")]
-    NodeJS18dX,
+    NodeJs18DX,
     #[serde(rename = "nodejs20.x")]
-    NodeJS20dX,
+    NodeJs20DX,
     #[serde(rename = "nodejs22.x")]
-    NodeJS22dX,
+    NodeJs22DX,
     #[serde(rename = "provided.al2")]
-    CustomAL2,
+    CustomAl2,
     #[serde(rename = "provided.al2023")]
-    CustomAL2023,
+    CustomAl2023,
     #[serde(rename = "python3.10")]
-    Python3d10,
+    Python3D10,
     #[serde(rename = "python3.11")]
-    Python3d11,
+    Python3D11,
     #[serde(rename = "python3.12")]
-    Python3d12,
+    Python3D12,
     #[serde(rename = "python3.13")]
-    Python3d13,
+    Python3D13,
     #[serde(rename = "python3.9")]
-    Python3d9,
+    Python3D9,
     #[serde(rename = "ruby3.2")]
-    Ruby3d2,
+    Ruby3D2,
     #[serde(rename = "ruby3.3")]
-    Ruby3d3,
+    Ruby3D3,
     #[serde(rename = "dotnet5.0")]
-    Dotnet5d0,
+    Dotnet5D0,
     #[serde(rename = "dotnet7")]
     Dotnet7,
     #[serde(rename = "dotnetcore2.1")]
-    DotnetCore2d1,
+    DotnetCore2D1,
     #[serde(rename = "dotnetcore3.1")]
-    DotnetCore3d1,
+    DotnetCore3D1,
     #[serde(rename = "go1.x")]
-    Go1dx,
+    Go1Dx,
     #[serde(rename = "java8")]
     Java8,
     #[serde(rename = "nodejs10.x")]
-    NodeJS10dX,
+    NodeJs10DX,
     #[serde(rename = "nodejs12.x")]
-    NodeJS12dX,
+    NodeJs12DX,
     #[serde(rename = "nodejs14.x")]
-    NodeJS14dX,
+    NodeJs14DX,
     #[serde(rename = "nodejs16.x")]
-    NodeJS16dX,
+    NodeJs16DX,
     #[serde(rename = "provided")]
     Custom,
     #[serde(rename = "python2.7")]
-    Python2d7,
+    Python2D7,
     #[serde(rename = "python3.6")]
-    Python3d6,
+    Python3D6,
     #[serde(rename = "python3.7")]
-    Python3d7,
+    Python3D7,
     #[serde(rename = "python3.8")]
-    Python3d8,
+    Python3D8,
     #[serde(rename = "ruby2.5")]
-    Ruby2d5,
+    Ruby2D5,
     #[serde(rename = "ruby2.7")]
-    Ruby2d7,
+    Ruby2D7,
 }

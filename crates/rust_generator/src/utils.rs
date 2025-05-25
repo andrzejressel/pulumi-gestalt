@@ -1,5 +1,6 @@
 use crate::description::Description;
 use anyhow::Context;
+use convert_case::{Case, Casing};
 use pulumi_gestalt_schema::model::Package;
 use regex::Regex;
 
@@ -7,6 +8,15 @@ pub(crate) fn replace_multiple_dashes(s: &str) -> String {
     let re = Regex::new("-+").unwrap();
     let result = re.replace_all(s, "-");
     result.to_string()
+}
+
+pub(crate) fn sanitize_rust_identifier(input: &str) -> String {
+    input
+        .replace('\'', "-")
+        .chars()
+        .filter(|c| c.is_alphanumeric() || *c == '_' || *c == '-')
+        .collect::<String>()
+        .to_case(Case::UpperCamel)
 }
 
 pub(crate) fn escape_rust_name(name: &str) -> &str {

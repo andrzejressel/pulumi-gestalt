@@ -2,7 +2,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub enum TreeSize {
-    small,
-    medium,
-    large,
+    #[serde(rename = "small")]
+    SMALL,
+    #[serde(rename = "medium")]
+    MEDIUM,
+    #[serde(rename = "large")]
+    LARGE,
 }

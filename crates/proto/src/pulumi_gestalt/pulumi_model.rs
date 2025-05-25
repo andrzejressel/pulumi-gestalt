@@ -206,8 +206,8 @@ pub struct GlobalTypeProperty {
 pub struct StringEnumElement {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
-    #[prost(string, optional, tag = "2")]
-    pub value: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, tag = "2")]
+    pub value: ::prost::alloc::string::String,
     #[prost(string, optional, tag = "3")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
 }
