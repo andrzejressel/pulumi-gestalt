@@ -51,7 +51,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@5cbf019d8cb9b9d5b086218c41458ea35d817691 # v1.12.5
+      - uses: cargo-bins/cargo-binstall@e8c9cc3599f6c4063d143083205f98ca25d91677 # v1.12.6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
