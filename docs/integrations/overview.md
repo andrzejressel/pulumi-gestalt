@@ -96,7 +96,46 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 !!! abstract "Executes all registered operations. Call this before destroying the context."
 
     === "Wasm"
-        This function has [a completely different signature and meaning](wasm.md#callback-emulation).
+
+        **🛠️ Signature:**
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface context {
+            resource context {
+                finish: func(functions: list<function-invocation-result>) -> list<function-invocation-request>;
+            }
+        }
+        ```
+
+        **function-invocation-result**
+
+        | Name      | Type              | Description         |
+        |-----------|-------------------|---------------------|
+        | id        | borrow<output>    | Output ID           |
+        | value     | string            | JSON encoded value  |
+
+        **function-invocation-request**
+
+        | Name           | Type              | Description         |
+        |----------------|-------------------|---------------------|
+        | id             | output            | Output ID           |
+        | function-name  | string            | Function name       |
+        | value          | string            | JSON encoded value  |
+
+        **📥 Parameters:**
+
+        | Name       | Type                              | Description                     |
+        |------------|-----------------------------------|---------------------------------|
+        | `functions`| `list<function-invocation-result>` | Results of function invocations |
+
+        **📤 Returns:**
+
+        | Type                              | Description                        |
+        |-----------------------------------|------------------------------------|
+        | `list<function-invocation-request>` | List of function invocation requests |
+
+        See [callback emulation](wasm.md#callback-emulation) for more details on how this function is used.
 
     === "Rust"
         **🛠️ Signature:**
@@ -148,17 +187,22 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Wasm"
 
         **🛠️ Signature:**
-        ```python
-        def create_output(ctx: Context, value: string, secret: bool) -> Output
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface context {
+            resource context {
+                create-output: func(value: string, secret:bool) -> output;
+            }
+        }
         ```
 
         **📥 Parameters:**
 
-        | Name      | Type      | Description         |
-        |-----------|-----------|---------------------|
-        | `ctx`     | `Context` | Instance of context |
-        | `value`   | `string`  | JSON encoded value  |
-        | `secret`  | `bool`    | Mark output as secret |
+        | Name     | Type     | Description          |
+        |----------|----------|----------------------|
+        | `value`  | `string` | JSON encoded value   |
+        | `secret` | `bool`   | Mark output as secret |
 
         **📤 Returns:**
 
@@ -217,27 +261,38 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Wasm"
 
         **🛠️ Signature:**
-        ```python
-        def register_resource(ctx: Context, type: string, name: string, version: string, inputs: List[ObjectField]) -> CompositeOutput
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface context {
+            resource context {
+                register-resource: func(request: register-resource-request) -> composite-output;
+            }
+        }
         ```
 
-        **ObjectField**
+        **register-resource-request**
+
+        | Name      | Type                | Description                                                  |
+        |-----------|---------------------|--------------------------------------------------------------|
+        | `%type`   | `string`            | Resource type (i.e `random:index/randomString:RandomString`) |
+        | `name`    | `string`            | User's resource name (i.e. `my_resource`)                    |
+        | `version` | `string`            | Resource provider version                                    |
+        | `object`  | `list<object-field>` | Resource inputs                                             |
+
+        **object-field**
 
         | Name      | Type              | Description         |
         |-----------|-------------------|---------------------|
         | name      | string            | Resource name       |
-        | value     | Output            | Resource value      |
+        | value     | borrow<output>    | Resource value      |
 
 
         **📥 Parameters:**
 
-        | Name      | Type                | Description                                                  |
-        |-----------|---------------------|--------------------------------------------------------------|
-        | `ctx`     | `Context`           | Instance of context                                          |
-        | `type`    | `string`            | Resource type (i.e `random:index/randomString:RandomString`) |
-        | `name`    | `string`            | User's resource name (i.e. `my_resource`)                    |
-        | `version` | `string`            | Resource provider version                                    |
-        | `inputs`  | `List[ObjectField]` | Resource inputs                                              |
+        | Name      | Type                       | Description                                                  |
+        |-----------|----------------------------|--------------------------------------------------------------|
+        | `request` | `register-resource-request` | Request containing type, name, version, and inputs           |
 
         **📤 Returns:**
 
@@ -317,26 +372,37 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Wasm"
 
         **🛠️ Signature:**
-        ```python
-        def invoke_resource(ctx: Context, token: string, version: string, inputs: List[ObjectField]) -> CompositeOutput
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface context {
+            resource context {
+                invoke-resource: func(request: resource-invoke-request) -> composite-output;
+            }
+        }
         ```
 
-        **ObjectField**
+        **resource-invoke-request**
+
+        | Name      | Type                | Description                                                       |
+        |-----------|---------------------|-------------------------------------------------------------------|
+        | `token`   | `string`            | Resource token (i.e [`docker:index/getNetwork:getNetwork`](https://github.com/pulumi/pulumi-docker/blob/v4.6.1/provider/cmd/pulumi-resource-docker/schema.json#L4395)) |
+        | `version` | `string`            | Resource provider version                                         |
+        | `object`  | `list<object-field>` | Resource inputs                                                  |
+
+        **object-field**
 
         | Name      | Type              | Description         |
         |-----------|-------------------|---------------------|
         | name      | string            | Resource name       |
-        | value     | Output            | Resource value      |
+        | value     | borrow<output>    | Resource value      |
 
 
         **📥 Parameters:**
 
-        | Name      | Type                | Description                                                       |
-        |-----------|---------------------|-------------------------------------------------------------------|
-        | `ctx`     | `Context`           | Instance of context                                               |
-        | `token`   | `string`            | Resource token (i.e [`docker:index/getNetwork:getNetwork`](https://github.com/pulumi/pulumi-docker/blob/v4.6.1/provider/cmd/pulumi-resource-docker/schema.json#L4395)) |
-        | `version` | `string`            | Resource provider version                                         |
-        | `inputs`  | `List[ObjectField]` | Resource inputs                                                   |
+        | Name      | Type                      | Description                                                       |
+        |-----------|---------------------------|-------------------------------------------------------------------|
+        | `request` | `resource-invoke-request` | Request containing token, version, and inputs                     |
 
 
         **📤 Returns:**
@@ -412,24 +478,29 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Wasm"
 
         **🛠️ Signature:**
-        ```python
-        def get_config(ctx: Context, name: Option[String], key: String) -> Option[ConfigValue]
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface context {
+            resource context {
+                get-config: func(name: option<string>, key: string) -> option<config-value>;
+            }
+        }
         ```
 
-        **ConfigValue**
+        **config-value**
 
         | Name      | Type              | Description         |
         |-----------|-------------------|---------------------|
         | plaintext | string            | Config value if it is not secret       |
-        | secret    | Output            | Config value hidden in output if it is a secret      |
+        | secret    | output            | Config value hidden in output if it is a secret      |
 
 
         **📥 Parameters:**
 
         | Name      | Type              | Description                                                       |
         |-----------|-------------------|-------------------------------------------------------------------|
-        | `ctx`     | `Context`         | Instance of context                                               |
-        | `name`    | `Option[string]`  | Config namespace |
+        | `name`    | `option<string>`  | Config namespace |
         | `key`     | `string`          | Config key                                       |
 
 
@@ -522,16 +593,21 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Wasm"
 
         **🛠️ Signature:**
-        ```python
-        def map(output: Output, func: Union[A => B, String => String, String]) -> Output;
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface output-interface {
+            resource output {
+                map: func(function-name: string) -> output;
+            }
+        }
         ```
 
         **📥 Parameters:**
 
-        | Name     | Type                                                        | Description                            |
-        |----------|-------------------------------------------------------------|----------------------------------------|
-        | `output` | `Output`                                                    | An `Output` object to transform        |
-        | `func`   | One of:<br />`A => B`<br />`string => string`<br />`string` | Function to apply to the `Output`      |
+        | Name            | Type     | Description                            |
+        |-----------------|----------|----------------------------------------|
+        | `function-name` | `string` | Name of the function to apply          |
 
         **📤 Returns:**
 
@@ -591,6 +667,33 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         |--------------------|-------------------------------------------------------------------------------------------------------------------|
         | `pulumi_output_t*` | An `Output` containing transformed value. Does not have to be freed. It will be freed automatically when destroying context |
 
+#### clone
+
+!!! abstract "Creates a copy of an `Output`"
+
+    === "Wasm"
+
+        **🛠️ Signature:**
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface output-interface {
+            resource output {
+                clone: func() -> output;
+            }
+        }
+        ```
+
+        **📥 Parameters:**
+
+        None
+
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | A copy of the `Output`. Does not have to be freed. It will be freed automatically when destroying context |
+
 #### combine
 
 !!! abstract "Combines multiple `Output` objects to create a single composite `Output`"
@@ -598,16 +701,21 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Wasm"
 
         **🛠️ Signature:**
-        ```python
-        def combine(output: Output, outputs: List[Output]) -> Output;
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface output-interface {
+            resource output {
+                combine: func(outputs: list<borrow<output>>) -> output;
+            }
+        }
         ```
 
         **📥 Parameters:**
 
-        | Name      | Type           | Description                         |
-        |-----------|----------------|-------------------------------------|
-        | `output`  | `Output`       | `this` output                       |
-        | `outputs` | `List[Output]` | List of `Output` objects to combine |
+        | Name      | Type                    | Description                         |
+        |-----------|-------------------------|-------------------------------------|
+        | `outputs` | `list<borrow<output>>` | List of `Output` objects to combine |
 
         **📤 Returns:**
 
@@ -666,16 +774,21 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Wasm"
 
         **🛠️ Signature:**
-        ```python
-        def add_to_export(output: Output, name: string);
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface output-interface {
+            resource output {
+                add-to-export: func(name: string);
+            }
+        }
         ```
 
         **📥 Parameters:**
 
-        | Name     | Type     | Description                            |
-        |----------|----------|----------------------------------------|
-        | `output` | `Output` | `Output` object to add as stack output |
-        | `name`   | `string` | Name of the stack output               |
+        | Name   | Type     | Description              |
+        |--------|----------|--------------------------|
+        | `name` | `string` | Name of the stack output |
 
     === "Rust"
 
@@ -715,16 +828,21 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Wasm"
 
         **🛠️ Signature:**
-        ```python
-        def get_field(output: CompositeOutput, field: string) -> Output;
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface output-interface {
+            resource composite-output {
+                get-field: func(field-name: string) -> output;
+            }
+        }
         ```
 
         **📥 Parameters:**
 
-        | Name     | Type              | Description                            |
-        |----------|-------------------|----------------------------------------|
-        | `output` | `CompositeOutput` | `CompositeOutput` object to get field  |
-        | `field`  | `string`          | Field name                             |
+        | Name         | Type     | Description |
+        |--------------|----------|-------------|
+        | `field-name` | `string` | Field name  |
 
         **📤 Returns:**
 
