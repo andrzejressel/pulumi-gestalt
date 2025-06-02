@@ -88,7 +88,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         | `pulumi_context_t` | Instance of context  |
 
 
-#### `finish`
+#### Finish
 
 !!! warning "C FFI and Rust only"
     This function does exist in WIT, but it has [a completely different signature and meaning](wasm.md#callback-emulation).
@@ -162,25 +162,32 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         |-------|---------------------|---------------------|
         | `ctx` | `pulumi_context_t*` | Instance of context |
 
-#### `destroy_context`
-
-!!! warning "Only in C FFI"
-    This function is only available in C FFI. In Rust and WASM, the context is automatically destroyed.
+#### Destroy context
 
 !!! abstract "Cleans up the context. This should be called at the end of your program."
 
-    **🛠️ Signature:**
-    ```c
-    void pulumi_destroy_context(struct pulumi_context_t *ctx);
-    ```
+    === "Wasm"
+    
+        _Not applicable. In the Wasm context, the context is destroyed automatically._
+    
+    === "Rust"
+    
+        _Not applicable. In the Rust context, the context is destroyed automatically._
+    
+    === "C FFI"
 
-    **📥 Parameters:**
+        **🛠️ Signature:**
+        ```c
+        void pulumi_destroy_context(struct pulumi_context_t *ctx);
+        ```
 
-    | Name  | Type                | Description         |
-    |-------|---------------------|---------------------|
-    | `ctx` | `pulumi_context_t*` | Instance of context |
+        **📥 Parameters:**
 
-#### `create_output`
+        | Name  | Type                | Description         |
+        |-------|---------------------|---------------------|
+        | `ctx` | `pulumi_context_t*` | Instance of context |
+
+#### Create output
 
 !!! abstract "Creates an `Output` from a known value"
 
@@ -206,9 +213,9 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **📤 Returns:**
 
-        | Type     | Description                                                                                                       |
-        |----------|-------------------------------------------------------------------------------------------------------------------|
-        | `Output` | An `Output` containing `value`. Does not have to be freed. It will be freed automatically when destroying context |
+        | Type     | Description                    |
+        |----------|--------------------------------|
+        | `Output` | An `Output` containing `value` |
 
     === "Rust"
 
@@ -229,7 +236,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         | Type     | Description                                                                                                       |
         |----------|-------------------------------------------------------------------------------------------------------------------|
-        | `Output` | An `Output` containing `value`. Does not have to be freed. It will be freed automatically when destroying context |
+        | `Output` | An `Output` containing `value` |
 
     === "C FFI"
 
@@ -254,7 +261,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         |-------------------|-------------------------------------------------------------------------------------------------------------------|
         | `pulumi_output_t*` | An `Output` containing `value`. Does not have to be freed. It will be freed automatically when destroying context |
 
-#### `register_resource`
+#### Register resource
 
 !!! abstract "Registers a new resource in the context"
 
@@ -365,7 +372,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         |----------------------------|-------------------------------------------------------------------------------------------------------------------|
         | `pulumi_composite_output_t*` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
 
-#### `invoke_resource`
+#### Invoke resource
 
 !!! abstract "Invokes a resource (also referred to as a `function`)"
 
@@ -471,7 +478,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         |----------------------------|-------------------------------------------------------------------------------------------------------------------|
         | `pulumi_composite_output_t*` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
 
-#### `get_config`
+#### Get config
 
 !!! abstract "Receives value from [config](https://www.pulumi.com/docs/iac/concepts/config/)"
 
@@ -611,29 +618,35 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **📤 Returns:**
 
-        | Type     | Description                                                                                                       |
-        |----------|-------------------------------------------------------------------------------------------------------------------|
-        | `Output` | An `Output` containing transformed value. Does not have to be freed. It will be freed automatically when destroying context |
+        | Type     | Description                               |
+        |----------|-------------------------------------------|
+        | `Output` | An `Output` containing transformed value. |
 
     === "Rust"
 
         **🛠️ Signature:**
-        ```python
-        def map(output: Output, func: Union[A => B, String => String, String]) -> Output;
+        ```rust
+        pub struct Output<T> { /* private fields */ }
+
+        fn map<B, F>(&self, f: F) -> Output<B>
+        where
+            F: Fn(T) -> B + Send + 'static,
+            T: DeserializeOwned,
+            B: Serialize, {}
         ```
 
         **📥 Parameters:**
 
-        | Name     | Type                                                        | Description                            |
-        |----------|-------------------------------------------------------------|----------------------------------------|
-        | `output` | `Output`                                                    | An `Output` object to transform        |
-        | `func`   | One of:<br />`A => B`<br />`string => string`<br />`string` | Function to apply to the `Output`      |
+        | Name     | Type     | Description                       |
+        |----------|----------|-----------------------------------|
+        | `output` | `Output` | An `Output` object to transform   |
+        | `func`   | `T -> B` | Function to apply to the `Output` |
 
         **📤 Returns:**
 
-        | Type     | Description                                                                                                       |
-        |----------|-------------------------------------------------------------------------------------------------------------------|
-        | `Output` | An `Output` containing transformed value. Does not have to be freed. It will be freed automatically when destroying context |
+        | Type     | Description                               |
+        |----------|-------------------------------------------|
+        | `Output` | An `Output` containing transformed value. |
 
     === "C FFI"
 
@@ -672,27 +685,35 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 !!! abstract "Creates a copy of an `Output`"
 
     === "Wasm"
-
+    
         **🛠️ Signature:**
         ```wit
         package component:pulumi-gestalt@0.0.0-DEV;
-
+    
         interface output-interface {
             resource output {
                 clone: func() -> output;
             }
         }
         ```
-
+    
         **📥 Parameters:**
-
+    
         None
-
+    
         **📤 Returns:**
-
+    
         | Type     | Description                                                                                                       |
         |----------|-------------------------------------------------------------------------------------------------------------------|
         | `Output` | A copy of the `Output`. Does not have to be freed. It will be freed automatically when destroying context |
+    
+    === "Rust"
+    
+        Output<T> implements `Clone` trait, so you can use `clone()` method to create a copy of it.
+    
+    === "C FFI"
+    
+        Does not exist in C FFI. Since `Output` is a reference type, it is not necessary to clone it. You can use the same `Output` instance in multiple places without cloning. Cleanup happens automatically when the context is destroyed.
 
 #### combine
 
