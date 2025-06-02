@@ -19,22 +19,73 @@ The `Pulumi Gestalt` SDK provides abstractions for working with Pulumi in a stru
 
 The `Context` abstraction manages the lifecycle of Pulumi operations. It includes the following methods:
 
-#### `create_context`
-
-!!! note "In WASM this method is `Context` constructor"
+#### Create context
 
 !!! abstract "Initializes a new context. This should be called at the start of your program."
 
-    **🛠️ Signature:**
-    ```python
-    def create_context() -> Context;
-    ```
+    === "Wasm"
 
-    **📤 Returns:**
-    
-    | Type      | Description          |
-    |-----------|----------------------|
-    | `Context` | Instance of context  |
+        **🛠️ Signature:**
+        ```wit
+        package component:pulumi-gestalt@0.0.0-DEV;
+
+        interface context {
+            resource context {
+                constructor();
+            }
+        }
+        ```
+
+        **📤 Returns:**
+
+
+        | Type      | Description          |
+        |-----------|----------------------|
+        | `context` | Instance of context  |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.new)
+        ```rust
+        pub type Context = NativeContext;
+
+        impl NativeContext {
+            pub fn new() -> NativeContext {
+                NativeContext {
+                    inner: integration::Context::create_context(),
+                }
+            }
+        }
+        ```
+
+        **📤 Returns:**
+
+
+        | Type      | Description          |
+        |-----------|----------------------|
+        | `Context` | Instance of context  |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        typedef struct pulumi_context_t pulumi_context_t;
+
+        struct pulumi_context_t *pulumi_create_context(const void *context);
+        ```
+
+        **📥 Parameters:**
+
+        | Name      | Type           | Description                                                 |
+        |-----------|----------------|-------------------------------------------------------------|
+        | `context` | `const void *` | Pointer that will be passed to `pulumi_output_map` callback |
+
+        **📤 Returns:**
+
+        | Type               | Description          |
+        |--------------------|----------------------|
+        | `pulumi_context_t` | Instance of context  |
 
 
 #### `finish`
@@ -44,16 +95,33 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
 !!! abstract "Executes all registered operations. Call this before destroying the context."
 
-    **🛠️ Signature:**
-    ```python
-    def finish(ctx: Context)
-    ```
+    === "Wasm"
+        This function has [a completely different signature and meaning](wasm.md#callback-emulation).
 
-    **📥 Parameters:**
+    === "Rust"
+        **🛠️ Signature:**
+        ```python
+        def finish(ctx: Context)
+        ```
 
-    | Name  | Type      | Description         |
-    |-------|-----------|---------------------|
-    | `ctx` | `Context` | Instance of context |
+        **📥 Parameters:**
+
+        | Name  | Type      | Description         |
+        |-------|-----------|---------------------|
+        | `ctx` | `Context` | Instance of context |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        void pulumi_finish(struct pulumi_context_t *ctx);
+        ```
+
+        **📥 Parameters:**
+
+        | Name  | Type                | Description         |
+        |-------|---------------------|---------------------|
+        | `ctx` | `pulumi_context_t*` | Instance of context |
 
 #### `destroy_context`
 
@@ -63,136 +131,386 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 !!! abstract "Cleans up the context. This should be called at the end of your program."
 
     **🛠️ Signature:**
-    ```python
-    def destroy_context(ctx: Context)
+    ```c
+    void pulumi_destroy_context(struct pulumi_context_t *ctx);
     ```
 
     **📥 Parameters:**
 
-    | Name  | Type      | Description         |
-    |-------|-----------|---------------------|
-    | `ctx` | `Context` | Instance of context |
+    | Name  | Type                | Description         |
+    |-------|---------------------|---------------------|
+    | `ctx` | `pulumi_context_t*` | Instance of context |
 
 #### `create_output`
 
 !!! abstract "Creates an `Output` from a known value"
 
-    **🛠️ Signature:**
-    ```python
-    def create_output(ctx: Context, value: string, secret: bool) -> Output
-    ```
+    === "Wasm"
 
-    **📥 Parameters:**
+        **🛠️ Signature:**
+        ```python
+        def create_output(ctx: Context, value: string, secret: bool) -> Output
+        ```
 
-    | Name      | Type      | Description         |
-    |-----------|-----------|---------------------|
-    | `ctx`     | `Context` | Instance of context |
-    | `value`   | `string`  | JSON encoded value  |
-    | `secret`  | `bool`    | Mark output as secret |
+        **📥 Parameters:**
 
-    **📤 Returns:**
+        | Name      | Type      | Description         |
+        |-----------|-----------|---------------------|
+        | `ctx`     | `Context` | Instance of context |
+        | `value`   | `string`  | JSON encoded value  |
+        | `secret`  | `bool`    | Mark output as secret |
 
-    | Type     | Description                                                                                                       |
-    |----------|-------------------------------------------------------------------------------------------------------------------|
-    | `Output` | An `Output` containing `value`. Does not have to be freed. It will be freed automatically when destroying context |
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | An `Output` containing `value`. Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        ```python
+        def create_output(ctx: Context, value: string, secret: bool) -> Output
+        ```
+
+        **📥 Parameters:**
+
+        | Name      | Type      | Description         |
+        |-----------|-----------|---------------------|
+        | `ctx`     | `Context` | Instance of context |
+        | `value`   | `string`  | JSON encoded value  |
+        | `secret`  | `bool`    | Mark output as secret |
+
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | An `Output` containing `value`. Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        struct pulumi_output_t *pulumi_create_output(struct pulumi_context_t *ctx,
+                                                     const char *value,
+                                                     bool secret);
+        ```
+
+        **📥 Parameters:**
+
+        | Name      | Type                | Description         |
+        |-----------|---------------------|---------------------|
+        | `ctx`     | `pulumi_context_t*` | Instance of context |
+        | `value`   | `const char*`       | JSON encoded value  |
+        | `secret`  | `bool`              | Mark output as secret |
+
+        **📤 Returns:**
+
+        | Type              | Description                                                                                                       |
+        |-------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `pulumi_output_t*` | An `Output` containing `value`. Does not have to be freed. It will be freed automatically when destroying context |
 
 #### `register_resource`
 
 !!! abstract "Registers a new resource in the context"
 
-    **🛠️ Signature:**
-    ```python
-    def register_resource(ctx: Context, type: string, name: string, version: string, inputs: List[ObjectField]) -> CompositeOutput
-    ```
+    === "Wasm"
 
-    **ObjectField**
+        **🛠️ Signature:**
+        ```python
+        def register_resource(ctx: Context, type: string, name: string, version: string, inputs: List[ObjectField]) -> CompositeOutput
+        ```
 
-    | Name      | Type              | Description         |
-    |-----------|-------------------|---------------------|
-    | name      | string            | Resource name       |
-    | value     | Output            | Resource value      |
+        **ObjectField**
+
+        | Name      | Type              | Description         |
+        |-----------|-------------------|---------------------|
+        | name      | string            | Resource name       |
+        | value     | Output            | Resource value      |
 
 
-    **📥 Parameters:**
+        **📥 Parameters:**
 
-    | Name      | Type                | Description                                                  |
-    |-----------|---------------------|--------------------------------------------------------------|
-    | `ctx`     | `Context`           | Instance of context                                          |
-    | `type`    | `string`            | Resource type (i.e `random:index/randomString:RandomString`) |
-    | `name`    | `string`            | User's resource name (i.e. `my_resource`)                    |
-    | `version` | `string`            | Resource provider version                                    |
-    | `inputs`  | `List[ObjectField]` | Resource inputs                                              |
+        | Name      | Type                | Description                                                  |
+        |-----------|---------------------|--------------------------------------------------------------|
+        | `ctx`     | `Context`           | Instance of context                                          |
+        | `type`    | `string`            | Resource type (i.e `random:index/randomString:RandomString`) |
+        | `name`    | `string`            | User's resource name (i.e. `my_resource`)                    |
+        | `version` | `string`            | Resource provider version                                    |
+        | `inputs`  | `List[ObjectField]` | Resource inputs                                              |
 
-    **📤 Returns:**
+        **📤 Returns:**
 
-    | Type             | Description                                                                                                       |
-    |------------------|-------------------------------------------------------------------------------------------------------------------|
-    | `CompositeOutput` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
+        | Type             | Description                                                                                                       |
+        |------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `CompositeOutput` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        ```python
+        def register_resource(ctx: Context, type: string, name: string, version: string, inputs: List[ObjectField]) -> CompositeOutput
+        ```
+
+        **ObjectField**
+
+        | Name      | Type              | Description         |
+        |-----------|-------------------|---------------------|
+        | name      | string            | Resource name       |
+        | value     | Output            | Resource value      |
+
+
+        **📥 Parameters:**
+
+        | Name      | Type                | Description                                                  |
+        |-----------|---------------------|--------------------------------------------------------------|
+        | `ctx`     | `Context`           | Instance of context                                          |
+        | `type`    | `string`            | Resource type (i.e `random:index/randomString:RandomString`) |
+        | `name`    | `string`            | User's resource name (i.e. `my_resource`)                    |
+        | `version` | `string`            | Resource provider version                                    |
+        | `inputs`  | `List[ObjectField]` | Resource inputs                                              |
+
+        **📤 Returns:**
+
+        | Type             | Description                                                                                                       |
+        |------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `CompositeOutput` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        typedef struct pulumi_object_field_t {
+          const char *name;
+          const struct pulumi_output_t *value;
+        } pulumi_object_field_t;
+
+        typedef struct pulumi_register_resource_request_t {
+          const char *type_;
+          const char *name;
+          const char *version;
+          const struct pulumi_object_field_t *inputs;
+          uintptr_t inputs_len;
+        } pulumi_register_resource_request_t;
+
+        struct pulumi_composite_output_t *pulumi_register_resource(struct pulumi_context_t *ctx,
+                                                                   const struct pulumi_register_resource_request_t *request);
+        ```
+
+        **📥 Parameters:**
+
+        | Name      | Type                                | Description                                                  |
+        |-----------|-------------------------------------|--------------------------------------------------------------|
+        | `ctx`     | `pulumi_context_t*`                 | Instance of context                                          |
+        | `request` | `pulumi_register_resource_request_t*` | Request containing type, name, version, and inputs           |
+
+        **📤 Returns:**
+
+        | Type                       | Description                                                                                                       |
+        |----------------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `pulumi_composite_output_t*` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
 
 #### `invoke_resource`
 
 !!! abstract "Invokes a resource (also referred to as a `function`)"
 
-    **🛠️ Signature:**
-    ```python
-    def invoke_resource(ctx: Context, token: string, version: string, inputs: List[ObjectField]) -> CompositeOutput
-    ```
+    === "Wasm"
 
-    **ObjectField**
+        **🛠️ Signature:**
+        ```python
+        def invoke_resource(ctx: Context, token: string, version: string, inputs: List[ObjectField]) -> CompositeOutput
+        ```
 
-    | Name      | Type              | Description         |
-    |-----------|-------------------|---------------------|
-    | name      | string            | Resource name       |
-    | value     | Output            | Resource value      |
+        **ObjectField**
 
-
-    **📥 Parameters:**
-
-    | Name      | Type                | Description                                                       |
-    |-----------|---------------------|-------------------------------------------------------------------|
-    | `ctx`     | `Context`           | Instance of context                                               |
-    | `token`   | `string`            | Resource token (i.e [`docker:index/getNetwork:getNetwork`](https://github.com/pulumi/pulumi-docker/blob/v4.6.1/provider/cmd/pulumi-resource-docker/schema.json#L4395)) |
-    | `version` | `string`            | Resource provider version                                         |
-    | `inputs`  | `List[ObjectField]` | Resource inputs                                                   |
+        | Name      | Type              | Description         |
+        |-----------|-------------------|---------------------|
+        | name      | string            | Resource name       |
+        | value     | Output            | Resource value      |
 
 
-    **📤 Returns:**
+        **📥 Parameters:**
 
-    | Type             | Description                                                                                                       |
-    |------------------|-------------------------------------------------------------------------------------------------------------------|
-    | `CompositeOutput` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
+        | Name      | Type                | Description                                                       |
+        |-----------|---------------------|-------------------------------------------------------------------|
+        | `ctx`     | `Context`           | Instance of context                                               |
+        | `token`   | `string`            | Resource token (i.e [`docker:index/getNetwork:getNetwork`](https://github.com/pulumi/pulumi-docker/blob/v4.6.1/provider/cmd/pulumi-resource-docker/schema.json#L4395)) |
+        | `version` | `string`            | Resource provider version                                         |
+        | `inputs`  | `List[ObjectField]` | Resource inputs                                                   |
+
+
+        **📤 Returns:**
+
+        | Type             | Description                                                                                                       |
+        |------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `CompositeOutput` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        ```python
+        def invoke_resource(ctx: Context, token: string, version: string, inputs: List[ObjectField]) -> CompositeOutput
+        ```
+
+        **ObjectField**
+
+        | Name      | Type              | Description         |
+        |-----------|-------------------|---------------------|
+        | name      | string            | Resource name       |
+        | value     | Output            | Resource value      |
+
+
+        **📥 Parameters:**
+
+        | Name      | Type                | Description                                                       |
+        |-----------|---------------------|-------------------------------------------------------------------|
+        | `ctx`     | `Context`           | Instance of context                                               |
+        | `token`   | `string`            | Resource token (i.e [`docker:index/getNetwork:getNetwork`](https://github.com/pulumi/pulumi-docker/blob/v4.6.1/provider/cmd/pulumi-resource-docker/schema.json#L4395)) |
+        | `version` | `string`            | Resource provider version                                         |
+        | `inputs`  | `List[ObjectField]` | Resource inputs                                                   |
+
+
+        **📤 Returns:**
+
+        | Type             | Description                                                                                                       |
+        |------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `CompositeOutput` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        typedef struct pulumi_invoke_resource_request_t {
+          const char *token;
+          const char *version;
+          const struct pulumi_object_field_t *inputs;
+          uintptr_t inputs_len;
+        } pulumi_invoke_resource_request_t;
+
+        struct pulumi_composite_output_t *pulumi_invoke_resource(struct pulumi_context_t *ctx,
+                                                                 const struct pulumi_invoke_resource_request_t *request);
+        ```
+
+        **📥 Parameters:**
+
+        | Name      | Type                                | Description                                                       |
+        |-----------|-------------------------------------|-------------------------------------------------------------------|
+        | `ctx`     | `pulumi_context_t*`                 | Instance of context                                               |
+        | `request` | `pulumi_invoke_resource_request_t*` | Request containing token, version, and inputs                     |
+
+
+        **📤 Returns:**
+
+        | Type                       | Description                                                                                                       |
+        |----------------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `pulumi_composite_output_t*` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
 
 #### `get_config`
 
 !!! abstract "Receives value from [config](https://www.pulumi.com/docs/iac/concepts/config/)"
 
-    **🛠️ Signature:**
-    ```python
-    def get_config(ctx: Context, name: Option[String], key: String) -> Option[ConfigValue]
-    ```
+    === "Wasm"
 
-    **ConfigValue**
+        **🛠️ Signature:**
+        ```python
+        def get_config(ctx: Context, name: Option[String], key: String) -> Option[ConfigValue]
+        ```
 
-    | Name      | Type              | Description         |
-    |-----------|-------------------|---------------------|
-    | plaintext | string            | Config value if it is not secret       |
-    | secret    | Output            | Config value hidden in output if it is a secret      |
+        **ConfigValue**
 
-
-    **📥 Parameters:**
-
-    | Name      | Type              | Description                                                       |
-    |-----------|-------------------|-------------------------------------------------------------------|
-    | `ctx`     | `Context`         | Instance of context                                               |
-    | `name`    | `Option[string]`  | Config namespace |
-    | `key`     | `string`          | Config key                                       |
+        | Name      | Type              | Description         |
+        |-----------|-------------------|---------------------|
+        | plaintext | string            | Config value if it is not secret       |
+        | secret    | Output            | Config value hidden in output if it is a secret      |
 
 
-    **📤 Returns:**
+        **📥 Parameters:**
 
-    | Type             | Description                                                                                                       |
-    |------------------|-------------------------------------------------------------------------------------------------------------------|
-    | `Option[ConfigValue]` | None if config does not exist, String if it is plaintext, String hidden in output if it is secret |
+        | Name      | Type              | Description                                                       |
+        |-----------|-------------------|-------------------------------------------------------------------|
+        | `ctx`     | `Context`         | Instance of context                                               |
+        | `name`    | `Option[string]`  | Config namespace |
+        | `key`     | `string`          | Config key                                       |
+
+
+        **📤 Returns:**
+
+        | Type             | Description                                                                                                       |
+        |------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `Option[ConfigValue]` | None if config does not exist, String if it is plaintext, String hidden in output if it is secret |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        ```python
+        def get_config(ctx: Context, name: Option[String], key: String) -> Option[ConfigValue]
+        ```
+
+        **ConfigValue**
+
+        | Name      | Type              | Description         |
+        |-----------|-------------------|---------------------|
+        | plaintext | string            | Config value if it is not secret       |
+        | secret    | Output            | Config value hidden in output if it is a secret      |
+
+
+        **📥 Parameters:**
+
+        | Name      | Type              | Description                                                       |
+        |-----------|-------------------|-------------------------------------------------------------------|
+        | `ctx`     | `Context`         | Instance of context                                               |
+        | `name`    | `Option[string]`  | Config namespace |
+        | `key`     | `string`          | Config key                                       |
+
+
+        **📤 Returns:**
+
+        | Type             | Description                                                                                                       |
+        |------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `Option[ConfigValue]` | None if config does not exist, String if it is plaintext, String hidden in output if it is secret |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        typedef enum pulumi_config_value_t_Tag {
+          PlainValue,
+          Secret,
+        } pulumi_config_value_t_Tag;
+
+        typedef struct pulumi_config_value_t {
+          pulumi_config_value_t_Tag tag;
+          union {
+            struct {
+              char *plain_value;
+            };
+            struct {
+              struct pulumi_output_t *secret;
+            };
+          };
+        } pulumi_config_value_t;
+
+        struct pulumi_config_value_t *pulumi_config_get_value(struct pulumi_context_t *ctx,
+                                                              const char *name,
+                                                              const char *key);
+
+        void pulumi_config_free(struct pulumi_config_value_t *value);
+        ```
+
+        **📥 Parameters:**
+
+        | Name      | Type              | Description                                                       |
+        |-----------|-------------------|-------------------------------------------------------------------|
+        | `ctx`     | `pulumi_context_t*` | Instance of context                                             |
+        | `name`    | `const char*`     | Config namespace. If null, the default (project name) is used     |
+        | `key`     | `const char*`     | Config key. Cannot be null                                        |
+
+
+        **📤 Returns:**
+
+        | Type                    | Description                                                                                                       |
+        |-------------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `pulumi_config_value_t*` | Config value or NULL if not found. Must be freed with `pulumi_config_free` when no longer needed |
 
 
 ### Output
@@ -201,62 +519,191 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
 !!! abstract "Applies a function to transform the value inside an `Output`"
 
-    **🛠️ Signature:**
-    ```python
-    def map(output: Output, func: Union[A => B, String => String, String]) -> Output;
-    ```
+    === "Wasm"
 
-    **📥 Parameters:**
+        **🛠️ Signature:**
+        ```python
+        def map(output: Output, func: Union[A => B, String => String, String]) -> Output;
+        ```
 
-    | Name     | Type                                                        | Description                            |
-    |----------|-------------------------------------------------------------|----------------------------------------|
-    | `output` | `Output`                                                    | An `Output` object to transform        |
-    | `func`   | One of:<br />`A => B`<br />`string => string`<br />`string` | Function to apply to the `Output`      |
+        **📥 Parameters:**
 
-    **📤 Returns:**
+        | Name     | Type                                                        | Description                            |
+        |----------|-------------------------------------------------------------|----------------------------------------|
+        | `output` | `Output`                                                    | An `Output` object to transform        |
+        | `func`   | One of:<br />`A => B`<br />`string => string`<br />`string` | Function to apply to the `Output`      |
 
-    | Type     | Description                                                                                                       |
-    |----------|-------------------------------------------------------------------------------------------------------------------|
-    | `Output` | An `Output` containing transformed value. Does not have to be freed. It will be freed automatically when destroying context |
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | An `Output` containing transformed value. Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        ```python
+        def map(output: Output, func: Union[A => B, String => String, String]) -> Output;
+        ```
+
+        **📥 Parameters:**
+
+        | Name     | Type                                                        | Description                            |
+        |----------|-------------------------------------------------------------|----------------------------------------|
+        | `output` | `Output`                                                    | An `Output` object to transform        |
+        | `func`   | One of:<br />`A => B`<br />`string => string`<br />`string` | Function to apply to the `Output`      |
+
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | An `Output` containing transformed value. Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        /**
+         * Arguments: Engine context, Function context, Serialized JSON value
+         * Returned string must represent a JSON value;
+         * Library will free the returned string
+         */
+        typedef char *(*pulumi_mapping_function_t)(const void*, const void*, const char*);
+
+        struct pulumi_output_t *pulumi_output_map(struct pulumi_context_t *ctx,
+                                                  const struct pulumi_output_t *output,
+                                                  const void *function_context,
+                                                  pulumi_mapping_function_t function);
+        ```
+
+        **📥 Parameters:**
+
+        | Name               | Type                      | Description                                                  |
+        |--------------------|---------------------------|--------------------------------------------------------------|
+        | `ctx`              | `pulumi_context_t*`       | Instance of context                                          |
+        | `output`           | `const pulumi_output_t*`  | An `Output` object to transform                              |
+        | `function_context` | `const void*`             | Context that will be passed to the mapping function callback |
+        | `function`         | `pulumi_mapping_function_t` | Function to apply to the `Output`                          |
+
+        **📤 Returns:**
+
+        | Type               | Description                                                                                                       |
+        |--------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `pulumi_output_t*` | An `Output` containing transformed value. Does not have to be freed. It will be freed automatically when destroying context |
 
 #### combine
 
 !!! abstract "Combines multiple `Output` objects to create a single composite `Output`"
 
-    **🛠️ Signature:**
-    ```python
-    def combine(output: Output, outputs: List[Output]) -> Output;
-    ```
+    === "Wasm"
 
-    **📥 Parameters:**
+        **🛠️ Signature:**
+        ```python
+        def combine(output: Output, outputs: List[Output]) -> Output;
+        ```
 
-    | Name      | Type           | Description                         |
-    |-----------|----------------|-------------------------------------|
-    | `output`  | `Output`       | `this` output                       |
-    | `outputs` | `List[Output]` | List of `Output` objects to combine |
+        **📥 Parameters:**
 
-    **📤 Returns:**
+        | Name      | Type           | Description                         |
+        |-----------|----------------|-------------------------------------|
+        | `output`  | `Output`       | `this` output                       |
+        | `outputs` | `List[Output]` | List of `Output` objects to combine |
 
-    | Type     | Description                                                                                                       |
-    |----------|-------------------------------------------------------------------------------------------------------------------|
-    | `Output` | An `Output` containing combined values. The structure looks like `[output, outputs[0], outputs[1], ...]` Does not have to be freed. It will be freed automatically when destroying context |
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | An `Output` containing combined values. The structure looks like `[output, outputs[0], outputs[1], ...]` Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        ```python
+        def combine(output: Output, outputs: List[Output]) -> Output;
+        ```
+
+        **📥 Parameters:**
+
+        | Name      | Type           | Description                         |
+        |-----------|----------------|-------------------------------------|
+        | `output`  | `Output`       | `this` output                       |
+        | `outputs` | `List[Output]` | List of `Output` objects to combine |
+
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | An `Output` containing combined values. The structure looks like `[output, outputs[0], outputs[1], ...]` Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        struct pulumi_output_t *pulumi_output_combine(const struct pulumi_output_t *output,
+                                                      const struct pulumi_output_t *const *outputs,
+                                                      uintptr_t outputs_size);
+        ```
+
+        **📥 Parameters:**
+
+        | Name           | Type                          | Description                         |
+        |----------------|-------------------------------|-------------------------------------|
+        | `output`       | `const pulumi_output_t*`      | `this` output                       |
+        | `outputs`      | `const pulumi_output_t**`     | Array of `Output` objects to combine |
+        | `outputs_size` | `uintptr_t`                   | Size of the outputs array           |
+
+        **📤 Returns:**
+
+        | Type               | Description                                                                                                       |
+        |--------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `pulumi_output_t*` | An `Output` containing combined values. The structure looks like `[output, outputs[0], outputs[1], ...]` Does not have to be freed. It will be freed automatically when destroying context |
 
 
 #### add_to_export
 
 !!! abstract "Add output as [stack output](https://www.pulumi.com/tutorials/building-with-pulumi/stack-outputs/)."
 
-    **🛠️ Signature:**
-    ```python
-    def add_to_export(output: Output, name: string);
-    ```
+    === "Wasm"
 
-    **📥 Parameters:**
+        **🛠️ Signature:**
+        ```python
+        def add_to_export(output: Output, name: string);
+        ```
 
-    | Name     | Type     | Description                            |
-    |----------|----------|----------------------------------------|
-    | `output` | `Output` | `Output` object to add as stack output |
-    | `name`   | `string` | Name of the stack output               |
+        **📥 Parameters:**
+
+        | Name     | Type     | Description                            |
+        |----------|----------|----------------------------------------|
+        | `output` | `Output` | `Output` object to add as stack output |
+        | `name`   | `string` | Name of the stack output               |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        ```python
+        def add_to_export(output: Output, name: string);
+        ```
+
+        **📥 Parameters:**
+
+        | Name     | Type     | Description                            |
+        |----------|----------|----------------------------------------|
+        | `output` | `Output` | `Output` object to add as stack output |
+        | `name`   | `string` | Name of the stack output               |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        void pulumi_output_add_to_export(const struct pulumi_output_t *value, const char *name);
+        ```
+
+        **📥 Parameters:**
+
+        | Name    | Type                     | Description                            |
+        |---------|--------------------------|----------------------------------------|
+        | `value` | `const pulumi_output_t*` | `Output` object to add as stack output |
+        | `name`  | `const char*`            | Name of the stack output               |
 
 
 ### CompositeOutput
@@ -265,23 +712,66 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
 !!! abstract "Get resource operation result value"
 
-    **🛠️ Signature:**
-    ```python
-    def get_field(output: CompositeOutput, field: string) -> Output;
-    ```
+    === "Wasm"
 
-    **📥 Parameters:**
+        **🛠️ Signature:**
+        ```python
+        def get_field(output: CompositeOutput, field: string) -> Output;
+        ```
 
-    | Name     | Type              | Description                            |
-    |----------|-------------------|----------------------------------------|
-    | `output` | `CompositeOutput` | `CompositeOutput` object to get field  |
-    | `field`  | `string`          | Field name                             |
+        **📥 Parameters:**
 
-    **📤 Returns:**
+        | Name     | Type              | Description                            |
+        |----------|-------------------|----------------------------------------|
+        | `output` | `CompositeOutput` | `CompositeOutput` object to get field  |
+        | `field`  | `string`          | Field name                             |
 
-    | Type     | Description                                                                                                       |
-    |----------|-------------------------------------------------------------------------------------------------------------------|
-    | `Output` | An `Output` containing field value. Does not have to be freed. It will be freed automatically when destroying context |
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | An `Output` containing field value. Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        ```python
+        def get_field(output: CompositeOutput, field: string) -> Output;
+        ```
+
+        **📥 Parameters:**
+
+        | Name     | Type              | Description                            |
+        |----------|-------------------|----------------------------------------|
+        | `output` | `CompositeOutput` | `CompositeOutput` object to get field  |
+        | `field`  | `string`          | Field name                             |
+
+        **📤 Returns:**
+
+        | Type     | Description                                                                                                       |
+        |----------|-------------------------------------------------------------------------------------------------------------------|
+        | `Output` | An `Output` containing field value. Does not have to be freed. It will be freed automatically when destroying context |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        struct pulumi_output_t *pulumi_composite_output_get_field(struct pulumi_composite_output_t *output,
+                                                                  const char *field_name);
+        ```
+
+        **📥 Parameters:**
+
+        | Name         | Type                        | Description                            |
+        |--------------|----------------------------|----------------------------------------|
+        | `output`     | `pulumi_composite_output_t*` | `CompositeOutput` object to get field  |
+        | `field_name` | `const char*`               | Field name                             |
+
+        **📤 Returns:**
+
+        | Type               | Description                                                                                                       |
+        |--------------------|-------------------------------------------------------------------------------------------------------------------|
+        | `pulumi_output_t*` | An `Output` containing field value. Does not have to be freed. It will be freed automatically when destroying context |
 
 ### Abstraction Levels for `Output::map`
 
