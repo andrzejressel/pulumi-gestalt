@@ -46,12 +46,12 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.new)
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust_integration/latest/pulumi_gestalt_rust_integration/struct.Context.html#method.create_context)
         ```rust
-        pub type Context = NativeContext;
+        pub struct Context { /* private fields */ }
 
-        impl NativeContext {
-            pub fn new() -> NativeContext {  }
+        impl Context {
+            pub fn create_context() -> Context { }
         }
         ```
 
@@ -152,20 +152,24 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         See [callback emulation](wasm.md#callback-emulation) for more details on how this function is used.
 
     === "Rust"
-        **🛠️ Signature:** [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.finish)
-        ```rust
-        pub type Context = NativeContext;
 
-        impl NativeContext {
-            pub fn finish(&self) {  }
+        **🛠️ Signature:**
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust_integration/latest/pulumi_gestalt_rust_integration/struct.Context.html#method.finish)
+        ```rust
+        pub struct Context { /* private fields */ }
+
+        impl Context {
+            pub fn finish(&self) {
+                // ...existing code...
+            }
         }
         ```
 
         **📥 Parameters:**
 
-        | Name  | Type      | Description         |
-        |-------|-----------|---------------------|
-        | `ctx` | `Context` | Instance of context |
+        | Name   | Type       | Description         |
+        |--------|------------|---------------------|
+        | `self` | `&Context` | Instance of context |
 
     === "C FFI"
 
