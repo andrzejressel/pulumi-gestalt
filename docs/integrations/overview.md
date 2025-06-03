@@ -242,23 +242,28 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        ```python
-        def create_output(ctx: Context, value: string, secret: bool) -> Output
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.new_output)
+        ```rust
+        pub type Context = NativeContext;
+
+        impl NativeContext {
+            pub fn new_output<T: Serialize>(&self, value: &T) -> Output<T> {  }
+            pub fn new_secret<T: Serialize>(&self, value: &T) -> Output<T> {  }
+        }
         ```
 
         **📥 Parameters:**
 
-        | Name      | Type      | Description         |
-        |-----------|-----------|---------------------|
-        | `ctx`     | `Context` | Instance of context |
-        | `value`   | `string`  | JSON encoded value  |
-        | `secret`  | `bool`    | Mark output as secret |
+        | Name      | Type            | Description         |
+        |-----------|-----------------|---------------------|
+        | `self`    | `&Context`      | Instance of context |
+        | `value`   | `&T`            | Value to wrap       |
 
         **📤 Returns:**
 
-        | Type     | Description                                                                                                       |
-        |----------|-------------------------------------------------------------------------------------------------------------------|
-        | `Output` | An `Output` containing `value` |
+        | Type        | Description                                                |
+        |-------------|------------------------------------------------------------|
+        | `Output<T>` | An `Output` containing `value`                             |
 
     === "C FFI"
 
@@ -334,33 +339,42 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        ```python
-        def register_resource(ctx: Context, type: string, name: string, version: string, inputs: List[ObjectField]) -> CompositeOutput
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.register_resource)
+        ```rust
+        pub type Context = NativeContext;
+
+        impl GestaltContext for NativeContext {
+            fn register_resource(
+                &self,
+                request: RegisterResourceRequest<Self::Output<()>>,
+            ) -> Self::CompositeOutput {  }
+        }
+
+        pub struct RegisterResourceRequest<T> {
+            pub type_: String,
+            pub name: String,
+            pub version: String,
+            pub object: Vec<ObjectField<T>>,
+        }
+
+        pub struct ObjectField<T> {
+            pub name: String,
+            pub value: T,
+        }
         ```
-
-        **ObjectField**
-
-        | Name      | Type              | Description         |
-        |-----------|-------------------|---------------------|
-        | name      | string            | Resource name       |
-        | value     | Output            | Resource value      |
-
 
         **📥 Parameters:**
 
-        | Name      | Type                | Description                                                  |
-        |-----------|---------------------|--------------------------------------------------------------|
-        | `ctx`     | `Context`           | Instance of context                                          |
-        | `type`    | `string`            | Resource type (i.e `random:index/randomString:RandomString`) |
-        | `name`    | `string`            | User's resource name (i.e. `my_resource`)                    |
-        | `version` | `string`            | Resource provider version                                    |
-        | `inputs`  | `List[ObjectField]` | Resource inputs                                              |
+        | Name      | Type                          | Description                                                  |
+        |-----------|-------------------------------|--------------------------------------------------------------|
+        | `self`    | `&Context`                    | Instance of context                                          |
+        | `request` | `RegisterResourceRequest<T>`  | Request containing type, name, version, and inputs           |
 
         **📤 Returns:**
 
-        | Type             | Description                                                                                                       |
-        |------------------|-------------------------------------------------------------------------------------------------------------------|
-        | `CompositeOutput` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
+        | Type              | Description                                                                |
+        |-------------------|----------------------------------------------------------------------------|
+        | `CompositeOutput` | A `CompositeOutput` containing resource outputs                            |
 
     === "C FFI"
 
@@ -447,33 +461,42 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        ```python
-        def invoke_resource(ctx: Context, token: string, version: string, inputs: List[ObjectField]) -> CompositeOutput
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.invoke_resource)
+        ```rust
+        pub type Context = NativeContext;
+
+        impl GestaltContext for NativeContext {
+            fn invoke_resource(
+                &self,
+                request: InvokeResourceRequest<Self::Output<()>>,
+            ) -> Self::CompositeOutput {  }
+        }
+
+        pub struct InvokeResourceRequest<T> {
+            pub token: String,
+            pub version: String,
+            pub object: Vec<ObjectField<T>>,
+        }
+
+        pub struct ObjectField<T> {
+            pub name: String,
+            pub value: T,
+        }
         ```
-
-        **ObjectField**
-
-        | Name      | Type              | Description         |
-        |-----------|-------------------|---------------------|
-        | name      | string            | Resource name       |
-        | value     | Output            | Resource value      |
-
 
         **📥 Parameters:**
 
-        | Name      | Type                | Description                                                       |
-        |-----------|---------------------|-------------------------------------------------------------------|
-        | `ctx`     | `Context`           | Instance of context                                               |
-        | `token`   | `string`            | Resource token (i.e [`docker:index/getNetwork:getNetwork`](https://github.com/pulumi/pulumi-docker/blob/v4.6.1/provider/cmd/pulumi-resource-docker/schema.json#L4395)) |
-        | `version` | `string`            | Resource provider version                                         |
-        | `inputs`  | `List[ObjectField]` | Resource inputs                                                   |
+        | Name      | Type                        | Description                                                       |
+        |-----------|----------------------------|-------------------------------------------------------------------|
+        | `self`    | `&Context`                 | Instance of context                                               |
+        | `request` | `InvokeResourceRequest<T>` | Request containing token, version, and inputs                     |
 
 
         **📤 Returns:**
 
-        | Type             | Description                                                                                                       |
-        |------------------|-------------------------------------------------------------------------------------------------------------------|
-        | `CompositeOutput` | An `CompositeOutput` containing resource outputs. Does not have to be freed. It will be freed automatically when destroying context |
+        | Type              | Description                                                                |
+        |-------------------|----------------------------------------------------------------------------|
+        | `CompositeOutput` | A `CompositeOutput` containing resource outputs                            |
 
     === "C FFI"
 
@@ -557,32 +580,38 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        ```python
-        def get_config(ctx: Context, name: Option[String], key: String) -> Option[ConfigValue]
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.get_config)
+        ```rust
+        pub type Context = NativeContext;
+
+        impl GestaltContext for NativeContext {
+            fn get_config(
+                &self,
+                name: Option<&str>,
+                key: &str,
+            ) -> Option<ConfigValue<Self::Output<String>>> {  }
+        }
+
+        pub enum ConfigValue<T> {
+            PlainText(String),
+            Secret(T),
+        }
         ```
-
-        **ConfigValue**
-
-        | Name      | Type              | Description         |
-        |-----------|-------------------|---------------------|
-        | plaintext | string            | Config value if it is not secret       |
-        | secret    | Output            | Config value hidden in output if it is a secret      |
-
 
         **📥 Parameters:**
 
         | Name      | Type              | Description                                                       |
         |-----------|-------------------|-------------------------------------------------------------------|
-        | `ctx`     | `Context`         | Instance of context                                               |
-        | `name`    | `Option[string]`  | Config namespace |
-        | `key`     | `string`          | Config key                                       |
+        | `self`    | `&Context`        | Instance of context                                               |
+        | `name`    | `Option<&str>`    | Config namespace                                                  |
+        | `key`     | `&str`            | Config key                                                        |
 
 
         **📤 Returns:**
 
-        | Type             | Description                                                                                                       |
-        |------------------|-------------------------------------------------------------------------------------------------------------------|
-        | `Option[ConfigValue]` | None if config does not exist, String if it is plaintext, String hidden in output if it is secret |
+        | Type                        | Description                                                                |
+        |-----------------------------|----------------------------------------------------------------------------|
+        | `Option<ConfigValue<Output<String>>>` | None if config does not exist, ConfigValue enum with value or secret output |
 
     === "C FFI"
 
@@ -788,22 +817,27 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        ```python
-        def combine(output: Output, outputs: List[Output]) -> Output;
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Output.html#method.combine)
+        ```rust
+        pub struct Output<T> { /* private fields */ }
+
+        impl<T> GestaltOutput<T> for Output<T> {
+            fn combine<RESULT>(&self, others: &[&Self::Me<()>]) -> Self::Me<RESULT> {  }
+        }
         ```
 
         **📥 Parameters:**
 
         | Name      | Type           | Description                         |
         |-----------|----------------|-------------------------------------|
-        | `output`  | `Output`       | `this` output                       |
-        | `outputs` | `List[Output]` | List of `Output` objects to combine |
+        | `self`    | `&Output<T>`   | `this` output                       |
+        | `others`  | `&[&Output]`   | List of `Output` objects to combine |
 
         **📤 Returns:**
 
-        | Type     | Description                                                                                                       |
-        |----------|-------------------------------------------------------------------------------------------------------------------|
-        | `Output` | An `Output` containing combined values. The structure looks like `[output, outputs[0], outputs[1], ...]` Does not have to be freed. It will be freed automatically when destroying context |
+        | Type            | Description                                                                 |
+        |-----------------|-----------------------------------------------------------------------------|
+        | `Output<RESULT>` | An `Output` containing combined values from all the provided outputs       |
 
     === "C FFI"
 
