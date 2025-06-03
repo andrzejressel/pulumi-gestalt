@@ -51,11 +51,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         pub type Context = NativeContext;
 
         impl NativeContext {
-            pub fn new() -> NativeContext {
-                NativeContext {
-                    inner: integration::Context::create_context(),
-                }
-            }
+            pub fn new() -> NativeContext {  }
         }
         ```
 
@@ -101,6 +97,24 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         ```wit
         package component:pulumi-gestalt@0.0.0-DEV;
 
+        interface output-interface {
+            resource output {
+            }
+        }
+
+        interface types {
+            use output-interface.{output};
+        
+            record function-invocation-request {
+                id: output,
+                function-name: string,
+                value: string,
+            }
+            record function-invocation-result {
+                id: borrow<output>,
+                value: string,
+            }
+        }
         interface context {
             resource context {
                 finish: func(functions: list<function-invocation-result>) -> list<function-invocation-request>;
@@ -138,9 +152,13 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         See [callback emulation](wasm.md#callback-emulation) for more details on how this function is used.
 
     === "Rust"
-        **🛠️ Signature:**
-        ```python
-        def finish(ctx: Context)
+        **🛠️ Signature:** [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.finish)
+        ```rust
+        pub type Context = NativeContext;
+
+        impl NativeContext {
+            pub fn finish(&self) {  }
+        }
         ```
 
         **📥 Parameters:**
@@ -153,6 +171,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```c
+        typedef struct pulumi_context_t pulumi_context_t;
+
         void pulumi_finish(struct pulumi_context_t *ctx);
         ```
 
@@ -178,6 +198,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```c
+        typedef struct pulumi_context_t pulumi_context_t;
+
         void pulumi_destroy_context(struct pulumi_context_t *ctx);
         ```
 
@@ -242,6 +264,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```c
+        typedef struct pulumi_context_t pulumi_context_t;
+
         struct pulumi_output_t *pulumi_create_output(struct pulumi_context_t *ctx,
                                                      const char *value,
                                                      bool secret);
@@ -342,6 +366,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```c
+        typedef struct pulumi_context_t pulumi_context_t;
+
         typedef struct pulumi_object_field_t {
           const char *name;
           const struct pulumi_output_t *value;
@@ -453,6 +479,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```c
+        typedef struct pulumi_context_t pulumi_context_t;
+
         typedef struct pulumi_invoke_resource_request_t {
           const char *token;
           const char *version;
@@ -488,7 +516,16 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         ```wit
         package component:pulumi-gestalt@0.0.0-DEV;
 
+        interface types {
+            variant config-value {
+                plaintext(string),
+                secret(output),
+            }
+        }
+
         interface context {
+            use types.config-value;
+
             resource context {
                 get-config: func(name: option<string>, key: string) -> option<config-value>;
             }
@@ -551,6 +588,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```c
+        typedef struct pulumi_context_t pulumi_context_t;
+
         typedef enum pulumi_config_value_t_Tag {
           PlainValue,
           Secret,
@@ -652,6 +691,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```c
+        typedef struct pulumi_context_t pulumi_context_t;
+
         /**
          * Arguments: Engine context, Function context, Serialized JSON value
          * Returned string must represent a JSON value;
@@ -768,6 +809,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```c
+        typedef struct pulumi_output_t pulumi_output_t;
+
         struct pulumi_output_t *pulumi_output_combine(const struct pulumi_output_t *output,
                                                       const struct pulumi_output_t *const *outputs,
                                                       uintptr_t outputs_size);
@@ -829,6 +872,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```c
+        typedef struct pulumi_output_t pulumi_output_t;
+
         void pulumi_output_add_to_export(const struct pulumi_output_t *value, const char *name);
         ```
 
@@ -841,6 +886,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
 
 ### CompositeOutput
+
+This is a special type of `Output` that represents the result of a resource operation. It contains multiple fields, each of which can be accessed individually.
 
 #### get_field
 
@@ -895,6 +942,9 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **🛠️ Signature:**
         ```c
+        typedef struct pulumi_output_t pulumi_output_t;
+        typedef struct pulumi_composite_output_t pulumi_composite_output_t;
+
         struct pulumi_output_t *pulumi_composite_output_get_field(struct pulumi_composite_output_t *output,
                                                                   const char *field_name);
         ```
