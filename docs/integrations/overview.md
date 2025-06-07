@@ -906,16 +906,20 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        ```python
-        def add_to_export(output: Output, name: string);
+        ```rust
+        pub struct Output { /* private fields */ }
+
+        impl Output {
+            pub fn add_export(&self, name: String)
+        }
         ```
 
         **📥 Parameters:**
 
         | Name     | Type     | Description                            |
         |----------|----------|----------------------------------------|
-        | `output` | `Output` | `Output` object to add as stack output |
-        | `name`   | `string` | Name of the stack output               |
+        | `self`   | `&Output` | `Output` object to add as stack output |
+        | `name`   | `String` | Name of the stack output               |
 
     === "C FFI"
 
@@ -970,16 +974,20 @@ This is a special type of `Output` that represents the result of a resource oper
     === "Rust"
 
         **🛠️ Signature:**
-        ```python
-        def get_field(output: CompositeOutput, field: string) -> Output;
+        ```rust
+        pub struct CompositeOutput { /* private fields */ }
+
+        impl CompositeOutput {
+            pub fn get_field(&self, field_name: String) -> Output
+        }
         ```
 
         **📥 Parameters:**
 
-        | Name     | Type              | Description                            |
-        |----------|-------------------|----------------------------------------|
-        | `output` | `CompositeOutput` | Composite output returned from resource operation |
-        | `field`  | `string`          | Field name                             |
+        | Name         | Type              | Description                            |
+        |--------------|-------------------|----------------------------------------|
+        | `self`       | `&CompositeOutput` | Composite output returned from resource operation |
+        | `field_name` | `String`          | Field name                             |
 
         **📤 Returns:**
 
