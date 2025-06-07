@@ -159,9 +159,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         pub struct Context { /* private fields */ }
 
         impl Context {
-            pub fn finish(&self) {
-                // ...existing code...
-            }
+            pub fn finish(&self)
         }
         ```
 
