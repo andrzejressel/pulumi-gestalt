@@ -246,13 +246,12 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.new_output)
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust_integration/latest/pulumi_gestalt_rust_integration/struct.Context.html#method.create_output)
         ```rust
-        pub type Context = NativeContext;
+        pub struct Context { /* private fields */ }
 
-        impl NativeContext {
-            pub fn new_output<T: Serialize>(&self, value: &T) -> Output<T> {  }
-            pub fn new_secret<T: Serialize>(&self, value: &T) -> Output<T> {  }
+        impl Context {
+            pub fn create_output(&self, value: String, secret: bool) -> Output
         }
         ```
 
@@ -261,7 +260,8 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         | Name      | Type            | Description         |
         |-----------|-----------------|---------------------|
         | `self`    | `&Context`      | Instance of context |
-        | `value`   | `&T`            | Value to wrap       |
+        | `value`  | `String` | JSON encoded value   |
+        | `secret` | `bool`   | Mark output as secret |
 
         **📤 Returns:**
 
@@ -343,27 +343,27 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.register_resource)
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust_integration/latest/pulumi_gestalt_rust_integration/struct.Context.html#method.register_resource)
         ```rust
-        pub type Context = NativeContext;
-
-        impl GestaltContext for NativeContext {
-            fn register_resource(
-                &self,
-                request: RegisterResourceRequest<Self::Output<()>>,
-            ) -> Self::CompositeOutput {  }
+        pub struct ObjectField<'a> {
+            pub name: String,
+            pub value: &'a Output,
         }
 
-        pub struct RegisterResourceRequest<T> {
+        pub struct RegisterResourceRequest<'a> {
             pub type_: String,
             pub name: String,
             pub version: String,
-            pub object: Vec<ObjectField<T>>,
+            pub inputs: &'a [ObjectField<'a>],
         }
 
-        pub struct ObjectField<T> {
-            pub name: String,
-            pub value: T,
+        pub struct Context { /* private fields */ }
+
+        impl Context {
+            pub fn register_resource(
+                &self,
+                request: RegisterResourceRequest<'_>,
+            ) -> CompositeOutput
         }
         ```
 
@@ -385,6 +385,12 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         **🛠️ Signature:**
         ```c
         typedef struct pulumi_context_t pulumi_context_t;
+        typedef struct pulumi_output_t pulumi_output_t;
+
+        typedef struct pulumi_object_field_t {
+            const char *name;
+            const struct pulumi_output_t *value;
+        } pulumi_object_field_t;
 
         typedef struct pulumi_object_field_t {
           const char *name;
@@ -465,26 +471,26 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Context.html#method.invoke_resource)
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust_integration/latest/pulumi_gestalt_rust_integration/struct.Context.html#method.invoke_resource)
         ```rust
-        pub type Context = NativeContext;
-
-        impl GestaltContext for NativeContext {
-            fn invoke_resource(
-                &self,
-                request: InvokeResourceRequest<Self::Output<()>>,
-            ) -> Self::CompositeOutput {  }
+        pub struct ObjectField<'a> {
+            pub name: String,
+            pub value: &'a Output,
         }
 
-        pub struct InvokeResourceRequest<T> {
+        pub struct InvokeResourceRequest<'a> {
             pub token: String,
             pub version: String,
-            pub object: Vec<ObjectField<T>>,
+            pub inputs: &'a [ObjectField<'a>],
         }
 
-        pub struct ObjectField<T> {
-            pub name: String,
-            pub value: T,
+        pub struct Context { /* private fields */ }
+
+        impl Context {
+            pub fn invoke_resource(
+                &self,
+                request: InvokeResourceRequest<'_>,
+            ) -> CompositeOutput
         }
         ```
 
@@ -507,6 +513,12 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         **🛠️ Signature:**
         ```c
         typedef struct pulumi_context_t pulumi_context_t;
+        typedef struct pulumi_output_t pulumi_output_t;
+
+        typedef struct pulumi_object_field_t {
+            const char *name;
+            const struct pulumi_output_t *value;
+        } pulumi_object_field_t;
 
         typedef struct pulumi_invoke_resource_request_t {
           const char *token;
@@ -665,7 +677,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
 ### Output
 
-#### map
+#### Map
 
 !!! abstract "Applies a function to transform the value inside an `Output`"
 
@@ -754,7 +766,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         |--------------------|-------------------------------------------------------------------------------------------------------------------|
         | `pulumi_output_t*` | An `Output` containing transformed value. Does not have to be freed. It will be freed automatically when destroying context |
 
-#### clone
+#### Clone
 
 !!! abstract "Creates a copy of an `Output`"
 
@@ -789,7 +801,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     
         Does not exist in C FFI. Since `Output` is a reference type, it is not necessary to clone it. You can use the same `Output` instance in multiple places without cloning. Cleanup happens automatically when the context is destroyed.
 
-#### combine
+#### Combine
 
 !!! abstract "Combines multiple `Output` objects to create a single composite `Output`"
 
@@ -808,9 +820,9 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
         **📥 Parameters:**
 
-        | Name      | Type                    | Description                         |
-        |-----------|-------------------------|-------------------------------------|
-        | `outputs` | `list<borrow<output>>` | List of `Output` objects to combine |
+        | Name      | Type                    | Description                                    |
+        |-----------|-------------------------|------------------------------------------------|
+        | `outputs` | `list<borrow<output>>` | List of `Output` objects to combine into `this` |
 
         **📤 Returns:**
 
@@ -821,21 +833,20 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
     === "Rust"
 
         **🛠️ Signature:**
-        [docs.rs](https://docs.rs/pulumi_gestalt_rust/latest/pulumi_gestalt_rust/type.Output.html#method.combine)
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust_integration/latest/pulumi_gestalt_rust_integration/struct.Output.html#method.combine)
         ```rust
-        pub struct Output<T> { /* private fields */ }
+        pub struct Output { /* private fields */ }
 
-        impl<T> GestaltOutput<T> for Output<T> {
-            fn combine<RESULT>(&self, others: &[&Self::Me<()>]) -> Self::Me<RESULT> {  }
+        impl Output {
+            pub fn combine(&self, others: &[&Output]) -> Output {}
         }
         ```
 
         **📥 Parameters:**
 
-        | Name      | Type           | Description                         |
-        |-----------|----------------|-------------------------------------|
-        | `self`    | `&Output<T>`   | `this` output                       |
-        | `others`  | `&[&Output]`   | List of `Output` objects to combine |
+        | Name      | Type           | Description                                     |
+        |-----------|----------------|-------------------------------------------------|
+        | `others`  | `&[&Output]`   | List of `Output` objects to combine into `self` |
 
         **📤 Returns:**
 
@@ -869,7 +880,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         | `pulumi_output_t*` | An `Output` containing combined values. The structure looks like `[output, outputs[0], outputs[1], ...]` Does not have to be freed. It will be freed automatically when destroying context |
 
 
-#### add_to_export
+#### Add to export
 
 !!! abstract "Add output as [stack output](https://www.pulumi.com/tutorials/building-with-pulumi/stack-outputs/)."
 
@@ -927,7 +938,7 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
 
 This is a special type of `Output` that represents the result of a resource operation. It contains multiple fields, each of which can be accessed individually.
 
-#### get_field
+#### Get field
 
 !!! abstract "Get resource operation result value"
 
@@ -967,7 +978,7 @@ This is a special type of `Output` that represents the result of a resource oper
 
         | Name     | Type              | Description                            |
         |----------|-------------------|----------------------------------------|
-        | `output` | `CompositeOutput` | `CompositeOutput` object to get field  |
+        | `output` | `CompositeOutput` | Composite output returned from resource operation |
         | `field`  | `string`          | Field name                             |
 
         **📤 Returns:**
@@ -991,7 +1002,7 @@ This is a special type of `Output` that represents the result of a resource oper
 
         | Name         | Type                        | Description                            |
         |--------------|----------------------------|----------------------------------------|
-        | `output`     | `pulumi_composite_output_t*` | `CompositeOutput` object to get field  |
+        | `output`     | `pulumi_composite_output_t*` | Composite output returned from resource operation  |
         | `field_name` | `const char*`               | Field name                             |
 
         **📤 Returns:**
