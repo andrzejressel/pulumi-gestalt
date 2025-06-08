@@ -111,6 +111,7 @@ void pulumi_config_free(struct pulumi_config_value_t *value);
  * - [AWS](https://www.pulumi.com/registry/packages/aws/)
  * - [Azure](https://www.pulumi.com/registry/packages/azure/)
  * - [GCP](https://www.pulumi.com/registry/packages/gcp/)
+ *
  * Empty modules list means that no modules are used.
  * To use all modules, pass null for the modules pointer and 0 for the size.
  */
