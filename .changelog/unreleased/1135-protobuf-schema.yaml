@@ -1,0 +1,2 @@
+type: Added
+title: Added C FFI and Wasm functions for obtaining schema for Pulumi packages
