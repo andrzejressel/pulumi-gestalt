@@ -6,7 +6,7 @@
 //! ```
 //! # use serde::{Deserialize, Serialize};
 //! # use serde_json::json;
-//! use serde_constant_string::generate_string_const;
+//! use pulumi_gestalt_serde_constant_string::generate_string_const;
 //! #[derive(Serialize, Deserialize)]
 //! struct MyStruct {
 //!    tpe: IntegerString,
