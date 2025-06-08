@@ -105,6 +105,20 @@ struct pulumi_config_value_t *pulumi_config_get_value(struct pulumi_context_t *c
 
 void pulumi_config_free(struct pulumi_config_value_t *value);
 
+/**
+ * Returns protobuf encoded schema for the provider.
+ * Modules for provider can be found in Pulumi registry on left side with (M) icon:
+ * - [AWS](https://www.pulumi.com/registry/packages/aws/)
+ * - [Azure](https://www.pulumi.com/registry/packages/azure/)
+ * - [GCP](https://www.pulumi.com/registry/packages/gcp/)
+ * Empty modules list means that no modules are used.
+ * To use all modules, pass null for the modules pointer and 0 for the size.
+ */
+const char *pulumi_get_schema(const char *provider_name,
+                              const char *provider_version,
+                              const char *const *modules,
+                              uintptr_t modules_size);
+
 #ifdef __cplusplus
 }  // extern "C"
 #endif  // __cplusplus

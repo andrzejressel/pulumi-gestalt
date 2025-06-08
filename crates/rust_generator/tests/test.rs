@@ -2,7 +2,7 @@ use anyhow::{Context, Result};
 use askama::Template;
 use assert_cmd::assert::OutputAssertExt;
 use pulumi_gestalt_generator::generate_rust;
-use pulumi_gestalt_schema::deserialize_package;
+use pulumi_gestalt_schema::deserialize_package_file;
 use std::fs;
 use std::fs::{File, FileTimes};
 use std::path::{Path, PathBuf};
@@ -1182,8 +1182,8 @@ pub fn run_pulumi_generator_test(
 
     create_symlink(&schema, &root.join(schema.file_name().unwrap()))?;
 
-    let package =
-        deserialize_package(schema.as_path(), modules).context("Failed to deserialize package")?;
+    let package = deserialize_package_file(schema.as_path(), modules)
+        .context("Failed to deserialize package")?;
     generate_rust(&package, &root.join("src").join("generated"))
         .context("Failed to generate glue files")?;
 

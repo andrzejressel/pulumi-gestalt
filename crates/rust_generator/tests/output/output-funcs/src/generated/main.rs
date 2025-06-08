@@ -23,19 +23,19 @@ pub mod types {
 }
 #[doc(hidden)]
 pub mod constants {
-    pulumi_gestalt_rust::__private::constant::generate_string_const!(
+    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
         ConstStringEnvironment, "Environment"
     );
-    pulumi_gestalt_rust::__private::constant::generate_string_const!(
+    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
         ConstStringFixed, "Fixed"
     );
-    pulumi_gestalt_rust::__private::constant::generate_string_const!(
+    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
         ConstStringFolder, "Folder"
     );
-    pulumi_gestalt_rust::__private::constant::generate_string_const!(
+    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
         ConstStringPackage, "Package"
     );
-    pulumi_gestalt_rust::__private::constant::generate_string_const!(
+    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
         ConstStringProject, "Project"
     );
 }

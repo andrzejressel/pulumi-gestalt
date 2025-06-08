@@ -16,10 +16,8 @@ arbitrary = ["dep:proptest"]
 serde.workspace = true
 serde_json.workspace = true
 anyhow.workspace = true
-regex.workspace = true
 convert_case.workspace = true
 serde_yaml.workspace = true
 itertools.workspace = true
-pulumi_gestalt_rust.workspace = true
-pathdiff.workspace = true
 proptest = { workspace = true, optional = true }
+pulumi_gestalt_serde_constant_string.workspace = true

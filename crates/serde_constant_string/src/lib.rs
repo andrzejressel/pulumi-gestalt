@@ -1,3 +1,23 @@
+//! This crate provides a macro to generate a constant string type that can be used with Serde for serialization and deserialization.
+//! The generated type will serialize to a specific string value and will only deserialize from that exact string value.
+//!
+//! # Examples
+//!
+//! ```
+//! # use serde::{Deserialize, Serialize};
+//! # use serde_json::json;
+//! use serde_constant_string::generate_string_const;
+//! #[derive(Serialize, Deserialize)]
+//! struct MyStruct {
+//!    tpe: IntegerString,
+//!    value: i32,
+//! }
+//! generate_string_const!(IntegerString, "Integer");
+//!
+//! assert!(serde_json::from_value::<MyStruct>(json!({ "tpe": "Integer", "value": 1 })).is_ok());
+//! assert!(serde_json::from_value::<MyStruct>(json!({ "tpe": "Double", "value": 2 })).is_err());
+//! ```
+
 #[doc(hidden)]
 #[macro_export]
 macro_rules! generate_string_const {
@@ -50,8 +70,6 @@ macro_rules! generate_string_const {
         }
     };
 }
-
-pub use generate_string_const;
 
 #[cfg(test)]
 mod tests {

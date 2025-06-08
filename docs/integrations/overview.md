@@ -672,7 +672,6 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         |-------------------------|-------------------------------------------------------------------------------------------------------------------|
         | `pulumi_config_value_t*` | Config value or NULL if not found. Must be freed with `pulumi_config_free` when no longer needed |
 
-
 ### Output
 
 #### Map
@@ -1016,6 +1015,76 @@ This is a special type of `Output` that represents the result of a resource oper
         | Type               | Description                                                                                                       |
         |--------------------|-------------------------------------------------------------------------------------------------------------------|
         | `pulumi_output_t*` | An `Output` containing field value. Does not have to be freed. It will be freed automatically when destroying context |
+
+
+### Get Schema
+
+!!! abstract "Returns protobuf encoded schema for the provider."
+
+    === "Wasm"
+
+        _Not applicable. This function is not available in the Wasm integration._
+
+    === "Rust"
+
+        **🛠️ Signature:**
+        [docs.rs](https://docs.rs/pulumi_gestalt_rust_integration/latest/pulumi_gestalt_rust_integration/fn.get_schema.html)
+        ```rust
+        pub fn get_schema(
+            provider_name: &str,
+            provider_version: &str,
+            modules: Option<&[&str]>,
+        ) -> Result<model::Package>
+        ```
+
+        **📥 Parameters:**
+
+        | Name               | Type             | Description                                                                 |
+        |--------------------|------------------|-----------------------------------------------------------------------------|
+        | `provider_name`    | `&str`           | Name of the provider (e.g. "aws", "azure")                                  |
+        | `provider_version` | `&str`           | Version of the provider (e.g. "v5.0.0")                                     |
+        | `modules`          | `Option<&[&str]>` | Optional list of modules to include. If `None`, all modules are included. |
+
+        **📤 Returns:**
+
+        | Type                | Description                                         |
+        |---------------------|-----------------------------------------------------|
+        | `Result<model::Package>` | The provider schema or an error if not found. |
+
+    === "C FFI"
+
+        **🛠️ Signature:**
+        ```c
+        /**
+         * Returns protobuf encoded schema for the provider.
+         * Modules for provider can be found in Pulumi registry on left side with (M) icon:
+         * - [AWS](https://www.pulumi.com/registry/packages/aws/)
+         * - [Azure](https://www.pulumi.com/registry/packages/azure/)
+         * - [GCP](https://www.pulumi.com/registry/packages/gcp/)
+         * Empty modules list means that no modules are used.
+         * To use all modules, pass null for the modules pointer and 0 for the size.
+         */
+        const char *pulumi_get_schema(const char *provider_name,
+                                      const char *provider_version,
+                                      const char *const *modules,
+                                      uintptr_t modules_size);
+        ```
+
+        **📥 Parameters:**
+
+        | Name               | Type                | Description                                                                                           |
+        |--------------------|---------------------|-------------------------------------------------------------------------------------------------------|
+        | `provider_name`    | `const char*`       | Name of the provider (e.g. "aws", "azure")                                                            |
+        | `provider_version` | `const char*`       | Version of the provider (e.g. "v5.0.0")                                                               |
+        | `modules`          | `const char* const*`| Array of module names to include. Pass `NULL` to include all modules.                                 |
+        | `modules_size`     | `uintptr_t`         | Size of the `modules` array. Pass `0` if `modules` is `NULL`.                                           |
+
+        **📤 Returns:**
+
+        | Type          | Description                                                                                                                               |
+        |---------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+        | `const char*` | A string containing the protobuf encoded schema. |
+
 
 ### Abstraction Levels for `Output::map`
 
