@@ -48,7 +48,7 @@ pub fn deserialize_package_file(
 }
 
 fn deserialize_package_json(
-    schema_content: &String,
+    schema_content: &str,
     filter: Option<&[&str]>,
 ) -> Result<model::Package> {
     let schema_package: Package =

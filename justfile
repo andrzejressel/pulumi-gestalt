@@ -170,7 +170,7 @@ test-docs:
 
 rust-docs:
     cargo doc --no-deps \
-        -p serde_constant_string \
+        -p pulumi_gestalt_serde_constant_string \
         -p pulumi_gestalt_build \
         -p pulumi_gestalt_rust \
         -p pulumi_gestalt_rust_adapter \
@@ -182,7 +182,7 @@ rust-docs:
 
 rust-docs-wasm:
     cargo doc --no-deps --target {{WASI_TARGET}} \
-        -p serde_constant_string \
+        -p pulumi_gestalt_serde_constant_string \
         -p pulumi_gestalt_rust \
         -p pulumi_gestalt_rust_adapter \
         -p pulumi_gestalt_rust_adapter_wasm \

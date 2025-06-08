@@ -286,6 +286,7 @@ pub fn get_engine() -> Engine {
 /// - [AWS](https://www.pulumi.com/registry/packages/aws/)
 /// - [Azure](https://www.pulumi.com/registry/packages/azure/)
 /// - [GCP](https://www.pulumi.com/registry/packages/gcp/)
+///
 /// Empty modules list means that no modules are used.
 /// To use all modules, pass `None` as `modules` argument.
 pub fn get_schema(
