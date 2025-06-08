@@ -1019,7 +1019,7 @@ This is a special type of `Output` that represents the result of a resource oper
 
 ### Get Schema
 
-!!! abstract "Returns protobuf encoded schema for the provider."
+!!! abstract "Returns schema for the provider"
 
     === "Wasm"
 
@@ -1042,7 +1042,7 @@ This is a special type of `Output` that represents the result of a resource oper
         | Name               | Type             | Description                                                                 |
         |--------------------|------------------|-----------------------------------------------------------------------------|
         | `provider_name`    | `&str`           | Name of the provider (e.g. "aws", "azure")                                  |
-        | `provider_version` | `&str`           | Version of the provider (e.g. "v5.0.0")                                     |
+        | `provider_version` | `&str`           | Version of the provider (e.g. "5.0.0")                                     |
         | `modules`          | `Option<&[&str]>` | Optional list of modules to include. If `None`, all modules are included. |
 
         **📤 Returns:**
@@ -1076,7 +1076,7 @@ This is a special type of `Output` that represents the result of a resource oper
         | Name               | Type                | Description                                                                                           |
         |--------------------|---------------------|-------------------------------------------------------------------------------------------------------|
         | `provider_name`    | `const char*`       | Name of the provider (e.g. "aws", "azure")                                                            |
-        | `provider_version` | `const char*`       | Version of the provider (e.g. "v5.0.0")                                                               |
+        | `provider_version` | `const char*`       | Version of the provider (e.g. "5.0.0")                                                               |
         | `modules`          | `const char* const*`| Array of module names to include. Pass `NULL` to include all modules.                                 |
         | `modules_size`     | `uintptr_t`         | Size of the `modules` array. Pass `0` if `modules` is `NULL`.                                           |
 
