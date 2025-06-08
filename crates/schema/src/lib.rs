@@ -25,7 +25,8 @@ pub fn get_schema(
         .output()
         .context("Failed to execute pulumi command")?;
 
-    let schema = String::from_utf8(schema_output.stdout).context("Invalid UTF-8 in pulumi output")?;
+    let schema =
+        String::from_utf8(schema_output.stdout).context("Invalid UTF-8 in pulumi output")?;
 
     let package =
         deserialize_package_json(&schema, modules).context("Failed to deserialize package")?;
