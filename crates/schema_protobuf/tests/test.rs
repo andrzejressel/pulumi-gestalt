@@ -1,5 +1,5 @@
 use anyhow::{Context, Result};
-use pulumi_gestalt_schema::deserialize_package;
+use pulumi_gestalt_schema::deserialize_package_file;
 use pulumi_gestalt_schema_protobuf::convert_to_protobuf;
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -1104,8 +1104,8 @@ pub fn run_pulumi_generator_test(
 
     create_symlink(&schema, &root.join(schema.file_name().unwrap()))?;
 
-    let package =
-        deserialize_package(schema.as_path(), modules).context("Failed to deserialize package")?;
+    let package = deserialize_package_file(schema.as_path(), modules)
+        .context("Failed to deserialize package")?;
 
     let protobuf =
         convert_to_protobuf(&package).context("Failed to convert package to protobuf")?;

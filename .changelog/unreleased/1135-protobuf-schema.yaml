@@ -1,0 +1,2 @@
+type: Added
+title: Added C FFI and Rust functions for obtaining Pulumi package schema

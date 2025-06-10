@@ -17,9 +17,9 @@ targets = ["x86_64-apple-darwin", "x86_64-pc-windows-msvc", "i686-unknown-linux-
 [dependencies]
 anyhow.workspace = true
 serde.workspace = true
-serde_json.workspace = true
 bon.workspace = true
 pulumi_gestalt_rust_adapter.workspace = true
+pulumi_gestalt_serde_constant_string.workspace = true
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 pulumi_gestalt_rust_adapter_wasm.workspace = true
