@@ -5,7 +5,7 @@ use crate::model::{
 use crate::utils::fix_description;
 use anyhow::{Context, Result, anyhow};
 use convert_case::{Case, Casing};
-use pulumi_gestalt_rust::generate_string_const;
+use pulumi_gestalt_serde_constant_string::generate_string_const;
 use serde::Deserialize;
 use std::collections::{BTreeMap, BTreeSet, HashSet};
 

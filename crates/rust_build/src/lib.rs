@@ -50,9 +50,9 @@
 
 use anyhow::{Context, Result};
 use pulumi_gestalt_generator::generate_rust;
-use pulumi_gestalt_schema::{deserialize_package, extract_micro_package};
+use pulumi_gestalt_schema::{deserialize_package_file, get_schema};
+use std::env;
 use std::path::Path;
-use std::{env, fs};
 
 /// Generates glue code for given provider, version and modules. Can be included using [`pulumi_gestalt_rust::include_provider!(provider_name)`]
 /// Modules for provider can be found in Pulumi registry on left side with (M) icon:
@@ -90,19 +90,17 @@ fn generate_from_schema_with_optional_filter(
     schema_file: &Path,
     modules: Option<&[&str]>,
 ) -> Result<()> {
-    let package = extract_micro_package(schema_file).context("Failed to deserialize package")?;
-    let provider_name = package.name;
-
     let out_dir = env::var_os("OUT_DIR").context("Failed to get OUT_DIR environment variable")?;
     let out_dir = out_dir
         .to_str()
         .context(format!("Failed to convert [{:?}] to string", out_dir))?;
-    let location = Path::new(out_dir).join("pulumi").join(provider_name);
 
     let package =
-        deserialize_package(schema_file, modules).context("Failed to deserialize package")?;
+        deserialize_package_file(schema_file, modules).context("Failed to deserialize package")?;
 
+    let location = Path::new(out_dir).join("pulumi").join(&package.name);
     generate_rust(&package, &location).context("Failed to generate glue files")?;
+
     println!("cargo::rerun-if-changed=build.rs");
     println!("cargo::rerun-if-changed={}", schema_file.display());
     Ok(())
@@ -113,15 +111,8 @@ fn generate_with_optional_filter(
     provider_version: &str,
     modules: Option<&[&str]>,
 ) -> Result<()> {
-    let schema_output = std::process::Command::new("pulumi")
-        .arg("package")
-        .arg("get-schema")
-        .arg(format!("{}@{}", provider_name, provider_version))
-        .env("PULUMI_AWS_MINIMAL_SCHEMA", "true") // https://github.com/pulumi/pulumi-aws/issues/2565
-        .output()
-        .context("Failed to execute pulumi command")?;
-
-    let schema = String::from_utf8(schema_output.stdout).expect("Invalid UTF-8 in pulumi output");
+    let package =
+        get_schema(provider_name, provider_version, modules).context("Failed to get schema")?;
 
     let out_dir = env::var_os("OUT_DIR").context("Failed to get OUT_DIR environment variable")?;
     let out_dir = out_dir
@@ -129,13 +120,6 @@ fn generate_with_optional_filter(
         .context(format!("Failed to convert [{:?}] to string", out_dir))?;
 
     let location = Path::new(out_dir).join("pulumi").join(provider_name);
-
-    let temp_dir = tempfile::tempdir().context("Failed to create temporary directory")?;
-    let file = temp_dir.path().join("schema.json");
-    fs::write(&file, &schema).context("Failed to write schema")?;
-
-    let package =
-        deserialize_package(file.as_path(), modules).context("Failed to deserialize package")?;
     generate_rust(&package, &location).context("Failed to generate glue files")?;
 
     println!("cargo::rerun-if-changed=build.rs");
