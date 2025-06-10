@@ -39,6 +39,7 @@ members = [
     "crates/rust_integration",
     "crates/schema",
     "crates/schema_protobuf",
+    "crates/serde_constant_string",
     "examples/raw_rust"
 ]
 
@@ -68,6 +69,7 @@ pulumi_gestalt_rust_adapter_native = { version = "=0.0.0-DEV", path = "crates/ru
 pulumi_gestalt_schema = { version = "=0.0.0-DEV", path = "crates/schema" }
 pulumi_gestalt_schema_protobuf = { version = "=0.0.0-DEV", path = "crates/schema_protobuf" }
 changelog_lib = { version = "=0.0.0-DEV", path = "changelog_lib" }
+pulumi_gestalt_serde_constant_string = { version = "=0.0.0-DEV", path = "crates/serde_constant_string" }
 
 anyhow = "1.0.98"
 prost = "0.13.5"
