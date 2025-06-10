@@ -1,8 +1,8 @@
 # Overview
 
 !!! note "Walk around the code first"
-Before processing, feel free to do [Rust tutorial](../languages/rust/index.md), open code in your IDE, walk through it
-and check abstractions behind `Output` and generated provider.
+    Before processing, feel free to do [Rust tutorial](../languages/rust/index.md), open code in your IDE, walk through it
+    and check abstractions behind `Output` and generated provider.
 
 
 ## Schema
