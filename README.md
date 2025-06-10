@@ -21,13 +21,13 @@ language-specific integration details without worrying about the underlying Pulu
 
 ## User Guide
 
-- [Rust](docs/languages/rust/index.md)
+- [Rust](https://pulumi-gestalt.readthedocs.io/latest/languages/rust/)
 
 ## Integration Guide
 
-- [C FFI](docs/integrations/c-ffi.md)
-- [Rust](docs/integrations/rust.md)
-- [Wasm](docs/integrations/wasm.md)
+- [C FFI](https://pulumi-gestalt.readthedocs.io/latest/integrations/c-ffi/)
+- [Rust](https://pulumi-gestalt.readthedocs.io/latest/integrations/rust/)
+- [Wasm](https://pulumi-gestalt.readthedocs.io/latest/integrations/wasm/)
 
 ### Quick start
 
