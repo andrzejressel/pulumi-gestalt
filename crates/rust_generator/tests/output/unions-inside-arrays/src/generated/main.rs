@@ -6,10 +6,10 @@ pub mod types {
 }
 #[doc(hidden)]
 pub mod constants {
-    pulumi_gestalt_rust::__private::constant::generate_string_const!(
+    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
         ConstStringPointInTimeRestore, "PointInTimeRestore"
     );
-    pulumi_gestalt_rust::__private::constant::generate_string_const!(
+    pulumi_gestalt_rust::__private::pulumi_gestalt_serde_constant_string::generate_string_const!(
         ConstStringReplica, "Replica"
     );
 }

@@ -7,7 +7,7 @@ use crate::code_generation::rust_generation::generate_code;
 use crate::code_generation::yaml::tests::{
     example_array, example_empty_properties, example_escape_string, example_numbers,
 };
-use pulumi_gestalt_schema::deserialize_package;
+use pulumi_gestalt_schema::deserialize_package_file;
 
 macro_rules! yaml_deserialization_test {
     ($test_name:ident, $test_module:ident) => {
@@ -30,7 +30,7 @@ macro_rules! full_pipeline_test {
             let expected_yaml_file = $test_module::get_yaml_file();
             assert_eq!(yaml_file, expected_yaml_file);
 
-            let package = deserialize_package(
+            let package = deserialize_package_file(
                 concat!("tests/test_cases/", $package_name, ".json").as_ref(),
                 None,
             )

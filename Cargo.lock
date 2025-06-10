@@ -3544,8 +3544,8 @@ dependencies = [
  "pulumi_gestalt_rust_adapter",
  "pulumi_gestalt_rust_adapter_native",
  "pulumi_gestalt_rust_adapter_wasm",
+ "pulumi_gestalt_serde_constant_string",
  "serde",
- "serde_json",
 ]
 
 [[package]]
@@ -3586,6 +3586,7 @@ dependencies = [
  "pulumi_gestalt_core",
  "pulumi_gestalt_grpc_connection",
  "pulumi_gestalt_proto",
+ "pulumi_gestalt_schema",
  "serde_json",
  "uuid",
 ]
@@ -3597,10 +3598,8 @@ dependencies = [
  "anyhow",
  "convert_case",
  "itertools",
- "pathdiff",
  "proptest",
- "pulumi_gestalt_rust",
- "regex",
+ "pulumi_gestalt_serde_constant_string",
  "serde",
  "serde_json",
  "serde_yaml",
@@ -3616,6 +3615,14 @@ dependencies = [
  "prost",
  "pulumi_gestalt_proto",
  "pulumi_gestalt_schema",
+]
+
+[[package]]
+name = "pulumi_gestalt_serde_constant_string"
+version = "0.0.0-DEV"
+dependencies = [
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
@@ -3650,9 +3657,12 @@ dependencies = [
 name = "pulumi_native_c"
 version = "0.0.0-DEV"
 dependencies = [
+ "anyhow",
  "cbindgen",
  "libc",
  "pulumi_gestalt_rust_integration",
+ "pulumi_gestalt_schema",
+ "pulumi_gestalt_schema_protobuf",
 ]
 
 [[package]]

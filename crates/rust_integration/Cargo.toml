@@ -14,6 +14,7 @@ serde_json.workspace = true
 pulumi_gestalt_grpc_connection.workspace = true
 pulumi_gestalt_proto.workspace = true
 uuid.workspace = true
+pulumi_gestalt_schema.workspace = true
 
 [lints]
 workspace = true
