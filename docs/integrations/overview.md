@@ -22,10 +22,10 @@ core concepts:
    as doing so may limit compatibility with advanced features like
    the [Pulumi Automation API](https://www.pulumi.com/docs/iac/using-pulumi/automation-api/).
 2. **Output**: Represents values that are resolved asynchronously (e.g., cloud resource outputs). Output is usually
-   connected to underlying `value`. Since `Output` can contains
-   any type, `value` is JSON representation of it. For example string `hello world` will we `"hello world"`, while
+   connected to underlying `value`. Since `Output` can contain
+   any type, `value` is JSON representation of it. For example string `hello world` will be `"hello world"`, while
    number `42` will be `42`. Combining these two values will yield `["hello world", 42]`.
-3. **CompositeOutput**: Represents a map of outputs returned by a resource or function. This object is an abstration
+3. **CompositeOutput**: Represents a map of outputs returned by a resource or function. This object is an abstraction
    over map containing resource/function outputs.
    For example [Docker image](https://www.pulumi.com/registry/packages/docker/api-docs/image/) will have 7 -
    `baseImageName`, `context`, `dockerfile`, `id`, `registryServer`, `repoDigest` and `platform`.
