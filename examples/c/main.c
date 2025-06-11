@@ -143,6 +143,18 @@ static void perform_operations_on_custom_config(pulumi_context_t* ctx) {
 	pulumi_config_free(secret);
 }
 
+static void obtain_schema() {
+	pulumi_string_t* schema = pulumi_get_schema("docker", "4.5.3", NULL, 0);
+	if (schema == NULL) {
+		printf("Cannot obtain schema");
+		exit(2);
+	}
+	if (schema->data == NULL || schema->len == 0) {
+        printf("Schema is empty");
+        exit(2);
+    }
+}
+
 int main() {
 	pulumi_context_t* ctx = pulumi_create_context(NULL);
 
@@ -151,6 +163,7 @@ int main() {
 	generate_random_value(ctx);
 	perform_operations_on_default_config(ctx);
 	perform_operations_on_custom_config(ctx);
+	obtain_schema();
 
 	pulumi_finish(ctx);
 	pulumi_destroy_context(ctx);

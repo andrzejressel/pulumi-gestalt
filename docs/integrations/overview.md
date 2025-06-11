@@ -1069,6 +1069,16 @@ of which can be accessed individually.
         **🛠️ Signature:**
         ```c
         /**
+         * String that may contain nulls and is not null-terminated.
+         */
+        typedef struct pulumi_string_t {
+          uint8_t *data;
+          uintptr_t len;
+        } pulumi_string_t;
+
+        void pulumi_free_string(struct pulumi_string_t *value);
+
+        /**
          * Returns protobuf encoded schema for the provider.
          * Modules for provider can be found in Pulumi registry on left side with (M) icon:
          * - [AWS](https://www.pulumi.com/registry/packages/aws/)
@@ -1078,10 +1088,11 @@ of which can be accessed individually.
          * Empty modules list means that no modules are used.
          * To use all modules, pass null for the modules pointer and 0 for the size.
          */
-        const char *pulumi_get_schema(const char *provider_name,
-                                      const char *provider_version,
-                                      const char *const *modules,
-                                      uintptr_t modules_size);
+        struct pulumi_string_t *pulumi_get_schema(const char *provider_name,
+                                                  const char *provider_version,
+                                                  const char *const *modules,
+                                                  uintptr_t modules_size);
+
         ```
 
         **📥 Parameters:**
@@ -1095,9 +1106,9 @@ of which can be accessed individually.
 
         **📤 Returns:**
 
-        | Type          | Description                                                                                                                               |
-        |---------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-        | `const char*` | A string containing the protobuf encoded schema. |
+        | Type                    | Description                                                                                                                               |
+        |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+        | `struct pulumi_string_t*` | A `pulumi_string_t` struct containing the protobuf encoded schema. Must be freed with `pulumi_free_string` when no longer needed.        |
 
 
 ### Abstraction Levels for `Output::map`
