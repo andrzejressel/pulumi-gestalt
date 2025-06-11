@@ -70,7 +70,7 @@ typedef struct pulumi_config_value_t {
 extern "C" {
 #endif // __cplusplus
 
-void pulumi_free_string(struct pulumi_string_t *value);
+void pulumi_string_free(struct pulumi_string_t *value);
 
 struct pulumi_context_t *pulumi_create_context(const void *context);
 

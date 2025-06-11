@@ -153,6 +153,7 @@ static void obtain_schema() {
         printf("Schema is empty");
         exit(2);
     }
+	pulumi_string_free(schema);
 }
 
 int main() {

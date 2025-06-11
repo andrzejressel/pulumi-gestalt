@@ -84,7 +84,7 @@ impl Drop for CFFIString {
 }
 
 #[unsafe(no_mangle)]
-extern "C" fn pulumi_free_string(value: *mut CFFIString) {
+extern "C" fn pulumi_string_free(value: *mut CFFIString) {
     let _ = unsafe { Box::from_raw(value) };
 }
 

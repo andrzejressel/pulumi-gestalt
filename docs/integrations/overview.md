@@ -1076,7 +1076,7 @@ of which can be accessed individually.
           uintptr_t len;
         } pulumi_string_t;
 
-        void pulumi_free_string(struct pulumi_string_t *value);
+        void pulumi_string_free(struct pulumi_string_t *value);
 
         /**
          * Returns protobuf encoded schema for the provider.
@@ -1108,7 +1108,7 @@ of which can be accessed individually.
 
         | Type                    | Description                                                                                                                               |
         |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-        | `struct pulumi_string_t*` | A `pulumi_string_t` struct containing the protobuf encoded schema. Must be freed with `pulumi_free_string` when no longer needed.        |
+        | `struct pulumi_string_t*` | A `pulumi_string_t` struct containing the protobuf encoded schema. Must be freed with `pulumi_string_free` when no longer needed.        |
 
 
 ### Abstraction Levels for `Output::map`
