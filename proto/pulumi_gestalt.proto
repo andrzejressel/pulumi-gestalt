@@ -3,65 +3,107 @@ syntax = "proto3";
 package pulumi_model;
 
 // Main Package definition
+// Represents a Pulumi package, which is a collection of resources and functions.
+// Corresponds to the root object in a Pulumi schema JSON file.
 message Package {
+  // The unqualified name of the package (e.g., "aws", "azure", "gcp", "kubernetes", "random", "docker").
   string name = 1;
+  // The human-friendly name of the package.
   optional string display_name = 2;
+  // The URL to download the provider plugin for this package.
   optional string plugin_download_url = 3;
+  // The version of the package.
   string version = 4;
+  // A map of resource type tokens to resource definitions.
   repeated Resource resources = 5;
+  // A map of function type tokens to function definitions.
   repeated Function functions = 6;
+  // A map of type tokens to complex type definitions.
   repeated GlobalType types = 7;
 }
 
 // Resource definition
+// Describes a resource provided by the package.
 message Resource {
+  // The Pulumi type token for the resource.
   ElementId element_id = 1;
+  // A human-friendly description of the resource.
   optional string description = 2;
+  // A map of input property names to their definitions.
   repeated InputProperty input_properties = 3;
+  // A map of output property names to their definitions.
   repeated OutputProperty output_properties = 4;
 }
 
 // Function definition
+// Describes a function (data source) provided by the package.
 message Function {
+  // The Pulumi type token for the function.
   ElementId element_id = 1;
+  // A human-friendly description of the function.
   optional string description = 2;
+  // A map of input property names to their definitions.
   repeated InputProperty input_properties = 3;
+  // A map of output property names to their definitions.
   repeated OutputProperty output_properties = 4;
 }
 
 // ElementId definition
+// Represents a Pulumi type token.
 message ElementId {
+  // The namespace of the element, e.g. [`s3`] for `aws:s3/bucket:Bucket`.
   repeated string namespace = 1;
+  // The name of the element, e.g. "Bucket".
   string name = 2;
+  // The raw token string, e.g. `aws:s3/bucket:Bucket`.
   string raw = 3;
 }
 
 // InputProperty definition
+// Describes an input property for a resource or function.
 message InputProperty {
+  // The name of the input property.
   string name = 1;
+  // The type of the input property.
   Type type = 2;
+  // A human-friendly description of the input property.
   optional string description = 3;
 }
 
 // OutputProperty definition
+// Describes an output property for a resource or function.
 message OutputProperty {
+  // The name of the output property.
   string name = 1;
+  // The type of the output property.
   Type type = 2;
+  // A human-friendly description of the output property.
   optional string description = 3;
 }
 
 // Type definition
+// Describes the type of a property or a standalone complex type.
 message Type {
   oneof type_value {
+    // Represents a boolean type.
     Empty boolean = 1;
+    // Represents an integer type.
     Empty integer = 2;
+    // Represents a number type (float/double).
     Empty number = 3;
+    // Represents a string type.
     Empty string = 4;
+    // Represents an array type. The 'array_type' field specifies the element type.
     Type array_type = 5;
+    // Represents an object type (map). The 'object_type' field specifies the value type for properties.
     Type object_type = 6;
+    // Represents a reference to another type.
     RefType ref_type = 7;
+    // Represents an optional type. The 'option_type' field specifies the underlying type.
     Type option_type = 8;
+    // Represents a discriminated union of types.
     DiscriminatedUnion discriminated_union = 9;
+    // Represents a constant string value.
     string const_string = 10;
   }
 }
@@ -70,83 +112,126 @@ message Type {
 message Empty {}
 
 // RefType definition
+// Describes a reference to another type within the Pulumi schema.
 message RefType {
   oneof ref_value {
+    // A reference to a complex type defined in the 'types' section of the package.
     ElementId type_ref = 1;
+    // A special type representing a Pulumi Archive.
     Empty archive = 2;
+    // A special type representing a Pulumi Asset.
     Empty asset = 3;
+    // A special type representing any type (pulumi.json#/Any).
     Empty any = 4;
   }
 }
 
 // DiscriminatedUnion definition
+// Represents a list of types that can be used in a discriminated union.
 message DiscriminatedUnion {
+  // The list of possible types in the union.
   repeated Type types = 1;
 }
 
+// GlobalType definition
+// Describes a complex type definition.
 message GlobalType {
+  // The Pulumi type token for this complex type.
   ElementId element_id = 1;
+  // The actual value or structure of the global type.
   GlobalTypeValue global_type_value = 2;
 }
 
 // GlobalType definition
+// Represents the value of a complex type, which can be an object or an enum.
 message GlobalTypeValue {
   oneof value {
+    // The type is an object with properties.
     ObjectType object = 1;
+    // The type is an enum with string values.
     StringEnum string_enum = 2;
+    // The type is an enum with number values.
     NumberEnum number_enum = 3;
+    // The type is an enum with integer values.
     IntegerEnum integer_enum = 4;
   }
 }
 
 // ObjectType definition
+// Describes an object type with a set of properties.
 message ObjectType {
+  // A human-friendly description of the object type.
   optional string description = 1;
+  // A map of property names to their definitions.
   repeated GlobalTypeProperty properties = 2;
 }
 
 // StringEnum definition
+// Describes an enum type with string values.
 message StringEnum {
+  // A human-friendly description of the enum.
   optional string description = 1;
+  // The list of possible enum values.
   repeated StringEnumElement elements = 2;
 }
 
 // NumberEnum definition
+// Describes an enum type with number (float/double) values.
 message NumberEnum {
+  // A human-friendly description of the enum.
   optional string description = 1;
+  // The list of possible enum values.
   repeated NumberEnumElement elements = 2;
 }
 
 // IntegerEnum definition
 message IntegerEnum {
+  // A human-friendly description of the enum.
   optional string description = 1;
+  // The list of possible enum values.
   repeated IntegerEnumElement elements = 2;
 }
 
 // GlobalTypeProperty definition
+// Describes a property within an ObjectType.
 message GlobalTypeProperty {
+  // The name of the property.
   string name = 1;
+  // The type of the property.
   Type type = 2;
+  // A human-friendly description of the property.
   optional string description = 3;
 }
 
 // StringEnumElement definition
+// Describes a single element (value) of a StringEnum.
 message StringEnumElement {
+  // The name of the enum element.
   string name = 1;
+  // The string value of the enum element.
   string value = 2;
+  // A human-friendly description of the enum element.
   optional string description = 3;
 }
 
 // NumberEnumElement definition
+// Describes a single element (value) of a NumberEnum.
 message NumberEnumElement {
+  // The name of the enum element.
   string name = 1;
+  // The number (float/double) value of the enum element.
   double value = 2;
+  // A human-friendly description of the enum element.
   optional string description = 3;
 }
 
 // IntegerEnumElement definition
+// Describes a single element (value) of an IntegerEnum.
 message IntegerEnumElement {
+  // The name of the enum element.
   string name = 1;
+  // The integer value of the enum element.
   int64 value = 2;
+  // A human-friendly description of the enum element.
   optional string description = 3;
 }

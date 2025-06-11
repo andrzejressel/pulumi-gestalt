@@ -28,6 +28,7 @@ nav:
           - rustdoc (Wasm): rust-docs/wasm/pulumi_gestalt_rust/index.html
   - Integrations:
       - Overview: integrations/overview.md
+      - Schema: integrations/schema.md
       - C FFI: integrations/c-ffi.md
       - Rust: integrations/rust.md
       - Wasm: integrations/wasm.md
