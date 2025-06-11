@@ -1,19 +1,34 @@
 # Overview
 
 !!! note "Walk around the code first"
-    Before processing, feel free to do [Rust tutorial](../languages/rust/index.md), open code in your IDE, walk through it and check abstractions behind `Output` and generated provider.
+    Before processing, feel free to do [Rust tutorial](../languages/rust/index.md), open code in your IDE, walk through it
+    and check abstractions behind `Output` and generated provider.
 
+
+## Schema
+
+The schema for the Pulumi Gestalt Protobuf is defined in the `pulumi_gestalt.proto` file. It includes definitions
+for the main components such as `Package`, `Resource`, `Function`, and various types used within these components. More
+information about the schema can be found in
+the [Gestalt Protocol Buffer Schema documentation](schema.md).
 
 ## Abstractions
 
-The `Pulumi Gestalt` SDK provides abstractions for working with Pulumi in a structured way. It is built around three core concepts:
+The `Pulumi Gestalt` SDK provides abstractions for working with Pulumi in a structured way. It is built around three
+core concepts:
 
-1. **Context**: Represents a single execution environment for Pulumi operations. It is not recommended to use a global context, 
-   as doing so may limit compatibility with advanced features like the [Pulumi Automation API](https://www.pulumi.com/docs/iac/using-pulumi/automation-api/).
-2. **Output**: Represents values that are resolved asynchronously (e.g., cloud resource outputs). Output is usually connected to underlying `value`. Since `Output` can contains
-    any type, `value` is JSON representation of it. For example string `hello world` will we `"hello world"`, while number `42` will be `42`. Combining these two values will yield `["hello world", 42]`.
-3. **CompositeOutput**: Represents a map of outputs returned by a resource or function. This object is an abstration over map containing resource/function outputs.
-   For example [Docker image](https://www.pulumi.com/registry/packages/docker/api-docs/image/) will have 7 - `baseImageName`, `context`, `dockerfile`, `id`, `registryServer`, `repoDigest` and `platform`.
+1. **Context**: Represents a single execution environment for Pulumi operations. It is not recommended to use a global
+   context,
+   as doing so may limit compatibility with advanced features like
+   the [Pulumi Automation API](https://www.pulumi.com/docs/iac/using-pulumi/automation-api/).
+2. **Output**: Represents values that are resolved asynchronously (e.g., cloud resource outputs). Output is usually
+   connected to underlying `value`. Since `Output` can contain
+   any type, `value` is JSON representation of it. For example string `hello world` will be `"hello world"`, while
+   number `42` will be `42`. Combining these two values will yield `["hello world", 42]`.
+3. **CompositeOutput**: Represents a map of outputs returned by a resource or function. This object is an abstraction
+   over map containing resource/function outputs.
+   For example [Docker image](https://www.pulumi.com/registry/packages/docker/api-docs/image/) will have 7 -
+   `baseImageName`, `context`, `dockerfile`, `id`, `registryServer`, `repoDigest` and `platform`.
 
 ### Context
 
@@ -83,11 +98,10 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         |--------------------|----------------------|
         | `pulumi_context_t` | Instance of context  |
 
-
 #### Finish
 
 !!! warning "C FFI and Rust only"
-    This function does exist in WIT, but it has [a completely different signature and meaning](wasm.md#callback-emulation).
+This function does exist in WIT, but it has [a completely different signature and meaning](wasm.md#callback-emulation).
 
 !!! abstract "Executes all registered operations. Call this before destroying the context."
 
@@ -876,7 +890,6 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         |--------------------|-------------------------------------------------------------------------------------------------------------------|
         | `pulumi_output_t*` | An `Output` containing combined values. The structure looks like `[output, outputs[0], outputs[1], ...]` Does not have to be freed. It will be freed automatically when destroying context |
 
-
 #### Add to export
 
 !!! abstract "Add output as [stack output](https://www.pulumi.com/tutorials/building-with-pulumi/stack-outputs/)."
@@ -934,10 +947,10 @@ The `Context` abstraction manages the lifecycle of Pulumi operations. It include
         | `value` | `const pulumi_output_t*` | `Output` object to add as stack output |
         | `name`  | `const char*`            | Name of the stack output               |
 
-
 ### CompositeOutput
 
-This is a special type of `Output` that represents the result of a resource operation. It contains multiple fields, each of which can be accessed individually.
+This is a special type of `Output` that represents the result of a resource operation. It contains multiple fields, each
+of which can be accessed individually.
 
 #### Get field
 
@@ -1092,13 +1105,17 @@ This is a special type of `Output` that represents the result of a resource oper
 The `Output::map` function is implemented at different levels of abstraction depending on the language or integration:
 
 #### High Level
+
 - **Description**: Pass a function of type `T1 -> T2` to `Output::map`.
 - **Examples**: [Rust language](../languages/rust/index.md).
 
 #### Medium Level
-- **Description**: Pass a function of type `String -> String` to `Output::map` where `String` is a serialized JSON value.
+
+- **Description**: Pass a function of type `String -> String` to `Output::map` where `String` is a serialized JSON
+  value.
 - **Examples**: [C FFI](c-ffi.md), [Rust integration](rust.md).
 
 #### Low Level
+
 - **Description**: Pass a function id to `Output::map` and receive it later.
 - **Examples**: [Wasm](wasm.md).
