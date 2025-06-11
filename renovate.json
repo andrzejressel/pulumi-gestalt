@@ -5,8 +5,6 @@
     "github>andrzejressel/renovate-config//rust/updateToolchain",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
-  "prConcurrentLimit": 1,
-  "prHourlyLimit": 0,
   "labels": [
     "dependencies"
   ],
