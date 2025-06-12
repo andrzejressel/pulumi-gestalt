@@ -1,5 +1,5 @@
 use pulumi_gestalt_rust_integration::{
-    ConfigValue, Context, InvokeResourceRequest, ObjectField, RegisterResourceRequest,
+    ConfigValue, Context, InvokeResourceRequest, ObjectField, RegisterResourceRequest, get_schema,
 };
 
 fn generate_random_value(ctx: &Context) {
@@ -116,6 +116,10 @@ fn perform_operations_on_custom_config(ctx: &Context) {
     }
 }
 
+fn obtain_schema() {
+    let _ = get_schema("docker", "4.5.3", None).unwrap();
+}
+
 fn main() {
     let ctx = Context::create_context();
 
@@ -124,6 +128,7 @@ fn main() {
     perform_operations_on_outputs(&ctx);
     perform_operations_on_default_config(&ctx);
     perform_operations_on_custom_config(&ctx);
+    obtain_schema();
 
     ctx.finish();
 }

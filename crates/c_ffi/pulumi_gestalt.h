@@ -14,6 +14,14 @@ typedef struct pulumi_output_t pulumi_output_t;
 
 typedef struct pulumi_context_t pulumi_context_t;
 
+/**
+ * String that may contain nulls and is not null-terminated.
+ */
+typedef struct pulumi_string_t {
+  uint8_t *data;
+  uintptr_t len;
+} pulumi_string_t;
+
 typedef struct pulumi_object_field_t {
   const char *name;
   const struct pulumi_output_t *value;
@@ -61,6 +69,8 @@ typedef struct pulumi_config_value_t {
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
+
+void pulumi_string_free(struct pulumi_string_t *value);
 
 struct pulumi_context_t *pulumi_create_context(const void *context);
 
@@ -115,10 +125,10 @@ void pulumi_config_free(struct pulumi_config_value_t *value);
  * Empty modules list means that no modules are used.
  * To use all modules, pass null for the modules pointer and 0 for the size.
  */
-const char *pulumi_get_schema(const char *provider_name,
-                              const char *provider_version,
-                              const char *const *modules,
-                              uintptr_t modules_size);
+struct pulumi_string_t *pulumi_get_schema(const char *provider_name,
+                                          const char *provider_version,
+                                          const char *const *modules,
+                                          uintptr_t modules_size);
 
 #ifdef __cplusplus
 }  // extern "C"

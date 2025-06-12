@@ -59,6 +59,35 @@ pub struct InvokeResourceRequest {
     inputs_len: usize,
 }
 
+/// String that may contain nulls and is not null-terminated.
+#[repr(C)]
+pub struct CFFIString {
+    data: *mut u8,
+    len: usize,
+}
+
+impl CFFIString {
+    pub fn from_string(data: Vec<u8>) -> Self {
+        let len = data.len();
+        let ptr = data.as_ptr() as *mut u8;
+        std::mem::forget(data); // Prevent Rust from freeing the memory
+        CFFIString { data: ptr, len }
+    }
+}
+
+impl Drop for CFFIString {
+    fn drop(&mut self) {
+        unsafe {
+            let _ = Vec::from_raw_parts(self.data, self.len, self.len);
+        }
+    }
+}
+
+#[unsafe(no_mangle)]
+extern "C" fn pulumi_string_free(value: *mut CFFIString) {
+    let _ = unsafe { Box::from_raw(value) };
+}
+
 /// Arguments: Engine context, Function context, Serialized JSON value
 /// Returned string must represent a JSON value;
 /// Library will free the returned string
@@ -370,7 +399,7 @@ extern "C" fn pulumi_get_schema(
     provider_version: *const c_char,
     modules: *const *const c_char,
     modules_size: usize,
-) -> *const c_char {
+) -> *mut CFFIString {
     let modules = if modules.is_null() {
         if modules_size > 0 {
             panic!("Modules pointer is null but size is greater than 0");
@@ -393,9 +422,7 @@ extern "C" fn pulumi_get_schema(
         .context("Failed to convert schema to protobuf")
         .unwrap();
 
-    let c_string = CString::new(protobuf).expect("Failed to create CString from protobuf string");
-
-    c_string.into_raw()
+    Box::into_raw(Box::new(CFFIString::from_string(protobuf)))
 }
 
 fn extract_field<'a>(
