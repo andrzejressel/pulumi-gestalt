@@ -106,6 +106,8 @@ publish-app APP_NAME:
 publish:
     just publish-app pulumi_gestalt_serde_constant_string
     just publish-app pulumi_gestalt_proto
+    just publish-app pulumi_gestalt_schema
+    just publish-app pulumi_gestalt_schema_protobuf
     just publish-app pulumi_gestalt_core
     just publish-app pulumi_gestalt_wit
     just publish-app pulumi_gestalt_grpc_connection
@@ -114,8 +116,6 @@ publish:
     just publish-app pulumi_gestalt_rust_integration
     just publish-app pulumi_gestalt_rust_adapter_native
     just publish-app pulumi_gestalt_rust
-    just publish-app pulumi_gestalt_schema
-    just publish-app pulumi_gestalt_schema_protobuf
     just publish-app pulumi_gestalt_generator
     just publish-app pulumi_gestalt_build
     just publish-app pulumi_gestalt_wasm_runner
