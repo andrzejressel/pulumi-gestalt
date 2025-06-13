@@ -1,6 +1,5 @@
 use crate::model::ElementId;
 use std::collections::HashMap;
-use std::fs;
 use std::sync::LazyLock;
 
 pub(crate) fn fix_description(s: Option<String>, element_id: &ElementId) -> Option<String> {
@@ -63,11 +62,6 @@ fn fix_pulumi_docker_docs(s: String, element_id: &ElementId) -> String {
                 return fixed.to_string();
             }
         }
-        fs::write("error.md", s).unwrap();
-        panic!(
-            "ElementId {:?} does not have valid replacement. Original markdown was saved to error.md",
-            element_id
-        );
     }
 
     s
