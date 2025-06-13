@@ -16,7 +16,7 @@ prost-types.workspace = true
 uuid.workspace = true
 log.workspace = true
 serde_json.workspace = true
-pulumi_gestalt_proto.workspace = true
+pulumi_gestalt_proto = { workspace = true, features = ["pulumi"] }
 
 [dev-dependencies]
 mockall.workspace = true
