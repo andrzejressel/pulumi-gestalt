@@ -72,8 +72,8 @@ changelog_lib = { version = "=0.0.0-DEV", path = "changelog_lib" }
 pulumi_gestalt_serde_constant_string = { version = "=0.0.0-DEV", path = "crates/serde_constant_string" }
 
 anyhow = "1.0.98"
-prost = "0.13.5"
-prost-types = "0.13.5"
+prost = "0.14.0"
+prost-types = "0.14.0"
 uuid = { version = "1.16.0", features = ["v4", "v7"] }
 futures = "0.3.31"
 wit-bindgen = "0.42.1"
