@@ -18,7 +18,7 @@ use pulumi_gestalt_wit::bindings_runner::{
 use std::collections::HashMap;
 use std::path::Path;
 use wasmtime::Store;
-use wasmtime::component::{Component, Linker, Resource, ResourceTable};
+use wasmtime::component::{Component, HasSelf, Linker, Resource, ResourceTable};
 use wasmtime_wasi::p2::{IoView, WasiCtx, WasiCtxBuilder, WasiView};
 
 pub struct Pulumi {
@@ -321,7 +321,7 @@ impl Pulumi {
         let engine = wasmtime::Engine::new(&engine_config)?;
 
         let mut linker: Linker<SimplePluginCtx> = Linker::new(&engine);
-        PulumiGestalt::add_to_linker(&mut linker, |state: &mut SimplePluginCtx| {
+        PulumiGestalt::add_to_linker::<_, HasSelf<_>>(&mut linker, |state| {
             &mut state.my_state
         })?;
 
