@@ -321,9 +321,7 @@ impl Pulumi {
         let engine = wasmtime::Engine::new(&engine_config)?;
 
         let mut linker: Linker<SimplePluginCtx> = Linker::new(&engine);
-        PulumiGestalt::add_to_linker::<_, HasSelf<_>>(&mut linker, |state| {
-            &mut state.my_state
-        })?;
+        PulumiGestalt::add_to_linker::<_, HasSelf<_>>(&mut linker, |state| &mut state.my_state)?;
 
         wasmtime_wasi::p2::add_to_linker_sync(&mut linker)?;
 
