@@ -76,7 +76,7 @@ prost = "0.13.5"
 prost-types = "0.13.5"
 uuid = { version = "1.16.0", features = ["v4", "v7"] }
 futures = "0.3.31"
-wit-bindgen = "0.42.1"
+wit-bindgen = "0.43.0"
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = { version = "1.0.140" }
 tonic = { version = "0.13.1", default-features = false }
