@@ -62,7 +62,7 @@ pub struct Function {
 }
 /// ElementId definition
 /// Represents a Pulumi type token.
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ElementId {
     /// The namespace of the element, e.g. \[`s3`\] for `aws:s3/bucket:Bucket`.
     #[prost(string, repeated, tag = "1")]
@@ -146,18 +146,18 @@ pub mod r#type {
     }
 }
 /// Empty message for types that don't need additional fields
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct Empty {}
 /// RefType definition
 /// Describes a reference to another type within the Pulumi schema.
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct RefType {
     #[prost(oneof = "ref_type::RefValue", tags = "1, 2, 3, 4")]
     pub ref_value: ::core::option::Option<ref_type::RefValue>,
 }
 /// Nested message and enum types in `RefType`.
 pub mod ref_type {
-    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum RefValue {
         /// A reference to a complex type defined in the 'types' section of the package.
         #[prost(message, tag = "1")]
@@ -276,7 +276,7 @@ pub struct GlobalTypeProperty {
 }
 /// StringEnumElement definition
 /// Describes a single element (value) of a StringEnum.
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct StringEnumElement {
     /// The name of the enum element.
     #[prost(string, tag = "1")]
@@ -304,7 +304,7 @@ pub struct NumberEnumElement {
 }
 /// IntegerEnumElement definition
 /// Describes a single element (value) of an IntegerEnum.
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct IntegerEnumElement {
     /// The name of the enum element.
     #[prost(string, tag = "1")]
