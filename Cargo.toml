@@ -79,8 +79,8 @@ futures = "0.3.31"
 wit-bindgen = "0.43.0"
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = { version = "1.0.140" }
-tonic = { version = "0.13.1", default-features = false }
-tonic-build = "0.13.1"
+tonic = { version = "0.14.0", default-features = false }
+tonic-build = "0.14.0"
 wasmtime = "35.0.0"
 wasmtime-wasi = "35.0.0"
 log = { version = "0.4.27", features = ["kv"] }
