@@ -12,7 +12,7 @@ pub(crate) fn regenerate_proto() -> Result<()> {
     fs::create_dir_all(&pulumi_location)?;
     fs::create_dir_all(&pulumi_gestalt_location)?;
 
-    tonic_build::configure()
+    tonic_prost_build::configure()
         .build_transport(true)
         .build_client(true)
         .build_server(true)
@@ -23,10 +23,10 @@ pub(crate) fn regenerate_proto() -> Result<()> {
                 format!("{}/pulumi/engine.proto", pulumi_proto_dir),
                 format!("{}/pulumi/resource.proto", pulumi_proto_dir),
             ],
-            &[pulumi_proto_dir],
+            &[pulumi_proto_dir.to_string()],
         )?;
 
-    tonic_build::configure()
+    tonic_prost_build::configure()
         .build_transport(false)
         .build_client(false)
         .build_server(false)
