@@ -1,6 +1,6 @@
 services:
   pulumi-gestalt-docker:
-    image: squidfunk/mkdocs-material:9.6.17
+    image: squidfunk/mkdocs-material:9.6.18
     ports:
       - "8000:8000"
     volumes:
