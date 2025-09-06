@@ -42,7 +42,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@2bb61346d075e720d4c3da92f23b6d612d5a7543 # v1.15.3
+      - uses: cargo-bins/cargo-binstall@837578dfb436769f1e6669b2e23ffea9d9d2da8f # v1.15.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -154,7 +154,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@2bb61346d075e720d4c3da92f23b6d612d5a7543 # v1.15.3
+      - uses: cargo-bins/cargo-binstall@837578dfb436769f1e6669b2e23ffea9d9d2da8f # v1.15.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -259,7 +259,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@2bb61346d075e720d4c3da92f23b6d612d5a7543 # v1.15.3
+      - uses: cargo-bins/cargo-binstall@837578dfb436769f1e6669b2e23ffea9d9d2da8f # v1.15.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
