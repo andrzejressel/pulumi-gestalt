@@ -38,7 +38,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@79e4beb1e02f733a26129a6bf26c37dab4ab3307 # v1.14.4
+      - uses: cargo-bins/cargo-binstall@837578dfb436769f1e6669b2e23ffea9d9d2da8f # v1.15.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -67,7 +67,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload coverage data to codecov
-        uses: codecov/codecov-action@18283e04ce6e62d37312384ff67231eb8fd56d24 # v5.4.3
+        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
         with:
           files: covertura.xml
           fail_ci_if_error: true
@@ -102,7 +102,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@79e4beb1e02f733a26129a6bf26c37dab4ab3307 # v1.14.4
+      - uses: cargo-bins/cargo-binstall@837578dfb436769f1e6669b2e23ffea9d9d2da8f # v1.15.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -123,7 +123,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload coverage data to codecov
-        uses: codecov/codecov-action@18283e04ce6e62d37312384ff67231eb8fd56d24 # v5.4.3
+        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
         with:
           files: covertura.xml
           fail_ci_if_error: true
@@ -156,7 +156,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@79e4beb1e02f733a26129a6bf26c37dab4ab3307 # v1.14.4
+      - uses: cargo-bins/cargo-binstall@837578dfb436769f1e6669b2e23ffea9d9d2da8f # v1.15.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -167,7 +167,7 @@ jobs:
         if: runner.os == 'macOS'
       - run: pulumi version
       - run: pulumi login --local
-      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
@@ -205,7 +205,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@79e4beb1e02f733a26129a6bf26c37dab4ab3307 # v1.14.4
+      - uses: cargo-bins/cargo-binstall@837578dfb436769f1e6669b2e23ffea9d9d2da8f # v1.15.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -216,7 +216,7 @@ jobs:
         if: runner.os == 'macOS'
       - run: pulumi version
       - run: pulumi login --local
-      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
@@ -261,7 +261,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@79e4beb1e02f733a26129a6bf26c37dab4ab3307 # v1.14.4
+      - uses: cargo-bins/cargo-binstall@837578dfb436769f1e6669b2e23ffea9d9d2da8f # v1.15.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: brew install pulumi
@@ -275,7 +275,7 @@ jobs:
           timeout_minutes: 10
           max_attempts: 10
           command: docker pull public.ecr.aws/ubuntu/ubuntu:latest
-      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
@@ -297,7 +297,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload coverage data to codecov
-        uses: codecov/codecov-action@18283e04ce6e62d37312384ff67231eb8fd56d24 # v5.4.3
+        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
         with:
           files: covertura.xml
           fail_ci_if_error: true
@@ -331,7 +331,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@79e4beb1e02f733a26129a6bf26c37dab4ab3307 # v1.14.4
+      - uses: cargo-bins/cargo-binstall@837578dfb436769f1e6669b2e23ffea9d9d2da8f # v1.15.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -342,7 +342,7 @@ jobs:
         if: runner.os == 'macOS'
       - run: pulumi version
       - run: pulumi login --local
-      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
@@ -378,7 +378,7 @@ jobs:
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@79e4beb1e02f733a26129a6bf26c37dab4ab3307 # v1.14.4
+      - uses: cargo-bins/cargo-binstall@837578dfb436769f1e6669b2e23ffea9d9d2da8f # v1.15.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install requirements
@@ -389,7 +389,7 @@ jobs:
         if: runner.os == 'macOS'
       - run: pulumi version
       - run: pulumi login --local
-      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
         with:
           go-version: '^1.22.0'
           cache-dependency-path: "**/go.sum"
