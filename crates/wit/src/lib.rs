@@ -64,8 +64,9 @@ pub mod bindings_runner {
 
     wasmtime::component::bindgen!({
         world: "pulumi-gestalt",
-        async: false,
-        trappable_imports: true,
+        imports: {
+            "component": trappable
+        },
         with: {
             "component:pulumi-gestalt/context/context":SingleThreadedContext,
             "component:pulumi-gestalt/output-interface/output": SingleThreadedOutput,
