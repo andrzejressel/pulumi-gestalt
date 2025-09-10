@@ -19,7 +19,7 @@ use std::collections::HashMap;
 use std::path::Path;
 use wasmtime::Store;
 use wasmtime::component::{Component, HasSelf, Linker, Resource, ResourceTable};
-use wasmtime_wasi::p2::{IoView, WasiCtx, WasiCtxBuilder, WasiView};
+use wasmtime_wasi::{WasiCtx, WasiCtxBuilder, WasiCtxView, WasiView};
 
 pub struct Pulumi {
     plugin: PulumiGestalt,
@@ -298,15 +298,12 @@ impl HostCompositeOutput for MyState {
 
 impl output_interface::Host for MyState {}
 
-impl IoView for SimplePluginCtx {
-    fn table(&mut self) -> &mut ResourceTable {
-        &mut self.table
-    }
-}
-
 impl WasiView for SimplePluginCtx {
-    fn ctx(&mut self) -> &mut WasiCtx {
-        &mut self.context
+    fn ctx(&mut self) -> WasiCtxView<'_> {
+        WasiCtxView {
+            ctx: &mut self.context,
+            table: &mut self.table,
+        }
     }
 }
 
