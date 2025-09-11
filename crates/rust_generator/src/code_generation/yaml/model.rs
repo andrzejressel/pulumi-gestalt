@@ -205,12 +205,12 @@ fn map_expression(
     type_without_option: &TypeWithoutOption,
     yaml_expression: &YamlExpression,
 ) -> Result<Expression> {
-    if let YamlExpression::Object(map) = &yaml_expression {
-        if map.len() == 1 {
-            let key = map.keys().next().unwrap();
-            if key.starts_with("fn::") {
-                return Err(anyhow!("fn:: are not supported"));
-            }
+    if let YamlExpression::Object(map) = &yaml_expression
+        && map.len() == 1
+    {
+        let key = map.keys().next().unwrap();
+        if key.starts_with("fn::") {
+            return Err(anyhow!("fn:: are not supported"));
         }
     }
 
