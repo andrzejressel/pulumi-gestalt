@@ -11,7 +11,6 @@ use std::fs::File;
 use std::io::Write;
 use std::path::PathBuf;
 
-mod model;
 mod pulumi;
 mod version_finder;
 

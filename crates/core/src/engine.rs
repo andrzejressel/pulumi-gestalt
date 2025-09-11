@@ -45,14 +45,14 @@ impl<A> From<A> for Holder<A> {
 }
 
 impl<A: ?Sized> Holder<A> {
-    fn map<U, F>(&self, f: F) -> Ref<U>
+    fn map<U, F>(&self, f: F) -> Ref<'_, U>
     where
         F: FnOnce(&A) -> &U,
     {
         Ref::map(self.get(), f)
     }
 
-    fn map_mut<U, F>(&self, f: F) -> RefMut<U>
+    fn map_mut<U, F>(&self, f: F) -> RefMut<'_, U>
     where
         F: FnOnce(&mut A) -> &mut U,
     {
@@ -69,11 +69,11 @@ impl<A: ?Sized> Holder<A> {
         });
     }
 
-    fn get(&self) -> Ref<A> {
+    fn get(&self) -> Ref<'_, A> {
         self.0.borrow()
     }
 
-    fn get_mut(&self) -> RefMut<A> {
+    fn get_mut(&self) -> RefMut<'_, A> {
         self.0.borrow_mut()
     }
 }
@@ -373,11 +373,11 @@ impl Engine {
     }
 
     #[cfg(test)]
-    fn get_done(&self, output_id: OutputId) -> Ref<DoneNode> {
+    fn get_done(&self, output_id: OutputId) -> Ref<'_, DoneNode> {
         Self::get_done_free(&self.nodes, output_id)
     }
 
-    fn get_done_free(nodes: &NodesMap, output_id: OutputId) -> Ref<DoneNode> {
+    fn get_done_free(nodes: &NodesMap, output_id: OutputId) -> Ref<'_, DoneNode> {
         match nodes.get(&output_id) {
             None => {
                 error!("Cannot find node with id {}", output_id);
@@ -413,11 +413,14 @@ impl Engine {
         }
     }
 
-    fn get_native_function(&self, output_id: OutputId) -> Ref<NativeFunctionNode> {
+    fn get_native_function(&self, output_id: OutputId) -> Ref<'_, NativeFunctionNode> {
         Self::get_native_function_free(&self.nodes, output_id)
     }
 
-    fn get_native_function_free(nodes: &NodesMap, output_id: OutputId) -> Ref<NativeFunctionNode> {
+    fn get_native_function_free(
+        nodes: &NodesMap,
+        output_id: OutputId,
+    ) -> Ref<'_, NativeFunctionNode> {
         match nodes.get(&output_id) {
             None => {
                 error!("Cannot find node with id {}", output_id);
@@ -468,7 +471,7 @@ impl Engine {
     fn get_native_function_free_mut(
         nodes: &NodesMap,
         output_id: OutputId,
-    ) -> RefMut<NativeFunctionNode> {
+    ) -> RefMut<'_, NativeFunctionNode> {
         match nodes.get(&output_id) {
             None => {
                 error!("Cannot find node with id {}", output_id);
@@ -517,14 +520,14 @@ impl Engine {
     }
 
     #[cfg(test)]
-    fn get_extract_field_mut(&self, output_id: OutputId) -> RefMut<ExtractFieldNode> {
+    fn get_extract_field_mut(&self, output_id: OutputId) -> RefMut<'_, ExtractFieldNode> {
         Self::get_extract_field_free_mut(&self.nodes, output_id)
     }
 
     fn get_extract_field_free_mut(
         nodes: &NodesMap,
         output_id: OutputId,
-    ) -> RefMut<ExtractFieldNode> {
+    ) -> RefMut<'_, ExtractFieldNode> {
         match nodes.get(&output_id) {
             None => {
                 error!("Cannot find node with id {}", output_id);
@@ -575,7 +578,7 @@ impl Engine {
     fn get_combine_outputs_free_mut(
         nodes: &NodesMap,
         output_id: OutputId,
-    ) -> RefMut<CombineOutputsNode> {
+    ) -> RefMut<'_, CombineOutputsNode> {
         match nodes.get(&output_id) {
             None => {
                 error!("Cannot find node with id {}", output_id);
@@ -624,7 +627,7 @@ impl Engine {
     }
 
     #[cfg(test)]
-    fn get_create_resource(&self, output_id: OutputId) -> Ref<AbstractResourceNode> {
+    fn get_create_resource(&self, output_id: OutputId) -> Ref<'_, AbstractResourceNode> {
         Self::get_create_resource_free(&self.nodes, output_id)
     }
 
@@ -632,7 +635,7 @@ impl Engine {
     fn get_create_resource_free(
         nodes: &NodesMap,
         output_id: OutputId,
-    ) -> Ref<AbstractResourceNode> {
+    ) -> Ref<'_, AbstractResourceNode> {
         match nodes.get(&output_id) {
             None => {
                 error!("Cannot find node with id {}", output_id);
@@ -684,7 +687,7 @@ impl Engine {
     fn get_create_resource_free_mut(
         nodes: &NodesMap,
         output_id: OutputId,
-    ) -> RefMut<AbstractResourceNode> {
+    ) -> RefMut<'_, AbstractResourceNode> {
         match nodes.get(&output_id) {
             None => {
                 error!("Cannot find node with id {}", output_id);
