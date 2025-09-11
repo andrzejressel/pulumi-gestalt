@@ -1261,6 +1261,7 @@ pub fn run_pulumi_generator_test(
     Ok(())
 }
 
+#[allow(clippy::panic)]
 pub fn find_schema_files(name: &str) -> PathBuf {
     let possible_paths = vec![
         Path::new("tests/test_cases").join(format!("{name}.json")),
@@ -1291,7 +1292,6 @@ pub fn find_schema_files(name: &str) -> PathBuf {
         }
     }
 
-    
     panic!("No schema file found for provider: {name}");
 }
 
