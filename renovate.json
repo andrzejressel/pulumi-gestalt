@@ -5,6 +5,8 @@
     "github>andrzejressel/renovate-config//rust/updateToolchain",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
+  "minimumReleaseAge": "7 days",
+  "internalChecksFilter": "strict",
   "labels": [
     "dependencies"
   ],
