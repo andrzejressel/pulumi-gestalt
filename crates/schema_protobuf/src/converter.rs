@@ -9,7 +9,7 @@ pub fn package_to_proto(package: &Package) -> Result<pulumi::Package> {
     let resources = package
         .resources
         .iter()
-        .map(|(id, resource)| {
+        .map(|(_, resource)| {
             resource_to_proto(resource).context("Failed to convert resource to proto")
         })
         .collect::<Result<Vec<_>>>()?;
@@ -17,7 +17,7 @@ pub fn package_to_proto(package: &Package) -> Result<pulumi::Package> {
     let functions = package
         .functions
         .iter()
-        .map(|(id, function)| {
+        .map(|(_, function)| {
             function_to_proto(function).context("Failed to convert function to proto")
         })
         .collect::<Result<Vec<_>>>()?;
@@ -25,7 +25,7 @@ pub fn package_to_proto(package: &Package) -> Result<pulumi::Package> {
     let types = package
         .types
         .iter()
-        .map(|(id, global_type)| {
+        .map(|(_, global_type)| {
             global_type_to_proto(global_type).context("Failed to convert global type to proto")
         })
         .collect::<Result<Vec<_>>>()?;
@@ -44,6 +44,7 @@ pub fn package_to_proto(package: &Package) -> Result<pulumi::Package> {
 }
 
 /// Convert from protobuf Package to our Rust Package
+#[cfg(test)]
 pub fn proto_to_package(proto: &pulumi::Package) -> Result<Package> {
     // Convert resources
     let mut resources = BTreeMap::new();
@@ -106,6 +107,7 @@ fn resource_to_proto(resource: &Rc<Resource>) -> Result<pulumi::Resource> {
     })
 }
 
+#[cfg(test)]
 fn proto_to_resource(proto: &pulumi::Resource) -> Result<Resource> {
     let element_id = proto_to_element_id(
         proto
@@ -185,6 +187,7 @@ fn element_id_to_proto(id: &ElementId) -> pulumi::ElementId {
     }
 }
 
+#[cfg(test)]
 fn proto_to_element_id(proto: &pulumi::ElementId) -> ElementId {
     ElementId {
         namespace: proto.namespace.clone(),

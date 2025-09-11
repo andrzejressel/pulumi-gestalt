@@ -1206,19 +1206,19 @@ pub fn run_pulumi_generator_test(
         fs::remove_file(root.join("Cargo.lock"))?;
     }
 
-    if let Some(env) = std::env::var_os("DO_NOT_COMPILE") {
-        if env == "true" {
-            if !root.join("Cargo.lock").exists() {
-                Command::new("cargo")
-                    .args(["generate-lockfile"])
-                    .env_remove("CARGO_LLVM_COV")
-                    .env_remove("RUSTFLAGS")
-                    .current_dir(root)
-                    .assert()
-                    .success();
-            }
-            return Ok(());
+    if let Some(env) = std::env::var_os("DO_NOT_COMPILE")
+        && env == "true"
+    {
+        if !root.join("Cargo.lock").exists() {
+            Command::new("cargo")
+                .args(["generate-lockfile"])
+                .env_remove("CARGO_LLVM_COV")
+                .env_remove("RUSTFLAGS")
+                .current_dir(root)
+                .assert()
+                .success();
         }
+        return Ok(());
     }
 
     File::options()
@@ -1291,6 +1291,7 @@ pub fn find_schema_files(name: &str) -> PathBuf {
         }
     }
 
+    
     panic!("No schema file found for provider: {name}");
 }
 
