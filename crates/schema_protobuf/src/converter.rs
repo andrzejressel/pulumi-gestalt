@@ -1,6 +1,7 @@
 use anyhow::{Context, Result};
 use pulumi_gestalt_proto::pulumi_gestalt::pulumi_model as pulumi;
 use pulumi_gestalt_schema::model::*;
+#[cfg(test)]
 use std::collections::BTreeMap;
 use std::rc::Rc;
 
@@ -8,24 +9,20 @@ use std::rc::Rc;
 pub fn package_to_proto(package: &Package) -> Result<pulumi::Package> {
     let resources = package
         .resources
-        .iter()
-        .map(|(id, resource)| {
-            resource_to_proto(resource).context("Failed to convert resource to proto")
-        })
+        .values()
+        .map(|resource| resource_to_proto(resource).context("Failed to convert resource to proto"))
         .collect::<Result<Vec<_>>>()?;
 
     let functions = package
         .functions
-        .iter()
-        .map(|(id, function)| {
-            function_to_proto(function).context("Failed to convert function to proto")
-        })
+        .values()
+        .map(|function| function_to_proto(function).context("Failed to convert function to proto"))
         .collect::<Result<Vec<_>>>()?;
 
     let types = package
         .types
-        .iter()
-        .map(|(id, global_type)| {
+        .values()
+        .map(|global_type| {
             global_type_to_proto(global_type).context("Failed to convert global type to proto")
         })
         .collect::<Result<Vec<_>>>()?;
@@ -44,6 +41,7 @@ pub fn package_to_proto(package: &Package) -> Result<pulumi::Package> {
 }
 
 /// Convert from protobuf Package to our Rust Package
+#[cfg(test)]
 pub fn proto_to_package(proto: &pulumi::Package) -> Result<Package> {
     // Convert resources
     let mut resources = BTreeMap::new();
@@ -106,6 +104,7 @@ fn resource_to_proto(resource: &Rc<Resource>) -> Result<pulumi::Resource> {
     })
 }
 
+#[cfg(test)]
 fn proto_to_resource(proto: &pulumi::Resource) -> Result<Resource> {
     let element_id = proto_to_element_id(
         proto
@@ -151,6 +150,7 @@ fn function_to_proto(function: &Rc<Function>) -> Result<pulumi::Function> {
     })
 }
 
+#[cfg(test)]
 fn proto_to_function(proto: &pulumi::Function) -> Result<Function> {
     let element_id = proto_to_element_id(
         proto
@@ -185,6 +185,7 @@ fn element_id_to_proto(id: &ElementId) -> pulumi::ElementId {
     }
 }
 
+#[cfg(test)]
 fn proto_to_element_id(proto: &pulumi::ElementId) -> ElementId {
     ElementId {
         namespace: proto.namespace.clone(),
@@ -201,6 +202,7 @@ fn input_property_to_proto(prop: &InputProperty) -> Result<pulumi::InputProperty
     })
 }
 
+#[cfg(test)]
 fn proto_to_input_property(proto: &pulumi::InputProperty) -> Result<InputProperty> {
     Ok(InputProperty {
         name: proto.name.clone(),
@@ -222,6 +224,7 @@ fn output_property_to_proto(prop: &OutputProperty) -> Result<pulumi::OutputPrope
     })
 }
 
+#[cfg(test)]
 fn proto_to_output_property(proto: &pulumi::OutputProperty) -> Result<OutputProperty> {
     Ok(OutputProperty {
         name: proto.name.clone(),
@@ -262,6 +265,7 @@ fn type_to_proto(typ: &Type) -> Result<pulumi::Type> {
     })
 }
 
+#[cfg(test)]
 fn proto_to_type(proto: &pulumi::Type) -> Result<Type> {
     let type_value = proto
         .type_value
@@ -301,6 +305,7 @@ fn ref_to_proto(r: &Ref) -> Result<pulumi::RefType> {
     })
 }
 
+#[cfg(test)]
 fn proto_to_ref(proto: &pulumi::RefType) -> Result<Ref> {
     let ref_value = proto
         .ref_value
@@ -371,10 +376,8 @@ fn global_type_to_proto(global_type: &Rc<GlobalType>) -> Result<pulumi::GlobalTy
     // })
 }
 
+#[cfg(test)]
 fn proto_to_global_type(proto: &pulumi::GlobalType) -> Result<(ElementId, GlobalTypeValue)> {
-    // Note: For simplicity, we're assuming we'll extract the element_id from elsewhere
-    // This is a placeholder implementation
-    // let element_id = ElementId::new("placeholder:id:Name")?;
     let element_id = proto.element_id.clone().unwrap();
 
     let global_type_value = proto
@@ -425,6 +428,7 @@ fn global_type_property_to_proto(prop: &GlobalTypeProperty) -> Result<pulumi::Gl
     })
 }
 
+#[cfg(test)]
 fn proto_to_global_type_property(proto: &pulumi::GlobalTypeProperty) -> Result<GlobalTypeProperty> {
     Ok(GlobalTypeProperty {
         name: proto.name.clone(),
@@ -446,6 +450,7 @@ fn string_enum_element_to_proto(elem: &StringEnumElement) -> pulumi::StringEnumE
     }
 }
 
+#[cfg(test)]
 fn proto_to_string_enum_element(proto: &pulumi::StringEnumElement) -> StringEnumElement {
     StringEnumElement {
         name: proto.name.clone(),
@@ -462,6 +467,7 @@ fn number_enum_element_to_proto(elem: &NumberEnumElement) -> pulumi::NumberEnumE
     }
 }
 
+#[cfg(test)]
 fn proto_to_number_enum_element(proto: &pulumi::NumberEnumElement) -> NumberEnumElement {
     NumberEnumElement {
         name: proto.name.clone(),
@@ -478,6 +484,7 @@ fn integer_enum_element_to_proto(elem: &IntegerEnumElement) -> pulumi::IntegerEn
     }
 }
 
+#[cfg(test)]
 fn proto_to_integer_enum_element(proto: &pulumi::IntegerEnumElement) -> IntegerEnumElement {
     IntegerEnumElement {
         name: proto.name.clone(),

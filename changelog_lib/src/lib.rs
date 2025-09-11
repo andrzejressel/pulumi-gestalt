@@ -361,18 +361,18 @@ fn generate_commit_message(
 
     let (commit_sha, commit_message) = get_file_creation_commit(path, options)?;
 
-    if let Some(captures) = PR_ID_REGEX.captures(&commit_message) {
-        if let Some(number) = captures.get(1) {
-            title.push_str(
-                format!(
-                    " ([#{}](https://github.com/{}/pull/{}))",
-                    number.as_str(),
-                    options.repository,
-                    number.as_str()
-                )
-                .as_str(),
-            );
-        }
+    if let Some(captures) = PR_ID_REGEX.captures(&commit_message)
+        && let Some(number) = captures.get(1)
+    {
+        title.push_str(
+            format!(
+                " ([#{}](https://github.com/{}/pull/{}))",
+                number.as_str(),
+                options.repository,
+                number.as_str()
+            )
+            .as_str(),
+        );
     }
 
     for pr_id in &entry.additional_pull_requests {
