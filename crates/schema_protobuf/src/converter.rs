@@ -378,7 +378,8 @@ fn global_type_to_proto(global_type: &Rc<GlobalType>) -> Result<pulumi::GlobalTy
 
 #[cfg(test)]
 fn proto_to_global_type(proto: &pulumi::GlobalType) -> Result<(ElementId, GlobalTypeValue)> {
-    let element_id = proto.element_id.clone().unwrap();
+    let element_id = proto.element_id.clone()
+        .expect("Element ID is required in protobuf GlobalType");
 
     let global_type_value = proto
         .global_type_value

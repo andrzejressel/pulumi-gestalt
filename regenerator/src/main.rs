@@ -18,9 +18,12 @@ struct FilteredTest<'a> {
 }
 
 fn main() {
-    let azure_modules = provider::find_modules("azure").unwrap();
-    let gcp_modules = provider::find_modules("gcp").unwrap();
-    let aws_modules = provider::find_modules("aws").unwrap();
+    let azure_modules = provider::find_modules("azure")
+        .expect("Failed to find Azure modules");
+    let gcp_modules = provider::find_modules("gcp")
+        .expect("Failed to find GCP modules");
+    let aws_modules = provider::find_modules("aws")
+        .expect("Failed to find AWS modules");
 
     let mut grouped_gcp = gcp_modules
         .into_iter()
