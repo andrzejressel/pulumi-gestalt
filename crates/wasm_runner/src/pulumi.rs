@@ -39,7 +39,8 @@ struct MyState {
 impl HostContext for MyState {
     fn new(&mut self) -> anyhow::Result<Resource<Context>> {
         let engine = pulumi_gestalt_rust_integration::get_engine();
-        let project_name = std::env::var("PULUMI_PROJECT").unwrap();
+        let project_name = std::env::var("PULUMI_PROJECT")
+            .expect("PULUMI_PROJECT environment variable must be set");
 
         let context = SingleThreadedContext::new(engine, project_name);
         let id = self.table.push(context)?;
@@ -54,7 +55,8 @@ impl HostContext for MyState {
     ) -> anyhow::Result<Resource<Output>> {
         assert!(!context.owned());
         let context = self.table.get_mut(&context)?;
-        let value = serde_json::from_str(&value).unwrap();
+        let value = serde_json::from_str(&value)
+            .expect("Failed to parse JSON value in create_output");
         let refcell = &context.engine;
         let output_id = refcell.borrow_mut().create_done_node(value, secret);
         let output = SingleThreadedOutput::new(output_id, context.engine.clone());
@@ -125,7 +127,8 @@ impl HostContext for MyState {
         let table = &mut self.table;
         let mut function_invocations = HashMap::new();
         for function in functions {
-            let v = serde_json::from_str(function.value.as_str()).unwrap();
+            let v = serde_json::from_str(function.value.as_str())
+                .expect("Failed to parse function value JSON");
             let output = function.id;
             let output = table.get(&output)?;
             function_invocations.insert(output.output_id, v);
@@ -144,9 +147,11 @@ impl HostContext for MyState {
         Ok(results
             .into_iter()
             .map(|result| {
-                let v = serde_json::to_string(&result.value).unwrap();
+                let v = serde_json::to_string(&result.value)
+                    .expect("Failed to serialize result value to JSON");
                 let output = SingleThreadedOutput::new(result.output_id, engine.clone());
-                let id = table.push(output).unwrap();
+                let id = table.push(output)
+                    .expect("Failed to push output to table");
                 FunctionInvocationRequest {
                     id,
                     function_name: result.function_name.into(),
@@ -174,7 +179,8 @@ impl HostContext for MyState {
             pulumi_gestalt_core::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt.clone()),
             pulumi_gestalt_core::ConfigValue::Secret(s) => {
                 let output = SingleThreadedOutput::new(s, engine.clone());
-                let id = self.table.push(output).unwrap();
+                let id = self.table.push(output)
+                    .expect("Failed to push output to table for secret config");
                 ConfigValue::Secret(id)
             }
         });

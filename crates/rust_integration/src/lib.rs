@@ -60,7 +60,8 @@ pub struct InvokeResourceRequest<'a> {
 impl Context {
     pub fn create_context() -> Context {
         let engine = get_engine();
-        let project_name = std::env::var("PULUMI_PROJECT").unwrap();
+        let project_name = std::env::var("PULUMI_PROJECT")
+            .expect("PULUMI_PROJECT environment variable must be set");
         let inner = InnerPulumiEngine {
             engine,
             functions: HashMap::new(),
@@ -72,7 +73,8 @@ impl Context {
     }
 
     pub fn create_output(&self, value: String, secret: bool) -> Output {
-        let value = serde_json::from_str(&value).unwrap();
+        let value = serde_json::from_str(&value)
+            .expect("Invalid JSON in create_output value");
         let output_id = self
             .inner
             .deref()
@@ -147,12 +149,14 @@ impl Context {
                         value,
                     } in functions_to_invoke.iter()
                     {
-                        let function = inner.functions.get(function_name).unwrap();
+                        let function = inner.functions.get(function_name)
+                            .expect("Function not found in registered functions");
                         let s = value.to_string();
 
                         let result = function(s);
 
-                        let result = serde_json::from_str(&result).unwrap();
+                        let result = serde_json::from_str(&result)
+                            .expect("Function returned invalid JSON");
 
                         native_function_result.insert(*output_id, result);
                     }
@@ -254,10 +258,14 @@ impl CompositeOutput {
 }
 
 pub fn get_engine() -> Engine {
-    let pulumi_engine_url = std::env::var("PULUMI_ENGINE").unwrap();
-    let pulumi_monitor_url = std::env::var("PULUMI_MONITOR").unwrap();
-    let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();
-    let pulumi_project = std::env::var("PULUMI_PROJECT").unwrap();
+    let pulumi_engine_url = std::env::var("PULUMI_ENGINE")
+        .expect("PULUMI_ENGINE environment variable must be set");
+    let pulumi_monitor_url = std::env::var("PULUMI_MONITOR")
+        .expect("PULUMI_MONITOR environment variable must be set");
+    let pulumi_stack = std::env::var("PULUMI_STACK")
+        .expect("PULUMI_STACK environment variable must be set");
+    let pulumi_project = std::env::var("PULUMI_PROJECT")
+        .expect("PULUMI_PROJECT environment variable must be set");
     let in_preview = match std::env::var("PULUMI_DRY_RUN") {
         Ok(preview) if preview == "true" => true,
         Ok(preview) if preview == "false" => false,
@@ -273,7 +281,7 @@ pub fn get_engine() -> Engine {
 
     let config = Config::from_env_vars()
         .context("Failed to create config instance")
-        .unwrap();
+        .expect("Configuration setup failed");
 
     Engine::new(
         PulumiServiceImpl::new(native_pulumi_connector, in_preview),

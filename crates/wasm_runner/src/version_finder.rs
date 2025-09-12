@@ -22,10 +22,12 @@ pub(crate) fn extract_custom_section(data: &[u8]) -> Vec<ProviderVersion> {
     let parser = Parser::new(0);
 
     for payload in parser.parse_all(data) {
-        if let Payload::CustomSection(reader) = payload.unwrap() {
+        if let Payload::CustomSection(reader) = payload
+            .expect("Failed to parse WASM payload") {
             let name = reader.name();
             if let Some(name) = name.strip_prefix("pulumi_gestalt_provider::") {
-                let version: WasmProviderVersion = serde_json::from_slice(reader.data()).unwrap();
+                let version: WasmProviderVersion = serde_json::from_slice(reader.data())
+                    .expect("Failed to parse provider version JSON");
                 providers.push(ProviderVersion {
                     name: name.to_string(),
                     version: version.version,
@@ -47,7 +49,8 @@ mod tests {
 
     #[test]
     fn test_wat() {
-        let wasm = wat::parse_str(WAT).unwrap();
+        let wasm = wat::parse_str(WAT)
+            .expect("Failed to parse WAT in test");
         let custom = extract_custom_section(&wasm);
         assert_eq!(
             custom,

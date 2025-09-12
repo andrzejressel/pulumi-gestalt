@@ -18,7 +18,8 @@ impl PulumiStateSync {
         pulumi_project: String,
         pulumi_stack: String,
     ) -> Self {
-        let runtime = Builder::new_multi_thread().enable_all().build().unwrap();
+        let runtime = Builder::new_multi_thread().enable_all().build()
+            .expect("Failed to build Tokio runtime");
         let pulumi_state = runtime
             .block_on(PulumiState::new(
                 monitor_url,
@@ -26,7 +27,7 @@ impl PulumiStateSync {
                 pulumi_project,
                 pulumi_stack,
             ))
-            .unwrap();
+            .expect("Failed to initialize PulumiState");
         Self {
             pulumi_state,
             runtime,
@@ -57,7 +58,7 @@ impl PulumiStateSync {
         let _guard = self.runtime.handle().enter();
         self.runtime
             .block_on(self.pulumi_state.register_resource_outputs(request))
-            .unwrap();
+            .expect("Failed to register resource outputs");
     }
 
     pub fn get_created_resources(&mut self) -> Vec<(OutputId, Vec<u8>)> {

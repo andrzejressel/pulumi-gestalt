@@ -22,16 +22,19 @@ impl NativePulumiConnector {
 
 impl PulumiConnector for NativePulumiConnector {
     fn resource_invoke(&self, output_id: String, req: ResourceInvokeRequest) {
-        let mut state = self.0.write().unwrap();
+        let mut state = self.0.write()
+            .expect("Failed to acquire write lock for resource invoke");
         state.send_resource_invoke_request(output_id.into(), req);
     }
     fn register_resource(&self, output_id: String, req: RegisterResourceRequest) {
-        let mut state = self.0.write().unwrap();
+        let mut state = self.0.write()
+            .expect("Failed to acquire write lock for register resource");
         state.send_register_resource_request(output_id.into(), req);
     }
 
     fn get_created_resources(&self) -> Vec<(String, Vec<u8>)> {
-        let mut state = self.0.write().unwrap();
+        let mut state = self.0.write()
+            .expect("Failed to acquire write lock for get created resources");
         state
             .get_created_resources()
             .iter()
@@ -40,7 +43,8 @@ impl PulumiConnector for NativePulumiConnector {
     }
 
     fn register_outputs(&self, req: RegisterResourceOutputsRequest) {
-        let mut state = self.0.write().unwrap();
+        let mut state = self.0.write()
+            .expect("Failed to acquire write lock for register outputs");
         state.register_resource_outputs(req);
     }
 }
