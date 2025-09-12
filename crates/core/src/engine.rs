@@ -1141,7 +1141,7 @@ mod tests {
                             == register_resource_node_output_id_once_cell_2
                                 .deref()
                                 .get()
-                                .unwrap()
+                                .expect("register_resource_node_output_id should be set in test")
                     }),
                     eq(PerformResourceRequest {
                         operation: ResourceRequestOperation::Register(
@@ -1162,14 +1162,15 @@ mod tests {
                         == &([*register_resource_node_output_id_once_cell_2
                             .deref()
                             .get()
-                            .unwrap()]
+                            .expect("register_resource_node_output_id should be set in test")]
                         .into())
                 }))
                 .returning(|output_ids| {
-                    let output_id = output_ids.iter().next().unwrap();
+                    let output_id = output_ids.iter().next()
+                        .expect("output_ids should not be empty in register test");
 
-                    HashMap::from([(
-                        *output_id,
+                    HashMap::from([
+                        (*output_id,
                         RegisterResourceResponse {
                             outputs: HashMap::from([("output".into(), true.into())]),
                         },
@@ -1186,7 +1187,7 @@ mod tests {
             );
             register_resource_node_output_id_once_cell
                 .set(register_resource_node_output_id)
-                .unwrap();
+                .expect("register_resource_node_output_id should be settable once in test");
             let result = engine.run(HashMap::new());
             assert_eq!(result, None);
 
@@ -1269,7 +1270,7 @@ mod tests {
                             == invoke_resource_node_output_id_once_cell_2
                                 .deref()
                                 .get()
-                                .unwrap()
+                                .expect("invoke_resource_node_output_id should be set in test")
                     }),
                     eq(PerformResourceRequest {
                         operation: ResourceRequestOperation::Invoke(
@@ -1290,14 +1291,15 @@ mod tests {
                         == &([*invoke_resource_node_output_id_once_cell_2
                             .deref()
                             .get()
-                            .unwrap()]
+                            .expect("invoke_resource_node_output_id should be set in test")]
                         .into())
                 }))
                 .returning(|output_ids| {
-                    let output_id = output_ids.iter().next().unwrap();
+                    let output_id = output_ids.iter().next()
+                        .expect("output_ids should not be empty in invoke test");
 
-                    HashMap::from([(
-                        *output_id,
+                    HashMap::from([
+                        (*output_id,
                         RegisterResourceResponse {
                             outputs: HashMap::from([("output".into(), true.into())]),
                         },
@@ -1313,7 +1315,7 @@ mod tests {
             );
             invoke_resource_node_output_id_once_cell
                 .set(invoke_resource_node_output_id)
-                .unwrap();
+                .expect("invoke_resource_node_output_id should be settable once in test");
             let result = engine.run(HashMap::new());
             assert_eq!(result, None);
 

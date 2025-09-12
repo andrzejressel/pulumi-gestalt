@@ -53,7 +53,7 @@ pub struct OutputId(Uuid);
 
 impl From<String> for OutputId {
     fn from(value: String) -> Self {
-        Self(Uuid::parse_str(&value).unwrap())
+        Self(Uuid::parse_str(&value).expect("Invalid UUID format in OutputId"))
     }
 }
 

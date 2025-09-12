@@ -350,11 +350,12 @@ impl ExtractFieldNode {
                         if v.is_object() && v.get(crate::constants::SPECIAL_SIG_KEY).is_some() {
                             let secret = v
                                 .get(crate::constants::SPECIAL_SIG_KEY)
-                                .unwrap()
-                                .as_str()
-                                .unwrap()
-                                == crate::constants::SPECIAL_SECRET_SIG;
-                            let value = v.get(crate::constants::SECRET_VALUE_NAME).unwrap().clone();
+                                .and_then(|sig| sig.as_str())
+                                .map(|sig| sig == crate::constants::SPECIAL_SECRET_SIG)
+                                .unwrap_or(false);
+                            let value = v.get(crate::constants::SECRET_VALUE_NAME)
+                                .cloned()
+                                .unwrap_or(Value::Null);
                             NodeValue::exists(value, secret)
                         } else {
                             NodeValue::exists(v.clone(), false)

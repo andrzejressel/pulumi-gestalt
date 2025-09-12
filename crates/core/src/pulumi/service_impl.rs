@@ -160,16 +160,19 @@ impl PulumiService for PulumiServiceImpl {
         for (output_id, response) in results {
             let output_id = output_id.into();
             let expected_results_ref = self.expected_results.borrow();
-            let expected_results = expected_results_ref.get(&output_id).unwrap();
+            let expected_results = expected_results_ref.get(&output_id)
+                .expect("Output ID not found in expected results");
 
             let object = match expected_results.request_type {
                 Invoke => {
-                    let response = pulumirpc::InvokeResponse::decode(&*response).unwrap();
+                    let response = pulumirpc::InvokeResponse::decode(&*response)
+                        .expect("Failed to decode InvokeResponse");
                     // TODO: Failures
                     response.r#return.unwrap_or(Struct::default())
                 }
                 Register => {
-                    let response = pulumirpc::RegisterResourceResponse::decode(&*response).unwrap();
+                    let response = pulumirpc::RegisterResourceResponse::decode(&*response)
+                        .expect("Failed to decode RegisterResourceResponse");
                     response.object.unwrap_or(Struct::default())
                 }
             };
@@ -224,7 +227,9 @@ impl PulumiServiceImpl {
                 kind: Some(prost_types::value::Kind::BoolValue(*b)),
             },
             Value::Number(n) => prost_types::Value {
-                kind: Some(prost_types::value::Kind::NumberValue(n.as_f64().unwrap())),
+                kind: Some(prost_types::value::Kind::NumberValue(
+                    n.as_f64().expect("Number value cannot be represented as f64")
+                )),
             },
             Value::String(s) => prost_types::Value {
                 kind: Some(prost_types::value::Kind::StringValue(s.clone())),
@@ -262,7 +267,8 @@ impl PulumiServiceImpl {
                 if n.fract() == 0.0 {
                     Value::Number(Number::from(*n as i64))
                 } else {
-                    Value::Number(Number::from_f64(*n).unwrap())
+                    Value::Number(Number::from_f64(*n)
+                        .expect("Number cannot be represented as valid JSON number"))
                 }
             }
             Some(Kind::StringValue(s)) => Value::String(s.clone()),
