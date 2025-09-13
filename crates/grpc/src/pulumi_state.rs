@@ -87,7 +87,9 @@ impl PulumiState {
         match self.join_set.join_next().await {
             None => (),
             Some(res) => {
-                let res = res.unwrap().unwrap();
+                let res = res
+                    .expect("Task panicked while processing resource")
+                    .expect("Failed to process resource operation");
                 created_resources.push(res);
 
                 loop {
@@ -95,7 +97,9 @@ impl PulumiState {
                         None => break,
                         Some(None) => break,
                         Some(Some(res)) => {
-                            let res = res.unwrap().unwrap();
+                            let res = res
+                                .expect("Task panicked while processing resource")
+                                .expect("Failed to process resource operation");
                             created_resources.push(res);
                         }
                     }

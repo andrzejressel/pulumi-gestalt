@@ -1,4 +1,3 @@
-use anyhow::Context;
 use pulumi_gestalt_rust_integration as integration;
 use std::cell::RefCell;
 use std::ffi::{CStr, CString, c_char, c_void};
@@ -240,9 +239,11 @@ extern "C" fn pulumi_output_map(
     let context = inner_engine.context;
 
     let f = move |value: String| {
-        let c_string = CString::new(value).unwrap();
+        let c_string = CString::new(value)
+            .expect("String must not contain null bytes for C FFI");
         let str = function(context, function_context, c_string.as_ptr());
-        let result = unsafe { CStr::from_ptr(str) }.to_str().unwrap();
+        let result = unsafe { CStr::from_ptr(str) }.to_str()
+            .expect("C function must return valid UTF-8 string");
         let v = result.to_owned();
         unsafe {
             libc::free(str as *mut c_void);
@@ -345,16 +346,19 @@ extern "C" fn pulumi_config_get_value(
     let name = if (name as *const c_void).is_null() {
         None
     } else {
-        Some(unsafe { CStr::from_ptr(name) }.to_str().unwrap())
+        Some(unsafe { CStr::from_ptr(name) }.to_str()
+            .expect("Config name must be valid UTF-8"))
     };
-    let key = unsafe { CStr::from_ptr(key) }.to_str().unwrap();
+    let key = unsafe { CStr::from_ptr(key) }.to_str()
+        .expect("Config key must be valid UTF-8");
 
     let inner_engine = engine.inner.borrow_mut();
 
     match inner_engine.ctx.get_config_value(name, key) {
         None => null_mut(),
         Some(pulumi_gestalt_rust_integration::ConfigValue::PlainText(s)) => {
-            let value = CString::new(s).unwrap();
+            let value = CString::new(s)
+                .expect("Config value must not contain null bytes for C FFI");
             let config_value = ConfigValue::PlainValue(value.into_raw());
             Box::into_raw(Box::new(config_value))
         }
@@ -409,18 +413,17 @@ extern "C" fn pulumi_get_schema(
         Some(extract_string_vec(modules, modules_size))
     };
 
-    let provider_name = unsafe { CStr::from_ptr(provider_name) }.to_str().unwrap();
+    let provider_name = unsafe { CStr::from_ptr(provider_name) }.to_str()
+        .expect("Provider name must be valid UTF-8");
     let provider_version = unsafe { CStr::from_ptr(provider_version) }
         .to_str()
-        .unwrap();
+        .expect("Provider version must be valid UTF-8");
 
     let schema = integration::get_schema(provider_name, provider_version, modules.as_deref())
-        .context("Failed to get schema")
-        .unwrap();
+        .expect("Failed to get schema");
 
     let protobuf = pulumi_gestalt_schema_protobuf::convert_to_protobuf(&schema)
-        .context("Failed to convert schema to protobuf")
-        .unwrap();
+        .expect("Failed to convert schema to protobuf");
 
     Box::into_raw(Box::new(CFFIString::from_string(protobuf)))
 }

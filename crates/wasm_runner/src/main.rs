@@ -66,7 +66,7 @@ fn main() -> Result<(), Error> {
             destination,
         } => {
             let program = fs::read(program)
-                .context(format!("Cannot read program {}", program.to_str().unwrap()))?;
+                .with_context(|| format!("Cannot read program {}", program.display()))?;
 
             let plugins = version_finder::extract_custom_section(&program);
 

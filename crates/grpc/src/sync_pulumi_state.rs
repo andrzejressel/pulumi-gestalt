@@ -1,5 +1,6 @@
 use crate::output_id::OutputId;
 use crate::pulumi_state::PulumiState;
+use anyhow::Context;
 use pulumi_gestalt_proto::pulumi::pulumirpc::ResourceInvokeRequest;
 use pulumi_gestalt_proto::pulumi::pulumirpc::{
     RegisterResourceOutputsRequest, RegisterResourceRequest,
@@ -12,13 +13,16 @@ pub struct PulumiStateSync {
 }
 
 impl PulumiStateSync {
-    pub fn new(
+    pub fn try_new(
         monitor_url: String,
         engine_url: String,
         pulumi_project: String,
         pulumi_stack: String,
-    ) -> Self {
-        let runtime = Builder::new_multi_thread().enable_all().build().unwrap();
+    ) -> anyhow::Result<Self> {
+        let runtime = Builder::new_multi_thread()
+            .enable_all()
+            .build()
+            .context("Failed to build Tokio runtime")?;
         let pulumi_state = runtime
             .block_on(PulumiState::new(
                 monitor_url,
@@ -26,11 +30,21 @@ impl PulumiStateSync {
                 pulumi_project,
                 pulumi_stack,
             ))
-            .unwrap();
-        Self {
+            .context("Failed to create Pulumi state")?;
+        Ok(Self {
             pulumi_state,
             runtime,
-        }
+        })
+    }
+
+    pub fn new(
+        monitor_url: String,
+        engine_url: String,
+        pulumi_project: String,
+        pulumi_stack: String,
+    ) -> Self {
+        // Unwrap at this public API boundary for backward compatibility
+        Self::try_new(monitor_url, engine_url, pulumi_project, pulumi_stack).unwrap()
     }
 
     pub fn send_register_resource_request(
@@ -57,7 +71,7 @@ impl PulumiStateSync {
         let _guard = self.runtime.handle().enter();
         self.runtime
             .block_on(self.pulumi_state.register_resource_outputs(request))
-            .unwrap();
+            .expect("Failed to register resource outputs");
     }
 
     pub fn get_created_resources(&mut self) -> Vec<(OutputId, Vec<u8>)> {
