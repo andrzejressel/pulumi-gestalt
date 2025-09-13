@@ -80,6 +80,7 @@ check:
 
 fmt:
     cd pulumi-language-gestalt && just fmt
+    cargo fmt
     cargo clippy --tests --all-features --fix --allow-dirty --allow-staged
 
 clippy-to-file:
