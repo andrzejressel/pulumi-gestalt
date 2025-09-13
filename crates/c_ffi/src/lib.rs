@@ -131,7 +131,7 @@ extern "C" fn pulumi_create_output(
 ) -> *mut CustomOutputId {
     let value = unsafe { CStr::from_ptr(value) }
         .to_str()
-        .expect("Invalid UTF-8 in C string value")
+        .unwrap()
         .to_string();
     let pulumi_context = unsafe { &mut *ctx };
     let mut inner_engine = pulumi_context.inner.borrow_mut();
@@ -155,17 +155,17 @@ extern "C" fn pulumi_register_resource(
 
     let type_ = unsafe { CStr::from_ptr(request.type_) }
         .to_str()
-        .expect("Invalid UTF-8 in C string type")
+        .unwrap()
         .to_owned();
 
     let name = unsafe { CStr::from_ptr(request.name) }
         .to_str()
-        .expect("Invalid UTF-8 in C string name")
+        .unwrap()
         .to_owned();
 
     let version = unsafe { CStr::from_ptr(request.version) }
         .to_str()
-        .expect("Invalid UTF-8 in C string version")
+        .unwrap()
         .to_owned();
 
     let objects = extract_field(request.inputs, request.inputs_len);
@@ -199,12 +199,12 @@ extern "C" fn pulumi_invoke_resource(
 
     let token = unsafe { CStr::from_ptr(request.token) }
         .to_str()
-        .expect("Invalid UTF-8 in C string token")
+        .unwrap()
         .to_owned();
 
     let version = unsafe { CStr::from_ptr(request.version) }
         .to_str()
-        .expect("Invalid UTF-8 in C string version")
+        .unwrap()
         .to_owned();
 
     let objects = extract_field(request.inputs, request.inputs_len);
@@ -240,11 +240,9 @@ extern "C" fn pulumi_output_map(
     let context = inner_engine.context;
 
     let f = move |value: String| {
-        let c_string = CString::new(value)
-            .expect("Failed to create C string from value");
+        let c_string = CString::new(value).unwrap();
         let str = function(context, function_context, c_string.as_ptr());
-        let result = unsafe { CStr::from_ptr(str) }.to_str()
-            .expect("Invalid UTF-8 in C string result");
+        let result = unsafe { CStr::from_ptr(str) }.to_str().unwrap();
         let v = result.to_owned();
         unsafe {
             libc::free(str as *mut c_void);
@@ -282,8 +280,7 @@ extern "C" fn pulumi_output_combine(
             });
     }
 
-    let binding = output.ctx.upgrade()
-        .expect("Context has been dropped for output");
+    let binding = output.ctx.upgrade().unwrap();
     let mut engine = binding.borrow_mut();
 
     let new_output = output.native.combine(&other_outputs);
@@ -302,7 +299,7 @@ extern "C" fn pulumi_output_combine(
 extern "C" fn pulumi_output_add_to_export(value: *const CustomOutputId, name: *const c_char) {
     let name = unsafe { CStr::from_ptr(name) }
         .to_str()
-        .expect("Invalid UTF-8 in C string name")
+        .unwrap()
         .to_string();
     let value = unsafe { &*value };
     value.native.add_export(name);
@@ -315,13 +312,12 @@ extern "C" fn pulumi_composite_output_get_field(
 ) -> *mut CustomOutputId {
     let field_name = unsafe { CStr::from_ptr(field_name) }
         .to_str()
-        .expect("Invalid UTF-8 in C string field name")
+        .unwrap()
         .to_string();
     let custom_register_output_id = unsafe { &*output };
     let new_output = custom_register_output_id.native.get_field(field_name);
 
-    let binding = custom_register_output_id.ctx.upgrade()
-        .expect("Context has been dropped for composite output");
+    let binding = custom_register_output_id.ctx.upgrade().unwrap();
     let mut engine = binding.borrow_mut();
 
     let output = CustomOutputId {
@@ -349,16 +345,16 @@ extern "C" fn pulumi_config_get_value(
     let name = if (name as *const c_void).is_null() {
         None
     } else {
-        Some(unsafe { CStr::from_ptr(name) }.to_str().expect("Invalid UTF-8 in C string"))
+        Some(unsafe { CStr::from_ptr(name) }.to_str().unwrap())
     };
-    let key = unsafe { CStr::from_ptr(key) }.to_str().expect("Invalid UTF-8 in C string");
+    let key = unsafe { CStr::from_ptr(key) }.to_str().unwrap();
 
     let inner_engine = engine.inner.borrow_mut();
 
     match inner_engine.ctx.get_config_value(name, key) {
         None => null_mut(),
         Some(pulumi_gestalt_rust_integration::ConfigValue::PlainText(s)) => {
-            let value = CString::new(s).expect("Failed to create C string");
+            let value = CString::new(s).unwrap();
             let config_value = ConfigValue::PlainValue(value.into_raw());
             Box::into_raw(Box::new(config_value))
         }
@@ -413,18 +409,18 @@ extern "C" fn pulumi_get_schema(
         Some(extract_string_vec(modules, modules_size))
     };
 
-    let provider_name = unsafe { CStr::from_ptr(provider_name) }.to_str().expect("Invalid UTF-8 in C string");
+    let provider_name = unsafe { CStr::from_ptr(provider_name) }.to_str().unwrap();
     let provider_version = unsafe { CStr::from_ptr(provider_version) }
         .to_str()
-        .expect("Invalid UTF-8 in C string provider version");
+        .unwrap();
 
     let schema = integration::get_schema(provider_name, provider_version, modules.as_deref())
         .context("Failed to get schema")
-        .expect("Schema lookup failed");
+        .unwrap();
 
     let protobuf = pulumi_gestalt_schema_protobuf::convert_to_protobuf(&schema)
         .context("Failed to convert schema to protobuf")
-        .expect("Schema conversion failed");
+        .unwrap();
 
     Box::into_raw(Box::new(CFFIString::from_string(protobuf)))
 }
@@ -438,7 +434,7 @@ fn extract_field<'a>(
         std::slice::from_raw_parts(inputs, inputs_len)
             .iter()
             .for_each(|field| {
-                let name = CStr::from_ptr(field.name).to_str().expect("Invalid UTF-8 in C string").to_owned();
+                let name = CStr::from_ptr(field.name).to_str().unwrap().to_owned();
                 let output = &(*field.value).native;
                 objects.push(integration::ObjectField {
                     name,
@@ -453,7 +449,7 @@ fn extract_string_vec<'a>(inputs: *const *const c_char, inputs_len: usize) -> Ve
     unsafe {
         std::slice::from_raw_parts(inputs, inputs_len)
             .iter()
-            .map(|&s| CStr::from_ptr(s).to_str().expect("Invalid UTF-8 in C string"))
+            .map(|&s| CStr::from_ptr(s).to_str().unwrap())
             .collect()
     }
 }

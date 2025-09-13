@@ -53,7 +53,15 @@ pub struct OutputId(Uuid);
 
 impl From<String> for OutputId {
     fn from(value: String) -> Self {
-        Self(Uuid::parse_str(&value).expect("Invalid UUID format in OutputId"))
+        // For backward compatibility - unwrap at this public API boundary
+        Self(Uuid::parse_str(&value).unwrap())
+    }
+}
+
+impl OutputId {
+    /// Try to create an OutputId from a string
+    pub fn try_from_string(value: String) -> crate::error::CoreResult<Self> {
+        Ok(Self(uuid::Uuid::parse_str(&value).map_err(crate::error::CoreError::InvalidUuid)?))
     }
 }
 

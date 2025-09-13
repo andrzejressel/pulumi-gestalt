@@ -1,5 +1,5 @@
 use crate::pulumi::runner::PulumiGestalt;
-use anyhow::Error;
+use anyhow::{Context as AnyhowContext, Error};
 use log::info;
 use pulumi_gestalt_wit::bindings_runner as runner;
 use pulumi_gestalt_wit::bindings_runner::component::pulumi_gestalt::context::{
@@ -38,9 +38,10 @@ struct MyState {
 
 impl HostContext for MyState {
     fn new(&mut self) -> anyhow::Result<Resource<Context>> {
-        let engine = pulumi_gestalt_rust_integration::get_engine();
+        let engine = pulumi_gestalt_rust_integration::try_get_engine()
+            .map_err(|e| anyhow::anyhow!("Failed to create engine: {}", e))?;
         let project_name = std::env::var("PULUMI_PROJECT")
-            .expect("PULUMI_PROJECT environment variable must be set");
+            .with_context(|| "PULUMI_PROJECT environment variable must be set")?;
 
         let context = SingleThreadedContext::new(engine, project_name);
         let id = self.table.push(context)?;
@@ -55,8 +56,8 @@ impl HostContext for MyState {
     ) -> anyhow::Result<Resource<Output>> {
         assert!(!context.owned());
         let context = self.table.get_mut(&context)?;
-        let value = serde_json::from_str(&value)
-            .expect("Failed to parse JSON value in create_output");
+        let value: serde_json::Value = serde_json::from_str(&value)
+            .with_context(|| "Failed to parse JSON value")?;
         let refcell = &context.engine;
         let output_id = refcell.borrow_mut().create_done_node(value, secret);
         let output = SingleThreadedOutput::new(output_id, context.engine.clone());
@@ -127,8 +128,8 @@ impl HostContext for MyState {
         let table = &mut self.table;
         let mut function_invocations = HashMap::new();
         for function in functions {
-            let v = serde_json::from_str(function.value.as_str())
-                .expect("Failed to parse function value JSON");
+            let v: serde_json::Value = serde_json::from_str(function.value.as_str())
+                .with_context(|| "Failed to parse function result JSON")?;
             let output = function.id;
             let output = table.get(&output)?;
             function_invocations.insert(output.output_id, v);
@@ -144,21 +145,23 @@ impl HostContext for MyState {
             .unwrap_or_default()
             .clone();
 
-        Ok(results
+        let requests: anyhow::Result<Vec<FunctionInvocationRequest>> = results
             .into_iter()
-            .map(|result| {
+            .map(|result| -> anyhow::Result<FunctionInvocationRequest> {
                 let v = serde_json::to_string(&result.value)
-                    .expect("Failed to serialize result value to JSON");
+                    .with_context(|| "Failed to serialize function result to JSON")?;
                 let output = SingleThreadedOutput::new(result.output_id, engine.clone());
                 let id = table.push(output)
-                    .expect("Failed to push output to table");
-                FunctionInvocationRequest {
+                    .with_context(|| "Failed to store output in resource table")?;
+                Ok(FunctionInvocationRequest {
                     id,
                     function_name: result.function_name.into(),
                     value: v,
-                }
+                })
             })
-            .collect())
+            .collect();
+        
+        Ok(requests?)
     }
 
     fn get_config(
@@ -175,15 +178,17 @@ impl HostContext for MyState {
             .clone()
             .borrow_mut()
             .get_config_value(&name.unwrap_or(project_name), &key);
-        let result = result.map(|value| match value {
-            pulumi_gestalt_core::ConfigValue::PlainText(pt) => ConfigValue::Plaintext(pt.clone()),
-            pulumi_gestalt_core::ConfigValue::Secret(s) => {
-                let output = SingleThreadedOutput::new(s, engine.clone());
-                let id = self.table.push(output)
-                    .expect("Failed to push output to table for secret config");
-                ConfigValue::Secret(id)
+        let result = result.map(|value| -> anyhow::Result<ConfigValue> {
+            match value {
+                pulumi_gestalt_core::ConfigValue::PlainText(pt) => Ok(ConfigValue::Plaintext(pt.clone())),
+                pulumi_gestalt_core::ConfigValue::Secret(s) => {
+                    let output = SingleThreadedOutput::new(s, engine.clone());
+                    let id = self.table.push(output)
+                        .with_context(|| "Failed to store secret output in resource table")?;
+                    Ok(ConfigValue::Secret(id))
+                }
             }
-        });
+        }).transpose()?;
         Ok(result)
     }
 

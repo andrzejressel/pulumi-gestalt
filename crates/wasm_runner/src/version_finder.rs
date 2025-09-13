@@ -22,18 +22,31 @@ pub(crate) fn extract_custom_section(data: &[u8]) -> Vec<ProviderVersion> {
     let parser = Parser::new(0);
 
     for payload in parser.parse_all(data) {
-        if let Payload::CustomSection(reader) = payload
-            .expect("Failed to parse WASM payload") {
-            let name = reader.name();
-            if let Some(name) = name.strip_prefix("pulumi_gestalt_provider::") {
-                let version: WasmProviderVersion = serde_json::from_slice(reader.data())
-                    .expect("Failed to parse provider version JSON");
-                providers.push(ProviderVersion {
-                    name: name.to_string(),
-                    version: version.version,
-                    plugin_download_url: version.plugin_download_url,
-                    resource: true,
-                });
+        match payload {
+            Ok(Payload::CustomSection(reader)) => {
+                let name = reader.name();
+                if let Some(name) = name.strip_prefix("pulumi_gestalt_provider::") {
+                    match serde_json::from_slice::<WasmProviderVersion>(reader.data()) {
+                        Ok(version) => {
+                            providers.push(ProviderVersion {
+                                name: name.to_string(),
+                                version: version.version,
+                                plugin_download_url: version.plugin_download_url,
+                                resource: true,
+                            });
+                        }
+                        Err(e) => {
+                            log::warn!("Failed to parse provider version from custom section '{}': {}", name, e);
+                        }
+                    }
+                }
+            }
+            Ok(_) => {
+                // Other payload types are ignored
+            }
+            Err(e) => {
+                log::warn!("Failed to parse WASM payload: {}", e);
+                // Continue parsing other payloads
             }
         }
     }
@@ -49,8 +62,7 @@ mod tests {
 
     #[test]
     fn test_wat() {
-        let wasm = wat::parse_str(WAT)
-            .expect("Failed to parse WAT in test");
+        let wasm = wat::parse_str(WAT).unwrap();
         let custom = extract_custom_section(&wasm);
         assert_eq!(
             custom,

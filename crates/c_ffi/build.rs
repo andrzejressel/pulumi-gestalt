@@ -3,11 +3,9 @@ extern crate cbindgen;
 use std::env;
 
 fn main() {
-    let crate_dir = env::var("CARGO_MANIFEST_DIR")
-        .expect("CARGO_MANIFEST_DIR environment variable not set");
+    let crate_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
 
-    let config = cbindgen::Config::from_file("cbindgen.toml")
-        .expect("Failed to read cbindgen.toml configuration file");
+    let config = cbindgen::Config::from_file("cbindgen.toml").unwrap();
 
     cbindgen::Builder::new()
         .with_crate(crate_dir)

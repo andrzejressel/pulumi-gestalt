@@ -1,4 +1,7 @@
 mod native_pulumi_connector;
+mod error;
+
+pub use error::{IntegrationError, IntegrationResult};
 
 use anyhow::Context as AnyHowContext;
 use anyhow::Result;
@@ -58,33 +61,42 @@ pub struct InvokeResourceRequest<'a> {
 }
 
 impl Context {
-    pub fn create_context() -> Context {
-        let engine = get_engine();
+    pub fn try_create_context() -> IntegrationResult<Context> {
+        let engine = try_get_engine()?;
         let project_name = std::env::var("PULUMI_PROJECT")
-            .expect("PULUMI_PROJECT environment variable must be set");
+            .map_err(|_| IntegrationError::MissingEnvironmentVariable("PULUMI_PROJECT".to_string()))?;
         let inner = InnerPulumiEngine {
             engine,
             functions: HashMap::new(),
         };
-        Context {
+        Ok(Context {
             inner: Rc::new(RefCell::new(inner)),
             project_name,
-        }
+        })
     }
 
-    pub fn create_output(&self, value: String, secret: bool) -> Output {
-        let value = serde_json::from_str(&value)
-            .expect("Invalid JSON in create_output value");
+    pub fn create_context() -> Context {
+        // Unwrap at this public API boundary for backward compatibility
+        Self::try_create_context().unwrap()
+    }
+
+    pub fn try_create_output(&self, value: String, secret: bool) -> IntegrationResult<Output> {
+        let value: Value = serde_json::from_str(&value)?;
         let output_id = self
             .inner
             .deref()
             .borrow_mut()
             .engine
             .create_done_node(value, secret);
-        Output {
+        Ok(Output {
             output_id,
             engine: Rc::clone(&self.inner),
-        }
+        })
+    }
+
+    pub fn create_output(&self, value: String, secret: bool) -> Output {
+        // Unwrap at this public API boundary for backward compatibility
+        self.try_create_output(value, secret).unwrap()
     }
 
     pub fn register_resource(&self, request: RegisterResourceRequest) -> CompositeOutput {
@@ -133,7 +145,7 @@ impl Context {
         self.finish_loop(HashMap::new());
     }
 
-    fn finish_loop(&self, mut native_function_result: HashMap<OutputId, Value>) {
+    fn try_finish_loop(&self, mut native_function_result: HashMap<OutputId, Value>) -> IntegrationResult<()> {
         let mut inner = self.inner.borrow_mut();
         loop {
             let result = inner.engine.run(native_function_result);
@@ -150,19 +162,24 @@ impl Context {
                     } in functions_to_invoke.iter()
                     {
                         let function = inner.functions.get(function_name)
-                            .expect("Function not found in registered functions");
+                            .ok_or_else(|| IntegrationError::FunctionNotFound(function_name.clone().into()))?;
                         let s = value.to_string();
 
                         let result = function(s);
 
-                        let result = serde_json::from_str(&result)
-                            .expect("Function returned invalid JSON");
+                        let result: Value = serde_json::from_str(&result)?;
 
                         native_function_result.insert(*output_id, result);
                     }
                 }
             }
         }
+        Ok(())
+    }
+
+    fn finish_loop(&self, native_function_result: HashMap<OutputId, Value>) {
+        // Unwrap at this internal boundary for backward compatibility
+        self.try_finish_loop(native_function_result).unwrap()
     }
 
     pub fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
@@ -257,15 +274,16 @@ impl CompositeOutput {
     }
 }
 
-pub fn get_engine() -> Engine {
+pub fn try_get_engine() -> IntegrationResult<Engine> {
     let pulumi_engine_url = std::env::var("PULUMI_ENGINE")
-        .expect("PULUMI_ENGINE environment variable must be set");
+        .map_err(|_| IntegrationError::MissingEnvironmentVariable("PULUMI_ENGINE".to_string()))?;
     let pulumi_monitor_url = std::env::var("PULUMI_MONITOR")
-        .expect("PULUMI_MONITOR environment variable must be set");
+        .map_err(|_| IntegrationError::MissingEnvironmentVariable("PULUMI_MONITOR".to_string()))?;
     let pulumi_stack = std::env::var("PULUMI_STACK")
-        .expect("PULUMI_STACK environment variable must be set");
+        .map_err(|_| IntegrationError::MissingEnvironmentVariable("PULUMI_STACK".to_string()))?;
     let pulumi_project = std::env::var("PULUMI_PROJECT")
-        .expect("PULUMI_PROJECT environment variable must be set");
+        .map_err(|_| IntegrationError::MissingEnvironmentVariable("PULUMI_PROJECT".to_string()))?;
+    
     let in_preview = match std::env::var("PULUMI_DRY_RUN") {
         Ok(preview) if preview == "true" => true,
         Ok(preview) if preview == "false" => false,
@@ -280,13 +298,17 @@ pub fn get_engine() -> Engine {
     );
 
     let config = Config::from_env_vars()
-        .context("Failed to create config instance")
-        .expect("Configuration setup failed");
+        .context("Failed to create config instance")?;
 
-    Engine::new(
+    Ok(Engine::new(
         PulumiServiceImpl::new(native_pulumi_connector, in_preview),
         config,
-    )
+    ))
+}
+
+pub fn get_engine() -> Engine {
+    // Unwrap at this public API boundary for backward compatibility
+    try_get_engine().unwrap()
 }
 
 /// Requires `pulumi` CLI to be installed and available in PATH

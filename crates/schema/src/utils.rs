@@ -10,42 +10,42 @@ static DOCKER_SERVICE_REPLACEMENTS: LazyLock<HashMap<ElementId, Vec<(&str, &str)
     LazyLock::new(|| {
         HashMap::from([
             (
-                ElementId::new("docker:index/service:Service").expect("Invalid element ID"),
+                ElementId::new("docker:index/service:Service").unwrap(),
                 vec![(
                     include_str!("dockerfixes/service/1_original.md"),
                     include_str!("dockerfixes/service/1_fixed.md"),
                 )],
             ),
             (
-                ElementId::new("docker:index/getPlugin:getPlugin").expect("Invalid element ID"),
+                ElementId::new("docker:index/getPlugin:getPlugin").unwrap(),
                 vec![(
                     include_str!("dockerfixes/getPlugin/1_original.md"),
                     include_str!("dockerfixes/getPlugin/1_fixed.md"),
                 )],
             ),
             (
-                ElementId::new("docker:index/network:Network").expect("Invalid element ID"),
+                ElementId::new("docker:index/network:Network").unwrap(),
                 vec![(
                     include_str!("dockerfixes/network/1_original.md"),
                     include_str!("dockerfixes/network/1_fixed.md"),
                 )],
             ),
             (
-                ElementId::new("docker:index/secret:Secret").expect("Invalid element ID"),
+                ElementId::new("docker:index/secret:Secret").unwrap(),
                 vec![(
                     include_str!("dockerfixes/secret/1_original.md"),
                     include_str!("dockerfixes/secret/1_fixed.md"),
                 )],
             ),
             (
-                ElementId::new("docker:index/serviceConfig:ServiceConfig").expect("Invalid element ID"),
+                ElementId::new("docker:index/serviceConfig:ServiceConfig").unwrap(),
                 vec![(
                     include_str!("dockerfixes/serviceConfig/1_original.md"),
                     include_str!("dockerfixes/serviceConfig/1_fixed.md"),
                 )],
             ),
             (
-                ElementId::new("docker:index/container:Container").expect("Invalid element ID"),
+                ElementId::new("docker:index/container:Container").unwrap(),
                 vec![(
                     include_str!("dockerfixes/container/1_original.md"),
                     include_str!("dockerfixes/container/1_fixed.md"),

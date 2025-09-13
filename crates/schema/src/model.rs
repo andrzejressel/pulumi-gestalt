@@ -240,7 +240,7 @@ mod tests {
     fn extract_namespace_from_command() {
         let id = "command:remote:Connection";
         assert_eq!(
-            ElementId::new(id).expect("Invalid element ID"),
+            ElementId::new(id).unwrap(),
             ElementId {
                 namespace: vec!["remote".to_string()],
                 name: "Connection".to_string(),
@@ -253,7 +253,7 @@ mod tests {
     fn extract_namespace_from_random() {
         let id = "random:index/randomBytes:RandomBytes";
         assert_eq!(
-            ElementId::new(id).expect("Invalid element ID"),
+            ElementId::new(id).unwrap(),
             ElementId {
                 namespace: vec![],
                 name: "RandomBytes".to_string(),
@@ -266,7 +266,7 @@ mod tests {
     fn perform_escaping() {
         let id = "docker:index%2FContainerPort:ContainerPort";
         assert_eq!(
-            ElementId::new(id).expect("Invalid element ID"),
+            ElementId::new(id).unwrap(),
             ElementId {
                 namespace: vec![],
                 name: "ContainerPort".to_string(),
@@ -279,7 +279,7 @@ mod tests {
     fn should_handle_without_namespace() {
         let id = "mypkg::BastionShareableLink";
         assert_eq!(
-            ElementId::new(id).expect("Invalid element ID"),
+            ElementId::new(id).unwrap(),
             ElementId {
                 namespace: vec![],
                 name: "BastionShareableLink".to_string(),
@@ -292,7 +292,7 @@ mod tests {
     fn should_handle_deeply_nested() {
         let id = "foo-bar:deeply/nested/module:Resource";
         assert_eq!(
-            ElementId::new(id).expect("Invalid element ID"),
+            ElementId::new(id).unwrap(),
             ElementId {
                 namespace: vec![
                     "deeply".to_string(),
@@ -309,7 +309,7 @@ mod tests {
     fn should_handle_nesting() {
         let id = "azure:frontdoor/frontdoor:Frontdoor";
         assert_eq!(
-            ElementId::new(id).expect("Invalid element ID"),
+            ElementId::new(id).unwrap(),
             ElementId {
                 namespace: vec!["frontdoor".to_string()],
                 name: "Frontdoor".to_string(),

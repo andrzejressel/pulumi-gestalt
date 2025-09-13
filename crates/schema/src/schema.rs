@@ -254,7 +254,7 @@ fn create_discriminated_union(one_of: &[OneOfType]) -> Result<crate::model::Type
                 OneOfType::Ref(r) => crate::model::Type::Ref(
                     Ref::new(&r.ref_)
                         .context(format!("Cannot convert ref fo type {r:?}"))
-                        .expect("Failed to create reference type"),
+                        .unwrap(),
                 ),
                 OneOfType::Primitive(primitive) => match primitive.type_ {
                     OneOfTypePrimitiveType::String => crate::model::Type::String,
@@ -585,13 +585,11 @@ fn invalid_required_complextype_required_fields() -> HashSet<(ElementId, String)
     HashSet::from([
         // https://github.com/pulumi/pulumi-docker/issues/1052
         (
-            ElementId::new("docker:index/container:Container")
-                .expect("Invalid element ID for docker container"),
+            ElementId::new("docker:index/container:Container").unwrap(),
             "containerLogs".to_string(),
         ),
         (
-            ElementId::new("docker:index/container:Container")
-                .expect("Invalid element ID for docker container"),
+            ElementId::new("docker:index/container:Container").unwrap(),
             "healthcheck".to_string(),
         ),
         //

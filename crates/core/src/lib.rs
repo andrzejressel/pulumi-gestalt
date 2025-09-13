@@ -1,6 +1,7 @@
 mod config;
 mod constants;
 mod engine;
+mod error;
 mod model;
 mod nodes;
 mod pulumi;
@@ -10,6 +11,7 @@ pub use crate::config::Config;
 pub use crate::engine::ConfigValue;
 pub use crate::engine::Engine;
 pub use crate::engine::ForeignFunctionToInvoke;
+pub use crate::error::{CoreError, CoreResult};
 pub use crate::model::FieldName;
 pub use crate::model::FunctionName;
 pub use crate::model::OutputId;

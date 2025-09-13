@@ -87,9 +87,7 @@ impl PulumiState {
         match self.join_set.join_next().await {
             None => (),
             Some(res) => {
-                let res = res
-                    .expect("Join task panicked")
-                    .expect("Task failed to complete successfully");
+                let res = res.unwrap().unwrap();
                 created_resources.push(res);
 
                 loop {
@@ -97,9 +95,7 @@ impl PulumiState {
                         None => break,
                         Some(None) => break,
                         Some(Some(res)) => {
-                            let res = res
-                                .expect("Join task panicked")
-                                .expect("Task failed to complete successfully");
+                            let res = res.unwrap().unwrap();
                             created_resources.push(res);
                         }
                     }

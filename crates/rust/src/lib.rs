@@ -79,14 +79,13 @@ macro_rules! pulumi_main {
             pulumi_gestalt_rust::__private::pulumi_gestalt_rust_adapter_wasm::runner::run(
                 |engine| pulumi_main(&engine),
             )
-            .expect("Failed to run WASM pulumi main");
+            .unwrap();
         }
 
         #[cfg(not(target_arch = "wasm32"))]
         fn main() {
             let context = Context::new();
-            pulumi_main(&context)
-                .expect("Failed to run native pulumi main");
+            pulumi_main(&context).unwrap();
             context.finish();
         }
     };

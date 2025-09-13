@@ -154,13 +154,11 @@ impl Engine {
         self.outputs.insert(field_name, output_id);
     }
 
-    fn get_value(&self, output_id: OutputId) -> Option<Value> {
+    fn try_get_value(&self, output_id: OutputId) -> crate::error::CoreResult<Option<Value>> {
         match self.nodes.get(&output_id) {
             None => {
                 error!("Cannot find node with id {}", output_id);
-                panic!("Cannot find node with id {}", output_id)
-                // Maybe in the future?
-                // unsafe { unreachable_unchecked() }
+                Err(crate::error::CoreError::NodeNotFound(output_id))
             }
             Some(r) => {
                 let ndv = match r.0.borrow().deref() {
@@ -172,22 +170,28 @@ impl Engine {
                 };
 
                 match ndv {
-                    MaybeNodeValue::NotYetCalculated => None,
-                    MaybeNodeValue::Set(NodeValue::Nothing) => None,
+                    MaybeNodeValue::NotYetCalculated => Ok(None),
+                    MaybeNodeValue::Set(NodeValue::Nothing) => Ok(None),
                     MaybeNodeValue::Set(NodeValue::Exists {
                         value: v,
                         secret: false,
-                    }) => Some(v),
+                    }) => Ok(Some(v)),
                     MaybeNodeValue::Set(NodeValue::Exists {
                         value: v,
                         secret: true,
-                    }) => Some(json!({
+                    }) => Ok(Some(json!({
                         crate::constants::SPECIAL_SIG_KEY: crate::constants::SPECIAL_SECRET_SIG,
                         crate::constants::SECRET_VALUE_NAME: v
-                    })),
+                    }))),
                 }
             }
         }
+    }
+
+    fn get_value(&self, output_id: OutputId) -> Option<Value> {
+        // Unwrap at this internal boundary for backward compatibility
+        // In the future, callers should use try_get_value instead
+        self.try_get_value(output_id).unwrap()
     }
 
     fn prepare_foreign_function_results(&self) -> Vec<ForeignFunctionToInvoke> {
@@ -1141,7 +1145,7 @@ mod tests {
                             == register_resource_node_output_id_once_cell_2
                                 .deref()
                                 .get()
-                                .expect("register_resource_node_output_id should be set in test")
+                                .unwrap()
                     }),
                     eq(PerformResourceRequest {
                         operation: ResourceRequestOperation::Register(
@@ -1162,15 +1166,14 @@ mod tests {
                         == &([*register_resource_node_output_id_once_cell_2
                             .deref()
                             .get()
-                            .expect("register_resource_node_output_id should be set in test")]
+                            .unwrap()]
                         .into())
                 }))
                 .returning(|output_ids| {
-                    let output_id = output_ids.iter().next()
-                        .expect("output_ids should not be empty in register test");
+                    let output_id = output_ids.iter().next().unwrap();
 
-                    HashMap::from([
-                        (*output_id,
+                    HashMap::from([(
+                        *output_id,
                         RegisterResourceResponse {
                             outputs: HashMap::from([("output".into(), true.into())]),
                         },
@@ -1187,7 +1190,7 @@ mod tests {
             );
             register_resource_node_output_id_once_cell
                 .set(register_resource_node_output_id)
-                .expect("register_resource_node_output_id should be settable once in test");
+                .unwrap();
             let result = engine.run(HashMap::new());
             assert_eq!(result, None);
 
@@ -1270,7 +1273,7 @@ mod tests {
                             == invoke_resource_node_output_id_once_cell_2
                                 .deref()
                                 .get()
-                                .expect("invoke_resource_node_output_id should be set in test")
+                                .unwrap()
                     }),
                     eq(PerformResourceRequest {
                         operation: ResourceRequestOperation::Invoke(
@@ -1291,15 +1294,14 @@ mod tests {
                         == &([*invoke_resource_node_output_id_once_cell_2
                             .deref()
                             .get()
-                            .expect("invoke_resource_node_output_id should be set in test")]
+                            .unwrap()]
                         .into())
                 }))
                 .returning(|output_ids| {
-                    let output_id = output_ids.iter().next()
-                        .expect("output_ids should not be empty in invoke test");
+                    let output_id = output_ids.iter().next().unwrap();
 
-                    HashMap::from([
-                        (*output_id,
+                    HashMap::from([(
+                        *output_id,
                         RegisterResourceResponse {
                             outputs: HashMap::from([("output".into(), true.into())]),
                         },
@@ -1315,7 +1317,7 @@ mod tests {
             );
             invoke_resource_node_output_id_once_cell
                 .set(invoke_resource_node_output_id)
-                .expect("invoke_resource_node_output_id should be settable once in test");
+                .unwrap();
             let result = engine.run(HashMap::new());
             assert_eq!(result, None);
 
