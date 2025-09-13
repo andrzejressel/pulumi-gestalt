@@ -79,7 +79,8 @@ impl GestaltContext for WasmContext {
         };
 
         let context = self.context.clone();
-        let context = context.read().unwrap();
+        let context = context.read()
+            .expect("Failed to acquire read lock for register_resource operation");
 
         let result = context.wit_context.register_resource(&request);
 
@@ -107,7 +108,8 @@ impl GestaltContext for WasmContext {
         };
 
         let context = self.context.clone();
-        let context = context.read().unwrap();
+        let context = context.read()
+            .expect("Failed to acquire read lock for invoke_resource operation");
 
         let result = context.wit_context.invoke_resource(&request);
 
@@ -123,7 +125,8 @@ impl GestaltContext for WasmContext {
         key: &str,
     ) -> Option<ConfigValue<Self::Output<String>>> {
         let context = self.context.clone();
-        let context = context.read().unwrap();
+        let context = context.read()
+            .expect("Failed to acquire read lock for get_config operation");
         let result = context.wit_context.get_config(name, key);
         result.map(|v| match v {
             client_bindings::component::pulumi_gestalt::types::ConfigValue::Plaintext(pt) => {
@@ -155,9 +158,11 @@ impl WasmContext {
     }
 
     fn new_output_priv<T: serde::Serialize>(&self, value: &T, secret: bool) -> WasmOutput<T> {
-        let binding = serde_json::to_string(&value).unwrap();
+        let binding = serde_json::to_string(&value)
+            .expect("Failed to serialize value to JSON for WASM output");
         let context = self.context.clone();
-        let inner_context = context.read().unwrap();
+        let inner_context = context.read()
+            .expect("Failed to acquire read lock for new_output operation");
         let resource = inner_context
             .wit_context
             .create_output(binding.as_str(), secret);
@@ -170,7 +175,8 @@ impl WasmContext {
 
     fn invoke_function(&self, function_id: &str, value: &str) -> Result<String, Error> {
         let context = self.context.clone();
-        let context = context.read().unwrap();
+        let context = context.read()
+            .expect("Failed to acquire read lock for invoke_function operation");
         let function = context
             .functions
             .get(function_id)
@@ -184,7 +190,8 @@ impl WasmContext {
         results: Vec<FunctionInvocationResult>,
     ) -> Result<Vec<FunctionInvocationRequest>> {
         let context = self.context.clone();
-        let context = context.read().unwrap();
+        let context = context.read()
+            .expect("Failed to acquire read lock for finish operation");
         let functions = context.wit_context.finish(&results);
         Ok(functions)
     }
@@ -221,7 +228,8 @@ impl<T> GestaltOutput<T> for WasmOutput<T> {
         B: Serialize,
     {
         let context = self.context.clone();
-        let mut context = context.write().unwrap();
+        let mut context = context.write()
+            .expect("Failed to acquire write lock for map operation");
 
         let function_name = context.put_function(f);
         let new_output = self.wasm_output.map(function_name.as_str());

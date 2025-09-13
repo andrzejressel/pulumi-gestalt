@@ -63,7 +63,8 @@ impl GestaltContext for NativeContext {
     type CompositeOutput = NativeCompositeOutput;
 
     fn new_output<T: Serialize>(&self, value: &T) -> Self::Output<T> {
-        let json = serde_json::to_string(value).unwrap();
+        let json = serde_json::to_string(value)
+            .unwrap_or_else(|e| panic!("Failed to serialize value to JSON: {}", e));
         NativeOutput {
             inner: self.inner.create_output(json, false),
             tpe: PhantomData,
@@ -71,7 +72,8 @@ impl GestaltContext for NativeContext {
     }
 
     fn new_secret<T: Serialize>(&self, value: &T) -> Self::Output<T> {
-        let json = serde_json::to_string(value).unwrap();
+        let json = serde_json::to_string(value)
+            .unwrap_or_else(|e| panic!("Failed to serialize secret value to JSON: {}", e));
         NativeOutput {
             inner: self.inner.create_output(json, true),
             tpe: PhantomData,
@@ -154,9 +156,11 @@ impl<T> GestaltOutput<T> for NativeOutput<T> {
         B: serde::ser::Serialize,
     {
         let function = move |v: String| {
-            let v: T = serde_json::from_str(&v).unwrap();
+            let v: T = serde_json::from_str(&v)
+                .unwrap_or_else(|e| panic!("Failed to deserialize input JSON: {}", e));
             let v = f(v);
-            serde_json::to_string(&v).unwrap()
+            serde_json::to_string(&v)
+                .unwrap_or_else(|e| panic!("Failed to serialize output to JSON: {}", e))
         };
 
         let res = self.inner.map(Box::new(function));
