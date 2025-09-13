@@ -32,7 +32,6 @@ Commands are run using `just`.
 *   **Check for issues**:
     ```bash
     just check
-    cargo clippy --tests --all-features
     ```
 *   **Build Go language plugin**:
     ```bash
@@ -96,3 +95,51 @@ Commands are run using `just`.
 *   `providers/`: Provider schemas and generated code.
 *   `proto/`: Protobuf definitions.
 *   `docs/`: Source files for the `mkdocs` documentation.
+
+# Rust Style Guide for Agents
+
+## Code Formatting
+- Max line length: **100 characters**
+- Check and fix issues after every change using:
+  ```bash
+  just check
+  just fmt
+  ```
+
+## Error Handling
+
+### Always use anyhow context instead of naked `?`
+
+```rust
+// Bad
+let result = some_operation()?;
+
+// Good
+let result = some_operation().context("Failed to perform operation")?;
+```
+
+```rust
+// Bad
+async fn process_task(task: Task) -> Result<(), AgentError> {
+    let data = fetch_data(&task.id).await?;
+    let processed = transform_data(data)?;
+    save_result(processed).await?;
+    Ok(())
+}
+
+// Good
+async fn process_task(task: Task) -> Result<(), AgentError> {
+    let data = fetch_data(&task.id)
+        .await
+        .context("Failed to fetch task data")?;
+    
+    let processed = transform_data(data)
+        .context("Failed to transform data")?;
+    
+    save_result(processed)
+        .await
+        .context("Failed to save result")?;
+    
+    Ok(())
+}
+```

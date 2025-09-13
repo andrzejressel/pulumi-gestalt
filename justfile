@@ -76,17 +76,11 @@ build-static-library:
 
 check:
     cargo fmt -- --check
+    cargo clippy --tests --all-features
 
 fmt:
     cd pulumi-language-gestalt && just fmt
-    cargo fmt
-
-fmt-clippy:
     cargo clippy --tests --all-features --fix --allow-dirty --allow-staged
-    just fmt
-
-clippy:
-    cargo clippy --tests --all-features
 
 clippy-to-file:
     cargo clippy --tests --all-features --message-format=json | clippy-sarif | tee rust-clippy-results.sarif | sarif-fmt
