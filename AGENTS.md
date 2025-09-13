@@ -21,7 +21,7 @@ Commands are run using `just`.
 
 ### Core Commands
 
-*   **Build all components**:
+*   **Build/format/test all components** (VERY EXPENSIVE):
     ```bash
     just
     ```
@@ -55,13 +55,13 @@ Commands are run using `just`.
 
 ## Testing Commands
 
-*   **Run all tests**:
-    ```bash
-    just test-all
-    ```
-*   **Run tests with coverage**:
+*   **Run tests**:
     ```bash
     just test
+    ```
+*   **Run all tests including over 80 examples projects** (VERY EXPENSIVE):
+    ```bash
+    just test-all
     ```
 *   **Run example tests**:
     ```bash
@@ -95,6 +95,15 @@ Commands are run using `just`.
 *   `providers/`: Provider schemas and generated code.
 *   `proto/`: Protobuf definitions.
 *   `docs/`: Source files for the `mkdocs` documentation.
+
+## Development Workflow
+
+* Make changes to Rust code
+* Update tests if needed
+* Run `just check` and `just fmt`
+* Run relevant test suites (`just test` should cover most cases)
+* Regenerate code if schema changes: just regenerator
+* Test integration with example projects
 
 # Rust Style Guide for Agents
 
