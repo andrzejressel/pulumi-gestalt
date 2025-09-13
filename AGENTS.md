@@ -2,6 +2,10 @@
 
 This file contains global instructions for AI agents working with the `pulumi-gestalt` repository. For instructions specific to a particular crate or component, please refer to the `AGENTS.md` file within that directory.
 
+## Project Overview
+
+**Pulumi Gestalt** enables any programming language to work with Pulumi through WebAssembly, C FFI, and native Rust APIs. It automatically generates language bindings from provider schemas and provides runtime support for resource management.
+
 ## Environment Setup
 
 The development environment is managed by `devenv`.
@@ -17,11 +21,11 @@ The development environment is managed by `devenv`.
 
 ## Development Commands
 
-Commands are run using `just`.
+Commands are run using `just`. Run `just --list` for all available commands.
 
 ### Core Commands
 
-*   **Build/format/test all components** (VERY EXPENSIVE):
+*   **Build/format/test all components** (VERY EXPENSIVE - avoid during active development):
     ```bash
     just
     ```
@@ -29,7 +33,7 @@ Commands are run using `just`.
     ```bash
     just fmt
     ```
-*   **Check for issues**:
+*   **Check for issues** (fast, run frequently):
     ```bash
     just check
     ```
@@ -55,11 +59,11 @@ Commands are run using `just`.
 
 ## Testing Commands
 
-*   **Run tests**:
+*   **Run tests** (recommended for most development):
     ```bash
     just test
     ```
-*   **Run all tests including over 80 examples projects** (VERY EXPENSIVE):
+*   **Run all tests including over 80 example projects** (VERY EXPENSIVE - CI only):
     ```bash
     just test-all
     ```
@@ -98,12 +102,23 @@ Commands are run using `just`.
 
 ## Development Workflow
 
-* Make changes to Rust code
-* Update tests if needed
-* Run `just check` and `just fmt`
-* Run relevant test suites (`just test` should cover most cases)
-* Regenerate code if schema changes: just regenerator
-* Test integration with example projects
+**Standard workflow for most changes:**
+1. Make changes to Rust code
+2. Update tests if needed
+3. Run `just check` and `just fmt`
+4. Run `just test` (covers most cases)
+5. Regenerate code if schema changes: `just regenerator`
+
+**Extended workflow for major changes:**
+6. Test integration with example projects: `just test-examples`
+7. Run target-specific tests if needed: `just test-c` or `just test-native`
+
+## Troubleshooting
+
+**Quick fixes for common issues:**
+- Build problems: `just clean && just check`
+- Environment issues: Exit and re-run `devenv shell`
+- Test failures: Run individual test suites to isolate
 
 # Rust Style Guide for Agents
 
