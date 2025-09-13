@@ -62,7 +62,7 @@ jobs:
     - run: pulumi version
     - run: pulumi login --local
     - name: Prerun clippy
-      run: just clippy
+      run: just check
     - name: Run rust-clippy
       run: just clippy-to-file
     - name: Upload analysis results to GitHub
