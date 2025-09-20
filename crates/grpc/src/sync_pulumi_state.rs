@@ -1,6 +1,5 @@
 use crate::output_id::OutputId;
 use crate::pulumi_state::PulumiState;
-use anyhow::Result;
 use pulumi_gestalt_proto::pulumi::pulumirpc::ResourceInvokeRequest;
 use pulumi_gestalt_proto::pulumi::pulumirpc::{
     RegisterResourceOutputsRequest, RegisterResourceRequest,
@@ -80,6 +79,7 @@ mod tests {
 
     use crate::sync_pulumi_state::PulumiStateSync;
     use crate::test_server::{MyResourceEngineServer, MyResourceMonitorServer};
+    use anyhow::Result;
     use pulumi_gestalt_proto::pulumi::pulumirpc::RegisterResourceRequest;
     use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_server::ResourceMonitorServer;
 

@@ -188,6 +188,7 @@ mod tests {
     use crate::output_id::OutputId;
     use crate::pulumi_state::PulumiState;
     use crate::test_server::{MyResourceEngineServer, MyResourceMonitorServer};
+    use anyhow::Result;
 
     use pulumi_gestalt_proto::pulumi::pulumirpc::RegisterResourceRequest;
     use pulumi_gestalt_proto::pulumi::pulumirpc::engine_server::EngineServer;
