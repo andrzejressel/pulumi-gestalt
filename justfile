@@ -95,8 +95,25 @@ recreate-lock-files-in-generator-tests $REMOVE_LOCK_FILES="true" $DO_NOT_COMPILE
 regenerate-generator-tests $DO_NOT_COMPILE="true":
     cargo nextest run -p pulumi_gestalt_generator --all-features --test '*' --profile all_cores
 
+publish-app APP_NAME:
+    cargo publish -p {{APP_NAME}} --all-features
+
 publish:
-    cargo publish --workspace --all-features
+    just publish-app pulumi_gestalt_serde_constant_string
+    just publish-app pulumi_gestalt_proto
+    just publish-app pulumi_gestalt_schema
+    just publish-app pulumi_gestalt_schema_protobuf
+    just publish-app pulumi_gestalt_core
+    just publish-app pulumi_gestalt_wit
+    just publish-app pulumi_gestalt_grpc_connection
+    just publish-app pulumi_gestalt_rust_adapter
+    just publish-app pulumi_gestalt_rust_adapter_wasm
+    just publish-app pulumi_gestalt_rust_integration
+    just publish-app pulumi_gestalt_rust_adapter_native
+    just publish-app pulumi_gestalt_rust
+    just publish-app pulumi_gestalt_generator
+    just publish-app pulumi_gestalt_build
+    just publish-app pulumi_gestalt_wasm_runner
 
 test-provider-compilation COMPILATION_NAME:
     cargo llvm-cov nextest -p pulumi_gestalt_generator --cobertura --output-path covertura.xml --features generator_{{COMPILATION_NAME}} --test '*'

@@ -1,4 +1,4 @@
 [toolchain]
-channel = "nightly"
-components = [ "clippy", "rustfmt" ]
+channel = "1.89.0"
+components = [ "clippy" ]
 targets = ["wasm32-wasip2"]
