@@ -2,7 +2,6 @@
 name = "pulumi_gestalt_providers_cloudflare"
 version.workspace = true
 edition.workspace = true
-publish = false
 
 [dependencies]
 wit-bindgen.workspace = true

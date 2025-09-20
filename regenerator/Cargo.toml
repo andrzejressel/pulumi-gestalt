@@ -2,7 +2,6 @@
 name = "regenerator"
 version.workspace = true
 edition.workspace = true
-publish = false
 
 [dependencies]
 itertools.workspace = true
