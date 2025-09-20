@@ -42,7 +42,7 @@ members = [
     "crates/schema_protobuf",
     "crates/serde_constant_string",
     "examples/raw_rust"
-, "examples/failure"]
+]
 
 [workspace.package]
 version = "0.0.0-DEV"

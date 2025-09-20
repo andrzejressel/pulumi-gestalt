@@ -1,7 +1,5 @@
 use anyhow::bail;
-use pulumi_gestalt_examples_common::{
-    init_stack, select_stack, up_stack,
-};
+use pulumi_gestalt_examples_common::{init_stack, select_stack, up_stack};
 
 #[test]
 #[cfg_attr(not(feature = "example_test"), ignore)]
@@ -20,7 +18,11 @@ fn test_integration() -> Result<(), anyhow::Error> {
         }
         Err(e) => {
             let error_message = format!("{}", e);
-            assert!(error_message.contains("Important error message"), "Error message did not contain expected text. Actual error: {}", error_message);
+            assert!(
+                error_message.contains("Important error message"),
+                "Error message did not contain expected text. Actual error: {}",
+                error_message
+            );
         }
     }
     Ok(())

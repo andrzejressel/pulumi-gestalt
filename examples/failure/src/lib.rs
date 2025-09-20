@@ -1,4 +1,4 @@
-use anyhow::{bail, Result};
+use anyhow::{Result, bail};
 use pulumi_gestalt_rust::Context;
 
 #[cfg(target_arch = "wasm32")]
