@@ -2,6 +2,7 @@
 name = "changelog"
 version.workspace = true
 edition.workspace = true
+publish = false
 
 [dependencies]
 clap.workspace = true

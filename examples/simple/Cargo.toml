@@ -2,6 +2,7 @@
 name = "pulumi_gestalt_example_simple"
 version.workspace = true
 edition.workspace = true
+publish = false
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
