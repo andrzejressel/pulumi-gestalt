@@ -23,7 +23,5 @@ fn test_integration() -> Result<(), anyhow::Error> {
             assert!(error_message.contains("Important error message"), "Error message did not contain expected text. Actual error: {}", error_message);
         }
     }
-        
-                
     Ok(())
 }
