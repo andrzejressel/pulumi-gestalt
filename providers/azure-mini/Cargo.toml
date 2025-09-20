@@ -2,6 +2,7 @@
 name = "pulumi_gestalt_providers_azure_mini"
 version.workspace = true
 edition.workspace = true
+publish = false
 
 [dependencies]
 wit-bindgen.workspace = true
