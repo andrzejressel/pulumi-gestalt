@@ -1,5 +1,6 @@
 use crate::output_id::OutputId;
 use crate::pulumi_state::PulumiState;
+use anyhow::Result;
 use pulumi_gestalt_proto::pulumi::pulumirpc::ResourceInvokeRequest;
 use pulumi_gestalt_proto::pulumi::pulumirpc::{
     RegisterResourceOutputsRequest, RegisterResourceRequest,
@@ -83,7 +84,7 @@ mod tests {
     use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_server::ResourceMonitorServer;
 
     #[test]
-    fn test() -> Result<(), anyhow::Error> {
+    fn test() -> Result<()> {
         let runtime = tokio::runtime::Runtime::new()?;
 
         let monitor_listener = runtime.block_on(TcpListener::bind("127.0.0.1:0"))?;

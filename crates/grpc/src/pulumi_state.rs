@@ -198,7 +198,7 @@ mod tests {
     use tonic::transport::Server;
 
     #[tokio::test]
-    async fn test() -> Result<(), anyhow::Error> {
+    async fn test() -> Result<()> {
         let monitor_listener = TcpListener::bind("127.0.0.1:0").await?;
         let engine_listener = TcpListener::bind("127.0.0.1:0").await?;
         let monitor_addr = monitor_listener.local_addr()?;
