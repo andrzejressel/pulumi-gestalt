@@ -55,21 +55,21 @@ build-native-examples:
 # Compiling everything together causes linking issues
 build-wasm-components:
     cargo build -p pulumi_gestalt_wasm_runner
-    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_dependencies --target={{WASI_TARGET}}
+    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_multiple_providers --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_secret --target={{WASI_TARGET}}
+    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}}
 
 build-wasm-components-release:
     cargo build -p pulumi_gestalt_wasm_runner --release
-    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_dependencies --target={{WASI_TARGET}} --release
+    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_multiple_providers --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_secret --target={{WASI_TARGET}} --release
+    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}} --release
 
 build-static-library:
     cargo build -p pulumi_native_c
@@ -120,13 +120,13 @@ test-provider-compilation COMPILATION_NAME:
 
 test-examples:
     cargo llvm-cov nextest \
-        -p pulumi_gestalt_example_simple \
-        -p pulumi_gestalt_example_docker \
         -p pulumi_gestalt_example_dependencies \
+        -p pulumi_gestalt_example_docker \
         -p pulumi_gestalt_example_multiple_providers \
-        -p pulumi_gestalt_example_typesystem \
         -p pulumi_gestalt_example_plugins \
         -p pulumi_gestalt_example_secret \
+        -p pulumi_gestalt_example_simple \
+        -p pulumi_gestalt_example_typesystem \
         --cobertura --output-path covertura.xml --features example_test
 
 test-c:
