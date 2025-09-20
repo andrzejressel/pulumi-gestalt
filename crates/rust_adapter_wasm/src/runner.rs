@@ -8,22 +8,12 @@ pub fn run<F>(f: F) -> Result<(), Error>
 where
     F: Fn(&WasmContext) -> Result<(), Error>,
 {
-    let main = || {
-        let context = WasmContext::new();
-        f(&context)?;
-        run_loop(&context)?;
-        Ok(())
-    };
-
-    let result = main();
-
-    match result {
-        Ok(()) => Ok(()),
-        Err(e) => {
-            error!("Error running pulumi wasm: [{e}]");
-            Err(e)
-        }
-    }
+    let context = WasmContext::new();
+    f(&context)
+        .context("Failed to run main function")?;
+    run_loop(&context)
+        .context("Failed to run loop")?;
+    Ok(())
 }
 
 fn run_loop(context: &WasmContext) -> Result<(), Error> {
@@ -31,13 +21,15 @@ fn run_loop(context: &WasmContext) -> Result<(), Error> {
 }
 
 fn run_all_function(context: &WasmContext) -> Result<(), Error> {
-    let mut functions = context.invoke_finish(vec![])?;
+    let mut functions = context.invoke_finish(vec![])
+        .context("Failed to run 'invoke_finish'")?;
 
     loop {
         if functions.is_empty() {
             return Ok(());
         }
-        let mapped = map_functions(context, &functions)?;
+        let mapped = map_functions(context, &functions)
+            .context("Failed to run `map_functions`")?;
         functions = context.invoke_finish(mapped)?;
     }
 }

@@ -70,8 +70,9 @@ pub fn up_stack(github_token_env_vars: &[(String, String)]) -> Result<(), anyhow
         .env("PULUMI_CONFIG_PASSPHRASE", " ")
         .envs(github_token_env_vars.to_owned())
         .assert()
-        .success();
-    Ok(())
+        .try_success()
+        .map(|_| ())
+        .map_err(anyhow::Error::from)
 }
 
 pub fn export_stack() -> Result<Stack, anyhow::Error> {
