@@ -11,8 +11,15 @@ members = [
     "crates/grpc",
     "crates/proto",
     "crates/rust",
+    "crates/rust_adapter",
+    "crates/rust_adapter_native",
+    "crates/rust_adapter_wasm",
     "crates/rust_build",
     "crates/rust_generator",
+    "crates/rust_integration",
+    "crates/schema",
+    "crates/schema_protobuf",
+    "crates/serde_constant_string",
     "crates/wasm_runner",
     "crates/wit",
     "examples/c",
@@ -22,6 +29,7 @@ members = [
     "examples/multiple_providers",
     "examples/native",
     "examples/plugins",
+    "examples/raw_rust",
     "examples/secret",
     "examples/simple",
     "examples/typesystem",
@@ -33,14 +41,6 @@ members = [
     "providers/random",
     "providers/typesystem",
     "regenerator",
-    "crates/rust_adapter",
-    "crates/rust_adapter_wasm",
-    "crates/rust_adapter_native",
-    "crates/rust_integration",
-    "crates/schema",
-    "crates/schema_protobuf",
-    "crates/serde_constant_string",
-    "examples/raw_rust"
 ]
 
 [workspace.package]
