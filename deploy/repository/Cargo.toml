@@ -1,0 +1,17 @@
+[package]
+name = "pulumi_gestalt_deploy_repository"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+publish = false
+
+[dependencies]
+anyhow.workspace = true
+bon.workspace = true
+serde.workspace = true
+pulumi_gestalt_rust.workspace = true
+
+[build-dependencies]
+pulumi_gestalt_build.workspace = true

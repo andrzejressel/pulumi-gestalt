@@ -1,0 +1,4 @@
+set windows-shell := ["pwsh.exe", "-c"]
+
+run:
+    cargo run .
