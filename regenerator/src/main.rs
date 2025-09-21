@@ -1,7 +1,6 @@
 mod generate_proto;
 mod provider;
 
-use anyhow::bail;
 use itertools::Itertools;
 use std::fs;
 use std::process::Command;
@@ -129,14 +128,14 @@ fn main() {
                 String::from_utf8_lossy(&schema_output.stderr)
             );
         }
-        
+
         let schema =
             String::from_utf8(schema_output.stdout).expect("Invalid UTF-8 in pulumi output");
-        
+
         if !schema.starts_with("{") {
             panic!("Schema output is not valid JSON: {}", schema);
         }
-        
+
         fs::write(format!("providers/{}.json", provider.name), schema)
             .expect("Failed to write schema to file");
     }
