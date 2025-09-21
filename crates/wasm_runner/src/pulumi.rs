@@ -326,8 +326,8 @@ impl Pulumi {
         let table2 = ResourceTable::new();
 
         let wasi_ctx = WasiCtxBuilder::new()
-            .inherit_stdin()
             .inherit_stdout()
+            .inherit_stderr()
             .inherit_env()
             .build();
 
