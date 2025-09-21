@@ -24,11 +24,11 @@ impl GitHubWorkflow {
     pub fn from_file(path: &str) -> Result<Self> {
         let content = std::fs::read_to_string(path)
             .with_context(|| format!("Failed to read file {}", path))?;
-        let workflow: GitHubWorkflow = Self::from_yaml(&content)
-            .with_context(|| format!("Failed to parse file {}", path))?;
+        let workflow: GitHubWorkflow =
+            Self::from_yaml(&content).with_context(|| format!("Failed to parse file {}", path))?;
         Ok(workflow)
     }
-    
+
     pub fn from_yaml(yaml_content: &str) -> Result<Self> {
         serde_yaml::from_str(yaml_content).context("Failed to parse YAML content")
     }

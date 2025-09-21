@@ -1,4 +1,3 @@
-use std::ops::Deref;
 use crate::github::functions::get_repository::GetRepositoryArgs;
 use crate::github::repository_ruleset::RepositoryRulesetArgs;
 use crate::github::types::{
@@ -9,6 +8,7 @@ use GithubIntegration::{Any, GithubActions, GithubAdvancedSecurity, Mergify};
 use anyhow::Result;
 use github::types::RepositoryRulesetRulesRequiredStatusChecks;
 use pulumi_gestalt_rust::Context;
+use std::ops::Deref;
 
 mod github;
 mod github_workflow;
