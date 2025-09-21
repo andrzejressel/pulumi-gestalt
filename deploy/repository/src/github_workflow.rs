@@ -79,7 +79,7 @@ jobs:
       matrix:
         provider: [cloudflare, docker, aws-0, aws-1]
   build-no-matrix:
-    job: Build no matrix
+    name: Build no matrix
     runs-on: ubuntu-latest
 "#;
 
@@ -142,6 +142,7 @@ jobs:
         let job_names = workflow.get_job_full_names();
 
         let expected_job_names = [
+            "Build no matrix",
             "build-base (macos-14)",
             "build-base (ubuntu-24.04)",
             "build-base (windows-2022)",
@@ -149,7 +150,8 @@ jobs:
             "build-generated-provider (aws-1)",
             "build-generated-provider (cloudflare)",
             "build-generated-provider (docker)",
-            "Build no matrix",
         ];
+        
+        assert_eq!(job_names, expected_job_names);
     }
 }
