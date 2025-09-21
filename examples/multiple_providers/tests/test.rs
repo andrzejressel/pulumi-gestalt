@@ -1,8 +1,9 @@
+use anyhow::Result;
 use pulumi_gestalt_examples_common::{export_stack, init_stack, select_stack, up_stack};
 
 #[test]
 #[cfg_attr(not(feature = "example_test"), ignore)]
-fn test_integration() -> Result<(), anyhow::Error> {
+fn test_integration() -> Result<()> {
     if std::env::var("GITHUB_ACTIONS").is_ok() && !cfg!(target_os = "linux") {
         return Ok(());
     }
