@@ -31,6 +31,7 @@ jobs:
         os:
           - ubuntu-24.04
         #  - windows-2022 Windows has mixed paths that mess GitHub reader up (https://github.com/github/codeql/issues/15209)
+          - macos-15-intel
           - macos-15
 
     name: Run rust-clippy analyzing
