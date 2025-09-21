@@ -151,7 +151,7 @@ jobs:
             "build-generated-provider (cloudflare)",
             "build-generated-provider (docker)",
         ];
-        
+
         assert_eq!(job_names, expected_job_names);
     }
 }
