@@ -55,21 +55,23 @@ build-native-examples:
 # Compiling everything together causes linking issues
 build-wasm-components:
     cargo build -p pulumi_gestalt_wasm_runner
-    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_dependencies --target={{WASI_TARGET}}
+    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}}
+    cargo build -p pulumi_gestalt_example_failure --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_multiple_providers --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_secret --target={{WASI_TARGET}}
+    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}}
 
 build-wasm-components-release:
     cargo build -p pulumi_gestalt_wasm_runner --release
-    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_dependencies --target={{WASI_TARGET}} --release
+    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}} --release
+    cargo build -p pulumi_gestalt_example_failure --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_multiple_providers --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_secret --target={{WASI_TARGET}} --release
+    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}} --release
 
 build-static-library:
     cargo build -p pulumi_native_c
@@ -95,38 +97,21 @@ recreate-lock-files-in-generator-tests $REMOVE_LOCK_FILES="true" $DO_NOT_COMPILE
 regenerate-generator-tests $DO_NOT_COMPILE="true":
     cargo nextest run -p pulumi_gestalt_generator --all-features --test '*' --profile all_cores
 
-publish-app APP_NAME:
-    cargo publish -p {{APP_NAME}} --all-features
-
 publish:
-    just publish-app pulumi_gestalt_serde_constant_string
-    just publish-app pulumi_gestalt_proto
-    just publish-app pulumi_gestalt_schema
-    just publish-app pulumi_gestalt_schema_protobuf
-    just publish-app pulumi_gestalt_core
-    just publish-app pulumi_gestalt_wit
-    just publish-app pulumi_gestalt_grpc_connection
-    just publish-app pulumi_gestalt_rust_adapter
-    just publish-app pulumi_gestalt_rust_adapter_wasm
-    just publish-app pulumi_gestalt_rust_integration
-    just publish-app pulumi_gestalt_rust_adapter_native
-    just publish-app pulumi_gestalt_rust
-    just publish-app pulumi_gestalt_generator
-    just publish-app pulumi_gestalt_build
-    just publish-app pulumi_gestalt_wasm_runner
+    cargo publish --workspace --all-features
 
 test-provider-compilation COMPILATION_NAME:
     cargo llvm-cov nextest -p pulumi_gestalt_generator --cobertura --output-path covertura.xml --features generator_{{COMPILATION_NAME}} --test '*'
 
 test-examples:
     cargo llvm-cov nextest \
-        -p pulumi_gestalt_example_simple \
-        -p pulumi_gestalt_example_docker \
         -p pulumi_gestalt_example_dependencies \
+        -p pulumi_gestalt_example_docker \
         -p pulumi_gestalt_example_multiple_providers \
-        -p pulumi_gestalt_example_typesystem \
         -p pulumi_gestalt_example_plugins \
         -p pulumi_gestalt_example_secret \
+        -p pulumi_gestalt_example_simple \
+        -p pulumi_gestalt_example_typesystem \
         --cobertura --output-path covertura.xml --features example_test
 
 test-c:

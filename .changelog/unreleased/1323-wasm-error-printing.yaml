@@ -1,0 +1,2 @@
+type: Fixed
+title: Display error when pulumi_main returns error in Wasm
