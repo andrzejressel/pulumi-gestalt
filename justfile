@@ -86,7 +86,8 @@ fmt:
     cargo clippy --tests --all-features --fix --allow-dirty --allow-staged
 
 clippy-to-file:
-    cargo clippy --tests --all-features --message-format=json | clippy-sarif | tee rust-clippy-results.sarif | sarif-fmt
+    cargo clippy --tests --all-features --message-format=json | clippy-sarif > rust-clippy-results.sarif
+    python external/sarif-normalizer.py --in-place rust-clippy-results.sarif
 
 regenerator:
     cargo run -p regenerator

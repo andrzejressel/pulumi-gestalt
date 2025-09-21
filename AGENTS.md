@@ -142,6 +142,16 @@ let result = some_operation()?;
 let result = some_operation().context("Failed to perform operation")?;
 ```
 
+### Use `bail!` instead of `return Err(anyhow!(..))`
+
+```rust
+// Bad
+return Err(anyhow!("Something went wrong: {}", error_msg));
+
+// Good
+bail!("Something went wrong: {}", error_msg);
+```
+
 ```rust
 // Bad
 async fn process_task(task: Task) -> Result<(), AgentError> {
