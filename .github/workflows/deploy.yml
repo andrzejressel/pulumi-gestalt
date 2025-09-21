@@ -108,9 +108,9 @@ jobs:
           - rust-target: x86_64-unknown-linux-gnu
             os: ubuntu-24.04
           - rust-target: x86_64-apple-darwin
-            os: macos-14
+            os: macos-15-intel
           - rust-target: aarch64-apple-darwin
-            os: macos-14
+            os: macos-15
           - rust-target: x86_64-pc-windows-msvc
             os: windows-2022
 
@@ -211,10 +211,10 @@ jobs:
             os: ubuntu-24.04
             os_type: linux
           - target: macos-x86_64
-            os: macos-13
+            os: macos-15-intel
             os_type: macos
           - target: macos-arm64
-            os: macos-14
+            os: macos-15
             os_type: macos
           - target: windows-x86_64
             os: windows-2022
