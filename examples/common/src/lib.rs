@@ -1,4 +1,4 @@
-use anyhow::{anyhow, Result};
+use anyhow::{Result, anyhow};
 use assert_cmd::prelude::*;
 use serde_json::Value;
 use std::process::Command;
@@ -41,10 +41,7 @@ pub fn get_string(pointer: &str) -> &str {
     pointer
 }
 
-pub fn init_stack(
-    stack_name: &str,
-    github_token_env_vars: &[(String, String)],
-) -> Result<()> {
+pub fn init_stack(stack_name: &str, github_token_env_vars: &[(String, String)]) -> Result<()> {
     Command::new("pulumi")
         .args(["stack", "init", stack_name])
         .env("PULUMI_CONFIG_PASSPHRASE", " ")
