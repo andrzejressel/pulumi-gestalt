@@ -1,6 +1,7 @@
 mod generate_proto;
 mod provider;
 
+use anyhow::bail;
 use itertools::Itertools;
 use std::fs;
 use std::process::Command;
@@ -120,9 +121,22 @@ fn main() {
             .output()
             .expect("Failed to execute pulumi command");
 
+        if !schema_output.status.success() {
+            panic!(
+                "Pulumi package get-schema failed with exit code: {}\nStdout: {}\nStderr: {}",
+                schema_output.status.code().unwrap_or(-1),
+                String::from_utf8_lossy(&schema_output.stdout),
+                String::from_utf8_lossy(&schema_output.stderr)
+            );
+        }
+        
         let schema =
             String::from_utf8(schema_output.stdout).expect("Invalid UTF-8 in pulumi output");
-
+        
+        if !schema.starts_with("{") {
+            panic!("Schema output is not valid JSON: {}", schema);
+        }
+        
         fs::write(format!("providers/{}.json", provider.name), schema)
             .expect("Failed to write schema to file");
     }
