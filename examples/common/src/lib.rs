@@ -1,6 +1,4 @@
-use anyhow::{Result, anyhow};
-use assert_cmd::prelude::*;
-use anyhow::{Context, anyhow, bail};
+use anyhow::{Context, Result, anyhow, bail};
 use serde_json::Value;
 use std::process::Command;
 use std::str;
