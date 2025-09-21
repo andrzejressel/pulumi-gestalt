@@ -12,6 +12,8 @@ anyhow.workspace = true
 bon.workspace = true
 serde.workspace = true
 pulumi_gestalt_rust.workspace = true
+serde_yaml.workspace = true
+itertools.workspace = true
 
 [build-dependencies]
 pulumi_gestalt_build.workspace = true

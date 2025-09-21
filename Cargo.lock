@@ -3412,9 +3412,11 @@ version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "bon",
+ "itertools",
  "pulumi_gestalt_build",
  "pulumi_gestalt_rust",
  "serde",
+ "serde_yaml",
 ]
 
 [[package]]
