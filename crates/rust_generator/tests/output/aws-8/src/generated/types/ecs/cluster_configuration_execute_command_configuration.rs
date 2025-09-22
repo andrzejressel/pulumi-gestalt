@@ -10,7 +10,7 @@ pub struct ClusterConfigurationExecuteCommandConfiguration {
     /// Log configuration for the results of the execute command actions. Required when `logging` is `OVERRIDE`. See `log_configuration` Block for details.
     #[builder(into)]
     #[serde(rename = "logConfiguration")]
-    pub r#log_configuration: Option<Box<super::super::types::ecs::ClusterConfigurationExecuteCommandConfigurationLogConfiguration>>,
+    pub r#log_configuration: Box<Option<super::super::types::ecs::ClusterConfigurationExecuteCommandConfigurationLogConfiguration>>,
     /// Log setting to use for redirecting logs for your execute command results. Valid values: `NONE`, `DEFAULT`, `OVERRIDE`.
     #[builder(into)]
     #[serde(rename = "logging")]

@@ -7,7 +7,7 @@ pub struct SubscriptionCloudStorageConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "avroConfig")]
-    pub r#avro_config: Option<Box<super::super::types::pubsub::SubscriptionCloudStorageConfigAvroConfig>>,
+    pub r#avro_config: Box<Option<super::super::types::pubsub::SubscriptionCloudStorageConfigAvroConfig>>,
     /// User-provided name for the Cloud Storage bucket. The bucket must be created by the user. The bucket name must be without any prefix like "gs://".
     #[builder(into)]
     #[serde(rename = "bucket")]

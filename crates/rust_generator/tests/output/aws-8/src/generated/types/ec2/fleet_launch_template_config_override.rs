@@ -10,7 +10,7 @@ pub struct FleetLaunchTemplateConfigOverride {
     /// Override the instance type in the Launch Template with instance types that satisfy the requirements.
     #[builder(into)]
     #[serde(rename = "instanceRequirements")]
-    pub r#instance_requirements: Option<Box<super::super::types::ec2::FleetLaunchTemplateConfigOverrideInstanceRequirements>>,
+    pub r#instance_requirements: Box<Option<super::super::types::ec2::FleetLaunchTemplateConfigOverrideInstanceRequirements>>,
     /// Instance type.
     #[builder(into)]
     #[serde(rename = "instanceType")]

@@ -12,7 +12,7 @@ pub struct RepositoryCleanupPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "condition")]
-    pub r#condition: Option<Box<super::super::types::artifactregistry::RepositoryCleanupPolicyCondition>>,
+    pub r#condition: Box<Option<super::super::types::artifactregistry::RepositoryCleanupPolicyCondition>>,
     /// The identifier for this object. Format specified above.
     #[builder(into)]
     #[serde(rename = "id")]
@@ -22,5 +22,5 @@ pub struct RepositoryCleanupPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "mostRecentVersions")]
-    pub r#most_recent_versions: Option<Box<super::super::types::artifactregistry::RepositoryCleanupPolicyMostRecentVersions>>,
+    pub r#most_recent_versions: Box<Option<super::super::types::artifactregistry::RepositoryCleanupPolicyMostRecentVersions>>,
 }

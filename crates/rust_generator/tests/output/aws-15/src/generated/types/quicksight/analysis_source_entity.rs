@@ -6,5 +6,5 @@ pub struct AnalysisSourceEntity {
     /// The source template. See source_template.
     #[builder(into)]
     #[serde(rename = "sourceTemplate")]
-    pub r#source_template: Option<Box<super::super::types::quicksight::AnalysisSourceEntitySourceTemplate>>,
+    pub r#source_template: Box<Option<super::super::types::quicksight::AnalysisSourceEntitySourceTemplate>>,
 }

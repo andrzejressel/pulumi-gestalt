@@ -10,5 +10,5 @@ pub struct WebAclLoggingConfiguration {
     /// Configuration block containing parts of the request that you want redacted from the logs. Detailed below.
     #[builder(into)]
     #[serde(rename = "redactedFields")]
-    pub r#redacted_fields: Option<Box<super::super::types::waf::WebAclLoggingConfigurationRedactedFields>>,
+    pub r#redacted_fields: Box<Option<super::super::types::waf::WebAclLoggingConfigurationRedactedFields>>,
 }

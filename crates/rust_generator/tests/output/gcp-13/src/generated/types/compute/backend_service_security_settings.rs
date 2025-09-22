@@ -11,7 +11,7 @@ pub struct BackendServiceSecuritySettings {
     /// <a name="nested_aws_v4_authentication"></a>The `aws_v4_authentication` block supports:
     #[builder(into)]
     #[serde(rename = "awsV4Authentication")]
-    pub r#aws_v_4_authentication: Option<Box<super::super::types::compute::BackendServiceSecuritySettingsAwsV4Authentication>>,
+    pub r#aws_v_4_authentication: Box<Option<super::super::types::compute::BackendServiceSecuritySettingsAwsV4Authentication>>,
     /// ClientTlsPolicy is a resource that specifies how a client should authenticate
     /// connections to backends of a service. This resource itself does not affect
     /// configuration unless it is attached to a backend service resource.

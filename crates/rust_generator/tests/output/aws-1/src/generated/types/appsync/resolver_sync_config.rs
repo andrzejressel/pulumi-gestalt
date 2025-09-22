@@ -14,5 +14,5 @@ pub struct ResolverSyncConfig {
     /// Lambda Conflict Handler Config when configuring `LAMBDA` as the Conflict Handler. See Lambda Conflict Handler Config.
     #[builder(into)]
     #[serde(rename = "lambdaConflictHandlerConfig")]
-    pub r#lambda_conflict_handler_config: Option<Box<super::super::types::appsync::ResolverSyncConfigLambdaConflictHandlerConfig>>,
+    pub r#lambda_conflict_handler_config: Box<Option<super::super::types::appsync::ResolverSyncConfigLambdaConflictHandlerConfig>>,
 }

@@ -6,7 +6,7 @@ pub struct BucketLifecycleConfigurationV2RuleFilter {
     /// Configuration block used to apply a logical `AND` to two or more predicates. See below. The Lifecycle Rule will apply to any object matching all the predicates configured inside the `and` block.
     #[builder(into)]
     #[serde(rename = "and")]
-    pub r#and: Option<Box<super::super::types::s3::BucketLifecycleConfigurationV2RuleFilterAnd>>,
+    pub r#and: Box<Option<super::super::types::s3::BucketLifecycleConfigurationV2RuleFilterAnd>>,
     /// Minimum object size (in bytes) to which the rule applies.
     #[builder(into)]
     #[serde(rename = "objectSizeGreaterThan")]
@@ -22,5 +22,5 @@ pub struct BucketLifecycleConfigurationV2RuleFilter {
     /// Configuration block for specifying a tag key and value. See below.
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Option<Box<super::super::types::s3::BucketLifecycleConfigurationV2RuleFilterTag>>,
+    pub r#tag: Box<Option<super::super::types::s3::BucketLifecycleConfigurationV2RuleFilterTag>>,
 }

@@ -8,7 +8,7 @@ pub struct CxPageFormParameter {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "advancedSettings")]
-    pub r#advanced_settings: Option<Box<super::super::types::diagflow::CxPageFormParameterAdvancedSettings>>,
+    pub r#advanced_settings: Box<Option<super::super::types::diagflow::CxPageFormParameterAdvancedSettings>>,
     /// The default value of an optional parameter. If the parameter is required, the default value will be ignored.
     #[builder(into)]
     #[serde(rename = "defaultValue")]
@@ -26,7 +26,7 @@ pub struct CxPageFormParameter {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "fillBehavior")]
-    pub r#fill_behavior: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehavior>>,
+    pub r#fill_behavior: Box<Option<super::super::types::diagflow::CxPageFormParameterFillBehavior>>,
     /// Indicates whether the parameter represents a list of values.
     #[builder(into)]
     #[serde(rename = "isList")]

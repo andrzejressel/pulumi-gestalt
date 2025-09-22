@@ -6,5 +6,5 @@ pub struct VirtualGatewaySpecBackendDefaultsClientPolicy {
     /// Transport Layer Security (TLS) client policy.
     #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Option<Box<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicyTls>>,
+    pub r#tls: Box<Option<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicyTls>>,
 }

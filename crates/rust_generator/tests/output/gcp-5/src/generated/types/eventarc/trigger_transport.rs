@@ -6,5 +6,5 @@ pub struct TriggerTransport {
     /// The Pub/Sub topic and subscription used by Eventarc as delivery intermediary.
     #[builder(into)]
     #[serde(rename = "pubsub")]
-    pub r#pubsub: Option<Box<super::super::types::eventarc::TriggerTransportPubsub>>,
+    pub r#pubsub: Box<Option<super::super::types::eventarc::TriggerTransportPubsub>>,
 }

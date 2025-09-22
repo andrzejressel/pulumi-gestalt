@@ -10,7 +10,7 @@ pub struct FunctionAppSiteConfigScmIpRestriction {
     /// The `headers` block for this specific `scm_ip_restriction` as defined below.
     #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Option<Box<super::super::types::appservice::FunctionAppSiteConfigScmIpRestrictionHeaders>>,
+    pub r#headers: Box<Option<super::super::types::appservice::FunctionAppSiteConfigScmIpRestrictionHeaders>>,
     /// The IP Address used for this IP Restriction in CIDR notation.
     #[builder(into)]
     #[serde(rename = "ipAddress")]

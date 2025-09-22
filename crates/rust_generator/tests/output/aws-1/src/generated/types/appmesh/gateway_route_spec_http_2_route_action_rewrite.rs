@@ -6,13 +6,13 @@ pub struct GatewayRouteSpecHttp2RouteActionRewrite {
     /// Host name to rewrite.
     #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttp2RouteActionRewriteHostname>>,
+    pub r#hostname: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttp2RouteActionRewriteHostname>>,
     /// Exact path to rewrite.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttp2RouteActionRewritePath>>,
+    pub r#path: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttp2RouteActionRewritePath>>,
     /// Specified beginning characters to rewrite.
     #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttp2RouteActionRewritePrefix>>,
+    pub r#prefix: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttp2RouteActionRewritePrefix>>,
 }

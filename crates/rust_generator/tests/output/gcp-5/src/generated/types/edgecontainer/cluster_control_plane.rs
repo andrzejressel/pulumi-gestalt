@@ -7,10 +7,10 @@ pub struct ClusterControlPlane {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "local")]
-    pub r#local: Option<Box<super::super::types::edgecontainer::ClusterControlPlaneLocal>>,
+    pub r#local: Box<Option<super::super::types::edgecontainer::ClusterControlPlaneLocal>>,
     /// Remote control plane configuration.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "remote")]
-    pub r#remote: Option<Box<super::super::types::edgecontainer::ClusterControlPlaneRemote>>,
+    pub r#remote: Box<Option<super::super::types::edgecontainer::ClusterControlPlaneRemote>>,
 }

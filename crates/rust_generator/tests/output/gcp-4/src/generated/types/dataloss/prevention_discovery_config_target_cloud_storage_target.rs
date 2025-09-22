@@ -7,11 +7,11 @@ pub struct PreventionDiscoveryConfigTargetCloudStorageTarget {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetConditions>>,
+    pub r#conditions: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetConditions>>,
     /// Disable profiling for buckets that match this filter.
     #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetDisabled>>,
+    pub r#disabled: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetDisabled>>,
     /// The buckets the generation_cadence applies to. The first target with a matching filter will be the one to apply to a bucket.
     /// Structure is documented below.
     #[builder(into)]
@@ -21,5 +21,5 @@ pub struct PreventionDiscoveryConfigTargetCloudStorageTarget {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "generationCadence")]
-    pub r#generation_cadence: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadence>>,
+    pub r#generation_cadence: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadence>>,
 }

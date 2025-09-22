@@ -7,7 +7,7 @@ pub struct AiIndexMetadata {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "config")]
-    pub r#config: Option<Box<super::super::types::vertex::AiIndexMetadataConfig>>,
+    pub r#config: Box<Option<super::super::types::vertex::AiIndexMetadataConfig>>,
     /// Allows inserting, updating  or deleting the contents of the Matching Engine Index.
     /// The string must be a valid Cloud Storage directory path. If this
     /// field is set when calling IndexService.UpdateIndex, then no other

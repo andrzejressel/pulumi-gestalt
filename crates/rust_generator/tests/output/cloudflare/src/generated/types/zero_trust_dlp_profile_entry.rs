@@ -17,5 +17,5 @@ pub struct ZeroTrustDlpProfileEntry {
     pub r#name: String,
     #[builder(into)]
     #[serde(rename = "pattern")]
-    pub r#pattern: Option<Box<super::types::ZeroTrustDlpProfileEntryPattern>>,
+    pub r#pattern: Box<Option<super::types::ZeroTrustDlpProfileEntryPattern>>,
 }

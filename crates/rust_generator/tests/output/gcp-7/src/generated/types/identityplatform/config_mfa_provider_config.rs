@@ -12,5 +12,5 @@ pub struct ConfigMfaProviderConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "totpProviderConfig")]
-    pub r#totp_provider_config: Option<Box<super::super::types::identityplatform::ConfigMfaProviderConfigTotpProviderConfig>>,
+    pub r#totp_provider_config: Box<Option<super::super::types::identityplatform::ConfigMfaProviderConfigTotpProviderConfig>>,
 }

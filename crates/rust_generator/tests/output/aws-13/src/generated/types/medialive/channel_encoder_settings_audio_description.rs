@@ -6,7 +6,7 @@ pub struct ChannelEncoderSettingsAudioDescription {
     /// Advanced audio normalization settings. See Audio Normalization Settings for more details.
     #[builder(into)]
     #[serde(rename = "audioNormalizationSettings")]
-    pub r#audio_normalization_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioNormalizationSettings>>,
+    pub r#audio_normalization_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioNormalizationSettings>>,
     /// The name of the audio selector used as the source for this AudioDescription.
     #[builder(into)]
     #[serde(rename = "audioSelectorName")]
@@ -22,11 +22,11 @@ pub struct ChannelEncoderSettingsAudioDescription {
     /// Settings to configure one or more solutions that insert audio watermarks in the audio encode. See Audio Watermark Settings for more details.
     #[builder(into)]
     #[serde(rename = "audioWatermarkSettings")]
-    pub r#audio_watermark_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettings>>,
+    pub r#audio_watermark_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettings>>,
     /// Audio codec settings. See Audio Codec Settings for more details.
     #[builder(into)]
     #[serde(rename = "codecSettings")]
-    pub r#codec_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionCodecSettings>>,
+    pub r#codec_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionCodecSettings>>,
     #[builder(into)]
     #[serde(rename = "languageCode")]
     pub r#language_code: Option<String>,
@@ -39,7 +39,7 @@ pub struct ChannelEncoderSettingsAudioDescription {
     pub r#name: String,
     #[builder(into)]
     #[serde(rename = "remixSettings")]
-    pub r#remix_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionRemixSettings>>,
+    pub r#remix_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionRemixSettings>>,
     /// Stream name RTMP destinations (URLs of type rtmp://)
     #[builder(into)]
     #[serde(rename = "streamName")]

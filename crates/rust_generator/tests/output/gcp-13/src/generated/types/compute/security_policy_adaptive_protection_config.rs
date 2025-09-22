@@ -8,9 +8,9 @@ pub struct SecurityPolicyAdaptiveProtectionConfig {
     /// <a name="nested_layer_7_ddos_defense_config"></a>The `layer_7_ddos_defense_config` block supports:
     #[builder(into)]
     #[serde(rename = "autoDeployConfig")]
-    pub r#auto_deploy_config: Option<Box<super::super::types::compute::SecurityPolicyAdaptiveProtectionConfigAutoDeployConfig>>,
+    pub r#auto_deploy_config: Box<Option<super::super::types::compute::SecurityPolicyAdaptiveProtectionConfigAutoDeployConfig>>,
     /// Configuration for [Google Cloud Armor Adaptive Protection Layer 7 DDoS Defense](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.
     #[builder(into)]
     #[serde(rename = "layer7DdosDefenseConfig")]
-    pub r#layer_7_ddos_defense_config: Option<Box<super::super::types::compute::SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig>>,
+    pub r#layer_7_ddos_defense_config: Box<Option<super::super::types::compute::SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig>>,
 }

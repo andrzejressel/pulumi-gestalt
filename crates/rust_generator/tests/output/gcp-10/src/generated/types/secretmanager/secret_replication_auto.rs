@@ -9,5 +9,5 @@ pub struct SecretReplicationAuto {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customerManagedEncryption")]
-    pub r#customer_managed_encryption: Option<Box<super::super::types::secretmanager::SecretReplicationAutoCustomerManagedEncryption>>,
+    pub r#customer_managed_encryption: Box<Option<super::super::types::secretmanager::SecretReplicationAutoCustomerManagedEncryption>>,
 }

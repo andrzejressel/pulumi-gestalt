@@ -14,5 +14,5 @@ pub struct VirtualMachineAssessment {
     /// An `schedule` block as defined below.
     #[builder(into)]
     #[serde(rename = "schedule")]
-    pub r#schedule: Option<Box<super::super::types::mssql::VirtualMachineAssessmentSchedule>>,
+    pub r#schedule: Box<Option<super::super::types::mssql::VirtualMachineAssessmentSchedule>>,
 }

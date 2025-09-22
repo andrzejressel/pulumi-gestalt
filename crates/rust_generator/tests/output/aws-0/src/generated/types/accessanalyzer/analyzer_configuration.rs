@@ -6,5 +6,5 @@ pub struct AnalyzerConfiguration {
     /// A block that specifies the configuration of an unused access analyzer for an AWS organization or account. Documented below
     #[builder(into)]
     #[serde(rename = "unusedAccess")]
-    pub r#unused_access: Option<Box<super::super::types::accessanalyzer::AnalyzerConfigurationUnusedAccess>>,
+    pub r#unused_access: Box<Option<super::super::types::accessanalyzer::AnalyzerConfigurationUnusedAccess>>,
 }

@@ -5,11 +5,11 @@
 pub struct GangliaLayerLoadBasedAutoScaling {
     #[builder(into)]
     #[serde(rename = "downscaling")]
-    pub r#downscaling: Option<Box<super::super::types::opsworks::GangliaLayerLoadBasedAutoScalingDownscaling>>,
+    pub r#downscaling: Box<Option<super::super::types::opsworks::GangliaLayerLoadBasedAutoScalingDownscaling>>,
     #[builder(into)]
     #[serde(rename = "enable")]
     pub r#enable: Option<bool>,
     #[builder(into)]
     #[serde(rename = "upscaling")]
-    pub r#upscaling: Option<Box<super::super::types::opsworks::GangliaLayerLoadBasedAutoScalingUpscaling>>,
+    pub r#upscaling: Box<Option<super::super::types::opsworks::GangliaLayerLoadBasedAutoScalingUpscaling>>,
 }

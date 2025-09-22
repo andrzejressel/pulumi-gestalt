@@ -18,7 +18,7 @@ pub struct PlanRule {
     /// The lifecycle defines when a protected resource is transitioned to cold storage and when it expires.  Fields documented below.
     #[builder(into)]
     #[serde(rename = "lifecycle")]
-    pub r#lifecycle: Option<Box<super::super::types::backup::PlanRuleLifecycle>>,
+    pub r#lifecycle: Box<Option<super::super::types::backup::PlanRuleLifecycle>>,
     /// Metadata that you can assign to help organize the resources that you create.
     #[builder(into)]
     #[serde(rename = "recoveryPointTags")]

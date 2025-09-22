@@ -9,7 +9,7 @@ pub struct BackendServiceOutlierDetection {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "baseEjectionTime")]
-    pub r#base_ejection_time: Option<Box<super::super::types::compute::BackendServiceOutlierDetectionBaseEjectionTime>>,
+    pub r#base_ejection_time: Box<Option<super::super::types::compute::BackendServiceOutlierDetectionBaseEjectionTime>>,
     /// Number of errors before a host is ejected from the connection pool. When the
     /// backend host is accessed over HTTP, a 5xx return code qualifies as an error.
     /// Defaults to 5.
@@ -45,7 +45,7 @@ pub struct BackendServiceOutlierDetection {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Option<Box<super::super::types::compute::BackendServiceOutlierDetectionInterval>>,
+    pub r#interval: Box<Option<super::super::types::compute::BackendServiceOutlierDetectionInterval>>,
     /// Maximum percentage of hosts in the load balancing pool for the backend service
     /// that can be ejected. Defaults to 10%.
     #[builder(into)]

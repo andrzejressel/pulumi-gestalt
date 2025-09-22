@@ -5,10 +5,10 @@
 pub struct NextGenerationFirewallVirtualHubLocalRulestackDestinationNat {
     #[builder(into)]
     #[serde(rename = "backendConfig")]
-    pub r#backend_config: Option<Box<super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackDestinationNatBackendConfig>>,
+    pub r#backend_config: Box<Option<super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackDestinationNatBackendConfig>>,
     #[builder(into)]
     #[serde(rename = "frontendConfig")]
-    pub r#frontend_config: Option<Box<super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackDestinationNatFrontendConfig>>,
+    pub r#frontend_config: Box<Option<super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackDestinationNatFrontendConfig>>,
     #[builder(into)]
     #[serde(rename = "name")]
     pub r#name: String,

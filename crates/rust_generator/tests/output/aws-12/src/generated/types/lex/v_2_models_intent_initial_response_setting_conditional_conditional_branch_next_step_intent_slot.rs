@@ -14,5 +14,5 @@ pub struct V2ModelsIntentInitialResponseSettingConditionalConditionalBranchNextS
     /// Configuration block for the current value of the slot. See `value`.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Option<Box<super::super::types::lex::V2ModelsIntentInitialResponseSettingConditionalConditionalBranchNextStepIntentSlotValue>>,
+    pub r#value: Box<Option<super::super::types::lex::V2ModelsIntentInitialResponseSettingConditionalConditionalBranchNextStepIntentSlotValue>>,
 }

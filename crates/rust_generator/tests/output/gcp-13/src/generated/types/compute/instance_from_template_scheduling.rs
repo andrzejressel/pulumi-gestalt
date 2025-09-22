@@ -21,7 +21,7 @@ pub struct InstanceFromTemplateScheduling {
     ///   hour.
     #[builder(into)]
     #[serde(rename = "localSsdRecoveryTimeout")]
-    pub r#local_ssd_recovery_timeout: Option<Box<super::super::types::compute::InstanceFromTemplateSchedulingLocalSsdRecoveryTimeout>>,
+    pub r#local_ssd_recovery_timeout: Box<Option<super::super::types::compute::InstanceFromTemplateSchedulingLocalSsdRecoveryTimeout>>,
     /// Specifies the frequency of planned maintenance events. The accepted values are: PERIODIC
     #[builder(into)]
     #[serde(rename = "maintenanceInterval")]
@@ -29,7 +29,7 @@ pub struct InstanceFromTemplateScheduling {
     /// The timeout for new network connections to hosts.
     #[builder(into)]
     #[serde(rename = "maxRunDuration")]
-    pub r#max_run_duration: Option<Box<super::super::types::compute::InstanceFromTemplateSchedulingMaxRunDuration>>,
+    pub r#max_run_duration: Box<Option<super::super::types::compute::InstanceFromTemplateSchedulingMaxRunDuration>>,
     #[builder(into)]
     #[serde(rename = "minNodeCpus")]
     pub r#min_node_cpus: Option<i32>,
@@ -44,7 +44,7 @@ pub struct InstanceFromTemplateScheduling {
     /// Defines the behaviour for instances with the instance_termination_action.
     #[builder(into)]
     #[serde(rename = "onInstanceStopAction")]
-    pub r#on_instance_stop_action: Option<Box<super::super::types::compute::InstanceFromTemplateSchedulingOnInstanceStopAction>>,
+    pub r#on_instance_stop_action: Box<Option<super::super::types::compute::InstanceFromTemplateSchedulingOnInstanceStopAction>>,
     /// Whether the instance is preemptible.
     #[builder(into)]
     #[serde(rename = "preemptible")]

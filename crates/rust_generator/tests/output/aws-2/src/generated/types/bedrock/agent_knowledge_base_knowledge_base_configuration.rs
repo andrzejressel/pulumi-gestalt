@@ -10,5 +10,5 @@ pub struct AgentKnowledgeBaseKnowledgeBaseConfiguration {
     /// Details about the embeddings model that'sused to convert the data source. See `vector_knowledge_base_configuration` block for details.
     #[builder(into)]
     #[serde(rename = "vectorKnowledgeBaseConfiguration")]
-    pub r#vector_knowledge_base_configuration: Option<Box<super::super::types::bedrock::AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfiguration>>,
+    pub r#vector_knowledge_base_configuration: Box<Option<super::super::types::bedrock::AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfiguration>>,
 }

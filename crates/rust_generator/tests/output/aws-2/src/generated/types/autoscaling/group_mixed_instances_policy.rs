@@ -6,7 +6,7 @@ pub struct GroupMixedInstancesPolicy {
     /// Nested argument containing settings on how to mix on-demand and Spot instances in the Auto Scaling group. Defined below.
     #[builder(into)]
     #[serde(rename = "instancesDistribution")]
-    pub r#instances_distribution: Option<Box<super::super::types::autoscaling::GroupMixedInstancesPolicyInstancesDistribution>>,
+    pub r#instances_distribution: Box<Option<super::super::types::autoscaling::GroupMixedInstancesPolicyInstancesDistribution>>,
     /// Nested argument containing launch template settings along with the overrides to specify multiple instance types and weights. Defined below.
     #[builder(into)]
     #[serde(rename = "launchTemplate")]

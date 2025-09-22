@@ -7,7 +7,7 @@ pub struct SecretReplicationUserManagedReplica {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customerManagedEncryption")]
-    pub r#customer_managed_encryption: Option<Box<super::super::types::secretmanager::SecretReplicationUserManagedReplicaCustomerManagedEncryption>>,
+    pub r#customer_managed_encryption: Box<Option<super::super::types::secretmanager::SecretReplicationUserManagedReplicaCustomerManagedEncryption>>,
     /// The canonical IDs of the location to replicate data. For example: "us-east1".
     #[builder(into)]
     #[serde(rename = "location")]

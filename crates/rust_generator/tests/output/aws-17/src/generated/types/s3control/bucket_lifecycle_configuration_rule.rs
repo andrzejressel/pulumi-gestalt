@@ -6,15 +6,15 @@ pub struct BucketLifecycleConfigurationRule {
     /// Configuration block containing settings for abort incomplete multipart upload.
     #[builder(into)]
     #[serde(rename = "abortIncompleteMultipartUpload")]
-    pub r#abort_incomplete_multipart_upload: Option<Box<super::super::types::s3control::BucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload>>,
+    pub r#abort_incomplete_multipart_upload: Box<Option<super::super::types::s3control::BucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload>>,
     /// Configuration block containing settings for expiration of objects.
     #[builder(into)]
     #[serde(rename = "expiration")]
-    pub r#expiration: Option<Box<super::super::types::s3control::BucketLifecycleConfigurationRuleExpiration>>,
+    pub r#expiration: Box<Option<super::super::types::s3control::BucketLifecycleConfigurationRuleExpiration>>,
     /// Configuration block containing settings for filtering.
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Option<Box<super::super::types::s3control::BucketLifecycleConfigurationRuleFilter>>,
+    pub r#filter: Box<Option<super::super::types::s3control::BucketLifecycleConfigurationRuleFilter>>,
     /// Unique identifier for the rule.
     #[builder(into)]
     #[serde(rename = "id")]

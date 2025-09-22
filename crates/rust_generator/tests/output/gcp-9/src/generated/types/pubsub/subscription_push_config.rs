@@ -29,13 +29,13 @@ pub struct SubscriptionPushConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "noWrapper")]
-    pub r#no_wrapper: Option<Box<super::super::types::pubsub::SubscriptionPushConfigNoWrapper>>,
+    pub r#no_wrapper: Box<Option<super::super::types::pubsub::SubscriptionPushConfigNoWrapper>>,
     /// If specified, Pub/Sub will generate and attach an OIDC JWT token as
     /// an Authorization header in the HTTP request for every pushed message.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oidcToken")]
-    pub r#oidc_token: Option<Box<super::super::types::pubsub::SubscriptionPushConfigOidcToken>>,
+    pub r#oidc_token: Box<Option<super::super::types::pubsub::SubscriptionPushConfigOidcToken>>,
     /// A URL locating the endpoint to which messages should be pushed.
     /// For example, a Webhook endpoint might use
     /// "https://example.com/push".

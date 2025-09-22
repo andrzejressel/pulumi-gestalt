@@ -6,13 +6,13 @@ pub struct KafkaClusterMetastores {
     /// An `ambari` block as defined below.
     #[builder(into)]
     #[serde(rename = "ambari")]
-    pub r#ambari: Option<Box<super::super::types::hdinsight::KafkaClusterMetastoresAmbari>>,
+    pub r#ambari: Box<Option<super::super::types::hdinsight::KafkaClusterMetastoresAmbari>>,
     /// A `hive` block as defined below.
     #[builder(into)]
     #[serde(rename = "hive")]
-    pub r#hive: Option<Box<super::super::types::hdinsight::KafkaClusterMetastoresHive>>,
+    pub r#hive: Box<Option<super::super::types::hdinsight::KafkaClusterMetastoresHive>>,
     /// An `oozie` block as defined below.
     #[builder(into)]
     #[serde(rename = "oozie")]
-    pub r#oozie: Option<Box<super::super::types::hdinsight::KafkaClusterMetastoresOozie>>,
+    pub r#oozie: Box<Option<super::super::types::hdinsight::KafkaClusterMetastoresOozie>>,
 }

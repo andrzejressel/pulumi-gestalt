@@ -6,13 +6,13 @@ pub struct HadoopClusterMetastores {
     /// An `ambari` block as defined below.
     #[builder(into)]
     #[serde(rename = "ambari")]
-    pub r#ambari: Option<Box<super::super::types::hdinsight::HadoopClusterMetastoresAmbari>>,
+    pub r#ambari: Box<Option<super::super::types::hdinsight::HadoopClusterMetastoresAmbari>>,
     /// A `hive` block as defined below.
     #[builder(into)]
     #[serde(rename = "hive")]
-    pub r#hive: Option<Box<super::super::types::hdinsight::HadoopClusterMetastoresHive>>,
+    pub r#hive: Box<Option<super::super::types::hdinsight::HadoopClusterMetastoresHive>>,
     /// An `oozie` block as defined below.
     #[builder(into)]
     #[serde(rename = "oozie")]
-    pub r#oozie: Option<Box<super::super::types::hdinsight::HadoopClusterMetastoresOozie>>,
+    pub r#oozie: Box<Option<super::super::types::hdinsight::HadoopClusterMetastoresOozie>>,
 }

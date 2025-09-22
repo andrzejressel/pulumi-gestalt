@@ -6,5 +6,5 @@ pub struct VMwareClusterNetworkConfigControlPlaneV2Config {
     /// Static IP addresses for the control plane nodes.
     #[builder(into)]
     #[serde(rename = "controlPlaneIpBlock")]
-    pub r#control_plane_ip_block: Option<Box<super::super::types::gkeonprem::VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock>>,
+    pub r#control_plane_ip_block: Box<Option<super::super::types::gkeonprem::VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock>>,
 }

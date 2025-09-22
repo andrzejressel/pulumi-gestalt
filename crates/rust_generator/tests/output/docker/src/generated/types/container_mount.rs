@@ -6,7 +6,7 @@ pub struct ContainerMount {
     /// Optional configuration for the bind type.
     #[builder(into)]
     #[serde(rename = "bindOptions")]
-    pub r#bind_options: Option<Box<super::types::ContainerMountBindOptions>>,
+    pub r#bind_options: Box<Option<super::types::ContainerMountBindOptions>>,
     /// Whether the mount should be read-only.
     #[builder(into)]
     #[serde(rename = "readOnly")]
@@ -22,7 +22,7 @@ pub struct ContainerMount {
     /// Optional configuration for the tmpfs type.
     #[builder(into)]
     #[serde(rename = "tmpfsOptions")]
-    pub r#tmpfs_options: Option<Box<super::types::ContainerMountTmpfsOptions>>,
+    pub r#tmpfs_options: Box<Option<super::types::ContainerMountTmpfsOptions>>,
     /// The mount type
     #[builder(into)]
     #[serde(rename = "type")]
@@ -30,5 +30,5 @@ pub struct ContainerMount {
     /// Optional configuration for the volume type.
     #[builder(into)]
     #[serde(rename = "volumeOptions")]
-    pub r#volume_options: Option<Box<super::types::ContainerMountVolumeOptions>>,
+    pub r#volume_options: Box<Option<super::types::ContainerMountVolumeOptions>>,
 }

@@ -17,5 +17,5 @@ pub struct DlpProfileEntry {
     pub r#name: String,
     #[builder(into)]
     #[serde(rename = "pattern")]
-    pub r#pattern: Option<Box<super::types::DlpProfileEntryPattern>>,
+    pub r#pattern: Box<Option<super::types::DlpProfileEntryPattern>>,
 }

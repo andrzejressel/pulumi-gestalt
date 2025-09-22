@@ -12,12 +12,12 @@ pub struct ServiceTemplateSpecContainerLivenessProbe {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "grpc")]
-    pub r#grpc: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerLivenessProbeGrpc>>,
+    pub r#grpc: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerLivenessProbeGrpc>>,
     /// HttpGet specifies the http request to perform.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "httpGet")]
-    pub r#http_get: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerLivenessProbeHttpGet>>,
+    pub r#http_get: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerLivenessProbeHttpGet>>,
     /// Number of seconds after the container has started before the probe is
     /// initiated.
     /// Defaults to 0 seconds. Minimum value is 0. Maximum value is 3600.

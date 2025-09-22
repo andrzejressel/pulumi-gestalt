@@ -28,7 +28,7 @@ pub struct ServiceTemplateContainer {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "livenessProbe")]
-    pub r#liveness_probe: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerLivenessProbe>>,
+    pub r#liveness_probe: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerLivenessProbe>>,
     /// Name of the container specified as a DNS_LABEL.
     #[builder(into)]
     #[serde(rename = "name")]
@@ -38,17 +38,17 @@ pub struct ServiceTemplateContainer {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ports")]
-    pub r#ports: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerPorts>>,
+    pub r#ports: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerPorts>>,
     /// Compute Resource requirements by this container. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerResources>>,
+    pub r#resources: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerResources>>,
     /// Startup probe of application within the container. All other probes are disabled if a startup probe is provided, until it succeeds. Container will not be added to service endpoints if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "startupProbe")]
-    pub r#startup_probe: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerStartupProbe>>,
+    pub r#startup_probe: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerStartupProbe>>,
     /// Volume to mount into the container's filesystem.
     /// Structure is documented below.
     #[builder(into)]

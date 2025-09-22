@@ -5,10 +5,10 @@
 pub struct Typ {
     #[builder(into)]
     #[serde(rename = "mod1")]
-    pub r#mod_1: Option<Box<super::types::mod1::Typ>>,
+    pub r#mod_1: Box<Option<super::types::mod1::Typ>>,
     #[builder(into)]
     #[serde(rename = "mod2")]
-    pub r#mod_2: Option<Box<super::types::mod2::Typ>>,
+    pub r#mod_2: Box<Option<super::types::mod2::Typ>>,
     #[builder(into)]
     #[serde(rename = "val")]
     pub r#val: Option<String>,

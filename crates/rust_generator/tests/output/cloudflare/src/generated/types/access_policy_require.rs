@@ -53,7 +53,7 @@ pub struct AccessPolicyRequire {
     /// Create Allow or Block policies which evaluate the user based on custom criteria. https://developers.cloudflare.com/cloudflare-one/policies/access/external-evaluation/.
     #[builder(into)]
     #[serde(rename = "externalEvaluation")]
-    pub r#external_evaluation: Option<Box<super::types::AccessPolicyRequireExternalEvaluation>>,
+    pub r#external_evaluation: Box<Option<super::types::AccessPolicyRequireExternalEvaluation>>,
     /// Matches a specific country.
     #[builder(into)]
     #[serde(rename = "geos")]

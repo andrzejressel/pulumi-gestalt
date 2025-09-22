@@ -39,5 +39,5 @@ pub struct JobTemplateTemplate {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vpcAccess")]
-    pub r#vpc_access: Option<Box<super::super::types::cloudrunv2::JobTemplateTemplateVpcAccess>>,
+    pub r#vpc_access: Box<Option<super::super::types::cloudrunv2::JobTemplateTemplateVpcAccess>>,
 }

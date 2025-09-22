@@ -10,7 +10,7 @@ pub struct EndpointConfigurationAsyncInferenceConfigOutputConfig {
     /// Specifies the configuration for notifications of inference results for asynchronous inference.
     #[builder(into)]
     #[serde(rename = "notificationConfig")]
-    pub r#notification_config: Option<Box<super::super::types::sagemaker::EndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig>>,
+    pub r#notification_config: Box<Option<super::super::types::sagemaker::EndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig>>,
     /// The Amazon S3 location to upload failure inference responses to.
     #[builder(into)]
     #[serde(rename = "s3FailurePath")]

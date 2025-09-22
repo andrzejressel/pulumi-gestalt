@@ -13,7 +13,7 @@ pub struct RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "perTryTimeout")]
-    pub r#per_try_timeout: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeout>>,
+    pub r#per_try_timeout: Box<Option<super::super::types::compute::RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeout>>,
     /// Specifies one or more conditions when this retry policy applies.
     /// Valid values are listed below. Only the following codes are supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true: cancelled, deadline-exceeded, internal, resource-exhausted, unavailable.
     /// - 5xx : retry is attempted if the instance or endpoint responds with any 5xx response code, or if the instance or endpoint does not respond at all. For example, disconnects, reset, read timeout, connection failure, and refused streams.

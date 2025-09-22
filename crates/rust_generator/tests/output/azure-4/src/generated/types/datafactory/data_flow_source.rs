@@ -6,7 +6,7 @@ pub struct DataFlowSource {
     /// A `dataset` block as defined below.
     #[builder(into)]
     #[serde(rename = "dataset")]
-    pub r#dataset: Option<Box<super::super::types::datafactory::DataFlowSourceDataset>>,
+    pub r#dataset: Box<Option<super::super::types::datafactory::DataFlowSourceDataset>>,
     /// The description for the Data Flow Source.
     #[builder(into)]
     #[serde(rename = "description")]
@@ -14,11 +14,11 @@ pub struct DataFlowSource {
     /// A `flowlet` block as defined below.
     #[builder(into)]
     #[serde(rename = "flowlet")]
-    pub r#flowlet: Option<Box<super::super::types::datafactory::DataFlowSourceFlowlet>>,
+    pub r#flowlet: Box<Option<super::super::types::datafactory::DataFlowSourceFlowlet>>,
     /// A `linked_service` block as defined below.
     #[builder(into)]
     #[serde(rename = "linkedService")]
-    pub r#linked_service: Option<Box<super::super::types::datafactory::DataFlowSourceLinkedService>>,
+    pub r#linked_service: Box<Option<super::super::types::datafactory::DataFlowSourceLinkedService>>,
     /// The name for the Data Flow Source.
     #[builder(into)]
     #[serde(rename = "name")]
@@ -26,9 +26,9 @@ pub struct DataFlowSource {
     /// A `rejected_linked_service` block as defined below.
     #[builder(into)]
     #[serde(rename = "rejectedLinkedService")]
-    pub r#rejected_linked_service: Option<Box<super::super::types::datafactory::DataFlowSourceRejectedLinkedService>>,
+    pub r#rejected_linked_service: Box<Option<super::super::types::datafactory::DataFlowSourceRejectedLinkedService>>,
     /// A `schema_linked_service` block as defined below.
     #[builder(into)]
     #[serde(rename = "schemaLinkedService")]
-    pub r#schema_linked_service: Option<Box<super::super::types::datafactory::DataFlowSourceSchemaLinkedService>>,
+    pub r#schema_linked_service: Box<Option<super::super::types::datafactory::DataFlowSourceSchemaLinkedService>>,
 }

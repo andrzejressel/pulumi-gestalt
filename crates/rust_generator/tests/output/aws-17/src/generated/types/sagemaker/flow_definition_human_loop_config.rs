@@ -10,7 +10,7 @@ pub struct FlowDefinitionHumanLoopConfig {
     /// Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. See Public Workforce Task Price details below.
     #[builder(into)]
     #[serde(rename = "publicWorkforceTaskPrice")]
-    pub r#public_workforce_task_price: Option<Box<super::super::types::sagemaker::FlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice>>,
+    pub r#public_workforce_task_price: Box<Option<super::super::types::sagemaker::FlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice>>,
     /// The length of time that a task remains available for review by human workers. Valid value range between `1` and `864000`.
     #[builder(into)]
     #[serde(rename = "taskAvailabilityLifetimeInSeconds")]

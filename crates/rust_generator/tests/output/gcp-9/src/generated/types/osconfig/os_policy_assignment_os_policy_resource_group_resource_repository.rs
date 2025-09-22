@@ -7,20 +7,20 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceRepository {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "apt")]
-    pub r#apt: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt>>,
+    pub r#apt: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt>>,
     /// A Goo Repository. Structure is
     /// documented below.
     #[builder(into)]
     #[serde(rename = "goo")]
-    pub r#goo: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo>>,
+    pub r#goo: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo>>,
     /// A Yum Repository. Structure is
     /// documented below.
     #[builder(into)]
     #[serde(rename = "yum")]
-    pub r#yum: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum>>,
+    pub r#yum: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum>>,
     /// A Zypper Repository. Structure is
     /// documented below.
     #[builder(into)]
     #[serde(rename = "zypper")]
-    pub r#zypper: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper>>,
+    pub r#zypper: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryZypper>>,
 }

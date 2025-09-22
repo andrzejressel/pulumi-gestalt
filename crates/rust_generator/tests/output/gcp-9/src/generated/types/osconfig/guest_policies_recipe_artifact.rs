@@ -13,7 +13,7 @@ pub struct GuestPoliciesRecipeArtifact {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "gcs")]
-    pub r#gcs: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeArtifactGcs>>,
+    pub r#gcs: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeArtifactGcs>>,
     /// Id of the artifact, which the installation and update steps of this recipe can reference.
     /// Artifacts in a recipe cannot have the same id.
     #[builder(into)]
@@ -23,5 +23,5 @@ pub struct GuestPoliciesRecipeArtifact {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "remote")]
-    pub r#remote: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeArtifactRemote>>,
+    pub r#remote: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeArtifactRemote>>,
 }

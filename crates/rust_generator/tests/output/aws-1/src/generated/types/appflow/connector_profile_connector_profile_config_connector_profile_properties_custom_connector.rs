@@ -6,7 +6,7 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesCusto
     /// The OAuth 2.0 properties required for OAuth 2.0 authentication.
     #[builder(into)]
     #[serde(rename = "oauth2Properties")]
-    pub r#oauth_2_properties: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesCustomConnectorOauth2Properties>>,
+    pub r#oauth_2_properties: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesCustomConnectorOauth2Properties>>,
     /// A map of properties that are required to create a profile for the custom connector.
     #[builder(into)]
     #[serde(rename = "profileProperties")]

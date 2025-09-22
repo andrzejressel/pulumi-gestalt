@@ -7,5 +7,5 @@ pub struct WorkstationConfigHost {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "gceInstance")]
-    pub r#gce_instance: Option<Box<super::super::types::workstations::WorkstationConfigHostGceInstance>>,
+    pub r#gce_instance: Box<Option<super::super::types::workstations::WorkstationConfigHostGceInstance>>,
 }

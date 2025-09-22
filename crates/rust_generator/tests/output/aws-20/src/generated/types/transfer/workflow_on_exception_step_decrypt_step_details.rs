@@ -6,7 +6,7 @@ pub struct WorkflowOnExceptionStepDecryptStepDetails {
     /// Specifies the location for the file being copied. Use ${Transfer:username} in this field to parametrize the destination prefix by username.
     #[builder(into)]
     #[serde(rename = "destinationFileLocation")]
-    pub r#destination_file_location: Option<Box<super::super::types::transfer::WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocation>>,
+    pub r#destination_file_location: Box<Option<super::super::types::transfer::WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocation>>,
     /// The name of the step, used as an identifier.
     #[builder(into)]
     #[serde(rename = "name")]

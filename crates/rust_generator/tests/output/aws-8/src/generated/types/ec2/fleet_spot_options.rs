@@ -18,5 +18,5 @@ pub struct FleetSpotOptions {
     /// Nested argument containing maintenance strategies for managing your Spot Instances that are at an elevated risk of being interrupted. Defined below.
     #[builder(into)]
     #[serde(rename = "maintenanceStrategies")]
-    pub r#maintenance_strategies: Option<Box<super::super::types::ec2::FleetSpotOptionsMaintenanceStrategies>>,
+    pub r#maintenance_strategies: Box<Option<super::super::types::ec2::FleetSpotOptionsMaintenanceStrategies>>,
 }

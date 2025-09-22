@@ -7,5 +7,5 @@ pub struct TargetSiteFailureReason {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "quotaFailure")]
-    pub r#quota_failure: Option<Box<super::super::types::discoveryengine::TargetSiteFailureReasonQuotaFailure>>,
+    pub r#quota_failure: Box<Option<super::super::types::discoveryengine::TargetSiteFailureReasonQuotaFailure>>,
 }

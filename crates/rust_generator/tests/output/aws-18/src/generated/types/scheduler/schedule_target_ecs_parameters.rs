@@ -26,7 +26,7 @@ pub struct ScheduleTargetEcsParameters {
     /// Configures the networking associated with the task. Detailed below.
     #[builder(into)]
     #[serde(rename = "networkConfiguration")]
-    pub r#network_configuration: Option<Box<super::super::types::scheduler::ScheduleTargetEcsParametersNetworkConfiguration>>,
+    pub r#network_configuration: Box<Option<super::super::types::scheduler::ScheduleTargetEcsParametersNetworkConfiguration>>,
     /// A set of up to 10 placement constraints to use for the task. Detailed below.
     #[builder(into)]
     #[serde(rename = "placementConstraints")]

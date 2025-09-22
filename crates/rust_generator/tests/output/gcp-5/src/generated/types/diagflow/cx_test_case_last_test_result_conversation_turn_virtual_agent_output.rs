@@ -7,7 +7,7 @@ pub struct CxTestCaseLastTestResultConversationTurnVirtualAgentOutput {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "currentPage")]
-    pub r#current_page: Option<Box<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage>>,
+    pub r#current_page: Box<Option<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage>>,
     /// The list of differences between the original run and the replay for this output, if any.
     /// Structure is documented below.
     #[builder(into)]
@@ -21,7 +21,7 @@ pub struct CxTestCaseLastTestResultConversationTurnVirtualAgentOutput {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Option<Box<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus>>,
+    pub r#status: Box<Option<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus>>,
     /// The text responses from the agent for the turn.
     /// Structure is documented below.
     #[builder(into)]
@@ -31,5 +31,5 @@ pub struct CxTestCaseLastTestResultConversationTurnVirtualAgentOutput {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "triggeredIntent")]
-    pub r#triggered_intent: Option<Box<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent>>,
+    pub r#triggered_intent: Box<Option<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntent>>,
 }

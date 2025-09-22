@@ -7,7 +7,7 @@ pub struct AiEndpointPredictRequestResponseLoggingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "bigqueryDestination")]
-    pub r#bigquery_destination: Option<Box<super::super::types::vertex::AiEndpointPredictRequestResponseLoggingConfigBigqueryDestination>>,
+    pub r#bigquery_destination: Box<Option<super::super::types::vertex::AiEndpointPredictRequestResponseLoggingConfigBigqueryDestination>>,
     /// If logging is enabled or not.
     #[builder(into)]
     #[serde(rename = "enabled")]

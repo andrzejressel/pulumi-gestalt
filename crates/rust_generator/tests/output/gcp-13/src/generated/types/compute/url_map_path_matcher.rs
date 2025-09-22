@@ -14,7 +14,7 @@ pub struct UrlMapPathMatcher {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "defaultCustomErrorResponsePolicy")]
-    pub r#default_custom_error_response_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultCustomErrorResponsePolicy>>,
+    pub r#default_custom_error_response_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultCustomErrorResponsePolicy>>,
     /// defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs
     /// advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request
     /// to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set.
@@ -23,7 +23,7 @@ pub struct UrlMapPathMatcher {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "defaultRouteAction")]
-    pub r#default_route_action: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultRouteAction>>,
+    pub r#default_route_action: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultRouteAction>>,
     /// The backend service or backend bucket to use when none of the given paths match.
     #[builder(into)]
     #[serde(rename = "defaultService")]
@@ -34,7 +34,7 @@ pub struct UrlMapPathMatcher {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "defaultUrlRedirect")]
-    pub r#default_url_redirect: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultUrlRedirect>>,
+    pub r#default_url_redirect: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultUrlRedirect>>,
     /// An optional description of this resource. Provide this property when you create
     /// the resource.
     #[builder(into)]
@@ -46,7 +46,7 @@ pub struct UrlMapPathMatcher {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "headerAction")]
-    pub r#header_action: Option<Box<super::super::types::compute::UrlMapPathMatcherHeaderAction>>,
+    pub r#header_action: Box<Option<super::super::types::compute::UrlMapPathMatcherHeaderAction>>,
     /// The name to which this PathMatcher is referred by the HostRule.
     #[builder(into)]
     #[serde(rename = "name")]

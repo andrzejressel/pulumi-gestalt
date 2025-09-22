@@ -42,7 +42,7 @@ pub struct JobTemplateConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "output")]
-    pub r#output: Option<Box<super::super::types::transcoder::JobTemplateConfigOutput>>,
+    pub r#output: Box<Option<super::super::types::transcoder::JobTemplateConfigOutput>>,
     /// List of overlays on the output video, in descending Z-order.
     /// Structure is documented below.
     #[builder(into)]
@@ -52,5 +52,5 @@ pub struct JobTemplateConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pubsubDestination")]
-    pub r#pubsub_destination: Option<Box<super::super::types::transcoder::JobTemplateConfigPubsubDestination>>,
+    pub r#pubsub_destination: Box<Option<super::super::types::transcoder::JobTemplateConfigPubsubDestination>>,
 }

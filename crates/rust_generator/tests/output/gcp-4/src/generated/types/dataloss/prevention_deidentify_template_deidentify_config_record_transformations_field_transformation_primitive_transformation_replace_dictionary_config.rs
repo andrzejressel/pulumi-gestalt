@@ -7,5 +7,5 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "wordList")]
-    pub r#word_list: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceDictionaryConfigWordList>>,
+    pub r#word_list: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceDictionaryConfigWordList>>,
 }

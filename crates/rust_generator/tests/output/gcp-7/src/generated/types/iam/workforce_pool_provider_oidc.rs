@@ -11,7 +11,7 @@ pub struct WorkforcePoolProviderOidc {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Option<Box<super::super::types::iam::WorkforcePoolProviderOidcClientSecret>>,
+    pub r#client_secret: Box<Option<super::super::types::iam::WorkforcePoolProviderOidcClientSecret>>,
     /// The OIDC issuer URI. Must be a valid URI using the 'https' scheme.
     #[builder(into)]
     #[serde(rename = "issuerUri")]
@@ -46,5 +46,5 @@ pub struct WorkforcePoolProviderOidc {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "webSsoConfig")]
-    pub r#web_sso_config: Option<Box<super::super::types::iam::WorkforcePoolProviderOidcWebSsoConfig>>,
+    pub r#web_sso_config: Box<Option<super::super::types::iam::WorkforcePoolProviderOidcWebSsoConfig>>,
 }

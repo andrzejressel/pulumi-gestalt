@@ -30,7 +30,7 @@ pub struct JobTemplateConfigElementaryStreamVideoStreamH264 {
     /// HLG color format setting for H264.
     #[builder(into)]
     #[serde(rename = "hlg")]
-    pub r#hlg: Option<Box<super::super::types::transcoder::JobTemplateConfigElementaryStreamVideoStreamH264Hlg>>,
+    pub r#hlg: Box<Option<super::super::types::transcoder::JobTemplateConfigElementaryStreamVideoStreamH264Hlg>>,
     /// Pixel format to use. The default is 'yuv420p'.
     #[builder(into)]
     #[serde(rename = "pixelFormat")]
@@ -50,7 +50,7 @@ pub struct JobTemplateConfigElementaryStreamVideoStreamH264 {
     /// SDR color format setting for H264.
     #[builder(into)]
     #[serde(rename = "sdr")]
-    pub r#sdr: Option<Box<super::super::types::transcoder::JobTemplateConfigElementaryStreamVideoStreamH264Sdr>>,
+    pub r#sdr: Box<Option<super::super::types::transcoder::JobTemplateConfigElementaryStreamVideoStreamH264Sdr>>,
     /// Initial fullness of the Video Buffering Verifier (VBV) buffer in bits.
     #[builder(into)]
     #[serde(rename = "vbvFullnessBits")]

@@ -10,7 +10,7 @@ pub struct CacheDirectoryLdap {
     /// A `bind` block as defined above.
     #[builder(into)]
     #[serde(rename = "bind")]
-    pub r#bind: Option<Box<super::super::types::hpc::CacheDirectoryLdapBind>>,
+    pub r#bind: Box<Option<super::super::types::hpc::CacheDirectoryLdapBind>>,
     /// The URI of the CA certificate to validate the LDAP secure connection.
     #[builder(into)]
     #[serde(rename = "certificateValidationUri")]

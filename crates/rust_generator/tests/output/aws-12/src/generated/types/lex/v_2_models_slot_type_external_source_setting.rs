@@ -7,5 +7,5 @@ pub struct V2ModelsSlotTypeExternalSourceSetting {
     /// See `grammar_slot_type_setting` argument reference below.
     #[builder(into)]
     #[serde(rename = "grammarSlotTypeSetting")]
-    pub r#grammar_slot_type_setting: Option<Box<super::super::types::lex::V2ModelsSlotTypeExternalSourceSettingGrammarSlotTypeSetting>>,
+    pub r#grammar_slot_type_setting: Box<Option<super::super::types::lex::V2ModelsSlotTypeExternalSourceSettingGrammarSlotTypeSetting>>,
 }

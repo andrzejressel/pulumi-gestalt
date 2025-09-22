@@ -15,5 +15,5 @@ pub struct JobTemplateTemplateContainerEnv {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "valueSource")]
-    pub r#value_source: Option<Box<super::super::types::cloudrunv2::JobTemplateTemplateContainerEnvValueSource>>,
+    pub r#value_source: Box<Option<super::super::types::cloudrunv2::JobTemplateTemplateContainerEnvValueSource>>,
 }

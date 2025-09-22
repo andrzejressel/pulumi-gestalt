@@ -6,7 +6,7 @@ pub struct HciDeploymentSettingScaleUnitHostNetworkIntent {
     /// A `adapter_property_override` block as defined above. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "adapterPropertyOverride")]
-    pub r#adapter_property_override: Option<Box<super::super::types::stack::HciDeploymentSettingScaleUnitHostNetworkIntentAdapterPropertyOverride>>,
+    pub r#adapter_property_override: Box<Option<super::super::types::stack::HciDeploymentSettingScaleUnitHostNetworkIntentAdapterPropertyOverride>>,
     /// Whether to override adapter properties. Possible values are `true` and `false`. defaults to `false`. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "adapterPropertyOverrideEnabled")]
@@ -22,7 +22,7 @@ pub struct HciDeploymentSettingScaleUnitHostNetworkIntent {
     /// A `qos_policy_override` block as defined below. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "qosPolicyOverride")]
-    pub r#qos_policy_override: Option<Box<super::super::types::stack::HciDeploymentSettingScaleUnitHostNetworkIntentQosPolicyOverride>>,
+    pub r#qos_policy_override: Box<Option<super::super::types::stack::HciDeploymentSettingScaleUnitHostNetworkIntentQosPolicyOverride>>,
     /// Whether to override QoS policy. Possible values are `true` and `false`. defaults to `false`. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "qosPolicyOverrideEnabled")]
@@ -34,7 +34,7 @@ pub struct HciDeploymentSettingScaleUnitHostNetworkIntent {
     /// A `virtual_switch_configuration_override` block as defined below. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "virtualSwitchConfigurationOverride")]
-    pub r#virtual_switch_configuration_override: Option<Box<super::super::types::stack::HciDeploymentSettingScaleUnitHostNetworkIntentVirtualSwitchConfigurationOverride>>,
+    pub r#virtual_switch_configuration_override: Box<Option<super::super::types::stack::HciDeploymentSettingScaleUnitHostNetworkIntentVirtualSwitchConfigurationOverride>>,
     /// Whether to override virtual switch configuration. Possible values are `true` and `false`. defaults to `false`. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "virtualSwitchConfigurationOverrideEnabled")]

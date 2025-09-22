@@ -54,7 +54,7 @@ pub struct ZeroTrustAccessApplicationSaasApp {
     /// Hybrid and Implicit Flow options.
     #[builder(into)]
     #[serde(rename = "hybridAndImplicitOptions")]
-    pub r#hybrid_and_implicit_options: Option<Box<super::types::ZeroTrustAccessApplicationSaasAppHybridAndImplicitOptions>>,
+    pub r#hybrid_and_implicit_options: Box<Option<super::types::ZeroTrustAccessApplicationSaasAppHybridAndImplicitOptions>>,
     /// The unique identifier for the SaaS application.
     #[builder(into)]
     #[serde(rename = "idpEntityId")]

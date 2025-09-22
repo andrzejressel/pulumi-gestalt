@@ -6,7 +6,7 @@ pub struct DataSourceDynamodbConfig {
     /// The DeltaSyncConfig for a versioned data source. See `delta_sync_config` Block for details.
     #[builder(into)]
     #[serde(rename = "deltaSyncConfig")]
-    pub r#delta_sync_config: Option<Box<super::super::types::appsync::DataSourceDynamodbConfigDeltaSyncConfig>>,
+    pub r#delta_sync_config: Box<Option<super::super::types::appsync::DataSourceDynamodbConfigDeltaSyncConfig>>,
     /// AWS region of the DynamoDB table. Defaults to current region.
     #[builder(into)]
     #[serde(rename = "region")]

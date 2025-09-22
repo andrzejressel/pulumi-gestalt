@@ -14,11 +14,11 @@ pub struct DockerBuild {
     /// The version of the Docker builder.
     #[builder(into)]
     #[serde(rename = "builderVersion")]
-    pub r#builder_version: Option<Box<super::types::BuilderVersion>>,
+    pub r#builder_version: Box<Option<super::types::BuilderVersion>>,
     /// A list of image names to use as build cache. Images provided must have a cache manifest. Must provide authentication to cache registry.
     #[builder(into)]
     #[serde(rename = "cacheFrom")]
-    pub r#cache_from: Option<Box<super::types::CacheFrom>>,
+    pub r#cache_from: Box<Option<super::types::CacheFrom>>,
     /// The path to the build context to use.
     #[builder(into)]
     #[serde(rename = "context")]

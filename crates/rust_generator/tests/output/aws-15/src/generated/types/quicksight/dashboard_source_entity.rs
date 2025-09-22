@@ -6,5 +6,5 @@ pub struct DashboardSourceEntity {
     /// The source template. See source_template.
     #[builder(into)]
     #[serde(rename = "sourceTemplate")]
-    pub r#source_template: Option<Box<super::super::types::quicksight::DashboardSourceEntitySourceTemplate>>,
+    pub r#source_template: Box<Option<super::super::types::quicksight::DashboardSourceEntitySourceTemplate>>,
 }

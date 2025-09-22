@@ -14,5 +14,5 @@ pub struct DataQualityJobDefinitionNetworkConfig {
     /// Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "vpcConfig")]
-    pub r#vpc_config: Option<Box<super::super::types::sagemaker::DataQualityJobDefinitionNetworkConfigVpcConfig>>,
+    pub r#vpc_config: Box<Option<super::super::types::sagemaker::DataQualityJobDefinitionNetworkConfigVpcConfig>>,
 }

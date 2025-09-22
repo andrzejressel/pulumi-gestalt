@@ -7,7 +7,7 @@ pub struct AccessBoundaryPolicyRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "accessBoundaryRule")]
-    pub r#access_boundary_rule: Option<Box<super::super::types::iam::AccessBoundaryPolicyRuleAccessBoundaryRule>>,
+    pub r#access_boundary_rule: Box<Option<super::super::types::iam::AccessBoundaryPolicyRuleAccessBoundaryRule>>,
     /// The description of the rule.
     #[builder(into)]
     #[serde(rename = "description")]

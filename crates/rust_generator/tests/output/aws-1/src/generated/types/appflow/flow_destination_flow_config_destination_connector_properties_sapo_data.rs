@@ -5,7 +5,7 @@
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesSapoData {
     #[builder(into)]
     #[serde(rename = "errorHandlingConfig")]
-    pub r#error_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesSapoDataErrorHandlingConfig>>,
+    pub r#error_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesSapoDataErrorHandlingConfig>>,
     #[builder(into)]
     #[serde(rename = "idFieldNames")]
     pub r#id_field_names: Option<Vec<String>>,
@@ -15,7 +15,7 @@ pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesSapoData {
     /// Determines how Amazon AppFlow handles the success response that it gets from the connector after placing data. See Success Response Handling Config for more details.
     #[builder(into)]
     #[serde(rename = "successResponseHandlingConfig")]
-    pub r#success_response_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesSapoDataSuccessResponseHandlingConfig>>,
+    pub r#success_response_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesSapoDataSuccessResponseHandlingConfig>>,
     #[builder(into)]
     #[serde(rename = "writeOperationType")]
     pub r#write_operation_type: Option<String>,

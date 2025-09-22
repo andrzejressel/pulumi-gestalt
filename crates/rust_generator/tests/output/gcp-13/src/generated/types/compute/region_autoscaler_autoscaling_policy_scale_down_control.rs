@@ -7,7 +7,7 @@ pub struct RegionAutoscalerAutoscalingPolicyScaleDownControl {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "maxScaledDownReplicas")]
-    pub r#max_scaled_down_replicas: Option<Box<super::super::types::compute::RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas>>,
+    pub r#max_scaled_down_replicas: Box<Option<super::super::types::compute::RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas>>,
     /// How long back autoscaling should look when computing recommendations
     /// to include directives regarding slower scale down, as described above.
     #[builder(into)]

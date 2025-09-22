@@ -7,11 +7,11 @@ pub struct PreventionDiscoveryConfigTargetCloudSqlTarget {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetConditions>>,
+    pub r#conditions: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetConditions>>,
     /// Disable profiling for database resources that match this filter.
     #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetDisabled>>,
+    pub r#disabled: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetDisabled>>,
     /// Required. The tables the discovery cadence applies to. The first target with a matching filter will be the one to apply to a table.
     /// Structure is documented below.
     #[builder(into)]
@@ -21,5 +21,5 @@ pub struct PreventionDiscoveryConfigTargetCloudSqlTarget {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "generationCadence")]
-    pub r#generation_cadence: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadence>>,
+    pub r#generation_cadence: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadence>>,
 }

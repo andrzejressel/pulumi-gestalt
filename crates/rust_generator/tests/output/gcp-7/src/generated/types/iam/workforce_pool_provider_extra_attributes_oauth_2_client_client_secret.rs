@@ -7,5 +7,5 @@ pub struct WorkforcePoolProviderExtraAttributesOauth2ClientClientSecret {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Option<Box<super::super::types::iam::WorkforcePoolProviderExtraAttributesOauth2ClientClientSecretValue>>,
+    pub r#value: Box<Option<super::super::types::iam::WorkforcePoolProviderExtraAttributesOauth2ClientClientSecretValue>>,
 }

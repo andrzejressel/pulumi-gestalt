@@ -10,7 +10,7 @@ pub struct EnvironmentConfigSoftwareConfig {
     /// The configuration for Cloud Data Lineage integration. Supported for Cloud Composer environments in versions composer-2.1.2-airflow-*.*.* and newer
     #[builder(into)]
     #[serde(rename = "cloudDataLineageIntegration")]
-    pub r#cloud_data_lineage_integration: Option<Box<super::super::types::composer::EnvironmentConfigSoftwareConfigCloudDataLineageIntegration>>,
+    pub r#cloud_data_lineage_integration: Box<Option<super::super::types::composer::EnvironmentConfigSoftwareConfigCloudDataLineageIntegration>>,
     /// Additional environment variables to provide to the Apache Airflow scheduler, worker, and webserver processes. Environment variable names must match the regular expression [a-zA-Z_][a-zA-Z0-9_]*. They cannot specify Apache Airflow software configuration overrides (they cannot match the regular expression AIRFLOW__[A-Z0-9_]+__[A-Z0-9_]+), and they cannot match any of the following reserved names: AIRFLOW_HOME C_FORCE_ROOT CONTAINER_NAME DAGS_FOLDER GCP_PROJECT GCS_BUCKET GKE_CLUSTER_NAME SQL_DATABASE SQL_INSTANCE SQL_PASSWORD SQL_PROJECT SQL_REGION SQL_USER.
     #[builder(into)]
     #[serde(rename = "envVariables")]

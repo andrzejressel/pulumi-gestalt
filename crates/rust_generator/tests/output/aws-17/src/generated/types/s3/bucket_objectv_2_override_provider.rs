@@ -6,5 +6,5 @@ pub struct BucketObjectv2OverrideProvider {
     /// Override the provider `default_tags` configuration block.
     #[builder(into)]
     #[serde(rename = "defaultTags")]
-    pub r#default_tags: Option<Box<super::super::types::s3::BucketObjectv2OverrideProviderDefaultTags>>,
+    pub r#default_tags: Box<Option<super::super::types::s3::BucketObjectv2OverrideProviderDefaultTags>>,
 }

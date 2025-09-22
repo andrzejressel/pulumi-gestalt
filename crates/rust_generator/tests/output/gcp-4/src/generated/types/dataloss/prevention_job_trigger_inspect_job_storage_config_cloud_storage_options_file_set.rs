@@ -7,7 +7,7 @@ pub struct PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSet
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "regexFileSet")]
-    pub r#regex_file_set: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet>>,
+    pub r#regex_file_set: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSet>>,
     /// The Cloud Storage url of the file(s) to scan, in the format `gs://<bucket>/<path>`. Trailing wildcard
     /// in the path is allowed.
     /// If the url ends in a trailing slash, the bucket or directory represented by the url will be scanned

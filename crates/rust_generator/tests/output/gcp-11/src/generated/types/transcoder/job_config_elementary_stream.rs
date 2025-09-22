@@ -7,7 +7,7 @@ pub struct JobConfigElementaryStream {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "audioStream")]
-    pub r#audio_stream: Option<Box<super::super::types::transcoder::JobConfigElementaryStreamAudioStream>>,
+    pub r#audio_stream: Box<Option<super::super::types::transcoder::JobConfigElementaryStreamAudioStream>>,
     /// A unique key for this atom.
     #[builder(into)]
     #[serde(rename = "key")]
@@ -16,5 +16,5 @@ pub struct JobConfigElementaryStream {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "videoStream")]
-    pub r#video_stream: Option<Box<super::super::types::transcoder::JobConfigElementaryStreamVideoStream>>,
+    pub r#video_stream: Box<Option<super::super::types::transcoder::JobConfigElementaryStreamVideoStream>>,
 }

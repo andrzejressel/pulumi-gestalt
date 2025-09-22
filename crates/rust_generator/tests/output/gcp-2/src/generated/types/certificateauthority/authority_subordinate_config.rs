@@ -15,5 +15,5 @@ pub struct AuthoritySubordinateConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pemIssuerChain")]
-    pub r#pem_issuer_chain: Option<Box<super::super::types::certificateauthority::AuthoritySubordinateConfigPemIssuerChain>>,
+    pub r#pem_issuer_chain: Box<Option<super::super::types::certificateauthority::AuthoritySubordinateConfigPemIssuerChain>>,
 }

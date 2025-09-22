@@ -10,7 +10,7 @@ pub struct DataLakeConfiguration {
     /// Provides lifecycle details of Amazon Security Lake object.
     #[builder(into)]
     #[serde(rename = "lifecycleConfiguration")]
-    pub r#lifecycle_configuration: Option<Box<super::super::types::securitylake::DataLakeConfigurationLifecycleConfiguration>>,
+    pub r#lifecycle_configuration: Box<Option<super::super::types::securitylake::DataLakeConfigurationLifecycleConfiguration>>,
     /// The AWS Regions where Security Lake is automatically enabled.
     #[builder(into)]
     #[serde(rename = "region")]
@@ -18,5 +18,5 @@ pub struct DataLakeConfiguration {
     /// Provides replication details of Amazon Security Lake object.
     #[builder(into)]
     #[serde(rename = "replicationConfiguration")]
-    pub r#replication_configuration: Option<Box<super::super::types::securitylake::DataLakeConfigurationReplicationConfiguration>>,
+    pub r#replication_configuration: Box<Option<super::super::types::securitylake::DataLakeConfigurationReplicationConfiguration>>,
 }

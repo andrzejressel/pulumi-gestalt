@@ -6,9 +6,9 @@ pub struct StreamProcessorOutput {
     /// The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results. See `kinesis_data_stream`.
     #[builder(into)]
     #[serde(rename = "kinesisDataStream")]
-    pub r#kinesis_data_stream: Option<Box<super::super::types::rekognition::StreamProcessorOutputKinesisDataStream>>,
+    pub r#kinesis_data_stream: Box<Option<super::super::types::rekognition::StreamProcessorOutputKinesisDataStream>>,
     /// The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. See `s3_destination`.
     #[builder(into)]
     #[serde(rename = "s3Destination")]
-    pub r#s_3_destination: Option<Box<super::super::types::rekognition::StreamProcessorOutputS3Destination>>,
+    pub r#s_3_destination: Box<Option<super::super::types::rekognition::StreamProcessorOutputS3Destination>>,
 }

@@ -12,5 +12,5 @@ pub struct FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubCon
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "templateLibrary")]
-    pub r#template_library: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary>>,
+    pub r#template_library: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary>>,
 }

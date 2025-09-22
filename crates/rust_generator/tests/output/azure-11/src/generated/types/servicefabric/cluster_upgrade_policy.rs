@@ -6,7 +6,7 @@ pub struct ClusterUpgradePolicy {
     /// A `delta_health_policy` block as defined below
     #[builder(into)]
     #[serde(rename = "deltaHealthPolicy")]
-    pub r#delta_health_policy: Option<Box<super::super::types::servicefabric::ClusterUpgradePolicyDeltaHealthPolicy>>,
+    pub r#delta_health_policy: Box<Option<super::super::types::servicefabric::ClusterUpgradePolicyDeltaHealthPolicy>>,
     /// Indicates whether to restart the Service Fabric node even if only dynamic configurations have changed.
     #[builder(into)]
     #[serde(rename = "forceRestartEnabled")]
@@ -26,7 +26,7 @@ pub struct ClusterUpgradePolicy {
     /// A `health_policy` block as defined below
     #[builder(into)]
     #[serde(rename = "healthPolicy")]
-    pub r#health_policy: Option<Box<super::super::types::servicefabric::ClusterUpgradePolicyHealthPolicy>>,
+    pub r#health_policy: Box<Option<super::super::types::servicefabric::ClusterUpgradePolicyHealthPolicy>>,
     /// Specifies the duration, in "hh:mm:ss" string format, that Service Fabric takes to upgrade a single upgrade domain. After this period, the upgrade fails. Defaults to `02:00:00`.
     #[builder(into)]
     #[serde(rename = "upgradeDomainTimeout")]

@@ -9,5 +9,5 @@ pub struct OntapStorageVirtualMachineActiveDirectoryConfiguration {
     pub r#netbios_name: Option<String>,
     #[builder(into)]
     #[serde(rename = "selfManagedActiveDirectoryConfiguration")]
-    pub r#self_managed_active_directory_configuration: Option<Box<super::super::types::fsx::OntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration>>,
+    pub r#self_managed_active_directory_configuration: Box<Option<super::super::types::fsx::OntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration>>,
 }

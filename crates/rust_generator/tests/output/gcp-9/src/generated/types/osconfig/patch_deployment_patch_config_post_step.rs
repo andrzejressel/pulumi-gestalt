@@ -7,10 +7,10 @@ pub struct PatchDeploymentPatchConfigPostStep {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "linuxExecStepConfig")]
-    pub r#linux_exec_step_config: Option<Box<super::super::types::osconfig::PatchDeploymentPatchConfigPostStepLinuxExecStepConfig>>,
+    pub r#linux_exec_step_config: Box<Option<super::super::types::osconfig::PatchDeploymentPatchConfigPostStepLinuxExecStepConfig>>,
     /// The ExecStepConfig for all Windows VMs targeted by the PatchJob.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "windowsExecStepConfig")]
-    pub r#windows_exec_step_config: Option<Box<super::super::types::osconfig::PatchDeploymentPatchConfigPostStepWindowsExecStepConfig>>,
+    pub r#windows_exec_step_config: Box<Option<super::super::types::osconfig::PatchDeploymentPatchConfigPostStepWindowsExecStepConfig>>,
 }

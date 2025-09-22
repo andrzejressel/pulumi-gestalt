@@ -8,11 +8,11 @@ pub struct FeatureMembershipConfigmanagement {
     /// This field will be ignored and should not be set.
     #[builder(into)]
     #[serde(rename = "binauthz")]
-    pub r#binauthz: Option<Box<super::super::types::gkehub::FeatureMembershipConfigmanagementBinauthz>>,
+    pub r#binauthz: Box<Option<super::super::types::gkehub::FeatureMembershipConfigmanagementBinauthz>>,
     /// Config Sync configuration for the cluster. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "configSync")]
-    pub r#config_sync: Option<Box<super::super::types::gkehub::FeatureMembershipConfigmanagementConfigSync>>,
+    pub r#config_sync: Box<Option<super::super::types::gkehub::FeatureMembershipConfigmanagementConfigSync>>,
     /// Hierarchy Controller configuration for the cluster. Structure is documented below.
     /// Configuring Hierarchy Controller through the configmanagement feature is no longer recommended.
     /// Use open source Kubernetes [Hierarchical Namespace Controller (HNC)](https://github.com/kubernetes-sigs/hierarchical-namespaces) instead.
@@ -20,7 +20,7 @@ pub struct FeatureMembershipConfigmanagement {
     /// to migrate from Hierarchy Controller to HNC.
     #[builder(into)]
     #[serde(rename = "hierarchyController")]
-    pub r#hierarchy_controller: Option<Box<super::super::types::gkehub::FeatureMembershipConfigmanagementHierarchyController>>,
+    pub r#hierarchy_controller: Box<Option<super::super::types::gkehub::FeatureMembershipConfigmanagementHierarchyController>>,
     /// Set this field to MANAGEMENT_AUTOMATIC to enable Config Sync auto-upgrades, and set this field to MANAGEMENT_MANUAL or MANAGEMENT_UNSPECIFIED to disable Config Sync auto-upgrades.
     #[builder(into)]
     #[serde(rename = "management")]
@@ -30,7 +30,7 @@ pub struct FeatureMembershipConfigmanagement {
     /// Use the policycontroller feature instead.
     #[builder(into)]
     #[serde(rename = "policyController")]
-    pub r#policy_controller: Option<Box<super::super::types::gkehub::FeatureMembershipConfigmanagementPolicyController>>,
+    pub r#policy_controller: Box<Option<super::super::types::gkehub::FeatureMembershipConfigmanagementPolicyController>>,
     /// Version of Config Sync installed.
     #[builder(into)]
     #[serde(rename = "version")]

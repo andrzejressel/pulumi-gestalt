@@ -5,11 +5,11 @@
 pub struct JavaAppLayerLoadBasedAutoScaling {
     #[builder(into)]
     #[serde(rename = "downscaling")]
-    pub r#downscaling: Option<Box<super::super::types::opsworks::JavaAppLayerLoadBasedAutoScalingDownscaling>>,
+    pub r#downscaling: Box<Option<super::super::types::opsworks::JavaAppLayerLoadBasedAutoScalingDownscaling>>,
     #[builder(into)]
     #[serde(rename = "enable")]
     pub r#enable: Option<bool>,
     #[builder(into)]
     #[serde(rename = "upscaling")]
-    pub r#upscaling: Option<Box<super::super::types::opsworks::JavaAppLayerLoadBasedAutoScalingUpscaling>>,
+    pub r#upscaling: Box<Option<super::super::types::opsworks::JavaAppLayerLoadBasedAutoScalingUpscaling>>,
 }

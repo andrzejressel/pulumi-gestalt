@@ -10,7 +10,7 @@ pub struct PolicySecurityServicePolicyData {
     /// Contains the Network Firewall firewall policy options to configure a centralized deployment model. Documented below.
     #[builder(into)]
     #[serde(rename = "policyOption")]
-    pub r#policy_option: Option<Box<super::super::types::fms::PolicySecurityServicePolicyDataPolicyOption>>,
+    pub r#policy_option: Box<Option<super::super::types::fms::PolicySecurityServicePolicyDataPolicyOption>>,
     /// The service that the policy is using to protect the resources. For the current list of supported types, please refer to the [AWS Firewall Manager SecurityServicePolicyData API Type Reference](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html#fms-Type-SecurityServicePolicyData-Type).
     #[builder(into)]
     #[serde(rename = "type")]

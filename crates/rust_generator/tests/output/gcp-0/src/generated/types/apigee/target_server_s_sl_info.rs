@@ -15,7 +15,7 @@ pub struct TargetServerSSlInfo {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "commonName")]
-    pub r#common_name: Option<Box<super::super::types::apigee::TargetServerSSlInfoCommonName>>,
+    pub r#common_name: Box<Option<super::super::types::apigee::TargetServerSSlInfoCommonName>>,
     /// Enables TLS. If false, neither one-way nor two-way TLS will be enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]

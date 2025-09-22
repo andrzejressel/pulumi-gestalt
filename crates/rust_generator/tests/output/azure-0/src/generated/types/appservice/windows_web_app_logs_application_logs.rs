@@ -6,7 +6,7 @@ pub struct WindowsWebAppLogsApplicationLogs {
     /// An `azure_blob_storage` block as defined below.
     #[builder(into)]
     #[serde(rename = "azureBlobStorage")]
-    pub r#azure_blob_storage: Option<Box<super::super::types::appservice::WindowsWebAppLogsApplicationLogsAzureBlobStorage>>,
+    pub r#azure_blob_storage: Box<Option<super::super::types::appservice::WindowsWebAppLogsApplicationLogsAzureBlobStorage>>,
     /// Log level. Possible values include: `Off`, `Verbose`, `Information`, `Warning`, and `Error`.
     #[builder(into)]
     #[serde(rename = "fileSystemLevel")]

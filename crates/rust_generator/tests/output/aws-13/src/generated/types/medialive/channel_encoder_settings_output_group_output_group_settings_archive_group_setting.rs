@@ -6,7 +6,7 @@ pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsArchiveGroupSetti
     /// Parameters that control the interactions with the CDN. See Archive CDN Settings for more details.
     #[builder(into)]
     #[serde(rename = "archiveCdnSettings")]
-    pub r#archive_cdn_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsArchiveGroupSettingArchiveCdnSettings>>,
+    pub r#archive_cdn_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsArchiveGroupSettingArchiveCdnSettings>>,
     /// A director and base filename where archive files should be written. See Destination for more details.
     #[builder(into)]
     #[serde(rename = "destination")]

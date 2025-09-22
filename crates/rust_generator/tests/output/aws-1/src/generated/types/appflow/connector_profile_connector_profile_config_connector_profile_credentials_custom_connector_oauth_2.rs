@@ -14,7 +14,7 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCust
     pub r#client_secret: Option<String>,
     #[builder(into)]
     #[serde(rename = "oauthRequest")]
-    pub r#oauth_request: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequest>>,
+    pub r#oauth_request: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequest>>,
     #[builder(into)]
     #[serde(rename = "refreshToken")]
     pub r#refresh_token: Option<String>,

@@ -11,12 +11,12 @@ pub struct ConnectionAuthConfigSshPublicKey {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sshClientCert")]
-    pub r#ssh_client_cert: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigSshPublicKeySshClientCert>>,
+    pub r#ssh_client_cert: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigSshPublicKeySshClientCert>>,
     /// Password (passphrase) for ssh client certificate if it has one.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sshClientCertPass")]
-    pub r#ssh_client_cert_pass: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigSshPublicKeySshClientCertPass>>,
+    pub r#ssh_client_cert_pass: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigSshPublicKeySshClientCertPass>>,
     /// The user account used to authenticate.
     #[builder(into)]
     #[serde(rename = "username")]

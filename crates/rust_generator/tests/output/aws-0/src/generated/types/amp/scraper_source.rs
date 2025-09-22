@@ -6,5 +6,5 @@ pub struct ScraperSource {
     /// Configuration block for an EKS cluster source. See `eks`.
     #[builder(into)]
     #[serde(rename = "eks")]
-    pub r#eks: Option<Box<super::super::types::amp::ScraperSourceEks>>,
+    pub r#eks: Box<Option<super::super::types::amp::ScraperSourceEks>>,
 }

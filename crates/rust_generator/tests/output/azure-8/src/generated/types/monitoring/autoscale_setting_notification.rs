@@ -6,7 +6,7 @@ pub struct AutoscaleSettingNotification {
     /// A `email` block as defined below.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Option<Box<super::super::types::monitoring::AutoscaleSettingNotificationEmail>>,
+    pub r#email: Box<Option<super::super::types::monitoring::AutoscaleSettingNotificationEmail>>,
     /// One or more `webhook` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "webhooks")]

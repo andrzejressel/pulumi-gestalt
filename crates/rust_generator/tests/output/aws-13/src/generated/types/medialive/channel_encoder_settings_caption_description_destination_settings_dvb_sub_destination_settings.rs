@@ -18,7 +18,7 @@ pub struct ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDest
     /// External font file used for caption burn-in. File extension must be ‘ttf’ or ‘tte’. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match. See Font for more details.
     #[builder(into)]
     #[serde(rename = "font")]
-    pub r#font: Option<Box<super::super::types::medialive::ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettingsFont>>,
+    pub r#font: Box<Option<super::super::types::medialive::ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettingsFont>>,
     /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     #[builder(into)]
     #[serde(rename = "fontColor")]

@@ -18,5 +18,5 @@ pub struct ZeroTrustGatewaySettingsAntivirus {
     /// Set notifications for antivirus.
     #[builder(into)]
     #[serde(rename = "notificationSettings")]
-    pub r#notification_settings: Option<Box<super::types::ZeroTrustGatewaySettingsAntivirusNotificationSettings>>,
+    pub r#notification_settings: Box<Option<super::types::ZeroTrustGatewaySettingsAntivirusNotificationSettings>>,
 }

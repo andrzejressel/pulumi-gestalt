@@ -14,7 +14,7 @@ pub struct SecurityPolicyRule {
     /// Additional actions that are performed on headers. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "headerAction")]
-    pub r#header_action: Option<Box<super::super::types::compute::SecurityPolicyRuleHeaderAction>>,
+    pub r#header_action: Box<Option<super::super::types::compute::SecurityPolicyRuleHeaderAction>>,
     /// A match condition that incoming traffic is evaluated against.
     /// If it evaluates to true, the corresponding `action` is enforced. Structure is documented below.
     #[builder(into)]
@@ -23,7 +23,7 @@ pub struct SecurityPolicyRule {
     /// Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if `evaluatePreconfiguredWaf()` is not used, this field will have no effect. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "preconfiguredWafConfig")]
-    pub r#preconfigured_waf_config: Option<Box<super::super::types::compute::SecurityPolicyRulePreconfiguredWafConfig>>,
+    pub r#preconfigured_waf_config: Box<Option<super::super::types::compute::SecurityPolicyRulePreconfiguredWafConfig>>,
     /// When set to true, the `action` specified above is not enforced.
     /// Stackdriver logs for requests that trigger a preview action are annotated as such.
     #[builder(into)]
@@ -37,9 +37,9 @@ pub struct SecurityPolicyRule {
     /// Must be specified if the `action` is `rate_based_ban` or `throttle`. Cannot be specified for other actions. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rateLimitOptions")]
-    pub r#rate_limit_options: Option<Box<super::super::types::compute::SecurityPolicyRuleRateLimitOptions>>,
+    pub r#rate_limit_options: Box<Option<super::super::types::compute::SecurityPolicyRuleRateLimitOptions>>,
     /// Can be specified if the `action` is `redirect`. Cannot be specified for other actions. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "redirectOptions")]
-    pub r#redirect_options: Option<Box<super::super::types::compute::SecurityPolicyRuleRedirectOptions>>,
+    pub r#redirect_options: Box<Option<super::super::types::compute::SecurityPolicyRuleRedirectOptions>>,
 }

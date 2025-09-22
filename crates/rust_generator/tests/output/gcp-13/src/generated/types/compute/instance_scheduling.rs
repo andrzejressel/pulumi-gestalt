@@ -23,7 +23,7 @@ pub struct InstanceScheduling {
     ///   hour.
     #[builder(into)]
     #[serde(rename = "localSsdRecoveryTimeout")]
-    pub r#local_ssd_recovery_timeout: Option<Box<super::super::types::compute::InstanceSchedulingLocalSsdRecoveryTimeout>>,
+    pub r#local_ssd_recovery_timeout: Box<Option<super::super::types::compute::InstanceSchedulingLocalSsdRecoveryTimeout>>,
     /// Specifies the frequency of planned maintenance events. The accepted values are: `PERIODIC`.
     #[builder(into)]
     #[serde(rename = "maintenanceInterval")]
@@ -31,7 +31,7 @@ pub struct InstanceScheduling {
     /// The duration of the instance. Instance will run and be terminated after then, the termination action could be defined in `instance_termination_action`. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "maxRunDuration")]
-    pub r#max_run_duration: Option<Box<super::super::types::compute::InstanceSchedulingMaxRunDuration>>,
+    pub r#max_run_duration: Box<Option<super::super::types::compute::InstanceSchedulingMaxRunDuration>>,
     /// The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
     #[builder(into)]
     #[serde(rename = "minNodeCpus")]
@@ -53,7 +53,7 @@ pub struct InstanceScheduling {
     /// Specifies the action to be performed when the instance is terminated using `max_run_duration` and `STOP` `instance_termination_action`. Only support `true` `discard_local_ssd` at this point. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "onInstanceStopAction")]
-    pub r#on_instance_stop_action: Option<Box<super::super::types::compute::InstanceSchedulingOnInstanceStopAction>>,
+    pub r#on_instance_stop_action: Box<Option<super::super::types::compute::InstanceSchedulingOnInstanceStopAction>>,
     /// Specifies if the instance is preemptible.
     /// If this field is set to true, then `automatic_restart` must be
     /// set to false.  Defaults to false.

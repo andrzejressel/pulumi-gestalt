@@ -21,25 +21,25 @@ pub struct ConnectionAuthConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oauth2AuthCodeFlow")]
-    pub r#oauth_2_auth_code_flow: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2AuthCodeFlow>>,
+    pub r#oauth_2_auth_code_flow: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2AuthCodeFlow>>,
     /// OAuth3 Client Credentials for Authentication.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oauth2ClientCredentials")]
-    pub r#oauth_2_client_credentials: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2ClientCredentials>>,
+    pub r#oauth_2_client_credentials: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2ClientCredentials>>,
     /// OAuth2 JWT Bearer for Authentication.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oauth2JwtBearer")]
-    pub r#oauth_2_jwt_bearer: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearer>>,
+    pub r#oauth_2_jwt_bearer: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearer>>,
     /// SSH Public Key for Authentication.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sshPublicKey")]
-    pub r#ssh_public_key: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigSshPublicKey>>,
+    pub r#ssh_public_key: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigSshPublicKey>>,
     /// User password for Authentication.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "userPassword")]
-    pub r#user_password: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigUserPassword>>,
+    pub r#user_password: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigUserPassword>>,
 }

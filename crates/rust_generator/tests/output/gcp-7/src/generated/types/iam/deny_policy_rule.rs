@@ -7,7 +7,7 @@ pub struct DenyPolicyRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "denyRule")]
-    pub r#deny_rule: Option<Box<super::super::types::iam::DenyPolicyRuleDenyRule>>,
+    pub r#deny_rule: Box<Option<super::super::types::iam::DenyPolicyRuleDenyRule>>,
     /// The description of the rule.
     #[builder(into)]
     #[serde(rename = "description")]

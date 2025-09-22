@@ -11,7 +11,7 @@ pub struct DataSourceCredentials {
     /// Credential pair. See Credential Pair below for more details.
     #[builder(into)]
     #[serde(rename = "credentialPair")]
-    pub r#credential_pair: Option<Box<super::super::types::quicksight::DataSourceCredentialsCredentialPair>>,
+    pub r#credential_pair: Box<Option<super::super::types::quicksight::DataSourceCredentialsCredentialPair>>,
     /// The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
     #[builder(into)]
     #[serde(rename = "secretArn")]

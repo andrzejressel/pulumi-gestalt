@@ -14,7 +14,7 @@ pub struct RouteSpecHttp2RouteMatch {
     /// Client request path to match on.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Option<Box<super::super::types::appmesh::RouteSpecHttp2RouteMatchPath>>,
+    pub r#path: Box<Option<super::super::types::appmesh::RouteSpecHttp2RouteMatchPath>>,
     /// The port number to match from the request.
     #[builder(into)]
     #[serde(rename = "port")]

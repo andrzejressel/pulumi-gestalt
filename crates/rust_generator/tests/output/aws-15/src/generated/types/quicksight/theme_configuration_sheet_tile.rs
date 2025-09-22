@@ -6,5 +6,5 @@ pub struct ThemeConfigurationSheetTile {
     /// The border around a tile. See border.
     #[builder(into)]
     #[serde(rename = "border")]
-    pub r#border: Option<Box<super::super::types::quicksight::ThemeConfigurationSheetTileBorder>>,
+    pub r#border: Box<Option<super::super::types::quicksight::ThemeConfigurationSheetTileBorder>>,
 }

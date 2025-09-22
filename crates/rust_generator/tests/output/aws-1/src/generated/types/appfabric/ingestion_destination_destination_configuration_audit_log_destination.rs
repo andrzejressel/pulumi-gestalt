@@ -6,9 +6,9 @@ pub struct IngestionDestinationDestinationConfigurationAuditLogDestination {
     /// Contains information about an Amazon Data Firehose delivery stream.
     #[builder(into)]
     #[serde(rename = "firehoseStream")]
-    pub r#firehose_stream: Option<Box<super::super::types::appfabric::IngestionDestinationDestinationConfigurationAuditLogDestinationFirehoseStream>>,
+    pub r#firehose_stream: Box<Option<super::super::types::appfabric::IngestionDestinationDestinationConfigurationAuditLogDestinationFirehoseStream>>,
     /// Contains information about an Amazon S3 bucket.
     #[builder(into)]
     #[serde(rename = "s3Bucket")]
-    pub r#s_3_bucket: Option<Box<super::super::types::appfabric::IngestionDestinationDestinationConfigurationAuditLogDestinationS3Bucket>>,
+    pub r#s_3_bucket: Box<Option<super::super::types::appfabric::IngestionDestinationDestinationConfigurationAuditLogDestinationS3Bucket>>,
 }

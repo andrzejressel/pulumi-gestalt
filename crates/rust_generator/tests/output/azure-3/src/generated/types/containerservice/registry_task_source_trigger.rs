@@ -6,7 +6,7 @@ pub struct RegistryTaskSourceTrigger {
     /// A `authentication` block as defined above.
     #[builder(into)]
     #[serde(rename = "authentication")]
-    pub r#authentication: Option<Box<super::super::types::containerservice::RegistryTaskSourceTriggerAuthentication>>,
+    pub r#authentication: Box<Option<super::super::types::containerservice::RegistryTaskSourceTriggerAuthentication>>,
     /// The branch name of the source code.
     #[builder(into)]
     #[serde(rename = "branch")]

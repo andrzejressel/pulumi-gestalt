@@ -6,7 +6,7 @@ pub struct VirtualNodeSpecLoggingAccessLogFile {
     /// The specified format for the logs.
     #[builder(into)]
     #[serde(rename = "format")]
-    pub r#format: Option<Box<super::super::types::appmesh::VirtualNodeSpecLoggingAccessLogFileFormat>>,
+    pub r#format: Box<Option<super::super::types::appmesh::VirtualNodeSpecLoggingAccessLogFileFormat>>,
     /// File path to write access logs to. You can use `/dev/stdout` to send access logs to standard out. Must be between 1 and 255 characters in length.
     #[builder(into)]
     #[serde(rename = "path")]

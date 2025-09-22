@@ -27,7 +27,7 @@ pub struct MetastoreServiceHiveMetastoreConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "kerberosConfig")]
-    pub r#kerberos_config: Option<Box<super::super::types::dataproc::MetastoreServiceHiveMetastoreConfigKerberosConfig>>,
+    pub r#kerberos_config: Box<Option<super::super::types::dataproc::MetastoreServiceHiveMetastoreConfigKerberosConfig>>,
     /// The Hive metastore schema version.
     #[builder(into)]
     #[serde(rename = "version")]

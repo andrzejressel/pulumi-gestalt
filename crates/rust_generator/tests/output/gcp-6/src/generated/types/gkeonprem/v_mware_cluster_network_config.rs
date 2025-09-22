@@ -7,17 +7,17 @@ pub struct VMwareClusterNetworkConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "controlPlaneV2Config")]
-    pub r#control_plane_v_2_config: Option<Box<super::super::types::gkeonprem::VMwareClusterNetworkConfigControlPlaneV2Config>>,
+    pub r#control_plane_v_2_config: Box<Option<super::super::types::gkeonprem::VMwareClusterNetworkConfigControlPlaneV2Config>>,
     /// Configuration settings for a DHCP IP configuration.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "dhcpIpConfig")]
-    pub r#dhcp_ip_config: Option<Box<super::super::types::gkeonprem::VMwareClusterNetworkConfigDhcpIpConfig>>,
+    pub r#dhcp_ip_config: Box<Option<super::super::types::gkeonprem::VMwareClusterNetworkConfigDhcpIpConfig>>,
     /// Represents common network settings irrespective of the host's IP address.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "hostConfig")]
-    pub r#host_config: Option<Box<super::super::types::gkeonprem::VMwareClusterNetworkConfigHostConfig>>,
+    pub r#host_config: Box<Option<super::super::types::gkeonprem::VMwareClusterNetworkConfigHostConfig>>,
     /// All pods in the cluster are assigned an RFC1918 IPv4 address from these ranges.
     /// Only a single range is supported. This field cannot be changed after creation.
     #[builder(into)]
@@ -33,7 +33,7 @@ pub struct VMwareClusterNetworkConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "staticIpConfig")]
-    pub r#static_ip_config: Option<Box<super::super::types::gkeonprem::VMwareClusterNetworkConfigStaticIpConfig>>,
+    pub r#static_ip_config: Box<Option<super::super::types::gkeonprem::VMwareClusterNetworkConfigStaticIpConfig>>,
     /// vcenter_network specifies vCenter network name. Inherited from the admin cluster.
     #[builder(into)]
     #[serde(rename = "vcenterNetwork")]

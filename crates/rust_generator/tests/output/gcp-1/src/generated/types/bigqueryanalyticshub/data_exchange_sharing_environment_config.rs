@@ -6,9 +6,9 @@ pub struct DataExchangeSharingEnvironmentConfig {
     /// Data Clean Room (DCR), used for privacy-safe and secured data sharing.
     #[builder(into)]
     #[serde(rename = "dcrExchangeConfig")]
-    pub r#dcr_exchange_config: Option<Box<super::super::types::bigqueryanalyticshub::DataExchangeSharingEnvironmentConfigDcrExchangeConfig>>,
+    pub r#dcr_exchange_config: Box<Option<super::super::types::bigqueryanalyticshub::DataExchangeSharingEnvironmentConfigDcrExchangeConfig>>,
     /// Default Analytics Hub data exchange, used for secured data sharing.
     #[builder(into)]
     #[serde(rename = "defaultExchangeConfig")]
-    pub r#default_exchange_config: Option<Box<super::super::types::bigqueryanalyticshub::DataExchangeSharingEnvironmentConfigDefaultExchangeConfig>>,
+    pub r#default_exchange_config: Box<Option<super::super::types::bigqueryanalyticshub::DataExchangeSharingEnvironmentConfigDefaultExchangeConfig>>,
 }

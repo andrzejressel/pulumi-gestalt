@@ -6,9 +6,9 @@ pub struct DataQualityJobDefinitionDataQualityJobInput {
     /// Input object for the batch transform job. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "batchTransformInput")]
-    pub r#batch_transform_input: Option<Box<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityJobInputBatchTransformInput>>,
+    pub r#batch_transform_input: Box<Option<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityJobInputBatchTransformInput>>,
     /// Input object for the endpoint. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "endpointInput")]
-    pub r#endpoint_input: Option<Box<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityJobInputEndpointInput>>,
+    pub r#endpoint_input: Box<Option<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityJobInputEndpointInput>>,
 }

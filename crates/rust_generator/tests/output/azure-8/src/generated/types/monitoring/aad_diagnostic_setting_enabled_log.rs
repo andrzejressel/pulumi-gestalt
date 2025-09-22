@@ -9,5 +9,5 @@ pub struct AadDiagnosticSettingEnabledLog {
     pub r#category: String,
     #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Option<Box<super::super::types::monitoring::AadDiagnosticSettingEnabledLogRetentionPolicy>>,
+    pub r#retention_policy: Box<Option<super::super::types::monitoring::AadDiagnosticSettingEnabledLogRetentionPolicy>>,
 }

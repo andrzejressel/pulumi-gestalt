@@ -26,11 +26,11 @@ pub struct PipeTargetParametersEcsTaskParameters {
     /// Use this structure if the Amazon ECS task uses the awsvpc network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if LaunchType is FARGATE because the awsvpc mode is required for Fargate tasks. If you specify NetworkConfiguration when the target ECS task does not use the awsvpc network mode, the task fails. Detailed below.
     #[builder(into)]
     #[serde(rename = "networkConfiguration")]
-    pub r#network_configuration: Option<Box<super::super::types::pipes::PipeTargetParametersEcsTaskParametersNetworkConfiguration>>,
+    pub r#network_configuration: Box<Option<super::super::types::pipes::PipeTargetParametersEcsTaskParametersNetworkConfiguration>>,
     /// The overrides that are associated with a task. Detailed below.
     #[builder(into)]
     #[serde(rename = "overrides")]
-    pub r#overrides: Option<Box<super::super::types::pipes::PipeTargetParametersEcsTaskParametersOverrides>>,
+    pub r#overrides: Box<Option<super::super::types::pipes::PipeTargetParametersEcsTaskParametersOverrides>>,
     /// An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime). Detailed below.
     #[builder(into)]
     #[serde(rename = "placementConstraints")]

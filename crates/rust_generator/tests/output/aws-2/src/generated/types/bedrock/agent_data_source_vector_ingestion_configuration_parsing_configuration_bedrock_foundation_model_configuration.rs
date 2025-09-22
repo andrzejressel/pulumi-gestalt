@@ -10,5 +10,5 @@ pub struct AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedroc
     /// Instructions for interpreting the contents of the document. See `parsing_prompt` block for details.
     #[builder(into)]
     #[serde(rename = "parsingPrompt")]
-    pub r#parsing_prompt: Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockFoundationModelConfigurationParsingPrompt>>,
+    pub r#parsing_prompt: Box<Option<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockFoundationModelConfigurationParsingPrompt>>,
 }

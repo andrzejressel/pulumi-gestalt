@@ -19,7 +19,7 @@ pub struct RegionUrlMapPathMatcherPathRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "routeAction")]
-    pub r#route_action: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteAction>>,
+    pub r#route_action: Box<Option<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteAction>>,
     /// The region backend service resource to which traffic is
     /// directed if this rule is matched. If routeAction is additionally specified,
     /// advanced routing actions like URL Rewrites, etc. take effect prior to sending
@@ -36,5 +36,5 @@ pub struct RegionUrlMapPathMatcherPathRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "urlRedirect")]
-    pub r#url_redirect: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherPathRuleUrlRedirect>>,
+    pub r#url_redirect: Box<Option<super::super::types::compute::RegionUrlMapPathMatcherPathRuleUrlRedirect>>,
 }

@@ -40,7 +40,7 @@ pub struct ServiceTemplate {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "nodeSelector")]
-    pub r#node_selector: Option<Box<super::super::types::cloudrunv2::ServiceTemplateNodeSelector>>,
+    pub r#node_selector: Box<Option<super::super::types::cloudrunv2::ServiceTemplateNodeSelector>>,
     /// The unique name for the revision. If this field is omitted, it will be automatically generated based on the Service name.
     #[builder(into)]
     #[serde(rename = "revision")]
@@ -49,7 +49,7 @@ pub struct ServiceTemplate {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "scaling")]
-    pub r#scaling: Option<Box<super::super::types::cloudrunv2::ServiceTemplateScaling>>,
+    pub r#scaling: Box<Option<super::super::types::cloudrunv2::ServiceTemplateScaling>>,
     /// Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has. If not provided, the revision will use the project's default service account.
     #[builder(into)]
     #[serde(rename = "serviceAccount")]
@@ -58,7 +58,7 @@ pub struct ServiceTemplate {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "serviceMesh")]
-    pub r#service_mesh: Option<Box<super::super::types::cloudrunv2::ServiceTemplateServiceMesh>>,
+    pub r#service_mesh: Box<Option<super::super::types::cloudrunv2::ServiceTemplateServiceMesh>>,
     /// Enables session affinity. For more information, go to https://cloud.google.com/run/docs/configuring/session-affinity
     #[builder(into)]
     #[serde(rename = "sessionAffinity")]
@@ -77,5 +77,5 @@ pub struct ServiceTemplate {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vpcAccess")]
-    pub r#vpc_access: Option<Box<super::super::types::cloudrunv2::ServiceTemplateVpcAccess>>,
+    pub r#vpc_access: Box<Option<super::super::types::cloudrunv2::ServiceTemplateVpcAccess>>,
 }

@@ -7,7 +7,7 @@ pub struct RegionBackendServiceCircuitBreakers {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "connectTimeout")]
-    pub r#connect_timeout: Option<Box<super::super::types::compute::RegionBackendServiceCircuitBreakersConnectTimeout>>,
+    pub r#connect_timeout: Box<Option<super::super::types::compute::RegionBackendServiceCircuitBreakersConnectTimeout>>,
     /// The maximum number of connections to the backend cluster.
     /// Defaults to 1024.
     #[builder(into)]

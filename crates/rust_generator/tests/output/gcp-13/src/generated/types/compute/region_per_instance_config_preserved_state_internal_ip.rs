@@ -17,5 +17,5 @@ pub struct RegionPerInstanceConfigPreservedStateInternalIp {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Option<Box<super::super::types::compute::RegionPerInstanceConfigPreservedStateInternalIpIpAddress>>,
+    pub r#ip_address: Box<Option<super::super::types::compute::RegionPerInstanceConfigPreservedStateInternalIpIpAddress>>,
 }

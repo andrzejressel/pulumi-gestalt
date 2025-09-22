@@ -7,7 +7,7 @@ pub struct RecordSetRoutingPolicyGeo {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "healthCheckedTargets")]
-    pub r#health_checked_targets: Option<Box<super::super::types::dns::RecordSetRoutingPolicyGeoHealthCheckedTargets>>,
+    pub r#health_checked_targets: Box<Option<super::super::types::dns::RecordSetRoutingPolicyGeoHealthCheckedTargets>>,
     /// The location name defined in Google Cloud.
     #[builder(into)]
     #[serde(rename = "location")]

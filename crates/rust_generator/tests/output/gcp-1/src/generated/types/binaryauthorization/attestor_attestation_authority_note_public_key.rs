@@ -36,5 +36,5 @@ pub struct AttestorAttestationAuthorityNotePublicKey {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pkixPublicKey")]
-    pub r#pkix_public_key: Option<Box<super::super::types::binaryauthorization::AttestorAttestationAuthorityNotePublicKeyPkixPublicKey>>,
+    pub r#pkix_public_key: Box<Option<super::super::types::binaryauthorization::AttestorAttestationAuthorityNotePublicKeyPkixPublicKey>>,
 }

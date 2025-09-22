@@ -6,9 +6,9 @@ pub struct RouteSpecHttp2RouteTimeout {
     /// Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
     #[builder(into)]
     #[serde(rename = "idle")]
-    pub r#idle: Option<Box<super::super::types::appmesh::RouteSpecHttp2RouteTimeoutIdle>>,
+    pub r#idle: Box<Option<super::super::types::appmesh::RouteSpecHttp2RouteTimeoutIdle>>,
     /// Per request timeout.
     #[builder(into)]
     #[serde(rename = "perRequest")]
-    pub r#per_request: Option<Box<super::super::types::appmesh::RouteSpecHttp2RouteTimeoutPerRequest>>,
+    pub r#per_request: Box<Option<super::super::types::appmesh::RouteSpecHttp2RouteTimeoutPerRequest>>,
 }

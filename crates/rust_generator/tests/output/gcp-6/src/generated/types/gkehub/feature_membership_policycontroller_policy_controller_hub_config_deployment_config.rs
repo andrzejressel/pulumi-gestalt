@@ -10,7 +10,7 @@ pub struct FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentC
     /// Container resource requirements.
     #[builder(into)]
     #[serde(rename = "containerResources")]
-    pub r#container_resources: Option<Box<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources>>,
+    pub r#container_resources: Box<Option<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources>>,
     /// Pod affinity configuration. Possible values: AFFINITY_UNSPECIFIED, NO_AFFINITY, ANTI_AFFINITY
     #[builder(into)]
     #[serde(rename = "podAffinity")]

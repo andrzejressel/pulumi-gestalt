@@ -22,5 +22,5 @@ pub struct PreventionJobTriggerInspectJobStorageConfigTimespanConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "timestampField")]
-    pub r#timestamp_field: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField>>,
+    pub r#timestamp_field: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField>>,
 }

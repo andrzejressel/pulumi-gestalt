@@ -22,7 +22,7 @@ pub struct WorkflowTemplateJobSparkJob {
     /// The runtime log config for job execution.
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Option<Box<super::super::types::dataproc::WorkflowTemplateJobSparkJobLoggingConfig>>,
+    pub r#logging_config: Box<Option<super::super::types::dataproc::WorkflowTemplateJobSparkJobLoggingConfig>>,
     /// The name of the driver's main class. The jar file that contains the class must be in the default CLASSPATH or specified in `jar_file_uris`.
     #[builder(into)]
     #[serde(rename = "mainClass")]

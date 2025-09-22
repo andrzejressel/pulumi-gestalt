@@ -6,11 +6,11 @@ pub struct SparkClusterRolesWorkerNodeAutoscale {
     /// A `capacity` block as defined below.
     #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Option<Box<super::super::types::hdinsight::SparkClusterRolesWorkerNodeAutoscaleCapacity>>,
+    pub r#capacity: Box<Option<super::super::types::hdinsight::SparkClusterRolesWorkerNodeAutoscaleCapacity>>,
     /// A `recurrence` block as defined below.
     /// 
     /// > **NOTE:** Either a `capacity` or `recurrence` block must be specified - but not both.
     #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Option<Box<super::super::types::hdinsight::SparkClusterRolesWorkerNodeAutoscaleRecurrence>>,
+    pub r#recurrence: Box<Option<super::super::types::hdinsight::SparkClusterRolesWorkerNodeAutoscaleRecurrence>>,
 }

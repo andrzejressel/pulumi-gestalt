@@ -11,7 +11,7 @@ pub struct PatchDeploymentPatchConfigPostStepWindowsExecStepConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "gcsObject")]
-    pub r#gcs_object: Option<Box<super::super::types::osconfig::PatchDeploymentPatchConfigPostStepWindowsExecStepConfigGcsObject>>,
+    pub r#gcs_object: Box<Option<super::super::types::osconfig::PatchDeploymentPatchConfigPostStepWindowsExecStepConfigGcsObject>>,
     /// The script interpreter to use to run the script. If no interpreter is specified the script will
     /// be executed directly, which will likely only succeed for scripts with shebang lines.
     /// Possible values are: `SHELL`, `POWERSHELL`.

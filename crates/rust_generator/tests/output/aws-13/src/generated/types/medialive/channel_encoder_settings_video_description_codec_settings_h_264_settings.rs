@@ -33,7 +33,7 @@ pub struct ChannelEncoderSettingsVideoDescriptionCodecSettingsH264Settings {
     /// Filters to apply to an encode. See H264 Filter Settings for more details.
     #[builder(into)]
     #[serde(rename = "filterSettings")]
-    pub r#filter_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettings>>,
+    pub r#filter_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettings>>,
     /// Four bit AFD value to write on all frames of video in the output stream.
     #[builder(into)]
     #[serde(rename = "fixedAfd")]

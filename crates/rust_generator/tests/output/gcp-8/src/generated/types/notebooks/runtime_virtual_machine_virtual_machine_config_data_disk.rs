@@ -55,7 +55,7 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigDataDisk {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "initializeParams")]
-    pub r#initialize_params: Option<Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams>>,
+    pub r#initialize_params: Box<Option<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams>>,
     /// "Specifies the disk interface to use for attaching this disk,
     /// which is either SCSI or NVME. The default is SCSI. Persistent
     /// disks must always use SCSI and the request will fail if you attempt

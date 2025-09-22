@@ -5,7 +5,7 @@
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforce {
     #[builder(into)]
     #[serde(rename = "errorHandlingConfig")]
-    pub r#error_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforceErrorHandlingConfig>>,
+    pub r#error_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforceErrorHandlingConfig>>,
     #[builder(into)]
     #[serde(rename = "idFieldNames")]
     pub r#id_field_names: Option<Vec<String>>,

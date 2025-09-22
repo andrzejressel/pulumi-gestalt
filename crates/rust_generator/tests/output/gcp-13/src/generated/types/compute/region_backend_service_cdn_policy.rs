@@ -7,7 +7,7 @@ pub struct RegionBackendServiceCdnPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cacheKeyPolicy")]
-    pub r#cache_key_policy: Option<Box<super::super::types::compute::RegionBackendServiceCdnPolicyCacheKeyPolicy>>,
+    pub r#cache_key_policy: Box<Option<super::super::types::compute::RegionBackendServiceCdnPolicyCacheKeyPolicy>>,
     /// Specifies the cache setting for all responses from this backend.
     /// The possible values are: USE_ORIGIN_HEADERS, FORCE_CACHE_ALL and CACHE_ALL_STATIC
     /// Possible values are: `USE_ORIGIN_HEADERS`, `FORCE_CACHE_ALL`, `CACHE_ALL_STATIC`.

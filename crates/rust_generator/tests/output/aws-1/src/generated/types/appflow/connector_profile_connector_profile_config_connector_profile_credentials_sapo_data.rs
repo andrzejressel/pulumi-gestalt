@@ -6,9 +6,9 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapo
     /// The SAPOData basic authentication credentials.
     #[builder(into)]
     #[serde(rename = "basicAuthCredentials")]
-    pub r#basic_auth_credentials: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataBasicAuthCredentials>>,
+    pub r#basic_auth_credentials: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataBasicAuthCredentials>>,
     /// The SAPOData OAuth type authentication credentials.
     #[builder(into)]
     #[serde(rename = "oauthCredentials")]
-    pub r#oauth_credentials: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentials>>,
+    pub r#oauth_credentials: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentials>>,
 }

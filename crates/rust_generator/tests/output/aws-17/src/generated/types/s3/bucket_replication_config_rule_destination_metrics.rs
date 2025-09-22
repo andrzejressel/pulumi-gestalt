@@ -6,7 +6,7 @@ pub struct BucketReplicationConfigRuleDestinationMetrics {
     /// Configuration block that specifies the time threshold for emitting the `s3:Replication:OperationMissedThreshold` event. See below.
     #[builder(into)]
     #[serde(rename = "eventThreshold")]
-    pub r#event_threshold: Option<Box<super::super::types::s3::BucketReplicationConfigRuleDestinationMetricsEventThreshold>>,
+    pub r#event_threshold: Box<Option<super::super::types::s3::BucketReplicationConfigRuleDestinationMetricsEventThreshold>>,
     /// Status of the Destination Metrics. Either `"Enabled"` or `"Disabled"`.
     #[builder(into)]
     #[serde(rename = "status")]

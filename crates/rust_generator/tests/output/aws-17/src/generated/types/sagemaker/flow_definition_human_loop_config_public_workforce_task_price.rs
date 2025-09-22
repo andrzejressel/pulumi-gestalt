@@ -6,5 +6,5 @@ pub struct FlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice {
     /// Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars. See Amount In Usd details below.
     #[builder(into)]
     #[serde(rename = "amountInUsd")]
-    pub r#amount_in_usd: Option<Box<super::super::types::sagemaker::FlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd>>,
+    pub r#amount_in_usd: Box<Option<super::super::types::sagemaker::FlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd>>,
 }

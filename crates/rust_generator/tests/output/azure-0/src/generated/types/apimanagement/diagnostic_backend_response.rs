@@ -10,7 +10,7 @@ pub struct DiagnosticBackendResponse {
     /// A `data_masking` block as defined below.
     #[builder(into)]
     #[serde(rename = "dataMasking")]
-    pub r#data_masking: Option<Box<super::super::types::apimanagement::DiagnosticBackendResponseDataMasking>>,
+    pub r#data_masking: Box<Option<super::super::types::apimanagement::DiagnosticBackendResponseDataMasking>>,
     /// Specifies a list of headers to log.
     #[builder(into)]
     #[serde(rename = "headersToLogs")]

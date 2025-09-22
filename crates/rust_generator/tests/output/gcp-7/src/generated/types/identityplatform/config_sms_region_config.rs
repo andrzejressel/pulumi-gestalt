@@ -7,10 +7,10 @@ pub struct ConfigSmsRegionConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "allowByDefault")]
-    pub r#allow_by_default: Option<Box<super::super::types::identityplatform::ConfigSmsRegionConfigAllowByDefault>>,
+    pub r#allow_by_default: Box<Option<super::super::types::identityplatform::ConfigSmsRegionConfigAllowByDefault>>,
     /// A policy of only allowing regions by explicitly adding them to an allowlist.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "allowlistOnly")]
-    pub r#allowlist_only: Option<Box<super::super::types::identityplatform::ConfigSmsRegionConfigAllowlistOnly>>,
+    pub r#allowlist_only: Box<Option<super::super::types::identityplatform::ConfigSmsRegionConfigAllowlistOnly>>,
 }

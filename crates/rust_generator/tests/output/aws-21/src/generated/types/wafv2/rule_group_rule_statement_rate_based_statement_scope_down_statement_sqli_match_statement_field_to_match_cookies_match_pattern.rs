@@ -6,7 +6,7 @@ pub struct RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchSt
     /// An empty configuration block that is used for inspecting all headers.
     #[builder(into)]
     #[serde(rename = "all")]
-    pub r#all: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAll>>,
+    pub r#all: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAll>>,
     #[builder(into)]
     #[serde(rename = "excludedCookies")]
     pub r#excluded_cookies: Option<Vec<String>>,

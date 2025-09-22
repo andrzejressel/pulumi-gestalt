@@ -7,7 +7,7 @@ pub struct BareMetalAdminClusterLoadBalancer {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "manualLbConfig")]
-    pub r#manual_lb_config: Option<Box<super::super::types::gkeonprem::BareMetalAdminClusterLoadBalancerManualLbConfig>>,
+    pub r#manual_lb_config: Box<Option<super::super::types::gkeonprem::BareMetalAdminClusterLoadBalancerManualLbConfig>>,
     /// Specifies the load balancer ports.
     /// Structure is documented below.
     #[builder(into)]

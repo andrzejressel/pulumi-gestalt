@@ -20,7 +20,7 @@ pub struct CertificateConfigX509Config {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "caOptions")]
-    pub r#ca_options: Option<Box<super::super::types::certificateauthority::CertificateConfigX509ConfigCaOptions>>,
+    pub r#ca_options: Box<Option<super::super::types::certificateauthority::CertificateConfigX509ConfigCaOptions>>,
     /// (Output)
     /// Indicates the intended use for keys that correspond to a certificate.
     /// Structure is documented below.
@@ -32,7 +32,7 @@ pub struct CertificateConfigX509Config {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "nameConstraints")]
-    pub r#name_constraints: Option<Box<super::super::types::certificateauthority::CertificateConfigX509ConfigNameConstraints>>,
+    pub r#name_constraints: Box<Option<super::super::types::certificateauthority::CertificateConfigX509ConfigNameConstraints>>,
     /// (Output)
     /// Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
     /// Structure is documented below.

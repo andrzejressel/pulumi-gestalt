@@ -7,5 +7,5 @@ pub struct PreventionDiscoveryConfigActionExportData {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "profileTable")]
-    pub r#profile_table: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionExportDataProfileTable>>,
+    pub r#profile_table: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigActionExportDataProfileTable>>,
 }

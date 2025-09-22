@@ -6,9 +6,9 @@ pub struct WebAclLoggingConfigurationLoggingFilterFilterCondition {
     /// Configuration for a single action condition. See Action Condition below for more details.
     #[builder(into)]
     #[serde(rename = "actionCondition")]
-    pub r#action_condition: Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationLoggingFilterFilterConditionActionCondition>>,
+    pub r#action_condition: Box<Option<super::super::types::wafv2::WebAclLoggingConfigurationLoggingFilterFilterConditionActionCondition>>,
     /// Condition for a single label name. See Label Name Condition below for more details.
     #[builder(into)]
     #[serde(rename = "labelNameCondition")]
-    pub r#label_name_condition: Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameCondition>>,
+    pub r#label_name_condition: Box<Option<super::super::types::wafv2::WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameCondition>>,
 }

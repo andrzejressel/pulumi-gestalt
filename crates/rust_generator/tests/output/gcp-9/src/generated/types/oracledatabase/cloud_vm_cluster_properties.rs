@@ -32,7 +32,7 @@ pub struct CloudVmClusterProperties {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "diagnosticsDataCollectionOptions")]
-    pub r#diagnostics_data_collection_options: Option<Box<super::super::types::oracledatabase::CloudVmClusterPropertiesDiagnosticsDataCollectionOptions>>,
+    pub r#diagnostics_data_collection_options: Box<Option<super::super::types::oracledatabase::CloudVmClusterPropertiesDiagnosticsDataCollectionOptions>>,
     /// The type of redundancy.
     /// Possible values:
     /// DISK_REDUNDANCY_UNSPECIFIED
@@ -169,5 +169,5 @@ pub struct CloudVmClusterProperties {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "timeZone")]
-    pub r#time_zone: Option<Box<super::super::types::oracledatabase::CloudVmClusterPropertiesTimeZone>>,
+    pub r#time_zone: Box<Option<super::super::types::oracledatabase::CloudVmClusterPropertiesTimeZone>>,
 }

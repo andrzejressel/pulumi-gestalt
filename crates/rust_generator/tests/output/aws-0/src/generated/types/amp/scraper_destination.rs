@@ -6,5 +6,5 @@ pub struct ScraperDestination {
     /// Configuration block for an Amazon Managed Prometheus workspace destination. See `amp`.
     #[builder(into)]
     #[serde(rename = "amp")]
-    pub r#amp: Option<Box<super::super::types::amp::ScraperDestinationAmp>>,
+    pub r#amp: Box<Option<super::super::types::amp::ScraperDestinationAmp>>,
 }

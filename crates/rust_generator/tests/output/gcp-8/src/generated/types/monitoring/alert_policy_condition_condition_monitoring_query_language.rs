@@ -43,5 +43,5 @@ pub struct AlertPolicyConditionConditionMonitoringQueryLanguage {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "trigger")]
-    pub r#trigger: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionMonitoringQueryLanguageTrigger>>,
+    pub r#trigger: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionMonitoringQueryLanguageTrigger>>,
 }

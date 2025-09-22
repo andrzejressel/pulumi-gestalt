@@ -6,7 +6,7 @@ pub struct KeyRotationPolicy {
     /// An `automatic` block as defined below.
     #[builder(into)]
     #[serde(rename = "automatic")]
-    pub r#automatic: Option<Box<super::super::types::keyvault::KeyRotationPolicyAutomatic>>,
+    pub r#automatic: Box<Option<super::super::types::keyvault::KeyRotationPolicyAutomatic>>,
     /// Expire a Key Vault Key after given duration as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations).
     #[builder(into)]
     #[serde(rename = "expireAfter")]

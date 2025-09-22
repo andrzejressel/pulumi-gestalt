@@ -14,11 +14,11 @@ pub struct TeamsRuleRuleSettings {
     /// Settings for auditing SSH usage.
     #[builder(into)]
     #[serde(rename = "auditSsh")]
-    pub r#audit_ssh: Option<Box<super::types::TeamsRuleRuleSettingsAuditSsh>>,
+    pub r#audit_ssh: Box<Option<super::types::TeamsRuleRuleSettingsAuditSsh>>,
     /// Configure how browser isolation behaves.
     #[builder(into)]
     #[serde(rename = "bisoAdminControls")]
-    pub r#biso_admin_controls: Option<Box<super::types::TeamsRuleRuleSettingsBisoAdminControls>>,
+    pub r#biso_admin_controls: Box<Option<super::types::TeamsRuleRuleSettingsBisoAdminControls>>,
     /// Indicator of block page enablement.
     #[builder(into)]
     #[serde(rename = "blockPageEnabled")]
@@ -34,15 +34,15 @@ pub struct TeamsRuleRuleSettings {
     /// Configure how session check behaves.
     #[builder(into)]
     #[serde(rename = "checkSession")]
-    pub r#check_session: Option<Box<super::types::TeamsRuleRuleSettingsCheckSession>>,
+    pub r#check_session: Box<Option<super::types::TeamsRuleRuleSettingsCheckSession>>,
     /// Add your own custom resolvers to route queries that match the resolver policy. Cannot be used when resolve*dns*through*cloudflare is set. DNS queries will route to the address closest to their origin.
     #[builder(into)]
     #[serde(rename = "dnsResolvers")]
-    pub r#dns_resolvers: Option<Box<super::types::TeamsRuleRuleSettingsDnsResolvers>>,
+    pub r#dns_resolvers: Box<Option<super::types::TeamsRuleRuleSettingsDnsResolvers>>,
     /// Configure how Proxy traffic egresses. Can be set for rules with Egress action and Egress filter. Can be omitted to indicate local egress via Warp IPs.
     #[builder(into)]
     #[serde(rename = "egress")]
-    pub r#egress: Option<Box<super::types::TeamsRuleRuleSettingsEgress>>,
+    pub r#egress: Box<Option<super::types::TeamsRuleRuleSettingsEgress>>,
     /// Set to true, to ignore the category matches at CNAME domains in a response.
     #[builder(into)]
     #[serde(rename = "ignoreCnameCategoryMatches")]
@@ -58,11 +58,11 @@ pub struct TeamsRuleRuleSettings {
     /// Settings to forward layer 4 traffic.
     #[builder(into)]
     #[serde(rename = "l4override")]
-    pub r#l_4_override: Option<Box<super::types::TeamsRuleRuleSettingsL4Override>>,
+    pub r#l_4_override: Box<Option<super::types::TeamsRuleRuleSettingsL4Override>>,
     /// Notification settings on a block rule.
     #[builder(into)]
     #[serde(rename = "notificationSettings")]
-    pub r#notification_settings: Option<Box<super::types::TeamsRuleRuleSettingsNotificationSettings>>,
+    pub r#notification_settings: Box<Option<super::types::TeamsRuleRuleSettingsNotificationSettings>>,
     /// The host to override matching DNS queries with.
     #[builder(into)]
     #[serde(rename = "overrideHost")]
@@ -74,7 +74,7 @@ pub struct TeamsRuleRuleSettings {
     /// Configure DLP Payload Logging settings for this rule.
     #[builder(into)]
     #[serde(rename = "payloadLog")]
-    pub r#payload_log: Option<Box<super::types::TeamsRuleRuleSettingsPayloadLog>>,
+    pub r#payload_log: Box<Option<super::types::TeamsRuleRuleSettingsPayloadLog>>,
     /// Enable sending queries that match the resolver policy to Cloudflare's default 1.1.1.1 DNS resolver. Cannot be set when `dns_resolvers` are specified.
     #[builder(into)]
     #[serde(rename = "resolveDnsThroughCloudflare")]
@@ -82,5 +82,5 @@ pub struct TeamsRuleRuleSettings {
     /// Configure untrusted certificate settings for this rule.
     #[builder(into)]
     #[serde(rename = "untrustedCert")]
-    pub r#untrusted_cert: Option<Box<super::types::TeamsRuleRuleSettingsUntrustedCert>>,
+    pub r#untrusted_cert: Box<Option<super::types::TeamsRuleRuleSettingsUntrustedCert>>,
 }

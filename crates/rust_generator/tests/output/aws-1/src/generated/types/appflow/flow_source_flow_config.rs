@@ -18,7 +18,7 @@ pub struct FlowSourceFlowConfig {
     /// Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. See Incremental Pull Config for more details.
     #[builder(into)]
     #[serde(rename = "incrementalPullConfig")]
-    pub r#incremental_pull_config: Option<Box<super::super::types::appflow::FlowSourceFlowConfigIncrementalPullConfig>>,
+    pub r#incremental_pull_config: Box<Option<super::super::types::appflow::FlowSourceFlowConfigIncrementalPullConfig>>,
     /// Information that is required to query a particular source connector. See Source Connector Properties for details.
     #[builder(into)]
     #[serde(rename = "sourceConnectorProperties")]

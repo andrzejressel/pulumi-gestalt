@@ -18,7 +18,7 @@ pub struct TableImportTable {
     /// See below.
     #[builder(into)]
     #[serde(rename = "inputFormatOptions")]
-    pub r#input_format_options: Option<Box<super::super::types::dynamodb::TableImportTableInputFormatOptions>>,
+    pub r#input_format_options: Box<Option<super::super::types::dynamodb::TableImportTableInputFormatOptions>>,
     /// Values for the S3 bucket the source file is imported from.
     /// See below.
     #[builder(into)]

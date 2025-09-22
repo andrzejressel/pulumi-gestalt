@@ -6,9 +6,9 @@ pub struct ClusterOpenMonitoringPrometheus {
     /// Configuration block for JMX Exporter. See below.
     #[builder(into)]
     #[serde(rename = "jmxExporter")]
-    pub r#jmx_exporter: Option<Box<super::super::types::msk::ClusterOpenMonitoringPrometheusJmxExporter>>,
+    pub r#jmx_exporter: Box<Option<super::super::types::msk::ClusterOpenMonitoringPrometheusJmxExporter>>,
     /// Configuration block for Node Exporter. See below.
     #[builder(into)]
     #[serde(rename = "nodeExporter")]
-    pub r#node_exporter: Option<Box<super::super::types::msk::ClusterOpenMonitoringPrometheusNodeExporter>>,
+    pub r#node_exporter: Box<Option<super::super::types::msk::ClusterOpenMonitoringPrometheusNodeExporter>>,
 }

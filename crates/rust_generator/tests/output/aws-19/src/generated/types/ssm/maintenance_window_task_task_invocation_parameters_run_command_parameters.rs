@@ -6,7 +6,7 @@ pub struct MaintenanceWindowTaskTaskInvocationParametersRunCommandParameters {
     /// Configuration options for sending command output to CloudWatch Logs. Documented below.
     #[builder(into)]
     #[serde(rename = "cloudwatchConfig")]
-    pub r#cloudwatch_config: Option<Box<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfig>>,
+    pub r#cloudwatch_config: Box<Option<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfig>>,
     /// Information about the command(s) to execute.
     #[builder(into)]
     #[serde(rename = "comment")]
@@ -26,7 +26,7 @@ pub struct MaintenanceWindowTaskTaskInvocationParametersRunCommandParameters {
     /// Configurations for sending notifications about command status changes on a per-instance basis. Documented below.
     #[builder(into)]
     #[serde(rename = "notificationConfig")]
-    pub r#notification_config: Option<Box<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfig>>,
+    pub r#notification_config: Box<Option<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfig>>,
     /// The name of the Amazon S3 bucket.
     #[builder(into)]
     #[serde(rename = "outputS3Bucket")]

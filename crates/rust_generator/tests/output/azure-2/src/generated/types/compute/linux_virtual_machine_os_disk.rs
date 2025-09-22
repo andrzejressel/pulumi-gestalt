@@ -12,7 +12,7 @@ pub struct LinuxVirtualMachineOsDisk {
     /// > **NOTE:** `diff_disk_settings` can only be set when `caching` is set to `ReadOnly`. More information can be found [here](https://docs.microsoft.com/azure/virtual-machines/ephemeral-os-disks-deploy#vm-template-deployment)
     #[builder(into)]
     #[serde(rename = "diffDiskSettings")]
-    pub r#diff_disk_settings: Option<Box<super::super::types::compute::LinuxVirtualMachineOsDiskDiffDiskSettings>>,
+    pub r#diff_disk_settings: Box<Option<super::super::types::compute::LinuxVirtualMachineOsDiskDiffDiskSettings>>,
     /// The ID of the Disk Encryption Set which should be used to Encrypt this OS Disk. Conflicts with `secure_vm_disk_encryption_set_id`.
     /// 
     /// > **NOTE:** The Disk Encryption Set must have the `Reader` Role Assignment scoped on the Key Vault - in addition to an Access Policy to the Key Vault

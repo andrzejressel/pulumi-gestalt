@@ -18,5 +18,5 @@ pub struct WorkflowTemplateParameter {
     /// Validation rules to be applied to this parameter's value.
     #[builder(into)]
     #[serde(rename = "validation")]
-    pub r#validation: Option<Box<super::super::types::dataproc::WorkflowTemplateParameterValidation>>,
+    pub r#validation: Box<Option<super::super::types::dataproc::WorkflowTemplateParameterValidation>>,
 }

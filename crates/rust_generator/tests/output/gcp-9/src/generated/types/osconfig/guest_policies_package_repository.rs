@@ -7,20 +7,20 @@ pub struct GuestPoliciesPackageRepository {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "apt")]
-    pub r#apt: Option<Box<super::super::types::osconfig::GuestPoliciesPackageRepositoryApt>>,
+    pub r#apt: Box<Option<super::super::types::osconfig::GuestPoliciesPackageRepositoryApt>>,
     /// A Goo Repository.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "goo")]
-    pub r#goo: Option<Box<super::super::types::osconfig::GuestPoliciesPackageRepositoryGoo>>,
+    pub r#goo: Box<Option<super::super::types::osconfig::GuestPoliciesPackageRepositoryGoo>>,
     /// A Yum Repository.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "yum")]
-    pub r#yum: Option<Box<super::super::types::osconfig::GuestPoliciesPackageRepositoryYum>>,
+    pub r#yum: Box<Option<super::super::types::osconfig::GuestPoliciesPackageRepositoryYum>>,
     /// A Zypper Repository.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "zypper")]
-    pub r#zypper: Option<Box<super::super::types::osconfig::GuestPoliciesPackageRepositoryZypper>>,
+    pub r#zypper: Box<Option<super::super::types::osconfig::GuestPoliciesPackageRepositoryZypper>>,
 }

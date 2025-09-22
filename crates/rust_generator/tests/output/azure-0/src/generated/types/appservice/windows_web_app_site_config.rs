@@ -24,11 +24,11 @@ pub struct WindowsWebAppSiteConfig {
     /// A `application_stack` block as defined above.
     #[builder(into)]
     #[serde(rename = "applicationStack")]
-    pub r#application_stack: Option<Box<super::super::types::appservice::WindowsWebAppSiteConfigApplicationStack>>,
+    pub r#application_stack: Box<Option<super::super::types::appservice::WindowsWebAppSiteConfigApplicationStack>>,
     /// A `auto_heal_setting` block as defined above. Required with `auto_heal`.
     #[builder(into)]
     #[serde(rename = "autoHealSetting")]
-    pub r#auto_heal_setting: Option<Box<super::super::types::appservice::WindowsWebAppSiteConfigAutoHealSetting>>,
+    pub r#auto_heal_setting: Box<Option<super::super::types::appservice::WindowsWebAppSiteConfigAutoHealSetting>>,
     /// The Client ID of the Managed Service Identity to use for connections to the Azure Container Registry.
     #[builder(into)]
     #[serde(rename = "containerRegistryManagedIdentityClientId")]
@@ -40,7 +40,7 @@ pub struct WindowsWebAppSiteConfig {
     /// A `cors` block as defined above.
     #[builder(into)]
     #[serde(rename = "cors")]
-    pub r#cors: Option<Box<super::super::types::appservice::WindowsWebAppSiteConfigCors>>,
+    pub r#cors: Box<Option<super::super::types::appservice::WindowsWebAppSiteConfigCors>>,
     /// Specifies a list of Default Documents for the Windows Web App.
     #[builder(into)]
     #[serde(rename = "defaultDocuments")]

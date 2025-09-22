@@ -21,12 +21,12 @@ pub struct AutoscalerAutoscalingPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cpuUtilization")]
-    pub r#cpu_utilization: Option<Box<super::super::types::compute::AutoscalerAutoscalingPolicyCpuUtilization>>,
+    pub r#cpu_utilization: Box<Option<super::super::types::compute::AutoscalerAutoscalingPolicyCpuUtilization>>,
     /// Configuration parameters of autoscaling based on a load balancer.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "loadBalancingUtilization")]
-    pub r#load_balancing_utilization: Option<Box<super::super::types::compute::AutoscalerAutoscalingPolicyLoadBalancingUtilization>>,
+    pub r#load_balancing_utilization: Box<Option<super::super::types::compute::AutoscalerAutoscalingPolicyLoadBalancingUtilization>>,
     /// The maximum number of instances that the autoscaler can scale up
     /// to. This is required when creating or updating an autoscaler. The
     /// maximum number of replicas should not be lower than minimal number
@@ -55,13 +55,13 @@ pub struct AutoscalerAutoscalingPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "scaleDownControl")]
-    pub r#scale_down_control: Option<Box<super::super::types::compute::AutoscalerAutoscalingPolicyScaleDownControl>>,
+    pub r#scale_down_control: Box<Option<super::super::types::compute::AutoscalerAutoscalingPolicyScaleDownControl>>,
     /// Defines scale in controls to reduce the risk of response latency
     /// and outages due to abrupt scale-in events
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "scaleInControl")]
-    pub r#scale_in_control: Option<Box<super::super::types::compute::AutoscalerAutoscalingPolicyScaleInControl>>,
+    pub r#scale_in_control: Box<Option<super::super::types::compute::AutoscalerAutoscalingPolicyScaleInControl>>,
     /// Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler and they can overlap.
     /// Structure is documented below.
     #[builder(into)]

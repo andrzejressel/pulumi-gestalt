@@ -7,5 +7,5 @@ pub struct AccessLevelsAccessLevelBasicConditionVpcNetworkSource {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vpcSubnetwork")]
-    pub r#vpc_subnetwork: Option<Box<super::super::types::accesscontextmanager::AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork>>,
+    pub r#vpc_subnetwork: Box<Option<super::super::types::accesscontextmanager::AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetwork>>,
 }

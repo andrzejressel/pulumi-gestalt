@@ -11,7 +11,7 @@ pub struct ChannelEncoderSettingsGlobalConfigurationInputLossBehavior {
     pub r#input_loss_image_color: Option<String>,
     #[builder(into)]
     #[serde(rename = "inputLossImageSlate")]
-    pub r#input_loss_image_slate: Option<Box<super::super::types::medialive::ChannelEncoderSettingsGlobalConfigurationInputLossBehaviorInputLossImageSlate>>,
+    pub r#input_loss_image_slate: Box<Option<super::super::types::medialive::ChannelEncoderSettingsGlobalConfigurationInputLossBehaviorInputLossImageSlate>>,
     #[builder(into)]
     #[serde(rename = "inputLossImageType")]
     pub r#input_loss_image_type: Option<String>,

@@ -6,7 +6,7 @@ pub struct AppServiceLogs {
     /// An `application_logs` block as defined below.
     #[builder(into)]
     #[serde(rename = "applicationLogs")]
-    pub r#application_logs: Option<Box<super::super::types::appservice::AppServiceLogsApplicationLogs>>,
+    pub r#application_logs: Box<Option<super::super::types::appservice::AppServiceLogsApplicationLogs>>,
     /// Should `Detailed error messages` be enabled on this App Service? Defaults to `false`.
     #[builder(into)]
     #[serde(rename = "detailedErrorMessagesEnabled")]
@@ -18,5 +18,5 @@ pub struct AppServiceLogs {
     /// An `http_logs` block as defined below.
     #[builder(into)]
     #[serde(rename = "httpLogs")]
-    pub r#http_logs: Option<Box<super::super::types::appservice::AppServiceLogsHttpLogs>>,
+    pub r#http_logs: Box<Option<super::super::types::appservice::AppServiceLogsHttpLogs>>,
 }

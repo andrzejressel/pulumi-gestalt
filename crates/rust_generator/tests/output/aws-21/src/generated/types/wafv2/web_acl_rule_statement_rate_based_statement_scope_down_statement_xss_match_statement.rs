@@ -6,7 +6,7 @@ pub struct WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatem
     /// Part of a web request that you want AWS WAF to inspect. See `field_to_match` below for details.
     #[builder(into)]
     #[serde(rename = "fieldToMatch")]
-    pub r#field_to_match: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatch>>,
+    pub r#field_to_match: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatch>>,
     /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one transformation is required. See `text_transformation` below for details.
     #[builder(into)]
     #[serde(rename = "textTransformations")]

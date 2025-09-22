@@ -7,7 +7,7 @@ pub struct RouterNatRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Option<Box<super::super::types::compute::RouterNatRuleAction>>,
+    pub r#action: Box<Option<super::super::types::compute::RouterNatRuleAction>>,
     /// An optional description of this rule.
     #[builder(into)]
     #[serde(rename = "description")]

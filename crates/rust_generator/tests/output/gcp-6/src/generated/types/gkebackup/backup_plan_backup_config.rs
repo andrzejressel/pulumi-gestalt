@@ -12,7 +12,7 @@ pub struct BackupPlanBackupConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "encryptionKey")]
-    pub r#encryption_key: Option<Box<super::super::types::gkebackup::BackupPlanBackupConfigEncryptionKey>>,
+    pub r#encryption_key: Box<Option<super::super::types::gkebackup::BackupPlanBackupConfigEncryptionKey>>,
     /// This flag specifies whether Kubernetes Secret resources should be included
     /// when they fall into the scope of Backups.
     #[builder(into)]
@@ -33,10 +33,10 @@ pub struct BackupPlanBackupConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "selectedApplications")]
-    pub r#selected_applications: Option<Box<super::super::types::gkebackup::BackupPlanBackupConfigSelectedApplications>>,
+    pub r#selected_applications: Box<Option<super::super::types::gkebackup::BackupPlanBackupConfigSelectedApplications>>,
     /// If set, include just the resources in the listed namespaces.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "selectedNamespaces")]
-    pub r#selected_namespaces: Option<Box<super::super::types::gkebackup::BackupPlanBackupConfigSelectedNamespaces>>,
+    pub r#selected_namespaces: Box<Option<super::super::types::gkebackup::BackupPlanBackupConfigSelectedNamespaces>>,
 }

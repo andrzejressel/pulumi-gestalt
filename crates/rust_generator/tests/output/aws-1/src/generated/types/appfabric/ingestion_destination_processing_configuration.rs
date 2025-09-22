@@ -6,5 +6,5 @@ pub struct IngestionDestinationProcessingConfiguration {
     /// Contains information about an audit log processing configuration.
     #[builder(into)]
     #[serde(rename = "auditLog")]
-    pub r#audit_log: Option<Box<super::super::types::appfabric::IngestionDestinationProcessingConfigurationAuditLog>>,
+    pub r#audit_log: Box<Option<super::super::types::appfabric::IngestionDestinationProcessingConfigurationAuditLog>>,
 }

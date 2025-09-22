@@ -6,7 +6,7 @@ pub struct RecordSetRoutingPolicyPrimaryBackupBackupGeo {
     /// For A and AAAA types only. The list of targets to be health checked. These can be specified along with `rrdatas` within this item.
     #[builder(into)]
     #[serde(rename = "healthCheckedTargets")]
-    pub r#health_checked_targets: Option<Box<super::super::types::dns::RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets>>,
+    pub r#health_checked_targets: Box<Option<super::super::types::dns::RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargets>>,
     /// The location name defined in Google Cloud.
     #[builder(into)]
     #[serde(rename = "location")]

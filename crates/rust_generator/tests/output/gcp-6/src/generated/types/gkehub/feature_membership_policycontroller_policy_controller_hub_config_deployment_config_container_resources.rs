@@ -6,9 +6,9 @@ pub struct FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentC
     /// Limits describes the maximum amount of compute resources allowed for use by the running container.
     #[builder(into)]
     #[serde(rename = "limits")]
-    pub r#limits: Option<Box<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits>>,
+    pub r#limits: Box<Option<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits>>,
     /// Requests describes the amount of compute resources reserved for the container by the kube-scheduler.
     #[builder(into)]
     #[serde(rename = "requests")]
-    pub r#requests: Option<Box<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequests>>,
+    pub r#requests: Box<Option<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequests>>,
 }

@@ -12,7 +12,7 @@ pub struct ConnectionGithubConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "authorizerCredential")]
-    pub r#authorizer_credential: Option<Box<super::super::types::developerconnect::ConnectionGithubConfigAuthorizerCredential>>,
+    pub r#authorizer_credential: Box<Option<super::super::types::developerconnect::ConnectionGithubConfigAuthorizerCredential>>,
     /// Required. Immutable. The GitHub Application that was installed to
     /// the GitHub user or organization.
     /// Possible values:

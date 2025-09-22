@@ -12,7 +12,7 @@ pub struct UptimeCheckConfigHttpCheck {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "authInfo")]
-    pub r#auth_info: Option<Box<super::super::types::monitoring::UptimeCheckConfigHttpCheckAuthInfo>>,
+    pub r#auth_info: Box<Option<super::super::types::monitoring::UptimeCheckConfigHttpCheckAuthInfo>>,
     /// The request body associated with the HTTP POST request. If `content_type` is `URL_ENCODED`, the body passed in must be URL-encoded. Users can provide a `Content-Length` header via the `headers` field or the API will do so. If the `request_method` is `GET` and `body` is not empty, the API will return an error. The maximum byte size is 1 megabyte. Note - As with all bytes fields JSON representations are base64 encoded. e.g. `foo=bar` in URL-encoded form is `foo%3Dbar` and in base64 encoding is `Zm9vJTI1M0RiYXI=`.
     #[builder(into)]
     #[serde(rename = "body")]
@@ -42,7 +42,7 @@ pub struct UptimeCheckConfigHttpCheck {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pingConfig")]
-    pub r#ping_config: Option<Box<super::super::types::monitoring::UptimeCheckConfigHttpCheckPingConfig>>,
+    pub r#ping_config: Box<Option<super::super::types::monitoring::UptimeCheckConfigHttpCheckPingConfig>>,
     /// The port to the page to run the check against. Will be combined with `host` (specified within the `monitored_resource`) and path to construct the full URL. Optional (defaults to 80 without SSL, or 443 with SSL).
     #[builder(into)]
     #[serde(rename = "port")]
@@ -57,7 +57,7 @@ pub struct UptimeCheckConfigHttpCheck {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "serviceAgentAuthentication")]
-    pub r#service_agent_authentication: Option<Box<super::super::types::monitoring::UptimeCheckConfigHttpCheckServiceAgentAuthentication>>,
+    pub r#service_agent_authentication: Box<Option<super::super::types::monitoring::UptimeCheckConfigHttpCheckServiceAgentAuthentication>>,
     /// If true, use HTTPS instead of HTTP to run the check.
     #[builder(into)]
     #[serde(rename = "useSsl")]

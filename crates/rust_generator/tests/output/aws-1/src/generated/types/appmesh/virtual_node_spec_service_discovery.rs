@@ -6,9 +6,9 @@ pub struct VirtualNodeSpecServiceDiscovery {
     /// Any AWS Cloud Map information for the virtual node.
     #[builder(into)]
     #[serde(rename = "awsCloudMap")]
-    pub r#aws_cloud_map: Option<Box<super::super::types::appmesh::VirtualNodeSpecServiceDiscoveryAwsCloudMap>>,
+    pub r#aws_cloud_map: Box<Option<super::super::types::appmesh::VirtualNodeSpecServiceDiscoveryAwsCloudMap>>,
     /// DNS service name for the virtual node.
     #[builder(into)]
     #[serde(rename = "dns")]
-    pub r#dns: Option<Box<super::super::types::appmesh::VirtualNodeSpecServiceDiscoveryDns>>,
+    pub r#dns: Box<Option<super::super::types::appmesh::VirtualNodeSpecServiceDiscoveryDns>>,
 }

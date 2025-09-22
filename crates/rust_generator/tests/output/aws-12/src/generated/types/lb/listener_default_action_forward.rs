@@ -6,7 +6,7 @@ pub struct ListenerDefaultActionForward {
     /// Configuration block for target group stickiness for the rule. See below.
     #[builder(into)]
     #[serde(rename = "stickiness")]
-    pub r#stickiness: Option<Box<super::super::types::lb::ListenerDefaultActionForwardStickiness>>,
+    pub r#stickiness: Box<Option<super::super::types::lb::ListenerDefaultActionForwardStickiness>>,
     /// Set of 1-5 target group blocks. See below.
     /// 
     /// The following arguments are optional:

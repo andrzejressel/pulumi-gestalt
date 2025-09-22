@@ -11,12 +11,12 @@ pub struct ConfigSignIn {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "anonymous")]
-    pub r#anonymous: Option<Box<super::super::types::identityplatform::ConfigSignInAnonymous>>,
+    pub r#anonymous: Box<Option<super::super::types::identityplatform::ConfigSignInAnonymous>>,
     /// Configuration options related to authenticating a user by their email address.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Option<Box<super::super::types::identityplatform::ConfigSignInEmail>>,
+    pub r#email: Box<Option<super::super::types::identityplatform::ConfigSignInEmail>>,
     /// (Output)
     /// Output only. Hash config information.
     /// Structure is documented below.
@@ -27,5 +27,5 @@ pub struct ConfigSignIn {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "phoneNumber")]
-    pub r#phone_number: Option<Box<super::super::types::identityplatform::ConfigSignInPhoneNumber>>,
+    pub r#phone_number: Box<Option<super::super::types::identityplatform::ConfigSignInPhoneNumber>>,
 }

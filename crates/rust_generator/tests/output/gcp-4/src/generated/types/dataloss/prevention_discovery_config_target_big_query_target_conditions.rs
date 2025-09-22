@@ -11,7 +11,7 @@ pub struct PreventionDiscoveryConfigTargetBigQueryTargetConditions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "orConditions")]
-    pub r#or_conditions: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetConditionsOrConditions>>,
+    pub r#or_conditions: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetConditionsOrConditions>>,
     /// Restrict discovery to categories of table types. Currently view, materialized view, snapshot and non-biglake external tables are supported.
     /// Possible values are: `BIG_QUERY_COLLECTION_ALL_TYPES`, `BIG_QUERY_COLLECTION_ONLY_SUPPORTED_TYPES`.
     #[builder(into)]
@@ -21,5 +21,5 @@ pub struct PreventionDiscoveryConfigTargetBigQueryTargetConditions {
     /// Each value may be one of: `DATABASE_RESOURCE_TYPE_ALL_SUPPORTED_TYPES`, `DATABASE_RESOURCE_TYPE_TABLE`.
     #[builder(into)]
     #[serde(rename = "types")]
-    pub r#types: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetConditionsTypes>>,
+    pub r#types: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetConditionsTypes>>,
 }

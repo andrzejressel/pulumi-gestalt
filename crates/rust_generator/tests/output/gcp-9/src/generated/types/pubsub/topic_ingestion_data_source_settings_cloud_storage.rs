@@ -7,7 +7,7 @@ pub struct TopicIngestionDataSourceSettingsCloudStorage {
     /// bytes of each object will be set to the `data` field of a Pub/Sub message.
     #[builder(into)]
     #[serde(rename = "avroFormat")]
-    pub r#avro_format: Option<Box<super::super::types::pubsub::TopicIngestionDataSourceSettingsCloudStorageAvroFormat>>,
+    pub r#avro_format: Box<Option<super::super::types::pubsub::TopicIngestionDataSourceSettingsCloudStorageAvroFormat>>,
     /// Cloud Storage bucket. The bucket name must be without any
     /// prefix like "gs://". See the bucket naming requirements:
     /// https://cloud.google.com/storage/docs/buckets#naming.
@@ -32,12 +32,12 @@ pub struct TopicIngestionDataSourceSettingsCloudStorage {
     /// will be restored when publishing.
     #[builder(into)]
     #[serde(rename = "pubsubAvroFormat")]
-    pub r#pubsub_avro_format: Option<Box<super::super::types::pubsub::TopicIngestionDataSourceSettingsCloudStoragePubsubAvroFormat>>,
+    pub r#pubsub_avro_format: Box<Option<super::super::types::pubsub::TopicIngestionDataSourceSettingsCloudStoragePubsubAvroFormat>>,
     /// Configuration for reading Cloud Storage data in text format. Each line of
     /// text as specified by the delimiter will be set to the `data` field of a
     /// Pub/Sub message.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "textFormat")]
-    pub r#text_format: Option<Box<super::super::types::pubsub::TopicIngestionDataSourceSettingsCloudStorageTextFormat>>,
+    pub r#text_format: Box<Option<super::super::types::pubsub::TopicIngestionDataSourceSettingsCloudStorageTextFormat>>,
 }

@@ -22,10 +22,10 @@ pub struct PreventionJobTriggerInspectJobActionDeidentify {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "transformationConfig")]
-    pub r#transformation_config: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobActionDeidentifyTransformationConfig>>,
+    pub r#transformation_config: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobActionDeidentifyTransformationConfig>>,
     /// Config for storing transformation details.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "transformationDetailsStorageConfig")]
-    pub r#transformation_details_storage_config: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfig>>,
+    pub r#transformation_details_storage_config: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfig>>,
 }

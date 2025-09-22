@@ -14,7 +14,7 @@ pub struct DistributionConfigurationDistributionFastLaunchConfiguration {
     /// Configuration block for the launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots. Detailed below.
     #[builder(into)]
     #[serde(rename = "launchTemplate")]
-    pub r#launch_template: Option<Box<super::super::types::imagebuilder::DistributionConfigurationDistributionFastLaunchConfigurationLaunchTemplate>>,
+    pub r#launch_template: Box<Option<super::super::types::imagebuilder::DistributionConfigurationDistributionFastLaunchConfigurationLaunchTemplate>>,
     /// The maximum number of parallel instances that are launched for creating resources.
     #[builder(into)]
     #[serde(rename = "maxParallelLaunches")]
@@ -22,5 +22,5 @@ pub struct DistributionConfigurationDistributionFastLaunchConfiguration {
     /// Configuration block for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled. Detailed below.
     #[builder(into)]
     #[serde(rename = "snapshotConfiguration")]
-    pub r#snapshot_configuration: Option<Box<super::super::types::imagebuilder::DistributionConfigurationDistributionFastLaunchConfigurationSnapshotConfiguration>>,
+    pub r#snapshot_configuration: Box<Option<super::super::types::imagebuilder::DistributionConfigurationDistributionFastLaunchConfigurationSnapshotConfiguration>>,
 }

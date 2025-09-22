@@ -6,7 +6,7 @@ pub struct TunnelConfigConfigIngressRuleOriginRequest {
     /// Access rules for the ingress service.
     #[builder(into)]
     #[serde(rename = "access")]
-    pub r#access: Option<Box<super::types::TunnelConfigConfigIngressRuleOriginRequestAccess>>,
+    pub r#access: Box<Option<super::types::TunnelConfigConfigIngressRuleOriginRequestAccess>>,
     /// Runs as jump host.
     #[builder(into)]
     #[serde(rename = "bastionMode")]

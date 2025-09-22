@@ -10,5 +10,5 @@ pub struct ClusterClusterAutoscalingAutoProvisioningDefaultsUpgradeSettingsBlueG
     /// Standard policy for the blue-green upgrade. To be specified when strategy is set to BLUE_GREEN. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "standardRolloutPolicy")]
-    pub r#standard_rollout_policy: Option<Box<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaultsUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy>>,
+    pub r#standard_rollout_policy: Box<Option<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaultsUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy>>,
 }

@@ -6,5 +6,5 @@ pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsArchiveGroupSetti
     /// Archive S3 Settings. See Archive S3 Settings for more details.
     #[builder(into)]
     #[serde(rename = "archiveS3Settings")]
-    pub r#archive_s_3_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsArchiveGroupSettingArchiveCdnSettingsArchiveS3Settings>>,
+    pub r#archive_s_3_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsArchiveGroupSettingArchiveCdnSettingsArchiveS3Settings>>,
 }

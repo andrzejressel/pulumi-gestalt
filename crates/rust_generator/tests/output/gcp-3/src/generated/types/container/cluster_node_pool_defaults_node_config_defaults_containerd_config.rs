@@ -6,5 +6,5 @@ pub struct ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfig {
     /// Configuration for private container registries. There are two fields in this config:
     #[builder(into)]
     #[serde(rename = "privateRegistryAccessConfig")]
-    pub r#private_registry_access_config: Option<Box<super::super::types::container::ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigPrivateRegistryAccessConfig>>,
+    pub r#private_registry_access_config: Box<Option<super::super::types::container::ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigPrivateRegistryAccessConfig>>,
 }

@@ -22,19 +22,19 @@ pub struct JobQuery {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "defaultDataset")]
-    pub r#default_dataset: Option<Box<super::super::types::bigquery::JobQueryDefaultDataset>>,
+    pub r#default_dataset: Box<Option<super::super::types::bigquery::JobQueryDefaultDataset>>,
     /// Custom encryption configuration (e.g., Cloud KMS keys)
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "destinationEncryptionConfiguration")]
-    pub r#destination_encryption_configuration: Option<Box<super::super::types::bigquery::JobQueryDestinationEncryptionConfiguration>>,
+    pub r#destination_encryption_configuration: Box<Option<super::super::types::bigquery::JobQueryDestinationEncryptionConfiguration>>,
     /// Describes the table where the query results should be stored.
     /// This property must be set for large results that exceed the maximum response size.
     /// For queries that produce anonymous (cached) results, this field will be populated by BigQuery.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "destinationTable")]
-    pub r#destination_table: Option<Box<super::super::types::bigquery::JobQueryDestinationTable>>,
+    pub r#destination_table: Box<Option<super::super::types::bigquery::JobQueryDestinationTable>>,
     /// If true and query uses legacy SQL dialect, flattens all nested and repeated fields in the query results.
     /// allowLargeResults must be true if this is set to false. For standard SQL queries, this flag is ignored and results are never flattened.
     #[builder(into)]
@@ -80,7 +80,7 @@ pub struct JobQuery {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "scriptOptions")]
-    pub r#script_options: Option<Box<super::super::types::bigquery::JobQueryScriptOptions>>,
+    pub r#script_options: Box<Option<super::super::types::bigquery::JobQueryScriptOptions>>,
     /// Specifies whether to use BigQuery's legacy SQL dialect for this query. The default value is true.
     /// If set to false, the query will use BigQuery's standard SQL.
     #[builder(into)]

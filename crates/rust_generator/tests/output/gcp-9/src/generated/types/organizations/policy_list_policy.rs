@@ -6,11 +6,11 @@ pub struct PolicyListPolicy {
     /// or `deny` - (Optional) One or the other must be set.
     #[builder(into)]
     #[serde(rename = "allow")]
-    pub r#allow: Option<Box<super::super::types::organizations::PolicyListPolicyAllow>>,
+    pub r#allow: Box<Option<super::super::types::organizations::PolicyListPolicyAllow>>,
     /// One or the other must be set.
     #[builder(into)]
     #[serde(rename = "deny")]
-    pub r#deny: Option<Box<super::super::types::organizations::PolicyListPolicyDeny>>,
+    pub r#deny: Box<Option<super::super::types::organizations::PolicyListPolicyDeny>>,
     /// If set to true, the values from the effective Policy of the parent resource
     /// are inherited, meaning the values set in this Policy are added to the values inherited up the hierarchy.
     /// 

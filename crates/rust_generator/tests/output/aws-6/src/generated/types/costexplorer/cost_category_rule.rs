@@ -6,11 +6,11 @@ pub struct CostCategoryRule {
     /// Configuration block for the value the line item is categorized as if the line item contains the matched dimension. See below.
     #[builder(into)]
     #[serde(rename = "inheritedValue")]
-    pub r#inherited_value: Option<Box<super::super::types::costexplorer::CostCategoryRuleInheritedValue>>,
+    pub r#inherited_value: Box<Option<super::super::types::costexplorer::CostCategoryRuleInheritedValue>>,
     /// Configuration block for the `Expression` object used to categorize costs. See below.
     #[builder(into)]
     #[serde(rename = "rule")]
-    pub r#rule: Option<Box<super::super::types::costexplorer::CostCategoryRuleRule>>,
+    pub r#rule: Box<Option<super::super::types::costexplorer::CostCategoryRuleRule>>,
     /// You can define the CostCategoryRule rule type as either `REGULAR` or `INHERITED_VALUE`.
     #[builder(into)]
     #[serde(rename = "type")]

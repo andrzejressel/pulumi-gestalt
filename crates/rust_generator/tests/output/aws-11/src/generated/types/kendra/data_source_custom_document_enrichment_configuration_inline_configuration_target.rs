@@ -10,7 +10,7 @@ pub struct DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTar
     /// The target value you want to create for the target attribute. For example, 'Finance' could be the target value for the target attribute key 'Department'. See target_document_attribute_value.
     #[builder(into)]
     #[serde(rename = "targetDocumentAttributeValue")]
-    pub r#target_document_attribute_value: Option<Box<super::super::types::kendra::DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTargetTargetDocumentAttributeValue>>,
+    pub r#target_document_attribute_value: Box<Option<super::super::types::kendra::DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTargetTargetDocumentAttributeValue>>,
     /// `TRUE` to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to `TRUE`. To create a target value (`TargetDocumentAttributeValue`), set this to `FALSE`.
     #[builder(into)]
     #[serde(rename = "targetDocumentAttributeValueDeletion")]

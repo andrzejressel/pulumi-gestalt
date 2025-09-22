@@ -13,7 +13,7 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "gcs")]
-    pub r#gcs: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs>>,
+    pub r#gcs: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs>>,
     /// A local path within the VM to use.
     #[builder(into)]
     #[serde(rename = "localPath")]
@@ -22,5 +22,5 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "remote")]
-    pub r#remote: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote>>,
+    pub r#remote: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote>>,
 }

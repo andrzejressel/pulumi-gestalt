@@ -14,7 +14,7 @@ pub struct StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDes
     /// Encryption of the metrics exports in this bucket. See Encryption below for more details.
     #[builder(into)]
     #[serde(rename = "encryption")]
-    pub r#encryption: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryption>>,
+    pub r#encryption: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryption>>,
     /// The export format. Valid values: `CSV`, `Parquet`.
     #[builder(into)]
     #[serde(rename = "format")]

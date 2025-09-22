@@ -7,7 +7,7 @@ pub struct AiFeatureOnlineStoreDedicatedServingEndpoint {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "privateServiceConnectConfig")]
-    pub r#private_service_connect_config: Option<Box<super::super::types::vertex::AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig>>,
+    pub r#private_service_connect_config: Box<Option<super::super::types::vertex::AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfig>>,
     /// (Output)
     /// Domain name to use for this FeatureOnlineStore
     #[builder(into)]

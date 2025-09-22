@@ -5,7 +5,7 @@
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesMarketo {
     #[builder(into)]
     #[serde(rename = "errorHandlingConfig")]
-    pub r#error_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesMarketoErrorHandlingConfig>>,
+    pub r#error_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesMarketoErrorHandlingConfig>>,
     #[builder(into)]
     #[serde(rename = "object")]
     pub r#object: String,

@@ -11,5 +11,5 @@ pub struct BatchEnvironmentConfigPeripheralsConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sparkHistoryServerConfig")]
-    pub r#spark_history_server_config: Option<Box<super::super::types::dataproc::BatchEnvironmentConfigPeripheralsConfigSparkHistoryServerConfig>>,
+    pub r#spark_history_server_config: Box<Option<super::super::types::dataproc::BatchEnvironmentConfigPeripheralsConfigSparkHistoryServerConfig>>,
 }

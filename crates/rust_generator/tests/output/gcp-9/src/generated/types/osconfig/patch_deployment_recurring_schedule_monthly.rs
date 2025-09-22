@@ -13,5 +13,5 @@ pub struct PatchDeploymentRecurringScheduleMonthly {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "weekDayOfMonth")]
-    pub r#week_day_of_month: Option<Box<super::super::types::osconfig::PatchDeploymentRecurringScheduleMonthlyWeekDayOfMonth>>,
+    pub r#week_day_of_month: Box<Option<super::super::types::osconfig::PatchDeploymentRecurringScheduleMonthlyWeekDayOfMonth>>,
 }

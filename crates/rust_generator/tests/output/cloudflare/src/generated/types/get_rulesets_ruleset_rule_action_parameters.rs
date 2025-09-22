@@ -22,7 +22,7 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     /// List of browser TTL parameters to apply to the request.
     #[builder(into)]
     #[serde(rename = "browserTtl")]
-    pub r#browser_ttl: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersBrowserTtl>>,
+    pub r#browser_ttl: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersBrowserTtl>>,
     /// Whether to cache if expression matches.
     #[builder(into)]
     #[serde(rename = "cache")]
@@ -30,11 +30,11 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     /// List of cache key parameters to apply to the request.
     #[builder(into)]
     #[serde(rename = "cacheKey")]
-    pub r#cache_key: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersCacheKey>>,
+    pub r#cache_key: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersCacheKey>>,
     /// List of cache reserve parameters to apply to the request.
     #[builder(into)]
     #[serde(rename = "cacheReserve")]
-    pub r#cache_reserve: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersCacheReserve>>,
+    pub r#cache_reserve: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersCacheReserve>>,
     /// Content of the custom error response
     #[builder(into)]
     #[serde(rename = "content")]
@@ -62,7 +62,7 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     /// List of edge TTL parameters to apply to the request.
     #[builder(into)]
     #[serde(rename = "edgeTtl")]
-    pub r#edge_ttl: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersEdgeTtl>>,
+    pub r#edge_ttl: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersEdgeTtl>>,
     /// Turn on or off the Cloudflare Email Obfuscation feature of the Cloudflare Scrape Shield app.
     #[builder(into)]
     #[serde(rename = "emailObfuscation")]
@@ -70,11 +70,11 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     /// Use a list to lookup information for the action.
     #[builder(into)]
     #[serde(rename = "fromList")]
-    pub r#from_list: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersFromList>>,
+    pub r#from_list: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersFromList>>,
     /// Use a value to lookup information for the action.
     #[builder(into)]
     #[serde(rename = "fromValue")]
-    pub r#from_value: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersFromValue>>,
+    pub r#from_value: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersFromValue>>,
     /// List of HTTP header modifications to perform in the ruleset rule.
     #[builder(into)]
     #[serde(rename = "headers")]
@@ -97,7 +97,7 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     /// List of properties to configure WAF payload logging.
     #[builder(into)]
     #[serde(rename = "matchedData")]
-    pub r#matched_data: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersMatchedData>>,
+    pub r#matched_data: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersMatchedData>>,
     /// Turn on or off Cloudflare Mirage of the Cloudflare Speed app.
     #[builder(into)]
     #[serde(rename = "mirage")]
@@ -109,7 +109,7 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     /// List of properties to change request origin.
     #[builder(into)]
     #[serde(rename = "origin")]
-    pub r#origin: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersOrigin>>,
+    pub r#origin: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersOrigin>>,
     /// Sets a more compliant mode for parsing Cache Control headers
     #[builder(into)]
     #[serde(rename = "originCacheControl")]
@@ -121,7 +121,7 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     /// List of override configurations to apply to the ruleset.
     #[builder(into)]
     #[serde(rename = "overrides")]
-    pub r#overrides: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersOverrides>>,
+    pub r#overrides: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersOverrides>>,
     /// Point in the request/response lifecycle where the ruleset will be created. Available values: `ddos_l4`, `ddos_l7`, `http_config_settings`, `http_custom_errors`, `http_log_custom_fields`, `http_ratelimit`, `http_request_cache_settings`, `http_request_dynamic_redirect`, `http_request_firewall_custom`, `http_request_firewall_managed`, `http_request_late_transform`, `http_request_origin`, `http_request_redirect`, `http_request_sanitize`, `http_request_sbfm`, `http_request_transform`, `http_response_compression`, `http_response_firewall_managed`, `http_response_headers_transform`, `magic_transit`
     #[builder(into)]
     #[serde(rename = "phases")]
@@ -177,7 +177,7 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     /// List of serve stale parameters to apply to the request.
     #[builder(into)]
     #[serde(rename = "serveStale")]
-    pub r#serve_stale: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersServeStale>>,
+    pub r#serve_stale: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersServeStale>>,
     /// Turn on or off the Server Side Excludes feature of the Cloudflare Scrape Shield app.
     #[builder(into)]
     #[serde(rename = "serverSideExcludes")]
@@ -185,7 +185,7 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     /// List of properties to manange Server Name Indication.
     #[builder(into)]
     #[serde(rename = "sni")]
-    pub r#sni: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersSni>>,
+    pub r#sni: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersSni>>,
     /// Control options for the SSL feature of the Edge Certificates tab in the Cloudflare SSL/TLS app.
     #[builder(into)]
     #[serde(rename = "ssl")]
@@ -201,7 +201,7 @@ pub struct GetRulesetsRulesetRuleActionParameters {
     /// List of URI properties to configure for the ruleset rule when performing URL rewrite transformations.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersUri>>,
+    pub r#uri: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersUri>>,
     /// Version of the ruleset to deploy.
     #[builder(into)]
     #[serde(rename = "version")]

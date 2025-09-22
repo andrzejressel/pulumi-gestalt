@@ -6,5 +6,5 @@ pub struct VirtualNodeSpecListenerTimeoutTcp {
     /// Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
     #[builder(into)]
     #[serde(rename = "idle")]
-    pub r#idle: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutTcpIdle>>,
+    pub r#idle: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutTcpIdle>>,
 }

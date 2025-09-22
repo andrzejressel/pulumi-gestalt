@@ -6,15 +6,15 @@ pub struct DataCollectionRuleDestinations {
     /// A `azure_monitor_metrics` block as defined above.
     #[builder(into)]
     #[serde(rename = "azureMonitorMetrics")]
-    pub r#azure_monitor_metrics: Option<Box<super::super::types::monitoring::DataCollectionRuleDestinationsAzureMonitorMetrics>>,
+    pub r#azure_monitor_metrics: Box<Option<super::super::types::monitoring::DataCollectionRuleDestinationsAzureMonitorMetrics>>,
     /// One or more `event_hub` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "eventHub")]
-    pub r#event_hub: Option<Box<super::super::types::monitoring::DataCollectionRuleDestinationsEventHub>>,
+    pub r#event_hub: Box<Option<super::super::types::monitoring::DataCollectionRuleDestinationsEventHub>>,
     /// One or more `event_hub` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "eventHubDirect")]
-    pub r#event_hub_direct: Option<Box<super::super::types::monitoring::DataCollectionRuleDestinationsEventHubDirect>>,
+    pub r#event_hub_direct: Box<Option<super::super::types::monitoring::DataCollectionRuleDestinationsEventHubDirect>>,
     /// One or more `log_analytics` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "logAnalytics")]

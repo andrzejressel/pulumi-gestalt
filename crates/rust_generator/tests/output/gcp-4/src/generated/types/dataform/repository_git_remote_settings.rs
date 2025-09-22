@@ -15,7 +15,7 @@ pub struct RepositoryGitRemoteSettings {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sshAuthenticationConfig")]
-    pub r#ssh_authentication_config: Option<Box<super::super::types::dataform::RepositoryGitRemoteSettingsSshAuthenticationConfig>>,
+    pub r#ssh_authentication_config: Box<Option<super::super::types::dataform::RepositoryGitRemoteSettingsSshAuthenticationConfig>>,
     /// (Output)
     /// Indicates the status of the Git access token. https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories#TokenStatus
     #[builder(into)]

@@ -7,7 +7,7 @@ pub struct WorkstationConfigPersistentDirectory {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "gcePd")]
-    pub r#gce_pd: Option<Box<super::super::types::workstations::WorkstationConfigPersistentDirectoryGcePd>>,
+    pub r#gce_pd: Box<Option<super::super::types::workstations::WorkstationConfigPersistentDirectoryGcePd>>,
     /// Location of this directory in the running workstation.
     #[builder(into)]
     #[serde(rename = "mountPath")]

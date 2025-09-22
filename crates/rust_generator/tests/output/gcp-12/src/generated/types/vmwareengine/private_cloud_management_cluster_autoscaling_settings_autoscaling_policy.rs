@@ -11,12 +11,12 @@ pub struct PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "consumedMemoryThresholds")]
-    pub r#consumed_memory_thresholds: Option<Box<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyConsumedMemoryThresholds>>,
+    pub r#consumed_memory_thresholds: Box<Option<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyConsumedMemoryThresholds>>,
     /// Utilization thresholds pertaining to CPU utilization.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cpuThresholds")]
-    pub r#cpu_thresholds: Option<Box<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyCpuThresholds>>,
+    pub r#cpu_thresholds: Box<Option<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyCpuThresholds>>,
     /// The canonical identifier of the node type to add or remove.
     #[builder(into)]
     #[serde(rename = "nodeTypeId")]
@@ -30,5 +30,5 @@ pub struct PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "storageThresholds")]
-    pub r#storage_thresholds: Option<Box<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyStorageThresholds>>,
+    pub r#storage_thresholds: Box<Option<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyStorageThresholds>>,
 }

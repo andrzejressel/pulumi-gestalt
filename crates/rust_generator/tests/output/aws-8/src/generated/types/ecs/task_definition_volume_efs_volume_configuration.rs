@@ -6,7 +6,7 @@ pub struct TaskDefinitionVolumeEfsVolumeConfiguration {
     /// Configuration block for authorization for the Amazon EFS file system. Detailed below.
     #[builder(into)]
     #[serde(rename = "authorizationConfig")]
-    pub r#authorization_config: Option<Box<super::super::types::ecs::TaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfig>>,
+    pub r#authorization_config: Box<Option<super::super::types::ecs::TaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfig>>,
     /// ID of the EFS File System.
     #[builder(into)]
     #[serde(rename = "fileSystemId")]

@@ -11,5 +11,5 @@ pub struct AiFeatureStoreOnlineServingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "scaling")]
-    pub r#scaling: Option<Box<super::super::types::vertex::AiFeatureStoreOnlineServingConfigScaling>>,
+    pub r#scaling: Box<Option<super::super::types::vertex::AiFeatureStoreOnlineServingConfigScaling>>,
 }

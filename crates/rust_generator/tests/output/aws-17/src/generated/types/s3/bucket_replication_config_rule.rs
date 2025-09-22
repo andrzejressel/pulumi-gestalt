@@ -6,7 +6,7 @@ pub struct BucketReplicationConfigRule {
     /// Whether delete markers are replicated. This argument is only valid with V2 replication configurations (i.e., when `filter` is used)documented below.
     #[builder(into)]
     #[serde(rename = "deleteMarkerReplication")]
-    pub r#delete_marker_replication: Option<Box<super::super::types::s3::BucketReplicationConfigRuleDeleteMarkerReplication>>,
+    pub r#delete_marker_replication: Box<Option<super::super::types::s3::BucketReplicationConfigRuleDeleteMarkerReplication>>,
     /// Specifies the destination for the rule. See below.
     #[builder(into)]
     #[serde(rename = "destination")]
@@ -14,11 +14,11 @@ pub struct BucketReplicationConfigRule {
     /// Replicate existing objects in the source bucket according to the rule configurations. See below.
     #[builder(into)]
     #[serde(rename = "existingObjectReplication")]
-    pub r#existing_object_replication: Option<Box<super::super::types::s3::BucketReplicationConfigRuleExistingObjectReplication>>,
+    pub r#existing_object_replication: Box<Option<super::super::types::s3::BucketReplicationConfigRuleExistingObjectReplication>>,
     /// Filter that identifies subset of objects to which the replication rule applies. See below. If not specified, the `rule` will default to using `prefix`.
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Option<Box<super::super::types::s3::BucketReplicationConfigRuleFilter>>,
+    pub r#filter: Box<Option<super::super::types::s3::BucketReplicationConfigRuleFilter>>,
     /// Unique identifier for the rule. Must be less than or equal to 255 characters in length.
     #[builder(into)]
     #[serde(rename = "id")]
@@ -34,7 +34,7 @@ pub struct BucketReplicationConfigRule {
     /// Specifies special object selection criteria. See below.
     #[builder(into)]
     #[serde(rename = "sourceSelectionCriteria")]
-    pub r#source_selection_criteria: Option<Box<super::super::types::s3::BucketReplicationConfigRuleSourceSelectionCriteria>>,
+    pub r#source_selection_criteria: Box<Option<super::super::types::s3::BucketReplicationConfigRuleSourceSelectionCriteria>>,
     /// Status of the rule. Either `"Enabled"` or `"Disabled"`. The rule is ignored if status is not "Enabled".
     #[builder(into)]
     #[serde(rename = "status")]

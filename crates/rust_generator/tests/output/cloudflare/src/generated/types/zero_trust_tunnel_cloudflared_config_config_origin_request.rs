@@ -6,7 +6,7 @@ pub struct ZeroTrustTunnelCloudflaredConfigConfigOriginRequest {
     /// Access rules for the ingress service.
     #[builder(into)]
     #[serde(rename = "access")]
-    pub r#access: Option<Box<super::types::ZeroTrustTunnelCloudflaredConfigConfigOriginRequestAccess>>,
+    pub r#access: Box<Option<super::types::ZeroTrustTunnelCloudflaredConfigConfigOriginRequestAccess>>,
     /// Runs as jump host.
     #[builder(into)]
     #[serde(rename = "bastionMode")]

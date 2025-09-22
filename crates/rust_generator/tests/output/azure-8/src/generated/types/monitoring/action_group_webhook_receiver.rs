@@ -8,7 +8,7 @@ pub struct ActionGroupWebhookReceiver {
     /// > **NOTE:** Before adding a secure webhook receiver by setting `aad_auth`, please read [the configuration instruction of the AAD application](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#secure-webhook).
     #[builder(into)]
     #[serde(rename = "aadAuth")]
-    pub r#aad_auth: Option<Box<super::super::types::monitoring::ActionGroupWebhookReceiverAadAuth>>,
+    pub r#aad_auth: Box<Option<super::super::types::monitoring::ActionGroupWebhookReceiverAadAuth>>,
     /// The name of the webhook receiver. Names must be unique (case-insensitive) across all receivers within an action group.
     #[builder(into)]
     #[serde(rename = "name")]

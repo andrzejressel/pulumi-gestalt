@@ -6,7 +6,7 @@ pub struct DataLakeConfigurationLifecycleConfiguration {
     /// Provides data expiration details of Amazon Security Lake object.
     #[builder(into)]
     #[serde(rename = "expiration")]
-    pub r#expiration: Option<Box<super::super::types::securitylake::DataLakeConfigurationLifecycleConfigurationExpiration>>,
+    pub r#expiration: Box<Option<super::super::types::securitylake::DataLakeConfigurationLifecycleConfigurationExpiration>>,
     /// Provides data storage transition details of Amazon Security Lake object.
     #[builder(into)]
     #[serde(rename = "transitions")]

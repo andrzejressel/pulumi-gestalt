@@ -10,15 +10,15 @@ pub struct CostCategoryRuleRule {
     /// Configuration block for the filter that's based on `CostCategory` values. See below.
     #[builder(into)]
     #[serde(rename = "costCategory")]
-    pub r#cost_category: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleCostCategory>>,
+    pub r#cost_category: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleCostCategory>>,
     /// Configuration block for the specific `Dimension` to use for `Expression`. See below.
     #[builder(into)]
     #[serde(rename = "dimension")]
-    pub r#dimension: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleDimension>>,
+    pub r#dimension: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleDimension>>,
     /// Return results that match both `Dimension` object.
     #[builder(into)]
     #[serde(rename = "not")]
-    pub r#not: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleNot>>,
+    pub r#not: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleNot>>,
     /// Return results that match both `Dimension` object.
     #[builder(into)]
     #[serde(rename = "ors")]
@@ -26,5 +26,5 @@ pub struct CostCategoryRuleRule {
     /// Configuration block for the specific `Tag` to use for `Expression`. See below.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleTags>>,
+    pub r#tags: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleTags>>,
 }

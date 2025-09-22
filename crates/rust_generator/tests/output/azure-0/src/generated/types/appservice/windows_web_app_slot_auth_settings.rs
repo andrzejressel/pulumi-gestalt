@@ -6,7 +6,7 @@ pub struct WindowsWebAppSlotAuthSettings {
     /// An `active_directory` block as defined above.
     #[builder(into)]
     #[serde(rename = "activeDirectory")]
-    pub r#active_directory: Option<Box<super::super::types::appservice::WindowsWebAppSlotAuthSettingsActiveDirectory>>,
+    pub r#active_directory: Box<Option<super::super::types::appservice::WindowsWebAppSlotAuthSettingsActiveDirectory>>,
     /// Specifies a map of login Parameters to send to the OpenID Connect authorization endpoint when a user logs in.
     #[builder(into)]
     #[serde(rename = "additionalLoginParameters")]
@@ -28,15 +28,15 @@ pub struct WindowsWebAppSlotAuthSettings {
     /// A `facebook` block as defined below.
     #[builder(into)]
     #[serde(rename = "facebook")]
-    pub r#facebook: Option<Box<super::super::types::appservice::WindowsWebAppSlotAuthSettingsFacebook>>,
+    pub r#facebook: Box<Option<super::super::types::appservice::WindowsWebAppSlotAuthSettingsFacebook>>,
     /// A `github` block as defined below.
     #[builder(into)]
     #[serde(rename = "github")]
-    pub r#github: Option<Box<super::super::types::appservice::WindowsWebAppSlotAuthSettingsGithub>>,
+    pub r#github: Box<Option<super::super::types::appservice::WindowsWebAppSlotAuthSettingsGithub>>,
     /// A `google` block as defined below.
     #[builder(into)]
     #[serde(rename = "google")]
-    pub r#google: Option<Box<super::super::types::appservice::WindowsWebAppSlotAuthSettingsGoogle>>,
+    pub r#google: Box<Option<super::super::types::appservice::WindowsWebAppSlotAuthSettingsGoogle>>,
     /// The OpenID Connect Issuer URI that represents the entity which issues access tokens for this Windows Web App Slot.
     /// 
     /// > **NOTE:** When using Azure Active Directory, this value is the URI of the directory tenant, e.g. <https://sts.windows.net/{tenant-guid}/>.
@@ -46,7 +46,7 @@ pub struct WindowsWebAppSlotAuthSettings {
     /// A `microsoft` block as defined below.
     #[builder(into)]
     #[serde(rename = "microsoft")]
-    pub r#microsoft: Option<Box<super::super::types::appservice::WindowsWebAppSlotAuthSettingsMicrosoft>>,
+    pub r#microsoft: Box<Option<super::super::types::appservice::WindowsWebAppSlotAuthSettingsMicrosoft>>,
     /// The RuntimeVersion of the Authentication / Authorization feature in use for the Windows Web App Slot.
     #[builder(into)]
     #[serde(rename = "runtimeVersion")]
@@ -62,7 +62,7 @@ pub struct WindowsWebAppSlotAuthSettings {
     /// A `twitter` block as defined below.
     #[builder(into)]
     #[serde(rename = "twitter")]
-    pub r#twitter: Option<Box<super::super::types::appservice::WindowsWebAppSlotAuthSettingsTwitter>>,
+    pub r#twitter: Box<Option<super::super::types::appservice::WindowsWebAppSlotAuthSettingsTwitter>>,
     /// The action to take when an unauthenticated client attempts to access the app. Possible values include: `RedirectToLoginPage`, `AllowAnonymous`.
     #[builder(into)]
     #[serde(rename = "unauthenticatedClientAction")]

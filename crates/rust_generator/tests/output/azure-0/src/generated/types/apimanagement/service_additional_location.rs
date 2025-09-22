@@ -36,7 +36,7 @@ pub struct ServiceAdditionalLocation {
     /// A `virtual_network_configuration` block as defined below. Required when `virtual_network_type` is `External` or `Internal`.
     #[builder(into)]
     #[serde(rename = "virtualNetworkConfiguration")]
-    pub r#virtual_network_configuration: Option<Box<super::super::types::apimanagement::ServiceAdditionalLocationVirtualNetworkConfiguration>>,
+    pub r#virtual_network_configuration: Box<Option<super::super::types::apimanagement::ServiceAdditionalLocationVirtualNetworkConfiguration>>,
     /// A list of availability zones.
     #[builder(into)]
     #[serde(rename = "zones")]

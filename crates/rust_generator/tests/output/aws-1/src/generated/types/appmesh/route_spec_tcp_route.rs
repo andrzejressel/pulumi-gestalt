@@ -9,9 +9,9 @@ pub struct RouteSpecTcpRoute {
     pub r#action: Box<super::super::types::appmesh::RouteSpecTcpRouteAction>,
     #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Option<Box<super::super::types::appmesh::RouteSpecTcpRouteMatch>>,
+    pub r#match_: Box<Option<super::super::types::appmesh::RouteSpecTcpRouteMatch>>,
     /// Types of timeouts.
     #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Option<Box<super::super::types::appmesh::RouteSpecTcpRouteTimeout>>,
+    pub r#timeout: Box<Option<super::super::types::appmesh::RouteSpecTcpRouteTimeout>>,
 }

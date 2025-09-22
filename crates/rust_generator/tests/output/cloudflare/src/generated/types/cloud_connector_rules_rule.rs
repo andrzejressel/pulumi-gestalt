@@ -18,7 +18,7 @@ pub struct CloudConnectorRulesRule {
     /// Cloud Connector Rule Parameters
     #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Option<Box<super::types::CloudConnectorRulesRuleParameters>>,
+    pub r#parameters: Box<Option<super::types::CloudConnectorRulesRuleParameters>>,
     /// Type of provider. Available values: `aws_s3`, `cloudflare_r2`, `azure_storage`, `gcp_storage`
     #[builder(into)]
     #[serde(rename = "provider")]

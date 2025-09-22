@@ -6,9 +6,9 @@ pub struct ClusterVirtualClusterConfigAuxiliaryServicesConfig {
     /// The Hive Metastore configuration for this workload.
     #[builder(into)]
     #[serde(rename = "metastoreConfig")]
-    pub r#metastore_config: Option<Box<super::super::types::dataproc::ClusterVirtualClusterConfigAuxiliaryServicesConfigMetastoreConfig>>,
+    pub r#metastore_config: Box<Option<super::super::types::dataproc::ClusterVirtualClusterConfigAuxiliaryServicesConfigMetastoreConfig>>,
     /// The Spark History Server configuration for the workload.
     #[builder(into)]
     #[serde(rename = "sparkHistoryServerConfig")]
-    pub r#spark_history_server_config: Option<Box<super::super::types::dataproc::ClusterVirtualClusterConfigAuxiliaryServicesConfigSparkHistoryServerConfig>>,
+    pub r#spark_history_server_config: Box<Option<super::super::types::dataproc::ClusterVirtualClusterConfigAuxiliaryServicesConfigSparkHistoryServerConfig>>,
 }

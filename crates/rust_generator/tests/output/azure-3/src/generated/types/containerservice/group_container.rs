@@ -26,7 +26,7 @@ pub struct GroupContainer {
     /// The definition of a readiness probe for this container as documented in the `liveness_probe` block below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "livenessProbe")]
-    pub r#liveness_probe: Option<Box<super::super::types::containerservice::GroupContainerLivenessProbe>>,
+    pub r#liveness_probe: Box<Option<super::super::types::containerservice::GroupContainerLivenessProbe>>,
     /// The required memory of the containers in GB. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "memory")]
@@ -46,7 +46,7 @@ pub struct GroupContainer {
     /// The definition of a readiness probe for this container as documented in the `readiness_probe` block below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "readinessProbe")]
-    pub r#readiness_probe: Option<Box<super::super::types::containerservice::GroupContainerReadinessProbe>>,
+    pub r#readiness_probe: Box<Option<super::super::types::containerservice::GroupContainerReadinessProbe>>,
     /// A list of sensitive environment variables to be set on the container. Specified as a map of name/value pairs. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "secureEnvironmentVariables")]

@@ -12,12 +12,12 @@ pub struct GrpcRouteRuleAction {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "faultInjectionPolicy")]
-    pub r#fault_injection_policy: Option<Box<super::super::types::networkservices::GrpcRouteRuleActionFaultInjectionPolicy>>,
+    pub r#fault_injection_policy: Box<Option<super::super::types::networkservices::GrpcRouteRuleActionFaultInjectionPolicy>>,
     /// Specifies the retry policy associated with this route.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "retryPolicy")]
-    pub r#retry_policy: Option<Box<super::super::types::networkservices::GrpcRouteRuleActionRetryPolicy>>,
+    pub r#retry_policy: Box<Option<super::super::types::networkservices::GrpcRouteRuleActionRetryPolicy>>,
     /// Specifies the timeout for selected route.
     #[builder(into)]
     #[serde(rename = "timeout")]

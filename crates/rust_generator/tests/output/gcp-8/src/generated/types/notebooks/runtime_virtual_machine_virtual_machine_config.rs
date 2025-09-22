@@ -7,7 +7,7 @@ pub struct RuntimeVirtualMachineVirtualMachineConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "acceleratorConfig")]
-    pub r#accelerator_config: Option<Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig>>,
+    pub r#accelerator_config: Box<Option<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig>>,
     /// Use a list of container images to start the notebook instance.
     /// Structure is documented below.
     #[builder(into)]
@@ -22,7 +22,7 @@ pub struct RuntimeVirtualMachineVirtualMachineConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "encryptionConfig")]
-    pub r#encryption_config: Option<Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig>>,
+    pub r#encryption_config: Box<Option<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig>>,
     /// (Output)
     /// The Compute Engine guest attributes. (see [Project and instance
     /// guest attributes](https://cloud.google.com/compute/docs/
@@ -91,7 +91,7 @@ pub struct RuntimeVirtualMachineVirtualMachineConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "shieldedInstanceConfig")]
-    pub r#shielded_instance_config: Option<Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig>>,
+    pub r#shielded_instance_config: Box<Option<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig>>,
     /// The Compute Engine subnetwork to be used for machine
     /// communications. Cannot be specified with network. A full URL or
     /// partial URI are valid. Examples:

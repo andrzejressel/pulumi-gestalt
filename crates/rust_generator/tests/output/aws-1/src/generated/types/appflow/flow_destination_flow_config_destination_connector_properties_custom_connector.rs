@@ -11,7 +11,7 @@ pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnecto
     pub r#entity_name: String,
     #[builder(into)]
     #[serde(rename = "errorHandlingConfig")]
-    pub r#error_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfig>>,
+    pub r#error_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfig>>,
     #[builder(into)]
     #[serde(rename = "idFieldNames")]
     pub r#id_field_names: Option<Vec<String>>,

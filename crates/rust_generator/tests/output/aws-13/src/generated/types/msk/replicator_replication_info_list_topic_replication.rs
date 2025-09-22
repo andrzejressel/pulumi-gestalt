@@ -18,10 +18,10 @@ pub struct ReplicatorReplicationInfoListTopicReplication {
     /// Configuration for specifying the position in the topics to start replicating from.
     #[builder(into)]
     #[serde(rename = "startingPosition")]
-    pub r#starting_position: Option<Box<super::super::types::msk::ReplicatorReplicationInfoListTopicReplicationStartingPosition>>,
+    pub r#starting_position: Box<Option<super::super::types::msk::ReplicatorReplicationInfoListTopicReplicationStartingPosition>>,
     #[builder(into)]
     #[serde(rename = "topicNameConfiguration")]
-    pub r#topic_name_configuration: Option<Box<super::super::types::msk::ReplicatorReplicationInfoListTopicReplicationTopicNameConfiguration>>,
+    pub r#topic_name_configuration: Box<Option<super::super::types::msk::ReplicatorReplicationInfoListTopicReplicationTopicNameConfiguration>>,
     /// List of regular expression patterns indicating the topics that should not be replica.
     #[builder(into)]
     #[serde(rename = "topicsToExcludes")]

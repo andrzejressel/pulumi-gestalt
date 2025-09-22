@@ -7,25 +7,25 @@ pub struct AddonsConfigAddonsConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "advancedApiOpsConfig")]
-    pub r#advanced_api_ops_config: Option<Box<super::super::types::apigee::AddonsConfigAddonsConfigAdvancedApiOpsConfig>>,
+    pub r#advanced_api_ops_config: Box<Option<super::super::types::apigee::AddonsConfigAddonsConfigAdvancedApiOpsConfig>>,
     /// Configuration for the Monetization add-on.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "apiSecurityConfig")]
-    pub r#api_security_config: Option<Box<super::super::types::apigee::AddonsConfigAddonsConfigApiSecurityConfig>>,
+    pub r#api_security_config: Box<Option<super::super::types::apigee::AddonsConfigAddonsConfigApiSecurityConfig>>,
     /// Configuration for the Monetization add-on.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "connectorsPlatformConfig")]
-    pub r#connectors_platform_config: Option<Box<super::super::types::apigee::AddonsConfigAddonsConfigConnectorsPlatformConfig>>,
+    pub r#connectors_platform_config: Box<Option<super::super::types::apigee::AddonsConfigAddonsConfigConnectorsPlatformConfig>>,
     /// Configuration for the Monetization add-on.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "integrationConfig")]
-    pub r#integration_config: Option<Box<super::super::types::apigee::AddonsConfigAddonsConfigIntegrationConfig>>,
+    pub r#integration_config: Box<Option<super::super::types::apigee::AddonsConfigAddonsConfigIntegrationConfig>>,
     /// Configuration for the Monetization add-on.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "monetizationConfig")]
-    pub r#monetization_config: Option<Box<super::super::types::apigee::AddonsConfigAddonsConfigMonetizationConfig>>,
+    pub r#monetization_config: Box<Option<super::super::types::apigee::AddonsConfigAddonsConfigMonetizationConfig>>,
 }

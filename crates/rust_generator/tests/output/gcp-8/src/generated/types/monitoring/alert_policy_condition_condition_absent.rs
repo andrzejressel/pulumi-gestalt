@@ -48,5 +48,5 @@ pub struct AlertPolicyConditionConditionAbsent {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "trigger")]
-    pub r#trigger: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionAbsentTrigger>>,
+    pub r#trigger: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionAbsentTrigger>>,
 }

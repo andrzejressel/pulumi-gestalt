@@ -6,9 +6,9 @@ pub struct WorkflowStepDecryptStepDetailsDestinationFileLocation {
     /// Specifies the details for the EFS file being copied.
     #[builder(into)]
     #[serde(rename = "efsFileLocation")]
-    pub r#efs_file_location: Option<Box<super::super::types::transfer::WorkflowStepDecryptStepDetailsDestinationFileLocationEfsFileLocation>>,
+    pub r#efs_file_location: Box<Option<super::super::types::transfer::WorkflowStepDecryptStepDetailsDestinationFileLocationEfsFileLocation>>,
     /// Specifies the details for the S3 file being copied.
     #[builder(into)]
     #[serde(rename = "s3FileLocation")]
-    pub r#s_3_file_location: Option<Box<super::super::types::transfer::WorkflowStepDecryptStepDetailsDestinationFileLocationS3FileLocation>>,
+    pub r#s_3_file_location: Box<Option<super::super::types::transfer::WorkflowStepDecryptStepDetailsDestinationFileLocationS3FileLocation>>,
 }

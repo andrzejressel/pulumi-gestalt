@@ -14,7 +14,7 @@ pub struct ChannelDestination {
     /// Destination settings for a Multiplex output; one destination for both encoders. See Multiplex Settings for more details.
     #[builder(into)]
     #[serde(rename = "multiplexSettings")]
-    pub r#multiplex_settings: Option<Box<super::super::types::medialive::ChannelDestinationMultiplexSettings>>,
+    pub r#multiplex_settings: Box<Option<super::super::types::medialive::ChannelDestinationMultiplexSettings>>,
     /// Destination settings for a standard output; one destination for each redundant encoder. See Settings for more details.
     #[builder(into)]
     #[serde(rename = "settings")]

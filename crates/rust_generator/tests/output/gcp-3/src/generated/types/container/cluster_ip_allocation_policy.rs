@@ -8,7 +8,7 @@ pub struct ClusterIpAllocationPolicy {
     /// secondary Pod IP address assignment to node pools isn't needed. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "additionalPodRangesConfig")]
-    pub r#additional_pod_ranges_config: Option<Box<super::super::types::container::ClusterIpAllocationPolicyAdditionalPodRangesConfig>>,
+    pub r#additional_pod_ranges_config: Box<Option<super::super::types::container::ClusterIpAllocationPolicyAdditionalPodRangesConfig>>,
     /// The IP address range for the cluster pod IPs.
     /// Set to blank to have a range chosen with the default size. Set to /netmask (e.g. /14)
     /// to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14)
@@ -26,7 +26,7 @@ pub struct ClusterIpAllocationPolicy {
     /// Configuration for cluster level pod cidr overprovision. Default is disabled=false.
     #[builder(into)]
     #[serde(rename = "podCidrOverprovisionConfig")]
-    pub r#pod_cidr_overprovision_config: Option<Box<super::super::types::container::ClusterIpAllocationPolicyPodCidrOverprovisionConfig>>,
+    pub r#pod_cidr_overprovision_config: Box<Option<super::super::types::container::ClusterIpAllocationPolicyPodCidrOverprovisionConfig>>,
     /// The IP address range of the services IPs in this cluster.
     /// Set to blank to have a range chosen with the default size. Set to /netmask (e.g. /14)
     /// to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14)

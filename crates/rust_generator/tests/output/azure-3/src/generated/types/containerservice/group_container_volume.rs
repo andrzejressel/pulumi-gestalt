@@ -10,7 +10,7 @@ pub struct GroupContainerVolume {
     /// A `git_repo` block as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "gitRepo")]
-    pub r#git_repo: Option<Box<super::super::types::containerservice::GroupContainerVolumeGitRepo>>,
+    pub r#git_repo: Box<Option<super::super::types::containerservice::GroupContainerVolumeGitRepo>>,
     /// The path on which this volume is to be mounted. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "mountPath")]

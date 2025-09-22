@@ -6,5 +6,5 @@ pub struct WebAclChallengeConfig {
     /// Defines custom immunity time. See `immunity_time_property` below for details.
     #[builder(into)]
     #[serde(rename = "immunityTimeProperty")]
-    pub r#immunity_time_property: Option<Box<super::super::types::wafv2::WebAclChallengeConfigImmunityTimeProperty>>,
+    pub r#immunity_time_property: Box<Option<super::super::types::wafv2::WebAclChallengeConfigImmunityTimeProperty>>,
 }

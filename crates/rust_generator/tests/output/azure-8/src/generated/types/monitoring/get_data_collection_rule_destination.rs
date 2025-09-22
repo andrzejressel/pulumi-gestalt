@@ -10,11 +10,11 @@ pub struct GetDataCollectionRuleDestination {
     /// One or more `event_hub` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "eventHub")]
-    pub r#event_hub: Option<Box<super::super::types::monitoring::GetDataCollectionRuleDestinationEventHub>>,
+    pub r#event_hub: Box<Option<super::super::types::monitoring::GetDataCollectionRuleDestinationEventHub>>,
     /// One or more `event_hub_direct` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "eventHubDirect")]
-    pub r#event_hub_direct: Option<Box<super::super::types::monitoring::GetDataCollectionRuleDestinationEventHubDirect>>,
+    pub r#event_hub_direct: Box<Option<super::super::types::monitoring::GetDataCollectionRuleDestinationEventHubDirect>>,
     /// One or more `log_analytics` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "logAnalytics")]

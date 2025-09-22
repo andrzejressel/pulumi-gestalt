@@ -12,7 +12,7 @@ pub struct PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "environment")]
-    pub r#environment: Option<Box<super::super::types::dataflow::PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironment>>,
+    pub r#environment: Box<Option<super::super::types::dataflow::PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironment>>,
     /// The job name to use for the created job. For an update job request, the job name should be the same as the existing running job.
     #[builder(into)]
     #[serde(rename = "jobName")]

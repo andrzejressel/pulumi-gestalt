@@ -6,7 +6,7 @@ pub struct IntegrationRuntimeSsisExpressCustomSetupComponent {
     /// A `key_vault_secret_reference` block as defined below.
     #[builder(into)]
     #[serde(rename = "keyVaultLicense")]
-    pub r#key_vault_license: Option<Box<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupComponentKeyVaultLicense>>,
+    pub r#key_vault_license: Box<Option<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupComponentKeyVaultLicense>>,
     /// The license used for the Component.
     #[builder(into)]
     #[serde(rename = "license")]

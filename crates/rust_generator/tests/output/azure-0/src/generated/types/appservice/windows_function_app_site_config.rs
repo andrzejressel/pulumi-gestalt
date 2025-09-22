@@ -28,7 +28,7 @@ pub struct WindowsFunctionAppSiteConfig {
     /// An `app_service_logs` block as defined above.
     #[builder(into)]
     #[serde(rename = "appServiceLogs")]
-    pub r#app_service_logs: Option<Box<super::super::types::appservice::WindowsFunctionAppSiteConfigAppServiceLogs>>,
+    pub r#app_service_logs: Box<Option<super::super::types::appservice::WindowsFunctionAppSiteConfigAppServiceLogs>>,
     /// The Connection String for linking the Windows Function App to Application Insights.
     #[builder(into)]
     #[serde(rename = "applicationInsightsConnectionString")]
@@ -42,11 +42,11 @@ pub struct WindowsFunctionAppSiteConfig {
     /// > **Note:** If this is set, there must not be an application setting `FUNCTIONS_WORKER_RUNTIME`.
     #[builder(into)]
     #[serde(rename = "applicationStack")]
-    pub r#application_stack: Option<Box<super::super::types::appservice::WindowsFunctionAppSiteConfigApplicationStack>>,
+    pub r#application_stack: Box<Option<super::super::types::appservice::WindowsFunctionAppSiteConfigApplicationStack>>,
     /// A `cors` block as defined above.
     #[builder(into)]
     #[serde(rename = "cors")]
-    pub r#cors: Option<Box<super::super::types::appservice::WindowsFunctionAppSiteConfigCors>>,
+    pub r#cors: Box<Option<super::super::types::appservice::WindowsFunctionAppSiteConfigCors>>,
     /// Specifies a list of Default Documents for the Windows Function App.
     #[builder(into)]
     #[serde(rename = "defaultDocuments")]

@@ -8,9 +8,9 @@ pub struct ConnectionAuthConfigOauth2JwtBearer {
     /// Specified in the form as: projects/*/secrets/*/versions/*.
     #[builder(into)]
     #[serde(rename = "clientKey")]
-    pub r#client_key: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearerClientKey>>,
+    pub r#client_key: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearerClientKey>>,
     /// JwtClaims providers fields to generate the token.
     #[builder(into)]
     #[serde(rename = "jwtClaims")]
-    pub r#jwt_claims: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearerJwtClaims>>,
+    pub r#jwt_claims: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearerJwtClaims>>,
 }

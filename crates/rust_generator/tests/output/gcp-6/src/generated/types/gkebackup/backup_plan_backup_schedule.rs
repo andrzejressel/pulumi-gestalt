@@ -21,5 +21,5 @@ pub struct BackupPlanBackupSchedule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rpoConfig")]
-    pub r#rpo_config: Option<Box<super::super::types::gkebackup::BackupPlanBackupScheduleRpoConfig>>,
+    pub r#rpo_config: Box<Option<super::super::types::gkebackup::BackupPlanBackupScheduleRpoConfig>>,
 }

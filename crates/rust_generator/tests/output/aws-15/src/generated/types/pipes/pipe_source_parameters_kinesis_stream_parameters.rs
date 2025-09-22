@@ -10,7 +10,7 @@ pub struct PipeSourceParametersKinesisStreamParameters {
     /// Define the target queue to send dead-letter queue events to. Detailed below.
     #[builder(into)]
     #[serde(rename = "deadLetterConfig")]
-    pub r#dead_letter_config: Option<Box<super::super::types::pipes::PipeSourceParametersKinesisStreamParametersDeadLetterConfig>>,
+    pub r#dead_letter_config: Box<Option<super::super::types::pipes::PipeSourceParametersKinesisStreamParametersDeadLetterConfig>>,
     /// The maximum length of a time to wait for events. Maximum value of 300.
     #[builder(into)]
     #[serde(rename = "maximumBatchingWindowInSeconds")]

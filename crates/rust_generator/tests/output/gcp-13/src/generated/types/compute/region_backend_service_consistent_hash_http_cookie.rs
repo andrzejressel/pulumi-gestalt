@@ -15,5 +15,5 @@ pub struct RegionBackendServiceConsistentHashHttpCookie {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ttl")]
-    pub r#ttl: Option<Box<super::super::types::compute::RegionBackendServiceConsistentHashHttpCookieTtl>>,
+    pub r#ttl: Box<Option<super::super::types::compute::RegionBackendServiceConsistentHashHttpCookieTtl>>,
 }

@@ -6,5 +6,5 @@ pub struct VirtualServiceSpec {
     /// App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.
     #[builder(into)]
     #[serde(rename = "provider")]
-    pub r#provider: Option<Box<super::super::types::appmesh::VirtualServiceSpecProvider>>,
+    pub r#provider: Box<Option<super::super::types::appmesh::VirtualServiceSpecProvider>>,
 }

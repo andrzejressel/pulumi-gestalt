@@ -14,7 +14,7 @@ pub struct RulesetRuleActionParametersCacheKey {
     /// Custom key parameters for the request.
     #[builder(into)]
     #[serde(rename = "customKey")]
-    pub r#custom_key: Option<Box<super::types::RulesetRuleActionParametersCacheKeyCustomKey>>,
+    pub r#custom_key: Box<Option<super::types::RulesetRuleActionParametersCacheKeyCustomKey>>,
     /// Ignore query strings order.
     #[builder(into)]
     #[serde(rename = "ignoreQueryStringsOrder")]

@@ -6,7 +6,7 @@ pub struct RuleSource {
     /// Provides the runtime system, policy definition, and whether debug logging is enabled. Required when owner is set to `CUSTOM_POLICY`. See Custom Policy Details Below.
     #[builder(into)]
     #[serde(rename = "customPolicyDetails")]
-    pub r#custom_policy_details: Option<Box<super::super::types::cfg::RuleSourceCustomPolicyDetails>>,
+    pub r#custom_policy_details: Box<Option<super::super::types::cfg::RuleSourceCustomPolicyDetails>>,
     /// Indicates whether AWS or the customer owns and manages the AWS Config rule. Valid values are `AWS`, `CUSTOM_LAMBDA` or `CUSTOM_POLICY`. For more information about managed rules, see the [AWS Config Managed Rules documentation](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html). For more information about custom rules, see the [AWS Config Custom Rules documentation](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html). Custom Lambda Functions require permissions to allow the AWS Config service to invoke them, e.g., via the `aws.lambda.Permission` resource.
     #[builder(into)]
     #[serde(rename = "owner")]

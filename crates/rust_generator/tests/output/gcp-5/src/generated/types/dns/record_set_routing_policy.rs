@@ -16,7 +16,7 @@ pub struct RecordSetRoutingPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "primaryBackup")]
-    pub r#primary_backup: Option<Box<super::super::types::dns::RecordSetRoutingPolicyPrimaryBackup>>,
+    pub r#primary_backup: Box<Option<super::super::types::dns::RecordSetRoutingPolicyPrimaryBackup>>,
     /// The configuration for Weighted Round Robin based routing policy.
     /// Structure is documented below.
     #[builder(into)]

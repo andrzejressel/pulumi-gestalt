@@ -22,5 +22,5 @@ pub struct TopicRuleTimestream {
     /// Configuration block specifying an application-defined value to replace the default value assigned to the Timestream record's timestamp in the time column. Nested arguments below.
     #[builder(into)]
     #[serde(rename = "timestamp")]
-    pub r#timestamp: Option<Box<super::super::types::iot::TopicRuleTimestreamTimestamp>>,
+    pub r#timestamp: Box<Option<super::super::types::iot::TopicRuleTimestreamTimestamp>>,
 }

@@ -20,7 +20,7 @@ pub struct RuleGroupRuleStatementRateBasedStatement {
     /// The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. If `aggregate_key_type` is set to `FORWARDED_IP`, this block is required. See Forwarded IP Config below for details.
     #[builder(into)]
     #[serde(rename = "forwardedIpConfig")]
-    pub r#forwarded_ip_config: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementForwardedIpConfig>>,
+    pub r#forwarded_ip_config: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementForwardedIpConfig>>,
     /// The limit on requests per 5-minute period for a single originating IP address.
     #[builder(into)]
     #[serde(rename = "limit")]
@@ -28,5 +28,5 @@ pub struct RuleGroupRuleStatementRateBasedStatement {
     /// An optional nested statement that narrows the scope of the rate-based statement to matching web requests. This can be any nestable statement, and you can nest statements at any level below this scope-down statement. See Statement above for details. If `aggregate_key_type` is set to `CONSTANT`, this block is required.
     #[builder(into)]
     #[serde(rename = "scopeDownStatement")]
-    pub r#scope_down_statement: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatement>>,
+    pub r#scope_down_statement: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatement>>,
 }

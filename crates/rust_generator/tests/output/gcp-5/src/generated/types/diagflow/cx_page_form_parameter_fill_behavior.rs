@@ -7,7 +7,7 @@ pub struct CxPageFormParameterFillBehavior {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "initialPromptFulfillment")]
-    pub r#initial_prompt_fulfillment: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillment>>,
+    pub r#initial_prompt_fulfillment: Box<Option<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillment>>,
     /// The handlers for parameter-level events, used to provide reprompt for the parameter or transition to a different page/flow. The supported events are:
     /// * sys.no-match-<N>, where N can be from 1 to 6
     /// * sys.no-match-default

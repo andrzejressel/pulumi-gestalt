@@ -6,7 +6,7 @@ pub struct GetIamPolicyBinding {
     /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "condition")]
-    pub r#condition: Option<Box<super::super::types::organizations::GetIamPolicyBindingCondition>>,
+    pub r#condition: Box<Option<super::super::types::organizations::GetIamPolicyBindingCondition>>,
     /// An array of identities that will be granted the privilege in the `role`. For more details on format and restrictions see https://cloud.google.com/billing/reference/rest/v1/Policy#Binding
     /// Each entry can have one of the following values:
     /// * **allUsers**: A special identifier that represents anyone who is on the internet; with or without a Google account. Some resources **don't** support this identity.

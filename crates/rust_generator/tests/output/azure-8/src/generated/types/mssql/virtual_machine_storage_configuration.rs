@@ -6,7 +6,7 @@ pub struct VirtualMachineStorageConfiguration {
     /// A `storage_settings` block as defined below.
     #[builder(into)]
     #[serde(rename = "dataSettings")]
-    pub r#data_settings: Option<Box<super::super::types::mssql::VirtualMachineStorageConfigurationDataSettings>>,
+    pub r#data_settings: Box<Option<super::super::types::mssql::VirtualMachineStorageConfigurationDataSettings>>,
     /// The type of disk configuration to apply to the SQL Server. Valid values include `NEW`, `EXTEND`, or `ADD`.
     #[builder(into)]
     #[serde(rename = "diskType")]
@@ -14,7 +14,7 @@ pub struct VirtualMachineStorageConfiguration {
     /// A `storage_settings` block as defined below.
     #[builder(into)]
     #[serde(rename = "logSettings")]
-    pub r#log_settings: Option<Box<super::super::types::mssql::VirtualMachineStorageConfigurationLogSettings>>,
+    pub r#log_settings: Box<Option<super::super::types::mssql::VirtualMachineStorageConfigurationLogSettings>>,
     /// The type of storage workload. Valid values include `GENERAL`, `OLTP`, or `DW`.
     #[builder(into)]
     #[serde(rename = "storageWorkloadType")]
@@ -26,5 +26,5 @@ pub struct VirtualMachineStorageConfiguration {
     /// An `temp_db_settings` block as defined below.
     #[builder(into)]
     #[serde(rename = "tempDbSettings")]
-    pub r#temp_db_settings: Option<Box<super::super::types::mssql::VirtualMachineStorageConfigurationTempDbSettings>>,
+    pub r#temp_db_settings: Box<Option<super::super::types::mssql::VirtualMachineStorageConfigurationTempDbSettings>>,
 }

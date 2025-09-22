@@ -6,7 +6,7 @@ pub struct ClusterKubernetesNetworkConfig {
     /// Configuration block with elastic load balancing configuration for the cluster. Detailed below.
     #[builder(into)]
     #[serde(rename = "elasticLoadBalancing")]
-    pub r#elastic_load_balancing: Option<Box<super::super::types::eks::ClusterKubernetesNetworkConfigElasticLoadBalancing>>,
+    pub r#elastic_load_balancing: Box<Option<super::super::types::eks::ClusterKubernetesNetworkConfigElasticLoadBalancing>>,
     /// The IP family used to assign Kubernetes pod and service addresses. Valid values are `ipv4` (default) and `ipv6`. You can only specify an IP family when you create a cluster, changing this value will force a new cluster to be created.
     #[builder(into)]
     #[serde(rename = "ipFamily")]

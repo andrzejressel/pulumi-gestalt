@@ -6,9 +6,9 @@ pub struct VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate {
     /// Local file certificate.
     #[builder(into)]
     #[serde(rename = "file")]
-    pub r#file: Option<Box<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile>>,
+    pub r#file: Box<Option<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFile>>,
     /// A [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
     #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Option<Box<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds>>,
+    pub r#sds: Box<Option<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSds>>,
 }

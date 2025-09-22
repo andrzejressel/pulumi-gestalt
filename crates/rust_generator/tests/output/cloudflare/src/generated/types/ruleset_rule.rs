@@ -10,7 +10,7 @@ pub struct RulesetRule {
     /// List of parameters that configure the behavior of the ruleset rule action.
     #[builder(into)]
     #[serde(rename = "actionParameters")]
-    pub r#action_parameters: Option<Box<super::types::RulesetRuleActionParameters>>,
+    pub r#action_parameters: Box<Option<super::types::RulesetRuleActionParameters>>,
     /// Brief summary of the ruleset rule and its intended use.
     #[builder(into)]
     #[serde(rename = "description")]
@@ -22,7 +22,7 @@ pub struct RulesetRule {
     /// List of parameters that configure exposed credential checks.
     #[builder(into)]
     #[serde(rename = "exposedCredentialCheck")]
-    pub r#exposed_credential_check: Option<Box<super::types::RulesetRuleExposedCredentialCheck>>,
+    pub r#exposed_credential_check: Box<Option<super::types::RulesetRuleExposedCredentialCheck>>,
     /// Criteria for an HTTP request to trigger the ruleset rule action. Uses the Firewall Rules expression language based on Wireshark display filters. Refer to the [Firewall Rules language](https://developers.cloudflare.com/firewall/cf-firewall-language) documentation for all available fields, operators, and functions.
     #[builder(into)]
     #[serde(rename = "expression")]
@@ -38,11 +38,11 @@ pub struct RulesetRule {
     /// List parameters to configure how the rule generates logs. Only valid for skip action.
     #[builder(into)]
     #[serde(rename = "logging")]
-    pub r#logging: Option<Box<super::types::RulesetRuleLogging>>,
+    pub r#logging: Box<Option<super::types::RulesetRuleLogging>>,
     /// List of parameters that configure HTTP rate limiting behaviour.
     #[builder(into)]
     #[serde(rename = "ratelimit")]
-    pub r#ratelimit: Option<Box<super::types::RulesetRuleRatelimit>>,
+    pub r#ratelimit: Box<Option<super::types::RulesetRuleRatelimit>>,
     /// Rule reference.
     #[builder(into)]
     #[serde(rename = "ref")]

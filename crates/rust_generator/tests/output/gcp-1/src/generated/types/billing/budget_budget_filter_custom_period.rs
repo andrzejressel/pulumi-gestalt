@@ -8,7 +8,7 @@ pub struct BudgetBudgetFilterCustomPeriod {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "endDate")]
-    pub r#end_date: Option<Box<super::super::types::billing::BudgetBudgetFilterCustomPeriodEndDate>>,
+    pub r#end_date: Box<Option<super::super::types::billing::BudgetBudgetFilterCustomPeriodEndDate>>,
     /// A start date is required. The start date must be after January 1, 2017.
     /// Structure is documented below.
     #[builder(into)]

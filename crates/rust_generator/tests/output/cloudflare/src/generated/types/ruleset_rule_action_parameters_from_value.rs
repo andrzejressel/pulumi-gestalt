@@ -14,5 +14,5 @@ pub struct RulesetRuleActionParametersFromValue {
     /// Target URL for redirect.
     #[builder(into)]
     #[serde(rename = "targetUrl")]
-    pub r#target_url: Option<Box<super::types::RulesetRuleActionParametersFromValueTargetUrl>>,
+    pub r#target_url: Box<Option<super::types::RulesetRuleActionParametersFromValueTargetUrl>>,
 }

@@ -10,7 +10,7 @@ pub struct V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecification {
     /// Configuration block for the message sent to users when the fulfillment Lambda functions starts running.
     #[builder(into)]
     #[serde(rename = "startResponse")]
-    pub r#start_response: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponse>>,
+    pub r#start_response: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponse>>,
     /// Length of time that the fulfillment Lambda function should run before it times out.
     #[builder(into)]
     #[serde(rename = "timeoutInSeconds")]
@@ -18,5 +18,5 @@ pub struct V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecification {
     /// Configuration block for messages sent periodically to the user while the fulfillment Lambda function is running.
     #[builder(into)]
     #[serde(rename = "updateResponse")]
-    pub r#update_response: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponse>>,
+    pub r#update_response: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponse>>,
 }

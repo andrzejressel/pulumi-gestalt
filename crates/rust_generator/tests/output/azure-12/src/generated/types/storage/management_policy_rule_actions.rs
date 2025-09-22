@@ -6,13 +6,13 @@ pub struct ManagementPolicyRuleActions {
     /// A `base_blob` block as documented below.
     #[builder(into)]
     #[serde(rename = "baseBlob")]
-    pub r#base_blob: Option<Box<super::super::types::storage::ManagementPolicyRuleActionsBaseBlob>>,
+    pub r#base_blob: Box<Option<super::super::types::storage::ManagementPolicyRuleActionsBaseBlob>>,
     /// A `snapshot` block as documented below.
     #[builder(into)]
     #[serde(rename = "snapshot")]
-    pub r#snapshot: Option<Box<super::super::types::storage::ManagementPolicyRuleActionsSnapshot>>,
+    pub r#snapshot: Box<Option<super::super::types::storage::ManagementPolicyRuleActionsSnapshot>>,
     /// A `version` block as documented below.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Option<Box<super::super::types::storage::ManagementPolicyRuleActionsVersion>>,
+    pub r#version: Box<Option<super::super::types::storage::ManagementPolicyRuleActionsVersion>>,
 }

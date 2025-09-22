@@ -6,7 +6,7 @@ pub struct ImagePipelineImageScanningConfiguration {
     /// Configuration block with ECR configuration for image scanning. Detailed below.
     #[builder(into)]
     #[serde(rename = "ecrConfiguration")]
-    pub r#ecr_configuration: Option<Box<super::super::types::imagebuilder::ImagePipelineImageScanningConfigurationEcrConfiguration>>,
+    pub r#ecr_configuration: Box<Option<super::super::types::imagebuilder::ImagePipelineImageScanningConfigurationEcrConfiguration>>,
     /// Whether image scans are enabled. Defaults to `false`.
     #[builder(into)]
     #[serde(rename = "imageScanningEnabled")]

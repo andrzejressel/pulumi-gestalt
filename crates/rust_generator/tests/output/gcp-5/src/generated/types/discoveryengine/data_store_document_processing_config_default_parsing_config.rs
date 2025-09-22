@@ -6,14 +6,14 @@ pub struct DataStoreDocumentProcessingConfigDefaultParsingConfig {
     /// Configurations applied to digital parser.
     #[builder(into)]
     #[serde(rename = "digitalParsingConfig")]
-    pub r#digital_parsing_config: Option<Box<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigDefaultParsingConfigDigitalParsingConfig>>,
+    pub r#digital_parsing_config: Box<Option<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigDefaultParsingConfigDigitalParsingConfig>>,
     /// Configurations applied to layout parser.
     #[builder(into)]
     #[serde(rename = "layoutParsingConfig")]
-    pub r#layout_parsing_config: Option<Box<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigDefaultParsingConfigLayoutParsingConfig>>,
+    pub r#layout_parsing_config: Box<Option<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigDefaultParsingConfigLayoutParsingConfig>>,
     /// Configurations applied to OCR parser. Currently it only applies to PDFs.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ocrParsingConfig")]
-    pub r#ocr_parsing_config: Option<Box<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigDefaultParsingConfigOcrParsingConfig>>,
+    pub r#ocr_parsing_config: Box<Option<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigDefaultParsingConfigOcrParsingConfig>>,
 }

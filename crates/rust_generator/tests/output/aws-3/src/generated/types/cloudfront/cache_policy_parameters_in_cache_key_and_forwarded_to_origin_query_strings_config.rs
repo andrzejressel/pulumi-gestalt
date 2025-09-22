@@ -10,5 +10,5 @@ pub struct CachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig
     /// Configuration parameter that contains a list of query string names. See Items for more information.
     #[builder(into)]
     #[serde(rename = "queryStrings")]
-    pub r#query_strings: Option<Box<super::super::types::cloudfront::CachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings>>,
+    pub r#query_strings: Box<Option<super::super::types::cloudfront::CachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings>>,
 }

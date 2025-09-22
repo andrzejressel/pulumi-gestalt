@@ -10,7 +10,7 @@ pub struct ScaleSetNetworkProfile {
     /// A `dns_settings` block as documented below.
     #[builder(into)]
     #[serde(rename = "dnsSettings")]
-    pub r#dns_settings: Option<Box<super::super::types::compute::ScaleSetNetworkProfileDnsSettings>>,
+    pub r#dns_settings: Box<Option<super::super::types::compute::ScaleSetNetworkProfileDnsSettings>>,
     /// An `ip_configuration` block as documented below.
     #[builder(into)]
     #[serde(rename = "ipConfigurations")]

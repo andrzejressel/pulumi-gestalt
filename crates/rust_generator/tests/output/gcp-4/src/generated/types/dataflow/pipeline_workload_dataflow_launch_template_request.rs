@@ -12,7 +12,7 @@ pub struct PipelineWorkloadDataflowLaunchTemplateRequest {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "launchParameters")]
-    pub r#launch_parameters: Option<Box<super::super::types::dataflow::PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters>>,
+    pub r#launch_parameters: Box<Option<super::super::types::dataflow::PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters>>,
     /// The regional endpoint to which to direct the request.
     #[builder(into)]
     #[serde(rename = "location")]

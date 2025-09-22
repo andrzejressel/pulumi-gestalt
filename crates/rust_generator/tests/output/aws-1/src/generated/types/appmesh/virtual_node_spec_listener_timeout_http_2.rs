@@ -6,9 +6,9 @@ pub struct VirtualNodeSpecListenerTimeoutHttp2 {
     /// Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
     #[builder(into)]
     #[serde(rename = "idle")]
-    pub r#idle: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutHttp2Idle>>,
+    pub r#idle: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutHttp2Idle>>,
     /// Per request timeout.
     #[builder(into)]
     #[serde(rename = "perRequest")]
-    pub r#per_request: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutHttp2PerRequest>>,
+    pub r#per_request: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutHttp2PerRequest>>,
 }

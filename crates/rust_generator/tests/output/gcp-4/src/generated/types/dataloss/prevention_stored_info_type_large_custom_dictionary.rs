@@ -7,12 +7,12 @@ pub struct PreventionStoredInfoTypeLargeCustomDictionary {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "bigQueryField")]
-    pub r#big_query_field: Option<Box<super::super::types::dataloss::PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField>>,
+    pub r#big_query_field: Box<Option<super::super::types::dataloss::PreventionStoredInfoTypeLargeCustomDictionaryBigQueryField>>,
     /// Set of files containing newline-delimited lists of dictionary phrases.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cloudStorageFileSet")]
-    pub r#cloud_storage_file_set: Option<Box<super::super::types::dataloss::PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet>>,
+    pub r#cloud_storage_file_set: Box<Option<super::super::types::dataloss::PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet>>,
     /// Location to store dictionary artifacts in Google Cloud Storage. These files will only be accessible by project owners and the DLP API.
     /// If any of these artifacts are modified, the dictionary is considered invalid and can no longer be used.
     /// Structure is documented below.

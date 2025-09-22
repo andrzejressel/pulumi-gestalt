@@ -6,7 +6,7 @@ pub struct RunBookDraftContentLink {
     /// A `hash` block as defined below.
     #[builder(into)]
     #[serde(rename = "hash")]
-    pub r#hash: Option<Box<super::super::types::automation::RunBookDraftContentLinkHash>>,
+    pub r#hash: Box<Option<super::super::types::automation::RunBookDraftContentLinkHash>>,
     /// The URI of the runbook content.
     #[builder(into)]
     #[serde(rename = "uri")]

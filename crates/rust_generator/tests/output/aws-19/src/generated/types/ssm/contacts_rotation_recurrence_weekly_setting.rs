@@ -10,5 +10,5 @@ pub struct ContactsRotationRecurrenceWeeklySetting {
     /// (Required) The hand off time. See Hand Off Time for more details.
     #[builder(into)]
     #[serde(rename = "handOffTime")]
-    pub r#hand_off_time: Option<Box<super::super::types::ssm::ContactsRotationRecurrenceWeeklySettingHandOffTime>>,
+    pub r#hand_off_time: Box<Option<super::super::types::ssm::ContactsRotationRecurrenceWeeklySettingHandOffTime>>,
 }

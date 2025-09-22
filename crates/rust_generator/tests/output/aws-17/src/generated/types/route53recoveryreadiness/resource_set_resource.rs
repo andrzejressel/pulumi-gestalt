@@ -9,7 +9,7 @@ pub struct ResourceSetResource {
     /// Component for DNS/Routing Control Readiness Checks.
     #[builder(into)]
     #[serde(rename = "dnsTargetResource")]
-    pub r#dns_target_resource: Option<Box<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResource>>,
+    pub r#dns_target_resource: Box<Option<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResource>>,
     /// Recovery group ARN or cell ARN that contains this resource set.
     #[builder(into)]
     #[serde(rename = "readinessScopes")]

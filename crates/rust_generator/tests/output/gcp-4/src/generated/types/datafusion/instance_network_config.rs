@@ -26,5 +26,5 @@ pub struct InstanceNetworkConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "privateServiceConnectConfig")]
-    pub r#private_service_connect_config: Option<Box<super::super::types::datafusion::InstanceNetworkConfigPrivateServiceConnectConfig>>,
+    pub r#private_service_connect_config: Box<Option<super::super::types::datafusion::InstanceNetworkConfigPrivateServiceConnectConfig>>,
 }

@@ -10,11 +10,11 @@ pub struct GatewayRouteSpecHttpRouteMatch {
     /// Host name to match on.
     #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttpRouteMatchHostname>>,
+    pub r#hostname: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttpRouteMatchHostname>>,
     /// Client request path to match on.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttpRouteMatchPath>>,
+    pub r#path: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttpRouteMatchPath>>,
     /// The port number to match from the request.
     #[builder(into)]
     #[serde(rename = "port")]

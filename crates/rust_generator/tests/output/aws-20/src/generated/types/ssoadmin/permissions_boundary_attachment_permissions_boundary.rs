@@ -6,7 +6,7 @@ pub struct PermissionsBoundaryAttachmentPermissionsBoundary {
     /// Specifies the name and path of a customer managed policy. See below.
     #[builder(into)]
     #[serde(rename = "customerManagedPolicyReference")]
-    pub r#customer_managed_policy_reference: Option<Box<super::super::types::ssoadmin::PermissionsBoundaryAttachmentPermissionsBoundaryCustomerManagedPolicyReference>>,
+    pub r#customer_managed_policy_reference: Box<Option<super::super::types::ssoadmin::PermissionsBoundaryAttachmentPermissionsBoundaryCustomerManagedPolicyReference>>,
     /// AWS-managed IAM policy ARN to use as the permissions boundary.
     #[builder(into)]
     #[serde(rename = "managedPolicyArn")]

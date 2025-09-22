@@ -22,7 +22,7 @@ pub struct AwsClusterControlPlane {
     /// Details of placement information for an instance.
     #[builder(into)]
     #[serde(rename = "instancePlacement")]
-    pub r#instance_placement: Option<Box<super::super::types::container::AwsClusterControlPlaneInstancePlacement>>,
+    pub r#instance_placement: Box<Option<super::super::types::container::AwsClusterControlPlaneInstancePlacement>>,
     /// Optional. The AWS instance type. When unspecified, it defaults to `m5.large`.
     #[builder(into)]
     #[serde(rename = "instanceType")]
@@ -30,15 +30,15 @@ pub struct AwsClusterControlPlane {
     /// Optional. Configuration related to the main volume provisioned for each control plane replica. The main volume is in charge of storing all of the cluster's etcd state. Volumes will be provisioned in the availability zone associated with the corresponding subnet. When unspecified, it defaults to 8 GiB with the GP2 volume type.
     #[builder(into)]
     #[serde(rename = "mainVolume")]
-    pub r#main_volume: Option<Box<super::super::types::container::AwsClusterControlPlaneMainVolume>>,
+    pub r#main_volume: Box<Option<super::super::types::container::AwsClusterControlPlaneMainVolume>>,
     /// Proxy configuration for outbound HTTP(S) traffic.
     #[builder(into)]
     #[serde(rename = "proxyConfig")]
-    pub r#proxy_config: Option<Box<super::super::types::container::AwsClusterControlPlaneProxyConfig>>,
+    pub r#proxy_config: Box<Option<super::super::types::container::AwsClusterControlPlaneProxyConfig>>,
     /// Optional. Configuration related to the root volume provisioned for each control plane replica. Volumes will be provisioned in the availability zone associated with the corresponding subnet. When unspecified, it defaults to 32 GiB with the GP2 volume type.
     #[builder(into)]
     #[serde(rename = "rootVolume")]
-    pub r#root_volume: Option<Box<super::super::types::container::AwsClusterControlPlaneRootVolume>>,
+    pub r#root_volume: Box<Option<super::super::types::container::AwsClusterControlPlaneRootVolume>>,
     /// Optional. The IDs of additional security groups to add to control plane replicas. The Anthos Multi-Cloud API will automatically create and manage security groups with the minimum rules needed for a functioning cluster.
     #[builder(into)]
     #[serde(rename = "securityGroupIds")]
@@ -46,7 +46,7 @@ pub struct AwsClusterControlPlane {
     /// Optional. SSH configuration for how to access the underlying control plane machines.
     #[builder(into)]
     #[serde(rename = "sshConfig")]
-    pub r#ssh_config: Option<Box<super::super::types::container::AwsClusterControlPlaneSshConfig>>,
+    pub r#ssh_config: Box<Option<super::super::types::container::AwsClusterControlPlaneSshConfig>>,
     /// The list of subnets where control plane replicas will run. A replica will be provisioned on each subnet and up to three values can be provided. Each subnet must be in a different AWS Availability Zone (AZ).
     #[builder(into)]
     #[serde(rename = "subnetIds")]

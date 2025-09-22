@@ -7,12 +7,12 @@ pub struct CxTestCaseTestCaseConversationTurnUserInputInput {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "dtmf")]
-    pub r#dtmf: Option<Box<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnUserInputInputDtmf>>,
+    pub r#dtmf: Box<Option<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnUserInputInputDtmf>>,
     /// The event to be triggered.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "event")]
-    pub r#event: Option<Box<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnUserInputInputEvent>>,
+    pub r#event: Box<Option<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnUserInputInputEvent>>,
     /// The language of the input. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes.
     /// Note that queries in the same session do not necessarily need to specify the same language.
     #[builder(into)]
@@ -22,5 +22,5 @@ pub struct CxTestCaseTestCaseConversationTurnUserInputInput {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Option<Box<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnUserInputInputText>>,
+    pub r#text: Box<Option<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnUserInputInputText>>,
 }

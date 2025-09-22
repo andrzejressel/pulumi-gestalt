@@ -6,7 +6,7 @@ pub struct JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurati
     /// Monitoring configurations for CloudWatch.
     #[builder(into)]
     #[serde(rename = "cloudWatchMonitoringConfiguration")]
-    pub r#cloud_watch_monitoring_configuration: Option<Box<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationCloudWatchMonitoringConfiguration>>,
+    pub r#cloud_watch_monitoring_configuration: Box<Option<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationCloudWatchMonitoringConfiguration>>,
     /// Monitoring configurations for the persistent application UI.
     #[builder(into)]
     #[serde(rename = "persistentAppUi")]
@@ -14,5 +14,5 @@ pub struct JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurati
     /// Amazon S3 configuration for monitoring log publishing.
     #[builder(into)]
     #[serde(rename = "s3MonitoringConfiguration")]
-    pub r#s_3_monitoring_configuration: Option<Box<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationS3MonitoringConfiguration>>,
+    pub r#s_3_monitoring_configuration: Box<Option<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationS3MonitoringConfiguration>>,
 }

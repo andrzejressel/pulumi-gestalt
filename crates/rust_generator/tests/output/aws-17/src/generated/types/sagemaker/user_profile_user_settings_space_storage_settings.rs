@@ -6,5 +6,5 @@ pub struct UserProfileUserSettingsSpaceStorageSettings {
     /// The default EBS storage settings for a private space. See Default EBS Storage Settings below.
     #[builder(into)]
     #[serde(rename = "defaultEbsStorageSettings")]
-    pub r#default_ebs_storage_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsSpaceStorageSettingsDefaultEbsStorageSettings>>,
+    pub r#default_ebs_storage_settings: Box<Option<super::super::types::sagemaker::UserProfileUserSettingsSpaceStorageSettingsDefaultEbsStorageSettings>>,
 }

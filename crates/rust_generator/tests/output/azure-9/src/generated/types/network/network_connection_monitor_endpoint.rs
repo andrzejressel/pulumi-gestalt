@@ -18,7 +18,7 @@ pub struct NetworkConnectionMonitorEndpoint {
     /// A `filter` block as defined below.
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Option<Box<super::super::types::network::NetworkConnectionMonitorEndpointFilter>>,
+    pub r#filter: Box<Option<super::super::types::network::NetworkConnectionMonitorEndpointFilter>>,
     /// A list of IPv4/IPv6 subnet masks or IPv4/IPv6 IP addresses to be included to the Network Connection Monitor endpoint.
     #[builder(into)]
     #[serde(rename = "includedIpAddresses")]

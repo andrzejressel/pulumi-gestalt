@@ -7,5 +7,5 @@ pub struct ConfigQuota {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "signUpQuotaConfig")]
-    pub r#sign_up_quota_config: Option<Box<super::super::types::identityplatform::ConfigQuotaSignUpQuotaConfig>>,
+    pub r#sign_up_quota_config: Box<Option<super::super::types::identityplatform::ConfigQuotaSignUpQuotaConfig>>,
 }

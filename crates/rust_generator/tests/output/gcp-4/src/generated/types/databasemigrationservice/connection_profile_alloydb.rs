@@ -11,5 +11,5 @@ pub struct ConnectionProfileAlloydb {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "settings")]
-    pub r#settings: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileAlloydbSettings>>,
+    pub r#settings: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileAlloydbSettings>>,
 }

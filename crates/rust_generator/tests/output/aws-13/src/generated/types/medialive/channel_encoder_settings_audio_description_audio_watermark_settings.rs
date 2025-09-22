@@ -5,5 +5,5 @@
 pub struct ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettings {
     #[builder(into)]
     #[serde(rename = "nielsenWatermarksSettings")]
-    pub r#nielsen_watermarks_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettings>>,
+    pub r#nielsen_watermarks_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettings>>,
 }

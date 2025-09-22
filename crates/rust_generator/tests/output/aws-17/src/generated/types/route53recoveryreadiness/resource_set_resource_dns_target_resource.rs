@@ -22,5 +22,5 @@ pub struct ResourceSetResourceDnsTargetResource {
     /// Target resource the R53 record specified with the above params points to.
     #[builder(into)]
     #[serde(rename = "targetResource")]
-    pub r#target_resource: Option<Box<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResourceTargetResource>>,
+    pub r#target_resource: Box<Option<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResourceTargetResource>>,
 }

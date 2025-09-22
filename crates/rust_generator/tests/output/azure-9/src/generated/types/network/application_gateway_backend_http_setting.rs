@@ -14,7 +14,7 @@ pub struct ApplicationGatewayBackendHttpSetting {
     /// A `connection_draining` block as defined below.
     #[builder(into)]
     #[serde(rename = "connectionDraining")]
-    pub r#connection_draining: Option<Box<super::super::types::network::ApplicationGatewayBackendHttpSettingConnectionDraining>>,
+    pub r#connection_draining: Box<Option<super::super::types::network::ApplicationGatewayBackendHttpSettingConnectionDraining>>,
     /// Is Cookie-Based Affinity enabled? Possible values are `Enabled` and `Disabled`.
     #[builder(into)]
     #[serde(rename = "cookieBasedAffinity")]

@@ -6,7 +6,7 @@ pub struct ClusterNodePoolUpgradeSettings {
     /// Settings for blue-green upgrade strategy. To be specified when strategy is set to BLUE_GREEN. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "blueGreenSettings")]
-    pub r#blue_green_settings: Option<Box<super::super::types::container::ClusterNodePoolUpgradeSettingsBlueGreenSettings>>,
+    pub r#blue_green_settings: Box<Option<super::super::types::container::ClusterNodePoolUpgradeSettingsBlueGreenSettings>>,
     /// The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process. To be used when strategy is set to SURGE. Default is 0.
     #[builder(into)]
     #[serde(rename = "maxSurge")]

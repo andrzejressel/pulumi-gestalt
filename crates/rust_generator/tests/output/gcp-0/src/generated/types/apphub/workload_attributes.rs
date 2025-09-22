@@ -12,7 +12,7 @@ pub struct WorkloadAttributes {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "criticality")]
-    pub r#criticality: Option<Box<super::super::types::apphub::WorkloadAttributesCriticality>>,
+    pub r#criticality: Box<Option<super::super::types::apphub::WorkloadAttributesCriticality>>,
     /// Developer team that owns development and coding.
     /// Structure is documented below.
     #[builder(into)]
@@ -22,7 +22,7 @@ pub struct WorkloadAttributes {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "environment")]
-    pub r#environment: Option<Box<super::super::types::apphub::WorkloadAttributesEnvironment>>,
+    pub r#environment: Box<Option<super::super::types::apphub::WorkloadAttributesEnvironment>>,
     /// Operator team that ensures runtime and operations.
     /// Structure is documented below.
     #[builder(into)]

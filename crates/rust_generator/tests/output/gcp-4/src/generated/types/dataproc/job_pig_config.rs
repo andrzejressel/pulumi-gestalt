@@ -16,7 +16,7 @@ pub struct JobPigConfig {
     /// The runtime logging config of the job
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Option<Box<super::super::types::dataproc::JobPigConfigLoggingConfig>>,
+    pub r#logging_config: Box<Option<super::super::types::dataproc::JobPigConfigLoggingConfig>>,
     /// A mapping of property names to values, used to configure Pig. Properties that conflict with values set by the Cloud Dataproc API may be overwritten. Can include properties set in `/etc/hadoop/conf/*-site.xml`, `/etc/pig/conf/pig.properties`, and classes in user code.
     #[builder(into)]
     #[serde(rename = "properties")]

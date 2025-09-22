@@ -10,5 +10,5 @@ pub struct RegistryTaskRegistryCredential {
     /// One `source` block as defined below.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Option<Box<super::super::types::containerservice::RegistryTaskRegistryCredentialSource>>,
+    pub r#source: Box<Option<super::super::types::containerservice::RegistryTaskRegistryCredentialSource>>,
 }

@@ -7,5 +7,5 @@ pub struct FeatureSpecFleetobservability {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Option<Box<super::super::types::gkehub::FeatureSpecFleetobservabilityLoggingConfig>>,
+    pub r#logging_config: Box<Option<super::super::types::gkehub::FeatureSpecFleetobservabilityLoggingConfig>>,
 }

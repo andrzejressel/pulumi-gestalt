@@ -6,11 +6,11 @@ pub struct ClusterClusterConfigPreemptibleWorkerConfig {
     /// Disk Config
     #[builder(into)]
     #[serde(rename = "diskConfig")]
-    pub r#disk_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigDiskConfig>>,
+    pub r#disk_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigDiskConfig>>,
     /// Instance flexibility Policy allowing a mixture of VM shapes and provisioning models.
     #[builder(into)]
     #[serde(rename = "instanceFlexibilityPolicy")]
-    pub r#instance_flexibility_policy: Option<Box<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy>>,
+    pub r#instance_flexibility_policy: Box<Option<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy>>,
     /// List of preemptible instance names which have been assigned
     /// to the cluster.
     #[builder(into)]

@@ -7,5 +7,5 @@ pub struct BareMetalAdminClusterNetworkConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "islandModeCidr")]
-    pub r#island_mode_cidr: Option<Box<super::super::types::gkeonprem::BareMetalAdminClusterNetworkConfigIslandModeCidr>>,
+    pub r#island_mode_cidr: Box<Option<super::super::types::gkeonprem::BareMetalAdminClusterNetworkConfigIslandModeCidr>>,
 }

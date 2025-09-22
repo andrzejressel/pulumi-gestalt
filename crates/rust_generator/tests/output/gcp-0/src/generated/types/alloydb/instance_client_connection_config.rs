@@ -11,5 +11,5 @@ pub struct InstanceClientConnectionConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sslConfig")]
-    pub r#ssl_config: Option<Box<super::super::types::alloydb::InstanceClientConnectionConfigSslConfig>>,
+    pub r#ssl_config: Box<Option<super::super::types::alloydb::InstanceClientConnectionConfigSslConfig>>,
 }

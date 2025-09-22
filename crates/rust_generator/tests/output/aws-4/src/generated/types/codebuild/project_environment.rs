@@ -18,7 +18,7 @@ pub struct ProjectEnvironment {
     /// Configuration block. Detailed below.
     #[builder(into)]
     #[serde(rename = "fleet")]
-    pub r#fleet: Option<Box<super::super::types::codebuild::ProjectEnvironmentFleet>>,
+    pub r#fleet: Box<Option<super::super::types::codebuild::ProjectEnvironmentFleet>>,
     /// Docker image to use for this build project. Valid values include [Docker images provided by CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html) (e.g `aws/codebuild/amazonlinux2-x86_64-standard:4.0`), [Docker Hub images](https://hub.docker.com/) (e.g., `pulumi/pulumi:latest`), and full Docker repository URIs such as those for ECR (e.g., `137112412989.dkr.ecr.us-west-2.amazonaws.com/amazonlinux:latest`).
     #[builder(into)]
     #[serde(rename = "image")]
@@ -34,7 +34,7 @@ pub struct ProjectEnvironment {
     /// Configuration block. Detailed below.
     #[builder(into)]
     #[serde(rename = "registryCredential")]
-    pub r#registry_credential: Option<Box<super::super::types::codebuild::ProjectEnvironmentRegistryCredential>>,
+    pub r#registry_credential: Box<Option<super::super::types::codebuild::ProjectEnvironmentRegistryCredential>>,
     /// Type of build environment to use for related builds. Valid values: `LINUX_CONTAINER`, `LINUX_GPU_CONTAINER`, `WINDOWS_CONTAINER` (deprecated), `WINDOWS_SERVER_2019_CONTAINER`, `ARM_CONTAINER`, `LINUX_LAMBDA_CONTAINER`, `ARM_LAMBDA_CONTAINER`. For additional information, see the [CodeBuild User Guide](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html).
     #[builder(into)]
     #[serde(rename = "type")]

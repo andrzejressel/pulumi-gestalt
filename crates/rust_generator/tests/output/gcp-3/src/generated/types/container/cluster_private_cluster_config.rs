@@ -22,7 +22,7 @@ pub struct ClusterPrivateClusterConfig {
     /// not modify the previously-set value. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "masterGlobalAccessConfig")]
-    pub r#master_global_access_config: Option<Box<super::super::types::container::ClusterPrivateClusterConfigMasterGlobalAccessConfig>>,
+    pub r#master_global_access_config: Box<Option<super::super::types::container::ClusterPrivateClusterConfigMasterGlobalAccessConfig>>,
     /// The IP range in CIDR notation to use for
     /// the hosted master network. This range will be used for assigning private IP
     /// addresses to the cluster master(s) and the ILB VIP. This range must not overlap

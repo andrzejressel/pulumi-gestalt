@@ -7,17 +7,17 @@ pub struct StreamSourceConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "mysqlSourceConfig")]
-    pub r#mysql_source_config: Option<Box<super::super::types::datastream::StreamSourceConfigMysqlSourceConfig>>,
+    pub r#mysql_source_config: Box<Option<super::super::types::datastream::StreamSourceConfigMysqlSourceConfig>>,
     /// MySQL data source configuration.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oracleSourceConfig")]
-    pub r#oracle_source_config: Option<Box<super::super::types::datastream::StreamSourceConfigOracleSourceConfig>>,
+    pub r#oracle_source_config: Box<Option<super::super::types::datastream::StreamSourceConfigOracleSourceConfig>>,
     /// PostgreSQL data source configuration.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "postgresqlSourceConfig")]
-    pub r#postgresql_source_config: Option<Box<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfig>>,
+    pub r#postgresql_source_config: Box<Option<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfig>>,
     /// Source connection profile resource. Format: projects/{project}/locations/{location}/connectionProfiles/{name}
     #[builder(into)]
     #[serde(rename = "sourceConnectionProfile")]
@@ -26,5 +26,5 @@ pub struct StreamSourceConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sqlServerSourceConfig")]
-    pub r#sql_server_source_config: Option<Box<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfig>>,
+    pub r#sql_server_source_config: Box<Option<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfig>>,
 }

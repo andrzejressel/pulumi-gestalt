@@ -21,7 +21,7 @@ pub struct InstanceFromMachineImageScheduling {
     ///   hour.
     #[builder(into)]
     #[serde(rename = "localSsdRecoveryTimeout")]
-    pub r#local_ssd_recovery_timeout: Option<Box<super::super::types::compute::InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout>>,
+    pub r#local_ssd_recovery_timeout: Box<Option<super::super::types::compute::InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeout>>,
     /// Specifies the frequency of planned maintenance events. The accepted values are: PERIODIC
     #[builder(into)]
     #[serde(rename = "maintenanceInterval")]
@@ -29,7 +29,7 @@ pub struct InstanceFromMachineImageScheduling {
     /// The timeout for new network connections to hosts.
     #[builder(into)]
     #[serde(rename = "maxRunDuration")]
-    pub r#max_run_duration: Option<Box<super::super::types::compute::InstanceFromMachineImageSchedulingMaxRunDuration>>,
+    pub r#max_run_duration: Box<Option<super::super::types::compute::InstanceFromMachineImageSchedulingMaxRunDuration>>,
     #[builder(into)]
     #[serde(rename = "minNodeCpus")]
     pub r#min_node_cpus: Option<i32>,
@@ -44,7 +44,7 @@ pub struct InstanceFromMachineImageScheduling {
     /// Defines the behaviour for instances with the instance_termination_action.
     #[builder(into)]
     #[serde(rename = "onInstanceStopAction")]
-    pub r#on_instance_stop_action: Option<Box<super::super::types::compute::InstanceFromMachineImageSchedulingOnInstanceStopAction>>,
+    pub r#on_instance_stop_action: Box<Option<super::super::types::compute::InstanceFromMachineImageSchedulingOnInstanceStopAction>>,
     /// Whether the instance is preemptible.
     #[builder(into)]
     #[serde(rename = "preemptible")]

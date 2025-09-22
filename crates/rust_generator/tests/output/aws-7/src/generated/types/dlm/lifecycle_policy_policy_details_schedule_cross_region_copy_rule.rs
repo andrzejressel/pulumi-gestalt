@@ -11,13 +11,13 @@ pub struct LifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRule {
     pub r#copy_tags: Option<bool>,
     #[builder(into)]
     #[serde(rename = "deprecateRule")]
-    pub r#deprecate_rule: Option<Box<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRule>>,
+    pub r#deprecate_rule: Box<Option<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRule>>,
     #[builder(into)]
     #[serde(rename = "encrypted")]
     pub r#encrypted: bool,
     #[builder(into)]
     #[serde(rename = "retainRule")]
-    pub r#retain_rule: Option<Box<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRule>>,
+    pub r#retain_rule: Box<Option<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRule>>,
     #[builder(into)]
     #[serde(rename = "target")]
     pub r#target: String,

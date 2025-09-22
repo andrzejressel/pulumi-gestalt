@@ -13,5 +13,5 @@ pub struct ClusterMaintenancePolicyWindowRecurringWindow {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "window")]
-    pub r#window: Option<Box<super::super::types::edgecontainer::ClusterMaintenancePolicyWindowRecurringWindowWindow>>,
+    pub r#window: Box<Option<super::super::types::edgecontainer::ClusterMaintenancePolicyWindowRecurringWindowWindow>>,
 }

@@ -26,5 +26,5 @@ pub struct CxPageEventHandler {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "triggerFulfillment")]
-    pub r#trigger_fulfillment: Option<Box<super::super::types::diagflow::CxPageEventHandlerTriggerFulfillment>>,
+    pub r#trigger_fulfillment: Box<Option<super::super::types::diagflow::CxPageEventHandlerTriggerFulfillment>>,
 }

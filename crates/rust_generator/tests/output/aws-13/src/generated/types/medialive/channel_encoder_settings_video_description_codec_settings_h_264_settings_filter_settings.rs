@@ -5,5 +5,5 @@
 pub struct ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettings {
     #[builder(into)]
     #[serde(rename = "temporalFilterSettings")]
-    pub r#temporal_filter_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettingsTemporalFilterSettings>>,
+    pub r#temporal_filter_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettingsTemporalFilterSettings>>,
 }

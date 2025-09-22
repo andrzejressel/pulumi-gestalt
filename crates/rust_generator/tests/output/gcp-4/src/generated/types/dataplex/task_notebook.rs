@@ -15,7 +15,7 @@ pub struct TaskNotebook {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "infrastructureSpec")]
-    pub r#infrastructure_spec: Option<Box<super::super::types::dataplex::TaskNotebookInfrastructureSpec>>,
+    pub r#infrastructure_spec: Box<Option<super::super::types::dataplex::TaskNotebookInfrastructureSpec>>,
     /// Path to input notebook. This can be the Cloud Storage URI of the notebook file or the path to a Notebook Content. The execution args are accessible as environment variables (TASK_key=value).
     #[builder(into)]
     #[serde(rename = "notebook")]

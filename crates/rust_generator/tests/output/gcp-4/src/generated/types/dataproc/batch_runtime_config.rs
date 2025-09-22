@@ -7,7 +7,7 @@ pub struct BatchRuntimeConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "autotuningConfig")]
-    pub r#autotuning_config: Option<Box<super::super::types::dataproc::BatchRuntimeConfigAutotuningConfig>>,
+    pub r#autotuning_config: Box<Option<super::super::types::dataproc::BatchRuntimeConfigAutotuningConfig>>,
     /// Optional. Cohort identifier. Identifies families of the workloads having the same shape, e.g. daily ETL jobs.
     #[builder(into)]
     #[serde(rename = "cohort")]

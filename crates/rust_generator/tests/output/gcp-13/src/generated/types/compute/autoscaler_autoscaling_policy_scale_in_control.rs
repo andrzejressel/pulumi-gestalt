@@ -7,7 +7,7 @@ pub struct AutoscalerAutoscalingPolicyScaleInControl {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "maxScaledInReplicas")]
-    pub r#max_scaled_in_replicas: Option<Box<super::super::types::compute::AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas>>,
+    pub r#max_scaled_in_replicas: Box<Option<super::super::types::compute::AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicas>>,
     /// How long back autoscaling should look when computing recommendations
     /// to include directives regarding slower scale down, as described above.
     #[builder(into)]

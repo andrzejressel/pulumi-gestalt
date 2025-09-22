@@ -5,5 +5,5 @@
 pub struct ClusterStorageConfig {
     #[builder(into)]
     #[serde(rename = "blockStorage")]
-    pub r#block_storage: Option<Box<super::super::types::eks::ClusterStorageConfigBlockStorage>>,
+    pub r#block_storage: Box<Option<super::super::types::eks::ClusterStorageConfigBlockStorage>>,
 }

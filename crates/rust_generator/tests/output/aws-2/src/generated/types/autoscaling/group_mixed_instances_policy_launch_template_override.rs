@@ -6,7 +6,7 @@ pub struct GroupMixedInstancesPolicyLaunchTemplateOverride {
     /// Override the instance type in the Launch Template with instance types that satisfy the requirements.
     #[builder(into)]
     #[serde(rename = "instanceRequirements")]
-    pub r#instance_requirements: Option<Box<super::super::types::autoscaling::GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirements>>,
+    pub r#instance_requirements: Box<Option<super::super::types::autoscaling::GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirements>>,
     /// Override the instance type in the Launch Template.
     #[builder(into)]
     #[serde(rename = "instanceType")]
@@ -14,7 +14,7 @@ pub struct GroupMixedInstancesPolicyLaunchTemplateOverride {
     /// Override the instance launch template specification in the Launch Template.
     #[builder(into)]
     #[serde(rename = "launchTemplateSpecification")]
-    pub r#launch_template_specification: Option<Box<super::super::types::autoscaling::GroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification>>,
+    pub r#launch_template_specification: Box<Option<super::super::types::autoscaling::GroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification>>,
     /// Number of capacity units, which gives the instance type a proportional weight to other instance types.
     #[builder(into)]
     #[serde(rename = "weightedCapacity")]

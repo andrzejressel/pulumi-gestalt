@@ -6,9 +6,9 @@ pub struct VirtualNodeSpecListenerTlsValidationTrust {
     /// TLS validation context trust for a local file certificate.
     #[builder(into)]
     #[serde(rename = "file")]
-    pub r#file: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTlsValidationTrustFile>>,
+    pub r#file: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTlsValidationTrustFile>>,
     /// TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
     #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTlsValidationTrustSds>>,
+    pub r#sds: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTlsValidationTrustSds>>,
 }

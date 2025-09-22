@@ -26,5 +26,5 @@ pub struct CxPageFormParameterFillBehaviorRepromptEventHandler {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "triggerFulfillment")]
-    pub r#trigger_fulfillment: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment>>,
+    pub r#trigger_fulfillment: Box<Option<super::super::types::diagflow::CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillment>>,
 }

@@ -6,7 +6,7 @@ pub struct RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchS
     /// The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
     #[builder(into)]
     #[serde(rename = "fieldToMatch")]
-    pub r#field_to_match: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatch>>,
+    pub r#field_to_match: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatch>>,
     /// The string representing the regular expression. **Note:** The fixed quota for the maximum number of characters in each regex pattern is 200, which can't be changed. See [AWS WAF quotas](https://docs.aws.amazon.com/waf/latest/developerguide/limits.html) for details.
     #[builder(into)]
     #[serde(rename = "regexString")]

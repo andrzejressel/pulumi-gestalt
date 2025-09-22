@@ -14,7 +14,7 @@ pub struct WorkgroupConfiguration {
     /// Configuration block for the Athena Engine Versioning. For more information, see [Athena Engine Versioning](https://docs.aws.amazon.com/athena/latest/ug/engine-versions.html). See Engine Version below.
     #[builder(into)]
     #[serde(rename = "engineVersion")]
-    pub r#engine_version: Option<Box<super::super::types::athena::WorkgroupConfigurationEngineVersion>>,
+    pub r#engine_version: Box<Option<super::super::types::athena::WorkgroupConfigurationEngineVersion>>,
     /// Role used in a notebook session for accessing the user's resources.
     #[builder(into)]
     #[serde(rename = "executionRole")]
@@ -30,5 +30,5 @@ pub struct WorkgroupConfiguration {
     /// Configuration block with result settings. See Result Configuration below.
     #[builder(into)]
     #[serde(rename = "resultConfiguration")]
-    pub r#result_configuration: Option<Box<super::super::types::athena::WorkgroupConfigurationResultConfiguration>>,
+    pub r#result_configuration: Box<Option<super::super::types::athena::WorkgroupConfigurationResultConfiguration>>,
 }

@@ -7,12 +7,12 @@ pub struct SloWindowsBasedSliGoodTotalRatioThreshold {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "basicSliPerformance")]
-    pub r#basic_sli_performance: Option<Box<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance>>,
+    pub r#basic_sli_performance: Box<Option<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance>>,
     /// Request-based SLI to evaluate to judge window quality.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "performance")]
-    pub r#performance: Option<Box<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdPerformance>>,
+    pub r#performance: Box<Option<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdPerformance>>,
     /// If window performance >= threshold, the window is counted
     /// as good.
     #[builder(into)]

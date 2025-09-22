@@ -6,17 +6,17 @@ pub struct StreamSourceConfigOracleSourceConfig {
     /// Configuration to drop large object values.
     #[builder(into)]
     #[serde(rename = "dropLargeObjects")]
-    pub r#drop_large_objects: Option<Box<super::super::types::datastream::StreamSourceConfigOracleSourceConfigDropLargeObjects>>,
+    pub r#drop_large_objects: Box<Option<super::super::types::datastream::StreamSourceConfigOracleSourceConfigDropLargeObjects>>,
     /// Oracle objects to exclude from the stream.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "excludeObjects")]
-    pub r#exclude_objects: Option<Box<super::super::types::datastream::StreamSourceConfigOracleSourceConfigExcludeObjects>>,
+    pub r#exclude_objects: Box<Option<super::super::types::datastream::StreamSourceConfigOracleSourceConfigExcludeObjects>>,
     /// Oracle objects to retrieve from the source.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "includeObjects")]
-    pub r#include_objects: Option<Box<super::super::types::datastream::StreamSourceConfigOracleSourceConfigIncludeObjects>>,
+    pub r#include_objects: Box<Option<super::super::types::datastream::StreamSourceConfigOracleSourceConfigIncludeObjects>>,
     /// Maximum number of concurrent backfill tasks. The number should be non negative.
     /// If not set (or set to 0), the system's default value will be used.
     #[builder(into)]
@@ -30,5 +30,5 @@ pub struct StreamSourceConfigOracleSourceConfig {
     /// Configuration to drop large object values.
     #[builder(into)]
     #[serde(rename = "streamLargeObjects")]
-    pub r#stream_large_objects: Option<Box<super::super::types::datastream::StreamSourceConfigOracleSourceConfigStreamLargeObjects>>,
+    pub r#stream_large_objects: Box<Option<super::super::types::datastream::StreamSourceConfigOracleSourceConfigStreamLargeObjects>>,
 }

@@ -6,7 +6,7 @@ pub struct BucketWebsiteConfigurationV2RoutingRule {
     /// Configuration block for describing a condition that must be met for the specified redirect to apply. See below.
     #[builder(into)]
     #[serde(rename = "condition")]
-    pub r#condition: Option<Box<super::super::types::s3::BucketWebsiteConfigurationV2RoutingRuleCondition>>,
+    pub r#condition: Box<Option<super::super::types::s3::BucketWebsiteConfigurationV2RoutingRuleCondition>>,
     /// Configuration block for redirect information. See below.
     #[builder(into)]
     #[serde(rename = "redirect")]

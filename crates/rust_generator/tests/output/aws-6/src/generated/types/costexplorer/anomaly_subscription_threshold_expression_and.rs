@@ -6,13 +6,13 @@ pub struct AnomalySubscriptionThresholdExpressionAnd {
     /// Configuration block for the filter that's based on  values. See Cost Category below.
     #[builder(into)]
     #[serde(rename = "costCategory")]
-    pub r#cost_category: Option<Box<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionAndCostCategory>>,
+    pub r#cost_category: Box<Option<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionAndCostCategory>>,
     /// Configuration block for the specific Dimension to use for.
     #[builder(into)]
     #[serde(rename = "dimension")]
-    pub r#dimension: Option<Box<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionAndDimension>>,
+    pub r#dimension: Box<Option<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionAndDimension>>,
     /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Option<Box<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionAndTags>>,
+    pub r#tags: Box<Option<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionAndTags>>,
 }

@@ -7,7 +7,7 @@ pub struct RegionInstanceTemplateReservationAffinity {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "specificReservation")]
-    pub r#specific_reservation: Option<Box<super::super::types::compute::RegionInstanceTemplateReservationAffinitySpecificReservation>>,
+    pub r#specific_reservation: Box<Option<super::super::types::compute::RegionInstanceTemplateReservationAffinitySpecificReservation>>,
     /// The type of reservation from which this instance can consume resources.
     #[builder(into)]
     #[serde(rename = "type")]

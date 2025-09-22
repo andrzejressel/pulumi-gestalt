@@ -5,14 +5,14 @@
 pub struct RepositoryAssociationRepository {
     #[builder(into)]
     #[serde(rename = "bitbucket")]
-    pub r#bitbucket: Option<Box<super::super::types::codegurureviewer::RepositoryAssociationRepositoryBitbucket>>,
+    pub r#bitbucket: Box<Option<super::super::types::codegurureviewer::RepositoryAssociationRepositoryBitbucket>>,
     #[builder(into)]
     #[serde(rename = "codecommit")]
-    pub r#codecommit: Option<Box<super::super::types::codegurureviewer::RepositoryAssociationRepositoryCodecommit>>,
+    pub r#codecommit: Box<Option<super::super::types::codegurureviewer::RepositoryAssociationRepositoryCodecommit>>,
     #[builder(into)]
     #[serde(rename = "githubEnterpriseServer")]
-    pub r#github_enterprise_server: Option<Box<super::super::types::codegurureviewer::RepositoryAssociationRepositoryGithubEnterpriseServer>>,
+    pub r#github_enterprise_server: Box<Option<super::super::types::codegurureviewer::RepositoryAssociationRepositoryGithubEnterpriseServer>>,
     #[builder(into)]
     #[serde(rename = "s3Bucket")]
-    pub r#s_3_bucket: Option<Box<super::super::types::codegurureviewer::RepositoryAssociationRepositoryS3Bucket>>,
+    pub r#s_3_bucket: Box<Option<super::super::types::codegurureviewer::RepositoryAssociationRepositoryS3Bucket>>,
 }

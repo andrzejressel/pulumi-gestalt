@@ -6,7 +6,7 @@ pub struct ManagedClusterAuthentication {
     /// A `active_directory` block as defined above.
     #[builder(into)]
     #[serde(rename = "activeDirectory")]
-    pub r#active_directory: Option<Box<super::super::types::servicefabric::ManagedClusterAuthenticationActiveDirectory>>,
+    pub r#active_directory: Box<Option<super::super::types::servicefabric::ManagedClusterAuthenticationActiveDirectory>>,
     /// One or more `certificate` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "certificates")]

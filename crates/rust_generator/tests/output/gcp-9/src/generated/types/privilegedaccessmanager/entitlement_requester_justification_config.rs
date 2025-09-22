@@ -6,11 +6,11 @@ pub struct EntitlementRequesterJustificationConfig {
     /// The justification is not mandatory but can be provided in any of the supported formats.
     #[builder(into)]
     #[serde(rename = "notMandatory")]
-    pub r#not_mandatory: Option<Box<super::super::types::privilegedaccessmanager::EntitlementRequesterJustificationConfigNotMandatory>>,
+    pub r#not_mandatory: Box<Option<super::super::types::privilegedaccessmanager::EntitlementRequesterJustificationConfigNotMandatory>>,
     /// The requester has to provide a justification in the form of free flowing text.
     /// 
     /// - - -
     #[builder(into)]
     #[serde(rename = "unstructured")]
-    pub r#unstructured: Option<Box<super::super::types::privilegedaccessmanager::EntitlementRequesterJustificationConfigUnstructured>>,
+    pub r#unstructured: Box<Option<super::super::types::privilegedaccessmanager::EntitlementRequesterJustificationConfigUnstructured>>,
 }

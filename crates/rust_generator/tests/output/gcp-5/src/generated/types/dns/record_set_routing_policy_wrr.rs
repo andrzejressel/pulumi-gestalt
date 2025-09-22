@@ -7,7 +7,7 @@ pub struct RecordSetRoutingPolicyWrr {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "healthCheckedTargets")]
-    pub r#health_checked_targets: Option<Box<super::super::types::dns::RecordSetRoutingPolicyWrrHealthCheckedTargets>>,
+    pub r#health_checked_targets: Box<Option<super::super::types::dns::RecordSetRoutingPolicyWrrHealthCheckedTargets>>,
     /// Same as `rrdatas` above.
     #[builder(into)]
     #[serde(rename = "rrdatas")]

@@ -26,5 +26,5 @@ pub struct WorkforcePoolProviderExtraAttributesOauth2Client {
     /// Represents the parameters to control which claims are fetched from an IdP.
     #[builder(into)]
     #[serde(rename = "queryParameters")]
-    pub r#query_parameters: Option<Box<super::super::types::iam::WorkforcePoolProviderExtraAttributesOauth2ClientQueryParameters>>,
+    pub r#query_parameters: Box<Option<super::super::types::iam::WorkforcePoolProviderExtraAttributesOauth2ClientQueryParameters>>,
 }

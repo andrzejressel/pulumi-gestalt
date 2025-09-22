@@ -5,11 +5,11 @@
 pub struct StaticWebLayerLoadBasedAutoScaling {
     #[builder(into)]
     #[serde(rename = "downscaling")]
-    pub r#downscaling: Option<Box<super::super::types::opsworks::StaticWebLayerLoadBasedAutoScalingDownscaling>>,
+    pub r#downscaling: Box<Option<super::super::types::opsworks::StaticWebLayerLoadBasedAutoScalingDownscaling>>,
     #[builder(into)]
     #[serde(rename = "enable")]
     pub r#enable: Option<bool>,
     #[builder(into)]
     #[serde(rename = "upscaling")]
-    pub r#upscaling: Option<Box<super::super::types::opsworks::StaticWebLayerLoadBasedAutoScalingUpscaling>>,
+    pub r#upscaling: Box<Option<super::super::types::opsworks::StaticWebLayerLoadBasedAutoScalingUpscaling>>,
 }

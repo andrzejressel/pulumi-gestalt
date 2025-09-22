@@ -8,7 +8,7 @@ pub struct UrlMapPathMatcherDefaultRouteAction {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "corsPolicy")]
-    pub r#cors_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionCorsPolicy>>,
+    pub r#cors_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionCorsPolicy>>,
     /// The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure.
     /// As part of fault injection, when clients send requests to a backend service, delays can be introduced by Loadbalancer on a
     /// percentage of requests before sending those request to the backend service. Similarly requests from clients can be aborted
@@ -17,31 +17,31 @@ pub struct UrlMapPathMatcherDefaultRouteAction {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "faultInjectionPolicy")]
-    pub r#fault_injection_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionFaultInjectionPolicy>>,
+    pub r#fault_injection_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionFaultInjectionPolicy>>,
     /// Specifies the policy on how requests intended for the route's backends are shadowed to a separate mirrored backend service.
     /// Loadbalancer does not wait for responses from the shadow service. Prior to sending traffic to the shadow service,
     /// the host / authority header is suffixed with -shadow.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "requestMirrorPolicy")]
-    pub r#request_mirror_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionRequestMirrorPolicy>>,
+    pub r#request_mirror_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionRequestMirrorPolicy>>,
     /// Specifies the retry policy associated with this route.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "retryPolicy")]
-    pub r#retry_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionRetryPolicy>>,
+    pub r#retry_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionRetryPolicy>>,
     /// Specifies the timeout for the selected route. Timeout is computed from the time the request has been
     /// fully processed (i.e. end-of-stream) up until the response has been completely processed. Timeout includes all retries.
     /// If not specified, will use the largest timeout among all backend services associated with the route.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionTimeout>>,
+    pub r#timeout: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionTimeout>>,
     /// The spec to modify the URL of the request, prior to forwarding the request to the matched service.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "urlRewrite")]
-    pub r#url_rewrite: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionUrlRewrite>>,
+    pub r#url_rewrite: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultRouteActionUrlRewrite>>,
     /// A list of weighted backend services to send traffic to when a route match occurs.
     /// The weights determine the fraction of traffic that flows to their corresponding backend service.
     /// If all traffic needs to go to a single backend service, there must be one weightedBackendService

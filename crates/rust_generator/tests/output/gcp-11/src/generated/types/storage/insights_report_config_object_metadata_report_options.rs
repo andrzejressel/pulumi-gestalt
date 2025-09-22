@@ -16,5 +16,5 @@ pub struct InsightsReportConfigObjectMetadataReportOptions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "storageFilters")]
-    pub r#storage_filters: Option<Box<super::super::types::storage::InsightsReportConfigObjectMetadataReportOptionsStorageFilters>>,
+    pub r#storage_filters: Box<Option<super::super::types::storage::InsightsReportConfigObjectMetadataReportOptionsStorageFilters>>,
 }

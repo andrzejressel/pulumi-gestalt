@@ -18,9 +18,9 @@ pub struct ConnectorCapacityAutoscaling {
     /// The scale-in policy for the connector. See `scale_in_policy` Block for details.
     #[builder(into)]
     #[serde(rename = "scaleInPolicy")]
-    pub r#scale_in_policy: Option<Box<super::super::types::mskconnect::ConnectorCapacityAutoscalingScaleInPolicy>>,
+    pub r#scale_in_policy: Box<Option<super::super::types::mskconnect::ConnectorCapacityAutoscalingScaleInPolicy>>,
     /// The scale-out policy for the connector. See `scale_out_policy` Block for details.
     #[builder(into)]
     #[serde(rename = "scaleOutPolicy")]
-    pub r#scale_out_policy: Option<Box<super::super::types::mskconnect::ConnectorCapacityAutoscalingScaleOutPolicy>>,
+    pub r#scale_out_policy: Box<Option<super::super::types::mskconnect::ConnectorCapacityAutoscalingScaleOutPolicy>>,
 }

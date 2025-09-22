@@ -19,7 +19,7 @@ pub struct PipelineJobMappingPipelineJob {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "fhirStreamingSource")]
-    pub r#fhir_streaming_source: Option<Box<super::super::types::healthcare::PipelineJobMappingPipelineJobFhirStreamingSource>>,
+    pub r#fhir_streaming_source: Box<Option<super::super::types::healthcare::PipelineJobMappingPipelineJobFhirStreamingSource>>,
     /// The location of the mapping configuration.
     /// Structure is documented below.
     #[builder(into)]

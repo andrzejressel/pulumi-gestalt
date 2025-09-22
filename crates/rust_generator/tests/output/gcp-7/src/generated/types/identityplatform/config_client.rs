@@ -18,5 +18,5 @@ pub struct ConfigClient {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Option<Box<super::super::types::identityplatform::ConfigClientPermissions>>,
+    pub r#permissions: Box<Option<super::super::types::identityplatform::ConfigClientPermissions>>,
 }

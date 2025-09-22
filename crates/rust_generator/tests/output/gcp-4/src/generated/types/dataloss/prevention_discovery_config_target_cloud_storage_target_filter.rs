@@ -7,14 +7,14 @@ pub struct PreventionDiscoveryConfigTargetCloudStorageTargetFilter {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cloudStorageResourceReference")]
-    pub r#cloud_storage_resource_reference: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetFilterCloudStorageResourceReference>>,
+    pub r#cloud_storage_resource_reference: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetFilterCloudStorageResourceReference>>,
     /// A specific set of buckets for this filter to apply to.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "collection")]
-    pub r#collection: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollection>>,
+    pub r#collection: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollection>>,
     /// Match discovery resources not covered by any other filter.
     #[builder(into)]
     #[serde(rename = "others")]
-    pub r#others: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetFilterOthers>>,
+    pub r#others: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetFilterOthers>>,
 }

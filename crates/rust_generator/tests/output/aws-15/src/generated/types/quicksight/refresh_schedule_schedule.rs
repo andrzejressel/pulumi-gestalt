@@ -10,7 +10,7 @@ pub struct RefreshScheduleSchedule {
     /// The configuration of the [schedule frequency](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshFrequency.html). See schedule_frequency.
     #[builder(into)]
     #[serde(rename = "scheduleFrequency")]
-    pub r#schedule_frequency: Option<Box<super::super::types::quicksight::RefreshScheduleScheduleScheduleFrequency>>,
+    pub r#schedule_frequency: Box<Option<super::super::types::quicksight::RefreshScheduleScheduleScheduleFrequency>>,
     /// Time after which the refresh schedule can be started, expressed in `YYYY-MM-DDTHH:MM:SS` format.
     #[builder(into)]
     #[serde(rename = "startAfterDateTime")]

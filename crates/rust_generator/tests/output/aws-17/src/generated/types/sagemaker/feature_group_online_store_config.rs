@@ -10,7 +10,7 @@ pub struct FeatureGroupOnlineStoreConfig {
     /// Security config for at-rest encryption of your OnlineStore. See Security Config Below.
     #[builder(into)]
     #[serde(rename = "securityConfig")]
-    pub r#security_config: Option<Box<super::super::types::sagemaker::FeatureGroupOnlineStoreConfigSecurityConfig>>,
+    pub r#security_config: Box<Option<super::super::types::sagemaker::FeatureGroupOnlineStoreConfigSecurityConfig>>,
     /// Option for different tiers of low latency storage for real-time data retrieval. Valid values are `Standard`, or `InMemory`.
     #[builder(into)]
     #[serde(rename = "storageType")]
@@ -18,5 +18,5 @@ pub struct FeatureGroupOnlineStoreConfig {
     /// Time to live duration, where the record is hard deleted after the expiration time is reached; ExpiresAt = EventTime + TtlDuration.. See TTl Duration Below.
     #[builder(into)]
     #[serde(rename = "ttlDuration")]
-    pub r#ttl_duration: Option<Box<super::super::types::sagemaker::FeatureGroupOnlineStoreConfigTtlDuration>>,
+    pub r#ttl_duration: Box<Option<super::super::types::sagemaker::FeatureGroupOnlineStoreConfigTtlDuration>>,
 }

@@ -23,7 +23,7 @@ pub struct VirtualNetworkGatewayVpnClientConfiguration {
     /// An `ipsec_policy` block as defined below.
     #[builder(into)]
     #[serde(rename = "ipsecPolicy")]
-    pub r#ipsec_policy: Option<Box<super::super::types::network::VirtualNetworkGatewayVpnClientConfigurationIpsecPolicy>>,
+    pub r#ipsec_policy: Box<Option<super::super::types::network::VirtualNetworkGatewayVpnClientConfigurationIpsecPolicy>>,
     /// The address of the Radius server.
     #[builder(into)]
     #[serde(rename = "radiusServerAddress")]

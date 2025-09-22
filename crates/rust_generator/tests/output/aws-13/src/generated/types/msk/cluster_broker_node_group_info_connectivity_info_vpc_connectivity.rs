@@ -6,5 +6,5 @@ pub struct ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity {
     /// Configuration block for specifying a client authentication. See below.
     #[builder(into)]
     #[serde(rename = "clientAuthentication")]
-    pub r#client_authentication: Option<Box<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthentication>>,
+    pub r#client_authentication: Box<Option<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthentication>>,
 }

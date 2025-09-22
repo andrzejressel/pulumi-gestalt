@@ -14,7 +14,7 @@ pub struct FirehoseDeliveryStreamOpensearchConfiguration {
     /// The CloudWatch Logging Options for the delivery stream. See `cloudwatch_logging_options` block below for details.
     #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptions")]
-    pub r#cloudwatch_logging_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchConfigurationCloudwatchLoggingOptions>>,
+    pub r#cloudwatch_logging_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchConfigurationCloudwatchLoggingOptions>>,
     /// The endpoint to use when communicating with the cluster. Conflicts with `domain_arn`.
     #[builder(into)]
     #[serde(rename = "clusterEndpoint")]
@@ -22,7 +22,7 @@ pub struct FirehoseDeliveryStreamOpensearchConfiguration {
     /// The method for setting up document ID. See [`document_id_options` block] below for details.
     #[builder(into)]
     #[serde(rename = "documentIdOptions")]
-    pub r#document_id_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchConfigurationDocumentIdOptions>>,
+    pub r#document_id_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchConfigurationDocumentIdOptions>>,
     /// The ARN of the Amazon ES domain.  The pattern needs to be `arn:.*`.  Conflicts with `cluster_endpoint`.
     #[builder(into)]
     #[serde(rename = "domainArn")]
@@ -38,7 +38,7 @@ pub struct FirehoseDeliveryStreamOpensearchConfiguration {
     /// The data processing configuration. See `processing_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "processingConfiguration")]
-    pub r#processing_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchConfigurationProcessingConfiguration>>,
+    pub r#processing_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchConfigurationProcessingConfiguration>>,
     /// After an initial failure to deliver to Amazon OpenSearch, the total amount of time, in seconds between 0 to 7200, during which Firehose re-attempts delivery (including the first attempt).  After this time has elapsed, the failed documents are written to Amazon S3.  The default value is 300s.  There will be no retry if the value is 0.
     #[builder(into)]
     #[serde(rename = "retryDuration")]
@@ -62,5 +62,5 @@ pub struct FirehoseDeliveryStreamOpensearchConfiguration {
     /// The VPC configuration for the delivery stream to connect to OpenSearch associated with the VPC. See `vpc_config` block below for details.
     #[builder(into)]
     #[serde(rename = "vpcConfig")]
-    pub r#vpc_config: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchConfigurationVpcConfig>>,
+    pub r#vpc_config: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchConfigurationVpcConfig>>,
 }

@@ -10,5 +10,5 @@ pub struct AgentDataSourceVectorIngestionConfigurationCustomTransformationConfig
     /// The lambda function that processes documents.
     #[builder(into)]
     #[serde(rename = "transformationFunction")]
-    pub r#transformation_function: Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationTransformationFunction>>,
+    pub r#transformation_function: Box<Option<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationTransformationFunction>>,
 }

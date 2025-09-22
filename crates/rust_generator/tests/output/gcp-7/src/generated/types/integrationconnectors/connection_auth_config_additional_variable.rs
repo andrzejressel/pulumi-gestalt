@@ -11,7 +11,7 @@ pub struct ConnectionAuthConfigAdditionalVariable {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "encryptionKeyValue")]
-    pub r#encryption_key_value: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigAdditionalVariableEncryptionKeyValue>>,
+    pub r#encryption_key_value: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigAdditionalVariableEncryptionKeyValue>>,
     /// Integer Value of configVariable.
     #[builder(into)]
     #[serde(rename = "integerValue")]
@@ -24,7 +24,7 @@ pub struct ConnectionAuthConfigAdditionalVariable {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "secretValue")]
-    pub r#secret_value: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigAdditionalVariableSecretValue>>,
+    pub r#secret_value: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigAdditionalVariableSecretValue>>,
     /// String Value of configVariabley.
     #[builder(into)]
     #[serde(rename = "stringValue")]

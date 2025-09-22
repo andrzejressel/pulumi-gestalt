@@ -8,7 +8,7 @@ pub struct ChatEngineChatEngineConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "agentCreationConfig")]
-    pub r#agent_creation_config: Option<Box<super::super::types::discoveryengine::ChatEngineChatEngineConfigAgentCreationConfig>>,
+    pub r#agent_creation_config: Box<Option<super::super::types::discoveryengine::ChatEngineChatEngineConfigAgentCreationConfig>>,
     /// The resource name of an existing Dialogflow agent to link to this Chat Engine. Format: `projects/<Project_ID>/locations/<Location_ID>/agents/<Agent_ID>`.
     /// Exactly one of `agent_creation_config` or `dialogflow_agent_to_link` must be set.
     #[builder(into)]

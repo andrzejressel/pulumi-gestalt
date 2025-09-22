@@ -13,5 +13,5 @@ pub struct IndexFieldVectorConfig {
     /// - - -
     #[builder(into)]
     #[serde(rename = "flat")]
-    pub r#flat: Option<Box<super::super::types::firestore::IndexFieldVectorConfigFlat>>,
+    pub r#flat: Box<Option<super::super::types::firestore::IndexFieldVectorConfigFlat>>,
 }

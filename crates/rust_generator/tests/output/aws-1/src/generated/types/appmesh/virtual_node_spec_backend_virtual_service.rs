@@ -6,7 +6,7 @@ pub struct VirtualNodeSpecBackendVirtualService {
     /// Client policy for the backend.
     #[builder(into)]
     #[serde(rename = "clientPolicy")]
-    pub r#client_policy: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicy>>,
+    pub r#client_policy: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicy>>,
     /// Name of the virtual service that is acting as a virtual node backend. Must be between 1 and 255 characters in length.
     #[builder(into)]
     #[serde(rename = "virtualServiceName")]

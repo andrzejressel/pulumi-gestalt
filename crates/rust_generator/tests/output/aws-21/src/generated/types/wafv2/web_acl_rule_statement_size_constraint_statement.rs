@@ -10,7 +10,7 @@ pub struct WebAclRuleStatementSizeConstraintStatement {
     /// Part of a web request that you want AWS WAF to inspect. See `field_to_match` below for details.
     #[builder(into)]
     #[serde(rename = "fieldToMatch")]
-    pub r#field_to_match: Option<Box<super::super::types::wafv2::WebAclRuleStatementSizeConstraintStatementFieldToMatch>>,
+    pub r#field_to_match: Box<Option<super::super::types::wafv2::WebAclRuleStatementSizeConstraintStatementFieldToMatch>>,
     /// Size, in bytes, to compare to the request part, after any transformations. Valid values are integers between 0 and 21474836480, inclusive.
     #[builder(into)]
     #[serde(rename = "size")]

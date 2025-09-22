@@ -11,5 +11,5 @@ pub struct PipelineJobMappingPipelineJobMappingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "whistleConfigSource")]
-    pub r#whistle_config_source: Option<Box<super::super::types::healthcare::PipelineJobMappingPipelineJobMappingConfigWhistleConfigSource>>,
+    pub r#whistle_config_source: Box<Option<super::super::types::healthcare::PipelineJobMappingPipelineJobMappingConfigWhistleConfigSource>>,
 }

@@ -30,5 +30,5 @@ pub struct StandardAppVersionAutomaticScaling {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "standardSchedulerSettings")]
-    pub r#standard_scheduler_settings: Option<Box<super::super::types::appengine::StandardAppVersionAutomaticScalingStandardSchedulerSettings>>,
+    pub r#standard_scheduler_settings: Box<Option<super::super::types::appengine::StandardAppVersionAutomaticScalingStandardSchedulerSettings>>,
 }

@@ -6,7 +6,7 @@ pub struct TransferJobTransferSpecAzureBlobStorageDataSource {
     /// Credentials used to authenticate API requests to Azure block.
     #[builder(into)]
     #[serde(rename = "azureCredentials")]
-    pub r#azure_credentials: Option<Box<super::super::types::storage::TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials>>,
+    pub r#azure_credentials: Box<Option<super::super::types::storage::TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials>>,
     /// The container to transfer from the Azure Storage account.`
     #[builder(into)]
     #[serde(rename = "container")]

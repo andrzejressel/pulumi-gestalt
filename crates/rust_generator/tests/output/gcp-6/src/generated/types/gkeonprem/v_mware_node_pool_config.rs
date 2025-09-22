@@ -51,5 +51,5 @@ pub struct VMwareNodePoolConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vsphereConfig")]
-    pub r#vsphere_config: Option<Box<super::super::types::gkeonprem::VMwareNodePoolConfigVsphereConfig>>,
+    pub r#vsphere_config: Box<Option<super::super::types::gkeonprem::VMwareNodePoolConfigVsphereConfig>>,
 }

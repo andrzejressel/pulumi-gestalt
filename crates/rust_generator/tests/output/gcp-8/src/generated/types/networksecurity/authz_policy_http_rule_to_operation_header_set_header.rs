@@ -11,5 +11,5 @@ pub struct AuthzPolicyHttpRuleToOperationHeaderSetHeader {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Option<Box<super::super::types::networksecurity::AuthzPolicyHttpRuleToOperationHeaderSetHeaderValue>>,
+    pub r#value: Box<Option<super::super::types::networksecurity::AuthzPolicyHttpRuleToOperationHeaderSetHeaderValue>>,
 }

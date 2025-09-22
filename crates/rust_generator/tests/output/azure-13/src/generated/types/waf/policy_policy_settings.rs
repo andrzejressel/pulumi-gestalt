@@ -22,7 +22,7 @@ pub struct PolicyPolicySettings {
     /// One `log_scrubbing` block as defined below.
     #[builder(into)]
     #[serde(rename = "logScrubbing")]
-    pub r#log_scrubbing: Option<Box<super::super::types::waf::PolicyPolicySettingsLogScrubbing>>,
+    pub r#log_scrubbing: Box<Option<super::super::types::waf::PolicyPolicySettingsLogScrubbing>>,
     /// The Maximum Request Body Size in KB. Accepted values are in the range `8` to `2000`. Defaults to `128`.
     #[builder(into)]
     #[serde(rename = "maxRequestBodySizeInKb")]

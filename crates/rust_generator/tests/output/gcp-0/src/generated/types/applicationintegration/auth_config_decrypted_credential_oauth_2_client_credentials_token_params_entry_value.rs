@@ -7,5 +7,5 @@ pub struct AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntryV
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "literalValue")]
-    pub r#literal_value: Option<Box<super::super::types::applicationintegration::AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntryValueLiteralValue>>,
+    pub r#literal_value: Box<Option<super::super::types::applicationintegration::AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntryValueLiteralValue>>,
 }

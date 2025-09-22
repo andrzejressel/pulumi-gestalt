@@ -6,7 +6,7 @@ pub struct ZeroTrustAccessApplicationScimConfig {
     /// Attributes for configuring HTTP Basic, OAuth Bearer token, or OAuth 2 authentication schemes for SCIM provisioning to an application.
     #[builder(into)]
     #[serde(rename = "authentication")]
-    pub r#authentication: Option<Box<super::types::ZeroTrustAccessApplicationScimConfigAuthentication>>,
+    pub r#authentication: Box<Option<super::types::ZeroTrustAccessApplicationScimConfigAuthentication>>,
     /// If false, propagates DELETE requests to the target application for SCIM resources. If true, sets 'active' to false on the SCIM resource. Note: Some targets do not support DELETE operations.
     #[builder(into)]
     #[serde(rename = "deactivateOnDelete")]

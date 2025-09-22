@@ -7,7 +7,7 @@ pub struct BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNode
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "kubeletConfig")]
-    pub r#kubelet_config: Option<Box<super::super::types::gkeonprem::BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfig>>,
+    pub r#kubelet_config: Box<Option<super::super::types::gkeonprem::BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfig>>,
     /// The map of Kubernetes labels (key/value pairs) to be applied to
     /// each node. These will added in addition to any default label(s)
     /// that Kubernetes may apply to the node. In case of conflict in

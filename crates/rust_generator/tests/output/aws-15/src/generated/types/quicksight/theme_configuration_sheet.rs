@@ -6,9 +6,9 @@ pub struct ThemeConfigurationSheet {
     /// The display options for tiles. See tile.
     #[builder(into)]
     #[serde(rename = "tile")]
-    pub r#tile: Option<Box<super::super::types::quicksight::ThemeConfigurationSheetTile>>,
+    pub r#tile: Box<Option<super::super::types::quicksight::ThemeConfigurationSheetTile>>,
     /// The layout options for tiles. See tile_layout.
     #[builder(into)]
     #[serde(rename = "tileLayout")]
-    pub r#tile_layout: Option<Box<super::super::types::quicksight::ThemeConfigurationSheetTileLayout>>,
+    pub r#tile_layout: Box<Option<super::super::types::quicksight::ThemeConfigurationSheetTileLayout>>,
 }

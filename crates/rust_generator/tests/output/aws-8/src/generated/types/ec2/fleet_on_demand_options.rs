@@ -10,7 +10,7 @@ pub struct FleetOnDemandOptions {
     /// The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. Supported only for fleets of type `instant`.
     #[builder(into)]
     #[serde(rename = "capacityReservationOptions")]
-    pub r#capacity_reservation_options: Option<Box<super::super::types::ec2::FleetOnDemandOptionsCapacityReservationOptions>>,
+    pub r#capacity_reservation_options: Box<Option<super::super::types::ec2::FleetOnDemandOptionsCapacityReservationOptions>>,
     /// The maximum amount per hour for On-Demand Instances that you're willing to pay.
     #[builder(into)]
     #[serde(rename = "maxTotalPrice")]

@@ -6,7 +6,7 @@ pub struct PreventionDiscoveryConfigError {
     /// A list of messages that carry the error details.
     #[builder(into)]
     #[serde(rename = "details")]
-    pub r#details: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigErrorDetails>>,
+    pub r#details: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigErrorDetails>>,
     /// The times the error occurred. List includes the oldest timestamp and the last 9 timestamps.
     #[builder(into)]
     #[serde(rename = "timestamp")]

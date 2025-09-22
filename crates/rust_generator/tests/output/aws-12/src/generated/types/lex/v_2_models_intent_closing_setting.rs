@@ -10,13 +10,13 @@ pub struct V2ModelsIntentClosingSetting {
     /// Configuration block for response that Amazon Lex sends to the user when the intent is complete. See `closing_response`.
     #[builder(into)]
     #[serde(rename = "closingResponse")]
-    pub r#closing_response: Option<Box<super::super::types::lex::V2ModelsIntentClosingSettingClosingResponse>>,
+    pub r#closing_response: Box<Option<super::super::types::lex::V2ModelsIntentClosingSettingClosingResponse>>,
     /// Configuration block for list of conditional branches associated with the intent's closing response. These branches are executed when the `next_step` attribute is set to `EvalutateConditional`. See `conditional`.
     #[builder(into)]
     #[serde(rename = "conditional")]
-    pub r#conditional: Option<Box<super::super::types::lex::V2ModelsIntentClosingSettingConditional>>,
+    pub r#conditional: Box<Option<super::super::types::lex::V2ModelsIntentClosingSettingConditional>>,
     /// Next step that the bot executes after playing the intent's closing response. See `next_step`.
     #[builder(into)]
     #[serde(rename = "nextStep")]
-    pub r#next_step: Option<Box<super::super::types::lex::V2ModelsIntentClosingSettingNextStep>>,
+    pub r#next_step: Box<Option<super::super::types::lex::V2ModelsIntentClosingSettingNextStep>>,
 }

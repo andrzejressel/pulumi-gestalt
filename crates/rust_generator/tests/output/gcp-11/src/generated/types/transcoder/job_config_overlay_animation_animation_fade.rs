@@ -24,5 +24,5 @@ pub struct JobConfigOverlayAnimationAnimationFade {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "xy")]
-    pub r#xy: Option<Box<super::super::types::transcoder::JobConfigOverlayAnimationAnimationFadeXy>>,
+    pub r#xy: Box<Option<super::super::types::transcoder::JobConfigOverlayAnimationAnimationFadeXy>>,
 }

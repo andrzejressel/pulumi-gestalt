@@ -6,5 +6,5 @@ pub struct UserProfileUserSettingsJupyterLabAppSettingsAppLifecycleManagement {
     /// Settings related to idle shutdown of Studio applications. see `idle_settings` Block below.
     #[builder(into)]
     #[serde(rename = "idleSettings")]
-    pub r#idle_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettings>>,
+    pub r#idle_settings: Box<Option<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettings>>,
 }

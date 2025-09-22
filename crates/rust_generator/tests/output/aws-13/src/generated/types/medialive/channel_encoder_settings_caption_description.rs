@@ -14,7 +14,7 @@ pub struct ChannelEncoderSettingsCaptionDescription {
     /// Additional settings for captions destination that depend on the destination type. See Destination Settings for more details.
     #[builder(into)]
     #[serde(rename = "destinationSettings")]
-    pub r#destination_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsCaptionDescriptionDestinationSettings>>,
+    pub r#destination_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsCaptionDescriptionDestinationSettings>>,
     /// ISO 639-2 three-digit code.
     #[builder(into)]
     #[serde(rename = "languageCode")]

@@ -20,10 +20,10 @@ pub struct ResourcePolicyInstanceSchedulePolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vmStartSchedule")]
-    pub r#vm_start_schedule: Option<Box<super::super::types::compute::ResourcePolicyInstanceSchedulePolicyVmStartSchedule>>,
+    pub r#vm_start_schedule: Box<Option<super::super::types::compute::ResourcePolicyInstanceSchedulePolicyVmStartSchedule>>,
     /// Specifies the schedule for stopping instances.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vmStopSchedule")]
-    pub r#vm_stop_schedule: Option<Box<super::super::types::compute::ResourcePolicyInstanceSchedulePolicyVmStopSchedule>>,
+    pub r#vm_stop_schedule: Box<Option<super::super::types::compute::ResourcePolicyInstanceSchedulePolicyVmStopSchedule>>,
 }

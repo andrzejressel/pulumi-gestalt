@@ -10,7 +10,7 @@ pub struct WorkflowTemplatePlacementManagedClusterConfigMasterConfig {
     /// Disk option config settings.
     #[builder(into)]
     #[serde(rename = "diskConfig")]
-    pub r#disk_config: Option<Box<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigMasterConfigDiskConfig>>,
+    pub r#disk_config: Box<Option<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigMasterConfigDiskConfig>>,
     /// The Compute Engine image resource used for cluster instances. The URI can represent an image or image family. Image examples: * `https://www.googleapis.com/compute/beta/projects/` If the URI is unspecified, it will be inferred from `SoftwareConfig.image_version` or the system default.
     #[builder(into)]
     #[serde(rename = "image")]

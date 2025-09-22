@@ -19,5 +19,5 @@ pub struct DiagnosticSettingEnabledLog {
     pub r#category_group: Option<String>,
     #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Option<Box<super::super::types::monitoring::DiagnosticSettingEnabledLogRetentionPolicy>>,
+    pub r#retention_policy: Box<Option<super::super::types::monitoring::DiagnosticSettingEnabledLogRetentionPolicy>>,
 }

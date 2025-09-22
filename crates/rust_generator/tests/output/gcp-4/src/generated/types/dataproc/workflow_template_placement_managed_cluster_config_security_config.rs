@@ -6,5 +6,5 @@ pub struct WorkflowTemplatePlacementManagedClusterConfigSecurityConfig {
     /// Kerberos related configuration.
     #[builder(into)]
     #[serde(rename = "kerberosConfig")]
-    pub r#kerberos_config: Option<Box<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig>>,
+    pub r#kerberos_config: Box<Option<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigSecurityConfigKerberosConfig>>,
 }

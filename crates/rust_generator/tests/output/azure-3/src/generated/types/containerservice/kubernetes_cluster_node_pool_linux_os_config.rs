@@ -10,7 +10,7 @@ pub struct KubernetesClusterNodePoolLinuxOsConfig {
     /// A `sysctl_config` block as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "sysctlConfig")]
-    pub r#sysctl_config: Option<Box<super::super::types::containerservice::KubernetesClusterNodePoolLinuxOsConfigSysctlConfig>>,
+    pub r#sysctl_config: Box<Option<super::super::types::containerservice::KubernetesClusterNodePoolLinuxOsConfigSysctlConfig>>,
     /// specifies the defrag configuration for Transparent Huge Page. Possible values are `always`, `defer`, `defer+madvise`, `madvise` and `never`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "transparentHugePageDefrag")]

@@ -6,11 +6,11 @@ pub struct EndpointDeliveryRule {
     /// A `cache_expiration_action` block as defined above.
     #[builder(into)]
     #[serde(rename = "cacheExpirationAction")]
-    pub r#cache_expiration_action: Option<Box<super::super::types::cdn::EndpointDeliveryRuleCacheExpirationAction>>,
+    pub r#cache_expiration_action: Box<Option<super::super::types::cdn::EndpointDeliveryRuleCacheExpirationAction>>,
     /// A `cache_key_query_string_action` block as defined above.
     #[builder(into)]
     #[serde(rename = "cacheKeyQueryStringAction")]
-    pub r#cache_key_query_string_action: Option<Box<super::super::types::cdn::EndpointDeliveryRuleCacheKeyQueryStringAction>>,
+    pub r#cache_key_query_string_action: Box<Option<super::super::types::cdn::EndpointDeliveryRuleCacheKeyQueryStringAction>>,
     /// A `cookies_condition` block as defined above.
     #[builder(into)]
     #[serde(rename = "cookiesConditions")]
@@ -18,7 +18,7 @@ pub struct EndpointDeliveryRule {
     /// A `device_condition` block as defined below.
     #[builder(into)]
     #[serde(rename = "deviceCondition")]
-    pub r#device_condition: Option<Box<super::super::types::cdn::EndpointDeliveryRuleDeviceCondition>>,
+    pub r#device_condition: Box<Option<super::super::types::cdn::EndpointDeliveryRuleDeviceCondition>>,
     /// A `http_version_condition` block as defined below.
     #[builder(into)]
     #[serde(rename = "httpVersionConditions")]
@@ -62,11 +62,11 @@ pub struct EndpointDeliveryRule {
     /// A `request_method_condition` block as defined below.
     #[builder(into)]
     #[serde(rename = "requestMethodCondition")]
-    pub r#request_method_condition: Option<Box<super::super::types::cdn::EndpointDeliveryRuleRequestMethodCondition>>,
+    pub r#request_method_condition: Box<Option<super::super::types::cdn::EndpointDeliveryRuleRequestMethodCondition>>,
     /// A `request_scheme_condition` block as defined below.
     #[builder(into)]
     #[serde(rename = "requestSchemeCondition")]
-    pub r#request_scheme_condition: Option<Box<super::super::types::cdn::EndpointDeliveryRuleRequestSchemeCondition>>,
+    pub r#request_scheme_condition: Box<Option<super::super::types::cdn::EndpointDeliveryRuleRequestSchemeCondition>>,
     /// A `request_uri_condition` block as defined below.
     #[builder(into)]
     #[serde(rename = "requestUriConditions")]
@@ -86,9 +86,9 @@ pub struct EndpointDeliveryRule {
     /// A `url_redirect_action` block as defined below.
     #[builder(into)]
     #[serde(rename = "urlRedirectAction")]
-    pub r#url_redirect_action: Option<Box<super::super::types::cdn::EndpointDeliveryRuleUrlRedirectAction>>,
+    pub r#url_redirect_action: Box<Option<super::super::types::cdn::EndpointDeliveryRuleUrlRedirectAction>>,
     /// A `url_rewrite_action` block as defined below.
     #[builder(into)]
     #[serde(rename = "urlRewriteAction")]
-    pub r#url_rewrite_action: Option<Box<super::super::types::cdn::EndpointDeliveryRuleUrlRewriteAction>>,
+    pub r#url_rewrite_action: Box<Option<super::super::types::cdn::EndpointDeliveryRuleUrlRewriteAction>>,
 }

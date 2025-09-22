@@ -10,15 +10,15 @@ pub struct TaskDefinitionVolume {
     /// Configuration block to configure a docker volume. Detailed below.
     #[builder(into)]
     #[serde(rename = "dockerVolumeConfiguration")]
-    pub r#docker_volume_configuration: Option<Box<super::super::types::ecs::TaskDefinitionVolumeDockerVolumeConfiguration>>,
+    pub r#docker_volume_configuration: Box<Option<super::super::types::ecs::TaskDefinitionVolumeDockerVolumeConfiguration>>,
     /// Configuration block for an EFS volume. Detailed below.
     #[builder(into)]
     #[serde(rename = "efsVolumeConfiguration")]
-    pub r#efs_volume_configuration: Option<Box<super::super::types::ecs::TaskDefinitionVolumeEfsVolumeConfiguration>>,
+    pub r#efs_volume_configuration: Box<Option<super::super::types::ecs::TaskDefinitionVolumeEfsVolumeConfiguration>>,
     /// Configuration block for an FSX Windows File Server volume. Detailed below.
     #[builder(into)]
     #[serde(rename = "fsxWindowsFileServerVolumeConfiguration")]
-    pub r#fsx_windows_file_server_volume_configuration: Option<Box<super::super::types::ecs::TaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguration>>,
+    pub r#fsx_windows_file_server_volume_configuration: Box<Option<super::super::types::ecs::TaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguration>>,
     /// Path on the host container instance that is presented to the container. If not set, ECS will create a nonpersistent data volume that starts empty and is deleted after the task has finished.
     #[builder(into)]
     #[serde(rename = "hostPath")]

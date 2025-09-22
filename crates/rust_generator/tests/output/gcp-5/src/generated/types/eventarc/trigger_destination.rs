@@ -10,19 +10,19 @@ pub struct TriggerDestination {
     /// Cloud Run fully-managed service that receives the events. The service should be running in the same project of the trigger.
     #[builder(into)]
     #[serde(rename = "cloudRunService")]
-    pub r#cloud_run_service: Option<Box<super::super::types::eventarc::TriggerDestinationCloudRunService>>,
+    pub r#cloud_run_service: Box<Option<super::super::types::eventarc::TriggerDestinationCloudRunService>>,
     /// A GKE service capable of receiving events. The service should be running in the same project as the trigger.
     #[builder(into)]
     #[serde(rename = "gke")]
-    pub r#gke: Option<Box<super::super::types::eventarc::TriggerDestinationGke>>,
+    pub r#gke: Box<Option<super::super::types::eventarc::TriggerDestinationGke>>,
     /// An HTTP endpoint destination described by an URI.
     #[builder(into)]
     #[serde(rename = "httpEndpoint")]
-    pub r#http_endpoint: Option<Box<super::super::types::eventarc::TriggerDestinationHttpEndpoint>>,
+    pub r#http_endpoint: Box<Option<super::super::types::eventarc::TriggerDestinationHttpEndpoint>>,
     /// Optional. Network config is used to configure how Eventarc resolves and connect to a destination. This should only be used with HttpEndpoint destination type.
     #[builder(into)]
     #[serde(rename = "networkConfig")]
-    pub r#network_config: Option<Box<super::super::types::eventarc::TriggerDestinationNetworkConfig>>,
+    pub r#network_config: Box<Option<super::super::types::eventarc::TriggerDestinationNetworkConfig>>,
     /// The resource name of the Workflow whose Executions are triggered by the events. The Workflow resource should be deployed in the same project as the trigger. Format: `projects/{project}/locations/{location}/workflows/{workflow}`
     #[builder(into)]
     #[serde(rename = "workflow")]

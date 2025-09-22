@@ -10,5 +10,5 @@ pub struct ClusterEncryptionInfo {
     /// Configuration block to specify encryption in transit. See below.
     #[builder(into)]
     #[serde(rename = "encryptionInTransit")]
-    pub r#encryption_in_transit: Option<Box<super::super::types::msk::ClusterEncryptionInfoEncryptionInTransit>>,
+    pub r#encryption_in_transit: Box<Option<super::super::types::msk::ClusterEncryptionInfoEncryptionInTransit>>,
 }

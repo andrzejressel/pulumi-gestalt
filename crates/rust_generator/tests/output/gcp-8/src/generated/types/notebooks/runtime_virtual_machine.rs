@@ -17,5 +17,5 @@ pub struct RuntimeVirtualMachine {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "virtualMachineConfig")]
-    pub r#virtual_machine_config: Option<Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfig>>,
+    pub r#virtual_machine_config: Box<Option<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfig>>,
 }

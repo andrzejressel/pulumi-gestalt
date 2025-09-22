@@ -14,7 +14,7 @@ pub struct TaskTaskReportConfig {
     /// Configuration block containing the configuration of the reporting level for aspects of your task report. See `report_overrides` below.
     #[builder(into)]
     #[serde(rename = "reportOverrides")]
-    pub r#report_overrides: Option<Box<super::super::types::datasync::TaskTaskReportConfigReportOverrides>>,
+    pub r#report_overrides: Box<Option<super::super::types::datasync::TaskTaskReportConfigReportOverrides>>,
     /// Configuration block containing the configuration for the Amazon S3 bucket where DataSync uploads your task report. See `s3_destination` below.
     #[builder(into)]
     #[serde(rename = "s3Destination")]

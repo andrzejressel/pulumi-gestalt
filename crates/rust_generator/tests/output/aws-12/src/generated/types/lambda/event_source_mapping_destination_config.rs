@@ -6,5 +6,5 @@ pub struct EventSourceMappingDestinationConfig {
     /// The destination configuration for failed invocations. Detailed below.
     #[builder(into)]
     #[serde(rename = "onFailure")]
-    pub r#on_failure: Option<Box<super::super::types::lambda::EventSourceMappingDestinationConfigOnFailure>>,
+    pub r#on_failure: Box<Option<super::super::types::lambda::EventSourceMappingDestinationConfigOnFailure>>,
 }

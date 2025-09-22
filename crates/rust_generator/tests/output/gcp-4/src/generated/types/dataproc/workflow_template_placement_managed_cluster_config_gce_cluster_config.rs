@@ -18,7 +18,7 @@ pub struct WorkflowTemplatePlacementManagedClusterConfigGceClusterConfig {
     /// Node Group Affinity for sole-tenant clusters.
     #[builder(into)]
     #[serde(rename = "nodeGroupAffinity")]
-    pub r#node_group_affinity: Option<Box<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigNodeGroupAffinity>>,
+    pub r#node_group_affinity: Box<Option<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigNodeGroupAffinity>>,
     /// The type of IPv6 access for a cluster. Possible values: PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED, INHERIT_FROM_SUBNETWORK, OUTBOUND, BIDIRECTIONAL
     #[builder(into)]
     #[serde(rename = "privateIpv6GoogleAccess")]
@@ -26,7 +26,7 @@ pub struct WorkflowTemplatePlacementManagedClusterConfigGceClusterConfig {
     /// Reservation Affinity for consuming Zonal reservation.
     #[builder(into)]
     #[serde(rename = "reservationAffinity")]
-    pub r#reservation_affinity: Option<Box<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigReservationAffinity>>,
+    pub r#reservation_affinity: Box<Option<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigReservationAffinity>>,
     /// The (https://cloud.google.com/compute/docs/access/service-accounts#default_service_account) is used.
     #[builder(into)]
     #[serde(rename = "serviceAccount")]
@@ -38,7 +38,7 @@ pub struct WorkflowTemplatePlacementManagedClusterConfigGceClusterConfig {
     /// Shielded Instance Config for clusters using [Compute Engine Shielded VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm). Structure defined below.
     #[builder(into)]
     #[serde(rename = "shieldedInstanceConfig")]
-    pub r#shielded_instance_config: Option<Box<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigShieldedInstanceConfig>>,
+    pub r#shielded_instance_config: Box<Option<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigShieldedInstanceConfig>>,
     /// The Compute Engine subnetwork to be used for machine communications. Cannot be specified with network_uri. A full URL, partial URI, or short name are valid. Examples: * `https://www.googleapis.com/compute/v1/projects//regions/us-east1/subnetworks/sub0` * `sub0`
     #[builder(into)]
     #[serde(rename = "subnetwork")]

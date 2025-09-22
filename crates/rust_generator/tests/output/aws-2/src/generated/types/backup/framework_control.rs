@@ -14,5 +14,5 @@ pub struct FrameworkControl {
     /// The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. Detailed below.
     #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Option<Box<super::super::types::backup::FrameworkControlScope>>,
+    pub r#scope: Box<Option<super::super::types::backup::FrameworkControlScope>>,
 }

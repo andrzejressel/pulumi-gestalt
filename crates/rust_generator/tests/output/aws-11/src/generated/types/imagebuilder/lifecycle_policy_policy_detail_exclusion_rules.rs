@@ -6,7 +6,7 @@ pub struct LifecyclePolicyPolicyDetailExclusionRules {
     /// Lists configuration values that apply to AMIs that Image Builder should exclude from the lifecycle action. Detailed below.
     #[builder(into)]
     #[serde(rename = "amis")]
-    pub r#amis: Option<Box<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailExclusionRulesAmis>>,
+    pub r#amis: Box<Option<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailExclusionRulesAmis>>,
     /// Contains a list of tags that Image Builder uses to skip lifecycle actions for Image Builder image resources that have them.
     #[builder(into)]
     #[serde(rename = "tagMap")]

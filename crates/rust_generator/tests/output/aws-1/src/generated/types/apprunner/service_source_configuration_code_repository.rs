@@ -6,7 +6,7 @@ pub struct ServiceSourceConfigurationCodeRepository {
     /// Configuration for building and running the service from a source code repository. See Code Configuration below for more details.
     #[builder(into)]
     #[serde(rename = "codeConfiguration")]
-    pub r#code_configuration: Option<Box<super::super::types::apprunner::ServiceSourceConfigurationCodeRepositoryCodeConfiguration>>,
+    pub r#code_configuration: Box<Option<super::super::types::apprunner::ServiceSourceConfigurationCodeRepositoryCodeConfiguration>>,
     /// Location of the repository that contains the source code.
     #[builder(into)]
     #[serde(rename = "repositoryUrl")]

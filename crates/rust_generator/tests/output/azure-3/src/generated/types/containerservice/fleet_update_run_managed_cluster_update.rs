@@ -6,7 +6,7 @@ pub struct FleetUpdateRunManagedClusterUpdate {
     /// A `node_image_selection` block as defined below.
     #[builder(into)]
     #[serde(rename = "nodeImageSelection")]
-    pub r#node_image_selection: Option<Box<super::super::types::containerservice::FleetUpdateRunManagedClusterUpdateNodeImageSelection>>,
+    pub r#node_image_selection: Box<Option<super::super::types::containerservice::FleetUpdateRunManagedClusterUpdateNodeImageSelection>>,
     /// A `upgrade` block as defined below.
     #[builder(into)]
     #[serde(rename = "upgrade")]

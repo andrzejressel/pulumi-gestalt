@@ -15,5 +15,5 @@ pub struct RegionBackendServiceStrongSessionAffinityCookie {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ttl")]
-    pub r#ttl: Option<Box<super::super::types::compute::RegionBackendServiceStrongSessionAffinityCookieTtl>>,
+    pub r#ttl: Box<Option<super::super::types::compute::RegionBackendServiceStrongSessionAffinityCookieTtl>>,
 }

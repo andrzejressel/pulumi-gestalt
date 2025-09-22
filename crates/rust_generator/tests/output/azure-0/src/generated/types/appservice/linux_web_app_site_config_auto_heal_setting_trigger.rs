@@ -6,11 +6,11 @@ pub struct LinuxWebAppSiteConfigAutoHealSettingTrigger {
     /// A `requests` block as defined above.
     #[builder(into)]
     #[serde(rename = "requests")]
-    pub r#requests: Option<Box<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerRequests>>,
+    pub r#requests: Box<Option<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerRequests>>,
     /// A `slow_request` blocks as defined above.
     #[builder(into)]
     #[serde(rename = "slowRequest")]
-    pub r#slow_request: Option<Box<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest>>,
+    pub r#slow_request: Box<Option<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest>>,
     /// One or more `slow_request_with_path` blocks as defined above.
     #[builder(into)]
     #[serde(rename = "slowRequestWithPaths")]

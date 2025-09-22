@@ -19,5 +19,5 @@ pub struct CaPoolIssuancePolicyIdentityConstraints {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "celExpression")]
-    pub r#cel_expression: Option<Box<super::super::types::certificateauthority::CaPoolIssuancePolicyIdentityConstraintsCelExpression>>,
+    pub r#cel_expression: Box<Option<super::super::types::certificateauthority::CaPoolIssuancePolicyIdentityConstraintsCelExpression>>,
 }

@@ -7,15 +7,15 @@ pub struct TaskSparkInfrastructureSpec {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "batch")]
-    pub r#batch: Option<Box<super::super::types::dataplex::TaskSparkInfrastructureSpecBatch>>,
+    pub r#batch: Box<Option<super::super::types::dataplex::TaskSparkInfrastructureSpecBatch>>,
     /// Container Image Runtime Configuration.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "containerImage")]
-    pub r#container_image: Option<Box<super::super::types::dataplex::TaskSparkInfrastructureSpecContainerImage>>,
+    pub r#container_image: Box<Option<super::super::types::dataplex::TaskSparkInfrastructureSpecContainerImage>>,
     /// Vpc network.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vpcNetwork")]
-    pub r#vpc_network: Option<Box<super::super::types::dataplex::TaskSparkInfrastructureSpecVpcNetwork>>,
+    pub r#vpc_network: Box<Option<super::super::types::dataplex::TaskSparkInfrastructureSpecVpcNetwork>>,
 }

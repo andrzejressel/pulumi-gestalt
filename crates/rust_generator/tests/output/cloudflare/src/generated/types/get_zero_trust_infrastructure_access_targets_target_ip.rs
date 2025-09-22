@@ -6,9 +6,9 @@ pub struct GetZeroTrustInfrastructureAccessTargetsTargetIp {
     /// The target's IPv4 address.
     #[builder(into)]
     #[serde(rename = "ipv4")]
-    pub r#ipv_4: Option<Box<super::types::GetZeroTrustInfrastructureAccessTargetsTargetIpIpv4>>,
+    pub r#ipv_4: Box<Option<super::types::GetZeroTrustInfrastructureAccessTargetsTargetIpIpv4>>,
     /// The target's IPv6 address.
     #[builder(into)]
     #[serde(rename = "ipv6")]
-    pub r#ipv_6: Option<Box<super::types::GetZeroTrustInfrastructureAccessTargetsTargetIpIpv6>>,
+    pub r#ipv_6: Box<Option<super::types::GetZeroTrustInfrastructureAccessTargetsTargetIpIpv6>>,
 }

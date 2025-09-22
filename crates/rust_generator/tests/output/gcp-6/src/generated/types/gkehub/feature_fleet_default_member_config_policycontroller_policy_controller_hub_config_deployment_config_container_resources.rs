@@ -7,10 +7,10 @@ pub struct FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubCon
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "limits")]
-    pub r#limits: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits>>,
+    pub r#limits: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimits>>,
     /// Requests describes the amount of compute resources reserved for the container by the kube-scheduler.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "requests")]
-    pub r#requests: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequests>>,
+    pub r#requests: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequests>>,
 }

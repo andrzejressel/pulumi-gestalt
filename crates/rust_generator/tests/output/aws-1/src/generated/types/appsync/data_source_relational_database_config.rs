@@ -6,7 +6,7 @@ pub struct DataSourceRelationalDatabaseConfig {
     /// Amazon RDS HTTP endpoint configuration. See `http_endpoint_config` Block for details.
     #[builder(into)]
     #[serde(rename = "httpEndpointConfig")]
-    pub r#http_endpoint_config: Option<Box<super::super::types::appsync::DataSourceRelationalDatabaseConfigHttpEndpointConfig>>,
+    pub r#http_endpoint_config: Box<Option<super::super::types::appsync::DataSourceRelationalDatabaseConfigHttpEndpointConfig>>,
     /// Source type for the relational database. Valid values: `RDS_HTTP_ENDPOINT`.
     #[builder(into)]
     #[serde(rename = "sourceType")]

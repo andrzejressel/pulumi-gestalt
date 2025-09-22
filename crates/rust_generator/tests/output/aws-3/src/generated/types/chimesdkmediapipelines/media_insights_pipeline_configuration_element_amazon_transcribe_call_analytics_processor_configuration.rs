@@ -42,7 +42,7 @@ pub struct MediaInsightsPipelineConfigurationElementAmazonTranscribeCallAnalytic
     /// Settings for post call analytics.
     #[builder(into)]
     #[serde(rename = "postCallAnalyticsSettings")]
-    pub r#post_call_analytics_settings: Option<Box<super::super::types::chimesdkmediapipelines::MediaInsightsPipelineConfigurationElementAmazonTranscribeCallAnalyticsProcessorConfigurationPostCallAnalyticsSettings>>,
+    pub r#post_call_analytics_settings: Box<Option<super::super::types::chimesdkmediapipelines::MediaInsightsPipelineConfigurationElementAmazonTranscribeCallAnalyticsProcessorConfigurationPostCallAnalyticsSettings>>,
     /// Method for applying a vocabulary filter to Utterance events.
     #[builder(into)]
     #[serde(rename = "vocabularyFilterMethod")]

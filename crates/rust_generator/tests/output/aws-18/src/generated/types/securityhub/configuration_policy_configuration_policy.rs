@@ -10,7 +10,7 @@ pub struct ConfigurationPolicyConfigurationPolicy {
     /// Defines which security controls are enabled in the configuration policy and any customizations to parameters affecting them. See below.
     #[builder(into)]
     #[serde(rename = "securityControlsConfiguration")]
-    pub r#security_controls_configuration: Option<Box<super::super::types::securityhub::ConfigurationPolicyConfigurationPolicySecurityControlsConfiguration>>,
+    pub r#security_controls_configuration: Box<Option<super::super::types::securityhub::ConfigurationPolicyConfigurationPolicySecurityControlsConfiguration>>,
     /// Indicates whether Security Hub is enabled in the policy.
     #[builder(into)]
     #[serde(rename = "serviceEnabled")]

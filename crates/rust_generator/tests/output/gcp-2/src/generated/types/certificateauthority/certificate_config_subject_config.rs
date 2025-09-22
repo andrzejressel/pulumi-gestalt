@@ -12,5 +12,5 @@ pub struct CertificateConfigSubjectConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "subjectAltName")]
-    pub r#subject_alt_name: Option<Box<super::super::types::certificateauthority::CertificateConfigSubjectConfigSubjectAltName>>,
+    pub r#subject_alt_name: Box<Option<super::super::types::certificateauthority::CertificateConfigSubjectConfigSubjectAltName>>,
 }

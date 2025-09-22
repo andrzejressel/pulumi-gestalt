@@ -7,13 +7,13 @@ pub struct AccessLevelsAccessLevel {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "basic")]
-    pub r#basic: Option<Box<super::super::types::accesscontextmanager::AccessLevelsAccessLevelBasic>>,
+    pub r#basic: Box<Option<super::super::types::accesscontextmanager::AccessLevelsAccessLevelBasic>>,
     /// Custom access level conditions are set using the Cloud Common Expression Language to represent the necessary conditions for the level to apply to a request.
     /// See CEL spec at: https://github.com/google/cel-spec.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "custom")]
-    pub r#custom: Option<Box<super::super::types::accesscontextmanager::AccessLevelsAccessLevelCustom>>,
+    pub r#custom: Box<Option<super::super::types::accesscontextmanager::AccessLevelsAccessLevelCustom>>,
     /// Description of the AccessLevel and its use. Does not affect behavior.
     #[builder(into)]
     #[serde(rename = "description")]

@@ -7,15 +7,15 @@ pub struct FeatureSpec {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "clusterupgrade")]
-    pub r#clusterupgrade: Option<Box<super::super::types::gkehub::FeatureSpecClusterupgrade>>,
+    pub r#clusterupgrade: Box<Option<super::super::types::gkehub::FeatureSpecClusterupgrade>>,
     /// Fleet Observability feature spec.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "fleetobservability")]
-    pub r#fleetobservability: Option<Box<super::super::types::gkehub::FeatureSpecFleetobservability>>,
+    pub r#fleetobservability: Box<Option<super::super::types::gkehub::FeatureSpecFleetobservability>>,
     /// Multicluster Ingress-specific spec.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "multiclusteringress")]
-    pub r#multiclusteringress: Option<Box<super::super::types::gkehub::FeatureSpecMulticlusteringress>>,
+    pub r#multiclusteringress: Box<Option<super::super::types::gkehub::FeatureSpecMulticlusteringress>>,
 }

@@ -7,10 +7,10 @@ pub struct FeatureSpecFleetobservabilityLoggingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "defaultConfig")]
-    pub r#default_config: Option<Box<super::super::types::gkehub::FeatureSpecFleetobservabilityLoggingConfigDefaultConfig>>,
+    pub r#default_config: Box<Option<super::super::types::gkehub::FeatureSpecFleetobservabilityLoggingConfigDefaultConfig>>,
     /// Specified if applying the routing config to all logs for all fleet scopes.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "fleetScopeLogsConfig")]
-    pub r#fleet_scope_logs_config: Option<Box<super::super::types::gkehub::FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig>>,
+    pub r#fleet_scope_logs_config: Box<Option<super::super::types::gkehub::FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfig>>,
 }

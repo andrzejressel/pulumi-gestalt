@@ -7,5 +7,5 @@ pub struct ClusterStateInfo {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "updateInfo")]
-    pub r#update_info: Option<Box<super::super::types::redis::ClusterStateInfoUpdateInfo>>,
+    pub r#update_info: Box<Option<super::super::types::redis::ClusterStateInfoUpdateInfo>>,
 }

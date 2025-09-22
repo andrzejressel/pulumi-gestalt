@@ -9,9 +9,9 @@ pub struct ZeroTrustTunnelCloudflaredConfigConfig {
     pub r#ingress_rules: Vec<super::types::ZeroTrustTunnelCloudflaredConfigConfigIngressRule>,
     #[builder(into)]
     #[serde(rename = "originRequest")]
-    pub r#origin_request: Option<Box<super::types::ZeroTrustTunnelCloudflaredConfigConfigOriginRequest>>,
+    pub r#origin_request: Box<Option<super::types::ZeroTrustTunnelCloudflaredConfigConfigOriginRequest>>,
     /// If you're exposing a [private network](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/private-net/), you need to add the `warp-routing` key and set it to `true`.
     #[builder(into)]
     #[serde(rename = "warpRouting")]
-    pub r#warp_routing: Option<Box<super::types::ZeroTrustTunnelCloudflaredConfigConfigWarpRouting>>,
+    pub r#warp_routing: Box<Option<super::types::ZeroTrustTunnelCloudflaredConfigConfigWarpRouting>>,
 }

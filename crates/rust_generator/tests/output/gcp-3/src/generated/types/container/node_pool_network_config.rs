@@ -24,11 +24,11 @@ pub struct NodePoolNetworkConfig {
     /// Network bandwidth tier configuration. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "networkPerformanceConfig")]
-    pub r#network_performance_config: Option<Box<super::super::types::container::NodePoolNetworkConfigNetworkPerformanceConfig>>,
+    pub r#network_performance_config: Box<Option<super::super::types::container::NodePoolNetworkConfigNetworkPerformanceConfig>>,
     /// Configuration for node-pool level pod cidr overprovision. If not set, the cluster level setting will be inherited. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "podCidrOverprovisionConfig")]
-    pub r#pod_cidr_overprovision_config: Option<Box<super::super::types::container::NodePoolNetworkConfigPodCidrOverprovisionConfig>>,
+    pub r#pod_cidr_overprovision_config: Box<Option<super::super::types::container::NodePoolNetworkConfigPodCidrOverprovisionConfig>>,
     /// The IP address range for pod IPs in this node pool. Only applicable if createPodRange is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. /14) to have a range chosen with a specific netmask. Set to a CIDR notation (e.g. 10.96.0.0/14) to pick a specific range to use.
     #[builder(into)]
     #[serde(rename = "podIpv4CidrBlock")]

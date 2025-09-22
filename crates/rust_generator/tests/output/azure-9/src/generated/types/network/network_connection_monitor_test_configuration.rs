@@ -6,11 +6,11 @@ pub struct NetworkConnectionMonitorTestConfiguration {
     /// A `http_configuration` block as defined below.
     #[builder(into)]
     #[serde(rename = "httpConfiguration")]
-    pub r#http_configuration: Option<Box<super::super::types::network::NetworkConnectionMonitorTestConfigurationHttpConfiguration>>,
+    pub r#http_configuration: Box<Option<super::super::types::network::NetworkConnectionMonitorTestConfigurationHttpConfiguration>>,
     /// A `icmp_configuration` block as defined below.
     #[builder(into)]
     #[serde(rename = "icmpConfiguration")]
-    pub r#icmp_configuration: Option<Box<super::super::types::network::NetworkConnectionMonitorTestConfigurationIcmpConfiguration>>,
+    pub r#icmp_configuration: Box<Option<super::super::types::network::NetworkConnectionMonitorTestConfigurationIcmpConfiguration>>,
     /// The name of test configuration for the Network Connection Monitor.
     #[builder(into)]
     #[serde(rename = "name")]
@@ -26,11 +26,11 @@ pub struct NetworkConnectionMonitorTestConfiguration {
     /// A `success_threshold` block as defined below.
     #[builder(into)]
     #[serde(rename = "successThreshold")]
-    pub r#success_threshold: Option<Box<super::super::types::network::NetworkConnectionMonitorTestConfigurationSuccessThreshold>>,
+    pub r#success_threshold: Box<Option<super::super::types::network::NetworkConnectionMonitorTestConfigurationSuccessThreshold>>,
     /// A `tcp_configuration` block as defined below.
     #[builder(into)]
     #[serde(rename = "tcpConfiguration")]
-    pub r#tcp_configuration: Option<Box<super::super::types::network::NetworkConnectionMonitorTestConfigurationTcpConfiguration>>,
+    pub r#tcp_configuration: Box<Option<super::super::types::network::NetworkConnectionMonitorTestConfigurationTcpConfiguration>>,
     /// The time interval in seconds at which the test evaluation will happen. Defaults to `60`.
     #[builder(into)]
     #[serde(rename = "testFrequencyInSeconds")]

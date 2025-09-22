@@ -9,9 +9,9 @@ pub struct FlowSourceFlowConfigSourceConnectorPropertiesSapoData {
     /// Sets the page size for each concurrent process that transfers OData records from your SAP instance.
     #[builder(into)]
     #[serde(rename = "paginationConfig")]
-    pub r#pagination_config: Option<Box<super::super::types::appflow::FlowSourceFlowConfigSourceConnectorPropertiesSapoDataPaginationConfig>>,
+    pub r#pagination_config: Box<Option<super::super::types::appflow::FlowSourceFlowConfigSourceConnectorPropertiesSapoDataPaginationConfig>>,
     /// Sets the number of concurrent processes that transfers OData records from your SAP instance.
     #[builder(into)]
     #[serde(rename = "parallelismConfig")]
-    pub r#parallelism_config: Option<Box<super::super::types::appflow::FlowSourceFlowConfigSourceConnectorPropertiesSapoDataParallelismConfig>>,
+    pub r#parallelism_config: Box<Option<super::super::types::appflow::FlowSourceFlowConfigSourceConnectorPropertiesSapoDataParallelismConfig>>,
 }

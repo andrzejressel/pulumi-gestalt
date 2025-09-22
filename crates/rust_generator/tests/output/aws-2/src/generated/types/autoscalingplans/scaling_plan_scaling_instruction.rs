@@ -7,7 +7,7 @@ pub struct ScalingPlanScalingInstruction {
     /// More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CustomizedLoadMetricSpecification.html).
     #[builder(into)]
     #[serde(rename = "customizedLoadMetricSpecification")]
-    pub r#customized_load_metric_specification: Option<Box<super::super::types::autoscalingplans::ScalingPlanScalingInstructionCustomizedLoadMetricSpecification>>,
+    pub r#customized_load_metric_specification: Box<Option<super::super::types::autoscalingplans::ScalingPlanScalingInstructionCustomizedLoadMetricSpecification>>,
     /// Boolean controlling whether dynamic scaling by AWS Auto Scaling is disabled. Defaults to `false`.
     #[builder(into)]
     #[serde(rename = "disableDynamicScaling")]
@@ -24,7 +24,7 @@ pub struct ScalingPlanScalingInstruction {
     /// More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_PredefinedLoadMetricSpecification.html).
     #[builder(into)]
     #[serde(rename = "predefinedLoadMetricSpecification")]
-    pub r#predefined_load_metric_specification: Option<Box<super::super::types::autoscalingplans::ScalingPlanScalingInstructionPredefinedLoadMetricSpecification>>,
+    pub r#predefined_load_metric_specification: Box<Option<super::super::types::autoscalingplans::ScalingPlanScalingInstructionPredefinedLoadMetricSpecification>>,
     /// Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource.
     /// Valid values: `SetForecastCapacityToMaxCapacity`, `SetMaxCapacityAboveForecastCapacity`, `SetMaxCapacityToForecastCapacity`.
     #[builder(into)]

@@ -22,5 +22,5 @@ pub struct CertifiateCertificatePolicy {
     /// A `x509_certificate_properties` block as defined below. Required when `certificate` block is not specified.
     #[builder(into)]
     #[serde(rename = "x509CertificateProperties")]
-    pub r#x_509_certificate_properties: Option<Box<super::super::types::keyvault::CertifiateCertificatePolicyX509CertificateProperties>>,
+    pub r#x_509_certificate_properties: Box<Option<super::super::types::keyvault::CertifiateCertificatePolicyX509CertificateProperties>>,
 }

@@ -14,7 +14,7 @@ pub struct AgentKnowledgeBaseStorageConfigurationRdsConfiguration {
     /// Names of the fields to which to map information about the vector store. This block supports the following arguments:
     #[builder(into)]
     #[serde(rename = "fieldMapping")]
-    pub r#field_mapping: Option<Box<super::super::types::bedrock::AgentKnowledgeBaseStorageConfigurationRdsConfigurationFieldMapping>>,
+    pub r#field_mapping: Box<Option<super::super::types::bedrock::AgentKnowledgeBaseStorageConfigurationRdsConfigurationFieldMapping>>,
     /// ARN of the vector store.
     #[builder(into)]
     #[serde(rename = "resourceArn")]

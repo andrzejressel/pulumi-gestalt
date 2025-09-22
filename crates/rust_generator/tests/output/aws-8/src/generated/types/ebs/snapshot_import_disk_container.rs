@@ -18,5 +18,5 @@ pub struct SnapshotImportDiskContainer {
     /// The Amazon S3 bucket for the disk image. One of `url` or `user_bucket` must be set. Detailed below.
     #[builder(into)]
     #[serde(rename = "userBucket")]
-    pub r#user_bucket: Option<Box<super::super::types::ebs::SnapshotImportDiskContainerUserBucket>>,
+    pub r#user_bucket: Box<Option<super::super::types::ebs::SnapshotImportDiskContainerUserBucket>>,
 }

@@ -10,7 +10,7 @@ pub struct DomainSamlOptionsSamlOptions {
     /// Information from your identity provider.
     #[builder(into)]
     #[serde(rename = "idp")]
-    pub r#idp: Option<Box<super::super::types::opensearch::DomainSamlOptionsSamlOptionsIdp>>,
+    pub r#idp: Box<Option<super::super::types::opensearch::DomainSamlOptionsSamlOptionsIdp>>,
     /// This backend role from the SAML IdP receives full permissions to the cluster, equivalent to a new master user.
     #[builder(into)]
     #[serde(rename = "masterBackendRole")]

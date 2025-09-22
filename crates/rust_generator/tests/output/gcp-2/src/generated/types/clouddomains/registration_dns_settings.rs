@@ -7,7 +7,7 @@ pub struct RegistrationDnsSettings {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customDns")]
-    pub r#custom_dns: Option<Box<super::super::types::clouddomains::RegistrationDnsSettingsCustomDns>>,
+    pub r#custom_dns: Box<Option<super::super::types::clouddomains::RegistrationDnsSettingsCustomDns>>,
     /// The list of glue records for this Registration. Commonly empty.
     /// Structure is documented below.
     #[builder(into)]

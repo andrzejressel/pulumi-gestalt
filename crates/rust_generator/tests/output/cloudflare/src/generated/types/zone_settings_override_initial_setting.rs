@@ -83,16 +83,16 @@ pub struct ZoneSettingsOverrideInitialSetting {
     pub r#min_tls_version: Option<String>,
     #[builder(into)]
     #[serde(rename = "minify")]
-    pub r#minify: Option<Box<super::types::ZoneSettingsOverrideInitialSettingMinify>>,
+    pub r#minify: Box<Option<super::types::ZoneSettingsOverrideInitialSettingMinify>>,
     #[builder(into)]
     #[serde(rename = "mirage")]
     pub r#mirage: Option<String>,
     #[builder(into)]
     #[serde(rename = "mobileRedirect")]
-    pub r#mobile_redirect: Option<Box<super::types::ZoneSettingsOverrideInitialSettingMobileRedirect>>,
+    pub r#mobile_redirect: Box<Option<super::types::ZoneSettingsOverrideInitialSettingMobileRedirect>>,
     #[builder(into)]
     #[serde(rename = "nel")]
-    pub r#nel: Option<Box<super::types::ZoneSettingsOverrideInitialSettingNel>>,
+    pub r#nel: Box<Option<super::types::ZoneSettingsOverrideInitialSettingNel>>,
     #[builder(into)]
     #[serde(rename = "opportunisticEncryption")]
     pub r#opportunistic_encryption: Option<String>,
@@ -134,7 +134,7 @@ pub struct ZoneSettingsOverrideInitialSetting {
     pub r#rocket_loader: Option<String>,
     #[builder(into)]
     #[serde(rename = "securityHeader")]
-    pub r#security_header: Option<Box<super::types::ZoneSettingsOverrideInitialSettingSecurityHeader>>,
+    pub r#security_header: Box<Option<super::types::ZoneSettingsOverrideInitialSettingSecurityHeader>>,
     #[builder(into)]
     #[serde(rename = "securityLevel")]
     pub r#security_level: Option<String>,

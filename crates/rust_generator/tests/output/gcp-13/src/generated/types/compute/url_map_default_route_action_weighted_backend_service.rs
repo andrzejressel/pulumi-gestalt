@@ -16,7 +16,7 @@ pub struct UrlMapDefaultRouteActionWeightedBackendService {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "headerAction")]
-    pub r#header_action: Option<Box<super::super::types::compute::UrlMapDefaultRouteActionWeightedBackendServiceHeaderAction>>,
+    pub r#header_action: Box<Option<super::super::types::compute::UrlMapDefaultRouteActionWeightedBackendServiceHeaderAction>>,
     /// Specifies the fraction of traffic sent to backendService, computed as
     /// weight / (sum of all weightedBackendService weights in routeAction) .
     /// The selection of a backend service is determined only for new traffic. Once a user's request

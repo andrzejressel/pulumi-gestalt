@@ -10,5 +10,5 @@ pub struct CachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig {
     /// Object that contains a list of cookie names. See Items for more information.
     #[builder(into)]
     #[serde(rename = "cookies")]
-    pub r#cookies: Option<Box<super::super::types::cloudfront::CachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies>>,
+    pub r#cookies: Box<Option<super::super::types::cloudfront::CachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies>>,
 }

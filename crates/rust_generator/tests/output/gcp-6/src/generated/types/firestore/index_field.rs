@@ -24,5 +24,5 @@ pub struct IndexField {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vectorConfig")]
-    pub r#vector_config: Option<Box<super::super::types::firestore::IndexFieldVectorConfig>>,
+    pub r#vector_config: Box<Option<super::super::types::firestore::IndexFieldVectorConfig>>,
 }

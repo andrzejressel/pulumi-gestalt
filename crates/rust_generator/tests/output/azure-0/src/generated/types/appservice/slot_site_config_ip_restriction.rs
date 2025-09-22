@@ -10,7 +10,7 @@ pub struct SlotSiteConfigIpRestriction {
     /// The `headers` block for this specific `ip_restriction` as defined below. The HTTP header filters are evaluated after the rule itself and both conditions must be true for the rule to apply.
     #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Option<Box<super::super::types::appservice::SlotSiteConfigIpRestrictionHeaders>>,
+    pub r#headers: Box<Option<super::super::types::appservice::SlotSiteConfigIpRestrictionHeaders>>,
     /// The IP Address used for this IP Restriction in CIDR notation.
     #[builder(into)]
     #[serde(rename = "ipAddress")]

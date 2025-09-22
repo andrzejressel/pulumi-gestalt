@@ -10,11 +10,11 @@ pub struct IndexDocumentMetadataConfigurationUpdate {
     /// A block that provides manual tuning parameters to determine how the field affects the search results. Detailed below
     #[builder(into)]
     #[serde(rename = "relevance")]
-    pub r#relevance: Option<Box<super::super::types::kendra::IndexDocumentMetadataConfigurationUpdateRelevance>>,
+    pub r#relevance: Box<Option<super::super::types::kendra::IndexDocumentMetadataConfigurationUpdateRelevance>>,
     /// A block that provides information about how the field is used during a search. Documented below. Detailed below
     #[builder(into)]
     #[serde(rename = "search")]
-    pub r#search: Option<Box<super::super::types::kendra::IndexDocumentMetadataConfigurationUpdateSearch>>,
+    pub r#search: Box<Option<super::super::types::kendra::IndexDocumentMetadataConfigurationUpdateSearch>>,
     /// The data type of the index field. Valid values are `STRING_VALUE`, `STRING_LIST_VALUE`, `LONG_VALUE`, `DATE_VALUE`.
     #[builder(into)]
     #[serde(rename = "type")]

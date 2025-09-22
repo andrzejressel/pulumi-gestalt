@@ -10,5 +10,5 @@ pub struct CatalogDatabaseCreateTableDefaultPermission {
     /// The principal who is granted permissions.. See `principal` below.
     #[builder(into)]
     #[serde(rename = "principal")]
-    pub r#principal: Option<Box<super::super::types::glue::CatalogDatabaseCreateTableDefaultPermissionPrincipal>>,
+    pub r#principal: Box<Option<super::super::types::glue::CatalogDatabaseCreateTableDefaultPermissionPrincipal>>,
 }

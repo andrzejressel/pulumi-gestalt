@@ -10,7 +10,7 @@ pub struct RegionBackendServiceConsistentHash {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "httpCookie")]
-    pub r#http_cookie: Option<Box<super::super::types::compute::RegionBackendServiceConsistentHashHttpCookie>>,
+    pub r#http_cookie: Box<Option<super::super::types::compute::RegionBackendServiceConsistentHashHttpCookie>>,
     /// The hash based on the value of the specified header field.
     /// This field is applicable if the sessionAffinity is set to HEADER_FIELD.
     #[builder(into)]

@@ -6,7 +6,7 @@ pub struct SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirements {
     /// Block describing the minimum and maximum number of accelerators (GPUs, FPGAs, or AWS Inferentia chips). Default is no minimum or maximum.
     #[builder(into)]
     #[serde(rename = "acceleratorCount")]
-    pub r#accelerator_count: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsAcceleratorCount>>,
+    pub r#accelerator_count: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsAcceleratorCount>>,
     /// List of accelerator manufacturer names. Default is any manufacturer.
     /// 
     /// ```sh
@@ -37,7 +37,7 @@ pub struct SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirements {
     /// Block describing the minimum and maximum total memory of the accelerators. Default is no minimum or maximum.
     #[builder(into)]
     #[serde(rename = "acceleratorTotalMemoryMib")]
-    pub r#accelerator_total_memory_mib: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsAcceleratorTotalMemoryMib>>,
+    pub r#accelerator_total_memory_mib: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsAcceleratorTotalMemoryMib>>,
     /// List of accelerator types. Default is any accelerator type.
     /// 
     /// ```sh
@@ -62,7 +62,7 @@ pub struct SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirements {
     /// Block describing the minimum and maximum baseline EBS bandwidth, in Mbps. Default is no minimum or maximum.
     #[builder(into)]
     #[serde(rename = "baselineEbsBandwidthMbps")]
-    pub r#baseline_ebs_bandwidth_mbps: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsBaselineEbsBandwidthMbps>>,
+    pub r#baseline_ebs_bandwidth_mbps: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsBaselineEbsBandwidthMbps>>,
     /// Indicate whether burstable performance instance types should be `included`, `excluded`, or `required`. Default is `excluded`.
     #[builder(into)]
     #[serde(rename = "burstablePerformance")]
@@ -113,19 +113,19 @@ pub struct SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirements {
     /// Block describing the minimum and maximum amount of memory (GiB) per vCPU. Default is no minimum or maximum.
     #[builder(into)]
     #[serde(rename = "memoryGibPerVcpu")]
-    pub r#memory_gib_per_vcpu: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsMemoryGibPerVcpu>>,
+    pub r#memory_gib_per_vcpu: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsMemoryGibPerVcpu>>,
     /// Block describing the minimum and maximum amount of memory (MiB). Default is no maximum.
     #[builder(into)]
     #[serde(rename = "memoryMib")]
-    pub r#memory_mib: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsMemoryMib>>,
+    pub r#memory_mib: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsMemoryMib>>,
     /// Block describing the minimum and maximum amount of network bandwidth, in gigabits per second (Gbps). Default is no minimum or maximum.
     #[builder(into)]
     #[serde(rename = "networkBandwidthGbps")]
-    pub r#network_bandwidth_gbps: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsNetworkBandwidthGbps>>,
+    pub r#network_bandwidth_gbps: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsNetworkBandwidthGbps>>,
     /// Block describing the minimum and maximum number of network interfaces. Default is no minimum or maximum.
     #[builder(into)]
     #[serde(rename = "networkInterfaceCount")]
-    pub r#network_interface_count: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsNetworkInterfaceCount>>,
+    pub r#network_interface_count: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsNetworkInterfaceCount>>,
     /// The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as 999999. Default is 20.
     /// 
     /// If you set DesiredCapacityType to vcpu or memory-mib, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.
@@ -145,9 +145,9 @@ pub struct SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirements {
     /// Block describing the minimum and maximum total local storage (GB). Default is no minimum or maximum.
     #[builder(into)]
     #[serde(rename = "totalLocalStorageGb")]
-    pub r#total_local_storage_gb: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsTotalLocalStorageGb>>,
+    pub r#total_local_storage_gb: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsTotalLocalStorageGb>>,
     /// Block describing the minimum and maximum number of vCPUs. Default is no maximum.
     #[builder(into)]
     #[serde(rename = "vcpuCount")]
-    pub r#vcpu_count: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsVcpuCount>>,
+    pub r#vcpu_count: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsVcpuCount>>,
 }

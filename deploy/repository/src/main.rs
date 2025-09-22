@@ -113,7 +113,7 @@ fn create_check(
     integration: GithubIntegration,
 ) -> RepositoryRulesetRulesRequiredStatusChecksRequiredCheck {
     RepositoryRulesetRulesRequiredStatusChecksRequiredCheck::builder()
-        .context(name.to_string())
+        .context(name)
         .integration_id(integration.get_integration_id())
         .build_struct()
 }

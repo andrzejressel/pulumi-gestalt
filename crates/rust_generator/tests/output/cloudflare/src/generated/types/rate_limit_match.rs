@@ -6,9 +6,9 @@ pub struct RateLimitMatch {
     /// Matches HTTP requests (from the client to Cloudflare).
     #[builder(into)]
     #[serde(rename = "request")]
-    pub r#request: Option<Box<super::types::RateLimitMatchRequest>>,
+    pub r#request: Box<Option<super::types::RateLimitMatchRequest>>,
     /// Matches HTTP responses before they are returned to the client from Cloudflare. If this is defined, then the entire counting of traffic occurs at this stage.
     #[builder(into)]
     #[serde(rename = "response")]
-    pub r#response: Option<Box<super::types::RateLimitMatchResponse>>,
+    pub r#response: Box<Option<super::types::RateLimitMatchResponse>>,
 }

@@ -56,7 +56,7 @@ pub struct CloudExadataInfrastructureProperties {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "maintenanceWindow")]
-    pub r#maintenance_window: Option<Box<super::super::types::oracledatabase::CloudExadataInfrastructurePropertiesMaintenanceWindow>>,
+    pub r#maintenance_window: Box<Option<super::super::types::oracledatabase::CloudExadataInfrastructurePropertiesMaintenanceWindow>>,
     /// (Output)
     /// The total number of CPU cores available.
     #[builder(into)]

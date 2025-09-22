@@ -14,5 +14,5 @@ pub struct VirtualNodeSpecListenerTls {
     /// Listener's Transport Layer Security (TLS) validation context.
     #[builder(into)]
     #[serde(rename = "validation")]
-    pub r#validation: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTlsValidation>>,
+    pub r#validation: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTlsValidation>>,
 }

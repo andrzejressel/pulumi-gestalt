@@ -18,7 +18,7 @@ pub struct PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoad
     /// Structure that defines CloudWatch metric to be used in predictive scaling policy. You must specify either `expression` or `metric_stat`, but not both.
     #[builder(into)]
     #[serde(rename = "metricStat")]
-    pub r#metric_stat: Option<Box<super::super::types::autoscaling::PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStat>>,
+    pub r#metric_stat: Box<Option<super::super::types::autoscaling::PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStat>>,
     /// Boolean that indicates whether to return the timestamps and raw data values of this metric, the default is true
     #[builder(into)]
     #[serde(rename = "returnData")]

@@ -10,13 +10,13 @@ pub struct RouteSpecGrpcRoute {
     /// Criteria for determining an gRPC request match.
     #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Option<Box<super::super::types::appmesh::RouteSpecGrpcRouteMatch>>,
+    pub r#match_: Box<Option<super::super::types::appmesh::RouteSpecGrpcRouteMatch>>,
     /// Retry policy.
     #[builder(into)]
     #[serde(rename = "retryPolicy")]
-    pub r#retry_policy: Option<Box<super::super::types::appmesh::RouteSpecGrpcRouteRetryPolicy>>,
+    pub r#retry_policy: Box<Option<super::super::types::appmesh::RouteSpecGrpcRouteRetryPolicy>>,
     /// Types of timeouts.
     #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Option<Box<super::super::types::appmesh::RouteSpecGrpcRouteTimeout>>,
+    pub r#timeout: Box<Option<super::super::types::appmesh::RouteSpecGrpcRouteTimeout>>,
 }

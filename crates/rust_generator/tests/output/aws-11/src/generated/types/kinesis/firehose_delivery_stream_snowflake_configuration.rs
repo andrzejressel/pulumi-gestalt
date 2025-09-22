@@ -18,7 +18,7 @@ pub struct FirehoseDeliveryStreamSnowflakeConfiguration {
     /// The CloudWatch Logging Options for the delivery stream. See `cloudwatch_logging_options` block below for details.
     #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptions")]
-    pub r#cloudwatch_logging_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfigurationCloudwatchLoggingOptions>>,
+    pub r#cloudwatch_logging_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfigurationCloudwatchLoggingOptions>>,
     /// The name of the content column.
     #[builder(into)]
     #[serde(rename = "contentColumnName")]
@@ -46,7 +46,7 @@ pub struct FirehoseDeliveryStreamSnowflakeConfiguration {
     /// The processing configuration. See `processing_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "processingConfiguration")]
-    pub r#processing_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfigurationProcessingConfiguration>>,
+    pub r#processing_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfigurationProcessingConfiguration>>,
     /// After an initial failure to deliver to Snowflake, the total amount of time, in seconds between 0 to 7200, during which Firehose re-attempts delivery (including the first attempt).  After this time has elapsed, the failed documents are written to Amazon S3.  The default value is 60s.  There will be no retry if the value is 0.
     #[builder(into)]
     #[serde(rename = "retryDuration")]
@@ -70,15 +70,15 @@ pub struct FirehoseDeliveryStreamSnowflakeConfiguration {
     /// The Secrets Manager configuration. See `secrets_manager_configuration` block below for details. This value is required if `user` and `private_key` are not provided.
     #[builder(into)]
     #[serde(rename = "secretsManagerConfiguration")]
-    pub r#secrets_manager_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfigurationSecretsManagerConfiguration>>,
+    pub r#secrets_manager_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfigurationSecretsManagerConfiguration>>,
     /// The configuration for Snowflake role.
     #[builder(into)]
     #[serde(rename = "snowflakeRoleConfiguration")]
-    pub r#snowflake_role_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfigurationSnowflakeRoleConfiguration>>,
+    pub r#snowflake_role_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfigurationSnowflakeRoleConfiguration>>,
     /// The VPC configuration for Snowflake.
     #[builder(into)]
     #[serde(rename = "snowflakeVpcConfiguration")]
-    pub r#snowflake_vpc_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfigurationSnowflakeVpcConfiguration>>,
+    pub r#snowflake_vpc_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamSnowflakeConfigurationSnowflakeVpcConfiguration>>,
     /// The Snowflake table name.
     #[builder(into)]
     #[serde(rename = "table")]

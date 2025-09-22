@@ -12,7 +12,7 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "file")]
-    pub r#file: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile>>,
+    pub r#file: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforceFile>>,
     /// The script interpreter to use. Possible values
     /// are: `INTERPRETER_UNSPECIFIED`, `NONE`, `SHELL`, `POWERSHELL`.
     #[builder(into)]

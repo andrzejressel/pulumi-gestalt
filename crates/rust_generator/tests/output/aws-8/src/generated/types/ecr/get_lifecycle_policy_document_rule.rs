@@ -6,7 +6,7 @@ pub struct GetLifecyclePolicyDocumentRule {
     /// Specifies the action type.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Option<Box<super::super::types::ecr::GetLifecyclePolicyDocumentRuleAction>>,
+    pub r#action: Box<Option<super::super::types::ecr::GetLifecyclePolicyDocumentRuleAction>>,
     /// Describes the purpose of a rule within a lifecycle policy.
     #[builder(into)]
     #[serde(rename = "description")]
@@ -18,5 +18,5 @@ pub struct GetLifecyclePolicyDocumentRule {
     /// Collects parameters describing the selection criteria for the ECR lifecycle policy:
     #[builder(into)]
     #[serde(rename = "selection")]
-    pub r#selection: Option<Box<super::super::types::ecr::GetLifecyclePolicyDocumentRuleSelection>>,
+    pub r#selection: Box<Option<super::super::types::ecr::GetLifecyclePolicyDocumentRuleSelection>>,
 }

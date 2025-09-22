@@ -6,5 +6,5 @@ pub struct DomainDefaultSpaceSettingsCustomFileSystemConfig {
     /// The default EBS storage settings for a private space. See `efs_file_system_config` Block below.
     #[builder(into)]
     #[serde(rename = "efsFileSystemConfig")]
-    pub r#efs_file_system_config: Option<Box<super::super::types::sagemaker::DomainDefaultSpaceSettingsCustomFileSystemConfigEfsFileSystemConfig>>,
+    pub r#efs_file_system_config: Box<Option<super::super::types::sagemaker::DomainDefaultSpaceSettingsCustomFileSystemConfigEfsFileSystemConfig>>,
 }

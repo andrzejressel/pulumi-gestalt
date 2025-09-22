@@ -8,11 +8,11 @@ pub struct ServicePerimetersServicePerimeterSpecIngressPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ingressFrom")]
-    pub r#ingress_from: Option<Box<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom>>,
+    pub r#ingress_from: Box<Option<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterSpecIngressPolicyIngressFrom>>,
     /// Defines the conditions on the `ApiOperation` and request destination that cause
     /// this `IngressPolicy` to apply.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ingressTo")]
-    pub r#ingress_to: Option<Box<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo>>,
+    pub r#ingress_to: Box<Option<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterSpecIngressPolicyIngressTo>>,
 }

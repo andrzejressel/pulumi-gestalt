@@ -11,7 +11,7 @@ pub struct PolicySpecRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "condition")]
-    pub r#condition: Option<Box<super::super::types::orgpolicy::PolicySpecRuleCondition>>,
+    pub r#condition: Box<Option<super::super::types::orgpolicy::PolicySpecRuleCondition>>,
     /// Setting this to `"TRUE"` means that all values are denied. This field can be set only in Policies for list constraints.
     #[builder(into)]
     #[serde(rename = "denyAll")]
@@ -28,5 +28,5 @@ pub struct PolicySpecRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Option<Box<super::super::types::orgpolicy::PolicySpecRuleValues>>,
+    pub r#values: Box<Option<super::super::types::orgpolicy::PolicySpecRuleValues>>,
 }

@@ -18,5 +18,5 @@ pub struct ExpressRouteConnectionRouting {
     /// A `propagated_route_table` block as defined below.
     #[builder(into)]
     #[serde(rename = "propagatedRouteTable")]
-    pub r#propagated_route_table: Option<Box<super::super::types::network::ExpressRouteConnectionRoutingPropagatedRouteTable>>,
+    pub r#propagated_route_table: Box<Option<super::super::types::network::ExpressRouteConnectionRoutingPropagatedRouteTable>>,
 }

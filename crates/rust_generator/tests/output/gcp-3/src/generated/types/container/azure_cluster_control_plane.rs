@@ -6,15 +6,15 @@ pub struct AzureClusterControlPlane {
     /// Optional. Configuration related to application-layer secrets encryption.
     #[builder(into)]
     #[serde(rename = "databaseEncryption")]
-    pub r#database_encryption: Option<Box<super::super::types::container::AzureClusterControlPlaneDatabaseEncryption>>,
+    pub r#database_encryption: Box<Option<super::super::types::container::AzureClusterControlPlaneDatabaseEncryption>>,
     /// Optional. Configuration related to the main volume provisioned for each control plane replica. The main volume is in charge of storing all of the cluster's etcd state. When unspecified, it defaults to a 8-GiB Azure Disk.
     #[builder(into)]
     #[serde(rename = "mainVolume")]
-    pub r#main_volume: Option<Box<super::super::types::container::AzureClusterControlPlaneMainVolume>>,
+    pub r#main_volume: Box<Option<super::super::types::container::AzureClusterControlPlaneMainVolume>>,
     /// Proxy configuration for outbound HTTP(S) traffic.
     #[builder(into)]
     #[serde(rename = "proxyConfig")]
-    pub r#proxy_config: Option<Box<super::super::types::container::AzureClusterControlPlaneProxyConfig>>,
+    pub r#proxy_config: Box<Option<super::super::types::container::AzureClusterControlPlaneProxyConfig>>,
     /// Configuration for where to place the control plane replicas. Up to three replica placement instances can be specified. If replica_placements is set, the replica placement instances will be applied to the three control plane replicas as evenly as possible.
     #[builder(into)]
     #[serde(rename = "replicaPlacements")]
@@ -22,7 +22,7 @@ pub struct AzureClusterControlPlane {
     /// Optional. Configuration related to the root volume provisioned for each control plane replica. When unspecified, it defaults to 32-GiB Azure Disk.
     #[builder(into)]
     #[serde(rename = "rootVolume")]
-    pub r#root_volume: Option<Box<super::super::types::container::AzureClusterControlPlaneRootVolume>>,
+    pub r#root_volume: Box<Option<super::super::types::container::AzureClusterControlPlaneRootVolume>>,
     /// SSH configuration for how to access the underlying control plane machines.
     #[builder(into)]
     #[serde(rename = "sshConfig")]

@@ -6,9 +6,9 @@ pub struct PagesProjectDeploymentConfigs {
     /// Configuration for preview deploys.
     #[builder(into)]
     #[serde(rename = "preview")]
-    pub r#preview: Option<Box<super::types::PagesProjectDeploymentConfigsPreview>>,
+    pub r#preview: Box<Option<super::types::PagesProjectDeploymentConfigsPreview>>,
     /// Configuration for production deploys.
     #[builder(into)]
     #[serde(rename = "production")]
-    pub r#production: Option<Box<super::types::PagesProjectDeploymentConfigsProduction>>,
+    pub r#production: Box<Option<super::types::PagesProjectDeploymentConfigsProduction>>,
 }

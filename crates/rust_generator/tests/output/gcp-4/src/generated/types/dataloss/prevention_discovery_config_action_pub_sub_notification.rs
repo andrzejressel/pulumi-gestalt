@@ -17,7 +17,7 @@ pub struct PreventionDiscoveryConfigActionPubSubNotification {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pubsubCondition")]
-    pub r#pubsub_condition: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotificationPubsubCondition>>,
+    pub r#pubsub_condition: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotificationPubsubCondition>>,
     /// Cloud Pub/Sub topic to send notifications to. Format is projects/{project}/topics/{topic}.
     #[builder(into)]
     #[serde(rename = "topic")]

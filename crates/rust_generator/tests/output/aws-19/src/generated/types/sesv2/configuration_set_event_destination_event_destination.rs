@@ -6,18 +6,18 @@ pub struct ConfigurationSetEventDestinationEventDestination {
     /// An object that defines an Amazon CloudWatch destination for email events. See `cloud_watch_destination` Block for details.
     #[builder(into)]
     #[serde(rename = "cloudWatchDestination")]
-    pub r#cloud_watch_destination: Option<Box<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationCloudWatchDestination>>,
+    pub r#cloud_watch_destination: Box<Option<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationCloudWatchDestination>>,
     /// When the event destination is enabled, the specified event types are sent to the destinations. Default: `false`.
     #[builder(into)]
     #[serde(rename = "enabled")]
     pub r#enabled: Option<bool>,
     #[builder(into)]
     #[serde(rename = "eventBridgeDestination")]
-    pub r#event_bridge_destination: Option<Box<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationEventBridgeDestination>>,
+    pub r#event_bridge_destination: Box<Option<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationEventBridgeDestination>>,
     /// An object that defines an Amazon Kinesis Data Firehose destination for email events. See `kinesis_firehose_destination` Block for details.
     #[builder(into)]
     #[serde(rename = "kinesisFirehoseDestination")]
-    pub r#kinesis_firehose_destination: Option<Box<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationKinesisFirehoseDestination>>,
+    pub r#kinesis_firehose_destination: Box<Option<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationKinesisFirehoseDestination>>,
     /// An array that specifies which events the Amazon SES API v2 should send to the destinations. Valid values: `SEND`, `REJECT`, `BOUNCE`, `COMPLAINT`, `DELIVERY`, `OPEN`, `CLICK`, `RENDERING_FAILURE`, `DELIVERY_DELAY`, `SUBSCRIPTION`.
     #[builder(into)]
     #[serde(rename = "matchingEventTypes")]
@@ -25,9 +25,9 @@ pub struct ConfigurationSetEventDestinationEventDestination {
     /// An object that defines an Amazon Pinpoint project destination for email events. See `pinpoint_destination` Block for details.
     #[builder(into)]
     #[serde(rename = "pinpointDestination")]
-    pub r#pinpoint_destination: Option<Box<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationPinpointDestination>>,
+    pub r#pinpoint_destination: Box<Option<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationPinpointDestination>>,
     /// An object that defines an Amazon SNS destination for email events. See `sns_destination` Block for details.
     #[builder(into)]
     #[serde(rename = "snsDestination")]
-    pub r#sns_destination: Option<Box<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationSnsDestination>>,
+    pub r#sns_destination: Box<Option<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationSnsDestination>>,
 }

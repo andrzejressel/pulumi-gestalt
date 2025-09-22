@@ -14,7 +14,7 @@ pub struct KubernetesClusterWindowsProfile {
     /// A `gmsa` block as defined below.
     #[builder(into)]
     #[serde(rename = "gmsa")]
-    pub r#gmsa: Option<Box<super::super::types::containerservice::KubernetesClusterWindowsProfileGmsa>>,
+    pub r#gmsa: Box<Option<super::super::types::containerservice::KubernetesClusterWindowsProfileGmsa>>,
     /// Specifies the type of on-premise license which should be used for Node Pool Windows Virtual Machine. At this time the only possible value is `Windows_Server`.
     #[builder(into)]
     #[serde(rename = "license")]

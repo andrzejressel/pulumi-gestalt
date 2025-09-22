@@ -5,11 +5,11 @@
 pub struct ClusterLoggingInfoBrokerLogs {
     #[builder(into)]
     #[serde(rename = "cloudwatchLogs")]
-    pub r#cloudwatch_logs: Option<Box<super::super::types::msk::ClusterLoggingInfoBrokerLogsCloudwatchLogs>>,
+    pub r#cloudwatch_logs: Box<Option<super::super::types::msk::ClusterLoggingInfoBrokerLogsCloudwatchLogs>>,
     #[builder(into)]
     #[serde(rename = "firehose")]
-    pub r#firehose: Option<Box<super::super::types::msk::ClusterLoggingInfoBrokerLogsFirehose>>,
+    pub r#firehose: Box<Option<super::super::types::msk::ClusterLoggingInfoBrokerLogsFirehose>>,
     #[builder(into)]
     #[serde(rename = "s3")]
-    pub r#s_3: Option<Box<super::super::types::msk::ClusterLoggingInfoBrokerLogsS3>>,
+    pub r#s_3: Box<Option<super::super::types::msk::ClusterLoggingInfoBrokerLogsS3>>,
 }

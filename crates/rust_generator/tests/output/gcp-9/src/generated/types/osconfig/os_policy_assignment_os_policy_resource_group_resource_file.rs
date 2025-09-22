@@ -12,7 +12,7 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceFile {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "file")]
-    pub r#file: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile>>,
+    pub r#file: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceFileFile>>,
     /// The absolute path of the file within the VM.
     #[builder(into)]
     #[serde(rename = "path")]

@@ -6,21 +6,21 @@ pub struct StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLev
     /// S3 Storage Lens activity metrics. See Activity Metrics above for more details.
     #[builder(into)]
     #[serde(rename = "activityMetrics")]
-    pub r#activity_metrics: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelActivityMetrics>>,
+    pub r#activity_metrics: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelActivityMetrics>>,
     /// Advanced cost-optimization metrics for S3 Storage Lens. See Advanced Cost-Optimization Metrics above for more details.
     #[builder(into)]
     #[serde(rename = "advancedCostOptimizationMetrics")]
-    pub r#advanced_cost_optimization_metrics: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedCostOptimizationMetrics>>,
+    pub r#advanced_cost_optimization_metrics: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedCostOptimizationMetrics>>,
     /// Advanced data-protection metrics for S3 Storage Lens. See Advanced Data-Protection Metrics above for more details.
     #[builder(into)]
     #[serde(rename = "advancedDataProtectionMetrics")]
-    pub r#advanced_data_protection_metrics: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedDataProtectionMetrics>>,
+    pub r#advanced_data_protection_metrics: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedDataProtectionMetrics>>,
     /// Detailed status code metrics for S3 Storage Lens. See Detailed Status Code Metrics above for more details.
     #[builder(into)]
     #[serde(rename = "detailedStatusCodeMetrics")]
-    pub r#detailed_status_code_metrics: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelDetailedStatusCodeMetrics>>,
+    pub r#detailed_status_code_metrics: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelDetailedStatusCodeMetrics>>,
     /// Prefix-level metrics for S3 Storage Lens. See Prefix Level below for more details.
     #[builder(into)]
     #[serde(rename = "prefixLevel")]
-    pub r#prefix_level: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevel>>,
+    pub r#prefix_level: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevel>>,
 }

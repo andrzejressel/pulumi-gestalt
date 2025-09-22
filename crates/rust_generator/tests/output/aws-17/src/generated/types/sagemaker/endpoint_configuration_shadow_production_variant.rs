@@ -14,7 +14,7 @@ pub struct EndpointConfigurationShadowProductionVariant {
     /// Specifies configuration for a core dump from the model container when the process crashes. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "coreDumpConfig")]
-    pub r#core_dump_config: Option<Box<super::super::types::sagemaker::EndpointConfigurationShadowProductionVariantCoreDumpConfig>>,
+    pub r#core_dump_config: Box<Option<super::super::types::sagemaker::EndpointConfigurationShadowProductionVariantCoreDumpConfig>>,
     /// You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoints.
     #[builder(into)]
     #[serde(rename = "enableSsmAccess")]
@@ -38,7 +38,7 @@ pub struct EndpointConfigurationShadowProductionVariant {
     /// Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic.
     #[builder(into)]
     #[serde(rename = "managedInstanceScaling")]
-    pub r#managed_instance_scaling: Option<Box<super::super::types::sagemaker::EndpointConfigurationShadowProductionVariantManagedInstanceScaling>>,
+    pub r#managed_instance_scaling: Box<Option<super::super::types::sagemaker::EndpointConfigurationShadowProductionVariantManagedInstanceScaling>>,
     /// The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this production variant. Valid values between `60` and `3600`.
     #[builder(into)]
     #[serde(rename = "modelDataDownloadTimeoutInSeconds")]
@@ -54,7 +54,7 @@ pub struct EndpointConfigurationShadowProductionVariant {
     /// Specifies configuration for how an endpoint performs asynchronous inference.
     #[builder(into)]
     #[serde(rename = "serverlessConfig")]
-    pub r#serverless_config: Option<Box<super::super::types::sagemaker::EndpointConfigurationShadowProductionVariantServerlessConfig>>,
+    pub r#serverless_config: Box<Option<super::super::types::sagemaker::EndpointConfigurationShadowProductionVariantServerlessConfig>>,
     /// The name of the variant. If omitted, this provider will assign a random, unique name.
     #[builder(into)]
     #[serde(rename = "variantName")]

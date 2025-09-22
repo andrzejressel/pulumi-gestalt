@@ -30,7 +30,7 @@ pub struct ConnectionProfileMysql {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ssl")]
-    pub r#ssl: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileMysqlSsl>>,
+    pub r#ssl: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileMysqlSsl>>,
     /// The username that Database Migration Service will use to connect to the database. The value is encrypted when stored in Database Migration Service.
     #[builder(into)]
     #[serde(rename = "username")]

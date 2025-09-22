@@ -9,9 +9,9 @@ pub struct GetRulesetsRulesetRuleActionParametersUri {
     /// URI path configuration when performing a URL rewrite.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersUriPath>>,
+    pub r#path: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersUriPath>>,
     /// Query string configuration when performing a URL rewrite.
     #[builder(into)]
     #[serde(rename = "query")]
-    pub r#query: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersUriQuery>>,
+    pub r#query: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersUriQuery>>,
 }

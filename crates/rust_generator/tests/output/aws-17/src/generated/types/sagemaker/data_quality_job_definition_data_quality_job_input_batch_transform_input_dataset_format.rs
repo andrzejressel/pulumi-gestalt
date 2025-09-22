@@ -6,9 +6,9 @@ pub struct DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDataset
     /// The CSV dataset used in the monitoring job. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "csv")]
-    pub r#csv: Option<Box<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatCsv>>,
+    pub r#csv: Box<Option<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatCsv>>,
     /// The JSON dataset used in the monitoring job. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "json")]
-    pub r#json: Option<Box<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatJson>>,
+    pub r#json: Box<Option<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatJson>>,
 }

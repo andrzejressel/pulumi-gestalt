@@ -11,12 +11,12 @@ pub struct FeatureFleetDefaultMemberConfigConfigmanagementConfigSync {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "git")]
-    pub r#git: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit>>,
+    pub r#git: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit>>,
     /// OCI repo configuration for the cluster
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oci")]
-    pub r#oci: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci>>,
+    pub r#oci: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOci>>,
     /// Set to true to enable the Config Sync admission webhook to prevent drifts. If set to `false`, disables the Config Sync admission webhook and does not prevent drifts.
     #[builder(into)]
     #[serde(rename = "preventDrift")]

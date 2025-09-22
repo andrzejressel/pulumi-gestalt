@@ -10,11 +10,11 @@ pub struct VolumeGroupSapHanaVolume {
     /// A `data_protection_replication` block as defined below. Changing this forces a new Application Volume Group to be created and data will be lost.
     #[builder(into)]
     #[serde(rename = "dataProtectionReplication")]
-    pub r#data_protection_replication: Option<Box<super::super::types::netapp::VolumeGroupSapHanaVolumeDataProtectionReplication>>,
+    pub r#data_protection_replication: Box<Option<super::super::types::netapp::VolumeGroupSapHanaVolumeDataProtectionReplication>>,
     /// A `data_protection_snapshot_policy` block as defined below.
     #[builder(into)]
     #[serde(rename = "dataProtectionSnapshotPolicy")]
-    pub r#data_protection_snapshot_policy: Option<Box<super::super::types::netapp::VolumeGroupSapHanaVolumeDataProtectionSnapshotPolicy>>,
+    pub r#data_protection_snapshot_policy: Box<Option<super::super::types::netapp::VolumeGroupSapHanaVolumeDataProtectionSnapshotPolicy>>,
     /// One or more `export_policy_rule` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "exportPolicyRules")]

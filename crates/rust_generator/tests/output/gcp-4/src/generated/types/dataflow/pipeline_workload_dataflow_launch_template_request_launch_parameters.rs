@@ -8,7 +8,7 @@ pub struct PipelineWorkloadDataflowLaunchTemplateRequestLaunchParameters {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "environment")]
-    pub r#environment: Option<Box<super::super::types::dataflow::PipelineWorkloadDataflowLaunchTemplateRequestLaunchParametersEnvironment>>,
+    pub r#environment: Box<Option<super::super::types::dataflow::PipelineWorkloadDataflowLaunchTemplateRequestLaunchParametersEnvironment>>,
     /// The job name to use for the created job.
     #[builder(into)]
     #[serde(rename = "jobName")]

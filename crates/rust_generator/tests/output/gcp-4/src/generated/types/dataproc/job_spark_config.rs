@@ -22,7 +22,7 @@ pub struct JobSparkConfig {
     /// The runtime logging config of the job
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Option<Box<super::super::types::dataproc::JobSparkConfigLoggingConfig>>,
+    pub r#logging_config: Box<Option<super::super::types::dataproc::JobSparkConfigLoggingConfig>>,
     /// The class containing the main method of the driver. Must be in a
     /// provided jar or jar that is already on the classpath. Conflicts with `main_jar_file_uri`
     #[builder(into)]

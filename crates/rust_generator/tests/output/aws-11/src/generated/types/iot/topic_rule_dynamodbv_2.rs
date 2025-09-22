@@ -6,7 +6,7 @@ pub struct TopicRuleDynamodbv2 {
     /// Configuration block with DynamoDB Table to which the message will be written. Nested arguments below.
     #[builder(into)]
     #[serde(rename = "putItem")]
-    pub r#put_item: Option<Box<super::super::types::iot::TopicRuleDynamodbv2PutItem>>,
+    pub r#put_item: Box<Option<super::super::types::iot::TopicRuleDynamodbv2PutItem>>,
     /// The ARN of the IAM role that grants access to the DynamoDB table.
     #[builder(into)]
     #[serde(rename = "roleArn")]

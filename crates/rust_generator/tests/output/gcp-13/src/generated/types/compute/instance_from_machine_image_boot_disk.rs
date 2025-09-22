@@ -22,7 +22,7 @@ pub struct InstanceFromMachineImageBootDisk {
     /// Parameters with which a disk was created alongside the instance.
     #[builder(into)]
     #[serde(rename = "initializeParams")]
-    pub r#initialize_params: Option<Box<super::super::types::compute::InstanceFromMachineImageBootDiskInitializeParams>>,
+    pub r#initialize_params: Box<Option<super::super::types::compute::InstanceFromMachineImageBootDiskInitializeParams>>,
     /// The disk interface used for attaching this disk. One of SCSI or NVME. (This field is shared with attached_disk and only used for specific cases, please don't specify this field without advice from Google.)
     #[builder(into)]
     #[serde(rename = "interface")]

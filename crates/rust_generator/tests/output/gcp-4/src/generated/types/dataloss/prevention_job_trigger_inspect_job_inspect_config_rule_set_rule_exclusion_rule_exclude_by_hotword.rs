@@ -7,7 +7,7 @@ pub struct PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleEx
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "hotwordRegex")]
-    pub r#hotword_regex: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegex>>,
+    pub r#hotword_regex: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegex>>,
     /// Proximity of the finding within which the entire hotword must reside. The total length of the window cannot
     /// exceed 1000 characters. Note that the finding itself will be included in the window, so that hotwords may be
     /// used to match substrings of the finding itself. For example, the certainty of a phone number regex
@@ -16,5 +16,5 @@ pub struct PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleEx
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "proximity")]
-    pub r#proximity: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximity>>,
+    pub r#proximity: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximity>>,
 }

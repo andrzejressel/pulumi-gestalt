@@ -13,5 +13,5 @@ pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleCo
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "valueExpression")]
-    pub r#value_expression: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigCustomOutputPropertyValueExpression>>,
+    pub r#value_expression: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigCustomOutputPropertyValueExpression>>,
 }

@@ -23,5 +23,5 @@ pub struct AlertPolicyAlertStrategy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "notificationRateLimit")]
-    pub r#notification_rate_limit: Option<Box<super::super::types::monitoring::AlertPolicyAlertStrategyNotificationRateLimit>>,
+    pub r#notification_rate_limit: Box<Option<super::super::types::monitoring::AlertPolicyAlertStrategyNotificationRateLimit>>,
 }

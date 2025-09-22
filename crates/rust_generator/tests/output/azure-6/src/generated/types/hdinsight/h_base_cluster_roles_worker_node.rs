@@ -6,7 +6,7 @@ pub struct HBaseClusterRolesWorkerNode {
     /// A `autoscale` block as defined below.
     #[builder(into)]
     #[serde(rename = "autoscale")]
-    pub r#autoscale: Option<Box<super::super::types::hdinsight::HBaseClusterRolesWorkerNodeAutoscale>>,
+    pub r#autoscale: Box<Option<super::super::types::hdinsight::HBaseClusterRolesWorkerNodeAutoscale>>,
     /// The Password associated with the local administrator for the Worker Nodes. Changing this forces a new resource to be created.
     /// 
     /// > **NOTE:** If specified, this password must be at least 10 characters in length and must contain at least one digit, one uppercase and one lower case letter, one non-alphanumeric character (except characters ' " ` \).

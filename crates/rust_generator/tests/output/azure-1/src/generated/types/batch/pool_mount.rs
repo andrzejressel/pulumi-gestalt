@@ -6,7 +6,7 @@ pub struct PoolMount {
     /// A `azure_blob_file_system` block defined as below.
     #[builder(into)]
     #[serde(rename = "azureBlobFileSystem")]
-    pub r#azure_blob_file_system: Option<Box<super::super::types::batch::PoolMountAzureBlobFileSystem>>,
+    pub r#azure_blob_file_system: Box<Option<super::super::types::batch::PoolMountAzureBlobFileSystem>>,
     /// A `azure_file_share` block defined as below.
     #[builder(into)]
     #[serde(rename = "azureFileShares")]

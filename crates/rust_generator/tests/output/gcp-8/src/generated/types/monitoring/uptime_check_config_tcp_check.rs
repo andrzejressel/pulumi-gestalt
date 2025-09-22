@@ -7,7 +7,7 @@ pub struct UptimeCheckConfigTcpCheck {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pingConfig")]
-    pub r#ping_config: Option<Box<super::super::types::monitoring::UptimeCheckConfigTcpCheckPingConfig>>,
+    pub r#ping_config: Box<Option<super::super::types::monitoring::UptimeCheckConfigTcpCheckPingConfig>>,
     /// The port to the page to run the check against. Will be combined with host (specified within the `monitored_resource`) to construct the full URL.
     #[builder(into)]
     #[serde(rename = "port")]

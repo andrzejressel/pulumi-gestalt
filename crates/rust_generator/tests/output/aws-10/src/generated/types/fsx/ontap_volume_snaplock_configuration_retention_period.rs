@@ -6,13 +6,13 @@ pub struct OntapVolumeSnaplockConfigurationRetentionPeriod {
     /// The retention period assigned to a write once, read many (WORM) file by default if an explicit retention period is not set for an FSx for ONTAP SnapLock volume. The default retention period must be greater than or equal to the minimum retention period and less than or equal to the maximum retention period. See `default_retention` Block for details.
     #[builder(into)]
     #[serde(rename = "defaultRetention")]
-    pub r#default_retention: Option<Box<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriodDefaultRetention>>,
+    pub r#default_retention: Box<Option<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriodDefaultRetention>>,
     /// The longest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. See `maximum_retention` Block for details.
     #[builder(into)]
     #[serde(rename = "maximumRetention")]
-    pub r#maximum_retention: Option<Box<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriodMaximumRetention>>,
+    pub r#maximum_retention: Box<Option<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriodMaximumRetention>>,
     /// The shortest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. See `minimum_retention` Block for details.
     #[builder(into)]
     #[serde(rename = "minimumRetention")]
-    pub r#minimum_retention: Option<Box<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriodMinimumRetention>>,
+    pub r#minimum_retention: Box<Option<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriodMinimumRetention>>,
 }

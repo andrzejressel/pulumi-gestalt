@@ -10,7 +10,7 @@ pub struct EventConnectionAuthParametersOauth {
     /// Contains the client parameters for OAuth authorization. Contains the following two parameters.
     #[builder(into)]
     #[serde(rename = "clientParameters")]
-    pub r#client_parameters: Option<Box<super::super::types::cloudwatch::EventConnectionAuthParametersOauthClientParameters>>,
+    pub r#client_parameters: Box<Option<super::super::types::cloudwatch::EventConnectionAuthParametersOauthClientParameters>>,
     /// A password for the authorization. Created and stored in AWS Secrets Manager.
     #[builder(into)]
     #[serde(rename = "httpMethod")]

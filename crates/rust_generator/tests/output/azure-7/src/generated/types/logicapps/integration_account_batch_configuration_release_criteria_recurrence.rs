@@ -18,7 +18,7 @@ pub struct IntegrationAccountBatchConfigurationReleaseCriteriaRecurrence {
     /// A `schedule` block as documented below.
     #[builder(into)]
     #[serde(rename = "schedule")]
-    pub r#schedule: Option<Box<super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteriaRecurrenceSchedule>>,
+    pub r#schedule: Box<Option<super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteriaRecurrenceSchedule>>,
     /// The start time of the schedule, formatted as an RFC3339 string.
     #[builder(into)]
     #[serde(rename = "startTime")]

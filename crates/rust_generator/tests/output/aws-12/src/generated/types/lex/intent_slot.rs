@@ -47,5 +47,5 @@ pub struct IntentSlot {
     /// from the user. Attributes are documented under prompt.
     #[builder(into)]
     #[serde(rename = "valueElicitationPrompt")]
-    pub r#value_elicitation_prompt: Option<Box<super::super::types::lex::IntentSlotValueElicitationPrompt>>,
+    pub r#value_elicitation_prompt: Box<Option<super::super::types::lex::IntentSlotValueElicitationPrompt>>,
 }

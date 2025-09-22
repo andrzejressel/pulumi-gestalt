@@ -18,7 +18,7 @@ pub struct KubernetesClusterNetworkProfile {
     /// A `load_balancer_profile` block as defined below. This can only be specified when `load_balancer_sku` is set to `standard`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "loadBalancerProfile")]
-    pub r#load_balancer_profile: Option<Box<super::super::types::containerservice::KubernetesClusterNetworkProfileLoadBalancerProfile>>,
+    pub r#load_balancer_profile: Box<Option<super::super::types::containerservice::KubernetesClusterNetworkProfileLoadBalancerProfile>>,
     /// Specifies the SKU of the Load Balancer used for this Kubernetes Cluster. Possible values are `basic` and `standard`. Defaults to `standard`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "loadBalancerSku")]
@@ -26,7 +26,7 @@ pub struct KubernetesClusterNetworkProfile {
     /// A `nat_gateway_profile` block as defined below. This can only be specified when `load_balancer_sku` is set to `standard` and `outbound_type` is set to `managedNATGateway` or `userAssignedNATGateway`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "natGatewayProfile")]
-    pub r#nat_gateway_profile: Option<Box<super::super::types::containerservice::KubernetesClusterNetworkProfileNatGatewayProfile>>,
+    pub r#nat_gateway_profile: Box<Option<super::super::types::containerservice::KubernetesClusterNetworkProfileNatGatewayProfile>>,
     /// Specifies the data plane used for building the Kubernetes network. Possible values are `azure` and `cilium`. Defaults to `azure`. Disabling this forces a new resource to be created.
     /// 
     /// > **Note:** When `network_data_plane` is set to `cilium`, the `network_plugin` field can only be set to `azure`.

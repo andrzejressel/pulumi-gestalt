@@ -7,20 +7,20 @@ pub struct AiFeatureStoreEntityTypeMonitoringConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "categoricalThresholdConfig")]
-    pub r#categorical_threshold_config: Option<Box<super::super::types::vertex::AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig>>,
+    pub r#categorical_threshold_config: Box<Option<super::super::types::vertex::AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfig>>,
     /// The config for ImportFeatures Analysis Based Feature Monitoring.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "importFeaturesAnalysis")]
-    pub r#import_features_analysis: Option<Box<super::super::types::vertex::AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis>>,
+    pub r#import_features_analysis: Box<Option<super::super::types::vertex::AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysis>>,
     /// Threshold for numerical features of anomaly detection. This is shared by all objectives of Featurestore Monitoring for numerical features (i.e. Features with type (Feature.ValueType) DOUBLE or INT64).
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "numericalThresholdConfig")]
-    pub r#numerical_threshold_config: Option<Box<super::super::types::vertex::AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig>>,
+    pub r#numerical_threshold_config: Box<Option<super::super::types::vertex::AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfig>>,
     /// The config for Snapshot Analysis Based Feature Monitoring.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "snapshotAnalysis")]
-    pub r#snapshot_analysis: Option<Box<super::super::types::vertex::AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis>>,
+    pub r#snapshot_analysis: Box<Option<super::super::types::vertex::AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis>>,
 }

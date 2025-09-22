@@ -6,7 +6,7 @@ pub struct VirtualGatewaySpecListenerTlsValidation {
     /// SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.
     #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames>>,
+    pub r#subject_alternative_names: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames>>,
     /// TLS validation context trust.
     #[builder(into)]
     #[serde(rename = "trust")]

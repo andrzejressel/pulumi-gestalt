@@ -6,7 +6,7 @@ pub struct RouteSpecHttpRouteMatchQueryParameter {
     /// The query parameter to match on.
     #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Option<Box<super::super::types::appmesh::RouteSpecHttpRouteMatchQueryParameterMatch>>,
+    pub r#match_: Box<Option<super::super::types::appmesh::RouteSpecHttpRouteMatchQueryParameterMatch>>,
     /// Name for the query parameter that will be matched on.
     #[builder(into)]
     #[serde(rename = "name")]

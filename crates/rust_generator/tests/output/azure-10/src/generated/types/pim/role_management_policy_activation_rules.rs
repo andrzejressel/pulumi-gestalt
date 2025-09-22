@@ -6,7 +6,7 @@ pub struct RoleManagementPolicyActivationRules {
     /// An `approval_stage` block as defined below.
     #[builder(into)]
     #[serde(rename = "approvalStage")]
-    pub r#approval_stage: Option<Box<super::super::types::pim::RoleManagementPolicyActivationRulesApprovalStage>>,
+    pub r#approval_stage: Box<Option<super::super::types::pim::RoleManagementPolicyActivationRulesApprovalStage>>,
     /// The maximum length of time an activated role can be valid, in an ISO8601 Duration format (e.g. `PT8H`). Valid range is `PT30M` to `PT23H30M`, in 30 minute increments, or `PT1D`.
     #[builder(into)]
     #[serde(rename = "maximumDuration")]

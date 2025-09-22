@@ -7,10 +7,10 @@ pub struct FleetDefaultClusterConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "binaryAuthorizationConfig")]
-    pub r#binary_authorization_config: Option<Box<super::super::types::gkehub::FleetDefaultClusterConfigBinaryAuthorizationConfig>>,
+    pub r#binary_authorization_config: Box<Option<super::super::types::gkehub::FleetDefaultClusterConfigBinaryAuthorizationConfig>>,
     /// Enable/Disable Security Posture features for the cluster.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "securityPostureConfig")]
-    pub r#security_posture_config: Option<Box<super::super::types::gkehub::FleetDefaultClusterConfigSecurityPostureConfig>>,
+    pub r#security_posture_config: Box<Option<super::super::types::gkehub::FleetDefaultClusterConfigSecurityPostureConfig>>,
 }

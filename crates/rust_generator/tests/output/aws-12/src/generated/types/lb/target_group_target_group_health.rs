@@ -6,9 +6,9 @@ pub struct TargetGroupTargetGroupHealth {
     /// Block to configure DNS Failover requirements. See DNS Failover below for details on attributes.
     #[builder(into)]
     #[serde(rename = "dnsFailover")]
-    pub r#dns_failover: Option<Box<super::super::types::lb::TargetGroupTargetGroupHealthDnsFailover>>,
+    pub r#dns_failover: Box<Option<super::super::types::lb::TargetGroupTargetGroupHealthDnsFailover>>,
     /// Block to configure Unhealthy State Routing requirements. See Unhealthy State Routing below for details on attributes.
     #[builder(into)]
     #[serde(rename = "unhealthyStateRouting")]
-    pub r#unhealthy_state_routing: Option<Box<super::super::types::lb::TargetGroupTargetGroupHealthUnhealthyStateRouting>>,
+    pub r#unhealthy_state_routing: Box<Option<super::super::types::lb::TargetGroupTargetGroupHealthUnhealthyStateRouting>>,
 }

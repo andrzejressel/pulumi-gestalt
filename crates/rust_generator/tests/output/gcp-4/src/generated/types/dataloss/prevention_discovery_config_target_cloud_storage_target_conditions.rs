@@ -7,7 +7,7 @@ pub struct PreventionDiscoveryConfigTargetCloudStorageTargetConditions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cloudStorageConditions")]
-    pub r#cloud_storage_conditions: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetConditionsCloudStorageConditions>>,
+    pub r#cloud_storage_conditions: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetConditionsCloudStorageConditions>>,
     /// File store must have been created after this date. Used to avoid backfilling. A timestamp in RFC3339 UTC "Zulu" format with nanosecond resolution and upto nine fractional digits.
     #[builder(into)]
     #[serde(rename = "createdAfter")]

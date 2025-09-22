@@ -10,5 +10,5 @@ pub struct InstanceInstanceMarketOptions {
     /// Block to configure the options for Spot Instances. See Spot Options below for details on attributes.
     #[builder(into)]
     #[serde(rename = "spotOptions")]
-    pub r#spot_options: Option<Box<super::super::types::ec2::InstanceInstanceMarketOptionsSpotOptions>>,
+    pub r#spot_options: Box<Option<super::super::types::ec2::InstanceInstanceMarketOptionsSpotOptions>>,
 }

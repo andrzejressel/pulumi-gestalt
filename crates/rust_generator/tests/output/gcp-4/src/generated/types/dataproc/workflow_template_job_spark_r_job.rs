@@ -18,7 +18,7 @@ pub struct WorkflowTemplateJobSparkRJob {
     /// The runtime log config for job execution.
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Option<Box<super::super::types::dataproc::WorkflowTemplateJobSparkRJobLoggingConfig>>,
+    pub r#logging_config: Box<Option<super::super::types::dataproc::WorkflowTemplateJobSparkRJobLoggingConfig>>,
     /// Required. The HCFS URI of the main R file to use as the driver. Must be a .R file.
     #[builder(into)]
     #[serde(rename = "mainRFileUri")]

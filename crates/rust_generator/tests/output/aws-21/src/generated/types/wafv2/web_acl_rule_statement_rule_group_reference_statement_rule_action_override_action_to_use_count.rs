@@ -6,5 +6,5 @@ pub struct WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActio
     /// Defines custom handling for the web request. See `custom_request_handling` below for details.
     #[builder(into)]
     #[serde(rename = "customRequestHandling")]
-    pub r#custom_request_handling: Option<Box<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandling>>,
+    pub r#custom_request_handling: Box<Option<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandling>>,
 }

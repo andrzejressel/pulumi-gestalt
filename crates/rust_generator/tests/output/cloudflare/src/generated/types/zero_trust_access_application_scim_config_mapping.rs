@@ -14,7 +14,7 @@ pub struct ZeroTrustAccessApplicationScimConfigMapping {
     /// Whether or not this mapping applies to creates, updates, or deletes.
     #[builder(into)]
     #[serde(rename = "operations")]
-    pub r#operations: Option<Box<super::types::ZeroTrustAccessApplicationScimConfigMappingOperations>>,
+    pub r#operations: Box<Option<super::types::ZeroTrustAccessApplicationScimConfigMappingOperations>>,
     /// Which SCIM resource type this mapping applies to.
     #[builder(into)]
     #[serde(rename = "schema")]

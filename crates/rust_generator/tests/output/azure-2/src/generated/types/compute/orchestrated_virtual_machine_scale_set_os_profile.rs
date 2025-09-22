@@ -12,9 +12,9 @@ pub struct OrchestratedVirtualMachineScaleSetOsProfile {
     /// A `linux_configuration` block as documented below.
     #[builder(into)]
     #[serde(rename = "linuxConfiguration")]
-    pub r#linux_configuration: Option<Box<super::super::types::compute::OrchestratedVirtualMachineScaleSetOsProfileLinuxConfiguration>>,
+    pub r#linux_configuration: Box<Option<super::super::types::compute::OrchestratedVirtualMachineScaleSetOsProfileLinuxConfiguration>>,
     /// A `windows_configuration` block as documented below.
     #[builder(into)]
     #[serde(rename = "windowsConfiguration")]
-    pub r#windows_configuration: Option<Box<super::super::types::compute::OrchestratedVirtualMachineScaleSetOsProfileWindowsConfiguration>>,
+    pub r#windows_configuration: Box<Option<super::super::types::compute::OrchestratedVirtualMachineScaleSetOsProfileWindowsConfiguration>>,
 }

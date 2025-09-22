@@ -10,7 +10,7 @@ pub struct TlsInspectionConfigurationTlsInspectionConfigurationServerCertificate
     /// Check Certificate Revocation Status block. Detailed below.
     #[builder(into)]
     #[serde(rename = "checkCertificateRevocationStatus")]
-    pub r#check_certificate_revocation_status: Option<Box<super::super::types::networkfirewall::TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfigurationCheckCertificateRevocationStatus>>,
+    pub r#check_certificate_revocation_status: Box<Option<super::super::types::networkfirewall::TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfigurationCheckCertificateRevocationStatus>>,
     /// Scope block. Detailed below.
     #[builder(into)]
     #[serde(rename = "scopes")]

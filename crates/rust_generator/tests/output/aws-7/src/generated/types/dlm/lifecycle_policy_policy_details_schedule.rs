@@ -16,11 +16,11 @@ pub struct LifecyclePolicyPolicyDetailsSchedule {
     pub r#cross_region_copy_rules: Option<Vec<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRule>>,
     #[builder(into)]
     #[serde(rename = "deprecateRule")]
-    pub r#deprecate_rule: Option<Box<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleDeprecateRule>>,
+    pub r#deprecate_rule: Box<Option<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleDeprecateRule>>,
     /// See the `fast_restore_rule` block. Max of 1 per schedule.
     #[builder(into)]
     #[serde(rename = "fastRestoreRule")]
-    pub r#fast_restore_rule: Option<Box<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleFastRestoreRule>>,
+    pub r#fast_restore_rule: Box<Option<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleFastRestoreRule>>,
     #[builder(into)]
     #[serde(rename = "name")]
     pub r#name: String,
@@ -30,7 +30,7 @@ pub struct LifecyclePolicyPolicyDetailsSchedule {
     /// See the `share_rule` block. Max of 1 per schedule.
     #[builder(into)]
     #[serde(rename = "shareRule")]
-    pub r#share_rule: Option<Box<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleShareRule>>,
+    pub r#share_rule: Box<Option<super::super::types::dlm::LifecyclePolicyPolicyDetailsScheduleShareRule>>,
     /// A map of tag keys and their values. DLM lifecycle policies will already tag the snapshot with the tags on the volume. This configuration adds extra tags on top of these.
     #[builder(into)]
     #[serde(rename = "tagsToAdd")]

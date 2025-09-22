@@ -7,5 +7,5 @@ pub struct AttachedClusterProxyConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "kubernetesSecret")]
-    pub r#kubernetes_secret: Option<Box<super::super::types::container::AttachedClusterProxyConfigKubernetesSecret>>,
+    pub r#kubernetes_secret: Box<Option<super::super::types::container::AttachedClusterProxyConfigKubernetesSecret>>,
 }

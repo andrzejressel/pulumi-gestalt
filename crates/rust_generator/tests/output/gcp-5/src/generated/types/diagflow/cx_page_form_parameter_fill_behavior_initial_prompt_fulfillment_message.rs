@@ -15,7 +15,7 @@ pub struct CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessage {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "conversationSuccess")]
-    pub r#conversation_success: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageConversationSuccess>>,
+    pub r#conversation_success: Box<Option<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageConversationSuccess>>,
     /// Indicates that the conversation should be handed off to a live agent.
     /// Dialogflow only uses this to determine which conversations were handed off to a human agent for measurement purposes. What else to do with this signal is up to you and your handoff procedures.
     /// You may set this, for example:
@@ -24,12 +24,12 @@ pub struct CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessage {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "liveAgentHandoff")]
-    pub r#live_agent_handoff: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageLiveAgentHandoff>>,
+    pub r#live_agent_handoff: Box<Option<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageLiveAgentHandoff>>,
     /// A text or ssml response that is preferentially used for TTS output audio synthesis, as described in the comment on the ResponseMessage message.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "outputAudioText")]
-    pub r#output_audio_text: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageOutputAudioText>>,
+    pub r#output_audio_text: Box<Option<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageOutputAudioText>>,
     /// A custom, platform-specific payload.
     #[builder(into)]
     #[serde(rename = "payload")]
@@ -38,15 +38,15 @@ pub struct CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessage {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "playAudio")]
-    pub r#play_audio: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessagePlayAudio>>,
+    pub r#play_audio: Box<Option<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessagePlayAudio>>,
     /// Represents the signal that telles the client to transfer the phone call connected to the agent to a third-party endpoint.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "telephonyTransferCall")]
-    pub r#telephony_transfer_call: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageTelephonyTransferCall>>,
+    pub r#telephony_transfer_call: Box<Option<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageTelephonyTransferCall>>,
     /// The text response message.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Option<Box<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageText>>,
+    pub r#text: Box<Option<super::super::types::diagflow::CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageText>>,
 }

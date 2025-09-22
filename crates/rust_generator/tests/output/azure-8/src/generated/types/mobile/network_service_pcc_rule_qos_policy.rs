@@ -10,7 +10,7 @@ pub struct NetworkServicePccRuleQosPolicy {
     /// A `guaranteed_bit_rate` block as defined below. The Guaranteed Bit Rate (GBR) for all service data flows that use this PCC Rule. If it's not specified, there will be no GBR set for the PCC Rule that uses this QoS definition.
     #[builder(into)]
     #[serde(rename = "guaranteedBitRate")]
-    pub r#guaranteed_bit_rate: Option<Box<super::super::types::mobile::NetworkServicePccRuleQosPolicyGuaranteedBitRate>>,
+    pub r#guaranteed_bit_rate: Box<Option<super::super::types::mobile::NetworkServicePccRuleQosPolicyGuaranteedBitRate>>,
     /// A `maximum_bit_rate` block as defined below. The Maximum Bit Rate (MBR) for all service data flows that use this PCC Rule or Service.
     #[builder(into)]
     #[serde(rename = "maximumBitRate")]

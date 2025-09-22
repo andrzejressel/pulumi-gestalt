@@ -6,21 +6,21 @@ pub struct GetRulesetsRulesetRuleActionParametersCacheKeyCustomKey {
     /// Cookie parameters for the custom key.
     #[builder(into)]
     #[serde(rename = "cookie")]
-    pub r#cookie: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKeyCookie>>,
+    pub r#cookie: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKeyCookie>>,
     /// Header parameters for the custom key.
     #[builder(into)]
     #[serde(rename = "header")]
-    pub r#header: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKeyHeader>>,
+    pub r#header: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKeyHeader>>,
     /// Host parameters for the custom key.
     #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKeyHost>>,
+    pub r#host: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKeyHost>>,
     /// Query string parameters for the custom key.
     #[builder(into)]
     #[serde(rename = "queryString")]
-    pub r#query_string: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKeyQueryString>>,
+    pub r#query_string: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKeyQueryString>>,
     /// User parameters for the custom key.
     #[builder(into)]
     #[serde(rename = "user")]
-    pub r#user: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKeyUser>>,
+    pub r#user: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKeyUser>>,
 }

@@ -10,5 +10,5 @@ pub struct CachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig {
     /// Object contains a list of header names. See Items for more information.
     #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Option<Box<super::super::types::cloudfront::CachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders>>,
+    pub r#headers: Box<Option<super::super::types::cloudfront::CachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders>>,
 }

@@ -6,7 +6,7 @@ pub struct SlotLogsApplicationLogs {
     /// An `azure_blob_storage` block as defined below.
     #[builder(into)]
     #[serde(rename = "azureBlobStorage")]
-    pub r#azure_blob_storage: Option<Box<super::super::types::appservice::SlotLogsApplicationLogsAzureBlobStorage>>,
+    pub r#azure_blob_storage: Box<Option<super::super::types::appservice::SlotLogsApplicationLogsAzureBlobStorage>>,
     /// The file system log level. Possible values are `Off`, `Error`, `Warning`, `Information`, and `Verbose`. Defaults to `Off`.
     #[builder(into)]
     #[serde(rename = "fileSystemLevel")]

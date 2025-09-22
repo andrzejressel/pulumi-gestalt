@@ -22,7 +22,7 @@ pub struct ClusterClusterAutoscalingAutoProvisioningDefaults {
     /// NodeManagement configuration for this NodePool. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "management")]
-    pub r#management: Option<Box<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaultsManagement>>,
+    pub r#management: Box<Option<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaultsManagement>>,
     /// Minimum CPU platform to be used for NAP created node pools. The instance may be scheduled on the
     /// specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such
     /// as "Intel Haswell" or "Intel Sandy Bridge".
@@ -42,9 +42,9 @@ pub struct ClusterClusterAutoscalingAutoProvisioningDefaults {
     /// Shielded Instance options. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "shieldedInstanceConfig")]
-    pub r#shielded_instance_config: Option<Box<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaultsShieldedInstanceConfig>>,
+    pub r#shielded_instance_config: Box<Option<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaultsShieldedInstanceConfig>>,
     /// Specifies the upgrade settings for NAP created node pools
     #[builder(into)]
     #[serde(rename = "upgradeSettings")]
-    pub r#upgrade_settings: Option<Box<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaultsUpgradeSettings>>,
+    pub r#upgrade_settings: Box<Option<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaultsUpgradeSettings>>,
 }

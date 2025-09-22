@@ -10,7 +10,7 @@ pub struct ClusterNodePoolNodeConfigGuestAccelerator {
     /// Configuration for auto installation of GPU driver. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "gpuDriverInstallationConfig")]
-    pub r#gpu_driver_installation_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig>>,
+    pub r#gpu_driver_installation_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig>>,
     /// Size of partitions to create on the GPU. Valid values are described in the NVIDIA mig [user guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
     #[builder(into)]
     #[serde(rename = "gpuPartitionSize")]
@@ -18,7 +18,7 @@ pub struct ClusterNodePoolNodeConfigGuestAccelerator {
     /// Configuration for GPU sharing. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "gpuSharingConfig")]
-    pub r#gpu_sharing_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig>>,
+    pub r#gpu_sharing_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig>>,
     /// The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.
     #[builder(into)]
     #[serde(rename = "type")]

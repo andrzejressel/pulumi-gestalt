@@ -14,5 +14,5 @@ pub struct InstanceStorageConfigStorageConfigS3Config {
     /// The encryption configuration. Documented below.
     #[builder(into)]
     #[serde(rename = "encryptionConfig")]
-    pub r#encryption_config: Option<Box<super::super::types::connect::InstanceStorageConfigStorageConfigS3ConfigEncryptionConfig>>,
+    pub r#encryption_config: Box<Option<super::super::types::connect::InstanceStorageConfigStorageConfigS3ConfigEncryptionConfig>>,
 }

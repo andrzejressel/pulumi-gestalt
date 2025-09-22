@@ -10,5 +10,5 @@ pub struct LaunchTemplateCapacityReservationSpecification {
     /// Used to target a specific Capacity Reservation:
     #[builder(into)]
     #[serde(rename = "capacityReservationTarget")]
-    pub r#capacity_reservation_target: Option<Box<super::super::types::ec2::LaunchTemplateCapacityReservationSpecificationCapacityReservationTarget>>,
+    pub r#capacity_reservation_target: Box<Option<super::super::types::ec2::LaunchTemplateCapacityReservationSpecificationCapacityReservationTarget>>,
 }

@@ -7,12 +7,12 @@ pub struct RepositoryRemoteRepositoryConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "aptRepository")]
-    pub r#apt_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigAptRepository>>,
+    pub r#apt_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigAptRepository>>,
     /// Specific settings for an Artifact Registory remote repository.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "commonRepository")]
-    pub r#common_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigCommonRepository>>,
+    pub r#common_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigCommonRepository>>,
     /// The description of the remote source.
     #[builder(into)]
     #[serde(rename = "description")]
@@ -26,30 +26,30 @@ pub struct RepositoryRemoteRepositoryConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "dockerRepository")]
-    pub r#docker_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigDockerRepository>>,
+    pub r#docker_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigDockerRepository>>,
     /// Specific settings for a Maven remote repository.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "mavenRepository")]
-    pub r#maven_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigMavenRepository>>,
+    pub r#maven_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigMavenRepository>>,
     /// Specific settings for an Npm remote repository.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "npmRepository")]
-    pub r#npm_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigNpmRepository>>,
+    pub r#npm_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigNpmRepository>>,
     /// Specific settings for a Python remote repository.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pythonRepository")]
-    pub r#python_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigPythonRepository>>,
+    pub r#python_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigPythonRepository>>,
     /// The credentials used to access the remote repository.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "upstreamCredentials")]
-    pub r#upstream_credentials: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigUpstreamCredentials>>,
+    pub r#upstream_credentials: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigUpstreamCredentials>>,
     /// Specific settings for an Yum remote repository.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "yumRepository")]
-    pub r#yum_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigYumRepository>>,
+    pub r#yum_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigYumRepository>>,
 }

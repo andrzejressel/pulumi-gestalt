@@ -22,7 +22,7 @@ pub struct EnvironmentConfigNodeConfig {
     /// Configuration for controlling how IPs are allocated in the GKE cluster. Cannot be updated.
     #[builder(into)]
     #[serde(rename = "ipAllocationPolicy")]
-    pub r#ip_allocation_policy: Option<Box<super::super::types::composer::EnvironmentConfigNodeConfigIpAllocationPolicy>>,
+    pub r#ip_allocation_policy: Box<Option<super::super::types::composer::EnvironmentConfigNodeConfigIpAllocationPolicy>>,
     /// The Compute Engine machine type used for cluster instances, specified as a name or relative resource name. For example: "projects/{project}/zones/{zone}/machineTypes/{machineType}". Must belong to the enclosing environment's project and region/zone. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
     #[builder(into)]
     #[serde(rename = "machineType")]

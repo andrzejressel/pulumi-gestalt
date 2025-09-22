@@ -27,5 +27,5 @@ pub struct JobTemplateConfigMuxStream {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "segmentSettings")]
-    pub r#segment_settings: Option<Box<super::super::types::transcoder::JobTemplateConfigMuxStreamSegmentSettings>>,
+    pub r#segment_settings: Box<Option<super::super::types::transcoder::JobTemplateConfigMuxStreamSegmentSettings>>,
 }

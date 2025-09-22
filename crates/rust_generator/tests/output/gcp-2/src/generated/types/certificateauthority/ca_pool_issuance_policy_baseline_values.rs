@@ -27,7 +27,7 @@ pub struct CaPoolIssuancePolicyBaselineValues {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "nameConstraints")]
-    pub r#name_constraints: Option<Box<super::super::types::certificateauthority::CaPoolIssuancePolicyBaselineValuesNameConstraints>>,
+    pub r#name_constraints: Box<Option<super::super::types::certificateauthority::CaPoolIssuancePolicyBaselineValuesNameConstraints>>,
     /// Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
     /// Structure is documented below.
     #[builder(into)]

@@ -14,7 +14,7 @@ pub struct PipeSourceParametersManagedStreamingKafkaParameters {
     /// The credentials needed to access the resource. Detailed below.
     #[builder(into)]
     #[serde(rename = "credentials")]
-    pub r#credentials: Option<Box<super::super::types::pipes::PipeSourceParametersManagedStreamingKafkaParametersCredentials>>,
+    pub r#credentials: Box<Option<super::super::types::pipes::PipeSourceParametersManagedStreamingKafkaParametersCredentials>>,
     /// The maximum length of a time to wait for events. Maximum value of 300.
     #[builder(into)]
     #[serde(rename = "maximumBatchingWindowInSeconds")]

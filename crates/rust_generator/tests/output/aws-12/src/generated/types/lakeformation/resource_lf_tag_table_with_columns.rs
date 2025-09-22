@@ -14,7 +14,7 @@ pub struct ResourceLfTagTableWithColumns {
     /// Option to add column wildcard. See Column Wildcard for more details.
     #[builder(into)]
     #[serde(rename = "columnWildcard")]
-    pub r#column_wildcard: Option<Box<super::super::types::lakeformation::ResourceLfTagTableWithColumnsColumnWildcard>>,
+    pub r#column_wildcard: Box<Option<super::super::types::lakeformation::ResourceLfTagTableWithColumnsColumnWildcard>>,
     /// Name of the database for the table with columns resource. Unique to the Data Catalog.
     #[builder(into)]
     #[serde(rename = "databaseName")]

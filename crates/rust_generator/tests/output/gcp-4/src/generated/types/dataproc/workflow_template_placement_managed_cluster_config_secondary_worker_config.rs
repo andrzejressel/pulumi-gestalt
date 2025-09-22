@@ -10,7 +10,7 @@ pub struct WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfig {
     /// Optional. Disk option config settings.
     #[builder(into)]
     #[serde(rename = "diskConfig")]
-    pub r#disk_config: Option<Box<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig>>,
+    pub r#disk_config: Box<Option<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigDiskConfig>>,
     /// Optional. The Compute Engine image resource used for cluster instances. The URI can represent an image or image family. Image examples: * `https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/[image-id]` * `projects/[project_id]/global/images/[image-id]` * `image-id` Image family examples. Dataproc will use the most recent image from the family: * `https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/family/[custom-image-family-name]` * `projects/[project_id]/global/images/family/[custom-image-family-name]` If the URI is unspecified, it will be inferred from `SoftwareConfig.image_version` or the system default.
     #[builder(into)]
     #[serde(rename = "image")]

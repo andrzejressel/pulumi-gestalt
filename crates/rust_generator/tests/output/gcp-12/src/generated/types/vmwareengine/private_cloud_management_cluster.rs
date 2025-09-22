@@ -8,7 +8,7 @@ pub struct PrivateCloudManagementCluster {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "autoscalingSettings")]
-    pub r#autoscaling_settings: Option<Box<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettings>>,
+    pub r#autoscaling_settings: Box<Option<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettings>>,
     /// The user-provided identifier of the new Cluster. The identifier must meet the following requirements:
     /// * Only contains 1-63 alphanumeric characters and hyphens
     /// * Begins with an alphabetical character
@@ -28,5 +28,5 @@ pub struct PrivateCloudManagementCluster {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "stretchedClusterConfig")]
-    pub r#stretched_cluster_config: Option<Box<super::super::types::vmwareengine::PrivateCloudManagementClusterStretchedClusterConfig>>,
+    pub r#stretched_cluster_config: Box<Option<super::super::types::vmwareengine::PrivateCloudManagementClusterStretchedClusterConfig>>,
 }

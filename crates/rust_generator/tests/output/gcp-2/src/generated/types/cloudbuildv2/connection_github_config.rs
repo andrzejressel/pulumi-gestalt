@@ -11,5 +11,5 @@ pub struct ConnectionGithubConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "authorizerCredential")]
-    pub r#authorizer_credential: Option<Box<super::super::types::cloudbuildv2::ConnectionGithubConfigAuthorizerCredential>>,
+    pub r#authorizer_credential: Box<Option<super::super::types::cloudbuildv2::ConnectionGithubConfigAuthorizerCredential>>,
 }

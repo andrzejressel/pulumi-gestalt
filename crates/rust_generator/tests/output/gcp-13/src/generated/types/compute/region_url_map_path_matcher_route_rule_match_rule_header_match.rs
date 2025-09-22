@@ -44,7 +44,7 @@ pub struct RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rangeMatch")]
-    pub r#range_match: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch>>,
+    pub r#range_match: Box<Option<super::super::types::compute::RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch>>,
     /// The value of the header must match the regular expression specified in
     /// regexMatch. For regular expression grammar, please see:
     /// en.cppreference.com/w/cpp/regex/ecmascript  For matching against a port

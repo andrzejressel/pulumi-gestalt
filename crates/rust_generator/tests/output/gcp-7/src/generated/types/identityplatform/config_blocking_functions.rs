@@ -7,7 +7,7 @@ pub struct ConfigBlockingFunctions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "forwardInboundCredentials")]
-    pub r#forward_inbound_credentials: Option<Box<super::super::types::identityplatform::ConfigBlockingFunctionsForwardInboundCredentials>>,
+    pub r#forward_inbound_credentials: Box<Option<super::super::types::identityplatform::ConfigBlockingFunctionsForwardInboundCredentials>>,
     /// Map of Trigger to event type. Key should be one of the supported event types: "beforeCreate", "beforeSignIn".
     /// Structure is documented below.
     #[builder(into)]

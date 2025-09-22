@@ -11,5 +11,5 @@ pub struct ChannelInputAttachmentInputSettingsAudioSelector {
     pub r#name: String,
     #[builder(into)]
     #[serde(rename = "selectorSettings")]
-    pub r#selector_settings: Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettings>>,
+    pub r#selector_settings: Box<Option<super::super::types::medialive::ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettings>>,
 }

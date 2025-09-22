@@ -14,11 +14,11 @@ pub struct VpnGatewayBgpSettings {
     /// An `instance_bgp_peering_address` block as defined below.
     #[builder(into)]
     #[serde(rename = "instance0BgpPeeringAddress")]
-    pub r#instance_0_bgp_peering_address: Option<Box<super::super::types::network::VpnGatewayBgpSettingsInstance0BgpPeeringAddress>>,
+    pub r#instance_0_bgp_peering_address: Box<Option<super::super::types::network::VpnGatewayBgpSettingsInstance0BgpPeeringAddress>>,
     /// An `instance_bgp_peering_address` block as defined below.
     #[builder(into)]
     #[serde(rename = "instance1BgpPeeringAddress")]
-    pub r#instance_1_bgp_peering_address: Option<Box<super::super::types::network::VpnGatewayBgpSettingsInstance1BgpPeeringAddress>>,
+    pub r#instance_1_bgp_peering_address: Box<Option<super::super::types::network::VpnGatewayBgpSettingsInstance1BgpPeeringAddress>>,
     /// The weight added to Routes learned from this BGP Speaker. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "peerWeight")]

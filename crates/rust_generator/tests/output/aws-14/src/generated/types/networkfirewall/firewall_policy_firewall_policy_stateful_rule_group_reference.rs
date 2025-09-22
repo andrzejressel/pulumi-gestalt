@@ -6,7 +6,7 @@ pub struct FirewallPolicyFirewallPolicyStatefulRuleGroupReference {
     /// Configuration block for override values
     #[builder(into)]
     #[serde(rename = "override")]
-    pub r#override_: Option<Box<super::super::types::networkfirewall::FirewallPolicyFirewallPolicyStatefulRuleGroupReferenceOverride>>,
+    pub r#override_: Box<Option<super::super::types::networkfirewall::FirewallPolicyFirewallPolicyStatefulRuleGroupReferenceOverride>>,
     /// An integer setting that indicates the order in which to apply the stateful rule groups in a single policy. This argument must be specified if the policy has a `stateful_engine_options` block with a `rule_order` value of `STRICT_ORDER`. AWS Network Firewall applies each stateful rule group to a packet starting with the group that has the lowest priority setting.
     #[builder(into)]
     #[serde(rename = "priority")]

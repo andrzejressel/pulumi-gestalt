@@ -10,7 +10,7 @@ pub struct ClusterClusterConfigAuxiliaryNodeGroupNodeGroup {
     /// The node group instance group configuration.
     #[builder(into)]
     #[serde(rename = "nodeGroupConfig")]
-    pub r#node_group_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig>>,
+    pub r#node_group_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig>>,
     /// Node group roles. 
     /// One of `"DRIVER"`.
     #[builder(into)]

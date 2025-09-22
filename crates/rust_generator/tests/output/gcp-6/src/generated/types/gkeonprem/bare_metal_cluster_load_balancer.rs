@@ -7,17 +7,17 @@ pub struct BareMetalClusterLoadBalancer {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "bgpLbConfig")]
-    pub r#bgp_lb_config: Option<Box<super::super::types::gkeonprem::BareMetalClusterLoadBalancerBgpLbConfig>>,
+    pub r#bgp_lb_config: Box<Option<super::super::types::gkeonprem::BareMetalClusterLoadBalancerBgpLbConfig>>,
     /// A nested object resource.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "manualLbConfig")]
-    pub r#manual_lb_config: Option<Box<super::super::types::gkeonprem::BareMetalClusterLoadBalancerManualLbConfig>>,
+    pub r#manual_lb_config: Box<Option<super::super::types::gkeonprem::BareMetalClusterLoadBalancerManualLbConfig>>,
     /// A nested object resource.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "metalLbConfig")]
-    pub r#metal_lb_config: Option<Box<super::super::types::gkeonprem::BareMetalClusterLoadBalancerMetalLbConfig>>,
+    pub r#metal_lb_config: Box<Option<super::super::types::gkeonprem::BareMetalClusterLoadBalancerMetalLbConfig>>,
     /// Specifies the load balancer ports.
     /// Structure is documented below.
     #[builder(into)]

@@ -6,7 +6,7 @@ pub struct ChannelEncoderSettingsVideoDescription {
     /// The video codec settings. See Video Codec Settings for more details.
     #[builder(into)]
     #[serde(rename = "codecSettings")]
-    pub r#codec_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettings>>,
+    pub r#codec_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettings>>,
     /// Output video height in pixels.
     #[builder(into)]
     #[serde(rename = "height")]

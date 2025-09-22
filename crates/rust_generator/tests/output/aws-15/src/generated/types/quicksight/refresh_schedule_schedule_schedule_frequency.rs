@@ -10,7 +10,7 @@ pub struct RefreshScheduleScheduleScheduleFrequency {
     /// The [refresh on entity](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ScheduleRefreshOnEntity.html) configuration for weekly or monthly schedules. See refresh_on_day.
     #[builder(into)]
     #[serde(rename = "refreshOnDay")]
-    pub r#refresh_on_day: Option<Box<super::super::types::quicksight::RefreshScheduleScheduleScheduleFrequencyRefreshOnDay>>,
+    pub r#refresh_on_day: Box<Option<super::super::types::quicksight::RefreshScheduleScheduleScheduleFrequencyRefreshOnDay>>,
     /// The time of day that you want the dataset to refresh. This value is expressed in `HH:MM` format. This field is not required for schedules that refresh hourly.
     #[builder(into)]
     #[serde(rename = "timeOfTheDay")]

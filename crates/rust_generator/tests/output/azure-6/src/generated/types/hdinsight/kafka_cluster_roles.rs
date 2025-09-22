@@ -12,7 +12,7 @@ pub struct KafkaClusterRoles {
     /// > **Note:** This property has been deprecated and will be removed in version 4.0.
     #[builder(into)]
     #[serde(rename = "kafkaManagementNode")]
-    pub r#kafka_management_node: Option<Box<super::super::types::hdinsight::KafkaClusterRolesKafkaManagementNode>>,
+    pub r#kafka_management_node: Box<Option<super::super::types::hdinsight::KafkaClusterRolesKafkaManagementNode>>,
     /// A `worker_node` block as defined below.
     #[builder(into)]
     #[serde(rename = "workerNode")]

@@ -10,7 +10,7 @@ pub struct IdentitySourceConfigurationCognitoUserPoolConfiguration {
     /// The type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source. See Group Configuration below.
     #[builder(into)]
     #[serde(rename = "groupConfiguration")]
-    pub r#group_configuration: Option<Box<super::super::types::verifiedpermissions::IdentitySourceConfigurationCognitoUserPoolConfigurationGroupConfiguration>>,
+    pub r#group_configuration: Box<Option<super::super::types::verifiedpermissions::IdentitySourceConfigurationCognitoUserPoolConfigurationGroupConfiguration>>,
     /// The Amazon Resource Name (ARN) of the Amazon Cognito user pool that contains the identities to be authorized.
     #[builder(into)]
     #[serde(rename = "userPoolArn")]

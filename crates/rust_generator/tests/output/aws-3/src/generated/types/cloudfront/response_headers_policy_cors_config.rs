@@ -22,7 +22,7 @@ pub struct ResponseHeadersPolicyCorsConfig {
     /// Object that contains an attribute `items` that contains a list of HTTP headers that CloudFront includes as values for the `Access-Control-Expose-Headers` HTTP response header.
     #[builder(into)]
     #[serde(rename = "accessControlExposeHeaders")]
-    pub r#access_control_expose_headers: Option<Box<super::super::types::cloudfront::ResponseHeadersPolicyCorsConfigAccessControlExposeHeaders>>,
+    pub r#access_control_expose_headers: Box<Option<super::super::types::cloudfront::ResponseHeadersPolicyCorsConfigAccessControlExposeHeaders>>,
     /// A number that CloudFront uses as the value for the `Access-Control-Max-Age` HTTP response header.
     #[builder(into)]
     #[serde(rename = "accessControlMaxAgeSec")]

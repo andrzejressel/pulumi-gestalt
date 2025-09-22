@@ -14,5 +14,5 @@ pub struct IntegrationAccountBatchConfigurationReleaseCriteria {
     /// A `recurrence` block as documented below.
     #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Option<Box<super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteriaRecurrence>>,
+    pub r#recurrence: Box<Option<super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteriaRecurrence>>,
 }

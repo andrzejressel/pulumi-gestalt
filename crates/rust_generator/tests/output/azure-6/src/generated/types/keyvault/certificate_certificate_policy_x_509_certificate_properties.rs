@@ -18,7 +18,7 @@ pub struct CertificateCertificatePolicyX509CertificateProperties {
     /// A `subject_alternative_names` block as defined below.
     #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Option<Box<super::super::types::keyvault::CertificateCertificatePolicyX509CertificatePropertiesSubjectAlternativeNames>>,
+    pub r#subject_alternative_names: Box<Option<super::super::types::keyvault::CertificateCertificatePolicyX509CertificatePropertiesSubjectAlternativeNames>>,
     /// The Certificates Validity Period in Months.
     #[builder(into)]
     #[serde(rename = "validityInMonths")]

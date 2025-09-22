@@ -6,7 +6,7 @@ pub struct ScheduledQueryRulesAlertTrigger {
     /// A `metric_trigger` block as defined above. Trigger condition for metric query rule.
     #[builder(into)]
     #[serde(rename = "metricTrigger")]
-    pub r#metric_trigger: Option<Box<super::super::types::monitoring::ScheduledQueryRulesAlertTriggerMetricTrigger>>,
+    pub r#metric_trigger: Box<Option<super::super::types::monitoring::ScheduledQueryRulesAlertTriggerMetricTrigger>>,
     /// Evaluation operation for rule - 'GreaterThan', GreaterThanOrEqual', 'LessThan', or 'LessThanOrEqual'.
     #[builder(into)]
     #[serde(rename = "operator")]

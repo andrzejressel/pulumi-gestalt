@@ -7,10 +7,10 @@ pub struct RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "abort")]
-    pub r#abort: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyAbort>>,
+    pub r#abort: Box<Option<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyAbort>>,
     /// The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "delay")]
-    pub r#delay: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelay>>,
+    pub r#delay: Box<Option<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelay>>,
 }

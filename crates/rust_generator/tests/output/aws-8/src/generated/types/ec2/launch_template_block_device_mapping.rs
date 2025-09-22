@@ -10,7 +10,7 @@ pub struct LaunchTemplateBlockDeviceMapping {
     /// Configure EBS volume properties.
     #[builder(into)]
     #[serde(rename = "ebs")]
-    pub r#ebs: Option<Box<super::super::types::ec2::LaunchTemplateBlockDeviceMappingEbs>>,
+    pub r#ebs: Box<Option<super::super::types::ec2::LaunchTemplateBlockDeviceMappingEbs>>,
     /// Suppresses the specified device included in the AMI's block device mapping.
     #[builder(into)]
     #[serde(rename = "noDevice")]

@@ -18,7 +18,7 @@ pub struct DistributionConfigurationDistributionAmiDistributionConfiguration {
     /// Configuration block of EC2 launch permissions to apply to the distributed AMI. Detailed below.
     #[builder(into)]
     #[serde(rename = "launchPermission")]
-    pub r#launch_permission: Option<Box<super::super::types::imagebuilder::DistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission>>,
+    pub r#launch_permission: Box<Option<super::super::types::imagebuilder::DistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission>>,
     /// Name to apply to the distributed AMI.
     #[builder(into)]
     #[serde(rename = "name")]

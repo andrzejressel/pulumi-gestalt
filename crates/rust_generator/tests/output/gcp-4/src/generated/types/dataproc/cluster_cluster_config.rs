@@ -9,7 +9,7 @@ pub struct ClusterClusterConfig {
     /// Structure defined below.
     #[builder(into)]
     #[serde(rename = "autoscalingConfig")]
-    pub r#autoscaling_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigAutoscalingConfig>>,
+    pub r#autoscaling_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigAutoscalingConfig>>,
     /// A Dataproc NodeGroup resource is a group of Dataproc cluster nodes that execute an assigned role. 
     /// Structure defined below.
     #[builder(into)]
@@ -25,22 +25,22 @@ pub struct ClusterClusterConfig {
     /// Structure defined below.
     #[builder(into)]
     #[serde(rename = "dataprocMetricConfig")]
-    pub r#dataproc_metric_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigDataprocMetricConfig>>,
+    pub r#dataproc_metric_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigDataprocMetricConfig>>,
     /// The Customer managed encryption keys settings for the cluster.
     /// Structure defined below.
     #[builder(into)]
     #[serde(rename = "encryptionConfig")]
-    pub r#encryption_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigEncryptionConfig>>,
+    pub r#encryption_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigEncryptionConfig>>,
     /// The config settings for port access on the cluster.
     /// Structure defined below.
     #[builder(into)]
     #[serde(rename = "endpointConfig")]
-    pub r#endpoint_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigEndpointConfig>>,
+    pub r#endpoint_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigEndpointConfig>>,
     /// Common config settings for resources of Google Compute Engine cluster
     /// instances, applicable to all instances in the cluster. Structure defined below.
     #[builder(into)]
     #[serde(rename = "gceClusterConfig")]
-    pub r#gce_cluster_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigGceClusterConfig>>,
+    pub r#gce_cluster_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigGceClusterConfig>>,
     /// Commands to execute on each node after config is completed.
     /// You can specify multiple versions of these. Structure defined below.
     #[builder(into)]
@@ -50,18 +50,18 @@ pub struct ClusterClusterConfig {
     /// Structure defined below.
     #[builder(into)]
     #[serde(rename = "lifecycleConfig")]
-    pub r#lifecycle_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigLifecycleConfig>>,
+    pub r#lifecycle_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigLifecycleConfig>>,
     /// The Google Compute Engine config settings for the master instances
     /// in a cluster. Structure defined below.
     #[builder(into)]
     #[serde(rename = "masterConfig")]
-    pub r#master_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigMasterConfig>>,
+    pub r#master_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigMasterConfig>>,
     /// The config setting for metastore service with the cluster.
     /// Structure defined below.
     /// - - -
     #[builder(into)]
     #[serde(rename = "metastoreConfig")]
-    pub r#metastore_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigMetastoreConfig>>,
+    pub r#metastore_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigMetastoreConfig>>,
     /// The Google Compute Engine config settings for the additional
     /// instances in a cluster. Structure defined below.
     /// * **NOTE** : `preemptible_worker_config` is
@@ -69,16 +69,16 @@ pub struct ClusterClusterConfig {
     /// such for legacy/compatibility reasons.
     #[builder(into)]
     #[serde(rename = "preemptibleWorkerConfig")]
-    pub r#preemptible_worker_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfig>>,
+    pub r#preemptible_worker_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfig>>,
     /// Security related configuration. Structure defined below.
     #[builder(into)]
     #[serde(rename = "securityConfig")]
-    pub r#security_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigSecurityConfig>>,
+    pub r#security_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigSecurityConfig>>,
     /// The config settings for software inside the cluster.
     /// Structure defined below.
     #[builder(into)]
     #[serde(rename = "softwareConfig")]
-    pub r#software_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigSoftwareConfig>>,
+    pub r#software_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigSoftwareConfig>>,
     /// The Cloud Storage staging bucket used to stage files,
     /// such as Hadoop jars, between client machines and the cluster.
     /// Note: If you don't explicitly specify a `staging_bucket`
@@ -99,5 +99,5 @@ pub struct ClusterClusterConfig {
     /// in a cluster. Structure defined below.
     #[builder(into)]
     #[serde(rename = "workerConfig")]
-    pub r#worker_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigWorkerConfig>>,
+    pub r#worker_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigWorkerConfig>>,
 }

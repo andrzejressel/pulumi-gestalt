@@ -7,7 +7,7 @@ pub struct SecurityPolicyAdvancedOptionsConfig {
     /// `json_parsing` is set to `STANDARD`. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "jsonCustomConfig")]
-    pub r#json_custom_config: Option<Box<super::super::types::compute::SecurityPolicyAdvancedOptionsConfigJsonCustomConfig>>,
+    pub r#json_custom_config: Box<Option<super::super::types::compute::SecurityPolicyAdvancedOptionsConfigJsonCustomConfig>>,
     /// Whether or not to JSON parse the payload body. Defaults to `DISABLED`.
     /// * `DISABLED` - Don't parse JSON payloads in POST bodies.
     /// * `STANDARD` - Parse JSON payloads in POST bodies.

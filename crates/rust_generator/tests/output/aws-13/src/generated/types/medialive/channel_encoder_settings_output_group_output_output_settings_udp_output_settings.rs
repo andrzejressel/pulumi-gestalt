@@ -17,5 +17,5 @@ pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSetting
     pub r#destination: Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsDestination>,
     #[builder(into)]
     #[serde(rename = "fecOutputSettings")]
-    pub r#fec_output_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings>>,
+    pub r#fec_output_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings>>,
 }

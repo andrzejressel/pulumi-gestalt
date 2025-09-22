@@ -11,12 +11,12 @@ pub struct ServiceTemplateContainerStartupProbe {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "grpc")]
-    pub r#grpc: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerStartupProbeGrpc>>,
+    pub r#grpc: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerStartupProbeGrpc>>,
     /// HTTPGet specifies the http request to perform. Exactly one of HTTPGet or TCPSocket must be specified.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "httpGet")]
-    pub r#http_get: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerStartupProbeHttpGet>>,
+    pub r#http_get: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerStartupProbeHttpGet>>,
     /// Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
     #[builder(into)]
     #[serde(rename = "initialDelaySeconds")]
@@ -29,7 +29,7 @@ pub struct ServiceTemplateContainerStartupProbe {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "tcpSocket")]
-    pub r#tcp_socket: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerStartupProbeTcpSocket>>,
+    pub r#tcp_socket: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerStartupProbeTcpSocket>>,
     /// Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than periodSeconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
     #[builder(into)]
     #[serde(rename = "timeoutSeconds")]

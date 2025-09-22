@@ -6,7 +6,7 @@ pub struct ClusterNodeType {
     /// A `application_ports` block as defined below.
     #[builder(into)]
     #[serde(rename = "applicationPorts")]
-    pub r#application_ports: Option<Box<super::super::types::servicefabric::ClusterNodeTypeApplicationPorts>>,
+    pub r#application_ports: Box<Option<super::super::types::servicefabric::ClusterNodeTypeApplicationPorts>>,
     /// The capacity tags applied to the nodes in the node type, the cluster resource manager uses these tags to understand how much resource a node has.
     #[builder(into)]
     #[serde(rename = "capacities")]
@@ -22,7 +22,7 @@ pub struct ClusterNodeType {
     /// A `ephemeral_ports` block as defined below.
     #[builder(into)]
     #[serde(rename = "ephemeralPorts")]
-    pub r#ephemeral_ports: Option<Box<super::super::types::servicefabric::ClusterNodeTypeEphemeralPorts>>,
+    pub r#ephemeral_ports: Box<Option<super::super::types::servicefabric::ClusterNodeTypeEphemeralPorts>>,
     /// The Port used for the HTTP Endpoint for this Node Type.
     #[builder(into)]
     #[serde(rename = "httpEndpointPort")]

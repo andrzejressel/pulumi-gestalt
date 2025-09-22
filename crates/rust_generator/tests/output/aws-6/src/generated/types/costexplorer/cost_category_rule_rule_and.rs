@@ -10,15 +10,15 @@ pub struct CostCategoryRuleRuleAnd {
     /// Configuration block for the filter that's based on `CostCategory` values. See below.
     #[builder(into)]
     #[serde(rename = "costCategory")]
-    pub r#cost_category: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleAndCostCategory>>,
+    pub r#cost_category: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleAndCostCategory>>,
     /// Configuration block for the specific `Dimension` to use for `Expression`. See below.
     #[builder(into)]
     #[serde(rename = "dimension")]
-    pub r#dimension: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleAndDimension>>,
+    pub r#dimension: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleAndDimension>>,
     /// Return results that match both `Dimension` object.
     #[builder(into)]
     #[serde(rename = "not")]
-    pub r#not: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleAndNot>>,
+    pub r#not: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleAndNot>>,
     /// Return results that match both `Dimension` object.
     #[builder(into)]
     #[serde(rename = "ors")]
@@ -26,5 +26,5 @@ pub struct CostCategoryRuleRuleAnd {
     /// Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleAndTags>>,
+    pub r#tags: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleAndTags>>,
 }

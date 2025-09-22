@@ -14,7 +14,7 @@ pub struct ClusterBrokerNodeGroupInfo {
     /// Information about the cluster access configuration. See below. For security reasons, you can't turn on public access while creating an MSK cluster. However, you can update an existing cluster to make it publicly accessible. You can also create a new cluster and then update it to make it publicly accessible ([documentation](https://docs.aws.amazon.com/msk/latest/developerguide/public-access.html)).
     #[builder(into)]
     #[serde(rename = "connectivityInfo")]
-    pub r#connectivity_info: Option<Box<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfo>>,
+    pub r#connectivity_info: Box<Option<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfo>>,
     /// Specify the instance type to use for the kafka brokersE.g., kafka.m5.large. ([Pricing info](https://aws.amazon.com/msk/pricing/))
     #[builder(into)]
     #[serde(rename = "instanceType")]
@@ -26,5 +26,5 @@ pub struct ClusterBrokerNodeGroupInfo {
     /// A block that contains information about storage volumes attached to MSK broker nodes. See below.
     #[builder(into)]
     #[serde(rename = "storageInfo")]
-    pub r#storage_info: Option<Box<super::super::types::msk::ClusterBrokerNodeGroupInfoStorageInfo>>,
+    pub r#storage_info: Box<Option<super::super::types::msk::ClusterBrokerNodeGroupInfoStorageInfo>>,
 }

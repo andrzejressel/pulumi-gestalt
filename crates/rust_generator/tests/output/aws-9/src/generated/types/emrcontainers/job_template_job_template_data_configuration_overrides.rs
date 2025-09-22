@@ -10,5 +10,5 @@ pub struct JobTemplateJobTemplateDataConfigurationOverrides {
     /// The configurations for monitoring.
     #[builder(into)]
     #[serde(rename = "monitoringConfiguration")]
-    pub r#monitoring_configuration: Option<Box<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfiguration>>,
+    pub r#monitoring_configuration: Box<Option<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfiguration>>,
 }

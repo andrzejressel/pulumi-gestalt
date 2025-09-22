@@ -18,7 +18,7 @@ pub struct FlexibleAppVersionAutomaticScaling {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "diskUtilization")]
-    pub r#disk_utilization: Option<Box<super::super::types::appengine::FlexibleAppVersionAutomaticScalingDiskUtilization>>,
+    pub r#disk_utilization: Box<Option<super::super::types::appengine::FlexibleAppVersionAutomaticScalingDiskUtilization>>,
     /// Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.
     /// Defaults to a runtime-specific value.
     #[builder(into)]
@@ -52,10 +52,10 @@ pub struct FlexibleAppVersionAutomaticScaling {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "networkUtilization")]
-    pub r#network_utilization: Option<Box<super::super::types::appengine::FlexibleAppVersionAutomaticScalingNetworkUtilization>>,
+    pub r#network_utilization: Box<Option<super::super::types::appengine::FlexibleAppVersionAutomaticScalingNetworkUtilization>>,
     /// Target scaling by request utilization.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "requestUtilization")]
-    pub r#request_utilization: Option<Box<super::super::types::appengine::FlexibleAppVersionAutomaticScalingRequestUtilization>>,
+    pub r#request_utilization: Box<Option<super::super::types::appengine::FlexibleAppVersionAutomaticScalingRequestUtilization>>,
 }

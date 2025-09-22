@@ -8,7 +8,7 @@ pub struct BackupPlanBackupRuleStandardSchedule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "backupWindow")]
-    pub r#backup_window: Option<Box<super::super::types::backupdisasterrecovery::BackupPlanBackupRuleStandardScheduleBackupWindow>>,
+    pub r#backup_window: Box<Option<super::super::types::backupdisasterrecovery::BackupPlanBackupRuleStandardScheduleBackupWindow>>,
     /// Specifies days of months like 1, 5, or 14 on which jobs will run.
     #[builder(into)]
     #[serde(rename = "daysOfMonths")]
@@ -41,5 +41,5 @@ pub struct BackupPlanBackupRuleStandardSchedule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "weekDayOfMonth")]
-    pub r#week_day_of_month: Option<Box<super::super::types::backupdisasterrecovery::BackupPlanBackupRuleStandardScheduleWeekDayOfMonth>>,
+    pub r#week_day_of_month: Box<Option<super::super::types::backupdisasterrecovery::BackupPlanBackupRuleStandardScheduleWeekDayOfMonth>>,
 }

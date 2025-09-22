@@ -10,7 +10,7 @@ pub struct ProjectBuildBatchConfig {
     /// Configuration block specifying the restrictions for the batch build. Detailed below.
     #[builder(into)]
     #[serde(rename = "restrictions")]
-    pub r#restrictions: Option<Box<super::super::types::codebuild::ProjectBuildBatchConfigRestrictions>>,
+    pub r#restrictions: Box<Option<super::super::types::codebuild::ProjectBuildBatchConfigRestrictions>>,
     /// Specifies the service role ARN for the batch build project.
     #[builder(into)]
     #[serde(rename = "serviceRole")]

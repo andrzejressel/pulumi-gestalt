@@ -7,5 +7,5 @@ pub struct ServiceTemplateContainerEnvValueSource {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "secretKeyRef")]
-    pub r#secret_key_ref: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerEnvValueSourceSecretKeyRef>>,
+    pub r#secret_key_ref: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerEnvValueSourceSecretKeyRef>>,
 }

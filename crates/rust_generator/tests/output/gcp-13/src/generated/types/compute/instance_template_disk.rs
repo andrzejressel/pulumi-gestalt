@@ -29,7 +29,7 @@ pub struct InstanceTemplateDisk {
     /// Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group. Structure documented below.
     #[builder(into)]
     #[serde(rename = "diskEncryptionKey")]
-    pub r#disk_encryption_key: Option<Box<super::super::types::compute::InstanceTemplateDiskDiskEncryptionKey>>,
+    pub r#disk_encryption_key: Box<Option<super::super::types::compute::InstanceTemplateDiskDiskEncryptionKey>>,
     /// Name of the disk. When not provided, this defaults
     /// to the name of the instance.
     #[builder(into)]
@@ -109,7 +109,7 @@ pub struct InstanceTemplateDisk {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "sourceImageEncryptionKey")]
-    pub r#source_image_encryption_key: Option<Box<super::super::types::compute::InstanceTemplateDiskSourceImageEncryptionKey>>,
+    pub r#source_image_encryption_key: Box<Option<super::super::types::compute::InstanceTemplateDiskSourceImageEncryptionKey>>,
     /// The source snapshot to create this disk.
     /// > **Note:** Either `source`, `source_image`, or `source_snapshot` is **required** in a disk block unless the disk type is `local-ssd`. Check the API [docs](https://cloud.google.com/compute/docs/reference/rest/v1/instanceTemplates/insert) for details.
     #[builder(into)]
@@ -120,7 +120,7 @@ pub struct InstanceTemplateDisk {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "sourceSnapshotEncryptionKey")]
-    pub r#source_snapshot_encryption_key: Option<Box<super::super::types::compute::InstanceTemplateDiskSourceSnapshotEncryptionKey>>,
+    pub r#source_snapshot_encryption_key: Box<Option<super::super::types::compute::InstanceTemplateDiskSourceSnapshotEncryptionKey>>,
     /// The type of GCE disk, can be either `"SCRATCH"` or
     /// `"PERSISTENT"`.
     #[builder(into)]

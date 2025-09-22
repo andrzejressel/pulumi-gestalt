@@ -30,11 +30,11 @@ pub struct ChannelEncoderSettingsVideoDescriptionCodecSettingsH265Settings {
     /// Define the color metadata for the output. H265 Color Space Settings for more details.
     #[builder(into)]
     #[serde(rename = "colorSpaceSettings")]
-    pub r#color_space_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettings>>,
+    pub r#color_space_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettings>>,
     /// Filters to apply to an encode. See H265 Filter Settings for more details.
     #[builder(into)]
     #[serde(rename = "filterSettings")]
-    pub r#filter_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsFilterSettings>>,
+    pub r#filter_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsFilterSettings>>,
     /// Four bit AFD value to write on all frames of video in the output stream.
     #[builder(into)]
     #[serde(rename = "fixedAfd")]
@@ -141,7 +141,7 @@ pub struct ChannelEncoderSettingsVideoDescriptionCodecSettingsH265Settings {
     /// Apply a burned in timecode. See H265 Timecode Burnin Settings for more details.
     #[builder(into)]
     #[serde(rename = "timecodeBurninSettings")]
-    pub r#timecode_burnin_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsTimecodeBurninSettings>>,
+    pub r#timecode_burnin_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsTimecodeBurninSettings>>,
     /// Determines how timecodes should be inserted into the video elementary stream.
     #[builder(into)]
     #[serde(rename = "timecodeInsertion")]

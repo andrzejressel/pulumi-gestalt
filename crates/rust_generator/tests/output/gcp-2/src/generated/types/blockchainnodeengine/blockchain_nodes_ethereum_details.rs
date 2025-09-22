@@ -31,7 +31,7 @@ pub struct BlockchainNodesEthereumDetails {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "gethDetails")]
-    pub r#geth_details: Option<Box<super::super::types::blockchainnodeengine::BlockchainNodesEthereumDetailsGethDetails>>,
+    pub r#geth_details: Box<Option<super::super::types::blockchainnodeengine::BlockchainNodesEthereumDetailsGethDetails>>,
     /// The Ethereum environment being accessed.
     /// Possible values are: `MAINNET`, `TESTNET_GOERLI_PRATER`, `TESTNET_SEPOLIA`.
     #[builder(into)]
@@ -46,5 +46,5 @@ pub struct BlockchainNodesEthereumDetails {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "validatorConfig")]
-    pub r#validator_config: Option<Box<super::super::types::blockchainnodeengine::BlockchainNodesEthereumDetailsValidatorConfig>>,
+    pub r#validator_config: Box<Option<super::super::types::blockchainnodeengine::BlockchainNodesEthereumDetailsValidatorConfig>>,
 }

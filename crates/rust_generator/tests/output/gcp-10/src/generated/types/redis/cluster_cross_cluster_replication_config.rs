@@ -22,7 +22,7 @@ pub struct ClusterCrossClusterReplicationConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "primaryCluster")]
-    pub r#primary_cluster: Option<Box<super::super::types::redis::ClusterCrossClusterReplicationConfigPrimaryCluster>>,
+    pub r#primary_cluster: Box<Option<super::super::types::redis::ClusterCrossClusterReplicationConfigPrimaryCluster>>,
     /// List of secondary clusters that are replicating from this primary cluster. This is allowed to be set only for clusters whose cluster role is of type `PRIMARY`.
     /// Structure is documented below.
     #[builder(into)]

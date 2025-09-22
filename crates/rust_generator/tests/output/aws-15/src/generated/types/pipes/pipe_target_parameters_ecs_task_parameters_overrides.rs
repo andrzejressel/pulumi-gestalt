@@ -14,7 +14,7 @@ pub struct PipeTargetParametersEcsTaskParametersOverrides {
     /// The ephemeral storage setting override for the task.  Detailed below.
     #[builder(into)]
     #[serde(rename = "ephemeralStorage")]
-    pub r#ephemeral_storage: Option<Box<super::super::types::pipes::PipeTargetParametersEcsTaskParametersOverridesEphemeralStorage>>,
+    pub r#ephemeral_storage: Box<Option<super::super::types::pipes::PipeTargetParametersEcsTaskParametersOverridesEphemeralStorage>>,
     /// The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
     #[builder(into)]
     #[serde(rename = "executionRoleArn")]

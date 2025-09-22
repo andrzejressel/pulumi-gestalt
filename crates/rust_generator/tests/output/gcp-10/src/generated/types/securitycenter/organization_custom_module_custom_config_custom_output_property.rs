@@ -12,5 +12,5 @@ pub struct OrganizationCustomModuleCustomConfigCustomOutputProperty {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "valueExpression")]
-    pub r#value_expression: Option<Box<super::super::types::securitycenter::OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression>>,
+    pub r#value_expression: Box<Option<super::super::types::securitycenter::OrganizationCustomModuleCustomConfigCustomOutputPropertyValueExpression>>,
 }

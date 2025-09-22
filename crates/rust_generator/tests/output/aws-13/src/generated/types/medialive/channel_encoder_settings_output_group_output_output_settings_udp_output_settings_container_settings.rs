@@ -6,5 +6,5 @@ pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSetting
     /// M2TS Settings. See [M2TS Settings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html) for more details.
     #[builder(into)]
     #[serde(rename = "m2tsSettings")]
-    pub r#m_2_ts_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2TsSettings>>,
+    pub r#m_2_ts_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2TsSettings>>,
 }

@@ -15,5 +15,5 @@ pub struct DiagnosticSettingMetric {
     pub r#enabled: Option<bool>,
     #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Option<Box<super::super::types::monitoring::DiagnosticSettingMetricRetentionPolicy>>,
+    pub r#retention_policy: Box<Option<super::super::types::monitoring::DiagnosticSettingMetricRetentionPolicy>>,
 }

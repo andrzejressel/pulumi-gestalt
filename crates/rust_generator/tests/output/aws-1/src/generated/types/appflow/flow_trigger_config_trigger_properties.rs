@@ -5,5 +5,5 @@
 pub struct FlowTriggerConfigTriggerProperties {
     #[builder(into)]
     #[serde(rename = "scheduled")]
-    pub r#scheduled: Option<Box<super::super::types::appflow::FlowTriggerConfigTriggerPropertiesScheduled>>,
+    pub r#scheduled: Box<Option<super::super::types::appflow::FlowTriggerConfigTriggerPropertiesScheduled>>,
 }

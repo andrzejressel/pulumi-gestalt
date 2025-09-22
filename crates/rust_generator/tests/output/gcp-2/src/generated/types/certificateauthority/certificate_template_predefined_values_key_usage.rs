@@ -7,12 +7,12 @@ pub struct CertificateTemplatePredefinedValuesKeyUsage {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "baseKeyUsage")]
-    pub r#base_key_usage: Option<Box<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesKeyUsageBaseKeyUsage>>,
+    pub r#base_key_usage: Box<Option<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesKeyUsageBaseKeyUsage>>,
     /// Detailed scenarios in which a key may be used.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "extendedKeyUsage")]
-    pub r#extended_key_usage: Option<Box<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesKeyUsageExtendedKeyUsage>>,
+    pub r#extended_key_usage: Box<Option<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesKeyUsageExtendedKeyUsage>>,
     /// Used to describe extended key usages that are not listed in the KeyUsage.ExtendedKeyUsageOptions message.
     /// Structure is documented below.
     #[builder(into)]

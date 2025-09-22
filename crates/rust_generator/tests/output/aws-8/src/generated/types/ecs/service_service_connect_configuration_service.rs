@@ -22,9 +22,9 @@ pub struct ServiceServiceConnectConfigurationService {
     /// Configuration timeouts for Service Connect
     #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Option<Box<super::super::types::ecs::ServiceServiceConnectConfigurationServiceTimeout>>,
+    pub r#timeout: Box<Option<super::super::types::ecs::ServiceServiceConnectConfigurationServiceTimeout>>,
     /// Configuration for enabling Transport Layer Security (TLS)
     #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Option<Box<super::super::types::ecs::ServiceServiceConnectConfigurationServiceTls>>,
+    pub r#tls: Box<Option<super::super::types::ecs::ServiceServiceConnectConfigurationServiceTls>>,
 }

@@ -38,7 +38,7 @@ pub struct ComputeEnvironmentComputeResources {
     /// The launch template to use for your compute resources. See details below. This parameter isn't applicable to jobs running on Fargate resources, and shouldn't be specified.
     #[builder(into)]
     #[serde(rename = "launchTemplate")]
-    pub r#launch_template: Option<Box<super::super::types::batch::ComputeEnvironmentComputeResourcesLaunchTemplate>>,
+    pub r#launch_template: Box<Option<super::super::types::batch::ComputeEnvironmentComputeResourcesLaunchTemplate>>,
     /// The maximum number of EC2 vCPUs that an environment can reach.
     #[builder(into)]
     #[serde(rename = "maxVcpus")]

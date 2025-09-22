@@ -31,42 +31,42 @@ pub struct DatascanDataQualitySpecRule {
     /// ColumnMap rule which evaluates whether each column value is null.
     #[builder(into)]
     #[serde(rename = "nonNullExpectation")]
-    pub r#non_null_expectation: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecRuleNonNullExpectation>>,
+    pub r#non_null_expectation: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecRuleNonNullExpectation>>,
     /// ColumnMap rule which evaluates whether each column value lies between a specified range.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rangeExpectation")]
-    pub r#range_expectation: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecRuleRangeExpectation>>,
+    pub r#range_expectation: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecRuleRangeExpectation>>,
     /// ColumnMap rule which evaluates whether each column value matches a specified regex.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "regexExpectation")]
-    pub r#regex_expectation: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecRuleRegexExpectation>>,
+    pub r#regex_expectation: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecRuleRegexExpectation>>,
     /// Table rule which evaluates whether each row passes the specified condition.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rowConditionExpectation")]
-    pub r#row_condition_expectation: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecRuleRowConditionExpectation>>,
+    pub r#row_condition_expectation: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecRuleRowConditionExpectation>>,
     /// ColumnMap rule which evaluates whether each column value is contained by a specified set.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "setExpectation")]
-    pub r#set_expectation: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecRuleSetExpectation>>,
+    pub r#set_expectation: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecRuleSetExpectation>>,
     /// Table rule which evaluates whether any row matches invalid state.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sqlAssertion")]
-    pub r#sql_assertion: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecRuleSqlAssertion>>,
+    pub r#sql_assertion: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecRuleSqlAssertion>>,
     /// ColumnAggregate rule which evaluates whether the column aggregate statistic lies between a specified range.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "statisticRangeExpectation")]
-    pub r#statistic_range_expectation: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecRuleStatisticRangeExpectation>>,
+    pub r#statistic_range_expectation: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecRuleStatisticRangeExpectation>>,
     /// Table rule which evaluates whether the provided expression is true.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "tableConditionExpectation")]
-    pub r#table_condition_expectation: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecRuleTableConditionExpectation>>,
+    pub r#table_condition_expectation: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecRuleTableConditionExpectation>>,
     /// The minimum ratio of passing_rows / total_rows required to pass this rule, with a range of [0.0, 1.0]. 0 indicates default value (i.e. 1.0).
     #[builder(into)]
     #[serde(rename = "threshold")]
@@ -74,5 +74,5 @@ pub struct DatascanDataQualitySpecRule {
     /// Row-level rule which evaluates whether each column value is unique.
     #[builder(into)]
     #[serde(rename = "uniquenessExpectation")]
-    pub r#uniqueness_expectation: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecRuleUniquenessExpectation>>,
+    pub r#uniqueness_expectation: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecRuleUniquenessExpectation>>,
 }
