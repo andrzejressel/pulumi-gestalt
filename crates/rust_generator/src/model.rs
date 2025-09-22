@@ -60,31 +60,11 @@ impl TypeExt for Type {
 
     fn get_cycle_safe_rust_type(&self, depth: usize) -> String {
         match self {
-            Type::Boolean => "bool".into(),
-            Type::Integer => "i32".into(),
-            Type::Number => "f64".into(),
-            Type::String => "String".into(),
-            Type::Array(type_) => {
-                format!("Vec<{}>", type_.get_rust_type(depth))
-            }
-            Type::Object(type_) => {
-                format!(
-                    "std::collections::HashMap<String, {}>",
-                    type_.get_rust_type(depth)
-                )
-            }
-            Type::Ref(r) => match r {
-                Ref::Type(tpe) => {
-                    format!(
-                        "Box<{}types::{}>",
-                        access_root(depth),
-                        tpe.get_rust_absolute_name()
-                    )
-                }
-                Ref::Archive => "String".to_string(), //FIXME
-                Ref::Asset => "String".to_string(),   //FIXME
-                Ref::Any => "String".to_string(),     //FIXME
-            },
+            Type::Ref(Ref::Type(tpe)) => format!(
+                "Box<{}types::{}>",
+                access_root(depth),
+                tpe.get_rust_absolute_name()
+            ),
             Type::Option(type_) => format!("Option<{}>", type_.get_cycle_safe_rust_type(depth)),
             Type::DiscriminatedUnion(refs) => format!(
                 "pulumi_gestalt_rust::OneOf{}<{}>",
@@ -94,14 +74,14 @@ impl TypeExt for Type {
                     .collect::<Vec<_>>()
                     .join(", ")
             ),
-            Type::ConstString(s) => {
-                let prefix = if depth > 0 {
-                    "super::".repeat(depth)
-                } else {
-                    "self::".to_string()
-                };
-                format!("{}constants::ConstString{}", prefix, s.to_case(UpperCamel)).to_string()
-            }
+            Type::Boolean
+            | Type::Integer
+            | Type::Number
+            | Type::String
+            | Type::Array(_)
+            | Type::Object(_)
+            | Type::ConstString(_)
+            | Type::Ref(Ref::Asset | Ref::Any | Ref::Archive) => self.get_rust_type(depth),
         }
     }
 
