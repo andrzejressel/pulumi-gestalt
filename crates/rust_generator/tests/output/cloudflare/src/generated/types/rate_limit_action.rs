@@ -10,7 +10,7 @@ pub struct RateLimitAction {
     /// Custom content-type and body to return, this overrides the custom error for the zone. This field is not required. Omission will result in default HTML error page.
     #[builder(into)]
     #[serde(rename = "response")]
-    pub r#response: Box<Option<super::types::RateLimitActionResponse>>,
+    pub r#response: Option<Box<super::types::RateLimitActionResponse>>,
     /// The time in seconds as an integer to perform the mitigation action. This field is required if the `mode` is either `simulate` or `ban`. Must be the same or greater than the period.
     #[builder(into)]
     #[serde(rename = "timeout")]

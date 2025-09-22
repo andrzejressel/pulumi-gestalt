@@ -6,7 +6,7 @@ pub struct BlobInventoryPolicyRule {
     /// A `filter` block as defined above.
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<Option<super::super::types::storage::BlobInventoryPolicyRuleFilter>>,
+    pub r#filter: Option<Box<super::super::types::storage::BlobInventoryPolicyRuleFilter>>,
     /// The format of the inventory files. Possible values are `Csv` and `Parquet`.
     #[builder(into)]
     #[serde(rename = "format")]

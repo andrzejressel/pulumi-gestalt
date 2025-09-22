@@ -7,15 +7,15 @@ pub struct PreventionDiscoveryConfigTargetBigQueryTargetCadence {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "inspectTemplateModifiedCadence")]
-    pub r#inspect_template_modified_cadence: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetCadenceInspectTemplateModifiedCadence>>,
+    pub r#inspect_template_modified_cadence: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetCadenceInspectTemplateModifiedCadence>>,
     /// Governs when to update data profiles when a schema is modified
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "schemaModifiedCadence")]
-    pub r#schema_modified_cadence: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetCadenceSchemaModifiedCadence>>,
+    pub r#schema_modified_cadence: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetCadenceSchemaModifiedCadence>>,
     /// Governs when to update profile when a table is modified.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "tableModifiedCadence")]
-    pub r#table_modified_cadence: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetCadenceTableModifiedCadence>>,
+    pub r#table_modified_cadence: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetCadenceTableModifiedCadence>>,
 }

@@ -10,7 +10,7 @@ pub struct ServiceServiceConnectConfiguration {
     /// Log configuration for the container. See below.
     #[builder(into)]
     #[serde(rename = "logConfiguration")]
-    pub r#log_configuration: Box<Option<super::super::types::ecs::ServiceServiceConnectConfigurationLogConfiguration>>,
+    pub r#log_configuration: Option<Box<super::super::types::ecs::ServiceServiceConnectConfigurationLogConfiguration>>,
     /// Namespace name or ARN of the `aws.servicediscovery.HttpNamespace` for use with Service Connect.
     #[builder(into)]
     #[serde(rename = "namespace")]

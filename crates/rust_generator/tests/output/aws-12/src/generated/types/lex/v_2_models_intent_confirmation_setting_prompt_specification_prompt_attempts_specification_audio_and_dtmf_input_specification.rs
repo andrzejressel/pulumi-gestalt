@@ -6,11 +6,11 @@ pub struct V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpe
     /// Configuration block for the settings on audio input. See `audio_specification`.
     #[builder(into)]
     #[serde(rename = "audioSpecification")]
-    pub r#audio_specification: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecification>>,
+    pub r#audio_specification: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecification>>,
     /// Configuration block for the settings on DTMF input. See `dtmf_specification`.
     #[builder(into)]
     #[serde(rename = "dtmfSpecification")]
-    pub r#dtmf_specification: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification>>,
+    pub r#dtmf_specification: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification>>,
     /// Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.
     #[builder(into)]
     #[serde(rename = "startTimeoutMs")]

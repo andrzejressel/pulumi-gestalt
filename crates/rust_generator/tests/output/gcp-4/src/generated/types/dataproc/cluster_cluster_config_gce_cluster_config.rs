@@ -6,7 +6,7 @@ pub struct ClusterClusterConfigGceClusterConfig {
     /// Confidential Instance Config for clusters using [Confidential VMs](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/confidential-compute)
     #[builder(into)]
     #[serde(rename = "confidentialInstanceConfig")]
-    pub r#confidential_instance_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigConfidentialInstanceConfig>>,
+    pub r#confidential_instance_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigConfidentialInstanceConfig>>,
     /// By default, clusters are not restricted to internal IP addresses,
     /// and will have ephemeral external IP addresses assigned to each instance. If set to true, all
     /// instances in the cluster will only have internal IP addresses. Note: Private Google Access
@@ -29,11 +29,11 @@ pub struct ClusterClusterConfigGceClusterConfig {
     /// Node Group Affinity for sole-tenant clusters.
     #[builder(into)]
     #[serde(rename = "nodeGroupAffinity")]
-    pub r#node_group_affinity: Box<Option<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigNodeGroupAffinity>>,
+    pub r#node_group_affinity: Option<Box<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigNodeGroupAffinity>>,
     /// Reservation Affinity for consuming zonal reservation.
     #[builder(into)]
     #[serde(rename = "reservationAffinity")]
-    pub r#reservation_affinity: Box<Option<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigReservationAffinity>>,
+    pub r#reservation_affinity: Option<Box<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigReservationAffinity>>,
     /// The service account to be used by the Node VMs.
     /// If not specified, the "default" service account is used.
     #[builder(into)]
@@ -52,7 +52,7 @@ pub struct ClusterClusterConfigGceClusterConfig {
     /// - - -
     #[builder(into)]
     #[serde(rename = "shieldedInstanceConfig")]
-    pub r#shielded_instance_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigShieldedInstanceConfig>>,
+    pub r#shielded_instance_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigGceClusterConfigShieldedInstanceConfig>>,
     /// The name or self_link of the Google Compute Engine
     /// subnetwork the cluster will be part of. Conflicts with `network`.
     #[builder(into)]

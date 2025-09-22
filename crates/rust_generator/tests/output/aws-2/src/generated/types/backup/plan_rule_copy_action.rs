@@ -10,5 +10,5 @@ pub struct PlanRuleCopyAction {
     /// The lifecycle defines when a protected resource is copied over to a backup vault and when it expires.  Fields documented above.
     #[builder(into)]
     #[serde(rename = "lifecycle")]
-    pub r#lifecycle: Box<Option<super::super::types::backup::PlanRuleCopyActionLifecycle>>,
+    pub r#lifecycle: Option<Box<super::super::types::backup::PlanRuleCopyActionLifecycle>>,
 }

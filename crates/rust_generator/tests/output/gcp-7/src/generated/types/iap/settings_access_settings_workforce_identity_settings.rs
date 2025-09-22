@@ -11,7 +11,7 @@ pub struct SettingsAccessSettingsWorkforceIdentitySettings {
     /// <a name="nested_oauth2"></a>The `oauth2` block supports:
     #[builder(into)]
     #[serde(rename = "oauth2")]
-    pub r#oauth_2: Box<Option<super::super::types::iap::SettingsAccessSettingsWorkforceIdentitySettingsOauth2>>,
+    pub r#oauth_2: Option<Box<super::super::types::iap::SettingsAccessSettingsWorkforceIdentitySettingsOauth2>>,
     /// The workforce pool resources. Only one workforce pool is accepted.
     #[builder(into)]
     #[serde(rename = "workforcePools")]

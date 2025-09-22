@@ -16,5 +16,5 @@ pub struct BudgetAmount {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "specifiedAmount")]
-    pub r#specified_amount: Box<Option<super::super::types::billing::BudgetAmountSpecifiedAmount>>,
+    pub r#specified_amount: Option<Box<super::super::types::billing::BudgetAmountSpecifiedAmount>>,
 }

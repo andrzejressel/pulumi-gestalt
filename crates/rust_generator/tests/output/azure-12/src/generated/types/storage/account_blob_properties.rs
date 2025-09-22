@@ -18,7 +18,7 @@ pub struct AccountBlobProperties {
     /// A `container_delete_retention_policy` block as defined below.
     #[builder(into)]
     #[serde(rename = "containerDeleteRetentionPolicy")]
-    pub r#container_delete_retention_policy: Box<Option<super::super::types::storage::AccountBlobPropertiesContainerDeleteRetentionPolicy>>,
+    pub r#container_delete_retention_policy: Option<Box<super::super::types::storage::AccountBlobPropertiesContainerDeleteRetentionPolicy>>,
     /// A `cors_rule` block as defined below.
     #[builder(into)]
     #[serde(rename = "corsRules")]
@@ -30,7 +30,7 @@ pub struct AccountBlobProperties {
     /// A `delete_retention_policy` block as defined below.
     #[builder(into)]
     #[serde(rename = "deleteRetentionPolicy")]
-    pub r#delete_retention_policy: Box<Option<super::super::types::storage::AccountBlobPropertiesDeleteRetentionPolicy>>,
+    pub r#delete_retention_policy: Option<Box<super::super::types::storage::AccountBlobPropertiesDeleteRetentionPolicy>>,
     /// Is the last access time based tracking enabled? Default to `false`.
     /// 
     /// > **Note:** This field cannot be configured when `kind` is set to `Storage` (V1).
@@ -44,7 +44,7 @@ pub struct AccountBlobProperties {
     /// > **Note:** `restore_policy` can not be configured when `dns_endpoint_type` is `AzureDnsZone`.
     #[builder(into)]
     #[serde(rename = "restorePolicy")]
-    pub r#restore_policy: Box<Option<super::super::types::storage::AccountBlobPropertiesRestorePolicy>>,
+    pub r#restore_policy: Option<Box<super::super::types::storage::AccountBlobPropertiesRestorePolicy>>,
     /// Is versioning enabled? Default to `false`.
     /// 
     /// > **Note:** This field cannot be configured when `kind` is set to `Storage` (V1).

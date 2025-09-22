@@ -6,7 +6,7 @@ pub struct BucketReplicationConfigRuleFilter {
     /// Configuration block for specifying rule filters. This element is required only if you specify more than one filter. See and below for more details.
     #[builder(into)]
     #[serde(rename = "and")]
-    pub r#and: Box<Option<super::super::types::s3::BucketReplicationConfigRuleFilterAnd>>,
+    pub r#and: Option<Box<super::super::types::s3::BucketReplicationConfigRuleFilterAnd>>,
     /// Object key name prefix that identifies subset of objects to which the rule applies. Must be less than or equal to 1024 characters in length.
     #[builder(into)]
     #[serde(rename = "prefix")]
@@ -14,5 +14,5 @@ pub struct BucketReplicationConfigRuleFilter {
     /// Configuration block for specifying a tag key and value. See below.
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<Option<super::super::types::s3::BucketReplicationConfigRuleFilterTag>>,
+    pub r#tag: Option<Box<super::super::types::s3::BucketReplicationConfigRuleFilterTag>>,
 }

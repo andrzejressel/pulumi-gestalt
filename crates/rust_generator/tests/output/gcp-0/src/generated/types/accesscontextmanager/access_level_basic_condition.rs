@@ -9,7 +9,7 @@ pub struct AccessLevelBasicCondition {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "devicePolicy")]
-    pub r#device_policy: Box<Option<super::super::types::accesscontextmanager::AccessLevelBasicConditionDevicePolicy>>,
+    pub r#device_policy: Option<Box<super::super::types::accesscontextmanager::AccessLevelBasicConditionDevicePolicy>>,
     /// A list of CIDR block IP subnetwork specification. May be IPv4
     /// or IPv6.
     /// Note that for a CIDR IP address block, the specified IP address

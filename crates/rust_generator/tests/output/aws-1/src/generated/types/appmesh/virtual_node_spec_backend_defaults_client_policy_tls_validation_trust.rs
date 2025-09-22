@@ -6,13 +6,13 @@ pub struct VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust {
     /// TLS validation context trust for an AWS Certificate Manager (ACM) certificate.
     #[builder(into)]
     #[serde(rename = "acm")]
-    pub r#acm: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm>>,
+    pub r#acm: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcm>>,
     /// TLS validation context trust for a local file certificate.
     #[builder(into)]
     #[serde(rename = "file")]
-    pub r#file: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile>>,
+    pub r#file: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFile>>,
     /// TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
     #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds>>,
+    pub r#sds: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSds>>,
 }

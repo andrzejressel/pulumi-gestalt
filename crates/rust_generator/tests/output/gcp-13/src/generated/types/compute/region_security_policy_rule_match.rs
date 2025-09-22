@@ -8,12 +8,12 @@ pub struct RegionSecurityPolicyRuleMatch {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "config")]
-    pub r#config: Box<Option<super::super::types::compute::RegionSecurityPolicyRuleMatchConfig>>,
+    pub r#config: Option<Box<super::super::types::compute::RegionSecurityPolicyRuleMatchConfig>>,
     /// User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "expr")]
-    pub r#expr: Box<Option<super::super::types::compute::RegionSecurityPolicyRuleMatchExpr>>,
+    pub r#expr: Option<Box<super::super::types::compute::RegionSecurityPolicyRuleMatchExpr>>,
     /// Preconfigured versioned expression. If this field is specified, config must also be specified.
     /// Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding srcIpRange field in config.
     /// Possible values are: `SRC_IPS_V1`.

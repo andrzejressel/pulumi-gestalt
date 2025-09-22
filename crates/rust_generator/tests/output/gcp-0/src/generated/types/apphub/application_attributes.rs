@@ -12,7 +12,7 @@ pub struct ApplicationAttributes {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "criticality")]
-    pub r#criticality: Box<Option<super::super::types::apphub::ApplicationAttributesCriticality>>,
+    pub r#criticality: Option<Box<super::super::types::apphub::ApplicationAttributesCriticality>>,
     /// Optional. Developer team that owns development and coding.
     /// Structure is documented below.
     #[builder(into)]
@@ -22,7 +22,7 @@ pub struct ApplicationAttributes {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "environment")]
-    pub r#environment: Box<Option<super::super::types::apphub::ApplicationAttributesEnvironment>>,
+    pub r#environment: Option<Box<super::super::types::apphub::ApplicationAttributesEnvironment>>,
     /// Optional. Operator team that ensures runtime and operations.
     /// Structure is documented below.
     #[builder(into)]

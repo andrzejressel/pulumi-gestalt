@@ -6,11 +6,11 @@ pub struct SourceControlSlotGithubActionConfiguration {
     /// A `code_configuration` block as detailed below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "codeConfiguration")]
-    pub r#code_configuration: Box<Option<super::super::types::appservice::SourceControlSlotGithubActionConfigurationCodeConfiguration>>,
+    pub r#code_configuration: Option<Box<super::super::types::appservice::SourceControlSlotGithubActionConfigurationCodeConfiguration>>,
     /// A `container_configuration` block as detailed below.
     #[builder(into)]
     #[serde(rename = "containerConfiguration")]
-    pub r#container_configuration: Box<Option<super::super::types::appservice::SourceControlSlotGithubActionConfigurationContainerConfiguration>>,
+    pub r#container_configuration: Option<Box<super::super::types::appservice::SourceControlSlotGithubActionConfigurationContainerConfiguration>>,
     /// Should the service generate the GitHub Action Workflow file. Defaults to `true` Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "generateWorkflowFile")]

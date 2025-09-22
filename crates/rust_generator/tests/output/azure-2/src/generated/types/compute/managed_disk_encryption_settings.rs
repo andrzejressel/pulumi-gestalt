@@ -10,5 +10,5 @@ pub struct ManagedDiskEncryptionSettings {
     /// A `key_encryption_key` block as defined below.
     #[builder(into)]
     #[serde(rename = "keyEncryptionKey")]
-    pub r#key_encryption_key: Box<Option<super::super::types::compute::ManagedDiskEncryptionSettingsKeyEncryptionKey>>,
+    pub r#key_encryption_key: Option<Box<super::super::types::compute::ManagedDiskEncryptionSettingsKeyEncryptionKey>>,
 }

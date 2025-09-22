@@ -13,7 +13,7 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "gcs")]
-    pub r#gcs: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSourceGcs>>,
+    pub r#gcs: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSourceGcs>>,
     /// A local path within the VM to use.
     #[builder(into)]
     #[serde(rename = "localPath")]
@@ -22,5 +22,5 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "remote")]
-    pub r#remote: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSourceRemote>>,
+    pub r#remote: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSourceRemote>>,
 }

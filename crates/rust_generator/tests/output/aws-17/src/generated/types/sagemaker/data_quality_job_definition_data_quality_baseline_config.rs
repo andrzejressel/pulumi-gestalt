@@ -6,9 +6,9 @@ pub struct DataQualityJobDefinitionDataQualityBaselineConfig {
     /// The constraints resource for a monitoring job. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "constraintsResource")]
-    pub r#constraints_resource: Box<Option<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityBaselineConfigConstraintsResource>>,
+    pub r#constraints_resource: Option<Box<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityBaselineConfigConstraintsResource>>,
     /// The statistics resource for a monitoring job. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "statisticsResource")]
-    pub r#statistics_resource: Box<Option<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityBaselineConfigStatisticsResource>>,
+    pub r#statistics_resource: Option<Box<super::super::types::sagemaker::DataQualityJobDefinitionDataQualityBaselineConfigStatisticsResource>>,
 }

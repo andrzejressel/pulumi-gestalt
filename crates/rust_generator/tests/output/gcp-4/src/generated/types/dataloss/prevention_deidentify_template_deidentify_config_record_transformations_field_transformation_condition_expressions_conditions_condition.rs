@@ -17,5 +17,5 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValue>>,
+    pub r#value: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValue>>,
 }

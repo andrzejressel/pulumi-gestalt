@@ -10,7 +10,7 @@ pub struct DomainDefaultSpaceSettings {
     /// Details about the POSIX identity that is used for file system operations. See `custom_posix_user_config` Block below.
     #[builder(into)]
     #[serde(rename = "customPosixUserConfig")]
-    pub r#custom_posix_user_config: Box<Option<super::super::types::sagemaker::DomainDefaultSpaceSettingsCustomPosixUserConfig>>,
+    pub r#custom_posix_user_config: Option<Box<super::super::types::sagemaker::DomainDefaultSpaceSettingsCustomPosixUserConfig>>,
     /// The execution role for the space.
     #[builder(into)]
     #[serde(rename = "executionRole")]
@@ -18,15 +18,15 @@ pub struct DomainDefaultSpaceSettings {
     /// The settings for the JupyterLab application. See `jupyter_lab_app_settings` Block below.
     #[builder(into)]
     #[serde(rename = "jupyterLabAppSettings")]
-    pub r#jupyter_lab_app_settings: Box<Option<super::super::types::sagemaker::DomainDefaultSpaceSettingsJupyterLabAppSettings>>,
+    pub r#jupyter_lab_app_settings: Option<Box<super::super::types::sagemaker::DomainDefaultSpaceSettingsJupyterLabAppSettings>>,
     /// The Jupyter server's app settings. See `jupyter_server_app_settings` Block below.
     #[builder(into)]
     #[serde(rename = "jupyterServerAppSettings")]
-    pub r#jupyter_server_app_settings: Box<Option<super::super::types::sagemaker::DomainDefaultSpaceSettingsJupyterServerAppSettings>>,
+    pub r#jupyter_server_app_settings: Option<Box<super::super::types::sagemaker::DomainDefaultSpaceSettingsJupyterServerAppSettings>>,
     /// The kernel gateway app settings. See `kernel_gateway_app_settings` Block below.
     #[builder(into)]
     #[serde(rename = "kernelGatewayAppSettings")]
-    pub r#kernel_gateway_app_settings: Box<Option<super::super::types::sagemaker::DomainDefaultSpaceSettingsKernelGatewayAppSettings>>,
+    pub r#kernel_gateway_app_settings: Option<Box<super::super::types::sagemaker::DomainDefaultSpaceSettingsKernelGatewayAppSettings>>,
     /// The security groups for the Amazon Virtual Private Cloud that the space uses for communication.
     #[builder(into)]
     #[serde(rename = "securityGroups")]
@@ -34,5 +34,5 @@ pub struct DomainDefaultSpaceSettings {
     /// The storage settings for a private space. See `space_storage_settings` Block below.
     #[builder(into)]
     #[serde(rename = "spaceStorageSettings")]
-    pub r#space_storage_settings: Box<Option<super::super::types::sagemaker::DomainDefaultSpaceSettingsSpaceStorageSettings>>,
+    pub r#space_storage_settings: Option<Box<super::super::types::sagemaker::DomainDefaultSpaceSettingsSpaceStorageSettings>>,
 }

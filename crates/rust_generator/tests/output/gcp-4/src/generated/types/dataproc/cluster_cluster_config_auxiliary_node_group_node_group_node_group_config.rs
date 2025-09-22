@@ -11,7 +11,7 @@ pub struct ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig {
     /// Disk Config
     #[builder(into)]
     #[serde(rename = "diskConfig")]
-    pub r#disk_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfigDiskConfig>>,
+    pub r#disk_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfigDiskConfig>>,
     /// List of auxiliary node group instance names which have been assigned to the cluster.
     #[builder(into)]
     #[serde(rename = "instanceNames")]

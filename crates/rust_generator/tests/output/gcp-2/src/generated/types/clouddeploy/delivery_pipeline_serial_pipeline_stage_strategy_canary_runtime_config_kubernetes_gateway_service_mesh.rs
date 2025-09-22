@@ -18,7 +18,7 @@ pub struct DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKuberne
     /// Optional. Route destinations allow configuring the Gateway API HTTPRoute to be deployed to additional clusters. This option is available for multi-cluster service mesh set ups that require the route to exist in the clusters that call the service. If unspecified, the HTTPRoute will only be deployed to the Target cluster.
     #[builder(into)]
     #[serde(rename = "routeDestinations")]
-    pub r#route_destinations: Box<Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMeshRouteDestinations>>,
+    pub r#route_destinations: Option<Box<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMeshRouteDestinations>>,
     /// Optional. The time to wait for route updates to propagate. The maximum configurable time is 3 hours, in seconds format. If unspecified, there is no wait time.
     #[builder(into)]
     #[serde(rename = "routeUpdateWaitTime")]

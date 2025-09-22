@@ -10,5 +10,5 @@ pub struct DataSourceHttpConfigAuthorizationConfig {
     /// Identity and Access Management (IAM) settings. See `aws_iam_config` Block for details.
     #[builder(into)]
     #[serde(rename = "awsIamConfig")]
-    pub r#aws_iam_config: Box<Option<super::super::types::appsync::DataSourceHttpConfigAuthorizationConfigAwsIamConfig>>,
+    pub r#aws_iam_config: Option<Box<super::super::types::appsync::DataSourceHttpConfigAuthorizationConfigAwsIamConfig>>,
 }

@@ -17,11 +17,11 @@ pub struct InstanceAutoscalingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "autoscalingLimits")]
-    pub r#autoscaling_limits: Box<Option<super::super::types::spanner::InstanceAutoscalingConfigAutoscalingLimits>>,
+    pub r#autoscaling_limits: Option<Box<super::super::types::spanner::InstanceAutoscalingConfigAutoscalingLimits>>,
     /// Defines scale in controls to reduce the risk of response latency
     /// and outages due to abrupt scale-in events
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "autoscalingTargets")]
-    pub r#autoscaling_targets: Box<Option<super::super::types::spanner::InstanceAutoscalingConfigAutoscalingTargets>>,
+    pub r#autoscaling_targets: Option<Box<super::super::types::spanner::InstanceAutoscalingConfigAutoscalingTargets>>,
 }

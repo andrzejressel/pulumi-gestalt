@@ -18,7 +18,7 @@ pub struct TriggerAction {
     /// Specifies configuration properties of a job run notification. See Notification Property details below.
     #[builder(into)]
     #[serde(rename = "notificationProperty")]
-    pub r#notification_property: Box<Option<super::super::types::glue::TriggerActionNotificationProperty>>,
+    pub r#notification_property: Option<Box<super::super::types::glue::TriggerActionNotificationProperty>>,
     /// The name of the Security Configuration structure to be used with this action.
     #[builder(into)]
     #[serde(rename = "securityConfiguration")]

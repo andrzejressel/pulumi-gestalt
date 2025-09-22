@@ -19,7 +19,7 @@ pub struct ClusterOutpostConfig {
     /// The `control_plane_placement` configuration block supports the following arguments:
     #[builder(into)]
     #[serde(rename = "controlPlanePlacement")]
-    pub r#control_plane_placement: Box<Option<super::super::types::eks::ClusterOutpostConfigControlPlanePlacement>>,
+    pub r#control_plane_placement: Option<Box<super::super::types::eks::ClusterOutpostConfigControlPlanePlacement>>,
     /// The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. This argument is a list of arns, but only a single Outpost ARN is supported currently.
     #[builder(into)]
     #[serde(rename = "outpostArns")]

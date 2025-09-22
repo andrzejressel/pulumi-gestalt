@@ -6,13 +6,13 @@ pub struct ApplicationApplicationConfigurationFlinkApplicationConfiguration {
     /// Describes an application's checkpointing configuration.
     #[builder(into)]
     #[serde(rename = "checkpointConfiguration")]
-    pub r#checkpoint_configuration: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration>>,
+    pub r#checkpoint_configuration: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration>>,
     /// Describes configuration parameters for CloudWatch logging for an application.
     #[builder(into)]
     #[serde(rename = "monitoringConfiguration")]
-    pub r#monitoring_configuration: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration>>,
+    pub r#monitoring_configuration: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration>>,
     /// Describes parameters for how an application executes multiple tasks simultaneously.
     #[builder(into)]
     #[serde(rename = "parallelismConfiguration")]
-    pub r#parallelism_configuration: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration>>,
+    pub r#parallelism_configuration: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration>>,
 }

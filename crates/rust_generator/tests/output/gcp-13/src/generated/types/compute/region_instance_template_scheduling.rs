@@ -31,7 +31,7 @@ pub struct RegionInstanceTemplateScheduling {
     /// The duration of the instance. Instance will run and be terminated after then, the termination action could be defined in `instance_termination_action`. Only support `DELETE` `instance_termination_action` at this point. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "maxRunDuration")]
-    pub r#max_run_duration: Box<Option<super::super::types::compute::RegionInstanceTemplateSchedulingMaxRunDuration>>,
+    pub r#max_run_duration: Option<Box<super::super::types::compute::RegionInstanceTemplateSchedulingMaxRunDuration>>,
     /// Minimum number of cpus for the instance.
     #[builder(into)]
     #[serde(rename = "minNodeCpus")]
@@ -52,7 +52,7 @@ pub struct RegionInstanceTemplateScheduling {
     /// Defines the behaviour for instances with the instance_termination_action.
     #[builder(into)]
     #[serde(rename = "onInstanceStopAction")]
-    pub r#on_instance_stop_action: Box<Option<super::super::types::compute::RegionInstanceTemplateSchedulingOnInstanceStopAction>>,
+    pub r#on_instance_stop_action: Option<Box<super::super::types::compute::RegionInstanceTemplateSchedulingOnInstanceStopAction>>,
     /// Allows instance to be preempted. This defaults to
     /// false. Read more on this
     /// [here](https://cloud.google.com/compute/docs/instances/preemptible).

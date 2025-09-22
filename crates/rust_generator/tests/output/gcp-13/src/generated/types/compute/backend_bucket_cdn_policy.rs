@@ -12,7 +12,7 @@ pub struct BackendBucketCdnPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cacheKeyPolicy")]
-    pub r#cache_key_policy: Box<Option<super::super::types::compute::BackendBucketCdnPolicyCacheKeyPolicy>>,
+    pub r#cache_key_policy: Option<Box<super::super::types::compute::BackendBucketCdnPolicyCacheKeyPolicy>>,
     /// Specifies the cache setting for all responses from this backend.
     /// The possible values are: USE_ORIGIN_HEADERS, FORCE_CACHE_ALL and CACHE_ALL_STATIC
     /// Possible values are: `USE_ORIGIN_HEADERS`, `FORCE_CACHE_ALL`, `CACHE_ALL_STATIC`.

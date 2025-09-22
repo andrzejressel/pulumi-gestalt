@@ -7,12 +7,12 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResource {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "exec")]
-    pub r#exec: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceExec>>,
+    pub r#exec: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceExec>>,
     /// File resource Structure is
     /// documented below.
     #[builder(into)]
     #[serde(rename = "file")]
-    pub r#file: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceFile>>,
+    pub r#file: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceFile>>,
     /// The id of the resource with the following restrictions:
     /// 
     /// *   Must contain only lowercase letters, numbers, and hyphens.
@@ -27,10 +27,10 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResource {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "pkg")]
-    pub r#pkg: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkg>>,
+    pub r#pkg: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkg>>,
     /// Package repository resource Structure is
     /// documented below.
     #[builder(into)]
     #[serde(rename = "repository")]
-    pub r#repository: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceRepository>>,
+    pub r#repository: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourceRepository>>,
 }

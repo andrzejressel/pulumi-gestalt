@@ -7,7 +7,7 @@ pub struct AccessBoundaryPolicyRuleAccessBoundaryRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "availabilityCondition")]
-    pub r#availability_condition: Box<Option<super::super::types::iam::AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition>>,
+    pub r#availability_condition: Option<Box<super::super::types::iam::AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition>>,
     /// A list of permissions that may be allowed for use on the specified resource.
     #[builder(into)]
     #[serde(rename = "availablePermissions")]

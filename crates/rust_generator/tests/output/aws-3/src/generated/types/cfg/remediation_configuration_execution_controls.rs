@@ -6,5 +6,5 @@ pub struct RemediationConfigurationExecutionControls {
     /// Configuration block for SSM controls. See below.
     #[builder(into)]
     #[serde(rename = "ssmControls")]
-    pub r#ssm_controls: Box<Option<super::super::types::cfg::RemediationConfigurationExecutionControlsSsmControls>>,
+    pub r#ssm_controls: Option<Box<super::super::types::cfg::RemediationConfigurationExecutionControlsSsmControls>>,
 }

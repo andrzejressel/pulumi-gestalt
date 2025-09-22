@@ -7,7 +7,7 @@ pub struct DenyPolicyRuleDenyRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "denialCondition")]
-    pub r#denial_condition: Box<Option<super::super::types::iam::DenyPolicyRuleDenyRuleDenialCondition>>,
+    pub r#denial_condition: Option<Box<super::super::types::iam::DenyPolicyRuleDenyRuleDenialCondition>>,
     /// The permissions that are explicitly denied by this rule. Each permission uses the format `{service-fqdn}/{resource}.{verb}`,
     /// where `{service-fqdn}` is the fully qualified domain name for the service. For example, `iam.googleapis.com/roles.list`.
     #[builder(into)]

@@ -11,7 +11,7 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "headerAction")]
-    pub r#header_action: Box<Option<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderAction>>,
+    pub r#header_action: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderAction>>,
     /// The list of criteria for matching attributes of a request to this routeRule. This list has OR semantics: the request matches this routeRule when any of the matchRules are satisfied. However predicates
     /// within a given matchRule have AND semantics. All predicates within a matchRule must match for the request to match the rule.
     /// Structure is documented below.
@@ -34,10 +34,10 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "routeAction")]
-    pub r#route_action: Box<Option<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteAction>>,
+    pub r#route_action: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteAction>>,
     /// The URL redirect configuration for requests that match this route.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "urlRedirect")]
-    pub r#url_redirect: Box<Option<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleUrlRedirect>>,
+    pub r#url_redirect: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleUrlRedirect>>,
 }

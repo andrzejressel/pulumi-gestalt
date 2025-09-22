@@ -7,7 +7,7 @@ pub struct NodePoolUpgradeSettings {
     /// Structure is documented below
     #[builder(into)]
     #[serde(rename = "blueGreenSettings")]
-    pub r#blue_green_settings: Box<Option<super::super::types::container::NodePoolUpgradeSettingsBlueGreenSettings>>,
+    pub r#blue_green_settings: Option<Box<super::super::types::container::NodePoolUpgradeSettingsBlueGreenSettings>>,
     /// The number of additional nodes that can be added to the node pool during
     /// an upgrade. Increasing `max_surge` raises the number of nodes that can be upgraded simultaneously.
     /// Can be set to 0 or greater.

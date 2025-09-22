@@ -36,7 +36,7 @@ pub struct KubernetesClusterDefaultNodePool {
     /// A `kubelet_config` block as defined below. `temporary_name_for_rotation` must be specified when changing this block.
     #[builder(into)]
     #[serde(rename = "kubeletConfig")]
-    pub r#kubelet_config: Box<Option<super::super::types::containerservice::KubernetesClusterDefaultNodePoolKubeletConfig>>,
+    pub r#kubelet_config: Option<Box<super::super::types::containerservice::KubernetesClusterDefaultNodePoolKubeletConfig>>,
     /// The type of disk used by kubelet. Possible values are `OS` and `Temporary`.
     #[builder(into)]
     #[serde(rename = "kubeletDiskType")]
@@ -44,7 +44,7 @@ pub struct KubernetesClusterDefaultNodePool {
     /// A `linux_os_config` block as defined below. `temporary_name_for_rotation` must be specified when changing this block.
     #[builder(into)]
     #[serde(rename = "linuxOsConfig")]
-    pub r#linux_os_config: Box<Option<super::super::types::containerservice::KubernetesClusterDefaultNodePoolLinuxOsConfig>>,
+    pub r#linux_os_config: Option<Box<super::super::types::containerservice::KubernetesClusterDefaultNodePoolLinuxOsConfig>>,
     #[builder(into)]
     #[serde(rename = "maxCount")]
     pub r#max_count: Option<i32>,
@@ -69,7 +69,7 @@ pub struct KubernetesClusterDefaultNodePool {
     /// A `node_network_profile` block as documented below.
     #[builder(into)]
     #[serde(rename = "nodeNetworkProfile")]
-    pub r#node_network_profile: Box<Option<super::super::types::containerservice::KubernetesClusterDefaultNodePoolNodeNetworkProfile>>,
+    pub r#node_network_profile: Option<Box<super::super::types::containerservice::KubernetesClusterDefaultNodePoolNodeNetworkProfile>>,
     /// Should nodes in this Node Pool have a Public IP Address? `temporary_name_for_rotation` must be specified when changing this property.
     #[builder(into)]
     #[serde(rename = "nodePublicIpEnabled")]
@@ -139,7 +139,7 @@ pub struct KubernetesClusterDefaultNodePool {
     /// A `upgrade_settings` block as documented below.
     #[builder(into)]
     #[serde(rename = "upgradeSettings")]
-    pub r#upgrade_settings: Box<Option<super::super::types::containerservice::KubernetesClusterDefaultNodePoolUpgradeSettings>>,
+    pub r#upgrade_settings: Option<Box<super::super::types::containerservice::KubernetesClusterDefaultNodePoolUpgradeSettings>>,
     /// The size of the Virtual Machine, such as `Standard_DS2_v2`. `temporary_name_for_rotation` must be specified when attempting a resize.
     #[builder(into)]
     #[serde(rename = "vmSize")]

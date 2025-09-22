@@ -50,5 +50,5 @@ pub struct ServicePerimetersServicePerimeterSpec {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vpcAccessibleServices")]
-    pub r#vpc_accessible_services: Box<Option<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterSpecVpcAccessibleServices>>,
+    pub r#vpc_accessible_services: Option<Box<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterSpecVpcAccessibleServices>>,
 }

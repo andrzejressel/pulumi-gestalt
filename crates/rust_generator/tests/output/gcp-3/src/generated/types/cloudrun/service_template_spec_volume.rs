@@ -7,12 +7,12 @@ pub struct ServiceTemplateSpecVolume {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "csi")]
-    pub r#csi: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecVolumeCsi>>,
+    pub r#csi: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecVolumeCsi>>,
     /// Ephemeral storage which can be backed by real disks (HD, SSD), network storage or memory (i.e. tmpfs). For now only in memory (tmpfs) is supported. It is ephemeral in the sense that when the sandbox is taken down, the data is destroyed with it (it does not persist across sandbox runs).
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "emptyDir")]
-    pub r#empty_dir: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecVolumeEmptyDir>>,
+    pub r#empty_dir: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecVolumeEmptyDir>>,
     /// Volume's name.
     #[builder(into)]
     #[serde(rename = "name")]
@@ -22,12 +22,12 @@ pub struct ServiceTemplateSpecVolume {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "nfs")]
-    pub r#nfs: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecVolumeNfs>>,
+    pub r#nfs: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecVolumeNfs>>,
     /// The secret's value will be presented as the content of a file whose
     /// name is defined in the item path. If no items are defined, the name of
     /// the file is the secret_name.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "secret")]
-    pub r#secret: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecVolumeSecret>>,
+    pub r#secret: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecVolumeSecret>>,
 }

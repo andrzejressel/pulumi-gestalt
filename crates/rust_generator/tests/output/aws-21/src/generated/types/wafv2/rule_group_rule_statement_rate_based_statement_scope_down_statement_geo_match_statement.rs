@@ -10,5 +10,5 @@ pub struct RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchSta
     /// The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. See Forwarded IP Config below for details.
     #[builder(into)]
     #[serde(rename = "forwardedIpConfig")]
-    pub r#forwarded_ip_config: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfig>>,
+    pub r#forwarded_ip_config: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfig>>,
 }

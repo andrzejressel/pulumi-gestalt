@@ -11,7 +11,7 @@ pub struct FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubCon
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "containerResources")]
-    pub r#container_resources: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources>>,
+    pub r#container_resources: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources>>,
     /// Pod affinity configuration.
     /// Possible values are: `AFFINITY_UNSPECIFIED`, `NO_AFFINITY`, `ANTI_AFFINITY`.
     #[builder(into)]

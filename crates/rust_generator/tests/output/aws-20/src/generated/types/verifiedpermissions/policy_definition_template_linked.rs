@@ -10,9 +10,9 @@ pub struct PolicyDefinitionTemplateLinked {
     /// The principal of the template linked policy.
     #[builder(into)]
     #[serde(rename = "principal")]
-    pub r#principal: Box<Option<super::super::types::verifiedpermissions::PolicyDefinitionTemplateLinkedPrincipal>>,
+    pub r#principal: Option<Box<super::super::types::verifiedpermissions::PolicyDefinitionTemplateLinkedPrincipal>>,
     /// The resource of the template linked policy.
     #[builder(into)]
     #[serde(rename = "resource")]
-    pub r#resource: Box<Option<super::super::types::verifiedpermissions::PolicyDefinitionTemplateLinkedResource>>,
+    pub r#resource: Option<Box<super::super::types::verifiedpermissions::PolicyDefinitionTemplateLinkedResource>>,
 }

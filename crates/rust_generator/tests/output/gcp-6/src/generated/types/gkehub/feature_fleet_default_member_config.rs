@@ -7,15 +7,15 @@ pub struct FeatureFleetDefaultMemberConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "configmanagement")]
-    pub r#configmanagement: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigConfigmanagement>>,
+    pub r#configmanagement: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigConfigmanagement>>,
     /// Service Mesh spec
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "mesh")]
-    pub r#mesh: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigMesh>>,
+    pub r#mesh: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigMesh>>,
     /// Policy Controller spec
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "policycontroller")]
-    pub r#policycontroller: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontroller>>,
+    pub r#policycontroller: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontroller>>,
 }

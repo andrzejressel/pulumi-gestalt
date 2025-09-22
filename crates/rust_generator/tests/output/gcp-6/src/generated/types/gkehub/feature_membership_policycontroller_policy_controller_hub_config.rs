@@ -30,7 +30,7 @@ pub struct FeatureMembershipPolicycontrollerPolicyControllerHubConfig {
     /// Specifies the backends Policy Controller should export metrics to. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "monitoring")]
-    pub r#monitoring: Box<Option<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring>>,
+    pub r#monitoring: Option<Box<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring>>,
     /// Enables mutation in policy controller. If true, mutation CRDs, webhook, and controller deployment will be deployed to the cluster.
     #[builder(into)]
     #[serde(rename = "mutationEnabled")]
@@ -38,7 +38,7 @@ pub struct FeatureMembershipPolicycontrollerPolicyControllerHubConfig {
     /// Specifies the desired policy content on the cluster. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "policyContent")]
-    pub r#policy_content: Box<Option<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContent>>,
+    pub r#policy_content: Option<Box<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContent>>,
     /// Enables the ability to use Constraint Templates that reference to objects other than the object currently being evaluated.
     #[builder(into)]
     #[serde(rename = "referentialRulesEnabled")]

@@ -6,7 +6,7 @@ pub struct VirtualNodeSpecListenerTlsValidation {
     /// SANs for a TLS validation context.
     #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTlsValidationSubjectAlternativeNames>>,
+    pub r#subject_alternative_names: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTlsValidationSubjectAlternativeNames>>,
     /// TLS validation context trust.
     #[builder(into)]
     #[serde(rename = "trust")]

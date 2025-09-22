@@ -6,7 +6,7 @@ pub struct AutomationRuleCriteriaUpdatedAt {
     /// A configuration block of the date range for the date filter. See date_range below for more details.
     #[builder(into)]
     #[serde(rename = "dateRange")]
-    pub r#date_range: Box<Option<super::super::types::securityhub::AutomationRuleCriteriaUpdatedAtDateRange>>,
+    pub r#date_range: Option<Box<super::super::types::securityhub::AutomationRuleCriteriaUpdatedAtDateRange>>,
     /// An end date for the date filter. Required with `start` if `date_range` is not specified.
     #[builder(into)]
     #[serde(rename = "end")]

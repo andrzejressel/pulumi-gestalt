@@ -30,7 +30,7 @@ pub struct ChannelInputAttachmentInputSettings {
     /// Input settings. See Network Input Settings for more details.
     #[builder(into)]
     #[serde(rename = "networkInputSettings")]
-    pub r#network_input_settings: Box<Option<super::super::types::medialive::ChannelInputAttachmentInputSettingsNetworkInputSettings>>,
+    pub r#network_input_settings: Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsNetworkInputSettings>>,
     /// PID from which to read SCTE-35 messages.
     #[builder(into)]
     #[serde(rename = "scte35Pid")]
@@ -45,5 +45,5 @@ pub struct ChannelInputAttachmentInputSettings {
     pub r#source_end_behavior: Option<String>,
     #[builder(into)]
     #[serde(rename = "videoSelector")]
-    pub r#video_selector: Box<Option<super::super::types::medialive::ChannelInputAttachmentInputSettingsVideoSelector>>,
+    pub r#video_selector: Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsVideoSelector>>,
 }

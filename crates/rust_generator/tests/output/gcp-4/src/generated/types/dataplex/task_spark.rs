@@ -15,7 +15,7 @@ pub struct TaskSpark {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "infrastructureSpec")]
-    pub r#infrastructure_spec: Box<Option<super::super::types::dataplex::TaskSparkInfrastructureSpec>>,
+    pub r#infrastructure_spec: Option<Box<super::super::types::dataplex::TaskSparkInfrastructureSpec>>,
     /// The name of the driver's main class. The jar file that contains the class must be in the default CLASSPATH or specified in jar_file_uris. The execution args are passed in as a sequence of named process arguments (--key=value).
     #[builder(into)]
     #[serde(rename = "mainClass")]

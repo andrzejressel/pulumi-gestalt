@@ -14,5 +14,5 @@ pub struct ApiImport {
     /// A `wsdl_selector` block as defined below, which allows you to limit the import of a WSDL to only a subset of the document. This can only be specified when `content_format` is `wsdl` or `wsdl-link`.
     #[builder(into)]
     #[serde(rename = "wsdlSelector")]
-    pub r#wsdl_selector: Box<Option<super::super::types::apimanagement::ApiImportWsdlSelector>>,
+    pub r#wsdl_selector: Option<Box<super::super::types::apimanagement::ApiImportWsdlSelector>>,
 }

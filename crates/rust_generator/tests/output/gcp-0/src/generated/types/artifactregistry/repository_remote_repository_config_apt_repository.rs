@@ -7,5 +7,5 @@ pub struct RepositoryRemoteRepositoryConfigAptRepository {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "publicRepository")]
-    pub r#public_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigAptRepositoryPublicRepository>>,
+    pub r#public_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigAptRepositoryPublicRepository>>,
 }

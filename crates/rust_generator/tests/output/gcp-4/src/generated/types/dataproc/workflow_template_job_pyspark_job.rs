@@ -22,7 +22,7 @@ pub struct WorkflowTemplateJobPysparkJob {
     /// The runtime log config for job execution.
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Box<Option<super::super::types::dataproc::WorkflowTemplateJobPysparkJobLoggingConfig>>,
+    pub r#logging_config: Option<Box<super::super::types::dataproc::WorkflowTemplateJobPysparkJobLoggingConfig>>,
     /// Required. The HCFS URI of the main Python file to use as the driver. Must be a .py file.
     #[builder(into)]
     #[serde(rename = "mainPythonFileUri")]

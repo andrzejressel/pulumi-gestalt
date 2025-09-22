@@ -23,5 +23,5 @@ pub struct HostingCustomDomainCert {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "verification")]
-    pub r#verification: Box<Option<super::super::types::firebase::HostingCustomDomainCertVerification>>,
+    pub r#verification: Option<Box<super::super::types::firebase::HostingCustomDomainCertVerification>>,
 }

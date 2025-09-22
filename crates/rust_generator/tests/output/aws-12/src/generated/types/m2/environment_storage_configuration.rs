@@ -5,8 +5,8 @@
 pub struct EnvironmentStorageConfiguration {
     #[builder(into)]
     #[serde(rename = "efs")]
-    pub r#efs: Box<Option<super::super::types::m2::EnvironmentStorageConfigurationEfs>>,
+    pub r#efs: Option<Box<super::super::types::m2::EnvironmentStorageConfigurationEfs>>,
     #[builder(into)]
     #[serde(rename = "fsx")]
-    pub r#fsx: Box<Option<super::super::types::m2::EnvironmentStorageConfigurationFsx>>,
+    pub r#fsx: Option<Box<super::super::types::m2::EnvironmentStorageConfigurationFsx>>,
 }

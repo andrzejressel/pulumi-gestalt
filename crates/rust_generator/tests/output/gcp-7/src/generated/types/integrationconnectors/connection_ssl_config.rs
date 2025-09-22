@@ -17,22 +17,22 @@ pub struct ConnectionSslConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "clientCertificate")]
-    pub r#client_certificate: Box<Option<super::super::types::integrationconnectors::ConnectionSslConfigClientCertificate>>,
+    pub r#client_certificate: Option<Box<super::super::types::integrationconnectors::ConnectionSslConfigClientCertificate>>,
     /// Client Private Key
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "clientPrivateKey")]
-    pub r#client_private_key: Box<Option<super::super::types::integrationconnectors::ConnectionSslConfigClientPrivateKey>>,
+    pub r#client_private_key: Option<Box<super::super::types::integrationconnectors::ConnectionSslConfigClientPrivateKey>>,
     /// Secret containing the passphrase protecting the Client Private Key
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "clientPrivateKeyPass")]
-    pub r#client_private_key_pass: Box<Option<super::super::types::integrationconnectors::ConnectionSslConfigClientPrivateKeyPass>>,
+    pub r#client_private_key_pass: Option<Box<super::super::types::integrationconnectors::ConnectionSslConfigClientPrivateKeyPass>>,
     /// Private Server Certificate. Needs to be specified if trust model is PRIVATE.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "privateServerCertificate")]
-    pub r#private_server_certificate: Box<Option<super::super::types::integrationconnectors::ConnectionSslConfigPrivateServerCertificate>>,
+    pub r#private_server_certificate: Option<Box<super::super::types::integrationconnectors::ConnectionSslConfigPrivateServerCertificate>>,
     /// Type of Server Cert (PEM/JKS/.. etc.)
     /// Possible values are: `PEM`.
     #[builder(into)]

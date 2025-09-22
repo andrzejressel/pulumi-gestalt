@@ -38,7 +38,7 @@ pub struct PagesProjectDeploymentConfigsPreview {
     /// Configuration for placement in the Cloudflare Pages project.
     #[builder(into)]
     #[serde(rename = "placement")]
-    pub r#placement: Box<Option<super::types::PagesProjectDeploymentConfigsPreviewPlacement>>,
+    pub r#placement: Option<Box<super::types::PagesProjectDeploymentConfigsPreviewPlacement>>,
     /// R2 Buckets used for Pages Functions. Defaults to `map[]`.
     #[builder(into)]
     #[serde(rename = "r2Buckets")]

@@ -6,7 +6,7 @@ pub struct DomainClusterConfig {
     /// Configuration block containing cold storage configuration. Detailed below.
     #[builder(into)]
     #[serde(rename = "coldStorageOptions")]
-    pub r#cold_storage_options: Box<Option<super::super::types::elasticsearch::DomainClusterConfigColdStorageOptions>>,
+    pub r#cold_storage_options: Option<Box<super::super::types::elasticsearch::DomainClusterConfigColdStorageOptions>>,
     /// Number of dedicated main nodes in the cluster.
     #[builder(into)]
     #[serde(rename = "dedicatedMasterCount")]
@@ -42,7 +42,7 @@ pub struct DomainClusterConfig {
     /// Configuration block containing zone awareness settings. Detailed below.
     #[builder(into)]
     #[serde(rename = "zoneAwarenessConfig")]
-    pub r#zone_awareness_config: Box<Option<super::super::types::elasticsearch::DomainClusterConfigZoneAwarenessConfig>>,
+    pub r#zone_awareness_config: Option<Box<super::super::types::elasticsearch::DomainClusterConfigZoneAwarenessConfig>>,
     /// Whether zone awareness is enabled, set to `true` for multi-az deployment. To enable awareness with three Availability Zones, the `availability_zone_count` within the `zone_awareness_config` must be set to `3`.
     #[builder(into)]
     #[serde(rename = "zoneAwarenessEnabled")]

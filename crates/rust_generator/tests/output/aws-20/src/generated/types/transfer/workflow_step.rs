@@ -6,23 +6,23 @@ pub struct WorkflowStep {
     /// Details for a step that performs a file copy. See Copy Step Details below.
     #[builder(into)]
     #[serde(rename = "copyStepDetails")]
-    pub r#copy_step_details: Box<Option<super::super::types::transfer::WorkflowStepCopyStepDetails>>,
+    pub r#copy_step_details: Option<Box<super::super::types::transfer::WorkflowStepCopyStepDetails>>,
     /// Details for a step that invokes a lambda function.
     #[builder(into)]
     #[serde(rename = "customStepDetails")]
-    pub r#custom_step_details: Box<Option<super::super::types::transfer::WorkflowStepCustomStepDetails>>,
+    pub r#custom_step_details: Option<Box<super::super::types::transfer::WorkflowStepCustomStepDetails>>,
     /// Details for a step that decrypts the file.
     #[builder(into)]
     #[serde(rename = "decryptStepDetails")]
-    pub r#decrypt_step_details: Box<Option<super::super::types::transfer::WorkflowStepDecryptStepDetails>>,
+    pub r#decrypt_step_details: Option<Box<super::super::types::transfer::WorkflowStepDecryptStepDetails>>,
     /// Details for a step that deletes the file.
     #[builder(into)]
     #[serde(rename = "deleteStepDetails")]
-    pub r#delete_step_details: Box<Option<super::super::types::transfer::WorkflowStepDeleteStepDetails>>,
+    pub r#delete_step_details: Option<Box<super::super::types::transfer::WorkflowStepDeleteStepDetails>>,
     /// Details for a step that creates one or more tags.
     #[builder(into)]
     #[serde(rename = "tagStepDetails")]
-    pub r#tag_step_details: Box<Option<super::super::types::transfer::WorkflowStepTagStepDetails>>,
+    pub r#tag_step_details: Option<Box<super::super::types::transfer::WorkflowStepTagStepDetails>>,
     #[builder(into)]
     #[serde(rename = "type")]
     pub r#type_: String,

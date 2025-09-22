@@ -22,7 +22,7 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoD
     /// The SAPOData OAuth properties required for OAuth type authentication.
     #[builder(into)]
     #[serde(rename = "oauthProperties")]
-    pub r#oauth_properties: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataOauthProperties>>,
+    pub r#oauth_properties: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataOauthProperties>>,
     /// The port number of the SAPOData instance.
     #[builder(into)]
     #[serde(rename = "portNumber")]

@@ -15,7 +15,7 @@ pub struct RegionUrlMapPathMatcher {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "defaultUrlRedirect")]
-    pub r#default_url_redirect: Box<Option<super::super::types::compute::RegionUrlMapPathMatcherDefaultUrlRedirect>>,
+    pub r#default_url_redirect: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherDefaultUrlRedirect>>,
     /// An optional description of this resource.
     #[builder(into)]
     #[serde(rename = "description")]

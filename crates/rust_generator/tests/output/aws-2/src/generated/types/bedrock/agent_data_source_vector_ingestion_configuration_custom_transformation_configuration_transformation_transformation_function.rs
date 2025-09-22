@@ -6,5 +6,5 @@ pub struct AgentDataSourceVectorIngestionConfigurationCustomTransformationConfig
     /// The configuration of the lambda function.
     #[builder(into)]
     #[serde(rename = "transformationLambdaConfiguration")]
-    pub r#transformation_lambda_configuration: Box<Option<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationTransformationFunctionTransformationLambdaConfiguration>>,
+    pub r#transformation_lambda_configuration: Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationTransformationFunctionTransformationLambdaConfiguration>>,
 }

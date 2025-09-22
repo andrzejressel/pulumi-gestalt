@@ -7,5 +7,5 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTr
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cryptoKey")]
-    pub r#crypto_key: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKey>>,
+    pub r#crypto_key: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKey>>,
 }

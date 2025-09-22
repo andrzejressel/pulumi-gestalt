@@ -10,5 +10,5 @@ pub struct RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetRefere
     /// The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. See IPSet Forwarded IP Config below for more details.
     #[builder(into)]
     #[serde(rename = "ipSetForwardedIpConfig")]
-    pub r#ip_set_forwarded_ip_config: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfig>>,
+    pub r#ip_set_forwarded_ip_config: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfig>>,
 }

@@ -6,7 +6,7 @@ pub struct SlotAuthSettings {
     /// A `active_directory` block as defined below.
     #[builder(into)]
     #[serde(rename = "activeDirectory")]
-    pub r#active_directory: Box<Option<super::super::types::appservice::SlotAuthSettingsActiveDirectory>>,
+    pub r#active_directory: Option<Box<super::super::types::appservice::SlotAuthSettingsActiveDirectory>>,
     /// Login parameters to send to the OpenID Connect authorization endpoint when a user logs in. Each parameter must be in the form "key=value".
     #[builder(into)]
     #[serde(rename = "additionalLoginParams")]
@@ -28,11 +28,11 @@ pub struct SlotAuthSettings {
     /// A `facebook` block as defined below.
     #[builder(into)]
     #[serde(rename = "facebook")]
-    pub r#facebook: Box<Option<super::super::types::appservice::SlotAuthSettingsFacebook>>,
+    pub r#facebook: Option<Box<super::super::types::appservice::SlotAuthSettingsFacebook>>,
     /// A `google` block as defined below.
     #[builder(into)]
     #[serde(rename = "google")]
-    pub r#google: Box<Option<super::super::types::appservice::SlotAuthSettingsGoogle>>,
+    pub r#google: Option<Box<super::super::types::appservice::SlotAuthSettingsGoogle>>,
     /// Issuer URI. When using Azure Active Directory, this value is the URI of the directory tenant, e.g. <https://sts.windows.net/{tenant-guid}/>.
     #[builder(into)]
     #[serde(rename = "issuer")]
@@ -40,7 +40,7 @@ pub struct SlotAuthSettings {
     /// A `microsoft` block as defined below.
     #[builder(into)]
     #[serde(rename = "microsoft")]
-    pub r#microsoft: Box<Option<super::super::types::appservice::SlotAuthSettingsMicrosoft>>,
+    pub r#microsoft: Option<Box<super::super::types::appservice::SlotAuthSettingsMicrosoft>>,
     /// The runtime version of the Authentication/Authorization module.
     #[builder(into)]
     #[serde(rename = "runtimeVersion")]
@@ -56,7 +56,7 @@ pub struct SlotAuthSettings {
     /// A `twitter` block as defined below.
     #[builder(into)]
     #[serde(rename = "twitter")]
-    pub r#twitter: Box<Option<super::super::types::appservice::SlotAuthSettingsTwitter>>,
+    pub r#twitter: Option<Box<super::super::types::appservice::SlotAuthSettingsTwitter>>,
     /// The action to take when an unauthenticated client attempts to access the app. Possible values are `AllowAnonymous` and `RedirectToLoginPage`.
     #[builder(into)]
     #[serde(rename = "unauthenticatedClientAction")]

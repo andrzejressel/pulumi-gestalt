@@ -14,7 +14,7 @@ pub struct NetworkServicePccRule {
     /// A `qos_policy` block as defined below. The QoS policy to use for packets matching this rule. If this field is not specified then the Service will define the QoS settings.
     #[builder(into)]
     #[serde(rename = "qosPolicy")]
-    pub r#qos_policy: Box<Option<super::super::types::mobile::NetworkServicePccRuleQosPolicy>>,
+    pub r#qos_policy: Option<Box<super::super::types::mobile::NetworkServicePccRuleQosPolicy>>,
     /// A `service_data_flow_template` block as defined below. The set of service data flow templates to use for this PCC rule.
     #[builder(into)]
     #[serde(rename = "serviceDataFlowTemplates")]

@@ -10,7 +10,7 @@ pub struct OntapVolumeSnaplockConfiguration {
     /// The configuration object for setting the autocommit period of files in an FSx for ONTAP SnapLock volume. See `autocommit_period` Block for details.
     #[builder(into)]
     #[serde(rename = "autocommitPeriod")]
-    pub r#autocommit_period: Box<Option<super::super::types::fsx::OntapVolumeSnaplockConfigurationAutocommitPeriod>>,
+    pub r#autocommit_period: Option<Box<super::super::types::fsx::OntapVolumeSnaplockConfigurationAutocommitPeriod>>,
     /// Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock Enterprise volume. Valid values: `DISABLED`, `ENABLED`, `PERMANENTLY_DISABLED`. The default value is `DISABLED`.
     #[builder(into)]
     #[serde(rename = "privilegedDelete")]
@@ -18,7 +18,7 @@ pub struct OntapVolumeSnaplockConfiguration {
     /// The retention period of an FSx for ONTAP SnapLock volume. See `retention_period` Block for details.
     #[builder(into)]
     #[serde(rename = "retentionPeriod")]
-    pub r#retention_period: Box<Option<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriod>>,
+    pub r#retention_period: Option<Box<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriod>>,
     /// Specifies the retention mode of an FSx for ONTAP SnapLock volume. After it is set, it can't be changed. Valid values: `COMPLIANCE`, `ENTERPRISE`.
     #[builder(into)]
     #[serde(rename = "snaplockType")]

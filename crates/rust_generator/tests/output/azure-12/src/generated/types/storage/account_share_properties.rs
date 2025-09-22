@@ -10,9 +10,9 @@ pub struct AccountShareProperties {
     /// A `retention_policy` block as defined below.
     #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Box<Option<super::super::types::storage::AccountSharePropertiesRetentionPolicy>>,
+    pub r#retention_policy: Option<Box<super::super::types::storage::AccountSharePropertiesRetentionPolicy>>,
     /// A `smb` block as defined below.
     #[builder(into)]
     #[serde(rename = "smb")]
-    pub r#smb: Box<Option<super::super::types::storage::AccountSharePropertiesSmb>>,
+    pub r#smb: Option<Box<super::super::types::storage::AccountSharePropertiesSmb>>,
 }

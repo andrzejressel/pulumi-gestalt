@@ -12,7 +12,7 @@ pub struct ConnectionEventingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "authConfig")]
-    pub r#auth_config: Box<Option<super::super::types::integrationconnectors::ConnectionEventingConfigAuthConfig>>,
+    pub r#auth_config: Option<Box<super::super::types::integrationconnectors::ConnectionEventingConfigAuthConfig>>,
     /// Enrichment Enabled.
     #[builder(into)]
     #[serde(rename = "enrichmentEnabled")]

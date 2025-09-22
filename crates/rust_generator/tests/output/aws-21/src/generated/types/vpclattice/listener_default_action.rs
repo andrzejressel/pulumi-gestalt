@@ -5,7 +5,7 @@
 pub struct ListenerDefaultAction {
     #[builder(into)]
     #[serde(rename = "fixedResponse")]
-    pub r#fixed_response: Box<Option<super::super::types::vpclattice::ListenerDefaultActionFixedResponse>>,
+    pub r#fixed_response: Option<Box<super::super::types::vpclattice::ListenerDefaultActionFixedResponse>>,
     /// Route requests to one or more target groups. See Forward blocks below.
     /// 
     /// > **NOTE:** You must specify exactly one of the following argument blocks: `fixed_response` or `forward`.

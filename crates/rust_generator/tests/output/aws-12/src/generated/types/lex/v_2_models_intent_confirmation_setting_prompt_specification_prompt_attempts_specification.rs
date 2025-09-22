@@ -14,7 +14,7 @@ pub struct V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpe
     /// Configuration block for settings on audio and DTMF input. See `audio_and_dtmf_input_specification`.
     #[builder(into)]
     #[serde(rename = "audioAndDtmfInputSpecification")]
-    pub r#audio_and_dtmf_input_specification: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecification>>,
+    pub r#audio_and_dtmf_input_specification: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecification>>,
     /// Which attempt to configure. Valid values are `Initial`, `Retry1`, `Retry2`, `Retry3`, `Retry4`, `Retry5`.
     #[builder(into)]
     #[serde(rename = "mapBlockKey")]
@@ -22,5 +22,5 @@ pub struct V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpe
     /// Configuration block for the settings on text input. See `text_input_specification`.
     #[builder(into)]
     #[serde(rename = "textInputSpecification")]
-    pub r#text_input_specification: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationTextInputSpecification>>,
+    pub r#text_input_specification: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationTextInputSpecification>>,
 }

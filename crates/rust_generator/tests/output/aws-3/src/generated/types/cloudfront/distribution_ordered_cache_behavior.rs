@@ -30,7 +30,7 @@ pub struct DistributionOrderedCacheBehavior {
     /// The forwarded values configuration that specifies how CloudFront handles query strings, cookies and headers (maximum one).
     #[builder(into)]
     #[serde(rename = "forwardedValues")]
-    pub r#forwarded_values: Box<Option<super::super::types::cloudfront::DistributionOrderedCacheBehaviorForwardedValues>>,
+    pub r#forwarded_values: Option<Box<super::super::types::cloudfront::DistributionOrderedCacheBehaviorForwardedValues>>,
     /// A config block that triggers a cloudfront function with specific actions (maximum 2).
     #[builder(into)]
     #[serde(rename = "functionAssociations")]

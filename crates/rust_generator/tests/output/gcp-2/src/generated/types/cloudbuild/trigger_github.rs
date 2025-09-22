@@ -22,10 +22,10 @@ pub struct TriggerGithub {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pullRequest")]
-    pub r#pull_request: Box<Option<super::super::types::cloudbuild::TriggerGithubPullRequest>>,
+    pub r#pull_request: Option<Box<super::super::types::cloudbuild::TriggerGithubPullRequest>>,
     /// filter to match changes in refs, like branches or tags. Specify only one of `pull_request` or `push`.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "push")]
-    pub r#push: Box<Option<super::super::types::cloudbuild::TriggerGithubPush>>,
+    pub r#push: Option<Box<super::super::types::cloudbuild::TriggerGithubPush>>,
 }

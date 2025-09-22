@@ -21,7 +21,7 @@ pub struct RegionSecurityPolicyRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Box<Option<super::super::types::compute::RegionSecurityPolicyRuleMatch>>,
+    pub r#match_: Option<Box<super::super::types::compute::RegionSecurityPolicyRuleMatch>>,
     /// A match condition that incoming packets are evaluated against for CLOUD_ARMOR_NETWORK security policies. If it matches, the corresponding 'action' is enforced.
     /// The match criteria for a rule consists of built-in match fields (like 'srcIpRanges') and potentially multiple user-defined match fields ('userDefinedFields').
     /// Field values may be extracted directly from the packet or derived from it (e.g. 'srcRegionCodes'). Some fields may not be present in every packet (e.g. 'srcPorts'). A user-defined field is only present if the base header is found in the packet and the entire field is in bounds.
@@ -33,13 +33,13 @@ pub struct RegionSecurityPolicyRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "networkMatch")]
-    pub r#network_match: Box<Option<super::super::types::compute::RegionSecurityPolicyRuleNetworkMatch>>,
+    pub r#network_match: Option<Box<super::super::types::compute::RegionSecurityPolicyRuleNetworkMatch>>,
     /// Preconfigured WAF configuration to be applied for the rule.
     /// If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "preconfiguredWafConfig")]
-    pub r#preconfigured_waf_config: Box<Option<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfig>>,
+    pub r#preconfigured_waf_config: Option<Box<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfig>>,
     /// If set to true, the specified action is not enforced.
     #[builder(into)]
     #[serde(rename = "preview")]
@@ -54,5 +54,5 @@ pub struct RegionSecurityPolicyRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rateLimitOptions")]
-    pub r#rate_limit_options: Box<Option<super::super::types::compute::RegionSecurityPolicyRuleRateLimitOptions>>,
+    pub r#rate_limit_options: Option<Box<super::super::types::compute::RegionSecurityPolicyRuleRateLimitOptions>>,
 }

@@ -6,7 +6,7 @@ pub struct AiFeatureOnlineStoreFeatureviewVectorSearchConfig {
     /// Configuration options for using brute force search, which simply implements the standard linear search in the database for each query. It is primarily meant for benchmarking and to generate the ground truth for approximate search.
     #[builder(into)]
     #[serde(rename = "bruteForceConfig")]
-    pub r#brute_force_config: Box<Option<super::super::types::vertex::AiFeatureOnlineStoreFeatureviewVectorSearchConfigBruteForceConfig>>,
+    pub r#brute_force_config: Option<Box<super::super::types::vertex::AiFeatureOnlineStoreFeatureviewVectorSearchConfigBruteForceConfig>>,
     /// Column of crowding. This column contains crowding attribute which is a constraint on a neighbor list produced by nearest neighbor search requiring that no more than some value k' of the k neighbors returned have the same value of crowdingAttribute.
     #[builder(into)]
     #[serde(rename = "crowdingColumn")]
@@ -33,5 +33,5 @@ pub struct AiFeatureOnlineStoreFeatureviewVectorSearchConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "treeAhConfig")]
-    pub r#tree_ah_config: Box<Option<super::super::types::vertex::AiFeatureOnlineStoreFeatureviewVectorSearchConfigTreeAhConfig>>,
+    pub r#tree_ah_config: Option<Box<super::super::types::vertex::AiFeatureOnlineStoreFeatureviewVectorSearchConfigTreeAhConfig>>,
 }

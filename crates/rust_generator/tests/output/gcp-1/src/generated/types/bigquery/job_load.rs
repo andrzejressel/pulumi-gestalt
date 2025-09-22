@@ -31,7 +31,7 @@ pub struct JobLoad {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "destinationEncryptionConfiguration")]
-    pub r#destination_encryption_configuration: Box<Option<super::super::types::bigquery::JobLoadDestinationEncryptionConfiguration>>,
+    pub r#destination_encryption_configuration: Option<Box<super::super::types::bigquery::JobLoadDestinationEncryptionConfiguration>>,
     /// The destination table to load the data into.
     /// Structure is documented below.
     #[builder(into)]
@@ -82,7 +82,7 @@ pub struct JobLoad {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "parquetOptions")]
-    pub r#parquet_options: Box<Option<super::super::types::bigquery::JobLoadParquetOptions>>,
+    pub r#parquet_options: Option<Box<super::super::types::bigquery::JobLoadParquetOptions>>,
     /// If sourceFormat is set to "DATASTORE_BACKUP", indicates which entity properties to load into BigQuery from a Cloud Datastore backup.
     /// Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties.
     /// If any named property isn't found in the Cloud Datastore backup, an invalid error is returned in the job result.
@@ -136,7 +136,7 @@ pub struct JobLoad {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "timePartitioning")]
-    pub r#time_partitioning: Box<Option<super::super::types::bigquery::JobLoadTimePartitioning>>,
+    pub r#time_partitioning: Option<Box<super::super::types::bigquery::JobLoadTimePartitioning>>,
     /// Specifies the action that occurs if the destination table already exists. The following values are supported:
     /// WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data and uses the schema from the query result.
     /// WRITE_APPEND: If the table already exists, BigQuery appends the data to the table.

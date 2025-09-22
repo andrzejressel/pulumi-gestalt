@@ -14,7 +14,7 @@ pub struct DeliveryPipelineSerialPipelineStage {
     /// Optional. The strategy to use for a `Rollout` to this stage.
     #[builder(into)]
     #[serde(rename = "strategy")]
-    pub r#strategy: Box<Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategy>>,
+    pub r#strategy: Option<Box<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategy>>,
     /// The target_id to which this stage points. This field refers exclusively to the last segment of a target name. For example, this field would just be `my-target` (rather than `projects/project/locations/location/targets/my-target`). The location of the `Target` is inferred to be the same as the location of the `DeliveryPipeline` that contains this `Stage`.
     #[builder(into)]
     #[serde(rename = "targetId")]

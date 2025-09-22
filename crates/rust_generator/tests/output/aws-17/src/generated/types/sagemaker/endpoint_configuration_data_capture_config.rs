@@ -6,7 +6,7 @@ pub struct EndpointConfigurationDataCaptureConfig {
     /// The content type headers to capture. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "captureContentTypeHeader")]
-    pub r#capture_content_type_header: Box<Option<super::super::types::sagemaker::EndpointConfigurationDataCaptureConfigCaptureContentTypeHeader>>,
+    pub r#capture_content_type_header: Option<Box<super::super::types::sagemaker::EndpointConfigurationDataCaptureConfigCaptureContentTypeHeader>>,
     /// Specifies what data to capture. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "captureOptions")]

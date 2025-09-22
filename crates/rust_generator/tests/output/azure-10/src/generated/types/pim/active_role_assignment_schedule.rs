@@ -6,7 +6,7 @@ pub struct ActiveRoleAssignmentSchedule {
     /// An `expiration` block as defined above.
     #[builder(into)]
     #[serde(rename = "expiration")]
-    pub r#expiration: Box<Option<super::super::types::pim::ActiveRoleAssignmentScheduleExpiration>>,
+    pub r#expiration: Option<Box<super::super::types::pim::ActiveRoleAssignmentScheduleExpiration>>,
     /// The start date/time of the role assignment. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "startDateTime")]

@@ -14,7 +14,7 @@ pub struct VirtualNetworkSubnet {
     /// One or more `delegation` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "delegation")]
-    pub r#delegation: Box<Option<super::super::types::network::VirtualNetworkSubnetDelegation>>,
+    pub r#delegation: Option<Box<super::super::types::network::VirtualNetworkSubnetDelegation>>,
     /// The ID of this subnet.
     #[builder(into)]
     #[serde(rename = "id")]

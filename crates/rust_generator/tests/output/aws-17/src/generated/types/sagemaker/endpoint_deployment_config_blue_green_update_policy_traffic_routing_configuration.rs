@@ -6,11 +6,11 @@ pub struct EndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurat
     /// Batch size for the first step to turn on traffic on the new endpoint fleet. Value must be less than or equal to 50% of the variant's total instance count. See Canary Size.
     #[builder(into)]
     #[serde(rename = "canarySize")]
-    pub r#canary_size: Box<Option<super::super::types::sagemaker::EndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize>>,
+    pub r#canary_size: Option<Box<super::super::types::sagemaker::EndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize>>,
     /// Batch size for each step to turn on traffic on the new endpoint fleet. Value must be 10-50% of the variant's total instance count. See Linear Step Size.
     #[builder(into)]
     #[serde(rename = "linearStepSize")]
-    pub r#linear_step_size: Box<Option<super::super::types::sagemaker::EndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize>>,
+    pub r#linear_step_size: Option<Box<super::super::types::sagemaker::EndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize>>,
     /// Traffic routing strategy type. Valid values are: `ALL_AT_ONCE`, `CANARY`, and `LINEAR`.
     #[builder(into)]
     #[serde(rename = "type")]

@@ -7,12 +7,12 @@ pub struct SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformance {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "availability")]
-    pub r#availability: Box<Option<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability>>,
+    pub r#availability: Option<Box<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailability>>,
     /// Parameters for a latency threshold SLI.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "latency")]
-    pub r#latency: Box<Option<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency>>,
+    pub r#latency: Option<Box<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency>>,
     /// An optional set of locations to which this SLI is relevant.
     /// Telemetry from other locations will not be used to calculate
     /// performance for this SLI. If omitted, this SLI applies to all

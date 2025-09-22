@@ -6,7 +6,7 @@ pub struct EndpointConfigurationAsyncInferenceConfig {
     /// Configures the behavior of the client used by Amazon SageMaker to interact with the model container during asynchronous inference.
     #[builder(into)]
     #[serde(rename = "clientConfig")]
-    pub r#client_config: Box<Option<super::super::types::sagemaker::EndpointConfigurationAsyncInferenceConfigClientConfig>>,
+    pub r#client_config: Option<Box<super::super::types::sagemaker::EndpointConfigurationAsyncInferenceConfigClientConfig>>,
     /// Specifies the configuration for asynchronous inference invocation outputs.
     #[builder(into)]
     #[serde(rename = "outputConfig")]

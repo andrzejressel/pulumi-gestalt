@@ -11,7 +11,7 @@ pub struct ConnectionProfileOracle {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "forwardSshConnectivity")]
-    pub r#forward_ssh_connectivity: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileOracleForwardSshConnectivity>>,
+    pub r#forward_ssh_connectivity: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileOracleForwardSshConnectivity>>,
     /// Required. The IP or hostname of the source Oracle database.
     #[builder(into)]
     #[serde(rename = "host")]
@@ -35,17 +35,17 @@ pub struct ConnectionProfileOracle {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "privateConnectivity")]
-    pub r#private_connectivity: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileOraclePrivateConnectivity>>,
+    pub r#private_connectivity: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileOraclePrivateConnectivity>>,
     /// SSL configuration for the destination to connect to the source database.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ssl")]
-    pub r#ssl: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileOracleSsl>>,
+    pub r#ssl: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileOracleSsl>>,
     /// This object has no nested fields.
     /// Static IP address connectivity configured on service project.
     #[builder(into)]
     #[serde(rename = "staticServiceIpConnectivity")]
-    pub r#static_service_ip_connectivity: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileOracleStaticServiceIpConnectivity>>,
+    pub r#static_service_ip_connectivity: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileOracleStaticServiceIpConnectivity>>,
     /// Required. The username that Database Migration Service will use to connect to the database. The value is encrypted when stored in Database Migration Service.
     #[builder(into)]
     #[serde(rename = "username")]

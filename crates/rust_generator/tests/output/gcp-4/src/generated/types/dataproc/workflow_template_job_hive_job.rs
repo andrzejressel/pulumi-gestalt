@@ -22,7 +22,7 @@ pub struct WorkflowTemplateJobHiveJob {
     /// A list of queries.
     #[builder(into)]
     #[serde(rename = "queryList")]
-    pub r#query_list: Box<Option<super::super::types::dataproc::WorkflowTemplateJobHiveJobQueryList>>,
+    pub r#query_list: Option<Box<super::super::types::dataproc::WorkflowTemplateJobHiveJobQueryList>>,
     /// Mapping of query variable names to values (equivalent to the Hive command: `SET name="value";`).
     #[builder(into)]
     #[serde(rename = "scriptVariables")]

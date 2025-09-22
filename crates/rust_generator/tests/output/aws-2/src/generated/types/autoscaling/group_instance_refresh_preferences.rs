@@ -6,7 +6,7 @@ pub struct GroupInstanceRefreshPreferences {
     /// Alarm Specification for Instance Refresh.
     #[builder(into)]
     #[serde(rename = "alarmSpecification")]
-    pub r#alarm_specification: Box<Option<super::super::types::autoscaling::GroupInstanceRefreshPreferencesAlarmSpecification>>,
+    pub r#alarm_specification: Option<Box<super::super::types::autoscaling::GroupInstanceRefreshPreferencesAlarmSpecification>>,
     /// Automatically rollback if instance refresh fails. Defaults to `false`. This option may only be set to `true` when specifying a `launch_template` or `mixed_instances_policy`.
     #[builder(into)]
     #[serde(rename = "autoRollback")]

@@ -6,13 +6,13 @@ pub struct BudgetActionDefinition {
     /// The AWS Identity and Access Management (IAM) action definition details. See IAM Action Definition.
     #[builder(into)]
     #[serde(rename = "iamActionDefinition")]
-    pub r#iam_action_definition: Box<Option<super::super::types::budgets::BudgetActionDefinitionIamActionDefinition>>,
+    pub r#iam_action_definition: Option<Box<super::super::types::budgets::BudgetActionDefinitionIamActionDefinition>>,
     /// The service control policies (SCPs) action definition details. See SCP Action Definition.
     #[builder(into)]
     #[serde(rename = "scpActionDefinition")]
-    pub r#scp_action_definition: Box<Option<super::super::types::budgets::BudgetActionDefinitionScpActionDefinition>>,
+    pub r#scp_action_definition: Option<Box<super::super::types::budgets::BudgetActionDefinitionScpActionDefinition>>,
     /// The AWS Systems Manager (SSM) action definition details. See SSM Action Definition.
     #[builder(into)]
     #[serde(rename = "ssmActionDefinition")]
-    pub r#ssm_action_definition: Box<Option<super::super::types::budgets::BudgetActionDefinitionSsmActionDefinition>>,
+    pub r#ssm_action_definition: Option<Box<super::super::types::budgets::BudgetActionDefinitionSsmActionDefinition>>,
 }

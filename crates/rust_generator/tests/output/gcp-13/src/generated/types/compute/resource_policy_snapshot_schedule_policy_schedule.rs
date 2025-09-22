@@ -7,15 +7,15 @@ pub struct ResourcePolicySnapshotSchedulePolicySchedule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "dailySchedule")]
-    pub r#daily_schedule: Box<Option<super::super::types::compute::ResourcePolicySnapshotSchedulePolicyScheduleDailySchedule>>,
+    pub r#daily_schedule: Option<Box<super::super::types::compute::ResourcePolicySnapshotSchedulePolicyScheduleDailySchedule>>,
     /// The policy will execute every nth hour starting at the specified time.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "hourlySchedule")]
-    pub r#hourly_schedule: Box<Option<super::super::types::compute::ResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule>>,
+    pub r#hourly_schedule: Option<Box<super::super::types::compute::ResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule>>,
     /// Allows specifying a snapshot time for each day of the week.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "weeklySchedule")]
-    pub r#weekly_schedule: Box<Option<super::super::types::compute::ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule>>,
+    pub r#weekly_schedule: Option<Box<super::super::types::compute::ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule>>,
 }

@@ -10,7 +10,7 @@ pub struct WindowsWebAppSiteConfigAutoHealSettingAction {
     /// A `custom_action` block as defined below.
     #[builder(into)]
     #[serde(rename = "customAction")]
-    pub r#custom_action: Box<Option<super::super::types::appservice::WindowsWebAppSiteConfigAutoHealSettingActionCustomAction>>,
+    pub r#custom_action: Option<Box<super::super::types::appservice::WindowsWebAppSiteConfigAutoHealSettingActionCustomAction>>,
     /// The minimum amount of time in `hh:mm:ss` the Windows Web App must have been running before the defined action will be run in the event of a trigger.
     #[builder(into)]
     #[serde(rename = "minimumProcessExecutionTime")]

@@ -40,7 +40,7 @@ pub struct ServiceTemplateSpecContainer {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "livenessProbe")]
-    pub r#liveness_probe: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerLivenessProbe>>,
+    pub r#liveness_probe: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerLivenessProbe>>,
     /// Name of the container
     #[builder(into)]
     #[serde(rename = "name")]
@@ -54,14 +54,14 @@ pub struct ServiceTemplateSpecContainer {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerResources>>,
+    pub r#resources: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerResources>>,
     /// Startup probe of application within the container.
     /// All other probes are disabled if a startup probe is provided, until it
     /// succeeds. Container will not be added to service endpoints if the probe fails.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "startupProbe")]
-    pub r#startup_probe: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerStartupProbe>>,
+    pub r#startup_probe: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerStartupProbe>>,
     /// Volume to mount into the container's filesystem.
     /// Only supports SecretVolumeSources.
     /// Structure is documented below.

@@ -32,7 +32,7 @@ pub struct TriggerBuildArtifacts {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "objects")]
-    pub r#objects: Box<Option<super::super::types::cloudbuild::TriggerBuildArtifactsObjects>>,
+    pub r#objects: Option<Box<super::super::types::cloudbuild::TriggerBuildArtifactsObjects>>,
     /// Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.
     /// The location and generation of the uploaded objects will be stored in the Build resource's results field.
     /// If any objects fail to be pushed, the build is marked FAILURE.

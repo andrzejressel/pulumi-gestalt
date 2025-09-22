@@ -22,5 +22,5 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAws
     /// The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. Note that Response Inspection is available only on web ACLs that protect CloudFront distributions. See `response_inspection` for more details.
     #[builder(into)]
     #[serde(rename = "responseInspection")]
-    pub r#response_inspection: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspection>>,
+    pub r#response_inspection: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspection>>,
 }

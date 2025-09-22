@@ -8,7 +8,7 @@ pub struct StreamDestinationConfigBigqueryDestinationConfig {
     /// historical state of the data.
     #[builder(into)]
     #[serde(rename = "appendOnly")]
-    pub r#append_only: Box<Option<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfigAppendOnly>>,
+    pub r#append_only: Option<Box<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfigAppendOnly>>,
     /// The guaranteed data freshness (in seconds) when querying tables created by the stream.
     /// Editing this field will only affect new tables created in the future, but existing tables
     /// will not be impacted. Lower values mean that queries will return fresher data, but may result in higher cost.
@@ -21,15 +21,15 @@ pub struct StreamDestinationConfigBigqueryDestinationConfig {
     /// in the source database. With Merge mode, no historical record of the change events is kept.
     #[builder(into)]
     #[serde(rename = "merge")]
-    pub r#merge: Box<Option<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfigMerge>>,
+    pub r#merge: Option<Box<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfigMerge>>,
     /// A single target dataset to which all data will be streamed.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "singleTargetDataset")]
-    pub r#single_target_dataset: Box<Option<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset>>,
+    pub r#single_target_dataset: Option<Box<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset>>,
     /// Destination datasets are created so that hierarchy of the destination data objects matches the source hierarchy.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sourceHierarchyDatasets")]
-    pub r#source_hierarchy_datasets: Box<Option<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets>>,
+    pub r#source_hierarchy_datasets: Option<Box<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets>>,
 }

@@ -13,14 +13,14 @@ pub struct LayeredType {
     /// Test how plain types interact
     #[builder(into)]
     #[serde(rename = "plainOther")]
-    pub r#plain_other: Box<Option<super::types::HelmReleaseSettings>>,
+    pub r#plain_other: Option<Box<super::types::HelmReleaseSettings>>,
     /// The question already answered
     #[builder(into)]
     #[serde(rename = "question")]
     pub r#question: Option<String>,
     #[builder(into)]
     #[serde(rename = "recursive")]
-    pub r#recursive: Box<Option<super::types::LayeredType>>,
+    pub r#recursive: Option<Box<super::types::LayeredType>>,
     /// To ask and answer
     #[builder(into)]
     #[serde(rename = "thinker")]

@@ -14,7 +14,7 @@ pub struct AlertPrometheusRuleGroupRule {
     /// An `alert_resolution` block as defined below.
     #[builder(into)]
     #[serde(rename = "alertResolution")]
-    pub r#alert_resolution: Box<Option<super::super::types::monitoring::AlertPrometheusRuleGroupRuleAlertResolution>>,
+    pub r#alert_resolution: Option<Box<super::super::types::monitoring::AlertPrometheusRuleGroupRuleAlertResolution>>,
     /// Specifies a set of informational labels that can be used to store longer additional information such as alert descriptions or runbook links.
     #[builder(into)]
     #[serde(rename = "annotations")]

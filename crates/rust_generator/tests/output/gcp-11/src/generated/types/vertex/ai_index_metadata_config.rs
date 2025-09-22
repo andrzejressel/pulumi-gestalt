@@ -7,7 +7,7 @@ pub struct AiIndexMetadataConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "algorithmConfig")]
-    pub r#algorithm_config: Box<Option<super::super::types::vertex::AiIndexMetadataConfigAlgorithmConfig>>,
+    pub r#algorithm_config: Option<Box<super::super::types::vertex::AiIndexMetadataConfigAlgorithmConfig>>,
     /// The default number of neighbors to find via approximate search before exact reordering is
     /// performed. Exact reordering is a procedure where results returned by an
     /// approximate search algorithm are reordered via a more expensive distance computation.

@@ -10,7 +10,7 @@ pub struct UserPoolLambdaConfig {
     /// A custom email sender AWS Lambda trigger. See custom_email_sender Below.
     #[builder(into)]
     #[serde(rename = "customEmailSender")]
-    pub r#custom_email_sender: Box<Option<super::super::types::cognito::UserPoolLambdaConfigCustomEmailSender>>,
+    pub r#custom_email_sender: Option<Box<super::super::types::cognito::UserPoolLambdaConfigCustomEmailSender>>,
     /// Custom Message AWS Lambda trigger.
     #[builder(into)]
     #[serde(rename = "customMessage")]
@@ -18,7 +18,7 @@ pub struct UserPoolLambdaConfig {
     /// A custom SMS sender AWS Lambda trigger. See custom_sms_sender Below.
     #[builder(into)]
     #[serde(rename = "customSmsSender")]
-    pub r#custom_sms_sender: Box<Option<super::super::types::cognito::UserPoolLambdaConfigCustomSmsSender>>,
+    pub r#custom_sms_sender: Option<Box<super::super::types::cognito::UserPoolLambdaConfigCustomSmsSender>>,
     /// Defines the authentication challenge.
     #[builder(into)]
     #[serde(rename = "defineAuthChallenge")]
@@ -50,7 +50,7 @@ pub struct UserPoolLambdaConfig {
     /// Allow to customize access tokens. See pre_token_configuration_type
     #[builder(into)]
     #[serde(rename = "preTokenGenerationConfig")]
-    pub r#pre_token_generation_config: Box<Option<super::super::types::cognito::UserPoolLambdaConfigPreTokenGenerationConfig>>,
+    pub r#pre_token_generation_config: Option<Box<super::super::types::cognito::UserPoolLambdaConfigPreTokenGenerationConfig>>,
     /// User migration Lambda config type.
     #[builder(into)]
     #[serde(rename = "userMigration")]

@@ -13,7 +13,7 @@ pub struct SecurityPolicyRuleRateLimitOptions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "banThreshold")]
-    pub r#ban_threshold: Box<Option<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsBanThreshold>>,
+    pub r#ban_threshold: Option<Box<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsBanThreshold>>,
     /// Action to take for requests that are under the configured rate limit threshold.
     /// Valid option is "allow" only.
     #[builder(into)]
@@ -56,10 +56,10 @@ pub struct SecurityPolicyRuleRateLimitOptions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "exceedRedirectOptions")]
-    pub r#exceed_redirect_options: Box<Option<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsExceedRedirectOptions>>,
+    pub r#exceed_redirect_options: Option<Box<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsExceedRedirectOptions>>,
     /// Threshold at which to begin ratelimiting.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rateLimitThreshold")]
-    pub r#rate_limit_threshold: Box<Option<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsRateLimitThreshold>>,
+    pub r#rate_limit_threshold: Option<Box<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsRateLimitThreshold>>,
 }

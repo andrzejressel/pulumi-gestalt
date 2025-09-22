@@ -6,19 +6,19 @@ pub struct ResiliencyPolicyPolicy {
     /// Specifies Availability Zone failure policy. See `policy.az`
     #[builder(into)]
     #[serde(rename = "az")]
-    pub r#az: Box<Option<super::super::types::resiliencehub::ResiliencyPolicyPolicyAz>>,
+    pub r#az: Option<Box<super::super::types::resiliencehub::ResiliencyPolicyPolicyAz>>,
     /// Specifies Infrastructure failure policy. See `policy.hardware`
     #[builder(into)]
     #[serde(rename = "hardware")]
-    pub r#hardware: Box<Option<super::super::types::resiliencehub::ResiliencyPolicyPolicyHardware>>,
+    pub r#hardware: Option<Box<super::super::types::resiliencehub::ResiliencyPolicyPolicyHardware>>,
     /// Specifies Region failure policy. `policy.region`
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<super::super::types::resiliencehub::ResiliencyPolicyPolicyRegion>>,
+    pub r#region: Option<Box<super::super::types::resiliencehub::ResiliencyPolicyPolicyRegion>>,
     /// Specifies Application failure policy. See `policy.software`
     /// 
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "software")]
-    pub r#software: Box<Option<super::super::types::resiliencehub::ResiliencyPolicyPolicySoftware>>,
+    pub r#software: Option<Box<super::super::types::resiliencehub::ResiliencyPolicyPolicySoftware>>,
 }

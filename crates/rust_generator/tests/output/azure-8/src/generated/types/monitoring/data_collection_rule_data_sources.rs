@@ -6,7 +6,7 @@ pub struct DataCollectionRuleDataSources {
     /// A `data_import` block as defined above.
     #[builder(into)]
     #[serde(rename = "dataImport")]
-    pub r#data_import: Box<Option<super::super::types::monitoring::DataCollectionRuleDataSourcesDataImport>>,
+    pub r#data_import: Option<Box<super::super::types::monitoring::DataCollectionRuleDataSourcesDataImport>>,
     /// One or more `extension` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "extensions")]

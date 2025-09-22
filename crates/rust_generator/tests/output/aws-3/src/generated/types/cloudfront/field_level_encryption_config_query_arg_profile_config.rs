@@ -10,5 +10,5 @@ pub struct FieldLevelEncryptionConfigQueryArgProfileConfig {
     /// Object that contains an attribute `items` that contains the list ofrofiles specified for query argument-profile mapping for field-level encryption. see Query Arg Profile.
     #[builder(into)]
     #[serde(rename = "queryArgProfiles")]
-    pub r#query_arg_profiles: Box<Option<super::super::types::cloudfront::FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles>>,
+    pub r#query_arg_profiles: Option<Box<super::super::types::cloudfront::FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles>>,
 }

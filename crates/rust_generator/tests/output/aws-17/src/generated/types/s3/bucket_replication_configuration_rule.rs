@@ -14,7 +14,7 @@ pub struct BucketReplicationConfigurationRule {
     /// Filter that identifies subset of objects to which the replication rule applies (documented below).
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<Option<super::super::types::s3::BucketReplicationConfigurationRuleFilter>>,
+    pub r#filter: Option<Box<super::super::types::s3::BucketReplicationConfigurationRuleFilter>>,
     /// Unique identifier for the rule. Must be less than or equal to 255 characters in length.
     #[builder(into)]
     #[serde(rename = "id")]
@@ -30,7 +30,7 @@ pub struct BucketReplicationConfigurationRule {
     /// Specifies special object selection criteria (documented below).
     #[builder(into)]
     #[serde(rename = "sourceSelectionCriteria")]
-    pub r#source_selection_criteria: Box<Option<super::super::types::s3::BucketReplicationConfigurationRuleSourceSelectionCriteria>>,
+    pub r#source_selection_criteria: Option<Box<super::super::types::s3::BucketReplicationConfigurationRuleSourceSelectionCriteria>>,
     /// The status of the rule. Either `Enabled` or `Disabled`. The rule is ignored if status is not Enabled.
     /// 
     /// > **NOTE:** Replication to multiple destination buckets requires that `priority` is specified in the `rules` object. If the corresponding rule requires no filter, an empty configuration block `filter {}` must be specified.

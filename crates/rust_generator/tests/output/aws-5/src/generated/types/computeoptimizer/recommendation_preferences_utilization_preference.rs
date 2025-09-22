@@ -10,5 +10,5 @@ pub struct RecommendationPreferencesUtilizationPreference {
     /// The parameters to set when customizing the resource utilization thresholds.
     #[builder(into)]
     #[serde(rename = "metricParameters")]
-    pub r#metric_parameters: Box<Option<super::super::types::computeoptimizer::RecommendationPreferencesUtilizationPreferenceMetricParameters>>,
+    pub r#metric_parameters: Option<Box<super::super::types::computeoptimizer::RecommendationPreferencesUtilizationPreferenceMetricParameters>>,
 }

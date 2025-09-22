@@ -6,7 +6,7 @@ pub struct TargetGroupConfig {
     /// The health check configuration.
     #[builder(into)]
     #[serde(rename = "healthCheck")]
-    pub r#health_check: Box<Option<super::super::types::vpclattice::TargetGroupConfigHealthCheck>>,
+    pub r#health_check: Option<Box<super::super::types::vpclattice::TargetGroupConfigHealthCheck>>,
     /// The type of IP address used for the target group. Valid values: `IPV4` | `IPV6`.
     #[builder(into)]
     #[serde(rename = "ipAddressType")]

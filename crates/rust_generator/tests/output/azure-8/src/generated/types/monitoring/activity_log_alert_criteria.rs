@@ -50,7 +50,7 @@ pub struct ActivityLogAlertCriteria {
     /// A block to define fine grain resource health settings.
     #[builder(into)]
     #[serde(rename = "resourceHealth")]
-    pub r#resource_health: Box<Option<super::super::types::monitoring::ActivityLogAlertCriteriaResourceHealth>>,
+    pub r#resource_health: Option<Box<super::super::types::monitoring::ActivityLogAlertCriteriaResourceHealth>>,
     /// The specific resource monitored by the activity log alert. It should be within one of the `scopes`.
     #[builder(into)]
     #[serde(rename = "resourceId")]
@@ -84,7 +84,7 @@ pub struct ActivityLogAlertCriteria {
     /// A block to define fine grain service health settings.
     #[builder(into)]
     #[serde(rename = "serviceHealth")]
-    pub r#service_health: Box<Option<super::super::types::monitoring::ActivityLogAlertCriteriaServiceHealth>>,
+    pub r#service_health: Option<Box<super::super::types::monitoring::ActivityLogAlertCriteriaServiceHealth>>,
     /// The status of the event. For example, `Started`, `Failed`, or `Succeeded`.
     #[builder(into)]
     #[serde(rename = "status")]

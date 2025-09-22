@@ -7,7 +7,7 @@ pub struct PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadence {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "inspectTemplateModifiedCadence")]
-    pub r#inspect_template_modified_cadence: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadenceInspectTemplateModifiedCadence>>,
+    pub r#inspect_template_modified_cadence: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadenceInspectTemplateModifiedCadence>>,
     /// Data changes in Cloud Storage can't trigger reprofiling. If you set this field, profiles are refreshed at this frequency regardless of whether the underlying buckets have changes. Defaults to never.
     /// Possible values are: `UPDATE_FREQUENCY_NEVER`, `UPDATE_FREQUENCY_DAILY`, `UPDATE_FREQUENCY_MONTHLY`.
     #[builder(into)]

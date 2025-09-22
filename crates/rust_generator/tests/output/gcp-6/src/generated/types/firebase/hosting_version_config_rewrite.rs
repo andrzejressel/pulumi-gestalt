@@ -23,5 +23,5 @@ pub struct HostingVersionConfigRewrite {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "run")]
-    pub r#run: Box<Option<super::super::types::firebase::HostingVersionConfigRewriteRun>>,
+    pub r#run: Option<Box<super::super::types::firebase::HostingVersionConfigRewriteRun>>,
 }

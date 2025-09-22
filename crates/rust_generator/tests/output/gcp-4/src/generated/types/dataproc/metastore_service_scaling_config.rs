@@ -7,7 +7,7 @@ pub struct MetastoreServiceScalingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "autoscalingConfig")]
-    pub r#autoscaling_config: Box<Option<super::super::types::dataproc::MetastoreServiceScalingConfigAutoscalingConfig>>,
+    pub r#autoscaling_config: Option<Box<super::super::types::dataproc::MetastoreServiceScalingConfigAutoscalingConfig>>,
     /// Metastore instance sizes.
     /// Possible values are: `EXTRA_SMALL`, `SMALL`, `MEDIUM`, `LARGE`, `EXTRA_LARGE`.
     #[builder(into)]

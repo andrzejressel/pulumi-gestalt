@@ -9,7 +9,7 @@ pub struct TunnelConfigConfigIngressRule {
     pub r#hostname: Option<String>,
     #[builder(into)]
     #[serde(rename = "originRequest")]
-    pub r#origin_request: Box<Option<super::types::TunnelConfigConfigIngressRuleOriginRequest>>,
+    pub r#origin_request: Option<Box<super::types::TunnelConfigConfigIngressRuleOriginRequest>>,
     /// Path of the incoming request. If the path matches, the request will be sent to the local service.
     #[builder(into)]
     #[serde(rename = "path")]

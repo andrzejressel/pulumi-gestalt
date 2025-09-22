@@ -14,11 +14,11 @@ pub struct DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployme
     /// Optional. Configuration for the postdeploy job of this phase. If this is not configured, postdeploy job will not be present for this phase.
     #[builder(into)]
     #[serde(rename = "postdeploy")]
-    pub r#postdeploy: Box<Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigPostdeploy>>,
+    pub r#postdeploy: Option<Box<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigPostdeploy>>,
     /// Optional. Configuration for the predeploy job of this phase. If this is not configured, predeploy job will not be present for this phase.
     #[builder(into)]
     #[serde(rename = "predeploy")]
-    pub r#predeploy: Box<Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigPredeploy>>,
+    pub r#predeploy: Option<Box<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigPredeploy>>,
     /// Skaffold profiles to use when rendering the manifest for this phase. These are in addition to the profiles list specified in the `DeliveryPipeline` stage.
     #[builder(into)]
     #[serde(rename = "profiles")]

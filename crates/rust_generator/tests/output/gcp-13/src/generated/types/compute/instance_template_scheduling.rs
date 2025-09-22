@@ -31,7 +31,7 @@ pub struct InstanceTemplateScheduling {
     /// The duration of the instance. Instance will run and be terminated after then, the termination action could be defined in `instance_termination_action`. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "maxRunDuration")]
-    pub r#max_run_duration: Box<Option<super::super::types::compute::InstanceTemplateSchedulingMaxRunDuration>>,
+    pub r#max_run_duration: Option<Box<super::super::types::compute::InstanceTemplateSchedulingMaxRunDuration>>,
     /// Minimum number of cpus for the instance.
     #[builder(into)]
     #[serde(rename = "minNodeCpus")]
@@ -52,7 +52,7 @@ pub struct InstanceTemplateScheduling {
     /// Specifies the action to be performed when the instance is terminated using `max_run_duration` and `STOP` `instance_termination_action`. Only support `true` `discard_local_ssd` at this point. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "onInstanceStopAction")]
-    pub r#on_instance_stop_action: Box<Option<super::super::types::compute::InstanceTemplateSchedulingOnInstanceStopAction>>,
+    pub r#on_instance_stop_action: Option<Box<super::super::types::compute::InstanceTemplateSchedulingOnInstanceStopAction>>,
     /// Allows instance to be preempted. This defaults to
     /// false. Read more on this
     /// [here](https://cloud.google.com/compute/docs/instances/preemptible).

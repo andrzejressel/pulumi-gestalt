@@ -14,9 +14,9 @@ pub struct RouteSpecHttpRoute {
     /// Retry policy.
     #[builder(into)]
     #[serde(rename = "retryPolicy")]
-    pub r#retry_policy: Box<Option<super::super::types::appmesh::RouteSpecHttpRouteRetryPolicy>>,
+    pub r#retry_policy: Option<Box<super::super::types::appmesh::RouteSpecHttpRouteRetryPolicy>>,
     /// Types of timeouts.
     #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Box<Option<super::super::types::appmesh::RouteSpecHttpRouteTimeout>>,
+    pub r#timeout: Option<Box<super::super::types::appmesh::RouteSpecHttpRouteTimeout>>,
 }

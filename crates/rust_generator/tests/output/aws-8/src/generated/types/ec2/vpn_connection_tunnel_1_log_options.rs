@@ -6,5 +6,5 @@ pub struct VpnConnectionTunnel1LogOptions {
     /// Options for sending VPN tunnel logs to CloudWatch. See CloudWatch Log Options below for more details.
     #[builder(into)]
     #[serde(rename = "cloudwatchLogOptions")]
-    pub r#cloudwatch_log_options: Box<Option<super::super::types::ec2::VpnConnectionTunnel1LogOptionsCloudwatchLogOptions>>,
+    pub r#cloudwatch_log_options: Option<Box<super::super::types::ec2::VpnConnectionTunnel1LogOptionsCloudwatchLogOptions>>,
 }

@@ -26,7 +26,7 @@ pub struct ConnectionGitlabConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "serviceDirectoryConfig")]
-    pub r#service_directory_config: Box<Option<super::super::types::cloudbuildv2::ConnectionGitlabConfigServiceDirectoryConfig>>,
+    pub r#service_directory_config: Option<Box<super::super::types::cloudbuildv2::ConnectionGitlabConfigServiceDirectoryConfig>>,
     /// SSL certificate to use for requests to GitLab Enterprise.
     #[builder(into)]
     #[serde(rename = "sslCa")]

@@ -22,7 +22,7 @@ pub struct JobHadoopConfig {
     /// The runtime logging config of the job
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Box<Option<super::super::types::dataproc::JobHadoopConfigLoggingConfig>>,
+    pub r#logging_config: Option<Box<super::super::types::dataproc::JobHadoopConfigLoggingConfig>>,
     /// The name of the driver's main class. The jar file containing the class must be in the default CLASSPATH or specified in `jar_file_uris`. Conflicts with `main_jar_file_uri`
     #[builder(into)]
     #[serde(rename = "mainClass")]

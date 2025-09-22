@@ -12,7 +12,7 @@ pub struct PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoType {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sensitivityScore")]
-    pub r#sensitivity_score: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoTypeSensitivityScore>>,
+    pub r#sensitivity_score: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoTypeSensitivityScore>>,
     /// Version of the information type to use. By default, the version is set to stable.
     #[builder(into)]
     #[serde(rename = "version")]

@@ -6,7 +6,7 @@ pub struct LinuxWebAppAuthSettings {
     /// An `active_directory` block as defined above.
     #[builder(into)]
     #[serde(rename = "activeDirectory")]
-    pub r#active_directory: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsActiveDirectory>>,
+    pub r#active_directory: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsActiveDirectory>>,
     /// Specifies a map of login Parameters to send to the OpenID Connect authorization endpoint when a user logs in.
     #[builder(into)]
     #[serde(rename = "additionalLoginParameters")]
@@ -28,15 +28,15 @@ pub struct LinuxWebAppAuthSettings {
     /// A `facebook` block as defined below.
     #[builder(into)]
     #[serde(rename = "facebook")]
-    pub r#facebook: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsFacebook>>,
+    pub r#facebook: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsFacebook>>,
     /// A `github` block as defined below.
     #[builder(into)]
     #[serde(rename = "github")]
-    pub r#github: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsGithub>>,
+    pub r#github: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsGithub>>,
     /// A `google` block as defined below.
     #[builder(into)]
     #[serde(rename = "google")]
-    pub r#google: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsGoogle>>,
+    pub r#google: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsGoogle>>,
     /// The OpenID Connect Issuer URI that represents the entity that issues access tokens for this Linux Web App.
     /// 
     /// > **NOTE:** When using Azure Active Directory, this value is the URI of the directory tenant, e.g. <https://sts.windows.net/{tenant-guid}/>.
@@ -46,7 +46,7 @@ pub struct LinuxWebAppAuthSettings {
     /// A `microsoft` block as defined below.
     #[builder(into)]
     #[serde(rename = "microsoft")]
-    pub r#microsoft: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsMicrosoft>>,
+    pub r#microsoft: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsMicrosoft>>,
     /// The RuntimeVersion of the Authentication / Authorization feature in use for the Linux Web App.
     #[builder(into)]
     #[serde(rename = "runtimeVersion")]
@@ -62,7 +62,7 @@ pub struct LinuxWebAppAuthSettings {
     /// A `twitter` block as defined below.
     #[builder(into)]
     #[serde(rename = "twitter")]
-    pub r#twitter: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsTwitter>>,
+    pub r#twitter: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsTwitter>>,
     /// The action to take when an unauthenticated client attempts to access the app. Possible values include: `RedirectToLoginPage`, `AllowAnonymous`.
     #[builder(into)]
     #[serde(rename = "unauthenticatedClientAction")]

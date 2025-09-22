@@ -12,7 +12,7 @@ pub struct PreventionJobTriggerInspectJob {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "inspectConfig")]
-    pub r#inspect_config: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfig>>,
+    pub r#inspect_config: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfig>>,
     /// The name of the template to run when this job is triggered.
     #[builder(into)]
     #[serde(rename = "inspectTemplateName")]

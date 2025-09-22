@@ -13,7 +13,7 @@ pub struct RegionSecurityPolicyRuleRateLimitOptions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "banThreshold")]
-    pub r#ban_threshold: Box<Option<super::super::types::compute::RegionSecurityPolicyRuleRateLimitOptionsBanThreshold>>,
+    pub r#ban_threshold: Option<Box<super::super::types::compute::RegionSecurityPolicyRuleRateLimitOptionsBanThreshold>>,
     /// Action to take for requests that are under the configured rate limit threshold.
     /// Valid option is "allow" only.
     #[builder(into)]
@@ -56,5 +56,5 @@ pub struct RegionSecurityPolicyRuleRateLimitOptions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rateLimitThreshold")]
-    pub r#rate_limit_threshold: Box<Option<super::super::types::compute::RegionSecurityPolicyRuleRateLimitOptionsRateLimitThreshold>>,
+    pub r#rate_limit_threshold: Option<Box<super::super::types::compute::RegionSecurityPolicyRuleRateLimitOptionsRateLimitThreshold>>,
 }

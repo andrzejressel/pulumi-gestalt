@@ -10,7 +10,7 @@ pub struct AppServiceSiteConfigIpRestriction {
     /// The `headers` block for this specific `ip_restriction` as defined below.
     #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Option<super::super::types::appservice::AppServiceSiteConfigIpRestrictionHeaders>>,
+    pub r#headers: Option<Box<super::super::types::appservice::AppServiceSiteConfigIpRestrictionHeaders>>,
     /// The IP Address used for this IP Restriction in CIDR notation.
     #[builder(into)]
     #[serde(rename = "ipAddress")]

@@ -6,7 +6,7 @@ pub struct BackendCredentials {
     /// An `authorization` block as defined below.
     #[builder(into)]
     #[serde(rename = "authorization")]
-    pub r#authorization: Box<Option<super::super::types::apimanagement::BackendCredentialsAuthorization>>,
+    pub r#authorization: Option<Box<super::super::types::apimanagement::BackendCredentialsAuthorization>>,
     /// A list of client certificate thumbprints to present to the backend host. The certificates must exist within the API Management Service.
     #[builder(into)]
     #[serde(rename = "certificates")]

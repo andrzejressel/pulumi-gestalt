@@ -7,7 +7,7 @@ pub struct DatasetAccess {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "dataset")]
-    pub r#dataset: Box<Option<super::super::types::bigquery::DatasetAccessDataset>>,
+    pub r#dataset: Option<Box<super::super::types::bigquery::DatasetAccessDataset>>,
     /// A domain to grant access to. Any users signed in with the
     /// domain specified will be granted the specified access
     #[builder(into)]
@@ -38,7 +38,7 @@ pub struct DatasetAccess {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "routine")]
-    pub r#routine: Box<Option<super::super::types::bigquery::DatasetAccessRoutine>>,
+    pub r#routine: Option<Box<super::super::types::bigquery::DatasetAccessRoutine>>,
     /// A special group to grant access to. Possible values include:
     /// * `projectOwners`: Owners of the enclosing project.
     /// * `projectReaders`: Readers of the enclosing project.
@@ -60,5 +60,5 @@ pub struct DatasetAccess {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "view")]
-    pub r#view: Box<Option<super::super::types::bigquery::DatasetAccessView>>,
+    pub r#view: Option<Box<super::super::types::bigquery::DatasetAccessView>>,
 }

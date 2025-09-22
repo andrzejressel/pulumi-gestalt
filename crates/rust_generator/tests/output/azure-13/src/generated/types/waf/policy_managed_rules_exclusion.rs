@@ -6,7 +6,7 @@ pub struct PolicyManagedRulesExclusion {
     /// One or more `excluded_rule_set` block defined below.
     #[builder(into)]
     #[serde(rename = "excludedRuleSet")]
-    pub r#excluded_rule_set: Box<Option<super::super::types::waf::PolicyManagedRulesExclusionExcludedRuleSet>>,
+    pub r#excluded_rule_set: Option<Box<super::super::types::waf::PolicyManagedRulesExclusionExcludedRuleSet>>,
     /// The name of the Match Variable. Possible values: `RequestArgKeys`, `RequestArgNames`, `RequestArgValues`, `RequestCookieKeys`, `RequestCookieNames`, `RequestCookieValues`, `RequestHeaderKeys`, `RequestHeaderNames`, `RequestHeaderValues`.
     #[builder(into)]
     #[serde(rename = "matchVariable")]

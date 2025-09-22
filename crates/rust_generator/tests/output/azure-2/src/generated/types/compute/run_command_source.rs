@@ -15,5 +15,5 @@ pub struct RunCommandSource {
     /// A `script_uri_managed_identity` block as defined above.
     #[builder(into)]
     #[serde(rename = "scriptUriManagedIdentity")]
-    pub r#script_uri_managed_identity: Box<Option<super::super::types::compute::RunCommandSourceScriptUriManagedIdentity>>,
+    pub r#script_uri_managed_identity: Option<Box<super::super::types::compute::RunCommandSourceScriptUriManagedIdentity>>,
 }

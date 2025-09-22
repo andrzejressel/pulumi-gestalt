@@ -5,19 +5,19 @@
 pub struct WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUse {
     #[builder(into)]
     #[serde(rename = "allow")]
-    pub r#allow: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllow>>,
+    pub r#allow: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllow>>,
     #[builder(into)]
     #[serde(rename = "block")]
-    pub r#block: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlock>>,
+    pub r#block: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlock>>,
     /// Instructs AWS WAF to run a Captcha check against the web request. See `captcha` below for details.
     #[builder(into)]
     #[serde(rename = "captcha")]
-    pub r#captcha: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptcha>>,
+    pub r#captcha: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptcha>>,
     /// Instructs AWS WAF to run a check against the request to verify that the request is coming from a legitimate client session. See `challenge` below for details.
     #[builder(into)]
     #[serde(rename = "challenge")]
-    pub r#challenge: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallenge>>,
+    pub r#challenge: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallenge>>,
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCount>>,
+    pub r#count: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCount>>,
 }

@@ -12,7 +12,7 @@ pub struct FeatureSpecClusterupgrade {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "postConditions")]
-    pub r#post_conditions: Box<Option<super::super::types::gkehub::FeatureSpecClusterupgradePostConditions>>,
+    pub r#post_conditions: Option<Box<super::super::types::gkehub::FeatureSpecClusterupgradePostConditions>>,
     /// Specified if other fleet should be considered as a source of upgrades. Currently, at most one upstream fleet is allowed. The fleet name should be either fleet project number or id.
     #[builder(into)]
     #[serde(rename = "upstreamFleets")]

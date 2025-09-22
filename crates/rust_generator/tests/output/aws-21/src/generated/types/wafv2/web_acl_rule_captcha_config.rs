@@ -6,5 +6,5 @@ pub struct WebAclRuleCaptchaConfig {
     /// Defines custom immunity time. See `immunity_time_property` below for details.
     #[builder(into)]
     #[serde(rename = "immunityTimeProperty")]
-    pub r#immunity_time_property: Box<Option<super::super::types::wafv2::WebAclRuleCaptchaConfigImmunityTimeProperty>>,
+    pub r#immunity_time_property: Option<Box<super::super::types::wafv2::WebAclRuleCaptchaConfigImmunityTimeProperty>>,
 }

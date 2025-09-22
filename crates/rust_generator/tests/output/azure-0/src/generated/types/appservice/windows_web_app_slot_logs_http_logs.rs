@@ -6,9 +6,9 @@ pub struct WindowsWebAppSlotLogsHttpLogs {
     /// A `azure_blob_storage_http` block as defined above.
     #[builder(into)]
     #[serde(rename = "azureBlobStorage")]
-    pub r#azure_blob_storage: Box<Option<super::super::types::appservice::WindowsWebAppSlotLogsHttpLogsAzureBlobStorage>>,
+    pub r#azure_blob_storage: Option<Box<super::super::types::appservice::WindowsWebAppSlotLogsHttpLogsAzureBlobStorage>>,
     /// A `file_system` block as defined above.
     #[builder(into)]
     #[serde(rename = "fileSystem")]
-    pub r#file_system: Box<Option<super::super::types::appservice::WindowsWebAppSlotLogsHttpLogsFileSystem>>,
+    pub r#file_system: Option<Box<super::super::types::appservice::WindowsWebAppSlotLogsHttpLogsFileSystem>>,
 }

@@ -14,7 +14,7 @@ pub struct VirtualMachineAutoBackup {
     /// A `manual_schedule` block as documented below. When this block is present, the schedule type is set to `Manual`. Without this block, the schedule type is set to `Automated`.
     #[builder(into)]
     #[serde(rename = "manualSchedule")]
-    pub r#manual_schedule: Box<Option<super::super::types::mssql::VirtualMachineAutoBackupManualSchedule>>,
+    pub r#manual_schedule: Option<Box<super::super::types::mssql::VirtualMachineAutoBackupManualSchedule>>,
     /// Retention period of backups, in days. Valid values are from `1` to `30`.
     #[builder(into)]
     #[serde(rename = "retentionPeriodInDays")]

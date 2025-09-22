@@ -6,9 +6,9 @@ pub struct ContactsRotationRecurrenceShiftCoverageCoverageTime {
     /// (Required) The end time of the on-call shift. See Hand Off Time for more details.
     #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<Option<super::super::types::ssm::ContactsRotationRecurrenceShiftCoverageCoverageTimeEnd>>,
+    pub r#end: Option<Box<super::super::types::ssm::ContactsRotationRecurrenceShiftCoverageCoverageTimeEnd>>,
     /// (Required) The start time of the on-call shift. See Hand Off Time for more details.
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<Option<super::super::types::ssm::ContactsRotationRecurrenceShiftCoverageCoverageTimeStart>>,
+    pub r#start: Option<Box<super::super::types::ssm::ContactsRotationRecurrenceShiftCoverageCoverageTimeStart>>,
 }

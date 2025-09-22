@@ -38,16 +38,16 @@ pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSetting
     pub r#cc_descriptor: Option<String>,
     #[builder(into)]
     #[serde(rename = "dvbNitSettings")]
-    pub r#dvb_nit_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2TsSettingsDvbNitSettings>>,
+    pub r#dvb_nit_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2TsSettingsDvbNitSettings>>,
     #[builder(into)]
     #[serde(rename = "dvbSdtSettings")]
-    pub r#dvb_sdt_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2TsSettingsDvbSdtSettings>>,
+    pub r#dvb_sdt_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2TsSettingsDvbSdtSettings>>,
     #[builder(into)]
     #[serde(rename = "dvbSubPids")]
     pub r#dvb_sub_pids: Option<String>,
     #[builder(into)]
     #[serde(rename = "dvbTdtSettings")]
-    pub r#dvb_tdt_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2TsSettingsDvbTdtSettings>>,
+    pub r#dvb_tdt_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2TsSettingsDvbTdtSettings>>,
     #[builder(into)]
     #[serde(rename = "dvbTeletextPid")]
     pub r#dvb_teletext_pid: Option<String>,

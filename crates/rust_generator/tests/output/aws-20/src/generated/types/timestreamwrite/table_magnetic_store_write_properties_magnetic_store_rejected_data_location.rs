@@ -6,5 +6,5 @@ pub struct TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocation {
     /// Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes. See S3 Configuration below for more details.
     #[builder(into)]
     #[serde(rename = "s3Configuration")]
-    pub r#s_3_configuration: Box<Option<super::super::types::timestreamwrite::TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocationS3Configuration>>,
+    pub r#s_3_configuration: Option<Box<super::super::types::timestreamwrite::TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocationS3Configuration>>,
 }

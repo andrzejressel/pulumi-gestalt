@@ -30,11 +30,11 @@ pub struct JobDefinitionEksPropertiesPodPropertiesInitContainer {
     /// Type and amount of resources to assign to a container. The supported resources include `memory`, `cpu`, and `nvidia.com/gpu`.
     #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Box<Option<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesInitContainerResources>>,
+    pub r#resources: Option<Box<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesInitContainerResources>>,
     /// Security context for a job.
     #[builder(into)]
     #[serde(rename = "securityContext")]
-    pub r#security_context: Box<Option<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesInitContainerSecurityContext>>,
+    pub r#security_context: Option<Box<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesInitContainerSecurityContext>>,
     /// Volume mounts for the container.
     #[builder(into)]
     #[serde(rename = "volumeMounts")]

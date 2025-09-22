@@ -18,7 +18,7 @@ pub struct FluxConfigurationBlobStorage {
     /// A `managed_identity` block as defined below.
     #[builder(into)]
     #[serde(rename = "managedIdentity")]
-    pub r#managed_identity: Box<Option<super::super::types::containerservice::FluxConfigurationBlobStorageManagedIdentity>>,
+    pub r#managed_identity: Option<Box<super::super::types::containerservice::FluxConfigurationBlobStorageManagedIdentity>>,
     /// Specifies the shared access token to access the storage container.
     #[builder(into)]
     #[serde(rename = "sasToken")]
@@ -26,7 +26,7 @@ pub struct FluxConfigurationBlobStorage {
     /// A `service_principal` block as defined below.
     #[builder(into)]
     #[serde(rename = "servicePrincipal")]
-    pub r#service_principal: Box<Option<super::super::types::containerservice::FluxConfigurationBlobStorageServicePrincipal>>,
+    pub r#service_principal: Option<Box<super::super::types::containerservice::FluxConfigurationBlobStorageServicePrincipal>>,
     /// Specifies the interval at which to re-reconcile the cluster Azure Blob source with the remote.
     #[builder(into)]
     #[serde(rename = "syncIntervalInSeconds")]

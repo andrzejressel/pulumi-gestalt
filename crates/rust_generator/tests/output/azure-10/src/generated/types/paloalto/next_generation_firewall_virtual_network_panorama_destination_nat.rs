@@ -6,11 +6,11 @@ pub struct NextGenerationFirewallVirtualNetworkPanoramaDestinationNat {
     /// A `backend_config` block as defined above.
     #[builder(into)]
     #[serde(rename = "backendConfig")]
-    pub r#backend_config: Box<Option<super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaDestinationNatBackendConfig>>,
+    pub r#backend_config: Option<Box<super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaDestinationNatBackendConfig>>,
     /// A `frontend_config` block as defined below.
     #[builder(into)]
     #[serde(rename = "frontendConfig")]
-    pub r#frontend_config: Box<Option<super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaDestinationNatFrontendConfig>>,
+    pub r#frontend_config: Option<Box<super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaDestinationNatFrontendConfig>>,
     /// The name which should be used for this Destination NAT.
     #[builder(into)]
     #[serde(rename = "name")]

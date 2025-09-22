@@ -6,5 +6,5 @@ pub struct VirtualGatewaySpecBackendDefaults {
     /// Default client policy for virtual gateway backends.
     #[builder(into)]
     #[serde(rename = "clientPolicy")]
-    pub r#client_policy: Box<Option<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicy>>,
+    pub r#client_policy: Option<Box<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicy>>,
 }

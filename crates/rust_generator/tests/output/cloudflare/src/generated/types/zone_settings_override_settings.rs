@@ -83,16 +83,16 @@ pub struct ZoneSettingsOverrideSettings {
     pub r#min_tls_version: Option<String>,
     #[builder(into)]
     #[serde(rename = "minify")]
-    pub r#minify: Box<Option<super::types::ZoneSettingsOverrideSettingsMinify>>,
+    pub r#minify: Option<Box<super::types::ZoneSettingsOverrideSettingsMinify>>,
     #[builder(into)]
     #[serde(rename = "mirage")]
     pub r#mirage: Option<String>,
     #[builder(into)]
     #[serde(rename = "mobileRedirect")]
-    pub r#mobile_redirect: Box<Option<super::types::ZoneSettingsOverrideSettingsMobileRedirect>>,
+    pub r#mobile_redirect: Option<Box<super::types::ZoneSettingsOverrideSettingsMobileRedirect>>,
     #[builder(into)]
     #[serde(rename = "nel")]
-    pub r#nel: Box<Option<super::types::ZoneSettingsOverrideSettingsNel>>,
+    pub r#nel: Option<Box<super::types::ZoneSettingsOverrideSettingsNel>>,
     #[builder(into)]
     #[serde(rename = "opportunisticEncryption")]
     pub r#opportunistic_encryption: Option<String>,
@@ -134,7 +134,7 @@ pub struct ZoneSettingsOverrideSettings {
     pub r#rocket_loader: Option<String>,
     #[builder(into)]
     #[serde(rename = "securityHeader")]
-    pub r#security_header: Box<Option<super::types::ZoneSettingsOverrideSettingsSecurityHeader>>,
+    pub r#security_header: Option<Box<super::types::ZoneSettingsOverrideSettingsSecurityHeader>>,
     #[builder(into)]
     #[serde(rename = "securityLevel")]
     pub r#security_level: Option<String>,

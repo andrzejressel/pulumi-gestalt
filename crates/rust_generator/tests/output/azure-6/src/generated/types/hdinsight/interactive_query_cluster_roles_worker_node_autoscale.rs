@@ -6,5 +6,5 @@ pub struct InteractiveQueryClusterRolesWorkerNodeAutoscale {
     /// A `recurrence` block as defined below.
     #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<Option<super::super::types::hdinsight::InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrence>>,
+    pub r#recurrence: Option<Box<super::super::types::hdinsight::InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrence>>,
 }

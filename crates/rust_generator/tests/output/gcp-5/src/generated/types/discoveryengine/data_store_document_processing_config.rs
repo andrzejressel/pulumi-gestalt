@@ -7,14 +7,14 @@ pub struct DataStoreDocumentProcessingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "chunkingConfig")]
-    pub r#chunking_config: Box<Option<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigChunkingConfig>>,
+    pub r#chunking_config: Option<Box<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigChunkingConfig>>,
     /// Configurations for default Document parser. If not specified, this resource
     /// will be configured to use a default DigitalParsingConfig, and the default parsing
     /// config will be applied to all file types for Document parsing.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "defaultParsingConfig")]
-    pub r#default_parsing_config: Box<Option<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigDefaultParsingConfig>>,
+    pub r#default_parsing_config: Option<Box<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigDefaultParsingConfig>>,
     /// (Output)
     /// The full resource name of the Document Processing Config. Format:
     /// `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/documentProcessingConfig`.

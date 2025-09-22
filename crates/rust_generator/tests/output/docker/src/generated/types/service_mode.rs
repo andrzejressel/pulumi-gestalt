@@ -10,5 +10,5 @@ pub struct ServiceMode {
     /// The replicated service mode
     #[builder(into)]
     #[serde(rename = "replicated")]
-    pub r#replicated: Box<Option<super::types::ServiceModeReplicated>>,
+    pub r#replicated: Option<Box<super::types::ServiceModeReplicated>>,
 }

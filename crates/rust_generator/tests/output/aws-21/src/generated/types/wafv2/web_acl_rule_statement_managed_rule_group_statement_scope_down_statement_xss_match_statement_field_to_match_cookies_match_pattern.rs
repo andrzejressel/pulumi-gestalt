@@ -6,7 +6,7 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatc
     /// An empty configuration block that is used for inspecting all headers.
     #[builder(into)]
     #[serde(rename = "all")]
-    pub r#all: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAll>>,
+    pub r#all: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAll>>,
     #[builder(into)]
     #[serde(rename = "excludedCookies")]
     pub r#excluded_cookies: Option<Vec<String>>,

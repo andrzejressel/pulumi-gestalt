@@ -6,9 +6,9 @@ pub struct WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocation {
     /// Specifies the details for the EFS file being copied.
     #[builder(into)]
     #[serde(rename = "efsFileLocation")]
-    pub r#efs_file_location: Box<Option<super::super::types::transfer::WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationEfsFileLocation>>,
+    pub r#efs_file_location: Option<Box<super::super::types::transfer::WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationEfsFileLocation>>,
     /// Specifies the details for the S3 file being copied.
     #[builder(into)]
     #[serde(rename = "s3FileLocation")]
-    pub r#s_3_file_location: Box<Option<super::super::types::transfer::WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationS3FileLocation>>,
+    pub r#s_3_file_location: Option<Box<super::super::types::transfer::WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationS3FileLocation>>,
 }

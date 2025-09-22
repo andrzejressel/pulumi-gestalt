@@ -30,7 +30,7 @@ pub struct SlotSiteConfig {
     /// A `cors` block as defined below.
     #[builder(into)]
     #[serde(rename = "cors")]
-    pub r#cors: Box<Option<super::super::types::appservice::SlotSiteConfigCors>>,
+    pub r#cors: Option<Box<super::super::types::appservice::SlotSiteConfigCors>>,
     /// The ordering of default documents to load, if an address isn't specified.
     #[builder(into)]
     #[serde(rename = "defaultDocuments")]

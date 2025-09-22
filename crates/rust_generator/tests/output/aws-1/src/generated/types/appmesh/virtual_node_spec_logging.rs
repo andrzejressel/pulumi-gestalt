@@ -6,5 +6,5 @@ pub struct VirtualNodeSpecLogging {
     /// Access log configuration for a virtual node.
     #[builder(into)]
     #[serde(rename = "accessLog")]
-    pub r#access_log: Box<Option<super::super::types::appmesh::VirtualNodeSpecLoggingAccessLog>>,
+    pub r#access_log: Option<Box<super::super::types::appmesh::VirtualNodeSpecLoggingAccessLog>>,
 }

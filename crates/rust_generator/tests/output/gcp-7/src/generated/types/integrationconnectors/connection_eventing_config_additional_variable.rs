@@ -11,7 +11,7 @@ pub struct ConnectionEventingConfigAdditionalVariable {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "encryptionKeyValue")]
-    pub r#encryption_key_value: Box<Option<super::super::types::integrationconnectors::ConnectionEventingConfigAdditionalVariableEncryptionKeyValue>>,
+    pub r#encryption_key_value: Option<Box<super::super::types::integrationconnectors::ConnectionEventingConfigAdditionalVariableEncryptionKeyValue>>,
     /// Integer Value of configVariable.
     #[builder(into)]
     #[serde(rename = "integerValue")]
@@ -24,7 +24,7 @@ pub struct ConnectionEventingConfigAdditionalVariable {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "secretValue")]
-    pub r#secret_value: Box<Option<super::super::types::integrationconnectors::ConnectionEventingConfigAdditionalVariableSecretValue>>,
+    pub r#secret_value: Option<Box<super::super::types::integrationconnectors::ConnectionEventingConfigAdditionalVariableSecretValue>>,
     /// String Value of configVariabley.
     #[builder(into)]
     #[serde(rename = "stringValue")]

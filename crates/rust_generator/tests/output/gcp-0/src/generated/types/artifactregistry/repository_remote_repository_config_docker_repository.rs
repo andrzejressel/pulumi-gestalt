@@ -7,7 +7,7 @@ pub struct RepositoryRemoteRepositoryConfigDockerRepository {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customRepository")]
-    pub r#custom_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigDockerRepositoryCustomRepository>>,
+    pub r#custom_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigDockerRepositoryCustomRepository>>,
     /// Address of the remote repository.
     /// Default value is `DOCKER_HUB`.
     /// Possible values are: `DOCKER_HUB`.

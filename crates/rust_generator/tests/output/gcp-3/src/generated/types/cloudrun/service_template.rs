@@ -13,10 +13,10 @@ pub struct ServiceTemplate {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "metadata")]
-    pub r#metadata: Box<Option<super::super::types::cloudrun::ServiceTemplateMetadata>>,
+    pub r#metadata: Option<Box<super::super::types::cloudrun::ServiceTemplateMetadata>>,
     /// RevisionSpec holds the desired state of the Revision (from the client).
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "spec")]
-    pub r#spec: Box<Option<super::super::types::cloudrun::ServiceTemplateSpec>>,
+    pub r#spec: Option<Box<super::super::types::cloudrun::ServiceTemplateSpec>>,
 }

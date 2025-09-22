@@ -8,7 +8,7 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHone
     pub r#access_token: Option<String>,
     #[builder(into)]
     #[serde(rename = "oauthRequest")]
-    pub r#oauth_request: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycodeOauthRequest>>,
+    pub r#oauth_request: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycodeOauthRequest>>,
     #[builder(into)]
     #[serde(rename = "refreshToken")]
     pub r#refresh_token: Option<String>,

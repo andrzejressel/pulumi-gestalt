@@ -5,5 +5,5 @@
 pub struct FeatureGroupFeatureDefinitionCollectionConfig {
     #[builder(into)]
     #[serde(rename = "vectorConfig")]
-    pub r#vector_config: Box<Option<super::super::types::sagemaker::FeatureGroupFeatureDefinitionCollectionConfigVectorConfig>>,
+    pub r#vector_config: Option<Box<super::super::types::sagemaker::FeatureGroupFeatureDefinitionCollectionConfigVectorConfig>>,
 }

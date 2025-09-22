@@ -6,5 +6,5 @@ pub struct CanaryArtifactConfig {
     /// Configuration of the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. See S3 Encryption.
     #[builder(into)]
     #[serde(rename = "s3Encryption")]
-    pub r#s_3_encryption: Box<Option<super::super::types::synthetics::CanaryArtifactConfigS3Encryption>>,
+    pub r#s_3_encryption: Option<Box<super::super::types::synthetics::CanaryArtifactConfigS3Encryption>>,
 }

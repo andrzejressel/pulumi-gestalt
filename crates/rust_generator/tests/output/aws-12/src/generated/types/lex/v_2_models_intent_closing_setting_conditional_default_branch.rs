@@ -6,9 +6,9 @@ pub struct V2ModelsIntentClosingSettingConditionalDefaultBranch {
     /// Configuration block for the next step in the conversation. See `next_step`.
     #[builder(into)]
     #[serde(rename = "nextStep")]
-    pub r#next_step: Box<Option<super::super::types::lex::V2ModelsIntentClosingSettingConditionalDefaultBranchNextStep>>,
+    pub r#next_step: Option<Box<super::super::types::lex::V2ModelsIntentClosingSettingConditionalDefaultBranchNextStep>>,
     /// Configuration block for a list of message groups that Amazon Lex uses to respond to the user input. See `response`.
     #[builder(into)]
     #[serde(rename = "response")]
-    pub r#response: Box<Option<super::super::types::lex::V2ModelsIntentClosingSettingConditionalDefaultBranchResponse>>,
+    pub r#response: Option<Box<super::super::types::lex::V2ModelsIntentClosingSettingConditionalDefaultBranchResponse>>,
 }

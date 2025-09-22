@@ -10,7 +10,7 @@ pub struct ThreeTierVirtualInstanceThreeTierConfigurationResourceNamesDatabaseSe
     /// A `load_balancer` block as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "loadBalancer")]
-    pub r#load_balancer: Box<Option<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationResourceNamesDatabaseServerLoadBalancer>>,
+    pub r#load_balancer: Option<Box<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationResourceNamesDatabaseServerLoadBalancer>>,
     /// One or more `virtual_machine` blocks as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "virtualMachines")]

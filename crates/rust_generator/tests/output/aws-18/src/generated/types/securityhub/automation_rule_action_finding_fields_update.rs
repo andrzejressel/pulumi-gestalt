@@ -14,7 +14,7 @@ pub struct AutomationRuleActionFindingFieldsUpdate {
     /// A resource block that updates the note. Documented below.
     #[builder(into)]
     #[serde(rename = "note")]
-    pub r#note: Box<Option<super::super::types::securityhub::AutomationRuleActionFindingFieldsUpdateNote>>,
+    pub r#note: Option<Box<super::super::types::securityhub::AutomationRuleActionFindingFieldsUpdateNote>>,
     /// A resource block that the rule action updates the `RelatedFindings` field of a finding. Documented below.
     #[builder(into)]
     #[serde(rename = "relatedFindings")]
@@ -22,7 +22,7 @@ pub struct AutomationRuleActionFindingFieldsUpdate {
     /// A resource block that updates to the severity information for a finding. Documented below.
     #[builder(into)]
     #[serde(rename = "severity")]
-    pub r#severity: Box<Option<super::super::types::securityhub::AutomationRuleActionFindingFieldsUpdateSeverity>>,
+    pub r#severity: Option<Box<super::super::types::securityhub::AutomationRuleActionFindingFieldsUpdateSeverity>>,
     /// The rule action updates the `Types` field of a finding.
     #[builder(into)]
     #[serde(rename = "types")]
@@ -38,5 +38,5 @@ pub struct AutomationRuleActionFindingFieldsUpdate {
     /// A resource block that is used to update information about the investigation into the finding. Documented below.
     #[builder(into)]
     #[serde(rename = "workflow")]
-    pub r#workflow: Box<Option<super::super::types::securityhub::AutomationRuleActionFindingFieldsUpdateWorkflow>>,
+    pub r#workflow: Option<Box<super::super::types::securityhub::AutomationRuleActionFindingFieldsUpdateWorkflow>>,
 }

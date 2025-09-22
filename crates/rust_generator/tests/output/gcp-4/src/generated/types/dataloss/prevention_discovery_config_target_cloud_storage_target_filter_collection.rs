@@ -7,5 +7,5 @@ pub struct PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollection {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "includeRegexes")]
-    pub r#include_regexes: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexes>>,
+    pub r#include_regexes: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexes>>,
 }

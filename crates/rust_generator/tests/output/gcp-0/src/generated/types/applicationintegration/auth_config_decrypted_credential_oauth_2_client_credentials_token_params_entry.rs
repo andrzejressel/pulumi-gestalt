@@ -7,10 +7,10 @@ pub struct AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntry 
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<super::super::types::applicationintegration::AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntryKey>>,
+    pub r#key: Option<Box<super::super::types::applicationintegration::AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntryKey>>,
     /// Value of the map entry.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<super::super::types::applicationintegration::AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntryValue>>,
+    pub r#value: Option<Box<super::super::types::applicationintegration::AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntryValue>>,
 }

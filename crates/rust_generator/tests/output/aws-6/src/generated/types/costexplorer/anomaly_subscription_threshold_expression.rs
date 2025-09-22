@@ -10,15 +10,15 @@ pub struct AnomalySubscriptionThresholdExpression {
     /// Configuration block for the filter that's based on  values. See Cost Category below.
     #[builder(into)]
     #[serde(rename = "costCategory")]
-    pub r#cost_category: Box<Option<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionCostCategory>>,
+    pub r#cost_category: Option<Box<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionCostCategory>>,
     /// Configuration block for the specific Dimension to use for.
     #[builder(into)]
     #[serde(rename = "dimension")]
-    pub r#dimension: Box<Option<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionDimension>>,
+    pub r#dimension: Option<Box<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionDimension>>,
     /// Return results that do not match the Dimension object.
     #[builder(into)]
     #[serde(rename = "not")]
-    pub r#not: Box<Option<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionNot>>,
+    pub r#not: Option<Box<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionNot>>,
     /// Return results that match either Dimension object.
     #[builder(into)]
     #[serde(rename = "ors")]
@@ -26,5 +26,5 @@ pub struct AnomalySubscriptionThresholdExpression {
     /// Configuration block for the specific Tag to use for. See Tags below.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionTags>>,
+    pub r#tags: Option<Box<super::super::types::costexplorer::AnomalySubscriptionThresholdExpressionTags>>,
 }

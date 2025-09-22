@@ -10,5 +10,5 @@ pub struct DomainDefaultUserSettingsRSessionAppSettings {
     /// The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. see `default_resource_spec` Block above.
     #[builder(into)]
     #[serde(rename = "defaultResourceSpec")]
-    pub r#default_resource_spec: Box<Option<super::super::types::sagemaker::DomainDefaultUserSettingsRSessionAppSettingsDefaultResourceSpec>>,
+    pub r#default_resource_spec: Option<Box<super::super::types::sagemaker::DomainDefaultUserSettingsRSessionAppSettingsDefaultResourceSpec>>,
 }

@@ -10,7 +10,7 @@ pub struct UrlMapPathMatcherRouteRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "headerAction")]
-    pub r#header_action: Box<Option<super::super::types::compute::UrlMapPathMatcherRouteRuleHeaderAction>>,
+    pub r#header_action: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleHeaderAction>>,
     /// The rules for determining a match.
     /// Structure is documented below.
     #[builder(into)]
@@ -41,7 +41,7 @@ pub struct UrlMapPathMatcherRouteRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "routeAction")]
-    pub r#route_action: Box<Option<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteAction>>,
+    pub r#route_action: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteAction>>,
     /// The backend service resource to which traffic is
     /// directed if this rule is matched. If routeAction is additionally specified,
     /// advanced routing actions like URL Rewrites, etc. take effect prior to sending
@@ -58,5 +58,5 @@ pub struct UrlMapPathMatcherRouteRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "urlRedirect")]
-    pub r#url_redirect: Box<Option<super::super::types::compute::UrlMapPathMatcherRouteRuleUrlRedirect>>,
+    pub r#url_redirect: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleUrlRedirect>>,
 }

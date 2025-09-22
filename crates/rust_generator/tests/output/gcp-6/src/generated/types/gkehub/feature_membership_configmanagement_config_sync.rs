@@ -10,7 +10,7 @@ pub struct FeatureMembershipConfigmanagementConfigSync {
     /// (Optional) Structure is documented below.
     #[builder(into)]
     #[serde(rename = "git")]
-    pub r#git: Box<Option<super::super::types::gkehub::FeatureMembershipConfigmanagementConfigSyncGit>>,
+    pub r#git: Option<Box<super::super::types::gkehub::FeatureMembershipConfigmanagementConfigSyncGit>>,
     /// Deprecated: If Workload Identity Federation for GKE is enabled, Google Cloud Service Account is no longer needed for exporting Config Sync metrics: https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/how-to/monitor-config-sync-cloud-monitoring#custom-monitoring.
     #[builder(into)]
     #[serde(rename = "metricsGcpServiceAccountEmail")]
@@ -20,7 +20,7 @@ pub struct FeatureMembershipConfigmanagementConfigSync {
     /// Use either `git` or `oci` config option.
     #[builder(into)]
     #[serde(rename = "oci")]
-    pub r#oci: Box<Option<super::super::types::gkehub::FeatureMembershipConfigmanagementConfigSyncOci>>,
+    pub r#oci: Option<Box<super::super::types::gkehub::FeatureMembershipConfigmanagementConfigSyncOci>>,
     /// Supported from Config Sync versions 1.10.0 onwards. Set to `true` to enable the Config Sync admission webhook to prevent drifts. If set to `false`, disables the Config Sync admission webhook and does not prevent drifts.
     #[builder(into)]
     #[serde(rename = "preventDrift")]

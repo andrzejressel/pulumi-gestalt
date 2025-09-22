@@ -6,9 +6,9 @@ pub struct LocationFsxOntapFileSystemProtocol {
     /// Network File System (NFS) protocol that DataSync uses to access your FSx ONTAP file system. See NFS below.
     #[builder(into)]
     #[serde(rename = "nfs")]
-    pub r#nfs: Box<Option<super::super::types::datasync::LocationFsxOntapFileSystemProtocolNfs>>,
+    pub r#nfs: Option<Box<super::super::types::datasync::LocationFsxOntapFileSystemProtocolNfs>>,
     /// Server Message Block (SMB) protocol that DataSync uses to access your FSx ONTAP file system. See [SMB] (#smb) below.
     #[builder(into)]
     #[serde(rename = "smb")]
-    pub r#smb: Box<Option<super::super::types::datasync::LocationFsxOntapFileSystemProtocolSmb>>,
+    pub r#smb: Option<Box<super::super::types::datasync::LocationFsxOntapFileSystemProtocolSmb>>,
 }

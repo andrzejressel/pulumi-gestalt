@@ -6,7 +6,7 @@ pub struct VirtualGatewaySpec {
     /// Defaults for backends.
     #[builder(into)]
     #[serde(rename = "backendDefaults")]
-    pub r#backend_defaults: Box<Option<super::super::types::appmesh::VirtualGatewaySpecBackendDefaults>>,
+    pub r#backend_defaults: Option<Box<super::super::types::appmesh::VirtualGatewaySpecBackendDefaults>>,
     /// Listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.
     #[builder(into)]
     #[serde(rename = "listeners")]
@@ -14,5 +14,5 @@ pub struct VirtualGatewaySpec {
     /// Inbound and outbound access logging information for the virtual gateway.
     #[builder(into)]
     #[serde(rename = "logging")]
-    pub r#logging: Box<Option<super::super::types::appmesh::VirtualGatewaySpecLogging>>,
+    pub r#logging: Option<Box<super::super::types::appmesh::VirtualGatewaySpecLogging>>,
 }

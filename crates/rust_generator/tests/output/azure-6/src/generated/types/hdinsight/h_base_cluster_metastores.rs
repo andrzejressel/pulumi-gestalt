@@ -6,13 +6,13 @@ pub struct HBaseClusterMetastores {
     /// An `ambari` block as defined below.
     #[builder(into)]
     #[serde(rename = "ambari")]
-    pub r#ambari: Box<Option<super::super::types::hdinsight::HBaseClusterMetastoresAmbari>>,
+    pub r#ambari: Option<Box<super::super::types::hdinsight::HBaseClusterMetastoresAmbari>>,
     /// A `hive` block as defined below.
     #[builder(into)]
     #[serde(rename = "hive")]
-    pub r#hive: Box<Option<super::super::types::hdinsight::HBaseClusterMetastoresHive>>,
+    pub r#hive: Option<Box<super::super::types::hdinsight::HBaseClusterMetastoresHive>>,
     /// An `oozie` block as defined below.
     #[builder(into)]
     #[serde(rename = "oozie")]
-    pub r#oozie: Box<Option<super::super::types::hdinsight::HBaseClusterMetastoresOozie>>,
+    pub r#oozie: Option<Box<super::super::types::hdinsight::HBaseClusterMetastoresOozie>>,
 }

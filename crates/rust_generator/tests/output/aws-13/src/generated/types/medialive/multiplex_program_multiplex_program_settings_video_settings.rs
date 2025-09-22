@@ -10,5 +10,5 @@ pub struct MultiplexProgramMultiplexProgramSettingsVideoSettings {
     /// Statmux settings. See Statmux Settings for more details.
     #[builder(into)]
     #[serde(rename = "statmuxSettings")]
-    pub r#statmux_settings: Box<Option<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsVideoSettingsStatmuxSettings>>,
+    pub r#statmux_settings: Option<Box<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsVideoSettingsStatmuxSettings>>,
 }

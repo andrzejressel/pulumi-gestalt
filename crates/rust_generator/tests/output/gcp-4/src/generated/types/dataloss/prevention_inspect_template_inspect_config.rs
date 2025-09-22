@@ -33,7 +33,7 @@ pub struct PreventionInspectTemplateInspectConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "limits")]
-    pub r#limits: Box<Option<super::super::types::dataloss::PreventionInspectTemplateInspectConfigLimits>>,
+    pub r#limits: Option<Box<super::super::types::dataloss::PreventionInspectTemplateInspectConfigLimits>>,
     /// Only returns findings equal or above this threshold. See https://cloud.google.com/dlp/docs/likelihood for more info
     /// Default value is `POSSIBLE`.
     /// Possible values are: `VERY_UNLIKELY`, `UNLIKELY`, `POSSIBLE`, `LIKELY`, `VERY_LIKELY`.

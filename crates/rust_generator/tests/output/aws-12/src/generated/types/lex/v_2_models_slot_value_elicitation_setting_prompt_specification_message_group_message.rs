@@ -8,11 +8,11 @@ pub struct V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroupMes
     pub r#custom_payloads: Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageCustomPayload>>,
     #[builder(into)]
     #[serde(rename = "imageResponseCard")]
-    pub r#image_response_card: Box<Option<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageImageResponseCard>>,
+    pub r#image_response_card: Option<Box<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageImageResponseCard>>,
     #[builder(into)]
     #[serde(rename = "plainTextMessage")]
-    pub r#plain_text_message: Box<Option<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessagePlainTextMessage>>,
+    pub r#plain_text_message: Option<Box<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessagePlainTextMessage>>,
     #[builder(into)]
     #[serde(rename = "ssmlMessage")]
-    pub r#ssml_message: Box<Option<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageSsmlMessage>>,
+    pub r#ssml_message: Option<Box<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageSsmlMessage>>,
 }

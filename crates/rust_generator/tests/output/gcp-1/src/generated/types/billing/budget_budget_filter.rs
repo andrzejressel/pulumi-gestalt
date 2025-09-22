@@ -31,7 +31,7 @@ pub struct BudgetBudgetFilter {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customPeriod")]
-    pub r#custom_period: Box<Option<super::super::types::billing::BudgetBudgetFilterCustomPeriod>>,
+    pub r#custom_period: Option<Box<super::super::types::billing::BudgetBudgetFilterCustomPeriod>>,
     /// A single label and value pair specifying that usage from only
     /// this set of labeled resources should be included in the budget.
     #[builder(into)]

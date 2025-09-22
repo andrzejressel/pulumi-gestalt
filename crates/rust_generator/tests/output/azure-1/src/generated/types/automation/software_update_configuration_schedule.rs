@@ -43,7 +43,7 @@ pub struct SoftwareUpdateConfigurationSchedule {
     /// List of `monthly_occurrence` blocks as defined below to specifies occurrences of days within a month. Only valid when frequency is `Month`. The `monthly_occurrence` block supports fields as defined below.
     #[builder(into)]
     #[serde(rename = "monthlyOccurrence")]
-    pub r#monthly_occurrence: Box<Option<super::super::types::automation::SoftwareUpdateConfigurationScheduleMonthlyOccurrence>>,
+    pub r#monthly_occurrence: Option<Box<super::super::types::automation::SoftwareUpdateConfigurationScheduleMonthlyOccurrence>>,
     #[builder(into)]
     #[serde(rename = "nextRun")]
     pub r#next_run: Option<String>,

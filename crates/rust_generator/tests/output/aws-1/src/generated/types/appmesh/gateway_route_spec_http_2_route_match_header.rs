@@ -10,7 +10,7 @@ pub struct GatewayRouteSpecHttp2RouteMatchHeader {
     /// Method and value to match the header value sent with a request. Specify one match method.
     #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttp2RouteMatchHeaderMatch>>,
+    pub r#match_: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttp2RouteMatchHeaderMatch>>,
     /// Name for the HTTP header in the client request that will be matched on.
     #[builder(into)]
     #[serde(rename = "name")]

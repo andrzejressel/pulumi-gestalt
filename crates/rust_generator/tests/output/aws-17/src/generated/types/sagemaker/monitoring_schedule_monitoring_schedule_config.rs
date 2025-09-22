@@ -14,5 +14,5 @@ pub struct MonitoringScheduleMonitoringScheduleConfig {
     /// Configures the monitoring schedule. Fields are documented below.
     #[builder(into)]
     #[serde(rename = "scheduleConfig")]
-    pub r#schedule_config: Box<Option<super::super::types::sagemaker::MonitoringScheduleMonitoringScheduleConfigScheduleConfig>>,
+    pub r#schedule_config: Option<Box<super::super::types::sagemaker::MonitoringScheduleMonitoringScheduleConfigScheduleConfig>>,
 }

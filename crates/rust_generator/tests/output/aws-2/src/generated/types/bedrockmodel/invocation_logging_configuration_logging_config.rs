@@ -6,7 +6,7 @@ pub struct InvocationLoggingConfigurationLoggingConfig {
     /// CloudWatch logging configuration.
     #[builder(into)]
     #[serde(rename = "cloudwatchConfig")]
-    pub r#cloudwatch_config: Box<Option<super::super::types::bedrockmodel::InvocationLoggingConfigurationLoggingConfigCloudwatchConfig>>,
+    pub r#cloudwatch_config: Option<Box<super::super::types::bedrockmodel::InvocationLoggingConfigurationLoggingConfigCloudwatchConfig>>,
     /// Set to include embeddings data in the log delivery.
     #[builder(into)]
     #[serde(rename = "embeddingDataDeliveryEnabled")]
@@ -18,7 +18,7 @@ pub struct InvocationLoggingConfigurationLoggingConfig {
     /// S3 configuration for storing log data.
     #[builder(into)]
     #[serde(rename = "s3Config")]
-    pub r#s_3_config: Box<Option<super::super::types::bedrockmodel::InvocationLoggingConfigurationLoggingConfigS3Config>>,
+    pub r#s_3_config: Option<Box<super::super::types::bedrockmodel::InvocationLoggingConfigurationLoggingConfigS3Config>>,
     /// Set to include text data in the log delivery.
     #[builder(into)]
     #[serde(rename = "textDataDeliveryEnabled")]

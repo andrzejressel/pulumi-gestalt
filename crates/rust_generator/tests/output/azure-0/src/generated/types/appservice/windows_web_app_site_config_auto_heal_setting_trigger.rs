@@ -10,11 +10,11 @@ pub struct WindowsWebAppSiteConfigAutoHealSettingTrigger {
     /// A `requests` block as defined above.
     #[builder(into)]
     #[serde(rename = "requests")]
-    pub r#requests: Box<Option<super::super::types::appservice::WindowsWebAppSiteConfigAutoHealSettingTriggerRequests>>,
+    pub r#requests: Option<Box<super::super::types::appservice::WindowsWebAppSiteConfigAutoHealSettingTriggerRequests>>,
     /// A `slow_request` block as defined above.
     #[builder(into)]
     #[serde(rename = "slowRequest")]
-    pub r#slow_request: Box<Option<super::super::types::appservice::WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest>>,
+    pub r#slow_request: Option<Box<super::super::types::appservice::WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest>>,
     /// One or more `slow_request_with_path` blocks as defined above.
     #[builder(into)]
     #[serde(rename = "slowRequestWithPaths")]

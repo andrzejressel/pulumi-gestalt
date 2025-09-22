@@ -6,5 +6,5 @@ pub struct AwsNodePoolUpdateSettings {
     /// Optional. Settings for surge update.
     #[builder(into)]
     #[serde(rename = "surgeSettings")]
-    pub r#surge_settings: Box<Option<super::super::types::container::AwsNodePoolUpdateSettingsSurgeSettings>>,
+    pub r#surge_settings: Option<Box<super::super::types::container::AwsNodePoolUpdateSettingsSurgeSettings>>,
 }

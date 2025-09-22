@@ -10,5 +10,5 @@ pub struct BucketObjectLockConfiguration {
     /// The Object Lock rule in place for this bucket.
     #[builder(into)]
     #[serde(rename = "rule")]
-    pub r#rule: Box<Option<super::super::types::s3::BucketObjectLockConfigurationRule>>,
+    pub r#rule: Option<Box<super::super::types::s3::BucketObjectLockConfigurationRule>>,
 }

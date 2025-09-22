@@ -6,7 +6,7 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfiguration {
     /// The input stream used by the application.
     #[builder(into)]
     #[serde(rename = "input")]
-    pub r#input: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInput>>,
+    pub r#input: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInput>>,
     /// The destination streams used by the application.
     #[builder(into)]
     #[serde(rename = "outputs")]
@@ -14,5 +14,5 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfiguration {
     /// The reference data source used by the application.
     #[builder(into)]
     #[serde(rename = "referenceDataSource")]
-    pub r#reference_data_source: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSource>>,
+    pub r#reference_data_source: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSource>>,
 }

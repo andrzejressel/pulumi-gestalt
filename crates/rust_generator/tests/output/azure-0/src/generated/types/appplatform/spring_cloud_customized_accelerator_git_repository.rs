@@ -6,7 +6,7 @@ pub struct SpringCloudCustomizedAcceleratorGitRepository {
     /// A `basic_auth` block as defined below. Conflicts with `git_repository[0].ssh_auth`. Changing this forces a new Spring Cloud Customized Accelerator to be created.
     #[builder(into)]
     #[serde(rename = "basicAuth")]
-    pub r#basic_auth: Box<Option<super::super::types::appplatform::SpringCloudCustomizedAcceleratorGitRepositoryBasicAuth>>,
+    pub r#basic_auth: Option<Box<super::super::types::appplatform::SpringCloudCustomizedAcceleratorGitRepositoryBasicAuth>>,
     /// Specifies the Git repository branch to be used.
     #[builder(into)]
     #[serde(rename = "branch")]
@@ -34,7 +34,7 @@ pub struct SpringCloudCustomizedAcceleratorGitRepository {
     /// A `ssh_auth` block as defined below. Conflicts with `git_repository[0].basic_auth`. Changing this forces a new Spring Cloud Customized Accelerator to be created.
     #[builder(into)]
     #[serde(rename = "sshAuth")]
-    pub r#ssh_auth: Box<Option<super::super::types::appplatform::SpringCloudCustomizedAcceleratorGitRepositorySshAuth>>,
+    pub r#ssh_auth: Option<Box<super::super::types::appplatform::SpringCloudCustomizedAcceleratorGitRepositorySshAuth>>,
     /// Specifies Git repository URL for the accelerator.
     #[builder(into)]
     #[serde(rename = "url")]

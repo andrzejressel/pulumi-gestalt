@@ -10,7 +10,7 @@ pub struct SpotFleetRequestLaunchTemplateConfigOverride {
     /// The instance requirements. See below.
     #[builder(into)]
     #[serde(rename = "instanceRequirements")]
-    pub r#instance_requirements: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirements>>,
+    pub r#instance_requirements: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirements>>,
     /// The type of instance to request.
     #[builder(into)]
     #[serde(rename = "instanceType")]

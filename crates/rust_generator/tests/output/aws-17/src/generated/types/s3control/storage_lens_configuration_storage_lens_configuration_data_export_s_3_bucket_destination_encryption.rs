@@ -6,7 +6,7 @@ pub struct StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDes
     /// SSE-KMS encryption. See SSE KMS below for more details.
     #[builder(into)]
     #[serde(rename = "sseKms")]
-    pub r#sse_kms: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryptionSseKms>>,
+    pub r#sse_kms: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryptionSseKms>>,
     /// SSE-S3 encryption. An empty configuration block `{}` should be used.
     #[builder(into)]
     #[serde(rename = "sseS3s")]

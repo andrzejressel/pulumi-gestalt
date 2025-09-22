@@ -6,7 +6,7 @@ pub struct WindowsWebAppLogs {
     /// A `application_logs` block as defined above.
     #[builder(into)]
     #[serde(rename = "applicationLogs")]
-    pub r#application_logs: Box<Option<super::super::types::appservice::WindowsWebAppLogsApplicationLogs>>,
+    pub r#application_logs: Option<Box<super::super::types::appservice::WindowsWebAppLogsApplicationLogs>>,
     /// Should detailed error messages be enabled.
     #[builder(into)]
     #[serde(rename = "detailedErrorMessages")]
@@ -18,5 +18,5 @@ pub struct WindowsWebAppLogs {
     /// A `http_logs` block as defined above.
     #[builder(into)]
     #[serde(rename = "httpLogs")]
-    pub r#http_logs: Box<Option<super::super::types::appservice::WindowsWebAppLogsHttpLogs>>,
+    pub r#http_logs: Option<Box<super::super::types::appservice::WindowsWebAppLogsHttpLogs>>,
 }

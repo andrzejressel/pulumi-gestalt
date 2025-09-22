@@ -7,7 +7,7 @@ pub struct ClusterPersistenceConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "aofConfig")]
-    pub r#aof_config: Box<Option<super::super::types::redis::ClusterPersistenceConfigAofConfig>>,
+    pub r#aof_config: Option<Box<super::super::types::redis::ClusterPersistenceConfigAofConfig>>,
     /// Optional. Controls whether Persistence features are enabled. If not provided, the existing value will be used.
     /// - DISABLED: 	Persistence (both backup and restore) is disabled for the cluster.
     /// - RDB: RDB based Persistence is enabled.
@@ -20,5 +20,5 @@ pub struct ClusterPersistenceConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rdbConfig")]
-    pub r#rdb_config: Box<Option<super::super::types::redis::ClusterPersistenceConfigRdbConfig>>,
+    pub r#rdb_config: Option<Box<super::super::types::redis::ClusterPersistenceConfigRdbConfig>>,
 }

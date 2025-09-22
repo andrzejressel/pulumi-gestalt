@@ -11,7 +11,7 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sensitivityScore")]
-    pub r#sensitivity_score: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScore>>,
+    pub r#sensitivity_score: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScore>>,
     /// Optional version name for this InfoType.
     #[builder(into)]
     #[serde(rename = "version")]

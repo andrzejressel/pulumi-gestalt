@@ -14,7 +14,7 @@ pub struct LinuxFunctionAppSiteConfigScmIpRestriction {
     /// A `headers` block as defined above.
     #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Option<super::super::types::appservice::LinuxFunctionAppSiteConfigScmIpRestrictionHeaders>>,
+    pub r#headers: Option<Box<super::super::types::appservice::LinuxFunctionAppSiteConfigScmIpRestrictionHeaders>>,
     /// The CIDR notation of the IP or IP Range to match. For example: `10.0.0.0/24` or `192.168.10.1/32`
     #[builder(into)]
     #[serde(rename = "ipAddress")]

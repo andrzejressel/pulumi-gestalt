@@ -26,7 +26,7 @@ pub struct EventTargetEcsTarget {
     /// Use this if the ECS task uses the awsvpc network mode. This specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. Required if `launch_type` is `FARGATE` because the awsvpc mode is required for Fargate tasks.
     #[builder(into)]
     #[serde(rename = "networkConfiguration")]
-    pub r#network_configuration: Box<Option<super::super::types::cloudwatch::EventTargetEcsTargetNetworkConfiguration>>,
+    pub r#network_configuration: Option<Box<super::super::types::cloudwatch::EventTargetEcsTargetNetworkConfiguration>>,
     /// An array of placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.
     #[builder(into)]
     #[serde(rename = "orderedPlacementStrategies")]

@@ -6,7 +6,7 @@ pub struct DocumentAiWarehouseDocumentSchemaPropertyDefinition {
     /// Date time property. Not supported by CMEK compliant deployment.
     #[builder(into)]
     #[serde(rename = "dateTimeTypeOptions")]
-    pub r#date_time_type_options: Box<Option<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionDateTimeTypeOptions>>,
+    pub r#date_time_type_options: Option<Box<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionDateTimeTypeOptions>>,
     /// The display-name for the property, used for front-end.
     #[builder(into)]
     #[serde(rename = "displayName")]
@@ -15,15 +15,15 @@ pub struct DocumentAiWarehouseDocumentSchemaPropertyDefinition {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "enumTypeOptions")]
-    pub r#enum_type_options: Box<Option<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionEnumTypeOptions>>,
+    pub r#enum_type_options: Option<Box<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionEnumTypeOptions>>,
     /// Float property.
     #[builder(into)]
     #[serde(rename = "floatTypeOptions")]
-    pub r#float_type_options: Box<Option<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionFloatTypeOptions>>,
+    pub r#float_type_options: Option<Box<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionFloatTypeOptions>>,
     /// Integer property.
     #[builder(into)]
     #[serde(rename = "integerTypeOptions")]
-    pub r#integer_type_options: Box<Option<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionIntegerTypeOptions>>,
+    pub r#integer_type_options: Option<Box<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionIntegerTypeOptions>>,
     /// Whether the property can be filtered. If this is a sub-property, all the parent properties must be marked filterable.
     #[builder(into)]
     #[serde(rename = "isFilterable")]
@@ -47,7 +47,7 @@ pub struct DocumentAiWarehouseDocumentSchemaPropertyDefinition {
     /// Map property.
     #[builder(into)]
     #[serde(rename = "mapTypeOptions")]
-    pub r#map_type_options: Box<Option<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionMapTypeOptions>>,
+    pub r#map_type_options: Option<Box<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionMapTypeOptions>>,
     /// The name of the metadata property.
     #[builder(into)]
     #[serde(rename = "name")]
@@ -56,7 +56,7 @@ pub struct DocumentAiWarehouseDocumentSchemaPropertyDefinition {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "propertyTypeOptions")]
-    pub r#property_type_options: Box<Option<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptions>>,
+    pub r#property_type_options: Option<Box<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptions>>,
     /// Stores the retrieval importance.
     /// Possible values are: `HIGHEST`, `HIGHER`, `HIGH`, `MEDIUM`, `LOW`, `LOWEST`.
     #[builder(into)]
@@ -70,9 +70,9 @@ pub struct DocumentAiWarehouseDocumentSchemaPropertyDefinition {
     /// Text property.
     #[builder(into)]
     #[serde(rename = "textTypeOptions")]
-    pub r#text_type_options: Box<Option<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionTextTypeOptions>>,
+    pub r#text_type_options: Option<Box<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionTextTypeOptions>>,
     /// Timestamp property. Not supported by CMEK compliant deployment.
     #[builder(into)]
     #[serde(rename = "timestampTypeOptions")]
-    pub r#timestamp_type_options: Box<Option<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionTimestampTypeOptions>>,
+    pub r#timestamp_type_options: Option<Box<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionTimestampTypeOptions>>,
 }

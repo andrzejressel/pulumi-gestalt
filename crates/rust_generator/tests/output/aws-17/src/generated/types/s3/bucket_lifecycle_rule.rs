@@ -14,7 +14,7 @@ pub struct BucketLifecycleRule {
     /// Specifies a period in the object's expire (documented below).
     #[builder(into)]
     #[serde(rename = "expiration")]
-    pub r#expiration: Box<Option<super::super::types::s3::BucketLifecycleRuleExpiration>>,
+    pub r#expiration: Option<Box<super::super::types::s3::BucketLifecycleRuleExpiration>>,
     /// Unique identifier for the rule. Must be less than or equal to 255 characters in length.
     #[builder(into)]
     #[serde(rename = "id")]
@@ -22,7 +22,7 @@ pub struct BucketLifecycleRule {
     /// Specifies when noncurrent object versions expire (documented below).
     #[builder(into)]
     #[serde(rename = "noncurrentVersionExpiration")]
-    pub r#noncurrent_version_expiration: Box<Option<super::super::types::s3::BucketLifecycleRuleNoncurrentVersionExpiration>>,
+    pub r#noncurrent_version_expiration: Option<Box<super::super::types::s3::BucketLifecycleRuleNoncurrentVersionExpiration>>,
     /// Specifies when noncurrent object versions transitions (documented below).
     /// 
     /// At least one of `abort_incomplete_multipart_upload_days`, `expiration`, `transition`, `noncurrent_version_expiration`, `noncurrent_version_transition` must be specified.

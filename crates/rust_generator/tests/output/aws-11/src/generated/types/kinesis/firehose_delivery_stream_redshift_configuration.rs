@@ -6,7 +6,7 @@ pub struct FirehoseDeliveryStreamRedshiftConfiguration {
     /// The CloudWatch Logging Options for the delivery stream. See `cloudwatch_logging_options` block below for details.
     #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptions")]
-    pub r#cloudwatch_logging_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptions>>,
+    pub r#cloudwatch_logging_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationCloudwatchLoggingOptions>>,
     /// The jdbcurl of the redshift cluster.
     #[builder(into)]
     #[serde(rename = "clusterJdbcurl")]
@@ -30,7 +30,7 @@ pub struct FirehoseDeliveryStreamRedshiftConfiguration {
     /// The data processing configuration.  See `processing_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "processingConfiguration")]
-    pub r#processing_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationProcessingConfiguration>>,
+    pub r#processing_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationProcessingConfiguration>>,
     /// The length of time during which Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value of DurationInSeconds is 0 (zero) or if the first delivery attempt takes longer than the current value.
     #[builder(into)]
     #[serde(rename = "retryDuration")]
@@ -43,7 +43,7 @@ pub struct FirehoseDeliveryStreamRedshiftConfiguration {
     /// `secrets_manager_configuration` - (Optional) The Secrets Manager configuration. See `secrets_manager_configuration` block below for details. This value is required if `username` and `password` are not provided.
     #[builder(into)]
     #[serde(rename = "s3BackupConfiguration")]
-    pub r#s_3_backup_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationS3BackupConfiguration>>,
+    pub r#s_3_backup_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationS3BackupConfiguration>>,
     /// The Amazon S3 backup mode.  Valid values are `Disabled` and `Enabled`.  Default value is `Disabled`.
     #[builder(into)]
     #[serde(rename = "s3BackupMode")]
@@ -54,7 +54,7 @@ pub struct FirehoseDeliveryStreamRedshiftConfiguration {
     pub r#s_3_configuration: Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationS3Configuration>,
     #[builder(into)]
     #[serde(rename = "secretsManagerConfiguration")]
-    pub r#secrets_manager_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationSecretsManagerConfiguration>>,
+    pub r#secrets_manager_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationSecretsManagerConfiguration>>,
     /// The username that the firehose delivery stream will assume. It is strongly recommended that the username and password provided is used exclusively for Amazon Kinesis Firehose purposes, and that the permissions for the account are restricted for Amazon Redshift INSERT permissions. This value is required if `secrets_manager_configuration` is not provided.
     #[builder(into)]
     #[serde(rename = "username")]

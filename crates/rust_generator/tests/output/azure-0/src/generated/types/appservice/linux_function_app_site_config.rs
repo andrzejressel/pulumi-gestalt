@@ -28,7 +28,7 @@ pub struct LinuxFunctionAppSiteConfig {
     /// An `app_service_logs` block as defined above.
     #[builder(into)]
     #[serde(rename = "appServiceLogs")]
-    pub r#app_service_logs: Box<Option<super::super::types::appservice::LinuxFunctionAppSiteConfigAppServiceLogs>>,
+    pub r#app_service_logs: Option<Box<super::super::types::appservice::LinuxFunctionAppSiteConfigAppServiceLogs>>,
     /// The Connection String for linking the Linux Function App to Application Insights.
     #[builder(into)]
     #[serde(rename = "applicationInsightsConnectionString")]
@@ -42,7 +42,7 @@ pub struct LinuxFunctionAppSiteConfig {
     /// > **Note:** If this is set, there must not be an application setting `FUNCTIONS_WORKER_RUNTIME`.
     #[builder(into)]
     #[serde(rename = "applicationStack")]
-    pub r#application_stack: Box<Option<super::super::types::appservice::LinuxFunctionAppSiteConfigApplicationStack>>,
+    pub r#application_stack: Option<Box<super::super::types::appservice::LinuxFunctionAppSiteConfigApplicationStack>>,
     /// The Client ID of the Managed Service Identity to use for connections to the Azure Container Registry.
     #[builder(into)]
     #[serde(rename = "containerRegistryManagedIdentityClientId")]
@@ -54,7 +54,7 @@ pub struct LinuxFunctionAppSiteConfig {
     /// A `cors` block as defined above.
     #[builder(into)]
     #[serde(rename = "cors")]
-    pub r#cors: Box<Option<super::super::types::appservice::LinuxFunctionAppSiteConfigCors>>,
+    pub r#cors: Option<Box<super::super::types::appservice::LinuxFunctionAppSiteConfigCors>>,
     /// Specifies a list of Default Documents for the Linux Web App.
     #[builder(into)]
     #[serde(rename = "defaultDocuments")]

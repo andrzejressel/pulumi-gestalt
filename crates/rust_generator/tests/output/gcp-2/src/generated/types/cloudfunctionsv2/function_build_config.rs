@@ -7,7 +7,7 @@ pub struct FunctionBuildConfig {
     /// the function to be redeployed.
     #[builder(into)]
     #[serde(rename = "automaticUpdatePolicy")]
-    pub r#automatic_update_policy: Box<Option<super::super::types::cloudfunctionsv2::FunctionBuildConfigAutomaticUpdatePolicy>>,
+    pub r#automatic_update_policy: Option<Box<super::super::types::cloudfunctionsv2::FunctionBuildConfigAutomaticUpdatePolicy>>,
     /// (Output)
     /// The Cloud Build name of the latest successful
     /// deployment of the function.
@@ -34,7 +34,7 @@ pub struct FunctionBuildConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "onDeployUpdatePolicy")]
-    pub r#on_deploy_update_policy: Box<Option<super::super::types::cloudfunctionsv2::FunctionBuildConfigOnDeployUpdatePolicy>>,
+    pub r#on_deploy_update_policy: Option<Box<super::super::types::cloudfunctionsv2::FunctionBuildConfigOnDeployUpdatePolicy>>,
     /// The runtime in which to run the function. Required when deploying a new
     /// function, optional when updating an existing function.
     #[builder(into)]
@@ -48,7 +48,7 @@ pub struct FunctionBuildConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<Option<super::super::types::cloudfunctionsv2::FunctionBuildConfigSource>>,
+    pub r#source: Option<Box<super::super::types::cloudfunctionsv2::FunctionBuildConfigSource>>,
     /// Name of the Cloud Build Custom Worker Pool that should be used to build the function.
     #[builder(into)]
     #[serde(rename = "workerPool")]

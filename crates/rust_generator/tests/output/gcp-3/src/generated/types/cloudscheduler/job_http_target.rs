@@ -24,13 +24,13 @@ pub struct JobHttpTarget {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oauthToken")]
-    pub r#oauth_token: Box<Option<super::super::types::cloudscheduler::JobHttpTargetOauthToken>>,
+    pub r#oauth_token: Option<Box<super::super::types::cloudscheduler::JobHttpTargetOauthToken>>,
     /// Contains information needed for generating an OpenID Connect token.
     /// This type of authorization should be used when sending requests to third party endpoints or Cloud Run.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oidcToken")]
-    pub r#oidc_token: Box<Option<super::super::types::cloudscheduler::JobHttpTargetOidcToken>>,
+    pub r#oidc_token: Option<Box<super::super::types::cloudscheduler::JobHttpTargetOidcToken>>,
     /// The full URI path that the request will be sent to.
     #[builder(into)]
     #[serde(rename = "uri")]

@@ -7,10 +7,10 @@ pub struct CxTestCaseTestCaseConversationTurn {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "userInput")]
-    pub r#user_input: Box<Option<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnUserInput>>,
+    pub r#user_input: Option<Box<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnUserInput>>,
     /// The virtual agent output.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "virtualAgentOutput")]
-    pub r#virtual_agent_output: Box<Option<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnVirtualAgentOutput>>,
+    pub r#virtual_agent_output: Option<Box<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnVirtualAgentOutput>>,
 }

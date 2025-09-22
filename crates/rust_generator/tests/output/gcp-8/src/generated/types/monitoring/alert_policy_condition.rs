@@ -8,18 +8,18 @@ pub struct AlertPolicyCondition {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "conditionAbsent")]
-    pub r#condition_absent: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionAbsent>>,
+    pub r#condition_absent: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionAbsent>>,
     /// A condition that checks for log messages matching given constraints.
     /// If set, no other conditions can be present.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "conditionMatchedLog")]
-    pub r#condition_matched_log: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionMatchedLog>>,
+    pub r#condition_matched_log: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionMatchedLog>>,
     /// A Monitoring Query Language query that outputs a boolean stream
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "conditionMonitoringQueryLanguage")]
-    pub r#condition_monitoring_query_language: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionMonitoringQueryLanguage>>,
+    pub r#condition_monitoring_query_language: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionMonitoringQueryLanguage>>,
     /// A condition type that allows alert policies to be defined using
     /// Prometheus Query Language (PromQL).
     /// The PrometheusQueryLanguageCondition message contains information
@@ -27,13 +27,13 @@ pub struct AlertPolicyCondition {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "conditionPrometheusQueryLanguage")]
-    pub r#condition_prometheus_query_language: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionPrometheusQueryLanguage>>,
+    pub r#condition_prometheus_query_language: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionPrometheusQueryLanguage>>,
     /// A condition that compares a time series against a
     /// threshold.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "conditionThreshold")]
-    pub r#condition_threshold: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionThreshold>>,
+    pub r#condition_threshold: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionThreshold>>,
     /// A short name or phrase used to identify the
     /// condition in dashboards, notifications, and
     /// incidents. To avoid confusion, don't use the same

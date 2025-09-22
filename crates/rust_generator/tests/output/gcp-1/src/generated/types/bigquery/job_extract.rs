@@ -31,12 +31,12 @@ pub struct JobExtract {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sourceModel")]
-    pub r#source_model: Box<Option<super::super::types::bigquery::JobExtractSourceModel>>,
+    pub r#source_model: Option<Box<super::super::types::bigquery::JobExtractSourceModel>>,
     /// A reference to the table being exported.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sourceTable")]
-    pub r#source_table: Box<Option<super::super::types::bigquery::JobExtractSourceTable>>,
+    pub r#source_table: Option<Box<super::super::types::bigquery::JobExtractSourceTable>>,
     /// Whether to use logical types when extracting to AVRO format.
     #[builder(into)]
     #[serde(rename = "useAvroLogicalTypes")]

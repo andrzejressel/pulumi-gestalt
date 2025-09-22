@@ -8,10 +8,10 @@ pub struct ServerTlsPolicyMtlsPolicyClientValidationCa {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "certificateProviderInstance")]
-    pub r#certificate_provider_instance: Box<Option<super::super::types::networksecurity::ServerTlsPolicyMtlsPolicyClientValidationCaCertificateProviderInstance>>,
+    pub r#certificate_provider_instance: Option<Box<super::super::types::networksecurity::ServerTlsPolicyMtlsPolicyClientValidationCaCertificateProviderInstance>>,
     /// gRPC specific configuration to access the gRPC server to obtain the cert and private key.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "grpcEndpoint")]
-    pub r#grpc_endpoint: Box<Option<super::super::types::networksecurity::ServerTlsPolicyMtlsPolicyClientValidationCaGrpcEndpoint>>,
+    pub r#grpc_endpoint: Option<Box<super::super::types::networksecurity::ServerTlsPolicyMtlsPolicyClientValidationCaGrpcEndpoint>>,
 }

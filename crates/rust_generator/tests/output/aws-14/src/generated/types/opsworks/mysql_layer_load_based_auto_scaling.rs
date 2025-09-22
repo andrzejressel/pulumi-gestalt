@@ -5,11 +5,11 @@
 pub struct MysqlLayerLoadBasedAutoScaling {
     #[builder(into)]
     #[serde(rename = "downscaling")]
-    pub r#downscaling: Box<Option<super::super::types::opsworks::MysqlLayerLoadBasedAutoScalingDownscaling>>,
+    pub r#downscaling: Option<Box<super::super::types::opsworks::MysqlLayerLoadBasedAutoScalingDownscaling>>,
     #[builder(into)]
     #[serde(rename = "enable")]
     pub r#enable: Option<bool>,
     #[builder(into)]
     #[serde(rename = "upscaling")]
-    pub r#upscaling: Box<Option<super::super::types::opsworks::MysqlLayerLoadBasedAutoScalingUpscaling>>,
+    pub r#upscaling: Option<Box<super::super::types::opsworks::MysqlLayerLoadBasedAutoScalingUpscaling>>,
 }

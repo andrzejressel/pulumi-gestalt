@@ -26,7 +26,7 @@ pub struct LinuxFunctionAppSlotSiteConfig {
     /// an `app_service_logs` block as detailed below.
     #[builder(into)]
     #[serde(rename = "appServiceLogs")]
-    pub r#app_service_logs: Box<Option<super::super::types::appservice::LinuxFunctionAppSlotSiteConfigAppServiceLogs>>,
+    pub r#app_service_logs: Option<Box<super::super::types::appservice::LinuxFunctionAppSlotSiteConfigAppServiceLogs>>,
     /// The Connection String for linking the Linux Function App to Application Insights.
     #[builder(into)]
     #[serde(rename = "applicationInsightsConnectionString")]
@@ -38,7 +38,7 @@ pub struct LinuxFunctionAppSlotSiteConfig {
     /// an `application_stack` block as detailed below.
     #[builder(into)]
     #[serde(rename = "applicationStack")]
-    pub r#application_stack: Box<Option<super::super::types::appservice::LinuxFunctionAppSlotSiteConfigApplicationStack>>,
+    pub r#application_stack: Option<Box<super::super::types::appservice::LinuxFunctionAppSlotSiteConfigApplicationStack>>,
     /// The name of the slot to automatically swap with when this slot is successfully deployed.
     #[builder(into)]
     #[serde(rename = "autoSwapSlotName")]
@@ -54,7 +54,7 @@ pub struct LinuxFunctionAppSlotSiteConfig {
     /// a `cors` block as detailed below.
     #[builder(into)]
     #[serde(rename = "cors")]
-    pub r#cors: Box<Option<super::super::types::appservice::LinuxFunctionAppSlotSiteConfigCors>>,
+    pub r#cors: Option<Box<super::super::types::appservice::LinuxFunctionAppSlotSiteConfigCors>>,
     /// Specifies a list of Default Documents for the Linux Web App.
     #[builder(into)]
     #[serde(rename = "defaultDocuments")]

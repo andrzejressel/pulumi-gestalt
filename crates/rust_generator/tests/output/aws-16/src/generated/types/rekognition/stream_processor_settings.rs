@@ -6,9 +6,9 @@ pub struct StreamProcessorSettings {
     /// Label detection settings to use on a streaming video. See `connected_home`.
     #[builder(into)]
     #[serde(rename = "connectedHome")]
-    pub r#connected_home: Box<Option<super::super::types::rekognition::StreamProcessorSettingsConnectedHome>>,
+    pub r#connected_home: Option<Box<super::super::types::rekognition::StreamProcessorSettingsConnectedHome>>,
     /// Input face recognition parameters for an Amazon Rekognition stream processor. See `face_search`.
     #[builder(into)]
     #[serde(rename = "faceSearch")]
-    pub r#face_search: Box<Option<super::super::types::rekognition::StreamProcessorSettingsFaceSearch>>,
+    pub r#face_search: Option<Box<super::super::types::rekognition::StreamProcessorSettingsFaceSearch>>,
 }

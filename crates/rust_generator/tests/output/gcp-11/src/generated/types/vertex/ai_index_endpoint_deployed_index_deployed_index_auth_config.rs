@@ -7,5 +7,5 @@ pub struct AiIndexEndpointDeployedIndexDeployedIndexAuthConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "authProvider")]
-    pub r#auth_provider: Box<Option<super::super::types::vertex::AiIndexEndpointDeployedIndexDeployedIndexAuthConfigAuthProvider>>,
+    pub r#auth_provider: Option<Box<super::super::types::vertex::AiIndexEndpointDeployedIndexDeployedIndexAuthConfigAuthProvider>>,
 }

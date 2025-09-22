@@ -7,12 +7,12 @@ pub struct StreamSourceConfigPostgresqlSourceConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "excludeObjects")]
-    pub r#exclude_objects: Box<Option<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfigExcludeObjects>>,
+    pub r#exclude_objects: Option<Box<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfigExcludeObjects>>,
     /// PostgreSQL objects to retrieve from the source.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "includeObjects")]
-    pub r#include_objects: Box<Option<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfigIncludeObjects>>,
+    pub r#include_objects: Option<Box<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfigIncludeObjects>>,
     /// Maximum number of concurrent backfill tasks. The number should be non
     /// negative. If not set (or set to 0), the system's default value will be used.
     #[builder(into)]

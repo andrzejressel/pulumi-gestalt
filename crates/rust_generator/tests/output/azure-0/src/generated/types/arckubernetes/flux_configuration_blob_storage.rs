@@ -22,7 +22,7 @@ pub struct FluxConfigurationBlobStorage {
     /// A `service_principal` block as defined below.
     #[builder(into)]
     #[serde(rename = "servicePrincipal")]
-    pub r#service_principal: Box<Option<super::super::types::arckubernetes::FluxConfigurationBlobStorageServicePrincipal>>,
+    pub r#service_principal: Option<Box<super::super::types::arckubernetes::FluxConfigurationBlobStorageServicePrincipal>>,
     /// Specifies the interval at which to re-reconcile the cluster Azure Blob source with the remote.
     #[builder(into)]
     #[serde(rename = "syncIntervalInSeconds")]

@@ -6,10 +6,10 @@ pub struct PreventionJobTriggerTrigger {
     /// For use with hybrid jobs. Jobs must be manually created and finished.
     #[builder(into)]
     #[serde(rename = "manual")]
-    pub r#manual: Box<Option<super::super::types::dataloss::PreventionJobTriggerTriggerManual>>,
+    pub r#manual: Option<Box<super::super::types::dataloss::PreventionJobTriggerTriggerManual>>,
     /// Schedule for triggered jobs
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "schedule")]
-    pub r#schedule: Box<Option<super::super::types::dataloss::PreventionJobTriggerTriggerSchedule>>,
+    pub r#schedule: Option<Box<super::super::types::dataloss::PreventionJobTriggerTriggerSchedule>>,
 }

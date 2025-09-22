@@ -6,7 +6,7 @@ pub struct JobTemplateJobTemplateData {
     /// The configuration settings that are used to override defaults configuration.
     #[builder(into)]
     #[serde(rename = "configurationOverrides")]
-    pub r#configuration_overrides: Box<Option<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverrides>>,
+    pub r#configuration_overrides: Option<Box<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverrides>>,
     /// The execution role ARN of the job run.
     #[builder(into)]
     #[serde(rename = "executionRoleArn")]

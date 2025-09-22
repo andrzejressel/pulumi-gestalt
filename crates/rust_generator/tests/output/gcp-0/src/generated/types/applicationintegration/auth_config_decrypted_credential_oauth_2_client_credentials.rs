@@ -26,5 +26,5 @@ pub struct AuthConfigDecryptedCredentialOauth2ClientCredentials {
     /// Token parameters for the auth request.
     #[builder(into)]
     #[serde(rename = "tokenParams")]
-    pub r#token_params: Box<Option<super::super::types::applicationintegration::AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParams>>,
+    pub r#token_params: Option<Box<super::super::types::applicationintegration::AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParams>>,
 }

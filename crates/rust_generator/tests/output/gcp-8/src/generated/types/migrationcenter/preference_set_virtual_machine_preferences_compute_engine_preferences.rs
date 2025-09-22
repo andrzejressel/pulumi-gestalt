@@ -11,5 +11,5 @@ pub struct PreferenceSetVirtualMachinePreferencesComputeEnginePreferences {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "machinePreferences")]
-    pub r#machine_preferences: Box<Option<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferences>>,
+    pub r#machine_preferences: Option<Box<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferences>>,
 }

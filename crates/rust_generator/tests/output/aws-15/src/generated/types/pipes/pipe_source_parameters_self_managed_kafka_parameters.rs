@@ -18,7 +18,7 @@ pub struct PipeSourceParametersSelfManagedKafkaParameters {
     /// The credentials needed to access the resource. Detailed below.
     #[builder(into)]
     #[serde(rename = "credentials")]
-    pub r#credentials: Box<Option<super::super::types::pipes::PipeSourceParametersSelfManagedKafkaParametersCredentials>>,
+    pub r#credentials: Option<Box<super::super::types::pipes::PipeSourceParametersSelfManagedKafkaParametersCredentials>>,
     /// The maximum length of a time to wait for events. Maximum value of 300.
     #[builder(into)]
     #[serde(rename = "maximumBatchingWindowInSeconds")]
@@ -38,5 +38,5 @@ pub struct PipeSourceParametersSelfManagedKafkaParameters {
     /// This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used. Detailed below.
     #[builder(into)]
     #[serde(rename = "vpc")]
-    pub r#vpc: Box<Option<super::super::types::pipes::PipeSourceParametersSelfManagedKafkaParametersVpc>>,
+    pub r#vpc: Option<Box<super::super::types::pipes::PipeSourceParametersSelfManagedKafkaParametersVpc>>,
 }

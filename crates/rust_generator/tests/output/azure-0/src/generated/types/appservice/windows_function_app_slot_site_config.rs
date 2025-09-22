@@ -26,7 +26,7 @@ pub struct WindowsFunctionAppSlotSiteConfig {
     /// an `app_service_logs` block as detailed below.
     #[builder(into)]
     #[serde(rename = "appServiceLogs")]
-    pub r#app_service_logs: Box<Option<super::super::types::appservice::WindowsFunctionAppSlotSiteConfigAppServiceLogs>>,
+    pub r#app_service_logs: Option<Box<super::super::types::appservice::WindowsFunctionAppSlotSiteConfigAppServiceLogs>>,
     /// The Connection String for linking the Windows Function App to Application Insights.
     #[builder(into)]
     #[serde(rename = "applicationInsightsConnectionString")]
@@ -38,7 +38,7 @@ pub struct WindowsFunctionAppSlotSiteConfig {
     /// an `application_stack` block as detailed below.
     #[builder(into)]
     #[serde(rename = "applicationStack")]
-    pub r#application_stack: Box<Option<super::super::types::appservice::WindowsFunctionAppSlotSiteConfigApplicationStack>>,
+    pub r#application_stack: Option<Box<super::super::types::appservice::WindowsFunctionAppSlotSiteConfigApplicationStack>>,
     /// The name of the slot to automatically swap with when this slot is successfully deployed.
     #[builder(into)]
     #[serde(rename = "autoSwapSlotName")]
@@ -46,7 +46,7 @@ pub struct WindowsFunctionAppSlotSiteConfig {
     /// a `cors` block as detailed below.
     #[builder(into)]
     #[serde(rename = "cors")]
-    pub r#cors: Box<Option<super::super::types::appservice::WindowsFunctionAppSlotSiteConfigCors>>,
+    pub r#cors: Option<Box<super::super::types::appservice::WindowsFunctionAppSlotSiteConfigCors>>,
     /// Specifies a list of Default Documents for the Windows Web App.
     #[builder(into)]
     #[serde(rename = "defaultDocuments")]

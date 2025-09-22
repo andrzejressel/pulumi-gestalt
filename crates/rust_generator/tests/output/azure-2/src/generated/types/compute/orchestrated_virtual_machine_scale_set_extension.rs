@@ -36,7 +36,7 @@ pub struct OrchestratedVirtualMachineScaleSetExtension {
     /// > **Note:** `protected_settings_from_key_vault` cannot be used with `protected_settings`
     #[builder(into)]
     #[serde(rename = "protectedSettingsFromKeyVault")]
-    pub r#protected_settings_from_key_vault: Box<Option<super::super::types::compute::OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault>>,
+    pub r#protected_settings_from_key_vault: Option<Box<super::super::types::compute::OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault>>,
     /// Specifies the Publisher of the Extension.
     #[builder(into)]
     #[serde(rename = "publisher")]

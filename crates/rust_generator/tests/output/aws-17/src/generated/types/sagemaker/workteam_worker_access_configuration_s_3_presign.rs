@@ -6,5 +6,5 @@ pub struct WorkteamWorkerAccessConfigurationS3Presign {
     /// Use this parameter to specify the allowed request source. Possible sources are either SourceIp or VpcSourceIp. see IAM Policy Constraints details below.
     #[builder(into)]
     #[serde(rename = "iamPolicyConstraints")]
-    pub r#iam_policy_constraints: Box<Option<super::super::types::sagemaker::WorkteamWorkerAccessConfigurationS3PresignIamPolicyConstraints>>,
+    pub r#iam_policy_constraints: Option<Box<super::super::types::sagemaker::WorkteamWorkerAccessConfigurationS3PresignIamPolicyConstraints>>,
 }

@@ -10,7 +10,7 @@ pub struct NodePoolNodeConfigLinuxNodeConfig {
     /// Amounts for 2M and 1G hugepages.
     #[builder(into)]
     #[serde(rename = "hugepagesConfig")]
-    pub r#hugepages_config: Box<Option<super::super::types::container::NodePoolNodeConfigLinuxNodeConfigHugepagesConfig>>,
+    pub r#hugepages_config: Option<Box<super::super::types::container::NodePoolNodeConfigLinuxNodeConfigHugepagesConfig>>,
     /// The Linux kernel parameters to be applied to the nodes and all pods running on the nodes.
     #[builder(into)]
     #[serde(rename = "sysctls")]

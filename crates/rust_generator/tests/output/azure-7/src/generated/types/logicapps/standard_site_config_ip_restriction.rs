@@ -10,7 +10,7 @@ pub struct StandardSiteConfigIpRestriction {
     /// The `headers` block for this specific as a `ip_restriction` block as defined below.
     #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Option<super::super::types::logicapps::StandardSiteConfigIpRestrictionHeaders>>,
+    pub r#headers: Option<Box<super::super::types::logicapps::StandardSiteConfigIpRestrictionHeaders>>,
     /// The IP Address used for this IP Restriction in CIDR notation.
     #[builder(into)]
     #[serde(rename = "ipAddress")]

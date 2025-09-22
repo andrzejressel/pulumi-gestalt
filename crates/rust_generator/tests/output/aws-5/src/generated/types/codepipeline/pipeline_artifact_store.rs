@@ -6,7 +6,7 @@ pub struct PipelineArtifactStore {
     /// The encryption key block AWS CodePipeline uses to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. If you don't specify a key, AWS CodePipeline uses the default key for Amazon Simple Storage Service (Amazon S3). An `encryption_key` block is documented below.
     #[builder(into)]
     #[serde(rename = "encryptionKey")]
-    pub r#encryption_key: Box<Option<super::super::types::codepipeline::PipelineArtifactStoreEncryptionKey>>,
+    pub r#encryption_key: Option<Box<super::super::types::codepipeline::PipelineArtifactStoreEncryptionKey>>,
     /// The location where AWS CodePipeline stores artifacts for a pipeline; currently only `S3` is supported.
     #[builder(into)]
     #[serde(rename = "location")]

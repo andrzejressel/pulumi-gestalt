@@ -7,20 +7,20 @@ pub struct PosturePolicySetPolicyConstraint {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "orgPolicyConstraint")]
-    pub r#org_policy_constraint: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraint>>,
+    pub r#org_policy_constraint: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraint>>,
     /// Organization policy custom constraint policy definition.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "orgPolicyConstraintCustom")]
-    pub r#org_policy_constraint_custom: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom>>,
+    pub r#org_policy_constraint_custom: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom>>,
     /// Definition of Security Health Analytics Custom Module.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "securityHealthAnalyticsCustomModule")]
-    pub r#security_health_analytics_custom_module: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule>>,
+    pub r#security_health_analytics_custom_module: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule>>,
     /// Security Health Analytics built-in detector definition.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "securityHealthAnalyticsModule")]
-    pub r#security_health_analytics_module: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule>>,
+    pub r#security_health_analytics_module: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule>>,
 }

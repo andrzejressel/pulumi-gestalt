@@ -22,7 +22,7 @@ pub struct TargetGroupConfigHealthCheck {
     /// The codes to use when checking for a successful response from a target. These are called _Success codes_ in the console.
     #[builder(into)]
     #[serde(rename = "matcher")]
-    pub r#matcher: Box<Option<super::super::types::vpclattice::TargetGroupConfigHealthCheckMatcher>>,
+    pub r#matcher: Option<Box<super::super::types::vpclattice::TargetGroupConfigHealthCheckMatcher>>,
     /// The destination for health checks on the targets. If the protocol version is HTTP/1.1 or HTTP/2, specify a valid URI (for example, /path?query). The default path is `/`. Health checks are not supported if the protocol version is gRPC, however, you can choose HTTP/1.1 or HTTP/2 and specify a valid URI.
     #[builder(into)]
     #[serde(rename = "path")]

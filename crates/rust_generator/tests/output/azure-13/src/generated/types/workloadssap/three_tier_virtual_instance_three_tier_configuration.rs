@@ -25,7 +25,7 @@ pub struct ThreeTierVirtualInstanceThreeTierConfiguration {
     /// A `resource_names` block as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "resourceNames")]
-    pub r#resource_names: Box<Option<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationResourceNames>>,
+    pub r#resource_names: Option<Box<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationResourceNames>>,
     /// Specifies whether a secondary IP address should be added to the network interface on all VMs of the SAP system being deployed. Defaults to `false`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "secondaryIpEnabled")]
@@ -37,5 +37,5 @@ pub struct ThreeTierVirtualInstanceThreeTierConfiguration {
     /// > **Note:** Due to [a bug in the Azure API](https://github.com/Azure/azure-rest-api-specs/issues/25209) where the Storage File Share Id is not defined correctly, it is not currently possible to support using Transport Mount.
     #[builder(into)]
     #[serde(rename = "transportCreateAndMount")]
-    pub r#transport_create_and_mount: Box<Option<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationTransportCreateAndMount>>,
+    pub r#transport_create_and_mount: Option<Box<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationTransportCreateAndMount>>,
 }

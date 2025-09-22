@@ -14,7 +14,7 @@ pub struct GetControlControlMappingSource {
     pub r#source_id: String,
     #[builder(into)]
     #[serde(rename = "sourceKeyword")]
-    pub r#source_keyword: Box<Option<super::super::types::auditmanager::GetControlControlMappingSourceSourceKeyword>>,
+    pub r#source_keyword: Option<Box<super::super::types::auditmanager::GetControlControlMappingSourceSourceKeyword>>,
     #[builder(into)]
     #[serde(rename = "sourceName")]
     pub r#source_name: String,

@@ -6,11 +6,11 @@ pub struct WorkgroupConfigurationResultConfiguration {
     /// That an Amazon S3 canned ACL should be set to control ownership of stored query results. See ACL Configuration below.
     #[builder(into)]
     #[serde(rename = "aclConfiguration")]
-    pub r#acl_configuration: Box<Option<super::super::types::athena::WorkgroupConfigurationResultConfigurationAclConfiguration>>,
+    pub r#acl_configuration: Option<Box<super::super::types::athena::WorkgroupConfigurationResultConfigurationAclConfiguration>>,
     /// Configuration block with encryption settings. See Encryption Configuration below.
     #[builder(into)]
     #[serde(rename = "encryptionConfiguration")]
-    pub r#encryption_configuration: Box<Option<super::super::types::athena::WorkgroupConfigurationResultConfigurationEncryptionConfiguration>>,
+    pub r#encryption_configuration: Option<Box<super::super::types::athena::WorkgroupConfigurationResultConfigurationEncryptionConfiguration>>,
     /// AWS account ID that you expect to be the owner of the Amazon S3 bucket.
     #[builder(into)]
     #[serde(rename = "expectedBucketOwner")]

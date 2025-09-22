@@ -6,17 +6,17 @@ pub struct VirtualNodeSpecListenerTimeout {
     /// Timeouts for gRPC listeners.
     #[builder(into)]
     #[serde(rename = "grpc")]
-    pub r#grpc: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutGrpc>>,
+    pub r#grpc: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutGrpc>>,
     /// Timeouts for HTTP listeners.
     #[builder(into)]
     #[serde(rename = "http")]
-    pub r#http: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutHttp>>,
+    pub r#http: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutHttp>>,
     /// Timeouts for HTTP2 listeners.
     #[builder(into)]
     #[serde(rename = "http2")]
-    pub r#http_2: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutHttp2>>,
+    pub r#http_2: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutHttp2>>,
     /// Timeouts for TCP listeners.
     #[builder(into)]
     #[serde(rename = "tcp")]
-    pub r#tcp: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutTcp>>,
+    pub r#tcp: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerTimeoutTcp>>,
 }

@@ -12,12 +12,12 @@ pub struct TableExternalDataConfiguration {
     /// "AVRO".  Structure is documented below.
     #[builder(into)]
     #[serde(rename = "avroOptions")]
-    pub r#avro_options: Box<Option<super::super::types::bigquery::TableExternalDataConfigurationAvroOptions>>,
+    pub r#avro_options: Option<Box<super::super::types::bigquery::TableExternalDataConfigurationAvroOptions>>,
     /// Additional properties to set if
     /// `source_format` is set to "BIGTABLE". Structure is documented below.
     #[builder(into)]
     #[serde(rename = "bigtableOptions")]
-    pub r#bigtable_options: Box<Option<super::super::types::bigquery::TableExternalDataConfigurationBigtableOptions>>,
+    pub r#bigtable_options: Option<Box<super::super::types::bigquery::TableExternalDataConfigurationBigtableOptions>>,
     /// The compression type of the data source.
     /// Valid values are "NONE" or "GZIP".
     #[builder(into)]
@@ -38,7 +38,7 @@ pub struct TableExternalDataConfiguration {
     /// `source_format` is set to "CSV". Structure is documented below.
     #[builder(into)]
     #[serde(rename = "csvOptions")]
-    pub r#csv_options: Box<Option<super::super::types::bigquery::TableExternalDataConfigurationCsvOptions>>,
+    pub r#csv_options: Option<Box<super::super::types::bigquery::TableExternalDataConfigurationCsvOptions>>,
     /// Specifies how source URIs are interpreted for constructing the file set to load.
     /// By default source URIs are expanded against the underlying storage.
     /// Other options include specifying manifest files. Only applicable to object storage systems. Docs
@@ -50,14 +50,14 @@ pub struct TableExternalDataConfiguration {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "googleSheetsOptions")]
-    pub r#google_sheets_options: Box<Option<super::super::types::bigquery::TableExternalDataConfigurationGoogleSheetsOptions>>,
+    pub r#google_sheets_options: Option<Box<super::super::types::bigquery::TableExternalDataConfigurationGoogleSheetsOptions>>,
     /// When set, configures hive partitioning
     /// support. Not all storage formats support hive partitioning -- requesting hive
     /// partitioning on an unsupported format will lead to an error, as will providing
     /// an invalid specification. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "hivePartitioningOptions")]
-    pub r#hive_partitioning_options: Box<Option<super::super::types::bigquery::TableExternalDataConfigurationHivePartitioningOptions>>,
+    pub r#hive_partitioning_options: Option<Box<super::super::types::bigquery::TableExternalDataConfigurationHivePartitioningOptions>>,
     /// Indicates if BigQuery should
     /// allow extra values that are not represented in the table schema.
     /// If true, the extra values are ignored. If false, records with
@@ -75,7 +75,7 @@ pub struct TableExternalDataConfiguration {
     /// `source_format` is set to "JSON". Structure is documented below.
     #[builder(into)]
     #[serde(rename = "jsonOptions")]
-    pub r#json_options: Box<Option<super::super::types::bigquery::TableExternalDataConfigurationJsonOptions>>,
+    pub r#json_options: Option<Box<super::super::types::bigquery::TableExternalDataConfigurationJsonOptions>>,
     /// The maximum number of bad records that
     /// BigQuery can ignore when reading data.
     #[builder(into)]
@@ -93,7 +93,7 @@ pub struct TableExternalDataConfiguration {
     /// `source_format` is set to "PARQUET". Structure is documented below.
     #[builder(into)]
     #[serde(rename = "parquetOptions")]
-    pub r#parquet_options: Box<Option<super::super::types::bigquery::TableExternalDataConfigurationParquetOptions>>,
+    pub r#parquet_options: Option<Box<super::super::types::bigquery::TableExternalDataConfigurationParquetOptions>>,
     /// When creating an external table, the user can provide a reference file with the table schema. This is enabled for the following formats: AVRO, PARQUET, ORC.
     #[builder(into)]
     #[serde(rename = "referenceFileSchemaUri")]

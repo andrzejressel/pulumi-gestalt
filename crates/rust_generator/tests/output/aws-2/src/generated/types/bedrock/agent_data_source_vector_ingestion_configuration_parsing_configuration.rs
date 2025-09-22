@@ -6,7 +6,7 @@ pub struct AgentDataSourceVectorIngestionConfigurationParsingConfiguration {
     /// Settings for a foundation model used to parse documents in a data source. See `bedrock_foundation_model_configuration` block for details.
     #[builder(into)]
     #[serde(rename = "bedrockFoundationModelConfiguration")]
-    pub r#bedrock_foundation_model_configuration: Box<Option<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockFoundationModelConfiguration>>,
+    pub r#bedrock_foundation_model_configuration: Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockFoundationModelConfiguration>>,
     /// Currently only `BEDROCK_FOUNDATION_MODEL` is supported
     #[builder(into)]
     #[serde(rename = "parsingStrategy")]

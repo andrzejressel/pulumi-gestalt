@@ -7,35 +7,35 @@ pub struct GuestPoliciesRecipeUpdateStep {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "archiveExtraction")]
-    pub r#archive_extraction: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepArchiveExtraction>>,
+    pub r#archive_extraction: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepArchiveExtraction>>,
     /// Installs a deb file via dpkg.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "dpkgInstallation")]
-    pub r#dpkg_installation: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepDpkgInstallation>>,
+    pub r#dpkg_installation: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepDpkgInstallation>>,
     /// Copies a file onto the instance.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "fileCopy")]
-    pub r#file_copy: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepFileCopy>>,
+    pub r#file_copy: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepFileCopy>>,
     /// Executes an artifact or local file.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "fileExec")]
-    pub r#file_exec: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepFileExec>>,
+    pub r#file_exec: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepFileExec>>,
     /// Installs an MSI file.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "msiInstallation")]
-    pub r#msi_installation: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepMsiInstallation>>,
+    pub r#msi_installation: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepMsiInstallation>>,
     /// Installs an rpm file via the rpm utility.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rpmInstallation")]
-    pub r#rpm_installation: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepRpmInstallation>>,
+    pub r#rpm_installation: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepRpmInstallation>>,
     /// Runs commands in a shell.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "scriptRun")]
-    pub r#script_run: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepScriptRun>>,
+    pub r#script_run: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeUpdateStepScriptRun>>,
 }

@@ -13,5 +13,5 @@ pub struct StandardAppVersionDeployment {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "zip")]
-    pub r#zip: Box<Option<super::super::types::appengine::StandardAppVersionDeploymentZip>>,
+    pub r#zip: Option<Box<super::super::types::appengine::StandardAppVersionDeploymentZip>>,
 }

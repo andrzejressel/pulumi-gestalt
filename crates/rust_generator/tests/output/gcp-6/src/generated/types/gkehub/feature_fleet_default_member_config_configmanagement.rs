@@ -7,7 +7,7 @@ pub struct FeatureFleetDefaultMemberConfigConfigmanagement {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "configSync")]
-    pub r#config_sync: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigConfigmanagementConfigSync>>,
+    pub r#config_sync: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigConfigmanagementConfigSync>>,
     /// Set this field to MANAGEMENT_AUTOMATIC to enable Config Sync auto-upgrades, and set this field to MANAGEMENT_MANUAL or MANAGEMENT_UNSPECIFIED to disable Config Sync auto-upgrades.
     /// Possible values are: `MANAGEMENT_UNSPECIFIED`, `MANAGEMENT_AUTOMATIC`, `MANAGEMENT_MANUAL`.
     #[builder(into)]

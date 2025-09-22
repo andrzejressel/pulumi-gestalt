@@ -14,7 +14,7 @@ pub struct WorkflowTemplateJobPigJob {
     /// The runtime log config for job execution.
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Box<Option<super::super::types::dataproc::WorkflowTemplateJobPigJobLoggingConfig>>,
+    pub r#logging_config: Option<Box<super::super::types::dataproc::WorkflowTemplateJobPigJobLoggingConfig>>,
     /// A mapping of property names to values, used to configure Pig. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/pig/conf/pig.properties, and classes in user code.
     #[builder(into)]
     #[serde(rename = "properties")]
@@ -26,7 +26,7 @@ pub struct WorkflowTemplateJobPigJob {
     /// A list of queries.
     #[builder(into)]
     #[serde(rename = "queryList")]
-    pub r#query_list: Box<Option<super::super::types::dataproc::WorkflowTemplateJobPigJobQueryList>>,
+    pub r#query_list: Option<Box<super::super::types::dataproc::WorkflowTemplateJobPigJobQueryList>>,
     /// Mapping of query variable names to values (equivalent to the Pig command: `name=`).
     #[builder(into)]
     #[serde(rename = "scriptVariables")]

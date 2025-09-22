@@ -10,7 +10,7 @@ pub struct RuleGroupRule {
     /// Specifies how AWS WAF should handle CAPTCHA evaluations. See Captcha Configuration below for details.
     #[builder(into)]
     #[serde(rename = "captchaConfig")]
-    pub r#captcha_config: Box<Option<super::super::types::wafv2::RuleGroupRuleCaptchaConfig>>,
+    pub r#captcha_config: Option<Box<super::super::types::wafv2::RuleGroupRuleCaptchaConfig>>,
     /// A friendly name of the rule.
     #[builder(into)]
     #[serde(rename = "name")]

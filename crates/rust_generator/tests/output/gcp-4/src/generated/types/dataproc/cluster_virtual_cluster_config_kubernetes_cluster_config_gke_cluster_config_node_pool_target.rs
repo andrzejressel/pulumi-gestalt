@@ -13,7 +13,7 @@ pub struct ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNod
     /// If a field differs, the virtual cluster creation will fail.
     #[builder(into)]
     #[serde(rename = "nodePoolConfig")]
-    pub r#node_pool_config: Box<Option<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig>>,
+    pub r#node_pool_config: Option<Box<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig>>,
     /// The roles associated with the GKE node pool. 
     /// One of `"DEFAULT"`, `"CONTROLLER"`, `"SPARK_DRIVER"` or `"SPARK_EXECUTOR"`.
     #[builder(into)]

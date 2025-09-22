@@ -7,7 +7,7 @@ pub struct RepositoryRemoteRepositoryConfigNpmRepository {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customRepository")]
-    pub r#custom_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigNpmRepositoryCustomRepository>>,
+    pub r#custom_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigNpmRepositoryCustomRepository>>,
     /// Address of the remote repository.
     /// Default value is `NPMJS`.
     /// Possible values are: `NPMJS`.

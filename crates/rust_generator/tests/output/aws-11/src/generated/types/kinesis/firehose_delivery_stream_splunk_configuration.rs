@@ -14,7 +14,7 @@ pub struct FirehoseDeliveryStreamSplunkConfiguration {
     /// The CloudWatch Logging Options for the delivery stream. See `cloudwatch_logging_options` block below for details.
     #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptions")]
-    pub r#cloudwatch_logging_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptions>>,
+    pub r#cloudwatch_logging_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamSplunkConfigurationCloudwatchLoggingOptions>>,
     /// The amount of time, in seconds between 180 and 600, that Kinesis Firehose waits to receive an acknowledgment from Splunk after it sends it data.
     #[builder(into)]
     #[serde(rename = "hecAcknowledgmentTimeout")]
@@ -34,7 +34,7 @@ pub struct FirehoseDeliveryStreamSplunkConfiguration {
     /// The data processing configuration.  See `processing_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "processingConfiguration")]
-    pub r#processing_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamSplunkConfigurationProcessingConfiguration>>,
+    pub r#processing_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamSplunkConfigurationProcessingConfiguration>>,
     /// After an initial failure to deliver to Splunk, the total amount of time, in seconds between 0 to 7200, during which Firehose re-attempts delivery (including the first attempt).  After this time has elapsed, the failed documents are written to Amazon S3.  The default value is 300s.  There will be no retry if the value is 0.
     #[builder(into)]
     #[serde(rename = "retryDuration")]
@@ -50,5 +50,5 @@ pub struct FirehoseDeliveryStreamSplunkConfiguration {
     pub r#s_3_configuration: Box<super::super::types::kinesis::FirehoseDeliveryStreamSplunkConfigurationS3Configuration>,
     #[builder(into)]
     #[serde(rename = "secretsManagerConfiguration")]
-    pub r#secrets_manager_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamSplunkConfigurationSecretsManagerConfiguration>>,
+    pub r#secrets_manager_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamSplunkConfigurationSecretsManagerConfiguration>>,
 }

@@ -6,7 +6,7 @@ pub struct PipelineTriggerGitConfigurationPullRequest {
     /// The field that specifies to filter on branches for the pull request trigger configuration. A `branches` block is documented below.
     #[builder(into)]
     #[serde(rename = "branches")]
-    pub r#branches: Box<Option<super::super::types::codepipeline::PipelineTriggerGitConfigurationPullRequestBranches>>,
+    pub r#branches: Option<Box<super::super::types::codepipeline::PipelineTriggerGitConfigurationPullRequestBranches>>,
     /// A list that specifies which pull request events to filter on (opened, updated, closed) for the trigger configuration. Possible values are `OPEN`, `UPDATED ` and `CLOSED`.
     #[builder(into)]
     #[serde(rename = "events")]
@@ -14,5 +14,5 @@ pub struct PipelineTriggerGitConfigurationPullRequest {
     /// The field that specifies to filter on file paths for the pull request trigger configuration. A `file_paths` block is documented below.
     #[builder(into)]
     #[serde(rename = "filePaths")]
-    pub r#file_paths: Box<Option<super::super::types::codepipeline::PipelineTriggerGitConfigurationPullRequestFilePaths>>,
+    pub r#file_paths: Option<Box<super::super::types::codepipeline::PipelineTriggerGitConfigurationPullRequestFilePaths>>,
 }

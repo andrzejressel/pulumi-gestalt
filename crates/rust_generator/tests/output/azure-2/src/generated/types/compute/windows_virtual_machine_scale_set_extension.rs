@@ -30,7 +30,7 @@ pub struct WindowsVirtualMachineScaleSetExtension {
     /// > **Note:** `protected_settings_from_key_vault` cannot be used with `protected_settings`
     #[builder(into)]
     #[serde(rename = "protectedSettingsFromKeyVault")]
-    pub r#protected_settings_from_key_vault: Box<Option<super::super::types::compute::WindowsVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault>>,
+    pub r#protected_settings_from_key_vault: Option<Box<super::super::types::compute::WindowsVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault>>,
     /// An ordered list of Extension names which this should be provisioned after.
     #[builder(into)]
     #[serde(rename = "provisionAfterExtensions")]

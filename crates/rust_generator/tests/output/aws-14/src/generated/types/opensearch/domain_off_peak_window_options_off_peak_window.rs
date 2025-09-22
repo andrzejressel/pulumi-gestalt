@@ -6,5 +6,5 @@ pub struct DomainOffPeakWindowOptionsOffPeakWindow {
     /// 10h window for updates
     #[builder(into)]
     #[serde(rename = "windowStartTime")]
-    pub r#window_start_time: Box<Option<super::super::types::opensearch::DomainOffPeakWindowOptionsOffPeakWindowWindowStartTime>>,
+    pub r#window_start_time: Option<Box<super::super::types::opensearch::DomainOffPeakWindowOptionsOffPeakWindowWindowStartTime>>,
 }

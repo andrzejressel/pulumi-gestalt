@@ -18,7 +18,7 @@ pub struct WebAclRuleStatementManagedRuleGroupStatement {
     /// Narrows the scope of the statement to matching web requests. This can be any nestable statement, and you can nest statements at any level below this scope-down statement. See `statement` above for details.
     #[builder(into)]
     #[serde(rename = "scopeDownStatement")]
-    pub r#scope_down_statement: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatement>>,
+    pub r#scope_down_statement: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatement>>,
     /// Name of the managed rule group vendor.
     #[builder(into)]
     #[serde(rename = "vendorName")]

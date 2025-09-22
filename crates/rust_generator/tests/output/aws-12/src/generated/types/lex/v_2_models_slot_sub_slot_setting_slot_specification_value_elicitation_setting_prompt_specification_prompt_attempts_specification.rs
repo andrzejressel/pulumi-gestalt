@@ -11,11 +11,11 @@ pub struct V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPro
     pub r#allowed_input_types: Box<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAllowedInputTypes>,
     #[builder(into)]
     #[serde(rename = "audioAndDtmfInputSpecification")]
-    pub r#audio_and_dtmf_input_specification: Box<Option<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecification>>,
+    pub r#audio_and_dtmf_input_specification: Option<Box<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecification>>,
     #[builder(into)]
     #[serde(rename = "mapBlockKey")]
     pub r#map_block_key: String,
     #[builder(into)]
     #[serde(rename = "textInputSpecification")]
-    pub r#text_input_specification: Box<Option<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationTextInputSpecification>>,
+    pub r#text_input_specification: Option<Box<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationTextInputSpecification>>,
 }

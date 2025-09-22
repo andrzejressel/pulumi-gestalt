@@ -16,5 +16,5 @@ pub struct ClusterDiscoveryEndpoint {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pscConfig")]
-    pub r#psc_config: Box<Option<super::super::types::redis::ClusterDiscoveryEndpointPscConfig>>,
+    pub r#psc_config: Option<Box<super::super::types::redis::ClusterDiscoveryEndpointPscConfig>>,
 }

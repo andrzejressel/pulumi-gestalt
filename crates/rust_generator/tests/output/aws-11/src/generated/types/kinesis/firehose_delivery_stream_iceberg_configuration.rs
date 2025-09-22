@@ -18,7 +18,7 @@ pub struct FirehoseDeliveryStreamIcebergConfiguration {
     /// The CloudWatch Logging Options for the delivery stream. See `cloudwatch_logging_options` block below for details.
     #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptions")]
-    pub r#cloudwatch_logging_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamIcebergConfigurationCloudwatchLoggingOptions>>,
+    pub r#cloudwatch_logging_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamIcebergConfigurationCloudwatchLoggingOptions>>,
     /// Destination table configurations which Firehose uses to deliver data to Apache Iceberg Tables. Firehose will write data with insert if table specific configuration is not provided. See `destination_table_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "destinationTableConfigurations")]
@@ -26,7 +26,7 @@ pub struct FirehoseDeliveryStreamIcebergConfiguration {
     /// The data processing configuration.  See `processing_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "processingConfiguration")]
-    pub r#processing_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamIcebergConfigurationProcessingConfiguration>>,
+    pub r#processing_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamIcebergConfigurationProcessingConfiguration>>,
     /// The period of time, in seconds between 0 to 7200, during which Firehose retries to deliver data to the specified destination.
     #[builder(into)]
     #[serde(rename = "retryDuration")]

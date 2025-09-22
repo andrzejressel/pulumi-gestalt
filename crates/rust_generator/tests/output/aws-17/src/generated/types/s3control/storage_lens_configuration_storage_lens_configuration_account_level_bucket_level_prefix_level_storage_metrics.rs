@@ -10,5 +10,5 @@ pub struct StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLev
     /// Selection criteria. See Selection Criteria below for more details.
     #[builder(into)]
     #[serde(rename = "selectionCriteria")]
-    pub r#selection_criteria: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelStorageMetricsSelectionCriteria>>,
+    pub r#selection_criteria: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelStorageMetricsSelectionCriteria>>,
 }

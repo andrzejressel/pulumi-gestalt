@@ -14,21 +14,21 @@ pub struct PolicyVmWorkloadProtectionPolicy {
     /// A `retention_daily` block as defined below.
     #[builder(into)]
     #[serde(rename = "retentionDaily")]
-    pub r#retention_daily: Box<Option<super::super::types::backup::PolicyVmWorkloadProtectionPolicyRetentionDaily>>,
+    pub r#retention_daily: Option<Box<super::super::types::backup::PolicyVmWorkloadProtectionPolicyRetentionDaily>>,
     /// A `retention_monthly` block as defined below.
     #[builder(into)]
     #[serde(rename = "retentionMonthly")]
-    pub r#retention_monthly: Box<Option<super::super::types::backup::PolicyVmWorkloadProtectionPolicyRetentionMonthly>>,
+    pub r#retention_monthly: Option<Box<super::super::types::backup::PolicyVmWorkloadProtectionPolicyRetentionMonthly>>,
     /// A `retention_weekly` block as defined below.
     #[builder(into)]
     #[serde(rename = "retentionWeekly")]
-    pub r#retention_weekly: Box<Option<super::super::types::backup::PolicyVmWorkloadProtectionPolicyRetentionWeekly>>,
+    pub r#retention_weekly: Option<Box<super::super::types::backup::PolicyVmWorkloadProtectionPolicyRetentionWeekly>>,
     /// A `retention_yearly` block as defined below.
     #[builder(into)]
     #[serde(rename = "retentionYearly")]
-    pub r#retention_yearly: Box<Option<super::super::types::backup::PolicyVmWorkloadProtectionPolicyRetentionYearly>>,
+    pub r#retention_yearly: Option<Box<super::super::types::backup::PolicyVmWorkloadProtectionPolicyRetentionYearly>>,
     /// A `simple_retention` block as defined below.
     #[builder(into)]
     #[serde(rename = "simpleRetention")]
-    pub r#simple_retention: Box<Option<super::super::types::backup::PolicyVmWorkloadProtectionPolicySimpleRetention>>,
+    pub r#simple_retention: Option<Box<super::super::types::backup::PolicyVmWorkloadProtectionPolicySimpleRetention>>,
 }

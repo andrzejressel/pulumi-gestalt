@@ -18,7 +18,7 @@ pub struct ApplicationGatewayProbe {
     /// A `match` block as defined above.
     #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Box<Option<super::super::types::network::ApplicationGatewayProbeMatch>>,
+    pub r#match_: Option<Box<super::super::types::network::ApplicationGatewayProbeMatch>>,
     /// The minimum number of servers that are always marked as healthy. Defaults to `0`.
     #[builder(into)]
     #[serde(rename = "minimumServers")]

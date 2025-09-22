@@ -7,5 +7,5 @@ pub struct BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "nodePoolConfig")]
-    pub r#node_pool_config: Box<Option<super::super::types::gkeonprem::BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfig>>,
+    pub r#node_pool_config: Option<Box<super::super::types::gkeonprem::BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfig>>,
 }

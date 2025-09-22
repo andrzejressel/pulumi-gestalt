@@ -5,7 +5,7 @@
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridge {
     #[builder(into)]
     #[serde(rename = "errorHandlingConfig")]
-    pub r#error_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfig>>,
+    pub r#error_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfig>>,
     #[builder(into)]
     #[serde(rename = "object")]
     pub r#object: String,

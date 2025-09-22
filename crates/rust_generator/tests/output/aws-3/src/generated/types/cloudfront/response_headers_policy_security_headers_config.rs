@@ -6,25 +6,25 @@ pub struct ResponseHeadersPolicySecurityHeadersConfig {
     /// The policy directives and their values that CloudFront includes as values for the `Content-Security-Policy` HTTP response header. See Content Security Policy for more information.
     #[builder(into)]
     #[serde(rename = "contentSecurityPolicy")]
-    pub r#content_security_policy: Box<Option<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy>>,
+    pub r#content_security_policy: Option<Box<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy>>,
     /// Determines whether CloudFront includes the `X-Content-Type-Options` HTTP response header with its value set to `nosniff`. See Content Type Options for more information.
     #[builder(into)]
     #[serde(rename = "contentTypeOptions")]
-    pub r#content_type_options: Box<Option<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigContentTypeOptions>>,
+    pub r#content_type_options: Option<Box<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigContentTypeOptions>>,
     /// Determines whether CloudFront includes the `X-Frame-Options` HTTP response header and the header’s value. See Frame Options for more information.
     #[builder(into)]
     #[serde(rename = "frameOptions")]
-    pub r#frame_options: Box<Option<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigFrameOptions>>,
+    pub r#frame_options: Option<Box<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigFrameOptions>>,
     /// Determines whether CloudFront includes the `Referrer-Policy` HTTP response header and the header’s value. See Referrer Policy for more information.
     #[builder(into)]
     #[serde(rename = "referrerPolicy")]
-    pub r#referrer_policy: Box<Option<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigReferrerPolicy>>,
+    pub r#referrer_policy: Option<Box<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigReferrerPolicy>>,
     /// Determines whether CloudFront includes the `Strict-Transport-Security` HTTP response header and the header’s value. See Strict Transport Security for more information.
     #[builder(into)]
     #[serde(rename = "strictTransportSecurity")]
-    pub r#strict_transport_security: Box<Option<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity>>,
+    pub r#strict_transport_security: Option<Box<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity>>,
     /// Determine whether CloudFront includes the `X-XSS-Protection` HTTP response header and the header’s value. See XSS Protection for more information.
     #[builder(into)]
     #[serde(rename = "xssProtection")]
-    pub r#xss_protection: Box<Option<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigXssProtection>>,
+    pub r#xss_protection: Option<Box<super::super::types::cloudfront::ResponseHeadersPolicySecurityHeadersConfigXssProtection>>,
 }

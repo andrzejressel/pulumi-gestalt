@@ -14,17 +14,17 @@ pub struct InstanceGceSetup {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "bootDisk")]
-    pub r#boot_disk: Box<Option<super::super::types::workbench::InstanceGceSetupBootDisk>>,
+    pub r#boot_disk: Option<Box<super::super::types::workbench::InstanceGceSetupBootDisk>>,
     /// Use a container image to start the workbench instance.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "containerImage")]
-    pub r#container_image: Box<Option<super::super::types::workbench::InstanceGceSetupContainerImage>>,
+    pub r#container_image: Option<Box<super::super::types::workbench::InstanceGceSetupContainerImage>>,
     /// Data disks attached to the VM instance. Currently supports only one data disk.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "dataDisks")]
-    pub r#data_disks: Box<Option<super::super::types::workbench::InstanceGceSetupDataDisks>>,
+    pub r#data_disks: Option<Box<super::super::types::workbench::InstanceGceSetupDataDisks>>,
     /// Optional. If true, no external IP will be assigned to this VM instance.
     #[builder(into)]
     #[serde(rename = "disablePublicIp")]
@@ -58,7 +58,7 @@ pub struct InstanceGceSetup {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "shieldedInstanceConfig")]
-    pub r#shielded_instance_config: Box<Option<super::super::types::workbench::InstanceGceSetupShieldedInstanceConfig>>,
+    pub r#shielded_instance_config: Option<Box<super::super::types::workbench::InstanceGceSetupShieldedInstanceConfig>>,
     /// Optional. The Compute Engine tags to add to instance (see [Tagging
     /// instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
     #[builder(into)]
@@ -69,5 +69,5 @@ pub struct InstanceGceSetup {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vmImage")]
-    pub r#vm_image: Box<Option<super::super::types::workbench::InstanceGceSetupVmImage>>,
+    pub r#vm_image: Option<Box<super::super::types::workbench::InstanceGceSetupVmImage>>,
 }

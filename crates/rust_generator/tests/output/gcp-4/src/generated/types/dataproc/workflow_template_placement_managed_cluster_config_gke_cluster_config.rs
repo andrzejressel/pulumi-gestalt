@@ -6,5 +6,5 @@ pub struct WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig {
     /// A target for the deployment.
     #[builder(into)]
     #[serde(rename = "namespacedGkeDeploymentTarget")]
-    pub r#namespaced_gke_deployment_target: Box<Option<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget>>,
+    pub r#namespaced_gke_deployment_target: Option<Box<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget>>,
 }

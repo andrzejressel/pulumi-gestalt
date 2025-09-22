@@ -17,7 +17,7 @@ pub struct ClusterAutomatedBackupPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "encryptionConfig")]
-    pub r#encryption_config: Box<Option<super::super::types::alloydb::ClusterAutomatedBackupPolicyEncryptionConfig>>,
+    pub r#encryption_config: Option<Box<super::super::types::alloydb::ClusterAutomatedBackupPolicyEncryptionConfig>>,
     /// Labels to apply to backups created using this configuration.
     #[builder(into)]
     #[serde(rename = "labels")]
@@ -30,15 +30,15 @@ pub struct ClusterAutomatedBackupPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "quantityBasedRetention")]
-    pub r#quantity_based_retention: Box<Option<super::super::types::alloydb::ClusterAutomatedBackupPolicyQuantityBasedRetention>>,
+    pub r#quantity_based_retention: Option<Box<super::super::types::alloydb::ClusterAutomatedBackupPolicyQuantityBasedRetention>>,
     /// Time-based Backup retention policy. Conflicts with 'quantity_based_retention', both can't be set together.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "timeBasedRetention")]
-    pub r#time_based_retention: Box<Option<super::super::types::alloydb::ClusterAutomatedBackupPolicyTimeBasedRetention>>,
+    pub r#time_based_retention: Option<Box<super::super::types::alloydb::ClusterAutomatedBackupPolicyTimeBasedRetention>>,
     /// Weekly schedule for the Backup.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "weeklySchedule")]
-    pub r#weekly_schedule: Box<Option<super::super::types::alloydb::ClusterAutomatedBackupPolicyWeeklySchedule>>,
+    pub r#weekly_schedule: Option<Box<super::super::types::alloydb::ClusterAutomatedBackupPolicyWeeklySchedule>>,
 }

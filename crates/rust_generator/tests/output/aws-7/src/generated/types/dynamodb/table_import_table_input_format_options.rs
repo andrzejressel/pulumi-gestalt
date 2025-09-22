@@ -6,5 +6,5 @@ pub struct TableImportTableInputFormatOptions {
     /// This block contains the processing options for the CSV file being imported:
     #[builder(into)]
     #[serde(rename = "csv")]
-    pub r#csv: Box<Option<super::super::types::dynamodb::TableImportTableInputFormatOptionsCsv>>,
+    pub r#csv: Option<Box<super::super::types::dynamodb::TableImportTableInputFormatOptionsCsv>>,
 }

@@ -6,13 +6,13 @@ pub struct SparkClusterMetastores {
     /// An `ambari` block as defined below.
     #[builder(into)]
     #[serde(rename = "ambari")]
-    pub r#ambari: Box<Option<super::super::types::hdinsight::SparkClusterMetastoresAmbari>>,
+    pub r#ambari: Option<Box<super::super::types::hdinsight::SparkClusterMetastoresAmbari>>,
     /// A `hive` block as defined below.
     #[builder(into)]
     #[serde(rename = "hive")]
-    pub r#hive: Box<Option<super::super::types::hdinsight::SparkClusterMetastoresHive>>,
+    pub r#hive: Option<Box<super::super::types::hdinsight::SparkClusterMetastoresHive>>,
     /// An `oozie` block as defined below.
     #[builder(into)]
     #[serde(rename = "oozie")]
-    pub r#oozie: Box<Option<super::super::types::hdinsight::SparkClusterMetastoresOozie>>,
+    pub r#oozie: Option<Box<super::super::types::hdinsight::SparkClusterMetastoresOozie>>,
 }

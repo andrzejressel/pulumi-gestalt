@@ -6,11 +6,11 @@ pub struct DeliveryPipelineSerialPipelineStageStrategyStandard {
     /// Optional. Configuration for the postdeploy job. If this is not configured, postdeploy job will not be present.
     #[builder(into)]
     #[serde(rename = "postdeploy")]
-    pub r#postdeploy: Box<Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy>>,
+    pub r#postdeploy: Option<Box<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyStandardPostdeploy>>,
     /// Optional. Configuration for the predeploy job. If this is not configured, predeploy job will not be present.
     #[builder(into)]
     #[serde(rename = "predeploy")]
-    pub r#predeploy: Box<Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy>>,
+    pub r#predeploy: Option<Box<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy>>,
     /// Whether to verify a deployment.
     #[builder(into)]
     #[serde(rename = "verify")]

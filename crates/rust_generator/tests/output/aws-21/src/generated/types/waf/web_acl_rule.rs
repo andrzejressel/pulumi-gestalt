@@ -6,11 +6,11 @@ pub struct WebAclRule {
     /// The action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule. Not used if `type` is `GROUP`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<Option<super::super::types::waf::WebAclRuleAction>>,
+    pub r#action: Option<Box<super::super::types::waf::WebAclRuleAction>>,
     /// Override the action that a group requests CloudFront or AWS WAF takes when a web request matches the conditions in the rule. Only used if `type` is `GROUP`.
     #[builder(into)]
     #[serde(rename = "overrideAction")]
-    pub r#override_action: Box<Option<super::super::types::waf::WebAclRuleOverrideAction>>,
+    pub r#override_action: Option<Box<super::super::types::waf::WebAclRuleOverrideAction>>,
     /// Specifies the order in which the rules in a WebACL are evaluated.
     /// Rules with a lower value are evaluated before rules with a higher value.
     #[builder(into)]

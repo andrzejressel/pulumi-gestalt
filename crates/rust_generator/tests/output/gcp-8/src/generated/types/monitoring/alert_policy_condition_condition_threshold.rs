@@ -119,7 +119,7 @@ pub struct AlertPolicyConditionConditionThreshold {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "forecastOptions")]
-    pub r#forecast_options: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionThresholdForecastOptions>>,
+    pub r#forecast_options: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionThresholdForecastOptions>>,
     /// A value against which to compare the time
     /// series.
     #[builder(into)]
@@ -136,5 +136,5 @@ pub struct AlertPolicyConditionConditionThreshold {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "trigger")]
-    pub r#trigger: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionThresholdTrigger>>,
+    pub r#trigger: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionThresholdTrigger>>,
 }

@@ -6,7 +6,7 @@ pub struct VirtualNodeSpecBackendDefaultsClientPolicyTls {
     /// Listener's TLS certificate.
     #[builder(into)]
     #[serde(rename = "certificate")]
-    pub r#certificate: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate>>,
+    pub r#certificate: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate>>,
     /// Whether the policy is enforced. Default is `true`.
     #[builder(into)]
     #[serde(rename = "enforce")]

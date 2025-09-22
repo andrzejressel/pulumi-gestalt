@@ -8,7 +8,7 @@ pub struct TagTemplateFieldType {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "enumType")]
-    pub r#enum_type: Box<Option<super::super::types::datacatalog::TagTemplateFieldTypeEnumType>>,
+    pub r#enum_type: Option<Box<super::super::types::datacatalog::TagTemplateFieldTypeEnumType>>,
     /// Represents primitive types - string, bool etc.
     /// Exactly one of `primitive_type` or `enum_type` must be set
     /// Possible values are: `DOUBLE`, `STRING`, `BOOL`, `TIMESTAMP`.

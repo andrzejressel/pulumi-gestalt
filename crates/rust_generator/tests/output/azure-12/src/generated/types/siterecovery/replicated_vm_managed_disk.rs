@@ -14,7 +14,7 @@ pub struct ReplicatedVmManagedDisk {
     /// A `target_disk_encryption` block as defined below.
     #[builder(into)]
     #[serde(rename = "targetDiskEncryption")]
-    pub r#target_disk_encryption: Box<Option<super::super::types::siterecovery::ReplicatedVmManagedDiskTargetDiskEncryption>>,
+    pub r#target_disk_encryption: Option<Box<super::super::types::siterecovery::ReplicatedVmManagedDiskTargetDiskEncryption>>,
     /// The Disk Encryption Set that the Managed Disk will be associated with. Changing this forces a new resource to be created.
     /// 
     /// > **NOTE:** Creating replicated vm with `target_disk_encryption_set_id` wil take more time (up to 5 hours), please extend the `timeout` for `create`.

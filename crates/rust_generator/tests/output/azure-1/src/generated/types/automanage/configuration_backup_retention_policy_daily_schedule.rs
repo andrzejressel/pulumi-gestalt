@@ -6,7 +6,7 @@ pub struct ConfigurationBackupRetentionPolicyDailySchedule {
     /// A `retention_duration` block as defined below.
     #[builder(into)]
     #[serde(rename = "retentionDuration")]
-    pub r#retention_duration: Box<Option<super::super::types::automanage::ConfigurationBackupRetentionPolicyDailyScheduleRetentionDuration>>,
+    pub r#retention_duration: Option<Box<super::super::types::automanage::ConfigurationBackupRetentionPolicyDailyScheduleRetentionDuration>>,
     /// The retention times of the backup policy.
     #[builder(into)]
     #[serde(rename = "retentionTimes")]

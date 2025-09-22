@@ -14,7 +14,7 @@ pub struct GatewayRouteSpecHttp2RouteMatchHeaderMatch {
     /// Object that specifies the range of numbers that the header value sent by the client must be included in.
     #[builder(into)]
     #[serde(rename = "range")]
-    pub r#range: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttp2RouteMatchHeaderMatchRange>>,
+    pub r#range: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttp2RouteMatchHeaderMatchRange>>,
     /// Header value sent by the client must include the specified characters.
     #[builder(into)]
     #[serde(rename = "regex")]

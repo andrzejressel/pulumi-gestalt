@@ -6,10 +6,10 @@ pub struct CertificateAuthorityRevocationConfiguration {
     /// Nested argument containing configuration of the certificate revocation list (CRL), if any, maintained by the certificate authority. Defined below.
     #[builder(into)]
     #[serde(rename = "crlConfiguration")]
-    pub r#crl_configuration: Box<Option<super::super::types::acmpca::CertificateAuthorityRevocationConfigurationCrlConfiguration>>,
+    pub r#crl_configuration: Option<Box<super::super::types::acmpca::CertificateAuthorityRevocationConfigurationCrlConfiguration>>,
     /// Nested argument containing configuration of
     /// the custom OCSP responder endpoint. Defined below.
     #[builder(into)]
     #[serde(rename = "ocspConfiguration")]
-    pub r#ocsp_configuration: Box<Option<super::super::types::acmpca::CertificateAuthorityRevocationConfigurationOcspConfiguration>>,
+    pub r#ocsp_configuration: Option<Box<super::super::types::acmpca::CertificateAuthorityRevocationConfigurationOcspConfiguration>>,
 }

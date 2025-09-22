@@ -6,7 +6,7 @@ pub struct VirtualNodeSpec {
     /// Defaults for backends.
     #[builder(into)]
     #[serde(rename = "backendDefaults")]
-    pub r#backend_defaults: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendDefaults>>,
+    pub r#backend_defaults: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendDefaults>>,
     /// Backends to which the virtual node is expected to send outbound traffic.
     #[builder(into)]
     #[serde(rename = "backends")]
@@ -18,9 +18,9 @@ pub struct VirtualNodeSpec {
     /// Inbound and outbound access logging information for the virtual node.
     #[builder(into)]
     #[serde(rename = "logging")]
-    pub r#logging: Box<Option<super::super::types::appmesh::VirtualNodeSpecLogging>>,
+    pub r#logging: Option<Box<super::super::types::appmesh::VirtualNodeSpecLogging>>,
     /// Service discovery information for the virtual node.
     #[builder(into)]
     #[serde(rename = "serviceDiscovery")]
-    pub r#service_discovery: Box<Option<super::super::types::appmesh::VirtualNodeSpecServiceDiscovery>>,
+    pub r#service_discovery: Option<Box<super::super::types::appmesh::VirtualNodeSpecServiceDiscovery>>,
 }

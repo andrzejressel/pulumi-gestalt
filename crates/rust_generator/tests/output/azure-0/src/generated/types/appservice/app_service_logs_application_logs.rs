@@ -6,7 +6,7 @@ pub struct AppServiceLogsApplicationLogs {
     /// An `azure_blob_storage` block as defined below.
     #[builder(into)]
     #[serde(rename = "azureBlobStorage")]
-    pub r#azure_blob_storage: Box<Option<super::super::types::appservice::AppServiceLogsApplicationLogsAzureBlobStorage>>,
+    pub r#azure_blob_storage: Option<Box<super::super::types::appservice::AppServiceLogsApplicationLogsAzureBlobStorage>>,
     /// Log level for filesystem based logging. Supported values are `Error`, `Information`, `Verbose`, `Warning` and `Off`. Defaults to `Off`.
     #[builder(into)]
     #[serde(rename = "fileSystemLevel")]

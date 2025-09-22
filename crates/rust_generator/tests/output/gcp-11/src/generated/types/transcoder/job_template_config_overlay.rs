@@ -12,5 +12,5 @@ pub struct JobTemplateConfigOverlay {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "image")]
-    pub r#image: Box<Option<super::super::types::transcoder::JobTemplateConfigOverlayImage>>,
+    pub r#image: Option<Box<super::super::types::transcoder::JobTemplateConfigOverlayImage>>,
 }

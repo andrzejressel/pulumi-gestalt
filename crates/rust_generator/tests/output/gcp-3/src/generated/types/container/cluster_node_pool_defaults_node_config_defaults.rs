@@ -6,11 +6,11 @@ pub struct ClusterNodePoolDefaultsNodeConfigDefaults {
     /// Parameters for containerd configuration.
     #[builder(into)]
     #[serde(rename = "containerdConfig")]
-    pub r#containerd_config: Box<Option<super::super::types::container::ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfig>>,
+    pub r#containerd_config: Option<Box<super::super::types::container::ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfig>>,
     /// The default Google Container Filesystem (GCFS) configuration at the cluster level. e.g. enable [image streaming](https://cloud.google.com/kubernetes-engine/docs/how-to/image-streaming) across all the node pools within the cluster. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "gcfsConfig")]
-    pub r#gcfs_config: Box<Option<super::super::types::container::ClusterNodePoolDefaultsNodeConfigDefaultsGcfsConfig>>,
+    pub r#gcfs_config: Option<Box<super::super::types::container::ClusterNodePoolDefaultsNodeConfigDefaultsGcfsConfig>>,
     /// Controls whether the kubelet read-only port is enabled for newly created node pools in the cluster. It is strongly recommended to set this to `FALSE`. Possible values: `TRUE`, `FALSE`.
     #[builder(into)]
     #[serde(rename = "insecureKubeletReadonlyPortEnabled")]

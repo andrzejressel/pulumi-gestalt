@@ -11,7 +11,7 @@ pub struct ClusterNotificationConfigPubsub {
     /// 
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<Option<super::super::types::container::ClusterNotificationConfigPubsubFilter>>,
+    pub r#filter: Option<Box<super::super::types::container::ClusterNotificationConfigPubsubFilter>>,
     /// The pubsub topic to push upgrade notifications to. Must be in the same project as the cluster. Must be in the format: `projects/{project}/topics/{topic}`.
     #[builder(into)]
     #[serde(rename = "topic")]

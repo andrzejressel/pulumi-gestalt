@@ -24,11 +24,11 @@ pub struct LinuxWebAppSiteConfig {
     /// A `application_stack` block as defined above.
     #[builder(into)]
     #[serde(rename = "applicationStack")]
-    pub r#application_stack: Box<Option<super::super::types::appservice::LinuxWebAppSiteConfigApplicationStack>>,
+    pub r#application_stack: Option<Box<super::super::types::appservice::LinuxWebAppSiteConfigApplicationStack>>,
     /// A `auto_heal_setting` block as defined above. Required with `auto_heal`.
     #[builder(into)]
     #[serde(rename = "autoHealSetting")]
-    pub r#auto_heal_setting: Box<Option<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSetting>>,
+    pub r#auto_heal_setting: Option<Box<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSetting>>,
     /// The Client ID of the Managed Service Identity to use for connections to the Azure Container Registry.
     #[builder(into)]
     #[serde(rename = "containerRegistryManagedIdentityClientId")]
@@ -40,7 +40,7 @@ pub struct LinuxWebAppSiteConfig {
     /// A `cors` block as defined above.
     #[builder(into)]
     #[serde(rename = "cors")]
-    pub r#cors: Box<Option<super::super::types::appservice::LinuxWebAppSiteConfigCors>>,
+    pub r#cors: Option<Box<super::super::types::appservice::LinuxWebAppSiteConfigCors>>,
     /// Specifies a list of Default Documents for the Linux Web App.
     #[builder(into)]
     #[serde(rename = "defaultDocuments")]

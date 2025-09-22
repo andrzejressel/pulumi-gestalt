@@ -14,7 +14,7 @@ pub struct IndexingConfigurationThingIndexingConfiguration {
     /// Required if `named_shadow_indexing_mode` is `ON`. Enables to add named shadows filtered by `filter` to fleet indexing configuration.
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<Option<super::super::types::iot::IndexingConfigurationThingIndexingConfigurationFilter>>,
+    pub r#filter: Option<Box<super::super::types::iot::IndexingConfigurationThingIndexingConfigurationFilter>>,
     /// Contains fields that are indexed and whose types are already known by the Fleet Indexing service. See below.
     #[builder(into)]
     #[serde(rename = "managedFields")]

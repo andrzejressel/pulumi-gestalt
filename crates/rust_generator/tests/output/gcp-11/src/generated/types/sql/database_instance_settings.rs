@@ -10,10 +10,10 @@ pub struct DatabaseInstanceSettings {
     pub r#activation_policy: Option<String>,
     #[builder(into)]
     #[serde(rename = "activeDirectoryConfig")]
-    pub r#active_directory_config: Box<Option<super::super::types::sql::DatabaseInstanceSettingsActiveDirectoryConfig>>,
+    pub r#active_directory_config: Option<Box<super::super::types::sql::DatabaseInstanceSettingsActiveDirectoryConfig>>,
     #[builder(into)]
     #[serde(rename = "advancedMachineFeatures")]
-    pub r#advanced_machine_features: Box<Option<super::super::types::sql::DatabaseInstanceSettingsAdvancedMachineFeatures>>,
+    pub r#advanced_machine_features: Option<Box<super::super::types::sql::DatabaseInstanceSettingsAdvancedMachineFeatures>>,
     /// The availability type of the Cloud SQL
     /// instance, high availability (`REGIONAL`) or single zone (`ZONAL`).' For all instances, ensure that
     /// `settings.backup_configuration.enabled` is set to `true`.
@@ -25,7 +25,7 @@ pub struct DatabaseInstanceSettings {
     pub r#availability_type: Option<String>,
     #[builder(into)]
     #[serde(rename = "backupConfiguration")]
-    pub r#backup_configuration: Box<Option<super::super::types::sql::DatabaseInstanceSettingsBackupConfiguration>>,
+    pub r#backup_configuration: Option<Box<super::super::types::sql::DatabaseInstanceSettingsBackupConfiguration>>,
     /// The name of server instance collation.
     #[builder(into)]
     #[serde(rename = "collation")]
@@ -37,7 +37,7 @@ pub struct DatabaseInstanceSettings {
     /// Data cache configurations.
     #[builder(into)]
     #[serde(rename = "dataCacheConfig")]
-    pub r#data_cache_config: Box<Option<super::super::types::sql::DatabaseInstanceSettingsDataCacheConfig>>,
+    pub r#data_cache_config: Option<Box<super::super::types::sql::DatabaseInstanceSettingsDataCacheConfig>>,
     #[builder(into)]
     #[serde(rename = "databaseFlags")]
     pub r#database_flags: Option<Vec<super::super::types::sql::DatabaseInstanceSettingsDatabaseFlag>>,
@@ -47,7 +47,7 @@ pub struct DatabaseInstanceSettings {
     pub r#deletion_protection_enabled: Option<bool>,
     #[builder(into)]
     #[serde(rename = "denyMaintenancePeriod")]
-    pub r#deny_maintenance_period: Box<Option<super::super::types::sql::DatabaseInstanceSettingsDenyMaintenancePeriod>>,
+    pub r#deny_maintenance_period: Option<Box<super::super::types::sql::DatabaseInstanceSettingsDenyMaintenancePeriod>>,
     /// Enables auto-resizing of the storage size. Defaults to `true`. Note that if `disk_size` is set, future `pulumi up` calls will attempt to delete the instance in order to resize the disk to the value specified in disk_size if it has been resized. To avoid this, ensure that `lifecycle.ignore_changes` is applied to `disk_size`.
     #[builder(into)]
     #[serde(rename = "diskAutoresize")]
@@ -79,27 +79,27 @@ pub struct DatabaseInstanceSettings {
     /// Configuration of Query Insights.
     #[builder(into)]
     #[serde(rename = "insightsConfig")]
-    pub r#insights_config: Box<Option<super::super::types::sql::DatabaseInstanceSettingsInsightsConfig>>,
+    pub r#insights_config: Option<Box<super::super::types::sql::DatabaseInstanceSettingsInsightsConfig>>,
     #[builder(into)]
     #[serde(rename = "ipConfiguration")]
-    pub r#ip_configuration: Box<Option<super::super::types::sql::DatabaseInstanceSettingsIpConfiguration>>,
+    pub r#ip_configuration: Option<Box<super::super::types::sql::DatabaseInstanceSettingsIpConfiguration>>,
     #[builder(into)]
     #[serde(rename = "locationPreference")]
-    pub r#location_preference: Box<Option<super::super::types::sql::DatabaseInstanceSettingsLocationPreference>>,
+    pub r#location_preference: Option<Box<super::super::types::sql::DatabaseInstanceSettingsLocationPreference>>,
     /// Declares a one-hour maintenance window when an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time.
     #[builder(into)]
     #[serde(rename = "maintenanceWindow")]
-    pub r#maintenance_window: Box<Option<super::super::types::sql::DatabaseInstanceSettingsMaintenanceWindow>>,
+    pub r#maintenance_window: Option<Box<super::super::types::sql::DatabaseInstanceSettingsMaintenanceWindow>>,
     #[builder(into)]
     #[serde(rename = "passwordValidationPolicy")]
-    pub r#password_validation_policy: Box<Option<super::super::types::sql::DatabaseInstanceSettingsPasswordValidationPolicy>>,
+    pub r#password_validation_policy: Option<Box<super::super::types::sql::DatabaseInstanceSettingsPasswordValidationPolicy>>,
     /// Pricing plan for this instance, can only be `PER_USE`.
     #[builder(into)]
     #[serde(rename = "pricingPlan")]
     pub r#pricing_plan: Option<String>,
     #[builder(into)]
     #[serde(rename = "sqlServerAuditConfig")]
-    pub r#sql_server_audit_config: Box<Option<super::super::types::sql::DatabaseInstanceSettingsSqlServerAuditConfig>>,
+    pub r#sql_server_audit_config: Option<Box<super::super::types::sql::DatabaseInstanceSettingsSqlServerAuditConfig>>,
     /// The machine type to use. See [tiers](https://cloud.google.com/sql/docs/admin-api/v1beta4/tiers)
     /// for more details and supported versions. Postgres supports only shared-core machine types,
     /// and custom machine types such as `db-custom-2-13312`. See the [Custom Machine Type Documentation](https://cloud.google.com/compute/docs/instances/creating-instance-with-custom-machine-type#create) to learn about specifying custom machine types.

@@ -6,7 +6,7 @@ pub struct ConfigurationBackupRetentionPolicy {
     /// A `daily_schedule` block as defined below.
     #[builder(into)]
     #[serde(rename = "dailySchedule")]
-    pub r#daily_schedule: Box<Option<super::super::types::automanage::ConfigurationBackupRetentionPolicyDailySchedule>>,
+    pub r#daily_schedule: Option<Box<super::super::types::automanage::ConfigurationBackupRetentionPolicyDailySchedule>>,
     /// The retention policy type of the backup policy. Possible value is `LongTermRetentionPolicy`. Defaults to `LongTermRetentionPolicy`.
     #[builder(into)]
     #[serde(rename = "retentionPolicyType")]
@@ -14,5 +14,5 @@ pub struct ConfigurationBackupRetentionPolicy {
     /// A `weekly_schedule` block as defined below.
     #[builder(into)]
     #[serde(rename = "weeklySchedule")]
-    pub r#weekly_schedule: Box<Option<super::super::types::automanage::ConfigurationBackupRetentionPolicyWeeklySchedule>>,
+    pub r#weekly_schedule: Option<Box<super::super::types::automanage::ConfigurationBackupRetentionPolicyWeeklySchedule>>,
 }

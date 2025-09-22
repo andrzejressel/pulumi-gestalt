@@ -6,7 +6,7 @@ pub struct ImageImageScanningConfiguration {
     /// Configuration block with ECR configuration. Detailed below.
     #[builder(into)]
     #[serde(rename = "ecrConfiguration")]
-    pub r#ecr_configuration: Box<Option<super::super::types::imagebuilder::ImageImageScanningConfigurationEcrConfiguration>>,
+    pub r#ecr_configuration: Option<Box<super::super::types::imagebuilder::ImageImageScanningConfigurationEcrConfiguration>>,
     /// Indicates whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image. Defaults to `false`.
     #[builder(into)]
     #[serde(rename = "imageScanningEnabled")]

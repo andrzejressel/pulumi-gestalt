@@ -7,10 +7,10 @@ pub struct AnalyticsApplicationInputsSchemaRecordFormatMappingParameters {
     /// See CSV Mapping Parameters below for more details.
     #[builder(into)]
     #[serde(rename = "csv")]
-    pub r#csv: Box<Option<super::super::types::kinesis::AnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsv>>,
+    pub r#csv: Option<Box<super::super::types::kinesis::AnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsv>>,
     /// Mapping information when JSON is the record format on the streaming source.
     /// See JSON Mapping Parameters below for more details.
     #[builder(into)]
     #[serde(rename = "json")]
-    pub r#json: Box<Option<super::super::types::kinesis::AnalyticsApplicationInputsSchemaRecordFormatMappingParametersJson>>,
+    pub r#json: Option<Box<super::super::types::kinesis::AnalyticsApplicationInputsSchemaRecordFormatMappingParametersJson>>,
 }

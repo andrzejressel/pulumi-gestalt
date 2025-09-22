@@ -14,5 +14,5 @@ pub struct ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy 
     /// Defines how Dataproc should create VMs with a mixture of provisioning models.
     #[builder(into)]
     #[serde(rename = "provisioningModelMix")]
-    pub r#provisioning_model_mix: Box<Option<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyProvisioningModelMix>>,
+    pub r#provisioning_model_mix: Option<Box<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyProvisioningModelMix>>,
 }

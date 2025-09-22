@@ -6,5 +6,5 @@ pub struct VirtualNodeSpecBackendDefaultsClientPolicy {
     /// Transport Layer Security (TLS) client policy.
     #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendDefaultsClientPolicyTls>>,
+    pub r#tls: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendDefaultsClientPolicyTls>>,
 }

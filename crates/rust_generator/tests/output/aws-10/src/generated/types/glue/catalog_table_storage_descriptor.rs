@@ -42,15 +42,15 @@ pub struct CatalogTableStorageDescriptor {
     /// Object that references a schema stored in the AWS Glue Schema Registry. When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference. See Schema Reference below.
     #[builder(into)]
     #[serde(rename = "schemaReference")]
-    pub r#schema_reference: Box<Option<super::super::types::glue::CatalogTableStorageDescriptorSchemaReference>>,
+    pub r#schema_reference: Option<Box<super::super::types::glue::CatalogTableStorageDescriptorSchemaReference>>,
     /// Configuration block for serialization and deserialization ("SerDe") information. See `ser_de_info` below.
     #[builder(into)]
     #[serde(rename = "serDeInfo")]
-    pub r#ser_de_info: Box<Option<super::super::types::glue::CatalogTableStorageDescriptorSerDeInfo>>,
+    pub r#ser_de_info: Option<Box<super::super::types::glue::CatalogTableStorageDescriptorSerDeInfo>>,
     /// Configuration block with information about values that appear very frequently in a column (skewed values). See `skewed_info` below.
     #[builder(into)]
     #[serde(rename = "skewedInfo")]
-    pub r#skewed_info: Box<Option<super::super::types::glue::CatalogTableStorageDescriptorSkewedInfo>>,
+    pub r#skewed_info: Option<Box<super::super::types::glue::CatalogTableStorageDescriptorSkewedInfo>>,
     /// Configuration block for the sort order of each bucket in the table. See `sort_columns` below.
     #[builder(into)]
     #[serde(rename = "sortColumns")]

@@ -16,12 +16,12 @@ pub struct JobCopy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "destinationEncryptionConfiguration")]
-    pub r#destination_encryption_configuration: Box<Option<super::super::types::bigquery::JobCopyDestinationEncryptionConfiguration>>,
+    pub r#destination_encryption_configuration: Option<Box<super::super::types::bigquery::JobCopyDestinationEncryptionConfiguration>>,
     /// The destination table.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "destinationTable")]
-    pub r#destination_table: Box<Option<super::super::types::bigquery::JobCopyDestinationTable>>,
+    pub r#destination_table: Option<Box<super::super::types::bigquery::JobCopyDestinationTable>>,
     /// Source tables to copy.
     /// Structure is documented below.
     #[builder(into)]

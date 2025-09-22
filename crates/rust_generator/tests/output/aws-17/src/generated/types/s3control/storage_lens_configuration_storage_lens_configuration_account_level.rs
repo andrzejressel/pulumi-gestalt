@@ -6,15 +6,15 @@ pub struct StorageLensConfigurationStorageLensConfigurationAccountLevel {
     /// S3 Storage Lens activity metrics. See Activity Metrics below for more details.
     #[builder(into)]
     #[serde(rename = "activityMetrics")]
-    pub r#activity_metrics: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelActivityMetrics>>,
+    pub r#activity_metrics: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelActivityMetrics>>,
     /// Advanced cost-optimization metrics for S3 Storage Lens. See Advanced Cost-Optimization Metrics below for more details.
     #[builder(into)]
     #[serde(rename = "advancedCostOptimizationMetrics")]
-    pub r#advanced_cost_optimization_metrics: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelAdvancedCostOptimizationMetrics>>,
+    pub r#advanced_cost_optimization_metrics: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelAdvancedCostOptimizationMetrics>>,
     /// Advanced data-protection metrics for S3 Storage Lens. See Advanced Data-Protection Metrics below for more details.
     #[builder(into)]
     #[serde(rename = "advancedDataProtectionMetrics")]
-    pub r#advanced_data_protection_metrics: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelAdvancedDataProtectionMetrics>>,
+    pub r#advanced_data_protection_metrics: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelAdvancedDataProtectionMetrics>>,
     /// S3 Storage Lens bucket-level configuration. See Bucket Level below for more details.
     #[builder(into)]
     #[serde(rename = "bucketLevel")]
@@ -22,5 +22,5 @@ pub struct StorageLensConfigurationStorageLensConfigurationAccountLevel {
     /// Detailed status code metrics for S3 Storage Lens. See Detailed Status Code Metrics below for more details.
     #[builder(into)]
     #[serde(rename = "detailedStatusCodeMetrics")]
-    pub r#detailed_status_code_metrics: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelDetailedStatusCodeMetrics>>,
+    pub r#detailed_status_code_metrics: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationAccountLevelDetailedStatusCodeMetrics>>,
 }

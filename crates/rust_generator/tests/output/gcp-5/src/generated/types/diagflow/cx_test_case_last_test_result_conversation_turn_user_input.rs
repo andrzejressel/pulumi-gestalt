@@ -15,7 +15,7 @@ pub struct CxTestCaseLastTestResultConversationTurnUserInput {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "input")]
-    pub r#input: Box<Option<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurnUserInputInput>>,
+    pub r#input: Option<Box<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurnUserInputInput>>,
     /// If webhooks should be allowed to trigger in response to the user utterance. Often if parameters are injected, webhooks should not be enabled.
     #[builder(into)]
     #[serde(rename = "isWebhookEnabled")]

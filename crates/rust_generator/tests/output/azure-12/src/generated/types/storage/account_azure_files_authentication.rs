@@ -6,7 +6,7 @@ pub struct AccountAzureFilesAuthentication {
     /// A `active_directory` block as defined below. Required when `directory_type` is `AD`.
     #[builder(into)]
     #[serde(rename = "activeDirectory")]
-    pub r#active_directory: Box<Option<super::super::types::storage::AccountAzureFilesAuthenticationActiveDirectory>>,
+    pub r#active_directory: Option<Box<super::super::types::storage::AccountAzureFilesAuthenticationActiveDirectory>>,
     /// Specifies the default share level permissions applied to all users. Possible values are `StorageFileDataSmbShareReader`, `StorageFileDataSmbShareContributor`, `StorageFileDataSmbShareElevatedContributor`, or `None`.
     #[builder(into)]
     #[serde(rename = "defaultShareLevelPermission")]

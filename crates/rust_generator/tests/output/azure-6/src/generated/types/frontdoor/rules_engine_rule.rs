@@ -6,7 +6,7 @@ pub struct RulesEngineRule {
     /// An `action` block as defined below.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<Option<super::super::types::frontdoor::RulesEngineRuleAction>>,
+    pub r#action: Option<Box<super::super::types::frontdoor::RulesEngineRuleAction>>,
     /// One or more `match_condition` block as defined below.
     #[builder(into)]
     #[serde(rename = "matchConditions")]

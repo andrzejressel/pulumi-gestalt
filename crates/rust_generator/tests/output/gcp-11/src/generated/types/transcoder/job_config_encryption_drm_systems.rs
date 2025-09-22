@@ -6,17 +6,17 @@ pub struct JobConfigEncryptionDrmSystems {
     /// Clearkey configuration.
     #[builder(into)]
     #[serde(rename = "clearkey")]
-    pub r#clearkey: Box<Option<super::super::types::transcoder::JobConfigEncryptionDrmSystemsClearkey>>,
+    pub r#clearkey: Option<Box<super::super::types::transcoder::JobConfigEncryptionDrmSystemsClearkey>>,
     /// Fairplay configuration.
     #[builder(into)]
     #[serde(rename = "fairplay")]
-    pub r#fairplay: Box<Option<super::super::types::transcoder::JobConfigEncryptionDrmSystemsFairplay>>,
+    pub r#fairplay: Option<Box<super::super::types::transcoder::JobConfigEncryptionDrmSystemsFairplay>>,
     /// Playready configuration.
     #[builder(into)]
     #[serde(rename = "playready")]
-    pub r#playready: Box<Option<super::super::types::transcoder::JobConfigEncryptionDrmSystemsPlayready>>,
+    pub r#playready: Option<Box<super::super::types::transcoder::JobConfigEncryptionDrmSystemsPlayready>>,
     /// Widevine configuration.
     #[builder(into)]
     #[serde(rename = "widevine")]
-    pub r#widevine: Box<Option<super::super::types::transcoder::JobConfigEncryptionDrmSystemsWidevine>>,
+    pub r#widevine: Option<Box<super::super::types::transcoder::JobConfigEncryptionDrmSystemsWidevine>>,
 }

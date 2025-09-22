@@ -14,7 +14,7 @@ pub struct ChannelEncoderSettingsGlobalConfiguration {
     /// Settings for system actions when input is lost. See Input Loss Behavior for more details.
     #[builder(into)]
     #[serde(rename = "inputLossBehavior")]
-    pub r#input_loss_behavior: Box<Option<super::super::types::medialive::ChannelEncoderSettingsGlobalConfigurationInputLossBehavior>>,
+    pub r#input_loss_behavior: Option<Box<super::super::types::medialive::ChannelEncoderSettingsGlobalConfigurationInputLossBehavior>>,
     /// Indicates how MediaLive pipelines are synchronized. PIPELINE\_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH\_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
     #[builder(into)]
     #[serde(rename = "outputLockingMode")]

@@ -6,9 +6,9 @@ pub struct ClassificationJobS3JobDefinitionBucketCriteria {
     /// The property- or tag-based conditions that determine which S3 buckets to exclude from the analysis. (documented below)
     #[builder(into)]
     #[serde(rename = "excludes")]
-    pub r#excludes: Box<Option<super::super::types::macie2::ClassificationJobS3JobDefinitionBucketCriteriaExcludes>>,
+    pub r#excludes: Option<Box<super::super::types::macie2::ClassificationJobS3JobDefinitionBucketCriteriaExcludes>>,
     /// The property- or tag-based conditions that determine which S3 buckets to include in the analysis. (documented below)
     #[builder(into)]
     #[serde(rename = "includes")]
-    pub r#includes: Box<Option<super::super::types::macie2::ClassificationJobS3JobDefinitionBucketCriteriaIncludes>>,
+    pub r#includes: Option<Box<super::super::types::macie2::ClassificationJobS3JobDefinitionBucketCriteriaIncludes>>,
 }

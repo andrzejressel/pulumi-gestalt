@@ -7,7 +7,7 @@ pub struct ServiceTemplateSpecContainerEnvFrom {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "configMapRef")]
-    pub r#config_map_ref: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromConfigMapRef>>,
+    pub r#config_map_ref: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromConfigMapRef>>,
     /// An optional identifier to prepend to each key in the ConfigMap.
     #[builder(into)]
     #[serde(rename = "prefix")]
@@ -16,5 +16,5 @@ pub struct ServiceTemplateSpecContainerEnvFrom {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "secretRef")]
-    pub r#secret_ref: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromSecretRef>>,
+    pub r#secret_ref: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromSecretRef>>,
 }

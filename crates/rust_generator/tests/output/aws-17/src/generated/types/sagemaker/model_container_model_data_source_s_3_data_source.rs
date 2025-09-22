@@ -10,7 +10,7 @@ pub struct ModelContainerModelDataSourceS3DataSource {
     /// Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the [`model_access_config` configuration block]. see Model Access Config.
     #[builder(into)]
     #[serde(rename = "modelAccessConfig")]
-    pub r#model_access_config: Box<Option<super::super::types::sagemaker::ModelContainerModelDataSourceS3DataSourceModelAccessConfig>>,
+    pub r#model_access_config: Option<Box<super::super::types::sagemaker::ModelContainerModelDataSourceS3DataSourceModelAccessConfig>>,
     /// The type of model data to deploy. Allowed values are: `S3Object` and `S3Prefix`.
     #[builder(into)]
     #[serde(rename = "s3DataType")]

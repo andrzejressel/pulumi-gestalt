@@ -6,7 +6,7 @@ pub struct DatabaseInstanceSettingsBackupConfiguration {
     /// Backup retention settings. The configuration is detailed below.
     #[builder(into)]
     #[serde(rename = "backupRetentionSettings")]
-    pub r#backup_retention_settings: Box<Option<super::super::types::sql::DatabaseInstanceSettingsBackupConfigurationBackupRetentionSettings>>,
+    pub r#backup_retention_settings: Option<Box<super::super::types::sql::DatabaseInstanceSettingsBackupConfigurationBackupRetentionSettings>>,
     /// True if binary logging is enabled.
     /// Can only be used with MySQL.
     #[builder(into)]

@@ -7,5 +7,5 @@ pub struct AttachedClusterMonitoringConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "managedPrometheusConfig")]
-    pub r#managed_prometheus_config: Box<Option<super::super::types::container::AttachedClusterMonitoringConfigManagedPrometheusConfig>>,
+    pub r#managed_prometheus_config: Option<Box<super::super::types::container::AttachedClusterMonitoringConfigManagedPrometheusConfig>>,
 }

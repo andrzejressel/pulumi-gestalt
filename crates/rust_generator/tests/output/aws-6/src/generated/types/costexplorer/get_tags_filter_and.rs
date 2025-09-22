@@ -6,13 +6,13 @@ pub struct GetTagsFilterAnd {
     /// Configuration block for the filter that's based on `CostCategory` values. See `cost_category` block below for details.
     #[builder(into)]
     #[serde(rename = "costCategory")]
-    pub r#cost_category: Box<Option<super::super::types::costexplorer::GetTagsFilterAndCostCategory>>,
+    pub r#cost_category: Option<Box<super::super::types::costexplorer::GetTagsFilterAndCostCategory>>,
     /// Configuration block for the specific `Dimension` to use for `Expression`. See `dimension` block below for details.
     #[builder(into)]
     #[serde(rename = "dimension")]
-    pub r#dimension: Box<Option<super::super::types::costexplorer::GetTagsFilterAndDimension>>,
+    pub r#dimension: Option<Box<super::super::types::costexplorer::GetTagsFilterAndDimension>>,
     /// Tags that match your request.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<super::super::types::costexplorer::GetTagsFilterAndTags>>,
+    pub r#tags: Option<Box<super::super::types::costexplorer::GetTagsFilterAndTags>>,
 }

@@ -14,9 +14,9 @@ pub struct MultiplexProgramMultiplexProgramSettings {
     /// Service Descriptor. See Service Descriptor for more details.
     #[builder(into)]
     #[serde(rename = "serviceDescriptor")]
-    pub r#service_descriptor: Box<Option<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsServiceDescriptor>>,
+    pub r#service_descriptor: Option<Box<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsServiceDescriptor>>,
     /// Video settings. See Video Settings for more details.
     #[builder(into)]
     #[serde(rename = "videoSettings")]
-    pub r#video_settings: Box<Option<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsVideoSettings>>,
+    pub r#video_settings: Option<Box<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsVideoSettings>>,
 }

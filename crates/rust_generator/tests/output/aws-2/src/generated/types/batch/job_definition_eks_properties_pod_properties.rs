@@ -26,7 +26,7 @@ pub struct JobDefinitionEksPropertiesPodProperties {
     /// Metadata about the Kubernetes pod.
     #[builder(into)]
     #[serde(rename = "metadata")]
-    pub r#metadata: Box<Option<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesMetadata>>,
+    pub r#metadata: Option<Box<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesMetadata>>,
     /// Name of the service account that's used to run the pod.
     #[builder(into)]
     #[serde(rename = "serviceAccountName")]

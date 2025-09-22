@@ -14,7 +14,7 @@ pub struct KeyKeyAttributes {
     /// List of cryptographic operations that you can perform using the key.
     #[builder(into)]
     #[serde(rename = "keyModesOfUse")]
-    pub r#key_modes_of_use: Box<Option<super::super::types::paymentcryptography::KeyKeyAttributesKeyModesOfUse>>,
+    pub r#key_modes_of_use: Option<Box<super::super::types::paymentcryptography::KeyKeyAttributesKeyModesOfUse>>,
     /// Cryptographic usage of an AWS Payment Cryptography key as defined in section A.5.2 of the TR-31 spec.
     #[builder(into)]
     #[serde(rename = "keyUsage")]

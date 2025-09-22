@@ -6,7 +6,7 @@ pub struct ApplicationPortalOptions {
     /// Sign-in options for the access portal. See `sign_in_options` below.
     #[builder(into)]
     #[serde(rename = "signInOptions")]
-    pub r#sign_in_options: Box<Option<super::super::types::ssoadmin::ApplicationPortalOptionsSignInOptions>>,
+    pub r#sign_in_options: Option<Box<super::super::types::ssoadmin::ApplicationPortalOptionsSignInOptions>>,
     /// Indicates whether this application is visible in the access portal. Valid values are `ENABLED` and `DISABLED`.
     #[builder(into)]
     #[serde(rename = "visibility")]

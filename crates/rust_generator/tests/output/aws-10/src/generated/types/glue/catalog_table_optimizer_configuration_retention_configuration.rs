@@ -6,5 +6,5 @@ pub struct CatalogTableOptimizerConfigurationRetentionConfiguration {
     /// The configuration for an Iceberg snapshot retention optimizer.
     #[builder(into)]
     #[serde(rename = "icebergConfiguration")]
-    pub r#iceberg_configuration: Box<Option<super::super::types::glue::CatalogTableOptimizerConfigurationRetentionConfigurationIcebergConfiguration>>,
+    pub r#iceberg_configuration: Option<Box<super::super::types::glue::CatalogTableOptimizerConfigurationRetentionConfigurationIcebergConfiguration>>,
 }

@@ -7,25 +7,25 @@ pub struct PreventionJobTriggerInspectJobStorageConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "bigQueryOptions")]
-    pub r#big_query_options: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigBigQueryOptions>>,
+    pub r#big_query_options: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigBigQueryOptions>>,
     /// Options defining a file or a set of files within a Google Cloud Storage bucket.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cloudStorageOptions")]
-    pub r#cloud_storage_options: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions>>,
+    pub r#cloud_storage_options: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigCloudStorageOptions>>,
     /// Options defining a data set within Google Cloud Datastore.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "datastoreOptions")]
-    pub r#datastore_options: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigDatastoreOptions>>,
+    pub r#datastore_options: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigDatastoreOptions>>,
     /// Configuration to control jobs where the content being inspected is outside of Google Cloud Platform.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "hybridOptions")]
-    pub r#hybrid_options: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigHybridOptions>>,
+    pub r#hybrid_options: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigHybridOptions>>,
     /// Configuration of the timespan of the items to include in scanning
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "timespanConfig")]
-    pub r#timespan_config: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigTimespanConfig>>,
+    pub r#timespan_config: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigTimespanConfig>>,
 }

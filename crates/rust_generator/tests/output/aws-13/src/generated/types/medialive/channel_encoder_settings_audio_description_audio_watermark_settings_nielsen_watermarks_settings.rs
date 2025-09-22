@@ -6,7 +6,7 @@ pub struct ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWa
     /// Used to insert watermarks of type Nielsen CBET. See Nielsen CBET Settings for more details.
     #[builder(into)]
     #[serde(rename = "nielsenCbetSettings")]
-    pub r#nielsen_cbet_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettingsNielsenCbetSettings>>,
+    pub r#nielsen_cbet_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettingsNielsenCbetSettings>>,
     /// Distribution types to assign to the watermarks. Options are `PROGRAM_CONTENT` and `FINAL_DISTRIBUTOR`.
     #[builder(into)]
     #[serde(rename = "nielsenDistributionType")]

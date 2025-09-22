@@ -10,7 +10,7 @@ pub struct LinuxVirtualMachineScaleSetOsDisk {
     /// A `diff_disk_settings` block as defined above. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "diffDiskSettings")]
-    pub r#diff_disk_settings: Box<Option<super::super::types::compute::LinuxVirtualMachineScaleSetOsDiskDiffDiskSettings>>,
+    pub r#diff_disk_settings: Option<Box<super::super::types::compute::LinuxVirtualMachineScaleSetOsDiskDiffDiskSettings>>,
     /// The ID of the Disk Encryption Set which should be used to encrypt this OS Disk. Conflicts with `secure_vm_disk_encryption_set_id`. Changing this forces a new resource to be created.
     /// 
     /// > **Note:** The Disk Encryption Set must have the `Reader` Role Assignment scoped on the Key Vault - in addition to an Access Policy to the Key Vault

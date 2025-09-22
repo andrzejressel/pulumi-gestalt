@@ -6,17 +6,17 @@ pub struct StreamSourceConfigSqlServerSourceConfig {
     /// CDC reader reads from change tables.
     #[builder(into)]
     #[serde(rename = "changeTables")]
-    pub r#change_tables: Box<Option<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigChangeTables>>,
+    pub r#change_tables: Option<Box<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigChangeTables>>,
     /// SQL Server objects to exclude from the stream.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "excludeObjects")]
-    pub r#exclude_objects: Box<Option<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigExcludeObjects>>,
+    pub r#exclude_objects: Option<Box<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigExcludeObjects>>,
     /// SQL Server objects to retrieve from the source.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "includeObjects")]
-    pub r#include_objects: Box<Option<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigIncludeObjects>>,
+    pub r#include_objects: Option<Box<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigIncludeObjects>>,
     /// Max concurrent backfill tasks.
     #[builder(into)]
     #[serde(rename = "maxConcurrentBackfillTasks")]
@@ -28,5 +28,5 @@ pub struct StreamSourceConfigSqlServerSourceConfig {
     /// CDC reader reads from transaction logs.
     #[builder(into)]
     #[serde(rename = "transactionLogs")]
-    pub r#transaction_logs: Box<Option<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigTransactionLogs>>,
+    pub r#transaction_logs: Option<Box<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigTransactionLogs>>,
 }

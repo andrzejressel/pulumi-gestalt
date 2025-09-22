@@ -7,11 +7,11 @@ pub struct AiIndexMetadataConfigAlgorithmConfig {
     /// standard linear search in the database for each query.
     #[builder(into)]
     #[serde(rename = "bruteForceConfig")]
-    pub r#brute_force_config: Box<Option<super::super::types::vertex::AiIndexMetadataConfigAlgorithmConfigBruteForceConfig>>,
+    pub r#brute_force_config: Option<Box<super::super::types::vertex::AiIndexMetadataConfigAlgorithmConfigBruteForceConfig>>,
     /// Configuration options for using the tree-AH algorithm (Shallow tree + Asymmetric Hashing).
     /// Please refer to this paper for more details: https://arxiv.org/abs/1908.10396
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "treeAhConfig")]
-    pub r#tree_ah_config: Box<Option<super::super::types::vertex::AiIndexMetadataConfigAlgorithmConfigTreeAhConfig>>,
+    pub r#tree_ah_config: Option<Box<super::super::types::vertex::AiIndexMetadataConfigAlgorithmConfigTreeAhConfig>>,
 }

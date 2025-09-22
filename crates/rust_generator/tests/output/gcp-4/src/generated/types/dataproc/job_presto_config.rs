@@ -14,7 +14,7 @@ pub struct JobPrestoConfig {
     /// The runtime logging config of the job
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Box<Option<super::super::types::dataproc::JobPrestoConfigLoggingConfig>>,
+    pub r#logging_config: Option<Box<super::super::types::dataproc::JobPrestoConfigLoggingConfig>>,
     /// The format in which query output will be displayed. See the Presto documentation for supported output formats.
     /// 
     /// * `logging_config.driver_log_levels`- (Required) The per-package log levels for the driver. This may include 'root' package name to configure rootLogger. Examples: 'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'

@@ -5,7 +5,7 @@
 pub struct FeatureGroupFeatureDefinition {
     #[builder(into)]
     #[serde(rename = "collectionConfig")]
-    pub r#collection_config: Box<Option<super::super::types::sagemaker::FeatureGroupFeatureDefinitionCollectionConfig>>,
+    pub r#collection_config: Option<Box<super::super::types::sagemaker::FeatureGroupFeatureDefinitionCollectionConfig>>,
     #[builder(into)]
     #[serde(rename = "collectionType")]
     pub r#collection_type: Option<String>,

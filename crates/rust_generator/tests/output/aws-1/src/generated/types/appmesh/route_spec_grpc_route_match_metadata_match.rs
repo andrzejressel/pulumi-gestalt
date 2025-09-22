@@ -14,7 +14,7 @@ pub struct RouteSpecGrpcRouteMatchMetadataMatch {
     /// Object that specifies the range of numbers that the value sent by the client must be included in.
     #[builder(into)]
     #[serde(rename = "range")]
-    pub r#range: Box<Option<super::super::types::appmesh::RouteSpecGrpcRouteMatchMetadataMatchRange>>,
+    pub r#range: Option<Box<super::super::types::appmesh::RouteSpecGrpcRouteMatchMetadataMatchRange>>,
     /// Value sent by the client must include the specified characters. Must be between 1 and 255 characters in length.
     #[builder(into)]
     #[serde(rename = "regex")]

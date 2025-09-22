@@ -6,7 +6,7 @@ pub struct ListenerRuleActionForward {
     /// The target group stickiness for the rule.
     #[builder(into)]
     #[serde(rename = "stickiness")]
-    pub r#stickiness: Box<Option<super::super::types::lb::ListenerRuleActionForwardStickiness>>,
+    pub r#stickiness: Option<Box<super::super::types::lb::ListenerRuleActionForwardStickiness>>,
     /// One or more target group blocks.
     #[builder(into)]
     #[serde(rename = "targetGroups")]

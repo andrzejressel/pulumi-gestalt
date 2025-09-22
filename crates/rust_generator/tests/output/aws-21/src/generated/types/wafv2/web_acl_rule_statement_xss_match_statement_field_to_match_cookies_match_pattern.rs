@@ -6,7 +6,7 @@ pub struct WebAclRuleStatementXssMatchStatementFieldToMatchCookiesMatchPattern {
     /// An empty configuration block that is used for inspecting all headers.
     #[builder(into)]
     #[serde(rename = "all")]
-    pub r#all: Box<Option<super::super::types::wafv2::WebAclRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternAll>>,
+    pub r#all: Option<Box<super::super::types::wafv2::WebAclRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternAll>>,
     #[builder(into)]
     #[serde(rename = "excludedCookies")]
     pub r#excluded_cookies: Option<Vec<String>>,

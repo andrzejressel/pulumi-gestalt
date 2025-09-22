@@ -21,7 +21,7 @@ pub struct WorkstationConfigHostGceInstance {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "confidentialInstanceConfig")]
-    pub r#confidential_instance_config: Box<Option<super::super::types::workstations::WorkstationConfigHostGceInstanceConfidentialInstanceConfig>>,
+    pub r#confidential_instance_config: Option<Box<super::super::types::workstations::WorkstationConfigHostGceInstanceConfidentialInstanceConfig>>,
     /// Whether instances have no public IP address.
     #[builder(into)]
     #[serde(rename = "disablePublicIpAddresses")]
@@ -55,7 +55,7 @@ pub struct WorkstationConfigHostGceInstance {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "shieldedInstanceConfig")]
-    pub r#shielded_instance_config: Box<Option<super::super::types::workstations::WorkstationConfigHostGceInstanceShieldedInstanceConfig>>,
+    pub r#shielded_instance_config: Option<Box<super::super::types::workstations::WorkstationConfigHostGceInstanceShieldedInstanceConfig>>,
     /// Network tags to add to the Compute Engine machines backing the Workstations.
     #[builder(into)]
     #[serde(rename = "tags")]

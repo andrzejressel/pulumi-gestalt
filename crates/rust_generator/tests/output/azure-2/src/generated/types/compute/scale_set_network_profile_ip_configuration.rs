@@ -34,7 +34,7 @@ pub struct ScaleSetNetworkProfileIpConfiguration {
     /// Describes a virtual machines scale set IP Configuration's PublicIPAddress configuration. The `public_ip_address_configuration` block is documented below.
     #[builder(into)]
     #[serde(rename = "publicIpAddressConfiguration")]
-    pub r#public_ip_address_configuration: Box<Option<super::super::types::compute::ScaleSetNetworkProfileIpConfigurationPublicIpAddressConfiguration>>,
+    pub r#public_ip_address_configuration: Option<Box<super::super::types::compute::ScaleSetNetworkProfileIpConfigurationPublicIpAddressConfiguration>>,
     /// Specifies the identifier of the subnet.
     #[builder(into)]
     #[serde(rename = "subnetId")]

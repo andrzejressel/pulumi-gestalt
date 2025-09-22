@@ -10,7 +10,7 @@ pub struct VirtualNetworkSubnet {
     /// A `shared_public_ip_address` block as defined below.
     #[builder(into)]
     #[serde(rename = "sharedPublicIpAddress")]
-    pub r#shared_public_ip_address: Box<Option<super::super::types::devtest::VirtualNetworkSubnetSharedPublicIpAddress>>,
+    pub r#shared_public_ip_address: Option<Box<super::super::types::devtest::VirtualNetworkSubnetSharedPublicIpAddress>>,
     /// Can this subnet be used for creating Virtual Machines? Possible values are `Allow`, `Default` and `Deny`. Defaults to `Allow`.
     #[builder(into)]
     #[serde(rename = "useInVirtualMachineCreation")]

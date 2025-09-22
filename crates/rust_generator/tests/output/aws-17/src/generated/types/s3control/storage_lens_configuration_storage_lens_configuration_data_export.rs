@@ -6,9 +6,9 @@ pub struct StorageLensConfigurationStorageLensConfigurationDataExport {
     /// Amazon CloudWatch publishing for S3 Storage Lens metrics. See Cloud Watch Metrics below for more details.
     #[builder(into)]
     #[serde(rename = "cloudWatchMetrics")]
-    pub r#cloud_watch_metrics: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationDataExportCloudWatchMetrics>>,
+    pub r#cloud_watch_metrics: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationDataExportCloudWatchMetrics>>,
     /// The bucket where the S3 Storage Lens metrics export will be located. See S3 Bucket Destination below for more details.
     #[builder(into)]
     #[serde(rename = "s3BucketDestination")]
-    pub r#s_3_bucket_destination: Box<Option<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestination>>,
+    pub r#s_3_bucket_destination: Option<Box<super::super::types::s3control::StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestination>>,
 }

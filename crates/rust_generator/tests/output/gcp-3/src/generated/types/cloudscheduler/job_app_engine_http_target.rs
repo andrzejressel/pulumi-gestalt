@@ -7,7 +7,7 @@ pub struct JobAppEngineHttpTarget {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "appEngineRouting")]
-    pub r#app_engine_routing: Box<Option<super::super::types::cloudscheduler::JobAppEngineHttpTargetAppEngineRouting>>,
+    pub r#app_engine_routing: Option<Box<super::super::types::cloudscheduler::JobAppEngineHttpTargetAppEngineRouting>>,
     /// HTTP request body.
     /// A request body is allowed only if the HTTP method is POST or PUT.
     /// It will result in invalid argument error to set a body on a job with an incompatible HttpMethod.

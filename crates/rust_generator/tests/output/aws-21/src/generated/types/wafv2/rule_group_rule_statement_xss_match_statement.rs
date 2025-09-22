@@ -6,7 +6,7 @@ pub struct RuleGroupRuleStatementXssMatchStatement {
     /// The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
     #[builder(into)]
     #[serde(rename = "fieldToMatch")]
-    pub r#field_to_match: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementXssMatchStatementFieldToMatch>>,
+    pub r#field_to_match: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementXssMatchStatementFieldToMatch>>,
     /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
     /// At least one required.
     /// See Text Transformation below for details.

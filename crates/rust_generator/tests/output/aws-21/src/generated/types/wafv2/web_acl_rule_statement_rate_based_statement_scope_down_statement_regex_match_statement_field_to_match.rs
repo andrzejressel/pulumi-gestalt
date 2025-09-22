@@ -6,15 +6,15 @@ pub struct WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStat
     /// Inspect all query arguments.
     #[builder(into)]
     #[serde(rename = "allQueryArguments")]
-    pub r#all_query_arguments: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArguments>>,
+    pub r#all_query_arguments: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArguments>>,
     /// Inspect the request body, which immediately follows the request headers. See `body` below for details.
     #[builder(into)]
     #[serde(rename = "body")]
-    pub r#body: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchBody>>,
+    pub r#body: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchBody>>,
     /// Inspect the cookies in the web request. See `cookies` below for details.
     #[builder(into)]
     #[serde(rename = "cookies")]
-    pub r#cookies: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookies>>,
+    pub r#cookies: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookies>>,
     /// Inspect a string containing the list of the request's header names, ordered as they appear in the web request that AWS WAF receives for inspection. See `header_order` below for details.
     #[builder(into)]
     #[serde(rename = "headerOrders")]
@@ -26,29 +26,29 @@ pub struct WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStat
     /// Inspect the JA3 fingerprint. See `ja3_fingerprint` below for details.
     #[builder(into)]
     #[serde(rename = "ja3Fingerprint")]
-    pub r#ja_3_fingerprint: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3Fingerprint>>,
+    pub r#ja_3_fingerprint: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3Fingerprint>>,
     /// Inspect the request body as JSON. See `json_body` for details.
     #[builder(into)]
     #[serde(rename = "jsonBody")]
-    pub r#json_body: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBody>>,
+    pub r#json_body: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBody>>,
     /// Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
     #[builder(into)]
     #[serde(rename = "method")]
-    pub r#method: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchMethod>>,
+    pub r#method: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchMethod>>,
     /// Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
     #[builder(into)]
     #[serde(rename = "queryString")]
-    pub r#query_string: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryString>>,
+    pub r#query_string: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryString>>,
     /// Inspect a single header. See `single_header` below for details.
     #[builder(into)]
     #[serde(rename = "singleHeader")]
-    pub r#single_header: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeader>>,
+    pub r#single_header: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeader>>,
     /// Inspect a single query argument. See `single_query_argument` below for details.
     #[builder(into)]
     #[serde(rename = "singleQueryArgument")]
-    pub r#single_query_argument: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgument>>,
+    pub r#single_query_argument: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgument>>,
     /// Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
     #[builder(into)]
     #[serde(rename = "uriPath")]
-    pub r#uri_path: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPath>>,
+    pub r#uri_path: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPath>>,
 }

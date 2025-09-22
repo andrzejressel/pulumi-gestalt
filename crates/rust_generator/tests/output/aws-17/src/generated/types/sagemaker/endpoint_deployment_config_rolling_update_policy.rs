@@ -14,7 +14,7 @@ pub struct EndpointDeploymentConfigRollingUpdatePolicy {
     /// Batch size for rollback to the old endpoint fleet. Each rolling step to provision capacity and turn on traffic on the old endpoint fleet, and terminate capacity on the new endpoint fleet. If this field is absent, the default value will be set to 100% of total capacity which means to bring up the whole capacity of the old fleet at once during rollback. See Rollback Maximum Batch Size.
     #[builder(into)]
     #[serde(rename = "rollbackMaximumBatchSize")]
-    pub r#rollback_maximum_batch_size: Box<Option<super::super::types::sagemaker::EndpointDeploymentConfigRollingUpdatePolicyRollbackMaximumBatchSize>>,
+    pub r#rollback_maximum_batch_size: Option<Box<super::super::types::sagemaker::EndpointDeploymentConfigRollingUpdatePolicyRollbackMaximumBatchSize>>,
     /// The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet. Valid values are between `0` and `3600`.
     #[builder(into)]
     #[serde(rename = "waitIntervalInSeconds")]

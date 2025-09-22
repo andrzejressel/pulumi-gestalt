@@ -8,7 +8,7 @@ pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesRedshift {
     pub r#bucket_prefix: Option<String>,
     #[builder(into)]
     #[serde(rename = "errorHandlingConfig")]
-    pub r#error_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesRedshiftErrorHandlingConfig>>,
+    pub r#error_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesRedshiftErrorHandlingConfig>>,
     #[builder(into)]
     #[serde(rename = "intermediateBucketName")]
     pub r#intermediate_bucket_name: String,

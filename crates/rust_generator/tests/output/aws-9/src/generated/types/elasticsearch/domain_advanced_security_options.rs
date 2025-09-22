@@ -14,5 +14,5 @@ pub struct DomainAdvancedSecurityOptions {
     /// Configuration block for the main user. Detailed below.
     #[builder(into)]
     #[serde(rename = "masterUserOptions")]
-    pub r#master_user_options: Box<Option<super::super::types::elasticsearch::DomainAdvancedSecurityOptionsMasterUserOptions>>,
+    pub r#master_user_options: Option<Box<super::super::types::elasticsearch::DomainAdvancedSecurityOptionsMasterUserOptions>>,
 }

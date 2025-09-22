@@ -10,7 +10,7 @@ pub struct DataCellsFilterTableData {
     /// A wildcard with exclusions. See Column Wildcard below for details.
     #[builder(into)]
     #[serde(rename = "columnWildcard")]
-    pub r#column_wildcard: Box<Option<super::super::types::lakeformation::DataCellsFilterTableDataColumnWildcard>>,
+    pub r#column_wildcard: Option<Box<super::super::types::lakeformation::DataCellsFilterTableDataColumnWildcard>>,
     /// The name of the database.
     #[builder(into)]
     #[serde(rename = "databaseName")]
@@ -22,7 +22,7 @@ pub struct DataCellsFilterTableData {
     /// A PartiQL predicate. See Row Filter below for details.
     #[builder(into)]
     #[serde(rename = "rowFilter")]
-    pub r#row_filter: Box<Option<super::super::types::lakeformation::DataCellsFilterTableDataRowFilter>>,
+    pub r#row_filter: Option<Box<super::super::types::lakeformation::DataCellsFilterTableDataRowFilter>>,
     /// The ID of the Data Catalog.
     #[builder(into)]
     #[serde(rename = "tableCatalogId")]

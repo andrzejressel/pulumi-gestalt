@@ -6,7 +6,7 @@ pub struct StandardWebTestValidationRules {
     /// A `content` block as defined above.
     #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<Option<super::super::types::appinsights::StandardWebTestValidationRulesContent>>,
+    pub r#content: Option<Box<super::super::types::appinsights::StandardWebTestValidationRulesContent>>,
     /// The expected status code of the response. Default is '200', '0' means 'response code < 400'
     #[builder(into)]
     #[serde(rename = "expectedStatusCode")]

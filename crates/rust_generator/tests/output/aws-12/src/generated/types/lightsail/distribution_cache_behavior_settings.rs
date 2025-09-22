@@ -18,15 +18,15 @@ pub struct DistributionCacheBehaviorSettings {
     /// An object that describes the cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded. Detailed below
     #[builder(into)]
     #[serde(rename = "forwardedCookies")]
-    pub r#forwarded_cookies: Box<Option<super::super::types::lightsail::DistributionCacheBehaviorSettingsForwardedCookies>>,
+    pub r#forwarded_cookies: Option<Box<super::super::types::lightsail::DistributionCacheBehaviorSettingsForwardedCookies>>,
     /// An object that describes the headers that are forwarded to the origin. Your content is cached based on the headers that are forwarded. Detailed below
     #[builder(into)]
     #[serde(rename = "forwardedHeaders")]
-    pub r#forwarded_headers: Box<Option<super::super::types::lightsail::DistributionCacheBehaviorSettingsForwardedHeaders>>,
+    pub r#forwarded_headers: Option<Box<super::super::types::lightsail::DistributionCacheBehaviorSettingsForwardedHeaders>>,
     /// An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded. Detailed below
     #[builder(into)]
     #[serde(rename = "forwardedQueryStrings")]
-    pub r#forwarded_query_strings: Box<Option<super::super::types::lightsail::DistributionCacheBehaviorSettingsForwardedQueryStrings>>,
+    pub r#forwarded_query_strings: Option<Box<super::super::types::lightsail::DistributionCacheBehaviorSettingsForwardedQueryStrings>>,
     /// The maximum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.
     #[builder(into)]
     #[serde(rename = "maximumTtl")]

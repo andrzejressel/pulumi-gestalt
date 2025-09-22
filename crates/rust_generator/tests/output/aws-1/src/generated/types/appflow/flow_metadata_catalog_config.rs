@@ -5,5 +5,5 @@
 pub struct FlowMetadataCatalogConfig {
     #[builder(into)]
     #[serde(rename = "glueDataCatalog")]
-    pub r#glue_data_catalog: Box<Option<super::super::types::appflow::FlowMetadataCatalogConfigGlueDataCatalog>>,
+    pub r#glue_data_catalog: Option<Box<super::super::types::appflow::FlowMetadataCatalogConfigGlueDataCatalog>>,
 }

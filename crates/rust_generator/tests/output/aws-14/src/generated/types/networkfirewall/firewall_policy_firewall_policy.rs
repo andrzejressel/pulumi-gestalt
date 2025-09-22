@@ -6,7 +6,7 @@ pub struct FirewallPolicyFirewallPolicy {
     /// . Contains variables that you can use to override default Suricata settings in your firewall policy. See Rule Variables for details.
     #[builder(into)]
     #[serde(rename = "policyVariables")]
-    pub r#policy_variables: Box<Option<super::super::types::networkfirewall::FirewallPolicyFirewallPolicyPolicyVariables>>,
+    pub r#policy_variables: Option<Box<super::super::types::networkfirewall::FirewallPolicyFirewallPolicyPolicyVariables>>,
     /// Set of actions to take on a packet if it does not match any stateful rules in the policy. This can only be specified if the policy has a `stateful_engine_options` block with a `rule_order` value of `STRICT_ORDER`. You can specify one of either or neither values of `aws:drop_strict` or `aws:drop_established`, as well as any combination of `aws:alert_strict` and `aws:alert_established`.
     #[builder(into)]
     #[serde(rename = "statefulDefaultActions")]
@@ -14,7 +14,7 @@ pub struct FirewallPolicyFirewallPolicy {
     /// A configuration block that defines options on how the policy handles stateful rules. See Stateful Engine Options below for details.
     #[builder(into)]
     #[serde(rename = "statefulEngineOptions")]
-    pub r#stateful_engine_options: Box<Option<super::super::types::networkfirewall::FirewallPolicyFirewallPolicyStatefulEngineOptions>>,
+    pub r#stateful_engine_options: Option<Box<super::super::types::networkfirewall::FirewallPolicyFirewallPolicyStatefulEngineOptions>>,
     /// Set of configuration blocks containing references to the stateful rule groups that are used in the policy. See Stateful Rule Group Reference below for details.
     #[builder(into)]
     #[serde(rename = "statefulRuleGroupReferences")]

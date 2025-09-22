@@ -10,7 +10,7 @@ pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleCo
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customOutput")]
-    pub r#custom_output: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigCustomOutput>>,
+    pub r#custom_output: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigCustomOutput>>,
     /// Text that describes the vulnerability or misconfiguration that the custom
     /// module detects.
     #[builder(into)]

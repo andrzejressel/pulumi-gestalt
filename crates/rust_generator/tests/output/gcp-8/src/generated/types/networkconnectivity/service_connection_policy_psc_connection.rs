@@ -19,12 +19,12 @@ pub struct ServiceConnectionPolicyPscConnection {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "error")]
-    pub r#error: Box<Option<super::super::types::networkconnectivity::ServiceConnectionPolicyPscConnectionError>>,
+    pub r#error: Option<Box<super::super::types::networkconnectivity::ServiceConnectionPolicyPscConnectionError>>,
     /// The error info for the latest error during operating this connection.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "errorInfo")]
-    pub r#error_info: Box<Option<super::super::types::networkconnectivity::ServiceConnectionPolicyPscConnectionErrorInfo>>,
+    pub r#error_info: Option<Box<super::super::types::networkconnectivity::ServiceConnectionPolicyPscConnectionErrorInfo>>,
     /// The error type indicates whether the error is consumer facing, producer
     /// facing or system internal.
     /// Possible values are: `CONNECTION_ERROR_TYPE_UNSPECIFIED`, `ERROR_INTERNAL`, `ERROR_CONSUMER_SIDE`, `ERROR_PRODUCER_SIDE`.

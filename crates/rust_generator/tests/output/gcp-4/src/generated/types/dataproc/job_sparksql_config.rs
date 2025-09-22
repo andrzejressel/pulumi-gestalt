@@ -12,7 +12,7 @@ pub struct JobSparksqlConfig {
     /// The runtime logging config of the job
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Box<Option<super::super::types::dataproc::JobSparksqlConfigLoggingConfig>>,
+    pub r#logging_config: Option<Box<super::super::types::dataproc::JobSparksqlConfigLoggingConfig>>,
     /// A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Cloud Dataproc API may be overwritten.
     #[builder(into)]
     #[serde(rename = "properties")]

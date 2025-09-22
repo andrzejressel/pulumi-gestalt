@@ -6,11 +6,11 @@ pub struct PipeTargetParametersBatchJobParameters {
     /// The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job. Detailed below.
     #[builder(into)]
     #[serde(rename = "arrayProperties")]
-    pub r#array_properties: Box<Option<super::super::types::pipes::PipeTargetParametersBatchJobParametersArrayProperties>>,
+    pub r#array_properties: Option<Box<super::super::types::pipes::PipeTargetParametersBatchJobParametersArrayProperties>>,
     /// The overrides that are sent to a container. Detailed below.
     #[builder(into)]
     #[serde(rename = "containerOverrides")]
-    pub r#container_overrides: Box<Option<super::super::types::pipes::PipeTargetParametersBatchJobParametersContainerOverrides>>,
+    pub r#container_overrides: Option<Box<super::super::types::pipes::PipeTargetParametersBatchJobParametersContainerOverrides>>,
     /// A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a SEQUENTIAL type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an N_TO_N type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin. Detailed below.
     #[builder(into)]
     #[serde(rename = "dependsOns")]
@@ -30,5 +30,5 @@ pub struct PipeTargetParametersBatchJobParameters {
     /// The retry strategy to use for failed jobs. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition. Detailed below.
     #[builder(into)]
     #[serde(rename = "retryStrategy")]
-    pub r#retry_strategy: Box<Option<super::super::types::pipes::PipeTargetParametersBatchJobParametersRetryStrategy>>,
+    pub r#retry_strategy: Option<Box<super::super::types::pipes::PipeTargetParametersBatchJobParametersRetryStrategy>>,
 }

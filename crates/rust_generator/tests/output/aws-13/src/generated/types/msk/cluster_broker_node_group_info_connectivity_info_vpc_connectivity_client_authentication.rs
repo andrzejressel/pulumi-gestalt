@@ -6,7 +6,7 @@ pub struct ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthen
     /// Configuration block for specifying SASL client authentication. See below.
     #[builder(into)]
     #[serde(rename = "sasl")]
-    pub r#sasl: Box<Option<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl>>,
+    pub r#sasl: Option<Box<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl>>,
     /// Configuration block for specifying TLS client authentication. See below.
     #[builder(into)]
     #[serde(rename = "tls")]

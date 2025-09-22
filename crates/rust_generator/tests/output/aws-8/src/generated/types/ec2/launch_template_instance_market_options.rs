@@ -10,5 +10,5 @@ pub struct LaunchTemplateInstanceMarketOptions {
     /// The options for [Spot Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html)
     #[builder(into)]
     #[serde(rename = "spotOptions")]
-    pub r#spot_options: Box<Option<super::super::types::ec2::LaunchTemplateInstanceMarketOptionsSpotOptions>>,
+    pub r#spot_options: Option<Box<super::super::types::ec2::LaunchTemplateInstanceMarketOptionsSpotOptions>>,
 }

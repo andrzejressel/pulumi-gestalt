@@ -7,7 +7,7 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsReco
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditions>>,
+    pub r#conditions: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditions>>,
     /// The operator to apply to the result of conditions. Default and currently only supported value is AND.
     /// Default value is `AND`.
     /// Possible values are: `AND`.

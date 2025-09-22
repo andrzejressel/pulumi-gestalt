@@ -23,7 +23,7 @@ pub struct AuthorityConfigX509Config {
     /// Describes the X.509 name constraints extension.
     #[builder(into)]
     #[serde(rename = "nameConstraints")]
-    pub r#name_constraints: Box<Option<super::super::types::certificateauthority::AuthorityConfigX509ConfigNameConstraints>>,
+    pub r#name_constraints: Option<Box<super::super::types::certificateauthority::AuthorityConfigX509ConfigNameConstraints>>,
     /// Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
     #[builder(into)]
     #[serde(rename = "policyIds")]

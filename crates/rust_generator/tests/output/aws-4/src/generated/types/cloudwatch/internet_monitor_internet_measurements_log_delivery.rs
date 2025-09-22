@@ -5,5 +5,5 @@
 pub struct InternetMonitorInternetMeasurementsLogDelivery {
     #[builder(into)]
     #[serde(rename = "s3Config")]
-    pub r#s_3_config: Box<Option<super::super::types::cloudwatch::InternetMonitorInternetMeasurementsLogDeliveryS3Config>>,
+    pub r#s_3_config: Option<Box<super::super::types::cloudwatch::InternetMonitorInternetMeasurementsLogDeliveryS3Config>>,
 }

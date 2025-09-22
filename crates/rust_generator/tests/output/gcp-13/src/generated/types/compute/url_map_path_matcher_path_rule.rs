@@ -13,7 +13,7 @@ pub struct UrlMapPathMatcherPathRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customErrorResponsePolicy")]
-    pub r#custom_error_response_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherPathRuleCustomErrorResponsePolicy>>,
+    pub r#custom_error_response_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherPathRuleCustomErrorResponsePolicy>>,
     /// The list of path patterns to match. Each must start with / and the only place a
     /// \* is allowed is at the end following a /. The string fed to the path matcher
     /// does not include any text after the first ? or #, and those chars are not
@@ -30,7 +30,7 @@ pub struct UrlMapPathMatcherPathRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "routeAction")]
-    pub r#route_action: Box<Option<super::super::types::compute::UrlMapPathMatcherPathRuleRouteAction>>,
+    pub r#route_action: Option<Box<super::super::types::compute::UrlMapPathMatcherPathRuleRouteAction>>,
     /// The backend service or backend bucket to use if any of the given paths match.
     #[builder(into)]
     #[serde(rename = "service")]
@@ -41,5 +41,5 @@ pub struct UrlMapPathMatcherPathRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "urlRedirect")]
-    pub r#url_redirect: Box<Option<super::super::types::compute::UrlMapPathMatcherPathRuleUrlRedirect>>,
+    pub r#url_redirect: Option<Box<super::super::types::compute::UrlMapPathMatcherPathRuleUrlRedirect>>,
 }

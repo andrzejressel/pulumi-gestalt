@@ -10,7 +10,7 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "condition")]
-    pub r#condition: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationCondition>>,
+    pub r#condition: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationCondition>>,
     /// Input field(s) to apply the transformation to. When you have columns that reference their position within a list, omit the index from the FieldId.
     /// FieldId name matching ignores the index. For example, instead of "contact.nums[0].type", use "contact.nums.type".
     /// Structure is documented below.
@@ -22,12 +22,12 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "infoTypeTransformations")]
-    pub r#info_type_transformations: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformations>>,
+    pub r#info_type_transformations: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformations>>,
     /// Apply the transformation to the entire field.
     /// The `primitive_transformation` block must only contain one argument, corresponding to the type of transformation.
     /// Only one of `primitive_transformation` or `info_type_transformations` must be specified.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "primitiveTransformation")]
-    pub r#primitive_transformation: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformation>>,
+    pub r#primitive_transformation: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformation>>,
 }

@@ -26,7 +26,7 @@ pub struct ConnectionBitbucketDataCenterConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "serviceDirectoryConfig")]
-    pub r#service_directory_config: Box<Option<super::super::types::cloudbuildv2::ConnectionBitbucketDataCenterConfigServiceDirectoryConfig>>,
+    pub r#service_directory_config: Option<Box<super::super::types::cloudbuildv2::ConnectionBitbucketDataCenterConfigServiceDirectoryConfig>>,
     /// SSL certificate to use for requests to the Bitbucket Data Center.
     #[builder(into)]
     #[serde(rename = "sslCa")]

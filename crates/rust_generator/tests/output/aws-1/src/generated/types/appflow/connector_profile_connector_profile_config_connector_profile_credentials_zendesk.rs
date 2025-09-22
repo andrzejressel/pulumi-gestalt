@@ -14,5 +14,5 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZend
     pub r#client_secret: String,
     #[builder(into)]
     #[serde(rename = "oauthRequest")]
-    pub r#oauth_request: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendeskOauthRequest>>,
+    pub r#oauth_request: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendeskOauthRequest>>,
 }

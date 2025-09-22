@@ -10,7 +10,7 @@ pub struct RouteSpecGrpcRouteMatchMetadata {
     /// Data to match from the request.
     #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Box<Option<super::super::types::appmesh::RouteSpecGrpcRouteMatchMetadataMatch>>,
+    pub r#match_: Option<Box<super::super::types::appmesh::RouteSpecGrpcRouteMatchMetadataMatch>>,
     /// Name of the route. Must be between 1 and 50 characters in length.
     #[builder(into)]
     #[serde(rename = "name")]

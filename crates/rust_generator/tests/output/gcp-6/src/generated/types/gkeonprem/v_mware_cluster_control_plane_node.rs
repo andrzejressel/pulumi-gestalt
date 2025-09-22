@@ -7,7 +7,7 @@ pub struct VMwareClusterControlPlaneNode {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "autoResizeConfig")]
-    pub r#auto_resize_config: Box<Option<super::super::types::gkeonprem::VMwareClusterControlPlaneNodeAutoResizeConfig>>,
+    pub r#auto_resize_config: Option<Box<super::super::types::gkeonprem::VMwareClusterControlPlaneNodeAutoResizeConfig>>,
     /// The number of CPUs for each admin cluster node that serve as control planes
     /// for this VMware User Cluster. (default: 4 CPUs)
     #[builder(into)]

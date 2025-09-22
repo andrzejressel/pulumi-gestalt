@@ -5,7 +5,7 @@
 pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySetting {
     #[builder(into)]
     #[serde(rename = "keyProviderServer")]
-    pub r#key_provider_server: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingKeyProviderServer>>,
+    pub r#key_provider_server: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingKeyProviderServer>>,
     #[builder(into)]
     #[serde(rename = "staticKeyValue")]
     pub r#static_key_value: String,

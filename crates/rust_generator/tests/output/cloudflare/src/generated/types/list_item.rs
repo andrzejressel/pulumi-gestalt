@@ -9,5 +9,5 @@ pub struct ListItem {
     pub r#comment: Option<String>,
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<super::types::ListItemValue>>,
+    pub r#value: Option<Box<super::types::ListItemValue>>,
 }

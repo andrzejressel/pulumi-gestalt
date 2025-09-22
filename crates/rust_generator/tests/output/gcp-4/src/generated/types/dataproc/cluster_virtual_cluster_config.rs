@@ -7,13 +7,13 @@ pub struct ClusterVirtualClusterConfig {
     /// Structure defined below.
     #[builder(into)]
     #[serde(rename = "auxiliaryServicesConfig")]
-    pub r#auxiliary_services_config: Box<Option<super::super::types::dataproc::ClusterVirtualClusterConfigAuxiliaryServicesConfig>>,
+    pub r#auxiliary_services_config: Option<Box<super::super::types::dataproc::ClusterVirtualClusterConfigAuxiliaryServicesConfig>>,
     /// The configuration for running the Dataproc cluster on Kubernetes.
     /// Structure defined below.
     /// - - -
     #[builder(into)]
     #[serde(rename = "kubernetesClusterConfig")]
-    pub r#kubernetes_cluster_config: Box<Option<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfig>>,
+    pub r#kubernetes_cluster_config: Option<Box<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfig>>,
     /// The Cloud Storage staging bucket used to stage files,
     /// such as Hadoop jars, between client machines and the cluster.
     /// Note: If you don't explicitly specify a `staging_bucket`

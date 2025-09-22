@@ -28,5 +28,5 @@ pub struct PreventionJobTriggerInspectJobStorageConfigHybridOptions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "tableOptions")]
-    pub r#table_options: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptions>>,
+    pub r#table_options: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptions>>,
 }

@@ -6,7 +6,7 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMat
     /// Part of a web request that you want AWS WAF to inspect. See `field_to_match` below for details.
     #[builder(into)]
     #[serde(rename = "fieldToMatch")]
-    pub r#field_to_match: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatch>>,
+    pub r#field_to_match: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatch>>,
     /// Area within the portion of a web request that you want AWS WAF to search for `search_string`. Valid values include the following: `EXACTLY`, `STARTS_WITH`, `ENDS_WITH`, `CONTAINS`, `CONTAINS_WORD`. See the AWS [documentation](https://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchStatement.html) for more information.
     #[builder(into)]
     #[serde(rename = "positionalConstraint")]

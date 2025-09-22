@@ -6,9 +6,9 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationInputIn
     /// Provides additional mapping information when the record format uses delimiters (for example, CSV).
     #[builder(into)]
     #[serde(rename = "csvMappingParameters")]
-    pub r#csv_mapping_parameters: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters>>,
+    pub r#csv_mapping_parameters: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersCsvMappingParameters>>,
     /// Provides additional mapping information when JSON is the record format on the streaming source.
     #[builder(into)]
     #[serde(rename = "jsonMappingParameters")]
-    pub r#json_mapping_parameters: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters>>,
+    pub r#json_mapping_parameters: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParameters>>,
 }

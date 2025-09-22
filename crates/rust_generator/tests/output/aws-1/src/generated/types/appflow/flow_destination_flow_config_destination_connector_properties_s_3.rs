@@ -11,5 +11,5 @@ pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesS3 {
     pub r#bucket_prefix: Option<String>,
     #[builder(into)]
     #[serde(rename = "s3OutputFormatConfig")]
-    pub r#s_3_output_format_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesS3S3OutputFormatConfig>>,
+    pub r#s_3_output_format_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesS3S3OutputFormatConfig>>,
 }

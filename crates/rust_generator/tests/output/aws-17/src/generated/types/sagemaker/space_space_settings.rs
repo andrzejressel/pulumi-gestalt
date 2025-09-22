@@ -10,7 +10,7 @@ pub struct SpaceSpaceSettings {
     /// The Code Editor application settings. See `code_editor_app_settings` Block below.
     #[builder(into)]
     #[serde(rename = "codeEditorAppSettings")]
-    pub r#code_editor_app_settings: Box<Option<super::super::types::sagemaker::SpaceSpaceSettingsCodeEditorAppSettings>>,
+    pub r#code_editor_app_settings: Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsCodeEditorAppSettings>>,
     /// A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. See `custom_file_system` Block below.
     #[builder(into)]
     #[serde(rename = "customFileSystems")]
@@ -18,17 +18,17 @@ pub struct SpaceSpaceSettings {
     /// The settings for the JupyterLab application. See `jupyter_lab_app_settings` Block below.
     #[builder(into)]
     #[serde(rename = "jupyterLabAppSettings")]
-    pub r#jupyter_lab_app_settings: Box<Option<super::super::types::sagemaker::SpaceSpaceSettingsJupyterLabAppSettings>>,
+    pub r#jupyter_lab_app_settings: Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsJupyterLabAppSettings>>,
     /// The Jupyter server's app settings. See `jupyter_server_app_settings` Block below.
     #[builder(into)]
     #[serde(rename = "jupyterServerAppSettings")]
-    pub r#jupyter_server_app_settings: Box<Option<super::super::types::sagemaker::SpaceSpaceSettingsJupyterServerAppSettings>>,
+    pub r#jupyter_server_app_settings: Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsJupyterServerAppSettings>>,
     /// The kernel gateway app settings. See `kernel_gateway_app_settings` Block below.
     #[builder(into)]
     #[serde(rename = "kernelGatewayAppSettings")]
-    pub r#kernel_gateway_app_settings: Box<Option<super::super::types::sagemaker::SpaceSpaceSettingsKernelGatewayAppSettings>>,
+    pub r#kernel_gateway_app_settings: Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsKernelGatewayAppSettings>>,
     /// The storage settings. See `space_storage_settings` Block below.
     #[builder(into)]
     #[serde(rename = "spaceStorageSettings")]
-    pub r#space_storage_settings: Box<Option<super::super::types::sagemaker::SpaceSpaceSettingsSpaceStorageSettings>>,
+    pub r#space_storage_settings: Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsSpaceStorageSettings>>,
 }

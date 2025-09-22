@@ -6,5 +6,5 @@ pub struct ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettin
     /// Html Motion Graphics Settings.
     #[builder(into)]
     #[serde(rename = "htmlMotionGraphicsSettings")]
-    pub r#html_motion_graphics_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsHtmlMotionGraphicsSettings>>,
+    pub r#html_motion_graphics_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsHtmlMotionGraphicsSettings>>,
 }

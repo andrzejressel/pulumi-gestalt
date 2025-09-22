@@ -18,7 +18,7 @@ pub struct PatchDeploymentRecurringSchedule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "monthly")]
-    pub r#monthly: Box<Option<super::super::types::osconfig::PatchDeploymentRecurringScheduleMonthly>>,
+    pub r#monthly: Option<Box<super::super::types::osconfig::PatchDeploymentRecurringScheduleMonthly>>,
     /// (Output)
     /// The time the next patch job is scheduled to run.
     /// A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
@@ -45,5 +45,5 @@ pub struct PatchDeploymentRecurringSchedule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "weekly")]
-    pub r#weekly: Box<Option<super::super::types::osconfig::PatchDeploymentRecurringScheduleWeekly>>,
+    pub r#weekly: Option<Box<super::super::types::osconfig::PatchDeploymentRecurringScheduleWeekly>>,
 }

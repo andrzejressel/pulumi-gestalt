@@ -7,7 +7,7 @@ pub struct ManagementProjectSecurityHealthAnalyticsCustomModuleCustomConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customOutput")]
-    pub r#custom_output: Box<Option<super::super::types::securitycenter::ManagementProjectSecurityHealthAnalyticsCustomModuleCustomConfigCustomOutput>>,
+    pub r#custom_output: Option<Box<super::super::types::securitycenter::ManagementProjectSecurityHealthAnalyticsCustomModuleCustomConfigCustomOutput>>,
     /// Text that describes the vulnerability or misconfiguration that the custom
     /// module detects. This explanation is returned with each finding instance to
     /// help investigators understand the detected issue. The text must be enclosed in quotation marks.

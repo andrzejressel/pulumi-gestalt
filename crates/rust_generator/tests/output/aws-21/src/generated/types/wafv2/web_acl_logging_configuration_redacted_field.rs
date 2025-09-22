@@ -6,17 +6,17 @@ pub struct WebAclLoggingConfigurationRedactedField {
     /// HTTP method to be redacted. It must be specified as an empty configuration block `{}`. The method indicates the type of operation that the request is asking the origin to perform.
     #[builder(into)]
     #[serde(rename = "method")]
-    pub r#method: Box<Option<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldMethod>>,
+    pub r#method: Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldMethod>>,
     /// Whether to redact the query string. It must be specified as an empty configuration block `{}`. The query string is the part of a URL that appears after a `?` character, if any.
     #[builder(into)]
     #[serde(rename = "queryString")]
-    pub r#query_string: Box<Option<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldQueryString>>,
+    pub r#query_string: Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldQueryString>>,
     /// "single_header" refers to the redaction of a single header. For more information, please see the details below under Single Header.
     #[builder(into)]
     #[serde(rename = "singleHeader")]
-    pub r#single_header: Box<Option<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldSingleHeader>>,
+    pub r#single_header: Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldSingleHeader>>,
     /// Configuration block that redacts the request URI path. It should be specified as an empty configuration block `{}`. The URI path is the part of a web request that identifies a resource, such as `/images/daily-ad.jpg`.
     #[builder(into)]
     #[serde(rename = "uriPath")]
-    pub r#uri_path: Box<Option<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldUriPath>>,
+    pub r#uri_path: Option<Box<super::super::types::wafv2::WebAclLoggingConfigurationRedactedFieldUriPath>>,
 }

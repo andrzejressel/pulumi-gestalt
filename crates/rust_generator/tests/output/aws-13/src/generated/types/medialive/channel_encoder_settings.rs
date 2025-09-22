@@ -10,7 +10,7 @@ pub struct ChannelEncoderSettings {
     /// Settings for ad avail blanking. See Avail Blanking for more details.
     #[builder(into)]
     #[serde(rename = "availBlanking")]
-    pub r#avail_blanking: Box<Option<super::super::types::medialive::ChannelEncoderSettingsAvailBlanking>>,
+    pub r#avail_blanking: Option<Box<super::super::types::medialive::ChannelEncoderSettingsAvailBlanking>>,
     /// Caption Descriptions. See Caption Descriptions for more details.
     #[builder(into)]
     #[serde(rename = "captionDescriptions")]
@@ -18,15 +18,15 @@ pub struct ChannelEncoderSettings {
     /// Configuration settings that apply to the event as a whole. See Global Configuration for more details.
     #[builder(into)]
     #[serde(rename = "globalConfiguration")]
-    pub r#global_configuration: Box<Option<super::super::types::medialive::ChannelEncoderSettingsGlobalConfiguration>>,
+    pub r#global_configuration: Option<Box<super::super::types::medialive::ChannelEncoderSettingsGlobalConfiguration>>,
     /// Settings for motion graphics. See Motion Graphics Configuration for more details.
     #[builder(into)]
     #[serde(rename = "motionGraphicsConfiguration")]
-    pub r#motion_graphics_configuration: Box<Option<super::super::types::medialive::ChannelEncoderSettingsMotionGraphicsConfiguration>>,
+    pub r#motion_graphics_configuration: Option<Box<super::super::types::medialive::ChannelEncoderSettingsMotionGraphicsConfiguration>>,
     /// Nielsen configuration settings. See Nielsen Configuration for more details.
     #[builder(into)]
     #[serde(rename = "nielsenConfiguration")]
-    pub r#nielsen_configuration: Box<Option<super::super::types::medialive::ChannelEncoderSettingsNielsenConfiguration>>,
+    pub r#nielsen_configuration: Option<Box<super::super::types::medialive::ChannelEncoderSettingsNielsenConfiguration>>,
     /// Output groups for the channel. See Output Groups for more details.
     #[builder(into)]
     #[serde(rename = "outputGroups")]

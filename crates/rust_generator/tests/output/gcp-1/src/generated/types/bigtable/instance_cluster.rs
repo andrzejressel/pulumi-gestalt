@@ -6,7 +6,7 @@ pub struct InstanceCluster {
     /// [Autoscaling](https://cloud.google.com/bigtable/docs/autoscaling#parameters) config for the cluster, contains the following arguments:
     #[builder(into)]
     #[serde(rename = "autoscalingConfig")]
-    pub r#autoscaling_config: Box<Option<super::super::types::bigtable::InstanceClusterAutoscalingConfig>>,
+    pub r#autoscaling_config: Option<Box<super::super::types::bigtable::InstanceClusterAutoscalingConfig>>,
     /// The ID of the Cloud Bigtable cluster. Must be 6-30 characters and must only contain hyphens, lowercase letters and numbers.
     #[builder(into)]
     #[serde(rename = "clusterId")]

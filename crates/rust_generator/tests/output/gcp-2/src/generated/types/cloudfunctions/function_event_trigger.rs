@@ -12,7 +12,7 @@ pub struct FunctionEventTrigger {
     /// Specifies policy for failed executions. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "failurePolicy")]
-    pub r#failure_policy: Box<Option<super::super::types::cloudfunctions::FunctionEventTriggerFailurePolicy>>,
+    pub r#failure_policy: Option<Box<super::super::types::cloudfunctions::FunctionEventTriggerFailurePolicy>>,
     /// Required. The name or partial URI of the resource from
     /// which to observe events. For example, `"myBucket"` or `"projects/my-project/topics/my-topic"`
     #[builder(into)]

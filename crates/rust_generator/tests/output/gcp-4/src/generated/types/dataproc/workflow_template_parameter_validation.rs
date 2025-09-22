@@ -6,9 +6,9 @@ pub struct WorkflowTemplateParameterValidation {
     /// Validation based on regular expressions.
     #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<Option<super::super::types::dataproc::WorkflowTemplateParameterValidationRegex>>,
+    pub r#regex: Option<Box<super::super::types::dataproc::WorkflowTemplateParameterValidationRegex>>,
     /// Validation based on a list of allowed values.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<super::super::types::dataproc::WorkflowTemplateParameterValidationValues>>,
+    pub r#values: Option<Box<super::super::types::dataproc::WorkflowTemplateParameterValidationValues>>,
 }

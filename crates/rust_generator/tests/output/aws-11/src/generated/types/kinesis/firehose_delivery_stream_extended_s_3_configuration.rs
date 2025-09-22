@@ -15,7 +15,7 @@ pub struct FirehoseDeliveryStreamExtendedS3Configuration {
     pub r#buffering_size: Option<i32>,
     #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptions")]
-    pub r#cloudwatch_logging_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptions>>,
+    pub r#cloudwatch_logging_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationCloudwatchLoggingOptions>>,
     /// The compression format. If no value is specified, the default is `UNCOMPRESSED`. Other supported values are `GZIP`, `ZIP`, `Snappy`, & `HADOOP_SNAPPY`.
     #[builder(into)]
     #[serde(rename = "compressionFormat")]
@@ -27,11 +27,11 @@ pub struct FirehoseDeliveryStreamExtendedS3Configuration {
     /// Nested argument for the serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. See `data_format_conversion_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "dataFormatConversionConfiguration")]
-    pub r#data_format_conversion_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration>>,
+    pub r#data_format_conversion_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration>>,
     /// The configuration for dynamic partitioning. Required when using [dynamic partitioning](https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html). See `dynamic_partitioning_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "dynamicPartitioningConfiguration")]
-    pub r#dynamic_partitioning_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration>>,
+    pub r#dynamic_partitioning_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationDynamicPartitioningConfiguration>>,
     /// Prefix added to failed records before writing them to S3. Not currently supported for `redshift` destination. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see [Custom Prefixes for Amazon S3 Objects](https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html).
     #[builder(into)]
     #[serde(rename = "errorOutputPrefix")]
@@ -52,14 +52,14 @@ pub struct FirehoseDeliveryStreamExtendedS3Configuration {
     /// The data processing configuration.  See `processing_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "processingConfiguration")]
-    pub r#processing_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfiguration>>,
+    pub r#processing_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationProcessingConfiguration>>,
     #[builder(into)]
     #[serde(rename = "roleArn")]
     pub r#role_arn: String,
     /// The configuration for backup in Amazon S3. Required if `s3_backup_mode` is `Enabled`. Supports the same fields as `s3_configuration` object.
     #[builder(into)]
     #[serde(rename = "s3BackupConfiguration")]
-    pub r#s_3_backup_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguration>>,
+    pub r#s_3_backup_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationS3BackupConfiguration>>,
     /// The Amazon S3 backup mode.  Valid values are `Disabled` and `Enabled`.  Default value is `Disabled`.
     #[builder(into)]
     #[serde(rename = "s3BackupMode")]

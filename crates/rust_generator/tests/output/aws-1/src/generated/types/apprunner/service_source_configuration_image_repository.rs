@@ -6,7 +6,7 @@ pub struct ServiceSourceConfigurationImageRepository {
     /// Configuration for running the identified image. See Image Configuration below for more details.
     #[builder(into)]
     #[serde(rename = "imageConfiguration")]
-    pub r#image_configuration: Box<Option<super::super::types::apprunner::ServiceSourceConfigurationImageRepositoryImageConfiguration>>,
+    pub r#image_configuration: Option<Box<super::super::types::apprunner::ServiceSourceConfigurationImageRepositoryImageConfiguration>>,
     /// Identifier of an image. For an image in Amazon Elastic Container Registry (Amazon ECR), this is an image name. For the
     /// image name format, see Pulling an image in the Amazon ECR User Guide.
     #[builder(into)]

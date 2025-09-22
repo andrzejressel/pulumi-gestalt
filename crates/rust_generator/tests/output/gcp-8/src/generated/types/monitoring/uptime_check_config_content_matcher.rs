@@ -11,7 +11,7 @@ pub struct UptimeCheckConfigContentMatcher {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "jsonPathMatcher")]
-    pub r#json_path_matcher: Box<Option<super::super::types::monitoring::UptimeCheckConfigContentMatcherJsonPathMatcher>>,
+    pub r#json_path_matcher: Option<Box<super::super::types::monitoring::UptimeCheckConfigContentMatcherJsonPathMatcher>>,
     /// The type of content matcher that will be applied to the server output, compared to the content string when the check is run.
     /// Default value is `CONTAINS_STRING`.
     /// Possible values are: `CONTAINS_STRING`, `NOT_CONTAINS_STRING`, `MATCHES_REGEX`, `NOT_MATCHES_REGEX`, `MATCHES_JSON_PATH`, `NOT_MATCHES_JSON_PATH`.

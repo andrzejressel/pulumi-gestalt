@@ -10,5 +10,5 @@ pub struct UserPoolAdminCreateUserConfig {
     /// Invite message template structure. Detailed below.
     #[builder(into)]
     #[serde(rename = "inviteMessageTemplate")]
-    pub r#invite_message_template: Box<Option<super::super::types::cognito::UserPoolAdminCreateUserConfigInviteMessageTemplate>>,
+    pub r#invite_message_template: Option<Box<super::super::types::cognito::UserPoolAdminCreateUserConfigInviteMessageTemplate>>,
 }

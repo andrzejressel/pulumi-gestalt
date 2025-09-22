@@ -26,5 +26,5 @@ pub struct ExperimentTemplateAction {
     /// Action's target, if applicable. See below.
     #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<Option<super::super::types::fis::ExperimentTemplateActionTarget>>,
+    pub r#target: Option<Box<super::super::types::fis::ExperimentTemplateActionTarget>>,
 }

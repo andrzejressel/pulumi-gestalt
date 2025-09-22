@@ -13,7 +13,7 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "gcs")]
-    pub r#gcs: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSourceGcs>>,
+    pub r#gcs: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSourceGcs>>,
     /// A local path within the VM to use.
     #[builder(into)]
     #[serde(rename = "localPath")]
@@ -22,5 +22,5 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSource {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "remote")]
-    pub r#remote: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSourceRemote>>,
+    pub r#remote: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsiSourceRemote>>,
 }

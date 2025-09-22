@@ -14,7 +14,7 @@ pub struct FirehoseDeliveryStreamElasticsearchConfiguration {
     /// The CloudWatch Logging Options for the delivery stream. See `cloudwatch_logging_options` block below for details.
     #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptions")]
-    pub r#cloudwatch_logging_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptions>>,
+    pub r#cloudwatch_logging_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamElasticsearchConfigurationCloudwatchLoggingOptions>>,
     /// The endpoint to use when communicating with the cluster. Conflicts with `domain_arn`.
     #[builder(into)]
     #[serde(rename = "clusterEndpoint")]
@@ -34,7 +34,7 @@ pub struct FirehoseDeliveryStreamElasticsearchConfiguration {
     /// The data processing configuration.  See `processing_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "processingConfiguration")]
-    pub r#processing_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamElasticsearchConfigurationProcessingConfiguration>>,
+    pub r#processing_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamElasticsearchConfigurationProcessingConfiguration>>,
     /// After an initial failure to deliver to Amazon Elasticsearch, the total amount of time, in seconds between 0 to 7200, during which Firehose re-attempts delivery (including the first attempt).  After this time has elapsed, the failed documents are written to Amazon S3.  The default value is 300s.  There will be no retry if the value is 0.
     #[builder(into)]
     #[serde(rename = "retryDuration")]
@@ -58,5 +58,5 @@ pub struct FirehoseDeliveryStreamElasticsearchConfiguration {
     /// The VPC configuration for the delivery stream to connect to Elastic Search associated with the VPC. See `vpc_config` block below for details.
     #[builder(into)]
     #[serde(rename = "vpcConfig")]
-    pub r#vpc_config: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamElasticsearchConfigurationVpcConfig>>,
+    pub r#vpc_config: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamElasticsearchConfigurationVpcConfig>>,
 }

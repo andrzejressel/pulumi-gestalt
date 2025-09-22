@@ -6,9 +6,9 @@ pub struct ClassificationJobS3JobDefinitionScopingExcludesAnd {
     /// A property-based condition that defines a property, operator, and one or more values for including or excluding an object from the job. (documented below)
     #[builder(into)]
     #[serde(rename = "simpleScopeTerm")]
-    pub r#simple_scope_term: Box<Option<super::super::types::macie2::ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm>>,
+    pub r#simple_scope_term: Option<Box<super::super::types::macie2::ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm>>,
     /// A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding an object from the job. (documented below)
     #[builder(into)]
     #[serde(rename = "tagScopeTerm")]
-    pub r#tag_scope_term: Box<Option<super::super::types::macie2::ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm>>,
+    pub r#tag_scope_term: Option<Box<super::super::types::macie2::ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm>>,
 }

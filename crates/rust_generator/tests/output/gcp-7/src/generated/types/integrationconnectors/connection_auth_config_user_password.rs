@@ -7,7 +7,7 @@ pub struct ConnectionAuthConfigUserPassword {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigUserPasswordPassword>>,
+    pub r#password: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigUserPasswordPassword>>,
     /// Username for Authentication.
     #[builder(into)]
     #[serde(rename = "username")]

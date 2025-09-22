@@ -6,7 +6,7 @@ pub struct VirtualNodeSpecListenerConnectionPool {
     /// Connection pool information for gRPC listeners.
     #[builder(into)]
     #[serde(rename = "grpc")]
-    pub r#grpc: Box<Option<super::super::types::appmesh::VirtualNodeSpecListenerConnectionPoolGrpc>>,
+    pub r#grpc: Option<Box<super::super::types::appmesh::VirtualNodeSpecListenerConnectionPoolGrpc>>,
     /// Connection pool information for HTTP2 listeners.
     #[builder(into)]
     #[serde(rename = "http2s")]

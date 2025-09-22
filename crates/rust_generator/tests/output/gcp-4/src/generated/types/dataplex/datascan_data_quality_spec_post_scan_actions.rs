@@ -7,5 +7,5 @@ pub struct DatascanDataQualitySpecPostScanActions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "bigqueryExport")]
-    pub r#bigquery_export: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecPostScanActionsBigqueryExport>>,
+    pub r#bigquery_export: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecPostScanActionsBigqueryExport>>,
 }

@@ -6,5 +6,5 @@ pub struct SpaceSpaceSettingsCodeEditorAppSettingsAppLifecycleManagement {
     /// Settings related to idle shutdown of Studio applications. See `idle_settings` Block below.
     #[builder(into)]
     #[serde(rename = "idleSettings")]
-    pub r#idle_settings: Box<Option<super::super::types::sagemaker::SpaceSpaceSettingsCodeEditorAppSettingsAppLifecycleManagementIdleSettings>>,
+    pub r#idle_settings: Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsCodeEditorAppSettingsAppLifecycleManagementIdleSettings>>,
 }

@@ -14,7 +14,7 @@ pub struct LoadBalancerRule {
     /// Settings for a HTTP response to return directly to the eyeball if the condition is true. Note: `overrides` or `fixed_response` must be set.
     #[builder(into)]
     #[serde(rename = "fixedResponse")]
-    pub r#fixed_response: Box<Option<super::types::LoadBalancerRuleFixedResponse>>,
+    pub r#fixed_response: Option<Box<super::types::LoadBalancerRuleFixedResponse>>,
     /// Human readable name for this rule.
     #[builder(into)]
     #[serde(rename = "name")]

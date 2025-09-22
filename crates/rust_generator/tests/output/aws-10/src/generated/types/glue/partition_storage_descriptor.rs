@@ -38,11 +38,11 @@ pub struct PartitionStorageDescriptor {
     /// Serialization/deserialization (SerDe) information.
     #[builder(into)]
     #[serde(rename = "serDeInfo")]
-    pub r#ser_de_info: Box<Option<super::super::types::glue::PartitionStorageDescriptorSerDeInfo>>,
+    pub r#ser_de_info: Option<Box<super::super::types::glue::PartitionStorageDescriptorSerDeInfo>>,
     /// Information about values that appear very frequently in a column (skewed values).
     #[builder(into)]
     #[serde(rename = "skewedInfo")]
-    pub r#skewed_info: Box<Option<super::super::types::glue::PartitionStorageDescriptorSkewedInfo>>,
+    pub r#skewed_info: Option<Box<super::super::types::glue::PartitionStorageDescriptorSkewedInfo>>,
     /// A list of Order objects specifying the sort order of each bucket in the table.
     #[builder(into)]
     #[serde(rename = "sortColumns")]

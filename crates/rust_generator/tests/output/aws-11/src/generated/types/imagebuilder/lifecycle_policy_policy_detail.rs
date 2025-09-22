@@ -6,15 +6,15 @@ pub struct LifecyclePolicyPolicyDetail {
     /// Configuration details for the policy action.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<Option<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailAction>>,
+    pub r#action: Option<Box<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailAction>>,
     /// Additional rules to specify resources that should be exempt from policy actions.
     #[builder(into)]
     #[serde(rename = "exclusionRules")]
-    pub r#exclusion_rules: Box<Option<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailExclusionRules>>,
+    pub r#exclusion_rules: Option<Box<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailExclusionRules>>,
     /// Specifies the resources that the lifecycle policy applies to.
     /// 
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<Option<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailFilter>>,
+    pub r#filter: Option<Box<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailFilter>>,
 }

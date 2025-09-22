@@ -5,5 +5,5 @@
 pub struct DomainMatchingExportingConfig {
     #[builder(into)]
     #[serde(rename = "s3Exporting")]
-    pub r#s_3_exporting: Box<Option<super::super::types::customerprofiles::DomainMatchingExportingConfigS3Exporting>>,
+    pub r#s_3_exporting: Option<Box<super::super::types::customerprofiles::DomainMatchingExportingConfigS3Exporting>>,
 }

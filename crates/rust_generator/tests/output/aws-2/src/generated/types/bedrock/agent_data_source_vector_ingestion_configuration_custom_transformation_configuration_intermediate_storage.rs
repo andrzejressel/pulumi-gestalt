@@ -6,5 +6,5 @@ pub struct AgentDataSourceVectorIngestionConfigurationCustomTransformationConfig
     /// Configuration block for intermedia S3 storage.
     #[builder(into)]
     #[serde(rename = "s3Location")]
-    pub r#s_3_location: Box<Option<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationIntermediateStorageS3Location>>,
+    pub r#s_3_location: Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationIntermediateStorageS3Location>>,
 }

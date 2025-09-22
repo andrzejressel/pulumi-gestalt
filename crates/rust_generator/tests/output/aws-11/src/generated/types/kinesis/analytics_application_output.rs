@@ -11,16 +11,16 @@ pub struct AnalyticsApplicationOutput {
     /// See Kinesis Firehose below for more details.
     #[builder(into)]
     #[serde(rename = "kinesisFirehose")]
-    pub r#kinesis_firehose: Box<Option<super::super::types::kinesis::AnalyticsApplicationOutputKinesisFirehose>>,
+    pub r#kinesis_firehose: Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputKinesisFirehose>>,
     /// The Kinesis Stream configuration for the destination stream. Conflicts with `kinesis_firehose`.
     /// See Kinesis Stream below for more details.
     #[builder(into)]
     #[serde(rename = "kinesisStream")]
-    pub r#kinesis_stream: Box<Option<super::super::types::kinesis::AnalyticsApplicationOutputKinesisStream>>,
+    pub r#kinesis_stream: Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputKinesisStream>>,
     /// The Lambda function destination. See Lambda below for more details.
     #[builder(into)]
     #[serde(rename = "lambda")]
-    pub r#lambda: Box<Option<super::super::types::kinesis::AnalyticsApplicationOutputLambda>>,
+    pub r#lambda: Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputLambda>>,
     /// The Name of the in-application stream.
     #[builder(into)]
     #[serde(rename = "name")]

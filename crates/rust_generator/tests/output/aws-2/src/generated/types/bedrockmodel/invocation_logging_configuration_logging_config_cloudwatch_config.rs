@@ -6,7 +6,7 @@ pub struct InvocationLoggingConfigurationLoggingConfigCloudwatchConfig {
     /// S3 configuration for delivering a large amount of data.
     #[builder(into)]
     #[serde(rename = "largeDataDeliveryS3Config")]
-    pub r#large_data_delivery_s_3_config: Box<Option<super::super::types::bedrockmodel::InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3Config>>,
+    pub r#large_data_delivery_s_3_config: Option<Box<super::super::types::bedrockmodel::InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3Config>>,
     /// Log group name.
     #[builder(into)]
     #[serde(rename = "logGroupName")]

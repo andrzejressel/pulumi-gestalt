@@ -7,10 +7,10 @@ pub struct UrlMapDefaultRouteActionFaultInjectionPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "abort")]
-    pub r#abort: Box<Option<super::super::types::compute::UrlMapDefaultRouteActionFaultInjectionPolicyAbort>>,
+    pub r#abort: Option<Box<super::super::types::compute::UrlMapDefaultRouteActionFaultInjectionPolicyAbort>>,
     /// The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "delay")]
-    pub r#delay: Box<Option<super::super::types::compute::UrlMapDefaultRouteActionFaultInjectionPolicyDelay>>,
+    pub r#delay: Option<Box<super::super::types::compute::UrlMapDefaultRouteActionFaultInjectionPolicyDelay>>,
 }

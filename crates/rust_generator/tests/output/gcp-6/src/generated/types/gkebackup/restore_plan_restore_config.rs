@@ -22,13 +22,13 @@ pub struct RestorePlanRestoreConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "clusterResourceRestoreScope")]
-    pub r#cluster_resource_restore_scope: Box<Option<super::super::types::gkebackup::RestorePlanRestoreConfigClusterResourceRestoreScope>>,
+    pub r#cluster_resource_restore_scope: Option<Box<super::super::types::gkebackup::RestorePlanRestoreConfigClusterResourceRestoreScope>>,
     /// A list of selected namespaces excluded from restoration.
     /// All namespaces except those in this list will be restored.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "excludedNamespaces")]
-    pub r#excluded_namespaces: Box<Option<super::super::types::gkebackup::RestorePlanRestoreConfigExcludedNamespaces>>,
+    pub r#excluded_namespaces: Option<Box<super::super::types::gkebackup::RestorePlanRestoreConfigExcludedNamespaces>>,
     /// Defines the behavior for handling the situation where sets of namespaced resources
     /// being restored already exist in the target cluster.
     /// This MUST be set to a value other than `NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED`
@@ -48,20 +48,20 @@ pub struct RestorePlanRestoreConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "restoreOrder")]
-    pub r#restore_order: Box<Option<super::super::types::gkebackup::RestorePlanRestoreConfigRestoreOrder>>,
+    pub r#restore_order: Option<Box<super::super::types::gkebackup::RestorePlanRestoreConfigRestoreOrder>>,
     /// A list of selected ProtectedApplications to restore.
     /// The listed ProtectedApplications and all the resources
     /// to which they refer will be restored.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "selectedApplications")]
-    pub r#selected_applications: Box<Option<super::super::types::gkebackup::RestorePlanRestoreConfigSelectedApplications>>,
+    pub r#selected_applications: Option<Box<super::super::types::gkebackup::RestorePlanRestoreConfigSelectedApplications>>,
     /// A list of selected namespaces to restore from the Backup.
     /// The listed Namespaces and all resources contained in them will be restored.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "selectedNamespaces")]
-    pub r#selected_namespaces: Box<Option<super::super::types::gkebackup::RestorePlanRestoreConfigSelectedNamespaces>>,
+    pub r#selected_namespaces: Option<Box<super::super::types::gkebackup::RestorePlanRestoreConfigSelectedNamespaces>>,
     /// A list of transformation rules to be applied against Kubernetes
     /// resources as they are selected for restoration from a Backup.
     /// Rules are executed in order defined - this order matters,

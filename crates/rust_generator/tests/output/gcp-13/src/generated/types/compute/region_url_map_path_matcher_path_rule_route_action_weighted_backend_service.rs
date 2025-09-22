@@ -14,7 +14,7 @@ pub struct RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendService {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "headerAction")]
-    pub r#header_action: Box<Option<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction>>,
+    pub r#header_action: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction>>,
     /// Specifies the fraction of traffic sent to a backend service, computed as weight / (sum of all weightedBackendService weights in routeAction) .
     /// The selection of a backend service is determined only for new traffic. Once a user's request has been directed to a backend service, subsequent requests are sent to the same backend service as determined by the backend service's session affinity policy.
     /// The value must be from 0 to 1000.

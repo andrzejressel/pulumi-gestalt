@@ -7,7 +7,7 @@ pub struct RepositoryRemoteRepositoryConfigMavenRepository {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customRepository")]
-    pub r#custom_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigMavenRepositoryCustomRepository>>,
+    pub r#custom_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigMavenRepositoryCustomRepository>>,
     /// Address of the remote repository.
     /// Default value is `MAVEN_CENTRAL`.
     /// Possible values are: `MAVEN_CENTRAL`.

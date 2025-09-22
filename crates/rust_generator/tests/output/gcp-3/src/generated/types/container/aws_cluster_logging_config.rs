@@ -6,5 +6,5 @@ pub struct AwsClusterLoggingConfig {
     /// Configuration of the logging components.
     #[builder(into)]
     #[serde(rename = "componentConfig")]
-    pub r#component_config: Box<Option<super::super::types::container::AwsClusterLoggingConfigComponentConfig>>,
+    pub r#component_config: Option<Box<super::super::types::container::AwsClusterLoggingConfigComponentConfig>>,
 }

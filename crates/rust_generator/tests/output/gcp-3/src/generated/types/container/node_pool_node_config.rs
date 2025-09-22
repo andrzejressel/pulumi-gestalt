@@ -6,7 +6,7 @@ pub struct NodePoolNodeConfig {
     /// Specifies options for controlling advanced machine features.
     #[builder(into)]
     #[serde(rename = "advancedMachineFeatures")]
-    pub r#advanced_machine_features: Box<Option<super::super::types::container::NodePoolNodeConfigAdvancedMachineFeatures>>,
+    pub r#advanced_machine_features: Option<Box<super::super::types::container::NodePoolNodeConfigAdvancedMachineFeatures>>,
     /// The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool.
     #[builder(into)]
     #[serde(rename = "bootDiskKmsKey")]
@@ -14,11 +14,11 @@ pub struct NodePoolNodeConfig {
     /// Configuration for the confidential nodes feature, which makes nodes run on confidential VMs. Warning: This configuration can't be changed (or added/removed) after pool creation without deleting and recreating the entire pool.
     #[builder(into)]
     #[serde(rename = "confidentialNodes")]
-    pub r#confidential_nodes: Box<Option<super::super::types::container::NodePoolNodeConfigConfidentialNodes>>,
+    pub r#confidential_nodes: Option<Box<super::super::types::container::NodePoolNodeConfigConfidentialNodes>>,
     /// Parameters for containerd configuration.
     #[builder(into)]
     #[serde(rename = "containerdConfig")]
-    pub r#containerd_config: Box<Option<super::super::types::container::NodePoolNodeConfigContainerdConfig>>,
+    pub r#containerd_config: Option<Box<super::super::types::container::NodePoolNodeConfigContainerdConfig>>,
     /// Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB.
     #[builder(into)]
     #[serde(rename = "diskSizeGb")]
@@ -38,19 +38,19 @@ pub struct NodePoolNodeConfig {
     /// Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.
     #[builder(into)]
     #[serde(rename = "ephemeralStorageConfig")]
-    pub r#ephemeral_storage_config: Box<Option<super::super::types::container::NodePoolNodeConfigEphemeralStorageConfig>>,
+    pub r#ephemeral_storage_config: Option<Box<super::super::types::container::NodePoolNodeConfigEphemeralStorageConfig>>,
     /// Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk.
     #[builder(into)]
     #[serde(rename = "ephemeralStorageLocalSsdConfig")]
-    pub r#ephemeral_storage_local_ssd_config: Box<Option<super::super::types::container::NodePoolNodeConfigEphemeralStorageLocalSsdConfig>>,
+    pub r#ephemeral_storage_local_ssd_config: Option<Box<super::super::types::container::NodePoolNodeConfigEphemeralStorageLocalSsdConfig>>,
     /// Enable or disable NCCL Fast Socket in the node pool.
     #[builder(into)]
     #[serde(rename = "fastSocket")]
-    pub r#fast_socket: Box<Option<super::super::types::container::NodePoolNodeConfigFastSocket>>,
+    pub r#fast_socket: Option<Box<super::super::types::container::NodePoolNodeConfigFastSocket>>,
     /// GCFS configuration for this node.
     #[builder(into)]
     #[serde(rename = "gcfsConfig")]
-    pub r#gcfs_config: Box<Option<super::super::types::container::NodePoolNodeConfigGcfsConfig>>,
+    pub r#gcfs_config: Option<Box<super::super::types::container::NodePoolNodeConfigGcfsConfig>>,
     /// List of the type and count of accelerator cards attached to the instance.
     #[builder(into)]
     #[serde(rename = "guestAccelerators")]
@@ -58,11 +58,11 @@ pub struct NodePoolNodeConfig {
     /// Enable or disable gvnic in the node pool.
     #[builder(into)]
     #[serde(rename = "gvnic")]
-    pub r#gvnic: Box<Option<super::super::types::container::NodePoolNodeConfigGvnic>>,
+    pub r#gvnic: Option<Box<super::super::types::container::NodePoolNodeConfigGvnic>>,
     /// The maintenance policy for the hosts on which the GKE VMs run on.
     #[builder(into)]
     #[serde(rename = "hostMaintenancePolicy")]
-    pub r#host_maintenance_policy: Box<Option<super::super::types::container::NodePoolNodeConfigHostMaintenancePolicy>>,
+    pub r#host_maintenance_policy: Option<Box<super::super::types::container::NodePoolNodeConfigHostMaintenancePolicy>>,
     /// The image type to use for this node. Note that for a given image type, the latest version of it will be used.
     #[builder(into)]
     #[serde(rename = "imageType")]
@@ -70,7 +70,7 @@ pub struct NodePoolNodeConfig {
     /// Node kubelet configs.
     #[builder(into)]
     #[serde(rename = "kubeletConfig")]
-    pub r#kubelet_config: Box<Option<super::super::types::container::NodePoolNodeConfigKubeletConfig>>,
+    pub r#kubelet_config: Option<Box<super::super::types::container::NodePoolNodeConfigKubeletConfig>>,
     /// The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node.
     #[builder(into)]
     #[serde(rename = "labels")]
@@ -78,11 +78,11 @@ pub struct NodePoolNodeConfig {
     /// Parameters that can be configured on Linux nodes.
     #[builder(into)]
     #[serde(rename = "linuxNodeConfig")]
-    pub r#linux_node_config: Box<Option<super::super::types::container::NodePoolNodeConfigLinuxNodeConfig>>,
+    pub r#linux_node_config: Option<Box<super::super::types::container::NodePoolNodeConfigLinuxNodeConfig>>,
     /// Parameters for raw-block local NVMe SSDs.
     #[builder(into)]
     #[serde(rename = "localNvmeSsdBlockConfig")]
-    pub r#local_nvme_ssd_block_config: Box<Option<super::super::types::container::NodePoolNodeConfigLocalNvmeSsdBlockConfig>>,
+    pub r#local_nvme_ssd_block_config: Option<Box<super::super::types::container::NodePoolNodeConfigLocalNvmeSsdBlockConfig>>,
     /// The number of local SSD disks to be attached to the node.
     #[builder(into)]
     #[serde(rename = "localSsdCount")]
@@ -125,7 +125,7 @@ pub struct NodePoolNodeConfig {
     /// <a name="nested_autoscaling"></a>The `autoscaling` block supports (either total or per zone limits are required):
     #[builder(into)]
     #[serde(rename = "reservationAffinity")]
-    pub r#reservation_affinity: Box<Option<super::super::types::container::NodePoolNodeConfigReservationAffinity>>,
+    pub r#reservation_affinity: Option<Box<super::super::types::container::NodePoolNodeConfigReservationAffinity>>,
     /// The GCE resource labels (a map of key/value pairs) to be applied to the node pool.
     #[builder(into)]
     #[serde(rename = "resourceLabels")]
@@ -137,7 +137,7 @@ pub struct NodePoolNodeConfig {
     /// Sandbox configuration for this node.
     #[builder(into)]
     #[serde(rename = "sandboxConfig")]
-    pub r#sandbox_config: Box<Option<super::super::types::container::NodePoolNodeConfigSandboxConfig>>,
+    pub r#sandbox_config: Option<Box<super::super::types::container::NodePoolNodeConfigSandboxConfig>>,
     /// Secondary boot disks for preloading data or container images.
     #[builder(into)]
     #[serde(rename = "secondaryBootDisks")]
@@ -149,11 +149,11 @@ pub struct NodePoolNodeConfig {
     /// Shielded Instance options.
     #[builder(into)]
     #[serde(rename = "shieldedInstanceConfig")]
-    pub r#shielded_instance_config: Box<Option<super::super::types::container::NodePoolNodeConfigShieldedInstanceConfig>>,
+    pub r#shielded_instance_config: Option<Box<super::super::types::container::NodePoolNodeConfigShieldedInstanceConfig>>,
     /// Node affinity options for sole tenant node pools.
     #[builder(into)]
     #[serde(rename = "soleTenantConfig")]
-    pub r#sole_tenant_config: Box<Option<super::super::types::container::NodePoolNodeConfigSoleTenantConfig>>,
+    pub r#sole_tenant_config: Option<Box<super::super::types::container::NodePoolNodeConfigSoleTenantConfig>>,
     /// Whether the nodes are created as spot VM instances.
     #[builder(into)]
     #[serde(rename = "spot")]
@@ -173,5 +173,5 @@ pub struct NodePoolNodeConfig {
     /// The workload metadata configuration for this node.
     #[builder(into)]
     #[serde(rename = "workloadMetadataConfig")]
-    pub r#workload_metadata_config: Box<Option<super::super::types::container::NodePoolNodeConfigWorkloadMetadataConfig>>,
+    pub r#workload_metadata_config: Option<Box<super::super::types::container::NodePoolNodeConfigWorkloadMetadataConfig>>,
 }

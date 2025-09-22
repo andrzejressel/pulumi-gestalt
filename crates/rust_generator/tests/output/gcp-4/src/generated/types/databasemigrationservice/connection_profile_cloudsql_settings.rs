@@ -48,7 +48,7 @@ pub struct ConnectionProfileCloudsqlSettings {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ipConfig")]
-    pub r#ip_config: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileCloudsqlSettingsIpConfig>>,
+    pub r#ip_config: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileCloudsqlSettingsIpConfig>>,
     /// Input only. Initial root password.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
     #[builder(into)]

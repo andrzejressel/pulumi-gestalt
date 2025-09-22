@@ -26,5 +26,5 @@ pub struct ApplicationGatewayRewriteRuleSetRewriteRule {
     /// One `url` block as defined below
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<Option<super::super::types::network::ApplicationGatewayRewriteRuleSetRewriteRuleUrl>>,
+    pub r#url: Option<Box<super::super::types::network::ApplicationGatewayRewriteRuleSetRewriteRuleUrl>>,
 }

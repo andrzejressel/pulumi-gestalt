@@ -18,7 +18,7 @@ pub struct VirtualHubConnectionRouting {
     /// A `propagated_route_table` block as defined below.
     #[builder(into)]
     #[serde(rename = "propagatedRouteTable")]
-    pub r#propagated_route_table: Box<Option<super::super::types::network::VirtualHubConnectionRoutingPropagatedRouteTable>>,
+    pub r#propagated_route_table: Option<Box<super::super::types::network::VirtualHubConnectionRoutingPropagatedRouteTable>>,
     /// The static VNet local route override criteria that is used to determine whether NVA in spoke VNet is bypassed for traffic with destination in spoke VNet. Possible values are `Contains` and `Equal`. Defaults to `Contains`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "staticVnetLocalRouteOverrideCriteria")]

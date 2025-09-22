@@ -11,7 +11,7 @@ pub struct SloWindowsBasedSliGoodTotalRatioThresholdPerformance {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "distributionCut")]
-    pub r#distribution_cut: Box<Option<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCut>>,
+    pub r#distribution_cut: Option<Box<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCut>>,
     /// A means to compute a ratio of `good_service` to `total_service`.
     /// Defines computing this ratio with two TimeSeries [monitoring filters](https://cloud.google.com/monitoring/api/v3/filters)
     /// Must specify exactly two of good, bad, and total service filters.
@@ -20,5 +20,5 @@ pub struct SloWindowsBasedSliGoodTotalRatioThresholdPerformance {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "goodTotalRatio")]
-    pub r#good_total_ratio: Box<Option<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdPerformanceGoodTotalRatio>>,
+    pub r#good_total_ratio: Option<Box<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThresholdPerformanceGoodTotalRatio>>,
 }

@@ -27,18 +27,18 @@ pub struct QueueHttpTarget {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oauthToken")]
-    pub r#oauth_token: Box<Option<super::super::types::cloudtasks::QueueHttpTargetOauthToken>>,
+    pub r#oauth_token: Option<Box<super::super::types::cloudtasks::QueueHttpTargetOauthToken>>,
     /// If specified, an OIDC token is generated and attached as an Authorization header in the HTTP request.
     /// This type of authorization can be used for many scenarios, including calling Cloud Run, or endpoints where you intend to validate the token yourself.
     /// Note that both the service account email and the audience MUST be specified when using the queue-level authorization override.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oidcToken")]
-    pub r#oidc_token: Box<Option<super::super::types::cloudtasks::QueueHttpTargetOidcToken>>,
+    pub r#oidc_token: Option<Box<super::super::types::cloudtasks::QueueHttpTargetOidcToken>>,
     /// URI override.
     /// When specified, overrides the execution URI for all the tasks in the queue.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "uriOverride")]
-    pub r#uri_override: Box<Option<super::super::types::cloudtasks::QueueHttpTargetUriOverride>>,
+    pub r#uri_override: Option<Box<super::super::types::cloudtasks::QueueHttpTargetUriOverride>>,
 }

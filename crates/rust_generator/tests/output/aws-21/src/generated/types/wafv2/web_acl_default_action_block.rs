@@ -6,5 +6,5 @@ pub struct WebAclDefaultActionBlock {
     /// Defines a custom response for the web request. See `custom_response` below for details.
     #[builder(into)]
     #[serde(rename = "customResponse")]
-    pub r#custom_response: Box<Option<super::super::types::wafv2::WebAclDefaultActionBlockCustomResponse>>,
+    pub r#custom_response: Option<Box<super::super::types::wafv2::WebAclDefaultActionBlockCustomResponse>>,
 }

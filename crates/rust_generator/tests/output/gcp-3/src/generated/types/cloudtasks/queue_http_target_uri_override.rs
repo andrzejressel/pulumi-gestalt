@@ -17,7 +17,7 @@ pub struct QueueHttpTargetUriOverride {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pathOverride")]
-    pub r#path_override: Box<Option<super::super::types::cloudtasks::QueueHttpTargetUriOverridePathOverride>>,
+    pub r#path_override: Option<Box<super::super::types::cloudtasks::QueueHttpTargetUriOverridePathOverride>>,
     /// Port override.
     /// When specified, replaces the port part of the task URI.
     /// For instance, for a URI http://www.google.com/foo and port=123, the overridden URI becomes http://www.google.com:123/foo.
@@ -31,7 +31,7 @@ pub struct QueueHttpTargetUriOverride {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "queryOverride")]
-    pub r#query_override: Box<Option<super::super::types::cloudtasks::QueueHttpTargetUriOverrideQueryOverride>>,
+    pub r#query_override: Option<Box<super::super::types::cloudtasks::QueueHttpTargetUriOverrideQueryOverride>>,
     /// Scheme override.
     /// When specified, the task URI scheme is replaced by the provided value (HTTP or HTTPS).
     /// Possible values are: `HTTP`, `HTTPS`.

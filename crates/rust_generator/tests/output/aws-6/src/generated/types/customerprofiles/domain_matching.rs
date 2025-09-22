@@ -6,7 +6,7 @@ pub struct DomainMatching {
     /// A block that specifies the configuration about the auto-merging process. Documented below.
     #[builder(into)]
     #[serde(rename = "autoMerging")]
-    pub r#auto_merging: Box<Option<super::super::types::customerprofiles::DomainMatchingAutoMerging>>,
+    pub r#auto_merging: Option<Box<super::super::types::customerprofiles::DomainMatchingAutoMerging>>,
     /// The flag that enables the matching process of duplicate profiles.
     #[builder(into)]
     #[serde(rename = "enabled")]
@@ -14,9 +14,9 @@ pub struct DomainMatching {
     /// A block that specifies the configuration for exporting Identity Resolution results. Documented below.
     #[builder(into)]
     #[serde(rename = "exportingConfig")]
-    pub r#exporting_config: Box<Option<super::super::types::customerprofiles::DomainMatchingExportingConfig>>,
+    pub r#exporting_config: Option<Box<super::super::types::customerprofiles::DomainMatchingExportingConfig>>,
     /// A block that specifies the day and time when you want to start the Identity Resolution Job every week. Documented below.
     #[builder(into)]
     #[serde(rename = "jobSchedule")]
-    pub r#job_schedule: Box<Option<super::super::types::customerprofiles::DomainMatchingJobSchedule>>,
+    pub r#job_schedule: Option<Box<super::super::types::customerprofiles::DomainMatchingJobSchedule>>,
 }

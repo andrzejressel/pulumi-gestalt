@@ -6,7 +6,7 @@ pub struct WebAclRuleStatementSqliMatchStatement {
     /// Part of a web request that you want AWS WAF to inspect. See `field_to_match` below for details.
     #[builder(into)]
     #[serde(rename = "fieldToMatch")]
-    pub r#field_to_match: Box<Option<super::super::types::wafv2::WebAclRuleStatementSqliMatchStatementFieldToMatch>>,
+    pub r#field_to_match: Option<Box<super::super::types::wafv2::WebAclRuleStatementSqliMatchStatementFieldToMatch>>,
     /// Sensitivity that you want AWS WAF to use to inspect for SQL injection attacks. Valid values include: `LOW`, `HIGH`.
     #[builder(into)]
     #[serde(rename = "sensitivityLevel")]

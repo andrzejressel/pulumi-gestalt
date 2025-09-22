@@ -9,5 +9,5 @@ pub struct ClusterSystemAddonsConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ingress")]
-    pub r#ingress: Box<Option<super::super::types::edgecontainer::ClusterSystemAddonsConfigIngress>>,
+    pub r#ingress: Option<Box<super::super::types::edgecontainer::ClusterSystemAddonsConfigIngress>>,
 }

@@ -7,7 +7,7 @@ pub struct ClusterNodePoolNodeConfig {
     /// advanced machine features. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "advancedMachineFeatures")]
-    pub r#advanced_machine_features: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigAdvancedMachineFeatures>>,
+    pub r#advanced_machine_features: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigAdvancedMachineFeatures>>,
     /// The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME]. For more information about protecting resources with Cloud KMS Keys please see: <https://cloud.google.com/compute/docs/disks/customer-managed-encryption>
     #[builder(into)]
     #[serde(rename = "bootDiskKmsKey")]
@@ -15,11 +15,11 @@ pub struct ClusterNodePoolNodeConfig {
     /// Configuration for Confidential Nodes feature. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "confidentialNodes")]
-    pub r#confidential_nodes: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigConfidentialNodes>>,
+    pub r#confidential_nodes: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigConfidentialNodes>>,
     /// Parameters to customize containerd runtime. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "containerdConfig")]
-    pub r#containerd_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigContainerdConfig>>,
+    pub r#containerd_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigContainerdConfig>>,
     /// Size of the disk attached to each node, specified
     /// in GB. The smallest allowed disk size is 10GB. Defaults to 100GB.
     #[builder(into)]
@@ -42,19 +42,19 @@ pub struct ClusterNodePoolNodeConfig {
     /// 
     #[builder(into)]
     #[serde(rename = "ephemeralStorageConfig")]
-    pub r#ephemeral_storage_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigEphemeralStorageConfig>>,
+    pub r#ephemeral_storage_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigEphemeralStorageConfig>>,
     /// Parameters for the ephemeral storage filesystem. If unspecified, ephemeral storage is backed by the boot disk. Structure is documented below.
     /// 
     #[builder(into)]
     #[serde(rename = "ephemeralStorageLocalSsdConfig")]
-    pub r#ephemeral_storage_local_ssd_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig>>,
+    pub r#ephemeral_storage_local_ssd_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigEphemeralStorageLocalSsdConfig>>,
     /// Parameters for the NCCL Fast Socket feature. If unspecified, NCCL Fast Socket will not be enabled on the node pool.
     /// Node Pool must enable gvnic.
     /// GKE version 1.25.2-gke.1700 or later.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "fastSocket")]
-    pub r#fast_socket: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigFastSocket>>,
+    pub r#fast_socket: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigFastSocket>>,
     /// Parameters for the Google Container Filesystem (GCFS).
     /// If unspecified, GCFS will not be enabled on the node pool. When enabling this feature you must specify `image_type = "COS_CONTAINERD"` and `node_version` from GKE versions 1.19 or later to use it.
     /// For GKE versions 1.19, 1.20, and 1.21, the recommended minimum `node_version` would be 1.19.15-gke.1300, 1.20.11-gke.1300, and 1.21.5-gke.1300 respectively.
@@ -64,7 +64,7 @@ pub struct ClusterNodePoolNodeConfig {
     /// 
     #[builder(into)]
     #[serde(rename = "gcfsConfig")]
-    pub r#gcfs_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigGcfsConfig>>,
+    pub r#gcfs_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigGcfsConfig>>,
     /// List of the type and count of accelerator cards attached to the instance.
     /// Structure documented below.
     #[builder(into)]
@@ -79,11 +79,11 @@ pub struct ClusterNodePoolNodeConfig {
     /// 
     #[builder(into)]
     #[serde(rename = "gvnic")]
-    pub r#gvnic: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigGvnic>>,
+    pub r#gvnic: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigGvnic>>,
     /// The maintenance policy for the hosts on which the GKE VMs run on.
     #[builder(into)]
     #[serde(rename = "hostMaintenancePolicy")]
-    pub r#host_maintenance_policy: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigHostMaintenancePolicy>>,
+    pub r#host_maintenance_policy: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigHostMaintenancePolicy>>,
     /// The image type to use for this node. Note that changing the image type
     /// will delete and recreate all nodes in the node pool.
     #[builder(into)]
@@ -102,7 +102,7 @@ pub struct ClusterNodePoolNodeConfig {
     /// ```
     #[builder(into)]
     #[serde(rename = "kubeletConfig")]
-    pub r#kubelet_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigKubeletConfig>>,
+    pub r#kubelet_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigKubeletConfig>>,
     /// The Kubernetes labels (key/value pairs) to be applied to each node. The kubernetes.io/ and k8s.io/ prefixes are
     /// reserved by Kubernetes Core components and cannot be specified.
     #[builder(into)]
@@ -111,11 +111,11 @@ pub struct ClusterNodePoolNodeConfig {
     /// Parameters that can be configured on Linux nodes. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "linuxNodeConfig")]
-    pub r#linux_node_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigLinuxNodeConfig>>,
+    pub r#linux_node_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigLinuxNodeConfig>>,
     /// Parameters for the local NVMe SSDs. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "localNvmeSsdBlockConfig")]
-    pub r#local_nvme_ssd_block_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig>>,
+    pub r#local_nvme_ssd_block_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigLocalNvmeSsdBlockConfig>>,
     /// The amount of local SSD disks that will be
     /// attached to each cluster node. Defaults to 0.
     #[builder(into)]
@@ -175,7 +175,7 @@ pub struct ClusterNodePoolNodeConfig {
     /// The configuration of the desired reservation which instances could take capacity from. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "reservationAffinity")]
-    pub r#reservation_affinity: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigReservationAffinity>>,
+    pub r#reservation_affinity: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigReservationAffinity>>,
     /// The GCP labels (key/value pairs) to be applied to each node. Refer [here](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-managing-labels)
     /// for how these labels are applied to clusters, node pools and nodes.
     #[builder(into)]
@@ -188,7 +188,7 @@ pub struct ClusterNodePoolNodeConfig {
     /// Sandbox configuration for this node.
     #[builder(into)]
     #[serde(rename = "sandboxConfig")]
-    pub r#sandbox_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigSandboxConfig>>,
+    pub r#sandbox_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigSandboxConfig>>,
     /// Parameters for secondary boot disks to preload container images and data on new nodes. Structure is documented below. `gcfs_config` must be `enabled=true` for this feature to work. `min_master_version` must also be set to use GKE 1.28.3-gke.106700 or later versions.
     #[builder(into)]
     #[serde(rename = "secondaryBootDisks")]
@@ -201,12 +201,12 @@ pub struct ClusterNodePoolNodeConfig {
     /// Shielded Instance options. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "shieldedInstanceConfig")]
-    pub r#shielded_instance_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigShieldedInstanceConfig>>,
+    pub r#shielded_instance_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigShieldedInstanceConfig>>,
     /// Allows specifying multiple [node affinities](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes#node_affinity_and_anti-affinity) useful for running workloads on [sole tenant nodes](https://cloud.google.com/kubernetes-engine/docs/how-to/sole-tenancy). `node_affinity` structure is documented below.
     /// 
     #[builder(into)]
     #[serde(rename = "soleTenantConfig")]
-    pub r#sole_tenant_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigSoleTenantConfig>>,
+    pub r#sole_tenant_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigSoleTenantConfig>>,
     /// A boolean that represents whether the underlying node VMs are spot.
     /// See the [official documentation](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms)
     /// for more information. Defaults to false.
@@ -237,5 +237,5 @@ pub struct ClusterNodePoolNodeConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "workloadMetadataConfig")]
-    pub r#workload_metadata_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigWorkloadMetadataConfig>>,
+    pub r#workload_metadata_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigWorkloadMetadataConfig>>,
 }

@@ -10,5 +10,5 @@ pub struct AppAuthorizationCredential {
     /// Contains OAuth2 client credential information.
     #[builder(into)]
     #[serde(rename = "oauth2Credential")]
-    pub r#oauth_2_credential: Box<Option<super::super::types::appfabric::AppAuthorizationCredentialOauth2Credential>>,
+    pub r#oauth_2_credential: Option<Box<super::super::types::appfabric::AppAuthorizationCredentialOauth2Credential>>,
 }

@@ -6,7 +6,7 @@ pub struct HubEventHandler {
     /// An `auth` block as defined below.
     #[builder(into)]
     #[serde(rename = "auth")]
-    pub r#auth: Box<Option<super::super::types::webpubsub::HubEventHandlerAuth>>,
+    pub r#auth: Option<Box<super::super::types::webpubsub::HubEventHandlerAuth>>,
     /// Specifies the list of system events. Supported values are `connect`, `connected` and `disconnected`.
     #[builder(into)]
     #[serde(rename = "systemEvents")]

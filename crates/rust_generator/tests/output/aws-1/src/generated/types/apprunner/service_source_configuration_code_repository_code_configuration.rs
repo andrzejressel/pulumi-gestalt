@@ -6,7 +6,7 @@ pub struct ServiceSourceConfigurationCodeRepositoryCodeConfiguration {
     /// Basic configuration for building and running the App Runner service. Use this parameter to quickly launch an App Runner service without providing an apprunner.yaml file in the source code repository (or ignoring the file if it exists). See Code Configuration Values below for more details.
     #[builder(into)]
     #[serde(rename = "codeConfigurationValues")]
-    pub r#code_configuration_values: Box<Option<super::super::types::apprunner::ServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues>>,
+    pub r#code_configuration_values: Option<Box<super::super::types::apprunner::ServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues>>,
     /// Source of the App Runner configuration. Valid values: `REPOSITORY`, `API`. Values are interpreted as follows:
     /// * `REPOSITORY` - App Runner reads configuration values from the apprunner.yaml file in the
     /// source code repository and ignores the CodeConfigurationValues parameter.

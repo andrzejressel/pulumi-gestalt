@@ -14,7 +14,7 @@ pub struct FrontdoorRoutingRule {
     /// A `forwarding_configuration` block as defined below.
     #[builder(into)]
     #[serde(rename = "forwardingConfiguration")]
-    pub r#forwarding_configuration: Box<Option<super::super::types::frontdoor::FrontdoorRoutingRuleForwardingConfiguration>>,
+    pub r#forwarding_configuration: Option<Box<super::super::types::frontdoor::FrontdoorRoutingRuleForwardingConfiguration>>,
     /// The names of the `frontend_endpoint` blocks within this resource to associate with this `routing_rule`.
     #[builder(into)]
     #[serde(rename = "frontendEndpoints")]
@@ -34,5 +34,5 @@ pub struct FrontdoorRoutingRule {
     /// A `redirect_configuration` block as defined below.
     #[builder(into)]
     #[serde(rename = "redirectConfiguration")]
-    pub r#redirect_configuration: Box<Option<super::super::types::frontdoor::FrontdoorRoutingRuleRedirectConfiguration>>,
+    pub r#redirect_configuration: Option<Box<super::super::types::frontdoor::FrontdoorRoutingRuleRedirectConfiguration>>,
 }

@@ -10,5 +10,5 @@ pub struct RecorderRecordingMode {
     /// Recording mode overrides. Detailed below.
     #[builder(into)]
     #[serde(rename = "recordingModeOverride")]
-    pub r#recording_mode_override: Box<Option<super::super::types::cfg::RecorderRecordingModeRecordingModeOverride>>,
+    pub r#recording_mode_override: Option<Box<super::super::types::cfg::RecorderRecordingModeRecordingModeOverride>>,
 }

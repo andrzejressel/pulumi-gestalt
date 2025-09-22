@@ -6,7 +6,7 @@ pub struct KubernetesClusterServiceMeshProfile {
     /// A `certificate_authority` block as defined below. When this property is specified, `key_vault_secrets_provider` is also required to be set. This configuration allows you to bring your own root certificate and keys for Istio CA in the Istio-based service mesh add-on for Azure Kubernetes Service.
     #[builder(into)]
     #[serde(rename = "certificateAuthority")]
-    pub r#certificate_authority: Box<Option<super::super::types::containerservice::KubernetesClusterServiceMeshProfileCertificateAuthority>>,
+    pub r#certificate_authority: Option<Box<super::super::types::containerservice::KubernetesClusterServiceMeshProfileCertificateAuthority>>,
     /// Is Istio External Ingress Gateway enabled?
     /// 
     /// > **NOTE:** Currently only one Internal Ingress Gateway and one External Ingress Gateway are allowed per cluster

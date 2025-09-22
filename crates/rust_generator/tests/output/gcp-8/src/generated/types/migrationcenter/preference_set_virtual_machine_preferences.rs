@@ -11,12 +11,12 @@ pub struct PreferenceSetVirtualMachinePreferences {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "computeEnginePreferences")]
-    pub r#compute_engine_preferences: Box<Option<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesComputeEnginePreferences>>,
+    pub r#compute_engine_preferences: Option<Box<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesComputeEnginePreferences>>,
     /// The user preferences relating to target regions.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "regionPreferences")]
-    pub r#region_preferences: Box<Option<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesRegionPreferences>>,
+    pub r#region_preferences: Option<Box<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesRegionPreferences>>,
     /// Sizing optimization strategy specifies the preferred strategy used when extrapolating usage data to calculate insights and recommendations for a virtual machine. If you are unsure which value to set, a moderate sizing optimization strategy is often a good value to start with. Possible values: `SIZING_OPTIMIZATION_STRATEGY_UNSPECIFIED`, `SIZING_OPTIMIZATION_STRATEGY_SAME_AS_SOURCE`, `SIZING_OPTIMIZATION_STRATEGY_MODERATE`, `SIZING_OPTIMIZATION_STRATEGY_AGGRESSIVE`
     #[builder(into)]
     #[serde(rename = "sizingOptimizationStrategy")]
@@ -25,7 +25,7 @@ pub struct PreferenceSetVirtualMachinePreferences {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "soleTenancyPreferences")]
-    pub r#sole_tenancy_preferences: Box<Option<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesSoleTenancyPreferences>>,
+    pub r#sole_tenancy_preferences: Option<Box<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesSoleTenancyPreferences>>,
     /// Target product for assets using this preference set. Specify either target product or business goal, but not both. Possible values: `COMPUTE_MIGRATION_TARGET_PRODUCT_UNSPECIFIED`, `COMPUTE_MIGRATION_TARGET_PRODUCT_COMPUTE_ENGINE`, `COMPUTE_MIGRATION_TARGET_PRODUCT_VMWARE_ENGINE`, `COMPUTE_MIGRATION_TARGET_PRODUCT_SOLE_TENANCY`
     #[builder(into)]
     #[serde(rename = "targetProduct")]
@@ -34,5 +34,5 @@ pub struct PreferenceSetVirtualMachinePreferences {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "vmwareEnginePreferences")]
-    pub r#vmware_engine_preferences: Box<Option<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences>>,
+    pub r#vmware_engine_preferences: Option<Box<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences>>,
 }

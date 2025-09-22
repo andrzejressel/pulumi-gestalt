@@ -8,7 +8,7 @@ pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflake {
     pub r#bucket_prefix: Option<String>,
     #[builder(into)]
     #[serde(rename = "errorHandlingConfig")]
-    pub r#error_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfig>>,
+    pub r#error_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfig>>,
     #[builder(into)]
     #[serde(rename = "intermediateBucketName")]
     pub r#intermediate_bucket_name: String,

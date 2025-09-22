@@ -7,12 +7,12 @@ pub struct TriggerBuild {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "artifacts")]
-    pub r#artifacts: Box<Option<super::super::types::cloudbuild::TriggerBuildArtifacts>>,
+    pub r#artifacts: Option<Box<super::super::types::cloudbuild::TriggerBuildArtifacts>>,
     /// Secrets and secret environment variables.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "availableSecrets")]
-    pub r#available_secrets: Box<Option<super::super::types::cloudbuild::TriggerBuildAvailableSecrets>>,
+    pub r#available_secrets: Option<Box<super::super::types::cloudbuild::TriggerBuildAvailableSecrets>>,
     /// A list of images to be pushed upon the successful completion of all build steps.
     /// The images are pushed using the builder service account's credentials.
     /// The digests of the pushed images will be stored in the Build resource's results field.
@@ -29,7 +29,7 @@ pub struct TriggerBuild {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "options")]
-    pub r#options: Box<Option<super::super::types::cloudbuild::TriggerBuildOptions>>,
+    pub r#options: Option<Box<super::super::types::cloudbuild::TriggerBuildOptions>>,
     /// TTL in queue for this build. If provided and the build is enqueued longer than this value,
     /// the build will expire and the build status will be EXPIRED.
     /// The TTL starts ticking from createTime.
@@ -47,7 +47,7 @@ pub struct TriggerBuild {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<Option<super::super::types::cloudbuild::TriggerBuildSource>>,
+    pub r#source: Option<Box<super::super::types::cloudbuild::TriggerBuildSource>>,
     /// The operations to be performed on the workspace.
     /// Structure is documented below.
     #[builder(into)]

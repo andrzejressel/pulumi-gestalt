@@ -7,7 +7,7 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTr
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "dateValue")]
-    pub r#date_value: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValue>>,
+    pub r#date_value: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValue>>,
     /// Represents a day of the week.
     /// Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
     #[builder(into)]
@@ -29,7 +29,7 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTr
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "timeValue")]
-    pub r#time_value: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValue>>,
+    pub r#time_value: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValue>>,
     /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
     #[serde(rename = "timestampValue")]

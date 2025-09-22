@@ -10,5 +10,5 @@ pub struct ModelContainerImageConfig {
     /// Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified Vpc as the value for the RepositoryAccessMode field, and the private Docker registry where the model image is hosted requires authentication. see Repository Auth Config.
     #[builder(into)]
     #[serde(rename = "repositoryAuthConfig")]
-    pub r#repository_auth_config: Box<Option<super::super::types::sagemaker::ModelContainerImageConfigRepositoryAuthConfig>>,
+    pub r#repository_auth_config: Option<Box<super::super::types::sagemaker::ModelContainerImageConfigRepositoryAuthConfig>>,
 }

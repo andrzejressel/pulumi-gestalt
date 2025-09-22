@@ -6,11 +6,11 @@ pub struct DomainRuleBasedMatching {
     /// A block that configures information about the `AttributeTypesSelector` where the rule-based identity resolution uses to match profiles. Documented below.
     #[builder(into)]
     #[serde(rename = "attributeTypesSelector")]
-    pub r#attribute_types_selector: Box<Option<super::super::types::customerprofiles::DomainRuleBasedMatchingAttributeTypesSelector>>,
+    pub r#attribute_types_selector: Option<Box<super::super::types::customerprofiles::DomainRuleBasedMatchingAttributeTypesSelector>>,
     /// A block that specifies how the auto-merging process should resolve conflicts between different profiles. Documented below.
     #[builder(into)]
     #[serde(rename = "conflictResolution")]
-    pub r#conflict_resolution: Box<Option<super::super::types::customerprofiles::DomainRuleBasedMatchingConflictResolution>>,
+    pub r#conflict_resolution: Option<Box<super::super::types::customerprofiles::DomainRuleBasedMatchingConflictResolution>>,
     /// The flag that enables the rule-based matching process of duplicate profiles.
     #[builder(into)]
     #[serde(rename = "enabled")]
@@ -18,7 +18,7 @@ pub struct DomainRuleBasedMatching {
     /// A block that specifies the configuration for exporting Identity Resolution results. Documented below.
     #[builder(into)]
     #[serde(rename = "exportingConfig")]
-    pub r#exporting_config: Box<Option<super::super::types::customerprofiles::DomainRuleBasedMatchingExportingConfig>>,
+    pub r#exporting_config: Option<Box<super::super::types::customerprofiles::DomainRuleBasedMatchingExportingConfig>>,
     /// A block that configures how the rule-based matching process should match profiles. You can have up to 15 `rule` in the `natching_rules`. Documented below.
     #[builder(into)]
     #[serde(rename = "matchingRules")]

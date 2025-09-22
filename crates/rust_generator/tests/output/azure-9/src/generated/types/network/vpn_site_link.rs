@@ -8,7 +8,7 @@ pub struct VpnSiteLink {
     /// > **NOTE:** The `link.bgp` has to be set when the `address_cidrs` isn't specified.
     #[builder(into)]
     #[serde(rename = "bgp")]
-    pub r#bgp: Box<Option<super::super::types::network::VpnSiteLinkBgp>>,
+    pub r#bgp: Option<Box<super::super::types::network::VpnSiteLinkBgp>>,
     /// The FQDN of this VPN Site Link.
     #[builder(into)]
     #[serde(rename = "fqdn")]

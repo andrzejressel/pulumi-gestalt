@@ -7,5 +7,5 @@ pub struct BackupScheduleSpec {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cronSpec")]
-    pub r#cron_spec: Box<Option<super::super::types::spanner::BackupScheduleSpecCronSpec>>,
+    pub r#cron_spec: Option<Box<super::super::types::spanner::BackupScheduleSpecCronSpec>>,
 }

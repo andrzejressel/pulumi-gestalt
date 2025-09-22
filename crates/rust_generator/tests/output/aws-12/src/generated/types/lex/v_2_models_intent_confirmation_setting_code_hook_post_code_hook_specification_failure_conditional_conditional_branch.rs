@@ -18,5 +18,5 @@ pub struct V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFai
     /// Configuration block for a list of message groups that Amazon Lex uses to respond to the user input. See `response`.
     #[builder(into)]
     #[serde(rename = "response")]
-    pub r#response: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponse>>,
+    pub r#response: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponse>>,
 }

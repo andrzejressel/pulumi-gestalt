@@ -6,7 +6,7 @@ pub struct PagesProjectSource {
     /// Configuration for the source of the Cloudflare Pages project.
     #[builder(into)]
     #[serde(rename = "config")]
-    pub r#config: Box<Option<super::types::PagesProjectSourceConfig>>,
+    pub r#config: Option<Box<super::types::PagesProjectSourceConfig>>,
     /// Project host type.
     #[builder(into)]
     #[serde(rename = "type")]

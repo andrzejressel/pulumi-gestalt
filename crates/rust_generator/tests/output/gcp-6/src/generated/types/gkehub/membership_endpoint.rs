@@ -7,5 +7,5 @@ pub struct MembershipEndpoint {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "gkeCluster")]
-    pub r#gke_cluster: Box<Option<super::super::types::gkehub::MembershipEndpointGkeCluster>>,
+    pub r#gke_cluster: Option<Box<super::super::types::gkehub::MembershipEndpointGkeCluster>>,
 }

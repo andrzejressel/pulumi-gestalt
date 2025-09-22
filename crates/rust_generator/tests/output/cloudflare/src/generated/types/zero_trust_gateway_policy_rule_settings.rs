@@ -14,11 +14,11 @@ pub struct ZeroTrustGatewayPolicyRuleSettings {
     /// Settings for auditing SSH usage.
     #[builder(into)]
     #[serde(rename = "auditSsh")]
-    pub r#audit_ssh: Box<Option<super::types::ZeroTrustGatewayPolicyRuleSettingsAuditSsh>>,
+    pub r#audit_ssh: Option<Box<super::types::ZeroTrustGatewayPolicyRuleSettingsAuditSsh>>,
     /// Configure how browser isolation behaves.
     #[builder(into)]
     #[serde(rename = "bisoAdminControls")]
-    pub r#biso_admin_controls: Box<Option<super::types::ZeroTrustGatewayPolicyRuleSettingsBisoAdminControls>>,
+    pub r#biso_admin_controls: Option<Box<super::types::ZeroTrustGatewayPolicyRuleSettingsBisoAdminControls>>,
     /// Indicator of block page enablement.
     #[builder(into)]
     #[serde(rename = "blockPageEnabled")]
@@ -34,15 +34,15 @@ pub struct ZeroTrustGatewayPolicyRuleSettings {
     /// Configure how session check behaves.
     #[builder(into)]
     #[serde(rename = "checkSession")]
-    pub r#check_session: Box<Option<super::types::ZeroTrustGatewayPolicyRuleSettingsCheckSession>>,
+    pub r#check_session: Option<Box<super::types::ZeroTrustGatewayPolicyRuleSettingsCheckSession>>,
     /// Add your own custom resolvers to route queries that match the resolver policy. Cannot be used when resolve*dns*through*cloudflare is set. DNS queries will route to the address closest to their origin.
     #[builder(into)]
     #[serde(rename = "dnsResolvers")]
-    pub r#dns_resolvers: Box<Option<super::types::ZeroTrustGatewayPolicyRuleSettingsDnsResolvers>>,
+    pub r#dns_resolvers: Option<Box<super::types::ZeroTrustGatewayPolicyRuleSettingsDnsResolvers>>,
     /// Configure how Proxy traffic egresses. Can be set for rules with Egress action and Egress filter. Can be omitted to indicate local egress via Warp IPs.
     #[builder(into)]
     #[serde(rename = "egress")]
-    pub r#egress: Box<Option<super::types::ZeroTrustGatewayPolicyRuleSettingsEgress>>,
+    pub r#egress: Option<Box<super::types::ZeroTrustGatewayPolicyRuleSettingsEgress>>,
     /// Set to true, to ignore the category matches at CNAME domains in a response.
     #[builder(into)]
     #[serde(rename = "ignoreCnameCategoryMatches")]
@@ -58,11 +58,11 @@ pub struct ZeroTrustGatewayPolicyRuleSettings {
     /// Settings to forward layer 4 traffic.
     #[builder(into)]
     #[serde(rename = "l4override")]
-    pub r#l_4_override: Box<Option<super::types::ZeroTrustGatewayPolicyRuleSettingsL4Override>>,
+    pub r#l_4_override: Option<Box<super::types::ZeroTrustGatewayPolicyRuleSettingsL4Override>>,
     /// Notification settings on a block rule.
     #[builder(into)]
     #[serde(rename = "notificationSettings")]
-    pub r#notification_settings: Box<Option<super::types::ZeroTrustGatewayPolicyRuleSettingsNotificationSettings>>,
+    pub r#notification_settings: Option<Box<super::types::ZeroTrustGatewayPolicyRuleSettingsNotificationSettings>>,
     /// The host to override matching DNS queries with.
     #[builder(into)]
     #[serde(rename = "overrideHost")]
@@ -74,7 +74,7 @@ pub struct ZeroTrustGatewayPolicyRuleSettings {
     /// Configure DLP Payload Logging settings for this rule.
     #[builder(into)]
     #[serde(rename = "payloadLog")]
-    pub r#payload_log: Box<Option<super::types::ZeroTrustGatewayPolicyRuleSettingsPayloadLog>>,
+    pub r#payload_log: Option<Box<super::types::ZeroTrustGatewayPolicyRuleSettingsPayloadLog>>,
     /// Enable sending queries that match the resolver policy to Cloudflare's default 1.1.1.1 DNS resolver. Cannot be set when `dns_resolvers` are specified.
     #[builder(into)]
     #[serde(rename = "resolveDnsThroughCloudflare")]
@@ -82,5 +82,5 @@ pub struct ZeroTrustGatewayPolicyRuleSettings {
     /// Configure untrusted certificate settings for this rule.
     #[builder(into)]
     #[serde(rename = "untrustedCert")]
-    pub r#untrusted_cert: Box<Option<super::types::ZeroTrustGatewayPolicyRuleSettingsUntrustedCert>>,
+    pub r#untrusted_cert: Option<Box<super::types::ZeroTrustGatewayPolicyRuleSettingsUntrustedCert>>,
 }

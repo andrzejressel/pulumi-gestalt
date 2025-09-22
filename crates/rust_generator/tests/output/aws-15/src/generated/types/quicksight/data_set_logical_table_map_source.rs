@@ -10,7 +10,7 @@ pub struct DataSetLogicalTableMapSource {
     /// Specifies the result of a join of two logical tables. See join_instruction.
     #[builder(into)]
     #[serde(rename = "joinInstruction")]
-    pub r#join_instruction: Box<Option<super::super::types::quicksight::DataSetLogicalTableMapSourceJoinInstruction>>,
+    pub r#join_instruction: Option<Box<super::super::types::quicksight::DataSetLogicalTableMapSourceJoinInstruction>>,
     /// Physical table ID.
     #[builder(into)]
     #[serde(rename = "physicalTableId")]

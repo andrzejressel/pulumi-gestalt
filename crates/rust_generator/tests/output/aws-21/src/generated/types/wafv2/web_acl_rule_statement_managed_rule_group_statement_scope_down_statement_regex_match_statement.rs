@@ -6,7 +6,7 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMa
     /// The part of a web request that you want AWS WAF to inspect. See `field_to_match` below for details.
     #[builder(into)]
     #[serde(rename = "fieldToMatch")]
-    pub r#field_to_match: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatch>>,
+    pub r#field_to_match: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatch>>,
     /// String representing the regular expression. Minimum of `1` and maximum of `512` characters.
     #[builder(into)]
     #[serde(rename = "regexString")]

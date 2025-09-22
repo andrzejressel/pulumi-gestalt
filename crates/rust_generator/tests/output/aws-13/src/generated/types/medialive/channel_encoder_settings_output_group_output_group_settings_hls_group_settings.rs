@@ -81,7 +81,7 @@ pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettings 
     pub r#key_format_versions: Option<String>,
     #[builder(into)]
     #[serde(rename = "keyProviderSettings")]
-    pub r#key_provider_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettings>>,
+    pub r#key_provider_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettings>>,
     #[builder(into)]
     #[serde(rename = "manifestCompression")]
     pub r#manifest_compression: Option<String>,

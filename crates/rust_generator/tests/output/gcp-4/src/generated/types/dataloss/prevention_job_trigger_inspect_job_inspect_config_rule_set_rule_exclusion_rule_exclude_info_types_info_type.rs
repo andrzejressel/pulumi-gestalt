@@ -12,7 +12,7 @@ pub struct PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleEx
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sensitivityScore")]
-    pub r#sensitivity_score: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScore>>,
+    pub r#sensitivity_score: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScore>>,
     /// Version of the information type to use. By default, the version is set to stable.
     #[builder(into)]
     #[serde(rename = "version")]

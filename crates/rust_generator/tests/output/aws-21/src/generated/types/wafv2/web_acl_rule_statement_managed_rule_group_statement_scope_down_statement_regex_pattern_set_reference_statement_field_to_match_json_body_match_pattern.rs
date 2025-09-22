@@ -6,7 +6,7 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPa
     /// An empty configuration block that is used for inspecting all headers.
     #[builder(into)]
     #[serde(rename = "all")]
-    pub r#all: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAll>>,
+    pub r#all: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAll>>,
     #[builder(into)]
     #[serde(rename = "includedPaths")]
     pub r#included_paths: Option<Vec<String>>,

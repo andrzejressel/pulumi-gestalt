@@ -10,7 +10,7 @@ pub struct ExpressRouteCircuitPeeringIpv6 {
     /// A `microsoft_peering` block as defined below.
     #[builder(into)]
     #[serde(rename = "microsoftPeering")]
-    pub r#microsoft_peering: Box<Option<super::super::types::network::ExpressRouteCircuitPeeringIpv6MicrosoftPeering>>,
+    pub r#microsoft_peering: Option<Box<super::super::types::network::ExpressRouteCircuitPeeringIpv6MicrosoftPeering>>,
     /// A subnet for the primary link.
     #[builder(into)]
     #[serde(rename = "primaryPeerAddressPrefix")]

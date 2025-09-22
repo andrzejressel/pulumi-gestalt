@@ -26,5 +26,5 @@ pub struct VpcOriginVpcOriginEndpointConfig {
     /// A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.
     #[builder(into)]
     #[serde(rename = "originSslProtocols")]
-    pub r#origin_ssl_protocols: Box<Option<super::super::types::cloudfront::VpcOriginVpcOriginEndpointConfigOriginSslProtocols>>,
+    pub r#origin_ssl_protocols: Option<Box<super::super::types::cloudfront::VpcOriginVpcOriginEndpointConfigOriginSslProtocols>>,
 }

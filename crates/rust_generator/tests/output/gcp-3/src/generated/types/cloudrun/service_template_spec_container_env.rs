@@ -15,5 +15,5 @@ pub struct ServiceTemplateSpecContainerEnv {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "valueFrom")]
-    pub r#value_from: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvValueFrom>>,
+    pub r#value_from: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvValueFrom>>,
 }

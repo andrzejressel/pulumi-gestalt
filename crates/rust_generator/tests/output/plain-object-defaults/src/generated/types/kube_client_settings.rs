@@ -13,5 +13,5 @@ pub struct KubeClientSettings {
     pub r#qps: Option<f64>,
     #[builder(into)]
     #[serde(rename = "recTest")]
-    pub r#rec_test: Box<Option<super::types::KubeClientSettings>>,
+    pub r#rec_test: Option<Box<super::types::KubeClientSettings>>,
 }

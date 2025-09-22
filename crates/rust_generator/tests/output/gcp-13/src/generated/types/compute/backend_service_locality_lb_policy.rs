@@ -8,10 +8,10 @@ pub struct BackendServiceLocalityLbPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customPolicy")]
-    pub r#custom_policy: Box<Option<super::super::types::compute::BackendServiceLocalityLbPolicyCustomPolicy>>,
+    pub r#custom_policy: Option<Box<super::super::types::compute::BackendServiceLocalityLbPolicyCustomPolicy>>,
     /// The configuration for a built-in load balancing policy.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "policy")]
-    pub r#policy: Box<Option<super::super::types::compute::BackendServiceLocalityLbPolicyPolicy>>,
+    pub r#policy: Option<Box<super::super::types::compute::BackendServiceLocalityLbPolicyPolicy>>,
 }

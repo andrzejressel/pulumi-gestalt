@@ -6,7 +6,7 @@ pub struct DataSetLogicalTableMapSourceJoinInstruction {
     /// Join key properties of the left operand. See left_join_key_properties.
     #[builder(into)]
     #[serde(rename = "leftJoinKeyProperties")]
-    pub r#left_join_key_properties: Box<Option<super::super::types::quicksight::DataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyProperties>>,
+    pub r#left_join_key_properties: Option<Box<super::super::types::quicksight::DataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyProperties>>,
     /// Operand on the left side of a join.
     #[builder(into)]
     #[serde(rename = "leftOperand")]
@@ -18,7 +18,7 @@ pub struct DataSetLogicalTableMapSourceJoinInstruction {
     /// Join key properties of the right operand. See right_join_key_properties.
     #[builder(into)]
     #[serde(rename = "rightJoinKeyProperties")]
-    pub r#right_join_key_properties: Box<Option<super::super::types::quicksight::DataSetLogicalTableMapSourceJoinInstructionRightJoinKeyProperties>>,
+    pub r#right_join_key_properties: Option<Box<super::super::types::quicksight::DataSetLogicalTableMapSourceJoinInstructionRightJoinKeyProperties>>,
     /// Operand on the right side of a join.
     #[builder(into)]
     #[serde(rename = "rightOperand")]

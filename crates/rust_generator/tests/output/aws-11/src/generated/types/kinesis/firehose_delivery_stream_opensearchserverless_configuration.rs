@@ -14,7 +14,7 @@ pub struct FirehoseDeliveryStreamOpensearchserverlessConfiguration {
     /// The CloudWatch Logging Options for the delivery stream. See `cloudwatch_logging_options` block below for details.
     #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptions")]
-    pub r#cloudwatch_logging_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchserverlessConfigurationCloudwatchLoggingOptions>>,
+    pub r#cloudwatch_logging_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchserverlessConfigurationCloudwatchLoggingOptions>>,
     /// The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.
     #[builder(into)]
     #[serde(rename = "collectionEndpoint")]
@@ -26,7 +26,7 @@ pub struct FirehoseDeliveryStreamOpensearchserverlessConfiguration {
     /// The data processing configuration.  See `processing_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "processingConfiguration")]
-    pub r#processing_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchserverlessConfigurationProcessingConfiguration>>,
+    pub r#processing_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchserverlessConfigurationProcessingConfiguration>>,
     /// After an initial failure to deliver to the Serverless offering for Amazon OpenSearch Service, the total amount of time, in seconds between 0 to 7200, during which Kinesis Data Firehose retries delivery (including the first attempt).  After this time has elapsed, the failed documents are written to Amazon S3.  The default value is 300s.  There will be no retry if the value is 0.
     #[builder(into)]
     #[serde(rename = "retryDuration")]
@@ -46,5 +46,5 @@ pub struct FirehoseDeliveryStreamOpensearchserverlessConfiguration {
     /// The VPC configuration for the delivery stream to connect to OpenSearch Serverless associated with the VPC. See `vpc_config` block below for details.
     #[builder(into)]
     #[serde(rename = "vpcConfig")]
-    pub r#vpc_config: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchserverlessConfigurationVpcConfig>>,
+    pub r#vpc_config: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchserverlessConfigurationVpcConfig>>,
 }

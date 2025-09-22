@@ -10,7 +10,7 @@ pub struct LifecyclePolicyPolicyDetailExclusionRulesAmis {
     /// Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions. Detailed below.
     #[builder(into)]
     #[serde(rename = "lastLaunched")]
-    pub r#last_launched: Box<Option<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailExclusionRulesAmisLastLaunched>>,
+    pub r#last_launched: Option<Box<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailExclusionRulesAmisLastLaunched>>,
     /// Configures AWS Regions that are excluded from the lifecycle action.
     #[builder(into)]
     #[serde(rename = "regions")]

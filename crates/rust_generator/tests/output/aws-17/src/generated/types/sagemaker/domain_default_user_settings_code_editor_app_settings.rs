@@ -6,7 +6,7 @@ pub struct DomainDefaultUserSettingsCodeEditorAppSettings {
     /// Indicates whether idle shutdown is activated for JupyterLab applications. see `app_lifecycle_management` Block below.
     #[builder(into)]
     #[serde(rename = "appLifecycleManagement")]
-    pub r#app_lifecycle_management: Box<Option<super::super::types::sagemaker::DomainDefaultUserSettingsCodeEditorAppSettingsAppLifecycleManagement>>,
+    pub r#app_lifecycle_management: Option<Box<super::super::types::sagemaker::DomainDefaultUserSettingsCodeEditorAppSettingsAppLifecycleManagement>>,
     /// The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.
     #[builder(into)]
     #[serde(rename = "builtInLifecycleConfigArn")]
@@ -18,7 +18,7 @@ pub struct DomainDefaultUserSettingsCodeEditorAppSettings {
     /// The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. see `default_resource_spec` Block below.
     #[builder(into)]
     #[serde(rename = "defaultResourceSpec")]
-    pub r#default_resource_spec: Box<Option<super::super::types::sagemaker::DomainDefaultUserSettingsCodeEditorAppSettingsDefaultResourceSpec>>,
+    pub r#default_resource_spec: Option<Box<super::super::types::sagemaker::DomainDefaultUserSettingsCodeEditorAppSettingsDefaultResourceSpec>>,
     /// The Amazon Resource Name (ARN) of the Lifecycle Configurations.
     #[builder(into)]
     #[serde(rename = "lifecycleConfigArns")]

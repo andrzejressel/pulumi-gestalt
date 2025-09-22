@@ -14,11 +14,11 @@ pub struct ConfigurationBackup {
     /// A `retention_policy` block as defined below.
     #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Box<Option<super::super::types::automanage::ConfigurationBackupRetentionPolicy>>,
+    pub r#retention_policy: Option<Box<super::super::types::automanage::ConfigurationBackupRetentionPolicy>>,
     /// A `schedule_policy` block as defined below.
     #[builder(into)]
     #[serde(rename = "schedulePolicy")]
-    pub r#schedule_policy: Box<Option<super::super::types::automanage::ConfigurationBackupSchedulePolicy>>,
+    pub r#schedule_policy: Option<Box<super::super::types::automanage::ConfigurationBackupSchedulePolicy>>,
     /// The timezone of the backup policy. Defaults to `UTC`.
     #[builder(into)]
     #[serde(rename = "timeZone")]

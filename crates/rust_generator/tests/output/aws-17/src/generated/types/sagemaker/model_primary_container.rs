@@ -19,7 +19,7 @@ pub struct ModelPrimaryContainer {
     /// Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon Virtual Private Cloud (VPC). For more information see [Using a Private Docker Registry for Real-Time Inference Containers](https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html). see Image Config.
     #[builder(into)]
     #[serde(rename = "imageConfig")]
-    pub r#image_config: Box<Option<super::super::types::sagemaker::ModelPrimaryContainerImageConfig>>,
+    pub r#image_config: Option<Box<super::super::types::sagemaker::ModelPrimaryContainerImageConfig>>,
     /// The inference specification name in the model package version.
     #[builder(into)]
     #[serde(rename = "inferenceSpecificationName")]
@@ -31,7 +31,7 @@ pub struct ModelPrimaryContainer {
     /// The location of model data to deploy. Use this for uncompressed model deployment. For information about how to deploy an uncompressed model, see [Deploying uncompressed models](https://docs.aws.amazon.com/sagemaker/latest/dg/large-model-inference-uncompressed.html) in the _AWS SageMaker Developer Guide_.
     #[builder(into)]
     #[serde(rename = "modelDataSource")]
-    pub r#model_data_source: Box<Option<super::super::types::sagemaker::ModelPrimaryContainerModelDataSource>>,
+    pub r#model_data_source: Option<Box<super::super::types::sagemaker::ModelPrimaryContainerModelDataSource>>,
     /// The URL for the S3 location where model artifacts are stored.
     #[builder(into)]
     #[serde(rename = "modelDataUrl")]
@@ -43,5 +43,5 @@ pub struct ModelPrimaryContainer {
     /// Specifies additional configuration for multi-model endpoints. see Multi Model Config.
     #[builder(into)]
     #[serde(rename = "multiModelConfig")]
-    pub r#multi_model_config: Box<Option<super::super::types::sagemaker::ModelPrimaryContainerMultiModelConfig>>,
+    pub r#multi_model_config: Option<Box<super::super::types::sagemaker::ModelPrimaryContainerMultiModelConfig>>,
 }

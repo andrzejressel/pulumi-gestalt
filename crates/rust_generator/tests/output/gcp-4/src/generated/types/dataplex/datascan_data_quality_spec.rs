@@ -7,7 +7,7 @@ pub struct DatascanDataQualitySpec {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "postScanActions")]
-    pub r#post_scan_actions: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecPostScanActions>>,
+    pub r#post_scan_actions: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecPostScanActions>>,
     /// A filter applied to all rows in a single DataScan job. The filter needs to be a valid SQL expression for a WHERE clause in BigQuery standard SQL syntax. Example: col1 >= 0 AND col2 < 10
     #[builder(into)]
     #[serde(rename = "rowFilter")]

@@ -6,7 +6,7 @@ pub struct DataSourceConfigurationWebCrawlerConfiguration {
     /// A block with the configuration information required to connect to websites using authentication. You can connect to websites using basic authentication of user name and password. You use a secret in AWS Secrets Manager to store your authentication credentials. You must provide the website host name and port number. For example, the host name of `https://a.example.com/page1.html` is `"a.example.com"` and the port is `443`, the standard port for HTTPS. Detailed below.
     #[builder(into)]
     #[serde(rename = "authenticationConfiguration")]
-    pub r#authentication_configuration: Box<Option<super::super::types::kendra::DataSourceConfigurationWebCrawlerConfigurationAuthenticationConfiguration>>,
+    pub r#authentication_configuration: Option<Box<super::super::types::kendra::DataSourceConfigurationWebCrawlerConfigurationAuthenticationConfiguration>>,
     /// Specifies the number of levels in a website that you want to crawl. The first level begins from the website seed or starting point URL. For example, if a website has 3 levels – index level (i.e. seed in this example), sections level, and subsections level – and you are only interested in crawling information up to the sections level (i.e. levels 0-1), you can set your depth to 1. The default crawl depth is set to `2`. Minimum value of `0`. Maximum value of `10`.
     #[builder(into)]
     #[serde(rename = "crawlDepth")]
@@ -26,7 +26,7 @@ pub struct DataSourceConfigurationWebCrawlerConfiguration {
     /// Configuration information required to connect to your internal websites via a web proxy. You must provide the website host name and port number. For example, the host name of `https://a.example.com/page1.html` is `"a.example.com"` and the port is `443`, the standard port for HTTPS. Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication. To store web proxy credentials, you use a secret in [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html). Detailed below.
     #[builder(into)]
     #[serde(rename = "proxyConfiguration")]
-    pub r#proxy_configuration: Box<Option<super::super::types::kendra::DataSourceConfigurationWebCrawlerConfigurationProxyConfiguration>>,
+    pub r#proxy_configuration: Option<Box<super::super::types::kendra::DataSourceConfigurationWebCrawlerConfigurationProxyConfiguration>>,
     /// A list of regular expression patterns to exclude certain URLs to crawl. URLs that match the patterns are excluded from the index. URLs that don't match the patterns are included in the index. If a URL matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the URL file isn't included in the index. Array Members: Minimum number of `0` items. Maximum number of `100` items. Length Constraints: Minimum length of `1`. Maximum length of `150`.
     #[builder(into)]
     #[serde(rename = "urlExclusionPatterns")]

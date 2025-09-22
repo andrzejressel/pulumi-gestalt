@@ -14,5 +14,5 @@ pub struct ListenerRuleMatchHttpMatch {
     /// The path match.
     #[builder(into)]
     #[serde(rename = "pathMatch")]
-    pub r#path_match: Box<Option<super::super::types::vpclattice::ListenerRuleMatchHttpMatchPathMatch>>,
+    pub r#path_match: Option<Box<super::super::types::vpclattice::ListenerRuleMatchHttpMatchPathMatch>>,
 }

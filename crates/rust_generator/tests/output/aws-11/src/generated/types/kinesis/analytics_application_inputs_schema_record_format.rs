@@ -7,7 +7,7 @@ pub struct AnalyticsApplicationInputsSchemaRecordFormat {
     /// See Mapping Parameters below for more details.
     #[builder(into)]
     #[serde(rename = "mappingParameters")]
-    pub r#mapping_parameters: Box<Option<super::super::types::kinesis::AnalyticsApplicationInputsSchemaRecordFormatMappingParameters>>,
+    pub r#mapping_parameters: Option<Box<super::super::types::kinesis::AnalyticsApplicationInputsSchemaRecordFormatMappingParameters>>,
     /// The type of Record Format. Can be `CSV` or `JSON`.
     #[builder(into)]
     #[serde(rename = "recordFormatType")]

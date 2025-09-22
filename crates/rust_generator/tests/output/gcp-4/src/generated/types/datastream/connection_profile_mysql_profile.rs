@@ -20,7 +20,7 @@ pub struct ConnectionProfileMysqlProfile {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "sslConfig")]
-    pub r#ssl_config: Box<Option<super::super::types::datastream::ConnectionProfileMysqlProfileSslConfig>>,
+    pub r#ssl_config: Option<Box<super::super::types::datastream::ConnectionProfileMysqlProfileSslConfig>>,
     /// Username for the MySQL connection.
     #[builder(into)]
     #[serde(rename = "username")]

@@ -54,7 +54,7 @@ pub struct AccessApplicationSaasApp {
     /// Hybrid and Implicit Flow options.
     #[builder(into)]
     #[serde(rename = "hybridAndImplicitOptions")]
-    pub r#hybrid_and_implicit_options: Box<Option<super::types::AccessApplicationSaasAppHybridAndImplicitOptions>>,
+    pub r#hybrid_and_implicit_options: Option<Box<super::types::AccessApplicationSaasAppHybridAndImplicitOptions>>,
     /// The unique identifier for the SaaS application.
     #[builder(into)]
     #[serde(rename = "idpEntityId")]

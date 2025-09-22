@@ -14,5 +14,5 @@ pub struct V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTi
     /// Configuration block for the current value of the slot. See `value`.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepIntentSlotValue>>,
+    pub r#value: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepIntentSlotValue>>,
 }

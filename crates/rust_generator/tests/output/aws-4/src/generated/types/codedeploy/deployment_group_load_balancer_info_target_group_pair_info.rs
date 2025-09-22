@@ -14,5 +14,5 @@ pub struct DeploymentGroupLoadBalancerInfoTargetGroupPairInfo {
     /// Configuration block for the test traffic route (documented below).
     #[builder(into)]
     #[serde(rename = "testTrafficRoute")]
-    pub r#test_traffic_route: Box<Option<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute>>,
+    pub r#test_traffic_route: Option<Box<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute>>,
 }

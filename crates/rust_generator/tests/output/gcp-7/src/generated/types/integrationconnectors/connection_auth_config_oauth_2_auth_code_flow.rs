@@ -14,7 +14,7 @@ pub struct ConnectionAuthConfigOauth2AuthCodeFlow {
     /// Client secret for user-provided OAuth app.
     #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2AuthCodeFlowClientSecret>>,
+    pub r#client_secret: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2AuthCodeFlowClientSecret>>,
     /// Whether to enable PKCE when the user performs the auth code flow.
     #[builder(into)]
     #[serde(rename = "enablePkce")]

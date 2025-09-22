@@ -8,7 +8,7 @@ pub struct ClusterClusterAutoscaling {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "autoProvisioningDefaults")]
-    pub r#auto_provisioning_defaults: Box<Option<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaults>>,
+    pub r#auto_provisioning_defaults: Option<Box<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaults>>,
     /// The list of Google Compute Engine 
     /// [zones](https://cloud.google.com/compute/docs/zones#available) in which the
     /// NodePool's nodes can be created by NAP.

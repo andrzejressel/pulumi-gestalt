@@ -7,5 +7,5 @@ pub struct CxAgentGitIntegrationSettings {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "githubSettings")]
-    pub r#github_settings: Box<Option<super::super::types::diagflow::CxAgentGitIntegrationSettingsGithubSettings>>,
+    pub r#github_settings: Option<Box<super::super::types::diagflow::CxAgentGitIntegrationSettingsGithubSettings>>,
 }

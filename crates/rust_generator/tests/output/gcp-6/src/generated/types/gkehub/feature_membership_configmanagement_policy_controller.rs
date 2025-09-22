@@ -22,7 +22,7 @@ pub struct FeatureMembershipConfigmanagementPolicyController {
     /// Specifies the backends Policy Controller should export metrics to. For example, to specify metrics should be exported to Cloud Monitoring and Prometheus, specify backends: ["cloudmonitoring", "prometheus"]. Default: ["cloudmonitoring", "prometheus"]
     #[builder(into)]
     #[serde(rename = "monitoring")]
-    pub r#monitoring: Box<Option<super::super::types::gkehub::FeatureMembershipConfigmanagementPolicyControllerMonitoring>>,
+    pub r#monitoring: Option<Box<super::super::types::gkehub::FeatureMembershipConfigmanagementPolicyControllerMonitoring>>,
     /// Enables mutation in policy controller. If true, mutation CRDs, webhook, and controller deployment will be deployed to the cluster.
     #[builder(into)]
     #[serde(rename = "mutationEnabled")]

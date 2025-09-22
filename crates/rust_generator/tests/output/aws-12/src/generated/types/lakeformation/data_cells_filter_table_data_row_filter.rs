@@ -6,7 +6,7 @@ pub struct DataCellsFilterTableDataRowFilter {
     /// (Optional) A wildcard that matches all rows.
     #[builder(into)]
     #[serde(rename = "allRowsWildcard")]
-    pub r#all_rows_wildcard: Box<Option<super::super::types::lakeformation::DataCellsFilterTableDataRowFilterAllRowsWildcard>>,
+    pub r#all_rows_wildcard: Option<Box<super::super::types::lakeformation::DataCellsFilterTableDataRowFilterAllRowsWildcard>>,
     /// (Optional) A filter expression.
     #[builder(into)]
     #[serde(rename = "filterExpression")]

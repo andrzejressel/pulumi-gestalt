@@ -14,7 +14,7 @@ pub struct ClusterCoreInstanceFleet {
     /// Configuration block for launch specification.
     #[builder(into)]
     #[serde(rename = "launchSpecifications")]
-    pub r#launch_specifications: Box<Option<super::super::types::emr::ClusterCoreInstanceFleetLaunchSpecifications>>,
+    pub r#launch_specifications: Option<Box<super::super::types::emr::ClusterCoreInstanceFleetLaunchSpecifications>>,
     /// Friendly name given to the instance fleet.
     #[builder(into)]
     #[serde(rename = "name")]

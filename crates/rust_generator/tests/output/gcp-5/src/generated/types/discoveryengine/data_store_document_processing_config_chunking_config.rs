@@ -7,5 +7,5 @@ pub struct DataStoreDocumentProcessingConfigChunkingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "layoutBasedChunkingConfig")]
-    pub r#layout_based_chunking_config: Box<Option<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigChunkingConfigLayoutBasedChunkingConfig>>,
+    pub r#layout_based_chunking_config: Option<Box<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigChunkingConfigLayoutBasedChunkingConfig>>,
 }

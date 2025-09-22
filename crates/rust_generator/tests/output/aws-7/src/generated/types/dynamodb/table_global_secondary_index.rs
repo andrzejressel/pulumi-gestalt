@@ -18,7 +18,7 @@ pub struct TableGlobalSecondaryIndex {
     /// Sets the maximum number of read and write units for the specified on-demand table. See below.
     #[builder(into)]
     #[serde(rename = "onDemandThroughput")]
-    pub r#on_demand_throughput: Box<Option<super::super::types::dynamodb::TableGlobalSecondaryIndexOnDemandThroughput>>,
+    pub r#on_demand_throughput: Option<Box<super::super::types::dynamodb::TableGlobalSecondaryIndexOnDemandThroughput>>,
     /// One of `ALL`, `INCLUDE` or `KEYS_ONLY` where `ALL` projects every attribute into the index, `KEYS_ONLY` projects  into the index only the table and index hash_key and sort_key attributes ,  `INCLUDE` projects into the index all of the attributes that are defined in `non_key_attributes` in addition to the attributes that that`KEYS_ONLY` project.
     #[builder(into)]
     #[serde(rename = "projectionType")]

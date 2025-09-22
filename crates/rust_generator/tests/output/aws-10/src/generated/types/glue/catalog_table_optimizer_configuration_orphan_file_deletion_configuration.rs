@@ -6,5 +6,5 @@ pub struct CatalogTableOptimizerConfigurationOrphanFileDeletionConfiguration {
     /// The configuration for an Iceberg orphan file deletion optimizer.
     #[builder(into)]
     #[serde(rename = "icebergConfiguration")]
-    pub r#iceberg_configuration: Box<Option<super::super::types::glue::CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationIcebergConfiguration>>,
+    pub r#iceberg_configuration: Option<Box<super::super::types::glue::CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationIcebergConfiguration>>,
 }

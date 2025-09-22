@@ -11,12 +11,12 @@ pub struct AnalyticsApplicationInputs {
     /// See Kinesis Firehose below for more details.
     #[builder(into)]
     #[serde(rename = "kinesisFirehose")]
-    pub r#kinesis_firehose: Box<Option<super::super::types::kinesis::AnalyticsApplicationInputsKinesisFirehose>>,
+    pub r#kinesis_firehose: Option<Box<super::super::types::kinesis::AnalyticsApplicationInputsKinesisFirehose>>,
     /// The Kinesis Stream configuration for the streaming source. Conflicts with `kinesis_firehose`.
     /// See Kinesis Stream below for more details.
     #[builder(into)]
     #[serde(rename = "kinesisStream")]
-    pub r#kinesis_stream: Box<Option<super::super::types::kinesis::AnalyticsApplicationInputsKinesisStream>>,
+    pub r#kinesis_stream: Option<Box<super::super::types::kinesis::AnalyticsApplicationInputsKinesisStream>>,
     /// The Name Prefix to use when creating an in-application stream.
     #[builder(into)]
     #[serde(rename = "namePrefix")]
@@ -25,12 +25,12 @@ pub struct AnalyticsApplicationInputs {
     /// See Parallelism below for more details.
     #[builder(into)]
     #[serde(rename = "parallelism")]
-    pub r#parallelism: Box<Option<super::super::types::kinesis::AnalyticsApplicationInputsParallelism>>,
+    pub r#parallelism: Option<Box<super::super::types::kinesis::AnalyticsApplicationInputsParallelism>>,
     /// The Processing Configuration to transform records as they are received from the stream.
     /// See Processing Configuration below for more details.
     #[builder(into)]
     #[serde(rename = "processingConfiguration")]
-    pub r#processing_configuration: Box<Option<super::super::types::kinesis::AnalyticsApplicationInputsProcessingConfiguration>>,
+    pub r#processing_configuration: Option<Box<super::super::types::kinesis::AnalyticsApplicationInputsProcessingConfiguration>>,
     /// The Schema format of the data in the streaming source. See Source Schema below for more details.
     #[builder(into)]
     #[serde(rename = "schema")]

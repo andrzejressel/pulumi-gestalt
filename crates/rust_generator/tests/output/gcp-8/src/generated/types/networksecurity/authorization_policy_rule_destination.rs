@@ -12,7 +12,7 @@ pub struct AuthorizationPolicyRuleDestination {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "httpHeaderMatch")]
-    pub r#http_header_match: Box<Option<super::super::types::networksecurity::AuthorizationPolicyRuleDestinationHttpHeaderMatch>>,
+    pub r#http_header_match: Option<Box<super::super::types::networksecurity::AuthorizationPolicyRuleDestinationHttpHeaderMatch>>,
     /// A list of HTTP methods to match. At least one method should match. Should not be set for gRPC services.
     #[builder(into)]
     #[serde(rename = "methods")]

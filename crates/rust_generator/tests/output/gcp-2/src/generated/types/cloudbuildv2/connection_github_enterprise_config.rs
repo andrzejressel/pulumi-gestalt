@@ -27,7 +27,7 @@ pub struct ConnectionGithubEnterpriseConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "serviceDirectoryConfig")]
-    pub r#service_directory_config: Box<Option<super::super::types::cloudbuildv2::ConnectionGithubEnterpriseConfigServiceDirectoryConfig>>,
+    pub r#service_directory_config: Option<Box<super::super::types::cloudbuildv2::ConnectionGithubEnterpriseConfigServiceDirectoryConfig>>,
     /// SSL certificate to use for requests to GitHub Enterprise.
     #[builder(into)]
     #[serde(rename = "sslCa")]

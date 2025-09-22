@@ -11,5 +11,5 @@ pub struct MetastoreServiceScalingConfigAutoscalingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "limitConfig")]
-    pub r#limit_config: Box<Option<super::super::types::dataproc::MetastoreServiceScalingConfigAutoscalingConfigLimitConfig>>,
+    pub r#limit_config: Option<Box<super::super::types::dataproc::MetastoreServiceScalingConfigAutoscalingConfigLimitConfig>>,
 }

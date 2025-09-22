@@ -34,7 +34,7 @@ pub struct JobTemplateTemplateContainer {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Box<Option<super::super::types::cloudrunv2::JobTemplateTemplateContainerResources>>,
+    pub r#resources: Option<Box<super::super::types::cloudrunv2::JobTemplateTemplateContainerResources>>,
     /// Volume to mount into the container's filesystem.
     /// Structure is documented below.
     #[builder(into)]

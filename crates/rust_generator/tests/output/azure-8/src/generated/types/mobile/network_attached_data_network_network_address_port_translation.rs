@@ -14,7 +14,7 @@ pub struct NetworkAttachedDataNetworkNetworkAddressPortTranslation {
     /// A `port_range` block as defined below.
     #[builder(into)]
     #[serde(rename = "portRange")]
-    pub r#port_range: Box<Option<super::super::types::mobile::NetworkAttachedDataNetworkNetworkAddressPortTranslationPortRange>>,
+    pub r#port_range: Option<Box<super::super::types::mobile::NetworkAttachedDataNetworkNetworkAddressPortTranslationPortRange>>,
     /// Pinhole timeout for TCP pinholes in seconds. Must between `1` to `180`, Default to `180`.
     #[builder(into)]
     #[serde(rename = "tcpPinholeTimeoutInSeconds")]

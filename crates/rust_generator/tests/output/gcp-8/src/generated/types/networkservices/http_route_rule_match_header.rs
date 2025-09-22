@@ -27,7 +27,7 @@ pub struct HttpRouteRuleMatchHeader {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rangeMatch")]
-    pub r#range_match: Box<Option<super::super::types::networkservices::HttpRouteRuleMatchHeaderRangeMatch>>,
+    pub r#range_match: Option<Box<super::super::types::networkservices::HttpRouteRuleMatchHeaderRangeMatch>>,
     /// The value of the header must match the regular expression specified in regexMatch.
     #[builder(into)]
     #[serde(rename = "regexMatch")]

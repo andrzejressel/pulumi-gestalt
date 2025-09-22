@@ -11,5 +11,5 @@ pub struct ClusterMaintenancePolicyMaintenanceExclusion {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "window")]
-    pub r#window: Box<Option<super::super::types::edgecontainer::ClusterMaintenancePolicyMaintenanceExclusionWindow>>,
+    pub r#window: Option<Box<super::super::types::edgecontainer::ClusterMaintenancePolicyMaintenanceExclusionWindow>>,
 }

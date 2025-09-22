@@ -7,15 +7,15 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteAction {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cdnPolicy")]
-    pub r#cdn_policy: Box<Option<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy>>,
+    pub r#cdn_policy: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy>>,
     /// CORSPolicy defines Cross-Origin-Resource-Sharing configuration, including which CORS response headers will be set.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "corsPolicy")]
-    pub r#cors_policy: Box<Option<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicy>>,
+    pub r#cors_policy: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicy>>,
     /// The URL rewrite configuration for requests that match this route.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "urlRewrite")]
-    pub r#url_rewrite: Box<Option<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewrite>>,
+    pub r#url_rewrite: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewrite>>,
 }

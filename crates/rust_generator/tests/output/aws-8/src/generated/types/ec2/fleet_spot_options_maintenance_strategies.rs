@@ -6,5 +6,5 @@ pub struct FleetSpotOptionsMaintenanceStrategies {
     /// Nested argument containing the capacity rebalance for your fleet request. Defined below.
     #[builder(into)]
     #[serde(rename = "capacityRebalance")]
-    pub r#capacity_rebalance: Box<Option<super::super::types::ec2::FleetSpotOptionsMaintenanceStrategiesCapacityRebalance>>,
+    pub r#capacity_rebalance: Option<Box<super::super::types::ec2::FleetSpotOptionsMaintenanceStrategiesCapacityRebalance>>,
 }

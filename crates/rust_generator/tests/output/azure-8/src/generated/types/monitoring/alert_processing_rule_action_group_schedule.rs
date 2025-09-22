@@ -14,7 +14,7 @@ pub struct AlertProcessingRuleActionGroupSchedule {
     /// A `recurrence` block as defined above.
     #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<Option<super::super::types::monitoring::AlertProcessingRuleActionGroupScheduleRecurrence>>,
+    pub r#recurrence: Option<Box<super::super::types::monitoring::AlertProcessingRuleActionGroupScheduleRecurrence>>,
     /// The time zone (e.g. Pacific Standard time, Eastern Standard Time). Defaults to `UTC`. [possible values are defined here](https://docs.microsoft.com/en-us/previous-versions/windows/embedded/ms912391(v=winembedded.11)).
     #[builder(into)]
     #[serde(rename = "timeZone")]

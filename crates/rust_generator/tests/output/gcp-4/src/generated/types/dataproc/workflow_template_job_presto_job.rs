@@ -14,7 +14,7 @@ pub struct WorkflowTemplateJobPrestoJob {
     /// The runtime log config for job execution.
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Box<Option<super::super::types::dataproc::WorkflowTemplateJobPrestoJobLoggingConfig>>,
+    pub r#logging_config: Option<Box<super::super::types::dataproc::WorkflowTemplateJobPrestoJobLoggingConfig>>,
     /// The format in which query output will be displayed. See the Presto documentation for supported output formats
     #[builder(into)]
     #[serde(rename = "outputFormat")]
@@ -30,5 +30,5 @@ pub struct WorkflowTemplateJobPrestoJob {
     /// A list of queries.
     #[builder(into)]
     #[serde(rename = "queryList")]
-    pub r#query_list: Box<Option<super::super::types::dataproc::WorkflowTemplateJobPrestoJobQueryList>>,
+    pub r#query_list: Option<Box<super::super::types::dataproc::WorkflowTemplateJobPrestoJobQueryList>>,
 }

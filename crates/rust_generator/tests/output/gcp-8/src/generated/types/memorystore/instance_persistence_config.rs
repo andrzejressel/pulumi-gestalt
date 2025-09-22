@@ -7,7 +7,7 @@ pub struct InstancePersistenceConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "aofConfig")]
-    pub r#aof_config: Box<Option<super::super::types::memorystore::InstancePersistenceConfigAofConfig>>,
+    pub r#aof_config: Option<Box<super::super::types::memorystore::InstancePersistenceConfigAofConfig>>,
     /// Optional. Current persistence mode.
     /// Possible values:
     /// DISABLED
@@ -21,5 +21,5 @@ pub struct InstancePersistenceConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rdbConfig")]
-    pub r#rdb_config: Box<Option<super::super::types::memorystore::InstancePersistenceConfigRdbConfig>>,
+    pub r#rdb_config: Option<Box<super::super::types::memorystore::InstancePersistenceConfigRdbConfig>>,
 }

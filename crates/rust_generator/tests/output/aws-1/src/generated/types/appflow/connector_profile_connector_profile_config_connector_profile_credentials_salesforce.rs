@@ -19,7 +19,7 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSale
     pub r#oauth_2_grant_type: Option<String>,
     #[builder(into)]
     #[serde(rename = "oauthRequest")]
-    pub r#oauth_request: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceOauthRequest>>,
+    pub r#oauth_request: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceOauthRequest>>,
     #[builder(into)]
     #[serde(rename = "refreshToken")]
     pub r#refresh_token: Option<String>,

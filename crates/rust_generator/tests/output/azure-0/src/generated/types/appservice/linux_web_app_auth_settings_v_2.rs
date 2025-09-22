@@ -6,11 +6,11 @@ pub struct LinuxWebAppAuthSettingsV2 {
     /// An `active_directory_v2` block as defined below.
     #[builder(into)]
     #[serde(rename = "activeDirectoryV2")]
-    pub r#active_directory_v_2: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsV2ActiveDirectoryV2>>,
+    pub r#active_directory_v_2: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsV2ActiveDirectoryV2>>,
     /// An `apple_v2` block as defined below.
     #[builder(into)]
     #[serde(rename = "appleV2")]
-    pub r#apple_v_2: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsV2AppleV2>>,
+    pub r#apple_v_2: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsV2AppleV2>>,
     /// Should the AuthV2 Settings be enabled. Defaults to `false`.
     #[builder(into)]
     #[serde(rename = "authEnabled")]
@@ -18,7 +18,7 @@ pub struct LinuxWebAppAuthSettingsV2 {
     /// An `azure_static_web_app_v2` block as defined below.
     #[builder(into)]
     #[serde(rename = "azureStaticWebAppV2")]
-    pub r#azure_static_web_app_v_2: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsV2AzureStaticWebAppV2>>,
+    pub r#azure_static_web_app_v_2: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsV2AzureStaticWebAppV2>>,
     /// The path to the App Auth settings.
     /// 
     /// > **Note:** Relative Paths are evaluated from the Site Root directory.
@@ -44,7 +44,7 @@ pub struct LinuxWebAppAuthSettingsV2 {
     /// A `facebook_v2` block as defined below.
     #[builder(into)]
     #[serde(rename = "facebookV2")]
-    pub r#facebook_v_2: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsV2FacebookV2>>,
+    pub r#facebook_v_2: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsV2FacebookV2>>,
     /// The convention used to determine the url of the request made. Possible values include `NoProxy`, `Standard`, `Custom`. Defaults to `NoProxy`.
     #[builder(into)]
     #[serde(rename = "forwardProxyConvention")]
@@ -60,11 +60,11 @@ pub struct LinuxWebAppAuthSettingsV2 {
     /// A `github_v2` block as defined below.
     #[builder(into)]
     #[serde(rename = "githubV2")]
-    pub r#github_v_2: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsV2GithubV2>>,
+    pub r#github_v_2: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsV2GithubV2>>,
     /// A `google_v2` block as defined below.
     #[builder(into)]
     #[serde(rename = "googleV2")]
-    pub r#google_v_2: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsV2GoogleV2>>,
+    pub r#google_v_2: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsV2GoogleV2>>,
     /// The prefix that should precede all the authentication and authorisation paths. Defaults to `/.auth`.
     #[builder(into)]
     #[serde(rename = "httpRouteApiPrefix")]
@@ -76,7 +76,7 @@ pub struct LinuxWebAppAuthSettingsV2 {
     /// A `microsoft_v2` block as defined below.
     #[builder(into)]
     #[serde(rename = "microsoftV2")]
-    pub r#microsoft_v_2: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsV2MicrosoftV2>>,
+    pub r#microsoft_v_2: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsV2MicrosoftV2>>,
     /// Should the authentication flow be used for all requests.
     #[builder(into)]
     #[serde(rename = "requireAuthentication")]
@@ -92,7 +92,7 @@ pub struct LinuxWebAppAuthSettingsV2 {
     /// A `twitter_v2` block as defined below.
     #[builder(into)]
     #[serde(rename = "twitterV2")]
-    pub r#twitter_v_2: Box<Option<super::super::types::appservice::LinuxWebAppAuthSettingsV2TwitterV2>>,
+    pub r#twitter_v_2: Option<Box<super::super::types::appservice::LinuxWebAppAuthSettingsV2TwitterV2>>,
     /// The action to take for requests made without authentication. Possible values include `RedirectToLoginPage`, `AllowAnonymous`, `Return401`, and `Return403`. Defaults to `RedirectToLoginPage`.
     #[builder(into)]
     #[serde(rename = "unauthenticatedAction")]

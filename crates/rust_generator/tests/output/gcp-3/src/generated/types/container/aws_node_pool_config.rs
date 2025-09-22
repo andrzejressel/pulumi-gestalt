@@ -6,7 +6,7 @@ pub struct AwsNodePoolConfig {
     /// Optional. Configuration related to CloudWatch metrics collection on the Auto Scaling group of the node pool. When unspecified, metrics collection is disabled.
     #[builder(into)]
     #[serde(rename = "autoscalingMetricsCollection")]
-    pub r#autoscaling_metrics_collection: Box<Option<super::super::types::container::AwsNodePoolConfigAutoscalingMetricsCollection>>,
+    pub r#autoscaling_metrics_collection: Option<Box<super::super::types::container::AwsNodePoolConfigAutoscalingMetricsCollection>>,
     /// The ARN of the AWS KMS key used to encrypt node pool configuration.
     #[builder(into)]
     #[serde(rename = "configEncryption")]
@@ -22,7 +22,7 @@ pub struct AwsNodePoolConfig {
     /// Details of placement information for an instance.
     #[builder(into)]
     #[serde(rename = "instancePlacement")]
-    pub r#instance_placement: Box<Option<super::super::types::container::AwsNodePoolConfigInstancePlacement>>,
+    pub r#instance_placement: Option<Box<super::super::types::container::AwsNodePoolConfigInstancePlacement>>,
     /// Optional. The AWS instance type. When unspecified, it defaults to `m5.large`.
     #[builder(into)]
     #[serde(rename = "instanceType")]
@@ -34,11 +34,11 @@ pub struct AwsNodePoolConfig {
     /// Proxy configuration for outbound HTTP(S) traffic.
     #[builder(into)]
     #[serde(rename = "proxyConfig")]
-    pub r#proxy_config: Box<Option<super::super::types::container::AwsNodePoolConfigProxyConfig>>,
+    pub r#proxy_config: Option<Box<super::super::types::container::AwsNodePoolConfigProxyConfig>>,
     /// Optional. Template for the root volume provisioned for node pool nodes. Volumes will be provisioned in the availability zone assigned to the node pool subnet. When unspecified, it defaults to 32 GiB with the GP2 volume type.
     #[builder(into)]
     #[serde(rename = "rootVolume")]
-    pub r#root_volume: Box<Option<super::super::types::container::AwsNodePoolConfigRootVolume>>,
+    pub r#root_volume: Option<Box<super::super::types::container::AwsNodePoolConfigRootVolume>>,
     /// Optional. The IDs of additional security groups to add to nodes in this pool. The manager will automatically create security groups with minimum rules needed for a functioning cluster.
     #[builder(into)]
     #[serde(rename = "securityGroupIds")]
@@ -46,11 +46,11 @@ pub struct AwsNodePoolConfig {
     /// Optional. When specified, the node pool will provision Spot instances from the set of spot_config.instance_types. This field is mutually exclusive with `instance_type`
     #[builder(into)]
     #[serde(rename = "spotConfig")]
-    pub r#spot_config: Box<Option<super::super::types::container::AwsNodePoolConfigSpotConfig>>,
+    pub r#spot_config: Option<Box<super::super::types::container::AwsNodePoolConfigSpotConfig>>,
     /// Optional. The SSH configuration.
     #[builder(into)]
     #[serde(rename = "sshConfig")]
-    pub r#ssh_config: Box<Option<super::super::types::container::AwsNodePoolConfigSshConfig>>,
+    pub r#ssh_config: Option<Box<super::super::types::container::AwsNodePoolConfigSshConfig>>,
     /// Optional. Key/value metadata to assign to each underlying AWS resource. Specify at most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:@/). Keys can be up to 127 Unicode characters. Values can be up to 255 Unicode characters.
     #[builder(into)]
     #[serde(rename = "tags")]

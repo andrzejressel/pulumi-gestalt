@@ -15,7 +15,7 @@ pub struct GdcSparkApplicationSparkSqlApplicationConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "queryList")]
-    pub r#query_list: Box<Option<super::super::types::dataproc::GdcSparkApplicationSparkSqlApplicationConfigQueryList>>,
+    pub r#query_list: Option<Box<super::super::types::dataproc::GdcSparkApplicationSparkSqlApplicationConfigQueryList>>,
     /// Mapping of query variable names to values (equivalent to the Spark SQL command: SET `name="value";`).
     #[builder(into)]
     #[serde(rename = "scriptVariables")]

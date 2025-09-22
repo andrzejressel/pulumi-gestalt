@@ -6,9 +6,9 @@ pub struct LinuxWebAppSlotSiteConfigAutoHealSetting {
     /// A `action` block as defined above.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<Option<super::super::types::appservice::LinuxWebAppSlotSiteConfigAutoHealSettingAction>>,
+    pub r#action: Option<Box<super::super::types::appservice::LinuxWebAppSlotSiteConfigAutoHealSettingAction>>,
     /// A `trigger` block as defined below.
     #[builder(into)]
     #[serde(rename = "trigger")]
-    pub r#trigger: Box<Option<super::super::types::appservice::LinuxWebAppSlotSiteConfigAutoHealSettingTrigger>>,
+    pub r#trigger: Option<Box<super::super::types::appservice::LinuxWebAppSlotSiteConfigAutoHealSettingTrigger>>,
 }

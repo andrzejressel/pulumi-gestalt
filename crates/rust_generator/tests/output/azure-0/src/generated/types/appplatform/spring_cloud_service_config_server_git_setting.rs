@@ -6,7 +6,7 @@ pub struct SpringCloudServiceConfigServerGitSetting {
     /// A `http_basic_auth` block as defined below.
     #[builder(into)]
     #[serde(rename = "httpBasicAuth")]
-    pub r#http_basic_auth: Box<Option<super::super::types::appplatform::SpringCloudServiceConfigServerGitSettingHttpBasicAuth>>,
+    pub r#http_basic_auth: Option<Box<super::super::types::appplatform::SpringCloudServiceConfigServerGitSettingHttpBasicAuth>>,
     /// The default label of the Git repository, should be the branch name, tag name, or commit-id of the repository.
     #[builder(into)]
     #[serde(rename = "label")]
@@ -22,7 +22,7 @@ pub struct SpringCloudServiceConfigServerGitSetting {
     /// A `ssh_auth` block as defined below.
     #[builder(into)]
     #[serde(rename = "sshAuth")]
-    pub r#ssh_auth: Box<Option<super::super::types::appplatform::SpringCloudServiceConfigServerGitSettingSshAuth>>,
+    pub r#ssh_auth: Option<Box<super::super::types::appplatform::SpringCloudServiceConfigServerGitSettingSshAuth>>,
     /// The URI of the default Git repository used as the Config Server back end, should be started with `http://`, `https://`, `git@`, or `ssh://`.
     #[builder(into)]
     #[serde(rename = "uri")]

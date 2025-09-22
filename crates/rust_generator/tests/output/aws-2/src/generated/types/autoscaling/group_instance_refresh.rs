@@ -6,7 +6,7 @@ pub struct GroupInstanceRefresh {
     /// Override default parameters for Instance Refresh.
     #[builder(into)]
     #[serde(rename = "preferences")]
-    pub r#preferences: Box<Option<super::super::types::autoscaling::GroupInstanceRefreshPreferences>>,
+    pub r#preferences: Option<Box<super::super::types::autoscaling::GroupInstanceRefreshPreferences>>,
     /// Strategy to use for instance refresh. The only allowed value is `Rolling`. See [StartInstanceRefresh Action](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_StartInstanceRefresh.html#API_StartInstanceRefresh_RequestParameters) for more information.
     #[builder(into)]
     #[serde(rename = "strategy")]

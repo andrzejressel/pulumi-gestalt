@@ -13,7 +13,7 @@ pub struct PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "condition")]
-    pub r#condition: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRuleCondition>>,
+    pub r#condition: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRuleCondition>>,
     /// Setting this to true means that all values are denied. This field can be set only in policies for list constraints.
     #[builder(into)]
     #[serde(rename = "denyAll")]
@@ -27,5 +27,5 @@ pub struct PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRuleValues>>,
+    pub r#values: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomPolicyRuleValues>>,
 }

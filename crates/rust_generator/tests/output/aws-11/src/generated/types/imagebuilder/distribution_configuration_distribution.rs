@@ -6,11 +6,11 @@ pub struct DistributionConfigurationDistribution {
     /// Configuration block with Amazon Machine Image (AMI) distribution settings. Detailed below.
     #[builder(into)]
     #[serde(rename = "amiDistributionConfiguration")]
-    pub r#ami_distribution_configuration: Box<Option<super::super::types::imagebuilder::DistributionConfigurationDistributionAmiDistributionConfiguration>>,
+    pub r#ami_distribution_configuration: Option<Box<super::super::types::imagebuilder::DistributionConfigurationDistributionAmiDistributionConfiguration>>,
     /// Configuration block with container distribution settings. Detailed below.
     #[builder(into)]
     #[serde(rename = "containerDistributionConfiguration")]
-    pub r#container_distribution_configuration: Box<Option<super::super::types::imagebuilder::DistributionConfigurationDistributionContainerDistributionConfiguration>>,
+    pub r#container_distribution_configuration: Option<Box<super::super::types::imagebuilder::DistributionConfigurationDistributionContainerDistributionConfiguration>>,
     /// Set of Windows faster-launching configurations to use for AMI distribution. Detailed below.
     #[builder(into)]
     #[serde(rename = "fastLaunchConfigurations")]
@@ -32,5 +32,5 @@ pub struct DistributionConfigurationDistribution {
     /// Configuration block with S3 export settings. Detailed below.
     #[builder(into)]
     #[serde(rename = "s3ExportConfiguration")]
-    pub r#s_3_export_configuration: Box<Option<super::super::types::imagebuilder::DistributionConfigurationDistributionS3ExportConfiguration>>,
+    pub r#s_3_export_configuration: Option<Box<super::super::types::imagebuilder::DistributionConfigurationDistributionS3ExportConfiguration>>,
 }

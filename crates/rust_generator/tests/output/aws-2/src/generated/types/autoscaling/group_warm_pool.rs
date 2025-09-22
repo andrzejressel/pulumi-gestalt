@@ -6,7 +6,7 @@ pub struct GroupWarmPool {
     /// Whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.
     #[builder(into)]
     #[serde(rename = "instanceReusePolicy")]
-    pub r#instance_reuse_policy: Box<Option<super::super::types::autoscaling::GroupWarmPoolInstanceReusePolicy>>,
+    pub r#instance_reuse_policy: Option<Box<super::super::types::autoscaling::GroupWarmPoolInstanceReusePolicy>>,
     /// Total maximum number of instances that are allowed to be in the warm pool or in any state except Terminated for the Auto Scaling group.
     #[builder(into)]
     #[serde(rename = "maxGroupPreparedCapacity")]

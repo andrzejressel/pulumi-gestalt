@@ -12,5 +12,5 @@ pub struct AgentAgentActionGroupApiSchema {
     /// Only one of `s3` or `payload` can be specified.
     #[builder(into)]
     #[serde(rename = "s3")]
-    pub r#s_3: Box<Option<super::super::types::bedrock::AgentAgentActionGroupApiSchemaS3>>,
+    pub r#s_3: Option<Box<super::super::types::bedrock::AgentAgentActionGroupApiSchemaS3>>,
 }

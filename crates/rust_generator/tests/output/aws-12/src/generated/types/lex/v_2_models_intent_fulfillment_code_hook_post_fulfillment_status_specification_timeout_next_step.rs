@@ -6,11 +6,11 @@ pub struct V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTi
     /// Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialog_action`.
     #[builder(into)]
     #[serde(rename = "dialogAction")]
-    pub r#dialog_action: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepDialogAction>>,
+    pub r#dialog_action: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepDialogAction>>,
     /// Configuration block for override settings to configure the intent state. See `intent`.
     #[builder(into)]
     #[serde(rename = "intent")]
-    pub r#intent: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepIntent>>,
+    pub r#intent: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepIntent>>,
     /// Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.
     #[builder(into)]
     #[serde(rename = "sessionAttributes")]

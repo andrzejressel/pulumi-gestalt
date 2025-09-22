@@ -15,5 +15,5 @@ pub struct TableTableConstraints {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "primaryKey")]
-    pub r#primary_key: Box<Option<super::super::types::bigquery::TableTableConstraintsPrimaryKey>>,
+    pub r#primary_key: Option<Box<super::super::types::bigquery::TableTableConstraintsPrimaryKey>>,
 }

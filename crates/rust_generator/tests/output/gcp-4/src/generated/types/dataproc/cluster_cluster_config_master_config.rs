@@ -10,7 +10,7 @@ pub struct ClusterClusterConfigMasterConfig {
     /// Disk Config
     #[builder(into)]
     #[serde(rename = "diskConfig")]
-    pub r#disk_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigMasterConfigDiskConfig>>,
+    pub r#disk_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigMasterConfigDiskConfig>>,
     /// The URI for the image to use for this worker.  See [the guide](https://cloud.google.com/dataproc/docs/guides/dataproc-images)
     /// for more information.
     #[builder(into)]

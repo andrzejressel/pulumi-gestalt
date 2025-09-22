@@ -34,7 +34,7 @@ pub struct PageRuleActions {
     /// Controls how Cloudflare creates Cache Keys used to identify files in cache. See below for full description.
     #[builder(into)]
     #[serde(rename = "cacheKeyFields")]
-    pub r#cache_key_fields: Box<Option<super::types::PageRuleActionsCacheKeyFields>>,
+    pub r#cache_key_fields: Option<Box<super::types::PageRuleActionsCacheKeyFields>>,
     /// Whether to set the cache level to `"bypass"`, `"basic"`, `"simplified"`, `"aggressive"`, or `"cache_everything"`.
     #[builder(into)]
     #[serde(rename = "cacheLevel")]
@@ -82,7 +82,7 @@ pub struct PageRuleActions {
     /// The URL to forward to, and with what status. See below.
     #[builder(into)]
     #[serde(rename = "forwardingUrl")]
-    pub r#forwarding_url: Box<Option<super::types::PageRuleActionsForwardingUrl>>,
+    pub r#forwarding_url: Option<Box<super::types::PageRuleActionsForwardingUrl>>,
     /// Value of the Host header to send.
     #[builder(into)]
     #[serde(rename = "hostHeaderOverride")]

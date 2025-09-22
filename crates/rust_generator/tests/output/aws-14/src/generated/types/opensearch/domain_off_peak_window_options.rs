@@ -9,5 +9,5 @@ pub struct DomainOffPeakWindowOptions {
     pub r#enabled: Option<bool>,
     #[builder(into)]
     #[serde(rename = "offPeakWindow")]
-    pub r#off_peak_window: Box<Option<super::super::types::opensearch::DomainOffPeakWindowOptionsOffPeakWindow>>,
+    pub r#off_peak_window: Option<Box<super::super::types::opensearch::DomainOffPeakWindowOptionsOffPeakWindow>>,
 }

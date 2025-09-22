@@ -38,9 +38,9 @@ pub struct GetCoreNetworkPolicyDocumentSegmentAction {
     /// The network function groups and any edge overrides associated with the action.
     #[builder(into)]
     #[serde(rename = "via")]
-    pub r#via: Box<Option<super::super::types::networkmanager::GetCoreNetworkPolicyDocumentSegmentActionVia>>,
+    pub r#via: Option<Box<super::super::types::networkmanager::GetCoreNetworkPolicyDocumentSegmentActionVia>>,
     /// The destination segments for the `send-via` or `send-to` `action`.
     #[builder(into)]
     #[serde(rename = "whenSentTo")]
-    pub r#when_sent_to: Box<Option<super::super::types::networkmanager::GetCoreNetworkPolicyDocumentSegmentActionWhenSentTo>>,
+    pub r#when_sent_to: Option<Box<super::super::types::networkmanager::GetCoreNetworkPolicyDocumentSegmentActionWhenSentTo>>,
 }

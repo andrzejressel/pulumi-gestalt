@@ -6,17 +6,17 @@ pub struct EventConnectionAuthParameters {
     /// Parameters used for API_KEY authorization. An API key to include in the header for each authentication request. A maximum of 1 are allowed. Conflicts with `basic` and `oauth`. Documented below.
     #[builder(into)]
     #[serde(rename = "apiKey")]
-    pub r#api_key: Box<Option<super::super::types::cloudwatch::EventConnectionAuthParametersApiKey>>,
+    pub r#api_key: Option<Box<super::super::types::cloudwatch::EventConnectionAuthParametersApiKey>>,
     /// Parameters used for BASIC authorization. A maximum of 1 are allowed. Conflicts with `api_key` and `oauth`. Documented below.
     #[builder(into)]
     #[serde(rename = "basic")]
-    pub r#basic: Box<Option<super::super::types::cloudwatch::EventConnectionAuthParametersBasic>>,
+    pub r#basic: Option<Box<super::super::types::cloudwatch::EventConnectionAuthParametersBasic>>,
     /// Invocation Http Parameters are additional credentials used to sign each Invocation of the ApiDestination created from this Connection. If the ApiDestination Rule Target has additional HttpParameters, the values will be merged together, with the Connection Invocation Http Parameters taking precedence. Secret values are stored and managed by AWS Secrets Manager. A maximum of 1 are allowed. Documented below.
     #[builder(into)]
     #[serde(rename = "invocationHttpParameters")]
-    pub r#invocation_http_parameters: Box<Option<super::super::types::cloudwatch::EventConnectionAuthParametersInvocationHttpParameters>>,
+    pub r#invocation_http_parameters: Option<Box<super::super::types::cloudwatch::EventConnectionAuthParametersInvocationHttpParameters>>,
     /// Parameters used for OAUTH_CLIENT_CREDENTIALS authorization. A maximum of 1 are allowed. Conflicts with `basic` and `api_key`. Documented below.
     #[builder(into)]
     #[serde(rename = "oauth")]
-    pub r#oauth: Box<Option<super::super::types::cloudwatch::EventConnectionAuthParametersOauth>>,
+    pub r#oauth: Option<Box<super::super::types::cloudwatch::EventConnectionAuthParametersOauth>>,
 }

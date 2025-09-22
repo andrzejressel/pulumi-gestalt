@@ -12,5 +12,5 @@ pub struct GrpcRouteRuleMatch {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "method")]
-    pub r#method: Box<Option<super::super::types::networkservices::GrpcRouteRuleMatchMethod>>,
+    pub r#method: Option<Box<super::super::types::networkservices::GrpcRouteRuleMatchMethod>>,
 }

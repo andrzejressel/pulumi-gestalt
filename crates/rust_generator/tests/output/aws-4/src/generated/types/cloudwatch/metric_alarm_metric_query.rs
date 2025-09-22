@@ -22,7 +22,7 @@ pub struct MetricAlarmMetricQuery {
     /// The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric and not performing a math expression on returned data.
     #[builder(into)]
     #[serde(rename = "metric")]
-    pub r#metric: Box<Option<super::super::types::cloudwatch::MetricAlarmMetricQueryMetric>>,
+    pub r#metric: Option<Box<super::super::types::cloudwatch::MetricAlarmMetricQueryMetric>>,
     /// Granularity in seconds of returned data points.
     /// For metrics with regular resolution, valid values are any multiple of `60`.
     /// For high-resolution metrics, valid values are `1`, `5`, `10`, `30`, or any multiple of `60`.

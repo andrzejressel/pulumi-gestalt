@@ -12,5 +12,5 @@ pub struct SpotInstanceRequestCapacityReservationSpecification {
     /// For more information, see the documentation on [Capacity Reservations](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html).
     #[builder(into)]
     #[serde(rename = "capacityReservationTarget")]
-    pub r#capacity_reservation_target: Box<Option<super::super::types::ec2::SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget>>,
+    pub r#capacity_reservation_target: Option<Box<super::super::types::ec2::SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTarget>>,
 }

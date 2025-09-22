@@ -6,7 +6,7 @@ pub struct FlowletDataFlowTransformation {
     /// A `dataset` block as defined below.
     #[builder(into)]
     #[serde(rename = "dataset")]
-    pub r#dataset: Box<Option<super::super::types::datafactory::FlowletDataFlowTransformationDataset>>,
+    pub r#dataset: Option<Box<super::super::types::datafactory::FlowletDataFlowTransformationDataset>>,
     /// The description for the Data Flow transformation.
     #[builder(into)]
     #[serde(rename = "description")]
@@ -14,11 +14,11 @@ pub struct FlowletDataFlowTransformation {
     /// A `flowlet` block as defined below.
     #[builder(into)]
     #[serde(rename = "flowlet")]
-    pub r#flowlet: Box<Option<super::super::types::datafactory::FlowletDataFlowTransformationFlowlet>>,
+    pub r#flowlet: Option<Box<super::super::types::datafactory::FlowletDataFlowTransformationFlowlet>>,
     /// A `linked_service` block as defined below.
     #[builder(into)]
     #[serde(rename = "linkedService")]
-    pub r#linked_service: Box<Option<super::super::types::datafactory::FlowletDataFlowTransformationLinkedService>>,
+    pub r#linked_service: Option<Box<super::super::types::datafactory::FlowletDataFlowTransformationLinkedService>>,
     /// The name for the Data Flow transformation.
     #[builder(into)]
     #[serde(rename = "name")]

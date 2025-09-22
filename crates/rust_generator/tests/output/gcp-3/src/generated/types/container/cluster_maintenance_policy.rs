@@ -10,7 +10,7 @@ pub struct ClusterMaintenancePolicy {
     /// Examples:
     #[builder(into)]
     #[serde(rename = "dailyMaintenanceWindow")]
-    pub r#daily_maintenance_window: Box<Option<super::super::types::container::ClusterMaintenancePolicyDailyMaintenanceWindow>>,
+    pub r#daily_maintenance_window: Option<Box<super::super::types::container::ClusterMaintenancePolicyDailyMaintenanceWindow>>,
     /// Exceptions to maintenance window. Non-emergency maintenance should not occur in these windows. A cluster can have up to 20 maintenance exclusions at a time [Maintenance Window and Exclusions](https://cloud.google.com/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions)
     #[builder(into)]
     #[serde(rename = "maintenanceExclusions")]
@@ -44,5 +44,5 @@ pub struct ClusterMaintenancePolicy {
     /// ```
     #[builder(into)]
     #[serde(rename = "recurringWindow")]
-    pub r#recurring_window: Box<Option<super::super::types::container::ClusterMaintenancePolicyRecurringWindow>>,
+    pub r#recurring_window: Option<Box<super::super::types::container::ClusterMaintenancePolicyRecurringWindow>>,
 }

@@ -6,7 +6,7 @@ pub struct CustomLayerLoadBasedAutoScaling {
     /// The downscaling settings, as defined below, used for load-based autoscaling
     #[builder(into)]
     #[serde(rename = "downscaling")]
-    pub r#downscaling: Box<Option<super::super::types::opsworks::CustomLayerLoadBasedAutoScalingDownscaling>>,
+    pub r#downscaling: Option<Box<super::super::types::opsworks::CustomLayerLoadBasedAutoScalingDownscaling>>,
     /// Whether load-based auto scaling is enabled for the layer.
     #[builder(into)]
     #[serde(rename = "enable")]
@@ -14,5 +14,5 @@ pub struct CustomLayerLoadBasedAutoScaling {
     /// The upscaling settings, as defined below, used for load-based autoscaling
     #[builder(into)]
     #[serde(rename = "upscaling")]
-    pub r#upscaling: Box<Option<super::super::types::opsworks::CustomLayerLoadBasedAutoScalingUpscaling>>,
+    pub r#upscaling: Option<Box<super::super::types::opsworks::CustomLayerLoadBasedAutoScalingUpscaling>>,
 }

@@ -6,7 +6,7 @@ pub struct TransferJobTransferSpecAwsS3DataSource {
     /// AWS credentials block.
     #[builder(into)]
     #[serde(rename = "awsAccessKey")]
-    pub r#aws_access_key: Box<Option<super::super::types::storage::TransferJobTransferSpecAwsS3DataSourceAwsAccessKey>>,
+    pub r#aws_access_key: Option<Box<super::super::types::storage::TransferJobTransferSpecAwsS3DataSourceAwsAccessKey>>,
     /// S3 Bucket name.
     #[builder(into)]
     #[serde(rename = "bucketName")]

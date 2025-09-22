@@ -7,7 +7,7 @@ pub struct AuthzPolicyHttpRuleToOperation {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "headerSet")]
-    pub r#header_set: Box<Option<super::super::types::networksecurity::AuthzPolicyHttpRuleToOperationHeaderSet>>,
+    pub r#header_set: Option<Box<super::super::types::networksecurity::AuthzPolicyHttpRuleToOperationHeaderSet>>,
     /// A list of HTTP Hosts to match against. The match can be one of exact, prefix, suffix, or contains (substring match). Matches are always case sensitive unless the ignoreCase is set.
     /// Limited to 5 matches.
     /// Structure is documented below.

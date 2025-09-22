@@ -6,15 +6,15 @@ pub struct RuleGroupRuleStatementSqliMatchStatementFieldToMatch {
     /// Inspect all query arguments.
     #[builder(into)]
     #[serde(rename = "allQueryArguments")]
-    pub r#all_query_arguments: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchAllQueryArguments>>,
+    pub r#all_query_arguments: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchAllQueryArguments>>,
     /// Inspect the request body, which immediately follows the request headers.
     #[builder(into)]
     #[serde(rename = "body")]
-    pub r#body: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchBody>>,
+    pub r#body: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchBody>>,
     /// Inspect the cookies in the web request. See Cookies below for details.
     #[builder(into)]
     #[serde(rename = "cookies")]
-    pub r#cookies: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookies>>,
+    pub r#cookies: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookies>>,
     /// Inspect the request headers. See Header Order below for details.
     #[builder(into)]
     #[serde(rename = "headerOrders")]
@@ -25,29 +25,29 @@ pub struct RuleGroupRuleStatementSqliMatchStatementFieldToMatch {
     pub r#headers: Option<Vec<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeader>>,
     #[builder(into)]
     #[serde(rename = "ja3Fingerprint")]
-    pub r#ja_3_fingerprint: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchJa3Fingerprint>>,
+    pub r#ja_3_fingerprint: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchJa3Fingerprint>>,
     /// Inspect the request body as JSON. See JSON Body for details.
     #[builder(into)]
     #[serde(rename = "jsonBody")]
-    pub r#json_body: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBody>>,
+    pub r#json_body: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBody>>,
     /// Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
     #[builder(into)]
     #[serde(rename = "method")]
-    pub r#method: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchMethod>>,
+    pub r#method: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchMethod>>,
     /// Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
     #[builder(into)]
     #[serde(rename = "queryString")]
-    pub r#query_string: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchQueryString>>,
+    pub r#query_string: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchQueryString>>,
     /// Inspect a single header. See Single Header below for details.
     #[builder(into)]
     #[serde(rename = "singleHeader")]
-    pub r#single_header: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchSingleHeader>>,
+    pub r#single_header: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchSingleHeader>>,
     /// Inspect a single query argument. See Single Query Argument below for details.
     #[builder(into)]
     #[serde(rename = "singleQueryArgument")]
-    pub r#single_query_argument: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchSingleQueryArgument>>,
+    pub r#single_query_argument: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchSingleQueryArgument>>,
     /// Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
     #[builder(into)]
     #[serde(rename = "uriPath")]
-    pub r#uri_path: Box<Option<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchUriPath>>,
+    pub r#uri_path: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementSqliMatchStatementFieldToMatchUriPath>>,
 }

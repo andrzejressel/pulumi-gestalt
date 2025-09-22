@@ -18,7 +18,7 @@ pub struct DataCollectionRuleDataSourcesLogFile {
     /// A `settings` block as defined below.
     #[builder(into)]
     #[serde(rename = "settings")]
-    pub r#settings: Box<Option<super::super::types::monitoring::DataCollectionRuleDataSourcesLogFileSettings>>,
+    pub r#settings: Option<Box<super::super::types::monitoring::DataCollectionRuleDataSourcesLogFileSettings>>,
     /// Specifies a list of streams that this data source will be sent to. A stream indicates what schema will be used for this data and usually what table in Log Analytics the data will be sent to. Possible value should be custom stream names.
     #[builder(into)]
     #[serde(rename = "streams")]

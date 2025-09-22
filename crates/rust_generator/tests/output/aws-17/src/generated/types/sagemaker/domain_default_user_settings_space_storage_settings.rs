@@ -6,5 +6,5 @@ pub struct DomainDefaultUserSettingsSpaceStorageSettings {
     /// The default EBS storage settings for a private space. See `default_ebs_storage_settings` Block below.
     #[builder(into)]
     #[serde(rename = "defaultEbsStorageSettings")]
-    pub r#default_ebs_storage_settings: Box<Option<super::super::types::sagemaker::DomainDefaultUserSettingsSpaceStorageSettingsDefaultEbsStorageSettings>>,
+    pub r#default_ebs_storage_settings: Option<Box<super::super::types::sagemaker::DomainDefaultUserSettingsSpaceStorageSettingsDefaultEbsStorageSettings>>,
 }

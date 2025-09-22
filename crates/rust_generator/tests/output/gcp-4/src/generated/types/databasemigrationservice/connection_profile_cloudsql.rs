@@ -22,5 +22,5 @@ pub struct ConnectionProfileCloudsql {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "settings")]
-    pub r#settings: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileCloudsqlSettings>>,
+    pub r#settings: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileCloudsqlSettings>>,
 }

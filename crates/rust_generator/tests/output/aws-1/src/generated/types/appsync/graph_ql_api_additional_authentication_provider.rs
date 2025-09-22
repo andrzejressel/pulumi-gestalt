@@ -10,13 +10,13 @@ pub struct GraphQlApiAdditionalAuthenticationProvider {
     /// Nested argument containing Lambda authorizer configuration. See `lambda_authorizer_config` Block for details.
     #[builder(into)]
     #[serde(rename = "lambdaAuthorizerConfig")]
-    pub r#lambda_authorizer_config: Box<Option<super::super::types::appsync::GraphQlApiAdditionalAuthenticationProviderLambdaAuthorizerConfig>>,
+    pub r#lambda_authorizer_config: Option<Box<super::super::types::appsync::GraphQlApiAdditionalAuthenticationProviderLambdaAuthorizerConfig>>,
     /// Nested argument containing OpenID Connect configuration. See `openid_connect_config` Block for details.
     #[builder(into)]
     #[serde(rename = "openidConnectConfig")]
-    pub r#openid_connect_config: Box<Option<super::super::types::appsync::GraphQlApiAdditionalAuthenticationProviderOpenidConnectConfig>>,
+    pub r#openid_connect_config: Option<Box<super::super::types::appsync::GraphQlApiAdditionalAuthenticationProviderOpenidConnectConfig>>,
     /// Amazon Cognito User Pool configuration. See `user_pool_config` Block for details.
     #[builder(into)]
     #[serde(rename = "userPoolConfig")]
-    pub r#user_pool_config: Box<Option<super::super::types::appsync::GraphQlApiAdditionalAuthenticationProviderUserPoolConfig>>,
+    pub r#user_pool_config: Option<Box<super::super::types::appsync::GraphQlApiAdditionalAuthenticationProviderUserPoolConfig>>,
 }

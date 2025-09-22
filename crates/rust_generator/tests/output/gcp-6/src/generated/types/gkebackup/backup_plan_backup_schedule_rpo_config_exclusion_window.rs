@@ -14,7 +14,7 @@ pub struct BackupPlanBackupScheduleRpoConfigExclusionWindow {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "daysOfWeek")]
-    pub r#days_of_week: Box<Option<super::super::types::gkebackup::BackupPlanBackupScheduleRpoConfigExclusionWindowDaysOfWeek>>,
+    pub r#days_of_week: Option<Box<super::super::types::gkebackup::BackupPlanBackupScheduleRpoConfigExclusionWindowDaysOfWeek>>,
     /// Specifies duration of the window in seconds with up to nine fractional digits,
     /// terminated by 's'. Example: "3.5s". Restrictions for duration based on the
     /// recurrence type to allow some time for backup to happen:
@@ -31,7 +31,7 @@ pub struct BackupPlanBackupScheduleRpoConfigExclusionWindow {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "singleOccurrenceDate")]
-    pub r#single_occurrence_date: Box<Option<super::super::types::gkebackup::BackupPlanBackupScheduleRpoConfigExclusionWindowSingleOccurrenceDate>>,
+    pub r#single_occurrence_date: Option<Box<super::super::types::gkebackup::BackupPlanBackupScheduleRpoConfigExclusionWindowSingleOccurrenceDate>>,
     /// Specifies the start time of the window using time of the day in UTC.
     /// Structure is documented below.
     #[builder(into)]

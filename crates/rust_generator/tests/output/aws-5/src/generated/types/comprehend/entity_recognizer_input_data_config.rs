@@ -8,7 +8,7 @@ pub struct EntityRecognizerInputDataConfig {
     /// One of `annotations` or `entity_list` is required.
     #[builder(into)]
     #[serde(rename = "annotations")]
-    pub r#annotations: Box<Option<super::super::types::comprehend::EntityRecognizerInputDataConfigAnnotations>>,
+    pub r#annotations: Option<Box<super::super::types::comprehend::EntityRecognizerInputDataConfigAnnotations>>,
     /// List of training datasets produced by Amazon SageMaker Ground Truth.
     /// Used if `data_format` is `AUGMENTED_MANIFEST`.
     /// See the `augmented_manifests` Configuration Block section below.
@@ -25,13 +25,13 @@ pub struct EntityRecognizerInputDataConfig {
     /// See the `documents` Configuration Block section below.
     #[builder(into)]
     #[serde(rename = "documents")]
-    pub r#documents: Box<Option<super::super::types::comprehend::EntityRecognizerInputDataConfigDocuments>>,
+    pub r#documents: Option<Box<super::super::types::comprehend::EntityRecognizerInputDataConfigDocuments>>,
     /// Specifies location of the entity list data.
     /// See the `entity_list` Configuration Block section below.
     /// One of `entity_list` or `annotations` is required.
     #[builder(into)]
     #[serde(rename = "entityList")]
-    pub r#entity_list: Box<Option<super::super::types::comprehend::EntityRecognizerInputDataConfigEntityList>>,
+    pub r#entity_list: Option<Box<super::super::types::comprehend::EntityRecognizerInputDataConfigEntityList>>,
     /// Set of entity types to be recognized.
     /// Has a maximum of 25 items.
     /// See the `entity_types` Configuration Block section below.

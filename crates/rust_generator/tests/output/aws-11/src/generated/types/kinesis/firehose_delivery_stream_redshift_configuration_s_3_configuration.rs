@@ -19,7 +19,7 @@ pub struct FirehoseDeliveryStreamRedshiftConfigurationS3Configuration {
     /// The CloudWatch Logging Options for the delivery stream. See `cloudwatch_logging_options` block below for details.
     #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptions")]
-    pub r#cloudwatch_logging_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationS3ConfigurationCloudwatchLoggingOptions>>,
+    pub r#cloudwatch_logging_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamRedshiftConfigurationS3ConfigurationCloudwatchLoggingOptions>>,
     /// The compression format. If no value is specified, the default is `UNCOMPRESSED`. Other supported values are `GZIP`, `ZIP`, `Snappy`, & `HADOOP_SNAPPY`.
     #[builder(into)]
     #[serde(rename = "compressionFormat")]

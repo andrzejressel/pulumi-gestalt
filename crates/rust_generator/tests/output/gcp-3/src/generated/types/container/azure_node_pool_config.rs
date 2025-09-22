@@ -14,11 +14,11 @@ pub struct AzureNodePoolConfig {
     /// Proxy configuration for outbound HTTP(S) traffic.
     #[builder(into)]
     #[serde(rename = "proxyConfig")]
-    pub r#proxy_config: Box<Option<super::super::types::container::AzureNodePoolConfigProxyConfig>>,
+    pub r#proxy_config: Option<Box<super::super::types::container::AzureNodePoolConfigProxyConfig>>,
     /// Optional. Configuration related to the root volume provisioned for each node pool machine. When unspecified, it defaults to a 32-GiB Azure Disk.
     #[builder(into)]
     #[serde(rename = "rootVolume")]
-    pub r#root_volume: Box<Option<super::super::types::container::AzureNodePoolConfigRootVolume>>,
+    pub r#root_volume: Option<Box<super::super::types::container::AzureNodePoolConfigRootVolume>>,
     /// SSH configuration for how to access the node pool machines.
     #[builder(into)]
     #[serde(rename = "sshConfig")]

@@ -6,7 +6,7 @@ pub struct LinuxWebAppSlotLogs {
     /// A `application_logs` block as defined above.
     #[builder(into)]
     #[serde(rename = "applicationLogs")]
-    pub r#application_logs: Box<Option<super::super::types::appservice::LinuxWebAppSlotLogsApplicationLogs>>,
+    pub r#application_logs: Option<Box<super::super::types::appservice::LinuxWebAppSlotLogsApplicationLogs>>,
     /// Should detailed error messages be enabled?
     #[builder(into)]
     #[serde(rename = "detailedErrorMessages")]
@@ -18,5 +18,5 @@ pub struct LinuxWebAppSlotLogs {
     /// An `http_logs` block as defined above.
     #[builder(into)]
     #[serde(rename = "httpLogs")]
-    pub r#http_logs: Box<Option<super::super::types::appservice::LinuxWebAppSlotLogsHttpLogs>>,
+    pub r#http_logs: Option<Box<super::super::types::appservice::LinuxWebAppSlotLogsHttpLogs>>,
 }

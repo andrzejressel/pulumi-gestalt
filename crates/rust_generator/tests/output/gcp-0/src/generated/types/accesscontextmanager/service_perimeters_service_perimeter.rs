@@ -45,14 +45,14 @@ pub struct ServicePerimetersServicePerimeter {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "spec")]
-    pub r#spec: Box<Option<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterSpec>>,
+    pub r#spec: Option<Box<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterSpec>>,
     /// ServicePerimeter configuration. Specifies sets of resources,
     /// restricted services and access levels that determine
     /// perimeter content and boundaries.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterStatus>>,
+    pub r#status: Option<Box<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterStatus>>,
     /// Human readable title. Must be unique within the Policy.
     #[builder(into)]
     #[serde(rename = "title")]

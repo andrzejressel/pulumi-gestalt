@@ -12,7 +12,7 @@ pub struct PolicyFileShareBackup {
     /// A `hourly` block defined as below. This is required when `frequency` is set to `Hourly`.
     #[builder(into)]
     #[serde(rename = "hourly")]
-    pub r#hourly: Box<Option<super::super::types::backup::PolicyFileShareBackupHourly>>,
+    pub r#hourly: Option<Box<super::super::types::backup::PolicyFileShareBackupHourly>>,
     /// The time of day to perform the backup in 24-hour format. Times must be either on the hour or half hour (e.g. 12:00, 12:30, 13:00, etc.)
     /// 
     /// > **NOTE:** `time` is required when `frequency` is set to `Daily`.

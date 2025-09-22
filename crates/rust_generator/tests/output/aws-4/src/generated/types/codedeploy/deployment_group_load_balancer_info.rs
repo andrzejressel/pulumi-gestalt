@@ -14,5 +14,5 @@ pub struct DeploymentGroupLoadBalancerInfo {
     /// The (Application/Network Load Balancer) target group pair to use in a deployment. Conflicts with `elb_info` and `target_group_info`.
     #[builder(into)]
     #[serde(rename = "targetGroupPairInfo")]
-    pub r#target_group_pair_info: Box<Option<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupPairInfo>>,
+    pub r#target_group_pair_info: Option<Box<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupPairInfo>>,
 }

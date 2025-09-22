@@ -22,7 +22,7 @@ pub struct ServiceTaskSpecContainerSpec {
     /// Specification for DNS related configurations in resolver configuration file (`resolv.conf`)
     #[builder(into)]
     #[serde(rename = "dnsConfig")]
-    pub r#dns_config: Box<Option<super::types::ServiceTaskSpecContainerSpecDnsConfig>>,
+    pub r#dns_config: Option<Box<super::types::ServiceTaskSpecContainerSpecDnsConfig>>,
     /// A list of environment variables in the form VAR="value"
     #[builder(into)]
     #[serde(rename = "env")]
@@ -34,7 +34,7 @@ pub struct ServiceTaskSpecContainerSpec {
     /// A test to perform to check that the container is healthy
     #[builder(into)]
     #[serde(rename = "healthcheck")]
-    pub r#healthcheck: Box<Option<super::types::ServiceTaskSpecContainerSpecHealthcheck>>,
+    pub r#healthcheck: Option<Box<super::types::ServiceTaskSpecContainerSpecHealthcheck>>,
     /// The hostname to use for the container, as a valid RFC 1123 hostname
     #[builder(into)]
     #[serde(rename = "hostname")]
@@ -62,7 +62,7 @@ pub struct ServiceTaskSpecContainerSpec {
     /// Security options for the container
     #[builder(into)]
     #[serde(rename = "privileges")]
-    pub r#privileges: Box<Option<super::types::ServiceTaskSpecContainerSpecPrivileges>>,
+    pub r#privileges: Option<Box<super::types::ServiceTaskSpecContainerSpecPrivileges>>,
     /// Mount the container's root filesystem as read only
     #[builder(into)]
     #[serde(rename = "readOnly")]

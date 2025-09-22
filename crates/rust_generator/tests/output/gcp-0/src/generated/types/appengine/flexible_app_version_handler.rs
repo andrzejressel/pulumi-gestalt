@@ -23,7 +23,7 @@ pub struct FlexibleAppVersionHandler {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "script")]
-    pub r#script: Box<Option<super::super::types::appengine::FlexibleAppVersionHandlerScript>>,
+    pub r#script: Option<Box<super::super::types::appengine::FlexibleAppVersionHandlerScript>>,
     /// Security (HTTPS) enforcement for this URL.
     /// Possible values are: `SECURE_DEFAULT`, `SECURE_NEVER`, `SECURE_OPTIONAL`, `SECURE_ALWAYS`.
     #[builder(into)]
@@ -34,7 +34,7 @@ pub struct FlexibleAppVersionHandler {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "staticFiles")]
-    pub r#static_files: Box<Option<super::super::types::appengine::FlexibleAppVersionHandlerStaticFiles>>,
+    pub r#static_files: Option<Box<super::super::types::appengine::FlexibleAppVersionHandlerStaticFiles>>,
     /// URL prefix. Uses regular expression syntax, which means regexp special characters must be escaped, but should not contain groupings.
     /// All URLs that begin with this prefix are handled by this handler, using the portion of the URL after the prefix as part of the file path.
     #[builder(into)]

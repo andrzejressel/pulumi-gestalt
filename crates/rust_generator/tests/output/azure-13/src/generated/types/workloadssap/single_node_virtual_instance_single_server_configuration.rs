@@ -29,5 +29,5 @@ pub struct SingleNodeVirtualInstanceSingleServerConfiguration {
     /// A `virtual_machine_resource_names` block as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "virtualMachineResourceNames")]
-    pub r#virtual_machine_resource_names: Box<Option<super::super::types::workloadssap::SingleNodeVirtualInstanceSingleServerConfigurationVirtualMachineResourceNames>>,
+    pub r#virtual_machine_resource_names: Option<Box<super::super::types::workloadssap::SingleNodeVirtualInstanceSingleServerConfigurationVirtualMachineResourceNames>>,
 }

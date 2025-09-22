@@ -18,7 +18,7 @@ pub struct DistributionOrigin {
     /// The CloudFront custom origin configuration information. If an S3 origin is required, use `origin_access_control_id` or `s3_origin_config` instead.
     #[builder(into)]
     #[serde(rename = "customOriginConfig")]
-    pub r#custom_origin_config: Box<Option<super::super::types::cloudfront::DistributionOriginCustomOriginConfig>>,
+    pub r#custom_origin_config: Option<Box<super::super::types::cloudfront::DistributionOriginCustomOriginConfig>>,
     /// Domain name corresponding to the distribution. For example: `d604721fxaaqy9.cloudfront.net`.
     #[builder(into)]
     #[serde(rename = "domainName")]
@@ -37,13 +37,13 @@ pub struct DistributionOrigin {
     /// CloudFront Origin Shield configuration information. Using Origin Shield can help reduce the load on your origin. For more information, see [Using Origin Shield](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html) in the Amazon CloudFront Developer Guide.
     #[builder(into)]
     #[serde(rename = "originShield")]
-    pub r#origin_shield: Box<Option<super::super::types::cloudfront::DistributionOriginOriginShield>>,
+    pub r#origin_shield: Option<Box<super::super::types::cloudfront::DistributionOriginOriginShield>>,
     /// CloudFront S3 origin configuration information. If a custom origin is required, use `custom_origin_config` instead.
     #[builder(into)]
     #[serde(rename = "s3OriginConfig")]
-    pub r#s_3_origin_config: Box<Option<super::super::types::cloudfront::DistributionOriginS3OriginConfig>>,
+    pub r#s_3_origin_config: Option<Box<super::super::types::cloudfront::DistributionOriginS3OriginConfig>>,
     /// The VPC origin configuration.
     #[builder(into)]
     #[serde(rename = "vpcOriginConfig")]
-    pub r#vpc_origin_config: Box<Option<super::super::types::cloudfront::DistributionOriginVpcOriginConfig>>,
+    pub r#vpc_origin_config: Option<Box<super::super::types::cloudfront::DistributionOriginVpcOriginConfig>>,
 }

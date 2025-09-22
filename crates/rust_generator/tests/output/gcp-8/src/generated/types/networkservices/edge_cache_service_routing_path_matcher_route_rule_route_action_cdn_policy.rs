@@ -8,12 +8,12 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "addSignatures")]
-    pub r#add_signatures: Box<Option<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignatures>>,
+    pub r#add_signatures: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignatures>>,
     /// Defines the request parameters that contribute to the cache key.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cacheKeyPolicy")]
-    pub r#cache_key_policy: Box<Option<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyCacheKeyPolicy>>,
+    pub r#cache_key_policy: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyCacheKeyPolicy>>,
     /// Cache modes allow users to control the behaviour of the cache, what content it should cache automatically, whether to respect origin headers, or whether to unconditionally cache all responses.
     /// For all cache modes, Cache-Control headers will be passed to the client. Use clientTtl to override what is sent to the client.
     /// Possible values are: `CACHE_ALL_STATIC`, `USE_ORIGIN_HEADERS`, `FORCE_CACHE_ALL`, `BYPASS_CACHE`.
@@ -95,5 +95,5 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "signedTokenOptions")]
-    pub r#signed_token_options: Box<Option<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicySignedTokenOptions>>,
+    pub r#signed_token_options: Option<Box<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicySignedTokenOptions>>,
 }

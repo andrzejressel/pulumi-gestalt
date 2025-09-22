@@ -6,7 +6,7 @@ pub struct ProjectSource {
     /// Configuration block that contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. `build_status_config` blocks are documented below.
     #[builder(into)]
     #[serde(rename = "buildStatusConfig")]
-    pub r#build_status_config: Box<Option<super::super::types::codebuild::ProjectSourceBuildStatusConfig>>,
+    pub r#build_status_config: Option<Box<super::super::types::codebuild::ProjectSourceBuildStatusConfig>>,
     /// Build specification to use for this build project's related builds. This must be set when `type` is `NO_SOURCE`. Also, if a non-default buildspec file name or file path aside from the root is used, it must be specified.
     #[builder(into)]
     #[serde(rename = "buildspec")]
@@ -18,7 +18,7 @@ pub struct ProjectSource {
     /// Configuration block. Detailed below.
     #[builder(into)]
     #[serde(rename = "gitSubmodulesConfig")]
-    pub r#git_submodules_config: Box<Option<super::super::types::codebuild::ProjectSourceGitSubmodulesConfig>>,
+    pub r#git_submodules_config: Option<Box<super::super::types::codebuild::ProjectSourceGitSubmodulesConfig>>,
     /// Ignore SSL warnings when connecting to source control.
     #[builder(into)]
     #[serde(rename = "insecureSsl")]

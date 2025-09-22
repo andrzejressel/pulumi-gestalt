@@ -7,15 +7,15 @@ pub struct PreventionDiscoveryConfigAction {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "exportData")]
-    pub r#export_data: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigActionExportData>>,
+    pub r#export_data: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionExportData>>,
     /// Publish a message into the Pub/Sub topic.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pubSubNotification")]
-    pub r#pub_sub_notification: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotification>>,
+    pub r#pub_sub_notification: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotification>>,
     /// Publish a message into the Pub/Sub topic.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "tagResources")]
-    pub r#tag_resources: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigActionTagResources>>,
+    pub r#tag_resources: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionTagResources>>,
 }

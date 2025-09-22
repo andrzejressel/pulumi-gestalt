@@ -7,22 +7,22 @@ pub struct GetListenerRuleAction {
     /// Detailed below.
     #[builder(into)]
     #[serde(rename = "authenticateCognito")]
-    pub r#authenticate_cognito: Box<Option<super::super::types::lb::GetListenerRuleActionAuthenticateCognito>>,
+    pub r#authenticate_cognito: Option<Box<super::super::types::lb::GetListenerRuleActionAuthenticateCognito>>,
     /// An action to authenticate using OIDC.
     /// Detailed below.
     #[builder(into)]
     #[serde(rename = "authenticateOidc")]
-    pub r#authenticate_oidc: Box<Option<super::super::types::lb::GetListenerRuleActionAuthenticateOidc>>,
+    pub r#authenticate_oidc: Option<Box<super::super::types::lb::GetListenerRuleActionAuthenticateOidc>>,
     /// An action to return a fixed response.
     /// Detailed below.
     #[builder(into)]
     #[serde(rename = "fixedResponse")]
-    pub r#fixed_response: Box<Option<super::super::types::lb::GetListenerRuleActionFixedResponse>>,
+    pub r#fixed_response: Option<Box<super::super::types::lb::GetListenerRuleActionFixedResponse>>,
     /// An action to forward the request.
     /// Detailed below.
     #[builder(into)]
     #[serde(rename = "forward")]
-    pub r#forward: Box<Option<super::super::types::lb::GetListenerRuleActionForward>>,
+    pub r#forward: Option<Box<super::super::types::lb::GetListenerRuleActionForward>>,
     /// The evaluation order of the action.
     #[builder(into)]
     #[serde(rename = "order")]
@@ -31,7 +31,7 @@ pub struct GetListenerRuleAction {
     /// Detailed below.
     #[builder(into)]
     #[serde(rename = "redirect")]
-    pub r#redirect: Box<Option<super::super::types::lb::GetListenerRuleActionRedirect>>,
+    pub r#redirect: Option<Box<super::super::types::lb::GetListenerRuleActionRedirect>>,
     /// The type of the action, indicates which sub-block will be populated.
     #[builder(into)]
     #[serde(rename = "type")]

@@ -7,7 +7,7 @@ pub struct GrpcRouteRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<Option<super::super::types::networkservices::GrpcRouteRuleAction>>,
+    pub r#action: Option<Box<super::super::types::networkservices::GrpcRouteRuleAction>>,
     /// Matches define conditions used for matching the rule against incoming gRPC requests.
     /// Structure is documented below.
     #[builder(into)]

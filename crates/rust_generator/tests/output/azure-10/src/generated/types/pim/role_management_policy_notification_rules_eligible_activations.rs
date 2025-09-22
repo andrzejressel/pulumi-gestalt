@@ -6,13 +6,13 @@ pub struct RoleManagementPolicyNotificationRulesEligibleActivations {
     /// Admin notification settings
     #[builder(into)]
     #[serde(rename = "adminNotifications")]
-    pub r#admin_notifications: Box<Option<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleActivationsAdminNotifications>>,
+    pub r#admin_notifications: Option<Box<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleActivationsAdminNotifications>>,
     /// Approver notification settings
     #[builder(into)]
     #[serde(rename = "approverNotifications")]
-    pub r#approver_notifications: Box<Option<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleActivationsApproverNotifications>>,
+    pub r#approver_notifications: Option<Box<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleActivationsApproverNotifications>>,
     /// Assignee notification settings
     #[builder(into)]
     #[serde(rename = "assigneeNotifications")]
-    pub r#assignee_notifications: Box<Option<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleActivationsAssigneeNotifications>>,
+    pub r#assignee_notifications: Option<Box<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleActivationsAssigneeNotifications>>,
 }

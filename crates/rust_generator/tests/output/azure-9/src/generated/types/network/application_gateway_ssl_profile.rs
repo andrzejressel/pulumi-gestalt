@@ -14,7 +14,7 @@ pub struct ApplicationGatewaySslProfile {
     /// a `ssl_policy` block as defined below.
     #[builder(into)]
     #[serde(rename = "sslPolicy")]
-    pub r#ssl_policy: Box<Option<super::super::types::network::ApplicationGatewaySslProfileSslPolicy>>,
+    pub r#ssl_policy: Option<Box<super::super::types::network::ApplicationGatewaySslProfileSslPolicy>>,
     /// The name of the Trusted Client Certificate that will be used to authenticate requests from clients.
     #[builder(into)]
     #[serde(rename = "trustedClientCertificateNames")]

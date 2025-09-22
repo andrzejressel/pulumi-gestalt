@@ -6,7 +6,7 @@ pub struct AgentDataSourceDataSourceConfiguration {
     /// Details about the configuration of the S3 object containing the data source. See `s3_data_source_configuration` block for details.
     #[builder(into)]
     #[serde(rename = "s3Configuration")]
-    pub r#s_3_configuration: Box<Option<super::super::types::bedrock::AgentDataSourceDataSourceConfigurationS3Configuration>>,
+    pub r#s_3_configuration: Option<Box<super::super::types::bedrock::AgentDataSourceDataSourceConfigurationS3Configuration>>,
     /// Type of storage for the data source. Valid values: `S3`.
     #[builder(into)]
     #[serde(rename = "type")]

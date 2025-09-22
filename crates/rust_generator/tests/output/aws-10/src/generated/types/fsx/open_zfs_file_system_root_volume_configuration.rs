@@ -14,7 +14,7 @@ pub struct OpenZfsFileSystemRootVolumeConfiguration {
     /// NFS export configuration for the root volume. Exactly 1 item. See `nfs_exports` Block for details.
     #[builder(into)]
     #[serde(rename = "nfsExports")]
-    pub r#nfs_exports: Box<Option<super::super::types::fsx::OpenZfsFileSystemRootVolumeConfigurationNfsExports>>,
+    pub r#nfs_exports: Option<Box<super::super::types::fsx::OpenZfsFileSystemRootVolumeConfigurationNfsExports>>,
     /// specifies whether the volume is read-only. Default is false.
     #[builder(into)]
     #[serde(rename = "readOnly")]

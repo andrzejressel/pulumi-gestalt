@@ -17,7 +17,7 @@ pub struct ControlControlMappingSource {
     /// The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. See `source_keyword` below.
     #[builder(into)]
     #[serde(rename = "sourceKeyword")]
-    pub r#source_keyword: Box<Option<super::super::types::auditmanager::ControlControlMappingSourceSourceKeyword>>,
+    pub r#source_keyword: Option<Box<super::super::types::auditmanager::ControlControlMappingSourceSourceKeyword>>,
     /// Name of the source.
     #[builder(into)]
     #[serde(rename = "sourceName")]

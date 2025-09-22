@@ -14,7 +14,7 @@ pub struct CapacityProviderAutoScalingGroupProvider {
     /// Configuration block defining the parameters of the auto scaling. Detailed below.
     #[builder(into)]
     #[serde(rename = "managedScaling")]
-    pub r#managed_scaling: Box<Option<super::super::types::ecs::CapacityProviderAutoScalingGroupProviderManagedScaling>>,
+    pub r#managed_scaling: Option<Box<super::super::types::ecs::CapacityProviderAutoScalingGroupProviderManagedScaling>>,
     /// Enables or disables container-aware termination of instances in the auto scaling group when scale-in happens. Valid values are `ENABLED` and `DISABLED`.
     #[builder(into)]
     #[serde(rename = "managedTerminationProtection")]

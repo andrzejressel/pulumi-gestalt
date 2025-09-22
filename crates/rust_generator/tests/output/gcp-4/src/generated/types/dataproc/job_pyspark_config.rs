@@ -22,7 +22,7 @@ pub struct JobPysparkConfig {
     /// The runtime logging config of the job
     #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Box<Option<super::super::types::dataproc::JobPysparkConfigLoggingConfig>>,
+    pub r#logging_config: Option<Box<super::super::types::dataproc::JobPysparkConfigLoggingConfig>>,
     /// The HCFS URI of the main Python file to use as the driver. Must be a .py file.
     #[builder(into)]
     #[serde(rename = "mainPythonFileUri")]

@@ -6,7 +6,7 @@ pub struct IntegrationRuntimeSsisExpressCustomSetupCommandKey {
     /// A `key_vault_secret_reference` block as defined below.
     #[builder(into)]
     #[serde(rename = "keyVaultPassword")]
-    pub r#key_vault_password: Box<Option<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupCommandKeyKeyVaultPassword>>,
+    pub r#key_vault_password: Option<Box<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupCommandKeyKeyVaultPassword>>,
     /// The password for the target device.
     #[builder(into)]
     #[serde(rename = "password")]

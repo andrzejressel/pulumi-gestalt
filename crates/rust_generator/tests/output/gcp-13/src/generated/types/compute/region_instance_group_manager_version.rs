@@ -17,5 +17,5 @@ pub struct RegionInstanceGroupManagerVersion {
     /// constraints of every other `version`, and any remaining instances will be provisioned with the version where `target_size` is unset.
     #[builder(into)]
     #[serde(rename = "targetSize")]
-    pub r#target_size: Box<Option<super::super::types::compute::RegionInstanceGroupManagerVersionTargetSize>>,
+    pub r#target_size: Option<Box<super::super::types::compute::RegionInstanceGroupManagerVersionTargetSize>>,
 }

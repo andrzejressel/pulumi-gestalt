@@ -6,7 +6,7 @@ pub struct ApplicationInitialCapacity {
     /// The initial capacity configuration per worker.
     #[builder(into)]
     #[serde(rename = "initialCapacityConfig")]
-    pub r#initial_capacity_config: Box<Option<super::super::types::emrserverless::ApplicationInitialCapacityInitialCapacityConfig>>,
+    pub r#initial_capacity_config: Option<Box<super::super::types::emrserverless::ApplicationInitialCapacityInitialCapacityConfig>>,
     /// The worker type for an analytics framework. For Spark applications, the key can either be set to `Driver` or `Executor`. For Hive applications, it can be set to `HiveDriver` or `TezTask`.
     #[builder(into)]
     #[serde(rename = "initialCapacityType")]

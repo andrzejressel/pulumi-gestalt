@@ -23,5 +23,5 @@ pub struct RestorePlanRestoreConfigTransformationRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "resourceFilter")]
-    pub r#resource_filter: Box<Option<super::super::types::gkebackup::RestorePlanRestoreConfigTransformationRuleResourceFilter>>,
+    pub r#resource_filter: Option<Box<super::super::types::gkebackup::RestorePlanRestoreConfigTransformationRuleResourceFilter>>,
 }

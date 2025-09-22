@@ -6,13 +6,13 @@ pub struct ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverCondition
     /// MediaLive will perform a failover if the specified audio selector is silent for the specified period. See Audio Silence Failover Settings for more details.
     #[builder(into)]
     #[serde(rename = "audioSilenceSettings")]
-    pub r#audio_silence_settings: Box<Option<super::super::types::medialive::ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsAudioSilenceSettings>>,
+    pub r#audio_silence_settings: Option<Box<super::super::types::medialive::ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsAudioSilenceSettings>>,
     /// MediaLive will perform a failover if content is not detected in this input for the specified period. See Input Loss Failover Settings for more details.
     #[builder(into)]
     #[serde(rename = "inputLossSettings")]
-    pub r#input_loss_settings: Box<Option<super::super::types::medialive::ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsInputLossSettings>>,
+    pub r#input_loss_settings: Option<Box<super::super::types::medialive::ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsInputLossSettings>>,
     /// MediaLive will perform a failover if content is considered black for the specified period. See Video Black Failover Settings for more details.
     #[builder(into)]
     #[serde(rename = "videoBlackSettings")]
-    pub r#video_black_settings: Box<Option<super::super::types::medialive::ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsVideoBlackSettings>>,
+    pub r#video_black_settings: Option<Box<super::super::types::medialive::ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsVideoBlackSettings>>,
 }

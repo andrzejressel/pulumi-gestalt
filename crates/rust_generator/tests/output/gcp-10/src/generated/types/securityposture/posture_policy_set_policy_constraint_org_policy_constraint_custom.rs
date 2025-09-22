@@ -7,7 +7,7 @@ pub struct PosturePolicySetPolicyConstraintOrgPolicyConstraintCustom {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customConstraint")]
-    pub r#custom_constraint: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint>>,
+    pub r#custom_constraint: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraintCustomCustomConstraint>>,
     /// Definition of policy rules
     /// Structure is documented below.
     #[builder(into)]

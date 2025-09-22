@@ -6,7 +6,7 @@ pub struct GatewayRouteSpecHttp2RouteMatchQueryParameter {
     /// The query parameter to match on.
     #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttp2RouteMatchQueryParameterMatch>>,
+    pub r#match_: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttp2RouteMatchQueryParameterMatch>>,
     /// Name for the query parameter that will be matched on.
     #[builder(into)]
     #[serde(rename = "name")]

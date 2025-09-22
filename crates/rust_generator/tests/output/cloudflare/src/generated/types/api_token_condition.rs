@@ -6,5 +6,5 @@ pub struct ApiTokenCondition {
     /// Request IP related conditions.
     #[builder(into)]
     #[serde(rename = "requestIp")]
-    pub r#request_ip: Box<Option<super::types::ApiTokenConditionRequestIp>>,
+    pub r#request_ip: Option<Box<super::types::ApiTokenConditionRequestIp>>,
 }

@@ -14,9 +14,9 @@ pub struct V2ModelsIntentFulfillmentCodeHook {
     /// Configuration block for settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations. See `fulfillment_updates_specification`.
     #[builder(into)]
     #[serde(rename = "fulfillmentUpdatesSpecification")]
-    pub r#fulfillment_updates_specification: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecification>>,
+    pub r#fulfillment_updates_specification: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecification>>,
     /// Configuration block for settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations. See `post_fulfillment_status_specification`.
     #[builder(into)]
     #[serde(rename = "postFulfillmentStatusSpecification")]
-    pub r#post_fulfillment_status_specification: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecification>>,
+    pub r#post_fulfillment_status_specification: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecification>>,
 }

@@ -20,7 +20,7 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "context")]
-    pub r#context: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContext>>,
+    pub r#context: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContext>>,
     /// The key used by the encryption algorithm.
     /// Structure is documented below.
     #[builder(into)]
@@ -42,5 +42,5 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "surrogateInfoType")]
-    pub r#surrogate_info_type: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoType>>,
+    pub r#surrogate_info_type: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoType>>,
 }

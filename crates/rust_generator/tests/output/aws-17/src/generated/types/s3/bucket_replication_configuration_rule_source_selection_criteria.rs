@@ -7,5 +7,5 @@ pub struct BucketReplicationConfigurationRuleSourceSelectionCriteria {
     /// in `destination` must be specified as well.
     #[builder(into)]
     #[serde(rename = "sseKmsEncryptedObjects")]
-    pub r#sse_kms_encrypted_objects: Box<Option<super::super::types::s3::BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects>>,
+    pub r#sse_kms_encrypted_objects: Option<Box<super::super::types::s3::BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects>>,
 }

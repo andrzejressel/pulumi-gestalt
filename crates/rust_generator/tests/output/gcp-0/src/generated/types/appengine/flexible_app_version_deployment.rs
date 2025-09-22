@@ -7,12 +7,12 @@ pub struct FlexibleAppVersionDeployment {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "cloudBuildOptions")]
-    pub r#cloud_build_options: Box<Option<super::super::types::appengine::FlexibleAppVersionDeploymentCloudBuildOptions>>,
+    pub r#cloud_build_options: Option<Box<super::super::types::appengine::FlexibleAppVersionDeploymentCloudBuildOptions>>,
     /// The Docker image for the container that runs the version.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "container")]
-    pub r#container: Box<Option<super::super::types::appengine::FlexibleAppVersionDeploymentContainer>>,
+    pub r#container: Option<Box<super::super::types::appengine::FlexibleAppVersionDeploymentContainer>>,
     /// Manifest of the files stored in Google Cloud Storage that are included as part of this version.
     /// All files must be readable using the credentials supplied with this call.
     /// Structure is documented below.
@@ -23,5 +23,5 @@ pub struct FlexibleAppVersionDeployment {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "zip")]
-    pub r#zip: Box<Option<super::super::types::appengine::FlexibleAppVersionDeploymentZip>>,
+    pub r#zip: Option<Box<super::super::types::appengine::FlexibleAppVersionDeploymentZip>>,
 }

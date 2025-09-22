@@ -10,11 +10,11 @@ pub struct KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigura
     /// Defines the ICMP protocol that consists of the ICMP type and code. Defined below.
     #[builder(into)]
     #[serde(rename = "icmpTypeCode")]
-    pub r#icmp_type_code: Box<Option<super::super::types::finspace::KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationIcmpTypeCode>>,
+    pub r#icmp_type_code: Option<Box<super::super::types::finspace::KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationIcmpTypeCode>>,
     /// Range of ports the rule applies to. Defined below.
     #[builder(into)]
     #[serde(rename = "portRange")]
-    pub r#port_range: Box<Option<super::super::types::finspace::KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationPortRange>>,
+    pub r#port_range: Option<Box<super::super::types::finspace::KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationPortRange>>,
     /// Protocol number. A value of `1` means all the protocols.
     #[builder(into)]
     #[serde(rename = "protocol")]

@@ -22,11 +22,11 @@ pub struct WindowsWebAppSlotSiteConfig {
     /// A `application_stack` block as defined above.
     #[builder(into)]
     #[serde(rename = "applicationStack")]
-    pub r#application_stack: Box<Option<super::super::types::appservice::WindowsWebAppSlotSiteConfigApplicationStack>>,
+    pub r#application_stack: Option<Box<super::super::types::appservice::WindowsWebAppSlotSiteConfigApplicationStack>>,
     /// A `auto_heal_setting` block as defined above. Required with `auto_heal`.
     #[builder(into)]
     #[serde(rename = "autoHealSetting")]
-    pub r#auto_heal_setting: Box<Option<super::super::types::appservice::WindowsWebAppSlotSiteConfigAutoHealSetting>>,
+    pub r#auto_heal_setting: Option<Box<super::super::types::appservice::WindowsWebAppSlotSiteConfigAutoHealSetting>>,
     /// The Windows Web App Slot Name to automatically swap to when deployment to that slot is successfully completed.
     /// 
     /// > **Note:** This must be a valid slot name on the target Windows Web App Slot.
@@ -44,7 +44,7 @@ pub struct WindowsWebAppSlotSiteConfig {
     /// A `cors` block as defined above.
     #[builder(into)]
     #[serde(rename = "cors")]
-    pub r#cors: Box<Option<super::super::types::appservice::WindowsWebAppSlotSiteConfigCors>>,
+    pub r#cors: Option<Box<super::super::types::appservice::WindowsWebAppSlotSiteConfigCors>>,
     /// Specifies a list of Default Documents for the Windows Web App Slot.
     #[builder(into)]
     #[serde(rename = "defaultDocuments")]

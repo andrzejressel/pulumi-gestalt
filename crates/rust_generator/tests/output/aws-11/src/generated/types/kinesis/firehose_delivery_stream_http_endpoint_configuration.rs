@@ -18,7 +18,7 @@ pub struct FirehoseDeliveryStreamHttpEndpointConfiguration {
     /// The CloudWatch Logging Options for the delivery stream. See `cloudwatch_logging_options` block below for details.
     #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptions")]
-    pub r#cloudwatch_logging_options: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptions>>,
+    pub r#cloudwatch_logging_options: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationCloudwatchLoggingOptions>>,
     /// The HTTP endpoint name.
     #[builder(into)]
     #[serde(rename = "name")]
@@ -26,11 +26,11 @@ pub struct FirehoseDeliveryStreamHttpEndpointConfiguration {
     /// The data processing configuration.  See `processing_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "processingConfiguration")]
-    pub r#processing_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfiguration>>,
+    pub r#processing_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationProcessingConfiguration>>,
     /// The request configuration.  See `request_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "requestConfiguration")]
-    pub r#request_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfiguration>>,
+    pub r#request_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfiguration>>,
     /// Total amount of seconds Firehose spends on retries. This duration starts after the initial attempt fails, It does not include the time periods during which Firehose waits for acknowledgment from the specified destination after each attempt. Valid values between `0` and `7200`. Default is `300`.
     #[builder(into)]
     #[serde(rename = "retryDuration")]
@@ -50,7 +50,7 @@ pub struct FirehoseDeliveryStreamHttpEndpointConfiguration {
     /// The Secret Manager Configuration. See `secrets_manager_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "secretsManagerConfiguration")]
-    pub r#secrets_manager_configuration: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationSecretsManagerConfiguration>>,
+    pub r#secrets_manager_configuration: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationSecretsManagerConfiguration>>,
     /// The HTTP endpoint URL to which Kinesis Firehose sends your data.
     #[builder(into)]
     #[serde(rename = "url")]

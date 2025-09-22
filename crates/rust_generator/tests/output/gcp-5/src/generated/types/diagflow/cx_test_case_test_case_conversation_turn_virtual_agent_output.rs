@@ -7,7 +7,7 @@ pub struct CxTestCaseTestCaseConversationTurnVirtualAgentOutput {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "currentPage")]
-    pub r#current_page: Box<Option<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage>>,
+    pub r#current_page: Option<Box<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage>>,
     /// The session parameters available to the bot at this point.
     #[builder(into)]
     #[serde(rename = "sessionParameters")]
@@ -21,5 +21,5 @@ pub struct CxTestCaseTestCaseConversationTurnVirtualAgentOutput {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "triggeredIntent")]
-    pub r#triggered_intent: Box<Option<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent>>,
+    pub r#triggered_intent: Option<Box<super::super::types::diagflow::CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent>>,
 }

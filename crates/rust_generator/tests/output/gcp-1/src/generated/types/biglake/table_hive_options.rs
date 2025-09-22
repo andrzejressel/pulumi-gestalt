@@ -13,7 +13,7 @@ pub struct TableHiveOptions {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "storageDescriptor")]
-    pub r#storage_descriptor: Box<Option<super::super::types::biglake::TableHiveOptionsStorageDescriptor>>,
+    pub r#storage_descriptor: Option<Box<super::super::types::biglake::TableHiveOptionsStorageDescriptor>>,
     /// Hive table type. For example, MANAGED_TABLE, EXTERNAL_TABLE.
     #[builder(into)]
     #[serde(rename = "tableType")]

@@ -10,7 +10,7 @@ pub struct ImageRecipeBlockDeviceMapping {
     /// Configuration block with Elastic Block Storage (EBS) block device mapping settings. Detailed below.
     #[builder(into)]
     #[serde(rename = "ebs")]
-    pub r#ebs: Box<Option<super::super::types::imagebuilder::ImageRecipeBlockDeviceMappingEbs>>,
+    pub r#ebs: Option<Box<super::super::types::imagebuilder::ImageRecipeBlockDeviceMappingEbs>>,
     /// Set to `true` to remove a mapping from the parent image.
     #[builder(into)]
     #[serde(rename = "noDevice")]

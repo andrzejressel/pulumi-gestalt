@@ -6,7 +6,7 @@ pub struct SpaceSpaceSettingsJupyterLabAppSettings {
     /// Settings that are used to configure and manage the lifecycle of JupyterLab applications in a space. See `app_lifecycle_management` Block below.
     #[builder(into)]
     #[serde(rename = "appLifecycleManagement")]
-    pub r#app_lifecycle_management: Box<Option<super::super::types::sagemaker::SpaceSpaceSettingsJupyterLabAppSettingsAppLifecycleManagement>>,
+    pub r#app_lifecycle_management: Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsJupyterLabAppSettingsAppLifecycleManagement>>,
     /// A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application. See `code_repository` Block below.
     #[builder(into)]
     #[serde(rename = "codeRepositories")]

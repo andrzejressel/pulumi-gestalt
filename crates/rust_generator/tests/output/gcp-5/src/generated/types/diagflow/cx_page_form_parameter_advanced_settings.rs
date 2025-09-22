@@ -11,5 +11,5 @@ pub struct CxPageFormParameterAdvancedSettings {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "dtmfSettings")]
-    pub r#dtmf_settings: Box<Option<super::super::types::diagflow::CxPageFormParameterAdvancedSettingsDtmfSettings>>,
+    pub r#dtmf_settings: Option<Box<super::super::types::diagflow::CxPageFormParameterAdvancedSettingsDtmfSettings>>,
 }

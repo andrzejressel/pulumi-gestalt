@@ -6,7 +6,7 @@ pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSet
     /// Settings specific to the container type of the file. See Container Settings for more details.
     #[builder(into)]
     #[serde(rename = "containerSettings")]
-    pub r#container_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettings>>,
+    pub r#container_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettings>>,
     /// Output file extension.
     #[builder(into)]
     #[serde(rename = "extension")]

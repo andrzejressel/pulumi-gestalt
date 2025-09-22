@@ -6,9 +6,9 @@ pub struct WorkteamMemberDefinition {
     /// The Amazon Cognito user group that is part of the work team. See Cognito Member Definition details below.
     #[builder(into)]
     #[serde(rename = "cognitoMemberDefinition")]
-    pub r#cognito_member_definition: Box<Option<super::super::types::sagemaker::WorkteamMemberDefinitionCognitoMemberDefinition>>,
+    pub r#cognito_member_definition: Option<Box<super::super::types::sagemaker::WorkteamMemberDefinitionCognitoMemberDefinition>>,
     /// A list user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. See Cognito Member Definition details below.
     #[builder(into)]
     #[serde(rename = "oidcMemberDefinition")]
-    pub r#oidc_member_definition: Box<Option<super::super::types::sagemaker::WorkteamMemberDefinitionOidcMemberDefinition>>,
+    pub r#oidc_member_definition: Option<Box<super::super::types::sagemaker::WorkteamMemberDefinitionOidcMemberDefinition>>,
 }

@@ -6,7 +6,7 @@ pub struct FlowletDataFlowSource {
     /// A `dataset` block as defined below.
     #[builder(into)]
     #[serde(rename = "dataset")]
-    pub r#dataset: Box<Option<super::super::types::datafactory::FlowletDataFlowSourceDataset>>,
+    pub r#dataset: Option<Box<super::super::types::datafactory::FlowletDataFlowSourceDataset>>,
     /// The description for the Data Flow Source.
     #[builder(into)]
     #[serde(rename = "description")]
@@ -14,11 +14,11 @@ pub struct FlowletDataFlowSource {
     /// A `flowlet` block as defined below.
     #[builder(into)]
     #[serde(rename = "flowlet")]
-    pub r#flowlet: Box<Option<super::super::types::datafactory::FlowletDataFlowSourceFlowlet>>,
+    pub r#flowlet: Option<Box<super::super::types::datafactory::FlowletDataFlowSourceFlowlet>>,
     /// A `linked_service` block as defined below.
     #[builder(into)]
     #[serde(rename = "linkedService")]
-    pub r#linked_service: Box<Option<super::super::types::datafactory::FlowletDataFlowSourceLinkedService>>,
+    pub r#linked_service: Option<Box<super::super::types::datafactory::FlowletDataFlowSourceLinkedService>>,
     /// The name for the Data Flow Source.
     #[builder(into)]
     #[serde(rename = "name")]
@@ -26,9 +26,9 @@ pub struct FlowletDataFlowSource {
     /// A `rejected_linked_service` block as defined below.
     #[builder(into)]
     #[serde(rename = "rejectedLinkedService")]
-    pub r#rejected_linked_service: Box<Option<super::super::types::datafactory::FlowletDataFlowSourceRejectedLinkedService>>,
+    pub r#rejected_linked_service: Option<Box<super::super::types::datafactory::FlowletDataFlowSourceRejectedLinkedService>>,
     /// A `schema_linked_service` block as defined below.
     #[builder(into)]
     #[serde(rename = "schemaLinkedService")]
-    pub r#schema_linked_service: Box<Option<super::super::types::datafactory::FlowletDataFlowSourceSchemaLinkedService>>,
+    pub r#schema_linked_service: Option<Box<super::super::types::datafactory::FlowletDataFlowSourceSchemaLinkedService>>,
 }

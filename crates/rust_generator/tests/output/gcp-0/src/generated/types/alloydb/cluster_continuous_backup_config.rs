@@ -11,7 +11,7 @@ pub struct ClusterContinuousBackupConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "encryptionConfig")]
-    pub r#encryption_config: Box<Option<super::super::types::alloydb::ClusterContinuousBackupConfigEncryptionConfig>>,
+    pub r#encryption_config: Option<Box<super::super::types::alloydb::ClusterContinuousBackupConfigEncryptionConfig>>,
     /// The numbers of days that are eligible to restore from using PITR. To support the entire recovery window, backups and logs are retained for one day more than the recovery window.
     /// If not set, defaults to 14 days.
     #[builder(into)]

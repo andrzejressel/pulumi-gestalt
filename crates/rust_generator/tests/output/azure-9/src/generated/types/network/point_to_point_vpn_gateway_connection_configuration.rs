@@ -14,7 +14,7 @@ pub struct PointToPointVpnGatewayConnectionConfiguration {
     /// A `route` block as defined below.
     #[builder(into)]
     #[serde(rename = "route")]
-    pub r#route: Box<Option<super::super::types::network::PointToPointVpnGatewayConnectionConfigurationRoute>>,
+    pub r#route: Option<Box<super::super::types::network::PointToPointVpnGatewayConnectionConfigurationRoute>>,
     /// A `vpn_client_address_pool` block as defined below.
     #[builder(into)]
     #[serde(rename = "vpnClientAddressPool")]

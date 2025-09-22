@@ -6,7 +6,7 @@ pub struct DefinitionEligibleAuthorization {
     /// A `just_in_time_access_policy` block as defined below.
     #[builder(into)]
     #[serde(rename = "justInTimeAccessPolicy")]
-    pub r#just_in_time_access_policy: Box<Option<super::super::types::lighthouse::DefinitionEligibleAuthorizationJustInTimeAccessPolicy>>,
+    pub r#just_in_time_access_policy: Option<Box<super::super::types::lighthouse::DefinitionEligibleAuthorizationJustInTimeAccessPolicy>>,
     /// The display name of the Azure Active Directory Principal.
     #[builder(into)]
     #[serde(rename = "principalDisplayName")]

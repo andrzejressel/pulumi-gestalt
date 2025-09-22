@@ -6,7 +6,7 @@ pub struct RunBookDraft {
     /// A `publish_content_link` block as defined above.
     #[builder(into)]
     #[serde(rename = "contentLink")]
-    pub r#content_link: Box<Option<super::super::types::automation::RunBookDraftContentLink>>,
+    pub r#content_link: Option<Box<super::super::types::automation::RunBookDraftContentLink>>,
     #[builder(into)]
     #[serde(rename = "creationTime")]
     pub r#creation_time: Option<String>,

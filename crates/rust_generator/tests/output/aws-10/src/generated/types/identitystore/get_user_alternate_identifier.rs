@@ -6,11 +6,11 @@ pub struct GetUserAlternateIdentifier {
     /// Configuration block for filtering by the identifier issued by an external identity provider. Detailed below.
     #[builder(into)]
     #[serde(rename = "externalId")]
-    pub r#external_id: Box<Option<super::super::types::identitystore::GetUserAlternateIdentifierExternalId>>,
+    pub r#external_id: Option<Box<super::super::types::identitystore::GetUserAlternateIdentifierExternalId>>,
     /// An entity attribute that's unique to a specific entity. Detailed below.
     /// 
     /// > Exactly one of the above arguments must be provided.
     #[builder(into)]
     #[serde(rename = "uniqueAttribute")]
-    pub r#unique_attribute: Box<Option<super::super::types::identitystore::GetUserAlternateIdentifierUniqueAttribute>>,
+    pub r#unique_attribute: Option<Box<super::super::types::identitystore::GetUserAlternateIdentifierUniqueAttribute>>,
 }

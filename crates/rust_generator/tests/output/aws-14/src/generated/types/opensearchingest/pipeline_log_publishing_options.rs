@@ -6,7 +6,7 @@ pub struct PipelineLogPublishingOptions {
     /// The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch Logs. This parameter is required if IsLoggingEnabled is set to true. See `cloudwatch_log_destination` below.
     #[builder(into)]
     #[serde(rename = "cloudwatchLogDestination")]
-    pub r#cloudwatch_log_destination: Box<Option<super::super::types::opensearchingest::PipelineLogPublishingOptionsCloudwatchLogDestination>>,
+    pub r#cloudwatch_log_destination: Option<Box<super::super::types::opensearchingest::PipelineLogPublishingOptionsCloudwatchLogDestination>>,
     /// Whether logs should be published.
     #[builder(into)]
     #[serde(rename = "isLoggingEnabled")]

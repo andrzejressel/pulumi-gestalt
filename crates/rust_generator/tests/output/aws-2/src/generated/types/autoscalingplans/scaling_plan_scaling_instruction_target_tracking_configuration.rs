@@ -7,7 +7,7 @@ pub struct ScalingPlanScalingInstructionTargetTrackingConfiguration {
     /// More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CustomizedScalingMetricSpecification.html).
     #[builder(into)]
     #[serde(rename = "customizedScalingMetricSpecification")]
-    pub r#customized_scaling_metric_specification: Box<Option<super::super::types::autoscalingplans::ScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification>>,
+    pub r#customized_scaling_metric_specification: Option<Box<super::super::types::autoscalingplans::ScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecification>>,
     /// Boolean indicating whether scale in by the target tracking scaling policy is disabled. Defaults to `false`.
     #[builder(into)]
     #[serde(rename = "disableScaleIn")]
@@ -21,7 +21,7 @@ pub struct ScalingPlanScalingInstructionTargetTrackingConfiguration {
     /// More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_PredefinedScalingMetricSpecification.html).
     #[builder(into)]
     #[serde(rename = "predefinedScalingMetricSpecification")]
-    pub r#predefined_scaling_metric_specification: Box<Option<super::super::types::autoscalingplans::ScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification>>,
+    pub r#predefined_scaling_metric_specification: Option<Box<super::super::types::autoscalingplans::ScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecification>>,
     /// Amount of time, in seconds, after a scale in activity completes before another scale in activity can start.
     /// This value is not used if the scalable resource is an Auto Scaling group.
     #[builder(into)]

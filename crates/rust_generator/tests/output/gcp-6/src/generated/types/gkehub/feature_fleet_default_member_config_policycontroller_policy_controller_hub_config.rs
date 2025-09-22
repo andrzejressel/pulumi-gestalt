@@ -33,7 +33,7 @@ pub struct FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubCon
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "monitoring")]
-    pub r#monitoring: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigMonitoring>>,
+    pub r#monitoring: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigMonitoring>>,
     /// Enables the ability to mutate resources using Policy Controller.
     #[builder(into)]
     #[serde(rename = "mutationEnabled")]
@@ -42,7 +42,7 @@ pub struct FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubCon
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "policyContent")]
-    pub r#policy_content: Box<Option<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContent>>,
+    pub r#policy_content: Option<Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContent>>,
     /// Enables the ability to use Constraint Templates that reference to objects other than the object currently being evaluated.
     #[builder(into)]
     #[serde(rename = "referentialRulesEnabled")]

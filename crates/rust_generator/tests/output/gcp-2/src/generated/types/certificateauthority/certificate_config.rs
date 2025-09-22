@@ -20,7 +20,7 @@ pub struct CertificateConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "subjectKeyId")]
-    pub r#subject_key_id: Box<Option<super::super::types::certificateauthority::CertificateConfigSubjectKeyId>>,
+    pub r#subject_key_id: Option<Box<super::super::types::certificateauthority::CertificateConfigSubjectKeyId>>,
     /// Describes how some of the technical X.509 fields in a certificate should be populated.
     /// Structure is documented below.
     #[builder(into)]
