@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceCustomDomain {
     /// Domain name
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<Option<String>>,
+    pub r#domain: Option<String>,
     /// (Output)
     /// Status of the custom domain.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

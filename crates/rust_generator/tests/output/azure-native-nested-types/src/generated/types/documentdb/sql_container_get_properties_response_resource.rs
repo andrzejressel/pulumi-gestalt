@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SqlContainerGetPropertiesResponseResource {
     /// The configuration of the indexing policy. By default, the indexing is automatic for all document paths within the container
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "indexingPolicy")]
-    pub r#indexing_policy: Box<Option<super::super::types::documentdb::IndexingPolicyResponse>>,
+    pub r#indexing_policy: Option<Box<super::super::types::documentdb::IndexingPolicyResponse>>,
 }

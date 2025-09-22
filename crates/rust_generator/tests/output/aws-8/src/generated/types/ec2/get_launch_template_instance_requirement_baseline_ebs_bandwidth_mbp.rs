@@ -5,8 +5,8 @@
 pub struct GetLaunchTemplateInstanceRequirementBaselineEbsBandwidthMbp {
     #[builder(into)]
     #[serde(rename = "max")]
-    pub r#max: Box<i32>,
+    pub r#max: i32,
     #[builder(into)]
     #[serde(rename = "min")]
-    pub r#min: Box<i32>,
+    pub r#min: i32,
 }

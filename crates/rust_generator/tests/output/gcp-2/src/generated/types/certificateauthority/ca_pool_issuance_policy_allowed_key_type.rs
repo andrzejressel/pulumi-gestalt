@@ -5,12 +5,12 @@
 pub struct CaPoolIssuancePolicyAllowedKeyType {
     /// Represents an allowed Elliptic Curve key type.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ellipticCurve")]
-    pub r#elliptic_curve: Box<Option<super::super::types::certificateauthority::CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve>>,
+    pub r#elliptic_curve: Option<Box<super::super::types::certificateauthority::CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve>>,
     /// Describes an RSA key that may be used in a Certificate issued from a CaPool.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rsa")]
-    pub r#rsa: Box<Option<super::super::types::certificateauthority::CaPoolIssuancePolicyAllowedKeyTypeRsa>>,
+    pub r#rsa: Option<Box<super::super::types::certificateauthority::CaPoolIssuancePolicyAllowedKeyTypeRsa>>,
 }

@@ -6,17 +6,17 @@ pub struct GetScriptDagNode {
     /// Nested configuration an argument or property of a node. Defined below.
     #[builder(into)]
     #[serde(rename = "args")]
-    pub r#args: Box<Vec<super::super::types::glue::GetScriptDagNodeArg>>,
+    pub r#args: Vec<super::super::types::glue::GetScriptDagNodeArg>,
     /// Node identifier that is unique within the node's graph.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Line number of the node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lineNumber")]
-    pub r#line_number: Box<Option<i32>>,
+    pub r#line_number: Option<i32>,
     /// Type of node this is.
     #[builder(into)]
     #[serde(rename = "nodeType")]
-    pub r#node_type: Box<String>,
+    pub r#node_type: String,
 }

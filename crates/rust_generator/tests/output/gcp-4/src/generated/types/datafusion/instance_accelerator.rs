@@ -7,10 +7,10 @@ pub struct InstanceAccelerator {
     /// Possible values are: `CDC`, `HEALTHCARE`, `CCAI_INSIGHTS`.
     #[builder(into)]
     #[serde(rename = "acceleratorType")]
-    pub r#accelerator_type: Box<String>,
+    pub r#accelerator_type: String,
     /// The type of an accelator for a CDF instance.
     /// Possible values are: `ENABLED`, `DISABLED`.
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

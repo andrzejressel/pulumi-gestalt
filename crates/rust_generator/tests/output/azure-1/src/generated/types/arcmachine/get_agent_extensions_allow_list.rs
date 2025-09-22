@@ -6,9 +6,9 @@ pub struct GetAgentExtensionsAllowList {
     /// Publisher of the extension.
     #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<String>,
+    pub r#publisher: String,
     /// The identity type.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

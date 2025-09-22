@@ -9,12 +9,12 @@ pub struct GetClusterNodeTypeConfig {
     /// Once the customer is created then corecount cannot be changed.
     #[builder(into)]
     #[serde(rename = "customCoreCount")]
-    pub r#custom_core_count: Box<i32>,
+    pub r#custom_core_count: i32,
     /// The number of nodes of this type in the cluster.
     #[builder(into)]
     #[serde(rename = "nodeCount")]
-    pub r#node_count: Box<i32>,
+    pub r#node_count: i32,
     #[builder(into)]
     #[serde(rename = "nodeTypeId")]
-    pub r#node_type_id: Box<String>,
+    pub r#node_type_id: String,
 }

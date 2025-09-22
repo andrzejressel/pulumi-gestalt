@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceNetworkConfiguration {
     /// Network configuration settings for outbound message traffic. See Egress Configuration below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "egressConfiguration")]
-    pub r#egress_configuration: Box<Option<super::super::types::apprunner::ServiceNetworkConfigurationEgressConfiguration>>,
+    pub r#egress_configuration: Option<Box<super::super::types::apprunner::ServiceNetworkConfigurationEgressConfiguration>>,
     /// Network configuration settings for inbound network traffic. See Ingress Configuration below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ingressConfiguration")]
-    pub r#ingress_configuration: Box<Option<super::super::types::apprunner::ServiceNetworkConfigurationIngressConfiguration>>,
+    pub r#ingress_configuration: Option<Box<super::super::types::apprunner::ServiceNetworkConfigurationIngressConfiguration>>,
     /// App Runner provides you with the option to choose between Internet Protocol version 4 (IPv4) and dual stack (IPv4 and IPv6) for your incoming public network configuration. Valid values: `IPV4`, `DUAL_STACK`. Default: `IPV4`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddressType")]
-    pub r#ip_address_type: Box<Option<String>>,
+    pub r#ip_address_type: Option<String>,
 }

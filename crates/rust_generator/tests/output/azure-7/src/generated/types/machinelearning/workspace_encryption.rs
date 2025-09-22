@@ -6,15 +6,15 @@ pub struct WorkspaceEncryption {
     /// The Key Vault URI to access the encryption key.
     #[builder(into)]
     #[serde(rename = "keyId")]
-    pub r#key_id: Box<String>,
+    pub r#key_id: String,
     /// The ID of the keyVault where the customer owned encryption key is present.
     #[builder(into)]
     #[serde(rename = "keyVaultId")]
-    pub r#key_vault_id: Box<String>,
+    pub r#key_vault_id: String,
     /// The Key Vault URI to access the encryption key.
     /// 
     /// > **Note:** `user_assigned_identity_id` must set when`identity.type` is `UserAssigned` or service won't be able to find the assigned permissions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userAssignedIdentityId")]
-    pub r#user_assigned_identity_id: Box<Option<String>>,
+    pub r#user_assigned_identity_id: Option<String>,
 }

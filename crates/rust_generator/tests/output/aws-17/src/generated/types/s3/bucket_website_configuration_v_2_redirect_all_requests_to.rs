@@ -6,9 +6,9 @@ pub struct BucketWebsiteConfigurationV2RedirectAllRequestsTo {
     /// Name of the host where requests are redirected.
     #[builder(into)]
     #[serde(rename = "hostName")]
-    pub r#host_name: Box<String>,
+    pub r#host_name: String,
     /// Protocol to use when redirecting requests. The default is the protocol that is used in the original request. Valid values: `http`, `https`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
+    pub r#protocol: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListenerRuleConditionQueryString {
     /// Query string key pattern to match.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<String>>,
+    pub r#key: Option<String>,
     /// Query string value pattern to match.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

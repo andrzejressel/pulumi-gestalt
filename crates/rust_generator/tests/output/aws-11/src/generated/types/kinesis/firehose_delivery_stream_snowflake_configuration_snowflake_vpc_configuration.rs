@@ -6,5 +6,5 @@ pub struct FirehoseDeliveryStreamSnowflakeConfigurationSnowflakeVpcConfiguration
     /// The VPCE ID for Firehose to privately connect with Snowflake.
     #[builder(into)]
     #[serde(rename = "privateLinkVpceId")]
-    pub r#private_link_vpce_id: Box<String>,
+    pub r#private_link_vpce_id: String,
 }

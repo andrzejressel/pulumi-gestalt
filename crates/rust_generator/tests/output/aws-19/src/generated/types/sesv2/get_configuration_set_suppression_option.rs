@@ -6,5 +6,5 @@ pub struct GetConfigurationSetSuppressionOption {
     /// A list that contains the reasons that email addresses are automatically added to the suppression list for your account.
     #[builder(into)]
     #[serde(rename = "suppressedReasons")]
-    pub r#suppressed_reasons: Box<Vec<String>>,
+    pub r#suppressed_reasons: Vec<String>,
 }

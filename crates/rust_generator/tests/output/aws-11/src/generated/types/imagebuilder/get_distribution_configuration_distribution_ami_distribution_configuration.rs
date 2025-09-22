@@ -6,25 +6,25 @@ pub struct GetDistributionConfigurationDistributionAmiDistributionConfiguration 
     /// Key-value map of tags to apply to distributed AMI.
     #[builder(into)]
     #[serde(rename = "amiTags")]
-    pub r#ami_tags: Box<std::collections::HashMap<String, String>>,
+    pub r#ami_tags: std::collections::HashMap<String, String>,
     /// Description of the container distribution configuration.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// ARN of Key Management Service (KMS) Key to encrypt AMI.
     #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<String>,
+    pub r#kms_key_id: String,
     /// Nested list of EC2 launch permissions.
     #[builder(into)]
     #[serde(rename = "launchPermissions")]
-    pub r#launch_permissions: Box<Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission>>,
+    pub r#launch_permissions: Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission>,
     /// Name of the distribution configuration.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Set of target AWS Account identifiers.
     #[builder(into)]
     #[serde(rename = "targetAccountIds")]
-    pub r#target_account_ids: Box<Vec<String>>,
+    pub r#target_account_ids: Vec<String>,
 }

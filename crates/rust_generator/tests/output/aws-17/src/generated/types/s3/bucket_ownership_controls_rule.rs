@@ -9,5 +9,5 @@ pub struct BucketOwnershipControlsRule {
     /// * `BucketOwnerEnforced` - Bucket owner automatically owns and has full control over every object in the bucket. ACLs no longer affect permissions to data in the S3 bucket.
     #[builder(into)]
     #[serde(rename = "objectOwnership")]
-    pub r#object_ownership: Box<String>,
+    pub r#object_ownership: String,
 }

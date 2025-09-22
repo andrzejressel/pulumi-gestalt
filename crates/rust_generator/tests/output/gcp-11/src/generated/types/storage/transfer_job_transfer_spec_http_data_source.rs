@@ -6,5 +6,5 @@ pub struct TransferJobTransferSpecHttpDataSource {
     /// The URL that points to the file that stores the object list entries. This file must allow public access. Currently, only URLs with HTTP and HTTPS schemes are supported.
     #[builder(into)]
     #[serde(rename = "listUrl")]
-    pub r#list_url: Box<String>,
+    pub r#list_url: String,
 }

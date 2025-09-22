@@ -6,5 +6,5 @@ pub struct GetKubernetesClusterLinuxProfileSshKey {
     /// The Public SSH Key used to access the cluster.
     #[builder(into)]
     #[serde(rename = "keyData")]
-    pub r#key_data: Box<String>,
+    pub r#key_data: String,
 }

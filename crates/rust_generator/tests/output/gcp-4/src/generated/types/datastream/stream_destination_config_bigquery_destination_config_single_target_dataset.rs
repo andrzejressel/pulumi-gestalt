@@ -7,5 +7,5 @@ pub struct StreamDestinationConfigBigqueryDestinationConfigSingleTargetDataset {
     /// {project}:{dataset_id}
     #[builder(into)]
     #[serde(rename = "datasetId")]
-    pub r#dataset_id: Box<String>,
+    pub r#dataset_id: String,
 }

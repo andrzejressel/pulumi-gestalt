@@ -6,29 +6,29 @@ pub struct GetDistributionConfigurationDistribution {
     /// Nested list of AMI distribution configuration.
     #[builder(into)]
     #[serde(rename = "amiDistributionConfigurations")]
-    pub r#ami_distribution_configurations: Box<Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionAmiDistributionConfiguration>>,
+    pub r#ami_distribution_configurations: Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionAmiDistributionConfiguration>,
     /// Nested list of container distribution configurations.
     #[builder(into)]
     #[serde(rename = "containerDistributionConfigurations")]
-    pub r#container_distribution_configurations: Box<Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionContainerDistributionConfiguration>>,
+    pub r#container_distribution_configurations: Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionContainerDistributionConfiguration>,
     /// Nested list of Windows faster-launching configurations to use for AMI distribution.
     #[builder(into)]
     #[serde(rename = "fastLaunchConfigurations")]
-    pub r#fast_launch_configurations: Box<Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionFastLaunchConfiguration>>,
+    pub r#fast_launch_configurations: Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionFastLaunchConfiguration>,
     /// Nested list of launch template configurations.
     #[builder(into)]
     #[serde(rename = "launchTemplateConfigurations")]
-    pub r#launch_template_configurations: Box<Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionLaunchTemplateConfiguration>>,
+    pub r#launch_template_configurations: Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionLaunchTemplateConfiguration>,
     /// Set of Amazon Resource Names (ARNs) of License Manager License Configurations.
     #[builder(into)]
     #[serde(rename = "licenseConfigurationArns")]
-    pub r#license_configuration_arns: Box<Vec<String>>,
+    pub r#license_configuration_arns: Vec<String>,
     /// AWS Region of distribution.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
     /// Nested list of S3 export configuration.
     #[builder(into)]
     #[serde(rename = "s3ExportConfigurations")]
-    pub r#s_3_export_configurations: Box<Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionS3ExportConfiguration>>,
+    pub r#s_3_export_configurations: Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionS3ExportConfiguration>,
 }

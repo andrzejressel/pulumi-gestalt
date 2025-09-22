@@ -6,9 +6,9 @@ pub struct GuardrailContextualGroundingPolicyConfigFiltersConfig {
     /// The threshold for this filter.
     #[builder(into)]
     #[serde(rename = "threshold")]
-    pub r#threshold: Box<f64>,
+    pub r#threshold: f64,
     /// Type of contextual grounding filter.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

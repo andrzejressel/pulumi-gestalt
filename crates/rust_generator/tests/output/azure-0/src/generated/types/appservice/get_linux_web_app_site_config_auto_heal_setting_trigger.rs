@@ -6,17 +6,17 @@ pub struct GetLinuxWebAppSiteConfigAutoHealSettingTrigger {
     /// A `requests` block as defined above.
     #[builder(into)]
     #[serde(rename = "requests")]
-    pub r#requests: Box<Vec<super::super::types::appservice::GetLinuxWebAppSiteConfigAutoHealSettingTriggerRequest>>,
+    pub r#requests: Vec<super::super::types::appservice::GetLinuxWebAppSiteConfigAutoHealSettingTriggerRequest>,
     /// (Optional) One or more `slow_request_with_path` blocks as defined above.
     #[builder(into)]
     #[serde(rename = "slowRequestWithPaths")]
-    pub r#slow_request_with_paths: Box<Vec<super::super::types::appservice::GetLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestWithPath>>,
+    pub r#slow_request_with_paths: Vec<super::super::types::appservice::GetLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestWithPath>,
     /// A `slow_request` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "slowRequests")]
-    pub r#slow_requests: Box<Option<Vec<super::super::types::appservice::GetLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest>>>,
+    pub r#slow_requests: Option<Vec<super::super::types::appservice::GetLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest>>,
     /// A `status_code` block as defined above.
     #[builder(into)]
     #[serde(rename = "statusCodes")]
-    pub r#status_codes: Box<Vec<super::super::types::appservice::GetLinuxWebAppSiteConfigAutoHealSettingTriggerStatusCode>>,
+    pub r#status_codes: Vec<super::super::types::appservice::GetLinuxWebAppSiteConfigAutoHealSettingTriggerStatusCode>,
 }

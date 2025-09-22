@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterAutomatedBackupPolicyWeeklyScheduleStartTime {
     /// Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hours")]
-    pub r#hours: Box<Option<i32>>,
+    pub r#hours: Option<i32>,
     /// Minutes of hour of day. Currently, only the value 0 is supported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minutes")]
-    pub r#minutes: Box<Option<i32>>,
+    pub r#minutes: Option<i32>,
     /// Fractions of seconds in nanoseconds. Currently, only the value 0 is supported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nanos")]
-    pub r#nanos: Box<Option<i32>>,
+    pub r#nanos: Option<i32>,
     /// Seconds of minutes of the time. Currently, only the value 0 is supported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "seconds")]
-    pub r#seconds: Box<Option<i32>>,
+    pub r#seconds: Option<i32>,
 }

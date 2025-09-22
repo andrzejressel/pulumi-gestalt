@@ -6,17 +6,17 @@ pub struct VpnGatewayBgpSettingsInstance0BgpPeeringAddress {
     /// A list of custom BGP peering addresses to assign to this instance.
     #[builder(into)]
     #[serde(rename = "customIps")]
-    pub r#custom_ips: Box<Vec<String>>,
+    pub r#custom_ips: Vec<String>,
     /// The list of default BGP peering addresses which belong to the pre-defined VPN Gateway IP configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultIps")]
-    pub r#default_ips: Box<Option<Vec<String>>>,
+    pub r#default_ips: Option<Vec<String>>,
     /// The pre-defined id of VPN Gateway IP Configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipConfigurationId")]
-    pub r#ip_configuration_id: Box<Option<String>>,
+    pub r#ip_configuration_id: Option<String>,
     /// The list of tunnel public IP addresses which belong to the pre-defined VPN Gateway IP configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tunnelIps")]
-    pub r#tunnel_ips: Box<Option<Vec<String>>>,
+    pub r#tunnel_ips: Option<Vec<String>>,
 }

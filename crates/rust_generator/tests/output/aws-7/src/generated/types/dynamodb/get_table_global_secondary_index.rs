@@ -5,24 +5,24 @@
 pub struct GetTableGlobalSecondaryIndex {
     #[builder(into)]
     #[serde(rename = "hashKey")]
-    pub r#hash_key: Box<String>,
+    pub r#hash_key: String,
     /// Name of the DynamoDB table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "nonKeyAttributes")]
-    pub r#non_key_attributes: Box<Vec<String>>,
+    pub r#non_key_attributes: Vec<String>,
     #[builder(into)]
     #[serde(rename = "projectionType")]
-    pub r#projection_type: Box<String>,
+    pub r#projection_type: String,
     #[builder(into)]
     #[serde(rename = "rangeKey")]
-    pub r#range_key: Box<String>,
+    pub r#range_key: String,
     #[builder(into)]
     #[serde(rename = "readCapacity")]
-    pub r#read_capacity: Box<i32>,
+    pub r#read_capacity: i32,
     #[builder(into)]
     #[serde(rename = "writeCapacity")]
-    pub r#write_capacity: Box<i32>,
+    pub r#write_capacity: i32,
 }

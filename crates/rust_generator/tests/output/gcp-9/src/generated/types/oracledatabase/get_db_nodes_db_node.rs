@@ -6,8 +6,8 @@ pub struct GetDbNodesDbNode {
     /// The dbnode name
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Vec<super::super::types::oracledatabase::GetDbNodesDbNodeProperty>>,
+    pub r#properties: Vec<super::super::types::oracledatabase::GetDbNodesDbNodeProperty>,
 }

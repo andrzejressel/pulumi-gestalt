@@ -8,7 +8,7 @@ pub struct GetRegionNetworkEndpointGroupAppEngine {
     /// Example value: "default", "my-service".
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
     /// A template to parse service and version fields from a request URL.
     /// URL mask allows for routing to multiple App Engine services without
     /// having to create multiple Network Endpoint Groups and backend services.
@@ -19,11 +19,11 @@ pub struct GetRegionNetworkEndpointGroupAppEngine {
     /// them to { service = "foo1", version = "v1" } and { service = "foo1", version = "v2" } respectively.
     #[builder(into)]
     #[serde(rename = "urlMask")]
-    pub r#url_mask: Box<String>,
+    pub r#url_mask: String,
     /// Optional serving version.
     /// The version must be 1-63 characters long, and comply with RFC1035.
     /// Example value: "v1", "v2".
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

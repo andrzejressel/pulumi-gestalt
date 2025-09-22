@@ -6,11 +6,11 @@ pub struct GetVirtualNetworkGatewayVpnClientConfigurationRootCertificate {
     /// Specifies the name of the Virtual Network Gateway.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The public certificate of the root certificate
     /// authority. The certificate must be provided in Base-64 encoded X.509 format
     /// (PEM).
     #[builder(into)]
     #[serde(rename = "publicCertData")]
-    pub r#public_cert_data: Box<String>,
+    pub r#public_cert_data: String,
 }

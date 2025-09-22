@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentConfigWorkloadsConfigWorker {
     /// CPU request and limit for a single Airflow worker replica.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<Option<f64>>,
+    pub r#cpu: Option<f64>,
     /// Maximum number of workers for autoscaling.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxCount")]
-    pub r#max_count: Box<Option<i32>>,
+    pub r#max_count: Option<i32>,
     /// Memory (GB) request and limit for a single Airflow worker replica.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "memoryGb")]
-    pub r#memory_gb: Box<Option<f64>>,
+    pub r#memory_gb: Option<f64>,
     /// Minimum number of workers for autoscaling.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minCount")]
-    pub r#min_count: Box<Option<i32>>,
+    pub r#min_count: Option<i32>,
     /// Storage (GB) request and limit for a single Airflow worker replica.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageGb")]
-    pub r#storage_gb: Box<Option<f64>>,
+    pub r#storage_gb: Option<f64>,
 }

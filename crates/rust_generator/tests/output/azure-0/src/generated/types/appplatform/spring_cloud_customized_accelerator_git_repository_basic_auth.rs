@@ -6,9 +6,9 @@ pub struct SpringCloudCustomizedAcceleratorGitRepositoryBasicAuth {
     /// Specifies the password of git repository basic auth.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// Specifies the username of git repository basic auth.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

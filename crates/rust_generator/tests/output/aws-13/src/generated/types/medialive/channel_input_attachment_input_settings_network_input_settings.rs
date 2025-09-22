@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelInputAttachmentInputSettingsNetworkInputSettings {
     /// Specifies HLS input settings when the uri is for a HLS manifest. See HLS Input Settings for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hlsInputSettings")]
-    pub r#hls_input_settings: Box<Option<super::super::types::medialive::ChannelInputAttachmentInputSettingsNetworkInputSettingsHlsInputSettings>>,
+    pub r#hls_input_settings: Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsNetworkInputSettingsHlsInputSettings>>,
     /// Check HTTPS server certificates.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serverValidation")]
-    pub r#server_validation: Box<Option<String>>,
+    pub r#server_validation: Option<String>,
 }

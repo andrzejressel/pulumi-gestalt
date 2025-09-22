@@ -4,33 +4,33 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumn {
     /// Column collation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "collation")]
-    pub r#collation: Box<Option<String>>,
+    pub r#collation: Option<String>,
     /// Column name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "column")]
-    pub r#column: Box<Option<String>>,
+    pub r#column: Option<String>,
     /// The MySQL data type. Full data types list can be found here:
     /// https://dev.mysql.com/doc/refman/8.0/en/data-types.html
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataType")]
-    pub r#data_type: Box<Option<String>>,
+    pub r#data_type: Option<String>,
     /// (Output)
     /// Column length.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "length")]
-    pub r#length: Box<Option<i32>>,
+    pub r#length: Option<i32>,
     /// Whether or not the column can accept a null value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nullable")]
-    pub r#nullable: Box<Option<bool>>,
+    pub r#nullable: Option<bool>,
     /// The ordinal position of the column in the table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ordinalPosition")]
-    pub r#ordinal_position: Box<Option<i32>>,
+    pub r#ordinal_position: Option<i32>,
     /// Whether or not the column represents a primary key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primaryKey")]
-    pub r#primary_key: Box<Option<bool>>,
+    pub r#primary_key: Option<bool>,
 }

@@ -5,7 +5,7 @@
 pub struct HealthCheckLogConfig {
     /// Indicates whether or not to export logs. This is false by default,
     /// which means no health check logging will be done.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<Option<bool>>,
+    pub r#enable: Option<bool>,
 }

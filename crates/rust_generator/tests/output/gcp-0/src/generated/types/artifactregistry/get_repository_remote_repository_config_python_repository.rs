@@ -6,9 +6,9 @@ pub struct GetRepositoryRemoteRepositoryConfigPythonRepository {
     /// [Deprecated, please use commonRepository instead] Settings for a remote repository with a custom uri.
     #[builder(into)]
     #[serde(rename = "customRepositories")]
-    pub r#custom_repositories: Box<Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigPythonRepositoryCustomRepository>>,
+    pub r#custom_repositories: Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigPythonRepositoryCustomRepository>,
     /// Address of the remote repository. Default value: "PYPI" Possible values: ["PYPI"]
     #[builder(into)]
     #[serde(rename = "publicRepository")]
-    pub r#public_repository: Box<String>,
+    pub r#public_repository: String,
 }

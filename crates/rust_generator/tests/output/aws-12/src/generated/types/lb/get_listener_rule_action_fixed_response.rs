@@ -6,13 +6,13 @@ pub struct GetListenerRuleActionFixedResponse {
     /// Content type of the response.
     #[builder(into)]
     #[serde(rename = "contentType")]
-    pub r#content_type: Box<String>,
+    pub r#content_type: String,
     /// Message body of the response.
     #[builder(into)]
     #[serde(rename = "messageBody")]
-    pub r#message_body: Box<String>,
+    pub r#message_body: String,
     /// The HTTP redirect code.
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<String>,
+    pub r#status_code: String,
 }

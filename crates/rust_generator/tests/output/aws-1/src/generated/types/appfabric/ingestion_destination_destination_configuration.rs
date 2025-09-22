@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IngestionDestinationDestinationConfiguration {
     /// Contains information about an audit log processing configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "auditLog")]
-    pub r#audit_log: Box<Option<super::super::types::appfabric::IngestionDestinationDestinationConfigurationAuditLog>>,
+    pub r#audit_log: Option<Box<super::super::types::appfabric::IngestionDestinationDestinationConfigurationAuditLog>>,
 }

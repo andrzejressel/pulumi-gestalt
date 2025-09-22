@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListingRestrictedExportConfig {
     /// If true, enable restricted export.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// (Output)
     /// If true, restrict direct table access(read api/tabledata.list) on linked table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "restrictDirectTableAccess")]
-    pub r#restrict_direct_table_access: Box<Option<bool>>,
+    pub r#restrict_direct_table_access: Option<bool>,
     /// If true, restrict export of query result derived from restricted linked dataset table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "restrictQueryResult")]
-    pub r#restrict_query_result: Box<Option<bool>>,
+    pub r#restrict_query_result: Option<bool>,
 }

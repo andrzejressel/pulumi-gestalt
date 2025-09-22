@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsSlotValueElicitationSettingPromptSpecification {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowInterrupt")]
-    pub r#allow_interrupt: Box<Option<bool>>,
+    pub r#allow_interrupt: Option<bool>,
     #[builder(into)]
     #[serde(rename = "maxRetries")]
-    pub r#max_retries: Box<i32>,
-    #[builder(into, default)]
+    pub r#max_retries: i32,
+    #[builder(into)]
     #[serde(rename = "messageGroups")]
-    pub r#message_groups: Box<Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroup>>>,
-    #[builder(into, default)]
+    pub r#message_groups: Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroup>>,
+    #[builder(into)]
     #[serde(rename = "messageSelectionStrategy")]
-    pub r#message_selection_strategy: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#message_selection_strategy: Option<String>,
+    #[builder(into)]
     #[serde(rename = "promptAttemptsSpecifications")]
-    pub r#prompt_attempts_specifications: Box<Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecification>>>,
+    pub r#prompt_attempts_specifications: Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecification>>,
 }

@@ -6,5 +6,5 @@ pub struct GetClusterNodePoolAutoConfigLinuxNodeConfig {
     /// cgroupMode specifies the cgroup mode to be used on the node.
     #[builder(into)]
     #[serde(rename = "cgroupMode")]
-    pub r#cgroup_mode: Box<String>,
+    pub r#cgroup_mode: String,
 }

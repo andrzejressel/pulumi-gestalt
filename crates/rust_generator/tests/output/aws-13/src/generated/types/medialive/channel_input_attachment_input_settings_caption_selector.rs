@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelInputAttachmentInputSettingsCaptionSelector {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "languageCode")]
-    pub r#language_code: Box<Option<String>>,
+    pub r#language_code: Option<String>,
     /// Name of the Channel.
     /// 
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
-    #[builder(into, default)]
+    pub r#name: String,
+    #[builder(into)]
     #[serde(rename = "selectorSettings")]
-    pub r#selector_settings: Box<Option<super::super::types::medialive::ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettings>>,
+    pub r#selector_settings: Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettings>>,
 }

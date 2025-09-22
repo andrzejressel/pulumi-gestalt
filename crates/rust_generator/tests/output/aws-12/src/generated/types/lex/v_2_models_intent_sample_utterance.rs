@@ -6,5 +6,5 @@ pub struct V2ModelsIntentSampleUtterance {
     /// Sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.
     #[builder(into)]
     #[serde(rename = "utterance")]
-    pub r#utterance: Box<String>,
+    pub r#utterance: String,
 }

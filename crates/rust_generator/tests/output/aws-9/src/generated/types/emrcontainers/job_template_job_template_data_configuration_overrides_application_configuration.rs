@@ -6,13 +6,13 @@ pub struct JobTemplateJobTemplateDataConfigurationOverridesApplicationConfigurat
     /// The classification within a configuration.
     #[builder(into)]
     #[serde(rename = "classification")]
-    pub r#classification: Box<String>,
+    pub r#classification: String,
     /// A list of additional configurations to apply within a configuration object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "configurations")]
-    pub r#configurations: Box<Option<Vec<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesApplicationConfigurationConfiguration>>>,
+    pub r#configurations: Option<Vec<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesApplicationConfigurationConfiguration>>,
     /// A set of properties specified within a configuration classification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#properties: Option<std::collections::HashMap<String, String>>,
 }

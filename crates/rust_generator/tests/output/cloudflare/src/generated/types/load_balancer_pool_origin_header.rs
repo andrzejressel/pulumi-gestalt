@@ -6,9 +6,9 @@ pub struct LoadBalancerPoolOriginHeader {
     /// HTTP Header name.
     #[builder(into)]
     #[serde(rename = "header")]
-    pub r#header: Box<String>,
+    pub r#header: String,
     /// Values for the HTTP headers.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

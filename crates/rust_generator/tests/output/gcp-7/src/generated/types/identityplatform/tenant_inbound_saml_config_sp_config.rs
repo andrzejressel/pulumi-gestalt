@@ -6,18 +6,18 @@ pub struct TenantInboundSamlConfigSpConfig {
     /// Callback URI where responses from IDP are handled. Must start with `https://`.
     #[builder(into)]
     #[serde(rename = "callbackUri")]
-    pub r#callback_uri: Box<String>,
+    pub r#callback_uri: String,
     /// (Output)
     /// The IDP's certificate data to verify the signature in the SAMLResponse issued by the IDP.
     /// Structure is documented below.
     /// 
     /// 
     /// <a name="nested_sp_certificates"></a>The `sp_certificates` block contains:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "spCertificates")]
-    pub r#sp_certificates: Box<Option<Vec<super::super::types::identityplatform::TenantInboundSamlConfigSpConfigSpCertificate>>>,
+    pub r#sp_certificates: Option<Vec<super::super::types::identityplatform::TenantInboundSamlConfigSpConfigSpCertificate>>,
     /// Unique identifier for all SAML entities.
     #[builder(into)]
     #[serde(rename = "spEntityId")]
-    pub r#sp_entity_id: Box<String>,
+    pub r#sp_entity_id: String,
 }

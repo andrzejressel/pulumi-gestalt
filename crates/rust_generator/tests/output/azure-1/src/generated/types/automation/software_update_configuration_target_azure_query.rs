@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SoftwareUpdateConfigurationTargetAzureQuery {
     /// Specifies a list of locations to scope the query to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "locations")]
-    pub r#locations: Box<Option<Vec<String>>>,
+    pub r#locations: Option<Vec<String>>,
     /// Specifies a list of Subscription or Resource Group ARM Ids to query.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scopes")]
-    pub r#scopes: Box<Option<Vec<String>>>,
+    pub r#scopes: Option<Vec<String>>,
     /// Specifies how the specified tags to filter VMs. Possible values are `Any` and `All`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tagFilter")]
-    pub r#tag_filter: Box<Option<String>>,
+    pub r#tag_filter: Option<String>,
     /// A mapping of tags used for query filter. One or more `tags` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<Vec<super::super::types::automation::SoftwareUpdateConfigurationTargetAzureQueryTag>>>,
+    pub r#tags: Option<Vec<super::super::types::automation::SoftwareUpdateConfigurationTargetAzureQueryTag>>,
 }

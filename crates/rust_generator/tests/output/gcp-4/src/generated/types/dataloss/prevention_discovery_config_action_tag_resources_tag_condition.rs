@@ -5,12 +5,12 @@
 pub struct PreventionDiscoveryConfigActionTagResourcesTagCondition {
     /// Conditions attaching the tag to a resource on its profile having this sensitivity score.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sensitivityScore")]
-    pub r#sensitivity_score: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigActionTagResourcesTagConditionSensitivityScore>>,
+    pub r#sensitivity_score: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionTagResourcesTagConditionSensitivityScore>>,
     /// The tag value to attach to resources.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigActionTagResourcesTagConditionTag>>,
+    pub r#tag: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionTagResourcesTagConditionTag>>,
 }

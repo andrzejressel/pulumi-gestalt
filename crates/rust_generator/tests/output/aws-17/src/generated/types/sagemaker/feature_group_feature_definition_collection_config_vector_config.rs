@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureGroupFeatureDefinitionCollectionConfigVectorConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dimension")]
-    pub r#dimension: Box<Option<i32>>,
+    pub r#dimension: Option<i32>,
 }

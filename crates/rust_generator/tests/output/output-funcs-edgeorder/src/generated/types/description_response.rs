@@ -6,25 +6,25 @@ pub struct DescriptionResponse {
     /// Attributes for the product system.
     #[builder(into)]
     #[serde(rename = "attributes")]
-    pub r#attributes: Box<Vec<String>>,
+    pub r#attributes: Vec<String>,
     /// Type of description.
     #[builder(into)]
     #[serde(rename = "descriptionType")]
-    pub r#description_type: Box<String>,
+    pub r#description_type: String,
     /// Keywords for the product system.
     #[builder(into)]
     #[serde(rename = "keywords")]
-    pub r#keywords: Box<Vec<String>>,
+    pub r#keywords: Vec<String>,
     /// Links for the product system.
     #[builder(into)]
     #[serde(rename = "links")]
-    pub r#links: Box<Vec<super::types::LinkResponse>>,
+    pub r#links: Vec<super::types::LinkResponse>,
     /// Long description of the product system.
     #[builder(into)]
     #[serde(rename = "longDescription")]
-    pub r#long_description: Box<String>,
+    pub r#long_description: String,
     /// Short description of the product system.
     #[builder(into)]
     #[serde(rename = "shortDescription")]
-    pub r#short_description: Box<String>,
+    pub r#short_description: String,
 }

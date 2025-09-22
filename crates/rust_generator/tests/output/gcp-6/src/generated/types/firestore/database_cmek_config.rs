@@ -9,9 +9,9 @@ pub struct DatabaseCmekConfig {
     /// multiple in-use key versions.
     /// The expected format is
     /// `projects/{project_id}/locations/{kms_location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{key_version}`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "activeKeyVersions")]
-    pub r#active_key_versions: Box<Option<Vec<String>>>,
+    pub r#active_key_versions: Option<Vec<String>>,
     /// The resource ID of a Cloud KMS key. If set, the database created will
     /// be a Customer-managed Encryption Key (CMEK) database encrypted with
     /// this key. This feature is allowlist only in initial launch.
@@ -25,5 +25,5 @@ pub struct DatabaseCmekConfig {
     /// https://cloud.google.com/kms/docs/getting-resource-ids#getting_the_id_for_a_key_and_version.
     #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<String>,
+    pub r#kms_key_name: String,
 }

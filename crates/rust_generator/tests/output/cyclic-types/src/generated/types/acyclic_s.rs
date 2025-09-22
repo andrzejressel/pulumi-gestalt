@@ -5,5 +5,5 @@
 pub struct AcyclicS {
     #[builder(into)]
     #[serde(rename = "foo5")]
-    pub r#foo_5: Box<String>,
+    pub r#foo_5: String,
 }

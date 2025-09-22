@@ -6,5 +6,5 @@ pub struct ApiKeyRestrictionsBrowserKeyRestrictions {
     /// A list of regular expressions for the referrer URLs that are allowed to make API calls with this key.
     #[builder(into)]
     #[serde(rename = "allowedReferrers")]
-    pub r#allowed_referrers: Box<Vec<String>>,
+    pub r#allowed_referrers: Vec<String>,
 }

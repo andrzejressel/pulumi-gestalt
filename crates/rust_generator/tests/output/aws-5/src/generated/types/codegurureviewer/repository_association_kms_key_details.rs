@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RepositoryAssociationKmsKeyDetails {
     /// The encryption option for a repository association. It is either owned by AWS Key Management Service (KMS) (`AWS_OWNED_CMK`) or customer managed (`CUSTOMER_MANAGED_CMK`).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encryptionOption")]
-    pub r#encryption_option: Box<Option<String>>,
+    pub r#encryption_option: Option<String>,
     /// The ID of the AWS KMS key that is associated with a repository association.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<Option<String>>,
+    pub r#kms_key_id: Option<String>,
 }

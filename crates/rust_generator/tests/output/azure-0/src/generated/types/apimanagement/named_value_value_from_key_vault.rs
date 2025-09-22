@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NamedValueValueFromKeyVault {
     /// The client ID of User Assigned Identity, for the API Management Service, which will be used to access the key vault secret. The System Assigned Identity will be used in absence.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityClientId")]
-    pub r#identity_client_id: Box<Option<String>>,
+    pub r#identity_client_id: Option<String>,
     /// The resource ID of the Key Vault Secret.
     #[builder(into)]
     #[serde(rename = "secretId")]
-    pub r#secret_id: Box<String>,
+    pub r#secret_id: String,
 }

@@ -6,5 +6,5 @@ pub struct RuleGroupRuleRuleLabel {
     /// The label string.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

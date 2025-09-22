@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertificateRenewalSummary {
     /// The status of ACM's managed renewal of the certificate
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "renewalStatus")]
-    pub r#renewal_status: Box<Option<String>>,
+    pub r#renewal_status: Option<String>,
     /// The reason that a renewal request was unsuccessful or is pending
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "renewalStatusReason")]
-    pub r#renewal_status_reason: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#renewal_status_reason: Option<String>,
+    #[builder(into)]
     #[serde(rename = "updatedAt")]
-    pub r#updated_at: Box<Option<String>>,
+    pub r#updated_at: Option<String>,
 }

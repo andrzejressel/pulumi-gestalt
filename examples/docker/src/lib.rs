@@ -16,10 +16,12 @@ fn pulumi_main(context: &Context) -> anyhow::Result<()> {
             .attach(true)
             .command(["echo", "Hello World!"])
             .image("public.ecr.aws/ubuntu/ubuntu:latest")
-            .labels(vec![ContainerLabel {
-                label: Box::new("label_1".to_string()),
-                value: Box::new("value_1".to_string()),
-            }])
+            .labels(vec![
+                ContainerLabel::builder()
+                    .label("label_1")
+                    .value("value_1")
+                    .build_struct(),
+            ])
             .logs(true)
             .must_run(false)
             .build_struct(),
@@ -29,11 +31,7 @@ fn pulumi_main(context: &Context) -> anyhow::Result<()> {
         context,
         "image",
         image::ImageArgs::builder()
-            .build(
-                DockerBuild::builder()
-                    .context(Some("docker/".to_string()))
-                    .build_struct(),
-            )
+            .build(DockerBuild::builder().context("docker/").build_struct())
             .image_name("image:test")
             .skip_push(true)
             .build_struct(),

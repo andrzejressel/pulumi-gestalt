@@ -5,11 +5,11 @@
 pub struct GetFirewallPolicyDn {
     #[builder(into)]
     #[serde(rename = "networkRuleFqdnEnabled")]
-    pub r#network_rule_fqdn_enabled: Box<bool>,
+    pub r#network_rule_fqdn_enabled: bool,
     #[builder(into)]
     #[serde(rename = "proxyEnabled")]
-    pub r#proxy_enabled: Box<bool>,
+    pub r#proxy_enabled: bool,
     #[builder(into)]
     #[serde(rename = "servers")]
-    pub r#servers: Box<Vec<String>>,
+    pub r#servers: Vec<String>,
 }

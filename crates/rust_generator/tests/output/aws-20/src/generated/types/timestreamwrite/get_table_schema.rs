@@ -5,5 +5,5 @@
 pub struct GetTableSchema {
     #[builder(into)]
     #[serde(rename = "compositePartitionKeys")]
-    pub r#composite_partition_keys: Box<Vec<super::super::types::timestreamwrite::GetTableSchemaCompositePartitionKey>>,
+    pub r#composite_partition_keys: Vec<super::super::types::timestreamwrite::GetTableSchemaCompositePartitionKey>,
 }

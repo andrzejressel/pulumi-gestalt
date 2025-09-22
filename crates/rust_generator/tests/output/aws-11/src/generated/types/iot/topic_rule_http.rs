@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TopicRuleHttp {
     /// The HTTPS URL used to verify ownership of `url`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "confirmationUrl")]
-    pub r#confirmation_url: Box<Option<String>>,
+    pub r#confirmation_url: Option<String>,
     /// Custom HTTP header IoT Core should send. It is possible to define more than one custom header.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpHeaders")]
-    pub r#http_headers: Box<Option<Vec<super::super::types::iot::TopicRuleHttpHttpHeader>>>,
+    pub r#http_headers: Option<Vec<super::super::types::iot::TopicRuleHttpHttpHeader>>,
     /// The HTTPS URL.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

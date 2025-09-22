@@ -4,22 +4,22 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceAutoscalingConfigAutoscalingLimits {
     /// The maximum number of nodes for this specific replica.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxNodes")]
-    pub r#max_nodes: Box<Option<i32>>,
+    pub r#max_nodes: Option<i32>,
     /// Specifies maximum number of processing units allocated to the instance.
     /// If set, this number should be multiples of 1000 and be greater than or equal to
     /// min_processing_units.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxProcessingUnits")]
-    pub r#max_processing_units: Box<Option<i32>>,
+    pub r#max_processing_units: Option<i32>,
     /// The minimum number of nodes for this specific replica.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minNodes")]
-    pub r#min_nodes: Box<Option<i32>>,
+    pub r#min_nodes: Option<i32>,
     /// Specifies minimum number of processing units allocated to the instance.
     /// If set, this number should be multiples of 1000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minProcessingUnits")]
-    pub r#min_processing_units: Box<Option<i32>>,
+    pub r#min_processing_units: Option<i32>,
 }

@@ -9,13 +9,13 @@ pub struct MetastoreFederationBackendMetastore {
     /// - - -
     #[builder(into)]
     #[serde(rename = "metastoreType")]
-    pub r#metastore_type: Box<String>,
+    pub r#metastore_type: String,
     /// The relative resource name of the metastore that is being federated. The formats of the relative resource names for the currently supported metastores are listed below: Dataplex: projects/{projectId}/locations/{location}/lakes/{lake_id} BigQuery: projects/{projectId} Dataproc Metastore: projects/{projectId}/locations/{location}/services/{serviceId}
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The identifier for this object. Format specified above.
     #[builder(into)]
     #[serde(rename = "rank")]
-    pub r#rank: Box<String>,
+    pub r#rank: String,
 }

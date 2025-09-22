@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ContainerMountBindOptions {
     /// A propagation mode with the value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "propagation")]
-    pub r#propagation: Box<Option<String>>,
+    pub r#propagation: Option<String>,
 }

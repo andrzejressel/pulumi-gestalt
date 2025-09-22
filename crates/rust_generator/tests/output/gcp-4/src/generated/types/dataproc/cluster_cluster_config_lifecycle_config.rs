@@ -8,17 +8,17 @@ pub struct ClusterClusterConfigLifecycleConfig {
     /// Example: "2014-10-02T15:01:23.045123456Z".
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoDeleteTime")]
-    pub r#auto_delete_time: Box<Option<String>>,
+    pub r#auto_delete_time: Option<String>,
     /// The duration to keep the cluster alive while idling
     /// (no jobs running). After this TTL, the cluster will be deleted. Valid range: [10m, 14d].
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "idleDeleteTtl")]
-    pub r#idle_delete_ttl: Box<Option<String>>,
+    pub r#idle_delete_ttl: Option<String>,
     /// Time when the cluster became idle
     /// (most recent job finished) and became eligible for deletion due to idleness.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "idleStartTime")]
-    pub r#idle_start_time: Box<Option<String>>,
+    pub r#idle_start_time: Option<String>,
 }

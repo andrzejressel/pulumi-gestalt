@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KeyRotationPolicy {
     /// An `automatic` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "automatic")]
-    pub r#automatic: Box<Option<super::super::types::keyvault::KeyRotationPolicyAutomatic>>,
+    pub r#automatic: Option<Box<super::super::types::keyvault::KeyRotationPolicyAutomatic>>,
     /// Expire a Key Vault Key after given duration as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expireAfter")]
-    pub r#expire_after: Box<Option<String>>,
+    pub r#expire_after: Option<String>,
     /// Notify at a given duration before expiry as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notifyBeforeExpiry")]
-    pub r#notify_before_expiry: Box<Option<String>>,
+    pub r#notify_before_expiry: Option<String>,
 }

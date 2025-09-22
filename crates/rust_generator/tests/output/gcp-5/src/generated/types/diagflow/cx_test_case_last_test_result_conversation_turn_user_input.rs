@@ -4,20 +4,20 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxTestCaseLastTestResultConversationTurnUserInput {
     /// Whether sentiment analysis is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableSentimentAnalysis")]
-    pub r#enable_sentiment_analysis: Box<Option<bool>>,
+    pub r#enable_sentiment_analysis: Option<bool>,
     /// Parameters that need to be injected into the conversation during intent detection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "injectedParameters")]
-    pub r#injected_parameters: Box<Option<String>>,
+    pub r#injected_parameters: Option<String>,
     /// User input. Supports text input, event input, dtmf input in the test case.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "input")]
-    pub r#input: Box<Option<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurnUserInputInput>>,
+    pub r#input: Option<Box<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurnUserInputInput>>,
     /// If webhooks should be allowed to trigger in response to the user utterance. Often if parameters are injected, webhooks should not be enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isWebhookEnabled")]
-    pub r#is_webhook_enabled: Box<Option<bool>>,
+    pub r#is_webhook_enabled: Option<bool>,
 }

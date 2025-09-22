@@ -7,9 +7,9 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigContainerImage {
     /// For example: gcr.io/{project_id}/{imageName}
     #[builder(into)]
     #[serde(rename = "repository")]
-    pub r#repository: Box<String>,
+    pub r#repository: String,
     /// The tag of the container image. If not specified, this defaults to the latest tag.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<Option<String>>,
+    pub r#tag: Option<String>,
 }

@@ -6,13 +6,13 @@ pub struct GetInstanceEphemeralBlockDevice {
     /// Physical name of the device.
     #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<String>,
+    pub r#device_name: String,
     /// Whether the specified device included in the device mapping was suppressed or not (Boolean).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "noDevice")]
-    pub r#no_device: Box<Option<bool>>,
+    pub r#no_device: Option<bool>,
     /// Virtual device name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualName")]
-    pub r#virtual_name: Box<Option<String>>,
+    pub r#virtual_name: Option<String>,
 }

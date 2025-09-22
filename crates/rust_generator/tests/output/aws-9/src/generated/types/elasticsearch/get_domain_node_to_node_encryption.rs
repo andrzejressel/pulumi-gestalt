@@ -6,5 +6,5 @@ pub struct GetDomainNodeToNodeEncryption {
     /// Whether node to node encryption is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

@@ -6,41 +6,41 @@ pub struct TopicRuleErrorActionDynamodb {
     /// The hash key name.
     #[builder(into)]
     #[serde(rename = "hashKeyField")]
-    pub r#hash_key_field: Box<String>,
+    pub r#hash_key_field: String,
     /// The hash key type. Valid values are "STRING" or "NUMBER".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hashKeyType")]
-    pub r#hash_key_type: Box<Option<String>>,
+    pub r#hash_key_type: Option<String>,
     /// The hash key value.
     #[builder(into)]
     #[serde(rename = "hashKeyValue")]
-    pub r#hash_key_value: Box<String>,
+    pub r#hash_key_value: String,
     /// The operation. Valid values are "INSERT", "UPDATE", or "DELETE".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operation")]
-    pub r#operation: Box<Option<String>>,
+    pub r#operation: Option<String>,
     /// The action payload.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "payloadField")]
-    pub r#payload_field: Box<Option<String>>,
+    pub r#payload_field: Option<String>,
     /// The range key name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rangeKeyField")]
-    pub r#range_key_field: Box<Option<String>>,
+    pub r#range_key_field: Option<String>,
     /// The range key type. Valid values are "STRING" or "NUMBER".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rangeKeyType")]
-    pub r#range_key_type: Box<Option<String>>,
+    pub r#range_key_type: Option<String>,
     /// The range key value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rangeKeyValue")]
-    pub r#range_key_value: Box<Option<String>>,
+    pub r#range_key_value: Option<String>,
     /// The ARN of the IAM role that grants access to the DynamoDB table.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// The name of the DynamoDB table.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
 }

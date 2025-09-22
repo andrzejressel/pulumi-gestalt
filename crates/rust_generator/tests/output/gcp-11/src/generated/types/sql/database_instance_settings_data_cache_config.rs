@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DatabaseInstanceSettingsDataCacheConfig {
     /// Whether data cache is enabled for the instance. Defaults to `false`. Can be used with MYSQL and PostgreSQL only.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataCacheEnabled")]
-    pub r#data_cache_enabled: Box<Option<bool>>,
+    pub r#data_cache_enabled: Option<bool>,
 }

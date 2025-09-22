@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserExternalId {
     /// The identifier issued to this resource by an external identity provider.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The issuer for an external identifier.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<Option<String>>,
+    pub r#issuer: Option<String>,
 }

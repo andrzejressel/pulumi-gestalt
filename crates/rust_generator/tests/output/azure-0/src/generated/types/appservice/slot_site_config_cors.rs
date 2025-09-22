@@ -6,9 +6,9 @@ pub struct SlotSiteConfigCors {
     /// A list of origins which should be able to make cross-origin calls. `*` can be used to allow all calls.
     #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Vec<String>>,
+    pub r#allowed_origins: Vec<String>,
     /// Are credentials supported?
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "supportCredentials")]
-    pub r#support_credentials: Box<Option<bool>>,
+    pub r#support_credentials: Option<bool>,
 }

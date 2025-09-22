@@ -6,5 +6,5 @@ pub struct RestorePlanRestoreConfigExcludedNamespaces {
     /// A list of Kubernetes Namespaces.
     #[builder(into)]
     #[serde(rename = "namespaces")]
-    pub r#namespaces: Box<Vec<String>>,
+    pub r#namespaces: Vec<String>,
 }

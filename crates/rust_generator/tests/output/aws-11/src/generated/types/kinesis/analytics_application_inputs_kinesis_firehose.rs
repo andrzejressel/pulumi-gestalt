@@ -6,9 +6,9 @@ pub struct AnalyticsApplicationInputsKinesisFirehose {
     /// The ARN of the Kinesis Firehose delivery stream.
     #[builder(into)]
     #[serde(rename = "resourceArn")]
-    pub r#resource_arn: Box<String>,
+    pub r#resource_arn: String,
     /// The ARN of the IAM Role used to access the stream.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
 }

@@ -6,9 +6,9 @@ pub struct EfsLocationEc2Config {
     /// List of Amazon Resource Names (ARNs) of the EC2 Security Groups that are associated with the EFS Mount Target.
     #[builder(into)]
     #[serde(rename = "securityGroupArns")]
-    pub r#security_group_arns: Box<Vec<String>>,
+    pub r#security_group_arns: Vec<String>,
     /// Amazon Resource Name (ARN) of the EC2 Subnet that is associated with the EFS Mount Target.
     #[builder(into)]
     #[serde(rename = "subnetArn")]
-    pub r#subnet_arn: Box<String>,
+    pub r#subnet_arn: String,
 }

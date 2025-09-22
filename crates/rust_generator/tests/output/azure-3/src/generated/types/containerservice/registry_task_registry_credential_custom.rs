@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegistryTaskRegistryCredentialCustom {
     /// The managed identity assigned to this custom credential. For user assigned identity, the value is the client ID of the identity. For system assigned identity, the value is `[system]`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identity")]
-    pub r#identity: Box<Option<String>>,
+    pub r#identity: Option<String>,
     /// The login server of the custom Container Registry.
     #[builder(into)]
     #[serde(rename = "loginServer")]
-    pub r#login_server: Box<String>,
+    pub r#login_server: String,
     /// The password for logging into the custom Container Registry. It can be either a plain text of password, or a Keyvault Secret ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// The username for logging into the custom Container Registry. It can be either a plain text of username, or a Keyvault Secret ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

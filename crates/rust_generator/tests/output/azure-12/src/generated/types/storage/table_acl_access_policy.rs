@@ -6,13 +6,13 @@ pub struct TableAclAccessPolicy {
     /// The ISO8061 UTC time at which this Access Policy should be valid until.
     #[builder(into)]
     #[serde(rename = "expiry")]
-    pub r#expiry: Box<String>,
+    pub r#expiry: String,
     /// The permissions which should associated with this Shared Identifier.
     #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<String>,
+    pub r#permissions: String,
     /// The ISO8061 UTC time at which this Access Policy should be valid from.
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<String>,
+    pub r#start: String,
 }

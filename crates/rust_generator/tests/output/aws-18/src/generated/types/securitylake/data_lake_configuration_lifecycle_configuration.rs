@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataLakeConfigurationLifecycleConfiguration {
     /// Provides data expiration details of Amazon Security Lake object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expiration")]
-    pub r#expiration: Box<Option<super::super::types::securitylake::DataLakeConfigurationLifecycleConfigurationExpiration>>,
+    pub r#expiration: Option<Box<super::super::types::securitylake::DataLakeConfigurationLifecycleConfigurationExpiration>>,
     /// Provides data storage transition details of Amazon Security Lake object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transitions")]
-    pub r#transitions: Box<Option<Vec<super::super::types::securitylake::DataLakeConfigurationLifecycleConfigurationTransition>>>,
+    pub r#transitions: Option<Vec<super::super::types::securitylake::DataLakeConfigurationLifecycleConfigurationTransition>>,
 }

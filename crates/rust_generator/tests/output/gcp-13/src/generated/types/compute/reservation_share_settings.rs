@@ -5,12 +5,12 @@
 pub struct ReservationShareSettings {
     /// A map of project number and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectMaps")]
-    pub r#project_maps: Box<Option<Vec<super::super::types::compute::ReservationShareSettingsProjectMap>>>,
+    pub r#project_maps: Option<Vec<super::super::types::compute::ReservationShareSettingsProjectMap>>,
     /// Type of sharing for this shared-reservation
     /// Possible values are: `LOCAL`, `SPECIFIC_PROJECTS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "shareType")]
-    pub r#share_type: Box<Option<String>>,
+    pub r#share_type: Option<String>,
 }

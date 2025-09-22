@@ -6,7 +6,7 @@ pub struct ResizeRequestStatusErrorErrorErrorDetailHelp {
     /// (Output)
     /// [Output Only]
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "links")]
-    pub r#links: Box<Option<Vec<super::super::types::compute::ResizeRequestStatusErrorErrorErrorDetailHelpLink>>>,
+    pub r#links: Option<Vec<super::super::types::compute::ResizeRequestStatusErrorErrorErrorDetailHelpLink>>,
 }

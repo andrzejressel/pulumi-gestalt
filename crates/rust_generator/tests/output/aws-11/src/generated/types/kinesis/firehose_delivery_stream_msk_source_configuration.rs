@@ -10,9 +10,9 @@ pub struct FirehoseDeliveryStreamMskSourceConfiguration {
     /// The ARN of the Amazon MSK cluster.
     #[builder(into)]
     #[serde(rename = "mskClusterArn")]
-    pub r#msk_cluster_arn: Box<String>,
+    pub r#msk_cluster_arn: String,
     /// The topic name within the Amazon MSK cluster.
     #[builder(into)]
     #[serde(rename = "topicName")]
-    pub r#topic_name: Box<String>,
+    pub r#topic_name: String,
 }

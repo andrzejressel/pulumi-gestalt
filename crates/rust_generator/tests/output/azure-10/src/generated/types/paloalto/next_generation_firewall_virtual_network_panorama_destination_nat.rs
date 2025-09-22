@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NextGenerationFirewallVirtualNetworkPanoramaDestinationNat {
     /// A `backend_config` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backendConfig")]
-    pub r#backend_config: Box<Option<super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaDestinationNatBackendConfig>>,
+    pub r#backend_config: Option<Box<super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaDestinationNatBackendConfig>>,
     /// A `frontend_config` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "frontendConfig")]
-    pub r#frontend_config: Box<Option<super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaDestinationNatFrontendConfig>>,
+    pub r#frontend_config: Option<Box<super::super::types::paloalto::NextGenerationFirewallVirtualNetworkPanoramaDestinationNatFrontendConfig>>,
     /// The name which should be used for this Destination NAT.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The Protocol for this Destination NAT configuration. Possible values include `TCP` and `UDP`.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
 }

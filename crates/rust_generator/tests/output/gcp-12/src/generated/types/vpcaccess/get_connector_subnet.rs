@@ -8,9 +8,9 @@ pub struct GetConnectorSubnet {
     /// - - -
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Project in which the subnet exists. If not set, this project is assumed to be the project for which the connector create request was issued.
     #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<String>,
+    pub r#project_id: String,
 }

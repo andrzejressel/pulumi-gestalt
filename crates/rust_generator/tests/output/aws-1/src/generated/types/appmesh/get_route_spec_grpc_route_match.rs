@@ -5,17 +5,17 @@
 pub struct GetRouteSpecGrpcRouteMatch {
     #[builder(into)]
     #[serde(rename = "metadatas")]
-    pub r#metadatas: Box<Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteMatchMetadata>>,
+    pub r#metadatas: Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteMatchMetadata>,
     #[builder(into)]
     #[serde(rename = "methodName")]
-    pub r#method_name: Box<String>,
+    pub r#method_name: String,
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<String>,
+    pub r#prefix: String,
     #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<String>,
+    pub r#service_name: String,
 }

@@ -6,9 +6,9 @@ pub struct TargetGroupTargetFailover {
     /// Indicates how the GWLB handles existing flows when a target is deregistered. Possible values are `rebalance` and `no_rebalance`. Must match the attribute value set for `on_unhealthy`. Default: `no_rebalance`.
     #[builder(into)]
     #[serde(rename = "onDeregistration")]
-    pub r#on_deregistration: Box<String>,
+    pub r#on_deregistration: String,
     /// Indicates how the GWLB handles existing flows when a target is unhealthy. Possible values are `rebalance` and `no_rebalance`. Must match the attribute value set for `on_deregistration`. Default: `no_rebalance`.
     #[builder(into)]
     #[serde(rename = "onUnhealthy")]
-    pub r#on_unhealthy: Box<String>,
+    pub r#on_unhealthy: String,
 }

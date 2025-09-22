@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DashboardDashboardPublishOptionsDataPointTooltipOption {
     /// Availability status. Possibles values: ENABLED, DISABLED.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilityStatus")]
-    pub r#availability_status: Box<Option<String>>,
+    pub r#availability_status: Option<String>,
 }

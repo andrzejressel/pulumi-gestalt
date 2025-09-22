@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InteractiveQueryClusterRolesWorkerNodeAutoscale {
     /// A `recurrence` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<Option<super::super::types::hdinsight::InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrence>>,
+    pub r#recurrence: Option<Box<super::super::types::hdinsight::InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrence>>,
 }

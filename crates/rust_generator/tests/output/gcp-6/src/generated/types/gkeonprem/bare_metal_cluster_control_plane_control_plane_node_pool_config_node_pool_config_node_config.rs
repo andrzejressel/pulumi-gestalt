@@ -13,12 +13,12 @@ pub struct BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigN
     /// - http://kubernetes.io/v1.1/docs/user-guide/labels.html
     /// An object containing a list of "key": value pairs.
     /// For example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// The default IPv4 address for SSH access and Kubernetes node.
     /// Example: 192.168.0.1
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeIp")]
-    pub r#node_ip: Box<Option<String>>,
+    pub r#node_ip: Option<String>,
 }

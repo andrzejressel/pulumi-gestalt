@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PosturePolicySetPolicyComplianceStandard {
     /// Mapping of security controls for the policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "control")]
-    pub r#control: Box<Option<String>>,
+    pub r#control: Option<String>,
     /// Mapping of compliance standards for the policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "standard")]
-    pub r#standard: Box<Option<String>>,
+    pub r#standard: Option<String>,
 }

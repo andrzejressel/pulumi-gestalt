@@ -5,19 +5,19 @@
 pub struct GetServiceSecureLdap {
     #[builder(into)]
     #[serde(rename = "certificateExpiry")]
-    pub r#certificate_expiry: Box<String>,
+    pub r#certificate_expiry: String,
     #[builder(into)]
     #[serde(rename = "certificateThumbprint")]
-    pub r#certificate_thumbprint: Box<String>,
+    pub r#certificate_thumbprint: String,
     /// Whether secure LDAP is enabled for the managed domain.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Whether external access to LDAPS over the Internet, is enabled.
     #[builder(into)]
     #[serde(rename = "externalAccessEnabled")]
-    pub r#external_access_enabled: Box<bool>,
+    pub r#external_access_enabled: bool,
     #[builder(into)]
     #[serde(rename = "publicCertificate")]
-    pub r#public_certificate: Box<String>,
+    pub r#public_certificate: String,
 }

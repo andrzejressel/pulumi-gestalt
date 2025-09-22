@@ -6,9 +6,9 @@ pub struct ModelContainerImageConfig {
     /// Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon Virtual Private Cloud (VPC). Allowed values are: `Platform` and `Vpc`.
     #[builder(into)]
     #[serde(rename = "repositoryAccessMode")]
-    pub r#repository_access_mode: Box<String>,
+    pub r#repository_access_mode: String,
     /// Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified Vpc as the value for the RepositoryAccessMode field, and the private Docker registry where the model image is hosted requires authentication. see Repository Auth Config.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repositoryAuthConfig")]
-    pub r#repository_auth_config: Box<Option<super::super::types::sagemaker::ModelContainerImageConfigRepositoryAuthConfig>>,
+    pub r#repository_auth_config: Option<Box<super::super::types::sagemaker::ModelContainerImageConfigRepositoryAuthConfig>>,
 }

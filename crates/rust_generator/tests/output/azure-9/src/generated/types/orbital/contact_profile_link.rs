@@ -6,17 +6,17 @@ pub struct ContactProfileLink {
     /// A list of contact profile link channels. A `channels` block as defined below.
     #[builder(into)]
     #[serde(rename = "channels")]
-    pub r#channels: Box<Vec<super::super::types::orbital::ContactProfileLinkChannel>>,
+    pub r#channels: Vec<super::super::types::orbital::ContactProfileLinkChannel>,
     /// Direction of the link. Possible values are `Uplink` and `Downlink`.
     #[builder(into)]
     #[serde(rename = "direction")]
-    pub r#direction: Box<String>,
+    pub r#direction: String,
     /// Name of the link.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Polarization of the link. Possible values are `LHCP`, `RHCP`, `linearVertical` and `linearHorizontal`.
     #[builder(into)]
     #[serde(rename = "polarization")]
-    pub r#polarization: Box<String>,
+    pub r#polarization: String,
 }

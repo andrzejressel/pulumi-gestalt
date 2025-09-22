@@ -9,7 +9,7 @@ pub struct PreventionJobTriggerTriggerSchedule {
     /// A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recurrencePeriodDuration")]
-    pub r#recurrence_period_duration: Box<Option<String>>,
+    pub r#recurrence_period_duration: Option<String>,
 }

@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpaceSpaceSettingsCodeEditorAppSettings {
     /// Settings that are used to configure and manage the lifecycle of JupyterLab applications in a space. See `app_lifecycle_management` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "appLifecycleManagement")]
-    pub r#app_lifecycle_management: Box<Option<super::super::types::sagemaker::SpaceSpaceSettingsCodeEditorAppSettingsAppLifecycleManagement>>,
+    pub r#app_lifecycle_management: Option<Box<super::super::types::sagemaker::SpaceSpaceSettingsCodeEditorAppSettingsAppLifecycleManagement>>,
     /// The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. See `default_resource_spec` Block below.
     #[builder(into)]
     #[serde(rename = "defaultResourceSpec")]

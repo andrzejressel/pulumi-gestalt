@@ -6,17 +6,17 @@ pub struct FleetEc2InboundPermission {
     /// Starting value for a range of allowed port numbers.
     #[builder(into)]
     #[serde(rename = "fromPort")]
-    pub r#from_port: Box<i32>,
+    pub r#from_port: i32,
     /// Range of allowed IP addresses expressed in CIDR notationE.g., `000.000.000.000/[subnet mask]` or `0.0.0.0/[subnet mask]`.
     #[builder(into)]
     #[serde(rename = "ipRange")]
-    pub r#ip_range: Box<String>,
+    pub r#ip_range: String,
     /// Network communication protocol used by the fleetE.g., `TCP` or `UDP`
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     /// Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than `from_port`.
     #[builder(into)]
     #[serde(rename = "toPort")]
-    pub r#to_port: Box<i32>,
+    pub r#to_port: i32,
 }

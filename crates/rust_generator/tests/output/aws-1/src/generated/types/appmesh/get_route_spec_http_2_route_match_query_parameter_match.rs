@@ -5,5 +5,5 @@
 pub struct GetRouteSpecHttp2RouteMatchQueryParameterMatch {
     #[builder(into)]
     #[serde(rename = "exact")]
-    pub r#exact: Box<String>,
+    pub r#exact: String,
 }

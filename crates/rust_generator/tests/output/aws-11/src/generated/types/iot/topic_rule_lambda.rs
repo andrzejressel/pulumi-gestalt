@@ -6,5 +6,5 @@ pub struct TopicRuleLambda {
     /// The ARN of the Lambda function.
     #[builder(into)]
     #[serde(rename = "functionArn")]
-    pub r#function_arn: Box<String>,
+    pub r#function_arn: String,
 }

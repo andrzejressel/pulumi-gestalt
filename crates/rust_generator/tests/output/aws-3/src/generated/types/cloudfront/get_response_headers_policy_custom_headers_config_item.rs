@@ -6,13 +6,13 @@ pub struct GetResponseHeadersPolicyCustomHeadersConfigItem {
     /// The HTTP header name.
     #[builder(into)]
     #[serde(rename = "header")]
-    pub r#header: Box<String>,
+    pub r#header: String,
     /// Whether CloudFront overrides the X-XSS-Protection HTTP response header received from the origin with the one specified in this response headers policy.
     #[builder(into)]
     #[serde(rename = "override")]
-    pub r#override_: Box<bool>,
+    pub r#override_: bool,
     /// Value for the HTTP response header.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

@@ -9,7 +9,7 @@ pub struct CxPageFormParameterAdvancedSettings {
     /// * Page level
     /// * Parameter level
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dtmfSettings")]
-    pub r#dtmf_settings: Box<Option<super::super::types::diagflow::CxPageFormParameterAdvancedSettingsDtmfSettings>>,
+    pub r#dtmf_settings: Option<Box<super::super::types::diagflow::CxPageFormParameterAdvancedSettingsDtmfSettings>>,
 }

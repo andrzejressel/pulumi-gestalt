@@ -6,5 +6,5 @@ pub struct GetResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule {
     /// May contain up to seven (one for each day of the week) snapshot times.
     #[builder(into)]
     #[serde(rename = "dayOfWeeks")]
-    pub r#day_of_weeks: Box<Vec<super::super::types::compute::GetResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek>>,
+    pub r#day_of_weeks: Vec<super::super::types::compute::GetResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek>,
 }

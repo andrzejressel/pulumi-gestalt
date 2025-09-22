@@ -6,13 +6,13 @@ pub struct GetCatalogTableStorageDescriptorSchemaReference {
     /// Configuration block that contains schema identity fields. See `schema_id` below.
     #[builder(into)]
     #[serde(rename = "schemaIds")]
-    pub r#schema_ids: Box<Vec<super::super::types::glue::GetCatalogTableStorageDescriptorSchemaReferenceSchemaId>>,
+    pub r#schema_ids: Vec<super::super::types::glue::GetCatalogTableStorageDescriptorSchemaReferenceSchemaId>,
     /// Unique ID assigned to a version of the schema.
     #[builder(into)]
     #[serde(rename = "schemaVersionId")]
-    pub r#schema_version_id: Box<String>,
+    pub r#schema_version_id: String,
     /// Version number of the schema.
     #[builder(into)]
     #[serde(rename = "schemaVersionNumber")]
-    pub r#schema_version_number: Box<i32>,
+    pub r#schema_version_number: i32,
 }

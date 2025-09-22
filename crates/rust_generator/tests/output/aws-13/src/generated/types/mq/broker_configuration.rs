@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BrokerConfiguration {
     /// The Configuration ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Revision of the Configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "revision")]
-    pub r#revision: Box<Option<i32>>,
+    pub r#revision: Option<i32>,
 }

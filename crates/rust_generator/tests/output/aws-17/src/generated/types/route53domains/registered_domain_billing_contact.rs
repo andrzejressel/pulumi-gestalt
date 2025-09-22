@@ -4,59 +4,59 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegisteredDomainBillingContact {
     /// First line of the contact's address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "addressLine1")]
-    pub r#address_line_1: Box<Option<String>>,
+    pub r#address_line_1: Option<String>,
     /// Second line of contact's address, if any.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "addressLine2")]
-    pub r#address_line_2: Box<Option<String>>,
+    pub r#address_line_2: Option<String>,
     /// The city of the contact's address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "city")]
-    pub r#city: Box<Option<String>>,
+    pub r#city: Option<String>,
     /// Indicates whether the contact is a person, company, association, or public organization. See the [AWS API documentation](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html#Route53Domains-Type-domains_ContactDetail-ContactType) for valid values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "contactType")]
-    pub r#contact_type: Box<Option<String>>,
+    pub r#contact_type: Option<String>,
     /// Code for the country of the contact's address. See the [AWS API documentation](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html#Route53Domains-Type-domains_ContactDetail-CountryCode) for valid values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "countryCode")]
-    pub r#country_code: Box<Option<String>>,
+    pub r#country_code: Option<String>,
     /// Email address of the contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// A key-value map of parameters required by certain top-level domains.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "extraParams")]
-    pub r#extra_params: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#extra_params: Option<std::collections::HashMap<String, String>>,
     /// Fax number of the contact. Phone number must be specified in the format "+[country dialing code].[number including any area code]".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fax")]
-    pub r#fax: Box<Option<String>>,
+    pub r#fax: Option<String>,
     /// First name of contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "firstName")]
-    pub r#first_name: Box<Option<String>>,
+    pub r#first_name: Option<String>,
     /// Last name of contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastName")]
-    pub r#last_name: Box<Option<String>>,
+    pub r#last_name: Option<String>,
     /// Name of the organization for contact types other than `PERSON`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "organizationName")]
-    pub r#organization_name: Box<Option<String>>,
+    pub r#organization_name: Option<String>,
     /// The phone number of the contact. Phone number must be specified in the format "+[country dialing code].[number including any area code]".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "phoneNumber")]
-    pub r#phone_number: Box<Option<String>>,
+    pub r#phone_number: Option<String>,
     /// The state or province of the contact's city.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
     /// The zip or postal code of the contact's address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zipCode")]
-    pub r#zip_code: Box<Option<String>>,
+    pub r#zip_code: Option<String>,
 }

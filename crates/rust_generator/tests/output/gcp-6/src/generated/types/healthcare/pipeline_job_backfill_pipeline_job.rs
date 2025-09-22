@@ -5,7 +5,7 @@
 pub struct PipelineJobBackfillPipelineJob {
     /// Specifies the mapping pipeline job to backfill, the name format
     /// should follow: projects/{projectId}/locations/{locationId}/datasets/{datasetId}/pipelineJobs/{pipelineJobId}.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mappingPipelineJob")]
-    pub r#mapping_pipeline_job: Box<Option<String>>,
+    pub r#mapping_pipeline_job: Option<String>,
 }

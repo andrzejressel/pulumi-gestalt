@@ -6,9 +6,9 @@ pub struct PipeTargetParametersSagemakerPipelineParametersPipelineParameter {
     /// Name of the pipe. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Value of parameter to start execution of a SageMaker Model Building Pipeline. Maximum length of 1024.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

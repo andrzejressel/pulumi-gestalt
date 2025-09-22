@@ -5,7 +5,7 @@
 pub struct FieldIndexConfig {
     /// The indexes to configure on the field. Order or array contains must be specified.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "indexes")]
-    pub r#indexes: Box<Option<Vec<super::super::types::firestore::FieldIndexConfigIndex>>>,
+    pub r#indexes: Option<Vec<super::super::types::firestore::FieldIndexConfigIndex>>,
 }

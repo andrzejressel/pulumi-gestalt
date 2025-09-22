@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GalleryApplicationVersionSource {
     /// The Storage Blob URI of the default configuration. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultConfigurationLink")]
-    pub r#default_configuration_link: Box<Option<String>>,
+    pub r#default_configuration_link: Option<String>,
     /// The Storage Blob URI of the source application package. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "mediaLink")]
-    pub r#media_link: Box<String>,
+    pub r#media_link: String,
 }

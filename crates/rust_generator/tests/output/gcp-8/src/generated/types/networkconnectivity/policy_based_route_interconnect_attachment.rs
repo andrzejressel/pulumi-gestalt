@@ -6,5 +6,5 @@ pub struct PolicyBasedRouteInterconnectAttachment {
     /// Cloud region to install this policy-based route on for Interconnect attachments. Use `all` to install it on all Interconnect attachments.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
 }

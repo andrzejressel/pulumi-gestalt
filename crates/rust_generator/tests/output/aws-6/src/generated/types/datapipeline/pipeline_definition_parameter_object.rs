@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipelineDefinitionParameterObject {
     /// Configuration block for attributes of the parameter object. See below
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attributes")]
-    pub r#attributes: Box<Option<Vec<super::super::types::datapipeline::PipelineDefinitionParameterObjectAttribute>>>,
+    pub r#attributes: Option<Vec<super::super::types::datapipeline::PipelineDefinitionParameterObjectAttribute>>,
     /// ID of the parameter object.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

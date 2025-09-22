@@ -12,5 +12,5 @@ pub struct ApplicationScope {
     /// - - -
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

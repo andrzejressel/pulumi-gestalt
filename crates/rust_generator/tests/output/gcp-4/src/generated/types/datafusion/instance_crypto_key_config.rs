@@ -6,5 +6,5 @@ pub struct InstanceCryptoKeyConfig {
     /// The name of the key which is used to encrypt/decrypt customer data. For key in Cloud KMS, the key should be in the format of projects/*/locations/*/keyRings/*/cryptoKeys/*.
     #[builder(into)]
     #[serde(rename = "keyReference")]
-    pub r#key_reference: Box<String>,
+    pub r#key_reference: String,
 }

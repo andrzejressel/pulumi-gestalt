@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RecorderRecordingMode {
     /// Default reecording frequency. `CONTINUOUS` or `DAILY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordingFrequency")]
-    pub r#recording_frequency: Box<Option<String>>,
+    pub r#recording_frequency: Option<String>,
     /// Recording mode overrides. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordingModeOverride")]
-    pub r#recording_mode_override: Box<Option<super::super::types::cfg::RecorderRecordingModeRecordingModeOverride>>,
+    pub r#recording_mode_override: Option<Box<super::super::types::cfg::RecorderRecordingModeRecordingModeOverride>>,
 }

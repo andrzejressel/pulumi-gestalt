@@ -7,5 +7,5 @@ pub struct BackupPlanBackupConfigSelectedApplications {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "namespacedNames")]
-    pub r#namespaced_names: Box<Vec<super::super::types::gkebackup::BackupPlanBackupConfigSelectedApplicationsNamespacedName>>,
+    pub r#namespaced_names: Vec<super::super::types::gkebackup::BackupPlanBackupConfigSelectedApplicationsNamespacedName>,
 }

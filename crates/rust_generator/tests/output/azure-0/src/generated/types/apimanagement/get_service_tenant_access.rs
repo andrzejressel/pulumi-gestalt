@@ -6,17 +6,17 @@ pub struct GetServiceTenantAccess {
     /// Is access to the Management API enabled (presumably "for this Tenant")?
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Primary access key for the tenant access information contract.
     #[builder(into)]
     #[serde(rename = "primaryKey")]
-    pub r#primary_key: Box<String>,
+    pub r#primary_key: String,
     /// Secondary access key for the tenant access information contract.
     #[builder(into)]
     #[serde(rename = "secondaryKey")]
-    pub r#secondary_key: Box<String>,
+    pub r#secondary_key: String,
     /// The ID of the Tenant which has access to this API Management instance.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
 }

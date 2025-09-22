@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZeroTrustInfrastructureAccessTargetIp {
     /// The target's IPv4 address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv4")]
-    pub r#ipv_4: Box<Option<super::types::ZeroTrustInfrastructureAccessTargetIpIpv4>>,
+    pub r#ipv_4: Option<Box<super::types::ZeroTrustInfrastructureAccessTargetIpIpv4>>,
     /// The target's IPv6 address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv6")]
-    pub r#ipv_6: Box<Option<super::types::ZeroTrustInfrastructureAccessTargetIpIpv6>>,
+    pub r#ipv_6: Option<Box<super::types::ZeroTrustInfrastructureAccessTargetIpIpv6>>,
 }

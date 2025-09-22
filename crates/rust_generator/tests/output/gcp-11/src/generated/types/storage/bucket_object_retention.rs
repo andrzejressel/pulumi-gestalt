@@ -6,11 +6,11 @@ pub struct BucketObjectRetention {
     /// The retention policy mode. Either `Locked` or `Unlocked`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
     /// The time to retain the object until in RFC 3339 format, for example 2012-11-15T16:19:00.094Z.
     /// 
     /// <a name>
     #[builder(into)]
     #[serde(rename = "retainUntilTime")]
-    pub r#retain_until_time: Box<String>,
+    pub r#retain_until_time: String,
 }

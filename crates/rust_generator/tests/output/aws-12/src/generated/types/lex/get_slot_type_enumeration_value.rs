@@ -5,8 +5,8 @@
 pub struct GetSlotTypeEnumerationValue {
     #[builder(into)]
     #[serde(rename = "synonyms")]
-    pub r#synonyms: Box<Vec<String>>,
+    pub r#synonyms: Vec<String>,
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

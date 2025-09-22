@@ -6,5 +6,5 @@ pub struct GetClusterNodePoolDefaultNodeConfigDefaultContainerdConfig {
     /// Parameters for private container registries configuration.
     #[builder(into)]
     #[serde(rename = "privateRegistryAccessConfigs")]
-    pub r#private_registry_access_configs: Box<Vec<super::super::types::container::GetClusterNodePoolDefaultNodeConfigDefaultContainerdConfigPrivateRegistryAccessConfig>>,
+    pub r#private_registry_access_configs: Vec<super::super::types::container::GetClusterNodePoolDefaultNodeConfigDefaultContainerdConfigPrivateRegistryAccessConfig>,
 }

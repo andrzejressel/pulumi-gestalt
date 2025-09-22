@@ -6,5 +6,5 @@ pub struct DatascanDataQualitySpecRuleSetExpectation {
     /// Expected values for the column value.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

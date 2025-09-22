@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SlotLogsApplicationLogs {
     /// An `azure_blob_storage` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "azureBlobStorage")]
-    pub r#azure_blob_storage: Box<Option<super::super::types::appservice::SlotLogsApplicationLogsAzureBlobStorage>>,
+    pub r#azure_blob_storage: Option<Box<super::super::types::appservice::SlotLogsApplicationLogsAzureBlobStorage>>,
     /// The file system log level. Possible values are `Off`, `Error`, `Warning`, `Information`, and `Verbose`. Defaults to `Off`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fileSystemLevel")]
-    pub r#file_system_level: Box<Option<String>>,
+    pub r#file_system_level: Option<String>,
 }

@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetSecretSecret {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "context")]
-    pub r#context: Box<Option<std::collections::HashMap<String, String>>>,
-    #[builder(into, default)]
+    pub r#context: Option<std::collections::HashMap<String, String>>,
+    #[builder(into)]
     #[serde(rename = "grantTokens")]
-    pub r#grant_tokens: Box<Option<Vec<String>>>,
+    pub r#grant_tokens: Option<Vec<String>>,
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "payload")]
-    pub r#payload: Box<String>,
+    pub r#payload: String,
 }

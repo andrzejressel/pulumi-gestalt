@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ManagedClusterAuthentication {
     /// A `active_directory` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "activeDirectory")]
-    pub r#active_directory: Box<Option<super::super::types::servicefabric::ManagedClusterAuthenticationActiveDirectory>>,
+    pub r#active_directory: Option<Box<super::super::types::servicefabric::ManagedClusterAuthenticationActiveDirectory>>,
     /// One or more `certificate` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificates")]
-    pub r#certificates: Box<Option<Vec<super::super::types::servicefabric::ManagedClusterAuthenticationCertificate>>>,
+    pub r#certificates: Option<Vec<super::super::types::servicefabric::ManagedClusterAuthenticationCertificate>>,
 }

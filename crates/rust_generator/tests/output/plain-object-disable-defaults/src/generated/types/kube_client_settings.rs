@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubeClientSettings {
     /// Maximum burst for throttle. Default value is 10.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "burst")]
-    pub r#burst: Box<Option<i32>>,
+    pub r#burst: Option<i32>,
     /// Maximum queries per second (QPS) to the API server from this client. Default value is 5.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "qps")]
-    pub r#qps: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#qps: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "recTest")]
-    pub r#rec_test: Box<Option<super::types::KubeClientSettings>>,
+    pub r#rec_test: Option<Box<super::types::KubeClientSettings>>,
 }

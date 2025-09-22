@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TlsRouteRuleActionDestination {
     /// The URL of a BackendService to route traffic to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<Option<String>>,
+    pub r#service_name: Option<String>,
     /// Specifies the proportion of requests forwarded to the backend referenced by the serviceName field.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<Option<i32>>,
+    pub r#weight: Option<i32>,
 }

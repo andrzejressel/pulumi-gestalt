@@ -5,11 +5,11 @@
 pub struct GetBrokerInstance {
     #[builder(into)]
     #[serde(rename = "consoleUrl")]
-    pub r#console_url: Box<String>,
+    pub r#console_url: String,
     #[builder(into)]
     #[serde(rename = "endpoints")]
-    pub r#endpoints: Box<Vec<String>>,
+    pub r#endpoints: Vec<String>,
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
 }

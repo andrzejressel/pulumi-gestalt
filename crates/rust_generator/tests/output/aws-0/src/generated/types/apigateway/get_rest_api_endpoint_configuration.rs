@@ -5,8 +5,8 @@
 pub struct GetRestApiEndpointConfiguration {
     #[builder(into)]
     #[serde(rename = "types")]
-    pub r#types: Box<Vec<String>>,
+    pub r#types: Vec<String>,
     #[builder(into)]
     #[serde(rename = "vpcEndpointIds")]
-    pub r#vpc_endpoint_ids: Box<Vec<String>>,
+    pub r#vpc_endpoint_ids: Vec<String>,
 }

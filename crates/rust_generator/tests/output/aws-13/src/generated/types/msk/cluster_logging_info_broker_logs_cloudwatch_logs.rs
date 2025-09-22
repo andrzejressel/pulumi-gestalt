@@ -5,9 +5,9 @@
 pub struct ClusterLoggingInfoBrokerLogsCloudwatchLogs {
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Name of the Cloudwatch Log Group to deliver logs to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logGroup")]
-    pub r#log_group: Box<Option<String>>,
+    pub r#log_group: Option<String>,
 }

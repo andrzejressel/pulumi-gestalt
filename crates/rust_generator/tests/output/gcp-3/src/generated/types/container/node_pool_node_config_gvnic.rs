@@ -6,5 +6,5 @@ pub struct NodePoolNodeConfigGvnic {
     /// Whether or not gvnic is enabled
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

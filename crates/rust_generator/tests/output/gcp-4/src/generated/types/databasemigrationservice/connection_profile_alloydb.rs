@@ -6,10 +6,10 @@ pub struct ConnectionProfileAlloydb {
     /// Required. The AlloyDB cluster ID that this connection profile is associated with.
     #[builder(into)]
     #[serde(rename = "clusterId")]
-    pub r#cluster_id: Box<String>,
+    pub r#cluster_id: String,
     /// Immutable. Metadata used to create the destination AlloyDB cluster.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "settings")]
-    pub r#settings: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileAlloydbSettings>>,
+    pub r#settings: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileAlloydbSettings>>,
 }

@@ -6,23 +6,23 @@ pub struct LinkServiceNatIpConfiguration {
     /// Specifies the name which should be used for the NAT IP Configuration. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Is this is the Primary IP Configuration? Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "primary")]
-    pub r#primary: Box<bool>,
+    pub r#primary: bool,
     /// Specifies a Private Static IP Address for this IP Configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<Option<String>>,
+    pub r#private_ip_address: Option<String>,
     /// The version of the IP Protocol which should be used. At this time the only supported value is `IPv4`. Defaults to `IPv4`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateIpAddressVersion")]
-    pub r#private_ip_address_version: Box<Option<String>>,
+    pub r#private_ip_address_version: Option<String>,
     /// Specifies the ID of the Subnet which should be used for the Private Link Service.
     /// 
     /// > **NOTE:** Verify that the Subnet's `enforce_private_link_service_network_policies` attribute is set to `true`.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

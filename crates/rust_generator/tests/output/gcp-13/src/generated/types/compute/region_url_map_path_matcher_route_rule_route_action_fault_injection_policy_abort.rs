@@ -5,12 +5,12 @@
 pub struct RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbort {
     /// The HTTP status code used to abort the request.
     /// The value must be between 200 and 599 inclusive.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpStatus")]
-    pub r#http_status: Box<Option<i32>>,
+    pub r#http_status: Option<i32>,
     /// The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
     /// The value must be between 0.0 and 100.0 inclusive.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "percentage")]
-    pub r#percentage: Box<Option<f64>>,
+    pub r#percentage: Option<f64>,
 }

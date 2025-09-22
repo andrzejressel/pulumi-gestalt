@@ -5,8 +5,8 @@
 pub struct ServerPropertiesForRestore {
     #[builder(skip)]
     #[serde(rename = "createMode")]
-    r#create_mode: Box<super::constants::ConstStringPointInTimeRestore>,
+    r#create_mode: super::constants::ConstStringPointInTimeRestore,
     #[builder(into)]
     #[serde(rename = "restorePointInTime")]
-    pub r#restore_point_in_time: Box<String>,
+    pub r#restore_point_in_time: String,
 }

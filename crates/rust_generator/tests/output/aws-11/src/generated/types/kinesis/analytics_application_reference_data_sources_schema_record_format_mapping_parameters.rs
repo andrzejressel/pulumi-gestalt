@@ -5,12 +5,12 @@
 pub struct AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters {
     /// Mapping information when the record format uses delimiters.
     /// See CSV Mapping Parameters below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "csv")]
-    pub r#csv: Box<Option<super::super::types::kinesis::AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv>>,
+    pub r#csv: Option<Box<super::super::types::kinesis::AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv>>,
     /// Mapping information when JSON is the record format on the streaming source.
     /// See JSON Mapping Parameters below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "json")]
-    pub r#json: Box<Option<super::super::types::kinesis::AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson>>,
+    pub r#json: Option<Box<super::super::types::kinesis::AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson>>,
 }

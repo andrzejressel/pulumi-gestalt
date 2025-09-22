@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserPoolSchemaStringAttributeConstraints {
     /// Maximum length of an attribute value of the string type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxLength")]
-    pub r#max_length: Box<Option<String>>,
+    pub r#max_length: Option<String>,
     /// Minimum length of an attribute value of the string type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minLength")]
-    pub r#min_length: Box<Option<String>>,
+    pub r#min_length: Option<String>,
 }

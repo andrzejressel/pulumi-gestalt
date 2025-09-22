@@ -8,5 +8,5 @@ pub struct ConfigSignInAnonymous {
     /// <a name="nested_hash_config"></a>The `hash_config` block contains:
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

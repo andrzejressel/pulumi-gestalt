@@ -6,9 +6,9 @@ pub struct AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConf
     /// If set to true, customers will use private service connection to send request. Otherwise, the connection will set to public endpoint.
     #[builder(into)]
     #[serde(rename = "enablePrivateServiceConnect")]
-    pub r#enable_private_service_connect: Box<bool>,
+    pub r#enable_private_service_connect: bool,
     /// A list of Projects from which the forwarding rule will target the service attachment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectAllowlists")]
-    pub r#project_allowlists: Box<Option<Vec<String>>>,
+    pub r#project_allowlists: Option<Vec<String>>,
 }

@@ -6,13 +6,13 @@ pub struct GetElasticsearchLogFilteringTag {
     /// The type of action which is taken when the Tag matches the `name` and `value`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// The name of the Elasticsearch resource.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value of the Tag which should be filtered.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

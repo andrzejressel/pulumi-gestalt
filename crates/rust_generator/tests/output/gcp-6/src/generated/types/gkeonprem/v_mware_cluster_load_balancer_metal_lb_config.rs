@@ -9,5 +9,5 @@ pub struct VMwareClusterLoadBalancerMetalLbConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "addressPools")]
-    pub r#address_pools: Box<Vec<super::super::types::gkeonprem::VMwareClusterLoadBalancerMetalLbConfigAddressPool>>,
+    pub r#address_pools: Vec<super::super::types::gkeonprem::VMwareClusterLoadBalancerMetalLbConfigAddressPool>,
 }

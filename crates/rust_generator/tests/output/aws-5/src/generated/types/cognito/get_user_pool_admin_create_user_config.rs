@@ -6,13 +6,13 @@ pub struct GetUserPoolAdminCreateUserConfig {
     /// - Whether only admins can create users.
     #[builder(into)]
     #[serde(rename = "allowAdminCreateUserOnly")]
-    pub r#allow_admin_create_user_only: Box<bool>,
+    pub r#allow_admin_create_user_only: bool,
     #[builder(into)]
     #[serde(rename = "inviteMessageTemplates")]
-    pub r#invite_message_templates: Box<Vec<super::super::types::cognito::GetUserPoolAdminCreateUserConfigInviteMessageTemplate>>,
+    pub r#invite_message_templates: Vec<super::super::types::cognito::GetUserPoolAdminCreateUserConfigInviteMessageTemplate>,
     /// - Number of days an unconfirmed user account remains valid.
     /// * invite_message_template - Templates for invitation messages.
     #[builder(into)]
     #[serde(rename = "unusedAccountValidityDays")]
-    pub r#unused_account_validity_days: Box<i32>,
+    pub r#unused_account_validity_days: i32,
 }

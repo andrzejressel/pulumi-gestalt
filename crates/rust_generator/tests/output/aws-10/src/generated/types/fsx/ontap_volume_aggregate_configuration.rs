@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OntapVolumeAggregateConfiguration {
     /// Used to specify the names of the aggregates on which the volume will be created. Each aggregate needs to be in the format aggrX where X is the number of the aggregate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "aggregates")]
-    pub r#aggregates: Box<Option<Vec<String>>>,
+    pub r#aggregates: Option<Vec<String>>,
     /// Used to explicitly set the number of constituents within the FlexGroup per storage aggregate. the default value is `8`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "constituentsPerAggregate")]
-    pub r#constituents_per_aggregate: Box<Option<i32>>,
+    pub r#constituents_per_aggregate: Option<i32>,
     /// The total amount of constituents for a `FLEXGROUP` volume. This would equal constituents_per_aggregate x aggregates.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "totalConstituents")]
-    pub r#total_constituents: Box<Option<i32>>,
+    pub r#total_constituents: Option<i32>,
 }

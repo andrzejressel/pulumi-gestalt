@@ -6,13 +6,13 @@ pub struct ApplicationApplicationConfigurationApplicationCodeConfigurationCodeCo
     /// The ARN for the S3 bucket containing the application code.
     #[builder(into)]
     #[serde(rename = "bucketArn")]
-    pub r#bucket_arn: Box<String>,
+    pub r#bucket_arn: String,
     /// The file key for the object containing the application code.
     #[builder(into)]
     #[serde(rename = "fileKey")]
-    pub r#file_key: Box<String>,
+    pub r#file_key: String,
     /// The version of the object containing the application code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "objectVersion")]
-    pub r#object_version: Box<Option<String>>,
+    pub r#object_version: Option<String>,
 }

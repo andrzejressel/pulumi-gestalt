@@ -6,5 +6,5 @@ pub struct AgentDataSourceVectorIngestionConfigurationChunkingConfigurationHiera
     /// The maximum number of tokens that a chunk can contain in this layer.
     #[builder(into)]
     #[serde(rename = "maxTokens")]
-    pub r#max_tokens: Box<f64>,
+    pub r#max_tokens: f64,
 }

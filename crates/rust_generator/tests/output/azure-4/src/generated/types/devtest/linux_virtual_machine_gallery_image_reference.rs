@@ -6,17 +6,17 @@ pub struct LinuxVirtualMachineGalleryImageReference {
     /// The Offer of the Gallery Image. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "offer")]
-    pub r#offer: Box<String>,
+    pub r#offer: String,
     /// The Publisher of the Gallery Image. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<String>,
+    pub r#publisher: String,
     /// The SKU of the Gallery Image. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "sku")]
-    pub r#sku: Box<String>,
+    pub r#sku: String,
     /// The Version of the Gallery Image. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

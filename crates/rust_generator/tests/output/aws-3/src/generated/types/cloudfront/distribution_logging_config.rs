@@ -6,13 +6,13 @@ pub struct DistributionLoggingConfig {
     /// Amazon S3 bucket to store the access logs in, for example, `myawslogbucket.s3.amazonaws.com`.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// Whether to include cookies in access logs (default: `false`).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includeCookies")]
-    pub r#include_cookies: Box<Option<bool>>,
+    pub r#include_cookies: Option<bool>,
     /// Prefix to the access log filenames for this distribution, for example, `myprefix/`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
 }

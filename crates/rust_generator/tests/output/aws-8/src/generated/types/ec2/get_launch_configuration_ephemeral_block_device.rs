@@ -6,9 +6,9 @@ pub struct GetLaunchConfigurationEphemeralBlockDevice {
     /// Name of the device.
     #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<String>,
+    pub r#device_name: String,
     /// Virtual Name of the device.
     #[builder(into)]
     #[serde(rename = "virtualName")]
-    pub r#virtual_name: Box<String>,
+    pub r#virtual_name: String,
 }

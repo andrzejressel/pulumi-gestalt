@@ -6,9 +6,9 @@ pub struct ServiceTaskSpecPlacementPlatform {
     /// The architecture, e.g. `amd64`
     #[builder(into)]
     #[serde(rename = "architecture")]
-    pub r#architecture: Box<String>,
+    pub r#architecture: String,
     /// The operation system, e.g. `linux`
     #[builder(into)]
     #[serde(rename = "os")]
-    pub r#os: Box<String>,
+    pub r#os: String,
 }

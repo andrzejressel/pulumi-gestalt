@@ -6,17 +6,17 @@ pub struct GetQuickConnectQuickConnectConfig {
     /// Phone configuration of the Quick Connect. This is returned only if `quick_connect_type` is `PHONE_NUMBER`. The `phone_config` block is documented below.
     #[builder(into)]
     #[serde(rename = "phoneConfigs")]
-    pub r#phone_configs: Box<Vec<super::super::types::connect::GetQuickConnectQuickConnectConfigPhoneConfig>>,
+    pub r#phone_configs: Vec<super::super::types::connect::GetQuickConnectQuickConnectConfigPhoneConfig>,
     /// Queue configuration of the Quick Connect. This is returned only if `quick_connect_type` is `QUEUE`. The `queue_config` block is documented below.
     #[builder(into)]
     #[serde(rename = "queueConfigs")]
-    pub r#queue_configs: Box<Vec<super::super::types::connect::GetQuickConnectQuickConnectConfigQueueConfig>>,
+    pub r#queue_configs: Vec<super::super::types::connect::GetQuickConnectQuickConnectConfigQueueConfig>,
     /// Configuration type of the Quick Connect. Valid values are `PHONE_NUMBER`, `QUEUE`, `USER`.
     #[builder(into)]
     #[serde(rename = "quickConnectType")]
-    pub r#quick_connect_type: Box<String>,
+    pub r#quick_connect_type: String,
     /// User configuration of the Quick Connect. This is returned only if `quick_connect_type` is `USER`. The `user_config` block is documented below.
     #[builder(into)]
     #[serde(rename = "userConfigs")]
-    pub r#user_configs: Box<Vec<super::super::types::connect::GetQuickConnectQuickConnectConfigUserConfig>>,
+    pub r#user_configs: Vec<super::super::types::connect::GetQuickConnectQuickConnectConfigUserConfig>,
 }

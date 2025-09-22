@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppAuthorizationCredential {
     /// Contains API key credential information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "apiKeyCredentials")]
-    pub r#api_key_credentials: Box<Option<Vec<super::super::types::appfabric::AppAuthorizationCredentialApiKeyCredential>>>,
+    pub r#api_key_credentials: Option<Vec<super::super::types::appfabric::AppAuthorizationCredentialApiKeyCredential>>,
     /// Contains OAuth2 client credential information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oauth2Credential")]
-    pub r#oauth_2_credential: Box<Option<super::super::types::appfabric::AppAuthorizationCredentialOauth2Credential>>,
+    pub r#oauth_2_credential: Option<Box<super::super::types::appfabric::AppAuthorizationCredentialOauth2Credential>>,
 }

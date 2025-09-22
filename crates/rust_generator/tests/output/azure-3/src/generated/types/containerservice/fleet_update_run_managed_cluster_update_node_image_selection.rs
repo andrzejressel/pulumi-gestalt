@@ -6,5 +6,5 @@ pub struct FleetUpdateRunManagedClusterUpdateNodeImageSelection {
     /// Specifies the node image upgrade type. Possible values are `Latest` and `Consistent`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -6,17 +6,17 @@ pub struct ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNod
     /// The target GKE node pool.
     #[builder(into)]
     #[serde(rename = "nodePool")]
-    pub r#node_pool: Box<String>,
+    pub r#node_pool: String,
     /// The configuration for the GKE node pool. 
     /// If specified, Dataproc attempts to create a node pool with the specified shape.
     /// If one with the same name already exists, it is verified against all specified fields.
     /// If a field differs, the virtual cluster creation will fail.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodePoolConfig")]
-    pub r#node_pool_config: Box<Option<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig>>,
+    pub r#node_pool_config: Option<Box<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig>>,
     /// The roles associated with the GKE node pool. 
     /// One of `"DEFAULT"`, `"CONTROLLER"`, `"SPARK_DRIVER"` or `"SPARK_EXECUTOR"`.
     #[builder(into)]
     #[serde(rename = "roles")]
-    pub r#roles: Box<Vec<String>>,
+    pub r#roles: Vec<String>,
 }

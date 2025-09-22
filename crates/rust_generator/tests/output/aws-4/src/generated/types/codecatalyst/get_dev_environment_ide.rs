@@ -5,8 +5,8 @@
 pub struct GetDevEnvironmentIde {
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "runtime")]
-    pub r#runtime: Box<String>,
+    pub r#runtime: String,
 }

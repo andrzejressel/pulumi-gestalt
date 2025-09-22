@@ -6,9 +6,9 @@ pub struct AgentDataSourceVectorIngestionConfigurationChunkingConfigurationHiera
     /// Maximum number of tokens to include in a chunk. Must contain two `level_configurations`. See `level_configurations` for details.
     #[builder(into)]
     #[serde(rename = "levelConfigurations")]
-    pub r#level_configurations: Box<Vec<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationChunkingConfigurationHierarchicalChunkingConfigurationLevelConfiguration>>,
+    pub r#level_configurations: Vec<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationChunkingConfigurationHierarchicalChunkingConfigurationLevelConfiguration>,
     /// The number of tokens to repeat across chunks in the same layer.
     #[builder(into)]
     #[serde(rename = "overlapTokens")]
-    pub r#overlap_tokens: Box<f64>,
+    pub r#overlap_tokens: f64,
 }

@@ -10,5 +10,5 @@ pub struct BucketLoggingV2TargetGrant {
     /// Logging permissions assigned to the grantee for the bucket. Valid values: `FULL_CONTROL`, `READ`, `WRITE`.
     #[builder(into)]
     #[serde(rename = "permission")]
-    pub r#permission: Box<String>,
+    pub r#permission: String,
 }

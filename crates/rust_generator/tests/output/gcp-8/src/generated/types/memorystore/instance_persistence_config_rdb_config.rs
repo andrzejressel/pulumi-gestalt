@@ -9,13 +9,13 @@ pub struct InstancePersistenceConfigRdbConfig {
     /// SIX_HOURS
     /// TWELVE_HOURS
     /// TWENTY_FOUR_HOURS
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rdbSnapshotPeriod")]
-    pub r#rdb_snapshot_period: Box<Option<String>>,
+    pub r#rdb_snapshot_period: Option<String>,
     /// Optional. Time that the first snapshot was/will be attempted, and to which future
     /// snapshots will be aligned. If not provided, the current time will be
     /// used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rdbSnapshotStartTime")]
-    pub r#rdb_snapshot_start_time: Box<Option<String>>,
+    pub r#rdb_snapshot_start_time: Option<String>,
 }

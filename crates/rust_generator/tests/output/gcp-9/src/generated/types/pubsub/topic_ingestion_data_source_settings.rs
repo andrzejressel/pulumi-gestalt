@@ -5,18 +5,18 @@
 pub struct TopicIngestionDataSourceSettings {
     /// Settings for ingestion from Amazon Kinesis Data Streams.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "awsKinesis")]
-    pub r#aws_kinesis: Box<Option<super::super::types::pubsub::TopicIngestionDataSourceSettingsAwsKinesis>>,
+    pub r#aws_kinesis: Option<Box<super::super::types::pubsub::TopicIngestionDataSourceSettingsAwsKinesis>>,
     /// Settings for ingestion from Cloud Storage.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudStorage")]
-    pub r#cloud_storage: Box<Option<super::super::types::pubsub::TopicIngestionDataSourceSettingsCloudStorage>>,
+    pub r#cloud_storage: Option<Box<super::super::types::pubsub::TopicIngestionDataSourceSettingsCloudStorage>>,
     /// Settings for Platform Logs regarding ingestion to Pub/Sub. If unset,
     /// no Platform Logs will be generated.'
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "platformLogsSettings")]
-    pub r#platform_logs_settings: Box<Option<super::super::types::pubsub::TopicIngestionDataSourceSettingsPlatformLogsSettings>>,
+    pub r#platform_logs_settings: Option<Box<super::super::types::pubsub::TopicIngestionDataSourceSettingsPlatformLogsSettings>>,
 }

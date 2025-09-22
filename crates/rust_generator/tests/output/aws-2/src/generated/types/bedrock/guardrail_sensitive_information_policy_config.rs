@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GuardrailSensitiveInformationPolicyConfig {
     /// List of entities. See PII Entities Config for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "piiEntitiesConfigs")]
-    pub r#pii_entities_configs: Box<Option<Vec<super::super::types::bedrock::GuardrailSensitiveInformationPolicyConfigPiiEntitiesConfig>>>,
+    pub r#pii_entities_configs: Option<Vec<super::super::types::bedrock::GuardrailSensitiveInformationPolicyConfigPiiEntitiesConfig>>,
     /// List of regex. See Regexes Config for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regexesConfigs")]
-    pub r#regexes_configs: Box<Option<Vec<super::super::types::bedrock::GuardrailSensitiveInformationPolicyConfigRegexesConfig>>>,
+    pub r#regexes_configs: Option<Vec<super::super::types::bedrock::GuardrailSensitiveInformationPolicyConfigRegexesConfig>>,
 }

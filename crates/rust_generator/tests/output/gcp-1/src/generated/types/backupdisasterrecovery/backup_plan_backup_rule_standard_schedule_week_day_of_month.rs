@@ -7,10 +7,10 @@ pub struct BackupPlanBackupRuleStandardScheduleWeekDayOfMonth {
     /// Possible values are: `DAY_OF_WEEK_UNSPECIFIED`, `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     /// WeekOfMonth enumerates possible weeks in the month, e.g. the first, third, or last week of the month.
     /// Possible values are: `WEEK_OF_MONTH_UNSPECIFIED`, `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `LAST`.
     #[builder(into)]
     #[serde(rename = "weekOfMonth")]
-    pub r#week_of_month: Box<String>,
+    pub r#week_of_month: String,
 }

@@ -6,17 +6,17 @@ pub struct GetFleetScalingConfiguration {
     /// The desired number of instances in the ﬂeet when auto-scaling.
     #[builder(into)]
     #[serde(rename = "desiredCapacity")]
-    pub r#desired_capacity: Box<i32>,
+    pub r#desired_capacity: i32,
     /// The maximum number of instances in the ﬂeet when auto-scaling.
     #[builder(into)]
     #[serde(rename = "maxCapacity")]
-    pub r#max_capacity: Box<i32>,
+    pub r#max_capacity: i32,
     /// The scaling type for a compute fleet.
     #[builder(into)]
     #[serde(rename = "scalingType")]
-    pub r#scaling_type: Box<String>,
+    pub r#scaling_type: String,
     /// Nested attribute containing information about thresholds when new instance is auto-scaled into the compute fleet.
     #[builder(into)]
     #[serde(rename = "targetTrackingScalingConfigs")]
-    pub r#target_tracking_scaling_configs: Box<Vec<super::super::types::codebuild::GetFleetScalingConfigurationTargetTrackingScalingConfig>>,
+    pub r#target_tracking_scaling_configs: Vec<super::super::types::codebuild::GetFleetScalingConfigurationTargetTrackingScalingConfig>,
 }

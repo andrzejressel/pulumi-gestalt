@@ -6,5 +6,5 @@ pub struct DataSourceSslProperties {
     /// A Boolean option to control whether SSL should be disabled.
     #[builder(into)]
     #[serde(rename = "disableSsl")]
-    pub r#disable_ssl: Box<bool>,
+    pub r#disable_ssl: bool,
 }

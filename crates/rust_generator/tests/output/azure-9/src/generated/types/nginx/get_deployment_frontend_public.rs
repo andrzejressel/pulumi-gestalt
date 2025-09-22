@@ -6,5 +6,5 @@ pub struct GetDeploymentFrontendPublic {
     /// The list of Public IP Resource IDs for this NGINX Deployment.
     #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Vec<String>>,
+    pub r#ip_addresses: Vec<String>,
 }

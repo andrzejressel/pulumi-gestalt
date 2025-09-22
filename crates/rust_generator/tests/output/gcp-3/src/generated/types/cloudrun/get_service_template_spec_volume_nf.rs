@@ -6,13 +6,13 @@ pub struct GetServiceTemplateSpecVolumeNf {
     /// Path exported by the NFS server
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// If true, mount the NFS volume as read only in all mounts. Defaults to false.
     #[builder(into)]
     #[serde(rename = "readOnly")]
-    pub r#read_only: Box<bool>,
+    pub r#read_only: bool,
     /// IP address or hostname of the NFS server
     #[builder(into)]
     #[serde(rename = "server")]
-    pub r#server: Box<String>,
+    pub r#server: String,
 }

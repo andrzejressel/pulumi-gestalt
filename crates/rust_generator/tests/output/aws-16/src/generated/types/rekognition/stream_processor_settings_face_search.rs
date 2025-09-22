@@ -6,9 +6,9 @@ pub struct StreamProcessorSettingsFaceSearch {
     /// ID of a collection that contains faces that you want to search for.
     #[builder(into)]
     #[serde(rename = "collectionId")]
-    pub r#collection_id: Box<String>,
+    pub r#collection_id: String,
     /// Minimum face match confidence score that must be met to return a result for a recognized face.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "faceMatchThreshold")]
-    pub r#face_match_threshold: Box<Option<f64>>,
+    pub r#face_match_threshold: Option<f64>,
 }

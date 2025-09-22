@@ -6,9 +6,9 @@ pub struct SpringCloudBuilderStack {
     /// Specifies the ID of the ClusterStack.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Specifies the version of the ClusterStack
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

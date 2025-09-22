@@ -4,18 +4,18 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TunnelConfigConfigIngressRule {
     /// Hostname to match the incoming request with. If the hostname matches, the request will be sent to the service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#hostname: Option<String>,
+    #[builder(into)]
     #[serde(rename = "originRequest")]
-    pub r#origin_request: Box<Option<super::types::TunnelConfigConfigIngressRuleOriginRequest>>,
+    pub r#origin_request: Option<Box<super::types::TunnelConfigConfigIngressRuleOriginRequest>>,
     /// Path of the incoming request. If the path matches, the request will be sent to the local service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
     /// Name of the service to which the request will be sent.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

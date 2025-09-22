@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTaskSpecContainerSpecPrivilegesCredentialSpec {
     /// Load credential spec from this file
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "file")]
-    pub r#file: Box<Option<String>>,
+    pub r#file: Option<String>,
     /// Load credential spec from this value in the Windows registry
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "registry")]
-    pub r#registry: Box<Option<String>>,
+    pub r#registry: Option<String>,
 }

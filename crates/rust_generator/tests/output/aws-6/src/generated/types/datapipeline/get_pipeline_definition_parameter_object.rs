@@ -5,9 +5,9 @@
 pub struct GetPipelineDefinitionParameterObject {
     #[builder(into)]
     #[serde(rename = "attributes")]
-    pub r#attributes: Box<Vec<super::super::types::datapipeline::GetPipelineDefinitionParameterObjectAttribute>>,
+    pub r#attributes: Vec<super::super::types::datapipeline::GetPipelineDefinitionParameterObjectAttribute>,
     /// ID of the object.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

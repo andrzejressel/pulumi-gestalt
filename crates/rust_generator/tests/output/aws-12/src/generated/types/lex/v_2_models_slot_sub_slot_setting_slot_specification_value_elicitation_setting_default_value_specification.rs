@@ -6,7 +6,7 @@ pub struct V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingDef
     /// List of default values.
     /// Amazon Lex chooses the default value to use in the order that they are presented in the list.
     /// See the `default_value_list` argument reference below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultValueLists")]
-    pub r#default_value_lists: Box<Option<Vec<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingDefaultValueSpecificationDefaultValueList>>>,
+    pub r#default_value_lists: Option<Vec<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingDefaultValueSpecificationDefaultValueList>>,
 }

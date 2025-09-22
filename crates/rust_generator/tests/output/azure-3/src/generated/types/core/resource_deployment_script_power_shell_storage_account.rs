@@ -6,9 +6,9 @@ pub struct ResourceDeploymentScriptPowerShellStorageAccount {
     /// Specifies the storage account access key.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Specifies the storage account name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -5,14 +5,14 @@
 pub struct GetLaunchTemplateBlockDeviceMapping {
     #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<String>,
+    pub r#device_name: String,
     #[builder(into)]
     #[serde(rename = "ebs")]
-    pub r#ebs: Box<Vec<super::super::types::ec2::GetLaunchTemplateBlockDeviceMappingEb>>,
+    pub r#ebs: Vec<super::super::types::ec2::GetLaunchTemplateBlockDeviceMappingEb>,
     #[builder(into)]
     #[serde(rename = "noDevice")]
-    pub r#no_device: Box<String>,
+    pub r#no_device: String,
     #[builder(into)]
     #[serde(rename = "virtualName")]
-    pub r#virtual_name: Box<String>,
+    pub r#virtual_name: String,
 }

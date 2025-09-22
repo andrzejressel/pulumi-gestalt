@@ -7,22 +7,22 @@ pub struct GetAutonomousDatabasePropertyLocalStandbyDb {
     /// standby Autonomous Database.
     #[builder(into)]
     #[serde(rename = "dataGuardRoleChangedTime")]
-    pub r#data_guard_role_changed_time: Box<String>,
+    pub r#data_guard_role_changed_time: String,
     /// The date and time the Disaster Recovery role was switched for the standby
     /// Autonomous Database.
     #[builder(into)]
     #[serde(rename = "disasterRecoveryRoleChangedTime")]
-    pub r#disaster_recovery_role_changed_time: Box<String>,
+    pub r#disaster_recovery_role_changed_time: String,
     /// The amount of time, in seconds, that the data of the standby database lags
     /// in comparison to the data of the primary database.
     #[builder(into)]
     #[serde(rename = "lagTimeDuration")]
-    pub r#lag_time_duration: Box<String>,
+    pub r#lag_time_duration: String,
     /// The additional details about the current lifecycle state of the
     /// Autonomous Database.
     #[builder(into)]
     #[serde(rename = "lifecycleDetails")]
-    pub r#lifecycle_details: Box<String>,
+    pub r#lifecycle_details: String,
     /// Possible values:
     ///  STATE_UNSPECIFIED
     /// PROVISIONING
@@ -48,5 +48,5 @@ pub struct GetAutonomousDatabasePropertyLocalStandbyDb {
     /// STANDBY
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

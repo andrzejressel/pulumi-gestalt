@@ -6,5 +6,5 @@ pub struct GetInstanceAutoscalingConfigAsymmetricAutoscalingOptionReplicaSelecti
     /// The location of the replica to apply asymmetric autoscaling options.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
 }

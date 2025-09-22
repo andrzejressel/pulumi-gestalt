@@ -9,16 +9,16 @@ pub struct RestorePlanRestoreConfigTransformationRuleResourceFilter {
     /// (all resources of all types matching previous filtering parameters
     /// will be candidates for transformation).
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groupKinds")]
-    pub r#group_kinds: Box<Option<Vec<super::super::types::gkebackup::RestorePlanRestoreConfigTransformationRuleResourceFilterGroupKind>>>,
+    pub r#group_kinds: Option<Vec<super::super::types::gkebackup::RestorePlanRestoreConfigTransformationRuleResourceFilterGroupKind>>,
     /// This is a JSONPath expression that matches specific fields of
     /// candidate resources and it operates as a filtering parameter
     /// (resources that are not matched with this expression will not
     /// be candidates for transformation).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "jsonPath")]
-    pub r#json_path: Box<Option<String>>,
+    pub r#json_path: Option<String>,
     /// (Filtering parameter) Any resource subject to transformation must
     /// be contained within one of the listed Kubernetes Namespace in the
     /// Backup. If this field is not provided, no namespace filtering will
@@ -26,7 +26,7 @@ pub struct RestorePlanRestoreConfigTransformationRuleResourceFilter {
     /// cluster-scoped resources, will be candidates for transformation).
     /// To mix cluster-scoped and namespaced resources in the same rule,
     /// use an empty string ("") as one of the target namespaces.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namespaces")]
-    pub r#namespaces: Box<Option<Vec<String>>>,
+    pub r#namespaces: Option<Vec<String>>,
 }

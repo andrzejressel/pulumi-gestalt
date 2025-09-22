@@ -5,16 +5,16 @@
 pub struct StreamDestinationConfig {
     /// A configuration for how data should be loaded to Google BigQuery.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bigqueryDestinationConfig")]
-    pub r#bigquery_destination_config: Box<Option<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfig>>,
+    pub r#bigquery_destination_config: Option<Box<super::super::types::datastream::StreamDestinationConfigBigqueryDestinationConfig>>,
     /// Destination connection profile resource. Format: projects/{project}/locations/{location}/connectionProfiles/{name}
     #[builder(into)]
     #[serde(rename = "destinationConnectionProfile")]
-    pub r#destination_connection_profile: Box<String>,
+    pub r#destination_connection_profile: String,
     /// A configuration for how data should be loaded to Cloud Storage.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gcsDestinationConfig")]
-    pub r#gcs_destination_config: Box<Option<super::super::types::datastream::StreamDestinationConfigGcsDestinationConfig>>,
+    pub r#gcs_destination_config: Option<Box<super::super::types::datastream::StreamDestinationConfigGcsDestinationConfig>>,
 }

@@ -6,25 +6,25 @@ pub struct ExperimentTemplateAction {
     /// ID of the action. To find out what actions are supported see [AWS FIS actions reference](https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html).
     #[builder(into)]
     #[serde(rename = "actionId")]
-    pub r#action_id: Box<String>,
+    pub r#action_id: String,
     /// Description of the action.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Friendly name of the action.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Parameter(s) for the action, if applicable. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<Vec<super::super::types::fis::ExperimentTemplateActionParameter>>>,
+    pub r#parameters: Option<Vec<super::super::types::fis::ExperimentTemplateActionParameter>>,
     /// Set of action names that must complete before this action can be executed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startAfters")]
-    pub r#start_afters: Box<Option<Vec<String>>>,
+    pub r#start_afters: Option<Vec<String>>,
     /// Action's target, if applicable. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<Option<super::super::types::fis::ExperimentTemplateActionTarget>>,
+    pub r#target: Option<Box<super::super::types::fis::ExperimentTemplateActionTarget>>,
 }

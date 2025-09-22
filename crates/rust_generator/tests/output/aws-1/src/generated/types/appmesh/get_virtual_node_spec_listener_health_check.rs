@@ -5,23 +5,23 @@
 pub struct GetVirtualNodeSpecListenerHealthCheck {
     #[builder(into)]
     #[serde(rename = "healthyThreshold")]
-    pub r#healthy_threshold: Box<i32>,
+    pub r#healthy_threshold: i32,
     #[builder(into)]
     #[serde(rename = "intervalMillis")]
-    pub r#interval_millis: Box<i32>,
+    pub r#interval_millis: i32,
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     #[builder(into)]
     #[serde(rename = "timeoutMillis")]
-    pub r#timeout_millis: Box<i32>,
+    pub r#timeout_millis: i32,
     #[builder(into)]
     #[serde(rename = "unhealthyThreshold")]
-    pub r#unhealthy_threshold: Box<i32>,
+    pub r#unhealthy_threshold: i32,
 }

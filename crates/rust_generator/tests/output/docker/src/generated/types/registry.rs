@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct Registry {
     /// The password to authenticate to the registry. Does not cause image rebuild when changed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// The URL of the Docker registry server
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "server")]
-    pub r#server: Box<Option<String>>,
+    pub r#server: Option<String>,
     /// The username to authenticate to the registry. Does not cause image rebuild when changed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

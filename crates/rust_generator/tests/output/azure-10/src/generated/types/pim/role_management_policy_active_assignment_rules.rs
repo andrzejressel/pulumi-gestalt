@@ -4,25 +4,25 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RoleManagementPolicyActiveAssignmentRules {
     /// Must an assignment have an expiry date. `false` allows permanent assignment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expirationRequired")]
-    pub r#expiration_required: Box<Option<bool>>,
+    pub r#expiration_required: Option<bool>,
     /// The maximum length of time an assignment can be valid, as an ISO8601 duration. Permitted values: `P15D`, `P30D`, `P90D`, `P180D`, or `P365D`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expireAfter")]
-    pub r#expire_after: Box<Option<String>>,
+    pub r#expire_after: Option<String>,
     /// Is a justification required to create new assignments.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requireJustification")]
-    pub r#require_justification: Box<Option<bool>>,
+    pub r#require_justification: Option<bool>,
     /// Is multi-factor authentication required to create new assignments.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requireMultifactorAuthentication")]
-    pub r#require_multifactor_authentication: Box<Option<bool>>,
+    pub r#require_multifactor_authentication: Option<bool>,
     /// Is ticket information required to create new assignments.
     /// 
     /// One of `expiration_required` or `expire_after` must be provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requireTicketInfo")]
-    pub r#require_ticket_info: Box<Option<bool>>,
+    pub r#require_ticket_info: Option<bool>,
 }

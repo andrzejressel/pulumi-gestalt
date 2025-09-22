@@ -8,13 +8,13 @@ pub struct GetTriggerBuildArtifactObject {
     /// - - -
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// Path globs used to match files in the build's workspace.
     #[builder(into)]
     #[serde(rename = "paths")]
-    pub r#paths: Box<Vec<String>>,
+    pub r#paths: Vec<String>,
     /// Output only. Stores timing information for pushing all artifact objects.
     #[builder(into)]
     #[serde(rename = "timings")]
-    pub r#timings: Box<Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactObjectTiming>>,
+    pub r#timings: Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactObjectTiming>,
 }

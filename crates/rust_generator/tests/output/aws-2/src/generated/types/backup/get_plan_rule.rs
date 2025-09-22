@@ -5,32 +5,32 @@
 pub struct GetPlanRule {
     #[builder(into)]
     #[serde(rename = "completionWindow")]
-    pub r#completion_window: Box<i32>,
+    pub r#completion_window: i32,
     #[builder(into)]
     #[serde(rename = "copyActions")]
-    pub r#copy_actions: Box<Vec<super::super::types::backup::GetPlanRuleCopyAction>>,
+    pub r#copy_actions: Vec<super::super::types::backup::GetPlanRuleCopyAction>,
     #[builder(into)]
     #[serde(rename = "enableContinuousBackup")]
-    pub r#enable_continuous_backup: Box<bool>,
+    pub r#enable_continuous_backup: bool,
     #[builder(into)]
     #[serde(rename = "lifecycles")]
-    pub r#lifecycles: Box<Vec<super::super::types::backup::GetPlanRuleLifecycle>>,
-    #[builder(into, default)]
+    pub r#lifecycles: Vec<super::super::types::backup::GetPlanRuleLifecycle>,
+    #[builder(into)]
     #[serde(rename = "recoveryPointTags")]
-    pub r#recovery_point_tags: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#recovery_point_tags: Option<std::collections::HashMap<String, String>>,
     #[builder(into)]
     #[serde(rename = "ruleName")]
-    pub r#rule_name: Box<String>,
+    pub r#rule_name: String,
     #[builder(into)]
     #[serde(rename = "schedule")]
-    pub r#schedule: Box<String>,
+    pub r#schedule: String,
     #[builder(into)]
     #[serde(rename = "scheduleExpressionTimezone")]
-    pub r#schedule_expression_timezone: Box<String>,
+    pub r#schedule_expression_timezone: String,
     #[builder(into)]
     #[serde(rename = "startWindow")]
-    pub r#start_window: Box<i32>,
+    pub r#start_window: i32,
     #[builder(into)]
     #[serde(rename = "targetVaultName")]
-    pub r#target_vault_name: Box<String>,
+    pub r#target_vault_name: String,
 }

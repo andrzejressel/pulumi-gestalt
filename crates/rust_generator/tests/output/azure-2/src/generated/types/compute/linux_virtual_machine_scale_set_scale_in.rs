@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LinuxVirtualMachineScaleSetScaleIn {
     /// Should the virtual machines chosen for removal be force deleted when the virtual machine scale set is being scaled-in? Possible values are `true` or `false`. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "forceDeletionEnabled")]
-    pub r#force_deletion_enabled: Box<Option<bool>>,
+    pub r#force_deletion_enabled: Option<bool>,
     /// The scale-in policy rule that decides which virtual machines are chosen for removal when a Virtual Machine Scale Set is scaled in. Possible values for the scale-in policy rules are `Default`, `NewestVM` and `OldestVM`, defaults to `Default`. For more information about scale in policy, please [refer to this doc](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-scale-in-policy).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rule")]
-    pub r#rule: Box<Option<String>>,
+    pub r#rule: Option<String>,
 }

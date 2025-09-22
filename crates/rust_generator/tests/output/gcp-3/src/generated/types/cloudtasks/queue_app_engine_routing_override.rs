@@ -5,22 +5,22 @@
 pub struct QueueAppEngineRoutingOverride {
     /// (Output)
     /// The host that the task is sent to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<Option<String>>,
+    pub r#host: Option<String>,
     /// App instance.
     /// By default, the task is sent to an instance which is available when the task is attempted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instance")]
-    pub r#instance: Box<Option<String>>,
+    pub r#instance: Option<String>,
     /// App service.
     /// By default, the task is sent to the service which is the default service when the task is attempted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<Option<String>>,
+    pub r#service: Option<String>,
     /// App version.
     /// By default, the task is sent to the version which is the default version when the task is attempted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

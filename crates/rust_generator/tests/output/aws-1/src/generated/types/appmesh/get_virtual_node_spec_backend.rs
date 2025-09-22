@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecBackend {
     #[builder(into)]
     #[serde(rename = "virtualServices")]
-    pub r#virtual_services: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualService>>,
+    pub r#virtual_services: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualService>,
 }

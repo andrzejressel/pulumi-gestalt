@@ -6,5 +6,5 @@ pub struct PipelineBufferOptions {
     /// Whether persistent buffering should be enabled.
     #[builder(into)]
     #[serde(rename = "persistentBufferEnabled")]
-    pub r#persistent_buffer_enabled: Box<bool>,
+    pub r#persistent_buffer_enabled: bool,
 }

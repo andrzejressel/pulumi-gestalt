@@ -3,25 +3,25 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRoute {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attachmentId")]
-    pub r#attachment_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#attachment_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "destinationCidr")]
-    pub r#destination_cidr: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#destination_cidr: Option<String>,
+    #[builder(into)]
     #[serde(rename = "prefixListId")]
-    pub r#prefix_list_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#prefix_list_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "resourceId")]
-    pub r#resource_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#resource_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#resource_type: Option<String>,
+    #[builder(into)]
     #[serde(rename = "routeOrigin")]
-    pub r#route_origin: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#route_origin: Option<String>,
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

@@ -6,31 +6,31 @@ pub struct GetFunctionBuildConfigSourceRepoSource {
     /// Regex matching branches to build.
     #[builder(into)]
     #[serde(rename = "branchName")]
-    pub r#branch_name: Box<String>,
+    pub r#branch_name: String,
     /// Regex matching tags to build.
     #[builder(into)]
     #[serde(rename = "commitSha")]
-    pub r#commit_sha: Box<String>,
+    pub r#commit_sha: String,
     /// Directory, relative to the source root, in which to run the build.
     #[builder(into)]
     #[serde(rename = "dir")]
-    pub r#dir: Box<String>,
+    pub r#dir: String,
     /// Only trigger a build if the revision regex does
     /// NOT match the revision regex.
     #[builder(into)]
     #[serde(rename = "invertRegex")]
-    pub r#invert_regex: Box<bool>,
+    pub r#invert_regex: bool,
     /// ID of the project that owns the Cloud Source Repository. If omitted, the
     /// project ID requesting the build is assumed.
     #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<String>,
+    pub r#project_id: String,
     /// Name of the Cloud Source Repository.
     #[builder(into)]
     #[serde(rename = "repoName")]
-    pub r#repo_name: Box<String>,
+    pub r#repo_name: String,
     /// Regex matching tags to build.
     #[builder(into)]
     #[serde(rename = "tagName")]
-    pub r#tag_name: Box<String>,
+    pub r#tag_name: String,
 }

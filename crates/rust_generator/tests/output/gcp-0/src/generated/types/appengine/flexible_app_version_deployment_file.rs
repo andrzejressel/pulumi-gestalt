@@ -6,13 +6,13 @@ pub struct FlexibleAppVersionDeploymentFile {
     /// The identifier for this object. Format specified above.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// SHA1 checksum of the file
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sha1Sum")]
-    pub r#sha_1_sum: Box<Option<String>>,
+    pub r#sha_1_sum: Option<String>,
     /// Source URL
     #[builder(into)]
     #[serde(rename = "sourceUrl")]
-    pub r#source_url: Box<String>,
+    pub r#source_url: String,
 }

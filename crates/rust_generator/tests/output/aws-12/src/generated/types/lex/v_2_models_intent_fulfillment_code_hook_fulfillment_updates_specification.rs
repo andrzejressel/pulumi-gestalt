@@ -6,17 +6,17 @@ pub struct V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecification {
     /// Whether fulfillment updates are sent to the user. When this field is true, updates are sent. If the active field is set to true, the `start_response`, `update_response`, and `timeout_in_seconds` fields are required.
     #[builder(into)]
     #[serde(rename = "active")]
-    pub r#active: Box<bool>,
+    pub r#active: bool,
     /// Configuration block for the message sent to users when the fulfillment Lambda functions starts running.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startResponse")]
-    pub r#start_response: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponse>>,
+    pub r#start_response: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponse>>,
     /// Length of time that the fulfillment Lambda function should run before it times out.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeoutInSeconds")]
-    pub r#timeout_in_seconds: Box<Option<i32>>,
+    pub r#timeout_in_seconds: Option<i32>,
     /// Configuration block for messages sent periodically to the user while the fulfillment Lambda function is running.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "updateResponse")]
-    pub r#update_response: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponse>>,
+    pub r#update_response: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponse>>,
 }

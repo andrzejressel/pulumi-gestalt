@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct QueueHttpTargetUriOverrideQueryOverride {
     /// The query parameters (e.g., qparam1=123&qparam2=456). Default is an empty string.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "queryParams")]
-    pub r#query_params: Box<Option<String>>,
+    pub r#query_params: Option<String>,
 }

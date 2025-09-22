@@ -6,5 +6,5 @@ pub struct CxTestCaseTestCaseConversationTurnUserInputInputEvent {
     /// Name of the event.
     #[builder(into)]
     #[serde(rename = "event")]
-    pub r#event: Box<String>,
+    pub r#event: String,
 }

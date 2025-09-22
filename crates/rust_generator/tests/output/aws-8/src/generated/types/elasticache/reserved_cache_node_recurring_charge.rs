@@ -5,8 +5,8 @@
 pub struct ReservedCacheNodeRecurringCharge {
     #[builder(into)]
     #[serde(rename = "recurringChargeAmount")]
-    pub r#recurring_charge_amount: Box<f64>,
+    pub r#recurring_charge_amount: f64,
     #[builder(into)]
     #[serde(rename = "recurringChargeFrequency")]
-    pub r#recurring_charge_frequency: Box<String>,
+    pub r#recurring_charge_frequency: String,
 }

@@ -7,10 +7,10 @@ pub struct GlobalForwardingRuleMetadataFilterFilterLabel {
     /// 1 and 1024 characters, inclusive.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value that the label must match. The value has a maximum
     /// length of 1024 characters.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

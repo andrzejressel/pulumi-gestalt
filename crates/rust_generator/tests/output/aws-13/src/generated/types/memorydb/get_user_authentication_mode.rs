@@ -6,9 +6,9 @@ pub struct GetUserAuthenticationMode {
     /// Number of passwords belonging to the user if `type` is set to `password`.
     #[builder(into)]
     #[serde(rename = "passwordCount")]
-    pub r#password_count: Box<i32>,
+    pub r#password_count: i32,
     /// Type of authentication configured.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -7,11 +7,11 @@ pub struct PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoType {
     /// not have an infoType, the DLP API applies the limit against all infoTypes that are found but not
     /// specified in another InfoTypeLimit.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "infoType")]
-    pub r#info_type: Box<Option<super::super::types::dataloss::PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType>>,
+    pub r#info_type: Option<Box<super::super::types::dataloss::PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType>>,
     /// Max findings limit for the given infoType.
     #[builder(into)]
     #[serde(rename = "maxFindings")]
-    pub r#max_findings: Box<i32>,
+    pub r#max_findings: i32,
 }

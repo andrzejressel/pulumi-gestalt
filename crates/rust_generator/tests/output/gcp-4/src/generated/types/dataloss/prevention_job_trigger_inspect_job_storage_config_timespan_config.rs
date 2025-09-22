@@ -7,20 +7,20 @@ pub struct PreventionJobTriggerInspectJobStorageConfigTimespanConfig {
     /// scanning files that have not been modified since the last time the JobTrigger executed. This will
     /// be based on the time of the execution of the last run of the JobTrigger or the timespan endTime
     /// used in the last run of the JobTrigger.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableAutoPopulationOfTimespanConfig")]
-    pub r#enable_auto_population_of_timespan_config: Box<Option<bool>>,
+    pub r#enable_auto_population_of_timespan_config: Option<bool>,
     /// Exclude files, tables, or rows newer than this value. If not set, no upper time limit is applied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<Option<String>>,
+    pub r#end_time: Option<String>,
     /// Exclude files, tables, or rows older than this value. If not set, no lower time limit is applied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
     /// Specification of the field containing the timestamp of scanned items.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timestampField")]
-    pub r#timestamp_field: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField>>,
+    pub r#timestamp_field: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampField>>,
 }

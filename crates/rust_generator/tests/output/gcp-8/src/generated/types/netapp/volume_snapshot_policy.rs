@@ -5,27 +5,27 @@
 pub struct VolumeSnapshotPolicy {
     /// Daily schedule policy.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dailySchedule")]
-    pub r#daily_schedule: Box<Option<super::super::types::netapp::VolumeSnapshotPolicyDailySchedule>>,
+    pub r#daily_schedule: Option<Box<super::super::types::netapp::VolumeSnapshotPolicyDailySchedule>>,
     /// Enables automated snapshot creation according to defined schedule. Default is false.
     /// To disable automatic snapshot creation you have to remove the whole snapshot_policy block.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Hourly schedule policy.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hourlySchedule")]
-    pub r#hourly_schedule: Box<Option<super::super::types::netapp::VolumeSnapshotPolicyHourlySchedule>>,
+    pub r#hourly_schedule: Option<Box<super::super::types::netapp::VolumeSnapshotPolicyHourlySchedule>>,
     /// Monthly schedule policy.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "monthlySchedule")]
-    pub r#monthly_schedule: Box<Option<super::super::types::netapp::VolumeSnapshotPolicyMonthlySchedule>>,
+    pub r#monthly_schedule: Option<Box<super::super::types::netapp::VolumeSnapshotPolicyMonthlySchedule>>,
     /// Weekly schedule policy.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weeklySchedule")]
-    pub r#weekly_schedule: Box<Option<super::super::types::netapp::VolumeSnapshotPolicyWeeklySchedule>>,
+    pub r#weekly_schedule: Option<Box<super::super::types::netapp::VolumeSnapshotPolicyWeeklySchedule>>,
 }

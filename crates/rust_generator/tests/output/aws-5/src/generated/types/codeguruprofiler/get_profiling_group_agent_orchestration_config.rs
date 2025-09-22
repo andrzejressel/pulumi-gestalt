@@ -5,5 +5,5 @@
 pub struct GetProfilingGroupAgentOrchestrationConfig {
     #[builder(into)]
     #[serde(rename = "profilingEnabled")]
-    pub r#profiling_enabled: Box<bool>,
+    pub r#profiling_enabled: bool,
 }

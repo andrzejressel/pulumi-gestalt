@@ -6,9 +6,9 @@ pub struct StaticWebAppBasicAuth {
     /// The Environment types to use the Basic Auth for access. Possible values include `AllEnvironments` and `StagingEnvironments`.
     #[builder(into)]
     #[serde(rename = "environments")]
-    pub r#environments: Box<String>,
+    pub r#environments: String,
     /// The password for the basic authentication access.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
 }

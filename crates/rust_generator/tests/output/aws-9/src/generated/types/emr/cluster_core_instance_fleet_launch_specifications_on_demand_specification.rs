@@ -6,5 +6,5 @@ pub struct ClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification {
     /// Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is `lowest-price` (the default), which launches the lowest price first.
     #[builder(into)]
     #[serde(rename = "allocationStrategy")]
-    pub r#allocation_strategy: Box<String>,
+    pub r#allocation_strategy: String,
 }

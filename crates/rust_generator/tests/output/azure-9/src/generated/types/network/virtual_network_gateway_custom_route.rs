@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNetworkGatewayCustomRoute {
     /// A list of address blocks reserved for this virtual network in CIDR notation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "addressPrefixes")]
-    pub r#address_prefixes: Box<Option<Vec<String>>>,
+    pub r#address_prefixes: Option<Vec<String>>,
 }

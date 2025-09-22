@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TeamsRuleRuleSettingsDnsResolvers {
     /// IPv4 resolvers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv4s")]
-    pub r#ipv_4_s: Box<Option<Vec<super::types::TeamsRuleRuleSettingsDnsResolversIpv4>>>,
+    pub r#ipv_4_s: Option<Vec<super::types::TeamsRuleRuleSettingsDnsResolversIpv4>>,
     /// IPv6 resolvers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv6s")]
-    pub r#ipv_6_s: Box<Option<Vec<super::types::TeamsRuleRuleSettingsDnsResolversIpv6>>>,
+    pub r#ipv_6_s: Option<Vec<super::types::TeamsRuleRuleSettingsDnsResolversIpv6>>,
 }

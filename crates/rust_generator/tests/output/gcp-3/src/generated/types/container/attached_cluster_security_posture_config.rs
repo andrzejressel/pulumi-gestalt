@@ -7,5 +7,5 @@ pub struct AttachedClusterSecurityPostureConfig {
     /// Possible values are: `VULNERABILITY_DISABLED`, `VULNERABILITY_ENTERPRISE`.
     #[builder(into)]
     #[serde(rename = "vulnerabilityMode")]
-    pub r#vulnerability_mode: Box<String>,
+    pub r#vulnerability_mode: String,
 }

@@ -5,8 +5,8 @@
 pub struct GetDataSetDataSetUsageConfiguration {
     #[builder(into)]
     #[serde(rename = "disableUseAsDirectQuerySource")]
-    pub r#disable_use_as_direct_query_source: Box<bool>,
+    pub r#disable_use_as_direct_query_source: bool,
     #[builder(into)]
     #[serde(rename = "disableUseAsImportedSource")]
-    pub r#disable_use_as_imported_source: Box<bool>,
+    pub r#disable_use_as_imported_source: bool,
 }

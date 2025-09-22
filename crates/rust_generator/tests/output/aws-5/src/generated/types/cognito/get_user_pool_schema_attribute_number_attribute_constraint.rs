@@ -6,9 +6,9 @@ pub struct GetUserPoolSchemaAttributeNumberAttributeConstraint {
     /// - Maximum allowed value.
     #[builder(into)]
     #[serde(rename = "maxValue")]
-    pub r#max_value: Box<String>,
+    pub r#max_value: String,
     /// - Minimum allowed value.
     #[builder(into)]
     #[serde(rename = "minValue")]
-    pub r#min_value: Box<String>,
+    pub r#min_value: String,
 }

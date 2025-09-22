@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZeroTrustAccessOrganizationCustomPage {
     /// The id of the forbidden page.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "forbidden")]
-    pub r#forbidden: Box<Option<String>>,
+    pub r#forbidden: Option<String>,
     /// The id of the identity denied page.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityDenied")]
-    pub r#identity_denied: Box<Option<String>>,
+    pub r#identity_denied: Option<String>,
 }

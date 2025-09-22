@@ -5,11 +5,11 @@
 pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsModule {
     /// The state of enablement for the module at its level of the resource hierarchy.
     /// Possible values are: `ENABLEMENT_STATE_UNSPECIFIED`, `ENABLED`, `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "moduleEnablementState")]
-    pub r#module_enablement_state: Box<Option<String>>,
+    pub r#module_enablement_state: Option<String>,
     /// The name of the module eg: BIGQUERY_TABLE_CMEK_DISABLED.
     #[builder(into)]
     #[serde(rename = "moduleName")]
-    pub r#module_name: Box<String>,
+    pub r#module_name: String,
 }

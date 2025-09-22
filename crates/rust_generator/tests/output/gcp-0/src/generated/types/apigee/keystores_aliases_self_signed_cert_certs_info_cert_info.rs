@@ -5,58 +5,58 @@
 pub struct KeystoresAliasesSelfSignedCertCertsInfoCertInfo {
     /// (Output)
     /// X.509 basic constraints extension.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "basicConstraints")]
-    pub r#basic_constraints: Box<Option<String>>,
+    pub r#basic_constraints: Option<String>,
     /// (Output)
     /// X.509 notAfter validity period in milliseconds since epoch.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expiryDate")]
-    pub r#expiry_date: Box<Option<String>>,
+    pub r#expiry_date: Option<String>,
     /// (Output)
     /// Flag that specifies whether the certificate is valid.
     /// Flag is set to Yes if the certificate is valid, No if expired, or Not yet if not yet valid.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isValid")]
-    pub r#is_valid: Box<Option<String>>,
+    pub r#is_valid: Option<String>,
     /// (Output)
     /// X.509 issuer.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<Option<String>>,
+    pub r#issuer: Option<String>,
     /// (Output)
     /// Public key component of the X.509 subject public key info.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicKey")]
-    pub r#public_key: Box<Option<String>>,
+    pub r#public_key: Option<String>,
     /// (Output)
     /// X.509 serial number.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serialNumber")]
-    pub r#serial_number: Box<Option<String>>,
+    pub r#serial_number: Option<String>,
     /// (Output)
     /// X.509 signatureAlgorithm.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sigAlgName")]
-    pub r#sig_alg_name: Box<Option<String>>,
+    pub r#sig_alg_name: Option<String>,
     /// Subject details.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subject")]
-    pub r#subject: Box<Option<String>>,
+    pub r#subject: Option<String>,
     /// (Output)
     /// X.509 subject alternative names (SANs) extension.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Box<Option<Vec<String>>>,
+    pub r#subject_alternative_names: Option<Vec<String>>,
     /// (Output)
     /// X.509 notBefore validity period in milliseconds since epoch.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "validFrom")]
-    pub r#valid_from: Box<Option<String>>,
+    pub r#valid_from: Option<String>,
     /// (Output)
     /// X.509 version.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<i32>>,
+    pub r#version: Option<i32>,
 }

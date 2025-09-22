@@ -6,22 +6,22 @@ pub struct ClusterControlPlaneLocal {
     /// Only machines matching this filter will be allowed to host control
     /// plane nodes. The filtering language accepts strings like "name=<name>",
     /// and is documented here: [AIP-160](https://google.aip.dev/160).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "machineFilter")]
-    pub r#machine_filter: Box<Option<String>>,
+    pub r#machine_filter: Option<String>,
     /// The number of nodes to serve as replicas of the Control Plane.
     /// Only 1 and 3 are supported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeCount")]
-    pub r#node_count: Box<Option<i32>>,
+    pub r#node_count: Option<i32>,
     /// Name of the Google Distributed Cloud Edge zones where this node pool
     /// will be created. For example: `us-central1-edge-customer-a`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeLocation")]
-    pub r#node_location: Box<Option<String>>,
+    pub r#node_location: Option<String>,
     /// Policy configuration about how user applications are deployed.
     /// Possible values are: `SHARED_DEPLOYMENT_POLICY_UNSPECIFIED`, `ALLOWED`, `DISALLOWED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sharedDeploymentPolicy")]
-    pub r#shared_deployment_policy: Box<Option<String>>,
+    pub r#shared_deployment_policy: Option<String>,
 }

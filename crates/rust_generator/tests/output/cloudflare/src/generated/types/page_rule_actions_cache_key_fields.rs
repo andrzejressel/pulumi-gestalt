@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PageRuleActionsCacheKeyFields {
     /// Controls what cookies go into Cache Key:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cookie")]
-    pub r#cookie: Box<Option<super::types::PageRuleActionsCacheKeyFieldsCookie>>,
+    pub r#cookie: Option<Box<super::types::PageRuleActionsCacheKeyFieldsCookie>>,
     /// Controls what HTTP headers go into Cache Key:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "header")]
-    pub r#header: Box<Option<super::types::PageRuleActionsCacheKeyFieldsHeader>>,
+    pub r#header: Option<Box<super::types::PageRuleActionsCacheKeyFieldsHeader>>,
     /// Controls which Host header goes into Cache Key:
     #[builder(into)]
     #[serde(rename = "host")]

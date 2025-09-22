@@ -4,39 +4,39 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScaleSetNetworkProfileIpConfiguration {
     /// Specifies an array of references to backend address pools of application gateways. A scale set can reference backend address pools of multiple application gateways. Multiple scale sets can use the same application gateway.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applicationGatewayBackendAddressPoolIds")]
-    pub r#application_gateway_backend_address_pool_ids: Box<Option<Vec<String>>>,
+    pub r#application_gateway_backend_address_pool_ids: Option<Vec<String>>,
     /// Specifies up to `20` application security group IDs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applicationSecurityGroupIds")]
-    pub r#application_security_group_ids: Box<Option<Vec<String>>>,
+    pub r#application_security_group_ids: Option<Vec<String>>,
     /// Specifies an array of references to backend address pools of load balancers. A scale set can reference backend address pools of one public and one internal load balancer. Multiple scale sets cannot use the same load balancer.
     /// 
     /// > **NOTE:** When using this field you'll also need to configure a Rule for the Load Balancer, and use a `depends_on` between this resource and the Load Balancer Rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loadBalancerBackendAddressPoolIds")]
-    pub r#load_balancer_backend_address_pool_ids: Box<Option<Vec<String>>>,
+    pub r#load_balancer_backend_address_pool_ids: Option<Vec<String>>,
     /// Specifies an array of references to inbound NAT pools for load balancers. A scale set can reference inbound NAT pools of one public and one internal load balancer. Multiple scale sets cannot use the same load balancer.
     /// 
     /// > **NOTE:** When using this field you'll also need to configure a Rule for the Load Balancer, and use a `depends_on` between this resource and the Load Balancer Rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loadBalancerInboundNatRulesIds")]
-    pub r#load_balancer_inbound_nat_rules_ids: Box<Option<Vec<String>>>,
+    pub r#load_balancer_inbound_nat_rules_ids: Option<Vec<String>>,
     /// Specifies name of the IP configuration.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies if this ip_configuration is the primary one.
     #[builder(into)]
     #[serde(rename = "primary")]
-    pub r#primary: Box<bool>,
+    pub r#primary: bool,
     /// Describes a virtual machines scale set IP Configuration's PublicIPAddress configuration. The `public_ip_address_configuration` block is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicIpAddressConfiguration")]
-    pub r#public_ip_address_configuration: Box<Option<super::super::types::compute::ScaleSetNetworkProfileIpConfigurationPublicIpAddressConfiguration>>,
+    pub r#public_ip_address_configuration: Option<Box<super::super::types::compute::ScaleSetNetworkProfileIpConfigurationPublicIpAddressConfiguration>>,
     /// Specifies the identifier of the subnet.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

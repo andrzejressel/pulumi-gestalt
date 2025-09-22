@@ -5,8 +5,8 @@
 pub struct GetVirtualNodeSpecLoggingAccessLogFile {
     #[builder(into)]
     #[serde(rename = "formats")]
-    pub r#formats: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecLoggingAccessLogFileFormat>>,
+    pub r#formats: Vec<super::super::types::appmesh::GetVirtualNodeSpecLoggingAccessLogFileFormat>,
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

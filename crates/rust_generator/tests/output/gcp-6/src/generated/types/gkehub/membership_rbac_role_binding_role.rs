@@ -9,5 +9,5 @@ pub struct MembershipRbacRoleBindingRole {
     /// - - -
     #[builder(into)]
     #[serde(rename = "predefinedRole")]
-    pub r#predefined_role: Box<String>,
+    pub r#predefined_role: String,
 }

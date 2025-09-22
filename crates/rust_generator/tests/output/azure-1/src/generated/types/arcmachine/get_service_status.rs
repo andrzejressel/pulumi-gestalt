@@ -6,9 +6,9 @@ pub struct GetServiceStatus {
     /// A `extension_service` block as defined above.
     #[builder(into)]
     #[serde(rename = "extensionServices")]
-    pub r#extension_services: Box<Vec<super::super::types::arcmachine::GetServiceStatusExtensionService>>,
+    pub r#extension_services: Vec<super::super::types::arcmachine::GetServiceStatusExtensionService>,
     /// A `guest_configuration_service` block as defined above.
     #[builder(into)]
     #[serde(rename = "guestConfigurationServices")]
-    pub r#guest_configuration_services: Box<Vec<super::super::types::arcmachine::GetServiceStatusGuestConfigurationService>>,
+    pub r#guest_configuration_services: Vec<super::super::types::arcmachine::GetServiceStatusGuestConfigurationService>,
 }

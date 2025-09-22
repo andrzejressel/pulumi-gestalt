@@ -5,18 +5,18 @@
 pub struct ConnectionEventingConfigAuthConfig {
     /// List containing additional auth configs.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "additionalVariables")]
-    pub r#additional_variables: Box<Option<Vec<super::super::types::integrationconnectors::ConnectionEventingConfigAuthConfigAdditionalVariable>>>,
+    pub r#additional_variables: Option<Vec<super::super::types::integrationconnectors::ConnectionEventingConfigAuthConfigAdditionalVariable>>,
     /// The type of authentication configured.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authKey")]
-    pub r#auth_key: Box<Option<String>>,
+    pub r#auth_key: Option<String>,
     /// authType of the Connection
     /// Possible values are: `USER_PASSWORD`.
     #[builder(into)]
     #[serde(rename = "authType")]
-    pub r#auth_type: Box<String>,
+    pub r#auth_type: String,
     /// User password for Authentication.
     /// Structure is documented below.
     #[builder(into)]

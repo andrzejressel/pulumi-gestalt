@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventHubNamespaceNetworkRulesetsVirtualNetworkRule {
     /// Are missing virtual network service endpoints ignored?
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ignoreMissingVirtualNetworkServiceEndpoint")]
-    pub r#ignore_missing_virtual_network_service_endpoint: Box<Option<bool>>,
+    pub r#ignore_missing_virtual_network_service_endpoint: Option<bool>,
     /// The id of the subnet to match on.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

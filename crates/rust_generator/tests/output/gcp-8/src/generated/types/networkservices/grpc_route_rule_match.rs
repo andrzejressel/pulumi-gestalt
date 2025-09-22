@@ -5,12 +5,12 @@
 pub struct GrpcRouteRuleMatch {
     /// Specifies a list of HTTP request headers to match against.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Option<Vec<super::super::types::networkservices::GrpcRouteRuleMatchHeader>>>,
+    pub r#headers: Option<Vec<super::super::types::networkservices::GrpcRouteRuleMatchHeader>>,
     /// A gRPC method to match against. If this field is empty or omitted, will match all methods.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "method")]
-    pub r#method: Box<Option<super::super::types::networkservices::GrpcRouteRuleMatchMethod>>,
+    pub r#method: Option<Box<super::super::types::networkservices::GrpcRouteRuleMatchMethod>>,
 }

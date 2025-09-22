@@ -7,5 +7,5 @@ pub struct GetMetastoreServiceEncryptionConfig {
     /// Use the following format: 'projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)'
     #[builder(into)]
     #[serde(rename = "kmsKey")]
-    pub r#kms_key: Box<String>,
+    pub r#kms_key: String,
 }

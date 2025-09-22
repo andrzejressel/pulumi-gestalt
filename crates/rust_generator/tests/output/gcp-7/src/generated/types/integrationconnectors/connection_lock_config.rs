@@ -6,9 +6,9 @@ pub struct ConnectionLockConfig {
     /// Indicates whether or not the connection is locked.
     #[builder(into)]
     #[serde(rename = "locked")]
-    pub r#locked: Box<bool>,
+    pub r#locked: bool,
     /// Describes why a connection is locked.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reason")]
-    pub r#reason: Box<Option<String>>,
+    pub r#reason: Option<String>,
 }

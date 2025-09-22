@@ -5,10 +5,10 @@
 pub struct ManagedZonePrivateVisibilityConfig {
     /// The list of Google Kubernetes Engine clusters that can see this zone.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gkeClusters")]
-    pub r#gke_clusters: Box<Option<Vec<super::super::types::dns::ManagedZonePrivateVisibilityConfigGkeCluster>>>,
-    #[builder(into, default)]
+    pub r#gke_clusters: Option<Vec<super::super::types::dns::ManagedZonePrivateVisibilityConfigGkeCluster>>,
+    #[builder(into)]
     #[serde(rename = "networks")]
-    pub r#networks: Box<Option<Vec<super::super::types::dns::ManagedZonePrivateVisibilityConfigNetwork>>>,
+    pub r#networks: Option<Vec<super::super::types::dns::ManagedZonePrivateVisibilityConfigNetwork>>,
 }

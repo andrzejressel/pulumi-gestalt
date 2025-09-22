@@ -3,121 +3,121 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RecordData {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "algorithm")]
-    pub r#algorithm: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#algorithm: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "altitude")]
-    pub r#altitude: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#altitude: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "certificate")]
-    pub r#certificate: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#certificate: Option<String>,
+    #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#content: Option<String>,
+    #[builder(into)]
     #[serde(rename = "digest")]
-    pub r#digest: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#digest: Option<String>,
+    #[builder(into)]
     #[serde(rename = "digestType")]
-    pub r#digest_type: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#digest_type: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "fingerprint")]
-    pub r#fingerprint: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#fingerprint: Option<String>,
+    #[builder(into)]
     #[serde(rename = "flags")]
-    pub r#flags: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#flags: Option<String>,
+    #[builder(into)]
     #[serde(rename = "keyTag")]
-    pub r#key_tag: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#key_tag: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "latDegrees")]
-    pub r#lat_degrees: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#lat_degrees: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "latDirection")]
-    pub r#lat_direction: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#lat_direction: Option<String>,
+    #[builder(into)]
     #[serde(rename = "latMinutes")]
-    pub r#lat_minutes: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#lat_minutes: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "latSeconds")]
-    pub r#lat_seconds: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#lat_seconds: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "longDegrees")]
-    pub r#long_degrees: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#long_degrees: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "longDirection")]
-    pub r#long_direction: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#long_direction: Option<String>,
+    #[builder(into)]
     #[serde(rename = "longMinutes")]
-    pub r#long_minutes: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#long_minutes: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "longSeconds")]
-    pub r#long_seconds: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#long_seconds: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "matchingType")]
-    pub r#matching_type: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#matching_type: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "order")]
-    pub r#order: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#order: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#port: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "precisionHorz")]
-    pub r#precision_horz: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#precision_horz: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "precisionVert")]
-    pub r#precision_vert: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#precision_vert: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "preference")]
-    pub r#preference: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#preference: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#priority: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "proto")]
-    pub r#proto: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#proto: Option<String>,
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#protocol: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "publicKey")]
-    pub r#public_key: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#public_key: Option<String>,
+    #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#regex: Option<String>,
+    #[builder(into)]
     #[serde(rename = "replacement")]
-    pub r#replacement: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#replacement: Option<String>,
+    #[builder(into)]
     #[serde(rename = "selector")]
-    pub r#selector: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#selector: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#service: Option<String>,
+    #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#size: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#tag: Option<String>,
+    #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#target: Option<String>,
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#type_: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "usage")]
-    pub r#usage: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#usage: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#value: Option<String>,
+    #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<Option<i32>>,
+    pub r#weight: Option<i32>,
 }

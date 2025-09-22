@@ -6,5 +6,5 @@ pub struct GuestPoliciesRecipeInstallStepDpkgInstallation {
     /// The id of the relevant artifact in the recipe.
     #[builder(into)]
     #[serde(rename = "artifactId")]
-    pub r#artifact_id: Box<String>,
+    pub r#artifact_id: String,
 }

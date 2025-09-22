@@ -6,9 +6,9 @@ pub struct ListenerRuleActionForwardStickiness {
     /// The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<i32>,
+    pub r#duration: i32,
     /// Indicates whether target group stickiness is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
 }

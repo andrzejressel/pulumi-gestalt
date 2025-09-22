@@ -6,5 +6,5 @@ pub struct GetCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCo
     /// List of item names (`cookies`, `headers`, or `query_strings`).
     #[builder(into)]
     #[serde(rename = "items")]
-    pub r#items: Box<Vec<String>>,
+    pub r#items: Vec<String>,
 }

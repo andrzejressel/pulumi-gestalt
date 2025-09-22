@@ -7,22 +7,22 @@ pub struct InstanceMaintenanceSchedule {
     /// Output only. The end time of any upcoming scheduled maintenance for this instance.
     /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
     /// resolution and up to nine fractional digits.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<Option<String>>,
+    pub r#end_time: Option<String>,
     /// (Output)
     /// Output only. The deadline that the maintenance schedule start time
     /// can not go beyond, including reschedule.
     /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
     /// resolution and up to nine fractional digits.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scheduleDeadlineTime")]
-    pub r#schedule_deadline_time: Box<Option<String>>,
+    pub r#schedule_deadline_time: Option<String>,
     /// (Output)
     /// Output only. The start time of any upcoming scheduled maintenance for this instance.
     /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
     /// resolution and up to nine fractional digits.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
 }

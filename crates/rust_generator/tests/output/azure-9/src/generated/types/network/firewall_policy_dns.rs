@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirewallPolicyDns {
     /// Whether to enable DNS proxy on Firewalls attached to this Firewall Policy? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "proxyEnabled")]
-    pub r#proxy_enabled: Box<Option<bool>>,
+    pub r#proxy_enabled: Option<bool>,
     /// A list of custom DNS servers' IP addresses.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "servers")]
-    pub r#servers: Box<Option<Vec<String>>>,
+    pub r#servers: Option<Vec<String>>,
 }

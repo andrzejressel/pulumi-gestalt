@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GuardrailWordPolicyConfig {
     /// A config for the list of managed words. See Managed Word Lists Config for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "managedWordListsConfigs")]
-    pub r#managed_word_lists_configs: Box<Option<Vec<super::super::types::bedrock::GuardrailWordPolicyConfigManagedWordListsConfig>>>,
+    pub r#managed_word_lists_configs: Option<Vec<super::super::types::bedrock::GuardrailWordPolicyConfigManagedWordListsConfig>>,
     /// List of custom word configs. See Words Config for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "wordsConfigs")]
-    pub r#words_configs: Box<Option<Vec<super::super::types::bedrock::GuardrailWordPolicyConfigWordsConfig>>>,
+    pub r#words_configs: Option<Vec<super::super::types::bedrock::GuardrailWordPolicyConfigWordsConfig>>,
 }

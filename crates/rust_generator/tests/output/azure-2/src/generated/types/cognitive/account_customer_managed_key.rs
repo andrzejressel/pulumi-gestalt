@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountCustomerManagedKey {
     /// The Client ID of the User Assigned Identity that has access to the key. This property only needs to be specified when there're multiple identities attached to the Cognitive Account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityClientId")]
-    pub r#identity_client_id: Box<Option<String>>,
+    pub r#identity_client_id: Option<String>,
     /// The ID of the Key Vault Key which should be used to Encrypt the data in this Cognitive Account.
     #[builder(into)]
     #[serde(rename = "keyVaultKeyId")]
-    pub r#key_vault_key_id: Box<String>,
+    pub r#key_vault_key_id: String,
 }

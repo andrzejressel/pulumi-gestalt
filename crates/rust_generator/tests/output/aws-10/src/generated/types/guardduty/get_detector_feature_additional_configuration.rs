@@ -6,9 +6,9 @@ pub struct GetDetectorFeatureAdditionalConfiguration {
     /// The name of the detector feature.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Current status of the detector.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

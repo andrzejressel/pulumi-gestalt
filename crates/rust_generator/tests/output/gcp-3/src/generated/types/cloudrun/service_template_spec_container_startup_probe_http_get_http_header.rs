@@ -6,9 +6,9 @@ pub struct ServiceTemplateSpecContainerStartupProbeHttpGetHttpHeader {
     /// The header field name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The header field value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

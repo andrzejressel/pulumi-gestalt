@@ -6,7 +6,7 @@ pub struct CryptoKeyKeyAccessJustificationsPolicy {
     /// The list of allowed reasons for access to this CryptoKey. Zero allowed
     /// access reasons means all encrypt, decrypt, and sign operations for
     /// this CryptoKey will fail.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedAccessReasons")]
-    pub r#allowed_access_reasons: Box<Option<Vec<String>>>,
+    pub r#allowed_access_reasons: Option<Vec<String>>,
 }

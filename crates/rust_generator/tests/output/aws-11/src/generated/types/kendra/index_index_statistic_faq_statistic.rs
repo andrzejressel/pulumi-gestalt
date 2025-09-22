@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IndexIndexStatisticFaqStatistic {
     /// The total number of FAQ questions and answers contained in the index.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "indexedQuestionAnswersCount")]
-    pub r#indexed_question_answers_count: Box<Option<i32>>,
+    pub r#indexed_question_answers_count: Option<i32>,
 }

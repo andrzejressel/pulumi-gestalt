@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTaskSpecNetworksAdvanced {
     /// The network aliases of the container in the specific network.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "aliases")]
-    pub r#aliases: Box<Option<Vec<String>>>,
+    pub r#aliases: Option<Vec<String>>,
     /// An array of driver options for the network, e.g. `opts1=value`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "driverOpts")]
-    pub r#driver_opts: Box<Option<Vec<String>>>,
+    pub r#driver_opts: Option<Vec<String>>,
     /// The name/id of the network.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

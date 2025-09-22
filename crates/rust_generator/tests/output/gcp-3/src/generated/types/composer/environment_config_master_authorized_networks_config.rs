@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentConfigMasterAuthorizedNetworksConfig {
     /// cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cidrBlocks")]
-    pub r#cidr_blocks: Box<Option<Vec<super::super::types::composer::EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock>>>,
+    pub r#cidr_blocks: Option<Vec<super::super::types::composer::EnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock>>,
     /// Whether or not master authorized networks is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

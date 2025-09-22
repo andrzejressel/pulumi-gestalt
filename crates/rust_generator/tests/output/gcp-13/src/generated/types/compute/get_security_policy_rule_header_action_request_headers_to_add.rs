@@ -6,9 +6,9 @@ pub struct GetSecurityPolicyRuleHeaderActionRequestHeadersToAdd {
     /// The name of the header to set.
     #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<String>,
+    pub r#header_name: String,
     /// The value to set the named header to.
     #[builder(into)]
     #[serde(rename = "headerValue")]
-    pub r#header_value: Box<String>,
+    pub r#header_value: String,
 }

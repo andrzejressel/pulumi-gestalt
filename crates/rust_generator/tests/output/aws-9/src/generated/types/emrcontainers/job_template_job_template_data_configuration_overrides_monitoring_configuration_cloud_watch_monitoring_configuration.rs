@@ -6,9 +6,9 @@ pub struct JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurati
     /// The name of the log group for log publishing.
     #[builder(into)]
     #[serde(rename = "logGroupName")]
-    pub r#log_group_name: Box<String>,
+    pub r#log_group_name: String,
     /// The specified name prefix for log streams.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logStreamNamePrefix")]
-    pub r#log_stream_name_prefix: Box<Option<String>>,
+    pub r#log_stream_name_prefix: Option<String>,
 }

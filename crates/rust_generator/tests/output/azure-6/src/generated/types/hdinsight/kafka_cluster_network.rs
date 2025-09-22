@@ -6,11 +6,11 @@ pub struct KafkaClusterNetwork {
     /// The direction of the resource provider connection. Possible values include `Inbound` or `Outbound`. Defaults to `Inbound`. Changing this forces a new resource to be created.
     /// 
     /// > **NOTE:** To enabled the private link the `connection_direction` must be set to `Outbound`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionDirection")]
-    pub r#connection_direction: Box<Option<String>>,
+    pub r#connection_direction: Option<String>,
     /// Is the private link enabled? Possible values include `true` or `false`. Defaults to `false`. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateLinkEnabled")]
-    pub r#private_link_enabled: Box<Option<bool>>,
+    pub r#private_link_enabled: Option<bool>,
 }

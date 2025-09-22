@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IndexIndexStatisticTextDocumentStatistic {
     /// The total size, in bytes, of the indexed documents.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "indexedTextBytes")]
-    pub r#indexed_text_bytes: Box<Option<i32>>,
+    pub r#indexed_text_bytes: Option<i32>,
     /// The number of text documents indexed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "indexedTextDocumentsCount")]
-    pub r#indexed_text_documents_count: Box<Option<i32>>,
+    pub r#indexed_text_documents_count: Option<i32>,
 }

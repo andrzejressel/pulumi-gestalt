@@ -6,17 +6,17 @@ pub struct SrvRecordRecord {
     /// Port the service is listening on.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     /// Priority of the SRV record.
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
     /// FQDN of the service.
     #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<String>,
+    pub r#target: String,
     /// Weight of the SRV record.
     #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<i32>,
+    pub r#weight: i32,
 }

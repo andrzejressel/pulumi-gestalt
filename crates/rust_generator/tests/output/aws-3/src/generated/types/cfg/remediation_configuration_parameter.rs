@@ -6,17 +6,17 @@ pub struct RemediationConfigurationParameter {
     /// Name of the attribute.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Value is dynamic and changes at run-time.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceValue")]
-    pub r#resource_value: Box<Option<String>>,
+    pub r#resource_value: Option<String>,
     /// Value is static and does not change at run-time.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "staticValue")]
-    pub r#static_value: Box<Option<String>>,
+    pub r#static_value: Option<String>,
     /// List of static values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "staticValues")]
-    pub r#static_values: Box<Option<Vec<String>>>,
+    pub r#static_values: Option<Vec<String>>,
 }

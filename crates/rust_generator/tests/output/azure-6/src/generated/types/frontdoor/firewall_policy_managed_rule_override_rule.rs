@@ -6,17 +6,17 @@ pub struct FirewallPolicyManagedRuleOverrideRule {
     /// The action to be applied when the rule matches. Possible values are `Allow`, `Block`, `Log`, or `Redirect`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// Is the managed rule override enabled or disabled. Defaults to `false`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// One or more `exclusion` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exclusions")]
-    pub r#exclusions: Box<Option<Vec<super::super::types::frontdoor::FirewallPolicyManagedRuleOverrideRuleExclusion>>>,
+    pub r#exclusions: Option<Vec<super::super::types::frontdoor::FirewallPolicyManagedRuleOverrideRuleExclusion>>,
     /// Identifier for the managed rule.
     #[builder(into)]
     #[serde(rename = "ruleId")]
-    pub r#rule_id: Box<String>,
+    pub r#rule_id: String,
 }

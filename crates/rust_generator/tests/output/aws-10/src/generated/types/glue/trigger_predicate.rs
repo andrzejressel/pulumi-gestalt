@@ -6,9 +6,9 @@ pub struct TriggerPredicate {
     /// A list of the conditions that determine when the trigger will fire. See Conditions.
     #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Box<Vec<super::super::types::glue::TriggerPredicateCondition>>,
+    pub r#conditions: Vec<super::super::types::glue::TriggerPredicateCondition>,
     /// How to handle multiple conditions. Defaults to `AND`. Valid values are `AND` or `ANY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logical")]
-    pub r#logical: Box<Option<String>>,
+    pub r#logical: Option<String>,
 }

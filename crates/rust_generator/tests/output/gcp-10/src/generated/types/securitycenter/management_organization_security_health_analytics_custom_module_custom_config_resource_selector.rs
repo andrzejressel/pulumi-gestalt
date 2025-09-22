@@ -6,5 +6,5 @@ pub struct ManagementOrganizationSecurityHealthAnalyticsCustomModuleCustomConfig
     /// The resource types to run the detector on.
     #[builder(into)]
     #[serde(rename = "resourceTypes")]
-    pub r#resource_types: Box<Vec<String>>,
+    pub r#resource_types: Vec<String>,
 }

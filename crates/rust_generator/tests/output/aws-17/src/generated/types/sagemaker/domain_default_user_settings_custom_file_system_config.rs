@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainDefaultUserSettingsCustomFileSystemConfig {
     /// The default EBS storage settings for a private space. See `efs_file_system_config` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "efsFileSystemConfig")]
-    pub r#efs_file_system_config: Box<Option<super::super::types::sagemaker::DomainDefaultUserSettingsCustomFileSystemConfigEfsFileSystemConfig>>,
+    pub r#efs_file_system_config: Option<Box<super::super::types::sagemaker::DomainDefaultUserSettingsCustomFileSystemConfigEfsFileSystemConfig>>,
 }

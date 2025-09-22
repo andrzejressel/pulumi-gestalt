@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponse {
     /// References the response body that you want AWS WAF to return to the web request client. This must reference a `key` defined in a `custom_response_body` block of this resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customResponseBodyKey")]
-    pub r#custom_response_body_key: Box<Option<String>>,
+    pub r#custom_response_body_key: Option<String>,
     /// The HTTP status code to return to the client.
     #[builder(into)]
     #[serde(rename = "responseCode")]
-    pub r#response_code: Box<i32>,
+    pub r#response_code: i32,
     /// The `response_header` blocks used to define the HTTP response headers added to the response. See `response_header` below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "responseHeaders")]
-    pub r#response_headers: Box<Option<Vec<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeader>>>,
+    pub r#response_headers: Option<Vec<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeader>>,
 }

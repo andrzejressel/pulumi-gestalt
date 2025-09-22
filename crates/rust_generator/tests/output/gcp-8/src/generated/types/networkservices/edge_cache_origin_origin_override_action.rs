@@ -6,13 +6,13 @@ pub struct EdgeCacheOriginOriginOverrideAction {
     /// The header actions, including adding and removing
     /// headers, for request handled by this origin.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerAction")]
-    pub r#header_action: Box<Option<super::super::types::networkservices::EdgeCacheOriginOriginOverrideActionHeaderAction>>,
+    pub r#header_action: Option<Box<super::super::types::networkservices::EdgeCacheOriginOriginOverrideActionHeaderAction>>,
     /// The URL rewrite configuration for request that are
     /// handled by this origin.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "urlRewrite")]
-    pub r#url_rewrite: Box<Option<super::super::types::networkservices::EdgeCacheOriginOriginOverrideActionUrlRewrite>>,
+    pub r#url_rewrite: Option<Box<super::super::types::networkservices::EdgeCacheOriginOriginOverrideActionUrlRewrite>>,
 }

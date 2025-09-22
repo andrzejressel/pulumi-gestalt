@@ -6,5 +6,5 @@ pub struct GetDataCollectionRuleDestinationAzureMonitorMetric {
     /// Specifies the name of the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

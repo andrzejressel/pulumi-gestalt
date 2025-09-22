@@ -9,12 +9,12 @@ pub struct GetTriggerBuildStepVolume {
     /// Docker volumes. Each named volume must be used by at least two build steps.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Path at which to mount the volume.
     /// 
     /// Paths must be absolute and cannot conflict with other volume paths on
     /// the same build step or with certain reserved volume paths.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

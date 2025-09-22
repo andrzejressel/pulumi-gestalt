@@ -5,5 +5,5 @@
 pub struct GetGatewayRouteSpecHttpRouteActionTargetVirtualService {
     #[builder(into)]
     #[serde(rename = "virtualServiceName")]
-    pub r#virtual_service_name: Box<String>,
+    pub r#virtual_service_name: String,
 }

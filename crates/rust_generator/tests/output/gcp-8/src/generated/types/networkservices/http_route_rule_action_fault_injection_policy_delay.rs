@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HttpRouteRuleActionFaultInjectionPolicyDelay {
     /// Specify a fixed delay before forwarding the request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fixedDelay")]
-    pub r#fixed_delay: Box<Option<String>>,
+    pub r#fixed_delay: Option<String>,
     /// The percentage of traffic on which delay will be injected.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "percentage")]
-    pub r#percentage: Box<Option<i32>>,
+    pub r#percentage: Option<i32>,
 }

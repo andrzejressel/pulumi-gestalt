@@ -5,27 +5,27 @@
 pub struct ServiceAttributes {
     /// Business team that ensures user needs are met and value is delivered
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "businessOwners")]
-    pub r#business_owners: Box<Option<Vec<super::super::types::apphub::ServiceAttributesBusinessOwner>>>,
+    pub r#business_owners: Option<Vec<super::super::types::apphub::ServiceAttributesBusinessOwner>>,
     /// Criticality of the Application, Service, or Workload
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "criticality")]
-    pub r#criticality: Box<Option<super::super::types::apphub::ServiceAttributesCriticality>>,
+    pub r#criticality: Option<Box<super::super::types::apphub::ServiceAttributesCriticality>>,
     /// Developer team that owns development and coding.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "developerOwners")]
-    pub r#developer_owners: Box<Option<Vec<super::super::types::apphub::ServiceAttributesDeveloperOwner>>>,
+    pub r#developer_owners: Option<Vec<super::super::types::apphub::ServiceAttributesDeveloperOwner>>,
     /// Environment of the Application, Service, or Workload
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "environment")]
-    pub r#environment: Box<Option<super::super::types::apphub::ServiceAttributesEnvironment>>,
+    pub r#environment: Option<Box<super::super::types::apphub::ServiceAttributesEnvironment>>,
     /// Operator team that ensures runtime and operations.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operatorOwners")]
-    pub r#operator_owners: Box<Option<Vec<super::super::types::apphub::ServiceAttributesOperatorOwner>>>,
+    pub r#operator_owners: Option<Vec<super::super::types::apphub::ServiceAttributesOperatorOwner>>,
 }

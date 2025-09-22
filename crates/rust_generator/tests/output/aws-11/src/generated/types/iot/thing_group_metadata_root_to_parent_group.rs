@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThingGroupMetadataRootToParentGroup {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groupArn")]
-    pub r#group_arn: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#group_arn: Option<String>,
+    #[builder(into)]
     #[serde(rename = "groupName")]
-    pub r#group_name: Box<Option<String>>,
+    pub r#group_name: Option<String>,
 }

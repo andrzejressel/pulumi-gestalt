@@ -5,17 +5,17 @@
 pub struct GetLoadBalancerHealthCheck {
     #[builder(into)]
     #[serde(rename = "healthyThreshold")]
-    pub r#healthy_threshold: Box<i32>,
+    pub r#healthy_threshold: i32,
     #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<i32>,
+    pub r#interval: i32,
     #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<String>,
+    pub r#target: String,
     #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Box<i32>,
+    pub r#timeout: i32,
     #[builder(into)]
     #[serde(rename = "unhealthyThreshold")]
-    pub r#unhealthy_threshold: Box<i32>,
+    pub r#unhealthy_threshold: i32,
 }

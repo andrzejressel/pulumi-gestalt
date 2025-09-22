@@ -6,13 +6,13 @@ pub struct GetRoleManagementPolicyNotificationRuleEligibleActivation {
     /// A `notification_settings` block as defined above.
     #[builder(into)]
     #[serde(rename = "adminNotifications")]
-    pub r#admin_notifications: Box<Vec<super::super::types::pim::GetRoleManagementPolicyNotificationRuleEligibleActivationAdminNotification>>,
+    pub r#admin_notifications: Vec<super::super::types::pim::GetRoleManagementPolicyNotificationRuleEligibleActivationAdminNotification>,
     /// A `notification_settings` block as defined above.
     #[builder(into)]
     #[serde(rename = "approverNotifications")]
-    pub r#approver_notifications: Box<Vec<super::super::types::pim::GetRoleManagementPolicyNotificationRuleEligibleActivationApproverNotification>>,
+    pub r#approver_notifications: Vec<super::super::types::pim::GetRoleManagementPolicyNotificationRuleEligibleActivationApproverNotification>,
     /// A `notification_settings` block as defined above.
     #[builder(into)]
     #[serde(rename = "assigneeNotifications")]
-    pub r#assignee_notifications: Box<Vec<super::super::types::pim::GetRoleManagementPolicyNotificationRuleEligibleActivationAssigneeNotification>>,
+    pub r#assignee_notifications: Vec<super::super::types::pim::GetRoleManagementPolicyNotificationRuleEligibleActivationAssigneeNotification>,
 }

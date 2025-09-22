@@ -7,11 +7,11 @@ pub struct BackupPlanBackupRuleStandardScheduleBackupWindow {
     /// The end hour of the day should be greater than the start
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endHourOfDay")]
-    pub r#end_hour_of_day: Box<Option<i32>>,
+    pub r#end_hour_of_day: Option<i32>,
     /// The hour of the day (0-23) when the window starts, for example, if the value of the start hour of the day is 6, that means the backup window starts at 6:00.
     #[builder(into)]
     #[serde(rename = "startHourOfDay")]
-    pub r#start_hour_of_day: Box<i32>,
+    pub r#start_hour_of_day: i32,
 }

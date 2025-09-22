@@ -5,8 +5,8 @@
 pub struct AppAuthorizationConnectionTenant {
     #[builder(into)]
     #[serde(rename = "tenantDisplayName")]
-    pub r#tenant_display_name: Box<String>,
+    pub r#tenant_display_name: String,
     #[builder(into)]
     #[serde(rename = "tenantIdentifier")]
-    pub r#tenant_identifier: Box<String>,
+    pub r#tenant_identifier: String,
 }

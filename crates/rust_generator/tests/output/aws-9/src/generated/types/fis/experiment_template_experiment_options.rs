@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ExperimentTemplateExperimentOptions {
     /// Specifies the account targeting setting for experiment options. Supports `single-account` and `multi-account`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accountTargeting")]
-    pub r#account_targeting: Box<Option<String>>,
+    pub r#account_targeting: Option<String>,
     /// Specifies the empty target resolution mode for experiment options. Supports `fail` and `skip`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emptyTargetResolutionMode")]
-    pub r#empty_target_resolution_mode: Box<Option<String>>,
+    pub r#empty_target_resolution_mode: Option<String>,
 }

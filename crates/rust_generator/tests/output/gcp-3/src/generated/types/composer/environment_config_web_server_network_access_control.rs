@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentConfigWebServerNetworkAccessControl {
     /// A collection of allowed IP ranges with descriptions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedIpRanges")]
-    pub r#allowed_ip_ranges: Box<Option<Vec<super::super::types::composer::EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange>>>,
+    pub r#allowed_ip_ranges: Option<Vec<super::super::types::composer::EnvironmentConfigWebServerNetworkAccessControlAllowedIpRange>>,
 }

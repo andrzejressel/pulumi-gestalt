@@ -6,9 +6,9 @@ pub struct GetClusterClusterEndpoint {
     /// DNS hostname of the node.
     #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<String>,
+    pub r#address: String,
     /// Port number that this node is listening on.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

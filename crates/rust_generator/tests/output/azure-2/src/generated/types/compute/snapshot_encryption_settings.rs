@@ -8,7 +8,7 @@ pub struct SnapshotEncryptionSettings {
     #[serde(rename = "diskEncryptionKey")]
     pub r#disk_encryption_key: Box<super::super::types::compute::SnapshotEncryptionSettingsDiskEncryptionKey>,
     /// A `key_encryption_key` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyEncryptionKey")]
-    pub r#key_encryption_key: Box<Option<super::super::types::compute::SnapshotEncryptionSettingsKeyEncryptionKey>>,
+    pub r#key_encryption_key: Option<Box<super::super::types::compute::SnapshotEncryptionSettingsKeyEncryptionKey>>,
 }

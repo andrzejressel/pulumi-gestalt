@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FunctionSourceRepository {
     /// The URL pointing to the hosted repository where the function was defined at the time of deployment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deployedUrl")]
-    pub r#deployed_url: Box<Option<String>>,
+    pub r#deployed_url: Option<String>,
     /// The URL pointing to the hosted repository where the function is defined. There are supported Cloud Source Repository URLs in the following formats:
     /// 
     /// * To refer to a specific commit: `https://source.developers.google.com/projects/*/repos/*/revisions/*/paths/*`
@@ -14,5 +14,5 @@ pub struct FunctionSourceRepository {
     /// * To refer to a specific fixed alias (tag): `https://source.developers.google.com/projects/*/repos/*/fixed-aliases/*/paths/*`
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

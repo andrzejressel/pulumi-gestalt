@@ -6,9 +6,9 @@ pub struct AppServiceLogsHttpLogsAzureBlobStorage {
     /// The number of days to retain logs for.
     #[builder(into)]
     #[serde(rename = "retentionInDays")]
-    pub r#retention_in_days: Box<i32>,
+    pub r#retention_in_days: i32,
     /// The URL to the storage container with a shared access signature token appended.
     #[builder(into)]
     #[serde(rename = "sasUrl")]
-    pub r#sas_url: Box<String>,
+    pub r#sas_url: String,
 }

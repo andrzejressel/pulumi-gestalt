@@ -6,5 +6,5 @@ pub struct GetCertificateCertificatePolicyLifetimeActionAction {
     /// The Type of action to be performed when the lifetime trigger is triggerec.
     #[builder(into)]
     #[serde(rename = "actionType")]
-    pub r#action_type: Box<String>,
+    pub r#action_type: String,
 }

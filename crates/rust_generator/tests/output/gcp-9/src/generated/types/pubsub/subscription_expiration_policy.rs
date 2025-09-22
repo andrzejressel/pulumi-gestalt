@@ -10,5 +10,5 @@ pub struct SubscriptionExpirationPolicy {
     /// Example - "3.5s".
     #[builder(into)]
     #[serde(rename = "ttl")]
-    pub r#ttl: Box<String>,
+    pub r#ttl: String,
 }

@@ -6,9 +6,9 @@ pub struct GetFirewallEncryptionConfiguration {
     /// The ID of the AWS Key Management Service (AWS KMS) customer managed key.
     #[builder(into)]
     #[serde(rename = "keyId")]
-    pub r#key_id: Box<String>,
+    pub r#key_id: String,
     /// The type of the AWS Key Management Service (AWS KMS) key use by the firewall.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

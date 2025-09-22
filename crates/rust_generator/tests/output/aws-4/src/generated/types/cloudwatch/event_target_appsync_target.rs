@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventTargetAppsyncTarget {
     /// Contains the GraphQL mutation to be parsed and executed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "graphqlOperation")]
-    pub r#graphql_operation: Box<Option<String>>,
+    pub r#graphql_operation: Option<String>,
 }

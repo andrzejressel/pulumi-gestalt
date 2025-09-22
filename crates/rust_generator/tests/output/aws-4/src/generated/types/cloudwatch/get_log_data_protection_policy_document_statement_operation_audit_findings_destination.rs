@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestination {
     /// Configures CloudWatch Logs as a findings destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudwatchLogs")]
-    pub r#cloudwatch_logs: Box<Option<super::super::types::cloudwatch::GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationCloudwatchLogs>>,
+    pub r#cloudwatch_logs: Option<Box<super::super::types::cloudwatch::GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationCloudwatchLogs>>,
     /// Configures Kinesis Firehose as a findings destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "firehose")]
-    pub r#firehose: Box<Option<super::super::types::cloudwatch::GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationFirehose>>,
+    pub r#firehose: Option<Box<super::super::types::cloudwatch::GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationFirehose>>,
     /// Configures S3 as a findings destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3")]
-    pub r#s_3: Box<Option<super::super::types::cloudwatch::GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationS3>>,
+    pub r#s_3: Option<Box<super::super::types::cloudwatch::GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationS3>>,
 }

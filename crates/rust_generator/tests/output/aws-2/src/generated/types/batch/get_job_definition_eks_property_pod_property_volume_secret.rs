@@ -6,9 +6,9 @@ pub struct GetJobDefinitionEksPropertyPodPropertyVolumeSecret {
     /// Specifies whether the secret or the secret's keys must be defined.
     #[builder(into)]
     #[serde(rename = "optional")]
-    pub r#optional: Box<bool>,
+    pub r#optional: bool,
     /// The name of the secret. The name must be allowed as a DNS subdomain name
     #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<String>,
+    pub r#secret_name: String,
 }

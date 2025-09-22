@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentLastUpdatedError {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorCode")]
-    pub r#error_code: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#error_code: Option<String>,
+    #[builder(into)]
     #[serde(rename = "errorMessage")]
-    pub r#error_message: Box<Option<String>>,
+    pub r#error_message: Option<String>,
 }

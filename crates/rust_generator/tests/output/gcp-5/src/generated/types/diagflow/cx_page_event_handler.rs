@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxPageEventHandler {
     /// The name of the event to handle.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "event")]
-    pub r#event: Box<Option<String>>,
+    pub r#event: Option<String>,
     /// (Output)
     /// The unique identifier of this event handler.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The target flow to transition to.
     /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetFlow")]
-    pub r#target_flow: Box<Option<String>>,
+    pub r#target_flow: Option<String>,
     /// The target page to transition to.
     /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetPage")]
-    pub r#target_page: Box<Option<String>>,
+    pub r#target_page: Option<String>,
     /// The fulfillment to call when the event occurs. Handling webhook errors with a fulfillment enabled with webhook could cause infinite loop. It is invalid to specify such fulfillment for a handler handling webhooks.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "triggerFulfillment")]
-    pub r#trigger_fulfillment: Box<Option<super::super::types::diagflow::CxPageEventHandlerTriggerFulfillment>>,
+    pub r#trigger_fulfillment: Option<Box<super::super::types::diagflow::CxPageEventHandlerTriggerFulfillment>>,
 }

@@ -5,5 +5,5 @@
 pub struct FilterFindingCriteria {
     #[builder(into)]
     #[serde(rename = "criterions")]
-    pub r#criterions: Box<Vec<super::super::types::guardduty::FilterFindingCriteriaCriterion>>,
+    pub r#criterions: Vec<super::super::types::guardduty::FilterFindingCriteriaCriterion>,
 }

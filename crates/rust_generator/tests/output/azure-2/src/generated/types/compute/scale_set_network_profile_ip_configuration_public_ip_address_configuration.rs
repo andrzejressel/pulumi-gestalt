@@ -6,13 +6,13 @@ pub struct ScaleSetNetworkProfileIpConfigurationPublicIpAddressConfiguration {
     /// The domain name label for the DNS settings.
     #[builder(into)]
     #[serde(rename = "domainNameLabel")]
-    pub r#domain_name_label: Box<String>,
+    pub r#domain_name_label: String,
     /// The idle timeout in minutes. This value must be between 4 and 30.
     #[builder(into)]
     #[serde(rename = "idleTimeout")]
-    pub r#idle_timeout: Box<i32>,
+    pub r#idle_timeout: i32,
     /// The name of the public IP address configuration
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

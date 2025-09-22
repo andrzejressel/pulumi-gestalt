@@ -6,9 +6,9 @@ pub struct ServiceRegionVpcSettings {
     /// The identifiers of the subnets for the directory servers.
     #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Vec<String>>,
+    pub r#subnet_ids: Vec<String>,
     /// The identifier of the VPC in which to create the directory.
     #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<String>,
+    pub r#vpc_id: String,
 }

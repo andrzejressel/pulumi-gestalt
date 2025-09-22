@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupWarmPool {
     /// Whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceReusePolicy")]
-    pub r#instance_reuse_policy: Box<Option<super::super::types::autoscaling::GroupWarmPoolInstanceReusePolicy>>,
+    pub r#instance_reuse_policy: Option<Box<super::super::types::autoscaling::GroupWarmPoolInstanceReusePolicy>>,
     /// Total maximum number of instances that are allowed to be in the warm pool or in any state except Terminated for the Auto Scaling group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxGroupPreparedCapacity")]
-    pub r#max_group_prepared_capacity: Box<Option<i32>>,
+    pub r#max_group_prepared_capacity: Option<i32>,
     /// Minimum number of instances to maintain in the warm pool. This helps you to ensure that there is always a certain number of warmed instances available to handle traffic spikes. Defaults to 0 if not specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minSize")]
-    pub r#min_size: Box<Option<i32>>,
+    pub r#min_size: Option<i32>,
     /// Sets the instance state to transition to after the lifecycle hooks finish. Valid values are: Stopped (default), Running or Hibernated.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "poolState")]
-    pub r#pool_state: Box<Option<String>>,
+    pub r#pool_state: Option<String>,
 }

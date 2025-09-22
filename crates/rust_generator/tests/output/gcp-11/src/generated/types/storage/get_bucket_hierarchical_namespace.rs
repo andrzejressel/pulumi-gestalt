@@ -6,5 +6,5 @@ pub struct GetBucketHierarchicalNamespace {
     /// Set this field true to organize bucket with logical file system structure.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

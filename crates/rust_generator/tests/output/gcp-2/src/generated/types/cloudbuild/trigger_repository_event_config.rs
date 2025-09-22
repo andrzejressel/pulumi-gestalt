@@ -5,16 +5,16 @@
 pub struct TriggerRepositoryEventConfig {
     /// Contains filter properties for matching Pull Requests.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pullRequest")]
-    pub r#pull_request: Box<Option<super::super::types::cloudbuild::TriggerRepositoryEventConfigPullRequest>>,
+    pub r#pull_request: Option<Box<super::super::types::cloudbuild::TriggerRepositoryEventConfigPullRequest>>,
     /// Contains filter properties for matching git pushes.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "push")]
-    pub r#push: Box<Option<super::super::types::cloudbuild::TriggerRepositoryEventConfigPush>>,
+    pub r#push: Option<Box<super::super::types::cloudbuild::TriggerRepositoryEventConfigPush>>,
     /// The resource name of the Repo API resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repository")]
-    pub r#repository: Box<Option<String>>,
+    pub r#repository: Option<String>,
 }

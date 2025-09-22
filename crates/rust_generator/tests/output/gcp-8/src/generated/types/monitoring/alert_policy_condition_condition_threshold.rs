@@ -17,9 +17,9 @@ pub struct AlertPolicyConditionConditionThreshold {
     /// ListTimeSeries method when debugging this
     /// field.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "aggregations")]
-    pub r#aggregations: Box<Option<Vec<super::super::types::monitoring::AlertPolicyConditionConditionThresholdAggregation>>>,
+    pub r#aggregations: Option<Vec<super::super::types::monitoring::AlertPolicyConditionConditionThresholdAggregation>>,
     /// The comparison to apply between the time
     /// series (indicated by filter and aggregation)
     /// and the threshold (indicated by
@@ -31,7 +31,7 @@ pub struct AlertPolicyConditionConditionThreshold {
     /// Possible values are: `COMPARISON_GT`, `COMPARISON_GE`, `COMPARISON_LT`, `COMPARISON_LE`, `COMPARISON_EQ`, `COMPARISON_NE`.
     #[builder(into)]
     #[serde(rename = "comparison")]
-    pub r#comparison: Box<String>,
+    pub r#comparison: String,
     /// Specifies the alignment of data points in
     /// individual time series selected by
     /// denominatorFilter as well as how to combine
@@ -49,9 +49,9 @@ pub struct AlertPolicyConditionConditionThreshold {
     /// is advisable to use the ListTimeSeries
     /// method when debugging this field.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "denominatorAggregations")]
-    pub r#denominator_aggregations: Box<Option<Vec<super::super::types::monitoring::AlertPolicyConditionConditionThresholdDenominatorAggregation>>>,
+    pub r#denominator_aggregations: Option<Vec<super::super::types::monitoring::AlertPolicyConditionConditionThresholdDenominatorAggregation>>,
     /// A filter that identifies a time series that
     /// should be used as the denominator of a ratio
     /// that will be compared with the threshold. If
@@ -67,9 +67,9 @@ pub struct AlertPolicyConditionConditionThreshold {
     /// resource labels, and metric labels. This
     /// field may not exceed 2048 Unicode characters
     /// in length.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "denominatorFilter")]
-    pub r#denominator_filter: Box<Option<String>>,
+    pub r#denominator_filter: Option<String>,
     /// The amount of time that a time series must
     /// violate the threshold to be considered
     /// failing. Currently, only values that are a
@@ -87,14 +87,14 @@ pub struct AlertPolicyConditionConditionThreshold {
     /// alerted on quickly.
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<String>,
+    pub r#duration: String,
     /// A condition control that determines how
     /// metric-threshold conditions are evaluated when
     /// data stops arriving.
     /// Possible values are: `EVALUATION_MISSING_DATA_INACTIVE`, `EVALUATION_MISSING_DATA_ACTIVE`, `EVALUATION_MISSING_DATA_NO_OP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "evaluationMissingData")]
-    pub r#evaluation_missing_data: Box<Option<String>>,
+    pub r#evaluation_missing_data: Option<String>,
     /// A filter that identifies which time series
     /// should be compared with the threshold.The
     /// filter is similar to the one that is
@@ -107,9 +107,9 @@ pub struct AlertPolicyConditionConditionThreshold {
     /// resource labels, and metric labels. This
     /// field may not exceed 2048 Unicode characters
     /// in length.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<Option<String>>,
+    pub r#filter: Option<String>,
     /// When this field is present, the `MetricThreshold`
     /// condition forecasts whether the time series is
     /// predicted to violate the threshold within the
@@ -117,14 +117,14 @@ pub struct AlertPolicyConditionConditionThreshold {
     /// `MetricThreshold` tests the current value of the
     /// timeseries against the threshold.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "forecastOptions")]
-    pub r#forecast_options: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionThresholdForecastOptions>>,
+    pub r#forecast_options: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionThresholdForecastOptions>>,
     /// A value against which to compare the time
     /// series.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "thresholdValue")]
-    pub r#threshold_value: Box<Option<f64>>,
+    pub r#threshold_value: Option<f64>,
     /// The number/percent of time series for which
     /// the comparison must hold in order for the
     /// condition to trigger. If unspecified, then
@@ -134,7 +134,7 @@ pub struct AlertPolicyConditionConditionThreshold {
     /// or by the ratio, if denominator_filter and
     /// denominator_aggregations are specified.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "trigger")]
-    pub r#trigger: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionThresholdTrigger>>,
+    pub r#trigger: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionThresholdTrigger>>,
 }

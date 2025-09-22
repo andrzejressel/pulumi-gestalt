@@ -7,5 +7,5 @@ pub struct AppProfileStandardIsolation {
     /// Possible values are: `PRIORITY_LOW`, `PRIORITY_MEDIUM`, `PRIORITY_HIGH`.
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<String>,
+    pub r#priority: String,
 }

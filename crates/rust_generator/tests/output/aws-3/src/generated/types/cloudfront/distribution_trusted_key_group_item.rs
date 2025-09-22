@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionTrustedKeyGroupItem {
     /// ID of the key group that contains the public keys.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyGroupId")]
-    pub r#key_group_id: Box<Option<String>>,
+    pub r#key_group_id: Option<String>,
     /// Set of active CloudFront key pairs associated with the signer account
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyPairIds")]
-    pub r#key_pair_ids: Box<Option<Vec<String>>>,
+    pub r#key_pair_ids: Option<Vec<String>>,
 }

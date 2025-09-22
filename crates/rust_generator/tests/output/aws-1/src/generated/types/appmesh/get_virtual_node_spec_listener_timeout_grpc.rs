@@ -5,8 +5,8 @@
 pub struct GetVirtualNodeSpecListenerTimeoutGrpc {
     #[builder(into)]
     #[serde(rename = "idles")]
-    pub r#idles: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTimeoutGrpcIdle>>,
+    pub r#idles: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTimeoutGrpcIdle>,
     #[builder(into)]
     #[serde(rename = "perRequests")]
-    pub r#per_requests: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTimeoutGrpcPerRequest>>,
+    pub r#per_requests: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTimeoutGrpcPerRequest>,
 }

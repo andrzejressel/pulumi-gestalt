@@ -5,8 +5,8 @@
 pub struct ContainerServicePublicDomainNamesCertificate {
     #[builder(into)]
     #[serde(rename = "certificateName")]
-    pub r#certificate_name: Box<String>,
+    pub r#certificate_name: String,
     #[builder(into)]
     #[serde(rename = "domainNames")]
-    pub r#domain_names: Box<Vec<String>>,
+    pub r#domain_names: Vec<String>,
 }

@@ -8,12 +8,12 @@ pub struct DiagnosticSettingMetric {
     /// > **NOTE:** The Metric Categories available vary depending on the Resource being used. You may wish to use the `azure.monitoring.getDiagnosticCategories` Data Source to identify which categories are available for a given Resource.
     #[builder(into)]
     #[serde(rename = "category")]
-    pub r#category: Box<String>,
+    pub r#category: String,
     /// Is this Diagnostic Metric enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#enabled: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Box<Option<super::super::types::monitoring::DiagnosticSettingMetricRetentionPolicy>>,
+    pub r#retention_policy: Option<Box<super::super::types::monitoring::DiagnosticSettingMetricRetentionPolicy>>,
 }

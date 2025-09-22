@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MetricStreamExcludeFilter {
     /// An array that defines the metrics you want to exclude for this metric namespace
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricNames")]
-    pub r#metric_names: Box<Option<Vec<String>>>,
+    pub r#metric_names: Option<Vec<String>>,
     /// Name of the metric namespace in the filter.
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
 }

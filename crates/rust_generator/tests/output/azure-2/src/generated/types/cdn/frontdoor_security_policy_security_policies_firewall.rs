@@ -10,5 +10,5 @@ pub struct FrontdoorSecurityPolicySecurityPoliciesFirewall {
     /// The Resource Id of the Front Door Firewall Policy that should be linked to this Front Door Security Policy. Changing this forces a new Front Door Security Policy to be created.
     #[builder(into)]
     #[serde(rename = "cdnFrontdoorFirewallPolicyId")]
-    pub r#cdn_frontdoor_firewall_policy_id: Box<String>,
+    pub r#cdn_frontdoor_firewall_policy_id: String,
 }

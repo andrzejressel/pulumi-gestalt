@@ -12,19 +12,19 @@ pub struct AutonomousDatabasePropertiesScheduledOperationDetail {
     /// FRIDAY
     /// SATURDAY
     /// SUNDAY
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<Option<String>>,
+    pub r#day_of_week: Option<String>,
     /// Represents a time of day. The date and time zone are either not significant
     /// or are specified elsewhere. An API may choose to allow leap seconds. Related
     /// types are google.type.Date and 'google.protobuf.Timestamp'.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTimes")]
-    pub r#start_times: Box<Option<Vec<super::super::types::oracledatabase::AutonomousDatabasePropertiesScheduledOperationDetailStartTime>>>,
+    pub r#start_times: Option<Vec<super::super::types::oracledatabase::AutonomousDatabasePropertiesScheduledOperationDetailStartTime>>,
     /// Represents a time of day. The date and time zone are either not significant
     /// or are specified elsewhere. An API may choose to allow leap seconds. Related
     /// types are google.type.Date and 'google.protobuf.Timestamp'.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stopTimes")]
-    pub r#stop_times: Box<Option<Vec<super::super::types::oracledatabase::AutonomousDatabasePropertiesScheduledOperationDetailStopTime>>>,
+    pub r#stop_times: Option<Vec<super::super::types::oracledatabase::AutonomousDatabasePropertiesScheduledOperationDetailStopTime>>,
 }

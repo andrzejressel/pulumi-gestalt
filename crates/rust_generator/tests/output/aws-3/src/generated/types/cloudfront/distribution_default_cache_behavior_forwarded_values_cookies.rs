@@ -6,9 +6,9 @@ pub struct DistributionDefaultCacheBehaviorForwardedValuesCookies {
     /// Whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You can specify `all`, `none` or `whitelist`. If `whitelist`, you must include the subsequent `whitelisted_names`.
     #[builder(into)]
     #[serde(rename = "forward")]
-    pub r#forward: Box<String>,
+    pub r#forward: String,
     /// If you have specified `whitelist` to `forward`, the whitelisted cookies that you want CloudFront to forward to your origin.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "whitelistedNames")]
-    pub r#whitelisted_names: Box<Option<Vec<String>>>,
+    pub r#whitelisted_names: Option<Vec<String>>,
 }

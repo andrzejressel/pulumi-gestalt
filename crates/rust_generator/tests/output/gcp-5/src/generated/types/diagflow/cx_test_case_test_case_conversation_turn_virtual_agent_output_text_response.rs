@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponse {
     /// A collection of text responses.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "texts")]
-    pub r#texts: Box<Option<Vec<String>>>,
+    pub r#texts: Option<Vec<String>>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetListenerRuleConditionQueryString {
     /// Set of `key`-`value` pairs indicating the query string parameters to match.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<Vec<super::super::types::lb::GetListenerRuleConditionQueryStringValue>>>,
+    pub r#values: Option<Vec<super::super::types::lb::GetListenerRuleConditionQueryStringValue>>,
 }

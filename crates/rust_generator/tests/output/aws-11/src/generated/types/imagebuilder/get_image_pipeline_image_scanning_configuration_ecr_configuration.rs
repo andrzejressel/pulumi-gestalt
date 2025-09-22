@@ -6,9 +6,9 @@ pub struct GetImagePipelineImageScanningConfigurationEcrConfiguration {
     /// Tags that are added to the output containers that are scanned
     #[builder(into)]
     #[serde(rename = "containerTags")]
-    pub r#container_tags: Box<Vec<String>>,
+    pub r#container_tags: Vec<String>,
     /// The name of the container repository that Amazon Inspector scans
     #[builder(into)]
     #[serde(rename = "repositoryName")]
-    pub r#repository_name: Box<String>,
+    pub r#repository_name: String,
 }

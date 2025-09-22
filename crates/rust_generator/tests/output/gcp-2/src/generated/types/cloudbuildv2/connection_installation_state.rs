@@ -5,17 +5,17 @@
 pub struct ConnectionInstallationState {
     /// (Output)
     /// Output only. Link to follow for next action. Empty string if the installation is already complete.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "actionUri")]
-    pub r#action_uri: Box<Option<String>>,
+    pub r#action_uri: Option<String>,
     /// (Output)
     /// Output only. Message of what the user should do next to continue the installation. Empty string if the installation is already complete.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
     /// (Output)
     /// Output only. Current step of the installation process.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stage")]
-    pub r#stage: Box<Option<String>>,
+    pub r#stage: Option<String>,
 }

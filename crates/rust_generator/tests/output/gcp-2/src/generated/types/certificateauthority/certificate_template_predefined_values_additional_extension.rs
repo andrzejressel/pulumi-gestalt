@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertificateTemplatePredefinedValuesAdditionalExtension {
     /// Optional. Indicates whether or not this extension is critical (i.e., if the client does not know how to handle this extension, the client should consider this to be an error).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "critical")]
-    pub r#critical: Box<Option<bool>>,
+    pub r#critical: Option<bool>,
     /// Required. The OID for this X.509 extension.
     /// Structure is documented below.
     #[builder(into)]
@@ -15,5 +15,5 @@ pub struct CertificateTemplatePredefinedValuesAdditionalExtension {
     /// Required. The value of this X.509 extension.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

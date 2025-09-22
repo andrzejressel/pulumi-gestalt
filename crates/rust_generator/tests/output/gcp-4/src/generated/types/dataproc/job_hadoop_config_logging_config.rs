@@ -6,5 +6,5 @@ pub struct JobHadoopConfigLoggingConfig {
     /// Optional. The per-package log levels for the driver. This may include 'root' package name to configure rootLogger. Examples: 'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'.
     #[builder(into)]
     #[serde(rename = "driverLogLevels")]
-    pub r#driver_log_levels: Box<std::collections::HashMap<String, String>>,
+    pub r#driver_log_levels: std::collections::HashMap<String, String>,
 }

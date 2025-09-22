@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTarget {
     /// The identifier of the target document attribute or metadata field. For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetDocumentAttributeKey")]
-    pub r#target_document_attribute_key: Box<Option<String>>,
+    pub r#target_document_attribute_key: Option<String>,
     /// The target value you want to create for the target attribute. For example, 'Finance' could be the target value for the target attribute key 'Department'. See target_document_attribute_value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetDocumentAttributeValue")]
-    pub r#target_document_attribute_value: Box<Option<super::super::types::kendra::DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTargetTargetDocumentAttributeValue>>,
+    pub r#target_document_attribute_value: Option<Box<super::super::types::kendra::DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTargetTargetDocumentAttributeValue>>,
     /// `TRUE` to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to `TRUE`. To create a target value (`TargetDocumentAttributeValue`), set this to `FALSE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetDocumentAttributeValueDeletion")]
-    pub r#target_document_attribute_value_deletion: Box<Option<bool>>,
+    pub r#target_document_attribute_value_deletion: Option<bool>,
 }

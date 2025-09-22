@@ -6,9 +6,9 @@ pub struct ConfigurationSetTrackingOptions {
     /// The domain to use for tracking open and click events.
     #[builder(into)]
     #[serde(rename = "customRedirectDomain")]
-    pub r#custom_redirect_domain: Box<String>,
+    pub r#custom_redirect_domain: String,
     /// The https policy to use for tracking open and click events. Valid values are `REQUIRE`, `REQUIRE_OPEN_ONLY` or `OPTIONAL`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpsPolicy")]
-    pub r#https_policy: Box<Option<String>>,
+    pub r#https_policy: Option<String>,
 }

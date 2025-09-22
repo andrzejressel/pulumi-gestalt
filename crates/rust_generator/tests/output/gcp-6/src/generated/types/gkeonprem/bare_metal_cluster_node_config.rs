@@ -5,12 +5,12 @@
 pub struct BareMetalClusterNodeConfig {
     /// The available runtimes that can be used to run containers in a Bare Metal User Cluster.
     /// Possible values are: `CONTAINER_RUNTIME_UNSPECIFIED`, `DOCKER`, `CONTAINERD`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerRuntime")]
-    pub r#container_runtime: Box<Option<String>>,
+    pub r#container_runtime: Option<String>,
     /// The maximum number of pods a node can run. The size of the CIDR range
     /// assigned to the node will be derived from this parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxPodsPerNode")]
-    pub r#max_pods_per_node: Box<Option<i32>>,
+    pub r#max_pods_per_node: Option<i32>,
 }

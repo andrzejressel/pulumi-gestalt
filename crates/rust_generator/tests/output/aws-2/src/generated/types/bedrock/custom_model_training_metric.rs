@@ -6,5 +6,5 @@ pub struct CustomModelTrainingMetric {
     /// Loss metric associated with the customization job.
     #[builder(into)]
     #[serde(rename = "trainingLoss")]
-    pub r#training_loss: Box<f64>,
+    pub r#training_loss: f64,
 }

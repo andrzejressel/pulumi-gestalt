@@ -6,17 +6,17 @@ pub struct DomainAssociationSubDomain {
     /// Branch name setting for the subdomain.
     #[builder(into)]
     #[serde(rename = "branchName")]
-    pub r#branch_name: Box<String>,
+    pub r#branch_name: String,
     /// DNS record for the subdomain in a space-prefixed and space-delimited format (` CNAME <target>`).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dnsRecord")]
-    pub r#dns_record: Box<Option<String>>,
+    pub r#dns_record: Option<String>,
     /// Prefix setting for the subdomain.
     #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<String>,
+    pub r#prefix: String,
     /// Verified status of the subdomain.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "verified")]
-    pub r#verified: Box<Option<bool>>,
+    pub r#verified: Option<bool>,
 }

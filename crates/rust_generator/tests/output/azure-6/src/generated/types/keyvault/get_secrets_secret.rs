@@ -6,17 +6,17 @@ pub struct GetSecretsSecret {
     /// Whether this secret is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The ID of this secret.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The name of secret.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The tags of this secret.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<std::collections::HashMap<String, String>>,
+    pub r#tags: std::collections::HashMap<String, String>,
 }

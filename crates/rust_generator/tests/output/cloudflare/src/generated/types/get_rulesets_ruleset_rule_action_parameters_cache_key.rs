@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetRulesetsRulesetRuleActionParametersCacheKey {
     /// Cache by device type. Conflicts with "custom_key.user.device_type".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cacheByDeviceType")]
-    pub r#cache_by_device_type: Box<Option<bool>>,
+    pub r#cache_by_device_type: Option<bool>,
     /// Cache deception armor.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cacheDeceptionArmor")]
-    pub r#cache_deception_armor: Box<Option<bool>>,
+    pub r#cache_deception_armor: Option<bool>,
     /// Custom key parameters for the request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customKey")]
-    pub r#custom_key: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKey>>,
+    pub r#custom_key: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersCacheKeyCustomKey>>,
     /// Ignore query strings order.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ignoreQueryStringsOrder")]
-    pub r#ignore_query_strings_order: Box<Option<bool>>,
+    pub r#ignore_query_strings_order: Option<bool>,
 }

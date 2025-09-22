@@ -6,5 +6,5 @@ pub struct RiskConfigurationCompromisedCredentialsRiskConfigurationActions {
     /// The event action. Valid values are `BLOCK` or `NO_ACTION`.
     #[builder(into)]
     #[serde(rename = "eventAction")]
-    pub r#event_action: Box<String>,
+    pub r#event_action: String,
 }

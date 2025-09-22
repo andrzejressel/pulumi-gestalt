@@ -6,35 +6,35 @@ pub struct AutomationRuleActionIncident {
     /// The classification of the incident, when closing it. Possible values are: `BenignPositive_SuspiciousButExpected`, `FalsePositive_InaccurateData`, `FalsePositive_IncorrectAlertLogic`, `TruePositive_SuspiciousActivity` and `Undetermined`.
     /// 
     /// > **Note:** The `classification` is required when `status` is `Closed`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "classification")]
-    pub r#classification: Box<Option<String>>,
+    pub r#classification: Option<String>,
     /// The comment why the incident is to be closed.
     /// 
     /// > **Note:** The `classification_comment` is allowed to set only when `status` is `Closed`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "classificationComment")]
-    pub r#classification_comment: Box<Option<String>>,
+    pub r#classification_comment: Option<String>,
     /// Specifies a list of labels to add to the incident.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<Vec<String>>>,
+    pub r#labels: Option<Vec<String>>,
     /// The execution order of this action.
     #[builder(into)]
     #[serde(rename = "order")]
-    pub r#order: Box<i32>,
+    pub r#order: i32,
     /// The object ID of the entity this incident is assigned to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ownerId")]
-    pub r#owner_id: Box<Option<String>>,
+    pub r#owner_id: Option<String>,
     /// The severity to add to the incident. Possible values are `High`, `Informational`, `Low` and `Medium`.
     /// 
     /// > **Note:**: At least one of `status`, `labels`, `owner_id` and `severity` has to be set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "severity")]
-    pub r#severity: Box<Option<String>>,
+    pub r#severity: Option<String>,
     /// The status to set to the incident. Possible values are: `Active`, `Closed`, `New`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
 }

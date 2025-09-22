@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionCacheBehaviorSettingsForwardedQueryStrings {
     /// Indicates whether the distribution forwards and caches based on query strings.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "option")]
-    pub r#option: Box<Option<bool>>,
+    pub r#option: Option<bool>,
     /// The specific query strings that the distribution forwards to the origin.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "queryStringsAllowedLists")]
-    pub r#query_strings_allowed_lists: Box<Option<Vec<String>>>,
+    pub r#query_strings_allowed_lists: Option<Vec<String>>,
 }

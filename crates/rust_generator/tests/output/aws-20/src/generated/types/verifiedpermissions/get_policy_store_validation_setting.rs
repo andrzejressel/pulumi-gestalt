@@ -5,5 +5,5 @@
 pub struct GetPolicyStoreValidationSetting {
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

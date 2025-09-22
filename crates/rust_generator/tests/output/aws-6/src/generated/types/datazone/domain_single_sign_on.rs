@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainSingleSignOn {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#type_: Option<String>,
+    #[builder(into)]
     #[serde(rename = "userAssignment")]
-    pub r#user_assignment: Box<Option<String>>,
+    pub r#user_assignment: Option<String>,
 }

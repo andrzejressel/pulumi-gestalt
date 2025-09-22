@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesetRuleActionParametersEdgeTtlStatusCodeTtl {
     /// Status code for which the edge TTL is applied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<Option<i32>>,
+    pub r#status_code: Option<i32>,
     /// Status code range for which the edge TTL is applied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusCodeRanges")]
-    pub r#status_code_ranges: Box<Option<Vec<super::types::RulesetRuleActionParametersEdgeTtlStatusCodeTtlStatusCodeRange>>>,
+    pub r#status_code_ranges: Option<Vec<super::types::RulesetRuleActionParametersEdgeTtlStatusCodeTtlStatusCodeRange>>,
     /// Status code edge TTL value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<i32>>,
+    pub r#value: Option<i32>,
 }

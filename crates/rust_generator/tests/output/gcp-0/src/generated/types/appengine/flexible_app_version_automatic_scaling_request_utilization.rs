@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlexibleAppVersionAutomaticScalingRequestUtilization {
     /// Target number of concurrent requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetConcurrentRequests")]
-    pub r#target_concurrent_requests: Box<Option<f64>>,
+    pub r#target_concurrent_requests: Option<f64>,
     /// Target requests per second.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetRequestCountPerSecond")]
-    pub r#target_request_count_per_second: Box<Option<String>>,
+    pub r#target_request_count_per_second: Option<String>,
 }

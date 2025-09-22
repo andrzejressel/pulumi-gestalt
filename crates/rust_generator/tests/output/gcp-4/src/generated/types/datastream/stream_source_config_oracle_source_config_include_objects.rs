@@ -7,5 +7,5 @@ pub struct StreamSourceConfigOracleSourceConfigIncludeObjects {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "oracleSchemas")]
-    pub r#oracle_schemas: Box<Vec<super::super::types::datastream::StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchema>>,
+    pub r#oracle_schemas: Vec<super::super::types::datastream::StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchema>,
 }

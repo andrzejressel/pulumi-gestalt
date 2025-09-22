@@ -6,5 +6,5 @@ pub struct GetRepositoryRemoteRepositoryConfigYumRepository {
     /// One of the publicly available Yum repositories supported by Artifact Registry.
     #[builder(into)]
     #[serde(rename = "publicRepositories")]
-    pub r#public_repositories: Box<Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigYumRepositoryPublicRepository>>,
+    pub r#public_repositories: Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigYumRepositoryPublicRepository>,
 }

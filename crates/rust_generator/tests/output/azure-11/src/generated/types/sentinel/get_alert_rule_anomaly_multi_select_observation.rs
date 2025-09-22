@@ -6,17 +6,17 @@ pub struct GetAlertRuleAnomalyMultiSelectObservation {
     /// The description of the threshold observation.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// The guid of this Sentinel Alert Rule Template. Either `display_name` or `name` have to be specified.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A list of supported values of the single select observation.
     #[builder(into)]
     #[serde(rename = "supportedValues")]
-    pub r#supported_values: Box<Vec<String>>,
+    pub r#supported_values: Vec<String>,
     /// A list of values of the single select observation.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

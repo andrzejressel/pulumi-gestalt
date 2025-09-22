@@ -9,9 +9,9 @@ pub struct BackupPlanRetentionPolicy {
     /// until it reaches Backup's (create time + backup_delete_lock_days).
     /// Updating this field of a BackupPlan does not affect existing Backups.
     /// Backups created after a successful update will inherit this new value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backupDeleteLockDays")]
-    pub r#backup_delete_lock_days: Box<Option<i32>>,
+    pub r#backup_delete_lock_days: Option<i32>,
     /// The default maximum age of a Backup created via this BackupPlan.
     /// This field MUST be an integer value >= 0 and <= 365. If specified,
     /// a Backup created under this BackupPlan will be automatically deleted
@@ -24,13 +24,13 @@ pub struct BackupPlanRetentionPolicy {
     /// If cronSchedule is defined, then this must be <= 360 * the creation interval.
     /// If rpo_config is defined, then this must be
     /// <= 360 * targetRpoMinutes/(1440minutes/day)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backupRetainDays")]
-    pub r#backup_retain_days: Box<Option<i32>>,
+    pub r#backup_retain_days: Option<i32>,
     /// This flag denotes whether the retention policy of this BackupPlan is locked.
     /// If set to True, no further update is allowed on this policy, including
     /// the locked field itself.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "locked")]
-    pub r#locked: Box<Option<bool>>,
+    pub r#locked: Option<bool>,
 }

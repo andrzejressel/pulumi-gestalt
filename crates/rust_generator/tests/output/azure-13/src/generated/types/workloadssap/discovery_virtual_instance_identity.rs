@@ -6,9 +6,9 @@ pub struct DiscoveryVirtualInstanceIdentity {
     /// A list of User Assigned Managed Identity IDs to be assigned to this SAP Discovery Virtual Instance.
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     /// The type of Managed Service Identity that should be configured on this SAP Discovery Virtual Instance. The only possible value is `UserAssigned`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

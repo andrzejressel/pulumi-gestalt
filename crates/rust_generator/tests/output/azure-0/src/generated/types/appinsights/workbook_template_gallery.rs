@@ -6,23 +6,23 @@ pub struct WorkbookTemplateGallery {
     /// Category for the gallery.
     #[builder(into)]
     #[serde(rename = "category")]
-    pub r#category: Box<String>,
+    pub r#category: String,
     /// Name of the workbook template in the gallery.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Order of the template within the gallery. Defaults to `0`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "order")]
-    pub r#order: Box<Option<i32>>,
+    pub r#order: Option<i32>,
     /// Azure resource type supported by the gallery. Defaults to `Azure Monitor`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<Option<String>>,
+    pub r#resource_type: Option<String>,
     /// Type of workbook supported by the workbook template. Defaults to `workbook`.
     /// 
     /// > **Note:** See [documentation](https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-automate#galleries) for more information of `resource_type` and `type`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

@@ -8,5 +8,5 @@ pub struct PolicyVmRetentionDaily {
     /// > **Note:** Azure previously allows this field to be set to a minimum of 1 (day) - but for new resources/to update this value on existing Backup Policies - this value must now be at least 7 (days).
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
 }

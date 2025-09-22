@@ -6,13 +6,13 @@ pub struct ServiceTaskSpecContainerSpecDnsConfig {
     /// The IP addresses of the name servers
     #[builder(into)]
     #[serde(rename = "nameservers")]
-    pub r#nameservers: Box<Vec<String>>,
+    pub r#nameservers: Vec<String>,
     /// A list of internal resolver variables to be modified (e.g., `debug`, `ndots:3`, etc.)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "options")]
-    pub r#options: Box<Option<Vec<String>>>,
+    pub r#options: Option<Vec<String>>,
     /// A search list for host-name lookup
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "searches")]
-    pub r#searches: Box<Option<Vec<String>>>,
+    pub r#searches: Option<Vec<String>>,
 }

@@ -5,5 +5,5 @@
 pub struct GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationSubjectAlternativeName {
     #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationSubjectAlternativeNameMatch>>,
+    pub r#matches: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationSubjectAlternativeNameMatch>,
 }

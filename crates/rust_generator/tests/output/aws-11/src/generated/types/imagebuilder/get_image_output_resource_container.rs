@@ -6,9 +6,9 @@ pub struct GetImageOutputResourceContainer {
     /// Set of URIs for created containers.
     #[builder(into)]
     #[serde(rename = "imageUris")]
-    pub r#image_uris: Box<Vec<String>>,
+    pub r#image_uris: Vec<String>,
     /// Region of the container image.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
 }

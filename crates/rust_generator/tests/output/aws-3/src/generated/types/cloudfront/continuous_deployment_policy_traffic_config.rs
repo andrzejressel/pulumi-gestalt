@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ContinuousDeploymentPolicyTrafficConfig {
     /// Determines which HTTP requests are sent to the staging distribution. See `single_header_config`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "singleHeaderConfig")]
-    pub r#single_header_config: Box<Option<super::super::types::cloudfront::ContinuousDeploymentPolicyTrafficConfigSingleHeaderConfig>>,
+    pub r#single_header_config: Option<Box<super::super::types::cloudfront::ContinuousDeploymentPolicyTrafficConfigSingleHeaderConfig>>,
     /// Contains the percentage of traffic to send to the staging distribution. See `single_weight_config`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "singleWeightConfig")]
-    pub r#single_weight_config: Box<Option<super::super::types::cloudfront::ContinuousDeploymentPolicyTrafficConfigSingleWeightConfig>>,
+    pub r#single_weight_config: Option<Box<super::super::types::cloudfront::ContinuousDeploymentPolicyTrafficConfigSingleWeightConfig>>,
     /// Type of traffic configuration. Valid values are `SingleWeight` and `SingleHeader`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

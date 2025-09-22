@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentConfigRecoveryConfig {
     /// The configuration settings for scheduled snapshots.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scheduledSnapshotsConfig")]
-    pub r#scheduled_snapshots_config: Box<Option<super::super::types::composer::EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig>>,
+    pub r#scheduled_snapshots_config: Option<Box<super::super::types::composer::EnvironmentConfigRecoveryConfigScheduledSnapshotsConfig>>,
 }

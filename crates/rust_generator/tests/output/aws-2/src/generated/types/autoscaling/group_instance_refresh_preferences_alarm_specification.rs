@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupInstanceRefreshPreferencesAlarmSpecification {
     /// List of Cloudwatch alarms. If any of these alarms goes into ALARM state, Instance Refresh is failed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "alarms")]
-    pub r#alarms: Box<Option<Vec<String>>>,
+    pub r#alarms: Option<Vec<String>>,
 }

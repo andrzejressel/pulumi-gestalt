@@ -6,9 +6,9 @@ pub struct ZeroTrustAccessApplicationSaasAppCustomAttributeSource {
     /// The name of the attribute as provided by the IDP.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A mapping from IdP ID to claim name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nameByIdp")]
-    pub r#name_by_idp: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#name_by_idp: Option<std::collections::HashMap<String, String>>,
 }

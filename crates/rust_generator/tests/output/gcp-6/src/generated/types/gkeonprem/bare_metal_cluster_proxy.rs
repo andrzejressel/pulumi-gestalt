@@ -5,14 +5,14 @@
 pub struct BareMetalClusterProxy {
     /// A list of IPs, hostnames, and domains that should skip the proxy.
     /// For example ["127.0.0.1", "example.com", ".corp", "localhost"].
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "noProxies")]
-    pub r#no_proxies: Box<Option<Vec<String>>>,
+    pub r#no_proxies: Option<Vec<String>>,
     /// Specifies the address of your proxy server.
     /// For example: http://domain
     /// WARNING: Do not provide credentials in the format
     /// of http://(username:password@)domain these will be rejected by the server.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

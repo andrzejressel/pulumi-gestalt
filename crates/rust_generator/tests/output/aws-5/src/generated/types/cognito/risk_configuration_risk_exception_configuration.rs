@@ -6,13 +6,13 @@ pub struct RiskConfigurationRiskExceptionConfiguration {
     /// Overrides the risk decision to always block the pre-authentication requests.
     /// The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.
     /// Can contain a maximum of 200 items.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "blockedIpRangeLists")]
-    pub r#blocked_ip_range_lists: Box<Option<Vec<String>>>,
+    pub r#blocked_ip_range_lists: Option<Vec<String>>,
     /// Risk detection isn't performed on the IP addresses in this range list.
     /// The IP range is in CIDR notation.
     /// Can contain a maximum of 200 items.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "skippedIpRangeLists")]
-    pub r#skipped_ip_range_lists: Box<Option<Vec<String>>>,
+    pub r#skipped_ip_range_lists: Option<Vec<String>>,
 }

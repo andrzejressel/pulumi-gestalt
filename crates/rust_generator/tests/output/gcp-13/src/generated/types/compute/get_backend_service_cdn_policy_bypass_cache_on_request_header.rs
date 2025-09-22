@@ -6,5 +6,5 @@ pub struct GetBackendServiceCdnPolicyBypassCacheOnRequestHeader {
     /// The header field name to match on when bypassing cache. Values are case-insensitive.
     #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<String>,
+    pub r#header_name: String,
 }

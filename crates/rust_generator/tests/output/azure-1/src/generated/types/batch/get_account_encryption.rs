@@ -6,5 +6,5 @@ pub struct GetAccountEncryption {
     /// The full URL path of the Key Vault Key used to encrypt data for this Batch account.
     #[builder(into)]
     #[serde(rename = "keyVaultKeyId")]
-    pub r#key_vault_key_id: Box<String>,
+    pub r#key_vault_key_id: String,
 }

@@ -6,5 +6,5 @@ pub struct EntityRecognizerInputDataConfigEntityList {
     /// Location of entity list.
     #[builder(into)]
     #[serde(rename = "s3Uri")]
-    pub r#s_3_uri: Box<String>,
+    pub r#s_3_uri: String,
 }

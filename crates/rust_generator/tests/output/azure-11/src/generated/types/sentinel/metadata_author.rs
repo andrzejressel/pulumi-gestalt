@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MetadataAuthor {
     /// The email address of the author contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// The link for author/vendor page.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "link")]
-    pub r#link: Box<Option<String>>,
+    pub r#link: Option<String>,
     /// The name of the author, company or person.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

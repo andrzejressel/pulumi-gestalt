@@ -10,22 +10,22 @@ pub struct GetMetastoreServiceHiveMetastoreConfig {
     /// This means that the first character must be a lowercase letter, and all the following characters must be hyphens, lowercase letters, or digits, except the last character, which cannot be a hyphen.
     #[builder(into)]
     #[serde(rename = "auxiliaryVersions")]
-    pub r#auxiliary_versions: Box<Vec<super::super::types::dataproc::GetMetastoreServiceHiveMetastoreConfigAuxiliaryVersion>>,
+    pub r#auxiliary_versions: Vec<super::super::types::dataproc::GetMetastoreServiceHiveMetastoreConfigAuxiliaryVersion>,
     /// A mapping of Hive metastore configuration key-value pairs to apply to the Hive metastore (configured in hive-site.xml).
     /// The mappings override system defaults (some keys cannot be overridden)
     #[builder(into)]
     #[serde(rename = "configOverrides")]
-    pub r#config_overrides: Box<std::collections::HashMap<String, String>>,
+    pub r#config_overrides: std::collections::HashMap<String, String>,
     /// The protocol to use for the metastore service endpoint. If unspecified, defaults to 'THRIFT'. Default value: "THRIFT" Possible values: ["THRIFT", "GRPC"]
     #[builder(into)]
     #[serde(rename = "endpointProtocol")]
-    pub r#endpoint_protocol: Box<String>,
+    pub r#endpoint_protocol: String,
     /// Information used to configure the Hive metastore service as a service principal in a Kerberos realm.
     #[builder(into)]
     #[serde(rename = "kerberosConfigs")]
-    pub r#kerberos_configs: Box<Vec<super::super::types::dataproc::GetMetastoreServiceHiveMetastoreConfigKerberosConfig>>,
+    pub r#kerberos_configs: Vec<super::super::types::dataproc::GetMetastoreServiceHiveMetastoreConfigKerberosConfig>,
     /// The Hive metastore schema version.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

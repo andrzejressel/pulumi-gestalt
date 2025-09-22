@@ -10,5 +10,5 @@ pub struct GetWorkloadIdentityPoolProviderX509 {
     /// supported.
     #[builder(into)]
     #[serde(rename = "trustStores")]
-    pub r#trust_stores: Box<Vec<super::super::types::iam::GetWorkloadIdentityPoolProviderX509TrustStore>>,
+    pub r#trust_stores: Vec<super::super::types::iam::GetWorkloadIdentityPoolProviderX509TrustStore>,
 }

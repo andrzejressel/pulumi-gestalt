@@ -5,17 +5,17 @@
 pub struct ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfig {
     /// The autoscaler configuration for this node pool. 
     /// The autoscaler is enabled only when a valid configuration is present.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoscaling")]
-    pub r#autoscaling: Box<Option<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfigAutoscaling>>,
+    pub r#autoscaling: Option<Box<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfigAutoscaling>>,
     /// The node pool configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "config")]
-    pub r#config: Box<Option<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfigConfig>>,
+    pub r#config: Option<Box<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfigConfig>>,
     /// The list of Compute Engine zones where node pool nodes associated 
     /// with a Dataproc on GKE virtual cluster will be located.
     /// - - -
     #[builder(into)]
     #[serde(rename = "locations")]
-    pub r#locations: Box<Vec<String>>,
+    pub r#locations: Vec<String>,
 }

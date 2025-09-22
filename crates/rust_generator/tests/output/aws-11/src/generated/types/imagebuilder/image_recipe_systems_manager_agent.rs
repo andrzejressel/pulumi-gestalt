@@ -6,5 +6,5 @@ pub struct ImageRecipeSystemsManagerAgent {
     /// Whether to remove the Systems Manager Agent after the image has been built.
     #[builder(into)]
     #[serde(rename = "uninstallAfterBuild")]
-    pub r#uninstall_after_build: Box<bool>,
+    pub r#uninstall_after_build: bool,
 }

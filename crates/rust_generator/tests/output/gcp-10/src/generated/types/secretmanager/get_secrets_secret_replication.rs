@@ -7,10 +7,10 @@ pub struct GetSecretsSecretReplication {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "autos")]
-    pub r#autos: Box<Vec<super::super::types::secretmanager::GetSecretsSecretReplicationAuto>>,
+    pub r#autos: Vec<super::super::types::secretmanager::GetSecretsSecretReplicationAuto>,
     /// The Secret will be replicated to the regions specified by the user.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "userManageds")]
-    pub r#user_manageds: Box<Vec<super::super::types::secretmanager::GetSecretsSecretReplicationUserManaged>>,
+    pub r#user_manageds: Vec<super::super::types::secretmanager::GetSecretsSecretReplicationUserManaged>,
 }

@@ -6,17 +6,17 @@ pub struct GuardrailTopicPolicyConfigTopicsConfig {
     /// Definition of topic in topic policy.
     #[builder(into)]
     #[serde(rename = "definition")]
-    pub r#definition: Box<String>,
+    pub r#definition: String,
     /// List of text examples.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "examples")]
-    pub r#examples: Box<Option<Vec<String>>>,
+    pub r#examples: Option<Vec<String>>,
     /// Name of topic in topic policy.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Type of topic in a policy.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

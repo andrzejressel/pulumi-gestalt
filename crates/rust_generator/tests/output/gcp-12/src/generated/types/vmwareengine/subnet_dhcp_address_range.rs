@@ -5,12 +5,12 @@
 pub struct SubnetDhcpAddressRange {
     /// (Output)
     /// The first IP address of the range.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "firstAddress")]
-    pub r#first_address: Box<Option<String>>,
+    pub r#first_address: Option<String>,
     /// (Output)
     /// The last IP address of the range.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastAddress")]
-    pub r#last_address: Box<Option<String>>,
+    pub r#last_address: Option<String>,
 }

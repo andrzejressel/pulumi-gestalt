@@ -5,8 +5,8 @@
 pub struct GetFirewallPolicyThreatIntelligenceAllowlist {
     #[builder(into)]
     #[serde(rename = "fqdns")]
-    pub r#fqdns: Box<Vec<String>>,
+    pub r#fqdns: Vec<String>,
     #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Vec<String>>,
+    pub r#ip_addresses: Vec<String>,
 }

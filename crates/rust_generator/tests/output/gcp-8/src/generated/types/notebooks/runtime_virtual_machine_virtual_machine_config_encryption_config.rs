@@ -8,7 +8,7 @@ pub struct RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig {
     /// It has the following format:
     /// `projects/{PROJECT_ID}/locations/{REGION}/keyRings/
     /// {KEY_RING_NAME}/cryptoKeys/{KEY_NAME}`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKey")]
-    pub r#kms_key: Box<Option<String>>,
+    pub r#kms_key: Option<String>,
 }

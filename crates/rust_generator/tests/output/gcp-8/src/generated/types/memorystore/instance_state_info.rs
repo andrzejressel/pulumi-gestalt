@@ -6,7 +6,7 @@ pub struct InstanceStateInfo {
     /// (Output)
     /// Represents information about instance with state UPDATING.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "updateInfos")]
-    pub r#update_infos: Box<Option<Vec<super::super::types::memorystore::InstanceStateInfoUpdateInfo>>>,
+    pub r#update_infos: Option<Vec<super::super::types::memorystore::InstanceStateInfoUpdateInfo>>,
 }

@@ -5,8 +5,8 @@
 pub struct GetVirtualGatewaySpecLoggingAccessLogFileFormatJson {
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

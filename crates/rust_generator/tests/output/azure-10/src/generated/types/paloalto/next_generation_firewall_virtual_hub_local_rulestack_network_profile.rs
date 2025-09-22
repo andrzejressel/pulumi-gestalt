@@ -3,34 +3,34 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NextGenerationFirewallVirtualHubLocalRulestackNetworkProfile {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "egressNatIpAddressIds")]
-    pub r#egress_nat_ip_address_ids: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#egress_nat_ip_address_ids: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "egressNatIpAddresses")]
-    pub r#egress_nat_ip_addresses: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#egress_nat_ip_addresses: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "ipOfTrustForUserDefinedRoutes")]
-    pub r#ip_of_trust_for_user_defined_routes: Box<Option<String>>,
+    pub r#ip_of_trust_for_user_defined_routes: Option<String>,
     #[builder(into)]
     #[serde(rename = "networkVirtualApplianceId")]
-    pub r#network_virtual_appliance_id: Box<String>,
+    pub r#network_virtual_appliance_id: String,
     #[builder(into)]
     #[serde(rename = "publicIpAddressIds")]
-    pub r#public_ip_address_ids: Box<Vec<String>>,
-    #[builder(into, default)]
+    pub r#public_ip_address_ids: Vec<String>,
+    #[builder(into)]
     #[serde(rename = "publicIpAddresses")]
-    pub r#public_ip_addresses: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#public_ip_addresses: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "trustedAddressRanges")]
-    pub r#trusted_address_ranges: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#trusted_address_ranges: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "trustedSubnetId")]
-    pub r#trusted_subnet_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#trusted_subnet_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "untrustedSubnetId")]
-    pub r#untrusted_subnet_id: Box<Option<String>>,
+    pub r#untrusted_subnet_id: Option<String>,
     #[builder(into)]
     #[serde(rename = "virtualHubId")]
-    pub r#virtual_hub_id: Box<String>,
+    pub r#virtual_hub_id: String,
 }

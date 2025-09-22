@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ReplicatorReplicationInfoListConsumerGroupReplication {
     /// List of regular expression patterns indicating the consumer groups that should not be replicated.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "consumerGroupsToExcludes")]
-    pub r#consumer_groups_to_excludes: Box<Option<Vec<String>>>,
+    pub r#consumer_groups_to_excludes: Option<Vec<String>>,
     /// List of regular expression patterns indicating the consumer groups to copy.
     #[builder(into)]
     #[serde(rename = "consumerGroupsToReplicates")]
-    pub r#consumer_groups_to_replicates: Box<Vec<String>>,
+    pub r#consumer_groups_to_replicates: Vec<String>,
     /// Whether to periodically check for new consumer groups.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "detectAndCopyNewConsumerGroups")]
-    pub r#detect_and_copy_new_consumer_groups: Box<Option<bool>>,
+    pub r#detect_and_copy_new_consumer_groups: Option<bool>,
     /// Whether to periodically write the translated offsets to __consumer_offsets topic in target cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "synchroniseConsumerGroupOffsets")]
-    pub r#synchronise_consumer_group_offsets: Box<Option<bool>>,
+    pub r#synchronise_consumer_group_offsets: Option<bool>,
 }

@@ -6,25 +6,25 @@ pub struct GetGatewayCategoriesCategory {
     /// True if the category is in beta and subject to change.
     #[builder(into)]
     #[serde(rename = "beta")]
-    pub r#beta: Box<bool>,
+    pub r#beta: bool,
     /// Which account types are allowed to create policies based on this category.
     #[builder(into)]
     #[serde(rename = "class")]
-    pub r#class: Box<String>,
+    pub r#class: String,
     /// A short summary of domains in the category.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// The identifier for this category. There is only one category per ID.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<i32>,
+    pub r#id: i32,
     /// The name of the category.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A list of subcategories.
     #[builder(into)]
     #[serde(rename = "subcategories")]
-    pub r#subcategories: Box<Vec<super::types::GetGatewayCategoriesCategorySubcategory>>,
+    pub r#subcategories: Vec<super::types::GetGatewayCategoriesCategorySubcategory>,
 }

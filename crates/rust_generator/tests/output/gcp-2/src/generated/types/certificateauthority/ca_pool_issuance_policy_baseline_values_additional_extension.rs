@@ -7,7 +7,7 @@ pub struct CaPoolIssuancePolicyBaselineValuesAdditionalExtension {
     /// handle this extension, the client should consider this to be an error).
     #[builder(into)]
     #[serde(rename = "critical")]
-    pub r#critical: Box<bool>,
+    pub r#critical: bool,
     /// Describes values that are relevant in a CA certificate.
     /// Structure is documented below.
     #[builder(into)]
@@ -16,5 +16,5 @@ pub struct CaPoolIssuancePolicyBaselineValuesAdditionalExtension {
     /// The value of this X.509 extension. A base64-encoded string.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

@@ -8,5 +8,5 @@ pub struct SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatency {
     /// this service that return in no more than threshold.
     #[builder(into)]
     #[serde(rename = "threshold")]
-    pub r#threshold: Box<String>,
+    pub r#threshold: String,
 }

@@ -8,10 +8,10 @@ pub struct PrivateConnectionVpcPeeringConfig {
     /// - - -
     #[builder(into)]
     #[serde(rename = "subnet")]
-    pub r#subnet: Box<String>,
+    pub r#subnet: String,
     /// Fully qualified name of the VPC that Datastream will peer to.
     /// Format: projects/{project}/global/{networks}/{name}
     #[builder(into)]
     #[serde(rename = "vpc")]
-    pub r#vpc: Box<String>,
+    pub r#vpc: String,
 }

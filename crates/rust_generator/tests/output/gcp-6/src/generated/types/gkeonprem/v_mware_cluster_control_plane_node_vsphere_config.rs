@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VMwareClusterControlPlaneNodeVsphereConfig {
     /// The Vsphere datastore used by the Control Plane Node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datastore")]
-    pub r#datastore: Box<Option<String>>,
+    pub r#datastore: Option<String>,
     /// The Vsphere storage policy used by the control plane Node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storagePolicyName")]
-    pub r#storage_policy_name: Box<Option<String>>,
+    pub r#storage_policy_name: Option<String>,
 }

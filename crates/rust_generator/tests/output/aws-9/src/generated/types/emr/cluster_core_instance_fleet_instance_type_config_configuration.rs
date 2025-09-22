@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterCoreInstanceFleetInstanceTypeConfigConfiguration {
     /// Classification within a configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "classification")]
-    pub r#classification: Box<Option<String>>,
+    pub r#classification: Option<String>,
     /// Map of properties specified within a configuration classification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#properties: Option<std::collections::HashMap<String, String>>,
 }

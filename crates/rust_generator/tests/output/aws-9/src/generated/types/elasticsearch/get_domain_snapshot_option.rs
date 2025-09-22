@@ -6,5 +6,5 @@ pub struct GetDomainSnapshotOption {
     /// Hour during which the service takes an automated daily snapshot of the indices in the domain.
     #[builder(into)]
     #[serde(rename = "automatedSnapshotStartHour")]
-    pub r#automated_snapshot_start_hour: Box<i32>,
+    pub r#automated_snapshot_start_hour: i32,
 }

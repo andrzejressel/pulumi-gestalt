@@ -5,5 +5,5 @@
 pub struct DistributionOriginGroupMember {
     #[builder(into)]
     #[serde(rename = "originId")]
-    pub r#origin_id: Box<String>,
+    pub r#origin_id: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CatalogDatabaseCreateTableDefaultPermissionPrincipal {
     /// An identifier for the Lake Formation principal.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataLakePrincipalIdentifier")]
-    pub r#data_lake_principal_identifier: Box<Option<String>>,
+    pub r#data_lake_principal_identifier: Option<String>,
 }

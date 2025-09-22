@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResult {
     /// Full machine-type names, e.g. "n1-standard-16".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "machineType")]
-    pub r#machine_type: Box<Option<String>>,
+    pub r#machine_type: Option<String>,
     /// Number of VM provisioned with the machine_type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vmCount")]
-    pub r#vm_count: Box<Option<i32>>,
+    pub r#vm_count: Option<i32>,
 }

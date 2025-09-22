@@ -5,8 +5,8 @@
 pub struct GetNetworkInsightsAnalysisAlternatePathHint {
     #[builder(into)]
     #[serde(rename = "componentArn")]
-    pub r#component_arn: Box<String>,
+    pub r#component_arn: String,
     #[builder(into)]
     #[serde(rename = "componentId")]
-    pub r#component_id: Box<String>,
+    pub r#component_id: String,
 }

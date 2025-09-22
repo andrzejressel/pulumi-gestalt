@@ -6,5 +6,5 @@ pub struct GatewayRouteSpecHttpRouteActionTargetVirtualService {
     /// Name of the virtual service that traffic is routed to. Must be between 1 and 255 characters in length.
     #[builder(into)]
     #[serde(rename = "virtualServiceName")]
-    pub r#virtual_service_name: Box<String>,
+    pub r#virtual_service_name: String,
 }

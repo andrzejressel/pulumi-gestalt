@@ -6,9 +6,9 @@ pub struct AwsNodePoolConfigAutoscalingMetricsCollection {
     /// The frequency at which EC2 Auto Scaling sends aggregated data to AWS CloudWatch. The only valid value is "1Minute".
     #[builder(into)]
     #[serde(rename = "granularity")]
-    pub r#granularity: Box<String>,
+    pub r#granularity: String,
     /// The metrics to enable. For a list of valid metrics, see https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_EnableMetricsCollection.html. If you specify granularity and don't specify any metrics, all metrics are enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metrics")]
-    pub r#metrics: Box<Option<Vec<String>>>,
+    pub r#metrics: Option<Vec<String>>,
 }

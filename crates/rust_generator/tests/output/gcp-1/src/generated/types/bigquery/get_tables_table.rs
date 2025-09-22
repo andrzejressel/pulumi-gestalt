@@ -6,9 +6,9 @@ pub struct GetTablesTable {
     /// User-provided table labels, in key/value pairs.
     #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<std::collections::HashMap<String, String>>,
+    pub r#labels: std::collections::HashMap<String, String>,
     /// The name of the table.
     #[builder(into)]
     #[serde(rename = "tableId")]
-    pub r#table_id: Box<String>,
+    pub r#table_id: String,
 }

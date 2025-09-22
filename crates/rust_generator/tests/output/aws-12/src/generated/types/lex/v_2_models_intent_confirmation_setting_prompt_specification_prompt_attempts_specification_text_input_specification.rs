@@ -6,5 +6,5 @@ pub struct V2ModelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpe
     /// Time for which a bot waits before re-prompting a customer for text input.
     #[builder(into)]
     #[serde(rename = "startTimeoutMs")]
-    pub r#start_timeout_ms: Box<i32>,
+    pub r#start_timeout_ms: i32,
 }

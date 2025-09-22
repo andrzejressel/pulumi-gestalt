@@ -5,5 +5,5 @@
 pub struct ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterIntList {
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<i32>>,
+    pub r#values: Vec<i32>,
 }

@@ -5,7 +5,7 @@
 pub struct ClusterAutomatedBackupPolicyTimeBasedRetention {
     /// The retention period.
     /// A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionPeriod")]
-    pub r#retention_period: Box<Option<String>>,
+    pub r#retention_period: Option<String>,
 }

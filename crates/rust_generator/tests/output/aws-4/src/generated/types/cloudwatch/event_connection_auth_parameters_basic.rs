@@ -6,9 +6,9 @@ pub struct EventConnectionAuthParametersBasic {
     /// A password for the authorization. Created and stored in AWS Secrets Manager.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// A username for the authorization.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

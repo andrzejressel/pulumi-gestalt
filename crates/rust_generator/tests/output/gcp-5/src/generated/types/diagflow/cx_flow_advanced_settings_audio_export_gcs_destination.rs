@@ -5,7 +5,7 @@
 pub struct CxFlowAdvancedSettingsAudioExportGcsDestination {
     /// The Google Cloud Storage URI for the exported objects. Whether a full object name, or just a prefix, its usage depends on the Dialogflow operation.
     /// Format: gs://bucket/object-name-or-prefix
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<Option<String>>,
+    pub r#uri: Option<String>,
 }

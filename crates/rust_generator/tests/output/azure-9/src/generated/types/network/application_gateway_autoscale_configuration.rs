@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationGatewayAutoscaleConfiguration {
     /// Maximum capacity for autoscaling. Accepted values are in the range `2` to `125`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxCapacity")]
-    pub r#max_capacity: Box<Option<i32>>,
+    pub r#max_capacity: Option<i32>,
     /// Minimum capacity for autoscaling. Accepted values are in the range `0` to `100`.
     #[builder(into)]
     #[serde(rename = "minCapacity")]
-    pub r#min_capacity: Box<i32>,
+    pub r#min_capacity: i32,
 }

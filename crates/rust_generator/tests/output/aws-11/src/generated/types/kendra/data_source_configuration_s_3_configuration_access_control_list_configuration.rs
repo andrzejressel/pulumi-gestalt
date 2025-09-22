@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceConfigurationS3ConfigurationAccessControlListConfiguration {
     /// Path to the AWS S3 bucket that contains the ACL files.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyPath")]
-    pub r#key_path: Box<Option<String>>,
+    pub r#key_path: Option<String>,
 }

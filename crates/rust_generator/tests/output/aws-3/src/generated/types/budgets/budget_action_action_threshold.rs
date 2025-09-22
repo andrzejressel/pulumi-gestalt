@@ -6,9 +6,9 @@ pub struct BudgetActionActionThreshold {
     /// The type of threshold for a notification. Valid values are `PERCENTAGE` or `ABSOLUTE_VALUE`.
     #[builder(into)]
     #[serde(rename = "actionThresholdType")]
-    pub r#action_threshold_type: Box<String>,
+    pub r#action_threshold_type: String,
     /// The threshold of a notification.
     #[builder(into)]
     #[serde(rename = "actionThresholdValue")]
-    pub r#action_threshold_value: Box<f64>,
+    pub r#action_threshold_value: f64,
 }

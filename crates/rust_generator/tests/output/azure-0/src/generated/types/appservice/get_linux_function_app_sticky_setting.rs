@@ -6,9 +6,9 @@ pub struct GetLinuxFunctionAppStickySetting {
     /// A list of `app_setting` names that the Linux Function App will not swap between Slots when a swap operation is triggered.
     #[builder(into)]
     #[serde(rename = "appSettingNames")]
-    pub r#app_setting_names: Box<Vec<String>>,
+    pub r#app_setting_names: Vec<String>,
     /// A list of `connection_string` names that the Linux Function App will not swap between Slots when a swap operation is triggered.
     #[builder(into)]
     #[serde(rename = "connectionStringNames")]
-    pub r#connection_string_names: Box<Vec<String>>,
+    pub r#connection_string_names: Vec<String>,
 }

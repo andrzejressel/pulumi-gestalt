@@ -12,13 +12,13 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroup {
     /// inventory_filters[1].os_short_name='centos' If the list is empty, this
     /// resource group will be applied to the target VM unconditionally. Structure
     /// is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inventoryFilters")]
-    pub r#inventory_filters: Box<Option<Vec<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupInventoryFilter>>>,
+    pub r#inventory_filters: Option<Vec<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupInventoryFilter>>,
     /// List of resources configured for this resource
     /// group. The resources are executed in the exact order specified here.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Box<Vec<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResource>>,
+    pub r#resources: Vec<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResource>,
 }

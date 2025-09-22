@@ -6,9 +6,9 @@ pub struct BackupPlanBackupConfigSelectedApplicationsNamespacedName {
     /// The name of a Kubernetes Resource.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The namespace of a Kubernetes Resource.
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
 }

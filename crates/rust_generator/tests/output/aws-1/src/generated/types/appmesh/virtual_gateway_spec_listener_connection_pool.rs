@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualGatewaySpecListenerConnectionPool {
     /// Connection pool information for gRPC listeners.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "grpc")]
-    pub r#grpc: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPoolGrpc>>,
+    pub r#grpc: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPoolGrpc>>,
     /// Connection pool information for HTTP listeners.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "http")]
-    pub r#http: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPoolHttp>>,
+    pub r#http: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPoolHttp>>,
     /// Connection pool information for HTTP2 listeners.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "http2")]
-    pub r#http_2: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPoolHttp2>>,
+    pub r#http_2: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPoolHttp2>>,
 }

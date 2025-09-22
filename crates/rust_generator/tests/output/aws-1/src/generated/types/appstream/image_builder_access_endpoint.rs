@@ -6,9 +6,9 @@ pub struct ImageBuilderAccessEndpoint {
     /// Type of interface endpoint. For valid values, refer to the [AWS documentation](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AccessEndpoint.html).
     #[builder(into)]
     #[serde(rename = "endpointType")]
-    pub r#endpoint_type: Box<String>,
+    pub r#endpoint_type: String,
     /// Identifier (ID) of the interface VPC endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpceId")]
-    pub r#vpce_id: Box<Option<String>>,
+    pub r#vpce_id: Option<String>,
 }

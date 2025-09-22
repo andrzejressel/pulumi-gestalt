@@ -6,13 +6,13 @@ pub struct ServiceTemplateVolumeNfs {
     /// Path that is exported by the NFS server.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// If true, mount the NFS volume as read only
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "readOnly")]
-    pub r#read_only: Box<Option<bool>>,
+    pub r#read_only: Option<bool>,
     /// Hostname or IP address of the NFS server
     #[builder(into)]
     #[serde(rename = "server")]
-    pub r#server: Box<String>,
+    pub r#server: String,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicyPolicySettingsLogScrubbing {
     /// Whether the log scrubbing is enabled or disabled. Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// One or more `scrubbing_rule` blocks as define below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Option<Vec<super::super::types::waf::PolicyPolicySettingsLogScrubbingRule>>>,
+    pub r#rules: Option<Vec<super::super::types::waf::PolicyPolicySettingsLogScrubbingRule>>,
 }

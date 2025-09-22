@@ -6,28 +6,28 @@ pub struct GetCryptoKeyVersionsVersion {
     /// The CryptoKeyVersionAlgorithm that this CryptoKeyVersion supports.
     #[builder(into)]
     #[serde(rename = "algorithm")]
-    pub r#algorithm: Box<String>,
+    pub r#algorithm: String,
     /// The `id` of the Google Cloud Platform CryptoKey to which the key version belongs. This is also the `id` field of the 
     /// `gcp.kms.CryptoKey` resource/datasource.
     #[builder(into)]
     #[serde(rename = "cryptoKey")]
-    pub r#crypto_key: Box<String>,
+    pub r#crypto_key: String,
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "protectionLevel")]
-    pub r#protection_level: Box<String>,
+    pub r#protection_level: String,
     #[builder(into)]
     #[serde(rename = "publicKeys")]
-    pub r#public_keys: Box<Vec<super::super::types::kms::GetCryptoKeyVersionsVersionPublicKey>>,
+    pub r#public_keys: Vec<super::super::types::kms::GetCryptoKeyVersionsVersionPublicKey>,
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<i32>,
+    pub r#version: i32,
 }

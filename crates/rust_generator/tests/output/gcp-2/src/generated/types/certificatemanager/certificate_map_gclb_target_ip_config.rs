@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertificateMapGclbTargetIpConfig {
     /// An external IP address
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<Option<String>>,
+    pub r#ip_address: Option<String>,
     /// A list of ports
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ports")]
-    pub r#ports: Box<Option<Vec<i32>>>,
+    pub r#ports: Option<Vec<i32>>,
 }

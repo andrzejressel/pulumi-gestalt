@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkflowStepCopyStepDetailsDestinationFileLocationEfsFileLocation {
     /// The ID of the file system, assigned by Amazon EFS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fileSystemId")]
-    pub r#file_system_id: Box<Option<String>>,
+    pub r#file_system_id: Option<String>,
     /// The pathname for the folder being used by a workflow.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
 }

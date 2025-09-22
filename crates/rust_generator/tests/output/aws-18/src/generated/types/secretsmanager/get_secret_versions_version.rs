@@ -5,16 +5,16 @@
 pub struct GetSecretVersionsVersion {
     #[builder(into)]
     #[serde(rename = "createdTime")]
-    pub r#created_time: Box<String>,
+    pub r#created_time: String,
     /// Date that this version of the secret was last accessed.
     #[builder(into)]
     #[serde(rename = "lastAccessedDate")]
-    pub r#last_accessed_date: Box<String>,
+    pub r#last_accessed_date: String,
     /// Unique version identifier of this version of the secret.
     #[builder(into)]
     #[serde(rename = "versionId")]
-    pub r#version_id: Box<String>,
+    pub r#version_id: String,
     #[builder(into)]
     #[serde(rename = "versionStages")]
-    pub r#version_stages: Box<Vec<String>>,
+    pub r#version_stages: Vec<String>,
 }

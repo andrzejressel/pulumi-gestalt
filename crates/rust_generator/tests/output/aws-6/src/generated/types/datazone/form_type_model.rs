@@ -8,5 +8,5 @@ pub struct FormTypeModel {
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "smithy")]
-    pub r#smithy: Box<String>,
+    pub r#smithy: String,
 }

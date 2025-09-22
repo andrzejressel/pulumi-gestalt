@@ -6,17 +6,17 @@ pub struct GetPrivateCloudVcenter {
     /// Fully qualified domain name of the appliance.
     #[builder(into)]
     #[serde(rename = "fqdn")]
-    pub r#fqdn: Box<String>,
+    pub r#fqdn: String,
     /// Internal IP address of the appliance.
     #[builder(into)]
     #[serde(rename = "internalIp")]
-    pub r#internal_ip: Box<String>,
+    pub r#internal_ip: String,
     /// State of the appliance. Possible values: ["ACTIVE", "CREATING"]
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
     /// Version of the appliance.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

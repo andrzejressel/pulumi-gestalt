@@ -8,11 +8,11 @@ pub struct ReservationSpecificReservationInstancePropertiesLocalSsd {
     /// - - -
     #[builder(into)]
     #[serde(rename = "diskSizeGb")]
-    pub r#disk_size_gb: Box<i32>,
+    pub r#disk_size_gb: i32,
     /// The disk interface to use for attaching this disk.
     /// Default value is `SCSI`.
     /// Possible values are: `SCSI`, `NVME`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "interface")]
-    pub r#interface: Box<Option<String>>,
+    pub r#interface: Option<String>,
 }

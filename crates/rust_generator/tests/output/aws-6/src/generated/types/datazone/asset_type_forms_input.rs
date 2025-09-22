@@ -5,14 +5,14 @@
 pub struct AssetTypeFormsInput {
     #[builder(into)]
     #[serde(rename = "mapBlockKey")]
-    pub r#map_block_key: Box<String>,
-    #[builder(into, default)]
+    pub r#map_block_key: String,
+    #[builder(into)]
     #[serde(rename = "required")]
-    pub r#required: Box<Option<bool>>,
+    pub r#required: Option<bool>,
     #[builder(into)]
     #[serde(rename = "typeIdentifier")]
-    pub r#type_identifier: Box<String>,
+    pub r#type_identifier: String,
     #[builder(into)]
     #[serde(rename = "typeRevision")]
-    pub r#type_revision: Box<String>,
+    pub r#type_revision: String,
 }

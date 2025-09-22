@@ -9,5 +9,5 @@ pub struct LifecyclePolicyPolicyDetailsEventSource {
     /// The source of the event. Currently only managed CloudWatch Events rules are supported. Valid values are `MANAGED_CWE`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

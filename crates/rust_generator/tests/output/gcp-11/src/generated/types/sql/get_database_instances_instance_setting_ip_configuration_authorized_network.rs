@@ -5,11 +5,11 @@
 pub struct GetDatabaseInstancesInstanceSettingIpConfigurationAuthorizedNetwork {
     #[builder(into)]
     #[serde(rename = "expirationTime")]
-    pub r#expiration_time: Box<String>,
+    pub r#expiration_time: String,
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

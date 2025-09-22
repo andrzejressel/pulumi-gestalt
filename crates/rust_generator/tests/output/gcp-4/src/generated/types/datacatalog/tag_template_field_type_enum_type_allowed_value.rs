@@ -6,5 +6,5 @@ pub struct TagTemplateFieldTypeEnumTypeAllowedValue {
     /// The display name for this template.
     #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<String>,
+    pub r#display_name: String,
 }

@@ -5,8 +5,8 @@
 pub struct GetGatewayRouteSpecHttp2RouteAction {
     #[builder(into)]
     #[serde(rename = "rewrites")]
-    pub r#rewrites: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteActionRewrite>>,
+    pub r#rewrites: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteActionRewrite>,
     #[builder(into)]
     #[serde(rename = "targets")]
-    pub r#targets: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteActionTarget>>,
+    pub r#targets: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteActionTarget>,
 }

@@ -5,7 +5,7 @@
 pub struct FeatureSpecFleetobservability {
     /// Specified if fleet logging feature is enabled for the entire fleet. If UNSPECIFIED, fleet logging feature is disabled for the entire fleet.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loggingConfig")]
-    pub r#logging_config: Box<Option<super::super::types::gkehub::FeatureSpecFleetobservabilityLoggingConfig>>,
+    pub r#logging_config: Option<Box<super::super::types::gkehub::FeatureSpecFleetobservabilityLoggingConfig>>,
 }

@@ -6,14 +6,14 @@ pub struct GetVpcCidrBlockAssociation {
     /// Association ID for the IPv4 CIDR block.
     #[builder(into)]
     #[serde(rename = "associationId")]
-    pub r#association_id: Box<String>,
+    pub r#association_id: String,
     /// Cidr block of the desired VPC.
     #[builder(into)]
     #[serde(rename = "cidrBlock")]
-    pub r#cidr_block: Box<String>,
+    pub r#cidr_block: String,
     /// Current state of the desired VPC.
     /// Can be either `"pending"` or `"available"`.
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkstationConfigHostGceInstanceConfidentialInstanceConfig {
     /// Whether the instance has confidential compute enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableConfidentialCompute")]
-    pub r#enable_confidential_compute: Box<Option<bool>>,
+    pub r#enable_confidential_compute: Option<bool>,
 }

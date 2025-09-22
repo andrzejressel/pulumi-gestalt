@@ -5,18 +5,18 @@
 pub struct InterconnectCircuitInfo {
     /// (Output)
     /// Customer-side demarc ID for this circuit.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customerDemarcId")]
-    pub r#customer_demarc_id: Box<Option<String>>,
+    pub r#customer_demarc_id: Option<String>,
     /// (Output)
     /// Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "googleCircuitId")]
-    pub r#google_circuit_id: Box<Option<String>>,
+    pub r#google_circuit_id: Option<String>,
     /// (Output)
     /// Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by
     /// Google to the customer in the LOA.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "googleDemarcId")]
-    pub r#google_demarc_id: Box<Option<String>>,
+    pub r#google_demarc_id: Option<String>,
 }

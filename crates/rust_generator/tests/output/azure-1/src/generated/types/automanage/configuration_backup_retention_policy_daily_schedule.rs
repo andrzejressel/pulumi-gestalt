@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationBackupRetentionPolicyDailySchedule {
     /// A `retention_duration` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionDuration")]
-    pub r#retention_duration: Box<Option<super::super::types::automanage::ConfigurationBackupRetentionPolicyDailyScheduleRetentionDuration>>,
+    pub r#retention_duration: Option<Box<super::super::types::automanage::ConfigurationBackupRetentionPolicyDailyScheduleRetentionDuration>>,
     /// The retention times of the backup policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionTimes")]
-    pub r#retention_times: Box<Option<Vec<String>>>,
+    pub r#retention_times: Option<Vec<String>>,
 }

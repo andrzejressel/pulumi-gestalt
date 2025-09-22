@@ -6,9 +6,9 @@ pub struct ControlTowerControlParameter {
     /// The name of the parameter.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The value of the parameter.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

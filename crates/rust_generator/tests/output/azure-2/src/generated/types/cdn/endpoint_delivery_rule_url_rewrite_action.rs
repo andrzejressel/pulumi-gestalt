@@ -6,13 +6,13 @@ pub struct EndpointDeliveryRuleUrlRewriteAction {
     /// This value must start with a `/` and can't be longer than 260 characters.
     #[builder(into)]
     #[serde(rename = "destination")]
-    pub r#destination: Box<String>,
+    pub r#destination: String,
     /// Whether preserve an unmatched path. Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preserveUnmatchedPath")]
-    pub r#preserve_unmatched_path: Box<Option<bool>>,
+    pub r#preserve_unmatched_path: Option<bool>,
     /// This value must start with a `/` and can't be longer than 260 characters.
     #[builder(into)]
     #[serde(rename = "sourcePattern")]
-    pub r#source_pattern: Box<String>,
+    pub r#source_pattern: String,
 }

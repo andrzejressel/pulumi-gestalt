@@ -6,5 +6,5 @@ pub struct RepositoryAssociationRepositoryCodecommit {
     /// The name of the AWS CodeCommit repository.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

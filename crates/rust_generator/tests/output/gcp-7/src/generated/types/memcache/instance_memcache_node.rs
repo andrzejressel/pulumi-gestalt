@@ -5,27 +5,27 @@
 pub struct InstanceMemcacheNode {
     /// (Output)
     /// Hostname or IP address of the Memcached node used by the clients to connect to the Memcached server on this node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<Option<String>>,
+    pub r#host: Option<String>,
     /// (Output)
     /// Identifier of the Memcached node. The node id does not include project or location like the Memcached instance name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeId")]
-    pub r#node_id: Box<Option<String>>,
+    pub r#node_id: Option<String>,
     /// (Output)
     /// The port number of the Memcached server on this node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// (Output)
     /// Current state of the Memcached node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
     /// (Output)
     /// Location (GCP Zone) for the Memcached node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<Option<String>>,
+    pub r#zone: Option<String>,
 }

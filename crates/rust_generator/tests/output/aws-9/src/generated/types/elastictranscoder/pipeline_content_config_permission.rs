@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipelineContentConfigPermission {
     /// The permission that you want to give to the AWS user that you specified in `content_config_permissions.grantee`. Valid values are `Read`, `ReadAcp`, `WriteAcp` or `FullControl`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accesses")]
-    pub r#accesses: Box<Option<Vec<String>>>,
+    pub r#accesses: Option<Vec<String>>,
     /// The AWS user or group that you want to have access to transcoded files and playlists.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "grantee")]
-    pub r#grantee: Box<Option<String>>,
+    pub r#grantee: Option<String>,
     /// Specify the type of value that appears in the `content_config_permissions.grantee` object. Valid values are `Canonical`, `Email` or `Group`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "granteeType")]
-    pub r#grantee_type: Box<Option<String>>,
+    pub r#grantee_type: Option<String>,
 }

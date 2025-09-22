@@ -6,9 +6,9 @@ pub struct ProfileContainerNetworkInterfaceIpConfiguration {
     /// Specifies the name of the IP Configuration.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Reference to the subnet associated with the IP Configuration.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

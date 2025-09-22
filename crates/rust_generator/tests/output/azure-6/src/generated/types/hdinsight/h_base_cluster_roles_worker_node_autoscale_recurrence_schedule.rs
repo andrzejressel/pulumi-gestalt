@@ -6,13 +6,13 @@ pub struct HBaseClusterRolesWorkerNodeAutoscaleRecurrenceSchedule {
     /// The days of the week to perform autoscale. Possible values are `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday` and `Sunday`.
     #[builder(into)]
     #[serde(rename = "days")]
-    pub r#days: Box<Vec<String>>,
+    pub r#days: Vec<String>,
     /// The number of worker nodes to autoscale at the specified time.
     #[builder(into)]
     #[serde(rename = "targetInstanceCount")]
-    pub r#target_instance_count: Box<i32>,
+    pub r#target_instance_count: i32,
     /// The time of day to perform the autoscale in 24hour format.
     #[builder(into)]
     #[serde(rename = "time")]
-    pub r#time: Box<String>,
+    pub r#time: String,
 }

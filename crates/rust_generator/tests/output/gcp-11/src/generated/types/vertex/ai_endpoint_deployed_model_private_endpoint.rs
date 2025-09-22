@@ -5,22 +5,22 @@
 pub struct AiEndpointDeployedModelPrivateEndpoint {
     /// (Output)
     /// Output only. Http(s) path to send explain requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "explainHttpUri")]
-    pub r#explain_http_uri: Box<Option<String>>,
+    pub r#explain_http_uri: Option<String>,
     /// (Output)
     /// Output only. Http(s) path to send health check requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "healthHttpUri")]
-    pub r#health_http_uri: Box<Option<String>>,
+    pub r#health_http_uri: Option<String>,
     /// (Output)
     /// Output only. Http(s) path to send prediction requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "predictHttpUri")]
-    pub r#predict_http_uri: Box<Option<String>>,
+    pub r#predict_http_uri: Option<String>,
     /// (Output)
     /// Output only. The name of the service attachment resource. Populated if private service connect is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAttachment")]
-    pub r#service_attachment: Box<Option<String>>,
+    pub r#service_attachment: Option<String>,
 }

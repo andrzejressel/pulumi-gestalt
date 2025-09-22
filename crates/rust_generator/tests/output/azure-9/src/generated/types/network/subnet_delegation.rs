@@ -6,7 +6,7 @@ pub struct SubnetDelegation {
     /// A name for this delegation.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A `service_delegation` block as defined below.
     #[builder(into)]
     #[serde(rename = "serviceDelegation")]

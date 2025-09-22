@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceParametersRedshift {
     /// The ID of the cluster to which to connect.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clusterId")]
-    pub r#cluster_id: Box<Option<String>>,
+    pub r#cluster_id: Option<String>,
     /// The database to which to connect.
     #[builder(into)]
     #[serde(rename = "database")]
-    pub r#database: Box<String>,
+    pub r#database: String,
     /// The host to which to connect.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<Option<String>>,
+    pub r#host: Option<String>,
     /// The port to which to connect.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
 }

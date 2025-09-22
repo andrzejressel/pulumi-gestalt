@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeliveryPipelineSerialPipeline {
     /// Each stage specifies configuration for a `Target`. The ordering of this list defines the promotion flow.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stages")]
-    pub r#stages: Box<Option<Vec<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStage>>>,
+    pub r#stages: Option<Vec<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStage>>,
 }

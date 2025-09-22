@@ -8,5 +8,5 @@ pub struct ProjectFeedFeedOutputConfigPubsubDestination {
     /// - - -
     #[builder(into)]
     #[serde(rename = "topic")]
-    pub r#topic: Box<String>,
+    pub r#topic: String,
 }

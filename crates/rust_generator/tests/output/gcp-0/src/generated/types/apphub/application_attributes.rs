@@ -5,27 +5,27 @@
 pub struct ApplicationAttributes {
     /// Optional. Business team that ensures user needs are met and value is delivered
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "businessOwners")]
-    pub r#business_owners: Box<Option<Vec<super::super::types::apphub::ApplicationAttributesBusinessOwner>>>,
+    pub r#business_owners: Option<Vec<super::super::types::apphub::ApplicationAttributesBusinessOwner>>,
     /// Criticality of the Application, Service, or Workload
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "criticality")]
-    pub r#criticality: Box<Option<super::super::types::apphub::ApplicationAttributesCriticality>>,
+    pub r#criticality: Option<Box<super::super::types::apphub::ApplicationAttributesCriticality>>,
     /// Optional. Developer team that owns development and coding.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "developerOwners")]
-    pub r#developer_owners: Box<Option<Vec<super::super::types::apphub::ApplicationAttributesDeveloperOwner>>>,
+    pub r#developer_owners: Option<Vec<super::super::types::apphub::ApplicationAttributesDeveloperOwner>>,
     /// Environment of the Application, Service, or Workload
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "environment")]
-    pub r#environment: Box<Option<super::super::types::apphub::ApplicationAttributesEnvironment>>,
+    pub r#environment: Option<Box<super::super::types::apphub::ApplicationAttributesEnvironment>>,
     /// Optional. Operator team that ensures runtime and operations.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operatorOwners")]
-    pub r#operator_owners: Box<Option<Vec<super::super::types::apphub::ApplicationAttributesOperatorOwner>>>,
+    pub r#operator_owners: Option<Vec<super::super::types::apphub::ApplicationAttributesOperatorOwner>>,
 }

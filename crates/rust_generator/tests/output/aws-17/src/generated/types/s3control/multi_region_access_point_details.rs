@@ -5,11 +5,11 @@
 pub struct MultiRegionAccessPointDetails {
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
-    #[builder(into, default)]
+    pub r#name: String,
+    #[builder(into)]
     #[serde(rename = "publicAccessBlock")]
-    pub r#public_access_block: Box<Option<super::super::types::s3control::MultiRegionAccessPointDetailsPublicAccessBlock>>,
+    pub r#public_access_block: Option<Box<super::super::types::s3control::MultiRegionAccessPointDetailsPublicAccessBlock>>,
     #[builder(into)]
     #[serde(rename = "regions")]
-    pub r#regions: Box<Vec<super::super::types::s3control::MultiRegionAccessPointDetailsRegion>>,
+    pub r#regions: Vec<super::super::types::s3control::MultiRegionAccessPointDetailsRegion>,
 }

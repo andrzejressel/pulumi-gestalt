@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AutomationRuleActionFindingFieldsUpdateSeverity {
     /// The severity value of the finding. The allowed values are the following `INFORMATIONAL`, `LOW`, `MEDIUM`, `HIGH` and `CRITICAL`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "label")]
-    pub r#label: Box<Option<String>>,
+    pub r#label: Option<String>,
     /// The native severity as defined by the AWS service or integrated partner product that generated the finding.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "product")]
-    pub r#product: Box<Option<f64>>,
+    pub r#product: Option<f64>,
 }

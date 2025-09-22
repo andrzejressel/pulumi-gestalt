@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainConfigurationTlsConfig {
     /// The security policy for a domain configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "securityPolicy")]
-    pub r#security_policy: Box<Option<String>>,
+    pub r#security_policy: Option<String>,
 }

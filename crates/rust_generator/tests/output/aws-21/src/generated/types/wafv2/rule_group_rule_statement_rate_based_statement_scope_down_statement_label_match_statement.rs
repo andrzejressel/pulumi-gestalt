@@ -6,9 +6,9 @@ pub struct RuleGroupRuleStatementRateBasedStatementScopeDownStatementLabelMatchS
     /// The string to match against.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Specify whether you want to match using the label name or just the namespace. Valid values are `LABEL` or `NAMESPACE`.
     #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<String>,
+    pub r#scope: String,
 }

@@ -6,9 +6,9 @@ pub struct AccessHomeDirectoryMapping {
     /// Represents an entry and a target.
     #[builder(into)]
     #[serde(rename = "entry")]
-    pub r#entry: Box<String>,
+    pub r#entry: String,
     /// Represents the map target.
     #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<String>,
+    pub r#target: String,
 }

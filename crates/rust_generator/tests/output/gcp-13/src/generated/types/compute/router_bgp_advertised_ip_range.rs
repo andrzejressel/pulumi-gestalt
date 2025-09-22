@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouterBgpAdvertisedIpRange {
     /// User-specified description for the IP range.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The IP range to advertise. The value must be a
     /// CIDR-formatted string.
     #[builder(into)]
     #[serde(rename = "range")]
-    pub r#range: Box<String>,
+    pub r#range: String,
 }

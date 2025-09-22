@@ -6,9 +6,9 @@ pub struct RunBookDraftContentLinkHash {
     /// Specifies the hash algorithm used to hash the content.
     #[builder(into)]
     #[serde(rename = "algorithm")]
-    pub r#algorithm: Box<String>,
+    pub r#algorithm: String,
     /// Specifies the expected hash value of the content.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

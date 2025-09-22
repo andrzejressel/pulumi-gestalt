@@ -4,28 +4,28 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SsisEnvironmentResponse {
     /// Metadata description.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Folder id which contains environment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "folderId")]
-    pub r#folder_id: Box<Option<f64>>,
+    pub r#folder_id: Option<f64>,
     /// Metadata id.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<f64>>,
+    pub r#id: Option<f64>,
     /// Metadata name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The type of SSIS object metadata.
     /// Expected value is 'Environment'.
     #[builder(skip)]
     #[serde(rename = "type")]
-    r#type_: Box<super::constants::ConstStringEnvironment>,
+    r#type_: super::constants::ConstStringEnvironment,
     /// Variable in environment
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "variables")]
-    pub r#variables: Box<Option<Vec<super::types::SsisVariableResponse>>>,
+    pub r#variables: Option<Vec<super::types::SsisVariableResponse>>,
 }

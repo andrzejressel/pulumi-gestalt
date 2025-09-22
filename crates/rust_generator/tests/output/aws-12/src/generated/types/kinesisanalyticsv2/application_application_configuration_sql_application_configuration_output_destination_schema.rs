@@ -6,5 +6,5 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationOutputD
     /// Specifies the format of the records on the output stream. Valid values: `CSV`, `JSON`.
     #[builder(into)]
     #[serde(rename = "recordFormatType")]
-    pub r#record_format_type: Box<String>,
+    pub r#record_format_type: String,
 }

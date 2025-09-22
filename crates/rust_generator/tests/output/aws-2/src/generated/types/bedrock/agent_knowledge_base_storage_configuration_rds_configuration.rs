@@ -6,21 +6,21 @@ pub struct AgentKnowledgeBaseStorageConfigurationRdsConfiguration {
     /// ARN of the secret that you created in AWS Secrets Manager that is linked to your Amazon RDS database.
     #[builder(into)]
     #[serde(rename = "credentialsSecretArn")]
-    pub r#credentials_secret_arn: Box<String>,
+    pub r#credentials_secret_arn: String,
     /// Name of your Amazon RDS database.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// Names of the fields to which to map information about the vector store. This block supports the following arguments:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fieldMapping")]
-    pub r#field_mapping: Box<Option<super::super::types::bedrock::AgentKnowledgeBaseStorageConfigurationRdsConfigurationFieldMapping>>,
+    pub r#field_mapping: Option<Box<super::super::types::bedrock::AgentKnowledgeBaseStorageConfigurationRdsConfigurationFieldMapping>>,
     /// ARN of the vector store.
     #[builder(into)]
     #[serde(rename = "resourceArn")]
-    pub r#resource_arn: Box<String>,
+    pub r#resource_arn: String,
     /// Name of the table in the database.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
 }

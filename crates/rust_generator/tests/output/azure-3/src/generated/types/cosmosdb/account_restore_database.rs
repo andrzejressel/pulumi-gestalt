@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountRestoreDatabase {
     /// A list of the collection names for the restore request. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "collectionNames")]
-    pub r#collection_names: Box<Option<Vec<String>>>,
+    pub r#collection_names: Option<Vec<String>>,
     /// The database name for the restore request. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

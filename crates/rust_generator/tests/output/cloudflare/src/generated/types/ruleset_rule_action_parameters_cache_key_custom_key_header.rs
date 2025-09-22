@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesetRuleActionParametersCacheKeyCustomKeyHeader {
     /// List of headers to check for presence in the custom key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "checkPresences")]
-    pub r#check_presences: Box<Option<Vec<String>>>,
+    pub r#check_presences: Option<Vec<String>>,
     /// Dictionary of headers mapping to lists of values to check for presence in the custom key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "contains")]
-    pub r#contains: Box<Option<std::collections::HashMap<String, Vec<String>>>>,
+    pub r#contains: Option<std::collections::HashMap<String, Vec<String>>>,
     /// Exclude the origin header from the custom key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "excludeOrigin")]
-    pub r#exclude_origin: Box<Option<bool>>,
+    pub r#exclude_origin: Option<bool>,
     /// List of headers to include in the custom key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includes")]
-    pub r#includes: Box<Option<Vec<String>>>,
+    pub r#includes: Option<Vec<String>>,
 }

@@ -5,5 +5,5 @@
 pub struct GetVirtualGatewaySpecBackendDefaultClientPolicy {
     #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTl>>,
+    pub r#tls: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTl>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HostingVersionConfigHeader {
     /// The user-supplied glob to match against the request URL path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "glob")]
-    pub r#glob: Box<Option<String>>,
+    pub r#glob: Option<String>,
     /// The additional headers to add to the response. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
     #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<std::collections::HashMap<String, String>>,
+    pub r#headers: std::collections::HashMap<String, String>,
     /// The user-supplied RE2 regular expression to match against the request URL path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<Option<String>>,
+    pub r#regex: Option<String>,
 }

@@ -6,12 +6,12 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoD
     /// The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication.
     #[builder(into)]
     #[serde(rename = "authCodeUrl")]
-    pub r#auth_code_url: Box<String>,
+    pub r#auth_code_url: String,
     /// The OAuth scopes required for OAuth type authentication.
     #[builder(into)]
     #[serde(rename = "oauthScopes")]
-    pub r#oauth_scopes: Box<Vec<String>>,
+    pub r#oauth_scopes: Vec<String>,
     #[builder(into)]
     #[serde(rename = "tokenUrl")]
-    pub r#token_url: Box<String>,
+    pub r#token_url: String,
 }

@@ -6,9 +6,9 @@ pub struct IndexUserTokenConfigurationsJsonTokenTypeConfiguration {
     /// The group attribute field. Minimum length of 1. Maximum length of 2048.
     #[builder(into)]
     #[serde(rename = "groupAttributeField")]
-    pub r#group_attribute_field: Box<String>,
+    pub r#group_attribute_field: String,
     /// The user name attribute field. Minimum length of 1. Maximum length of 2048.
     #[builder(into)]
     #[serde(rename = "userNameAttributeField")]
-    pub r#user_name_attribute_field: Box<String>,
+    pub r#user_name_attribute_field: String,
 }

@@ -5,5 +5,5 @@
 pub struct GetMeshSpecServiceDiscovery {
     #[builder(into)]
     #[serde(rename = "ipPreference")]
-    pub r#ip_preference: Box<String>,
+    pub r#ip_preference: String,
 }

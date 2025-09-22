@@ -5,11 +5,11 @@
 pub struct GetConnectionPhysicalConnectionRequirement {
     #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<String>,
+    pub r#availability_zone: String,
     #[builder(into)]
     #[serde(rename = "securityGroupIdLists")]
-    pub r#security_group_id_lists: Box<Vec<String>>,
+    pub r#security_group_id_lists: Vec<String>,
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

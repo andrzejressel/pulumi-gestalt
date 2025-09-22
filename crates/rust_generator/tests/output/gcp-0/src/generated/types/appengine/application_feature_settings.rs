@@ -7,5 +7,5 @@ pub struct ApplicationFeatureSettings {
     /// and liveness checks.
     #[builder(into)]
     #[serde(rename = "splitHealthChecks")]
-    pub r#split_health_checks: Box<bool>,
+    pub r#split_health_checks: bool,
 }

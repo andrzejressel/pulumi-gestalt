@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetRulesetsRulesetRuleActionParametersServeStale {
     /// Disable stale while updating.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disableStaleWhileUpdating")]
-    pub r#disable_stale_while_updating: Box<Option<bool>>,
+    pub r#disable_stale_while_updating: Option<bool>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TeamsAccountAntivirusNotificationSettings {
     /// Enable notification settings.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Notification content.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
     /// Support URL to show in the notification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "supportUrl")]
-    pub r#support_url: Box<Option<String>>,
+    pub r#support_url: Option<String>,
 }

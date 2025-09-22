@@ -6,9 +6,9 @@ pub struct GetDatabaseIdentity {
     /// The list of User Assigned Managed Identity IDs assigned to this Microsoft SQL Database.
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     /// The type of Managed Service Identity that is configured on this Microsoft SQL Database.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

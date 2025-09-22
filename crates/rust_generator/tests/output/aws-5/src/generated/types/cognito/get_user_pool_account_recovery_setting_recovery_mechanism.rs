@@ -6,9 +6,9 @@ pub struct GetUserPoolAccountRecoverySettingRecoveryMechanism {
     /// - Name of the attribute.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// - Priority of this mechanism in the recovery process (lower numbers are higher priority).
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
 }

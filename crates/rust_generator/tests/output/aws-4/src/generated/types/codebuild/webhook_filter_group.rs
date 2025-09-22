@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebhookFilterGroup {
     /// A webhook filter for the group. Filter blocks are documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filters")]
-    pub r#filters: Box<Option<Vec<super::super::types::codebuild::WebhookFilterGroupFilter>>>,
+    pub r#filters: Option<Vec<super::super::types::codebuild::WebhookFilterGroupFilter>>,
 }

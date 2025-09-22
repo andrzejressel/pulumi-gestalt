@@ -16,7 +16,7 @@ pub struct GetSubscriptionDeadLetterPolicy {
     /// since messages published to a topic with no subscriptions are lost.
     #[builder(into)]
     #[serde(rename = "deadLetterTopic")]
-    pub r#dead_letter_topic: Box<String>,
+    pub r#dead_letter_topic: String,
     /// The maximum number of delivery attempts for any message. The value must be
     /// between 5 and 100.
     /// 
@@ -31,5 +31,5 @@ pub struct GetSubscriptionDeadLetterPolicy {
     /// If this parameter is 0, a default value of 5 is used.
     #[builder(into)]
     #[serde(rename = "maxDeliveryAttempts")]
-    pub r#max_delivery_attempts: Box<i32>,
+    pub r#max_delivery_attempts: i32,
 }

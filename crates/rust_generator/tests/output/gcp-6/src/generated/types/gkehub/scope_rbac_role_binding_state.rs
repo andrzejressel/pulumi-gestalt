@@ -5,7 +5,7 @@
 pub struct ScopeRbacRoleBindingState {
     /// (Output)
     /// Code describes the state of a RBAC Role Binding resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "code")]
-    pub r#code: Box<Option<String>>,
+    pub r#code: Option<String>,
 }

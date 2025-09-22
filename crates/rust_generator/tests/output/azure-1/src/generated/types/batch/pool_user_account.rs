@@ -6,21 +6,21 @@ pub struct PoolUserAccount {
     /// The elevation level of the user account. "NonAdmin" - The auto user is a standard user without elevated access. "Admin" - The auto user is a user with elevated access and operates with full Administrator permissions. The default value is nonAdmin.
     #[builder(into)]
     #[serde(rename = "elevationLevel")]
-    pub r#elevation_level: Box<String>,
+    pub r#elevation_level: String,
     /// The `linux_user_configuration` block defined below is a linux-specific user configuration for the user account. This property is ignored if specified on a Windows pool. If not specified, the user is created with the default options.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "linuxUserConfigurations")]
-    pub r#linux_user_configurations: Box<Option<Vec<super::super::types::batch::PoolUserAccountLinuxUserConfiguration>>>,
+    pub r#linux_user_configurations: Option<Vec<super::super::types::batch::PoolUserAccountLinuxUserConfiguration>>,
     /// The name of the user account.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The password for the user account.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// The `windows_user_configuration` block defined below is a windows-specific user configuration for the user account. This property can only be specified if the user is on a Windows pool. If not specified and on a Windows pool, the user is created with the default options.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "windowsUserConfigurations")]
-    pub r#windows_user_configurations: Box<Option<Vec<super::super::types::batch::PoolUserAccountWindowsUserConfiguration>>>,
+    pub r#windows_user_configurations: Option<Vec<super::super::types::batch::PoolUserAccountWindowsUserConfiguration>>,
 }

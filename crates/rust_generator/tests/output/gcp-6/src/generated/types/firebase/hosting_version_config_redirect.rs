@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HostingVersionConfigRedirect {
     /// The user-supplied glob to match against the request URL path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "glob")]
-    pub r#glob: Box<Option<String>>,
+    pub r#glob: Option<String>,
     /// The value to put in the HTTP location header of the response.
     /// The location can contain capture group values from the pattern using a : prefix to identify
     /// the segment and an optional * to capture the rest of the URL. For example:
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// The user-supplied RE2 regular expression to match against the request URL path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<Option<String>>,
+    pub r#regex: Option<String>,
     /// The status HTTP code to return in the response. It must be a valid 3xx status code.
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<i32>,
+    pub r#status_code: i32,
 }

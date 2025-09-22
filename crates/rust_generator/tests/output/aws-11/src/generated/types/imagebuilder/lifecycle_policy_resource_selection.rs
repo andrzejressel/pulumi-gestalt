@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LifecyclePolicyResourceSelection {
     /// A list of recipe that are used as selection criteria for the output images that the lifecycle policy applies to. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recipes")]
-    pub r#recipes: Box<Option<Vec<super::super::types::imagebuilder::LifecyclePolicyResourceSelectionRecipe>>>,
+    pub r#recipes: Option<Vec<super::super::types::imagebuilder::LifecyclePolicyResourceSelectionRecipe>>,
     /// A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tagMap")]
-    pub r#tag_map: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#tag_map: Option<std::collections::HashMap<String, String>>,
 }

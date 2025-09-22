@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceEndpointSpecPort {
     /// A random name for the port
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Rrepresents the protocol of a port: `tcp`, `udp` or `sctp`. Defaults to `tcp`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
+    pub r#protocol: Option<String>,
     /// Represents the mode in which the port is to be published: 'ingress' or 'host'. Defaults to `ingress`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publishMode")]
-    pub r#publish_mode: Box<Option<String>>,
+    pub r#publish_mode: Option<String>,
     /// The port on the swarm hosts
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publishedPort")]
-    pub r#published_port: Box<Option<i32>>,
+    pub r#published_port: Option<i32>,
     /// The port inside the container
     #[builder(into)]
     #[serde(rename = "targetPort")]
-    pub r#target_port: Box<i32>,
+    pub r#target_port: i32,
 }

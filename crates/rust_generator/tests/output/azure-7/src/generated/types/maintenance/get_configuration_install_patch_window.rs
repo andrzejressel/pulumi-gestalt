@@ -6,13 +6,13 @@ pub struct GetConfigurationInstallPatchWindow {
     /// List of Classification category of patches to be patched.
     #[builder(into)]
     #[serde(rename = "classificationsToIncludes")]
-    pub r#classifications_to_includes: Box<Vec<String>>,
+    pub r#classifications_to_includes: Vec<String>,
     /// List of KB numbers to be excluded from patching.
     #[builder(into)]
     #[serde(rename = "kbNumbersToExcludes")]
-    pub r#kb_numbers_to_excludes: Box<Vec<String>>,
+    pub r#kb_numbers_to_excludes: Vec<String>,
     /// List of KB numbers to be included for patching.
     #[builder(into)]
     #[serde(rename = "kbNumbersToIncludes")]
-    pub r#kb_numbers_to_includes: Box<Vec<String>>,
+    pub r#kb_numbers_to_includes: Vec<String>,
 }

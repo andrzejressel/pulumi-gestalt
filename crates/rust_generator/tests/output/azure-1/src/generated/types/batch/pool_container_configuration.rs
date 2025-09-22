@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PoolContainerConfiguration {
     /// A list of container image names to use, as would be specified by `docker pull`. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerImageNames")]
-    pub r#container_image_names: Box<Option<Vec<String>>>,
+    pub r#container_image_names: Option<Vec<String>>,
     /// One or more `container_registries` blocks as defined below. Additional container registries from which container images can be pulled by the pool's VMs. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerRegistries")]
-    pub r#container_registries: Box<Option<Vec<super::super::types::batch::PoolContainerConfigurationContainerRegistry>>>,
+    pub r#container_registries: Option<Vec<super::super::types::batch::PoolContainerConfigurationContainerRegistry>>,
     /// The type of container configuration. Possible value is `DockerCompatible`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

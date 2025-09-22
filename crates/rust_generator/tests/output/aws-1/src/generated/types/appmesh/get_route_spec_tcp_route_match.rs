@@ -5,5 +5,5 @@
 pub struct GetRouteSpecTcpRouteMatch {
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

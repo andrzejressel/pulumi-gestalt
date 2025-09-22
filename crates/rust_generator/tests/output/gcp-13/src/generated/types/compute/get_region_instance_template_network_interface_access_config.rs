@@ -7,15 +7,15 @@ pub struct GetRegionInstanceTemplateNetworkInterfaceAccessConfig {
     /// network ip. If not given, one will be generated.
     #[builder(into)]
     #[serde(rename = "natIp")]
-    pub r#nat_ip: Box<String>,
+    pub r#nat_ip: String,
     /// The [networking tier][network-tier] used for configuring
     /// this instance template. This field can take the following values: PREMIUM or
     /// STANDARD. If this field is not specified, it is assumed to be PREMIUM.
     #[builder(into)]
     #[serde(rename = "networkTier")]
-    pub r#network_tier: Box<String>,
+    pub r#network_tier: String,
     /// The DNS domain name for the public PTR record.The DNS domain name for the public PTR record.
     #[builder(into)]
     #[serde(rename = "publicPtrDomainName")]
-    pub r#public_ptr_domain_name: Box<String>,
+    pub r#public_ptr_domain_name: String,
 }

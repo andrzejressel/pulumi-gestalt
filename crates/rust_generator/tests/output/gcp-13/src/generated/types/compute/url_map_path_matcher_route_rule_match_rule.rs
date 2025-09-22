@@ -8,20 +8,20 @@ pub struct UrlMapPathMatcherRouteRuleMatchRule {
     /// and anchor that may be part of the original URL. FullPathMatch must be between 1
     /// and 1024 characters. Only one of prefixMatch, fullPathMatch or regexMatch must
     /// be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fullPathMatch")]
-    pub r#full_path_match: Box<Option<String>>,
+    pub r#full_path_match: Option<String>,
     /// Specifies a list of header match criteria, all of which must match corresponding
     /// headers in the request.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerMatches")]
-    pub r#header_matches: Box<Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleMatchRuleHeaderMatch>>>,
+    pub r#header_matches: Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleMatchRuleHeaderMatch>>,
     /// Specifies that prefixMatch and fullPathMatch matches are case sensitive.
     /// Defaults to false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ignoreCase")]
-    pub r#ignore_case: Box<Option<bool>>,
+    pub r#ignore_case: Option<bool>,
     /// Opaque filter criteria used by Loadbalancer to restrict routing configuration to
     /// a limited set xDS compliant clients. In their xDS requests to Loadbalancer, xDS
     /// clients present node metadata. If a match takes place, the relevant routing
@@ -34,9 +34,9 @@ pub struct UrlMapPathMatcherRouteRuleMatchRule {
     /// UrlMap. metadataFilters only applies to Loadbalancers that have their
     /// loadBalancingScheme set to INTERNAL_SELF_MANAGED.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metadataFilters")]
-    pub r#metadata_filters: Box<Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleMatchRuleMetadataFilter>>>,
+    pub r#metadata_filters: Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleMatchRuleMetadataFilter>>,
     /// For satisfying the matchRule condition, the path of the request
     /// must match the wildcard pattern specified in pathTemplateMatch
     /// after removing any query parameters and anchor that may be part
@@ -45,28 +45,28 @@ pub struct UrlMapPathMatcherRouteRuleMatchRule {
     /// (inclusive).  The pattern specified by pathTemplateMatch may
     /// have at most 5 wildcard operators and at most 5 variable
     /// captures in total.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pathTemplateMatch")]
-    pub r#path_template_match: Box<Option<String>>,
+    pub r#path_template_match: Option<String>,
     /// For satisfying the matchRule condition, the request's path must begin with the
     /// specified prefixMatch. prefixMatch must begin with a /. The value must be
     /// between 1 and 1024 characters. Only one of prefixMatch, fullPathMatch or
     /// regexMatch must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefixMatch")]
-    pub r#prefix_match: Box<Option<String>>,
+    pub r#prefix_match: Option<String>,
     /// Specifies a list of query parameter match criteria, all of which must match
     /// corresponding query parameters in the request.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "queryParameterMatches")]
-    pub r#query_parameter_matches: Box<Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatch>>>,
+    pub r#query_parameter_matches: Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatch>>,
     /// For satisfying the matchRule condition, the path of the request must satisfy the
     /// regular expression specified in regexMatch after removing any query parameters
     /// and anchor supplied with the original URL. For regular expression grammar please
     /// see en.cppreference.com/w/cpp/regex/ecmascript  Only one of prefixMatch,
     /// fullPathMatch or regexMatch must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regexMatch")]
-    pub r#regex_match: Box<Option<String>>,
+    pub r#regex_match: Option<String>,
 }

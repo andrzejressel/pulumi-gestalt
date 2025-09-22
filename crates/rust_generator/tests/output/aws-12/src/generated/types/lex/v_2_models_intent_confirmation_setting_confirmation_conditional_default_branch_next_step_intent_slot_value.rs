@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsIntentConfirmationSettingConfirmationConditionalDefaultBranchNextStepIntentSlotValue {
     /// Value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the resolvedValues list.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "interpretedValue")]
-    pub r#interpreted_value: Box<Option<String>>,
+    pub r#interpreted_value: Option<String>,
 }

@@ -5,12 +5,12 @@
 pub struct GetActionGroupWebhookReceiverAadAuth {
     #[builder(into)]
     #[serde(rename = "identifierUri")]
-    pub r#identifier_uri: Box<String>,
+    pub r#identifier_uri: String,
     #[builder(into)]
     #[serde(rename = "objectId")]
-    pub r#object_id: Box<String>,
+    pub r#object_id: String,
     /// The Tenant ID for the subscription containing this Event Hub.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
 }

@@ -9,14 +9,14 @@ pub struct SubscriptionPushConfigOidcToken {
     /// for the audience field is not supported. More info about the OIDC JWT
     /// token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
     /// Note: if not specified, the Push endpoint URL will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audience")]
-    pub r#audience: Box<Option<String>>,
+    pub r#audience: Option<String>,
     /// Service account email to be used for generating the OIDC token.
     /// The caller (for subscriptions.create, subscriptions.patch, and
     /// subscriptions.modifyPushConfig RPCs) must have the
     /// iam.serviceAccounts.actAs permission for the service account.
     #[builder(into)]
     #[serde(rename = "serviceAccountEmail")]
-    pub r#service_account_email: Box<String>,
+    pub r#service_account_email: String,
 }

@@ -6,9 +6,9 @@ pub struct SparkPoolAutoScale {
     /// The maximum number of nodes the Spark Pool can support. Must be between `3` and `200`.
     #[builder(into)]
     #[serde(rename = "maxNodeCount")]
-    pub r#max_node_count: Box<i32>,
+    pub r#max_node_count: i32,
     /// The minimum number of nodes the Spark Pool can support. Must be between `3` and `200`.
     #[builder(into)]
     #[serde(rename = "minNodeCount")]
-    pub r#min_node_count: Box<i32>,
+    pub r#min_node_count: i32,
 }

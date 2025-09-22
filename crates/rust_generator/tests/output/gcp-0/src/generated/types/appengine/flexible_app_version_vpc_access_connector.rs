@@ -6,5 +6,5 @@ pub struct FlexibleAppVersionVpcAccessConnector {
     /// Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

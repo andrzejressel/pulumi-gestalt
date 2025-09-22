@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventSourceMappingFilterCriteria {
     /// A set of up to 5 filter. If an event satisfies at least one, Lambda sends the event to the function or adds it to the next batch. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filters")]
-    pub r#filters: Box<Option<Vec<super::super::types::lambda::EventSourceMappingFilterCriteriaFilter>>>,
+    pub r#filters: Option<Vec<super::super::types::lambda::EventSourceMappingFilterCriteriaFilter>>,
 }

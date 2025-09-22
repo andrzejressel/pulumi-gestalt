@@ -6,5 +6,5 @@ pub struct PolicyVmWorkloadProtectionPolicySimpleRetention {
     /// The count that is used to count retention duration with duration type `Days`. Possible values are between `7` and `35`.
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FunctionSyncConfigLambdaConflictHandlerConfig {
     /// ARN for the Lambda function to use as the Conflict Handler.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lambdaConflictHandlerArn")]
-    pub r#lambda_conflict_handler_arn: Box<Option<String>>,
+    pub r#lambda_conflict_handler_arn: Option<String>,
 }

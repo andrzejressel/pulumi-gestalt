@@ -6,5 +6,5 @@ pub struct GetKubernetesClusterAciConnectorLinux {
     /// The subnet name for the virtual nodes to run.
     #[builder(into)]
     #[serde(rename = "subnetName")]
-    pub r#subnet_name: Box<String>,
+    pub r#subnet_name: String,
 }

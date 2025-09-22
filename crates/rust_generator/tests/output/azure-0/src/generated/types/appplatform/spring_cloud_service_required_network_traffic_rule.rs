@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudServiceRequiredNetworkTrafficRule {
     /// The direction of required traffic. Possible values are `Inbound`, `Outbound`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "direction")]
-    pub r#direction: Box<Option<String>>,
+    pub r#direction: Option<String>,
     /// The FQDN list of required traffic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fqdns")]
-    pub r#fqdns: Box<Option<Vec<String>>>,
+    pub r#fqdns: Option<Vec<String>>,
     /// The IP list of required traffic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Option<Vec<String>>>,
+    pub r#ip_addresses: Option<Vec<String>>,
     /// The port of required traffic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// The protocol of required traffic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
+    pub r#protocol: Option<String>,
 }

@@ -6,5 +6,5 @@ pub struct AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfig
     /// ARN of the model used to create vector embeddings for the knowledge base.
     #[builder(into)]
     #[serde(rename = "embeddingModelArn")]
-    pub r#embedding_model_arn: Box<String>,
+    pub r#embedding_model_arn: String,
 }

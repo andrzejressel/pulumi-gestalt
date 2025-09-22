@@ -6,9 +6,9 @@ pub struct GetIndexUserTokenConfiguration {
     /// A block that specifies the information about the JSON token type configuration.
     #[builder(into)]
     #[serde(rename = "jsonTokenTypeConfigurations")]
-    pub r#json_token_type_configurations: Box<Vec<super::super::types::kendra::GetIndexUserTokenConfigurationJsonTokenTypeConfiguration>>,
+    pub r#json_token_type_configurations: Vec<super::super::types::kendra::GetIndexUserTokenConfigurationJsonTokenTypeConfiguration>,
     /// A block that specifies the information about the JWT token type configuration.
     #[builder(into)]
     #[serde(rename = "jwtTokenTypeConfigurations")]
-    pub r#jwt_token_type_configurations: Box<Vec<super::super::types::kendra::GetIndexUserTokenConfigurationJwtTokenTypeConfiguration>>,
+    pub r#jwt_token_type_configurations: Vec<super::super::types::kendra::GetIndexUserTokenConfigurationJwtTokenTypeConfiguration>,
 }

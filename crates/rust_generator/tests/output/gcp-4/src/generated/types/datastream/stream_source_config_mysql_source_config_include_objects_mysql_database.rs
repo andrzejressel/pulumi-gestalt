@@ -6,10 +6,10 @@ pub struct StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase {
     /// Database name.
     #[builder(into)]
     #[serde(rename = "database")]
-    pub r#database: Box<String>,
+    pub r#database: String,
     /// Tables in the database.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mysqlTables")]
-    pub r#mysql_tables: Box<Option<Vec<super::super::types::datastream::StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable>>>,
+    pub r#mysql_tables: Option<Vec<super::super::types::datastream::StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTable>>,
 }

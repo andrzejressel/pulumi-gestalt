@@ -7,5 +7,5 @@ pub struct AutomationSelector {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "targets")]
-    pub r#targets: Box<Vec<super::super::types::clouddeploy::AutomationSelectorTarget>>,
+    pub r#targets: Vec<super::super::types::clouddeploy::AutomationSelectorTarget>,
 }

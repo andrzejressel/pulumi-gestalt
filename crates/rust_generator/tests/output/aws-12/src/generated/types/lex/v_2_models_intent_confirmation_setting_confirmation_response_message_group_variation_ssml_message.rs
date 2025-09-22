@@ -6,5 +6,5 @@ pub struct V2ModelsIntentConfirmationSettingConfirmationResponseMessageGroupVari
     /// SSML text that defines the prompt.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

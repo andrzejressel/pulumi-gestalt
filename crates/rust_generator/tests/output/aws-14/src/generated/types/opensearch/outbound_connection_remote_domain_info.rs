@@ -6,13 +6,13 @@ pub struct OutboundConnectionRemoteDomainInfo {
     /// The name of the remote domain.
     #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<String>,
+    pub r#domain_name: String,
     /// The Account ID of the owner of the remote domain.
     #[builder(into)]
     #[serde(rename = "ownerId")]
-    pub r#owner_id: Box<String>,
+    pub r#owner_id: String,
     /// The region of the remote domain.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
 }

@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DatascanData {
     /// The Dataplex entity that represents the data source(e.g. BigQuery table) for Datascan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "entity")]
-    pub r#entity: Box<Option<String>>,
+    pub r#entity: Option<String>,
     /// The service-qualified full resource name of the cloud resource for a DataScan job to scan against. The field could be:
     /// (Cloud Storage bucket for DataDiscoveryScan)BigQuery table of type "TABLE" for DataProfileScan/DataQualityScan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resource")]
-    pub r#resource: Box<Option<String>>,
+    pub r#resource: Option<String>,
 }

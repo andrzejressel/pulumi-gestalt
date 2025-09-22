@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceNetworkServiceAssociationDnsEntry {
     /// The domain name of the service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<Option<String>>,
+    pub r#domain_name: Option<String>,
     /// The ID of the hosted zone.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostedZoneId")]
-    pub r#hosted_zone_id: Box<Option<String>>,
+    pub r#hosted_zone_id: Option<String>,
 }

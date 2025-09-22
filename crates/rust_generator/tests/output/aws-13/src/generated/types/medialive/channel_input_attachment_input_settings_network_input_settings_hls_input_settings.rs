@@ -4,22 +4,22 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelInputAttachmentInputSettingsNetworkInputSettingsHlsInputSettings {
     /// The bitrate is specified in bits per second, as in an HLS manifest.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bandwidth")]
-    pub r#bandwidth: Box<Option<i32>>,
+    pub r#bandwidth: Option<i32>,
     /// Buffer segments.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bufferSegments")]
-    pub r#buffer_segments: Box<Option<i32>>,
+    pub r#buffer_segments: Option<i32>,
     /// The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retries")]
-    pub r#retries: Box<Option<i32>>,
+    pub r#retries: Option<i32>,
     /// The number of seconds between retries when an attempt to read a manifest or segment fails.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retryInterval")]
-    pub r#retry_interval: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#retry_interval: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "scte35Source")]
-    pub r#scte_35_source: Box<Option<String>>,
+    pub r#scte_35_source: Option<String>,
 }

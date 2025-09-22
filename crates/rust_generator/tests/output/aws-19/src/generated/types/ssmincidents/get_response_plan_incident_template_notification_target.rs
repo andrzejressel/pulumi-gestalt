@@ -6,5 +6,5 @@ pub struct GetResponsePlanIncidentTemplateNotificationTarget {
     /// The ARN of the Amazon SNS topic.
     #[builder(into)]
     #[serde(rename = "snsTopicArn")]
-    pub r#sns_topic_arn: Box<String>,
+    pub r#sns_topic_arn: String,
 }

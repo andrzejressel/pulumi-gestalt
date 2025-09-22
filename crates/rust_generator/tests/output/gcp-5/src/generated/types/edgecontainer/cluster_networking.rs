@@ -8,30 +8,30 @@ pub struct ClusterNetworking {
     /// after creation.
     #[builder(into)]
     #[serde(rename = "clusterIpv4CidrBlocks")]
-    pub r#cluster_ipv_4_cidr_blocks: Box<Vec<String>>,
+    pub r#cluster_ipv_4_cidr_blocks: Vec<String>,
     /// If specified, dual stack mode is enabled and all pods in the cluster are
     /// assigned an IPv6 address from these blocks alongside from an IPv4
     /// address. Only a single block is supported. This field cannot be changed
     /// after creation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clusterIpv6CidrBlocks")]
-    pub r#cluster_ipv_6_cidr_blocks: Box<Option<Vec<String>>>,
+    pub r#cluster_ipv_6_cidr_blocks: Option<Vec<String>>,
     /// (Output)
     /// IP addressing type of this cluster i.e. SINGLESTACK_V4 vs DUALSTACK_V4_V6.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkType")]
-    pub r#network_type: Box<Option<String>>,
+    pub r#network_type: Option<String>,
     /// All services in the cluster are assigned an RFC1918 IPv4 address from these
     /// blocks. Only a single block is supported. This field cannot be changed
     /// after creation.
     #[builder(into)]
     #[serde(rename = "servicesIpv4CidrBlocks")]
-    pub r#services_ipv_4_cidr_blocks: Box<Vec<String>>,
+    pub r#services_ipv_4_cidr_blocks: Vec<String>,
     /// If specified, dual stack mode is enabled and all services in the cluster are
     /// assigned an IPv6 address from these blocks alongside from an IPv4
     /// address. Only a single block is supported. This field cannot be changed
     /// after creation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "servicesIpv6CidrBlocks")]
-    pub r#services_ipv_6_cidr_blocks: Box<Option<Vec<String>>>,
+    pub r#services_ipv_6_cidr_blocks: Option<Vec<String>>,
 }

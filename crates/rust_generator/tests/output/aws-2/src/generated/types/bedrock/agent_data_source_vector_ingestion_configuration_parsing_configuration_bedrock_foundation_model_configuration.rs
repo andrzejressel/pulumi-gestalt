@@ -6,9 +6,9 @@ pub struct AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedroc
     /// The ARN of the model used to parse documents
     #[builder(into)]
     #[serde(rename = "modelArn")]
-    pub r#model_arn: Box<String>,
+    pub r#model_arn: String,
     /// Instructions for interpreting the contents of the document. See `parsing_prompt` block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parsingPrompt")]
-    pub r#parsing_prompt: Box<Option<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockFoundationModelConfigurationParsingPrompt>>,
+    pub r#parsing_prompt: Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockFoundationModelConfigurationParsingPrompt>>,
 }

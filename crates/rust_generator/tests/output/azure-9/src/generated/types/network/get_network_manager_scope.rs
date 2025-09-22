@@ -6,9 +6,9 @@ pub struct GetNetworkManagerScope {
     /// A list of management group IDs used a scope for the Network Manager.
     #[builder(into)]
     #[serde(rename = "managementGroupIds")]
-    pub r#management_group_ids: Box<Vec<String>>,
+    pub r#management_group_ids: Vec<String>,
     /// A list of subscription IDs used as the scope for the Network Manager.
     #[builder(into)]
     #[serde(rename = "subscriptionIds")]
-    pub r#subscription_ids: Box<Vec<String>>,
+    pub r#subscription_ids: Vec<String>,
 }

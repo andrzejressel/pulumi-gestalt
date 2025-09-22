@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserPasswordPolicyStatus {
     /// If true, user does not have login privileges.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "locked")]
-    pub r#locked: Box<Option<bool>>,
+    pub r#locked: Option<bool>,
     /// Password expiration duration with one week grace period.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordExpirationTime")]
-    pub r#password_expiration_time: Box<Option<String>>,
+    pub r#password_expiration_time: Option<String>,
 }

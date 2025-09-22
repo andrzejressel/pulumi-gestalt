@@ -6,11 +6,11 @@ pub struct RepositoryRemoteRepositoryConfigUpstreamCredentialsUsernamePasswordCr
     /// The Secret Manager key version that holds the password to access the
     /// remote repository. Must be in the format of
     /// `projects/{project}/secrets/{secret}/versions/{version}`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordSecretVersion")]
-    pub r#password_secret_version: Box<Option<String>>,
+    pub r#password_secret_version: Option<String>,
     /// The username to access the remote repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

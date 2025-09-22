@@ -6,22 +6,22 @@ pub struct GetClusterFleet {
     /// Full resource name of the registered fleet membership of the cluster.
     #[builder(into)]
     #[serde(rename = "membership")]
-    pub r#membership: Box<String>,
+    pub r#membership: String,
     /// Short name of the fleet membership, for example "member-1".
     #[builder(into)]
     #[serde(rename = "membershipId")]
-    pub r#membership_id: Box<String>,
+    pub r#membership_id: String,
     /// Location of the fleet membership, for example "us-central1".
     #[builder(into)]
     #[serde(rename = "membershipLocation")]
-    pub r#membership_location: Box<String>,
+    pub r#membership_location: String,
     /// Whether the cluster has been registered via the fleet API.
     #[builder(into)]
     #[serde(rename = "preRegistered")]
-    pub r#pre_registered: Box<bool>,
+    pub r#pre_registered: bool,
     /// The project in which the resource belongs. If it
     /// is not provided, the provider project is used.
     #[builder(into)]
     #[serde(rename = "project")]
-    pub r#project: Box<String>,
+    pub r#project: String,
 }

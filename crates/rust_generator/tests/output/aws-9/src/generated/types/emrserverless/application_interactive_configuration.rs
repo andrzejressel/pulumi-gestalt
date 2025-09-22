@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationInteractiveConfiguration {
     /// Enables an Apache Livy endpoint that you can connect to and run interactive jobs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "livyEndpointEnabled")]
-    pub r#livy_endpoint_enabled: Box<Option<bool>>,
+    pub r#livy_endpoint_enabled: Option<bool>,
     /// Enables you to connect an application to Amazon EMR Studio to run interactive workloads in a notebook.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "studioEnabled")]
-    pub r#studio_enabled: Box<Option<bool>>,
+    pub r#studio_enabled: Option<bool>,
 }

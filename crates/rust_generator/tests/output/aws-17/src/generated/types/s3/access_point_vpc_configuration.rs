@@ -6,5 +6,5 @@ pub struct AccessPointVpcConfiguration {
     /// This access point will only allow connections from the specified VPC ID.
     #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<String>,
+    pub r#vpc_id: String,
 }

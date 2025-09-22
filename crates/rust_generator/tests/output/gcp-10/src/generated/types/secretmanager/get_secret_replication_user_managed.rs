@@ -6,5 +6,5 @@ pub struct GetSecretReplicationUserManaged {
     /// The list of Replicas for this Secret. Cannot be empty.
     #[builder(into)]
     #[serde(rename = "replicas")]
-    pub r#replicas: Box<Vec<super::super::types::secretmanager::GetSecretReplicationUserManagedReplica>>,
+    pub r#replicas: Vec<super::super::types::secretmanager::GetSecretReplicationUserManagedReplica>,
 }

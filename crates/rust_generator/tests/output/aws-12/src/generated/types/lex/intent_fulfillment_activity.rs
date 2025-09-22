@@ -5,12 +5,12 @@
 pub struct IntentFulfillmentActivity {
     /// A description of the Lambda function that is run to fulfill the intent.
     /// Required if type is CodeHook. Attributes are documented under code_hook.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "codeHook")]
-    pub r#code_hook: Box<Option<super::super::types::lex::IntentFulfillmentActivityCodeHook>>,
+    pub r#code_hook: Option<Box<super::super::types::lex::IntentFulfillmentActivityCodeHook>>,
     /// How the intent should be fulfilled, either by running a Lambda function or by
     /// returning the slot data to the client application. Type can be either `ReturnIntent` or `CodeHook`, as documented [here](https://docs.aws.amazon.com/lex/latest/dg/API_FulfillmentActivity.html).
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

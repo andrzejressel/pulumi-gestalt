@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetRulesetsRulesetRuleActionParametersOverrides {
     /// Action to perform in the rule-level override. Available values: `block`, `challenge`, `compress_response`, `ddos_dynamic`, `ddos_mitigation`, `execute`, `force_connection_close`, `js_challenge`, `log`, `log_custom_field`, `managed_challenge`, `redirect`, `rewrite`, `route`, `score`, `serve_error`, `set_cache_settings`, `set_config`, `skip`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<Option<String>>,
+    pub r#action: Option<String>,
     /// List of tag-based overrides.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "categories")]
-    pub r#categories: Box<Option<Vec<super::types::GetRulesetsRulesetRuleActionParametersOverridesCategory>>>,
+    pub r#categories: Option<Vec<super::types::GetRulesetsRulesetRuleActionParametersOverridesCategory>>,
     /// Defines if the current ruleset-level override enables or disables the ruleset.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// List of rule-based overrides.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Option<Vec<super::types::GetRulesetsRulesetRuleActionParametersOverridesRule>>>,
+    pub r#rules: Option<Vec<super::types::GetRulesetsRulesetRuleActionParametersOverridesRule>>,
     /// Sensitivity level to override for all ruleset rules. Available values: `default`, `medium`, `low`, `eoff`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sensitivityLevel")]
-    pub r#sensitivity_level: Box<Option<String>>,
+    pub r#sensitivity_level: Option<String>,
     /// Defines if the current ruleset-level override enables or disables the ruleset. Available values: `enabled`, `disabled`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
 }

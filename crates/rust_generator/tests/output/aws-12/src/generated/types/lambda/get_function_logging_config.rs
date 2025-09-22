@@ -5,14 +5,14 @@
 pub struct GetFunctionLoggingConfig {
     #[builder(into)]
     #[serde(rename = "applicationLogLevel")]
-    pub r#application_log_level: Box<String>,
+    pub r#application_log_level: String,
     #[builder(into)]
     #[serde(rename = "logFormat")]
-    pub r#log_format: Box<String>,
+    pub r#log_format: String,
     #[builder(into)]
     #[serde(rename = "logGroup")]
-    pub r#log_group: Box<String>,
+    pub r#log_group: String,
     #[builder(into)]
     #[serde(rename = "systemLogLevel")]
-    pub r#system_log_level: Box<String>,
+    pub r#system_log_level: String,
 }

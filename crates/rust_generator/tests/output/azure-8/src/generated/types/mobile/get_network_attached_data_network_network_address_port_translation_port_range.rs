@@ -6,9 +6,9 @@ pub struct GetNetworkAttachedDataNetworkNetworkAddressPortTranslationPortRange {
     /// The maximum port number.
     #[builder(into)]
     #[serde(rename = "maximum")]
-    pub r#maximum: Box<i32>,
+    pub r#maximum: i32,
     /// The minimum port number.
     #[builder(into)]
     #[serde(rename = "minimum")]
-    pub r#minimum: Box<i32>,
+    pub r#minimum: i32,
 }

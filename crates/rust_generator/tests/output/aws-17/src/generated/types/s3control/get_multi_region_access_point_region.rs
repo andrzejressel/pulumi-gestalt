@@ -6,13 +6,13 @@ pub struct GetMultiRegionAccessPointRegion {
     /// The name of the bucket.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// The AWS account ID that owns the bucket.
     #[builder(into)]
     #[serde(rename = "bucketAccountId")]
-    pub r#bucket_account_id: Box<String>,
+    pub r#bucket_account_id: String,
     /// The name of the region.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
 }

@@ -5,17 +5,17 @@
 pub struct GetDataSetPhysicalTableMapRelationalTable {
     #[builder(into)]
     #[serde(rename = "catalog")]
-    pub r#catalog: Box<String>,
+    pub r#catalog: String,
     #[builder(into)]
     #[serde(rename = "dataSourceArn")]
-    pub r#data_source_arn: Box<String>,
+    pub r#data_source_arn: String,
     #[builder(into)]
     #[serde(rename = "inputColumns")]
-    pub r#input_columns: Box<Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapRelationalTableInputColumn>>,
+    pub r#input_columns: Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapRelationalTableInputColumn>,
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "schema")]
-    pub r#schema: Box<String>,
+    pub r#schema: String,
 }

@@ -5,8 +5,8 @@
 pub struct GetOriginRequestPolicyCookiesConfig {
     #[builder(into)]
     #[serde(rename = "cookieBehavior")]
-    pub r#cookie_behavior: Box<String>,
+    pub r#cookie_behavior: String,
     #[builder(into)]
     #[serde(rename = "cookies")]
-    pub r#cookies: Box<Vec<super::super::types::cloudfront::GetOriginRequestPolicyCookiesConfigCookie>>,
+    pub r#cookies: Vec<super::super::types::cloudfront::GetOriginRequestPolicyCookiesConfigCookie>,
 }

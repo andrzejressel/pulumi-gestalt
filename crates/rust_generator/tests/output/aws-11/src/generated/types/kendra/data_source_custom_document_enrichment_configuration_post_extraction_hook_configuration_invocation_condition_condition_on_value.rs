@@ -4,18 +4,18 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceCustomDocumentEnrichmentConfigurationPostExtractionHookConfigurationInvocationConditionConditionOnValue {
     /// A date expressed as an ISO 8601 string. It is important for the time zone to be included in the ISO 8601 date-time format. As of this writing only UTC is supported. For example, `2012-03-25T12:30:10+00:00`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dateValue")]
-    pub r#date_value: Box<Option<String>>,
+    pub r#date_value: Option<String>,
     /// A long integer value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "longValue")]
-    pub r#long_value: Box<Option<i32>>,
+    pub r#long_value: Option<i32>,
     /// A list of strings.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stringListValues")]
-    pub r#string_list_values: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#string_list_values: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "stringValue")]
-    pub r#string_value: Box<Option<String>>,
+    pub r#string_value: Option<String>,
 }

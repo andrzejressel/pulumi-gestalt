@@ -5,11 +5,11 @@
 pub struct ClusterMaintenancePolicyMaintenanceExclusionWindow {
     /// The time that the window ends. The end time must take place after the
     /// start time.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<Option<String>>,
+    pub r#end_time: Option<String>,
     /// The time that the window first starts.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
 }

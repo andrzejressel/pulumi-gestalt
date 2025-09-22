@@ -7,5 +7,5 @@ pub struct RecordSetRoutingPolicyGeoHealthCheckedTargets {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "internalLoadBalancers")]
-    pub r#internal_load_balancers: Box<Vec<super::super::types::dns::RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer>>,
+    pub r#internal_load_balancers: Vec<super::super::types::dns::RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer>,
 }

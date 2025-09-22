@@ -5,48 +5,48 @@
 pub struct CertificateCertificateDescription {
     /// (Output)
     /// Describes lists of issuer CA certificate URLs that appear in the "Authority Information Access" extension in the certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "aiaIssuingCertificateUrls")]
-    pub r#aia_issuing_certificate_urls: Box<Option<Vec<String>>>,
+    pub r#aia_issuing_certificate_urls: Option<Vec<String>>,
     /// (Output)
     /// Identifies the subjectKeyId of the parent certificate, per https://tools.ietf.org/html/rfc5280#section-4.2.1.1
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authorityKeyIds")]
-    pub r#authority_key_ids: Box<Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionAuthorityKeyId>>>,
+    pub r#authority_key_ids: Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionAuthorityKeyId>>,
     /// (Output)
     /// The hash of the x.509 certificate.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certFingerprints")]
-    pub r#cert_fingerprints: Box<Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionCertFingerprint>>>,
+    pub r#cert_fingerprints: Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionCertFingerprint>>,
     /// (Output)
     /// Describes a list of locations to obtain CRL information, i.e. the DistributionPoint.fullName described by https://tools.ietf.org/html/rfc5280#section-4.2.1.13
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "crlDistributionPoints")]
-    pub r#crl_distribution_points: Box<Option<Vec<String>>>,
+    pub r#crl_distribution_points: Option<Vec<String>>,
     /// (Output)
     /// A PublicKey describes a public key.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicKeys")]
-    pub r#public_keys: Box<Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionPublicKey>>>,
+    pub r#public_keys: Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionPublicKey>>,
     /// (Output)
     /// Describes some of the values in a certificate that are related to the subject and lifetime.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subjectDescriptions")]
-    pub r#subject_descriptions: Box<Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionSubjectDescription>>>,
+    pub r#subject_descriptions: Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionSubjectDescription>>,
     /// (Output)
     /// Provides a means of identifiying certificates that contain a particular public key, per https://tools.ietf.org/html/rfc5280#section-4.2.1.2.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subjectKeyIds")]
-    pub r#subject_key_ids: Box<Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionSubjectKeyId>>>,
+    pub r#subject_key_ids: Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionSubjectKeyId>>,
     /// (Output)
     /// A structured description of the issued X.509 certificate.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "x509Descriptions")]
-    pub r#x_509_descriptions: Box<Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionX509Description>>>,
+    pub r#x_509_descriptions: Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionX509Description>>,
 }

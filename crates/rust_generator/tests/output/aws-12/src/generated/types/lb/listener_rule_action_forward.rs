@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListenerRuleActionForward {
     /// The target group stickiness for the rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stickiness")]
-    pub r#stickiness: Box<Option<super::super::types::lb::ListenerRuleActionForwardStickiness>>,
+    pub r#stickiness: Option<Box<super::super::types::lb::ListenerRuleActionForwardStickiness>>,
     /// One or more target group blocks.
     #[builder(into)]
     #[serde(rename = "targetGroups")]
-    pub r#target_groups: Box<Vec<super::super::types::lb::ListenerRuleActionForwardTargetGroup>>,
+    pub r#target_groups: Vec<super::super::types::lb::ListenerRuleActionForwardTargetGroup>,
 }

@@ -5,27 +5,27 @@
 pub struct GetManagedZonesManagedZone {
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     #[builder(into)]
     #[serde(rename = "dnsName")]
-    pub r#dns_name: Box<String>,
+    pub r#dns_name: String,
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     #[builder(into)]
     #[serde(rename = "managedZoneId")]
-    pub r#managed_zone_id: Box<String>,
-    #[builder(into, default)]
+    pub r#managed_zone_id: String,
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     #[builder(into)]
     #[serde(rename = "nameServers")]
-    pub r#name_servers: Box<Vec<String>>,
+    pub r#name_servers: Vec<String>,
     /// The ID of the project containing Google Cloud DNS zones. If this is not provided the default project will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "project")]
-    pub r#project: Box<Option<String>>,
+    pub r#project: Option<String>,
     #[builder(into)]
     #[serde(rename = "visibility")]
-    pub r#visibility: Box<String>,
+    pub r#visibility: String,
 }

@@ -6,18 +6,18 @@ pub struct BareMetalClusterLoadBalancerBgpLbConfigAddressPool {
     /// The addresses that are part of this pool. Each address must be either in the CIDR form (1.2.3.0/24) or range form (1.2.3.1-1.2.3.5).
     #[builder(into)]
     #[serde(rename = "addresses")]
-    pub r#addresses: Box<Vec<String>>,
+    pub r#addresses: Vec<String>,
     /// If true, avoid using IPs ending in .0 or .255.
     /// This avoids buggy consumer devices mistakenly dropping IPv4 traffic for those special IP addresses.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "avoidBuggyIps")]
-    pub r#avoid_buggy_ips: Box<Option<bool>>,
+    pub r#avoid_buggy_ips: Option<bool>,
     /// If true, prevent IP addresses from being automatically assigned.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "manualAssign")]
-    pub r#manual_assign: Box<Option<String>>,
+    pub r#manual_assign: Option<String>,
     /// The name of the address pool.
     #[builder(into)]
     #[serde(rename = "pool")]
-    pub r#pool: Box<String>,
+    pub r#pool: String,
 }

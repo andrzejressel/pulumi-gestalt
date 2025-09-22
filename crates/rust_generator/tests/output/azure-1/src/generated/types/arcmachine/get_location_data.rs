@@ -6,17 +6,17 @@ pub struct GetLocationData {
     /// The city or locality where the resource is located.
     #[builder(into)]
     #[serde(rename = "city")]
-    pub r#city: Box<String>,
+    pub r#city: String,
     /// The country or region where the resource is located.
     #[builder(into)]
     #[serde(rename = "countryOrRegion")]
-    pub r#country_or_region: Box<String>,
+    pub r#country_or_region: String,
     /// The district, state, or province where the resource is located.
     #[builder(into)]
     #[serde(rename = "district")]
-    pub r#district: Box<String>,
+    pub r#district: String,
     /// The name of this Azure Arc machine.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

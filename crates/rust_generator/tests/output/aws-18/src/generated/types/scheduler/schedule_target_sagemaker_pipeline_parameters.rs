@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScheduleTargetSagemakerPipelineParameters {
     /// Set of up to 200 parameter names and values to use when executing the SageMaker Model Building Pipeline. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pipelineParameters")]
-    pub r#pipeline_parameters: Box<Option<Vec<super::super::types::scheduler::ScheduleTargetSagemakerPipelineParametersPipelineParameter>>>,
+    pub r#pipeline_parameters: Option<Vec<super::super::types::scheduler::ScheduleTargetSagemakerPipelineParametersPipelineParameter>>,
 }

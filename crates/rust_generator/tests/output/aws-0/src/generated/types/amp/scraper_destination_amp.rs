@@ -6,5 +6,5 @@ pub struct ScraperDestinationAmp {
     /// The Amazon Resource Name (ARN) of the prometheus workspace.
     #[builder(into)]
     #[serde(rename = "workspaceArn")]
-    pub r#workspace_arn: Box<String>,
+    pub r#workspace_arn: String,
 }

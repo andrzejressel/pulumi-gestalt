@@ -6,21 +6,21 @@ pub struct GetEnvironmentConfigWorkloadsConfigWorker {
     /// CPU request and limit for a single Airflow worker replica.
     #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<f64>,
+    pub r#cpu: f64,
     /// Maximum number of workers for autoscaling.
     #[builder(into)]
     #[serde(rename = "maxCount")]
-    pub r#max_count: Box<i32>,
+    pub r#max_count: i32,
     /// Memory (GB) request and limit for a single Airflow worker replica.
     #[builder(into)]
     #[serde(rename = "memoryGb")]
-    pub r#memory_gb: Box<f64>,
+    pub r#memory_gb: f64,
     /// Minimum number of workers for autoscaling.
     #[builder(into)]
     #[serde(rename = "minCount")]
-    pub r#min_count: Box<i32>,
+    pub r#min_count: i32,
     /// Storage (GB) request and limit for a single Airflow worker replica.
     #[builder(into)]
     #[serde(rename = "storageGb")]
-    pub r#storage_gb: Box<f64>,
+    pub r#storage_gb: f64,
 }

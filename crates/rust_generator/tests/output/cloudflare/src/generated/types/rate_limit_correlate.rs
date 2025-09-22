@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RateLimitCorrelate {
     /// If set to 'nat', NAT support will be enabled for rate limiting. Available values: `nat`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "by")]
-    pub r#by: Box<Option<String>>,
+    pub r#by: Option<String>,
 }

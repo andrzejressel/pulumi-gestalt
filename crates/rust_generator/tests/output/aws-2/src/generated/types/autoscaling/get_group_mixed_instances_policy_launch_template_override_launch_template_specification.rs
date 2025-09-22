@@ -6,13 +6,13 @@ pub struct GetGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpeci
     /// ID of the launch template.
     #[builder(into)]
     #[serde(rename = "launchTemplateId")]
-    pub r#launch_template_id: Box<String>,
+    pub r#launch_template_id: String,
     /// Name of the launch template.
     #[builder(into)]
     #[serde(rename = "launchTemplateName")]
-    pub r#launch_template_name: Box<String>,
+    pub r#launch_template_name: String,
     /// Template version.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

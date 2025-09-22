@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfiguration {
     /// Monitoring configurations for CloudWatch.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudWatchMonitoringConfiguration")]
-    pub r#cloud_watch_monitoring_configuration: Box<Option<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationCloudWatchMonitoringConfiguration>>,
+    pub r#cloud_watch_monitoring_configuration: Option<Box<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationCloudWatchMonitoringConfiguration>>,
     /// Monitoring configurations for the persistent application UI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "persistentAppUi")]
-    pub r#persistent_app_ui: Box<Option<String>>,
+    pub r#persistent_app_ui: Option<String>,
     /// Amazon S3 configuration for monitoring log publishing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3MonitoringConfiguration")]
-    pub r#s_3_monitoring_configuration: Box<Option<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationS3MonitoringConfiguration>>,
+    pub r#s_3_monitoring_configuration: Option<Box<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationS3MonitoringConfiguration>>,
 }

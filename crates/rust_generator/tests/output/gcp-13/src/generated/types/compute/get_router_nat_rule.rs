@@ -6,11 +6,11 @@ pub struct GetRouterNatRule {
     /// The action to be enforced for traffic that matches this rule.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::compute::GetRouterNatRuleAction>>,
+    pub r#actions: Vec<super::super::types::compute::GetRouterNatRuleAction>,
     /// An optional description of this rule.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// CEL expression that specifies the match condition that egress traffic from a VM is evaluated against.
     /// If it evaluates to true, the corresponding action is enforced.
     /// 
@@ -25,10 +25,10 @@ pub struct GetRouterNatRule {
     /// "nexthop.hub == 'https://networkconnectivity.googleapis.com/v1alpha1/projects/my-project/global/hub/hub-1'"
     #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Box<String>,
+    pub r#match_: String,
     /// An integer uniquely identifying a rule in the list.
     /// The rule number must be a positive value between 0 and 65000, and must be unique among rules within a NAT.
     #[builder(into)]
     #[serde(rename = "ruleNumber")]
-    pub r#rule_number: Box<i32>,
+    pub r#rule_number: i32,
 }

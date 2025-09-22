@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GlobalVmShutdownScheduleNotificationSettings {
     /// E-mail address to which the notification will be sent.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// Whether to enable pre-shutdown notifications. Possible values are `true` and `false`.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Time in minutes between 15 and 120 before a shutdown event at which a notification will be sent. Defaults to `30`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeInMinutes")]
-    pub r#time_in_minutes: Box<Option<i32>>,
+    pub r#time_in_minutes: Option<i32>,
     /// The webhook URL to which the notification will be sent.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "webhookUrl")]
-    pub r#webhook_url: Box<Option<String>>,
+    pub r#webhook_url: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirehoseDeliveryStreamSnowflakeConfigurationSnowflakeRoleConfiguration {
     /// Whether the Snowflake role is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The Snowflake role.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "snowflakeRole")]
-    pub r#snowflake_role: Box<Option<String>>,
+    pub r#snowflake_role: Option<String>,
 }

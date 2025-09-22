@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationNetworkConfiguration {
     /// The array of security group Ids for customer VPC connectivity.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "securityGroupIds")]
-    pub r#security_group_ids: Box<Option<Vec<String>>>,
+    pub r#security_group_ids: Option<Vec<String>>,
     /// The array of subnet Ids for customer VPC connectivity.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Option<Vec<String>>>,
+    pub r#subnet_ids: Option<Vec<String>>,
 }

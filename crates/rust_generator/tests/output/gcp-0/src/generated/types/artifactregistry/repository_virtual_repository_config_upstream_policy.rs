@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RepositoryVirtualRepositoryConfigUpstreamPolicy {
     /// The user-provided ID of the upstream policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Entries with a greater priority value take precedence in the pull order.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<Option<i32>>,
+    pub r#priority: Option<i32>,
     /// A reference to the repository resource, for example:
     /// "projects/p1/locations/us-central1/repository/repo1".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repository")]
-    pub r#repository: Box<Option<String>>,
+    pub r#repository: Option<String>,
 }

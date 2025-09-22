@@ -6,9 +6,9 @@ pub struct TopicRuleTimestreamTimestamp {
     /// The precision of the timestamp value that results from the expression described in value. Valid values: `SECONDS`, `MILLISECONDS`, `MICROSECONDS`, `NANOSECONDS`.
     #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<String>,
+    pub r#unit: String,
     /// An expression that returns a long epoch time value.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

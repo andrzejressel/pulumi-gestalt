@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobTemplateJobTemplateDataConfigurationOverrides {
     /// The configurations for the application running by the job run.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applicationConfigurations")]
-    pub r#application_configurations: Box<Option<Vec<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesApplicationConfiguration>>>,
+    pub r#application_configurations: Option<Vec<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesApplicationConfiguration>>,
     /// The configurations for monitoring.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "monitoringConfiguration")]
-    pub r#monitoring_configuration: Box<Option<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfiguration>>,
+    pub r#monitoring_configuration: Option<Box<super::super::types::emrcontainers::JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfiguration>>,
 }

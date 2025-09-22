@@ -8,5 +8,5 @@ pub struct PolicyStoreValidationSettings {
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

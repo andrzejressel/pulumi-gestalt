@@ -4,57 +4,57 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppTemplateContainer {
     /// A list of extra arguments to pass to the container.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "args")]
-    pub r#args: Box<Option<Vec<String>>>,
+    pub r#args: Option<Vec<String>>,
     /// A command to pass to the container to override the default. This is provided as a list of command line elements without spaces.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commands")]
-    pub r#commands: Box<Option<Vec<String>>>,
+    pub r#commands: Option<Vec<String>>,
     /// The amount of vCPU to allocate to the container. Possible values include `0.25`, `0.5`, `0.75`, `1.0`, `1.25`, `1.5`, `1.75`, and `2.0`. When there's a workload profile specified, there's no such constraint.
     /// 
     /// > **NOTE:** `cpu` and `memory` must be specified in `0.25'/'0.5Gi` combination increments. e.g. `1.0` / `2.0` or `0.5` / `1.0`
     #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<f64>,
+    pub r#cpu: f64,
     /// One or more `env` blocks as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "envs")]
-    pub r#envs: Box<Option<Vec<super::super::types::containerapp::AppTemplateContainerEnv>>>,
+    pub r#envs: Option<Vec<super::super::types::containerapp::AppTemplateContainerEnv>>,
     /// The amount of ephemeral storage available to the Container App.
     /// 
     /// > **NOTE:** `ephemeral_storage` is currently in preview and not configurable at this time.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ephemeralStorage")]
-    pub r#ephemeral_storage: Box<Option<String>>,
+    pub r#ephemeral_storage: Option<String>,
     /// The image to use to create the container.
     #[builder(into)]
     #[serde(rename = "image")]
-    pub r#image: Box<String>,
+    pub r#image: String,
     /// A `liveness_probe` block as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "livenessProbes")]
-    pub r#liveness_probes: Box<Option<Vec<super::super::types::containerapp::AppTemplateContainerLivenessProbe>>>,
+    pub r#liveness_probes: Option<Vec<super::super::types::containerapp::AppTemplateContainerLivenessProbe>>,
     /// The amount of memory to allocate to the container. Possible values are `0.5Gi`, `1Gi`, `1.5Gi`, `2Gi`, `2.5Gi`, `3Gi`, `3.5Gi` and `4Gi`. When there's a workload profile specified, there's no such constraint.
     /// 
     /// > **NOTE:** `cpu` and `memory` must be specified in `0.25'/'0.5Gi` combination increments. e.g. `1.25` / `2.5Gi` or `0.75` / `1.5Gi`
     #[builder(into)]
     #[serde(rename = "memory")]
-    pub r#memory: Box<String>,
+    pub r#memory: String,
     /// The name of the container
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A `readiness_probe` block as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "readinessProbes")]
-    pub r#readiness_probes: Box<Option<Vec<super::super::types::containerapp::AppTemplateContainerReadinessProbe>>>,
+    pub r#readiness_probes: Option<Vec<super::super::types::containerapp::AppTemplateContainerReadinessProbe>>,
     /// A `startup_probe` block as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startupProbes")]
-    pub r#startup_probes: Box<Option<Vec<super::super::types::containerapp::AppTemplateContainerStartupProbe>>>,
+    pub r#startup_probes: Option<Vec<super::super::types::containerapp::AppTemplateContainerStartupProbe>>,
     /// A `volume_mounts` block as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "volumeMounts")]
-    pub r#volume_mounts: Box<Option<Vec<super::super::types::containerapp::AppTemplateContainerVolumeMount>>>,
+    pub r#volume_mounts: Option<Vec<super::super::types::containerapp::AppTemplateContainerVolumeMount>>,
 }

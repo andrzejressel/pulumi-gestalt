@@ -6,9 +6,9 @@ pub struct ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsAudio
     /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
     #[builder(into)]
     #[serde(rename = "groupId")]
-    pub r#group_id: Box<String>,
+    pub r#group_id: String,
     /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

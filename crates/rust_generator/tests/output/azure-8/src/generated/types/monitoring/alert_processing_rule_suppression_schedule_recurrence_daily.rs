@@ -6,9 +6,9 @@ pub struct AlertProcessingRuleSuppressionScheduleRecurrenceDaily {
     /// Specifies the recurrence end time (H:M:S).
     #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<String>,
+    pub r#end_time: String,
     /// Specifies the recurrence start time (H:M:S).
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
 }

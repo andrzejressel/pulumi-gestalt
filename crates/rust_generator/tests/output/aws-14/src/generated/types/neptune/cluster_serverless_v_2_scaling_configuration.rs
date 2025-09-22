@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterServerlessV2ScalingConfiguration {
     /// The maximum Neptune Capacity Units (NCUs) for this cluster. Must be lower or equal than **128**. See [AWS Documentation](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-capacity-scaling.html) for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxCapacity")]
-    pub r#max_capacity: Box<Option<f64>>,
+    pub r#max_capacity: Option<f64>,
     /// The minimum Neptune Capacity Units (NCUs) for this cluster. Must be greater or equal than **1**. See [AWS Documentation](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-capacity-scaling.html) for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minCapacity")]
-    pub r#min_capacity: Box<Option<f64>>,
+    pub r#min_capacity: Option<f64>,
 }

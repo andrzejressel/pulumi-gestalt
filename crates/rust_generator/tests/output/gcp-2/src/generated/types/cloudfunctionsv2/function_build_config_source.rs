@@ -5,12 +5,12 @@
 pub struct FunctionBuildConfigSource {
     /// If provided, get the source from this location in a Cloud Source Repository.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repoSource")]
-    pub r#repo_source: Box<Option<super::super::types::cloudfunctionsv2::FunctionBuildConfigSourceRepoSource>>,
+    pub r#repo_source: Option<Box<super::super::types::cloudfunctionsv2::FunctionBuildConfigSourceRepoSource>>,
     /// If provided, get the source from this location in Google Cloud Storage.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageSource")]
-    pub r#storage_source: Box<Option<super::super::types::cloudfunctionsv2::FunctionBuildConfigSourceStorageSource>>,
+    pub r#storage_source: Option<Box<super::super::types::cloudfunctionsv2::FunctionBuildConfigSourceStorageSource>>,
 }

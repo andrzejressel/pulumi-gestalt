@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentLastUpdated {
     /// The Created At date of the MWAA Environment
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "createdAt")]
-    pub r#created_at: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#created_at: Option<String>,
+    #[builder(into)]
     #[serde(rename = "errors")]
-    pub r#errors: Box<Option<Vec<super::super::types::mwaa::EnvironmentLastUpdatedError>>>,
+    pub r#errors: Option<Vec<super::super::types::mwaa::EnvironmentLastUpdatedError>>,
     /// The status of the Amazon MWAA Environment
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
 }

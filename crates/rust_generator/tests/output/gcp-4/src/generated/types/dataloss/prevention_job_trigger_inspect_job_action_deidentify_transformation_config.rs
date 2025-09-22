@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionJobTriggerInspectJobActionDeidentifyTransformationConfig {
     /// If this template is specified, it will serve as the default de-identify template.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deidentifyTemplate")]
-    pub r#deidentify_template: Box<Option<String>>,
+    pub r#deidentify_template: Option<String>,
     /// If this template is specified, it will serve as the de-identify template for images.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageRedactTemplate")]
-    pub r#image_redact_template: Box<Option<String>>,
+    pub r#image_redact_template: Option<String>,
     /// If this template is specified, it will serve as the de-identify template for structured content such as delimited files and tables.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "structuredDeidentifyTemplate")]
-    pub r#structured_deidentify_template: Box<Option<String>>,
+    pub r#structured_deidentify_template: Option<String>,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ImageRecipeBlockDeviceMapping {
     /// Name of the device. For example, `/dev/sda` or `/dev/xvdb`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<Option<String>>,
+    pub r#device_name: Option<String>,
     /// Configuration block with Elastic Block Storage (EBS) block device mapping settings. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ebs")]
-    pub r#ebs: Box<Option<super::super::types::imagebuilder::ImageRecipeBlockDeviceMappingEbs>>,
+    pub r#ebs: Option<Box<super::super::types::imagebuilder::ImageRecipeBlockDeviceMappingEbs>>,
     /// Set to `true` to remove a mapping from the parent image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "noDevice")]
-    pub r#no_device: Box<Option<bool>>,
+    pub r#no_device: Option<bool>,
     /// Virtual device name. For example, `ephemeral0`. Instance store volumes are numbered starting from 0.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualName")]
-    pub r#virtual_name: Box<Option<String>>,
+    pub r#virtual_name: Option<String>,
 }

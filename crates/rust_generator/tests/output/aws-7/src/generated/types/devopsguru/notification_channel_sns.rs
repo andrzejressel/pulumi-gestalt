@@ -6,5 +6,5 @@ pub struct NotificationChannelSns {
     /// Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.
     #[builder(into)]
     #[serde(rename = "topicArn")]
-    pub r#topic_arn: Box<String>,
+    pub r#topic_arn: String,
 }

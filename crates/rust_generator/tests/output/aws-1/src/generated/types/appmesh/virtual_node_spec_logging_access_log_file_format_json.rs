@@ -6,9 +6,9 @@ pub struct VirtualNodeSpecLoggingAccessLogFileFormatJson {
     /// The specified key for the JSON. Must be between 1 and 100 characters in length.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The specified value for the JSON. Must be between 1 and 100 characters in length.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

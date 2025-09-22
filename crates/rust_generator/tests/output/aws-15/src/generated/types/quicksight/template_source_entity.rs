@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TemplateSourceEntity {
     /// The source analysis, if it is based on an analysis.. Only one of `source_analysis` or `source_template` should be configured. See source_analysis.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceAnalysis")]
-    pub r#source_analysis: Box<Option<super::super::types::quicksight::TemplateSourceEntitySourceAnalysis>>,
+    pub r#source_analysis: Option<Box<super::super::types::quicksight::TemplateSourceEntitySourceAnalysis>>,
     /// The source template, if it is based on an template.. Only one of `source_analysis` or `source_template` should be configured. See source_template.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceTemplate")]
-    pub r#source_template: Box<Option<super::super::types::quicksight::TemplateSourceEntitySourceTemplate>>,
+    pub r#source_template: Option<Box<super::super::types::quicksight::TemplateSourceEntitySourceTemplate>>,
 }

@@ -5,7 +5,7 @@
 pub struct TlsRouteRuleAction {
     /// The destination to which traffic should be forwarded.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destinations")]
-    pub r#destinations: Box<Option<Vec<super::super::types::networkservices::TlsRouteRuleActionDestination>>>,
+    pub r#destinations: Option<Vec<super::super::types::networkservices::TlsRouteRuleActionDestination>>,
 }

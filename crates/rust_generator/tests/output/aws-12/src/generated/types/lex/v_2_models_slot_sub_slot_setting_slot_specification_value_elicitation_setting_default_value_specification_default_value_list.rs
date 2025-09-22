@@ -6,5 +6,5 @@ pub struct V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingDef
     /// Default value to use when a user doesn't provide a value for a slot.
     #[builder(into)]
     #[serde(rename = "defaultValue")]
-    pub r#default_value: Box<String>,
+    pub r#default_value: String,
 }

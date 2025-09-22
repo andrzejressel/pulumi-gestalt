@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppIngressTrafficWeight {
     /// The label to apply to the revision as a name prefix for routing traffic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "label")]
-    pub r#label: Box<Option<String>>,
+    pub r#label: Option<String>,
     /// This traffic Weight applies to the latest stable Container Revision. At most only one `traffic_weight` block can have the `latest_revision` set to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "latestRevision")]
-    pub r#latest_revision: Box<Option<bool>>,
+    pub r#latest_revision: Option<bool>,
     /// The percentage of traffic which should be sent this revision.
     /// 
     /// > **Note:** The cumulative values for `weight` must equal 100 exactly and explicitly, no default weights are assumed.
     #[builder(into)]
     #[serde(rename = "percentage")]
-    pub r#percentage: Box<i32>,
+    pub r#percentage: i32,
     /// The suffix string to which this `traffic_weight` applies.
     /// 
     /// > **Note:** If `latest_revision` is `false`, the `revision_suffix` shall be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "revisionSuffix")]
-    pub r#revision_suffix: Box<Option<String>>,
+    pub r#revision_suffix: Option<String>,
 }

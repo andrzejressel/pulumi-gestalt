@@ -5,8 +5,8 @@
 pub struct GetContactsRotationRecurrenceMonthlySetting {
     #[builder(into)]
     #[serde(rename = "dayOfMonth")]
-    pub r#day_of_month: Box<i32>,
+    pub r#day_of_month: i32,
     #[builder(into)]
     #[serde(rename = "handOffTimes")]
-    pub r#hand_off_times: Box<Vec<super::super::types::ssm::GetContactsRotationRecurrenceMonthlySettingHandOffTime>>,
+    pub r#hand_off_times: Vec<super::super::types::ssm::GetContactsRotationRecurrenceMonthlySettingHandOffTime>,
 }

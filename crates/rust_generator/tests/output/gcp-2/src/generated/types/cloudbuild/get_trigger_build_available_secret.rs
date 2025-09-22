@@ -6,5 +6,5 @@ pub struct GetTriggerBuildAvailableSecret {
     /// Pairs a secret environment variable with a SecretVersion in Secret Manager.
     #[builder(into)]
     #[serde(rename = "secretManagers")]
-    pub r#secret_managers: Box<Vec<super::super::types::cloudbuild::GetTriggerBuildAvailableSecretSecretManager>>,
+    pub r#secret_managers: Vec<super::super::types::cloudbuild::GetTriggerBuildAvailableSecretSecretManager>,
 }

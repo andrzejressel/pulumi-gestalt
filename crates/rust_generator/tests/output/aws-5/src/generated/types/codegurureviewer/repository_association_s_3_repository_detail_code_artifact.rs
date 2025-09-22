@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RepositoryAssociationS3RepositoryDetailCodeArtifact {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "buildArtifactsObjectKey")]
-    pub r#build_artifacts_object_key: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#build_artifacts_object_key: Option<String>,
+    #[builder(into)]
     #[serde(rename = "sourceCodeArtifactsObjectKey")]
-    pub r#source_code_artifacts_object_key: Box<Option<String>>,
+    pub r#source_code_artifacts_object_key: Option<String>,
 }

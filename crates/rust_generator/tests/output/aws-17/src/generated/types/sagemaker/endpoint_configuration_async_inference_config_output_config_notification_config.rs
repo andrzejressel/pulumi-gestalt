@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig {
     /// Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorTopic")]
-    pub r#error_topic: Box<Option<String>>,
+    pub r#error_topic: Option<String>,
     /// The Amazon SNS topics where you want the inference response to be included. Valid values are `SUCCESS_NOTIFICATION_TOPIC` and `ERROR_NOTIFICATION_TOPIC`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includeInferenceResponseIns")]
-    pub r#include_inference_response_ins: Box<Option<Vec<String>>>,
+    pub r#include_inference_response_ins: Option<Vec<String>>,
     /// Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "successTopic")]
-    pub r#success_topic: Box<Option<String>>,
+    pub r#success_topic: Option<String>,
 }

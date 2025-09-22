@@ -1,0 +1,2 @@
+type: Changed
+title: Remove unnecessary boxing in the generated structs

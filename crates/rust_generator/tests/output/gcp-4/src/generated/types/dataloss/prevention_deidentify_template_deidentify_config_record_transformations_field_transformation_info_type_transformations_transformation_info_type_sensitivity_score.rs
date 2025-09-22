@@ -7,5 +7,5 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     /// Possible values are: `SENSITIVITY_LOW`, `SENSITIVITY_MODERATE`, `SENSITIVITY_HIGH`.
     #[builder(into)]
     #[serde(rename = "score")]
-    pub r#score: Box<String>,
+    pub r#score: String,
 }

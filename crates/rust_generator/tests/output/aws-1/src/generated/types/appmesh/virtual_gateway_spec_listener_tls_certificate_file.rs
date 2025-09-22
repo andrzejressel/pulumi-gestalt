@@ -6,9 +6,9 @@ pub struct VirtualGatewaySpecListenerTlsCertificateFile {
     /// Certificate trust chain for a certificate stored on the file system of the mesh endpoint that the proxy is running on. Must be between 1 and 255 characters in length.
     #[builder(into)]
     #[serde(rename = "certificateChain")]
-    pub r#certificate_chain: Box<String>,
+    pub r#certificate_chain: String,
     /// Private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on. Must be between 1 and 255 characters in length.
     #[builder(into)]
     #[serde(rename = "privateKey")]
-    pub r#private_key: Box<String>,
+    pub r#private_key: String,
 }

@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceCluster {
     /// [Autoscaling](https://cloud.google.com/bigtable/docs/autoscaling#parameters) config for the cluster, contains the following arguments:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoscalingConfig")]
-    pub r#autoscaling_config: Box<Option<super::super::types::bigtable::InstanceClusterAutoscalingConfig>>,
+    pub r#autoscaling_config: Option<Box<super::super::types::bigtable::InstanceClusterAutoscalingConfig>>,
     /// The ID of the Cloud Bigtable cluster. Must be 6-30 characters and must only contain hyphens, lowercase letters and numbers.
     #[builder(into)]
     #[serde(rename = "clusterId")]
-    pub r#cluster_id: Box<String>,
+    pub r#cluster_id: String,
     /// Describes the Cloud KMS encryption key that will be used to protect the destination Bigtable cluster. The requirements for this key are: 1) The Cloud Bigtable service account associated with the project that contains this cluster must be granted the `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key. 2) Only regional keys can be used and the region of the CMEK key must match the region of the cluster.
     /// 
     /// > **Note**: Removing the field entirely from the config will cause the provider to default to the backend value.
@@ -21,27 +21,27 @@ pub struct InstanceCluster {
     /// `cluster_id`) will cause the provider to delete/recreate the entire
     /// `gcp.bigtable.Instance` resource. If these values are changing, use a new
     /// `cluster_id`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<Option<String>>,
+    pub r#kms_key_name: Option<String>,
     /// The number of nodes in the cluster.
     /// If no value is set, Cloud Bigtable automatically allocates nodes based on your data footprint and optimized for 50% storage utilization.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numNodes")]
-    pub r#num_nodes: Box<Option<i32>>,
+    pub r#num_nodes: Option<i32>,
     /// describes the current state of the cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
     /// The storage type to use. One of `"SSD"` or
     /// `"HDD"`. Defaults to `"SSD"`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageType")]
-    pub r#storage_type: Box<Option<String>>,
+    pub r#storage_type: Option<String>,
     /// The zone to create the Cloud Bigtable cluster in. If it not
     /// specified, the provider zone is used. Each cluster must have a different zone in the same region. Zones that support
     /// Bigtable instances are noted on the [Cloud Bigtable locations page](https://cloud.google.com/bigtable/docs/locations).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<Option<String>>,
+    pub r#zone: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct ChannelLineLineChannel {
     /// The access token which is used to call the Line Channel API.
     #[builder(into)]
     #[serde(rename = "accessToken")]
-    pub r#access_token: Box<String>,
+    pub r#access_token: String,
     /// The secret which is used to access the Line Channel.
     #[builder(into)]
     #[serde(rename = "secret")]
-    pub r#secret: Box<String>,
+    pub r#secret: String,
 }

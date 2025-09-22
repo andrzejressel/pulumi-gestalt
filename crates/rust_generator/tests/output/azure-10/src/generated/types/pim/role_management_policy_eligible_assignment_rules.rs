@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RoleManagementPolicyEligibleAssignmentRules {
     /// Must an assignment have an expiry date. `false` allows permanent assignment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expirationRequired")]
-    pub r#expiration_required: Box<Option<bool>>,
+    pub r#expiration_required: Option<bool>,
     /// The maximum length of time an assignment can be valid, as an ISO8601 duration. Permitted values: `P15D`, `P30D`, `P90D`, `P180D`, or `P365D`.
     /// 
     /// One of `expiration_required` or `expire_after` must be provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expireAfter")]
-    pub r#expire_after: Box<Option<String>>,
+    pub r#expire_after: Option<String>,
 }

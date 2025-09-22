@@ -6,7 +6,7 @@ pub struct BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfig {
     /// Whether to enable multiple network interfaces for your pods.
     /// When set network_config.advanced_networking is automatically
     /// set to true.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
 }

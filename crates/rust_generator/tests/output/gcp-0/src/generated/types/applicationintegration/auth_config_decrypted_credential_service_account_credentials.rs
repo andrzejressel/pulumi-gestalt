@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AuthConfigDecryptedCredentialServiceAccountCredentials {
     /// A space-delimited list of requested scope permissions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<Option<String>>,
+    pub r#scope: Option<String>,
     /// Name of the service account that has the permission to make the request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAccount")]
-    pub r#service_account: Box<Option<String>>,
+    pub r#service_account: Option<String>,
 }

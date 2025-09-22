@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualGatewaySpecListener {
     /// Connection pool information for the listener.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionPool")]
-    pub r#connection_pool: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPool>>,
+    pub r#connection_pool: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerConnectionPool>>,
     /// Health check information for the listener.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "healthCheck")]
-    pub r#health_check: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerHealthCheck>>,
+    pub r#health_check: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerHealthCheck>>,
     /// Port mapping information for the listener.
     #[builder(into)]
     #[serde(rename = "portMapping")]
     pub r#port_mapping: Box<super::super::types::appmesh::VirtualGatewaySpecListenerPortMapping>,
     /// Transport Layer Security (TLS) properties for the listener
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerTls>>,
+    pub r#tls: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerTls>>,
 }

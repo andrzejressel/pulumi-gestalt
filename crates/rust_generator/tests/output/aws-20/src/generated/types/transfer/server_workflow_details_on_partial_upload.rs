@@ -6,9 +6,9 @@ pub struct ServerWorkflowDetailsOnPartialUpload {
     /// Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources.
     #[builder(into)]
     #[serde(rename = "executionRole")]
-    pub r#execution_role: Box<String>,
+    pub r#execution_role: String,
     /// A unique identifier for the workflow.
     #[builder(into)]
     #[serde(rename = "workflowId")]
-    pub r#workflow_id: Box<String>,
+    pub r#workflow_id: String,
 }

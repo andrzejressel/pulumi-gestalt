@@ -8,5 +8,5 @@ pub struct CxEnvironmentVersionConfig {
     /// - - -
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

@@ -6,17 +6,17 @@ pub struct GetDistributionConfigurationDistributionAmiDistributionConfigurationL
     /// Set of AWS Organization ARNs.
     #[builder(into)]
     #[serde(rename = "organizationArns")]
-    pub r#organization_arns: Box<Vec<String>>,
+    pub r#organization_arns: Vec<String>,
     /// Set of AWS Organizational Unit ARNs.
     #[builder(into)]
     #[serde(rename = "organizationalUnitArns")]
-    pub r#organizational_unit_arns: Box<Vec<String>>,
+    pub r#organizational_unit_arns: Vec<String>,
     /// Set of EC2 launch permission user groups.
     #[builder(into)]
     #[serde(rename = "userGroups")]
-    pub r#user_groups: Box<Vec<String>>,
+    pub r#user_groups: Vec<String>,
     /// Set of AWS Account identifiers.
     #[builder(into)]
     #[serde(rename = "userIds")]
-    pub r#user_ids: Box<Vec<String>>,
+    pub r#user_ids: Vec<String>,
 }

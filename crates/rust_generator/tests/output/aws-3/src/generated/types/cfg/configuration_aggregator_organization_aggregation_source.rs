@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationAggregatorOrganizationAggregationSource {
     /// If true, aggregate existing AWS Config regions and future regions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allRegions")]
-    pub r#all_regions: Box<Option<bool>>,
+    pub r#all_regions: Option<bool>,
     /// List of source regions being aggregated.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regions")]
-    pub r#regions: Box<Option<Vec<String>>>,
+    pub r#regions: Option<Vec<String>>,
     /// ARN of the IAM role used to retrieve AWS Organization details associated with the aggregator account.
     /// 
     /// Either `regions` or `all_regions` (as true) must be specified.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
 }

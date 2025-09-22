@@ -6,9 +6,9 @@ pub struct BucketObjectLockConfiguration {
     /// Indicates whether this bucket has an Object Lock configuration enabled. Valid value is `Enabled`.
     #[builder(into)]
     #[serde(rename = "objectLockEnabled")]
-    pub r#object_lock_enabled: Box<String>,
+    pub r#object_lock_enabled: String,
     /// The Object Lock rule in place for this bucket.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rule")]
-    pub r#rule: Box<Option<super::super::types::s3::BucketObjectLockConfigurationRule>>,
+    pub r#rule: Option<Box<super::super::types::s3::BucketObjectLockConfigurationRule>>,
 }

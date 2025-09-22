@@ -6,5 +6,5 @@ pub struct GetThemeConfigurationTypography {
     /// Determines the list of font families. Maximum number of 5 items. See font_families.
     #[builder(into)]
     #[serde(rename = "fontFamilies")]
-    pub r#font_families: Box<Vec<super::super::types::quicksight::GetThemeConfigurationTypographyFontFamily>>,
+    pub r#font_families: Vec<super::super::types::quicksight::GetThemeConfigurationTypographyFontFamily>,
 }

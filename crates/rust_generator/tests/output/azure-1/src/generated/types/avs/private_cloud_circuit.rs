@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PrivateCloudCircuit {
     /// The ID of the ExpressRoute Circuit.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expressRouteId")]
-    pub r#express_route_id: Box<Option<String>>,
+    pub r#express_route_id: Option<String>,
     /// The ID of the ExpressRoute Circuit private peering.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expressRoutePrivatePeeringId")]
-    pub r#express_route_private_peering_id: Box<Option<String>>,
+    pub r#express_route_private_peering_id: Option<String>,
     /// The CIDR of the primary subnet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primarySubnetCidr")]
-    pub r#primary_subnet_cidr: Box<Option<String>>,
+    pub r#primary_subnet_cidr: Option<String>,
     /// The CIDR of the secondary subnet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secondarySubnetCidr")]
-    pub r#secondary_subnet_cidr: Box<Option<String>>,
+    pub r#secondary_subnet_cidr: Option<String>,
 }

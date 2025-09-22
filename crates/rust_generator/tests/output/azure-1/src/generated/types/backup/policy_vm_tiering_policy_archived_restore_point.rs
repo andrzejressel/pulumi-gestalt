@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicyVmTieringPolicyArchivedRestorePoint {
     /// The number of days/weeks/months/years to retain backups in current tier before tiering.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<Option<i32>>,
+    pub r#duration: Option<i32>,
     /// The retention duration type. Possible values are `Days`, `Weeks`, `Months` and `Years`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "durationType")]
-    pub r#duration_type: Box<Option<String>>,
+    pub r#duration_type: Option<String>,
     /// The tiering mode to control automatic tiering of recovery points. Possible values are `TierAfter` and `TierRecommended`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

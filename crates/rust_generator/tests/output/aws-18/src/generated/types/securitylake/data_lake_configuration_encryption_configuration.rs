@@ -6,5 +6,5 @@ pub struct DataLakeConfigurationEncryptionConfiguration {
     /// The id of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.
     #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<String>,
+    pub r#kms_key_id: String,
 }

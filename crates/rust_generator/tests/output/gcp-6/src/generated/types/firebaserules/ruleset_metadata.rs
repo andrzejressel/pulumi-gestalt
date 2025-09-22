@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesetMetadata {
     /// Services that this ruleset has declarations for (e.g., "cloud.firestore"). There may be 0+ of these.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "services")]
-    pub r#services: Box<Option<Vec<String>>>,
+    pub r#services: Option<Vec<String>>,
 }

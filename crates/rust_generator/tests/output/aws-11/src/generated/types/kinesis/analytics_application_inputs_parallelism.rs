@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AnalyticsApplicationInputsParallelism {
     /// The Count of streams.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<Option<i32>>,
+    pub r#count: Option<i32>,
 }

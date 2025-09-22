@@ -6,5 +6,5 @@ pub struct GetCodeSigningConfigPolicy {
     /// Code signing configuration policy for deployment validation failure.
     #[builder(into)]
     #[serde(rename = "untrustedArtifactOnDeployment")]
-    pub r#untrusted_artifact_on_deployment: Box<String>,
+    pub r#untrusted_artifact_on_deployment: String,
 }

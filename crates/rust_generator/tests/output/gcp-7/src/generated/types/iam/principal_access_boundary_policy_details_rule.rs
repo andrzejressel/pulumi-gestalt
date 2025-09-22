@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PrincipalAccessBoundaryPolicyDetailsRule {
     /// The description of the principal access boundary policy rule. Must be less than or equal to 256 characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The access relationship of principals to the resources in this rule.
     /// Possible values: ALLOW
     #[builder(into)]
     #[serde(rename = "effect")]
-    pub r#effect: Box<String>,
+    pub r#effect: String,
     /// A list of Cloud Resource Manager resources. The resource
     /// and all the descendants are included. The number of resources in a policy
     /// is limited to 500 across all rules.
@@ -22,5 +22,5 @@ pub struct PrincipalAccessBoundaryPolicyDetailsRule {
     /// or `//cloudresourcemanager.googleapis.com/projects/my-project-id`.
     #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Box<Vec<String>>,
+    pub r#resources: Vec<String>,
 }

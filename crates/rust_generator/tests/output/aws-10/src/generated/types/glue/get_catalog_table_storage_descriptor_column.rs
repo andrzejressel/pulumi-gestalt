@@ -6,17 +6,17 @@ pub struct GetCatalogTableStorageDescriptorColumn {
     /// Free-form text comment.
     #[builder(into)]
     #[serde(rename = "comment")]
-    pub r#comment: Box<String>,
+    pub r#comment: String,
     /// Name of the table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Map of initialization parameters for the SerDe, in key-value form.
     #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<std::collections::HashMap<String, String>>,
+    pub r#parameters: std::collections::HashMap<String, String>,
     /// Datatype of data in the Column.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

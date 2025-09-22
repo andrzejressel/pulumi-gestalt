@@ -5,11 +5,11 @@
 pub struct UserProfileDetailSso {
     #[builder(into)]
     #[serde(rename = "firstName")]
-    pub r#first_name: Box<String>,
+    pub r#first_name: String,
     #[builder(into)]
     #[serde(rename = "lastName")]
-    pub r#last_name: Box<String>,
+    pub r#last_name: String,
     #[builder(into)]
     #[serde(rename = "userName")]
-    pub r#user_name: Box<String>,
+    pub r#user_name: String,
 }

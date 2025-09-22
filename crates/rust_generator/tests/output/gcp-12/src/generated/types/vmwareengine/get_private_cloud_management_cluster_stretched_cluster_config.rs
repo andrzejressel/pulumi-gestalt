@@ -6,9 +6,9 @@ pub struct GetPrivateCloudManagementClusterStretchedClusterConfig {
     /// Zone that will remain operational when connection between the two zones is lost.
     #[builder(into)]
     #[serde(rename = "preferredLocation")]
-    pub r#preferred_location: Box<String>,
+    pub r#preferred_location: String,
     /// Additional zone for a higher level of availability and load balancing.
     #[builder(into)]
     #[serde(rename = "secondaryLocation")]
-    pub r#secondary_location: Box<String>,
+    pub r#secondary_location: String,
 }

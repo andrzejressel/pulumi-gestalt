@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IntegrationAccountBatchConfigurationReleaseCriteria {
     /// The batch size in bytes for the Logic App Integration Batch Configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "batchSize")]
-    pub r#batch_size: Box<Option<i32>>,
+    pub r#batch_size: Option<i32>,
     /// The message count for the Logic App Integration Batch Configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "messageCount")]
-    pub r#message_count: Box<Option<i32>>,
+    pub r#message_count: Option<i32>,
     /// A `recurrence` block as documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<Option<super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteriaRecurrence>>,
+    pub r#recurrence: Option<Box<super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteriaRecurrence>>,
 }

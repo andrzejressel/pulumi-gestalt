@@ -7,5 +7,5 @@ pub struct BareMetalAdminClusterSecurityConfigAuthorization {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "adminUsers")]
-    pub r#admin_users: Box<Vec<super::super::types::gkeonprem::BareMetalAdminClusterSecurityConfigAuthorizationAdminUser>>,
+    pub r#admin_users: Vec<super::super::types::gkeonprem::BareMetalAdminClusterSecurityConfigAuthorizationAdminUser>,
 }

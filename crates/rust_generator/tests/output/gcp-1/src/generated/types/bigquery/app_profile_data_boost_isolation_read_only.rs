@@ -7,5 +7,5 @@ pub struct AppProfileDataBoostIsolationReadOnly {
     /// Possible values are: `HOST_PAYS`.
     #[builder(into)]
     #[serde(rename = "computeBillingOwner")]
-    pub r#compute_billing_owner: Box<String>,
+    pub r#compute_billing_owner: String,
 }

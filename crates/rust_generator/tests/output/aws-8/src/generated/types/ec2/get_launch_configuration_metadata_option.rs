@@ -6,13 +6,13 @@ pub struct GetLaunchConfigurationMetadataOption {
     /// State of the metadata service: `enabled`, `disabled`.
     #[builder(into)]
     #[serde(rename = "httpEndpoint")]
-    pub r#http_endpoint: Box<String>,
+    pub r#http_endpoint: String,
     /// The desired HTTP PUT response hop limit for instance metadata requests.
     #[builder(into)]
     #[serde(rename = "httpPutResponseHopLimit")]
-    pub r#http_put_response_hop_limit: Box<i32>,
+    pub r#http_put_response_hop_limit: i32,
     /// If session tokens are required: `optional`, `required`.
     #[builder(into)]
     #[serde(rename = "httpTokens")]
-    pub r#http_tokens: Box<String>,
+    pub r#http_tokens: String,
 }

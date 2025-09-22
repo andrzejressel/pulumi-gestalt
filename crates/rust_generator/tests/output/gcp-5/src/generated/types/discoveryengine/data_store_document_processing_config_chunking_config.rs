@@ -5,7 +5,7 @@
 pub struct DataStoreDocumentProcessingConfigChunkingConfig {
     /// Configuration for the layout based chunking.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "layoutBasedChunkingConfig")]
-    pub r#layout_based_chunking_config: Box<Option<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigChunkingConfigLayoutBasedChunkingConfig>>,
+    pub r#layout_based_chunking_config: Option<Box<super::super::types::discoveryengine::DataStoreDocumentProcessingConfigChunkingConfigLayoutBasedChunkingConfig>>,
 }

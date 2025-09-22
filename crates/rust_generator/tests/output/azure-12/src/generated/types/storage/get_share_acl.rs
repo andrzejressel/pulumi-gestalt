@@ -6,9 +6,9 @@ pub struct GetShareAcl {
     /// An `access_policy` block as defined below.
     #[builder(into)]
     #[serde(rename = "accessPolicies")]
-    pub r#access_policies: Box<Vec<super::super::types::storage::GetShareAclAccessPolicy>>,
+    pub r#access_policies: Vec<super::super::types::storage::GetShareAclAccessPolicy>,
     /// The ID which should be used for this Shared Identifier.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

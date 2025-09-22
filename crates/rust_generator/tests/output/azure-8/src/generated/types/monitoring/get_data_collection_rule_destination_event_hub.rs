@@ -6,9 +6,9 @@ pub struct GetDataCollectionRuleDestinationEventHub {
     /// The resource ID of the Event Hub.
     #[builder(into)]
     #[serde(rename = "eventHubId")]
-    pub r#event_hub_id: Box<String>,
+    pub r#event_hub_id: String,
     /// Specifies the name of the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

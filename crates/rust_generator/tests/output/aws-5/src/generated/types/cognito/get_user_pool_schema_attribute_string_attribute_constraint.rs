@@ -6,9 +6,9 @@ pub struct GetUserPoolSchemaAttributeStringAttributeConstraint {
     /// - Maximum allowed length.
     #[builder(into)]
     #[serde(rename = "maxLength")]
-    pub r#max_length: Box<String>,
+    pub r#max_length: String,
     /// - Minimum allowed length.
     #[builder(into)]
     #[serde(rename = "minLength")]
-    pub r#min_length: Box<String>,
+    pub r#min_length: String,
 }

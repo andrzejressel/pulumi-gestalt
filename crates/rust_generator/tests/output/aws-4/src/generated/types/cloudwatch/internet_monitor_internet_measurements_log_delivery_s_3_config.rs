@@ -5,11 +5,11 @@
 pub struct InternetMonitorInternetMeasurementsLogDeliveryS3Config {
     #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<String>,
-    #[builder(into, default)]
+    pub r#bucket_name: String,
+    #[builder(into)]
     #[serde(rename = "bucketPrefix")]
-    pub r#bucket_prefix: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#bucket_prefix: Option<String>,
+    #[builder(into)]
     #[serde(rename = "logDeliveryStatus")]
-    pub r#log_delivery_status: Box<Option<String>>,
+    pub r#log_delivery_status: Option<String>,
 }

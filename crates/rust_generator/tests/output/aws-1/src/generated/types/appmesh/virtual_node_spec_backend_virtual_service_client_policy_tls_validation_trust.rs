@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrust {
     /// TLS validation context trust for an AWS Certificate Manager (ACM) certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acm")]
-    pub r#acm: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm>>,
+    pub r#acm: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcm>>,
     /// TLS validation context trust for a local file certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "file")]
-    pub r#file: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile>>,
+    pub r#file: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFile>>,
     /// TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds>>,
+    pub r#sds: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSds>>,
 }

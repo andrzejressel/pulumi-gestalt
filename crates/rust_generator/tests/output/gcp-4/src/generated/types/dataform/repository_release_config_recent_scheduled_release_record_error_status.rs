@@ -5,12 +5,12 @@
 pub struct RepositoryReleaseConfigRecentScheduledReleaseRecordErrorStatus {
     /// (Output)
     /// The status code, which should be an enum value of google.rpc.Code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "code")]
-    pub r#code: Box<Option<i32>>,
+    pub r#code: Option<i32>,
     /// (Output)
     /// A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
 }

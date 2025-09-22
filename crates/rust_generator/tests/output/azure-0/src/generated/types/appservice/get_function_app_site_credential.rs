@@ -6,9 +6,9 @@ pub struct GetFunctionAppSiteCredential {
     /// The password associated with the username, which can be used to publish to this App Service.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// The username which can be used to publish to this App Service
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

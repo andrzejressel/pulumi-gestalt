@@ -6,9 +6,9 @@ pub struct SecuritySolutionAdditionalWorkspace {
     /// A list of data types which sent to workspace. Possible values are `Alerts` and `RawEvents`.
     #[builder(into)]
     #[serde(rename = "dataTypes")]
-    pub r#data_types: Box<Vec<String>>,
+    pub r#data_types: Vec<String>,
     /// The resource ID of the Log Analytics Workspace.
     #[builder(into)]
     #[serde(rename = "workspaceId")]
-    pub r#workspace_id: Box<String>,
+    pub r#workspace_id: String,
 }

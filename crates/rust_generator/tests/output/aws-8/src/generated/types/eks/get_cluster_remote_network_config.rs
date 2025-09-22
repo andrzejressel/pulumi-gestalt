@@ -6,9 +6,9 @@ pub struct GetClusterRemoteNetworkConfig {
     /// The networks that can contain hybrid nodes.
     #[builder(into)]
     #[serde(rename = "remoteNodeNetworks")]
-    pub r#remote_node_networks: Box<Vec<super::super::types::eks::GetClusterRemoteNetworkConfigRemoteNodeNetwork>>,
+    pub r#remote_node_networks: Vec<super::super::types::eks::GetClusterRemoteNetworkConfigRemoteNodeNetwork>,
     /// The networks that can contain pods that run Kubernetes webhooks on hybrid nodes.
     #[builder(into)]
     #[serde(rename = "remotePodNetworks")]
-    pub r#remote_pod_networks: Box<Vec<super::super::types::eks::GetClusterRemoteNetworkConfigRemotePodNetwork>>,
+    pub r#remote_pod_networks: Vec<super::super::types::eks::GetClusterRemoteNetworkConfigRemotePodNetwork>,
 }

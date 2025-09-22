@@ -8,7 +8,7 @@ pub struct GetRegionNetworkEndpointGroupCloudFunction {
     /// Example value: "func1".
     #[builder(into)]
     #[serde(rename = "function")]
-    pub r#function: Box<String>,
+    pub r#function: String,
     /// A template to parse function field from a request URL. URL mask allows
     /// for routing to multiple Cloud Functions without having to create
     /// multiple Network Endpoint Groups and backend services.
@@ -18,5 +18,5 @@ pub struct GetRegionNetworkEndpointGroupCloudFunction {
     /// will parse them to { function = "function1" } and { function = "function2" } respectively.
     #[builder(into)]
     #[serde(rename = "urlMask")]
-    pub r#url_mask: Box<String>,
+    pub r#url_mask: String,
 }

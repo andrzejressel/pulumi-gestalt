@@ -6,13 +6,13 @@ pub struct NetworkSimPolicySlice {
     /// An array of `data_network` block as defined below.
     #[builder(into)]
     #[serde(rename = "dataNetworks")]
-    pub r#data_networks: Box<Vec<super::super::types::mobile::NetworkSimPolicySliceDataNetwork>>,
+    pub r#data_networks: Vec<super::super::types::mobile::NetworkSimPolicySliceDataNetwork>,
     /// The ID of default data network to use if the user equipment does not explicitly specify it. Configuration for this object must exist in the `data_network` block.
     #[builder(into)]
     #[serde(rename = "defaultDataNetworkId")]
-    pub r#default_data_network_id: Box<String>,
+    pub r#default_data_network_id: String,
     /// The ID of the slice that these settings apply to.
     #[builder(into)]
     #[serde(rename = "sliceId")]
-    pub r#slice_id: Box<String>,
+    pub r#slice_id: String,
 }

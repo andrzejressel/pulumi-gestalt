@@ -12,9 +12,9 @@ pub struct ClusterClusterConfigMasterConfigAccelerator {
     /// - - -
     #[builder(into)]
     #[serde(rename = "acceleratorCount")]
-    pub r#accelerator_count: Box<i32>,
+    pub r#accelerator_count: i32,
     /// The short name of the accelerator type to expose to this instance. For example, `nvidia-tesla-k80`.
     #[builder(into)]
     #[serde(rename = "acceleratorType")]
-    pub r#accelerator_type: Box<String>,
+    pub r#accelerator_type: String,
 }

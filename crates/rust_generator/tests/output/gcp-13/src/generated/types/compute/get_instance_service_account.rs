@@ -6,9 +6,9 @@ pub struct GetInstanceServiceAccount {
     /// The service account e-mail address.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
     /// A list of service scopes.
     #[builder(into)]
     #[serde(rename = "scopes")]
-    pub r#scopes: Box<Vec<String>>,
+    pub r#scopes: Vec<String>,
 }

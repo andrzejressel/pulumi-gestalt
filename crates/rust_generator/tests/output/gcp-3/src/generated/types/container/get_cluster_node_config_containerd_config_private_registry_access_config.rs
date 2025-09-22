@@ -6,9 +6,9 @@ pub struct GetClusterNodeConfigContainerdConfigPrivateRegistryAccessConfig {
     /// Parameters for configuring CA certificate and domains.
     #[builder(into)]
     #[serde(rename = "certificateAuthorityDomainConfigs")]
-    pub r#certificate_authority_domain_configs: Box<Vec<super::super::types::container::GetClusterNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfig>>,
+    pub r#certificate_authority_domain_configs: Vec<super::super::types::container::GetClusterNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfig>,
     /// Whether or not private registries are configured.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

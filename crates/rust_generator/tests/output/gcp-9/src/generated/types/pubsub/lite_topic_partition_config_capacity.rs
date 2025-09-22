@@ -6,9 +6,9 @@ pub struct LiteTopicPartitionConfigCapacity {
     /// Subscribe throughput capacity per partition in MiB/s. Must be >= 4 and <= 16.
     #[builder(into)]
     #[serde(rename = "publishMibPerSec")]
-    pub r#publish_mib_per_sec: Box<i32>,
+    pub r#publish_mib_per_sec: i32,
     /// Publish throughput capacity per partition in MiB/s. Must be >= 4 and <= 16.
     #[builder(into)]
     #[serde(rename = "subscribeMibPerSec")]
-    pub r#subscribe_mib_per_sec: Box<i32>,
+    pub r#subscribe_mib_per_sec: i32,
 }

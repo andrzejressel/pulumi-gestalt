@@ -8,13 +8,13 @@ pub struct ServicePerimeterStatusIngressPolicyIngressToOperation {
     /// entry with `*` specified for the `method` field will allow all methods
     /// AND permissions for the service specified in `serviceName`.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "methodSelectors")]
-    pub r#method_selectors: Box<Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterStatusIngressPolicyIngressToOperationMethodSelector>>>,
+    pub r#method_selectors: Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterStatusIngressPolicyIngressToOperationMethodSelector>>,
     /// The name of the API whose methods or permissions the `IngressPolicy` or
     /// `EgressPolicy` want to allow. A single `ApiOperation` with serviceName
     /// field set to `*` will allow all methods AND permissions for all services.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<Option<String>>,
+    pub r#service_name: Option<String>,
 }

@@ -5,8 +5,8 @@
 pub struct GetLaunchTemplateInstanceRequirementMemoryGibPerVcpus {
     #[builder(into)]
     #[serde(rename = "max")]
-    pub r#max: Box<f64>,
+    pub r#max: f64,
     #[builder(into)]
     #[serde(rename = "min")]
-    pub r#min: Box<f64>,
+    pub r#min: f64,
 }

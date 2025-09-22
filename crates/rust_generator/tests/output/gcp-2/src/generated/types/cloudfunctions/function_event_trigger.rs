@@ -8,14 +8,14 @@ pub struct FunctionEventTrigger {
     /// full reference of accepted triggers.
     #[builder(into)]
     #[serde(rename = "eventType")]
-    pub r#event_type: Box<String>,
+    pub r#event_type: String,
     /// Specifies policy for failed executions. Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "failurePolicy")]
-    pub r#failure_policy: Box<Option<super::super::types::cloudfunctions::FunctionEventTriggerFailurePolicy>>,
+    pub r#failure_policy: Option<Box<super::super::types::cloudfunctions::FunctionEventTriggerFailurePolicy>>,
     /// Required. The name or partial URI of the resource from
     /// which to observe events. For example, `"myBucket"` or `"projects/my-project/topics/my-topic"`
     #[builder(into)]
     #[serde(rename = "resource")]
-    pub r#resource: Box<String>,
+    pub r#resource: String,
 }

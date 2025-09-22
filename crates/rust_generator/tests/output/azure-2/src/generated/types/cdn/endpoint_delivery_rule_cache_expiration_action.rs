@@ -6,9 +6,9 @@ pub struct EndpointDeliveryRuleCacheExpirationAction {
     /// The behavior of the cache. Valid values are `BypassCache`, `Override` and `SetIfMissing`.
     #[builder(into)]
     #[serde(rename = "behavior")]
-    pub r#behavior: Box<String>,
+    pub r#behavior: String,
     /// Duration of the cache. Only allowed when `behavior` is set to `Override` or `SetIfMissing`. Format: `[d.]hh:mm:ss`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<Option<String>>,
+    pub r#duration: Option<String>,
 }

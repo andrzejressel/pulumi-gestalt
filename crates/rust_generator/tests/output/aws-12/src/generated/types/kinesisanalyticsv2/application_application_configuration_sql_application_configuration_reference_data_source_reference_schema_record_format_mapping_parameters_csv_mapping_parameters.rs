@@ -6,9 +6,9 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationReferen
     /// The column delimiter. For example, in a CSV format, a comma (`,`) is the typical column delimiter.
     #[builder(into)]
     #[serde(rename = "recordColumnDelimiter")]
-    pub r#record_column_delimiter: Box<String>,
+    pub r#record_column_delimiter: String,
     /// The row delimiter. For example, in a CSV format, `\n` is the typical row delimiter.
     #[builder(into)]
     #[serde(rename = "recordRowDelimiter")]
-    pub r#record_row_delimiter: Box<String>,
+    pub r#record_row_delimiter: String,
 }

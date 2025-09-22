@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterMainProfile {
     /// The resource ID of an associated disk encryption set. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "diskEncryptionSetId")]
-    pub r#disk_encryption_set_id: Box<Option<String>>,
+    pub r#disk_encryption_set_id: Option<String>,
     /// Whether main virtual machines are encrypted at host. Defaults to `false`. Changing this forces a new resource to be created.
     /// 
     /// > **NOTE:** `encryption_at_host_enabled` is only available for certain VM sizes and the `EncryptionAtHost` feature must be enabled for your subscription. Please see the [Azure documentation](https://learn.microsoft.com/azure/virtual-machines/disks-enable-host-based-encryption-portal?tabs=azure-powershell) for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encryptionAtHostEnabled")]
-    pub r#encryption_at_host_enabled: Box<Option<bool>>,
+    pub r#encryption_at_host_enabled: Option<bool>,
     /// The ID of the subnet where main nodes will be hosted. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
     /// The size of the Virtual Machines for the main nodes. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "vmSize")]
-    pub r#vm_size: Box<String>,
+    pub r#vm_size: String,
 }

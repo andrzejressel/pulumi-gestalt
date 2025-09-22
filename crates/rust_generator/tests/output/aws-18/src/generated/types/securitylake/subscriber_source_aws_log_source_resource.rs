@@ -6,9 +6,9 @@ pub struct SubscriberSourceAwsLogSourceResource {
     /// Provides data expiration details of Amazon Security Lake object.
     #[builder(into)]
     #[serde(rename = "sourceName")]
-    pub r#source_name: Box<String>,
+    pub r#source_name: String,
     /// Provides data storage transition details of Amazon Security Lake object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceVersion")]
-    pub r#source_version: Box<Option<String>>,
+    pub r#source_version: Option<String>,
 }

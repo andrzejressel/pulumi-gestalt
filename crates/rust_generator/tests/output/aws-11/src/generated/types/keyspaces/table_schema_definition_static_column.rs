@@ -6,5 +6,5 @@ pub struct TableSchemaDefinitionStaticColumn {
     /// The name of the static column.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

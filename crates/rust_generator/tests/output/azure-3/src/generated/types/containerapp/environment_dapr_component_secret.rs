@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentDaprComponentSecret {
     /// The identity to use for accessing key vault reference.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identity")]
-    pub r#identity: Box<Option<String>>,
+    pub r#identity: Option<String>,
     /// The Key Vault Secret ID. Could be either one of `id` or `versionless_id`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyVaultSecretId")]
-    pub r#key_vault_secret_id: Box<Option<String>>,
+    pub r#key_vault_secret_id: Option<String>,
     /// The Secret name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value for this secret.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

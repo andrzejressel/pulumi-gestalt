@@ -4,29 +4,29 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterClusterConfigPreemptibleWorkerConfig {
     /// Disk Config
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "diskConfig")]
-    pub r#disk_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigDiskConfig>>,
+    pub r#disk_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigDiskConfig>>,
     /// Instance flexibility Policy allowing a mixture of VM shapes and provisioning models.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceFlexibilityPolicy")]
-    pub r#instance_flexibility_policy: Box<Option<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy>>,
+    pub r#instance_flexibility_policy: Option<Box<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy>>,
     /// List of preemptible instance names which have been assigned
     /// to the cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceNames")]
-    pub r#instance_names: Box<Option<Vec<String>>>,
+    pub r#instance_names: Option<Vec<String>>,
     /// Specifies the number of preemptible nodes to create.
     /// Defaults to 0.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numInstances")]
-    pub r#num_instances: Box<Option<i32>>,
+    pub r#num_instances: Option<i32>,
     /// Specifies the preemptibility of the secondary workers. The default value is `PREEMPTIBLE`
     /// Accepted values are:
     /// * PREEMPTIBILITY_UNSPECIFIED
     /// * NON_PREEMPTIBLE
     /// * PREEMPTIBLE
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preemptibility")]
-    pub r#preemptibility: Box<Option<String>>,
+    pub r#preemptibility: Option<String>,
 }

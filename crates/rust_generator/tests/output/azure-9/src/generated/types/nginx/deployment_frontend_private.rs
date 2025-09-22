@@ -6,13 +6,13 @@ pub struct DeploymentFrontendPrivate {
     /// Specify the method for allocating the private IP. Possible values are `Static` and `Dynamic`. Changing this forces a new NGINX Deployment to be created.
     #[builder(into)]
     #[serde(rename = "allocationMethod")]
-    pub r#allocation_method: Box<String>,
+    pub r#allocation_method: String,
     /// Specify the private IP Address. Changing this forces a new NGINX Deployment to be created.
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
     /// Specify the Subnet Resource ID for this NGINX Deployment. Changing this forces a new NGINX Deployment to be created.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

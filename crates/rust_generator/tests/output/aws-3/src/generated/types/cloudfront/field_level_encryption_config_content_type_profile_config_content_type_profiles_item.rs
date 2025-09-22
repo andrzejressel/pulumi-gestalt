@@ -6,12 +6,12 @@ pub struct FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles
     /// he content type for a field-level encryption content type-profile mapping. Valid value is `application/x-www-form-urlencoded`.
     #[builder(into)]
     #[serde(rename = "contentType")]
-    pub r#content_type: Box<String>,
+    pub r#content_type: String,
     /// The format for a field-level encryption content type-profile mapping. Valid value is `URLEncoded`.
     #[builder(into)]
     #[serde(rename = "format")]
-    pub r#format: Box<String>,
-    #[builder(into, default)]
+    pub r#format: String,
+    #[builder(into)]
     #[serde(rename = "profileId")]
-    pub r#profile_id: Box<Option<String>>,
+    pub r#profile_id: Option<String>,
 }

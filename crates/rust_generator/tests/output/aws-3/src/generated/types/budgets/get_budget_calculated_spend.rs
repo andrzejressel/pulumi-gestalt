@@ -5,5 +5,5 @@
 pub struct GetBudgetCalculatedSpend {
     #[builder(into)]
     #[serde(rename = "actualSpends")]
-    pub r#actual_spends: Box<Vec<super::super::types::budgets::GetBudgetCalculatedSpendActualSpend>>,
+    pub r#actual_spends: Vec<super::super::types::budgets::GetBudgetCalculatedSpendActualSpend>,
 }

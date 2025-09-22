@@ -6,5 +6,5 @@ pub struct ProfilingGroupAgentOrchestrationConfig {
     /// (Required) Boolean that specifies whether the profiling agent collects profiling data or
     #[builder(into)]
     #[serde(rename = "profilingEnabled")]
-    pub r#profiling_enabled: Box<bool>,
+    pub r#profiling_enabled: bool,
 }

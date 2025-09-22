@@ -5,12 +5,12 @@
 pub struct AutomationRule {
     /// Optional. The `AdvanceRolloutRule` will automatically advance a successful Rollout.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "advanceRolloutRule")]
-    pub r#advance_rollout_rule: Box<Option<super::super::types::clouddeploy::AutomationRuleAdvanceRolloutRule>>,
+    pub r#advance_rollout_rule: Option<Box<super::super::types::clouddeploy::AutomationRuleAdvanceRolloutRule>>,
     /// Optional. `PromoteReleaseRule` will automatically promote a release from the current target to a specified target.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "promoteReleaseRule")]
-    pub r#promote_release_rule: Box<Option<super::super::types::clouddeploy::AutomationRulePromoteReleaseRule>>,
+    pub r#promote_release_rule: Option<Box<super::super::types::clouddeploy::AutomationRulePromoteReleaseRule>>,
 }

@@ -6,7 +6,7 @@ pub struct GetInstanceAutoscalingConfig {
     /// Asymmetric autoscaling options for specific replicas.
     #[builder(into)]
     #[serde(rename = "asymmetricAutoscalingOptions")]
-    pub r#asymmetric_autoscaling_options: Box<Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAsymmetricAutoscalingOption>>,
+    pub r#asymmetric_autoscaling_options: Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAsymmetricAutoscalingOption>,
     /// Defines scale in controls to reduce the risk of response latency
     /// and outages due to abrupt scale-in events. Users can define the minimum and
     /// maximum compute capacity allocated to the instance, and the autoscaler will
@@ -15,10 +15,10 @@ pub struct GetInstanceAutoscalingConfig {
     /// min_limit and max_limit.
     #[builder(into)]
     #[serde(rename = "autoscalingLimits")]
-    pub r#autoscaling_limits: Box<Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAutoscalingLimit>>,
+    pub r#autoscaling_limits: Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAutoscalingLimit>,
     /// Defines scale in controls to reduce the risk of response latency
     /// and outages due to abrupt scale-in events
     #[builder(into)]
     #[serde(rename = "autoscalingTargets")]
-    pub r#autoscaling_targets: Box<Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAutoscalingTarget>>,
+    pub r#autoscaling_targets: Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAutoscalingTarget>,
 }

@@ -5,11 +5,11 @@
 pub struct GetDataSetLogicalTableMapDataTransformCastColumnTypeOperation {
     #[builder(into)]
     #[serde(rename = "columnName")]
-    pub r#column_name: Box<String>,
+    pub r#column_name: String,
     #[builder(into)]
     #[serde(rename = "format")]
-    pub r#format: Box<String>,
+    pub r#format: String,
     #[builder(into)]
     #[serde(rename = "newColumnType")]
-    pub r#new_column_type: Box<String>,
+    pub r#new_column_type: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketLifecycleConfigurationRuleExpiration {
     /// Date the object is to be deleted. Should be in `YYYY-MM-DD` date format, e.g., `2020-09-30`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "date")]
-    pub r#date: Box<Option<String>>,
+    pub r#date: Option<String>,
     /// Number of days before the object is to be deleted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "days")]
-    pub r#days: Box<Option<i32>>,
+    pub r#days: Option<i32>,
     /// Enable to remove a delete marker with no noncurrent versions. Cannot be specified with `date` or `days`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expiredObjectDeleteMarker")]
-    pub r#expired_object_delete_marker: Box<Option<bool>>,
+    pub r#expired_object_delete_marker: Option<bool>,
 }

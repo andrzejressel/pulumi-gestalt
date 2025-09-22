@@ -3,15 +3,15 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct Container {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "brightness")]
-    pub r#brightness: Box<Option<super::types::ContainerBrightness>>,
-    #[builder(into, default)]
+    pub r#brightness: Option<Box<super::types::ContainerBrightness>>,
+    #[builder(into)]
     #[serde(rename = "color")]
-    pub r#color: Box<Option<pulumi_gestalt_rust::OneOf2<super::types::ContainerColor, String>>>,
-    #[builder(into, default)]
+    pub r#color: Option<pulumi_gestalt_rust::OneOf2<Box<super::types::ContainerColor>, String>>,
+    #[builder(into)]
     #[serde(rename = "material")]
-    pub r#material: Box<Option<String>>,
+    pub r#material: Option<String>,
     #[builder(into)]
     #[serde(rename = "size")]
     pub r#size: Box<super::types::ContainerSize>,

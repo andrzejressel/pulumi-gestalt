@@ -6,7 +6,7 @@ pub struct KeyRingImportJobPublicKey {
     /// (Output)
     /// The public key, encoded in PEM format. For more information, see the RFC 7468 sections
     /// for General Considerations and Textual Encoding of Subject Public Key Info.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pem")]
-    pub r#pem: Box<Option<String>>,
+    pub r#pem: Option<String>,
 }

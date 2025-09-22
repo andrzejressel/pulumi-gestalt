@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LinuxWebAppSiteConfigAutoHealSettingTrigger {
     /// A `requests` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requests")]
-    pub r#requests: Box<Option<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerRequests>>,
+    pub r#requests: Option<Box<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerRequests>>,
     /// A `slow_request` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "slowRequest")]
-    pub r#slow_request: Box<Option<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest>>,
+    pub r#slow_request: Option<Box<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest>>,
     /// One or more `slow_request_with_path` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "slowRequestWithPaths")]
-    pub r#slow_request_with_paths: Box<Option<Vec<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestWithPath>>>,
+    pub r#slow_request_with_paths: Option<Vec<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestWithPath>>,
     /// One or more `status_code` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusCodes")]
-    pub r#status_codes: Box<Option<Vec<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerStatusCode>>>,
+    pub r#status_codes: Option<Vec<super::super::types::appservice::LinuxWebAppSiteConfigAutoHealSettingTriggerStatusCode>>,
 }

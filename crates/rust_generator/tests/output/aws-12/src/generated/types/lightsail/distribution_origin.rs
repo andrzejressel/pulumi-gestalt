@@ -6,17 +6,17 @@ pub struct DistributionOrigin {
     /// The name of the origin resource. Your origin can be an instance with an attached static IP, a bucket, or a load balancer that has at least one instance attached to it.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "protocolPolicy")]
-    pub r#protocol_policy: Box<Option<String>>,
+    pub r#protocol_policy: Option<String>,
     /// The AWS Region name of the origin resource.
     #[builder(into)]
     #[serde(rename = "regionName")]
-    pub r#region_name: Box<String>,
+    pub r#region_name: String,
     /// The resource type of the origin resource (e.g., Instance).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<Option<String>>,
+    pub r#resource_type: Option<String>,
 }

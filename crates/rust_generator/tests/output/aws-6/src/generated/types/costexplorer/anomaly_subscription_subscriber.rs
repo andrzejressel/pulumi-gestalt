@@ -6,9 +6,9 @@ pub struct AnomalySubscriptionSubscriber {
     /// The address of the subscriber. If type is `SNS`, this will be the arn of the sns topic. If type is `EMAIL`, this will be the destination email address.
     #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<String>,
+    pub r#address: String,
     /// The type of subscription. Valid Values: `SNS` | `EMAIL`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

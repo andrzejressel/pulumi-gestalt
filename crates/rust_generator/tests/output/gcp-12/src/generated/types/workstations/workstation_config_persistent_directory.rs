@@ -5,11 +5,11 @@
 pub struct WorkstationConfigPersistentDirectory {
     /// A directory to persist across workstation sessions, backed by a Compute Engine regional persistent disk. Can only be updated if not empty during creation.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gcePd")]
-    pub r#gce_pd: Box<Option<super::super::types::workstations::WorkstationConfigPersistentDirectoryGcePd>>,
+    pub r#gce_pd: Option<Box<super::super::types::workstations::WorkstationConfigPersistentDirectoryGcePd>>,
     /// Location of this directory in the running workstation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mountPath")]
-    pub r#mount_path: Box<Option<String>>,
+    pub r#mount_path: Option<String>,
 }

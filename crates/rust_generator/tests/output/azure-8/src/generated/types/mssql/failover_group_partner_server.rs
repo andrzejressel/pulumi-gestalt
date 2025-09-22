@@ -6,13 +6,13 @@ pub struct FailoverGroupPartnerServer {
     /// The ID of a partner SQL server to include in the failover group.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The location of the partner server.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<Option<String>>,
+    pub r#location: Option<String>,
     /// The replication role of the partner server. Possible values include `Primary` or `Secondary`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "role")]
-    pub r#role: Box<Option<String>>,
+    pub r#role: Option<String>,
 }

@@ -11,5 +11,5 @@ pub struct GetGroupMembershipsMembershipRoleExpiryDetail {
     /// Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
     #[serde(rename = "expireTime")]
-    pub r#expire_time: Box<String>,
+    pub r#expire_time: String,
 }

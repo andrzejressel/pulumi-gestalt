@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationIntermediateStorage {
     /// Configuration block for intermedia S3 storage.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Location")]
-    pub r#s_3_location: Box<Option<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationIntermediateStorageS3Location>>,
+    pub r#s_3_location: Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationIntermediateStorageS3Location>>,
 }

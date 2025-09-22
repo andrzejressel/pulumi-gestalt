@@ -8,7 +8,7 @@ pub struct JobTemplateConfigElementaryStreamVideoStream {
     /// 
     /// 
     /// <a name="nested_h264"></a>The `h264` block supports:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "h264")]
-    pub r#h_264: Box<Option<super::super::types::transcoder::JobTemplateConfigElementaryStreamVideoStreamH264>>,
+    pub r#h_264: Option<Box<super::super::types::transcoder::JobTemplateConfigElementaryStreamVideoStreamH264>>,
 }

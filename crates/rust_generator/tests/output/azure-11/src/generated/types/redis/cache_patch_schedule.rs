@@ -6,15 +6,15 @@ pub struct CachePatchSchedule {
     /// the Weekday name - possible values include `Monday`, `Tuesday`, `Wednesday` etc.
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     /// The ISO 8601 timespan which specifies the amount of time the Redis Cache can be updated. Defaults to `PT5H`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maintenanceWindow")]
-    pub r#maintenance_window: Box<Option<String>>,
+    pub r#maintenance_window: Option<String>,
     /// the Start Hour for maintenance in UTC - possible values range from `0 - 23`.
     /// 
     /// > **Note:** The Patch Window lasts for `5` hours from the `start_hour_utc`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startHourUtc")]
-    pub r#start_hour_utc: Box<Option<i32>>,
+    pub r#start_hour_utc: Option<i32>,
 }

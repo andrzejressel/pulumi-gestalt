@@ -6,5 +6,5 @@ pub struct GetSinkBigqueryOption {
     /// Whether [BigQuery's partition tables](https://cloud.google.com/bigquery/docs/partitioned-tables) are used.
     #[builder(into)]
     #[serde(rename = "usePartitionedTables")]
-    pub r#use_partitioned_tables: Box<bool>,
+    pub r#use_partitioned_tables: bool,
 }

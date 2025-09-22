@@ -6,9 +6,9 @@ pub struct WorkerScriptHyperdriveConfigBinding {
     /// The global variable for the binding in your Worker code.
     #[builder(into)]
     #[serde(rename = "binding")]
-    pub r#binding: Box<String>,
+    pub r#binding: String,
     /// The ID of the Hyperdrive config to use.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

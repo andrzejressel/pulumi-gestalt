@@ -6,17 +6,17 @@ pub struct GetCatalogTableTargetTable {
     /// ID of the Glue Catalog and database where the table metadata resides. If omitted, this defaults to the current AWS Account ID.
     #[builder(into)]
     #[serde(rename = "catalogId")]
-    pub r#catalog_id: Box<String>,
+    pub r#catalog_id: String,
     /// Name of the metadata database where the table metadata resides.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// Name of the table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Region of the target table.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
 }

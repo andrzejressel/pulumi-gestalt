@@ -3,15 +3,15 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountEncryption {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keySource")]
-    pub r#key_source: Box<Option<String>>,
+    pub r#key_source: Option<String>,
     /// The ID of the Key Vault Key which should be used to Encrypt the data in this Automation Account.
     #[builder(into)]
     #[serde(rename = "keyVaultKeyId")]
-    pub r#key_vault_key_id: Box<String>,
+    pub r#key_vault_key_id: String,
     /// The User Assigned Managed Identity ID to be used for accessing the Customer Managed Key for encryption.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userAssignedIdentityId")]
-    pub r#user_assigned_identity_id: Box<Option<String>>,
+    pub r#user_assigned_identity_id: Option<String>,
 }

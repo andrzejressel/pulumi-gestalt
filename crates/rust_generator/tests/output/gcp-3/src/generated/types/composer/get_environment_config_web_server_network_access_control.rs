@@ -6,5 +6,5 @@ pub struct GetEnvironmentConfigWebServerNetworkAccessControl {
     /// A collection of allowed IP ranges with descriptions.
     #[builder(into)]
     #[serde(rename = "allowedIpRanges")]
-    pub r#allowed_ip_ranges: Box<Vec<super::super::types::composer::GetEnvironmentConfigWebServerNetworkAccessControlAllowedIpRange>>,
+    pub r#allowed_ip_ranges: Vec<super::super::types::composer::GetEnvironmentConfigWebServerNetworkAccessControlAllowedIpRange>,
 }

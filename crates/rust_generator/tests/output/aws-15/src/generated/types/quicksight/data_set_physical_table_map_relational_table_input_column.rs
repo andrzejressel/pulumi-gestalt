@@ -6,9 +6,9 @@ pub struct DataSetPhysicalTableMapRelationalTableInputColumn {
     /// Name of this column in the underlying data source.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Data type of the column.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

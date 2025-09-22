@@ -12,5 +12,5 @@ pub struct GetEntitlementApprovalWorkflow {
     /// A single user might be part of 'approvers' ACL for multiple steps in this workflow but they can only approve once and that approval will only be considered to satisfy the approval step at which it was granted.
     #[builder(into)]
     #[serde(rename = "manualApprovals")]
-    pub r#manual_approvals: Box<Vec<super::super::types::privilegedaccessmanager::GetEntitlementApprovalWorkflowManualApproval>>,
+    pub r#manual_approvals: Vec<super::super::types::privilegedaccessmanager::GetEntitlementApprovalWorkflowManualApproval>,
 }

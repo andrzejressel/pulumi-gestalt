@@ -6,13 +6,13 @@ pub struct GetRoleManagementPolicyNotificationRuleActiveAssignmentApproverNotifi
     /// A list of additional email addresses that will receive these notifications.
     #[builder(into)]
     #[serde(rename = "additionalRecipients")]
-    pub r#additional_recipients: Box<Vec<String>>,
+    pub r#additional_recipients: Vec<String>,
     /// (Boolean) Should the default recipients receive these notifications.
     #[builder(into)]
     #[serde(rename = "defaultRecipients")]
-    pub r#default_recipients: Box<bool>,
+    pub r#default_recipients: bool,
     /// (String) What level of notifications should be sent. Either `All` or `Critical`.
     #[builder(into)]
     #[serde(rename = "notificationLevel")]
-    pub r#notification_level: Box<String>,
+    pub r#notification_level: String,
 }

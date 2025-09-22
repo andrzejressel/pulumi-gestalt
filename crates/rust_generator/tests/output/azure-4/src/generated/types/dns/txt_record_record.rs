@@ -6,5 +6,5 @@ pub struct TxtRecordRecord {
     /// The value of the record. Max length: 4096 characters
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

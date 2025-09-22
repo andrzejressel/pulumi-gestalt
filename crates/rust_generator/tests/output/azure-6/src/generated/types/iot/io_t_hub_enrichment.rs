@@ -6,13 +6,13 @@ pub struct IoTHubEnrichment {
     /// The list of endpoints which will be enriched.
     #[builder(into)]
     #[serde(rename = "endpointNames")]
-    pub r#endpoint_names: Box<Vec<String>>,
+    pub r#endpoint_names: Vec<String>,
     /// The key of the enrichment.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The value of the enrichment. Value can be any static string, the name of the IoT Hub sending the message (use `$iothubname`) or information from the device twin (ex: `$twin.tags.latitude`)
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

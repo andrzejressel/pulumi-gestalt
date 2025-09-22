@@ -11,5 +11,5 @@ pub struct CxWebhookServiceDirectory {
     /// The name of Service Directory service.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

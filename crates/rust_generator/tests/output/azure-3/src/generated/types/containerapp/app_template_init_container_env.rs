@@ -6,15 +6,15 @@ pub struct AppTemplateInitContainerEnv {
     /// The name of the environment variable for the container.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The name of the secret that contains the value for this environment variable.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<Option<String>>,
+    pub r#secret_name: Option<String>,
     /// The value for this environment variable.
     /// 
     /// > **NOTE:** This value is ignored if `secret_name` is used
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

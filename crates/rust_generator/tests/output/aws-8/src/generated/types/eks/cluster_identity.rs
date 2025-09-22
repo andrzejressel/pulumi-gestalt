@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterIdentity {
     /// Nested block containing [OpenID Connect](https://openid.net/connect/) identity provider information for the cluster. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oidcs")]
-    pub r#oidcs: Box<Option<Vec<super::super::types::eks::ClusterIdentityOidc>>>,
+    pub r#oidcs: Option<Vec<super::super::types::eks::ClusterIdentityOidc>>,
 }

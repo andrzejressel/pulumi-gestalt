@@ -5,7 +5,7 @@
 pub struct ClusterNodePoolAutoConfigNetworkTags {
     /// List of network tags applied to auto-provisioned node pools.
     /// 
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<Vec<String>>>,
+    pub r#tags: Option<Vec<String>>,
 }

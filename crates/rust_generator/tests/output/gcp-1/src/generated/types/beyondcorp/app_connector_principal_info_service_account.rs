@@ -8,5 +8,5 @@ pub struct AppConnectorPrincipalInfoServiceAccount {
     /// - - -
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
 }

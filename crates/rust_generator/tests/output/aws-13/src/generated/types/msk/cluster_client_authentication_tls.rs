@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterClientAuthenticationTls {
     /// List of ACM Certificate Authority Amazon Resource Names (ARNs).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateAuthorityArns")]
-    pub r#certificate_authority_arns: Box<Option<Vec<String>>>,
+    pub r#certificate_authority_arns: Option<Vec<String>>,
 }

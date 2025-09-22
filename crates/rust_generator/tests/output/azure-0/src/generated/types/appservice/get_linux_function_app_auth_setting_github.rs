@@ -6,17 +6,17 @@ pub struct GetLinuxFunctionAppAuthSettingGithub {
     /// The OAuth 2.0 client ID that was created for the app used for authentication.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The OAuth 2.0 client secret that was created for the app used for authentication.
     #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<String>,
+    pub r#client_secret: String,
     /// The app setting name containing the OAuth 2.0 client secret that was created for the app used for authentication.
     #[builder(into)]
     #[serde(rename = "clientSecretSettingName")]
-    pub r#client_secret_setting_name: Box<String>,
+    pub r#client_secret_setting_name: String,
     /// A list of OAuth 2.0 scopes that will be requested as part of Microsoft Account authentication.
     #[builder(into)]
     #[serde(rename = "oauthScopes")]
-    pub r#oauth_scopes: Box<Vec<String>>,
+    pub r#oauth_scopes: Vec<String>,
 }

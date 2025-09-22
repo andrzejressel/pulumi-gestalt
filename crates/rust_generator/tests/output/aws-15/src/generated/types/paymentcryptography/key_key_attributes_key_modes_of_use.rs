@@ -4,39 +4,39 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KeyKeyAttributesKeyModesOfUse {
     /// Whether an AWS Payment Cryptography key can be used to decrypt data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "decrypt")]
-    pub r#decrypt: Box<Option<bool>>,
+    pub r#decrypt: Option<bool>,
     /// Whether an AWS Payment Cryptography key can be used to derive new keys.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deriveKey")]
-    pub r#derive_key: Box<Option<bool>>,
+    pub r#derive_key: Option<bool>,
     /// Whether an AWS Payment Cryptography key can be used to encrypt data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encrypt")]
-    pub r#encrypt: Box<Option<bool>>,
+    pub r#encrypt: Option<bool>,
     /// Whether an AWS Payment Cryptography key can be used to generate and verify other card and PIN verification keys.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "generate")]
-    pub r#generate: Box<Option<bool>>,
+    pub r#generate: Option<bool>,
     /// Whether an AWS Payment Cryptography key has no special restrictions other than the restrictions implied by KeyUsage.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "noRestrictions")]
-    pub r#no_restrictions: Box<Option<bool>>,
+    pub r#no_restrictions: Option<bool>,
     /// Whether an AWS Payment Cryptography key can be used for signing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sign")]
-    pub r#sign: Box<Option<bool>>,
+    pub r#sign: Option<bool>,
     /// Whether an AWS Payment Cryptography key can be used to unwrap other keys.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unwrap")]
-    pub r#unwrap: Box<Option<bool>>,
+    pub r#unwrap: Option<bool>,
     /// Whether an AWS Payment Cryptography key can be used to verify signatures.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "verify")]
-    pub r#verify: Box<Option<bool>>,
+    pub r#verify: Option<bool>,
     /// Whether an AWS Payment Cryptography key can be used to wrap other keys.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "wrap")]
-    pub r#wrap: Box<Option<bool>>,
+    pub r#wrap: Option<bool>,
 }

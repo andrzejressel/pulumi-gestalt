@@ -6,9 +6,9 @@ pub struct MetricAlertAction {
     /// The ID of the Action Group can be sourced from the `azure.monitoring.ActionGroup` resource
     #[builder(into)]
     #[serde(rename = "actionGroupId")]
-    pub r#action_group_id: Box<String>,
+    pub r#action_group_id: String,
     /// The map of custom string properties to include with the post operation. These data are appended to the webhook payload.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "webhookProperties")]
-    pub r#webhook_properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#webhook_properties: Option<std::collections::HashMap<String, String>>,
 }

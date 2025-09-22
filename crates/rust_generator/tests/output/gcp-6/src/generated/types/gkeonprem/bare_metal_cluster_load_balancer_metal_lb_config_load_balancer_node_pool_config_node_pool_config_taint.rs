@@ -5,15 +5,15 @@
 pub struct BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaint {
     /// Specifies the nodes operating system (default: LINUX).
     /// Possible values are: `EFFECT_UNSPECIFIED`, `PREFER_NO_SCHEDULE`, `NO_EXECUTE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "effect")]
-    pub r#effect: Box<Option<String>>,
+    pub r#effect: Option<String>,
     /// Key associated with the effect.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<String>>,
+    pub r#key: Option<String>,
     /// Value associated with the effect.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlexibleAppVersionDeploymentZip {
     /// files count
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filesCount")]
-    pub r#files_count: Box<Option<i32>>,
+    pub r#files_count: Option<i32>,
     /// Source URL
     #[builder(into)]
     #[serde(rename = "sourceUrl")]
-    pub r#source_url: Box<String>,
+    pub r#source_url: String,
 }

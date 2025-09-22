@@ -5,8 +5,8 @@
 pub struct GetBrokerEncryptionOption {
     #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<String>,
+    pub r#kms_key_id: String,
     #[builder(into)]
     #[serde(rename = "useAwsOwnedKey")]
-    pub r#use_aws_owned_key: Box<bool>,
+    pub r#use_aws_owned_key: bool,
 }

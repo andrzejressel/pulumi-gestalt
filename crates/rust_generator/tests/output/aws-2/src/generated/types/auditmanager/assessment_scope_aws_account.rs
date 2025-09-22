@@ -6,5 +6,5 @@ pub struct AssessmentScopeAwsAccount {
     /// Identifier for the Amazon Web Services account.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

@@ -3,11 +3,11 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DiagnosticSettingEnabledLogRetentionPolicy {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "days")]
-    pub r#days: Box<Option<i32>>,
+    pub r#days: Option<i32>,
     /// Is this Diagnostic Metric enabled? Defaults to `true`.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

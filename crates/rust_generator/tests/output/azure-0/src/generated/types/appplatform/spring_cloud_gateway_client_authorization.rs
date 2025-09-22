@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudGatewayClientAuthorization {
     /// Specifies the Spring Cloud Certificate IDs of the Spring Cloud Gateway.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateIds")]
-    pub r#certificate_ids: Box<Option<Vec<String>>>,
+    pub r#certificate_ids: Option<Vec<String>>,
     /// Specifies whether the client certificate verification is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "verificationEnabled")]
-    pub r#verification_enabled: Box<Option<bool>>,
+    pub r#verification_enabled: Option<bool>,
 }

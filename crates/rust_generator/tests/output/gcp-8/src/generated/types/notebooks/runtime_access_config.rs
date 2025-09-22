@@ -6,17 +6,17 @@ pub struct RuntimeAccessConfig {
     /// The type of access mode this instance. For valid values, see
     /// `https://cloud.google.com/vertex-ai/docs/workbench/reference/
     /// rest/v1/projects.locations.runtimes#RuntimeAccessType`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessType")]
-    pub r#access_type: Box<Option<String>>,
+    pub r#access_type: Option<String>,
     /// (Output)
     /// The proxy endpoint that is used to access the runtime.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "proxyUri")]
-    pub r#proxy_uri: Box<Option<String>>,
+    pub r#proxy_uri: Option<String>,
     /// The owner of this runtime after creation. Format: `alias@example.com`.
     /// Currently supports one owner only.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "runtimeOwner")]
-    pub r#runtime_owner: Box<Option<String>>,
+    pub r#runtime_owner: Option<String>,
 }

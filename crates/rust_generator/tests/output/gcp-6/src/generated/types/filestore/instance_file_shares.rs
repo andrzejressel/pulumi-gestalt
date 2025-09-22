@@ -7,20 +7,20 @@ pub struct InstanceFileShares {
     /// for the standard tier, or 2560 GiB for the premium tier.
     #[builder(into)]
     #[serde(rename = "capacityGb")]
-    pub r#capacity_gb: Box<i32>,
+    pub r#capacity_gb: i32,
     /// The name of the fileshare (16 characters or less)
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Nfs Export Options. There is a limit of 10 export options per file share.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nfsExportOptions")]
-    pub r#nfs_export_options: Box<Option<Vec<super::super::types::filestore::InstanceFileSharesNfsExportOption>>>,
+    pub r#nfs_export_options: Option<Vec<super::super::types::filestore::InstanceFileSharesNfsExportOption>>,
     /// The resource name of the backup, in the format
     /// projects/{projectId}/locations/{locationId}/backups/{backupId},
     /// that this file share has been restored from.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceBackup")]
-    pub r#source_backup: Box<Option<String>>,
+    pub r#source_backup: Option<String>,
 }

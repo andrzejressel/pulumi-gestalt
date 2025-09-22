@@ -6,5 +6,5 @@ pub struct MonitoringScheduleMonitoringScheduleConfigScheduleConfig {
     /// A cron expression that describes details about the monitoring schedule. For example, and hourly schedule would be `cron(0 * ? * * *)`.
     #[builder(into)]
     #[serde(rename = "scheduleExpression")]
-    pub r#schedule_expression: Box<String>,
+    pub r#schedule_expression: String,
 }

@@ -6,5 +6,5 @@ pub struct ApplicationApplicationConfigurationEnvironmentProperties {
     /// Describes the execution property groups.
     #[builder(into)]
     #[serde(rename = "propertyGroups")]
-    pub r#property_groups: Box<Vec<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationEnvironmentPropertiesPropertyGroup>>,
+    pub r#property_groups: Vec<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationEnvironmentPropertiesPropertyGroup>,
 }

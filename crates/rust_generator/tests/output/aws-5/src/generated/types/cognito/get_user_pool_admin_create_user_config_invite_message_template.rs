@@ -6,13 +6,13 @@ pub struct GetUserPoolAdminCreateUserConfigInviteMessageTemplate {
     /// - Email message content.
     #[builder(into)]
     #[serde(rename = "emailMessage")]
-    pub r#email_message: Box<String>,
+    pub r#email_message: String,
     /// - Email message subject.
     #[builder(into)]
     #[serde(rename = "emailSubject")]
-    pub r#email_subject: Box<String>,
+    pub r#email_subject: String,
     /// - SMS message content.
     #[builder(into)]
     #[serde(rename = "smsMessage")]
-    pub r#sms_message: Box<String>,
+    pub r#sms_message: String,
 }

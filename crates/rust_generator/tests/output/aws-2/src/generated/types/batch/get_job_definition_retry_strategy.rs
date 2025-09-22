@@ -6,9 +6,9 @@ pub struct GetJobDefinitionRetryStrategy {
     /// The number of times to move a job to the RUNNABLE status.
     #[builder(into)]
     #[serde(rename = "attempts")]
-    pub r#attempts: Box<i32>,
+    pub r#attempts: i32,
     /// Array of up to 5 objects that specify the conditions where jobs are retried or failed.
     #[builder(into)]
     #[serde(rename = "evaluateOnExits")]
-    pub r#evaluate_on_exits: Box<Vec<super::super::types::batch::GetJobDefinitionRetryStrategyEvaluateOnExit>>,
+    pub r#evaluate_on_exits: Vec<super::super::types::batch::GetJobDefinitionRetryStrategyEvaluateOnExit>,
 }

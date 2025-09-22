@@ -6,13 +6,13 @@ pub struct HciMarketplaceGalleryImageIdentifier {
     /// The offer of the Azure Stack HCI Marketplace Gallery Image. Changing this forces a new Azure Stack HCI Marketplace Gallery Image to be created.
     #[builder(into)]
     #[serde(rename = "offer")]
-    pub r#offer: Box<String>,
+    pub r#offer: String,
     /// The publisher of the Azure Stack HCI Marketplace Gallery Image. Changing this forces a new Azure Stack HCI Marketplace Gallery Image to be created.
     #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<String>,
+    pub r#publisher: String,
     /// The sku of the Azure Stack HCI Marketplace Gallery Image. Changing this forces a new Azure Stack HCI Marketplace Gallery Image to be created.
     #[builder(into)]
     #[serde(rename = "sku")]
-    pub r#sku: Box<String>,
+    pub r#sku: String,
 }

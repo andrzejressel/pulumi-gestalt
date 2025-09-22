@@ -6,9 +6,9 @@ pub struct BlockPublicAccessConfigurationPermittedPublicSecurityGroupRuleRange {
     /// The final port in the range of TCP ports.
     #[builder(into)]
     #[serde(rename = "maxRange")]
-    pub r#max_range: Box<i32>,
+    pub r#max_range: i32,
     /// The first port in the range of TCP ports.
     #[builder(into)]
     #[serde(rename = "minRange")]
-    pub r#min_range: Box<i32>,
+    pub r#min_range: i32,
 }

@@ -6,17 +6,17 @@ pub struct LinkedServiceAzureDatabricksInstancePool {
     /// Spark version of a the cluster.
     #[builder(into)]
     #[serde(rename = "clusterVersion")]
-    pub r#cluster_version: Box<String>,
+    pub r#cluster_version: String,
     /// Identifier of the instance pool within the linked ADB instance.
     #[builder(into)]
     #[serde(rename = "instancePoolId")]
-    pub r#instance_pool_id: Box<String>,
+    pub r#instance_pool_id: String,
     /// The max number of worker nodes. Set this value if you want to enable autoscaling between the `min_number_of_workers` and this value. Omit this value to use a fixed number of workers defined in the `min_number_of_workers` property.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxNumberOfWorkers")]
-    pub r#max_number_of_workers: Box<Option<i32>>,
+    pub r#max_number_of_workers: Option<i32>,
     /// The minimum number of worker nodes. Defaults to `1`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minNumberOfWorkers")]
-    pub r#min_number_of_workers: Box<Option<i32>>,
+    pub r#min_number_of_workers: Option<i32>,
 }

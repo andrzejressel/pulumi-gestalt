@@ -6,13 +6,13 @@ pub struct TagTag {
     /// Tag name.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Whether to propagate the tags to instances launched by the ASG.
     #[builder(into)]
     #[serde(rename = "propagateAtLaunch")]
-    pub r#propagate_at_launch: Box<bool>,
+    pub r#propagate_at_launch: bool,
     /// Tag value.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

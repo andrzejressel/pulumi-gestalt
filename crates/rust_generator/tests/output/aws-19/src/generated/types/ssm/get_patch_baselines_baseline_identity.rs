@@ -6,21 +6,21 @@ pub struct GetPatchBaselinesBaselineIdentity {
     /// Description of the patch baseline.
     #[builder(into)]
     #[serde(rename = "baselineDescription")]
-    pub r#baseline_description: Box<String>,
+    pub r#baseline_description: String,
     /// ID of the patch baseline.
     #[builder(into)]
     #[serde(rename = "baselineId")]
-    pub r#baseline_id: Box<String>,
+    pub r#baseline_id: String,
     /// Name of the patch baseline.
     #[builder(into)]
     #[serde(rename = "baselineName")]
-    pub r#baseline_name: Box<String>,
+    pub r#baseline_name: String,
     /// Indicates whether this is the default baseline. AWS Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system.
     #[builder(into)]
     #[serde(rename = "defaultBaseline")]
-    pub r#default_baseline: Box<bool>,
+    pub r#default_baseline: bool,
     /// Operating system the patch baseline applies to.
     #[builder(into)]
     #[serde(rename = "operatingSystem")]
-    pub r#operating_system: Box<String>,
+    pub r#operating_system: String,
 }

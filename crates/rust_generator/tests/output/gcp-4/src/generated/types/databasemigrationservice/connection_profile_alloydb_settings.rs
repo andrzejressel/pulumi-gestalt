@@ -9,17 +9,17 @@ pub struct ConnectionProfileAlloydbSettings {
     #[serde(rename = "initialUser")]
     pub r#initial_user: Box<super::super::types::databasemigrationservice::ConnectionProfileAlloydbSettingsInitialUser>,
     /// Labels for the AlloyDB cluster created by DMS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// Settings for the cluster's primary instance
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primaryInstanceSettings")]
-    pub r#primary_instance_settings: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileAlloydbSettingsPrimaryInstanceSettings>>,
+    pub r#primary_instance_settings: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileAlloydbSettingsPrimaryInstanceSettings>>,
     /// Required. The resource link for the VPC network in which cluster resources are created and from which they are accessible via Private IP. The network must belong to the same project as the cluster.
     /// It is specified in the form: 'projects/{project_number}/global/networks/{network_id}'. This is required to create a cluster.
     #[builder(into)]
     #[serde(rename = "vpcNetwork")]
-    pub r#vpc_network: Box<String>,
+    pub r#vpc_network: String,
 }

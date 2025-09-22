@@ -5,16 +5,16 @@
 pub struct HostingCustomDomainCertVerificationDns {
     /// (Output)
     /// The last time Hosting checked your CustomDomain's DNS records.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "checkTime")]
-    pub r#check_time: Box<Option<String>>,
+    pub r#check_time: Option<String>,
     /// A text string to serve at the path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "desireds")]
-    pub r#desireds: Box<Option<Vec<super::super::types::firebase::HostingCustomDomainCertVerificationDnsDesired>>>,
+    pub r#desireds: Option<Vec<super::super::types::firebase::HostingCustomDomainCertVerificationDnsDesired>>,
     /// Whether Hosting was able to find the required file contents on the
     /// specified path during its last check.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "discovereds")]
-    pub r#discovereds: Box<Option<Vec<super::super::types::firebase::HostingCustomDomainCertVerificationDnsDiscovered>>>,
+    pub r#discovereds: Option<Vec<super::super::types::firebase::HostingCustomDomainCertVerificationDnsDiscovered>>,
 }

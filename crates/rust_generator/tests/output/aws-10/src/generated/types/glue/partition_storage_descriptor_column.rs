@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PartitionStorageDescriptorColumn {
     /// Free-form text comment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "comment")]
-    pub r#comment: Box<Option<String>>,
+    pub r#comment: Option<String>,
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The datatype of data in the Column.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

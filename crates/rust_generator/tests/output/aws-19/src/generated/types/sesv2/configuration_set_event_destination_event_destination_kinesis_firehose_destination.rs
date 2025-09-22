@@ -6,9 +6,9 @@ pub struct ConfigurationSetEventDestinationEventDestinationKinesisFirehoseDestin
     /// The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that the Amazon SES API v2 sends email events to.
     #[builder(into)]
     #[serde(rename = "deliveryStreamArn")]
-    pub r#delivery_stream_arn: Box<String>,
+    pub r#delivery_stream_arn: String,
     /// The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2 uses to send email events to the Amazon Kinesis Data Firehose stream.
     #[builder(into)]
     #[serde(rename = "iamRoleArn")]
-    pub r#iam_role_arn: Box<String>,
+    pub r#iam_role_arn: String,
 }

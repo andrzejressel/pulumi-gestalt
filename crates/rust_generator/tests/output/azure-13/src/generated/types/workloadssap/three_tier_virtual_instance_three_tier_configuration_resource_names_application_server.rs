@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThreeTierVirtualInstanceThreeTierConfigurationResourceNamesApplicationServer {
     /// The full name for the availability set. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilitySetName")]
-    pub r#availability_set_name: Box<Option<String>>,
+    pub r#availability_set_name: Option<String>,
     /// One or more `virtual_machine` blocks as defined below. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualMachines")]
-    pub r#virtual_machines: Box<Option<Vec<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationResourceNamesApplicationServerVirtualMachine>>>,
+    pub r#virtual_machines: Option<Vec<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationResourceNamesApplicationServerVirtualMachine>>,
 }

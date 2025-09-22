@@ -5,11 +5,11 @@
 pub struct MultiRegionAccessPointDetailsRegion {
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
-    #[builder(into, default)]
+    pub r#bucket: String,
+    #[builder(into)]
     #[serde(rename = "bucketAccountId")]
-    pub r#bucket_account_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#bucket_account_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
 }

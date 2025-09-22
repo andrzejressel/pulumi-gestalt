@@ -6,5 +6,5 @@ pub struct GetDatabaseInstancesInstanceSettingActiveDirectoryConfig {
     /// Domain name of the Active Directory for SQL Server (e.g., mydomain.com).
     #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<String>,
+    pub r#domain: String,
 }

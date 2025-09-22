@@ -6,17 +6,17 @@ pub struct ConfigClient {
     /// (Output)
     /// API key that can be used when making requests for this project.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "apiKey")]
-    pub r#api_key: Box<Option<String>>,
+    pub r#api_key: Option<String>,
     /// (Output)
     /// Firebase subdomain.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "firebaseSubdomain")]
-    pub r#firebase_subdomain: Box<Option<String>>,
+    pub r#firebase_subdomain: Option<String>,
     /// Configuration related to restricting a user's ability to affect their account.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<Option<super::super::types::identityplatform::ConfigClientPermissions>>,
+    pub r#permissions: Option<Box<super::super::types::identityplatform::ConfigClientPermissions>>,
 }

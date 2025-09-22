@@ -6,5 +6,5 @@ pub struct GetJobDefinitionEksProperty {
     /// The properties for the Kubernetes pod resources of a job.
     #[builder(into)]
     #[serde(rename = "podProperties")]
-    pub r#pod_properties: Box<Vec<super::super::types::batch::GetJobDefinitionEksPropertyPodProperty>>,
+    pub r#pod_properties: Vec<super::super::types::batch::GetJobDefinitionEksPropertyPodProperty>,
 }

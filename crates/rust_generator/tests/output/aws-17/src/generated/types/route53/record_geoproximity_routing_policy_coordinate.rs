@@ -5,8 +5,8 @@
 pub struct RecordGeoproximityRoutingPolicyCoordinate {
     #[builder(into)]
     #[serde(rename = "latitude")]
-    pub r#latitude: Box<String>,
+    pub r#latitude: String,
     #[builder(into)]
     #[serde(rename = "longitude")]
-    pub r#longitude: Box<String>,
+    pub r#longitude: String,
 }

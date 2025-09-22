@@ -6,9 +6,9 @@ pub struct GetAlertRuleTemplateSecurityIncidentTemplate {
     /// The description of this Sentinel Scheduled Alert Rule Template.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// The Microsoft Security Service from where the alert will be generated.
     #[builder(into)]
     #[serde(rename = "productFilter")]
-    pub r#product_filter: Box<String>,
+    pub r#product_filter: String,
 }

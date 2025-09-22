@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ComputeClusterSsh {
     /// Password of the administrator user account. Changing this forces a new Machine Learning Compute Cluster to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "adminPassword")]
-    pub r#admin_password: Box<Option<String>>,
+    pub r#admin_password: Option<String>,
     /// Name of the administrator user account which can be used to SSH to nodes. Changing this forces a new Machine Learning Compute Cluster to be created.
     #[builder(into)]
     #[serde(rename = "adminUsername")]
-    pub r#admin_username: Box<String>,
+    pub r#admin_username: String,
     /// SSH public key of the administrator user account. Changing this forces a new Machine Learning Compute Cluster to be created.
     /// 
     /// > **NOTE:** At least one of `admin_password` and `key_value` shoud be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyValue")]
-    pub r#key_value: Box<Option<String>>,
+    pub r#key_value: Option<String>,
 }

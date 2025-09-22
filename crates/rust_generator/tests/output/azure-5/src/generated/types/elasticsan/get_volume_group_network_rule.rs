@@ -6,9 +6,9 @@ pub struct GetVolumeGroupNetworkRule {
     /// The action to take when an access attempt to this Elastic SAN Volume Group from this Subnet is made.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// The ID of the Subnet from which access to this Elastic SAN Volume Group is allowed.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

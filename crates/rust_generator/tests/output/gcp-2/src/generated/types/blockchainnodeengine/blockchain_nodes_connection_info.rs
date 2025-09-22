@@ -6,12 +6,12 @@ pub struct BlockchainNodesConnectionInfo {
     /// (Output)
     /// The endpoint information through which to interact with a blockchain node.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpointInfos")]
-    pub r#endpoint_infos: Box<Option<Vec<super::super::types::blockchainnodeengine::BlockchainNodesConnectionInfoEndpointInfo>>>,
+    pub r#endpoint_infos: Option<Vec<super::super::types::blockchainnodeengine::BlockchainNodesConnectionInfoEndpointInfo>>,
     /// (Output)
     /// A service attachment that exposes a node, and has the following format: projects/{project}/regions/{region}/serviceAttachments/{service_attachment_name}
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAttachment")]
-    pub r#service_attachment: Box<Option<String>>,
+    pub r#service_attachment: Option<String>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FileSystemProtection {
     /// Indicates whether replication overwrite protection is enabled. Valid values: `ENABLED` or `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replicationOverwrite")]
-    pub r#replication_overwrite: Box<Option<String>>,
+    pub r#replication_overwrite: Option<String>,
 }

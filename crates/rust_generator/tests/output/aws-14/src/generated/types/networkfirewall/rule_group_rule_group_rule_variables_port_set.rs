@@ -6,7 +6,7 @@ pub struct RuleGroupRuleGroupRuleVariablesPortSet {
     /// An unique alphanumeric string to identify the `port_set`.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// A configuration block that defines a set of port ranges. See Port Set below for details.
     #[builder(into)]
     #[serde(rename = "portSet")]

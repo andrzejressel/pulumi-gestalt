@@ -6,21 +6,21 @@ pub struct GetCertificateCertificatePolicyX509CertificateProperty {
     /// A list of Extended/Enhanced Key Usages.
     #[builder(into)]
     #[serde(rename = "extendedKeyUsages")]
-    pub r#extended_key_usages: Box<Vec<String>>,
+    pub r#extended_key_usages: Vec<String>,
     /// A list of uses associated with this Key.
     #[builder(into)]
     #[serde(rename = "keyUsages")]
-    pub r#key_usages: Box<Vec<String>>,
+    pub r#key_usages: Vec<String>,
     /// The Certificate's Subject.
     #[builder(into)]
     #[serde(rename = "subject")]
-    pub r#subject: Box<String>,
+    pub r#subject: String,
     /// A `subject_alternative_names` block as defined below.
     #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Box<Vec<super::super::types::keyvault::GetCertificateCertificatePolicyX509CertificatePropertySubjectAlternativeName>>,
+    pub r#subject_alternative_names: Vec<super::super::types::keyvault::GetCertificateCertificatePolicyX509CertificatePropertySubjectAlternativeName>,
     /// The Certificates Validity Period in Months.
     #[builder(into)]
     #[serde(rename = "validityInMonths")]
-    pub r#validity_in_months: Box<i32>,
+    pub r#validity_in_months: i32,
 }

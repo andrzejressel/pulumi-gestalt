@@ -7,13 +7,13 @@ pub struct PatchDeploymentRecurringScheduleMonthlyWeekDayOfMonth {
     /// Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     /// Represents the number of days before or after the given week day of month that the patch deployment is scheduled for.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dayOffset")]
-    pub r#day_offset: Box<Option<i32>>,
+    pub r#day_offset: Option<i32>,
     /// Week number in a month. 1-4 indicates the 1st to 4th week of the month. -1 indicates the last week of the month.
     #[builder(into)]
     #[serde(rename = "weekOrdinal")]
-    pub r#week_ordinal: Box<i32>,
+    pub r#week_ordinal: i32,
 }

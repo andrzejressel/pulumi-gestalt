@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccessApplicationSaasAppHybridAndImplicitOptions {
     /// If true, the authorization endpoint will return an access token.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "returnAccessTokenFromAuthorizationEndpoint")]
-    pub r#return_access_token_from_authorization_endpoint: Box<Option<bool>>,
+    pub r#return_access_token_from_authorization_endpoint: Option<bool>,
     /// If true, the authorization endpoint will return an id token.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "returnIdTokenFromAuthorizationEndpoint")]
-    pub r#return_id_token_from_authorization_endpoint: Box<Option<bool>>,
+    pub r#return_id_token_from_authorization_endpoint: Option<bool>,
 }

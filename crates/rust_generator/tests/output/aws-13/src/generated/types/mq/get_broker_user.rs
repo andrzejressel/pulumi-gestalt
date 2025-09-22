@@ -5,14 +5,14 @@
 pub struct GetBrokerUser {
     #[builder(into)]
     #[serde(rename = "consoleAccess")]
-    pub r#console_access: Box<bool>,
+    pub r#console_access: bool,
     #[builder(into)]
     #[serde(rename = "groups")]
-    pub r#groups: Box<Vec<String>>,
+    pub r#groups: Vec<String>,
     #[builder(into)]
     #[serde(rename = "replicationUser")]
-    pub r#replication_user: Box<bool>,
+    pub r#replication_user: bool,
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

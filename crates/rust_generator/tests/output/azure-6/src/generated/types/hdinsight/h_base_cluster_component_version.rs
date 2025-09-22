@@ -6,5 +6,5 @@ pub struct HBaseClusterComponentVersion {
     /// The version of HBase which should be used for this HDInsight HBase Cluster. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "hbase")]
-    pub r#hbase: Box<String>,
+    pub r#hbase: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceFromMachineImageShieldedInstanceConfig {
     /// Whether integrity monitoring is enabled for the instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableIntegrityMonitoring")]
-    pub r#enable_integrity_monitoring: Box<Option<bool>>,
+    pub r#enable_integrity_monitoring: Option<bool>,
     /// Whether secure boot is enabled for the instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableSecureBoot")]
-    pub r#enable_secure_boot: Box<Option<bool>>,
+    pub r#enable_secure_boot: Option<bool>,
     /// Whether the instance uses vTPM.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableVtpm")]
-    pub r#enable_vtpm: Box<Option<bool>>,
+    pub r#enable_vtpm: Option<bool>,
 }

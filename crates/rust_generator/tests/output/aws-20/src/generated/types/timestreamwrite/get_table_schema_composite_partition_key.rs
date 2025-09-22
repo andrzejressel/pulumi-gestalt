@@ -5,13 +5,13 @@
 pub struct GetTableSchemaCompositePartitionKey {
     #[builder(into)]
     #[serde(rename = "enforcementInRecord")]
-    pub r#enforcement_in_record: Box<String>,
+    pub r#enforcement_in_record: String,
     /// Name of the Timestream table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Type of partition key.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

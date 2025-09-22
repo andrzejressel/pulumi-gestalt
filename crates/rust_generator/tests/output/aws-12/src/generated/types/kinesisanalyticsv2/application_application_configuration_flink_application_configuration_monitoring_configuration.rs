@@ -6,13 +6,13 @@ pub struct ApplicationApplicationConfigurationFlinkApplicationConfigurationMonit
     /// Describes whether to use the default CloudWatch logging configuration for an application. Valid values: `CUSTOM`, `DEFAULT`. Set this attribute to `CUSTOM` in order for any specified `log_level` or `metrics_level` attribute values to be effective.
     #[builder(into)]
     #[serde(rename = "configurationType")]
-    pub r#configuration_type: Box<String>,
+    pub r#configuration_type: String,
     /// Describes the verbosity of the CloudWatch Logs for an application. Valid values: `DEBUG`, `ERROR`, `INFO`, `WARN`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logLevel")]
-    pub r#log_level: Box<Option<String>>,
+    pub r#log_level: Option<String>,
     /// Describes the granularity of the CloudWatch Logs for an application. Valid values: `APPLICATION`, `OPERATOR`, `PARALLELISM`, `TASK`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricsLevel")]
-    pub r#metrics_level: Box<Option<String>>,
+    pub r#metrics_level: Option<String>,
 }

@@ -6,13 +6,13 @@ pub struct CertificateContactsContact {
     /// E-mail address of the contact.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
     /// Name of the contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Phone number of the contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "phone")]
-    pub r#phone: Box<Option<String>>,
+    pub r#phone: Option<String>,
 }

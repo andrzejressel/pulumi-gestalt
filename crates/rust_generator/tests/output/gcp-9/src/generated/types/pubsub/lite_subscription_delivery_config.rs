@@ -7,5 +7,5 @@ pub struct LiteSubscriptionDeliveryConfig {
     /// Possible values are: `DELIVER_IMMEDIATELY`, `DELIVER_AFTER_STORED`, `DELIVERY_REQUIREMENT_UNSPECIFIED`.
     #[builder(into)]
     #[serde(rename = "deliveryRequirement")]
-    pub r#delivery_requirement: Box<String>,
+    pub r#delivery_requirement: String,
 }

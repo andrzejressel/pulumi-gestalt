@@ -4,31 +4,31 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpotFleetRequestLaunchTemplateConfigOverride {
     /// The availability zone in which to place the request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<Option<String>>,
+    pub r#availability_zone: Option<String>,
     /// The instance requirements. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceRequirements")]
-    pub r#instance_requirements: Box<Option<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirements>>,
+    pub r#instance_requirements: Option<Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirements>>,
     /// The type of instance to request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceType")]
-    pub r#instance_type: Box<Option<String>>,
+    pub r#instance_type: Option<String>,
     /// The priority for the launch template override. The lower the number, the higher the priority. If no number is set, the launch template override has the lowest priority.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<Option<f64>>,
+    pub r#priority: Option<f64>,
     /// The maximum spot bid for this override request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "spotPrice")]
-    pub r#spot_price: Box<Option<String>>,
+    pub r#spot_price: Option<String>,
     /// The subnet in which to launch the requested instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<Option<String>>,
+    pub r#subnet_id: Option<String>,
     /// The capacity added to the fleet by a fulfilled request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weightedCapacity")]
-    pub r#weighted_capacity: Box<Option<f64>>,
+    pub r#weighted_capacity: Option<f64>,
 }

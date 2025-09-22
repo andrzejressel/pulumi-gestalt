@@ -3,21 +3,21 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUse {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allow")]
-    pub r#allow: Box<Option<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllow>>,
-    #[builder(into, default)]
+    pub r#allow: Option<Box<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllow>>,
+    #[builder(into)]
     #[serde(rename = "block")]
-    pub r#block: Box<Option<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlock>>,
+    pub r#block: Option<Box<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlock>>,
     /// Instructs AWS WAF to run a Captcha check against the web request. See `captcha` below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "captcha")]
-    pub r#captcha: Box<Option<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptcha>>,
+    pub r#captcha: Option<Box<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptcha>>,
     /// Instructs AWS WAF to run a check against the request to verify that the request is coming from a legitimate client session. See `challenge` below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "challenge")]
-    pub r#challenge: Box<Option<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallenge>>,
-    #[builder(into, default)]
+    pub r#challenge: Option<Box<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallenge>>,
+    #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<Option<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCount>>,
+    pub r#count: Option<Box<super::super::types::wafv2::WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCount>>,
 }

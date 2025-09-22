@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPattern {
     /// An empty configuration block that is used for inspecting all headers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "all")]
-    pub r#all: Box<Option<super::super::types::wafv2::WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAll>>,
-    #[builder(into, default)]
+    pub r#all: Option<Box<super::super::types::wafv2::WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAll>>,
+    #[builder(into)]
     #[serde(rename = "excludedCookies")]
-    pub r#excluded_cookies: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#excluded_cookies: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "includedCookies")]
-    pub r#included_cookies: Box<Option<Vec<String>>>,
+    pub r#included_cookies: Option<Vec<String>>,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigPredicate {
     /// Description of the expression
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Textual representation of an expression in Common Expression Language syntax.
     #[builder(into)]
     #[serde(rename = "expression")]
-    pub r#expression: Box<String>,
+    pub r#expression: String,
     /// String indicating the location of the expression for error reporting, e.g. a file name and a position in the file
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<Option<String>>,
+    pub r#location: Option<String>,
     /// Title for the expression, i.e. a short string describing its purpose.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "title")]
-    pub r#title: Box<Option<String>>,
+    pub r#title: Option<String>,
 }

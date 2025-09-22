@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TopicRuleErrorActionKinesis {
     /// The partition key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "partitionKey")]
-    pub r#partition_key: Box<Option<String>>,
+    pub r#partition_key: Option<String>,
     /// The ARN of the IAM role that grants access to the Amazon Kinesis stream.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// The name of the Amazon Kinesis stream.
     #[builder(into)]
     #[serde(rename = "streamName")]
-    pub r#stream_name: Box<String>,
+    pub r#stream_name: String,
 }

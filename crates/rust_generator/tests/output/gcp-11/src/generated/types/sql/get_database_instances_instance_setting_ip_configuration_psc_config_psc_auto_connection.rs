@@ -6,9 +6,9 @@ pub struct GetDatabaseInstancesInstanceSettingIpConfigurationPscConfigPscAutoCon
     /// The consumer network of this consumer endpoint. This must be a resource path that includes both the host project and the network name. The consumer host project of this network might be different from the consumer service project.
     #[builder(into)]
     #[serde(rename = "consumerNetwork")]
-    pub r#consumer_network: Box<String>,
+    pub r#consumer_network: String,
     /// The project ID of consumer service project of this consumer endpoint.
     #[builder(into)]
     #[serde(rename = "consumerServiceProjectId")]
-    pub r#consumer_service_project_id: Box<String>,
+    pub r#consumer_service_project_id: String,
 }

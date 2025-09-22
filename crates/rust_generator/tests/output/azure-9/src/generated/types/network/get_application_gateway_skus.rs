@@ -6,13 +6,13 @@ pub struct GetApplicationGatewaySkus {
     /// The Capacity of the SKU in use for this Application Gateway.
     #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<i32>,
+    pub r#capacity: i32,
     /// The name of this Application Gateway.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The Tier of the SKU in use for this Application Gateway.
     #[builder(into)]
     #[serde(rename = "tier")]
-    pub r#tier: Box<String>,
+    pub r#tier: String,
 }

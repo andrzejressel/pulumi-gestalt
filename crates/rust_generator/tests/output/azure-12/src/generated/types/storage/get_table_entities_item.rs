@@ -6,13 +6,13 @@ pub struct GetTableEntitiesItem {
     /// Partition Key of the Entity.
     #[builder(into)]
     #[serde(rename = "partitionKey")]
-    pub r#partition_key: Box<String>,
+    pub r#partition_key: String,
     /// A map of any additional properties in key-value format.
     #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<std::collections::HashMap<String, String>>,
+    pub r#properties: std::collections::HashMap<String, String>,
     /// Row Key of the Entity.
     #[builder(into)]
     #[serde(rename = "rowKey")]
-    pub r#row_key: Box<String>,
+    pub r#row_key: String,
 }

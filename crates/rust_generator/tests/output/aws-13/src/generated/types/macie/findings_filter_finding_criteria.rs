@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FindingsFilterFindingCriteria {
     /// A condition that specifies the property, operator, and one or more values to use to filter the results.  (documented below)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "criterions")]
-    pub r#criterions: Box<Option<Vec<super::super::types::macie::FindingsFilterFindingCriteriaCriterion>>>,
+    pub r#criterions: Option<Vec<super::super::types::macie::FindingsFilterFindingCriteriaCriterion>>,
 }

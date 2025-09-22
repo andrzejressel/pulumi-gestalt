@@ -6,9 +6,9 @@ pub struct GetApplicationGatewayProbeMatch {
     /// A snippet from the Response Body which must be present in the Response.
     #[builder(into)]
     #[serde(rename = "body")]
-    pub r#body: Box<String>,
+    pub r#body: String,
     /// Status code of the application gateway custom error.
     #[builder(into)]
     #[serde(rename = "statusCodes")]
-    pub r#status_codes: Box<Vec<String>>,
+    pub r#status_codes: Vec<String>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MediaInsightsPipelineConfigurationElementS3RecordingSinkConfiguration {
     /// S3 URI to deliver recordings.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destination")]
-    pub r#destination: Box<Option<String>>,
+    pub r#destination: Option<String>,
 }

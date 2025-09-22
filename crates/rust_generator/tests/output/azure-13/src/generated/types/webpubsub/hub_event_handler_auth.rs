@@ -8,5 +8,5 @@ pub struct HubEventHandlerAuth {
     /// > **NOTE:** `managed_identity_id` is required if the auth block is defined
     #[builder(into)]
     #[serde(rename = "managedIdentityId")]
-    pub r#managed_identity_id: Box<String>,
+    pub r#managed_identity_id: String,
 }

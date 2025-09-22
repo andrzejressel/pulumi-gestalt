@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CryptoKeyVersionExternalProtectionLevelOptions {
     /// The path to the external key material on the EKM when using EkmConnection e.g., "v0/my/key". Set this field instead of externalKeyUri when using an EkmConnection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ekmConnectionKeyPath")]
-    pub r#ekm_connection_key_path: Box<Option<String>>,
+    pub r#ekm_connection_key_path: Option<String>,
     /// The URI for an external resource that this CryptoKeyVersion represents.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "externalKeyUri")]
-    pub r#external_key_uri: Box<Option<String>>,
+    pub r#external_key_uri: Option<String>,
 }

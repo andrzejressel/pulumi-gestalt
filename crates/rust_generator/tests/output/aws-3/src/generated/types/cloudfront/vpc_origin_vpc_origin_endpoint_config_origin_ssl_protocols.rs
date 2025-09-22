@@ -5,8 +5,8 @@
 pub struct VpcOriginVpcOriginEndpointConfigOriginSslProtocols {
     #[builder(into)]
     #[serde(rename = "items")]
-    pub r#items: Box<Vec<String>>,
+    pub r#items: Vec<String>,
     #[builder(into)]
     #[serde(rename = "quantity")]
-    pub r#quantity: Box<i32>,
+    pub r#quantity: i32,
 }

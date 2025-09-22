@@ -6,9 +6,9 @@ pub struct VMwareNodePoolNodePoolAutoscaling {
     /// Maximum number of replicas in the NodePool.
     #[builder(into)]
     #[serde(rename = "maxReplicas")]
-    pub r#max_replicas: Box<i32>,
+    pub r#max_replicas: i32,
     /// Minimum number of replicas in the NodePool.
     #[builder(into)]
     #[serde(rename = "minReplicas")]
-    pub r#min_replicas: Box<i32>,
+    pub r#min_replicas: i32,
 }

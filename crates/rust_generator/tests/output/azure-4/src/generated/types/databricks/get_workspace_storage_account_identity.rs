@@ -6,13 +6,13 @@ pub struct GetWorkspaceStorageAccountIdentity {
     /// The principal UUID for the internal databricks storage account needed to provide access to the workspace for enabling Customer Managed Keys.
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     /// The UUID of the tenant where the internal databricks storage account was created.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
     /// The type of the internal databricks storage account.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

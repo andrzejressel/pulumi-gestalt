@@ -5,7 +5,7 @@
 pub struct PreventionDiscoveryConfigTargetBigQueryTargetCadenceInspectTemplateModifiedCadence {
     /// How frequently data profiles can be updated when the template is modified. Defaults to never.
     /// Possible values are: `UPDATE_FREQUENCY_NEVER`, `UPDATE_FREQUENCY_DAILY`, `UPDATE_FREQUENCY_MONTHLY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "frequency")]
-    pub r#frequency: Box<Option<String>>,
+    pub r#frequency: Option<String>,
 }

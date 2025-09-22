@@ -6,5 +6,5 @@ pub struct GetIndexIndexStatisticFaqStatistic {
     /// The total number of FAQ questions and answers contained in the index.
     #[builder(into)]
     #[serde(rename = "indexedQuestionAnswersCount")]
-    pub r#indexed_question_answers_count: Box<i32>,
+    pub r#indexed_question_answers_count: i32,
 }

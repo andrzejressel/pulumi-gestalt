@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WindowsWebAppSiteConfigHandlerMapping {
     /// Specifies the command-line arguments to be passed to the script processor.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "arguments")]
-    pub r#arguments: Box<Option<String>>,
+    pub r#arguments: Option<String>,
     /// Specifies which extension to be handled by the specified FastCGI application.
     #[builder(into)]
     #[serde(rename = "extension")]
-    pub r#extension: Box<String>,
+    pub r#extension: String,
     /// Specifies the absolute path to the FastCGI application.
     #[builder(into)]
     #[serde(rename = "scriptProcessorPath")]
-    pub r#script_processor_path: Box<String>,
+    pub r#script_processor_path: String,
 }

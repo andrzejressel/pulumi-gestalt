@@ -6,21 +6,21 @@ pub struct ResourceSetResourceDnsTargetResource {
     /// DNS Name that acts as the ingress point to a portion of application.
     #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<String>,
+    pub r#domain_name: String,
     /// Hosted Zone ARN that contains the DNS record with the provided name of target resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostedZoneArn")]
-    pub r#hosted_zone_arn: Box<Option<String>>,
+    pub r#hosted_zone_arn: Option<String>,
     /// Route53 record set id to uniquely identify a record given a `domain_name` and a `record_type`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordSetId")]
-    pub r#record_set_id: Box<Option<String>>,
+    pub r#record_set_id: Option<String>,
     /// Type of DNS Record of target resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordType")]
-    pub r#record_type: Box<Option<String>>,
+    pub r#record_type: Option<String>,
     /// Target resource the R53 record specified with the above params points to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetResource")]
-    pub r#target_resource: Box<Option<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResourceTargetResource>>,
+    pub r#target_resource: Option<Box<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResourceTargetResource>>,
 }

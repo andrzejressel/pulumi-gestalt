@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationSetVdmOptions {
     /// Specifies additional settings for your VDM configuration as applicable to the Dashboard. See `dashboard_options` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dashboardOptions")]
-    pub r#dashboard_options: Box<Option<super::super::types::sesv2::ConfigurationSetVdmOptionsDashboardOptions>>,
+    pub r#dashboard_options: Option<Box<super::super::types::sesv2::ConfigurationSetVdmOptionsDashboardOptions>>,
     /// Specifies additional settings for your VDM configuration as applicable to the Guardian. See `guardian_options` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "guardianOptions")]
-    pub r#guardian_options: Box<Option<super::super::types::sesv2::ConfigurationSetVdmOptionsGuardianOptions>>,
+    pub r#guardian_options: Option<Box<super::super::types::sesv2::ConfigurationSetVdmOptionsGuardianOptions>>,
 }

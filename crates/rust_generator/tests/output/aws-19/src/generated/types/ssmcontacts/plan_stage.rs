@@ -6,9 +6,9 @@ pub struct PlanStage {
     /// The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.
     #[builder(into)]
     #[serde(rename = "durationInMinutes")]
-    pub r#duration_in_minutes: Box<i32>,
+    pub r#duration_in_minutes: i32,
     /// One or more configuration blocks for specifying the contacts or contact methods that the escalation plan or engagement plan is engaging. See Target below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targets")]
-    pub r#targets: Box<Option<Vec<super::super::types::ssmcontacts::PlanStageTarget>>>,
+    pub r#targets: Option<Vec<super::super::types::ssmcontacts::PlanStageTarget>>,
 }

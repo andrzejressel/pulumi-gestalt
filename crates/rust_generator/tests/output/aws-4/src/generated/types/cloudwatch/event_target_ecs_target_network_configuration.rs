@@ -6,15 +6,15 @@ pub struct EventTargetEcsTargetNetworkConfiguration {
     /// Assign a public IP address to the ENI (Fargate launch type only). Valid values are `true` or `false`. Defaults to `false`.
     /// 
     /// For more information, see [Task Networking](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "assignPublicIp")]
-    pub r#assign_public_ip: Box<Option<bool>>,
+    pub r#assign_public_ip: Option<bool>,
     /// The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "securityGroups")]
-    pub r#security_groups: Box<Option<Vec<String>>>,
+    pub r#security_groups: Option<Vec<String>>,
     /// The subnets associated with the task or service.
     #[builder(into)]
     #[serde(rename = "subnets")]
-    pub r#subnets: Box<Vec<String>>,
+    pub r#subnets: Vec<String>,
 }

@@ -6,5 +6,5 @@ pub struct InferenceProfileModelSource {
     /// The Amazon Resource Name (ARN) of the model.
     #[builder(into)]
     #[serde(rename = "copyFrom")]
-    pub r#copy_from: Box<String>,
+    pub r#copy_from: String,
 }

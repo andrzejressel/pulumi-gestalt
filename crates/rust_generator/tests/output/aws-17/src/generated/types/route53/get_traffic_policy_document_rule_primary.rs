@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetTrafficPolicyDocumentRulePrimary {
     /// References to an endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpointReference")]
-    pub r#endpoint_reference: Box<Option<String>>,
+    pub r#endpoint_reference: Option<String>,
     /// Indicates whether you want Amazon Route 53 to evaluate the health of the endpoint and route traffic only to healthy endpoints.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "evaluateTargetHealth")]
-    pub r#evaluate_target_health: Box<Option<bool>>,
+    pub r#evaluate_target_health: Option<bool>,
     /// If you want to associate a health check with the endpoint or rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "healthCheck")]
-    pub r#health_check: Box<Option<String>>,
+    pub r#health_check: Option<String>,
     /// References to a rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ruleReference")]
-    pub r#rule_reference: Box<Option<String>>,
+    pub r#rule_reference: Option<String>,
 }

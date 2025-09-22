@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApiDiagnosticBackendResponse {
     /// Number of payload bytes to log (up to 8192).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bodyBytes")]
-    pub r#body_bytes: Box<Option<i32>>,
+    pub r#body_bytes: Option<i32>,
     /// A `data_masking` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataMasking")]
-    pub r#data_masking: Box<Option<super::super::types::apimanagement::ApiDiagnosticBackendResponseDataMasking>>,
+    pub r#data_masking: Option<Box<super::super::types::apimanagement::ApiDiagnosticBackendResponseDataMasking>>,
     /// Specifies a list of headers to log.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headersToLogs")]
-    pub r#headers_to_logs: Box<Option<Vec<String>>>,
+    pub r#headers_to_logs: Option<Vec<String>>,
 }

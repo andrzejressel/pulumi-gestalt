@@ -6,13 +6,13 @@ pub struct ApplicationGatewayWafConfigurationExclusion {
     /// Match variable of the exclusion rule to exclude header, cookie or GET arguments. Possible values are `RequestArgKeys`, `RequestArgNames`, `RequestArgValues`, `RequestCookieKeys`, `RequestCookieNames`, `RequestCookieValues`, `RequestHeaderKeys`, `RequestHeaderNames` and `RequestHeaderValues`
     #[builder(into)]
     #[serde(rename = "matchVariable")]
-    pub r#match_variable: Box<String>,
+    pub r#match_variable: String,
     /// String value which will be used for the filter operation. If empty will exclude all traffic on this `match_variable`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "selector")]
-    pub r#selector: Box<Option<String>>,
+    pub r#selector: Option<String>,
     /// Operator which will be used to search in the variable content. Possible values are `Contains`, `EndsWith`, `Equals`, `EqualsAny` and `StartsWith`. If empty will exclude all traffic on this `match_variable`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "selectorMatchOperator")]
-    pub r#selector_match_operator: Box<Option<String>>,
+    pub r#selector_match_operator: Option<String>,
 }

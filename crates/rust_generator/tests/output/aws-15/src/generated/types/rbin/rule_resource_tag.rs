@@ -8,9 +8,9 @@ pub struct RuleResourceTag {
     /// The following argument is optional:
     #[builder(into)]
     #[serde(rename = "resourceTagKey")]
-    pub r#resource_tag_key: Box<String>,
+    pub r#resource_tag_key: String,
     /// The tag value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceTagValue")]
-    pub r#resource_tag_value: Box<Option<String>>,
+    pub r#resource_tag_value: Option<String>,
 }

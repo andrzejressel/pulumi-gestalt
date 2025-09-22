@@ -6,9 +6,9 @@ pub struct GetWindowsWebAppSiteConfigVirtualApplicationVirtualDirectory {
     /// The path on disk to the Virtual Directory
     #[builder(into)]
     #[serde(rename = "physicalPath")]
-    pub r#physical_path: Box<String>,
+    pub r#physical_path: String,
     /// The Virtual Path of the Virtual Directory.
     #[builder(into)]
     #[serde(rename = "virtualPath")]
-    pub r#virtual_path: Box<String>,
+    pub r#virtual_path: String,
 }

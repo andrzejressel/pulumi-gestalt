@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ImageOutputResource {
     /// Set of objects with each Amazon Machine Image (AMI) created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "amis")]
-    pub r#amis: Box<Option<Vec<super::super::types::imagebuilder::ImageOutputResourceAmi>>>,
+    pub r#amis: Option<Vec<super::super::types::imagebuilder::ImageOutputResourceAmi>>,
     /// Set of objects with each container image created and stored in the output repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containers")]
-    pub r#containers: Box<Option<Vec<super::super::types::imagebuilder::ImageOutputResourceContainer>>>,
+    pub r#containers: Option<Vec<super::super::types::imagebuilder::ImageOutputResourceContainer>>,
 }

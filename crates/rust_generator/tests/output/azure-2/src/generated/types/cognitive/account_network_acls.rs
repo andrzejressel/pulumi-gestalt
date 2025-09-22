@@ -6,13 +6,13 @@ pub struct AccountNetworkAcls {
     /// The Default Action to use when no rules match from `ip_rules` / `virtual_network_rules`. Possible values are `Allow` and `Deny`.
     #[builder(into)]
     #[serde(rename = "defaultAction")]
-    pub r#default_action: Box<String>,
+    pub r#default_action: String,
     /// One or more IP Addresses, or CIDR Blocks which should be able to access the Cognitive Account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipRules")]
-    pub r#ip_rules: Box<Option<Vec<String>>>,
+    pub r#ip_rules: Option<Vec<String>>,
     /// A `virtual_network_rules` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualNetworkRules")]
-    pub r#virtual_network_rules: Box<Option<Vec<super::super::types::cognitive::AccountNetworkAclsVirtualNetworkRule>>>,
+    pub r#virtual_network_rules: Option<Vec<super::super::types::cognitive::AccountNetworkAclsVirtualNetworkRule>>,
 }

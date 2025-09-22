@@ -5,17 +5,17 @@
 pub struct GetDataSetPhysicalTableMapS3SourceUploadSetting {
     #[builder(into)]
     #[serde(rename = "containsHeader")]
-    pub r#contains_header: Box<bool>,
+    pub r#contains_header: bool,
     #[builder(into)]
     #[serde(rename = "delimiter")]
-    pub r#delimiter: Box<String>,
+    pub r#delimiter: String,
     #[builder(into)]
     #[serde(rename = "format")]
-    pub r#format: Box<String>,
+    pub r#format: String,
     #[builder(into)]
     #[serde(rename = "startFromRow")]
-    pub r#start_from_row: Box<i32>,
+    pub r#start_from_row: i32,
     #[builder(into)]
     #[serde(rename = "textQualifier")]
-    pub r#text_qualifier: Box<String>,
+    pub r#text_qualifier: String,
 }

@@ -6,5 +6,5 @@ pub struct GetClusterNotificationConfigPubsubFilter {
     /// Can be used to filter what notifications are sent. Valid values include include UPGRADE_AVAILABLE_EVENT, UPGRADE_EVENT and SECURITY_BULLETIN_EVENT
     #[builder(into)]
     #[serde(rename = "eventTypes")]
-    pub r#event_types: Box<Vec<String>>,
+    pub r#event_types: Vec<String>,
 }

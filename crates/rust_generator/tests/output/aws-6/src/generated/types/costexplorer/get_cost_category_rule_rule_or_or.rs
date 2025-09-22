@@ -6,13 +6,13 @@ pub struct GetCostCategoryRuleRuleOrOr {
     /// Configuration block for the filter that's based on `CostCategory` values. See below.
     #[builder(into)]
     #[serde(rename = "costCategories")]
-    pub r#cost_categories: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleOrOrCostCategory>>,
+    pub r#cost_categories: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleOrOrCostCategory>,
     /// Configuration block for the specific `Dimension` to use for `Expression`. See below.
     #[builder(into)]
     #[serde(rename = "dimensions")]
-    pub r#dimensions: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleOrOrDimension>>,
+    pub r#dimensions: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleOrOrDimension>,
     /// Configuration block for the specific `Tag` to use for `Expression`. See below.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleOrOrTag>>,
+    pub r#tags: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleOrOrTag>,
 }

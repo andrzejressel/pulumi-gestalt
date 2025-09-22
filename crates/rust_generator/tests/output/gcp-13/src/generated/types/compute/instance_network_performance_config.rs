@@ -7,5 +7,5 @@ pub struct InstanceNetworkPerformanceConfig {
     /// Possible values: TIER_1, DEFAULT
     #[builder(into)]
     #[serde(rename = "totalEgressBandwidthTier")]
-    pub r#total_egress_bandwidth_tier: Box<String>,
+    pub r#total_egress_bandwidth_tier: String,
 }

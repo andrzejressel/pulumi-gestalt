@@ -6,7 +6,7 @@ pub struct ServiceServiceReference {
     /// (Output)
     /// Output only. The underlying resource URI (For example, URI of Forwarding Rule, URL Map,
     /// and Backend Service).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<Option<String>>,
+    pub r#uri: Option<String>,
 }

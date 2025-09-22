@@ -6,9 +6,9 @@ pub struct FilterableProperty {
     /// Values to be filtered.
     #[builder(into)]
     #[serde(rename = "supportedValues")]
-    pub r#supported_values: Box<Vec<String>>,
+    pub r#supported_values: Vec<String>,
     /// Type of product filter.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<pulumi_gestalt_rust::OneOf2<String, super::types::SupportedFilterTypes>>,
+    pub r#type_: pulumi_gestalt_rust::OneOf2<String, Box<super::types::SupportedFilterTypes>>,
 }

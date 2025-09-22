@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecBackendDefault {
     #[builder(into)]
     #[serde(rename = "clientPolicies")]
-    pub r#client_policies: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendDefaultClientPolicy>>,
+    pub r#client_policies: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendDefaultClientPolicy>,
 }

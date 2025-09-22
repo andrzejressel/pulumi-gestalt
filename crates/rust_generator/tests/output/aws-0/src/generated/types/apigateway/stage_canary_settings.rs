@@ -6,17 +6,17 @@ pub struct StageCanarySettings {
     /// ID of the deployment that the canary points to.
     #[builder(into)]
     #[serde(rename = "deploymentId")]
-    pub r#deployment_id: Box<String>,
+    pub r#deployment_id: String,
     /// Percent `0.0` - `100.0` of traffic to divert to the canary deployment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "percentTraffic")]
-    pub r#percent_traffic: Box<Option<f64>>,
+    pub r#percent_traffic: Option<f64>,
     /// Map of overridden stage `variables` (including new variables) for the canary deployment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stageVariableOverrides")]
-    pub r#stage_variable_overrides: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#stage_variable_overrides: Option<std::collections::HashMap<String, String>>,
     /// Whether the canary deployment uses the stage cache. Defaults to false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useStageCache")]
-    pub r#use_stage_cache: Box<Option<bool>>,
+    pub r#use_stage_cache: Option<bool>,
 }

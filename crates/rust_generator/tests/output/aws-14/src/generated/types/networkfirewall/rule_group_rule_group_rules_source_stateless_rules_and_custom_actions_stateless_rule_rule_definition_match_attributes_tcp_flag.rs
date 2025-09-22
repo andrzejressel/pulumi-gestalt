@@ -7,10 +7,10 @@ pub struct RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessR
     /// Valid values: `FIN`, `SYN`, `RST`, `PSH`, `ACK`, `URG`, `ECE`, `CWR`.
     #[builder(into)]
     #[serde(rename = "flags")]
-    pub r#flags: Box<Vec<String>>,
+    pub r#flags: Vec<String>,
     /// Set of flags to consider in the inspection. To inspect all flags, leave this empty.
     /// Valid values: `FIN`, `SYN`, `RST`, `PSH`, `ACK`, `URG`, `ECE`, `CWR`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "masks")]
-    pub r#masks: Box<Option<Vec<String>>>,
+    pub r#masks: Option<Vec<String>>,
 }

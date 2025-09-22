@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelInputAttachment {
     /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input. See Automatic Input Failover Settings for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "automaticInputFailoverSettings")]
-    pub r#automatic_input_failover_settings: Box<Option<super::super::types::medialive::ChannelInputAttachmentAutomaticInputFailoverSettings>>,
+    pub r#automatic_input_failover_settings: Option<Box<super::super::types::medialive::ChannelInputAttachmentAutomaticInputFailoverSettings>>,
     /// User-specified name for the attachment.
     #[builder(into)]
     #[serde(rename = "inputAttachmentName")]
-    pub r#input_attachment_name: Box<String>,
+    pub r#input_attachment_name: String,
     /// The ID of the input.
     #[builder(into)]
     #[serde(rename = "inputId")]
-    pub r#input_id: Box<String>,
+    pub r#input_id: String,
     /// Settings of an input. See Input Settings for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputSettings")]
-    pub r#input_settings: Box<Option<super::super::types::medialive::ChannelInputAttachmentInputSettings>>,
+    pub r#input_settings: Option<Box<super::super::types::medialive::ChannelInputAttachmentInputSettings>>,
 }

@@ -6,13 +6,13 @@ pub struct GetFlexibleServerMaintenanceWindow {
     /// The day of week of the maintenance window.
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<i32>,
+    pub r#day_of_week: i32,
     /// The start hour of the maintenance window.
     #[builder(into)]
     #[serde(rename = "startHour")]
-    pub r#start_hour: Box<i32>,
+    pub r#start_hour: i32,
     /// The start minute of the maintenance window.
     #[builder(into)]
     #[serde(rename = "startMinute")]
-    pub r#start_minute: Box<i32>,
+    pub r#start_minute: i32,
 }

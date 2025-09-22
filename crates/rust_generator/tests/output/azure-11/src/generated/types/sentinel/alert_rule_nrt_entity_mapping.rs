@@ -6,9 +6,9 @@ pub struct AlertRuleNrtEntityMapping {
     /// The type of the entity. Possible values are `Account`, `AzureResource`, `CloudApplication`, `DNS`, `File`, `FileHash`, `Host`, `IP`, `Mailbox`, `MailCluster`, `MailMessage`, `Malware`, `Process`, `RegistryKey`, `RegistryValue`, `SecurityGroup`, `SubmissionMail`, `URL`.
     #[builder(into)]
     #[serde(rename = "entityType")]
-    pub r#entity_type: Box<String>,
+    pub r#entity_type: String,
     /// A list of `field_mapping` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "fieldMappings")]
-    pub r#field_mappings: Box<Vec<super::super::types::sentinel::AlertRuleNrtEntityMappingFieldMapping>>,
+    pub r#field_mappings: Vec<super::super::types::sentinel::AlertRuleNrtEntityMappingFieldMapping>,
 }

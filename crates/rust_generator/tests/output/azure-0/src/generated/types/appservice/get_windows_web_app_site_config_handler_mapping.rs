@@ -6,13 +6,13 @@ pub struct GetWindowsWebAppSiteConfigHandlerMapping {
     /// The command-line arguments to be passed to the script processor.
     #[builder(into)]
     #[serde(rename = "arguments")]
-    pub r#arguments: Box<String>,
+    pub r#arguments: String,
     /// The extension to be handled by the specified FastCGI application.
     #[builder(into)]
     #[serde(rename = "extension")]
-    pub r#extension: Box<String>,
+    pub r#extension: String,
     /// The absolute path to the FastCGI application.
     #[builder(into)]
     #[serde(rename = "scriptProcessorPath")]
-    pub r#script_processor_path: Box<String>,
+    pub r#script_processor_path: String,
 }

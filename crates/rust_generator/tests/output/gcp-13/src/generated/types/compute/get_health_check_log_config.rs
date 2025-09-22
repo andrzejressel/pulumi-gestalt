@@ -7,5 +7,5 @@ pub struct GetHealthCheckLogConfig {
     /// which means no health check logging will be done.
     #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<bool>,
+    pub r#enable: bool,
 }

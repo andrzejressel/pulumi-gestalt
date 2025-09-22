@@ -9,18 +9,18 @@ pub struct ImageRawDisk {
     /// image is created.
     /// Default value is `TAR`.
     /// Possible values are: `TAR`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerType")]
-    pub r#container_type: Box<Option<String>>,
+    pub r#container_type: Option<String>,
     /// An optional SHA1 checksum of the disk image before unpackaging.
     /// This is provided by the client when the disk image is created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sha1")]
-    pub r#sha_1: Box<Option<String>>,
+    pub r#sha_1: Option<String>,
     /// The full Google Cloud Storage URL where disk storage is stored
     /// You must provide either this property or the sourceDisk property
     /// but not both.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<String>,
+    pub r#source: String,
 }

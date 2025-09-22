@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventSourceMappingDocumentDbEventSourceConfig {
     /// The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "collectionName")]
-    pub r#collection_name: Box<Option<String>>,
+    pub r#collection_name: Option<String>,
     /// The name of the database to consume within the DocumentDB cluster.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// Determines what DocumentDB sends to your event stream during document update operations. If set to `UpdateLookup`, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes. Valid values: `UpdateLookup`, `Default`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fullDocument")]
-    pub r#full_document: Box<Option<String>>,
+    pub r#full_document: Option<String>,
 }

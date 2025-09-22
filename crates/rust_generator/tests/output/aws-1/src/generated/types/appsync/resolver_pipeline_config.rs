@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResolverPipelineConfig {
     /// A list of Function objects.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "functions")]
-    pub r#functions: Box<Option<Vec<String>>>,
+    pub r#functions: Option<Vec<String>>,
 }

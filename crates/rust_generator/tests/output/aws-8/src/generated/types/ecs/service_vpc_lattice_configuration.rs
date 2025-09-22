@@ -6,13 +6,13 @@ pub struct ServiceVpcLatticeConfiguration {
     /// The name of the port for a target group associated with the VPC Lattice configuration.
     #[builder(into)]
     #[serde(rename = "portName")]
-    pub r#port_name: Box<String>,
+    pub r#port_name: String,
     /// The ARN of the IAM role to associate with this volume. This is the Amazon ECS infrastructure IAM role that is used to manage your AWS infrastructure.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// The full ARN of the target group or groups associated with the VPC Lattice configuration.
     #[builder(into)]
     #[serde(rename = "targetGroupArn")]
-    pub r#target_group_arn: Box<String>,
+    pub r#target_group_arn: String,
 }

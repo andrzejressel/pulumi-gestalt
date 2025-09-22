@@ -5,7 +5,7 @@
 pub struct GuardrailContentPolicyConfig {
     /// Set of content filter configs in content policy.
     /// See Filters Config for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filtersConfigs")]
-    pub r#filters_configs: Box<Option<Vec<super::super::types::bedrock::GuardrailContentPolicyConfigFiltersConfig>>>,
+    pub r#filters_configs: Option<Vec<super::super::types::bedrock::GuardrailContentPolicyConfigFiltersConfig>>,
 }

@@ -8,22 +8,22 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationOutput 
     #[serde(rename = "destinationSchema")]
     pub r#destination_schema: Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationOutputDestinationSchema>,
     /// Identifies a Kinesis Data Firehose delivery stream as the destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kinesisFirehoseOutput")]
-    pub r#kinesis_firehose_output: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutput>>,
+    pub r#kinesis_firehose_output: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisFirehoseOutput>>,
     /// Identifies a Kinesis data stream as the destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kinesisStreamsOutput")]
-    pub r#kinesis_streams_output: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutput>>,
+    pub r#kinesis_streams_output: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutput>>,
     /// Identifies a Lambda function as the destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lambdaOutput")]
-    pub r#lambda_output: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutput>>,
+    pub r#lambda_output: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutput>>,
     /// The name of the in-application stream.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
-    #[builder(into, default)]
+    pub r#name: String,
+    #[builder(into)]
     #[serde(rename = "outputId")]
-    pub r#output_id: Box<Option<String>>,
+    pub r#output_id: Option<String>,
 }

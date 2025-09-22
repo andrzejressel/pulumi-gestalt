@@ -6,9 +6,9 @@ pub struct AuthorizeVpcEndpointAccessAuthorizedPrincipal {
     /// IAM principal that is allowed to access to the domain.
     #[builder(into)]
     #[serde(rename = "principal")]
-    pub r#principal: Box<String>,
+    pub r#principal: String,
     /// Type of principal.
     #[builder(into)]
     #[serde(rename = "principalType")]
-    pub r#principal_type: Box<String>,
+    pub r#principal_type: String,
 }

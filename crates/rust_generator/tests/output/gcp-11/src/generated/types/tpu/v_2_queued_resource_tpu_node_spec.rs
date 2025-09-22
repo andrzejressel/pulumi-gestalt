@@ -9,11 +9,11 @@ pub struct V2QueuedResourceTpuNodeSpec {
     #[serde(rename = "node")]
     pub r#node: Box<super::super::types::tpu::V2QueuedResourceTpuNodeSpecNode>,
     /// Unqualified node identifier used to identify the node in the project once provisioned.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeId")]
-    pub r#node_id: Box<Option<String>>,
+    pub r#node_id: Option<String>,
     /// The parent resource name.
     #[builder(into)]
     #[serde(rename = "parent")]
-    pub r#parent: Box<String>,
+    pub r#parent: String,
 }

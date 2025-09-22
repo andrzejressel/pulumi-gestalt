@@ -6,9 +6,9 @@ pub struct GetInstanceTypeOfferingsFilter {
     /// Name of the filter. The `location` filter depends on the top-level `location_type` argument and if not specified, defaults to the current region.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// List of one or more values for the filter.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

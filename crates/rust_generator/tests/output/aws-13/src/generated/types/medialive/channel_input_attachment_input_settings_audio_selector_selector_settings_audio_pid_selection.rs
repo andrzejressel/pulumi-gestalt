@@ -6,5 +6,5 @@ pub struct ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsAudio
     /// Selects a specific PID from within a source.
     #[builder(into)]
     #[serde(rename = "pid")]
-    pub r#pid: Box<i32>,
+    pub r#pid: i32,
 }

@@ -6,5 +6,5 @@ pub struct ReplicationConfigurationReplicationConfiguration {
     /// The replication rules for a replication configuration. A maximum of 10 are allowed per `replication_configuration`. See Rule
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<super::super::types::ecr::ReplicationConfigurationReplicationConfigurationRule>>,
+    pub r#rules: Vec<super::super::types::ecr::ReplicationConfigurationReplicationConfigurationRule>,
 }

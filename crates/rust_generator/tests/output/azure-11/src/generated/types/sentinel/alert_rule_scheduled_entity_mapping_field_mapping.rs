@@ -6,9 +6,9 @@ pub struct AlertRuleScheduledEntityMappingFieldMapping {
     /// The column name to be mapped to the identifier.
     #[builder(into)]
     #[serde(rename = "columnName")]
-    pub r#column_name: Box<String>,
+    pub r#column_name: String,
     /// The identifier of the entity.
     #[builder(into)]
     #[serde(rename = "identifier")]
-    pub r#identifier: Box<String>,
+    pub r#identifier: String,
 }

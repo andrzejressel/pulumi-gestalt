@@ -6,9 +6,9 @@ pub struct PolicyFileShareRetentionWeekly {
     /// The number of daily backups to keep. Must be between `1` and `200` (inclusive)
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
     /// The weekday backups to retain. Must be one of `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` or `Saturday`.
     #[builder(into)]
     #[serde(rename = "weekdays")]
-    pub r#weekdays: Box<Vec<String>>,
+    pub r#weekdays: Vec<String>,
 }

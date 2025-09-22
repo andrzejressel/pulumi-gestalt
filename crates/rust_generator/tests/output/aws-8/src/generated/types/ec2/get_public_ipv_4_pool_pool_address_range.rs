@@ -6,17 +6,17 @@ pub struct GetPublicIpv4PoolPoolAddressRange {
     /// Number of addresses in the range.
     #[builder(into)]
     #[serde(rename = "addressCount")]
-    pub r#address_count: Box<i32>,
+    pub r#address_count: i32,
     /// Number of available addresses in the range.
     #[builder(into)]
     #[serde(rename = "availableAddressCount")]
-    pub r#available_address_count: Box<i32>,
+    pub r#available_address_count: i32,
     /// First address in the range.
     #[builder(into)]
     #[serde(rename = "firstAddress")]
-    pub r#first_address: Box<String>,
+    pub r#first_address: String,
     /// Last address in the range.
     #[builder(into)]
     #[serde(rename = "lastAddress")]
-    pub r#last_address: Box<String>,
+    pub r#last_address: String,
 }

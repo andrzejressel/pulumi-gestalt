@@ -5,5 +5,5 @@
 pub struct GetClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity {
     #[builder(into)]
     #[serde(rename = "clientAuthentications")]
-    pub r#client_authentications: Box<Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthentication>>,
+    pub r#client_authentications: Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthentication>,
 }

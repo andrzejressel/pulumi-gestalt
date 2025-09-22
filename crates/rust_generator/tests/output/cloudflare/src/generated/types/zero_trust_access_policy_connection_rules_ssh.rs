@@ -6,5 +6,5 @@ pub struct ZeroTrustAccessPolicyConnectionRulesSsh {
     /// Contains the Unix usernames that may be used when connecting over SSH.
     #[builder(into)]
     #[serde(rename = "usernames")]
-    pub r#usernames: Box<Vec<String>>,
+    pub r#usernames: Vec<String>,
 }

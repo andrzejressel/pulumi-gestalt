@@ -5,12 +5,12 @@
 pub struct IntentFollowupIntentInfo {
     /// The unique identifier of the followup intent.
     /// Format: projects/<Project ID>/agent/intents/<Intent ID>.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "followupIntentName")]
-    pub r#followup_intent_name: Box<Option<String>>,
+    pub r#followup_intent_name: Option<String>,
     /// The unique identifier of the parent intent in the chain of followup intents.
     /// Format: projects/<Project ID>/agent/intents/<Intent ID>.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parentFollowupIntentName")]
-    pub r#parent_followup_intent_name: Box<Option<String>>,
+    pub r#parent_followup_intent_name: Option<String>,
 }

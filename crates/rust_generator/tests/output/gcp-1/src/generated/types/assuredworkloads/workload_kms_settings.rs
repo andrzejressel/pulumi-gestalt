@@ -6,9 +6,9 @@ pub struct WorkloadKmsSettings {
     /// Required. Input only. Immutable. The time at which the Key Management Service will automatically create a new version of the crypto key and mark it as the primary.
     #[builder(into)]
     #[serde(rename = "nextRotationTime")]
-    pub r#next_rotation_time: Box<String>,
+    pub r#next_rotation_time: String,
     /// Required. Input only. Immutable. will be advanced by this period when the Key Management Service automatically rotates a key. Must be at least 24 hours and at most 876,000 hours.
     #[builder(into)]
     #[serde(rename = "rotationPeriod")]
-    pub r#rotation_period: Box<String>,
+    pub r#rotation_period: String,
 }

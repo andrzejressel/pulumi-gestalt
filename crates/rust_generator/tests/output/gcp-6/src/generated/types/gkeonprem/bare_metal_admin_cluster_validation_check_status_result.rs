@@ -5,26 +5,26 @@
 pub struct BareMetalAdminClusterValidationCheckStatusResult {
     /// (Output)
     /// The category of the validation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "category")]
-    pub r#category: Box<Option<String>>,
+    pub r#category: Option<String>,
     /// A human readable description of this Bare Metal Admin Cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// (Output)
     /// Detailed failure information, which might be unformatted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "details")]
-    pub r#details: Box<Option<String>>,
+    pub r#details: Option<String>,
     /// (Output)
     /// Options used for the validation check.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "options")]
-    pub r#options: Box<Option<String>>,
+    pub r#options: Option<String>,
     /// (Output)
     /// A human-readable message of the check failure.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reason")]
-    pub r#reason: Box<Option<String>>,
+    pub r#reason: Option<String>,
 }

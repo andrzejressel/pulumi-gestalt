@@ -6,5 +6,5 @@ pub struct EmailRoutingCatchAllMatcher {
     /// Type of matcher. Available values: `all`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

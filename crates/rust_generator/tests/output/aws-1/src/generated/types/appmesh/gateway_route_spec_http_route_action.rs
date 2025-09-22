@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GatewayRouteSpecHttpRouteAction {
     /// Gateway route action to rewrite.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rewrite")]
-    pub r#rewrite: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttpRouteActionRewrite>>,
+    pub r#rewrite: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttpRouteActionRewrite>>,
     /// Target that traffic is routed to when a request matches the gateway route.
     #[builder(into)]
     #[serde(rename = "target")]

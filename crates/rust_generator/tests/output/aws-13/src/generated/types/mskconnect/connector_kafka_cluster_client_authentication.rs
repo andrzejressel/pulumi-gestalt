@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorKafkaClusterClientAuthentication {
     /// The type of client authentication used to connect to the Apache Kafka cluster. Valid values: `IAM`, `NONE`. A value of `NONE` means that no client authentication is used. The default value is `NONE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authenticationType")]
-    pub r#authentication_type: Box<Option<String>>,
+    pub r#authentication_type: Option<String>,
 }

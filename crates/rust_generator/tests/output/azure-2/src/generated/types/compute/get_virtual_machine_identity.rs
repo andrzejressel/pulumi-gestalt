@@ -6,17 +6,17 @@ pub struct GetVirtualMachineIdentity {
     /// The list of User Managed Identity IDs which are assigned to the Virtual Machine.
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     /// The ID of the System Managed Service Principal assigned to the Virtual Machine.
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     /// The ID of the Tenant of the System Managed Service Principal assigned to the Virtual Machine.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
     /// The identity type of the Managed Identity assigned to the Virtual Machine.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

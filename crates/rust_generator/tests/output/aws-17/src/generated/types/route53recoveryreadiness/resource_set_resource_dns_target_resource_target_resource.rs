@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResourceSetResourceDnsTargetResourceTargetResource {
     /// NLB resource a DNS Target Resource points to. Required if `r53_resource` is not set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nlbResource")]
-    pub r#nlb_resource: Box<Option<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResourceTargetResourceNlbResource>>,
+    pub r#nlb_resource: Option<Box<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResourceTargetResourceNlbResource>>,
     /// Route53 resource a DNS Target Resource record points to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "r53Resource")]
-    pub r#r_53_resource: Box<Option<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResourceTargetResourceR53Resource>>,
+    pub r#r_53_resource: Option<Box<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResourceTargetResourceR53Resource>>,
 }

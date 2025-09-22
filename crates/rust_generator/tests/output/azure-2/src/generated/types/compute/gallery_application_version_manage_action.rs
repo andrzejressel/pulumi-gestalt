@@ -6,13 +6,13 @@ pub struct GalleryApplicationVersionManageAction {
     /// The command to install the Gallery Application. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "install")]
-    pub r#install: Box<String>,
+    pub r#install: String,
     /// The command to remove the Gallery Application. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "remove")]
-    pub r#remove: Box<String>,
+    pub r#remove: String,
     /// The command to update the Gallery Application. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "update")]
-    pub r#update: Box<Option<String>>,
+    pub r#update: Option<String>,
 }

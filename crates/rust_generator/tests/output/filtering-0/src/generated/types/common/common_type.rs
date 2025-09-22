@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CommonType {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commonProperty")]
-    pub r#common_property: Box<Option<bool>>,
+    pub r#common_property: Option<bool>,
 }

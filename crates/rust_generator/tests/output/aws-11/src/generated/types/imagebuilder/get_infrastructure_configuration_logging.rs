@@ -6,5 +6,5 @@ pub struct GetInfrastructureConfigurationLogging {
     /// Nested list of S3 logs settings.
     #[builder(into)]
     #[serde(rename = "s3Logs")]
-    pub r#s_3_logs: Box<Vec<super::super::types::imagebuilder::GetInfrastructureConfigurationLoggingS3Log>>,
+    pub r#s_3_logs: Vec<super::super::types::imagebuilder::GetInfrastructureConfigurationLoggingS3Log>,
 }

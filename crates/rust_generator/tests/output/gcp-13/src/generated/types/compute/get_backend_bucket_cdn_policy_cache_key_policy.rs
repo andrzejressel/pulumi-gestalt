@@ -7,11 +7,11 @@ pub struct GetBackendBucketCdnPolicyCacheKeyPolicy {
     /// cache key.
     #[builder(into)]
     #[serde(rename = "includeHttpHeaders")]
-    pub r#include_http_headers: Box<Vec<String>>,
+    pub r#include_http_headers: Vec<String>,
     /// Names of query string parameters to include in cache keys.
     /// Default parameters are always included. '&' and '=' will
     /// be percent encoded and not treated as delimiters.
     #[builder(into)]
     #[serde(rename = "queryStringWhitelists")]
-    pub r#query_string_whitelists: Box<Vec<String>>,
+    pub r#query_string_whitelists: Vec<String>,
 }

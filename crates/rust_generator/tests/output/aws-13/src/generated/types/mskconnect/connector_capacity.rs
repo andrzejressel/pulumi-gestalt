@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorCapacity {
     /// Information about the auto scaling parameters for the connector. See `autoscaling` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoscaling")]
-    pub r#autoscaling: Box<Option<super::super::types::mskconnect::ConnectorCapacityAutoscaling>>,
+    pub r#autoscaling: Option<Box<super::super::types::mskconnect::ConnectorCapacityAutoscaling>>,
     /// Details about a fixed capacity allocated to a connector. See `provisioned_capacity` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "provisionedCapacity")]
-    pub r#provisioned_capacity: Box<Option<super::super::types::mskconnect::ConnectorCapacityProvisionedCapacity>>,
+    pub r#provisioned_capacity: Option<Box<super::super::types::mskconnect::ConnectorCapacityProvisionedCapacity>>,
 }

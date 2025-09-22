@@ -6,5 +6,5 @@ pub struct GetSecurityPolicyRuleMatchExprOption {
     /// reCAPTCHA configuration options to be applied for the rule. If the rule does not evaluate reCAPTCHA tokens, this field has no effect.
     #[builder(into)]
     #[serde(rename = "recaptchaOptions")]
-    pub r#recaptcha_options: Box<Vec<super::super::types::compute::GetSecurityPolicyRuleMatchExprOptionRecaptchaOption>>,
+    pub r#recaptcha_options: Vec<super::super::types::compute::GetSecurityPolicyRuleMatchExprOptionRecaptchaOption>,
 }

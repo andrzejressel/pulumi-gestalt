@@ -6,5 +6,5 @@ pub struct RuleGroupRuleGroupReferenceSetsIpSetReferenceIpSetReference {
     /// Set of Managed Prefix IP ARN(s)
     #[builder(into)]
     #[serde(rename = "referenceArn")]
-    pub r#reference_arn: Box<String>,
+    pub r#reference_arn: String,
 }

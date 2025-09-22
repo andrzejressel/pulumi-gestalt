@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AiFeatureStoreOnlineServingConfig {
     /// The number of nodes for each cluster. The number of nodes will not scale automatically but can be scaled manually by providing different values when updating.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fixedNodeCount")]
-    pub r#fixed_node_count: Box<Option<i32>>,
+    pub r#fixed_node_count: Option<i32>,
     /// Online serving scaling configuration. Only one of fixedNodeCount and scaling can be set. Setting one will reset the other.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scaling")]
-    pub r#scaling: Box<Option<super::super::types::vertex::AiFeatureStoreOnlineServingConfigScaling>>,
+    pub r#scaling: Option<Box<super::super::types::vertex::AiFeatureStoreOnlineServingConfigScaling>>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesS3S3OutputFormatConfigAggregationConfig {
     /// Whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. Valid values are `None` and `SingleFile`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "aggregationType")]
-    pub r#aggregation_type: Box<Option<String>>,
+    pub r#aggregation_type: Option<String>,
     /// The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. Integer value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetFileSize")]
-    pub r#target_file_size: Box<Option<i32>>,
+    pub r#target_file_size: Option<i32>,
 }

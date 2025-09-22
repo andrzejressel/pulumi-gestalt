@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceNetworkConfigurationIngressConfiguration {
     /// Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to True. To make the service privately accessible, from only within an Amazon VPC set it to False.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isPubliclyAccessible")]
-    pub r#is_publicly_accessible: Box<Option<bool>>,
+    pub r#is_publicly_accessible: Option<bool>,
 }

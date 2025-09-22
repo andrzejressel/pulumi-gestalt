@@ -6,9 +6,9 @@ pub struct PointToPointVpnGatewayConnectionConfigurationRoutePropagatedRouteTabl
     /// The list of Virtual Hub Route Table resource id which the routes will be propagated to.
     #[builder(into)]
     #[serde(rename = "ids")]
-    pub r#ids: Box<Vec<String>>,
+    pub r#ids: Vec<String>,
     /// The list of labels to logically group Virtual Hub Route Tables which the routes will be propagated to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<Vec<String>>>,
+    pub r#labels: Option<Vec<String>>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CustomModelValidationDataConfig {
     /// Information about the validators.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "validators")]
-    pub r#validators: Box<Option<Vec<super::super::types::bedrock::CustomModelValidationDataConfigValidator>>>,
+    pub r#validators: Option<Vec<super::super::types::bedrock::CustomModelValidationDataConfigValidator>>,
 }

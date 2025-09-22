@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetRulesetsRulesetRuleActionParametersAutominify {
     /// SSL minification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "css")]
-    pub r#css: Box<Option<bool>>,
+    pub r#css: Option<bool>,
     /// HTML minification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "html")]
-    pub r#html: Box<Option<bool>>,
+    pub r#html: Option<bool>,
     /// JS minification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "js")]
-    pub r#js: Box<Option<bool>>,
+    pub r#js: Option<bool>,
 }

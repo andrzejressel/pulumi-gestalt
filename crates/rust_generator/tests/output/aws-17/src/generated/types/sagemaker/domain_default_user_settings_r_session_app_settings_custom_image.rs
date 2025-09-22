@@ -6,13 +6,13 @@ pub struct DomainDefaultUserSettingsRSessionAppSettingsCustomImage {
     /// The name of the App Image Config.
     #[builder(into)]
     #[serde(rename = "appImageConfigName")]
-    pub r#app_image_config_name: Box<String>,
+    pub r#app_image_config_name: String,
     /// The name of the Custom Image.
     #[builder(into)]
     #[serde(rename = "imageName")]
-    pub r#image_name: Box<String>,
+    pub r#image_name: String,
     /// The version number of the Custom Image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageVersionNumber")]
-    pub r#image_version_number: Box<Option<i32>>,
+    pub r#image_version_number: Option<i32>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxTestCaseLastTestResultConversationTurnUserInputInputDtmf {
     /// The dtmf digits.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "digits")]
-    pub r#digits: Box<Option<String>>,
+    pub r#digits: Option<String>,
     /// The finish digit (if any).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "finishDigit")]
-    pub r#finish_digit: Box<Option<String>>,
+    pub r#finish_digit: Option<String>,
 }

@@ -7,15 +7,15 @@ pub struct ServiceAttachmentConsumerAcceptList {
     /// create.
     #[builder(into)]
     #[serde(rename = "connectionLimit")]
-    pub r#connection_limit: Box<i32>,
+    pub r#connection_limit: i32,
     /// The network that is allowed to connect to this service attachment.
     /// Only one of project_id_or_num and network_url may be set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkUrl")]
-    pub r#network_url: Box<Option<String>>,
+    pub r#network_url: Option<String>,
     /// A project that is allowed to connect to this service attachment.
     /// Only one of project_id_or_num and network_url may be set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectIdOrNum")]
-    pub r#project_id_or_num: Box<Option<String>>,
+    pub r#project_id_or_num: Option<String>,
 }

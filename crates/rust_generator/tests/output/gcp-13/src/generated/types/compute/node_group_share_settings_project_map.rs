@@ -6,9 +6,9 @@ pub struct NodeGroupShareSettingsProjectMap {
     /// The identifier for this object. Format specified above.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The project id/number should be the same as the key of this project config in the project map.
     #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<String>,
+    pub r#project_id: String,
 }

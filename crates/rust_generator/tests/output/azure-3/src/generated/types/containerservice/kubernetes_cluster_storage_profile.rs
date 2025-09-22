@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubernetesClusterStorageProfile {
     /// Is the Blob CSI driver enabled? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "blobDriverEnabled")]
-    pub r#blob_driver_enabled: Box<Option<bool>>,
+    pub r#blob_driver_enabled: Option<bool>,
     /// Is the Disk CSI driver enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "diskDriverEnabled")]
-    pub r#disk_driver_enabled: Box<Option<bool>>,
+    pub r#disk_driver_enabled: Option<bool>,
     /// Is the File CSI driver enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fileDriverEnabled")]
-    pub r#file_driver_enabled: Box<Option<bool>>,
+    pub r#file_driver_enabled: Option<bool>,
     /// Is the Snapshot Controller enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "snapshotControllerEnabled")]
-    pub r#snapshot_controller_enabled: Box<Option<bool>>,
+    pub r#snapshot_controller_enabled: Option<bool>,
 }

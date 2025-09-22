@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppGatewayAllocatedConnection {
     /// The ingress port of an allocated connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ingressPort")]
-    pub r#ingress_port: Box<Option<i32>>,
+    pub r#ingress_port: Option<i32>,
     /// The PSC uri of an allocated connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pscUri")]
-    pub r#psc_uri: Box<Option<String>>,
+    pub r#psc_uri: Option<String>,
 }

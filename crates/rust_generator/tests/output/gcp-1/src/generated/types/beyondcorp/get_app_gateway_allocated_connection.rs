@@ -6,9 +6,9 @@ pub struct GetAppGatewayAllocatedConnection {
     /// The ingress port of an allocated connection.
     #[builder(into)]
     #[serde(rename = "ingressPort")]
-    pub r#ingress_port: Box<i32>,
+    pub r#ingress_port: i32,
     /// The PSC uri of an allocated connection.
     #[builder(into)]
     #[serde(rename = "pscUri")]
-    pub r#psc_uri: Box<String>,
+    pub r#psc_uri: String,
 }

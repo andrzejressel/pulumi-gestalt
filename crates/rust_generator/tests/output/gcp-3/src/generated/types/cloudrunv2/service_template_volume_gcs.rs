@@ -6,14 +6,14 @@ pub struct ServiceTemplateVolumeGcs {
     /// GCS Bucket name
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// A list of flags to pass to the gcsfuse command for configuring this volume.
     /// Flags should be passed without leading dashes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mountOptions")]
-    pub r#mount_options: Box<Option<Vec<String>>>,
+    pub r#mount_options: Option<Vec<String>>,
     /// If true, mount the GCS bucket as read-only
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "readOnly")]
-    pub r#read_only: Box<Option<bool>>,
+    pub r#read_only: Option<bool>,
 }

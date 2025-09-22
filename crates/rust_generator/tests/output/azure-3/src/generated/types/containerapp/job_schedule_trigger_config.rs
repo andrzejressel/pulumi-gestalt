@@ -6,13 +6,13 @@ pub struct JobScheduleTriggerConfig {
     /// Cron formatted repeating schedule of a Cron Job.
     #[builder(into)]
     #[serde(rename = "cronExpression")]
-    pub r#cron_expression: Box<String>,
+    pub r#cron_expression: String,
     /// Number of parallel replicas of a job that can run at a given time.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parallelism")]
-    pub r#parallelism: Box<Option<i32>>,
+    pub r#parallelism: Option<i32>,
     /// Minimum number of successful replica completions before overall job completion.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replicaCompletionCount")]
-    pub r#replica_completion_count: Box<Option<i32>>,
+    pub r#replica_completion_count: Option<i32>,
 }

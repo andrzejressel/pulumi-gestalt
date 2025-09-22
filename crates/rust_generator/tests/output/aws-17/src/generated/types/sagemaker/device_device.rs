@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeviceDevice {
     /// A description for the device.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The name of the device.
     #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<String>,
+    pub r#device_name: String,
     /// Amazon Web Services Internet of Things (IoT) object name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "iotThingName")]
-    pub r#iot_thing_name: Box<Option<String>>,
+    pub r#iot_thing_name: Option<String>,
 }

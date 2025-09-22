@@ -6,9 +6,9 @@ pub struct GetDataCatalogEncryptionSettingsDataCatalogEncryptionSettingConnectio
     /// KMS key ARN that is used to encrypt the connection password.
     #[builder(into)]
     #[serde(rename = "awsKmsKeyId")]
-    pub r#aws_kms_key_id: Box<String>,
+    pub r#aws_kms_key_id: String,
     /// When set to `true`, passwords remain encrypted in the responses of GetConnection and GetConnections. This encryption takes effect independently of the catalog encryption.
     #[builder(into)]
     #[serde(rename = "returnConnectionPasswordEncrypted")]
-    pub r#return_connection_password_encrypted: Box<bool>,
+    pub r#return_connection_password_encrypted: bool,
 }

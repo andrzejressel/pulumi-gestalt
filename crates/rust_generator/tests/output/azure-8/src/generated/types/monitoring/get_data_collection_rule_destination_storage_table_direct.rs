@@ -6,13 +6,13 @@ pub struct GetDataCollectionRuleDestinationStorageTableDirect {
     /// Specifies the name of the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The resource ID of the Storage Account.
     #[builder(into)]
     #[serde(rename = "storageAccountId")]
-    pub r#storage_account_id: Box<String>,
+    pub r#storage_account_id: String,
     /// The Storage Table name.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
 }

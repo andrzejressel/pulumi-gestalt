@@ -5,7 +5,7 @@
 pub struct HttpRouteRuleActionRequestMirrorPolicy {
     /// The destination the requests will be mirrored to.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destination")]
-    pub r#destination: Box<Option<super::super::types::networkservices::HttpRouteRuleActionRequestMirrorPolicyDestination>>,
+    pub r#destination: Option<Box<super::super::types::networkservices::HttpRouteRuleActionRequestMirrorPolicyDestination>>,
 }

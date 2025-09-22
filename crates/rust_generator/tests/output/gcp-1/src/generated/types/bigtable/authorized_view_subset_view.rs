@@ -6,11 +6,11 @@ pub struct AuthorizedViewSubsetView {
     /// A group of column family subsets to be included in the authorized view. This can be specified multiple times. Structure is documented below.
     /// 
     /// -----
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "familySubsets")]
-    pub r#family_subsets: Box<Option<Vec<super::super::types::bigtable::AuthorizedViewSubsetViewFamilySubset>>>,
+    pub r#family_subsets: Option<Vec<super::super::types::bigtable::AuthorizedViewSubsetViewFamilySubset>>,
     /// A list of Base64-encoded row prefixes to be included in the authorized view. To provide access to all rows, include the empty string as a prefix ("").
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rowPrefixes")]
-    pub r#row_prefixes: Box<Option<Vec<String>>>,
+    pub r#row_prefixes: Option<Vec<String>>,
 }

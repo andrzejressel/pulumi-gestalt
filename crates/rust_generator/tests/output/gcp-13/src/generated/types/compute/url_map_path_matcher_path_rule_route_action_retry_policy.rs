@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UrlMapPathMatcherPathRuleRouteActionRetryPolicy {
     /// Specifies the allowed number retries. This number must be > 0. If not specified, defaults to 1.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numRetries")]
-    pub r#num_retries: Box<Option<i32>>,
+    pub r#num_retries: Option<i32>,
     /// Specifies a non-zero timeout per retry attempt.
     /// If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set,
     /// will use the largest timeout among all backend services associated with the route.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "perTryTimeout")]
-    pub r#per_try_timeout: Box<Option<super::super::types::compute::UrlMapPathMatcherPathRuleRouteActionRetryPolicyPerTryTimeout>>,
+    pub r#per_try_timeout: Option<Box<super::super::types::compute::UrlMapPathMatcherPathRuleRouteActionRetryPolicyPerTryTimeout>>,
     /// Specfies one or more conditions when this retry rule applies. Valid values are:
     /// * 5xx: Loadbalancer will attempt a retry if the backend service responds with any 5xx response code,
     /// or if the backend service does not respond at all, example: disconnects, reset, read timeout,
@@ -29,7 +29,7 @@ pub struct UrlMapPathMatcherPathRuleRouteActionRetryPolicy {
     /// * deadline-exceeded: Loadbalancer will retry if the gRPC status code in the response header is set to deadline-exceeded
     /// * resource-exhausted: Loadbalancer will retry if the gRPC status code in the response header is set to resource-exhausted
     /// * unavailable: Loadbalancer will retry if the gRPC status code in the response header is set to unavailable
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retryConditions")]
-    pub r#retry_conditions: Box<Option<Vec<String>>>,
+    pub r#retry_conditions: Option<Vec<String>>,
 }

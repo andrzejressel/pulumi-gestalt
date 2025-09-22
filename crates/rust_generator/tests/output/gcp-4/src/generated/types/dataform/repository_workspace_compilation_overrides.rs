@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RepositoryWorkspaceCompilationOverrides {
     /// The default database (Google Cloud project ID).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultDatabase")]
-    pub r#default_database: Box<Option<String>>,
+    pub r#default_database: Option<String>,
     /// The suffix that should be appended to all schema (BigQuery dataset ID) names.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schemaSuffix")]
-    pub r#schema_suffix: Box<Option<String>>,
+    pub r#schema_suffix: Option<String>,
     /// The prefix that should be prepended to all table names.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tablePrefix")]
-    pub r#table_prefix: Box<Option<String>>,
+    pub r#table_prefix: Option<String>,
 }

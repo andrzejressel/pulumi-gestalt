@@ -11,9 +11,9 @@ pub struct DicomStoreNotificationConfig {
     /// Cloud Pub/Sub topic. Not having adequate permissions will cause the calls that send notifications to fail.
     #[builder(into)]
     #[serde(rename = "pubsubTopic")]
-    pub r#pubsub_topic: Box<String>,
+    pub r#pubsub_topic: String,
     /// Indicates whether or not to send Pub/Sub notifications on bulk import. Only supported for DICOM imports.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sendForBulkImport")]
-    pub r#send_for_bulk_import: Box<Option<bool>>,
+    pub r#send_for_bulk_import: Option<bool>,
 }

@@ -6,13 +6,13 @@ pub struct GetDataCollectionRuleDataSourceDataImportEventHubDataSource {
     /// The Event Hub consumer group name.
     #[builder(into)]
     #[serde(rename = "consumerGroup")]
-    pub r#consumer_group: Box<String>,
+    pub r#consumer_group: String,
     /// Specifies the name of the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The stream to collect from Event Hub. Possible value should be a custom stream name.
     #[builder(into)]
     #[serde(rename = "stream")]
-    pub r#stream: Box<String>,
+    pub r#stream: String,
 }

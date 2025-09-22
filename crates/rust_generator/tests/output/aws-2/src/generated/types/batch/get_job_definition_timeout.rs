@@ -6,5 +6,5 @@ pub struct GetJobDefinitionTimeout {
     /// The job timeout time (in seconds) that's measured from the job attempt's startedAt timestamp.
     #[builder(into)]
     #[serde(rename = "attemptDurationSeconds")]
-    pub r#attempt_duration_seconds: Box<i32>,
+    pub r#attempt_duration_seconds: i32,
 }

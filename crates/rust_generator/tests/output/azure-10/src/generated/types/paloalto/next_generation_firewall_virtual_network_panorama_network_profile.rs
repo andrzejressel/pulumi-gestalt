@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NextGenerationFirewallVirtualNetworkPanoramaNetworkProfile {
     /// Specifies a list of Azure Public IP Address IDs that can be used for Egress (Source) Network Address Translation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "egressNatIpAddressIds")]
-    pub r#egress_nat_ip_address_ids: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#egress_nat_ip_address_ids: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "egressNatIpAddresses")]
-    pub r#egress_nat_ip_addresses: Box<Option<Vec<String>>>,
+    pub r#egress_nat_ip_addresses: Option<Vec<String>>,
     /// Specifies a list of Azure Public IP Address IDs.
     #[builder(into)]
     #[serde(rename = "publicIpAddressIds")]
-    pub r#public_ip_address_ids: Box<Vec<String>>,
-    #[builder(into, default)]
+    pub r#public_ip_address_ids: Vec<String>,
+    #[builder(into)]
     #[serde(rename = "publicIpAddresses")]
-    pub r#public_ip_addresses: Box<Option<Vec<String>>>,
+    pub r#public_ip_addresses: Option<Vec<String>>,
     /// Specifies a list of trusted ranges to use for the Network.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "trustedAddressRanges")]
-    pub r#trusted_address_ranges: Box<Option<Vec<String>>>,
+    pub r#trusted_address_ranges: Option<Vec<String>>,
     /// A `vnet_configuration` block as defined below.
     #[builder(into)]
     #[serde(rename = "vnetConfiguration")]

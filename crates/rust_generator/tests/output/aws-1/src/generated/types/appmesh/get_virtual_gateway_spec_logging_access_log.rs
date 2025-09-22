@@ -5,5 +5,5 @@
 pub struct GetVirtualGatewaySpecLoggingAccessLog {
     #[builder(into)]
     #[serde(rename = "files")]
-    pub r#files: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecLoggingAccessLogFile>>,
+    pub r#files: Vec<super::super::types::appmesh::GetVirtualGatewaySpecLoggingAccessLogFile>,
 }

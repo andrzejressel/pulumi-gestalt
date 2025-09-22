@@ -6,17 +6,17 @@ pub struct GetFirewallManagementIpConfiguration {
     /// The name of the Azure Firewall.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The private IP address associated with the Azure Firewall.
     #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<String>,
+    pub r#private_ip_address: String,
     /// The ID of the Public IP address of the Azure Firewall.
     #[builder(into)]
     #[serde(rename = "publicIpAddressId")]
-    pub r#public_ip_address_id: Box<String>,
+    pub r#public_ip_address_id: String,
     /// The ID of the Subnet where the Azure Firewall is deployed.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InvocationLoggingConfigurationLoggingConfigCloudwatchConfig {
     /// S3 configuration for delivering a large amount of data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "largeDataDeliveryS3Config")]
-    pub r#large_data_delivery_s_3_config: Box<Option<super::super::types::bedrockmodel::InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3Config>>,
+    pub r#large_data_delivery_s_3_config: Option<Box<super::super::types::bedrockmodel::InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3Config>>,
     /// Log group name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logGroupName")]
-    pub r#log_group_name: Box<Option<String>>,
+    pub r#log_group_name: Option<String>,
     /// The role ARN.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<Option<String>>,
+    pub r#role_arn: Option<String>,
 }

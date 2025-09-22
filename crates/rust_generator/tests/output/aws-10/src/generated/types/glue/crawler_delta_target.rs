@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CrawlerDeltaTarget {
     /// The name of the connection to use to connect to the Delta table target.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionName")]
-    pub r#connection_name: Box<Option<String>>,
+    pub r#connection_name: Option<String>,
     /// Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "createNativeDeltaTable")]
-    pub r#create_native_delta_table: Box<Option<bool>>,
+    pub r#create_native_delta_table: Option<bool>,
     /// A list of the Amazon S3 paths to the Delta tables.
     #[builder(into)]
     #[serde(rename = "deltaTables")]
-    pub r#delta_tables: Box<Vec<String>>,
+    pub r#delta_tables: Vec<String>,
     /// Specifies whether to write the manifest files to the Delta table path.
     #[builder(into)]
     #[serde(rename = "writeManifest")]
-    pub r#write_manifest: Box<bool>,
+    pub r#write_manifest: bool,
 }

@@ -6,26 +6,26 @@ pub struct GetPortfolioConstraintsDetail {
     /// Identifier of the constraint.
     #[builder(into)]
     #[serde(rename = "constraintId")]
-    pub r#constraint_id: Box<String>,
+    pub r#constraint_id: String,
     /// Description of the constraint.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     #[builder(into)]
     #[serde(rename = "owner")]
-    pub r#owner: Box<String>,
+    pub r#owner: String,
     /// Portfolio identifier.
     /// 
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "portfolioId")]
-    pub r#portfolio_id: Box<String>,
+    pub r#portfolio_id: String,
     /// Product identifier.
     #[builder(into)]
     #[serde(rename = "productId")]
-    pub r#product_id: Box<String>,
+    pub r#product_id: String,
     /// Type of constraint. Valid values are `LAUNCH`, `NOTIFICATION`, `STACKSET`, and `TEMPLATE`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -6,13 +6,13 @@ pub struct GetKubernetesClusterAzureActiveDirectoryRoleBasedAccessControl {
     /// A list of Object IDs of Azure Active Directory Groups which should have Admin Role on the Cluster.
     #[builder(into)]
     #[serde(rename = "adminGroupObjectIds")]
-    pub r#admin_group_object_ids: Box<Vec<String>>,
+    pub r#admin_group_object_ids: Vec<String>,
     /// Is Role Based Access Control based on Azure AD enabled?
     #[builder(into)]
     #[serde(rename = "azureRbacEnabled")]
-    pub r#azure_rbac_enabled: Box<bool>,
+    pub r#azure_rbac_enabled: bool,
     /// The Tenant ID of the System Assigned Managed Service Identity that is configured on this Kubernetes Cluster.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
 }

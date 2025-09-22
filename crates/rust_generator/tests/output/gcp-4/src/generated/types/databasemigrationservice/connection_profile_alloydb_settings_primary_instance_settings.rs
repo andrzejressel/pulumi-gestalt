@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionProfileAlloydbSettingsPrimaryInstanceSettings {
     /// Database flags to pass to AlloyDB when DMS is creating the AlloyDB cluster and instances. See the AlloyDB documentation for how these can be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "databaseFlags")]
-    pub r#database_flags: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#database_flags: Option<std::collections::HashMap<String, String>>,
     /// The database username.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Labels for the AlloyDB primary instance created by DMS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// Configuration for the machines that host the underlying database engine.
     /// Structure is documented below.
     #[builder(into)]
@@ -22,7 +22,7 @@ pub struct ConnectionProfileAlloydbSettingsPrimaryInstanceSettings {
     pub r#machine_config: Box<super::super::types::databasemigrationservice::ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig>,
     /// (Output)
     /// Output only. The private IP address for the Instance. This is the connection endpoint for an end-user application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateIp")]
-    pub r#private_ip: Box<Option<String>>,
+    pub r#private_ip: Option<String>,
 }

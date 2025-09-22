@@ -7,5 +7,5 @@ pub struct RouterPeerCustomLearnedIpRange {
     /// CIDR-formatted string.
     #[builder(into)]
     #[serde(rename = "range")]
-    pub r#range: Box<String>,
+    pub r#range: String,
 }

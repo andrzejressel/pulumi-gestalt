@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IntegrationRuntimeSsisExpressCustomSetupCommandKey {
     /// A `key_vault_secret_reference` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyVaultPassword")]
-    pub r#key_vault_password: Box<Option<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupCommandKeyKeyVaultPassword>>,
+    pub r#key_vault_password: Option<Box<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupCommandKeyKeyVaultPassword>>,
     /// The password for the target device.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// The target computer or domain name.
     #[builder(into)]
     #[serde(rename = "targetName")]
-    pub r#target_name: Box<String>,
+    pub r#target_name: String,
     /// The username for the target device.
     #[builder(into)]
     #[serde(rename = "userName")]
-    pub r#user_name: Box<String>,
+    pub r#user_name: String,
 }

@@ -6,8 +6,8 @@ pub struct GetDbServersDbServer {
     /// The Display name
     #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<String>,
+    pub r#display_name: String,
     #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Vec<super::super::types::oracledatabase::GetDbServersDbServerProperty>>,
+    pub r#properties: Vec<super::super::types::oracledatabase::GetDbServersDbServerProperty>,
 }

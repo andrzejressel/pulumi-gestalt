@@ -5,20 +5,20 @@
 pub struct GetContactsRotationRecurrence {
     #[builder(into)]
     #[serde(rename = "dailySettings")]
-    pub r#daily_settings: Box<Vec<super::super::types::ssm::GetContactsRotationRecurrenceDailySetting>>,
+    pub r#daily_settings: Vec<super::super::types::ssm::GetContactsRotationRecurrenceDailySetting>,
     #[builder(into)]
     #[serde(rename = "monthlySettings")]
-    pub r#monthly_settings: Box<Vec<super::super::types::ssm::GetContactsRotationRecurrenceMonthlySetting>>,
+    pub r#monthly_settings: Vec<super::super::types::ssm::GetContactsRotationRecurrenceMonthlySetting>,
     #[builder(into)]
     #[serde(rename = "numberOfOnCalls")]
-    pub r#number_of_on_calls: Box<i32>,
+    pub r#number_of_on_calls: i32,
     #[builder(into)]
     #[serde(rename = "recurrenceMultiplier")]
-    pub r#recurrence_multiplier: Box<i32>,
+    pub r#recurrence_multiplier: i32,
     #[builder(into)]
     #[serde(rename = "shiftCoverages")]
-    pub r#shift_coverages: Box<Vec<super::super::types::ssm::GetContactsRotationRecurrenceShiftCoverage>>,
+    pub r#shift_coverages: Vec<super::super::types::ssm::GetContactsRotationRecurrenceShiftCoverage>,
     #[builder(into)]
     #[serde(rename = "weeklySettings")]
-    pub r#weekly_settings: Box<Vec<super::super::types::ssm::GetContactsRotationRecurrenceWeeklySetting>>,
+    pub r#weekly_settings: Vec<super::super::types::ssm::GetContactsRotationRecurrenceWeeklySetting>,
 }

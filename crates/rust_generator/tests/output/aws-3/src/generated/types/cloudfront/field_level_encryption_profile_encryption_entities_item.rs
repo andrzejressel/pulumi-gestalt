@@ -10,9 +10,9 @@ pub struct FieldLevelEncryptionProfileEncryptionEntitiesItem {
     /// The provider associated with the public key being used for encryption.
     #[builder(into)]
     #[serde(rename = "providerId")]
-    pub r#provider_id: Box<String>,
+    pub r#provider_id: String,
     /// The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.
     #[builder(into)]
     #[serde(rename = "publicKeyId")]
-    pub r#public_key_id: Box<String>,
+    pub r#public_key_id: String,
 }

@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FrontdoorExplicitResourceOrder {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backendPoolHealthProbeIds")]
-    pub r#backend_pool_health_probe_ids: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#backend_pool_health_probe_ids: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "backendPoolIds")]
-    pub r#backend_pool_ids: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#backend_pool_ids: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "backendPoolLoadBalancingIds")]
-    pub r#backend_pool_load_balancing_ids: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#backend_pool_load_balancing_ids: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "frontendEndpointIds")]
-    pub r#frontend_endpoint_ids: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#frontend_endpoint_ids: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "routingRuleIds")]
-    pub r#routing_rule_ids: Box<Option<Vec<String>>>,
+    pub r#routing_rule_ids: Option<Vec<String>>,
 }

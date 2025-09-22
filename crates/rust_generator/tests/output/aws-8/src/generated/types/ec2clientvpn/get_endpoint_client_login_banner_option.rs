@@ -5,8 +5,8 @@
 pub struct GetEndpointClientLoginBannerOption {
     #[builder(into)]
     #[serde(rename = "bannerText")]
-    pub r#banner_text: Box<String>,
+    pub r#banner_text: String,
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

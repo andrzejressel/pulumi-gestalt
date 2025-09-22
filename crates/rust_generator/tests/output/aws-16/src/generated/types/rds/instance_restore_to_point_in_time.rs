@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceRestoreToPointInTime {
     /// The date and time to restore from. Value must be a time in Universal Coordinated Time (UTC) format and must be before the latest restorable time for the DB instance. Cannot be specified with `use_latest_restorable_time`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "restoreTime")]
-    pub r#restore_time: Box<Option<String>>,
+    pub r#restore_time: Option<String>,
     /// The ARN of the automated backup from which to restore. Required if `source_db_instance_identifier` or `source_dbi_resource_id` is not specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceDbInstanceAutomatedBackupsArn")]
-    pub r#source_db_instance_automated_backups_arn: Box<Option<String>>,
+    pub r#source_db_instance_automated_backups_arn: Option<String>,
     /// The identifier of the source DB instance from which to restore. Must match the identifier of an existing DB instance. Required if `source_db_instance_automated_backups_arn` or `source_dbi_resource_id` is not specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceDbInstanceIdentifier")]
-    pub r#source_db_instance_identifier: Box<Option<String>>,
+    pub r#source_db_instance_identifier: Option<String>,
     /// The resource ID of the source DB instance from which to restore. Required if `source_db_instance_identifier` or `source_db_instance_automated_backups_arn` is not specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceDbiResourceId")]
-    pub r#source_dbi_resource_id: Box<Option<String>>,
+    pub r#source_dbi_resource_id: Option<String>,
     /// A boolean value that indicates whether the DB instance is restored from the latest backup time. Defaults to `false`. Cannot be specified with `restore_time`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useLatestRestorableTime")]
-    pub r#use_latest_restorable_time: Box<Option<bool>>,
+    pub r#use_latest_restorable_time: Option<bool>,
 }

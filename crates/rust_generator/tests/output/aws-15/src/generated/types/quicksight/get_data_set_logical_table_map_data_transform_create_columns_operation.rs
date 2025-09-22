@@ -5,5 +5,5 @@
 pub struct GetDataSetLogicalTableMapDataTransformCreateColumnsOperation {
     #[builder(into)]
     #[serde(rename = "columns")]
-    pub r#columns: Box<Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformCreateColumnsOperationColumn>>,
+    pub r#columns: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformCreateColumnsOperationColumn>,
 }

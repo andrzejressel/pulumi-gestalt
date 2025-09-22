@@ -6,9 +6,9 @@ pub struct HciDeploymentSettingScaleUnitPhysicalNode {
     /// Specifies the IPv4 address assigned to each physical server on your Azure Stack HCI cluster. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "ipv4Address")]
-    pub r#ipv_4_address: Box<String>,
+    pub r#ipv_4_address: String,
     /// The NETBIOS name of each physical server on your Azure Stack HCI cluster. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

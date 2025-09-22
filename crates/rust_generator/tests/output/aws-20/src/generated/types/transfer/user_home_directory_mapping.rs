@@ -6,7 +6,7 @@ pub struct UserHomeDirectoryMapping {
     /// Represents an entry and a target.
     #[builder(into)]
     #[serde(rename = "entry")]
-    pub r#entry: Box<String>,
+    pub r#entry: String,
     /// Represents the map target.
     /// 
     /// The `Restricted` option is achieved using the following mapping:
@@ -19,5 +19,5 @@ pub struct UserHomeDirectoryMapping {
     /// ```
     #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<String>,
+    pub r#target: String,
 }

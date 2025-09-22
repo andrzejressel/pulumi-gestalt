@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpaceSpaceSettingsCodeEditorAppSettingsDefaultResourceSpec {
     /// The instance type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceType")]
-    pub r#instance_type: Box<Option<String>>,
+    pub r#instance_type: Option<String>,
     /// The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lifecycleConfigArn")]
-    pub r#lifecycle_config_arn: Box<Option<String>>,
+    pub r#lifecycle_config_arn: Option<String>,
     /// The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sagemakerImageArn")]
-    pub r#sagemaker_image_arn: Box<Option<String>>,
+    pub r#sagemaker_image_arn: Option<String>,
     /// The SageMaker Image Version Alias.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sagemakerImageVersionAlias")]
-    pub r#sagemaker_image_version_alias: Box<Option<String>>,
+    pub r#sagemaker_image_version_alias: Option<String>,
     /// The ARN of the image version created on the instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sagemakerImageVersionArn")]
-    pub r#sagemaker_image_version_arn: Box<Option<String>>,
+    pub r#sagemaker_image_version_arn: Option<String>,
 }

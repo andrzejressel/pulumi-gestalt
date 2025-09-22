@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceSourceConfigurationAuthenticationConfiguration {
     /// ARN of the IAM role that grants the App Runner service access to a source repository. Required for ECR image repositories (but not for ECR Public)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessRoleArn")]
-    pub r#access_role_arn: Box<Option<String>>,
+    pub r#access_role_arn: Option<String>,
     /// ARN of the App Runner connection that enables the App Runner service to connect to a source repository. Required for GitHub code repositories.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionArn")]
-    pub r#connection_arn: Box<Option<String>>,
+    pub r#connection_arn: Option<String>,
 }

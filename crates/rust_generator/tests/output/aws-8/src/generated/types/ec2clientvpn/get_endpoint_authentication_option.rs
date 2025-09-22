@@ -5,17 +5,17 @@
 pub struct GetEndpointAuthenticationOption {
     #[builder(into)]
     #[serde(rename = "activeDirectoryId")]
-    pub r#active_directory_id: Box<String>,
+    pub r#active_directory_id: String,
     #[builder(into)]
     #[serde(rename = "rootCertificateChainArn")]
-    pub r#root_certificate_chain_arn: Box<String>,
+    pub r#root_certificate_chain_arn: String,
     #[builder(into)]
     #[serde(rename = "samlProviderArn")]
-    pub r#saml_provider_arn: Box<String>,
+    pub r#saml_provider_arn: String,
     #[builder(into)]
     #[serde(rename = "selfServiceSamlProviderArn")]
-    pub r#self_service_saml_provider_arn: Box<String>,
+    pub r#self_service_saml_provider_arn: String,
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

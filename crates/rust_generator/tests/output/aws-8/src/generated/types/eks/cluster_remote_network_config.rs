@@ -8,7 +8,7 @@ pub struct ClusterRemoteNetworkConfig {
     #[serde(rename = "remoteNodeNetworks")]
     pub r#remote_node_networks: Box<super::super::types::eks::ClusterRemoteNetworkConfigRemoteNodeNetworks>,
     /// Configuration block with remote pod network configuration for EKS Hybrid Nodes. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "remotePodNetworks")]
-    pub r#remote_pod_networks: Box<Option<super::super::types::eks::ClusterRemoteNetworkConfigRemotePodNetworks>>,
+    pub r#remote_pod_networks: Option<Box<super::super::types::eks::ClusterRemoteNetworkConfigRemotePodNetworks>>,
 }

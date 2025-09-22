@@ -5,14 +5,14 @@
 pub struct GetReplicationRecoveryPlanAzureToAzureSetting {
     #[builder(into)]
     #[serde(rename = "primaryEdgeZone")]
-    pub r#primary_edge_zone: Box<String>,
+    pub r#primary_edge_zone: String,
     #[builder(into)]
     #[serde(rename = "primaryZone")]
-    pub r#primary_zone: Box<String>,
+    pub r#primary_zone: String,
     #[builder(into)]
     #[serde(rename = "recoveryEdgeZone")]
-    pub r#recovery_edge_zone: Box<String>,
+    pub r#recovery_edge_zone: String,
     #[builder(into)]
     #[serde(rename = "recoveryZone")]
-    pub r#recovery_zone: Box<String>,
+    pub r#recovery_zone: String,
 }

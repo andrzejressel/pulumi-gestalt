@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountSasPolicy {
     /// The SAS expiration action. The only possible value is `Log` at this moment. Defaults to `Log`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expirationAction")]
-    pub r#expiration_action: Box<Option<String>>,
+    pub r#expiration_action: Option<String>,
     /// The SAS expiration period in format of `DD.HH:MM:SS`.
     #[builder(into)]
     #[serde(rename = "expirationPeriod")]
-    pub r#expiration_period: Box<String>,
+    pub r#expiration_period: String,
 }

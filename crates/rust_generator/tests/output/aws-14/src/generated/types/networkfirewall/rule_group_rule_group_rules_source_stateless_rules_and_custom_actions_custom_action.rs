@@ -10,5 +10,5 @@ pub struct RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActi
     /// A friendly name of the custom action.
     #[builder(into)]
     #[serde(rename = "actionName")]
-    pub r#action_name: Box<String>,
+    pub r#action_name: String,
 }

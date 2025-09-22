@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataQualityJobDefinitionDataQualityBaselineConfigStatisticsResource {
     /// The Amazon S3 URI for the statistics resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Uri")]
-    pub r#s_3_uri: Box<Option<String>>,
+    pub r#s_3_uri: Option<String>,
 }

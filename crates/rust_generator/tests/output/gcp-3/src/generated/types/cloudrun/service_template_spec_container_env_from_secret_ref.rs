@@ -5,11 +5,11 @@
 pub struct ServiceTemplateSpecContainerEnvFromSecretRef {
     /// The Secret to select from.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "localObjectReference")]
-    pub r#local_object_reference: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference>>,
+    pub r#local_object_reference: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference>>,
     /// Specify whether the Secret must be defined
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "optional")]
-    pub r#optional: Box<Option<bool>>,
+    pub r#optional: Option<bool>,
 }

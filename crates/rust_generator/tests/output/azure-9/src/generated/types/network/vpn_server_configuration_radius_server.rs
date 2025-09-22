@@ -6,13 +6,13 @@ pub struct VpnServerConfigurationRadiusServer {
     /// The Address of the Radius Server.
     #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<String>,
+    pub r#address: String,
     /// The Score of the Radius Server determines the priority of the server. Ranges from 1 to 30.
     #[builder(into)]
     #[serde(rename = "score")]
-    pub r#score: Box<i32>,
+    pub r#score: i32,
     /// The Secret used to communicate with the Radius Server.
     #[builder(into)]
     #[serde(rename = "secret")]
-    pub r#secret: Box<String>,
+    pub r#secret: String,
 }

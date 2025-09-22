@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicyDefinition {
     /// The static policy statement. See Static below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "static")]
-    pub r#static_: Box<Option<super::super::types::verifiedpermissions::PolicyDefinitionStatic>>,
+    pub r#static_: Option<Box<super::super::types::verifiedpermissions::PolicyDefinitionStatic>>,
     /// The template linked policy. See Template Linked below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "templateLinked")]
-    pub r#template_linked: Box<Option<super::super::types::verifiedpermissions::PolicyDefinitionTemplateLinked>>,
+    pub r#template_linked: Option<Box<super::super::types::verifiedpermissions::PolicyDefinitionTemplateLinked>>,
 }

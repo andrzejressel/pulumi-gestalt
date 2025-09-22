@@ -6,5 +6,5 @@ pub struct GetDiskAsyncPrimaryDisk {
     /// Primary disk for asynchronous disk replication.
     #[builder(into)]
     #[serde(rename = "disk")]
-    pub r#disk: Box<String>,
+    pub r#disk: String,
 }

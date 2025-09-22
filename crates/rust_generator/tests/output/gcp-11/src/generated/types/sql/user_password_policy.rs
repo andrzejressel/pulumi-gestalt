@@ -4,22 +4,22 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserPasswordPolicy {
     /// Number of failed attempts allowed before the user get locked.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedFailedAttempts")]
-    pub r#allowed_failed_attempts: Box<Option<i32>>,
+    pub r#allowed_failed_attempts: Option<i32>,
     /// If true, the check that will lock user after too many failed login attempts will be enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableFailedAttemptsCheck")]
-    pub r#enable_failed_attempts_check: Box<Option<bool>>,
+    pub r#enable_failed_attempts_check: Option<bool>,
     /// If true, the user must specify the current password before changing the password. This flag is supported only for MySQL.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enablePasswordVerification")]
-    pub r#enable_password_verification: Box<Option<bool>>,
+    pub r#enable_password_verification: Option<bool>,
     /// Password expiration duration with one week grace period.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordExpirationDuration")]
-    pub r#password_expiration_duration: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#password_expiration_duration: Option<String>,
+    #[builder(into)]
     #[serde(rename = "statuses")]
-    pub r#statuses: Box<Option<Vec<super::super::types::sql::UserPasswordPolicyStatus>>>,
+    pub r#statuses: Option<Vec<super::super::types::sql::UserPasswordPolicyStatus>>,
 }

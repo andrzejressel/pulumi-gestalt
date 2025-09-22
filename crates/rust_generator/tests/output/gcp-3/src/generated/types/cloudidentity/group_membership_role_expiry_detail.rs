@@ -11,5 +11,5 @@ pub struct GroupMembershipRoleExpiryDetail {
     /// - - -
     #[builder(into)]
     #[serde(rename = "expireTime")]
-    pub r#expire_time: Box<String>,
+    pub r#expire_time: String,
 }

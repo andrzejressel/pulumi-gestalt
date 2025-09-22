@@ -6,12 +6,12 @@ pub struct ResourcePolicySnapshotSchedulePolicyRetentionPolicy {
     /// Maximum age of the snapshot that is allowed to be kept.
     #[builder(into)]
     #[serde(rename = "maxRetentionDays")]
-    pub r#max_retention_days: Box<i32>,
+    pub r#max_retention_days: i32,
     /// Specifies the behavior to apply to scheduled snapshots when
     /// the source disk is deleted.
     /// Default value is `KEEP_AUTO_SNAPSHOTS`.
     /// Possible values are: `KEEP_AUTO_SNAPSHOTS`, `APPLY_RETENTION_POLICY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "onSourceDiskDelete")]
-    pub r#on_source_disk_delete: Box<Option<String>>,
+    pub r#on_source_disk_delete: Option<String>,
 }

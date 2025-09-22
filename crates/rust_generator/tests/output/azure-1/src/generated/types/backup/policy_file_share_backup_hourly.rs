@@ -6,13 +6,13 @@ pub struct PolicyFileShareBackupHourly {
     /// Specifies the interval at which backup needs to be triggered. Possible values are `4`, `6`, `8` and `12`.
     #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<i32>,
+    pub r#interval: i32,
     /// Specifies the start time of the hourly backup. The time format should be in 24-hour format. Times must be either on the hour or half hour (e.g. 12:00, 12:30, 13:00, etc.).
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
     /// Species the duration of the backup window in hours. Details could be found [here](https://learn.microsoft.com/en-us/azure/backup/backup-azure-files-faq#what-does-the-duration-attribute-in-azure-files-backup-policy-signify-).
     #[builder(into)]
     #[serde(rename = "windowDuration")]
-    pub r#window_duration: Box<i32>,
+    pub r#window_duration: i32,
 }

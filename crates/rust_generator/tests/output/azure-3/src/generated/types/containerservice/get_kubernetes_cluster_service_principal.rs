@@ -6,5 +6,5 @@ pub struct GetKubernetesClusterServicePrincipal {
     /// The Client ID of the user-defined Managed Identity assigned to the Kubelets.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
 }

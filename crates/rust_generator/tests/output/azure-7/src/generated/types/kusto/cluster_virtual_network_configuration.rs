@@ -6,13 +6,13 @@ pub struct ClusterVirtualNetworkConfiguration {
     /// Data management's service public IP address resource id.
     #[builder(into)]
     #[serde(rename = "dataManagementPublicIpId")]
-    pub r#data_management_public_ip_id: Box<String>,
+    pub r#data_management_public_ip_id: String,
     /// Engine service's public IP address resource id.
     #[builder(into)]
     #[serde(rename = "enginePublicIpId")]
-    pub r#engine_public_ip_id: Box<String>,
+    pub r#engine_public_ip_id: String,
     /// The subnet resource id.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

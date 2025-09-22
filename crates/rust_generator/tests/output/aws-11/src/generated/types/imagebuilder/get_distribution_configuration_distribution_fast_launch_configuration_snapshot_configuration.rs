@@ -6,5 +6,5 @@ pub struct GetDistributionConfigurationDistributionFastLaunchConfigurationSnapsh
     /// The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
     #[builder(into)]
     #[serde(rename = "targetResourceCount")]
-    pub r#target_resource_count: Box<i32>,
+    pub r#target_resource_count: i32,
 }

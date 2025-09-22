@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecListenerConnectionPoolTcp {
     #[builder(into)]
     #[serde(rename = "maxConnections")]
-    pub r#max_connections: Box<i32>,
+    pub r#max_connections: i32,
 }

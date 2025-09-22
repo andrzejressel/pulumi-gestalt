@@ -7,5 +7,5 @@ pub struct WorkloadAttributesEnvironment {
     /// Possible values are: `PRODUCTION`, `STAGING`, `TEST`, `DEVELOPMENT`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

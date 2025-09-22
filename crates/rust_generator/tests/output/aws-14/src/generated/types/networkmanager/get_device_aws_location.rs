@@ -6,9 +6,9 @@ pub struct GetDeviceAwsLocation {
     /// ARN of the subnet that the device is located in.
     #[builder(into)]
     #[serde(rename = "subnetArn")]
-    pub r#subnet_arn: Box<String>,
+    pub r#subnet_arn: String,
     /// Zone that the device is located in.
     #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<String>,
+    pub r#zone: String,
 }

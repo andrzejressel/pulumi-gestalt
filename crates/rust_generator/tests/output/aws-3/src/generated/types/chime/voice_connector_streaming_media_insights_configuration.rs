@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VoiceConnectorStreamingMediaInsightsConfiguration {
     /// The media insights configuration that will be invoked by the Voice Connector.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "configurationArn")]
-    pub r#configuration_arn: Box<Option<String>>,
+    pub r#configuration_arn: Option<String>,
     /// When `true`, the media insights configuration is not enabled. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<Option<bool>>,
+    pub r#disabled: Option<bool>,
 }

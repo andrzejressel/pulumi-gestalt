@@ -8,7 +8,7 @@ pub struct InstancePerformanceConfigIopsPerTb {
     /// and rounding to the nearest 1000. The instance max IOPS
     /// will be changed dynamically based on the instance
     /// capacity.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxIopsPerTb")]
-    pub r#max_iops_per_tb: Box<Option<i32>>,
+    pub r#max_iops_per_tb: Option<i32>,
 }

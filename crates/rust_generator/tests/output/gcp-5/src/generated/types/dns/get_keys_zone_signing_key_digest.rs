@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetKeysZoneSigningKeyDigest {
     /// The base-16 encoded bytes of this digest. Suitable for use in a DS resource record.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "digest")]
-    pub r#digest: Box<Option<String>>,
+    pub r#digest: Option<String>,
     /// Specifies the algorithm used to calculate this digest. Possible values are `sha1`, `sha256` and `sha384`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

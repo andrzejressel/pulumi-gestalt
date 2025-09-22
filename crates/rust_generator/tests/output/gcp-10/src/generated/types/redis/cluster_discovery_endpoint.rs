@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterDiscoveryEndpoint {
     /// Output only. The IP allocated on the consumer network for the PSC forwarding rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<Option<String>>,
+    pub r#address: Option<String>,
     /// Output only. The port number of the exposed Redis endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// Output only. Customer configuration for where the endpoint
     /// is created and accessed from.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pscConfig")]
-    pub r#psc_config: Box<Option<super::super::types::redis::ClusterDiscoveryEndpointPscConfig>>,
+    pub r#psc_config: Option<Box<super::super::types::redis::ClusterDiscoveryEndpointPscConfig>>,
 }

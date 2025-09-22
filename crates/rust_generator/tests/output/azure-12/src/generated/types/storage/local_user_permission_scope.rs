@@ -10,9 +10,9 @@ pub struct LocalUserPermissionScope {
     /// The container name (when `service` is set to `blob`) or the file share name (when `service` is set to `file`), used by the Storage Account Local User.
     #[builder(into)]
     #[serde(rename = "resourceName")]
-    pub r#resource_name: Box<String>,
+    pub r#resource_name: String,
     /// The storage service used by this Storage Account Local User. Possible values are `blob` and `file`.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

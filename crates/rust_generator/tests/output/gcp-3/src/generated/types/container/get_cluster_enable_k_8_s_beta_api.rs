@@ -6,5 +6,5 @@ pub struct GetClusterEnableK8SBetaApi {
     /// Enabled Kubernetes Beta APIs.
     #[builder(into)]
     #[serde(rename = "enabledApis")]
-    pub r#enabled_apis: Box<Vec<String>>,
+    pub r#enabled_apis: Vec<String>,
 }

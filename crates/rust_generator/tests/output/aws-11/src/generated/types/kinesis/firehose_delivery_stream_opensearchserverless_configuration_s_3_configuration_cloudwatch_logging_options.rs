@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirehoseDeliveryStreamOpensearchserverlessConfigurationS3ConfigurationCloudwatchLoggingOptions {
     /// Enables or disables the logging. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The CloudWatch group name for logging. This value is required if `enabled` is true.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logGroupName")]
-    pub r#log_group_name: Box<Option<String>>,
+    pub r#log_group_name: Option<String>,
     /// The CloudWatch log stream name for logging. This value is required if `enabled` is true.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logStreamName")]
-    pub r#log_stream_name: Box<Option<String>>,
+    pub r#log_stream_name: Option<String>,
 }

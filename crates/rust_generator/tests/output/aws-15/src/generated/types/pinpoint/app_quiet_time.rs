@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppQuietTime {
     /// The default end time for quiet time in ISO 8601 format. Required if `start` is set
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<Option<String>>,
+    pub r#end: Option<String>,
     /// The default start time for quiet time in ISO 8601 format. Required if `end` is set
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<Option<String>>,
+    pub r#start: Option<String>,
 }

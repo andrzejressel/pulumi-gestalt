@@ -6,7 +6,7 @@ pub struct RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelp {
     /// (Output)
     /// A nested object resource.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "links")]
-    pub r#links: Box<Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpLink>>>,
+    pub r#links: Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpLink>>,
 }

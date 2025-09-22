@@ -6,17 +6,17 @@ pub struct GetApplicationGatewaySslCertificate {
     /// The ID of the Rewrite Rule Set
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The Secret ID of (base-64 encoded unencrypted pfx) the `Secret` or `Certificate` object stored in Azure KeyVault.
     #[builder(into)]
     #[serde(rename = "keyVaultSecretId")]
-    pub r#key_vault_secret_id: Box<String>,
+    pub r#key_vault_secret_id: String,
     /// The name of this Application Gateway.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The Public Certificate Data associated with the SSL Certificate.
     #[builder(into)]
     #[serde(rename = "publicCertData")]
-    pub r#public_cert_data: Box<String>,
+    pub r#public_cert_data: String,
 }

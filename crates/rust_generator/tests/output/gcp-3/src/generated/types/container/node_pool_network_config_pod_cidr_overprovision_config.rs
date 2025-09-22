@@ -6,5 +6,5 @@ pub struct NodePoolNetworkConfigPodCidrOverprovisionConfig {
     /// Whether pod cidr overprovision is disabled.
     #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<bool>,
+    pub r#disabled: bool,
 }

@@ -6,13 +6,13 @@ pub struct GetDiscoveredServiceServiceProperty {
     /// The service project identifier that the underlying cloud resource resides in.
     #[builder(into)]
     #[serde(rename = "gcpProject")]
-    pub r#gcp_project: Box<String>,
+    pub r#gcp_project: String,
     /// The location of the discovered service.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// The location that the underlying resource resides in if it is zonal.
     #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<String>,
+    pub r#zone: String,
 }

@@ -6,8 +6,8 @@ pub struct GetCertificateAuthorityRevocationConfiguration {
     /// Nested attribute containing configuration of the certificate revocation list (CRL), if any, maintained by the certificate authority.
     #[builder(into)]
     #[serde(rename = "crlConfigurations")]
-    pub r#crl_configurations: Box<Vec<super::super::types::acmpca::GetCertificateAuthorityRevocationConfigurationCrlConfiguration>>,
+    pub r#crl_configurations: Vec<super::super::types::acmpca::GetCertificateAuthorityRevocationConfigurationCrlConfiguration>,
     #[builder(into)]
     #[serde(rename = "ocspConfigurations")]
-    pub r#ocsp_configurations: Box<Vec<super::super::types::acmpca::GetCertificateAuthorityRevocationConfigurationOcspConfiguration>>,
+    pub r#ocsp_configurations: Vec<super::super::types::acmpca::GetCertificateAuthorityRevocationConfigurationOcspConfiguration>,
 }

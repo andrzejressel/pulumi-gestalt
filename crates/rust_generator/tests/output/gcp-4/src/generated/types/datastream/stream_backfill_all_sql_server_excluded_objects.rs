@@ -7,5 +7,5 @@ pub struct StreamBackfillAllSqlServerExcludedObjects {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "schemas")]
-    pub r#schemas: Box<Vec<super::super::types::datastream::StreamBackfillAllSqlServerExcludedObjectsSchema>>,
+    pub r#schemas: Vec<super::super::types::datastream::StreamBackfillAllSqlServerExcludedObjectsSchema>,
 }

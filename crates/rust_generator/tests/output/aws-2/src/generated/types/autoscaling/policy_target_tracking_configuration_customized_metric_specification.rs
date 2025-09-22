@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicyTargetTrackingConfigurationCustomizedMetricSpecification {
     /// Dimensions of the metric.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricDimensions")]
-    pub r#metric_dimensions: Box<Option<Vec<super::super::types::autoscaling::PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension>>>,
+    pub r#metric_dimensions: Option<Vec<super::super::types::autoscaling::PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension>>,
     /// Name of the metric.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricName")]
-    pub r#metric_name: Box<Option<String>>,
+    pub r#metric_name: Option<String>,
     /// Metrics to include, as a metric data query.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metrics")]
-    pub r#metrics: Box<Option<Vec<super::super::types::autoscaling::PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetric>>>,
+    pub r#metrics: Option<Vec<super::super::types::autoscaling::PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetric>>,
     /// Namespace of the metric.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<Option<String>>,
+    pub r#namespace: Option<String>,
     /// Statistic of the metric.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statistic")]
-    pub r#statistic: Box<Option<String>>,
+    pub r#statistic: Option<String>,
     /// Unit of the metric.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<Option<String>>,
+    pub r#unit: Option<String>,
 }

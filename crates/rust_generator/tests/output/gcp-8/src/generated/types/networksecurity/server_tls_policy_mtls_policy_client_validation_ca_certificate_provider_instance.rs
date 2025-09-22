@@ -6,5 +6,5 @@ pub struct ServerTlsPolicyMtlsPolicyClientValidationCaCertificateProviderInstanc
     /// Plugin instance name, used to locate and load CertificateProvider instance configuration. Set to "google_cloud_private_spiffe" to use Certificate Authority Service certificate provider instance.
     #[builder(into)]
     #[serde(rename = "pluginInstance")]
-    pub r#plugin_instance: Box<String>,
+    pub r#plugin_instance: String,
 }

@@ -6,17 +6,17 @@ pub struct GetPolicyRule {
     /// An `actions` block as documented below.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::storage::GetPolicyRuleAction>>,
+    pub r#actions: Vec<super::super::types::storage::GetPolicyRuleAction>,
     /// Boolean to specify whether the rule is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// A `filter` block as documented below.
     #[builder(into)]
     #[serde(rename = "filters")]
-    pub r#filters: Box<Vec<super::super::types::storage::GetPolicyRuleFilter>>,
+    pub r#filters: Vec<super::super::types::storage::GetPolicyRuleFilter>,
     /// The filter tag name used for tag based filtering for blob objects.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

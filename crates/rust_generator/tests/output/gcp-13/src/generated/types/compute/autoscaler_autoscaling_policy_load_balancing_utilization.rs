@@ -8,5 +8,5 @@ pub struct AutoscalerAutoscalingPolicyLoadBalancingUtilization {
     /// be a positive float value. If not defined, the default is 0.8.
     #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<f64>,
+    pub r#target: f64,
 }

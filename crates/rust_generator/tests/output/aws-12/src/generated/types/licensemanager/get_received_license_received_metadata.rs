@@ -6,13 +6,13 @@ pub struct GetReceivedLicenseReceivedMetadata {
     /// A list of allowed operations.
     #[builder(into)]
     #[serde(rename = "allowedOperations")]
-    pub r#allowed_operations: Box<Vec<String>>,
+    pub r#allowed_operations: Vec<String>,
     /// Received status.
     #[builder(into)]
     #[serde(rename = "receivedStatus")]
-    pub r#received_status: Box<String>,
+    pub r#received_status: String,
     /// Received status reason.
     #[builder(into)]
     #[serde(rename = "receivedStatusReason")]
-    pub r#received_status_reason: Box<String>,
+    pub r#received_status_reason: String,
 }

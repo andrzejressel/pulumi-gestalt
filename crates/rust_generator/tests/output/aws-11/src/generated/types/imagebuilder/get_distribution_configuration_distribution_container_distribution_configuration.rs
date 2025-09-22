@@ -6,13 +6,13 @@ pub struct GetDistributionConfigurationDistributionContainerDistributionConfigur
     /// Set of tags that are attached to the container distribution configuration.
     #[builder(into)]
     #[serde(rename = "containerTags")]
-    pub r#container_tags: Box<Vec<String>>,
+    pub r#container_tags: Vec<String>,
     /// Description of the container distribution configuration.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// Set of destination repositories for the container distribution configuration.
     #[builder(into)]
     #[serde(rename = "targetRepositories")]
-    pub r#target_repositories: Box<Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository>>,
+    pub r#target_repositories: Vec<super::super::types::imagebuilder::GetDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository>,
 }

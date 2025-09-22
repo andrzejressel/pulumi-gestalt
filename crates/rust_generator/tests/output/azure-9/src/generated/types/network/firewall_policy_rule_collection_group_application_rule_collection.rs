@@ -6,17 +6,17 @@ pub struct FirewallPolicyRuleCollectionGroupApplicationRuleCollection {
     /// The action to take for the application rules in this collection. Possible values are `Allow` and `Deny`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// The name which should be used for this application rule collection.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The priority of the application rule collection. The range is `100` - `65000`.
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
     /// One or more `application_rule` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<super::super::types::network::FirewallPolicyRuleCollectionGroupApplicationRuleCollectionRule>>,
+    pub r#rules: Vec<super::super::types::network::FirewallPolicyRuleCollectionGroupApplicationRuleCollectionRule>,
 }

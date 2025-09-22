@@ -6,5 +6,5 @@ pub struct GetSecretsSecretTopic {
     /// The resource name of the Pub/Sub topic that will be published to.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

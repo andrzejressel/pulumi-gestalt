@@ -6,5 +6,5 @@ pub struct SdkvoiceSipMediaApplicationEndpoints {
     /// Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias. The function must be created in the same AWS Region as the SIP media application.
     #[builder(into)]
     #[serde(rename = "lambdaArn")]
-    pub r#lambda_arn: Box<String>,
+    pub r#lambda_arn: String,
 }

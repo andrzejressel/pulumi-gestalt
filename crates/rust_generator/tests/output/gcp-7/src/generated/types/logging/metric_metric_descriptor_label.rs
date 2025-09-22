@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MetricMetricDescriptorLabel {
     /// A human-readable description for the label.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The label key.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The type of data that can be assigned to the label.
     /// Default value is `STRING`.
     /// Possible values are: `BOOL`, `INT64`, `STRING`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "valueType")]
-    pub r#value_type: Box<Option<String>>,
+    pub r#value_type: Option<String>,
 }

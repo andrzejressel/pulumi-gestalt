@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HyperdriveConfigCaching {
     /// Disable caching for this Hyperdrive configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<Option<bool>>,
+    pub r#disabled: Option<bool>,
     /// Configure the `max_age` value of this Hyperdrive configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxAge")]
-    pub r#max_age: Box<Option<i32>>,
+    pub r#max_age: Option<i32>,
     /// Disable caching for this Hyperdrive configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "staleWhileRevalidate")]
-    pub r#stale_while_revalidate: Box<Option<i32>>,
+    pub r#stale_while_revalidate: Option<i32>,
 }

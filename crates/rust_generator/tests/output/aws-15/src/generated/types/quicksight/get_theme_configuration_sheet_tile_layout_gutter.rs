@@ -6,5 +6,5 @@ pub struct GetThemeConfigurationSheetTileLayoutGutter {
     /// This Boolean value controls whether to display sheet margins.
     #[builder(into)]
     #[serde(rename = "show")]
-    pub r#show: Box<bool>,
+    pub r#show: bool,
 }

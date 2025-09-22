@@ -5,8 +5,8 @@
 pub struct BotAbortStatement {
     #[builder(into)]
     #[serde(rename = "messages")]
-    pub r#messages: Box<Vec<super::super::types::lex::BotAbortStatementMessage>>,
-    #[builder(into, default)]
+    pub r#messages: Vec<super::super::types::lex::BotAbortStatementMessage>,
+    #[builder(into)]
     #[serde(rename = "responseCard")]
-    pub r#response_card: Box<Option<String>>,
+    pub r#response_card: Option<String>,
 }

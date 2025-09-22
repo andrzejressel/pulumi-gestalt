@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm {
     /// The operator to use in the condition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "comparator")]
-    pub r#comparator: Box<Option<String>>,
+    pub r#comparator: Option<String>,
     /// The tag key to use in the condition. The only valid value is `TAG`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<String>>,
+    pub r#key: Option<String>,
     /// The tag keys or tag key and value pairs to use in the condition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tagValues")]
-    pub r#tag_values: Box<Option<Vec<super::super::types::macie2::ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValue>>>,
+    pub r#tag_values: Option<Vec<super::super::types::macie2::ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValue>>,
     /// The type of object to apply the condition to. The only valid value is `S3_OBJECT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<Option<String>>,
+    pub r#target: Option<String>,
 }

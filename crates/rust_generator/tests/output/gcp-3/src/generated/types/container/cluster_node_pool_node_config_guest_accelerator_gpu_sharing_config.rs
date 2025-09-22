@@ -9,9 +9,9 @@ pub struct ClusterNodePoolNodeConfigGuestAcceleratorGpuSharingConfig {
     /// * `"MPS"`: Enable co-operative multi-process CUDA workloads to run concurrently on a single GPU device with [MPS](https://cloud.google.com/kubernetes-engine/docs/how-to/nvidia-mps-gpus)
     #[builder(into)]
     #[serde(rename = "gpuSharingStrategy")]
-    pub r#gpu_sharing_strategy: Box<String>,
+    pub r#gpu_sharing_strategy: String,
     /// The maximum number of containers that can share a GPU.
     #[builder(into)]
     #[serde(rename = "maxSharedClientsPerGpu")]
-    pub r#max_shared_clients_per_gpu: Box<i32>,
+    pub r#max_shared_clients_per_gpu: i32,
 }

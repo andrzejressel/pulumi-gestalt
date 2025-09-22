@@ -6,17 +6,17 @@ pub struct DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKuberne
     /// Required. Name of the Kubernetes Deployment whose traffic is managed by the specified Service.
     #[builder(into)]
     #[serde(rename = "deployment")]
-    pub r#deployment: Box<String>,
+    pub r#deployment: String,
     /// Optional. Whether to disable Pod overprovisioning. If Pod overprovisioning is disabled then Cloud Deploy will limit the number of total Pods used for the deployment strategy to the number of Pods the Deployment has on the cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disablePodOverprovisioning")]
-    pub r#disable_pod_overprovisioning: Box<Option<bool>>,
+    pub r#disable_pod_overprovisioning: Option<bool>,
     /// Optional. The label to use when selecting Pods for the Deployment resource. This label must already be present in the Deployment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "podSelectorLabel")]
-    pub r#pod_selector_label: Box<Option<String>>,
+    pub r#pod_selector_label: Option<String>,
     /// Required. Name of the Kubernetes Service.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

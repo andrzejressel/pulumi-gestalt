@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountBlobPropertiesDeleteRetentionPolicy {
     /// Specifies the number of days that the blob should be retained, between `1` and `365` days. Defaults to `7`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "days")]
-    pub r#days: Box<Option<i32>>,
+    pub r#days: Option<i32>,
     /// Indicates whether permanent deletion of the soft deleted blob versions and snapshots is allowed. Defaults to `false`.
     /// 
     /// > **Note:** `permanent_delete_enabled` cannot be set to true if a `restore_policy` block is defined.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "permanentDeleteEnabled")]
-    pub r#permanent_delete_enabled: Box<Option<bool>>,
+    pub r#permanent_delete_enabled: Option<bool>,
 }

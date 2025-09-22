@@ -6,5 +6,5 @@ pub struct ClusterNodePoolNodeConfigGvnic {
     /// Whether or not the Google Virtual NIC (gVNIC) is enabled
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

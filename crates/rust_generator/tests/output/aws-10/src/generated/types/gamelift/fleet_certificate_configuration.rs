@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetCertificateConfiguration {
     /// Indicates whether a TLS/SSL certificate is generated for a fleet. Valid values are `DISABLED` and `GENERATED`. Default value is `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateType")]
-    pub r#certificate_type: Box<Option<String>>,
+    pub r#certificate_type: Option<String>,
 }

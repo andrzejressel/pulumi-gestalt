@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TableSchemaDefinition {
     /// The columns that are part of the clustering key of the table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clusteringKeys")]
-    pub r#clustering_keys: Box<Option<Vec<super::super::types::keyspaces::TableSchemaDefinitionClusteringKey>>>,
+    pub r#clustering_keys: Option<Vec<super::super::types::keyspaces::TableSchemaDefinitionClusteringKey>>,
     /// The regular columns of the table.
     #[builder(into)]
     #[serde(rename = "columns")]
-    pub r#columns: Box<Vec<super::super::types::keyspaces::TableSchemaDefinitionColumn>>,
+    pub r#columns: Vec<super::super::types::keyspaces::TableSchemaDefinitionColumn>,
     /// The columns that are part of the partition key of the table .
     #[builder(into)]
     #[serde(rename = "partitionKeys")]
-    pub r#partition_keys: Box<Vec<super::super::types::keyspaces::TableSchemaDefinitionPartitionKey>>,
+    pub r#partition_keys: Vec<super::super::types::keyspaces::TableSchemaDefinitionPartitionKey>,
     /// The columns that have been defined as `STATIC`. Static columns store values that are shared by all rows in the same partition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "staticColumns")]
-    pub r#static_columns: Box<Option<Vec<super::super::types::keyspaces::TableSchemaDefinitionStaticColumn>>>,
+    pub r#static_columns: Option<Vec<super::super::types::keyspaces::TableSchemaDefinitionStaticColumn>>,
 }

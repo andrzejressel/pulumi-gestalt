@@ -6,6 +6,7 @@ use pulumi_gestalt_schema::model::*;
 
 pub(crate) trait TypeExt {
     fn get_rust_type(&self, depth: usize) -> String;
+    fn get_cycle_safe_rust_type(&self, depth: usize) -> String;
     fn get_consts(&self) -> Vec<String>;
 }
 
@@ -54,6 +55,36 @@ impl TypeExt for Type {
                 };
                 format!("{}constants::ConstString{}", prefix, s.to_case(UpperCamel)).to_string()
             }
+        }
+    }
+
+    fn get_cycle_safe_rust_type(&self, depth: usize) -> String {
+        match self {
+            // This creates Option<Box<T>> which actually is better for us
+            // bon will create function that takes Box<T> (because of overarching Option)
+            // And there is Into<Box<T>> implemented for T so user can pass T directly
+            Type::Ref(Ref::Type(tpe)) => format!(
+                "Box<{}types::{}>",
+                access_root(depth),
+                tpe.get_rust_absolute_name()
+            ),
+            Type::Option(type_) => format!("Option<{}>", type_.get_cycle_safe_rust_type(depth)),
+            Type::DiscriminatedUnion(refs) => format!(
+                "pulumi_gestalt_rust::OneOf{}<{}>",
+                refs.len(),
+                refs.iter()
+                    .map(|r| r.get_cycle_safe_rust_type(depth))
+                    .collect::<Vec<_>>()
+                    .join(", ")
+            ),
+            Type::Boolean
+            | Type::Integer
+            | Type::Number
+            | Type::String
+            | Type::Array(_)
+            | Type::Object(_)
+            | Type::ConstString(_)
+            | Type::Ref(Ref::Asset | Ref::Any | Ref::Archive) => self.get_rust_type(depth),
         }
     }
 

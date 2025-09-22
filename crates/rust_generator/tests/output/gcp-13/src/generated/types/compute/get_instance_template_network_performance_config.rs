@@ -6,5 +6,5 @@ pub struct GetInstanceTemplateNetworkPerformanceConfig {
     /// The egress bandwidth tier for the instance.
     #[builder(into)]
     #[serde(rename = "totalEgressBandwidthTier")]
-    pub r#total_egress_bandwidth_tier: Box<String>,
+    pub r#total_egress_bandwidth_tier: String,
 }

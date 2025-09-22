@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventDataStoreAdvancedEventSelector {
     /// Specifies the selector statements in an advanced event selector. Fields documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fieldSelectors")]
-    pub r#field_selectors: Box<Option<Vec<super::super::types::cloudtrail::EventDataStoreAdvancedEventSelectorFieldSelector>>>,
+    pub r#field_selectors: Option<Vec<super::super::types::cloudtrail::EventDataStoreAdvancedEventSelectorFieldSelector>>,
     /// Specifies the name of the advanced event selector.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

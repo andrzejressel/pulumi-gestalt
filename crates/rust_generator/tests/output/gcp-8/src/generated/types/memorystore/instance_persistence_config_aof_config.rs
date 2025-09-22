@@ -8,7 +8,7 @@ pub struct InstancePersistenceConfigAofConfig {
     /// NEVER
     /// EVERY_SEC
     /// ALWAYS
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "appendFsync")]
-    pub r#append_fsync: Box<Option<String>>,
+    pub r#append_fsync: Option<String>,
 }

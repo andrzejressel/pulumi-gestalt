@@ -6,9 +6,9 @@ pub struct WorkerScriptD1DatabaseBinding {
     /// Database ID of D1 database to use.
     #[builder(into)]
     #[serde(rename = "databaseId")]
-    pub r#database_id: Box<String>,
+    pub r#database_id: String,
     /// The global variable for the binding in your Worker code.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -6,9 +6,9 @@ pub struct GetTaskExecutionOverridesContainerOverrideEnvironment {
     /// The name of the key-value pair. For environment variables, this is the name of the environment variable.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The value of the key-value pair. For environment variables, this is the value of the environment variable.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

@@ -6,19 +6,19 @@ pub struct LinuxFunctionAppAuthSettingsActiveDirectory {
     /// Specifies a list of Allowed audience values to consider when validating JWTs issued by Azure Active Directory.
     /// 
     /// > **Note:** The `client_id` value is always considered an allowed audience.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedAudiences")]
-    pub r#allowed_audiences: Box<Option<Vec<String>>>,
+    pub r#allowed_audiences: Option<Vec<String>>,
     /// The ID of the Client to use to authenticate with Azure Active Directory.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The Client Secret for the Client ID. Cannot be used with `client_secret_setting_name`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<Option<String>>,
+    pub r#client_secret: Option<String>,
     /// The App Setting name that contains the client secret of the Client. Cannot be used with `client_secret`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientSecretSettingName")]
-    pub r#client_secret_setting_name: Box<Option<String>>,
+    pub r#client_secret_setting_name: Option<String>,
 }

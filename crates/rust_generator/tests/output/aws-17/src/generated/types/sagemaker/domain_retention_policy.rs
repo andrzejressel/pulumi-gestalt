@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainRetentionPolicy {
     /// The retention policy for data stored on an Amazon Elastic File System (EFS) volume. Valid values are `Retain` or `Delete`.  Default value is `Retain`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "homeEfsFileSystem")]
-    pub r#home_efs_file_system: Box<Option<String>>,
+    pub r#home_efs_file_system: Option<String>,
 }

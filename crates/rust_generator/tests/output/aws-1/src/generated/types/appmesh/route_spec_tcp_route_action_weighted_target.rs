@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouteSpecTcpRouteActionWeightedTarget {
     /// The targeted port of the weighted object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// Virtual node to associate with the weighted target. Must be between 1 and 255 characters in length.
     #[builder(into)]
     #[serde(rename = "virtualNode")]
-    pub r#virtual_node: Box<String>,
+    pub r#virtual_node: String,
     /// Relative weight of the weighted target. An integer between 0 and 100.
     #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<i32>,
+    pub r#weight: i32,
 }

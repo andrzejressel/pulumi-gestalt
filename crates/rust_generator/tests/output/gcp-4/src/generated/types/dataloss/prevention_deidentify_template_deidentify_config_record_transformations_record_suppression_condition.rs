@@ -5,7 +5,7 @@
 pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionCondition {
     /// An expression, consisting of an operator and conditions.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expressions")]
-    pub r#expressions: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressions>>,
+    pub r#expressions: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressions>>,
 }

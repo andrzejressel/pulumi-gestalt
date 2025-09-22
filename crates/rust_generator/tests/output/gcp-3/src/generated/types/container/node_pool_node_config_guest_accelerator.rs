@@ -6,21 +6,21 @@ pub struct NodePoolNodeConfigGuestAccelerator {
     /// The number of the accelerator cards exposed to an instance.
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
     /// Configuration for auto installation of GPU driver.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gpuDriverInstallationConfig")]
-    pub r#gpu_driver_installation_config: Box<Option<super::super::types::container::NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig>>,
+    pub r#gpu_driver_installation_config: Option<Box<super::super::types::container::NodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConfig>>,
     /// Size of partitions to create on the GPU. Valid values are described in the NVIDIA mig user guide (https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gpuPartitionSize")]
-    pub r#gpu_partition_size: Box<Option<String>>,
+    pub r#gpu_partition_size: Option<String>,
     /// Configuration for GPU sharing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gpuSharingConfig")]
-    pub r#gpu_sharing_config: Box<Option<super::super::types::container::NodePoolNodeConfigGuestAcceleratorGpuSharingConfig>>,
+    pub r#gpu_sharing_config: Option<Box<super::super::types::container::NodePoolNodeConfigGuestAcceleratorGpuSharingConfig>>,
     /// The accelerator type resource name.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

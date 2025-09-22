@@ -8,5 +8,5 @@ pub struct DatasetDefaultEncryptionConfiguration {
     /// access to this encryption key.
     #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<String>,
+    pub r#kms_key_name: String,
 }

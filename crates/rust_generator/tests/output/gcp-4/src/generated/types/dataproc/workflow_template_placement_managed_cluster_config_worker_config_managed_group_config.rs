@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkflowTemplatePlacementManagedClusterConfigWorkerConfigManagedGroupConfig {
     /// Output only. The name of the Instance Group Manager for this group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceGroupManagerName")]
-    pub r#instance_group_manager_name: Box<Option<String>>,
+    pub r#instance_group_manager_name: Option<String>,
     /// Output only. The name of the Instance Template used for the Managed Instance Group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceTemplateName")]
-    pub r#instance_template_name: Box<Option<String>>,
+    pub r#instance_template_name: Option<String>,
 }

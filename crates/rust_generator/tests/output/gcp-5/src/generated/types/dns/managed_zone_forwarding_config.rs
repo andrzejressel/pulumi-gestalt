@@ -9,5 +9,5 @@ pub struct ManagedZoneForwardingConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "targetNameServers")]
-    pub r#target_name_servers: Box<Vec<super::super::types::dns::ManagedZoneForwardingConfigTargetNameServer>>,
+    pub r#target_name_servers: Vec<super::super::types::dns::ManagedZoneForwardingConfigTargetNameServer>,
 }

@@ -4,67 +4,67 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LinuxFunctionAppSlotAuthSettings {
     /// an `active_directory` block as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "activeDirectory")]
-    pub r#active_directory: Box<Option<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsActiveDirectory>>,
+    pub r#active_directory: Option<Box<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsActiveDirectory>>,
     /// Specifies a map of login Parameters to send to the OpenID Connect authorization endpoint when a user logs in.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "additionalLoginParameters")]
-    pub r#additional_login_parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#additional_login_parameters: Option<std::collections::HashMap<String, String>>,
     /// Specifies a list of External URLs that can be redirected to as part of logging in or logging out of the Windows Web App.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedExternalRedirectUrls")]
-    pub r#allowed_external_redirect_urls: Box<Option<Vec<String>>>,
+    pub r#allowed_external_redirect_urls: Option<Vec<String>>,
     /// The default authentication provider to use when multiple providers are configured. Possible values include: `AzureActiveDirectory`, `Facebook`, `Google`, `MicrosoftAccount`, `Twitter`, `Github`.
     /// 
     /// > **NOTE:** This setting is only needed if multiple providers are configured, and the `unauthenticated_client_action` is set to "RedirectToLoginPage".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultProvider")]
-    pub r#default_provider: Box<Option<String>>,
+    pub r#default_provider: Option<String>,
     /// Should the Authentication / Authorization feature be enabled?
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// a `facebook` block as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "facebook")]
-    pub r#facebook: Box<Option<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsFacebook>>,
+    pub r#facebook: Option<Box<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsFacebook>>,
     /// a `github` block as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "github")]
-    pub r#github: Box<Option<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsGithub>>,
+    pub r#github: Option<Box<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsGithub>>,
     /// a `google` block as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "google")]
-    pub r#google: Box<Option<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsGoogle>>,
+    pub r#google: Option<Box<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsGoogle>>,
     /// The OpenID Connect Issuer URI that represents the entity which issues access tokens.
     /// 
     /// > **NOTE:** When using Azure Active Directory, this value is the URI of the directory tenant, e.g. <https://sts.windows.net/{tenant-guid}/>.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<Option<String>>,
+    pub r#issuer: Option<String>,
     /// a `microsoft` block as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "microsoft")]
-    pub r#microsoft: Box<Option<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsMicrosoft>>,
+    pub r#microsoft: Option<Box<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsMicrosoft>>,
     /// The RuntimeVersion of the Authentication / Authorization feature in use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "runtimeVersion")]
-    pub r#runtime_version: Box<Option<String>>,
+    pub r#runtime_version: Option<String>,
     /// The number of hours after session token expiration that a session token can be used to call the token refresh API. Defaults to `72` hours.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tokenRefreshExtensionHours")]
-    pub r#token_refresh_extension_hours: Box<Option<f64>>,
+    pub r#token_refresh_extension_hours: Option<f64>,
     /// Should the Linux Web App durably store platform-specific security tokens that are obtained during login flows? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tokenStoreEnabled")]
-    pub r#token_store_enabled: Box<Option<bool>>,
+    pub r#token_store_enabled: Option<bool>,
     /// a `twitter` block as detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "twitter")]
-    pub r#twitter: Box<Option<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsTwitter>>,
+    pub r#twitter: Option<Box<super::super::types::appservice::LinuxFunctionAppSlotAuthSettingsTwitter>>,
     /// The action to take when an unauthenticated client attempts to access the app. Possible values include: `RedirectToLoginPage`, `AllowAnonymous`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unauthenticatedClientAction")]
-    pub r#unauthenticated_client_action: Box<Option<String>>,
+    pub r#unauthenticated_client_action: Option<String>,
 }

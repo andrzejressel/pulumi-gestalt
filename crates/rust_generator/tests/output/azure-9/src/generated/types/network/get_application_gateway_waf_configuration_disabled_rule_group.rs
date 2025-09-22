@@ -6,9 +6,9 @@ pub struct GetApplicationGatewayWafConfigurationDisabledRuleGroup {
     /// The rule group where specific rules are disabled.
     #[builder(into)]
     #[serde(rename = "ruleGroupName")]
-    pub r#rule_group_name: Box<String>,
+    pub r#rule_group_name: String,
     /// A list of rules which will be disabled in that group.
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<i32>>,
+    pub r#rules: Vec<i32>,
 }

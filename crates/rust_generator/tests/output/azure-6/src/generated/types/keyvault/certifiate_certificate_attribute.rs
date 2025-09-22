@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertifiateCertificateAttribute {
     /// The create time of the Key Vault Certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "created")]
-    pub r#created: Box<Option<String>>,
+    pub r#created: Option<String>,
     /// whether the Key Vault Certificate is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The expires time of the Key Vault Certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expires")]
-    pub r#expires: Box<Option<String>>,
+    pub r#expires: Option<String>,
     /// The not before valid time of the Key Vault Certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notBefore")]
-    pub r#not_before: Box<Option<String>>,
+    pub r#not_before: Option<String>,
     /// The deletion recovery level of the Key Vault Certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recoveryLevel")]
-    pub r#recovery_level: Box<Option<String>>,
+    pub r#recovery_level: Option<String>,
     /// The recent update time of the Key Vault Certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "updated")]
-    pub r#updated: Box<Option<String>>,
+    pub r#updated: Option<String>,
 }

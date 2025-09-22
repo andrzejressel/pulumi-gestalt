@@ -4,34 +4,34 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTemplateContainerLivenessProbe {
     /// Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "failureThreshold")]
-    pub r#failure_threshold: Box<Option<i32>>,
+    pub r#failure_threshold: Option<i32>,
     /// GRPC specifies an action involving a GRPC port.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "grpc")]
-    pub r#grpc: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerLivenessProbeGrpc>>,
+    pub r#grpc: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerLivenessProbeGrpc>>,
     /// HTTPGet specifies the http request to perform.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpGet")]
-    pub r#http_get: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerLivenessProbeHttpGet>>,
+    pub r#http_get: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerLivenessProbeHttpGet>>,
     /// Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "initialDelaySeconds")]
-    pub r#initial_delay_seconds: Box<Option<i32>>,
+    pub r#initial_delay_seconds: Option<i32>,
     /// How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeoutSeconds
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "periodSeconds")]
-    pub r#period_seconds: Box<Option<i32>>,
+    pub r#period_seconds: Option<i32>,
     /// TCPSocketAction describes an action based on opening a socket
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tcpSocket")]
-    pub r#tcp_socket: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerLivenessProbeTcpSocket>>,
+    pub r#tcp_socket: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerLivenessProbeTcpSocket>>,
     /// Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than periodSeconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeoutSeconds")]
-    pub r#timeout_seconds: Box<Option<i32>>,
+    pub r#timeout_seconds: Option<i32>,
 }

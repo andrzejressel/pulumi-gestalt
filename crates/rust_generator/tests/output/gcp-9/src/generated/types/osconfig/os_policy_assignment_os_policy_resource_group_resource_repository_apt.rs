@@ -7,23 +7,23 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt {
     /// Possible values are: `ARCHIVE_TYPE_UNSPECIFIED`, `DEB`, `DEB_SRC`.
     #[builder(into)]
     #[serde(rename = "archiveType")]
-    pub r#archive_type: Box<String>,
+    pub r#archive_type: String,
     /// List of components for this repository. Must
     /// contain at least one item.
     #[builder(into)]
     #[serde(rename = "components")]
-    pub r#components: Box<Vec<String>>,
+    pub r#components: Vec<String>,
     /// Distribution of this repository.
     #[builder(into)]
     #[serde(rename = "distribution")]
-    pub r#distribution: Box<String>,
+    pub r#distribution: String,
     /// URI of the key file for this repository. The agent
     /// maintains a keyring at `/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gpgKey")]
-    pub r#gpg_key: Box<Option<String>>,
+    pub r#gpg_key: Option<String>,
     /// URI for this repository.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

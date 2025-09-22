@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetLaunchTemplateConfigLaunchTemplateSpecification {
     /// The ID of the launch template.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "launchTemplateId")]
-    pub r#launch_template_id: Box<Option<String>>,
+    pub r#launch_template_id: Option<String>,
     /// The name of the launch template.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "launchTemplateName")]
-    pub r#launch_template_name: Box<Option<String>>,
+    pub r#launch_template_name: Option<String>,
     /// The launch template version number, `$Latest`, or `$Default.`
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

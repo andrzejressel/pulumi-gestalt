@@ -4,39 +4,39 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApiOperationRequestRepresentationFormParameter {
     /// The default value for this Form Parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultValue")]
-    pub r#default_value: Box<Option<String>>,
+    pub r#default_value: Option<String>,
     /// A description of this Form Parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// One or more `example` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "examples")]
-    pub r#examples: Box<Option<Vec<super::super::types::apimanagement::ApiOperationRequestRepresentationFormParameterExample>>>,
+    pub r#examples: Option<Vec<super::super::types::apimanagement::ApiOperationRequestRepresentationFormParameterExample>>,
     /// The Name of this Form Parameter.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Is this Form Parameter Required?
     #[builder(into)]
     #[serde(rename = "required")]
-    pub r#required: Box<bool>,
+    pub r#required: bool,
     /// The name of the Schema.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schemaId")]
-    pub r#schema_id: Box<Option<String>>,
+    pub r#schema_id: Option<String>,
     /// The Type of this Form Parameter, such as a `string`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// The type name defined by the Schema.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "typeName")]
-    pub r#type_name: Box<Option<String>>,
+    pub r#type_name: Option<String>,
     /// One or more acceptable values for this Form Parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<Vec<String>>>,
+    pub r#values: Option<Vec<String>>,
 }

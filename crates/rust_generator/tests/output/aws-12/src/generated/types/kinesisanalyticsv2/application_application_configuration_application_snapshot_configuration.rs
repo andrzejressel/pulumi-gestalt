@@ -6,5 +6,5 @@ pub struct ApplicationApplicationConfigurationApplicationSnapshotConfiguration {
     /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
     #[builder(into)]
     #[serde(rename = "snapshotsEnabled")]
-    pub r#snapshots_enabled: Box<bool>,
+    pub r#snapshots_enabled: bool,
 }

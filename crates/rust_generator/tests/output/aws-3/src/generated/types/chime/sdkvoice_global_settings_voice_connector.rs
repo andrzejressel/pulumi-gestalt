@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SdkvoiceGlobalSettingsVoiceConnector {
     /// The S3 bucket that stores the Voice Connector's call detail records.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cdrBucket")]
-    pub r#cdr_bucket: Box<Option<String>>,
+    pub r#cdr_bucket: Option<String>,
 }

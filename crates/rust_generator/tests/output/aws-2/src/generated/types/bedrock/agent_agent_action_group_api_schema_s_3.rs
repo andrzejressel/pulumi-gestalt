@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AgentAgentActionGroupApiSchemaS3 {
     /// Name of the S3 bucket.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3BucketName")]
-    pub r#s_3_bucket_name: Box<Option<String>>,
+    pub r#s_3_bucket_name: Option<String>,
     /// S3 object key containing the resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3ObjectKey")]
-    pub r#s_3_object_key: Box<Option<String>>,
+    pub r#s_3_object_key: Option<String>,
 }

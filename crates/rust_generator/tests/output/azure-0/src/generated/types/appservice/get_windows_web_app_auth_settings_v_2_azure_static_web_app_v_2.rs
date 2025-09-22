@@ -6,5 +6,5 @@ pub struct GetWindowsWebAppAuthSettingsV2AzureStaticWebAppV2 {
     /// The OAuth 2.0 client ID used by the app for authentication.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
 }

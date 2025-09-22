@@ -6,9 +6,9 @@ pub struct ManagedClusterNodeTypeVmSecret {
     /// One or more `certificates` blocks as defined above.
     #[builder(into)]
     #[serde(rename = "certificates")]
-    pub r#certificates: Box<Vec<super::super::types::servicefabric::ManagedClusterNodeTypeVmSecretCertificate>>,
+    pub r#certificates: Vec<super::super::types::servicefabric::ManagedClusterNodeTypeVmSecretCertificate>,
     /// The ID of the Vault that contain the certificates.
     #[builder(into)]
     #[serde(rename = "vaultId")]
-    pub r#vault_id: Box<String>,
+    pub r#vault_id: String,
 }

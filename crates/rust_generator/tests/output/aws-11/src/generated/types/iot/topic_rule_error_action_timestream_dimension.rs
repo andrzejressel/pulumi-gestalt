@@ -6,9 +6,9 @@ pub struct TopicRuleErrorActionTimestreamDimension {
     /// The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value to write in this column of the database record.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

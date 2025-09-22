@@ -6,9 +6,9 @@ pub struct DirectoryConfigServiceAccountCredentials {
     /// User name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.
     #[builder(into)]
     #[serde(rename = "accountName")]
-    pub r#account_name: Box<String>,
+    pub r#account_name: String,
     /// Password for the account.
     #[builder(into)]
     #[serde(rename = "accountPassword")]
-    pub r#account_password: Box<String>,
+    pub r#account_password: String,
 }

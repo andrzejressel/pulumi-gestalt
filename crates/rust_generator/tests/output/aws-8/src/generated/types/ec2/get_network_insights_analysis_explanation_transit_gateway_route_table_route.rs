@@ -5,23 +5,23 @@
 pub struct GetNetworkInsightsAnalysisExplanationTransitGatewayRouteTableRoute {
     #[builder(into)]
     #[serde(rename = "attachmentId")]
-    pub r#attachment_id: Box<String>,
+    pub r#attachment_id: String,
     #[builder(into)]
     #[serde(rename = "destinationCidr")]
-    pub r#destination_cidr: Box<String>,
+    pub r#destination_cidr: String,
     #[builder(into)]
     #[serde(rename = "prefixListId")]
-    pub r#prefix_list_id: Box<String>,
+    pub r#prefix_list_id: String,
     #[builder(into)]
     #[serde(rename = "resourceId")]
-    pub r#resource_id: Box<String>,
+    pub r#resource_id: String,
     #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<String>,
+    pub r#resource_type: String,
     #[builder(into)]
     #[serde(rename = "routeOrigin")]
-    pub r#route_origin: Box<String>,
+    pub r#route_origin: String,
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

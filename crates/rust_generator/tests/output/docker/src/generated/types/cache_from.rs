@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CacheFrom {
     /// Specifies cached images
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "images")]
-    pub r#images: Box<Option<Vec<String>>>,
+    pub r#images: Option<Vec<String>>,
 }

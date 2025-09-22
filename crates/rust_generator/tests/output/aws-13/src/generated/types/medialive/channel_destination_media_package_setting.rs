@@ -6,5 +6,5 @@ pub struct ChannelDestinationMediaPackageSetting {
     /// ID of the channel in MediaPackage that is the destination for this output group.
     #[builder(into)]
     #[serde(rename = "channelId")]
-    pub r#channel_id: Box<String>,
+    pub r#channel_id: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AiFeatureOnlineStoreFeatureviewVectorSearchConfigTreeAhConfig {
     /// Number of embeddings on each leaf node. The default value is 1000 if not set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "leafNodeEmbeddingCount")]
-    pub r#leaf_node_embedding_count: Box<Option<String>>,
+    pub r#leaf_node_embedding_count: Option<String>,
 }

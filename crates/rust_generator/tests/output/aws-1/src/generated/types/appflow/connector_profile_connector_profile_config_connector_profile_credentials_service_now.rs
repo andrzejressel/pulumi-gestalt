@@ -5,8 +5,8 @@
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsServiceNow {
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

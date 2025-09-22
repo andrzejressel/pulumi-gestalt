@@ -6,25 +6,25 @@ pub struct GetJobTemplateTemplateVolume {
     /// For Cloud SQL volumes, contains the specific instances that should be mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run.
     #[builder(into)]
     #[serde(rename = "cloudSqlInstances")]
-    pub r#cloud_sql_instances: Box<Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateVolumeCloudSqlInstance>>,
+    pub r#cloud_sql_instances: Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateVolumeCloudSqlInstance>,
     /// Ephemeral storage used as a shared volume.
     #[builder(into)]
     #[serde(rename = "emptyDirs")]
-    pub r#empty_dirs: Box<Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateVolumeEmptyDir>>,
+    pub r#empty_dirs: Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateVolumeEmptyDir>,
     /// Cloud Storage bucket mounted as a volume using GCSFuse.
     #[builder(into)]
     #[serde(rename = "gcs")]
-    pub r#gcs: Box<Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateVolumeGc>>,
+    pub r#gcs: Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateVolumeGc>,
     /// The name of the Cloud Run v2 Job.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// NFS share mounted as a volume.
     #[builder(into)]
     #[serde(rename = "nfs")]
-    pub r#nfs: Box<Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateVolumeNf>>,
+    pub r#nfs: Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateVolumeNf>,
     /// Secret represents a secret that should populate this volume. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret
     #[builder(into)]
     #[serde(rename = "secrets")]
-    pub r#secrets: Box<Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateVolumeSecret>>,
+    pub r#secrets: Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateVolumeSecret>,
 }

@@ -6,23 +6,23 @@ pub struct ApplicationPlan {
     /// Specifies the name of the plan from the marketplace. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the product of the plan from the marketplace. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "product")]
-    pub r#product: Box<String>,
+    pub r#product: String,
     /// Specifies the promotion code to use with the plan. Changing this forces a new resource to be created.
     /// 
     /// > **NOTE:** When `plan` is specified, legal terms must be accepted for this item on this subscription before creating the Managed Application. The `azure.marketplace.Agreement` resource or AZ CLI tool can be used to do this.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "promotionCode")]
-    pub r#promotion_code: Box<Option<String>>,
+    pub r#promotion_code: Option<String>,
     /// Specifies the publisher of the plan. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<String>,
+    pub r#publisher: String,
     /// Specifies the version of the plan from the marketplace. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

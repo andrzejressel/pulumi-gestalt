@@ -10,7 +10,7 @@ pub struct ManagementPolicyRule {
     /// Boolean to specify whether the rule is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// A `filters` block as documented below.
     #[builder(into)]
     #[serde(rename = "filters")]
@@ -18,5 +18,5 @@ pub struct ManagementPolicyRule {
     /// The name of the rule. Rule name is case-sensitive. It must be unique within a policy.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

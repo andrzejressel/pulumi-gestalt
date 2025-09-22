@@ -6,9 +6,9 @@ pub struct GetBrokerEngineTypesBrokerEngineType {
     /// The MQ engine type to return version details for.
     #[builder(into)]
     #[serde(rename = "engineType")]
-    pub r#engine_type: Box<String>,
+    pub r#engine_type: String,
     /// The list of engine versions.
     #[builder(into)]
     #[serde(rename = "engineVersions")]
-    pub r#engine_versions: Box<Vec<super::super::types::mq::GetBrokerEngineTypesBrokerEngineTypeEngineVersion>>,
+    pub r#engine_versions: Vec<super::super::types::mq::GetBrokerEngineTypesBrokerEngineTypeEngineVersion>,
 }

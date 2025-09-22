@@ -6,5 +6,5 @@ pub struct StreamStreamModeDetails {
     /// Specifies the capacity mode of the stream. Must be either `PROVISIONED` or `ON_DEMAND`.
     #[builder(into)]
     #[serde(rename = "streamMode")]
-    pub r#stream_mode: Box<String>,
+    pub r#stream_mode: String,
 }

@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ReplicationConfigurationTemplatePitPolicy {
     /// Whether this rule is enabled or not.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// How often, in the chosen units, a snapshot should be taken.
     #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<i32>,
+    pub r#interval: i32,
     /// Duration to retain a snapshot for, in the chosen `units`.
     #[builder(into)]
     #[serde(rename = "retentionDuration")]
-    pub r#retention_duration: Box<i32>,
+    pub r#retention_duration: i32,
     /// ID of the rule. Valid values are integers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ruleId")]
-    pub r#rule_id: Box<Option<i32>>,
+    pub r#rule_id: Option<i32>,
     /// Units used to measure the `interval` and `retention_duration`. Valid values are `MINUTE`, `HOUR`, and `DAY`.
     #[builder(into)]
     #[serde(rename = "units")]
-    pub r#units: Box<String>,
+    pub r#units: String,
 }

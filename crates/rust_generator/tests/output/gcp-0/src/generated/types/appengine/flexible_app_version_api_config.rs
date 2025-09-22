@@ -6,26 +6,26 @@ pub struct FlexibleAppVersionApiConfig {
     /// Action to take when users access resources that require authentication.
     /// Default value is `AUTH_FAIL_ACTION_REDIRECT`.
     /// Possible values are: `AUTH_FAIL_ACTION_REDIRECT`, `AUTH_FAIL_ACTION_UNAUTHORIZED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authFailAction")]
-    pub r#auth_fail_action: Box<Option<String>>,
+    pub r#auth_fail_action: Option<String>,
     /// Level of login required to access this resource.
     /// Default value is `LOGIN_OPTIONAL`.
     /// Possible values are: `LOGIN_OPTIONAL`, `LOGIN_ADMIN`, `LOGIN_REQUIRED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "login")]
-    pub r#login: Box<Option<String>>,
+    pub r#login: Option<String>,
     /// Path to the script from the application root directory.
     #[builder(into)]
     #[serde(rename = "script")]
-    pub r#script: Box<String>,
+    pub r#script: String,
     /// Security (HTTPS) enforcement for this URL.
     /// Possible values are: `SECURE_DEFAULT`, `SECURE_NEVER`, `SECURE_OPTIONAL`, `SECURE_ALWAYS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "securityLevel")]
-    pub r#security_level: Box<Option<String>>,
+    pub r#security_level: Option<String>,
     /// URL to serve the endpoint at.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<Option<String>>,
+    pub r#url: Option<String>,
 }

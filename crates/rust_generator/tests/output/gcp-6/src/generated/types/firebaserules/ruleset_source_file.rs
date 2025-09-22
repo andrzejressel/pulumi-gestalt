@@ -6,15 +6,15 @@ pub struct RulesetSourceFile {
     /// Textual Content.
     #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<String>,
+    pub r#content: String,
     /// Fingerprint (e.g. github sha) associated with the `File`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fingerprint")]
-    pub r#fingerprint: Box<Option<String>>,
+    pub r#fingerprint: Option<String>,
     /// File name.
     /// 
     /// - - -
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

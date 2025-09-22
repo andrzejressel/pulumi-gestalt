@@ -6,9 +6,9 @@ pub struct GetLinuxWebAppLogHttpLogAzureBlobStorage {
     /// The retention period in days.
     #[builder(into)]
     #[serde(rename = "retentionInDays")]
-    pub r#retention_in_days: Box<i32>,
+    pub r#retention_in_days: i32,
     /// The SAS url to an Azure blob container.
     #[builder(into)]
     #[serde(rename = "sasUrl")]
-    pub r#sas_url: Box<String>,
+    pub r#sas_url: String,
 }

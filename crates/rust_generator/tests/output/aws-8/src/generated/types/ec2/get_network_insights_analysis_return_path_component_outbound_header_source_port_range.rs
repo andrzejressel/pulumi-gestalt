@@ -5,8 +5,8 @@
 pub struct GetNetworkInsightsAnalysisReturnPathComponentOutboundHeaderSourcePortRange {
     #[builder(into)]
     #[serde(rename = "from")]
-    pub r#from: Box<i32>,
+    pub r#from: i32,
     #[builder(into)]
     #[serde(rename = "to")]
-    pub r#to: Box<i32>,
+    pub r#to: i32,
 }

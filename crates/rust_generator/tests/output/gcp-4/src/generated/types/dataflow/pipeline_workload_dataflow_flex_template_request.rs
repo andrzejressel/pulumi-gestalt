@@ -12,13 +12,13 @@ pub struct PipelineWorkloadDataflowFlexTemplateRequest {
     /// The regional endpoint to which to direct the request. For example, us-central1, us-west1.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// The ID of the Cloud Platform project that the job belongs to.
     #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<String>,
+    pub r#project_id: String,
     /// If true, the request is validated but not actually executed. Defaults to false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "validateOnly")]
-    pub r#validate_only: Box<Option<bool>>,
+    pub r#validate_only: Option<bool>,
 }

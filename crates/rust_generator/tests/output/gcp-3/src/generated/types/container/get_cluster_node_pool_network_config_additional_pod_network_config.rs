@@ -6,13 +6,13 @@ pub struct GetClusterNodePoolNetworkConfigAdditionalPodNetworkConfig {
     /// The maximum number of pods per node which use this pod network.
     #[builder(into)]
     #[serde(rename = "maxPodsPerNode")]
-    pub r#max_pods_per_node: Box<i32>,
+    pub r#max_pods_per_node: i32,
     /// The name of the secondary range on the subnet which provides IP address for this pod range.
     #[builder(into)]
     #[serde(rename = "secondaryPodRange")]
-    pub r#secondary_pod_range: Box<String>,
+    pub r#secondary_pod_range: String,
     /// Name of the subnetwork where the additional pod network belongs.
     #[builder(into)]
     #[serde(rename = "subnetwork")]
-    pub r#subnetwork: Box<String>,
+    pub r#subnetwork: String,
 }

@@ -6,9 +6,9 @@ pub struct GetCryptoKeyVersionsVersionPublicKey {
     /// The CryptoKeyVersionAlgorithm that this CryptoKeyVersion supports.
     #[builder(into)]
     #[serde(rename = "algorithm")]
-    pub r#algorithm: Box<String>,
+    pub r#algorithm: String,
     /// The public key, encoded in PEM format. For more information, see the RFC 7468 sections for General Considerations and Textual Encoding of Subject Public Key Info.
     #[builder(into)]
     #[serde(rename = "pem")]
-    pub r#pem: Box<String>,
+    pub r#pem: String,
 }

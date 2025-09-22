@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApiOperationResponse {
     /// A description of the HTTP Response, which may include HTML tags.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// One or more `header` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Option<Vec<super::super::types::apimanagement::ApiOperationResponseHeader>>>,
+    pub r#headers: Option<Vec<super::super::types::apimanagement::ApiOperationResponseHeader>>,
     /// One or more `representation` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "representations")]
-    pub r#representations: Box<Option<Vec<super::super::types::apimanagement::ApiOperationResponseRepresentation>>>,
+    pub r#representations: Option<Vec<super::super::types::apimanagement::ApiOperationResponseRepresentation>>,
     /// The HTTP Status Code.
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<i32>,
+    pub r#status_code: i32,
 }

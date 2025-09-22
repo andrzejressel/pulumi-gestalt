@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApiTokenCondition {
     /// Request IP related conditions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestIp")]
-    pub r#request_ip: Box<Option<super::types::ApiTokenConditionRequestIp>>,
+    pub r#request_ip: Option<Box<super::types::ApiTokenConditionRequestIp>>,
 }

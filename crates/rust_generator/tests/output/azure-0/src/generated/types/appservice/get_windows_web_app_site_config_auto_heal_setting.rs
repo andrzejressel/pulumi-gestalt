@@ -6,9 +6,9 @@ pub struct GetWindowsWebAppSiteConfigAutoHealSetting {
     /// A `action` block as defined above.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingAction>>,
+    pub r#actions: Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingAction>,
     /// A `trigger` block as defined below.
     #[builder(into)]
     #[serde(rename = "triggers")]
-    pub r#triggers: Box<Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingTrigger>>,
+    pub r#triggers: Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingTrigger>,
 }

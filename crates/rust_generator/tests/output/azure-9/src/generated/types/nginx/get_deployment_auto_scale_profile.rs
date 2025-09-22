@@ -6,13 +6,13 @@ pub struct GetDeploymentAutoScaleProfile {
     /// The maximum number of NGINX capacity units for this NGINX Deployment.
     #[builder(into)]
     #[serde(rename = "maxCapacity")]
-    pub r#max_capacity: Box<i32>,
+    pub r#max_capacity: i32,
     /// The minimum number of NGINX capacity units for this NGINX Deployment.
     #[builder(into)]
     #[serde(rename = "minCapacity")]
-    pub r#min_capacity: Box<i32>,
+    pub r#min_capacity: i32,
     /// The name of this NGINX Deployment.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

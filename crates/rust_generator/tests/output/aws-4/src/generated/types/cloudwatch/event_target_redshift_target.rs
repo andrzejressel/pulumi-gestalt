@@ -6,25 +6,25 @@ pub struct EventTargetRedshiftTarget {
     /// The name of the database.
     #[builder(into)]
     #[serde(rename = "database")]
-    pub r#database: Box<String>,
+    pub r#database: String,
     /// The database user name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dbUser")]
-    pub r#db_user: Box<Option<String>>,
+    pub r#db_user: Option<String>,
     /// The name or ARN of the secret that enables access to the database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretsManagerArn")]
-    pub r#secrets_manager_arn: Box<Option<String>>,
+    pub r#secrets_manager_arn: Option<String>,
     /// The SQL statement text to run.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sql")]
-    pub r#sql: Box<Option<String>>,
+    pub r#sql: Option<String>,
     /// The name of the SQL statement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statementName")]
-    pub r#statement_name: Box<Option<String>>,
+    pub r#statement_name: Option<String>,
     /// Indicates whether to send an event back to EventBridge after the SQL statement runs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "withEvent")]
-    pub r#with_event: Box<Option<bool>>,
+    pub r#with_event: Option<bool>,
 }

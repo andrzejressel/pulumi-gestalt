@@ -5,12 +5,12 @@
 pub struct AutoscalerAutoscalingPolicyScaleDownControl {
     /// A nested object resource.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxScaledDownReplicas")]
-    pub r#max_scaled_down_replicas: Box<Option<super::super::types::compute::AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas>>,
+    pub r#max_scaled_down_replicas: Option<Box<super::super::types::compute::AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas>>,
     /// How long back autoscaling should look when computing recommendations
     /// to include directives regarding slower scale down, as described above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeWindowSec")]
-    pub r#time_window_sec: Box<Option<i32>>,
+    pub r#time_window_sec: Option<i32>,
 }

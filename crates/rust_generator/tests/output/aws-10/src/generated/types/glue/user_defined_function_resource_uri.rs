@@ -6,9 +6,9 @@ pub struct UserDefinedFunctionResourceUri {
     /// The type of the resource. can be one of `JAR`, `FILE`, and `ARCHIVE`.
     #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<String>,
+    pub r#resource_type: String,
     /// The URI for accessing the resource.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

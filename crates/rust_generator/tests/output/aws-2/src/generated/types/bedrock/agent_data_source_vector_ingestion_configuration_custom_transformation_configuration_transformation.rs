@@ -6,9 +6,9 @@ pub struct AgentDataSourceVectorIngestionConfigurationCustomTransformationConfig
     /// When the service applies the transformation. Currently only `POST_CHUNKING` is supported.
     #[builder(into)]
     #[serde(rename = "stepToApply")]
-    pub r#step_to_apply: Box<String>,
+    pub r#step_to_apply: String,
     /// The lambda function that processes documents.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transformationFunction")]
-    pub r#transformation_function: Box<Option<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationTransformationFunction>>,
+    pub r#transformation_function: Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationTransformationFunction>>,
 }

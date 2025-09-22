@@ -8,17 +8,17 @@ pub struct SloWindowsBasedSli {
     /// appear in the window. One of `good_bad_metric_filter`,
     /// `good_total_ratio_threshold`, `metric_mean_in_range`,
     /// `metric_sum_in_range` must be set for `windows_based_sli`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "goodBadMetricFilter")]
-    pub r#good_bad_metric_filter: Box<Option<String>>,
+    pub r#good_bad_metric_filter: Option<String>,
     /// Criterion that describes a window as good if its performance is
     /// high enough. One of `good_bad_metric_filter`,
     /// `good_total_ratio_threshold`, `metric_mean_in_range`,
     /// `metric_sum_in_range` must be set for `windows_based_sli`.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "goodTotalRatioThreshold")]
-    pub r#good_total_ratio_threshold: Box<Option<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThreshold>>,
+    pub r#good_total_ratio_threshold: Option<Box<super::super::types::monitoring::SloWindowsBasedSliGoodTotalRatioThreshold>>,
     /// Criterion that describes a window as good if the metric's value
     /// is in a good range, *averaged* across returned streams.
     /// One of `good_bad_metric_filter`,
@@ -27,9 +27,9 @@ pub struct SloWindowsBasedSli {
     /// Average value X of `time_series` should satisfy
     /// `range.min <= X <= range.max` for a good window.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricMeanInRange")]
-    pub r#metric_mean_in_range: Box<Option<super::super::types::monitoring::SloWindowsBasedSliMetricMeanInRange>>,
+    pub r#metric_mean_in_range: Option<Box<super::super::types::monitoring::SloWindowsBasedSliMetricMeanInRange>>,
     /// Criterion that describes a window as good if the metric's value
     /// is in a good range, *summed* across returned streams.
     /// Summed value `X` of `time_series` should satisfy
@@ -38,13 +38,13 @@ pub struct SloWindowsBasedSli {
     /// `good_total_ratio_threshold`, `metric_mean_in_range`,
     /// `metric_sum_in_range` must be set for `windows_based_sli`.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricSumInRange")]
-    pub r#metric_sum_in_range: Box<Option<super::super::types::monitoring::SloWindowsBasedSliMetricSumInRange>>,
+    pub r#metric_sum_in_range: Option<Box<super::super::types::monitoring::SloWindowsBasedSliMetricSumInRange>>,
     /// Duration over which window quality is evaluated, given as a
     /// duration string "{X}s" representing X seconds. Must be an
     /// integer fraction of a day and at least 60s.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "windowPeriod")]
-    pub r#window_period: Box<Option<String>>,
+    pub r#window_period: Option<String>,
 }

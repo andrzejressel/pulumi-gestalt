@@ -6,9 +6,9 @@ pub struct AiFeatureStoreOnlineServingConfigScaling {
     /// The maximum number of nodes to scale up to. Must be greater than minNodeCount, and less than or equal to 10 times of 'minNodeCount'.
     #[builder(into)]
     #[serde(rename = "maxNodeCount")]
-    pub r#max_node_count: Box<i32>,
+    pub r#max_node_count: i32,
     /// The minimum number of nodes to scale down to. Must be greater than or equal to 1.
     #[builder(into)]
     #[serde(rename = "minNodeCount")]
-    pub r#min_node_count: Box<i32>,
+    pub r#min_node_count: i32,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketMetricFilter {
     /// S3 Access Point ARN for filtering (singular).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessPoint")]
-    pub r#access_point: Box<Option<String>>,
+    pub r#access_point: Option<String>,
     /// Object prefix for filtering (singular).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
     /// Object tags for filtering (up to 10).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#tags: Option<std::collections::HashMap<String, String>>,
 }

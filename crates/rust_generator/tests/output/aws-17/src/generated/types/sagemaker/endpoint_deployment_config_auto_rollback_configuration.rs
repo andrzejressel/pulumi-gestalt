@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointDeploymentConfigAutoRollbackConfiguration {
     /// List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment. See Alarms.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "alarms")]
-    pub r#alarms: Box<Option<Vec<super::super::types::sagemaker::EndpointDeploymentConfigAutoRollbackConfigurationAlarm>>>,
+    pub r#alarms: Option<Vec<super::super::types::sagemaker::EndpointDeploymentConfigAutoRollbackConfigurationAlarm>>,
 }

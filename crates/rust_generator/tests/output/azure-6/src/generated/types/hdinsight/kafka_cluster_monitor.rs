@@ -6,9 +6,9 @@ pub struct KafkaClusterMonitor {
     /// The Operations Management Suite (OMS) workspace ID.
     #[builder(into)]
     #[serde(rename = "logAnalyticsWorkspaceId")]
-    pub r#log_analytics_workspace_id: Box<String>,
+    pub r#log_analytics_workspace_id: String,
     /// The Operations Management Suite (OMS) workspace key.
     #[builder(into)]
     #[serde(rename = "primaryKey")]
-    pub r#primary_key: Box<String>,
+    pub r#primary_key: String,
 }

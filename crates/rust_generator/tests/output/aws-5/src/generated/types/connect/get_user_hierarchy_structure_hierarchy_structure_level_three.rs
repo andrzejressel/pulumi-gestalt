@@ -6,13 +6,13 @@ pub struct GetUserHierarchyStructureHierarchyStructureLevelThree {
     /// ARN of the hierarchy level.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// The identifier of the hierarchy level.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Name of the user hierarchy level. Must not be more than 50 characters.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -6,5 +6,5 @@ pub struct GetInstanceAutoscalingConfigAsymmetricAutoscalingOptionOverride {
     /// A nested object resource.
     #[builder(into)]
     #[serde(rename = "autoscalingLimits")]
-    pub r#autoscaling_limits: Box<Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAsymmetricAutoscalingOptionOverrideAutoscalingLimit>>,
+    pub r#autoscaling_limits: Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAsymmetricAutoscalingOptionOverrideAutoscalingLimit>,
 }

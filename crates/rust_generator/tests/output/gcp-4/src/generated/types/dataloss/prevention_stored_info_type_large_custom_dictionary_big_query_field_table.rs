@@ -6,13 +6,13 @@ pub struct PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTable {
     /// The dataset ID of the table.
     #[builder(into)]
     #[serde(rename = "datasetId")]
-    pub r#dataset_id: Box<String>,
+    pub r#dataset_id: String,
     /// The Google Cloud Platform project ID of the project containing the table.
     #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<String>,
+    pub r#project_id: String,
     /// The name of the table.
     #[builder(into)]
     #[serde(rename = "tableId")]
-    pub r#table_id: Box<String>,
+    pub r#table_id: String,
 }

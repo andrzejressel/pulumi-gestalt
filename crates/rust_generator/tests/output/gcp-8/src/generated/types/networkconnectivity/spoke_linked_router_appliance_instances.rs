@@ -5,16 +5,16 @@
 pub struct SpokeLinkedRouterApplianceInstances {
     /// IP ranges allowed to be included during import from hub (does not control transit connectivity).
     /// The only allowed value for now is "ALL_IPV4_RANGES".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includeImportRanges")]
-    pub r#include_import_ranges: Box<Option<Vec<String>>>,
+    pub r#include_import_ranges: Option<Vec<String>>,
     /// The list of router appliance instances
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "instances")]
-    pub r#instances: Box<Vec<super::super::types::networkconnectivity::SpokeLinkedRouterApplianceInstancesInstance>>,
+    pub r#instances: Vec<super::super::types::networkconnectivity::SpokeLinkedRouterApplianceInstancesInstance>,
     /// A value that controls whether site-to-site data transfer is enabled for these resources. Note that data transfer is available only in supported locations.
     #[builder(into)]
     #[serde(rename = "siteToSiteDataTransfer")]
-    pub r#site_to_site_data_transfer: Box<bool>,
+    pub r#site_to_site_data_transfer: bool,
 }

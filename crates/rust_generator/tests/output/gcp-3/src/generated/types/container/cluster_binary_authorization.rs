@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterBinaryAuthorization {
     /// Enable Binary Authorization for this cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Mode of operation for Binary Authorization policy evaluation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "evaluationMode")]
-    pub r#evaluation_mode: Box<Option<String>>,
+    pub r#evaluation_mode: Option<String>,
 }

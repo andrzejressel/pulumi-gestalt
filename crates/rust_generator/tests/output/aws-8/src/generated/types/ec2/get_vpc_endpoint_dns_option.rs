@@ -6,9 +6,9 @@ pub struct GetVpcEndpointDnsOption {
     /// The DNS records created for the endpoint.
     #[builder(into)]
     #[serde(rename = "dnsRecordIpType")]
-    pub r#dns_record_ip_type: Box<String>,
+    pub r#dns_record_ip_type: String,
     /// Indicates whether to enable private DNS only for inbound endpoints.
     #[builder(into)]
     #[serde(rename = "privateDnsOnlyForInboundResolverEndpoint")]
-    pub r#private_dns_only_for_inbound_resolver_endpoint: Box<bool>,
+    pub r#private_dns_only_for_inbound_resolver_endpoint: bool,
 }

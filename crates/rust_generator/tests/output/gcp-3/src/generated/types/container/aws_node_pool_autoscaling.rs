@@ -6,9 +6,9 @@ pub struct AwsNodePoolAutoscaling {
     /// Maximum number of nodes in the NodePool. Must be >= min_node_count.
     #[builder(into)]
     #[serde(rename = "maxNodeCount")]
-    pub r#max_node_count: Box<i32>,
+    pub r#max_node_count: i32,
     /// Minimum number of nodes in the NodePool. Must be >= 1 and <= max_node_count.
     #[builder(into)]
     #[serde(rename = "minNodeCount")]
-    pub r#min_node_count: Box<i32>,
+    pub r#min_node_count: i32,
 }

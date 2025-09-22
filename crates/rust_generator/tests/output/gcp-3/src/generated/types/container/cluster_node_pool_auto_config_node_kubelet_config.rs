@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterNodePoolAutoConfigNodeKubeletConfig {
     /// Controls whether the kubelet read-only port is enabled. It is strongly recommended to set this to `FALSE`. Possible values: `TRUE`, `FALSE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "insecureKubeletReadonlyPortEnabled")]
-    pub r#insecure_kubelet_readonly_port_enabled: Box<Option<String>>,
+    pub r#insecure_kubelet_readonly_port_enabled: Option<String>,
 }

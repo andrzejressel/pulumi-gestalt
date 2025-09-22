@@ -6,9 +6,9 @@ pub struct NetworkManagerConnectivityConfigurationHub {
     /// Specifies the resource ID used as hub in Hub And Spoke topology.
     #[builder(into)]
     #[serde(rename = "resourceId")]
-    pub r#resource_id: Box<String>,
+    pub r#resource_id: String,
     /// Specifies the resource Type used as hub in Hub And Spoke topology.
     #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<String>,
+    pub r#resource_type: String,
 }

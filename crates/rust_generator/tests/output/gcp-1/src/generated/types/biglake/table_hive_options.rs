@@ -6,16 +6,16 @@ pub struct TableHiveOptions {
     /// Stores user supplied Hive table parameters. An object containing a
     /// list of "key": value pairs.
     /// Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#parameters: Option<std::collections::HashMap<String, String>>,
     /// Stores physical storage information on the data.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageDescriptor")]
-    pub r#storage_descriptor: Box<Option<super::super::types::biglake::TableHiveOptionsStorageDescriptor>>,
+    pub r#storage_descriptor: Option<Box<super::super::types::biglake::TableHiveOptionsStorageDescriptor>>,
     /// Hive table type. For example, MANAGED_TABLE, EXTERNAL_TABLE.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tableType")]
-    pub r#table_type: Box<Option<String>>,
+    pub r#table_type: Option<String>,
 }

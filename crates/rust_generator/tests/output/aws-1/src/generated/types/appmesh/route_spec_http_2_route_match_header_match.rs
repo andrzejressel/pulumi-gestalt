@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouteSpecHttp2RouteMatchHeaderMatch {
     /// Header value sent by the client must match the specified value exactly.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exact")]
-    pub r#exact: Box<Option<String>>,
+    pub r#exact: Option<String>,
     /// Header value sent by the client must begin with the specified characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
     /// Object that specifies the range of numbers that the header value sent by the client must be included in.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "range")]
-    pub r#range: Box<Option<super::super::types::appmesh::RouteSpecHttp2RouteMatchHeaderMatchRange>>,
+    pub r#range: Option<Box<super::super::types::appmesh::RouteSpecHttp2RouteMatchHeaderMatchRange>>,
     /// Header value sent by the client must include the specified characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<Option<String>>,
+    pub r#regex: Option<String>,
     /// Header value sent by the client must end with the specified characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "suffix")]
-    pub r#suffix: Box<Option<String>>,
+    pub r#suffix: Option<String>,
 }

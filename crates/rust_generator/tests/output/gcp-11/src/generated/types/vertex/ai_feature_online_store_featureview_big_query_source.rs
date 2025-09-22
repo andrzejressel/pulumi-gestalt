@@ -6,9 +6,9 @@ pub struct AiFeatureOnlineStoreFeatureviewBigQuerySource {
     /// Columns to construct entityId / row keys. Start by supporting 1 only.
     #[builder(into)]
     #[serde(rename = "entityIdColumns")]
-    pub r#entity_id_columns: Box<Vec<String>>,
+    pub r#entity_id_columns: Vec<String>,
     /// The BigQuery view URI that will be materialized on each sync trigger based on FeatureView.SyncConfig.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

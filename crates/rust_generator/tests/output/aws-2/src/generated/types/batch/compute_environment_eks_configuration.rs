@@ -6,9 +6,9 @@ pub struct ComputeEnvironmentEksConfiguration {
     /// The Amazon Resource Name (ARN) of the Amazon EKS cluster.
     #[builder(into)]
     #[serde(rename = "eksClusterArn")]
-    pub r#eks_cluster_arn: Box<String>,
+    pub r#eks_cluster_arn: String,
     /// The namespace of the Amazon EKS cluster. AWS Batch manages pods in this namespace.
     #[builder(into)]
     #[serde(rename = "kubernetesNamespace")]
-    pub r#kubernetes_namespace: Box<String>,
+    pub r#kubernetes_namespace: String,
 }

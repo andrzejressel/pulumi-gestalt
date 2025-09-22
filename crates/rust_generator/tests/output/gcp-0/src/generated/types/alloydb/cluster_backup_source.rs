@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterBackupSource {
     /// The name of the backup resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backupName")]
-    pub r#backup_name: Box<Option<String>>,
+    pub r#backup_name: Option<String>,
 }

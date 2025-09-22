@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResourceSetResourceDnsTargetResourceTargetResourceNlbResource {
     /// NLB resource ARN.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<Option<String>>,
+    pub r#arn: Option<String>,
 }

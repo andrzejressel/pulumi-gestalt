@@ -6,13 +6,13 @@ pub struct GetSecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig {
     /// If set to true, enables CAAP for L7 DDoS detection.
     #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<bool>,
+    pub r#enable: bool,
     /// Rule visibility. Supported values include: "STANDARD", "PREMIUM".
     #[builder(into)]
     #[serde(rename = "ruleVisibility")]
-    pub r#rule_visibility: Box<String>,
+    pub r#rule_visibility: String,
     /// Configuration options for layer7 adaptive protection for various customizable thresholds.
     #[builder(into)]
     #[serde(rename = "thresholdConfigs")]
-    pub r#threshold_configs: Box<Vec<super::super::types::compute::GetSecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig>>,
+    pub r#threshold_configs: Vec<super::super::types::compute::GetSecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig>,
 }

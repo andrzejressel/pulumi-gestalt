@@ -11,5 +11,5 @@ pub struct PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampFie
     /// timestamp property does not exist or its value is empty or invalid.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -6,9 +6,9 @@ pub struct LifecyclePolicyPolicyDetailExclusionRulesAmisLastLaunched {
     /// Defines the unit of time that the lifecycle policy uses to calculate elapsed time since the last instance launched from the AMI. For example: days, weeks, months, or years. Valid values: `DAYS`, `WEEKS`, `MONTHS` or `YEARS`.
     #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<String>,
+    pub r#unit: String,
     /// The integer number of units for the time period. For example 6 (months).
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<i32>,
+    pub r#value: i32,
 }

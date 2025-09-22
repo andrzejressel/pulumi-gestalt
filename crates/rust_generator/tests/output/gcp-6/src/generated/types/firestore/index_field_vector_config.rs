@@ -5,13 +5,13 @@
 pub struct IndexFieldVectorConfig {
     /// The resulting index will only include vectors of this dimension, and can be used for vector search
     /// with the same dimension.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dimension")]
-    pub r#dimension: Box<Option<i32>>,
+    pub r#dimension: Option<i32>,
     /// Indicates the vector index is a flat index.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "flat")]
-    pub r#flat: Box<Option<super::super::types::firestore::IndexFieldVectorConfigFlat>>,
+    pub r#flat: Option<Box<super::super::types::firestore::IndexFieldVectorConfigFlat>>,
 }

@@ -6,9 +6,9 @@ pub struct FirewallPolicyInsightsLogAnalyticsWorkspace {
     /// The location of the Firewalls, that when matches this Log Analytics Workspace will be used to consume their logs.
     #[builder(into)]
     #[serde(rename = "firewallLocation")]
-    pub r#firewall_location: Box<String>,
+    pub r#firewall_location: String,
     /// The ID of the Log Analytics Workspace that the Firewalls associated with this Firewall Policy will send their logs to when their locations match the `firewall_location`.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

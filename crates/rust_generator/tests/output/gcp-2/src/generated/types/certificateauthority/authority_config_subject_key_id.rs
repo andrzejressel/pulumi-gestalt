@@ -6,7 +6,7 @@ pub struct AuthorityConfigSubjectKeyId {
     /// The value of the KeyId in lowercase hexadecimal.
     /// 
     /// <a name="nested_x509_config"></a>The `x509_config` block supports:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyId")]
-    pub r#key_id: Box<Option<String>>,
+    pub r#key_id: Option<String>,
 }

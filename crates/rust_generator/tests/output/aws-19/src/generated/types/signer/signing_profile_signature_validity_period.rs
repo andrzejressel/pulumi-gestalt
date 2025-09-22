@@ -6,9 +6,9 @@ pub struct SigningProfileSignatureValidityPeriod {
     /// The time unit for signature validity. Valid values: `DAYS`, `MONTHS`, `YEARS`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// The numerical value of the time unit for signature validity.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<i32>,
+    pub r#value: i32,
 }

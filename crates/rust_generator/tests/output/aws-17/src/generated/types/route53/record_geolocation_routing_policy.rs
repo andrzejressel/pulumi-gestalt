@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RecordGeolocationRoutingPolicy {
     /// A two-letter continent code. See http://docs.aws.amazon.com/Route53/latest/APIReference/API_GetGeoLocation.html for code details. Either `continent` or `country` must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "continent")]
-    pub r#continent: Box<Option<String>>,
+    pub r#continent: Option<String>,
     /// A two-character country code or `*` to indicate a default resource record set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "country")]
-    pub r#country: Box<Option<String>>,
+    pub r#country: Option<String>,
     /// A subdivision code for a country.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subdivision")]
-    pub r#subdivision: Box<Option<String>>,
+    pub r#subdivision: Option<String>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentConfigWorkloadsConfigWebServer {
     /// CPU request and limit for Airflow web server.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<Option<f64>>,
+    pub r#cpu: Option<f64>,
     /// Memory (GB) request and limit for Airflow web server.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "memoryGb")]
-    pub r#memory_gb: Box<Option<f64>>,
+    pub r#memory_gb: Option<f64>,
     /// Storage (GB) request and limit for Airflow web server.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageGb")]
-    pub r#storage_gb: Box<Option<f64>>,
+    pub r#storage_gb: Option<f64>,
 }

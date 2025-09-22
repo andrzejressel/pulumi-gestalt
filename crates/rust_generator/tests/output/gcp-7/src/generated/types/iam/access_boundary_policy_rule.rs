@@ -5,11 +5,11 @@
 pub struct AccessBoundaryPolicyRule {
     /// An access boundary rule in an IAM policy.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessBoundaryRule")]
-    pub r#access_boundary_rule: Box<Option<super::super::types::iam::AccessBoundaryPolicyRuleAccessBoundaryRule>>,
+    pub r#access_boundary_rule: Option<Box<super::super::types::iam::AccessBoundaryPolicyRuleAccessBoundaryRule>>,
     /// The description of the rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
 }

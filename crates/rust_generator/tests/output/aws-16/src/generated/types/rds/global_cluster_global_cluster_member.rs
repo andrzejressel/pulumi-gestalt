@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GlobalClusterGlobalClusterMember {
     /// Amazon Resource Name (ARN) of member DB Cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dbClusterArn")]
-    pub r#db_cluster_arn: Box<Option<String>>,
+    pub r#db_cluster_arn: Option<String>,
     /// Whether the member is the primary DB Cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isWriter")]
-    pub r#is_writer: Box<Option<bool>>,
+    pub r#is_writer: Option<bool>,
 }

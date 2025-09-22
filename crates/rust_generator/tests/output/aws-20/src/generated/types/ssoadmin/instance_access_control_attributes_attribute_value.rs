@@ -6,5 +6,5 @@ pub struct InstanceAccessControlAttributesAttributeValue {
     /// The identity source to use when mapping a specified attribute to AWS SSO.
     #[builder(into)]
     #[serde(rename = "sources")]
-    pub r#sources: Box<Vec<String>>,
+    pub r#sources: Vec<String>,
 }

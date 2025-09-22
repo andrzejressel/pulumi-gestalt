@@ -7,7 +7,7 @@ pub struct RegionNetworkEndpointGroupPscData {
     /// this flag isn't specified for a PSC NEG with endpoint type
     /// private-service-connect, then PSC NEG will be connected to a first port in the
     /// available PSC producer port range.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "producerPort")]
-    pub r#producer_port: Box<Option<String>>,
+    pub r#producer_port: Option<String>,
 }

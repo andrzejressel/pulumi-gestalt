@@ -6,7 +6,7 @@ pub struct HoursOfOperationConfig {
     /// Specifies the day that the hours of operation applies to.
     #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<String>,
+    pub r#day: String,
     /// A end time block specifies the time that your contact center closes. The `end_time` is documented below.
     #[builder(into)]
     #[serde(rename = "endTime")]

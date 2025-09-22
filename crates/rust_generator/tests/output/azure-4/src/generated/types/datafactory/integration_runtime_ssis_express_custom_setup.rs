@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IntegrationRuntimeSsisExpressCustomSetup {
     /// One or more `command_key` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commandKeys")]
-    pub r#command_keys: Box<Option<Vec<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupCommandKey>>>,
+    pub r#command_keys: Option<Vec<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupCommandKey>>,
     /// One or more `component` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "components")]
-    pub r#components: Box<Option<Vec<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupComponent>>>,
+    pub r#components: Option<Vec<super::super::types::datafactory::IntegrationRuntimeSsisExpressCustomSetupComponent>>,
     /// The Environment Variables for the Azure-SSIS Integration Runtime.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "environment")]
-    pub r#environment: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#environment: Option<std::collections::HashMap<String, String>>,
     /// The version of Azure Powershell installed for the Azure-SSIS Integration Runtime.
     /// 
     /// > **NOTE** At least one of `env`, `powershell_version`, `component` and `command_key` should be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "powershellVersion")]
-    pub r#powershell_version: Box<Option<String>>,
+    pub r#powershell_version: Option<String>,
 }

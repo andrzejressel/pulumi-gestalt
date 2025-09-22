@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxPageEntryFulfillmentMessageConversationSuccess {
     /// Custom metadata. Dialogflow doesn't impose any structure on this.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metadata")]
-    pub r#metadata: Box<Option<String>>,
+    pub r#metadata: Option<String>,
 }

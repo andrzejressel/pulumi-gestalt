@@ -6,13 +6,13 @@ pub struct JobJobStorageAccount {
     /// The account key for the Azure storage account.
     #[builder(into)]
     #[serde(rename = "accountKey")]
-    pub r#account_key: Box<String>,
+    pub r#account_key: String,
     /// The name of the Azure storage account.
     #[builder(into)]
     #[serde(rename = "accountName")]
-    pub r#account_name: Box<String>,
+    pub r#account_name: String,
     /// The authentication mode of the storage account. The only supported value is `ConnectionString`. Defaults to `ConnectionString`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authenticationMode")]
-    pub r#authentication_mode: Box<Option<String>>,
+    pub r#authentication_mode: Option<String>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AuthoritySubordinateConfigPemIssuerChain {
     /// Expected to be in leaf-to-root order according to RFC 5246.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pemCertificates")]
-    pub r#pem_certificates: Box<Option<Vec<String>>>,
+    pub r#pem_certificates: Option<Vec<String>>,
 }

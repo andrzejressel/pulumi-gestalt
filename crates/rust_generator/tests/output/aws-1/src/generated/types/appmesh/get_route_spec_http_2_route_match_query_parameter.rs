@@ -5,9 +5,9 @@
 pub struct GetRouteSpecHttp2RouteMatchQueryParameter {
     #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteMatchQueryParameterMatch>>,
+    pub r#matches: Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteMatchQueryParameterMatch>,
     /// Name of the route.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

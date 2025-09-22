@@ -6,5 +6,5 @@ pub struct GetEnvironmentConfigDataRetentionConfig {
     /// Optional. The configuration setting for Task Logs.
     #[builder(into)]
     #[serde(rename = "taskLogsRetentionConfigs")]
-    pub r#task_logs_retention_configs: Box<Vec<super::super::types::composer::GetEnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig>>,
+    pub r#task_logs_retention_configs: Vec<super::super::types::composer::GetEnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig>,
 }

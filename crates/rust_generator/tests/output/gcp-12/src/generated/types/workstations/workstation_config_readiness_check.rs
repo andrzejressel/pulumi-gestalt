@@ -6,9 +6,9 @@ pub struct WorkstationConfigReadinessCheck {
     /// Path to which the request should be sent.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// Port to which the request should be sent.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

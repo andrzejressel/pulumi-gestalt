@@ -6,9 +6,9 @@ pub struct TableColumnFamily {
     /// The name of the column family.
     #[builder(into)]
     #[serde(rename = "family")]
-    pub r#family: Box<String>,
+    pub r#family: String,
     /// The type of the column family.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

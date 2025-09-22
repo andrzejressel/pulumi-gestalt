@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSetLogicalTableMapDataTransformTagColumnOperationTagColumnDescription {
     /// The text of a description for a column.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<Option<String>>,
+    pub r#text: Option<String>,
 }

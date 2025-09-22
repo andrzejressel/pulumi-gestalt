@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DbInstanceLogDeliveryConfiguration {
     /// Configuration for S3 bucket log delivery.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Configuration")]
-    pub r#s_3_configuration: Box<Option<super::super::types::timestreaminfluxdb::DbInstanceLogDeliveryConfigurationS3Configuration>>,
+    pub r#s_3_configuration: Option<Box<super::super::types::timestreaminfluxdb::DbInstanceLogDeliveryConfigurationS3Configuration>>,
 }

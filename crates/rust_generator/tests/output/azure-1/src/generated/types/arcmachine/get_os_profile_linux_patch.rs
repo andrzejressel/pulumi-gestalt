@@ -6,9 +6,9 @@ pub struct GetOsProfileLinuxPatch {
     /// Specifies the assessment mode.
     #[builder(into)]
     #[serde(rename = "assessmentMode")]
-    pub r#assessment_mode: Box<String>,
+    pub r#assessment_mode: String,
     /// Specifies the patch mode.
     #[builder(into)]
     #[serde(rename = "patchMode")]
-    pub r#patch_mode: Box<String>,
+    pub r#patch_mode: String,
 }

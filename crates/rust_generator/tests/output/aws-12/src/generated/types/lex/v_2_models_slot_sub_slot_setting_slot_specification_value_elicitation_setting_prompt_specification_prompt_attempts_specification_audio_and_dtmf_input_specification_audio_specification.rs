@@ -5,8 +5,8 @@
 pub struct V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecification {
     #[builder(into)]
     #[serde(rename = "endTimeoutMs")]
-    pub r#end_timeout_ms: Box<i32>,
+    pub r#end_timeout_ms: i32,
     #[builder(into)]
     #[serde(rename = "maxLengthMs")]
-    pub r#max_length_ms: Box<i32>,
+    pub r#max_length_ms: i32,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkloadResource {
     /// Resource identifier. For a project this represents project_number.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceId")]
-    pub r#resource_id: Box<Option<i32>>,
+    pub r#resource_id: Option<i32>,
     /// Indicates the type of resource. Possible values: RESOURCE_TYPE_UNSPECIFIED, CONSUMER_PROJECT, ENCRYPTION_KEYS_PROJECT, KEYRING, CONSUMER_FOLDER
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<Option<String>>,
+    pub r#resource_type: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AutoscaleSettingNotificationWebhook {
     /// A map of settings.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#properties: Option<std::collections::HashMap<String, String>>,
     /// The HTTPS URI which should receive scale notifications.
     #[builder(into)]
     #[serde(rename = "serviceUri")]
-    pub r#service_uri: Box<String>,
+    pub r#service_uri: String,
 }

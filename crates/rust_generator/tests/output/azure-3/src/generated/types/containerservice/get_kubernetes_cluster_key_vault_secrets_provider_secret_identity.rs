@@ -6,13 +6,13 @@ pub struct GetKubernetesClusterKeyVaultSecretsProviderSecretIdentity {
     /// The Client ID of the user-defined Managed Identity assigned to the Kubelets.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The Object ID of the user-defined Managed Identity assigned to the Kubelets.
     #[builder(into)]
     #[serde(rename = "objectId")]
-    pub r#object_id: Box<String>,
+    pub r#object_id: String,
     /// The ID of the User Assigned Identity assigned to the Kubelets.
     #[builder(into)]
     #[serde(rename = "userAssignedIdentityId")]
-    pub r#user_assigned_identity_id: Box<String>,
+    pub r#user_assigned_identity_id: String,
 }

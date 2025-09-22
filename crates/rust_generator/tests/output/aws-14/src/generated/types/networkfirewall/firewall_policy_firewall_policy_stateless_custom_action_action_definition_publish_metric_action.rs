@@ -6,5 +6,5 @@ pub struct FirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPubl
     /// Set of configuration blocks describing dimension settings to use for Amazon CloudWatch custom metrics. See Dimension below for more details.
     #[builder(into)]
     #[serde(rename = "dimensions")]
-    pub r#dimensions: Box<Vec<super::super::types::networkfirewall::FirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionDimension>>,
+    pub r#dimensions: Vec<super::super::types::networkfirewall::FirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionDimension>,
 }

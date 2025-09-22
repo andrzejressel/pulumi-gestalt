@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ContainerVolume {
     /// The path in the container where the volume will be mounted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerPath")]
-    pub r#container_path: Box<Option<String>>,
+    pub r#container_path: Option<String>,
     /// The container where the volume is coming from.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fromContainer")]
-    pub r#from_container: Box<Option<String>>,
+    pub r#from_container: Option<String>,
     /// The path on the host where the volume is coming from.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostPath")]
-    pub r#host_path: Box<Option<String>>,
+    pub r#host_path: Option<String>,
     /// If `true`, this volume will be readonly. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "readOnly")]
-    pub r#read_only: Box<Option<bool>>,
+    pub r#read_only: Option<bool>,
     /// The name of the docker volume which should be mounted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "volumeName")]
-    pub r#volume_name: Box<Option<String>>,
+    pub r#volume_name: Option<String>,
 }

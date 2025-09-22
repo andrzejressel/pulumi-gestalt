@@ -8,24 +8,24 @@ pub struct ServicePerimeterDryRunEgressPolicyEgressFrom {
     /// are supported and other identity types are not supported.The v1 identities
     /// that have the prefix user, group and serviceAccount in
     /// https://cloud.google.com/iam/docs/principal-identifiers#v1 are supported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identities")]
-    pub r#identities: Box<Option<Vec<String>>>,
+    pub r#identities: Option<Vec<String>>,
     /// Specifies the type of identities that are allowed access to outside the
     /// perimeter. If left unspecified, then members of `identities` field will
     /// be allowed access.
     /// Possible values are: `ANY_IDENTITY`, `ANY_USER_ACCOUNT`, `ANY_SERVICE_ACCOUNT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityType")]
-    pub r#identity_type: Box<Option<String>>,
+    pub r#identity_type: Option<String>,
     /// Whether to enforce traffic restrictions based on `sources` field. If the `sources` field is non-empty, then this field must be set to `SOURCE_RESTRICTION_ENABLED`.
     /// Possible values are: `SOURCE_RESTRICTION_ENABLED`, `SOURCE_RESTRICTION_DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceRestriction")]
-    pub r#source_restriction: Box<Option<String>>,
+    pub r#source_restriction: Option<String>,
     /// Sources that this EgressPolicy authorizes access from.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sources")]
-    pub r#sources: Box<Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterDryRunEgressPolicyEgressFromSource>>>,
+    pub r#sources: Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterDryRunEgressPolicyEgressFromSource>>,
 }

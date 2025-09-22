@@ -6,9 +6,9 @@ pub struct AuthorizationServerTokenBodyParameter {
     /// The Name of the Parameter.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The Value of the Parameter.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

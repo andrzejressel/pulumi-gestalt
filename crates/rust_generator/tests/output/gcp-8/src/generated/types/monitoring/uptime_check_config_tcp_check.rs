@@ -5,11 +5,11 @@
 pub struct UptimeCheckConfigTcpCheck {
     /// Contains information needed to add pings to a TCP check.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pingConfig")]
-    pub r#ping_config: Box<Option<super::super::types::monitoring::UptimeCheckConfigTcpCheckPingConfig>>,
+    pub r#ping_config: Option<Box<super::super::types::monitoring::UptimeCheckConfigTcpCheckPingConfig>>,
     /// The port to the page to run the check against. Will be combined with host (specified within the `monitored_resource`) to construct the full URL.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

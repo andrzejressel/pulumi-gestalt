@@ -5,7 +5,7 @@
 pub struct ConfigQuota {
     /// Quota for the Signup endpoint, if overwritten. Signup quota is measured in sign ups per project per hour per IP. None of quota, startTime, or quotaDuration can be skipped.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "signUpQuotaConfig")]
-    pub r#sign_up_quota_config: Box<Option<super::super::types::identityplatform::ConfigQuotaSignUpQuotaConfig>>,
+    pub r#sign_up_quota_config: Option<Box<super::super::types::identityplatform::ConfigQuotaSignUpQuotaConfig>>,
 }

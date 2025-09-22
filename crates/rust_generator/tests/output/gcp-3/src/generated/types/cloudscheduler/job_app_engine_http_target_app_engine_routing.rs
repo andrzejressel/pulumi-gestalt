@@ -5,17 +5,17 @@
 pub struct JobAppEngineHttpTargetAppEngineRouting {
     /// App instance.
     /// By default, the job is sent to an instance which is available when the job is attempted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instance")]
-    pub r#instance: Box<Option<String>>,
+    pub r#instance: Option<String>,
     /// App service.
     /// By default, the job is sent to the service which is the default service when the job is attempted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<Option<String>>,
+    pub r#service: Option<String>,
     /// App version.
     /// By default, the job is sent to the version which is the default version when the job is attempted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

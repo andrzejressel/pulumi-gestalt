@@ -5,12 +5,12 @@
 pub struct GetListenerRuleActionForward {
     /// Target group stickiness for the rule.
     /// Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stickiness")]
-    pub r#stickiness: Box<Option<super::super::types::lb::GetListenerRuleActionForwardStickiness>>,
+    pub r#stickiness: Option<Box<super::super::types::lb::GetListenerRuleActionForwardStickiness>>,
     /// Set of target groups for the action.
     /// Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetGroups")]
-    pub r#target_groups: Box<Option<Vec<super::super::types::lb::GetListenerRuleActionForwardTargetGroup>>>,
+    pub r#target_groups: Option<Vec<super::super::types::lb::GetListenerRuleActionForwardTargetGroup>>,
 }

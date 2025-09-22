@@ -6,5 +6,5 @@ pub struct StorageLensConfigurationStorageLensConfigurationAwsOrg {
     /// The Amazon Resource Name (ARN) of the Amazon Web Services organization.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
 }

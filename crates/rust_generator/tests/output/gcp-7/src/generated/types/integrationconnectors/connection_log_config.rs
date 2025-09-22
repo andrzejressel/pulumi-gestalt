@@ -6,5 +6,5 @@ pub struct ConnectionLogConfig {
     /// Enabled represents whether logging is enabled or not for a connection.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

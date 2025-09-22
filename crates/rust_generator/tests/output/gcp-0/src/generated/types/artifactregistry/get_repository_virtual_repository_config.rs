@@ -7,5 +7,5 @@ pub struct GetRepositoryVirtualRepositoryConfig {
     /// Repository. Upstream policies cannot be set on a standard repository.
     #[builder(into)]
     #[serde(rename = "upstreamPolicies")]
-    pub r#upstream_policies: Box<Vec<super::super::types::artifactregistry::GetRepositoryVirtualRepositoryConfigUpstreamPolicy>>,
+    pub r#upstream_policies: Vec<super::super::types::artifactregistry::GetRepositoryVirtualRepositoryConfigUpstreamPolicy>,
 }

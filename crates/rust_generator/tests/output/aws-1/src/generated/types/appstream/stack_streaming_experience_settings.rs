@@ -5,7 +5,7 @@
 pub struct StackStreamingExperienceSettings {
     /// The preferred protocol that you want to use while streaming your application.
     /// Valid values are `TCP` and `UDP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preferredProtocol")]
-    pub r#preferred_protocol: Box<Option<String>>,
+    pub r#preferred_protocol: Option<String>,
 }

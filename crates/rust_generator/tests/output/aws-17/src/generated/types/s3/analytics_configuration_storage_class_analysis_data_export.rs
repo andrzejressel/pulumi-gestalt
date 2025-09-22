@@ -8,7 +8,7 @@ pub struct AnalyticsConfigurationStorageClassAnalysisDataExport {
     #[serde(rename = "destination")]
     pub r#destination: Box<super::super::types::s3::AnalyticsConfigurationStorageClassAnalysisDataExportDestination>,
     /// Schema version of exported analytics data. Allowed values: `V_1`. Default value: `V_1`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "outputSchemaVersion")]
-    pub r#output_schema_version: Box<Option<String>>,
+    pub r#output_schema_version: Option<String>,
 }

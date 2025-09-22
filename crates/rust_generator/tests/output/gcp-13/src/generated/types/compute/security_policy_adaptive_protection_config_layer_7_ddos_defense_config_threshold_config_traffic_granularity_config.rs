@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig {
     /// If enabled, traffic matching each unique value for the specified type constitutes a separate traffic unit. It can only be set to true if value is empty.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableEachUniqueValue")]
-    pub r#enable_each_unique_value: Box<Option<bool>>,
+    pub r#enable_each_unique_value: Option<bool>,
     /// The type of this configuration, a granular traffic unit can be one of the following:
     /// * `HTTP_HEADER_HOST`
     /// * `HTTP_PATH`
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// Requests that match this value constitute a granular traffic unit.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

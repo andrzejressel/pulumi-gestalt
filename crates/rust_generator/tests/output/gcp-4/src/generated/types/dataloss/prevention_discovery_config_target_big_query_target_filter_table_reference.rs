@@ -6,9 +6,9 @@ pub struct PreventionDiscoveryConfigTargetBigQueryTargetFilterTableReference {
     /// Dataset ID of the table.
     #[builder(into)]
     #[serde(rename = "datasetId")]
-    pub r#dataset_id: Box<String>,
+    pub r#dataset_id: String,
     /// Name of the table.
     #[builder(into)]
     #[serde(rename = "tableId")]
-    pub r#table_id: Box<String>,
+    pub r#table_id: String,
 }

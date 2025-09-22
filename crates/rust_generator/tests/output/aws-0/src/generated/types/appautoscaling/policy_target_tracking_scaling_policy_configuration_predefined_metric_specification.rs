@@ -6,9 +6,9 @@ pub struct PolicyTargetTrackingScalingPolicyConfigurationPredefinedMetricSpecifi
     /// Metric type.
     #[builder(into)]
     #[serde(rename = "predefinedMetricType")]
-    pub r#predefined_metric_type: Box<String>,
+    pub r#predefined_metric_type: String,
     /// Reserved for future use if the `predefined_metric_type` is not `ALBRequestCountPerTarget`. If the `predefined_metric_type` is `ALBRequestCountPerTarget`, you must specify this argument. Documentation can be found at: [AWS Predefined Scaling Metric Specification](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_PredefinedScalingMetricSpecification.html). Must be less than or equal to 1023 characters in length.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceLabel")]
-    pub r#resource_label: Box<Option<String>>,
+    pub r#resource_label: Option<String>,
 }

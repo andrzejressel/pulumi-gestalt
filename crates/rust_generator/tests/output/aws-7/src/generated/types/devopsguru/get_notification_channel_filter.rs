@@ -6,9 +6,9 @@ pub struct GetNotificationChannelFilter {
     /// Events to receive notifications for.
     #[builder(into)]
     #[serde(rename = "messageTypes")]
-    pub r#message_types: Box<Vec<String>>,
+    pub r#message_types: Vec<String>,
     /// Severity levels to receive notifications for.
     #[builder(into)]
     #[serde(rename = "severities")]
-    pub r#severities: Box<Vec<String>>,
+    pub r#severities: Vec<String>,
 }

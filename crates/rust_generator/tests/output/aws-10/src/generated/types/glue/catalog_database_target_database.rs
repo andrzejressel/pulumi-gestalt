@@ -6,13 +6,13 @@ pub struct CatalogDatabaseTargetDatabase {
     /// ID of the Data Catalog in which the database resides.
     #[builder(into)]
     #[serde(rename = "catalogId")]
-    pub r#catalog_id: Box<String>,
+    pub r#catalog_id: String,
     /// Name of the catalog database.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// Region of the target database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
 }

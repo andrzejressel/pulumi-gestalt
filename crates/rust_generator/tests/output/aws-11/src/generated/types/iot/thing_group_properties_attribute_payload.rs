@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThingGroupPropertiesAttributePayload {
     /// Key-value map.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attributes")]
-    pub r#attributes: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#attributes: Option<std::collections::HashMap<String, String>>,
 }

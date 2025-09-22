@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowSourceFlowConfigSourceConnectorPropertiesS3S3InputFormatConfig {
     /// File type that Amazon AppFlow gets from your Amazon S3 bucket. Valid values are `CSV` and `JSON`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3InputFileType")]
-    pub r#s_3_input_file_type: Box<Option<String>>,
+    pub r#s_3_input_file_type: Option<String>,
 }

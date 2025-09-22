@@ -6,9 +6,9 @@ pub struct PipelineStage {
     /// The action(s) to include in the stage. Defined as an `action` block below
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::codepipeline::PipelineStageAction>>,
+    pub r#actions: Vec<super::super::types::codepipeline::PipelineStageAction>,
     /// The name of the stage.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

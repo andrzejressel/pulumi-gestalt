@@ -6,9 +6,9 @@ pub struct GetReceivedLicenseValidity {
     /// Start of the validity time range.
     #[builder(into)]
     #[serde(rename = "begin")]
-    pub r#begin: Box<String>,
+    pub r#begin: String,
     /// End of the validity time range.
     #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<String>,
+    pub r#end: String,
 }

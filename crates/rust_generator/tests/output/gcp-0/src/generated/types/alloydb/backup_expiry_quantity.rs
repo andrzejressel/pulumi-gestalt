@@ -5,12 +5,12 @@
 pub struct BackupExpiryQuantity {
     /// (Output)
     /// Output only. The backup's position among its backups with the same source cluster and type, by descending chronological order create time (i.e. newest first).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionCount")]
-    pub r#retention_count: Box<Option<i32>>,
+    pub r#retention_count: Option<i32>,
     /// (Output)
     /// Output only. The length of the quantity-based queue, specified by the backup's retention policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "totalRetentionCount")]
-    pub r#total_retention_count: Box<Option<i32>>,
+    pub r#total_retention_count: Option<i32>,
 }

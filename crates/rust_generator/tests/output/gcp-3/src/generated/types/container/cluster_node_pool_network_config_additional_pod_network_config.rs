@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterNodePoolNetworkConfigAdditionalPodNetworkConfig {
     /// The maximum number of pods per node which use this pod network.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxPodsPerNode")]
-    pub r#max_pods_per_node: Box<Option<i32>>,
+    pub r#max_pods_per_node: Option<i32>,
     /// The name of the secondary range on the subnet which provides IP address for this pod range.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secondaryPodRange")]
-    pub r#secondary_pod_range: Box<Option<String>>,
+    pub r#secondary_pod_range: Option<String>,
     /// The name or self_link of the Google Compute Engine
     /// subnetwork in which the cluster's instances are launched.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetwork")]
-    pub r#subnetwork: Box<Option<String>>,
+    pub r#subnetwork: Option<String>,
 }

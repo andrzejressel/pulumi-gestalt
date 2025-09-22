@@ -6,5 +6,5 @@ pub struct BucketReplicationConfigRuleDeleteMarkerReplication {
     /// Whether delete markers should be replicated. Either `"Enabled"` or `"Disabled"`.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

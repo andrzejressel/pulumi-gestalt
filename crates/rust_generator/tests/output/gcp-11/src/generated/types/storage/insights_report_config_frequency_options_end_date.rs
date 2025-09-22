@@ -6,13 +6,13 @@ pub struct InsightsReportConfigFrequencyOptionsEndDate {
     /// The day of the month to stop generating inventory reports.
     #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<i32>,
+    pub r#day: i32,
     /// The month to stop generating inventory reports.
     #[builder(into)]
     #[serde(rename = "month")]
-    pub r#month: Box<i32>,
+    pub r#month: i32,
     /// The year to stop generating inventory reports
     #[builder(into)]
     #[serde(rename = "year")]
-    pub r#year: Box<i32>,
+    pub r#year: i32,
 }

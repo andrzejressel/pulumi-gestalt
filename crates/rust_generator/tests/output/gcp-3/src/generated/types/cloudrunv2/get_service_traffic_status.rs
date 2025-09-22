@@ -6,21 +6,21 @@ pub struct GetServiceTrafficStatus {
     /// Specifies percent of the traffic to this Revision.
     #[builder(into)]
     #[serde(rename = "percent")]
-    pub r#percent: Box<i32>,
+    pub r#percent: i32,
     /// Revision to which this traffic is sent.
     #[builder(into)]
     #[serde(rename = "revision")]
-    pub r#revision: Box<String>,
+    pub r#revision: String,
     /// Indicates the string used in the URI to exclusively reference this target.
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<String>,
+    pub r#tag: String,
     /// The allocation type for this traffic target.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// Displays the target URI.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

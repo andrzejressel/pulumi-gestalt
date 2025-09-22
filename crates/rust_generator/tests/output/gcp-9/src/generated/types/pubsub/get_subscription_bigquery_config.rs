@@ -8,30 +8,30 @@ pub struct GetSubscriptionBigqueryConfig {
     /// and any messages with extra fields are not written and remain in the subscription's backlog.
     #[builder(into)]
     #[serde(rename = "dropUnknownFields")]
-    pub r#drop_unknown_fields: Box<bool>,
+    pub r#drop_unknown_fields: bool,
     /// The service account to use to write to BigQuery. If not specified, the Pub/Sub
     /// [service agent](https://cloud.google.com/iam/docs/service-agents),
     /// service-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com, is used.
     #[builder(into)]
     #[serde(rename = "serviceAccountEmail")]
-    pub r#service_account_email: Box<String>,
+    pub r#service_account_email: String,
     /// The name of the table to which to write data, of the form {projectId}.{datasetId}.{tableId}
     #[builder(into)]
     #[serde(rename = "table")]
-    pub r#table: Box<String>,
+    pub r#table: String,
     /// When true, use the BigQuery table's schema as the columns to write to in BigQuery. Messages
     /// must be published in JSON format. Only one of use_topic_schema and use_table_schema can be set.
     #[builder(into)]
     #[serde(rename = "useTableSchema")]
-    pub r#use_table_schema: Box<bool>,
+    pub r#use_table_schema: bool,
     /// When true, use the topic's schema as the columns to write to in BigQuery, if it exists.
     /// Only one of use_topic_schema and use_table_schema can be set.
     #[builder(into)]
     #[serde(rename = "useTopicSchema")]
-    pub r#use_topic_schema: Box<bool>,
+    pub r#use_topic_schema: bool,
     /// When true, write the subscription name, messageId, publishTime, attributes, and orderingKey to additional columns in the table.
     /// The subscription name, messageId, and publishTime fields are put in their own columns while all other message properties (other than data) are written to a JSON object in the attributes column.
     #[builder(into)]
     #[serde(rename = "writeMetadata")]
-    pub r#write_metadata: Box<bool>,
+    pub r#write_metadata: bool,
 }

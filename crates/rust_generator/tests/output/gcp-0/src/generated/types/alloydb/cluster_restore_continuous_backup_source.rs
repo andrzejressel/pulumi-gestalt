@@ -6,9 +6,9 @@ pub struct ClusterRestoreContinuousBackupSource {
     /// The name of the source cluster that this cluster is restored from.
     #[builder(into)]
     #[serde(rename = "cluster")]
-    pub r#cluster: Box<String>,
+    pub r#cluster: String,
     /// The point in time that this cluster is restored to, in RFC 3339 format.
     #[builder(into)]
     #[serde(rename = "pointInTime")]
-    pub r#point_in_time: Box<String>,
+    pub r#point_in_time: String,
 }

@@ -6,15 +6,15 @@ pub struct SettingsAccessSettingsGcipSettings {
     /// Login page URI associated with the GCIP tenants. Typically, all resources within
     /// the same project share the same login page, though it could be overridden at the
     /// sub resource level.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loginPageUri")]
-    pub r#login_page_uri: Box<Option<String>>,
+    pub r#login_page_uri: Option<String>,
     /// GCIP tenant ids that are linked to the IAP resource. tenantIds could be a string
     /// beginning with a number character to indicate authenticating with GCIP tenant flow,
     /// or in the format of _ to indicate authenticating with GCIP agent flow. If agent flow
     /// is used, tenantIds should only contain one single element, while for tenant flow,
     /// tenantIds can contain multiple elements.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenantIds")]
-    pub r#tenant_ids: Box<Option<Vec<String>>>,
+    pub r#tenant_ids: Option<Vec<String>>,
 }

@@ -6,9 +6,9 @@ pub struct DashboardSourceEntitySourceTemplate {
     /// The Amazon Resource Name (ARN) of the resource.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// List of dataset references. See data_set_references.
     #[builder(into)]
     #[serde(rename = "dataSetReferences")]
-    pub r#data_set_references: Box<Vec<super::super::types::quicksight::DashboardSourceEntitySourceTemplateDataSetReference>>,
+    pub r#data_set_references: Vec<super::super::types::quicksight::DashboardSourceEntitySourceTemplateDataSetReference>,
 }

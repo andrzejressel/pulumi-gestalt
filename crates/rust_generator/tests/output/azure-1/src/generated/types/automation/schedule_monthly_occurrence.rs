@@ -6,9 +6,9 @@ pub struct ScheduleMonthlyOccurrence {
     /// Day of the occurrence. Must be one of `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`, `Sunday`.
     #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<String>,
+    pub r#day: String,
     /// Occurrence of the week within the month. Must be between `1` and `5`. `-1` for last week within the month.
     #[builder(into)]
     #[serde(rename = "occurrence")]
-    pub r#occurrence: Box<i32>,
+    pub r#occurrence: i32,
 }

@@ -10,9 +10,9 @@ pub struct TaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguration {
     /// The Amazon FSx for Windows File Server file system ID to use.
     #[builder(into)]
     #[serde(rename = "fileSystemId")]
-    pub r#file_system_id: Box<String>,
+    pub r#file_system_id: String,
     /// The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.
     #[builder(into)]
     #[serde(rename = "rootDirectory")]
-    pub r#root_directory: Box<String>,
+    pub r#root_directory: String,
 }

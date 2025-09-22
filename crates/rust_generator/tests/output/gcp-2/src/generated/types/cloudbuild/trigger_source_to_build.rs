@@ -5,31 +5,31 @@
 pub struct TriggerSourceToBuild {
     /// The full resource name of the bitbucket server config.
     /// Format: projects/{project}/locations/{location}/bitbucketServerConfigs/{id}.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bitbucketServerConfig")]
-    pub r#bitbucket_server_config: Box<Option<String>>,
+    pub r#bitbucket_server_config: Option<String>,
     /// The full resource name of the github enterprise config.
     /// Format: projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}. projects/{project}/githubEnterpriseConfigs/{id}.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "githubEnterpriseConfig")]
-    pub r#github_enterprise_config: Box<Option<String>>,
+    pub r#github_enterprise_config: Option<String>,
     /// The branch or tag to use. Must start with "refs/" (required).
     #[builder(into)]
     #[serde(rename = "ref")]
-    pub r#ref_: Box<String>,
+    pub r#ref_: String,
     /// The type of the repo, since it may not be explicit from the repo field (e.g from a URL).
     /// Values can be UNKNOWN, CLOUD_SOURCE_REPOSITORIES, GITHUB, BITBUCKET_SERVER
     /// Possible values are: `UNKNOWN`, `CLOUD_SOURCE_REPOSITORIES`, `GITHUB`, `BITBUCKET_SERVER`.
     #[builder(into)]
     #[serde(rename = "repoType")]
-    pub r#repo_type: Box<String>,
+    pub r#repo_type: String,
     /// The qualified resource name of the Repo API repository.
     /// Either uri or repository can be specified and is required.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repository")]
-    pub r#repository: Box<Option<String>>,
+    pub r#repository: Option<String>,
     /// The URI of the repo.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<Option<String>>,
+    pub r#uri: Option<String>,
 }

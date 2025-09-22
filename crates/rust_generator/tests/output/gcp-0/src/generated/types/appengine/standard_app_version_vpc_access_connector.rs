@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StandardAppVersionVpcAccessConnector {
     /// The egress setting for the connector, controlling what traffic is diverted through it.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "egressSetting")]
-    pub r#egress_setting: Box<Option<String>>,
+    pub r#egress_setting: Option<String>,
     /// Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

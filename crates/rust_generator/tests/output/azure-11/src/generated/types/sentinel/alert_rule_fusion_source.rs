@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AlertRuleFusionSource {
     /// Whether this source signal is enabled or disabled in Fusion detection? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The name of the Fusion source signal. Refer to Fusion alert rule template for supported values.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// One or more `sub_type` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subTypes")]
-    pub r#sub_types: Box<Option<Vec<super::super::types::sentinel::AlertRuleFusionSourceSubType>>>,
+    pub r#sub_types: Option<Vec<super::super::types::sentinel::AlertRuleFusionSourceSubType>>,
 }

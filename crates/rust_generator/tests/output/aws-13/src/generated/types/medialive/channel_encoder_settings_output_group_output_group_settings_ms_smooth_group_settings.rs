@@ -3,65 +3,65 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsMsSmoothGroupSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acquisitionPointId")]
-    pub r#acquisition_point_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#acquisition_point_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "audioOnlyTimecodeControl")]
-    pub r#audio_only_timecode_control: Box<Option<String>>,
+    pub r#audio_only_timecode_control: Option<String>,
     /// Setting to allow self signed or verified RTMP certificates.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateMode")]
-    pub r#certificate_mode: Box<Option<String>>,
+    pub r#certificate_mode: Option<String>,
     /// Number of seconds to wait before retrying connection to the flash media server if the connection is lost.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionRetryInterval")]
-    pub r#connection_retry_interval: Box<Option<i32>>,
+    pub r#connection_retry_interval: Option<i32>,
     #[builder(into)]
     #[serde(rename = "destination")]
     pub r#destination: Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsMsSmoothGroupSettingsDestination>,
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventId")]
-    pub r#event_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#event_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "eventIdMode")]
-    pub r#event_id_mode: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#event_id_mode: Option<String>,
+    #[builder(into)]
     #[serde(rename = "eventStopBehavior")]
-    pub r#event_stop_behavior: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#event_stop_behavior: Option<String>,
+    #[builder(into)]
     #[serde(rename = "filecacheDuration")]
-    pub r#filecache_duration: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#filecache_duration: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "fragmentLength")]
-    pub r#fragment_length: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#fragment_length: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "inputLossAction")]
-    pub r#input_loss_action: Box<Option<String>>,
+    pub r#input_loss_action: Option<String>,
     /// Number of retry attempts.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numRetries")]
-    pub r#num_retries: Box<Option<i32>>,
+    pub r#num_retries: Option<i32>,
     /// Number of seconds to wait until a restart is initiated.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "restartDelay")]
-    pub r#restart_delay: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#restart_delay: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "segmentationMode")]
-    pub r#segmentation_mode: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#segmentation_mode: Option<String>,
+    #[builder(into)]
     #[serde(rename = "sendDelayMs")]
-    pub r#send_delay_ms: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#send_delay_ms: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "sparseTrackType")]
-    pub r#sparse_track_type: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#sparse_track_type: Option<String>,
+    #[builder(into)]
     #[serde(rename = "streamManifestBehavior")]
-    pub r#stream_manifest_behavior: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#stream_manifest_behavior: Option<String>,
+    #[builder(into)]
     #[serde(rename = "timestampOffset")]
-    pub r#timestamp_offset: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#timestamp_offset: Option<String>,
+    #[builder(into)]
     #[serde(rename = "timestampOffsetMode")]
-    pub r#timestamp_offset_mode: Box<Option<String>>,
+    pub r#timestamp_offset_mode: Option<String>,
 }

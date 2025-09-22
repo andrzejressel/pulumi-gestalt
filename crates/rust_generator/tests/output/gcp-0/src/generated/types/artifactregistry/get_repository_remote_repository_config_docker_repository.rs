@@ -6,9 +6,9 @@ pub struct GetRepositoryRemoteRepositoryConfigDockerRepository {
     /// [Deprecated, please use commonRepository instead] Settings for a remote repository with a custom uri.
     #[builder(into)]
     #[serde(rename = "customRepositories")]
-    pub r#custom_repositories: Box<Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigDockerRepositoryCustomRepository>>,
+    pub r#custom_repositories: Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigDockerRepositoryCustomRepository>,
     /// Address of the remote repository. Default value: "DOCKER_HUB" Possible values: ["DOCKER_HUB"]
     #[builder(into)]
     #[serde(rename = "publicRepository")]
-    pub r#public_repository: Box<String>,
+    pub r#public_repository: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WindowsVirtualMachineOsImageNotification {
     /// Length of time a notification to be sent to the VM on the instance metadata server till the VM gets OS upgraded. The only possible value is `PT15M`. Defaults to `PT15M`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Box<Option<String>>,
+    pub r#timeout: Option<String>,
 }

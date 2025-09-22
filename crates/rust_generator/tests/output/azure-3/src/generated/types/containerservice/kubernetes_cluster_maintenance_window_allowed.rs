@@ -6,9 +6,9 @@ pub struct KubernetesClusterMaintenanceWindowAllowed {
     /// A day in a week. Possible values are `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` and `Saturday`.
     #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<String>,
+    pub r#day: String,
     /// An array of hour slots in a day. For example, specifying `1` will allow maintenance from 1:00am to 2:00am. Specifying `1`, `2` will allow maintenance from 1:00am to 3:00m. Possible values are between `0` and `23`.
     #[builder(into)]
     #[serde(rename = "hours")]
-    pub r#hours: Box<Vec<i32>>,
+    pub r#hours: Vec<i32>,
 }

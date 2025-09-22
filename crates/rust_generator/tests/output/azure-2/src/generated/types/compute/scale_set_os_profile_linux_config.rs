@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScaleSetOsProfileLinuxConfig {
     /// Specifies whether password authentication should be disabled. Defaults to `false`. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disablePasswordAuthentication")]
-    pub r#disable_password_authentication: Box<Option<bool>>,
+    pub r#disable_password_authentication: Option<bool>,
     /// One or more `ssh_keys` blocks as defined below.
     /// 
     /// > **Note:** Please note that the only allowed `path` is `/home/<username>/.ssh/authorized_keys` due to a limitation of Azure.
     /// 
     /// > **NOTE:** At least one `ssh_keys` block is required if `disable_password_authentication` is set to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sshKeys")]
-    pub r#ssh_keys: Box<Option<Vec<super::super::types::compute::ScaleSetOsProfileLinuxConfigSshKey>>>,
+    pub r#ssh_keys: Option<Vec<super::super::types::compute::ScaleSetOsProfileLinuxConfigSshKey>>,
 }

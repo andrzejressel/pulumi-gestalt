@@ -6,9 +6,9 @@ pub struct RulesetSource {
     /// `File` set constituting the `Source` bundle.
     #[builder(into)]
     #[serde(rename = "files")]
-    pub r#files: Box<Vec<super::super::types::firebaserules::RulesetSourceFile>>,
+    pub r#files: Vec<super::super::types::firebaserules::RulesetSourceFile>,
     /// `Language` of the `Source` bundle. If unspecified, the language will default to `FIREBASE_RULES`. Possible values: LANGUAGE_UNSPECIFIED, FIREBASE_RULES, EVENT_FLOW_TRIGGERS
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "language")]
-    pub r#language: Box<Option<String>>,
+    pub r#language: Option<String>,
 }

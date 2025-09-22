@@ -12,43 +12,43 @@ pub struct ServicePerimeterStatus {
     /// origins within the perimeter. For Service Perimeter Bridge, must
     /// be empty.
     /// Format: accessPolicies/{policy_id}/accessLevels/{access_level_name}
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessLevels")]
-    pub r#access_levels: Box<Option<Vec<String>>>,
+    pub r#access_levels: Option<Vec<String>>,
     /// List of EgressPolicies to apply to the perimeter. A perimeter may
     /// have multiple EgressPolicies, each of which is evaluated separately.
     /// Access is granted if any EgressPolicy grants it. Must be empty for
     /// a perimeter bridge.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "egressPolicies")]
-    pub r#egress_policies: Box<Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterStatusEgressPolicy>>>,
+    pub r#egress_policies: Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterStatusEgressPolicy>>,
     /// List of `IngressPolicies` to apply to the perimeter. A perimeter may
     /// have multiple `IngressPolicies`, each of which is evaluated
     /// separately. Access is granted if any `Ingress Policy` grants it.
     /// Must be empty for a perimeter bridge.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ingressPolicies")]
-    pub r#ingress_policies: Box<Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterStatusIngressPolicy>>>,
+    pub r#ingress_policies: Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterStatusIngressPolicy>>,
     /// A list of GCP resources that are inside of the service perimeter.
     /// Currently only projects are allowed.
     /// Format: projects/{project_number}
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Box<Option<Vec<String>>>,
+    pub r#resources: Option<Vec<String>>,
     /// GCP services that are subject to the Service Perimeter
     /// restrictions. Must contain a list of services. For example, if
     /// `storage.googleapis.com` is specified, access to the storage
     /// buckets inside the perimeter must meet the perimeter's access
     /// restrictions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "restrictedServices")]
-    pub r#restricted_services: Box<Option<Vec<String>>>,
+    pub r#restricted_services: Option<Vec<String>>,
     /// Specifies how APIs are allowed to communicate within the Service
     /// Perimeter.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpcAccessibleServices")]
-    pub r#vpc_accessible_services: Box<Option<super::super::types::accesscontextmanager::ServicePerimeterStatusVpcAccessibleServices>>,
+    pub r#vpc_accessible_services: Option<Box<super::super::types::accesscontextmanager::ServicePerimeterStatusVpcAccessibleServices>>,
 }

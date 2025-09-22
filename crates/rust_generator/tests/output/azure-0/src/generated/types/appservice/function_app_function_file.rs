@@ -6,9 +6,9 @@ pub struct FunctionAppFunctionFile {
     /// The content of the file. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<String>,
+    pub r#content: String,
     /// The filename of the file to be uploaded. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

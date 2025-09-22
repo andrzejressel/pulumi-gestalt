@@ -6,25 +6,25 @@ pub struct ResponsePlanActionSsmAutomation {
     /// The automation document's name.
     #[builder(into)]
     #[serde(rename = "documentName")]
-    pub r#document_name: Box<String>,
+    pub r#document_name: String,
     /// The version of the automation document to use at runtime.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "documentVersion")]
-    pub r#document_version: Box<Option<String>>,
+    pub r#document_version: Option<String>,
     /// The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dynamicParameters")]
-    pub r#dynamic_parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#dynamic_parameters: Option<std::collections::HashMap<String, String>>,
     /// The key-value pair parameters to use when the automation document runs. The following values are supported:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<Vec<super::super::types::ssmincidents::ResponsePlanActionSsmAutomationParameter>>>,
+    pub r#parameters: Option<Vec<super::super::types::ssmincidents::ResponsePlanActionSsmAutomationParameter>>,
     /// The Amazon Resource Name (ARN) of the role that the automation document assumes when it runs commands.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// The account that the automation document runs in. This can be in either the management account or an application account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetAccount")]
-    pub r#target_account: Box<Option<String>>,
+    pub r#target_account: Option<String>,
 }

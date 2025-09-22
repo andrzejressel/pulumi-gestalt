@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobTemplateConfigOverlayAnimationAnimationFadeXy {
     /// Normalized x coordinate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "x")]
-    pub r#x: Box<Option<f64>>,
+    pub r#x: Option<f64>,
     /// Normalized y coordinate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "y")]
-    pub r#y: Box<Option<f64>>,
+    pub r#y: Option<f64>,
 }

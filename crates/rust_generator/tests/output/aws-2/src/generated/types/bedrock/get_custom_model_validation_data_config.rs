@@ -6,5 +6,5 @@ pub struct GetCustomModelValidationDataConfig {
     /// Information about the validators.
     #[builder(into)]
     #[serde(rename = "validators")]
-    pub r#validators: Box<Vec<super::super::types::bedrock::GetCustomModelValidationDataConfigValidator>>,
+    pub r#validators: Vec<super::super::types::bedrock::GetCustomModelValidationDataConfigValidator>,
 }

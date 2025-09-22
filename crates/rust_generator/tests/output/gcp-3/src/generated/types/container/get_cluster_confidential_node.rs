@@ -6,5 +6,5 @@ pub struct GetClusterConfidentialNode {
     /// Whether Confidential Nodes feature is enabled for all nodes in this cluster.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

@@ -5,8 +5,8 @@
 pub struct GetConfigurationStoreEncryption {
     #[builder(into)]
     #[serde(rename = "identityClientId")]
-    pub r#identity_client_id: Box<String>,
+    pub r#identity_client_id: String,
     #[builder(into)]
     #[serde(rename = "keyVaultKeyIdentifier")]
-    pub r#key_vault_key_identifier: Box<String>,
+    pub r#key_vault_key_identifier: String,
 }

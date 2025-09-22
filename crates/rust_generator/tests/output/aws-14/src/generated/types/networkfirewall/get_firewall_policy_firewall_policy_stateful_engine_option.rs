@@ -5,8 +5,8 @@
 pub struct GetFirewallPolicyFirewallPolicyStatefulEngineOption {
     #[builder(into)]
     #[serde(rename = "ruleOrder")]
-    pub r#rule_order: Box<String>,
+    pub r#rule_order: String,
     #[builder(into)]
     #[serde(rename = "streamExceptionPolicy")]
-    pub r#stream_exception_policy: Box<String>,
+    pub r#stream_exception_policy: String,
 }

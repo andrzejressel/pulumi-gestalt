@@ -8,21 +8,21 @@ pub struct InstanceGceSetupNetworkInterface {
     /// instance will have an external internet access through an ephemeral
     /// external IP address.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessConfigs")]
-    pub r#access_configs: Box<Option<Vec<super::super::types::workbench::InstanceGceSetupNetworkInterfaceAccessConfig>>>,
+    pub r#access_configs: Option<Vec<super::super::types::workbench::InstanceGceSetupNetworkInterfaceAccessConfig>>,
     /// Optional. The name of the VPC that this VM instance is in.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<Option<String>>,
+    pub r#network: Option<String>,
     /// Optional. The type of vNIC to be used on this interface. This
     /// may be gVNIC or VirtioNet.
     /// Possible values are: `VIRTIO_NET`, `GVNIC`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nicType")]
-    pub r#nic_type: Box<Option<String>>,
+    pub r#nic_type: Option<String>,
     /// Optional. The name of the subnet that this VM instance is in.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnet")]
-    pub r#subnet: Box<Option<String>>,
+    pub r#subnet: Option<String>,
 }

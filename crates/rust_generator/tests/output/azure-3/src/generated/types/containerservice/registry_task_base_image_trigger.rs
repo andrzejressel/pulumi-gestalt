@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegistryTaskBaseImageTrigger {
     /// Should the trigger be enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The name which should be used for this trigger.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The type of the trigger. Possible values are `All` and `Runtime`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// The endpoint URL for receiving the trigger.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "updateTriggerEndpoint")]
-    pub r#update_trigger_endpoint: Box<Option<String>>,
+    pub r#update_trigger_endpoint: Option<String>,
     /// Type of payload body for the trigger. Possible values are `Default` and `Token`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "updateTriggerPayloadType")]
-    pub r#update_trigger_payload_type: Box<Option<String>>,
+    pub r#update_trigger_payload_type: Option<String>,
 }

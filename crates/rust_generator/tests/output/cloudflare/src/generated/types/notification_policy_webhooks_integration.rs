@@ -6,8 +6,8 @@ pub struct NotificationPolicyWebhooksIntegration {
     /// The ID of this resource.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
-    #[builder(into, default)]
+    pub r#id: String,
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

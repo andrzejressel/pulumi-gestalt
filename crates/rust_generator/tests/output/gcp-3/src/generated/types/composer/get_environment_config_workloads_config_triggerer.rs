@@ -6,13 +6,13 @@ pub struct GetEnvironmentConfigWorkloadsConfigTriggerer {
     /// The number of triggerers.
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
     /// CPU request and limit for a single Airflow triggerer replica.
     #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<f64>,
+    pub r#cpu: f64,
     /// Memory (GB) request and limit for a single Airflow triggerer replica.
     #[builder(into)]
     #[serde(rename = "memoryGb")]
-    pub r#memory_gb: Box<f64>,
+    pub r#memory_gb: f64,
 }

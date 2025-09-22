@@ -6,9 +6,9 @@ pub struct GetRealtimeLogConfigEndpoint {
     /// (Required) Amazon Kinesis data stream configuration.
     #[builder(into)]
     #[serde(rename = "kinesisStreamConfigs")]
-    pub r#kinesis_stream_configs: Box<Vec<super::super::types::cloudfront::GetRealtimeLogConfigEndpointKinesisStreamConfig>>,
+    pub r#kinesis_stream_configs: Vec<super::super::types::cloudfront::GetRealtimeLogConfigEndpointKinesisStreamConfig>,
     /// (Required) Type of data stream where real-time log data is sent. The only valid value is `Kinesis`.
     #[builder(into)]
     #[serde(rename = "streamType")]
-    pub r#stream_type: Box<String>,
+    pub r#stream_type: String,
 }

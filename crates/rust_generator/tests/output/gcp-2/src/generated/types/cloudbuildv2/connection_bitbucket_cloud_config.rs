@@ -16,9 +16,9 @@ pub struct ConnectionBitbucketCloudConfig {
     /// Required. Immutable. SecretManager resource containing the webhook secret used to verify webhook events, formatted as `projects/*/secrets/*/versions/*`.
     #[builder(into)]
     #[serde(rename = "webhookSecretSecretVersion")]
-    pub r#webhook_secret_secret_version: Box<String>,
+    pub r#webhook_secret_secret_version: String,
     /// The Bitbucket Cloud Workspace ID to be connected to Google Cloud Platform.
     #[builder(into)]
     #[serde(rename = "workspace")]
-    pub r#workspace: Box<String>,
+    pub r#workspace: String,
 }

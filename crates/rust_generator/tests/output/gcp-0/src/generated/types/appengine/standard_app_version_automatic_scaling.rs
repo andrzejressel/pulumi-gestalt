@@ -5,30 +5,30 @@
 pub struct StandardAppVersionAutomaticScaling {
     /// Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.
     /// Defaults to a runtime-specific value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxConcurrentRequests")]
-    pub r#max_concurrent_requests: Box<Option<i32>>,
+    pub r#max_concurrent_requests: Option<i32>,
     /// Maximum number of idle instances that should be maintained for this version.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxIdleInstances")]
-    pub r#max_idle_instances: Box<Option<i32>>,
+    pub r#max_idle_instances: Option<i32>,
     /// Maximum amount of time that a request should wait in the pending queue before starting a new instance to handle it.
     /// A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxPendingLatency")]
-    pub r#max_pending_latency: Box<Option<String>>,
+    pub r#max_pending_latency: Option<String>,
     /// Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minIdleInstances")]
-    pub r#min_idle_instances: Box<Option<i32>>,
+    pub r#min_idle_instances: Option<i32>,
     /// Minimum amount of time a request should wait in the pending queue before starting a new instance to handle it.
     /// A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minPendingLatency")]
-    pub r#min_pending_latency: Box<Option<String>>,
+    pub r#min_pending_latency: Option<String>,
     /// Scheduler settings for standard environment.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "standardSchedulerSettings")]
-    pub r#standard_scheduler_settings: Box<Option<super::super::types::appengine::StandardAppVersionAutomaticScalingStandardSchedulerSettings>>,
+    pub r#standard_scheduler_settings: Option<Box<super::super::types::appengine::StandardAppVersionAutomaticScalingStandardSchedulerSettings>>,
 }

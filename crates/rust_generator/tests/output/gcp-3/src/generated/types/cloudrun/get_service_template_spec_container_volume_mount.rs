@@ -7,9 +7,9 @@ pub struct GetServiceTemplateSpecContainerVolumeMount {
     /// not contain ':'.
     #[builder(into)]
     #[serde(rename = "mountPath")]
-    pub r#mount_path: Box<String>,
+    pub r#mount_path: String,
     /// The name of the Cloud Run Service.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

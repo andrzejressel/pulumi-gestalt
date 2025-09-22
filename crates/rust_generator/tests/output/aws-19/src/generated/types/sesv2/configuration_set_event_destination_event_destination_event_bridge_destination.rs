@@ -6,5 +6,5 @@ pub struct ConfigurationSetEventDestinationEventDestinationEventBridgeDestinatio
     /// The Amazon Resource Name (ARN) of the Amazon EventBridge bus to publish email events to. Only the default bus is supported.
     #[builder(into)]
     #[serde(rename = "eventBusArn")]
-    pub r#event_bus_arn: Box<String>,
+    pub r#event_bus_arn: String,
 }

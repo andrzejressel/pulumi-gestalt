@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThreatIntelligenceIndicatorGranularMarking {
     /// The language of granular marking of the Threat Intelligence Indicator.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "language")]
-    pub r#language: Box<Option<String>>,
+    pub r#language: Option<String>,
     /// The reference of the granular marking of the Threat Intelligence Indicator.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "markingRef")]
-    pub r#marking_ref: Box<Option<String>>,
+    pub r#marking_ref: Option<String>,
     /// A list of selectors of the granular marking of the Threat Intelligence Indicator.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "selectors")]
-    pub r#selectors: Box<Option<Vec<String>>>,
+    pub r#selectors: Option<Vec<String>>,
 }

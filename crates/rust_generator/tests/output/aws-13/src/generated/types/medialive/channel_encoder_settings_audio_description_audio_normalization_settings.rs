@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsAudioDescriptionAudioNormalizationSettings {
     /// Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 to the EBU R-128 specification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "algorithm")]
-    pub r#algorithm: Box<Option<String>>,
+    pub r#algorithm: Option<String>,
     /// Algorithm control for the audio description.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "algorithmControl")]
-    pub r#algorithm_control: Box<Option<String>>,
+    pub r#algorithm_control: Option<String>,
     /// Target LKFS (loudness) to adjust volume to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetLkfs")]
-    pub r#target_lkfs: Box<Option<f64>>,
+    pub r#target_lkfs: Option<f64>,
 }

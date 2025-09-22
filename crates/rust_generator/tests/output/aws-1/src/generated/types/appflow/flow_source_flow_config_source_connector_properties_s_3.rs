@@ -5,12 +5,12 @@
 pub struct FlowSourceFlowConfigSourceConnectorPropertiesS3 {
     #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<String>,
+    pub r#bucket_name: String,
     #[builder(into)]
     #[serde(rename = "bucketPrefix")]
-    pub r#bucket_prefix: Box<String>,
+    pub r#bucket_prefix: String,
     /// When you use Amazon S3 as the source, the configuration format that you provide the flow input data. See S3 Input Format Config for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3InputFormatConfig")]
-    pub r#s_3_input_format_config: Box<Option<super::super::types::appflow::FlowSourceFlowConfigSourceConnectorPropertiesS3S3InputFormatConfig>>,
+    pub r#s_3_input_format_config: Option<Box<super::super::types::appflow::FlowSourceFlowConfigSourceConnectorPropertiesS3S3InputFormatConfig>>,
 }

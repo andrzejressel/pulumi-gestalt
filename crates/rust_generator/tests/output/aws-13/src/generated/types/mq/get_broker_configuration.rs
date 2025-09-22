@@ -5,8 +5,8 @@
 pub struct GetBrokerConfiguration {
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     #[builder(into)]
     #[serde(rename = "revision")]
-    pub r#revision: Box<i32>,
+    pub r#revision: i32,
 }

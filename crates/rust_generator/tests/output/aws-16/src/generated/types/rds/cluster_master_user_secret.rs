@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterMasterUserSecret {
     /// ARN for the KMS encryption key. When specifying `kms_key_id`, `storage_encrypted` needs to be set to true.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<Option<String>>,
+    pub r#kms_key_id: Option<String>,
     /// Amazon Resource Name (ARN) of the secret.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretArn")]
-    pub r#secret_arn: Box<Option<String>>,
+    pub r#secret_arn: Option<String>,
     /// Status of the secret. Valid Values: `creating` | `active` | `rotating` | `impaired`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretStatus")]
-    pub r#secret_status: Box<Option<String>>,
+    pub r#secret_status: Option<String>,
 }

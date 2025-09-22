@@ -6,13 +6,13 @@ pub struct NamespaceCustomerManagedKey {
     /// The ID of the User Assigned Identity that has access to the key.
     #[builder(into)]
     #[serde(rename = "identityId")]
-    pub r#identity_id: Box<String>,
+    pub r#identity_id: String,
     /// Used to specify whether enable Infrastructure Encryption (Double Encryption). Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "infrastructureEncryptionEnabled")]
-    pub r#infrastructure_encryption_enabled: Box<Option<bool>>,
+    pub r#infrastructure_encryption_enabled: Option<bool>,
     /// The ID of the Key Vault Key which should be used to Encrypt the data in this ServiceBus Namespace.
     #[builder(into)]
     #[serde(rename = "keyVaultKeyId")]
-    pub r#key_vault_key_id: Box<String>,
+    pub r#key_vault_key_id: String,
 }

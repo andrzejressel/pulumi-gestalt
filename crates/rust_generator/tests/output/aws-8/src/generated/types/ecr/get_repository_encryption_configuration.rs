@@ -6,9 +6,9 @@ pub struct GetRepositoryEncryptionConfiguration {
     /// Encryption type to use for the repository, either `AES256` or `KMS`.
     #[builder(into)]
     #[serde(rename = "encryptionType")]
-    pub r#encryption_type: Box<String>,
+    pub r#encryption_type: String,
     /// If `encryption_type` is `KMS`, the ARN of the KMS key used.
     #[builder(into)]
     #[serde(rename = "kmsKey")]
-    pub r#kms_key: Box<String>,
+    pub r#kms_key: String,
 }

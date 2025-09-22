@@ -6,17 +6,17 @@ pub struct GetApplicationGatewayRewriteRuleSetRewriteRuleUrl {
     /// The components used to rewrite the URL.
     #[builder(into)]
     #[serde(rename = "components")]
-    pub r#components: Box<String>,
+    pub r#components: String,
     /// The URL path to rewrite.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// The query string to rewrite.
     #[builder(into)]
     #[serde(rename = "queryString")]
-    pub r#query_string: Box<String>,
+    pub r#query_string: String,
     /// Whether the URL path map is reevaluated after this rewrite has been applied.
     #[builder(into)]
     #[serde(rename = "reroute")]
-    pub r#reroute: Box<bool>,
+    pub r#reroute: bool,
 }

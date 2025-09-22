@@ -6,7 +6,7 @@ pub struct ObjectLambdaAccessPointConfigurationTransformationConfiguration {
     /// The actions of an Object Lambda Access Point configuration. Valid values: `GetObject`.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<String>>,
+    pub r#actions: Vec<String>,
     /// The content transformation of an Object Lambda Access Point configuration. See Content Transformation below for more details.
     #[builder(into)]
     #[serde(rename = "contentTransformation")]

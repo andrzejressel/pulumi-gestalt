@@ -6,9 +6,9 @@ pub struct UserPoolAccountRecoverySettingRecoveryMechanism {
     /// Recovery method for a user. Can be of the following: `verified_email`, `verified_phone_number`, and `admin_only`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Positive integer specifying priority of a method with 1 being the highest priority.
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
 }

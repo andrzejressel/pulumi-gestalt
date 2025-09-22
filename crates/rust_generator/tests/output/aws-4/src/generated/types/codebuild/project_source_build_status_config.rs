@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ProjectSourceBuildStatusConfig {
     /// Specifies the context of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "context")]
-    pub r#context: Box<Option<String>>,
+    pub r#context: Option<String>,
     /// Specifies the target url of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetUrl")]
-    pub r#target_url: Box<Option<String>>,
+    pub r#target_url: Option<String>,
 }

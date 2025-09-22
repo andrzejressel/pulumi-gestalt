@@ -6,9 +6,9 @@ pub struct PlanRuleCopyAction {
     /// An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup.
     #[builder(into)]
     #[serde(rename = "destinationVaultArn")]
-    pub r#destination_vault_arn: Box<String>,
+    pub r#destination_vault_arn: String,
     /// The lifecycle defines when a protected resource is copied over to a backup vault and when it expires.  Fields documented above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lifecycle")]
-    pub r#lifecycle: Box<Option<super::super::types::backup::PlanRuleCopyActionLifecycle>>,
+    pub r#lifecycle: Option<Box<super::super::types::backup::PlanRuleCopyActionLifecycle>>,
 }

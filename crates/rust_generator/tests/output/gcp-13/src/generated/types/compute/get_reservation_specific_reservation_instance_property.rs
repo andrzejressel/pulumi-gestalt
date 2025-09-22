@@ -6,21 +6,21 @@ pub struct GetReservationSpecificReservationInstanceProperty {
     /// Guest accelerator type and count.
     #[builder(into)]
     #[serde(rename = "guestAccelerators")]
-    pub r#guest_accelerators: Box<Vec<super::super::types::compute::GetReservationSpecificReservationInstancePropertyGuestAccelerator>>,
+    pub r#guest_accelerators: Vec<super::super::types::compute::GetReservationSpecificReservationInstancePropertyGuestAccelerator>,
     /// The amount of local ssd to reserve with each instance. This
     /// reserves disks of type 'local-ssd'.
     #[builder(into)]
     #[serde(rename = "localSsds")]
-    pub r#local_ssds: Box<Vec<super::super::types::compute::GetReservationSpecificReservationInstancePropertyLocalSsd>>,
+    pub r#local_ssds: Vec<super::super::types::compute::GetReservationSpecificReservationInstancePropertyLocalSsd>,
     /// The name of the machine type to reserve.
     #[builder(into)]
     #[serde(rename = "machineType")]
-    pub r#machine_type: Box<String>,
+    pub r#machine_type: String,
     /// The minimum CPU platform for the reservation. For example,
     /// '"Intel Skylake"'. See
     /// the CPU platform availability reference](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones)
     /// for information on available CPU platforms.
     #[builder(into)]
     #[serde(rename = "minCpuPlatform")]
-    pub r#min_cpu_platform: Box<String>,
+    pub r#min_cpu_platform: String,
 }

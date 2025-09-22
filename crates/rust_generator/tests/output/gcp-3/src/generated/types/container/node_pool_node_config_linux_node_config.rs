@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NodePoolNodeConfigLinuxNodeConfig {
     /// cgroupMode specifies the cgroup mode to be used on the node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cgroupMode")]
-    pub r#cgroup_mode: Box<Option<String>>,
+    pub r#cgroup_mode: Option<String>,
     /// Amounts for 2M and 1G hugepages.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hugepagesConfig")]
-    pub r#hugepages_config: Box<Option<super::super::types::container::NodePoolNodeConfigLinuxNodeConfigHugepagesConfig>>,
+    pub r#hugepages_config: Option<Box<super::super::types::container::NodePoolNodeConfigLinuxNodeConfigHugepagesConfig>>,
     /// The Linux kernel parameters to be applied to the nodes and all pods running on the nodes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sysctls")]
-    pub r#sysctls: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#sysctls: Option<std::collections::HashMap<String, String>>,
 }

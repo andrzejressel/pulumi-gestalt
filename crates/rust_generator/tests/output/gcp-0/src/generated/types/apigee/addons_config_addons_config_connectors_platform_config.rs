@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AddonsConfigAddonsConfigConnectorsPlatformConfig {
     /// Flag that specifies whether the Advanced API Ops add-on is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// (Output)
     /// Flag that specifies whether the Advanced API Ops add-on is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expiresAt")]
-    pub r#expires_at: Box<Option<String>>,
+    pub r#expires_at: Option<String>,
 }

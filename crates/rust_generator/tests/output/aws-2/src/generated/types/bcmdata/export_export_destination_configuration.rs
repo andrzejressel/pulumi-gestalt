@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ExportExportDestinationConfiguration {
     /// Object that describes the destination of the data exports file. See the `s3_destination` argument reference below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Destinations")]
-    pub r#s_3_destinations: Box<Option<Vec<super::super::types::bcmdata::ExportExportDestinationConfigurationS3Destination>>>,
+    pub r#s_3_destinations: Option<Vec<super::super::types::bcmdata::ExportExportDestinationConfigurationS3Destination>>,
 }

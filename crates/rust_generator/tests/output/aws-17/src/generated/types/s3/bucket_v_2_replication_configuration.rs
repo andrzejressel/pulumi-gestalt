@@ -6,9 +6,9 @@ pub struct BucketV2ReplicationConfiguration {
     /// ARN of the IAM role for Amazon S3 to assume when replicating the objects.
     #[builder(into)]
     #[serde(rename = "role")]
-    pub r#role: Box<String>,
+    pub r#role: String,
     /// Specifies the rules managing the replication (documented below).
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<super::super::types::s3::BucketV2ReplicationConfigurationRule>>,
+    pub r#rules: Vec<super::super::types::s3::BucketV2ReplicationConfigurationRule>,
 }

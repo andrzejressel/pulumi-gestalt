@@ -6,21 +6,21 @@ pub struct DistributionConfigurationDistributionFastLaunchConfiguration {
     /// The owner account ID for the fast-launch enabled Windows AMI.
     #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<String>,
+    pub r#account_id: String,
     /// A Boolean that represents the current state of faster launching for the Windows AMI. Set to `true` to start using Windows faster launching, or `false` to stop using it.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Configuration block for the launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "launchTemplate")]
-    pub r#launch_template: Box<Option<super::super::types::imagebuilder::DistributionConfigurationDistributionFastLaunchConfigurationLaunchTemplate>>,
+    pub r#launch_template: Option<Box<super::super::types::imagebuilder::DistributionConfigurationDistributionFastLaunchConfigurationLaunchTemplate>>,
     /// The maximum number of parallel instances that are launched for creating resources.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxParallelLaunches")]
-    pub r#max_parallel_launches: Box<Option<i32>>,
+    pub r#max_parallel_launches: Option<i32>,
     /// Configuration block for managing the number of snapshots that are created from pre-provisioned instances for the Windows AMI when faster launching is enabled. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "snapshotConfiguration")]
-    pub r#snapshot_configuration: Box<Option<super::super::types::imagebuilder::DistributionConfigurationDistributionFastLaunchConfigurationSnapshotConfiguration>>,
+    pub r#snapshot_configuration: Option<Box<super::super::types::imagebuilder::DistributionConfigurationDistributionFastLaunchConfigurationSnapshotConfiguration>>,
 }

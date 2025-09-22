@@ -6,9 +6,9 @@ pub struct GetAppConnectionApplicationEndpoint {
     /// Hostname or IP address of the remote application endpoint.
     #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<String>,
+    pub r#host: String,
     /// Port of the remote application endpoint.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

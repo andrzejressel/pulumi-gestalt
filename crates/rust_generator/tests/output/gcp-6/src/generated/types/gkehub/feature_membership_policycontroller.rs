@@ -8,7 +8,7 @@ pub struct FeatureMembershipPolicycontroller {
     #[serde(rename = "policyControllerHubConfig")]
     pub r#policy_controller_hub_config: Box<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfig>,
     /// Version of Policy Controller to install. Defaults to the latest version.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

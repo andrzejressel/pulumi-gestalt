@@ -5,14 +5,14 @@
 pub struct GetFunctionAppSiteConfigScmIpRestrictionHeaders {
     #[builder(into)]
     #[serde(rename = "xAzureFdids")]
-    pub r#x_azure_fdids: Box<Vec<String>>,
+    pub r#x_azure_fdids: Vec<String>,
     #[builder(into)]
     #[serde(rename = "xFdHealthProbes")]
-    pub r#x_fd_health_probes: Box<Vec<String>>,
+    pub r#x_fd_health_probes: Vec<String>,
     #[builder(into)]
     #[serde(rename = "xForwardedFors")]
-    pub r#x_forwarded_fors: Box<Vec<String>>,
+    pub r#x_forwarded_fors: Vec<String>,
     #[builder(into)]
     #[serde(rename = "xForwardedHosts")]
-    pub r#x_forwarded_hosts: Box<Vec<String>>,
+    pub r#x_forwarded_hosts: Vec<String>,
 }

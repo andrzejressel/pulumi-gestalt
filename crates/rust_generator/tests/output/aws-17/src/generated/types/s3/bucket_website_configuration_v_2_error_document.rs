@@ -6,5 +6,5 @@ pub struct BucketWebsiteConfigurationV2ErrorDocument {
     /// Object key name to use when a 4XX class error occurs.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
 }

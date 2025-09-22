@@ -7,5 +7,5 @@ pub struct ClusterSecondaryConfig {
     /// 'projects/{project}/locations/{location}/clusters/{cluster_id}'
     #[builder(into)]
     #[serde(rename = "primaryClusterName")]
-    pub r#primary_cluster_name: Box<String>,
+    pub r#primary_cluster_name: String,
 }

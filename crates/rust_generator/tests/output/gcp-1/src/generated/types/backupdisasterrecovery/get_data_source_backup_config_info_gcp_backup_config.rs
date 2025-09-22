@@ -6,17 +6,17 @@ pub struct GetDataSourceBackupConfigInfoGcpBackupConfig {
     /// The name of the backup plan.
     #[builder(into)]
     #[serde(rename = "backupPlan")]
-    pub r#backup_plan: Box<String>,
+    pub r#backup_plan: String,
     /// The name of the backup plan association.
     #[builder(into)]
     #[serde(rename = "backupPlanAssociation")]
-    pub r#backup_plan_association: Box<String>,
+    pub r#backup_plan_association: String,
     /// The description of the backup plan.
     #[builder(into)]
     #[serde(rename = "backupPlanDescription")]
-    pub r#backup_plan_description: Box<String>,
+    pub r#backup_plan_description: String,
     /// The names of the backup plan rules which point to this backupvault
     #[builder(into)]
     #[serde(rename = "backupPlanRules")]
-    pub r#backup_plan_rules: Box<Vec<String>>,
+    pub r#backup_plan_rules: Vec<String>,
 }

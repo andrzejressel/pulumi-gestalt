@@ -5,8 +5,8 @@
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorApiKey {
     #[builder(into)]
     #[serde(rename = "apiKey")]
-    pub r#api_key: Box<String>,
-    #[builder(into, default)]
+    pub r#api_key: String,
+    #[builder(into)]
     #[serde(rename = "apiSecretKey")]
-    pub r#api_secret_key: Box<Option<String>>,
+    pub r#api_secret_key: Option<String>,
 }

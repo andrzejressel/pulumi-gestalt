@@ -6,13 +6,13 @@ pub struct VpnServerConfigurationAzureActiveDirectoryAuthentication {
     /// The Audience which should be used for authentication.
     #[builder(into)]
     #[serde(rename = "audience")]
-    pub r#audience: Box<String>,
+    pub r#audience: String,
     /// The Issuer which should be used for authentication.
     #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<String>,
+    pub r#issuer: String,
     /// The Tenant which should be used for authentication.
     #[builder(into)]
     #[serde(rename = "tenant")]
-    pub r#tenant: Box<String>,
+    pub r#tenant: String,
 }

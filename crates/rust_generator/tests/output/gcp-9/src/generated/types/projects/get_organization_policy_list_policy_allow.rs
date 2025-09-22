@@ -6,9 +6,9 @@ pub struct GetOrganizationPolicyListPolicyAllow {
     /// The policy allows or denies all values.
     #[builder(into)]
     #[serde(rename = "all")]
-    pub r#all: Box<bool>,
+    pub r#all: bool,
     /// The policy can define specific values that are allowed or denied.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

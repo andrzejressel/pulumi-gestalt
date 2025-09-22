@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfo {
     /// A block that contains EBS volume provisioned throughput information. To provision storage throughput, you must choose broker type kafka.m5.4xlarge or larger. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "provisionedThroughput")]
-    pub r#provisioned_throughput: Box<Option<super::super::types::msk::ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput>>,
+    pub r#provisioned_throughput: Option<Box<super::super::types::msk::ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput>>,
     /// The size in GiB of the EBS volume for the data drive on each broker node. Minimum value of `1` and maximum value of `16384`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "volumeSize")]
-    pub r#volume_size: Box<Option<i32>>,
+    pub r#volume_size: Option<i32>,
 }

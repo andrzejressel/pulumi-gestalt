@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsDvbSubSourceSettings {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ocrLanguage")]
-    pub r#ocr_language: Box<Option<String>>,
+    pub r#ocr_language: Option<String>,
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pid")]
-    pub r#pid: Box<Option<i32>>,
+    pub r#pid: Option<i32>,
 }

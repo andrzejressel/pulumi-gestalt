@@ -5,8 +5,8 @@
 pub struct GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidation {
     #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationSubjectAlternativeName>>,
+    pub r#subject_alternative_names: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationSubjectAlternativeName>,
     #[builder(into)]
     #[serde(rename = "trusts")]
-    pub r#trusts: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrust>>,
+    pub r#trusts: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrust>,
 }

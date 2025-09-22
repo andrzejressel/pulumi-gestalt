@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FunctionEphemeralStorage {
     /// The size of the Lambda function Ephemeral storage(`/tmp`) represented in MB. The minimum supported `ephemeral_storage` value defaults to `512`MB and the maximum supported value is `10240`MB.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<Option<i32>>,
+    pub r#size: Option<i32>,
 }

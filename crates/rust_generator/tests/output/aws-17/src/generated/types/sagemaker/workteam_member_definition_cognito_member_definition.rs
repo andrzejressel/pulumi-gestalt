@@ -6,13 +6,13 @@ pub struct WorkteamMemberDefinitionCognitoMemberDefinition {
     /// An identifier for an application client. You must create the app client ID using Amazon Cognito.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// An identifier for a user group.
     #[builder(into)]
     #[serde(rename = "userGroup")]
-    pub r#user_group: Box<String>,
+    pub r#user_group: String,
     /// An identifier for a user pool. The user pool must be in the same region as the service that you are calling.
     #[builder(into)]
     #[serde(rename = "userPool")]
-    pub r#user_pool: Box<String>,
+    pub r#user_pool: String,
 }

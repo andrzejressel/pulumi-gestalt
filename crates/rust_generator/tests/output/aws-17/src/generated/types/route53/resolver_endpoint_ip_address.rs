@@ -4,18 +4,18 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResolverEndpointIpAddress {
     /// IPv4 address in the subnet that you want to use for DNS queries.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ip")]
-    pub r#ip: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#ip: Option<String>,
+    #[builder(into)]
     #[serde(rename = "ipId")]
-    pub r#ip_id: Box<Option<String>>,
+    pub r#ip_id: Option<String>,
     /// IPv6 address in the subnet that you want to use for DNS queries.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv6")]
-    pub r#ipv_6: Box<Option<String>>,
+    pub r#ipv_6: Option<String>,
     /// ID of the subnet that contains the IP address.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

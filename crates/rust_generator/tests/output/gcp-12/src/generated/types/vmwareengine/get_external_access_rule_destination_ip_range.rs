@@ -6,9 +6,9 @@ pub struct GetExternalAccessRuleDestinationIpRange {
     /// The name of an 'ExternalAddress' resource.
     #[builder(into)]
     #[serde(rename = "externalAddress")]
-    pub r#external_address: Box<String>,
+    pub r#external_address: String,
     /// An IP address range in the CIDR format.
     #[builder(into)]
     #[serde(rename = "ipAddressRange")]
-    pub r#ip_address_range: Box<String>,
+    pub r#ip_address_range: String,
 }

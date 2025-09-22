@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VpnGatewayConnectionRoutingPropagatedRouteTable {
     /// A list of labels to assign to this route table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<Vec<String>>>,
+    pub r#labels: Option<Vec<String>>,
     /// A list of Route Table IDs to associated with this VPN Gateway Connection.
     #[builder(into)]
     #[serde(rename = "routeTableIds")]
-    pub r#route_table_ids: Box<Vec<String>>,
+    pub r#route_table_ids: Vec<String>,
 }

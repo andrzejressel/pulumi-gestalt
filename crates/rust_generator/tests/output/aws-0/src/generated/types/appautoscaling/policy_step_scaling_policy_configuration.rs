@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicyStepScalingPolicyConfiguration {
     /// Whether the adjustment is an absolute number or a percentage of the current capacity. Valid values are `ChangeInCapacity`, `ExactCapacity`, and `PercentChangeInCapacity`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "adjustmentType")]
-    pub r#adjustment_type: Box<Option<String>>,
+    pub r#adjustment_type: Option<String>,
     /// Amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cooldown")]
-    pub r#cooldown: Box<Option<i32>>,
+    pub r#cooldown: Option<i32>,
     /// Aggregation type for the policy's metrics. Valid values are "Minimum", "Maximum", and "Average". Without a value, AWS will treat the aggregation type as "Average".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricAggregationType")]
-    pub r#metric_aggregation_type: Box<Option<String>>,
+    pub r#metric_aggregation_type: Option<String>,
     /// Minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment type is PercentChangeInCapacity, the scaling policy changes the scalable dimension of the scalable target by this amount.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minAdjustmentMagnitude")]
-    pub r#min_adjustment_magnitude: Box<Option<i32>>,
+    pub r#min_adjustment_magnitude: Option<i32>,
     /// Set of adjustments that manage scaling. These have the following structure:
     /// 
     /// ```yaml
@@ -36,7 +36,7 @@ pub struct PolicyStepScalingPolicyConfiguration {
     ///             metricIntervalUpperBound: 3
     ///             scalingAdjustment: 1
     /// ```
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stepAdjustments")]
-    pub r#step_adjustments: Box<Option<Vec<super::super::types::appautoscaling::PolicyStepScalingPolicyConfigurationStepAdjustment>>>,
+    pub r#step_adjustments: Option<Vec<super::super::types::appautoscaling::PolicyStepScalingPolicyConfigurationStepAdjustment>>,
 }

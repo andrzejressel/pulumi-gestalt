@@ -4,31 +4,31 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FluxConfigurationBlobStorage {
     /// Specifies the account key (shared key) to access the storage account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accountKey")]
-    pub r#account_key: Box<Option<String>>,
+    pub r#account_key: Option<String>,
     /// Specifies the Azure Blob container ID.
     #[builder(into)]
     #[serde(rename = "containerId")]
-    pub r#container_id: Box<String>,
+    pub r#container_id: String,
     /// Specifies the name of a local secret on the Kubernetes cluster to use as the authentication secret rather than the managed or user-provided configuration secrets.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "localAuthReference")]
-    pub r#local_auth_reference: Box<Option<String>>,
+    pub r#local_auth_reference: Option<String>,
     /// Specifies the shared access token to access the storage container.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sasToken")]
-    pub r#sas_token: Box<Option<String>>,
+    pub r#sas_token: Option<String>,
     /// A `service_principal` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "servicePrincipal")]
-    pub r#service_principal: Box<Option<super::super::types::arckubernetes::FluxConfigurationBlobStorageServicePrincipal>>,
+    pub r#service_principal: Option<Box<super::super::types::arckubernetes::FluxConfigurationBlobStorageServicePrincipal>>,
     /// Specifies the interval at which to re-reconcile the cluster Azure Blob source with the remote.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "syncIntervalInSeconds")]
-    pub r#sync_interval_in_seconds: Box<Option<i32>>,
+    pub r#sync_interval_in_seconds: Option<i32>,
     /// Specifies the maximum time to attempt to reconcile the cluster Azure Blob source with the remote.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeoutInSeconds")]
-    pub r#timeout_in_seconds: Box<Option<i32>>,
+    pub r#timeout_in_seconds: Option<i32>,
 }

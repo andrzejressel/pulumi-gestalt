@@ -6,21 +6,21 @@ pub struct ManagedClusterLbRule {
     /// LB Backend port.
     #[builder(into)]
     #[serde(rename = "backendPort")]
-    pub r#backend_port: Box<i32>,
+    pub r#backend_port: i32,
     /// LB Frontend port.
     #[builder(into)]
     #[serde(rename = "frontendPort")]
-    pub r#frontend_port: Box<i32>,
+    pub r#frontend_port: i32,
     /// Protocol for the probe. Can be one of `tcp`, `udp`, `http`, or `https`.
     #[builder(into)]
     #[serde(rename = "probeProtocol")]
-    pub r#probe_protocol: Box<String>,
+    pub r#probe_protocol: String,
     /// Path for the probe to check, when probe protocol is set to `http`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "probeRequestPath")]
-    pub r#probe_request_path: Box<Option<String>>,
+    pub r#probe_request_path: Option<String>,
     /// The transport protocol used in this rule. Can be one of `tcp` or `udp`.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
 }

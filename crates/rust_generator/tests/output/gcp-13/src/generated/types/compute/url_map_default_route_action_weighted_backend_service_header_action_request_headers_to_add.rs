@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UrlMapDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAdd {
     /// The name of the header to add.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<Option<String>>,
+    pub r#header_name: Option<String>,
     /// The value of the header to add.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerValue")]
-    pub r#header_value: Box<Option<String>>,
+    pub r#header_value: Option<String>,
     /// If false, headerValue is appended to any values that already exist for the header.
     /// If true, headerValue is set for the header, discarding any values that were set for that header.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replace")]
-    pub r#replace: Box<Option<bool>>,
+    pub r#replace: Option<bool>,
 }

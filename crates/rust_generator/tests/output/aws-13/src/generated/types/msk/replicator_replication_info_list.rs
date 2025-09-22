@@ -6,27 +6,27 @@ pub struct ReplicatorReplicationInfoList {
     /// Configuration relating to consumer group replication.
     #[builder(into)]
     #[serde(rename = "consumerGroupReplications")]
-    pub r#consumer_group_replications: Box<Vec<super::super::types::msk::ReplicatorReplicationInfoListConsumerGroupReplication>>,
-    #[builder(into, default)]
+    pub r#consumer_group_replications: Vec<super::super::types::msk::ReplicatorReplicationInfoListConsumerGroupReplication>,
+    #[builder(into)]
     #[serde(rename = "sourceKafkaClusterAlias")]
-    pub r#source_kafka_cluster_alias: Box<Option<String>>,
+    pub r#source_kafka_cluster_alias: Option<String>,
     /// The ARN of the source Kafka cluster.
     #[builder(into)]
     #[serde(rename = "sourceKafkaClusterArn")]
-    pub r#source_kafka_cluster_arn: Box<String>,
+    pub r#source_kafka_cluster_arn: String,
     /// The type of compression to use writing records to target Kafka cluster.
     #[builder(into)]
     #[serde(rename = "targetCompressionType")]
-    pub r#target_compression_type: Box<String>,
-    #[builder(into, default)]
+    pub r#target_compression_type: String,
+    #[builder(into)]
     #[serde(rename = "targetKafkaClusterAlias")]
-    pub r#target_kafka_cluster_alias: Box<Option<String>>,
+    pub r#target_kafka_cluster_alias: Option<String>,
     /// The ARN of the target Kafka cluster.
     #[builder(into)]
     #[serde(rename = "targetKafkaClusterArn")]
-    pub r#target_kafka_cluster_arn: Box<String>,
+    pub r#target_kafka_cluster_arn: String,
     /// Configuration relating to topic replication.
     #[builder(into)]
     #[serde(rename = "topicReplications")]
-    pub r#topic_replications: Box<Vec<super::super::types::msk::ReplicatorReplicationInfoListTopicReplication>>,
+    pub r#topic_replications: Vec<super::super::types::msk::ReplicatorReplicationInfoListTopicReplication>,
 }

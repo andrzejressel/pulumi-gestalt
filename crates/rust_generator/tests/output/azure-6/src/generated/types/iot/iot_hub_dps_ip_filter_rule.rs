@@ -6,17 +6,17 @@ pub struct IotHubDpsIpFilterRule {
     /// The desired action for requests captured by this rule. Possible values are `Accept`, `Reject`
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// The IP address range in CIDR notation for the rule.
     #[builder(into)]
     #[serde(rename = "ipMask")]
-    pub r#ip_mask: Box<String>,
+    pub r#ip_mask: String,
     /// The name of the filter.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Target for requests captured by this rule. Possible values are `all`, `deviceApi` and `serviceApi`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<Option<String>>,
+    pub r#target: Option<String>,
 }

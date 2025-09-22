@@ -5,9 +5,9 @@
 pub struct OrganizationSecurityPolicyRuleMatchConfig {
     /// Destination IP address range in CIDR format. Required for
     /// EGRESS rules.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destIpRanges")]
-    pub r#dest_ip_ranges: Box<Option<Vec<String>>>,
+    pub r#dest_ip_ranges: Option<Vec<String>>,
     /// Pairs of IP protocols and ports that the rule should match.
     /// Structure is documented below.
     /// 
@@ -15,10 +15,10 @@ pub struct OrganizationSecurityPolicyRuleMatchConfig {
     /// <a name="nested_layer4_config"></a>The `layer4_config` block supports:
     #[builder(into)]
     #[serde(rename = "layer4Configs")]
-    pub r#layer_4_configs: Box<Vec<super::super::types::compute::OrganizationSecurityPolicyRuleMatchConfigLayer4Config>>,
+    pub r#layer_4_configs: Vec<super::super::types::compute::OrganizationSecurityPolicyRuleMatchConfigLayer4Config>,
     /// Source IP address range in CIDR format. Required for
     /// INGRESS rules.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "srcIpRanges")]
-    pub r#src_ip_ranges: Box<Option<Vec<String>>>,
+    pub r#src_ip_ranges: Option<Vec<String>>,
 }

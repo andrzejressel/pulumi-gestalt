@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApiDiagnosticBackendResponseDataMasking {
     /// A `headers` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Option<Vec<super::super::types::apimanagement::ApiDiagnosticBackendResponseDataMaskingHeader>>>,
+    pub r#headers: Option<Vec<super::super::types::apimanagement::ApiDiagnosticBackendResponseDataMaskingHeader>>,
     /// A `query_params` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "queryParams")]
-    pub r#query_params: Box<Option<Vec<super::super::types::apimanagement::ApiDiagnosticBackendResponseDataMaskingQueryParam>>>,
+    pub r#query_params: Option<Vec<super::super::types::apimanagement::ApiDiagnosticBackendResponseDataMaskingQueryParam>>,
 }

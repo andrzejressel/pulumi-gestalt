@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkloadPartnerPermissions {
     /// Optional. Allow partner to view violation alerts.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "assuredWorkloadsMonitoring")]
-    pub r#assured_workloads_monitoring: Box<Option<bool>>,
+    pub r#assured_workloads_monitoring: Option<bool>,
     /// Allow the partner to view inspectability logs and monitoring violations.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataLogsViewer")]
-    pub r#data_logs_viewer: Box<Option<bool>>,
+    pub r#data_logs_viewer: Option<bool>,
     /// Optional. Allow partner to view access approval logs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAccessApprover")]
-    pub r#service_access_approver: Box<Option<bool>>,
+    pub r#service_access_approver: Option<bool>,
 }

@@ -6,5 +6,5 @@ pub struct GetClusterUpgradePolicy {
     /// Support type to use for the cluster.
     #[builder(into)]
     #[serde(rename = "supportType")]
-    pub r#support_type: Box<String>,
+    pub r#support_type: String,
 }

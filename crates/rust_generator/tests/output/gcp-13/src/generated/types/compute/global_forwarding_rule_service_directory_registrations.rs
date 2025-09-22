@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GlobalForwardingRuleServiceDirectoryRegistrations {
     /// Service Directory namespace to register the forwarding rule under.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<Option<String>>,
+    pub r#namespace: Option<String>,
     /// [Optional] Service Directory region to register this global forwarding rule under.
     /// Default to "us-central1". Only used for PSC for Google APIs. All PSC for
     /// Google APIs Forwarding Rules on the same network should use the same Service
     /// Directory region.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceDirectoryRegion")]
-    pub r#service_directory_region: Box<Option<String>>,
+    pub r#service_directory_region: Option<String>,
 }

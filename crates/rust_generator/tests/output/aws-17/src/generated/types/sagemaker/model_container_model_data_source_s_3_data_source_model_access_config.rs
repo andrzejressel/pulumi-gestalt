@@ -6,5 +6,5 @@ pub struct ModelContainerModelDataSourceS3DataSourceModelAccessConfig {
     /// Specifies agreement to the model end-user license agreement (EULA). The AcceptEula value must be explicitly defined as `true` in order to accept the EULA that this model requires. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.
     #[builder(into)]
     #[serde(rename = "acceptEula")]
-    pub r#accept_eula: Box<bool>,
+    pub r#accept_eula: bool,
 }

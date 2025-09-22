@@ -6,13 +6,13 @@ pub struct AppTemplateVolume {
     /// The name of the volume.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The name of the `AzureFile` storage.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageName")]
-    pub r#storage_name: Box<Option<String>>,
+    pub r#storage_name: Option<String>,
     /// The type of storage volume. Possible values are `AzureFile`, `EmptyDir` and `Secret`. Defaults to `EmptyDir`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageType")]
-    pub r#storage_type: Box<Option<String>>,
+    pub r#storage_type: Option<String>,
 }

@@ -5,7 +5,7 @@
 pub struct PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexes {
     /// The group of regular expression patterns to match against one or more file stores. Maximum of 100 entries. The sum of all lengths of regular expressions can't exceed 10 KiB.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "patterns")]
-    pub r#patterns: Box<Option<Vec<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesPattern>>>,
+    pub r#patterns: Option<Vec<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesPattern>>,
 }

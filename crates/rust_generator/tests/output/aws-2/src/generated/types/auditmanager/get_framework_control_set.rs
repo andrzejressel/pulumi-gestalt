@@ -3,14 +3,14 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetFrameworkControlSet {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "controls")]
-    pub r#controls: Box<Option<Vec<super::super::types::auditmanager::GetFrameworkControlSetControl>>>,
+    pub r#controls: Option<Vec<super::super::types::auditmanager::GetFrameworkControlSetControl>>,
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Name of the framework.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

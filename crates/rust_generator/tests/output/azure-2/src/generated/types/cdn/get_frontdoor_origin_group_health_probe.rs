@@ -6,17 +6,17 @@ pub struct GetFrontdoorOriginGroupHealthProbe {
     /// Specifies the number of seconds between health probes.
     #[builder(into)]
     #[serde(rename = "intervalInSeconds")]
-    pub r#interval_in_seconds: Box<i32>,
+    pub r#interval_in_seconds: i32,
     /// Specifies the path relative to the origin that is used to determine the health of the origin.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// Specifies the protocol to use for health probe.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     /// Specifies the type of health probe request that is made.
     #[builder(into)]
     #[serde(rename = "requestType")]
-    pub r#request_type: Box<String>,
+    pub r#request_type: String,
 }

@@ -5,7 +5,7 @@
 pub struct WorkloadWorkloadReference {
     /// (Output)
     /// Output only. The underlying compute resource uri.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<Option<String>>,
+    pub r#uri: Option<String>,
 }

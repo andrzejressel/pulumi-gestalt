@@ -6,21 +6,21 @@ pub struct GetPoolNetworkConfigurationEndpointConfiguration {
     /// The port number on the compute node.
     #[builder(into)]
     #[serde(rename = "backendPort")]
-    pub r#backend_port: Box<i32>,
+    pub r#backend_port: i32,
     /// The range of external ports that are used to provide inbound access to the backendPort on the individual compute nodes in the format of `1000-1100`.
     #[builder(into)]
     #[serde(rename = "frontendPortRange")]
-    pub r#frontend_port_range: Box<String>,
+    pub r#frontend_port_range: String,
     /// The name of the user account.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The list of network security group rules that are applied to the endpoint.
     #[builder(into)]
     #[serde(rename = "networkSecurityGroupRules")]
-    pub r#network_security_group_rules: Box<Vec<super::super::types::batch::GetPoolNetworkConfigurationEndpointConfigurationNetworkSecurityGroupRule>>,
+    pub r#network_security_group_rules: Vec<super::super::types::batch::GetPoolNetworkConfigurationEndpointConfigurationNetworkSecurityGroupRule>,
     /// The protocol of the endpoint.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
 }

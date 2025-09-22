@@ -6,9 +6,9 @@ pub struct ServiceLabel {
     /// Name of the label
     #[builder(into)]
     #[serde(rename = "label")]
-    pub r#label: Box<String>,
+    pub r#label: String,
     /// Value of the label
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

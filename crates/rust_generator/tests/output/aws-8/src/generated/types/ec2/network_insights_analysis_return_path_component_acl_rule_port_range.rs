@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInsightsAnalysisReturnPathComponentAclRulePortRange {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "from")]
-    pub r#from: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#from: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "to")]
-    pub r#to: Box<Option<i32>>,
+    pub r#to: Option<i32>,
 }

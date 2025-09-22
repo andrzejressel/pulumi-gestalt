@@ -6,5 +6,5 @@ pub struct ServiceSignIn {
     /// Should anonymous users be redirected to the sign in page?
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

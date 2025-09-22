@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LifecyclePolicyPolicyDetailExclusionRules {
     /// Lists configuration values that apply to AMIs that Image Builder should exclude from the lifecycle action. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "amis")]
-    pub r#amis: Box<Option<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailExclusionRulesAmis>>,
+    pub r#amis: Option<Box<super::super::types::imagebuilder::LifecyclePolicyPolicyDetailExclusionRulesAmis>>,
     /// Contains a list of tags that Image Builder uses to skip lifecycle actions for Image Builder image resources that have them.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tagMap")]
-    pub r#tag_map: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#tag_map: Option<std::collections::HashMap<String, String>>,
 }

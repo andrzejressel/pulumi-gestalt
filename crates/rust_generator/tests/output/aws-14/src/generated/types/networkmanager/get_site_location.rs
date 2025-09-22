@@ -6,13 +6,13 @@ pub struct GetSiteLocation {
     /// Address of the location.
     #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<String>,
+    pub r#address: String,
     /// Latitude of the location.
     #[builder(into)]
     #[serde(rename = "latitude")]
-    pub r#latitude: Box<String>,
+    pub r#latitude: String,
     /// Longitude of the location.
     #[builder(into)]
     #[serde(rename = "longitude")]
-    pub r#longitude: Box<String>,
+    pub r#longitude: String,
 }

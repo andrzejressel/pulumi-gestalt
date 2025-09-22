@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventTargetSagemakerPipelineTarget {
     /// List of Parameter names and values for SageMaker Model Building Pipeline execution.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pipelineParameterLists")]
-    pub r#pipeline_parameter_lists: Box<Option<Vec<super::super::types::cloudwatch::EventTargetSagemakerPipelineTargetPipelineParameterList>>>,
+    pub r#pipeline_parameter_lists: Option<Vec<super::super::types::cloudwatch::EventTargetSagemakerPipelineTargetPipelineParameterList>>,
 }

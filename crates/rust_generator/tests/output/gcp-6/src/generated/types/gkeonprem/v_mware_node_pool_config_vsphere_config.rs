@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VMwareNodePoolConfigVsphereConfig {
     /// The name of the vCenter datastore. Inherited from the user cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datastore")]
-    pub r#datastore: Box<Option<String>>,
+    pub r#datastore: Option<String>,
     /// Vsphere host groups to apply to all VMs in the node pool
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostGroups")]
-    pub r#host_groups: Box<Option<Vec<String>>>,
+    pub r#host_groups: Option<Vec<String>>,
     /// Tags to apply to VMs.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<Vec<super::super::types::gkeonprem::VMwareNodePoolConfigVsphereConfigTag>>>,
+    pub r#tags: Option<Vec<super::super::types::gkeonprem::VMwareNodePoolConfigVsphereConfigTag>>,
 }

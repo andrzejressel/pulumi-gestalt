@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubernetesClusterMaintenanceWindow {
     /// One or more `allowed` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "alloweds")]
-    pub r#alloweds: Box<Option<Vec<super::super::types::containerservice::KubernetesClusterMaintenanceWindowAllowed>>>,
+    pub r#alloweds: Option<Vec<super::super::types::containerservice::KubernetesClusterMaintenanceWindowAllowed>>,
     /// One or more `not_allowed` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notAlloweds")]
-    pub r#not_alloweds: Box<Option<Vec<super::super::types::containerservice::KubernetesClusterMaintenanceWindowNotAllowed>>>,
+    pub r#not_alloweds: Option<Vec<super::super::types::containerservice::KubernetesClusterMaintenanceWindowNotAllowed>>,
 }

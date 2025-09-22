@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventGridTopicInputMappingDefaultValues {
     /// Specifies the default data version of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataVersion")]
-    pub r#data_version: Box<Option<String>>,
+    pub r#data_version: Option<String>,
     /// Specifies the default event type of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventType")]
-    pub r#event_type: Box<Option<String>>,
+    pub r#event_type: Option<String>,
     /// Specifies the default subject of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subject")]
-    pub r#subject: Box<Option<String>>,
+    pub r#subject: Option<String>,
 }

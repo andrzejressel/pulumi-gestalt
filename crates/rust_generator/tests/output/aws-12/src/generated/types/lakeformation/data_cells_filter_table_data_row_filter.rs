@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataCellsFilterTableDataRowFilter {
     /// (Optional) A wildcard that matches all rows.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allRowsWildcard")]
-    pub r#all_rows_wildcard: Box<Option<super::super::types::lakeformation::DataCellsFilterTableDataRowFilterAllRowsWildcard>>,
+    pub r#all_rows_wildcard: Option<Box<super::super::types::lakeformation::DataCellsFilterTableDataRowFilterAllRowsWildcard>>,
     /// (Optional) A filter expression.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filterExpression")]
-    pub r#filter_expression: Box<Option<String>>,
+    pub r#filter_expression: Option<String>,
 }

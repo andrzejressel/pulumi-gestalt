@@ -6,13 +6,13 @@ pub struct ClassifierGrokClassifier {
     /// An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.
     #[builder(into)]
     #[serde(rename = "classification")]
-    pub r#classification: Box<String>,
+    pub r#classification: String,
     /// Custom grok patterns used by this classifier.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customPatterns")]
-    pub r#custom_patterns: Box<Option<String>>,
+    pub r#custom_patterns: Option<String>,
     /// The grok pattern used by this classifier.
     #[builder(into)]
     #[serde(rename = "grokPattern")]
-    pub r#grok_pattern: Box<String>,
+    pub r#grok_pattern: String,
 }

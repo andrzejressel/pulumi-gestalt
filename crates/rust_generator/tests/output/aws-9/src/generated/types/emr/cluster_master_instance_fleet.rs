@@ -4,33 +4,33 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterMasterInstanceFleet {
     /// ID of the cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Configuration block for instance fleet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceTypeConfigs")]
-    pub r#instance_type_configs: Box<Option<Vec<super::super::types::emr::ClusterMasterInstanceFleetInstanceTypeConfig>>>,
+    pub r#instance_type_configs: Option<Vec<super::super::types::emr::ClusterMasterInstanceFleetInstanceTypeConfig>>,
     /// Configuration block for launch specification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "launchSpecifications")]
-    pub r#launch_specifications: Box<Option<super::super::types::emr::ClusterMasterInstanceFleetLaunchSpecifications>>,
+    pub r#launch_specifications: Option<Box<super::super::types::emr::ClusterMasterInstanceFleetLaunchSpecifications>>,
     /// Friendly name given to the instance fleet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "provisionedOnDemandCapacity")]
-    pub r#provisioned_on_demand_capacity: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#provisioned_on_demand_capacity: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "provisionedSpotCapacity")]
-    pub r#provisioned_spot_capacity: Box<Option<i32>>,
+    pub r#provisioned_spot_capacity: Option<i32>,
     /// Target capacity of On-Demand units for the instance fleet, which determines how many On-Demand instances to provision.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetOnDemandCapacity")]
-    pub r#target_on_demand_capacity: Box<Option<i32>>,
+    pub r#target_on_demand_capacity: Option<i32>,
     /// Target capacity of Spot units for the instance fleet, which determines how many Spot instances to provision.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetSpotCapacity")]
-    pub r#target_spot_capacity: Box<Option<i32>>,
+    pub r#target_spot_capacity: Option<i32>,
 }

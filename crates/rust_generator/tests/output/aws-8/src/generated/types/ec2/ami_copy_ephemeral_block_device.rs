@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AmiCopyEphemeralBlockDevice {
     /// Path at which the device is exposed to created instances.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<Option<String>>,
+    pub r#device_name: Option<String>,
     /// Name for the ephemeral device, of the form "ephemeralN" where
     /// *N* is a volume number starting from zero.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualName")]
-    pub r#virtual_name: Box<Option<String>>,
+    pub r#virtual_name: Option<String>,
 }

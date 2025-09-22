@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetUserAuthenticationMode {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordCount")]
-    pub r#password_count: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#password_count: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

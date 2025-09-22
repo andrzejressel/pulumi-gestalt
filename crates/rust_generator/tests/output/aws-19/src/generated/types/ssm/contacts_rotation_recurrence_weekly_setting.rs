@@ -6,9 +6,9 @@ pub struct ContactsRotationRecurrenceWeeklySetting {
     /// (Required) The day of the week when the shift coverage occurs.
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     /// (Required) The hand off time. See Hand Off Time for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "handOffTime")]
-    pub r#hand_off_time: Box<Option<super::super::types::ssm::ContactsRotationRecurrenceWeeklySettingHandOffTime>>,
+    pub r#hand_off_time: Option<Box<super::super::types::ssm::ContactsRotationRecurrenceWeeklySettingHandOffTime>>,
 }

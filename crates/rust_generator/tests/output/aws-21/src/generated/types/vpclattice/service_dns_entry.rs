@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceDnsEntry {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#domain_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "hostedZoneId")]
-    pub r#hosted_zone_id: Box<Option<String>>,
+    pub r#hosted_zone_id: Option<String>,
 }

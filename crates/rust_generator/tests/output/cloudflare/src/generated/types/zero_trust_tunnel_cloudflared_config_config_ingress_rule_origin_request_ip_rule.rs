@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZeroTrustTunnelCloudflaredConfigConfigIngressRuleOriginRequestIpRule {
     /// Whether to allow the IP prefix.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allow")]
-    pub r#allow: Box<Option<bool>>,
+    pub r#allow: Option<bool>,
     /// Ports to use within the IP rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ports")]
-    pub r#ports: Box<Option<Vec<i32>>>,
+    pub r#ports: Option<Vec<i32>>,
     /// IP rule prefix.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
 }

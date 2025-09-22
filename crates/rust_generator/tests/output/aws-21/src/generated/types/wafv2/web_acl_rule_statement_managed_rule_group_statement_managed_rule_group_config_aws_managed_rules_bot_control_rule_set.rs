@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesBotControlRuleSet {
     /// Applies only to the targeted inspection level. Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity. Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableMachineLearning")]
-    pub r#enable_machine_learning: Box<Option<bool>>,
+    pub r#enable_machine_learning: Option<bool>,
     /// The inspection level to use for the Bot Control rule group.
     #[builder(into)]
     #[serde(rename = "inspectionLevel")]
-    pub r#inspection_level: Box<String>,
+    pub r#inspection_level: String,
 }

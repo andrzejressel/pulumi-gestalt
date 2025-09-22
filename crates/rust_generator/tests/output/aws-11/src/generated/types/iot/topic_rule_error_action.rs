@@ -3,61 +3,61 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TopicRuleErrorAction {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudwatchAlarm")]
-    pub r#cloudwatch_alarm: Box<Option<super::super::types::iot::TopicRuleErrorActionCloudwatchAlarm>>,
-    #[builder(into, default)]
+    pub r#cloudwatch_alarm: Option<Box<super::super::types::iot::TopicRuleErrorActionCloudwatchAlarm>>,
+    #[builder(into)]
     #[serde(rename = "cloudwatchLogs")]
-    pub r#cloudwatch_logs: Box<Option<super::super::types::iot::TopicRuleErrorActionCloudwatchLogs>>,
-    #[builder(into, default)]
+    pub r#cloudwatch_logs: Option<Box<super::super::types::iot::TopicRuleErrorActionCloudwatchLogs>>,
+    #[builder(into)]
     #[serde(rename = "cloudwatchMetric")]
-    pub r#cloudwatch_metric: Box<Option<super::super::types::iot::TopicRuleErrorActionCloudwatchMetric>>,
-    #[builder(into, default)]
+    pub r#cloudwatch_metric: Option<Box<super::super::types::iot::TopicRuleErrorActionCloudwatchMetric>>,
+    #[builder(into)]
     #[serde(rename = "dynamodb")]
-    pub r#dynamodb: Box<Option<super::super::types::iot::TopicRuleErrorActionDynamodb>>,
-    #[builder(into, default)]
+    pub r#dynamodb: Option<Box<super::super::types::iot::TopicRuleErrorActionDynamodb>>,
+    #[builder(into)]
     #[serde(rename = "dynamodbv2")]
-    pub r#dynamodbv_2: Box<Option<super::super::types::iot::TopicRuleErrorActionDynamodbv2>>,
-    #[builder(into, default)]
+    pub r#dynamodbv_2: Option<Box<super::super::types::iot::TopicRuleErrorActionDynamodbv2>>,
+    #[builder(into)]
     #[serde(rename = "elasticsearch")]
-    pub r#elasticsearch: Box<Option<super::super::types::iot::TopicRuleErrorActionElasticsearch>>,
-    #[builder(into, default)]
+    pub r#elasticsearch: Option<Box<super::super::types::iot::TopicRuleErrorActionElasticsearch>>,
+    #[builder(into)]
     #[serde(rename = "firehose")]
-    pub r#firehose: Box<Option<super::super::types::iot::TopicRuleErrorActionFirehose>>,
-    #[builder(into, default)]
+    pub r#firehose: Option<Box<super::super::types::iot::TopicRuleErrorActionFirehose>>,
+    #[builder(into)]
     #[serde(rename = "http")]
-    pub r#http: Box<Option<super::super::types::iot::TopicRuleErrorActionHttp>>,
-    #[builder(into, default)]
+    pub r#http: Option<Box<super::super::types::iot::TopicRuleErrorActionHttp>>,
+    #[builder(into)]
     #[serde(rename = "iotAnalytics")]
-    pub r#iot_analytics: Box<Option<super::super::types::iot::TopicRuleErrorActionIotAnalytics>>,
-    #[builder(into, default)]
+    pub r#iot_analytics: Option<Box<super::super::types::iot::TopicRuleErrorActionIotAnalytics>>,
+    #[builder(into)]
     #[serde(rename = "iotEvents")]
-    pub r#iot_events: Box<Option<super::super::types::iot::TopicRuleErrorActionIotEvents>>,
-    #[builder(into, default)]
+    pub r#iot_events: Option<Box<super::super::types::iot::TopicRuleErrorActionIotEvents>>,
+    #[builder(into)]
     #[serde(rename = "kafka")]
-    pub r#kafka: Box<Option<super::super::types::iot::TopicRuleErrorActionKafka>>,
-    #[builder(into, default)]
+    pub r#kafka: Option<Box<super::super::types::iot::TopicRuleErrorActionKafka>>,
+    #[builder(into)]
     #[serde(rename = "kinesis")]
-    pub r#kinesis: Box<Option<super::super::types::iot::TopicRuleErrorActionKinesis>>,
-    #[builder(into, default)]
+    pub r#kinesis: Option<Box<super::super::types::iot::TopicRuleErrorActionKinesis>>,
+    #[builder(into)]
     #[serde(rename = "lambda")]
-    pub r#lambda: Box<Option<super::super::types::iot::TopicRuleErrorActionLambda>>,
-    #[builder(into, default)]
+    pub r#lambda: Option<Box<super::super::types::iot::TopicRuleErrorActionLambda>>,
+    #[builder(into)]
     #[serde(rename = "republish")]
-    pub r#republish: Box<Option<super::super::types::iot::TopicRuleErrorActionRepublish>>,
-    #[builder(into, default)]
+    pub r#republish: Option<Box<super::super::types::iot::TopicRuleErrorActionRepublish>>,
+    #[builder(into)]
     #[serde(rename = "s3")]
-    pub r#s_3: Box<Option<super::super::types::iot::TopicRuleErrorActionS3>>,
-    #[builder(into, default)]
+    pub r#s_3: Option<Box<super::super::types::iot::TopicRuleErrorActionS3>>,
+    #[builder(into)]
     #[serde(rename = "sns")]
-    pub r#sns: Box<Option<super::super::types::iot::TopicRuleErrorActionSns>>,
-    #[builder(into, default)]
+    pub r#sns: Option<Box<super::super::types::iot::TopicRuleErrorActionSns>>,
+    #[builder(into)]
     #[serde(rename = "sqs")]
-    pub r#sqs: Box<Option<super::super::types::iot::TopicRuleErrorActionSqs>>,
-    #[builder(into, default)]
+    pub r#sqs: Option<Box<super::super::types::iot::TopicRuleErrorActionSqs>>,
+    #[builder(into)]
     #[serde(rename = "stepFunctions")]
-    pub r#step_functions: Box<Option<super::super::types::iot::TopicRuleErrorActionStepFunctions>>,
-    #[builder(into, default)]
+    pub r#step_functions: Option<Box<super::super::types::iot::TopicRuleErrorActionStepFunctions>>,
+    #[builder(into)]
     #[serde(rename = "timestream")]
-    pub r#timestream: Box<Option<super::super::types::iot::TopicRuleErrorActionTimestream>>,
+    pub r#timestream: Option<Box<super::super::types::iot::TopicRuleErrorActionTimestream>>,
 }

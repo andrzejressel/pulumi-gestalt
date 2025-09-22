@@ -5,11 +5,11 @@
 pub struct EntitlementPrivilegedAccessGcpIamAccessRoleBinding {
     /// The expression field of the IAM condition to be associated with the role. If specified, a user with an active grant for this entitlement would be able to access the resource only if this condition evaluates to true for their request.
     /// https://cloud.google.com/iam/docs/conditions-overview#attributes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "conditionExpression")]
-    pub r#condition_expression: Box<Option<String>>,
+    pub r#condition_expression: Option<String>,
     /// IAM role to be granted. https://cloud.google.com/iam/docs/roles-overview.
     #[builder(into)]
     #[serde(rename = "role")]
-    pub r#role: Box<String>,
+    pub r#role: String,
 }

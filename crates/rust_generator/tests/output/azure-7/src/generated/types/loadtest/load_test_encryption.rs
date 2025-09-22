@@ -10,5 +10,5 @@ pub struct LoadTestEncryption {
     /// The URI specifying the Key vault and key to be used to encrypt data in this resource. The URI should include the key version. Changing this forces a new Load Test to be created.
     #[builder(into)]
     #[serde(rename = "keyUrl")]
-    pub r#key_url: Box<String>,
+    pub r#key_url: String,
 }

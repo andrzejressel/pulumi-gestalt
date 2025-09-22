@@ -5,22 +5,22 @@
 pub struct RestorePlanRestoreConfigTransformationRuleFieldAction {
     /// A string containing a JSON Pointer value that references the
     /// location in the target document to move the value from.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fromPath")]
-    pub r#from_path: Box<Option<String>>,
+    pub r#from_path: Option<String>,
     /// Specifies the operation to perform.
     /// Possible values are: `REMOVE`, `MOVE`, `COPY`, `ADD`, `TEST`, `REPLACE`.
     #[builder(into)]
     #[serde(rename = "op")]
-    pub r#op: Box<String>,
+    pub r#op: String,
     /// A string containing a JSON-Pointer value that references a
     /// location within the target document where the operation is performed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
     /// A string that specifies the desired value in string format
     /// to use for transformation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

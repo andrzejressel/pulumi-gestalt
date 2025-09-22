@@ -6,13 +6,13 @@ pub struct GetWindowsWebAppLogApplicationLogAzureBlobStorage {
     /// The level at which to log. Possible values include `Error`, `Warning`, `Information`, `Verbose` and `Off`. **NOTE:** this field is not available for `http_logs`
     #[builder(into)]
     #[serde(rename = "level")]
-    pub r#level: Box<String>,
+    pub r#level: String,
     /// The retention period in days.
     #[builder(into)]
     #[serde(rename = "retentionInDays")]
-    pub r#retention_in_days: Box<i32>,
+    pub r#retention_in_days: i32,
     /// The SAS url to the Azure Blob container.
     #[builder(into)]
     #[serde(rename = "sasUrl")]
-    pub r#sas_url: Box<String>,
+    pub r#sas_url: String,
 }

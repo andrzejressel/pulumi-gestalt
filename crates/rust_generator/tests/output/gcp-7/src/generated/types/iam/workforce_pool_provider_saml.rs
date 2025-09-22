@@ -18,5 +18,5 @@ pub struct WorkforcePoolProviderSaml {
     /// no non-expired signing keys present in the existing metadata.
     #[builder(into)]
     #[serde(rename = "idpMetadataXml")]
-    pub r#idp_metadata_xml: Box<String>,
+    pub r#idp_metadata_xml: String,
 }

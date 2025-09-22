@@ -6,8 +6,8 @@ pub struct GetOntapFileSystemEndpointManagement {
     /// DNS name for the file system.
     #[builder(into)]
     #[serde(rename = "dnsName")]
-    pub r#dns_name: Box<String>,
+    pub r#dns_name: String,
     #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Vec<String>>,
+    pub r#ip_addresses: Vec<String>,
 }

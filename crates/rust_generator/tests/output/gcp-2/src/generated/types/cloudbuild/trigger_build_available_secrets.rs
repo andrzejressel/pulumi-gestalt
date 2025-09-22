@@ -7,5 +7,5 @@ pub struct TriggerBuildAvailableSecrets {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "secretManagers")]
-    pub r#secret_managers: Box<Vec<super::super::types::cloudbuild::TriggerBuildAvailableSecretsSecretManager>>,
+    pub r#secret_managers: Vec<super::super::types::cloudbuild::TriggerBuildAvailableSecretsSecretManager>,
 }

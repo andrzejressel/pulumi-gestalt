@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AzureNodePoolManagement {
     /// Optional. Whether or not the nodes will be automatically repaired.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoRepair")]
-    pub r#auto_repair: Box<Option<bool>>,
+    pub r#auto_repair: Option<bool>,
 }

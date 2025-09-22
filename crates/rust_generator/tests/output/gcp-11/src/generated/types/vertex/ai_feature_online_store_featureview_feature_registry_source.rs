@@ -7,9 +7,9 @@ pub struct AiFeatureOnlineStoreFeatureviewFeatureRegistrySource {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "featureGroups")]
-    pub r#feature_groups: Box<Vec<super::super::types::vertex::AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup>>,
+    pub r#feature_groups: Vec<super::super::types::vertex::AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup>,
     /// The project number of the parent project of the feature Groups.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectNumber")]
-    pub r#project_number: Box<Option<String>>,
+    pub r#project_number: Option<String>,
 }

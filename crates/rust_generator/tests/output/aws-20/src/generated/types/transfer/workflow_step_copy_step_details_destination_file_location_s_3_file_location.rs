@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkflowStepCopyStepDetailsDestinationFileLocationS3FileLocation {
     /// Specifies the S3 bucket for the customer input file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<Option<String>>,
+    pub r#bucket: Option<String>,
     /// The name assigned to the file when it was created in S3. You use the object key to retrieve the object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<String>>,
+    pub r#key: Option<String>,
 }

@@ -6,21 +6,21 @@ pub struct GetBucketsBucket {
     /// User-provided bucket labels, in key/value pairs.
     #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<std::collections::HashMap<String, String>>,
+    pub r#labels: std::collections::HashMap<String, String>,
     /// The location of the bucket.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// The name of the bucket.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A url reference to the bucket.
     #[builder(into)]
     #[serde(rename = "selfLink")]
-    pub r#self_link: Box<String>,
+    pub r#self_link: String,
     /// The [StorageClass](https://cloud.google.com/storage/docs/storage-classes) of the bucket.
     #[builder(into)]
     #[serde(rename = "storageClass")]
-    pub r#storage_class: Box<String>,
+    pub r#storage_class: String,
 }

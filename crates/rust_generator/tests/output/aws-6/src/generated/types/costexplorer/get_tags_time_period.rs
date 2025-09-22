@@ -6,9 +6,9 @@ pub struct GetTagsTimePeriod {
     /// Beginning of the time period.
     #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<String>,
+    pub r#end: String,
     /// End of the time period.
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<String>,
+    pub r#start: String,
 }

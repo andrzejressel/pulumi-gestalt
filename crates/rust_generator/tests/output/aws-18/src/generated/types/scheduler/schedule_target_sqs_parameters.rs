@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScheduleTargetSqsParameters {
     /// FIFO message group ID to use as the target.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "messageGroupId")]
-    pub r#message_group_id: Box<Option<String>>,
+    pub r#message_group_id: Option<String>,
 }

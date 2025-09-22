@@ -6,9 +6,9 @@ pub struct AwsClusterControlPlaneProxyConfig {
     /// The ARN of the AWS Secret Manager secret that contains the HTTP(S) proxy configuration.
     #[builder(into)]
     #[serde(rename = "secretArn")]
-    pub r#secret_arn: Box<String>,
+    pub r#secret_arn: String,
     /// The version string of the AWS Secret Manager secret that contains the HTTP(S) proxy configuration.
     #[builder(into)]
     #[serde(rename = "secretVersion")]
-    pub r#secret_version: Box<String>,
+    pub r#secret_version: String,
 }

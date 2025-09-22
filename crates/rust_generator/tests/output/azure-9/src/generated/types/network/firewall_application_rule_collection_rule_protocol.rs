@@ -6,9 +6,9 @@ pub struct FirewallApplicationRuleCollectionRuleProtocol {
     /// Specify a port for the connection.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     /// Specifies the type of connection. Possible values are `Http`, `Https` and `Mssql`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -10,5 +10,5 @@ pub struct RealtimeLogConfigEndpoint {
     /// The type of data stream where real-time log data is sent. The only valid value is `Kinesis`.
     #[builder(into)]
     #[serde(rename = "streamType")]
-    pub r#stream_type: Box<String>,
+    pub r#stream_type: String,
 }

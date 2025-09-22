@@ -5,12 +5,12 @@
 pub struct DatabaseEncryptionConfig {
     /// Fully qualified name of the KMS key to use to encrypt this database. This key must exist
     /// in the same location as the Spanner Database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<Option<String>>,
+    pub r#kms_key_name: Option<String>,
     /// Fully qualified name of the KMS keys to use to encrypt this database. The keys must exist
     /// in the same locations as the Spanner Database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyNames")]
-    pub r#kms_key_names: Box<Option<Vec<String>>>,
+    pub r#kms_key_names: Option<Vec<String>>,
 }

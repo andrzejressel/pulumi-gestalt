@@ -5,13 +5,13 @@
 pub struct QueueHttpTargetOauthToken {
     /// OAuth scope to be used for generating OAuth access token.
     /// If not specified, "https://www.googleapis.com/auth/cloud-platform" will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<Option<String>>,
+    pub r#scope: Option<String>,
     /// Service account email to be used for generating OAuth token.
     /// The service account must be within the same project as the queue.
     /// The caller must have iam.serviceAccounts.actAs permission for the service account.
     #[builder(into)]
     #[serde(rename = "serviceAccountEmail")]
-    pub r#service_account_email: Box<String>,
+    pub r#service_account_email: String,
 }

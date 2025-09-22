@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EntitlementApprovalWorkflowManualApprovals {
     /// Optional. Do the approvers need to provide a justification for their actions?
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requireApproverJustification")]
-    pub r#require_approver_justification: Box<Option<bool>>,
+    pub r#require_approver_justification: Option<bool>,
     /// List of approval steps in this workflow. These steps would be followed in the specified order sequentially.  1 step is supported for now.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "steps")]
-    pub r#steps: Box<Vec<super::super::types::privilegedaccessmanager::EntitlementApprovalWorkflowManualApprovalsStep>>,
+    pub r#steps: Vec<super::super::types::privilegedaccessmanager::EntitlementApprovalWorkflowManualApprovalsStep>,
 }

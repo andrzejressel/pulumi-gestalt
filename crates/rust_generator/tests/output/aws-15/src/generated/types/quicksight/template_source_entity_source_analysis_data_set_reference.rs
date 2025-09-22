@@ -6,9 +6,9 @@ pub struct TemplateSourceEntitySourceAnalysisDataSetReference {
     /// Dataset Amazon Resource Name (ARN).
     #[builder(into)]
     #[serde(rename = "dataSetArn")]
-    pub r#data_set_arn: Box<String>,
+    pub r#data_set_arn: String,
     /// Dataset placeholder.
     #[builder(into)]
     #[serde(rename = "dataSetPlaceholder")]
-    pub r#data_set_placeholder: Box<String>,
+    pub r#data_set_placeholder: String,
 }

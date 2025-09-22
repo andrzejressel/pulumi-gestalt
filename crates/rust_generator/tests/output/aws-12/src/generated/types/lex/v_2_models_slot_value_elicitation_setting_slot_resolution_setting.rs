@@ -9,5 +9,5 @@ pub struct V2ModelsSlotValueElicitationSettingSlotResolutionSetting {
     /// If the value is `Default`, assisted slot resolution is turned off.
     #[builder(into)]
     #[serde(rename = "slotResolutionStrategy")]
-    pub r#slot_resolution_strategy: Box<String>,
+    pub r#slot_resolution_strategy: String,
 }

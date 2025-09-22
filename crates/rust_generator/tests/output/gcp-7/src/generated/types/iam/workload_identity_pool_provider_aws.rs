@@ -6,5 +6,5 @@ pub struct WorkloadIdentityPoolProviderAws {
     /// The AWS account ID.
     #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<String>,
+    pub r#account_id: String,
 }

@@ -5,23 +5,23 @@
 pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderAction {
     /// Describes a header to add.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestHeaderToAdds")]
-    pub r#request_header_to_adds: Box<Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd>>>,
+    pub r#request_header_to_adds: Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAdd>>,
     /// A list of header names for headers that need to be removed from the request prior to forwarding the request to the origin.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestHeaderToRemoves")]
-    pub r#request_header_to_removes: Box<Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemove>>>,
+    pub r#request_header_to_removes: Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemove>>,
     /// Headers to add to the response prior to sending it back to the client.
     /// Response headers are only sent to the client, and do not have an effect on the cache serving the response.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "responseHeaderToAdds")]
-    pub r#response_header_to_adds: Box<Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAdd>>>,
+    pub r#response_header_to_adds: Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAdd>>,
     /// A list of header names for headers that need to be removed from the request prior to forwarding the request to the origin.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "responseHeaderToRemoves")]
-    pub r#response_header_to_removes: Box<Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemove>>>,
+    pub r#response_header_to_removes: Option<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemove>>,
 }

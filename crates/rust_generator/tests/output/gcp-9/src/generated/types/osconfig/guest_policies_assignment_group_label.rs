@@ -6,5 +6,5 @@ pub struct GuestPoliciesAssignmentGroupLabel {
     /// Google Compute Engine instance labels that must be present for an instance to be included in this assignment group.
     #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<std::collections::HashMap<String, String>>,
+    pub r#labels: std::collections::HashMap<String, String>,
 }

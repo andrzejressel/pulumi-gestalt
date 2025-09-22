@@ -6,7 +6,7 @@ pub struct FeatureState {
     /// (Output)
     /// Output only. The "running state" of the Feature in this Hub.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "states")]
-    pub r#states: Box<Option<Vec<super::super::types::gkehub::FeatureStateState>>>,
+    pub r#states: Option<Vec<super::super::types::gkehub::FeatureStateState>>,
 }

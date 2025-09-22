@@ -6,21 +6,21 @@ pub struct GetBackupBackup {
     /// Id of the requesting object, Backup.
     #[builder(into)]
     #[serde(rename = "backupId")]
-    pub r#backup_id: Box<String>,
+    pub r#backup_id: String,
     /// Name of the Backup Vault associated with Backup.
     #[builder(into)]
     #[serde(rename = "backupVaultId")]
-    pub r#backup_vault_id: Box<String>,
+    pub r#backup_vault_id: String,
     /// Name of the Data Source associated with Backup.
     #[builder(into)]
     #[serde(rename = "dataSourceId")]
-    pub r#data_source_id: Box<String>,
+    pub r#data_source_id: String,
     /// Location of the resource.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// Name of the resource.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

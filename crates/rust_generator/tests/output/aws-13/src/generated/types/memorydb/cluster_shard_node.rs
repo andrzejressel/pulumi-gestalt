@@ -4,18 +4,18 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterShardNode {
     /// The Availability Zone in which the node resides.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<Option<String>>,
+    pub r#availability_zone: Option<String>,
     /// The date and time when the node was created. Example: `2022-01-01T21:00:00Z`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "createTime")]
-    pub r#create_time: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#create_time: Option<String>,
+    #[builder(into)]
     #[serde(rename = "endpoints")]
-    pub r#endpoints: Box<Option<Vec<super::super::types::memorydb::ClusterShardNodeEndpoint>>>,
+    pub r#endpoints: Option<Vec<super::super::types::memorydb::ClusterShardNodeEndpoint>>,
     /// Name of the cluster. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

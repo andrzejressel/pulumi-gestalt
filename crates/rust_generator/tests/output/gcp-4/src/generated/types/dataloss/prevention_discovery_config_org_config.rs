@@ -5,11 +5,11 @@
 pub struct PreventionDiscoveryConfigOrgConfig {
     /// The data to scan folder org or project
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigOrgConfigLocation>>,
+    pub r#location: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigOrgConfigLocation>>,
     /// The project that will run the scan. The DLP service account that exists within this project must have access to all resources that are profiled, and the cloud DLP API must be enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<Option<String>>,
+    pub r#project_id: Option<String>,
 }

@@ -6,15 +6,15 @@ pub struct ClusterClusterConfigGceClusterConfigShieldedInstanceConfig {
     /// Defines whether instances have integrity monitoring enabled.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableIntegrityMonitoring")]
-    pub r#enable_integrity_monitoring: Box<Option<bool>>,
+    pub r#enable_integrity_monitoring: Option<bool>,
     /// Defines whether instances have Secure Boot enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableSecureBoot")]
-    pub r#enable_secure_boot: Box<Option<bool>>,
+    pub r#enable_secure_boot: Option<bool>,
     /// Defines whether instances have the [vTPM](https://cloud.google.com/security/shielded-cloud/shielded-vm#vtpm) enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableVtpm")]
-    pub r#enable_vtpm: Box<Option<bool>>,
+    pub r#enable_vtpm: Option<bool>,
 }

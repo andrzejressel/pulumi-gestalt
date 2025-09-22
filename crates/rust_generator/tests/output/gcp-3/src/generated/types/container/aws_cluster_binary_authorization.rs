@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AwsClusterBinaryAuthorization {
     /// Mode of operation for Binary Authorization policy evaluation. Possible values: DISABLED, PROJECT_SINGLETON_POLICY_ENFORCE
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "evaluationMode")]
-    pub r#evaluation_mode: Box<Option<String>>,
+    pub r#evaluation_mode: Option<String>,
 }

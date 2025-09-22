@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketV2ReplicationConfigurationRuleDestinationReplicationTime {
     /// Threshold within which objects are to be replicated. The only valid value is `15`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minutes")]
-    pub r#minutes: Box<Option<i32>>,
+    pub r#minutes: Option<i32>,
     /// Status of RTC. Either `Enabled` or `Disabled`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
 }

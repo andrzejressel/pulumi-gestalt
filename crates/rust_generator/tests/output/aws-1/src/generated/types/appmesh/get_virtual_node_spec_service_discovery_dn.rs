@@ -5,11 +5,11 @@
 pub struct GetVirtualNodeSpecServiceDiscoveryDn {
     #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<String>,
+    pub r#hostname: String,
     #[builder(into)]
     #[serde(rename = "ipPreference")]
-    pub r#ip_preference: Box<String>,
+    pub r#ip_preference: String,
     #[builder(into)]
     #[serde(rename = "responseType")]
-    pub r#response_type: Box<String>,
+    pub r#response_type: String,
 }

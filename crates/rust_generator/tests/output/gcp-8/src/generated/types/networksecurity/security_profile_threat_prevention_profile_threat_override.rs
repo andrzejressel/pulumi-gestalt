@@ -7,14 +7,14 @@ pub struct SecurityProfileThreatPreventionProfileThreatOverride {
     /// Possible values are: `ALERT`, `ALLOW`, `DEFAULT_ACTION`, `DENY`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// Vendor-specific ID of a threat to override.
     #[builder(into)]
     #[serde(rename = "threatId")]
-    pub r#threat_id: Box<String>,
+    pub r#threat_id: String,
     /// (Output)
     /// Type of threat.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

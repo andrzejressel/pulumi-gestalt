@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudGatewayApiMetadata {
     /// Detailed description of the APIs available on the Gateway instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Location of additional documentation for the APIs available on the Gateway instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "documentationUrl")]
-    pub r#documentation_url: Box<Option<String>>,
+    pub r#documentation_url: Option<String>,
     /// Base URL that API consumers will use to access APIs on the Gateway instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serverUrl")]
-    pub r#server_url: Box<Option<String>>,
+    pub r#server_url: Option<String>,
     /// Specifies the title describing the context of the APIs available on the Gateway instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "title")]
-    pub r#title: Box<Option<String>>,
+    pub r#title: Option<String>,
     /// Specifies the version of APIs available on this Gateway instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

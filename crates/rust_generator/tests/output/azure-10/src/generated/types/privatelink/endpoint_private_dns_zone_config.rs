@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointPrivateDnsZoneConfig {
     /// The ID of the Private DNS Zone Config.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Specifies the Name of the Private Endpoint. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// A list of IP Addresses
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateDnsZoneId")]
-    pub r#private_dns_zone_id: Box<Option<String>>,
+    pub r#private_dns_zone_id: Option<String>,
     /// A `record_sets` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordSets")]
-    pub r#record_sets: Box<Option<Vec<super::super::types::privatelink::EndpointPrivateDnsZoneConfigRecordSet>>>,
+    pub r#record_sets: Option<Vec<super::super::types::privatelink::EndpointPrivateDnsZoneConfigRecordSet>>,
 }

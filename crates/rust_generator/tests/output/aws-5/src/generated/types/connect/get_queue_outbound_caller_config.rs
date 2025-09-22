@@ -6,13 +6,13 @@ pub struct GetQueueOutboundCallerConfig {
     /// Specifies the caller ID name.
     #[builder(into)]
     #[serde(rename = "outboundCallerIdName")]
-    pub r#outbound_caller_id_name: Box<String>,
+    pub r#outbound_caller_id_name: String,
     /// Specifies the caller ID number.
     #[builder(into)]
     #[serde(rename = "outboundCallerIdNumberId")]
-    pub r#outbound_caller_id_number_id: Box<String>,
+    pub r#outbound_caller_id_number_id: String,
     /// Outbound whisper flow to be used during an outbound call.
     #[builder(into)]
     #[serde(rename = "outboundFlowId")]
-    pub r#outbound_flow_id: Box<String>,
+    pub r#outbound_flow_id: String,
 }

@@ -6,9 +6,9 @@ pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesCustomerProfil
     /// Unique name of the Amazon Connect Customer Profiles domain.
     #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<String>,
+    pub r#domain_name: String,
     /// Object specified in the Amazon Connect Customer Profiles flow destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "objectTypeName")]
-    pub r#object_type_name: Box<Option<String>>,
+    pub r#object_type_name: Option<String>,
 }

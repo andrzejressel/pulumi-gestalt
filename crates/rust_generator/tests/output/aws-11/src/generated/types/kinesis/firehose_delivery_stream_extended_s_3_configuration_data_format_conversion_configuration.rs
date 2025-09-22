@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfiguration {
     /// Defaults to `true`. Set it to `false` if you want to disable format conversion while preserving the configuration details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. See `input_format_configuration` block below for details.
     #[builder(into)]
     #[serde(rename = "inputFormatConfiguration")]

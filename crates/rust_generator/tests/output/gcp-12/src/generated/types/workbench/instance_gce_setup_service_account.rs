@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceGceSetupServiceAccount {
     /// Optional. Email address of the service account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// (Output)
     /// Output only. The list of scopes to be made available for this
     /// service account. Set by the CLH to https://www.googleapis.com/auth/cloud-platform
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scopes")]
-    pub r#scopes: Box<Option<Vec<String>>>,
+    pub r#scopes: Option<Vec<String>>,
 }

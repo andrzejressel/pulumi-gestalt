@@ -6,5 +6,5 @@ pub struct V2ModelsSlotObfuscationSetting {
     /// Whether Amazon Lex obscures slot values in conversation logs. Valid values are `DefaultObfuscation` and `None`.
     #[builder(into)]
     #[serde(rename = "obfuscationSettingType")]
-    pub r#obfuscation_setting_type: Box<String>,
+    pub r#obfuscation_setting_type: String,
 }

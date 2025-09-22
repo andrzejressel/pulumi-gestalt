@@ -5,7 +5,7 @@
 pub struct V2ModelsSlotTypeExternalSourceSettingGrammarSlotTypeSetting {
     /// Source of the grammar used to create the slot type.
     /// See `source` argument reference below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<Option<super::super::types::lex::V2ModelsSlotTypeExternalSourceSettingGrammarSlotTypeSettingSource>>,
+    pub r#source: Option<Box<super::super::types::lex::V2ModelsSlotTypeExternalSourceSettingGrammarSlotTypeSettingSource>>,
 }

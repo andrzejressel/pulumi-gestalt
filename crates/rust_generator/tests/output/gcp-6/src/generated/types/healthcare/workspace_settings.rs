@@ -8,5 +8,5 @@ pub struct WorkspaceSettings {
     /// - - -
     #[builder(into)]
     #[serde(rename = "dataProjectIds")]
-    pub r#data_project_ids: Box<Vec<String>>,
+    pub r#data_project_ids: Vec<String>,
 }

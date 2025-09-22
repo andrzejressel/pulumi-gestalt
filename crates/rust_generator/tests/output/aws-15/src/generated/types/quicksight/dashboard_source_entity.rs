@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DashboardSourceEntity {
     /// The source template. See source_template.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceTemplate")]
-    pub r#source_template: Box<Option<super::super::types::quicksight::DashboardSourceEntitySourceTemplate>>,
+    pub r#source_template: Option<Box<super::super::types::quicksight::DashboardSourceEntitySourceTemplate>>,
 }

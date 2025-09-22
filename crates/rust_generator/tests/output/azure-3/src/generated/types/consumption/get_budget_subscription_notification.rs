@@ -6,28 +6,28 @@ pub struct GetBudgetSubscriptionNotification {
     /// A list of email addresses to send the budget notification to when the threshold is exceeded.
     #[builder(into)]
     #[serde(rename = "contactEmails")]
-    pub r#contact_emails: Box<Vec<String>>,
+    pub r#contact_emails: Vec<String>,
     /// A list of Action Group IDs to send the budget notification to when the threshold is exceeded.
     #[builder(into)]
     #[serde(rename = "contactGroups")]
-    pub r#contact_groups: Box<Vec<String>>,
+    pub r#contact_groups: Vec<String>,
     /// A list of contact roles to send the budget notification to when the threshold is exceeded.
     #[builder(into)]
     #[serde(rename = "contactRoles")]
-    pub r#contact_roles: Box<Vec<String>>,
+    pub r#contact_roles: Vec<String>,
     /// Whether the notification is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The operator to used for comparison.
     #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<String>,
+    pub r#operator: String,
     /// Threshold value associated with the notification.
     #[builder(into)]
     #[serde(rename = "threshold")]
-    pub r#threshold: Box<i32>,
+    pub r#threshold: i32,
     #[builder(into)]
     #[serde(rename = "thresholdType")]
-    pub r#threshold_type: Box<String>,
+    pub r#threshold_type: String,
 }

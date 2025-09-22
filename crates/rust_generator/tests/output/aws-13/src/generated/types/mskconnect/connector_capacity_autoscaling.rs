@@ -6,21 +6,21 @@ pub struct ConnectorCapacityAutoscaling {
     /// The maximum number of workers allocated to the connector.
     #[builder(into)]
     #[serde(rename = "maxWorkerCount")]
-    pub r#max_worker_count: Box<i32>,
+    pub r#max_worker_count: i32,
     /// The number of microcontroller units (MCUs) allocated to each connector worker. Valid values: `1`, `2`, `4`, `8`. The default value is `1`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mcuCount")]
-    pub r#mcu_count: Box<Option<i32>>,
+    pub r#mcu_count: Option<i32>,
     /// The minimum number of workers allocated to the connector.
     #[builder(into)]
     #[serde(rename = "minWorkerCount")]
-    pub r#min_worker_count: Box<i32>,
+    pub r#min_worker_count: i32,
     /// The scale-in policy for the connector. See `scale_in_policy` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scaleInPolicy")]
-    pub r#scale_in_policy: Box<Option<super::super::types::mskconnect::ConnectorCapacityAutoscalingScaleInPolicy>>,
+    pub r#scale_in_policy: Option<Box<super::super::types::mskconnect::ConnectorCapacityAutoscalingScaleInPolicy>>,
     /// The scale-out policy for the connector. See `scale_out_policy` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scaleOutPolicy")]
-    pub r#scale_out_policy: Box<Option<super::super::types::mskconnect::ConnectorCapacityAutoscalingScaleOutPolicy>>,
+    pub r#scale_out_policy: Option<Box<super::super::types::mskconnect::ConnectorCapacityAutoscalingScaleOutPolicy>>,
 }

@@ -6,5 +6,5 @@ pub struct BucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload {
     /// Number of days after which Amazon S3 aborts an incomplete multipart upload.
     #[builder(into)]
     #[serde(rename = "daysAfterInitiation")]
-    pub r#days_after_initiation: Box<i32>,
+    pub r#days_after_initiation: i32,
 }

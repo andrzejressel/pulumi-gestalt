@@ -6,10 +6,10 @@ pub struct ClusterMaintenancePolicyDailyMaintenanceWindow {
     /// Duration of the time window, automatically chosen to be
     /// smallest possible in the given scenario.
     /// Duration will be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) format "PTnHnMnS".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<Option<String>>,
+    pub r#duration: Option<String>,
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
 }

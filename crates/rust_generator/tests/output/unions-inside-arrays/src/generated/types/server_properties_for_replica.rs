@@ -5,8 +5,8 @@
 pub struct ServerPropertiesForReplica {
     #[builder(skip)]
     #[serde(rename = "createMode")]
-    r#create_mode: Box<super::constants::ConstStringReplica>,
-    #[builder(into, default)]
+    r#create_mode: super::constants::ConstStringReplica,
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

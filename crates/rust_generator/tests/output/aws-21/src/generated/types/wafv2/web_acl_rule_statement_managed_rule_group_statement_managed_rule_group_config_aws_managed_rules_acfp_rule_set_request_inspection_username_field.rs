@@ -6,5 +6,5 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAws
     /// The name of the username field.
     #[builder(into)]
     #[serde(rename = "identifier")]
-    pub r#identifier: Box<String>,
+    pub r#identifier: String,
 }

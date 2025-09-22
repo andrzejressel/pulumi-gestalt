@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CatalogDatabaseCreateTableDefaultPermission {
     /// The permissions that are granted to the principal.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<Option<Vec<String>>>,
+    pub r#permissions: Option<Vec<String>>,
     /// The principal who is granted permissions.. See `principal` below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "principal")]
-    pub r#principal: Box<Option<super::super::types::glue::CatalogDatabaseCreateTableDefaultPermissionPrincipal>>,
+    pub r#principal: Option<Box<super::super::types::glue::CatalogDatabaseCreateTableDefaultPermissionPrincipal>>,
 }

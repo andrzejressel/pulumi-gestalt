@@ -5,11 +5,11 @@
 pub struct ReservationAutoscale {
     /// (Output)
     /// The slot capacity added to this reservation when autoscale happens. Will be between [0, max_slots].
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "currentSlots")]
-    pub r#current_slots: Box<Option<i32>>,
+    pub r#current_slots: Option<i32>,
     /// Number of slots to be scaled when needed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxSlots")]
-    pub r#max_slots: Box<Option<i32>>,
+    pub r#max_slots: Option<i32>,
 }

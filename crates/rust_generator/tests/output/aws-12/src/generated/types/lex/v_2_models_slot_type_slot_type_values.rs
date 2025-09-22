@@ -5,12 +5,12 @@
 pub struct V2ModelsSlotTypeSlotTypeValues {
     /// Value of the slot type entry.
     /// See `sample_value` argument reference below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sampleValues")]
-    pub r#sample_values: Box<Option<Vec<super::super::types::lex::V2ModelsSlotTypeSlotTypeValuesSampleValue>>>,
+    pub r#sample_values: Option<Vec<super::super::types::lex::V2ModelsSlotTypeSlotTypeValuesSampleValue>>,
     /// A list of additional values related to the slot type entry.
     /// See `synonyms` argument reference below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "synonyms")]
-    pub r#synonyms: Box<Option<Vec<super::super::types::lex::V2ModelsSlotTypeSlotTypeValuesSynonym>>>,
+    pub r#synonyms: Option<Vec<super::super::types::lex::V2ModelsSlotTypeSlotTypeValuesSynonym>>,
 }

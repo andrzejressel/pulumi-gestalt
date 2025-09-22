@@ -6,17 +6,17 @@ pub struct GetAppRegistry {
     /// Resource ID for the User Assigned Managed identity to use when pulling from the Container Registry.
     #[builder(into)]
     #[serde(rename = "identity")]
-    pub r#identity: Box<String>,
+    pub r#identity: String,
     /// The name of the Secret Reference containing the password value for this user on the Container Registry, `username` must also be supplied.
     #[builder(into)]
     #[serde(rename = "passwordSecretName")]
-    pub r#password_secret_name: Box<String>,
+    pub r#password_secret_name: String,
     /// The hostname for the Container Registry.
     #[builder(into)]
     #[serde(rename = "server")]
-    pub r#server: Box<String>,
+    pub r#server: String,
     /// The username to use for this Container Registry, `password_secret_name` must also be supplied..
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

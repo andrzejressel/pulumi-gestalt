@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecListenerTimeoutTcp {
     #[builder(into)]
     #[serde(rename = "idles")]
-    pub r#idles: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTimeoutTcpIdle>>,
+    pub r#idles: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTimeoutTcpIdle>,
 }

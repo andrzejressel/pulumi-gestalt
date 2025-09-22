@@ -6,11 +6,11 @@ pub struct BotClarificationPrompt {
     /// The number of times to prompt the user for information.
     #[builder(into)]
     #[serde(rename = "maxAttempts")]
-    pub r#max_attempts: Box<i32>,
+    pub r#max_attempts: i32,
     #[builder(into)]
     #[serde(rename = "messages")]
-    pub r#messages: Box<Vec<super::super::types::lex::BotClarificationPromptMessage>>,
-    #[builder(into, default)]
+    pub r#messages: Vec<super::super::types::lex::BotClarificationPromptMessage>,
+    #[builder(into)]
     #[serde(rename = "responseCard")]
-    pub r#response_card: Box<Option<String>>,
+    pub r#response_card: Option<String>,
 }

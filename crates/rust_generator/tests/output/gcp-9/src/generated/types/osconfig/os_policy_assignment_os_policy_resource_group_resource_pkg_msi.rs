@@ -6,9 +6,9 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourcePkgMsi {
     /// Additional properties to use during installation.
     /// This should be in the format of Property=Setting. Appended to the defaults
     /// of `ACTION=INSTALL REBOOT=ReallySuppress`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Option<Vec<String>>>,
+    pub r#properties: Option<Vec<String>>,
     /// The MSI package. Structure is
     /// documented below.
     #[builder(into)]

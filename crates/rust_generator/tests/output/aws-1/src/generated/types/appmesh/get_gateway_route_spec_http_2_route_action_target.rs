@@ -5,8 +5,8 @@
 pub struct GetGatewayRouteSpecHttp2RouteActionTarget {
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     #[builder(into)]
     #[serde(rename = "virtualServices")]
-    pub r#virtual_services: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteActionTargetVirtualService>>,
+    pub r#virtual_services: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteActionTargetVirtualService>,
 }

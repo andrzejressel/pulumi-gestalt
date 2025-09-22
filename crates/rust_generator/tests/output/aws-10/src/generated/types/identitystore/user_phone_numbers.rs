@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserPhoneNumbers {
     /// When `true`, this is the primary phone number associated with the user.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primary")]
-    pub r#primary: Box<Option<bool>>,
+    pub r#primary: Option<bool>,
     /// The type of phone number.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
     /// The user's phone number.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

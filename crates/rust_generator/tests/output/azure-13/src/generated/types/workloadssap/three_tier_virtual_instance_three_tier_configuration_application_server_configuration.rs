@@ -6,11 +6,11 @@ pub struct ThreeTierVirtualInstanceThreeTierConfigurationApplicationServerConfig
     /// The number of instances for the Application Server. Possible values are at least `1`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "instanceCount")]
-    pub r#instance_count: Box<i32>,
+    pub r#instance_count: i32,
     /// The resource ID of the Subnet for the Application Server. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
     /// A `virtual_machine_configuration` block as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "virtualMachineConfiguration")]

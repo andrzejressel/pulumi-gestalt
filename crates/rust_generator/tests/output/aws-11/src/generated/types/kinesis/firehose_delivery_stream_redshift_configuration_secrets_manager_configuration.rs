@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirehoseDeliveryStreamRedshiftConfigurationSecretsManagerConfiguration {
     /// Enables or disables the Secrets Manager configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The ARN of the role the stream assumes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<Option<String>>,
+    pub r#role_arn: Option<String>,
     /// The ARN of the Secrets Manager secret. This value is required if `enabled` is true.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretArn")]
-    pub r#secret_arn: Box<Option<String>>,
+    pub r#secret_arn: Option<String>,
 }

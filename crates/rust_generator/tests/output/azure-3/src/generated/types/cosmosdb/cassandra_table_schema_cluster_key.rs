@@ -6,9 +6,9 @@ pub struct CassandraTableSchemaClusterKey {
     /// Name of the cluster key to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Order of the key. Currently supported values are `Asc` and `Desc`.
     #[builder(into)]
     #[serde(rename = "orderBy")]
-    pub r#order_by: Box<String>,
+    pub r#order_by: String,
 }

@@ -6,9 +6,9 @@ pub struct ElasticPoolPerDatabaseSettings {
     /// The maximum capacity any one database can consume.
     #[builder(into)]
     #[serde(rename = "maxCapacity")]
-    pub r#max_capacity: Box<f64>,
+    pub r#max_capacity: f64,
     /// The minimum capacity all databases are guaranteed.
     #[builder(into)]
     #[serde(rename = "minCapacity")]
-    pub r#min_capacity: Box<f64>,
+    pub r#min_capacity: f64,
 }

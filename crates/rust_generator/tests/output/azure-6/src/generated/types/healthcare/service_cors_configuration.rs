@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceCorsConfiguration {
     /// (Boolean) If credentials are allowed via CORS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowCredentials")]
-    pub r#allow_credentials: Box<Option<bool>>,
+    pub r#allow_credentials: Option<bool>,
     /// A set of headers to be allowed via CORS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedHeaders")]
-    pub r#allowed_headers: Box<Option<Vec<String>>>,
+    pub r#allowed_headers: Option<Vec<String>>,
     /// The methods to be allowed via CORS. Possible values are `DELETE`, `GET`, `HEAD`, `MERGE`, `POST`, `OPTIONS`, `PATCH` and `PUT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedMethods")]
-    pub r#allowed_methods: Box<Option<Vec<String>>>,
+    pub r#allowed_methods: Option<Vec<String>>,
     /// A set of origins to be allowed via CORS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Option<Vec<String>>>,
+    pub r#allowed_origins: Option<Vec<String>>,
     /// The max age to be allowed via CORS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxAgeInSeconds")]
-    pub r#max_age_in_seconds: Box<Option<i32>>,
+    pub r#max_age_in_seconds: Option<i32>,
 }

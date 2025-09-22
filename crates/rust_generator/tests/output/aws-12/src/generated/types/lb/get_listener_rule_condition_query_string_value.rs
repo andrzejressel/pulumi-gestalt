@@ -6,9 +6,9 @@ pub struct GetListenerRuleConditionQueryStringValue {
     /// Key of query parameter
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Value of query parameter
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

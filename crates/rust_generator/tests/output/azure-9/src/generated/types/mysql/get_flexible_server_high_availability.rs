@@ -6,9 +6,9 @@ pub struct GetFlexibleServerHighAvailability {
     /// The high availability mode of the MySQL Flexible Server.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
     /// The availability zone of the standby Flexible Server.
     #[builder(into)]
     #[serde(rename = "standbyAvailabilityZone")]
-    pub r#standby_availability_zone: Box<String>,
+    pub r#standby_availability_zone: String,
 }

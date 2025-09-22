@@ -5,12 +5,12 @@
 pub struct PreventionDiscoveryConfigTargetBigQueryTargetCadenceTableModifiedCadence {
     /// How frequently data profiles can be updated when tables are modified. Defaults to never.
     /// Possible values are: `UPDATE_FREQUENCY_NEVER`, `UPDATE_FREQUENCY_DAILY`, `UPDATE_FREQUENCY_MONTHLY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "frequency")]
-    pub r#frequency: Box<Option<String>>,
+    pub r#frequency: Option<String>,
     /// The type of events to consider when deciding if the table has been modified and should have the profile updated. Defaults to MODIFIED_TIMESTAMP
     /// Each value may be one of: `TABLE_MODIFIED_TIMESTAMP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "types")]
-    pub r#types: Box<Option<Vec<String>>>,
+    pub r#types: Option<Vec<String>>,
 }

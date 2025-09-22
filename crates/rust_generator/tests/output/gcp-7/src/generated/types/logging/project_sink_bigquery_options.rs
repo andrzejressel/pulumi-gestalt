@@ -9,5 +9,5 @@ pub struct ProjectSinkBigqueryOptions {
     /// has to be used instead. In both cases, tables are sharded based on UTC timezone.
     #[builder(into)]
     #[serde(rename = "usePartitionedTables")]
-    pub r#use_partitioned_tables: Box<bool>,
+    pub r#use_partitioned_tables: bool,
 }

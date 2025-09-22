@@ -6,17 +6,17 @@ pub struct GetWorkgroupEndpointVpcEndpointNetworkInterface {
     /// The availability Zone.
     #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<String>,
+    pub r#availability_zone: String,
     /// The unique identifier of the network interface.
     #[builder(into)]
     #[serde(rename = "networkInterfaceId")]
-    pub r#network_interface_id: Box<String>,
+    pub r#network_interface_id: String,
     /// The IPv4 address of the network interface within the subnet.
     #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<String>,
+    pub r#private_ip_address: String,
     /// The unique identifier of the subnet.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

@@ -5,11 +5,11 @@
 pub struct JobQueryUserDefinedFunctionResource {
     /// An inline resource that contains code for a user-defined function (UDF).
     /// Providing a inline code resource is equivalent to providing a URI for a file containing the same code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inlineCode")]
-    pub r#inline_code: Box<Option<String>>,
+    pub r#inline_code: Option<String>,
     /// A code resource to load from a Google Cloud Storage URI (gs://bucket/path).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceUri")]
-    pub r#resource_uri: Box<Option<String>>,
+    pub r#resource_uri: Option<String>,
 }

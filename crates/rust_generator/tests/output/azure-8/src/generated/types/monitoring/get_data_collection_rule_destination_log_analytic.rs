@@ -6,9 +6,9 @@ pub struct GetDataCollectionRuleDestinationLogAnalytic {
     /// Specifies the name of the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The ID of a Log Analytic Workspace resource.
     #[builder(into)]
     #[serde(rename = "workspaceResourceId")]
-    pub r#workspace_resource_id: Box<String>,
+    pub r#workspace_resource_id: String,
 }

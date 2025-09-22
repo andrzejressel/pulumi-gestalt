@@ -7,9 +7,9 @@ pub struct DatabaseInstanceSettingsBackupConfigurationBackupRetentionSettings {
     /// is 'COUNT', we will retain this many backups.
     #[builder(into)]
     #[serde(rename = "retainedBackups")]
-    pub r#retained_backups: Box<i32>,
+    pub r#retained_backups: i32,
     /// The unit that 'retained_backups' represents. Defaults to `COUNT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionUnit")]
-    pub r#retention_unit: Box<Option<String>>,
+    pub r#retention_unit: Option<String>,
 }

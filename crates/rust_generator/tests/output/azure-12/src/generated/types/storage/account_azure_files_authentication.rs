@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountAzureFilesAuthentication {
     /// A `active_directory` block as defined below. Required when `directory_type` is `AD`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "activeDirectory")]
-    pub r#active_directory: Box<Option<super::super::types::storage::AccountAzureFilesAuthenticationActiveDirectory>>,
+    pub r#active_directory: Option<Box<super::super::types::storage::AccountAzureFilesAuthenticationActiveDirectory>>,
     /// Specifies the default share level permissions applied to all users. Possible values are `StorageFileDataSmbShareReader`, `StorageFileDataSmbShareContributor`, `StorageFileDataSmbShareElevatedContributor`, or `None`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultShareLevelPermission")]
-    pub r#default_share_level_permission: Box<Option<String>>,
+    pub r#default_share_level_permission: Option<String>,
     /// Specifies the directory service used. Possible values are `AADDS`, `AD` and `AADKERB`.
     #[builder(into)]
     #[serde(rename = "directoryType")]
-    pub r#directory_type: Box<String>,
+    pub r#directory_type: String,
 }

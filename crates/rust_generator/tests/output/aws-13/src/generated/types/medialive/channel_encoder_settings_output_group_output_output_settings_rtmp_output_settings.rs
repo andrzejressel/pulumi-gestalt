@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsRtmpOutputSettings {
     /// Setting to allow self signed or verified RTMP certificates.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateMode")]
-    pub r#certificate_mode: Box<Option<String>>,
+    pub r#certificate_mode: Option<String>,
     /// Number of seconds to wait before retrying connection to the flash media server if the connection is lost.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionRetryInterval")]
-    pub r#connection_retry_interval: Box<Option<i32>>,
+    pub r#connection_retry_interval: Option<i32>,
     /// The RTMP endpoint excluding the stream name. See Destination for more details.
     #[builder(into)]
     #[serde(rename = "destination")]
     pub r#destination: Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsRtmpOutputSettingsDestination>,
     /// Number of retry attempts.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numRetries")]
-    pub r#num_retries: Box<Option<i32>>,
+    pub r#num_retries: Option<i32>,
 }

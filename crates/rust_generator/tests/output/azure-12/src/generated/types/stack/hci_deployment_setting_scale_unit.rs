@@ -6,59 +6,59 @@ pub struct HciDeploymentSettingScaleUnit {
     /// Specify the full name of the Active Directory Organizational Unit container object prepared for the deployment, including the domain components. For example:`OU=HCI01,DC=contoso,DC=com`. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "activeDirectoryOrganizationalUnitPath")]
-    pub r#active_directory_organizational_unit_path: Box<String>,
+    pub r#active_directory_organizational_unit_path: String,
     /// Whether to enable BitLocker for boot volume. Possible values are `true` and `false`. When set to `true`, BitLocker XTS_AES 256-bit encryption is enabled for all data-at-rest on the OS volume of your Azure Stack HCI cluster. This setting is TPM-hardware dependent. Defaults to `true`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bitlockerBootVolumeEnabled")]
-    pub r#bitlocker_boot_volume_enabled: Box<Option<bool>>,
+    pub r#bitlocker_boot_volume_enabled: Option<bool>,
     /// Whether to enable BitLocker for data volume. Possible values are `true` and `false`. When set to `true`, BitLocker XTS-AES 256-bit encryption is enabled for all data-at-rest on your Azure Stack HCI cluster shared volumes. Defaults to `true`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bitlockerDataVolumeEnabled")]
-    pub r#bitlocker_data_volume_enabled: Box<Option<bool>>,
+    pub r#bitlocker_data_volume_enabled: Option<bool>,
     /// A `cluster` block as defined above. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "cluster")]
     pub r#cluster: Box<super::super::types::stack::HciDeploymentSettingScaleUnitCluster>,
     /// Whether to enable credential guard. Possible values are `true` and `false`. Defaults to `false`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "credentialGuardEnabled")]
-    pub r#credential_guard_enabled: Box<Option<bool>>,
+    pub r#credential_guard_enabled: Option<bool>,
     /// Specifies the FQDN for deploying cluster. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "domainFqdn")]
-    pub r#domain_fqdn: Box<String>,
+    pub r#domain_fqdn: String,
     /// Whether to enable drift control. Possible values are `true` and `false`. When set to `true`, the security baseline is re-applied regularly. Defaults to `true`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "driftControlEnabled")]
-    pub r#drift_control_enabled: Box<Option<bool>>,
+    pub r#drift_control_enabled: Option<bool>,
     /// Whether to enable DRTM protection. Possible values are `true` and `false`. When set to `true`, Secure Boot is enabled on your Azure HCI cluster. This setting is hardware dependent. Defaults to `true`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "drtmProtectionEnabled")]
-    pub r#drtm_protection_enabled: Box<Option<bool>>,
+    pub r#drtm_protection_enabled: Option<bool>,
     /// Whether to collect log data to facilitate quicker issue resolution. Possible values are `true` and `false`. Defaults to `true`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "episodicDataUploadEnabled")]
-    pub r#episodic_data_upload_enabled: Box<Option<bool>>,
+    pub r#episodic_data_upload_enabled: Option<bool>,
     /// Whether to store data sent to Microsoft in EU. The log and diagnostic data is sent to the appropriate diagnostics servers depending upon where your cluster resides. Setting this to `false` results in all data sent to Microsoft to be stored outside of the EU. Possible values are `true` and `false`. Defaults to `false`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "euLocationEnabled")]
-    pub r#eu_location_enabled: Box<Option<bool>>,
+    pub r#eu_location_enabled: Option<bool>,
     /// A `host_network` block as defined above. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "hostNetwork")]
     pub r#host_network: Box<super::super::types::stack::HciDeploymentSettingScaleUnitHostNetwork>,
     /// Whether to enable HVCI protection. Possible values are `true` and `false`. When set to `true`, Hypervisor-protected Code Integrity is enabled on your Azure HCI cluster. Defaults to `true`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hvciProtectionEnabled")]
-    pub r#hvci_protection_enabled: Box<Option<bool>>,
+    pub r#hvci_protection_enabled: Option<bool>,
     /// One or more `infrastructure_network` blocks as defined above. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "infrastructureNetworks")]
-    pub r#infrastructure_networks: Box<Vec<super::super::types::stack::HciDeploymentSettingScaleUnitInfrastructureNetwork>>,
+    pub r#infrastructure_networks: Vec<super::super::types::stack::HciDeploymentSettingScaleUnitInfrastructureNetwork>,
     /// Specifies the name prefix to deploy cluster. It must be 1-8 characters long and contain only letters, numbers and hyphens Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "namePrefix")]
-    pub r#name_prefix: Box<String>,
+    pub r#name_prefix: String,
     /// A `optional_service` block as defined above. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "optionalService")]
@@ -66,33 +66,33 @@ pub struct HciDeploymentSettingScaleUnit {
     /// One or more `physical_node` blocks as defined above. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "physicalNodes")]
-    pub r#physical_nodes: Box<Vec<super::super::types::stack::HciDeploymentSettingScaleUnitPhysicalNode>>,
+    pub r#physical_nodes: Vec<super::super::types::stack::HciDeploymentSettingScaleUnitPhysicalNode>,
     /// The URI to the Key Vault or secret store. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "secretsLocation")]
-    pub r#secrets_location: Box<String>,
+    pub r#secrets_location: String,
     /// Whether to enable side channel mitigation. Possible values are `true` and `false`. When set to `true`, all side channel mitigations are enabled on your Azure HCI cluster. Defaults to `true`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sideChannelMitigationEnabled")]
-    pub r#side_channel_mitigation_enabled: Box<Option<bool>>,
+    pub r#side_channel_mitigation_enabled: Option<bool>,
     /// Whether to enable SMB cluster encryption. Possible values are `true` and `false`. When set to `true`, cluster east-west traffic is encrypted. Defaults to `false`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "smbClusterEncryptionEnabled")]
-    pub r#smb_cluster_encryption_enabled: Box<Option<bool>>,
+    pub r#smb_cluster_encryption_enabled: Option<bool>,
     /// Whether to enable SMB signing. Possible values are `true` and `false`. When set to `true`, the SMB default instance requires sign in for the client and server services. Defaults to `true`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "smbSigningEnabled")]
-    pub r#smb_signing_enabled: Box<Option<bool>>,
+    pub r#smb_signing_enabled: Option<bool>,
     /// A `storage` block as defined below. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "storage")]
     pub r#storage: Box<super::super::types::stack::HciDeploymentSettingScaleUnitStorage>,
     /// Whether the telemetry data will be sent to Microsoft. Possible values are `true` and `false`. Defaults to `true`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "streamingDataClientEnabled")]
-    pub r#streaming_data_client_enabled: Box<Option<bool>>,
+    pub r#streaming_data_client_enabled: Option<bool>,
     /// Whether to enable WDAC. Possible values are `true` and `false`. When set to `true`, applications and the code that you can run on your Azure Stack HCI cluster are limited. Defaults to `true`. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "wdacEnabled")]
-    pub r#wdac_enabled: Box<Option<bool>>,
+    pub r#wdac_enabled: Option<bool>,
 }

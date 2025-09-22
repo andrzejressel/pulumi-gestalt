@@ -8,17 +8,17 @@ pub struct GetCertificatesCertificateManagedAuthorizationAttemptInfo {
     /// Not guaranteed to be stable. For programmatic access use 'failure_reason' field.
     #[builder(into)]
     #[serde(rename = "details")]
-    pub r#details: Box<String>,
+    pub r#details: String,
     /// Domain name of the authorization attempt.
     #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<String>,
+    pub r#domain: String,
     /// Reason for failure of the authorization attempt for the domain.
     #[builder(into)]
     #[serde(rename = "failureReason")]
-    pub r#failure_reason: Box<String>,
+    pub r#failure_reason: String,
     /// State of the domain for managed certificate issuance.
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

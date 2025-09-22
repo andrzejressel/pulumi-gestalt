@@ -6,9 +6,9 @@ pub struct VirtualNodeSpecListenerPortMapping {
     /// Port used for the port mapping.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     /// Protocol used for the port mapping. Valid values are `http`, `http2`, `tcp` and `grpc`.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
 }

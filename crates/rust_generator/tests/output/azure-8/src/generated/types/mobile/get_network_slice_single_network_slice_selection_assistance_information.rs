@@ -6,9 +6,9 @@ pub struct GetNetworkSliceSingleNetworkSliceSelectionAssistanceInformation {
     /// Slice differentiator (SD).
     #[builder(into)]
     #[serde(rename = "sliceDifferentiator")]
-    pub r#slice_differentiator: Box<String>,
+    pub r#slice_differentiator: String,
     /// Slice/service type (SST).
     #[builder(into)]
     #[serde(rename = "sliceServiceType")]
-    pub r#slice_service_type: Box<i32>,
+    pub r#slice_service_type: i32,
 }

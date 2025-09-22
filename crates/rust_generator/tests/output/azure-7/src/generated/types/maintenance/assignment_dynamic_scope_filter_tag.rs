@@ -6,9 +6,9 @@ pub struct AssignmentDynamicScopeFilterTag {
     /// Specifies the tag to filter by.
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<String>,
+    pub r#tag: String,
     /// Specifies a list of values the defined tag can have.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

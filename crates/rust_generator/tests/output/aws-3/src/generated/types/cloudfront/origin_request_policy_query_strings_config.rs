@@ -5,8 +5,8 @@
 pub struct OriginRequestPolicyQueryStringsConfig {
     #[builder(into)]
     #[serde(rename = "queryStringBehavior")]
-    pub r#query_string_behavior: Box<String>,
-    #[builder(into, default)]
+    pub r#query_string_behavior: String,
+    #[builder(into)]
     #[serde(rename = "queryStrings")]
-    pub r#query_strings: Box<Option<super::super::types::cloudfront::OriginRequestPolicyQueryStringsConfigQueryStrings>>,
+    pub r#query_strings: Option<Box<super::super::types::cloudfront::OriginRequestPolicyQueryStringsConfigQueryStrings>>,
 }

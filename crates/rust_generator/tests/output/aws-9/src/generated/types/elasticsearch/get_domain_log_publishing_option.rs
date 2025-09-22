@@ -6,13 +6,13 @@ pub struct GetDomainLogPublishingOption {
     /// The CloudWatch Log Group where the logs are published.
     #[builder(into)]
     #[serde(rename = "cloudwatchLogGroupArn")]
-    pub r#cloudwatch_log_group_arn: Box<String>,
+    pub r#cloudwatch_log_group_arn: String,
     /// Whether node to node encryption is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The type of Elasticsearch log being published.
     #[builder(into)]
     #[serde(rename = "logType")]
-    pub r#log_type: Box<String>,
+    pub r#log_type: String,
 }

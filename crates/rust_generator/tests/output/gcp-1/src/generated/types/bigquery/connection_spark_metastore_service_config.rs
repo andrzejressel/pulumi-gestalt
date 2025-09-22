@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionSparkMetastoreServiceConfig {
     /// Resource name of an existing Dataproc Metastore service in the form of projects/[projectId]/locations/[region]/services/[serviceId].
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metastoreService")]
-    pub r#metastore_service: Box<Option<String>>,
+    pub r#metastore_service: Option<String>,
 }

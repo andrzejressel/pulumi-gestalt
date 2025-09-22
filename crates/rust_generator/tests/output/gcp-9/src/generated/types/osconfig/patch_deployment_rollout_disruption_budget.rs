@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PatchDeploymentRolloutDisruptionBudget {
     /// Specifies a fixed value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fixed")]
-    pub r#fixed: Box<Option<i32>>,
+    pub r#fixed: Option<i32>,
     /// Specifies the relative value defined as a percentage, which will be multiplied by a reference value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "percentage")]
-    pub r#percentage: Box<Option<i32>>,
+    pub r#percentage: Option<i32>,
 }

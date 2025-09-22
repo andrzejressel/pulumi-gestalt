@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkConnectionMonitorTestConfigurationIcmpConfiguration {
     /// Should path evaluation with trace route be enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "traceRouteEnabled")]
-    pub r#trace_route_enabled: Box<Option<bool>>,
+    pub r#trace_route_enabled: Option<bool>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipelineThumbnailConfig {
     /// The Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<Option<String>>,
+    pub r#bucket: Option<String>,
     /// The Amazon S3 storage class, Standard or ReducedRedundancy, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageClass")]
-    pub r#storage_class: Box<Option<String>>,
+    pub r#storage_class: Option<String>,
 }

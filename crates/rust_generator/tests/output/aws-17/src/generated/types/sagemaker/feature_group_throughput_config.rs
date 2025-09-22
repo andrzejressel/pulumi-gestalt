@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureGroupThroughputConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "provisionedReadCapacityUnits")]
-    pub r#provisioned_read_capacity_units: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#provisioned_read_capacity_units: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "provisionedWriteCapacityUnits")]
-    pub r#provisioned_write_capacity_units: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#provisioned_write_capacity_units: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "throughputMode")]
-    pub r#throughput_mode: Box<Option<String>>,
+    pub r#throughput_mode: Option<String>,
 }

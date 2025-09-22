@@ -6,8 +6,8 @@ pub struct EntityRecognizerInputDataConfigAnnotations {
     /// Location of training annotations.
     #[builder(into)]
     #[serde(rename = "s3Uri")]
-    pub r#s_3_uri: Box<String>,
-    #[builder(into, default)]
+    pub r#s_3_uri: String,
+    #[builder(into)]
     #[serde(rename = "testS3Uri")]
-    pub r#test_s_3_uri: Box<Option<String>>,
+    pub r#test_s_3_uri: Option<String>,
 }

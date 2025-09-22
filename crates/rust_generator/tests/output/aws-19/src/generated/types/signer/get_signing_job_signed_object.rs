@@ -5,5 +5,5 @@
 pub struct GetSigningJobSignedObject {
     #[builder(into)]
     #[serde(rename = "s3s")]
-    pub r#s_3_s: Box<Vec<super::super::types::signer::GetSigningJobSignedObjectS3>>,
+    pub r#s_3_s: Vec<super::super::types::signer::GetSigningJobSignedObjectS3>,
 }

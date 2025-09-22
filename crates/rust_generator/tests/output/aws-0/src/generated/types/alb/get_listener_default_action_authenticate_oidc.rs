@@ -5,35 +5,35 @@
 pub struct GetListenerDefaultActionAuthenticateOidc {
     #[builder(into)]
     #[serde(rename = "authenticationRequestExtraParams")]
-    pub r#authentication_request_extra_params: Box<std::collections::HashMap<String, String>>,
+    pub r#authentication_request_extra_params: std::collections::HashMap<String, String>,
     #[builder(into)]
     #[serde(rename = "authorizationEndpoint")]
-    pub r#authorization_endpoint: Box<String>,
+    pub r#authorization_endpoint: String,
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<String>,
+    pub r#client_secret: String,
     #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<String>,
+    pub r#issuer: String,
     #[builder(into)]
     #[serde(rename = "onUnauthenticatedRequest")]
-    pub r#on_unauthenticated_request: Box<String>,
+    pub r#on_unauthenticated_request: String,
     #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<String>,
+    pub r#scope: String,
     #[builder(into)]
     #[serde(rename = "sessionCookieName")]
-    pub r#session_cookie_name: Box<String>,
+    pub r#session_cookie_name: String,
     #[builder(into)]
     #[serde(rename = "sessionTimeout")]
-    pub r#session_timeout: Box<i32>,
+    pub r#session_timeout: i32,
     #[builder(into)]
     #[serde(rename = "tokenEndpoint")]
-    pub r#token_endpoint: Box<String>,
+    pub r#token_endpoint: String,
     #[builder(into)]
     #[serde(rename = "userInfoEndpoint")]
-    pub r#user_info_endpoint: Box<String>,
+    pub r#user_info_endpoint: String,
 }

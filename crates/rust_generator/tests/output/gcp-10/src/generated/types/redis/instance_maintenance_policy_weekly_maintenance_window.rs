@@ -15,15 +15,15 @@ pub struct InstanceMaintenancePolicyWeeklyMaintenanceWindow {
     /// Possible values are: `DAY_OF_WEEK_UNSPECIFIED`, `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
     #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<String>,
+    pub r#day: String,
     /// (Output)
     /// Output only. Duration of the maintenance window.
     /// The current window is fixed at 1 hour.
     /// A duration in seconds with up to nine fractional digits,
     /// terminated by 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<Option<String>>,
+    pub r#duration: Option<String>,
     /// Required. Start time of the window in UTC time.
     /// Structure is documented below.
     #[builder(into)]

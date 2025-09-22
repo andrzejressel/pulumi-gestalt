@@ -6,9 +6,9 @@ pub struct KubernetesClusterWebAppRouting {
     /// Specifies the list of the DNS Zone IDs in which DNS entries are created for applications deployed to the cluster when Web App Routing is enabled. If not using Bring-Your-Own DNS zones this property should be set to an empty list.
     #[builder(into)]
     #[serde(rename = "dnsZoneIds")]
-    pub r#dns_zone_ids: Box<Vec<String>>,
+    pub r#dns_zone_ids: Vec<String>,
     /// A `web_app_routing_identity` block is exported. The exported attributes are defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "webAppRoutingIdentities")]
-    pub r#web_app_routing_identities: Box<Option<Vec<super::super::types::containerservice::KubernetesClusterWebAppRoutingWebAppRoutingIdentity>>>,
+    pub r#web_app_routing_identities: Option<Vec<super::super::types::containerservice::KubernetesClusterWebAppRoutingWebAppRoutingIdentity>>,
 }

@@ -6,9 +6,9 @@ pub struct GetFirewallFirewallStatusSyncState {
     /// Nested list describing the attachment status of the firewall's association with a single VPC subnet.
     #[builder(into)]
     #[serde(rename = "attachments")]
-    pub r#attachments: Box<Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusSyncStateAttachment>>,
+    pub r#attachments: Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusSyncStateAttachment>,
     /// The Availability Zone where the subnet is configured.
     #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<String>,
+    pub r#availability_zone: String,
 }

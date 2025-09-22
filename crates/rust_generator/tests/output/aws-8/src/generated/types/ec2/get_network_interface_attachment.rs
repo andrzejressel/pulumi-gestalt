@@ -5,14 +5,14 @@
 pub struct GetNetworkInterfaceAttachment {
     #[builder(into)]
     #[serde(rename = "attachmentId")]
-    pub r#attachment_id: Box<String>,
+    pub r#attachment_id: String,
     #[builder(into)]
     #[serde(rename = "deviceIndex")]
-    pub r#device_index: Box<i32>,
+    pub r#device_index: i32,
     #[builder(into)]
     #[serde(rename = "instanceId")]
-    pub r#instance_id: Box<String>,
+    pub r#instance_id: String,
     #[builder(into)]
     #[serde(rename = "instanceOwnerId")]
-    pub r#instance_owner_id: Box<String>,
+    pub r#instance_owner_id: String,
 }

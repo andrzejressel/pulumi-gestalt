@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobConfigMuxStreamSegmentSettings {
     /// Duration of the segments in seconds. The default is `6.0s`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "segmentDuration")]
-    pub r#segment_duration: Box<Option<String>>,
+    pub r#segment_duration: Option<String>,
 }

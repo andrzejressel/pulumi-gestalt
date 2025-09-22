@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OntapStorageVirtualMachineActiveDirectoryConfiguration {
     /// The NetBIOS name of the Active Directory computer object that will be created for your SVM. This is often the same as the SVM name but can be different. AWS limits to 15 characters because of standard NetBIOS naming limits.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "netbiosName")]
-    pub r#netbios_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#netbios_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "selfManagedActiveDirectoryConfiguration")]
-    pub r#self_managed_active_directory_configuration: Box<Option<super::super::types::fsx::OntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration>>,
+    pub r#self_managed_active_directory_configuration: Option<Box<super::super::types::fsx::OntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration>>,
 }

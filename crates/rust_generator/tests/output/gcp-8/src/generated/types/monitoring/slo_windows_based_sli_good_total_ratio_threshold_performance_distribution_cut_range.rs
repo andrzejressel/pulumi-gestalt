@@ -6,13 +6,13 @@ pub struct SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRa
     /// max value for the range (inclusive). If not given,
     /// will be set to "infinity", defining an open range
     /// ">= range.min"
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "max")]
-    pub r#max: Box<Option<f64>>,
+    pub r#max: Option<f64>,
     /// Min value for the range (inclusive). If not given,
     /// will be set to "-infinity", defining an open range
     /// "< range.max"
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "min")]
-    pub r#min: Box<Option<f64>>,
+    pub r#min: Option<f64>,
 }

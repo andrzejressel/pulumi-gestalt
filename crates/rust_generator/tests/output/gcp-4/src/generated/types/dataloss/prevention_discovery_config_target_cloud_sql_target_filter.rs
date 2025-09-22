@@ -5,16 +5,16 @@
 pub struct PreventionDiscoveryConfigTargetCloudSqlTargetFilter {
     /// A specific set of buckets for this filter to apply to.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "collection")]
-    pub r#collection: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollection>>,
+    pub r#collection: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollection>>,
     /// The database resource to scan. Targets including this can only include one target (the target with this database resource reference).
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "databaseResourceReference")]
-    pub r#database_resource_reference: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetFilterDatabaseResourceReference>>,
+    pub r#database_resource_reference: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetFilterDatabaseResourceReference>>,
     /// Match discovery resources not covered by any other filter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "others")]
-    pub r#others: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetFilterOthers>>,
+    pub r#others: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetFilterOthers>>,
 }

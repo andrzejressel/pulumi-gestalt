@@ -5,5 +5,5 @@
 pub struct GetUserPoolAccountRecoverySetting {
     #[builder(into)]
     #[serde(rename = "recoveryMechanisms")]
-    pub r#recovery_mechanisms: Box<Vec<super::super::types::cognito::GetUserPoolAccountRecoverySettingRecoveryMechanism>>,
+    pub r#recovery_mechanisms: Vec<super::super::types::cognito::GetUserPoolAccountRecoverySettingRecoveryMechanism>,
 }

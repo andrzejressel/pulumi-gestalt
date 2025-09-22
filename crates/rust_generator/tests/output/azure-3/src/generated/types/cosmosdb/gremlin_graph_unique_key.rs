@@ -6,5 +6,5 @@ pub struct GremlinGraphUniqueKey {
     /// A list of paths to use for this unique key. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "paths")]
-    pub r#paths: Box<Vec<String>>,
+    pub r#paths: Vec<String>,
 }

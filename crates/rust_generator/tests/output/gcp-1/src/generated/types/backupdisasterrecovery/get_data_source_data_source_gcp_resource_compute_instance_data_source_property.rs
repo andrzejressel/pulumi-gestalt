@@ -6,21 +6,21 @@ pub struct GetDataSourceDataSourceGcpResourceComputeInstanceDataSourceProperty {
     /// The description of the Compute Engine instance.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// The machine type of the instance.
     #[builder(into)]
     #[serde(rename = "machineType")]
-    pub r#machine_type: Box<String>,
+    pub r#machine_type: String,
     /// Name of the compute instance backed up by the datasource.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The total number of disks attached to the Instance.
     #[builder(into)]
     #[serde(rename = "totalDiskCount")]
-    pub r#total_disk_count: Box<String>,
+    pub r#total_disk_count: String,
     /// The sum of all the disk sizes.
     #[builder(into)]
     #[serde(rename = "totalDiskSizeGb")]
-    pub r#total_disk_size_gb: Box<String>,
+    pub r#total_disk_size_gb: String,
 }

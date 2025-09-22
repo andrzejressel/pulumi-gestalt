@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OrganizationPolicyListPolicyAllow {
     /// The policy allows or denies all values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "all")]
-    pub r#all: Box<Option<bool>>,
+    pub r#all: Option<bool>,
     /// The policy can define specific values that are allowed or denied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<Vec<String>>>,
+    pub r#values: Option<Vec<String>>,
 }

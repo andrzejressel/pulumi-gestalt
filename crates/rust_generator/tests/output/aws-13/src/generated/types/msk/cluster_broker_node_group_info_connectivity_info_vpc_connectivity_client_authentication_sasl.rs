@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "iam")]
-    pub r#iam: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#iam: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "scram")]
-    pub r#scram: Box<Option<bool>>,
+    pub r#scram: Option<bool>,
 }

@@ -6,29 +6,29 @@ pub struct GetProvisioningArtifactsProvisioningArtifactDetail {
     /// Indicates whether the product version is active.
     #[builder(into)]
     #[serde(rename = "active")]
-    pub r#active: Box<bool>,
+    pub r#active: bool,
     /// The UTC time stamp of the creation time.
     #[builder(into)]
     #[serde(rename = "createdTime")]
-    pub r#created_time: Box<String>,
+    pub r#created_time: String,
     /// The description of the provisioning artifact.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
     #[builder(into)]
     #[serde(rename = "guidance")]
-    pub r#guidance: Box<String>,
+    pub r#guidance: String,
     /// The identifier of the provisioning artifact.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The name of the provisioning artifact.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The type of provisioning artifact.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -5,17 +5,17 @@
 pub struct GetRouteSpecHttpRouteMatchHeaderMatch {
     #[builder(into)]
     #[serde(rename = "exact")]
-    pub r#exact: Box<String>,
+    pub r#exact: String,
     #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<String>,
+    pub r#prefix: String,
     #[builder(into)]
     #[serde(rename = "ranges")]
-    pub r#ranges: Box<Vec<super::super::types::appmesh::GetRouteSpecHttpRouteMatchHeaderMatchRange>>,
+    pub r#ranges: Vec<super::super::types::appmesh::GetRouteSpecHttpRouteMatchHeaderMatchRange>,
     #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<String>,
+    pub r#regex: String,
     #[builder(into)]
     #[serde(rename = "suffix")]
-    pub r#suffix: Box<String>,
+    pub r#suffix: String,
 }

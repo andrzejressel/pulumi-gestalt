@@ -6,9 +6,9 @@ pub struct ApplicationApplicationConfigurationEnvironmentPropertiesPropertyGroup
     /// The key of the application execution property key-value map.
     #[builder(into)]
     #[serde(rename = "propertyGroupId")]
-    pub r#property_group_id: Box<String>,
+    pub r#property_group_id: String,
     /// Application execution property key-value map.
     #[builder(into)]
     #[serde(rename = "propertyMap")]
-    pub r#property_map: Box<std::collections::HashMap<String, String>>,
+    pub r#property_map: std::collections::HashMap<String, String>,
 }

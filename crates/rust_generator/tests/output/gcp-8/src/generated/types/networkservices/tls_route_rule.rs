@@ -12,5 +12,5 @@ pub struct TlsRouteRule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Vec<super::super::types::networkservices::TlsRouteRuleMatch>>,
+    pub r#matches: Vec<super::super::types::networkservices::TlsRouteRuleMatch>,
 }

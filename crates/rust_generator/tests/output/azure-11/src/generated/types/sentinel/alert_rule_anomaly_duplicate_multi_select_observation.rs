@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AlertRuleAnomalyDuplicateMultiSelectObservation {
     /// The description of the multi select observation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The name of the multi select observation.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A list of supported values of the multi select observation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "supportedValues")]
-    pub r#supported_values: Box<Option<Vec<String>>>,
+    pub r#supported_values: Option<Vec<String>>,
     /// A list of values of the multi select observation.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

@@ -4,24 +4,24 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TriggerBuildArtifactsMavenArtifact {
     /// Maven artifactId value used when uploading the artifact to Artifact Registry.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "artifactId")]
-    pub r#artifact_id: Box<Option<String>>,
+    pub r#artifact_id: Option<String>,
     /// Maven groupId value used when uploading the artifact to Artifact Registry.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groupId")]
-    pub r#group_id: Box<Option<String>>,
+    pub r#group_id: Option<String>,
     /// Path to an artifact in the build's workspace to be uploaded to Artifact Registry. This can be either an absolute path, e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar or a relative path from /workspace, e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
     /// Artifact Registry repository, in the form "https://$REGION-maven.pkg.dev/$PROJECT/$REPOSITORY"
     /// Artifact in the workspace specified by path will be uploaded to Artifact Registry with this location as a prefix.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repository")]
-    pub r#repository: Box<Option<String>>,
+    pub r#repository: Option<String>,
     /// Maven version value used when uploading the artifact to Artifact Registry.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

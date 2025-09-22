@@ -5,12 +5,12 @@
 pub struct DatascanExecutionStatus {
     /// (Output)
     /// The time when the latest DataScanJob started.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "latestJobEndTime")]
-    pub r#latest_job_end_time: Box<Option<String>>,
+    pub r#latest_job_end_time: Option<String>,
     /// (Output)
     /// The time when the latest DataScanJob ended.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "latestJobStartTime")]
-    pub r#latest_job_start_time: Box<Option<String>>,
+    pub r#latest_job_start_time: Option<String>,
 }

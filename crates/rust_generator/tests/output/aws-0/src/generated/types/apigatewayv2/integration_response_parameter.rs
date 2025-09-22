@@ -7,9 +7,9 @@ pub struct IntegrationResponseParameter {
     /// See the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html) for details.
     #[builder(into)]
     #[serde(rename = "mappings")]
-    pub r#mappings: Box<std::collections::HashMap<String, String>>,
+    pub r#mappings: std::collections::HashMap<String, String>,
     /// HTTP status code in the range 200-599.
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<String>,
+    pub r#status_code: String,
 }

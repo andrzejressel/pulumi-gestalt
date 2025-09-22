@@ -6,5 +6,5 @@ pub struct AccountAnalyticalStorage {
     /// The schema type of the Analytical Storage for this Cosmos DB account. Possible values are `FullFidelity` and `WellDefined`.
     #[builder(into)]
     #[serde(rename = "schemaType")]
-    pub r#schema_type: Box<String>,
+    pub r#schema_type: String,
 }

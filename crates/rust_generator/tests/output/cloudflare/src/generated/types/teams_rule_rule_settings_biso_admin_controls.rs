@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TeamsRuleRuleSettingsBisoAdminControls {
     /// Disable clipboard redirection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disableClipboardRedirection")]
-    pub r#disable_clipboard_redirection: Box<Option<bool>>,
+    pub r#disable_clipboard_redirection: Option<bool>,
     /// Disable copy-paste.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disableCopyPaste")]
-    pub r#disable_copy_paste: Box<Option<bool>>,
+    pub r#disable_copy_paste: Option<bool>,
     /// Disable download.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disableDownload")]
-    pub r#disable_download: Box<Option<bool>>,
+    pub r#disable_download: Option<bool>,
     /// Disable keyboard usage.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disableKeyboard")]
-    pub r#disable_keyboard: Box<Option<bool>>,
+    pub r#disable_keyboard: Option<bool>,
     /// Disable printing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disablePrinting")]
-    pub r#disable_printing: Box<Option<bool>>,
+    pub r#disable_printing: Option<bool>,
     /// Disable upload.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disableUpload")]
-    pub r#disable_upload: Box<Option<bool>>,
+    pub r#disable_upload: Option<bool>,
 }

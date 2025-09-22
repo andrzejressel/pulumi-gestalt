@@ -6,13 +6,13 @@ pub struct GetApplicationProvidersApplicationProvider {
     /// ARN of the application provider.
     #[builder(into)]
     #[serde(rename = "applicationProviderArn")]
-    pub r#application_provider_arn: Box<String>,
+    pub r#application_provider_arn: String,
     /// An object describing how IAM Identity Center represents the application provider in the portal. See `display_data` below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "displayDatas")]
-    pub r#display_datas: Box<Option<Vec<super::super::types::ssoadmin::GetApplicationProvidersApplicationProviderDisplayData>>>,
+    pub r#display_datas: Option<Vec<super::super::types::ssoadmin::GetApplicationProvidersApplicationProviderDisplayData>>,
     /// Protocol that the application provider uses to perform federation. Valid values are `SAML` and `OAUTH`.
     #[builder(into)]
     #[serde(rename = "federationProtocol")]
-    pub r#federation_protocol: Box<String>,
+    pub r#federation_protocol: String,
 }

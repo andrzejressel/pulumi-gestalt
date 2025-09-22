@@ -5,5 +5,5 @@
 pub struct GetLaunchTemplateMaintenanceOption {
     #[builder(into)]
     #[serde(rename = "autoRecovery")]
-    pub r#auto_recovery: Box<String>,
+    pub r#auto_recovery: String,
 }

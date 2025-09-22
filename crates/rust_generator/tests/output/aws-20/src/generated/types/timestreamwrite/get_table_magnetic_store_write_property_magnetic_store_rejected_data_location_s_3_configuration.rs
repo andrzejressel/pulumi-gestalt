@@ -6,16 +6,16 @@ pub struct GetTableMagneticStoreWritePropertyMagneticStoreRejectedDataLocationS3
     /// Name of S3 bucket.
     #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<String>,
+    pub r#bucket_name: String,
     #[builder(into)]
     #[serde(rename = "encryptionOption")]
-    pub r#encryption_option: Box<String>,
+    pub r#encryption_option: String,
     /// AWS KMS key ID for S3 location with AWS maanged key.
     #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<String>,
+    pub r#kms_key_id: String,
     /// Object key preview for S3 location.
     #[builder(into)]
     #[serde(rename = "objectKeyPrefix")]
-    pub r#object_key_prefix: Box<String>,
+    pub r#object_key_prefix: String,
 }

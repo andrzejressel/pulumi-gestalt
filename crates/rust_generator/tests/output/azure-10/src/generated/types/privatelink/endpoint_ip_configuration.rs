@@ -6,19 +6,19 @@ pub struct EndpointIpConfiguration {
     /// Specifies the member name this IP address applies to. If it is not specified, it will use the value of `subresource_name`. Changing this forces a new resource to be created.
     /// 
     /// > **NOTE:** `member_name` will be required and will not take the value of `subresource_name` in the next major version.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "memberName")]
-    pub r#member_name: Box<Option<String>>,
+    pub r#member_name: Option<String>,
     /// Specifies the Name of the IP Configuration. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the static IP address within the private endpoint's subnet to be used. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<String>,
+    pub r#private_ip_address: String,
     /// Specifies the subresource this IP address applies to. `subresource_names` corresponds to `group_id`. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subresourceName")]
-    pub r#subresource_name: Box<Option<String>>,
+    pub r#subresource_name: Option<String>,
 }

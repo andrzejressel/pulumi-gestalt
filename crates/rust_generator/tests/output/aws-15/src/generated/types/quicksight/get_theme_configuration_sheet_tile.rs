@@ -6,5 +6,5 @@ pub struct GetThemeConfigurationSheetTile {
     /// The border around a tile. See border.
     #[builder(into)]
     #[serde(rename = "borders")]
-    pub r#borders: Box<Vec<super::super::types::quicksight::GetThemeConfigurationSheetTileBorder>>,
+    pub r#borders: Vec<super::super::types::quicksight::GetThemeConfigurationSheetTileBorder>,
 }

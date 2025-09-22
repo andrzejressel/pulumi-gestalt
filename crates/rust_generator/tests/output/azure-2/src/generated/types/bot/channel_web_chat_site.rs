@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelWebChatSite {
     /// Is the endpoint parameters enabled for this site?
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpointParametersEnabled")]
-    pub r#endpoint_parameters_enabled: Box<Option<bool>>,
+    pub r#endpoint_parameters_enabled: Option<bool>,
     /// The name of the site.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Is the storage site enabled for detailed logging? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageEnabled")]
-    pub r#storage_enabled: Box<Option<bool>>,
+    pub r#storage_enabled: Option<bool>,
     /// Is the user upload enabled for this site? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userUploadEnabled")]
-    pub r#user_upload_enabled: Box<Option<bool>>,
+    pub r#user_upload_enabled: Option<bool>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorLogDeliveryWorkerLogDeliveryFirehose {
     /// The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deliveryStream")]
-    pub r#delivery_stream: Box<Option<String>>,
+    pub r#delivery_stream: Option<String>,
     /// Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

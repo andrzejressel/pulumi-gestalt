@@ -5,12 +5,12 @@
 pub struct ClusterEncryptionInfo {
     /// (Output)
     /// Output only. Type of encryption.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encryptionType")]
-    pub r#encryption_type: Box<Option<String>>,
+    pub r#encryption_type: Option<String>,
     /// (Output)
     /// Output only. Cloud KMS key versions that are being used to protect the database or the backup.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyVersions")]
-    pub r#kms_key_versions: Box<Option<Vec<String>>>,
+    pub r#kms_key_versions: Option<Vec<String>>,
 }

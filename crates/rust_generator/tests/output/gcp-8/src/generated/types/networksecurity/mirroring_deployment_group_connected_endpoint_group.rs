@@ -5,7 +5,7 @@
 pub struct MirroringDeploymentGroupConnectedEndpointGroup {
     /// (Output)
     /// Output only. A connected mirroring endpoint group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

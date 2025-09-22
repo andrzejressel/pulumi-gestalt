@@ -7,11 +7,11 @@ pub struct EventTargetInputTransformer {
     /// * You can have as many as 100 key-value pairs.
     /// * You must use JSON dot notation, not bracket notation.
     /// * The keys can't start with "AWS".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputPaths")]
-    pub r#input_paths: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#input_paths: Option<std::collections::HashMap<String, String>>,
     /// Template to customize data sent to the target. Must be valid JSON. To send a string value, the string value must include double quotes.
     #[builder(into)]
     #[serde(rename = "inputTemplate")]
-    pub r#input_template: Box<String>,
+    pub r#input_template: String,
 }

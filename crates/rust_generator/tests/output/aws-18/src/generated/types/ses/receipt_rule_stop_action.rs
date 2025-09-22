@@ -6,13 +6,13 @@ pub struct ReceiptRuleStopAction {
     /// The position of the action in the receipt rule
     #[builder(into)]
     #[serde(rename = "position")]
-    pub r#position: Box<i32>,
+    pub r#position: i32,
     /// The scope to apply. The only acceptable value is `RuleSet`.
     #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<String>,
+    pub r#scope: String,
     /// The ARN of an SNS topic to notify
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "topicArn")]
-    pub r#topic_arn: Box<Option<String>>,
+    pub r#topic_arn: Option<String>,
 }

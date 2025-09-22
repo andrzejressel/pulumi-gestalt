@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainDomainEndpointOptions {
     /// Fully qualified domain for your custom endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customEndpoint")]
-    pub r#custom_endpoint: Box<Option<String>>,
+    pub r#custom_endpoint: Option<String>,
     /// ACM certificate ARN for your custom endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customEndpointCertificateArn")]
-    pub r#custom_endpoint_certificate_arn: Box<Option<String>>,
+    pub r#custom_endpoint_certificate_arn: Option<String>,
     /// Whether to enable custom endpoint for the OpenSearch domain.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customEndpointEnabled")]
-    pub r#custom_endpoint_enabled: Box<Option<bool>>,
+    pub r#custom_endpoint_enabled: Option<bool>,
     /// Whether or not to require HTTPS. Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enforceHttps")]
-    pub r#enforce_https: Box<Option<bool>>,
+    pub r#enforce_https: Option<bool>,
     /// Name of the TLS security policy that needs to be applied to the HTTPS endpoint. For valid values, refer to the [AWS documentation](https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_DomainEndpointOptions.html#opensearchservice-Type-DomainEndpointOptions-TLSSecurityPolicy). Pulumi will only perform drift detection if a configuration value is provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tlsSecurityPolicy")]
-    pub r#tls_security_policy: Box<Option<String>>,
+    pub r#tls_security_policy: Option<String>,
 }

@@ -5,21 +5,21 @@
 pub struct PreventionDiscoveryConfigTargetBigQueryTarget {
     /// How often and when to update profiles. New tables that match both the fiter and conditions are scanned as quickly as possible depending on system capacity.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cadence")]
-    pub r#cadence: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetCadence>>,
+    pub r#cadence: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetCadence>>,
     /// In addition to matching the filter, these conditions must be true before a profile is generated
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetConditions>>,
+    pub r#conditions: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetConditions>>,
     /// Tables that match this filter will not have profiles created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetDisabled>>,
+    pub r#disabled: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetDisabled>>,
     /// Required. The tables the discovery cadence applies to. The first target with a matching filter will be the one to apply to a table
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetFilter>>,
+    pub r#filter: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetBigQueryTargetFilter>>,
 }

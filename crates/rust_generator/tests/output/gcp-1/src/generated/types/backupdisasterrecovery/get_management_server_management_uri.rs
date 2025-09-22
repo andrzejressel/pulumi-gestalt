@@ -6,9 +6,9 @@ pub struct GetManagementServerManagementUri {
     /// The management console api endpoint.
     #[builder(into)]
     #[serde(rename = "api")]
-    pub r#api: Box<String>,
+    pub r#api: String,
     /// The management console webUi.
     #[builder(into)]
     #[serde(rename = "webUi")]
-    pub r#web_ui: Box<String>,
+    pub r#web_ui: String,
 }

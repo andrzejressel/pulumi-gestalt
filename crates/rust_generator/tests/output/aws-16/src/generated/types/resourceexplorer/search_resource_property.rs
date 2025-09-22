@@ -6,13 +6,13 @@ pub struct SearchResourceProperty {
     /// Details about this property. The content of this field is a JSON object that varies based on the resource type.
     #[builder(into)]
     #[serde(rename = "data")]
-    pub r#data: Box<String>,
+    pub r#data: String,
     /// The date and time that the information about this resource property was last updated.
     #[builder(into)]
     #[serde(rename = "lastReportedAt")]
-    pub r#last_reported_at: Box<String>,
+    pub r#last_reported_at: String,
     /// Name of this property of the resource.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

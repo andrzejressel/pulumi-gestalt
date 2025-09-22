@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InternetMonitorInternetMeasurementsLogDelivery {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Config")]
-    pub r#s_3_config: Box<Option<super::super::types::cloudwatch::InternetMonitorInternetMeasurementsLogDeliveryS3Config>>,
+    pub r#s_3_config: Option<Box<super::super::types::cloudwatch::InternetMonitorInternetMeasurementsLogDeliveryS3Config>>,
 }

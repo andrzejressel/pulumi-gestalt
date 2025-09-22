@@ -6,5 +6,5 @@ pub struct GetFrontdoorSecretSecret {
     /// A `customer_certificate` block as defined below.
     #[builder(into)]
     #[serde(rename = "customerCertificates")]
-    pub r#customer_certificates: Box<Vec<super::super::types::cdn::GetFrontdoorSecretSecretCustomerCertificate>>,
+    pub r#customer_certificates: Vec<super::super::types::cdn::GetFrontdoorSecretSecretCustomerCertificate>,
 }

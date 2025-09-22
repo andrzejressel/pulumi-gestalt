@@ -9,7 +9,7 @@ pub struct LbTrafficExtensionExtensionChain {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "extensions")]
-    pub r#extensions: Box<Vec<super::super::types::networkservices::LbTrafficExtensionExtensionChainExtension>>,
+    pub r#extensions: Vec<super::super::types::networkservices::LbTrafficExtensionExtensionChainExtension>,
     /// Conditions under which this chain is invoked for a request.
     /// Structure is documented below.
     #[builder(into)]
@@ -21,5 +21,5 @@ pub struct LbTrafficExtensionExtensionChain {
     /// and the last a letter or a number.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

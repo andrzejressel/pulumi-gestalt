@@ -5,16 +5,16 @@
 pub struct WorkloadWorkloadProperty {
     /// (Output)
     /// Output only. The service project identifier that the underlying cloud resource resides in. Empty for non cloud resources.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gcpProject")]
-    pub r#gcp_project: Box<Option<String>>,
+    pub r#gcp_project: Option<String>,
     /// Part of `parent`.  Full resource name of a parent Application. Example: projects/{HOST_PROJECT_ID}/locations/{LOCATION}/applications/{APPLICATION_ID}
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<Option<String>>,
+    pub r#location: Option<String>,
     /// (Output)
     /// Output only. The location that the underlying compute resource resides in if it is zonal (e.g us-west1-a).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<Option<String>>,
+    pub r#zone: Option<String>,
 }

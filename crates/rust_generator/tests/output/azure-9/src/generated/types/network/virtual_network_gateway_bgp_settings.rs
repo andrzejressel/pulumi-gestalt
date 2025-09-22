@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNetworkGatewayBgpSettings {
     /// The Autonomous System Number (ASN) to use as part of the BGP.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "asn")]
-    pub r#asn: Box<Option<i32>>,
+    pub r#asn: Option<i32>,
     /// The weight added to routes which have been learned through BGP peering. Valid values can be between `0` and `100`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "peerWeight")]
-    pub r#peer_weight: Box<Option<i32>>,
+    pub r#peer_weight: Option<i32>,
     /// A list of `peering_addresses` blocks as defined below. Only one `peering_addresses` block can be specified except when `active_active` of this Virtual Network Gateway is `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "peeringAddresses")]
-    pub r#peering_addresses: Box<Option<Vec<super::super::types::network::VirtualNetworkGatewayBgpSettingsPeeringAddress>>>,
+    pub r#peering_addresses: Option<Vec<super::super::types::network::VirtualNetworkGatewayBgpSettingsPeeringAddress>>,
 }

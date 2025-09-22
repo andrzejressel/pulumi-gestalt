@@ -7,5 +7,5 @@ pub struct ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "dayOfWeeks")]
-    pub r#day_of_weeks: Box<Vec<super::super::types::compute::ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek>>,
+    pub r#day_of_weeks: Vec<super::super::types::compute::ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek>,
 }

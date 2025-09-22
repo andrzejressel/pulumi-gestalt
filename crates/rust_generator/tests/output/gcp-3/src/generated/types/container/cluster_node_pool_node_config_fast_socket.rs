@@ -6,5 +6,5 @@ pub struct ClusterNodePoolNodeConfigFastSocket {
     /// Whether or not the NCCL Fast Socket is enabled
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

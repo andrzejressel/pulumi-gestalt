@@ -5,7 +5,7 @@
 pub struct PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferences {
     /// Compute Engine machine series to consider for insights and recommendations. If empty, no restriction is applied on the machine series.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedMachineSeries")]
-    pub r#allowed_machine_series: Box<Option<Vec<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferencesAllowedMachineSeries>>>,
+    pub r#allowed_machine_series: Option<Vec<super::super::types::migrationcenter::PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferencesAllowedMachineSeries>>,
 }

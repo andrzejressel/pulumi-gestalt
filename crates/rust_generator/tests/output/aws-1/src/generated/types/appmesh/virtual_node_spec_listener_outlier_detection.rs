@@ -15,9 +15,9 @@ pub struct VirtualNodeSpecListenerOutlierDetection {
     /// Minimum value of `0`. Maximum value of `100`.
     #[builder(into)]
     #[serde(rename = "maxEjectionPercent")]
-    pub r#max_ejection_percent: Box<i32>,
+    pub r#max_ejection_percent: i32,
     /// Number of consecutive `5xx` errors required for ejection. Minimum value of `1`.
     #[builder(into)]
     #[serde(rename = "maxServerErrors")]
-    pub r#max_server_errors: Box<i32>,
+    pub r#max_server_errors: i32,
 }

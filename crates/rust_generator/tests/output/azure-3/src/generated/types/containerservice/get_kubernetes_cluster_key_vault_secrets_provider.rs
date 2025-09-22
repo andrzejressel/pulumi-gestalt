@@ -6,13 +6,13 @@ pub struct GetKubernetesClusterKeyVaultSecretsProvider {
     /// A `secret_identity` block as documented below.
     #[builder(into)]
     #[serde(rename = "secretIdentities")]
-    pub r#secret_identities: Box<Vec<super::super::types::containerservice::GetKubernetesClusterKeyVaultSecretsProviderSecretIdentity>>,
+    pub r#secret_identities: Vec<super::super::types::containerservice::GetKubernetesClusterKeyVaultSecretsProviderSecretIdentity>,
     /// Is secret rotation enabled?
     #[builder(into)]
     #[serde(rename = "secretRotationEnabled")]
-    pub r#secret_rotation_enabled: Box<bool>,
+    pub r#secret_rotation_enabled: bool,
     /// The interval to poll for secret rotation.
     #[builder(into)]
     #[serde(rename = "secretRotationInterval")]
-    pub r#secret_rotation_interval: Box<String>,
+    pub r#secret_rotation_interval: String,
 }

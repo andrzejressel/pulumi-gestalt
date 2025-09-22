@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetCoreNetworkPolicyDocumentNetworkFunctionGroup {
     /// Optional description of the network function group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// This identifies the network function group container.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// This will be either `true`, that attachment acceptance is required, or `false`, that it is not required.
     #[builder(into)]
     #[serde(rename = "requireAttachmentAcceptance")]
-    pub r#require_attachment_acceptance: Box<bool>,
+    pub r#require_attachment_acceptance: bool,
 }

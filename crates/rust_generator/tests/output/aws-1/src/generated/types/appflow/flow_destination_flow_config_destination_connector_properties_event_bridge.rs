@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridge {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorHandlingConfig")]
-    pub r#error_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfig>>,
+    pub r#error_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfig>>,
     #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<String>,
+    pub r#object: String,
 }

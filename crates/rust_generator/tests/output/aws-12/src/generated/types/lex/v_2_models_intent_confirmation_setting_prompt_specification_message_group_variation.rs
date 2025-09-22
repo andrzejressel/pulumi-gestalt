@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsIntentConfirmationSettingPromptSpecificationMessageGroupVariation {
     /// Configuration block for a message in a custom format defined by the client application. See `custom_payload`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customPayload")]
-    pub r#custom_payload: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationCustomPayload>>,
+    pub r#custom_payload: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationCustomPayload>>,
     /// Configuration block for a message that defines a response card that the client application can show to the user. See `image_response_card`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageResponseCard")]
-    pub r#image_response_card: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationImageResponseCard>>,
+    pub r#image_response_card: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationImageResponseCard>>,
     /// Configuration block for a message in plain text format. See `plain_text_message`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "plainTextMessage")]
-    pub r#plain_text_message: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationPlainTextMessage>>,
+    pub r#plain_text_message: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationPlainTextMessage>>,
     /// Configuration block for a message in Speech Synthesis Markup Language (SSML). See `ssml_message`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ssmlMessage")]
-    pub r#ssml_message: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationSsmlMessage>>,
+    pub r#ssml_message: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationSsmlMessage>>,
 }

@@ -6,5 +6,5 @@ pub struct ZeroTrustDlpProfileContextAwarenessSkip {
     /// Return all matches, regardless of context analysis result, if the data is a file.
     #[builder(into)]
     #[serde(rename = "files")]
-    pub r#files: Box<bool>,
+    pub r#files: bool,
 }

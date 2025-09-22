@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LaunchTemplateMaintenanceOptions {
     /// Disables the automatic recovery behavior of your instance or sets it to default. Can be `"default"` or `"disabled"`. See [Recover your instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html) for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoRecovery")]
-    pub r#auto_recovery: Box<Option<String>>,
+    pub r#auto_recovery: Option<String>,
 }

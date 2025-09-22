@@ -6,9 +6,9 @@ pub struct ChannelMaintenance {
     /// The day of the week to use for maintenance.
     #[builder(into)]
     #[serde(rename = "maintenanceDay")]
-    pub r#maintenance_day: Box<String>,
+    pub r#maintenance_day: String,
     /// The hour maintenance will start.
     #[builder(into)]
     #[serde(rename = "maintenanceStartTime")]
-    pub r#maintenance_start_time: Box<String>,
+    pub r#maintenance_start_time: String,
 }

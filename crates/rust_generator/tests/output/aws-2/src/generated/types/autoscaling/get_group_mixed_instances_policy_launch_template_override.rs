@@ -7,17 +7,17 @@ pub struct GetGroupMixedInstancesPolicyLaunchTemplateOverride {
     /// * `accelerator_count - List of objects describing the minimum and maximum number of accelerators for an instance type.
     #[builder(into)]
     #[serde(rename = "instanceRequirements")]
-    pub r#instance_requirements: Box<Vec<super::super::types::autoscaling::GetGroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirement>>,
+    pub r#instance_requirements: Vec<super::super::types::autoscaling::GetGroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirement>,
     /// Overriding instance type.
     #[builder(into)]
     #[serde(rename = "instanceType")]
-    pub r#instance_type: Box<String>,
+    pub r#instance_type: String,
     /// List of overriding launch template specification objects.
     #[builder(into)]
     #[serde(rename = "launchTemplateSpecifications")]
-    pub r#launch_template_specifications: Box<Vec<super::super::types::autoscaling::GetGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification>>,
+    pub r#launch_template_specifications: Vec<super::super::types::autoscaling::GetGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification>,
     /// Number of capacity units, which gives the instance type a proportional weight to other instance types.
     #[builder(into)]
     #[serde(rename = "weightedCapacity")]
-    pub r#weighted_capacity: Box<String>,
+    pub r#weighted_capacity: String,
 }

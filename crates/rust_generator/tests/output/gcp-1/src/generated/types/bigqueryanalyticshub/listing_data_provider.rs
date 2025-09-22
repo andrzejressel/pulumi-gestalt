@@ -6,9 +6,9 @@ pub struct ListingDataProvider {
     /// Name of the data provider.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Email or URL of the data provider.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primaryContact")]
-    pub r#primary_contact: Box<Option<String>>,
+    pub r#primary_contact: Option<String>,
 }

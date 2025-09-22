@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CompositePathResponse {
     /// Sort order for composite paths.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "order")]
-    pub r#order: Box<Option<String>>,
+    pub r#order: Option<String>,
     /// The path for which the indexing behavior applies to. Index paths typically start with root and end with wildcard (/path/*)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
 }

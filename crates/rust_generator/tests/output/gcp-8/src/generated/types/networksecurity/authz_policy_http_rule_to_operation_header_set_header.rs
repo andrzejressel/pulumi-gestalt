@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AuthzPolicyHttpRuleToOperationHeaderSetHeader {
     /// Specifies the name of the header in the request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Specifies how the header match will be performed.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<super::super::types::networksecurity::AuthzPolicyHttpRuleToOperationHeaderSetHeaderValue>>,
+    pub r#value: Option<Box<super::super::types::networksecurity::AuthzPolicyHttpRuleToOperationHeaderSetHeaderValue>>,
 }

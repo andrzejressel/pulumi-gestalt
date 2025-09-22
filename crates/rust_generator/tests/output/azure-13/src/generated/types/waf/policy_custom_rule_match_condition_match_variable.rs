@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicyCustomRuleMatchConditionMatchVariable {
     /// Describes field of the matchVariable collection
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "selector")]
-    pub r#selector: Box<Option<String>>,
+    pub r#selector: Option<String>,
     /// The name of the Match Variable. Possible values are `RemoteAddr`, `RequestMethod`, `QueryString`, `PostArgs`, `RequestUri`, `RequestHeaders`, `RequestBody` and `RequestCookies`.
     #[builder(into)]
     #[serde(rename = "variableName")]
-    pub r#variable_name: Box<String>,
+    pub r#variable_name: String,
 }

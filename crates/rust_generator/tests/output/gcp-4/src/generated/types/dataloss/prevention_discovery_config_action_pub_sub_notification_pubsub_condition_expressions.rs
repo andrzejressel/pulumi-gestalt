@@ -5,12 +5,12 @@
 pub struct PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressions {
     /// Conditions to apply to the expression
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Box<Option<Vec<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressionsCondition>>>,
+    pub r#conditions: Option<Vec<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressionsCondition>>,
     /// The operator to apply to the collection of conditions
     /// Possible values are: `OR`, `AND`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logicalOperator")]
-    pub r#logical_operator: Box<Option<String>>,
+    pub r#logical_operator: Option<String>,
 }

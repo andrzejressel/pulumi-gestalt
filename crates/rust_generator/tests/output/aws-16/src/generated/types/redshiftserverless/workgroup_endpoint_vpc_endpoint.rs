@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkgroupEndpointVpcEndpoint {
     /// The network interfaces of the endpoint.. See `Network Interface` below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkInterfaces")]
-    pub r#network_interfaces: Box<Option<Vec<super::super::types::redshiftserverless::WorkgroupEndpointVpcEndpointNetworkInterface>>>,
+    pub r#network_interfaces: Option<Vec<super::super::types::redshiftserverless::WorkgroupEndpointVpcEndpointNetworkInterface>>,
     /// The DNS address of the VPC endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpcEndpointId")]
-    pub r#vpc_endpoint_id: Box<Option<String>>,
+    pub r#vpc_endpoint_id: Option<String>,
     /// The port that Amazon Redshift Serverless listens on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<Option<String>>,
+    pub r#vpc_id: Option<String>,
 }

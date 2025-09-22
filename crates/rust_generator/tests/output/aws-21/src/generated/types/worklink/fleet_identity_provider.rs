@@ -6,9 +6,9 @@ pub struct FleetIdentityProvider {
     /// The SAML metadata document provided by the customer’s identity provider.
     #[builder(into)]
     #[serde(rename = "samlMetadata")]
-    pub r#saml_metadata: Box<String>,
+    pub r#saml_metadata: String,
     /// The type of identity provider.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

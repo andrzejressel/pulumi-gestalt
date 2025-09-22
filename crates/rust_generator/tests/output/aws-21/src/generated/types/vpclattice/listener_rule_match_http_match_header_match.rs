@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListenerRuleMatchHttpMatchHeaderMatch {
     /// Indicates whether the match is case sensitive. Defaults to false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "caseSensitive")]
-    pub r#case_sensitive: Box<Option<bool>>,
+    pub r#case_sensitive: Option<bool>,
     /// The header match type.
     #[builder(into)]
     #[serde(rename = "match")]
@@ -14,5 +14,5 @@ pub struct ListenerRuleMatchHttpMatchHeaderMatch {
     /// The name of the header.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

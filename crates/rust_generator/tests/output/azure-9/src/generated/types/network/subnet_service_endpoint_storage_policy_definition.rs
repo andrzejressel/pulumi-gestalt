@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SubnetServiceEndpointStoragePolicyDefinition {
     /// The description of this Subnet Service Endpoint Storage Policy Definition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The name which should be used for this Subnet Service Endpoint Storage Policy Definition.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The type of service resources. Valid values are `Microsoft.Storage` or `Global`. When the `service_resources` property contains resource IDs, this property must be `Microsoft.Storage`. When the `service_resources` property contains Aliases, this property must be `Global`. Defaults to `Microsoft.Storage`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<Option<String>>,
+    pub r#service: Option<String>,
     /// Specifies a list of resources or aliases that this Subnet Service Endpoint Storage Policy Definition applies to.
     /// 
     /// > **NOTE** The `service_resources` property must contain either Aliases or Resource IDs, but not both.
     #[builder(into)]
     #[serde(rename = "serviceResources")]
-    pub r#service_resources: Box<Vec<String>>,
+    pub r#service_resources: Vec<String>,
 }

@@ -6,9 +6,9 @@ pub struct EnvironmentStorageConfigurationEfs {
     /// Id of the EFS filesystem to mount.
     #[builder(into)]
     #[serde(rename = "fileSystemId")]
-    pub r#file_system_id: Box<String>,
+    pub r#file_system_id: String,
     /// Path to mount the filesystem on, must start with `/m2/mount/`.
     #[builder(into)]
     #[serde(rename = "mountPoint")]
-    pub r#mount_point: Box<String>,
+    pub r#mount_point: String,
 }

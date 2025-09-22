@@ -6,29 +6,29 @@ pub struct PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicy {
     /// The identifier for this object. Format specified above.
     #[builder(into)]
     #[serde(rename = "autoscalePolicyId")]
-    pub r#autoscale_policy_id: Box<String>,
+    pub r#autoscale_policy_id: String,
     /// Utilization thresholds pertaining to amount of consumed memory.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "consumedMemoryThresholds")]
-    pub r#consumed_memory_thresholds: Box<Option<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyConsumedMemoryThresholds>>,
+    pub r#consumed_memory_thresholds: Option<Box<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyConsumedMemoryThresholds>>,
     /// Utilization thresholds pertaining to CPU utilization.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cpuThresholds")]
-    pub r#cpu_thresholds: Box<Option<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyCpuThresholds>>,
+    pub r#cpu_thresholds: Option<Box<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyCpuThresholds>>,
     /// The canonical identifier of the node type to add or remove.
     #[builder(into)]
     #[serde(rename = "nodeTypeId")]
-    pub r#node_type_id: Box<String>,
+    pub r#node_type_id: String,
     /// Number of nodes to add to a cluster during a scale-out operation.
     /// Must be divisible by 2 for stretched clusters.
     #[builder(into)]
     #[serde(rename = "scaleOutSize")]
-    pub r#scale_out_size: Box<i32>,
+    pub r#scale_out_size: i32,
     /// Utilization thresholds pertaining to amount of consumed storage.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageThresholds")]
-    pub r#storage_thresholds: Box<Option<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyStorageThresholds>>,
+    pub r#storage_thresholds: Option<Box<super::super::types::vmwareengine::PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyStorageThresholds>>,
 }

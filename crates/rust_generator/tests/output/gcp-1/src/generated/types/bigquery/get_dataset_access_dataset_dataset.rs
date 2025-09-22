@@ -6,9 +6,9 @@ pub struct GetDatasetAccessDatasetDataset {
     /// The dataset ID.
     #[builder(into)]
     #[serde(rename = "datasetId")]
-    pub r#dataset_id: Box<String>,
+    pub r#dataset_id: String,
     /// The ID of the project containing this table.
     #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<String>,
+    pub r#project_id: String,
 }

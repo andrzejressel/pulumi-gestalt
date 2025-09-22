@@ -6,5 +6,5 @@ pub struct ListenerRuleActionFixedResponse {
     /// The HTTP response code.
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<i32>,
+    pub r#status_code: i32,
 }

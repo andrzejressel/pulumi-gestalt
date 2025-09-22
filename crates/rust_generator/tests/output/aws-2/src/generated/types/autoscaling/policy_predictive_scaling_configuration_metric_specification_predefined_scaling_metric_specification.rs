@@ -6,9 +6,9 @@ pub struct PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScal
     /// Describes a scaling metric for a predictive scaling policy. Valid values are `ASGAverageCPUUtilization`, `ASGAverageNetworkIn`, `ASGAverageNetworkOut`, or `ALBRequestCountPerTarget`.
     #[builder(into)]
     #[serde(rename = "predefinedMetricType")]
-    pub r#predefined_metric_type: Box<String>,
+    pub r#predefined_metric_type: String,
     /// Label that uniquely identifies a specific Application Load Balancer target group from which to determine the request count served by your Auto Scaling group. You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). Refer to [PredefinedMetricSpecification](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredefinedMetricSpecification.html) for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceLabel")]
-    pub r#resource_label: Box<Option<String>>,
+    pub r#resource_label: Option<String>,
 }

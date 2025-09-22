@@ -5,12 +5,12 @@
 pub struct AuthzPolicyHttpRuleFrom {
     /// Describes the properties of a request's sources. At least one of sources or notSources must be specified. Limited to 5 sources. A match occurs when ANY source (in sources or notSources) matches the request. Within a single source, the match follows AND semantics across fields and OR semantics within a single field, i.e. a match occurs when ANY principal matches AND ANY ipBlocks match.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notSources")]
-    pub r#not_sources: Box<Option<Vec<super::super::types::networksecurity::AuthzPolicyHttpRuleFromNotSource>>>,
+    pub r#not_sources: Option<Vec<super::super::types::networksecurity::AuthzPolicyHttpRuleFromNotSource>>,
     /// Describes the properties of a request's sources. At least one of sources or notSources must be specified. Limited to 5 sources. A match occurs when ANY source (in sources or notSources) matches the request. Within a single source, the match follows AND semantics across fields and OR semantics within a single field, i.e. a match occurs when ANY principal matches AND ANY ipBlocks match.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sources")]
-    pub r#sources: Box<Option<Vec<super::super::types::networksecurity::AuthzPolicyHttpRuleFromSource>>>,
+    pub r#sources: Option<Vec<super::super::types::networksecurity::AuthzPolicyHttpRuleFromSource>>,
 }

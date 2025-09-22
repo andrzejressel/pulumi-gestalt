@@ -8,15 +8,15 @@ pub struct GetJobTemplateTemplateVpcAccessNetworkInterface {
     /// looked up from the subnetwork.
     #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<String>,
+    pub r#network: String,
     /// The VPC subnetwork that the Cloud Run resource will get IPs from. At least one of network or subnetwork must be specified. If both
     /// network and subnetwork are specified, the given VPC subnetwork must belong to the given VPC network. If subnetwork is not specified, the
     /// subnetwork with the same name with the network will be used.
     #[builder(into)]
     #[serde(rename = "subnetwork")]
-    pub r#subnetwork: Box<String>,
+    pub r#subnetwork: String,
     /// Network tags applied to this Cloud Run job.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Vec<String>>,
+    pub r#tags: Vec<String>,
 }

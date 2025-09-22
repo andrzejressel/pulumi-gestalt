@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouteSpecGrpcRouteMatchMetadataMatch {
     /// Value sent by the client must match the specified value exactly. Must be between 1 and 255 characters in length.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exact")]
-    pub r#exact: Box<Option<String>>,
+    pub r#exact: Option<String>,
     /// Value sent by the client must begin with the specified characters. Must be between 1 and 255 characters in length.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
     /// Object that specifies the range of numbers that the value sent by the client must be included in.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "range")]
-    pub r#range: Box<Option<super::super::types::appmesh::RouteSpecGrpcRouteMatchMetadataMatchRange>>,
+    pub r#range: Option<Box<super::super::types::appmesh::RouteSpecGrpcRouteMatchMetadataMatchRange>>,
     /// Value sent by the client must include the specified characters. Must be between 1 and 255 characters in length.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<Option<String>>,
+    pub r#regex: Option<String>,
     /// Value sent by the client must end with the specified characters. Must be between 1 and 255 characters in length.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "suffix")]
-    pub r#suffix: Box<Option<String>>,
+    pub r#suffix: Option<String>,
 }

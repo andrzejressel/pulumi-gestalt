@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GlossaryTermTermRelations {
     /// String array that calssifies the term relations.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "classifies")]
-    pub r#classifies: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#classifies: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "isAs")]
-    pub r#is_as: Box<Option<Vec<String>>>,
+    pub r#is_as: Option<Vec<String>>,
 }

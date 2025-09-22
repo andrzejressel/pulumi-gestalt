@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2VmServiceAccount {
     /// Email address of the service account. If empty, default Compute service account will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// The list of scopes to be made available for this service account. If empty, access to all
     /// Cloud APIs will be allowed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scopes")]
-    pub r#scopes: Box<Option<Vec<String>>>,
+    pub r#scopes: Option<Vec<String>>,
 }

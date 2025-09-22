@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CostCategoryRuleRule {
     /// Return results that match both `Dimension` objects.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ands")]
-    pub r#ands: Box<Option<Vec<super::super::types::costexplorer::CostCategoryRuleRuleAnd>>>,
+    pub r#ands: Option<Vec<super::super::types::costexplorer::CostCategoryRuleRuleAnd>>,
     /// Configuration block for the filter that's based on `CostCategory` values. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "costCategory")]
-    pub r#cost_category: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleCostCategory>>,
+    pub r#cost_category: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleCostCategory>>,
     /// Configuration block for the specific `Dimension` to use for `Expression`. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dimension")]
-    pub r#dimension: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleDimension>>,
+    pub r#dimension: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleDimension>>,
     /// Return results that match both `Dimension` object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "not")]
-    pub r#not: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleNot>>,
+    pub r#not: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleNot>>,
     /// Return results that match both `Dimension` object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ors")]
-    pub r#ors: Box<Option<Vec<super::super::types::costexplorer::CostCategoryRuleRuleOr>>>,
+    pub r#ors: Option<Vec<super::super::types::costexplorer::CostCategoryRuleRuleOr>>,
     /// Configuration block for the specific `Tag` to use for `Expression`. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<super::super::types::costexplorer::CostCategoryRuleRuleTags>>,
+    pub r#tags: Option<Box<super::super::types::costexplorer::CostCategoryRuleRuleTags>>,
 }

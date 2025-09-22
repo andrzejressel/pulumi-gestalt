@@ -6,9 +6,9 @@ pub struct ZoneVpc {
     /// ID of the VPC to associate.
     #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<String>,
+    pub r#vpc_id: String,
     /// Region of the VPC to associate. Defaults to AWS provider region.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpcRegion")]
-    pub r#vpc_region: Box<Option<String>>,
+    pub r#vpc_region: Option<String>,
 }

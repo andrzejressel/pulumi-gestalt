@@ -5,11 +5,11 @@
 pub struct RulePredicate {
     #[builder(into)]
     #[serde(rename = "dataId")]
-    pub r#data_id: Box<String>,
+    pub r#data_id: String,
     #[builder(into)]
     #[serde(rename = "negated")]
-    pub r#negated: Box<bool>,
+    pub r#negated: bool,
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

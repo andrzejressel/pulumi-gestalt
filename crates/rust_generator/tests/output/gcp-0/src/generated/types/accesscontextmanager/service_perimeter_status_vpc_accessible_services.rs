@@ -5,12 +5,12 @@
 pub struct ServicePerimeterStatusVpcAccessibleServices {
     /// The list of APIs usable within the Service Perimeter.
     /// Must be empty unless `enableRestriction` is True.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedServices")]
-    pub r#allowed_services: Box<Option<Vec<String>>>,
+    pub r#allowed_services: Option<Vec<String>>,
     /// Whether to restrict API calls within the Service Perimeter to the
     /// list of APIs specified in 'allowedServices'.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableRestriction")]
-    pub r#enable_restriction: Box<Option<bool>>,
+    pub r#enable_restriction: Option<bool>,
 }

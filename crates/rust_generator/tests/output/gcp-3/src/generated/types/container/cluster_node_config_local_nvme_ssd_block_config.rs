@@ -7,5 +7,5 @@ pub struct ClusterNodeConfigLocalNvmeSsdBlockConfig {
     /// > Note: Local NVMe SSD storage available in GKE versions v1.25.3-gke.1800 and later.
     #[builder(into)]
     #[serde(rename = "localSsdCount")]
-    pub r#local_ssd_count: Box<i32>,
+    pub r#local_ssd_count: i32,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SettingsApplicationSettingsCsmSettings {
     /// Audience claim set in the generated RCToken. This value is not validated by IAP.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rctokenAud")]
-    pub r#rctoken_aud: Box<Option<String>>,
+    pub r#rctoken_aud: Option<String>,
 }

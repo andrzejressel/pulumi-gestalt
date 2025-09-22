@@ -6,11 +6,11 @@ pub struct DataSetPhysicalTableMapS3Source {
     /// ARN of the data source.
     #[builder(into)]
     #[serde(rename = "dataSourceArn")]
-    pub r#data_source_arn: Box<String>,
+    pub r#data_source_arn: String,
     /// Column schema of the table. See input_columns.
     #[builder(into)]
     #[serde(rename = "inputColumns")]
-    pub r#input_columns: Box<Vec<super::super::types::quicksight::DataSetPhysicalTableMapS3SourceInputColumn>>,
+    pub r#input_columns: Vec<super::super::types::quicksight::DataSetPhysicalTableMapS3SourceInputColumn>,
     /// Information about the format for the S3 source file or files. See upload_settings.
     #[builder(into)]
     #[serde(rename = "uploadSettings")]

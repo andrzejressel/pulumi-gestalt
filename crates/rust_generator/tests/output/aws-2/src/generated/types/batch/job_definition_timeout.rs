@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobDefinitionTimeout {
     /// Time duration in seconds after which AWS Batch terminates your jobs if they have not finished. The minimum value for the timeout is `60` seconds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attemptDurationSeconds")]
-    pub r#attempt_duration_seconds: Box<Option<i32>>,
+    pub r#attempt_duration_seconds: Option<i32>,
 }

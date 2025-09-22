@@ -6,25 +6,25 @@ pub struct KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigura
     /// The IPv4 network range to allow or deny, in CIDR notation. The specified CIDR block is modified to its canonical form. For example, `100.68.0.18/18` will be converted to `100.68.0.0/18`.
     #[builder(into)]
     #[serde(rename = "cidrBlock")]
-    pub r#cidr_block: Box<String>,
+    pub r#cidr_block: String,
     /// Defines the ICMP protocol that consists of the ICMP type and code. Defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "icmpTypeCode")]
-    pub r#icmp_type_code: Box<Option<super::super::types::finspace::KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationIcmpTypeCode>>,
+    pub r#icmp_type_code: Option<Box<super::super::types::finspace::KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationIcmpTypeCode>>,
     /// Range of ports the rule applies to. Defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "portRange")]
-    pub r#port_range: Box<Option<super::super::types::finspace::KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationPortRange>>,
+    pub r#port_range: Option<Box<super::super::types::finspace::KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationPortRange>>,
     /// Protocol number. A value of `1` means all the protocols.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     /// Indicates whether to `allow` or `deny` the traffic that matches the rule.
     #[builder(into)]
     #[serde(rename = "ruleAction")]
-    pub r#rule_action: Box<String>,
+    pub r#rule_action: String,
     /// Rule number for the entry. All the network ACL entries are processed in ascending order by rule number.
     #[builder(into)]
     #[serde(rename = "ruleNumber")]
-    pub r#rule_number: Box<i32>,
+    pub r#rule_number: i32,
 }

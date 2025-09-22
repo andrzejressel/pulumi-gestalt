@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketObjectv2OverrideProvider {
     /// Override the provider `default_tags` configuration block.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultTags")]
-    pub r#default_tags: Box<Option<super::super::types::s3::BucketObjectv2OverrideProviderDefaultTags>>,
+    pub r#default_tags: Option<Box<super::super::types::s3::BucketObjectv2OverrideProviderDefaultTags>>,
 }

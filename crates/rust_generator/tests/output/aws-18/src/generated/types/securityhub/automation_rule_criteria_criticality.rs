@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AutomationRuleCriteriaCriticality {
     /// The equal-to condition to be applied to a single field when querying for findings, provided as a String.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eq")]
-    pub r#eq: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#eq: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "gt")]
-    pub r#gt: Box<Option<f64>>,
+    pub r#gt: Option<f64>,
     /// The greater-than-equal condition to be applied to a single field when querying for findings, provided as a String.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gte")]
-    pub r#gte: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#gte: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "lt")]
-    pub r#lt: Box<Option<f64>>,
+    pub r#lt: Option<f64>,
     /// The less-than-equal condition to be applied to a single field when querying for findings, provided as a String.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lte")]
-    pub r#lte: Box<Option<f64>>,
+    pub r#lte: Option<f64>,
 }

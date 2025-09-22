@@ -6,9 +6,9 @@ pub struct VirtualNetworkDdosProtectionPlan {
     /// Enable/disable DDoS Protection Plan on Virtual Network.
     #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<bool>,
+    pub r#enable: bool,
     /// The ID of DDoS Protection Plan.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

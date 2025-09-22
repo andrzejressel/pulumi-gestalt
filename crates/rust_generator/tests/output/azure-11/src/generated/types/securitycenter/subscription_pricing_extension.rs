@@ -8,11 +8,11 @@ pub struct SubscriptionPricingExtension {
     /// > **NOTE:** If an extension is not defined, it will not be enabled.
     /// 
     /// > **NOTE:** Changing the pricing tier to `Standard` affects all resources of the given type in the subscription and could be quite costly.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "additionalExtensionProperties")]
-    pub r#additional_extension_properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#additional_extension_properties: Option<std::collections::HashMap<String, String>>,
     /// The name of extension.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

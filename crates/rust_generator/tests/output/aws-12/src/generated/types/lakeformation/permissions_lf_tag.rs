@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PermissionsLfTag {
     /// Identifier for the Data Catalog. By default, it is the account ID of the caller.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "catalogId")]
-    pub r#catalog_id: Box<Option<String>>,
+    pub r#catalog_id: Option<String>,
     /// The key-name for the tag.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// A list of possible values an attribute can take.
     /// 
     /// The following argument is optional:
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

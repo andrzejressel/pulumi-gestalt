@@ -6,9 +6,9 @@ pub struct RuleRetentionPeriod {
     /// The unit of time in which the retention period is measured. Currently, only DAYS is supported.
     #[builder(into)]
     #[serde(rename = "retentionPeriodUnit")]
-    pub r#retention_period_unit: Box<String>,
+    pub r#retention_period_unit: String,
     /// The period value for which the retention rule is to retain resources. The period is measured using the unit specified for RetentionPeriodUnit.
     #[builder(into)]
     #[serde(rename = "retentionPeriodValue")]
-    pub r#retention_period_value: Box<i32>,
+    pub r#retention_period_value: i32,
 }

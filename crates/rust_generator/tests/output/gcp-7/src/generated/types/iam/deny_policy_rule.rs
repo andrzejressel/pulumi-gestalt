@@ -5,11 +5,11 @@
 pub struct DenyPolicyRule {
     /// A deny rule in an IAM deny policy.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "denyRule")]
-    pub r#deny_rule: Box<Option<super::super::types::iam::DenyPolicyRuleDenyRule>>,
+    pub r#deny_rule: Option<Box<super::super::types::iam::DenyPolicyRuleDenyRule>>,
     /// The description of the rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
 }

@@ -6,21 +6,21 @@ pub struct DataSourceRelationalDatabaseConfigHttpEndpointConfig {
     /// AWS secret store ARN for database credentials.
     #[builder(into)]
     #[serde(rename = "awsSecretStoreArn")]
-    pub r#aws_secret_store_arn: Box<String>,
+    pub r#aws_secret_store_arn: String,
     /// Logical database name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<Option<String>>,
+    pub r#database_name: Option<String>,
     /// Amazon RDS cluster identifier.
     #[builder(into)]
     #[serde(rename = "dbClusterIdentifier")]
-    pub r#db_cluster_identifier: Box<String>,
+    pub r#db_cluster_identifier: String,
     /// AWS Region for RDS HTTP endpoint. Defaults to current region.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
     /// Logical schema name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schema")]
-    pub r#schema: Box<Option<String>>,
+    pub r#schema: Option<String>,
 }

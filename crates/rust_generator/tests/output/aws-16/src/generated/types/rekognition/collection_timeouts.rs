@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CollectionTimeouts {
     /// A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "create")]
-    pub r#create: Box<Option<String>>,
+    pub r#create: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializer {
     /// Specifies the native Hive / HCatalog JsonSerDe. More details below. See `hive_json_ser_de` block below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hiveJsonSerDe")]
-    pub r#hive_json_ser_de: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDe>>,
+    pub r#hive_json_ser_de: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerHiveJsonSerDe>>,
     /// Specifies the OpenX SerDe. See `open_x_json_ser_de` block below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "openXJsonSerDe")]
-    pub r#open_x_json_ser_de: Box<Option<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDe>>,
+    pub r#open_x_json_ser_de: Option<Box<super::super::types::kinesis::FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationInputFormatConfigurationDeserializerOpenXJsonSerDe>>,
 }

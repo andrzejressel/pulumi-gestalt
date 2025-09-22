@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceProtocols {
     /// Should HTTP/2 be supported by the API Management Service? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableHttp2")]
-    pub r#enable_http_2: Box<Option<bool>>,
+    pub r#enable_http_2: Option<bool>,
 }

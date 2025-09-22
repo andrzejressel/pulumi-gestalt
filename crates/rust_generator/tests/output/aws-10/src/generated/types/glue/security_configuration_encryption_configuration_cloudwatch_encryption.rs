@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SecurityConfigurationEncryptionConfigurationCloudwatchEncryption {
     /// Encryption mode to use for CloudWatch data. Valid values: `DISABLED`, `SSE-KMS`. Default value: `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudwatchEncryptionMode")]
-    pub r#cloudwatch_encryption_mode: Box<Option<String>>,
+    pub r#cloudwatch_encryption_mode: Option<String>,
     /// Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<Option<String>>,
+    pub r#kms_key_arn: Option<String>,
 }

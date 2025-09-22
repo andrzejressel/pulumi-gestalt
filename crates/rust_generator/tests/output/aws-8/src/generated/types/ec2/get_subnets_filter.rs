@@ -20,10 +20,10 @@ pub struct GetSubnetsFilter {
     /// ```
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Set of values that are accepted for the given field.
     /// Subnet IDs will be selected if any one of the given values match.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

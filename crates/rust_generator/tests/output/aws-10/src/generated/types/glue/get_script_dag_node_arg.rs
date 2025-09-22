@@ -6,13 +6,13 @@ pub struct GetScriptDagNodeArg {
     /// Name of the argument or property.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Boolean if the value is used as a parameter. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "param")]
-    pub r#param: Box<Option<bool>>,
+    pub r#param: Option<bool>,
     /// Value of the argument or property.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

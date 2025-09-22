@@ -5,12 +5,12 @@
 pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsCaptionLanguageMapping {
     #[builder(into)]
     #[serde(rename = "captionChannel")]
-    pub r#caption_channel: Box<i32>,
+    pub r#caption_channel: i32,
     #[builder(into)]
     #[serde(rename = "languageCode")]
-    pub r#language_code: Box<String>,
+    pub r#language_code: String,
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
     #[builder(into)]
     #[serde(rename = "languageDescription")]
-    pub r#language_description: Box<String>,
+    pub r#language_description: String,
 }

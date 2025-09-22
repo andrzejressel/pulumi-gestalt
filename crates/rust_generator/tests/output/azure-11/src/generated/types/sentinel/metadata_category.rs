@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MetadataCategory {
     /// Specifies a list of domains for the solution content item.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domains")]
-    pub r#domains: Box<Option<Vec<String>>>,
+    pub r#domains: Option<Vec<String>>,
     /// Specifies a list of industry verticals for the solution content item.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "verticals")]
-    pub r#verticals: Box<Option<Vec<String>>>,
+    pub r#verticals: Option<Vec<String>>,
 }

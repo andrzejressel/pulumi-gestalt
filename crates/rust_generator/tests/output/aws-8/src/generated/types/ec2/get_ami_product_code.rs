@@ -5,8 +5,8 @@
 pub struct GetAmiProductCode {
     #[builder(into)]
     #[serde(rename = "productCodeId")]
-    pub r#product_code_id: Box<String>,
+    pub r#product_code_id: String,
     #[builder(into)]
     #[serde(rename = "productCodeType")]
-    pub r#product_code_type: Box<String>,
+    pub r#product_code_type: String,
 }

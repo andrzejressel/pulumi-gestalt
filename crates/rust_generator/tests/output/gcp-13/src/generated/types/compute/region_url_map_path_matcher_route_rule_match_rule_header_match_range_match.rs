@@ -6,9 +6,9 @@ pub struct RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatch {
     /// The end of the range (exclusive).
     #[builder(into)]
     #[serde(rename = "rangeEnd")]
-    pub r#range_end: Box<i32>,
+    pub r#range_end: i32,
     /// The start of the range (inclusive).
     #[builder(into)]
     #[serde(rename = "rangeStart")]
-    pub r#range_start: Box<i32>,
+    pub r#range_start: i32,
 }

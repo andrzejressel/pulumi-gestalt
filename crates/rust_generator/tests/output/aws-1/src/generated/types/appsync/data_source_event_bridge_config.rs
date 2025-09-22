@@ -6,5 +6,5 @@ pub struct DataSourceEventBridgeConfig {
     /// ARN for the EventBridge bus.
     #[builder(into)]
     #[serde(rename = "eventBusArn")]
-    pub r#event_bus_arn: Box<String>,
+    pub r#event_bus_arn: String,
 }

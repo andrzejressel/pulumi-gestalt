@@ -6,9 +6,9 @@ pub struct ImageInformationResponse {
     /// Type of the image
     #[builder(into)]
     #[serde(rename = "imageType")]
-    pub r#image_type: Box<String>,
+    pub r#image_type: String,
     /// Url of the image
     #[builder(into)]
     #[serde(rename = "imageUrl")]
-    pub r#image_url: Box<String>,
+    pub r#image_url: String,
 }

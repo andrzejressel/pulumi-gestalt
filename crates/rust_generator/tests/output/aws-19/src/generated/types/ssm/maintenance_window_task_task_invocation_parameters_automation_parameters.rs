@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MaintenanceWindowTaskTaskInvocationParametersAutomationParameters {
     /// The version of an Automation document to use during task execution.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "documentVersion")]
-    pub r#document_version: Box<Option<String>>,
+    pub r#document_version: Option<String>,
     /// The parameters for the RUN_COMMAND task execution. Documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<Vec<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersAutomationParametersParameter>>>,
+    pub r#parameters: Option<Vec<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersAutomationParametersParameter>>,
 }

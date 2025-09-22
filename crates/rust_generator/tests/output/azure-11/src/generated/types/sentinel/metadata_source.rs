@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MetadataSource {
     /// The id of the content source, the solution ID, Log Analytics Workspace name etc.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The kind of the content source. Possible values are `Community`, `LocalWorkspace`, `Solution` and `SourceRepository`.
     #[builder(into)]
     #[serde(rename = "kind")]
-    pub r#kind: Box<String>,
+    pub r#kind: String,
     /// The name of the content source, repo name, solution name, Log Analytics Workspace name, etc.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

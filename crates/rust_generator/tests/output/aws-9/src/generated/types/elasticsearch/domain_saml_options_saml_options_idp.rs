@@ -6,9 +6,9 @@ pub struct DomainSamlOptionsSamlOptionsIdp {
     /// The unique Entity ID of the application in SAML Identity Provider.
     #[builder(into)]
     #[serde(rename = "entityId")]
-    pub r#entity_id: Box<String>,
+    pub r#entity_id: String,
     /// The Metadata of the SAML application in xml format.
     #[builder(into)]
     #[serde(rename = "metadataContent")]
-    pub r#metadata_content: Box<String>,
+    pub r#metadata_content: String,
 }

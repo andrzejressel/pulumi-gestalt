@@ -5,12 +5,12 @@
 pub struct BucketWebsite {
     /// Behaves as the bucket's directory index where
     /// missing objects are treated as potential directories.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mainPageSuffix")]
-    pub r#main_page_suffix: Box<Option<String>>,
+    pub r#main_page_suffix: Option<String>,
     /// The custom object to return when a requested
     /// resource is not found.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notFoundPage")]
-    pub r#not_found_page: Box<Option<String>>,
+    pub r#not_found_page: Option<String>,
 }

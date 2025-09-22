@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AnalysisSourceEntity {
     /// The source template. See source_template.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceTemplate")]
-    pub r#source_template: Box<Option<super::super::types::quicksight::AnalysisSourceEntitySourceTemplate>>,
+    pub r#source_template: Option<Box<super::super::types::quicksight::AnalysisSourceEntitySourceTemplate>>,
 }

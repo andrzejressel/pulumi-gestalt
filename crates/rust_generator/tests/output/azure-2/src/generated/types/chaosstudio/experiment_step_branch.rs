@@ -6,9 +6,9 @@ pub struct ExperimentStepBranch {
     /// One or more `actions` blocks as defined above.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::chaosstudio::ExperimentStepBranchAction>>,
+    pub r#actions: Vec<super::super::types::chaosstudio::ExperimentStepBranchAction>,
     /// The name of the branch.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

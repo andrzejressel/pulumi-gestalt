@@ -20,18 +20,18 @@ pub struct AlertPolicyConditionConditionMonitoringQueryLanguage {
     /// alerted on quickly.
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<String>,
+    pub r#duration: String,
     /// A condition control that determines how
     /// metric-threshold conditions are evaluated when
     /// data stops arriving.
     /// Possible values are: `EVALUATION_MISSING_DATA_INACTIVE`, `EVALUATION_MISSING_DATA_ACTIVE`, `EVALUATION_MISSING_DATA_NO_OP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "evaluationMissingData")]
-    pub r#evaluation_missing_data: Box<Option<String>>,
+    pub r#evaluation_missing_data: Option<String>,
     /// Monitoring Query Language query that outputs a boolean stream.
     #[builder(into)]
     #[serde(rename = "query")]
-    pub r#query: Box<String>,
+    pub r#query: String,
     /// The number/percent of time series for which
     /// the comparison must hold in order for the
     /// condition to trigger. If unspecified, then
@@ -41,7 +41,7 @@ pub struct AlertPolicyConditionConditionMonitoringQueryLanguage {
     /// or by the ratio, if denominator_filter and
     /// denominator_aggregations are specified.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "trigger")]
-    pub r#trigger: Box<Option<super::super::types::monitoring::AlertPolicyConditionConditionMonitoringQueryLanguageTrigger>>,
+    pub r#trigger: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionMonitoringQueryLanguageTrigger>>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ReceiptRuleSnsAction {
     /// The encoding to use for the email within the Amazon SNS notification. Default value is `UTF-8`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encoding")]
-    pub r#encoding: Box<Option<String>>,
+    pub r#encoding: Option<String>,
     /// The position of the action in the receipt rule
     #[builder(into)]
     #[serde(rename = "position")]
-    pub r#position: Box<i32>,
+    pub r#position: i32,
     /// The ARN of an SNS topic to notify
     #[builder(into)]
     #[serde(rename = "topicArn")]
-    pub r#topic_arn: Box<String>,
+    pub r#topic_arn: String,
 }

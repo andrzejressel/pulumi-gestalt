@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceIamBindingCondition {
     /// An optional description of the instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     #[builder(into)]
     #[serde(rename = "expression")]
-    pub r#expression: Box<String>,
+    pub r#expression: String,
     #[builder(into)]
     #[serde(rename = "title")]
-    pub r#title: Box<String>,
+    pub r#title: String,
 }

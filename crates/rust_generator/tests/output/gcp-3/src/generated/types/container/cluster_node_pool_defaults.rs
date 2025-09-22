@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterNodePoolDefaults {
     /// Subset of NodeConfig message that has defaults.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeConfigDefaults")]
-    pub r#node_config_defaults: Box<Option<super::super::types::container::ClusterNodePoolDefaultsNodeConfigDefaults>>,
+    pub r#node_config_defaults: Option<Box<super::super::types::container::ClusterNodePoolDefaultsNodeConfigDefaults>>,
 }

@@ -6,9 +6,9 @@ pub struct GetLbOutboundRuleFrontendIpConfiguration {
     /// The ID of the Frontend IP Configuration.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The name of this Load Balancer Outbound Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

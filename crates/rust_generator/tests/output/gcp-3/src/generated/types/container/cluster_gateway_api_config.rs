@@ -6,5 +6,5 @@ pub struct ClusterGatewayApiConfig {
     /// Which Gateway Api channel should be used. `CHANNEL_DISABLED`, `CHANNEL_EXPERIMENTAL` or `CHANNEL_STANDARD`.
     #[builder(into)]
     #[serde(rename = "channel")]
-    pub r#channel: Box<String>,
+    pub r#channel: String,
 }

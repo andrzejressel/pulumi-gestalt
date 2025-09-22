@@ -5,9 +5,9 @@
 pub struct ClusterLanguageExtension {
     #[builder(into)]
     #[serde(rename = "image")]
-    pub r#image: Box<String>,
+    pub r#image: String,
     /// The name of the Kusto Cluster to create. Only lowercase Alphanumeric characters allowed, starting with a letter. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

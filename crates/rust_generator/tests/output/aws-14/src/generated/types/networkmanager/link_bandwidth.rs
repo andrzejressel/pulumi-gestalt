@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LinkBandwidth {
     /// Download speed in Mbps.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "downloadSpeed")]
-    pub r#download_speed: Box<Option<i32>>,
+    pub r#download_speed: Option<i32>,
     /// Upload speed in Mbps.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uploadSpeed")]
-    pub r#upload_speed: Box<Option<i32>>,
+    pub r#upload_speed: Option<i32>,
 }

@@ -6,9 +6,9 @@ pub struct GetMetastoreServiceScalingConfigAutoscalingConfig {
     /// Defines whether autoscaling is enabled. The default value is false.
     #[builder(into)]
     #[serde(rename = "autoscalingEnabled")]
-    pub r#autoscaling_enabled: Box<bool>,
+    pub r#autoscaling_enabled: bool,
     /// Represents the limit configuration of a metastore service.
     #[builder(into)]
     #[serde(rename = "limitConfigs")]
-    pub r#limit_configs: Box<Vec<super::super::types::dataproc::GetMetastoreServiceScalingConfigAutoscalingConfigLimitConfig>>,
+    pub r#limit_configs: Vec<super::super::types::dataproc::GetMetastoreServiceScalingConfigAutoscalingConfigLimitConfig>,
 }

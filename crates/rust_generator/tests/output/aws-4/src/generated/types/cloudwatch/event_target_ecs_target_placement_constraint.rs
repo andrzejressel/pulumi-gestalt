@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventTargetEcsTargetPlacementConstraint {
     /// Cluster Query Language expression to apply to the constraint. Does not need to be specified for the `distinctInstance` type. For more information, see [Cluster Query Language in the Amazon EC2 Container Service Developer Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expression")]
-    pub r#expression: Box<Option<String>>,
+    pub r#expression: Option<String>,
     /// Type of constraint. The only valid values at this time are `memberOf` and `distinctInstance`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

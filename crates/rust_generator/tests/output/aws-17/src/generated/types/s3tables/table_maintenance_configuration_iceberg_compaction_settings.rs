@@ -7,5 +7,5 @@ pub struct TableMaintenanceConfigurationIcebergCompactionSettings {
     /// Must be between `64` and `512`.
     #[builder(into)]
     #[serde(rename = "targetFileSizeMb")]
-    pub r#target_file_size_mb: Box<f64>,
+    pub r#target_file_size_mb: f64,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionTrustedSignerItem {
     /// AWS account ID or `self`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "awsAccountNumber")]
-    pub r#aws_account_number: Box<Option<String>>,
+    pub r#aws_account_number: Option<String>,
     /// Set of active CloudFront key pairs associated with the signer account
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyPairIds")]
-    pub r#key_pair_ids: Box<Option<Vec<String>>>,
+    pub r#key_pair_ids: Option<Vec<String>>,
 }

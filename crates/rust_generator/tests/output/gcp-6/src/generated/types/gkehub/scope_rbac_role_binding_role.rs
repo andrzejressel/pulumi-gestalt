@@ -7,7 +7,7 @@ pub struct ScopeRbacRoleBindingRole {
     /// Possible values are: `UNKNOWN`, `ADMIN`, `EDIT`, `VIEW`.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "predefinedRole")]
-    pub r#predefined_role: Box<Option<String>>,
+    pub r#predefined_role: Option<String>,
 }

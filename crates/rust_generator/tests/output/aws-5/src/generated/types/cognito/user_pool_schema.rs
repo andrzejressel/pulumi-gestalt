@@ -6,29 +6,29 @@ pub struct UserPoolSchema {
     /// Attribute data type. Must be one of `Boolean`, `Number`, `String`, `DateTime`.
     #[builder(into)]
     #[serde(rename = "attributeDataType")]
-    pub r#attribute_data_type: Box<String>,
+    pub r#attribute_data_type: String,
     /// Whether the attribute type is developer only.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "developerOnlyAttribute")]
-    pub r#developer_only_attribute: Box<Option<bool>>,
+    pub r#developer_only_attribute: Option<bool>,
     /// Whether the attribute can be changed once it has been created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mutable")]
-    pub r#mutable: Box<Option<bool>>,
+    pub r#mutable: Option<bool>,
     /// Name of the attribute.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Configuration block for the constraints for an attribute of the number type. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numberAttributeConstraints")]
-    pub r#number_attribute_constraints: Box<Option<super::super::types::cognito::UserPoolSchemaNumberAttributeConstraints>>,
+    pub r#number_attribute_constraints: Option<Box<super::super::types::cognito::UserPoolSchemaNumberAttributeConstraints>>,
     /// Whether a user pool attribute is required. If the attribute is required and the user does not provide a value, registration or sign-in will fail.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "required")]
-    pub r#required: Box<Option<bool>>,
+    pub r#required: Option<bool>,
     /// Constraints for an attribute of the string type. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stringAttributeConstraints")]
-    pub r#string_attribute_constraints: Box<Option<super::super::types::cognito::UserPoolSchemaStringAttributeConstraints>>,
+    pub r#string_attribute_constraints: Option<Box<super::super::types::cognito::UserPoolSchemaStringAttributeConstraints>>,
 }

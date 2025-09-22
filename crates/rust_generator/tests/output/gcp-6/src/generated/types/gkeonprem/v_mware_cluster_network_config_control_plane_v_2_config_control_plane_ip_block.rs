@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlock {
     /// The network gateway used by the VMware User Cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gateway")]
-    pub r#gateway: Box<Option<String>>,
+    pub r#gateway: Option<String>,
     /// The node's network configurations used by the VMware User Cluster.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ips")]
-    pub r#ips: Box<Option<Vec<super::super::types::gkeonprem::VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp>>>,
+    pub r#ips: Option<Vec<super::super::types::gkeonprem::VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIp>>,
     /// The netmask used by the VMware User Cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "netmask")]
-    pub r#netmask: Box<Option<String>>,
+    pub r#netmask: Option<String>,
 }

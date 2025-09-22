@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyProperties {
     /// A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uniqueKey")]
-    pub r#unique_key: Box<Option<bool>>,
+    pub r#unique_key: Option<bool>,
 }

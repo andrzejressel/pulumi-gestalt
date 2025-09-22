@@ -6,17 +6,17 @@ pub struct CrawlerJdbcTarget {
     /// The name of the connection to use to connect to the JDBC target.
     #[builder(into)]
     #[serde(rename = "connectionName")]
-    pub r#connection_name: Box<String>,
+    pub r#connection_name: String,
     /// Specify a value of `RAWTYPES` or `COMMENTS` to enable additional metadata intable responses. `RAWTYPES` provides the native-level datatype. `COMMENTS` provides comments associated with a column or table in the database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableAdditionalMetadatas")]
-    pub r#enable_additional_metadatas: Box<Option<Vec<String>>>,
+    pub r#enable_additional_metadatas: Option<Vec<String>>,
     /// A list of glob patterns used to exclude from the crawl.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exclusions")]
-    pub r#exclusions: Box<Option<Vec<String>>>,
+    pub r#exclusions: Option<Vec<String>>,
     /// The path of the JDBC target.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

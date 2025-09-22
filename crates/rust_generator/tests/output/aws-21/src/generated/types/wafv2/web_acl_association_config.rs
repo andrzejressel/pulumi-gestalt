@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclAssociationConfig {
     /// Customizes the request body that your protected resource forward to AWS WAF for inspection. See `request_body` below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestBodies")]
-    pub r#request_bodies: Box<Option<Vec<super::super::types::wafv2::WebAclAssociationConfigRequestBody>>>,
+    pub r#request_bodies: Option<Vec<super::super::types::wafv2::WebAclAssociationConfigRequestBody>>,
 }

@@ -6,9 +6,9 @@ pub struct GetContainerRecipeComponent {
     /// ARN of the Image Builder Component.
     #[builder(into)]
     #[serde(rename = "componentArn")]
-    pub r#component_arn: Box<String>,
+    pub r#component_arn: String,
     /// Set of parameters that are used to configure the component.
     #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Vec<super::super::types::imagebuilder::GetContainerRecipeComponentParameter>>,
+    pub r#parameters: Vec<super::super::types::imagebuilder::GetContainerRecipeComponentParameter>,
 }

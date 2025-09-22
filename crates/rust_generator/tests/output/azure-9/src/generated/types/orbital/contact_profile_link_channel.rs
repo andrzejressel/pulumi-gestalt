@@ -6,25 +6,25 @@ pub struct ContactProfileLinkChannel {
     /// Bandwidth in MHz.
     #[builder(into)]
     #[serde(rename = "bandwidthMhz")]
-    pub r#bandwidth_mhz: Box<f64>,
+    pub r#bandwidth_mhz: f64,
     /// Center frequency in MHz.
     #[builder(into)]
     #[serde(rename = "centerFrequencyMhz")]
-    pub r#center_frequency_mhz: Box<f64>,
+    pub r#center_frequency_mhz: f64,
     /// Copy of the modem configuration file such as Kratos QRadio or Kratos QuantumRx. Only valid for downlink directions. If provided, the modem connects to the customer endpoint and sends demodulated data instead of a VITA.49 stream.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "demodulationConfiguration")]
-    pub r#demodulation_configuration: Box<Option<String>>,
+    pub r#demodulation_configuration: Option<String>,
     /// Customer End point to store/retrieve data during a contact. An `end_point` block as defined below.
     #[builder(into)]
     #[serde(rename = "endPoints")]
-    pub r#end_points: Box<Vec<super::super::types::orbital::ContactProfileLinkChannelEndPoint>>,
+    pub r#end_points: Vec<super::super::types::orbital::ContactProfileLinkChannelEndPoint>,
     /// Copy of the modem configuration file such as Kratos QRadio. Only valid for uplink directions. If provided, the modem connects to the customer endpoint and accepts commands from the customer instead of a VITA.49 stream.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "modulationConfiguration")]
-    pub r#modulation_configuration: Box<Option<String>>,
+    pub r#modulation_configuration: Option<String>,
     /// Name of the channel.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

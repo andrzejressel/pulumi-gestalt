@@ -7,10 +7,10 @@ pub struct EdgeCacheServiceRouting {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "hostRules")]
-    pub r#host_rules: Box<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingHostRule>>,
+    pub r#host_rules: Vec<super::super::types::networkservices::EdgeCacheServiceRoutingHostRule>,
     /// The list of pathMatchers referenced via name by hostRules. PathMatcher is used to match the path portion of the URL when a HostRule matches the URL's host portion.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "pathMatchers")]
-    pub r#path_matchers: Box<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcher>>,
+    pub r#path_matchers: Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcher>,
 }

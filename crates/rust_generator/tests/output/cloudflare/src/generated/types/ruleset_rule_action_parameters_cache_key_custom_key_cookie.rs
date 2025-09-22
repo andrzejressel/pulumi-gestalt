@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesetRuleActionParametersCacheKeyCustomKeyCookie {
     /// List of cookies to check for presence in the custom key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "checkPresences")]
-    pub r#check_presences: Box<Option<Vec<String>>>,
+    pub r#check_presences: Option<Vec<String>>,
     /// List of cookies to include in the custom key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includes")]
-    pub r#includes: Box<Option<Vec<String>>>,
+    pub r#includes: Option<Vec<String>>,
 }

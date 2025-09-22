@@ -6,17 +6,17 @@ pub struct CertificateIssuerAdmin {
     /// E-mail address of the admin.
     #[builder(into)]
     #[serde(rename = "emailAddress")]
-    pub r#email_address: Box<String>,
+    pub r#email_address: String,
     /// First name of the admin.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "firstName")]
-    pub r#first_name: Box<Option<String>>,
+    pub r#first_name: Option<String>,
     /// Last name of the admin.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastName")]
-    pub r#last_name: Box<Option<String>>,
+    pub r#last_name: Option<String>,
     /// Phone number of the admin.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "phone")]
-    pub r#phone: Box<Option<String>>,
+    pub r#phone: Option<String>,
 }

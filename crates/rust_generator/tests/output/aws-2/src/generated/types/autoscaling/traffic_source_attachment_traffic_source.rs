@@ -6,7 +6,7 @@ pub struct TrafficSourceAttachmentTrafficSource {
     /// Identifies the traffic source. For Application Load Balancers, Gateway Load Balancers, Network Load Balancers, and VPC Lattice, this will be the Amazon Resource Name (ARN) for a target group in this account and Region. For Classic Load Balancers, this will be the name of the Classic Load Balancer in this account and Region.
     #[builder(into)]
     #[serde(rename = "identifier")]
-    pub r#identifier: Box<String>,
+    pub r#identifier: String,
     /// Provides additional context for the value of `identifier`.
     /// The following lists the valid values:
     /// `elb` if `identifier` is the name of a Classic Load Balancer.
@@ -14,5 +14,5 @@ pub struct TrafficSourceAttachmentTrafficSource {
     /// `vpc-lattice` if `identifier` is the ARN of a VPC Lattice target group.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflake {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucketPrefix")]
-    pub r#bucket_prefix: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#bucket_prefix: Option<String>,
+    #[builder(into)]
     #[serde(rename = "errorHandlingConfig")]
-    pub r#error_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfig>>,
+    pub r#error_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfig>>,
     #[builder(into)]
     #[serde(rename = "intermediateBucketName")]
-    pub r#intermediate_bucket_name: Box<String>,
+    pub r#intermediate_bucket_name: String,
     #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<String>,
+    pub r#object: String,
 }

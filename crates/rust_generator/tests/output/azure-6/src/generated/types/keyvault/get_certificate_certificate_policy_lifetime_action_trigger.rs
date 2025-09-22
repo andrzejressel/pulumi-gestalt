@@ -6,9 +6,9 @@ pub struct GetCertificateCertificatePolicyLifetimeActionTrigger {
     /// The number of days before the Certificate expires that the action associated with this Trigger should run.
     #[builder(into)]
     #[serde(rename = "daysBeforeExpiry")]
-    pub r#days_before_expiry: Box<i32>,
+    pub r#days_before_expiry: i32,
     /// The percentage at which during the Certificates Lifetime the action associated with this Trigger should run.
     #[builder(into)]
     #[serde(rename = "lifetimePercentage")]
-    pub r#lifetime_percentage: Box<i32>,
+    pub r#lifetime_percentage: i32,
 }

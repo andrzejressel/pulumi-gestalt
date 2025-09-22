@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationBackup {
     /// The retention range in days of the backup policy. Defaults to `5`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instantRpRetentionRangeInDays")]
-    pub r#instant_rp_retention_range_in_days: Box<Option<i32>>,
+    pub r#instant_rp_retention_range_in_days: Option<i32>,
     /// The name of the backup policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "policyName")]
-    pub r#policy_name: Box<Option<String>>,
+    pub r#policy_name: Option<String>,
     /// A `retention_policy` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Box<Option<super::super::types::automanage::ConfigurationBackupRetentionPolicy>>,
+    pub r#retention_policy: Option<Box<super::super::types::automanage::ConfigurationBackupRetentionPolicy>>,
     /// A `schedule_policy` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schedulePolicy")]
-    pub r#schedule_policy: Box<Option<super::super::types::automanage::ConfigurationBackupSchedulePolicy>>,
+    pub r#schedule_policy: Option<Box<super::super::types::automanage::ConfigurationBackupSchedulePolicy>>,
     /// The timezone of the backup policy. Defaults to `UTC`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeZone")]
-    pub r#time_zone: Box<Option<String>>,
+    pub r#time_zone: Option<String>,
 }

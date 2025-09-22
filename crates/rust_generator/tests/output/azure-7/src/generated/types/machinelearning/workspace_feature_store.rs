@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkspaceFeatureStore {
     /// The version of Spark runtime.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "computerSparkRuntimeVersion")]
-    pub r#computer_spark_runtime_version: Box<Option<String>>,
+    pub r#computer_spark_runtime_version: Option<String>,
     /// The name of offline store connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "offlineConnectionName")]
-    pub r#offline_connection_name: Box<Option<String>>,
+    pub r#offline_connection_name: Option<String>,
     /// The name of online store connection.
     /// 
     /// > **Note:** `feature_store` must be set when`kind` is `FeatureStore`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "onlineConnectionName")]
-    pub r#online_connection_name: Box<Option<String>>,
+    pub r#online_connection_name: Option<String>,
 }

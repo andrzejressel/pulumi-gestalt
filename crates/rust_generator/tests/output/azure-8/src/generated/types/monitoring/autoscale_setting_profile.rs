@@ -8,19 +8,19 @@ pub struct AutoscaleSettingProfile {
     #[serde(rename = "capacity")]
     pub r#capacity: Box<super::super::types::monitoring::AutoscaleSettingProfileCapacity>,
     /// A `fixed_date` block as defined below. This cannot be specified if a `recurrence` block is specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fixedDate")]
-    pub r#fixed_date: Box<Option<super::super::types::monitoring::AutoscaleSettingProfileFixedDate>>,
+    pub r#fixed_date: Option<Box<super::super::types::monitoring::AutoscaleSettingProfileFixedDate>>,
     /// Specifies the name of the profile.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A `recurrence` block as defined below. This cannot be specified if a `fixed_date` block is specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<Option<super::super::types::monitoring::AutoscaleSettingProfileRecurrence>>,
+    pub r#recurrence: Option<Box<super::super::types::monitoring::AutoscaleSettingProfileRecurrence>>,
     /// One or more (up to 10) `rule` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Option<Vec<super::super::types::monitoring::AutoscaleSettingProfileRule>>>,
+    pub r#rules: Option<Vec<super::super::types::monitoring::AutoscaleSettingProfileRule>>,
 }

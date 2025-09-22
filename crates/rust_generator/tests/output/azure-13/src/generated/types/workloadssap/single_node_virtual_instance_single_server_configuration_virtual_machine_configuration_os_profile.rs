@@ -6,13 +6,13 @@ pub struct SingleNodeVirtualInstanceSingleServerConfigurationVirtualMachineConfi
     /// The name of the administrator account. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "adminUsername")]
-    pub r#admin_username: Box<String>,
+    pub r#admin_username: String,
     /// The SSH public key that is used to authenticate with the Virtual Machine. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "sshPrivateKey")]
-    pub r#ssh_private_key: Box<String>,
+    pub r#ssh_private_key: String,
     /// The SSH private key that is used to authenticate with the Virtual Machine. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "sshPublicKey")]
-    pub r#ssh_public_key: Box<String>,
+    pub r#ssh_public_key: String,
 }

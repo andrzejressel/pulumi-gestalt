@@ -7,10 +7,10 @@ pub struct RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyAbort {
     /// The value must be between 200 and 599 inclusive.
     #[builder(into)]
     #[serde(rename = "httpStatus")]
-    pub r#http_status: Box<i32>,
+    pub r#http_status: i32,
     /// The percentage of traffic (connections/operations/requests) which will be aborted as part of fault injection.
     /// The value must be between 0.0 and 100.0 inclusive.
     #[builder(into)]
     #[serde(rename = "percentage")]
-    pub r#percentage: Box<f64>,
+    pub r#percentage: f64,
 }

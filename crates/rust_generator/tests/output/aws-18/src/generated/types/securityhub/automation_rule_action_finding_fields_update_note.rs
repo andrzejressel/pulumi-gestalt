@@ -6,9 +6,9 @@ pub struct AutomationRuleActionFindingFieldsUpdateNote {
     /// The updated note text.
     #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<String>,
+    pub r#text: String,
     /// The principal that updated the note.
     #[builder(into)]
     #[serde(rename = "updatedBy")]
-    pub r#updated_by: Box<String>,
+    pub r#updated_by: String,
 }

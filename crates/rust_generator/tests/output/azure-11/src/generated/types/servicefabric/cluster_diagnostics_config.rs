@@ -6,21 +6,21 @@ pub struct ClusterDiagnosticsConfig {
     /// The Blob Endpoint of the Storage Account.
     #[builder(into)]
     #[serde(rename = "blobEndpoint")]
-    pub r#blob_endpoint: Box<String>,
+    pub r#blob_endpoint: String,
     /// The protected diagnostics storage key name, such as `StorageAccountKey1`.
     #[builder(into)]
     #[serde(rename = "protectedAccountKeyName")]
-    pub r#protected_account_key_name: Box<String>,
+    pub r#protected_account_key_name: String,
     /// The Queue Endpoint of the Storage Account.
     #[builder(into)]
     #[serde(rename = "queueEndpoint")]
-    pub r#queue_endpoint: Box<String>,
+    pub r#queue_endpoint: String,
     /// The name of the Storage Account where the Diagnostics should be sent to.
     #[builder(into)]
     #[serde(rename = "storageAccountName")]
-    pub r#storage_account_name: Box<String>,
+    pub r#storage_account_name: String,
     /// The Table Endpoint of the Storage Account.
     #[builder(into)]
     #[serde(rename = "tableEndpoint")]
-    pub r#table_endpoint: Box<String>,
+    pub r#table_endpoint: String,
 }

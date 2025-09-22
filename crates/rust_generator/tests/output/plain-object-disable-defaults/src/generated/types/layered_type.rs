@@ -4,25 +4,25 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LayeredType {
     /// The answer to the question
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "answer")]
-    pub r#answer: Box<Option<f64>>,
+    pub r#answer: Option<f64>,
     #[builder(into)]
     #[serde(rename = "other")]
     pub r#other: Box<super::types::HelmReleaseSettings>,
     /// Test how plain types interact
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "plainOther")]
-    pub r#plain_other: Box<Option<super::types::HelmReleaseSettings>>,
+    pub r#plain_other: Option<Box<super::types::HelmReleaseSettings>>,
     /// The question already answered
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "question")]
-    pub r#question: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#question: Option<String>,
+    #[builder(into)]
     #[serde(rename = "recursive")]
-    pub r#recursive: Box<Option<super::types::LayeredType>>,
+    pub r#recursive: Option<Box<super::types::LayeredType>>,
     /// To ask and answer
     #[builder(into)]
     #[serde(rename = "thinker")]
-    pub r#thinker: Box<String>,
+    pub r#thinker: String,
 }

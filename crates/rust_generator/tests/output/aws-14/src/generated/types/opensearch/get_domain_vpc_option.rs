@@ -6,17 +6,17 @@ pub struct GetDomainVpcOption {
     /// Availability zones used by the domain.
     #[builder(into)]
     #[serde(rename = "availabilityZones")]
-    pub r#availability_zones: Box<Vec<String>>,
+    pub r#availability_zones: Vec<String>,
     /// Security groups used by the domain.
     #[builder(into)]
     #[serde(rename = "securityGroupIds")]
-    pub r#security_group_ids: Box<Vec<String>>,
+    pub r#security_group_ids: Vec<String>,
     /// Subnets used by the domain.
     #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Vec<String>>,
+    pub r#subnet_ids: Vec<String>,
     /// VPC used by the domain.
     #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<String>,
+    pub r#vpc_id: String,
 }

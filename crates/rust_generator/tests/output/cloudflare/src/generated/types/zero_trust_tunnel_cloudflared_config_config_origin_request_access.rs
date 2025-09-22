@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZeroTrustTunnelCloudflaredConfigConfigOriginRequestAccess {
     /// Audience tags of the access rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audTags")]
-    pub r#aud_tags: Box<Option<Vec<String>>>,
+    pub r#aud_tags: Option<Vec<String>>,
     /// Whether the access rule is required.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "required")]
-    pub r#required: Box<Option<bool>>,
+    pub r#required: Option<bool>,
     /// Name of the team to which the access rule applies.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "teamName")]
-    pub r#team_name: Box<Option<String>>,
+    pub r#team_name: Option<String>,
 }

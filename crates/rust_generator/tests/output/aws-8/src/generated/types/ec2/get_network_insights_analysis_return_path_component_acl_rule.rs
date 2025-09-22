@@ -5,20 +5,20 @@
 pub struct GetNetworkInsightsAnalysisReturnPathComponentAclRule {
     #[builder(into)]
     #[serde(rename = "cidr")]
-    pub r#cidr: Box<String>,
+    pub r#cidr: String,
     #[builder(into)]
     #[serde(rename = "egress")]
-    pub r#egress: Box<bool>,
+    pub r#egress: bool,
     #[builder(into)]
     #[serde(rename = "portRanges")]
-    pub r#port_ranges: Box<Vec<super::super::types::ec2::GetNetworkInsightsAnalysisReturnPathComponentAclRulePortRange>>,
+    pub r#port_ranges: Vec<super::super::types::ec2::GetNetworkInsightsAnalysisReturnPathComponentAclRulePortRange>,
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     #[builder(into)]
     #[serde(rename = "ruleAction")]
-    pub r#rule_action: Box<String>,
+    pub r#rule_action: String,
     #[builder(into)]
     #[serde(rename = "ruleNumber")]
-    pub r#rule_number: Box<i32>,
+    pub r#rule_number: i32,
 }

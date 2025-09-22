@@ -7,7 +7,7 @@ pub struct OccurenceAttestation {
     /// more signatures. A base64-encoded string.
     #[builder(into)]
     #[serde(rename = "serializedPayload")]
-    pub r#serialized_payload: Box<String>,
+    pub r#serialized_payload: String,
     /// One or more signatures over serializedPayload.
     /// Verifier implementations should consider this attestation
     /// message verified if at least one signature verifies
@@ -16,5 +16,5 @@ pub struct OccurenceAttestation {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "signatures")]
-    pub r#signatures: Box<Vec<super::super::types::containeranalysis::OccurenceAttestationSignature>>,
+    pub r#signatures: Vec<super::super::types::containeranalysis::OccurenceAttestationSignature>,
 }

@@ -5,15 +5,15 @@
 pub struct GetAppTemplateAzureQueueScaleRule {
     #[builder(into)]
     #[serde(rename = "authentications")]
-    pub r#authentications: Box<Vec<super::super::types::containerapp::GetAppTemplateAzureQueueScaleRuleAuthentication>>,
+    pub r#authentications: Vec<super::super::types::containerapp::GetAppTemplateAzureQueueScaleRuleAuthentication>,
     /// The name of the Container App.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "queueLength")]
-    pub r#queue_length: Box<i32>,
+    pub r#queue_length: i32,
     #[builder(into)]
     #[serde(rename = "queueName")]
-    pub r#queue_name: Box<String>,
+    pub r#queue_name: String,
 }

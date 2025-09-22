@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScaleSetPacketCaptureStorageLocation {
     /// A valid local path on the targeting VM. Must include the name of the capture file (*.cap). For Linux virtual machine it must start with `/var/captures`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filePath")]
-    pub r#file_path: Box<Option<String>>,
+    pub r#file_path: Option<String>,
     /// The ID of the storage account to save the packet capture session
     /// 
     /// > **NOTE:** At least one of `file_path` or `storage_account_id` must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageAccountId")]
-    pub r#storage_account_id: Box<Option<String>>,
+    pub r#storage_account_id: Option<String>,
     /// The URI of the storage path where the packet capture sessions are saved to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storagePath")]
-    pub r#storage_path: Box<Option<String>>,
+    pub r#storage_path: Option<String>,
 }

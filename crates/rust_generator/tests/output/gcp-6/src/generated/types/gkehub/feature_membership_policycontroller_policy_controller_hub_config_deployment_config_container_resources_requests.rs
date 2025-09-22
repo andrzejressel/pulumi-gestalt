@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequests {
     /// CPU requirement expressed in Kubernetes resource units.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<Option<String>>,
+    pub r#cpu: Option<String>,
     /// Memory requirement expressed in Kubernetes resource units.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "memory")]
-    pub r#memory: Box<Option<String>>,
+    pub r#memory: Option<String>,
 }

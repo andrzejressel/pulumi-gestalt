@@ -6,9 +6,9 @@ pub struct ApiImportWsdlSelector {
     /// The name of endpoint (port) to import from WSDL.
     #[builder(into)]
     #[serde(rename = "endpointName")]
-    pub r#endpoint_name: Box<String>,
+    pub r#endpoint_name: String,
     /// The name of service to import from WSDL.
     #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<String>,
+    pub r#service_name: String,
 }

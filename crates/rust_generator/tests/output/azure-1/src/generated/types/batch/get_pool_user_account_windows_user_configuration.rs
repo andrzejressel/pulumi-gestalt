@@ -6,5 +6,5 @@ pub struct GetPoolUserAccountWindowsUserConfiguration {
     /// Specifies login mode for the user.
     #[builder(into)]
     #[serde(rename = "loginMode")]
-    pub r#login_mode: Box<String>,
+    pub r#login_mode: String,
 }

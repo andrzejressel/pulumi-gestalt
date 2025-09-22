@@ -10,12 +10,12 @@ pub struct RuleGroupActivatedRule {
     /// Specifies the order in which the rules are evaluated. Rules with a lower value are evaluated before rules with a higher value.
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
     /// The ID of a rule
     #[builder(into)]
     #[serde(rename = "ruleId")]
-    pub r#rule_id: Box<String>,
-    #[builder(into, default)]
+    pub r#rule_id: String,
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

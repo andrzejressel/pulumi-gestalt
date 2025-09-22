@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetVpcConfig {
     /// Identifiers of the security groups for the fleet or image builder.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "securityGroupIds")]
-    pub r#security_group_ids: Box<Option<Vec<String>>>,
+    pub r#security_group_ids: Option<Vec<String>>,
     /// Identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Option<Vec<String>>>,
+    pub r#subnet_ids: Option<Vec<String>>,
 }

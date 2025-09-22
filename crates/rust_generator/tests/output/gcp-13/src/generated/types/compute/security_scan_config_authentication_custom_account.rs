@@ -6,15 +6,15 @@ pub struct SecurityScanConfigAuthenticationCustomAccount {
     /// The login form URL of the website.
     #[builder(into)]
     #[serde(rename = "loginUrl")]
-    pub r#login_url: Box<String>,
+    pub r#login_url: String,
     /// The password of the custom account. The credential is stored encrypted
     /// in GCP.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// The user name of the custom account.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

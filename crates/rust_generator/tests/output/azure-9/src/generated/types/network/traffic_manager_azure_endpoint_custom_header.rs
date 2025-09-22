@@ -6,9 +6,9 @@ pub struct TrafficManagerAzureEndpointCustomHeader {
     /// The name of the custom header.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value of custom header. Applicable for HTTP and HTTPS protocol.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationUrlDispatchRule {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#domain: Option<String>,
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#path: Option<String>,
+    #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<Option<String>>,
+    pub r#service: Option<String>,
 }

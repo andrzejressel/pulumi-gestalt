@@ -5,16 +5,16 @@
 pub struct DatabaseInstanceSettingsLocationPreference {
     /// A GAE application whose zone to remain
     /// in. Must be in the same region as this instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "followGaeApplication")]
-    pub r#follow_gae_application: Box<Option<String>>,
+    pub r#follow_gae_application: Option<String>,
     /// The preferred Compute Engine zone for the secondary/failover.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secondaryZone")]
-    pub r#secondary_zone: Box<Option<String>>,
+    pub r#secondary_zone: Option<String>,
     /// The preferred compute engine
     /// [zone](https://cloud.google.com/compute/docs/zones?hl=en).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<Option<String>>,
+    pub r#zone: Option<String>,
 }

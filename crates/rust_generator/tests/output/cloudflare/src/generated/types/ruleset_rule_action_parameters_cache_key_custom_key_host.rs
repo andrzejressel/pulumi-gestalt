@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesetRuleActionParametersCacheKeyCustomKeyHost {
     /// Resolve hostname to IP address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resolved")]
-    pub r#resolved: Box<Option<bool>>,
+    pub r#resolved: Option<bool>,
 }

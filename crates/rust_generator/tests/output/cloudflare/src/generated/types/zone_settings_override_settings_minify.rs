@@ -5,11 +5,11 @@
 pub struct ZoneSettingsOverrideSettingsMinify {
     #[builder(into)]
     #[serde(rename = "css")]
-    pub r#css: Box<String>,
+    pub r#css: String,
     #[builder(into)]
     #[serde(rename = "html")]
-    pub r#html: Box<String>,
+    pub r#html: String,
     #[builder(into)]
     #[serde(rename = "js")]
-    pub r#js: Box<String>,
+    pub r#js: String,
 }

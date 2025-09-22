@@ -6,7 +6,7 @@ pub struct ClusterStep {
     /// Action to take if the step fails. Valid values: `TERMINATE_JOB_FLOW`, `TERMINATE_CLUSTER`, `CANCEL_AND_WAIT`, and `CONTINUE`
     #[builder(into)]
     #[serde(rename = "actionOnFailure")]
-    pub r#action_on_failure: Box<String>,
+    pub r#action_on_failure: String,
     /// JAR file used for the step. See below.
     #[builder(into)]
     #[serde(rename = "hadoopJarStep")]
@@ -14,5 +14,5 @@ pub struct ClusterStep {
     /// Name of the step.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

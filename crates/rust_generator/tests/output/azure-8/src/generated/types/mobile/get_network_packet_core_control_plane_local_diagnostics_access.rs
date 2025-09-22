@@ -6,9 +6,9 @@ pub struct GetNetworkPacketCoreControlPlaneLocalDiagnosticsAccess {
     /// How to authenticate users who access local diagnostics APIs.
     #[builder(into)]
     #[serde(rename = "authenticationType")]
-    pub r#authentication_type: Box<String>,
+    pub r#authentication_type: String,
     /// The versionless certificate URL used to secure local access to packet core diagnostics over local APIs by the Kubernetes ingress.
     #[builder(into)]
     #[serde(rename = "httpsServerCertificateUrl")]
-    pub r#https_server_certificate_url: Box<String>,
+    pub r#https_server_certificate_url: String,
 }

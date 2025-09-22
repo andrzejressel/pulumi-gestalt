@@ -6,5 +6,5 @@ pub struct CertificateConfigX509ConfigKeyUsageUnknownExtendedKeyUsage {
     /// An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.
     #[builder(into)]
     #[serde(rename = "objectIdPaths")]
-    pub r#object_id_paths: Box<Vec<i32>>,
+    pub r#object_id_paths: Vec<i32>,
 }

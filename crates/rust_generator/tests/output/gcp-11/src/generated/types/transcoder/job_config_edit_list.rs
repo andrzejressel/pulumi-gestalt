@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobConfigEditList {
     /// List of values identifying files that should be used in this atom.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputs")]
-    pub r#inputs: Box<Option<Vec<String>>>,
+    pub r#inputs: Option<Vec<String>>,
     /// A unique key for this atom.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<String>>,
+    pub r#key: Option<String>,
     /// Start time in seconds for the atom, relative to the input file timeline. The default is `0s`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTimeOffset")]
-    pub r#start_time_offset: Box<Option<String>>,
+    pub r#start_time_offset: Option<String>,
 }

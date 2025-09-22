@@ -10,5 +10,5 @@ pub struct MlTransformParameters {
     /// The type of machine learning transform. For information about the types of machine learning transforms, see [Creating Machine Learning Transforms](http://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html).
     #[builder(into)]
     #[serde(rename = "transformType")]
-    pub r#transform_type: Box<String>,
+    pub r#transform_type: String,
 }

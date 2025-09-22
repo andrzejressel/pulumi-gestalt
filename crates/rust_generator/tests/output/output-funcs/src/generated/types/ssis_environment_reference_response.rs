@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SsisEnvironmentReferenceResponse {
     /// Environment folder name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "environmentFolderName")]
-    pub r#environment_folder_name: Box<Option<String>>,
+    pub r#environment_folder_name: Option<String>,
     /// Environment name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "environmentName")]
-    pub r#environment_name: Box<Option<String>>,
+    pub r#environment_name: Option<String>,
     /// Environment reference id.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<f64>>,
+    pub r#id: Option<f64>,
     /// Reference type
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "referenceType")]
-    pub r#reference_type: Box<Option<String>>,
+    pub r#reference_type: Option<String>,
 }

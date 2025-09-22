@@ -6,9 +6,9 @@ pub struct FirewallPolicyRuleCollectionGroupApplicationRuleCollectionRuleProtoco
     /// Port number of the protocol. Range is 0-64000.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     /// Protocol type. Possible values are `Http` and `Https`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

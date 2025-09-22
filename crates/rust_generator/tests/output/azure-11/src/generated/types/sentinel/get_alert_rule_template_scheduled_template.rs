@@ -6,33 +6,33 @@ pub struct GetAlertRuleTemplateScheduledTemplate {
     /// The description of this Sentinel Scheduled Alert Rule Template.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// The query of this Sentinel Scheduled Alert Rule Template.
     #[builder(into)]
     #[serde(rename = "query")]
-    pub r#query: Box<String>,
+    pub r#query: String,
     /// The ISO 8601 timespan duration between two consecutive queries.
     #[builder(into)]
     #[serde(rename = "queryFrequency")]
-    pub r#query_frequency: Box<String>,
+    pub r#query_frequency: String,
     /// The ISO 8601 timespan duration, which determine the time period of the data covered by the query.
     #[builder(into)]
     #[serde(rename = "queryPeriod")]
-    pub r#query_period: Box<String>,
+    pub r#query_period: String,
     /// The alert severity of this Sentinel Scheduled Alert Rule Template.
     #[builder(into)]
     #[serde(rename = "severity")]
-    pub r#severity: Box<String>,
+    pub r#severity: String,
     /// A list of categories of attacks by which to classify the rule.
     #[builder(into)]
     #[serde(rename = "tactics")]
-    pub r#tactics: Box<Vec<String>>,
+    pub r#tactics: Vec<String>,
     /// The alert trigger operator, combined with `trigger_threshold`, setting alert threshold of this Sentinel Scheduled Alert Rule Template.
     #[builder(into)]
     #[serde(rename = "triggerOperator")]
-    pub r#trigger_operator: Box<String>,
+    pub r#trigger_operator: String,
     /// The baseline number of query results generated, combined with `trigger_operator`, setting alert threshold of this Sentinel Scheduled Alert Rule Template.
     #[builder(into)]
     #[serde(rename = "triggerThreshold")]
-    pub r#trigger_threshold: Box<i32>,
+    pub r#trigger_threshold: i32,
 }

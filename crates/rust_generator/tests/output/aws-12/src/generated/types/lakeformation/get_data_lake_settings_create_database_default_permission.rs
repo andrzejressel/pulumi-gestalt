@@ -6,9 +6,9 @@ pub struct GetDataLakeSettingsCreateDatabaseDefaultPermission {
     /// List of permissions granted to the principal.
     #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<Vec<String>>,
+    pub r#permissions: Vec<String>,
     /// Principal who is granted permissions.
     #[builder(into)]
     #[serde(rename = "principal")]
-    pub r#principal: Box<String>,
+    pub r#principal: String,
 }

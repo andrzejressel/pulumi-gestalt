@@ -6,21 +6,21 @@ pub struct GetConfigurationWindow {
     /// The duration of the maintenance window.
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<String>,
+    pub r#duration: String,
     /// Effective expiration date of the maintenance window.
     #[builder(into)]
     #[serde(rename = "expirationDateTime")]
-    pub r#expiration_date_time: Box<String>,
+    pub r#expiration_date_time: String,
     /// The rate at which a maintenance window is expected to recur.
     #[builder(into)]
     #[serde(rename = "recurEvery")]
-    pub r#recur_every: Box<String>,
+    pub r#recur_every: String,
     /// Effective start date of the maintenance window.
     #[builder(into)]
     #[serde(rename = "startDateTime")]
-    pub r#start_date_time: Box<String>,
+    pub r#start_date_time: String,
     /// The time zone for the maintenance window.
     #[builder(into)]
     #[serde(rename = "timeZone")]
-    pub r#time_zone: Box<String>,
+    pub r#time_zone: String,
 }

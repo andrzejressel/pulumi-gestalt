@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointSseSpecification {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customerManagedKeyEnabled")]
-    pub r#customer_managed_key_enabled: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#customer_managed_key_enabled: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<Option<String>>,
+    pub r#kms_key_arn: Option<String>,
 }

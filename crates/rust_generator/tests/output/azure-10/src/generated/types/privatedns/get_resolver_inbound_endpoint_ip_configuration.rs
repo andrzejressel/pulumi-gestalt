@@ -6,13 +6,13 @@ pub struct GetResolverInboundEndpointIpConfiguration {
     /// The private IP address of the IP configuration.
     #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<String>,
+    pub r#private_ip_address: String,
     /// The private IP address allocation method.
     #[builder(into)]
     #[serde(rename = "privateIpAllocationMethod")]
-    pub r#private_ip_allocation_method: Box<String>,
+    pub r#private_ip_allocation_method: String,
     /// The subnet ID of the IP configuration.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

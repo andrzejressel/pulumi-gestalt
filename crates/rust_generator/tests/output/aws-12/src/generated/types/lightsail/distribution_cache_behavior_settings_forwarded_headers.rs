@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionCacheBehaviorSettingsForwardedHeaders {
     /// The specific headers to forward to your distribution's origin.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headersAllowLists")]
-    pub r#headers_allow_lists: Box<Option<Vec<String>>>,
+    pub r#headers_allow_lists: Option<Vec<String>>,
     /// The headers that you want your distribution to forward to your origin and base caching on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "option")]
-    pub r#option: Box<Option<String>>,
+    pub r#option: Option<String>,
 }

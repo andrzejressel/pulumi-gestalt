@@ -6,13 +6,13 @@ pub struct UsagePlanApiStage {
     /// API Id of the associated API stage in a usage plan.
     #[builder(into)]
     #[serde(rename = "apiId")]
-    pub r#api_id: Box<String>,
+    pub r#api_id: String,
     /// API stage name of the associated API stage in a usage plan.
     #[builder(into)]
     #[serde(rename = "stage")]
-    pub r#stage: Box<String>,
+    pub r#stage: String,
     /// The throttling limits of the usage plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "throttles")]
-    pub r#throttles: Box<Option<Vec<super::super::types::apigateway::UsagePlanApiStageThrottle>>>,
+    pub r#throttles: Option<Vec<super::super::types::apigateway::UsagePlanApiStageThrottle>>,
 }

@@ -6,9 +6,9 @@ pub struct GetEncryptionIdentity {
     /// The User Assigned Identity ID that is assigned to this Load Test Encryption.
     #[builder(into)]
     #[serde(rename = "identityId")]
-    pub r#identity_id: Box<String>,
+    pub r#identity_id: String,
     /// Type of Managed Service Identity that is assigned to this Load Test Encryption.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

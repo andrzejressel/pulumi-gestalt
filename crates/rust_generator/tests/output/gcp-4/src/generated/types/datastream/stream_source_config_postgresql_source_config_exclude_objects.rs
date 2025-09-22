@@ -7,5 +7,5 @@ pub struct StreamSourceConfigPostgresqlSourceConfigExcludeObjects {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "postgresqlSchemas")]
-    pub r#postgresql_schemas: Box<Vec<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema>>,
+    pub r#postgresql_schemas: Vec<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchema>,
 }

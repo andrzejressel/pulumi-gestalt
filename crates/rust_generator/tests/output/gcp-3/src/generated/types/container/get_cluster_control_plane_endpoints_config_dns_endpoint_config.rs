@@ -6,9 +6,9 @@ pub struct GetClusterControlPlaneEndpointsConfigDnsEndpointConfig {
     /// Controls whether user traffic is allowed over this endpoint. Note that GCP-managed services may still use the endpoint even if this is false.
     #[builder(into)]
     #[serde(rename = "allowExternalTraffic")]
-    pub r#allow_external_traffic: Box<bool>,
+    pub r#allow_external_traffic: bool,
     /// The cluster's DNS endpoint.
     #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<String>,
+    pub r#endpoint: String,
 }

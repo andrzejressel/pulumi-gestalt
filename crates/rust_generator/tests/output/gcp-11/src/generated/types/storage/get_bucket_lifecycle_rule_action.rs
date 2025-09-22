@@ -6,9 +6,9 @@ pub struct GetBucketLifecycleRuleAction {
     /// The target Storage Class of objects affected by this Lifecycle Rule. Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE.
     #[builder(into)]
     #[serde(rename = "storageClass")]
-    pub r#storage_class: Box<String>,
+    pub r#storage_class: String,
     /// The type of the action of this Lifecycle Rule. Supported values include: Delete, SetStorageClass and AbortIncompleteMultipartUpload.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

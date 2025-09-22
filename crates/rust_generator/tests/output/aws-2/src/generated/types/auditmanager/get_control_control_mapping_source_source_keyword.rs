@@ -5,8 +5,8 @@
 pub struct GetControlControlMappingSourceSourceKeyword {
     #[builder(into)]
     #[serde(rename = "keywordInputType")]
-    pub r#keyword_input_type: Box<String>,
+    pub r#keyword_input_type: String,
     #[builder(into)]
     #[serde(rename = "keywordValue")]
-    pub r#keyword_value: Box<String>,
+    pub r#keyword_value: String,
 }

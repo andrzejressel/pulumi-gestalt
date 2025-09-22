@@ -5,7 +5,7 @@
 pub struct AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParams {
     /// A list of parameter map entries.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "entries")]
-    pub r#entries: Box<Option<Vec<super::super::types::applicationintegration::AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntry>>>,
+    pub r#entries: Option<Vec<super::super::types::applicationintegration::AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntry>>,
 }

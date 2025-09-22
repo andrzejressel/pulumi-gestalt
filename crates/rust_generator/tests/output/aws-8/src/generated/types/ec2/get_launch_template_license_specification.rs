@@ -5,5 +5,5 @@
 pub struct GetLaunchTemplateLicenseSpecification {
     #[builder(into)]
     #[serde(rename = "licenseConfigurationArn")]
-    pub r#license_configuration_arn: Box<String>,
+    pub r#license_configuration_arn: String,
 }

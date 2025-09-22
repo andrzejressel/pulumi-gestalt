@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RuleGroupRuleActionCount {
     /// Defines custom handling for the web request. See Custom Request Handling below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customRequestHandling")]
-    pub r#custom_request_handling: Box<Option<super::super::types::wafv2::RuleGroupRuleActionCountCustomRequestHandling>>,
+    pub r#custom_request_handling: Option<Box<super::super::types::wafv2::RuleGroupRuleActionCountCustomRequestHandling>>,
 }

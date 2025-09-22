@@ -6,13 +6,13 @@ pub struct GetBackendAddressPoolBackendAddressInboundNatRulePortMapping {
     /// The Backend Port of the Load Balancing Inbound NAT Rules associated with this Backend Address Pool Address.
     #[builder(into)]
     #[serde(rename = "backendPort")]
-    pub r#backend_port: Box<i32>,
+    pub r#backend_port: i32,
     /// The Frontend Port of the Load Balancing Inbound NAT Rules associated with this Backend Address Pool Address.
     #[builder(into)]
     #[serde(rename = "frontendPort")]
-    pub r#frontend_port: Box<i32>,
+    pub r#frontend_port: i32,
     /// The name of the Load Balancing Inbound NAT Rules associated with this Backend Address Pool Address.
     #[builder(into)]
     #[serde(rename = "inboundNatRuleName")]
-    pub r#inbound_nat_rule_name: Box<String>,
+    pub r#inbound_nat_rule_name: String,
 }

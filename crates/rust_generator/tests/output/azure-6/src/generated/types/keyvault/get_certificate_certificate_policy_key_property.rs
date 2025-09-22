@@ -5,21 +5,21 @@
 pub struct GetCertificateCertificatePolicyKeyProperty {
     #[builder(into)]
     #[serde(rename = "curve")]
-    pub r#curve: Box<String>,
+    pub r#curve: String,
     /// Is this Certificate Exportable?
     #[builder(into)]
     #[serde(rename = "exportable")]
-    pub r#exportable: Box<bool>,
+    pub r#exportable: bool,
     /// The size of the Key used in the Certificate.
     #[builder(into)]
     #[serde(rename = "keySize")]
-    pub r#key_size: Box<i32>,
+    pub r#key_size: i32,
     /// Specifies the Type of Key, for example `RSA`.
     #[builder(into)]
     #[serde(rename = "keyType")]
-    pub r#key_type: Box<String>,
+    pub r#key_type: String,
     /// Is the key reusable?
     #[builder(into)]
     #[serde(rename = "reuseKey")]
-    pub r#reuse_key: Box<bool>,
+    pub r#reuse_key: bool,
 }

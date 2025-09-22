@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventSourcesConfigEventSource {
     /// Stores whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler. See `amazon_code_guru_profiler` below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "amazonCodeGuruProfilers")]
-    pub r#amazon_code_guru_profilers: Box<Option<Vec<super::super::types::devopsguru::EventSourcesConfigEventSourceAmazonCodeGuruProfiler>>>,
+    pub r#amazon_code_guru_profilers: Option<Vec<super::super::types::devopsguru::EventSourcesConfigEventSourceAmazonCodeGuruProfiler>>,
 }

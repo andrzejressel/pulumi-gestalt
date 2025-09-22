@@ -6,9 +6,9 @@ pub struct GetMxRecordRecord {
     /// The mail server responsible for the domain covered by the MX record.
     #[builder(into)]
     #[serde(rename = "exchange")]
-    pub r#exchange: Box<String>,
+    pub r#exchange: String,
     /// String representing the "preference” value of the MX records. Records with lower preference value take priority.
     #[builder(into)]
     #[serde(rename = "preference")]
-    pub r#preference: Box<String>,
+    pub r#preference: String,
 }

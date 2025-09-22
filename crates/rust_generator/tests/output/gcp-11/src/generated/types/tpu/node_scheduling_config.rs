@@ -6,5 +6,5 @@ pub struct NodeSchedulingConfig {
     /// Defines whether the TPU instance is preemptible.
     #[builder(into)]
     #[serde(rename = "preemptible")]
-    pub r#preemptible: Box<bool>,
+    pub r#preemptible: bool,
 }

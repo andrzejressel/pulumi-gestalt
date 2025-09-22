@@ -5,11 +5,11 @@
 pub struct GetProfilingGroupProfilingStatus {
     #[builder(into)]
     #[serde(rename = "latestAgentOrchestratedAt")]
-    pub r#latest_agent_orchestrated_at: Box<String>,
+    pub r#latest_agent_orchestrated_at: String,
     #[builder(into)]
     #[serde(rename = "latestAgentProfileReportedAt")]
-    pub r#latest_agent_profile_reported_at: Box<String>,
+    pub r#latest_agent_profile_reported_at: String,
     #[builder(into)]
     #[serde(rename = "latestAggregatedProfiles")]
-    pub r#latest_aggregated_profiles: Box<Vec<super::super::types::codeguruprofiler::GetProfilingGroupProfilingStatusLatestAggregatedProfile>>,
+    pub r#latest_aggregated_profiles: Vec<super::super::types::codeguruprofiler::GetProfilingGroupProfilingStatusLatestAggregatedProfile>,
 }

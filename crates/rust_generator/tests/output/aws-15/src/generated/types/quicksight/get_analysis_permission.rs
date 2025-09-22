@@ -5,8 +5,8 @@
 pub struct GetAnalysisPermission {
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<String>>,
+    pub r#actions: Vec<String>,
     #[builder(into)]
     #[serde(rename = "principal")]
-    pub r#principal: Box<String>,
+    pub r#principal: String,
 }

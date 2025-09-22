@@ -6,8 +6,8 @@ pub struct GetAppTemplateTcpScaleRuleAuthentication {
     /// The name of the secret that contains the value for this environment variable.
     #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<String>,
+    pub r#secret_name: String,
     #[builder(into)]
     #[serde(rename = "triggerParameter")]
-    pub r#trigger_parameter: Box<String>,
+    pub r#trigger_parameter: String,
 }

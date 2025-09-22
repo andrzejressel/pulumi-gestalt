@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RuleGroupRuleGroupReferenceSets {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipSetReferences")]
-    pub r#ip_set_references: Box<Option<Vec<super::super::types::networkfirewall::RuleGroupRuleGroupReferenceSetsIpSetReference>>>,
+    pub r#ip_set_references: Option<Vec<super::super::types::networkfirewall::RuleGroupRuleGroupReferenceSetsIpSetReference>>,
 }

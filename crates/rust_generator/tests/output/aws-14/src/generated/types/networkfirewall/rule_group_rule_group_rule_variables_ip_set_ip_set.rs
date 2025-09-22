@@ -6,5 +6,5 @@ pub struct RuleGroupRuleGroupRuleVariablesIpSetIpSet {
     /// Set of IP addresses and address ranges, in CIDR notation.
     #[builder(into)]
     #[serde(rename = "definitions")]
-    pub r#definitions: Box<Vec<String>>,
+    pub r#definitions: Vec<String>,
 }

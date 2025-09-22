@@ -6,9 +6,9 @@ pub struct GetMachineTypesMachineTypeAccelerator {
     /// Number of accelerator cards exposed to the guest.
     #[builder(into)]
     #[serde(rename = "guestAcceleratorCount")]
-    pub r#guest_accelerator_count: Box<i32>,
+    pub r#guest_accelerator_count: i32,
     /// The accelerator type resource name, not a full URL, e.g. `nvidia-tesla-t4`.
     #[builder(into)]
     #[serde(rename = "guestAcceleratorType")]
-    pub r#guest_accelerator_type: Box<String>,
+    pub r#guest_accelerator_type: String,
 }

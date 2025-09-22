@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TopicRuleErrorActionIotAnalytics {
     /// The payload that contains a JSON array of records will be sent to IoT Analytics via a batch call.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "batchMode")]
-    pub r#batch_mode: Box<Option<bool>>,
+    pub r#batch_mode: Option<bool>,
     /// Name of AWS IOT Analytics channel.
     #[builder(into)]
     #[serde(rename = "channelName")]
-    pub r#channel_name: Box<String>,
+    pub r#channel_name: String,
     /// The ARN of the IAM role that grants access.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
 }

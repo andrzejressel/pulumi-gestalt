@@ -14,5 +14,5 @@ pub struct ThreeTierVirtualInstanceThreeTierConfigurationDatabaseServerConfigura
     /// The size of the Virtual Machine. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "virtualMachineSize")]
-    pub r#virtual_machine_size: Box<String>,
+    pub r#virtual_machine_size: String,
 }

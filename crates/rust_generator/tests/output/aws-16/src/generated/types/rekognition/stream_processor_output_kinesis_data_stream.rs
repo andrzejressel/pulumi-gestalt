@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StreamProcessorOutputKinesisDataStream {
     /// ARN of the output Amazon Kinesis Data Streams stream.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<Option<String>>,
+    pub r#arn: Option<String>,
 }

@@ -6,5 +6,5 @@ pub struct UptimeCheckConfigSyntheticMonitorCloudFunctionV2 {
     /// A unique resource name for this UptimeCheckConfig. The format is `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

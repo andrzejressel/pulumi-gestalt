@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterClientAuthentication {
     /// Configuration block for specifying SASL client authentication. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sasl")]
-    pub r#sasl: Box<Option<super::super::types::msk::ClusterClientAuthenticationSasl>>,
+    pub r#sasl: Option<Box<super::super::types::msk::ClusterClientAuthenticationSasl>>,
     /// Configuration block for specifying TLS client authentication. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Box<Option<super::super::types::msk::ClusterClientAuthenticationTls>>,
+    pub r#tls: Option<Box<super::super::types::msk::ClusterClientAuthenticationTls>>,
     /// Enables unauthenticated access.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unauthenticated")]
-    pub r#unauthenticated: Box<Option<bool>>,
+    pub r#unauthenticated: Option<bool>,
 }

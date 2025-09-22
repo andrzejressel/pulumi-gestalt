@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnterpriseKeyTestingOptions {
     /// For challenge-based keys only (CHECKBOX, INVISIBLE), all challenge requests for this site will return nocaptcha if NOCAPTCHA, or an unsolvable challenge if UNSOLVABLE_CHALLENGE. Possible values: TESTING_CHALLENGE_UNSPECIFIED, NOCAPTCHA, UNSOLVABLE_CHALLENGE
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "testingChallenge")]
-    pub r#testing_challenge: Box<Option<String>>,
+    pub r#testing_challenge: Option<String>,
     /// All assessments for this Key will return this score. Must be between 0 (likely not legitimate) and 1 (likely legitimate) inclusive.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "testingScore")]
-    pub r#testing_score: Box<Option<f64>>,
+    pub r#testing_score: Option<f64>,
 }

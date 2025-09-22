@@ -7,9 +7,9 @@ pub struct TcpRouteRuleMatch {
     /// By default, the prefix length is 32 (i.e. matches a single IP address). Only IPV4 addresses are supported. Examples: "10.0.0.1" - matches against this exact IP address. "10.0.0.0/8" - matches against any IP address within the 10.0.0.0 subnet and 255.255.255.0 mask. "0.0.0.0/0" - matches against any IP address'.
     #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<String>,
+    pub r#address: String,
     /// Specifies the destination port to match against.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<String>,
+    pub r#port: String,
 }

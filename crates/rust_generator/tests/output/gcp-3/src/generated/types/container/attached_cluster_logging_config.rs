@@ -5,7 +5,7 @@
 pub struct AttachedClusterLoggingConfig {
     /// The configuration of the logging components
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "componentConfig")]
-    pub r#component_config: Box<Option<super::super::types::container::AttachedClusterLoggingConfigComponentConfig>>,
+    pub r#component_config: Option<Box<super::super::types::container::AttachedClusterLoggingConfigComponentConfig>>,
 }

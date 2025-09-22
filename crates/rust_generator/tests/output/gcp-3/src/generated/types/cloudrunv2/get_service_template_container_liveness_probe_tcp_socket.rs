@@ -8,5 +8,5 @@ pub struct GetServiceTemplateContainerLivenessProbeTcpSocket {
     /// is the value of container.ports[0].containerPort.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

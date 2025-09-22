@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SecurityPolicyRuleRateLimitOptionsRateLimitThreshold {
     /// Number of HTTP(S) requests for calculating the threshold.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<Option<i32>>,
+    pub r#count: Option<i32>,
     /// Interval over which the threshold is computed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "intervalSec")]
-    pub r#interval_sec: Box<Option<i32>>,
+    pub r#interval_sec: Option<i32>,
 }

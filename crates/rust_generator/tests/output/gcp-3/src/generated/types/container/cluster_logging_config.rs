@@ -7,5 +7,5 @@ pub struct ClusterLoggingConfig {
     /// `SYSTEM_COMPONENTS`, `APISERVER`, `CONTROLLER_MANAGER`, `SCHEDULER`, and `WORKLOADS`.
     #[builder(into)]
     #[serde(rename = "enableComponents")]
-    pub r#enable_components: Box<Vec<String>>,
+    pub r#enable_components: Vec<String>,
 }

@@ -6,5 +6,5 @@ pub struct ClusterNodePoolDefaultsNodeConfigDefaultsGcfsConfig {
     /// Whether or not the Google Container Filesystem (GCFS) is enabled
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

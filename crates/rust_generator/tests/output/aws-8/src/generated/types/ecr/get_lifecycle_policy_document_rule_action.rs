@@ -6,5 +6,5 @@ pub struct GetLifecyclePolicyDocumentRuleAction {
     /// The supported value is `expire`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

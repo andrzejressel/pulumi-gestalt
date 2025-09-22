@@ -6,9 +6,9 @@ pub struct RecommendationPreferencesUtilizationPreferenceMetricParameters {
     /// The headroom value in percentage used for the specified metric parameter. Valid values: `PERCENT_30`, `PERCENT_20`, `PERCENT_10`, `PERCENT_0`.
     #[builder(into)]
     #[serde(rename = "headroom")]
-    pub r#headroom: Box<String>,
+    pub r#headroom: String,
     /// The threshold value used for the specified metric parameter. You can only specify the threshold value for CPU utilization. Valid values: `P90`, `P95`, `P99_5`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "threshold")]
-    pub r#threshold: Box<Option<String>>,
+    pub r#threshold: Option<String>,
 }

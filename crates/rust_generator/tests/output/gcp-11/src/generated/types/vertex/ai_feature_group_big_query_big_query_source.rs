@@ -6,5 +6,5 @@ pub struct AiFeatureGroupBigQueryBigQuerySource {
     /// BigQuery URI to a table, up to 2000 characters long. For example: `bq://projectId.bqDatasetId.bqTableId.`
     #[builder(into)]
     #[serde(rename = "inputUri")]
-    pub r#input_uri: Box<String>,
+    pub r#input_uri: String,
 }

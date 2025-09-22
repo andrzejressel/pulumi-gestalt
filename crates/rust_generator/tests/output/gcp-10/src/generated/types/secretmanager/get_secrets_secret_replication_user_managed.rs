@@ -7,5 +7,5 @@ pub struct GetSecretsSecretReplicationUserManaged {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "replicas")]
-    pub r#replicas: Box<Vec<super::super::types::secretmanager::GetSecretsSecretReplicationUserManagedReplica>>,
+    pub r#replicas: Vec<super::super::types::secretmanager::GetSecretsSecretReplicationUserManagedReplica>,
 }

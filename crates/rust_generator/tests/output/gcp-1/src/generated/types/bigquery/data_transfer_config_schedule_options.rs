@@ -8,22 +8,22 @@ pub struct DataTransferConfigScheduleOptions {
     /// basis using transferConfigs.startManualRuns API. When automatic
     /// scheduling is disabled, the TransferConfig.schedule field will
     /// be ignored.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disableAutoScheduling")]
-    pub r#disable_auto_scheduling: Box<Option<bool>>,
+    pub r#disable_auto_scheduling: Option<bool>,
     /// Defines time to stop scheduling transfer runs. A transfer run cannot be
     /// scheduled at or after the end time. The end time can be changed at any
     /// moment. The time when a data transfer can be triggered manually is not
     /// limited by this option.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<Option<String>>,
+    pub r#end_time: Option<String>,
     /// Specifies time to start scheduling transfer runs. The first run will be
     /// scheduled at or after the start time according to a recurrence pattern
     /// defined in the schedule string. The start time can be changed at any
     /// moment. The time when a data transfer can be triggered manually is not
     /// limited by this option.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
 }

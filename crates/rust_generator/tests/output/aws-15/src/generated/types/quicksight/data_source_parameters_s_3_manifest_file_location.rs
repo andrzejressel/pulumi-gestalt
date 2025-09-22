@@ -6,9 +6,9 @@ pub struct DataSourceParametersS3ManifestFileLocation {
     /// The name of the bucket that contains the manifest file.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// The key of the manifest file within the bucket.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
 }

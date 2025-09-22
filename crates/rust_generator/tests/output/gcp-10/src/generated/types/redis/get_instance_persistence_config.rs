@@ -9,14 +9,14 @@ pub struct GetInstancePersistenceConfig {
     /// - RDB: RDB based Persistence is enabled. Possible values: ["DISABLED", "RDB"]
     #[builder(into)]
     #[serde(rename = "persistenceMode")]
-    pub r#persistence_mode: Box<String>,
+    pub r#persistence_mode: String,
     /// Output only. The next time that a snapshot attempt is scheduled to occur.
     /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up
     /// to nine fractional digits.
     /// Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
     #[serde(rename = "rdbNextSnapshotTime")]
-    pub r#rdb_next_snapshot_time: Box<String>,
+    pub r#rdb_next_snapshot_time: String,
     /// Optional. Available snapshot periods for scheduling.
     /// 
     /// - ONE_HOUR:	Snapshot every 1 hour.
@@ -25,7 +25,7 @@ pub struct GetInstancePersistenceConfig {
     /// - TWENTY_FOUR_HOURS:	Snapshot every 24 hours. Possible values: ["ONE_HOUR", "SIX_HOURS", "TWELVE_HOURS", "TWENTY_FOUR_HOURS"]
     #[builder(into)]
     #[serde(rename = "rdbSnapshotPeriod")]
-    pub r#rdb_snapshot_period: Box<String>,
+    pub r#rdb_snapshot_period: String,
     /// Optional. Date and time that the first snapshot was/will be attempted,
     /// and to which future snapshots will be aligned. If not provided,
     /// the current time will be used.
@@ -34,5 +34,5 @@ pub struct GetInstancePersistenceConfig {
     /// Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
     #[serde(rename = "rdbSnapshotStartTime")]
-    pub r#rdb_snapshot_start_time: Box<String>,
+    pub r#rdb_snapshot_start_time: String,
 }

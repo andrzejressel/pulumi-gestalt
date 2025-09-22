@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BotAssociationLexBot {
     /// The Region that the Amazon Lex (V1) bot was created in. Defaults to current region.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lexRegion")]
-    pub r#lex_region: Box<Option<String>>,
+    pub r#lex_region: Option<String>,
     /// The name of the Amazon Lex (V1) bot.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

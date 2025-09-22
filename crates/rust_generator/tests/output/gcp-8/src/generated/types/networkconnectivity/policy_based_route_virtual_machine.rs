@@ -6,5 +6,5 @@ pub struct PolicyBasedRouteVirtualMachine {
     /// A list of VM instance tags that this policy-based route applies to. VM instances that have ANY of tags specified here will install this PBR.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Vec<String>>,
+    pub r#tags: Vec<String>,
 }

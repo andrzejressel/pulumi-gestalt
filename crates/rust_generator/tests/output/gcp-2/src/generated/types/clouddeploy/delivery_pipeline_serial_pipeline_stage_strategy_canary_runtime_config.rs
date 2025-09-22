@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfig {
     /// Cloud Run runtime configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudRun")]
-    pub r#cloud_run: Box<Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun>>,
+    pub r#cloud_run: Option<Box<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRun>>,
     /// Kubernetes runtime configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kubernetes")]
-    pub r#kubernetes: Box<Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetes>>,
+    pub r#kubernetes: Option<Box<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetes>>,
 }

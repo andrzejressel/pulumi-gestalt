@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AuthConfigDecryptedCredentialOauth2ClientCredentialsTokenParamsEntryKeyLiteralValue {
     /// String.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stringValue")]
-    pub r#string_value: Box<Option<String>>,
+    pub r#string_value: Option<String>,
 }

@@ -6,5 +6,5 @@ pub struct SpaceOwnershipSettings {
     /// The user profile who is the owner of the private space.
     #[builder(into)]
     #[serde(rename = "ownerUserProfileName")]
-    pub r#owner_user_profile_name: Box<String>,
+    pub r#owner_user_profile_name: String,
 }

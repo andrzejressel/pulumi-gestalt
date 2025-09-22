@@ -11,24 +11,24 @@ pub struct OrganizationBucketConfigCmekSettings {
     /// See [Enabling CMEK for Logging Buckets](https://cloud.google.com/logging/docs/routing/managed-encryption-storage) for more information.
     #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<String>,
+    pub r#kms_key_name: String,
     /// The CryptoKeyVersion resource name for the configured Cloud KMS key.
     /// KMS key name format:
     /// "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]/cryptoKeyVersions/[VERSION]"
     /// For example:
     /// "projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key/cryptoKeyVersions/1"
     /// This is a read-only field used to convey the specific configured CryptoKeyVersion of kms_key that has been configured. It will be populated in cases where the CMEK settings are bound to a single key version.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyVersionName")]
-    pub r#kms_key_version_name: Box<Option<String>>,
+    pub r#kms_key_version_name: Option<String>,
     /// The resource name of the bucket. For example: "organizations/my-organization-id/locations/my-location/buckets/my-bucket-id"
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The service account associated with a project for which CMEK will apply.
     /// Before enabling CMEK for a logging bucket, you must first assign the cloudkms.cryptoKeyEncrypterDecrypter role to the service account associated with the project for which CMEK will apply. Use [v2.getCmekSettings](https://cloud.google.com/logging/docs/reference/v2/rest/v2/TopLevel/getCmekSettings#google.logging.v2.ConfigServiceV2.GetCmekSettings) to obtain the service account ID.
     /// See [Enabling CMEK for Logging Buckets](https://cloud.google.com/logging/docs/routing/managed-encryption-storage) for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAccountId")]
-    pub r#service_account_id: Box<Option<String>>,
+    pub r#service_account_id: Option<String>,
 }

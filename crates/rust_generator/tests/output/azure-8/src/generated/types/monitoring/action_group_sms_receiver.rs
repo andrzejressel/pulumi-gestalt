@@ -6,13 +6,13 @@ pub struct ActionGroupSmsReceiver {
     /// The country code of the SMS receiver.
     #[builder(into)]
     #[serde(rename = "countryCode")]
-    pub r#country_code: Box<String>,
+    pub r#country_code: String,
     /// The name of the SMS receiver. Names must be unique (case-insensitive) across all receivers within an action group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The phone number of the SMS receiver.
     #[builder(into)]
     #[serde(rename = "phoneNumber")]
-    pub r#phone_number: Box<String>,
+    pub r#phone_number: String,
 }

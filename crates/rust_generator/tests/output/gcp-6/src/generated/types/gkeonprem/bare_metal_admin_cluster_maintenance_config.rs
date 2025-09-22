@@ -9,5 +9,5 @@ pub struct BareMetalAdminClusterMaintenanceConfig {
     /// on the node resource.
     #[builder(into)]
     #[serde(rename = "maintenanceAddressCidrBlocks")]
-    pub r#maintenance_address_cidr_blocks: Box<Vec<String>>,
+    pub r#maintenance_address_cidr_blocks: Vec<String>,
 }

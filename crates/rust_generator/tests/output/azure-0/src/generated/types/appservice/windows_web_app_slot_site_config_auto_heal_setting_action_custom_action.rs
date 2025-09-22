@@ -6,9 +6,9 @@ pub struct WindowsWebAppSlotSiteConfigAutoHealSettingActionCustomAction {
     /// The executable to run for the `custom_action`.
     #[builder(into)]
     #[serde(rename = "executable")]
-    pub r#executable: Box<String>,
+    pub r#executable: String,
     /// The parameters to pass to the specified `executable`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<String>>,
+    pub r#parameters: Option<String>,
 }

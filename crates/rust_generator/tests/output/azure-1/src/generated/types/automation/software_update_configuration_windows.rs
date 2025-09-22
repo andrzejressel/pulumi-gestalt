@@ -8,17 +8,17 @@ pub struct SoftwareUpdateConfigurationWindows {
     /// > **NOTE:** The `classifications_included` property will become `Required` in version 4.0 of the Provider.
     #[builder(into)]
     #[serde(rename = "classificationsIncludeds")]
-    pub r#classifications_includeds: Box<Vec<String>>,
+    pub r#classifications_includeds: Vec<String>,
     /// Specifies a list of knowledge base numbers excluded.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "excludedKnowledgeBaseNumbers")]
-    pub r#excluded_knowledge_base_numbers: Box<Option<Vec<String>>>,
+    pub r#excluded_knowledge_base_numbers: Option<Vec<String>>,
     /// Specifies a list of knowledge base numbers included.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includedKnowledgeBaseNumbers")]
-    pub r#included_knowledge_base_numbers: Box<Option<Vec<String>>>,
+    pub r#included_knowledge_base_numbers: Option<Vec<String>>,
     /// Specifies the reboot settings after software update, possible values are `IfRequired`, `Never`, `RebootOnly` and `Always`. Defaults to `IfRequired`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reboot")]
-    pub r#reboot: Box<Option<String>>,
+    pub r#reboot: Option<String>,
 }

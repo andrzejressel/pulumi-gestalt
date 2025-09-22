@@ -6,9 +6,9 @@ pub struct ActionHttpRunAfter {
     /// Specifies the name of the precedent HTTP Action.
     #[builder(into)]
     #[serde(rename = "actionName")]
-    pub r#action_name: Box<String>,
+    pub r#action_name: String,
     /// Specifies the expected result of the precedent HTTP Action, only after which the current HTTP Action will be triggered. Possible values include `Succeeded`, `Failed`, `Skipped` and `TimedOut`.
     #[builder(into)]
     #[serde(rename = "actionResult")]
-    pub r#action_result: Box<String>,
+    pub r#action_result: String,
 }

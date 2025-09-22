@@ -6,5 +6,5 @@ pub struct AccountBlobPropertiesRestorePolicy {
     /// Specifies the number of days that the blob can be restored, between `1` and `365` days. This must be less than the `days` specified for `delete_retention_policy`.
     #[builder(into)]
     #[serde(rename = "days")]
-    pub r#days: Box<i32>,
+    pub r#days: i32,
 }

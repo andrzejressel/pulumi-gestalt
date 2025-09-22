@@ -39,5 +39,5 @@ pub struct ClusterMaintenancePolicyMaintenanceExclusionExclusionOptions {
     /// ```
     #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<String>,
+    pub r#scope: String,
 }

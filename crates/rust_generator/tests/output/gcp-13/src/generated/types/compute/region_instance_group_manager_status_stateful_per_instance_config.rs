@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegionInstanceGroupManagerStatusStatefulPerInstanceConfig {
     /// A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status `EFFECTIVE` or there are no per-instance-configs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allEffective")]
-    pub r#all_effective: Box<Option<bool>>,
+    pub r#all_effective: Option<bool>,
 }

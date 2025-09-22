@@ -6,13 +6,13 @@ pub struct GetClusterTpuConfig {
     /// Whether Cloud TPU integration is enabled or not
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// IPv4 CIDR block reserved for Cloud TPU in the VPC.
     #[builder(into)]
     #[serde(rename = "ipv4CidrBlock")]
-    pub r#ipv_4_cidr_block: Box<String>,
+    pub r#ipv_4_cidr_block: String,
     /// Whether to use service networking for Cloud TPU or not
     #[builder(into)]
     #[serde(rename = "useServiceNetworking")]
-    pub r#use_service_networking: Box<bool>,
+    pub r#use_service_networking: bool,
 }

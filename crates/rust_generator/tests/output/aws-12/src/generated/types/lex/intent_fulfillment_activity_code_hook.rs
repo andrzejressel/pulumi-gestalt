@@ -8,9 +8,9 @@ pub struct IntentFulfillmentActivityCodeHook {
     /// [Using Lambda Functions](https://docs.aws.amazon.com/lex/latest/dg/using-lambda.html). Must be less than or equal to 5 characters in length.
     #[builder(into)]
     #[serde(rename = "messageVersion")]
-    pub r#message_version: Box<String>,
+    pub r#message_version: String,
     /// The Amazon Resource Name (ARN) of the Lambda function.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

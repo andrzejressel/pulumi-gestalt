@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceConnectionPolicyPscConnectionErrorInfo {
     /// The logical grouping to which the "reason" belongs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<Option<String>>,
+    pub r#domain: Option<String>,
     /// Additional structured details about this error.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metadata")]
-    pub r#metadata: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#metadata: Option<std::collections::HashMap<String, String>>,
     /// The reason of the error.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reason")]
-    pub r#reason: Box<Option<String>>,
+    pub r#reason: Option<String>,
 }

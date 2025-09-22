@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipeSourceParametersFilterCriteria {
     /// An array of up to 5 event patterns. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filters")]
-    pub r#filters: Box<Option<Vec<super::super::types::pipes::PipeSourceParametersFilterCriteriaFilter>>>,
+    pub r#filters: Option<Vec<super::super::types::pipes::PipeSourceParametersFilterCriteriaFilter>>,
 }

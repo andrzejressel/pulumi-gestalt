@@ -6,5 +6,5 @@ pub struct GetSupportedDatabaseFlagsSupportedDatabaseFlagStringRestrictions {
     /// The list of allowed values, if bounded. This field will be empty if there is a unbounded number of allowed values.
     #[builder(into)]
     #[serde(rename = "allowedValues")]
-    pub r#allowed_values: Box<Vec<String>>,
+    pub r#allowed_values: Vec<String>,
 }

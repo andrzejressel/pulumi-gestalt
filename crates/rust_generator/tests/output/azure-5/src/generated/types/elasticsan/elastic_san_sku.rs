@@ -8,9 +8,9 @@ pub struct ElasticSanSku {
     /// > **NOTE** `Premium_ZRS` SKU is only available in limited Azure regions including `France Central`, `North Europe`, `West Europe`, and `West US 2`. Please refer to this [document](https://azure.microsoft.com/updates/regional-expansion-azure-elastic-san-public-preview-is-now-available-in-more-regions) for more details.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The SKU tier. The only possible value is `Premium`. Defaults to `Premium`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tier")]
-    pub r#tier: Box<Option<String>>,
+    pub r#tier: Option<String>,
 }

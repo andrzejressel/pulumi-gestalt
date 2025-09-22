@@ -6,13 +6,13 @@ pub struct BrokerMaintenanceWindowStartTime {
     /// Day of the week, e.g., `MONDAY`, `TUESDAY`, or `WEDNESDAY`.
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     /// Time, in 24-hour format, e.g., `02:00`.
     #[builder(into)]
     #[serde(rename = "timeOfDay")]
-    pub r#time_of_day: Box<String>,
+    pub r#time_of_day: String,
     /// Time zone in either the Country/City format or the UTC offset format, e.g., `CET`.
     #[builder(into)]
     #[serde(rename = "timeZone")]
-    pub r#time_zone: Box<String>,
+    pub r#time_zone: String,
 }

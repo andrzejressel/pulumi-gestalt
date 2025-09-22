@@ -5,14 +5,14 @@
 pub struct RuntimeVirtualMachineVirtualMachineConfig {
     /// The Compute Engine accelerator configuration for this runtime.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acceleratorConfig")]
-    pub r#accelerator_config: Box<Option<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig>>,
+    pub r#accelerator_config: Option<Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig>>,
     /// Use a list of container images to start the notebook instance.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerImages")]
-    pub r#container_images: Box<Option<Vec<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigContainerImage>>>,
+    pub r#container_images: Option<Vec<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigContainerImage>>,
     /// Data disk option configuration settings.
     /// Structure is documented below.
     #[builder(into)]
@@ -20,45 +20,45 @@ pub struct RuntimeVirtualMachineVirtualMachineConfig {
     pub r#data_disk: Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigDataDisk>,
     /// Encryption settings for virtual machine data disk.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encryptionConfig")]
-    pub r#encryption_config: Box<Option<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig>>,
+    pub r#encryption_config: Option<Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig>>,
     /// (Output)
     /// The Compute Engine guest attributes. (see [Project and instance
     /// guest attributes](https://cloud.google.com/compute/docs/
     /// storing-retrieving-metadata#guest_attributes)).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "guestAttributes")]
-    pub r#guest_attributes: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#guest_attributes: Option<std::collections::HashMap<String, String>>,
     /// If true, runtime will only have internal IP addresses. By default,
     /// runtimes are not restricted to internal IP addresses, and will
     /// have ephemeral external IP addresses assigned to each vm. This
     /// `internal_ip_only` restriction can only be enabled for subnetwork
     /// enabled networks, and all dependencies must be configured to be
     /// accessible without external IP addresses.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "internalIpOnly")]
-    pub r#internal_ip_only: Box<Option<bool>>,
+    pub r#internal_ip_only: Option<bool>,
     /// The labels to associate with this runtime. Label **keys** must
     /// contain 1 to 63 characters, and must conform to [RFC 1035]
     /// (https://www.ietf.org/rfc/rfc1035.txt). Label **values** may be
     /// empty, but, if present, must contain 1 to 63 characters, and must
     /// conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt). No
     /// more than 32 labels can be associated with a cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// The Compute Engine machine type used for runtimes.
     #[builder(into)]
     #[serde(rename = "machineType")]
-    pub r#machine_type: Box<String>,
+    pub r#machine_type: String,
     /// The Compute Engine metadata entries to add to virtual machine.
     /// (see [Project and instance metadata](https://cloud.google.com
     /// /compute/docs/storing-retrieving-metadata#project_and_instance
     /// _metadata)).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metadata")]
-    pub r#metadata: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#metadata: Option<std::collections::HashMap<String, String>>,
     /// The Compute Engine network to be used for machine communications.
     /// Cannot be specified with subnetwork. If neither `network` nor
     /// `subnet` is specified, the "default" network of the project is
@@ -73,43 +73,43 @@ pub struct RuntimeVirtualMachineVirtualMachineConfig {
     /// configuring Private Service Access.
     /// * Shared VPC (network & subnet are required). Requires
     /// configuring Private Service Access.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<Option<String>>,
+    pub r#network: Option<String>,
     /// The type of vNIC to be used on this interface. This may be gVNIC
     /// or VirtioNet.
     /// Possible values are: `UNSPECIFIED_NIC_TYPE`, `VIRTIO_NET`, `GVNIC`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nicType")]
-    pub r#nic_type: Box<Option<String>>,
+    pub r#nic_type: Option<String>,
     /// Reserved IP Range name is used for VPC Peering. The
     /// subnetwork allocation will use the range *name* if it's assigned.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reservedIpRange")]
-    pub r#reserved_ip_range: Box<Option<String>>,
+    pub r#reserved_ip_range: Option<String>,
     /// Shielded VM Instance configuration settings.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "shieldedInstanceConfig")]
-    pub r#shielded_instance_config: Box<Option<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig>>,
+    pub r#shielded_instance_config: Option<Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig>>,
     /// The Compute Engine subnetwork to be used for machine
     /// communications. Cannot be specified with network. A full URL or
     /// partial URI are valid. Examples:
     /// * `https://www.googleapis.com/compute/v1/projects/[project_id]/
     /// regions/us-east1/subnetworks/sub0`
     /// * `projects/[project_id]/regions/us-east1/subnetworks/sub0`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnet")]
-    pub r#subnet: Box<Option<String>>,
+    pub r#subnet: Option<String>,
     /// The Compute Engine tags to add to runtime (see [Tagging instances]
     /// (https://cloud.google.com/compute/docs/
     /// label-or-tag-resources#tags)).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<Vec<String>>>,
+    pub r#tags: Option<Vec<String>>,
     /// (Output)
     /// The zone where the virtual machine is located.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<Option<String>>,
+    pub r#zone: Option<String>,
 }

@@ -7,16 +7,16 @@ pub struct GetFunctionBuildConfig {
     /// the function to be redeployed.
     #[builder(into)]
     #[serde(rename = "automaticUpdatePolicies")]
-    pub r#automatic_update_policies: Box<Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigAutomaticUpdatePolicy>>,
+    pub r#automatic_update_policies: Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigAutomaticUpdatePolicy>,
     /// The Cloud Build name of the latest successful
     /// deployment of the function.
     #[builder(into)]
     #[serde(rename = "build")]
-    pub r#build: Box<String>,
+    pub r#build: String,
     /// User managed repository created in Artifact Registry optionally with a customer managed encryption key.
     #[builder(into)]
     #[serde(rename = "dockerRepository")]
-    pub r#docker_repository: Box<String>,
+    pub r#docker_repository: String,
     /// The name of the function (as defined in source code) that will be executed.
     /// Defaults to the resource name suffix, if not specified. For backward
     /// compatibility, if function with given name is not found, then the system
@@ -24,30 +24,30 @@ pub struct GetFunctionBuildConfig {
     /// function exported by the module specified in source_location.
     #[builder(into)]
     #[serde(rename = "entryPoint")]
-    pub r#entry_point: Box<String>,
+    pub r#entry_point: String,
     /// User-provided build-time environment variables for the function.
     #[builder(into)]
     #[serde(rename = "environmentVariables")]
-    pub r#environment_variables: Box<std::collections::HashMap<String, String>>,
+    pub r#environment_variables: std::collections::HashMap<String, String>,
     /// Security patches are only applied when a function is redeployed.
     #[builder(into)]
     #[serde(rename = "onDeployUpdatePolicies")]
-    pub r#on_deploy_update_policies: Box<Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigOnDeployUpdatePolicy>>,
+    pub r#on_deploy_update_policies: Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigOnDeployUpdatePolicy>,
     /// The runtime in which to run the function. Required when deploying a new
     /// function, optional when updating an existing function.
     #[builder(into)]
     #[serde(rename = "runtime")]
-    pub r#runtime: Box<String>,
+    pub r#runtime: String,
     /// The fully-qualified name of the service account to be used for building the container.
     #[builder(into)]
     #[serde(rename = "serviceAccount")]
-    pub r#service_account: Box<String>,
+    pub r#service_account: String,
     /// The location of the function source code.
     #[builder(into)]
     #[serde(rename = "sources")]
-    pub r#sources: Box<Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigSource>>,
+    pub r#sources: Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigSource>,
     /// Name of the Cloud Build Custom Worker Pool that should be used to build the function.
     #[builder(into)]
     #[serde(rename = "workerPool")]
-    pub r#worker_pool: Box<String>,
+    pub r#worker_pool: String,
 }

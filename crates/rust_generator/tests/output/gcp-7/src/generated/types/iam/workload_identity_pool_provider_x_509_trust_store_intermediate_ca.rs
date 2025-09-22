@@ -5,7 +5,7 @@
 pub struct WorkloadIdentityPoolProviderX509TrustStoreIntermediateCa {
     /// PEM certificate of the PKI used for validation. Must only contain one
     /// ca certificate(either root or intermediate cert).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pemCertificate")]
-    pub r#pem_certificate: Box<Option<String>>,
+    pub r#pem_certificate: Option<String>,
 }

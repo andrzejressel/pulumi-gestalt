@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipeTargetParametersEcsTaskParametersNetworkConfigurationAwsVpcConfiguration {
     /// Specifies whether the task's elastic network interface receives a public IP address. You can specify ENABLED only when LaunchType in EcsParameters is set to FARGATE. Valid Values: ENABLED, DISABLED.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "assignPublicIp")]
-    pub r#assign_public_ip: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#assign_public_ip: Option<String>,
+    #[builder(into)]
     #[serde(rename = "securityGroups")]
-    pub r#security_groups: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#security_groups: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "subnets")]
-    pub r#subnets: Box<Option<Vec<String>>>,
+    pub r#subnets: Option<Vec<String>>,
 }

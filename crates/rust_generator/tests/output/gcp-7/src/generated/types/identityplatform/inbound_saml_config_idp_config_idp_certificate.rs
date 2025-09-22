@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InboundSamlConfigIdpConfigIdpCertificate {
     /// The IdP's x509 certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "x509Certificate")]
-    pub r#x_509_certificate: Box<Option<String>>,
+    pub r#x_509_certificate: Option<String>,
 }

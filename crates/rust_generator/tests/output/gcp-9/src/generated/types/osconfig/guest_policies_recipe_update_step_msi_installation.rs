@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GuestPoliciesRecipeUpdateStepMsiInstallation {
     /// Return codes that indicate that the software installed or updated successfully. Behaviour defaults to [0]
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedExitCodes")]
-    pub r#allowed_exit_codes: Box<Option<Vec<i32>>>,
+    pub r#allowed_exit_codes: Option<Vec<i32>>,
     /// The id of the relevant artifact in the recipe.
     #[builder(into)]
     #[serde(rename = "artifactId")]
-    pub r#artifact_id: Box<String>,
+    pub r#artifact_id: String,
     /// The flags to use when installing the MSI. Defaults to the install flag.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "flags")]
-    pub r#flags: Box<Option<Vec<String>>>,
+    pub r#flags: Option<Vec<String>>,
 }

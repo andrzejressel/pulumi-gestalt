@@ -6,7 +6,7 @@ pub struct VMwareClusterAuthorization {
     /// Users that will be granted the cluster-admin role on the cluster, providing
     /// full access to the cluster.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "adminUsers")]
-    pub r#admin_users: Box<Option<Vec<super::super::types::gkeonprem::VMwareClusterAuthorizationAdminUser>>>,
+    pub r#admin_users: Option<Vec<super::super::types::gkeonprem::VMwareClusterAuthorizationAdminUser>>,
 }

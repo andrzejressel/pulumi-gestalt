@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceGroupManagerVersionTargetSize {
     /// , The number of instances which are managed for this version. Conflicts with `percent`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fixed")]
-    pub r#fixed: Box<Option<i32>>,
+    pub r#fixed: Option<i32>,
     /// , The number of instances (calculated as percentage) which are managed for this version. Conflicts with `fixed`.
     /// Note that when using `percent`, rounding will be in favor of explicitly set `target_size` values; a managed instance group with 2 instances and 2 `version`s,
     /// one of which has a `target_size.percent` of `60` will create 2 instances of that `version`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "percent")]
-    pub r#percent: Box<Option<i32>>,
+    pub r#percent: Option<i32>,
 }

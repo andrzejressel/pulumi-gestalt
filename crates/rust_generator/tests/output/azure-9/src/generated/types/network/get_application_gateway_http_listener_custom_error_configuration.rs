@@ -6,13 +6,13 @@ pub struct GetApplicationGatewayHttpListenerCustomErrorConfiguration {
     /// Error page URL of the application gateway custom error.
     #[builder(into)]
     #[serde(rename = "customErrorPageUrl")]
-    pub r#custom_error_page_url: Box<String>,
+    pub r#custom_error_page_url: String,
     /// The ID of the Rewrite Rule Set
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Status code of the application gateway custom error.
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<String>,
+    pub r#status_code: String,
 }

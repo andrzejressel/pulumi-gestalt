@@ -7,18 +7,18 @@ pub struct GetInstanceMaintenancePolicyWeeklyMaintenanceWindowStartTime {
     /// An API may choose to allow the value "24:00:00" for scenarios like business closing time.
     #[builder(into)]
     #[serde(rename = "hours")]
-    pub r#hours: Box<i32>,
+    pub r#hours: i32,
     /// Minutes of hour of day. Must be from 0 to 59.
     #[builder(into)]
     #[serde(rename = "minutes")]
-    pub r#minutes: Box<i32>,
+    pub r#minutes: i32,
     /// Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
     #[builder(into)]
     #[serde(rename = "nanos")]
-    pub r#nanos: Box<i32>,
+    pub r#nanos: i32,
     /// Seconds of minutes of the time. Must normally be from 0 to 59.
     /// An API may allow the value 60 if it allows leap-seconds.
     #[builder(into)]
     #[serde(rename = "seconds")]
-    pub r#seconds: Box<i32>,
+    pub r#seconds: i32,
 }

@@ -5,26 +5,26 @@
 pub struct GetControlControlMappingSource {
     #[builder(into)]
     #[serde(rename = "sourceDescription")]
-    pub r#source_description: Box<String>,
+    pub r#source_description: String,
     #[builder(into)]
     #[serde(rename = "sourceFrequency")]
-    pub r#source_frequency: Box<String>,
+    pub r#source_frequency: String,
     #[builder(into)]
     #[serde(rename = "sourceId")]
-    pub r#source_id: Box<String>,
-    #[builder(into, default)]
+    pub r#source_id: String,
+    #[builder(into)]
     #[serde(rename = "sourceKeyword")]
-    pub r#source_keyword: Box<Option<super::super::types::auditmanager::GetControlControlMappingSourceSourceKeyword>>,
+    pub r#source_keyword: Option<Box<super::super::types::auditmanager::GetControlControlMappingSourceSourceKeyword>>,
     #[builder(into)]
     #[serde(rename = "sourceName")]
-    pub r#source_name: Box<String>,
+    pub r#source_name: String,
     #[builder(into)]
     #[serde(rename = "sourceSetUpOption")]
-    pub r#source_set_up_option: Box<String>,
+    pub r#source_set_up_option: String,
     #[builder(into)]
     #[serde(rename = "sourceType")]
-    pub r#source_type: Box<String>,
+    pub r#source_type: String,
     #[builder(into)]
     #[serde(rename = "troubleshootingText")]
-    pub r#troubleshooting_text: Box<String>,
+    pub r#troubleshooting_text: String,
 }

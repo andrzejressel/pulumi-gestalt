@@ -5,14 +5,14 @@
 pub struct GetVirtualGatewaySpecBackendDefaultClientPolicyTl {
     #[builder(into)]
     #[serde(rename = "certificates")]
-    pub r#certificates: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlCertificate>>,
+    pub r#certificates: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlCertificate>,
     #[builder(into)]
     #[serde(rename = "enforce")]
-    pub r#enforce: Box<bool>,
+    pub r#enforce: bool,
     #[builder(into)]
     #[serde(rename = "ports")]
-    pub r#ports: Box<Vec<i32>>,
+    pub r#ports: Vec<i32>,
     #[builder(into)]
     #[serde(rename = "validations")]
-    pub r#validations: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidation>>,
+    pub r#validations: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidation>,
 }

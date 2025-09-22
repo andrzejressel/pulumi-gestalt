@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationPortalOptionsSignInOptions {
     /// URL that accepts authentication requests for an application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applicationUrl")]
-    pub r#application_url: Box<Option<String>>,
+    pub r#application_url: Option<String>,
     /// Determines how IAM Identity Center navigates the user to the target application.
     /// Valid values are `APPLICATION` and `IDENTITY_CENTER`.
     /// If `APPLICATION` is set, IAM Identity Center redirects the customer to the configured `application_url`.
     /// If `IDENTITY_CENTER` is set, IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.
     #[builder(into)]
     #[serde(rename = "origin")]
-    pub r#origin: Box<String>,
+    pub r#origin: String,
 }

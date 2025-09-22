@@ -6,29 +6,29 @@ pub struct FactoryVstsConfiguration {
     /// Specifies the VSTS account name.
     #[builder(into)]
     #[serde(rename = "accountName")]
-    pub r#account_name: Box<String>,
+    pub r#account_name: String,
     /// Specifies the branch of the repository to get code from.
     #[builder(into)]
     #[serde(rename = "branchName")]
-    pub r#branch_name: Box<String>,
+    pub r#branch_name: String,
     /// Specifies the name of the VSTS project.
     #[builder(into)]
     #[serde(rename = "projectName")]
-    pub r#project_name: Box<String>,
+    pub r#project_name: String,
     /// Is automated publishing enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publishingEnabled")]
-    pub r#publishing_enabled: Box<Option<bool>>,
+    pub r#publishing_enabled: Option<bool>,
     /// Specifies the name of the git repository.
     #[builder(into)]
     #[serde(rename = "repositoryName")]
-    pub r#repository_name: Box<String>,
+    pub r#repository_name: String,
     /// Specifies the root folder within the repository. Set to `/` for the top level.
     #[builder(into)]
     #[serde(rename = "rootFolder")]
-    pub r#root_folder: Box<String>,
+    pub r#root_folder: String,
     /// Specifies the Tenant ID associated with the VSTS account.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
 }

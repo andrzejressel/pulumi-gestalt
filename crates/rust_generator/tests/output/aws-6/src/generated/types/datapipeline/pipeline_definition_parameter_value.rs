@@ -6,9 +6,9 @@ pub struct PipelineDefinitionParameterValue {
     /// ID of the parameter value.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Field value, expressed as a String.
     #[builder(into)]
     #[serde(rename = "stringValue")]
-    pub r#string_value: Box<String>,
+    pub r#string_value: String,
 }

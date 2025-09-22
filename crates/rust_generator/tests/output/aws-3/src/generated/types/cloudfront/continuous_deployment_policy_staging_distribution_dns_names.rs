@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ContinuousDeploymentPolicyStagingDistributionDnsNames {
     /// A list of CloudFront domain names for the staging distribution.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "items")]
-    pub r#items: Box<Option<Vec<String>>>,
+    pub r#items: Option<Vec<String>>,
     /// Number of CloudFront domain names in the staging distribution.
     #[builder(into)]
     #[serde(rename = "quantity")]
-    pub r#quantity: Box<i32>,
+    pub r#quantity: i32,
 }

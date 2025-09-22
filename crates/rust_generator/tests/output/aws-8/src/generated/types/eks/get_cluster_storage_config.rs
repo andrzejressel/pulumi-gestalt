@@ -6,5 +6,5 @@ pub struct GetClusterStorageConfig {
     /// Contains block storage configuration for EKS Auto Mode enabled cluster.
     #[builder(into)]
     #[serde(rename = "blockStorages")]
-    pub r#block_storages: Box<Vec<super::super::types::eks::GetClusterStorageConfigBlockStorage>>,
+    pub r#block_storages: Vec<super::super::types::eks::GetClusterStorageConfigBlockStorage>,
 }

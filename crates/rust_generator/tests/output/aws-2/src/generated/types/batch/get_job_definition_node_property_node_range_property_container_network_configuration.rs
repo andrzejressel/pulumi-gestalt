@@ -6,5 +6,5 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerNetworkConfigur
     /// Indicates whether the job has a public IP address.
     #[builder(into)]
     #[serde(rename = "assignPublicIp")]
-    pub r#assign_public_ip: Box<bool>,
+    pub r#assign_public_ip: bool,
 }

@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountCustomerManagedKey {
     /// The ID of the Key Vault Key, supplying a version-less key ID will enable auto-rotation of this key. Exactly one of `key_vault_key_id` and `managed_hsm_key_id` may be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyVaultKeyId")]
-    pub r#key_vault_key_id: Box<Option<String>>,
+    pub r#key_vault_key_id: Option<String>,
     /// The ID of the managed HSM Key. Exactly one of `key_vault_key_id` and `managed_hsm_key_id` may be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "managedHsmKeyId")]
-    pub r#managed_hsm_key_id: Box<Option<String>>,
+    pub r#managed_hsm_key_id: Option<String>,
     /// The ID of a user assigned identity.
     /// 
     /// > **Note:** `customer_managed_key` can only be set when the `account_kind` is set to `StorageV2` or `account_tier` set to `Premium`, and the identity type is `UserAssigned`.
     #[builder(into)]
     #[serde(rename = "userAssignedIdentityId")]
-    pub r#user_assigned_identity_id: Box<String>,
+    pub r#user_assigned_identity_id: String,
 }

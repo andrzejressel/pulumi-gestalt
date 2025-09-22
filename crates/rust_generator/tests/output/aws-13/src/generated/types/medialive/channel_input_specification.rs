@@ -5,11 +5,11 @@
 pub struct ChannelInputSpecification {
     #[builder(into)]
     #[serde(rename = "codec")]
-    pub r#codec: Box<String>,
+    pub r#codec: String,
     #[builder(into)]
     #[serde(rename = "inputResolution")]
-    pub r#input_resolution: Box<String>,
+    pub r#input_resolution: String,
     #[builder(into)]
     #[serde(rename = "maximumBitrate")]
-    pub r#maximum_bitrate: Box<String>,
+    pub r#maximum_bitrate: String,
 }

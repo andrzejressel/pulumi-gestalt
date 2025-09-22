@@ -6,16 +6,16 @@ pub struct WorkforcePoolProviderOidc {
     /// The client ID. Must match the audience claim of the JWT issued by the identity provider.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The optional client secret. Required to enable Authorization Code flow for web sign-in.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<Option<super::super::types::iam::WorkforcePoolProviderOidcClientSecret>>,
+    pub r#client_secret: Option<Box<super::super::types::iam::WorkforcePoolProviderOidcClientSecret>>,
     /// The OIDC issuer URI. Must be a valid URI using the 'https' scheme.
     #[builder(into)]
     #[serde(rename = "issuerUri")]
-    pub r#issuer_uri: Box<String>,
+    pub r#issuer_uri: String,
     /// OIDC JWKs in JSON String format. For details on definition of a
     /// JWK, see https:tools.ietf.org/html/rfc7517. If not set, then we
     /// use the `jwks_uri` from the discovery document fetched from the
@@ -39,12 +39,12 @@ pub struct WorkforcePoolProviderOidc {
     /// ]
     /// }
     /// ```
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "jwksJson")]
-    pub r#jwks_json: Box<Option<String>>,
+    pub r#jwks_json: Option<String>,
     /// Configuration for web single sign-on for the OIDC provider. Here, web sign-in refers to console sign-in and gcloud sign-in through the browser.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "webSsoConfig")]
-    pub r#web_sso_config: Box<Option<super::super::types::iam::WorkforcePoolProviderOidcWebSsoConfig>>,
+    pub r#web_sso_config: Option<Box<super::super::types::iam::WorkforcePoolProviderOidcWebSsoConfig>>,
 }

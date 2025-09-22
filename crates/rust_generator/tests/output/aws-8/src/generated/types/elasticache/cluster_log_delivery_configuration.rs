@@ -6,17 +6,17 @@ pub struct ClusterLogDeliveryConfiguration {
     /// Name of either the CloudWatch Logs LogGroup or Kinesis Data Firehose resource.
     #[builder(into)]
     #[serde(rename = "destination")]
-    pub r#destination: Box<String>,
+    pub r#destination: String,
     /// For CloudWatch Logs use `cloudwatch-logs` or for Kinesis Data Firehose use `kinesis-firehose`.
     #[builder(into)]
     #[serde(rename = "destinationType")]
-    pub r#destination_type: Box<String>,
+    pub r#destination_type: String,
     /// Valid values are `json` or `text`
     #[builder(into)]
     #[serde(rename = "logFormat")]
-    pub r#log_format: Box<String>,
+    pub r#log_format: String,
     /// Valid values are  `slow-log` or `engine-log`. Max 1 of each.
     #[builder(into)]
     #[serde(rename = "logType")]
-    pub r#log_type: Box<String>,
+    pub r#log_type: String,
 }

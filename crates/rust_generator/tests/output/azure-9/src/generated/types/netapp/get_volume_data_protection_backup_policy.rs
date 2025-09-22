@@ -6,13 +6,13 @@ pub struct GetVolumeDataProtectionBackupPolicy {
     /// The Resource ID of the backup policy.
     #[builder(into)]
     #[serde(rename = "backupPolicyId")]
-    pub r#backup_policy_id: Box<String>,
+    pub r#backup_policy_id: String,
     /// The Resource ID of the backup backup vault.
     #[builder(into)]
     #[serde(rename = "backupVaultId")]
-    pub r#backup_vault_id: Box<String>,
+    pub r#backup_vault_id: String,
     /// Backup policy is enabled or not.
     #[builder(into)]
     #[serde(rename = "policyEnabled")]
-    pub r#policy_enabled: Box<bool>,
+    pub r#policy_enabled: bool,
 }

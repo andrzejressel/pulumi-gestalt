@@ -6,15 +6,15 @@ pub struct InstanceIamBindingCondition {
     /// An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
     /// 
     /// For `gcp.bigtable.InstanceIamPolicy` only:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Textual representation of an expression in Common Expression Language syntax.
     #[builder(into)]
     #[serde(rename = "expression")]
-    pub r#expression: Box<String>,
+    pub r#expression: String,
     /// A title for the expression, i.e. a short string describing its purpose.
     #[builder(into)]
     #[serde(rename = "title")]
-    pub r#title: Box<String>,
+    pub r#title: String,
 }

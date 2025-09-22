@@ -6,9 +6,9 @@ pub struct GetDomainEncryptionAtRest {
     /// Whether node to node encryption is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The KMS key id used to encrypt data at rest.
     #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<String>,
+    pub r#kms_key_id: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListenerDefaultActionForward {
     /// One or more target group blocks.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetGroups")]
-    pub r#target_groups: Box<Option<Vec<super::super::types::vpclattice::ListenerDefaultActionForwardTargetGroup>>>,
+    pub r#target_groups: Option<Vec<super::super::types::vpclattice::ListenerDefaultActionForwardTargetGroup>>,
 }

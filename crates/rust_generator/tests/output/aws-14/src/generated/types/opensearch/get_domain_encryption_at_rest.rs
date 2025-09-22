@@ -6,9 +6,9 @@ pub struct GetDomainEncryptionAtRest {
     /// Enabled disabled toggle for off-peak update window
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// KMS key id used to encrypt data at rest.
     #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<String>,
+    pub r#kms_key_id: String,
 }

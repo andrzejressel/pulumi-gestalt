@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CatalogTableStorageDescriptorSkewedInfo {
     /// List of names of columns that contain skewed values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "skewedColumnNames")]
-    pub r#skewed_column_names: Box<Option<Vec<String>>>,
+    pub r#skewed_column_names: Option<Vec<String>>,
     /// List of values that appear so frequently as to be considered skewed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "skewedColumnValueLocationMaps")]
-    pub r#skewed_column_value_location_maps: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#skewed_column_value_location_maps: Option<std::collections::HashMap<String, String>>,
     /// Map of skewed values to the columns that contain them.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "skewedColumnValues")]
-    pub r#skewed_column_values: Box<Option<Vec<String>>>,
+    pub r#skewed_column_values: Option<Vec<String>>,
 }

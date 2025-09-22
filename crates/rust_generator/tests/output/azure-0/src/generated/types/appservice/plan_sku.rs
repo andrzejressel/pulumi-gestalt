@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PlanSku {
     /// Specifies the number of workers associated with this App Service Plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<Option<i32>>,
+    pub r#capacity: Option<i32>,
     /// Specifies the plan's instance size.
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<String>,
+    pub r#size: String,
     /// Specifies the plan's pricing tier.
     #[builder(into)]
     #[serde(rename = "tier")]
-    pub r#tier: Box<String>,
+    pub r#tier: String,
 }

@@ -7,10 +7,10 @@ pub struct GetSubnetworkSecondaryIpRange {
     /// secondary range.
     #[builder(into)]
     #[serde(rename = "ipCidrRange")]
-    pub r#ip_cidr_range: Box<String>,
+    pub r#ip_cidr_range: String,
     /// The name associated with this subnetwork secondary range, used
     /// when adding an alias IP range to a VM instance.
     #[builder(into)]
     #[serde(rename = "rangeName")]
-    pub r#range_name: Box<String>,
+    pub r#range_name: String,
 }

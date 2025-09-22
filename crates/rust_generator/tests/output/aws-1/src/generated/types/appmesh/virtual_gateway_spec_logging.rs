@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualGatewaySpecLogging {
     /// Access log configuration for a virtual gateway.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessLog")]
-    pub r#access_log: Box<Option<super::super::types::appmesh::VirtualGatewaySpecLoggingAccessLog>>,
+    pub r#access_log: Option<Box<super::super::types::appmesh::VirtualGatewaySpecLoggingAccessLog>>,
 }

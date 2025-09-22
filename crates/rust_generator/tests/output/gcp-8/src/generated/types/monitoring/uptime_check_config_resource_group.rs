@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UptimeCheckConfigResourceGroup {
     /// The group of resources being monitored. Should be the `name` of a group
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groupId")]
-    pub r#group_id: Box<Option<String>>,
+    pub r#group_id: Option<String>,
     /// The resource type of the group members.
     /// Possible values are: `RESOURCE_TYPE_UNSPECIFIED`, `INSTANCE`, `AWS_ELB_LOAD_BALANCER`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<Option<String>>,
+    pub r#resource_type: Option<String>,
 }

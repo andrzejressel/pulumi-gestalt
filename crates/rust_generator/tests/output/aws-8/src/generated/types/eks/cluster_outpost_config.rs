@@ -14,14 +14,14 @@ pub struct ClusterOutpostConfig {
     /// For a list of the available Amazon EC2 instance types, see Compute and storage in AWS Outposts rack features  The control plane is not automatically scaled by Amazon EKS.
     #[builder(into)]
     #[serde(rename = "controlPlaneInstanceType")]
-    pub r#control_plane_instance_type: Box<String>,
+    pub r#control_plane_instance_type: String,
     /// An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on AWS Outpost.
     /// The `control_plane_placement` configuration block supports the following arguments:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "controlPlanePlacement")]
-    pub r#control_plane_placement: Box<Option<super::super::types::eks::ClusterOutpostConfigControlPlanePlacement>>,
+    pub r#control_plane_placement: Option<Box<super::super::types::eks::ClusterOutpostConfigControlPlanePlacement>>,
     /// The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. This argument is a list of arns, but only a single Outpost ARN is supported currently.
     #[builder(into)]
     #[serde(rename = "outpostArns")]
-    pub r#outpost_arns: Box<Vec<String>>,
+    pub r#outpost_arns: Vec<String>,
 }

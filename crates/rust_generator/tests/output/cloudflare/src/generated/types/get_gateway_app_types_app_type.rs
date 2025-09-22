@@ -6,17 +6,17 @@ pub struct GetGatewayAppTypesAppType {
     /// The identifier for the application type of this app.
     #[builder(into)]
     #[serde(rename = "applicationTypeId")]
-    pub r#application_type_id: Box<i32>,
+    pub r#application_type_id: i32,
     /// A short summary of the app type.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// The identifier for this app type. There is only one app type per ID.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<i32>,
+    pub r#id: i32,
     /// The name of the app type.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -6,9 +6,9 @@ pub struct GetRepositoryRemoteRepositoryConfigNpmRepository {
     /// [Deprecated, please use commonRepository instead] Settings for a remote repository with a custom uri.
     #[builder(into)]
     #[serde(rename = "customRepositories")]
-    pub r#custom_repositories: Box<Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigNpmRepositoryCustomRepository>>,
+    pub r#custom_repositories: Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigNpmRepositoryCustomRepository>,
     /// Address of the remote repository. Default value: "NPMJS" Possible values: ["NPMJS"]
     #[builder(into)]
     #[serde(rename = "publicRepository")]
-    pub r#public_repository: Box<String>,
+    pub r#public_repository: String,
 }

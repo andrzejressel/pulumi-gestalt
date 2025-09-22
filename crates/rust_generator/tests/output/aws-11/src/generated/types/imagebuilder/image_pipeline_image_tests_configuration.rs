@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ImagePipelineImageTestsConfiguration {
     /// Whether image tests are enabled. Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageTestsEnabled")]
-    pub r#image_tests_enabled: Box<Option<bool>>,
+    pub r#image_tests_enabled: Option<bool>,
     /// Number of minutes before image tests time out. Valid values are between `60` and `1440`. Defaults to `720`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeoutMinutes")]
-    pub r#timeout_minutes: Box<Option<i32>>,
+    pub r#timeout_minutes: Option<i32>,
 }

@@ -7,5 +7,5 @@ pub struct ResponsePolicyRuleLocalData {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "localDatas")]
-    pub r#local_datas: Box<Vec<super::super::types::dns::ResponsePolicyRuleLocalDataLocalData>>,
+    pub r#local_datas: Vec<super::super::types::dns::ResponsePolicyRuleLocalDataLocalData>,
 }

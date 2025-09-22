@@ -7,13 +7,13 @@ pub struct CxEntityTypeEntity {
     /// For KIND_LIST entity types: This collection must contain exactly one synonym equal to value.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "synonyms")]
-    pub r#synonyms: Box<Option<Vec<String>>>,
+    pub r#synonyms: Option<Vec<String>>,
     /// The primary value associated with this entity entry. For example, if the entity type is vegetable, the value could be scallions.
     /// For KIND_MAP entity types: A canonical value to be used in place of synonyms.
     /// For KIND_LIST entity types: A string that can contain references to other entity types (with or without aliases).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

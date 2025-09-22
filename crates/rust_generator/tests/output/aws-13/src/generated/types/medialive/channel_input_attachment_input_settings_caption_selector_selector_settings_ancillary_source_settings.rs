@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsAncillarySourceSettings {
     /// Specifies the number (1 to 4) of the captions channel you want to extract from the ancillary captions. If you plan to convert the ancillary captions to another format, complete this field. If you plan to choose Embedded as the captions destination in the output (to pass through all the channels in the ancillary captions), leave this field blank because MediaLive ignores the field.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceAncillaryChannelNumber")]
-    pub r#source_ancillary_channel_number: Box<Option<i32>>,
+    pub r#source_ancillary_channel_number: Option<i32>,
 }

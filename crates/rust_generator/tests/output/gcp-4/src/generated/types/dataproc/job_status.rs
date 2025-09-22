@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobStatus {
     /// Optional job state details, such as an error description if the state is ERROR.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "details")]
-    pub r#details: Box<Option<String>>,
+    pub r#details: Option<String>,
     /// A state message specifying the overall job state.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
     /// The time when this state was entered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stateStartTime")]
-    pub r#state_start_time: Box<Option<String>>,
+    pub r#state_start_time: Option<String>,
     /// Additional state information, which includes status reported by the agent.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "substate")]
-    pub r#substate: Box<Option<String>>,
+    pub r#substate: Option<String>,
 }

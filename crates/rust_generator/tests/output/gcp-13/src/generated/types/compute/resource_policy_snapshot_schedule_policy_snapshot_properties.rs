@@ -6,20 +6,20 @@ pub struct ResourcePolicySnapshotSchedulePolicySnapshotProperties {
     /// Creates the new snapshot in the snapshot chain labeled with the
     /// specified name. The chain name must be 1-63 characters long and comply
     /// with RFC1035.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "chainName")]
-    pub r#chain_name: Box<Option<String>>,
+    pub r#chain_name: Option<String>,
     /// Whether to perform a 'guest aware' snapshot.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "guestFlush")]
-    pub r#guest_flush: Box<Option<bool>>,
+    pub r#guest_flush: Option<bool>,
     /// A set of key-value pairs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// Cloud Storage bucket location to store the auto snapshot
     /// (regional or multi-regional)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageLocations")]
-    pub r#storage_locations: Box<Option<String>>,
+    pub r#storage_locations: Option<String>,
 }

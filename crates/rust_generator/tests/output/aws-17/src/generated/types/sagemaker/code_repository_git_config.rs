@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CodeRepositoryGitConfig {
     /// The default branch for the Git repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "branch")]
-    pub r#branch: Box<Option<String>>,
+    pub r#branch: Option<String>,
     /// The URL where the Git repository is located.
     #[builder(into)]
     #[serde(rename = "repositoryUrl")]
-    pub r#repository_url: Box<String>,
+    pub r#repository_url: String,
     /// The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of AWSCURRENT and must be in the following format: `{"username": UserName, "password": Password}`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretArn")]
-    pub r#secret_arn: Box<Option<String>>,
+    pub r#secret_arn: Option<String>,
 }

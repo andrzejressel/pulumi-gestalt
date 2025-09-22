@@ -7,14 +7,14 @@ pub struct ConnectionProfileAlloydbSettingsInitialUser {
     /// **Note**: This property is sensitive and will not be displayed in the plan.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// (Output)
     /// Output only. Indicates if the initialUser.password field has been set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordSet")]
-    pub r#password_set: Box<Option<bool>>,
+    pub r#password_set: Option<bool>,
     /// The database username.
     #[builder(into)]
     #[serde(rename = "user")]
-    pub r#user: Box<String>,
+    pub r#user: String,
 }

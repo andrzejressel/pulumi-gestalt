@@ -6,5 +6,5 @@ pub struct FleetUpdateRunStageGroup {
     /// The name which should be used for this group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

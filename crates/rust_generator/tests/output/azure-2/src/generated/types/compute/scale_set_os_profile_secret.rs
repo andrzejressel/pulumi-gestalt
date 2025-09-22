@@ -6,9 +6,9 @@ pub struct ScaleSetOsProfileSecret {
     /// Specifies the key vault to use.
     #[builder(into)]
     #[serde(rename = "sourceVaultId")]
-    pub r#source_vault_id: Box<String>,
+    pub r#source_vault_id: String,
     /// (Required, on Windows machines) One or more `vault_certificates` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vaultCertificates")]
-    pub r#vault_certificates: Box<Option<Vec<super::super::types::compute::ScaleSetOsProfileSecretVaultCertificate>>>,
+    pub r#vault_certificates: Option<Vec<super::super::types::compute::ScaleSetOsProfileSecretVaultCertificate>>,
 }

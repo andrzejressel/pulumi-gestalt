@@ -6,5 +6,5 @@ pub struct S3LocationS3Config {
     /// ARN of the IAM Role used to connect to the S3 Bucket.
     #[builder(into)]
     #[serde(rename = "bucketAccessRoleArn")]
-    pub r#bucket_access_role_arn: Box<String>,
+    pub r#bucket_access_role_arn: String,
 }

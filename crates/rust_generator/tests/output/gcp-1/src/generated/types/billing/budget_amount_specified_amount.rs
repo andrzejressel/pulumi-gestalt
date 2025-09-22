@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BudgetAmountSpecifiedAmount {
     /// The 3-letter currency code defined in ISO 4217.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "currencyCode")]
-    pub r#currency_code: Box<Option<String>>,
+    pub r#currency_code: Option<String>,
     /// Number of nano (10^-9) units of the amount.
     /// The value must be between -999,999,999 and +999,999,999
     /// inclusive. If units is positive, nanos must be positive or
@@ -16,12 +16,12 @@ pub struct BudgetAmountSpecifiedAmount {
     /// nanos=-750,000,000.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nanos")]
-    pub r#nanos: Box<Option<i32>>,
+    pub r#nanos: Option<i32>,
     /// The whole units of the amount. For example if currencyCode
     /// is "USD", then 1 unit is one US dollar.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "units")]
-    pub r#units: Box<Option<String>>,
+    pub r#units: Option<String>,
 }

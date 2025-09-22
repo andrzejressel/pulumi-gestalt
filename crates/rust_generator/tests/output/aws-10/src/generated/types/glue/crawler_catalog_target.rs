@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CrawlerCatalogTarget {
     /// The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a Catalog connection type paired with a `NETWORK` Connection type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionName")]
-    pub r#connection_name: Box<Option<String>>,
+    pub r#connection_name: Option<String>,
     /// The name of the Glue database to be synchronized.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// A valid Amazon SQS ARN.
     /// 
     /// > **Note:** `deletion_behavior` of catalog target doesn't support `DEPRECATE_IN_DATABASE`.
     /// 
     /// > **Note:** `configuration` for catalog target crawlers will have `{ ... "Grouping": { "TableGroupingPolicy": "CombineCompatibleSchemas"} }` by default.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dlqEventQueueArn")]
-    pub r#dlq_event_queue_arn: Box<Option<String>>,
+    pub r#dlq_event_queue_arn: Option<String>,
     /// A valid Amazon SQS ARN.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventQueueArn")]
-    pub r#event_queue_arn: Box<Option<String>>,
+    pub r#event_queue_arn: Option<String>,
     /// A list of catalog tables to be synchronized.
     #[builder(into)]
     #[serde(rename = "tables")]
-    pub r#tables: Box<Vec<String>>,
+    pub r#tables: Vec<String>,
 }

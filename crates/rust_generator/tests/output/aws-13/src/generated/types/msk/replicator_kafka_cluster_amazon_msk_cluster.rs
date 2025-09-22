@@ -6,5 +6,5 @@ pub struct ReplicatorKafkaClusterAmazonMskCluster {
     /// The ARN of an Amazon MSK cluster.
     #[builder(into)]
     #[serde(rename = "mskClusterArn")]
-    pub r#msk_cluster_arn: Box<String>,
+    pub r#msk_cluster_arn: String,
 }

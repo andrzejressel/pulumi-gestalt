@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettingsM2TsSettingsDvbTdtSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repInterval")]
-    pub r#rep_interval: Box<Option<i32>>,
+    pub r#rep_interval: Option<i32>,
 }

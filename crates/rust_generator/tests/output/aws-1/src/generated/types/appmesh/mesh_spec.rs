@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MeshSpec {
     /// Egress filter rules for the service mesh.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "egressFilter")]
-    pub r#egress_filter: Box<Option<super::super::types::appmesh::MeshSpecEgressFilter>>,
+    pub r#egress_filter: Option<Box<super::super::types::appmesh::MeshSpecEgressFilter>>,
     /// The service discovery information for the service mesh.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceDiscovery")]
-    pub r#service_discovery: Box<Option<super::super::types::appmesh::MeshSpecServiceDiscovery>>,
+    pub r#service_discovery: Option<Box<super::super::types::appmesh::MeshSpecServiceDiscovery>>,
 }

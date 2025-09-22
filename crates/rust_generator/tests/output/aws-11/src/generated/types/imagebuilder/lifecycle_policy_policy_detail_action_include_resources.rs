@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LifecyclePolicyPolicyDetailActionIncludeResources {
     /// Specifies whether the lifecycle action should apply to distributed AMIs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "amis")]
-    pub r#amis: Box<Option<bool>>,
+    pub r#amis: Option<bool>,
     /// Specifies whether the lifecycle action should apply to distributed containers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containers")]
-    pub r#containers: Box<Option<bool>>,
+    pub r#containers: Option<bool>,
     /// Specifies whether the lifecycle action should apply to snapshots associated with distributed AMIs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "snapshots")]
-    pub r#snapshots: Box<Option<bool>>,
+    pub r#snapshots: Option<bool>,
 }

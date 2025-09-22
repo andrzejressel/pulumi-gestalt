@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LinuxFunctionAppStickySettings {
     /// A list of `app_setting` names that the Linux Function App will not swap between Slots when a swap operation is triggered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "appSettingNames")]
-    pub r#app_setting_names: Box<Option<Vec<String>>>,
+    pub r#app_setting_names: Option<Vec<String>>,
     /// A list of `connection_string` names that the Linux Function App will not swap between Slots when a swap operation is triggered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionStringNames")]
-    pub r#connection_string_names: Box<Option<Vec<String>>>,
+    pub r#connection_string_names: Option<Vec<String>>,
 }

@@ -10,5 +10,5 @@ pub struct LinuxVirtualMachineScaleSetSecretCertificate {
     /// > **Note:** The certificate must have been uploaded/created in PFX format, PEM certificates are not currently supported by Azure.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

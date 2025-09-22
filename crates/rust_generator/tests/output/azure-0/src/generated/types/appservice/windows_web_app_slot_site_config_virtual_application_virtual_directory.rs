@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WindowsWebAppSlotSiteConfigVirtualApplicationVirtualDirectory {
     /// The physical path for the Virtual Application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "physicalPath")]
-    pub r#physical_path: Box<Option<String>>,
+    pub r#physical_path: Option<String>,
     /// The Virtual Path for the Virtual Application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualPath")]
-    pub r#virtual_path: Box<Option<String>>,
+    pub r#virtual_path: Option<String>,
 }

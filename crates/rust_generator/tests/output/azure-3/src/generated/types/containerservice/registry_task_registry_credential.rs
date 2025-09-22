@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegistryTaskRegistryCredential {
     /// One or more `custom` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customs")]
-    pub r#customs: Box<Option<Vec<super::super::types::containerservice::RegistryTaskRegistryCredentialCustom>>>,
+    pub r#customs: Option<Vec<super::super::types::containerservice::RegistryTaskRegistryCredentialCustom>>,
     /// One `source` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<Option<super::super::types::containerservice::RegistryTaskRegistryCredentialSource>>,
+    pub r#source: Option<Box<super::super::types::containerservice::RegistryTaskRegistryCredentialSource>>,
 }

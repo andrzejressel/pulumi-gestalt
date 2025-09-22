@@ -9,20 +9,20 @@ pub struct GetMultiRegionAccessPointPublicAccessBlock {
     /// * PUT Bucket calls fail if the request includes a public ACL.
     #[builder(into)]
     #[serde(rename = "blockPublicAcls")]
-    pub r#block_public_acls: Box<bool>,
+    pub r#block_public_acls: bool,
     /// Specifies whether Amazon S3 should block public bucket policies for buckets in this account. When set to `true` causes Amazon S3 to:
     /// * Reject calls to PUT Bucket policy if the specified bucket policy allows public access.
     #[builder(into)]
     #[serde(rename = "blockPublicPolicy")]
-    pub r#block_public_policy: Box<bool>,
+    pub r#block_public_policy: bool,
     /// Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. When set to `true` causes Amazon S3 to:
     /// * Ignore all public ACLs on buckets in this account and any objects that they contain.
     #[builder(into)]
     #[serde(rename = "ignorePublicAcls")]
-    pub r#ignore_public_acls: Box<bool>,
+    pub r#ignore_public_acls: bool,
     /// Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. When set to `true`:
     /// * Only the bucket owner and AWS Services can access buckets with public policies.
     #[builder(into)]
     #[serde(rename = "restrictPublicBuckets")]
-    pub r#restrict_public_buckets: Box<bool>,
+    pub r#restrict_public_buckets: bool,
 }

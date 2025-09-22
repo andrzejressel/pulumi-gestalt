@@ -6,15 +6,15 @@ pub struct ApplicationApplicationConfigurationVpcConfiguration {
     /// The Security Group IDs used by the VPC configuration.
     #[builder(into)]
     #[serde(rename = "securityGroupIds")]
-    pub r#security_group_ids: Box<Vec<String>>,
+    pub r#security_group_ids: Vec<String>,
     /// The Subnet IDs used by the VPC configuration.
     #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Vec<String>>,
-    #[builder(into, default)]
+    pub r#subnet_ids: Vec<String>,
+    #[builder(into)]
     #[serde(rename = "vpcConfigurationId")]
-    pub r#vpc_configuration_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#vpc_configuration_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<Option<String>>,
+    pub r#vpc_id: Option<String>,
 }

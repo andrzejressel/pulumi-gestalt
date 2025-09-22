@@ -5,22 +5,22 @@
 pub struct ConnectionProfileCloudsql {
     /// (Output)
     /// Output only. The Cloud SQL instance ID that this connection profile is associated with.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudSqlId")]
-    pub r#cloud_sql_id: Box<Option<String>>,
+    pub r#cloud_sql_id: Option<String>,
     /// (Output)
     /// Output only. The Cloud SQL database instance's private IP.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateIp")]
-    pub r#private_ip: Box<Option<String>>,
+    pub r#private_ip: Option<String>,
     /// (Output)
     /// Output only. The Cloud SQL database instance's public IP.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicIp")]
-    pub r#public_ip: Box<Option<String>>,
+    pub r#public_ip: Option<String>,
     /// Immutable. Metadata used to create the destination Cloud SQL database.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "settings")]
-    pub r#settings: Box<Option<super::super::types::databasemigrationservice::ConnectionProfileCloudsqlSettings>>,
+    pub r#settings: Option<Box<super::super::types::databasemigrationservice::ConnectionProfileCloudsqlSettings>>,
 }

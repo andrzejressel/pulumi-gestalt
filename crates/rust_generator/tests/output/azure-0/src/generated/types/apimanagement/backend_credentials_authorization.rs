@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BackendCredentialsAuthorization {
     /// The authentication Parameter value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameter")]
-    pub r#parameter: Box<Option<String>>,
+    pub r#parameter: Option<String>,
     /// The authentication Scheme name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scheme")]
-    pub r#scheme: Box<Option<String>>,
+    pub r#scheme: Option<String>,
 }

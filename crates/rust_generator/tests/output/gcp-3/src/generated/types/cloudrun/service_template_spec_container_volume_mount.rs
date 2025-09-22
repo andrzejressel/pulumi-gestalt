@@ -7,9 +7,9 @@ pub struct ServiceTemplateSpecContainerVolumeMount {
     /// not contain ':'.
     #[builder(into)]
     #[serde(rename = "mountPath")]
-    pub r#mount_path: Box<String>,
+    pub r#mount_path: String,
     /// This must match the Name of a Volume.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

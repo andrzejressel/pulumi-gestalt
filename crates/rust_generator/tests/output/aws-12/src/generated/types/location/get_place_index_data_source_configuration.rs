@@ -5,5 +5,5 @@
 pub struct GetPlaceIndexDataSourceConfiguration {
     #[builder(into)]
     #[serde(rename = "intendedUse")]
-    pub r#intended_use: Box<String>,
+    pub r#intended_use: String,
 }

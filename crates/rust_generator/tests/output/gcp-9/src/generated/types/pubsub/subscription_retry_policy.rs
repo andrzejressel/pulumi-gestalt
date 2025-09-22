@@ -5,12 +5,12 @@
 pub struct SubscriptionRetryPolicy {
     /// The maximum delay between consecutive deliveries of a given message. Value should be between 0 and 600 seconds. Defaults to 600 seconds.
     /// A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximumBackoff")]
-    pub r#maximum_backoff: Box<Option<String>>,
+    pub r#maximum_backoff: Option<String>,
     /// The minimum delay between consecutive deliveries of a given message. Value should be between 0 and 600 seconds. Defaults to 10 seconds.
     /// A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimumBackoff")]
-    pub r#minimum_backoff: Box<Option<String>>,
+    pub r#minimum_backoff: Option<String>,
 }

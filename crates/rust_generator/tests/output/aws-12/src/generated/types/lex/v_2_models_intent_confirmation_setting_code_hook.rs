@@ -6,15 +6,15 @@ pub struct V2ModelsIntentConfirmationSettingCodeHook {
     /// Whether a dialog code hook is used when the intent is activated.
     #[builder(into)]
     #[serde(rename = "active")]
-    pub r#active: Box<bool>,
+    pub r#active: bool,
     /// Whether a Lambda function should be invoked for the dialog.
     #[builder(into)]
     #[serde(rename = "enableCodeHookInvocation")]
-    pub r#enable_code_hook_invocation: Box<bool>,
+    pub r#enable_code_hook_invocation: bool,
     /// Label that indicates the dialog step from which the dialog code hook is happening.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "invocationLabel")]
-    pub r#invocation_label: Box<Option<String>>,
+    pub r#invocation_label: Option<String>,
     /// Configuration block that contains the responses and actions that Amazon Lex takes after the Lambda function is complete. See `post_code_hook_specification`.
     #[builder(into)]
     #[serde(rename = "postCodeHookSpecification")]

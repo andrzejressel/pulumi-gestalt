@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AgentAgentActionGroupFunctionSchemaMemberFunctions {
     /// Functions that each define an action in the action group. See `functions` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "functions")]
-    pub r#functions: Box<Option<Vec<super::super::types::bedrock::AgentAgentActionGroupFunctionSchemaMemberFunctionsFunction>>>,
+    pub r#functions: Option<Vec<super::super::types::bedrock::AgentAgentActionGroupFunctionSchemaMemberFunctionsFunction>>,
 }

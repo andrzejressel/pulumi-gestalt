@@ -6,9 +6,9 @@ pub struct DataSetLogicalTableMapDataTransformTagColumnOperation {
     /// Column name.
     #[builder(into)]
     #[serde(rename = "columnName")]
-    pub r#column_name: Box<String>,
+    pub r#column_name: String,
     /// The dataset column tag, currently only used for geospatial type tagging. See tags.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Vec<super::super::types::quicksight::DataSetLogicalTableMapDataTransformTagColumnOperationTag>>,
+    pub r#tags: Vec<super::super::types::quicksight::DataSetLogicalTableMapDataTransformTagColumnOperationTag>,
 }

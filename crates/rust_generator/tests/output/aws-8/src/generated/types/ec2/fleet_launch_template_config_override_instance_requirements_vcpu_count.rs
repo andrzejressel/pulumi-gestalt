@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetLaunchTemplateConfigOverrideInstanceRequirementsVcpuCount {
     /// The maximum number of vCPUs. To specify no maximum limit, omit this parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "max")]
-    pub r#max: Box<Option<i32>>,
+    pub r#max: Option<i32>,
     /// The minimum number of vCPUs. To specify no minimum limit, specify `0`.
     #[builder(into)]
     #[serde(rename = "min")]
-    pub r#min: Box<i32>,
+    pub r#min: i32,
 }

@@ -6,9 +6,9 @@ pub struct MediaInsightsPipelineConfigurationElementVoiceAnalyticsProcessorConfi
     /// Enable speaker search.
     #[builder(into)]
     #[serde(rename = "speakerSearchStatus")]
-    pub r#speaker_search_status: Box<String>,
+    pub r#speaker_search_status: String,
     /// Enable voice tone analysis.
     #[builder(into)]
     #[serde(rename = "voiceToneAnalysisStatus")]
-    pub r#voice_tone_analysis_status: Box<String>,
+    pub r#voice_tone_analysis_status: String,
 }

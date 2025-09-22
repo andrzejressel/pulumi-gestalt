@@ -6,9 +6,9 @@ pub struct GetAlertRuleAnomalyRequiredDataConnector {
     /// The ID of the required Data Connector.
     #[builder(into)]
     #[serde(rename = "connectorId")]
-    pub r#connector_id: Box<String>,
+    pub r#connector_id: String,
     /// A list of data types of the required Data Connector.
     #[builder(into)]
     #[serde(rename = "dataTypes")]
-    pub r#data_types: Box<Vec<String>>,
+    pub r#data_types: Vec<String>,
 }

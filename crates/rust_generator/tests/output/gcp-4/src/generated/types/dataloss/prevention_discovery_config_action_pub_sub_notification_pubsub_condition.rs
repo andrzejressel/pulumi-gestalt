@@ -5,7 +5,7 @@
 pub struct PreventionDiscoveryConfigActionPubSubNotificationPubsubCondition {
     /// An expression
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expressions")]
-    pub r#expressions: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressions>>,
+    pub r#expressions: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressions>>,
 }

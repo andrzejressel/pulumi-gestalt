@@ -6,5 +6,5 @@ pub struct ModelPrimaryContainerModelDataSource {
     /// The S3 location of model data to deploy.
     #[builder(into)]
     #[serde(rename = "s3DataSources")]
-    pub r#s_3_data_sources: Box<Vec<super::super::types::sagemaker::ModelPrimaryContainerModelDataSourceS3DataSource>>,
+    pub r#s_3_data_sources: Vec<super::super::types::sagemaker::ModelPrimaryContainerModelDataSourceS3DataSource>,
 }

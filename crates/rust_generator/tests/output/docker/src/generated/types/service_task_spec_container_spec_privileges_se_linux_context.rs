@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext {
     /// Disable SELinux
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disable")]
-    pub r#disable: Box<Option<bool>>,
+    pub r#disable: Option<bool>,
     /// SELinux level label
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "level")]
-    pub r#level: Box<Option<String>>,
+    pub r#level: Option<String>,
     /// SELinux role label
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "role")]
-    pub r#role: Box<Option<String>>,
+    pub r#role: Option<String>,
     /// SELinux type label
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
     /// SELinux user label
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "user")]
-    pub r#user: Box<Option<String>>,
+    pub r#user: Option<String>,
 }

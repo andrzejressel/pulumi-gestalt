@@ -6,9 +6,9 @@ pub struct GetRoleManagementPolicyActivationRuleApprovalStagePrimaryApprover {
     /// (String) The ID of the object which will act as an approver.
     #[builder(into)]
     #[serde(rename = "objectId")]
-    pub r#object_id: Box<String>,
+    pub r#object_id: String,
     /// (String) The type of object acting as an approver. Either `User` or `Group`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

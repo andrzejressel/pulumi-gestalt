@@ -7,5 +7,5 @@ pub struct RegionBackendServiceSubsetting {
     /// Possible values are: `CONSISTENT_HASH_SUBSETTING`.
     #[builder(into)]
     #[serde(rename = "policy")]
-    pub r#policy: Box<String>,
+    pub r#policy: String,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DashboardParameters {
     /// A list of parameters that have a data type of date-time. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DateTimeParameter.html).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dateTimeParameters")]
-    pub r#date_time_parameters: Box<Option<Vec<super::super::types::quicksight::DashboardParametersDateTimeParameter>>>,
+    pub r#date_time_parameters: Option<Vec<super::super::types::quicksight::DashboardParametersDateTimeParameter>>,
     /// A list of parameters that have a data type of decimal. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DecimalParameter.html).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "decimalParameters")]
-    pub r#decimal_parameters: Box<Option<Vec<super::super::types::quicksight::DashboardParametersDecimalParameter>>>,
+    pub r#decimal_parameters: Option<Vec<super::super::types::quicksight::DashboardParametersDecimalParameter>>,
     /// A list of parameters that have a data type of integer. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IntegerParameter.html).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "integerParameters")]
-    pub r#integer_parameters: Box<Option<Vec<super::super::types::quicksight::DashboardParametersIntegerParameter>>>,
+    pub r#integer_parameters: Option<Vec<super::super::types::quicksight::DashboardParametersIntegerParameter>>,
     /// A list of parameters that have a data type of string. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StringParameter.html).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stringParameters")]
-    pub r#string_parameters: Box<Option<Vec<super::super::types::quicksight::DashboardParametersStringParameter>>>,
+    pub r#string_parameters: Option<Vec<super::super::types::quicksight::DashboardParametersStringParameter>>,
 }

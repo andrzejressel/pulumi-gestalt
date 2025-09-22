@@ -5,5 +5,5 @@
 pub struct GetFunctionEphemeralStorage {
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<i32>,
+    pub r#size: i32,
 }

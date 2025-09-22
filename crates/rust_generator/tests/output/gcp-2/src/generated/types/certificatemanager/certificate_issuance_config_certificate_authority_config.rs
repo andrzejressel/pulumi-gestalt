@@ -5,7 +5,7 @@
 pub struct CertificateIssuanceConfigCertificateAuthorityConfig {
     /// Defines a CertificateAuthorityServiceConfig.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateAuthorityServiceConfig")]
-    pub r#certificate_authority_service_config: Box<Option<super::super::types::certificatemanager::CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig>>,
+    pub r#certificate_authority_service_config: Option<Box<super::super::types::certificatemanager::CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig>>,
 }

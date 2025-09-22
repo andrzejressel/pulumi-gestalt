@@ -5,17 +5,17 @@
 pub struct GetNetworkInsightsAnalysisForwardPathComponentInboundHeader {
     #[builder(into)]
     #[serde(rename = "destinationAddresses")]
-    pub r#destination_addresses: Box<Vec<String>>,
+    pub r#destination_addresses: Vec<String>,
     #[builder(into)]
     #[serde(rename = "destinationPortRanges")]
-    pub r#destination_port_ranges: Box<Vec<super::super::types::ec2::GetNetworkInsightsAnalysisForwardPathComponentInboundHeaderDestinationPortRange>>,
+    pub r#destination_port_ranges: Vec<super::super::types::ec2::GetNetworkInsightsAnalysisForwardPathComponentInboundHeaderDestinationPortRange>,
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     #[builder(into)]
     #[serde(rename = "sourceAddresses")]
-    pub r#source_addresses: Box<Vec<String>>,
+    pub r#source_addresses: Vec<String>,
     #[builder(into)]
     #[serde(rename = "sourcePortRanges")]
-    pub r#source_port_ranges: Box<Vec<super::super::types::ec2::GetNetworkInsightsAnalysisForwardPathComponentInboundHeaderSourcePortRange>>,
+    pub r#source_port_ranges: Vec<super::super::types::ec2::GetNetworkInsightsAnalysisForwardPathComponentInboundHeaderSourcePortRange>,
 }

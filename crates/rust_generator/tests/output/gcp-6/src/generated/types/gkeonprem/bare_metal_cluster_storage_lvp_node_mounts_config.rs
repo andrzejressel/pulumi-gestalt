@@ -6,11 +6,11 @@ pub struct BareMetalClusterStorageLvpNodeMountsConfig {
     /// The host machine path.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// The StorageClass name that PVs will be created with.
     /// 
     /// - - -
     #[builder(into)]
     #[serde(rename = "storageClass")]
-    pub r#storage_class: Box<String>,
+    pub r#storage_class: String,
 }

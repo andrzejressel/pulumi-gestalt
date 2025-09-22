@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HierarchyInformationResponse {
     /// Represents configuration name that uniquely identifies configuration
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "configurationName")]
-    pub r#configuration_name: Box<Option<String>>,
+    pub r#configuration_name: Option<String>,
     /// Represents product family name that uniquely identifies product family
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "productFamilyName")]
-    pub r#product_family_name: Box<Option<String>>,
+    pub r#product_family_name: Option<String>,
     /// Represents product line name that uniquely identifies product line
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "productLineName")]
-    pub r#product_line_name: Box<Option<String>>,
+    pub r#product_line_name: Option<String>,
     /// Represents product name that uniquely identifies product
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "productName")]
-    pub r#product_name: Box<Option<String>>,
+    pub r#product_name: Option<String>,
 }

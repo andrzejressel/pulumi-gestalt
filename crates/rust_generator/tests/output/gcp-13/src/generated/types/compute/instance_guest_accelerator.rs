@@ -6,9 +6,9 @@ pub struct InstanceGuestAccelerator {
     /// The number of the guest accelerator cards exposed to this instance.
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
     /// The accelerator type resource to expose to this instance. E.g. `nvidia-tesla-k80`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

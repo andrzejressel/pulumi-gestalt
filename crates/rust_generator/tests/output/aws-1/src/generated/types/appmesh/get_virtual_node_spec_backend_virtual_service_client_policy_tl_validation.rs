@@ -5,8 +5,8 @@
 pub struct GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidation {
     #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationSubjectAlternativeName>>,
+    pub r#subject_alternative_names: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationSubjectAlternativeName>,
     #[builder(into)]
     #[serde(rename = "trusts")]
-    pub r#trusts: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrust>>,
+    pub r#trusts: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrust>,
 }

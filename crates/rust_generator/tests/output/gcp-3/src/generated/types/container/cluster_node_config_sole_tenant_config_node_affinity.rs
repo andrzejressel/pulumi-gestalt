@@ -6,13 +6,13 @@ pub struct ClusterNodeConfigSoleTenantConfigNodeAffinity {
     /// The default or custom node affinity label key name.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Specifies affinity or anti-affinity. Accepted values are `"IN"` or `"NOT_IN"`
     #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<String>,
+    pub r#operator: String,
     /// List of node affinity label values as strings.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

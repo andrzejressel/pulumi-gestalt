@@ -6,13 +6,13 @@ pub struct ApplicationInitialCapacityInitialCapacityConfigWorkerConfiguration {
     /// The CPU requirements for every worker instance of the worker type.
     #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<String>,
+    pub r#cpu: String,
     /// The disk requirements for every worker instance of the worker type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disk")]
-    pub r#disk: Box<Option<String>>,
+    pub r#disk: Option<String>,
     /// The memory requirements for every worker instance of the worker type.
     #[builder(into)]
     #[serde(rename = "memory")]
-    pub r#memory: Box<String>,
+    pub r#memory: String,
 }

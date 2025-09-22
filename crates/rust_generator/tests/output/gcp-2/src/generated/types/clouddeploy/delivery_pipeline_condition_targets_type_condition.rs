@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeliveryPipelineConditionTargetsTypeCondition {
     /// Human readable error message.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorDetails")]
-    pub r#error_details: Box<Option<String>>,
+    pub r#error_details: Option<String>,
     /// True if the targets are all a comparable type. For example this is true if all targets are GKE clusters. This is false if some targets are Cloud Run targets and others are GKE clusters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<bool>>,
+    pub r#status: Option<bool>,
 }

@@ -10,13 +10,13 @@ pub struct V2ModelsIntentConfirmationSettingDeclinationConditionalConditionalBra
     /// Name of the branch.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Configuration block for the next step in the conversation. See `next_step`.
     #[builder(into)]
     #[serde(rename = "nextStep")]
     pub r#next_step: Box<super::super::types::lex::V2ModelsIntentConfirmationSettingDeclinationConditionalConditionalBranchNextStep>,
     /// Configuration block for a list of message groups that Amazon Lex uses to respond to the user input. See `response`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "response")]
-    pub r#response: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponse>>,
+    pub r#response: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponse>>,
 }

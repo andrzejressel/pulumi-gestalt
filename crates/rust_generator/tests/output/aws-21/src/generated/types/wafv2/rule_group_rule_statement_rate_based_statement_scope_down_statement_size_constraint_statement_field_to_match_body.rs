@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oversizeHandling")]
-    pub r#oversize_handling: Box<Option<String>>,
+    pub r#oversize_handling: Option<String>,
 }

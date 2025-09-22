@@ -6,9 +6,9 @@ pub struct ClassificationJobS3JobDefinitionBucketDefinition {
     /// The unique identifier for the AWS account that owns the buckets.
     #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<String>,
+    pub r#account_id: String,
     /// An array that lists the names of the buckets.
     #[builder(into)]
     #[serde(rename = "buckets")]
-    pub r#buckets: Box<Vec<String>>,
+    pub r#buckets: Vec<String>,
 }

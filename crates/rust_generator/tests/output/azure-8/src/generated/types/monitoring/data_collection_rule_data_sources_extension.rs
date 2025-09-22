@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataCollectionRuleDataSourcesExtension {
     /// A JSON String which specifies the extension setting.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "extensionJson")]
-    pub r#extension_json: Box<Option<String>>,
+    pub r#extension_json: Option<String>,
     /// The name of the VM extension.
     #[builder(into)]
     #[serde(rename = "extensionName")]
-    pub r#extension_name: Box<String>,
+    pub r#extension_name: String,
     /// Specifies a list of data sources this extension needs data from. An item should be a name of a supported data source which produces only one stream. Supported data sources type: `performance_counter`, `windows_event_log`,and `syslog`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputDataSources")]
-    pub r#input_data_sources: Box<Option<Vec<String>>>,
+    pub r#input_data_sources: Option<Vec<String>>,
     /// The name which should be used for this data source. This name should be unique across all data sources regardless of type within the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies a list of streams that this data source will be sent to. A stream indicates what schema will be used for this data and usually what table in Log Analytics the data will be sent to. Possible values include but not limited to `Microsoft-Event`, `Microsoft-InsightsMetrics`, `Microsoft-Perf`, `Microsoft-Syslog`, `Microsoft-WindowsEvent`.
     #[builder(into)]
     #[serde(rename = "streams")]
-    pub r#streams: Box<Vec<String>>,
+    pub r#streams: Vec<String>,
 }

@@ -6,5 +6,5 @@ pub struct ScheduleDailyRecurrence {
     /// The time each day when the schedule takes effect.
     #[builder(into)]
     #[serde(rename = "time")]
-    pub r#time: Box<String>,
+    pub r#time: String,
 }

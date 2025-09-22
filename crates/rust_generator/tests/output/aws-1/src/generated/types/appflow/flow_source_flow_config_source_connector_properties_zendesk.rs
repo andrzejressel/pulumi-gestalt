@@ -5,5 +5,5 @@
 pub struct FlowSourceFlowConfigSourceConnectorPropertiesZendesk {
     #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<String>,
+    pub r#object: String,
 }

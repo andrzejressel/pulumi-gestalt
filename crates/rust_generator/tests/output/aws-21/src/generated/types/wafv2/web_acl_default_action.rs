@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclDefaultAction {
     /// Specifies that AWS WAF should allow requests by default. See `allow` below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allow")]
-    pub r#allow: Box<Option<super::super::types::wafv2::WebAclDefaultActionAllow>>,
+    pub r#allow: Option<Box<super::super::types::wafv2::WebAclDefaultActionAllow>>,
     /// Specifies that AWS WAF should block requests by default. See `block` below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "block")]
-    pub r#block: Box<Option<super::super::types::wafv2::WebAclDefaultActionBlock>>,
+    pub r#block: Option<Box<super::super::types::wafv2::WebAclDefaultActionBlock>>,
 }

@@ -6,7 +6,7 @@ pub struct ResponseHeadersPolicyCorsConfig {
     /// A Boolean value that CloudFront uses as the value for the `Access-Control-Allow-Credentials` HTTP response header.
     #[builder(into)]
     #[serde(rename = "accessControlAllowCredentials")]
-    pub r#access_control_allow_credentials: Box<bool>,
+    pub r#access_control_allow_credentials: bool,
     /// Object that contains an attribute `items` that contains a list of HTTP header names that CloudFront includes as values for the `Access-Control-Allow-Headers` HTTP response header.
     #[builder(into)]
     #[serde(rename = "accessControlAllowHeaders")]
@@ -20,15 +20,15 @@ pub struct ResponseHeadersPolicyCorsConfig {
     #[serde(rename = "accessControlAllowOrigins")]
     pub r#access_control_allow_origins: Box<super::super::types::cloudfront::ResponseHeadersPolicyCorsConfigAccessControlAllowOrigins>,
     /// Object that contains an attribute `items` that contains a list of HTTP headers that CloudFront includes as values for the `Access-Control-Expose-Headers` HTTP response header.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessControlExposeHeaders")]
-    pub r#access_control_expose_headers: Box<Option<super::super::types::cloudfront::ResponseHeadersPolicyCorsConfigAccessControlExposeHeaders>>,
+    pub r#access_control_expose_headers: Option<Box<super::super::types::cloudfront::ResponseHeadersPolicyCorsConfigAccessControlExposeHeaders>>,
     /// A number that CloudFront uses as the value for the `Access-Control-Max-Age` HTTP response header.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessControlMaxAgeSec")]
-    pub r#access_control_max_age_sec: Box<Option<i32>>,
+    pub r#access_control_max_age_sec: Option<i32>,
     /// A Boolean value that determines how CloudFront behaves for the HTTP response header.
     #[builder(into)]
     #[serde(rename = "originOverride")]
-    pub r#origin_override: Box<bool>,
+    pub r#origin_override: bool,
 }

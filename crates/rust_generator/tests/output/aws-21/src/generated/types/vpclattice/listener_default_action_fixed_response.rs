@@ -6,5 +6,5 @@ pub struct ListenerDefaultActionFixedResponse {
     /// Custom HTTP status code to return, e.g. a 404 response code. See [Listeners](https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html) in the AWS documentation for a list of supported codes.
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<i32>,
+    pub r#status_code: i32,
 }

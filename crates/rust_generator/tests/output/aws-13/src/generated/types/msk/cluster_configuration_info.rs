@@ -6,9 +6,9 @@ pub struct ClusterConfigurationInfo {
     /// Amazon Resource Name (ARN) of the MSK Configuration to use in the cluster.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// Revision of the MSK Configuration to use in the cluster.
     #[builder(into)]
     #[serde(rename = "revision")]
-    pub r#revision: Box<i32>,
+    pub r#revision: i32,
 }

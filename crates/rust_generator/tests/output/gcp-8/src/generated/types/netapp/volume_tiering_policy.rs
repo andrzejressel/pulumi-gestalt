@@ -5,13 +5,13 @@
 pub struct VolumeTieringPolicy {
     /// Optional. Time in days to mark the volume's data block as cold and make it eligible for tiering, can be range from 7-183.
     /// Default is 31.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "coolingThresholdDays")]
-    pub r#cooling_threshold_days: Box<Option<i32>>,
+    pub r#cooling_threshold_days: Option<i32>,
     /// Optional. Flag indicating if the volume has tiering policy enable/pause. Default is PAUSED.
     /// Default value is `PAUSED`.
     /// Possible values are: `ENABLED`, `PAUSED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tierAction")]
-    pub r#tier_action: Box<Option<String>>,
+    pub r#tier_action: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct ConnectorLogDeliveryWorkerLogDeliveryCloudwatchLogs {
     /// Whether log delivery to Amazon CloudWatch Logs is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The name of the CloudWatch log group that is the destination for log delivery.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logGroup")]
-    pub r#log_group: Box<Option<String>>,
+    pub r#log_group: Option<String>,
 }

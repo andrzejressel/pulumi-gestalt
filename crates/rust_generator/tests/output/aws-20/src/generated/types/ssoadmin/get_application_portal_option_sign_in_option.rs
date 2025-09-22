@@ -5,8 +5,8 @@
 pub struct GetApplicationPortalOptionSignInOption {
     #[builder(into)]
     #[serde(rename = "applicationUrl")]
-    pub r#application_url: Box<String>,
+    pub r#application_url: String,
     #[builder(into)]
     #[serde(rename = "origin")]
-    pub r#origin: Box<String>,
+    pub r#origin: String,
 }

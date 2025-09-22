@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceFromMachineImageScratchDisk {
     /// Name with which the attached disk is accessible under /dev/disk/by-id/
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<Option<String>>,
+    pub r#device_name: Option<String>,
     /// The disk interface used for attaching this disk. One of SCSI or NVME.
     #[builder(into)]
     #[serde(rename = "interface")]
-    pub r#interface: Box<String>,
+    pub r#interface: String,
     /// The size of the disk in gigabytes. One of 375 or 3000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<Option<i32>>,
+    pub r#size: Option<i32>,
 }

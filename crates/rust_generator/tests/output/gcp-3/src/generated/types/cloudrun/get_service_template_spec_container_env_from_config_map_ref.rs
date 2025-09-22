@@ -6,9 +6,9 @@ pub struct GetServiceTemplateSpecContainerEnvFromConfigMapRef {
     /// The ConfigMap to select from.
     #[builder(into)]
     #[serde(rename = "localObjectReferences")]
-    pub r#local_object_references: Box<Vec<super::super::types::cloudrun::GetServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference>>,
+    pub r#local_object_references: Vec<super::super::types::cloudrun::GetServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference>,
     /// Specify whether the ConfigMap must be defined
     #[builder(into)]
     #[serde(rename = "optional")]
-    pub r#optional: Box<bool>,
+    pub r#optional: bool,
 }

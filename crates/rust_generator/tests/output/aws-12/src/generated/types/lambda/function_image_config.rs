@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FunctionImageConfig {
     /// Parameters that you want to pass in with `entry_point`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commands")]
-    pub r#commands: Box<Option<Vec<String>>>,
+    pub r#commands: Option<Vec<String>>,
     /// Entry point to your application, which is typically the location of the runtime executable.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "entryPoints")]
-    pub r#entry_points: Box<Option<Vec<String>>>,
+    pub r#entry_points: Option<Vec<String>>,
     /// Working directory.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "workingDirectory")]
-    pub r#working_directory: Box<Option<String>>,
+    pub r#working_directory: Option<String>,
 }

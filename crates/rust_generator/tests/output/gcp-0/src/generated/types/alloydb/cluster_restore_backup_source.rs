@@ -6,5 +6,5 @@ pub struct ClusterRestoreBackupSource {
     /// The name of the backup that this cluster is restored from.
     #[builder(into)]
     #[serde(rename = "backupName")]
-    pub r#backup_name: Box<String>,
+    pub r#backup_name: String,
 }

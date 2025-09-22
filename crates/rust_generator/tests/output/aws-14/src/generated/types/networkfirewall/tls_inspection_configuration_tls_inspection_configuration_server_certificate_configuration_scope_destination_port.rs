@@ -6,9 +6,9 @@ pub struct TlsInspectionConfigurationTlsInspectionConfigurationServerCertificate
     /// The lower limit of the port range. This must be less than or equal to the `to_port`.
     #[builder(into)]
     #[serde(rename = "fromPort")]
-    pub r#from_port: Box<i32>,
+    pub r#from_port: i32,
     /// The upper limit of the port range. This must be greater than or equal to the `from_port`.
     #[builder(into)]
     #[serde(rename = "toPort")]
-    pub r#to_port: Box<i32>,
+    pub r#to_port: i32,
 }

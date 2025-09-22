@@ -30,15 +30,15 @@ pub struct RegionAutoscalerAutoscalingPolicyMetric {
     /// (if you are using gce_instance resource type). If multiple
     /// TimeSeries are returned upon the query execution, the autoscaler
     /// will sum their respective values to obtain its scaling value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<Option<String>>,
+    pub r#filter: Option<String>,
     /// The identifier (type) of the Stackdriver Monitoring metric.
     /// The metric cannot have negative values.
     /// The metric must have a value type of INT64 or DOUBLE.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// If scaling is based on a per-group metric value that represents the
     /// total amount of work to be done or resource usage, set this value to
     /// an amount assigned for a single instance of the scaled group.
@@ -53,9 +53,9 @@ pub struct RegionAutoscalerAutoscalingPolicyMetric {
     /// latency, since this value can't include a chunk assignable to a
     /// single instance, it could be better used with utilization_target
     /// instead.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "singleInstanceAssignment")]
-    pub r#single_instance_assignment: Box<Option<f64>>,
+    pub r#single_instance_assignment: Option<f64>,
     /// The target value of the metric that autoscaler should
     /// maintain. This must be a positive value. A utilization
     /// metric scales number of virtual machines handling requests
@@ -64,13 +64,13 @@ pub struct RegionAutoscalerAutoscalingPolicyMetric {
     /// www.googleapis.com/compute/instance/network/received_bytes_count.
     /// The autoscaler will work to keep this value constant for each
     /// of the instances.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<Option<f64>>,
+    pub r#target: Option<f64>,
     /// Defines how target utilization value is expressed for a
     /// Stackdriver Monitoring metric.
     /// Possible values are: `GAUGE`, `DELTA_PER_SECOND`, `DELTA_PER_MINUTE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

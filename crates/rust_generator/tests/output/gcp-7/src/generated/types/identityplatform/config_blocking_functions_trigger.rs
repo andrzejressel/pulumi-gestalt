@@ -6,14 +6,14 @@ pub struct ConfigBlockingFunctionsTrigger {
     /// The identifier for this object. Format specified above.
     #[builder(into)]
     #[serde(rename = "eventType")]
-    pub r#event_type: Box<String>,
+    pub r#event_type: String,
     /// HTTP URI trigger for the Cloud Function.
     #[builder(into)]
     #[serde(rename = "functionUri")]
-    pub r#function_uri: Box<String>,
+    pub r#function_uri: String,
     /// (Output)
     /// When the trigger was changed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "updateTime")]
-    pub r#update_time: Box<Option<String>>,
+    pub r#update_time: Option<String>,
 }

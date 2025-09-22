@@ -10,13 +10,13 @@ pub struct BackupPolicyKubernetesClusterRetentionRule {
     /// A `life_cycle` block as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "lifeCycles")]
-    pub r#life_cycles: Box<Vec<super::super::types::dataprotection::BackupPolicyKubernetesClusterRetentionRuleLifeCycle>>,
+    pub r#life_cycles: Vec<super::super::types::dataprotection::BackupPolicyKubernetesClusterRetentionRuleLifeCycle>,
     /// The name which should be used for this retention rule. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the priority of the rule. The priority number must be unique for each rule. The lower the priority number, the higher the priority of the rule. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
 }

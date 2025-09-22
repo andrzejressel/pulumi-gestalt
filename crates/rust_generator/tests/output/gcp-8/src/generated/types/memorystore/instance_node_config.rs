@@ -5,7 +5,7 @@
 pub struct InstanceNodeConfig {
     /// (Output)
     /// Output only. Memory size in GB of the node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sizeGb")]
-    pub r#size_gb: Box<Option<f64>>,
+    pub r#size_gb: Option<f64>,
 }

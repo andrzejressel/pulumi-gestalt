@@ -6,21 +6,21 @@ pub struct NetworkConnectionMonitorTestGroup {
     /// A list of destination endpoint names.
     #[builder(into)]
     #[serde(rename = "destinationEndpoints")]
-    pub r#destination_endpoints: Box<Vec<String>>,
+    pub r#destination_endpoints: Vec<String>,
     /// Should the test group be enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The name of the test group for the Network Connection Monitor.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A list of source endpoint names.
     #[builder(into)]
     #[serde(rename = "sourceEndpoints")]
-    pub r#source_endpoints: Box<Vec<String>>,
+    pub r#source_endpoints: Vec<String>,
     /// A list of test configuration names.
     #[builder(into)]
     #[serde(rename = "testConfigurationNames")]
-    pub r#test_configuration_names: Box<Vec<String>>,
+    pub r#test_configuration_names: Vec<String>,
 }

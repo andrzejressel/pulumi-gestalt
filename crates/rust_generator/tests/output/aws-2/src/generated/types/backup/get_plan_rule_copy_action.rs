@@ -5,8 +5,8 @@
 pub struct GetPlanRuleCopyAction {
     #[builder(into)]
     #[serde(rename = "destinationVaultArn")]
-    pub r#destination_vault_arn: Box<String>,
+    pub r#destination_vault_arn: String,
     #[builder(into)]
     #[serde(rename = "lifecycles")]
-    pub r#lifecycles: Box<Vec<super::super::types::backup::GetPlanRuleCopyActionLifecycle>>,
+    pub r#lifecycles: Vec<super::super::types::backup::GetPlanRuleCopyActionLifecycle>,
 }

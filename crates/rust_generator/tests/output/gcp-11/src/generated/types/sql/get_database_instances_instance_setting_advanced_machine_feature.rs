@@ -6,5 +6,5 @@ pub struct GetDatabaseInstancesInstanceSettingAdvancedMachineFeature {
     /// The number of threads per physical core. Can be 1 or 2.
     #[builder(into)]
     #[serde(rename = "threadsPerCore")]
-    pub r#threads_per_core: Box<i32>,
+    pub r#threads_per_core: i32,
 }

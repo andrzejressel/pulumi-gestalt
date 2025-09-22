@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WindowsVirtualMachineAdditionalCapabilities {
     /// Whether to enable the hibernation capability or not.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hibernationEnabled")]
-    pub r#hibernation_enabled: Box<Option<bool>>,
+    pub r#hibernation_enabled: Option<bool>,
     /// Should the capacity to enable Data Disks of the `UltraSSD_LRS` storage account type be supported on this Virtual Machine? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ultraSsdEnabled")]
-    pub r#ultra_ssd_enabled: Box<Option<bool>>,
+    pub r#ultra_ssd_enabled: Option<bool>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResponsePlanIntegration {
     /// Details about the PagerDuty configuration for a response plan. The following values are supported:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pagerduties")]
-    pub r#pagerduties: Box<Option<Vec<super::super::types::ssmincidents::ResponsePlanIntegrationPagerduty>>>,
+    pub r#pagerduties: Option<Vec<super::super::types::ssmincidents::ResponsePlanIntegrationPagerduty>>,
 }

@@ -6,9 +6,9 @@ pub struct GetEndpointConnectionNetworkInterface {
     /// The ID of the network interface associated with the private endpoint.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Specifies the Name of the private endpoint.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -5,5 +5,5 @@
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsTrendmicro {
     #[builder(into)]
     #[serde(rename = "apiSecretKey")]
-    pub r#api_secret_key: Box<String>,
+    pub r#api_secret_key: String,
 }

@@ -6,14 +6,14 @@ pub struct UrlMapPathMatcherHeaderActionResponseHeadersToAdd {
     /// The name of the header to add.
     #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<String>,
+    pub r#header_name: String,
     /// The value of the header to add.
     #[builder(into)]
     #[serde(rename = "headerValue")]
-    pub r#header_value: Box<String>,
+    pub r#header_value: String,
     /// If false, headerValue is appended to any values that already exist for the header.
     /// If true, headerValue is set for the header, discarding any values that were set for that header.
     #[builder(into)]
     #[serde(rename = "replace")]
-    pub r#replace: Box<bool>,
+    pub r#replace: bool,
 }

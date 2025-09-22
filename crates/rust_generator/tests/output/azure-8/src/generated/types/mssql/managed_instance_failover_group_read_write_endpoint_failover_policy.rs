@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ManagedInstanceFailoverGroupReadWriteEndpointFailoverPolicy {
     /// Applies only if `mode` is `Automatic`. The grace period in minutes before failover with data loss is attempted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "graceMinutes")]
-    pub r#grace_minutes: Box<Option<i32>>,
+    pub r#grace_minutes: Option<i32>,
     /// The failover mode. Possible values are `Automatic` or `Manual`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

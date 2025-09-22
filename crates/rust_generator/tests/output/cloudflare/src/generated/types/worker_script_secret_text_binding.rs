@@ -6,9 +6,9 @@ pub struct WorkerScriptSecretTextBinding {
     /// The global variable for the binding in your Worker code.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The secret text you want to store.
     #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<String>,
+    pub r#text: String,
 }

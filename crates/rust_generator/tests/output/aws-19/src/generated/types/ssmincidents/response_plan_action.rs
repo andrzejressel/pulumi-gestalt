@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResponsePlanAction {
     /// The Systems Manager automation document to start as the runbook at the beginning of the incident. The following values are supported:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ssmAutomations")]
-    pub r#ssm_automations: Box<Option<Vec<super::super::types::ssmincidents::ResponsePlanActionSsmAutomation>>>,
+    pub r#ssm_automations: Option<Vec<super::super::types::ssmincidents::ResponsePlanActionSsmAutomation>>,
 }

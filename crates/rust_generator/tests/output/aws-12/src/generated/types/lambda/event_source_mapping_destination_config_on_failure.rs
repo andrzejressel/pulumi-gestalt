@@ -6,5 +6,5 @@ pub struct EventSourceMappingDestinationConfigOnFailure {
     /// The Amazon Resource Name (ARN) of the destination resource.
     #[builder(into)]
     #[serde(rename = "destinationArn")]
-    pub r#destination_arn: Box<String>,
+    pub r#destination_arn: String,
 }

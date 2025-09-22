@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption {
     /// This field is set when upgrades are about to commence with the approximate start time for the upgrades, in RFC3339 text format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoUpgradeStartTime")]
-    pub r#auto_upgrade_start_time: Box<Option<String>>,
+    pub r#auto_upgrade_start_time: Option<String>,
     /// Description of the cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
 }

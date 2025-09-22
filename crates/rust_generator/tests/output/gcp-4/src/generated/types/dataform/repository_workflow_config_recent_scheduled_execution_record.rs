@@ -6,17 +6,17 @@ pub struct RepositoryWorkflowConfigRecentScheduledExecutionRecord {
     /// (Output)
     /// The error status encountered upon this attempt to create the workflow invocation, if the attempt was unsuccessful.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorStatuses")]
-    pub r#error_statuses: Box<Option<Vec<super::super::types::dataform::RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus>>>,
+    pub r#error_statuses: Option<Vec<super::super::types::dataform::RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus>>,
     /// (Output)
     /// The timestamp of this workflow attempt.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "executionTime")]
-    pub r#execution_time: Box<Option<String>>,
+    pub r#execution_time: Option<String>,
     /// (Output)
     /// The name of the created workflow invocation, if one was successfully created. In the format projects/*/locations/*/repositories/*/workflowInvocations/*.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "workflowInvocation")]
-    pub r#workflow_invocation: Box<Option<String>>,
+    pub r#workflow_invocation: Option<String>,
 }

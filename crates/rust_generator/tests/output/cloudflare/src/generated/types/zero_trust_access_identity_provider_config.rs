@@ -3,85 +3,85 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZeroTrustAccessIdentityProviderConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "apiToken")]
-    pub r#api_token: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#api_token: Option<String>,
+    #[builder(into)]
     #[serde(rename = "appsDomain")]
-    pub r#apps_domain: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#apps_domain: Option<String>,
+    #[builder(into)]
     #[serde(rename = "attributes")]
-    pub r#attributes: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#attributes: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "authUrl")]
-    pub r#auth_url: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#auth_url: Option<String>,
+    #[builder(into)]
     #[serde(rename = "authorizationServerId")]
-    pub r#authorization_server_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#authorization_server_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "centrifyAccount")]
-    pub r#centrify_account: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#centrify_account: Option<String>,
+    #[builder(into)]
     #[serde(rename = "centrifyAppId")]
-    pub r#centrify_app_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#centrify_app_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "certsUrl")]
-    pub r#certs_url: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#certs_url: Option<String>,
+    #[builder(into)]
     #[serde(rename = "claims")]
-    pub r#claims: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#claims: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#client_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#client_secret: Option<String>,
+    #[builder(into)]
     #[serde(rename = "conditionalAccessEnabled")]
-    pub r#conditional_access_enabled: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#conditional_access_enabled: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "directoryId")]
-    pub r#directory_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#directory_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "emailAttributeName")]
-    pub r#email_attribute_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#email_attribute_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "emailClaimName")]
-    pub r#email_claim_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#email_claim_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "idpPublicCert")]
-    pub r#idp_public_cert: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#idp_public_cert: Option<String>,
+    #[builder(into)]
     #[serde(rename = "issuerUrl")]
-    pub r#issuer_url: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#issuer_url: Option<String>,
+    #[builder(into)]
     #[serde(rename = "oktaAccount")]
-    pub r#okta_account: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#okta_account: Option<String>,
+    #[builder(into)]
     #[serde(rename = "oneloginAccount")]
-    pub r#onelogin_account: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#onelogin_account: Option<String>,
+    #[builder(into)]
     #[serde(rename = "pingEnvId")]
-    pub r#ping_env_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#ping_env_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "pkceEnabled")]
-    pub r#pkce_enabled: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#pkce_enabled: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "redirectUrl")]
-    pub r#redirect_url: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#redirect_url: Option<String>,
+    #[builder(into)]
     #[serde(rename = "scopes")]
-    pub r#scopes: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#scopes: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "signRequest")]
-    pub r#sign_request: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#sign_request: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "ssoTargetUrl")]
-    pub r#sso_target_url: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#sso_target_url: Option<String>,
+    #[builder(into)]
     #[serde(rename = "supportGroups")]
-    pub r#support_groups: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#support_groups: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "tokenUrl")]
-    pub r#token_url: Box<Option<String>>,
+    pub r#token_url: Option<String>,
 }

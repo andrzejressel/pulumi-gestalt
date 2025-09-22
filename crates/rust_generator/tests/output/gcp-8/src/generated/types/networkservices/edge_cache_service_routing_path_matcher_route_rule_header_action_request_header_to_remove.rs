@@ -6,5 +6,5 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderT
     /// The name of the header to remove.
     #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<String>,
+    pub r#header_name: String,
 }

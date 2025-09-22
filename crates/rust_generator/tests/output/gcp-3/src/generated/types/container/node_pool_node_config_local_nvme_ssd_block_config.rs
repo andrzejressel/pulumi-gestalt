@@ -6,5 +6,5 @@ pub struct NodePoolNodeConfigLocalNvmeSsdBlockConfig {
     /// Number of raw-block local NVMe SSD disks to be attached to the node. Each local SSD is 375 GB in size.
     #[builder(into)]
     #[serde(rename = "localSsdCount")]
-    pub r#local_ssd_count: Box<i32>,
+    pub r#local_ssd_count: i32,
 }

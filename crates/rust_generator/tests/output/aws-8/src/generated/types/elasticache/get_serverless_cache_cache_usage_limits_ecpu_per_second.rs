@@ -6,9 +6,9 @@ pub struct GetServerlessCacheCacheUsageLimitsEcpuPerSecond {
     /// The maximum number of ECPUs the cache can consume per second.
     #[builder(into)]
     #[serde(rename = "maximum")]
-    pub r#maximum: Box<i32>,
+    pub r#maximum: i32,
     /// The minimum number of ECPUs the cache can consume per second.
     #[builder(into)]
     #[serde(rename = "minimum")]
-    pub r#minimum: Box<i32>,
+    pub r#minimum: i32,
 }

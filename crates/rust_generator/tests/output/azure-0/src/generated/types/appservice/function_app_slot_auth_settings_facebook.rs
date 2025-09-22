@@ -6,13 +6,13 @@ pub struct FunctionAppSlotAuthSettingsFacebook {
     /// The App ID of the Facebook app used for login
     #[builder(into)]
     #[serde(rename = "appId")]
-    pub r#app_id: Box<String>,
+    pub r#app_id: String,
     /// The App Secret of the Facebook app used for Facebook login.
     #[builder(into)]
     #[serde(rename = "appSecret")]
-    pub r#app_secret: Box<String>,
+    pub r#app_secret: String,
     /// The OAuth 2.0 scopes that will be requested as part of Facebook login authentication. <https://developers.facebook.com/docs/facebook-login>
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oauthScopes")]
-    pub r#oauth_scopes: Box<Option<Vec<String>>>,
+    pub r#oauth_scopes: Option<Vec<String>>,
 }

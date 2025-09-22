@@ -6,9 +6,9 @@ pub struct FilterablePropertyResponse {
     /// Values to be filtered.
     #[builder(into)]
     #[serde(rename = "supportedValues")]
-    pub r#supported_values: Box<Vec<String>>,
+    pub r#supported_values: Vec<String>,
     /// Type of product filter.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

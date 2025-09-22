@@ -6,13 +6,13 @@ pub struct GetNetworkManagerCrossTenantScope {
     /// A list of management groups used as cross tenant scope for the Network Manager.
     #[builder(into)]
     #[serde(rename = "managementGroups")]
-    pub r#management_groups: Box<Vec<String>>,
+    pub r#management_groups: Vec<String>,
     /// A list of subscriptions used as cross tenant scope for the Network Manager.
     #[builder(into)]
     #[serde(rename = "subscriptions")]
-    pub r#subscriptions: Box<Vec<String>>,
+    pub r#subscriptions: Vec<String>,
     /// The tenant ID of the cross tenant scope.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
 }

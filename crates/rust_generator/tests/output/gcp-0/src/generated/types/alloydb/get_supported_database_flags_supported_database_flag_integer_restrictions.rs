@@ -6,9 +6,9 @@ pub struct GetSupportedDatabaseFlagsSupportedDatabaseFlagIntegerRestrictions {
     /// The maximum value that can be specified, if applicable.
     #[builder(into)]
     #[serde(rename = "maxValue")]
-    pub r#max_value: Box<String>,
+    pub r#max_value: String,
     /// The minimum value that can be specified, if applicable.
     #[builder(into)]
     #[serde(rename = "minValue")]
-    pub r#min_value: Box<String>,
+    pub r#min_value: String,
 }

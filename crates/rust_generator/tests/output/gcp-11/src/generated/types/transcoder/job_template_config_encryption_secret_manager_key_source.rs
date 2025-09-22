@@ -6,5 +6,5 @@ pub struct JobTemplateConfigEncryptionSecretManagerKeySource {
     /// The name of the Secret Version containing the encryption key in the following format: projects/{project}/secrets/{secret_id}/versions/{version_number}.
     #[builder(into)]
     #[serde(rename = "secretVersion")]
-    pub r#secret_version: Box<String>,
+    pub r#secret_version: String,
 }

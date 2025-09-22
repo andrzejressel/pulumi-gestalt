@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeliveryPipelineSerialPipelineStageStrategyStandardPredeploy {
     /// Optional. A sequence of skaffold custom actions to invoke during execution of the predeploy job.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Option<Vec<String>>>,
+    pub r#actions: Option<Vec<String>>,
 }

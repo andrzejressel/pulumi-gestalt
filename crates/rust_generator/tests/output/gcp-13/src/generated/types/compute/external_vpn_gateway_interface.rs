@@ -8,23 +8,23 @@ pub struct ExternalVpnGatewayInterface {
     /// * `0 - SINGLE_IP_INTERNALLY_REDUNDANT`
     /// * `0, 1 - TWO_IPS_REDUNDANCY`
     /// * `0, 1, 2, 3 - FOUR_IPS_REDUNDANCY`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<i32>>,
+    pub r#id: Option<i32>,
     /// IP address of the interface in the external VPN gateway.
     /// Only IPv4 is supported. This IP address can be either from
     /// your on-premise gateway or another Cloud provider's VPN gateway,
     /// it cannot be an IP address from Google Compute Engine.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<Option<String>>,
+    pub r#ip_address: Option<String>,
     /// IPv6 address of the interface in the external VPN gateway. This IPv6
     /// address can be either from your on-premise gateway or another Cloud
     /// provider's VPN gateway, it cannot be an IP address from Google Compute
     /// Engine. Must specify an IPv6 address (not IPV4-mapped) using any format
     /// described in RFC 4291 (e.g. 2001:db8:0:0:2d9:51:0:0). The output format
     /// is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv6Address")]
-    pub r#ipv_6_address: Box<Option<String>>,
+    pub r#ipv_6_address: Option<String>,
 }

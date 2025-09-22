@@ -6,5 +6,5 @@ pub struct GetBackendAddressPoolBackendIpConfiguration {
     /// The ID of the Backend Address Pool.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

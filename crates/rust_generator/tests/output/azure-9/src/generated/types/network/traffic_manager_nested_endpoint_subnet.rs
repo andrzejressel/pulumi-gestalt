@@ -6,13 +6,13 @@ pub struct TrafficManagerNestedEndpointSubnet {
     /// The first IP Address in this subnet.
     #[builder(into)]
     #[serde(rename = "first")]
-    pub r#first: Box<String>,
+    pub r#first: String,
     /// The last IP Address in this subnet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "last")]
-    pub r#last: Box<Option<String>>,
+    pub r#last: Option<String>,
     /// The block size (number of leading bits in the subnet mask).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<Option<i32>>,
+    pub r#scope: Option<i32>,
 }

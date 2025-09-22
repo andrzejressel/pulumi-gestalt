@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IoTHubRoute {
     /// The condition that is evaluated to apply the routing rule. Defaults to `true`. For grammar, see: <https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language>.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "condition")]
-    pub r#condition: Box<Option<String>>,
+    pub r#condition: Option<String>,
     /// Used to specify whether a route is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The list of endpoints to which messages that satisfy the condition are routed.
     #[builder(into)]
     #[serde(rename = "endpointNames")]
-    pub r#endpoint_names: Box<Vec<String>>,
+    pub r#endpoint_names: Vec<String>,
     /// The name of the route.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The source that the routing rule is to be applied to, such as `DeviceMessages`. Possible values include: `Invalid`, `DeviceMessages`, `TwinChangeEvents`, `DeviceLifecycleEvents`, `DeviceConnectionStateEvents`, `DeviceJobLifecycleEvents` and `DigitalTwinChangeEvents`.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<String>,
+    pub r#source: String,
 }

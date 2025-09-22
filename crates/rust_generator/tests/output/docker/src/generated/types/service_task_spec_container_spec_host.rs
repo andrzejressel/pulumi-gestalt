@@ -6,9 +6,9 @@ pub struct ServiceTaskSpecContainerSpecHost {
     /// The name of the host
     #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<String>,
+    pub r#host: String,
     /// The ip of the host
     #[builder(into)]
     #[serde(rename = "ip")]
-    pub r#ip: Box<String>,
+    pub r#ip: String,
 }

@@ -7,5 +7,5 @@ pub struct PatchDeploymentOneTimeSchedule {
     /// accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
     #[serde(rename = "executeTime")]
-    pub r#execute_time: Box<String>,
+    pub r#execute_time: String,
 }

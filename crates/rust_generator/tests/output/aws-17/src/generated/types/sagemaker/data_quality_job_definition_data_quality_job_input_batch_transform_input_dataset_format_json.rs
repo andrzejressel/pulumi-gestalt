@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatJson {
     /// Indicates if the file should be read as a json object per line.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "line")]
-    pub r#line: Box<Option<bool>>,
+    pub r#line: Option<bool>,
 }

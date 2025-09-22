@@ -6,9 +6,9 @@ pub struct GetImageImagePermission {
     /// Boolean indicating if the image can be used for a fleet.
     #[builder(into)]
     #[serde(rename = "allowFleet")]
-    pub r#allow_fleet: Box<bool>,
+    pub r#allow_fleet: bool,
     /// indicated whether the image can be used for an image builder.
     #[builder(into)]
     #[serde(rename = "allowImageBuilder")]
-    pub r#allow_image_builder: Box<bool>,
+    pub r#allow_image_builder: bool,
 }

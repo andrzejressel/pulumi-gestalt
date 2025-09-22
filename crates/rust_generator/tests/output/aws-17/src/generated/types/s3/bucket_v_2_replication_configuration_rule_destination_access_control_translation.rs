@@ -6,5 +6,5 @@ pub struct BucketV2ReplicationConfigurationRuleDestinationAccessControlTranslati
     /// Specifies the replica ownership. For default and valid values, see [PUT bucket replication](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html) in the Amazon S3 API Reference. The only valid value is `Destination`.
     #[builder(into)]
     #[serde(rename = "owner")]
-    pub r#owner: Box<String>,
+    pub r#owner: String,
 }

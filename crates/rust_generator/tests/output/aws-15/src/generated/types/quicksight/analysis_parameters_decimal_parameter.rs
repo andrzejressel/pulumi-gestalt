@@ -8,8 +8,8 @@ pub struct AnalysisParametersDecimalParameter {
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<f64>>,
+    pub r#values: Vec<f64>,
 }

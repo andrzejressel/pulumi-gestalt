@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetLaunchTemplateConfigOverrideInstanceRequirementsNetworkInterfaceCount {
     /// The maximum number of network interfaces. To specify no maximum limit, omit this parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "max")]
-    pub r#max: Box<Option<i32>>,
+    pub r#max: Option<i32>,
     /// The minimum number of network interfaces. To specify no minimum limit, omit this parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "min")]
-    pub r#min: Box<Option<i32>>,
+    pub r#min: Option<i32>,
 }

@@ -6,9 +6,9 @@ pub struct GetDistributionConfigurationDistributionContainerDistributionConfigur
     /// Name of the container repository where the output container image is stored.
     #[builder(into)]
     #[serde(rename = "repositoryName")]
-    pub r#repository_name: Box<String>,
+    pub r#repository_name: String,
     /// Service in which the image is registered.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

@@ -8,5 +8,5 @@ pub struct DatascanExecutionSpecTriggerSchedule {
     /// - - -
     #[builder(into)]
     #[serde(rename = "cron")]
-    pub r#cron: Box<String>,
+    pub r#cron: String,
 }

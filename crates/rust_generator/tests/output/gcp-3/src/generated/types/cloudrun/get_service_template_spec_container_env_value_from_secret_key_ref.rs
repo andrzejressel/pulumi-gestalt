@@ -7,9 +7,9 @@ pub struct GetServiceTemplateSpecContainerEnvValueFromSecretKeyRef {
     /// version or an integer for a specific version.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The name of the Cloud Run Service.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

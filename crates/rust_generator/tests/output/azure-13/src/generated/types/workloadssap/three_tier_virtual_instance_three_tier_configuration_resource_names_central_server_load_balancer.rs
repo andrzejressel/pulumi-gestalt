@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThreeTierVirtualInstanceThreeTierConfigurationResourceNamesCentralServerLoadBalancer {
     /// A list of Backend Pool names for the Load Balancer. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backendPoolNames")]
-    pub r#backend_pool_names: Box<Option<Vec<String>>>,
+    pub r#backend_pool_names: Option<Vec<String>>,
     /// A list of Frontend IP Configuration names. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "frontendIpConfigurationNames")]
-    pub r#frontend_ip_configuration_names: Box<Option<Vec<String>>>,
+    pub r#frontend_ip_configuration_names: Option<Vec<String>>,
     /// A list of Health Probe names. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "healthProbeNames")]
-    pub r#health_probe_names: Box<Option<Vec<String>>>,
+    pub r#health_probe_names: Option<Vec<String>>,
     /// The full resource name of the Load Balancer. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

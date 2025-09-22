@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBody {
     /// What to do when JSON parsing fails. Defaults to evaluating up to the first parsing failure. Valid values are `EVALUATE_AS_STRING`, `MATCH` and `NO_MATCH`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "invalidFallbackBehavior")]
-    pub r#invalid_fallback_behavior: Box<Option<String>>,
+    pub r#invalid_fallback_behavior: Option<String>,
     /// The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `included_paths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
     #[builder(into)]
     #[serde(rename = "matchPattern")]
@@ -14,9 +14,9 @@ pub struct WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatem
     /// The parts of the JSON to match against using the `match_pattern`. Valid values are `ALL`, `KEY` and `VALUE`.
     #[builder(into)]
     #[serde(rename = "matchScope")]
-    pub r#match_scope: Box<String>,
+    pub r#match_scope: String,
     /// What to do if the body is larger than can be inspected. Valid values are `CONTINUE` (default), `MATCH` and `NO_MATCH`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oversizeHandling")]
-    pub r#oversize_handling: Box<Option<String>>,
+    pub r#oversize_handling: Option<String>,
 }

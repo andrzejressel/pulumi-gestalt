@@ -6,9 +6,9 @@ pub struct GetRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository {
     /// A common public repository base for Apt, e.g. '"debian/dists/buster"' Possible values: ["DEBIAN", "UBUNTU"]
     #[builder(into)]
     #[serde(rename = "repositoryBase")]
-    pub r#repository_base: Box<String>,
+    pub r#repository_base: String,
     /// Specific repository from the base.
     #[builder(into)]
     #[serde(rename = "repositoryPath")]
-    pub r#repository_path: Box<String>,
+    pub r#repository_path: String,
 }

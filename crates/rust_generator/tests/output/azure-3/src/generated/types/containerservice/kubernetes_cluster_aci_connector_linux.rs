@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubernetesClusterAciConnectorLinux {
     /// A `connector_identity` block is exported. The exported attributes are defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectorIdentities")]
-    pub r#connector_identities: Box<Option<Vec<super::super::types::containerservice::KubernetesClusterAciConnectorLinuxConnectorIdentity>>>,
+    pub r#connector_identities: Option<Vec<super::super::types::containerservice::KubernetesClusterAciConnectorLinuxConnectorIdentity>>,
     /// The subnet name for the virtual nodes to run.
     /// 
     /// > **Note:** At this time ACI Connectors are not supported in Azure China.
@@ -27,5 +27,5 @@ pub struct KubernetesClusterAciConnectorLinux {
     /// ```
     #[builder(into)]
     #[serde(rename = "subnetName")]
-    pub r#subnet_name: Box<String>,
+    pub r#subnet_name: String,
 }

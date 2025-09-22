@@ -9,5 +9,5 @@ pub struct ConnectionAuthConfigSshPublicKeySshClientCertPass {
     /// <a name="nested_oauth2_auth_code_flow"></a>The `oauth2_auth_code_flow` block supports:
     #[builder(into)]
     #[serde(rename = "secretVersion")]
-    pub r#secret_version: Box<String>,
+    pub r#secret_version: String,
 }

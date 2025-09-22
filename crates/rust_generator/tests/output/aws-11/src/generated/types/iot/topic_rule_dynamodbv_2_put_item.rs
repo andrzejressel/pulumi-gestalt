@@ -6,5 +6,5 @@ pub struct TopicRuleDynamodbv2PutItem {
     /// The name of the DynamoDB table.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
 }

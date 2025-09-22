@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceEndpointSpec {
     /// The mode of resolution to use for internal load balancing between tasks
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<Option<String>>,
+    pub r#mode: Option<String>,
     /// List of exposed ports that this service is accessible on from the outside. Ports can only be provided if 'vip' resolution mode is used
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ports")]
-    pub r#ports: Box<Option<Vec<super::types::ServiceEndpointSpecPort>>>,
+    pub r#ports: Option<Vec<super::types::ServiceEndpointSpecPort>>,
 }

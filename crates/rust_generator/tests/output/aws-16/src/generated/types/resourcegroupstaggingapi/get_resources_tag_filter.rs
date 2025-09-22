@@ -6,9 +6,9 @@ pub struct GetResourcesTagFilter {
     /// One part of a key-value pair that makes up a tag.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Optional part of a key-value pair that make up a tag.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<Vec<String>>>,
+    pub r#values: Option<Vec<String>>,
 }

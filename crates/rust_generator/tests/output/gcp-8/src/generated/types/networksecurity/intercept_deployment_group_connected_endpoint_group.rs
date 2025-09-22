@@ -5,7 +5,7 @@
 pub struct InterceptDeploymentGroupConnectedEndpointGroup {
     /// (Output)
     /// Output only. A connected intercept endpoint group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

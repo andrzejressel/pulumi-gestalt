@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetScalingConfiguration {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "desiredCapacity")]
-    pub r#desired_capacity: Box<Option<i32>>,
+    pub r#desired_capacity: Option<i32>,
     /// Maximum number of instances in the ﬂeet when auto-scaling.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxCapacity")]
-    pub r#max_capacity: Box<Option<i32>>,
+    pub r#max_capacity: Option<i32>,
     /// Scaling type for a compute fleet. Valid value: `TARGET_TRACKING_SCALING`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scalingType")]
-    pub r#scaling_type: Box<Option<String>>,
+    pub r#scaling_type: Option<String>,
     /// Configuration block. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetTrackingScalingConfigs")]
-    pub r#target_tracking_scaling_configs: Box<Option<Vec<super::super::types::codebuild::FleetScalingConfigurationTargetTrackingScalingConfig>>>,
+    pub r#target_tracking_scaling_configs: Option<Vec<super::super::types::codebuild::FleetScalingConfigurationTargetTrackingScalingConfig>>,
 }

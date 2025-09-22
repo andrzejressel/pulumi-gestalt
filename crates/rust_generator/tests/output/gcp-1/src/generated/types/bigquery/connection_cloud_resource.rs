@@ -5,7 +5,7 @@
 pub struct ConnectionCloudResource {
     /// (Output)
     /// The account ID of the service created for the purpose of this connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAccountId")]
-    pub r#service_account_id: Box<Option<String>>,
+    pub r#service_account_id: Option<String>,
 }

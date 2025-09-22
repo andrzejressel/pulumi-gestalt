@@ -6,5 +6,5 @@ pub struct FrontdoorSecretSecret {
     /// A `customer_certificate` block as defined below. Changing this forces a new Front Door Secret to be created.
     #[builder(into)]
     #[serde(rename = "customerCertificates")]
-    pub r#customer_certificates: Box<Vec<super::super::types::cdn::FrontdoorSecretSecretCustomerCertificate>>,
+    pub r#customer_certificates: Vec<super::super::types::cdn::FrontdoorSecretSecretCustomerCertificate>,
 }

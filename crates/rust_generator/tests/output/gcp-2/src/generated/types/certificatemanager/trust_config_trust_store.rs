@@ -6,12 +6,12 @@ pub struct TrustConfigTrustStore {
     /// Set of intermediate CA certificates used for the path building phase of chain validation.
     /// The field is currently not supported if trust config is used for the workload certificate feature.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "intermediateCas")]
-    pub r#intermediate_cas: Box<Option<Vec<super::super::types::certificatemanager::TrustConfigTrustStoreIntermediateCa>>>,
+    pub r#intermediate_cas: Option<Vec<super::super::types::certificatemanager::TrustConfigTrustStoreIntermediateCa>>,
     /// List of Trust Anchors to be used while performing validation against a given TrustStore.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "trustAnchors")]
-    pub r#trust_anchors: Box<Option<Vec<super::super::types::certificatemanager::TrustConfigTrustStoreTrustAnchor>>>,
+    pub r#trust_anchors: Option<Vec<super::super::types::certificatemanager::TrustConfigTrustStoreTrustAnchor>>,
 }

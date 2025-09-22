@@ -7,13 +7,13 @@ pub struct ClusterFleet {
     /// The name of the managed Hub Membership resource associated to this cluster.
     /// Membership names are formatted as
     /// `projects/<project-number>/locations/global/membership/<cluster-id>`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "membership")]
-    pub r#membership: Box<Option<String>>,
+    pub r#membership: Option<String>,
     /// The name of the Fleet host project where this cluster will be registered.
     /// Project names are formatted as
     /// `projects/<project-number>`.
     #[builder(into)]
     #[serde(rename = "project")]
-    pub r#project: Box<String>,
+    pub r#project: String,
 }

@@ -6,13 +6,13 @@ pub struct DataSetLogicalTableMapDataTransformCastColumnTypeOperation {
     /// Column name.
     #[builder(into)]
     #[serde(rename = "columnName")]
-    pub r#column_name: Box<String>,
+    pub r#column_name: String,
     /// When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "format")]
-    pub r#format: Box<Option<String>>,
+    pub r#format: Option<String>,
     /// New column data type. Valid values are `STRING`, `INTEGER`, `DECIMAL`, `DATETIME`.
     #[builder(into)]
     #[serde(rename = "newColumnType")]
-    pub r#new_column_type: Box<String>,
+    pub r#new_column_type: String,
 }

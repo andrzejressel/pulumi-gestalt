@@ -6,5 +6,5 @@ pub struct KafkaClusterComponentVersion {
     /// The version of Kafka which should be used for this HDInsight Kafka Cluster. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "kafka")]
-    pub r#kafka: Box<String>,
+    pub r#kafka: String,
 }

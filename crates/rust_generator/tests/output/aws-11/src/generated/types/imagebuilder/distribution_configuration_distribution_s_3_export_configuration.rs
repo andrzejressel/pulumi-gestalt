@@ -6,17 +6,17 @@ pub struct DistributionConfigurationDistributionS3ExportConfiguration {
     /// The disk image format of the exported image (`RAW`, `VHD`, or `VMDK`)
     #[builder(into)]
     #[serde(rename = "diskImageFormat")]
-    pub r#disk_image_format: Box<String>,
+    pub r#disk_image_format: String,
     /// The name of the IAM role to use for exporting.
     #[builder(into)]
     #[serde(rename = "roleName")]
-    pub r#role_name: Box<String>,
+    pub r#role_name: String,
     /// The name of the S3 bucket to store the exported image in. The bucket needs to exist before the export configuration is created.
     #[builder(into)]
     #[serde(rename = "s3Bucket")]
-    pub r#s_3_bucket: Box<String>,
+    pub r#s_3_bucket: String,
     /// The prefix for the exported image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Prefix")]
-    pub r#s_3_prefix: Box<Option<String>>,
+    pub r#s_3_prefix: Option<String>,
 }

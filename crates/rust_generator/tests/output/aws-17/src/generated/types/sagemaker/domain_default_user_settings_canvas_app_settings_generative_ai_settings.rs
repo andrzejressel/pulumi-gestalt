@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainDefaultUserSettingsCanvasAppSettingsGenerativeAiSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "amazonBedrockRoleArn")]
-    pub r#amazon_bedrock_role_arn: Box<Option<String>>,
+    pub r#amazon_bedrock_role_arn: Option<String>,
 }

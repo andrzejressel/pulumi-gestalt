@@ -3,22 +3,22 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInsightsAnalysisReturnPathComponentAclRule {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cidr")]
-    pub r#cidr: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#cidr: Option<String>,
+    #[builder(into)]
     #[serde(rename = "egress")]
-    pub r#egress: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#egress: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "portRanges")]
-    pub r#port_ranges: Box<Option<Vec<super::super::types::ec2::NetworkInsightsAnalysisReturnPathComponentAclRulePortRange>>>,
-    #[builder(into, default)]
+    pub r#port_ranges: Option<Vec<super::super::types::ec2::NetworkInsightsAnalysisReturnPathComponentAclRulePortRange>>,
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#protocol: Option<String>,
+    #[builder(into)]
     #[serde(rename = "ruleAction")]
-    pub r#rule_action: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#rule_action: Option<String>,
+    #[builder(into)]
     #[serde(rename = "ruleNumber")]
-    pub r#rule_number: Box<Option<i32>>,
+    pub r#rule_number: Option<i32>,
 }

@@ -6,5 +6,5 @@ pub struct LoggingConfigurationDestinationConfigurationFirehose {
     /// Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.
     #[builder(into)]
     #[serde(rename = "deliveryStreamName")]
-    pub r#delivery_stream_name: Box<String>,
+    pub r#delivery_stream_name: String,
 }

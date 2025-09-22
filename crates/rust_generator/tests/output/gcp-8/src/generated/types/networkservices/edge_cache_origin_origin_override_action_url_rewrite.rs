@@ -7,7 +7,7 @@ pub struct EdgeCacheOriginOriginOverrideActionUrlRewrite {
     /// origin, the request's host header is replaced with
     /// contents of the hostRewrite.
     /// This value must be between 1 and 255 characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostRewrite")]
-    pub r#host_rewrite: Box<Option<String>>,
+    pub r#host_rewrite: Option<String>,
 }

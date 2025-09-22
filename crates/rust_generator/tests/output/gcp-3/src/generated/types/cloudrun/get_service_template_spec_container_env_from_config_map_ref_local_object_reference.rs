@@ -6,5 +6,5 @@ pub struct GetServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReferenc
     /// The name of the Cloud Run Service.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

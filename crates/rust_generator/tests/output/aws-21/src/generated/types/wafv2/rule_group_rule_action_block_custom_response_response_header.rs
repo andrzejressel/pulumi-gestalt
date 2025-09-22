@@ -6,9 +6,9 @@ pub struct RuleGroupRuleActionBlockCustomResponseResponseHeader {
     /// A friendly name of the rule group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value of the custom header.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

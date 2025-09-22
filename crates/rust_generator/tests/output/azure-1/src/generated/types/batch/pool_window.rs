@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PoolWindow {
     /// Whether automatic updates are enabled on the virtual machine. Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableAutomaticUpdates")]
-    pub r#enable_automatic_updates: Box<Option<bool>>,
+    pub r#enable_automatic_updates: Option<bool>,
 }

@@ -17,7 +17,7 @@ pub struct OccurenceAttestationSignature {
     /// - - -
     #[builder(into)]
     #[serde(rename = "publicKeyId")]
-    pub r#public_key_id: Box<String>,
+    pub r#public_key_id: String,
     /// The content of the signature, an opaque bytestring.
     /// The payload that this signature verifies MUST be
     /// unambiguously provided with the Signature during
@@ -25,7 +25,7 @@ pub struct OccurenceAttestationSignature {
     /// payload explicitly. Alternatively, a message might
     /// have a canonical serialization that can always be
     /// unambiguously computed to derive the payload.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "signature")]
-    pub r#signature: Box<Option<String>>,
+    pub r#signature: Option<String>,
 }

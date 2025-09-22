@@ -6,9 +6,9 @@ pub struct InstanceAccessControlAttributesAttribute {
     /// The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in AWS SSO.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The value used for mapping a specified attribute to an identity source. See AccessControlAttributeValue
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<super::super::types::ssoadmin::InstanceAccessControlAttributesAttributeValue>>,
+    pub r#values: Vec<super::super::types::ssoadmin::InstanceAccessControlAttributesAttributeValue>,
 }

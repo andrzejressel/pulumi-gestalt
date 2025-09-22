@@ -5,15 +5,15 @@
 pub struct VMwareNodePoolConfigTaint {
     /// Available taint effects.
     /// Possible values are: `EFFECT_UNSPECIFIED`, `NO_SCHEDULE`, `PREFER_NO_SCHEDULE`, `NO_EXECUTE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "effect")]
-    pub r#effect: Box<Option<String>>,
+    pub r#effect: Option<String>,
     /// Key associated with the effect.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Value associated with the effect.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

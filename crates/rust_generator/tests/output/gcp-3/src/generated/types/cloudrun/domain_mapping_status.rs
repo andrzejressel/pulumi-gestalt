@@ -7,25 +7,25 @@ pub struct DomainMappingStatus {
     /// Array of observed DomainMappingConditions, indicating the current state
     /// of the DomainMapping.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Box<Option<Vec<super::super::types::cloudrun::DomainMappingStatusCondition>>>,
+    pub r#conditions: Option<Vec<super::super::types::cloudrun::DomainMappingStatusCondition>>,
     /// (Output)
     /// The name of the route that the mapping currently points to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mappedRouteName")]
-    pub r#mapped_route_name: Box<Option<String>>,
+    pub r#mapped_route_name: Option<String>,
     /// (Output)
     /// ObservedGeneration is the 'Generation' of the DomainMapping that
     /// was last processed by the controller.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "observedGeneration")]
-    pub r#observed_generation: Box<Option<i32>>,
+    pub r#observed_generation: Option<i32>,
     /// The resource records required to configure this domain mapping. These
     /// records must be added to the domain's DNS configuration in order to
     /// serve the application via this domain mapping.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceRecords")]
-    pub r#resource_records: Box<Option<Vec<super::super::types::cloudrun::DomainMappingStatusResourceRecord>>>,
+    pub r#resource_records: Option<Vec<super::super::types::cloudrun::DomainMappingStatusResourceRecord>>,
 }

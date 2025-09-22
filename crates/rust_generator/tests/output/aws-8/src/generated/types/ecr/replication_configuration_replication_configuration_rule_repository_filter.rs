@@ -6,9 +6,9 @@ pub struct ReplicationConfigurationReplicationConfigurationRuleRepositoryFilter 
     /// The repository filter details.
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<String>,
+    pub r#filter: String,
     /// The repository filter type. The only supported value is `PREFIX_MATCH`, which is a repository name prefix specified with the filter parameter.
     #[builder(into)]
     #[serde(rename = "filterType")]
-    pub r#filter_type: Box<String>,
+    pub r#filter_type: String,
 }

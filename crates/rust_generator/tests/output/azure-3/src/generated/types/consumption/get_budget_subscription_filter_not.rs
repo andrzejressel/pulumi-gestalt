@@ -6,9 +6,9 @@ pub struct GetBudgetSubscriptionFilterNot {
     /// A `dimension` block as defined above.
     #[builder(into)]
     #[serde(rename = "dimensions")]
-    pub r#dimensions: Box<Vec<super::super::types::consumption::GetBudgetSubscriptionFilterNotDimension>>,
+    pub r#dimensions: Vec<super::super::types::consumption::GetBudgetSubscriptionFilterNotDimension>,
     /// A `tag` block as defined below.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Vec<super::super::types::consumption::GetBudgetSubscriptionFilterNotTag>>,
+    pub r#tags: Vec<super::super::types::consumption::GetBudgetSubscriptionFilterNotTag>,
 }

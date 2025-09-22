@@ -3,15 +3,15 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserAuthenticationMode {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordCount")]
-    pub r#password_count: Box<Option<i32>>,
+    pub r#password_count: Option<i32>,
     /// Specifies the passwords to use for authentication if `type` is set to `password`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwords")]
-    pub r#passwords: Box<Option<Vec<String>>>,
+    pub r#passwords: Option<Vec<String>>,
     /// Specifies the authentication type. Possible options are: `password`, `no-password-required` or `iam`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

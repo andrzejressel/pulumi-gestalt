@@ -6,9 +6,9 @@ pub struct ReplicationConfigurationReplicationConfigurationRule {
     /// the details of a replication destination. A maximum of 25 are allowed per `rule`. See Destination.
     #[builder(into)]
     #[serde(rename = "destinations")]
-    pub r#destinations: Box<Vec<super::super::types::ecr::ReplicationConfigurationReplicationConfigurationRuleDestination>>,
+    pub r#destinations: Vec<super::super::types::ecr::ReplicationConfigurationReplicationConfigurationRuleDestination>,
     /// filters for a replication rule. See Repository Filter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repositoryFilters")]
-    pub r#repository_filters: Box<Option<Vec<super::super::types::ecr::ReplicationConfigurationReplicationConfigurationRuleRepositoryFilter>>>,
+    pub r#repository_filters: Option<Vec<super::super::types::ecr::ReplicationConfigurationReplicationConfigurationRuleRepositoryFilter>>,
 }

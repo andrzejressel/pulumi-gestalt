@@ -7,13 +7,13 @@ pub struct SearchEngineSearchEngineConfig {
     /// Each value may be one of: `SEARCH_ADD_ON_LLM`.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "searchAddOns")]
-    pub r#search_add_ons: Box<Option<Vec<String>>>,
+    pub r#search_add_ons: Option<Vec<String>>,
     /// The search feature tier of this engine. Defaults to SearchTier.SEARCH_TIER_STANDARD if not specified.
     /// Default value is `SEARCH_TIER_STANDARD`.
     /// Possible values are: `SEARCH_TIER_STANDARD`, `SEARCH_TIER_ENTERPRISE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "searchTier")]
-    pub r#search_tier: Box<Option<String>>,
+    pub r#search_tier: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InternetMonitorHealthEventsConfig {
     /// The health event threshold percentage set for availability scores.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilityScoreThreshold")]
-    pub r#availability_score_threshold: Box<Option<f64>>,
+    pub r#availability_score_threshold: Option<f64>,
     /// The health event threshold percentage set for performance scores.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "performanceScoreThreshold")]
-    pub r#performance_score_threshold: Box<Option<f64>>,
+    pub r#performance_score_threshold: Option<f64>,
 }

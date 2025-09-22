@@ -6,9 +6,9 @@ pub struct GetGroupMixedInstancesPolicy {
     /// List of instances distribution objects.
     #[builder(into)]
     #[serde(rename = "instancesDistributions")]
-    pub r#instances_distributions: Box<Vec<super::super::types::autoscaling::GetGroupMixedInstancesPolicyInstancesDistribution>>,
+    pub r#instances_distributions: Vec<super::super::types::autoscaling::GetGroupMixedInstancesPolicyInstancesDistribution>,
     /// List of launch templates along with the overrides.
     #[builder(into)]
     #[serde(rename = "launchTemplates")]
-    pub r#launch_templates: Box<Vec<super::super::types::autoscaling::GetGroupMixedInstancesPolicyLaunchTemplate>>,
+    pub r#launch_templates: Vec<super::super::types::autoscaling::GetGroupMixedInstancesPolicyLaunchTemplate>,
 }

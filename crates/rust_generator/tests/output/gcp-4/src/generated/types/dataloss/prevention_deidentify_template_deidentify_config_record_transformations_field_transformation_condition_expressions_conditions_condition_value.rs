@@ -4,38 +4,38 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValue {
     /// A boolean value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "booleanValue")]
-    pub r#boolean_value: Box<Option<bool>>,
+    pub r#boolean_value: Option<bool>,
     /// Represents a whole or partial calendar date.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dateValue")]
-    pub r#date_value: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueDateValue>>,
+    pub r#date_value: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueDateValue>>,
     /// Represents a day of the week.
     /// Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dayOfWeekValue")]
-    pub r#day_of_week_value: Box<Option<String>>,
+    pub r#day_of_week_value: Option<String>,
     /// A float value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "floatValue")]
-    pub r#float_value: Box<Option<f64>>,
+    pub r#float_value: Option<f64>,
     /// An integer value (int64 format)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "integerValue")]
-    pub r#integer_value: Box<Option<String>>,
+    pub r#integer_value: Option<String>,
     /// A string value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stringValue")]
-    pub r#string_value: Box<Option<String>>,
+    pub r#string_value: Option<String>,
     /// Represents a time of day.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeValue")]
-    pub r#time_value: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueTimeValue>>,
+    pub r#time_value: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueTimeValue>>,
     /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timestampValue")]
-    pub r#timestamp_value: Box<Option<String>>,
+    pub r#timestamp_value: Option<String>,
 }

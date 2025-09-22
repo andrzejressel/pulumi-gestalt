@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainDomainSettingsDockerSettings {
     /// Indicates whether the domain can access Docker. Valid values are `ENABLED` and `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableDockerAccess")]
-    pub r#enable_docker_access: Box<Option<String>>,
+    pub r#enable_docker_access: Option<String>,
     /// The list of Amazon Web Services accounts that are trusted when the domain is created in VPC-only mode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpcOnlyTrustedAccounts")]
-    pub r#vpc_only_trusted_accounts: Box<Option<Vec<String>>>,
+    pub r#vpc_only_trusted_accounts: Option<Vec<String>>,
 }

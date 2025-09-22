@@ -6,5 +6,5 @@ pub struct GetRoleManagementPolicyActivationRuleApprovalStage {
     /// The IDs of the users or groups who can approve the activation
     #[builder(into)]
     #[serde(rename = "primaryApprovers")]
-    pub r#primary_approvers: Box<Vec<super::super::types::pim::GetRoleManagementPolicyActivationRuleApprovalStagePrimaryApprover>>,
+    pub r#primary_approvers: Vec<super::super::types::pim::GetRoleManagementPolicyActivationRuleApprovalStagePrimaryApprover>,
 }

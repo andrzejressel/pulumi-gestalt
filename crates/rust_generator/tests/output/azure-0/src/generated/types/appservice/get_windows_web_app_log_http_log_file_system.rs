@@ -6,9 +6,9 @@ pub struct GetWindowsWebAppLogHttpLogFileSystem {
     /// The retention period in days.
     #[builder(into)]
     #[serde(rename = "retentionInDays")]
-    pub r#retention_in_days: Box<i32>,
+    pub r#retention_in_days: i32,
     /// The maximum size in megabytes that log files can use.
     #[builder(into)]
     #[serde(rename = "retentionInMb")]
-    pub r#retention_in_mb: Box<i32>,
+    pub r#retention_in_mb: i32,
 }

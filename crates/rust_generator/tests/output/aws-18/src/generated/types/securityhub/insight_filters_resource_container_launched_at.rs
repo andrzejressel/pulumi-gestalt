@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InsightFiltersResourceContainerLaunchedAt {
     /// A configuration block of the date range for the date filter. See date_range below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dateRange")]
-    pub r#date_range: Box<Option<super::super::types::securityhub::InsightFiltersResourceContainerLaunchedAtDateRange>>,
+    pub r#date_range: Option<Box<super::super::types::securityhub::InsightFiltersResourceContainerLaunchedAtDateRange>>,
     /// An end date for the date filter. Required with `start` if `date_range` is not specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<Option<String>>,
+    pub r#end: Option<String>,
     /// A start date for the date filter. Required with `end` if `date_range` is not specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<Option<String>>,
+    pub r#start: Option<String>,
 }

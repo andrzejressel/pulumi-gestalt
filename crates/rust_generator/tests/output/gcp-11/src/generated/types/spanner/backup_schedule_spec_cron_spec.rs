@@ -14,7 +14,7 @@ pub struct BackupScheduleSpecCronSpec {
     /// 0 2 * * *    : once a day at 2 past midnight in UTC.
     /// 0 2 * * 0    : once a week every Sunday at 2 past midnight in UTC.
     /// 0 2 8 * *    : once a month on 8th day at 2 past midnight in UTC.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<Option<String>>,
+    pub r#text: Option<String>,
 }

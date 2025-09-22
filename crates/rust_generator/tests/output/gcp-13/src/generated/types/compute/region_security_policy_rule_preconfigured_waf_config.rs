@@ -5,7 +5,7 @@
 pub struct RegionSecurityPolicyRulePreconfiguredWafConfig {
     /// An exclusion to apply during preconfigured WAF evaluation.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exclusions")]
-    pub r#exclusions: Box<Option<Vec<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfigExclusion>>>,
+    pub r#exclusions: Option<Vec<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfigExclusion>>,
 }

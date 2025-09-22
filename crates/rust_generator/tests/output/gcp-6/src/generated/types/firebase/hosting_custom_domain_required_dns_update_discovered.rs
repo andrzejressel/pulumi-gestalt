@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HostingCustomDomainRequiredDnsUpdateDiscovered {
     /// The domain name the record pertains to, e.g. `foo.bar.com.`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<Option<String>>,
+    pub r#domain_name: Option<String>,
     /// Records on the domain
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "records")]
-    pub r#records: Box<Option<Vec<super::super::types::firebase::HostingCustomDomainRequiredDnsUpdateDiscoveredRecord>>>,
+    pub r#records: Option<Vec<super::super::types::firebase::HostingCustomDomainRequiredDnsUpdateDiscoveredRecord>>,
 }

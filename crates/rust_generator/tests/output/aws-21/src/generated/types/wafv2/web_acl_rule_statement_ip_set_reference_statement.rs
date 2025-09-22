@@ -6,9 +6,9 @@ pub struct WebAclRuleStatementIpSetReferenceStatement {
     /// The Amazon Resource Name (ARN) of the IP Set that this statement references.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. See `ip_set_forwarded_ip_config` below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipSetForwardedIpConfig")]
-    pub r#ip_set_forwarded_ip_config: Box<Option<super::super::types::wafv2::WebAclRuleStatementIpSetReferenceStatementIpSetForwardedIpConfig>>,
+    pub r#ip_set_forwarded_ip_config: Option<Box<super::super::types::wafv2::WebAclRuleStatementIpSetReferenceStatementIpSetForwardedIpConfig>>,
 }

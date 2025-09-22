@@ -8,14 +8,14 @@ pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleCo
     /// source properties that are defined here are included in the finding JSON
     /// under `sourceProperties`.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customOutput")]
-    pub r#custom_output: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigCustomOutput>>,
+    pub r#custom_output: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigCustomOutput>>,
     /// Text that describes the vulnerability or misconfiguration that the custom
     /// module detects.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The CEL expression to evaluate to produce findings.When the expression
     /// evaluates to true against a resource, a finding is generated.
     /// Structure is documented below.
@@ -24,9 +24,9 @@ pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleCo
     pub r#predicate: Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigPredicate>,
     /// An explanation of the recommended steps that security teams can take to
     /// resolve the detected issue
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recommendation")]
-    pub r#recommendation: Box<Option<String>>,
+    pub r#recommendation: Option<String>,
     /// The resource types that the custom module operates on. Each custom module
     /// can specify up to 5 resource types.
     /// Structure is documented below.
@@ -37,5 +37,5 @@ pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleCo
     /// Possible values are: `SEVERITY_UNSPECIFIED`, `CRITICAL`, `HIGH`, `MEDIUM`, `LOW`.
     #[builder(into)]
     #[serde(rename = "severity")]
-    pub r#severity: Box<String>,
+    pub r#severity: String,
 }

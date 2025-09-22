@@ -6,13 +6,13 @@ pub struct FrontdoorRuleConditionsSslProtocolCondition {
     /// A list of one or more HTTP methods. Possible values are `TLSv1`, `TLSv1.1` and `TLSv1.2` logic.
     #[builder(into)]
     #[serde(rename = "matchValues")]
-    pub r#match_values: Box<Vec<String>>,
+    pub r#match_values: Vec<String>,
     /// If `true` operator becomes the opposite of its value. Possible values `true` or `false`. Defaults to `false`. Details can be found in the `Condition Operator List` below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "negateCondition")]
-    pub r#negate_condition: Box<Option<bool>>,
+    pub r#negate_condition: Option<bool>,
     /// Possible value `Equal`. Defaults to `Equal`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<Option<String>>,
+    pub r#operator: Option<String>,
 }

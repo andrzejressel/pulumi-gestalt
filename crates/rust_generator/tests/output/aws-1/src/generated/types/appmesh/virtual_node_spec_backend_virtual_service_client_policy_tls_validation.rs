@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidation {
     /// SANs for a TLS validation context.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNames>>,
+    pub r#subject_alternative_names: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNames>>,
     /// TLS validation context trust.
     #[builder(into)]
     #[serde(rename = "trust")]

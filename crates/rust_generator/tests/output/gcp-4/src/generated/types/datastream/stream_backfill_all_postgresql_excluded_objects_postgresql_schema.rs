@@ -5,11 +5,11 @@
 pub struct StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchema {
     /// Tables in the schema.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "postgresqlTables")]
-    pub r#postgresql_tables: Box<Option<Vec<super::super::types::datastream::StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTable>>>,
+    pub r#postgresql_tables: Option<Vec<super::super::types::datastream::StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTable>>,
     /// Database name.
     #[builder(into)]
     #[serde(rename = "schema")]
-    pub r#schema: Box<String>,
+    pub r#schema: String,
 }

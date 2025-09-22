@@ -6,17 +6,17 @@ pub struct GetRepositoryCleanupPolicy {
     /// Policy action. Possible values: ["DELETE", "KEEP"]
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// Policy condition for matching versions.
     #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Box<Vec<super::super::types::artifactregistry::GetRepositoryCleanupPolicyCondition>>,
+    pub r#conditions: Vec<super::super::types::artifactregistry::GetRepositoryCleanupPolicyCondition>,
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Policy condition for retaining a minimum number of versions. May only be
     /// specified with a Keep action.
     #[builder(into)]
     #[serde(rename = "mostRecentVersions")]
-    pub r#most_recent_versions: Box<Vec<super::super::types::artifactregistry::GetRepositoryCleanupPolicyMostRecentVersion>>,
+    pub r#most_recent_versions: Vec<super::super::types::artifactregistry::GetRepositoryCleanupPolicyMostRecentVersion>,
 }

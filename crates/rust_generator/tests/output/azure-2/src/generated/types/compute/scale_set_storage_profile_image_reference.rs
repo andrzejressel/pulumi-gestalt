@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScaleSetStorageProfileImageReference {
     /// Specifies the ID of the (custom) image to use to create the virtual machine scale set, as in the example below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Specifies the offer of the image used to create the virtual machines.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "offer")]
-    pub r#offer: Box<Option<String>>,
+    pub r#offer: Option<String>,
     /// Specifies the publisher of the image used to create the virtual machines.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<Option<String>>,
+    pub r#publisher: Option<String>,
     /// Specifies the SKU of the image used to create the virtual machines.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sku")]
-    pub r#sku: Box<Option<String>>,
+    pub r#sku: Option<String>,
     /// Specifies the version of the image used to create the virtual machines.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

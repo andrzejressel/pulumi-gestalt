@@ -6,33 +6,33 @@ pub struct GetDataCollectionRuleDestination {
     /// A `azure_monitor_metrics` block as defined above.
     #[builder(into)]
     #[serde(rename = "azureMonitorMetrics")]
-    pub r#azure_monitor_metrics: Box<Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationAzureMonitorMetric>>,
+    pub r#azure_monitor_metrics: Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationAzureMonitorMetric>,
     /// One or more `event_hub` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventHub")]
-    pub r#event_hub: Box<Option<super::super::types::monitoring::GetDataCollectionRuleDestinationEventHub>>,
+    pub r#event_hub: Option<Box<super::super::types::monitoring::GetDataCollectionRuleDestinationEventHub>>,
     /// One or more `event_hub_direct` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventHubDirect")]
-    pub r#event_hub_direct: Box<Option<super::super::types::monitoring::GetDataCollectionRuleDestinationEventHubDirect>>,
+    pub r#event_hub_direct: Option<Box<super::super::types::monitoring::GetDataCollectionRuleDestinationEventHubDirect>>,
     /// One or more `log_analytics` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "logAnalytics")]
-    pub r#log_analytics: Box<Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationLogAnalytic>>,
+    pub r#log_analytics: Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationLogAnalytic>,
     /// One or more `monitor_account` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "monitorAccounts")]
-    pub r#monitor_accounts: Box<Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationMonitorAccount>>,
+    pub r#monitor_accounts: Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationMonitorAccount>,
     /// One or more `storage_blob_direct` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "storageBlobDirects")]
-    pub r#storage_blob_directs: Box<Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationStorageBlobDirect>>,
+    pub r#storage_blob_directs: Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationStorageBlobDirect>,
     /// One or more `storage_blob` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "storageBlobs")]
-    pub r#storage_blobs: Box<Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationStorageBlob>>,
+    pub r#storage_blobs: Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationStorageBlob>,
     /// One or more `storage_table_direct` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "storageTableDirects")]
-    pub r#storage_table_directs: Box<Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationStorageTableDirect>>,
+    pub r#storage_table_directs: Vec<super::super::types::monitoring::GetDataCollectionRuleDestinationStorageTableDirect>,
 }

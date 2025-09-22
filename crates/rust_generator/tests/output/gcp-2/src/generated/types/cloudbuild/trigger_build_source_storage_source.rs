@@ -6,15 +6,15 @@ pub struct TriggerBuildSourceStorageSource {
     /// Google Cloud Storage bucket containing the source.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// Google Cloud Storage generation for the object.
     /// If the generation is omitted, the latest generation will be used
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "generation")]
-    pub r#generation: Box<Option<String>>,
+    pub r#generation: Option<String>,
     /// Google Cloud Storage object containing the source.
     /// This object must be a gzipped archive file (.tar.gz) containing source to build.
     #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<String>,
+    pub r#object: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScheduledActionTargetAction {
     /// An action that runs a `PauseCluster` API operation. Documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pauseCluster")]
-    pub r#pause_cluster: Box<Option<super::super::types::redshift::ScheduledActionTargetActionPauseCluster>>,
+    pub r#pause_cluster: Option<Box<super::super::types::redshift::ScheduledActionTargetActionPauseCluster>>,
     /// An action that runs a `ResizeCluster` API operation. Documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resizeCluster")]
-    pub r#resize_cluster: Box<Option<super::super::types::redshift::ScheduledActionTargetActionResizeCluster>>,
+    pub r#resize_cluster: Option<Box<super::super::types::redshift::ScheduledActionTargetActionResizeCluster>>,
     /// An action that runs a `ResumeCluster` API operation. Documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resumeCluster")]
-    pub r#resume_cluster: Box<Option<super::super::types::redshift::ScheduledActionTargetActionResumeCluster>>,
+    pub r#resume_cluster: Option<Box<super::super::types::redshift::ScheduledActionTargetActionResumeCluster>>,
 }

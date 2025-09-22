@@ -6,9 +6,9 @@ pub struct FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubCon
     /// The identifier for this object. Format specified above.
     #[builder(into)]
     #[serde(rename = "bundle")]
-    pub r#bundle: Box<String>,
+    pub r#bundle: String,
     /// The set of namespaces to be exempted from the bundle.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exemptedNamespaces")]
-    pub r#exempted_namespaces: Box<Option<Vec<String>>>,
+    pub r#exempted_namespaces: Option<Vec<String>>,
 }

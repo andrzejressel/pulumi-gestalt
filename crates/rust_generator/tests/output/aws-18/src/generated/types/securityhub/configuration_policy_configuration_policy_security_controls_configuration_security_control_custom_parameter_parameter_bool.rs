@@ -5,5 +5,5 @@
 pub struct ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterBool {
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<bool>,
+    pub r#value: bool,
 }

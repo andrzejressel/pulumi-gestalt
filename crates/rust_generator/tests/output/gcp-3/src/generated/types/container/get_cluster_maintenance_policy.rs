@@ -6,13 +6,13 @@ pub struct GetClusterMaintenancePolicy {
     /// Time window specified for daily maintenance operations. Specify start_time in RFC3339 format "HH:MM”, where HH : [00-23] and MM : [00-59] GMT.
     #[builder(into)]
     #[serde(rename = "dailyMaintenanceWindows")]
-    pub r#daily_maintenance_windows: Box<Vec<super::super::types::container::GetClusterMaintenancePolicyDailyMaintenanceWindow>>,
+    pub r#daily_maintenance_windows: Vec<super::super::types::container::GetClusterMaintenancePolicyDailyMaintenanceWindow>,
     /// Exceptions to maintenance window. Non-emergency maintenance should not occur in these windows.
     #[builder(into)]
     #[serde(rename = "maintenanceExclusions")]
-    pub r#maintenance_exclusions: Box<Vec<super::super::types::container::GetClusterMaintenancePolicyMaintenanceExclusion>>,
+    pub r#maintenance_exclusions: Vec<super::super::types::container::GetClusterMaintenancePolicyMaintenanceExclusion>,
     /// Time window for recurring maintenance operations.
     #[builder(into)]
     #[serde(rename = "recurringWindows")]
-    pub r#recurring_windows: Box<Vec<super::super::types::container::GetClusterMaintenancePolicyRecurringWindow>>,
+    pub r#recurring_windows: Vec<super::super::types::container::GetClusterMaintenancePolicyRecurringWindow>,
 }

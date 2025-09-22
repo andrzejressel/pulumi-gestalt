@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterLoggingInfoBrokerLogsFirehose {
     /// Name of the Kinesis Data Firehose delivery stream to deliver logs to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deliveryStream")]
-    pub r#delivery_stream: Box<Option<String>>,
+    pub r#delivery_stream: Option<String>,
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

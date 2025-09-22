@@ -12,7 +12,7 @@ pub struct ApiConfigGrpcService {
     pub r#file_descriptor_set: Box<super::super::types::apigateway::ApiConfigGrpcServiceFileDescriptorSet>,
     /// Uncompiled proto files associated with the descriptor set, used for display purposes (server-side compilation is not supported). These should match the inputs to 'protoc' command used to generate fileDescriptorSet.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sources")]
-    pub r#sources: Box<Option<Vec<super::super::types::apigateway::ApiConfigGrpcServiceSource>>>,
+    pub r#sources: Option<Vec<super::super::types::apigateway::ApiConfigGrpcServiceSource>>,
 }

@@ -12,7 +12,7 @@ pub struct DeploymentTarget {
     /// used to import templates or other files. For example, you might
     /// import a text file in order to use the file in a template.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imports")]
-    pub r#imports: Box<Option<Vec<super::super::types::deploymentmanager::DeploymentTargetImport>>>,
+    pub r#imports: Option<Vec<super::super::types::deploymentmanager::DeploymentTargetImport>>,
 }

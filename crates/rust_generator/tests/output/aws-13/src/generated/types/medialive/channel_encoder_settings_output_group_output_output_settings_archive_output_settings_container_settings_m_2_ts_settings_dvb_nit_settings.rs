@@ -5,11 +5,11 @@
 pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettingsM2TsSettingsDvbNitSettings {
     #[builder(into)]
     #[serde(rename = "networkId")]
-    pub r#network_id: Box<i32>,
+    pub r#network_id: i32,
     #[builder(into)]
     #[serde(rename = "networkName")]
-    pub r#network_name: Box<String>,
-    #[builder(into, default)]
+    pub r#network_name: String,
+    #[builder(into)]
     #[serde(rename = "repInterval")]
-    pub r#rep_interval: Box<Option<i32>>,
+    pub r#rep_interval: Option<i32>,
 }

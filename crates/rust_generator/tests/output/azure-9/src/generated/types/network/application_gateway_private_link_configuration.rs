@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationGatewayPrivateLinkConfiguration {
     /// The ID of the Rewrite Rule Set
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// One or more `ip_configuration` blocks as defined below.
     /// 
     /// > **Please Note**: The `AllowApplicationGatewayPrivateLink` feature must be registered on the subscription before enabling private link
@@ -16,9 +16,9 @@ pub struct ApplicationGatewayPrivateLinkConfiguration {
     /// ```
     #[builder(into)]
     #[serde(rename = "ipConfigurations")]
-    pub r#ip_configurations: Box<Vec<super::super::types::network::ApplicationGatewayPrivateLinkConfigurationIpConfiguration>>,
+    pub r#ip_configurations: Vec<super::super::types::network::ApplicationGatewayPrivateLinkConfigurationIpConfiguration>,
     /// The name of the private link configuration.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

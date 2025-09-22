@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSetPhysicalTableMapS3SourceUploadSettings {
     /// Whether the file has a header row, or the files each have a header row.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containsHeader")]
-    pub r#contains_header: Box<Option<bool>>,
+    pub r#contains_header: Option<bool>,
     /// Delimiter between values in the file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "delimiter")]
-    pub r#delimiter: Box<Option<String>>,
+    pub r#delimiter: Option<String>,
     /// File format. Valid values are `CSV`, `TSV`, `CLF`, `ELF`, `XLSX`, and `JSON`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "format")]
-    pub r#format: Box<Option<String>>,
+    pub r#format: Option<String>,
     /// A row number to start reading data from.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startFromRow")]
-    pub r#start_from_row: Box<Option<i32>>,
+    pub r#start_from_row: Option<i32>,
     /// Text qualifier. Valid values are `DOUBLE_QUOTE` and `SINGLE_QUOTE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "textQualifier")]
-    pub r#text_qualifier: Box<Option<String>>,
+    pub r#text_qualifier: Option<String>,
 }

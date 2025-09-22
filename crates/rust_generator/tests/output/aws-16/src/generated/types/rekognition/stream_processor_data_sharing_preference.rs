@@ -6,5 +6,5 @@ pub struct StreamProcessorDataSharingPreference {
     /// Whether you are sharing data with Rekognition to improve model performance.
     #[builder(into)]
     #[serde(rename = "optIn")]
-    pub r#opt_in: Box<bool>,
+    pub r#opt_in: bool,
 }

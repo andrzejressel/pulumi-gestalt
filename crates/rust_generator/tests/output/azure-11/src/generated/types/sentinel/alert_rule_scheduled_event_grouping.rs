@@ -6,5 +6,5 @@ pub struct AlertRuleScheduledEventGrouping {
     /// The aggregation type of grouping the events. Possible values are `AlertPerResult` and `SingleAlert`.
     #[builder(into)]
     #[serde(rename = "aggregationMethod")]
-    pub r#aggregation_method: Box<String>,
+    pub r#aggregation_method: String,
 }

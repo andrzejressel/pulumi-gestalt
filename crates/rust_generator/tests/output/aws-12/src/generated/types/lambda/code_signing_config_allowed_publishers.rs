@@ -6,5 +6,5 @@ pub struct CodeSigningConfigAllowedPublishers {
     /// The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package.
     #[builder(into)]
     #[serde(rename = "signingProfileVersionArns")]
-    pub r#signing_profile_version_arns: Box<Vec<String>>,
+    pub r#signing_profile_version_arns: Vec<String>,
 }

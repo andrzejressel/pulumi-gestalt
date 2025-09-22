@@ -7,17 +7,17 @@ pub struct BareMetalClusterLoadBalancerBgpLbConfigBgpPeerConfig {
     /// external peer device.
     #[builder(into)]
     #[serde(rename = "asn")]
-    pub r#asn: Box<i32>,
+    pub r#asn: i32,
     /// The IP address of the control plane node that connects to the external
     /// peer.
     /// If you don't specify any control plane nodes, all control plane nodes
     /// can connect to the external peer. If you specify one or more IP addresses,
     /// only the nodes specified participate in peering sessions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "controlPlaneNodes")]
-    pub r#control_plane_nodes: Box<Option<Vec<String>>>,
+    pub r#control_plane_nodes: Option<Vec<String>>,
     /// The IP address of the external peer device.
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
 }

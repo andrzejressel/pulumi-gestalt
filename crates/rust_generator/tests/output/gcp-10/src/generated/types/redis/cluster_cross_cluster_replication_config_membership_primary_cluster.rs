@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterCrossClusterReplicationConfigMembershipPrimaryCluster {
     /// The full resource path of the primary cluster in the format: projects/{project}/locations/{region}/clusters/{cluster-id}
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cluster")]
-    pub r#cluster: Box<Option<String>>,
+    pub r#cluster: Option<String>,
     /// (Output)
     /// The unique id of the primary cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uid")]
-    pub r#uid: Box<Option<String>>,
+    pub r#uid: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct GetClusterAutoscalingSettingAutoscalingPolicyCpuThreshold {
     /// The utilization triggering the scale-in operation in percent.
     #[builder(into)]
     #[serde(rename = "scaleIn")]
-    pub r#scale_in: Box<i32>,
+    pub r#scale_in: i32,
     /// The utilization triggering the scale-out operation in percent.
     #[builder(into)]
     #[serde(rename = "scaleOut")]
-    pub r#scale_out: Box<i32>,
+    pub r#scale_out: i32,
 }

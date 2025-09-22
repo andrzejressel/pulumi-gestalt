@@ -6,20 +6,20 @@ pub struct GetVirtualNetworkSubnetOverride {
     /// The name of the subnet.
     #[builder(into)]
     #[serde(rename = "labSubnetName")]
-    pub r#lab_subnet_name: Box<String>,
+    pub r#lab_subnet_name: String,
     /// The resource identifier for the subnet.
     #[builder(into)]
     #[serde(rename = "resourceId")]
-    pub r#resource_id: Box<String>,
+    pub r#resource_id: String,
     /// Indicates if the subnet can be used for VM creation.  Possible values are `Allow`, `Default` and `Deny`.
     #[builder(into)]
     #[serde(rename = "useInVmCreationPermission")]
-    pub r#use_in_vm_creation_permission: Box<String>,
+    pub r#use_in_vm_creation_permission: String,
     #[builder(into)]
     #[serde(rename = "usePublicIpAddressPermission")]
-    pub r#use_public_ip_address_permission: Box<String>,
+    pub r#use_public_ip_address_permission: String,
     /// The virtual network pool associated with this subnet.
     #[builder(into)]
     #[serde(rename = "virtualNetworkPoolName")]
-    pub r#virtual_network_pool_name: Box<String>,
+    pub r#virtual_network_pool_name: String,
 }

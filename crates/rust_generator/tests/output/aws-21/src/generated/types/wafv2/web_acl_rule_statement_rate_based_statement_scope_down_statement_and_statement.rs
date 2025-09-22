@@ -6,5 +6,5 @@ pub struct WebAclRuleStatementRateBasedStatementScopeDownStatementAndStatement {
     /// The statements to combine.
     #[builder(into)]
     #[serde(rename = "statements")]
-    pub r#statements: Box<Vec<super::super::types::wafv2::WebAclRuleStatement>>,
+    pub r#statements: Vec<super::super::types::wafv2::WebAclRuleStatement>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupWarmPoolInstanceReusePolicy {
     /// Whether instances in the Auto Scaling group can be returned to the warm pool on scale in.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reuseOnScaleIn")]
-    pub r#reuse_on_scale_in: Box<Option<bool>>,
+    pub r#reuse_on_scale_in: Option<bool>,
 }

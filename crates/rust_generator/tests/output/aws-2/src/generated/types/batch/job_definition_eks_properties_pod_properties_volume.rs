@@ -3,17 +3,17 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobDefinitionEksPropertiesPodPropertiesVolume {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emptyDir")]
-    pub r#empty_dir: Box<Option<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDir>>,
-    #[builder(into, default)]
+    pub r#empty_dir: Option<Box<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDir>>,
+    #[builder(into)]
     #[serde(rename = "hostPath")]
-    pub r#host_path: Box<Option<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesVolumeHostPath>>,
+    pub r#host_path: Option<Box<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesVolumeHostPath>>,
     /// Name of the job definition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "secret")]
-    pub r#secret: Box<Option<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesVolumeSecret>>,
+    pub r#secret: Option<Box<super::super::types::batch::JobDefinitionEksPropertiesPodPropertiesVolumeSecret>>,
 }

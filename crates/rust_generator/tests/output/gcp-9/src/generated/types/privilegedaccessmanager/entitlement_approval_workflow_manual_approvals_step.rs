@@ -7,13 +7,13 @@ pub struct EntitlementApprovalWorkflowManualApprovalsStep {
     /// If there are not enough distinct users in the list above then the workflow
     /// will indefinitely block. Should always be greater than 0. Currently 1 is the only
     /// supported value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "approvalsNeeded")]
-    pub r#approvals_needed: Box<Option<i32>>,
+    pub r#approvals_needed: Option<i32>,
     /// Optional. Additional email addresses to be notified when a grant is pending approval.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "approverEmailRecipients")]
-    pub r#approver_email_recipients: Box<Option<Vec<String>>>,
+    pub r#approver_email_recipients: Option<Vec<String>>,
     /// The potential set of approvers in this step. This list should contain at only one entry.
     /// Structure is documented below.
     #[builder(into)]

@@ -6,5 +6,5 @@ pub struct InferenceProfileModel {
     /// The Amazon Resource Name (ARN) of the model.
     #[builder(into)]
     #[serde(rename = "modelArn")]
-    pub r#model_arn: Box<String>,
+    pub r#model_arn: String,
 }

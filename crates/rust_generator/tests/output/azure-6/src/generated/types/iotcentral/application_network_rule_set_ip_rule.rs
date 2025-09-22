@@ -6,9 +6,9 @@ pub struct ApplicationNetworkRuleSetIpRule {
     /// The IP address range in CIDR notation for the IP Rule.
     #[builder(into)]
     #[serde(rename = "ipMask")]
-    pub r#ip_mask: Box<String>,
+    pub r#ip_mask: String,
     /// The name of the IP Rule
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

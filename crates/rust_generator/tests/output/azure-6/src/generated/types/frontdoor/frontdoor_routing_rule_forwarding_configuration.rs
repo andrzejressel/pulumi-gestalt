@@ -6,33 +6,33 @@ pub struct FrontdoorRoutingRuleForwardingConfiguration {
     /// Specifies the name of the Backend Pool to forward the incoming traffic to.
     #[builder(into)]
     #[serde(rename = "backendPoolName")]
-    pub r#backend_pool_name: Box<String>,
+    pub r#backend_pool_name: String,
     /// Specify the minimum caching duration (in ISO8601 notation e.g. `P1DT2H` for 1 day and 2 hours). Needs to be greater than 0 and smaller than 365 days. `cache_duration` works only in combination with `cache_enabled` set to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cacheDuration")]
-    pub r#cache_duration: Box<Option<String>>,
+    pub r#cache_duration: Option<String>,
     /// Specifies whether to Enable caching or not. Valid options are `true` or `false`. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cacheEnabled")]
-    pub r#cache_enabled: Box<Option<bool>>,
+    pub r#cache_enabled: Option<bool>,
     /// Defines cache behaviour in relation to query string parameters. Valid options are `StripAll`, `StripAllExcept`, `StripOnly` or `StripNone`. Defaults to `StripAll`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cacheQueryParameterStripDirective")]
-    pub r#cache_query_parameter_strip_directive: Box<Option<String>>,
+    pub r#cache_query_parameter_strip_directive: Option<String>,
     /// Specify query parameters (array). Works only in combination with `cache_query_parameter_strip_directive` set to `StripAllExcept` or `StripOnly`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cacheQueryParameters")]
-    pub r#cache_query_parameters: Box<Option<Vec<String>>>,
+    pub r#cache_query_parameters: Option<Vec<String>>,
     /// Whether to use dynamic compression when caching. Valid options are `true` or `false`. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cacheUseDynamicCompression")]
-    pub r#cache_use_dynamic_compression: Box<Option<bool>>,
+    pub r#cache_use_dynamic_compression: Option<bool>,
     /// Path to use when constructing the request to forward to the backend. This functions as a URL Rewrite. Default behaviour preserves the URL path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customForwardingPath")]
-    pub r#custom_forwarding_path: Box<Option<String>>,
+    pub r#custom_forwarding_path: Option<String>,
     /// Protocol to use when redirecting. Valid options are `HttpOnly`, `HttpsOnly`, or `MatchRequest`. Defaults to `HttpsOnly`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "forwardingProtocol")]
-    pub r#forwarding_protocol: Box<Option<String>>,
+    pub r#forwarding_protocol: Option<String>,
 }

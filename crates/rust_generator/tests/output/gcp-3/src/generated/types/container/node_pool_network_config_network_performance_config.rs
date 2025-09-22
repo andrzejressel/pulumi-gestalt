@@ -6,5 +6,5 @@ pub struct NodePoolNetworkConfigNetworkPerformanceConfig {
     /// Specifies the total network bandwidth tier for the NodePool.
     #[builder(into)]
     #[serde(rename = "totalEgressBandwidthTier")]
-    pub r#total_egress_bandwidth_tier: Box<String>,
+    pub r#total_egress_bandwidth_tier: String,
 }

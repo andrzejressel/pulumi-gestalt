@@ -5,7 +5,7 @@
 pub struct RegionalSecretVersionCustomerManagedEncryption {
     /// (Output)
     /// The resource name of the Cloud KMS CryptoKey used to encrypt secret payloads.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyVersionName")]
-    pub r#kms_key_version_name: Box<Option<String>>,
+    pub r#kms_key_version_name: Option<String>,
 }

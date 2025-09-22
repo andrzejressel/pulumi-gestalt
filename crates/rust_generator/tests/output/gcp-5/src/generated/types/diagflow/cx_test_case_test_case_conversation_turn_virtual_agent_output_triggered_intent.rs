@@ -5,12 +5,12 @@
 pub struct CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntent {
     /// (Output)
     /// The human-readable name of the intent, unique within the agent.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<Option<String>>,
+    pub r#display_name: Option<String>,
     /// The unique identifier of the intent.
     /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/intents/<Intent ID>.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

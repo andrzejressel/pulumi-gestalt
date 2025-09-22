@@ -5,8 +5,8 @@
 pub struct GetClusterMaintenancePolicyDailyMaintenanceWindow {
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<String>,
+    pub r#duration: String,
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
 }

@@ -5,7 +5,7 @@
 pub struct AttachedClusterProxyConfig {
     /// The Kubernetes Secret resource that contains the HTTP(S) proxy configuration.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kubernetesSecret")]
-    pub r#kubernetes_secret: Box<Option<super::super::types::container::AttachedClusterProxyConfigKubernetesSecret>>,
+    pub r#kubernetes_secret: Option<Box<super::super::types::container::AttachedClusterProxyConfigKubernetesSecret>>,
 }

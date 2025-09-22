@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VolumeSnapshotPolicyWeeklySchedule {
     /// Set the day or days of the week to make a snapshot. Accepts a comma separated days of the week. Defaults to 'Sunday'.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<Option<String>>,
+    pub r#day: Option<String>,
     /// Set the hour to create the snapshot (0-23), defaults to midnight (0).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hour")]
-    pub r#hour: Box<Option<i32>>,
+    pub r#hour: Option<i32>,
     /// Set the minute of the hour to create the snapshot (0-59), defaults to the top of the hour (0).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minute")]
-    pub r#minute: Box<Option<i32>>,
+    pub r#minute: Option<i32>,
     /// The maximum number of snapshots to keep for the weekly schedule.
     #[builder(into)]
     #[serde(rename = "snapshotsToKeep")]
-    pub r#snapshots_to_keep: Box<i32>,
+    pub r#snapshots_to_keep: i32,
 }

@@ -6,5 +6,5 @@ pub struct AuthzPolicyCustomProviderCloudIap {
     /// Enable Cloud IAP at the AuthzPolicy level.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

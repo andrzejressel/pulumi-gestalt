@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference {
     /// A human readable description of the diff, showing the actual output vs expected output.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The type of diff.
     /// * INTENT: The intent.
     /// * PAGE: The page.
@@ -14,7 +14,7 @@ pub struct CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifference 
     /// * UTTERANCE: The message utterance.
     /// * FLOW: The flow.
     /// Possible values are: `INTENT`, `PAGE`, `PARAMETERS`, `UTTERANCE`, `FLOW`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

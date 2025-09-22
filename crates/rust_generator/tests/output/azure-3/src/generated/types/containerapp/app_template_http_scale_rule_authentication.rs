@@ -6,9 +6,9 @@ pub struct AppTemplateHttpScaleRuleAuthentication {
     /// The name of the Container App Secret to use for this Scale Rule Authentication.
     #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<String>,
+    pub r#secret_name: String,
     /// The Trigger Parameter name to use the supply the value retrieved from the `secret_name`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "triggerParameter")]
-    pub r#trigger_parameter: Box<Option<String>>,
+    pub r#trigger_parameter: Option<String>,
 }

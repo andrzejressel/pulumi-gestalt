@@ -6,15 +6,15 @@ pub struct GuestPoliciesAssignmentOsType {
     /// Targets VM instances with OS Inventory enabled and having the following OS architecture.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "osArchitecture")]
-    pub r#os_architecture: Box<Option<String>>,
+    pub r#os_architecture: Option<String>,
     /// Targets VM instances with OS Inventory enabled and having the following OS short name, for example "debian" or "windows".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "osShortName")]
-    pub r#os_short_name: Box<Option<String>>,
+    pub r#os_short_name: Option<String>,
     /// Targets VM instances with OS Inventory enabled and having the following following OS version.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "osVersion")]
-    pub r#os_version: Box<Option<String>>,
+    pub r#os_version: Option<String>,
 }

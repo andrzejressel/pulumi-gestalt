@@ -6,17 +6,17 @@ pub struct GetRestorableDatabaseAccountsAccountRestorableLocation {
     /// The creation time of the regional Cosmos DB Restorable Database Account.
     #[builder(into)]
     #[serde(rename = "creationTime")]
-    pub r#creation_time: Box<String>,
+    pub r#creation_time: String,
     /// The deletion time of the regional Cosmos DB Restorable Database Account.
     #[builder(into)]
     #[serde(rename = "deletionTime")]
-    pub r#deletion_time: Box<String>,
+    pub r#deletion_time: String,
     /// The location where the Cosmos DB Database Account.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// The instance ID of the regional Cosmos DB Restorable Database Account.
     #[builder(into)]
     #[serde(rename = "regionalDatabaseAccountInstanceId")]
-    pub r#regional_database_account_instance_id: Box<String>,
+    pub r#regional_database_account_instance_id: String,
 }

@@ -6,5 +6,5 @@ pub struct GetInstanceMaintenanceOption {
     /// Automatic recovery behavior of the instance.
     #[builder(into)]
     #[serde(rename = "autoRecovery")]
-    pub r#auto_recovery: Box<String>,
+    pub r#auto_recovery: String,
 }

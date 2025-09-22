@@ -6,13 +6,13 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAws
     /// Values in the response header with the specified name that indicate a failed login attempt.
     #[builder(into)]
     #[serde(rename = "failureValues")]
-    pub r#failure_values: Box<Vec<String>>,
+    pub r#failure_values: Vec<String>,
     /// The identifier for the value to match against in the JSON.
     #[builder(into)]
     #[serde(rename = "identifier")]
-    pub r#identifier: Box<String>,
+    pub r#identifier: String,
     /// Values in the response header with the specified name that indicate a successful login attempt.
     #[builder(into)]
     #[serde(rename = "successValues")]
-    pub r#success_values: Box<Vec<String>>,
+    pub r#success_values: Vec<String>,
 }

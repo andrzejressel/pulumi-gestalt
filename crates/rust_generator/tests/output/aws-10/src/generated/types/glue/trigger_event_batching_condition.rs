@@ -6,9 +6,9 @@ pub struct TriggerEventBatchingCondition {
     /// Number of events that must be received from Amazon EventBridge before EventBridge  event trigger fires.
     #[builder(into)]
     #[serde(rename = "batchSize")]
-    pub r#batch_size: Box<i32>,
+    pub r#batch_size: i32,
     /// Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received. Default value is `900`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "batchWindow")]
-    pub r#batch_window: Box<Option<i32>>,
+    pub r#batch_window: Option<i32>,
 }

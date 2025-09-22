@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubernetesClusterAzureActiveDirectoryRoleBasedAccessControl {
     /// A list of Object IDs of Azure Active Directory Groups which should have Admin Role on the Cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "adminGroupObjectIds")]
-    pub r#admin_group_object_ids: Box<Option<Vec<String>>>,
+    pub r#admin_group_object_ids: Option<Vec<String>>,
     /// Is Role Based Access Control based on Azure AD enabled?
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "azureRbacEnabled")]
-    pub r#azure_rbac_enabled: Box<Option<bool>>,
+    pub r#azure_rbac_enabled: Option<bool>,
     /// The Tenant ID used for Azure Active Directory Application. If this isn't specified the Tenant ID of the current Subscription is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<Option<String>>,
+    pub r#tenant_id: Option<String>,
 }

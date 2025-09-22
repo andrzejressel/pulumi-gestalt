@@ -6,9 +6,9 @@ pub struct GetImagePipelineSchedule {
     /// Condition when the pipeline should trigger a new image build.
     #[builder(into)]
     #[serde(rename = "pipelineExecutionStartCondition")]
-    pub r#pipeline_execution_start_condition: Box<String>,
+    pub r#pipeline_execution_start_condition: String,
     /// Cron expression of how often the pipeline start condition is evaluated.
     #[builder(into)]
     #[serde(rename = "scheduleExpression")]
-    pub r#schedule_expression: Box<String>,
+    pub r#schedule_expression: String,
 }

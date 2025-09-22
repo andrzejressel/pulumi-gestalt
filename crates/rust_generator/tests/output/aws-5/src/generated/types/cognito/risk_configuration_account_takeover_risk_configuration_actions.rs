@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RiskConfigurationAccountTakeoverRiskConfigurationActions {
     /// Action to take for a high risk. See action block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "highAction")]
-    pub r#high_action: Box<Option<super::super::types::cognito::RiskConfigurationAccountTakeoverRiskConfigurationActionsHighAction>>,
+    pub r#high_action: Option<Box<super::super::types::cognito::RiskConfigurationAccountTakeoverRiskConfigurationActionsHighAction>>,
     /// Action to take for a low risk. See action block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lowAction")]
-    pub r#low_action: Box<Option<super::super::types::cognito::RiskConfigurationAccountTakeoverRiskConfigurationActionsLowAction>>,
+    pub r#low_action: Option<Box<super::super::types::cognito::RiskConfigurationAccountTakeoverRiskConfigurationActionsLowAction>>,
     /// Action to take for a medium risk. See action block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mediumAction")]
-    pub r#medium_action: Box<Option<super::super::types::cognito::RiskConfigurationAccountTakeoverRiskConfigurationActionsMediumAction>>,
+    pub r#medium_action: Option<Box<super::super::types::cognito::RiskConfigurationAccountTakeoverRiskConfigurationActionsMediumAction>>,
 }

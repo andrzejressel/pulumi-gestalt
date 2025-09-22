@@ -6,9 +6,9 @@ pub struct ChannelFacebookPage {
     /// The Facebook Page Access Token for the Facebook Channel.
     #[builder(into)]
     #[serde(rename = "accessToken")]
-    pub r#access_token: Box<String>,
+    pub r#access_token: String,
     /// The Facebook Page ID for the Facebook Channel.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

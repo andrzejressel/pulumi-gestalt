@@ -6,29 +6,29 @@ pub struct InteractiveQueryClusterSecurityProfile {
     /// The resource ID of the Azure Active Directory Domain Service. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "aaddsResourceId")]
-    pub r#aadds_resource_id: Box<String>,
+    pub r#aadds_resource_id: String,
     /// A list of the distinguished names for the cluster user groups. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clusterUsersGroupDns")]
-    pub r#cluster_users_group_dns: Box<Option<Vec<String>>>,
+    pub r#cluster_users_group_dns: Option<Vec<String>>,
     /// The name of the Azure Active Directory Domain. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<String>,
+    pub r#domain_name: String,
     /// The user password of the Azure Active Directory Domain. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "domainUserPassword")]
-    pub r#domain_user_password: Box<String>,
+    pub r#domain_user_password: String,
     /// The username of the Azure Active Directory Domain. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "domainUsername")]
-    pub r#domain_username: Box<String>,
+    pub r#domain_username: String,
     /// A list of the LDAPS URLs to communicate with the Azure Active Directory. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "ldapsUrls")]
-    pub r#ldaps_urls: Box<Vec<String>>,
+    pub r#ldaps_urls: Vec<String>,
     /// The User Assigned Identity for the HDInsight Cluster. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "msiResourceId")]
-    pub r#msi_resource_id: Box<String>,
+    pub r#msi_resource_id: String,
 }

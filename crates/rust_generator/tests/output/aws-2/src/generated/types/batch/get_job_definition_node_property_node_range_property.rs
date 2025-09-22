@@ -6,9 +6,9 @@ pub struct GetJobDefinitionNodePropertyNodeRangeProperty {
     /// The container details for the node range.
     #[builder(into)]
     #[serde(rename = "containers")]
-    pub r#containers: Box<Vec<super::super::types::batch::GetJobDefinitionNodePropertyNodeRangePropertyContainer>>,
+    pub r#containers: Vec<super::super::types::batch::GetJobDefinitionNodePropertyNodeRangePropertyContainer>,
     /// The range of nodes, using node index values. A range of 0:3 indicates nodes with index values of 0 through 3. I
     #[builder(into)]
     #[serde(rename = "targetNodes")]
-    pub r#target_nodes: Box<String>,
+    pub r#target_nodes: String,
 }

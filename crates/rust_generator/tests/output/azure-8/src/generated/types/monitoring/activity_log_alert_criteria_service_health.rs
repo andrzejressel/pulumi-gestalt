@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ActivityLogAlertCriteriaServiceHealth {
     /// Events this alert will monitor Possible values are `Incident`, `Maintenance`, `Informational`, `ActionRequired` and `Security`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "events")]
-    pub r#events: Box<Option<Vec<String>>>,
+    pub r#events: Option<Vec<String>>,
     /// Locations this alert will monitor. For example, `West Europe`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "locations")]
-    pub r#locations: Box<Option<Vec<String>>>,
+    pub r#locations: Option<Vec<String>>,
     /// Services this alert will monitor. For example, `Activity Logs & Alerts`, `Action Groups`. Defaults to all Services.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "services")]
-    pub r#services: Box<Option<Vec<String>>>,
+    pub r#services: Option<Vec<String>>,
 }

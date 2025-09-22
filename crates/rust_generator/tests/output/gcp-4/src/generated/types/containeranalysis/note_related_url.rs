@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NoteRelatedUrl {
     /// Label to describe usage of the URL
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "label")]
-    pub r#label: Box<Option<String>>,
+    pub r#label: Option<String>,
     /// Specific URL associated with the resource.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

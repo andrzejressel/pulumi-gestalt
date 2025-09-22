@@ -6,9 +6,9 @@ pub struct GetRegionInstanceGroupInstanceNamedPort {
     /// The name of the instance group.  One of `name` or `self_link` must be provided.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Integer port number
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

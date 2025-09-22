@@ -7,5 +7,5 @@ pub struct GetTriggerApprovalConfig {
     /// and will need to be explicitly approved to start.
     #[builder(into)]
     #[serde(rename = "approvalRequired")]
-    pub r#approval_required: Box<bool>,
+    pub r#approval_required: bool,
 }

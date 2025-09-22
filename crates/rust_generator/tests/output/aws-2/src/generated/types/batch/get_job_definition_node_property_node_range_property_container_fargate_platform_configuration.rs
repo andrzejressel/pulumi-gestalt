@@ -6,5 +6,5 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerFargatePlatform
     /// The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs that are running on Fargate resources.
     #[builder(into)]
     #[serde(rename = "platformVersion")]
-    pub r#platform_version: Box<String>,
+    pub r#platform_version: String,
 }

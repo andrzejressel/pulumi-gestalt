@@ -5,11 +5,11 @@
 pub struct GetClusterMasterUserSecret {
     #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<String>,
+    pub r#kms_key_id: String,
     #[builder(into)]
     #[serde(rename = "secretArn")]
-    pub r#secret_arn: Box<String>,
+    pub r#secret_arn: String,
     #[builder(into)]
     #[serde(rename = "secretStatus")]
-    pub r#secret_status: Box<String>,
+    pub r#secret_status: String,
 }

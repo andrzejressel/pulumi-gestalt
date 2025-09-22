@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IntegrationAccountBatchConfigurationReleaseCriteriaRecurrenceSchedule {
     /// A list containing a single item, which specifies the Hour interval at which this recurrence should be triggered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hours")]
-    pub r#hours: Box<Option<Vec<i32>>>,
+    pub r#hours: Option<Vec<i32>>,
     /// A list containing a single item which specifies the Minute interval at which this recurrence should be triggered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minutes")]
-    pub r#minutes: Box<Option<Vec<i32>>>,
+    pub r#minutes: Option<Vec<i32>>,
     /// A list of days of the month that the job should execute on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "monthDays")]
-    pub r#month_days: Box<Option<Vec<i32>>>,
+    pub r#month_days: Option<Vec<i32>>,
     /// A `monthly` block as documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "monthlies")]
-    pub r#monthlies: Box<Option<Vec<super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteriaRecurrenceScheduleMonthly>>>,
+    pub r#monthlies: Option<Vec<super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteriaRecurrenceScheduleMonthly>>,
     /// A list of days of the week that the job should execute on. Possible values are `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` and `Saturday`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weekDays")]
-    pub r#week_days: Box<Option<Vec<String>>>,
+    pub r#week_days: Option<Vec<String>>,
 }

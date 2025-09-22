@@ -6,13 +6,13 @@ pub struct GetTriggerBitbucketServerTriggerConfigPush {
     /// Regex of branches to match.  Specify only one of branch or tag.
     #[builder(into)]
     #[serde(rename = "branch")]
-    pub r#branch: Box<String>,
+    pub r#branch: String,
     /// When true, only trigger a build if the revision regex does NOT match the gitRef regex.
     #[builder(into)]
     #[serde(rename = "invertRegex")]
-    pub r#invert_regex: Box<bool>,
+    pub r#invert_regex: bool,
     /// Regex of tags to match.  Specify only one of branch or tag.
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<String>,
+    pub r#tag: String,
 }

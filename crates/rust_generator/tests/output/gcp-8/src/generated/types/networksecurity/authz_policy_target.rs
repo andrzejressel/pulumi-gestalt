@@ -8,11 +8,11 @@ pub struct AuthzPolicyTarget {
     /// Possible values are: `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`, `INTERNAL_SELF_MANAGED`.
     #[builder(into)]
     #[serde(rename = "loadBalancingScheme")]
-    pub r#load_balancing_scheme: Box<String>,
+    pub r#load_balancing_scheme: String,
     /// A list of references to the Forwarding Rules on which this policy will be applied.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Box<Option<Vec<String>>>,
+    pub r#resources: Option<Vec<String>>,
 }

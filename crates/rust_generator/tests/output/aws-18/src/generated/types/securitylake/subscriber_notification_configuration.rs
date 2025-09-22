@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SubscriberNotificationConfiguration {
     /// The configurations for HTTPS subscriber notification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpsNotificationConfiguration")]
-    pub r#https_notification_configuration: Box<Option<super::super::types::securitylake::SubscriberNotificationConfigurationHttpsNotificationConfiguration>>,
+    pub r#https_notification_configuration: Option<Box<super::super::types::securitylake::SubscriberNotificationConfigurationHttpsNotificationConfiguration>>,
     /// The configurations for SQS subscriber notification.
     /// There are no parameters within `sqs_notification_configuration`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sqsNotificationConfiguration")]
-    pub r#sqs_notification_configuration: Box<Option<super::super::types::securitylake::SubscriberNotificationConfigurationSqsNotificationConfiguration>>,
+    pub r#sqs_notification_configuration: Option<Box<super::super::types::securitylake::SubscriberNotificationConfigurationSqsNotificationConfiguration>>,
 }

@@ -5,14 +5,14 @@
 pub struct GetTargetGroupStickiness {
     #[builder(into)]
     #[serde(rename = "cookieDuration")]
-    pub r#cookie_duration: Box<i32>,
+    pub r#cookie_duration: i32,
     #[builder(into)]
     #[serde(rename = "cookieName")]
-    pub r#cookie_name: Box<String>,
+    pub r#cookie_name: String,
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

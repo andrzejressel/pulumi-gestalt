@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicyDryRunSpecRuleValues {
     /// List of values allowed at this resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedValues")]
-    pub r#allowed_values: Box<Option<Vec<String>>>,
+    pub r#allowed_values: Option<Vec<String>>,
     /// List of values denied at this resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deniedValues")]
-    pub r#denied_values: Box<Option<Vec<String>>>,
+    pub r#denied_values: Option<Vec<String>>,
 }

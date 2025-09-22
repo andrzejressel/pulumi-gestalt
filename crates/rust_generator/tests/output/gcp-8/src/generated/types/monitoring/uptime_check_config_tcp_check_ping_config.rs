@@ -6,5 +6,5 @@ pub struct UptimeCheckConfigTcpCheckPingConfig {
     /// Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.
     #[builder(into)]
     #[serde(rename = "pingsCount")]
-    pub r#pings_count: Box<i32>,
+    pub r#pings_count: i32,
 }

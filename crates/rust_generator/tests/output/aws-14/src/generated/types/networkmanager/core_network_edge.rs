@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CoreNetworkEdge {
     /// ASN of a core network edge.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "asn")]
-    pub r#asn: Box<Option<i32>>,
+    pub r#asn: Option<i32>,
     /// Region where a core network edge is located.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "edgeLocation")]
-    pub r#edge_location: Box<Option<String>>,
+    pub r#edge_location: Option<String>,
     /// Inside IP addresses used for core network edges.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "insideCidrBlocks")]
-    pub r#inside_cidr_blocks: Box<Option<Vec<String>>>,
+    pub r#inside_cidr_blocks: Option<Vec<String>>,
 }

@@ -6,5 +6,5 @@ pub struct WorkgroupConfigurationResultConfigurationAclConfiguration {
     /// Amazon S3 canned ACL that Athena should specify when storing query results. Valid value is `BUCKET_OWNER_FULL_CONTROL`.
     #[builder(into)]
     #[serde(rename = "s3AclOption")]
-    pub r#s_3_acl_option: Box<String>,
+    pub r#s_3_acl_option: String,
 }

@@ -6,5 +6,5 @@ pub struct SqlContainerIndexingPolicyCompositeIndex {
     /// One or more `index` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "indices")]
-    pub r#indices: Box<Vec<super::super::types::cosmosdb::SqlContainerIndexingPolicyCompositeIndexIndex>>,
+    pub r#indices: Vec<super::super::types::cosmosdb::SqlContainerIndexingPolicyCompositeIndexIndex>,
 }

@@ -5,7 +5,7 @@
 pub struct MigrationJobDumpFlags {
     /// A list of dump flags
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dumpFlags")]
-    pub r#dump_flags: Box<Option<Vec<super::super::types::databasemigrationservice::MigrationJobDumpFlagsDumpFlag>>>,
+    pub r#dump_flags: Option<Vec<super::super::types::databasemigrationservice::MigrationJobDumpFlagsDumpFlag>>,
 }

@@ -7,5 +7,5 @@ pub struct ClusterNodeConfigConfidentialNodes {
     /// enforce encryption of data in-use.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

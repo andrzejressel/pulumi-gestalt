@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MetastoreServiceScalingConfigAutoscalingConfig {
     /// Defines whether autoscaling is enabled. The default value is false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoscalingEnabled")]
-    pub r#autoscaling_enabled: Box<Option<bool>>,
+    pub r#autoscaling_enabled: Option<bool>,
     /// Represents the limit configuration of a metastore service.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "limitConfig")]
-    pub r#limit_config: Box<Option<super::super::types::dataproc::MetastoreServiceScalingConfigAutoscalingConfigLimitConfig>>,
+    pub r#limit_config: Option<Box<super::super::types::dataproc::MetastoreServiceScalingConfigAutoscalingConfigLimitConfig>>,
 }

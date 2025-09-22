@@ -6,13 +6,13 @@ pub struct GetActionGroupArmRoleReceiver {
     /// Specifies the name of the Action Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The arm role id.
     #[builder(into)]
     #[serde(rename = "roleId")]
-    pub r#role_id: Box<String>,
+    pub r#role_id: String,
     /// Indicates whether to use common alert schema.
     #[builder(into)]
     #[serde(rename = "useCommonAlertSchema")]
-    pub r#use_common_alert_schema: Box<bool>,
+    pub r#use_common_alert_schema: bool,
 }

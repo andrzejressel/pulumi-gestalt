@@ -6,5 +6,5 @@ pub struct GetResourceCollectionCloudformation {
     /// Array of the names of the AWS CloudFormation stacks.
     #[builder(into)]
     #[serde(rename = "stackNames")]
-    pub r#stack_names: Box<Vec<String>>,
+    pub r#stack_names: Vec<String>,
 }

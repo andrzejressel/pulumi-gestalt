@@ -6,41 +6,41 @@ pub struct GetDbServersDbServerProperty {
     /// Output only
     #[builder(into)]
     #[serde(rename = "dbNodeIds")]
-    pub r#db_node_ids: Box<Vec<String>>,
+    pub r#db_node_ids: Vec<String>,
     /// Output only
     #[builder(into)]
     #[serde(rename = "dbNodeStorageSizeGb")]
-    pub r#db_node_storage_size_gb: Box<i32>,
+    pub r#db_node_storage_size_gb: i32,
     /// Output only
     #[builder(into)]
     #[serde(rename = "maxDbNodeStorageSizeGb")]
-    pub r#max_db_node_storage_size_gb: Box<i32>,
+    pub r#max_db_node_storage_size_gb: i32,
     /// Output only
     #[builder(into)]
     #[serde(rename = "maxMemorySizeGb")]
-    pub r#max_memory_size_gb: Box<i32>,
+    pub r#max_memory_size_gb: i32,
     /// Output only
     #[builder(into)]
     #[serde(rename = "maxOcpuCount")]
-    pub r#max_ocpu_count: Box<i32>,
+    pub r#max_ocpu_count: i32,
     /// Output only
     #[builder(into)]
     #[serde(rename = "memorySizeGb")]
-    pub r#memory_size_gb: Box<i32>,
+    pub r#memory_size_gb: i32,
     /// Output only
     #[builder(into)]
     #[serde(rename = "ocid")]
-    pub r#ocid: Box<String>,
+    pub r#ocid: String,
     /// Output only
     #[builder(into)]
     #[serde(rename = "ocpuCount")]
-    pub r#ocpu_count: Box<i32>,
+    pub r#ocpu_count: i32,
     /// Output only
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
     /// Output only
     #[builder(into)]
     #[serde(rename = "vmCount")]
-    pub r#vm_count: Box<i32>,
+    pub r#vm_count: i32,
 }

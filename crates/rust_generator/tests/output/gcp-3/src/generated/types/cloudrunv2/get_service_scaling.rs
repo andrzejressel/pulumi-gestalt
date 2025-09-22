@@ -6,5 +6,5 @@ pub struct GetServiceScaling {
     /// Minimum number of instances for the service, to be divided among all revisions receiving traffic.
     #[builder(into)]
     #[serde(rename = "minInstanceCount")]
-    pub r#min_instance_count: Box<i32>,
+    pub r#min_instance_count: i32,
 }

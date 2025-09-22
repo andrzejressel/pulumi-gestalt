@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GatewayRouteSpecHttp2RouteActionRewritePrefix {
     /// Default prefix used to replace the incoming route prefix when rewritten. Valid values: `ENABLED`, `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultPrefix")]
-    pub r#default_prefix: Box<Option<String>>,
+    pub r#default_prefix: Option<String>,
     /// Value used to replace the incoming route prefix when rewritten.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

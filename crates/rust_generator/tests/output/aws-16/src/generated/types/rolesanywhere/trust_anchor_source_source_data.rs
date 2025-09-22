@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TrustAnchorSourceSourceData {
     /// The ARN of an ACM Private Certificate Authority.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acmPcaArn")]
-    pub r#acm_pca_arn: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#acm_pca_arn: Option<String>,
+    #[builder(into)]
     #[serde(rename = "x509CertificateData")]
-    pub r#x_509_certificate_data: Box<Option<String>>,
+    pub r#x_509_certificate_data: Option<String>,
 }

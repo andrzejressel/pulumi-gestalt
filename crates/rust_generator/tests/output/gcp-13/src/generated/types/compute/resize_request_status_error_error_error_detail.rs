@@ -6,25 +6,25 @@ pub struct ResizeRequestStatusErrorErrorErrorDetail {
     /// (Output)
     /// [Output Only]
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorInfos")]
-    pub r#error_infos: Box<Option<Vec<super::super::types::compute::ResizeRequestStatusErrorErrorErrorDetailErrorInfo>>>,
+    pub r#error_infos: Option<Vec<super::super::types::compute::ResizeRequestStatusErrorErrorErrorDetailErrorInfo>>,
     /// (Output)
     /// [Output Only]
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "helps")]
-    pub r#helps: Box<Option<Vec<super::super::types::compute::ResizeRequestStatusErrorErrorErrorDetailHelp>>>,
+    pub r#helps: Option<Vec<super::super::types::compute::ResizeRequestStatusErrorErrorErrorDetailHelp>>,
     /// (Output)
     /// [Output Only]
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "localizedMessages")]
-    pub r#localized_messages: Box<Option<Vec<super::super::types::compute::ResizeRequestStatusErrorErrorErrorDetailLocalizedMessage>>>,
+    pub r#localized_messages: Option<Vec<super::super::types::compute::ResizeRequestStatusErrorErrorErrorDetailLocalizedMessage>>,
     /// (Output)
     /// [Output Only]
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "quotaInfos")]
-    pub r#quota_infos: Box<Option<Vec<super::super::types::compute::ResizeRequestStatusErrorErrorErrorDetailQuotaInfo>>>,
+    pub r#quota_infos: Option<Vec<super::super::types::compute::ResizeRequestStatusErrorErrorErrorDetailQuotaInfo>>,
 }

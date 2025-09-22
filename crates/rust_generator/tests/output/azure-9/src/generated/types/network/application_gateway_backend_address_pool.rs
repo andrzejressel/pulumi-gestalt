@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationGatewayBackendAddressPool {
     /// A list of FQDN's which should be part of the Backend Address Pool.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fqdns")]
-    pub r#fqdns: Box<Option<Vec<String>>>,
+    pub r#fqdns: Option<Vec<String>>,
     /// The ID of the Rewrite Rule Set
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// A list of IP Addresses which should be part of the Backend Address Pool.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Option<Vec<String>>>,
+    pub r#ip_addresses: Option<Vec<String>>,
     /// The name of the Backend Address Pool.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

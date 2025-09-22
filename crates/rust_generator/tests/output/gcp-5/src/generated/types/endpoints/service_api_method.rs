@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceApiMethod {
     /// The simple name of the endpoint as described in the config.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The type URL for the request to this API.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestType")]
-    pub r#request_type: Box<Option<String>>,
+    pub r#request_type: Option<String>,
     /// The type URL for the response from this API.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "responseType")]
-    pub r#response_type: Box<Option<String>>,
+    pub r#response_type: Option<String>,
     /// `SYNTAX_PROTO2` or `SYNTAX_PROTO3`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "syntax")]
-    pub r#syntax: Box<Option<String>>,
+    pub r#syntax: Option<String>,
 }

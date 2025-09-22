@@ -9,7 +9,7 @@ pub struct EntityTypeEntity {
     /// * This collection must contain exactly one synonym equal to value.
     #[builder(into)]
     #[serde(rename = "synonyms")]
-    pub r#synonyms: Box<Vec<String>>,
+    pub r#synonyms: Vec<String>,
     /// The primary value associated with this entity entry. For example, if the entity type is vegetable, the value
     /// could be scallions.
     /// For KIND_MAP entity types:
@@ -18,5 +18,5 @@ pub struct EntityTypeEntity {
     /// * A string that can contain references to other entity types (with or without aliases).
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

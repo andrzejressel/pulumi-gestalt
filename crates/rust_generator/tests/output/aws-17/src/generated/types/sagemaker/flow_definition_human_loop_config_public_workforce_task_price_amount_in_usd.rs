@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd {
     /// The fractional portion, in cents, of the amount. Valid value range between `0` and `99`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cents")]
-    pub r#cents: Box<Option<i32>>,
+    pub r#cents: Option<i32>,
     /// The whole number of dollars in the amount. Valid value range between `0` and `2`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dollars")]
-    pub r#dollars: Box<Option<i32>>,
+    pub r#dollars: Option<i32>,
     /// Fractions of a cent, in tenths. Valid value range between `0` and `9`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenthFractionsOfACent")]
-    pub r#tenth_fractions_of_a_cent: Box<Option<i32>>,
+    pub r#tenth_fractions_of_a_cent: Option<i32>,
 }

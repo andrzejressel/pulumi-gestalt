@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VMwareClusterUpgradePolicy {
     /// Controls whether the upgrade applies to the control plane only.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "controlPlaneOnly")]
-    pub r#control_plane_only: Box<Option<bool>>,
+    pub r#control_plane_only: Option<bool>,
 }

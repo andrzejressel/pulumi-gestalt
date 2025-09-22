@@ -6,9 +6,9 @@ pub struct GetClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig {
     /// Name of the VPC where the additional interface belongs.
     #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<String>,
+    pub r#network: String,
     /// Name of the subnetwork where the additional interface belongs.
     #[builder(into)]
     #[serde(rename = "subnetwork")]
-    pub r#subnetwork: Box<String>,
+    pub r#subnetwork: String,
 }

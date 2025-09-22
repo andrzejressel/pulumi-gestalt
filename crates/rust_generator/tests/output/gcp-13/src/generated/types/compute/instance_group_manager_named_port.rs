@@ -6,10 +6,10 @@ pub struct InstanceGroupManagerNamedPort {
     /// The name of the port.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The port number.
     /// - - -
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

@@ -6,9 +6,9 @@ pub struct FolderPermission {
     /// List of IAM actions to grant or revoke permissions on.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<String>>,
+    pub r#actions: Vec<String>,
     /// ARN of the principal. See the [ResourcePermission documentation](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ResourcePermission.html) for the applicable ARN values.
     #[builder(into)]
     #[serde(rename = "principal")]
-    pub r#principal: Box<String>,
+    pub r#principal: String,
 }

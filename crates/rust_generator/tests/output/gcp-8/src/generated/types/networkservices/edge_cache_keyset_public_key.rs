@@ -8,15 +8,15 @@ pub struct EdgeCacheKeysetPublicKey {
     /// which means the first character must be a letter, and all following characters must be a dash, underscore, letter or digit.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Set to true to have the CDN automatically manage this public key value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "managed")]
-    pub r#managed: Box<Option<bool>>,
+    pub r#managed: Option<bool>,
     /// The base64-encoded value of the Ed25519 public key. The base64 encoding can be padded (44 bytes) or unpadded (43 bytes).
     /// Representations or encodings of the public key other than this will be rejected with an error.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

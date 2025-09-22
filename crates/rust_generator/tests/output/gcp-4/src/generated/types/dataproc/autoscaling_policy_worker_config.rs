@@ -6,11 +6,11 @@ pub struct AutoscalingPolicyWorkerConfig {
     /// Maximum number of instances for this group.
     #[builder(into)]
     #[serde(rename = "maxInstances")]
-    pub r#max_instances: Box<i32>,
+    pub r#max_instances: i32,
     /// Minimum number of instances for this group. Bounds: [2, maxInstances]. Defaults to 2.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minInstances")]
-    pub r#min_instances: Box<Option<i32>>,
+    pub r#min_instances: Option<i32>,
     /// Weight for the instance group, which is used to determine the fraction of total workers
     /// in the cluster from this instance group. For example, if primary workers have weight 2,
     /// and secondary workers have weight 1, the cluster will have approximately 2 primary workers
@@ -23,7 +23,7 @@ pub struct AutoscalingPolicyWorkerConfig {
     /// within the configured size bounds for each group. If weight is set for one group only,
     /// the cluster will default to zero weight on the unset group. For example if weight is set
     /// only on primary workers, the cluster will use primary workers only and no secondary workers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<Option<i32>>,
+    pub r#weight: Option<i32>,
 }

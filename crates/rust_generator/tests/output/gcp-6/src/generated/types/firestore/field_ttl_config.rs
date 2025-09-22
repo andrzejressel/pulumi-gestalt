@@ -5,7 +5,7 @@
 pub struct FieldTtlConfig {
     /// (Output)
     /// The state of TTL (time-to-live) configuration for documents that have this Field set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

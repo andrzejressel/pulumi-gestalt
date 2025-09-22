@@ -6,13 +6,13 @@ pub struct MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRuleSenti
     /// Rule name.
     #[builder(into)]
     #[serde(rename = "ruleName")]
-    pub r#rule_name: Box<String>,
+    pub r#rule_name: String,
     /// Sentiment type to match.
     #[builder(into)]
     #[serde(rename = "sentimentType")]
-    pub r#sentiment_type: Box<String>,
+    pub r#sentiment_type: String,
     /// Analysis interval.
     #[builder(into)]
     #[serde(rename = "timePeriod")]
-    pub r#time_period: Box<i32>,
+    pub r#time_period: i32,
 }

@@ -6,13 +6,13 @@ pub struct GetClusterComputeConfig {
     /// Whether zonal shift is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// List of node pools for the EKS Auto Mode compute capability.
     #[builder(into)]
     #[serde(rename = "nodePools")]
-    pub r#node_pools: Box<Vec<String>>,
+    pub r#node_pools: Vec<String>,
     /// The ARN of the IAM Role EKS will assign to EC2 Managed Instances in your EKS Auto Mode cluster.
     #[builder(into)]
     #[serde(rename = "nodeRoleArn")]
-    pub r#node_role_arn: Box<String>,
+    pub r#node_role_arn: String,
 }

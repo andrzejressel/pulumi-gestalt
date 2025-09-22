@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationProfileValidator {
     /// Either the JSON Schema content or the ARN of an AWS Lambda function.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<Option<String>>,
+    pub r#content: Option<String>,
     /// Type of validator. Valid values: `JSON_SCHEMA` and `LAMBDA`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -6,17 +6,17 @@ pub struct KeyVaultNetworkAcls {
     /// Specifies which traffic can bypass the network rules. Possible values are `AzureServices` and `None`.
     #[builder(into)]
     #[serde(rename = "bypass")]
-    pub r#bypass: Box<String>,
+    pub r#bypass: String,
     /// The Default Action to use when no rules match from `ip_rules` / `virtual_network_subnet_ids`. Possible values are `Allow` and `Deny`.
     #[builder(into)]
     #[serde(rename = "defaultAction")]
-    pub r#default_action: Box<String>,
+    pub r#default_action: String,
     /// One or more IP Addresses, or CIDR Blocks which should be able to access the Key Vault.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipRules")]
-    pub r#ip_rules: Box<Option<Vec<String>>>,
+    pub r#ip_rules: Option<Vec<String>>,
     /// One or more Subnet IDs which should be able to access this Key Vault.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualNetworkSubnetIds")]
-    pub r#virtual_network_subnet_ids: Box<Option<Vec<String>>>,
+    pub r#virtual_network_subnet_ids: Option<Vec<String>>,
 }

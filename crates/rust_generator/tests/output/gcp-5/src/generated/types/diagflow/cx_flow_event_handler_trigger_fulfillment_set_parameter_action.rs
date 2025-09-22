@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxFlowEventHandlerTriggerFulfillmentSetParameterAction {
     /// Display name of the parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameter")]
-    pub r#parameter: Box<Option<String>>,
+    pub r#parameter: Option<String>,
     /// The new JSON-encoded value of the parameter. A null value clears the parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

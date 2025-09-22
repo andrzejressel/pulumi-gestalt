@@ -5,5 +5,5 @@
 pub struct GetRouteSpecHttp2RouteAction {
     #[builder(into)]
     #[serde(rename = "weightedTargets")]
-    pub r#weighted_targets: Box<Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteActionWeightedTarget>>,
+    pub r#weighted_targets: Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteActionWeightedTarget>,
 }

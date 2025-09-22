@@ -6,9 +6,9 @@ pub struct BudgetActionSubscriber {
     /// The address that AWS sends budget notifications to, either an SNS topic or an email.
     #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<String>,
+    pub r#address: String,
     /// The type of notification that AWS sends to a subscriber. Valid values are `SNS` or `EMAIL`.
     #[builder(into)]
     #[serde(rename = "subscriptionType")]
-    pub r#subscription_type: Box<String>,
+    pub r#subscription_type: String,
 }

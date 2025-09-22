@@ -6,14 +6,14 @@ pub struct GetFunctionBuildConfigSourceStorageSource {
     /// Google Cloud Storage bucket containing the source
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// Google Cloud Storage generation for the object. If the generation
     /// is omitted, the latest generation will be used.
     #[builder(into)]
     #[serde(rename = "generation")]
-    pub r#generation: Box<i32>,
+    pub r#generation: i32,
     /// Google Cloud Storage object containing the source.
     #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<String>,
+    pub r#object: String,
 }

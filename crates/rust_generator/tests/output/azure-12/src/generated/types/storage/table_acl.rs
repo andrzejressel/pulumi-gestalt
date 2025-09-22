@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TableAcl {
     /// An `access_policy` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessPolicies")]
-    pub r#access_policies: Box<Option<Vec<super::super::types::storage::TableAclAccessPolicy>>>,
+    pub r#access_policies: Option<Vec<super::super::types::storage::TableAclAccessPolicy>>,
     /// The ID which should be used for this Shared Identifier.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

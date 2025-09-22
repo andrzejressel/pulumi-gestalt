@@ -5,22 +5,22 @@
 pub struct VMwareClusterLoadBalancer {
     /// Configuration for F5 Big IP typed load balancers.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "f5Config")]
-    pub r#f_5_config: Box<Option<super::super::types::gkeonprem::VMwareClusterLoadBalancerF5Config>>,
+    pub r#f_5_config: Option<Box<super::super::types::gkeonprem::VMwareClusterLoadBalancerF5Config>>,
     /// Manually configured load balancers.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "manualLbConfig")]
-    pub r#manual_lb_config: Box<Option<super::super::types::gkeonprem::VMwareClusterLoadBalancerManualLbConfig>>,
+    pub r#manual_lb_config: Option<Box<super::super::types::gkeonprem::VMwareClusterLoadBalancerManualLbConfig>>,
     /// Configuration for MetalLB typed load balancers.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metalLbConfig")]
-    pub r#metal_lb_config: Box<Option<super::super::types::gkeonprem::VMwareClusterLoadBalancerMetalLbConfig>>,
+    pub r#metal_lb_config: Option<Box<super::super::types::gkeonprem::VMwareClusterLoadBalancerMetalLbConfig>>,
     /// The VIPs used by the load balancer.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vipConfig")]
-    pub r#vip_config: Box<Option<super::super::types::gkeonprem::VMwareClusterLoadBalancerVipConfig>>,
+    pub r#vip_config: Option<Box<super::super::types::gkeonprem::VMwareClusterLoadBalancerVipConfig>>,
 }

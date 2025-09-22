@@ -9,7 +9,7 @@ pub struct GetGlobalForwardingRuleMetadataFilter {
     /// This list must not be empty and can have at the most 64 entries.
     #[builder(into)]
     #[serde(rename = "filterLabels")]
-    pub r#filter_labels: Box<Vec<super::super::types::compute::GetGlobalForwardingRuleMetadataFilterFilterLabel>>,
+    pub r#filter_labels: Vec<super::super::types::compute::GetGlobalForwardingRuleMetadataFilterFilterLabel>,
     /// Specifies how individual filterLabel matches within the list of
     /// filterLabels contribute towards the overall metadataFilter match.
     /// 
@@ -19,5 +19,5 @@ pub struct GetGlobalForwardingRuleMetadataFilter {
     /// provided metadata. Possible values: ["MATCH_ANY", "MATCH_ALL"]
     #[builder(into)]
     #[serde(rename = "filterMatchCriteria")]
-    pub r#filter_match_criteria: Box<String>,
+    pub r#filter_match_criteria: String,
 }

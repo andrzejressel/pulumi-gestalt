@@ -6,15 +6,15 @@ pub struct VMwareClusterNetworkConfigHostConfig {
     /// DNS search domains.
     /// 
     /// <a name="nested_control_plane_v2_config"></a>The `control_plane_v2_config` block supports:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dnsSearchDomains")]
-    pub r#dns_search_domains: Box<Option<Vec<String>>>,
+    pub r#dns_search_domains: Option<Vec<String>>,
     /// DNS servers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dnsServers")]
-    pub r#dns_servers: Box<Option<Vec<String>>>,
+    pub r#dns_servers: Option<Vec<String>>,
     /// NTP servers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ntpServers")]
-    pub r#ntp_servers: Box<Option<Vec<String>>>,
+    pub r#ntp_servers: Option<Vec<String>>,
 }

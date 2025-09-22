@@ -6,5 +6,5 @@ pub struct CacheDefaultAccessPolicy {
     /// One or more `access_rule` blocks (up to three) as defined above.
     #[builder(into)]
     #[serde(rename = "accessRules")]
-    pub r#access_rules: Box<Vec<super::super::types::hpc::CacheDefaultAccessPolicyAccessRule>>,
+    pub r#access_rules: Vec<super::super::types::hpc::CacheDefaultAccessPolicyAccessRule>,
 }

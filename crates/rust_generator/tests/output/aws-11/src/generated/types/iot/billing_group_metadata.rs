@@ -5,5 +5,5 @@
 pub struct BillingGroupMetadata {
     #[builder(into)]
     #[serde(rename = "creationDate")]
-    pub r#creation_date: Box<String>,
+    pub r#creation_date: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesetRuleActionParametersResponse {
     /// Body content to include in the response.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<Option<String>>,
+    pub r#content: Option<String>,
     /// HTTP content type to send in the response.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "contentType")]
-    pub r#content_type: Box<Option<String>>,
+    pub r#content_type: Option<String>,
     /// HTTP status code to send in the response.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<Option<i32>>,
+    pub r#status_code: Option<i32>,
 }

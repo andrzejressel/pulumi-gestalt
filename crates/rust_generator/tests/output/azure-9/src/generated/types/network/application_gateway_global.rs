@@ -6,9 +6,9 @@ pub struct ApplicationGatewayGlobal {
     /// Whether Application Gateway's Request buffer is enabled.
     #[builder(into)]
     #[serde(rename = "requestBufferingEnabled")]
-    pub r#request_buffering_enabled: Box<bool>,
+    pub r#request_buffering_enabled: bool,
     /// Whether Application Gateway's Response buffer is enabled.
     #[builder(into)]
     #[serde(rename = "responseBufferingEnabled")]
-    pub r#response_buffering_enabled: Box<bool>,
+    pub r#response_buffering_enabled: bool,
 }

@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PatchDeploymentInstanceFilter {
     /// Target all VM instances in the project. If true, no other criteria is permitted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "all")]
-    pub r#all: Box<Option<bool>>,
+    pub r#all: Option<bool>,
     /// Targets VM instances matching ANY of these GroupLabels. This allows targeting of disparate groups of VM instances.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groupLabels")]
-    pub r#group_labels: Box<Option<Vec<super::super::types::osconfig::PatchDeploymentInstanceFilterGroupLabel>>>,
+    pub r#group_labels: Option<Vec<super::super::types::osconfig::PatchDeploymentInstanceFilterGroupLabel>>,
     /// Targets VMs whose name starts with one of these prefixes. Similar to labels, this is another way to group
     /// VMs when targeting configs, for example prefix="prod-".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceNamePrefixes")]
-    pub r#instance_name_prefixes: Box<Option<Vec<String>>>,
+    pub r#instance_name_prefixes: Option<Vec<String>>,
     /// Targets any of the VM instances specified. Instances are specified by their URI in the `form zones/{{zone}}/instances/{{instance_name}}`,
     /// `projects/{{project_id}}/zones/{{zone}}/instances/{{instance_name}}`, or
     /// `https://www.googleapis.com/compute/v1/projects/{{project_id}}/zones/{{zone}}/instances/{{instance_name}}`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instances")]
-    pub r#instances: Box<Option<Vec<String>>>,
+    pub r#instances: Option<Vec<String>>,
     /// Targets VM instances in ANY of these zones. Leave empty to target VM instances in any zone.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zones")]
-    pub r#zones: Box<Option<Vec<String>>>,
+    pub r#zones: Option<Vec<String>>,
 }

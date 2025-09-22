@@ -6,9 +6,9 @@ pub struct GetInstanceNode {
     /// Node identifying string. e.g. 'node-0', 'node-1'
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Location of the node.
     #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<String>,
+    pub r#zone: String,
 }

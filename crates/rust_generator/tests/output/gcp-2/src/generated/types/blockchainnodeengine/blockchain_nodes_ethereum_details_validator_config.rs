@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BlockchainNodesEthereumDetailsValidatorConfig {
     /// URLs for MEV-relay services to use for block building. When set, a managed MEV-boost service is configured on the beacon client.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mevRelayUrls")]
-    pub r#mev_relay_urls: Box<Option<Vec<String>>>,
+    pub r#mev_relay_urls: Option<Vec<String>>,
 }

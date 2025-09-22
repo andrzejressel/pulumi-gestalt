@@ -6,9 +6,9 @@ pub struct EventConnectionAuthParametersOauthClientParameters {
     /// The client ID for the credentials to use for authorization. Created and stored in AWS Secrets Manager.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The client secret for the credentials to use for authorization. Created and stored in AWS Secrets Manager.
     #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<String>,
+    pub r#client_secret: String,
 }

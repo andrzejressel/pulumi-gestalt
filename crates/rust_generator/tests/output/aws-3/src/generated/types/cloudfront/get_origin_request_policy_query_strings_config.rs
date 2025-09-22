@@ -5,8 +5,8 @@
 pub struct GetOriginRequestPolicyQueryStringsConfig {
     #[builder(into)]
     #[serde(rename = "queryStringBehavior")]
-    pub r#query_string_behavior: Box<String>,
+    pub r#query_string_behavior: String,
     #[builder(into)]
     #[serde(rename = "queryStrings")]
-    pub r#query_strings: Box<Vec<super::super::types::cloudfront::GetOriginRequestPolicyQueryStringsConfigQueryString>>,
+    pub r#query_strings: Vec<super::super::types::cloudfront::GetOriginRequestPolicyQueryStringsConfigQueryString>,
 }

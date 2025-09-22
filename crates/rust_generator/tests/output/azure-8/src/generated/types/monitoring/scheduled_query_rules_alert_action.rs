@@ -6,13 +6,13 @@ pub struct ScheduledQueryRulesAlertAction {
     /// List of action group reference resource IDs.
     #[builder(into)]
     #[serde(rename = "actionGroups")]
-    pub r#action_groups: Box<Vec<String>>,
+    pub r#action_groups: Vec<String>,
     /// Custom payload to be sent for all webhook payloads in alerting action.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customWebhookPayload")]
-    pub r#custom_webhook_payload: Box<Option<String>>,
+    pub r#custom_webhook_payload: Option<String>,
     /// Custom subject override for all email ids in Azure action group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emailSubject")]
-    pub r#email_subject: Box<Option<String>>,
+    pub r#email_subject: Option<String>,
 }

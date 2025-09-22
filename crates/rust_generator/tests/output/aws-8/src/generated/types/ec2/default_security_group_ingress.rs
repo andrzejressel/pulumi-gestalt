@@ -4,39 +4,39 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DefaultSecurityGroupIngress {
     /// List of CIDR blocks.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cidrBlocks")]
-    pub r#cidr_blocks: Box<Option<Vec<String>>>,
+    pub r#cidr_blocks: Option<Vec<String>>,
     /// Description of the security group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Start port (or ICMP type number if protocol is `icmp`)
     #[builder(into)]
     #[serde(rename = "fromPort")]
-    pub r#from_port: Box<i32>,
+    pub r#from_port: i32,
     /// List of IPv6 CIDR blocks.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv6CidrBlocks")]
-    pub r#ipv_6_cidr_blocks: Box<Option<Vec<String>>>,
+    pub r#ipv_6_cidr_blocks: Option<Vec<String>>,
     /// List of prefix list IDs (for allowing access to VPC endpoints)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefixListIds")]
-    pub r#prefix_list_ids: Box<Option<Vec<String>>>,
+    pub r#prefix_list_ids: Option<Vec<String>>,
     /// Protocol. If you select a protocol of "-1" (semantically equivalent to `all`, which is not a valid value here), you must specify a `from_port` and `to_port` equal to `0`. If not `icmp`, `tcp`, `udp`, or `-1` use the [protocol number](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     /// List of security groups. A group name can be used relative to the default VPC. Otherwise, group ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "securityGroups")]
-    pub r#security_groups: Box<Option<Vec<String>>>,
+    pub r#security_groups: Option<Vec<String>>,
     /// Whether the security group itself will be added as a source to this egress rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "self")]
-    pub r#self_: Box<Option<bool>>,
+    pub r#self_: Option<bool>,
     /// End range port (or ICMP code if protocol is `icmp`).
     #[builder(into)]
     #[serde(rename = "toPort")]
-    pub r#to_port: Box<i32>,
+    pub r#to_port: i32,
 }

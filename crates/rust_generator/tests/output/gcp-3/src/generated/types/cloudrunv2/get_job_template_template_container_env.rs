@@ -6,13 +6,13 @@ pub struct GetJobTemplateTemplateContainerEnv {
     /// The name of the Cloud Run v2 Job.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Literal value of the environment variable. Defaults to "" and the maximum allowed length is 32768 characters. Variable references are not supported in Cloud Run.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
     /// Source for the environment variable's value.
     #[builder(into)]
     #[serde(rename = "valueSources")]
-    pub r#value_sources: Box<Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateContainerEnvValueSource>>,
+    pub r#value_sources: Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateContainerEnvValueSource>,
 }

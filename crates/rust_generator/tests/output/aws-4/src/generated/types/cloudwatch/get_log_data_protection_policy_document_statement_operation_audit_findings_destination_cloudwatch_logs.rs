@@ -6,5 +6,5 @@ pub struct GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDest
     /// Name of the CloudWatch Log Group to send findings to.
     #[builder(into)]
     #[serde(rename = "logGroup")]
-    pub r#log_group: Box<String>,
+    pub r#log_group: String,
 }

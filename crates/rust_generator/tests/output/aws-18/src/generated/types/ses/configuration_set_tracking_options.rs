@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationSetTrackingOptions {
     /// Custom subdomain that is used to redirect email recipients to the Amazon SES event tracking domain.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customRedirectDomain")]
-    pub r#custom_redirect_domain: Box<Option<String>>,
+    pub r#custom_redirect_domain: Option<String>,
 }

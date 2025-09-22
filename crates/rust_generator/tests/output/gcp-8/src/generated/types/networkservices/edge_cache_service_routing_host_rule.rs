@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EdgeCacheServiceRoutingHostRule {
     /// A human-readable description of the hostRule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The list of host patterns to match.
     /// Host patterns must be valid hostnames. Ports are not allowed. Wildcard hosts are supported in the suffix or prefix form. * matches any string of ([a-z0-9-.]*). It does not match the empty string.
     /// When multiple hosts are specified, hosts are matched in the following priority:
@@ -20,9 +20,9 @@ pub struct EdgeCacheServiceRoutingHostRule {
     /// You may specify up to 10 hosts.
     #[builder(into)]
     #[serde(rename = "hosts")]
-    pub r#hosts: Box<Vec<String>>,
+    pub r#hosts: Vec<String>,
     /// The name of the pathMatcher associated with this hostRule.
     #[builder(into)]
     #[serde(rename = "pathMatcher")]
-    pub r#path_matcher: Box<String>,
+    pub r#path_matcher: String,
 }

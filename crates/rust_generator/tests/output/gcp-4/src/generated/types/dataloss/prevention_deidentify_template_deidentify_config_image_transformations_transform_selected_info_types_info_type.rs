@@ -6,14 +6,14 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTrans
     /// Name of the information type.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Optional custom sensitivity for this InfoType. This only applies to data profiling.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sensitivityScore")]
-    pub r#sensitivity_score: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore>>,
+    pub r#sensitivity_score: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScore>>,
     /// Version name for this InfoType.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

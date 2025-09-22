@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubernetesClusterDefaultNodePoolNodeNetworkProfileAllowedHostPort {
     /// Specifies the end of the port range.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "portEnd")]
-    pub r#port_end: Box<Option<i32>>,
+    pub r#port_end: Option<i32>,
     /// Specifies the start of the port range.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "portStart")]
-    pub r#port_start: Box<Option<i32>>,
+    pub r#port_start: Option<i32>,
     /// Specifies the protocol of the port range. Possible values are `TCP` and `UDP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
+    pub r#protocol: Option<String>,
 }

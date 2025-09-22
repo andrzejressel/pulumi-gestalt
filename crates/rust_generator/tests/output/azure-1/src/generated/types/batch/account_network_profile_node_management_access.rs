@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountNetworkProfileNodeManagementAccess {
     /// Specifies the default action for the node management access. Possible values are `Allow` and `Deny`. Defaults to `Deny`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultAction")]
-    pub r#default_action: Box<Option<String>>,
+    pub r#default_action: Option<String>,
     /// One or more `ip_rule` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipRules")]
-    pub r#ip_rules: Box<Option<Vec<super::super::types::batch::AccountNetworkProfileNodeManagementAccessIpRule>>>,
+    pub r#ip_rules: Option<Vec<super::super::types::batch::AccountNetworkProfileNodeManagementAccessIpRule>>,
 }

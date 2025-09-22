@@ -6,9 +6,9 @@ pub struct GetWindowsWebAppSiteCredential {
     /// The name of this Windows Web App.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The Site Credentials Password used for publishing.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
 }

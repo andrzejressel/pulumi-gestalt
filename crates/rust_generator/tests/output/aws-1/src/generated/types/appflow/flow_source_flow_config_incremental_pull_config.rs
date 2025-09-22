@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowSourceFlowConfigIncrementalPullConfig {
     /// Field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datetimeTypeFieldName")]
-    pub r#datetime_type_field_name: Box<Option<String>>,
+    pub r#datetime_type_field_name: Option<String>,
 }

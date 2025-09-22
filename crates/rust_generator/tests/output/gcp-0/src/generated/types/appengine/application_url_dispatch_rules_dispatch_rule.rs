@@ -5,19 +5,19 @@
 pub struct ApplicationUrlDispatchRulesDispatchRule {
     /// Domain name to match against. The wildcard "*" is supported if specified before a period: "*.".
     /// Defaults to matching all domains: "*".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<Option<String>>,
+    pub r#domain: Option<String>,
     /// Pathname within the host. Must start with a "/". A single "*" can be included at the end of the path.
     /// The sum of the lengths of the domain and path may not exceed 100 characters.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// Pathname within the host. Must start with a "/". A single "*" can be included at the end of the path.
     /// The sum of the lengths of the domain and path may not exceed 100 characters.
     /// 
     /// - - -
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

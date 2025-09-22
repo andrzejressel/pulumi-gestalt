@@ -22,5 +22,5 @@ pub struct SloWindowsBasedSliMetricMeanInRange {
     /// under good service.
     #[builder(into)]
     #[serde(rename = "timeSeries")]
-    pub r#time_series: Box<String>,
+    pub r#time_series: String,
 }

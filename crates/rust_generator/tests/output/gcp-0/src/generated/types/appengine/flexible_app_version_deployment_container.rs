@@ -7,5 +7,5 @@ pub struct FlexibleAppVersionDeploymentContainer {
     /// Examples: "gcr.io/my-project/image:tag" or "gcr.io/my-project/image@digest"
     #[builder(into)]
     #[serde(rename = "image")]
-    pub r#image: Box<String>,
+    pub r#image: String,
 }

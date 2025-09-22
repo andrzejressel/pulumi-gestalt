@@ -6,23 +6,23 @@ pub struct ConnectionProfileMysqlProfile {
     /// Hostname for the MySQL connection.
     #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<String>,
+    pub r#hostname: String,
     /// Password for the MySQL connection.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// Port for the MySQL connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// SSL configuration for the MySQL connection.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sslConfig")]
-    pub r#ssl_config: Box<Option<super::super::types::datastream::ConnectionProfileMysqlProfileSslConfig>>,
+    pub r#ssl_config: Option<Box<super::super::types::datastream::ConnectionProfileMysqlProfileSslConfig>>,
     /// Username for the MySQL connection.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

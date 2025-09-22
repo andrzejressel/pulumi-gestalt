@@ -5,18 +5,18 @@
 pub struct PreventionJobTriggerInspectJob {
     /// Configuration block for the actions to execute on the completion of a job. Can be specified multiple times, but only one for each type. Each action block supports fields documented below. This argument is processed in attribute-as-blocks mode.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Option<Vec<super::super::types::dataloss::PreventionJobTriggerInspectJobAction>>>,
+    pub r#actions: Option<Vec<super::super::types::dataloss::PreventionJobTriggerInspectJobAction>>,
     /// The core content of the template.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inspectConfig")]
-    pub r#inspect_config: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfig>>,
+    pub r#inspect_config: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfig>>,
     /// The name of the template to run when this job is triggered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inspectTemplateName")]
-    pub r#inspect_template_name: Box<Option<String>>,
+    pub r#inspect_template_name: Option<String>,
     /// Information on where to inspect
     /// Structure is documented below.
     #[builder(into)]

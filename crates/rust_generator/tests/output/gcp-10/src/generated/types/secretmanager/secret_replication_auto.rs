@@ -7,7 +7,7 @@ pub struct SecretReplicationAuto {
     /// If no configuration is provided, Google-managed default
     /// encryption is used.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customerManagedEncryption")]
-    pub r#customer_managed_encryption: Box<Option<super::super::types::secretmanager::SecretReplicationAutoCustomerManagedEncryption>>,
+    pub r#customer_managed_encryption: Option<Box<super::super::types::secretmanager::SecretReplicationAutoCustomerManagedEncryption>>,
 }

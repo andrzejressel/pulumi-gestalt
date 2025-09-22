@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PostgresqlClusterServer {
     /// The Fully Qualified Domain Name of the server.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fqdn")]
-    pub r#fqdn: Box<Option<String>>,
+    pub r#fqdn: Option<String>,
     /// The name which should be used for this Azure Cosmos DB for PostgreSQL Cluster. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

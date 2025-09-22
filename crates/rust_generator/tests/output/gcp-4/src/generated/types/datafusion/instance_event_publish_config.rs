@@ -6,9 +6,9 @@ pub struct InstanceEventPublishConfig {
     /// Option to enable Event Publishing.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The resource name of the Pub/Sub topic. Format: projects/{projectId}/topics/{topic_id}
     #[builder(into)]
     #[serde(rename = "topic")]
-    pub r#topic: Box<String>,
+    pub r#topic: String,
 }

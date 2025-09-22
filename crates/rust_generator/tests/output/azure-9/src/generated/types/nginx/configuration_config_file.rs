@@ -6,9 +6,9 @@ pub struct ConfigurationConfigFile {
     /// Specifies the base-64 encoded contents of this config file.
     #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<String>,
+    pub r#content: String,
     /// Specifies the path of this config file.
     #[builder(into)]
     #[serde(rename = "virtualPath")]
-    pub r#virtual_path: Box<String>,
+    pub r#virtual_path: String,
 }

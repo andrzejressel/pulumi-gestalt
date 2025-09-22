@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlexibleAppVersionAutomaticScalingNetworkUtilization {
     /// Target bytes received per second.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetReceivedBytesPerSecond")]
-    pub r#target_received_bytes_per_second: Box<Option<i32>>,
+    pub r#target_received_bytes_per_second: Option<i32>,
     /// Target packets received per second.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetReceivedPacketsPerSecond")]
-    pub r#target_received_packets_per_second: Box<Option<i32>>,
+    pub r#target_received_packets_per_second: Option<i32>,
     /// Target bytes sent per second.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetSentBytesPerSecond")]
-    pub r#target_sent_bytes_per_second: Box<Option<i32>>,
+    pub r#target_sent_bytes_per_second: Option<i32>,
     /// Target packets sent per second.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetSentPacketsPerSecond")]
-    pub r#target_sent_packets_per_second: Box<Option<i32>>,
+    pub r#target_sent_packets_per_second: Option<i32>,
 }

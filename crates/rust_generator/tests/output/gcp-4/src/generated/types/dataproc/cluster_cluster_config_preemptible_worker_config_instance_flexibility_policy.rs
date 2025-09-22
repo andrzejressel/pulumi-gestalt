@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicy {
     /// List of instance selection options that the group will use when creating new VMs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceSelectionLists")]
-    pub r#instance_selection_lists: Box<Option<Vec<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionList>>>,
+    pub r#instance_selection_lists: Option<Vec<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionList>>,
     /// A list of instance selection results in the group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceSelectionResults")]
-    pub r#instance_selection_results: Box<Option<Vec<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResult>>>,
+    pub r#instance_selection_results: Option<Vec<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResult>>,
     /// Defines how Dataproc should create VMs with a mixture of provisioning models.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "provisioningModelMix")]
-    pub r#provisioning_model_mix: Box<Option<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyProvisioningModelMix>>,
+    pub r#provisioning_model_mix: Option<Box<super::super::types::dataproc::ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyProvisioningModelMix>>,
 }

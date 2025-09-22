@@ -7,5 +7,5 @@ pub struct StreamSourceConfigMysqlSourceConfigIncludeObjects {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "mysqlDatabases")]
-    pub r#mysql_databases: Box<Vec<super::super::types::datastream::StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase>>,
+    pub r#mysql_databases: Vec<super::super::types::datastream::StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabase>,
 }

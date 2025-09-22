@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MigrationJobVpcPeeringConnectivity {
     /// The name of the VPC network to peer with the Cloud SQL private network.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpc")]
-    pub r#vpc: Box<Option<String>>,
+    pub r#vpc: Option<String>,
 }

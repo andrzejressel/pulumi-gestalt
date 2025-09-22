@@ -14,5 +14,5 @@ pub struct SqlInjectionMatchSetSqlInjectionMatchTuple {
     /// for all supported values.
     #[builder(into)]
     #[serde(rename = "textTransformation")]
-    pub r#text_transformation: Box<String>,
+    pub r#text_transformation: String,
 }

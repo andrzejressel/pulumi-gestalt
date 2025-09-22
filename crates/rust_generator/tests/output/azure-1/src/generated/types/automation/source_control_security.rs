@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SourceControlSecurity {
     /// The refresh token of specified rpeo.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "refreshToken")]
-    pub r#refresh_token: Box<Option<String>>,
+    pub r#refresh_token: Option<String>,
     /// The access token of specified repo.
     #[builder(into)]
     #[serde(rename = "token")]
-    pub r#token: Box<String>,
+    pub r#token: String,
     /// Specify the token type, possible values are `PersonalAccessToken` and `Oauth`.
     #[builder(into)]
     #[serde(rename = "tokenType")]
-    pub r#token_type: Box<String>,
+    pub r#token_type: String,
 }

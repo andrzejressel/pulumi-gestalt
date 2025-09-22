@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventSourceMappingDestinationConfig {
     /// The destination configuration for failed invocations. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "onFailure")]
-    pub r#on_failure: Box<Option<super::super::types::lambda::EventSourceMappingDestinationConfigOnFailure>>,
+    pub r#on_failure: Option<Box<super::super::types::lambda::EventSourceMappingDestinationConfigOnFailure>>,
 }

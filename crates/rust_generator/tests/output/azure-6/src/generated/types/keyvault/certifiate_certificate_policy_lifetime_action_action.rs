@@ -6,5 +6,5 @@ pub struct CertifiateCertificatePolicyLifetimeActionAction {
     /// The Type of action to be performed when the lifetime trigger is triggerec. Possible values include `AutoRenew` and `EmailContacts`.
     #[builder(into)]
     #[serde(rename = "actionType")]
-    pub r#action_type: Box<String>,
+    pub r#action_type: String,
 }

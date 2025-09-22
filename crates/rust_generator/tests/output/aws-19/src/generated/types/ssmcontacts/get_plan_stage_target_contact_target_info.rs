@@ -6,8 +6,8 @@ pub struct GetPlanStageTargetContactTargetInfo {
     /// The Amazon Resource Name (ARN) of the contact or escalation plan.
     #[builder(into)]
     #[serde(rename = "contactId")]
-    pub r#contact_id: Box<String>,
+    pub r#contact_id: String,
     #[builder(into)]
     #[serde(rename = "isEssential")]
-    pub r#is_essential: Box<bool>,
+    pub r#is_essential: bool,
 }

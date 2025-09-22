@@ -6,5 +6,5 @@ pub struct DataSourceVpcConnectionProperties {
     /// The Amazon Resource Name (ARN) for the VPC connection.
     #[builder(into)]
     #[serde(rename = "vpcConnectionArn")]
-    pub r#vpc_connection_arn: Box<String>,
+    pub r#vpc_connection_arn: String,
 }

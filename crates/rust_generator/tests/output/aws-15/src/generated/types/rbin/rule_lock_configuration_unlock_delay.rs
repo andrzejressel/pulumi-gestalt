@@ -6,9 +6,9 @@ pub struct RuleLockConfigurationUnlockDelay {
     /// The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.
     #[builder(into)]
     #[serde(rename = "unlockDelayUnit")]
-    pub r#unlock_delay_unit: Box<String>,
+    pub r#unlock_delay_unit: String,
     /// The unlock delay period, measured in the unit specified for UnlockDelayUnit.
     #[builder(into)]
     #[serde(rename = "unlockDelayValue")]
-    pub r#unlock_delay_value: Box<i32>,
+    pub r#unlock_delay_value: i32,
 }

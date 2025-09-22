@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess {
     /// Public access type. Valid values: `DISABLED`, `SERVICE_PROVIDED_EIPS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

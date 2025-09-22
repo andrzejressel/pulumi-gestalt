@@ -5,8 +5,8 @@
 pub struct GetWindowsFileSystemDiskIopsConfiguration {
     #[builder(into)]
     #[serde(rename = "iops")]
-    pub r#iops: Box<i32>,
+    pub r#iops: i32,
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

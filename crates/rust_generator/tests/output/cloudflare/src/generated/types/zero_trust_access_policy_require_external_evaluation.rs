@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZeroTrustAccessPolicyRequireExternalEvaluation {
     /// The API endpoint containing your business logic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "evaluateUrl")]
-    pub r#evaluate_url: Box<Option<String>>,
+    pub r#evaluate_url: Option<String>,
     /// The API endpoint containing the key that Access uses to verify that the response came from your API.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keysUrl")]
-    pub r#keys_url: Box<Option<String>>,
+    pub r#keys_url: Option<String>,
 }

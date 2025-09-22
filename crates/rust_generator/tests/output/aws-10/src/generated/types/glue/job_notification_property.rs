@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobNotificationProperty {
     /// After a job run starts, the number of minutes to wait before sending a job run delay notification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notifyDelayAfter")]
-    pub r#notify_delay_after: Box<Option<i32>>,
+    pub r#notify_delay_after: Option<i32>,
 }

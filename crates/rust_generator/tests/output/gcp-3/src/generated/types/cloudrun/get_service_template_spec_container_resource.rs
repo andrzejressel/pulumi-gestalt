@@ -8,7 +8,7 @@ pub struct GetServiceTemplateSpecContainerResource {
     /// https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
     #[builder(into)]
     #[serde(rename = "limits")]
-    pub r#limits: Box<std::collections::HashMap<String, String>>,
+    pub r#limits: std::collections::HashMap<String, String>,
     /// Requests describes the minimum amount of compute resources required.
     /// If Requests is omitted for a container, it defaults to Limits if that is
     /// explicitly specified, otherwise to an implementation-defined value.
@@ -16,5 +16,5 @@ pub struct GetServiceTemplateSpecContainerResource {
     /// https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
     #[builder(into)]
     #[serde(rename = "requests")]
-    pub r#requests: Box<std::collections::HashMap<String, String>>,
+    pub r#requests: std::collections::HashMap<String, String>,
 }

@@ -6,5 +6,5 @@ pub struct GremlinGraphIndexPolicyCompositeIndex {
     /// One or more `index` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "indices")]
-    pub r#indices: Box<Vec<super::super::types::cosmosdb::GremlinGraphIndexPolicyCompositeIndexIndex>>,
+    pub r#indices: Vec<super::super::types::cosmosdb::GremlinGraphIndexPolicyCompositeIndexIndex>,
 }

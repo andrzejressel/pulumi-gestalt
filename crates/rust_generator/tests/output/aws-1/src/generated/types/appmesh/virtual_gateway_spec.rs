@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualGatewaySpec {
     /// Defaults for backends.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backendDefaults")]
-    pub r#backend_defaults: Box<Option<super::super::types::appmesh::VirtualGatewaySpecBackendDefaults>>,
+    pub r#backend_defaults: Option<Box<super::super::types::appmesh::VirtualGatewaySpecBackendDefaults>>,
     /// Listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.
     #[builder(into)]
     #[serde(rename = "listeners")]
-    pub r#listeners: Box<Vec<super::super::types::appmesh::VirtualGatewaySpecListener>>,
+    pub r#listeners: Vec<super::super::types::appmesh::VirtualGatewaySpecListener>,
     /// Inbound and outbound access logging information for the virtual gateway.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logging")]
-    pub r#logging: Box<Option<super::super::types::appmesh::VirtualGatewaySpecLogging>>,
+    pub r#logging: Option<Box<super::super::types::appmesh::VirtualGatewaySpecLogging>>,
 }

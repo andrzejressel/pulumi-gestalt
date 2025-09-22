@@ -6,9 +6,9 @@ pub struct GetEntitlementAdditionalNotificationTarget {
     /// Optional. Additional email addresses to be notified when a principal(requester) is granted access.
     #[builder(into)]
     #[serde(rename = "adminEmailRecipients")]
-    pub r#admin_email_recipients: Box<Vec<String>>,
+    pub r#admin_email_recipients: Vec<String>,
     /// Optional. Additional email address to be notified about an eligible entitlement.
     #[builder(into)]
     #[serde(rename = "requesterEmailRecipients")]
-    pub r#requester_email_recipients: Box<Vec<String>>,
+    pub r#requester_email_recipients: Vec<String>,
 }

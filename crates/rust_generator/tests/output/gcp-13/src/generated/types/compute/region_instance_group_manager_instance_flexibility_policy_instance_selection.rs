@@ -6,16 +6,16 @@ pub struct RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection 
     /// Full machine-type names, e.g. "n1-standard-16"
     #[builder(into)]
     #[serde(rename = "machineTypes")]
-    pub r#machine_types: Box<Vec<String>>,
+    pub r#machine_types: Vec<String>,
     /// The name of the instance group manager. Must be 1-63
     /// characters long and comply with
     /// [RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Supported characters
     /// include lowercase letters, numbers, and hyphens.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Preference of this instance selection. Lower number means higher preference. MIG will first try to create a VM based on the machine-type with lowest rank and fallback to next rank based on availability. Machine types and instance selections with the same rank have the same preference.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rank")]
-    pub r#rank: Box<Option<i32>>,
+    pub r#rank: Option<i32>,
 }

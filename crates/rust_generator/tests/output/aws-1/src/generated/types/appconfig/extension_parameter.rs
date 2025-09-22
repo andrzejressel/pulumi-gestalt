@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ExtensionParameter {
     /// Information about the parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The parameter name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Determines if a parameter value must be specified in the extension association.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "required")]
-    pub r#required: Box<Option<bool>>,
+    pub r#required: Option<bool>,
 }

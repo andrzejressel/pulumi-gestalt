@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppCampaignHook {
     /// Lambda function name or ARN to be called for delivery. Conflicts with `web_url`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lambdaFunctionName")]
-    pub r#lambda_function_name: Box<Option<String>>,
+    pub r#lambda_function_name: Option<String>,
     /// What mode Lambda should be invoked in. Valid values for this parameter are `DELIVERY`, `FILTER`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<Option<String>>,
+    pub r#mode: Option<String>,
     /// Web URL to call for hook. If the URL has authentication specified it will be added as authentication to the request. Conflicts with `lambda_function_name`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "webUrl")]
-    pub r#web_url: Box<Option<String>>,
+    pub r#web_url: Option<String>,
 }

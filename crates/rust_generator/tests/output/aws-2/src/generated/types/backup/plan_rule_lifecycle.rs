@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PlanRuleLifecycle {
     /// Specifies the number of days after creation that a recovery point is moved to cold storage.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "coldStorageAfter")]
-    pub r#cold_storage_after: Box<Option<i32>>,
+    pub r#cold_storage_after: Option<i32>,
     /// Specifies the number of days after creation that a recovery point is deleted. Must be 90 days greater than `cold_storage_after`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deleteAfter")]
-    pub r#delete_after: Box<Option<i32>>,
+    pub r#delete_after: Option<i32>,
     /// This setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "optInToArchiveForSupportedResources")]
-    pub r#opt_in_to_archive_for_supported_resources: Box<Option<bool>>,
+    pub r#opt_in_to_archive_for_supported_resources: Option<bool>,
 }

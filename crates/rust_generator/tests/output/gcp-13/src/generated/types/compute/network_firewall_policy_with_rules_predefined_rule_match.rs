@@ -5,58 +5,58 @@
 pub struct NetworkFirewallPolicyWithRulesPredefinedRuleMatch {
     /// Address groups which should be matched against the traffic destination.
     /// Maximum number of destination address groups is 10.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destAddressGroups")]
-    pub r#dest_address_groups: Box<Option<Vec<String>>>,
+    pub r#dest_address_groups: Option<Vec<String>>,
     /// Fully Qualified Domain Name (FQDN) which should be matched against
     /// traffic destination. Maximum number of destination fqdn allowed is 100.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destFqdns")]
-    pub r#dest_fqdns: Box<Option<Vec<String>>>,
+    pub r#dest_fqdns: Option<Vec<String>>,
     /// Destination IP address range in CIDR format. Required for
     /// EGRESS rules.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destIpRanges")]
-    pub r#dest_ip_ranges: Box<Option<Vec<String>>>,
+    pub r#dest_ip_ranges: Option<Vec<String>>,
     /// Region codes whose IP addresses will be used to match for destination
     /// of traffic. Should be specified as 2 letter country code defined as per
     /// ISO 3166 alpha-2 country codes. ex."US"
     /// Maximum number of destination region codes allowed is 5000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destRegionCodes")]
-    pub r#dest_region_codes: Box<Option<Vec<String>>>,
+    pub r#dest_region_codes: Option<Vec<String>>,
     /// Names of Network Threat Intelligence lists.
     /// The IPs in these lists will be matched against traffic destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destThreatIntelligences")]
-    pub r#dest_threat_intelligences: Box<Option<Vec<String>>>,
+    pub r#dest_threat_intelligences: Option<Vec<String>>,
     /// Pairs of IP protocols and ports that the rule should match.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "layer4Configs")]
-    pub r#layer_4_configs: Box<Option<Vec<super::super::types::compute::NetworkFirewallPolicyWithRulesPredefinedRuleMatchLayer4Config>>>,
+    pub r#layer_4_configs: Option<Vec<super::super::types::compute::NetworkFirewallPolicyWithRulesPredefinedRuleMatchLayer4Config>>,
     /// Address groups which should be matched against the traffic source.
     /// Maximum number of source address groups is 10.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "srcAddressGroups")]
-    pub r#src_address_groups: Box<Option<Vec<String>>>,
+    pub r#src_address_groups: Option<Vec<String>>,
     /// Fully Qualified Domain Name (FQDN) which should be matched against
     /// traffic source. Maximum number of source fqdn allowed is 100.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "srcFqdns")]
-    pub r#src_fqdns: Box<Option<Vec<String>>>,
+    pub r#src_fqdns: Option<Vec<String>>,
     /// Source IP address range in CIDR format. Required for
     /// INGRESS rules.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "srcIpRanges")]
-    pub r#src_ip_ranges: Box<Option<Vec<String>>>,
+    pub r#src_ip_ranges: Option<Vec<String>>,
     /// Region codes whose IP addresses will be used to match for source
     /// of traffic. Should be specified as 2 letter country code defined as per
     /// ISO 3166 alpha-2 country codes. ex."US"
     /// Maximum number of source region codes allowed is 5000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "srcRegionCodes")]
-    pub r#src_region_codes: Box<Option<Vec<String>>>,
+    pub r#src_region_codes: Option<Vec<String>>,
     /// List of secure tag values, which should be matched at the source
     /// of the traffic.
     /// For INGRESS rule, if all the <code>srcSecureTag</code> are INEFFECTIVE,
@@ -66,12 +66,12 @@ pub struct NetworkFirewallPolicyWithRulesPredefinedRuleMatch {
     /// 
     /// 
     /// <a name="nested_layer4_config"></a>The `layer4_config` block supports:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "srcSecureTags")]
-    pub r#src_secure_tags: Box<Option<Vec<super::super::types::compute::NetworkFirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTag>>>,
+    pub r#src_secure_tags: Option<Vec<super::super::types::compute::NetworkFirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTag>>,
     /// Names of Network Threat Intelligence lists.
     /// The IPs in these lists will be matched against traffic source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "srcThreatIntelligences")]
-    pub r#src_threat_intelligences: Box<Option<Vec<String>>>,
+    pub r#src_threat_intelligences: Option<Vec<String>>,
 }

@@ -7,5 +7,5 @@ pub struct StreamSourceConfigSqlServerSourceConfigExcludeObjects {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "schemas")]
-    pub r#schemas: Box<Vec<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchema>>,
+    pub r#schemas: Vec<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchema>,
 }

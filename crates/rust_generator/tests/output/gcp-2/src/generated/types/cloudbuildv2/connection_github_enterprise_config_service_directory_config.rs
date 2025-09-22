@@ -6,5 +6,5 @@ pub struct ConnectionGithubEnterpriseConfigServiceDirectoryConfig {
     /// Required. The Service Directory service name. Format: projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

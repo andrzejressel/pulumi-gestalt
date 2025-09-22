@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MediaInsightsPipelineConfigurationRealTimeAlertConfiguration {
     /// Disables real time alert rules.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<Option<bool>>,
+    pub r#disabled: Option<bool>,
     /// Collection of real time alert rules
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<super::super::types::chimesdkmediapipelines::MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRule>>,
+    pub r#rules: Vec<super::super::types::chimesdkmediapipelines::MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRule>,
 }

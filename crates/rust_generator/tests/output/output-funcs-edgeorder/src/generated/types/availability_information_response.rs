@@ -6,13 +6,13 @@ pub struct AvailabilityInformationResponse {
     /// Current availability stage of the product. Availability stage
     #[builder(into)]
     #[serde(rename = "availabilityStage")]
-    pub r#availability_stage: Box<String>,
+    pub r#availability_stage: String,
     /// Reason why the product is disabled.
     #[builder(into)]
     #[serde(rename = "disabledReason")]
-    pub r#disabled_reason: Box<String>,
+    pub r#disabled_reason: String,
     /// Message for why the product is disabled.
     #[builder(into)]
     #[serde(rename = "disabledReasonMessage")]
-    pub r#disabled_reason_message: Box<String>,
+    pub r#disabled_reason_message: String,
 }

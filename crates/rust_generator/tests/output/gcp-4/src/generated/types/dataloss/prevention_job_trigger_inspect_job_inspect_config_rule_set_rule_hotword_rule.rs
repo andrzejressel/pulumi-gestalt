@@ -5,21 +5,21 @@
 pub struct PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRule {
     /// Regular expression pattern defining what qualifies as a hotword.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hotwordRegex")]
-    pub r#hotword_regex: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleHotwordRegex>>,
+    pub r#hotword_regex: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleHotwordRegex>>,
     /// Likelihood adjustment to apply to all matching findings.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "likelihoodAdjustment")]
-    pub r#likelihood_adjustment: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment>>,
+    pub r#likelihood_adjustment: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustment>>,
     /// Proximity of the finding within which the entire hotword must reside. The total length of the window cannot
     /// exceed 1000 characters. Note that the finding itself will be included in the window, so that hotwords may be
     /// used to match substrings of the finding itself. For example, the certainty of a phone number regex
     /// `(\d{3}) \d{3}-\d{4}` could be adjusted upwards if the area code is known to be the local area code of a company
     /// office using the hotword regex `(xxx)`, where `xxx` is the area code in question.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "proximity")]
-    pub r#proximity: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleProximity>>,
+    pub r#proximity: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleProximity>>,
 }

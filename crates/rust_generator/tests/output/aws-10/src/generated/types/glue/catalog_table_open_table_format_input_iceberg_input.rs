@@ -6,9 +6,9 @@ pub struct CatalogTableOpenTableFormatInputIcebergInput {
     /// A required metadata operation. Can only be set to CREATE.
     #[builder(into)]
     #[serde(rename = "metadataOperation")]
-    pub r#metadata_operation: Box<String>,
+    pub r#metadata_operation: String,
     /// The table version for the Iceberg table. Defaults to 2.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

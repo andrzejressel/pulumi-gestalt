@@ -6,5 +6,5 @@ pub struct RecordSetRoutingPolicyPrimaryBackupPrimary {
     /// The list of internal load balancers to health check.
     #[builder(into)]
     #[serde(rename = "internalLoadBalancers")]
-    pub r#internal_load_balancers: Box<Vec<super::super::types::dns::RecordSetRoutingPolicyPrimaryBackupPrimaryInternalLoadBalancer>>,
+    pub r#internal_load_balancers: Vec<super::super::types::dns::RecordSetRoutingPolicyPrimaryBackupPrimaryInternalLoadBalancer>,
 }

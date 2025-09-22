@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatement {
     /// Part of a web request that you want AWS WAF to inspect. See `field_to_match` below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fieldToMatch")]
-    pub r#field_to_match: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatch>>,
+    pub r#field_to_match: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatch>>,
     /// Sensitivity that you want AWS WAF to use to inspect for SQL injection attacks. Valid values include: `LOW`, `HIGH`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sensitivityLevel")]
-    pub r#sensitivity_level: Box<Option<String>>,
+    pub r#sensitivity_level: Option<String>,
     /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one transformation is required. See `text_transformation` below for details.
     #[builder(into)]
     #[serde(rename = "textTransformations")]
-    pub r#text_transformations: Box<Vec<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformation>>,
+    pub r#text_transformations: Vec<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformation>,
 }

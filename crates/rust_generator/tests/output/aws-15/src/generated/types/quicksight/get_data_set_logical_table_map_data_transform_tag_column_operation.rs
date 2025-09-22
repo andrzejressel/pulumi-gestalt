@@ -5,8 +5,8 @@
 pub struct GetDataSetLogicalTableMapDataTransformTagColumnOperation {
     #[builder(into)]
     #[serde(rename = "columnName")]
-    pub r#column_name: Box<String>,
+    pub r#column_name: String,
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformTagColumnOperationTag>>,
+    pub r#tags: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformTagColumnOperationTag>,
 }

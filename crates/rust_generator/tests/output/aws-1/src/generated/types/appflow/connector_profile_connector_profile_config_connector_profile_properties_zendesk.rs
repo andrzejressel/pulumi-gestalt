@@ -5,5 +5,5 @@
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesZendesk {
     #[builder(into)]
     #[serde(rename = "instanceUrl")]
-    pub r#instance_url: Box<String>,
+    pub r#instance_url: String,
 }

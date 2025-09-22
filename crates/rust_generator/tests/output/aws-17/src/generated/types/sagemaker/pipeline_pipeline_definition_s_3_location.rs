@@ -6,13 +6,13 @@ pub struct PipelinePipelineDefinitionS3Location {
     /// Name of the S3 bucket.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// The object key (or key name) uniquely identifies the object in an S3 bucket.
     #[builder(into)]
     #[serde(rename = "objectKey")]
-    pub r#object_key: Box<String>,
+    pub r#object_key: String,
     /// Version Id of the pipeline definition file. If not specified, Amazon SageMaker will retrieve the latest version.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "versionId")]
-    pub r#version_id: Box<Option<String>>,
+    pub r#version_id: Option<String>,
 }

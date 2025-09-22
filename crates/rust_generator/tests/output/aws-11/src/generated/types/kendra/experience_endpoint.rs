@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ExperienceEndpoint {
     /// The endpoint of your Amazon Kendra experience.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<Option<String>>,
+    pub r#endpoint: Option<String>,
     /// The type of endpoint for your Amazon Kendra experience.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpointType")]
-    pub r#endpoint_type: Box<Option<String>>,
+    pub r#endpoint_type: Option<String>,
 }

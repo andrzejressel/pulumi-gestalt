@@ -3,15 +3,15 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesetRuleActionParametersUri {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "origin")]
-    pub r#origin: Box<Option<bool>>,
+    pub r#origin: Option<bool>,
     /// URI path configuration when performing a URL rewrite.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<super::types::RulesetRuleActionParametersUriPath>>,
+    pub r#path: Option<Box<super::types::RulesetRuleActionParametersUriPath>>,
     /// Query string configuration when performing a URL rewrite.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "query")]
-    pub r#query: Box<Option<super::types::RulesetRuleActionParametersUriQuery>>,
+    pub r#query: Option<Box<super::types::RulesetRuleActionParametersUriQuery>>,
 }

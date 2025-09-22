@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DashboardDashboardPublishOptionsSheetControlsOption {
     /// Visibility state. Possibles values: EXPANDED, COLLAPSED.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "visibilityState")]
-    pub r#visibility_state: Box<Option<String>>,
+    pub r#visibility_state: Option<String>,
 }

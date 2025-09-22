@@ -5,12 +5,12 @@
 pub struct GrpcRouteRule {
     /// Required. A detailed rule defining how to route traffic.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<Option<super::super::types::networkservices::GrpcRouteRuleAction>>,
+    pub r#action: Option<Box<super::super::types::networkservices::GrpcRouteRuleAction>>,
     /// Matches define conditions used for matching the rule against incoming gRPC requests.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Option<Vec<super::super::types::networkservices::GrpcRouteRuleMatch>>>,
+    pub r#matches: Option<Vec<super::super::types::networkservices::GrpcRouteRuleMatch>>,
 }

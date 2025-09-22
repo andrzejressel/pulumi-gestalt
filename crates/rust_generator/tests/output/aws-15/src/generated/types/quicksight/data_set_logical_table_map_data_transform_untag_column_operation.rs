@@ -6,9 +6,9 @@ pub struct DataSetLogicalTableMapDataTransformUntagColumnOperation {
     /// Column name.
     #[builder(into)]
     #[serde(rename = "columnName")]
-    pub r#column_name: Box<String>,
+    pub r#column_name: String,
     /// The column tags to remove from this column.
     #[builder(into)]
     #[serde(rename = "tagNames")]
-    pub r#tag_names: Box<Vec<String>>,
+    pub r#tag_names: Vec<String>,
 }

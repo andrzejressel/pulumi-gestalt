@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureMembershipConfigmanagementPolicyControllerMonitoring {
     /// Specifies the list of backends Policy Controller will export to. Must be one of `CLOUD_MONITORING` or `PROMETHEUS`. Defaults to [`CLOUD_MONITORING`, `PROMETHEUS`]. Specifying an empty value `[]` disables metrics export.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backends")]
-    pub r#backends: Box<Option<Vec<String>>>,
+    pub r#backends: Option<Vec<String>>,
 }

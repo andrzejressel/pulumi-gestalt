@@ -6,5 +6,5 @@ pub struct DataSetLogicalTableMapDataTransformFilterOperation {
     /// An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.
     #[builder(into)]
     #[serde(rename = "conditionExpression")]
-    pub r#condition_expression: Box<String>,
+    pub r#condition_expression: String,
 }

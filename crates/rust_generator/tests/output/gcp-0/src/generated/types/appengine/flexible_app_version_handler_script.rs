@@ -6,5 +6,5 @@ pub struct FlexibleAppVersionHandlerScript {
     /// Path to the script from the application root directory.
     #[builder(into)]
     #[serde(rename = "scriptPath")]
-    pub r#script_path: Box<String>,
+    pub r#script_path: String,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AutonomousDatabasePropertiesApexDetail {
     /// The Oracle APEX Application Development version.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "apexVersion")]
-    pub r#apex_version: Box<Option<String>>,
+    pub r#apex_version: Option<String>,
     /// The Oracle REST Data Services (ORDS) version.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ordsVersion")]
-    pub r#ords_version: Box<Option<String>>,
+    pub r#ords_version: Option<String>,
 }

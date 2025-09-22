@@ -8,15 +8,15 @@ pub struct UrlMapPathMatcherPathRuleRouteActionWeightedBackendService {
     /// specified as part of this backendServiceWeight.
     #[builder(into)]
     #[serde(rename = "backendService")]
-    pub r#backend_service: Box<String>,
+    pub r#backend_service: String,
     /// Specifies changes to request and response headers that need to take effect for
     /// the selected backendService.
     /// headerAction specified here take effect before headerAction in the enclosing
     /// HttpRouteRule, PathMatcher and UrlMap.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerAction")]
-    pub r#header_action: Box<Option<super::super::types::compute::UrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction>>,
+    pub r#header_action: Option<Box<super::super::types::compute::UrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderAction>>,
     /// Specifies the fraction of traffic sent to backendService, computed as
     /// weight / (sum of all weightedBackendService weights in routeAction) .
     /// The selection of a backend service is determined only for new traffic. Once a user's request
@@ -25,5 +25,5 @@ pub struct UrlMapPathMatcherPathRuleRouteActionWeightedBackendService {
     /// The value must be between 0 and 1000
     #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<i32>,
+    pub r#weight: i32,
 }

@@ -5,8 +5,8 @@
 pub struct GetBrokerLogs {
     #[builder(into)]
     #[serde(rename = "audit")]
-    pub r#audit: Box<bool>,
+    pub r#audit: bool,
     #[builder(into)]
     #[serde(rename = "general")]
-    pub r#general: Box<bool>,
+    pub r#general: bool,
 }

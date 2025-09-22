@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RecordingConfigurationThumbnailConfiguration {
     /// Thumbnail recording mode. Valid values: `DISABLED`, `INTERVAL`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordingMode")]
-    pub r#recording_mode: Box<Option<String>>,
+    pub r#recording_mode: Option<String>,
     /// The targeted thumbnail-generation interval in seconds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetIntervalSeconds")]
-    pub r#target_interval_seconds: Box<Option<i32>>,
+    pub r#target_interval_seconds: Option<i32>,
 }

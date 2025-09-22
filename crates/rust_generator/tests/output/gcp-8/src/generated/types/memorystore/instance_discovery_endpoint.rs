@@ -5,18 +5,18 @@
 pub struct InstanceDiscoveryEndpoint {
     /// (Output)
     /// Output only. IP address of the exposed endpoint clients connect to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<Option<String>>,
+    pub r#address: Option<String>,
     /// (Output)
     /// Output only. The consumer network where the IP address resides, in the form of
     /// projects/{project_id}/global/networks/{network_id}.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<Option<String>>,
+    pub r#network: Option<String>,
     /// (Output)
     /// Output only. Ports of the exposed endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
 }

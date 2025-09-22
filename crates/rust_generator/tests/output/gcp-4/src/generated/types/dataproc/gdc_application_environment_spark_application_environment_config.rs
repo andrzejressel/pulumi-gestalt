@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GdcApplicationEnvironmentSparkApplicationEnvironmentConfig {
     /// A map of default Spark properties to apply to workloads in this application environment. These defaults may be overridden by per-application properties.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultProperties")]
-    pub r#default_properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#default_properties: Option<std::collections::HashMap<String, String>>,
     /// The default Dataproc version to use for applications submitted to this application environment
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultVersion")]
-    pub r#default_version: Box<Option<String>>,
+    pub r#default_version: Option<String>,
 }

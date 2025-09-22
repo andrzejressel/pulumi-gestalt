@@ -6,25 +6,25 @@ pub struct TopicRuleErrorActionCloudwatchMetric {
     /// The CloudWatch metric name.
     #[builder(into)]
     #[serde(rename = "metricName")]
-    pub r#metric_name: Box<String>,
+    pub r#metric_name: String,
     /// The CloudWatch metric namespace name.
     #[builder(into)]
     #[serde(rename = "metricNamespace")]
-    pub r#metric_namespace: Box<String>,
+    pub r#metric_namespace: String,
     /// An optional Unix timestamp (http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricTimestamp")]
-    pub r#metric_timestamp: Box<Option<String>>,
+    pub r#metric_timestamp: Option<String>,
     /// The metric unit (supported units can be found here: http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit)
     #[builder(into)]
     #[serde(rename = "metricUnit")]
-    pub r#metric_unit: Box<String>,
+    pub r#metric_unit: String,
     /// The CloudWatch metric value.
     #[builder(into)]
     #[serde(rename = "metricValue")]
-    pub r#metric_value: Box<String>,
+    pub r#metric_value: String,
     /// The IAM role ARN that allows access to the CloudWatch metric.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
 }

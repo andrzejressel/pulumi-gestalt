@@ -6,9 +6,9 @@ pub struct GetVpcIpamPoolFilter {
     /// The name of the filter. Filter names are case-sensitive.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The filter values. Filter values are case-sensitive.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

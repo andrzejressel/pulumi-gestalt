@@ -5,14 +5,14 @@
 pub struct V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification {
     #[builder(into)]
     #[serde(rename = "deletionCharacter")]
-    pub r#deletion_character: Box<String>,
+    pub r#deletion_character: String,
     #[builder(into)]
     #[serde(rename = "endCharacter")]
-    pub r#end_character: Box<String>,
+    pub r#end_character: String,
     #[builder(into)]
     #[serde(rename = "endTimeoutMs")]
-    pub r#end_timeout_ms: Box<i32>,
+    pub r#end_timeout_ms: i32,
     #[builder(into)]
     #[serde(rename = "maxLength")]
-    pub r#max_length: Box<i32>,
+    pub r#max_length: i32,
 }

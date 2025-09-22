@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LoadBalancerRuleOverrideRandomSteering {
     /// The default weight for pools in the load balancer that are not specified in the `pool_weights` map.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultWeight")]
-    pub r#default_weight: Box<Option<f64>>,
+    pub r#default_weight: Option<f64>,
     /// A mapping of pool IDs to custom weights. The weight is relative to other pools in the load balancer.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "poolWeights")]
-    pub r#pool_weights: Box<Option<std::collections::HashMap<String, f64>>>,
+    pub r#pool_weights: Option<std::collections::HashMap<String, f64>>,
 }

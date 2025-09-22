@@ -7,10 +7,10 @@ pub struct TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalSett
     /// Must be at least `1`.
     #[builder(into)]
     #[serde(rename = "nonCurrentDays")]
-    pub r#non_current_days: Box<f64>,
+    pub r#non_current_days: f64,
     /// Unreferenced data objects are marked for deletion after this many days.
     /// Must be at least `1`.
     #[builder(into)]
     #[serde(rename = "unreferencedDays")]
-    pub r#unreferenced_days: Box<f64>,
+    pub r#unreferenced_days: f64,
 }

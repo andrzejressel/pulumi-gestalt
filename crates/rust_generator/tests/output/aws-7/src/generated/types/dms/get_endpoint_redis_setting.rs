@@ -5,23 +5,23 @@
 pub struct GetEndpointRedisSetting {
     #[builder(into)]
     #[serde(rename = "authPassword")]
-    pub r#auth_password: Box<String>,
+    pub r#auth_password: String,
     #[builder(into)]
     #[serde(rename = "authType")]
-    pub r#auth_type: Box<String>,
+    pub r#auth_type: String,
     #[builder(into)]
     #[serde(rename = "authUserName")]
-    pub r#auth_user_name: Box<String>,
+    pub r#auth_user_name: String,
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     #[builder(into)]
     #[serde(rename = "serverName")]
-    pub r#server_name: Box<String>,
+    pub r#server_name: String,
     #[builder(into)]
     #[serde(rename = "sslCaCertificateArn")]
-    pub r#ssl_ca_certificate_arn: Box<String>,
+    pub r#ssl_ca_certificate_arn: String,
     #[builder(into)]
     #[serde(rename = "sslSecurityProtocol")]
-    pub r#ssl_security_protocol: Box<String>,
+    pub r#ssl_security_protocol: String,
 }

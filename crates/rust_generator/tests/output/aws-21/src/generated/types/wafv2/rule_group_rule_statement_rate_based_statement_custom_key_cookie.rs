@@ -6,9 +6,9 @@ pub struct RuleGroupRuleStatementRateBasedStatementCustomKeyCookie {
     /// A friendly name of the rule group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
     #[builder(into)]
     #[serde(rename = "textTransformations")]
-    pub r#text_transformations: Box<Vec<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementCustomKeyCookieTextTransformation>>,
+    pub r#text_transformations: Vec<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementCustomKeyCookieTextTransformation>,
 }

@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FrontdoorRoutingRuleRedirectConfiguration {
     /// The destination fragment in the portion of URL after '#'. Set this to add a fragment to the redirect URL.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customFragment")]
-    pub r#custom_fragment: Box<Option<String>>,
+    pub r#custom_fragment: Option<String>,
     /// Set this to change the URL for the redirection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customHost")]
-    pub r#custom_host: Box<Option<String>>,
+    pub r#custom_host: Option<String>,
     /// The path to retain as per the incoming request, or update in the URL for the redirection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customPath")]
-    pub r#custom_path: Box<Option<String>>,
+    pub r#custom_path: Option<String>,
     /// Replace any existing query string from the incoming request URL.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customQueryString")]
-    pub r#custom_query_string: Box<Option<String>>,
+    pub r#custom_query_string: Option<String>,
     /// Protocol to use when redirecting. Valid options are `HttpOnly`, `HttpsOnly`, or `MatchRequest`.
     #[builder(into)]
     #[serde(rename = "redirectProtocol")]
-    pub r#redirect_protocol: Box<String>,
+    pub r#redirect_protocol: String,
     /// Status code for the redirect. Valida options are `Moved`, `Found`, `TemporaryRedirect`, `PermanentRedirect`.
     #[builder(into)]
     #[serde(rename = "redirectType")]
-    pub r#redirect_type: Box<String>,
+    pub r#redirect_type: String,
 }

@@ -9,12 +9,12 @@ pub struct GetTriggerBuildArtifactObjectTiming {
     /// nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<String>,
+    pub r#end_time: String,
     /// Start of time span.
     /// 
     /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to
     /// nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
 }

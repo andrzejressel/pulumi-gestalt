@@ -6,5 +6,5 @@ pub struct ResourcePolicyDiskConsistencyGroupPolicy {
     /// Enable disk consistency on the resource policy.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

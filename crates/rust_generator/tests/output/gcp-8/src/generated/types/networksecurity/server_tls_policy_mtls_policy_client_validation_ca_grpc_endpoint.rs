@@ -6,5 +6,5 @@ pub struct ServerTlsPolicyMtlsPolicyClientValidationCaGrpcEndpoint {
     /// The target URI of the gRPC endpoint. Only UDS path is supported, and should start with "unix:".
     #[builder(into)]
     #[serde(rename = "targetUri")]
-    pub r#target_uri: Box<String>,
+    pub r#target_uri: String,
 }

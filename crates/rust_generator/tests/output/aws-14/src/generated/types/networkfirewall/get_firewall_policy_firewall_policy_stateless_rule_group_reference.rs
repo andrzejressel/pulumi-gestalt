@@ -5,8 +5,8 @@
 pub struct GetFirewallPolicyFirewallPolicyStatelessRuleGroupReference {
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
     #[builder(into)]
     #[serde(rename = "resourceArn")]
-    pub r#resource_arn: Box<String>,
+    pub r#resource_arn: String,
 }

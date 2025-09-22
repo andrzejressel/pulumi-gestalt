@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkgroupConfigurationEngineVersion {
     /// The engine version on which the query runs. If `selected_engine_version` is set to `AUTO`, the effective engine version is chosen by Athena.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "effectiveEngineVersion")]
-    pub r#effective_engine_version: Box<Option<String>>,
+    pub r#effective_engine_version: Option<String>,
     /// Requested engine version. Defaults to `AUTO`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "selectedEngineVersion")]
-    pub r#selected_engine_version: Box<Option<String>>,
+    pub r#selected_engine_version: Option<String>,
 }

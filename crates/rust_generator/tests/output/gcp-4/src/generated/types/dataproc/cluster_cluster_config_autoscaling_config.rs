@@ -14,5 +14,5 @@ pub struct ClusterClusterConfigAutoscalingConfig {
     /// - - -
     #[builder(into)]
     #[serde(rename = "policyUri")]
-    pub r#policy_uri: Box<String>,
+    pub r#policy_uri: String,
 }

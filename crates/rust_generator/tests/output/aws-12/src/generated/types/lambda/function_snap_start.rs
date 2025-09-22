@@ -6,9 +6,9 @@ pub struct FunctionSnapStart {
     /// Conditions where snap start is enabled. Valid values are `PublishedVersions`.
     #[builder(into)]
     #[serde(rename = "applyOn")]
-    pub r#apply_on: Box<String>,
+    pub r#apply_on: String,
     /// Optimization status of the snap start configuration. Valid values are `On` and `Off`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "optimizationStatus")]
-    pub r#optimization_status: Box<Option<String>>,
+    pub r#optimization_status: Option<String>,
 }

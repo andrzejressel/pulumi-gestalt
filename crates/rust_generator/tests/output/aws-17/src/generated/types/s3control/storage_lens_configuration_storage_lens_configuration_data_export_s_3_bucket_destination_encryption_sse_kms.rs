@@ -6,5 +6,5 @@ pub struct StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDes
     /// KMS key ARN.
     #[builder(into)]
     #[serde(rename = "keyId")]
-    pub r#key_id: Box<String>,
+    pub r#key_id: String,
 }

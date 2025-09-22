@@ -6,5 +6,5 @@ pub struct ServiceEncryptionConfiguration {
     /// ARN of the KMS key used for encryption.
     #[builder(into)]
     #[serde(rename = "kmsKey")]
-    pub r#kms_key: Box<String>,
+    pub r#kms_key: String,
 }

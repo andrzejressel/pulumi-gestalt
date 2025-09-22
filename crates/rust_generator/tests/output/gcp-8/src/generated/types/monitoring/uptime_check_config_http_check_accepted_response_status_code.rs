@@ -5,11 +5,11 @@
 pub struct UptimeCheckConfigHttpCheckAcceptedResponseStatusCode {
     /// A class of status codes to accept.
     /// Possible values are: `STATUS_CLASS_1XX`, `STATUS_CLASS_2XX`, `STATUS_CLASS_3XX`, `STATUS_CLASS_4XX`, `STATUS_CLASS_5XX`, `STATUS_CLASS_ANY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusClass")]
-    pub r#status_class: Box<Option<String>>,
+    pub r#status_class: Option<String>,
     /// A status code to accept.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusValue")]
-    pub r#status_value: Box<Option<i32>>,
+    pub r#status_value: Option<i32>,
 }

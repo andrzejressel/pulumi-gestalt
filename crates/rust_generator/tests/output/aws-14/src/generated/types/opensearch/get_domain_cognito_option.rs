@@ -6,17 +6,17 @@ pub struct GetDomainCognitoOption {
     /// Enabled disabled toggle for off-peak update window
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Cognito Identity pool used by the domain.
     #[builder(into)]
     #[serde(rename = "identityPoolId")]
-    pub r#identity_pool_id: Box<String>,
+    pub r#identity_pool_id: String,
     /// IAM Role with the AmazonOpenSearchServiceCognitoAccess policy attached.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// Cognito User pool used by the domain.
     #[builder(into)]
     #[serde(rename = "userPoolId")]
-    pub r#user_pool_id: Box<String>,
+    pub r#user_pool_id: String,
 }

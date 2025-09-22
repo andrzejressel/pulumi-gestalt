@@ -6,13 +6,13 @@ pub struct DomainAdvancedSecurityOptions {
     /// Whether advanced security is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Whether the internal user database is enabled. If not set, defaults to `false` by the AWS API.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "internalUserDatabaseEnabled")]
-    pub r#internal_user_database_enabled: Box<Option<bool>>,
+    pub r#internal_user_database_enabled: Option<bool>,
     /// Configuration block for the main user. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "masterUserOptions")]
-    pub r#master_user_options: Box<Option<super::super::types::elasticsearch::DomainAdvancedSecurityOptionsMasterUserOptions>>,
+    pub r#master_user_options: Option<Box<super::super::types::elasticsearch::DomainAdvancedSecurityOptionsMasterUserOptions>>,
 }

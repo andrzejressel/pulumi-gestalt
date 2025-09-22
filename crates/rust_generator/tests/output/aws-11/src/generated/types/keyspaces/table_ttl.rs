@@ -6,5 +6,5 @@ pub struct TableTtl {
     /// Valid values: `ENABLED`.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

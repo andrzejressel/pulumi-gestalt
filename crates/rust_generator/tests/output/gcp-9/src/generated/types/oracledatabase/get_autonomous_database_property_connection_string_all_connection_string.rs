@@ -7,15 +7,15 @@ pub struct GetAutonomousDatabasePropertyConnectionStringAllConnectionString {
     /// statement.
     #[builder(into)]
     #[serde(rename = "high")]
-    pub r#high: Box<String>,
+    pub r#high: String,
     /// The database service provides the least level of resources to each SQL
     /// statement.
     #[builder(into)]
     #[serde(rename = "low")]
-    pub r#low: Box<String>,
+    pub r#low: String,
     /// The database service provides a lower level of resources to each SQL
     /// statement.
     #[builder(into)]
     #[serde(rename = "medium")]
-    pub r#medium: Box<String>,
+    pub r#medium: String,
 }

@@ -5,9 +5,9 @@
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsAmplitude {
     #[builder(into)]
     #[serde(rename = "apiKey")]
-    pub r#api_key: Box<String>,
+    pub r#api_key: String,
     /// The Secret Access Key portion of the credentials.
     #[builder(into)]
     #[serde(rename = "secretKey")]
-    pub r#secret_key: Box<String>,
+    pub r#secret_key: String,
 }

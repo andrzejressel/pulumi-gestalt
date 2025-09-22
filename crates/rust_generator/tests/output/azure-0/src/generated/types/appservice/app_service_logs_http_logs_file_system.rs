@@ -6,9 +6,9 @@ pub struct AppServiceLogsHttpLogsFileSystem {
     /// The number of days to retain logs for.
     #[builder(into)]
     #[serde(rename = "retentionInDays")]
-    pub r#retention_in_days: Box<i32>,
+    pub r#retention_in_days: i32,
     /// The maximum size in megabytes that HTTP log files can use before being removed.
     #[builder(into)]
     #[serde(rename = "retentionInMb")]
-    pub r#retention_in_mb: Box<i32>,
+    pub r#retention_in_mb: i32,
 }

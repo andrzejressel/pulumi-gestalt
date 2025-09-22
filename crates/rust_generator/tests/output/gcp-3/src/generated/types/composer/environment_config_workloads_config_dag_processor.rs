@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentConfigWorkloadsConfigDagProcessor {
     /// Number of DAG processors.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<Option<i32>>,
+    pub r#count: Option<i32>,
     /// CPU request and limit for DAG processor.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<Option<f64>>,
+    pub r#cpu: Option<f64>,
     /// Memory (GB) request and limit for DAG processor.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "memoryGb")]
-    pub r#memory_gb: Box<Option<f64>>,
+    pub r#memory_gb: Option<f64>,
     /// Storage (GB) request and limit for DAG processor.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageGb")]
-    pub r#storage_gb: Box<Option<f64>>,
+    pub r#storage_gb: Option<f64>,
 }

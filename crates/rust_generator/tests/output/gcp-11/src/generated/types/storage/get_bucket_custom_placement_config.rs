@@ -6,5 +6,5 @@ pub struct GetBucketCustomPlacementConfig {
     /// The list of individual regions that comprise a dual-region bucket. See the docs for a list of acceptable regions. Note: If any of the data_locations changes, it will recreate the bucket.
     #[builder(into)]
     #[serde(rename = "dataLocations")]
-    pub r#data_locations: Box<Vec<String>>,
+    pub r#data_locations: Vec<String>,
 }

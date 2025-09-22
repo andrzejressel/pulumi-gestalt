@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ProjectLogsConfig {
     /// Configuration block. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudwatchLogs")]
-    pub r#cloudwatch_logs: Box<Option<super::super::types::codebuild::ProjectLogsConfigCloudwatchLogs>>,
+    pub r#cloudwatch_logs: Option<Box<super::super::types::codebuild::ProjectLogsConfigCloudwatchLogs>>,
     /// Configuration block. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Logs")]
-    pub r#s_3_logs: Box<Option<super::super::types::codebuild::ProjectLogsConfigS3Logs>>,
+    pub r#s_3_logs: Option<Box<super::super::types::codebuild::ProjectLogsConfigS3Logs>>,
 }

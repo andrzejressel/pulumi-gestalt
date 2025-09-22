@@ -6,5 +6,5 @@ pub struct InputSecurityGroupWhitelistRule {
     /// The IPv4 CIDR that's whitelisted.
     #[builder(into)]
     #[serde(rename = "cidr")]
-    pub r#cidr: Box<String>,
+    pub r#cidr: String,
 }

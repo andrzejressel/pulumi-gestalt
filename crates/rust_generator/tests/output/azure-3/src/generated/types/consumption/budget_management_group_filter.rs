@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BudgetManagementGroupFilter {
     /// One or more `dimension` blocks as defined below to filter the budget on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dimensions")]
-    pub r#dimensions: Box<Option<Vec<super::super::types::consumption::BudgetManagementGroupFilterDimension>>>,
+    pub r#dimensions: Option<Vec<super::super::types::consumption::BudgetManagementGroupFilterDimension>>,
     /// One or more `tag` blocks as defined below to filter the budget on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<Vec<super::super::types::consumption::BudgetManagementGroupFilterTag>>>,
+    pub r#tags: Option<Vec<super::super::types::consumption::BudgetManagementGroupFilterTag>>,
 }

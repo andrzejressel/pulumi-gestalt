@@ -5,11 +5,11 @@
 pub struct GetPlanRuleLifecycle {
     #[builder(into)]
     #[serde(rename = "coldStorageAfter")]
-    pub r#cold_storage_after: Box<i32>,
+    pub r#cold_storage_after: i32,
     #[builder(into)]
     #[serde(rename = "deleteAfter")]
-    pub r#delete_after: Box<i32>,
+    pub r#delete_after: i32,
     #[builder(into)]
     #[serde(rename = "optInToArchiveForSupportedResources")]
-    pub r#opt_in_to_archive_for_supported_resources: Box<bool>,
+    pub r#opt_in_to_archive_for_supported_resources: bool,
 }

@@ -6,17 +6,17 @@ pub struct GetJobDefinitionRetryStrategyEvaluateOnExit {
     /// Specifies the action to take if all of the specified conditions (onStatusReason, onReason, and onExitCode) are met. The values aren't case sensitive.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// Contains a glob pattern to match against the decimal representation of the ExitCode returned for a job.
     #[builder(into)]
     #[serde(rename = "onExitCode")]
-    pub r#on_exit_code: Box<String>,
+    pub r#on_exit_code: String,
     /// Contains a glob pattern to match against the Reason returned for a job.
     #[builder(into)]
     #[serde(rename = "onReason")]
-    pub r#on_reason: Box<String>,
+    pub r#on_reason: String,
     /// Contains a glob pattern to match against the StatusReason returned for a job.
     #[builder(into)]
     #[serde(rename = "onStatusReason")]
-    pub r#on_status_reason: Box<String>,
+    pub r#on_status_reason: String,
 }

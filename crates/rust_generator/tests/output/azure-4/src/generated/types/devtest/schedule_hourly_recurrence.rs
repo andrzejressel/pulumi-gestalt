@@ -6,5 +6,5 @@ pub struct ScheduleHourlyRecurrence {
     /// Minutes of the hour the schedule will run.
     #[builder(into)]
     #[serde(rename = "minute")]
-    pub r#minute: Box<i32>,
+    pub r#minute: i32,
 }

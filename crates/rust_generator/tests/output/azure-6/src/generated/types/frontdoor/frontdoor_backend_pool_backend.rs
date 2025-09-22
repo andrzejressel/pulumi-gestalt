@@ -6,29 +6,29 @@ pub struct FrontdoorBackendPoolBackend {
     /// Location of the backend (IP address or FQDN)
     #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<String>,
+    pub r#address: String,
     /// Specifies if the backend is enabled or not. Valid options are `true` or `false`. Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The value to use as the host header sent to the backend.
     #[builder(into)]
     #[serde(rename = "hostHeader")]
-    pub r#host_header: Box<String>,
+    pub r#host_header: String,
     /// The HTTP TCP port number. Possible values are between `1` - `65535`.
     #[builder(into)]
     #[serde(rename = "httpPort")]
-    pub r#http_port: Box<i32>,
+    pub r#http_port: i32,
     /// The HTTPS TCP port number. Possible values are between `1` - `65535`.
     #[builder(into)]
     #[serde(rename = "httpsPort")]
-    pub r#https_port: Box<i32>,
+    pub r#https_port: i32,
     /// Priority to use for load balancing. Higher priorities will not be used for load balancing if any lower priority backend is healthy. Defaults to `1`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<Option<i32>>,
+    pub r#priority: Option<i32>,
     /// Weight of this endpoint for load balancing purposes. Defaults to `50`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<Option<i32>>,
+    pub r#weight: Option<i32>,
 }

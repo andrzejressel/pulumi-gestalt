@@ -6,12 +6,12 @@ pub struct ReservationSpecificReservation {
     /// The number of resources that are allocated.
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
     /// (Output)
     /// How many instances are in use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inUseCount")]
-    pub r#in_use_count: Box<Option<i32>>,
+    pub r#in_use_count: Option<i32>,
     /// The instance properties for the reservation.
     /// Structure is documented below.
     #[builder(into)]

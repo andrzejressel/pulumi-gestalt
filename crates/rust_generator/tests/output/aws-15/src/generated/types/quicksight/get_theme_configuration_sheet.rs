@@ -6,9 +6,9 @@ pub struct GetThemeConfigurationSheet {
     /// The layout options for tiles. See tile_layout.
     #[builder(into)]
     #[serde(rename = "tileLayouts")]
-    pub r#tile_layouts: Box<Vec<super::super::types::quicksight::GetThemeConfigurationSheetTileLayout>>,
+    pub r#tile_layouts: Vec<super::super::types::quicksight::GetThemeConfigurationSheetTileLayout>,
     /// The display options for tiles. See tile.
     #[builder(into)]
     #[serde(rename = "tiles")]
-    pub r#tiles: Box<Vec<super::super::types::quicksight::GetThemeConfigurationSheetTile>>,
+    pub r#tiles: Vec<super::super::types::quicksight::GetThemeConfigurationSheetTile>,
 }

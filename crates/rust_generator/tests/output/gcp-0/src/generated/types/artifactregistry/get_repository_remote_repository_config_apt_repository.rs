@@ -6,5 +6,5 @@ pub struct GetRepositoryRemoteRepositoryConfigAptRepository {
     /// One of the publicly available Apt repositories supported by Artifact Registry.
     #[builder(into)]
     #[serde(rename = "publicRepositories")]
-    pub r#public_repositories: Box<Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository>>,
+    pub r#public_repositories: Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigAptRepositoryPublicRepository>,
 }

@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainDefaultUserSettingsCodeEditorAppSettings {
     /// Indicates whether idle shutdown is activated for JupyterLab applications. see `app_lifecycle_management` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "appLifecycleManagement")]
-    pub r#app_lifecycle_management: Box<Option<super::super::types::sagemaker::DomainDefaultUserSettingsCodeEditorAppSettingsAppLifecycleManagement>>,
+    pub r#app_lifecycle_management: Option<Box<super::super::types::sagemaker::DomainDefaultUserSettingsCodeEditorAppSettingsAppLifecycleManagement>>,
     /// The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "builtInLifecycleConfigArn")]
-    pub r#built_in_lifecycle_config_arn: Box<Option<String>>,
+    pub r#built_in_lifecycle_config_arn: Option<String>,
     /// A list of custom SageMaker images that are configured to run as a CodeEditor app. see `custom_image` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customImages")]
-    pub r#custom_images: Box<Option<Vec<super::super::types::sagemaker::DomainDefaultUserSettingsCodeEditorAppSettingsCustomImage>>>,
+    pub r#custom_images: Option<Vec<super::super::types::sagemaker::DomainDefaultUserSettingsCodeEditorAppSettingsCustomImage>>,
     /// The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. see `default_resource_spec` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultResourceSpec")]
-    pub r#default_resource_spec: Box<Option<super::super::types::sagemaker::DomainDefaultUserSettingsCodeEditorAppSettingsDefaultResourceSpec>>,
+    pub r#default_resource_spec: Option<Box<super::super::types::sagemaker::DomainDefaultUserSettingsCodeEditorAppSettingsDefaultResourceSpec>>,
     /// The Amazon Resource Name (ARN) of the Lifecycle Configurations.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lifecycleConfigArns")]
-    pub r#lifecycle_config_arns: Box<Option<Vec<String>>>,
+    pub r#lifecycle_config_arns: Option<Vec<String>>,
 }

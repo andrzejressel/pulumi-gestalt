@@ -5,20 +5,20 @@
 pub struct GetEndpointMongodbSetting {
     #[builder(into)]
     #[serde(rename = "authMechanism")]
-    pub r#auth_mechanism: Box<String>,
+    pub r#auth_mechanism: String,
     #[builder(into)]
     #[serde(rename = "authSource")]
-    pub r#auth_source: Box<String>,
+    pub r#auth_source: String,
     #[builder(into)]
     #[serde(rename = "authType")]
-    pub r#auth_type: Box<String>,
+    pub r#auth_type: String,
     #[builder(into)]
     #[serde(rename = "docsToInvestigate")]
-    pub r#docs_to_investigate: Box<String>,
+    pub r#docs_to_investigate: String,
     #[builder(into)]
     #[serde(rename = "extractDocId")]
-    pub r#extract_doc_id: Box<String>,
+    pub r#extract_doc_id: String,
     #[builder(into)]
     #[serde(rename = "nestingLevel")]
-    pub r#nesting_level: Box<String>,
+    pub r#nesting_level: String,
 }

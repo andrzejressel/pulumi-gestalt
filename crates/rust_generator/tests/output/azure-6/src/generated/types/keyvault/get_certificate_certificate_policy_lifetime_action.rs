@@ -6,9 +6,9 @@ pub struct GetCertificateCertificatePolicyLifetimeAction {
     /// A `action` block as defined below.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::keyvault::GetCertificateCertificatePolicyLifetimeActionAction>>,
+    pub r#actions: Vec<super::super::types::keyvault::GetCertificateCertificatePolicyLifetimeActionAction>,
     /// A `trigger` block as defined below.
     #[builder(into)]
     #[serde(rename = "triggers")]
-    pub r#triggers: Box<Vec<super::super::types::keyvault::GetCertificateCertificatePolicyLifetimeActionTrigger>>,
+    pub r#triggers: Vec<super::super::types::keyvault::GetCertificateCertificatePolicyLifetimeActionTrigger>,
 }

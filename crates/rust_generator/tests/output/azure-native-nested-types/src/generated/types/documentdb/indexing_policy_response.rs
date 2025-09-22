@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IndexingPolicyResponse {
     /// List of composite path list
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "compositeIndexes")]
-    pub r#composite_indexes: Box<Option<Vec<Vec<super::super::types::documentdb::CompositePathResponse>>>>,
+    pub r#composite_indexes: Option<Vec<Vec<super::super::types::documentdb::CompositePathResponse>>>,
 }

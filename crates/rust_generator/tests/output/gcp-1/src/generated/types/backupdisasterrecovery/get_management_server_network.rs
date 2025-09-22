@@ -6,9 +6,9 @@ pub struct GetManagementServerNetwork {
     /// Network with format 'projects/{{project_id}}/global/networks/{{network_id}}'
     #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<String>,
+    pub r#network: String,
     /// Type of Network peeringMode Default value: "PRIVATE_SERVICE_ACCESS" Possible values: ["PRIVATE_SERVICE_ACCESS"]
     #[builder(into)]
     #[serde(rename = "peeringMode")]
-    pub r#peering_mode: Box<String>,
+    pub r#peering_mode: String,
 }

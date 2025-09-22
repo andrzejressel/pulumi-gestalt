@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlexibleServerCustomerManagedKey {
     /// The ID of the geo backup Key Vault Key. It can't cross region and need Customer Managed Key in same region as geo backup.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "geoBackupKeyVaultKeyId")]
-    pub r#geo_backup_key_vault_key_id: Box<Option<String>>,
+    pub r#geo_backup_key_vault_key_id: Option<String>,
     /// The geo backup user managed identity id for a Customer Managed Key. Should be added with `identity_ids`. It can't cross region and need identity in same region as geo backup.
     /// 
     /// > **Note:** `primary_user_assigned_identity_id` or `geo_backup_user_assigned_identity_id` is required when `type` is set to `UserAssigned`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "geoBackupUserAssignedIdentityId")]
-    pub r#geo_backup_user_assigned_identity_id: Box<Option<String>>,
+    pub r#geo_backup_user_assigned_identity_id: Option<String>,
     /// The ID of the Key Vault Key.
     #[builder(into)]
     #[serde(rename = "keyVaultKeyId")]
-    pub r#key_vault_key_id: Box<String>,
+    pub r#key_vault_key_id: String,
     /// Specifies the primary user managed identity id for a Customer Managed Key. Should be added with `identity_ids`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primaryUserAssignedIdentityId")]
-    pub r#primary_user_assigned_identity_id: Box<Option<String>>,
+    pub r#primary_user_assigned_identity_id: Option<String>,
 }

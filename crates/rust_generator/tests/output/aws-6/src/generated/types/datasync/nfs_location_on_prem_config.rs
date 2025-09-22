@@ -6,5 +6,5 @@ pub struct NfsLocationOnPremConfig {
     /// List of Amazon Resource Names (ARNs) of the DataSync Agents used to connect to the NFS server.
     #[builder(into)]
     #[serde(rename = "agentArns")]
-    pub r#agent_arns: Box<Vec<String>>,
+    pub r#agent_arns: Vec<String>,
 }

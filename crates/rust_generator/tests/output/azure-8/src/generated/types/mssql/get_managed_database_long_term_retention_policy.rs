@@ -6,21 +6,21 @@ pub struct GetManagedDatabaseLongTermRetentionPolicy {
     /// Specifies if the backups are immutable.
     #[builder(into)]
     #[serde(rename = "immutableBackupsEnabled")]
-    pub r#immutable_backups_enabled: Box<bool>,
+    pub r#immutable_backups_enabled: bool,
     /// The monthly retention policy for an LTR backup in an ISO 8601 format.
     #[builder(into)]
     #[serde(rename = "monthlyRetention")]
-    pub r#monthly_retention: Box<String>,
+    pub r#monthly_retention: String,
     /// The week of year to take the yearly backup.
     #[builder(into)]
     #[serde(rename = "weekOfYear")]
-    pub r#week_of_year: Box<i32>,
+    pub r#week_of_year: i32,
     /// The weekly retention policy for an LTR backup in an ISO 8601 format.
     #[builder(into)]
     #[serde(rename = "weeklyRetention")]
-    pub r#weekly_retention: Box<String>,
+    pub r#weekly_retention: String,
     /// The yearly retention policy for an LTR backup in an ISO 8601 format.
     #[builder(into)]
     #[serde(rename = "yearlyRetention")]
-    pub r#yearly_retention: Box<String>,
+    pub r#yearly_retention: String,
 }

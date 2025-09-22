@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterNetworkProfile {
     /// The outbound (egress) routing method. Possible values are `Loadbalancer` and `UserDefinedRouting`. Defaults to `Loadbalancer`. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "outboundType")]
-    pub r#outbound_type: Box<Option<String>>,
+    pub r#outbound_type: Option<String>,
     /// The CIDR to use for pod IP addresses. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "podCidr")]
-    pub r#pod_cidr: Box<String>,
+    pub r#pod_cidr: String,
     /// Whether a preconfigured network security group is being used on the subnets.  Defaults to `false`.  Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preconfiguredNetworkSecurityGroupEnabled")]
-    pub r#preconfigured_network_security_group_enabled: Box<Option<bool>>,
+    pub r#preconfigured_network_security_group_enabled: Option<bool>,
     /// The network range used by the OpenShift service. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "serviceCidr")]
-    pub r#service_cidr: Box<String>,
+    pub r#service_cidr: String,
 }

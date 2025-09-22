@@ -6,13 +6,13 @@ pub struct GetExpressRouteCircuitServiceProviderProperty {
     /// The bandwidth in Mbps of the ExpressRoute circuit.
     #[builder(into)]
     #[serde(rename = "bandwidthInMbps")]
-    pub r#bandwidth_in_mbps: Box<i32>,
+    pub r#bandwidth_in_mbps: i32,
     /// The name of the peering location and **not** the Azure resource location.
     #[builder(into)]
     #[serde(rename = "peeringLocation")]
-    pub r#peering_location: Box<String>,
+    pub r#peering_location: String,
     /// The name of the ExpressRoute Service Provider.
     #[builder(into)]
     #[serde(rename = "serviceProviderName")]
-    pub r#service_provider_name: Box<String>,
+    pub r#service_provider_name: String,
 }

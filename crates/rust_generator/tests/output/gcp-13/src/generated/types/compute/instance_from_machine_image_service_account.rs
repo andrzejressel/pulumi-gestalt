@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceFromMachineImageServiceAccount {
     /// The service account e-mail address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// A list of service scopes.
     #[builder(into)]
     #[serde(rename = "scopes")]
-    pub r#scopes: Box<Vec<String>>,
+    pub r#scopes: Vec<String>,
 }

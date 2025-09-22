@@ -6,5 +6,5 @@ pub struct GetAccountCapability {
     /// Specifies the name of the CosmosDB Account.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

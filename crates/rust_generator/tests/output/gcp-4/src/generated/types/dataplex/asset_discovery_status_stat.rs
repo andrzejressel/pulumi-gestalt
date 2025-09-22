@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AssetDiscoveryStatusStat {
     /// The count of data items within the referenced resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataItems")]
-    pub r#data_items: Box<Option<i32>>,
+    pub r#data_items: Option<i32>,
     /// The number of stored data bytes within the referenced resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataSize")]
-    pub r#data_size: Box<Option<i32>>,
+    pub r#data_size: Option<i32>,
     /// The count of fileset entities within the referenced resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filesets")]
-    pub r#filesets: Box<Option<i32>>,
+    pub r#filesets: Option<i32>,
     /// The count of table entities within the referenced resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tables")]
-    pub r#tables: Box<Option<i32>>,
+    pub r#tables: Option<i32>,
 }

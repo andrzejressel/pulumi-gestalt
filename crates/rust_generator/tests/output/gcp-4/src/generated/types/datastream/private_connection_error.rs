@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PrivateConnectionError {
     /// A list of messages that carry the error details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "details")]
-    pub r#details: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#details: Option<std::collections::HashMap<String, String>>,
     /// A message containing more information about the error that occurred.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
 }

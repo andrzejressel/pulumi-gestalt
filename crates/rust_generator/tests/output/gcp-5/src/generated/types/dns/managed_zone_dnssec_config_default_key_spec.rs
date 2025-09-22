@@ -5,13 +5,13 @@
 pub struct ManagedZoneDnssecConfigDefaultKeySpec {
     /// String mnemonic specifying the DNSSEC algorithm of this key
     /// Possible values are: `ecdsap256sha256`, `ecdsap384sha384`, `rsasha1`, `rsasha256`, `rsasha512`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "algorithm")]
-    pub r#algorithm: Box<Option<String>>,
+    pub r#algorithm: Option<String>,
     /// Length of the keys in bits
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyLength")]
-    pub r#key_length: Box<Option<i32>>,
+    pub r#key_length: Option<i32>,
     /// Specifies whether this is a key signing key (KSK) or a zone
     /// signing key (ZSK). Key signing keys have the Secure Entry
     /// Point flag set and, when active, will only be used to sign
@@ -19,11 +19,11 @@ pub struct ManagedZoneDnssecConfigDefaultKeySpec {
     /// not have the Secure Entry Point flag set and will be used
     /// to sign all other types of resource record sets.
     /// Possible values are: `keySigning`, `zoneSigning`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyType")]
-    pub r#key_type: Box<Option<String>>,
+    pub r#key_type: Option<String>,
     /// Identifies what kind of resource this is
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kind")]
-    pub r#kind: Box<Option<String>>,
+    pub r#kind: Option<String>,
 }

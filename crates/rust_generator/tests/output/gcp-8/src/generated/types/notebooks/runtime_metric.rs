@@ -6,7 +6,7 @@ pub struct RuntimeMetric {
     /// (Output)
     /// Contains runtime daemon metrics, such as OS and kernels and
     /// sessions stats.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "systemMetrics")]
-    pub r#system_metrics: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#system_metrics: Option<std::collections::HashMap<String, String>>,
 }

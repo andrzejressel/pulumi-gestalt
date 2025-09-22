@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxFlowAdvancedSettingsSpeechSettings {
     /// Sensitivity of the speech model that detects the end of speech. Scale from 0 to 100.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpointerSensitivity")]
-    pub r#endpointer_sensitivity: Box<Option<i32>>,
+    pub r#endpointer_sensitivity: Option<i32>,
     /// Mapping from language to Speech-to-Text model. The mapped Speech-to-Text model will be selected for requests from its corresponding language. For more information, see [Speech models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
     /// An object containing a list of **"key": value** pairs. Example: **{ "name": "wrench", "mass": "1.3kg", "count": "3" }**.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "models")]
-    pub r#models: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#models: Option<std::collections::HashMap<String, String>>,
     /// Timeout before detecting no speech.
     /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "noSpeechTimeout")]
-    pub r#no_speech_timeout: Box<Option<String>>,
+    pub r#no_speech_timeout: Option<String>,
     /// Use timeout based endpointing, interpreting endpointer sensitivity as seconds of timeout value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useTimeoutBasedEndpointing")]
-    pub r#use_timeout_based_endpointing: Box<Option<bool>>,
+    pub r#use_timeout_based_endpointing: Option<bool>,
 }

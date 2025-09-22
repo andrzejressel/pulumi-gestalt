@@ -10,5 +10,5 @@ pub struct RegionSecurityPolicyDdosProtectionConfig {
     /// Possible values are: `ADVANCED`, `ADVANCED_PREVIEW`, `STANDARD`.
     #[builder(into)]
     #[serde(rename = "ddosProtection")]
-    pub r#ddos_protection: Box<String>,
+    pub r#ddos_protection: String,
 }

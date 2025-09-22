@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApiOpenidAuthentication {
     /// How to send token to the server. A list of zero or more methods. Valid values are `authorizationHeader` and `query`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bearerTokenSendingMethods")]
-    pub r#bearer_token_sending_methods: Box<Option<Vec<String>>>,
+    pub r#bearer_token_sending_methods: Option<Vec<String>>,
     /// OpenID Connect provider identifier. The name of an OpenID Connect Provider.
     #[builder(into)]
     #[serde(rename = "openidProviderName")]
-    pub r#openid_provider_name: Box<String>,
+    pub r#openid_provider_name: String,
 }

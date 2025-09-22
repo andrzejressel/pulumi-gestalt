@@ -6,9 +6,9 @@ pub struct GetQuickConnectQuickConnectConfigQueueConfig {
     /// Identifier of the contact flow.
     #[builder(into)]
     #[serde(rename = "contactFlowId")]
-    pub r#contact_flow_id: Box<String>,
+    pub r#contact_flow_id: String,
     /// Identifier for the queue.
     #[builder(into)]
     #[serde(rename = "queueId")]
-    pub r#queue_id: Box<String>,
+    pub r#queue_id: String,
 }

@@ -4,24 +4,24 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceTemplateNetworkInterfaceIpv6AccessConfig {
     /// The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "externalIpv6")]
-    pub r#external_ipv_6: Box<Option<String>>,
+    pub r#external_ipv_6: Option<String>,
     /// The prefix length of the external IPv6 range.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "externalIpv6PrefixLength")]
-    pub r#external_ipv_6_prefix_length: Box<Option<String>>,
+    pub r#external_ipv_6_prefix_length: Option<String>,
     /// The name of the instance template. If you leave
     /// this blank, the provider will auto-generate a unique name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The service-level to be provided for IPv6 traffic when the subnet has an external subnet. Only PREMIUM tier is valid for IPv6
     #[builder(into)]
     #[serde(rename = "networkTier")]
-    pub r#network_tier: Box<String>,
+    pub r#network_tier: String,
     /// The domain name to be used when creating DNSv6 records for the external IPv6 ranges.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicPtrDomainName")]
-    pub r#public_ptr_domain_name: Box<Option<String>>,
+    pub r#public_ptr_domain_name: Option<String>,
 }

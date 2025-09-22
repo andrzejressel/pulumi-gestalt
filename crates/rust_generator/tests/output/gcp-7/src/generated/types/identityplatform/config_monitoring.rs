@@ -5,7 +5,7 @@
 pub struct ConfigMonitoring {
     /// Configuration for logging requests made to this project to Stackdriver Logging
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestLogging")]
-    pub r#request_logging: Box<Option<super::super::types::identityplatform::ConfigMonitoringRequestLogging>>,
+    pub r#request_logging: Option<Box<super::super::types::identityplatform::ConfigMonitoringRequestLogging>>,
 }

@@ -6,5 +6,5 @@ pub struct GetDomainClusterConfigZoneAwarenessConfig {
     /// Number of availability zones used.
     #[builder(into)]
     #[serde(rename = "availabilityZoneCount")]
-    pub r#availability_zone_count: Box<i32>,
+    pub r#availability_zone_count: i32,
 }

@@ -10,7 +10,7 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAws
     /// The payload type for your login endpoint, either JSON or form encoded.
     #[builder(into)]
     #[serde(rename = "payloadType")]
-    pub r#payload_type: Box<String>,
+    pub r#payload_type: String,
     /// Details about your login page username field. See `username_field` for more details.
     #[builder(into)]
     #[serde(rename = "usernameField")]

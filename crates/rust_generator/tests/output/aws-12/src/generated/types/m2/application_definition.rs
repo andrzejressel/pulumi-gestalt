@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationDefinition {
     /// JSON application definition. Either this or `s3_location` must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<Option<String>>,
+    pub r#content: Option<String>,
     /// Location of the application definition in S3. Either this or `content` must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Location")]
-    pub r#s_3_location: Box<Option<String>>,
+    pub r#s_3_location: Option<String>,
 }

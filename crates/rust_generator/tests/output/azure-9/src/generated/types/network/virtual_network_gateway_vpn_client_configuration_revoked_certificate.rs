@@ -6,9 +6,9 @@ pub struct VirtualNetworkGatewayVpnClientConfigurationRevokedCertificate {
     /// Specifies the name of the certificate resource.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the public data of the certificate.
     #[builder(into)]
     #[serde(rename = "thumbprint")]
-    pub r#thumbprint: Box<String>,
+    pub r#thumbprint: String,
 }

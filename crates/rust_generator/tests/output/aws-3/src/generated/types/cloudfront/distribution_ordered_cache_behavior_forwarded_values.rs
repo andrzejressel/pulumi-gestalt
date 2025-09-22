@@ -8,15 +8,15 @@ pub struct DistributionOrderedCacheBehaviorForwardedValues {
     #[serde(rename = "cookies")]
     pub r#cookies: Box<super::super::types::cloudfront::DistributionOrderedCacheBehaviorForwardedValuesCookies>,
     /// Headers, if any, that you want CloudFront to vary upon for this cache behavior. Specify `*` to include all headers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Option<Vec<String>>>,
+    pub r#headers: Option<Vec<String>>,
     /// Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior.
     #[builder(into)]
     #[serde(rename = "queryString")]
-    pub r#query_string: Box<bool>,
+    pub r#query_string: bool,
     /// When specified, along with a value of `true` for `query_string`, all query strings are forwarded, however only the query string keys listed in this argument are cached. When omitted with a value of `true` for `query_string`, all query string keys are cached.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "queryStringCacheKeys")]
-    pub r#query_string_cache_keys: Box<Option<Vec<String>>>,
+    pub r#query_string_cache_keys: Option<Vec<String>>,
 }

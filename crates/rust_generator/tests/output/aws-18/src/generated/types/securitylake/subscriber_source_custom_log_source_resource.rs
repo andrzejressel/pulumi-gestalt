@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SubscriberSourceCustomLogSourceResource {
     /// The attributes of the third-party custom source. See `attributes` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attributes")]
-    pub r#attributes: Box<Option<Vec<super::super::types::securitylake::SubscriberSourceCustomLogSourceResourceAttribute>>>,
+    pub r#attributes: Option<Vec<super::super::types::securitylake::SubscriberSourceCustomLogSourceResourceAttribute>>,
     /// The details of the log provider for the third-party custom source. See `provider` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "providers")]
-    pub r#providers: Box<Option<Vec<super::super::types::securitylake::SubscriberSourceCustomLogSourceResourceProvider>>>,
+    pub r#providers: Option<Vec<super::super::types::securitylake::SubscriberSourceCustomLogSourceResourceProvider>>,
     /// The name for a third-party custom source. This must be a Regionally unique value.
     #[builder(into)]
     #[serde(rename = "sourceName")]
-    pub r#source_name: Box<String>,
+    pub r#source_name: String,
     /// The version for a third-party custom source. This must be a Regionally unique value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceVersion")]
-    pub r#source_version: Box<Option<String>>,
+    pub r#source_version: Option<String>,
 }

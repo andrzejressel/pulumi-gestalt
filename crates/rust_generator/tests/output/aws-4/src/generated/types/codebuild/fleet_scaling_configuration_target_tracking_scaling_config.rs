@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetScalingConfigurationTargetTrackingScalingConfig {
     /// Metric type to determine auto-scaling. Valid value: `FLEET_UTILIZATION_RATE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricType")]
-    pub r#metric_type: Box<Option<String>>,
+    pub r#metric_type: Option<String>,
     /// Value of metricType when to start scaling.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetValue")]
-    pub r#target_value: Box<Option<f64>>,
+    pub r#target_value: Option<f64>,
 }

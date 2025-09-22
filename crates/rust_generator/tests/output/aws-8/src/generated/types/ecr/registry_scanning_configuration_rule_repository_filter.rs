@@ -5,8 +5,8 @@
 pub struct RegistryScanningConfigurationRuleRepositoryFilter {
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<String>,
+    pub r#filter: String,
     #[builder(into)]
     #[serde(rename = "filterType")]
-    pub r#filter_type: Box<String>,
+    pub r#filter_type: String,
 }

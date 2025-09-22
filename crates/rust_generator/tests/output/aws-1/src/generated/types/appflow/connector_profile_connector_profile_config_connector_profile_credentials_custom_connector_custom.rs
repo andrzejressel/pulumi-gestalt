@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorCustom {
     /// A map that holds custom authentication credentials.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "credentialsMap")]
-    pub r#credentials_map: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#credentials_map: Option<std::collections::HashMap<String, String>>,
     /// The custom authentication type that the connector uses.
     #[builder(into)]
     #[serde(rename = "customAuthenticationType")]
-    pub r#custom_authentication_type: Box<String>,
+    pub r#custom_authentication_type: String,
 }

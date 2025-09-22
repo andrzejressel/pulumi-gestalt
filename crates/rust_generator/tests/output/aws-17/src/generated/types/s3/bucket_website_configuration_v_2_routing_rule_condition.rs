@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketWebsiteConfigurationV2RoutingRuleCondition {
     /// HTTP error code when the redirect is applied. If specified with `key_prefix_equals`, then both must be true for the redirect to be applied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpErrorCodeReturnedEquals")]
-    pub r#http_error_code_returned_equals: Box<Option<String>>,
+    pub r#http_error_code_returned_equals: Option<String>,
     /// Object key name prefix when the redirect is applied. If specified with `http_error_code_returned_equals`, then both must be true for the redirect to be applied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyPrefixEquals")]
-    pub r#key_prefix_equals: Box<Option<String>>,
+    pub r#key_prefix_equals: Option<String>,
 }

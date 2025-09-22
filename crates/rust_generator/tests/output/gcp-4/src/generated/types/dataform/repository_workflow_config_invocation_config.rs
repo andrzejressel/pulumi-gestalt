@@ -4,28 +4,28 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RepositoryWorkflowConfigInvocationConfig {
     /// Optional. When set to true, any incremental tables will be fully refreshed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fullyRefreshIncrementalTablesEnabled")]
-    pub r#fully_refresh_incremental_tables_enabled: Box<Option<bool>>,
+    pub r#fully_refresh_incremental_tables_enabled: Option<bool>,
     /// Optional. The set of tags to include.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includedTags")]
-    pub r#included_tags: Box<Option<Vec<String>>>,
+    pub r#included_tags: Option<Vec<String>>,
     /// Optional. The set of action identifiers to include.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includedTargets")]
-    pub r#included_targets: Box<Option<Vec<super::super::types::dataform::RepositoryWorkflowConfigInvocationConfigIncludedTarget>>>,
+    pub r#included_targets: Option<Vec<super::super::types::dataform::RepositoryWorkflowConfigInvocationConfigIncludedTarget>>,
     /// Optional. The service account to run workflow invocations under.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAccount")]
-    pub r#service_account: Box<Option<String>>,
+    pub r#service_account: Option<String>,
     /// Optional. When set to true, transitive dependencies of included actions will be executed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transitiveDependenciesIncluded")]
-    pub r#transitive_dependencies_included: Box<Option<bool>>,
+    pub r#transitive_dependencies_included: Option<bool>,
     /// Optional. When set to true, transitive dependents of included actions will be executed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transitiveDependentsIncluded")]
-    pub r#transitive_dependents_included: Box<Option<bool>>,
+    pub r#transitive_dependents_included: Option<bool>,
 }

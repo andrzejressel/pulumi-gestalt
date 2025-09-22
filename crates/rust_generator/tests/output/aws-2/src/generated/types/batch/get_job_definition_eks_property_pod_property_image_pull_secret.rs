@@ -6,5 +6,5 @@ pub struct GetJobDefinitionEksPropertyPodPropertyImagePullSecret {
     /// The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -6,5 +6,5 @@ pub struct TrailInsightSelector {
     /// Type of insights to log on a trail. Valid values are: `ApiCallRateInsight` and `ApiErrorRateInsight`.
     #[builder(into)]
     #[serde(rename = "insightType")]
-    pub r#insight_type: Box<String>,
+    pub r#insight_type: String,
 }

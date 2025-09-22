@@ -5,8 +5,8 @@
 pub struct LifecyclePolicyPolicyDetailsActionCrossRegionCopyRetainRule {
     #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<i32>,
+    pub r#interval: i32,
     #[builder(into)]
     #[serde(rename = "intervalUnit")]
-    pub r#interval_unit: Box<String>,
+    pub r#interval_unit: String,
 }

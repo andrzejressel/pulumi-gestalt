@@ -6,23 +6,23 @@ pub struct ConnectionProfileForwardSshConnectivity {
     /// Hostname for the SSH tunnel.
     #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<String>,
+    pub r#hostname: String,
     /// SSH password.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// Port for the SSH tunnel.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// SSH private key.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateKey")]
-    pub r#private_key: Box<Option<String>>,
+    pub r#private_key: Option<String>,
     /// Username for the SSH tunnel.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

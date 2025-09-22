@@ -6,5 +6,5 @@ pub struct GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDest
     /// Name of the S3 Bucket to send findings to.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
 }

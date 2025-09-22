@@ -8,7 +8,7 @@ pub struct SpotFleetRequestLaunchTemplateConfig {
     #[serde(rename = "launchTemplateSpecification")]
     pub r#launch_template_specification: Box<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigLaunchTemplateSpecification>,
     /// One or more override configurations. See Overrides below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "overrides")]
-    pub r#overrides: Box<Option<Vec<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverride>>>,
+    pub r#overrides: Option<Vec<super::super::types::ec2::SpotFleetRequestLaunchTemplateConfigOverride>>,
 }

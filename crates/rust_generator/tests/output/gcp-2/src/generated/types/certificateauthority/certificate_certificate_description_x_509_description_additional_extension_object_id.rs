@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertificateCertificateDescriptionX509DescriptionAdditionalExtensionObjectId {
     /// An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "objectIdPaths")]
-    pub r#object_id_paths: Box<Option<Vec<i32>>>,
+    pub r#object_id_paths: Option<Vec<i32>>,
 }

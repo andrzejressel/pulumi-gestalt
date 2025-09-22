@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GatewayRouteSpec {
     /// Specification of a gRPC gateway route.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "grpcRoute")]
-    pub r#grpc_route: Box<Option<super::super::types::appmesh::GatewayRouteSpecGrpcRoute>>,
+    pub r#grpc_route: Option<Box<super::super::types::appmesh::GatewayRouteSpecGrpcRoute>>,
     /// Specification of an HTTP/2 gateway route.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "http2Route")]
-    pub r#http_2_route: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttp2Route>>,
+    pub r#http_2_route: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttp2Route>>,
     /// Specification of an HTTP gateway route.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpRoute")]
-    pub r#http_route: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttpRoute>>,
+    pub r#http_route: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttpRoute>>,
     /// Priority for the gateway route, between `0` and `1000`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<Option<i32>>,
+    pub r#priority: Option<i32>,
 }

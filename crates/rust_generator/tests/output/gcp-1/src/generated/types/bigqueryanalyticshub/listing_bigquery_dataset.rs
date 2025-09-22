@@ -6,10 +6,10 @@ pub struct ListingBigqueryDataset {
     /// Resource name of the dataset source for this listing. e.g. projects/myproject/datasets/123
     #[builder(into)]
     #[serde(rename = "dataset")]
-    pub r#dataset: Box<String>,
+    pub r#dataset: String,
     /// Resource in this dataset that is selectively shared. This field is required for data clean room exchanges.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "selectedResources")]
-    pub r#selected_resources: Box<Option<Vec<super::super::types::bigqueryanalyticshub::ListingBigqueryDatasetSelectedResource>>>,
+    pub r#selected_resources: Option<Vec<super::super::types::bigqueryanalyticshub::ListingBigqueryDatasetSelectedResource>>,
 }

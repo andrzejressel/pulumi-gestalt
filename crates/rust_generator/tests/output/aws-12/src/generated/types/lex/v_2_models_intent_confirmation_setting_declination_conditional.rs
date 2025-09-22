@@ -6,11 +6,11 @@ pub struct V2ModelsIntentConfirmationSettingDeclinationConditional {
     /// Whether a conditional branch is active. When active is false, the conditions are not evaluated.
     #[builder(into)]
     #[serde(rename = "active")]
-    pub r#active: Box<bool>,
+    pub r#active: bool,
     /// Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditional_branch`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "conditionalBranches")]
-    pub r#conditional_branches: Box<Option<Vec<super::super::types::lex::V2ModelsIntentConfirmationSettingDeclinationConditionalConditionalBranch>>>,
+    pub r#conditional_branches: Option<Vec<super::super::types::lex::V2ModelsIntentConfirmationSettingDeclinationConditionalConditionalBranch>>,
     /// Configuration block for the conditional branch that should be followed when the conditions for other branches are not satisfied. A branch is made up of a condition, a response and a next step. See `default_branch`.
     #[builder(into)]
     #[serde(rename = "defaultBranch")]

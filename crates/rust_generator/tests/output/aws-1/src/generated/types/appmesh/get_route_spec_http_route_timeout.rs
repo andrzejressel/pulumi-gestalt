@@ -5,8 +5,8 @@
 pub struct GetRouteSpecHttpRouteTimeout {
     #[builder(into)]
     #[serde(rename = "idles")]
-    pub r#idles: Box<Vec<super::super::types::appmesh::GetRouteSpecHttpRouteTimeoutIdle>>,
+    pub r#idles: Vec<super::super::types::appmesh::GetRouteSpecHttpRouteTimeoutIdle>,
     #[builder(into)]
     #[serde(rename = "perRequests")]
-    pub r#per_requests: Box<Vec<super::super::types::appmesh::GetRouteSpecHttpRouteTimeoutPerRequest>>,
+    pub r#per_requests: Vec<super::super::types::appmesh::GetRouteSpecHttpRouteTimeoutPerRequest>,
 }

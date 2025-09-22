@@ -6,8 +6,8 @@ pub struct GetDomainOffPeakWindowOptions {
     /// Enabled disabled toggle for off-peak update window
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     #[builder(into)]
     #[serde(rename = "offPeakWindows")]
-    pub r#off_peak_windows: Box<Vec<super::super::types::opensearch::GetDomainOffPeakWindowOptionsOffPeakWindow>>,
+    pub r#off_peak_windows: Vec<super::super::types::opensearch::GetDomainOffPeakWindowOptionsOffPeakWindow>,
 }

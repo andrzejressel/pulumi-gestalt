@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZoneSettingsOverrideSettingsSecurityHeader {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#enabled: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "includeSubdomains")]
-    pub r#include_subdomains: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#include_subdomains: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "maxAge")]
-    pub r#max_age: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#max_age: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "nosniff")]
-    pub r#nosniff: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#nosniff: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "preload")]
-    pub r#preload: Box<Option<bool>>,
+    pub r#preload: Option<bool>,
 }

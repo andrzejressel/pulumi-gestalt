@@ -6,5 +6,5 @@ pub struct GetInputInputDevice {
     /// The ID of the Input.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

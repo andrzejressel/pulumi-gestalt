@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DatabaseInstanceServerCaCert {
     /// The CA Certificate used to connect to the SQL Instance via SSL.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cert")]
-    pub r#cert: Box<Option<String>>,
+    pub r#cert: Option<String>,
     /// The CN valid for the CA Cert.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commonName")]
-    pub r#common_name: Box<Option<String>>,
+    pub r#common_name: Option<String>,
     /// Creation time of the CA Cert.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "createTime")]
-    pub r#create_time: Box<Option<String>>,
+    pub r#create_time: Option<String>,
     /// Expiration time of the CA Cert.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expirationTime")]
-    pub r#expiration_time: Box<Option<String>>,
+    pub r#expiration_time: Option<String>,
     /// SHA Fingerprint of the CA Cert.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sha1Fingerprint")]
-    pub r#sha_1_fingerprint: Box<Option<String>>,
+    pub r#sha_1_fingerprint: Option<String>,
 }

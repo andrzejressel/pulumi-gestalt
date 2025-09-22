@@ -6,5 +6,5 @@ pub struct GetSecurityPolicyRulePreconfiguredWafConfig {
     /// An exclusion to apply during preconfigured WAF evaluation.
     #[builder(into)]
     #[serde(rename = "exclusions")]
-    pub r#exclusions: Box<Vec<super::super::types::compute::GetSecurityPolicyRulePreconfiguredWafConfigExclusion>>,
+    pub r#exclusions: Vec<super::super::types::compute::GetSecurityPolicyRulePreconfiguredWafConfigExclusion>,
 }

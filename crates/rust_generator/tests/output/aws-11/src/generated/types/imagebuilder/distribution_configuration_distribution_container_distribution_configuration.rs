@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionConfigurationDistributionContainerDistributionConfiguration {
     /// Set of tags that are attached to the container distribution configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerTags")]
-    pub r#container_tags: Box<Option<Vec<String>>>,
+    pub r#container_tags: Option<Vec<String>>,
     /// Description of the container distribution configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Configuration block with the destination repository for the container distribution configuration.
     #[builder(into)]
     #[serde(rename = "targetRepository")]

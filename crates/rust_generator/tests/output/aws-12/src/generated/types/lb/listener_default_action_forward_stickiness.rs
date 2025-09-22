@@ -8,9 +8,9 @@ pub struct ListenerDefaultActionForwardStickiness {
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<i32>,
+    pub r#duration: i32,
     /// Whether target group stickiness is enabled. Default is `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
 }

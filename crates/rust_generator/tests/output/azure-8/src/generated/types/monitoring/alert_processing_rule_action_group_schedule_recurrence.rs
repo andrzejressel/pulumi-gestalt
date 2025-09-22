@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AlertProcessingRuleActionGroupScheduleRecurrence {
     /// One or more `daily` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dailies")]
-    pub r#dailies: Box<Option<Vec<super::super::types::monitoring::AlertProcessingRuleActionGroupScheduleRecurrenceDaily>>>,
+    pub r#dailies: Option<Vec<super::super::types::monitoring::AlertProcessingRuleActionGroupScheduleRecurrenceDaily>>,
     /// One or more `monthly` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "monthlies")]
-    pub r#monthlies: Box<Option<Vec<super::super::types::monitoring::AlertProcessingRuleActionGroupScheduleRecurrenceMonthly>>>,
+    pub r#monthlies: Option<Vec<super::super::types::monitoring::AlertProcessingRuleActionGroupScheduleRecurrenceMonthly>>,
     /// One or more `weekly` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weeklies")]
-    pub r#weeklies: Box<Option<Vec<super::super::types::monitoring::AlertProcessingRuleActionGroupScheduleRecurrenceWeekly>>>,
+    pub r#weeklies: Option<Vec<super::super::types::monitoring::AlertProcessingRuleActionGroupScheduleRecurrenceWeekly>>,
 }

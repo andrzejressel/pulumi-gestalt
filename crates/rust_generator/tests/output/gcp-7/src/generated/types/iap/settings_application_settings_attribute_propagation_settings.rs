@@ -5,15 +5,15 @@
 pub struct SettingsApplicationSettingsAttributePropagationSettings {
     /// Whether the provided attribute propagation settings should be evaluated on user requests.
     /// If set to true, attributes returned from the expression will be propagated in the set output credentials.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<Option<bool>>,
+    pub r#enable: Option<bool>,
     /// Raw string CEL expression. Must return a list of attributes. A maximum of 45 attributes can
     /// be selected. Expressions can select different attribute types from attributes:
     /// attributes.saml_attributes, attributes.iap_attributes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expression")]
-    pub r#expression: Box<Option<String>>,
+    pub r#expression: Option<String>,
     /// Which output credentials attributes selected by the CEL expression should be propagated in.
     /// All attributes will be fully duplicated in each selected output credential.
     /// Possible values are:
@@ -23,7 +23,7 @@ pub struct SettingsApplicationSettingsAttributePropagationSettings {
     /// * `RCTOKEN`: Propagate attributes in the RCToken of the form: "
     /// additional_claims": { "my_attribute": ["value1", "value2"] }
     /// Each value may be one of: `HEADER`, `JWT`, `RCTOKEN`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "outputCredentials")]
-    pub r#output_credentials: Box<Option<Vec<String>>>,
+    pub r#output_credentials: Option<Vec<String>>,
 }

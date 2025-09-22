@@ -6,5 +6,5 @@ pub struct GetSecurityPolicyAdvancedOptionsConfigJsonCustomConfig {
     /// A list of custom Content-Type header values to apply the JSON parsing.
     #[builder(into)]
     #[serde(rename = "contentTypes")]
-    pub r#content_types: Box<Vec<String>>,
+    pub r#content_types: Vec<String>,
 }

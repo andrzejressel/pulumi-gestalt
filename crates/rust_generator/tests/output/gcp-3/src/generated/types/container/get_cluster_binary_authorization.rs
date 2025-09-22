@@ -6,9 +6,9 @@ pub struct GetClusterBinaryAuthorization {
     /// Enable Binary Authorization for this cluster.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Mode of operation for Binary Authorization policy evaluation.
     #[builder(into)]
     #[serde(rename = "evaluationMode")]
-    pub r#evaluation_mode: Box<String>,
+    pub r#evaluation_mode: String,
 }

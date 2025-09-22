@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicyManagedRulesExclusionExcludedRuleSet {
     /// One or more `rule_group` block defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ruleGroups")]
-    pub r#rule_groups: Box<Option<Vec<super::super::types::waf::PolicyManagedRulesExclusionExcludedRuleSetRuleGroup>>>,
+    pub r#rule_groups: Option<Vec<super::super::types::waf::PolicyManagedRulesExclusionExcludedRuleSetRuleGroup>>,
     /// The rule set type. Possible values are `Microsoft_DefaultRuleSet`, `Microsoft_BotManagerRuleSet` and `OWASP`. Defaults to `OWASP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
     /// The rule set version. Possible values are `1.0`, `1.1` (for rule set type `Microsoft_BotManagerRuleSet`), `2.1` (for rule set type `Microsoft_DefaultRuleSet`) and `3.2` (for rule set type `OWASP`). Defaults to `3.2`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

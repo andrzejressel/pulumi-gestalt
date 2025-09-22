@@ -6,5 +6,5 @@ pub struct SigningProfileSigningMaterial {
     /// The Amazon Resource Name (ARN) of the certificates that is used to sign your code.
     #[builder(into)]
     #[serde(rename = "certificateArn")]
-    pub r#certificate_arn: Box<String>,
+    pub r#certificate_arn: String,
 }

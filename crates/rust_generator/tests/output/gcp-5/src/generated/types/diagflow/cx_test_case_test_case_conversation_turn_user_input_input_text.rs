@@ -6,5 +6,5 @@ pub struct CxTestCaseTestCaseConversationTurnUserInputInputText {
     /// The natural language text to be processed. Text length must not exceed 256 characters.
     #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<String>,
+    pub r#text: String,
 }

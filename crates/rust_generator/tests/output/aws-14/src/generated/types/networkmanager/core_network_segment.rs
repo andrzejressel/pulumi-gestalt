@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CoreNetworkSegment {
     /// Regions where the edges are located.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "edgeLocations")]
-    pub r#edge_locations: Box<Option<Vec<String>>>,
+    pub r#edge_locations: Option<Vec<String>>,
     /// Name of a core network segment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Shared segments of a core network.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sharedSegments")]
-    pub r#shared_segments: Box<Option<Vec<String>>>,
+    pub r#shared_segments: Option<Vec<String>>,
 }

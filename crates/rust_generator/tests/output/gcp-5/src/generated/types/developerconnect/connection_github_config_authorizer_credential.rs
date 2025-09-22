@@ -8,10 +8,10 @@ pub struct ConnectionGithubConfigAuthorizerCredential {
     /// Format: `projects/*/secrets/*/versions/*`.
     #[builder(into)]
     #[serde(rename = "oauthTokenSecretVersion")]
-    pub r#oauth_token_secret_version: Box<String>,
+    pub r#oauth_token_secret_version: String,
     /// (Output)
     /// Output only. The username associated with this token.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

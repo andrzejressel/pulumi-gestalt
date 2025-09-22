@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThemeConfigurationSheetTileLayout {
     /// The gutter settings that apply between tiles. See gutter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gutter")]
-    pub r#gutter: Box<Option<super::super::types::quicksight::ThemeConfigurationSheetTileLayoutGutter>>,
+    pub r#gutter: Option<Box<super::super::types::quicksight::ThemeConfigurationSheetTileLayoutGutter>>,
     /// The margin settings that apply around the outside edge of sheets. See margin.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "margin")]
-    pub r#margin: Box<Option<super::super::types::quicksight::ThemeConfigurationSheetTileLayoutMargin>>,
+    pub r#margin: Option<Box<super::super::types::quicksight::ThemeConfigurationSheetTileLayoutMargin>>,
 }

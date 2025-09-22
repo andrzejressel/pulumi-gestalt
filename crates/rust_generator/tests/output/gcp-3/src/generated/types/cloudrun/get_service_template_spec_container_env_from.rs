@@ -6,13 +6,13 @@ pub struct GetServiceTemplateSpecContainerEnvFrom {
     /// The ConfigMap to select from.
     #[builder(into)]
     #[serde(rename = "configMapReves")]
-    pub r#config_map_reves: Box<Vec<super::super::types::cloudrun::GetServiceTemplateSpecContainerEnvFromConfigMapRef>>,
+    pub r#config_map_reves: Vec<super::super::types::cloudrun::GetServiceTemplateSpecContainerEnvFromConfigMapRef>,
     /// An optional identifier to prepend to each key in the ConfigMap.
     #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<String>,
+    pub r#prefix: String,
     /// The Secret to select from.
     #[builder(into)]
     #[serde(rename = "secretReves")]
-    pub r#secret_reves: Box<Vec<super::super::types::cloudrun::GetServiceTemplateSpecContainerEnvFromSecretRef>>,
+    pub r#secret_reves: Vec<super::super::types::cloudrun::GetServiceTemplateSpecContainerEnvFromSecretRef>,
 }

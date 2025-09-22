@@ -6,9 +6,9 @@ pub struct FunctionAppAuthSettingsTwitter {
     /// The OAuth 1.0a consumer key of the Twitter application used for sign-in.
     #[builder(into)]
     #[serde(rename = "consumerKey")]
-    pub r#consumer_key: Box<String>,
+    pub r#consumer_key: String,
     /// The OAuth 1.0a consumer secret of the Twitter application used for sign-in.
     #[builder(into)]
     #[serde(rename = "consumerSecret")]
-    pub r#consumer_secret: Box<String>,
+    pub r#consumer_secret: String,
 }

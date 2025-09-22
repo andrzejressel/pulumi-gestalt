@@ -6,9 +6,9 @@ pub struct AgentAgentGuardrailConfiguration {
     /// Unique identifier of the guardrail.
     #[builder(into)]
     #[serde(rename = "guardrailIdentifier")]
-    pub r#guardrail_identifier: Box<String>,
+    pub r#guardrail_identifier: String,
     /// Version of the guardrail.
     #[builder(into)]
     #[serde(rename = "guardrailVersion")]
-    pub r#guardrail_version: Box<String>,
+    pub r#guardrail_version: String,
 }

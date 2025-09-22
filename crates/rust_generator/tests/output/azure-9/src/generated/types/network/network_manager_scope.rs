@@ -6,11 +6,11 @@ pub struct NetworkManagerScope {
     /// A list of management group IDs.
     /// 
     /// > **NOTE:** When specifying a scope at the management group level, you need to register the `Microsoft.Network` at the management group scope before deploying a Network Manager, more information can be found in the [Azure document](https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-network-manager-scope#scope).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "managementGroupIds")]
-    pub r#management_group_ids: Box<Option<Vec<String>>>,
+    pub r#management_group_ids: Option<Vec<String>>,
     /// A list of subscription IDs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subscriptionIds")]
-    pub r#subscription_ids: Box<Option<Vec<String>>>,
+    pub r#subscription_ids: Option<Vec<String>>,
 }

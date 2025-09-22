@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CaCertificateRegistrationConfig {
     /// The ARN of the role.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<Option<String>>,
+    pub r#role_arn: Option<String>,
     /// The template body.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "templateBody")]
-    pub r#template_body: Box<Option<String>>,
+    pub r#template_body: Option<String>,
     /// The name of the provisioning template.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "templateName")]
-    pub r#template_name: Box<Option<String>>,
+    pub r#template_name: Option<String>,
 }

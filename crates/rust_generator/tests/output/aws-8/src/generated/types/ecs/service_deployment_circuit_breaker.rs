@@ -6,9 +6,9 @@ pub struct ServiceDeploymentCircuitBreaker {
     /// Whether to enable the deployment circuit breaker logic for the service.
     #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<bool>,
+    pub r#enable: bool,
     /// Whether to enable Amazon ECS to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.
     #[builder(into)]
     #[serde(rename = "rollback")]
-    pub r#rollback: Box<bool>,
+    pub r#rollback: bool,
 }

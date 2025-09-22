@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigSmsRegionConfigAllowByDefault {
     /// Two letter unicode region codes to disallow as defined by https://cldr.unicode.org/ The full list of these region codes is here: https://github.com/unicode-cldr/cldr-localenames-full/blob/master/main/en/territories.json
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disallowedRegions")]
-    pub r#disallowed_regions: Box<Option<Vec<String>>>,
+    pub r#disallowed_regions: Option<Vec<String>>,
 }

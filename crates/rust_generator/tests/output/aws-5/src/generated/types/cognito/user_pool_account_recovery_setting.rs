@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserPoolAccountRecoverySetting {
     /// List of Account Recovery Options of the following structure:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recoveryMechanisms")]
-    pub r#recovery_mechanisms: Box<Option<Vec<super::super::types::cognito::UserPoolAccountRecoverySettingRecoveryMechanism>>>,
+    pub r#recovery_mechanisms: Option<Vec<super::super::types::cognito::UserPoolAccountRecoverySettingRecoveryMechanism>>,
 }

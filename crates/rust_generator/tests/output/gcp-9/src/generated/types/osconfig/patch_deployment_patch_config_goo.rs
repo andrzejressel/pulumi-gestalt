@@ -6,5 +6,5 @@ pub struct PatchDeploymentPatchConfigGoo {
     /// goo update settings. Use this setting to override the default goo patch rules.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

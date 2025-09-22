@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NfsFileShareNfsFileShareDefaults {
     /// The Unix directory mode in the string form "nnnn". Defaults to `"0777"`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "directoryMode")]
-    pub r#directory_mode: Box<Option<String>>,
+    pub r#directory_mode: Option<String>,
     /// The Unix file mode in the string form "nnnn". Defaults to `"0666"`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fileMode")]
-    pub r#file_mode: Box<Option<String>>,
+    pub r#file_mode: Option<String>,
     /// The default group ID for the file share (unless the files have another group ID specified). Defaults to `65534` (`nfsnobody`). Valid values: `0` through `4294967294`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groupId")]
-    pub r#group_id: Box<Option<String>>,
+    pub r#group_id: Option<String>,
     /// The default owner ID for the file share (unless the files have another owner ID specified). Defaults to `65534` (`nfsnobody`). Valid values: `0` through `4294967294`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ownerId")]
-    pub r#owner_id: Box<Option<String>>,
+    pub r#owner_id: Option<String>,
 }

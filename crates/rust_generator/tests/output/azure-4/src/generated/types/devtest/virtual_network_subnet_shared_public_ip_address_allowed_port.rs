@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNetworkSubnetSharedPublicIpAddressAllowedPort {
     /// The port on the Virtual Machine that the traffic will be sent to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backendPort")]
-    pub r#backend_port: Box<Option<i32>>,
+    pub r#backend_port: Option<i32>,
     /// The transport protocol that the traffic will use. Possible values are `TCP` and `UDP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transportProtocol")]
-    pub r#transport_protocol: Box<Option<String>>,
+    pub r#transport_protocol: Option<String>,
 }

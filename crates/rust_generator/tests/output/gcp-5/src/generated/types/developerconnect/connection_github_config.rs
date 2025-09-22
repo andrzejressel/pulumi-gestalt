@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionGithubConfig {
     /// Optional. GitHub App installation id.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "appInstallationId")]
-    pub r#app_installation_id: Box<Option<String>>,
+    pub r#app_installation_id: Option<String>,
     /// Represents an OAuth token of the account that authorized the Connection,and
     /// associated metadata.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authorizerCredential")]
-    pub r#authorizer_credential: Box<Option<super::super::types::developerconnect::ConnectionGithubConfigAuthorizerCredential>>,
+    pub r#authorizer_credential: Option<Box<super::super::types::developerconnect::ConnectionGithubConfigAuthorizerCredential>>,
     /// Required. Immutable. The GitHub Application that was installed to
     /// the GitHub user or organization.
     /// Possible values:
@@ -21,11 +21,11 @@ pub struct ConnectionGithubConfig {
     /// FIREBASE"
     #[builder(into)]
     #[serde(rename = "githubApp")]
-    pub r#github_app: Box<String>,
+    pub r#github_app: String,
     /// (Output)
     /// Output only. The URI to navigate to in order to manage the installation
     /// associated with this GitHubConfig.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "installationUri")]
-    pub r#installation_uri: Box<Option<String>>,
+    pub r#installation_uri: Option<String>,
 }

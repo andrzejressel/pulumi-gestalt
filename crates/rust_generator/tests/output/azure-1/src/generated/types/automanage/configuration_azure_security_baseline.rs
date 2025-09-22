@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationAzureSecurityBaseline {
     /// The assignment type of the azure security baseline. Possible values are `ApplyAndAutoCorrect`, `ApplyAndMonitor`, `Audit` and `DeployAndAutoCorrect`. Defaults to `ApplyAndAutoCorrect`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "assignmentType")]
-    pub r#assignment_type: Box<Option<String>>,
+    pub r#assignment_type: Option<String>,
 }

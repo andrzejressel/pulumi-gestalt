@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SettingsAccessSettingsAllowedDomainsSettings {
     /// List of trusted domains.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domains")]
-    pub r#domains: Box<Option<Vec<String>>>,
+    pub r#domains: Option<Vec<String>>,
     /// Configuration for customers to opt in for the feature.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<Option<bool>>,
+    pub r#enable: Option<bool>,
 }

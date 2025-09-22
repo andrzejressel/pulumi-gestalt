@@ -8,5 +8,5 @@ pub struct GetKmsCryptoKeyKeyAccessJustificationsPolicy {
     /// this CryptoKey will fail.
     #[builder(into)]
     #[serde(rename = "allowedAccessReasons")]
-    pub r#allowed_access_reasons: Box<Vec<String>>,
+    pub r#allowed_access_reasons: Vec<String>,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetFleetInstanceSet {
     /// The IDs of the instances.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceIds")]
-    pub r#instance_ids: Box<Option<Vec<String>>>,
+    pub r#instance_ids: Option<Vec<String>>,
     /// The instance type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceType")]
-    pub r#instance_type: Box<Option<String>>,
+    pub r#instance_type: Option<String>,
     /// Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lifecycle")]
-    pub r#lifecycle: Box<Option<String>>,
+    pub r#lifecycle: Option<String>,
     /// The value is `Windows` for Windows instances. Otherwise, the value is blank.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "platform")]
-    pub r#platform: Box<Option<String>>,
+    pub r#platform: Option<String>,
 }

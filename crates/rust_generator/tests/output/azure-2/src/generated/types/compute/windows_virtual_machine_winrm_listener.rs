@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WindowsVirtualMachineWinrmListener {
     /// The Secret URL of a Key Vault Certificate, which must be specified when `protocol` is set to `Https`. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateUrl")]
-    pub r#certificate_url: Box<Option<String>>,
+    pub r#certificate_url: Option<String>,
     /// Specifies the protocol of listener. Possible values are `Http` or `Https`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
 }

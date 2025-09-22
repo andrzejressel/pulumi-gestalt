@@ -6,5 +6,5 @@ pub struct SpaceSpaceSettingsCustomFileSystemEfsFileSystem {
     /// The ID of your Amazon EFS file system.
     #[builder(into)]
     #[serde(rename = "fileSystemId")]
-    pub r#file_system_id: Box<String>,
+    pub r#file_system_id: String,
 }

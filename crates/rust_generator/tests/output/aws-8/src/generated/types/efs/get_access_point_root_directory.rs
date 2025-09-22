@@ -6,9 +6,9 @@ pub struct GetAccessPointRootDirectory {
     /// Single element list containing information on the creation permissions of the directory
     #[builder(into)]
     #[serde(rename = "creationInfos")]
-    pub r#creation_infos: Box<Vec<super::super::types::efs::GetAccessPointRootDirectoryCreationInfo>>,
+    pub r#creation_infos: Vec<super::super::types::efs::GetAccessPointRootDirectoryCreationInfo>,
     /// Path exposed as the root directory
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

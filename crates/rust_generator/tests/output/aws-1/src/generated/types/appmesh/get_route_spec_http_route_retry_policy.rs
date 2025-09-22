@@ -5,14 +5,14 @@
 pub struct GetRouteSpecHttpRouteRetryPolicy {
     #[builder(into)]
     #[serde(rename = "httpRetryEvents")]
-    pub r#http_retry_events: Box<Vec<String>>,
+    pub r#http_retry_events: Vec<String>,
     #[builder(into)]
     #[serde(rename = "maxRetries")]
-    pub r#max_retries: Box<i32>,
+    pub r#max_retries: i32,
     #[builder(into)]
     #[serde(rename = "perRetryTimeouts")]
-    pub r#per_retry_timeouts: Box<Vec<super::super::types::appmesh::GetRouteSpecHttpRouteRetryPolicyPerRetryTimeout>>,
+    pub r#per_retry_timeouts: Vec<super::super::types::appmesh::GetRouteSpecHttpRouteRetryPolicyPerRetryTimeout>,
     #[builder(into)]
     #[serde(rename = "tcpRetryEvents")]
-    pub r#tcp_retry_events: Box<Vec<String>>,
+    pub r#tcp_retry_events: Vec<String>,
 }

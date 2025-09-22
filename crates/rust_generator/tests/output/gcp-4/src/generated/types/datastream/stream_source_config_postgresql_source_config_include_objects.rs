@@ -7,5 +7,5 @@ pub struct StreamSourceConfigPostgresqlSourceConfigIncludeObjects {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "postgresqlSchemas")]
-    pub r#postgresql_schemas: Box<Vec<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchema>>,
+    pub r#postgresql_schemas: Vec<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchema>,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainCognitoOptions {
     /// Whether Amazon Cognito authentication with Dashboard is enabled or not. Default is `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// ID of the Cognito Identity Pool to use.
     #[builder(into)]
     #[serde(rename = "identityPoolId")]
-    pub r#identity_pool_id: Box<String>,
+    pub r#identity_pool_id: String,
     /// ARN of the IAM role that has the AmazonOpenSearchServiceCognitoAccess policy attached.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// ID of the Cognito User Pool to use.
     #[builder(into)]
     #[serde(rename = "userPoolId")]
-    pub r#user_pool_id: Box<String>,
+    pub r#user_pool_id: String,
 }

@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowTriggerConfigTriggerProperties {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scheduled")]
-    pub r#scheduled: Box<Option<super::super::types::appflow::FlowTriggerConfigTriggerPropertiesScheduled>>,
+    pub r#scheduled: Option<Box<super::super::types::appflow::FlowTriggerConfigTriggerPropertiesScheduled>>,
 }

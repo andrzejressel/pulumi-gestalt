@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PageRuleActionsCacheKeyFieldsCookie {
     /// Check for presence of specified cookies, without including their actual values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "checkPresences")]
-    pub r#check_presences: Box<Option<Vec<String>>>,
+    pub r#check_presences: Option<Vec<String>>,
     /// Use values of specified cookies in Cache Key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includes")]
-    pub r#includes: Box<Option<Vec<String>>>,
+    pub r#includes: Option<Vec<String>>,
 }

@@ -6,13 +6,13 @@ pub struct AutomationRuleActionPlaybook {
     /// The ID of the Logic App that defines the playbook's logic.
     #[builder(into)]
     #[serde(rename = "logicAppId")]
-    pub r#logic_app_id: Box<String>,
+    pub r#logic_app_id: String,
     /// The execution order of this action.
     #[builder(into)]
     #[serde(rename = "order")]
-    pub r#order: Box<i32>,
+    pub r#order: i32,
     /// The ID of the Tenant that owns the playbook.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<Option<String>>,
+    pub r#tenant_id: Option<String>,
 }

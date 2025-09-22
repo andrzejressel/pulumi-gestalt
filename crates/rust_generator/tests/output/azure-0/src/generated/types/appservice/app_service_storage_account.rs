@@ -6,25 +6,25 @@ pub struct AppServiceStorageAccount {
     /// The access key for the storage account.
     #[builder(into)]
     #[serde(rename = "accessKey")]
-    pub r#access_key: Box<String>,
+    pub r#access_key: String,
     /// The name of the storage account.
     #[builder(into)]
     #[serde(rename = "accountName")]
-    pub r#account_name: Box<String>,
+    pub r#account_name: String,
     /// The path to mount the storage within the site's runtime environment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mountPath")]
-    pub r#mount_path: Box<Option<String>>,
+    pub r#mount_path: Option<String>,
     /// The name of the storage account identifier.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The name of the file share (container name, for Blob storage).
     #[builder(into)]
     #[serde(rename = "shareName")]
-    pub r#share_name: Box<String>,
+    pub r#share_name: String,
     /// The type of storage. Possible values are `AzureBlob` and `AzureFiles`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

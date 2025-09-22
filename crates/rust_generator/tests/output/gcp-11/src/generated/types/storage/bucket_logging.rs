@@ -6,10 +6,10 @@ pub struct BucketLogging {
     /// The bucket that will receive log objects.
     #[builder(into)]
     #[serde(rename = "logBucket")]
-    pub r#log_bucket: Box<String>,
+    pub r#log_bucket: String,
     /// The object prefix for log objects. If it's not provided,
     /// by default GCS sets this to this bucket's name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logObjectPrefix")]
-    pub r#log_object_prefix: Box<Option<String>>,
+    pub r#log_object_prefix: Option<String>,
 }

@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DatascanExecutionSpecTrigger {
     /// The scan runs once via dataScans.run API.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "onDemand")]
-    pub r#on_demand: Box<Option<super::super::types::dataplex::DatascanExecutionSpecTriggerOnDemand>>,
+    pub r#on_demand: Option<Box<super::super::types::dataplex::DatascanExecutionSpecTriggerOnDemand>>,
     /// The scan is scheduled to run periodically.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schedule")]
-    pub r#schedule: Box<Option<super::super::types::dataplex::DatascanExecutionSpecTriggerSchedule>>,
+    pub r#schedule: Option<Box<super::super::types::dataplex::DatascanExecutionSpecTriggerSchedule>>,
 }

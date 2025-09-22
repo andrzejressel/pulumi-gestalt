@@ -7,10 +7,10 @@ pub struct JobQueryDestinationEncryptionConfiguration {
     /// The BigQuery Service Account associated with your project requires access to this encryption key.
     #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<String>,
+    pub r#kms_key_name: String,
     /// (Output)
     /// Describes the Cloud KMS encryption key version used to protect destination BigQuery table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyVersion")]
-    pub r#kms_key_version: Box<Option<String>>,
+    pub r#kms_key_version: Option<String>,
 }

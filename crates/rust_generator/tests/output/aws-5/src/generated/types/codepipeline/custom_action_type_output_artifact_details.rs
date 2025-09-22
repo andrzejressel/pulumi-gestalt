@@ -6,9 +6,9 @@ pub struct CustomActionTypeOutputArtifactDetails {
     /// The maximum number of artifacts allowed for the action type. Min: 0, Max: 5
     #[builder(into)]
     #[serde(rename = "maximumCount")]
-    pub r#maximum_count: Box<i32>,
+    pub r#maximum_count: i32,
     /// The minimum number of artifacts allowed for the action type. Min: 0, Max: 5
     #[builder(into)]
     #[serde(rename = "minimumCount")]
-    pub r#minimum_count: Box<i32>,
+    pub r#minimum_count: i32,
 }

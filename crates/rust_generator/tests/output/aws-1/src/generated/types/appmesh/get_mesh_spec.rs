@@ -5,8 +5,8 @@
 pub struct GetMeshSpec {
     #[builder(into)]
     #[serde(rename = "egressFilters")]
-    pub r#egress_filters: Box<Vec<super::super::types::appmesh::GetMeshSpecEgressFilter>>,
+    pub r#egress_filters: Vec<super::super::types::appmesh::GetMeshSpecEgressFilter>,
     #[builder(into)]
     #[serde(rename = "serviceDiscoveries")]
-    pub r#service_discoveries: Box<Vec<super::super::types::appmesh::GetMeshSpecServiceDiscovery>>,
+    pub r#service_discoveries: Vec<super::super::types::appmesh::GetMeshSpecServiceDiscovery>,
 }

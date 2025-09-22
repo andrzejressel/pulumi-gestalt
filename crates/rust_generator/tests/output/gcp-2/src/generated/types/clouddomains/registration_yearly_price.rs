@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegistrationYearlyPrice {
     /// The three-letter currency code defined in ISO 4217.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "currencyCode")]
-    pub r#currency_code: Box<Option<String>>,
+    pub r#currency_code: Option<String>,
     /// The whole units of the amount. For example if currencyCode is "USD", then 1 unit is one US dollar.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "units")]
-    pub r#units: Box<Option<String>>,
+    pub r#units: Option<String>,
 }

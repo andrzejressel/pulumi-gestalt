@@ -6,9 +6,9 @@ pub struct DomainRuleBasedMatchingExportingConfigS3Exporting {
     /// The name of the S3 bucket where Identity Resolution Jobs write result files.
     #[builder(into)]
     #[serde(rename = "s3BucketName")]
-    pub r#s_3_bucket_name: Box<String>,
+    pub r#s_3_bucket_name: String,
     /// The S3 key name of the location where Identity Resolution Jobs write result files.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3KeyName")]
-    pub r#s_3_key_name: Box<Option<String>>,
+    pub r#s_3_key_name: Option<String>,
 }

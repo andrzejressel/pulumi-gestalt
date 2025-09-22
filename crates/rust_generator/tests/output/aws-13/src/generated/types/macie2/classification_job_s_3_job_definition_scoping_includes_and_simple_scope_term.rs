@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm {
     /// The operator to use in a condition. Valid values are: `EQ`, `GT`, `GTE`, `LT`, `LTE`, `NE`, `CONTAINS`, `STARTS_WITH`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "comparator")]
-    pub r#comparator: Box<Option<String>>,
+    pub r#comparator: Option<String>,
     /// The object property to use in the condition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<String>>,
+    pub r#key: Option<String>,
     /// An array that lists the values to use in the condition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<Vec<String>>>,
+    pub r#values: Option<Vec<String>>,
 }

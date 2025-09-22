@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CloudConnectorRulesRule {
     /// Brief summary of the cloud connector rule and its intended use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Whether the headers rule is active.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Criteria for an HTTP request to trigger the cloud connector rule. Uses the Firewall Rules expression language based on Wireshark display filters.
     #[builder(into)]
     #[serde(rename = "expression")]
-    pub r#expression: Box<String>,
+    pub r#expression: String,
     /// Cloud Connector Rule Parameters
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<super::types::CloudConnectorRulesRuleParameters>>,
+    pub r#parameters: Option<Box<super::types::CloudConnectorRulesRuleParameters>>,
     /// Type of provider. Available values: `aws_s3`, `cloudflare_r2`, `azure_storage`, `gcp_storage`
     #[builder(into)]
     #[serde(rename = "provider")]
-    pub r#provider: Box<String>,
+    pub r#provider: String,
 }

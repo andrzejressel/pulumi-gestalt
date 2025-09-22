@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TaskSparkInfrastructureSpecVpcNetwork {
     /// The Cloud VPC network in which the job is run. By default, the Cloud VPC network named Default within the project is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<Option<String>>,
+    pub r#network: Option<String>,
     /// List of network tags to apply to the job.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkTags")]
-    pub r#network_tags: Box<Option<Vec<String>>>,
+    pub r#network_tags: Option<Vec<String>>,
     /// The Cloud VPC sub-network in which the job is run.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subNetwork")]
-    pub r#sub_network: Box<Option<String>>,
+    pub r#sub_network: Option<String>,
 }

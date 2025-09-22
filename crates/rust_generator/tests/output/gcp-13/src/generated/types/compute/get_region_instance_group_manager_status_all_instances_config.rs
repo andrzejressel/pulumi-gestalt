@@ -6,9 +6,9 @@ pub struct GetRegionInstanceGroupManagerStatusAllInstancesConfig {
     /// Current all-instances configuration revision. This value is in RFC3339 text format.
     #[builder(into)]
     #[serde(rename = "currentRevision")]
-    pub r#current_revision: Box<String>,
+    pub r#current_revision: String,
     /// A bit indicating whether this configuration has been applied to all managed instances in the group.
     #[builder(into)]
     #[serde(rename = "effective")]
-    pub r#effective: Box<bool>,
+    pub r#effective: bool,
 }

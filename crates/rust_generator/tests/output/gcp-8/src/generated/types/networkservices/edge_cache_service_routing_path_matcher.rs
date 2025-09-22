@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EdgeCacheServiceRoutingPathMatcher {
     /// A human-readable description of the resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The name to which this PathMatcher is referred by the HostRule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The routeRules to match against. routeRules support advanced routing behaviour, and can match on paths, headers and query parameters, as well as status codes and HTTP methods.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "routeRules")]
-    pub r#route_rules: Box<Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRule>>,
+    pub r#route_rules: Vec<super::super::types::networkservices::EdgeCacheServiceRoutingPathMatcherRouteRule>,
 }

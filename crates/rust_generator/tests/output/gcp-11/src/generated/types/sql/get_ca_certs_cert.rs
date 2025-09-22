@@ -6,21 +6,21 @@ pub struct GetCaCertsCert {
     /// The CA certificate used to connect to the SQL instance via SSL.
     #[builder(into)]
     #[serde(rename = "cert")]
-    pub r#cert: Box<String>,
+    pub r#cert: String,
     /// The CN valid for the CA cert.
     #[builder(into)]
     #[serde(rename = "commonName")]
-    pub r#common_name: Box<String>,
+    pub r#common_name: String,
     /// Creation time of the CA cert.
     #[builder(into)]
     #[serde(rename = "createTime")]
-    pub r#create_time: Box<String>,
+    pub r#create_time: String,
     /// Expiration time of the CA cert.
     #[builder(into)]
     #[serde(rename = "expirationTime")]
-    pub r#expiration_time: Box<String>,
+    pub r#expiration_time: String,
     /// SHA1 fingerprint of the CA cert.
     #[builder(into)]
     #[serde(rename = "sha1Fingerprint")]
-    pub r#sha_1_fingerprint: Box<String>,
+    pub r#sha_1_fingerprint: String,
 }

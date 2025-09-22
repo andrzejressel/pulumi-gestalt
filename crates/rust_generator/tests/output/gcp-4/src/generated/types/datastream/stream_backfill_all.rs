@@ -5,22 +5,22 @@
 pub struct StreamBackfillAll {
     /// MySQL data source objects to avoid backfilling.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mysqlExcludedObjects")]
-    pub r#mysql_excluded_objects: Box<Option<super::super::types::datastream::StreamBackfillAllMysqlExcludedObjects>>,
+    pub r#mysql_excluded_objects: Option<Box<super::super::types::datastream::StreamBackfillAllMysqlExcludedObjects>>,
     /// PostgreSQL data source objects to avoid backfilling.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oracleExcludedObjects")]
-    pub r#oracle_excluded_objects: Box<Option<super::super::types::datastream::StreamBackfillAllOracleExcludedObjects>>,
+    pub r#oracle_excluded_objects: Option<Box<super::super::types::datastream::StreamBackfillAllOracleExcludedObjects>>,
     /// PostgreSQL data source objects to avoid backfilling.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "postgresqlExcludedObjects")]
-    pub r#postgresql_excluded_objects: Box<Option<super::super::types::datastream::StreamBackfillAllPostgresqlExcludedObjects>>,
+    pub r#postgresql_excluded_objects: Option<Box<super::super::types::datastream::StreamBackfillAllPostgresqlExcludedObjects>>,
     /// SQL Server data source objects to avoid backfilling.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sqlServerExcludedObjects")]
-    pub r#sql_server_excluded_objects: Box<Option<super::super::types::datastream::StreamBackfillAllSqlServerExcludedObjects>>,
+    pub r#sql_server_excluded_objects: Option<Box<super::super::types::datastream::StreamBackfillAllSqlServerExcludedObjects>>,
 }

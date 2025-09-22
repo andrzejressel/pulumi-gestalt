@@ -7,10 +7,10 @@ pub struct PipelineJobReconciliationPipelineJobMergeConfigWhistleConfigSource {
     /// Example: gs://{bucket-id}/{path/to/import-root/dir}
     #[builder(into)]
     #[serde(rename = "importUriPrefix")]
-    pub r#import_uri_prefix: Box<String>,
+    pub r#import_uri_prefix: String,
     /// Main configuration file which has the entrypoint or the root function.
     /// Example: gs://{bucket-id}/{path/to/import-root/dir}/entrypoint-file-name.wstl.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

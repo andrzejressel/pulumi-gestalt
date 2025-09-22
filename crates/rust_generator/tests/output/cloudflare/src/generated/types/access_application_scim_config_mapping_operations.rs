@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccessApplicationScimConfigMappingOperations {
     /// Whether or not this mapping applies to create (POST) operations.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "create")]
-    pub r#create: Box<Option<bool>>,
+    pub r#create: Option<bool>,
     /// Whether or not this mapping applies to DELETE operations.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "delete")]
-    pub r#delete: Box<Option<bool>>,
+    pub r#delete: Option<bool>,
     /// Whether or not this mapping applies to update (PATCH/PUT) operations.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "update")]
-    pub r#update: Box<Option<bool>>,
+    pub r#update: Option<bool>,
 }

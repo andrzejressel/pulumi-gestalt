@@ -8,19 +8,19 @@ pub struct InstanceGceSetupShieldedInstanceConfig {
     /// instance. The attestation is performed against the integrity policy baseline.
     /// This baseline is initially derived from the implicitly trusted boot image
     /// when the VM instance is created. Enabled by default.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableIntegrityMonitoring")]
-    pub r#enable_integrity_monitoring: Box<Option<bool>>,
+    pub r#enable_integrity_monitoring: Option<bool>,
     /// Optional. Defines whether the VM instance has Secure Boot enabled.
     /// Secure Boot helps ensure that the system only runs authentic software by verifying
     /// the digital signature of all boot components, and halting the boot process
     /// if signature verification fails. Disabled by default.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableSecureBoot")]
-    pub r#enable_secure_boot: Box<Option<bool>>,
+    pub r#enable_secure_boot: Option<bool>,
     /// Optional. Defines whether the VM instance has the vTPM enabled.
     /// Enabled by default.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableVtpm")]
-    pub r#enable_vtpm: Box<Option<bool>>,
+    pub r#enable_vtpm: Option<bool>,
 }

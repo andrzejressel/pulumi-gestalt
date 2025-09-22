@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecBackendDefaultClientPolicyTlValidationSubjectAlternativeName {
     #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendDefaultClientPolicyTlValidationSubjectAlternativeNameMatch>>,
+    pub r#matches: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendDefaultClientPolicyTlValidationSubjectAlternativeNameMatch>,
 }

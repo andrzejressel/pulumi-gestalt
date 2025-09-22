@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetAccountsAccount {
     /// Whether 2FA is enforced on the account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enforceTwofactor")]
-    pub r#enforce_twofactor: Box<Option<bool>>,
+    pub r#enforce_twofactor: Option<bool>,
     /// Account ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Account name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Account subscription type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

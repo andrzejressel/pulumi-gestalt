@@ -6,17 +6,17 @@ pub struct AgentKnowledgeBaseStorageConfigurationRedisEnterpriseCloudConfigurati
     /// ARN of the secret that you created in AWS Secrets Manager that is linked to your Redis Enterprise Cloud database.
     #[builder(into)]
     #[serde(rename = "credentialsSecretArn")]
-    pub r#credentials_secret_arn: Box<String>,
+    pub r#credentials_secret_arn: String,
     /// Endpoint URL of the Redis Enterprise Cloud database.
     #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<String>,
+    pub r#endpoint: String,
     /// The names of the fields to which to map information about the vector store. This block supports the following arguments:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fieldMapping")]
-    pub r#field_mapping: Box<Option<super::super::types::bedrock::AgentKnowledgeBaseStorageConfigurationRedisEnterpriseCloudConfigurationFieldMapping>>,
+    pub r#field_mapping: Option<Box<super::super::types::bedrock::AgentKnowledgeBaseStorageConfigurationRedisEnterpriseCloudConfigurationFieldMapping>>,
     /// Name of the vector index.
     #[builder(into)]
     #[serde(rename = "vectorIndexName")]
-    pub r#vector_index_name: Box<String>,
+    pub r#vector_index_name: String,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationGatewayProbeMatch {
     /// A snippet from the Response Body which must be present in the Response.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "body")]
-    pub r#body: Box<Option<String>>,
+    pub r#body: Option<String>,
     /// A list of allowed status codes for this Health Probe.
     #[builder(into)]
     #[serde(rename = "statusCodes")]
-    pub r#status_codes: Box<Vec<String>>,
+    pub r#status_codes: Vec<String>,
 }

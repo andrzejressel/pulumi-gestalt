@@ -6,13 +6,13 @@ pub struct ReceiptRuleWorkmailAction {
     /// The ARN of the WorkMail organization
     #[builder(into)]
     #[serde(rename = "organizationArn")]
-    pub r#organization_arn: Box<String>,
+    pub r#organization_arn: String,
     /// The position of the action in the receipt rule
     #[builder(into)]
     #[serde(rename = "position")]
-    pub r#position: Box<i32>,
+    pub r#position: i32,
     /// The ARN of an SNS topic to notify
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "topicArn")]
-    pub r#topic_arn: Box<Option<String>>,
+    pub r#topic_arn: Option<String>,
 }

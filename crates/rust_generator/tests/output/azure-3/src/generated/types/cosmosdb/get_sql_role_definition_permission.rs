@@ -6,5 +6,5 @@ pub struct GetSqlRoleDefinitionPermission {
     /// A list of data actions that are allowed for the Cosmos DB SQL Role Definition.
     #[builder(into)]
     #[serde(rename = "dataActions")]
-    pub r#data_actions: Box<Vec<String>>,
+    pub r#data_actions: Vec<String>,
 }

@@ -6,5 +6,5 @@ pub struct EventEndpointEventBus {
     /// The ARN of the event bus the endpoint is associated with.
     #[builder(into)]
     #[serde(rename = "eventBusArn")]
-    pub r#event_bus_arn: Box<String>,
+    pub r#event_bus_arn: String,
 }

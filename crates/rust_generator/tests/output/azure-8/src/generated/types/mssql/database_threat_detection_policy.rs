@@ -4,31 +4,31 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DatabaseThreatDetectionPolicy {
     /// Specifies a list of alerts which should be disabled. Possible values include `Access_Anomaly`, `Sql_Injection` and `Sql_Injection_Vulnerability`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disabledAlerts")]
-    pub r#disabled_alerts: Box<Option<Vec<String>>>,
+    pub r#disabled_alerts: Option<Vec<String>>,
     /// Should the account administrators be emailed when this alert is triggered? Possible values are `Enabled` or `Disabled`. Defaults to `Disabled`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emailAccountAdmins")]
-    pub r#email_account_admins: Box<Option<String>>,
+    pub r#email_account_admins: Option<String>,
     /// A list of email addresses which alerts should be sent to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emailAddresses")]
-    pub r#email_addresses: Box<Option<Vec<String>>>,
+    pub r#email_addresses: Option<Vec<String>>,
     /// Specifies the number of days to keep in the Threat Detection audit logs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionDays")]
-    pub r#retention_days: Box<Option<i32>>,
+    pub r#retention_days: Option<i32>,
     /// The State of the Policy. Possible values are `Enabled` or `Disabled`. Defaults to `Disabled`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
     /// Specifies the identifier key of the Threat Detection audit storage account. Required if `state` is `Enabled`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageAccountAccessKey")]
-    pub r#storage_account_access_key: Box<Option<String>>,
+    pub r#storage_account_access_key: Option<String>,
     /// Specifies the blob storage endpoint (e.g. <https://example.blob.core.windows.net>). This blob storage will hold all Threat Detection audit logs. Required if `state` is `Enabled`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageEndpoint")]
-    pub r#storage_endpoint: Box<Option<String>>,
+    pub r#storage_endpoint: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesEngineRuleAction {
     /// A `request_header` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestHeaders")]
-    pub r#request_headers: Box<Option<Vec<super::super::types::frontdoor::RulesEngineRuleActionRequestHeader>>>,
+    pub r#request_headers: Option<Vec<super::super::types::frontdoor::RulesEngineRuleActionRequestHeader>>,
     /// A `response_header` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "responseHeaders")]
-    pub r#response_headers: Box<Option<Vec<super::super::types::frontdoor::RulesEngineRuleActionResponseHeader>>>,
+    pub r#response_headers: Option<Vec<super::super::types::frontdoor::RulesEngineRuleActionResponseHeader>>,
 }

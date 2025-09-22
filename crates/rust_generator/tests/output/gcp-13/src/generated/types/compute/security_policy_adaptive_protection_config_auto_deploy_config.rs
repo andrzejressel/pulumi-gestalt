@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SecurityPolicyAdaptiveProtectionConfigAutoDeployConfig {
     /// Rules are only automatically deployed for alerts on potential attacks with confidence scores greater than this threshold.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "confidenceThreshold")]
-    pub r#confidence_threshold: Box<Option<f64>>,
+    pub r#confidence_threshold: Option<f64>,
     /// Google Cloud Armor stops applying the action in the automatically deployed rule to an identified attacker after this duration. The rule continues to operate against new requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expirationSec")]
-    pub r#expiration_sec: Box<Option<i32>>,
+    pub r#expiration_sec: Option<i32>,
     /// Rules are only automatically deployed when the estimated impact to baseline traffic from the suggested mitigation is below this threshold.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "impactedBaselineThreshold")]
-    pub r#impacted_baseline_threshold: Box<Option<f64>>,
+    pub r#impacted_baseline_threshold: Option<f64>,
     /// Identifies new attackers only when the load to the backend service that is under attack exceeds this threshold.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loadThreshold")]
-    pub r#load_threshold: Box<Option<f64>>,
+    pub r#load_threshold: Option<f64>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirehoseDeliveryStreamOpensearchserverlessConfigurationProcessingConfiguration {
     /// Enables or disables data processing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Specifies the data processors as multiple blocks. See `processors` block below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "processors")]
-    pub r#processors: Box<Option<Vec<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchserverlessConfigurationProcessingConfigurationProcessor>>>,
+    pub r#processors: Option<Vec<super::super::types::kinesis::FirehoseDeliveryStreamOpensearchserverlessConfigurationProcessingConfigurationProcessor>>,
 }

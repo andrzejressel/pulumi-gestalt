@@ -6,5 +6,5 @@ pub struct GetThemeConfigurationTypographyFontFamily {
     /// Font family name.
     #[builder(into)]
     #[serde(rename = "fontFamily")]
-    pub r#font_family: Box<String>,
+    pub r#font_family: String,
 }

@@ -6,9 +6,9 @@ pub struct VoiceConnectorTerminationCredentialsCredential {
     /// RFC2617 compliant password associated with the SIP credentials.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// RFC2617 compliant username associated with the SIP credentials.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

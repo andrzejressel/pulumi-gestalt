@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ImageOutputResourceContainer {
     /// Set of URIs for created containers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageUris")]
-    pub r#image_uris: Box<Option<Vec<String>>>,
+    pub r#image_uris: Option<Vec<String>>,
     /// Region of the container image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
 }

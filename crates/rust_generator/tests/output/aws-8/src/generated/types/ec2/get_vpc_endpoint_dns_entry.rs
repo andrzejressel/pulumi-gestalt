@@ -6,9 +6,9 @@ pub struct GetVpcEndpointDnsEntry {
     /// DNS name.
     #[builder(into)]
     #[serde(rename = "dnsName")]
-    pub r#dns_name: Box<String>,
+    pub r#dns_name: String,
     /// ID of the private hosted zone.
     #[builder(into)]
     #[serde(rename = "hostedZoneId")]
-    pub r#hosted_zone_id: Box<String>,
+    pub r#hosted_zone_id: String,
 }

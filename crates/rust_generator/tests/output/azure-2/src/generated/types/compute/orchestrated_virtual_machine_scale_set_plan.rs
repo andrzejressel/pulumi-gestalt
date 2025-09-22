@@ -6,13 +6,13 @@ pub struct OrchestratedVirtualMachineScaleSetPlan {
     /// Specifies the name of the image from the marketplace. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the product of the image from the marketplace. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "product")]
-    pub r#product: Box<String>,
+    pub r#product: String,
     /// Specifies the publisher of the image. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<String>,
+    pub r#publisher: String,
 }

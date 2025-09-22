@@ -8,5 +8,5 @@ pub struct TableExternalDataConfigurationAvroOptions {
     /// (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER).
     #[builder(into)]
     #[serde(rename = "useAvroLogicalTypes")]
-    pub r#use_avro_logical_types: Box<bool>,
+    pub r#use_avro_logical_types: bool,
 }

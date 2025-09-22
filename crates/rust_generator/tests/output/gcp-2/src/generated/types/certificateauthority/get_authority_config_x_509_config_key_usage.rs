@@ -6,13 +6,13 @@ pub struct GetAuthorityConfigX509ConfigKeyUsage {
     /// Describes high-level ways in which a key may be used.
     #[builder(into)]
     #[serde(rename = "baseKeyUsages")]
-    pub r#base_key_usages: Box<Vec<super::super::types::certificateauthority::GetAuthorityConfigX509ConfigKeyUsageBaseKeyUsage>>,
+    pub r#base_key_usages: Vec<super::super::types::certificateauthority::GetAuthorityConfigX509ConfigKeyUsageBaseKeyUsage>,
     /// Describes high-level ways in which a key may be used.
     #[builder(into)]
     #[serde(rename = "extendedKeyUsages")]
-    pub r#extended_key_usages: Box<Vec<super::super::types::certificateauthority::GetAuthorityConfigX509ConfigKeyUsageExtendedKeyUsage>>,
+    pub r#extended_key_usages: Vec<super::super::types::certificateauthority::GetAuthorityConfigX509ConfigKeyUsageExtendedKeyUsage>,
     /// An ObjectId specifies an object identifier (OID). These provide context and describe types in ASN.1 messages.
     #[builder(into)]
     #[serde(rename = "unknownExtendedKeyUsages")]
-    pub r#unknown_extended_key_usages: Box<Vec<super::super::types::certificateauthority::GetAuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage>>,
+    pub r#unknown_extended_key_usages: Vec<super::super::types::certificateauthority::GetAuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsage>,
 }

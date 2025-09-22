@@ -6,9 +6,9 @@ pub struct GetLinuxFunctionAppSiteCredential {
     /// The name which should be used for this Linux Function App.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The Site Credentials Password used for publishing.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThemeConfigurationTypographyFontFamily {
     /// Font family name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fontFamily")]
-    pub r#font_family: Box<Option<String>>,
+    pub r#font_family: Option<String>,
 }

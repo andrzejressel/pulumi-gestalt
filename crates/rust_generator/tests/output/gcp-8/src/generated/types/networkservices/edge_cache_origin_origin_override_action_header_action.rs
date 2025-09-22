@@ -6,7 +6,7 @@ pub struct EdgeCacheOriginOriginOverrideActionHeaderAction {
     /// Describes a header to add.
     /// You may add a maximum of 25 request headers.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestHeadersToAdds")]
-    pub r#request_headers_to_adds: Box<Option<Vec<super::super::types::networkservices::EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd>>>,
+    pub r#request_headers_to_adds: Option<Vec<super::super::types::networkservices::EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd>>,
 }

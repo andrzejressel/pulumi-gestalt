@@ -10,5 +10,5 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationReferen
     /// The type of record format. Valid values: `CSV`, `JSON`.
     #[builder(into)]
     #[serde(rename = "recordFormatType")]
-    pub r#record_format_type: Box<String>,
+    pub r#record_format_type: String,
 }

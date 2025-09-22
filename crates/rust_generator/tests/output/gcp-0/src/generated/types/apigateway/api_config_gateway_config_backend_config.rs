@@ -7,5 +7,5 @@ pub struct ApiConfigGatewayConfigBackendConfig {
     /// (https://cloud.google.com/service-infrastructure/docs/service-management/reference/rest/v1/services.configs#backend).
     #[builder(into)]
     #[serde(rename = "googleServiceAccount")]
-    pub r#google_service_account: Box<String>,
+    pub r#google_service_account: String,
 }

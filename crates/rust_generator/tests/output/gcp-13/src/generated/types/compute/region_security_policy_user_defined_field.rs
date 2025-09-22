@@ -11,23 +11,23 @@ pub struct RegionSecurityPolicyUserDefinedField {
     /// Possible values are: `IPV4`, `IPV6`, `TCP`, `UDP`.
     #[builder(into)]
     #[serde(rename = "base")]
-    pub r#base: Box<String>,
+    pub r#base: String,
     /// If specified, apply this mask (bitwise AND) to the field to ignore bits before matching.
     /// Encoded as a hexadecimal number (starting with "0x").
     /// The last byte of the field (in network byte order) corresponds to the least significant byte of the mask.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mask")]
-    pub r#mask: Box<Option<String>>,
+    pub r#mask: Option<String>,
     /// Name of the user-defined field, as given in the definition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Offset of the first byte of the field (in network byte order) relative to 'base'.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "offset")]
-    pub r#offset: Box<Option<i32>>,
+    pub r#offset: Option<i32>,
     /// Size of the field in bytes. Valid values: 1-4.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<Option<i32>>,
+    pub r#size: Option<i32>,
 }

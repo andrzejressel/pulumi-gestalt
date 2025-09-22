@@ -6,9 +6,9 @@ pub struct GetResponseHeadersPolicySecurityHeadersConfigReferrerPolicy {
     /// Whether CloudFront overrides the X-XSS-Protection HTTP response header received from the origin with the one specified in this response headers policy.
     #[builder(into)]
     #[serde(rename = "override")]
-    pub r#override_: Box<bool>,
+    pub r#override_: bool,
     /// Value of the Referrer-Policy HTTP response header. Valid Values: `no-referrer` | `no-referrer-when-downgrade` | `origin` | `origin-when-cross-origin` | `same-origin` | `strict-origin` | `strict-origin-when-cross-origin` | `unsafe-url`
     #[builder(into)]
     #[serde(rename = "referrerPolicy")]
-    pub r#referrer_policy: Box<String>,
+    pub r#referrer_policy: String,
 }

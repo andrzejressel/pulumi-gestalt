@@ -6,13 +6,13 @@ pub struct MetricBucketOptionsExponentialBuckets {
     /// Must be greater than 1.
     #[builder(into)]
     #[serde(rename = "growthFactor")]
-    pub r#growth_factor: Box<f64>,
+    pub r#growth_factor: f64,
     /// Must be greater than 0.
     #[builder(into)]
     #[serde(rename = "numFiniteBuckets")]
-    pub r#num_finite_buckets: Box<i32>,
+    pub r#num_finite_buckets: i32,
     /// Must be greater than 0.
     #[builder(into)]
     #[serde(rename = "scale")]
-    pub r#scale: Box<f64>,
+    pub r#scale: f64,
 }

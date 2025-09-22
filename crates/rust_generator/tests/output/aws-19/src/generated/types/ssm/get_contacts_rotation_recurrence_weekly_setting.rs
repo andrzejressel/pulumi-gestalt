@@ -5,8 +5,8 @@
 pub struct GetContactsRotationRecurrenceWeeklySetting {
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     #[builder(into)]
     #[serde(rename = "handOffTimes")]
-    pub r#hand_off_times: Box<Vec<super::super::types::ssm::GetContactsRotationRecurrenceWeeklySettingHandOffTime>>,
+    pub r#hand_off_times: Vec<super::super::types::ssm::GetContactsRotationRecurrenceWeeklySettingHandOffTime>,
 }

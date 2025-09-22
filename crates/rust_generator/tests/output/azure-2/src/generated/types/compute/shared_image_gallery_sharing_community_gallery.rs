@@ -6,21 +6,21 @@ pub struct SharedImageGallerySharingCommunityGallery {
     /// The End User Licence Agreement for the Shared Image Gallery. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "eula")]
-    pub r#eula: Box<String>,
+    pub r#eula: String,
     /// Specifies the name of the Shared Image Gallery. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Prefix of the community public name for the Shared Image Gallery. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<String>,
+    pub r#prefix: String,
     /// Email of the publisher for the Shared Image Gallery. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "publisherEmail")]
-    pub r#publisher_email: Box<String>,
+    pub r#publisher_email: String,
     /// URI of the publisher for the Shared Image Gallery. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "publisherUri")]
-    pub r#publisher_uri: Box<String>,
+    pub r#publisher_uri: String,
 }

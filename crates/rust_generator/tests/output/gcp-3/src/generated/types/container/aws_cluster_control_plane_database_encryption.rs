@@ -6,5 +6,5 @@ pub struct AwsClusterControlPlaneDatabaseEncryption {
     /// The ARN of the AWS KMS key used to encrypt cluster secrets.
     #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<String>,
+    pub r#kms_key_arn: String,
 }

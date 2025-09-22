@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InsightsReportConfigCsvOptions {
     /// The delimiter used to separate the fields in the inventory report CSV file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "delimiter")]
-    pub r#delimiter: Box<Option<String>>,
+    pub r#delimiter: Option<String>,
     /// The boolean that indicates whether or not headers are included in the inventory report CSV file.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerRequired")]
-    pub r#header_required: Box<Option<bool>>,
+    pub r#header_required: Option<bool>,
     /// The character used to separate the records in the inventory report CSV file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordSeparator")]
-    pub r#record_separator: Box<Option<String>>,
+    pub r#record_separator: Option<String>,
 }

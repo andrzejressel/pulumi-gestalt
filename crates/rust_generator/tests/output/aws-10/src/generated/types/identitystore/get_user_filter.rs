@@ -6,9 +6,9 @@ pub struct GetUserFilter {
     /// Attribute path that is used to specify which attribute name to search. Currently, `UserName` is the only valid attribute path.
     #[builder(into)]
     #[serde(rename = "attributePath")]
-    pub r#attribute_path: Box<String>,
+    pub r#attribute_path: String,
     /// Value for an attribute.
     #[builder(into)]
     #[serde(rename = "attributeValue")]
-    pub r#attribute_value: Box<String>,
+    pub r#attribute_value: String,
 }

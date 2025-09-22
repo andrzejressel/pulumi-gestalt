@@ -6,15 +6,15 @@ pub struct LanguageModelInputDataConfig {
     /// IAM role with access to S3 bucket.
     #[builder(into)]
     #[serde(rename = "dataAccessRoleArn")]
-    pub r#data_access_role_arn: Box<String>,
+    pub r#data_access_role_arn: String,
     /// S3 URI where training data is located.
     #[builder(into)]
     #[serde(rename = "s3Uri")]
-    pub r#s_3_uri: Box<String>,
+    pub r#s_3_uri: String,
     /// S3 URI where tuning data is located.
     /// 
     /// The following arguments are optional:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tuningDataS3Uri")]
-    pub r#tuning_data_s_3_uri: Box<Option<String>>,
+    pub r#tuning_data_s_3_uri: Option<String>,
 }

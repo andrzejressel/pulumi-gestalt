@@ -6,9 +6,9 @@ pub struct GroupConfigurationParameter {
     /// The name of the group configuration parameter.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value or values to be used for the specified parameter.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

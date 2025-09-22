@@ -10,9 +10,9 @@ pub struct PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecifi
     /// Statistic of the metrics to return.
     #[builder(into)]
     #[serde(rename = "stat")]
-    pub r#stat: Box<String>,
+    pub r#stat: String,
     /// Unit of the metrics to return.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<Option<String>>,
+    pub r#unit: Option<String>,
 }

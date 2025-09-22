@@ -6,5 +6,5 @@ pub struct FlowDefinitionHumanLoopRequestSource {
     /// Specifies whether Amazon Rekognition or Amazon Textract are used as the integration source. Valid values are: `AWS/Rekognition/DetectModerationLabels/Image/V3` and `AWS/Textract/AnalyzeDocument/Forms/V1`.
     #[builder(into)]
     #[serde(rename = "awsManagedHumanLoopRequestSource")]
-    pub r#aws_managed_human_loop_request_source: Box<String>,
+    pub r#aws_managed_human_loop_request_source: String,
 }

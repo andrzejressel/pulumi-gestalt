@@ -6,9 +6,9 @@ pub struct ContinuousDeploymentPolicyTrafficConfigSingleHeaderConfig {
     /// Request header name to send to the staging distribution. The header must contain the prefix `aws-cf-cd-`.
     #[builder(into)]
     #[serde(rename = "header")]
-    pub r#header: Box<String>,
+    pub r#header: String,
     /// Request header value.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

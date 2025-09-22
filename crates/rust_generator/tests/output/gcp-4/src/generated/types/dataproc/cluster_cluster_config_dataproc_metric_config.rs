@@ -6,5 +6,5 @@ pub struct ClusterClusterConfigDataprocMetricConfig {
     /// Metrics sources to enable.
     #[builder(into)]
     #[serde(rename = "metrics")]
-    pub r#metrics: Box<Vec<super::super::types::dataproc::ClusterClusterConfigDataprocMetricConfigMetric>>,
+    pub r#metrics: Vec<super::super::types::dataproc::ClusterClusterConfigDataprocMetricConfigMetric>,
 }

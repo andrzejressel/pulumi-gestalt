@@ -6,13 +6,13 @@ pub struct CustomProviderResourceType {
     /// Specifies the endpoint of the route definition.
     #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<String>,
+    pub r#endpoint: String,
     /// Specifies the name of the route definition.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The routing type that is supported for the resource request. Valid values are `Proxy` and `Proxy,Cache`. Defaults to `Proxy`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "routingType")]
-    pub r#routing_type: Box<Option<String>>,
+    pub r#routing_type: Option<String>,
 }

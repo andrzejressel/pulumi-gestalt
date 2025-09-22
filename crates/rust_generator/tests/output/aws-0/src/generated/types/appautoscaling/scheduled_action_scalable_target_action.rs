@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScheduledActionScalableTargetAction {
     /// Maximum capacity. At least one of `max_capacity` or `min_capacity` must be set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxCapacity")]
-    pub r#max_capacity: Box<Option<i32>>,
+    pub r#max_capacity: Option<i32>,
     /// Minimum capacity. At least one of `min_capacity` or `max_capacity` must be set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minCapacity")]
-    pub r#min_capacity: Box<Option<i32>>,
+    pub r#min_capacity: Option<i32>,
 }

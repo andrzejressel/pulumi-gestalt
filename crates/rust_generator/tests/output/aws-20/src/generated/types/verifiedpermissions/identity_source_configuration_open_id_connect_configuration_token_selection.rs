@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelection {
     /// The OIDC configuration for processing access tokens. See Access Token Only below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessTokenOnly")]
-    pub r#access_token_only: Box<Option<super::super::types::verifiedpermissions::IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionAccessTokenOnly>>,
+    pub r#access_token_only: Option<Box<super::super::types::verifiedpermissions::IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionAccessTokenOnly>>,
     /// The OIDC configuration for processing identity (ID) tokens. See Identity Token Only below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityTokenOnly")]
-    pub r#identity_token_only: Box<Option<super::super::types::verifiedpermissions::IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionIdentityTokenOnly>>,
+    pub r#identity_token_only: Option<Box<super::super::types::verifiedpermissions::IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionIdentityTokenOnly>>,
 }

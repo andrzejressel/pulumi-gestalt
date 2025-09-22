@@ -6,5 +6,5 @@ pub struct DeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute {
     /// List of Amazon Resource Names (ARNs) of the load balancer listeners.
     #[builder(into)]
     #[serde(rename = "listenerArns")]
-    pub r#listener_arns: Box<Vec<String>>,
+    pub r#listener_arns: Vec<String>,
 }

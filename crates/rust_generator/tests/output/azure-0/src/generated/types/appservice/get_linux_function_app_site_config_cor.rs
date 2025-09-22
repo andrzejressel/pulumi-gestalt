@@ -6,9 +6,9 @@ pub struct GetLinuxFunctionAppSiteConfigCor {
     /// A list of origins that are allowed to make cross-origin calls.
     #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Vec<String>>,
+    pub r#allowed_origins: Vec<String>,
     /// Are credentials allowed in CORS requests?
     #[builder(into)]
     #[serde(rename = "supportCredentials")]
-    pub r#support_credentials: Box<bool>,
+    pub r#support_credentials: bool,
 }

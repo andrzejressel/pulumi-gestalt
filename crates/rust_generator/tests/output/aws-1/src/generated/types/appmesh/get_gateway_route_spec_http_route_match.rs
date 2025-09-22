@@ -5,20 +5,20 @@
 pub struct GetGatewayRouteSpecHttpRouteMatch {
     #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteMatchHeader>>,
+    pub r#headers: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteMatchHeader>,
     #[builder(into)]
     #[serde(rename = "hostnames")]
-    pub r#hostnames: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteMatchHostname>>,
+    pub r#hostnames: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteMatchHostname>,
     #[builder(into)]
     #[serde(rename = "paths")]
-    pub r#paths: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteMatchPath>>,
+    pub r#paths: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteMatchPath>,
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<String>,
+    pub r#prefix: String,
     #[builder(into)]
     #[serde(rename = "queryParameters")]
-    pub r#query_parameters: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteMatchQueryParameter>>,
+    pub r#query_parameters: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteMatchQueryParameter>,
 }

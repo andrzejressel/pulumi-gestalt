@@ -6,9 +6,9 @@ pub struct FormTypeImport {
     /// Name of the form type. Must be the name of the structure in smithy document.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Revision of the Form Type.
     #[builder(into)]
     #[serde(rename = "revision")]
-    pub r#revision: Box<String>,
+    pub r#revision: String,
 }

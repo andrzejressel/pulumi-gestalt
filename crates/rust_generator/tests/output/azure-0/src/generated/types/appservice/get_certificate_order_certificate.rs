@@ -6,17 +6,17 @@ pub struct GetCertificateOrderCertificate {
     /// The name of the App Service Certificate.
     #[builder(into)]
     #[serde(rename = "certificateName")]
-    pub r#certificate_name: Box<String>,
+    pub r#certificate_name: String,
     /// Key Vault resource Id.
     #[builder(into)]
     #[serde(rename = "keyVaultId")]
-    pub r#key_vault_id: Box<String>,
+    pub r#key_vault_id: String,
     /// Key Vault secret name.
     #[builder(into)]
     #[serde(rename = "keyVaultSecretName")]
-    pub r#key_vault_secret_name: Box<String>,
+    pub r#key_vault_secret_name: String,
     /// Status of the Key Vault secret.
     #[builder(into)]
     #[serde(rename = "provisioningState")]
-    pub r#provisioning_state: Box<String>,
+    pub r#provisioning_state: String,
 }

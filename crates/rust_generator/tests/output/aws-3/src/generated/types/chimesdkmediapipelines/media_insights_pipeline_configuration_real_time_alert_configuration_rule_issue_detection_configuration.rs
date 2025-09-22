@@ -6,5 +6,5 @@ pub struct MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRuleIssue
     /// Rule name.
     #[builder(into)]
     #[serde(rename = "ruleName")]
-    pub r#rule_name: Box<String>,
+    pub r#rule_name: String,
 }

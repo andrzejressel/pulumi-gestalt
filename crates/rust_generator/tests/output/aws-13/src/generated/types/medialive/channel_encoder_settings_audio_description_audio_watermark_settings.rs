@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nielsenWatermarksSettings")]
-    pub r#nielsen_watermarks_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettings>>,
+    pub r#nielsen_watermarks_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettings>>,
 }

@@ -6,13 +6,13 @@ pub struct SlotAuthSettingsMicrosoft {
     /// The OAuth 2.0 client ID that was created for the app used for authentication.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The OAuth 2.0 client secret that was created for the app used for authentication.
     #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<String>,
+    pub r#client_secret: String,
     /// The OAuth 2.0 scopes that will be requested as part of Microsoft Account authentication. <https://msdn.microsoft.com/en-us/library/dn631845.aspx>
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oauthScopes")]
-    pub r#oauth_scopes: Box<Option<Vec<String>>>,
+    pub r#oauth_scopes: Option<Vec<String>>,
 }

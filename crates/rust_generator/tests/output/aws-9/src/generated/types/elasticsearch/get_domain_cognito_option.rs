@@ -6,17 +6,17 @@ pub struct GetDomainCognitoOption {
     /// Whether node to node encryption is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The Cognito Identity pool used by the domain.
     #[builder(into)]
     #[serde(rename = "identityPoolId")]
-    pub r#identity_pool_id: Box<String>,
+    pub r#identity_pool_id: String,
     /// The IAM Role with the AmazonESCognitoAccess policy attached.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// The Cognito User pool used by the domain.
     #[builder(into)]
     #[serde(rename = "userPoolId")]
-    pub r#user_pool_id: Box<String>,
+    pub r#user_pool_id: String,
 }

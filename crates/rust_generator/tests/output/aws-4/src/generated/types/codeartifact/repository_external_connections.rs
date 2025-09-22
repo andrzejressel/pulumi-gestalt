@@ -6,11 +6,11 @@ pub struct RepositoryExternalConnections {
     /// The name of the external connection associated with a repository.
     #[builder(into)]
     #[serde(rename = "externalConnectionName")]
-    pub r#external_connection_name: Box<String>,
-    #[builder(into, default)]
+    pub r#external_connection_name: String,
+    #[builder(into)]
     #[serde(rename = "packageFormat")]
-    pub r#package_format: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#package_format: Option<String>,
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
 }

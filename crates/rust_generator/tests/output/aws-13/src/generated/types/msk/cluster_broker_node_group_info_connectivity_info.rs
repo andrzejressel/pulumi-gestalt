@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterBrokerNodeGroupInfoConnectivityInfo {
     /// Access control settings for brokers. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicAccess")]
-    pub r#public_access: Box<Option<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess>>,
+    pub r#public_access: Option<Box<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess>>,
     /// VPC connectivity access control for brokers. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpcConnectivity")]
-    pub r#vpc_connectivity: Box<Option<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity>>,
+    pub r#vpc_connectivity: Option<Box<super::super::types::msk::ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity>>,
 }

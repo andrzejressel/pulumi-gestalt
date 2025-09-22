@@ -6,9 +6,9 @@ pub struct GetDomainInboundIpRule {
     /// The action to take when the rule is matched. Possible values are `Allow`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// The IP mask (CIDR) to match on.
     #[builder(into)]
     #[serde(rename = "ipMask")]
-    pub r#ip_mask: Box<String>,
+    pub r#ip_mask: String,
 }

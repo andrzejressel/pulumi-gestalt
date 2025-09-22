@@ -9,7 +9,7 @@ pub struct ClusterGcpConfig {
     #[serde(rename = "accessConfig")]
     pub r#access_config: Box<super::super::types::managedkafka::ClusterGcpConfigAccessConfig>,
     /// The Cloud KMS Key name to use for encryption. The key must be located in the same region as the cluster and cannot be changed. Must be in the format `projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKey")]
-    pub r#kms_key: Box<Option<String>>,
+    pub r#kms_key: Option<String>,
 }

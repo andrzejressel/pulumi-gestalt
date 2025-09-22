@@ -5,8 +5,8 @@
 pub struct GetGatewayRouteSpecHttp2RouteMatchPath {
     #[builder(into)]
     #[serde(rename = "exact")]
-    pub r#exact: Box<String>,
+    pub r#exact: String,
     #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<String>,
+    pub r#regex: String,
 }

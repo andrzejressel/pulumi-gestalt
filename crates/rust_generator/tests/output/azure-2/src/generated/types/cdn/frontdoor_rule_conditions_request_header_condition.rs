@@ -6,21 +6,21 @@ pub struct FrontdoorRuleConditionsRequestHeaderCondition {
     /// A string value representing the name of the `POST` argument.
     #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<String>,
+    pub r#header_name: String,
     /// One or more string or integer values(e.g. "1") representing the value of the request header to match. If multiple values are specified, they're evaluated using `OR` logic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "matchValues")]
-    pub r#match_values: Box<Option<Vec<String>>>,
+    pub r#match_values: Option<Vec<String>>,
     /// If `true` operator becomes the opposite of its value. Possible values `true` or `false`. Defaults to `false`. Details can be found in the `Condition Operator List` below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "negateCondition")]
-    pub r#negate_condition: Box<Option<bool>>,
+    pub r#negate_condition: Option<bool>,
     /// A Conditional operator. Possible values include `Any`, `Equal`, `Contains`, `BeginsWith`, `EndsWith`, `LessThan`, `LessThanOrEqual`, `GreaterThan`, `GreaterThanOrEqual` or `RegEx`. Details can be found in the `Condition Operator List` below.
     #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<String>,
+    pub r#operator: String,
     /// A Conditional operator. Possible values include `Lowercase`, `RemoveNulls`, `Trim`, `Uppercase`, `UrlDecode` or `UrlEncode`. Details can be found in the `Condition Transform List` below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transforms")]
-    pub r#transforms: Box<Option<Vec<String>>>,
+    pub r#transforms: Option<Vec<String>>,
 }

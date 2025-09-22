@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BudgetActionDefinitionIamActionDefinition {
     /// A list of groups to be attached. There must be at least one group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groups")]
-    pub r#groups: Box<Option<Vec<String>>>,
+    pub r#groups: Option<Vec<String>>,
     /// The Amazon Resource Name (ARN) of the policy to be attached.
     #[builder(into)]
     #[serde(rename = "policyArn")]
-    pub r#policy_arn: Box<String>,
+    pub r#policy_arn: String,
     /// A list of roles to be attached. There must be at least one role.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "roles")]
-    pub r#roles: Box<Option<Vec<String>>>,
+    pub r#roles: Option<Vec<String>>,
     /// A list of users to be attached. There must be at least one user.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "users")]
-    pub r#users: Box<Option<Vec<String>>>,
+    pub r#users: Option<Vec<String>>,
 }

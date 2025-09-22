@@ -6,5 +6,5 @@ pub struct GetResourcePolicyInstanceSchedulePolicyVmStopSchedule {
     /// Specifies the frequency for the operation, using the unix-cron format.
     #[builder(into)]
     #[serde(rename = "schedule")]
-    pub r#schedule: Box<String>,
+    pub r#schedule: String,
 }

@@ -6,21 +6,21 @@ pub struct GetHubApnsCredential {
     /// The Application Mode which defines which server the APNS Messages should be sent to. Possible values are `Production` and `Sandbox`.
     #[builder(into)]
     #[serde(rename = "applicationMode")]
-    pub r#application_mode: Box<String>,
+    pub r#application_mode: String,
     /// The Bundle ID of the iOS/macOS application to send push notifications for, such as `com.org.example`.
     #[builder(into)]
     #[serde(rename = "bundleId")]
-    pub r#bundle_id: Box<String>,
+    pub r#bundle_id: String,
     /// The Apple Push Notifications Service (APNS) Key.
     #[builder(into)]
     #[serde(rename = "keyId")]
-    pub r#key_id: Box<String>,
+    pub r#key_id: String,
     /// The ID of the team the Token.
     #[builder(into)]
     #[serde(rename = "teamId")]
-    pub r#team_id: Box<String>,
+    pub r#team_id: String,
     /// The Push Token associated with the Apple Developer Account.
     #[builder(into)]
     #[serde(rename = "token")]
-    pub r#token: Box<String>,
+    pub r#token: String,
 }

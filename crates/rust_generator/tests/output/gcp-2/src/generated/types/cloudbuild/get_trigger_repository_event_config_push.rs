@@ -9,16 +9,16 @@ pub struct GetTriggerRepositoryEventConfigPush {
     /// RE2 and described at https://github.com/google/re2/wiki/Syntax
     #[builder(into)]
     #[serde(rename = "branch")]
-    pub r#branch: Box<String>,
+    pub r#branch: String,
     /// If true, only trigger a build if the revision regex does NOT match the git_ref regex.
     #[builder(into)]
     #[serde(rename = "invertRegex")]
-    pub r#invert_regex: Box<bool>,
+    pub r#invert_regex: bool,
     /// Regex of tags to match.
     /// 
     /// The syntax of the regular expressions accepted is the syntax accepted by
     /// RE2 and described at https://github.com/google/re2/wiki/Syntax
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<String>,
+    pub r#tag: String,
 }

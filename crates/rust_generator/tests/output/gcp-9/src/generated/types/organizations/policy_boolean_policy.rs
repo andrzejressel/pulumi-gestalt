@@ -6,5 +6,5 @@ pub struct PolicyBooleanPolicy {
     /// If true, then the Policy is enforced. If false, then any configuration is acceptable.
     #[builder(into)]
     #[serde(rename = "enforced")]
-    pub r#enforced: Box<bool>,
+    pub r#enforced: bool,
 }

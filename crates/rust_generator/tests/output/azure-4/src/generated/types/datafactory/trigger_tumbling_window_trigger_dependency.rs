@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TriggerTumblingWindowTriggerDependency {
     /// The offset of the dependency trigger. Must be in Timespan format (±hh:mm:ss) and must be a negative offset for a self dependency.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "offset")]
-    pub r#offset: Box<Option<String>>,
+    pub r#offset: Option<String>,
     /// The size of the dependency tumbling window. Must be in Timespan format (hh:mm:ss).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<Option<String>>,
+    pub r#size: Option<String>,
     /// The dependency trigger name. If not specified, it will use self dependency.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "triggerName")]
-    pub r#trigger_name: Box<Option<String>>,
+    pub r#trigger_name: Option<String>,
 }

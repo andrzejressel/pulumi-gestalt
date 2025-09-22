@@ -5,12 +5,12 @@
 pub struct RegistrationDnsSettings {
     /// Configuration for an arbitrary DNS provider.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customDns")]
-    pub r#custom_dns: Box<Option<super::super::types::clouddomains::RegistrationDnsSettingsCustomDns>>,
+    pub r#custom_dns: Option<Box<super::super::types::clouddomains::RegistrationDnsSettingsCustomDns>>,
     /// The list of glue records for this Registration. Commonly empty.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "glueRecords")]
-    pub r#glue_records: Box<Option<Vec<super::super::types::clouddomains::RegistrationDnsSettingsGlueRecord>>>,
+    pub r#glue_records: Option<Vec<super::super::types::clouddomains::RegistrationDnsSettingsGlueRecord>>,
 }

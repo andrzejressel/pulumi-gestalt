@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsS3Settings {
     /// Specify the canned ACL to apply to each S3 request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cannedAcl")]
-    pub r#canned_acl: Box<Option<String>>,
+    pub r#canned_acl: Option<String>,
 }

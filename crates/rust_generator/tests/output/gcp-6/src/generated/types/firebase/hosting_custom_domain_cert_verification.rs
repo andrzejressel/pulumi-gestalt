@@ -6,13 +6,13 @@ pub struct HostingCustomDomainCertVerification {
     /// A `TXT` record to add to your DNS records that confirms your intent to
     /// let Hosting create an SSL cert for your domain name.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dns")]
-    pub r#dns: Box<Option<super::super::types::firebase::HostingCustomDomainCertVerificationDns>>,
+    pub r#dns: Option<Box<super::super::types::firebase::HostingCustomDomainCertVerificationDns>>,
     /// A file to add to your existing, non-Hosting hosting service that confirms
     /// your intent to let Hosting create an SSL cert for your domain name.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "http")]
-    pub r#http: Box<Option<super::super::types::firebase::HostingCustomDomainCertVerificationHttp>>,
+    pub r#http: Option<Box<super::super::types::firebase::HostingCustomDomainCertVerificationHttp>>,
 }

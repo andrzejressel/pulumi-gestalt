@@ -6,23 +6,23 @@ pub struct VpnConnectionDetail {
     /// (Output)
     /// The Cloud Router info.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudRouters")]
-    pub r#cloud_routers: Box<Option<Vec<super::super::types::edgecontainer::VpnConnectionDetailCloudRouter>>>,
+    pub r#cloud_routers: Option<Vec<super::super::types::edgecontainer::VpnConnectionDetailCloudRouter>>,
     /// (Output)
     /// Each connection has multiple Cloud VPN gateways.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudVpns")]
-    pub r#cloud_vpns: Box<Option<Vec<super::super::types::edgecontainer::VpnConnectionDetailCloudVpn>>>,
+    pub r#cloud_vpns: Option<Vec<super::super::types::edgecontainer::VpnConnectionDetailCloudVpn>>,
     /// (Output)
     /// The error message. This is only populated when state=ERROR.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "error")]
-    pub r#error: Box<Option<String>>,
+    pub r#error: Option<String>,
     /// (Output)
     /// The current connection state.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

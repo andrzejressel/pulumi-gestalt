@@ -5,21 +5,21 @@
 pub struct PerInstanceConfigPreservedState {
     /// Stateful disks for the instance.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disks")]
-    pub r#disks: Box<Option<Vec<super::super::types::compute::PerInstanceConfigPreservedStateDisk>>>,
+    pub r#disks: Option<Vec<super::super::types::compute::PerInstanceConfigPreservedStateDisk>>,
     /// Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "externalIps")]
-    pub r#external_ips: Box<Option<Vec<super::super::types::compute::PerInstanceConfigPreservedStateExternalIp>>>,
+    pub r#external_ips: Option<Vec<super::super::types::compute::PerInstanceConfigPreservedStateExternalIp>>,
     /// Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "internalIps")]
-    pub r#internal_ips: Box<Option<Vec<super::super::types::compute::PerInstanceConfigPreservedStateInternalIp>>>,
+    pub r#internal_ips: Option<Vec<super::super::types::compute::PerInstanceConfigPreservedStateInternalIp>>,
     /// Preserved metadata defined for this instance. This is a list of key->value pairs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metadata")]
-    pub r#metadata: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#metadata: Option<std::collections::HashMap<String, String>>,
 }

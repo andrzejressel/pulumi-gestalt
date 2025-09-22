@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HttpRouteRuleActionResponseHeaderModifier {
     /// Add the headers with given map where key is the name of the header, value is the value of the header.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "add")]
-    pub r#add: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#add: Option<std::collections::HashMap<String, String>>,
     /// Remove headers (matching by header names) specified in the list.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "removes")]
-    pub r#removes: Box<Option<Vec<String>>>,
+    pub r#removes: Option<Vec<String>>,
     /// Completely overwrite/replace the headers with given map where key is the name of the header, value is the value of the header.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "set")]
-    pub r#set: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#set: Option<std::collections::HashMap<String, String>>,
 }

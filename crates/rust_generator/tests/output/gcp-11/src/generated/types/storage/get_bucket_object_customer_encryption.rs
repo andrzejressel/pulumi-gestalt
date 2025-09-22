@@ -6,9 +6,9 @@ pub struct GetBucketObjectCustomerEncryption {
     /// The encryption algorithm. Default: AES256
     #[builder(into)]
     #[serde(rename = "encryptionAlgorithm")]
-    pub r#encryption_algorithm: Box<String>,
+    pub r#encryption_algorithm: String,
     /// Base64 encoded customer supplied encryption key.
     #[builder(into)]
     #[serde(rename = "encryptionKey")]
-    pub r#encryption_key: Box<String>,
+    pub r#encryption_key: String,
 }

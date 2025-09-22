@@ -6,7 +6,7 @@ pub struct GetRouterConfigurationRouter {
     /// Router platform
     #[builder(into)]
     #[serde(rename = "platform")]
-    pub r#platform: Box<String>,
+    pub r#platform: String,
     /// ID of the Router Type. For example: `CiscoSystemsInc-2900SeriesRouters-IOS124`
     /// 
     /// There is currently no AWS API to retrieve the full list of `router_type_identifier` values. Here is a list of known `RouterType` objects that can be used:
@@ -27,20 +27,20 @@ pub struct GetRouterConfigurationRouter {
     /// ```
     #[builder(into)]
     #[serde(rename = "routerTypeIdentifier")]
-    pub r#router_type_identifier: Box<String>,
+    pub r#router_type_identifier: String,
     /// Router operating system
     #[builder(into)]
     #[serde(rename = "software")]
-    pub r#software: Box<String>,
+    pub r#software: String,
     /// Router vendor
     #[builder(into)]
     #[serde(rename = "vendor")]
-    pub r#vendor: Box<String>,
+    pub r#vendor: String,
     /// Router XSLT Template Name
     #[builder(into)]
     #[serde(rename = "xsltTemplateName")]
-    pub r#xslt_template_name: Box<String>,
+    pub r#xslt_template_name: String,
     #[builder(into)]
     #[serde(rename = "xsltTemplateNameForMacSec")]
-    pub r#xslt_template_name_for_mac_sec: Box<String>,
+    pub r#xslt_template_name_for_mac_sec: String,
 }

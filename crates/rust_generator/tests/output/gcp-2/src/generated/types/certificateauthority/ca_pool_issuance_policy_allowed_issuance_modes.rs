@@ -6,9 +6,9 @@ pub struct CaPoolIssuancePolicyAllowedIssuanceModes {
     /// When true, allows callers to create Certificates by specifying a CertificateConfig.
     #[builder(into)]
     #[serde(rename = "allowConfigBasedIssuance")]
-    pub r#allow_config_based_issuance: Box<bool>,
+    pub r#allow_config_based_issuance: bool,
     /// When true, allows callers to create Certificates by specifying a CSR.
     #[builder(into)]
     #[serde(rename = "allowCsrBasedIssuance")]
-    pub r#allow_csr_based_issuance: Box<bool>,
+    pub r#allow_csr_based_issuance: bool,
 }

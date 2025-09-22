@@ -6,9 +6,9 @@ pub struct SubscriberSubscriberIdentity {
     /// The AWS Regions where Security Lake is automatically enabled.
     #[builder(into)]
     #[serde(rename = "externalId")]
-    pub r#external_id: Box<String>,
+    pub r#external_id: String,
     /// Provides encryption details of Amazon Security Lake object.
     #[builder(into)]
     #[serde(rename = "principal")]
-    pub r#principal: Box<String>,
+    pub r#principal: String,
 }

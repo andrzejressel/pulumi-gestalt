@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobTemplateJobTemplateDataJobDriverSparkSqlJobDriver {
     /// The SQL file to be executed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "entryPoint")]
-    pub r#entry_point: Box<Option<String>>,
+    pub r#entry_point: Option<String>,
     /// The Spark parameters to be included in the Spark SQL command.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sparkSqlParameters")]
-    pub r#spark_sql_parameters: Box<Option<String>>,
+    pub r#spark_sql_parameters: Option<String>,
 }

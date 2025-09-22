@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceSettingsMetadata {
     /// A metadata key/value items map. The total size of all keys and values must be less than 512KB
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "items")]
-    pub r#items: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#items: Option<std::collections::HashMap<String, String>>,
 }

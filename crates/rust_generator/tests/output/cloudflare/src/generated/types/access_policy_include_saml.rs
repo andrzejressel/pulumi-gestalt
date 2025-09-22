@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccessPolicyIncludeSaml {
     /// The name of the SAML attribute.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attributeName")]
-    pub r#attribute_name: Box<Option<String>>,
+    pub r#attribute_name: Option<String>,
     /// The SAML attribute value to look for.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attributeValue")]
-    pub r#attribute_value: Box<Option<String>>,
+    pub r#attribute_value: Option<String>,
     /// The ID of your SAML identity provider.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityProviderId")]
-    pub r#identity_provider_id: Box<Option<String>>,
+    pub r#identity_provider_id: Option<String>,
 }

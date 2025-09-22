@@ -10,5 +10,5 @@ pub struct ClusterEncryptionConfig {
     /// List of strings with resources to be encrypted. Valid values: `secrets`.
     #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Box<Vec<String>>,
+    pub r#resources: Vec<String>,
 }

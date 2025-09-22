@@ -5,5 +5,5 @@
 pub struct MembershipEndpointGkeCluster {
     #[builder(into)]
     #[serde(rename = "resourceLink")]
-    pub r#resource_link: Box<String>,
+    pub r#resource_link: String,
 }

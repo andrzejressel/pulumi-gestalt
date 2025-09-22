@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipelineJobMappingPipelineJobMappingConfig {
     /// Describes the mapping configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Specifies the path to the mapping configuration for harmonization pipeline.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "whistleConfigSource")]
-    pub r#whistle_config_source: Box<Option<super::super::types::healthcare::PipelineJobMappingPipelineJobMappingConfigWhistleConfigSource>>,
+    pub r#whistle_config_source: Option<Box<super::super::types::healthcare::PipelineJobMappingPipelineJobMappingConfigWhistleConfigSource>>,
 }

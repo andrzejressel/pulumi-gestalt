@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThemeConfigurationSheet {
     /// The display options for tiles. See tile.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tile")]
-    pub r#tile: Box<Option<super::super::types::quicksight::ThemeConfigurationSheetTile>>,
+    pub r#tile: Option<Box<super::super::types::quicksight::ThemeConfigurationSheetTile>>,
     /// The layout options for tiles. See tile_layout.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tileLayout")]
-    pub r#tile_layout: Box<Option<super::super::types::quicksight::ThemeConfigurationSheetTileLayout>>,
+    pub r#tile_layout: Option<Box<super::super::types::quicksight::ThemeConfigurationSheetTileLayout>>,
 }

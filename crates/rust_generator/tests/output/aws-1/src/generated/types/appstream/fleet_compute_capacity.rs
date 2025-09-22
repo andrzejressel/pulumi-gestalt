@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetComputeCapacity {
     /// Number of currently available instances that can be used to stream sessions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "available")]
-    pub r#available: Box<Option<i32>>,
+    pub r#available: Option<i32>,
     /// Desired number of streaming instances.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "desiredInstances")]
-    pub r#desired_instances: Box<Option<i32>>,
+    pub r#desired_instances: Option<i32>,
     /// Desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "desiredSessions")]
-    pub r#desired_sessions: Box<Option<i32>>,
+    pub r#desired_sessions: Option<i32>,
     /// Number of instances in use for streaming.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inUse")]
-    pub r#in_use: Box<Option<i32>>,
+    pub r#in_use: Option<i32>,
     /// Total number of simultaneous streaming instances that are running.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "running")]
-    pub r#running: Box<Option<i32>>,
+    pub r#running: Option<i32>,
 }

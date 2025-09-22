@@ -8,9 +8,9 @@ pub struct BareMetalClusterControlPlane {
     /// documentation below to know the exact format:
     /// https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "apiServerArgs")]
-    pub r#api_server_args: Box<Option<Vec<super::super::types::gkeonprem::BareMetalClusterControlPlaneApiServerArg>>>,
+    pub r#api_server_args: Option<Vec<super::super::types::gkeonprem::BareMetalClusterControlPlaneApiServerArg>>,
     /// Configures the node pool running the control plane. If specified the corresponding NodePool will be created for the cluster's control plane. The NodePool will have the same name and namespace as the cluster.
     /// Structure is documented below.
     #[builder(into)]

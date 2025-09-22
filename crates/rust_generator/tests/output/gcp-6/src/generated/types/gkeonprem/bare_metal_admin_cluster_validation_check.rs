@@ -5,18 +5,18 @@
 pub struct BareMetalAdminClusterValidationCheck {
     /// (Output)
     /// Options used for the validation check.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "options")]
-    pub r#options: Box<Option<String>>,
+    pub r#options: Option<String>,
     /// (Output)
     /// The scenario when the preflight checks were run..
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scenario")]
-    pub r#scenario: Box<Option<String>>,
+    pub r#scenario: Option<String>,
     /// (Output)
     /// Specifies the detailed validation check status
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statuses")]
-    pub r#statuses: Box<Option<Vec<super::super::types::gkeonprem::BareMetalAdminClusterValidationCheckStatus>>>,
+    pub r#statuses: Option<Vec<super::super::types::gkeonprem::BareMetalAdminClusterValidationCheckStatus>>,
 }

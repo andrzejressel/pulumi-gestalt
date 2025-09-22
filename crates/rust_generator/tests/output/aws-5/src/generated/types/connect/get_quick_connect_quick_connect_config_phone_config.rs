@@ -6,5 +6,5 @@ pub struct GetQuickConnectQuickConnectConfigPhoneConfig {
     /// Phone number in in E.164 format.
     #[builder(into)]
     #[serde(rename = "phoneNumber")]
-    pub r#phone_number: Box<String>,
+    pub r#phone_number: String,
 }

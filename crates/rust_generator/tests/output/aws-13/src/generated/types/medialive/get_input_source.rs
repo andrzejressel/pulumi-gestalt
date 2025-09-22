@@ -5,11 +5,11 @@
 pub struct GetInputSource {
     #[builder(into)]
     #[serde(rename = "passwordParam")]
-    pub r#password_param: Box<String>,
+    pub r#password_param: String,
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

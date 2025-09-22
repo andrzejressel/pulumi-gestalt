@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CatalogTableStorageDescriptorColumn {
     /// Free-form text comment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "comment")]
-    pub r#comment: Box<Option<String>>,
+    pub r#comment: Option<String>,
     /// Name of the Column.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Key-value pairs defining properties associated with the column.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#parameters: Option<std::collections::HashMap<String, String>>,
     /// Datatype of data in the Column.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

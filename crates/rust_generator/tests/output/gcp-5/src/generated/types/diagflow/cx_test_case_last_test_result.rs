@@ -5,27 +5,27 @@
 pub struct CxTestCaseLastTestResult {
     /// The conversation turns uttered during the test case replay in chronological order.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "conversationTurns")]
-    pub r#conversation_turns: Box<Option<Vec<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurn>>>,
+    pub r#conversation_turns: Option<Vec<super::super::types::diagflow::CxTestCaseLastTestResultConversationTurn>>,
     /// Environment where the test was run. If not set, it indicates the draft environment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "environment")]
-    pub r#environment: Box<Option<String>>,
+    pub r#environment: Option<String>,
     /// The unique identifier of the page.
     /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Whether the test case passed in the agent environment.
     /// * PASSED: The test passed.
     /// * FAILED: The test did not pass.
     /// Possible values are: `PASSED`, `FAILED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "testResult")]
-    pub r#test_result: Box<Option<String>>,
+    pub r#test_result: Option<String>,
     /// The time that the test was run. A timestamp in RFC3339 text format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "testTime")]
-    pub r#test_time: Box<Option<String>>,
+    pub r#test_time: Option<String>,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MlTransformInputRecordTable {
     /// A unique identifier for the AWS Glue Data Catalog.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "catalogId")]
-    pub r#catalog_id: Box<Option<String>>,
+    pub r#catalog_id: Option<String>,
     /// The name of the connection to the AWS Glue Data Catalog.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionName")]
-    pub r#connection_name: Box<Option<String>>,
+    pub r#connection_name: Option<String>,
     /// A database name in the AWS Glue Data Catalog.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// A table name in the AWS Glue Data Catalog.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
 }

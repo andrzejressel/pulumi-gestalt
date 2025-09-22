@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetLaunchTemplateConfigOverrideInstanceRequirementsMemoryGibPerVcpu {
     /// The maximum amount of memory per vCPU, in GiB. To specify no maximum limit, omit this parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "max")]
-    pub r#max: Box<Option<f64>>,
+    pub r#max: Option<f64>,
     /// The minimum amount of memory per vCPU, in GiB. To specify no minimum limit, omit this parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "min")]
-    pub r#min: Box<Option<f64>>,
+    pub r#min: Option<f64>,
 }

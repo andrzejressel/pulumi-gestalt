@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StackSetManagedExecution {
     /// When set to true, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order. Default is false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "active")]
-    pub r#active: Box<Option<bool>>,
+    pub r#active: Option<bool>,
 }

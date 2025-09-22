@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServerlessCacheCacheUsageLimits {
     /// The maximum data storage limit in the cache, expressed in Gigabytes. See `data_storage` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataStorage")]
-    pub r#data_storage: Box<Option<super::super::types::elasticache::ServerlessCacheCacheUsageLimitsDataStorage>>,
+    pub r#data_storage: Option<Box<super::super::types::elasticache::ServerlessCacheCacheUsageLimitsDataStorage>>,
     /// The configuration for the number of ElastiCache Processing Units (ECPU) the cache can consume per second. See `ecpu_per_second` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ecpuPerSeconds")]
-    pub r#ecpu_per_seconds: Box<Option<Vec<super::super::types::elasticache::ServerlessCacheCacheUsageLimitsEcpuPerSecond>>>,
+    pub r#ecpu_per_seconds: Option<Vec<super::super::types::elasticache::ServerlessCacheCacheUsageLimitsEcpuPerSecond>>,
 }

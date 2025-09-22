@@ -6,5 +6,5 @@ pub struct RuleGroupRuleGroupRuleVariablesPortSetPortSet {
     /// Set of port ranges.
     #[builder(into)]
     #[serde(rename = "definitions")]
-    pub r#definitions: Box<Vec<String>>,
+    pub r#definitions: Vec<String>,
 }

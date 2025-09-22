@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SqlContainerConflictResolutionPolicy {
     /// The conflict resolution path in the case of `LastWriterWins` mode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "conflictResolutionPath")]
-    pub r#conflict_resolution_path: Box<Option<String>>,
+    pub r#conflict_resolution_path: Option<String>,
     /// The procedure to resolve conflicts in the case of `Custom` mode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "conflictResolutionProcedure")]
-    pub r#conflict_resolution_procedure: Box<Option<String>>,
+    pub r#conflict_resolution_procedure: Option<String>,
     /// Indicates the conflict resolution mode. Possible values include: `LastWriterWins`, `Custom`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

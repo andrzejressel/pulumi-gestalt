@@ -6,5 +6,5 @@ pub struct DeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup {
     /// Name of the target group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

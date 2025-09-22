@@ -5,21 +5,21 @@
 pub struct GrpcRouteRuleAction {
     /// The destination to which traffic should be forwarded.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destinations")]
-    pub r#destinations: Box<Option<Vec<super::super::types::networkservices::GrpcRouteRuleActionDestination>>>,
+    pub r#destinations: Option<Vec<super::super::types::networkservices::GrpcRouteRuleActionDestination>>,
     /// The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "faultInjectionPolicy")]
-    pub r#fault_injection_policy: Box<Option<super::super::types::networkservices::GrpcRouteRuleActionFaultInjectionPolicy>>,
+    pub r#fault_injection_policy: Option<Box<super::super::types::networkservices::GrpcRouteRuleActionFaultInjectionPolicy>>,
     /// Specifies the retry policy associated with this route.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retryPolicy")]
-    pub r#retry_policy: Box<Option<super::super::types::networkservices::GrpcRouteRuleActionRetryPolicy>>,
+    pub r#retry_policy: Option<Box<super::super::types::networkservices::GrpcRouteRuleActionRetryPolicy>>,
     /// Specifies the timeout for selected route.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Box<Option<String>>,
+    pub r#timeout: Option<String>,
 }

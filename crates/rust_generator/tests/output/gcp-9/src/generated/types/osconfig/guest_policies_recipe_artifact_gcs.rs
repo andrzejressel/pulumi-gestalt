@@ -5,17 +5,17 @@
 pub struct GuestPoliciesRecipeArtifactGcs {
     /// Bucket of the Google Cloud Storage object. Given an example URL: https://storage.googleapis.com/my-bucket/foo/bar#1234567
     /// this value would be my-bucket.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<Option<String>>,
+    pub r#bucket: Option<String>,
     /// Must be provided if allowInsecure is false. Generation number of the Google Cloud Storage object.
     /// https://storage.googleapis.com/my-bucket/foo/bar#1234567 this value would be 1234567.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "generation")]
-    pub r#generation: Box<Option<i32>>,
+    pub r#generation: Option<i32>,
     /// Name of the Google Cloud Storage object. Given an example URL: https://storage.googleapis.com/my-bucket/foo/bar#1234567
     /// this value would be foo/bar.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<Option<String>>,
+    pub r#object: Option<String>,
 }

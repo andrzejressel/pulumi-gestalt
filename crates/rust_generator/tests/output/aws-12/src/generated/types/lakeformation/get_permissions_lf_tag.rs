@@ -6,15 +6,15 @@ pub struct GetPermissionsLfTag {
     /// Identifier for the Data Catalog. By default, it is the account ID of the caller.
     #[builder(into)]
     #[serde(rename = "catalogId")]
-    pub r#catalog_id: Box<String>,
+    pub r#catalog_id: String,
     /// Key-name for the tag.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// List of possible values an attribute can take.
     /// 
     /// The following argument is optional:
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

@@ -5,7 +5,7 @@
 pub struct BucketV2ReplicationConfigurationRuleSourceSelectionCriteria {
     /// Match SSE-KMS encrypted objects (documented below). If specified, `replica_kms_key_id`
     /// in `destination` must be specified as well.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sseKmsEncryptedObjects")]
-    pub r#sse_kms_encrypted_objects: Box<Option<Vec<super::super::types::s3::BucketV2ReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObject>>>,
+    pub r#sse_kms_encrypted_objects: Option<Vec<super::super::types::s3::BucketV2ReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObject>>,
 }

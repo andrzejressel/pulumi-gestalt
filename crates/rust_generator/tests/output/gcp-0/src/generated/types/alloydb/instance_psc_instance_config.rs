@@ -5,20 +5,20 @@
 pub struct InstancePscInstanceConfig {
     /// List of consumer projects that are allowed to create PSC endpoints to service-attachments to this instance.
     /// These should be specified as project numbers only.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedConsumerProjects")]
-    pub r#allowed_consumer_projects: Box<Option<Vec<String>>>,
+    pub r#allowed_consumer_projects: Option<Vec<String>>,
     /// (Output)
     /// The DNS name of the instance for PSC connectivity.
     /// Name convention: <uid>.<uid>.<region>.alloydb-psc.goog
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pscDnsName")]
-    pub r#psc_dns_name: Box<Option<String>>,
+    pub r#psc_dns_name: Option<String>,
     /// (Output)
     /// The service attachment created when Private Service Connect (PSC) is enabled for the instance.
     /// The name of the resource will be in the format of
     /// `projects/<alloydb-tenant-project-number>/regions/<region-name>/serviceAttachments/<service-attachment-name>`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAttachmentLink")]
-    pub r#service_attachment_link: Box<Option<String>>,
+    pub r#service_attachment_link: Option<String>,
 }

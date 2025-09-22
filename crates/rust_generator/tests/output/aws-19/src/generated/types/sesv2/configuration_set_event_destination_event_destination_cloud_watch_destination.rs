@@ -6,5 +6,5 @@ pub struct ConfigurationSetEventDestinationEventDestinationCloudWatchDestination
     /// An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch. See `dimension_configuration` Block for details.
     #[builder(into)]
     #[serde(rename = "dimensionConfigurations")]
-    pub r#dimension_configurations: Box<Vec<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationCloudWatchDestinationDimensionConfiguration>>,
+    pub r#dimension_configurations: Vec<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationCloudWatchDestinationDimensionConfiguration>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketSoftDeletePolicy {
     /// Server-determined value that indicates the time from which the policy, or one with a greater retention, was effective. This value is in RFC 3339 format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "effectiveTime")]
-    pub r#effective_time: Box<Option<String>>,
+    pub r#effective_time: Option<String>,
     /// The duration in seconds that soft-deleted objects in the bucket will be retained and cannot be permanently deleted. Default value is 604800. The value must be in between 604800(7 days) and 7776000(90 days). **Note**: To disable the soft delete policy on a bucket, This field must be set to 0.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionDurationSeconds")]
-    pub r#retention_duration_seconds: Box<Option<i32>>,
+    pub r#retention_duration_seconds: Option<i32>,
 }

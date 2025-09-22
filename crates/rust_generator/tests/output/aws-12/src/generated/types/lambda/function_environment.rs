@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FunctionEnvironment {
     /// Map of environment variables that are accessible from the function code during execution. If provided at least one key must be present.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "variables")]
-    pub r#variables: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#variables: Option<std::collections::HashMap<String, String>>,
 }

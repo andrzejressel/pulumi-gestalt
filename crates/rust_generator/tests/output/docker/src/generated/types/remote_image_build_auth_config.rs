@@ -4,35 +4,35 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RemoteImageBuildAuthConfig {
     /// the auth token
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "auth")]
-    pub r#auth: Box<Option<String>>,
+    pub r#auth: Option<String>,
     /// the user emal
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// hostname of the registry
     #[builder(into)]
     #[serde(rename = "hostName")]
-    pub r#host_name: Box<String>,
+    pub r#host_name: String,
     /// the identity token
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityToken")]
-    pub r#identity_token: Box<Option<String>>,
+    pub r#identity_token: Option<String>,
     /// the registry password
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// the registry token
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "registryToken")]
-    pub r#registry_token: Box<Option<String>>,
+    pub r#registry_token: Option<String>,
     /// the server address
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serverAddress")]
-    pub r#server_address: Box<Option<String>>,
+    pub r#server_address: Option<String>,
     /// the registry user name
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userName")]
-    pub r#user_name: Box<Option<String>>,
+    pub r#user_name: Option<String>,
 }

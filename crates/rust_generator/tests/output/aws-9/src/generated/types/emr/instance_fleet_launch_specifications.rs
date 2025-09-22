@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceFleetLaunchSpecifications {
     /// Configuration block for on demand instances launch specifications
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "onDemandSpecifications")]
-    pub r#on_demand_specifications: Box<Option<Vec<super::super::types::emr::InstanceFleetLaunchSpecificationsOnDemandSpecification>>>,
+    pub r#on_demand_specifications: Option<Vec<super::super::types::emr::InstanceFleetLaunchSpecificationsOnDemandSpecification>>,
     /// Configuration block for spot instances launch specifications
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "spotSpecifications")]
-    pub r#spot_specifications: Box<Option<Vec<super::super::types::emr::InstanceFleetLaunchSpecificationsSpotSpecification>>>,
+    pub r#spot_specifications: Option<Vec<super::super::types::emr::InstanceFleetLaunchSpecificationsSpotSpecification>>,
 }

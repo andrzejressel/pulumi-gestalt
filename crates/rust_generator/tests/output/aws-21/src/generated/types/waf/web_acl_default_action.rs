@@ -7,5 +7,5 @@ pub struct WebAclDefaultAction {
     /// e.g., `ALLOW` or `BLOCK`
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

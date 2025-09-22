@@ -5,5 +5,5 @@
 pub struct ConfigurationSetEventDestinationEventDestinationPinpointDestination {
     #[builder(into)]
     #[serde(rename = "applicationArn")]
-    pub r#application_arn: Box<String>,
+    pub r#application_arn: String,
 }

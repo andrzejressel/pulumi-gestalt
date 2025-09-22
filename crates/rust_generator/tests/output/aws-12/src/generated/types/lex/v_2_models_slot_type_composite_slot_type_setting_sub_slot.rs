@@ -6,10 +6,10 @@ pub struct V2ModelsSlotTypeCompositeSlotTypeSettingSubSlot {
     /// Name of a constituent sub slot inside a composite slot.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Unique identifier assigned to a slot type.
     /// This refers to either a built-in slot type or the unique `slot_type_id` of a custom slot type.
     #[builder(into)]
     #[serde(rename = "slotTypeId")]
-    pub r#slot_type_id: Box<String>,
+    pub r#slot_type_id: String,
 }

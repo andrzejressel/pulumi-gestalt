@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationGatewayRewriteRuleSet {
     /// The ID of the Rewrite Rule Set
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Unique name of the rewrite rule set block
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// One or more `rewrite_rule` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rewriteRules")]
-    pub r#rewrite_rules: Box<Option<Vec<super::super::types::network::ApplicationGatewayRewriteRuleSetRewriteRule>>>,
+    pub r#rewrite_rules: Option<Vec<super::super::types::network::ApplicationGatewayRewriteRuleSetRewriteRule>>,
 }

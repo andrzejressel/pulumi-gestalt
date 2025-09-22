@@ -6,17 +6,17 @@ pub struct IdentityPoolRoleAttachmentRoleMappingMappingRule {
     /// The claim name that must be present in the token, for example, "isAdmin" or "paid".
     #[builder(into)]
     #[serde(rename = "claim")]
-    pub r#claim: Box<String>,
+    pub r#claim: String,
     /// The match condition that specifies how closely the claim value in the IdP token must match Value.
     #[builder(into)]
     #[serde(rename = "matchType")]
-    pub r#match_type: Box<String>,
+    pub r#match_type: String,
     /// The role ARN.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// A brief string that the claim must match, for example, "paid" or "yes".
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

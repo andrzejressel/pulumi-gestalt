@@ -6,11 +6,11 @@ pub struct ConfigSignInEmail {
     /// Whether email auth is enabled for the project or not.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Whether a password is required for email auth or not. If true, both an email and
     /// password must be provided to sign in. If false, a user may sign in via either
     /// email/password or email link.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordRequired")]
-    pub r#password_required: Box<Option<bool>>,
+    pub r#password_required: Option<bool>,
 }

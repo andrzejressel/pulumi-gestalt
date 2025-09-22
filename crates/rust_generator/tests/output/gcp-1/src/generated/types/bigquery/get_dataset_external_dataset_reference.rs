@@ -7,9 +7,9 @@ pub struct GetDatasetExternalDatasetReference {
     /// Format: projects/{projectId}/locations/{locationId}/connections/{connectionId}
     #[builder(into)]
     #[serde(rename = "connection")]
-    pub r#connection: Box<String>,
+    pub r#connection: String,
     /// External source that backs this dataset.
     #[builder(into)]
     #[serde(rename = "externalSource")]
-    pub r#external_source: Box<String>,
+    pub r#external_source: String,
 }

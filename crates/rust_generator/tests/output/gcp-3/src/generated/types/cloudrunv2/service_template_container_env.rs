@@ -6,14 +6,14 @@ pub struct ServiceTemplateContainerEnv {
     /// Name of the environment variable. Must be a C_IDENTIFIER, and may not exceed 32768 characters.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Literal value of the environment variable. Defaults to "" and the maximum allowed length is 32768 characters. Variable references are not supported in Cloud Run.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
     /// Source for the environment variable's value.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "valueSource")]
-    pub r#value_source: Box<Option<super::super::types::cloudrunv2::ServiceTemplateContainerEnvValueSource>>,
+    pub r#value_source: Option<Box<super::super::types::cloudrunv2::ServiceTemplateContainerEnvValueSource>>,
 }

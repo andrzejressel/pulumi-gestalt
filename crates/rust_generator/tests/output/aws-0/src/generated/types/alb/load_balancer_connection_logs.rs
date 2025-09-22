@@ -6,13 +6,13 @@ pub struct LoadBalancerConnectionLogs {
     /// S3 bucket name to store the logs in.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// Boolean to enable / disable `connection_logs`. Defaults to `false`, even when `bucket` is specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// S3 bucket prefix. Logs are stored in the root if not configured.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
 }

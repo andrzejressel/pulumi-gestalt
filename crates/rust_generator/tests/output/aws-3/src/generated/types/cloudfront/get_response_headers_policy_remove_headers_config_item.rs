@@ -6,5 +6,5 @@ pub struct GetResponseHeadersPolicyRemoveHeadersConfigItem {
     /// The HTTP header name.
     #[builder(into)]
     #[serde(rename = "header")]
-    pub r#header: Box<String>,
+    pub r#header: String,
 }

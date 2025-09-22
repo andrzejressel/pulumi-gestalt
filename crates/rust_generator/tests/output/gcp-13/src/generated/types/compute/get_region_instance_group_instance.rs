@@ -6,13 +6,13 @@ pub struct GetRegionInstanceGroupInstance {
     /// URL to the instance.
     #[builder(into)]
     #[serde(rename = "instance")]
-    pub r#instance: Box<String>,
+    pub r#instance: String,
     /// List of named ports in the group, as a list of resources, each containing:
     #[builder(into)]
     #[serde(rename = "namedPorts")]
-    pub r#named_ports: Box<Vec<super::super::types::compute::GetRegionInstanceGroupInstanceNamedPort>>,
+    pub r#named_ports: Vec<super::super::types::compute::GetRegionInstanceGroupInstanceNamedPort>,
     /// String description of current state of the instance.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

@@ -8,10 +8,10 @@ pub struct InstanceDesiredPscAutoConnection {
     /// projects/{project_id}/global/networks/{network_id}.
     #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<String>,
+    pub r#network: String,
     /// (Output)
     /// Output only. The consumer project_id where the forwarding rule is created from.
     #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<String>,
+    pub r#project_id: String,
 }

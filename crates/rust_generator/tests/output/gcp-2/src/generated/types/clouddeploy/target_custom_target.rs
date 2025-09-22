@@ -6,5 +6,5 @@ pub struct TargetCustomTarget {
     /// Required. The name of the CustomTargetType. Format must be `projects/{project}/locations/{location}/customTargetTypes/{custom_target_type}`.
     #[builder(into)]
     #[serde(rename = "customTargetType")]
-    pub r#custom_target_type: Box<String>,
+    pub r#custom_target_type: String,
 }

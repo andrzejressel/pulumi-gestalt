@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfig {
     /// Parameters for configuring CA certificate and domains.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateAuthorityDomainConfigs")]
-    pub r#certificate_authority_domain_configs: Box<Option<Vec<super::super::types::container::NodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfig>>>,
+    pub r#certificate_authority_domain_configs: Option<Vec<super::super::types::container::NodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfig>>,
     /// Whether or not private registries are configured.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

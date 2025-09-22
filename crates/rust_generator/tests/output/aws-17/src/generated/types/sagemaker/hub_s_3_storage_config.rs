@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HubS3StorageConfig {
     /// The Amazon S3 bucket prefix for hosting hub content.interface.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3OutputPath")]
-    pub r#s_3_output_path: Box<Option<String>>,
+    pub r#s_3_output_path: Option<String>,
 }

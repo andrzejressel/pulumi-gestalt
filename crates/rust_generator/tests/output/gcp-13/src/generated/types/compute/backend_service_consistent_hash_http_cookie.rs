@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BackendServiceConsistentHashHttpCookie {
     /// Name of the cookie.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Path to set for the cookie.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
     /// Lifetime of the cookie.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ttl")]
-    pub r#ttl: Box<Option<super::super::types::compute::BackendServiceConsistentHashHttpCookieTtl>>,
+    pub r#ttl: Option<Box<super::super::types::compute::BackendServiceConsistentHashHttpCookieTtl>>,
 }

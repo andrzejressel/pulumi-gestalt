@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ProjectDataDeliveryCloudwatchLogs {
     /// The name of the log group where the project stores evaluation events.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logGroup")]
-    pub r#log_group: Box<Option<String>>,
+    pub r#log_group: Option<String>,
 }

@@ -9,5 +9,5 @@ pub struct SecurityPolicyAdvancedOptionsConfigJsonCustomConfig {
     /// value, only the type/subtype needs to be specified, and the parameters should be excluded.
     #[builder(into)]
     #[serde(rename = "contentTypes")]
-    pub r#content_types: Box<Vec<String>>,
+    pub r#content_types: Vec<String>,
 }

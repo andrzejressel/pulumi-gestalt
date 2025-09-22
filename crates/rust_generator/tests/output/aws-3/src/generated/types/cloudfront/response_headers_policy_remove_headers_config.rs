@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResponseHeadersPolicyRemoveHeadersConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "items")]
-    pub r#items: Box<Option<Vec<super::super::types::cloudfront::ResponseHeadersPolicyRemoveHeadersConfigItem>>>,
+    pub r#items: Option<Vec<super::super::types::cloudfront::ResponseHeadersPolicyRemoveHeadersConfigItem>>,
 }

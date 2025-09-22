@@ -7,5 +7,5 @@ pub struct DetectorDatasourcesKubernetesAuditLogs {
     /// Defaults to `true`.
     #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<bool>,
+    pub r#enable: bool,
 }

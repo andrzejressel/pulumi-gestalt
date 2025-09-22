@@ -6,23 +6,23 @@ pub struct EventHubNamespaceNetworkRulesets {
     /// The default action to take when a rule is not matched. Possible values are `Allow` and `Deny`.
     #[builder(into)]
     #[serde(rename = "defaultAction")]
-    pub r#default_action: Box<String>,
+    pub r#default_action: String,
     /// One or more `ip_rule` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipRules")]
-    pub r#ip_rules: Box<Option<Vec<super::super::types::eventhub::EventHubNamespaceNetworkRulesetsIpRule>>>,
+    pub r#ip_rules: Option<Vec<super::super::types::eventhub::EventHubNamespaceNetworkRulesetsIpRule>>,
     /// Is public network access enabled for the EventHub Namespace? Defaults to `true`.
     /// 
     /// > **Note:** The public network access setting at the network rule sets level should be the same as it's at the namespace level.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicNetworkAccessEnabled")]
-    pub r#public_network_access_enabled: Box<Option<bool>>,
+    pub r#public_network_access_enabled: Option<bool>,
     /// Whether Trusted Microsoft Services are allowed to bypass firewall.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "trustedServiceAccessEnabled")]
-    pub r#trusted_service_access_enabled: Box<Option<bool>>,
+    pub r#trusted_service_access_enabled: Option<bool>,
     /// One or more `virtual_network_rule` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualNetworkRules")]
-    pub r#virtual_network_rules: Box<Option<Vec<super::super::types::eventhub::EventHubNamespaceNetworkRulesetsVirtualNetworkRule>>>,
+    pub r#virtual_network_rules: Option<Vec<super::super::types::eventhub::EventHubNamespaceNetworkRulesetsVirtualNetworkRule>>,
 }

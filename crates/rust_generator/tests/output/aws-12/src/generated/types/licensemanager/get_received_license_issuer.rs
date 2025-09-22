@@ -6,13 +6,13 @@ pub struct GetReceivedLicenseIssuer {
     /// Issuer key fingerprint.
     #[builder(into)]
     #[serde(rename = "keyFingerprint")]
-    pub r#key_fingerprint: Box<String>,
+    pub r#key_fingerprint: String,
     /// The key name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Asymmetric KMS key from AWS Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.
     #[builder(into)]
     #[serde(rename = "signKey")]
-    pub r#sign_key: Box<String>,
+    pub r#sign_key: String,
 }

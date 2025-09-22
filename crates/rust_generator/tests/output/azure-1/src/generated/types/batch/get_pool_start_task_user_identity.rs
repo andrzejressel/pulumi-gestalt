@@ -6,9 +6,9 @@ pub struct GetPoolStartTaskUserIdentity {
     /// A `auto_user` block that describes the user identity under which the start task runs.
     #[builder(into)]
     #[serde(rename = "autoUsers")]
-    pub r#auto_users: Box<Vec<super::super::types::batch::GetPoolStartTaskUserIdentityAutoUser>>,
+    pub r#auto_users: Vec<super::super::types::batch::GetPoolStartTaskUserIdentityAutoUser>,
     /// The user to use for authentication against the CIFS file system.
     #[builder(into)]
     #[serde(rename = "userName")]
-    pub r#user_name: Box<String>,
+    pub r#user_name: String,
 }

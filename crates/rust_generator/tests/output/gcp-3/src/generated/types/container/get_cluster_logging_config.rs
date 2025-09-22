@@ -6,5 +6,5 @@ pub struct GetClusterLoggingConfig {
     /// GKE components exposing logs. Valid values include SYSTEM_COMPONENTS, APISERVER, CONTROLLER_MANAGER, KCP_CONNECTION, KCP_SSHD, SCHEDULER, and WORKLOADS.
     #[builder(into)]
     #[serde(rename = "enableComponents")]
-    pub r#enable_components: Box<Vec<String>>,
+    pub r#enable_components: Vec<String>,
 }

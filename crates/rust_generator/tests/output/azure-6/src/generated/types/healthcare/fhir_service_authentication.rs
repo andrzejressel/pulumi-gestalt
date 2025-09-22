@@ -6,12 +6,12 @@ pub struct FhirServiceAuthentication {
     /// The intended audience to receive authentication tokens for the service.
     #[builder(into)]
     #[serde(rename = "audience")]
-    pub r#audience: Box<String>,
+    pub r#audience: String,
     #[builder(into)]
     #[serde(rename = "authority")]
-    pub r#authority: Box<String>,
+    pub r#authority: String,
     /// Whether smart proxy is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "smartProxyEnabled")]
-    pub r#smart_proxy_enabled: Box<Option<bool>>,
+    pub r#smart_proxy_enabled: Option<bool>,
 }

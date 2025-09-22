@@ -5,7 +5,7 @@
 pub struct BareMetalClusterUpgradePolicy {
     /// Specifies which upgrade policy to use.
     /// Possible values are: `SERIAL`, `CONCURRENT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "policy")]
-    pub r#policy: Box<Option<String>>,
+    pub r#policy: Option<String>,
 }

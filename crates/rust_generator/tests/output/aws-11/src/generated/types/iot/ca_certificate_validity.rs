@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CaCertificateValidity {
     /// The certificate is not valid after this date.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notAfter")]
-    pub r#not_after: Box<Option<String>>,
+    pub r#not_after: Option<String>,
     /// The certificate is not valid before this date.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notBefore")]
-    pub r#not_before: Box<Option<String>>,
+    pub r#not_before: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterStateInfoUpdateInfo {
     /// Target number of replica nodes per shard.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetReplicaCount")]
-    pub r#target_replica_count: Box<Option<i32>>,
+    pub r#target_replica_count: Option<i32>,
     /// Target number of shards for redis cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetShardCount")]
-    pub r#target_shard_count: Box<Option<i32>>,
+    pub r#target_shard_count: Option<i32>,
 }

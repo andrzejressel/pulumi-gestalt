@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudBuildRepo {
     /// Relative path from the repository root to the Skaffold file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
     /// Branch or tag to use when cloning the repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ref")]
-    pub r#ref_: Box<Option<String>>,
+    pub r#ref_: Option<String>,
     /// Cloud Build 2nd gen repository in the format of 'projects/<project>/locations/<location>/connections/<connection>/repositories/<repository>'.
     #[builder(into)]
     #[serde(rename = "repository")]
-    pub r#repository: Box<String>,
+    pub r#repository: String,
 }

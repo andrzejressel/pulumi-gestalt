@@ -6,9 +6,9 @@ pub struct SubscriptionCostManagementViewDatasetAggregation {
     /// The name of the column to aggregate. Changing this forces a new Cost Management View for a Subscription to be created.
     #[builder(into)]
     #[serde(rename = "columnName")]
-    pub r#column_name: Box<String>,
+    pub r#column_name: String,
     /// The name which should be used for this aggregation. Changing this forces a new Cost Management View for a Subscription to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

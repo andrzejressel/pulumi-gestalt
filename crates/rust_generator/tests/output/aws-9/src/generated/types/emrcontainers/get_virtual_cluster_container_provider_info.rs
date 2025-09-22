@@ -6,5 +6,5 @@ pub struct GetVirtualClusterContainerProviderInfo {
     /// Nested list containing EKS-specific information about the cluster where the EMR Containers cluster is running
     #[builder(into)]
     #[serde(rename = "eksInfos")]
-    pub r#eks_infos: Box<Vec<super::super::types::emrcontainers::GetVirtualClusterContainerProviderInfoEksInfo>>,
+    pub r#eks_infos: Vec<super::super::types::emrcontainers::GetVirtualClusterContainerProviderInfoEksInfo>,
 }

@@ -5,9 +5,9 @@
 pub struct GetLaunchTemplateTagSpecification {
     #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<String>,
+    pub r#resource_type: String,
     /// Map of tags, each pair of which must exactly match a pair on the desired Launch Template.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<std::collections::HashMap<String, String>>,
+    pub r#tags: std::collections::HashMap<String, String>,
 }

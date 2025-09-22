@@ -6,9 +6,9 @@ pub struct ResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy {
     /// The policy directives and their values that CloudFront includes as values for the `Content-Security-Policy` HTTP response header.
     #[builder(into)]
     #[serde(rename = "contentSecurityPolicy")]
-    pub r#content_security_policy: Box<String>,
+    pub r#content_security_policy: String,
     /// Whether CloudFront overrides the `Content-Security-Policy` HTTP response header received from the origin with the one specified in this response headers policy.
     #[builder(into)]
     #[serde(rename = "override")]
-    pub r#override_: Box<bool>,
+    pub r#override_: bool,
 }

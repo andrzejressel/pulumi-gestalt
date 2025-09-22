@@ -6,9 +6,9 @@ pub struct GetServiceQueryKey {
     /// The value of this Query Key.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The Name of the Search Service.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

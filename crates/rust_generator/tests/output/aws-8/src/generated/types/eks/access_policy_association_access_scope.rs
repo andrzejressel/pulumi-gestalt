@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccessPolicyAssociationAccessScope {
     /// The namespaces to which the access scope applies when type is namespace.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namespaces")]
-    pub r#namespaces: Box<Option<Vec<String>>>,
+    pub r#namespaces: Option<Vec<String>>,
     /// Valid values are `namespace` or `cluster`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

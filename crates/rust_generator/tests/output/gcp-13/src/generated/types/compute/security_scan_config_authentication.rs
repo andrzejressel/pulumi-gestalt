@@ -5,12 +5,12 @@
 pub struct SecurityScanConfigAuthentication {
     /// Describes authentication configuration that uses a custom account.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customAccount")]
-    pub r#custom_account: Box<Option<super::super::types::compute::SecurityScanConfigAuthenticationCustomAccount>>,
+    pub r#custom_account: Option<Box<super::super::types::compute::SecurityScanConfigAuthenticationCustomAccount>>,
     /// Describes authentication configuration that uses a Google account.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "googleAccount")]
-    pub r#google_account: Box<Option<super::super::types::compute::SecurityScanConfigAuthenticationGoogleAccount>>,
+    pub r#google_account: Option<Box<super::super::types::compute::SecurityScanConfigAuthenticationGoogleAccount>>,
 }

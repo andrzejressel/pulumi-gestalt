@@ -8,5 +8,5 @@ pub struct VirtualNetworkEncryption {
     /// > **NOTE:** Currently `AllowUnencrypted` is the only supported value for the `enforcement` property as `DropUnencrypted` is not yet in public preview or general availability. Please see the [official documentation](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-encryption-overview#limitations) for more information.
     #[builder(into)]
     #[serde(rename = "enforcement")]
-    pub r#enforcement: Box<String>,
+    pub r#enforcement: String,
 }

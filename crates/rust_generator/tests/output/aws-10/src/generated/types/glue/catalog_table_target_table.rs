@@ -6,17 +6,17 @@ pub struct CatalogTableTargetTable {
     /// ID of the Data Catalog in which the table resides.
     #[builder(into)]
     #[serde(rename = "catalogId")]
-    pub r#catalog_id: Box<String>,
+    pub r#catalog_id: String,
     /// Name of the catalog database that contains the target table.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// Name of the target table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Region of the target table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
 }

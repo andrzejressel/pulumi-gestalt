@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TableSchemaCompositePartitionKey {
     /// The level of enforcement for the specification of a dimension key in ingested records. Valid values: `REQUIRED`, `OPTIONAL`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enforcementInRecord")]
-    pub r#enforcement_in_record: Box<Option<String>>,
+    pub r#enforcement_in_record: Option<String>,
     /// The name of the attribute used for a dimension key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The type of the partition key. Valid values: `DIMENSION`, `MEASURE`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

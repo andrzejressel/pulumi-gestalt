@@ -6,9 +6,9 @@ pub struct AzureClusterAzureServicesAuthentication {
     /// The Azure Active Directory Application ID for Authentication configuration.
     #[builder(into)]
     #[serde(rename = "applicationId")]
-    pub r#application_id: Box<String>,
+    pub r#application_id: String,
     /// The Azure Active Directory Tenant ID for Authentication configuration.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
 }

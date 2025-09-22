@@ -5,17 +5,17 @@
 pub struct RepositoryUri {
     /// (Output)
     /// API is the URI for API access.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "api")]
-    pub r#api: Box<Option<String>>,
+    pub r#api: Option<String>,
     /// (Output)
     /// git_https is the git HTTPS URI for git operations.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gitHttps")]
-    pub r#git_https: Box<Option<String>>,
+    pub r#git_https: Option<String>,
     /// (Output)
     /// HTML is the URI for the user to view the repository in a browser.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "html")]
-    pub r#html: Box<Option<String>>,
+    pub r#html: Option<String>,
 }

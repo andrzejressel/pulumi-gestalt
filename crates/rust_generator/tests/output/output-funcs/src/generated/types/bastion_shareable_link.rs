@@ -6,5 +6,5 @@ pub struct BastionShareableLink {
     /// Reference of the virtual machine resource.
     #[builder(into)]
     #[serde(rename = "vm")]
-    pub r#vm: Box<String>,
+    pub r#vm: String,
 }

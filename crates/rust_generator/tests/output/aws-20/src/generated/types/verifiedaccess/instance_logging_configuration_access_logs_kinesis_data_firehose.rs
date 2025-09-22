@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceLoggingConfigurationAccessLogsKinesisDataFirehose {
     /// The name of the delivery stream.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deliveryStream")]
-    pub r#delivery_stream: Box<Option<String>>,
+    pub r#delivery_stream: Option<String>,
     /// Indicates whether logging is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

@@ -6,5 +6,5 @@ pub struct GetClusterIdentityOidc {
     /// Issuer URL for the OpenID Connect identity provider.
     #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<String>,
+    pub r#issuer: String,
 }

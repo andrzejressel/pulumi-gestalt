@@ -6,8 +6,8 @@ pub struct DashboardParametersDecimalParameter {
     /// Display name for the dashboard.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<f64>>,
+    pub r#values: Vec<f64>,
 }

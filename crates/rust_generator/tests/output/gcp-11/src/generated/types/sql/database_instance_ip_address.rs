@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DatabaseInstanceIpAddress {
     /// The IPv4 address assigned.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<Option<String>>,
+    pub r#ip_address: Option<String>,
     /// The time this IP address will be retired, in RFC
     /// 3339 format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeToRetire")]
-    pub r#time_to_retire: Box<Option<String>>,
+    pub r#time_to_retire: Option<String>,
     /// The type of this IP address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

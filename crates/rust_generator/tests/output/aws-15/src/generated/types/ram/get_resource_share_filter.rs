@@ -6,9 +6,9 @@ pub struct GetResourceShareFilter {
     /// Name of the tag key to filter on.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Value of the tag key.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

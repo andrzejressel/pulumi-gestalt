@@ -5,12 +5,12 @@
 pub struct ConfigBlockingFunctions {
     /// The user credentials to include in the JWT payload that is sent to the registered Blocking Functions.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "forwardInboundCredentials")]
-    pub r#forward_inbound_credentials: Box<Option<super::super::types::identityplatform::ConfigBlockingFunctionsForwardInboundCredentials>>,
+    pub r#forward_inbound_credentials: Option<Box<super::super::types::identityplatform::ConfigBlockingFunctionsForwardInboundCredentials>>,
     /// Map of Trigger to event type. Key should be one of the supported event types: "beforeCreate", "beforeSignIn".
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "triggers")]
-    pub r#triggers: Box<Vec<super::super::types::identityplatform::ConfigBlockingFunctionsTrigger>>,
+    pub r#triggers: Vec<super::super::types::identityplatform::ConfigBlockingFunctionsTrigger>,
 }

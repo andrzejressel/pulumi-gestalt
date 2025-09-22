@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsNetworkBandwidthGbps {
     /// Maximum.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "max")]
-    pub r#max: Box<Option<f64>>,
+    pub r#max: Option<f64>,
     /// Minimum.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "min")]
-    pub r#min: Box<Option<f64>>,
+    pub r#min: Option<f64>,
 }

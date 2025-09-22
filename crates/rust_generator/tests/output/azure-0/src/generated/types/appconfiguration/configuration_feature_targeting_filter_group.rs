@@ -6,9 +6,9 @@ pub struct ConfigurationFeatureTargetingFilterGroup {
     /// The name of the group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Rollout percentage of the group.
     #[builder(into)]
     #[serde(rename = "rolloutPercentage")]
-    pub r#rollout_percentage: Box<i32>,
+    pub r#rollout_percentage: i32,
 }

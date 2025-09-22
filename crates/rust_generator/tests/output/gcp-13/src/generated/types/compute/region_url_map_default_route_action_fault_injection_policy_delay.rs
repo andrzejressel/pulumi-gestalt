@@ -5,12 +5,12 @@
 pub struct RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelay {
     /// Specifies the value of the fixed delay interval.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fixedDelay")]
-    pub r#fixed_delay: Box<Option<super::super::types::compute::RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay>>,
+    pub r#fixed_delay: Option<Box<super::super::types::compute::RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelay>>,
     /// The percentage of traffic (connections/operations/requests) on which delay will be introduced as part of fault injection.
     /// The value must be between 0.0 and 100.0 inclusive.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "percentage")]
-    pub r#percentage: Box<Option<f64>>,
+    pub r#percentage: Option<f64>,
 }

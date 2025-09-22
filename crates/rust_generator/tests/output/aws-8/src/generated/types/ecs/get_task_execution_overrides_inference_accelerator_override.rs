@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetTaskExecutionOverridesInferenceAcceleratorOverride {
     /// The Elastic Inference accelerator device name to override for the task. This parameter must match a deviceName specified in the task definition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<Option<String>>,
+    pub r#device_name: Option<String>,
     /// The Elastic Inference accelerator type to use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deviceType")]
-    pub r#device_type: Box<Option<String>>,
+    pub r#device_type: Option<String>,
 }

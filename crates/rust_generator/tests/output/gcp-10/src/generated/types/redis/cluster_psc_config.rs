@@ -10,5 +10,5 @@ pub struct ClusterPscConfig {
     /// - - -
     #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<String>,
+    pub r#network: String,
 }

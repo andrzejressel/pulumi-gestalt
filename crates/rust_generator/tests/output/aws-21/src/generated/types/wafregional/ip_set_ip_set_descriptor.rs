@@ -6,9 +6,9 @@ pub struct IpSetIpSetDescriptor {
     /// The string like IPV4 or IPV6.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// The CIDR notation.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

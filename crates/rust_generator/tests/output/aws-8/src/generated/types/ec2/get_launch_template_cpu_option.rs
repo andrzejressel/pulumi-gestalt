@@ -5,11 +5,11 @@
 pub struct GetLaunchTemplateCpuOption {
     #[builder(into)]
     #[serde(rename = "amdSevSnp")]
-    pub r#amd_sev_snp: Box<String>,
+    pub r#amd_sev_snp: String,
     #[builder(into)]
     #[serde(rename = "coreCount")]
-    pub r#core_count: Box<i32>,
+    pub r#core_count: i32,
     #[builder(into)]
     #[serde(rename = "threadsPerCore")]
-    pub r#threads_per_core: Box<i32>,
+    pub r#threads_per_core: i32,
 }

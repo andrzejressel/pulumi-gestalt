@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RuleGroupRuleGroupRuleVariables {
     /// Set of configuration blocks that define IP address information. See IP Sets below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipSets")]
-    pub r#ip_sets: Box<Option<Vec<super::super::types::networkfirewall::RuleGroupRuleGroupRuleVariablesIpSet>>>,
+    pub r#ip_sets: Option<Vec<super::super::types::networkfirewall::RuleGroupRuleGroupRuleVariablesIpSet>>,
     /// Set of configuration blocks that define port range information. See Port Sets below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "portSets")]
-    pub r#port_sets: Box<Option<Vec<super::super::types::networkfirewall::RuleGroupRuleGroupRuleVariablesPortSet>>>,
+    pub r#port_sets: Option<Vec<super::super::types::networkfirewall::RuleGroupRuleGroupRuleVariablesPortSet>>,
 }

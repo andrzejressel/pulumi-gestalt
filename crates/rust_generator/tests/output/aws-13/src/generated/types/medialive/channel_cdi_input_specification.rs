@@ -6,5 +6,5 @@ pub struct ChannelCdiInputSpecification {
     /// Maximum CDI input resolution.
     #[builder(into)]
     #[serde(rename = "resolution")]
-    pub r#resolution: Box<String>,
+    pub r#resolution: String,
 }

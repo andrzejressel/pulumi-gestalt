@@ -5,13 +5,13 @@
 pub struct ServicePerimetersServicePerimeterStatusEgressPolicy {
     /// Defines conditions on the source of a request causing this `EgressPolicy` to apply.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "egressFrom")]
-    pub r#egress_from: Box<Option<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom>>,
+    pub r#egress_from: Option<Box<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterStatusEgressPolicyEgressFrom>>,
     /// Defines the conditions on the `ApiOperation` and destination resources that
     /// cause this `EgressPolicy` to apply.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "egressTo")]
-    pub r#egress_to: Box<Option<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo>>,
+    pub r#egress_to: Option<Box<super::super::types::accesscontextmanager::ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo>>,
 }

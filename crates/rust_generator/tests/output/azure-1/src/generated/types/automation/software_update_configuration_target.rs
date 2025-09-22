@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SoftwareUpdateConfigurationTarget {
     /// One or more `azure_query` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "azureQueries")]
-    pub r#azure_queries: Box<Option<Vec<super::super::types::automation::SoftwareUpdateConfigurationTargetAzureQuery>>>,
+    pub r#azure_queries: Option<Vec<super::super::types::automation::SoftwareUpdateConfigurationTargetAzureQuery>>,
     /// One or more `non_azure_query` blocks as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nonAzureQueries")]
-    pub r#non_azure_queries: Box<Option<Vec<super::super::types::automation::SoftwareUpdateConfigurationTargetNonAzureQuery>>>,
+    pub r#non_azure_queries: Option<Vec<super::super::types::automation::SoftwareUpdateConfigurationTargetNonAzureQuery>>,
 }

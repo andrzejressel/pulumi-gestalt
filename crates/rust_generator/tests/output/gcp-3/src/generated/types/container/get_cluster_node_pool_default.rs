@@ -6,5 +6,5 @@ pub struct GetClusterNodePoolDefault {
     /// Subset of NodeConfig message that has defaults.
     #[builder(into)]
     #[serde(rename = "nodeConfigDefaults")]
-    pub r#node_config_defaults: Box<Vec<super::super::types::container::GetClusterNodePoolDefaultNodeConfigDefault>>,
+    pub r#node_config_defaults: Vec<super::super::types::container::GetClusterNodePoolDefaultNodeConfigDefault>,
 }

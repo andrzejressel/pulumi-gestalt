@@ -6,13 +6,13 @@ pub struct GetDeviceLocation {
     /// Physical address.
     #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<String>,
+    pub r#address: String,
     /// Latitude.
     #[builder(into)]
     #[serde(rename = "latitude")]
-    pub r#latitude: Box<String>,
+    pub r#latitude: String,
     /// Longitude.
     #[builder(into)]
     #[serde(rename = "longitude")]
-    pub r#longitude: Box<String>,
+    pub r#longitude: String,
 }

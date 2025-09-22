@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination {
     /// Account ID that owns the destination bucket.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucketAccountId")]
-    pub r#bucket_account_id: Box<Option<String>>,
+    pub r#bucket_account_id: Option<String>,
     /// ARN of the destination bucket.
     #[builder(into)]
     #[serde(rename = "bucketArn")]
-    pub r#bucket_arn: Box<String>,
+    pub r#bucket_arn: String,
     /// Output format of exported analytics data. Allowed values: `CSV`. Default value: `CSV`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "format")]
-    pub r#format: Box<Option<String>>,
+    pub r#format: Option<String>,
     /// Prefix to append to exported analytics data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
 }

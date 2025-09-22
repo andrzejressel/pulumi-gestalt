@@ -5,12 +5,12 @@
 pub struct NodeTemplateAccelerator {
     /// The number of the guest accelerator cards exposed to this
     /// node template.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acceleratorCount")]
-    pub r#accelerator_count: Box<Option<i32>>,
+    pub r#accelerator_count: Option<i32>,
     /// Full or partial URL of the accelerator type resource to expose
     /// to this node template.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acceleratorType")]
-    pub r#accelerator_type: Box<Option<String>>,
+    pub r#accelerator_type: Option<String>,
 }

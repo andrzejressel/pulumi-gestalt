@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionJobTriggerInspectJobStorageConfigHybridOptions {
     /// A short description of where the data is coming from. Will be stored once in the job. 256 max length.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// To organize findings, these labels will be added to each finding.
     /// Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `a-z?`.
     /// Label values must be between 0 and 63 characters long and must conform to the regular expression `(a-z?)?`.
@@ -14,19 +14,19 @@ pub struct PreventionJobTriggerInspectJobStorageConfigHybridOptions {
     /// Examples:
     /// * `"environment" : "production"`
     /// * `"pipeline" : "etl"`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// These are labels that each inspection request must include within their 'finding_labels' map. Request
     /// may contain others, but any missing one of these will be rejected.
     /// Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `a-z?`.
     /// No more than 10 keys can be required.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requiredFindingLabelKeys")]
-    pub r#required_finding_label_keys: Box<Option<Vec<String>>>,
+    pub r#required_finding_label_keys: Option<Vec<String>>,
     /// If the container is a table, additional information to make findings meaningful such as the columns that are primary keys.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tableOptions")]
-    pub r#table_options: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptions>>,
+    pub r#table_options: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptions>>,
 }

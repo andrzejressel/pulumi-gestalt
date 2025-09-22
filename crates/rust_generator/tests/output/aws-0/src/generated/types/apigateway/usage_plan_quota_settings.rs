@@ -6,13 +6,13 @@ pub struct UsagePlanQuotaSettings {
     /// Maximum number of requests that can be made in a given time period.
     #[builder(into)]
     #[serde(rename = "limit")]
-    pub r#limit: Box<i32>,
+    pub r#limit: i32,
     /// Number of requests subtracted from the given limit in the initial time period.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "offset")]
-    pub r#offset: Box<Option<i32>>,
+    pub r#offset: Option<i32>,
     /// Time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".
     #[builder(into)]
     #[serde(rename = "period")]
-    pub r#period: Box<String>,
+    pub r#period: String,
 }

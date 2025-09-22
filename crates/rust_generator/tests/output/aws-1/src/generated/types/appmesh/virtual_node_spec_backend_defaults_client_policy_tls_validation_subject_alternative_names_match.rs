@@ -6,5 +6,5 @@ pub struct VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlterna
     /// Values sent must match the specified values exactly.
     #[builder(into)]
     #[serde(rename = "exacts")]
-    pub r#exacts: Box<Vec<String>>,
+    pub r#exacts: Vec<String>,
 }

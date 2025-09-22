@@ -6,5 +6,5 @@ pub struct GetMembershipBindingState {
     /// Code describes the state of a MembershipBinding resource.
     #[builder(into)]
     #[serde(rename = "code")]
-    pub r#code: Box<String>,
+    pub r#code: String,
 }

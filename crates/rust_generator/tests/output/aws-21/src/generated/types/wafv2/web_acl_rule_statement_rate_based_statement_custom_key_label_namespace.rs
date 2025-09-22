@@ -6,5 +6,5 @@ pub struct WebAclRuleStatementRateBasedStatementCustomKeyLabelNamespace {
     /// The namespace to use for aggregation
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
 }

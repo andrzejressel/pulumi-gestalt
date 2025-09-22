@@ -6,9 +6,9 @@ pub struct GetSpringCloudServiceConfigServerGitSettingHttpBasicAuth {
     /// The password used to access the HTTP Basic Authentication Git repository server.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// The username used to access the HTTP Basic Authentication Git repository server.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

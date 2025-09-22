@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AlertRuleAnomalyDuplicatePrioritizedExcludeObservation {
     /// The description of the prioritized exclude observation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The excluded value per `description`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exclude")]
-    pub r#exclude: Box<Option<String>>,
+    pub r#exclude: Option<String>,
     /// The name of the prioritized exclude observation.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The prioritized value per `description`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prioritize")]
-    pub r#prioritize: Box<Option<String>>,
+    pub r#prioritize: Option<String>,
 }

@@ -10,8 +10,8 @@ pub struct DistributionOriginGroup {
     /// Ordered member configuration blocks assigned to the origin group, where the first member is the primary origin. You must specify two members.
     #[builder(into)]
     #[serde(rename = "members")]
-    pub r#members: Box<Vec<super::super::types::cloudfront::DistributionOriginGroupMember>>,
+    pub r#members: Vec<super::super::types::cloudfront::DistributionOriginGroupMember>,
     #[builder(into)]
     #[serde(rename = "originId")]
-    pub r#origin_id: Box<String>,
+    pub r#origin_id: String,
 }

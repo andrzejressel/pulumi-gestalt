@@ -6,13 +6,13 @@ pub struct QuicksetupConfigurationManagerStatusSummary {
     /// Current status.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
     /// When applicable, returns an informational message relevant to the current status and status type of the status summary object.
     #[builder(into)]
     #[serde(rename = "statusMessage")]
-    pub r#status_message: Box<String>,
+    pub r#status_message: String,
     /// Type of a status summary.
     #[builder(into)]
     #[serde(rename = "statusType")]
-    pub r#status_type: Box<String>,
+    pub r#status_type: String,
 }

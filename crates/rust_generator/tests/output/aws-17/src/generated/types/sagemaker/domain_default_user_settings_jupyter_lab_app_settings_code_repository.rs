@@ -6,5 +6,5 @@ pub struct DomainDefaultUserSettingsJupyterLabAppSettingsCodeRepository {
     /// The URL of the Git repository.
     #[builder(into)]
     #[serde(rename = "repositoryUrl")]
-    pub r#repository_url: Box<String>,
+    pub r#repository_url: String,
 }

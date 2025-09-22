@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfigurationServerCertificate {
     /// ARN of the Certificate Manager SSL/TLS server certificate that's used for inbound SSL/TLS inspection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceArn")]
-    pub r#resource_arn: Box<Option<String>>,
+    pub r#resource_arn: Option<String>,
 }

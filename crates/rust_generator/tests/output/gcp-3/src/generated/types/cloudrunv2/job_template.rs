@@ -7,25 +7,25 @@ pub struct JobTemplate {
     /// Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected.
     /// All system annotations in v1 now have a corresponding field in v2 ExecutionTemplate.
     /// This field follows Kubernetes annotations' namespacing, limits, and rules.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "annotations")]
-    pub r#annotations: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#annotations: Option<std::collections::HashMap<String, String>>,
     /// Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter,
     /// or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or
     /// https://cloud.google.com/run/docs/configuring/labels.
     /// Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected.
     /// All system labels in v1 now have a corresponding field in v2 ExecutionTemplate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// Specifies the maximum desired number of tasks the execution should run at given time. Must be <= taskCount. When the job is run, if this field is 0 or unset, the maximum possible value will be used for that execution. The actual number of tasks running in steady state will be less than this number when there are fewer tasks waiting to be completed remaining, i.e. when the work left to do is less than max parallelism.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parallelism")]
-    pub r#parallelism: Box<Option<i32>>,
+    pub r#parallelism: Option<i32>,
     /// Specifies the desired number of tasks the execution should run. Setting to 1 means that parallelism is limited to 1 and the success of that task signals the success of the execution. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "taskCount")]
-    pub r#task_count: Box<Option<i32>>,
+    pub r#task_count: Option<i32>,
     /// Describes the task(s) that will be created when executing an execution
     /// Structure is documented below.
     #[builder(into)]

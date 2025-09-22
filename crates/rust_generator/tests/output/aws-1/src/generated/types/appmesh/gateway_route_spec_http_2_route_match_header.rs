@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GatewayRouteSpecHttp2RouteMatchHeader {
     /// If `true`, the match is on the opposite of the `match` method and value. Default is `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "invert")]
-    pub r#invert: Box<Option<bool>>,
+    pub r#invert: Option<bool>,
     /// Method and value to match the header value sent with a request. Specify one match method.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttp2RouteMatchHeaderMatch>>,
+    pub r#match_: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttp2RouteMatchHeaderMatch>>,
     /// Name for the HTTP header in the client request that will be matched on.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

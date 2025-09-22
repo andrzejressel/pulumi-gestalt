@@ -6,5 +6,5 @@ pub struct GetClusterNodePoolNodeConfigSoleTenantConfig {
     /// .
     #[builder(into)]
     #[serde(rename = "nodeAffinities")]
-    pub r#node_affinities: Box<Vec<super::super::types::container::GetClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity>>,
+    pub r#node_affinities: Vec<super::super::types::container::GetClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity>,
 }

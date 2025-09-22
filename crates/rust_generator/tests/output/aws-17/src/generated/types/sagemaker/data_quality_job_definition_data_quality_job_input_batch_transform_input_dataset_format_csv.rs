@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatCsv {
     /// Indicates if the CSV data has a header.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "header")]
-    pub r#header: Box<Option<bool>>,
+    pub r#header: Option<bool>,
 }

@@ -6,7 +6,7 @@ pub struct DlpProfileContextAwareness {
     /// Scan the context of predefined entries to only return matches surrounded by keywords.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Content types to exclude from context analysis and return all matches.
     #[builder(into)]
     #[serde(rename = "skip")]

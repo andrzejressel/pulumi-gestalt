@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HciNetworkInterfaceIpConfiguration {
     /// The IPv4 address of the gateway for the Network Interface.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gateway")]
-    pub r#gateway: Box<Option<String>>,
+    pub r#gateway: Option<String>,
     /// The prefix length for the address of the Network Interface.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefixLength")]
-    pub r#prefix_length: Box<Option<String>>,
+    pub r#prefix_length: Option<String>,
     /// The IPv4 address of the IP configuration. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<Option<String>>,
+    pub r#private_ip_address: Option<String>,
     /// The resource ID of the Stack HCI Logical Network bound to the IP configuration. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

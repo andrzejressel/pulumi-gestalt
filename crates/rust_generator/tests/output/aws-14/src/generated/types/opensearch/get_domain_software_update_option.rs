@@ -6,5 +6,5 @@ pub struct GetDomainSoftwareUpdateOption {
     /// Enabled or disabled.
     #[builder(into)]
     #[serde(rename = "autoSoftwareUpdateEnabled")]
-    pub r#auto_software_update_enabled: Box<bool>,
+    pub r#auto_software_update_enabled: bool,
 }

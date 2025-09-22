@@ -6,7 +6,7 @@ pub struct ZeroTrustGatewaySettingsLogging {
     /// Redact personally identifiable information from activity logging (PII fields are: source IP, user email, user ID, device ID, URL, referrer, user agent).
     #[builder(into)]
     #[serde(rename = "redactPii")]
-    pub r#redact_pii: Box<bool>,
+    pub r#redact_pii: bool,
     /// Represents whether all requests are logged or only the blocked requests are slogged in DNS, HTTP and L4 filters.
     #[builder(into)]
     #[serde(rename = "settingsByRuleType")]

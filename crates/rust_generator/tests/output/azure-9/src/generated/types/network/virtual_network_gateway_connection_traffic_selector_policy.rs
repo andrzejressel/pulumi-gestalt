@@ -6,9 +6,9 @@ pub struct VirtualNetworkGatewayConnectionTrafficSelectorPolicy {
     /// List of local CIDRs.
     #[builder(into)]
     #[serde(rename = "localAddressCidrs")]
-    pub r#local_address_cidrs: Box<Vec<String>>,
+    pub r#local_address_cidrs: Vec<String>,
     /// List of remote CIDRs.
     #[builder(into)]
     #[serde(rename = "remoteAddressCidrs")]
-    pub r#remote_address_cidrs: Box<Vec<String>>,
+    pub r#remote_address_cidrs: Vec<String>,
 }

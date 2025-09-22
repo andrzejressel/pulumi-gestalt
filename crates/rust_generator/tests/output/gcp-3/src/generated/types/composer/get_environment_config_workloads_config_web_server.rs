@@ -6,13 +6,13 @@ pub struct GetEnvironmentConfigWorkloadsConfigWebServer {
     /// CPU request and limit for Airflow web server.
     #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<f64>,
+    pub r#cpu: f64,
     /// Memory (GB) request and limit for Airflow web server.
     #[builder(into)]
     #[serde(rename = "memoryGb")]
-    pub r#memory_gb: Box<f64>,
+    pub r#memory_gb: f64,
     /// Storage (GB) request and limit for Airflow web server.
     #[builder(into)]
     #[serde(rename = "storageGb")]
-    pub r#storage_gb: Box<f64>,
+    pub r#storage_gb: f64,
 }

@@ -8,9 +8,9 @@ pub struct GetPermissionsDataLocation {
     /// The following argument is optional:
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// Identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.
     #[builder(into)]
     #[serde(rename = "catalogId")]
-    pub r#catalog_id: Box<String>,
+    pub r#catalog_id: String,
 }

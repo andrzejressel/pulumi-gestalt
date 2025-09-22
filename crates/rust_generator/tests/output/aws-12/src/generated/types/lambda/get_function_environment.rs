@@ -5,5 +5,5 @@
 pub struct GetFunctionEnvironment {
     #[builder(into)]
     #[serde(rename = "variables")]
-    pub r#variables: Box<std::collections::HashMap<String, String>>,
+    pub r#variables: std::collections::HashMap<String, String>,
 }

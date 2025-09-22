@@ -6,13 +6,13 @@ pub struct AlertProcessingRuleActionGroupScheduleRecurrenceMonthly {
     /// Specifies a list of dayOfMonth to recurrence. Possible values are integers between `1` - `31`.
     #[builder(into)]
     #[serde(rename = "daysOfMonths")]
-    pub r#days_of_months: Box<Vec<i32>>,
+    pub r#days_of_months: Vec<i32>,
     /// Specifies the recurrence end time (H:M:S).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<Option<String>>,
+    pub r#end_time: Option<String>,
     /// Specifies the recurrence start time (H:M:S).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
 }

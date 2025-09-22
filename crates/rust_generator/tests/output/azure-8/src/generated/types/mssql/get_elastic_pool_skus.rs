@@ -6,17 +6,17 @@ pub struct GetElasticPoolSkus {
     /// The scale up/out capacity, representing server's compute units.
     #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<i32>,
+    pub r#capacity: i32,
     /// The `family` of hardware.
     #[builder(into)]
     #[serde(rename = "family")]
-    pub r#family: Box<String>,
+    pub r#family: String,
     /// The name of the elastic pool.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The tier of the particular SKU.
     #[builder(into)]
     #[serde(rename = "tier")]
-    pub r#tier: Box<String>,
+    pub r#tier: String,
 }

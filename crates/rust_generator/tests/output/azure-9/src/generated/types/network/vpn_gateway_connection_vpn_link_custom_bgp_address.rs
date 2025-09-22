@@ -6,9 +6,9 @@ pub struct VpnGatewayConnectionVpnLinkCustomBgpAddress {
     /// The custom bgp ip address which belongs to the IP Configuration.
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
     /// The ID of the IP Configuration which belongs to the VPN Gateway.
     #[builder(into)]
     #[serde(rename = "ipConfigurationId")]
-    pub r#ip_configuration_id: Box<String>,
+    pub r#ip_configuration_id: String,
 }

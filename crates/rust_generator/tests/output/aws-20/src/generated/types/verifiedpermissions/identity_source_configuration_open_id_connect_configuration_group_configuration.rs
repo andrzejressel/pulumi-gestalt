@@ -6,9 +6,9 @@ pub struct IdentitySourceConfigurationOpenIdConnectConfigurationGroupConfigurati
     /// The token claim that you want Verified Permissions to interpret as group membership. For example, `groups`.
     #[builder(into)]
     #[serde(rename = "groupClaim")]
-    pub r#group_claim: Box<String>,
+    pub r#group_claim: String,
     /// The name of the schema entity type that's mapped to the user pool group. Defaults to `AWS::CognitoGroup`.
     #[builder(into)]
     #[serde(rename = "groupEntityType")]
-    pub r#group_entity_type: Box<String>,
+    pub r#group_entity_type: String,
 }

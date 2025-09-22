@@ -6,9 +6,9 @@ pub struct ClusterClientCertificateThumbprint {
     /// Does the Client Certificate have Admin Access to the cluster? Non-admin clients can only perform read only operations on the cluster.
     #[builder(into)]
     #[serde(rename = "isAdmin")]
-    pub r#is_admin: Box<bool>,
+    pub r#is_admin: bool,
     /// The Thumbprint associated with the Client Certificate.
     #[builder(into)]
     #[serde(rename = "thumbprint")]
-    pub r#thumbprint: Box<String>,
+    pub r#thumbprint: String,
 }

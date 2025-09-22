@@ -6,5 +6,5 @@ pub struct GetClusterControlPlaneEndpointsConfig {
     /// DNS endpoint configuration.
     #[builder(into)]
     #[serde(rename = "dnsEndpointConfigs")]
-    pub r#dns_endpoint_configs: Box<Vec<super::super::types::container::GetClusterControlPlaneEndpointsConfigDnsEndpointConfig>>,
+    pub r#dns_endpoint_configs: Vec<super::super::types::container::GetClusterControlPlaneEndpointsConfigDnsEndpointConfig>,
 }

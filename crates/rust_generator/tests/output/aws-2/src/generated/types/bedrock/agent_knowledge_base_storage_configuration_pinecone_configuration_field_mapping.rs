@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AgentKnowledgeBaseStorageConfigurationPineconeConfigurationFieldMapping {
     /// Name of the field in which Amazon Bedrock stores metadata about the vector store.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metadataField")]
-    pub r#metadata_field: Box<Option<String>>,
+    pub r#metadata_field: Option<String>,
     /// Name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "textField")]
-    pub r#text_field: Box<Option<String>>,
+    pub r#text_field: Option<String>,
 }

@@ -6,5 +6,5 @@ pub struct SparkClusterComponentVersion {
     /// The version of Spark which should be used for this HDInsight Spark Cluster. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "spark")]
-    pub r#spark: Box<String>,
+    pub r#spark: String,
 }

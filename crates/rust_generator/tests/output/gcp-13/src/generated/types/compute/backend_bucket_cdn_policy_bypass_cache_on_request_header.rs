@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BackendBucketCdnPolicyBypassCacheOnRequestHeader {
     /// The header field name to match on when bypassing cache. Values are case-insensitive.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<Option<String>>,
+    pub r#header_name: Option<String>,
 }

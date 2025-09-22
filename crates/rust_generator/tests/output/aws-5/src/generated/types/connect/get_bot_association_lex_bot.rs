@@ -6,9 +6,9 @@ pub struct GetBotAssociationLexBot {
     /// Region that the Amazon Lex (V1) bot was created in.
     #[builder(into)]
     #[serde(rename = "lexRegion")]
-    pub r#lex_region: Box<String>,
+    pub r#lex_region: String,
     /// Name of the Amazon Lex (V1) bot.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

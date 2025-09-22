@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointAccessVpcEndpointNetworkInterface {
     /// The availability Zone.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<Option<String>>,
+    pub r#availability_zone: Option<String>,
     /// The unique identifier of the network interface.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkInterfaceId")]
-    pub r#network_interface_id: Box<Option<String>>,
+    pub r#network_interface_id: Option<String>,
     /// The IPv4 address of the network interface within the subnet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<Option<String>>,
+    pub r#private_ip_address: Option<String>,
     /// The unique identifier of the subnet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<Option<String>>,
+    pub r#subnet_id: Option<String>,
 }

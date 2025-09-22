@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceEncryptionConfig {
     /// Name of the customer managed encryption key (CMEK) in KMS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<Option<String>>,
+    pub r#kms_key_name: Option<String>,
     /// (Output)
     /// Full name and version of the CMEK key currently in use to encrypt Looker data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyNameVersion")]
-    pub r#kms_key_name_version: Box<Option<String>>,
+    pub r#kms_key_name_version: Option<String>,
     /// (Output)
     /// Status of the customer managed encryption key (CMEK) in KMS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyState")]
-    pub r#kms_key_state: Box<Option<String>>,
+    pub r#kms_key_state: Option<String>,
 }

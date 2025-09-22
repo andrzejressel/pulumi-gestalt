@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserPoolAdminCreateUserConfig {
     /// Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign themselves up via an app.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowAdminCreateUserOnly")]
-    pub r#allow_admin_create_user_only: Box<Option<bool>>,
+    pub r#allow_admin_create_user_only: Option<bool>,
     /// Invite message template structure. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inviteMessageTemplate")]
-    pub r#invite_message_template: Box<Option<super::super::types::cognito::UserPoolAdminCreateUserConfigInviteMessageTemplate>>,
+    pub r#invite_message_template: Option<Box<super::super::types::cognito::UserPoolAdminCreateUserConfigInviteMessageTemplate>>,
 }

@@ -6,11 +6,11 @@ pub struct ContainerServiceDeploymentVersionPublicEndpoint {
     /// The name of the container for the endpoint.
     #[builder(into)]
     #[serde(rename = "containerName")]
-    pub r#container_name: Box<String>,
+    pub r#container_name: String,
     /// The port of the container to which traffic is forwarded to.
     #[builder(into)]
     #[serde(rename = "containerPort")]
-    pub r#container_port: Box<i32>,
+    pub r#container_port: i32,
     /// A configuration block that describes the health check configuration of the container. Detailed below.
     #[builder(into)]
     #[serde(rename = "healthCheck")]

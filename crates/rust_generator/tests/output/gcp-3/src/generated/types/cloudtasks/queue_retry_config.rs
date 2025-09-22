@@ -10,35 +10,35 @@ pub struct QueueRetryConfig {
     /// If unspecified when the queue is created, Cloud Tasks will pick
     /// the default.
     /// -1 indicates unlimited attempts.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxAttempts")]
-    pub r#max_attempts: Box<Option<i32>>,
+    pub r#max_attempts: Option<i32>,
     /// A task will be scheduled for retry between minBackoff and
     /// maxBackoff duration after it fails, if the queue's RetryConfig
     /// specifies that the task should be retried.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxBackoff")]
-    pub r#max_backoff: Box<Option<String>>,
+    pub r#max_backoff: Option<String>,
     /// The time between retries will double maxDoublings times.
     /// A task's retry interval starts at minBackoff, then doubles maxDoublings times,
     /// then increases linearly, and finally retries retries at intervals of maxBackoff
     /// up to maxAttempts times.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxDoublings")]
-    pub r#max_doublings: Box<Option<i32>>,
+    pub r#max_doublings: Option<i32>,
     /// If positive, maxRetryDuration specifies the time limit for
     /// retrying a failed task, measured from when the task was first
     /// attempted. Once maxRetryDuration time has passed and the task has
     /// been attempted maxAttempts times, no further attempts will be
     /// made and the task will be deleted.
     /// If zero, then the task age is unlimited.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxRetryDuration")]
-    pub r#max_retry_duration: Box<Option<String>>,
+    pub r#max_retry_duration: Option<String>,
     /// A task will be scheduled for retry between minBackoff and
     /// maxBackoff duration after it fails, if the queue's RetryConfig
     /// specifies that the task should be retried.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minBackoff")]
-    pub r#min_backoff: Box<Option<String>>,
+    pub r#min_backoff: Option<String>,
 }

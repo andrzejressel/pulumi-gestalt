@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccessPolicyIncludeOkta {
     /// The ID of your Okta identity provider.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityProviderId")]
-    pub r#identity_provider_id: Box<Option<String>>,
+    pub r#identity_provider_id: Option<String>,
     /// The name of the Okta Group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "names")]
-    pub r#names: Box<Option<Vec<String>>>,
+    pub r#names: Option<Vec<String>>,
 }

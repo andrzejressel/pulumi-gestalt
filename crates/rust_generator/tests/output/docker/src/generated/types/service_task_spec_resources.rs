@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTaskSpecResources {
     /// Describes the resources which can be advertised by a node and requested by a task
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "limits")]
-    pub r#limits: Box<Option<super::types::ServiceTaskSpecResourcesLimits>>,
+    pub r#limits: Option<Box<super::types::ServiceTaskSpecResourcesLimits>>,
     /// An object describing the resources which can be advertised by a node and requested by a task
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reservation")]
-    pub r#reservation: Box<Option<super::types::ServiceTaskSpecResourcesReservation>>,
+    pub r#reservation: Option<Box<super::types::ServiceTaskSpecResourcesReservation>>,
 }

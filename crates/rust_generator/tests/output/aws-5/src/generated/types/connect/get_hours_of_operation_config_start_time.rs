@@ -6,9 +6,9 @@ pub struct GetHoursOfOperationConfigStartTime {
     /// Hour of opening.
     #[builder(into)]
     #[serde(rename = "hours")]
-    pub r#hours: Box<i32>,
+    pub r#hours: i32,
     /// Minute of opening.
     #[builder(into)]
     #[serde(rename = "minutes")]
-    pub r#minutes: Box<i32>,
+    pub r#minutes: i32,
 }

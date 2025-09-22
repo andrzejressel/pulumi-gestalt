@@ -10,9 +10,9 @@ pub struct GroupAdditionalGroupKey {
     /// For external-identity-mapped entities, the id must be a string conforming
     /// to the Identity Source's requirements.
     /// Must be unique within a namespace.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// (Output)
     /// The namespace in which the entity exists.
     /// If not specified, the EntityKey represents a Google-managed entity
@@ -20,7 +20,7 @@ pub struct GroupAdditionalGroupKey {
     /// If specified, the EntityKey represents an external-identity-mapped group.
     /// The namespace must correspond to an identity source created in Admin Console
     /// and must be in the form of `identitysources/{identity_source_id}`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<Option<String>>,
+    pub r#namespace: Option<String>,
 }

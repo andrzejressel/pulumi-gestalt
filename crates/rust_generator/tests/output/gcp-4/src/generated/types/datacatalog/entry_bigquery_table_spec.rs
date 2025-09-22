@@ -5,19 +5,19 @@
 pub struct EntryBigqueryTableSpec {
     /// (Output)
     /// The table source type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tableSourceType")]
-    pub r#table_source_type: Box<Option<String>>,
+    pub r#table_source_type: Option<String>,
     /// (Output)
     /// Spec of a BigQuery table. This field should only be populated if tableSourceType is BIGQUERY_TABLE.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tableSpecs")]
-    pub r#table_specs: Box<Option<Vec<super::super::types::datacatalog::EntryBigqueryTableSpecTableSpec>>>,
+    pub r#table_specs: Option<Vec<super::super::types::datacatalog::EntryBigqueryTableSpecTableSpec>>,
     /// (Output)
     /// Table view specification. This field should only be populated if tableSourceType is BIGQUERY_VIEW.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "viewSpecs")]
-    pub r#view_specs: Box<Option<Vec<super::super::types::datacatalog::EntryBigqueryTableSpecViewSpec>>>,
+    pub r#view_specs: Option<Vec<super::super::types::datacatalog::EntryBigqueryTableSpecViewSpec>>,
 }

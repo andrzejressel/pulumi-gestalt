@@ -8,5 +8,5 @@ pub struct TransferJobTransferSpecAzureBlobStorageDataSourceAzureCredentials {
     /// <a name="nested_schedule_start_end_date"></a>The `schedule_start_date` and `schedule_end_date` blocks support:
     #[builder(into)]
     #[serde(rename = "sasToken")]
-    pub r#sas_token: Box<String>,
+    pub r#sas_token: String,
 }

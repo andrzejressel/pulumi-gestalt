@@ -6,9 +6,9 @@ pub struct InfrastructureAccessTargetIpIpv4 {
     /// The IP address of the target.
     #[builder(into)]
     #[serde(rename = "ipAddr")]
-    pub r#ip_addr: Box<String>,
+    pub r#ip_addr: String,
     /// The private virtual network identifier for the target.
     #[builder(into)]
     #[serde(rename = "virtualNetworkId")]
-    pub r#virtual_network_id: Box<String>,
+    pub r#virtual_network_id: String,
 }

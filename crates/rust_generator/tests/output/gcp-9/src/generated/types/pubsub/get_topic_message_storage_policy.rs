@@ -11,5 +11,5 @@ pub struct GetTopicMessageStoragePolicy {
     /// and is not a valid configuration.
     #[builder(into)]
     #[serde(rename = "allowedPersistenceRegions")]
-    pub r#allowed_persistence_regions: Box<Vec<String>>,
+    pub r#allowed_persistence_regions: Vec<String>,
 }

@@ -6,13 +6,13 @@ pub struct GetCatalogTableStorageDescriptorSerDeInfo {
     /// Name of the table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Map of initialization parameters for the SerDe, in key-value form.
     #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<std::collections::HashMap<String, String>>,
+    pub r#parameters: std::collections::HashMap<String, String>,
     /// Usually the class that implements the SerDe. An example is `org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe`.
     #[builder(into)]
     #[serde(rename = "serializationLibrary")]
-    pub r#serialization_library: Box<String>,
+    pub r#serialization_library: String,
 }

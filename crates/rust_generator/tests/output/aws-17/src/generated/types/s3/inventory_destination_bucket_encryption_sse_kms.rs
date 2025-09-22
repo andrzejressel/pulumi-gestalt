@@ -6,5 +6,5 @@ pub struct InventoryDestinationBucketEncryptionSseKms {
     /// ARN of the KMS customer master key (CMK) used to encrypt the inventory file.
     #[builder(into)]
     #[serde(rename = "keyId")]
-    pub r#key_id: Box<String>,
+    pub r#key_id: String,
 }

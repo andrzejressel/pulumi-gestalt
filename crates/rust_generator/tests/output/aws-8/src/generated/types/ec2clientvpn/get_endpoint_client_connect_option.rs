@@ -5,8 +5,8 @@
 pub struct GetEndpointClientConnectOption {
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     #[builder(into)]
     #[serde(rename = "lambdaFunctionArn")]
-    pub r#lambda_function_arn: Box<String>,
+    pub r#lambda_function_arn: String,
 }

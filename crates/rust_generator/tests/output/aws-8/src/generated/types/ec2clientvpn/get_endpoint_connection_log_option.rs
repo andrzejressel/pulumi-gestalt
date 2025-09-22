@@ -5,11 +5,11 @@
 pub struct GetEndpointConnectionLogOption {
     #[builder(into)]
     #[serde(rename = "cloudwatchLogGroup")]
-    pub r#cloudwatch_log_group: Box<String>,
+    pub r#cloudwatch_log_group: String,
     #[builder(into)]
     #[serde(rename = "cloudwatchLogStream")]
-    pub r#cloudwatch_log_stream: Box<String>,
+    pub r#cloudwatch_log_stream: String,
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

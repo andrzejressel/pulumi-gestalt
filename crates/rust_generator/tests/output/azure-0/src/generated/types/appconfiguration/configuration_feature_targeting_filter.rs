@@ -6,13 +6,13 @@ pub struct ConfigurationFeatureTargetingFilter {
     /// A number representing the percentage of the entire user base.
     #[builder(into)]
     #[serde(rename = "defaultRolloutPercentage")]
-    pub r#default_rollout_percentage: Box<i32>,
+    pub r#default_rollout_percentage: i32,
     /// One or more `groups` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groups")]
-    pub r#groups: Box<Option<Vec<super::super::types::appconfiguration::ConfigurationFeatureTargetingFilterGroup>>>,
+    pub r#groups: Option<Vec<super::super::types::appconfiguration::ConfigurationFeatureTargetingFilterGroup>>,
     /// A list of users to target for this feature.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "users")]
-    pub r#users: Box<Option<Vec<String>>>,
+    pub r#users: Option<Vec<String>>,
 }

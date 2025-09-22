@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VMwareNodePoolConfigVsphereConfigTag {
     /// The Vsphere tag category.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "category")]
-    pub r#category: Box<Option<String>>,
+    pub r#category: Option<String>,
     /// The Vsphere tag name.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<Option<String>>,
+    pub r#tag: Option<String>,
 }

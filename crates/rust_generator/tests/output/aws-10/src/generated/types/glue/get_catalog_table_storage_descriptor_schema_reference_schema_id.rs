@@ -6,13 +6,13 @@ pub struct GetCatalogTableStorageDescriptorSchemaReferenceSchemaId {
     /// Name of the schema registry that contains the schema.
     #[builder(into)]
     #[serde(rename = "registryName")]
-    pub r#registry_name: Box<String>,
+    pub r#registry_name: String,
     /// ARN of the schema.
     #[builder(into)]
     #[serde(rename = "schemaArn")]
-    pub r#schema_arn: Box<String>,
+    pub r#schema_arn: String,
     /// Name of the schema.
     #[builder(into)]
     #[serde(rename = "schemaName")]
-    pub r#schema_name: Box<String>,
+    pub r#schema_name: String,
 }

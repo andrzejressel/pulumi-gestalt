@@ -6,5 +6,5 @@ pub struct GetDomainClusterConfigColdStorageOption {
     /// Enabled disabled toggle for off-peak update window
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

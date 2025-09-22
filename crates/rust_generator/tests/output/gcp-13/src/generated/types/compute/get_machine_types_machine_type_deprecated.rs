@@ -6,9 +6,9 @@ pub struct GetMachineTypesMachineTypeDeprecated {
     /// The URL of the suggested replacement for a deprecated machine type.
     #[builder(into)]
     #[serde(rename = "replacement")]
-    pub r#replacement: Box<String>,
+    pub r#replacement: String,
     /// The deprecation state of this resource. This can be `ACTIVE`, `DEPRECATED`, `OBSOLETE`, or `DELETED`.
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

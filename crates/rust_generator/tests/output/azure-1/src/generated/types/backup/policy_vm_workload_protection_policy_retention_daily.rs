@@ -6,5 +6,5 @@ pub struct PolicyVmWorkloadProtectionPolicyRetentionDaily {
     /// The number of daily backups to keep. Possible values are between `7` and `9999`.
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
 }

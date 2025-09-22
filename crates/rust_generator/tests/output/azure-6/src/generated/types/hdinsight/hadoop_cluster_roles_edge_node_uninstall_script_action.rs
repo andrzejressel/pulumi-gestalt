@@ -6,13 +6,13 @@ pub struct HadoopClusterRolesEdgeNodeUninstallScriptAction {
     /// The name of the uninstall script action.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The parameters for the script.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<String>>,
+    pub r#parameters: Option<String>,
     /// The URI pointing to the script to run during the installation of the edge node.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

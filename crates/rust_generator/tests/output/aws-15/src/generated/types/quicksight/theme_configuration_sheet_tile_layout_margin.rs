@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThemeConfigurationSheetTileLayoutMargin {
     /// This Boolean value controls whether to display sheet margins.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "show")]
-    pub r#show: Box<Option<bool>>,
+    pub r#show: Option<bool>,
 }

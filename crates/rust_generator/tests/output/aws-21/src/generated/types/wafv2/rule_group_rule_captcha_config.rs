@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RuleGroupRuleCaptchaConfig {
     /// Defines custom immunity time. See Immunity Time Property below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "immunityTimeProperty")]
-    pub r#immunity_time_property: Box<Option<super::super::types::wafv2::RuleGroupRuleCaptchaConfigImmunityTimeProperty>>,
+    pub r#immunity_time_property: Option<Box<super::super::types::wafv2::RuleGroupRuleCaptchaConfigImmunityTimeProperty>>,
 }

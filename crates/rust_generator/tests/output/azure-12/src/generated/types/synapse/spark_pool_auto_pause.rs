@@ -6,5 +6,5 @@ pub struct SparkPoolAutoPause {
     /// Number of minutes of idle time before the Spark Pool is automatically paused. Must be between `5` and `10080`.
     #[builder(into)]
     #[serde(rename = "delayInMinutes")]
-    pub r#delay_in_minutes: Box<i32>,
+    pub r#delay_in_minutes: i32,
 }

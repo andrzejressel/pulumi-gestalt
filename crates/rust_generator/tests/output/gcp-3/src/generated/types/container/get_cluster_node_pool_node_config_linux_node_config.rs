@@ -6,13 +6,13 @@ pub struct GetClusterNodePoolNodeConfigLinuxNodeConfig {
     /// cgroupMode specifies the cgroup mode to be used on the node.
     #[builder(into)]
     #[serde(rename = "cgroupMode")]
-    pub r#cgroup_mode: Box<String>,
+    pub r#cgroup_mode: String,
     /// Amounts for 2M and 1G hugepages.
     #[builder(into)]
     #[serde(rename = "hugepagesConfigs")]
-    pub r#hugepages_configs: Box<Vec<super::super::types::container::GetClusterNodePoolNodeConfigLinuxNodeConfigHugepagesConfig>>,
+    pub r#hugepages_configs: Vec<super::super::types::container::GetClusterNodePoolNodeConfigLinuxNodeConfigHugepagesConfig>,
     /// The Linux kernel parameters to be applied to the nodes and all pods running on the nodes.
     #[builder(into)]
     #[serde(rename = "sysctls")]
-    pub r#sysctls: Box<std::collections::HashMap<String, String>>,
+    pub r#sysctls: std::collections::HashMap<String, String>,
 }

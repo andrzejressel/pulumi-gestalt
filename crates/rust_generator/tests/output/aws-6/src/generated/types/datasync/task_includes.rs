@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TaskIncludes {
     /// The type of filter rule to apply. Valid values: `SIMPLE_PATTERN`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filterType")]
-    pub r#filter_type: Box<Option<String>>,
+    pub r#filter_type: Option<String>,
     /// A single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example: `/folder1|/folder2`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

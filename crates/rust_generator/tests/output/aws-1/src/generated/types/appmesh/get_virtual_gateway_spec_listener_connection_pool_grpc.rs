@@ -5,5 +5,5 @@
 pub struct GetVirtualGatewaySpecListenerConnectionPoolGrpc {
     #[builder(into)]
     #[serde(rename = "maxRequests")]
-    pub r#max_requests: Box<i32>,
+    pub r#max_requests: i32,
 }

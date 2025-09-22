@@ -6,5 +6,5 @@ pub struct GetResponsePlanIntegration {
     /// Details about the PagerDuty configuration for a response plan. The following values are supported:
     #[builder(into)]
     #[serde(rename = "pagerduties")]
-    pub r#pagerduties: Box<Vec<super::super::types::ssmincidents::GetResponsePlanIntegrationPagerduty>>,
+    pub r#pagerduties: Vec<super::super::types::ssmincidents::GetResponsePlanIntegrationPagerduty>,
 }

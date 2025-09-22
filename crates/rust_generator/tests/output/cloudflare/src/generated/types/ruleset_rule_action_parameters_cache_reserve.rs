@@ -6,9 +6,9 @@ pub struct RulesetRuleActionParametersCacheReserve {
     /// Determines whether Cloudflare will write the eligible resource to cache reserve.
     #[builder(into)]
     #[serde(rename = "eligible")]
-    pub r#eligible: Box<bool>,
+    pub r#eligible: bool,
     /// The minimum file size, in bytes, eligible for storage in cache reserve. If omitted and "eligible" is true, Cloudflare will use 0 bytes by default.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimumFileSize")]
-    pub r#minimum_file_size: Box<Option<i32>>,
+    pub r#minimum_file_size: Option<i32>,
 }

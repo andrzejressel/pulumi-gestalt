@@ -6,17 +6,17 @@ pub struct GetAlertRuleTemplateNrtTemplate {
     /// The description of this Sentinel Scheduled Alert Rule Template.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// The query of this Sentinel Scheduled Alert Rule Template.
     #[builder(into)]
     #[serde(rename = "query")]
-    pub r#query: Box<String>,
+    pub r#query: String,
     /// The alert severity of this Sentinel Scheduled Alert Rule Template.
     #[builder(into)]
     #[serde(rename = "severity")]
-    pub r#severity: Box<String>,
+    pub r#severity: String,
     /// A list of categories of attacks by which to classify the rule.
     #[builder(into)]
     #[serde(rename = "tactics")]
-    pub r#tactics: Box<Vec<String>>,
+    pub r#tactics: Vec<String>,
 }

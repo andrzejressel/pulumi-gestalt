@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionDiscoveryConfigOrgConfigLocation {
     /// The ID for the folder within an organization to scan
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "folderId")]
-    pub r#folder_id: Box<Option<String>>,
+    pub r#folder_id: Option<String>,
     /// The ID of an organization to scan
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "organizationId")]
-    pub r#organization_id: Box<Option<String>>,
+    pub r#organization_id: Option<String>,
 }

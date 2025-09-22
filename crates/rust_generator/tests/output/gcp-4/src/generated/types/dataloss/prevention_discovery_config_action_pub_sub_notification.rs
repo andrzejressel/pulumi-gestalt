@@ -5,21 +5,21 @@
 pub struct PreventionDiscoveryConfigActionPubSubNotification {
     /// How much data to include in the pub/sub message.
     /// Possible values are: `TABLE_PROFILE`, `RESOURCE_NAME`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "detailOfMessage")]
-    pub r#detail_of_message: Box<Option<String>>,
+    pub r#detail_of_message: Option<String>,
     /// The type of event that triggers a Pub/Sub. At most one PubSubNotification per EventType is permitted.
     /// Possible values are: `NEW_PROFILE`, `CHANGED_PROFILE`, `SCORE_INCREASED`, `ERROR_CHANGED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "event")]
-    pub r#event: Box<Option<String>>,
+    pub r#event: Option<String>,
     /// Conditions for triggering pubsub
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pubsubCondition")]
-    pub r#pubsub_condition: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotificationPubsubCondition>>,
+    pub r#pubsub_condition: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionPubSubNotificationPubsubCondition>>,
     /// Cloud Pub/Sub topic to send notifications to. Format is projects/{project}/topics/{topic}.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "topic")]
-    pub r#topic: Box<Option<String>>,
+    pub r#topic: Option<String>,
 }

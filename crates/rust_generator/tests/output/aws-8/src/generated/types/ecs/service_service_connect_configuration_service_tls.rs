@@ -8,11 +8,11 @@ pub struct ServiceServiceConnectConfigurationServiceTls {
     #[serde(rename = "issuerCertAuthority")]
     pub r#issuer_cert_authority: Box<super::super::types::ecs::ServiceServiceConnectConfigurationServiceTlsIssuerCertAuthority>,
     /// KMS key used to encrypt the private key in Secrets Manager.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKey")]
-    pub r#kms_key: Box<Option<String>>,
+    pub r#kms_key: Option<String>,
     /// ARN of the IAM Role that's associated with the Service Connect TLS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<Option<String>>,
+    pub r#role_arn: Option<String>,
 }

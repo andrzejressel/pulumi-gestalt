@@ -6,5 +6,5 @@ pub struct WebAclRuleOverrideAction {
     /// valid values are: `NONE` or `COUNT`
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -5,7 +5,7 @@
 pub struct AlertPolicyAlertStrategyNotificationRateLimit {
     /// Not more than one notification per period.
     /// A duration in seconds with up to nine fractional digits, terminated by 's'. Example "60.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "period")]
-    pub r#period: Box<Option<String>>,
+    pub r#period: Option<String>,
 }

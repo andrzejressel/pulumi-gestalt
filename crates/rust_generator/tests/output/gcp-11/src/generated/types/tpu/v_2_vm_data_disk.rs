@@ -7,12 +7,12 @@ pub struct V2VmDataDisk {
     /// mode. Only applicable to dataDisks.
     /// Default value is `READ_WRITE`.
     /// Possible values are: `READ_WRITE`, `READ_ONLY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<Option<String>>,
+    pub r#mode: Option<String>,
     /// Specifies the full path to an existing disk. For example:
     /// "projects/my-project/zones/us-central1-c/disks/my-disk".
     #[builder(into)]
     #[serde(rename = "sourceDisk")]
-    pub r#source_disk: Box<String>,
+    pub r#source_disk: String,
 }

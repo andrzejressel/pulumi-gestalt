@@ -10,15 +10,15 @@ pub struct ByteMatchSetByteMatchTuple {
     /// Within the portion of a web request that you want to search.
     #[builder(into)]
     #[serde(rename = "positionalConstraint")]
-    pub r#positional_constraint: Box<String>,
+    pub r#positional_constraint: String,
     /// The value that you want AWS WAF to search for. The maximum length of the value is 50 bytes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetString")]
-    pub r#target_string: Box<Option<String>>,
+    pub r#target_string: Option<String>,
     /// The formatting way for web request.
     /// 
     /// FieldToMatch(field_to_match) support following:
     #[builder(into)]
     #[serde(rename = "textTransformation")]
-    pub r#text_transformation: Box<String>,
+    pub r#text_transformation: String,
 }

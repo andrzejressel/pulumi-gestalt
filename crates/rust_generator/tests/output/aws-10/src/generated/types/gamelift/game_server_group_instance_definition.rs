@@ -6,12 +6,12 @@ pub struct GameServerGroupInstanceDefinition {
     /// An EC2 instance type.
     #[builder(into)]
     #[serde(rename = "instanceType")]
-    pub r#instance_type: Box<String>,
+    pub r#instance_type: String,
     /// Instance weighting that indicates how much this instance type contributes
     /// to the total capacity of a game server group.
     /// Instance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify
     /// the most cost-effective options.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weightedCapacity")]
-    pub r#weighted_capacity: Box<Option<String>>,
+    pub r#weighted_capacity: Option<String>,
 }

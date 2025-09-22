@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketCorsRule {
     /// Specifies which headers are allowed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedHeaders")]
-    pub r#allowed_headers: Box<Option<Vec<String>>>,
+    pub r#allowed_headers: Option<Vec<String>>,
     /// Specifies which methods are allowed. Can be `GET`, `PUT`, `POST`, `DELETE` or `HEAD`.
     #[builder(into)]
     #[serde(rename = "allowedMethods")]
-    pub r#allowed_methods: Box<Vec<String>>,
+    pub r#allowed_methods: Vec<String>,
     /// Specifies which origins are allowed.
     #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Vec<String>>,
+    pub r#allowed_origins: Vec<String>,
     /// Specifies expose header in the response.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exposeHeaders")]
-    pub r#expose_headers: Box<Option<Vec<String>>>,
+    pub r#expose_headers: Option<Vec<String>>,
     /// Specifies time in seconds that browser can cache the response for a preflight request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxAgeSeconds")]
-    pub r#max_age_seconds: Box<Option<i32>>,
+    pub r#max_age_seconds: Option<i32>,
 }

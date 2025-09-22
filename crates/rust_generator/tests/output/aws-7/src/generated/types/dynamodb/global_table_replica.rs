@@ -6,5 +6,5 @@ pub struct GlobalTableReplica {
     /// AWS region name of replica DynamoDB TableE.g., `us-east-1`
     #[builder(into)]
     #[serde(rename = "regionName")]
-    pub r#region_name: Box<String>,
+    pub r#region_name: String,
 }

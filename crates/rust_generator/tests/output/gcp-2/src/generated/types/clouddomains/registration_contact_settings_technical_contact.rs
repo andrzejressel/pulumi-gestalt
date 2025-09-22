@@ -6,15 +6,15 @@ pub struct RegistrationContactSettingsTechnicalContact {
     /// Required. Email address of the contact.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
     /// Fax number of the contact in international format. For example, "+1-800-555-0123".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "faxNumber")]
-    pub r#fax_number: Box<Option<String>>,
+    pub r#fax_number: Option<String>,
     /// Required. Phone number of the contact in international format. For example, "+1-800-555-0123".
     #[builder(into)]
     #[serde(rename = "phoneNumber")]
-    pub r#phone_number: Box<String>,
+    pub r#phone_number: String,
     /// Required. Postal address of the contact.
     /// Structure is documented below.
     #[builder(into)]

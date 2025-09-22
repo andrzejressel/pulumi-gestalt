@@ -4,22 +4,22 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouteSpecGrpcRouteMatch {
     /// Data to match from the gRPC request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metadatas")]
-    pub r#metadatas: Box<Option<Vec<super::super::types::appmesh::RouteSpecGrpcRouteMatchMetadata>>>,
+    pub r#metadatas: Option<Vec<super::super::types::appmesh::RouteSpecGrpcRouteMatchMetadata>>,
     /// Method name to match from the request. If you specify a name, you must also specify a `service_name`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "methodName")]
-    pub r#method_name: Box<Option<String>>,
+    pub r#method_name: Option<String>,
     /// The port number to match from the request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#port: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
     /// Fully qualified domain name for the service to match from the request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<Option<String>>,
+    pub r#service_name: Option<String>,
 }

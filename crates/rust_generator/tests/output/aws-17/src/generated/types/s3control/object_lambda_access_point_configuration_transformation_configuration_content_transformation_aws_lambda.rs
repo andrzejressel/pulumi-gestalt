@@ -6,9 +6,9 @@ pub struct ObjectLambdaAccessPointConfigurationTransformationConfigurationConten
     /// The Amazon Resource Name (ARN) of the AWS Lambda function.
     #[builder(into)]
     #[serde(rename = "functionArn")]
-    pub r#function_arn: Box<String>,
+    pub r#function_arn: String,
     /// Additional JSON that provides supplemental data to the Lambda function used to transform objects.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "functionPayload")]
-    pub r#function_payload: Box<Option<String>>,
+    pub r#function_payload: Option<String>,
 }

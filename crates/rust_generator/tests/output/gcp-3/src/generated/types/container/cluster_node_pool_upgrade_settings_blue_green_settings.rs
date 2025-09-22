@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterNodePoolUpgradeSettingsBlueGreenSettings {
     /// Time needed after draining entire blue pool. After this period, blue pool will be cleaned up. A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodePoolSoakDuration")]
-    pub r#node_pool_soak_duration: Box<Option<String>>,
+    pub r#node_pool_soak_duration: Option<String>,
     /// Standard policy for the blue-green upgrade. To be specified when strategy is set to BLUE_GREEN. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "standardRolloutPolicy")]

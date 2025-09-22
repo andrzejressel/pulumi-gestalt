@@ -6,13 +6,13 @@ pub struct ContainerUlimit {
     /// The hard limit
     #[builder(into)]
     #[serde(rename = "hard")]
-    pub r#hard: Box<i32>,
+    pub r#hard: i32,
     /// The name of the ulimit
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The soft limit
     #[builder(into)]
     #[serde(rename = "soft")]
-    pub r#soft: Box<i32>,
+    pub r#soft: i32,
 }

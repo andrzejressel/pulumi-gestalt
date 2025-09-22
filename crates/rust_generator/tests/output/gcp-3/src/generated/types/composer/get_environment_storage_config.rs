@@ -6,5 +6,5 @@ pub struct GetEnvironmentStorageConfig {
     /// Optional. Name of an existing Cloud Storage bucket to be used by the environment.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
 }

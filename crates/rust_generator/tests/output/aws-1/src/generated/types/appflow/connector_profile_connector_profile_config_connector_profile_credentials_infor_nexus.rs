@@ -6,17 +6,17 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsInfo
     /// The Access Key portion of the credentials.
     #[builder(into)]
     #[serde(rename = "accessKeyId")]
-    pub r#access_key_id: Box<String>,
+    pub r#access_key_id: String,
     /// Encryption keys used to encrypt data.
     #[builder(into)]
     #[serde(rename = "datakey")]
-    pub r#datakey: Box<String>,
+    pub r#datakey: String,
     /// The secret key used to sign requests.
     #[builder(into)]
     #[serde(rename = "secretAccessKey")]
-    pub r#secret_access_key: Box<String>,
+    pub r#secret_access_key: String,
     /// Identifier for the user.
     #[builder(into)]
     #[serde(rename = "userId")]
-    pub r#user_id: Box<String>,
+    pub r#user_id: String,
 }

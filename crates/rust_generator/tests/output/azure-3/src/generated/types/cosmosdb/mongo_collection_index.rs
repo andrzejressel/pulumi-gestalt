@@ -6,11 +6,11 @@ pub struct MongoCollectionIndex {
     /// Specifies the list of user settable keys for each Cosmos DB Mongo Collection.
     #[builder(into)]
     #[serde(rename = "keys")]
-    pub r#keys: Box<Vec<String>>,
+    pub r#keys: Vec<String>,
     /// Is the index unique or not? Defaults to `false`.
     /// 
     /// > **Note:** An index with an "_id" key must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unique")]
-    pub r#unique: Box<Option<bool>>,
+    pub r#unique: Option<bool>,
 }

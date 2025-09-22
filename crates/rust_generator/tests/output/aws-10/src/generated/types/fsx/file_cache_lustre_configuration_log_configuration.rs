@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FileCacheLustreConfigurationLogConfiguration {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destination")]
-    pub r#destination: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#destination: Option<String>,
+    #[builder(into)]
     #[serde(rename = "level")]
-    pub r#level: Box<Option<String>>,
+    pub r#level: Option<String>,
 }

@@ -6,13 +6,13 @@ pub struct RefreshScheduleSchedule {
     /// The type of refresh that the dataset undergoes. Valid values are `INCREMENTAL_REFRESH` and `FULL_REFRESH`.
     #[builder(into)]
     #[serde(rename = "refreshType")]
-    pub r#refresh_type: Box<String>,
+    pub r#refresh_type: String,
     /// The configuration of the [schedule frequency](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshFrequency.html). See schedule_frequency.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scheduleFrequency")]
-    pub r#schedule_frequency: Box<Option<super::super::types::quicksight::RefreshScheduleScheduleScheduleFrequency>>,
+    pub r#schedule_frequency: Option<Box<super::super::types::quicksight::RefreshScheduleScheduleScheduleFrequency>>,
     /// Time after which the refresh schedule can be started, expressed in `YYYY-MM-DDTHH:MM:SS` format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startAfterDateTime")]
-    pub r#start_after_date_time: Box<Option<String>>,
+    pub r#start_after_date_time: Option<String>,
 }

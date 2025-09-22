@@ -6,7 +6,7 @@ pub struct BareMetalClusterBinaryAuthorization {
     /// Mode of operation for binauthz policy evaluation. If unspecified,
     /// defaults to DISABLED.
     /// Possible values are: `DISABLED`, `PROJECT_SINGLETON_POLICY_ENFORCE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "evaluationMode")]
-    pub r#evaluation_mode: Box<Option<String>>,
+    pub r#evaluation_mode: Option<String>,
 }

@@ -5,7 +5,7 @@
 pub struct ClusterControlPlaneRemote {
     /// Name of the Google Distributed Cloud Edge zones where this node pool
     /// will be created. For example: `us-central1-edge-customer-a`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeLocation")]
-    pub r#node_location: Box<Option<String>>,
+    pub r#node_location: Option<String>,
 }

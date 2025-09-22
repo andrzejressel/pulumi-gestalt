@@ -6,13 +6,13 @@ pub struct SubscriberSourceCustomLogSourceResourceAttribute {
     /// The ARN of the AWS Glue crawler.
     #[builder(into)]
     #[serde(rename = "crawlerArn")]
-    pub r#crawler_arn: Box<String>,
+    pub r#crawler_arn: String,
     /// The ARN of the AWS Glue database where results are written.
     #[builder(into)]
     #[serde(rename = "databaseArn")]
-    pub r#database_arn: Box<String>,
+    pub r#database_arn: String,
     /// The ARN of the AWS Glue table.
     #[builder(into)]
     #[serde(rename = "tableArn")]
-    pub r#table_arn: Box<String>,
+    pub r#table_arn: String,
 }

@@ -5,39 +5,39 @@
 pub struct ServiceTemplateSpecContainerStartupProbe {
     /// Minimum consecutive failures for the probe to be considered failed after
     /// having succeeded. Defaults to 3. Minimum value is 1.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "failureThreshold")]
-    pub r#failure_threshold: Box<Option<i32>>,
+    pub r#failure_threshold: Option<i32>,
     /// GRPC specifies an action involving a GRPC port.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "grpc")]
-    pub r#grpc: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerStartupProbeGrpc>>,
+    pub r#grpc: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerStartupProbeGrpc>>,
     /// HttpGet specifies the http request to perform.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpGet")]
-    pub r#http_get: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerStartupProbeHttpGet>>,
+    pub r#http_get: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerStartupProbeHttpGet>>,
     /// Number of seconds after the container has started before the probe is
     /// initiated.
     /// Defaults to 0 seconds. Minimum value is 0. Maximum value is 240.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "initialDelaySeconds")]
-    pub r#initial_delay_seconds: Box<Option<i32>>,
+    pub r#initial_delay_seconds: Option<i32>,
     /// How often (in seconds) to perform the probe.
     /// Default to 10 seconds. Minimum value is 1. Maximum value is 240.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "periodSeconds")]
-    pub r#period_seconds: Box<Option<i32>>,
+    pub r#period_seconds: Option<i32>,
     /// TcpSocket specifies an action involving a TCP port.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tcpSocket")]
-    pub r#tcp_socket: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerStartupProbeTcpSocket>>,
+    pub r#tcp_socket: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerStartupProbeTcpSocket>>,
     /// Number of seconds after which the probe times out.
     /// Defaults to 1 second. Minimum value is 1. Maximum value is 3600.
     /// Must be smaller than periodSeconds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeoutSeconds")]
-    pub r#timeout_seconds: Box<Option<i32>>,
+    pub r#timeout_seconds: Option<i32>,
 }

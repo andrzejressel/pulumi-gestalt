@@ -6,13 +6,13 @@ pub struct GetFleetStatus {
     /// Additional information about a compute fleet.
     #[builder(into)]
     #[serde(rename = "context")]
-    pub r#context: Box<String>,
+    pub r#context: String,
     /// Message associated with the status of a compute fleet.
     #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<String>,
+    pub r#message: String,
     /// Status code of the compute fleet.
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<String>,
+    pub r#status_code: String,
 }

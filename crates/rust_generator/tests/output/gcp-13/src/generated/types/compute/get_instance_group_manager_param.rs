@@ -6,5 +6,5 @@ pub struct GetInstanceGroupManagerParam {
     /// Resource manager tags to bind to the managed instance group. The tags are key-value pairs. Keys must be in the format tagKeys/123 and values in the format tagValues/456.
     #[builder(into)]
     #[serde(rename = "resourceManagerTags")]
-    pub r#resource_manager_tags: Box<std::collections::HashMap<String, String>>,
+    pub r#resource_manager_tags: std::collections::HashMap<String, String>,
 }

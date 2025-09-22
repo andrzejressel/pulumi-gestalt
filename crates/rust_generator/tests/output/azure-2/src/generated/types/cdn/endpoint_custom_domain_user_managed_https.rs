@@ -6,11 +6,11 @@ pub struct EndpointCustomDomainUserManagedHttps {
     /// The ID of the Key Vault Secret that contains the HTTPS certificate.
     #[builder(into)]
     #[serde(rename = "keyVaultSecretId")]
-    pub r#key_vault_secret_id: Box<String>,
+    pub r#key_vault_secret_id: String,
     /// The minimum TLS protocol version that is used for HTTPS. Possible values are `TLS10` (representing TLS 1.0/1.1), `TLS12` (representing TLS 1.2) and `None` (representing no minimums). Defaults to `TLS12`.
     /// 
     /// > **Note** Azure Services will require TLS 1.2+ by August 2025, please see this [announcement](https://azure.microsoft.com/en-us/updates/v2/update-retirement-tls1-0-tls1-1-versions-azure-services/) for more.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tlsVersion")]
-    pub r#tls_version: Box<Option<String>>,
+    pub r#tls_version: Option<String>,
 }

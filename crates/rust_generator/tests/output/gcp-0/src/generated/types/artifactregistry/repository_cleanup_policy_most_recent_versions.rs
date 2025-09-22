@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RepositoryCleanupPolicyMostRecentVersions {
     /// Minimum number of versions to keep.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keepCount")]
-    pub r#keep_count: Box<Option<i32>>,
+    pub r#keep_count: Option<i32>,
     /// Match versions by package prefix. Applied on any prefix match.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "packageNamePrefixes")]
-    pub r#package_name_prefixes: Box<Option<Vec<String>>>,
+    pub r#package_name_prefixes: Option<Vec<String>>,
 }

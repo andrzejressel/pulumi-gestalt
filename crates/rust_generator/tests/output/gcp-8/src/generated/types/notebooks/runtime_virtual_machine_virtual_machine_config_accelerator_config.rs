@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig {
     /// Count of cores of this accelerator.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "coreCount")]
-    pub r#core_count: Box<Option<i32>>,
+    pub r#core_count: Option<i32>,
     /// Accelerator model. For valid values, see
     /// `https://cloud.google.com/vertex-ai/docs/workbench/reference/
     /// rest/v1/projects.locations.runtimes#AcceleratorType`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

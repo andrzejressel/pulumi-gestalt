@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResiliencyPolicyPolicyRegion {
     /// Recovery Point Objective (RPO) as a Go duration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rpo")]
-    pub r#rpo: Box<Option<String>>,
+    pub r#rpo: Option<String>,
     /// Recovery Time Objective (RTO) as a Go duration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rto")]
-    pub r#rto: Box<Option<String>>,
+    pub r#rto: Option<String>,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ProjectBuildBatchConfig {
     /// Specifies if the build artifacts for the batch build should be combined into a single artifact location.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "combineArtifacts")]
-    pub r#combine_artifacts: Box<Option<bool>>,
+    pub r#combine_artifacts: Option<bool>,
     /// Configuration block specifying the restrictions for the batch build. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "restrictions")]
-    pub r#restrictions: Box<Option<super::super::types::codebuild::ProjectBuildBatchConfigRestrictions>>,
+    pub r#restrictions: Option<Box<super::super::types::codebuild::ProjectBuildBatchConfigRestrictions>>,
     /// Specifies the service role ARN for the batch build project.
     #[builder(into)]
     #[serde(rename = "serviceRole")]
-    pub r#service_role: Box<String>,
+    pub r#service_role: String,
     /// Specifies the maximum amount of time, in minutes, that the batch build must be completed in.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeoutInMins")]
-    pub r#timeout_in_mins: Box<Option<i32>>,
+    pub r#timeout_in_mins: Option<i32>,
 }

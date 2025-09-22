@@ -6,13 +6,13 @@ pub struct GetConfigurationStoreSecondaryReadKey {
     /// The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
     #[builder(into)]
     #[serde(rename = "connectionString")]
-    pub r#connection_string: Box<String>,
+    pub r#connection_string: String,
     /// The ID of the Access Key.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The Secret of the Access Key.
     #[builder(into)]
     #[serde(rename = "secret")]
-    pub r#secret: Box<String>,
+    pub r#secret: String,
 }

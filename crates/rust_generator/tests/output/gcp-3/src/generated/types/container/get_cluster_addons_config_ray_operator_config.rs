@@ -5,13 +5,13 @@
 pub struct GetClusterAddonsConfigRayOperatorConfig {
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The status of Ray Logging, which scrapes Ray cluster logs to Cloud Logging. Defaults to disabled; set enabled = true to enable.
     #[builder(into)]
     #[serde(rename = "rayClusterLoggingConfigs")]
-    pub r#ray_cluster_logging_configs: Box<Vec<super::super::types::container::GetClusterAddonsConfigRayOperatorConfigRayClusterLoggingConfig>>,
+    pub r#ray_cluster_logging_configs: Vec<super::super::types::container::GetClusterAddonsConfigRayOperatorConfigRayClusterLoggingConfig>,
     /// The status of Ray Cluster monitoring, which shows Ray cluster metrics in Cloud Console. Defaults to disabled; set enabled = true to enable.
     #[builder(into)]
     #[serde(rename = "rayClusterMonitoringConfigs")]
-    pub r#ray_cluster_monitoring_configs: Box<Vec<super::super::types::container::GetClusterAddonsConfigRayOperatorConfigRayClusterMonitoringConfig>>,
+    pub r#ray_cluster_monitoring_configs: Vec<super::super::types::container::GetClusterAddonsConfigRayOperatorConfigRayClusterMonitoringConfig>,
 }

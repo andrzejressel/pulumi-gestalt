@@ -5,12 +5,12 @@
 pub struct PreventionJobTriggerInspectJobInspectConfigRuleSet {
     /// List of infoTypes this rule set is applied to.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "infoTypes")]
-    pub r#info_types: Box<Option<Vec<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType>>>,
+    pub r#info_types: Option<Vec<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType>>,
     /// Set of rules to be applied to infoTypes. The rules are applied in order.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRule>>,
+    pub r#rules: Vec<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRule>,
 }

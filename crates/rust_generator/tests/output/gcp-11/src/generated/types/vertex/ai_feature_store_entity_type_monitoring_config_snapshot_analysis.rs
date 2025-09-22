@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysis {
     /// The monitoring schedule for snapshot analysis. For EntityType-level config: unset / disabled = true indicates disabled by default for Features under it; otherwise by default enable snapshot analysis monitoring with monitoringInterval for Features under it.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<Option<bool>>,
+    pub r#disabled: Option<bool>,
     /// Configuration of the snapshot analysis based monitoring pipeline running interval. The value is rolled up to full day.
     /// A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
     /// 
     /// > **Warning:** `monitoring_interval` is deprecated and will be removed in a future release.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "monitoringInterval")]
-    pub r#monitoring_interval: Box<Option<String>>,
+    pub r#monitoring_interval: Option<String>,
     /// Configuration of the snapshot analysis based monitoring pipeline running interval. The value indicates number of days. The default value is 1.
     /// If both FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][] are set when creating/updating EntityTypes/Features, FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "monitoringIntervalDays")]
-    pub r#monitoring_interval_days: Box<Option<i32>>,
+    pub r#monitoring_interval_days: Option<i32>,
     /// Customized export features time window for snapshot analysis. Unit is one day. The default value is 21 days. Minimum value is 1 day. Maximum value is 4000 days.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stalenessDays")]
-    pub r#staleness_days: Box<Option<i32>>,
+    pub r#staleness_days: Option<i32>,
 }

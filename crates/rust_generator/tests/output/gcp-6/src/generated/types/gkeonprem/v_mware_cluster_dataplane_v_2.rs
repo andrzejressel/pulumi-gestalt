@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VMwareClusterDataplaneV2 {
     /// Enable advanced networking which requires dataplane_v2_enabled to be set true.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "advancedNetworking")]
-    pub r#advanced_networking: Box<Option<bool>>,
+    pub r#advanced_networking: Option<bool>,
     /// Enables Dataplane V2.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataplaneV2Enabled")]
-    pub r#dataplane_v_2_enabled: Box<Option<bool>>,
+    pub r#dataplane_v_2_enabled: Option<bool>,
     /// Enable Dataplane V2 for clusters with Windows nodes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "windowsDataplaneV2Enabled")]
-    pub r#windows_dataplane_v_2_enabled: Box<Option<bool>>,
+    pub r#windows_dataplane_v_2_enabled: Option<bool>,
 }

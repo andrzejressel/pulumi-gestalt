@@ -6,9 +6,9 @@ pub struct IngestionDestinationProcessingConfigurationAuditLog {
     /// The format in which the audit logs need to be formatted. Valid values: `json`, `parquet`.
     #[builder(into)]
     #[serde(rename = "format")]
-    pub r#format: Box<String>,
+    pub r#format: String,
     /// The event schema in which the audit logs need to be formatted. Valid values: `ocsf`, `raw`.
     #[builder(into)]
     #[serde(rename = "schema")]
-    pub r#schema: Box<String>,
+    pub r#schema: String,
 }

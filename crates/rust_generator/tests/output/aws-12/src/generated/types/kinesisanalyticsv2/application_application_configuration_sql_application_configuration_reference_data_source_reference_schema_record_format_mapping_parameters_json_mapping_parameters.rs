@@ -6,5 +6,5 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationReferen
     /// The path to the top-level parent that contains the records.
     #[builder(into)]
     #[serde(rename = "recordRowPath")]
-    pub r#record_row_path: Box<String>,
+    pub r#record_row_path: String,
 }

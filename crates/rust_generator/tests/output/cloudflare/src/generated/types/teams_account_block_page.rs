@@ -4,35 +4,35 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TeamsAccountBlockPage {
     /// Hex code of block page background color.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backgroundColor")]
-    pub r#background_color: Box<Option<String>>,
+    pub r#background_color: Option<String>,
     /// Indicator of enablement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Block page footer text.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "footerText")]
-    pub r#footer_text: Box<Option<String>>,
+    pub r#footer_text: Option<String>,
     /// Block page header text.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerText")]
-    pub r#header_text: Box<Option<String>>,
+    pub r#header_text: Option<String>,
     /// URL of block page logo.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logoPath")]
-    pub r#logo_path: Box<Option<String>>,
+    pub r#logo_path: Option<String>,
     /// Admin email for users to contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mailtoAddress")]
-    pub r#mailto_address: Box<Option<String>>,
+    pub r#mailto_address: Option<String>,
     /// Subject line for emails created from block page.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mailtoSubject")]
-    pub r#mailto_subject: Box<Option<String>>,
+    pub r#mailto_subject: Option<String>,
     /// Name of block page configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

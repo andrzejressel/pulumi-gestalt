@@ -3,181 +3,181 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZoneSettingsOverrideSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "alwaysOnline")]
-    pub r#always_online: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#always_online: Option<String>,
+    #[builder(into)]
     #[serde(rename = "alwaysUseHttps")]
-    pub r#always_use_https: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#always_use_https: Option<String>,
+    #[builder(into)]
     #[serde(rename = "automaticHttpsRewrites")]
-    pub r#automatic_https_rewrites: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#automatic_https_rewrites: Option<String>,
+    #[builder(into)]
     #[serde(rename = "binaryAst")]
-    pub r#binary_ast: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#binary_ast: Option<String>,
+    #[builder(into)]
     #[serde(rename = "brotli")]
-    pub r#brotli: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#brotli: Option<String>,
+    #[builder(into)]
     #[serde(rename = "browserCacheTtl")]
-    pub r#browser_cache_ttl: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#browser_cache_ttl: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "browserCheck")]
-    pub r#browser_check: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#browser_check: Option<String>,
+    #[builder(into)]
     #[serde(rename = "cacheLevel")]
-    pub r#cache_level: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#cache_level: Option<String>,
+    #[builder(into)]
     #[serde(rename = "challengeTtl")]
-    pub r#challenge_ttl: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#challenge_ttl: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "ciphers")]
-    pub r#ciphers: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#ciphers: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "cnameFlattening")]
-    pub r#cname_flattening: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#cname_flattening: Option<String>,
+    #[builder(into)]
     #[serde(rename = "developmentMode")]
-    pub r#development_mode: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#development_mode: Option<String>,
+    #[builder(into)]
     #[serde(rename = "earlyHints")]
-    pub r#early_hints: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#early_hints: Option<String>,
+    #[builder(into)]
     #[serde(rename = "emailObfuscation")]
-    pub r#email_obfuscation: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#email_obfuscation: Option<String>,
+    #[builder(into)]
     #[serde(rename = "filterLogsToCloudflare")]
-    pub r#filter_logs_to_cloudflare: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#filter_logs_to_cloudflare: Option<String>,
+    #[builder(into)]
     #[serde(rename = "fonts")]
-    pub r#fonts: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#fonts: Option<String>,
+    #[builder(into)]
     #[serde(rename = "h2Prioritization")]
-    pub r#h_2_prioritization: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#h_2_prioritization: Option<String>,
+    #[builder(into)]
     #[serde(rename = "hotlinkProtection")]
-    pub r#hotlink_protection: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#hotlink_protection: Option<String>,
+    #[builder(into)]
     #[serde(rename = "http2")]
-    pub r#http_2: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#http_2: Option<String>,
+    #[builder(into)]
     #[serde(rename = "http3")]
-    pub r#http_3: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#http_3: Option<String>,
+    #[builder(into)]
     #[serde(rename = "imageResizing")]
-    pub r#image_resizing: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#image_resizing: Option<String>,
+    #[builder(into)]
     #[serde(rename = "ipGeolocation")]
-    pub r#ip_geolocation: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#ip_geolocation: Option<String>,
+    #[builder(into)]
     #[serde(rename = "ipv6")]
-    pub r#ipv_6: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#ipv_6: Option<String>,
+    #[builder(into)]
     #[serde(rename = "logToCloudflare")]
-    pub r#log_to_cloudflare: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#log_to_cloudflare: Option<String>,
+    #[builder(into)]
     #[serde(rename = "maxUpload")]
-    pub r#max_upload: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#max_upload: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "minTlsVersion")]
-    pub r#min_tls_version: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#min_tls_version: Option<String>,
+    #[builder(into)]
     #[serde(rename = "minify")]
-    pub r#minify: Box<Option<super::types::ZoneSettingsOverrideSettingsMinify>>,
-    #[builder(into, default)]
+    pub r#minify: Option<Box<super::types::ZoneSettingsOverrideSettingsMinify>>,
+    #[builder(into)]
     #[serde(rename = "mirage")]
-    pub r#mirage: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#mirage: Option<String>,
+    #[builder(into)]
     #[serde(rename = "mobileRedirect")]
-    pub r#mobile_redirect: Box<Option<super::types::ZoneSettingsOverrideSettingsMobileRedirect>>,
-    #[builder(into, default)]
+    pub r#mobile_redirect: Option<Box<super::types::ZoneSettingsOverrideSettingsMobileRedirect>>,
+    #[builder(into)]
     #[serde(rename = "nel")]
-    pub r#nel: Box<Option<super::types::ZoneSettingsOverrideSettingsNel>>,
-    #[builder(into, default)]
+    pub r#nel: Option<Box<super::types::ZoneSettingsOverrideSettingsNel>>,
+    #[builder(into)]
     #[serde(rename = "opportunisticEncryption")]
-    pub r#opportunistic_encryption: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#opportunistic_encryption: Option<String>,
+    #[builder(into)]
     #[serde(rename = "opportunisticOnion")]
-    pub r#opportunistic_onion: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#opportunistic_onion: Option<String>,
+    #[builder(into)]
     #[serde(rename = "orangeToOrange")]
-    pub r#orange_to_orange: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#orange_to_orange: Option<String>,
+    #[builder(into)]
     #[serde(rename = "originErrorPagePassThru")]
-    pub r#origin_error_page_pass_thru: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#origin_error_page_pass_thru: Option<String>,
+    #[builder(into)]
     #[serde(rename = "originMaxHttpVersion")]
-    pub r#origin_max_http_version: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#origin_max_http_version: Option<String>,
+    #[builder(into)]
     #[serde(rename = "polish")]
-    pub r#polish: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#polish: Option<String>,
+    #[builder(into)]
     #[serde(rename = "prefetchPreload")]
-    pub r#prefetch_preload: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#prefetch_preload: Option<String>,
+    #[builder(into)]
     #[serde(rename = "privacyPass")]
-    pub r#privacy_pass: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#privacy_pass: Option<String>,
+    #[builder(into)]
     #[serde(rename = "proxyReadTimeout")]
-    pub r#proxy_read_timeout: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#proxy_read_timeout: Option<String>,
+    #[builder(into)]
     #[serde(rename = "pseudoIpv4")]
-    pub r#pseudo_ipv_4: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#pseudo_ipv_4: Option<String>,
+    #[builder(into)]
     #[serde(rename = "replaceInsecureJs")]
-    pub r#replace_insecure_js: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#replace_insecure_js: Option<String>,
+    #[builder(into)]
     #[serde(rename = "responseBuffering")]
-    pub r#response_buffering: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#response_buffering: Option<String>,
+    #[builder(into)]
     #[serde(rename = "rocketLoader")]
-    pub r#rocket_loader: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#rocket_loader: Option<String>,
+    #[builder(into)]
     #[serde(rename = "securityHeader")]
-    pub r#security_header: Box<Option<super::types::ZoneSettingsOverrideSettingsSecurityHeader>>,
-    #[builder(into, default)]
+    pub r#security_header: Option<Box<super::types::ZoneSettingsOverrideSettingsSecurityHeader>>,
+    #[builder(into)]
     #[serde(rename = "securityLevel")]
-    pub r#security_level: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#security_level: Option<String>,
+    #[builder(into)]
     #[serde(rename = "serverSideExclude")]
-    pub r#server_side_exclude: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#server_side_exclude: Option<String>,
+    #[builder(into)]
     #[serde(rename = "sortQueryStringForCache")]
-    pub r#sort_query_string_for_cache: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#sort_query_string_for_cache: Option<String>,
+    #[builder(into)]
     #[serde(rename = "speedBrain")]
-    pub r#speed_brain: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#speed_brain: Option<String>,
+    #[builder(into)]
     #[serde(rename = "ssl")]
-    pub r#ssl: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#ssl: Option<String>,
+    #[builder(into)]
     #[serde(rename = "tls12Only")]
-    pub r#tls_12_only: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#tls_12_only: Option<String>,
+    #[builder(into)]
     #[serde(rename = "tls13")]
-    pub r#tls_13: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#tls_13: Option<String>,
+    #[builder(into)]
     #[serde(rename = "tlsClientAuth")]
-    pub r#tls_client_auth: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#tls_client_auth: Option<String>,
+    #[builder(into)]
     #[serde(rename = "trueClientIpHeader")]
-    pub r#true_client_ip_header: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#true_client_ip_header: Option<String>,
+    #[builder(into)]
     #[serde(rename = "universalSsl")]
-    pub r#universal_ssl: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#universal_ssl: Option<String>,
+    #[builder(into)]
     #[serde(rename = "visitorIp")]
-    pub r#visitor_ip: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#visitor_ip: Option<String>,
+    #[builder(into)]
     #[serde(rename = "waf")]
-    pub r#waf: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#waf: Option<String>,
+    #[builder(into)]
     #[serde(rename = "webp")]
-    pub r#webp: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#webp: Option<String>,
+    #[builder(into)]
     #[serde(rename = "websockets")]
-    pub r#websockets: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#websockets: Option<String>,
+    #[builder(into)]
     #[serde(rename = "zeroRtt")]
-    pub r#zero_rtt: Box<Option<String>>,
+    pub r#zero_rtt: Option<String>,
 }

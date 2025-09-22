@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkloadSaaEnrollmentResponse {
     /// Indicates SAA enrollment setup error if any.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "setupErrors")]
-    pub r#setup_errors: Box<Option<Vec<String>>>,
+    pub r#setup_errors: Option<Vec<String>>,
     /// Indicates SAA enrollment status of a given workload. Possible values: SETUP_STATE_UNSPECIFIED, STATUS_PENDING, STATUS_COMPLETE
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "setupStatus")]
-    pub r#setup_status: Box<Option<String>>,
+    pub r#setup_status: Option<String>,
 }

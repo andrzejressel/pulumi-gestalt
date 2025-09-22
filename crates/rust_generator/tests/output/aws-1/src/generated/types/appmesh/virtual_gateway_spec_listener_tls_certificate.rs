@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualGatewaySpecListenerTlsCertificate {
     /// An AWS Certificate Manager (ACM) certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acm")]
-    pub r#acm: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerTlsCertificateAcm>>,
+    pub r#acm: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerTlsCertificateAcm>>,
     /// Local file certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "file")]
-    pub r#file: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerTlsCertificateFile>>,
+    pub r#file: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerTlsCertificateFile>>,
     /// A [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerTlsCertificateSds>>,
+    pub r#sds: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerTlsCertificateSds>>,
 }

@@ -7,10 +7,10 @@ pub struct UrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel {
     /// and must be at least 1 character long.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value of the label must match the specified value. value can have a maximum
     /// length of 1024 characters.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

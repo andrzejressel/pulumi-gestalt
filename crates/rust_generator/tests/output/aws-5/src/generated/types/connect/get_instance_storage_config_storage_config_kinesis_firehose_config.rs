@@ -6,5 +6,5 @@ pub struct GetInstanceStorageConfigStorageConfigKinesisFirehoseConfig {
     /// The Amazon Resource Name (ARN) of the delivery stream.
     #[builder(into)]
     #[serde(rename = "firehoseArn")]
-    pub r#firehose_arn: Box<String>,
+    pub r#firehose_arn: String,
 }

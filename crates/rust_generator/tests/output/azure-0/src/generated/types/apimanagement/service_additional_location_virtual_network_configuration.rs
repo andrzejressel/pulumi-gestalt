@@ -6,5 +6,5 @@ pub struct ServiceAdditionalLocationVirtualNetworkConfiguration {
     /// The id of the subnet that will be used for the API Management.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

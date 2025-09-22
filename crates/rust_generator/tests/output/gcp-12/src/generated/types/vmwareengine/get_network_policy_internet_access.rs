@@ -6,9 +6,9 @@ pub struct GetNetworkPolicyInternetAccess {
     /// True if the service is enabled; false otherwise.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// State of the service. New values may be added to this enum when appropriate.
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

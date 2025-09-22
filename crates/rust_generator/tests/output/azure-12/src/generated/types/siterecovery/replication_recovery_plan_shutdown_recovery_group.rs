@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ReplicationRecoveryPlanShutdownRecoveryGroup {
     /// one or more `action` block as defined below. which will be executed after the group recovery.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "postActions")]
-    pub r#post_actions: Box<Option<Vec<super::super::types::siterecovery::ReplicationRecoveryPlanShutdownRecoveryGroupPostAction>>>,
+    pub r#post_actions: Option<Vec<super::super::types::siterecovery::ReplicationRecoveryPlanShutdownRecoveryGroupPostAction>>,
     /// one or more `action` block as defined below. which will be executed before the group recovery.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preActions")]
-    pub r#pre_actions: Box<Option<Vec<super::super::types::siterecovery::ReplicationRecoveryPlanShutdownRecoveryGroupPreAction>>>,
+    pub r#pre_actions: Option<Vec<super::super::types::siterecovery::ReplicationRecoveryPlanShutdownRecoveryGroupPreAction>>,
 }

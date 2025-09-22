@@ -6,5 +6,5 @@ pub struct PolicyFileShareRetentionDaily {
     /// The number of daily backups to keep. Must be between `1` and `200` (inclusive)
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
 }

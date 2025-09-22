@@ -6,13 +6,13 @@ pub struct GetDomainLogPublishingOption {
     /// CloudWatch Log Group where the logs are published.
     #[builder(into)]
     #[serde(rename = "cloudwatchLogGroupArn")]
-    pub r#cloudwatch_log_group_arn: Box<String>,
+    pub r#cloudwatch_log_group_arn: String,
     /// Enabled disabled toggle for off-peak update window
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Type of OpenSearch log being published.
     #[builder(into)]
     #[serde(rename = "logType")]
-    pub r#log_type: Box<String>,
+    pub r#log_type: String,
 }

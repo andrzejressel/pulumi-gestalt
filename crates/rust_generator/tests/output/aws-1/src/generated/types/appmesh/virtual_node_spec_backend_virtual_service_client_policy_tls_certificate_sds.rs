@@ -6,5 +6,5 @@ pub struct VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds {
     /// Name of the secret for a virtual node's Transport Layer Security (TLS) Secret Discovery Service validation context trust.
     #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<String>,
+    pub r#secret_name: String,
 }

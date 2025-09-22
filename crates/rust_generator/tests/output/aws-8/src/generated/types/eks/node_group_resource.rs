@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NodeGroupResource {
     /// List of objects containing information about AutoScaling Groups.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoscalingGroups")]
-    pub r#autoscaling_groups: Box<Option<Vec<super::super::types::eks::NodeGroupResourceAutoscalingGroup>>>,
+    pub r#autoscaling_groups: Option<Vec<super::super::types::eks::NodeGroupResourceAutoscalingGroup>>,
     /// Identifier of the remote access EC2 Security Group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "remoteAccessSecurityGroupId")]
-    pub r#remote_access_security_group_id: Box<Option<String>>,
+    pub r#remote_access_security_group_id: Option<String>,
 }

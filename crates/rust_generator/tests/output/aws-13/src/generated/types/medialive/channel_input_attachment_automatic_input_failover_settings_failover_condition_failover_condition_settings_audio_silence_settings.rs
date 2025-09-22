@@ -5,9 +5,9 @@
 pub struct ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsAudioSilenceSettings {
     #[builder(into)]
     #[serde(rename = "audioSelectorName")]
-    pub r#audio_selector_name: Box<String>,
+    pub r#audio_selector_name: String,
     /// The amount of time (in milliseconds) that the active input must be silent before automatic input failover occurs. Silence is defined as audio loss or audio quieter than -50 dBFS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audioSilenceThresholdMsec")]
-    pub r#audio_silence_threshold_msec: Box<Option<i32>>,
+    pub r#audio_silence_threshold_msec: Option<i32>,
 }

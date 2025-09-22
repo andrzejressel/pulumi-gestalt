@@ -6,13 +6,13 @@ pub struct NodeGroupScalingConfig {
     /// Desired number of worker nodes.
     #[builder(into)]
     #[serde(rename = "desiredSize")]
-    pub r#desired_size: Box<i32>,
+    pub r#desired_size: i32,
     /// Maximum number of worker nodes.
     #[builder(into)]
     #[serde(rename = "maxSize")]
-    pub r#max_size: Box<i32>,
+    pub r#max_size: i32,
     /// Minimum number of worker nodes.
     #[builder(into)]
     #[serde(rename = "minSize")]
-    pub r#min_size: Box<i32>,
+    pub r#min_size: i32,
 }

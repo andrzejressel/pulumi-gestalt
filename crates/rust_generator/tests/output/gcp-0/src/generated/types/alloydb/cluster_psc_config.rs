@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterPscConfig {
     /// Create an instance that allows connections from Private Service Connect endpoints to the instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pscEnabled")]
-    pub r#psc_enabled: Box<Option<bool>>,
+    pub r#psc_enabled: Option<bool>,
 }

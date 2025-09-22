@@ -6,9 +6,9 @@ pub struct MaintenanceWindowTaskTaskInvocationParametersAutomationParametersPara
     /// The parameter name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The array of strings.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

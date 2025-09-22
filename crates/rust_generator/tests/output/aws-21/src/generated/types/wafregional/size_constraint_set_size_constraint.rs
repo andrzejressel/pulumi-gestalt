@@ -8,7 +8,7 @@ pub struct SizeConstraintSetSizeConstraint {
     /// See [docs](https://docs.aws.amazon.com/waf/latest/APIReference/API_wafRegional_SizeConstraint.html) for all supported values.
     #[builder(into)]
     #[serde(rename = "comparisonOperator")]
-    pub r#comparison_operator: Box<String>,
+    pub r#comparison_operator: String,
     /// Specifies where in a web request to look for the size constraint.
     #[builder(into)]
     #[serde(rename = "fieldToMatch")]
@@ -17,7 +17,7 @@ pub struct SizeConstraintSetSizeConstraint {
     /// Valid values are between 0 - 21474836480 bytes (0 - 20 GB).
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<i32>,
+    pub r#size: i32,
     /// Text transformations used to eliminate unusual formatting that attackers use in web requests in an effort to bypass AWS WAF.
     /// If you specify a transformation, AWS WAF performs the transformation on `field_to_match` before inspecting a request for a match.
     /// e.g., `CMD_LINE`, `HTML_ENTITY_DECODE` or `NONE`.
@@ -26,5 +26,5 @@ pub struct SizeConstraintSetSizeConstraint {
     /// **Note:** if you choose `BODY` as `type`, you must choose `NONE` because CloudFront forwards only the first 8192 bytes for inspection.
     #[builder(into)]
     #[serde(rename = "textTransformation")]
-    pub r#text_transformation: Box<String>,
+    pub r#text_transformation: String,
 }

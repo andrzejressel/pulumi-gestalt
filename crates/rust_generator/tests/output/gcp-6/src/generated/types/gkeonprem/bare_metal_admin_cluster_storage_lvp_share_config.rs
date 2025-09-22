@@ -9,7 +9,7 @@ pub struct BareMetalAdminClusterStorageLvpShareConfig {
     #[serde(rename = "lvpConfig")]
     pub r#lvp_config: Box<super::super::types::gkeonprem::BareMetalAdminClusterStorageLvpShareConfigLvpConfig>,
     /// The number of subdirectories to create under path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sharedPathPvCount")]
-    pub r#shared_path_pv_count: Box<Option<i32>>,
+    pub r#shared_path_pv_count: Option<i32>,
 }

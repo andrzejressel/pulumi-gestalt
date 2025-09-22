@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirewallPolicyManagedRule {
     /// One or more `exclusion` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exclusions")]
-    pub r#exclusions: Box<Option<Vec<super::super::types::frontdoor::FirewallPolicyManagedRuleExclusion>>>,
+    pub r#exclusions: Option<Vec<super::super::types::frontdoor::FirewallPolicyManagedRuleExclusion>>,
     /// One or more `override` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "overrides")]
-    pub r#overrides: Box<Option<Vec<super::super::types::frontdoor::FirewallPolicyManagedRuleOverride>>>,
+    pub r#overrides: Option<Vec<super::super::types::frontdoor::FirewallPolicyManagedRuleOverride>>,
     /// The name of the managed rule to use with this resource.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// The version on the managed rule to use with this resource.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

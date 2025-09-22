@@ -7,11 +7,11 @@ pub struct GetBackendServiceLocalityLbPolicyCustomPolicy {
     /// by a locally installed custom policy implementation.
     #[builder(into)]
     #[serde(rename = "data")]
-    pub r#data: Box<String>,
+    pub r#data: String,
     /// The name of the Backend Service.
     /// 
     /// - - -
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

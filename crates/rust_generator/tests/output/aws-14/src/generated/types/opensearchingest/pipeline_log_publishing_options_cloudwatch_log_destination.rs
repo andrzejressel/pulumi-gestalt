@@ -6,5 +6,5 @@ pub struct PipelineLogPublishingOptionsCloudwatchLogDestination {
     /// The name of the CloudWatch Logs group to send pipeline logs to. You can specify an existing log group or create a new one. For example, /aws/OpenSearchService/IngestionService/my-pipeline.
     #[builder(into)]
     #[serde(rename = "logGroup")]
-    pub r#log_group: Box<String>,
+    pub r#log_group: String,
 }

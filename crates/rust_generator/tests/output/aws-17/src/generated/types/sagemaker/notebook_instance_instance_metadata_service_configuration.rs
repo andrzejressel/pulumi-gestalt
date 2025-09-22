@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NotebookInstanceInstanceMetadataServiceConfiguration {
     /// Indicates the minimum IMDS version that the notebook instance supports. When passed "1" is passed. This means that both IMDSv1 and IMDSv2 are supported. Valid values are `1` and `2`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimumInstanceMetadataServiceVersion")]
-    pub r#minimum_instance_metadata_service_version: Box<Option<String>>,
+    pub r#minimum_instance_metadata_service_version: Option<String>,
 }

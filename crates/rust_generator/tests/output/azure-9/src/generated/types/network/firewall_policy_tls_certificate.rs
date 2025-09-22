@@ -6,9 +6,9 @@ pub struct FirewallPolicyTlsCertificate {
     /// The ID of the Key Vault, where the secret or certificate is stored.
     #[builder(into)]
     #[serde(rename = "keyVaultSecretId")]
-    pub r#key_vault_secret_id: Box<String>,
+    pub r#key_vault_secret_id: String,
     /// The name of the certificate.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -6,9 +6,9 @@ pub struct ModuleNetworkProfile {
     /// The private IPv4 address of the network interface. Changing this forces a new Dedicated Hardware Security Module to be created.
     #[builder(into)]
     #[serde(rename = "networkInterfacePrivateIpAddresses")]
-    pub r#network_interface_private_ip_addresses: Box<Vec<String>>,
+    pub r#network_interface_private_ip_addresses: Vec<String>,
     /// The ID of the subnet. Changing this forces a new Dedicated Hardware Security Module to be created.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

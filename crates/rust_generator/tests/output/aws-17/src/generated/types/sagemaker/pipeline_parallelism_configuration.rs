@@ -6,5 +6,5 @@ pub struct PipelineParallelismConfiguration {
     /// The max number of steps that can be executed in parallel.
     #[builder(into)]
     #[serde(rename = "maxParallelExecutionSteps")]
-    pub r#max_parallel_execution_steps: Box<i32>,
+    pub r#max_parallel_execution_steps: i32,
 }

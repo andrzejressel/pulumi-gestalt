@@ -6,9 +6,9 @@ pub struct DistributionDefaultCacheBehaviorFunctionAssociation {
     /// Specific event to trigger this function. Valid values: `viewer-request` or `viewer-response`.
     #[builder(into)]
     #[serde(rename = "eventType")]
-    pub r#event_type: Box<String>,
+    pub r#event_type: String,
     /// ARN of the CloudFront function.
     #[builder(into)]
     #[serde(rename = "functionArn")]
-    pub r#function_arn: Box<String>,
+    pub r#function_arn: String,
 }

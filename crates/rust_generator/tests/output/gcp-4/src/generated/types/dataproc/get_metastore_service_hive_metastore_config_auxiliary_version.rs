@@ -7,12 +7,12 @@ pub struct GetMetastoreServiceHiveMetastoreConfigAuxiliaryVersion {
     /// If keys are present in both the auxiliary version's overrides and the primary version's overrides, the value from the auxiliary version's overrides takes precedence.
     #[builder(into)]
     #[serde(rename = "configOverrides")]
-    pub r#config_overrides: Box<std::collections::HashMap<String, String>>,
+    pub r#config_overrides: std::collections::HashMap<String, String>,
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The Hive metastore version of the auxiliary service. It must be less than the primary Hive metastore service's version.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

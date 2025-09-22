@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AuthorizerJwtConfiguration {
     /// List of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audiences")]
-    pub r#audiences: Box<Option<Vec<String>>>,
+    pub r#audiences: Option<Vec<String>>,
     /// Base domain of the identity provider that issues JSON Web Tokens, such as the `endpoint` attribute of the `aws.cognito.UserPool` resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<Option<String>>,
+    pub r#issuer: Option<String>,
 }

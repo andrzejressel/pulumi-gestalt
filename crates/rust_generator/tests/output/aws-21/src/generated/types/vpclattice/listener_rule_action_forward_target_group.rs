@@ -5,8 +5,8 @@
 pub struct ListenerRuleActionForwardTargetGroup {
     #[builder(into)]
     #[serde(rename = "targetGroupIdentifier")]
-    pub r#target_group_identifier: Box<String>,
-    #[builder(into, default)]
+    pub r#target_group_identifier: String,
+    #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<Option<i32>>,
+    pub r#weight: Option<i32>,
 }

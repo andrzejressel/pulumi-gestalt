@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInsightsAnalysisReturnPathComponentInboundHeader {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destinationAddresses")]
-    pub r#destination_addresses: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#destination_addresses: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "destinationPortRanges")]
-    pub r#destination_port_ranges: Box<Option<Vec<super::super::types::ec2::NetworkInsightsAnalysisReturnPathComponentInboundHeaderDestinationPortRange>>>,
-    #[builder(into, default)]
+    pub r#destination_port_ranges: Option<Vec<super::super::types::ec2::NetworkInsightsAnalysisReturnPathComponentInboundHeaderDestinationPortRange>>,
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#protocol: Option<String>,
+    #[builder(into)]
     #[serde(rename = "sourceAddresses")]
-    pub r#source_addresses: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#source_addresses: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "sourcePortRanges")]
-    pub r#source_port_ranges: Box<Option<Vec<super::super::types::ec2::NetworkInsightsAnalysisReturnPathComponentInboundHeaderSourcePortRange>>>,
+    pub r#source_port_ranges: Option<Vec<super::super::types::ec2::NetworkInsightsAnalysisReturnPathComponentInboundHeaderSourcePortRange>>,
 }

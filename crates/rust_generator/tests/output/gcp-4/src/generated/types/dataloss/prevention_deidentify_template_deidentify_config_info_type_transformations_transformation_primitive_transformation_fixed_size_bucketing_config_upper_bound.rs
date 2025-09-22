@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBound {
     /// A float value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "floatValue")]
-    pub r#float_value: Box<Option<f64>>,
+    pub r#float_value: Option<f64>,
     /// An integer value (int64 format)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "integerValue")]
-    pub r#integer_value: Box<Option<String>>,
+    pub r#integer_value: Option<String>,
 }

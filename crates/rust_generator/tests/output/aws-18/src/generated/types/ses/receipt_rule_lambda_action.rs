@@ -6,17 +6,17 @@ pub struct ReceiptRuleLambdaAction {
     /// The ARN of the Lambda function to invoke
     #[builder(into)]
     #[serde(rename = "functionArn")]
-    pub r#function_arn: Box<String>,
+    pub r#function_arn: String,
     /// `Event` or `RequestResponse`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "invocationType")]
-    pub r#invocation_type: Box<Option<String>>,
+    pub r#invocation_type: Option<String>,
     /// The position of the action in the receipt rule
     #[builder(into)]
     #[serde(rename = "position")]
-    pub r#position: Box<i32>,
+    pub r#position: i32,
     /// The ARN of an SNS topic to notify
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "topicArn")]
-    pub r#topic_arn: Box<Option<String>>,
+    pub r#topic_arn: Option<String>,
 }

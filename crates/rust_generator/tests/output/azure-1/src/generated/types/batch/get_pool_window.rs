@@ -6,5 +6,5 @@ pub struct GetPoolWindow {
     /// Whether automatic updates are enabled on the virtual machine.
     #[builder(into)]
     #[serde(rename = "enableAutomaticUpdates")]
-    pub r#enable_automatic_updates: Box<bool>,
+    pub r#enable_automatic_updates: bool,
 }

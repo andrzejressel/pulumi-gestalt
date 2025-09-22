@@ -14,7 +14,7 @@ pub struct RegistrationContactSettings {
     /// Values are PUBLIC_CONTACT_DATA, PRIVATE_CONTACT_DATA, and REDACTED_CONTACT_DATA
     #[builder(into)]
     #[serde(rename = "privacy")]
-    pub r#privacy: Box<String>,
+    pub r#privacy: String,
     /// Caution: Anyone with access to this email address, phone number, and/or postal address can take control of the domain.
     /// Warning: For new Registrations, the registrant receives an email confirmation that they must complete within 15 days to
     /// avoid domain suspension.

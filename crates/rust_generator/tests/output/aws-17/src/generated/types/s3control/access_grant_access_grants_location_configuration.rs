@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccessGrantAccessGrantsLocationConfiguration {
     /// Sub-prefix.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3SubPrefix")]
-    pub r#s_3_sub_prefix: Box<Option<String>>,
+    pub r#s_3_sub_prefix: Option<String>,
 }

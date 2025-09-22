@@ -6,9 +6,9 @@ pub struct ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsAudio
     /// Selects a specific three-letter language code from within an audio source.
     #[builder(into)]
     #[serde(rename = "languageCode")]
-    pub r#language_code: Box<String>,
+    pub r#language_code: String,
     /// When set to “strict”, the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If “loose”, then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can’t find one with the same language.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "languageSelectionPolicy")]
-    pub r#language_selection_policy: Box<Option<String>>,
+    pub r#language_selection_policy: Option<String>,
 }

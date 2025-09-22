@@ -5,22 +5,22 @@
 pub struct InstanceHostConfig {
     /// (Output)
     /// API hostname.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "api")]
-    pub r#api: Box<Option<String>>,
+    pub r#api: Option<String>,
     /// (Output)
     /// Git HTTP hostname.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gitHttp")]
-    pub r#git_http: Box<Option<String>>,
+    pub r#git_http: Option<String>,
     /// (Output)
     /// Git SSH hostname.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gitSsh")]
-    pub r#git_ssh: Box<Option<String>>,
+    pub r#git_ssh: Option<String>,
     /// (Output)
     /// HTML hostname.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "html")]
-    pub r#html: Box<Option<String>>,
+    pub r#html: Option<String>,
 }

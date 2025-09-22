@@ -6,13 +6,13 @@ pub struct EndpointGeoFilter {
     /// The Action of the Geo Filter. Possible values include `Allow` and `Block`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// A List of two letter country codes (e.g. `US`, `GB`) to be associated with this Geo Filter.
     #[builder(into)]
     #[serde(rename = "countryCodes")]
-    pub r#country_codes: Box<Vec<String>>,
+    pub r#country_codes: Vec<String>,
     /// The relative path applicable to geo filter.
     #[builder(into)]
     #[serde(rename = "relativePath")]
-    pub r#relative_path: Box<String>,
+    pub r#relative_path: String,
 }

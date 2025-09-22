@@ -6,9 +6,9 @@ pub struct DatabaseInstanceSettingsIpConfigurationPscConfigPscAutoConnection {
     /// "The consumer network of this consumer endpoint. This must be a resource path that includes both the host project and the network name. For example, `projects/project1/global/networks/network1`. The consumer host project of this network might be different from the consumer service project."
     #[builder(into)]
     #[serde(rename = "consumerNetwork")]
-    pub r#consumer_network: Box<String>,
+    pub r#consumer_network: String,
     /// The project ID of consumer service project of this consumer endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "consumerServiceProjectId")]
-    pub r#consumer_service_project_id: Box<Option<String>>,
+    pub r#consumer_service_project_id: Option<String>,
 }

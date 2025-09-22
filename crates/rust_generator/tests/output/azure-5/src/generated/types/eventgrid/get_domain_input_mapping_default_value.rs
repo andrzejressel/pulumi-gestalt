@@ -6,13 +6,13 @@ pub struct GetDomainInputMappingDefaultValue {
     /// Specifies the default data version of the EventGrid Event associated with the domain.
     #[builder(into)]
     #[serde(rename = "dataVersion")]
-    pub r#data_version: Box<String>,
+    pub r#data_version: String,
     /// Specifies the default event type of the EventGrid Event associated with the domain.
     #[builder(into)]
     #[serde(rename = "eventType")]
-    pub r#event_type: Box<String>,
+    pub r#event_type: String,
     /// Specifies the default subject of the EventGrid Event associated with the domain.
     #[builder(into)]
     #[serde(rename = "subject")]
-    pub r#subject: Box<String>,
+    pub r#subject: String,
 }

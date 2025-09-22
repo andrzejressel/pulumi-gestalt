@@ -6,13 +6,13 @@ pub struct MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRuleKeywo
     /// Collection of keywords to match.
     #[builder(into)]
     #[serde(rename = "keywords")]
-    pub r#keywords: Box<Vec<String>>,
+    pub r#keywords: Vec<String>,
     /// Negate the rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "negate")]
-    pub r#negate: Box<Option<bool>>,
+    pub r#negate: Option<bool>,
     /// Rule name.
     #[builder(into)]
     #[serde(rename = "ruleName")]
-    pub r#rule_name: Box<String>,
+    pub r#rule_name: String,
 }

@@ -6,11 +6,11 @@ pub struct OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecret
     /// The certificate store on the Virtual Machine where the certificate should be added.
     #[builder(into)]
     #[serde(rename = "store")]
-    pub r#store: Box<String>,
+    pub r#store: String,
     /// The Secret URL of a Key Vault Certificate.
     /// 
     /// > **Note:** This can be sourced from the `secret_id` field within the `azure.keyvault.Certificate` Resource.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

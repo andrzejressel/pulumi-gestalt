@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceCertificate {
     /// The password for the certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificatePassword")]
-    pub r#certificate_password: Box<Option<String>>,
+    pub r#certificate_password: Option<String>,
     /// The Base64 Encoded PFX or Base64 Encoded X.509 Certificate.
     #[builder(into)]
     #[serde(rename = "encodedCertificate")]
-    pub r#encoded_certificate: Box<String>,
+    pub r#encoded_certificate: String,
     /// The expiration date of the certificate in RFC3339 format: `2000-01-02T03:04:05Z`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expiry")]
-    pub r#expiry: Box<Option<String>>,
+    pub r#expiry: Option<String>,
     /// The name of the Certificate Store where this certificate should be stored. Possible values are `CertificateAuthority` and `Root`.
     #[builder(into)]
     #[serde(rename = "storeName")]
-    pub r#store_name: Box<String>,
+    pub r#store_name: String,
     /// The subject of the certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subject")]
-    pub r#subject: Box<Option<String>>,
+    pub r#subject: Option<String>,
     /// The thumbprint of the certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "thumbprint")]
-    pub r#thumbprint: Box<Option<String>>,
+    pub r#thumbprint: Option<String>,
 }

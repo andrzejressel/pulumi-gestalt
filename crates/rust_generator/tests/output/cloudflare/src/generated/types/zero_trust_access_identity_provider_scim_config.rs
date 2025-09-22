@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZeroTrustAccessIdentityProviderScimConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#enabled: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "groupMemberDeprovision")]
-    pub r#group_member_deprovision: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#group_member_deprovision: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "seatDeprovision")]
-    pub r#seat_deprovision: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#seat_deprovision: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "secret")]
-    pub r#secret: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#secret: Option<String>,
+    #[builder(into)]
     #[serde(rename = "userDeprovision")]
-    pub r#user_deprovision: Box<Option<bool>>,
+    pub r#user_deprovision: Option<bool>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CatalogTableOptimizerConfigurationRetentionConfiguration {
     /// The configuration for an Iceberg snapshot retention optimizer.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "icebergConfiguration")]
-    pub r#iceberg_configuration: Box<Option<super::super::types::glue::CatalogTableOptimizerConfigurationRetentionConfigurationIcebergConfiguration>>,
+    pub r#iceberg_configuration: Option<Box<super::super::types::glue::CatalogTableOptimizerConfigurationRetentionConfigurationIcebergConfiguration>>,
 }

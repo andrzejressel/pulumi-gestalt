@@ -6,9 +6,9 @@ pub struct AutomationRuleActionFindingFieldsUpdateRelatedFinding {
     /// The product-generated identifier for a related finding.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The ARN of the product that generated a related finding.
     #[builder(into)]
     #[serde(rename = "productArn")]
-    pub r#product_arn: Box<String>,
+    pub r#product_arn: String,
 }

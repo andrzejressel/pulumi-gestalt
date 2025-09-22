@@ -6,9 +6,9 @@ pub struct ProfileContainerNetworkInterface {
     /// One or more `ip_configuration` blocks as documented below.
     #[builder(into)]
     #[serde(rename = "ipConfigurations")]
-    pub r#ip_configurations: Box<Vec<super::super::types::network::ProfileContainerNetworkInterfaceIpConfiguration>>,
+    pub r#ip_configurations: Vec<super::super::types::network::ProfileContainerNetworkInterfaceIpConfiguration>,
     /// Specifies the name of the IP Configuration.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

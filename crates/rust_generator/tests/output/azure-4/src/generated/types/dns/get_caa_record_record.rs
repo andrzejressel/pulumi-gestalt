@@ -6,13 +6,13 @@ pub struct GetCaaRecordRecord {
     /// Extensible CAA flags, currently only 1 is implemented to set the issuer critical flag.
     #[builder(into)]
     #[serde(rename = "flags")]
-    pub r#flags: Box<i32>,
+    pub r#flags: i32,
     /// A property tag, options are `issue`, `issuewild` and `iodef`.
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<String>,
+    pub r#tag: String,
     /// A property value such as a registrar domain.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

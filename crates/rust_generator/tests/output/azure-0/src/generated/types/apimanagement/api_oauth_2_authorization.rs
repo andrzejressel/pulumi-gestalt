@@ -6,9 +6,9 @@ pub struct ApiOauth2Authorization {
     /// OAuth authorization server identifier. The name of an OAuth2 Authorization Server.
     #[builder(into)]
     #[serde(rename = "authorizationServerName")]
-    pub r#authorization_server_name: Box<String>,
+    pub r#authorization_server_name: String,
     /// Operations scope.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<Option<String>>,
+    pub r#scope: Option<String>,
 }

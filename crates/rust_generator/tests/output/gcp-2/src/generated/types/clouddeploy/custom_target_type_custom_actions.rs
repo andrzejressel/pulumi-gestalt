@@ -6,14 +6,14 @@ pub struct CustomTargetTypeCustomActions {
     /// The Skaffold custom action responsible for deploy operations.
     #[builder(into)]
     #[serde(rename = "deployAction")]
-    pub r#deploy_action: Box<String>,
+    pub r#deploy_action: String,
     /// List of Skaffold modules Cloud Deploy will include in the Skaffold Config as required before performing diagnose.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includeSkaffoldModules")]
-    pub r#include_skaffold_modules: Box<Option<Vec<super::super::types::clouddeploy::CustomTargetTypeCustomActionsIncludeSkaffoldModule>>>,
+    pub r#include_skaffold_modules: Option<Vec<super::super::types::clouddeploy::CustomTargetTypeCustomActionsIncludeSkaffoldModule>>,
     /// The Skaffold custom action responsible for render operations. If not provided then Cloud Deploy will perform the render operations via `skaffold render`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "renderAction")]
-    pub r#render_action: Box<Option<String>>,
+    pub r#render_action: Option<String>,
 }

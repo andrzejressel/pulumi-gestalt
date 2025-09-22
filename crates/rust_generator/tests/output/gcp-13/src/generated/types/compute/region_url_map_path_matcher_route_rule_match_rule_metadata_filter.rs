@@ -9,7 +9,7 @@ pub struct RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "filterLabels")]
-    pub r#filter_labels: Box<Vec<super::super::types::compute::RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel>>,
+    pub r#filter_labels: Vec<super::super::types::compute::RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabel>,
     /// Specifies how individual filterLabel matches within the list of filterLabels
     /// contribute towards the overall metadataFilter match. Supported values are:
     /// * MATCH_ANY: At least one of the filterLabels must have a matching label in the
@@ -19,5 +19,5 @@ pub struct RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter {
     /// Possible values are: `MATCH_ALL`, `MATCH_ANY`.
     #[builder(into)]
     #[serde(rename = "filterMatchCriteria")]
-    pub r#filter_match_criteria: Box<String>,
+    pub r#filter_match_criteria: String,
 }

@@ -5,8 +5,8 @@
 pub struct ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingInputChannelLevel {
     #[builder(into)]
     #[serde(rename = "gain")]
-    pub r#gain: Box<i32>,
+    pub r#gain: i32,
     #[builder(into)]
     #[serde(rename = "inputChannel")]
-    pub r#input_channel: Box<i32>,
+    pub r#input_channel: i32,
 }

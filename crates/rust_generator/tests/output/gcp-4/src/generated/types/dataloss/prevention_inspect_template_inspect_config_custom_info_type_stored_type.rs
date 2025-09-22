@@ -7,5 +7,5 @@ pub struct PreventionInspectTemplateInspectConfigCustomInfoTypeStoredType {
     /// or `projects/project-id/storedInfoTypes/432452342`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

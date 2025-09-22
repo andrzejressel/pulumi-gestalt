@@ -5,31 +5,31 @@
 pub struct PatchDeploymentRecurringSchedule {
     /// The end time at which a recurring patch deployment schedule is no longer active.
     /// A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<Option<String>>,
+    pub r#end_time: Option<String>,
     /// (Output)
     /// The time the last patch job ran successfully.
     /// A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastExecuteTime")]
-    pub r#last_execute_time: Box<Option<String>>,
+    pub r#last_execute_time: Option<String>,
     /// Schedule with monthly executions.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "monthly")]
-    pub r#monthly: Box<Option<super::super::types::osconfig::PatchDeploymentRecurringScheduleMonthly>>,
+    pub r#monthly: Option<Box<super::super::types::osconfig::PatchDeploymentRecurringScheduleMonthly>>,
     /// (Output)
     /// The time the next patch job is scheduled to run.
     /// A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nextExecuteTime")]
-    pub r#next_execute_time: Box<Option<String>>,
+    pub r#next_execute_time: Option<String>,
     /// The time that the recurring schedule becomes effective. Defaults to createTime of the patch deployment.
     /// A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
     /// Time of the day to run a recurring deployment.
     /// Structure is documented below.
     #[builder(into)]
@@ -43,7 +43,7 @@ pub struct PatchDeploymentRecurringSchedule {
     pub r#time_zone: Box<super::super::types::osconfig::PatchDeploymentRecurringScheduleTimeZone>,
     /// Schedule with weekly executions.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weekly")]
-    pub r#weekly: Box<Option<super::super::types::osconfig::PatchDeploymentRecurringScheduleWeekly>>,
+    pub r#weekly: Option<Box<super::super::types::osconfig::PatchDeploymentRecurringScheduleWeekly>>,
 }

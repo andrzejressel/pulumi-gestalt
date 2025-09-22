@@ -5,35 +5,35 @@
 pub struct VMwareClusterVcenter {
     /// (Output)
     /// The vCenter IP address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<Option<String>>,
+    pub r#address: Option<String>,
     /// Contains the vCenter CA certificate public key for SSL verification.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "caCertData")]
-    pub r#ca_cert_data: Box<Option<String>>,
+    pub r#ca_cert_data: Option<String>,
     /// The name of the vCenter cluster for the user cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cluster")]
-    pub r#cluster: Box<Option<String>>,
+    pub r#cluster: Option<String>,
     /// The name of the vCenter datacenter for the user cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datacenter")]
-    pub r#datacenter: Box<Option<String>>,
+    pub r#datacenter: Option<String>,
     /// The name of the vCenter datastore for the user cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datastore")]
-    pub r#datastore: Box<Option<String>>,
+    pub r#datastore: Option<String>,
     /// The name of the vCenter folder for the user cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "folder")]
-    pub r#folder: Box<Option<String>>,
+    pub r#folder: Option<String>,
     /// The name of the vCenter resource pool for the user cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourcePool")]
-    pub r#resource_pool: Box<Option<String>>,
+    pub r#resource_pool: Option<String>,
     /// The name of the vCenter storage policy for the user cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storagePolicyName")]
-    pub r#storage_policy_name: Box<Option<String>>,
+    pub r#storage_policy_name: Option<String>,
 }

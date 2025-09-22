@@ -6,9 +6,9 @@ pub struct ConnectorWorkerConfiguration {
     /// The Amazon Resource Name (ARN) of the worker configuration.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// The revision of the worker configuration.
     #[builder(into)]
     #[serde(rename = "revision")]
-    pub r#revision: Box<i32>,
+    pub r#revision: i32,
 }

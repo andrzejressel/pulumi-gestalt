@@ -6,9 +6,9 @@ pub struct AppTemplateContainerLivenessProbeHeader {
     /// The HTTP Header Name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The HTTP Header value.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

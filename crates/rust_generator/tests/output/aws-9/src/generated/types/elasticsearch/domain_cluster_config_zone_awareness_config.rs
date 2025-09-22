@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainClusterConfigZoneAwarenessConfig {
     /// Number of Availability Zones for the domain to use with `zone_awareness_enabled`. Defaults to `2`. Valid values: `2` or `3`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilityZoneCount")]
-    pub r#availability_zone_count: Box<Option<i32>>,
+    pub r#availability_zone_count: Option<i32>,
 }

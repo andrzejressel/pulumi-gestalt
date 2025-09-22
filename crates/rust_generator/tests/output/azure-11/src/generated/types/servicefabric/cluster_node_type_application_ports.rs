@@ -6,9 +6,9 @@ pub struct ClusterNodeTypeApplicationPorts {
     /// The end of the Application Port Range on this Node Type.
     #[builder(into)]
     #[serde(rename = "endPort")]
-    pub r#end_port: Box<i32>,
+    pub r#end_port: i32,
     /// The start of the Application Port Range on this Node Type.
     #[builder(into)]
     #[serde(rename = "startPort")]
-    pub r#start_port: Box<i32>,
+    pub r#start_port: i32,
 }

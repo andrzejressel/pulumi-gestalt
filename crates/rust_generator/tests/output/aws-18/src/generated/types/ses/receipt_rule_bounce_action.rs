@@ -6,25 +6,25 @@ pub struct ReceiptRuleBounceAction {
     /// The message to send
     #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<String>,
+    pub r#message: String,
     /// The position of the action in the receipt rule
     #[builder(into)]
     #[serde(rename = "position")]
-    pub r#position: Box<i32>,
+    pub r#position: i32,
     /// The email address of the sender
     #[builder(into)]
     #[serde(rename = "sender")]
-    pub r#sender: Box<String>,
+    pub r#sender: String,
     /// The RFC 5321 SMTP reply code
     #[builder(into)]
     #[serde(rename = "smtpReplyCode")]
-    pub r#smtp_reply_code: Box<String>,
+    pub r#smtp_reply_code: String,
     /// The RFC 3463 SMTP enhanced status code
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<Option<String>>,
+    pub r#status_code: Option<String>,
     /// The ARN of an SNS topic to notify
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "topicArn")]
-    pub r#topic_arn: Box<Option<String>>,
+    pub r#topic_arn: Option<String>,
 }

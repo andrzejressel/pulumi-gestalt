@@ -6,9 +6,9 @@ pub struct GetAiIndexDeployedIndex {
     /// The ID of the DeployedIndex in the above IndexEndpoint.
     #[builder(into)]
     #[serde(rename = "deployedIndexId")]
-    pub r#deployed_index_id: Box<String>,
+    pub r#deployed_index_id: String,
     /// A resource name of the IndexEndpoint.
     #[builder(into)]
     #[serde(rename = "indexEndpoint")]
-    pub r#index_endpoint: Box<String>,
+    pub r#index_endpoint: String,
 }

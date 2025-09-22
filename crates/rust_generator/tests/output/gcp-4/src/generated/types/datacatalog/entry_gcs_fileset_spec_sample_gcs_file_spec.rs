@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EntryGcsFilesetSpecSampleGcsFileSpec {
     /// The full file path
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filePath")]
-    pub r#file_path: Box<Option<String>>,
+    pub r#file_path: Option<String>,
     /// The size of the file, in bytes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sizeBytes")]
-    pub r#size_bytes: Box<Option<i32>>,
+    pub r#size_bytes: Option<i32>,
 }

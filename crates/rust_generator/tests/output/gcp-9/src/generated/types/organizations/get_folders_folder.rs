@@ -6,33 +6,33 @@ pub struct GetFoldersFolder {
     /// The timestamp of when the folder was created
     #[builder(into)]
     #[serde(rename = "createTime")]
-    pub r#create_time: Box<String>,
+    pub r#create_time: String,
     /// The timestamp of when the folder was requested to be deleted (if applicable)
     #[builder(into)]
     #[serde(rename = "deleteTime")]
-    pub r#delete_time: Box<String>,
+    pub r#delete_time: String,
     /// The display name of the folder
     #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<String>,
+    pub r#display_name: String,
     /// Entity tag identifier of the folder
     #[builder(into)]
     #[serde(rename = "etag")]
-    pub r#etag: Box<String>,
+    pub r#etag: String,
     /// The id of the folder
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The parent id of the folder
     #[builder(into)]
     #[serde(rename = "parent")]
-    pub r#parent: Box<String>,
+    pub r#parent: String,
     /// The lifecycle state of the folder
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
     /// The timestamp of when the folder was last modified
     #[builder(into)]
     #[serde(rename = "updateTime")]
-    pub r#update_time: Box<String>,
+    pub r#update_time: String,
 }

@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TriggerPredicateCondition {
     /// The condition crawl state. Currently, the values supported are `RUNNING`, `SUCCEEDED`, `CANCELLED`, and `FAILED`. If this is specified, `crawler_name` must also be specified. Conflicts with `state`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "crawlState")]
-    pub r#crawl_state: Box<Option<String>>,
+    pub r#crawl_state: Option<String>,
     /// The name of the crawler to watch. If this is specified, `crawl_state` must also be specified. Conflicts with `job_name`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "crawlerName")]
-    pub r#crawler_name: Box<Option<String>>,
+    pub r#crawler_name: Option<String>,
     /// The name of the job to watch. If this is specified, `state` must also be specified. Conflicts with `crawler_name`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "jobName")]
-    pub r#job_name: Box<Option<String>>,
+    pub r#job_name: Option<String>,
     /// A logical operator. Defaults to `EQUALS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logicalOperator")]
-    pub r#logical_operator: Box<Option<String>>,
+    pub r#logical_operator: Option<String>,
     /// The condition job state. Currently, the values supported are `SUCCEEDED`, `STOPPED`, `TIMEOUT` and `FAILED`. If this is specified, `job_name` must also be specified. Conflicts with `crawler_state`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

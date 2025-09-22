@@ -7,9 +7,9 @@ pub struct TableTableConstraintsForeignKeyColumnReferences {
     /// referenced by the referencingColumn
     #[builder(into)]
     #[serde(rename = "referencedColumn")]
-    pub r#referenced_column: Box<String>,
+    pub r#referenced_column: String,
     /// The column that composes the foreign key.
     #[builder(into)]
     #[serde(rename = "referencingColumn")]
-    pub r#referencing_column: Box<String>,
+    pub r#referencing_column: String,
 }

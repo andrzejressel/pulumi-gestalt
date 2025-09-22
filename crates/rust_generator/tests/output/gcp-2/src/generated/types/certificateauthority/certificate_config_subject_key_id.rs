@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertificateConfigSubjectKeyId {
     /// The value of the KeyId in lowercase hexadecimal.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyId")]
-    pub r#key_id: Box<Option<String>>,
+    pub r#key_id: Option<String>,
 }

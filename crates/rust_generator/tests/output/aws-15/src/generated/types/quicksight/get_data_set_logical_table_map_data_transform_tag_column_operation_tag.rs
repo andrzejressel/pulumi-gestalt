@@ -5,8 +5,8 @@
 pub struct GetDataSetLogicalTableMapDataTransformTagColumnOperationTag {
     #[builder(into)]
     #[serde(rename = "columnDescriptions")]
-    pub r#column_descriptions: Box<Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformTagColumnOperationTagColumnDescription>>,
+    pub r#column_descriptions: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransformTagColumnOperationTagColumnDescription>,
     #[builder(into)]
     #[serde(rename = "columnGeographicRole")]
-    pub r#column_geographic_role: Box<String>,
+    pub r#column_geographic_role: String,
 }

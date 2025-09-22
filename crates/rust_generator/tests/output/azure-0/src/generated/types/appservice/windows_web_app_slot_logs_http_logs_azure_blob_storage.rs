@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WindowsWebAppSlotLogsHttpLogsAzureBlobStorage {
     /// The time in days after which to remove blobs. A value of `0` means no retention.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionInDays")]
-    pub r#retention_in_days: Box<Option<i32>>,
+    pub r#retention_in_days: Option<i32>,
     /// SAS url to an Azure blob container with read/write/list/delete permissions.
     #[builder(into)]
     #[serde(rename = "sasUrl")]
-    pub r#sas_url: Box<String>,
+    pub r#sas_url: String,
 }

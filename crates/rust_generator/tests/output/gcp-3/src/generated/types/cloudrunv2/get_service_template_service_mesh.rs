@@ -6,5 +6,5 @@ pub struct GetServiceTemplateServiceMesh {
     /// The Mesh resource name. For more information see https://cloud.google.com/service-mesh/docs/reference/network-services/rest/v1/projects.locations.meshes#resource:-mesh.
     #[builder(into)]
     #[serde(rename = "mesh")]
-    pub r#mesh: Box<String>,
+    pub r#mesh: String,
 }

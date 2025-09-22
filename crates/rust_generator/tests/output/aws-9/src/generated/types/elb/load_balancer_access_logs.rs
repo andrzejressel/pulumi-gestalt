@@ -6,17 +6,17 @@ pub struct LoadBalancerAccessLogs {
     /// The S3 bucket name to store the logs in.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// The S3 bucket prefix. Logs are stored in the root if not configured.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucketPrefix")]
-    pub r#bucket_prefix: Box<Option<String>>,
+    pub r#bucket_prefix: Option<String>,
     /// Boolean to enable / disable `access_logs`. Default is `true`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The publishing interval in minutes. Valid values: `5` and `60`. Default: `60`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<Option<i32>>,
+    pub r#interval: Option<i32>,
 }

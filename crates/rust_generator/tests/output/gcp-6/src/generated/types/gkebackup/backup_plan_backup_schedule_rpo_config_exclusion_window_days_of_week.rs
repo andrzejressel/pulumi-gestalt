@@ -5,7 +5,7 @@
 pub struct BackupPlanBackupScheduleRpoConfigExclusionWindowDaysOfWeek {
     /// A list of days of week.
     /// Each value may be one of: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "daysOfWeeks")]
-    pub r#days_of_weeks: Box<Option<Vec<String>>>,
+    pub r#days_of_weeks: Option<Vec<String>>,
 }

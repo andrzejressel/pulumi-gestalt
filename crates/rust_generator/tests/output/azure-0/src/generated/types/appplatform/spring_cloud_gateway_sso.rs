@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudGatewaySso {
     /// The public identifier for the application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<Option<String>>,
+    pub r#client_id: Option<String>,
     /// The secret known only to the application and the authorization server.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<Option<String>>,
+    pub r#client_secret: Option<String>,
     /// The URI of Issuer Identifier.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "issuerUri")]
-    pub r#issuer_uri: Box<Option<String>>,
+    pub r#issuer_uri: Option<String>,
     /// It defines the specific actions applications can be allowed to do on a user's behalf.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scopes")]
-    pub r#scopes: Box<Option<Vec<String>>>,
+    pub r#scopes: Option<Vec<String>>,
 }

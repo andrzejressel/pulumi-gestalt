@@ -6,13 +6,13 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerMountPoint {
     /// The absolute file path in the container where the tmpfs volume is mounted.
     #[builder(into)]
     #[serde(rename = "containerPath")]
-    pub r#container_path: Box<String>,
+    pub r#container_path: String,
     /// If this value is true, the container has read-only access to the volume.
     #[builder(into)]
     #[serde(rename = "readOnly")]
-    pub r#read_only: Box<bool>,
+    pub r#read_only: bool,
     /// The name of the volume to mount.
     #[builder(into)]
     #[serde(rename = "sourceVolume")]
-    pub r#source_volume: Box<String>,
+    pub r#source_volume: String,
 }

@@ -6,14 +6,14 @@ pub struct GetTopicIngestionDataSourceSetting {
     /// Settings for ingestion from Amazon Kinesis Data Streams.
     #[builder(into)]
     #[serde(rename = "awsKineses")]
-    pub r#aws_kineses: Box<Vec<super::super::types::pubsub::GetTopicIngestionDataSourceSettingAwsKinese>>,
+    pub r#aws_kineses: Vec<super::super::types::pubsub::GetTopicIngestionDataSourceSettingAwsKinese>,
     /// Settings for ingestion from Cloud Storage.
     #[builder(into)]
     #[serde(rename = "cloudStorages")]
-    pub r#cloud_storages: Box<Vec<super::super::types::pubsub::GetTopicIngestionDataSourceSettingCloudStorage>>,
+    pub r#cloud_storages: Vec<super::super::types::pubsub::GetTopicIngestionDataSourceSettingCloudStorage>,
     /// Settings for Platform Logs regarding ingestion to Pub/Sub. If unset,
     /// no Platform Logs will be generated.'
     #[builder(into)]
     #[serde(rename = "platformLogsSettings")]
-    pub r#platform_logs_settings: Box<Vec<super::super::types::pubsub::GetTopicIngestionDataSourceSettingPlatformLogsSetting>>,
+    pub r#platform_logs_settings: Vec<super::super::types::pubsub::GetTopicIngestionDataSourceSettingPlatformLogsSetting>,
 }

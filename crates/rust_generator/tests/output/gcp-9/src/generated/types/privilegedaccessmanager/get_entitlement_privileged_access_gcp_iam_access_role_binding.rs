@@ -7,9 +7,9 @@ pub struct GetEntitlementPrivilegedAccessGcpIamAccessRoleBinding {
     /// https://cloud.google.com/iam/docs/conditions-overview#attributes.
     #[builder(into)]
     #[serde(rename = "conditionExpression")]
-    pub r#condition_expression: Box<String>,
+    pub r#condition_expression: String,
     /// IAM role to be granted. https://cloud.google.com/iam/docs/roles-overview.
     #[builder(into)]
     #[serde(rename = "role")]
-    pub r#role: Box<String>,
+    pub r#role: String,
 }

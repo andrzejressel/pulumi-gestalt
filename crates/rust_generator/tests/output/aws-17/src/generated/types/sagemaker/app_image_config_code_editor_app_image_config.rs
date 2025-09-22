@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppImageConfigCodeEditorAppImageConfig {
     /// The configuration used to run the application image container. See Container Config details below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerConfig")]
-    pub r#container_config: Box<Option<super::super::types::sagemaker::AppImageConfigCodeEditorAppImageConfigContainerConfig>>,
+    pub r#container_config: Option<Box<super::super::types::sagemaker::AppImageConfigCodeEditorAppImageConfigContainerConfig>>,
     /// The URL where the Git repository is located. See File System Config details below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fileSystemConfig")]
-    pub r#file_system_config: Box<Option<super::super::types::sagemaker::AppImageConfigCodeEditorAppImageConfigFileSystemConfig>>,
+    pub r#file_system_config: Option<Box<super::super::types::sagemaker::AppImageConfigCodeEditorAppImageConfigFileSystemConfig>>,
 }

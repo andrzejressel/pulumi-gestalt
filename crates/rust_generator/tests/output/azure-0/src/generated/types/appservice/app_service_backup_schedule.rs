@@ -6,21 +6,21 @@ pub struct AppServiceBackupSchedule {
     /// Sets how often the backup should be executed.
     #[builder(into)]
     #[serde(rename = "frequencyInterval")]
-    pub r#frequency_interval: Box<i32>,
+    pub r#frequency_interval: i32,
     /// Sets the unit of time for how often the backup should be executed. Possible values are `Day` or `Hour`.
     #[builder(into)]
     #[serde(rename = "frequencyUnit")]
-    pub r#frequency_unit: Box<String>,
+    pub r#frequency_unit: String,
     /// Should at least one backup always be kept in the Storage Account by the Retention Policy, regardless of how old it is?
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keepAtLeastOneBackup")]
-    pub r#keep_at_least_one_backup: Box<Option<bool>>,
+    pub r#keep_at_least_one_backup: Option<bool>,
     /// Specifies the number of days after which Backups should be deleted. Defaults to `30`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionPeriodInDays")]
-    pub r#retention_period_in_days: Box<Option<i32>>,
+    pub r#retention_period_in_days: Option<i32>,
     /// Sets when the schedule should start working.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
 }

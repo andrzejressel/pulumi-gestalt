@@ -6,13 +6,13 @@ pub struct TableImportTableS3BucketSource {
     /// The S3 bucket that is being imported from.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// The account number of the S3 bucket that is being imported from.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucketOwner")]
-    pub r#bucket_owner: Box<Option<String>>,
+    pub r#bucket_owner: Option<String>,
     /// The key prefix shared by all S3 Objects that are being imported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyPrefix")]
-    pub r#key_prefix: Box<Option<String>>,
+    pub r#key_prefix: Option<String>,
 }

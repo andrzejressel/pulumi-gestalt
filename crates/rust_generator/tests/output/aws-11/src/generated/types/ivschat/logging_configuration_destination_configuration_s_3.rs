@@ -8,5 +8,5 @@ pub struct LoggingConfigurationDestinationConfigurationS3 {
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<String>,
+    pub r#bucket_name: String,
 }

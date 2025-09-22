@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LiteTopicReservationConfig {
     /// The Reservation to use for this topic's throughput capacity.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "throughputReservation")]
-    pub r#throughput_reservation: Box<Option<String>>,
+    pub r#throughput_reservation: Option<String>,
 }

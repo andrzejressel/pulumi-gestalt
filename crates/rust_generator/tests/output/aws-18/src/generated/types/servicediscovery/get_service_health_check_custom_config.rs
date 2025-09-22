@@ -6,5 +6,5 @@ pub struct GetServiceHealthCheckCustomConfig {
     /// The number of 30-second intervals that you want service discovery to wait before it changes the health status of a service instance.  Maximum value of 10.
     #[builder(into)]
     #[serde(rename = "failureThreshold")]
-    pub r#failure_threshold: Box<i32>,
+    pub r#failure_threshold: i32,
 }

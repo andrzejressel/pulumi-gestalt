@@ -9,44 +9,44 @@ pub struct GetVirtualNetworkGatewayVpnClientConfiguration {
     /// `root_certificate` and `revoked_certificate`, `radius_server_address`, and `radius_server_secret`.
     #[builder(into)]
     #[serde(rename = "aadAudience")]
-    pub r#aad_audience: Box<String>,
+    pub r#aad_audience: String,
     /// The STS url for your tenant
     /// This setting is incompatible with the use of
     /// `root_certificate` and `revoked_certificate`, `radius_server_address`, and `radius_server_secret`.
     #[builder(into)]
     #[serde(rename = "aadIssuer")]
-    pub r#aad_issuer: Box<String>,
+    pub r#aad_issuer: String,
     /// AzureAD Tenant URL
     /// This setting is incompatible with the use of
     /// `root_certificate` and `revoked_certificate`, `radius_server_address`, and `radius_server_secret`.
     #[builder(into)]
     #[serde(rename = "aadTenant")]
-    pub r#aad_tenant: Box<String>,
+    pub r#aad_tenant: String,
     /// The address space out of which IP addresses for
     /// vpn clients will be taken. You can provide more than one address space, e.g.
     /// in CIDR notation.
     #[builder(into)]
     #[serde(rename = "addressSpaces")]
-    pub r#address_spaces: Box<Vec<String>>,
+    pub r#address_spaces: Vec<String>,
     /// The address of the Radius server.
     /// This setting is incompatible with the use of
     /// `aad_tenant`, `aad_audience`, `aad_issuer`, `root_certificate` and `revoked_certificate`.
     #[builder(into)]
     #[serde(rename = "radiusServerAddress")]
-    pub r#radius_server_address: Box<String>,
+    pub r#radius_server_address: String,
     /// The secret used by the Radius server.
     /// This setting is incompatible with the use of
     /// `aad_tenant`, `aad_audience`, `aad_issuer`, `root_certificate` and `revoked_certificate`.
     #[builder(into)]
     #[serde(rename = "radiusServerSecret")]
-    pub r#radius_server_secret: Box<String>,
+    pub r#radius_server_secret: String,
     /// One or more `revoked_certificate` blocks which
     /// are defined below.
     /// This setting is incompatible with the use of
     /// `aad_tenant`, `aad_audience`, `aad_issuer`, `radius_server_address`, and `radius_server_secret`.
     #[builder(into)]
     #[serde(rename = "revokedCertificates")]
-    pub r#revoked_certificates: Box<Vec<super::super::types::network::GetVirtualNetworkGatewayVpnClientConfigurationRevokedCertificate>>,
+    pub r#revoked_certificates: Vec<super::super::types::network::GetVirtualNetworkGatewayVpnClientConfigurationRevokedCertificate>,
     /// One or more `root_certificate` blocks which are
     /// defined below. These root certificates are used to sign the client certificate
     /// used by the VPN clients to connect to the gateway.
@@ -54,10 +54,10 @@ pub struct GetVirtualNetworkGatewayVpnClientConfiguration {
     /// `aad_tenant`, `aad_audience`, `aad_issuer`, `radius_server_address`, and `radius_server_secret`.
     #[builder(into)]
     #[serde(rename = "rootCertificates")]
-    pub r#root_certificates: Box<Vec<super::super::types::network::GetVirtualNetworkGatewayVpnClientConfigurationRootCertificate>>,
+    pub r#root_certificates: Vec<super::super::types::network::GetVirtualNetworkGatewayVpnClientConfigurationRootCertificate>,
     /// List of the protocols supported by the vpn client.
     /// The supported values are `SSTP`, `IkeV2` and `OpenVPN`.
     #[builder(into)]
     #[serde(rename = "vpnClientProtocols")]
-    pub r#vpn_client_protocols: Box<Vec<String>>,
+    pub r#vpn_client_protocols: Vec<String>,
 }

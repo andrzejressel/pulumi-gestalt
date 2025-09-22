@@ -6,13 +6,13 @@ pub struct LedgerAzureadBasedServicePrincipal {
     /// Specifies the Ledger Role to grant this AzureAD Service Principal. Possible values are `Administrator`, `Contributor` and `Reader`.
     #[builder(into)]
     #[serde(rename = "ledgerRoleName")]
-    pub r#ledger_role_name: Box<String>,
+    pub r#ledger_role_name: String,
     /// Specifies the Principal ID of the AzureAD Service Principal.
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     /// Specifies the Tenant ID for this AzureAD Service Principal.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ContainerDevice {
     /// The path in the container where the device will be bound.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerPath")]
-    pub r#container_path: Box<Option<String>>,
+    pub r#container_path: Option<String>,
     /// The path on the host where the device is located.
     #[builder(into)]
     #[serde(rename = "hostPath")]
-    pub r#host_path: Box<String>,
+    pub r#host_path: String,
     /// The cgroup permissions given to the container to access the device. Defaults to `rwm`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<Option<String>>,
+    pub r#permissions: Option<String>,
 }

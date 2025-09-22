@@ -6,13 +6,13 @@ pub struct DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionA
     /// The encryption-at-rest mode for encrypting Data Catalog data. Valid values: `DISABLED`, `SSE-KMS`, `SSE-KMS-WITH-SERVICE-ROLE`.
     #[builder(into)]
     #[serde(rename = "catalogEncryptionMode")]
-    pub r#catalog_encryption_mode: Box<String>,
+    pub r#catalog_encryption_mode: String,
     /// The ARN of the AWS IAM role used for accessing encrypted Data Catalog data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "catalogEncryptionServiceRole")]
-    pub r#catalog_encryption_service_role: Box<Option<String>>,
+    pub r#catalog_encryption_service_role: Option<String>,
     /// The ARN of the AWS KMS key to use for encryption at rest.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sseAwsKmsKeyId")]
-    pub r#sse_aws_kms_key_id: Box<Option<String>>,
+    pub r#sse_aws_kms_key_id: Option<String>,
 }

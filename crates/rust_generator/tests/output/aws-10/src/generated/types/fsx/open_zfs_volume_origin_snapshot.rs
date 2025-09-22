@@ -6,9 +6,9 @@ pub struct OpenZfsVolumeOriginSnapshot {
     /// Specifies the strategy used when copying data from the snapshot to the new volume. Valid values are `CLONE`, `FULL_COPY`, `INCREMENTAL_COPY`.
     #[builder(into)]
     #[serde(rename = "copyStrategy")]
-    pub r#copy_strategy: Box<String>,
+    pub r#copy_strategy: String,
     /// The Amazon Resource Name (ARN) of the origin snapshot.
     #[builder(into)]
     #[serde(rename = "snapshotArn")]
-    pub r#snapshot_arn: Box<String>,
+    pub r#snapshot_arn: String,
 }

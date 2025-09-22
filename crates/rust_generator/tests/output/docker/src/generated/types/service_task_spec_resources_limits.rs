@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTaskSpecResourcesLimits {
     /// The amounf of memory in bytes the container allocates
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "memoryBytes")]
-    pub r#memory_bytes: Box<Option<i32>>,
+    pub r#memory_bytes: Option<i32>,
     /// CPU shares in units of `1/1e9` (or `10^-9`) of the CPU. Should be at least `1000000`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nanoCpus")]
-    pub r#nano_cpus: Box<Option<i32>>,
+    pub r#nano_cpus: Option<i32>,
 }

@@ -6,9 +6,9 @@ pub struct CustomLogSourceConfigurationProviderIdentity {
     /// The external ID used to estalish trust relationship with the AWS identity.
     #[builder(into)]
     #[serde(rename = "externalId")]
-    pub r#external_id: Box<String>,
+    pub r#external_id: String,
     /// The AWS identity principal.
     #[builder(into)]
     #[serde(rename = "principal")]
-    pub r#principal: Box<String>,
+    pub r#principal: String,
 }

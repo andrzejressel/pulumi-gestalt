@@ -6,5 +6,5 @@ pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroup
     /// Reference ID for the destination.
     #[builder(into)]
     #[serde(rename = "destinationRefId")]
-    pub r#destination_ref_id: Box<String>,
+    pub r#destination_ref_id: String,
 }

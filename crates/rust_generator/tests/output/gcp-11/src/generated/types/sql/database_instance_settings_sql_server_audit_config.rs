@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DatabaseInstanceSettingsSqlServerAuditConfig {
     /// The name of the destination bucket (e.g., gs://mybucket).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<Option<String>>,
+    pub r#bucket: Option<String>,
     /// How long to keep generated audit files. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionInterval")]
-    pub r#retention_interval: Box<Option<String>>,
+    pub r#retention_interval: Option<String>,
     /// How often to upload generated audit files. A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uploadInterval")]
-    pub r#upload_interval: Box<Option<String>>,
+    pub r#upload_interval: Option<String>,
 }

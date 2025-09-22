@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatus {
     /// The status code, which should be an enum value of google.rpc.Code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "code")]
-    pub r#code: Box<Option<i32>>,
+    pub r#code: Option<i32>,
     /// A JSON encoded list of messages that carry the error details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "details")]
-    pub r#details: Box<Option<String>>,
+    pub r#details: Option<String>,
     /// A developer-facing error message.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
 }

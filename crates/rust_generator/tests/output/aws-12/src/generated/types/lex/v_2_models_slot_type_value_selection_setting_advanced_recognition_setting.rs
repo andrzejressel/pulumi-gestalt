@@ -5,7 +5,7 @@
 pub struct V2ModelsSlotTypeValueSelectionSettingAdvancedRecognitionSetting {
     /// Enables using the slot values as a custom vocabulary for recognizing user utterances.
     /// Valid value is `UseSlotValuesAsCustomVocabulary`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audioRecognitionStrategy")]
-    pub r#audio_recognition_strategy: Box<Option<String>>,
+    pub r#audio_recognition_strategy: Option<String>,
 }

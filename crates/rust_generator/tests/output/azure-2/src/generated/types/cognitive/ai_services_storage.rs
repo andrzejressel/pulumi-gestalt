@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AiServicesStorage {
     /// The client ID of the Managed Identity associated with the Storage Account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityClientId")]
-    pub r#identity_client_id: Box<Option<String>>,
+    pub r#identity_client_id: Option<String>,
     /// The ID of the Storage Account.
     #[builder(into)]
     #[serde(rename = "storageAccountId")]
-    pub r#storage_account_id: Box<String>,
+    pub r#storage_account_id: String,
 }

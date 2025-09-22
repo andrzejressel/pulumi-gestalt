@@ -6,9 +6,9 @@ pub struct ApiConfigGrpcServiceFileDescriptorSet {
     /// Base64 encoded content of the file.
     #[builder(into)]
     #[serde(rename = "contents")]
-    pub r#contents: Box<String>,
+    pub r#contents: String,
     /// The file path (full or relative path). This is typically the path of the file when it is uploaded.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

@@ -5,7 +5,7 @@
 pub struct CertificateCertificateDescriptionAuthorityKeyId {
     /// (Output)
     /// Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most likely the 160 bit SHA-1 hash of the public key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyId")]
-    pub r#key_id: Box<Option<String>>,
+    pub r#key_id: Option<String>,
 }

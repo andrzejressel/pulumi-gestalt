@@ -6,5 +6,5 @@ pub struct RepositoryUpstream {
     /// The name of an upstream repository.
     #[builder(into)]
     #[serde(rename = "repositoryName")]
-    pub r#repository_name: Box<String>,
+    pub r#repository_name: String,
 }

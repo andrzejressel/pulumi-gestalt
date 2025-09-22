@@ -6,11 +6,11 @@ pub struct RoomMessageReviewHandler {
     /// The fallback behavior (whether the message
     /// is allowed or denied) if the handler does not return a valid response,
     /// encounters an error, or times out. Valid values: `ALLOW`, `DENY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fallbackResult")]
-    pub r#fallback_result: Box<Option<String>>,
+    pub r#fallback_result: Option<String>,
     /// ARN of the lambda message review handler function.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<Option<String>>,
+    pub r#uri: Option<String>,
 }

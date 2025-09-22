@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificate {
     /// Local file certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "file")]
-    pub r#file: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile>>,
+    pub r#file: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile>>,
     /// A [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds>>,
+    pub r#sds: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds>>,
 }

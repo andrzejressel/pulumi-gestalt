@@ -5,5 +5,5 @@
 pub struct V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationTextInputSpecification {
     #[builder(into)]
     #[serde(rename = "startTimeoutMs")]
-    pub r#start_timeout_ms: Box<i32>,
+    pub r#start_timeout_ms: i32,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetUpdateRunStage {
     /// Specifies the time in seconds to wait at the end of this stage before starting the next one.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "afterStageWaitInSeconds")]
-    pub r#after_stage_wait_in_seconds: Box<Option<i32>>,
+    pub r#after_stage_wait_in_seconds: Option<i32>,
     /// One or more `group` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "groups")]
-    pub r#groups: Box<Vec<super::super::types::containerservice::FleetUpdateRunStageGroup>>,
+    pub r#groups: Vec<super::super::types::containerservice::FleetUpdateRunStageGroup>,
     /// The name which should be used for this stage.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

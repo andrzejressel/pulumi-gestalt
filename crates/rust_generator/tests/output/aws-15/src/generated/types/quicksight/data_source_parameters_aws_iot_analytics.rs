@@ -6,5 +6,5 @@ pub struct DataSourceParametersAwsIotAnalytics {
     /// The name of the data set to which to connect.
     #[builder(into)]
     #[serde(rename = "dataSetName")]
-    pub r#data_set_name: Box<String>,
+    pub r#data_set_name: String,
 }

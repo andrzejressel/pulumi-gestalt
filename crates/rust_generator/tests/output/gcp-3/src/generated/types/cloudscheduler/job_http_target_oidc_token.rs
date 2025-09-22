@@ -5,12 +5,12 @@
 pub struct JobHttpTargetOidcToken {
     /// Audience to be used when generating OIDC token. If not specified,
     /// the URI specified in target will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audience")]
-    pub r#audience: Box<Option<String>>,
+    pub r#audience: Option<String>,
     /// Service account email to be used for generating OAuth token.
     /// The service account must be within the same project as the job.
     #[builder(into)]
     #[serde(rename = "serviceAccountEmail")]
-    pub r#service_account_email: Box<String>,
+    pub r#service_account_email: String,
 }

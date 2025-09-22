@@ -6,9 +6,9 @@ pub struct GetEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock {
     /// cidr_block must be specified in CIDR notation.
     #[builder(into)]
     #[serde(rename = "cidrBlock")]
-    pub r#cidr_block: Box<String>,
+    pub r#cidr_block: String,
     /// display_name is a field for users to identify CIDR blocks.
     #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<String>,
+    pub r#display_name: String,
 }

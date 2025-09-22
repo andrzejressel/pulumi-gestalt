@@ -6,5 +6,5 @@ pub struct ScheduleTargetKinesisParameters {
     /// Specifies the shard to which EventBridge Scheduler sends the event. Up to 256 characters.
     #[builder(into)]
     #[serde(rename = "partitionKey")]
-    pub r#partition_key: Box<String>,
+    pub r#partition_key: String,
 }

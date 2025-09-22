@@ -6,9 +6,9 @@ pub struct KubernetesClusterServicePrincipal {
     /// The Client ID for the Service Principal.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The Client Secret for the Service Principal.
     #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<String>,
+    pub r#client_secret: String,
 }

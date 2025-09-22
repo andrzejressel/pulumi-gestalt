@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserSqlServerUserDetail {
     /// If the user has been disabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<Option<bool>>,
+    pub r#disabled: Option<bool>,
     /// The server roles for this user in the database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serverRoles")]
-    pub r#server_roles: Box<Option<Vec<String>>>,
+    pub r#server_roles: Option<Vec<String>>,
 }

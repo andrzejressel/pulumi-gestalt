@@ -5,11 +5,11 @@
 pub struct GetDataSetLogicalTableMapDataTransformCreateColumnsOperationColumn {
     #[builder(into)]
     #[serde(rename = "columnId")]
-    pub r#column_id: Box<String>,
+    pub r#column_id: String,
     #[builder(into)]
     #[serde(rename = "columnName")]
-    pub r#column_name: Box<String>,
+    pub r#column_name: String,
     #[builder(into)]
     #[serde(rename = "expression")]
-    pub r#expression: Box<String>,
+    pub r#expression: String,
 }

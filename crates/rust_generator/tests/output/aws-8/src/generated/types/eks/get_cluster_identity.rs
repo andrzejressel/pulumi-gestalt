@@ -6,5 +6,5 @@ pub struct GetClusterIdentity {
     /// Nested attribute containing [OpenID Connect](https://openid.net/connect/) identity provider information for the cluster.
     #[builder(into)]
     #[serde(rename = "oidcs")]
-    pub r#oidcs: Box<Vec<super::super::types::eks::GetClusterIdentityOidc>>,
+    pub r#oidcs: Vec<super::super::types::eks::GetClusterIdentityOidc>,
 }

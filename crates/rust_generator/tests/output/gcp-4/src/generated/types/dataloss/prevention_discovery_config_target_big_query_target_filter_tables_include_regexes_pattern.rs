@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesIncludeRegexesPattern {
     /// if unset, this property matches all datasets
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datasetIdRegex")]
-    pub r#dataset_id_regex: Box<Option<String>>,
+    pub r#dataset_id_regex: Option<String>,
     /// For organizations, if unset, will match all projects. Has no effect for data profile configurations created within a project.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectIdRegex")]
-    pub r#project_id_regex: Box<Option<String>>,
+    pub r#project_id_regex: Option<String>,
     /// if unset, this property matches all tables
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tableIdRegex")]
-    pub r#table_id_regex: Box<Option<String>>,
+    pub r#table_id_regex: Option<String>,
 }

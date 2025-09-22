@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointLoadBalancerOptions {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loadBalancerArn")]
-    pub r#load_balancer_arn: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#load_balancer_arn: Option<String>,
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#port: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#protocol: Option<String>,
+    #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Option<Vec<String>>>,
+    pub r#subnet_ids: Option<Vec<String>>,
 }

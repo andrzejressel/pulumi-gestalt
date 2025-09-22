@@ -6,9 +6,9 @@ pub struct CustomProviderAction {
     /// Specifies the endpoint of the action.
     #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<String>,
+    pub r#endpoint: String,
     /// Specifies the name of the action.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

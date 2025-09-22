@@ -8,13 +8,13 @@ pub struct GetFunctionEventTrigger {
     /// for a full reference of accepted triggers.
     #[builder(into)]
     #[serde(rename = "eventType")]
-    pub r#event_type: Box<String>,
+    pub r#event_type: String,
     /// Policy for failed executions. Structure is documented below.
     #[builder(into)]
     #[serde(rename = "failurePolicies")]
-    pub r#failure_policies: Box<Vec<super::super::types::cloudfunctions::GetFunctionEventTriggerFailurePolicy>>,
+    pub r#failure_policies: Vec<super::super::types::cloudfunctions::GetFunctionEventTriggerFailurePolicy>,
     /// The name of the resource whose events are being observed, for example, `"myBucket"`
     #[builder(into)]
     #[serde(rename = "resource")]
-    pub r#resource: Box<String>,
+    pub r#resource: String,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterShard {
     /// Name of the cluster. If omitted, the provider will assign a random, unique name. Conflicts with `name_prefix`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Set of nodes in this shard.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodes")]
-    pub r#nodes: Box<Option<Vec<super::super::types::memorydb::ClusterShardNode>>>,
+    pub r#nodes: Option<Vec<super::super::types::memorydb::ClusterShardNode>>,
     /// Number of individual nodes in this shard.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numNodes")]
-    pub r#num_nodes: Box<Option<i32>>,
+    pub r#num_nodes: Option<i32>,
     /// Keyspace for this shard. Example: `0-16383`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "slots")]
-    pub r#slots: Box<Option<String>>,
+    pub r#slots: Option<String>,
 }

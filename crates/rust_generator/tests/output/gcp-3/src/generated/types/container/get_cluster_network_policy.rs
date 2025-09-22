@@ -6,9 +6,9 @@ pub struct GetClusterNetworkPolicy {
     /// Whether network policy is enabled on the cluster.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The selected network policy provider.
     #[builder(into)]
     #[serde(rename = "provider")]
-    pub r#provider: Box<String>,
+    pub r#provider: String,
 }

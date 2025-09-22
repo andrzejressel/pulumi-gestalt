@@ -5,8 +5,8 @@
 pub struct UserProfileDetail {
     #[builder(into)]
     #[serde(rename = "iams")]
-    pub r#iams: Box<Vec<super::super::types::datazone::UserProfileDetailIam>>,
+    pub r#iams: Vec<super::super::types::datazone::UserProfileDetailIam>,
     #[builder(into)]
     #[serde(rename = "ssos")]
-    pub r#ssos: Box<Vec<super::super::types::datazone::UserProfileDetailSso>>,
+    pub r#ssos: Vec<super::super::types::datazone::UserProfileDetailSso>,
 }

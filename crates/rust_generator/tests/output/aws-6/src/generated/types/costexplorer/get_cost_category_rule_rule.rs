@@ -6,25 +6,25 @@ pub struct GetCostCategoryRuleRule {
     /// Return results that match both `Dimension` objects.
     #[builder(into)]
     #[serde(rename = "ands")]
-    pub r#ands: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleAnd>>,
+    pub r#ands: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleAnd>,
     /// Configuration block for the filter that's based on `CostCategory` values. See below.
     #[builder(into)]
     #[serde(rename = "costCategories")]
-    pub r#cost_categories: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleCostCategory>>,
+    pub r#cost_categories: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleCostCategory>,
     /// Configuration block for the specific `Dimension` to use for `Expression`. See below.
     #[builder(into)]
     #[serde(rename = "dimensions")]
-    pub r#dimensions: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleDimension>>,
+    pub r#dimensions: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleDimension>,
     /// Return results that do not match the `Dimension` object.
     #[builder(into)]
     #[serde(rename = "nots")]
-    pub r#nots: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleNot>>,
+    pub r#nots: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleNot>,
     /// Return results that match either `Dimension` object.
     #[builder(into)]
     #[serde(rename = "ors")]
-    pub r#ors: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleOr>>,
+    pub r#ors: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleOr>,
     /// Configuration block for the specific `Tag` to use for `Expression`. See below.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleTag>>,
+    pub r#tags: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleTag>,
 }

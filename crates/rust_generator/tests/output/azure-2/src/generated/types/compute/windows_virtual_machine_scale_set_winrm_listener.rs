@@ -6,11 +6,11 @@ pub struct WindowsVirtualMachineScaleSetWinrmListener {
     /// The Secret URL of a Key Vault Certificate, which must be specified when `protocol` is set to `Https`. Changing this forces a new resource to be created.
     /// 
     /// > **Note:** This can be sourced from the `secret_id` field within the `azure.keyvault.Certificate` Resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateUrl")]
-    pub r#certificate_url: Box<Option<String>>,
+    pub r#certificate_url: Option<String>,
     /// The Protocol of the WinRM Listener. Possible values are `Http` and `Https`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
 }

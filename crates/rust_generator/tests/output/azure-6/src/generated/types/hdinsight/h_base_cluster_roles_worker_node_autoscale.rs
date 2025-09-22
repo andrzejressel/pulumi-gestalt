@@ -6,7 +6,7 @@ pub struct HBaseClusterRolesWorkerNodeAutoscale {
     /// A `recurrence` block as defined below.
     /// 
     /// > **NOTE:** Either a `capacity` or `recurrence` block must be specified - but not both.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<Option<super::super::types::hdinsight::HBaseClusterRolesWorkerNodeAutoscaleRecurrence>>,
+    pub r#recurrence: Option<Box<super::super::types::hdinsight::HBaseClusterRolesWorkerNodeAutoscaleRecurrence>>,
 }

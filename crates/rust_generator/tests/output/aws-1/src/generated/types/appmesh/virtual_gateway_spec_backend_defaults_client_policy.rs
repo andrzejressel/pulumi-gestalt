@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualGatewaySpecBackendDefaultsClientPolicy {
     /// Transport Layer Security (TLS) client policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Box<Option<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicyTls>>,
+    pub r#tls: Option<Box<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicyTls>>,
 }

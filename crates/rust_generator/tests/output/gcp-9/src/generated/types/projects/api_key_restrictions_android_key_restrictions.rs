@@ -6,5 +6,5 @@ pub struct ApiKeyRestrictionsAndroidKeyRestrictions {
     /// A list of Android applications that are allowed to make API calls with this key.
     #[builder(into)]
     #[serde(rename = "allowedApplications")]
-    pub r#allowed_applications: Box<Vec<super::super::types::projects::ApiKeyRestrictionsAndroidKeyRestrictionsAllowedApplication>>,
+    pub r#allowed_applications: Vec<super::super::types::projects::ApiKeyRestrictionsAndroidKeyRestrictionsAllowedApplication>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNodeSpecLoggingAccessLogFileFormat {
     /// The logging format for JSON.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "jsons")]
-    pub r#jsons: Box<Option<Vec<super::super::types::appmesh::VirtualNodeSpecLoggingAccessLogFileFormatJson>>>,
+    pub r#jsons: Option<Vec<super::super::types::appmesh::VirtualNodeSpecLoggingAccessLogFileFormatJson>>,
     /// The logging format for text. Must be between 1 and 1000 characters in length.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<Option<String>>,
+    pub r#text: Option<String>,
 }

@@ -6,15 +6,15 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTr
     /// Upper bound of the range, exclusive; type must match min.
     /// The `max` block must only contain one argument. See the `bucketing_config` block description for more information about choosing a data type.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "max")]
-    pub r#max: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMax>>,
+    pub r#max: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMax>>,
     /// Lower bound of the range, inclusive. Type should be the same as max if used.
     /// The `min` block must only contain one argument. See the `bucketing_config` block description for more information about choosing a data type.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "min")]
-    pub r#min: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMin>>,
+    pub r#min: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMin>>,
     /// Replacement value for this bucket.
     /// The `replacement_value` block must only contain one argument.
     /// Structure is documented below.

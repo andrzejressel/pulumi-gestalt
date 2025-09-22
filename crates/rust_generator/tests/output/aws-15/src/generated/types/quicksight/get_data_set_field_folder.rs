@@ -5,11 +5,11 @@
 pub struct GetDataSetFieldFolder {
     #[builder(into)]
     #[serde(rename = "columns")]
-    pub r#columns: Box<Vec<String>>,
+    pub r#columns: Vec<String>,
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     #[builder(into)]
     #[serde(rename = "fieldFoldersId")]
-    pub r#field_folders_id: Box<String>,
+    pub r#field_folders_id: String,
 }

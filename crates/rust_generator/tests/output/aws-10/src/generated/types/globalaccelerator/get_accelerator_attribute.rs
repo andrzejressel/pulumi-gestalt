@@ -5,11 +5,11 @@
 pub struct GetAcceleratorAttribute {
     #[builder(into)]
     #[serde(rename = "flowLogsEnabled")]
-    pub r#flow_logs_enabled: Box<bool>,
+    pub r#flow_logs_enabled: bool,
     #[builder(into)]
     #[serde(rename = "flowLogsS3Bucket")]
-    pub r#flow_logs_s_3_bucket: Box<String>,
+    pub r#flow_logs_s_3_bucket: String,
     #[builder(into)]
     #[serde(rename = "flowLogsS3Prefix")]
-    pub r#flow_logs_s_3_prefix: Box<String>,
+    pub r#flow_logs_s_3_prefix: String,
 }

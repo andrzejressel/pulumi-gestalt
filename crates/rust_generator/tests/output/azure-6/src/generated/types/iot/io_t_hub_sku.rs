@@ -8,11 +8,11 @@ pub struct IoTHubSku {
     /// > **NOTE:** Only one IotHub can be on the `Free` tier per subscription.
     #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<i32>,
+    pub r#capacity: i32,
     /// The name of the sku. Possible values are `B1`, `B2`, `B3`, `F1`, `S1`, `S2`, and `S3`.
     /// 
     /// > **NOTE:** The `F1` sku is on `Free` tier.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

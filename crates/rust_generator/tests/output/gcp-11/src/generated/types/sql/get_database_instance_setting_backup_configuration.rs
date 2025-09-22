@@ -5,29 +5,29 @@
 pub struct GetDatabaseInstanceSettingBackupConfiguration {
     #[builder(into)]
     #[serde(rename = "backupRetentionSettings")]
-    pub r#backup_retention_settings: Box<Vec<super::super::types::sql::GetDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting>>,
+    pub r#backup_retention_settings: Vec<super::super::types::sql::GetDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting>,
     /// True if binary logging is enabled. If settings.backup_configuration.enabled is false, this must be as well. Can only be used with MySQL.
     #[builder(into)]
     #[serde(rename = "binaryLogEnabled")]
-    pub r#binary_log_enabled: Box<bool>,
+    pub r#binary_log_enabled: bool,
     /// True if backup configuration is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Location of the backup configuration.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// True if Point-in-time recovery is enabled.
     #[builder(into)]
     #[serde(rename = "pointInTimeRecoveryEnabled")]
-    pub r#point_in_time_recovery_enabled: Box<bool>,
+    pub r#point_in_time_recovery_enabled: bool,
     /// HH:MM format time indicating when backup configuration starts.
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
     /// The number of days of transaction logs we retain for point in time restore, from 1-7. (For PostgreSQL Enterprise Plus instances, from 1 to 35.)
     #[builder(into)]
     #[serde(rename = "transactionLogRetentionDays")]
-    pub r#transaction_log_retention_days: Box<i32>,
+    pub r#transaction_log_retention_days: i32,
 }

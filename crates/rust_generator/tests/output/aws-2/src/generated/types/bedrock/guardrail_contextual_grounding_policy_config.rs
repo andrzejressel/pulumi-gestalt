@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GuardrailContextualGroundingPolicyConfig {
     /// List of contextual grounding filter configs. See Contextual Grounding Filters Config for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filtersConfigs")]
-    pub r#filters_configs: Box<Option<Vec<super::super::types::bedrock::GuardrailContextualGroundingPolicyConfigFiltersConfig>>>,
+    pub r#filters_configs: Option<Vec<super::super::types::bedrock::GuardrailContextualGroundingPolicyConfigFiltersConfig>>,
 }

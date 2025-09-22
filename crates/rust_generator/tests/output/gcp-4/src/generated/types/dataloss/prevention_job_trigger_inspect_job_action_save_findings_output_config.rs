@@ -11,9 +11,9 @@ pub struct PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig {
     /// table with no schema, and no changes will be made to an existing table that has a schema.
     /// Only for use with external storage.
     /// Possible values are: `BASIC_COLUMNS`, `GCS_COLUMNS`, `DATASTORE_COLUMNS`, `BIG_QUERY_COLUMNS`, `ALL_COLUMNS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "outputSchema")]
-    pub r#output_schema: Box<Option<String>>,
+    pub r#output_schema: Option<String>,
     /// Information on the location of the target BigQuery Table.
     /// Structure is documented below.
     #[builder(into)]

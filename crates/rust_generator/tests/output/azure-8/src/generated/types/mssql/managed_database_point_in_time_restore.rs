@@ -6,9 +6,9 @@ pub struct ManagedDatabasePointInTimeRestore {
     /// The point in time for the restore from `source_database_id`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "restorePointInTime")]
-    pub r#restore_point_in_time: Box<String>,
+    pub r#restore_point_in_time: String,
     /// The source database id that will be used to restore from. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "sourceDatabaseId")]
-    pub r#source_database_id: Box<String>,
+    pub r#source_database_id: String,
 }

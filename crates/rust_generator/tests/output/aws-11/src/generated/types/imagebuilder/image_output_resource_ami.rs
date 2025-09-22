@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ImageOutputResourceAmi {
     /// Account identifier of the AMI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<Option<String>>,
+    pub r#account_id: Option<String>,
     /// Description of the AMI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Identifier of the AMI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "image")]
-    pub r#image: Box<Option<String>>,
+    pub r#image: Option<String>,
     /// Name of the AMI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Region of the container image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
 }

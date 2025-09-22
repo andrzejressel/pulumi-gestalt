@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipelineJobMappingPipelineJobFhirStreamingSource {
     /// Describes the streaming FHIR data source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The path to the FHIR store in the format projects/{projectId}/locations/{locationId}/datasets/{datasetId}/fhirStores/{fhirStoreId}.
     #[builder(into)]
     #[serde(rename = "fhirStore")]
-    pub r#fhir_store: Box<String>,
+    pub r#fhir_store: String,
 }

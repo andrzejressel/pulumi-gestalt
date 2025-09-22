@@ -11,5 +11,5 @@ pub struct ClusterNodeConfigGuestAcceleratorGpuDriverInstallationConfig {
     /// * `"LATEST"`: "Latest" GPU driver in COS.
     #[builder(into)]
     #[serde(rename = "gpuDriverVersion")]
-    pub r#gpu_driver_version: Box<String>,
+    pub r#gpu_driver_version: String,
 }

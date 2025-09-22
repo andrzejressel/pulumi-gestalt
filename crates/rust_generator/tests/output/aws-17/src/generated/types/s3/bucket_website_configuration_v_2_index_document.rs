@@ -8,5 +8,5 @@ pub struct BucketWebsiteConfigurationV2IndexDocument {
     /// The suffix must not be empty and must not include a slash character.
     #[builder(into)]
     #[serde(rename = "suffix")]
-    pub r#suffix: Box<String>,
+    pub r#suffix: String,
 }

@@ -6,11 +6,11 @@ pub struct KafkaClusterRestProxy {
     /// The Azure Active Directory Security Group ID. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "securityGroupId")]
-    pub r#security_group_id: Box<String>,
+    pub r#security_group_id: String,
     /// The Azure Active Directory Security Group name. Changing this forces a new resource to be created.
     /// 
     /// > **Note:** The `security_group_name` property will be Required in version 3.0 of the AzureRM Provider.
     #[builder(into)]
     #[serde(rename = "securityGroupName")]
-    pub r#security_group_name: Box<String>,
+    pub r#security_group_name: String,
 }

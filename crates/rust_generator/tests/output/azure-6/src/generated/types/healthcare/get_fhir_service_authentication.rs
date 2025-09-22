@@ -6,11 +6,11 @@ pub struct GetFhirServiceAuthentication {
     /// The intended audience to receive authentication tokens for the service. The default value is `https://<name>.fhir.azurehealthcareapis.com`.
     #[builder(into)]
     #[serde(rename = "audience")]
-    pub r#audience: Box<String>,
+    pub r#audience: String,
     #[builder(into)]
     #[serde(rename = "authority")]
-    pub r#authority: Box<String>,
+    pub r#authority: String,
     #[builder(into)]
     #[serde(rename = "smartProxyEnabled")]
-    pub r#smart_proxy_enabled: Box<bool>,
+    pub r#smart_proxy_enabled: bool,
 }

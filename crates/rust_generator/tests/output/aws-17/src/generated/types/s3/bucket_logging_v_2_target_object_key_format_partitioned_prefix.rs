@@ -6,5 +6,5 @@ pub struct BucketLoggingV2TargetObjectKeyFormatPartitionedPrefix {
     /// Specifies the partition date source for the partitioned prefix. Valid values: `EventTime`, `DeliveryTime`.
     #[builder(into)]
     #[serde(rename = "partitionDateSource")]
-    pub r#partition_date_source: Box<String>,
+    pub r#partition_date_source: String,
 }

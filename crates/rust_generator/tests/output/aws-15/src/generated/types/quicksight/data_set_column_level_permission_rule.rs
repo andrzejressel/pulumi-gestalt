@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSetColumnLevelPermissionRule {
     /// An array of column names.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "columnNames")]
-    pub r#column_names: Box<Option<Vec<String>>>,
+    pub r#column_names: Option<Vec<String>>,
     /// An array of ARNs for Amazon QuickSight users or groups.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "principals")]
-    pub r#principals: Box<Option<Vec<String>>>,
+    pub r#principals: Option<Vec<String>>,
 }

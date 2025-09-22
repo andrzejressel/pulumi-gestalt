@@ -5,7 +5,7 @@
 pub struct WorkforcePoolProviderOidcClientSecret {
     /// The value of the client secret.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<super::super::types::iam::WorkforcePoolProviderOidcClientSecretValue>>,
+    pub r#value: Option<Box<super::super::types::iam::WorkforcePoolProviderOidcClientSecretValue>>,
 }

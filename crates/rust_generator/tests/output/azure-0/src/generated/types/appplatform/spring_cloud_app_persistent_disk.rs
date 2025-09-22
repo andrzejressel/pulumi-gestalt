@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudAppPersistentDisk {
     /// Specifies the mount path of the persistent disk. Defaults to `/persistent`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mountPath")]
-    pub r#mount_path: Box<Option<String>>,
+    pub r#mount_path: Option<String>,
     /// Specifies the size of the persistent disk in GB. Possible values are between `0` and `50`.
     #[builder(into)]
     #[serde(rename = "sizeInGb")]
-    pub r#size_in_gb: Box<i32>,
+    pub r#size_in_gb: i32,
 }

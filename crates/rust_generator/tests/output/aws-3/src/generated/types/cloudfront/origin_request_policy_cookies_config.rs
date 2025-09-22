@@ -5,8 +5,8 @@
 pub struct OriginRequestPolicyCookiesConfig {
     #[builder(into)]
     #[serde(rename = "cookieBehavior")]
-    pub r#cookie_behavior: Box<String>,
-    #[builder(into, default)]
+    pub r#cookie_behavior: String,
+    #[builder(into)]
     #[serde(rename = "cookies")]
-    pub r#cookies: Box<Option<super::super::types::cloudfront::OriginRequestPolicyCookiesConfigCookies>>,
+    pub r#cookies: Option<Box<super::super::types::cloudfront::OriginRequestPolicyCookiesConfigCookies>>,
 }

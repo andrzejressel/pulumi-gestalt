@@ -6,5 +6,5 @@ pub struct CollectorPolicyIpfxEmission {
     /// A list of emission destination types. The only possible value is `AzureMonitor`. Changing this forces a new Network Function Collector Policy to be created.
     #[builder(into)]
     #[serde(rename = "destinationTypes")]
-    pub r#destination_types: Box<String>,
+    pub r#destination_types: String,
 }

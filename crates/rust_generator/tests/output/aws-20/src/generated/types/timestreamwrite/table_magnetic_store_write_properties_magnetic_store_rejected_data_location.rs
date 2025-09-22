@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocation {
     /// Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes. See S3 Configuration below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Configuration")]
-    pub r#s_3_configuration: Box<Option<super::super::types::timestreamwrite::TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocationS3Configuration>>,
+    pub r#s_3_configuration: Option<Box<super::super::types::timestreamwrite::TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocationS3Configuration>>,
 }

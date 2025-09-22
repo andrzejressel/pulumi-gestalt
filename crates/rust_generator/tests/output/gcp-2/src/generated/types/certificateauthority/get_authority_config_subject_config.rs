@@ -6,9 +6,9 @@ pub struct GetAuthorityConfigSubjectConfig {
     /// The subject alternative name fields.
     #[builder(into)]
     #[serde(rename = "subjectAltNames")]
-    pub r#subject_alt_names: Box<Vec<super::super::types::certificateauthority::GetAuthorityConfigSubjectConfigSubjectAltName>>,
+    pub r#subject_alt_names: Vec<super::super::types::certificateauthority::GetAuthorityConfigSubjectConfigSubjectAltName>,
     /// Contains distinguished name fields such as the location and organization.
     #[builder(into)]
     #[serde(rename = "subjects")]
-    pub r#subjects: Box<Vec<super::super::types::certificateauthority::GetAuthorityConfigSubjectConfigSubject>>,
+    pub r#subjects: Vec<super::super::types::certificateauthority::GetAuthorityConfigSubjectConfigSubject>,
 }

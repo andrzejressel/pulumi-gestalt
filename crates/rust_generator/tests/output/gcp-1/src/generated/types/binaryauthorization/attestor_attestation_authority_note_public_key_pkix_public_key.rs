@@ -5,9 +5,9 @@
 pub struct AttestorAttestationAuthorityNotePublicKeyPkixPublicKey {
     /// A PEM-encoded public key, as described in
     /// `https://tools.ietf.org/html/rfc7468#section-13`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicKeyPem")]
-    pub r#public_key_pem: Box<Option<String>>,
+    pub r#public_key_pem: Option<String>,
     /// The signature algorithm used to verify a message against
     /// a signature using this key. These signature algorithm must
     /// match the structure and any object identifiers encoded in
@@ -15,7 +15,7 @@ pub struct AttestorAttestationAuthorityNotePublicKeyPkixPublicKey {
     /// public key).
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "signatureAlgorithm")]
-    pub r#signature_algorithm: Box<Option<String>>,
+    pub r#signature_algorithm: Option<String>,
 }

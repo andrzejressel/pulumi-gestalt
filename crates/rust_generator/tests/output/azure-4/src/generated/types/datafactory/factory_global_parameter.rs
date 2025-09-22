@@ -6,15 +6,15 @@ pub struct FactoryGlobalParameter {
     /// Specifies the global parameter name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the global parameter type. Possible Values are `Array`, `Bool`, `Float`, `Int`, `Object` or `String`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// Specifies the global parameter value.
     /// 
     /// > **Note:** For type `Array` and `Object` it is recommended to use `jsonencode()` for the value
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

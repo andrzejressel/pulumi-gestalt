@@ -5,11 +5,11 @@
 pub struct GetDataSetLogicalTableMapSource {
     #[builder(into)]
     #[serde(rename = "dataSetArn")]
-    pub r#data_set_arn: Box<String>,
+    pub r#data_set_arn: String,
     #[builder(into)]
     #[serde(rename = "joinInstructions")]
-    pub r#join_instructions: Box<Vec<super::super::types::quicksight::GetDataSetLogicalTableMapSourceJoinInstruction>>,
+    pub r#join_instructions: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapSourceJoinInstruction>,
     #[builder(into)]
     #[serde(rename = "physicalTableId")]
-    pub r#physical_table_id: Box<String>,
+    pub r#physical_table_id: String,
 }

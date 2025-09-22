@@ -6,13 +6,13 @@ pub struct AnalyticsApplicationReferenceDataSourcesS3 {
     /// The S3 Bucket ARN.
     #[builder(into)]
     #[serde(rename = "bucketArn")]
-    pub r#bucket_arn: Box<String>,
+    pub r#bucket_arn: String,
     /// The File Key name containing reference data.
     #[builder(into)]
     #[serde(rename = "fileKey")]
-    pub r#file_key: Box<String>,
+    pub r#file_key: String,
     /// The IAM Role ARN to read the data.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
 }

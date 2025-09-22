@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TargetServerSSlInfoCommonName {
     /// The TLS Common Name string of the certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
     /// Indicates whether the cert should be matched against as a wildcard cert.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "wildcardMatch")]
-    pub r#wildcard_match: Box<Option<bool>>,
+    pub r#wildcard_match: Option<bool>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ImagePipelineImageScanningConfiguration {
     /// Configuration block with ECR configuration for image scanning. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ecrConfiguration")]
-    pub r#ecr_configuration: Box<Option<super::super::types::imagebuilder::ImagePipelineImageScanningConfigurationEcrConfiguration>>,
+    pub r#ecr_configuration: Option<Box<super::super::types::imagebuilder::ImagePipelineImageScanningConfigurationEcrConfiguration>>,
     /// Whether image scans are enabled. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageScanningEnabled")]
-    pub r#image_scanning_enabled: Box<Option<bool>>,
+    pub r#image_scanning_enabled: Option<bool>,
 }

@@ -6,9 +6,9 @@ pub struct GetDiscoveredServiceServiceReference {
     /// Additional path under the resource URI.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// The underlying resource URI.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

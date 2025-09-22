@@ -6,9 +6,9 @@ pub struct ConfigSignInPhoneNumber {
     /// Whether phone number auth is enabled for the project or not.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// A map of <test phone number, fake code> that can be used for phone auth testing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "testPhoneNumbers")]
-    pub r#test_phone_numbers: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#test_phone_numbers: Option<std::collections::HashMap<String, String>>,
 }

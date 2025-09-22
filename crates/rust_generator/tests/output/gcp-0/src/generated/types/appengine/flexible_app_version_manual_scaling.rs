@@ -8,5 +8,5 @@ pub struct FlexibleAppVersionManualScaling {
     /// Modules API set_num_instances() you must use `lifecycle.ignore_changes = ["manual_scaling"[0].instances]` to prevent drift detection.
     #[builder(into)]
     #[serde(rename = "instances")]
-    pub r#instances: Box<i32>,
+    pub r#instances: i32,
 }

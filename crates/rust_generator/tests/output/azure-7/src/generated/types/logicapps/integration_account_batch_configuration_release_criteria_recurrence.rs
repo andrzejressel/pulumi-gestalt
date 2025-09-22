@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IntegrationAccountBatchConfigurationReleaseCriteriaRecurrence {
     /// The end time of the schedule, formatted as an RFC3339 string.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<Option<String>>,
+    pub r#end_time: Option<String>,
     /// The frequency of the schedule. Possible values are `Day`, `Hour`, `Minute`, `Month`, `NotSpecified`, `Second`, `Week` and `Year`.
     #[builder(into)]
     #[serde(rename = "frequency")]
-    pub r#frequency: Box<String>,
+    pub r#frequency: String,
     /// The number of `frequency`s between runs.
     #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<i32>,
+    pub r#interval: i32,
     /// A `schedule` block as documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schedule")]
-    pub r#schedule: Box<Option<super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteriaRecurrenceSchedule>>,
+    pub r#schedule: Option<Box<super::super::types::logicapps::IntegrationAccountBatchConfigurationReleaseCriteriaRecurrenceSchedule>>,
     /// The start time of the schedule, formatted as an RFC3339 string.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
     /// The timezone of the start/end time.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeZone")]
-    pub r#time_zone: Box<Option<String>>,
+    pub r#time_zone: Option<String>,
 }

@@ -5,8 +5,8 @@
 pub struct GetNetworkInsightsAnalysisExplanationClassicLoadBalancerListener {
     #[builder(into)]
     #[serde(rename = "instancePort")]
-    pub r#instance_port: Box<i32>,
+    pub r#instance_port: i32,
     #[builder(into)]
     #[serde(rename = "loadBalancerPort")]
-    pub r#load_balancer_port: Box<i32>,
+    pub r#load_balancer_port: i32,
 }

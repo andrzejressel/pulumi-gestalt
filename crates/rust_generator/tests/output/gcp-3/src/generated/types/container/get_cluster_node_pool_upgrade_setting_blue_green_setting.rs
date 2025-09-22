@@ -6,9 +6,9 @@ pub struct GetClusterNodePoolUpgradeSettingBlueGreenSetting {
     /// Time needed after draining entire blue pool. After this period, blue pool will be cleaned up.
     #[builder(into)]
     #[serde(rename = "nodePoolSoakDuration")]
-    pub r#node_pool_soak_duration: Box<String>,
+    pub r#node_pool_soak_duration: String,
     /// Standard rollout policy is the default policy for blue-green.
     #[builder(into)]
     #[serde(rename = "standardRolloutPolicies")]
-    pub r#standard_rollout_policies: Box<Vec<super::super::types::container::GetClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy>>,
+    pub r#standard_rollout_policies: Vec<super::super::types::container::GetClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy>,
 }

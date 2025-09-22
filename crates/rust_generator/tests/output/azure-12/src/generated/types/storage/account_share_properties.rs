@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountShareProperties {
     /// A `cors_rule` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "corsRules")]
-    pub r#cors_rules: Box<Option<Vec<super::super::types::storage::AccountSharePropertiesCorsRule>>>,
+    pub r#cors_rules: Option<Vec<super::super::types::storage::AccountSharePropertiesCorsRule>>,
     /// A `retention_policy` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Box<Option<super::super::types::storage::AccountSharePropertiesRetentionPolicy>>,
+    pub r#retention_policy: Option<Box<super::super::types::storage::AccountSharePropertiesRetentionPolicy>>,
     /// A `smb` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "smb")]
-    pub r#smb: Box<Option<super::super::types::storage::AccountSharePropertiesSmb>>,
+    pub r#smb: Option<Box<super::super::types::storage::AccountSharePropertiesSmb>>,
 }

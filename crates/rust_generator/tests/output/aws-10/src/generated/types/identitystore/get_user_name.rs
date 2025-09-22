@@ -6,25 +6,25 @@ pub struct GetUserName {
     /// The family name of the user.
     #[builder(into)]
     #[serde(rename = "familyName")]
-    pub r#family_name: Box<String>,
+    pub r#family_name: String,
     /// The name that is typically displayed when the name is shown for display.
     #[builder(into)]
     #[serde(rename = "formatted")]
-    pub r#formatted: Box<String>,
+    pub r#formatted: String,
     /// The given name of the user.
     #[builder(into)]
     #[serde(rename = "givenName")]
-    pub r#given_name: Box<String>,
+    pub r#given_name: String,
     /// The honorific prefix of the user.
     #[builder(into)]
     #[serde(rename = "honorificPrefix")]
-    pub r#honorific_prefix: Box<String>,
+    pub r#honorific_prefix: String,
     /// The honorific suffix of the user.
     #[builder(into)]
     #[serde(rename = "honorificSuffix")]
-    pub r#honorific_suffix: Box<String>,
+    pub r#honorific_suffix: String,
     /// The middle name of the user.
     #[builder(into)]
     #[serde(rename = "middleName")]
-    pub r#middle_name: Box<String>,
+    pub r#middle_name: String,
 }

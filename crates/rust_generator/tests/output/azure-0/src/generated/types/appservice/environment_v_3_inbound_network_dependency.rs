@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentV3InboundNetworkDependency {
     /// A short description of the purpose of the network traffic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// A list of IP addresses that network traffic will originate from in CIDR notation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Option<Vec<String>>>,
+    pub r#ip_addresses: Option<Vec<String>>,
     /// The ports that network traffic will arrive to the App Service Environment V3 on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ports")]
-    pub r#ports: Box<Option<Vec<String>>>,
+    pub r#ports: Option<Vec<String>>,
 }

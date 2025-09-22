@@ -6,9 +6,9 @@ pub struct GetBudgetResourceGroupFilterNot {
     /// A `dimension` block as defined below.
     #[builder(into)]
     #[serde(rename = "dimensions")]
-    pub r#dimensions: Box<Vec<super::super::types::consumption::GetBudgetResourceGroupFilterNotDimension>>,
+    pub r#dimensions: Vec<super::super::types::consumption::GetBudgetResourceGroupFilterNotDimension>,
     /// A `tag` block as defined below.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Vec<super::super::types::consumption::GetBudgetResourceGroupFilterNotTag>>,
+    pub r#tags: Vec<super::super::types::consumption::GetBudgetResourceGroupFilterNotTag>,
 }

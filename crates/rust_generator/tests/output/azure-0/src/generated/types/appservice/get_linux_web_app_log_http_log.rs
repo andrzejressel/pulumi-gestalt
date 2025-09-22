@@ -6,9 +6,9 @@ pub struct GetLinuxWebAppLogHttpLog {
     /// A `azure_blob_storage` block as defined above.
     #[builder(into)]
     #[serde(rename = "azureBlobStorages")]
-    pub r#azure_blob_storages: Box<Vec<super::super::types::appservice::GetLinuxWebAppLogHttpLogAzureBlobStorage>>,
+    pub r#azure_blob_storages: Vec<super::super::types::appservice::GetLinuxWebAppLogHttpLogAzureBlobStorage>,
     /// A `file_system` block as defined above.
     #[builder(into)]
     #[serde(rename = "fileSystems")]
-    pub r#file_systems: Box<Vec<super::super::types::appservice::GetLinuxWebAppLogHttpLogFileSystem>>,
+    pub r#file_systems: Vec<super::super::types::appservice::GetLinuxWebAppLogHttpLogFileSystem>,
 }

@@ -6,13 +6,13 @@ pub struct ActionGroupEmailReceiver {
     /// The email address of this receiver.
     #[builder(into)]
     #[serde(rename = "emailAddress")]
-    pub r#email_address: Box<String>,
+    pub r#email_address: String,
     /// The name of the email receiver. Names must be unique (case-insensitive) across all receivers within an action group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Enables or disables the common alert schema.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useCommonAlertSchema")]
-    pub r#use_common_alert_schema: Box<Option<bool>>,
+    pub r#use_common_alert_schema: Option<bool>,
 }

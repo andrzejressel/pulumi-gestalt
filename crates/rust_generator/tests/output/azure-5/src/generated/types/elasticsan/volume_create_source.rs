@@ -6,9 +6,9 @@ pub struct VolumeCreateSource {
     /// Specifies the ID of the source to create the Elastic SAN Volume from. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "sourceId")]
-    pub r#source_id: Box<String>,
+    pub r#source_id: String,
     /// Specifies the type of the source to create the Elastic SAN Volume from. Possible values are `Disk`, `DiskRestorePoint`, `DiskSnapshot` and `VolumeSnapshot`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "sourceType")]
-    pub r#source_type: Box<String>,
+    pub r#source_type: String,
 }

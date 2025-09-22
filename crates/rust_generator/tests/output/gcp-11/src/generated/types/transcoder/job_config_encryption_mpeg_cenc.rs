@@ -6,5 +6,5 @@ pub struct JobConfigEncryptionMpegCenc {
     /// Specify the encryption scheme.
     #[builder(into)]
     #[serde(rename = "scheme")]
-    pub r#scheme: Box<String>,
+    pub r#scheme: String,
 }

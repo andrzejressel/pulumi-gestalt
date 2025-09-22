@@ -5,11 +5,11 @@
 pub struct InstanceMemcacheParameters {
     /// (Output)
     /// This is a unique ID associated with this set of parameters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// User-defined set of parameters to use in the memcache process.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "params")]
-    pub r#params: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#params: Option<std::collections::HashMap<String, String>>,
 }

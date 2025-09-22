@@ -6,20 +6,20 @@ pub struct ReplicationSetRegion {
     /// The Amazon Resource name (ARN) of the customer managed key. If omitted, AWS manages the AWS KMS keys for you, using an AWS owned key, as indicated by a default value of `DefaultKey`.
     /// 
     /// The following arguments are optional:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<Option<String>>,
+    pub r#kms_key_arn: Option<String>,
     /// The name of the Region, such as `ap-southeast-2`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The current status of the Region.
     /// * Valid Values: `ACTIVE` | `CREATING` | `UPDATING` | `DELETING` | `FAILED`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
     /// More information about the status of a Region.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusMessage")]
-    pub r#status_message: Box<Option<String>>,
+    pub r#status_message: Option<String>,
 }

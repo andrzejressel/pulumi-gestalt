@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OrganizationalUnitAccount {
     /// ARN of the organizational unit
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<Option<String>>,
+    pub r#arn: Option<String>,
     /// Email of the account
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// Identifier of the organization unit
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The name for the organizational unit
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

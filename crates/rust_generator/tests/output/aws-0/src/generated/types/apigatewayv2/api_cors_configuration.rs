@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApiCorsConfiguration {
     /// Whether credentials are included in the CORS request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowCredentials")]
-    pub r#allow_credentials: Box<Option<bool>>,
+    pub r#allow_credentials: Option<bool>,
     /// Set of allowed HTTP headers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowHeaders")]
-    pub r#allow_headers: Box<Option<Vec<String>>>,
+    pub r#allow_headers: Option<Vec<String>>,
     /// Set of allowed HTTP methods.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowMethods")]
-    pub r#allow_methods: Box<Option<Vec<String>>>,
+    pub r#allow_methods: Option<Vec<String>>,
     /// Set of allowed origins.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowOrigins")]
-    pub r#allow_origins: Box<Option<Vec<String>>>,
+    pub r#allow_origins: Option<Vec<String>>,
     /// Set of exposed HTTP headers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exposeHeaders")]
-    pub r#expose_headers: Box<Option<Vec<String>>>,
+    pub r#expose_headers: Option<Vec<String>>,
     /// Number of seconds that the browser should cache preflight request results.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxAge")]
-    pub r#max_age: Box<Option<i32>>,
+    pub r#max_age: Option<i32>,
 }

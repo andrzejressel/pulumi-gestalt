@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointDeploymentConfigBlueGreenUpdatePolicy {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximumExecutionTimeoutInSeconds")]
-    pub r#maximum_execution_timeout_in_seconds: Box<Option<i32>>,
+    pub r#maximum_execution_timeout_in_seconds: Option<i32>,
     /// Additional waiting time in seconds after the completion of an endpoint deployment before terminating the old endpoint fleet. Default is `0`. Valid values are between `0` and `3600`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "terminationWaitInSeconds")]
-    pub r#termination_wait_in_seconds: Box<Option<i32>>,
+    pub r#termination_wait_in_seconds: Option<i32>,
     /// Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment. See Traffic Routing Configuration.
     #[builder(into)]
     #[serde(rename = "trafficRoutingConfiguration")]

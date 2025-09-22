@@ -8,22 +8,22 @@ pub struct ConnectionProfilePostgresqlSsl {
     /// **Note**: This property is sensitive and will not be displayed in the plan.
     #[builder(into)]
     #[serde(rename = "caCertificate")]
-    pub r#ca_certificate: Box<String>,
+    pub r#ca_certificate: String,
     /// Input only. The x509 PEM-encoded certificate that will be used by the replica to authenticate against the source database server.
     /// If this field is used then the 'clientKey' field is mandatory
     /// **Note**: This property is sensitive and will not be displayed in the plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientCertificate")]
-    pub r#client_certificate: Box<Option<String>>,
+    pub r#client_certificate: Option<String>,
     /// Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key associated with the Client Certificate.
     /// If this field is used then the 'clientCertificate' field is mandatory.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientKey")]
-    pub r#client_key: Box<Option<String>>,
+    pub r#client_key: Option<String>,
     /// (Output)
     /// The current connection profile state.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

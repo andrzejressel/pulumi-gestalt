@@ -79,15 +79,13 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
             )
             .rules(
                 RepositoryRulesetRules::builder()
-                    .deletion(Some(true))
-                    .non_fast_forward(Some(true))
-                    .required_linear_history(Some(true))
-                    .pull_request(Some(
-                        RepositoryRulesetRulesPullRequest::builder().build_struct(),
-                    ))
-                    .required_status_checks(Some(
+                    .deletion(true)
+                    .non_fast_forward(true)
+                    .required_linear_history(true)
+                    .pull_request(RepositoryRulesetRulesPullRequest::builder().build_struct())
+                    .required_status_checks(
                         RepositoryRulesetRulesRequiredStatusChecks::builder()
-                            .strict_required_status_checks_policy(Some(false))
+                            .strict_required_status_checks_policy(false)
                             .required_checks(
                                 [
                                     &[
@@ -101,7 +99,7 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
                                 .concat(),
                             )
                             .build_struct(),
-                    ))
+                    )
                     .build_struct(),
             )
             .build_struct(),
@@ -115,7 +113,7 @@ fn create_check(
     integration: GithubIntegration,
 ) -> RepositoryRulesetRulesRequiredStatusChecksRequiredCheck {
     RepositoryRulesetRulesRequiredStatusChecksRequiredCheck::builder()
-        .context(name.to_string())
-        .integration_id(Some(integration.get_integration_id()))
+        .context(name)
+        .integration_id(integration.get_integration_id())
         .build_struct()
 }

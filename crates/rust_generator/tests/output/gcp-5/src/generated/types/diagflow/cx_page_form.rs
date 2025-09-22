@@ -5,7 +5,7 @@
 pub struct CxPageForm {
     /// Parameters to collect from the user.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<Vec<super::super::types::diagflow::CxPageFormParameter>>>,
+    pub r#parameters: Option<Vec<super::super::types::diagflow::CxPageFormParameter>>,
 }

@@ -6,9 +6,9 @@ pub struct WorkstationConfigEncryptionKey {
     /// The name of the Google Cloud KMS encryption key.
     #[builder(into)]
     #[serde(rename = "kmsKey")]
-    pub r#kms_key: Box<String>,
+    pub r#kms_key: String,
     /// The service account to use with the specified KMS key.
     #[builder(into)]
     #[serde(rename = "kmsKeyServiceAccount")]
-    pub r#kms_key_service_account: Box<String>,
+    pub r#kms_key_service_account: String,
 }

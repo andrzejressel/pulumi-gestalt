@@ -6,9 +6,9 @@ pub struct GetClusterEnterpriseConfig {
     /// Indicates the effective cluster tier. Available options include STANDARD and ENTERPRISE.
     #[builder(into)]
     #[serde(rename = "clusterTier")]
-    pub r#cluster_tier: Box<String>,
+    pub r#cluster_tier: String,
     /// Indicates the desired cluster tier. Available options include STANDARD and ENTERPRISE.
     #[builder(into)]
     #[serde(rename = "desiredTier")]
-    pub r#desired_tier: Box<String>,
+    pub r#desired_tier: String,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataLakeConfiguration {
     /// Provides encryption details of Amazon Security Lake object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encryptionConfigurations")]
-    pub r#encryption_configurations: Box<Option<Vec<super::super::types::securitylake::DataLakeConfigurationEncryptionConfiguration>>>,
+    pub r#encryption_configurations: Option<Vec<super::super::types::securitylake::DataLakeConfigurationEncryptionConfiguration>>,
     /// Provides lifecycle details of Amazon Security Lake object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lifecycleConfiguration")]
-    pub r#lifecycle_configuration: Box<Option<super::super::types::securitylake::DataLakeConfigurationLifecycleConfiguration>>,
+    pub r#lifecycle_configuration: Option<Box<super::super::types::securitylake::DataLakeConfigurationLifecycleConfiguration>>,
     /// The AWS Regions where Security Lake is automatically enabled.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
     /// Provides replication details of Amazon Security Lake object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replicationConfiguration")]
-    pub r#replication_configuration: Box<Option<super::super::types::securitylake::DataLakeConfigurationReplicationConfiguration>>,
+    pub r#replication_configuration: Option<Box<super::super::types::securitylake::DataLakeConfigurationReplicationConfiguration>>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegionInstanceGroupManagerInstanceFlexibilityPolicy {
     /// Named instance selections configuring properties that the group will use when creating new VMs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceSelections")]
-    pub r#instance_selections: Box<Option<Vec<super::super::types::compute::RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection>>>,
+    pub r#instance_selections: Option<Vec<super::super::types::compute::RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection>>,
 }

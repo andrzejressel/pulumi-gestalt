@@ -6,17 +6,17 @@ pub struct GetPoolDataDisk {
     /// The caching mode of data disks.
     #[builder(into)]
     #[serde(rename = "caching")]
-    pub r#caching: Box<String>,
+    pub r#caching: String,
     /// The initial disk size in GB when creating new data disk.
     #[builder(into)]
     #[serde(rename = "diskSizeGb")]
-    pub r#disk_size_gb: Box<i32>,
+    pub r#disk_size_gb: i32,
     /// The lun is used to uniquely identify each data disk.
     #[builder(into)]
     #[serde(rename = "lun")]
-    pub r#lun: Box<i32>,
+    pub r#lun: i32,
     /// The storage account type to be used for the data disk.
     #[builder(into)]
     #[serde(rename = "storageAccountType")]
-    pub r#storage_account_type: Box<String>,
+    pub r#storage_account_type: String,
 }

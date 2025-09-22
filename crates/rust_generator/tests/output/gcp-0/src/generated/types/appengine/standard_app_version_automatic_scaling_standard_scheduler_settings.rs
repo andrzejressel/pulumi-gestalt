@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StandardAppVersionAutomaticScalingStandardSchedulerSettings {
     /// Maximum number of instances to run for this version. Set to zero to disable maxInstances configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxInstances")]
-    pub r#max_instances: Box<Option<i32>>,
+    pub r#max_instances: Option<i32>,
     /// Minimum number of instances to run for this version. Set to zero to disable minInstances configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minInstances")]
-    pub r#min_instances: Box<Option<i32>>,
+    pub r#min_instances: Option<i32>,
     /// Target CPU utilization ratio to maintain when scaling. Should be a value in the range [0.50, 0.95], zero, or a negative value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetCpuUtilization")]
-    pub r#target_cpu_utilization: Box<Option<f64>>,
+    pub r#target_cpu_utilization: Option<f64>,
     /// Target throughput utilization ratio to maintain when scaling. Should be a value in the range [0.50, 0.95], zero, or a negative value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetThroughputUtilization")]
-    pub r#target_throughput_utilization: Box<Option<f64>>,
+    pub r#target_throughput_utilization: Option<f64>,
 }

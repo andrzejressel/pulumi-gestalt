@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterCoreInstanceFleetLaunchSpecifications {
     /// Configuration block for on demand instances launch specifications.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "onDemandSpecifications")]
-    pub r#on_demand_specifications: Box<Option<Vec<super::super::types::emr::ClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification>>>,
+    pub r#on_demand_specifications: Option<Vec<super::super::types::emr::ClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification>>,
     /// Configuration block for spot instances launch specifications.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "spotSpecifications")]
-    pub r#spot_specifications: Box<Option<Vec<super::super::types::emr::ClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification>>>,
+    pub r#spot_specifications: Option<Vec<super::super::types::emr::ClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification>>,
 }

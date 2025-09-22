@@ -8,5 +8,5 @@ pub struct QueueStackdriverLoggingConfig {
     /// default and means that no operations are logged.
     #[builder(into)]
     #[serde(rename = "samplingRatio")]
-    pub r#sampling_ratio: Box<f64>,
+    pub r#sampling_ratio: f64,
 }

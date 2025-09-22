@@ -8,20 +8,20 @@ pub struct HostingCustomDomainCert {
     /// state is `PROPAGATING` and Hosting had an active cert for the domain name
     /// before, that formerly-active cert provides SSL coverage for the domain name
     /// until the current cert propagates.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
     /// The record's type, which determines what data the record contains.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
     /// A set of ACME challenges you can add to your DNS records or existing,
     /// non-Hosting hosting provider to allow Hosting to create an SSL certificate
     /// for your domain name before you point traffic toward hosting. You can use
     /// thse challenges as part of a zero downtime transition from your old
     /// provider to Hosting.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "verification")]
-    pub r#verification: Box<Option<super::super::types::firebase::HostingCustomDomainCertVerification>>,
+    pub r#verification: Option<Box<super::super::types::firebase::HostingCustomDomainCertVerification>>,
 }

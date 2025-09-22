@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceServiceConnectConfigurationServiceTimeout {
     /// Amount of time in seconds a connection will stay active while idle. A value of 0 can be set to disable idleTimeout.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "idleTimeoutSeconds")]
-    pub r#idle_timeout_seconds: Box<Option<i32>>,
+    pub r#idle_timeout_seconds: Option<i32>,
     /// Amount of time in seconds for the upstream to respond with a complete response per request. A value of 0 can be set to disable perRequestTimeout. Can only be set when appProtocol isn't TCP.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "perRequestTimeoutSeconds")]
-    pub r#per_request_timeout_seconds: Box<Option<i32>>,
+    pub r#per_request_timeout_seconds: Option<i32>,
 }

@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct Typ {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mod1")]
-    pub r#mod_1: Box<Option<super::types::mod1::Typ>>,
-    #[builder(into, default)]
+    pub r#mod_1: Option<Box<super::types::mod1::Typ>>,
+    #[builder(into)]
     #[serde(rename = "mod2")]
-    pub r#mod_2: Box<Option<super::types::mod2::Typ>>,
-    #[builder(into, default)]
+    pub r#mod_2: Option<Box<super::types::mod2::Typ>>,
+    #[builder(into)]
     #[serde(rename = "val")]
-    pub r#val: Box<Option<String>>,
+    pub r#val: Option<String>,
 }
