@@ -10,7 +10,7 @@ pub struct BillingMeterDetailsResponse {
     /// Represents MeterDetails
     #[builder(into)]
     #[serde(rename = "meterDetails")]
-    pub r#meter_details: pulumi_gestalt_rust::OneOf2<Box<super::types::Pav2MeterDetailsResponse>, Box<super::types::PurchaseMeterDetailsResponse>>,
+    pub r#meter_details: Box<pulumi_gestalt_rust::OneOf2<super::types::Pav2MeterDetailsResponse, super::types::PurchaseMeterDetailsResponse>>,
     /// Represents Metering type (eg one-time or recurrent)
     #[builder(into)]
     #[serde(rename = "meteringType")]

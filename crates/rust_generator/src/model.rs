@@ -59,29 +59,52 @@ impl TypeExt for Type {
     }
 
     fn get_cycle_safe_rust_type(&self, depth: usize) -> String {
-        match self {
-            Type::Ref(Ref::Type(tpe)) => format!(
-                "Box<{}types::{}>",
-                access_root(depth),
-                tpe.get_rust_absolute_name()
-            ),
-            Type::Option(type_) => format!("Option<{}>", type_.get_cycle_safe_rust_type(depth)),
-            Type::DiscriminatedUnion(refs) => format!(
-                "pulumi_gestalt_rust::OneOf{}<{}>",
-                refs.len(),
-                refs.iter()
-                    .map(|r| r.get_cycle_safe_rust_type(depth))
-                    .collect::<Vec<_>>()
-                    .join(", ")
-            ),
-            Type::Boolean
-            | Type::Integer
-            | Type::Number
-            | Type::String
-            | Type::Array(_)
-            | Type::Object(_)
-            | Type::ConstString(_)
-            | Type::Ref(Ref::Asset | Ref::Any | Ref::Archive) => self.get_rust_type(depth),
+        fn go(t: &Type, depth: usize) -> (String, bool) {
+            match t {
+                Type::Ref(Ref::Type(tpe)) => (
+                    format!(
+                        "{}types::{}",
+                        access_root(depth),
+                        tpe.get_rust_absolute_name()
+                    ),
+                    true,
+                ),
+                Type::Option(type_) => {
+                    let (type_str, is_boxed) = go(type_, depth);
+                    (format!("Option<{}>", type_str), is_boxed)
+                }
+                Type::DiscriminatedUnion(refs) => {
+                    let (strings, booleans): (Vec<String>, Vec<bool>) =
+                        refs.iter().map(|r| go(r, depth)).unzip();
+
+                    let type_str = format!(
+                        "pulumi_gestalt_rust::OneOf{}<{}>",
+                        refs.len(),
+                        strings.join(", ")
+                    );
+                    
+                    let is_boxed = booleans.into_iter().any(|b| b);
+
+                    (type_str, is_boxed)
+                }
+                Type::Boolean
+                | Type::Integer
+                | Type::Number
+                | Type::String
+                | Type::Array(_)
+                | Type::Object(_)
+                | Type::ConstString(_)
+                | Type::Ref(Ref::Asset | Ref::Any | Ref::Archive) => {
+                    (t.get_rust_type(depth), false)
+                }
+            }
+        }
+
+        let (tpe, is_boxed) = go(self, depth);
+        if is_boxed {
+            format!("Box<{}>", tpe)
+        } else {
+            tpe
         }
     }
 
