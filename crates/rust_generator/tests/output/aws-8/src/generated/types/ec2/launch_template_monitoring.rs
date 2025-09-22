@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LaunchTemplateMonitoring {
     /// If `true`, the launched EC2 instance will have detailed monitoring enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
 }

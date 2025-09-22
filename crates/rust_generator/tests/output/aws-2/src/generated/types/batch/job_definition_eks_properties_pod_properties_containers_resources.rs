@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobDefinitionEksPropertiesPodPropertiesContainersResources {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "limits")]
-    pub r#limits: Box<Option<std::collections::HashMap<String, String>>>,
-    #[builder(into, default)]
+    pub r#limits: Option<std::collections::HashMap<String, String>>,
+    #[builder(into)]
     #[serde(rename = "requests")]
-    pub r#requests: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#requests: Option<std::collections::HashMap<String, String>>,
 }

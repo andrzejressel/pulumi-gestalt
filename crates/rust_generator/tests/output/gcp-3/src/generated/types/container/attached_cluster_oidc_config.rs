@@ -6,9 +6,9 @@ pub struct AttachedClusterOidcConfig {
     /// A JSON Web Token (JWT) issuer URI. `issuer` must start with `https://`
     #[builder(into)]
     #[serde(rename = "issuerUrl")]
-    pub r#issuer_url: Box<String>,
+    pub r#issuer_url: String,
     /// OIDC verification keys in JWKS format (RFC 7517).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "jwks")]
-    pub r#jwks: Box<Option<String>>,
+    pub r#jwks: Option<String>,
 }

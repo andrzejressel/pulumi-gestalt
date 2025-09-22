@@ -6,9 +6,9 @@ pub struct GetClusterDatabaseEncryption {
     /// The key to use to encrypt/decrypt secrets.
     #[builder(into)]
     #[serde(rename = "keyName")]
-    pub r#key_name: Box<String>,
+    pub r#key_name: String,
     /// ENCRYPTED or DECRYPTED.
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

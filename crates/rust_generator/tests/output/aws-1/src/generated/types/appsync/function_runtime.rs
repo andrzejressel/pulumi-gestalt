@@ -6,9 +6,9 @@ pub struct FunctionRuntime {
     /// The name of the runtime to use. Currently, the only allowed value is `APPSYNC_JS`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The version of the runtime to use. Currently, the only allowed version is `1.0.0`.
     #[builder(into)]
     #[serde(rename = "runtimeVersion")]
-    pub r#runtime_version: Box<String>,
+    pub r#runtime_version: String,
 }

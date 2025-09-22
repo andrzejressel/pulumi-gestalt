@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeploymentGroupAlarmConfiguration {
     /// A list of alarms configured for the deployment group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "alarms")]
-    pub r#alarms: Box<Option<Vec<String>>>,
+    pub r#alarms: Option<Vec<String>>,
     /// Indicates whether the alarm configuration is enabled. This option is useful when you want to temporarily deactivate alarm monitoring for a deployment group without having to add the same alarms again later.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from CloudWatch. The default value is `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ignorePollAlarmFailure")]
-    pub r#ignore_poll_alarm_failure: Box<Option<bool>>,
+    pub r#ignore_poll_alarm_failure: Option<bool>,
 }

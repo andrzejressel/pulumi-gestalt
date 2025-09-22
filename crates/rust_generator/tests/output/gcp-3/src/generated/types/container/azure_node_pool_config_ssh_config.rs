@@ -6,5 +6,5 @@ pub struct AzureNodePoolConfigSshConfig {
     /// The SSH public key data for VMs managed by Anthos. This accepts the authorized_keys file format used in OpenSSH according to the sshd(8) manual page.
     #[builder(into)]
     #[serde(rename = "authorizedKey")]
-    pub r#authorized_key: Box<String>,
+    pub r#authorized_key: String,
 }

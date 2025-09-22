@@ -6,9 +6,9 @@ pub struct GetOntapFileSystemDiskIopsConfiguration {
     /// The total number of SSD IOPS provisioned for the file system.
     #[builder(into)]
     #[serde(rename = "iops")]
-    pub r#iops: Box<i32>,
+    pub r#iops: i32,
     /// Specifies whether the file system is using the `AUTOMATIC` setting of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a `USER_PROVISIONED` value.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

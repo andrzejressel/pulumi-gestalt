@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsIntentFulfillmentCodeHook {
     /// Whether the fulfillment code hook is used. When active is false, the code hook doesn't run.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "active")]
-    pub r#active: Box<Option<bool>>,
+    pub r#active: Option<bool>,
     /// Whether a Lambda function should be invoked to fulfill a specific intent.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Configuration block for settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations. See `fulfillment_updates_specification`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fulfillmentUpdatesSpecification")]
-    pub r#fulfillment_updates_specification: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecification>>,
+    pub r#fulfillment_updates_specification: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecification>>,
     /// Configuration block for settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations. See `post_fulfillment_status_specification`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "postFulfillmentStatusSpecification")]
-    pub r#post_fulfillment_status_specification: Box<Option<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecification>>,
+    pub r#post_fulfillment_status_specification: Option<Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecification>>,
 }

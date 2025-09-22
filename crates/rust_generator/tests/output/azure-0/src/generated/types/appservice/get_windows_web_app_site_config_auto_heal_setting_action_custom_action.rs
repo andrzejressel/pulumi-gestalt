@@ -6,9 +6,9 @@ pub struct GetWindowsWebAppSiteConfigAutoHealSettingActionCustomAction {
     /// The command run when this `auto_heal` action is triggered.
     #[builder(into)]
     #[serde(rename = "executable")]
-    pub r#executable: Box<String>,
+    pub r#executable: String,
     /// The parameters passed to the `executable`.
     #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<String>,
+    pub r#parameters: String,
 }

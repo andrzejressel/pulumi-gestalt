@@ -6,5 +6,5 @@ pub struct ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig 
     /// The number of CPU's in the VM instance.
     #[builder(into)]
     #[serde(rename = "cpuCount")]
-    pub r#cpu_count: Box<i32>,
+    pub r#cpu_count: i32,
 }

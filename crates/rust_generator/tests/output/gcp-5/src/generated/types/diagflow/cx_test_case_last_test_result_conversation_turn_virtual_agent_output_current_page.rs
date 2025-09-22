@@ -5,12 +5,12 @@
 pub struct CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPage {
     /// (Output)
     /// The human-readable name of the page, unique within the flow.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<Option<String>>,
+    pub r#display_name: Option<String>,
     /// The unique identifier of the page.
     /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

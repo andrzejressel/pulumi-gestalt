@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirewallPolicyManagedRuleOverride {
     /// One or more `exclusion` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exclusions")]
-    pub r#exclusions: Box<Option<Vec<super::super::types::frontdoor::FirewallPolicyManagedRuleOverrideExclusion>>>,
+    pub r#exclusions: Option<Vec<super::super::types::frontdoor::FirewallPolicyManagedRuleOverrideExclusion>>,
     /// The managed rule group to override.
     #[builder(into)]
     #[serde(rename = "ruleGroupName")]
-    pub r#rule_group_name: Box<String>,
+    pub r#rule_group_name: String,
     /// One or more `rule` blocks as defined below. If none are specified, all of the rules in the group will be disabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Option<Vec<super::super::types::frontdoor::FirewallPolicyManagedRuleOverrideRule>>>,
+    pub r#rules: Option<Vec<super::super::types::frontdoor::FirewallPolicyManagedRuleOverrideRule>>,
 }

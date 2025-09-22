@@ -6,10 +6,10 @@ pub struct WorkforcePoolProviderExtraAttributesOauth2ClientClientSecretValue {
     /// The plain text of the client secret value.
     #[builder(into)]
     #[serde(rename = "plainText")]
-    pub r#plain_text: Box<String>,
+    pub r#plain_text: String,
     /// (Output)
     /// A thumbprint to represent the current client secret value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "thumbprint")]
-    pub r#thumbprint: Box<Option<String>>,
+    pub r#thumbprint: Option<String>,
 }

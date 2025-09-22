@@ -6,13 +6,13 @@ pub struct GetShareSnapshotSchedule {
     /// The name of this Data Share.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The interval of the synchronization with the source data.
     #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<String>,
+    pub r#recurrence: String,
     /// The synchronization with the source data's start time.
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
 }

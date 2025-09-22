@@ -4,28 +4,28 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstancePublicPortsPortInfo {
     /// Set of CIDR aliases that define access for a preconfigured range of IP addresses.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cidrListAliases")]
-    pub r#cidr_list_aliases: Box<Option<Vec<String>>>,
+    pub r#cidr_list_aliases: Option<Vec<String>>,
     /// Set of CIDR blocks.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cidrs")]
-    pub r#cidrs: Box<Option<Vec<String>>>,
+    pub r#cidrs: Option<Vec<String>>,
     /// First port in a range of open ports on an instance.
     #[builder(into)]
     #[serde(rename = "fromPort")]
-    pub r#from_port: Box<i32>,
-    #[builder(into, default)]
+    pub r#from_port: i32,
+    #[builder(into)]
     #[serde(rename = "ipv6Cidrs")]
-    pub r#ipv_6_cidrs: Box<Option<Vec<String>>>,
+    pub r#ipv_6_cidrs: Option<Vec<String>>,
     /// IP protocol name. Valid values are `tcp`, `all`, `udp`, and `icmp`.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     /// Last port in a range of open ports on an instance.
     /// 
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "toPort")]
-    pub r#to_port: Box<i32>,
+    pub r#to_port: i32,
 }

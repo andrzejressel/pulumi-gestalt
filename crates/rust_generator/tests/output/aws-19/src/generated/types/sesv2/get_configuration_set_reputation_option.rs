@@ -6,9 +6,9 @@ pub struct GetConfigurationSetReputationOption {
     /// The date and time (in Unix time) when the reputation metrics were last given a fresh start.
     #[builder(into)]
     #[serde(rename = "lastFreshStart")]
-    pub r#last_fresh_start: Box<String>,
+    pub r#last_fresh_start: String,
     /// Specifies whether tracking of reputation metrics is enabled.
     #[builder(into)]
     #[serde(rename = "reputationMetricsEnabled")]
-    pub r#reputation_metrics_enabled: Box<bool>,
+    pub r#reputation_metrics_enabled: bool,
 }

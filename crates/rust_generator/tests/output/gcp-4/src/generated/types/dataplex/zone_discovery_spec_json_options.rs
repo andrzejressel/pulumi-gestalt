@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZoneDiscoverySpecJsonOptions {
     /// Optional. Whether to disable the inference of data type for Json data. If true, all columns will be registered as their primitive types (strings, number or boolean).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disableTypeInference")]
-    pub r#disable_type_inference: Box<Option<bool>>,
+    pub r#disable_type_inference: Option<bool>,
     /// Optional. The character encoding of the data. The default is UTF-8.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encoding")]
-    pub r#encoding: Box<Option<String>>,
+    pub r#encoding: Option<String>,
 }

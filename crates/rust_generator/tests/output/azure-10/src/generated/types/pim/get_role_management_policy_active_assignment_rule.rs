@@ -6,21 +6,21 @@ pub struct GetRoleManagementPolicyActiveAssignmentRule {
     /// (Boolean) Must an assignment have an expiry date.
     #[builder(into)]
     #[serde(rename = "expirationRequired")]
-    pub r#expiration_required: Box<bool>,
+    pub r#expiration_required: bool,
     /// (String) The maximum length of time an assignment can be valid, as an ISO8601 duration.
     #[builder(into)]
     #[serde(rename = "expireAfter")]
-    pub r#expire_after: Box<String>,
+    pub r#expire_after: String,
     /// (Boolean) Is a justification required to create new assignments.
     #[builder(into)]
     #[serde(rename = "requireJustification")]
-    pub r#require_justification: Box<bool>,
+    pub r#require_justification: bool,
     /// (Boolean) Is multi-factor authentication required to create new assignments.
     #[builder(into)]
     #[serde(rename = "requireMultifactorAuthentication")]
-    pub r#require_multifactor_authentication: Box<bool>,
+    pub r#require_multifactor_authentication: bool,
     /// (Boolean) Is ticket information required to create new assignments.
     #[builder(into)]
     #[serde(rename = "requireTicketInfo")]
-    pub r#require_ticket_info: Box<bool>,
+    pub r#require_ticket_info: bool,
 }

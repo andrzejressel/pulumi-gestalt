@@ -6,5 +6,5 @@ pub struct GetLinuxFunctionAppAuthSettingsV2AzureStaticWebAppV2 {
     /// The OAuth 2.0 client ID that was created for the app used for authentication.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
 }

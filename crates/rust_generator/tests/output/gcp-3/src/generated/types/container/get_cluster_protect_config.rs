@@ -6,9 +6,9 @@ pub struct GetClusterProtectConfig {
     /// WorkloadConfig defines which actions are enabled for a cluster's workload configurations.
     #[builder(into)]
     #[serde(rename = "workloadConfigs")]
-    pub r#workload_configs: Box<Vec<super::super::types::container::GetClusterProtectConfigWorkloadConfig>>,
+    pub r#workload_configs: Vec<super::super::types::container::GetClusterProtectConfigWorkloadConfig>,
     /// Sets which mode to use for Protect workload vulnerability scanning feature. Accepted values are DISABLED, BASIC.
     #[builder(into)]
     #[serde(rename = "workloadVulnerabilityMode")]
-    pub r#workload_vulnerability_mode: Box<String>,
+    pub r#workload_vulnerability_mode: String,
 }

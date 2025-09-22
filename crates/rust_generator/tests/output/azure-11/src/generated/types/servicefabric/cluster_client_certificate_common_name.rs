@@ -6,15 +6,15 @@ pub struct ClusterClientCertificateCommonName {
     /// The common or subject name of the certificate.
     #[builder(into)]
     #[serde(rename = "commonName")]
-    pub r#common_name: Box<String>,
+    pub r#common_name: String,
     /// Does the Client Certificate have Admin Access to the cluster? Non-admin clients can only perform read only operations on the cluster.
     #[builder(into)]
     #[serde(rename = "isAdmin")]
-    pub r#is_admin: Box<bool>,
+    pub r#is_admin: bool,
     /// The Issuer Thumbprint of the Certificate.
     /// 
     /// > **NOTE:** Certificate Issuer Thumbprint may become required in the future, `https://docs.microsoft.com/azure/service-fabric/service-fabric-create-cluster-using-cert-cn#download-and-update-a-sample-template`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "issuerThumbprint")]
-    pub r#issuer_thumbprint: Box<Option<String>>,
+    pub r#issuer_thumbprint: Option<String>,
 }

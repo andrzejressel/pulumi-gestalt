@@ -5,17 +5,17 @@
 pub struct IntegrationRuntimeSsisExpressCustomSetupComponentKeyVaultLicense {
     #[builder(into)]
     #[serde(rename = "linkedServiceName")]
-    pub r#linked_service_name: Box<String>,
+    pub r#linked_service_name: String,
     /// A map of parameters to associate with the Key Vault Data Factory Linked Service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#parameters: Option<std::collections::HashMap<String, String>>,
     /// Specifies the secret name in Azure Key Vault.
     #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<String>,
+    pub r#secret_name: String,
     /// Specifies the secret version in Azure Key Vault.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretVersion")]
-    pub r#secret_version: Box<Option<String>>,
+    pub r#secret_version: Option<String>,
 }

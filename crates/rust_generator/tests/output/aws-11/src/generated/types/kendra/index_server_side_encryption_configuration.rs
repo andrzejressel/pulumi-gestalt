@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IndexServerSideEncryptionConfiguration {
     /// The identifier of the AWS KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<Option<String>>,
+    pub r#kms_key_id: Option<String>,
 }

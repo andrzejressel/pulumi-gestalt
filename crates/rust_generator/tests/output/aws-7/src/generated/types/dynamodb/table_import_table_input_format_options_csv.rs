@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TableImportTableInputFormatOptionsCsv {
     /// The delimiter used for separating items in the CSV file being imported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "delimiter")]
-    pub r#delimiter: Box<Option<String>>,
+    pub r#delimiter: Option<String>,
     /// List of the headers used to specify a common header for all source CSV files being imported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerLists")]
-    pub r#header_lists: Box<Option<Vec<String>>>,
+    pub r#header_lists: Option<Vec<String>>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StateMachineTracingConfiguration {
     /// When set to `true`, AWS X-Ray tracing is enabled. Make sure the State Machine has the correct IAM policies for logging. See the [AWS Step Functions Developer Guide](https://docs.aws.amazon.com/step-functions/latest/dg/xray-iam.html) for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
 }

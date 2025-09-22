@@ -6,5 +6,5 @@ pub struct FunctionJavaScriptUdfOutput {
     /// The Data Type output from this JavaScript Function. Possible values include `array`, `any`, `bigint`, `datetime`, `float`, `nvarchar(max)` and `record`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

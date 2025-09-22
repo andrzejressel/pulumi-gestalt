@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventSourceMappingProvisionedPollerConfig {
     /// The maximum number of event pollers this event source can scale up to. The range is between 1 and 2000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximumPollers")]
-    pub r#maximum_pollers: Box<Option<i32>>,
+    pub r#maximum_pollers: Option<i32>,
     /// The minimum number of event pollers this event source can scale down to. The range is between 1 and 200.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimumPollers")]
-    pub r#minimum_pollers: Box<Option<i32>>,
+    pub r#minimum_pollers: Option<i32>,
 }

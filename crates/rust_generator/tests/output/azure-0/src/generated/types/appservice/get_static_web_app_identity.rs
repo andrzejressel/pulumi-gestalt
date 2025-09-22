@@ -6,15 +6,15 @@ pub struct GetStaticWebAppIdentity {
     /// The list of Managed Identity IDs which are assigned to this Static Web App resource.
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
     /// The Type of Managed Identity assigned to this Static Web App resource.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

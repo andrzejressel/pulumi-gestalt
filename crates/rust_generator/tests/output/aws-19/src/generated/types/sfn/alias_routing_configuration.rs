@@ -6,9 +6,9 @@ pub struct AliasRoutingConfiguration {
     /// The Amazon Resource Name (ARN) of the state machine version.
     #[builder(into)]
     #[serde(rename = "stateMachineVersionArn")]
-    pub r#state_machine_version_arn: Box<String>,
+    pub r#state_machine_version_arn: String,
     /// Percentage of traffic routed to the state machine version.
     #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<i32>,
+    pub r#weight: i32,
 }

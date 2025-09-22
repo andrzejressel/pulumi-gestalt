@@ -6,9 +6,9 @@ pub struct DomainMatchingAutoMergingConflictResolution {
     /// How the auto-merging process should resolve conflicts between different profiles. Valid values are `RECENCY` and `SOURCE`
     #[builder(into)]
     #[serde(rename = "conflictResolvingModel")]
-    pub r#conflict_resolving_model: Box<String>,
+    pub r#conflict_resolving_model: String,
     /// The `ObjectType` name that is used to resolve profile merging conflicts when choosing `SOURCE` as the `ConflictResolvingModel`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceName")]
-    pub r#source_name: Box<Option<String>>,
+    pub r#source_name: Option<String>,
 }

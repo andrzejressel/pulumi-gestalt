@@ -6,13 +6,13 @@ pub struct GetBackupVaultIdentity {
     /// The Principal ID of the System Assigned Managed Service Identity that is configured on this Backup Vault.
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     /// The Tenant ID of the System Assigned Managed Service Identity that is configured on this Backup Vault.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
     /// The type of Managed Service Identity that is configured on this Backup Vault.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

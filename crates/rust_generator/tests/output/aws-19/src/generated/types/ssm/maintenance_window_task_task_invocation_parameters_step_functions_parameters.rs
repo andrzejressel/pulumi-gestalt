@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters {
     /// The inputs for the STEP_FUNCTION task.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "input")]
-    pub r#input: Box<Option<String>>,
+    pub r#input: Option<String>,
     /// The name of the STEP_FUNCTION task.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

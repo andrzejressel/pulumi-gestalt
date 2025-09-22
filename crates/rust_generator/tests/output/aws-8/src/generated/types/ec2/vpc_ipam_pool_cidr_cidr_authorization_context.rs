@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VpcIpamPoolCidrCidrAuthorizationContext {
     /// The plain-text authorization message for the prefix and account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
     /// The signed authorization message for the prefix and account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "signature")]
-    pub r#signature: Box<Option<String>>,
+    pub r#signature: Option<String>,
 }

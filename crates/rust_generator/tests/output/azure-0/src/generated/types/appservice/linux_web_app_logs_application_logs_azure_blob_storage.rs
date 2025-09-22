@@ -6,13 +6,13 @@ pub struct LinuxWebAppLogsApplicationLogsAzureBlobStorage {
     /// The level at which to log. Possible values include `Error`, `Warning`, `Information`, `Verbose` and `Off`. **NOTE:** this field is not available for `http_logs`
     #[builder(into)]
     #[serde(rename = "level")]
-    pub r#level: Box<String>,
+    pub r#level: String,
     /// The time in days after which to remove blobs. A value of `0` means no retention.
     #[builder(into)]
     #[serde(rename = "retentionInDays")]
-    pub r#retention_in_days: Box<i32>,
+    pub r#retention_in_days: i32,
     /// SAS url to an Azure blob container with read/write/list/delete permissions.
     #[builder(into)]
     #[serde(rename = "sasUrl")]
-    pub r#sas_url: Box<String>,
+    pub r#sas_url: String,
 }

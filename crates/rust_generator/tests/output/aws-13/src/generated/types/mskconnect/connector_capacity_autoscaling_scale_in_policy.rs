@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorCapacityAutoscalingScaleInPolicy {
     /// Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cpuUtilizationPercentage")]
-    pub r#cpu_utilization_percentage: Box<Option<i32>>,
+    pub r#cpu_utilization_percentage: Option<i32>,
 }

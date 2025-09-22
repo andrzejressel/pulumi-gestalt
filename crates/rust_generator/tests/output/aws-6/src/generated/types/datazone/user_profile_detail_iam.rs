@@ -5,5 +5,5 @@
 pub struct UserProfileDetailIam {
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
 }

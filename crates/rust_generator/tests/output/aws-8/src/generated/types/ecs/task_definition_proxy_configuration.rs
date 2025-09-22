@@ -6,13 +6,13 @@ pub struct TaskDefinitionProxyConfiguration {
     /// Name of the container that will serve as the App Mesh proxy.
     #[builder(into)]
     #[serde(rename = "containerName")]
-    pub r#container_name: Box<String>,
+    pub r#container_name: String,
     /// Set of network configuration parameters to provide the Container Network Interface (CNI) plugin, specified a key-value mapping.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#properties: Option<std::collections::HashMap<String, String>>,
     /// Proxy type. The default value is `APPMESH`. The only supported value is `APPMESH`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

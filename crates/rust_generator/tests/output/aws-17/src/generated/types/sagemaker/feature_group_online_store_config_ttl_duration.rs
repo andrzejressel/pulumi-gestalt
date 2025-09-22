@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureGroupOnlineStoreConfigTtlDuration {
     /// TtlDuration time unit. Valid values are `Seconds`, `Minutes`, `Hours`, `Days`, or `Weeks`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<Option<String>>,
+    pub r#unit: Option<String>,
     /// TtlDuration time value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<i32>>,
+    pub r#value: Option<i32>,
 }

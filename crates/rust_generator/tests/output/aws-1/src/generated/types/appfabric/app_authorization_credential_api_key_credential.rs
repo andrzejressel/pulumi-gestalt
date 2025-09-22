@@ -6,5 +6,5 @@ pub struct AppAuthorizationCredentialApiKeyCredential {
     /// Contains API key credential information.
     #[builder(into)]
     #[serde(rename = "apiKey")]
-    pub r#api_key: Box<String>,
+    pub r#api_key: String,
 }

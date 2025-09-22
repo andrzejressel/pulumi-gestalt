@@ -5,9 +5,9 @@
 pub struct RiskConfigurationAccountTakeoverRiskConfigurationActionsHighAction {
     #[builder(into)]
     #[serde(rename = "eventAction")]
-    pub r#event_action: Box<String>,
+    pub r#event_action: String,
     /// Whether to send a notification.
     #[builder(into)]
     #[serde(rename = "notify")]
-    pub r#notify: Box<bool>,
+    pub r#notify: bool,
 }

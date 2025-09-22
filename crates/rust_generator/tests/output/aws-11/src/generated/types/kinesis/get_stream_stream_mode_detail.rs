@@ -6,5 +6,5 @@ pub struct GetStreamStreamModeDetail {
     /// Capacity mode of the stream. Either `ON_DEMAND` or `PROVISIONED`.
     #[builder(into)]
     #[serde(rename = "streamMode")]
-    pub r#stream_mode: Box<String>,
+    pub r#stream_mode: String,
 }

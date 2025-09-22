@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterRemoteNetworkConfigRemotePodNetworks {
     /// List of network CIDRs that can contain pods that run Kubernetes webhooks on hybrid nodes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cidrs")]
-    pub r#cidrs: Box<Option<Vec<String>>>,
+    pub r#cidrs: Option<Vec<String>>,
 }

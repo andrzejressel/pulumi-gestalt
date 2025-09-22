@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureGroupFeatureDefinitionCollectionConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vectorConfig")]
-    pub r#vector_config: Box<Option<super::super::types::sagemaker::FeatureGroupFeatureDefinitionCollectionConfigVectorConfig>>,
+    pub r#vector_config: Option<Box<super::super::types::sagemaker::FeatureGroupFeatureDefinitionCollectionConfigVectorConfig>>,
 }

@@ -5,7 +5,7 @@
 pub struct MigrationJobPerformanceConfig {
     /// Initial dump parallelism level.
     /// Possible values are: `MIN`, `OPTIMAL`, `MAX`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dumpParallelLevel")]
-    pub r#dump_parallel_level: Box<Option<String>>,
+    pub r#dump_parallel_level: Option<String>,
 }

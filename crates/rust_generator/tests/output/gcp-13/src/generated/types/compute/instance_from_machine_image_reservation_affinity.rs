@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceFromMachineImageReservationAffinity {
     /// Specifies the label selector for the reservation to use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "specificReservation")]
-    pub r#specific_reservation: Box<Option<super::super::types::compute::InstanceFromMachineImageReservationAffinitySpecificReservation>>,
+    pub r#specific_reservation: Option<Box<super::super::types::compute::InstanceFromMachineImageReservationAffinitySpecificReservation>>,
     /// The type of reservation from which this instance can consume resources.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

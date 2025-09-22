@@ -13,10 +13,10 @@ pub struct RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestUri {
     /// Possible values are: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EQUALS_ANY`, `STARTS_WITH`.
     #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<String>,
+    pub r#operator: String,
     /// A request field matching the specified value will be excluded from inspection during preconfigured WAF evaluation.
     /// The field value must be given if the field operator is not EQUALS_ANY, and cannot be given if the field operator is EQUALS_ANY.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileVnetConfiguration {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipOfTrustForUserDefinedRoutes")]
-    pub r#ip_of_trust_for_user_defined_routes: Box<Option<String>>,
+    pub r#ip_of_trust_for_user_defined_routes: Option<String>,
     /// The ID of the Trust subnet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "trustedSubnetId")]
-    pub r#trusted_subnet_id: Box<Option<String>>,
+    pub r#trusted_subnet_id: Option<String>,
     /// The ID of the UnTrust subnet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "untrustedSubnetId")]
-    pub r#untrusted_subnet_id: Box<Option<String>>,
+    pub r#untrusted_subnet_id: Option<String>,
     /// The ID of the Virtual Network.
     #[builder(into)]
     #[serde(rename = "virtualNetworkId")]
-    pub r#virtual_network_id: Box<String>,
+    pub r#virtual_network_id: String,
 }

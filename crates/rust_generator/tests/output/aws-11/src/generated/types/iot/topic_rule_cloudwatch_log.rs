@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TopicRuleCloudwatchLog {
     /// The payload that contains a JSON array of records will be sent to CloudWatch via a batch call.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "batchMode")]
-    pub r#batch_mode: Box<Option<bool>>,
+    pub r#batch_mode: Option<bool>,
     /// The CloudWatch log group name.
     #[builder(into)]
     #[serde(rename = "logGroupName")]
-    pub r#log_group_name: Box<String>,
+    pub r#log_group_name: String,
     /// The IAM role ARN that allows access to the CloudWatch alarm.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
 }

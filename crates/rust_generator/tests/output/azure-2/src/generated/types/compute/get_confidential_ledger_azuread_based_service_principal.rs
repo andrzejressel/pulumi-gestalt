@@ -6,13 +6,13 @@ pub struct GetConfidentialLedgerAzureadBasedServicePrincipal {
     /// The Ledger Role to grant this Certificate Security Principal.
     #[builder(into)]
     #[serde(rename = "ledgerRoleName")]
-    pub r#ledger_role_name: Box<String>,
+    pub r#ledger_role_name: String,
     /// The Principal ID of the AzureAD Service Principal.
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     /// The Tenant ID for this AzureAD Service Principal.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
 }

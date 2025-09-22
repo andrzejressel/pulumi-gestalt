@@ -8,5 +8,5 @@ pub struct GetTopicIngestionDataSourceSettingCloudStorageTextFormat {
     /// message. When unset, '\n' is used.
     #[builder(into)]
     #[serde(rename = "delimiter")]
-    pub r#delimiter: Box<String>,
+    pub r#delimiter: String,
 }

@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectPeerBgpOptions {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "peerAsn")]
-    pub r#peer_asn: Box<Option<i32>>,
+    pub r#peer_asn: Option<i32>,
 }

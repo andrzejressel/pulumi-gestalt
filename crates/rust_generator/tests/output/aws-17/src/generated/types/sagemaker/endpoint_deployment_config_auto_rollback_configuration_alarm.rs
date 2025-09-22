@@ -6,5 +6,5 @@ pub struct EndpointDeploymentConfigAutoRollbackConfigurationAlarm {
     /// The name of a CloudWatch alarm in your account.
     #[builder(into)]
     #[serde(rename = "alarmName")]
-    pub r#alarm_name: Box<String>,
+    pub r#alarm_name: String,
 }

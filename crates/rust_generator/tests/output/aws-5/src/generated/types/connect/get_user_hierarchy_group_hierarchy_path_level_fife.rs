@@ -6,13 +6,13 @@ pub struct GetUserHierarchyGroupHierarchyPathLevelFife {
     /// ARN of the hierarchy group.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// The identifier of the hierarchy group.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Returns information on a specific hierarchy group by name
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

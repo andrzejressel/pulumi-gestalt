@@ -6,5 +6,5 @@ pub struct DataSourceParametersJira {
     /// The base URL of the Jira instance's site to which to connect.
     #[builder(into)]
     #[serde(rename = "siteBaseUrl")]
-    pub r#site_base_url: Box<String>,
+    pub r#site_base_url: String,
 }

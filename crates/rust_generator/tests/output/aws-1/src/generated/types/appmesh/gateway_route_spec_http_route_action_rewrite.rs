@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GatewayRouteSpecHttpRouteActionRewrite {
     /// Host name to rewrite.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttpRouteActionRewriteHostname>>,
+    pub r#hostname: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttpRouteActionRewriteHostname>>,
     /// Exact path to rewrite.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttpRouteActionRewritePath>>,
+    pub r#path: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttpRouteActionRewritePath>>,
     /// Specified beginning characters to rewrite.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<super::super::types::appmesh::GatewayRouteSpecHttpRouteActionRewritePrefix>>,
+    pub r#prefix: Option<Box<super::super::types::appmesh::GatewayRouteSpecHttpRouteActionRewritePrefix>>,
 }

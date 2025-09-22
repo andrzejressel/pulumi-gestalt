@@ -6,9 +6,9 @@ pub struct UrlMapPathMatcherRouteRuleRouteAction {
     /// The specification for allowing client side cross-origin requests. Please see W3C
     /// Recommendation for Cross Origin Resource Sharing
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "corsPolicy")]
-    pub r#cors_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionCorsPolicy>>,
+    pub r#cors_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionCorsPolicy>>,
     /// The specification for fault injection introduced into traffic to test the
     /// resiliency of clients to backend service failure. As part of fault injection,
     /// when clients send requests to a backend service, delays can be introduced by
@@ -17,36 +17,36 @@ pub struct UrlMapPathMatcherRouteRuleRouteAction {
     /// Loadbalancer for a percentage of requests. timeout and retry_policy will be
     /// ignored by clients that are configured with a fault_injection_policy.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "faultInjectionPolicy")]
-    pub r#fault_injection_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy>>,
+    pub r#fault_injection_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicy>>,
     /// Specifies the policy on how requests intended for the route's backends are
     /// shadowed to a separate mirrored backend service. Loadbalancer does not wait for
     /// responses from the shadow service. Prior to sending traffic to the shadow
     /// service, the host / authority header is suffixed with -shadow.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestMirrorPolicy")]
-    pub r#request_mirror_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy>>,
+    pub r#request_mirror_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy>>,
     /// Specifies the retry policy associated with this route.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retryPolicy")]
-    pub r#retry_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionRetryPolicy>>,
+    pub r#retry_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionRetryPolicy>>,
     /// Specifies the timeout for the selected route. Timeout is computed from the time
     /// the request is has been fully processed (i.e. end-of-stream) up until the
     /// response has been completely processed. Timeout includes all retries. If not
     /// specified, the default value is 15 seconds.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Box<Option<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionTimeout>>,
+    pub r#timeout: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionTimeout>>,
     /// The spec to modify the URL of the request, prior to forwarding the request to
     /// the matched service
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "urlRewrite")]
-    pub r#url_rewrite: Box<Option<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionUrlRewrite>>,
+    pub r#url_rewrite: Option<Box<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionUrlRewrite>>,
     /// A list of weighted backend services to send traffic to when a route match
     /// occurs. The weights determine the fraction of traffic that flows to their
     /// corresponding backend service. If all traffic needs to go to a single backend
@@ -56,7 +56,7 @@ pub struct UrlMapPathMatcherRouteRuleRouteAction {
     /// transformations are applied depending on additional settings specified in this
     /// HttpRouteAction.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weightedBackendServices")]
-    pub r#weighted_backend_services: Box<Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionWeightedBackendService>>>,
+    pub r#weighted_backend_services: Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRuleRouteActionWeightedBackendService>>,
 }

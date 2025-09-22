@@ -5,11 +5,11 @@
 pub struct InstanceReservationAffinity {
     /// Specifies the label selector for the reservation to use..
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "specificReservation")]
-    pub r#specific_reservation: Box<Option<super::super::types::compute::InstanceReservationAffinitySpecificReservation>>,
+    pub r#specific_reservation: Option<Box<super::super::types::compute::InstanceReservationAffinitySpecificReservation>>,
     /// The type of reservation from which this instance can consume resources.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

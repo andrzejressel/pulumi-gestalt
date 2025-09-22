@@ -6,9 +6,9 @@ pub struct PermissionsLfTagPolicyExpression {
     /// The key-name of an LF-Tag.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// A list of possible values of an LF-Tag.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

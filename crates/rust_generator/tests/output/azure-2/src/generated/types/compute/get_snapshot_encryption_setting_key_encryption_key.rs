@@ -5,8 +5,8 @@
 pub struct GetSnapshotEncryptionSettingKeyEncryptionKey {
     #[builder(into)]
     #[serde(rename = "keyUrl")]
-    pub r#key_url: Box<String>,
+    pub r#key_url: String,
     #[builder(into)]
     #[serde(rename = "sourceVaultId")]
-    pub r#source_vault_id: Box<String>,
+    pub r#source_vault_id: String,
 }

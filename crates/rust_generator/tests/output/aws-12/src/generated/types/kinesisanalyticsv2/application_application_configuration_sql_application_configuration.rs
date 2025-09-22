@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationApplicationConfigurationSqlApplicationConfiguration {
     /// The input stream used by the application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "input")]
-    pub r#input: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInput>>,
+    pub r#input: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInput>>,
     /// The destination streams used by the application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "outputs")]
-    pub r#outputs: Box<Option<Vec<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationOutput>>>,
+    pub r#outputs: Option<Vec<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationOutput>>,
     /// The reference data source used by the application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "referenceDataSource")]
-    pub r#reference_data_source: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSource>>,
+    pub r#reference_data_source: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSource>>,
 }

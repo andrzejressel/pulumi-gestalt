@@ -6,13 +6,13 @@ pub struct GetPoolUserAccountLinuxUserConfiguration {
     /// The user ID of the user account.
     #[builder(into)]
     #[serde(rename = "gid")]
-    pub r#gid: Box<i32>,
+    pub r#gid: i32,
     /// The SSH private key for the user account.
     #[builder(into)]
     #[serde(rename = "sshPrivateKey")]
-    pub r#ssh_private_key: Box<String>,
+    pub r#ssh_private_key: String,
     /// The group ID for the user account.
     #[builder(into)]
     #[serde(rename = "uid")]
-    pub r#uid: Box<i32>,
+    pub r#uid: i32,
 }

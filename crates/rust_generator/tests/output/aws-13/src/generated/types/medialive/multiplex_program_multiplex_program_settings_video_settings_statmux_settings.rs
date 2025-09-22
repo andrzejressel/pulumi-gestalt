@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MultiplexProgramMultiplexProgramSettingsVideoSettingsStatmuxSettings {
     /// Maximum bitrate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximumBitrate")]
-    pub r#maximum_bitrate: Box<Option<i32>>,
+    pub r#maximum_bitrate: Option<i32>,
     /// Minimum bitrate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimumBitrate")]
-    pub r#minimum_bitrate: Box<Option<i32>>,
+    pub r#minimum_bitrate: Option<i32>,
     /// Priority value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<Option<i32>>,
+    pub r#priority: Option<i32>,
 }

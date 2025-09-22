@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnterpriseKeyIosSettings {
     /// If set to true, it means allowed_bundle_ids will not be enforced.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowAllBundleIds")]
-    pub r#allow_all_bundle_ids: Box<Option<bool>>,
+    pub r#allow_all_bundle_ids: Option<bool>,
     /// iOS bundle ids of apps allowed to use the key. Example: 'com.companyname.productname.appname'
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedBundleIds")]
-    pub r#allowed_bundle_ids: Box<Option<Vec<String>>>,
+    pub r#allowed_bundle_ids: Option<Vec<String>>,
 }

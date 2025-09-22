@@ -7,7 +7,7 @@ pub struct CxAgentTextToSpeechSettings {
     /// These settings affect:
     /// * The phone gateway synthesize configuration set via Agent.text_to_speech_settings.
     /// * How speech is synthesized when invoking session APIs. `Agent.text_to_speech_settings` only applies if `OutputAudioConfig.synthesize_speech_config` is not specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "synthesizeSpeechConfigs")]
-    pub r#synthesize_speech_configs: Box<Option<String>>,
+    pub r#synthesize_speech_configs: Option<String>,
 }

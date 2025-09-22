@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LoadBalancerRuleOverrideAdaptiveRouting {
     /// Extends zero-downtime failover of requests to healthy origins from alternate pools, when no healthy alternate exists in the same pool, according to the failover order defined by traffic and origin steering. When set `false`, zero-downtime failover will only occur between origins within the same pool.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "failoverAcrossPools")]
-    pub r#failover_across_pools: Box<Option<bool>>,
+    pub r#failover_across_pools: Option<bool>,
 }

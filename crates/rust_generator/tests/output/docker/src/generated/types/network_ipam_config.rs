@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkIpamConfig {
     /// Auxiliary IPv4 or IPv6 addresses used by Network driver
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "auxAddress")]
-    pub r#aux_address: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#aux_address: Option<std::collections::HashMap<String, String>>,
     /// The IP address of the gateway
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gateway")]
-    pub r#gateway: Box<Option<String>>,
+    pub r#gateway: Option<String>,
     /// The ip range in CIDR form
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipRange")]
-    pub r#ip_range: Box<Option<String>>,
+    pub r#ip_range: Option<String>,
     /// The subnet in CIDR form
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnet")]
-    pub r#subnet: Box<Option<String>>,
+    pub r#subnet: Option<String>,
 }

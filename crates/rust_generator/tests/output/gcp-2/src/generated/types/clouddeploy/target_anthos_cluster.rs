@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TargetAnthosCluster {
     /// Membership of the GKE Hub-registered cluster to which to apply the Skaffold configuration. Format is `projects/{project}/locations/{location}/memberships/{membership_name}`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "membership")]
-    pub r#membership: Box<Option<String>>,
+    pub r#membership: Option<String>,
 }

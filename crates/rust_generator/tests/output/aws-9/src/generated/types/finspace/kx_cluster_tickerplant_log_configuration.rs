@@ -5,5 +5,5 @@
 pub struct KxClusterTickerplantLogConfiguration {
     #[builder(into)]
     #[serde(rename = "tickerplantLogVolumes")]
-    pub r#tickerplant_log_volumes: Box<Vec<String>>,
+    pub r#tickerplant_log_volumes: Vec<String>,
 }

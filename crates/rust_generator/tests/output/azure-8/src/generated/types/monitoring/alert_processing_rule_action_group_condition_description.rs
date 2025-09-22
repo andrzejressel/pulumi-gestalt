@@ -6,9 +6,9 @@ pub struct AlertProcessingRuleActionGroupConditionDescription {
     /// The operator for a given condition. Possible values are `Equals`, `NotEquals`, `Contains`, and `DoesNotContain`.
     #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<String>,
+    pub r#operator: String,
     /// Specifies a list of values to match for a given condition.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

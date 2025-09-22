@@ -6,9 +6,9 @@ pub struct PlanStageTargetChannelTargetInfo {
     /// The Amazon Resource Name (ARN) of the contact channel.
     #[builder(into)]
     #[serde(rename = "contactChannelId")]
-    pub r#contact_channel_id: Box<String>,
+    pub r#contact_channel_id: String,
     /// The number of minutes to wait before retrying to send engagement if the engagement initially failed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retryIntervalInMinutes")]
-    pub r#retry_interval_in_minutes: Box<Option<i32>>,
+    pub r#retry_interval_in_minutes: Option<i32>,
 }

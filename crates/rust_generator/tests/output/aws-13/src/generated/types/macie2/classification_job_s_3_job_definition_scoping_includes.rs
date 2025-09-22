@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClassificationJobS3JobDefinitionScopingIncludes {
     /// An array of conditions, one for each condition that determines which objects to include or exclude from the job. (documented below)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ands")]
-    pub r#ands: Box<Option<Vec<super::super::types::macie2::ClassificationJobS3JobDefinitionScopingIncludesAnd>>>,
+    pub r#ands: Option<Vec<super::super::types::macie2::ClassificationJobS3JobDefinitionScopingIncludesAnd>>,
 }

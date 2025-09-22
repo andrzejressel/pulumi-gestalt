@@ -7,9 +7,9 @@ pub struct JobQueryDefaultDataset {
     /// or of the form `projects/{{project}}/datasets/{{dataset_id}}` if not.
     #[builder(into)]
     #[serde(rename = "datasetId")]
-    pub r#dataset_id: Box<String>,
+    pub r#dataset_id: String,
     /// The ID of the project containing this table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<Option<String>>,
+    pub r#project_id: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct BareMetalClusterNetworkConfigIslandModeCidr {
     /// All pods in the cluster are assigned an RFC1918 IPv4 address from these ranges. This field cannot be changed after creation.
     #[builder(into)]
     #[serde(rename = "podAddressCidrBlocks")]
-    pub r#pod_address_cidr_blocks: Box<Vec<String>>,
+    pub r#pod_address_cidr_blocks: Vec<String>,
     /// All services in the cluster are assigned an RFC1918 IPv4 address from these ranges. This field cannot be changed after creation.
     #[builder(into)]
     #[serde(rename = "serviceAddressCidrBlocks")]
-    pub r#service_address_cidr_blocks: Box<Vec<String>>,
+    pub r#service_address_cidr_blocks: Vec<String>,
 }

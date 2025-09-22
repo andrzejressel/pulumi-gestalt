@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetRulesetsRulesetRuleActionParametersBrowserTtl {
     /// Default browser TTL.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "default")]
-    pub r#default: Box<Option<i32>>,
+    pub r#default: Option<i32>,
     /// Mode of the browser TTL.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

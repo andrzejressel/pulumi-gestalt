@@ -5,8 +5,8 @@
 pub struct ProjectFailureReason {
     #[builder(into)]
     #[serde(rename = "code")]
-    pub r#code: Box<String>,
+    pub r#code: String,
     #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<String>,
+    pub r#message: String,
 }

@@ -4,31 +4,31 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SsisVariableResponse {
     /// Variable type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataType")]
-    pub r#data_type: Box<Option<String>>,
+    pub r#data_type: Option<String>,
     /// Variable description.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Variable id.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<f64>>,
+    pub r#id: Option<f64>,
     /// Variable name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Whether variable is sensitive.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sensitive")]
-    pub r#sensitive: Box<Option<bool>>,
+    pub r#sensitive: Option<bool>,
     /// Variable sensitive value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sensitiveValue")]
-    pub r#sensitive_value: Box<Option<String>>,
+    pub r#sensitive_value: Option<String>,
     /// Variable value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

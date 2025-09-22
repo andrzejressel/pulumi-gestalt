@@ -5,12 +5,12 @@
 pub struct GenericServiceBasicService {
     /// Labels that specify the resource that emits the monitoring data
     /// which is used for SLO reporting of this `Service`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceLabels")]
-    pub r#service_labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#service_labels: Option<std::collections::HashMap<String, String>>,
     /// The type of service that this basic service defines, e.g.
     /// APP_ENGINE service type
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceType")]
-    pub r#service_type: Box<Option<String>>,
+    pub r#service_type: Option<String>,
 }

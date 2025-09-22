@@ -6,9 +6,9 @@ pub struct VirtualNetworkGatewayConnectionCustomBgpAddresses {
     /// single IP address that is part of the `azure.network.VirtualNetworkGateway` ip_configuration (first one)
     #[builder(into)]
     #[serde(rename = "primary")]
-    pub r#primary: Box<String>,
+    pub r#primary: String,
     /// single IP address that is part of the `azure.network.VirtualNetworkGateway` ip_configuration (second one)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secondary")]
-    pub r#secondary: Box<Option<String>>,
+    pub r#secondary: Option<String>,
 }

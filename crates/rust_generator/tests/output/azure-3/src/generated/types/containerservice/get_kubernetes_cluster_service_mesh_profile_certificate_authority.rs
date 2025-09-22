@@ -6,21 +6,21 @@ pub struct GetKubernetesClusterServiceMeshProfileCertificateAuthority {
     /// The certificate chain object name in Azure Key Vault.
     #[builder(into)]
     #[serde(rename = "certChainObjectName")]
-    pub r#cert_chain_object_name: Box<String>,
+    pub r#cert_chain_object_name: String,
     /// The intermediate certificate object name in Azure Key Vault.
     #[builder(into)]
     #[serde(rename = "certObjectName")]
-    pub r#cert_object_name: Box<String>,
+    pub r#cert_object_name: String,
     /// The intermediate certificate private key object name in Azure Key Vault.
     #[builder(into)]
     #[serde(rename = "keyObjectName")]
-    pub r#key_object_name: Box<String>,
+    pub r#key_object_name: String,
     /// The resource ID of the Key Vault.
     #[builder(into)]
     #[serde(rename = "keyVaultId")]
-    pub r#key_vault_id: Box<String>,
+    pub r#key_vault_id: String,
     /// The root certificate object name in Azure Key Vault.
     #[builder(into)]
     #[serde(rename = "rootCertObjectName")]
-    pub r#root_cert_object_name: Box<String>,
+    pub r#root_cert_object_name: String,
 }

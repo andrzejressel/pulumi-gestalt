@@ -6,5 +6,5 @@ pub struct DataCollectionRuleDestinationsAzureMonitorMetrics {
     /// The name which should be used for this destination. This name should be unique across all destinations regardless of type within the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

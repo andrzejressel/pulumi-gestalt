@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FunctionEventInvokeConfigDestinationConfig {
     /// Configuration block with destination configuration for failed asynchronous invocations. See below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "onFailure")]
-    pub r#on_failure: Box<Option<super::super::types::lambda::FunctionEventInvokeConfigDestinationConfigOnFailure>>,
+    pub r#on_failure: Option<Box<super::super::types::lambda::FunctionEventInvokeConfigDestinationConfigOnFailure>>,
     /// Configuration block with destination configuration for successful asynchronous invocations. See below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "onSuccess")]
-    pub r#on_success: Box<Option<super::super::types::lambda::FunctionEventInvokeConfigDestinationConfigOnSuccess>>,
+    pub r#on_success: Option<Box<super::super::types::lambda::FunctionEventInvokeConfigDestinationConfigOnSuccess>>,
 }

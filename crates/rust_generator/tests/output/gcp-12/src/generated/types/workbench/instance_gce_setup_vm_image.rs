@@ -5,16 +5,16 @@
 pub struct InstanceGceSetupVmImage {
     /// Optional. Use this VM image family to find the image; the newest
     /// image in this family will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "family")]
-    pub r#family: Box<Option<String>>,
+    pub r#family: Option<String>,
     /// Optional. Use VM image name to find the image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The name of the Google Cloud project that this VM image belongs to.
     /// Format: {project_id}
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "project")]
-    pub r#project: Box<Option<String>>,
+    pub r#project: Option<String>,
 }

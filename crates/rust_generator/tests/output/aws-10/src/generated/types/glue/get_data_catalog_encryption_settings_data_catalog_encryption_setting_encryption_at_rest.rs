@@ -6,13 +6,13 @@ pub struct GetDataCatalogEncryptionSettingsDataCatalogEncryptionSettingEncryptio
     /// The encryption-at-rest mode for encrypting Data Catalog data.
     #[builder(into)]
     #[serde(rename = "catalogEncryptionMode")]
-    pub r#catalog_encryption_mode: Box<String>,
+    pub r#catalog_encryption_mode: String,
     /// The ARN of the AWS IAM role used for accessing encrypted Data Catalog data.
     #[builder(into)]
     #[serde(rename = "catalogEncryptionServiceRole")]
-    pub r#catalog_encryption_service_role: Box<String>,
+    pub r#catalog_encryption_service_role: String,
     /// ARN of the AWS KMS key to use for encryption at rest.
     #[builder(into)]
     #[serde(rename = "sseAwsKmsKeyId")]
-    pub r#sse_aws_kms_key_id: Box<String>,
+    pub r#sse_aws_kms_key_id: String,
 }

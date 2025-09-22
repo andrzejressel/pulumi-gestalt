@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupConfiguration {
     /// A collection of parameters for this group configuration item. See below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<Vec<super::super::types::resourcegroups::GroupConfigurationParameter>>>,
+    pub r#parameters: Option<Vec<super::super::types::resourcegroups::GroupConfigurationParameter>>,
     /// Specifies the type of group configuration item.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

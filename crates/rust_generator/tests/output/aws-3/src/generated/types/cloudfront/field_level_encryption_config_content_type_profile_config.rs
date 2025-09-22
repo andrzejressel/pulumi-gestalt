@@ -10,5 +10,5 @@ pub struct FieldLevelEncryptionConfigContentTypeProfileConfig {
     /// specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.
     #[builder(into)]
     #[serde(rename = "forwardWhenContentTypeIsUnknown")]
-    pub r#forward_when_content_type_is_unknown: Box<bool>,
+    pub r#forward_when_content_type_is_unknown: bool,
 }

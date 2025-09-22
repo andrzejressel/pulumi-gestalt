@@ -5,16 +5,16 @@
 pub struct PipelineJobReconciliationPipelineJob {
     /// The harmonized FHIR store to write harmonized FHIR resources to,
     /// in the format of: project/{projectID}/locations/{locationID}/datasets/{datasetName}/fhirStores/{id}
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fhirStoreDestination")]
-    pub r#fhir_store_destination: Box<Option<String>>,
+    pub r#fhir_store_destination: Option<String>,
     /// Specifies the top level directory of the matching configs used
     /// in all mapping pipelines, which extract properties for resources
     /// to be matched on.
     /// Example: gs://{bucket-id}/{path/to/matching/configs}
     #[builder(into)]
     #[serde(rename = "matchingUriPrefix")]
-    pub r#matching_uri_prefix: Box<String>,
+    pub r#matching_uri_prefix: String,
     /// Specifies the location of the reconciliation configuration.
     /// Structure is documented below.
     #[builder(into)]

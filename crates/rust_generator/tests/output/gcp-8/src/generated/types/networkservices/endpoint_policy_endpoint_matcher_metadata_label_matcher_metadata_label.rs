@@ -6,11 +6,11 @@ pub struct EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel {
     /// Required. Label name presented as key in xDS Node Metadata.
     #[builder(into)]
     #[serde(rename = "labelName")]
-    pub r#label_name: Box<String>,
+    pub r#label_name: String,
     /// Required. Label value presented as value corresponding to the above key, in xDS Node Metadata.
     /// 
     /// - - -
     #[builder(into)]
     #[serde(rename = "labelValue")]
-    pub r#label_value: Box<String>,
+    pub r#label_value: String,
 }

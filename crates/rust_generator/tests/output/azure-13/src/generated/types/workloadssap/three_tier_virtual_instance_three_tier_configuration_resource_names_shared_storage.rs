@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThreeTierVirtualInstanceThreeTierConfigurationResourceNamesSharedStorage {
     /// The full name of the Shared Storage Account. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accountName")]
-    pub r#account_name: Box<Option<String>>,
+    pub r#account_name: Option<String>,
     /// The full name of Private Endpoint for the Shared Storage Account. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateEndpointName")]
-    pub r#private_endpoint_name: Box<Option<String>>,
+    pub r#private_endpoint_name: Option<String>,
 }

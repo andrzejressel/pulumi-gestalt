@@ -6,9 +6,9 @@ pub struct AgentAgentAliasRoutingConfiguration {
     /// Version of the agent with which the alias is associated.
     #[builder(into)]
     #[serde(rename = "agentVersion")]
-    pub r#agent_version: Box<String>,
+    pub r#agent_version: String,
     /// ARN of the Provisioned Throughput assigned to the agent alias.
     #[builder(into)]
     #[serde(rename = "provisionedThroughput")]
-    pub r#provisioned_throughput: Box<String>,
+    pub r#provisioned_throughput: String,
 }

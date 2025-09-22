@@ -6,9 +6,9 @@ pub struct ServicePerimeterStatusIngressPolicyIngressTo {
     /// A list of `ApiOperations` the sources specified in corresponding `IngressFrom`
     /// are allowed to perform in this `ServicePerimeter`.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operations")]
-    pub r#operations: Box<Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterStatusIngressPolicyIngressToOperation>>>,
+    pub r#operations: Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterStatusIngressPolicyIngressToOperation>>,
     /// A list of resources, currently only projects in the form
     /// `projects/<projectnumber>`, protected by this `ServicePerimeter`
     /// that are allowed to be accessed by sources defined in the
@@ -17,7 +17,7 @@ pub struct ServicePerimeterStatusIngressPolicyIngressTo {
     /// then this `IngressTo` rule will authorize access to all
     /// resources inside the perimeter, provided that the request
     /// also matches the `operations` field.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Box<Option<Vec<String>>>,
+    pub r#resources: Option<Vec<String>>,
 }

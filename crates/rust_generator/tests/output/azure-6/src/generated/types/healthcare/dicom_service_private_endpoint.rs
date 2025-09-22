@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DicomServicePrivateEndpoint {
     /// The ID of the Healthcare DICOM Service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Specifies the name of the Healthcare DICOM Service. Changing this forces a new Healthcare DICOM Service to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

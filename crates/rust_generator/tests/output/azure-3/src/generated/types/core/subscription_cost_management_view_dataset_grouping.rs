@@ -6,9 +6,9 @@ pub struct SubscriptionCostManagementViewDatasetGrouping {
     /// The name of the column to group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The type of the column. Possible values are `Dimension` and `TagKey`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

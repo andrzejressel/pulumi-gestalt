@@ -6,9 +6,9 @@ pub struct GetRouterNatLogConfig {
     /// Indicates whether or not to export logs.
     #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<bool>,
+    pub r#enable: bool,
     /// Specifies the desired filtering of logs on this NAT. Possible values: ["ERRORS_ONLY", "TRANSLATIONS_ONLY", "ALL"]
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<String>,
+    pub r#filter: String,
 }

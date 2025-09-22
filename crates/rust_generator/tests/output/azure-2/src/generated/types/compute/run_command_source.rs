@@ -3,17 +3,17 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RunCommandSource {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commandId")]
-    pub r#command_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#command_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "script")]
-    pub r#script: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#script: Option<String>,
+    #[builder(into)]
     #[serde(rename = "scriptUri")]
-    pub r#script_uri: Box<Option<String>>,
+    pub r#script_uri: Option<String>,
     /// A `script_uri_managed_identity` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scriptUriManagedIdentity")]
-    pub r#script_uri_managed_identity: Box<Option<super::super::types::compute::RunCommandSourceScriptUriManagedIdentity>>,
+    pub r#script_uri_managed_identity: Option<Box<super::super::types::compute::RunCommandSourceScriptUriManagedIdentity>>,
 }

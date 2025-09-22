@@ -6,5 +6,5 @@ pub struct ViewFilters {
     /// The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a search operation. For more details, see [Search query syntax](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html).
     #[builder(into)]
     #[serde(rename = "filterString")]
-    pub r#filter_string: Box<String>,
+    pub r#filter_string: String,
 }

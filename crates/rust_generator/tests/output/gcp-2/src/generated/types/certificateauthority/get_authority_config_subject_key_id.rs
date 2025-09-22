@@ -6,5 +6,5 @@ pub struct GetAuthorityConfigSubjectKeyId {
     /// The value of the KeyId in lowercase hexadecimal.
     #[builder(into)]
     #[serde(rename = "keyId")]
-    pub r#key_id: Box<String>,
+    pub r#key_id: String,
 }

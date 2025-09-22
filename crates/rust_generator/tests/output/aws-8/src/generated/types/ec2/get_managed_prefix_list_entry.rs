@@ -5,8 +5,8 @@
 pub struct GetManagedPrefixListEntry {
     #[builder(into)]
     #[serde(rename = "cidr")]
-    pub r#cidr: Box<String>,
+    pub r#cidr: String,
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
 }

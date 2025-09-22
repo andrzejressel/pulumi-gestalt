@@ -6,9 +6,9 @@ pub struct ScalingPlanHostPool {
     /// The ID of the HostPool to assign the Scaling Plan to.
     #[builder(into)]
     #[serde(rename = "hostpoolId")]
-    pub r#hostpool_id: Box<String>,
+    pub r#hostpool_id: String,
     /// Specifies if the scaling plan is enabled or disabled for the HostPool.
     #[builder(into)]
     #[serde(rename = "scalingPlanEnabled")]
-    pub r#scaling_plan_enabled: Box<bool>,
+    pub r#scaling_plan_enabled: bool,
 }

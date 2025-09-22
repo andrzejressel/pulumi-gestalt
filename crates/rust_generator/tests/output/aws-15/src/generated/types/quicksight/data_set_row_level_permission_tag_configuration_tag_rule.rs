@@ -6,17 +6,17 @@ pub struct DataSetRowLevelPermissionTagConfigurationTagRule {
     /// Column name that a tag key is assigned to.
     #[builder(into)]
     #[serde(rename = "columnName")]
-    pub r#column_name: Box<String>,
+    pub r#column_name: String,
     /// A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "matchAllValue")]
-    pub r#match_all_value: Box<Option<String>>,
+    pub r#match_all_value: Option<String>,
     /// Unique key for a tag.
     #[builder(into)]
     #[serde(rename = "tagKey")]
-    pub r#tag_key: Box<String>,
+    pub r#tag_key: String,
     /// A string that you want to use to delimit the values when you pass the values at run time.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tagMultiValueDelimiter")]
-    pub r#tag_multi_value_delimiter: Box<Option<String>>,
+    pub r#tag_multi_value_delimiter: Option<String>,
 }

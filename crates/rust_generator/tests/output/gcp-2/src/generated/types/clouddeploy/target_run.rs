@@ -6,5 +6,5 @@ pub struct TargetRun {
     /// Required. The location where the Cloud Run Service should be located. Format is `projects/{project}/locations/{location}`.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
 }

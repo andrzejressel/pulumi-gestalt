@@ -6,13 +6,13 @@ pub struct GetClusterNodeConfigReservationAffinity {
     /// Corresponds to the type of reservation consumption.
     #[builder(into)]
     #[serde(rename = "consumeReservationType")]
-    pub r#consume_reservation_type: Box<String>,
+    pub r#consume_reservation_type: String,
     /// The label key of a reservation resource.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The label values of the reservation resource.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

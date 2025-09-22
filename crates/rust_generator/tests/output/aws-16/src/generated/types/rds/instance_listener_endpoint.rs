@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceListenerEndpoint {
     /// Specifies the DNS address of the DB instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<Option<String>>,
+    pub r#address: Option<String>,
     /// Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostedZoneId")]
-    pub r#hosted_zone_id: Box<Option<String>>,
+    pub r#hosted_zone_id: Option<String>,
     /// The port on which the DB accepts connections.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
 }

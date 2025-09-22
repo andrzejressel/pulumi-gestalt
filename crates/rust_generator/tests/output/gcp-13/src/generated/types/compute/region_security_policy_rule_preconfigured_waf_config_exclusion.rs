@@ -5,33 +5,33 @@
 pub struct RegionSecurityPolicyRulePreconfiguredWafConfigExclusion {
     /// Request cookie whose value will be excluded from inspection during preconfigured WAF evaluation.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestCookies")]
-    pub r#request_cookies: Box<Option<Vec<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestCooky>>>,
+    pub r#request_cookies: Option<Vec<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestCooky>>,
     /// Request header whose value will be excluded from inspection during preconfigured WAF evaluation.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestHeaders")]
-    pub r#request_headers: Box<Option<Vec<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeader>>>,
+    pub r#request_headers: Option<Vec<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeader>>,
     /// Request query parameter whose value will be excluded from inspection during preconfigured WAF evaluation.
     /// Note that the parameter can be in the query string or in the POST body.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestQueryParams")]
-    pub r#request_query_params: Box<Option<Vec<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParam>>>,
+    pub r#request_query_params: Option<Vec<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParam>>,
     /// Request URI from the request line to be excluded from inspection during preconfigured WAF evaluation.
     /// When specifying this field, the query or fragment part should be excluded.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestUris")]
-    pub r#request_uris: Box<Option<Vec<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestUri>>>,
+    pub r#request_uris: Option<Vec<super::super::types::compute::RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestUri>>,
     /// A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion.
     /// If omitted, it refers to all the rule IDs under the WAF rule set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetRuleIds")]
-    pub r#target_rule_ids: Box<Option<Vec<String>>>,
+    pub r#target_rule_ids: Option<Vec<String>>,
     /// Target WAF rule set to apply the preconfigured WAF exclusion.
     #[builder(into)]
     #[serde(rename = "targetRuleSet")]
-    pub r#target_rule_set: Box<String>,
+    pub r#target_rule_set: String,
 }

@@ -8,9 +8,9 @@ pub struct ExpressRouteCircuitSku {
     /// > **NOTE:** You can migrate from `MeteredData` to `UnlimitedData`, but not the other way around.
     #[builder(into)]
     #[serde(rename = "family")]
-    pub r#family: Box<String>,
+    pub r#family: String,
     /// The service tier. Possible values are `Basic`, `Local`, `Standard` or `Premium`.
     #[builder(into)]
     #[serde(rename = "tier")]
-    pub r#tier: Box<String>,
+    pub r#tier: String,
 }

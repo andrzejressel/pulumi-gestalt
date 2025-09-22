@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirewallPolicyThreatIntelligenceAllowlist {
     /// A list of FQDNs that will be skipped for threat detection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fqdns")]
-    pub r#fqdns: Box<Option<Vec<String>>>,
+    pub r#fqdns: Option<Vec<String>>,
     /// A list of IP addresses or CIDR ranges that will be skipped for threat detection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Option<Vec<String>>>,
+    pub r#ip_addresses: Option<Vec<String>>,
 }

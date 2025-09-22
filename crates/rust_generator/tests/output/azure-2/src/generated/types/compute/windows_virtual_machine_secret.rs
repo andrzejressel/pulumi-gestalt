@@ -6,9 +6,9 @@ pub struct WindowsVirtualMachineSecret {
     /// One or more `certificate` blocks as defined above.
     #[builder(into)]
     #[serde(rename = "certificates")]
-    pub r#certificates: Box<Vec<super::super::types::compute::WindowsVirtualMachineSecretCertificate>>,
+    pub r#certificates: Vec<super::super::types::compute::WindowsVirtualMachineSecretCertificate>,
     /// The ID of the Key Vault from which all Secrets should be sourced.
     #[builder(into)]
     #[serde(rename = "keyVaultId")]
-    pub r#key_vault_id: Box<String>,
+    pub r#key_vault_id: String,
 }

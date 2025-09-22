@@ -6,9 +6,9 @@ pub struct GetJobDefinitionEksPropertyPodPropertyVolumeEmptyDir {
     /// The medium to store the volume.
     #[builder(into)]
     #[serde(rename = "medium")]
-    pub r#medium: Box<String>,
+    pub r#medium: String,
     /// The maximum size of the volume. By default, there's no maximum size defined.
     #[builder(into)]
     #[serde(rename = "sizeLimit")]
-    pub r#size_limit: Box<String>,
+    pub r#size_limit: String,
 }

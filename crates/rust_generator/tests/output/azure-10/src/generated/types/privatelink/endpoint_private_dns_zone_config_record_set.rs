@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointPrivateDnsZoneConfigRecordSet {
     /// The fully qualified domain name to the `private_dns_zone`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fqdn")]
-    pub r#fqdn: Box<Option<String>>,
+    pub r#fqdn: Option<String>,
     /// A list of all IP Addresses that map to the `private_dns_zone` fqdn.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Option<Vec<String>>>,
+    pub r#ip_addresses: Option<Vec<String>>,
     /// Specifies the Name of the Private Endpoint. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The time to live for each connection to the `private_dns_zone`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ttl")]
-    pub r#ttl: Box<Option<i32>>,
+    pub r#ttl: Option<i32>,
     /// The type of DNS record.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct BudgetActionDefinitionScpActionDefinition {
     /// The policy ID attached.
     #[builder(into)]
     #[serde(rename = "policyId")]
-    pub r#policy_id: Box<String>,
+    pub r#policy_id: String,
     /// A list of target IDs.
     #[builder(into)]
     #[serde(rename = "targetIds")]
-    pub r#target_ids: Box<Vec<String>>,
+    pub r#target_ids: Vec<String>,
 }

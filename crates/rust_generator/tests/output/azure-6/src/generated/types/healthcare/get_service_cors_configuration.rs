@@ -6,21 +6,21 @@ pub struct GetServiceCorsConfiguration {
     /// Are credentials are allowed via CORS?
     #[builder(into)]
     #[serde(rename = "allowCredentials")]
-    pub r#allow_credentials: Box<bool>,
+    pub r#allow_credentials: bool,
     /// The set of headers to be allowed via CORS.
     #[builder(into)]
     #[serde(rename = "allowedHeaders")]
-    pub r#allowed_headers: Box<Vec<String>>,
+    pub r#allowed_headers: Vec<String>,
     /// The methods to be allowed via CORS.
     #[builder(into)]
     #[serde(rename = "allowedMethods")]
-    pub r#allowed_methods: Box<Vec<String>>,
+    pub r#allowed_methods: Vec<String>,
     /// The set of origins to be allowed via CORS.
     #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Vec<String>>,
+    pub r#allowed_origins: Vec<String>,
     /// The max age to be allowed via CORS.
     #[builder(into)]
     #[serde(rename = "maxAgeInSeconds")]
-    pub r#max_age_in_seconds: Box<i32>,
+    pub r#max_age_in_seconds: i32,
 }

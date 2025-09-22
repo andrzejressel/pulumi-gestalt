@@ -6,11 +6,11 @@ pub struct DiskAsyncReplicationSecondaryDisk {
     /// The secondary disk.
     #[builder(into)]
     #[serde(rename = "disk")]
-    pub r#disk: Box<String>,
+    pub r#disk: String,
     /// Output-only. Status of replication on the secondary disk.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

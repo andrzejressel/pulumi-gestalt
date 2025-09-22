@@ -8,12 +8,12 @@ pub struct AuthorityKeySpec {
     /// Possible values are: `SIGN_HASH_ALGORITHM_UNSPECIFIED`, `RSA_PSS_2048_SHA256`, `RSA_PSS_3072_SHA256`, `RSA_PSS_4096_SHA256`, `RSA_PKCS1_2048_SHA256`, `RSA_PKCS1_3072_SHA256`, `RSA_PKCS1_4096_SHA256`, `EC_P256_SHA256`, `EC_P384_SHA384`.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "algorithm")]
-    pub r#algorithm: Box<Option<String>>,
+    pub r#algorithm: Option<String>,
     /// The resource name for an existing Cloud KMS CryptoKeyVersion in the format
     /// `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudKmsKeyVersion")]
-    pub r#cloud_kms_key_version: Box<Option<String>>,
+    pub r#cloud_kms_key_version: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct GetRulesetsRulesetRuleActionParametersFromList {
     /// Expression to use for the list lookup.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Name of the list.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

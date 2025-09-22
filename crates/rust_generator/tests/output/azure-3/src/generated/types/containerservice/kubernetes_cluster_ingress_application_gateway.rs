@@ -4,31 +4,31 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubernetesClusterIngressApplicationGateway {
     /// The ID of the Application Gateway associated with the ingress controller deployed to this Kubernetes Cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "effectiveGatewayId")]
-    pub r#effective_gateway_id: Box<Option<String>>,
+    pub r#effective_gateway_id: Option<String>,
     /// The ID of the Application Gateway to integrate with the ingress controller of this Kubernetes Cluster. See [this](https://docs.microsoft.com/azure/application-gateway/tutorial-ingress-controller-add-on-existing) page for further details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gatewayId")]
-    pub r#gateway_id: Box<Option<String>>,
+    pub r#gateway_id: Option<String>,
     /// The name of the Application Gateway to be used or created in the Nodepool Resource Group, which in turn will be integrated with the ingress controller of this Kubernetes Cluster. See [this](https://docs.microsoft.com/azure/application-gateway/tutorial-ingress-controller-add-on-new) page for further details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gatewayName")]
-    pub r#gateway_name: Box<Option<String>>,
+    pub r#gateway_name: Option<String>,
     /// An `ingress_application_gateway_identity` block is exported. The exported attributes are defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ingressApplicationGatewayIdentities")]
-    pub r#ingress_application_gateway_identities: Box<Option<Vec<super::super::types::containerservice::KubernetesClusterIngressApplicationGatewayIngressApplicationGatewayIdentity>>>,
+    pub r#ingress_application_gateway_identities: Option<Vec<super::super::types::containerservice::KubernetesClusterIngressApplicationGatewayIngressApplicationGatewayIdentity>>,
     /// The subnet CIDR to be used to create an Application Gateway, which in turn will be integrated with the ingress controller of this Kubernetes Cluster. See [this](https://docs.microsoft.com/azure/application-gateway/tutorial-ingress-controller-add-on-new) page for further details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetCidr")]
-    pub r#subnet_cidr: Box<Option<String>>,
+    pub r#subnet_cidr: Option<String>,
     /// The ID of the subnet on which to create an Application Gateway, which in turn will be integrated with the ingress controller of this Kubernetes Cluster. See [this](https://docs.microsoft.com/azure/application-gateway/tutorial-ingress-controller-add-on-new) page for further details.
     /// 
     /// > **Note:** Exactly one of `gateway_id`, `subnet_id` or `subnet_cidr` must be specified.
     /// 
     /// > **Note:** If specifying `ingress_application_gateway` in conjunction with `only_critical_addons_enabled`, the AGIC pod will fail to start. A separate `azure.containerservice.KubernetesClusterNodePool` is required to run the AGIC pod successfully. This is because AGIC is classed as a "non-critical addon".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<Option<String>>,
+    pub r#subnet_id: Option<String>,
 }

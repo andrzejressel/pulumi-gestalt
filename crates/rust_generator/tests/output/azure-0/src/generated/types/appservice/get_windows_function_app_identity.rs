@@ -6,17 +6,17 @@ pub struct GetWindowsFunctionAppIdentity {
     /// The list of User Assigned Managed Identity IDs assigned to this Windows Function App.
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     /// The Principal ID of the System Assigned Managed Service Identity that is configured on this Windows Function App.
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     /// The Tenant ID of the System Assigned Managed Service Identity that is configured on this Windows Function App.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
     /// The type of Managed Service Identity that is configured on this Windows Function App.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

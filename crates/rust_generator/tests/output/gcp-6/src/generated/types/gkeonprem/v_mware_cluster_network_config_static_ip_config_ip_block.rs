@@ -6,14 +6,14 @@ pub struct VMwareClusterNetworkConfigStaticIpConfigIpBlock {
     /// The network gateway used by the VMware User Cluster.
     #[builder(into)]
     #[serde(rename = "gateway")]
-    pub r#gateway: Box<String>,
+    pub r#gateway: String,
     /// The node's network configurations used by the VMware User Cluster.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ips")]
-    pub r#ips: Box<Vec<super::super::types::gkeonprem::VMwareClusterNetworkConfigStaticIpConfigIpBlockIp>>,
+    pub r#ips: Vec<super::super::types::gkeonprem::VMwareClusterNetworkConfigStaticIpConfigIpBlockIp>,
     /// The netmask used by the VMware User Cluster.
     #[builder(into)]
     #[serde(rename = "netmask")]
-    pub r#netmask: Box<String>,
+    pub r#netmask: String,
 }

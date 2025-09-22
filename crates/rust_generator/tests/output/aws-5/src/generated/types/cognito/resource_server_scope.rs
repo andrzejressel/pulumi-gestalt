@@ -6,9 +6,9 @@ pub struct ResourceServerScope {
     /// The scope description.
     #[builder(into)]
     #[serde(rename = "scopeDescription")]
-    pub r#scope_description: Box<String>,
+    pub r#scope_description: String,
     /// The scope name.
     #[builder(into)]
     #[serde(rename = "scopeName")]
-    pub r#scope_name: Box<String>,
+    pub r#scope_name: String,
 }

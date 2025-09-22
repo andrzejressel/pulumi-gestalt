@@ -6,11 +6,11 @@ pub struct ClusterCertificateCommonNamesCommonName {
     /// The common or subject name of the certificate.
     #[builder(into)]
     #[serde(rename = "certificateCommonName")]
-    pub r#certificate_common_name: Box<String>,
+    pub r#certificate_common_name: String,
     /// The Issuer Thumbprint of the Certificate.
     /// 
     /// > **NOTE:** Certificate Issuer Thumbprint may become required in the future, `https://docs.microsoft.com/azure/service-fabric/service-fabric-create-cluster-using-cert-cn#download-and-update-a-sample-template`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateIssuerThumbprint")]
-    pub r#certificate_issuer_thumbprint: Box<Option<String>>,
+    pub r#certificate_issuer_thumbprint: Option<String>,
 }

@@ -8,9 +8,9 @@ pub struct ClusterCapacityConfig {
     /// - - -
     #[builder(into)]
     #[serde(rename = "memoryBytes")]
-    pub r#memory_bytes: Box<String>,
+    pub r#memory_bytes: String,
     /// The number of vCPUs to provision for the cluster. The minimum is 3.
     #[builder(into)]
     #[serde(rename = "vcpuCount")]
-    pub r#vcpu_count: Box<String>,
+    pub r#vcpu_count: String,
 }

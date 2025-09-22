@@ -6,20 +6,20 @@ pub struct JobStatus {
     /// (Output)
     /// Final error result of the job. If present, indicates that the job has completed and was unsuccessful.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorResults")]
-    pub r#error_results: Box<Option<Vec<super::super::types::bigquery::JobStatusErrorResult>>>,
+    pub r#error_results: Option<Vec<super::super::types::bigquery::JobStatusErrorResult>>,
     /// (Output)
     /// The first errors encountered during the running of the job. The final message
     /// includes the number of errors that caused the process to stop. Errors here do
     /// not necessarily mean that the job has not completed or was unsuccessful.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errors")]
-    pub r#errors: Box<Option<Vec<super::super::types::bigquery::JobStatusError>>>,
+    pub r#errors: Option<Vec<super::super::types::bigquery::JobStatusError>>,
     /// (Output)
     /// Running state of the job. Valid states include 'PENDING', 'RUNNING', and 'DONE'.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

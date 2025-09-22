@@ -6,7 +6,7 @@ pub struct ExtensionsInstanceRuntimeDataFatalError {
     /// The error message. This is set by the extension developer to give
     /// more detail on why the extension is unusable and must be re-installed
     /// or reconfigured.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorMessage")]
-    pub r#error_message: Box<Option<String>>,
+    pub r#error_message: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsVideoDescriptionCodecSettingsFrameCaptureSettings {
     /// The frequency at which to capture frames for inclusion in the output.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "captureInterval")]
-    pub r#capture_interval: Box<Option<i32>>,
+    pub r#capture_interval: Option<i32>,
     /// Unit for the frame capture interval.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "captureIntervalUnits")]
-    pub r#capture_interval_units: Box<Option<String>>,
+    pub r#capture_interval_units: Option<String>,
 }

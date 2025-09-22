@@ -6,19 +6,19 @@ pub struct GetAppConnectionGateway {
     /// AppGateway name in following format: projects/{project_id}/locations/{locationId}/appgateways/{gateway_id}.
     #[builder(into)]
     #[serde(rename = "appGateway")]
-    pub r#app_gateway: Box<String>,
+    pub r#app_gateway: String,
     /// Ingress port reserved on the gateways for this AppConnection, if not specified or zero, the default port is 19443.
     #[builder(into)]
     #[serde(rename = "ingressPort")]
-    pub r#ingress_port: Box<i32>,
+    pub r#ingress_port: i32,
     /// The type of hosting used by the gateway. Refer to
     /// https://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#Type_1
     /// for a list of possible values.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// Server-defined URI for this resource.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

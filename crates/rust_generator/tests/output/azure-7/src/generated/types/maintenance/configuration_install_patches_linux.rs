@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationInstallPatchesLinux {
     /// List of Classification category of patches to be patched. Possible values are `Critical`, `Security` and `Other`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "classificationsToIncludes")]
-    pub r#classifications_to_includes: Box<Option<Vec<String>>>,
+    pub r#classifications_to_includes: Option<Vec<String>>,
     /// List of package names to be excluded from patching.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "packageNamesMaskToExcludes")]
-    pub r#package_names_mask_to_excludes: Box<Option<Vec<String>>>,
+    pub r#package_names_mask_to_excludes: Option<Vec<String>>,
     /// List of package names to be included for patching.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "packageNamesMaskToIncludes")]
-    pub r#package_names_mask_to_includes: Box<Option<Vec<String>>>,
+    pub r#package_names_mask_to_includes: Option<Vec<String>>,
 }

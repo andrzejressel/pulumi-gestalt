@@ -6,9 +6,9 @@ pub struct GetImageApplicationIconS3Location {
     /// S3 bucket of the S3 object.
     #[builder(into)]
     #[serde(rename = "s3Bucket")]
-    pub r#s_3_bucket: Box<String>,
+    pub r#s_3_bucket: String,
     /// S3 key of the S3 object.
     #[builder(into)]
     #[serde(rename = "s3Key")]
-    pub r#s_3_key: Box<String>,
+    pub r#s_3_key: String,
 }

@@ -6,20 +6,20 @@ pub struct GetVariablesBool {
     /// The description of the Automation Variable.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// Specifies if the Automation Variable is encrypted.
     #[builder(into)]
     #[serde(rename = "encrypted")]
-    pub r#encrypted: Box<bool>,
+    pub r#encrypted: bool,
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The name of the Automation Variable.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value of the Automation Variable.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<bool>,
+    pub r#value: bool,
 }

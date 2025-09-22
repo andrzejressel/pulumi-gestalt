@@ -6,5 +6,5 @@ pub struct ClusterIpAllocationPolicyAdditionalPodRangesConfig {
     /// The names of the Pod ranges to add to the cluster.
     #[builder(into)]
     #[serde(rename = "podRangeNames")]
-    pub r#pod_range_names: Box<Vec<String>>,
+    pub r#pod_range_names: Vec<String>,
 }

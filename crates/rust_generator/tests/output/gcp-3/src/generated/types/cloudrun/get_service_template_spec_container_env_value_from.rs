@@ -6,5 +6,5 @@ pub struct GetServiceTemplateSpecContainerEnvValueFrom {
     /// Selects a key (version) of a secret in Secret Manager.
     #[builder(into)]
     #[serde(rename = "secretKeyReves")]
-    pub r#secret_key_reves: Box<Vec<super::super::types::cloudrun::GetServiceTemplateSpecContainerEnvValueFromSecretKeyRef>>,
+    pub r#secret_key_reves: Vec<super::super::types::cloudrun::GetServiceTemplateSpecContainerEnvValueFromSecretKeyRef>,
 }

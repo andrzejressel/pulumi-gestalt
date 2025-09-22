@@ -6,7 +6,7 @@ pub struct LaunchTemplateEnclaveOptions {
     /// If set to `true`, Nitro Enclaves will be enabled on the instance.
     /// 
     /// For more information, see the documentation on [Nitro Enclaves](https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
 }

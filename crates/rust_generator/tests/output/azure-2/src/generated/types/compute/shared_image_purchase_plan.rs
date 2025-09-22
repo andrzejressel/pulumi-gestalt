@@ -6,13 +6,13 @@ pub struct SharedImagePurchasePlan {
     /// The Purchase Plan Name for this Shared Image. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The Purchase Plan Product for this Gallery Image. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "product")]
-    pub r#product: Box<Option<String>>,
+    pub r#product: Option<String>,
     /// The Purchase Plan Publisher for this Gallery Image. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<Option<String>>,
+    pub r#publisher: Option<String>,
 }

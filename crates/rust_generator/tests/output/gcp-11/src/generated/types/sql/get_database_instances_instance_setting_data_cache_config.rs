@@ -6,5 +6,5 @@ pub struct GetDatabaseInstancesInstanceSettingDataCacheConfig {
     /// Whether data cache is enabled for the instance.
     #[builder(into)]
     #[serde(rename = "dataCacheEnabled")]
-    pub r#data_cache_enabled: Box<bool>,
+    pub r#data_cache_enabled: bool,
 }

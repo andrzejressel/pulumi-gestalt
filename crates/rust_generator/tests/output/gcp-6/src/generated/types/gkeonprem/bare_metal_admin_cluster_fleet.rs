@@ -7,7 +7,7 @@ pub struct BareMetalAdminClusterFleet {
     /// The name of the managed Hub Membership resource associated to this cluster.
     /// Membership names are formatted as
     /// `projects/<project-number>/locations/<location>/memberships/<cluster-id>`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "membership")]
-    pub r#membership: Box<Option<String>>,
+    pub r#membership: Option<String>,
 }

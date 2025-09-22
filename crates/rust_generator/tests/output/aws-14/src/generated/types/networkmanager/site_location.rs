@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SiteLocation {
     /// Address of the location.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<Option<String>>,
+    pub r#address: Option<String>,
     /// Latitude of the location.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "latitude")]
-    pub r#latitude: Box<Option<String>>,
+    pub r#latitude: Option<String>,
     /// Longitude of the location.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "longitude")]
-    pub r#longitude: Box<Option<String>>,
+    pub r#longitude: Option<String>,
 }

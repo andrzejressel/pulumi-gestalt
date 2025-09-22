@@ -5,7 +5,7 @@
 pub struct ChatEngineChatEngineMetadata {
     /// (Output)
     /// The resource name of a Dialogflow agent, that this Chat Engine refers to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dialogflowAgent")]
-    pub r#dialogflow_agent: Box<Option<String>>,
+    pub r#dialogflow_agent: Option<String>,
 }

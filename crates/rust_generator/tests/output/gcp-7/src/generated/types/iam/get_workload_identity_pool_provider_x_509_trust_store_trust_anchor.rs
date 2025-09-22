@@ -7,5 +7,5 @@ pub struct GetWorkloadIdentityPoolProviderX509TrustStoreTrustAnchor {
     /// ca certificate(either root or intermediate cert).
     #[builder(into)]
     #[serde(rename = "pemCertificate")]
-    pub r#pem_certificate: Box<String>,
+    pub r#pem_certificate: String,
 }

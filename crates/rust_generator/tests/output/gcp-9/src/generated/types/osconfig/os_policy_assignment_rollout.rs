@@ -16,5 +16,5 @@ pub struct OsPolicyAssignmentRollout {
     /// applied.
     #[builder(into)]
     #[serde(rename = "minWaitDuration")]
-    pub r#min_wait_duration: Box<String>,
+    pub r#min_wait_duration: String,
 }

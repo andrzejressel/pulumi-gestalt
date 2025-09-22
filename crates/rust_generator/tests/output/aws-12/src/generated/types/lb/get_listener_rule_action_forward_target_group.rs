@@ -7,9 +7,9 @@ pub struct GetListenerRuleActionForwardTargetGroup {
     /// Either `arn` or `listener_arn` must be set.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// Weight of the target group.
     #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<f64>,
+    pub r#weight: f64,
 }

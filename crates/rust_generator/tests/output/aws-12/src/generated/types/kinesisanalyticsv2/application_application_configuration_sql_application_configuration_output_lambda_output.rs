@@ -6,5 +6,5 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationOutputL
     /// The ARN of the destination Lambda function to write to.
     #[builder(into)]
     #[serde(rename = "resourceArn")]
-    pub r#resource_arn: Box<String>,
+    pub r#resource_arn: String,
 }

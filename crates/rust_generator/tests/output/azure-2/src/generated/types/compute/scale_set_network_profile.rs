@@ -4,31 +4,31 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScaleSetNetworkProfile {
     /// Specifies whether to enable accelerated networking or not.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acceleratedNetworking")]
-    pub r#accelerated_networking: Box<Option<bool>>,
+    pub r#accelerated_networking: Option<bool>,
     /// A `dns_settings` block as documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dnsSettings")]
-    pub r#dns_settings: Box<Option<super::super::types::compute::ScaleSetNetworkProfileDnsSettings>>,
+    pub r#dns_settings: Option<Box<super::super::types::compute::ScaleSetNetworkProfileDnsSettings>>,
     /// An `ip_configuration` block as documented below.
     #[builder(into)]
     #[serde(rename = "ipConfigurations")]
-    pub r#ip_configurations: Box<Vec<super::super::types::compute::ScaleSetNetworkProfileIpConfiguration>>,
+    pub r#ip_configurations: Vec<super::super::types::compute::ScaleSetNetworkProfileIpConfiguration>,
     /// Whether IP forwarding is enabled on this NIC. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipForwarding")]
-    pub r#ip_forwarding: Box<Option<bool>>,
+    pub r#ip_forwarding: Option<bool>,
     /// Specifies the name of the network interface configuration.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the identifier for the network security group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkSecurityGroupId")]
-    pub r#network_security_group_id: Box<Option<String>>,
+    pub r#network_security_group_id: Option<String>,
     /// Indicates whether network interfaces created from the network interface configuration will be the primary NIC of the VM.
     #[builder(into)]
     #[serde(rename = "primary")]
-    pub r#primary: Box<bool>,
+    pub r#primary: bool,
 }

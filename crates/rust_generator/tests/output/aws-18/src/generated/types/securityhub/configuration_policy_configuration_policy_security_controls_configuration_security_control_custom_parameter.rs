@@ -6,9 +6,9 @@ pub struct ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSe
     /// An object that specifies parameter values for a control in a configuration policy. See below.
     #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Vec<super::super::types::securityhub::ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameter>>,
+    pub r#parameters: Vec<super::super::types::securityhub::ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameter>,
     /// The ID of the security control. For more information see the [Security Hub controls reference] documentation.
     #[builder(into)]
     #[serde(rename = "securityControlId")]
-    pub r#security_control_id: Box<String>,
+    pub r#security_control_id: String,
 }

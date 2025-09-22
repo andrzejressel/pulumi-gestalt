@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupAvailabilityZoneDistribution {
     /// The strategy to use for distributing capacity across the Availability Zones. Valid values are `balanced-only` and `balanced-best-effort`. Default is `balanced-best-effort`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "capacityDistributionStrategy")]
-    pub r#capacity_distribution_strategy: Box<Option<String>>,
+    pub r#capacity_distribution_strategy: Option<String>,
 }

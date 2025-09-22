@@ -6,9 +6,9 @@ pub struct WorkspaceVpcConfiguration {
     /// The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.
     #[builder(into)]
     #[serde(rename = "securityGroupIds")]
-    pub r#security_group_ids: Box<Vec<String>>,
+    pub r#security_group_ids: Vec<String>,
     /// The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
     #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Vec<String>>,
+    pub r#subnet_ids: Vec<String>,
 }

@@ -6,9 +6,9 @@ pub struct AssessmentAssessmentReportsDestination {
     /// Destination of the assessment report. This value be in the form `s3://{bucket_name}`.
     #[builder(into)]
     #[serde(rename = "destination")]
-    pub r#destination: Box<String>,
+    pub r#destination: String,
     /// Destination type. Currently, `S3` is the only valid value.
     #[builder(into)]
     #[serde(rename = "destinationType")]
-    pub r#destination_type: Box<String>,
+    pub r#destination_type: String,
 }

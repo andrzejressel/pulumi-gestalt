@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VpnConnectionRoute {
     /// The CIDR block associated with the local subnet of the customer data center.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destinationCidrBlock")]
-    pub r#destination_cidr_block: Box<Option<String>>,
+    pub r#destination_cidr_block: Option<String>,
     /// Indicates how the routes were provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<Option<String>>,
+    pub r#source: Option<String>,
     /// The current state of the static route.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

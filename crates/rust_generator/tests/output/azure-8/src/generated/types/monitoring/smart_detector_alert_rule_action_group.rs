@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SmartDetectorAlertRuleActionGroup {
     /// Specifies a custom email subject if Email Receiver is specified in Monitor Action Group resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emailSubject")]
-    pub r#email_subject: Box<Option<String>>,
+    pub r#email_subject: Option<String>,
     /// Specifies the action group ids.
     #[builder(into)]
     #[serde(rename = "ids")]
-    pub r#ids: Box<Vec<String>>,
+    pub r#ids: Vec<String>,
     /// A JSON String which Specifies the custom webhook payload if Webhook Receiver is specified in Monitor Action Group resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "webhookPayload")]
-    pub r#webhook_payload: Box<Option<String>>,
+    pub r#webhook_payload: Option<String>,
 }

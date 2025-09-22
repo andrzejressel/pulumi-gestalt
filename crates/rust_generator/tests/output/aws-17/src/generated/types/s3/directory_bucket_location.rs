@@ -6,9 +6,9 @@ pub struct DirectoryBucketLocation {
     /// [Availability Zone ID](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#az-ids) or Local Zone ID.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Location type. Valid values: `AvailabilityZone`, `LocalZone`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

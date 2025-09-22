@@ -6,9 +6,9 @@ pub struct GetApplicationGatewayBackendHttpSettingConnectionDraining {
     /// The number of seconds connection draining is active.
     #[builder(into)]
     #[serde(rename = "drainTimeoutSec")]
-    pub r#drain_timeout_sec: Box<i32>,
+    pub r#drain_timeout_sec: i32,
     /// Is the Web Application Firewall enabled?
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

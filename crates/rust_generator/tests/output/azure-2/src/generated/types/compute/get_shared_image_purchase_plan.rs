@@ -6,13 +6,13 @@ pub struct GetSharedImagePurchasePlan {
     /// The name of the Shared Image.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// (Optional) The Purchase Plan Product for this Gallery Image.
     #[builder(into)]
     #[serde(rename = "product")]
-    pub r#product: Box<String>,
+    pub r#product: String,
     /// (Optional) The Purchase Plan Publisher for this Gallery Image.
     #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<String>,
+    pub r#publisher: String,
 }

@@ -6,28 +6,28 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoD
     /// The location of the SAPOData resource.
     #[builder(into)]
     #[serde(rename = "applicationHostUrl")]
-    pub r#application_host_url: Box<String>,
+    pub r#application_host_url: String,
     /// The application path to catalog service.
     #[builder(into)]
     #[serde(rename = "applicationServicePath")]
-    pub r#application_service_path: Box<String>,
+    pub r#application_service_path: String,
     /// The client number for the client creating the connection.
     #[builder(into)]
     #[serde(rename = "clientNumber")]
-    pub r#client_number: Box<String>,
+    pub r#client_number: String,
     /// The logon language of SAPOData instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logonLanguage")]
-    pub r#logon_language: Box<Option<String>>,
+    pub r#logon_language: Option<String>,
     /// The SAPOData OAuth properties required for OAuth type authentication.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oauthProperties")]
-    pub r#oauth_properties: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataOauthProperties>>,
+    pub r#oauth_properties: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataOauthProperties>>,
     /// The port number of the SAPOData instance.
     #[builder(into)]
     #[serde(rename = "portNumber")]
-    pub r#port_number: Box<i32>,
-    #[builder(into, default)]
+    pub r#port_number: i32,
+    #[builder(into)]
     #[serde(rename = "privateLinkServiceName")]
-    pub r#private_link_service_name: Box<Option<String>>,
+    pub r#private_link_service_name: Option<String>,
 }

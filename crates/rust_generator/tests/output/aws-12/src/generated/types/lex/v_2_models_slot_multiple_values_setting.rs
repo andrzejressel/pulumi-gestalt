@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsSlotMultipleValuesSetting {
     /// Whether a slot can return multiple values. When `true`, the slot may return more than one value in a response. When `false`, the slot returns only a single value. Multi-value slots are only available in the `en-US` locale.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowMultipleValues")]
-    pub r#allow_multiple_values: Box<Option<bool>>,
+    pub r#allow_multiple_values: Option<bool>,
 }

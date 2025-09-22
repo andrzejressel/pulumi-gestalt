@@ -6,5 +6,5 @@ pub struct ZeroTrustGatewaySettingsCertificate {
     /// ID of certificate for TLS interception.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

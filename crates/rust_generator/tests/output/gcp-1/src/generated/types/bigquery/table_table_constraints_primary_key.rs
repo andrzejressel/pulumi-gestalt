@@ -6,5 +6,5 @@ pub struct TableTableConstraintsPrimaryKey {
     /// The columns that are composed of the primary key constraint.
     #[builder(into)]
     #[serde(rename = "columns")]
-    pub r#columns: Box<Vec<String>>,
+    pub r#columns: Vec<String>,
 }

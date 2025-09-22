@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegisteredDomainNameServer {
     /// Glue IP addresses of a name server. The list can contain only one IPv4 and one IPv6 address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "glueIps")]
-    pub r#glue_ips: Box<Option<Vec<String>>>,
+    pub r#glue_ips: Option<Vec<String>>,
     /// The fully qualified host name of the name server.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

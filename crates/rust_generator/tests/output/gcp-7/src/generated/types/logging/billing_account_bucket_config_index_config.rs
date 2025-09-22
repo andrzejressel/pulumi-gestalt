@@ -7,9 +7,9 @@ pub struct BillingAccountBucketConfigIndexConfig {
     /// Note that some paths are automatically indexed, and other paths are not eligible for indexing. See [indexing documentation](https://cloud.google.com/logging/docs/analyze/custom-index) for details.
     #[builder(into)]
     #[serde(rename = "fieldPath")]
-    pub r#field_path: Box<String>,
+    pub r#field_path: String,
     /// The type of data in this index. Allowed types include `INDEX_TYPE_UNSPECIFIED`, `INDEX_TYPE_STRING` and `INDEX_TYPE_INTEGER`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

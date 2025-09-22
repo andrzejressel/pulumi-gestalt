@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterCertificateAuthority {
     /// Base64 encoded certificate data required to communicate with your cluster. Add this to the `certificate-authority-data` section of the `kubeconfig` file for your cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "data")]
-    pub r#data: Box<Option<String>>,
+    pub r#data: Option<String>,
 }

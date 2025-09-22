@@ -6,9 +6,9 @@ pub struct GetInternetGatewayAttachment {
     /// Current state of the attachment between the gateway and the VPC. Present only if a VPC is attached
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
     /// ID of an attached VPC.
     #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<String>,
+    pub r#vpc_id: String,
 }

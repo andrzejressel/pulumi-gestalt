@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTaskSpecResourcesReservationGenericResources {
     /// The Integer resources
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "discreteResourcesSpecs")]
-    pub r#discrete_resources_specs: Box<Option<Vec<String>>>,
+    pub r#discrete_resources_specs: Option<Vec<String>>,
     /// The String resources
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namedResourcesSpecs")]
-    pub r#named_resources_specs: Box<Option<Vec<String>>>,
+    pub r#named_resources_specs: Option<Vec<String>>,
 }

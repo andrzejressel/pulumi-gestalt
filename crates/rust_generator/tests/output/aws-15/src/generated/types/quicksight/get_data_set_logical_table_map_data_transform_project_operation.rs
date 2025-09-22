@@ -5,5 +5,5 @@
 pub struct GetDataSetLogicalTableMapDataTransformProjectOperation {
     #[builder(into)]
     #[serde(rename = "projectedColumns")]
-    pub r#projected_columns: Box<Vec<String>>,
+    pub r#projected_columns: Vec<String>,
 }

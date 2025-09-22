@@ -6,5 +6,5 @@ pub struct WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigNodeGrou
     /// Required. The URI of a sole-tenant /zones/us-central1-a/nodeGroups/node-group-1` * `node-group-1`
     #[builder(into)]
     #[serde(rename = "nodeGroup")]
-    pub r#node_group: Box<String>,
+    pub r#node_group: String,
 }

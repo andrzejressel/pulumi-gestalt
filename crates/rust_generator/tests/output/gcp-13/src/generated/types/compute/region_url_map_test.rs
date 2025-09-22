@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegionUrlMapTest {
     /// Description of this test case.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Host portion of the URL.
     #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<String>,
+    pub r#host: String,
     /// Path portion of the URL.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// A reference to expected RegionBackendService resource the given URL should be mapped to.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

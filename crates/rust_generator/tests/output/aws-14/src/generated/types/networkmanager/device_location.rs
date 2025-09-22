@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeviceLocation {
     /// The physical address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<Option<String>>,
+    pub r#address: Option<String>,
     /// The latitude.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "latitude")]
-    pub r#latitude: Box<Option<String>>,
+    pub r#latitude: Option<String>,
     /// The longitude.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "longitude")]
-    pub r#longitude: Box<Option<String>>,
+    pub r#longitude: Option<String>,
 }

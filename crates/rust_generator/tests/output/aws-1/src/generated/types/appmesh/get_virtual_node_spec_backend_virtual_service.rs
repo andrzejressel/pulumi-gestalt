@@ -5,8 +5,8 @@
 pub struct GetVirtualNodeSpecBackendVirtualService {
     #[builder(into)]
     #[serde(rename = "clientPolicies")]
-    pub r#client_policies: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicy>>,
+    pub r#client_policies: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicy>,
     #[builder(into)]
     #[serde(rename = "virtualServiceName")]
-    pub r#virtual_service_name: Box<String>,
+    pub r#virtual_service_name: String,
 }

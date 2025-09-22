@@ -6,9 +6,9 @@ pub struct NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatBacke
     /// The port number to send traffic to.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     /// The IP Address to send the traffic to.
     #[builder(into)]
     #[serde(rename = "publicIpAddress")]
-    pub r#public_ip_address: Box<String>,
+    pub r#public_ip_address: String,
 }

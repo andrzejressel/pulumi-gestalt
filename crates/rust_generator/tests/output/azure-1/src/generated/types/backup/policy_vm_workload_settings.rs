@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicyVmWorkloadSettings {
     /// The compression setting for the VM Workload Backup Policy. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "compressionEnabled")]
-    pub r#compression_enabled: Box<Option<bool>>,
+    pub r#compression_enabled: Option<bool>,
     /// The timezone for the VM Workload Backup Policy. [The possible values are defined here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/).
     #[builder(into)]
     #[serde(rename = "timeZone")]
-    pub r#time_zone: Box<String>,
+    pub r#time_zone: String,
 }

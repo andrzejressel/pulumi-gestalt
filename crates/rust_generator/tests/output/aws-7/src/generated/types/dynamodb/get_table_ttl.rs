@@ -5,8 +5,8 @@
 pub struct GetTableTtl {
     #[builder(into)]
     #[serde(rename = "attributeName")]
-    pub r#attribute_name: Box<String>,
+    pub r#attribute_name: String,
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

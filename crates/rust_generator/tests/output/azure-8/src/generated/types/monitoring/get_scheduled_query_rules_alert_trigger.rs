@@ -5,13 +5,13 @@
 pub struct GetScheduledQueryRulesAlertTrigger {
     #[builder(into)]
     #[serde(rename = "metricTriggers")]
-    pub r#metric_triggers: Box<Vec<super::super::types::monitoring::GetScheduledQueryRulesAlertTriggerMetricTrigger>>,
+    pub r#metric_triggers: Vec<super::super::types::monitoring::GetScheduledQueryRulesAlertTriggerMetricTrigger>,
     /// Evaluation operation for rule.
     #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<String>,
+    pub r#operator: String,
     /// Result or count threshold based on which rule should be triggered.
     #[builder(into)]
     #[serde(rename = "threshold")]
-    pub r#threshold: Box<f64>,
+    pub r#threshold: f64,
 }

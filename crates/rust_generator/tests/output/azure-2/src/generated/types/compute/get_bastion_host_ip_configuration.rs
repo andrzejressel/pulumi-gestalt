@@ -6,13 +6,13 @@ pub struct GetBastionHostIpConfiguration {
     /// The name of the Bastion Host.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Reference to a Public IP Address associated to this Bastion Host.
     #[builder(into)]
     #[serde(rename = "publicIpAddressId")]
-    pub r#public_ip_address_id: Box<String>,
+    pub r#public_ip_address_id: String,
     /// Reference to the subnet in which this Bastion Host has been created.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

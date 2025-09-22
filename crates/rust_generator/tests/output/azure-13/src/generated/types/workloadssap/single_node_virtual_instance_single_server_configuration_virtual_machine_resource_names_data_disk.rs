@@ -6,9 +6,9 @@ pub struct SingleNodeVirtualInstanceSingleServerConfigurationVirtualMachineResou
     /// A list of full names of Data Disks per Volume. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "names")]
-    pub r#names: Box<Vec<String>>,
+    pub r#names: Vec<String>,
     /// The name of the Volume. The only possible value is `default`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "volumeName")]
-    pub r#volume_name: Box<String>,
+    pub r#volume_name: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThemeConfigurationTypography {
     /// Determines the list of font families. Maximum number of 5 items. See font_families.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fontFamilies")]
-    pub r#font_families: Box<Option<Vec<super::super::types::quicksight::ThemeConfigurationTypographyFontFamily>>>,
+    pub r#font_families: Option<Vec<super::super::types::quicksight::ThemeConfigurationTypographyFontFamily>>,
 }

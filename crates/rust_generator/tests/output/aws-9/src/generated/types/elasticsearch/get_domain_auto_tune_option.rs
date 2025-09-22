@@ -6,13 +6,13 @@ pub struct GetDomainAutoTuneOption {
     /// The Auto-Tune desired state for the domain.
     #[builder(into)]
     #[serde(rename = "desiredState")]
-    pub r#desired_state: Box<String>,
+    pub r#desired_state: String,
     /// A list of the nested configurations for the Auto-Tune maintenance windows of the domain.
     #[builder(into)]
     #[serde(rename = "maintenanceSchedules")]
-    pub r#maintenance_schedules: Box<Vec<super::super::types::elasticsearch::GetDomainAutoTuneOptionMaintenanceSchedule>>,
+    pub r#maintenance_schedules: Vec<super::super::types::elasticsearch::GetDomainAutoTuneOptionMaintenanceSchedule>,
     /// Whether the domain is set to roll back to default Auto-Tune settings when disabling Auto-Tune.
     #[builder(into)]
     #[serde(rename = "rollbackOnDisable")]
-    pub r#rollback_on_disable: Box<String>,
+    pub r#rollback_on_disable: String,
 }

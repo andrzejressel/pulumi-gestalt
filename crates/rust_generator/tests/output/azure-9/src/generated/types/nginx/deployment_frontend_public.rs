@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeploymentFrontendPublic {
     /// Specifies a list of Public IP Resource ID to this NGINX Deployment. Changing this forces a new NGINX Deployment to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Option<Vec<String>>>,
+    pub r#ip_addresses: Option<Vec<String>>,
 }

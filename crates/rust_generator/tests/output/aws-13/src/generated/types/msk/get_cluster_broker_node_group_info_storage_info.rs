@@ -5,5 +5,5 @@
 pub struct GetClusterBrokerNodeGroupInfoStorageInfo {
     #[builder(into)]
     #[serde(rename = "ebsStorageInfos")]
-    pub r#ebs_storage_infos: Box<Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfo>>,
+    pub r#ebs_storage_infos: Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfo>,
 }

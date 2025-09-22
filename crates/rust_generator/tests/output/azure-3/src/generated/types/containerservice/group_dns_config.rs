@@ -6,13 +6,13 @@ pub struct GroupDnsConfig {
     /// A list of nameservers the containers will search out to resolve requests. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "nameservers")]
-    pub r#nameservers: Box<Vec<String>>,
+    pub r#nameservers: Vec<String>,
     /// A list of [resolver configuration options](https://man7.org/linux/man-pages/man5/resolv.conf.5.html). Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "options")]
-    pub r#options: Box<Option<Vec<String>>>,
+    pub r#options: Option<Vec<String>>,
     /// A list of search domains that DNS requests will search along. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "searchDomains")]
-    pub r#search_domains: Box<Option<Vec<String>>>,
+    pub r#search_domains: Option<Vec<String>>,
 }

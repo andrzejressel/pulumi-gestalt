@@ -6,5 +6,5 @@ pub struct ServerlessClusterClientAuthenticationSaslIam {
     /// Whether SASL/IAM authentication is enabled or not.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

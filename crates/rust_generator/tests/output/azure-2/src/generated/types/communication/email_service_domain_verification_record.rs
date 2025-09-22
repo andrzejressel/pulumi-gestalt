@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EmailServiceDomainVerificationRecord {
     /// (Optional) An `dkim2` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dkim2s")]
-    pub r#dkim_2_s: Box<Option<Vec<super::super::types::communication::EmailServiceDomainVerificationRecordDkim2>>>,
+    pub r#dkim_2_s: Option<Vec<super::super::types::communication::EmailServiceDomainVerificationRecordDkim2>>,
     /// (Optional) An `dkim` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dkims")]
-    pub r#dkims: Box<Option<Vec<super::super::types::communication::EmailServiceDomainVerificationRecordDkim>>>,
+    pub r#dkims: Option<Vec<super::super::types::communication::EmailServiceDomainVerificationRecordDkim>>,
     /// (Optional) An `dmarc` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dmarcs")]
-    pub r#dmarcs: Box<Option<Vec<super::super::types::communication::EmailServiceDomainVerificationRecordDmarc>>>,
+    pub r#dmarcs: Option<Vec<super::super::types::communication::EmailServiceDomainVerificationRecordDmarc>>,
     /// (Optional) An `domain` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domains")]
-    pub r#domains: Box<Option<Vec<super::super::types::communication::EmailServiceDomainVerificationRecordDomain>>>,
+    pub r#domains: Option<Vec<super::super::types::communication::EmailServiceDomainVerificationRecordDomain>>,
     /// (Optional) An `spf` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "spfs")]
-    pub r#spfs: Box<Option<Vec<super::super::types::communication::EmailServiceDomainVerificationRecordSpf>>>,
+    pub r#spfs: Option<Vec<super::super::types::communication::EmailServiceDomainVerificationRecordSpf>>,
 }

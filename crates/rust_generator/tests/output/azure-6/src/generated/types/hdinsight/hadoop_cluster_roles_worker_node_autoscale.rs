@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HadoopClusterRolesWorkerNodeAutoscale {
     /// A `capacity` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<Option<super::super::types::hdinsight::HadoopClusterRolesWorkerNodeAutoscaleCapacity>>,
+    pub r#capacity: Option<Box<super::super::types::hdinsight::HadoopClusterRolesWorkerNodeAutoscaleCapacity>>,
     /// A `recurrence` block as defined below.
     /// 
     /// > **NOTE:** Either a `capacity` or `recurrence` block must be specified - but not both.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<Option<super::super::types::hdinsight::HadoopClusterRolesWorkerNodeAutoscaleRecurrence>>,
+    pub r#recurrence: Option<Box<super::super::types::hdinsight::HadoopClusterRolesWorkerNodeAutoscaleRecurrence>>,
 }

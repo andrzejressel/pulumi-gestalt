@@ -5,8 +5,8 @@
 pub struct GetListenerDefaultActionForwardStickiness {
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<i32>,
+    pub r#duration: i32,
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

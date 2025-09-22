@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertificateCertificatePolicyLifetimeActionTrigger {
     /// The number of days before the Certificate expires that the action associated with this Trigger should run. Conflicts with `lifetime_percentage`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "daysBeforeExpiry")]
-    pub r#days_before_expiry: Box<Option<i32>>,
+    pub r#days_before_expiry: Option<i32>,
     /// The percentage at which during the Certificates Lifetime the action associated with this Trigger should run. Conflicts with `days_before_expiry`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lifetimePercentage")]
-    pub r#lifetime_percentage: Box<Option<i32>>,
+    pub r#lifetime_percentage: Option<i32>,
 }

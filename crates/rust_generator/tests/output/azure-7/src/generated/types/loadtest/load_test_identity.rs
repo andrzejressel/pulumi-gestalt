@@ -4,20 +4,20 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LoadTestIdentity {
     /// A list of the User Assigned Identity IDs that should be assigned to this Load Test.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Option<Vec<String>>>,
+    pub r#identity_ids: Option<Vec<String>>,
     /// The Principal ID for the System-Assigned Managed Identity assigned to this Load Test.
     /// *
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<Option<String>>,
+    pub r#principal_id: Option<String>,
     /// The Tenant ID for the System-Assigned Managed Identity assigned to this Load Test.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<Option<String>>,
+    pub r#tenant_id: Option<String>,
     /// Specifies the type of Managed Identity that should be assigned to this Load Test Encryption. Possible values are `SystemAssigned` or `UserAssigned`. Changing this forces a new Load Test to be created.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

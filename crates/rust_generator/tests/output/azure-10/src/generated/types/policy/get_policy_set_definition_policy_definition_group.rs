@@ -6,23 +6,23 @@ pub struct GetPolicySetDefinitionPolicyDefinitionGroup {
     /// The ID of a resource that contains additional metadata about this policy definition group.
     #[builder(into)]
     #[serde(rename = "additionalMetadataResourceId")]
-    pub r#additional_metadata_resource_id: Box<String>,
+    pub r#additional_metadata_resource_id: String,
     /// The category of this policy definition group.
     #[builder(into)]
     #[serde(rename = "category")]
-    pub r#category: Box<String>,
+    pub r#category: String,
     /// The description of this policy definition group.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// Specifies the display name of the Policy Set Definition. Conflicts with `name`.
     /// 
     /// **NOTE** As `display_name` is not unique errors may occur when there are multiple policy set definitions with same display name.
     #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<String>,
+    pub r#display_name: String,
     /// Specifies the name of the Policy Set Definition. Conflicts with `display_name`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

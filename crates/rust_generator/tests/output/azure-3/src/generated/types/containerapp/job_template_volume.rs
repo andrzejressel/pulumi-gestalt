@@ -6,13 +6,13 @@ pub struct JobTemplateVolume {
     /// The name of the volume.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The name of the storage to use for the volume.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageName")]
-    pub r#storage_name: Box<Option<String>>,
+    pub r#storage_name: Option<String>,
     /// The type of storage to use for the volume. Possible values are `AzureFile`, `EmptyDir` and `Secret`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageType")]
-    pub r#storage_type: Box<Option<String>>,
+    pub r#storage_type: Option<String>,
 }

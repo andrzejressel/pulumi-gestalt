@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionDestinationConfigDestination {
     /// Host
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<Option<String>>,
+    pub r#host: Option<String>,
     /// port number
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// Service Attachment
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAttachment")]
-    pub r#service_attachment: Box<Option<String>>,
+    pub r#service_attachment: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct BucketLogging {
     /// The name of the bucket that will receive the log objects.
     #[builder(into)]
     #[serde(rename = "targetBucket")]
-    pub r#target_bucket: Box<String>,
+    pub r#target_bucket: String,
     /// To specify a key prefix for log objects.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetPrefix")]
-    pub r#target_prefix: Box<Option<String>>,
+    pub r#target_prefix: Option<String>,
 }

@@ -5,12 +5,12 @@
 pub struct CertificateRevocationDetail {
     /// (Output)
     /// Indicates why a Certificate was revoked.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "revocationState")]
-    pub r#revocation_state: Box<Option<String>>,
+    pub r#revocation_state: Option<String>,
     /// (Output)
     /// The time at which this Certificate was revoked.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "revocationTime")]
-    pub r#revocation_time: Box<Option<String>>,
+    pub r#revocation_time: Option<String>,
 }

@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettings {
     /// UDP output buffering in milliseconds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bufferMsec")]
-    pub r#buffer_msec: Box<Option<i32>>,
+    pub r#buffer_msec: Option<i32>,
     /// UDP container settings. See Container Settings for more details.
     #[builder(into)]
     #[serde(rename = "containerSettings")]
@@ -15,7 +15,7 @@ pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSetting
     #[builder(into)]
     #[serde(rename = "destination")]
     pub r#destination: Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsDestination>,
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fecOutputSettings")]
-    pub r#fec_output_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings>>,
+    pub r#fec_output_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings>>,
 }

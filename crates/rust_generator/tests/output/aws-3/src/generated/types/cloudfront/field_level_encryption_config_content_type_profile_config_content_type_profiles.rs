@@ -5,5 +5,5 @@
 pub struct FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles {
     #[builder(into)]
     #[serde(rename = "items")]
-    pub r#items: Box<Vec<super::super::types::cloudfront::FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItem>>,
+    pub r#items: Vec<super::super::types::cloudfront::FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItem>,
 }

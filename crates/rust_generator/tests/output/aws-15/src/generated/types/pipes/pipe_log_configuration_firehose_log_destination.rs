@@ -6,5 +6,5 @@ pub struct PipeLogConfigurationFirehoseLogDestination {
     /// Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which EventBridge delivers the pipe log records.
     #[builder(into)]
     #[serde(rename = "deliveryStreamArn")]
-    pub r#delivery_stream_arn: Box<String>,
+    pub r#delivery_stream_arn: String,
 }

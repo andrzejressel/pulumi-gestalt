@@ -6,20 +6,20 @@ pub struct GetBackendServiceCdnPolicyCacheKeyPolicy {
     /// If true requests to different hosts will be cached separately.
     #[builder(into)]
     #[serde(rename = "includeHost")]
-    pub r#include_host: Box<bool>,
+    pub r#include_host: bool,
     /// Allows HTTP request headers (by name) to be used in the
     /// cache key.
     #[builder(into)]
     #[serde(rename = "includeHttpHeaders")]
-    pub r#include_http_headers: Box<Vec<String>>,
+    pub r#include_http_headers: Vec<String>,
     /// Names of cookies to include in cache keys.
     #[builder(into)]
     #[serde(rename = "includeNamedCookies")]
-    pub r#include_named_cookies: Box<Vec<String>>,
+    pub r#include_named_cookies: Vec<String>,
     /// If true, http and https requests will be cached separately.
     #[builder(into)]
     #[serde(rename = "includeProtocol")]
-    pub r#include_protocol: Box<bool>,
+    pub r#include_protocol: bool,
     /// If true, include query string parameters in the cache key
     /// according to query_string_whitelist and
     /// query_string_blacklist. If neither is set, the entire query
@@ -29,7 +29,7 @@ pub struct GetBackendServiceCdnPolicyCacheKeyPolicy {
     /// key entirely.
     #[builder(into)]
     #[serde(rename = "includeQueryString")]
-    pub r#include_query_string: Box<bool>,
+    pub r#include_query_string: bool,
     /// Names of query string parameters to exclude in cache keys.
     /// 
     /// All other parameters will be included. Either specify
@@ -38,7 +38,7 @@ pub struct GetBackendServiceCdnPolicyCacheKeyPolicy {
     /// delimiters.
     #[builder(into)]
     #[serde(rename = "queryStringBlacklists")]
-    pub r#query_string_blacklists: Box<Vec<String>>,
+    pub r#query_string_blacklists: Vec<String>,
     /// Names of query string parameters to include in cache keys.
     /// 
     /// All other parameters will be excluded. Either specify
@@ -47,5 +47,5 @@ pub struct GetBackendServiceCdnPolicyCacheKeyPolicy {
     /// delimiters.
     #[builder(into)]
     #[serde(rename = "queryStringWhitelists")]
-    pub r#query_string_whitelists: Box<Vec<String>>,
+    pub r#query_string_whitelists: Vec<String>,
 }

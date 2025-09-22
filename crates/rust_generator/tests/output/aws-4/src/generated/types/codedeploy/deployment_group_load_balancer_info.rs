@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeploymentGroupLoadBalancerInfo {
     /// The Classic Elastic Load Balancer to use in a deployment. Conflicts with `target_group_info` and `target_group_pair_info`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "elbInfos")]
-    pub r#elb_infos: Box<Option<Vec<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoElbInfo>>>,
+    pub r#elb_infos: Option<Vec<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoElbInfo>>,
     /// The (Application/Network Load Balancer) target group to use in a deployment. Conflicts with `elb_info` and `target_group_pair_info`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetGroupInfos")]
-    pub r#target_group_infos: Box<Option<Vec<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupInfo>>>,
+    pub r#target_group_infos: Option<Vec<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupInfo>>,
     /// The (Application/Network Load Balancer) target group pair to use in a deployment. Conflicts with `elb_info` and `target_group_info`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetGroupPairInfo")]
-    pub r#target_group_pair_info: Box<Option<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupPairInfo>>,
+    pub r#target_group_pair_info: Option<Box<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupPairInfo>>,
 }

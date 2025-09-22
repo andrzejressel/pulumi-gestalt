@@ -5,12 +5,12 @@
 pub struct HttpRouteRuleActionFaultInjectionPolicy {
     /// Specification of how client requests are aborted as part of fault injection before being sent to a destination.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "abort")]
-    pub r#abort: Box<Option<super::super::types::networkservices::HttpRouteRuleActionFaultInjectionPolicyAbort>>,
+    pub r#abort: Option<Box<super::super::types::networkservices::HttpRouteRuleActionFaultInjectionPolicyAbort>>,
     /// Specification of how client requests are delayed as part of fault injection before being sent to a destination.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "delay")]
-    pub r#delay: Box<Option<super::super::types::networkservices::HttpRouteRuleActionFaultInjectionPolicyDelay>>,
+    pub r#delay: Option<Box<super::super::types::networkservices::HttpRouteRuleActionFaultInjectionPolicyDelay>>,
 }

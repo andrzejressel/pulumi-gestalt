@@ -6,9 +6,9 @@ pub struct GetClusterNodePoolManagement {
     /// Whether the nodes will be automatically repaired. Enabled by default.
     #[builder(into)]
     #[serde(rename = "autoRepair")]
-    pub r#auto_repair: Box<bool>,
+    pub r#auto_repair: bool,
     /// Whether the nodes will be automatically upgraded. Enabled by default.
     #[builder(into)]
     #[serde(rename = "autoUpgrade")]
-    pub r#auto_upgrade: Box<bool>,
+    pub r#auto_upgrade: bool,
 }

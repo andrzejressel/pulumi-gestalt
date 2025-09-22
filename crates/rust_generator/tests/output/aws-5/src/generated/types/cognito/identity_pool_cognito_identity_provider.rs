@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IdentityPoolCognitoIdentityProvider {
     /// The client ID for the Amazon Cognito Identity User Pool.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<Option<String>>,
+    pub r#client_id: Option<String>,
     /// The provider name for an Amazon Cognito Identity User Pool.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "providerName")]
-    pub r#provider_name: Box<Option<String>>,
+    pub r#provider_name: Option<String>,
     /// Whether server-side token validation is enabled for the identity provider’s token or not.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serverSideTokenCheck")]
-    pub r#server_side_token_check: Box<Option<bool>>,
+    pub r#server_side_token_check: Option<bool>,
 }

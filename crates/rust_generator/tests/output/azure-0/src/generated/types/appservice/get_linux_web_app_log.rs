@@ -6,17 +6,17 @@ pub struct GetLinuxWebAppLog {
     /// A `application_logs` block as defined above.
     #[builder(into)]
     #[serde(rename = "applicationLogs")]
-    pub r#application_logs: Box<Vec<super::super::types::appservice::GetLinuxWebAppLogApplicationLog>>,
+    pub r#application_logs: Vec<super::super::types::appservice::GetLinuxWebAppLogApplicationLog>,
     /// Is Detailed Error Messaging enabled.
     #[builder(into)]
     #[serde(rename = "detailedErrorMessages")]
-    pub r#detailed_error_messages: Box<bool>,
+    pub r#detailed_error_messages: bool,
     /// Is Failed Request Tracing enabled.
     #[builder(into)]
     #[serde(rename = "failedRequestTracing")]
-    pub r#failed_request_tracing: Box<bool>,
+    pub r#failed_request_tracing: bool,
     /// An `http_logs` block as defined above.
     #[builder(into)]
     #[serde(rename = "httpLogs")]
-    pub r#http_logs: Box<Vec<super::super::types::appservice::GetLinuxWebAppLogHttpLog>>,
+    pub r#http_logs: Vec<super::super::types::appservice::GetLinuxWebAppLogHttpLog>,
 }

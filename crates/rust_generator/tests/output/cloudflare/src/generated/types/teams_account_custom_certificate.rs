@@ -6,12 +6,12 @@ pub struct TeamsAccountCustomCertificate {
     /// Whether TLS encryption should use a custom certificate.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// ID of custom certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "updatedAt")]
-    pub r#updated_at: Box<Option<String>>,
+    pub r#updated_at: Option<String>,
 }

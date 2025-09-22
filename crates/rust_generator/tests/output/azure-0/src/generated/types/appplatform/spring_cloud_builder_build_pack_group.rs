@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudBuilderBuildPackGroup {
     /// Specifies a list of the build pack's ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "buildPackIds")]
-    pub r#build_pack_ids: Box<Option<Vec<String>>>,
+    pub r#build_pack_ids: Option<Vec<String>>,
     /// The name which should be used for this build pack group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

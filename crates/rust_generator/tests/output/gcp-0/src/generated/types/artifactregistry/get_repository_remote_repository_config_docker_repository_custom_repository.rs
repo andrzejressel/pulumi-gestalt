@@ -6,5 +6,5 @@ pub struct GetRepositoryRemoteRepositoryConfigDockerRepositoryCustomRepository {
     /// Specific uri to the registry, e.g. '"https://registry-1.docker.io"'
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

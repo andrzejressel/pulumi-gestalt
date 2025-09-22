@@ -5,8 +5,8 @@
 pub struct DistributionOriginCustomHeader {
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

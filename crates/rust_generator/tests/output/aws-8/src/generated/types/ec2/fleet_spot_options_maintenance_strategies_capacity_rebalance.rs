@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetSpotOptionsMaintenanceStrategiesCapacityRebalance {
     /// The replacement strategy to use. Only available for fleets of `type` set to `maintain`. Valid values: `launch`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replacementStrategy")]
-    pub r#replacement_strategy: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#replacement_strategy: Option<String>,
+    #[builder(into)]
     #[serde(rename = "terminationDelay")]
-    pub r#termination_delay: Box<Option<i32>>,
+    pub r#termination_delay: Option<i32>,
 }

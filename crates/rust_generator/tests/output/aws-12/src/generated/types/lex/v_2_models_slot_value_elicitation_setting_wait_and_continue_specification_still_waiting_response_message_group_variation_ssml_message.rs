@@ -5,5 +5,5 @@
 pub struct V2ModelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationSsmlMessage {
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

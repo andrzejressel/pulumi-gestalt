@@ -5,5 +5,5 @@
 pub struct GetVirtualServiceSpecProviderVirtualNode {
     #[builder(into)]
     #[serde(rename = "virtualNodeName")]
-    pub r#virtual_node_name: Box<String>,
+    pub r#virtual_node_name: String,
 }

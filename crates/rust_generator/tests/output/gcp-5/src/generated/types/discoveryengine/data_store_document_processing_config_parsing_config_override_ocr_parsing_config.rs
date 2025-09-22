@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataStoreDocumentProcessingConfigParsingConfigOverrideOcrParsingConfig {
     /// If true, will use native text instead of OCR text on pages containing native text.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useNativeText")]
-    pub r#use_native_text: Box<Option<bool>>,
+    pub r#use_native_text: Option<bool>,
 }

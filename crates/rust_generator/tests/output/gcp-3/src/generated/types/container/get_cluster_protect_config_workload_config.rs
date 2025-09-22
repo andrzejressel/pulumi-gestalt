@@ -6,5 +6,5 @@ pub struct GetClusterProtectConfigWorkloadConfig {
     /// Sets which mode of auditing should be used for the cluster's workloads. Accepted values are DISABLED, BASIC.
     #[builder(into)]
     #[serde(rename = "auditMode")]
-    pub r#audit_mode: Box<String>,
+    pub r#audit_mode: String,
 }

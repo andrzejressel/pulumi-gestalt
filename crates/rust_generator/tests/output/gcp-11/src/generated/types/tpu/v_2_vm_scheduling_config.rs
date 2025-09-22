@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2VmSchedulingConfig {
     /// Defines whether the node is preemptible.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preemptible")]
-    pub r#preemptible: Box<Option<bool>>,
+    pub r#preemptible: Option<bool>,
     /// Whether the node is created under a reservation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reserved")]
-    pub r#reserved: Box<Option<bool>>,
+    pub r#reserved: Option<bool>,
 }

@@ -6,9 +6,9 @@ pub struct GetFunctionBuildConfigSource {
     /// If provided, get the source from this location in a Cloud Source Repository.
     #[builder(into)]
     #[serde(rename = "repoSources")]
-    pub r#repo_sources: Box<Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigSourceRepoSource>>,
+    pub r#repo_sources: Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigSourceRepoSource>,
     /// If provided, get the source from this location in Google Cloud Storage.
     #[builder(into)]
     #[serde(rename = "storageSources")]
-    pub r#storage_sources: Box<Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigSourceStorageSource>>,
+    pub r#storage_sources: Vec<super::super::types::cloudfunctionsv2::GetFunctionBuildConfigSourceStorageSource>,
 }

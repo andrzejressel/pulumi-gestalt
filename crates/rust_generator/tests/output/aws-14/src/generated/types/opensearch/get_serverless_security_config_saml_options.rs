@@ -6,17 +6,17 @@ pub struct GetServerlessSecurityConfigSamlOptions {
     /// Group attribute for this SAML integration.
     #[builder(into)]
     #[serde(rename = "groupAttribute")]
-    pub r#group_attribute: Box<String>,
+    pub r#group_attribute: String,
     /// The XML IdP metadata file generated from your identity provider.
     #[builder(into)]
     #[serde(rename = "metadata")]
-    pub r#metadata: Box<String>,
+    pub r#metadata: String,
     /// Session timeout, in minutes. Minimum is 5 minutes and maximum is 720 minutes (12 hours). Default is 60 minutes.
     #[builder(into)]
     #[serde(rename = "sessionTimeout")]
-    pub r#session_timeout: Box<i32>,
+    pub r#session_timeout: i32,
     /// User attribute for this SAML integration.
     #[builder(into)]
     #[serde(rename = "userAttribute")]
-    pub r#user_attribute: Box<String>,
+    pub r#user_attribute: String,
 }

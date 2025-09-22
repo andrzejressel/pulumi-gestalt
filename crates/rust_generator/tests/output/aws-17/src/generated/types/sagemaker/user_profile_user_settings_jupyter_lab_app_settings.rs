@@ -4,30 +4,30 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserProfileUserSettingsJupyterLabAppSettings {
     /// Indicates whether idle shutdown is activated for JupyterLab applications. see `app_lifecycle_management` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "appLifecycleManagement")]
-    pub r#app_lifecycle_management: Box<Option<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsAppLifecycleManagement>>,
+    pub r#app_lifecycle_management: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsAppLifecycleManagement>>,
     /// The lifecycle configuration that runs before the default lifecycle configuration. It can override changes made in the default lifecycle configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "builtInLifecycleConfigArn")]
-    pub r#built_in_lifecycle_config_arn: Box<Option<String>>,
+    pub r#built_in_lifecycle_config_arn: Option<String>,
     /// A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer application. see Code Repository below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "codeRepositories")]
-    pub r#code_repositories: Box<Option<Vec<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsCodeRepository>>>,
-    #[builder(into, default)]
+    pub r#code_repositories: Option<Vec<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsCodeRepository>>,
+    #[builder(into)]
     #[serde(rename = "customImages")]
-    pub r#custom_images: Box<Option<Vec<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsCustomImage>>>,
+    pub r#custom_images: Option<Vec<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsCustomImage>>,
     /// The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. see Default Resource Spec below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultResourceSpec")]
-    pub r#default_resource_spec: Box<Option<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsDefaultResourceSpec>>,
+    pub r#default_resource_spec: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsDefaultResourceSpec>>,
     /// The configuration parameters that specify the IAM roles assumed by the execution role of SageMaker (assumable roles) and the cluster instances or job execution environments (execution roles or runtime roles) to manage and access resources required for running Amazon EMR clusters or Amazon EMR Serverless applications. see `emr_settings` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emrSettings")]
-    pub r#emr_settings: Box<Option<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsEmrSettings>>,
+    pub r#emr_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsJupyterLabAppSettingsEmrSettings>>,
     /// The Amazon Resource Name (ARN) of the Lifecycle Configurations.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lifecycleConfigArns")]
-    pub r#lifecycle_config_arns: Box<Option<Vec<String>>>,
+    pub r#lifecycle_config_arns: Option<Vec<String>>,
 }

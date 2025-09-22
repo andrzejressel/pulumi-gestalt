@@ -6,5 +6,5 @@ pub struct VirtualServiceSpecProviderVirtualNode {
     /// Name of the virtual node that is acting as a service provider. Must be between 1 and 255 characters in length.
     #[builder(into)]
     #[serde(rename = "virtualNodeName")]
-    pub r#virtual_node_name: Box<String>,
+    pub r#virtual_node_name: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkflowTemplateJobHadoopJobLoggingConfig {
     /// The per-package log levels for the driver. This may include "root" package name to configure rootLogger. Examples: 'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "driverLogLevels")]
-    pub r#driver_log_levels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#driver_log_levels: Option<std::collections::HashMap<String, String>>,
 }

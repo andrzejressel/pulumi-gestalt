@@ -5,14 +5,14 @@
 pub struct CollaborationDataEncryptionMetadata {
     #[builder(into)]
     #[serde(rename = "allowClearText")]
-    pub r#allow_clear_text: Box<bool>,
+    pub r#allow_clear_text: bool,
     #[builder(into)]
     #[serde(rename = "allowDuplicates")]
-    pub r#allow_duplicates: Box<bool>,
+    pub r#allow_duplicates: bool,
     #[builder(into)]
     #[serde(rename = "allowJoinsOnColumnsWithDifferentNames")]
-    pub r#allow_joins_on_columns_with_different_names: Box<bool>,
+    pub r#allow_joins_on_columns_with_different_names: bool,
     #[builder(into)]
     #[serde(rename = "preserveNulls")]
-    pub r#preserve_nulls: Box<bool>,
+    pub r#preserve_nulls: bool,
 }

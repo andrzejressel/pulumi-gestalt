@@ -6,20 +6,20 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryYum {
     /// The location of the repository directory.
     #[builder(into)]
     #[serde(rename = "baseUrl")]
-    pub r#base_url: Box<String>,
+    pub r#base_url: String,
     /// The display name of the repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<Option<String>>,
+    pub r#display_name: Option<String>,
     /// URIs of GPG keys.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gpgKeys")]
-    pub r#gpg_keys: Box<Option<Vec<String>>>,
+    pub r#gpg_keys: Option<Vec<String>>,
     /// A one word, unique name for this repository. This is the
     /// `repo id` in the yum config file and also the `display_name` if
     /// `display_name` is omitted. This id is also used as the unique identifier
     /// when checking for resource conflicts.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

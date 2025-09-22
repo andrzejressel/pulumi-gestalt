@@ -6,9 +6,9 @@ pub struct ZeroTrustDlpProfileEntryPattern {
     /// The regex that defines the pattern.
     #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<String>,
+    pub r#regex: String,
     /// The validation algorithm to apply with this pattern.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "validation")]
-    pub r#validation: Box<Option<String>>,
+    pub r#validation: Option<String>,
 }

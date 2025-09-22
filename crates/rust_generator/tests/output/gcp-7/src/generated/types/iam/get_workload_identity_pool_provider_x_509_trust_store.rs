@@ -8,11 +8,11 @@ pub struct GetWorkloadIdentityPoolProviderX509TrustStore {
     /// IMPORTANT: Intermediate CAs are only supported when configuring x509 federation.
     #[builder(into)]
     #[serde(rename = "intermediateCas")]
-    pub r#intermediate_cas: Box<Vec<super::super::types::iam::GetWorkloadIdentityPoolProviderX509TrustStoreIntermediateCa>>,
+    pub r#intermediate_cas: Vec<super::super::types::iam::GetWorkloadIdentityPoolProviderX509TrustStoreIntermediateCa>,
     /// List of Trust Anchors to be used while performing validation
     /// against a given TrustStore. The incoming end entity's certificate
     /// must be chained up to one of the trust anchors here.
     #[builder(into)]
     #[serde(rename = "trustAnchors")]
-    pub r#trust_anchors: Box<Vec<super::super::types::iam::GetWorkloadIdentityPoolProviderX509TrustStoreTrustAnchor>>,
+    pub r#trust_anchors: Vec<super::super::types::iam::GetWorkloadIdentityPoolProviderX509TrustStoreTrustAnchor>,
 }

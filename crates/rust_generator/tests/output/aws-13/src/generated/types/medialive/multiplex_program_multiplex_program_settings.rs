@@ -6,17 +6,17 @@ pub struct MultiplexProgramMultiplexProgramSettings {
     /// Enum for preferred channel pipeline. Options are `CURRENTLY_ACTIVE`, `PIPELINE_0`, or `PIPELINE_1`.
     #[builder(into)]
     #[serde(rename = "preferredChannelPipeline")]
-    pub r#preferred_channel_pipeline: Box<String>,
+    pub r#preferred_channel_pipeline: String,
     /// Unique program number.
     #[builder(into)]
     #[serde(rename = "programNumber")]
-    pub r#program_number: Box<i32>,
+    pub r#program_number: i32,
     /// Service Descriptor. See Service Descriptor for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceDescriptor")]
-    pub r#service_descriptor: Box<Option<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsServiceDescriptor>>,
+    pub r#service_descriptor: Option<Box<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsServiceDescriptor>>,
     /// Video settings. See Video Settings for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "videoSettings")]
-    pub r#video_settings: Box<Option<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsVideoSettings>>,
+    pub r#video_settings: Option<Box<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsVideoSettings>>,
 }

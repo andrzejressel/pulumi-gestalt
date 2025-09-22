@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegionCommitmentResource {
     /// Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acceleratorType")]
-    pub r#accelerator_type: Box<Option<String>>,
+    pub r#accelerator_type: Option<String>,
     /// The amount of the resource purchased (in a type-dependent unit,
     /// such as bytes). For vCPUs, this can just be an integer. For memory,
     /// this must be provided in MB. Memory must be a multiple of 256 MB,
     /// with up to 6.5GB of memory per every vCPU.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "amount")]
-    pub r#amount: Box<Option<String>>,
+    pub r#amount: Option<String>,
     /// Type of resource for which this commitment applies.
     /// Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

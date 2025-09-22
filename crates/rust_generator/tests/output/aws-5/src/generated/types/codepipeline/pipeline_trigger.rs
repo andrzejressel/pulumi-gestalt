@@ -10,5 +10,5 @@ pub struct PipelineTrigger {
     /// The source provider for the event. Possible value is `CodeStarSourceConnection`.
     #[builder(into)]
     #[serde(rename = "providerType")]
-    pub r#provider_type: Box<String>,
+    pub r#provider_type: String,
 }

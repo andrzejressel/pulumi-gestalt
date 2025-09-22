@@ -6,25 +6,25 @@ pub struct GetActionGroupEventHubReceiver {
     /// The name of the specific Event Hub queue.
     #[builder(into)]
     #[serde(rename = "eventHubName")]
-    pub r#event_hub_name: Box<String>,
+    pub r#event_hub_name: String,
     /// The namespace name of the Event Hub.
     #[builder(into)]
     #[serde(rename = "eventHubNamespace")]
-    pub r#event_hub_namespace: Box<String>,
+    pub r#event_hub_namespace: String,
     /// Specifies the name of the Action Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The ID for the subscription containing this Event Hub. Default to the subscription ID of the Action Group.
     #[builder(into)]
     #[serde(rename = "subscriptionId")]
-    pub r#subscription_id: Box<String>,
+    pub r#subscription_id: String,
     /// The Tenant ID for the subscription containing this Event Hub.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
     /// Indicates whether to use common alert schema.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useCommonAlertSchema")]
-    pub r#use_common_alert_schema: Box<Option<bool>>,
+    pub r#use_common_alert_schema: Option<bool>,
 }

@@ -6,5 +6,5 @@ pub struct RuleGroupRuleActionChallengeCustomRequestHandling {
     /// The `insert_header` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
     #[builder(into)]
     #[serde(rename = "insertHeaders")]
-    pub r#insert_headers: Box<Vec<super::super::types::wafv2::RuleGroupRuleActionChallengeCustomRequestHandlingInsertHeader>>,
+    pub r#insert_headers: Vec<super::super::types::wafv2::RuleGroupRuleActionChallengeCustomRequestHandlingInsertHeader>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NodePoolNetworkConfigAdditionalNodeNetworkConfig {
     /// Name of the VPC where the additional interface belongs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<Option<String>>,
+    pub r#network: Option<String>,
     /// Name of the subnetwork where the additional interface belongs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetwork")]
-    pub r#subnetwork: Box<Option<String>>,
+    pub r#subnetwork: Option<String>,
 }

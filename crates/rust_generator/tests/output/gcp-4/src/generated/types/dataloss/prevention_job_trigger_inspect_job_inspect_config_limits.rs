@@ -5,15 +5,15 @@
 pub struct PreventionJobTriggerInspectJobInspectConfigLimits {
     /// Configuration of findings limit given for specified infoTypes.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxFindingsPerInfoTypes")]
-    pub r#max_findings_per_info_types: Box<Option<Vec<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoType>>>,
+    pub r#max_findings_per_info_types: Option<Vec<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoType>>,
     /// Max number of findings that will be returned for each item scanned. The maximum returned is 2000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxFindingsPerItem")]
-    pub r#max_findings_per_item: Box<Option<i32>>,
+    pub r#max_findings_per_item: Option<i32>,
     /// Max number of findings that will be returned per request/job. The maximum returned is 2000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxFindingsPerRequest")]
-    pub r#max_findings_per_request: Box<Option<i32>>,
+    pub r#max_findings_per_request: Option<i32>,
 }

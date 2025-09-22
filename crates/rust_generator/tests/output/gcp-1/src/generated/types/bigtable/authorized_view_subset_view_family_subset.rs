@@ -6,14 +6,14 @@ pub struct AuthorizedViewSubsetViewFamilySubset {
     /// Name of the column family to be included in the authorized view. The specified column family must exist in the parent table of this authorized view.
     #[builder(into)]
     #[serde(rename = "familyName")]
-    pub r#family_name: Box<String>,
+    pub r#family_name: String,
     /// A list of Base64-encoded prefixes for qualifiers of the column family to be included in the authorized view.
     /// Every qualifier starting with one of these prefixes is included in the authorized view. To provide access to all qualifiers, include the empty string as a prefix ("").
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "qualifierPrefixes")]
-    pub r#qualifier_prefixes: Box<Option<Vec<String>>>,
+    pub r#qualifier_prefixes: Option<Vec<String>>,
     /// A list of Base64-encoded individual exact column qualifiers of the column family to be included in the authorized view.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "qualifiers")]
-    pub r#qualifiers: Box<Option<Vec<String>>>,
+    pub r#qualifiers: Option<Vec<String>>,
 }

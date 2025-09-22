@@ -6,5 +6,5 @@ pub struct GetWorkloadIdentityPoolProviderSaml {
     /// SAML Identity provider configuration metadata xml doc.
     #[builder(into)]
     #[serde(rename = "idpMetadataXml")]
-    pub r#idp_metadata_xml: Box<String>,
+    pub r#idp_metadata_xml: String,
 }

@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TopicInputMappingFields {
     /// Specifies the data version of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataVersion")]
-    pub r#data_version: Box<Option<String>>,
+    pub r#data_version: Option<String>,
     /// Specifies the event time of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventTime")]
-    pub r#event_time: Box<Option<String>>,
+    pub r#event_time: Option<String>,
     /// Specifies the event type of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventType")]
-    pub r#event_type: Box<Option<String>>,
+    pub r#event_type: Option<String>,
     /// Specifies the id of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Specifies the subject of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subject")]
-    pub r#subject: Box<Option<String>>,
+    pub r#subject: Option<String>,
     /// Specifies the topic of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "topic")]
-    pub r#topic: Box<Option<String>>,
+    pub r#topic: Option<String>,
 }

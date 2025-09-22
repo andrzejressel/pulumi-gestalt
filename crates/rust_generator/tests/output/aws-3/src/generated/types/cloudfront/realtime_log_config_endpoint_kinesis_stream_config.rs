@@ -7,9 +7,9 @@ pub struct RealtimeLogConfigEndpointKinesisStreamConfig {
     /// See the [AWS documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role) for more information.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// The ARN of the Kinesis data stream.
     #[builder(into)]
     #[serde(rename = "streamArn")]
-    pub r#stream_arn: Box<String>,
+    pub r#stream_arn: String,
 }

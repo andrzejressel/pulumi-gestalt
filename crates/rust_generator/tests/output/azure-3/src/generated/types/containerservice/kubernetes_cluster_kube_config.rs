@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubernetesClusterKubeConfig {
     /// Base64 encoded public certificate used by clients to authenticate to the Kubernetes cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientCertificate")]
-    pub r#client_certificate: Box<Option<String>>,
+    pub r#client_certificate: Option<String>,
     /// Base64 encoded private key used by clients to authenticate to the Kubernetes cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientKey")]
-    pub r#client_key: Box<Option<String>>,
+    pub r#client_key: Option<String>,
     /// Base64 encoded public CA certificate used as the root of trust for the Kubernetes cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clusterCaCertificate")]
-    pub r#cluster_ca_certificate: Box<Option<String>>,
+    pub r#cluster_ca_certificate: Option<String>,
     /// The Kubernetes cluster server host.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<Option<String>>,
+    pub r#host: Option<String>,
     /// A password or token used to authenticate to the Kubernetes cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// A username used to authenticate to the Kubernetes cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

@@ -10,13 +10,13 @@ pub struct BackupPolicyDiskRetentionRule {
     /// Duration of deletion after given timespan. It should follow `ISO 8601` duration format. Changing this forces a new Backup Policy Disk to be created.
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<String>,
+    pub r#duration: String,
     /// The name which should be used for this retention rule. Changing this forces a new Backup Policy Disk to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Retention Tag priority. Changing this forces a new Backup Policy Disk to be created.
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
 }

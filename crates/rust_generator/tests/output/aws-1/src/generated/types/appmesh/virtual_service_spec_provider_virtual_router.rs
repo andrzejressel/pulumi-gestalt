@@ -6,5 +6,5 @@ pub struct VirtualServiceSpecProviderVirtualRouter {
     /// Name of the virtual router that is acting as a service provider. Must be between 1 and 255 characters in length.
     #[builder(into)]
     #[serde(rename = "virtualRouterName")]
-    pub r#virtual_router_name: Box<String>,
+    pub r#virtual_router_name: String,
 }

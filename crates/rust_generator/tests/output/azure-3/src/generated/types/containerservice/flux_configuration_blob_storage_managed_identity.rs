@@ -6,5 +6,5 @@ pub struct FluxConfigurationBlobStorageManagedIdentity {
     /// Specifies the client ID for authenticating a Managed Identity.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
 }

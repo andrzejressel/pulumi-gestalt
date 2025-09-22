@@ -5,7 +5,7 @@
 pub struct V2ModelsSlotTypeCompositeSlotTypeSetting {
     /// Sub slots in the composite slot.
     /// See `sub_slots` argument reference below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subSlots")]
-    pub r#sub_slots: Box<Option<Vec<super::super::types::lex::V2ModelsSlotTypeCompositeSlotTypeSettingSubSlot>>>,
+    pub r#sub_slots: Option<Vec<super::super::types::lex::V2ModelsSlotTypeCompositeSlotTypeSettingSubSlot>>,
 }

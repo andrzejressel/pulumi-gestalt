@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipeTargetParametersBatchJobParametersArrayProperties {
     /// The size of the array, if this is an array batch job. Minimum value of 2. Maximum value of 10,000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<Option<i32>>,
+    pub r#size: Option<i32>,
 }

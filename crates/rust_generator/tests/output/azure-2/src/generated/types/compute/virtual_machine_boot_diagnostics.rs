@@ -6,11 +6,11 @@ pub struct VirtualMachineBootDiagnostics {
     /// Should Boot Diagnostics be enabled for this Virtual Machine?
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The Storage Account's Blob Endpoint which should hold the virtual machine's diagnostic files.
     /// 
     /// > **NOTE:** This needs to be the root of a Storage Account and not a Storage Container.
     #[builder(into)]
     #[serde(rename = "storageUri")]
-    pub r#storage_uri: Box<String>,
+    pub r#storage_uri: String,
 }

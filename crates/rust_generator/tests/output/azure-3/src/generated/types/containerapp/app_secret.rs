@@ -6,23 +6,23 @@ pub struct AppSecret {
     /// The identity to use for accessing the Key Vault secret reference. This can either be the Resource ID of a User Assigned Identity, or `System` for the System Assigned Identity.
     /// 
     /// !> **Note:** `identity` must be used together with `key_vault_secret_id`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identity")]
-    pub r#identity: Box<Option<String>>,
+    pub r#identity: Option<String>,
     /// The ID of a Key Vault secret. This can be a versioned or version-less ID.
     /// 
     /// !> **Note:** When using `key_vault_secret_id`, `ignore_changes` should be used to ignore any changes to `value`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyVaultSecretId")]
-    pub r#key_vault_secret_id: Box<Option<String>>,
+    pub r#key_vault_secret_id: Option<String>,
     /// The secret name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value for this secret.
     /// 
     /// !> **Note:** `value` will be ignored if `key_vault_secret_id` and `identity` are provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

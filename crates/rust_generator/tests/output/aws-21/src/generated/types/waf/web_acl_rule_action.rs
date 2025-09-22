@@ -6,5 +6,5 @@ pub struct WebAclRuleAction {
     /// valid values are: `BLOCK`, `ALLOW`, or `COUNT`
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

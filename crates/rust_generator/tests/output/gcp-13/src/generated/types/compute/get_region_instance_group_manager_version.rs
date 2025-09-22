@@ -6,13 +6,13 @@ pub struct GetRegionInstanceGroupManagerVersion {
     /// The full URL to an instance template from which all new instances of this version will be created.
     #[builder(into)]
     #[serde(rename = "instanceTemplate")]
-    pub r#instance_template: Box<String>,
+    pub r#instance_template: String,
     /// The name of the instance group. Either `name` or `self_link` must be provided.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The number of instances calculated as a fixed number or a percentage depending on the settings.
     #[builder(into)]
     #[serde(rename = "targetSizes")]
-    pub r#target_sizes: Box<Vec<super::super::types::compute::GetRegionInstanceGroupManagerVersionTargetSize>>,
+    pub r#target_sizes: Vec<super::super::types::compute::GetRegionInstanceGroupManagerVersionTargetSize>,
 }

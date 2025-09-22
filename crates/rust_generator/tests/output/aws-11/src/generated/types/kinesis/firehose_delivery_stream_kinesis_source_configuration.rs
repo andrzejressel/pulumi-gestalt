@@ -6,9 +6,9 @@ pub struct FirehoseDeliveryStreamKinesisSourceConfiguration {
     /// The kinesis stream used as the source of the firehose delivery stream.
     #[builder(into)]
     #[serde(rename = "kinesisStreamArn")]
-    pub r#kinesis_stream_arn: Box<String>,
+    pub r#kinesis_stream_arn: String,
     /// The ARN of the role that provides access to the source Kinesis stream.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
 }

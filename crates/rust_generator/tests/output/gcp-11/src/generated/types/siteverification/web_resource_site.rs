@@ -9,10 +9,10 @@ pub struct WebResourceSite {
     /// - - -
     #[builder(into)]
     #[serde(rename = "identifier")]
-    pub r#identifier: Box<String>,
+    pub r#identifier: String,
     /// The type of resource to be verified.
     /// Possible values are: `INET_DOMAIN`, `SITE`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

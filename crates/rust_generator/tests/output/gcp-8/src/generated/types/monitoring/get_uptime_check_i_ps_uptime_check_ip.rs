@@ -9,14 +9,14 @@ pub struct GetUptimeCheckIPsUptimeCheckIp {
     /// IPv4 or IPv6 format.
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
     /// A more specific location within the region that typically encodes a particular city/town/metro
     /// (and its containing state/province or country) within the broader umbrella region category.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// A broad region category in which the IP address is located.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
 }

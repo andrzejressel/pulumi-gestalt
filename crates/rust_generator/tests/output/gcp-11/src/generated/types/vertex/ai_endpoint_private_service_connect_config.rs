@@ -6,13 +6,13 @@ pub struct AiEndpointPrivateServiceConnectConfig {
     /// Required. If true, expose the IndexEndpoint via private service connect.
     #[builder(into)]
     #[serde(rename = "enablePrivateServiceConnect")]
-    pub r#enable_private_service_connect: Box<bool>,
+    pub r#enable_private_service_connect: bool,
     /// If set to true, enable secure private service connect with IAM authorization. Otherwise, private service connect will be done without authorization. Note latency will be slightly increased if authorization is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableSecurePrivateServiceConnect")]
-    pub r#enable_secure_private_service_connect: Box<Option<bool>>,
+    pub r#enable_secure_private_service_connect: Option<bool>,
     /// A list of Projects from which the forwarding rule will target the service attachment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectAllowlists")]
-    pub r#project_allowlists: Box<Option<Vec<String>>>,
+    pub r#project_allowlists: Option<Vec<String>>,
 }

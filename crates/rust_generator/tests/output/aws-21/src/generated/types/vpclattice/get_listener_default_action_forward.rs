@@ -5,5 +5,5 @@
 pub struct GetListenerDefaultActionForward {
     #[builder(into)]
     #[serde(rename = "targetGroups")]
-    pub r#target_groups: Box<Vec<super::super::types::vpclattice::GetListenerDefaultActionForwardTargetGroup>>,
+    pub r#target_groups: Vec<super::super::types::vpclattice::GetListenerDefaultActionForwardTargetGroup>,
 }

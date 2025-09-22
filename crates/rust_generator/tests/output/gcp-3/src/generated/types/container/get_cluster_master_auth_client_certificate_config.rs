@@ -6,5 +6,5 @@ pub struct GetClusterMasterAuthClientCertificateConfig {
     /// Whether client certificate authorization is enabled for this cluster.
     #[builder(into)]
     #[serde(rename = "issueClientCertificate")]
-    pub r#issue_client_certificate: Box<bool>,
+    pub r#issue_client_certificate: bool,
 }

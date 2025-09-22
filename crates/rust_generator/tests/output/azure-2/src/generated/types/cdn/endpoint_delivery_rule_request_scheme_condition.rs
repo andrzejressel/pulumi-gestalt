@@ -6,13 +6,13 @@ pub struct EndpointDeliveryRuleRequestSchemeCondition {
     /// Valid values are `HTTP` and `HTTPS`.
     #[builder(into)]
     #[serde(rename = "matchValues")]
-    pub r#match_values: Box<Vec<String>>,
+    pub r#match_values: Vec<String>,
     /// Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "negateCondition")]
-    pub r#negate_condition: Box<Option<bool>>,
+    pub r#negate_condition: Option<bool>,
     /// Valid values are `Equal`. Defaults to `Equal`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<Option<String>>,
+    pub r#operator: Option<String>,
 }

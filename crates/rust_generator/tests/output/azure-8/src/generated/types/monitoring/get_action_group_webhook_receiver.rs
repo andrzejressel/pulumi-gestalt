@@ -5,17 +5,17 @@
 pub struct GetActionGroupWebhookReceiver {
     #[builder(into)]
     #[serde(rename = "aadAuths")]
-    pub r#aad_auths: Box<Vec<super::super::types::monitoring::GetActionGroupWebhookReceiverAadAuth>>,
+    pub r#aad_auths: Vec<super::super::types::monitoring::GetActionGroupWebhookReceiverAadAuth>,
     /// Specifies the name of the Action Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The URI where webhooks should be sent.
     #[builder(into)]
     #[serde(rename = "serviceUri")]
-    pub r#service_uri: Box<String>,
+    pub r#service_uri: String,
     /// Indicates whether to use common alert schema.
     #[builder(into)]
     #[serde(rename = "useCommonAlertSchema")]
-    pub r#use_common_alert_schema: Box<bool>,
+    pub r#use_common_alert_schema: bool,
 }

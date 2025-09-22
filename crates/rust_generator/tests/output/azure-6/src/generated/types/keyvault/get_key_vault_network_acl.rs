@@ -5,14 +5,14 @@
 pub struct GetKeyVaultNetworkAcl {
     #[builder(into)]
     #[serde(rename = "bypass")]
-    pub r#bypass: Box<String>,
+    pub r#bypass: String,
     #[builder(into)]
     #[serde(rename = "defaultAction")]
-    pub r#default_action: Box<String>,
+    pub r#default_action: String,
     #[builder(into)]
     #[serde(rename = "ipRules")]
-    pub r#ip_rules: Box<Vec<String>>,
+    pub r#ip_rules: Vec<String>,
     #[builder(into)]
     #[serde(rename = "virtualNetworkSubnetIds")]
-    pub r#virtual_network_subnet_ids: Box<Vec<String>>,
+    pub r#virtual_network_subnet_ids: Vec<String>,
 }

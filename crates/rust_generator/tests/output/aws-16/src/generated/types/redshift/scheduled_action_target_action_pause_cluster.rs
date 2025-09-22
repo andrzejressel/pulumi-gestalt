@@ -6,5 +6,5 @@ pub struct ScheduledActionTargetActionPauseCluster {
     /// The identifier of the cluster to be paused.
     #[builder(into)]
     #[serde(rename = "clusterIdentifier")]
-    pub r#cluster_identifier: Box<String>,
+    pub r#cluster_identifier: String,
 }

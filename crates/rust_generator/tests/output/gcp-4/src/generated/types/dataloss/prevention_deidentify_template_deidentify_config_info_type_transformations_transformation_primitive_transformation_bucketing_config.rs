@@ -6,7 +6,7 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTr
     /// Set of buckets. Ranges must be non-overlapping.
     /// Bucket is represented as a range, along with replacement values.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "buckets")]
-    pub r#buckets: Box<Option<Vec<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucket>>>,
+    pub r#buckets: Option<Vec<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucket>>,
 }

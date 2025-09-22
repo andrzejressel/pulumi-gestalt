@@ -3,22 +3,22 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInsightsAnalysisForwardPathComponentSecurityGroupRule {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cidr")]
-    pub r#cidr: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#cidr: Option<String>,
+    #[builder(into)]
     #[serde(rename = "direction")]
-    pub r#direction: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#direction: Option<String>,
+    #[builder(into)]
     #[serde(rename = "portRanges")]
-    pub r#port_ranges: Box<Option<Vec<super::super::types::ec2::NetworkInsightsAnalysisForwardPathComponentSecurityGroupRulePortRange>>>,
-    #[builder(into, default)]
+    pub r#port_ranges: Option<Vec<super::super::types::ec2::NetworkInsightsAnalysisForwardPathComponentSecurityGroupRulePortRange>>,
+    #[builder(into)]
     #[serde(rename = "prefixListId")]
-    pub r#prefix_list_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#prefix_list_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#protocol: Option<String>,
+    #[builder(into)]
     #[serde(rename = "securityGroupId")]
-    pub r#security_group_id: Box<Option<String>>,
+    pub r#security_group_id: Option<String>,
 }

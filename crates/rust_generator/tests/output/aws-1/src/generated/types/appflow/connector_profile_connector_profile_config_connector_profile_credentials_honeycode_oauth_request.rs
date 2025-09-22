@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycodeOauthRequest {
     /// The code provided by the connector when it has been authenticated via the connected app.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authCode")]
-    pub r#auth_code: Box<Option<String>>,
+    pub r#auth_code: Option<String>,
     /// The URL to which the authentication server redirects the browser after authorization has been granted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "redirectUri")]
-    pub r#redirect_uri: Box<Option<String>>,
+    pub r#redirect_uri: Option<String>,
 }

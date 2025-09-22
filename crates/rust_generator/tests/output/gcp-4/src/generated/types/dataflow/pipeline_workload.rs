@@ -6,13 +6,13 @@ pub struct PipelineWorkload {
     /// Template information and additional parameters needed to launch a Dataflow job using the flex launch API.
     /// https://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#launchflextemplaterequest
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataflowFlexTemplateRequest")]
-    pub r#dataflow_flex_template_request: Box<Option<super::super::types::dataflow::PipelineWorkloadDataflowFlexTemplateRequest>>,
+    pub r#dataflow_flex_template_request: Option<Box<super::super::types::dataflow::PipelineWorkloadDataflowFlexTemplateRequest>>,
     /// Template information and additional parameters needed to launch a Dataflow job using the standard launch API.
     /// https://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#launchtemplaterequest
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataflowLaunchTemplateRequest")]
-    pub r#dataflow_launch_template_request: Box<Option<super::super::types::dataflow::PipelineWorkloadDataflowLaunchTemplateRequest>>,
+    pub r#dataflow_launch_template_request: Option<Box<super::super::types::dataflow::PipelineWorkloadDataflowLaunchTemplateRequest>>,
 }

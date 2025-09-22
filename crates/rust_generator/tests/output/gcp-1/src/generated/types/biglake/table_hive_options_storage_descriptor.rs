@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TableHiveOptionsStorageDescriptor {
     /// The fully qualified Java class name of the input format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputFormat")]
-    pub r#input_format: Box<Option<String>>,
+    pub r#input_format: Option<String>,
     /// Cloud Storage folder URI where the table data is stored, starting with "gs://".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "locationUri")]
-    pub r#location_uri: Box<Option<String>>,
+    pub r#location_uri: Option<String>,
     /// The fully qualified Java class name of the output format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "outputFormat")]
-    pub r#output_format: Box<Option<String>>,
+    pub r#output_format: Option<String>,
 }

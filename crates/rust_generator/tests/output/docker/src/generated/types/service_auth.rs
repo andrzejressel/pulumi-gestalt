@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceAuth {
     /// The password
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// The address of the server for the authentication
     #[builder(into)]
     #[serde(rename = "serverAddress")]
-    pub r#server_address: Box<String>,
+    pub r#server_address: String,
     /// The username
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

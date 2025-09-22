@@ -6,5 +6,5 @@ pub struct DistributionOriginS3OriginConfig {
     /// The CloudFront origin access identity to associate with the origin.
     #[builder(into)]
     #[serde(rename = "originAccessIdentity")]
-    pub r#origin_access_identity: Box<String>,
+    pub r#origin_access_identity: String,
 }

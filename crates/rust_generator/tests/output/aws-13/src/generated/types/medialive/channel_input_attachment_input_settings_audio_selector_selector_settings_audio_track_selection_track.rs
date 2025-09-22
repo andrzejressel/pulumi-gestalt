@@ -6,5 +6,5 @@ pub struct ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsAudio
     /// 1-based integer value that maps to a specific audio track.
     #[builder(into)]
     #[serde(rename = "track")]
-    pub r#track: Box<i32>,
+    pub r#track: i32,
 }

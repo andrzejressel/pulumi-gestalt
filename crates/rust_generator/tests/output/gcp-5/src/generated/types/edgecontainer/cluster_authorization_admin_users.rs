@@ -8,5 +8,5 @@ pub struct ClusterAuthorizationAdminUsers {
     /// - - -
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

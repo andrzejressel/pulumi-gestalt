@@ -5,8 +5,8 @@
 pub struct GetTableReplica {
     #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<String>,
+    pub r#kms_key_arn: String,
     #[builder(into)]
     #[serde(rename = "regionName")]
-    pub r#region_name: Box<String>,
+    pub r#region_name: String,
 }

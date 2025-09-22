@@ -6,9 +6,9 @@ pub struct GetClusterNodePoolNodeConfigContainerdConfigPrivateRegistryAccessConf
     /// List of fully-qualified-domain-names. IPv4s and port specification are supported.
     #[builder(into)]
     #[serde(rename = "fqdns")]
-    pub r#fqdns: Box<Vec<String>>,
+    pub r#fqdns: Vec<String>,
     /// Parameters for configuring a certificate hosted in GCP SecretManager.
     #[builder(into)]
     #[serde(rename = "gcpSecretManagerCertificateConfigs")]
-    pub r#gcp_secret_manager_certificate_configs: Box<Vec<super::super::types::container::GetClusterNodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigGcpSecretManagerCertificateConfig>>,
+    pub r#gcp_secret_manager_certificate_configs: Vec<super::super::types::container::GetClusterNodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfigGcpSecretManagerCertificateConfig>,
 }

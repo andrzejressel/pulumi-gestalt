@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GlobalReplicationGroupGlobalNodeGroup {
     /// The ID of the global node group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "globalNodeGroupId")]
-    pub r#global_node_group_id: Box<Option<String>>,
+    pub r#global_node_group_id: Option<String>,
     /// The keyspace for this node group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "slots")]
-    pub r#slots: Box<Option<String>>,
+    pub r#slots: Option<String>,
 }

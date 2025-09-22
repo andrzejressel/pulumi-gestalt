@@ -10,5 +10,5 @@ pub struct RuleGroupRuleGroupRuleVariablesIpSet {
     /// A unique alphanumeric string to identify the `ip_set`.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
 }

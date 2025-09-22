@@ -6,21 +6,21 @@ pub struct GetFunctionAppSourceControl {
     /// The branch of the remote repository in use.
     #[builder(into)]
     #[serde(rename = "branch")]
-    pub r#branch: Box<String>,
+    pub r#branch: String,
     /// Limits to manual integration.
     #[builder(into)]
     #[serde(rename = "manualIntegration")]
-    pub r#manual_integration: Box<bool>,
+    pub r#manual_integration: bool,
     /// The URL of the source code repository.
     #[builder(into)]
     #[serde(rename = "repoUrl")]
-    pub r#repo_url: Box<String>,
+    pub r#repo_url: String,
     /// Is roll-back enabled for the repository.
     #[builder(into)]
     #[serde(rename = "rollbackEnabled")]
-    pub r#rollback_enabled: Box<bool>,
+    pub r#rollback_enabled: bool,
     /// Uses Mercurial if `true`, otherwise uses Git.
     #[builder(into)]
     #[serde(rename = "useMercurial")]
-    pub r#use_mercurial: Box<bool>,
+    pub r#use_mercurial: bool,
 }

@@ -6,9 +6,9 @@ pub struct IntegrationRuntimeSsisPackageStore {
     /// Name of the Linked Service to associate with the packages.
     #[builder(into)]
     #[serde(rename = "linkedServiceName")]
-    pub r#linked_service_name: Box<String>,
+    pub r#linked_service_name: String,
     /// Name of the package store.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

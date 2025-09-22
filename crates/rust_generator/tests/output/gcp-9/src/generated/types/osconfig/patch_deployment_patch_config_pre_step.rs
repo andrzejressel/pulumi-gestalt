@@ -5,12 +5,12 @@
 pub struct PatchDeploymentPatchConfigPreStep {
     /// The ExecStepConfig for all Linux VMs targeted by the PatchJob.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "linuxExecStepConfig")]
-    pub r#linux_exec_step_config: Box<Option<super::super::types::osconfig::PatchDeploymentPatchConfigPreStepLinuxExecStepConfig>>,
+    pub r#linux_exec_step_config: Option<Box<super::super::types::osconfig::PatchDeploymentPatchConfigPreStepLinuxExecStepConfig>>,
     /// The ExecStepConfig for all Windows VMs targeted by the PatchJob.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "windowsExecStepConfig")]
-    pub r#windows_exec_step_config: Box<Option<super::super::types::osconfig::PatchDeploymentPatchConfigPreStepWindowsExecStepConfig>>,
+    pub r#windows_exec_step_config: Option<Box<super::super::types::osconfig::PatchDeploymentPatchConfigPreStepWindowsExecStepConfig>>,
 }

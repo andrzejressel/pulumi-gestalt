@@ -6,9 +6,9 @@ pub struct RegistryNetworkRuleSetIpRule {
     /// The behaviour for requests matching this rule. At this time the only supported value is `Allow`
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// The CIDR block from which requests will match the rule.
     #[builder(into)]
     #[serde(rename = "ipRange")]
-    pub r#ip_range: Box<String>,
+    pub r#ip_range: String,
 }

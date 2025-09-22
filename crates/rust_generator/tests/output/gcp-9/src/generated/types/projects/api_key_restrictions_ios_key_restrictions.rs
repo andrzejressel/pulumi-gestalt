@@ -6,5 +6,5 @@ pub struct ApiKeyRestrictionsIosKeyRestrictions {
     /// A list of bundle IDs that are allowed when making API calls with this key.
     #[builder(into)]
     #[serde(rename = "allowedBundleIds")]
-    pub r#allowed_bundle_ids: Box<Vec<String>>,
+    pub r#allowed_bundle_ids: Vec<String>,
 }

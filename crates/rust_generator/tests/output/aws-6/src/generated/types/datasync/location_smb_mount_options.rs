@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LocationSmbMountOptions {
     /// The specific SMB version that you want DataSync to use for mounting your SMB share. Valid values: `AUTOMATIC`, `SMB2`, and `SMB3`. Default: `AUTOMATIC`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

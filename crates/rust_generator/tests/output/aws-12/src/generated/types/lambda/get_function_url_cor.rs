@@ -5,20 +5,20 @@
 pub struct GetFunctionUrlCor {
     #[builder(into)]
     #[serde(rename = "allowCredentials")]
-    pub r#allow_credentials: Box<bool>,
+    pub r#allow_credentials: bool,
     #[builder(into)]
     #[serde(rename = "allowHeaders")]
-    pub r#allow_headers: Box<Vec<String>>,
+    pub r#allow_headers: Vec<String>,
     #[builder(into)]
     #[serde(rename = "allowMethods")]
-    pub r#allow_methods: Box<Vec<String>>,
+    pub r#allow_methods: Vec<String>,
     #[builder(into)]
     #[serde(rename = "allowOrigins")]
-    pub r#allow_origins: Box<Vec<String>>,
+    pub r#allow_origins: Vec<String>,
     #[builder(into)]
     #[serde(rename = "exposeHeaders")]
-    pub r#expose_headers: Box<Vec<String>>,
+    pub r#expose_headers: Vec<String>,
     #[builder(into)]
     #[serde(rename = "maxAge")]
-    pub r#max_age: Box<i32>,
+    pub r#max_age: i32,
 }

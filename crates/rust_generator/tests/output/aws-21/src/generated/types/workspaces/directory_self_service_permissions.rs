@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DirectorySelfServicePermissions {
     /// Whether WorkSpaces directory users can change the compute type (bundle) for their workspace. Default `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "changeComputeType")]
-    pub r#change_compute_type: Box<Option<bool>>,
+    pub r#change_compute_type: Option<bool>,
     /// Whether WorkSpaces directory users can increase the volume size of the drives on their workspace. Default `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "increaseVolumeSize")]
-    pub r#increase_volume_size: Box<Option<bool>>,
+    pub r#increase_volume_size: Option<bool>,
     /// Whether WorkSpaces directory users can rebuild the operating system of a workspace to its original state. Default `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rebuildWorkspace")]
-    pub r#rebuild_workspace: Box<Option<bool>>,
+    pub r#rebuild_workspace: Option<bool>,
     /// Whether WorkSpaces directory users can restart their workspace. Default `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "restartWorkspace")]
-    pub r#restart_workspace: Box<Option<bool>>,
+    pub r#restart_workspace: Option<bool>,
     /// Whether WorkSpaces directory users can switch the running mode of their workspace. Default `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "switchRunningMode")]
-    pub r#switch_running_mode: Box<Option<bool>>,
+    pub r#switch_running_mode: Option<bool>,
 }

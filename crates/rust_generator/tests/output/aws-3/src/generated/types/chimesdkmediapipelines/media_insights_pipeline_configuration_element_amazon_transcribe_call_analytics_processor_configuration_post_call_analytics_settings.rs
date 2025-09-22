@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MediaInsightsPipelineConfigurationElementAmazonTranscribeCallAnalyticsProcessorConfigurationPostCallAnalyticsSettings {
     /// Should output be redacted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "contentRedactionOutput")]
-    pub r#content_redaction_output: Box<Option<String>>,
+    pub r#content_redaction_output: Option<String>,
     /// ARN of the role used by AWS Transcribe to upload your post call analysis.
     #[builder(into)]
     #[serde(rename = "dataAccessRoleArn")]
-    pub r#data_access_role_arn: Box<String>,
+    pub r#data_access_role_arn: String,
     /// ID of the KMS key used to encrypt the output.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "outputEncryptionKmsKeyId")]
-    pub r#output_encryption_kms_key_id: Box<Option<String>>,
+    pub r#output_encryption_kms_key_id: Option<String>,
     /// The Amazon S3 location where you want your Call Analytics post-call transcription output stored.
     #[builder(into)]
     #[serde(rename = "outputLocation")]
-    pub r#output_location: Box<String>,
+    pub r#output_location: String,
 }

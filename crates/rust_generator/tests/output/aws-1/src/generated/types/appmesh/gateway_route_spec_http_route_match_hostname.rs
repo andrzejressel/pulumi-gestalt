@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GatewayRouteSpecHttpRouteMatchHostname {
     /// Exact host name to match on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exact")]
-    pub r#exact: Box<Option<String>>,
+    pub r#exact: Option<String>,
     /// Specified ending characters of the host name to match on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "suffix")]
-    pub r#suffix: Box<Option<String>>,
+    pub r#suffix: Option<String>,
 }

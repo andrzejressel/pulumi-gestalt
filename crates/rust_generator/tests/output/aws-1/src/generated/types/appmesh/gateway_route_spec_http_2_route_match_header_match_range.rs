@@ -6,9 +6,9 @@ pub struct GatewayRouteSpecHttp2RouteMatchHeaderMatchRange {
     /// End of the range.
     #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<i32>,
+    pub r#end: i32,
     /// Start of the range.
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<i32>,
+    pub r#start: i32,
 }

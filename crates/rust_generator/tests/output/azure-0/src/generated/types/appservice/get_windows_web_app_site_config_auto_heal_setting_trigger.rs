@@ -6,21 +6,21 @@ pub struct GetWindowsWebAppSiteConfigAutoHealSettingTrigger {
     /// The amount of Private Memory used.
     #[builder(into)]
     #[serde(rename = "privateMemoryKb")]
-    pub r#private_memory_kb: Box<i32>,
+    pub r#private_memory_kb: i32,
     /// A `requests` block as defined above.
     #[builder(into)]
     #[serde(rename = "requests")]
-    pub r#requests: Box<Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingTriggerRequest>>,
+    pub r#requests: Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingTriggerRequest>,
     /// (Optional) One or more `slow_request_with_path` blocks as defined above.
     #[builder(into)]
     #[serde(rename = "slowRequestWithPaths")]
-    pub r#slow_request_with_paths: Box<Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestWithPath>>,
+    pub r#slow_request_with_paths: Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestWithPath>,
     /// A `slow_request` block as defined above.
     #[builder(into)]
     #[serde(rename = "slowRequests")]
-    pub r#slow_requests: Box<Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest>>,
+    pub r#slow_requests: Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest>,
     /// A `status_code` block as defined above.
     #[builder(into)]
     #[serde(rename = "statusCodes")]
-    pub r#status_codes: Box<Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingTriggerStatusCode>>,
+    pub r#status_codes: Vec<super::super::types::appservice::GetWindowsWebAppSiteConfigAutoHealSettingTriggerStatusCode>,
 }

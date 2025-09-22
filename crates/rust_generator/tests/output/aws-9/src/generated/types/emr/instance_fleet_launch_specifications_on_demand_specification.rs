@@ -6,5 +6,5 @@ pub struct InstanceFleetLaunchSpecificationsOnDemandSpecification {
     /// Specifies one of the following strategies to launch Spot Instance fleets: `price-capacity-optimized`, `capacity-optimized`, `lowest-price`, or `diversified`. For more information on the provisioning strategies, see [Allocation strategies for Spot Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html).
     #[builder(into)]
     #[serde(rename = "allocationStrategy")]
-    pub r#allocation_strategy: Box<String>,
+    pub r#allocation_strategy: String,
 }

@@ -6,9 +6,9 @@ pub struct GetResourceCollectionTag {
     /// An AWS tag key that is used to identify the AWS resources that DevOps Guru analyzes.
     #[builder(into)]
     #[serde(rename = "appBoundaryKey")]
-    pub r#app_boundary_key: Box<String>,
+    pub r#app_boundary_key: String,
     /// Array of tag values.
     #[builder(into)]
     #[serde(rename = "tagValues")]
-    pub r#tag_values: Box<Vec<String>>,
+    pub r#tag_values: Vec<String>,
 }

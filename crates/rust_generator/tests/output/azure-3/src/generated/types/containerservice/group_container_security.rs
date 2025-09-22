@@ -8,5 +8,5 @@ pub struct GroupContainerSecurity {
     /// > **NOTE:** Currently, this only applies when the `os_type` is `Linux` and the `sku` is `Confidential`.
     #[builder(into)]
     #[serde(rename = "privilegeEnabled")]
-    pub r#privilege_enabled: Box<bool>,
+    pub r#privilege_enabled: bool,
 }

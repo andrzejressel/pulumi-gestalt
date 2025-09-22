@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTemplateSpecContainerPort {
     /// Port number the container listens on. This must be a valid port number (between 1 and 65535). Defaults to "8080".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerPort")]
-    pub r#container_port: Box<Option<i32>>,
+    pub r#container_port: Option<i32>,
     /// If specified, used to specify which protocol to use. Allowed values are "http1" (HTTP/1) and "h2c" (HTTP/2 end-to-end). Defaults to "http1".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Protocol for port. Must be "TCP". Defaults to "TCP".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
+    pub r#protocol: Option<String>,
 }

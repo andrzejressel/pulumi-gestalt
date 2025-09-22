@@ -6,15 +6,15 @@ pub struct ConfigurationAggregatorAccountAggregationSource {
     /// List of 12-digit account IDs of the account(s) being aggregated.
     #[builder(into)]
     #[serde(rename = "accountIds")]
-    pub r#account_ids: Box<Vec<String>>,
+    pub r#account_ids: Vec<String>,
     /// If true, aggregate existing AWS Config regions and future regions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allRegions")]
-    pub r#all_regions: Box<Option<bool>>,
+    pub r#all_regions: Option<bool>,
     /// List of source regions being aggregated.
     /// 
     /// Either `regions` or `all_regions` (as true) must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regions")]
-    pub r#regions: Box<Option<Vec<String>>>,
+    pub r#regions: Option<Vec<String>>,
 }

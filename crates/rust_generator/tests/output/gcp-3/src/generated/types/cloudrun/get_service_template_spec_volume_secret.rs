@@ -9,7 +9,7 @@ pub struct GetServiceTemplateSpecVolumeSecret {
     /// file mode, like fsGroup, and the result can be other mode bits set.
     #[builder(into)]
     #[serde(rename = "defaultMode")]
-    pub r#default_mode: Box<i32>,
+    pub r#default_mode: i32,
     /// If unspecified, the volume will expose a file whose name is the
     /// secret_name.
     /// If specified, the key will be used as the version to fetch from Cloud
@@ -17,7 +17,7 @@ pub struct GetServiceTemplateSpecVolumeSecret {
     /// volume. When items are defined, they must specify a key and a path.
     #[builder(into)]
     #[serde(rename = "items")]
-    pub r#items: Box<Vec<super::super::types::cloudrun::GetServiceTemplateSpecVolumeSecretItem>>,
+    pub r#items: Vec<super::super::types::cloudrun::GetServiceTemplateSpecVolumeSecretItem>,
     /// The name of the secret in Cloud Secret Manager. By default, the secret
     /// is assumed to be in the same project.
     /// If the secret is in another project, you must define an alias.
@@ -29,5 +29,5 @@ pub struct GetServiceTemplateSpecVolumeSecret {
     /// annotation.
     #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<String>,
+    pub r#secret_name: String,
 }

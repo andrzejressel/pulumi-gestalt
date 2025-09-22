@@ -5,8 +5,8 @@
 pub struct GetAcceleratorIpSet {
     #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Vec<String>>,
+    pub r#ip_addresses: Vec<String>,
     #[builder(into)]
     #[serde(rename = "ipFamily")]
-    pub r#ip_family: Box<String>,
+    pub r#ip_family: String,
 }

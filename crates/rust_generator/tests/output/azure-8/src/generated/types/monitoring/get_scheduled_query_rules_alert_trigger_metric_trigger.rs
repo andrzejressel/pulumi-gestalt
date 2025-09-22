@@ -5,16 +5,16 @@
 pub struct GetScheduledQueryRulesAlertTriggerMetricTrigger {
     #[builder(into)]
     #[serde(rename = "metricColumn")]
-    pub r#metric_column: Box<String>,
+    pub r#metric_column: String,
     #[builder(into)]
     #[serde(rename = "metricTriggerType")]
-    pub r#metric_trigger_type: Box<String>,
+    pub r#metric_trigger_type: String,
     /// Evaluation operation for rule.
     #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<String>,
+    pub r#operator: String,
     /// Result or count threshold based on which rule should be triggered.
     #[builder(into)]
     #[serde(rename = "threshold")]
-    pub r#threshold: Box<f64>,
+    pub r#threshold: f64,
 }

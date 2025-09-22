@@ -5,8 +5,8 @@
 pub struct InstanceEphemeralBlockDevice {
     #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<String>,
+    pub r#device_name: String,
     #[builder(into)]
     #[serde(rename = "virtualName")]
-    pub r#virtual_name: Box<String>,
+    pub r#virtual_name: String,
 }

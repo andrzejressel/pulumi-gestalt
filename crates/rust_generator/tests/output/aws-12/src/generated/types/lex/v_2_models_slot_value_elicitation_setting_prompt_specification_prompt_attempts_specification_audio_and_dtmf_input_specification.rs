@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecification {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audioSpecification")]
-    pub r#audio_specification: Box<Option<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecification>>,
-    #[builder(into, default)]
+    pub r#audio_specification: Option<Box<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecification>>,
+    #[builder(into)]
     #[serde(rename = "dtmfSpecification")]
-    pub r#dtmf_specification: Box<Option<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification>>,
+    pub r#dtmf_specification: Option<Box<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification>>,
     #[builder(into)]
     #[serde(rename = "startTimeoutMs")]
-    pub r#start_timeout_ms: Box<i32>,
+    pub r#start_timeout_ms: i32,
 }

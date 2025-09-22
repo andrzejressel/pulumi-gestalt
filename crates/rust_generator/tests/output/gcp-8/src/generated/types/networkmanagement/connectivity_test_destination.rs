@@ -4,24 +4,24 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectivityTestDestination {
     /// A Compute Engine instance URI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instance")]
-    pub r#instance: Box<Option<String>>,
+    pub r#instance: Option<String>,
     /// The IP address of the endpoint, which can be an external or
     /// internal IP. An IPv6 address is only allowed when the test's
     /// destination is a global load balancer VIP.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<Option<String>>,
+    pub r#ip_address: Option<String>,
     /// A Compute Engine network URI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<Option<String>>,
+    pub r#network: Option<String>,
     /// The IP protocol port of the endpoint. Only applicable when
     /// protocol is TCP or UDP.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// Project ID where the endpoint is located. The Project ID can be
     /// derived from the URI if you provide a VM instance or network URI.
     /// The following are two cases where you must provide the project ID:
@@ -32,7 +32,7 @@ pub struct ConnectivityTestDestination {
     /// project.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<Option<String>>,
+    pub r#project_id: Option<String>,
 }

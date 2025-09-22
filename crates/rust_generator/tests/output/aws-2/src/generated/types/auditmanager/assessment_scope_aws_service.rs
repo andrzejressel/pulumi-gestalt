@@ -6,5 +6,5 @@ pub struct AssessmentScopeAwsService {
     /// Name of the Amazon Web Service.
     #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<String>,
+    pub r#service_name: String,
 }

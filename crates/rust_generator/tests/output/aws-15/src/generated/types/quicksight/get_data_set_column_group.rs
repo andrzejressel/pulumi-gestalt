@@ -5,5 +5,5 @@
 pub struct GetDataSetColumnGroup {
     #[builder(into)]
     #[serde(rename = "geoSpatialColumnGroups")]
-    pub r#geo_spatial_column_groups: Box<Vec<super::super::types::quicksight::GetDataSetColumnGroupGeoSpatialColumnGroup>>,
+    pub r#geo_spatial_column_groups: Vec<super::super::types::quicksight::GetDataSetColumnGroupGeoSpatialColumnGroup>,
 }

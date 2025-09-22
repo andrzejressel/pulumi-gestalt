@@ -5,14 +5,14 @@
 pub struct GetDataSetLogicalTableMap {
     #[builder(into)]
     #[serde(rename = "alias")]
-    pub r#alias: Box<String>,
+    pub r#alias: String,
     #[builder(into)]
     #[serde(rename = "dataTransforms")]
-    pub r#data_transforms: Box<Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransform>>,
+    pub r#data_transforms: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapDataTransform>,
     #[builder(into)]
     #[serde(rename = "logicalTableMapId")]
-    pub r#logical_table_map_id: Box<String>,
+    pub r#logical_table_map_id: String,
     #[builder(into)]
     #[serde(rename = "sources")]
-    pub r#sources: Box<Vec<super::super::types::quicksight::GetDataSetLogicalTableMapSource>>,
+    pub r#sources: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapSource>,
 }

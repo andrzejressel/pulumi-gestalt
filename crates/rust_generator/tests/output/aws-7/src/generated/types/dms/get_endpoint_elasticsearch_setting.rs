@@ -5,14 +5,14 @@
 pub struct GetEndpointElasticsearchSetting {
     #[builder(into)]
     #[serde(rename = "endpointUri")]
-    pub r#endpoint_uri: Box<String>,
+    pub r#endpoint_uri: String,
     #[builder(into)]
     #[serde(rename = "errorRetryDuration")]
-    pub r#error_retry_duration: Box<i32>,
+    pub r#error_retry_duration: i32,
     #[builder(into)]
     #[serde(rename = "fullLoadErrorPercentage")]
-    pub r#full_load_error_percentage: Box<i32>,
+    pub r#full_load_error_percentage: i32,
     #[builder(into)]
     #[serde(rename = "serviceAccessRoleArn")]
-    pub r#service_access_role_arn: Box<String>,
+    pub r#service_access_role_arn: String,
 }

@@ -6,5 +6,5 @@ pub struct ListItemHostname {
     /// The FQDN to match on.
     #[builder(into)]
     #[serde(rename = "urlHostname")]
-    pub r#url_hostname: Box<String>,
+    pub r#url_hostname: String,
 }

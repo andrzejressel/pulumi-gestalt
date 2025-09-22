@@ -3,9 +3,9 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audioRenditionSets")]
-    pub r#audio_rendition_sets: Box<Option<String>>,
+    pub r#audio_rendition_sets: Option<String>,
     #[builder(into)]
     #[serde(rename = "m3u8Settings")]
     pub r#m_3_u_8_settings: Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettingsM3U8Settings>,

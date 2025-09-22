@@ -3,20 +3,20 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TrustAnchorNotificationSetting {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "channel")]
-    pub r#channel: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#channel: Option<String>,
+    #[builder(into)]
     #[serde(rename = "configuredBy")]
-    pub r#configured_by: Box<Option<String>>,
+    pub r#configured_by: Option<String>,
     /// Whether or not the Trust Anchor should be enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#enabled: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "event")]
-    pub r#event: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#event: Option<String>,
+    #[builder(into)]
     #[serde(rename = "threshold")]
-    pub r#threshold: Box<Option<i32>>,
+    pub r#threshold: Option<i32>,
 }

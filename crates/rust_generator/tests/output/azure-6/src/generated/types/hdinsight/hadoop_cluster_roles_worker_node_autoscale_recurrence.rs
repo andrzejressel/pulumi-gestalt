@@ -6,9 +6,9 @@ pub struct HadoopClusterRolesWorkerNodeAutoscaleRecurrence {
     /// A list of `schedule` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "schedules")]
-    pub r#schedules: Box<Vec<super::super::types::hdinsight::HadoopClusterRolesWorkerNodeAutoscaleRecurrenceSchedule>>,
+    pub r#schedules: Vec<super::super::types::hdinsight::HadoopClusterRolesWorkerNodeAutoscaleRecurrenceSchedule>,
     /// The time zone for the autoscale schedule times.
     #[builder(into)]
     #[serde(rename = "timezone")]
-    pub r#timezone: Box<String>,
+    pub r#timezone: String,
 }

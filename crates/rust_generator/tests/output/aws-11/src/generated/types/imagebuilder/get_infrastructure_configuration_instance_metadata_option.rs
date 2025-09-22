@@ -6,9 +6,9 @@ pub struct GetInfrastructureConfigurationInstanceMetadataOption {
     /// Number of hops that an instance can traverse to reach its destonation.
     #[builder(into)]
     #[serde(rename = "httpPutResponseHopLimit")]
-    pub r#http_put_response_hop_limit: Box<i32>,
+    pub r#http_put_response_hop_limit: i32,
     /// Whether a signed token is required for instance metadata retrieval requests.
     #[builder(into)]
     #[serde(rename = "httpTokens")]
-    pub r#http_tokens: Box<String>,
+    pub r#http_tokens: String,
 }

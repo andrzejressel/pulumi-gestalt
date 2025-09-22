@@ -6,9 +6,9 @@ pub struct AssessmentRole {
     /// Amazon Resource Name (ARN) of the IAM role.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// Type of customer persona. For assessment creation, type must always be `PROCESS_OWNER`.
     #[builder(into)]
     #[serde(rename = "roleType")]
-    pub r#role_type: Box<String>,
+    pub r#role_type: String,
 }

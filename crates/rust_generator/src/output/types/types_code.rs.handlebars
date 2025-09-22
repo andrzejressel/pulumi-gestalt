@@ -7,14 +7,12 @@ pub struct {{type.struct_name}} {
     {{#each field.description_lines}}
     /// {{&this}}
     {{/each}}
-    {{#if default}}
-    #[builder(into, default)]
-    {{else if skip}}
+    {{#if skip}}
     #[builder(skip)]
     {{else}}
     #[builder(into)]
     {{/if}}
     #[serde(rename = "{{field.original_name}}")]
-    {{#unless private}}pub {{/unless}}r#{{field.name}}: Box<{{&field.type_}}>,
+    {{#unless private}}pub {{/unless}}r#{{field.name}}: {{&field.cycle_safe_type}},
     {{/each}}
 }

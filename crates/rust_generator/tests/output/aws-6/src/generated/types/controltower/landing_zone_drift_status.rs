@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LandingZoneDriftStatus {
     /// The drift status of the landing zone.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
 }

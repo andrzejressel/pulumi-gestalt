@@ -6,9 +6,9 @@ pub struct GetMulticastDomainAssociation {
     /// The ID of the subnet associated with the transit gateway multicast domain.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
     /// The ID of the transit gateway attachment.
     #[builder(into)]
     #[serde(rename = "transitGatewayAttachmentId")]
-    pub r#transit_gateway_attachment_id: Box<String>,
+    pub r#transit_gateway_attachment_id: String,
 }

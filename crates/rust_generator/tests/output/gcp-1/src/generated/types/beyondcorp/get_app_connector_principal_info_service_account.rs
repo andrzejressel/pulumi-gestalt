@@ -6,5 +6,5 @@ pub struct GetAppConnectorPrincipalInfoServiceAccount {
     /// Email address of the service account.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
 }

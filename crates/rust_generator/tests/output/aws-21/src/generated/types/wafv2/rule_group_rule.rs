@@ -8,21 +8,21 @@ pub struct RuleGroupRule {
     #[serde(rename = "action")]
     pub r#action: Box<super::super::types::wafv2::RuleGroupRuleAction>,
     /// Specifies how AWS WAF should handle CAPTCHA evaluations. See Captcha Configuration below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "captchaConfig")]
-    pub r#captcha_config: Box<Option<super::super::types::wafv2::RuleGroupRuleCaptchaConfig>>,
+    pub r#captcha_config: Option<Box<super::super::types::wafv2::RuleGroupRuleCaptchaConfig>>,
     /// A friendly name of the rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// If you define more than one Rule in a WebACL, AWS WAF evaluates each request against the `rules` in order based on the value of `priority`. AWS WAF processes rules with lower priority first.
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
     /// Labels to apply to web requests that match the rule match statement. See Rule Label below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ruleLabels")]
-    pub r#rule_labels: Box<Option<Vec<super::super::types::wafv2::RuleGroupRuleRuleLabel>>>,
+    pub r#rule_labels: Option<Vec<super::super::types::wafv2::RuleGroupRuleRuleLabel>>,
     /// The AWS WAF processing statement for the rule, for example `byte_match_statement` or `geo_match_statement`. See Statement below for details.
     #[builder(into)]
     #[serde(rename = "statement")]

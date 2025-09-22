@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterBootstrapAction {
     /// List of command line arguments to pass to the bootstrap action script.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "args")]
-    pub r#args: Box<Option<Vec<String>>>,
+    pub r#args: Option<Vec<String>>,
     /// Name of the bootstrap action.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on a local file system.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

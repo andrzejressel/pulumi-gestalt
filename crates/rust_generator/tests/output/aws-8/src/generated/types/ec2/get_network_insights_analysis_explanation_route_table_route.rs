@@ -5,32 +5,32 @@
 pub struct GetNetworkInsightsAnalysisExplanationRouteTableRoute {
     #[builder(into)]
     #[serde(rename = "destinationCidr")]
-    pub r#destination_cidr: Box<String>,
+    pub r#destination_cidr: String,
     #[builder(into)]
     #[serde(rename = "destinationPrefixListId")]
-    pub r#destination_prefix_list_id: Box<String>,
+    pub r#destination_prefix_list_id: String,
     #[builder(into)]
     #[serde(rename = "egressOnlyInternetGatewayId")]
-    pub r#egress_only_internet_gateway_id: Box<String>,
+    pub r#egress_only_internet_gateway_id: String,
     #[builder(into)]
     #[serde(rename = "gatewayId")]
-    pub r#gateway_id: Box<String>,
+    pub r#gateway_id: String,
     #[builder(into)]
     #[serde(rename = "instanceId")]
-    pub r#instance_id: Box<String>,
+    pub r#instance_id: String,
     #[builder(into)]
     #[serde(rename = "natGatewayId")]
-    pub r#nat_gateway_id: Box<String>,
+    pub r#nat_gateway_id: String,
     #[builder(into)]
     #[serde(rename = "networkInterfaceId")]
-    pub r#network_interface_id: Box<String>,
+    pub r#network_interface_id: String,
     #[builder(into)]
     #[serde(rename = "origin")]
-    pub r#origin: Box<String>,
+    pub r#origin: String,
     #[builder(into)]
     #[serde(rename = "transitGatewayId")]
-    pub r#transit_gateway_id: Box<String>,
+    pub r#transit_gateway_id: String,
     #[builder(into)]
     #[serde(rename = "vpcPeeringConnectionId")]
-    pub r#vpc_peering_connection_id: Box<String>,
+    pub r#vpc_peering_connection_id: String,
 }

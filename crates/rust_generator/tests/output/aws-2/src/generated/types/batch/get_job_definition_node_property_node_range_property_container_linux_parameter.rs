@@ -6,25 +6,25 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameter 
     /// Any of the host devices to expose to the container.
     #[builder(into)]
     #[serde(rename = "devices")]
-    pub r#devices: Box<Vec<super::super::types::batch::GetJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterDevice>>,
+    pub r#devices: Vec<super::super::types::batch::GetJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterDevice>,
     /// If true, run an init process inside the container that forwards signals and reaps processes.
     #[builder(into)]
     #[serde(rename = "initProcessEnabled")]
-    pub r#init_process_enabled: Box<bool>,
+    pub r#init_process_enabled: bool,
     /// The total amount of swap memory (in MiB) a container can use.
     #[builder(into)]
     #[serde(rename = "maxSwap")]
-    pub r#max_swap: Box<i32>,
+    pub r#max_swap: i32,
     /// The value for the size (in MiB) of the `/dev/shm` volume.
     #[builder(into)]
     #[serde(rename = "sharedMemorySize")]
-    pub r#shared_memory_size: Box<i32>,
+    pub r#shared_memory_size: i32,
     /// You can use this parameter to tune a container's memory swappiness behavior.
     #[builder(into)]
     #[serde(rename = "swappiness")]
-    pub r#swappiness: Box<i32>,
+    pub r#swappiness: i32,
     /// The container path, mount options, and size (in MiB) of the tmpfs mount.
     #[builder(into)]
     #[serde(rename = "tmpfs")]
-    pub r#tmpfs: Box<Vec<super::super::types::batch::GetJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterTmpf>>,
+    pub r#tmpfs: Vec<super::super::types::batch::GetJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterTmpf>,
 }

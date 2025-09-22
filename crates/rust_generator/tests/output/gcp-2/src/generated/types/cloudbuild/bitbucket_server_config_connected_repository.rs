@@ -6,9 +6,9 @@ pub struct BitbucketServerConfigConnectedRepository {
     /// Identifier for the project storing the repository.
     #[builder(into)]
     #[serde(rename = "projectKey")]
-    pub r#project_key: Box<String>,
+    pub r#project_key: String,
     /// Identifier for the repository.
     #[builder(into)]
     #[serde(rename = "repoSlug")]
-    pub r#repo_slug: Box<String>,
+    pub r#repo_slug: String,
 }

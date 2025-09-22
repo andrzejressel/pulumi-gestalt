@@ -6,9 +6,9 @@ pub struct GetLaunchPathsSummaryConstraintSummary {
     /// Description of the constraint.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// Type of constraint. Valid values are `LAUNCH`, `NOTIFICATION`, `STACKSET`, and `TEMPLATE`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

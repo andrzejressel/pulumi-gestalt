@@ -8,15 +8,15 @@ pub struct ServiceTemplateSpecVolumeCsi {
     /// run.googleapis.com/execution-environment annotation to be unset or set to "gen2"
     #[builder(into)]
     #[serde(rename = "driver")]
-    pub r#driver: Box<String>,
+    pub r#driver: String,
     /// If true, all mounts created from this volume will be read-only.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "readOnly")]
-    pub r#read_only: Box<Option<bool>>,
+    pub r#read_only: Option<bool>,
     /// Driver-specific attributes. The following options are supported for available drivers:
     /// * gcsfuse.run.googleapis.com
     /// * bucketName: The name of the Cloud Storage Bucket that backs this volume. The Cloud Run Service identity must have access to this bucket.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "volumeAttributes")]
-    pub r#volume_attributes: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#volume_attributes: Option<std::collections::HashMap<String, String>>,
 }

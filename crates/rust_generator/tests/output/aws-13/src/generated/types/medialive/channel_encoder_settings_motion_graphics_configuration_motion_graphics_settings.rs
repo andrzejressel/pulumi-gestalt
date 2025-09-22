@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettings {
     /// Html Motion Graphics Settings.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "htmlMotionGraphicsSettings")]
-    pub r#html_motion_graphics_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsHtmlMotionGraphicsSettings>>,
+    pub r#html_motion_graphics_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsHtmlMotionGraphicsSettings>>,
 }

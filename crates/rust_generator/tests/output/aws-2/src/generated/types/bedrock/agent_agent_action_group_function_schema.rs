@@ -6,7 +6,7 @@ pub struct AgentAgentActionGroupFunctionSchema {
     /// Contains a list of functions.
     /// Each function describes and action in the action group.
     /// See `member_functions` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "memberFunctions")]
-    pub r#member_functions: Box<Option<super::super::types::bedrock::AgentAgentActionGroupFunctionSchemaMemberFunctions>>,
+    pub r#member_functions: Option<Box<super::super::types::bedrock::AgentAgentActionGroupFunctionSchemaMemberFunctions>>,
 }

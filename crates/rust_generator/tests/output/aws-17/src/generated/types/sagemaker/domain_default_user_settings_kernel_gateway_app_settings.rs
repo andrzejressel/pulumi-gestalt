@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainDefaultUserSettingsKernelGatewayAppSettings {
     /// A list of custom SageMaker images that are configured to run as a KernelGateway app. see `custom_image` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customImages")]
-    pub r#custom_images: Box<Option<Vec<super::super::types::sagemaker::DomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage>>>,
+    pub r#custom_images: Option<Vec<super::super::types::sagemaker::DomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage>>,
     /// The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. see `default_resource_spec` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultResourceSpec")]
-    pub r#default_resource_spec: Box<Option<super::super::types::sagemaker::DomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec>>,
+    pub r#default_resource_spec: Option<Box<super::super::types::sagemaker::DomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec>>,
     /// The Amazon Resource Name (ARN) of the Lifecycle Configurations.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lifecycleConfigArns")]
-    pub r#lifecycle_config_arns: Box<Option<Vec<String>>>,
+    pub r#lifecycle_config_arns: Option<Vec<String>>,
 }

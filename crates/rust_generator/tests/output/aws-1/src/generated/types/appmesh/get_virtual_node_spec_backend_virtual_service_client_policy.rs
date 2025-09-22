@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecBackendVirtualServiceClientPolicy {
     #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTl>>,
+    pub r#tls: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTl>,
 }

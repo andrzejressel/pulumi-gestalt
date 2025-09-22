@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketObjectCustomerEncryption {
     /// Encryption algorithm. Default: AES256
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encryptionAlgorithm")]
-    pub r#encryption_algorithm: Box<Option<String>>,
+    pub r#encryption_algorithm: Option<String>,
     /// Base64 encoded Customer-Supplied Encryption Key.
     #[builder(into)]
     #[serde(rename = "encryptionKey")]
-    pub r#encryption_key: Box<String>,
+    pub r#encryption_key: String,
 }

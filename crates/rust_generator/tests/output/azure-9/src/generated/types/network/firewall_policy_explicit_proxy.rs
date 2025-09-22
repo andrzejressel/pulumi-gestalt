@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirewallPolicyExplicitProxy {
     /// Whether the pac file port and url need to be provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enablePacFile")]
-    pub r#enable_pac_file: Box<Option<bool>>,
+    pub r#enable_pac_file: Option<bool>,
     /// Whether the explicit proxy is enabled for this Firewall Policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The port number for explicit http protocol.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpPort")]
-    pub r#http_port: Box<Option<i32>>,
+    pub r#http_port: Option<i32>,
     /// The port number for explicit proxy https protocol.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpsPort")]
-    pub r#https_port: Box<Option<i32>>,
+    pub r#https_port: Option<i32>,
     /// Specifies a SAS URL for PAC file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pacFile")]
-    pub r#pac_file: Box<Option<String>>,
+    pub r#pac_file: Option<String>,
     /// Specifies a port number for firewall to serve PAC file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pacFilePort")]
-    pub r#pac_file_port: Box<Option<i32>>,
+    pub r#pac_file_port: Option<i32>,
 }

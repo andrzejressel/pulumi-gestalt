@@ -5,18 +5,18 @@
 pub struct ConnectionEventingConfig {
     /// List containing additional auth configs.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "additionalVariables")]
-    pub r#additional_variables: Box<Option<Vec<super::super::types::integrationconnectors::ConnectionEventingConfigAdditionalVariable>>>,
+    pub r#additional_variables: Option<Vec<super::super::types::integrationconnectors::ConnectionEventingConfigAdditionalVariable>>,
     /// authConfig for Eventing Configuration.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authConfig")]
-    pub r#auth_config: Box<Option<super::super::types::integrationconnectors::ConnectionEventingConfigAuthConfig>>,
+    pub r#auth_config: Option<Box<super::super::types::integrationconnectors::ConnectionEventingConfigAuthConfig>>,
     /// Enrichment Enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enrichmentEnabled")]
-    pub r#enrichment_enabled: Box<Option<bool>>,
+    pub r#enrichment_enabled: Option<bool>,
     /// registrationDestinationConfig
     /// Structure is documented below.
     #[builder(into)]

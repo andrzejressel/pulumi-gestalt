@@ -5,17 +5,17 @@
 pub struct GetLoadBalancerListener {
     #[builder(into)]
     #[serde(rename = "instancePort")]
-    pub r#instance_port: Box<i32>,
+    pub r#instance_port: i32,
     #[builder(into)]
     #[serde(rename = "instanceProtocol")]
-    pub r#instance_protocol: Box<String>,
+    pub r#instance_protocol: String,
     #[builder(into)]
     #[serde(rename = "lbPort")]
-    pub r#lb_port: Box<i32>,
+    pub r#lb_port: i32,
     #[builder(into)]
     #[serde(rename = "lbProtocol")]
-    pub r#lb_protocol: Box<String>,
+    pub r#lb_protocol: String,
     #[builder(into)]
     #[serde(rename = "sslCertificateId")]
-    pub r#ssl_certificate_id: Box<String>,
+    pub r#ssl_certificate_id: String,
 }

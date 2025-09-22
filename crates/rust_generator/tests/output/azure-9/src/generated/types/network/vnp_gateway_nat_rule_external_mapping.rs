@@ -6,9 +6,9 @@ pub struct VnpGatewayNatRuleExternalMapping {
     /// The string CIDR representing the address space for the VPN Gateway Nat Rule external mapping.
     #[builder(into)]
     #[serde(rename = "addressSpace")]
-    pub r#address_space: Box<String>,
+    pub r#address_space: String,
     /// The single port range for the VPN Gateway Nat Rule external mapping.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "portRange")]
-    pub r#port_range: Box<Option<String>>,
+    pub r#port_range: Option<String>,
 }

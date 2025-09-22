@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MultiplexMultiplexSettings {
     /// Maximum video buffer delay.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximumVideoBufferDelayMilliseconds")]
-    pub r#maximum_video_buffer_delay_milliseconds: Box<Option<i32>>,
+    pub r#maximum_video_buffer_delay_milliseconds: Option<i32>,
     /// Transport stream bit rate.
     #[builder(into)]
     #[serde(rename = "transportStreamBitrate")]
-    pub r#transport_stream_bitrate: Box<i32>,
+    pub r#transport_stream_bitrate: i32,
     /// Unique ID for each multiplex.
     #[builder(into)]
     #[serde(rename = "transportStreamId")]
-    pub r#transport_stream_id: Box<i32>,
+    pub r#transport_stream_id: i32,
     /// Transport stream reserved bit rate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transportStreamReservedBitrate")]
-    pub r#transport_stream_reserved_bitrate: Box<Option<i32>>,
+    pub r#transport_stream_reserved_bitrate: Option<i32>,
 }

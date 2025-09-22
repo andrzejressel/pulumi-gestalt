@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContent {
     /// Information about the Amazon S3 bucket containing the application code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3ContentLocation")]
-    pub r#s_3_content_location: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocation>>,
+    pub r#s_3_content_location: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocation>>,
     /// The text-format code for the application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "textContent")]
-    pub r#text_content: Box<Option<String>>,
+    pub r#text_content: Option<String>,
 }

@@ -5,8 +5,8 @@
 pub struct GetAliasRoutingConfiguration {
     #[builder(into)]
     #[serde(rename = "stateMachineVersionArn")]
-    pub r#state_machine_version_arn: Box<String>,
+    pub r#state_machine_version_arn: String,
     #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<i32>,
+    pub r#weight: i32,
 }

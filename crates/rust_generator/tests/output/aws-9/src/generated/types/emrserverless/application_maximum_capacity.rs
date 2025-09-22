@@ -6,13 +6,13 @@ pub struct ApplicationMaximumCapacity {
     /// The maximum allowed CPU for an application.
     #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<String>,
+    pub r#cpu: String,
     /// The maximum allowed disk for an application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disk")]
-    pub r#disk: Box<Option<String>>,
+    pub r#disk: Option<String>,
     /// The maximum allowed resources for an application.
     #[builder(into)]
     #[serde(rename = "memory")]
-    pub r#memory: Box<String>,
+    pub r#memory: String,
 }

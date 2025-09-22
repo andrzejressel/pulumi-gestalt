@@ -5,8 +5,8 @@
 pub struct GetListenerDefaultAction {
     #[builder(into)]
     #[serde(rename = "fixedResponses")]
-    pub r#fixed_responses: Box<Vec<super::super::types::vpclattice::GetListenerDefaultActionFixedResponse>>,
+    pub r#fixed_responses: Vec<super::super::types::vpclattice::GetListenerDefaultActionFixedResponse>,
     #[builder(into)]
     #[serde(rename = "forwards")]
-    pub r#forwards: Box<Vec<super::super::types::vpclattice::GetListenerDefaultActionForward>>,
+    pub r#forwards: Vec<super::super::types::vpclattice::GetListenerDefaultActionForward>,
 }

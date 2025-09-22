@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServerlessClusterVpcConfig {
     /// Specifies up to five security groups that control inbound and outbound traffic for the serverless cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "securityGroupIds")]
-    pub r#security_group_ids: Box<Option<Vec<String>>>,
+    pub r#security_group_ids: Option<Vec<String>>,
     /// A list of subnets in at least two different Availability Zones that host your client applications.
     #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Vec<String>>,
+    pub r#subnet_ids: Vec<String>,
 }

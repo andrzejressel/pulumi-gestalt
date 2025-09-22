@@ -6,9 +6,9 @@ pub struct NetworkSimGroupIdentity {
     /// A list of IDs for User Assigned Managed Identity resources to be assigned.
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     /// Specifies the type of Managed Service Identity. Possible value is `UserAssigned`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

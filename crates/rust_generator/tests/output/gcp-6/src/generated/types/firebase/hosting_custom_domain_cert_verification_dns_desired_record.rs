@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HostingCustomDomainCertVerificationDnsDesiredRecord {
     /// The domain name the record pertains to, e.g. `foo.bar.com.`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<Option<String>>,
+    pub r#domain_name: Option<String>,
     /// The data of the record. The meaning of the value depends on record type:
     /// - A and AAAA: IP addresses for the domain name.
     /// - CNAME: Another domain to check for records.
@@ -14,15 +14,15 @@ pub struct HostingCustomDomainCertVerificationDnsDesiredRecord {
     /// uses TXT records to determine a which Firebase Projects have
     /// permission to act on the domain name's behalf.
     /// - CAA: The record's flags, tag, and value, e.g. `0 issue "pki.goog"`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rdata")]
-    pub r#rdata: Box<Option<String>>,
+    pub r#rdata: Option<String>,
     /// Indicates the a required action for this record.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requiredAction")]
-    pub r#required_action: Box<Option<String>>,
+    pub r#required_action: Option<String>,
     /// The record's type, which determines what data the record contains.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

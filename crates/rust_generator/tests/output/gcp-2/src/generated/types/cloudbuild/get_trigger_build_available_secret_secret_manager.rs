@@ -8,9 +8,9 @@ pub struct GetTriggerBuildAvailableSecretSecretManager {
     /// by at least one build step.
     #[builder(into)]
     #[serde(rename = "env")]
-    pub r#env: Box<String>,
+    pub r#env: String,
     /// Resource name of the SecretVersion. In format: projects/*/secrets/*/versions/*
     #[builder(into)]
     #[serde(rename = "versionName")]
-    pub r#version_name: Box<String>,
+    pub r#version_name: String,
 }

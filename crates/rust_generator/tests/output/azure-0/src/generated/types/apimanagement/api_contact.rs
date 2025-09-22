@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApiContact {
     /// The email address of the contact person/organization.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// The name of the contact person/organization.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Absolute URL of the contact information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<Option<String>>,
+    pub r#url: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct GetClusterNodePoolNodeConfigLinuxNodeConfigHugepagesConfig {
     /// Amount of 1G hugepages.
     #[builder(into)]
     #[serde(rename = "hugepageSize1g")]
-    pub r#hugepage_size_1_g: Box<i32>,
+    pub r#hugepage_size_1_g: i32,
     /// Amount of 2M hugepages.
     #[builder(into)]
     #[serde(rename = "hugepageSize2m")]
-    pub r#hugepage_size_2_m: Box<i32>,
+    pub r#hugepage_size_2_m: i32,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointDeliveryRuleUrlFileNameCondition {
     /// List of string values. This is required if `operator` is not `Any`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "matchValues")]
-    pub r#match_values: Box<Option<Vec<String>>>,
+    pub r#match_values: Option<Vec<String>>,
     /// Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "negateCondition")]
-    pub r#negate_condition: Box<Option<bool>>,
+    pub r#negate_condition: Option<bool>,
     /// Valid values are `Any`, `BeginsWith`, `Contains`, `EndsWith`, `Equal`, `GreaterThan`, `GreaterThanOrEqual`, `LessThan` and `LessThanOrEqual`.
     #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<String>,
+    pub r#operator: String,
     /// A list of transforms. Valid values are `Lowercase` and `Uppercase`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transforms")]
-    pub r#transforms: Box<Option<Vec<String>>>,
+    pub r#transforms: Option<Vec<String>>,
 }

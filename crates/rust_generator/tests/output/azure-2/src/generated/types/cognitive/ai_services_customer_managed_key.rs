@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AiServicesCustomerManagedKey {
     /// The Client ID of the User Assigned Identity that has access to the key. This property only needs to be specified when there are multiple identities attached to the Azure AI Service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityClientId")]
-    pub r#identity_client_id: Box<Option<String>>,
+    pub r#identity_client_id: Option<String>,
     /// The ID of the Key Vault Key which should be used to encrypt the data in this AI Services Account. Exactly one of `key_vault_key_id`, `managed_hsm_key_id` must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyVaultKeyId")]
-    pub r#key_vault_key_id: Box<Option<String>>,
+    pub r#key_vault_key_id: Option<String>,
     /// The ID of the managed HSM Key which should be used to encrypt the data in this AI Services Account. Exactly one of `key_vault_key_id`, `managed_hsm_key_id` must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "managedHsmKeyId")]
-    pub r#managed_hsm_key_id: Box<Option<String>>,
+    pub r#managed_hsm_key_id: Option<String>,
 }

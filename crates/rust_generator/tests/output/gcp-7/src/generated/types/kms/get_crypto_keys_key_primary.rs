@@ -6,9 +6,9 @@ pub struct GetCryptoKeysKeyPrimary {
     /// The resource name for this CryptoKeyVersion.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The current state of the CryptoKeyVersion.
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

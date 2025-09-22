@@ -6,15 +6,15 @@ pub struct ConnectionAuthConfigOauth2JwtBearerJwtClaims {
     /// Value for the "aud" claim.
     /// 
     /// <a name="nested_oauth2_client_credentials"></a>The `oauth2_client_credentials` block supports:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audience")]
-    pub r#audience: Box<Option<String>>,
+    pub r#audience: Option<String>,
     /// Value for the "iss" claim.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<Option<String>>,
+    pub r#issuer: Option<String>,
     /// Value for the "sub" claim.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subject")]
-    pub r#subject: Box<Option<String>>,
+    pub r#subject: Option<String>,
 }

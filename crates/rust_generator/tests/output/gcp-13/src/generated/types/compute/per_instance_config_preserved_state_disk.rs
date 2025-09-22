@@ -10,22 +10,22 @@ pub struct PerInstanceConfigPreservedStateDisk {
     /// deleted from the instance group.
     /// Default value is `NEVER`.
     /// Possible values are: `NEVER`, `ON_PERMANENT_INSTANCE_DELETION`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deleteRule")]
-    pub r#delete_rule: Box<Option<String>>,
+    pub r#delete_rule: Option<String>,
     /// A unique device name that is reflected into the /dev/ tree of a Linux operating system running within the instance.
     #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<String>,
+    pub r#device_name: String,
     /// The mode of the disk.
     /// Default value is `READ_WRITE`.
     /// Possible values are: `READ_ONLY`, `READ_WRITE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<Option<String>>,
+    pub r#mode: Option<String>,
     /// The URI of an existing persistent disk to attach under the specified device-name in the format
     /// `projects/project-id/zones/zone/disks/disk-name`.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<String>,
+    pub r#source: String,
 }

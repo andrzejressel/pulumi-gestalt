@@ -6,5 +6,5 @@ pub struct SpaceSpaceSettingsSpaceStorageSettingsEbsStorageSettings {
     /// The size of an EBS storage volume for a space.
     #[builder(into)]
     #[serde(rename = "ebsVolumeSizeInGb")]
-    pub r#ebs_volume_size_in_gb: Box<i32>,
+    pub r#ebs_volume_size_in_gb: i32,
 }

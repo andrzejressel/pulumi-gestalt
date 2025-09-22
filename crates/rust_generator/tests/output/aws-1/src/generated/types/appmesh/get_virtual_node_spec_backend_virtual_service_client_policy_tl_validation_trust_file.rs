@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrustFile {
     #[builder(into)]
     #[serde(rename = "certificateChain")]
-    pub r#certificate_chain: Box<String>,
+    pub r#certificate_chain: String,
 }

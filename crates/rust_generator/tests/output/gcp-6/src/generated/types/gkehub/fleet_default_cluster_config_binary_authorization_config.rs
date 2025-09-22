@@ -5,12 +5,12 @@
 pub struct FleetDefaultClusterConfigBinaryAuthorizationConfig {
     /// Mode of operation for binauthz policy evaluation.
     /// Possible values are: `DISABLED`, `POLICY_BINDINGS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "evaluationMode")]
-    pub r#evaluation_mode: Box<Option<String>>,
+    pub r#evaluation_mode: Option<String>,
     /// Binauthz policies that apply to this cluster.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "policyBindings")]
-    pub r#policy_bindings: Box<Option<Vec<super::super::types::gkehub::FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding>>>,
+    pub r#policy_bindings: Option<Vec<super::super::types::gkehub::FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding>>,
 }

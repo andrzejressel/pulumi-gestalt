@@ -7,5 +7,5 @@ pub struct FirewallLogConfig {
     /// Possible values are: `EXCLUDE_ALL_METADATA`, `INCLUDE_ALL_METADATA`.
     #[builder(into)]
     #[serde(rename = "metadata")]
-    pub r#metadata: Box<String>,
+    pub r#metadata: String,
 }

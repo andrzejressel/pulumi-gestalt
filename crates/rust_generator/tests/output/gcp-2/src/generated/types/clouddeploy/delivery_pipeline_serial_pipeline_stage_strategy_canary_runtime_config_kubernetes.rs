@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetes {
     /// Kubernetes Gateway API service mesh configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gatewayServiceMesh")]
-    pub r#gateway_service_mesh: Box<Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMesh>>,
+    pub r#gateway_service_mesh: Option<Box<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMesh>>,
     /// Kubernetes Service networking configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceNetworking")]
-    pub r#service_networking: Box<Option<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworking>>,
+    pub r#service_networking: Option<Box<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworking>>,
 }

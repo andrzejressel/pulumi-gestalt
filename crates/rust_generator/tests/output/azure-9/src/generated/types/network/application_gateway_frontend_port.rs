@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationGatewayFrontendPort {
     /// The ID of the Rewrite Rule Set
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The name of the Frontend Port.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The port used for this Frontend Port.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

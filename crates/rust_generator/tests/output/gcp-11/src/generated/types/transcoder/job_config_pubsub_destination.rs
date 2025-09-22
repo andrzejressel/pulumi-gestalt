@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobConfigPubsubDestination {
     /// The name of the Pub/Sub topic to publish job completion notification to. For example: projects/{project}/topics/{topic}.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "topic")]
-    pub r#topic: Box<Option<String>>,
+    pub r#topic: Option<String>,
 }

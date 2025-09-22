@@ -6,5 +6,5 @@ pub struct TableClientSideTimestamps {
     /// Shows how to enable client-side timestamps settings for the specified table. Valid values: `ENABLED`.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

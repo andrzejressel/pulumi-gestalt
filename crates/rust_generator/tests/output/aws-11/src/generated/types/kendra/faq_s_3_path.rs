@@ -6,11 +6,11 @@ pub struct FaqS3Path {
     /// The name of the S3 bucket that contains the file.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// The name of the file.
     /// 
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
 }

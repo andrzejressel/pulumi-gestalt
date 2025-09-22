@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceHttpConfig {
     /// Authorization configuration in case the HTTP endpoint requires authorization. See `authorization_config` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authorizationConfig")]
-    pub r#authorization_config: Box<Option<super::super::types::appsync::DataSourceHttpConfigAuthorizationConfig>>,
+    pub r#authorization_config: Option<Box<super::super::types::appsync::DataSourceHttpConfigAuthorizationConfig>>,
     /// HTTP URL.
     #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<String>,
+    pub r#endpoint: String,
 }

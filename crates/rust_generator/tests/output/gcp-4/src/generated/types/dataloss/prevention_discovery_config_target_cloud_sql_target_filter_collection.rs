@@ -5,7 +5,7 @@
 pub struct PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollection {
     /// A collection of regular expressions to match a file store against.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includeRegexes")]
-    pub r#include_regexes: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionIncludeRegexes>>,
+    pub r#include_regexes: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionIncludeRegexes>>,
 }

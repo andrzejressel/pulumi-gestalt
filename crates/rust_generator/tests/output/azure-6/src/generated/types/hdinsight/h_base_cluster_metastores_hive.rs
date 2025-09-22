@@ -6,17 +6,17 @@ pub struct HBaseClusterMetastoresHive {
     /// The external Hive metastore's existing SQL database. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// The external Hive metastore's existing SQL server admin password. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// The fully-qualified domain name (FQDN) of the SQL server to use for the external Hive metastore. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "server")]
-    pub r#server: Box<String>,
+    pub r#server: String,
     /// The external Hive metastore's existing SQL server admin username. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

@@ -5,11 +5,11 @@
 pub struct GetRouteSpecHttpRouteActionWeightedTarget {
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     #[builder(into)]
     #[serde(rename = "virtualNode")]
-    pub r#virtual_node: Box<String>,
+    pub r#virtual_node: String,
     #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<i32>,
+    pub r#weight: i32,
 }

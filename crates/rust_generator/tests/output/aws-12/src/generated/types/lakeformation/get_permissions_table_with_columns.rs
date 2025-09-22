@@ -6,27 +6,27 @@ pub struct GetPermissionsTableWithColumns {
     /// Identifier for the Data Catalog. By default, it is the account ID of the caller.
     #[builder(into)]
     #[serde(rename = "catalogId")]
-    pub r#catalog_id: Box<String>,
+    pub r#catalog_id: String,
     /// Set of column names for the table. At least one of `column_names` or `excluded_column_names` is required.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "columnNames")]
-    pub r#column_names: Box<Option<Vec<String>>>,
+    pub r#column_names: Option<Vec<String>>,
     /// Name of the database for the table with columns resource. Unique to the Data Catalog.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// Set of column names for the table to exclude. At least one of `column_names` or `excluded_column_names` is required.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "excludedColumnNames")]
-    pub r#excluded_column_names: Box<Option<Vec<String>>>,
+    pub r#excluded_column_names: Option<Vec<String>>,
     /// Name of the table resource.
     /// 
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Whether to use a wildcard representing every table under a database. At least one of `name` or `wildcard` is required. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "wildcard")]
-    pub r#wildcard: Box<Option<bool>>,
+    pub r#wildcard: Option<bool>,
 }

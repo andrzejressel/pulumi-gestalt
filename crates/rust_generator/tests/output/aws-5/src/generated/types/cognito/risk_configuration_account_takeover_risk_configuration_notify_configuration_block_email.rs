@@ -6,13 +6,13 @@ pub struct RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationB
     /// The email HTML body.
     #[builder(into)]
     #[serde(rename = "htmlBody")]
-    pub r#html_body: Box<String>,
+    pub r#html_body: String,
     /// The email subject.
     #[builder(into)]
     #[serde(rename = "subject")]
-    pub r#subject: Box<String>,
+    pub r#subject: String,
     /// The email text body.
     #[builder(into)]
     #[serde(rename = "textBody")]
-    pub r#text_body: Box<String>,
+    pub r#text_body: String,
 }

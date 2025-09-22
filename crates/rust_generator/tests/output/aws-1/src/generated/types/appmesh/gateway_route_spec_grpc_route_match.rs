@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GatewayRouteSpecGrpcRouteMatch {
     /// The port number to match from the request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// Fully qualified domain name for the service to match from the request.
     #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<String>,
+    pub r#service_name: String,
 }

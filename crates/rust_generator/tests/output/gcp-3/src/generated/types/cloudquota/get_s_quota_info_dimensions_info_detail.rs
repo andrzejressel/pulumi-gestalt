@@ -6,5 +6,5 @@ pub struct GetSQuotaInfoDimensionsInfoDetail {
     /// The value currently in effect and being enforced.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

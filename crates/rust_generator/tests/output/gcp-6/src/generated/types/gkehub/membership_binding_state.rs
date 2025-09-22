@@ -5,7 +5,7 @@
 pub struct MembershipBindingState {
     /// (Output)
     /// Code describes the state of a MembershipBinding resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "code")]
-    pub r#code: Box<Option<String>>,
+    pub r#code: Option<String>,
 }

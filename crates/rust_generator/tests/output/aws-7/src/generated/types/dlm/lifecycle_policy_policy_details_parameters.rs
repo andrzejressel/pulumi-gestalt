@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LifecyclePolicyPolicyDetailsParameters {
     /// Indicates whether to exclude the root volume from snapshots created using CreateSnapshots. The default is `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "excludeBootVolume")]
-    pub r#exclude_boot_volume: Box<Option<bool>>,
+    pub r#exclude_boot_volume: Option<bool>,
     /// Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle policy runs. `true` indicates that targeted instances are not rebooted when the policy runs. `false` indicates that target instances are rebooted when the policy runs. The default is `true` (instances are not rebooted).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "noReboot")]
-    pub r#no_reboot: Box<Option<bool>>,
+    pub r#no_reboot: Option<bool>,
 }

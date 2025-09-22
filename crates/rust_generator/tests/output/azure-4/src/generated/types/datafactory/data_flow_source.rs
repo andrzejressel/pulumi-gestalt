@@ -4,31 +4,31 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataFlowSource {
     /// A `dataset` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataset")]
-    pub r#dataset: Box<Option<super::super::types::datafactory::DataFlowSourceDataset>>,
+    pub r#dataset: Option<Box<super::super::types::datafactory::DataFlowSourceDataset>>,
     /// The description for the Data Flow Source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// A `flowlet` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "flowlet")]
-    pub r#flowlet: Box<Option<super::super::types::datafactory::DataFlowSourceFlowlet>>,
+    pub r#flowlet: Option<Box<super::super::types::datafactory::DataFlowSourceFlowlet>>,
     /// A `linked_service` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "linkedService")]
-    pub r#linked_service: Box<Option<super::super::types::datafactory::DataFlowSourceLinkedService>>,
+    pub r#linked_service: Option<Box<super::super::types::datafactory::DataFlowSourceLinkedService>>,
     /// The name for the Data Flow Source.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A `rejected_linked_service` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rejectedLinkedService")]
-    pub r#rejected_linked_service: Box<Option<super::super::types::datafactory::DataFlowSourceRejectedLinkedService>>,
+    pub r#rejected_linked_service: Option<Box<super::super::types::datafactory::DataFlowSourceRejectedLinkedService>>,
     /// A `schema_linked_service` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schemaLinkedService")]
-    pub r#schema_linked_service: Box<Option<super::super::types::datafactory::DataFlowSourceSchemaLinkedService>>,
+    pub r#schema_linked_service: Option<Box<super::super::types::datafactory::DataFlowSourceSchemaLinkedService>>,
 }

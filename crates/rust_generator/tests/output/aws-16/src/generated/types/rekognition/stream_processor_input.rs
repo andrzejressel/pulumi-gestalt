@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StreamProcessorInput {
     /// Kinesis input stream. See `kinesis_video_stream`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kinesisVideoStream")]
-    pub r#kinesis_video_stream: Box<Option<super::super::types::rekognition::StreamProcessorInputKinesisVideoStream>>,
+    pub r#kinesis_video_stream: Option<Box<super::super::types::rekognition::StreamProcessorInputKinesisVideoStream>>,
 }

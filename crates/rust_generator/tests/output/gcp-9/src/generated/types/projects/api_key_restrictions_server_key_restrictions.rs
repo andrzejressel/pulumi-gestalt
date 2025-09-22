@@ -6,5 +6,5 @@ pub struct ApiKeyRestrictionsServerKeyRestrictions {
     /// A list of the caller IP addresses that are allowed to make API calls with this key.
     #[builder(into)]
     #[serde(rename = "allowedIps")]
-    pub r#allowed_ips: Box<Vec<String>>,
+    pub r#allowed_ips: Vec<String>,
 }

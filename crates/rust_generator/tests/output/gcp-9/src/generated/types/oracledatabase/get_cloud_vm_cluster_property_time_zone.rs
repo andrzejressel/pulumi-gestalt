@@ -6,5 +6,5 @@ pub struct GetCloudVmClusterPropertyTimeZone {
     /// IANA Time Zone Database time zone, e.g. "America/New_York".
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

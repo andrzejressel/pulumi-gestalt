@@ -8,15 +8,15 @@ pub struct AttachedClusterAuthorization {
     /// to the groups. Up to ten admin groups can be provided.
     /// For more info on RBAC, see
     /// https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "adminGroups")]
-    pub r#admin_groups: Box<Option<Vec<String>>>,
+    pub r#admin_groups: Option<Vec<String>>,
     /// Users that can perform operations as a cluster admin. A managed
     /// ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
     /// to the users. Up to ten admin users can be provided.
     /// For more info on RBAC, see
     /// https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "adminUsers")]
-    pub r#admin_users: Box<Option<Vec<String>>>,
+    pub r#admin_users: Option<Vec<String>>,
 }

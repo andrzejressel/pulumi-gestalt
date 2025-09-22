@@ -5,17 +5,17 @@
 pub struct GetLaunchTemplateInstanceMarketOptionSpotOption {
     #[builder(into)]
     #[serde(rename = "blockDurationMinutes")]
-    pub r#block_duration_minutes: Box<i32>,
+    pub r#block_duration_minutes: i32,
     #[builder(into)]
     #[serde(rename = "instanceInterruptionBehavior")]
-    pub r#instance_interruption_behavior: Box<String>,
+    pub r#instance_interruption_behavior: String,
     #[builder(into)]
     #[serde(rename = "maxPrice")]
-    pub r#max_price: Box<String>,
+    pub r#max_price: String,
     #[builder(into)]
     #[serde(rename = "spotInstanceType")]
-    pub r#spot_instance_type: Box<String>,
+    pub r#spot_instance_type: String,
     #[builder(into)]
     #[serde(rename = "validUntil")]
-    pub r#valid_until: Box<String>,
+    pub r#valid_until: String,
 }

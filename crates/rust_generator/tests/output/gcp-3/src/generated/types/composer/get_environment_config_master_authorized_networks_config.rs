@@ -6,9 +6,9 @@ pub struct GetEnvironmentConfigMasterAuthorizedNetworksConfig {
     /// cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.
     #[builder(into)]
     #[serde(rename = "cidrBlocks")]
-    pub r#cidr_blocks: Box<Vec<super::super::types::composer::GetEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock>>,
+    pub r#cidr_blocks: Vec<super::super::types::composer::GetEnvironmentConfigMasterAuthorizedNetworksConfigCidrBlock>,
     /// Whether or not master authorized networks is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

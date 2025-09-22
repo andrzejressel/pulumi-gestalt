@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationPortalOptions {
     /// Sign-in options for the access portal. See `sign_in_options` below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "signInOptions")]
-    pub r#sign_in_options: Box<Option<super::super::types::ssoadmin::ApplicationPortalOptionsSignInOptions>>,
+    pub r#sign_in_options: Option<Box<super::super::types::ssoadmin::ApplicationPortalOptionsSignInOptions>>,
     /// Indicates whether this application is visible in the access portal. Valid values are `ENABLED` and `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "visibility")]
-    pub r#visibility: Box<Option<String>>,
+    pub r#visibility: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ProjectDataDeliveryS3Destination {
     /// The name of the bucket in which Evidently stores evaluation events.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<Option<String>>,
+    pub r#bucket: Option<String>,
     /// The bucket prefix in which Evidently stores evaluation events.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
 }

@@ -6,13 +6,13 @@ pub struct AwsNodePoolConfigTaint {
     /// The taint effect. Possible values: EFFECT_UNSPECIFIED, NO_SCHEDULE, PREFER_NO_SCHEDULE, NO_EXECUTE
     #[builder(into)]
     #[serde(rename = "effect")]
-    pub r#effect: Box<String>,
+    pub r#effect: String,
     /// Key for the taint.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Value for the taint.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

@@ -6,9 +6,9 @@ pub struct GetMachineTypesMachineTypeBundledLocalSsd {
     /// The default disk interface if the interface is not specified.
     #[builder(into)]
     #[serde(rename = "defaultInterface")]
-    pub r#default_interface: Box<String>,
+    pub r#default_interface: String,
     /// The number of partitions.
     #[builder(into)]
     #[serde(rename = "partitionCount")]
-    pub r#partition_count: Box<i32>,
+    pub r#partition_count: i32,
 }

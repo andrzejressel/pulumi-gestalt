@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfig {
     /// A target for the deployment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namespacedGkeDeploymentTarget")]
-    pub r#namespaced_gke_deployment_target: Box<Option<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget>>,
+    pub r#namespaced_gke_deployment_target: Option<Box<super::super::types::dataproc::WorkflowTemplatePlacementManagedClusterConfigGkeClusterConfigNamespacedGkeDeploymentTarget>>,
 }

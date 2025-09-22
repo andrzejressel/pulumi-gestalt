@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceNetworkConfigAuthorizedExternalNetwork {
     /// CIDR range for one authorized network of the instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cidrRange")]
-    pub r#cidr_range: Box<Option<String>>,
+    pub r#cidr_range: Option<String>,
 }

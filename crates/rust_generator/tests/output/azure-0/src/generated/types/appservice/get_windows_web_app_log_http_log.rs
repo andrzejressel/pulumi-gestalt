@@ -6,9 +6,9 @@ pub struct GetWindowsWebAppLogHttpLog {
     /// A `azure_blob_storage` block as defined above.
     #[builder(into)]
     #[serde(rename = "azureBlobStorages")]
-    pub r#azure_blob_storages: Box<Vec<super::super::types::appservice::GetWindowsWebAppLogHttpLogAzureBlobStorage>>,
+    pub r#azure_blob_storages: Vec<super::super::types::appservice::GetWindowsWebAppLogHttpLogAzureBlobStorage>,
     /// A `file_system` block as defined above.
     #[builder(into)]
     #[serde(rename = "fileSystems")]
-    pub r#file_systems: Box<Vec<super::super::types::appservice::GetWindowsWebAppLogHttpLogFileSystem>>,
+    pub r#file_systems: Vec<super::super::types::appservice::GetWindowsWebAppLogHttpLogFileSystem>,
 }

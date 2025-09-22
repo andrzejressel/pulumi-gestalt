@@ -6,9 +6,9 @@ pub struct PartitionStorageDescriptorSortColumn {
     /// The name of the column.
     #[builder(into)]
     #[serde(rename = "column")]
-    pub r#column: Box<String>,
+    pub r#column: String,
     /// Indicates that the column is sorted in ascending order (== 1), or in descending order (==0).
     #[builder(into)]
     #[serde(rename = "sortOrder")]
-    pub r#sort_order: Box<i32>,
+    pub r#sort_order: i32,
 }

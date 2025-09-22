@@ -5,11 +5,11 @@
 pub struct GetBrokerMaintenanceWindowStartTime {
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     #[builder(into)]
     #[serde(rename = "timeOfDay")]
-    pub r#time_of_day: Box<String>,
+    pub r#time_of_day: String,
     #[builder(into)]
     #[serde(rename = "timeZone")]
-    pub r#time_zone: Box<String>,
+    pub r#time_zone: String,
 }

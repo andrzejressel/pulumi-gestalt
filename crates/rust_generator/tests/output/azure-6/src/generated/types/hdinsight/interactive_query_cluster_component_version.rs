@@ -6,5 +6,5 @@ pub struct InteractiveQueryClusterComponentVersion {
     /// The version of Interactive Query which should be used for this HDInsight Interactive Query Cluster. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "interactiveHive")]
-    pub r#interactive_hive: Box<String>,
+    pub r#interactive_hive: String,
 }

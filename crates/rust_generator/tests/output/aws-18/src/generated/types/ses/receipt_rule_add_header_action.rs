@@ -6,13 +6,13 @@ pub struct ReceiptRuleAddHeaderAction {
     /// The name of the header to add
     #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<String>,
+    pub r#header_name: String,
     /// The value of the header to add
     #[builder(into)]
     #[serde(rename = "headerValue")]
-    pub r#header_value: Box<String>,
+    pub r#header_value: String,
     /// The position of the action in the receipt rule
     #[builder(into)]
     #[serde(rename = "position")]
-    pub r#position: Box<i32>,
+    pub r#position: i32,
 }

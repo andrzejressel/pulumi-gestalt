@@ -6,13 +6,13 @@ pub struct GetGroupLaunchTemplate {
     /// ID of the launch template.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Specify the exact name of the desired autoscaling group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Template version.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

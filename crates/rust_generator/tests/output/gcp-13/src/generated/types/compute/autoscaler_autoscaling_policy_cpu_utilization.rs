@@ -6,9 +6,9 @@ pub struct AutoscalerAutoscalingPolicyCpuUtilization {
     /// Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are:
     /// - NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics.
     /// - OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "predictiveMethod")]
-    pub r#predictive_method: Box<Option<String>>,
+    pub r#predictive_method: Option<String>,
     /// The target CPU utilization that the autoscaler should maintain.
     /// Must be a float value in the range (0, 1]. If not specified, the
     /// default is 0.6.
@@ -22,5 +22,5 @@ pub struct AutoscalerAutoscalingPolicyCpuUtilization {
     /// utilization.
     #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<f64>,
+    pub r#target: f64,
 }

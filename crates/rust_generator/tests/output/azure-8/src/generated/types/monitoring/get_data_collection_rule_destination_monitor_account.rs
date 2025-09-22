@@ -6,9 +6,9 @@ pub struct GetDataCollectionRuleDestinationMonitorAccount {
     /// The resource ID of the Monitor Account.
     #[builder(into)]
     #[serde(rename = "monitorAccountId")]
-    pub r#monitor_account_id: Box<String>,
+    pub r#monitor_account_id: String,
     /// Specifies the name of the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

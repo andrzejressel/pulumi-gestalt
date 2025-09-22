@@ -6,5 +6,5 @@ pub struct BucketV2ServerSideEncryptionConfiguration {
     /// Single object for server-side encryption by default configuration. (documented below)
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<super::super::types::s3::BucketV2ServerSideEncryptionConfigurationRule>>,
+    pub r#rules: Vec<super::super::types::s3::BucketV2ServerSideEncryptionConfigurationRule>,
 }

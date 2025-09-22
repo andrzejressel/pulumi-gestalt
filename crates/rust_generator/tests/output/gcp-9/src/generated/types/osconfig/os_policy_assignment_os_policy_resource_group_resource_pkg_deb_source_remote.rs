@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSourceRemote {
     /// SHA256 checksum of the remote file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sha256Checksum")]
-    pub r#sha_256_checksum: Box<Option<String>>,
+    pub r#sha_256_checksum: Option<String>,
     /// URI from which to fetch the object. It should contain
     /// both the protocol and path following the format `{protocol}://{location}`.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

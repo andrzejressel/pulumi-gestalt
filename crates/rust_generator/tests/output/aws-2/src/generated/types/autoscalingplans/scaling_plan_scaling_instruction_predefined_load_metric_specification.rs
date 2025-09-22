@@ -6,9 +6,9 @@ pub struct ScalingPlanScalingInstructionPredefinedLoadMetricSpecification {
     /// Metric type. Valid values: `ALBTargetGroupRequestCount`, `ASGTotalCPUUtilization`, `ASGTotalNetworkIn`, `ASGTotalNetworkOut`.
     #[builder(into)]
     #[serde(rename = "predefinedLoadMetricType")]
-    pub r#predefined_load_metric_type: Box<String>,
+    pub r#predefined_load_metric_type: String,
     /// Identifies the resource associated with the metric type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceLabel")]
-    pub r#resource_label: Box<Option<String>>,
+    pub r#resource_label: Option<String>,
 }

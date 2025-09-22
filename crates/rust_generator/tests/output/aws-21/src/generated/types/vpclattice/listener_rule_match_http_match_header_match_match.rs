@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListenerRuleMatchHttpMatchHeaderMatchMatch {
     /// Specifies a contains type match.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "contains")]
-    pub r#contains: Box<Option<String>>,
+    pub r#contains: Option<String>,
     /// Specifies an exact type match.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exact")]
-    pub r#exact: Box<Option<String>>,
+    pub r#exact: Option<String>,
     /// Specifies a prefix type match. Matches the value with the prefix.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
 }

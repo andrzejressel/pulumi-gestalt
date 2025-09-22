@@ -6,9 +6,9 @@ pub struct AssociationTarget {
     /// Either `InstanceIds` or `tag:Tag Name` to specify an EC2 tag.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// A list of instance IDs or tag values. AWS currently limits this list size to one value.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

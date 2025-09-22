@@ -11,9 +11,9 @@ pub struct InterconnectMacsecPreSharedKey {
     /// if the MKA session cannot be established with your router.
     /// 
     /// > **Warning:** `failOpen` is deprecated and will be removed in a future major release. Use other `failOpen` instead.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "failOpen")]
-    pub r#fail_open: Box<Option<bool>>,
+    pub r#fail_open: Option<bool>,
     /// A name for this pre-shared key. The name must be 1-63 characters long, and
     /// comply with RFC1035. Specifically, the name must be 1-63 characters long and match
     /// the regular expression `a-z?` which means the first character
@@ -21,13 +21,13 @@ pub struct InterconnectMacsecPreSharedKey {
     /// letter, or digit, except the last character, which cannot be a dash.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A RFC3339 timestamp on or after which the key is valid. startTime can be in the
     /// future. If the keychain has a single key, startTime can be omitted. If the keychain
     /// has multiple keys, startTime is mandatory for each key. The start times of keys must
     /// be in increasing order. The start times of two consecutive keys must be at least 6
     /// hours apart.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
 }

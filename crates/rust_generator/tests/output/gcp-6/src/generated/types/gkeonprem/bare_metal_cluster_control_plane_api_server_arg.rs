@@ -6,9 +6,9 @@ pub struct BareMetalClusterControlPlaneApiServerArg {
     /// The argument name as it appears on the API Server command line please make sure to remove the leading dashes.
     #[builder(into)]
     #[serde(rename = "argument")]
-    pub r#argument: Box<String>,
+    pub r#argument: String,
     /// The value of the arg as it will be passed to the API Server command line.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

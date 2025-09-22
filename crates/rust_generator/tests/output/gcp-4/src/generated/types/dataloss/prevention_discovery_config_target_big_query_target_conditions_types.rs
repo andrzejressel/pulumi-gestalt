@@ -5,7 +5,7 @@
 pub struct PreventionDiscoveryConfigTargetBigQueryTargetConditionsTypes {
     /// A set of BiqQuery table types
     /// Each value may be one of: `BIG_QUERY_TABLE_TYPE_TABLE`, `BIG_QUERY_TABLE_TYPE_EXTERNAL_BIG_LAKE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "types")]
-    pub r#types: Box<Option<Vec<String>>>,
+    pub r#types: Option<Vec<String>>,
 }

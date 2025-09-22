@@ -6,13 +6,13 @@ pub struct PageRuleActionsMinify {
     /// Whether CSS should be minified. Valid values are `"on"` or `"off"`.
     #[builder(into)]
     #[serde(rename = "css")]
-    pub r#css: Box<String>,
+    pub r#css: String,
     /// Whether HTML should be minified. Valid values are `"on"` or `"off"`.
     #[builder(into)]
     #[serde(rename = "html")]
-    pub r#html: Box<String>,
+    pub r#html: String,
     /// Whether Javascript should be minified. Valid values are `"on"` or `"off"`.
     #[builder(into)]
     #[serde(rename = "js")]
-    pub r#js: Box<String>,
+    pub r#js: String,
 }

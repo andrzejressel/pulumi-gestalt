@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FsxOpenZfsFileSystemProtocolNfsMountOptions {
     /// The specific NFS version that you want DataSync to use for mounting your NFS share. Valid values: `AUTOMATIC`, `NFS3`, `NFS4_0` and `NFS4_1`. Default: `AUTOMATIC`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

@@ -5,7 +5,7 @@
 pub struct BatchRuntimeConfigAutotuningConfig {
     /// Optional. Scenarios for which tunings are applied.
     /// Each value may be one of: `SCALING`, `BROADCAST_HASH_JOIN`, `MEMORY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scenarios")]
-    pub r#scenarios: Box<Option<Vec<String>>>,
+    pub r#scenarios: Option<Vec<String>>,
 }

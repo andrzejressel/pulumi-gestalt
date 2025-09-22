@@ -6,13 +6,13 @@ pub struct IntegrationAccountCertificateKeyVaultKey {
     /// The name of Key Vault Key.
     #[builder(into)]
     #[serde(rename = "keyName")]
-    pub r#key_name: Box<String>,
+    pub r#key_name: String,
     /// The ID of the Key Vault.
     #[builder(into)]
     #[serde(rename = "keyVaultId")]
-    pub r#key_vault_id: Box<String>,
+    pub r#key_vault_id: String,
     /// The version of Key Vault Key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyVersion")]
-    pub r#key_version: Box<Option<String>>,
+    pub r#key_version: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct TriggerTumblingWindowRetry {
     /// The maximum retry attempts if the pipeline run failed.
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
     /// The Interval in seconds between each retry if the pipeline run failed. Defaults to `30`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<Option<i32>>,
+    pub r#interval: Option<i32>,
 }

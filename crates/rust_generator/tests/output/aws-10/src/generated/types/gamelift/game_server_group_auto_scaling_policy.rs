@@ -7,9 +7,9 @@ pub struct GameServerGroupAutoScalingPolicy {
     /// new game server processes and register with GameLift FleetIQ.
     /// Specifying a warm-up time can be useful, particularly with game servers that take a long time to start up,
     /// because it avoids prematurely starting new instances. Defaults to `60`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "estimatedInstanceWarmup")]
-    pub r#estimated_instance_warmup: Box<Option<i32>>,
+    pub r#estimated_instance_warmup: Option<i32>,
     #[builder(into)]
     #[serde(rename = "targetTrackingConfiguration")]
     pub r#target_tracking_configuration: Box<super::super::types::gamelift::GameServerGroupAutoScalingPolicyTargetTrackingConfiguration>,

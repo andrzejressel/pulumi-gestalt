@@ -6,9 +6,9 @@ pub struct InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOpti
     /// The destination bucket that stores the generated inventory reports.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// The path within the destination bucket to store generated inventory reports.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destinationPath")]
-    pub r#destination_path: Box<Option<String>>,
+    pub r#destination_path: Option<String>,
 }

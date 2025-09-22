@@ -7,5 +7,5 @@ pub struct VMwareClusterNetworkConfigDhcpIpConfig {
     /// used for VMware user clusters.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

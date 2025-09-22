@@ -6,9 +6,9 @@ pub struct GetCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsCon
     /// Determines whether any URL query strings in viewer requests are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are `none`, `whitelist`, `allExcept`, `all`.
     #[builder(into)]
     #[serde(rename = "queryStringBehavior")]
-    pub r#query_string_behavior: Box<String>,
+    pub r#query_string_behavior: String,
     /// Object that contains a list of query string names. See Items for more information.
     #[builder(into)]
     #[serde(rename = "queryStrings")]
-    pub r#query_strings: Box<Vec<super::super::types::cloudfront::GetCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryString>>,
+    pub r#query_strings: Vec<super::super::types::cloudfront::GetCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryString>,
 }

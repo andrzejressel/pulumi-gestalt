@@ -6,13 +6,13 @@ pub struct GetClusterMonitoringConfig {
     /// Configuration of Advanced Datapath Observability features.
     #[builder(into)]
     #[serde(rename = "advancedDatapathObservabilityConfigs")]
-    pub r#advanced_datapath_observability_configs: Box<Vec<super::super::types::container::GetClusterMonitoringConfigAdvancedDatapathObservabilityConfig>>,
+    pub r#advanced_datapath_observability_configs: Vec<super::super::types::container::GetClusterMonitoringConfigAdvancedDatapathObservabilityConfig>,
     /// GKE components exposing metrics. Valid values include SYSTEM_COMPONENTS, APISERVER, SCHEDULER, CONTROLLER_MANAGER, STORAGE, HPA, POD, DAEMONSET, DEPLOYMENT, STATEFULSET, WORKLOADS, KUBELET, CADVISOR and DCGM.
     #[builder(into)]
     #[serde(rename = "enableComponents")]
-    pub r#enable_components: Box<Vec<String>>,
+    pub r#enable_components: Vec<String>,
     /// Configuration for Google Cloud Managed Services for Prometheus.
     #[builder(into)]
     #[serde(rename = "managedPrometheuses")]
-    pub r#managed_prometheuses: Box<Vec<super::super::types::container::GetClusterMonitoringConfigManagedPrometheus>>,
+    pub r#managed_prometheuses: Vec<super::super::types::container::GetClusterMonitoringConfigManagedPrometheus>,
 }

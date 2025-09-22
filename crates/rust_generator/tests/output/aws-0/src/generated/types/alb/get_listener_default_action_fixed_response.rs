@@ -5,11 +5,11 @@
 pub struct GetListenerDefaultActionFixedResponse {
     #[builder(into)]
     #[serde(rename = "contentType")]
-    pub r#content_type: Box<String>,
+    pub r#content_type: String,
     #[builder(into)]
     #[serde(rename = "messageBody")]
-    pub r#message_body: Box<String>,
+    pub r#message_body: String,
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<String>,
+    pub r#status_code: String,
 }

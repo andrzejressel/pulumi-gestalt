@@ -7,10 +7,10 @@ pub struct TableMaintenanceConfigurationIcebergSnapshotManagementSettings {
     /// Must be at least `1`.
     #[builder(into)]
     #[serde(rename = "maxSnapshotAgeHours")]
-    pub r#max_snapshot_age_hours: Box<f64>,
+    pub r#max_snapshot_age_hours: f64,
     /// Minimum number of snapshots to keep.
     /// Must be at least `1`.
     #[builder(into)]
     #[serde(rename = "minSnapshotsToKeep")]
-    pub r#min_snapshots_to_keep: Box<f64>,
+    pub r#min_snapshots_to_keep: f64,
 }

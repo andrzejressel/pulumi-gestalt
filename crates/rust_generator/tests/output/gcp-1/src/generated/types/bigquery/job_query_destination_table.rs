@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobQueryDestinationTable {
     /// The ID of the dataset containing this table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datasetId")]
-    pub r#dataset_id: Box<Option<String>>,
+    pub r#dataset_id: Option<String>,
     /// The ID of the project containing this table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<Option<String>>,
+    pub r#project_id: Option<String>,
     /// The table. Can be specified `{{table_id}}` if `project_id` and `dataset_id` are also set,
     /// or of the form `projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}}` if not.
     #[builder(into)]
     #[serde(rename = "tableId")]
-    pub r#table_id: Box<String>,
+    pub r#table_id: String,
 }

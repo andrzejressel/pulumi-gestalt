@@ -6,13 +6,13 @@ pub struct GetApplicationGatewayWafConfigurationExclusion {
     /// Match variable of the exclusion rule.
     #[builder(into)]
     #[serde(rename = "matchVariable")]
-    pub r#match_variable: Box<String>,
+    pub r#match_variable: String,
     /// String value which will be used for the filter operation.
     #[builder(into)]
     #[serde(rename = "selector")]
-    pub r#selector: Box<String>,
+    pub r#selector: String,
     /// Operator which will be used to search in the variable content.
     #[builder(into)]
     #[serde(rename = "selectorMatchOperator")]
-    pub r#selector_match_operator: Box<String>,
+    pub r#selector_match_operator: String,
 }

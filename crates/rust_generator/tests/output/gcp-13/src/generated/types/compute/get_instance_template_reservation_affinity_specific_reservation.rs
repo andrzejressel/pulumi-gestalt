@@ -6,9 +6,9 @@ pub struct GetInstanceTemplateReservationAffinitySpecificReservation {
     /// The key for the node affinity label.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Corresponds to the label values of a reservation resource.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

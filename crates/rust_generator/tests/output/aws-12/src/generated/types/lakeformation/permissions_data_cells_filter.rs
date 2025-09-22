@@ -6,17 +6,17 @@ pub struct PermissionsDataCellsFilter {
     /// The name of the database.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// The name of the data cells filter.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The ID of the Data Catalog.
     #[builder(into)]
     #[serde(rename = "tableCatalogId")]
-    pub r#table_catalog_id: Box<String>,
+    pub r#table_catalog_id: String,
     /// The name of the table.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
 }

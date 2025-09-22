@@ -13,21 +13,21 @@ pub struct BareMetalNodePoolNodePoolConfig {
     /// - http://kubernetes.io/v1.1/docs/user-guide/labels.html
     /// An object containing a list of "key": value pairs.
     /// For example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// The list of machine addresses in the Bare Metal Node Pool.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "nodeConfigs")]
-    pub r#node_configs: Box<Vec<super::super::types::gkeonprem::BareMetalNodePoolNodePoolConfigNodeConfig>>,
+    pub r#node_configs: Vec<super::super::types::gkeonprem::BareMetalNodePoolNodePoolConfigNodeConfig>,
     /// Specifies the nodes operating system (default: LINUX).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operatingSystem")]
-    pub r#operating_system: Box<Option<String>>,
+    pub r#operating_system: Option<String>,
     /// The initial taints assigned to nodes of this node pool.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "taints")]
-    pub r#taints: Box<Option<Vec<super::super::types::gkeonprem::BareMetalNodePoolNodePoolConfigTaint>>>,
+    pub r#taints: Option<Vec<super::super::types::gkeonprem::BareMetalNodePoolNodePoolConfigTaint>>,
 }

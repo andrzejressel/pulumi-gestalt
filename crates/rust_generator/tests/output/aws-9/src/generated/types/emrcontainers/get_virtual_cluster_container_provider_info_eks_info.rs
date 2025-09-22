@@ -6,5 +6,5 @@ pub struct GetVirtualClusterContainerProviderInfoEksInfo {
     /// The namespace where the EMR Containers cluster is running
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
 }

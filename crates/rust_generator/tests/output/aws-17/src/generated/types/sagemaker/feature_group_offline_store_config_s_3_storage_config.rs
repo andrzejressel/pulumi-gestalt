@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureGroupOfflineStoreConfigS3StorageConfig {
     /// The AWS Key Management Service (KMS) key ID of the key used to encrypt any objects written into the OfflineStore S3 location.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<Option<String>>,
+    pub r#kms_key_id: Option<String>,
     /// The S3 path where offline records are written.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resolvedOutputS3Uri")]
-    pub r#resolved_output_s_3_uri: Box<Option<String>>,
+    pub r#resolved_output_s_3_uri: Option<String>,
     /// The S3 URI, or location in Amazon S3, of OfflineStore.
     #[builder(into)]
     #[serde(rename = "s3Uri")]
-    pub r#s_3_uri: Box<String>,
+    pub r#s_3_uri: String,
 }

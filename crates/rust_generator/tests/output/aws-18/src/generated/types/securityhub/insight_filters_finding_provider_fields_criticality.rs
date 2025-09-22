@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InsightFiltersFindingProviderFieldsCriticality {
     /// The equal-to condition to be applied to a single field when querying for findings, provided as a String.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eq")]
-    pub r#eq: Box<Option<String>>,
+    pub r#eq: Option<String>,
     /// The greater-than-equal condition to be applied to a single field when querying for findings, provided as a String.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gte")]
-    pub r#gte: Box<Option<String>>,
+    pub r#gte: Option<String>,
     /// The less-than-equal condition to be applied to a single field when querying for findings, provided as a String.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lte")]
-    pub r#lte: Box<Option<String>>,
+    pub r#lte: Option<String>,
 }

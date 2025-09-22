@@ -5,12 +5,12 @@
 pub struct StreamDestinationConfigGcsDestinationConfigJsonFileFormat {
     /// Compression of the loaded JSON file.
     /// Possible values are: `NO_COMPRESSION`, `GZIP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "compression")]
-    pub r#compression: Box<Option<String>>,
+    pub r#compression: Option<String>,
     /// The schema file format along JSON data files.
     /// Possible values are: `NO_SCHEMA_FILE`, `AVRO_SCHEMA_FILE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schemaFileFormat")]
-    pub r#schema_file_format: Box<Option<String>>,
+    pub r#schema_file_format: Option<String>,
 }

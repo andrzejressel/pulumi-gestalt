@@ -5,7 +5,7 @@
 pub struct ClusterMaintenanceUpdatePolicy {
     /// Preferred windows to perform maintenance. Currently limited to 1.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maintenanceWindows")]
-    pub r#maintenance_windows: Box<Option<Vec<super::super::types::alloydb::ClusterMaintenanceUpdatePolicyMaintenanceWindow>>>,
+    pub r#maintenance_windows: Option<Vec<super::super::types::alloydb::ClusterMaintenanceUpdatePolicyMaintenanceWindow>>,
 }

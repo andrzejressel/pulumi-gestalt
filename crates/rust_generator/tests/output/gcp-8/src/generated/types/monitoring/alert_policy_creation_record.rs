@@ -5,12 +5,12 @@
 pub struct AlertPolicyCreationRecord {
     /// (Output)
     /// When the change occurred.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mutateTime")]
-    pub r#mutate_time: Box<Option<String>>,
+    pub r#mutate_time: Option<String>,
     /// (Output)
     /// The email address of the user making the change.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mutatedBy")]
-    pub r#mutated_by: Box<Option<String>>,
+    pub r#mutated_by: Option<String>,
 }

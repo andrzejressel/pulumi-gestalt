@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OrganizationRootPolicyType {
     /// The status of the policy type as it relates to the associated root
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#status: Option<String>,
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

@@ -6,5 +6,5 @@ pub struct GetServiceTemplateNodeSelector {
     /// The GPU to attach to an instance. See https://cloud.google.com/run/docs/configuring/services/gpu for configuring GPU.
     #[builder(into)]
     #[serde(rename = "accelerator")]
-    pub r#accelerator: Box<String>,
+    pub r#accelerator: String,
 }

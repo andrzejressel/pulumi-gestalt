@@ -4,30 +4,30 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobTemplateConfigEncryption {
     /// Configuration for AES-128 encryption.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "aes128")]
-    pub r#aes_128: Box<Option<super::super::types::transcoder::JobTemplateConfigEncryptionAes128>>,
+    pub r#aes_128: Option<Box<super::super::types::transcoder::JobTemplateConfigEncryptionAes128>>,
     /// DRM system(s) to use; at least one must be specified. If a DRM system is omitted, it is considered disabled.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "drmSystems")]
-    pub r#drm_systems: Box<Option<super::super::types::transcoder::JobTemplateConfigEncryptionDrmSystems>>,
+    pub r#drm_systems: Option<Box<super::super::types::transcoder::JobTemplateConfigEncryptionDrmSystems>>,
     /// Identifier for this set of encryption options.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Configuration for MPEG Common Encryption (MPEG-CENC).
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mpegCenc")]
-    pub r#mpeg_cenc: Box<Option<super::super::types::transcoder::JobTemplateConfigEncryptionMpegCenc>>,
+    pub r#mpeg_cenc: Option<Box<super::super::types::transcoder::JobTemplateConfigEncryptionMpegCenc>>,
     /// Configuration for SAMPLE-AES encryption.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sampleAes")]
-    pub r#sample_aes: Box<Option<super::super::types::transcoder::JobTemplateConfigEncryptionSampleAes>>,
+    pub r#sample_aes: Option<Box<super::super::types::transcoder::JobTemplateConfigEncryptionSampleAes>>,
     /// Configuration for secrets stored in Google Secret Manager.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretManagerKeySource")]
-    pub r#secret_manager_key_source: Box<Option<super::super::types::transcoder::JobTemplateConfigEncryptionSecretManagerKeySource>>,
+    pub r#secret_manager_key_source: Option<Box<super::super::types::transcoder::JobTemplateConfigEncryptionSecretManagerKeySource>>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BrokerLogs {
     /// Enables audit logging. Auditing is only possible for `engine_type` of `ActiveMQ`. User management action made using JMX or the ActiveMQ Web Console is logged. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audit")]
-    pub r#audit: Box<Option<bool>>,
+    pub r#audit: Option<bool>,
     /// Enables general logging via CloudWatch. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "general")]
-    pub r#general: Box<Option<bool>>,
+    pub r#general: Option<bool>,
 }

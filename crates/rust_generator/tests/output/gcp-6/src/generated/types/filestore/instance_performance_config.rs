@@ -7,13 +7,13 @@ pub struct InstancePerformanceConfig {
     /// which will remain constant regardless of instance
     /// capacity.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fixedIops")]
-    pub r#fixed_iops: Box<Option<super::super::types::filestore::InstancePerformanceConfigFixedIops>>,
+    pub r#fixed_iops: Option<Box<super::super::types::filestore::InstancePerformanceConfigFixedIops>>,
     /// The instance provisioned IOPS will change dynamically
     /// based on the capacity of the instance.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "iopsPerTb")]
-    pub r#iops_per_tb: Box<Option<super::super::types::filestore::InstancePerformanceConfigIopsPerTb>>,
+    pub r#iops_per_tb: Option<Box<super::super::types::filestore::InstancePerformanceConfigIopsPerTb>>,
 }

@@ -6,9 +6,9 @@ pub struct TargetGroupTargetHealthState {
     /// Indicates whether the load balancer terminates connections to unhealthy targets. Possible values are `true` or `false`. Default: `true`.
     #[builder(into)]
     #[serde(rename = "enableUnhealthyConnectionTermination")]
-    pub r#enable_unhealthy_connection_termination: Box<bool>,
+    pub r#enable_unhealthy_connection_termination: bool,
     /// Indicates the time to wait for in-flight requests to complete when a target becomes unhealthy. The range is `0-360000`. This value has to be set only if `enable_unhealthy_connection_termination` is set to false. Default: `0`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unhealthyDrainingInterval")]
-    pub r#unhealthy_draining_interval: Box<Option<i32>>,
+    pub r#unhealthy_draining_interval: Option<i32>,
 }

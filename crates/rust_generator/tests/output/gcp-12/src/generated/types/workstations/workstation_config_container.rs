@@ -4,28 +4,28 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkstationConfigContainer {
     /// Arguments passed to the entrypoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "args")]
-    pub r#args: Box<Option<Vec<String>>>,
+    pub r#args: Option<Vec<String>>,
     /// If set, overrides the default ENTRYPOINT specified by the image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commands")]
-    pub r#commands: Box<Option<Vec<String>>>,
+    pub r#commands: Option<Vec<String>>,
     /// Environment variables passed to the container.
     /// The elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "env")]
-    pub r#env: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#env: Option<std::collections::HashMap<String, String>>,
     /// Docker image defining the container. This image must be accessible by the config's service account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "image")]
-    pub r#image: Box<Option<String>>,
+    pub r#image: Option<String>,
     /// If set, overrides the USER specified in the image with the given uid.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "runAsUser")]
-    pub r#run_as_user: Box<Option<i32>>,
+    pub r#run_as_user: Option<i32>,
     /// If set, overrides the default DIR specified by the image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "workingDir")]
-    pub r#working_dir: Box<Option<String>>,
+    pub r#working_dir: Option<String>,
 }

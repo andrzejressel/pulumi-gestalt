@@ -6,5 +6,5 @@ pub struct BucketReplicationConfigurationRuleDestinationAccessControlTranslation
     /// The override value for the owner on replicated objects. Currently only `Destination` is supported.
     #[builder(into)]
     #[serde(rename = "owner")]
-    pub r#owner: Box<String>,
+    pub r#owner: String,
 }

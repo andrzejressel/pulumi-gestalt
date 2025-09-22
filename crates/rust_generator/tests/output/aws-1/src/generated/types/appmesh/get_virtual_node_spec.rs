@@ -5,17 +5,17 @@
 pub struct GetVirtualNodeSpec {
     #[builder(into)]
     #[serde(rename = "backendDefaults")]
-    pub r#backend_defaults: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendDefault>>,
+    pub r#backend_defaults: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendDefault>,
     #[builder(into)]
     #[serde(rename = "backends")]
-    pub r#backends: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackend>>,
+    pub r#backends: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackend>,
     #[builder(into)]
     #[serde(rename = "listeners")]
-    pub r#listeners: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListener>>,
+    pub r#listeners: Vec<super::super::types::appmesh::GetVirtualNodeSpecListener>,
     #[builder(into)]
     #[serde(rename = "loggings")]
-    pub r#loggings: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecLogging>>,
+    pub r#loggings: Vec<super::super::types::appmesh::GetVirtualNodeSpecLogging>,
     #[builder(into)]
     #[serde(rename = "serviceDiscoveries")]
-    pub r#service_discoveries: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecServiceDiscovery>>,
+    pub r#service_discoveries: Vec<super::super::types::appmesh::GetVirtualNodeSpecServiceDiscovery>,
 }

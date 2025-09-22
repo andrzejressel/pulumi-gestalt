@@ -12,5 +12,5 @@ pub struct DatasetAccessDataset {
     /// but additional target types may be added in the future. Possible values: VIEWS
     #[builder(into)]
     #[serde(rename = "targetTypes")]
-    pub r#target_types: Box<Vec<String>>,
+    pub r#target_types: Vec<String>,
 }

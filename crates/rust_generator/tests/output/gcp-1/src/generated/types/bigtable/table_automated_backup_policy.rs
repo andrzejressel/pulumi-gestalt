@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TableAutomatedBackupPolicy {
     /// How frequently automated backups should occur.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "frequency")]
-    pub r#frequency: Box<Option<String>>,
+    pub r#frequency: Option<String>,
     /// How long the automated backups should be retained.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionPeriod")]
-    pub r#retention_period: Box<Option<String>>,
+    pub r#retention_period: Option<String>,
 }

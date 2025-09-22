@@ -5,9 +5,9 @@
 pub struct ResourceProviderRegistrationFeature {
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Should this feature be Registered or Unregistered?
     #[builder(into)]
     #[serde(rename = "registered")]
-    pub r#registered: Box<bool>,
+    pub r#registered: bool,
 }

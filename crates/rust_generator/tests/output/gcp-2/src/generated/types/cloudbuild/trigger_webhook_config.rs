@@ -6,11 +6,11 @@ pub struct TriggerWebhookConfig {
     /// Resource name for the secret required as a URL parameter.
     #[builder(into)]
     #[serde(rename = "secret")]
-    pub r#secret: Box<String>,
+    pub r#secret: String,
     /// (Output)
     /// Potential issues with the underlying Pub/Sub subscription configuration.
     /// Only populated on get requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CustomDomainAssociationCertificateValidationRecord {
     /// Certificate CNAME record name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Current state of the certificate CNAME record validation. It should change to `SUCCESS` after App Runner completes validation with your DNS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
     /// Record type, always `CNAME`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
     /// Certificate CNAME record value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

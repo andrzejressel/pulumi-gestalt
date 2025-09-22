@@ -6,14 +6,14 @@ pub struct AuthConfigClientCertificate {
     /// The ssl certificate encoded in PEM format. This string must include the begin header and end footer lines.
     #[builder(into)]
     #[serde(rename = "encryptedPrivateKey")]
-    pub r#encrypted_private_key: Box<String>,
+    pub r#encrypted_private_key: String,
     /// 'passphrase' should be left unset if private key is not encrypted.
     /// Note that 'passphrase' is not the password for web server, but an extra layer of security to protected private key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passphrase")]
-    pub r#passphrase: Box<Option<String>>,
+    pub r#passphrase: Option<String>,
     /// The ssl certificate encoded in PEM format. This string must include the begin header and end footer lines.
     #[builder(into)]
     #[serde(rename = "sslCertificate")]
-    pub r#ssl_certificate: Box<String>,
+    pub r#ssl_certificate: String,
 }

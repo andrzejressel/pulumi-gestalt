@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorKafkaClusterEncryptionInTransit {
     /// The type of encryption in transit to the Apache Kafka cluster. Valid values: `PLAINTEXT`, `TLS`. The default values is `PLAINTEXT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encryptionType")]
-    pub r#encryption_type: Box<Option<String>>,
+    pub r#encryption_type: Option<String>,
 }

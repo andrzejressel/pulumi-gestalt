@@ -6,5 +6,5 @@ pub struct MediaInsightsPipelineConfigurationElementKinesisDataStreamSinkConfigu
     /// Kinesis Data Stream to deliver results.
     #[builder(into)]
     #[serde(rename = "insightsTarget")]
-    pub r#insights_target: Box<String>,
+    pub r#insights_target: String,
 }

@@ -6,13 +6,13 @@ pub struct SpringCloudServiceMarketplace {
     /// Specifies the plan ID of the 3rd Party Artifact that is being procured.
     #[builder(into)]
     #[serde(rename = "plan")]
-    pub r#plan: Box<String>,
+    pub r#plan: String,
     /// Specifies the 3rd Party artifact that is being procured.
     #[builder(into)]
     #[serde(rename = "product")]
-    pub r#product: Box<String>,
+    pub r#product: String,
     /// Specifies the publisher ID of the 3rd Party Artifact that is being procured.
     #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<String>,
+    pub r#publisher: String,
 }

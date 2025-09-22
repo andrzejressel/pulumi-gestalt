@@ -12,9 +12,9 @@ pub struct GetServiceTemplate {
     /// annotation key.
     #[builder(into)]
     #[serde(rename = "metadatas")]
-    pub r#metadatas: Box<Vec<super::super::types::cloudrun::GetServiceTemplateMetadata>>,
+    pub r#metadatas: Vec<super::super::types::cloudrun::GetServiceTemplateMetadata>,
     /// RevisionSpec holds the desired state of the Revision (from the client).
     #[builder(into)]
     #[serde(rename = "specs")]
-    pub r#specs: Box<Vec<super::super::types::cloudrun::GetServiceTemplateSpec>>,
+    pub r#specs: Vec<super::super::types::cloudrun::GetServiceTemplateSpec>,
 }

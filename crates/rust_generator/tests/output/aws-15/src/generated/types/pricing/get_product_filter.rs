@@ -6,9 +6,9 @@ pub struct GetProductFilter {
     /// Product attribute name that you want to filter on.
     #[builder(into)]
     #[serde(rename = "field")]
-    pub r#field: Box<String>,
+    pub r#field: String,
     /// Product attribute value that you want to filter on.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

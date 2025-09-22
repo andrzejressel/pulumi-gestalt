@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataCollectionRuleDataSourcesDataImportEventHubDataSource {
     /// The Event Hub consumer group name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "consumerGroup")]
-    pub r#consumer_group: Box<Option<String>>,
+    pub r#consumer_group: Option<String>,
     /// The name which should be used for this data source. This name should be unique across all data sources regardless of type within the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The stream to collect from Event Hub. Possible value should be a custom stream name.
     #[builder(into)]
     #[serde(rename = "stream")]
-    pub r#stream: Box<String>,
+    pub r#stream: String,
 }

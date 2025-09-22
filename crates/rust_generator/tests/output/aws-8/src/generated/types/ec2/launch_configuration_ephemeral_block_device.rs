@@ -5,11 +5,11 @@
 pub struct LaunchConfigurationEphemeralBlockDevice {
     #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<String>,
-    #[builder(into, default)]
+    pub r#device_name: String,
+    #[builder(into)]
     #[serde(rename = "noDevice")]
-    pub r#no_device: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#no_device: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "virtualName")]
-    pub r#virtual_name: Box<Option<String>>,
+    pub r#virtual_name: Option<String>,
 }

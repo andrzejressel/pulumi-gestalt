@@ -10,5 +10,5 @@ pub struct VolumeDataProtectionSnapshotPolicy {
     /// > **NOTE:** `data_protection_snapshot_policy` block can be used alone or with data_protection_replication in the primary volume only, if enabling it in the secondary, an error will be thrown.
     #[builder(into)]
     #[serde(rename = "snapshotPolicyId")]
-    pub r#snapshot_policy_id: Box<String>,
+    pub r#snapshot_policy_id: String,
 }

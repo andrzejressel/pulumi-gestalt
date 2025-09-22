@@ -5,12 +5,12 @@
 pub struct ManagementServerManagementUri {
     /// (Output)
     /// The management console api endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "api")]
-    pub r#api: Box<Option<String>>,
+    pub r#api: Option<String>,
     /// (Output)
     /// The management console webUi.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "webUi")]
-    pub r#web_ui: Box<Option<String>>,
+    pub r#web_ui: Option<String>,
 }

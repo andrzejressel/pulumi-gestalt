@@ -6,9 +6,9 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationReferen
     /// The ARN of the S3 bucket.
     #[builder(into)]
     #[serde(rename = "bucketArn")]
-    pub r#bucket_arn: Box<String>,
+    pub r#bucket_arn: String,
     /// The object key name containing the reference data.
     #[builder(into)]
     #[serde(rename = "fileKey")]
-    pub r#file_key: Box<String>,
+    pub r#file_key: String,
 }

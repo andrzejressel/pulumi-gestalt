@@ -6,9 +6,9 @@ pub struct ResiliencyPolicyPolicyHardware {
     /// Recovery Point Objective (RPO) as a Go duration.
     #[builder(into)]
     #[serde(rename = "rpo")]
-    pub r#rpo: Box<String>,
+    pub r#rpo: String,
     /// Recovery Time Objective (RTO) as a Go duration.
     #[builder(into)]
     #[serde(rename = "rto")]
-    pub r#rto: Box<String>,
+    pub r#rto: String,
 }

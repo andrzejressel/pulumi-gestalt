@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigMfaProviderConfigTotpProviderConfig {
     /// The allowed number of adjacent intervals that will be used for verification to avoid clock skew.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "adjacentIntervals")]
-    pub r#adjacent_intervals: Box<Option<i32>>,
+    pub r#adjacent_intervals: Option<i32>,
 }

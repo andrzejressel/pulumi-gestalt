@@ -6,9 +6,9 @@ pub struct ClusterFabricSetting {
     /// The name of the Fabric Setting, such as `Security` or `Federation`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A map containing settings for the specified Fabric Setting.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#parameters: Option<std::collections::HashMap<String, String>>,
 }

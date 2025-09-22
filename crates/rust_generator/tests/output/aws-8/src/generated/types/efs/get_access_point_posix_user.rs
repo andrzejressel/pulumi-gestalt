@@ -6,13 +6,13 @@ pub struct GetAccessPointPosixUser {
     /// Group ID
     #[builder(into)]
     #[serde(rename = "gid")]
-    pub r#gid: Box<i32>,
+    pub r#gid: i32,
     /// Secondary group IDs
     #[builder(into)]
     #[serde(rename = "secondaryGids")]
-    pub r#secondary_gids: Box<Vec<i32>>,
+    pub r#secondary_gids: Vec<i32>,
     /// User Id
     #[builder(into)]
     #[serde(rename = "uid")]
-    pub r#uid: Box<i32>,
+    pub r#uid: i32,
 }

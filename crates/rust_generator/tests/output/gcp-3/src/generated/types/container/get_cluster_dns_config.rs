@@ -6,17 +6,17 @@ pub struct GetClusterDnsConfig {
     /// Enable additive VPC scope DNS in a GKE cluster.
     #[builder(into)]
     #[serde(rename = "additiveVpcScopeDnsDomain")]
-    pub r#additive_vpc_scope_dns_domain: Box<String>,
+    pub r#additive_vpc_scope_dns_domain: String,
     /// Which in-cluster DNS provider should be used.
     #[builder(into)]
     #[serde(rename = "clusterDns")]
-    pub r#cluster_dns: Box<String>,
+    pub r#cluster_dns: String,
     /// The suffix used for all cluster service records.
     #[builder(into)]
     #[serde(rename = "clusterDnsDomain")]
-    pub r#cluster_dns_domain: Box<String>,
+    pub r#cluster_dns_domain: String,
     /// The scope of access to cluster DNS records.
     #[builder(into)]
     #[serde(rename = "clusterDnsScope")]
-    pub r#cluster_dns_scope: Box<String>,
+    pub r#cluster_dns_scope: String,
 }

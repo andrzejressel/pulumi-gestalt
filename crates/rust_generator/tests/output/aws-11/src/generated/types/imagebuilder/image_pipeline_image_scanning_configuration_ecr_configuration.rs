@@ -3,11 +3,11 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ImagePipelineImageScanningConfigurationEcrConfiguration {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerTags")]
-    pub r#container_tags: Box<Option<Vec<String>>>,
+    pub r#container_tags: Option<Vec<String>>,
     /// The name of the repository to scan
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repositoryName")]
-    pub r#repository_name: Box<Option<String>>,
+    pub r#repository_name: Option<String>,
 }

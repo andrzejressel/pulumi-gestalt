@@ -6,9 +6,9 @@ pub struct EndpointDeliveryRuleCacheKeyQueryStringAction {
     /// The behavior of the cache key for query strings. Valid values are `Exclude`, `ExcludeAll`, `Include` and `IncludeAll`.
     #[builder(into)]
     #[serde(rename = "behavior")]
-    pub r#behavior: Box<String>,
+    pub r#behavior: String,
     /// Comma separated list of parameter values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<String>>,
+    pub r#parameters: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct PolicyDefinitionTemplateLinkedPrincipal {
     /// The entity ID of the principal.
     #[builder(into)]
     #[serde(rename = "entityId")]
-    pub r#entity_id: Box<String>,
+    pub r#entity_id: String,
     /// The entity type of the principal.
     #[builder(into)]
     #[serde(rename = "entityType")]
-    pub r#entity_type: Box<String>,
+    pub r#entity_type: String,
 }

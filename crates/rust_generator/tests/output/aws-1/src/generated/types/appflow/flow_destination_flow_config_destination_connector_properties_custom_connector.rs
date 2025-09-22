@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnector {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customProperties")]
-    pub r#custom_properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#custom_properties: Option<std::collections::HashMap<String, String>>,
     #[builder(into)]
     #[serde(rename = "entityName")]
-    pub r#entity_name: Box<String>,
-    #[builder(into, default)]
+    pub r#entity_name: String,
+    #[builder(into)]
     #[serde(rename = "errorHandlingConfig")]
-    pub r#error_handling_config: Box<Option<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfig>>,
-    #[builder(into, default)]
+    pub r#error_handling_config: Option<Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfig>>,
+    #[builder(into)]
     #[serde(rename = "idFieldNames")]
-    pub r#id_field_names: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#id_field_names: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "writeOperationType")]
-    pub r#write_operation_type: Box<Option<String>>,
+    pub r#write_operation_type: Option<String>,
 }

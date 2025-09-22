@@ -8,15 +8,15 @@ pub struct GetJobLatestCreatedExecution {
     /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
     #[serde(rename = "completionTime")]
-    pub r#completion_time: Box<String>,
+    pub r#completion_time: String,
     /// Creation timestamp of the execution.
     /// 
     /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     #[builder(into)]
     #[serde(rename = "createTime")]
-    pub r#create_time: Box<String>,
+    pub r#create_time: String,
     /// The name of the Cloud Run v2 Job.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

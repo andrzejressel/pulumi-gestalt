@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings {
     /// The height of the FEC protection matrix.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "columnDepth")]
-    pub r#column_depth: Box<Option<i32>>,
+    pub r#column_depth: Option<i32>,
     /// Enables column only or column and row based FEC.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includeFec")]
-    pub r#include_fec: Box<Option<String>>,
+    pub r#include_fec: Option<String>,
     /// The width of the FEC protection matrix.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rowLength")]
-    pub r#row_length: Box<Option<i32>>,
+    pub r#row_length: Option<i32>,
 }

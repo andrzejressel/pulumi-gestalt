@@ -6,5 +6,5 @@ pub struct ClusterOpenMonitoringPrometheusJmxExporter {
     /// Indicates whether you want to enable or disable the Node Exporter.
     #[builder(into)]
     #[serde(rename = "enabledInBroker")]
-    pub r#enabled_in_broker: Box<bool>,
+    pub r#enabled_in_broker: bool,
 }

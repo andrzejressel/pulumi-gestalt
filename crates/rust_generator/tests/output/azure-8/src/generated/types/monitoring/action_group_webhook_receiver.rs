@@ -6,19 +6,19 @@ pub struct ActionGroupWebhookReceiver {
     /// The `aad_auth` block as defined below.
     /// 
     /// > **NOTE:** Before adding a secure webhook receiver by setting `aad_auth`, please read [the configuration instruction of the AAD application](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#secure-webhook).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "aadAuth")]
-    pub r#aad_auth: Box<Option<super::super::types::monitoring::ActionGroupWebhookReceiverAadAuth>>,
+    pub r#aad_auth: Option<Box<super::super::types::monitoring::ActionGroupWebhookReceiverAadAuth>>,
     /// The name of the webhook receiver. Names must be unique (case-insensitive) across all receivers within an action group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The URI where webhooks should be sent.
     #[builder(into)]
     #[serde(rename = "serviceUri")]
-    pub r#service_uri: Box<String>,
+    pub r#service_uri: String,
     /// Enables or disables the common alert schema.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useCommonAlertSchema")]
-    pub r#use_common_alert_schema: Box<Option<bool>>,
+    pub r#use_common_alert_schema: Option<bool>,
 }

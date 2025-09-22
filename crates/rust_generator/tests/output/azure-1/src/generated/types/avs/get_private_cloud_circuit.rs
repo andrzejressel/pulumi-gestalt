@@ -6,17 +6,17 @@ pub struct GetPrivateCloudCircuit {
     /// The ID of the ExpressRoute Circuit.
     #[builder(into)]
     #[serde(rename = "expressRouteId")]
-    pub r#express_route_id: Box<String>,
+    pub r#express_route_id: String,
     /// The ID of the ExpressRoute Circuit private peering.
     #[builder(into)]
     #[serde(rename = "expressRoutePrivatePeeringId")]
-    pub r#express_route_private_peering_id: Box<String>,
+    pub r#express_route_private_peering_id: String,
     /// The CIDR of the primary subnet.
     #[builder(into)]
     #[serde(rename = "primarySubnetCidr")]
-    pub r#primary_subnet_cidr: Box<String>,
+    pub r#primary_subnet_cidr: String,
     /// The CIDR of the secondary subnet.
     #[builder(into)]
     #[serde(rename = "secondarySubnetCidr")]
-    pub r#secondary_subnet_cidr: Box<String>,
+    pub r#secondary_subnet_cidr: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobDefinitionEksPropertiesPodPropertiesMetadata {
     /// Key-value pairs used to identify, sort, and organize cube resources.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
 }

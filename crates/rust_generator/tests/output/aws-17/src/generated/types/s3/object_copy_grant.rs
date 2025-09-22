@@ -4,25 +4,25 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ObjectCopyGrant {
     /// Email address of the grantee. Used only when `type` is `AmazonCustomerByEmail`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// Canonical user ID of the grantee. Used only when `type` is `CanonicalUser`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// List of permissions to grant to grantee. Valid values are `READ`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL`.
     #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<Vec<String>>,
+    pub r#permissions: Vec<String>,
     /// Type of grantee. Valid values are `CanonicalUser`, `Group`, and `AmazonCustomerByEmail`.
     /// 
     /// This configuration block has the following optional arguments (one of the three is required):
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// URI of the grantee group. Used only when `type` is `Group`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<Option<String>>,
+    pub r#uri: Option<String>,
 }

@@ -10,11 +10,11 @@ pub struct WorkforcePoolProviderExtraAttributesOauth2Client {
     /// 'microsoft.graph.group' properties. The attributes obtained from idntity provider are mapped to 'assertion.groups'. Possible values: ["AZURE_AD_GROUPS_MAIL"]
     #[builder(into)]
     #[serde(rename = "attributesType")]
-    pub r#attributes_type: Box<String>,
+    pub r#attributes_type: String,
     /// The OAuth 2.0 client ID for retrieving extra attributes from the identity provider. Required to get the Access Token using client credentials grant flow.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The OAuth 2.0 client secret for retrieving extra attributes from the identity provider. Required to get the Access Token using client credentials grant flow.
     #[builder(into)]
     #[serde(rename = "clientSecret")]
@@ -22,9 +22,9 @@ pub struct WorkforcePoolProviderExtraAttributesOauth2Client {
     /// The OIDC identity provider's issuer URI. Must be a valid URI using the 'https' scheme. Required to get the OIDC discovery document.
     #[builder(into)]
     #[serde(rename = "issuerUri")]
-    pub r#issuer_uri: Box<String>,
+    pub r#issuer_uri: String,
     /// Represents the parameters to control which claims are fetched from an IdP.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "queryParameters")]
-    pub r#query_parameters: Box<Option<super::super::types::iam::WorkforcePoolProviderExtraAttributesOauth2ClientQueryParameters>>,
+    pub r#query_parameters: Option<Box<super::super::types::iam::WorkforcePoolProviderExtraAttributesOauth2ClientQueryParameters>>,
 }

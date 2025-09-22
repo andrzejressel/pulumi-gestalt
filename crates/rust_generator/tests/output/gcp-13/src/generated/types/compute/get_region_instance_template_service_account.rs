@@ -7,11 +7,11 @@ pub struct GetRegionInstanceTemplateServiceAccount {
     /// default Google Compute Engine service account is used.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
     /// A list of service scopes. Both OAuth2 URLs and gcloud
     /// short names are supported. To allow full access to all Cloud APIs, use the
     /// `cloud-platform` scope. See a complete list of scopes [here](https://cloud.google.com/sdk/gcloud/reference/alpha/compute/instances/set-scopes#--scopes).
     #[builder(into)]
     #[serde(rename = "scopes")]
-    pub r#scopes: Box<Vec<String>>,
+    pub r#scopes: Vec<String>,
 }

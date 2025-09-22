@@ -6,9 +6,9 @@ pub struct ExperimentTemplateStopCondition {
     /// Source of the condition. One of `none`, `aws:cloudwatch:alarm`.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<String>,
+    pub r#source: String,
     /// ARN of the CloudWatch alarm. Required if the source is a CloudWatch alarm.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

@@ -6,5 +6,5 @@ pub struct StorageLensConfigurationStorageLensConfigurationDataExportCloudWatchM
     /// Whether CloudWatch publishing for S3 Storage Lens metrics is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

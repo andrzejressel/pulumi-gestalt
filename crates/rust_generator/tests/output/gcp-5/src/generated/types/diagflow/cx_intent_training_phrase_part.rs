@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxIntentTrainingPhrasePart {
     /// The parameter used to annotate this part of the training phrase. This field is required for annotated parts of the training phrase.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameterId")]
-    pub r#parameter_id: Box<Option<String>>,
+    pub r#parameter_id: Option<String>,
     /// The text for this part.
     #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<String>,
+    pub r#text: String,
 }

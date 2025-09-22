@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstancePscConfig {
     /// List of VPCs that are allowed ingress into the Looker instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedVpcs")]
-    pub r#allowed_vpcs: Box<Option<Vec<String>>>,
+    pub r#allowed_vpcs: Option<Vec<String>>,
     /// (Output)
     /// URI of the Looker service attachment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lookerServiceAttachmentUri")]
-    pub r#looker_service_attachment_uri: Box<Option<String>>,
+    pub r#looker_service_attachment_uri: Option<String>,
     /// List of egress service attachment configurations.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAttachments")]
-    pub r#service_attachments: Box<Option<Vec<super::super::types::looker::InstancePscConfigServiceAttachment>>>,
+    pub r#service_attachments: Option<Vec<super::super::types::looker::InstancePscConfigServiceAttachment>>,
 }

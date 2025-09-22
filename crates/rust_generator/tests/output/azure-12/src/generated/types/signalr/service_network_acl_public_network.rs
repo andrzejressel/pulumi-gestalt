@@ -6,15 +6,15 @@ pub struct ServiceNetworkAclPublicNetwork {
     /// The allowed request types for the public network. Possible values are `ClientConnection`, `ServerConnection`, `RESTAPI` and `Trace`.
     /// 
     /// > **Note:** When `default_action` is `Allow`, `allowed_request_types`cannot be set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedRequestTypes")]
-    pub r#allowed_request_types: Box<Option<Vec<String>>>,
+    pub r#allowed_request_types: Option<Vec<String>>,
     /// The denied request types for the public network. Possible values are `ClientConnection`, `ServerConnection`, `RESTAPI` and `Trace`.
     /// 
     /// > **Note:** When `default_action` is `Deny`, `denied_request_types`cannot be set.
     /// 
     /// > **Note:** `allowed_request_types` - (Optional) and `denied_request_types` cannot be set together.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deniedRequestTypes")]
-    pub r#denied_request_types: Box<Option<Vec<String>>>,
+    pub r#denied_request_types: Option<Vec<String>>,
 }

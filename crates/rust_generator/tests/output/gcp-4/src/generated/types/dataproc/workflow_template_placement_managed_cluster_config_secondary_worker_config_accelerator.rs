@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkflowTemplatePlacementManagedClusterConfigSecondaryWorkerConfigAccelerator {
     /// The number of the accelerator cards of this type exposed to this instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acceleratorCount")]
-    pub r#accelerator_count: Box<Option<i32>>,
+    pub r#accelerator_count: Option<i32>,
     /// Full URL, partial URI, or short name of the accelerator type resource to expose to this instance. See (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the accelerator type resource, for example, `nvidia-tesla-k80`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acceleratorType")]
-    pub r#accelerator_type: Box<Option<String>>,
+    pub r#accelerator_type: Option<String>,
 }

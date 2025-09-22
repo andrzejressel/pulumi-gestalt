@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OutboundConnectionConnectionProperties {
     /// Configuration block for cross cluster search.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "crossClusterSearch")]
-    pub r#cross_cluster_search: Box<Option<super::super::types::opensearch::OutboundConnectionConnectionPropertiesCrossClusterSearch>>,
+    pub r#cross_cluster_search: Option<Box<super::super::types::opensearch::OutboundConnectionConnectionPropertiesCrossClusterSearch>>,
     /// The endpoint of the remote domain, is only set when `connection_mode` is `VPC_ENDPOINT` and `accept_connection` is `TRUE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<Option<String>>,
+    pub r#endpoint: Option<String>,
 }

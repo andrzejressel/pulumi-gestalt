@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkspaceManagedNetwork {
     /// The isolation mode of the Machine Learning Workspace. Possible values are `Disabled`, `AllowOnlyApprovedOutbound`, and `AllowInternetOutbound`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isolationMode")]
-    pub r#isolation_mode: Box<Option<String>>,
+    pub r#isolation_mode: Option<String>,
 }

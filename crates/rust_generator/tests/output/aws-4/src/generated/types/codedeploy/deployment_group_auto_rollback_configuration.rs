@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeploymentGroupAutoRollbackConfiguration {
     /// Indicates whether a defined automatic rollback configuration is currently enabled for this Deployment Group. If you enable automatic rollback, you must specify at least one event type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The event type or types that trigger a rollback. Supported types are `DEPLOYMENT_FAILURE`, `DEPLOYMENT_STOP_ON_ALARM` and `DEPLOYMENT_STOP_ON_REQUEST`.
     /// 
     /// _Only one `auto_rollback_configuration` is allowed_.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "events")]
-    pub r#events: Box<Option<Vec<String>>>,
+    pub r#events: Option<Vec<String>>,
 }

@@ -6,22 +6,22 @@ pub struct GuestPoliciesRecipeArtifact {
     /// Defaults to false. When false, recipes are subject to validations based on the artifact type:
     /// Remote: A checksum must be specified, and only protocols with transport-layer security are permitted.
     /// GCS: An object generation number must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowInsecure")]
-    pub r#allow_insecure: Box<Option<bool>>,
+    pub r#allow_insecure: Option<bool>,
     /// A Google Cloud Storage artifact.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gcs")]
-    pub r#gcs: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeArtifactGcs>>,
+    pub r#gcs: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeArtifactGcs>>,
     /// Id of the artifact, which the installation and update steps of this recipe can reference.
     /// Artifacts in a recipe cannot have the same id.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// A generic remote artifact.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "remote")]
-    pub r#remote: Box<Option<super::super::types::osconfig::GuestPoliciesRecipeArtifactRemote>>,
+    pub r#remote: Option<Box<super::super::types::osconfig::GuestPoliciesRecipeArtifactRemote>>,
 }

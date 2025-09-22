@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MetastoreServiceScalingConfigAutoscalingConfigLimitConfig {
     /// The maximum scaling factor that the service will autoscale to. The default value is 6.0.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxScalingFactor")]
-    pub r#max_scaling_factor: Box<Option<f64>>,
+    pub r#max_scaling_factor: Option<f64>,
     /// The minimum scaling factor that the service will autoscale to. The default value is 0.1.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minScalingFactor")]
-    pub r#min_scaling_factor: Box<Option<f64>>,
+    pub r#min_scaling_factor: Option<f64>,
 }

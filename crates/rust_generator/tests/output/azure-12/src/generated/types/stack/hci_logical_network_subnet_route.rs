@@ -6,13 +6,13 @@ pub struct HciLogicalNetworkSubnetRoute {
     /// The Address in CIDR notation. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "addressPrefix")]
-    pub r#address_prefix: Box<String>,
+    pub r#address_prefix: String,
     /// The name of the route. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The IPv4 address of the next hop. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "nextHopIpAddress")]
-    pub r#next_hop_ip_address: Box<String>,
+    pub r#next_hop_ip_address: String,
 }

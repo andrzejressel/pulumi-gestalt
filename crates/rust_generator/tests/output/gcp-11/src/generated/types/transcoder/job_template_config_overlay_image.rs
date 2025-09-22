@@ -6,5 +6,5 @@ pub struct JobTemplateConfigOverlayImage {
     /// URI of the image in Cloud Storage. For example, gs://bucket/inputs/image.png.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

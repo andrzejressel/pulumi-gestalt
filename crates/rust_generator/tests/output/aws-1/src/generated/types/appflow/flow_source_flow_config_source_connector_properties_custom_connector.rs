@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowSourceFlowConfigSourceConnectorPropertiesCustomConnector {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customProperties")]
-    pub r#custom_properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#custom_properties: Option<std::collections::HashMap<String, String>>,
     #[builder(into)]
     #[serde(rename = "entityName")]
-    pub r#entity_name: Box<String>,
+    pub r#entity_name: String,
 }

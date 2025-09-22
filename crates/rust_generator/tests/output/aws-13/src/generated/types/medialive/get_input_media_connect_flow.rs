@@ -5,5 +5,5 @@
 pub struct GetInputMediaConnectFlow {
     #[builder(into)]
     #[serde(rename = "flowArn")]
-    pub r#flow_arn: Box<String>,
+    pub r#flow_arn: String,
 }

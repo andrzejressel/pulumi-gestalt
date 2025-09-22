@@ -5,13 +5,13 @@
 pub struct ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettingsNielsenCbetSettings {
     #[builder(into)]
     #[serde(rename = "cbetCheckDigitString")]
-    pub r#cbet_check_digit_string: Box<String>,
+    pub r#cbet_check_digit_string: String,
     /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
     #[builder(into)]
     #[serde(rename = "cbetStepaside")]
-    pub r#cbet_stepaside: Box<String>,
+    pub r#cbet_stepaside: String,
     /// CBET source ID to use in the watermark.
     #[builder(into)]
     #[serde(rename = "csid")]
-    pub r#csid: Box<String>,
+    pub r#csid: String,
 }

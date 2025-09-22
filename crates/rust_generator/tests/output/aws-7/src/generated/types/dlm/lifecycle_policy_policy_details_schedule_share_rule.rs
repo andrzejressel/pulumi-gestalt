@@ -6,13 +6,13 @@ pub struct LifecyclePolicyPolicyDetailsScheduleShareRule {
     /// The IDs of the AWS accounts with which to share the snapshots.
     #[builder(into)]
     #[serde(rename = "targetAccounts")]
-    pub r#target_accounts: Box<Vec<String>>,
+    pub r#target_accounts: Vec<String>,
     /// The period after which snapshots that are shared with other AWS accounts are automatically unshared.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unshareInterval")]
-    pub r#unshare_interval: Box<Option<i32>>,
+    pub r#unshare_interval: Option<i32>,
     /// The unit of time for the automatic unsharing interval. Valid values are `DAYS`, `WEEKS`, `MONTHS`, `YEARS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unshareIntervalUnit")]
-    pub r#unshare_interval_unit: Box<Option<String>>,
+    pub r#unshare_interval_unit: Option<String>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsFrameCaptureOutputSettings {
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nameModifier")]
-    pub r#name_modifier: Box<Option<String>>,
+    pub r#name_modifier: Option<String>,
 }

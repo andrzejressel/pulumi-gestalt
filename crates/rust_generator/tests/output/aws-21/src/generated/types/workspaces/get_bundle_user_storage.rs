@@ -6,5 +6,5 @@ pub struct GetBundleUserStorage {
     /// Size of the user storage.
     #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<String>,
+    pub r#capacity: String,
 }

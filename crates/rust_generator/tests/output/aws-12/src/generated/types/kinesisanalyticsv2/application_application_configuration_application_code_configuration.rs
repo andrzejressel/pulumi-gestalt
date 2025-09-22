@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationApplicationConfigurationApplicationCodeConfiguration {
     /// The location and type of the application code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "codeContent")]
-    pub r#code_content: Box<Option<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContent>>,
+    pub r#code_content: Option<Box<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContent>>,
     /// Specifies whether the code content is in text or zip format. Valid values: `PLAINTEXT`, `ZIPFILE`.
     #[builder(into)]
     #[serde(rename = "codeContentType")]
-    pub r#code_content_type: Box<String>,
+    pub r#code_content_type: String,
 }

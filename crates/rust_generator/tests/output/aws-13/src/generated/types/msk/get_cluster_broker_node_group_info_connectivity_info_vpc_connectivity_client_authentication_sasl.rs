@@ -5,8 +5,8 @@
 pub struct GetClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl {
     #[builder(into)]
     #[serde(rename = "iam")]
-    pub r#iam: Box<bool>,
+    pub r#iam: bool,
     #[builder(into)]
     #[serde(rename = "scram")]
-    pub r#scram: Box<bool>,
+    pub r#scram: bool,
 }

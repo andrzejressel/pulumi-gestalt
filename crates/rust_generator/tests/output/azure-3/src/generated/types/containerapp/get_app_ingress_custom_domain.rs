@@ -6,13 +6,13 @@ pub struct GetAppIngressCustomDomain {
     /// The Binding type. Possible values include `Disabled` and `SniEnabled`. Defaults to `Disabled`.
     #[builder(into)]
     #[serde(rename = "certificateBindingType")]
-    pub r#certificate_binding_type: Box<String>,
+    pub r#certificate_binding_type: String,
     /// The ID of the Container App Environment Certificate.
     #[builder(into)]
     #[serde(rename = "certificateId")]
-    pub r#certificate_id: Box<String>,
+    pub r#certificate_id: String,
     /// The name of the Container App.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

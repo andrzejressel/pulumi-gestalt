@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IamPolicyAssignmentIdentities {
     /// Array of Quicksight group names to assign the policy to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groups")]
-    pub r#groups: Box<Option<Vec<String>>>,
+    pub r#groups: Option<Vec<String>>,
     /// Array of Quicksight user names to assign the policy to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "users")]
-    pub r#users: Box<Option<Vec<String>>>,
+    pub r#users: Option<Vec<String>>,
 }

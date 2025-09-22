@@ -14,7 +14,7 @@ pub struct InstanceMaintenanceWindow {
     /// Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     /// Required. Start time of the window in UTC time.
     /// Structure is documented below.
     #[builder(into)]

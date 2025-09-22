@@ -7,5 +7,5 @@ pub struct StreamSourceConfigSqlServerSourceConfigIncludeObjects {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "schemas")]
-    pub r#schemas: Box<Vec<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchema>>,
+    pub r#schemas: Vec<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchema>,
 }

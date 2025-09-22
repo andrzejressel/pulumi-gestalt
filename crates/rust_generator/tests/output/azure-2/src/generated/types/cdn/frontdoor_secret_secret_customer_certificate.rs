@@ -8,9 +8,9 @@ pub struct FrontdoorSecretSecretCustomerCertificate {
     /// ->**NOTE:** If you would like to use the **latest version** of the Key Vault Certificate use the Key Vault Certificates `versionless_id` attribute as the `key_vault_certificate_id` fields value(e.g. `key_vault_certificate_id = azurerm_key_vault_certificate.example.versionless_id`).
     #[builder(into)]
     #[serde(rename = "keyVaultCertificateId")]
-    pub r#key_vault_certificate_id: Box<String>,
+    pub r#key_vault_certificate_id: String,
     /// One or more `subject alternative names` contained within the key vault certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Box<Option<Vec<String>>>,
+    pub r#subject_alternative_names: Option<Vec<String>>,
 }

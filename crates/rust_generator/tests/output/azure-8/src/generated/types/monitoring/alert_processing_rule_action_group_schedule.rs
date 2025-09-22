@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AlertProcessingRuleActionGroupSchedule {
     /// Specifies the Alert Processing Rule effective start time (Y-m-d'T'H:M:S).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "effectiveFrom")]
-    pub r#effective_from: Box<Option<String>>,
+    pub r#effective_from: Option<String>,
     /// Specifies the Alert Processing Rule effective end time (Y-m-d'T'H:M:S).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "effectiveUntil")]
-    pub r#effective_until: Box<Option<String>>,
+    pub r#effective_until: Option<String>,
     /// A `recurrence` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<Option<super::super::types::monitoring::AlertProcessingRuleActionGroupScheduleRecurrence>>,
+    pub r#recurrence: Option<Box<super::super::types::monitoring::AlertProcessingRuleActionGroupScheduleRecurrence>>,
     /// The time zone (e.g. Pacific Standard time, Eastern Standard Time). Defaults to `UTC`. [possible values are defined here](https://docs.microsoft.com/en-us/previous-versions/windows/embedded/ms912391(v=winembedded.11)).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeZone")]
-    pub r#time_zone: Box<Option<String>>,
+    pub r#time_zone: Option<String>,
 }

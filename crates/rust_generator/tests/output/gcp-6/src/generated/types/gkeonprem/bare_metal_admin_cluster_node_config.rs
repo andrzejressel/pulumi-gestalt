@@ -5,7 +5,7 @@
 pub struct BareMetalAdminClusterNodeConfig {
     /// The maximum number of pods a node can run. The size of the CIDR range
     /// assigned to the node will be derived from this parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxPodsPerNode")]
-    pub r#max_pods_per_node: Box<Option<i32>>,
+    pub r#max_pods_per_node: Option<i32>,
 }

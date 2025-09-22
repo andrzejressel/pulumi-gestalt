@@ -6,9 +6,9 @@ pub struct SqlContainerIndexingPolicySpatialIndex {
     /// Path for which the indexing behaviour applies to. According to the service design, all spatial types including `LineString`, `MultiPolygon`, `Point`, and `Polygon` will be applied to the path.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// A set of spatial types of the path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "types")]
-    pub r#types: Box<Option<Vec<String>>>,
+    pub r#types: Option<Vec<String>>,
 }

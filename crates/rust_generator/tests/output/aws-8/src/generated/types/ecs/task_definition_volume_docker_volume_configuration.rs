@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TaskDefinitionVolumeDockerVolumeConfiguration {
     /// If this value is `true`, the Docker volume is created if it does not already exist. *Note*: This field is only used if the scope is `shared`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoprovision")]
-    pub r#autoprovision: Box<Option<bool>>,
+    pub r#autoprovision: Option<bool>,
     /// Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "driver")]
-    pub r#driver: Box<Option<String>>,
+    pub r#driver: Option<String>,
     /// Map of Docker driver specific options.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "driverOpts")]
-    pub r#driver_opts: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#driver_opts: Option<std::collections::HashMap<String, String>>,
     /// Map of custom metadata to add to your Docker volume.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// Scope for the Docker volume, which determines its lifecycle, either `task` or `shared`.  Docker volumes that are scoped to a `task` are automatically provisioned when the task starts and destroyed when the task stops. Docker volumes that are scoped as `shared` persist after the task stops.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<Option<String>>,
+    pub r#scope: Option<String>,
 }

@@ -6,17 +6,17 @@ pub struct SecurityDeviceGroupRangeRule {
     /// Specifies the time range. represented in ISO 8601 duration format.
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<String>,
+    pub r#duration: String,
     /// The maximum threshold in the given time window.
     #[builder(into)]
     #[serde(rename = "max")]
-    pub r#max: Box<i32>,
+    pub r#max: i32,
     /// The minimum threshold in the given time window.
     #[builder(into)]
     #[serde(rename = "min")]
-    pub r#min: Box<i32>,
+    pub r#min: i32,
     /// The type of supported rule type. Possible Values are `ActiveConnectionsNotInAllowedRange`, `AmqpC2DMessagesNotInAllowedRange`, `MqttC2DMessagesNotInAllowedRange`, `HttpC2DMessagesNotInAllowedRange`, `AmqpC2DRejectedMessagesNotInAllowedRange`, `MqttC2DRejectedMessagesNotInAllowedRange`, `HttpC2DRejectedMessagesNotInAllowedRange`, `AmqpD2CMessagesNotInAllowedRange`, `MqttD2CMessagesNotInAllowedRange`, `HttpD2CMessagesNotInAllowedRange`, `DirectMethodInvokesNotInAllowedRange`, `FailedLocalLoginsNotInAllowedRange`, `FileUploadsNotInAllowedRange`, `QueuePurgesNotInAllowedRange`, `TwinUpdatesNotInAllowedRange` and `UnauthorizedOperationsNotInAllowedRange`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

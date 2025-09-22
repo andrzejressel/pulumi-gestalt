@@ -6,5 +6,5 @@ pub struct RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessR
     /// An IP address or a block of IP addresses in CIDR notation. AWS Network Firewall supports all address ranges for IPv4.
     #[builder(into)]
     #[serde(rename = "addressDefinition")]
-    pub r#address_definition: Box<String>,
+    pub r#address_definition: String,
 }

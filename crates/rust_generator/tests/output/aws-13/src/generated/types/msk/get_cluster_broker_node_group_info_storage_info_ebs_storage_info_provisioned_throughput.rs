@@ -5,8 +5,8 @@
 pub struct GetClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput {
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     #[builder(into)]
     #[serde(rename = "volumeThroughput")]
-    pub r#volume_throughput: Box<i32>,
+    pub r#volume_throughput: i32,
 }

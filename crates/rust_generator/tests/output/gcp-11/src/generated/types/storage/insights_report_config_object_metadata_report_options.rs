@@ -6,7 +6,7 @@ pub struct InsightsReportConfigObjectMetadataReportOptions {
     /// The metadata fields included in an inventory report.
     #[builder(into)]
     #[serde(rename = "metadataFields")]
-    pub r#metadata_fields: Box<Vec<String>>,
+    pub r#metadata_fields: Vec<String>,
     /// Options for where the inventory reports are stored.
     /// Structure is documented below.
     #[builder(into)]
@@ -14,7 +14,7 @@ pub struct InsightsReportConfigObjectMetadataReportOptions {
     pub r#storage_destination_options: Box<super::super::types::storage::InsightsReportConfigObjectMetadataReportOptionsStorageDestinationOptions>,
     /// A nested object resource.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageFilters")]
-    pub r#storage_filters: Box<Option<super::super::types::storage::InsightsReportConfigObjectMetadataReportOptionsStorageFilters>>,
+    pub r#storage_filters: Option<Box<super::super::types::storage::InsightsReportConfigObjectMetadataReportOptionsStorageFilters>>,
 }

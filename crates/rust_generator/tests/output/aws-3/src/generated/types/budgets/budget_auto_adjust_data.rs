@@ -6,13 +6,13 @@ pub struct BudgetAutoAdjustData {
     /// (Required) - The string that defines whether your budget auto-adjusts based on historical or forecasted data. Valid values: `FORECAST`,`HISTORICAL`
     #[builder(into)]
     #[serde(rename = "autoAdjustType")]
-    pub r#auto_adjust_type: Box<String>,
+    pub r#auto_adjust_type: String,
     /// (Optional) - Configuration block of Historical Options. Required for `auto_adjust_type` of `HISTORICAL` Configuration block that defines the historical data that your auto-adjusting budget is based on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "historicalOptions")]
-    pub r#historical_options: Box<Option<super::super::types::budgets::BudgetAutoAdjustDataHistoricalOptions>>,
+    pub r#historical_options: Option<Box<super::super::types::budgets::BudgetAutoAdjustDataHistoricalOptions>>,
     /// (Optional) - The last time that your budget was auto-adjusted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastAutoAdjustTime")]
-    pub r#last_auto_adjust_time: Box<Option<String>>,
+    pub r#last_auto_adjust_time: Option<String>,
 }

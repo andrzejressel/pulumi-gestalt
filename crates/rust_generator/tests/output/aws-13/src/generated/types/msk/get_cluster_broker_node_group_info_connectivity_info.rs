@@ -5,8 +5,8 @@
 pub struct GetClusterBrokerNodeGroupInfoConnectivityInfo {
     #[builder(into)]
     #[serde(rename = "publicAccesses")]
-    pub r#public_accesses: Box<Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess>>,
+    pub r#public_accesses: Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess>,
     #[builder(into)]
     #[serde(rename = "vpcConnectivities")]
-    pub r#vpc_connectivities: Box<Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity>>,
+    pub r#vpc_connectivities: Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity>,
 }

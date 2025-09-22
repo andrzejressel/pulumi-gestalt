@@ -5,5 +5,5 @@
 pub struct GetVirtualRouterSpecListener {
     #[builder(into)]
     #[serde(rename = "portMappings")]
-    pub r#port_mappings: Box<Vec<super::super::types::appmesh::GetVirtualRouterSpecListenerPortMapping>>,
+    pub r#port_mappings: Vec<super::super::types::appmesh::GetVirtualRouterSpecListenerPortMapping>,
 }

@@ -5,7 +5,7 @@
 pub struct VpnConnectionDetailCloudVpn {
     /// (Output)
     /// The created Cloud VPN gateway name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gateway")]
-    pub r#gateway: Box<Option<String>>,
+    pub r#gateway: Option<String>,
 }

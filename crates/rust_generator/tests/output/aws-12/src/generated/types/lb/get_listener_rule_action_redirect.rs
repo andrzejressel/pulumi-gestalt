@@ -6,25 +6,25 @@ pub struct GetListenerRuleActionRedirect {
     /// The hostname.
     #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<String>,
+    pub r#host: String,
     /// The absolute path, starting with `/`.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// The port.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<String>,
+    pub r#port: String,
     /// The protocol.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     /// The query parameters.
     #[builder(into)]
     #[serde(rename = "query")]
-    pub r#query: Box<String>,
+    pub r#query: String,
     /// The HTTP redirect code.
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<String>,
+    pub r#status_code: String,
 }

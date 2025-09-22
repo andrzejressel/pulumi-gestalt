@@ -6,21 +6,21 @@ pub struct TopicRuleElasticsearch {
     /// The endpoint of your Elasticsearch domain.
     #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<String>,
+    pub r#endpoint: String,
     /// The unique identifier for the document you are storing.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The Elasticsearch index where you want to store your data.
     #[builder(into)]
     #[serde(rename = "index")]
-    pub r#index: Box<String>,
+    pub r#index: String,
     /// The IAM role ARN that has access to Elasticsearch.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// The type of document you are storing.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

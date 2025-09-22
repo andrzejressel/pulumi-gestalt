@@ -6,5 +6,5 @@ pub struct BucketVersioning {
     /// While set to `true`, versioning is fully enabled for this bucket.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

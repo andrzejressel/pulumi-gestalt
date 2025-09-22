@@ -6,19 +6,19 @@ pub struct HadoopClusterPrivateLinkConfigurationIpConfiguration {
     /// Specifies the name for this HDInsight Hadoop Cluster. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Indicates whether this IP configuration is primary.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primary")]
-    pub r#primary: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#primary: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<Option<String>>,
+    pub r#private_ip_address: Option<String>,
     /// The private IP allocation method. The only possible value now is `Dynamic`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateIpAllocationMethod")]
-    pub r#private_ip_allocation_method: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#private_ip_allocation_method: Option<String>,
+    #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<Option<String>>,
+    pub r#subnet_id: Option<String>,
 }

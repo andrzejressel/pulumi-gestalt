@@ -9,5 +9,5 @@ pub struct RestorePlanRestoreConfigRestoreOrder {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "groupKindDependencies")]
-    pub r#group_kind_dependencies: Box<Vec<super::super::types::gkebackup::RestorePlanRestoreConfigRestoreOrderGroupKindDependency>>,
+    pub r#group_kind_dependencies: Vec<super::super::types::gkebackup::RestorePlanRestoreConfigRestoreOrderGroupKindDependency>,
 }

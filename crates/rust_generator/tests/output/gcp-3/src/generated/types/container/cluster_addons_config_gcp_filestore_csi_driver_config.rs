@@ -5,5 +5,5 @@
 pub struct ClusterAddonsConfigGcpFilestoreCsiDriverConfig {
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

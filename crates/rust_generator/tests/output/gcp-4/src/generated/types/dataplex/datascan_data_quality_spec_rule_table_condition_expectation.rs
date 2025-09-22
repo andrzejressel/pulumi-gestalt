@@ -6,5 +6,5 @@ pub struct DatascanDataQualitySpecRuleTableConditionExpectation {
     /// The SQL expression.
     #[builder(into)]
     #[serde(rename = "sqlExpression")]
-    pub r#sql_expression: Box<String>,
+    pub r#sql_expression: String,
 }

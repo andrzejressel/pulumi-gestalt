@@ -6,9 +6,9 @@ pub struct GetEnvironmentMonitor {
     /// ARN of the Amazon CloudWatch alarm.
     #[builder(into)]
     #[serde(rename = "alarmArn")]
-    pub r#alarm_arn: Box<String>,
+    pub r#alarm_arn: String,
     /// ARN of an IAM role for AWS AppConfig to monitor.
     #[builder(into)]
     #[serde(rename = "alarmRoleArn")]
-    pub r#alarm_role_arn: Box<String>,
+    pub r#alarm_role_arn: String,
 }

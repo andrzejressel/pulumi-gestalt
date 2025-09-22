@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AutoscaleSettingNotification {
     /// A `email` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<super::super::types::monitoring::AutoscaleSettingNotificationEmail>>,
+    pub r#email: Option<Box<super::super::types::monitoring::AutoscaleSettingNotificationEmail>>,
     /// One or more `webhook` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "webhooks")]
-    pub r#webhooks: Box<Option<Vec<super::super::types::monitoring::AutoscaleSettingNotificationWebhook>>>,
+    pub r#webhooks: Option<Vec<super::super::types::monitoring::AutoscaleSettingNotificationWebhook>>,
 }

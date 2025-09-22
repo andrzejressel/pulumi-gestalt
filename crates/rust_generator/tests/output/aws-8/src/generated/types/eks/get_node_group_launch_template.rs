@@ -6,13 +6,13 @@ pub struct GetNodeGroupLaunchTemplate {
     /// The ID of the launch template.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Name of the AutoScaling Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Kubernetes version.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

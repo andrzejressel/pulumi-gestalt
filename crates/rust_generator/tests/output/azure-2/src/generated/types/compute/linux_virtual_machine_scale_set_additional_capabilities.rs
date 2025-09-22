@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LinuxVirtualMachineScaleSetAdditionalCapabilities {
     /// Should the capacity to enable Data Disks of the `UltraSSD_LRS` storage account type be supported on this Virtual Machine Scale Set? Possible values are `true` or `false`. Defaults to `false`. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ultraSsdEnabled")]
-    pub r#ultra_ssd_enabled: Box<Option<bool>>,
+    pub r#ultra_ssd_enabled: Option<bool>,
 }

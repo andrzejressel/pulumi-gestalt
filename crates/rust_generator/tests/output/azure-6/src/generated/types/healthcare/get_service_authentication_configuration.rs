@@ -6,13 +6,13 @@ pub struct GetServiceAuthenticationConfiguration {
     /// The intended audience to receive authentication tokens for the service.
     #[builder(into)]
     #[serde(rename = "audience")]
-    pub r#audience: Box<String>,
+    pub r#audience: String,
     /// The Azure Active Directory (tenant) that serves as the authentication authority to access the service.
     #[builder(into)]
     #[serde(rename = "authority")]
-    pub r#authority: Box<String>,
+    pub r#authority: String,
     /// Is the 'SMART on FHIR' option for mobile and web implementations enabled?
     #[builder(into)]
     #[serde(rename = "smartProxyEnabled")]
-    pub r#smart_proxy_enabled: Box<bool>,
+    pub r#smart_proxy_enabled: bool,
 }

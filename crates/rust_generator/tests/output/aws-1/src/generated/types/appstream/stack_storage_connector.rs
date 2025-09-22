@@ -7,13 +7,13 @@ pub struct StackStorageConnector {
     /// Valid values are `HOMEFOLDERS`, `GOOGLE_DRIVE`, or `ONE_DRIVE`.
     #[builder(into)]
     #[serde(rename = "connectorType")]
-    pub r#connector_type: Box<String>,
+    pub r#connector_type: String,
     /// Names of the domains for the account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domains")]
-    pub r#domains: Box<Option<Vec<String>>>,
+    pub r#domains: Option<Vec<String>>,
     /// ARN of the storage connector.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceIdentifier")]
-    pub r#resource_identifier: Box<Option<String>>,
+    pub r#resource_identifier: Option<String>,
 }

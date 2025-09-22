@@ -7,9 +7,9 @@ pub struct ClusterInitialUser {
     /// **Note**: This property is sensitive and will not be displayed in the plan.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// The database username.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "user")]
-    pub r#user: Box<Option<String>>,
+    pub r#user: Option<String>,
 }

@@ -4,71 +4,71 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsAudioDescriptionCodecSettingsEac3Settings {
     /// Sets the attenuation control.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attenuationControl")]
-    pub r#attenuation_control: Box<Option<String>>,
+    pub r#attenuation_control: Option<String>,
     /// Average bitrate in bits/second.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bitrate")]
-    pub r#bitrate: Box<Option<f64>>,
+    pub r#bitrate: Option<f64>,
     /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bitstreamMode")]
-    pub r#bitstream_mode: Box<Option<String>>,
+    pub r#bitstream_mode: Option<String>,
     /// Dolby Digital Plus coding mode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "codingMode")]
-    pub r#coding_mode: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#coding_mode: Option<String>,
+    #[builder(into)]
     #[serde(rename = "dcFilter")]
-    pub r#dc_filter: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#dc_filter: Option<String>,
+    #[builder(into)]
     #[serde(rename = "dialnorm")]
-    pub r#dialnorm: Box<Option<i32>>,
+    pub r#dialnorm: Option<i32>,
     /// Sets the Dolby dynamic range compression profile.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "drcLine")]
-    pub r#drc_line: Box<Option<String>>,
+    pub r#drc_line: Option<String>,
     /// Sets the profile for heavy Dolby dynamic range compression.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "drcRf")]
-    pub r#drc_rf: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#drc_rf: Option<String>,
+    #[builder(into)]
     #[serde(rename = "lfeControl")]
-    pub r#lfe_control: Box<Option<String>>,
+    pub r#lfe_control: Option<String>,
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lfeFilter")]
-    pub r#lfe_filter: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#lfe_filter: Option<String>,
+    #[builder(into)]
     #[serde(rename = "loRoCenterMixLevel")]
-    pub r#lo_ro_center_mix_level: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#lo_ro_center_mix_level: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "loRoSurroundMixLevel")]
-    pub r#lo_ro_surround_mix_level: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#lo_ro_surround_mix_level: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "ltRtCenterMixLevel")]
-    pub r#lt_rt_center_mix_level: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#lt_rt_center_mix_level: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "ltRtSurroundMixLevel")]
-    pub r#lt_rt_surround_mix_level: Box<Option<f64>>,
+    pub r#lt_rt_surround_mix_level: Option<f64>,
     /// Metadata control.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metadataControl")]
-    pub r#metadata_control: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#metadata_control: Option<String>,
+    #[builder(into)]
     #[serde(rename = "passthroughControl")]
-    pub r#passthrough_control: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#passthrough_control: Option<String>,
+    #[builder(into)]
     #[serde(rename = "phaseControl")]
-    pub r#phase_control: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#phase_control: Option<String>,
+    #[builder(into)]
     #[serde(rename = "stereoDownmix")]
-    pub r#stereo_downmix: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#stereo_downmix: Option<String>,
+    #[builder(into)]
     #[serde(rename = "surroundExMode")]
-    pub r#surround_ex_mode: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#surround_ex_mode: Option<String>,
+    #[builder(into)]
     #[serde(rename = "surroundMode")]
-    pub r#surround_mode: Box<Option<String>>,
+    pub r#surround_mode: Option<String>,
 }

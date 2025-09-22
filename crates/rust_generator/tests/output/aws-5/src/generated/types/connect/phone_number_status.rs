@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PhoneNumberStatus {
     /// The status message.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
     /// The status of the phone number. Valid Values: `CLAIMED` | `IN_PROGRESS` | `FAILED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
 }

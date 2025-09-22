@@ -6,9 +6,9 @@ pub struct GetNodeGroupResource {
     /// List of objects containing information about AutoScaling Groups.
     #[builder(into)]
     #[serde(rename = "autoscalingGroups")]
-    pub r#autoscaling_groups: Box<Vec<super::super::types::eks::GetNodeGroupResourceAutoscalingGroup>>,
+    pub r#autoscaling_groups: Vec<super::super::types::eks::GetNodeGroupResourceAutoscalingGroup>,
     /// Identifier of the remote access EC2 Security Group.
     #[builder(into)]
     #[serde(rename = "remoteAccessSecurityGroupId")]
-    pub r#remote_access_security_group_id: Box<String>,
+    pub r#remote_access_security_group_id: String,
 }

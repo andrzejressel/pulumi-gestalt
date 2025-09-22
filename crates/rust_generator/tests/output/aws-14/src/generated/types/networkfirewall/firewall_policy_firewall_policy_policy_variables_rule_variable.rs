@@ -10,5 +10,5 @@ pub struct FirewallPolicyFirewallPolicyPolicyVariablesRuleVariable {
     /// An alphanumeric string to identify the `ip_set`. Valid values: `HOME_NET`
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
 }

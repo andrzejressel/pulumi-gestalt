@@ -3,25 +3,25 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RunCommandInstanceView {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#end_time: Option<String>,
+    #[builder(into)]
     #[serde(rename = "errorMessage")]
-    pub r#error_message: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#error_message: Option<String>,
+    #[builder(into)]
     #[serde(rename = "executionMessage")]
-    pub r#execution_message: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#execution_message: Option<String>,
+    #[builder(into)]
     #[serde(rename = "executionState")]
-    pub r#execution_state: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#execution_state: Option<String>,
+    #[builder(into)]
     #[serde(rename = "exitCode")]
-    pub r#exit_code: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#exit_code: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "output")]
-    pub r#output: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#output: Option<String>,
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
 }

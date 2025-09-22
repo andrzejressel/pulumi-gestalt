@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResourceLfTagTableWithColumnsColumnWildcard {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "excludedColumnNames")]
-    pub r#excluded_column_names: Box<Option<Vec<String>>>,
+    pub r#excluded_column_names: Option<Vec<String>>,
 }

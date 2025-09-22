@@ -6,13 +6,13 @@ pub struct GetOsProfile {
     /// Specifies the host OS name of the Azure Arc machine.
     #[builder(into)]
     #[serde(rename = "computerName")]
-    pub r#computer_name: Box<String>,
+    pub r#computer_name: String,
     /// A `linux` block as defined above.
     #[builder(into)]
     #[serde(rename = "linuxes")]
-    pub r#linuxes: Box<Vec<super::super::types::arcmachine::GetOsProfileLinux>>,
+    pub r#linuxes: Vec<super::super::types::arcmachine::GetOsProfileLinux>,
     /// A `windows` block as defined below.
     #[builder(into)]
     #[serde(rename = "windows")]
-    pub r#windows: Box<Vec<super::super::types::arcmachine::GetOsProfileWindow>>,
+    pub r#windows: Vec<super::super::types::arcmachine::GetOsProfileWindow>,
 }

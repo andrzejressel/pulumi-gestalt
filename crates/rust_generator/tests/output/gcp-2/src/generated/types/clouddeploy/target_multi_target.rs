@@ -6,5 +6,5 @@ pub struct TargetMultiTarget {
     /// Required. The target_ids of this multiTarget.
     #[builder(into)]
     #[serde(rename = "targetIds")]
-    pub r#target_ids: Box<Vec<String>>,
+    pub r#target_ids: Vec<String>,
 }

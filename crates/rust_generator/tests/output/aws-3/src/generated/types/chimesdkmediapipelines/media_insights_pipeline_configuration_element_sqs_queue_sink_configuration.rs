@@ -6,5 +6,5 @@ pub struct MediaInsightsPipelineConfigurationElementSqsQueueSinkConfiguration {
     /// SQS queue to deliver results.
     #[builder(into)]
     #[serde(rename = "insightsTarget")]
-    pub r#insights_target: Box<String>,
+    pub r#insights_target: String,
 }

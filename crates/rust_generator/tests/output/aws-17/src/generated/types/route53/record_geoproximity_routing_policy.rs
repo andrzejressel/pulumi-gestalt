@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RecordGeoproximityRoutingPolicy {
     /// A AWS region where the resource is present.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "awsRegion")]
-    pub r#aws_region: Box<Option<String>>,
+    pub r#aws_region: Option<String>,
     /// Route more traffic or less traffic to the resource by specifying a value ranges between -90 to 90. See https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geoproximity.html for bias details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bias")]
-    pub r#bias: Box<Option<i32>>,
+    pub r#bias: Option<i32>,
     /// Specify `latitude` and `longitude` for routing traffic to non-AWS resources.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "coordinates")]
-    pub r#coordinates: Box<Option<Vec<super::super::types::route53::RecordGeoproximityRoutingPolicyCoordinate>>>,
+    pub r#coordinates: Option<Vec<super::super::types::route53::RecordGeoproximityRoutingPolicyCoordinate>>,
     /// A AWS local zone group where the resource is present. See https://docs.aws.amazon.com/local-zones/latest/ug/available-local-zones.html for local zone group list.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "localZoneGroup")]
-    pub r#local_zone_group: Box<Option<String>>,
+    pub r#local_zone_group: Option<String>,
 }

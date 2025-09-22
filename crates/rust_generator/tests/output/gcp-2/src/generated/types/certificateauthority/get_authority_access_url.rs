@@ -7,10 +7,10 @@ pub struct GetAuthorityAccessUrl {
     /// set for CAs that have been activated.
     #[builder(into)]
     #[serde(rename = "caCertificateAccessUrl")]
-    pub r#ca_certificate_access_url: Box<String>,
+    pub r#ca_certificate_access_url: String,
     /// The URL where this CertificateAuthority's CRLs are published. This will only be set for
     /// CAs that have been activated.
     #[builder(into)]
     #[serde(rename = "crlAccessUrls")]
-    pub r#crl_access_urls: Box<Vec<String>>,
+    pub r#crl_access_urls: Vec<String>,
 }

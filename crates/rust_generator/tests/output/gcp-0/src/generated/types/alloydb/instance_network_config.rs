@@ -7,17 +7,17 @@ pub struct InstanceNetworkConfig {
     /// field is only allowed to be set when `enable_public_ip` is set to
     /// true.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authorizedExternalNetworks")]
-    pub r#authorized_external_networks: Box<Option<Vec<super::super::types::alloydb::InstanceNetworkConfigAuthorizedExternalNetwork>>>,
+    pub r#authorized_external_networks: Option<Vec<super::super::types::alloydb::InstanceNetworkConfigAuthorizedExternalNetwork>>,
     /// Enabling outbound public ip for the instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableOutboundPublicIp")]
-    pub r#enable_outbound_public_ip: Box<Option<bool>>,
+    pub r#enable_outbound_public_ip: Option<bool>,
     /// Enabling public ip for the instance. If a user wishes to disable this,
     /// please also clear the list of the authorized external networks set on
     /// the same instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enablePublicIp")]
-    pub r#enable_public_ip: Box<Option<bool>>,
+    pub r#enable_public_ip: Option<bool>,
 }

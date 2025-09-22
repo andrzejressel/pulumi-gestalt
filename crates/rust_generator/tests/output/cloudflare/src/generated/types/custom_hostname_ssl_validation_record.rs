@@ -3,25 +3,25 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CustomHostnameSslValidationRecord {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cnameName")]
-    pub r#cname_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#cname_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "cnameTarget")]
-    pub r#cname_target: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#cname_target: Option<String>,
+    #[builder(into)]
     #[serde(rename = "emails")]
-    pub r#emails: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#emails: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "httpBody")]
-    pub r#http_body: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#http_body: Option<String>,
+    #[builder(into)]
     #[serde(rename = "httpUrl")]
-    pub r#http_url: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#http_url: Option<String>,
+    #[builder(into)]
     #[serde(rename = "txtName")]
-    pub r#txt_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#txt_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "txtValue")]
-    pub r#txt_value: Box<Option<String>>,
+    pub r#txt_value: Option<String>,
 }

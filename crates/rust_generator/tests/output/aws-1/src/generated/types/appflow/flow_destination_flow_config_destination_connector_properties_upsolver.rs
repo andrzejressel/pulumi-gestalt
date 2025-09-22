@@ -5,10 +5,10 @@
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolver {
     #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<String>,
-    #[builder(into, default)]
+    pub r#bucket_name: String,
+    #[builder(into)]
     #[serde(rename = "bucketPrefix")]
-    pub r#bucket_prefix: Box<Option<String>>,
+    pub r#bucket_prefix: Option<String>,
     #[builder(into)]
     #[serde(rename = "s3OutputFormatConfig")]
     pub r#s_3_output_format_config: Box<super::super::types::appflow::FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfig>,

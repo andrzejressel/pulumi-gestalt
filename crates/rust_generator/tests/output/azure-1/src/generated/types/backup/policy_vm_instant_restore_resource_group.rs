@@ -6,9 +6,9 @@ pub struct PolicyVmInstantRestoreResourceGroup {
     /// The prefix for the `instant_restore_resource_group` name.
     #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<String>,
+    pub r#prefix: String,
     /// The suffix for the `instant_restore_resource_group` name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "suffix")]
-    pub r#suffix: Box<Option<String>>,
+    pub r#suffix: Option<String>,
 }

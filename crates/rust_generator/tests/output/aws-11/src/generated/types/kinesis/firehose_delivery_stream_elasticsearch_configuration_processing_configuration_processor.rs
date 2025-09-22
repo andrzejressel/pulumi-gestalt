@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationProcessor {
     /// Specifies the processor parameters as multiple blocks. See `parameters` block below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<Vec<super::super::types::kinesis::FirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationProcessorParameter>>>,
+    pub r#parameters: Option<Vec<super::super::types::kinesis::FirehoseDeliveryStreamElasticsearchConfigurationProcessingConfigurationProcessorParameter>>,
     /// The type of processor. Valid Values: `RecordDeAggregation`, `Lambda`, `MetadataExtraction`, `AppendDelimiterToRecord`, `Decompression`, `CloudWatchLogProcessing`. Validation is done against [AWS SDK constants](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/firehose/types#ProcessorType); so values not explicitly listed may also work.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

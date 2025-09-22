@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DicomServiceAuthentication {
     /// The intended audience to receive authentication tokens for the service. The default value is <https://dicom.azurehealthcareapis.azure.com>
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audiences")]
-    pub r#audiences: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#audiences: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "authority")]
-    pub r#authority: Box<Option<String>>,
+    pub r#authority: Option<String>,
 }

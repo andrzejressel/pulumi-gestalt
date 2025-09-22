@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupSseConfiguration {
     /// Boolean flag to indicate that the CMK should be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customerManagedKeyEnabled")]
-    pub r#customer_managed_key_enabled: Box<Option<bool>>,
+    pub r#customer_managed_key_enabled: Option<bool>,
     /// ARN of the KMS key to use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<Option<String>>,
+    pub r#kms_key_arn: Option<String>,
 }

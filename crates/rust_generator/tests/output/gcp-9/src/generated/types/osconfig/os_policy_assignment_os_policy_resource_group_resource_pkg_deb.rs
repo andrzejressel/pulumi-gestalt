@@ -6,9 +6,9 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb {
     /// Whether dependencies should also be installed. -
     /// install when false: `dpkg -i package` - install when true: `apt-get update
     /// && apt-get -y install package.deb`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pullDeps")]
-    pub r#pull_deps: Box<Option<bool>>,
+    pub r#pull_deps: Option<bool>,
     /// A deb package. Structure is
     /// documented below.
     #[builder(into)]

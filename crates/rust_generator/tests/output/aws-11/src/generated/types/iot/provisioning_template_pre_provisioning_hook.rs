@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ProvisioningTemplatePreProvisioningHook {
     /// The version of the payload that was sent to the target function. The only valid (and the default) payload version is `"2020-04-01"`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "payloadVersion")]
-    pub r#payload_version: Box<Option<String>>,
+    pub r#payload_version: Option<String>,
     /// The ARN of the target function.
     #[builder(into)]
     #[serde(rename = "targetArn")]
-    pub r#target_arn: Box<String>,
+    pub r#target_arn: String,
 }

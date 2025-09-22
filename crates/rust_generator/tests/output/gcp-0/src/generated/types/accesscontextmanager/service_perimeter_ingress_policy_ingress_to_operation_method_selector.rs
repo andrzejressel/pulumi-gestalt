@@ -6,12 +6,12 @@ pub struct ServicePerimeterIngressPolicyIngressToOperationMethodSelector {
     /// Value for method should be a valid method name for the corresponding
     /// serviceName in `ApiOperation`. If `*` used as value for `method`, then
     /// ALL methods and permissions are allowed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "method")]
-    pub r#method: Box<Option<String>>,
+    pub r#method: Option<String>,
     /// Value for permission should be a valid Cloud IAM permission for the
     /// corresponding `serviceName` in `ApiOperation`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "permission")]
-    pub r#permission: Box<Option<String>>,
+    pub r#permission: Option<String>,
 }

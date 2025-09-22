@@ -6,9 +6,9 @@ pub struct GetClusterNodeConfigGuestAcceleratorGpuSharingConfig {
     /// The type of GPU sharing strategy to enable on the GPU node. Possible values are described in the API package (https://pkg.go.dev/google.golang.org/api/container/v1#GPUSharingConfig)
     #[builder(into)]
     #[serde(rename = "gpuSharingStrategy")]
-    pub r#gpu_sharing_strategy: Box<String>,
+    pub r#gpu_sharing_strategy: String,
     /// The maximum number of containers that can share a GPU.
     #[builder(into)]
     #[serde(rename = "maxSharedClientsPerGpu")]
-    pub r#max_shared_clients_per_gpu: Box<i32>,
+    pub r#max_shared_clients_per_gpu: i32,
 }

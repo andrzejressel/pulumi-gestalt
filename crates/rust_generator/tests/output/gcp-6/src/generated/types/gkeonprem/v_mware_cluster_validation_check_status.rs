@@ -6,7 +6,7 @@ pub struct VMwareClusterValidationCheckStatus {
     /// (Output)
     /// Individual checks which failed as part of the Preflight check execution.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "results")]
-    pub r#results: Box<Option<Vec<super::super::types::gkeonprem::VMwareClusterValidationCheckStatusResult>>>,
+    pub r#results: Option<Vec<super::super::types::gkeonprem::VMwareClusterValidationCheckStatusResult>>,
 }

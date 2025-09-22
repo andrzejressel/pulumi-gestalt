@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AgentAgentActionGroupFunctionSchemaMemberFunctionsFunctionParameter {
     /// Description of the parameter. Helps the foundation model determine how to elicit the parameters from the user.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Name of the parameter.
     /// 
     /// **Note:** The argument name `map_block_key` may seem out of context, but is necessary for backward compatibility reasons in the provider.
     #[builder(into)]
     #[serde(rename = "mapBlockKey")]
-    pub r#map_block_key: Box<String>,
+    pub r#map_block_key: String,
     /// Whether the parameter is required for the agent to complete the function for action group invocation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "required")]
-    pub r#required: Box<Option<bool>>,
+    pub r#required: Option<bool>,
     /// Data type of the parameter. Valid values: `string`, `number`, `integer`, `boolean`, `array`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

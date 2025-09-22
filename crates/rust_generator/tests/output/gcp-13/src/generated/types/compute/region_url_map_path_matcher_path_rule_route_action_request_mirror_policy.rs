@@ -8,5 +8,5 @@ pub struct RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicy {
     /// Serverless NEG backends are not currently supported as a mirrored backend service.
     #[builder(into)]
     #[serde(rename = "backendService")]
-    pub r#backend_service: Box<String>,
+    pub r#backend_service: String,
 }

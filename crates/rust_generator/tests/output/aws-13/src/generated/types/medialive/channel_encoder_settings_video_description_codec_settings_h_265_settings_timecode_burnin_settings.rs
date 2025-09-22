@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsTimecodeBurninSettings {
     /// Set a prefix on the burned in timecode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
     /// Sets the size of the burned in timecode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timecodeBurninFontSize")]
-    pub r#timecode_burnin_font_size: Box<Option<String>>,
+    pub r#timecode_burnin_font_size: Option<String>,
     /// Sets the position of the burned in timecode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timecodeBurninPosition")]
-    pub r#timecode_burnin_position: Box<Option<String>>,
+    pub r#timecode_burnin_position: Option<String>,
 }

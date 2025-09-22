@@ -6,9 +6,9 @@ pub struct DomainAutoTuneOptionsMaintenanceScheduleDuration {
     /// The unit of time specifying the duration of an Auto-Tune maintenance window. Valid values: `HOURS`.
     #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<String>,
+    pub r#unit: String,
     /// An integer specifying the value of the duration of an Auto-Tune maintenance window.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<i32>,
+    pub r#value: i32,
 }

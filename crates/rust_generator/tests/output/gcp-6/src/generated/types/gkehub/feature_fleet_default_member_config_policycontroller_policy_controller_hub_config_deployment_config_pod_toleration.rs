@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration {
     /// Matches a taint effect.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "effect")]
-    pub r#effect: Box<Option<String>>,
+    pub r#effect: Option<String>,
     /// Matches a taint key (not necessarily unique).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<String>>,
+    pub r#key: Option<String>,
     /// Matches a taint operator.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<Option<String>>,
+    pub r#operator: Option<String>,
     /// Matches a taint value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

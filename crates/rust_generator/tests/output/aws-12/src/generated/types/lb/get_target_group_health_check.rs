@@ -5,29 +5,29 @@
 pub struct GetTargetGroupHealthCheck {
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     #[builder(into)]
     #[serde(rename = "healthyThreshold")]
-    pub r#healthy_threshold: Box<i32>,
+    pub r#healthy_threshold: i32,
     #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<i32>,
+    pub r#interval: i32,
     #[builder(into)]
     #[serde(rename = "matcher")]
-    pub r#matcher: Box<String>,
+    pub r#matcher: String,
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<String>,
+    pub r#port: String,
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Box<i32>,
+    pub r#timeout: i32,
     #[builder(into)]
     #[serde(rename = "unhealthyThreshold")]
-    pub r#unhealthy_threshold: Box<i32>,
+    pub r#unhealthy_threshold: i32,
 }

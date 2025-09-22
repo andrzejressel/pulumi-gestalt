@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceHttpConfigAuthorizationConfig {
     /// Authorization type that the HTTP endpoint requires. Default values is `AWS_IAM`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authorizationType")]
-    pub r#authorization_type: Box<Option<String>>,
+    pub r#authorization_type: Option<String>,
     /// Identity and Access Management (IAM) settings. See `aws_iam_config` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "awsIamConfig")]
-    pub r#aws_iam_config: Box<Option<super::super::types::appsync::DataSourceHttpConfigAuthorizationConfigAwsIamConfig>>,
+    pub r#aws_iam_config: Option<Box<super::super::types::appsync::DataSourceHttpConfigAuthorizationConfigAwsIamConfig>>,
 }

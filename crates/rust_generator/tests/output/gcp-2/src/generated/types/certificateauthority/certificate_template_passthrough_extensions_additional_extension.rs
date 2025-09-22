@@ -6,5 +6,5 @@ pub struct CertificateTemplatePassthroughExtensionsAdditionalExtension {
     /// Required. The parts of an OID path. The most significant parts of the path come first.
     #[builder(into)]
     #[serde(rename = "objectIdPaths")]
-    pub r#object_id_paths: Box<Vec<i32>>,
+    pub r#object_id_paths: Vec<i32>,
 }

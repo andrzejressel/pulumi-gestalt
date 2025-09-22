@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ComputeInstanceAssignToUser {
     /// User’s AAD Object Id.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "objectId")]
-    pub r#object_id: Box<Option<String>>,
+    pub r#object_id: Option<String>,
     /// User’s AAD Tenant Id.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<Option<String>>,
+    pub r#tenant_id: Option<String>,
 }

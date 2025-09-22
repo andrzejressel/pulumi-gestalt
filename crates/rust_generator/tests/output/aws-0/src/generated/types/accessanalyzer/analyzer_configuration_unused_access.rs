@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AnalyzerConfigurationUnusedAccess {
     /// The specified access age in days for which to generate findings for unused access.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unusedAccessAge")]
-    pub r#unused_access_age: Box<Option<i32>>,
+    pub r#unused_access_age: Option<i32>,
 }

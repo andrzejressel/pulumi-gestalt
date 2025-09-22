@@ -6,5 +6,5 @@ pub struct PacketMirroringCollectorIlb {
     /// The URL of the forwarding rule.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

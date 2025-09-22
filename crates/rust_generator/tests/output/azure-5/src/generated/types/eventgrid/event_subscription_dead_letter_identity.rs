@@ -6,9 +6,9 @@ pub struct EventSubscriptionDeadLetterIdentity {
     /// Specifies the type of Managed Service Identity that is used for dead lettering. Allowed value is `SystemAssigned`, `UserAssigned`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// The user identity associated with the resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userAssignedIdentity")]
-    pub r#user_assigned_identity: Box<Option<String>>,
+    pub r#user_assigned_identity: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAws
     /// Strings in the body of the response that indicate a failed login attempt.
     #[builder(into)]
     #[serde(rename = "failureStrings")]
-    pub r#failure_strings: Box<Vec<String>>,
+    pub r#failure_strings: Vec<String>,
     /// Strings in the body of the response that indicate a successful login attempt.
     #[builder(into)]
     #[serde(rename = "successStrings")]
-    pub r#success_strings: Box<Vec<String>>,
+    pub r#success_strings: Vec<String>,
 }

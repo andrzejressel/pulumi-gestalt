@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsNielsenConfiguration {
     /// Enter the Distributor ID assigned to your organization by Nielsen.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "distributorId")]
-    pub r#distributor_id: Box<Option<String>>,
+    pub r#distributor_id: Option<String>,
     /// Enables Nielsen PCM to ID3 tagging.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nielsenPcmToId3Tagging")]
-    pub r#nielsen_pcm_to_id_3_tagging: Box<Option<String>>,
+    pub r#nielsen_pcm_to_id_3_tagging: Option<String>,
 }

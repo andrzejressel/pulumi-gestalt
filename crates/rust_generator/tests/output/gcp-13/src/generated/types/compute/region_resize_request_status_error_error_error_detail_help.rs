@@ -6,7 +6,7 @@ pub struct RegionResizeRequestStatusErrorErrorErrorDetailHelp {
     /// (Output)
     /// A nested object resource.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "links")]
-    pub r#links: Box<Option<Vec<super::super::types::compute::RegionResizeRequestStatusErrorErrorErrorDetailHelpLink>>>,
+    pub r#links: Option<Vec<super::super::types::compute::RegionResizeRequestStatusErrorErrorErrorDetailHelpLink>>,
 }

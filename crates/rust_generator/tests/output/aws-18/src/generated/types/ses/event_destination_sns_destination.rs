@@ -6,5 +6,5 @@ pub struct EventDestinationSnsDestination {
     /// The ARN of the SNS topic
     #[builder(into)]
     #[serde(rename = "topicArn")]
-    pub r#topic_arn: Box<String>,
+    pub r#topic_arn: String,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountRestoreGremlinDatabase {
     /// A list of the Graph names for the restore request. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "graphNames")]
-    pub r#graph_names: Box<Option<Vec<String>>>,
+    pub r#graph_names: Option<Vec<String>>,
     /// The Gremlin Database name for the restore request. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

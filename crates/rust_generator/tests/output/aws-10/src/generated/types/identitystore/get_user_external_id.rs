@@ -6,9 +6,9 @@ pub struct GetUserExternalId {
     /// The identifier issued to this resource by an external identity provider.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The issuer for an external identifier.
     #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<String>,
+    pub r#issuer: String,
 }

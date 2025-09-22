@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RoleManagementPolicyNotificationRulesEligibleAssignments {
     /// Admin notification settings
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "adminNotifications")]
-    pub r#admin_notifications: Box<Option<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleAssignmentsAdminNotifications>>,
+    pub r#admin_notifications: Option<Box<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleAssignmentsAdminNotifications>>,
     /// Approver notification settings
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "approverNotifications")]
-    pub r#approver_notifications: Box<Option<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleAssignmentsApproverNotifications>>,
+    pub r#approver_notifications: Option<Box<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleAssignmentsApproverNotifications>>,
     /// Assignee notification settings
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "assigneeNotifications")]
-    pub r#assignee_notifications: Box<Option<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleAssignmentsAssigneeNotifications>>,
+    pub r#assignee_notifications: Option<Box<super::super::types::pim::RoleManagementPolicyNotificationRulesEligibleAssignmentsAssigneeNotifications>>,
 }

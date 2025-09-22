@@ -6,9 +6,9 @@ pub struct HciLogicalNetworkSubnetIpPool {
     /// The IPv4 address of the end of the IP address pool. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<String>,
+    pub r#end: String,
     /// The IPv4 address of the start of the IP address pool. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<String>,
+    pub r#start: String,
 }

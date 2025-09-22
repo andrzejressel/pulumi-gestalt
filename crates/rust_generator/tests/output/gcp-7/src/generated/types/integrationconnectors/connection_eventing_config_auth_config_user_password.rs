@@ -5,11 +5,11 @@
 pub struct ConnectionEventingConfigAuthConfigUserPassword {
     /// Password for Authentication.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<super::super::types::integrationconnectors::ConnectionEventingConfigAuthConfigUserPasswordPassword>>,
+    pub r#password: Option<Box<super::super::types::integrationconnectors::ConnectionEventingConfigAuthConfigUserPasswordPassword>>,
     /// Username for Authentication.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

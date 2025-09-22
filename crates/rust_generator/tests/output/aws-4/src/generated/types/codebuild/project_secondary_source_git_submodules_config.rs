@@ -6,5 +6,5 @@ pub struct ProjectSecondarySourceGitSubmodulesConfig {
     /// Whether to fetch Git submodules for the AWS CodeBuild build project.
     #[builder(into)]
     #[serde(rename = "fetchSubmodules")]
-    pub r#fetch_submodules: Box<bool>,
+    pub r#fetch_submodules: bool,
 }

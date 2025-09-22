@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualGatewaySpecBackendDefaults {
     /// Default client policy for virtual gateway backends.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientPolicy")]
-    pub r#client_policy: Box<Option<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicy>>,
+    pub r#client_policy: Option<Box<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicy>>,
 }

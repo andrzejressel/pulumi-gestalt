@@ -7,7 +7,7 @@ pub struct EdgeCacheOriginOriginRedirect {
     /// follows. Values of
     /// [RedirectConditions](https://cloud.google.com/media-cdn/docs/reference/rest/v1/projects.locations.edgeCacheOrigins#redirectconditions)
     /// are accepted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "redirectConditions")]
-    pub r#redirect_conditions: Box<Option<Vec<String>>>,
+    pub r#redirect_conditions: Option<Vec<String>>,
 }

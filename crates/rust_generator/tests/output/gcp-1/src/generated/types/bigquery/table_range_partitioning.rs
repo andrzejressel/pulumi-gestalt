@@ -7,7 +7,7 @@ pub struct TableRangePartitioning {
     /// partition.
     #[builder(into)]
     #[serde(rename = "field")]
-    pub r#field: Box<String>,
+    pub r#field: String,
     /// Information required to partition based on ranges.
     /// Structure is documented below.
     #[builder(into)]

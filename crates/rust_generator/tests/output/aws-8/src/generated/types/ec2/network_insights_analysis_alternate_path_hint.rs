@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInsightsAnalysisAlternatePathHint {
     /// The Amazon Resource Name (ARN) of the component.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "componentArn")]
-    pub r#component_arn: Box<Option<String>>,
+    pub r#component_arn: Option<String>,
     /// The ID of the component.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "componentId")]
-    pub r#component_id: Box<Option<String>>,
+    pub r#component_id: Option<String>,
 }

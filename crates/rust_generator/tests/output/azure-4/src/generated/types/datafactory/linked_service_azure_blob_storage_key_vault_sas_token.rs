@@ -6,9 +6,9 @@ pub struct LinkedServiceAzureBlobStorageKeyVaultSasToken {
     /// Specifies the name of an existing Key Vault Data Factory Linked Service.
     #[builder(into)]
     #[serde(rename = "linkedServiceName")]
-    pub r#linked_service_name: Box<String>,
+    pub r#linked_service_name: String,
     /// Specifies the secret name in Azure Key Vault that stores the SAS token.
     #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<String>,
+    pub r#secret_name: String,
 }

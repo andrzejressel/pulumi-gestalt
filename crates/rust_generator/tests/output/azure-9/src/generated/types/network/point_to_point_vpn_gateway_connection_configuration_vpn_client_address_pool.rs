@@ -6,5 +6,5 @@ pub struct PointToPointVpnGatewayConnectionConfigurationVpnClientAddressPool {
     /// A list of CIDR Ranges which should be used as Address Prefixes.
     #[builder(into)]
     #[serde(rename = "addressPrefixes")]
-    pub r#address_prefixes: Box<Vec<String>>,
+    pub r#address_prefixes: Vec<String>,
 }

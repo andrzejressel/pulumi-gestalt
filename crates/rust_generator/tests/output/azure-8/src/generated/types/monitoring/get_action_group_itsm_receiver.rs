@@ -6,21 +6,21 @@ pub struct GetActionGroupItsmReceiver {
     /// The unique connection identifier of the ITSM connection.
     #[builder(into)]
     #[serde(rename = "connectionId")]
-    pub r#connection_id: Box<String>,
+    pub r#connection_id: String,
     /// Specifies the name of the Action Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The region of the workspace.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
     /// A JSON blob for the configurations of the ITSM action. CreateMultipleWorkItems option will be part of this blob as well.
     #[builder(into)]
     #[serde(rename = "ticketConfiguration")]
-    pub r#ticket_configuration: Box<String>,
+    pub r#ticket_configuration: String,
     /// The Azure Log Analytics workspace ID where this connection is defined.
     #[builder(into)]
     #[serde(rename = "workspaceId")]
-    pub r#workspace_id: Box<String>,
+    pub r#workspace_id: String,
 }

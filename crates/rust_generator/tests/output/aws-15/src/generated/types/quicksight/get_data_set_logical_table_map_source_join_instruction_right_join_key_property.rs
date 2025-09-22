@@ -5,5 +5,5 @@
 pub struct GetDataSetLogicalTableMapSourceJoinInstructionRightJoinKeyProperty {
     #[builder(into)]
     #[serde(rename = "uniqueKey")]
-    pub r#unique_key: Box<bool>,
+    pub r#unique_key: bool,
 }

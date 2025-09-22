@@ -8,25 +8,25 @@ pub struct ClusterClusterConfigSoftwareConfig {
     /// installed onto the nodes when you create clusters. If not specified, defaults to the
     /// latest version. For a list of valid versions see
     /// [Cloud Dataproc versions](https://cloud.google.com/dataproc/docs/concepts/dataproc-versions)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageVersion")]
-    pub r#image_version: Box<Option<String>>,
+    pub r#image_version: Option<String>,
     /// The set of optional components to activate on the cluster. See [Available Optional Components](https://cloud.google.com/dataproc/docs/concepts/components/overview#available_optional_components).
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "optionalComponents")]
-    pub r#optional_components: Box<Option<Vec<String>>>,
+    pub r#optional_components: Option<Vec<String>>,
     /// A list of override and additional properties (key/value pairs)
     /// used to modify various aspects of the common configuration files used when creating
     /// a cluster. For a list of valid properties please see
     /// [Cluster properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "overrideProperties")]
-    pub r#override_properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#override_properties: Option<std::collections::HashMap<String, String>>,
     /// A list of the properties used to set the daemon config files.
     /// This will include any values supplied by the user via `cluster_config.software_config.override_properties`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#properties: Option<std::collections::HashMap<String, String>>,
 }

@@ -6,9 +6,9 @@ pub struct GetImageOutputResource {
     /// Set of objects with each Amazon Machine Image (AMI) created.
     #[builder(into)]
     #[serde(rename = "amis")]
-    pub r#amis: Box<Vec<super::super::types::imagebuilder::GetImageOutputResourceAmi>>,
+    pub r#amis: Vec<super::super::types::imagebuilder::GetImageOutputResourceAmi>,
     /// Set of objects with each container image created and stored in the output repository.
     #[builder(into)]
     #[serde(rename = "containers")]
-    pub r#containers: Box<Vec<super::super::types::imagebuilder::GetImageOutputResourceContainer>>,
+    pub r#containers: Vec<super::super::types::imagebuilder::GetImageOutputResourceContainer>,
 }

@@ -6,8 +6,8 @@ pub struct GetDicomServiceAuthentication {
     /// The intended audience to receive authentication tokens for the service. The default value is <https://dicom.azurehealthcareapis.azure.com>
     #[builder(into)]
     #[serde(rename = "audiences")]
-    pub r#audiences: Box<Vec<String>>,
+    pub r#audiences: Vec<String>,
     #[builder(into)]
     #[serde(rename = "authority")]
-    pub r#authority: Box<String>,
+    pub r#authority: String,
 }

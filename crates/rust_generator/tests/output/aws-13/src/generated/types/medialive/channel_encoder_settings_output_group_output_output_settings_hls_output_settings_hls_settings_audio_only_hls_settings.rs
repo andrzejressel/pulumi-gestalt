@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audioGroupId")]
-    pub r#audio_group_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#audio_group_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "audioOnlyImage")]
-    pub r#audio_only_image: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsAudioOnlyImage>>,
-    #[builder(into, default)]
+    pub r#audio_only_image: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsAudioOnlyImage>>,
+    #[builder(into)]
     #[serde(rename = "audioTrackType")]
-    pub r#audio_track_type: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#audio_track_type: Option<String>,
+    #[builder(into)]
     #[serde(rename = "segmentType")]
-    pub r#segment_type: Box<Option<String>>,
+    pub r#segment_type: Option<String>,
 }

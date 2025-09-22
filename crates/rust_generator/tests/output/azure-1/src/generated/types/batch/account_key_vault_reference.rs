@@ -6,9 +6,9 @@ pub struct AccountKeyVaultReference {
     /// The Azure identifier of the Azure KeyVault to use.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The HTTPS URL of the Azure KeyVault to use.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionConfigurationDistributionFastLaunchConfigurationLaunchTemplate {
     /// The ID of the launch template to use for faster launching for a Windows AMI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "launchTemplateId")]
-    pub r#launch_template_id: Box<Option<String>>,
+    pub r#launch_template_id: Option<String>,
     /// The name of the launch template to use for faster launching for a Windows AMI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "launchTemplateName")]
-    pub r#launch_template_name: Box<Option<String>>,
+    pub r#launch_template_name: Option<String>,
     /// The version of the launch template to use for faster launching for a Windows AMI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "launchTemplateVersion")]
-    pub r#launch_template_version: Box<Option<String>>,
+    pub r#launch_template_version: Option<String>,
 }

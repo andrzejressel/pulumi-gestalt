@@ -5,7 +5,7 @@
 pub struct SettingsAccessSettingsCorsSettings {
     /// Configuration to allow HTTP OPTIONS calls to skip authorization.
     /// If undefined, IAP will not apply any special logic to OPTIONS requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowHttpOptions")]
-    pub r#allow_http_options: Box<Option<bool>>,
+    pub r#allow_http_options: Option<bool>,
 }

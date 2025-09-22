@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ActivityLogAlertCriteriaResourceHealth {
     /// The current resource health statuses that will log an alert. Possible values are `Available`, `Degraded`, `Unavailable` and `Unknown`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "currents")]
-    pub r#currents: Box<Option<Vec<String>>>,
+    pub r#currents: Option<Vec<String>>,
     /// The previous resource health statuses that will log an alert. Possible values are `Available`, `Degraded`, `Unavailable` and `Unknown`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "previouses")]
-    pub r#previouses: Box<Option<Vec<String>>>,
+    pub r#previouses: Option<Vec<String>>,
     /// The reason that will log an alert. Possible values are `PlatformInitiated` (such as a problem with the resource in an affected region of an Azure incident), `UserInitiated` (such as a shutdown request of a VM) and `Unknown`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reasons")]
-    pub r#reasons: Box<Option<Vec<String>>>,
+    pub r#reasons: Option<Vec<String>>,
 }

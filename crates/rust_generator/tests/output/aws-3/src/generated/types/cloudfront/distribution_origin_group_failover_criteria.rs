@@ -6,5 +6,5 @@ pub struct DistributionOriginGroupFailoverCriteria {
     /// List of HTTP status codes for the origin group.
     #[builder(into)]
     #[serde(rename = "statusCodes")]
-    pub r#status_codes: Box<Vec<i32>>,
+    pub r#status_codes: Vec<i32>,
 }

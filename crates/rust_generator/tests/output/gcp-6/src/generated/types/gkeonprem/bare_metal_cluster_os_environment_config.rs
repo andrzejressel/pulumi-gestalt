@@ -7,5 +7,5 @@ pub struct BareMetalClusterOsEnvironmentConfig {
     /// bare metal machines.
     #[builder(into)]
     #[serde(rename = "packageRepoExcluded")]
-    pub r#package_repo_excluded: Box<bool>,
+    pub r#package_repo_excluded: bool,
 }

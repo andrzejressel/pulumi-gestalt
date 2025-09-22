@@ -5,12 +5,12 @@
 pub struct FleetDefaultClusterConfigSecurityPostureConfig {
     /// Sets which mode to use for Security Posture features.
     /// Possible values are: `DISABLED`, `BASIC`, `ENTERPRISE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<Option<String>>,
+    pub r#mode: Option<String>,
     /// Sets which mode to use for vulnerability scanning.
     /// Possible values are: `VULNERABILITY_DISABLED`, `VULNERABILITY_BASIC`, `VULNERABILITY_ENTERPRISE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vulnerabilityMode")]
-    pub r#vulnerability_mode: Box<Option<String>>,
+    pub r#vulnerability_mode: Option<String>,
 }

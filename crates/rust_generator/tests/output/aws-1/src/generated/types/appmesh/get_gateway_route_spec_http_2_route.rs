@@ -5,8 +5,8 @@
 pub struct GetGatewayRouteSpecHttp2Route {
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteAction>>,
+    pub r#actions: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteAction>,
     #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteMatch>>,
+    pub r#matches: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteMatch>,
 }

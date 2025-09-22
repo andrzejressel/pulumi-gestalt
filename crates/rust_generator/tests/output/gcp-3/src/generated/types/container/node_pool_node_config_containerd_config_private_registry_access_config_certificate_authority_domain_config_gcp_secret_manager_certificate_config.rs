@@ -6,5 +6,5 @@ pub struct NodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigCertific
     /// URI for the secret that hosts a certificate. Must be in the format 'projects/PROJECT_NUM/secrets/SECRET_NAME/versions/VERSION_OR_LATEST'.
     #[builder(into)]
     #[serde(rename = "secretUri")]
-    pub r#secret_uri: Box<String>,
+    pub r#secret_uri: String,
 }

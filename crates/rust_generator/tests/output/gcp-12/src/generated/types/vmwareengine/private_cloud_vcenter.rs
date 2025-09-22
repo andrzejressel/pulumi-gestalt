@@ -4,20 +4,20 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PrivateCloudVcenter {
     /// Fully qualified domain name of the appliance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fqdn")]
-    pub r#fqdn: Box<Option<String>>,
+    pub r#fqdn: Option<String>,
     /// Internal IP address of the appliance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "internalIp")]
-    pub r#internal_ip: Box<Option<String>>,
+    pub r#internal_ip: Option<String>,
     /// State of the appliance.
     /// Possible values are: `ACTIVE`, `CREATING`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
     /// Version of the appliance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

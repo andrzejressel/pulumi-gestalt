@@ -5,11 +5,11 @@
 pub struct GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrust {
     #[builder(into)]
     #[serde(rename = "acms")]
-    pub r#acms: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrustAcm>>,
+    pub r#acms: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrustAcm>,
     #[builder(into)]
     #[serde(rename = "files")]
-    pub r#files: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrustFile>>,
+    pub r#files: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrustFile>,
     #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrustSd>>,
+    pub r#sds: Vec<super::super::types::appmesh::GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrustSd>,
 }

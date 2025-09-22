@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccessOrganizationLoginDesign {
     /// The background color on the login page.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backgroundColor")]
-    pub r#background_color: Box<Option<String>>,
+    pub r#background_color: Option<String>,
     /// The text at the bottom of the login page.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "footerText")]
-    pub r#footer_text: Box<Option<String>>,
+    pub r#footer_text: Option<String>,
     /// The text at the top of the login page.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerText")]
-    pub r#header_text: Box<Option<String>>,
+    pub r#header_text: Option<String>,
     /// The URL of the logo on the login page.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logoPath")]
-    pub r#logo_path: Box<Option<String>>,
+    pub r#logo_path: Option<String>,
     /// The text color on the login page.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "textColor")]
-    pub r#text_color: Box<Option<String>>,
+    pub r#text_color: Option<String>,
 }

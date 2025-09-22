@@ -6,7 +6,7 @@ pub struct KxClusterCapacityConfiguration {
     /// Number of instances running in a cluster. Must be at least 1 and at most 5.
     #[builder(into)]
     #[serde(rename = "nodeCount")]
-    pub r#node_count: Box<i32>,
+    pub r#node_count: i32,
     /// Determines the hardware of the host computer used for your cluster instance. Each node type offers different memory and storage capabilities. Choose a node type based on the requirements of the application or software that you plan to run on your instance.
     /// 
     /// You can only specify one of the following values:
@@ -19,5 +19,5 @@ pub struct KxClusterCapacityConfiguration {
     /// * kx.s.32xlarge – The node type with a configuration of 864 GiB memory and 128 vCPUs.
     #[builder(into)]
     #[serde(rename = "nodeType")]
-    pub r#node_type: Box<String>,
+    pub r#node_type: String,
 }

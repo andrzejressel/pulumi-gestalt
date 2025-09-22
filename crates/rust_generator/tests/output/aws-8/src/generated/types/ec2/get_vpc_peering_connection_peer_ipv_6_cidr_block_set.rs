@@ -5,5 +5,5 @@
 pub struct GetVpcPeeringConnectionPeerIpv6CidrBlockSet {
     #[builder(into)]
     #[serde(rename = "ipv6CidrBlock")]
-    pub r#ipv_6_cidr_block: Box<String>,
+    pub r#ipv_6_cidr_block: String,
 }

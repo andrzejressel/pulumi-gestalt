@@ -6,7 +6,7 @@ pub struct KubernetesClusterLinuxProfile {
     /// The Admin Username for the Cluster. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "adminUsername")]
-    pub r#admin_username: Box<String>,
+    pub r#admin_username: String,
     /// An `ssh_key` block as defined below. Only one is currently allowed. Changing this will update the key on all node pools. More information can be found in [the documentation](https://learn.microsoft.com/en-us/azure/aks/node-access#update-ssh-key-on-an-existing-aks-cluster-preview).
     #[builder(into)]
     #[serde(rename = "sshKey")]

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AnalyticsApplicationInputsSchemaRecordColumn {
     /// The Mapping reference to the data element.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mapping")]
-    pub r#mapping: Box<Option<String>>,
+    pub r#mapping: Option<String>,
     /// Name of the column.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The SQL Type of the column.
     #[builder(into)]
     #[serde(rename = "sqlType")]
-    pub r#sql_type: Box<String>,
+    pub r#sql_type: String,
 }

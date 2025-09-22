@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceDynamodbConfig {
     /// The DeltaSyncConfig for a versioned data source. See `delta_sync_config` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deltaSyncConfig")]
-    pub r#delta_sync_config: Box<Option<super::super::types::appsync::DataSourceDynamodbConfigDeltaSyncConfig>>,
+    pub r#delta_sync_config: Option<Box<super::super::types::appsync::DataSourceDynamodbConfigDeltaSyncConfig>>,
     /// AWS region of the DynamoDB table. Defaults to current region.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
     /// Name of the DynamoDB table.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
     /// Set to `true` to use Amazon Cognito credentials with this data source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useCallerCredentials")]
-    pub r#use_caller_credentials: Box<Option<bool>>,
+    pub r#use_caller_credentials: Option<bool>,
     /// Detects Conflict Detection and Resolution with this data source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "versioned")]
-    pub r#versioned: Box<Option<bool>>,
+    pub r#versioned: Option<bool>,
 }

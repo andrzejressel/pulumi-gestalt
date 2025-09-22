@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RepositoryAssociationS3RepositoryDetail {
     /// The name of the S3 bucket used for associating a new S3 repository. Note: The name must begin with `codeguru-reviewer-`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#bucket_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "codeArtifacts")]
-    pub r#code_artifacts: Box<Option<Vec<super::super::types::codegurureviewer::RepositoryAssociationS3RepositoryDetailCodeArtifact>>>,
+    pub r#code_artifacts: Option<Vec<super::super::types::codegurureviewer::RepositoryAssociationS3RepositoryDetailCodeArtifact>>,
 }

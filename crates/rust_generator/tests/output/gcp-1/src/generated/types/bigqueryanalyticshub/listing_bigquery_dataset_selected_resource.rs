@@ -6,7 +6,7 @@ pub struct ListingBigqueryDatasetSelectedResource {
     /// Format: For table: projects/{projectId}/datasets/{datasetId}/tables/{tableId} Example:"projects/test_project/datasets/test_dataset/tables/test_table"
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "table")]
-    pub r#table: Box<Option<String>>,
+    pub r#table: Option<String>,
 }

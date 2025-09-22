@@ -5,11 +5,11 @@
 pub struct StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTable {
     /// MySQL columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mysqlColumns")]
-    pub r#mysql_columns: Box<Option<Vec<super::super::types::datastream::StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumn>>>,
+    pub r#mysql_columns: Option<Vec<super::super::types::datastream::StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumn>>,
     /// Table name.
     #[builder(into)]
     #[serde(rename = "table")]
-    pub r#table: Box<String>,
+    pub r#table: String,
 }

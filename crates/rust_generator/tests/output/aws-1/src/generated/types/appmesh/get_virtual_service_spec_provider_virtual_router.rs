@@ -5,5 +5,5 @@
 pub struct GetVirtualServiceSpecProviderVirtualRouter {
     #[builder(into)]
     #[serde(rename = "virtualRouterName")]
-    pub r#virtual_router_name: Box<String>,
+    pub r#virtual_router_name: String,
 }

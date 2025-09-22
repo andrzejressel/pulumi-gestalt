@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DatasetParquetAzureBlobFsLocation {
     /// Is the `file_system` using dynamic expression, function or system variables? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dynamicFileSystemEnabled")]
-    pub r#dynamic_file_system_enabled: Box<Option<bool>>,
+    pub r#dynamic_file_system_enabled: Option<bool>,
     /// Is the `filename` using dynamic expression, function or system variables? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dynamicFilenameEnabled")]
-    pub r#dynamic_filename_enabled: Box<Option<bool>>,
+    pub r#dynamic_filename_enabled: Option<bool>,
     /// Is the `path` using dynamic expression, function or system variables? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dynamicPathEnabled")]
-    pub r#dynamic_path_enabled: Box<Option<bool>>,
+    pub r#dynamic_path_enabled: Option<bool>,
     /// The container on the Azure Data Lake Storage Account hosting the file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fileSystem")]
-    pub r#file_system: Box<Option<String>>,
+    pub r#file_system: Option<String>,
     /// The filename of the file on the Azure Data Lake Storage Account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filename")]
-    pub r#filename: Box<Option<String>>,
+    pub r#filename: Option<String>,
     /// The folder path to the file on the Azure Data Lake Storage Account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
 }

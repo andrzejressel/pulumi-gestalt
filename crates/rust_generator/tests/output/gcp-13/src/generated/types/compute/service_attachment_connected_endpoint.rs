@@ -5,28 +5,28 @@
 pub struct ServiceAttachmentConnectedEndpoint {
     /// (Output)
     /// The url of the consumer network.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "consumerNetwork")]
-    pub r#consumer_network: Box<Option<String>>,
+    pub r#consumer_network: Option<String>,
     /// (Output)
     /// The URL of the consumer forwarding rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<Option<String>>,
+    pub r#endpoint: Option<String>,
     /// (Output)
     /// The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "propagatedConnectionCount")]
-    pub r#propagated_connection_count: Box<Option<i32>>,
+    pub r#propagated_connection_count: Option<i32>,
     /// (Output)
     /// The PSC connection id of the connected endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pscConnectionId")]
-    pub r#psc_connection_id: Box<Option<String>>,
+    pub r#psc_connection_id: Option<String>,
     /// (Output)
     /// The status of the connection from the consumer forwarding rule to
     /// this service attachment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
 }

@@ -5,17 +5,17 @@
 pub struct GetDataSetRowLevelPermissionDataSet {
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     #[builder(into)]
     #[serde(rename = "formatVersion")]
-    pub r#format_version: Box<String>,
+    pub r#format_version: String,
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
     #[builder(into)]
     #[serde(rename = "permissionPolicy")]
-    pub r#permission_policy: Box<String>,
+    pub r#permission_policy: String,
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

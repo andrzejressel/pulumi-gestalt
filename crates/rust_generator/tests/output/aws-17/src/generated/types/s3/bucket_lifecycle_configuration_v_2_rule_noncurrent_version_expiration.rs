@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketLifecycleConfigurationV2RuleNoncurrentVersionExpiration {
     /// Number of noncurrent versions Amazon S3 will retain. Must be a non-zero positive integer.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "newerNoncurrentVersions")]
-    pub r#newer_noncurrent_versions: Box<Option<String>>,
+    pub r#newer_noncurrent_versions: Option<String>,
     /// Number of days an object is noncurrent before Amazon S3 can perform the associated action. Must be a positive integer.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "noncurrentDays")]
-    pub r#noncurrent_days: Box<Option<i32>>,
+    pub r#noncurrent_days: Option<i32>,
 }

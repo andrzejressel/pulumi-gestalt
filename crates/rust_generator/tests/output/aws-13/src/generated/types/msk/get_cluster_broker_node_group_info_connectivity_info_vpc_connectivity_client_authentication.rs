@@ -5,8 +5,8 @@
 pub struct GetClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthentication {
     #[builder(into)]
     #[serde(rename = "sasls")]
-    pub r#sasls: Box<Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl>>,
+    pub r#sasls: Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSasl>,
     #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Box<bool>,
+    pub r#tls: bool,
 }

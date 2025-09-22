@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ManagedInstanceFailoverGroupPartnerRegion {
     /// The Azure Region where the Managed Instance Failover Group should exist. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<Option<String>>,
+    pub r#location: Option<String>,
     /// The partner replication role of the Managed Instance Failover Group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "role")]
-    pub r#role: Box<Option<String>>,
+    pub r#role: Option<String>,
 }

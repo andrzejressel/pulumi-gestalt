@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResourceLfTagTable {
     /// Identifier for the Data Catalog. By default, it is the account ID of the caller.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "catalogId")]
-    pub r#catalog_id: Box<Option<String>>,
+    pub r#catalog_id: Option<String>,
     /// Name of the database for the table. Unique to a Data Catalog.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// Name of the table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Whether to use a wildcard representing every table under a database. Defaults to `false`.
     /// 
     /// The following arguments are optional:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "wildcard")]
-    pub r#wildcard: Box<Option<bool>>,
+    pub r#wildcard: Option<bool>,
 }

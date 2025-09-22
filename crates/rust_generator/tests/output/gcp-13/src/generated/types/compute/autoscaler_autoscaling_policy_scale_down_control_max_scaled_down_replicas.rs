@@ -5,12 +5,12 @@
 pub struct AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas {
     /// Specifies a fixed number of VM instances. This must be a positive
     /// integer.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fixed")]
-    pub r#fixed: Box<Option<i32>>,
+    pub r#fixed: Option<i32>,
     /// Specifies a percentage of instances between 0 to 100%, inclusive.
     /// For example, specify 80 for 80%.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "percent")]
-    pub r#percent: Box<Option<i32>>,
+    pub r#percent: Option<i32>,
 }

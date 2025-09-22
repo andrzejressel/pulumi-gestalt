@@ -6,9 +6,9 @@ pub struct ConnectionProfileGcsProfile {
     /// The Cloud Storage bucket name.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// The root path inside the Cloud Storage bucket.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rootPath")]
-    pub r#root_path: Box<Option<String>>,
+    pub r#root_path: Option<String>,
 }

@@ -6,13 +6,13 @@ pub struct ScheduledQueryRulesAlertV2CriteriaDimension {
     /// Name of the dimension.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Operator for dimension values. Possible values are `Exclude`,and `Include`.
     #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<String>,
+    pub r#operator: String,
     /// List of dimension values. Use a wildcard `*` to collect all.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

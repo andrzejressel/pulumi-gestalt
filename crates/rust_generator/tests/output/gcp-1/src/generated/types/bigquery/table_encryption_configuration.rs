@@ -10,9 +10,9 @@ pub struct TableEncryptionConfiguration {
     /// `gcp.kms.CryptoKeyIAMBinding` resource.
     #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<String>,
+    pub r#kms_key_name: String,
     /// The self link or full name of the kms key version used to encrypt this table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyVersion")]
-    pub r#kms_key_version: Box<Option<String>>,
+    pub r#kms_key_version: Option<String>,
 }

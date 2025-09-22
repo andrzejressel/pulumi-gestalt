@@ -6,5 +6,5 @@ pub struct VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcm {
     /// One or more ACM ARNs.
     #[builder(into)]
     #[serde(rename = "certificateAuthorityArns")]
-    pub r#certificate_authority_arns: Box<Vec<String>>,
+    pub r#certificate_authority_arns: Vec<String>,
 }

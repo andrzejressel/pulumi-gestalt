@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsSlotSubSlotSetting {
     /// Expression text for defining the constituent sub slots in the composite slot using logical `AND` and `OR` operators.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expression")]
-    pub r#expression: Box<Option<String>>,
+    pub r#expression: Option<String>,
     /// Specifications for the constituent sub slots of a composite slot.
     /// See the `slot_specification` argument reference below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "slotSpecifications")]
-    pub r#slot_specifications: Box<Option<Vec<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecification>>>,
+    pub r#slot_specifications: Option<Vec<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecification>>,
 }

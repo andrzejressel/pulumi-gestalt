@@ -6,9 +6,9 @@ pub struct MultiplexProgramMultiplexProgramSettingsServiceDescriptor {
     /// Unique provider name.
     #[builder(into)]
     #[serde(rename = "providerName")]
-    pub r#provider_name: Box<String>,
+    pub r#provider_name: String,
     /// Unique service name.
     #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<String>,
+    pub r#service_name: String,
 }

@@ -5,5 +5,5 @@
 pub struct GetResponseHeadersPolicyCustomHeadersConfig {
     #[builder(into)]
     #[serde(rename = "items")]
-    pub r#items: Box<Vec<super::super::types::cloudfront::GetResponseHeadersPolicyCustomHeadersConfigItem>>,
+    pub r#items: Vec<super::super::types::cloudfront::GetResponseHeadersPolicyCustomHeadersConfigItem>,
 }

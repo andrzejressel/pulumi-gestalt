@@ -5,11 +5,11 @@
 pub struct ServiceTemplateSpecContainerEnvFromConfigMapRef {
     /// The ConfigMap to select from.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "localObjectReference")]
-    pub r#local_object_reference: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference>>,
+    pub r#local_object_reference: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference>>,
     /// Specify whether the ConfigMap must be defined
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "optional")]
-    pub r#optional: Box<Option<bool>>,
+    pub r#optional: Option<bool>,
 }

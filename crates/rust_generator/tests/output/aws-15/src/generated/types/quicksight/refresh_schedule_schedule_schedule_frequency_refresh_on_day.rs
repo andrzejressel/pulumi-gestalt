@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RefreshScheduleScheduleScheduleFrequencyRefreshOnDay {
     /// The day of the month that you want to schedule refresh on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dayOfMonth")]
-    pub r#day_of_month: Box<Option<String>>,
+    pub r#day_of_month: Option<String>,
     /// The day of the week that you want to schedule a refresh on. Valid values are `SUNDAY`, `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY` and `SATURDAY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<Option<String>>,
+    pub r#day_of_week: Option<String>,
 }

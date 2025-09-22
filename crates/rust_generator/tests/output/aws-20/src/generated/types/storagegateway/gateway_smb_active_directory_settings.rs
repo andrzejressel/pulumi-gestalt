@@ -3,33 +3,33 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GatewaySmbActiveDirectorySettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "activeDirectoryStatus")]
-    pub r#active_directory_status: Box<Option<String>>,
+    pub r#active_directory_status: Option<String>,
     /// List of IPv4 addresses, NetBIOS names, or host names of your domain server.
     /// If you need to specify the port number include it after the colon (“:”). For example, `mydc.mydomain.com:389`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domainControllers")]
-    pub r#domain_controllers: Box<Option<Vec<String>>>,
+    pub r#domain_controllers: Option<Vec<String>>,
     /// The name of the domain that you want the gateway to join.
     #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<String>,
+    pub r#domain_name: String,
     /// The organizational unit (OU) is a container in an Active Directory that can hold users, groups,
     /// computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "organizationalUnit")]
-    pub r#organizational_unit: Box<Option<String>>,
+    pub r#organizational_unit: Option<String>,
     /// The password of the user who has permission to add the gateway to the Active Directory domain.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// Specifies the time in seconds, in which the JoinDomain operation must complete. The default is `20` seconds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeoutInSeconds")]
-    pub r#timeout_in_seconds: Box<Option<i32>>,
+    pub r#timeout_in_seconds: Option<i32>,
     /// The user name of user who has permission to add the gateway to the Active Directory domain.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

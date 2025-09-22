@@ -9,10 +9,10 @@ pub struct BareMetalClusterLoadBalancerMetalLbConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "addressPools")]
-    pub r#address_pools: Box<Vec<super::super::types::gkeonprem::BareMetalClusterLoadBalancerMetalLbConfigAddressPool>>,
+    pub r#address_pools: Vec<super::super::types::gkeonprem::BareMetalClusterLoadBalancerMetalLbConfigAddressPool>,
     /// Specifies the load balancer's node pool configuration.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loadBalancerNodePoolConfig")]
-    pub r#load_balancer_node_pool_config: Box<Option<super::super::types::gkeonprem::BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig>>,
+    pub r#load_balancer_node_pool_config: Option<Box<super::super::types::gkeonprem::BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfig>>,
 }

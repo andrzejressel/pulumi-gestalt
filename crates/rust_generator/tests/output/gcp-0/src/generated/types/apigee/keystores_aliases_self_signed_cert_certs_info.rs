@@ -6,7 +6,7 @@ pub struct KeystoresAliasesSelfSignedCertCertsInfo {
     /// (Output)
     /// List of all properties in the object.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certInfos")]
-    pub r#cert_infos: Box<Option<Vec<super::super::types::apigee::KeystoresAliasesSelfSignedCertCertsInfoCertInfo>>>,
+    pub r#cert_infos: Option<Vec<super::super::types::apigee::KeystoresAliasesSelfSignedCertCertsInfoCertInfo>>,
 }

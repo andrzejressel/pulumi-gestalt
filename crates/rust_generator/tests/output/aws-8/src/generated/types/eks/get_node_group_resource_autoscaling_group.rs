@@ -6,5 +6,5 @@ pub struct GetNodeGroupResourceAutoscalingGroup {
     /// Name of the AutoScaling Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

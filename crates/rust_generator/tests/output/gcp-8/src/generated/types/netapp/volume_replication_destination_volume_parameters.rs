@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VolumeReplicationDestinationVolumeParameters {
     /// Description for the destination volume.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Share name for destination volume. If not specified, name of source volume's share name will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "shareName")]
-    pub r#share_name: Box<Option<String>>,
+    pub r#share_name: Option<String>,
     /// Name of an existing storage pool for the destination volume with format: `projects/{{project}}/locations/{{location}}/storagePools/{{poolId}}`
     #[builder(into)]
     #[serde(rename = "storagePool")]
-    pub r#storage_pool: Box<String>,
+    pub r#storage_pool: String,
     /// Name for the destination volume to be created. If not specified, the name of the source volume will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "volumeId")]
-    pub r#volume_id: Box<Option<String>>,
+    pub r#volume_id: Option<String>,
 }

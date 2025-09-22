@@ -6,16 +6,16 @@ pub struct GetClusterShardNode {
     /// The Availability Zone in which the node resides.
     #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<String>,
+    pub r#availability_zone: String,
     /// The date and time when the node was created. Example: `2022-01-01T21:00:00Z`.
     #[builder(into)]
     #[serde(rename = "createTime")]
-    pub r#create_time: Box<String>,
+    pub r#create_time: String,
     #[builder(into)]
     #[serde(rename = "endpoints")]
-    pub r#endpoints: Box<Vec<super::super::types::memorydb::GetClusterShardNodeEndpoint>>,
+    pub r#endpoints: Vec<super::super::types::memorydb::GetClusterShardNodeEndpoint>,
     /// Name of the cluster.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

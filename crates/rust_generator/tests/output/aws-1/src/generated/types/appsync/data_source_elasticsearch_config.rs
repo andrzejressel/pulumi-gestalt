@@ -6,9 +6,9 @@ pub struct DataSourceElasticsearchConfig {
     /// HTTP endpoint of the Elasticsearch domain.
     #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<String>,
+    pub r#endpoint: String,
     /// AWS region of Elasticsearch domain. Defaults to current region.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationBackupRetentionPolicy {
     /// A `daily_schedule` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dailySchedule")]
-    pub r#daily_schedule: Box<Option<super::super::types::automanage::ConfigurationBackupRetentionPolicyDailySchedule>>,
+    pub r#daily_schedule: Option<Box<super::super::types::automanage::ConfigurationBackupRetentionPolicyDailySchedule>>,
     /// The retention policy type of the backup policy. Possible value is `LongTermRetentionPolicy`. Defaults to `LongTermRetentionPolicy`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionPolicyType")]
-    pub r#retention_policy_type: Box<Option<String>>,
+    pub r#retention_policy_type: Option<String>,
     /// A `weekly_schedule` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weeklySchedule")]
-    pub r#weekly_schedule: Box<Option<super::super::types::automanage::ConfigurationBackupRetentionPolicyWeeklySchedule>>,
+    pub r#weekly_schedule: Option<Box<super::super::types::automanage::ConfigurationBackupRetentionPolicyWeeklySchedule>>,
 }

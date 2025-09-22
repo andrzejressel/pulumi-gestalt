@@ -6,9 +6,9 @@ pub struct DataSourceParametersSpark {
     /// The host to which to connect.
     #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<String>,
+    pub r#host: String,
     /// The warehouse to which to connect.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

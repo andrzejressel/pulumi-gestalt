@@ -10,12 +10,12 @@ pub struct AccessLevelsAccessLevelBasic {
     /// for the AccessLevel to be applied.
     /// Default value is `AND`.
     /// Possible values are: `AND`, `OR`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "combiningFunction")]
-    pub r#combining_function: Box<Option<String>>,
+    pub r#combining_function: Option<String>,
     /// A set of requirements for the AccessLevel to be granted.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Box<Vec<super::super::types::accesscontextmanager::AccessLevelsAccessLevelBasicCondition>>,
+    pub r#conditions: Vec<super::super::types::accesscontextmanager::AccessLevelsAccessLevelBasicCondition>,
 }

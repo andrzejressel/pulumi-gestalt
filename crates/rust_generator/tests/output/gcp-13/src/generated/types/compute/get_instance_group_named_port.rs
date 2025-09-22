@@ -6,8 +6,8 @@ pub struct GetInstanceGroupNamedPort {
     /// The name of the instance group. Either `name` or `self_link` must be provided.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

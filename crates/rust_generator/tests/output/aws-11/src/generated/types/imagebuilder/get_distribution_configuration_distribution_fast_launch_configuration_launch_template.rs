@@ -6,13 +6,13 @@ pub struct GetDistributionConfigurationDistributionFastLaunchConfigurationLaunch
     /// ID of the Amazon EC2 launch template.
     #[builder(into)]
     #[serde(rename = "launchTemplateId")]
-    pub r#launch_template_id: Box<String>,
+    pub r#launch_template_id: String,
     /// The name of the launch template to use for faster launching for a Windows AMI.
     #[builder(into)]
     #[serde(rename = "launchTemplateName")]
-    pub r#launch_template_name: Box<String>,
+    pub r#launch_template_name: String,
     /// The version of the launch template to use for faster launching for a Windows AMI.
     #[builder(into)]
     #[serde(rename = "launchTemplateVersion")]
-    pub r#launch_template_version: Box<String>,
+    pub r#launch_template_version: String,
 }

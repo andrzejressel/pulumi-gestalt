@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouteSpecHttp2RouteMatchQueryParameter {
     /// The query parameter to match on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Box<Option<super::super::types::appmesh::RouteSpecHttp2RouteMatchQueryParameterMatch>>,
+    pub r#match_: Option<Box<super::super::types::appmesh::RouteSpecHttp2RouteMatchQueryParameterMatch>>,
     /// Name for the query parameter that will be matched on.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

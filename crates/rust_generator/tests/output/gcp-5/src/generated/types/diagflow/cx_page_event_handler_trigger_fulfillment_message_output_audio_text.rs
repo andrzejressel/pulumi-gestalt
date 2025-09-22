@@ -5,15 +5,15 @@
 pub struct CxPageEventHandlerTriggerFulfillmentMessageOutputAudioText {
     /// (Output)
     /// Whether the playback of this message can be interrupted by the end user's speech and the client can then starts the next Dialogflow request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowPlaybackInterruption")]
-    pub r#allow_playback_interruption: Box<Option<bool>>,
+    pub r#allow_playback_interruption: Option<bool>,
     /// The SSML text to be synthesized. For more information, see SSML.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ssml")]
-    pub r#ssml: Box<Option<String>>,
+    pub r#ssml: Option<String>,
     /// The raw text to be synthesized.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<Option<String>>,
+    pub r#text: Option<String>,
 }

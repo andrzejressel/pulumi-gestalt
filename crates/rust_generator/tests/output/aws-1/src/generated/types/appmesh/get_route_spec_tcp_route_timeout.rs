@@ -5,5 +5,5 @@
 pub struct GetRouteSpecTcpRouteTimeout {
     #[builder(into)]
     #[serde(rename = "idles")]
-    pub r#idles: Box<Vec<super::super::types::appmesh::GetRouteSpecTcpRouteTimeoutIdle>>,
+    pub r#idles: Vec<super::super::types::appmesh::GetRouteSpecTcpRouteTimeoutIdle>,
 }

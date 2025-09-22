@@ -5,7 +5,7 @@
 pub struct DatascanDataQualitySpecPostScanActions {
     /// If set, results will be exported to the provided BigQuery table.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bigqueryExport")]
-    pub r#bigquery_export: Box<Option<super::super::types::dataplex::DatascanDataQualitySpecPostScanActionsBigqueryExport>>,
+    pub r#bigquery_export: Option<Box<super::super::types::dataplex::DatascanDataQualitySpecPostScanActionsBigqueryExport>>,
 }

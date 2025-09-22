@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountVdmAttributesGuardianAttributes {
     /// Specifies the status of your VDM optimized shared delivery. Valid values: `ENABLED`, `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "optimizedSharedDelivery")]
-    pub r#optimized_shared_delivery: Box<Option<String>>,
+    pub r#optimized_shared_delivery: Option<String>,
 }

@@ -5,7 +5,7 @@
 pub struct SecurityPolicyRuleHeaderAction {
     /// The list of request headers to add or overwrite if they're already present.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestHeadersToAdds")]
-    pub r#request_headers_to_adds: Box<Option<Vec<super::super::types::compute::SecurityPolicyRuleHeaderActionRequestHeadersToAdd>>>,
+    pub r#request_headers_to_adds: Option<Vec<super::super::types::compute::SecurityPolicyRuleHeaderActionRequestHeadersToAdd>>,
 }

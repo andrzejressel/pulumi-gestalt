@@ -6,5 +6,5 @@ pub struct ScheduleTargetDeadLetterConfig {
     /// ARN of the SQS queue specified as the destination for the dead-letter queue.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
 }

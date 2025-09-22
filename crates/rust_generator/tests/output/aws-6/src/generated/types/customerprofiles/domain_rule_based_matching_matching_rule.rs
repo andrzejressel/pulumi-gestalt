@@ -6,5 +6,5 @@ pub struct DomainRuleBasedMatchingMatchingRule {
     /// A single rule level of the `match_rules`. Configures how the rule-based matching process should match profiles.
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<String>>,
+    pub r#rules: Vec<String>,
 }

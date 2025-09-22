@@ -5,11 +5,11 @@
 pub struct StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTable {
     /// SQL Server columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "columns")]
-    pub r#columns: Box<Option<Vec<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTableColumn>>>,
+    pub r#columns: Option<Vec<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTableColumn>>,
     /// Table name.
     #[builder(into)]
     #[serde(rename = "table")]
-    pub r#table: Box<String>,
+    pub r#table: String,
 }

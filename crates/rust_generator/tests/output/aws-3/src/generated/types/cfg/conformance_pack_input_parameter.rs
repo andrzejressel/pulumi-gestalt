@@ -6,9 +6,9 @@ pub struct ConformancePackInputParameter {
     /// The input key.
     #[builder(into)]
     #[serde(rename = "parameterName")]
-    pub r#parameter_name: Box<String>,
+    pub r#parameter_name: String,
     /// The input value.
     #[builder(into)]
     #[serde(rename = "parameterValue")]
-    pub r#parameter_value: Box<String>,
+    pub r#parameter_value: String,
 }

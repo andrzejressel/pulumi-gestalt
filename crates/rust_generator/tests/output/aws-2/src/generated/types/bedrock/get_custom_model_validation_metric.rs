@@ -6,5 +6,5 @@ pub struct GetCustomModelValidationMetric {
     /// The validation loss associated with the validator.
     #[builder(into)]
     #[serde(rename = "validationLoss")]
-    pub r#validation_loss: Box<f64>,
+    pub r#validation_loss: f64,
 }

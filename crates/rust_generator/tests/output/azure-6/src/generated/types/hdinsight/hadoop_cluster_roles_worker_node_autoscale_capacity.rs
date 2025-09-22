@@ -6,9 +6,9 @@ pub struct HadoopClusterRolesWorkerNodeAutoscaleCapacity {
     /// The maximum number of worker nodes to autoscale to based on the cluster's activity.
     #[builder(into)]
     #[serde(rename = "maxInstanceCount")]
-    pub r#max_instance_count: Box<i32>,
+    pub r#max_instance_count: i32,
     /// The minimum number of worker nodes to autoscale to based on the cluster's activity.
     #[builder(into)]
     #[serde(rename = "minInstanceCount")]
-    pub r#min_instance_count: Box<i32>,
+    pub r#min_instance_count: i32,
 }

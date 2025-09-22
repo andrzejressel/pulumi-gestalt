@@ -6,9 +6,9 @@ pub struct ComputeEnvironmentUpdatePolicy {
     /// Specifies the job timeout (in minutes) when the compute environment infrastructure is updated.
     #[builder(into)]
     #[serde(rename = "jobExecutionTimeoutMinutes")]
-    pub r#job_execution_timeout_minutes: Box<i32>,
+    pub r#job_execution_timeout_minutes: i32,
     /// Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated.
     #[builder(into)]
     #[serde(rename = "terminateJobsOnUpdate")]
-    pub r#terminate_jobs_on_update: Box<bool>,
+    pub r#terminate_jobs_on_update: bool,
 }

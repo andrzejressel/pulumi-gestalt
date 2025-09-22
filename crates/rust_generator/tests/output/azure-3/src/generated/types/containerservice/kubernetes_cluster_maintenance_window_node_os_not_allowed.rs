@@ -6,9 +6,9 @@ pub struct KubernetesClusterMaintenanceWindowNodeOsNotAllowed {
     /// The end of a time span, formatted as an RFC3339 string.
     #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<String>,
+    pub r#end: String,
     /// The start of a time span, formatted as an RFC3339 string.
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<String>,
+    pub r#start: String,
 }

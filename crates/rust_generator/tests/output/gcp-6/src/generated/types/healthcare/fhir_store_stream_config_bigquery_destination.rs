@@ -6,7 +6,7 @@ pub struct FhirStoreStreamConfigBigqueryDestination {
     /// BigQuery URI to a dataset, up to 2000 characters long, in the format bq://projectId.bqDatasetId
     #[builder(into)]
     #[serde(rename = "datasetUri")]
-    pub r#dataset_uri: Box<String>,
+    pub r#dataset_uri: String,
     /// The configuration for the exported BigQuery schema.
     /// Structure is documented below.
     #[builder(into)]

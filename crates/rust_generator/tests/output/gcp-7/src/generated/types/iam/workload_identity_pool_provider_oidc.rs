@@ -14,13 +14,13 @@ pub struct WorkloadIdentityPoolProviderOidc {
     /// //iam.googleapis.com/projects/<project-number>/locations/<location>/workloadIdentityPools/<pool-id>/providers/<provider-id>
     /// https://iam.googleapis.com/projects/<project-number>/locations/<location>/workloadIdentityPools/<pool-id>/providers/<provider-id>
     /// ```
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedAudiences")]
-    pub r#allowed_audiences: Box<Option<Vec<String>>>,
+    pub r#allowed_audiences: Option<Vec<String>>,
     /// The OIDC issuer URL.
     #[builder(into)]
     #[serde(rename = "issuerUri")]
-    pub r#issuer_uri: Box<String>,
+    pub r#issuer_uri: String,
     /// OIDC JWKs in JSON String format. For details on definition of a
     /// JWK, see https:tools.ietf.org/html/rfc7517. If not set, then we
     /// use the `jwks_uri` from the discovery document fetched from the
@@ -44,7 +44,7 @@ pub struct WorkloadIdentityPoolProviderOidc {
     /// ]
     /// }
     /// ```
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "jwksJson")]
-    pub r#jwks_json: Box<Option<String>>,
+    pub r#jwks_json: Option<String>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkspaceStorageAccountIdentity {
     /// The principal UUID for the internal databricks storage account needed to provide access to the workspace for enabling Customer Managed Keys.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<Option<String>>,
+    pub r#principal_id: Option<String>,
     /// The UUID of the tenant where the internal databricks storage account was created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<Option<String>>,
+    pub r#tenant_id: Option<String>,
     /// The type of the internal databricks storage account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

@@ -7,10 +7,10 @@ pub struct GetDatasetExternalCatalogDatasetOption {
     /// database locationUri. Maximum length of 1024 characters.
     #[builder(into)]
     #[serde(rename = "defaultStorageLocationUri")]
-    pub r#default_storage_location_uri: Box<String>,
+    pub r#default_storage_location_uri: String,
     /// A map of key value pairs defining the parameters and properties of the open source schema.
     /// Maximum size of 2Mib.
     #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<std::collections::HashMap<String, String>>,
+    pub r#parameters: std::collections::HashMap<String, String>,
 }

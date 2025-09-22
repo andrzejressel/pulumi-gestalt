@@ -10,7 +10,7 @@ pub struct AuthorityConfigSubjectConfig {
     pub r#subject: Box<super::super::types::certificateauthority::AuthorityConfigSubjectConfigSubject>,
     /// The subject alternative name fields.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subjectAltName")]
-    pub r#subject_alt_name: Box<Option<super::super::types::certificateauthority::AuthorityConfigSubjectConfigSubjectAltName>>,
+    pub r#subject_alt_name: Option<Box<super::super::types::certificateauthority::AuthorityConfigSubjectConfigSubjectAltName>>,
 }

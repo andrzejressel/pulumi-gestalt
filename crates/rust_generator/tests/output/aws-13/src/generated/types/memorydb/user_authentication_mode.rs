@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserAuthenticationMode {
     /// Number of passwords belonging to the user if `type` is set to `password`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordCount")]
-    pub r#password_count: Box<Option<i32>>,
+    pub r#password_count: Option<i32>,
     /// Set of passwords used for authentication if `type` is set to `password`. You can create up to two passwords for each user.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwords")]
-    pub r#passwords: Box<Option<Vec<String>>>,
+    pub r#passwords: Option<Vec<String>>,
     /// Specifies the authentication type. Valid values are: `password` or `iam`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

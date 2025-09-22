@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationSetVdmOptionsDashboardOptions {
     /// Specifies the status of your VDM engagement metrics collection. Valid values: `ENABLED`, `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "engagementMetrics")]
-    pub r#engagement_metrics: Box<Option<String>>,
+    pub r#engagement_metrics: Option<String>,
 }

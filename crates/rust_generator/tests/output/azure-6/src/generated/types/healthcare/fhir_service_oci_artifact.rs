@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FhirServiceOciArtifact {
     /// A digest of an image within Azure container registry used for export operations of the service instance to narrow the artifacts down.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "digest")]
-    pub r#digest: Box<Option<String>>,
+    pub r#digest: Option<String>,
     /// An image within Azure container registry used for export operations of the service instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageName")]
-    pub r#image_name: Box<Option<String>>,
+    pub r#image_name: Option<String>,
     /// An Azure container registry used for export operations of the service instance.
     #[builder(into)]
     #[serde(rename = "loginServer")]
-    pub r#login_server: Box<String>,
+    pub r#login_server: String,
 }

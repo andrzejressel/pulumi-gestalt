@@ -6,9 +6,9 @@ pub struct PipelineArtifactStoreEncryptionKey {
     /// The KMS key ARN or ID
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The type of key; currently only `KMS` is supported
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

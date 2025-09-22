@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GuardrailTopicPolicyConfig {
     /// List of topic configs in topic policy. See Topics Config for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "topicsConfigs")]
-    pub r#topics_configs: Box<Option<Vec<super::super::types::bedrock::GuardrailTopicPolicyConfigTopicsConfig>>>,
+    pub r#topics_configs: Option<Vec<super::super::types::bedrock::GuardrailTopicPolicyConfigTopicsConfig>>,
 }

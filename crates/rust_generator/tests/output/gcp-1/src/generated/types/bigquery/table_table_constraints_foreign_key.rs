@@ -9,9 +9,9 @@ pub struct TableTableConstraintsForeignKey {
     #[serde(rename = "columnReferences")]
     pub r#column_references: Box<super::super::types::bigquery::TableTableConstraintsForeignKeyColumnReferences>,
     /// Set only if the foreign key constraint is named.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The table that holds the primary key
     /// and is referenced by this foreign key.
     /// Structure is documented below.

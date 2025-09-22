@@ -6,17 +6,17 @@ pub struct ZeroTrustGatewaySettingsAntivirus {
     /// Scan on file download.
     #[builder(into)]
     #[serde(rename = "enabledDownloadPhase")]
-    pub r#enabled_download_phase: Box<bool>,
+    pub r#enabled_download_phase: bool,
     /// Scan on file upload.
     #[builder(into)]
     #[serde(rename = "enabledUploadPhase")]
-    pub r#enabled_upload_phase: Box<bool>,
+    pub r#enabled_upload_phase: bool,
     /// Block requests for files that cannot be scanned.
     #[builder(into)]
     #[serde(rename = "failClosed")]
-    pub r#fail_closed: Box<bool>,
+    pub r#fail_closed: bool,
     /// Set notifications for antivirus.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notificationSettings")]
-    pub r#notification_settings: Box<Option<super::types::ZeroTrustGatewaySettingsAntivirusNotificationSettings>>,
+    pub r#notification_settings: Option<Box<super::types::ZeroTrustGatewaySettingsAntivirusNotificationSettings>>,
 }

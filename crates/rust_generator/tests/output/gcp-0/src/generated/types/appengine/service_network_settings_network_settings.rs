@@ -8,7 +8,7 @@ pub struct ServiceNetworkSettingsNetworkSettings {
     /// Possible values are: `INGRESS_TRAFFIC_ALLOWED_UNSPECIFIED`, `INGRESS_TRAFFIC_ALLOWED_ALL`, `INGRESS_TRAFFIC_ALLOWED_INTERNAL_ONLY`, `INGRESS_TRAFFIC_ALLOWED_INTERNAL_AND_LB`.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ingressTrafficAllowed")]
-    pub r#ingress_traffic_allowed: Box<Option<String>>,
+    pub r#ingress_traffic_allowed: Option<String>,
 }

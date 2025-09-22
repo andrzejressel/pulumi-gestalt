@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ContainerServicePrivateRegistryAccess {
     /// Describes a request to configure an Amazon Lightsail container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories. See ECR Image Puller Role below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ecrImagePullerRole")]
-    pub r#ecr_image_puller_role: Box<Option<super::super::types::lightsail::ContainerServicePrivateRegistryAccessEcrImagePullerRole>>,
+    pub r#ecr_image_puller_role: Option<Box<super::super::types::lightsail::ContainerServicePrivateRegistryAccessEcrImagePullerRole>>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureMembershipMesh {
     /// **DEPRECATED** Whether to automatically manage Service Mesh control planes. Possible values: CONTROL_PLANE_MANAGEMENT_UNSPECIFIED, AUTOMATIC, MANUAL
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "controlPlane")]
-    pub r#control_plane: Box<Option<String>>,
+    pub r#control_plane: Option<String>,
     /// Whether to automatically manage Service Mesh. Can either be `MANAGEMENT_AUTOMATIC` or `MANAGEMENT_MANUAL`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "management")]
-    pub r#management: Box<Option<String>>,
+    pub r#management: Option<String>,
 }

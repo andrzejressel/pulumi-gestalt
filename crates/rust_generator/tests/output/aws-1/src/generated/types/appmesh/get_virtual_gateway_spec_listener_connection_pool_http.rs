@@ -5,8 +5,8 @@
 pub struct GetVirtualGatewaySpecListenerConnectionPoolHttp {
     #[builder(into)]
     #[serde(rename = "maxConnections")]
-    pub r#max_connections: Box<i32>,
+    pub r#max_connections: i32,
     #[builder(into)]
     #[serde(rename = "maxPendingRequests")]
-    pub r#max_pending_requests: Box<i32>,
+    pub r#max_pending_requests: i32,
 }

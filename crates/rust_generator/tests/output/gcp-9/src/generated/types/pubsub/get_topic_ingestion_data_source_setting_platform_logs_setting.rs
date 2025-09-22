@@ -7,5 +7,5 @@ pub struct GetTopicIngestionDataSourceSettingPlatformLogsSetting {
     /// no Platform Logs will be written. Default value: "SEVERITY_UNSPECIFIED" Possible values: ["SEVERITY_UNSPECIFIED", "DISABLED", "DEBUG", "INFO", "WARNING", "ERROR"]
     #[builder(into)]
     #[serde(rename = "severity")]
-    pub r#severity: Box<String>,
+    pub r#severity: String,
 }

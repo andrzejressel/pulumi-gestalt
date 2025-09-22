@@ -6,9 +6,9 @@ pub struct EmailRoutingRuleAction {
     /// Type of action. Available values: `forward`, `worker`, `drop`
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// Value to match on. Required for `type` of `literal`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<Vec<String>>>,
+    pub r#values: Option<Vec<String>>,
 }

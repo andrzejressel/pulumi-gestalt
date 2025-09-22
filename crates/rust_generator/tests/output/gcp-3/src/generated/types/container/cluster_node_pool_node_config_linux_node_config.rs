@@ -8,19 +8,19 @@ pub struct ClusterNodePoolNodeConfigLinuxNodeConfig {
     /// * `CGROUP_MODE_UNSPECIFIED`: CGROUP_MODE_UNSPECIFIED is when unspecified cgroup configuration is used. The default for the GKE node OS image will be used.
     /// * `CGROUP_MODE_V1`: CGROUP_MODE_V1 specifies to use cgroupv1 for the cgroup configuration on the node image.
     /// * `CGROUP_MODE_V2`: CGROUP_MODE_V2 specifies to use cgroupv2 for the cgroup configuration on the node image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cgroupMode")]
-    pub r#cgroup_mode: Box<Option<String>>,
+    pub r#cgroup_mode: Option<String>,
     /// Amounts for 2M and 1G hugepages. Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hugepagesConfig")]
-    pub r#hugepages_config: Box<Option<super::super::types::container::ClusterNodePoolNodeConfigLinuxNodeConfigHugepagesConfig>>,
+    pub r#hugepages_config: Option<Box<super::super::types::container::ClusterNodePoolNodeConfigLinuxNodeConfigHugepagesConfig>>,
     /// The Linux kernel parameters to be applied to the nodes
     /// and all pods running on the nodes. Specified as a map from the key, such as
     /// `net.core.wmem_max`, to a string value. Currently supported attributes can be found [here](https://cloud.google.com/sdk/gcloud/reference/beta/container/node-pools/create#--system-config-from-file).
     /// Note that validations happen all server side. All attributes are optional.
     /// 
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sysctls")]
-    pub r#sysctls: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#sysctls: Option<std::collections::HashMap<String, String>>,
 }

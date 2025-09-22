@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AssignmentDynamicScopeFilter {
     /// Specifies a list of locations to scope the query to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "locations")]
-    pub r#locations: Box<Option<Vec<String>>>,
+    pub r#locations: Option<Vec<String>>,
     /// Specifies a list of allowed operating systems.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "osTypes")]
-    pub r#os_types: Box<Option<Vec<String>>>,
+    pub r#os_types: Option<Vec<String>>,
     /// Specifies a list of allowed resource groups.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceGroups")]
-    pub r#resource_groups: Box<Option<Vec<String>>>,
+    pub r#resource_groups: Option<Vec<String>>,
     /// Specifies a list of allowed resources.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceTypes")]
-    pub r#resource_types: Box<Option<Vec<String>>>,
+    pub r#resource_types: Option<Vec<String>>,
     /// Filter VMs by `Any` or `All` specified tags. Defaults to `Any`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tagFilter")]
-    pub r#tag_filter: Box<Option<String>>,
+    pub r#tag_filter: Option<String>,
     /// A mapping of tags for the VM
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<Vec<super::super::types::maintenance::AssignmentDynamicScopeFilterTag>>>,
+    pub r#tags: Option<Vec<super::super::types::maintenance::AssignmentDynamicScopeFilterTag>>,
 }

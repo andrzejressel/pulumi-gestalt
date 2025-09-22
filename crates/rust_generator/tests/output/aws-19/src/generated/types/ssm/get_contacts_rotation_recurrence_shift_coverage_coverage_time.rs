@@ -5,8 +5,8 @@
 pub struct GetContactsRotationRecurrenceShiftCoverageCoverageTime {
     #[builder(into)]
     #[serde(rename = "ends")]
-    pub r#ends: Box<Vec<super::super::types::ssm::GetContactsRotationRecurrenceShiftCoverageCoverageTimeEnd>>,
+    pub r#ends: Vec<super::super::types::ssm::GetContactsRotationRecurrenceShiftCoverageCoverageTimeEnd>,
     #[builder(into)]
     #[serde(rename = "starts")]
-    pub r#starts: Box<Vec<super::super::types::ssm::GetContactsRotationRecurrenceShiftCoverageCoverageTimeStart>>,
+    pub r#starts: Vec<super::super::types::ssm::GetContactsRotationRecurrenceShiftCoverageCoverageTimeStart>,
 }

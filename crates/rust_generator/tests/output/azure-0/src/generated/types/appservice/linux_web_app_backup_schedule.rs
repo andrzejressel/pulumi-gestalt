@@ -8,25 +8,25 @@ pub struct LinuxWebAppBackupSchedule {
     /// > **NOTE:** Not all intervals are supported on all Linux Web App SKUs. Please refer to the official documentation for appropriate values.
     #[builder(into)]
     #[serde(rename = "frequencyInterval")]
-    pub r#frequency_interval: Box<i32>,
+    pub r#frequency_interval: i32,
     /// The unit of time for how often the backup should take place. Possible values include: `Day`, `Hour`
     #[builder(into)]
     #[serde(rename = "frequencyUnit")]
-    pub r#frequency_unit: Box<String>,
+    pub r#frequency_unit: String,
     /// Should the service keep at least one backup, regardless of the age of backup? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keepAtLeastOneBackup")]
-    pub r#keep_at_least_one_backup: Box<Option<bool>>,
+    pub r#keep_at_least_one_backup: Option<bool>,
     /// The time the backup was last attempted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastExecutionTime")]
-    pub r#last_execution_time: Box<Option<String>>,
+    pub r#last_execution_time: Option<String>,
     /// After how many days backups should be deleted. Defaults to `30`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionPeriodDays")]
-    pub r#retention_period_days: Box<Option<i32>>,
+    pub r#retention_period_days: Option<i32>,
     /// When the schedule should start working in RFC-3339 format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
 }

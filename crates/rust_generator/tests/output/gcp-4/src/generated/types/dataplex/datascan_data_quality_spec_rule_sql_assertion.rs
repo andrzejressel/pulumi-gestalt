@@ -6,5 +6,5 @@ pub struct DatascanDataQualitySpecRuleSqlAssertion {
     /// The SQL statement.
     #[builder(into)]
     #[serde(rename = "sqlStatement")]
-    pub r#sql_statement: Box<String>,
+    pub r#sql_statement: String,
 }

@@ -5,62 +5,62 @@
 pub struct GetLaunchTemplateNetworkInterface {
     #[builder(into)]
     #[serde(rename = "associateCarrierIpAddress")]
-    pub r#associate_carrier_ip_address: Box<String>,
-    #[builder(into, default)]
+    pub r#associate_carrier_ip_address: String,
+    #[builder(into)]
     #[serde(rename = "associatePublicIpAddress")]
-    pub r#associate_public_ip_address: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#associate_public_ip_address: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "deleteOnTermination")]
-    pub r#delete_on_termination: Box<Option<bool>>,
+    pub r#delete_on_termination: Option<bool>,
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     #[builder(into)]
     #[serde(rename = "deviceIndex")]
-    pub r#device_index: Box<i32>,
+    pub r#device_index: i32,
     #[builder(into)]
     #[serde(rename = "interfaceType")]
-    pub r#interface_type: Box<String>,
+    pub r#interface_type: String,
     #[builder(into)]
     #[serde(rename = "ipv4AddressCount")]
-    pub r#ipv_4_address_count: Box<i32>,
+    pub r#ipv_4_address_count: i32,
     #[builder(into)]
     #[serde(rename = "ipv4Addresses")]
-    pub r#ipv_4_addresses: Box<Vec<String>>,
+    pub r#ipv_4_addresses: Vec<String>,
     #[builder(into)]
     #[serde(rename = "ipv4PrefixCount")]
-    pub r#ipv_4_prefix_count: Box<i32>,
+    pub r#ipv_4_prefix_count: i32,
     #[builder(into)]
     #[serde(rename = "ipv4Prefixes")]
-    pub r#ipv_4_prefixes: Box<Vec<String>>,
+    pub r#ipv_4_prefixes: Vec<String>,
     #[builder(into)]
     #[serde(rename = "ipv6AddressCount")]
-    pub r#ipv_6_address_count: Box<i32>,
+    pub r#ipv_6_address_count: i32,
     #[builder(into)]
     #[serde(rename = "ipv6Addresses")]
-    pub r#ipv_6_addresses: Box<Vec<String>>,
+    pub r#ipv_6_addresses: Vec<String>,
     #[builder(into)]
     #[serde(rename = "ipv6PrefixCount")]
-    pub r#ipv_6_prefix_count: Box<i32>,
+    pub r#ipv_6_prefix_count: i32,
     #[builder(into)]
     #[serde(rename = "ipv6Prefixes")]
-    pub r#ipv_6_prefixes: Box<Vec<String>>,
+    pub r#ipv_6_prefixes: Vec<String>,
     #[builder(into)]
     #[serde(rename = "networkCardIndex")]
-    pub r#network_card_index: Box<i32>,
+    pub r#network_card_index: i32,
     #[builder(into)]
     #[serde(rename = "networkInterfaceId")]
-    pub r#network_interface_id: Box<String>,
+    pub r#network_interface_id: String,
     #[builder(into)]
     #[serde(rename = "primaryIpv6")]
-    pub r#primary_ipv_6: Box<String>,
+    pub r#primary_ipv_6: String,
     #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<String>,
+    pub r#private_ip_address: String,
     #[builder(into)]
     #[serde(rename = "securityGroups")]
-    pub r#security_groups: Box<Vec<String>>,
+    pub r#security_groups: Vec<String>,
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

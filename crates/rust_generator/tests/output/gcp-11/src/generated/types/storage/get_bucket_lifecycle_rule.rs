@@ -6,9 +6,9 @@ pub struct GetBucketLifecycleRule {
     /// The Lifecycle Rule's action configuration. A single block of this type is supported.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::storage::GetBucketLifecycleRuleAction>>,
+    pub r#actions: Vec<super::super::types::storage::GetBucketLifecycleRuleAction>,
     /// The Lifecycle Rule's condition configuration.
     #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Box<Vec<super::super::types::storage::GetBucketLifecycleRuleCondition>>,
+    pub r#conditions: Vec<super::super::types::storage::GetBucketLifecycleRuleCondition>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PrivateCloudManagementCluster {
     /// A list of hosts in the management cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hosts")]
-    pub r#hosts: Box<Option<Vec<String>>>,
+    pub r#hosts: Option<Vec<String>>,
     /// The ID of the management cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<i32>>,
+    pub r#id: Option<i32>,
     /// The size of the management cluster. This field can not updated with `internet_connection_enabled` together.
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<i32>,
+    pub r#size: i32,
 }

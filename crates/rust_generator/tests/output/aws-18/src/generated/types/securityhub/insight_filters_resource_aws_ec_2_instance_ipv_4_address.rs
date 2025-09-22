@@ -6,5 +6,5 @@ pub struct InsightFiltersResourceAwsEc2InstanceIpv4Address {
     /// A finding's CIDR value.
     #[builder(into)]
     #[serde(rename = "cidr")]
-    pub r#cidr: Box<String>,
+    pub r#cidr: String,
 }

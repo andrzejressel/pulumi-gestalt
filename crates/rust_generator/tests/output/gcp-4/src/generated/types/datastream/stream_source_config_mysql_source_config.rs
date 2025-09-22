@@ -5,22 +5,22 @@
 pub struct StreamSourceConfigMysqlSourceConfig {
     /// MySQL objects to exclude from the stream.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "excludeObjects")]
-    pub r#exclude_objects: Box<Option<super::super::types::datastream::StreamSourceConfigMysqlSourceConfigExcludeObjects>>,
+    pub r#exclude_objects: Option<Box<super::super::types::datastream::StreamSourceConfigMysqlSourceConfigExcludeObjects>>,
     /// MySQL objects to retrieve from the source.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includeObjects")]
-    pub r#include_objects: Box<Option<super::super::types::datastream::StreamSourceConfigMysqlSourceConfigIncludeObjects>>,
+    pub r#include_objects: Option<Box<super::super::types::datastream::StreamSourceConfigMysqlSourceConfigIncludeObjects>>,
     /// Maximum number of concurrent backfill tasks. The number should be non negative.
     /// If not set (or set to 0), the system's default value will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxConcurrentBackfillTasks")]
-    pub r#max_concurrent_backfill_tasks: Box<Option<i32>>,
+    pub r#max_concurrent_backfill_tasks: Option<i32>,
     /// Maximum number of concurrent CDC tasks. The number should be non negative.
     /// If not set (or set to 0), the system's default value will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxConcurrentCdcTasks")]
-    pub r#max_concurrent_cdc_tasks: Box<Option<i32>>,
+    pub r#max_concurrent_cdc_tasks: Option<i32>,
 }

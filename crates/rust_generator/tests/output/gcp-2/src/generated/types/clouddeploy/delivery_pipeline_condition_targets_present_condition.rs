@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeliveryPipelineConditionTargetsPresentCondition {
     /// The list of Target names that are missing. For example, projects/{project_id}/locations/{location_name}/targets/{target_name}.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "missingTargets")]
-    pub r#missing_targets: Box<Option<Vec<String>>>,
+    pub r#missing_targets: Option<Vec<String>>,
     /// True if there aren't any missing Targets.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<bool>>,
+    pub r#status: Option<bool>,
     /// Output only. Most recent time at which the pipeline was updated.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "updateTime")]
-    pub r#update_time: Box<Option<String>>,
+    pub r#update_time: Option<String>,
 }

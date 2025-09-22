@@ -6,9 +6,9 @@ pub struct GetSpringCloudAppPersistentDisk {
     /// The mount path of the persistent disk.
     #[builder(into)]
     #[serde(rename = "mountPath")]
-    pub r#mount_path: Box<String>,
+    pub r#mount_path: String,
     /// The size of the persistent disk in GB.
     #[builder(into)]
     #[serde(rename = "sizeInGb")]
-    pub r#size_in_gb: Box<i32>,
+    pub r#size_in_gb: i32,
 }

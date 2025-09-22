@@ -6,19 +6,19 @@ pub struct ScheduledQueryRulesAlertV2Identity {
     /// A list of User Assigned Managed Identity IDs to be assigned to this Scheduled Query Rule.
     /// 
     /// > **NOTE:** This is required when `type` is set to `UserAssigned`. The identity associated must have required roles, read the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule#configure-the-alert-rule-details) for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Option<Vec<String>>>,
+    pub r#identity_ids: Option<Vec<String>>,
     /// The Principal ID for the Service Principal associated with the Managed Service Identity of this App Service slot.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<Option<String>>,
+    pub r#principal_id: Option<String>,
     /// The Tenant ID for the Service Principal associated with the Managed Service Identity of this App Service slot.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<Option<String>>,
+    pub r#tenant_id: Option<String>,
     /// Specifies the type of Managed Service Identity that should be configured on this Scheduled Query Rule. Possible values are `SystemAssigned`, `UserAssigned`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

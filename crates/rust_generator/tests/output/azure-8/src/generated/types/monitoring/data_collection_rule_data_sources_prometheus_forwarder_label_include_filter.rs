@@ -6,9 +6,9 @@ pub struct DataCollectionRuleDataSourcesPrometheusForwarderLabelIncludeFilter {
     /// The label of the filter. This label should be unique across all `label_include_fileter` block. Possible value is `microsoft_metrics_include_label`.
     #[builder(into)]
     #[serde(rename = "label")]
-    pub r#label: Box<String>,
+    pub r#label: String,
     /// The value of the filter.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

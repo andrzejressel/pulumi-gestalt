@@ -6,15 +6,15 @@ pub struct TriggerMatchingCriteria {
     /// Required. The name of a CloudEvents attribute. Currently, only a subset of attributes are supported for filtering. All triggers MUST provide a filter for the 'type' attribute.
     #[builder(into)]
     #[serde(rename = "attribute")]
-    pub r#attribute: Box<String>,
+    pub r#attribute: String,
     /// Optional. The operator used for matching the events with the value of the filter. If not specified, only events that have an exact key-value pair specified in the filter are matched. The only allowed value is `match-path-pattern`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<Option<String>>,
+    pub r#operator: Option<String>,
     /// Required. The value for the attribute. See https://cloud.google.com/eventarc/docs/creating-triggers#trigger-gcloud for available values.
     /// 
     /// - - -
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

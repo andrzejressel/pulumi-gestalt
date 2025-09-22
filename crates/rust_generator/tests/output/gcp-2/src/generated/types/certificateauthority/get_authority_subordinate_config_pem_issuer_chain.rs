@@ -6,5 +6,5 @@ pub struct GetAuthoritySubordinateConfigPemIssuerChain {
     /// Expected to be in leaf-to-root order according to RFC 5246.
     #[builder(into)]
     #[serde(rename = "pemCertificates")]
-    pub r#pem_certificates: Box<Vec<String>>,
+    pub r#pem_certificates: Vec<String>,
 }

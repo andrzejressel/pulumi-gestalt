@@ -5,11 +5,11 @@
 pub struct GetGatewayRouteSpecHttpRouteActionRewrite {
     #[builder(into)]
     #[serde(rename = "hostnames")]
-    pub r#hostnames: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteActionRewriteHostname>>,
+    pub r#hostnames: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteActionRewriteHostname>,
     #[builder(into)]
     #[serde(rename = "paths")]
-    pub r#paths: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteActionRewritePath>>,
+    pub r#paths: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteActionRewritePath>,
     #[builder(into)]
     #[serde(rename = "prefixes")]
-    pub r#prefixes: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteActionRewritePrefix>>,
+    pub r#prefixes: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttpRouteActionRewritePrefix>,
 }

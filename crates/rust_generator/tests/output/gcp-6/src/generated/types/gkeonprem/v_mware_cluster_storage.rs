@@ -7,5 +7,5 @@ pub struct VMwareClusterStorage {
     /// Enabled by default.
     #[builder(into)]
     #[serde(rename = "vsphereCsiDisabled")]
-    pub r#vsphere_csi_disabled: Box<bool>,
+    pub r#vsphere_csi_disabled: bool,
 }

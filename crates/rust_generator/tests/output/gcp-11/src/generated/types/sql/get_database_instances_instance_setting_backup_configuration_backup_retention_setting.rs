@@ -6,9 +6,9 @@ pub struct GetDatabaseInstancesInstanceSettingBackupConfigurationBackupRetention
     /// Number of backups to retain.
     #[builder(into)]
     #[serde(rename = "retainedBackups")]
-    pub r#retained_backups: Box<i32>,
+    pub r#retained_backups: i32,
     /// The unit that 'retainedBackups' represents. Defaults to COUNT
     #[builder(into)]
     #[serde(rename = "retentionUnit")]
-    pub r#retention_unit: Box<String>,
+    pub r#retention_unit: String,
 }

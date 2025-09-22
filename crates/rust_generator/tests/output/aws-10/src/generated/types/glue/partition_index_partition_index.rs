@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PartitionIndexPartitionIndex {
     /// Name of the partition index.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "indexName")]
-    pub r#index_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#index_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "indexStatus")]
-    pub r#index_status: Box<Option<String>>,
+    pub r#index_status: Option<String>,
     /// Keys for the partition index.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keys")]
-    pub r#keys: Box<Option<Vec<String>>>,
+    pub r#keys: Option<Vec<String>>,
 }

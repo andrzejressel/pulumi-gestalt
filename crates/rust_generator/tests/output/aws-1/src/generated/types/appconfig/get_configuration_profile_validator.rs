@@ -6,9 +6,9 @@ pub struct GetConfigurationProfileValidator {
     /// Either the JSON Schema content or the ARN of an AWS Lambda function.
     #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<String>,
+    pub r#content: String,
     /// Type of validator. Valid values: JSON_SCHEMA and LAMBDA.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

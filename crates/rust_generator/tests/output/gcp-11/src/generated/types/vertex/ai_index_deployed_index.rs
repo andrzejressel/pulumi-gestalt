@@ -5,12 +5,12 @@
 pub struct AiIndexDeployedIndex {
     /// (Output)
     /// The ID of the DeployedIndex in the above IndexEndpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deployedIndexId")]
-    pub r#deployed_index_id: Box<Option<String>>,
+    pub r#deployed_index_id: Option<String>,
     /// (Output)
     /// A resource name of the IndexEndpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "indexEndpoint")]
-    pub r#index_endpoint: Box<Option<String>>,
+    pub r#index_endpoint: Option<String>,
 }

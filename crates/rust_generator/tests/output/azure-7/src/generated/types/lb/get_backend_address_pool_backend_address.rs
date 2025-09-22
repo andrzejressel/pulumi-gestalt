@@ -6,17 +6,17 @@ pub struct GetBackendAddressPoolBackendAddress {
     /// A list of `inbound_nat_rule_port_mapping` block as defined below.
     #[builder(into)]
     #[serde(rename = "inboundNatRulePortMappings")]
-    pub r#inbound_nat_rule_port_mappings: Box<Vec<super::super::types::lb::GetBackendAddressPoolBackendAddressInboundNatRulePortMapping>>,
+    pub r#inbound_nat_rule_port_mappings: Vec<super::super::types::lb::GetBackendAddressPoolBackendAddressInboundNatRulePortMapping>,
     /// The Static IP address for this Load Balancer within the Virtual Network.
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
     /// Specifies the name of the Backend Address Pool.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The ID of the Virtual Network where the Backend Address of the Load Balancer exists.
     #[builder(into)]
     #[serde(rename = "virtualNetworkId")]
-    pub r#virtual_network_id: Box<String>,
+    pub r#virtual_network_id: String,
 }

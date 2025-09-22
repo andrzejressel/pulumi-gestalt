@@ -6,5 +6,5 @@ pub struct InventorySchedule {
     /// Specifies how frequently inventory results are produced. Valid values: `Daily`, `Weekly`.
     #[builder(into)]
     #[serde(rename = "frequency")]
-    pub r#frequency: Box<String>,
+    pub r#frequency: String,
 }

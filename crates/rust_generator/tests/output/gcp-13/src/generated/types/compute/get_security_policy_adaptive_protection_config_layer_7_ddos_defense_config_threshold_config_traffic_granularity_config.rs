@@ -6,13 +6,13 @@ pub struct GetSecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThres
     /// If enabled, traffic matching each unique value for the specified type constitutes a separate traffic unit. It can only be set to true if value is empty.
     #[builder(into)]
     #[serde(rename = "enableEachUniqueValue")]
-    pub r#enable_each_unique_value: Box<bool>,
+    pub r#enable_each_unique_value: bool,
     /// Type of this configuration.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// Requests that match this value constitute a granular traffic unit.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

@@ -6,9 +6,9 @@ pub struct VpnServerConfigurationClientRootCertificate {
     /// A name used to uniquely identify this certificate.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The Public Key Data associated with the Certificate.
     #[builder(into)]
     #[serde(rename = "publicCertData")]
-    pub r#public_cert_data: Box<String>,
+    pub r#public_cert_data: String,
 }

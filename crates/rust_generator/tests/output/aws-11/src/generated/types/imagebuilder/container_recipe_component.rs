@@ -6,9 +6,9 @@ pub struct ContainerRecipeComponent {
     /// Amazon Resource Name (ARN) of the Image Builder Component to associate.
     #[builder(into)]
     #[serde(rename = "componentArn")]
-    pub r#component_arn: Box<String>,
+    pub r#component_arn: String,
     /// Configuration block(s) for parameters to configure the component. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<Vec<super::super::types::imagebuilder::ContainerRecipeComponentParameter>>>,
+    pub r#parameters: Option<Vec<super::super::types::imagebuilder::ContainerRecipeComponentParameter>>,
 }

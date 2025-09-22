@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3Config {
     /// S3 bucket name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<Option<String>>,
+    pub r#bucket_name: Option<String>,
     /// S3 prefix.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyPrefix")]
-    pub r#key_prefix: Box<Option<String>>,
+    pub r#key_prefix: Option<String>,
 }

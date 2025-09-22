@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SigningJobRevocationRecord {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reason")]
-    pub r#reason: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#reason: Option<String>,
+    #[builder(into)]
     #[serde(rename = "revokedAt")]
-    pub r#revoked_at: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#revoked_at: Option<String>,
+    #[builder(into)]
     #[serde(rename = "revokedBy")]
-    pub r#revoked_by: Box<Option<String>>,
+    pub r#revoked_by: Option<String>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BatchEnvironmentConfigPeripheralsConfigSparkHistoryServerConfig {
     /// Resource name of an existing Dataproc Cluster to act as a Spark History Server for the workload.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataprocCluster")]
-    pub r#dataproc_cluster: Box<Option<String>>,
+    pub r#dataproc_cluster: Option<String>,
 }

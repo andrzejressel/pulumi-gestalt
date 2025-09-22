@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsScte27SourceSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ocrLanguage")]
-    pub r#ocr_language: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#ocr_language: Option<String>,
+    #[builder(into)]
     #[serde(rename = "pid")]
-    pub r#pid: Box<Option<i32>>,
+    pub r#pid: Option<i32>,
 }

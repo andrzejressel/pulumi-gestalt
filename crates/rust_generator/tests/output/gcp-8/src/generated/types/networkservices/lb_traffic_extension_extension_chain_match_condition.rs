@@ -6,5 +6,5 @@ pub struct LbTrafficExtensionExtensionChainMatchCondition {
     /// A Common Expression Language (CEL) expression that is used to match requests for which the extension chain is executed.
     #[builder(into)]
     #[serde(rename = "celExpression")]
-    pub r#cel_expression: Box<String>,
+    pub r#cel_expression: String,
 }

@@ -6,5 +6,5 @@ pub struct DicomStoreStreamConfigBigqueryDestination {
     /// a fully qualified BigQuery table URI where DICOM instance metadata will be streamed.
     #[builder(into)]
     #[serde(rename = "tableUri")]
-    pub r#table_uri: Box<String>,
+    pub r#table_uri: String,
 }

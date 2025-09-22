@@ -6,33 +6,33 @@ pub struct MonitorDatadogOrganization {
     /// Api key associated to the Datadog organization. Changing this forces a new Datadog Monitor to be created.
     #[builder(into)]
     #[serde(rename = "apiKey")]
-    pub r#api_key: Box<String>,
+    pub r#api_key: String,
     /// Application key associated to the Datadog organization. Changing this forces a new Datadog Monitor to be created.
     #[builder(into)]
     #[serde(rename = "applicationKey")]
-    pub r#application_key: Box<String>,
+    pub r#application_key: String,
     /// The ID of the enterprise_app. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enterpriseAppId")]
-    pub r#enterprise_app_id: Box<Option<String>>,
+    pub r#enterprise_app_id: Option<String>,
     /// The ID of the Datadog Monitor.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The auth code used to linking to an existing Datadog organization. Changing this forces a new Datadog Monitor to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "linkingAuthCode")]
-    pub r#linking_auth_code: Box<Option<String>>,
+    pub r#linking_auth_code: Option<String>,
     /// The ID of the linking_client. Changing this forces a new Datadog Monitor to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "linkingClientId")]
-    pub r#linking_client_id: Box<Option<String>>,
+    pub r#linking_client_id: Option<String>,
     /// The name of the user that will be associated with the Datadog Monitor. Changing this forces a new Datadog Monitor to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The redirect uri for linking. Changing this forces a new Datadog Monitor to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "redirectUri")]
-    pub r#redirect_uri: Box<Option<String>>,
+    pub r#redirect_uri: Option<String>,
 }

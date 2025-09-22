@@ -6,9 +6,9 @@ pub struct EndpointConfigurationProductionVariantCoreDumpConfig {
     /// The Amazon S3 bucket to send the core dump to.
     #[builder(into)]
     #[serde(rename = "destinationS3Uri")]
-    pub r#destination_s_3_uri: Box<String>,
+    pub r#destination_s_3_uri: String,
     /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker uses to encrypt the core dump data at rest using Amazon S3 server-side encryption.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<Option<String>>,
+    pub r#kms_key_id: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TableExternalDataConfigurationParquetOptions {
     /// Indicates whether to use schema inference specifically for Parquet LIST logical type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableListInference")]
-    pub r#enable_list_inference: Box<Option<bool>>,
+    pub r#enable_list_inference: Option<bool>,
     /// Indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enumAsString")]
-    pub r#enum_as_string: Box<Option<bool>>,
+    pub r#enum_as_string: Option<bool>,
 }

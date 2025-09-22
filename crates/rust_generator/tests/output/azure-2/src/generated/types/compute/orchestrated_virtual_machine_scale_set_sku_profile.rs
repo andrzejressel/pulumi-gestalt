@@ -6,9 +6,9 @@ pub struct OrchestratedVirtualMachineScaleSetSkuProfile {
     /// Specifies the allocation strategy for the virtual machine scale set based on which the VMs will be allocated. Possible values are `LowestPrice` and `CapacityOptimized`.
     #[builder(into)]
     #[serde(rename = "allocationStrategy")]
-    pub r#allocation_strategy: Box<String>,
+    pub r#allocation_strategy: String,
     /// Specifies the VM sizes for the virtual machine scale set.
     #[builder(into)]
     #[serde(rename = "vmSizes")]
-    pub r#vm_sizes: Box<Vec<String>>,
+    pub r#vm_sizes: Vec<String>,
 }

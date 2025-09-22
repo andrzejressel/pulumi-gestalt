@@ -6,17 +6,17 @@ pub struct ServiceServiceConnectConfiguration {
     /// Whether to use Service Connect with this service.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Log configuration for the container. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logConfiguration")]
-    pub r#log_configuration: Box<Option<super::super::types::ecs::ServiceServiceConnectConfigurationLogConfiguration>>,
+    pub r#log_configuration: Option<Box<super::super::types::ecs::ServiceServiceConnectConfigurationLogConfiguration>>,
     /// Namespace name or ARN of the `aws.servicediscovery.HttpNamespace` for use with Service Connect.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<Option<String>>,
+    pub r#namespace: Option<String>,
     /// List of Service Connect service objects. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "services")]
-    pub r#services: Box<Option<Vec<super::super::types::ecs::ServiceServiceConnectConfigurationService>>>,
+    pub r#services: Option<Vec<super::super::types::ecs::ServiceServiceConnectConfigurationService>>,
 }

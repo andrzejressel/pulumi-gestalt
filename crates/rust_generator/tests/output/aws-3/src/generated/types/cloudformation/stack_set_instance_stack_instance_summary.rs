@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StackSetInstanceStackInstanceSummary {
     /// Target AWS Account ID to create a Stack based on the StackSet. Defaults to current account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<Option<String>>,
+    pub r#account_id: Option<String>,
     /// Organizational unit ID in which the stack is deployed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "organizationalUnitId")]
-    pub r#organizational_unit_id: Box<Option<String>>,
+    pub r#organizational_unit_id: Option<String>,
     /// Stack identifier.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stackId")]
-    pub r#stack_id: Box<Option<String>>,
+    pub r#stack_id: Option<String>,
 }

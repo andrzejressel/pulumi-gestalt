@@ -6,13 +6,13 @@ pub struct ApplicationEnvironment {
     /// Variable name.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Set visibility of the variable value to `true` or `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secure")]
-    pub r#secure: Box<Option<bool>>,
+    pub r#secure: Option<bool>,
     /// Variable value.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

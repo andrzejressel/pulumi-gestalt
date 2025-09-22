@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceLbPoliciesAutoCapacityDrain {
     /// Optional. If set to 'True', an unhealthy MIG/NEG will be set as drained. - An MIG/NEG is considered unhealthy if less than 25% of the instances/endpoints in the MIG/NEG are healthy. - This option will never result in draining more than 50% of the configured IGs/NEGs for the Backend Service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<Option<bool>>,
+    pub r#enable: Option<bool>,
 }

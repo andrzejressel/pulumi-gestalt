@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFmp4HlsSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audioRenditionSets")]
-    pub r#audio_rendition_sets: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#audio_rendition_sets: Option<String>,
+    #[builder(into)]
     #[serde(rename = "nielsenId3Behavior")]
-    pub r#nielsen_id_3_behavior: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#nielsen_id_3_behavior: Option<String>,
+    #[builder(into)]
     #[serde(rename = "timedMetadataBehavior")]
-    pub r#timed_metadata_behavior: Box<Option<String>>,
+    pub r#timed_metadata_behavior: Option<String>,
 }

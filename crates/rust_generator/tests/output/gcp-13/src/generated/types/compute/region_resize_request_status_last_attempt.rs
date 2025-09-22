@@ -6,7 +6,7 @@ pub struct RegionResizeRequestStatusLastAttempt {
     /// (Output)
     /// Fatal errors encountered during the queueing or provisioning phases of the ResizeRequest that caused the transition to the FAILED state. Contrary to the lastAttempt errors, this field is final and errors are never removed from here, as the ResizeRequest is not going to retry.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errors")]
-    pub r#errors: Box<Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptError>>>,
+    pub r#errors: Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptError>>,
 }

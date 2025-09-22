@@ -4,33 +4,33 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BatchEnvironmentConfigExecutionConfig {
     /// The Cloud KMS key to use for encryption.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKey")]
-    pub r#kms_key: Box<Option<String>>,
+    pub r#kms_key: Option<String>,
     /// Tags used for network traffic control.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkTags")]
-    pub r#network_tags: Box<Option<Vec<String>>>,
+    pub r#network_tags: Option<Vec<String>>,
     /// Network configuration for workload execution.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkUri")]
-    pub r#network_uri: Box<Option<String>>,
+    pub r#network_uri: Option<String>,
     /// Service account that used to execute workload.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAccount")]
-    pub r#service_account: Box<Option<String>>,
+    pub r#service_account: Option<String>,
     /// A Cloud Storage bucket used to stage workload dependencies, config files, and store
     /// workload output and other ephemeral data, such as Spark history files. If you do not specify a staging bucket,
     /// Cloud Dataproc will determine a Cloud Storage location according to the region where your workload is running,
     /// and then create and manage project-level, per-location staging and temporary buckets.
     /// This field requires a Cloud Storage bucket name, not a gs://... URI to a Cloud Storage bucket.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stagingBucket")]
-    pub r#staging_bucket: Box<Option<String>>,
+    pub r#staging_bucket: Option<String>,
     /// Subnetwork configuration for workload execution.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetworkUri")]
-    pub r#subnetwork_uri: Box<Option<String>>,
+    pub r#subnetwork_uri: Option<String>,
     /// The duration after which the workload will be terminated.
     /// When the workload exceeds this duration, it will be unconditionally terminated without waiting for ongoing
     /// work to finish. If ttl is not specified for a batch workload, the workload will be allowed to run until it
@@ -39,7 +39,7 @@ pub struct BatchEnvironmentConfigExecutionConfig {
     /// Minimum value is 10 minutes; maximum value is 14 days. If both ttl and idleTtl are specified (for an interactive session),
     /// the conditions are treated as OR conditions: the workload will be terminated when it has been idle for idleTtl or
     /// when ttl has been exceeded, whichever occurs first.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ttl")]
-    pub r#ttl: Box<Option<String>>,
+    pub r#ttl: Option<String>,
 }

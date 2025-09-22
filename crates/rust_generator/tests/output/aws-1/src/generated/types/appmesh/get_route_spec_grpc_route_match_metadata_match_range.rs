@@ -5,8 +5,8 @@
 pub struct GetRouteSpecGrpcRouteMatchMetadataMatchRange {
     #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<i32>,
+    pub r#end: i32,
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<i32>,
+    pub r#start: i32,
 }

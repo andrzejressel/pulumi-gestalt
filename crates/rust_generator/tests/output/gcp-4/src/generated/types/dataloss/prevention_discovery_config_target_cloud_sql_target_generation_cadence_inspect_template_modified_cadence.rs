@@ -7,5 +7,5 @@ pub struct PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceInspect
     /// Possible values are: `UPDATE_FREQUENCY_NEVER`, `UPDATE_FREQUENCY_DAILY`, `UPDATE_FREQUENCY_MONTHLY`.
     #[builder(into)]
     #[serde(rename = "frequency")]
-    pub r#frequency: Box<String>,
+    pub r#frequency: String,
 }

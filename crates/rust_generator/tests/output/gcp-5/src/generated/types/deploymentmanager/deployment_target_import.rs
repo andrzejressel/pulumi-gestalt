@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeploymentTargetImport {
     /// The full contents of the template that you want to import.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<Option<String>>,
+    pub r#content: Option<String>,
     /// The name of the template to import, as declared in the YAML
     /// configuration.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

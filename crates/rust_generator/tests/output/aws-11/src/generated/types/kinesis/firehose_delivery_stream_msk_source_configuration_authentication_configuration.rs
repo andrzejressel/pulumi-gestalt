@@ -6,9 +6,9 @@ pub struct FirehoseDeliveryStreamMskSourceConfigurationAuthenticationConfigurati
     /// The type of connectivity used to access the Amazon MSK cluster. Valid values: `PUBLIC`, `PRIVATE`.
     #[builder(into)]
     #[serde(rename = "connectivity")]
-    pub r#connectivity: Box<String>,
+    pub r#connectivity: String,
     /// The ARN of the role used to access the Amazon MSK cluster.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
 }

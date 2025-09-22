@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScheduledActionTargetActionResizeCluster {
     /// A boolean value indicating whether the resize operation is using the classic resize process. Default: `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "classic")]
-    pub r#classic: Box<Option<bool>>,
+    pub r#classic: Option<bool>,
     /// The unique identifier for the cluster to resize.
     #[builder(into)]
     #[serde(rename = "clusterIdentifier")]
-    pub r#cluster_identifier: Box<String>,
+    pub r#cluster_identifier: String,
     /// The new cluster type for the specified cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clusterType")]
-    pub r#cluster_type: Box<Option<String>>,
+    pub r#cluster_type: Option<String>,
     /// The new node type for the nodes you are adding.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeType")]
-    pub r#node_type: Box<Option<String>>,
+    pub r#node_type: Option<String>,
     /// The new number of nodes for the cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numberOfNodes")]
-    pub r#number_of_nodes: Box<Option<i32>>,
+    pub r#number_of_nodes: Option<i32>,
 }

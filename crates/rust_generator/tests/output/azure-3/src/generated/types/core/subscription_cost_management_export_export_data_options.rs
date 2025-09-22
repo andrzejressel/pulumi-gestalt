@@ -6,9 +6,9 @@ pub struct SubscriptionCostManagementExportExportDataOptions {
     /// The time frame for pulling data for the query. If custom, then a specific time period must be provided. Possible values include: `WeekToDate`, `MonthToDate`, `BillingMonthToDate`, `TheLast7Days`, `TheLastMonth`, `TheLastBillingMonth`, `Custom`.
     #[builder(into)]
     #[serde(rename = "timeFrame")]
-    pub r#time_frame: Box<String>,
+    pub r#time_frame: String,
     /// The type of the query. Possible values are `ActualCost`, `AmortizedCost` and `Usage`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

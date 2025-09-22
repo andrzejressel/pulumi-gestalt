@@ -6,5 +6,5 @@ pub struct LoggingConfigurationDestinationConfigurationCloudwatchLogs {
     /// Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.
     #[builder(into)]
     #[serde(rename = "logGroupName")]
-    pub r#log_group_name: Box<String>,
+    pub r#log_group_name: String,
 }

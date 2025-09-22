@@ -8,9 +8,9 @@ pub struct GetClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlue
     /// A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
     #[builder(into)]
     #[serde(rename = "nodePoolSoakDuration")]
-    pub r#node_pool_soak_duration: Box<String>,
+    pub r#node_pool_soak_duration: String,
     /// Standard policy for the blue-green upgrade.
     #[builder(into)]
     #[serde(rename = "standardRolloutPolicies")]
-    pub r#standard_rollout_policies: Box<Vec<super::super::types::container::GetClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy>>,
+    pub r#standard_rollout_policies: Vec<super::super::types::container::GetClusterClusterAutoscalingAutoProvisioningDefaultUpgradeSettingBlueGreenSettingStandardRolloutPolicy>,
 }

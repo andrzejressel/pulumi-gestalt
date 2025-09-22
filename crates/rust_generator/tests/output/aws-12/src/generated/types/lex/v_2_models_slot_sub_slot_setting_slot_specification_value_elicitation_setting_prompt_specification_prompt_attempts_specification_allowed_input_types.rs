@@ -5,8 +5,8 @@
 pub struct V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAllowedInputTypes {
     #[builder(into)]
     #[serde(rename = "allowAudioInput")]
-    pub r#allow_audio_input: Box<bool>,
+    pub r#allow_audio_input: bool,
     #[builder(into)]
     #[serde(rename = "allowDtmfInput")]
-    pub r#allow_dtmf_input: Box<bool>,
+    pub r#allow_dtmf_input: bool,
 }

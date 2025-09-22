@@ -6,13 +6,13 @@ pub struct GetJobTemplateTemplateVolumeSecretItem {
     /// Integer octal mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<i32>,
+    pub r#mode: i32,
     /// The relative path of the secret in the container.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// The Cloud Secret Manager secret version. Can be 'latest' for the latest value or an integer for a specific version
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

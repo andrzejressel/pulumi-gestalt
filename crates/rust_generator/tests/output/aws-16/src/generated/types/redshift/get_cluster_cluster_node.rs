@@ -6,13 +6,13 @@ pub struct GetClusterClusterNode {
     /// Whether the node is a leader node or a compute node
     #[builder(into)]
     #[serde(rename = "nodeRole")]
-    pub r#node_role: Box<String>,
+    pub r#node_role: String,
     /// Private IP address of a node within a cluster
     #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<String>,
+    pub r#private_ip_address: String,
     /// Public IP address of a node within a cluster
     #[builder(into)]
     #[serde(rename = "publicIpAddress")]
-    pub r#public_ip_address: Box<String>,
+    pub r#public_ip_address: String,
 }

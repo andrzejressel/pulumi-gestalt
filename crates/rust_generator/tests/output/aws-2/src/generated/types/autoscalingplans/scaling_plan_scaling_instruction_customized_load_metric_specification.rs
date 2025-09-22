@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScalingPlanScalingInstructionCustomizedLoadMetricSpecification {
     /// Dimensions of the metric.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dimensions")]
-    pub r#dimensions: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#dimensions: Option<std::collections::HashMap<String, String>>,
     /// Name of the metric.
     #[builder(into)]
     #[serde(rename = "metricName")]
-    pub r#metric_name: Box<String>,
+    pub r#metric_name: String,
     /// Namespace of the metric.
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
     /// Statistic of the metric. Currently, the value must always be `Sum`.
     #[builder(into)]
     #[serde(rename = "statistic")]
-    pub r#statistic: Box<String>,
+    pub r#statistic: String,
     /// Unit of the metric.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<Option<String>>,
+    pub r#unit: Option<String>,
 }

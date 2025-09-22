@@ -6,17 +6,17 @@ pub struct GetPoolStartTaskContainer {
     /// The image to use to create the container in which the task will run.
     #[builder(into)]
     #[serde(rename = "imageName")]
-    pub r#image_name: Box<String>,
+    pub r#image_name: String,
     /// The same reference as `container_registries` block defined as follows.
     #[builder(into)]
     #[serde(rename = "registries")]
-    pub r#registries: Box<Vec<super::super::types::batch::GetPoolStartTaskContainerRegistry>>,
+    pub r#registries: Vec<super::super::types::batch::GetPoolStartTaskContainerRegistry>,
     /// Additional options to the container create command.
     #[builder(into)]
     #[serde(rename = "runOptions")]
-    pub r#run_options: Box<String>,
+    pub r#run_options: String,
     /// A flag to indicate where the container task working directory is.
     #[builder(into)]
     #[serde(rename = "workingDirectory")]
-    pub r#working_directory: Box<String>,
+    pub r#working_directory: String,
 }

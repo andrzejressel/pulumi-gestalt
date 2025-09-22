@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContent {
     /// map of bundle name to BundleInstallSpec. The bundle name maps to the `bundleName` key in the `policycontroller.gke.io/constraintData` annotation on a constraint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bundles")]
-    pub r#bundles: Box<Option<Vec<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentBundle>>>,
+    pub r#bundles: Option<Vec<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentBundle>>,
     /// Configures the installation of the Template Library. Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "templateLibrary")]
-    pub r#template_library: Box<Option<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary>>,
+    pub r#template_library: Option<Box<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary>>,
 }

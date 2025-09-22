@@ -6,5 +6,5 @@ pub struct SchemaDefinition {
     /// A JSON string representation of the schema.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

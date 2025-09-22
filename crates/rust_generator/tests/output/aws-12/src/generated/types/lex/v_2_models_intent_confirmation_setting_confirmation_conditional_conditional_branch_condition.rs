@@ -6,5 +6,5 @@ pub struct V2ModelsIntentConfirmationSettingConfirmationConditionalConditionalBr
     /// Expression string that is evaluated.
     #[builder(into)]
     #[serde(rename = "expressionString")]
-    pub r#expression_string: Box<String>,
+    pub r#expression_string: String,
 }

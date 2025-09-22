@@ -11,7 +11,7 @@ pub struct V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroup {
     /// Configuration blocks for message variations to send to the user.
     /// When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.
     /// See the `aws.lex.V2modelsIntent` resource for details on the `variation` argument reference - they are identical.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "variations")]
-    pub r#variations: Box<Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariation>>>,
+    pub r#variations: Option<Vec<super::super::types::lex::V2ModelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariation>>,
 }

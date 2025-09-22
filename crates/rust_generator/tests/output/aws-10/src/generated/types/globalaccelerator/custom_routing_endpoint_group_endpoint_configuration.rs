@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CustomRoutingEndpointGroupEndpointConfiguration {
     /// An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpointId")]
-    pub r#endpoint_id: Box<Option<String>>,
+    pub r#endpoint_id: Option<String>,
 }

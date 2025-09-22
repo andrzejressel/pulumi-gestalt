@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AzureClusterLoggingConfig {
     /// Configuration of the logging components.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "componentConfig")]
-    pub r#component_config: Box<Option<super::super::types::container::AzureClusterLoggingConfigComponentConfig>>,
+    pub r#component_config: Option<Box<super::super::types::container::AzureClusterLoggingConfigComponentConfig>>,
 }

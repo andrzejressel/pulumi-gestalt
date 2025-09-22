@@ -8,5 +8,5 @@ pub struct WorkloadIdentityPoolProviderSaml {
     /// <a name="nested_x509"></a>The `x509` block supports:
     #[builder(into)]
     #[serde(rename = "idpMetadataXml")]
-    pub r#idp_metadata_xml: Box<String>,
+    pub r#idp_metadata_xml: String,
 }

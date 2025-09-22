@@ -5,20 +5,20 @@
 pub struct SecurityPolicyRuleRateLimitOptions {
     /// Can only be specified if the action for the rule is "rate_based_ban".
     /// If specified, determines the time (in seconds) the traffic will continue to be banned by the rate limit after the rate falls below the threshold.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "banDurationSec")]
-    pub r#ban_duration_sec: Box<Option<i32>>,
+    pub r#ban_duration_sec: Option<i32>,
     /// Can only be specified if the action for the rule is "rate_based_ban".
     /// If specified, the key will be banned for the configured 'banDurationSec' when the number of requests that exceed the 'rateLimitThreshold' also exceed this 'banThreshold'.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "banThreshold")]
-    pub r#ban_threshold: Box<Option<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsBanThreshold>>,
+    pub r#ban_threshold: Option<Box<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsBanThreshold>>,
     /// Action to take for requests that are under the configured rate limit threshold.
     /// Valid option is "allow" only.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "conformAction")]
-    pub r#conform_action: Box<Option<String>>,
+    pub r#conform_action: Option<String>,
     /// Determines the key to enforce the rateLimitThreshold on. Possible values are:
     /// * ALL: A single rate limit threshold is applied to all the requests matching this rule. This is the default value if "enforceOnKey" is not configured.
     /// * IP: The source IP address of the request is the key. Each IP has this limit enforced separately.
@@ -31,35 +31,35 @@ pub struct SecurityPolicyRuleRateLimitOptions {
     /// * TLS_JA3_FINGERPRINT: JA3 TLS/SSL fingerprint if the client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the key type defaults to ALL.
     /// * USER_IP: The IP address of the originating client, which is resolved based on "userIpRequestHeaders" configured with the security policy. If there is no "userIpRequestHeaders" configuration or an IP address cannot be resolved from it, the key type defaults to IP.
     /// Possible values are: `ALL`, `IP`, `HTTP_HEADER`, `XFF_IP`, `HTTP_COOKIE`, `HTTP_PATH`, `SNI`, `REGION_CODE`, `TLS_JA3_FINGERPRINT`, `USER_IP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enforceOnKey")]
-    pub r#enforce_on_key: Box<Option<String>>,
+    pub r#enforce_on_key: Option<String>,
     /// If specified, any combination of values of enforceOnKeyType/enforceOnKeyName is treated as the key on which ratelimit threshold/action is enforced.
     /// You can specify up to 3 enforceOnKeyConfigs.
     /// If enforceOnKeyConfigs is specified, enforceOnKey must not be specified.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enforceOnKeyConfigs")]
-    pub r#enforce_on_key_configs: Box<Option<Vec<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>>>,
+    pub r#enforce_on_key_configs: Option<Vec<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig>>,
     /// Rate limit key name applicable only for the following key types:
     /// HTTP_HEADER -- Name of the HTTP header whose value is taken as the key value.
     /// HTTP_COOKIE -- Name of the HTTP cookie whose value is taken as the key value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enforceOnKeyName")]
-    pub r#enforce_on_key_name: Box<Option<String>>,
+    pub r#enforce_on_key_name: Option<String>,
     /// Action to take for requests that are above the configured rate limit threshold, to either deny with a specified HTTP response code, or redirect to a different endpoint.
     /// Valid options are deny(STATUS), where valid values for STATUS are 403, 404, 429, and 502.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exceedAction")]
-    pub r#exceed_action: Box<Option<String>>,
+    pub r#exceed_action: Option<String>,
     /// Parameters defining the redirect action that is used as the exceed action. Cannot be specified if the exceed action is not redirect. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exceedRedirectOptions")]
-    pub r#exceed_redirect_options: Box<Option<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsExceedRedirectOptions>>,
+    pub r#exceed_redirect_options: Option<Box<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsExceedRedirectOptions>>,
     /// Threshold at which to begin ratelimiting.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rateLimitThreshold")]
-    pub r#rate_limit_threshold: Box<Option<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsRateLimitThreshold>>,
+    pub r#rate_limit_threshold: Option<Box<super::super::types::compute::SecurityPolicyRuleRateLimitOptionsRateLimitThreshold>>,
 }

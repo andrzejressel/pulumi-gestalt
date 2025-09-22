@@ -6,14 +6,14 @@ pub struct TopicSchemaSettings {
     /// The encoding of messages validated against schema.
     /// Default value is `ENCODING_UNSPECIFIED`.
     /// Possible values are: `ENCODING_UNSPECIFIED`, `JSON`, `BINARY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encoding")]
-    pub r#encoding: Box<Option<String>>,
+    pub r#encoding: Option<String>,
     /// The name of the schema that messages published should be
     /// validated against. Format is projects/{project}/schemas/{schema}.
     /// The value of this field will be _deleted-schema_
     /// if the schema has been deleted.
     #[builder(into)]
     #[serde(rename = "schema")]
-    pub r#schema: Box<String>,
+    pub r#schema: String,
 }

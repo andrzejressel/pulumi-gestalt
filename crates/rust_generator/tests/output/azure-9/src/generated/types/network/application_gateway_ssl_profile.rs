@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationGatewaySslProfile {
     /// The ID of the Rewrite Rule Set
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The name of the SSL Profile that is unique within this Application Gateway.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// a `ssl_policy` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sslPolicy")]
-    pub r#ssl_policy: Box<Option<super::super::types::network::ApplicationGatewaySslProfileSslPolicy>>,
+    pub r#ssl_policy: Option<Box<super::super::types::network::ApplicationGatewaySslProfileSslPolicy>>,
     /// The name of the Trusted Client Certificate that will be used to authenticate requests from clients.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "trustedClientCertificateNames")]
-    pub r#trusted_client_certificate_names: Box<Option<Vec<String>>>,
+    pub r#trusted_client_certificate_names: Option<Vec<String>>,
     /// Should client certificate issuer DN be verified? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "verifyClientCertIssuerDn")]
-    pub r#verify_client_cert_issuer_dn: Box<Option<bool>>,
+    pub r#verify_client_cert_issuer_dn: Option<bool>,
     /// Specify the method to check client certificate revocation status. Possible value is `OCSP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "verifyClientCertificateRevocation")]
-    pub r#verify_client_certificate_revocation: Box<Option<String>>,
+    pub r#verify_client_certificate_revocation: Option<String>,
 }

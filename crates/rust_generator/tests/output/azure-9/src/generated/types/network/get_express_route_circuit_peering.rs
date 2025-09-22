@@ -6,29 +6,29 @@ pub struct GetExpressRouteCircuitPeering {
     /// The Either a 16-bit or a 32-bit ASN for Azure.
     #[builder(into)]
     #[serde(rename = "azureAsn")]
-    pub r#azure_asn: Box<i32>,
+    pub r#azure_asn: i32,
     /// The Either a 16-bit or a 32-bit ASN. Can either be public or private.
     #[builder(into)]
     #[serde(rename = "peerAsn")]
-    pub r#peer_asn: Box<i32>,
+    pub r#peer_asn: i32,
     /// The type of the ExpressRoute Circuit Peering. Acceptable values include `AzurePrivatePeering`, `AzurePublicPeering` and `MicrosoftPeering`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "peeringType")]
-    pub r#peering_type: Box<String>,
+    pub r#peering_type: String,
     /// A `/30` subnet for the primary link.
     #[builder(into)]
     #[serde(rename = "primaryPeerAddressPrefix")]
-    pub r#primary_peer_address_prefix: Box<String>,
+    pub r#primary_peer_address_prefix: String,
     /// A `/30` subnet for the secondary link.
     #[builder(into)]
     #[serde(rename = "secondaryPeerAddressPrefix")]
-    pub r#secondary_peer_address_prefix: Box<String>,
+    pub r#secondary_peer_address_prefix: String,
     /// The shared key. Can be a maximum of 25 characters.
     #[builder(into)]
     #[serde(rename = "sharedKey")]
-    pub r#shared_key: Box<String>,
+    pub r#shared_key: String,
     /// A valid VLAN ID to establish this peering on.
     #[builder(into)]
     #[serde(rename = "vlanId")]
-    pub r#vlan_id: Box<i32>,
+    pub r#vlan_id: i32,
 }

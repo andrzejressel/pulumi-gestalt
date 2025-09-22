@@ -4,36 +4,36 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SsisProjectResponse {
     /// Metadata description.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Environment reference in project
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "environmentRefs")]
-    pub r#environment_refs: Box<Option<Vec<super::types::SsisEnvironmentReferenceResponse>>>,
+    pub r#environment_refs: Option<Vec<super::types::SsisEnvironmentReferenceResponse>>,
     /// Folder id which contains project.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "folderId")]
-    pub r#folder_id: Box<Option<f64>>,
+    pub r#folder_id: Option<f64>,
     /// Metadata id.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<f64>>,
+    pub r#id: Option<f64>,
     /// Metadata name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Parameters in project
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<Vec<super::types::SsisParameterResponse>>>,
+    pub r#parameters: Option<Vec<super::types::SsisParameterResponse>>,
     /// The type of SSIS object metadata.
     /// Expected value is 'Project'.
     #[builder(skip)]
     #[serde(rename = "type")]
-    r#type_: Box<super::constants::ConstStringProject>,
+    r#type_: super::constants::ConstStringProject,
     /// Project version.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<f64>>,
+    pub r#version: Option<f64>,
 }

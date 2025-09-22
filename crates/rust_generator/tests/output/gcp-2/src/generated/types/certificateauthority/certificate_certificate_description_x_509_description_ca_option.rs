@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertificateCertificateDescriptionX509DescriptionCaOption {
     /// When true, the "CA" in Basic Constraints extension will be set to true.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isCa")]
-    pub r#is_ca: Box<Option<bool>>,
+    pub r#is_ca: Option<bool>,
     /// Refers to the "path length constraint" in Basic Constraints extension. For a CA certificate, this value describes the depth of
     /// subordinate CA certificates that are allowed. If this value is less than 0, the request will fail.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxIssuerPathLength")]
-    pub r#max_issuer_path_length: Box<Option<i32>>,
+    pub r#max_issuer_path_length: Option<i32>,
 }

@@ -6,5 +6,5 @@ pub struct SqlContainerIndexingPolicyExcludedPath {
     /// Path that is excluded from indexing.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

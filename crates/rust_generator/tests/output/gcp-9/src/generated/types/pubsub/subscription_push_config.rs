@@ -21,25 +21,25 @@ pub struct SubscriptionPushConfig {
     /// The possible values for this attribute are:
     /// - v1beta1: uses the push format defined in the v1beta1 Pub/Sub API.
     /// - v1 or v1beta2: uses the push format defined in the v1 Pub/Sub API.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attributes")]
-    pub r#attributes: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#attributes: Option<std::collections::HashMap<String, String>>,
     /// When set, the payload to the push endpoint is not wrapped.Sets the
     /// `data` field as the HTTP body for delivery.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "noWrapper")]
-    pub r#no_wrapper: Box<Option<super::super::types::pubsub::SubscriptionPushConfigNoWrapper>>,
+    pub r#no_wrapper: Option<Box<super::super::types::pubsub::SubscriptionPushConfigNoWrapper>>,
     /// If specified, Pub/Sub will generate and attach an OIDC JWT token as
     /// an Authorization header in the HTTP request for every pushed message.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oidcToken")]
-    pub r#oidc_token: Box<Option<super::super::types::pubsub::SubscriptionPushConfigOidcToken>>,
+    pub r#oidc_token: Option<Box<super::super::types::pubsub::SubscriptionPushConfigOidcToken>>,
     /// A URL locating the endpoint to which messages should be pushed.
     /// For example, a Webhook endpoint might use
     /// "https://example.com/push".
     #[builder(into)]
     #[serde(rename = "pushEndpoint")]
-    pub r#push_endpoint: Box<String>,
+    pub r#push_endpoint: String,
 }

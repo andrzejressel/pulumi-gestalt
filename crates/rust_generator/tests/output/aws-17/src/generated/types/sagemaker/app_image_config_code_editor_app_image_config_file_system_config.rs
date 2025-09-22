@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppImageConfigCodeEditorAppImageConfigFileSystemConfig {
     /// The default POSIX group ID (GID). If not specified, defaults to `100`. Valid values are `0` and `100`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultGid")]
-    pub r#default_gid: Box<Option<i32>>,
+    pub r#default_gid: Option<i32>,
     /// The default POSIX user ID (UID). If not specified, defaults to `1000`. Valid values are `0` and `1000`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultUid")]
-    pub r#default_uid: Box<Option<i32>>,
+    pub r#default_uid: Option<i32>,
     /// The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to `/home/sagemaker-user`.
     /// 
     /// > **Note:** When specifying `default_gid` and `default_uid`, Valid value pairs are [`0`, `0`] and [`100`, `1000`].
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mountPath")]
-    pub r#mount_path: Box<Option<String>>,
+    pub r#mount_path: Option<String>,
 }

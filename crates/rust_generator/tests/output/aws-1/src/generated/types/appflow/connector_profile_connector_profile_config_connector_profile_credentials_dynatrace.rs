@@ -6,5 +6,5 @@ pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDyna
     /// The API tokens used by Dynatrace API to authenticate various API calls.
     #[builder(into)]
     #[serde(rename = "apiToken")]
-    pub r#api_token: Box<String>,
+    pub r#api_token: String,
 }

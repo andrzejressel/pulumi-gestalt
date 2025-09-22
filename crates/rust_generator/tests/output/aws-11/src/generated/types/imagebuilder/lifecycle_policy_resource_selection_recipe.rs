@@ -6,9 +6,9 @@ pub struct LifecyclePolicyResourceSelectionRecipe {
     /// The name of an Image Builder recipe that the lifecycle policy uses for resource selection.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The version of the Image Builder recipe specified by the name field.
     #[builder(into)]
     #[serde(rename = "semanticVersion")]
-    pub r#semantic_version: Box<String>,
+    pub r#semantic_version: String,
 }

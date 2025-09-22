@@ -6,9 +6,9 @@ pub struct WorkerScriptAnalyticsEngineBinding {
     /// The name of the Analytics Engine dataset to write to.
     #[builder(into)]
     #[serde(rename = "dataset")]
-    pub r#dataset: Box<String>,
+    pub r#dataset: String,
     /// The global variable for the binding in your Worker code.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

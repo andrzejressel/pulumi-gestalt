@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoData {
     /// The SAPOData basic authentication credentials.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "basicAuthCredentials")]
-    pub r#basic_auth_credentials: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataBasicAuthCredentials>>,
+    pub r#basic_auth_credentials: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataBasicAuthCredentials>>,
     /// The SAPOData OAuth type authentication credentials.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oauthCredentials")]
-    pub r#oauth_credentials: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentials>>,
+    pub r#oauth_credentials: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentials>>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionIdentityTokenOnly {
     /// The ID token audience, or client ID, claim values that you want to accept in your policy store from an OIDC identity provider.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientIds")]
-    pub r#client_ids: Box<Option<Vec<String>>>,
+    pub r#client_ids: Option<Vec<String>>,
     /// The claim that determines the principal in OIDC access tokens.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "principalIdClaim")]
-    pub r#principal_id_claim: Box<Option<String>>,
+    pub r#principal_id_claim: Option<String>,
 }

@@ -6,5 +6,5 @@ pub struct ScaleSetNetworkProfileDnsSettings {
     /// Specifies an array of DNS servers.
     #[builder(into)]
     #[serde(rename = "dnsServers")]
-    pub r#dns_servers: Box<Vec<String>>,
+    pub r#dns_servers: Vec<String>,
 }

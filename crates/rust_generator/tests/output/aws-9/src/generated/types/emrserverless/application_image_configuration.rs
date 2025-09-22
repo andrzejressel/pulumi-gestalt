@@ -6,5 +6,5 @@ pub struct ApplicationImageConfiguration {
     /// The image URI.
     #[builder(into)]
     #[serde(rename = "imageUri")]
-    pub r#image_uri: Box<String>,
+    pub r#image_uri: String,
 }

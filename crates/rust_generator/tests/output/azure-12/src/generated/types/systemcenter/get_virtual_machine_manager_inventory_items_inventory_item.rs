@@ -6,13 +6,13 @@ pub struct GetVirtualMachineManagerInventoryItemsInventoryItem {
     /// The ID of the System Center Virtual Machine Manager Inventory Item.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The name of the System Center Virtual Machine Manager Inventory Item.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The UUID of the System Center Virtual Machine Manager Inventory Item that is assigned by System Center Virtual Machine Manager.
     #[builder(into)]
     #[serde(rename = "uuid")]
-    pub r#uuid: Box<String>,
+    pub r#uuid: String,
 }

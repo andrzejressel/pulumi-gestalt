@@ -6,5 +6,5 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigPas
     /// The name of the password field.
     #[builder(into)]
     #[serde(rename = "identifier")]
-    pub r#identifier: Box<String>,
+    pub r#identifier: String,
 }

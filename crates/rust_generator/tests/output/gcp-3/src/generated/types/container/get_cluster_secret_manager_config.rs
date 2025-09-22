@@ -6,5 +6,5 @@ pub struct GetClusterSecretManagerConfig {
     /// Enable the Secret manager csi component.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

@@ -6,9 +6,9 @@ pub struct ChannelEncoderSettingsTimecodeConfig {
     /// The source for the timecode that will be associated with the events outputs.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<String>,
+    pub r#source: String,
     /// Threshold in frames beyond which output timecode is resynchronized to the input timecode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "syncThreshold")]
-    pub r#sync_threshold: Box<Option<i32>>,
+    pub r#sync_threshold: Option<i32>,
 }

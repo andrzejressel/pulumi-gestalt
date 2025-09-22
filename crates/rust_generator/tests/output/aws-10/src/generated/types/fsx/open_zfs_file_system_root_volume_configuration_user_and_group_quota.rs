@@ -6,13 +6,13 @@ pub struct OpenZfsFileSystemRootVolumeConfigurationUserAndGroupQuota {
     /// The ID of the user or group. Valid values between `0` and `2147483647`
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<i32>,
+    pub r#id: i32,
     /// The amount of storage that the user or group can use in gibibytes (GiB). Valid values between `0` and `2147483647`
     #[builder(into)]
     #[serde(rename = "storageCapacityQuotaGib")]
-    pub r#storage_capacity_quota_gib: Box<i32>,
+    pub r#storage_capacity_quota_gib: i32,
     /// A value that specifies whether the quota applies to a user or group. Valid values are `USER` or `GROUP`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

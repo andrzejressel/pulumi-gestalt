@@ -5,16 +5,16 @@
 pub struct TriggerRepositoryEventConfigPullRequest {
     /// Regex of branches to match.
     /// The syntax of the regular expressions accepted is the syntax accepted by RE2 and described at https://github.com/google/re2/wiki/Syntax
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "branch")]
-    pub r#branch: Box<Option<String>>,
+    pub r#branch: Option<String>,
     /// Configure builds to run whether a repository owner or collaborator need to comment /gcbrun.
     /// Possible values are: `COMMENTS_DISABLED`, `COMMENTS_ENABLED`, `COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commentControl")]
-    pub r#comment_control: Box<Option<String>>,
+    pub r#comment_control: Option<String>,
     /// If true, branches that do NOT match the git_ref will trigger a build.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "invertRegex")]
-    pub r#invert_regex: Box<Option<bool>>,
+    pub r#invert_regex: Option<bool>,
 }

@@ -6,5 +6,5 @@ pub struct GetIndexServerSideEncryptionConfiguration {
     /// Identifier of the AWS KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
     #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<String>,
+    pub r#kms_key_id: String,
 }

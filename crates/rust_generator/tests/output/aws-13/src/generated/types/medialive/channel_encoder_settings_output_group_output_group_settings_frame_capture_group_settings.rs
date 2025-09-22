@@ -6,7 +6,7 @@ pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroup
     #[builder(into)]
     #[serde(rename = "destination")]
     pub r#destination: Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsDestination>,
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "frameCaptureCdnSettings")]
-    pub r#frame_capture_cdn_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsFrameCaptureCdnSettings>>,
+    pub r#frame_capture_cdn_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsFrameCaptureCdnSettings>>,
 }

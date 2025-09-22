@@ -6,7 +6,7 @@ pub struct GetHcVpnGatewayVpnInterface {
     /// The numeric ID of this VPN gateway interface.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<i32>,
+    pub r#id: i32,
     /// URL of the interconnect attachment resource. When the value
     /// of this field is present, the VPN Gateway will be used for
     /// IPsec-encrypted Cloud Interconnect; all Egress or Ingress
@@ -16,9 +16,9 @@ pub struct GetHcVpnGatewayVpnInterface {
     /// Not currently available publicly.
     #[builder(into)]
     #[serde(rename = "interconnectAttachment")]
-    pub r#interconnect_attachment: Box<String>,
+    pub r#interconnect_attachment: String,
     /// The external IP address for this VPN gateway interface.
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
 }

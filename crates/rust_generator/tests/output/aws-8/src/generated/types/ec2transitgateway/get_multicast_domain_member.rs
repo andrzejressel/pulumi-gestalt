@@ -6,9 +6,9 @@ pub struct GetMulticastDomainMember {
     /// The IP address assigned to the transit gateway multicast group.
     #[builder(into)]
     #[serde(rename = "groupIpAddress")]
-    pub r#group_ip_address: Box<String>,
+    pub r#group_ip_address: String,
     /// The group members' network interface ID.
     #[builder(into)]
     #[serde(rename = "networkInterfaceId")]
-    pub r#network_interface_id: Box<String>,
+    pub r#network_interface_id: String,
 }

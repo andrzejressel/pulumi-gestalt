@@ -6,13 +6,13 @@ pub struct GetVirtualNetworkAllowedSubnet {
     /// Indicates if this subnet allows public IP addresses. Possible values are `Allow`, `Default` and `Deny`.
     #[builder(into)]
     #[serde(rename = "allowPublicIp")]
-    pub r#allow_public_ip: Box<String>,
+    pub r#allow_public_ip: String,
     /// The name of the subnet.
     #[builder(into)]
     #[serde(rename = "labSubnetName")]
-    pub r#lab_subnet_name: Box<String>,
+    pub r#lab_subnet_name: String,
     /// The resource identifier for the subnet.
     #[builder(into)]
     #[serde(rename = "resourceId")]
-    pub r#resource_id: Box<String>,
+    pub r#resource_id: String,
 }

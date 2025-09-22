@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsIntentConfirmationSettingElicitationCodeHook {
     /// Whether a Lambda function should be invoked for the dialog.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableCodeHookInvocation")]
-    pub r#enable_code_hook_invocation: Box<Option<bool>>,
+    pub r#enable_code_hook_invocation: Option<bool>,
     /// Label that indicates the dialog step from which the dialog code hook is happening.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "invocationLabel")]
-    pub r#invocation_label: Box<Option<String>>,
+    pub r#invocation_label: Option<String>,
 }

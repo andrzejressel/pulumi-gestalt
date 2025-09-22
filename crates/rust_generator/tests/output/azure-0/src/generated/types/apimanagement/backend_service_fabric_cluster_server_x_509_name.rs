@@ -6,9 +6,9 @@ pub struct BackendServiceFabricClusterServerX509Name {
     /// The thumbprint for the issuer of the certificate.
     #[builder(into)]
     #[serde(rename = "issuerCertificateThumbprint")]
-    pub r#issuer_certificate_thumbprint: Box<String>,
+    pub r#issuer_certificate_thumbprint: String,
     /// The common name of the certificate.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

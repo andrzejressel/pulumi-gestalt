@@ -6,5 +6,5 @@ pub struct GetGroupTransitiveMembershipsMembershipRole {
     /// The name of the TransitiveMembershipRole. Possible values: ["OWNER", "MANAGER", "MEMBER"]
     #[builder(into)]
     #[serde(rename = "role")]
-    pub r#role: Box<String>,
+    pub r#role: String,
 }

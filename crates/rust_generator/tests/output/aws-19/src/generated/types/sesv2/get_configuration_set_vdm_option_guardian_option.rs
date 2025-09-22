@@ -6,5 +6,5 @@ pub struct GetConfigurationSetVdmOptionGuardianOption {
     /// Specifies the status of your VDM optimized shared delivery.
     #[builder(into)]
     #[serde(rename = "optimizedSharedDelivery")]
-    pub r#optimized_shared_delivery: Box<String>,
+    pub r#optimized_shared_delivery: String,
 }

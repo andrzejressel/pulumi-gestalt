@@ -5,5 +5,5 @@
 pub struct GetVirtualRouterSpec {
     #[builder(into)]
     #[serde(rename = "listeners")]
-    pub r#listeners: Box<Vec<super::super::types::appmesh::GetVirtualRouterSpecListener>>,
+    pub r#listeners: Vec<super::super::types::appmesh::GetVirtualRouterSpecListener>,
 }

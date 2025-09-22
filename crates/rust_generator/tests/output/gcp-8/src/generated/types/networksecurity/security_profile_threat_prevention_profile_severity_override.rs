@@ -7,10 +7,10 @@ pub struct SecurityProfileThreatPreventionProfileSeverityOverride {
     /// Possible values are: `ALERT`, `ALLOW`, `DEFAULT_ACTION`, `DENY`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// Severity level to match.
     /// Possible values are: `CRITICAL`, `HIGH`, `INFORMATIONAL`, `LOW`, `MEDIUM`.
     #[builder(into)]
     #[serde(rename = "severity")]
-    pub r#severity: Box<String>,
+    pub r#severity: String,
 }

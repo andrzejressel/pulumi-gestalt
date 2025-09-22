@@ -10,5 +10,5 @@ pub struct ManagedZoneServiceDirectoryConfigNamespace {
     /// Ignored for `public` visibility zones.
     #[builder(into)]
     #[serde(rename = "namespaceUrl")]
-    pub r#namespace_url: Box<String>,
+    pub r#namespace_url: String,
 }

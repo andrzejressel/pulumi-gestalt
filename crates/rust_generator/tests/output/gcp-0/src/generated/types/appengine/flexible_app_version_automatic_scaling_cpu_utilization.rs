@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlexibleAppVersionAutomaticScalingCpuUtilization {
     /// Period of time over which CPU utilization is calculated.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "aggregationWindowLength")]
-    pub r#aggregation_window_length: Box<Option<String>>,
+    pub r#aggregation_window_length: Option<String>,
     /// Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1.
     #[builder(into)]
     #[serde(rename = "targetUtilization")]
-    pub r#target_utilization: Box<f64>,
+    pub r#target_utilization: f64,
 }

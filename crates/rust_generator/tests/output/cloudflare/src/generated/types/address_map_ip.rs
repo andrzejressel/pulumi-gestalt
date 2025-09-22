@@ -6,5 +6,5 @@ pub struct AddressMapIp {
     /// An IPv4 or IPv6 address.
     #[builder(into)]
     #[serde(rename = "ip")]
-    pub r#ip: Box<String>,
+    pub r#ip: String,
 }

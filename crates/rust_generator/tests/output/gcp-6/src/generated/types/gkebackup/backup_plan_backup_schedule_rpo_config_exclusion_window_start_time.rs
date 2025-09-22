@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BackupPlanBackupScheduleRpoConfigExclusionWindowStartTime {
     /// Hours of day in 24 hour format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hours")]
-    pub r#hours: Box<Option<i32>>,
+    pub r#hours: Option<i32>,
     /// Minutes of hour of day.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minutes")]
-    pub r#minutes: Box<Option<i32>>,
+    pub r#minutes: Option<i32>,
     /// Fractions of seconds in nanoseconds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nanos")]
-    pub r#nanos: Box<Option<i32>>,
+    pub r#nanos: Option<i32>,
     /// Seconds of minutes of the time.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "seconds")]
-    pub r#seconds: Box<Option<i32>>,
+    pub r#seconds: Option<i32>,
 }

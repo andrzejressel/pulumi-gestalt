@@ -6,10 +6,10 @@ pub struct PosturePolicySetPolicyConstraintOrgPolicyConstraint {
     /// Organization policy canned constraint Id
     #[builder(into)]
     #[serde(rename = "cannedConstraintId")]
-    pub r#canned_constraint_id: Box<String>,
+    pub r#canned_constraint_id: String,
     /// Definition of policy rules
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "policyRules")]
-    pub r#policy_rules: Box<Vec<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraintPolicyRule>>,
+    pub r#policy_rules: Vec<super::super::types::securityposture::PosturePolicySetPolicyConstraintOrgPolicyConstraintPolicyRule>,
 }

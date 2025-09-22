@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BareMetalAdminClusterClusterOperations {
     /// Whether collection of application logs/metrics should be enabled (in addition to system logs/metrics).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableApplicationLogs")]
-    pub r#enable_application_logs: Box<Option<bool>>,
+    pub r#enable_application_logs: Option<bool>,
 }

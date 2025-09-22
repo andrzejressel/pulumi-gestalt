@@ -6,9 +6,9 @@ pub struct AccessLevelConditionVpcNetworkSourceVpcSubnetwork {
     /// Required. Network name to be allowed by this Access Level. Networks of foreign organizations requires `compute.network.get` permission to be granted to caller.
     #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<String>,
+    pub r#network: String,
     /// CIDR block IP subnetwork specification. Must be IPv4.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpcIpSubnetworks")]
-    pub r#vpc_ip_subnetworks: Box<Option<Vec<String>>>,
+    pub r#vpc_ip_subnetworks: Option<Vec<String>>,
 }

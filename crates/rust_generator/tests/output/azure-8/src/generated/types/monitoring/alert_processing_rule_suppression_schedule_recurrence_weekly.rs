@@ -6,13 +6,13 @@ pub struct AlertProcessingRuleSuppressionScheduleRecurrenceWeekly {
     /// Specifies a list of dayOfWeek to recurrence. Possible values are `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, and `Saturday`.
     #[builder(into)]
     #[serde(rename = "daysOfWeeks")]
-    pub r#days_of_weeks: Box<Vec<String>>,
+    pub r#days_of_weeks: Vec<String>,
     /// Specifies the recurrence end time (H:M:S).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<Option<String>>,
+    pub r#end_time: Option<String>,
     /// Specifies the recurrence start time (H:M:S).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<Option<String>>,
+    pub r#start_time: Option<String>,
 }

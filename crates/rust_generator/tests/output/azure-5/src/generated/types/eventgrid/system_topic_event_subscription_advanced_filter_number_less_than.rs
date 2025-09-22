@@ -6,8 +6,8 @@ pub struct SystemTopicEventSubscriptionAdvancedFilterNumberLessThan {
     /// Specifies the field within the event data that you want to use for filtering. Type of the field can be a number, boolean, or string.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<f64>,
+    pub r#value: f64,
 }

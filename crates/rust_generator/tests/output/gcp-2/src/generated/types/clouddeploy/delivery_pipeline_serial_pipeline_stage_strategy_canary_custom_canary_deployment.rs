@@ -6,5 +6,5 @@ pub struct DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeployme
     /// Required. Configuration for each phase in the canary deployment in the order executed.
     #[builder(into)]
     #[serde(rename = "phaseConfigs")]
-    pub r#phase_configs: Box<Vec<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfig>>,
+    pub r#phase_configs: Vec<super::super::types::clouddeploy::DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfig>,
 }

@@ -6,9 +6,9 @@ pub struct GetClusterAddonsConfigIstioConfig {
     /// The authentication type between services in Istio. Available options include AUTH_MUTUAL_TLS.
     #[builder(into)]
     #[serde(rename = "auth")]
-    pub r#auth: Box<String>,
+    pub r#auth: String,
     /// The status of the Istio addon, which makes it easy to set up Istio for services in a cluster. It is disabled by default. Set disabled = false to enable.
     #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<bool>,
+    pub r#disabled: bool,
 }

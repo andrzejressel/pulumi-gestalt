@@ -5,11 +5,11 @@
 pub struct GetSnapshotEncryptionSetting {
     #[builder(into)]
     #[serde(rename = "diskEncryptionKeys")]
-    pub r#disk_encryption_keys: Box<Vec<super::super::types::compute::GetSnapshotEncryptionSettingDiskEncryptionKey>>,
+    pub r#disk_encryption_keys: Vec<super::super::types::compute::GetSnapshotEncryptionSettingDiskEncryptionKey>,
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     #[builder(into)]
     #[serde(rename = "keyEncryptionKeys")]
-    pub r#key_encryption_keys: Box<Vec<super::super::types::compute::GetSnapshotEncryptionSettingKeyEncryptionKey>>,
+    pub r#key_encryption_keys: Vec<super::super::types::compute::GetSnapshotEncryptionSettingKeyEncryptionKey>,
 }

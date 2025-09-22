@@ -6,8 +6,8 @@ pub struct LifecyclePolicyPolicyDetailsAction {
     /// The rule for copying shared snapshots across Regions. See the `cross_region_copy` configuration block.
     #[builder(into)]
     #[serde(rename = "crossRegionCopies")]
-    pub r#cross_region_copies: Box<Vec<super::super::types::dlm::LifecyclePolicyPolicyDetailsActionCrossRegionCopy>>,
+    pub r#cross_region_copies: Vec<super::super::types::dlm::LifecyclePolicyPolicyDetailsActionCrossRegionCopy>,
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

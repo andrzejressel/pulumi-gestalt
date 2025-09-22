@@ -6,9 +6,9 @@ pub struct GetReceivedLicenseConsumptionConfigurationBorrowConfiguration {
     /// Indicates whether early check-ins are allowed.
     #[builder(into)]
     #[serde(rename = "allowEarlyCheckIn")]
-    pub r#allow_early_check_in: Box<bool>,
+    pub r#allow_early_check_in: bool,
     /// Maximum time for the provisional configuration, in minutes.
     #[builder(into)]
     #[serde(rename = "maxTimeToLiveInMinutes")]
-    pub r#max_time_to_live_in_minutes: Box<i32>,
+    pub r#max_time_to_live_in_minutes: i32,
 }

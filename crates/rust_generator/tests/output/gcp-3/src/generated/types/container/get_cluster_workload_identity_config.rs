@@ -6,5 +6,5 @@ pub struct GetClusterWorkloadIdentityConfig {
     /// The workload pool to attach all Kubernetes service accounts to.
     #[builder(into)]
     #[serde(rename = "workloadPool")]
-    pub r#workload_pool: Box<String>,
+    pub r#workload_pool: String,
 }

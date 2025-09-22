@@ -4,67 +4,67 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThemeConfigurationUiColorPalette {
     /// Color (hexadecimal) that applies to selected states and buttons.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accent")]
-    pub r#accent: Box<Option<String>>,
+    pub r#accent: Option<String>,
     /// Color (hexadecimal) that applies to any text or other elements that appear over the accent color.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accentForeground")]
-    pub r#accent_foreground: Box<Option<String>>,
+    pub r#accent_foreground: Option<String>,
     /// Color (hexadecimal) that applies to error messages.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "danger")]
-    pub r#danger: Box<Option<String>>,
+    pub r#danger: Option<String>,
     /// Color (hexadecimal) that applies to any text or other elements that appear over the error color.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dangerForeground")]
-    pub r#danger_foreground: Box<Option<String>>,
+    pub r#danger_foreground: Option<String>,
     /// Color (hexadecimal) that applies to the names of fields that are identified as dimensions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dimension")]
-    pub r#dimension: Box<Option<String>>,
+    pub r#dimension: Option<String>,
     /// Color (hexadecimal) that applies to any text or other elements that appear over the dimension color.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dimensionForeground")]
-    pub r#dimension_foreground: Box<Option<String>>,
+    pub r#dimension_foreground: Option<String>,
     /// Color (hexadecimal) that applies to the names of fields that are identified as measures.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "measure")]
-    pub r#measure: Box<Option<String>>,
+    pub r#measure: Option<String>,
     /// Color (hexadecimal) that applies to any text or other elements that appear over the measure color.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "measureForeground")]
-    pub r#measure_foreground: Box<Option<String>>,
+    pub r#measure_foreground: Option<String>,
     /// Color (hexadecimal) that applies to visuals and other high emphasis UI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primaryBackground")]
-    pub r#primary_background: Box<Option<String>>,
+    pub r#primary_background: Option<String>,
     /// Color (hexadecimal) of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primaryForeground")]
-    pub r#primary_foreground: Box<Option<String>>,
+    pub r#primary_foreground: Option<String>,
     /// Color (hexadecimal) that applies to the sheet background and sheet controls.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secondaryBackground")]
-    pub r#secondary_background: Box<Option<String>>,
+    pub r#secondary_background: Option<String>,
     /// Color (hexadecimal) that applies to any sheet title, sheet control text, or UI that appears over the secondary background.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secondaryForeground")]
-    pub r#secondary_foreground: Box<Option<String>>,
+    pub r#secondary_foreground: Option<String>,
     /// Color (hexadecimal) that applies to success messages, for example the check mark for a successful download.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "success")]
-    pub r#success: Box<Option<String>>,
+    pub r#success: Option<String>,
     /// Color (hexadecimal) that applies to any text or other elements that appear over the success color.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "successForeground")]
-    pub r#success_foreground: Box<Option<String>>,
+    pub r#success_foreground: Option<String>,
     /// Color (hexadecimal) that applies to warning and informational messages.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "warning")]
-    pub r#warning: Box<Option<String>>,
+    pub r#warning: Option<String>,
     /// Color (hexadecimal) that applies to any text or other elements that appear over the warning color.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "warningForeground")]
-    pub r#warning_foreground: Box<Option<String>>,
+    pub r#warning_foreground: Option<String>,
 }

@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SelectionCondition {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stringEquals")]
-    pub r#string_equals: Box<Option<Vec<super::super::types::backup::SelectionConditionStringEqual>>>,
-    #[builder(into, default)]
+    pub r#string_equals: Option<Vec<super::super::types::backup::SelectionConditionStringEqual>>,
+    #[builder(into)]
     #[serde(rename = "stringLikes")]
-    pub r#string_likes: Box<Option<Vec<super::super::types::backup::SelectionConditionStringLike>>>,
-    #[builder(into, default)]
+    pub r#string_likes: Option<Vec<super::super::types::backup::SelectionConditionStringLike>>,
+    #[builder(into)]
     #[serde(rename = "stringNotEquals")]
-    pub r#string_not_equals: Box<Option<Vec<super::super::types::backup::SelectionConditionStringNotEqual>>>,
-    #[builder(into, default)]
+    pub r#string_not_equals: Option<Vec<super::super::types::backup::SelectionConditionStringNotEqual>>,
+    #[builder(into)]
     #[serde(rename = "stringNotLikes")]
-    pub r#string_not_likes: Box<Option<Vec<super::super::types::backup::SelectionConditionStringNotLike>>>,
+    pub r#string_not_likes: Option<Vec<super::super::types::backup::SelectionConditionStringNotLike>>,
 }

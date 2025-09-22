@@ -6,9 +6,9 @@ pub struct GetApplicationAttributeOperatorOwner {
     /// Optional. Contact's name.
     #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<String>,
+    pub r#display_name: String,
     /// Required. Email address of the contacts.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
 }

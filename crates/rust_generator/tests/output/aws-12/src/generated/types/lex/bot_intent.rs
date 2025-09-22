@@ -6,9 +6,9 @@ pub struct BotIntent {
     /// The name of the intent. Must be less than or equal to 100 characters in length.
     #[builder(into)]
     #[serde(rename = "intentName")]
-    pub r#intent_name: Box<String>,
+    pub r#intent_name: String,
     /// The version of the intent. Must be less than or equal to 64 characters in length.
     #[builder(into)]
     #[serde(rename = "intentVersion")]
-    pub r#intent_version: Box<String>,
+    pub r#intent_version: String,
 }

@@ -6,10 +6,10 @@ pub struct GetRouterBgpAdvertisedIpRange {
     /// User-specified description for the IP range.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// The IP range to advertise. The value must be a
     /// CIDR-formatted string.
     #[builder(into)]
     #[serde(rename = "range")]
-    pub r#range: Box<String>,
+    pub r#range: String,
 }

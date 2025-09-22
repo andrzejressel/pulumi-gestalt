@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsScte20SourceSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "convert608To708")]
-    pub r#convert_608_to_708: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#convert_608_to_708: Option<String>,
+    #[builder(into)]
     #[serde(rename = "source608ChannelNumber")]
-    pub r#source_608_channel_number: Box<Option<i32>>,
+    pub r#source_608_channel_number: Option<i32>,
 }

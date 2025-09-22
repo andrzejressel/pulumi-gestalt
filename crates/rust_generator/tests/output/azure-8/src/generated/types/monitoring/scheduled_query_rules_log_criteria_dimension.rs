@@ -6,13 +6,13 @@ pub struct ScheduledQueryRulesLogCriteriaDimension {
     /// Name of the dimension.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Operator for dimension values, - 'Include'. Defaults to `Include`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<Option<String>>,
+    pub r#operator: Option<String>,
     /// List of dimension values.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

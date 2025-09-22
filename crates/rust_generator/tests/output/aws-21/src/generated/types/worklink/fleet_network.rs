@@ -10,13 +10,13 @@ pub struct FleetNetwork {
     /// > **NOTE:** `identity_provider` cannot be removed without force recreating.
     #[builder(into)]
     #[serde(rename = "securityGroupIds")]
-    pub r#security_group_ids: Box<Vec<String>>,
+    pub r#security_group_ids: Vec<String>,
     /// A list of subnet IDs used for X-ENI connections from Amazon WorkLink rendering containers.
     #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Vec<String>>,
+    pub r#subnet_ids: Vec<String>,
     /// The VPC ID with connectivity to associated websites.
     #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<String>,
+    pub r#vpc_id: String,
 }

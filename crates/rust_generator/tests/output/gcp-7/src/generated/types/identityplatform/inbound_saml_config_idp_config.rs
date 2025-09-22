@@ -7,17 +7,17 @@ pub struct InboundSamlConfigIdpConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "idpCertificates")]
-    pub r#idp_certificates: Box<Vec<super::super::types::identityplatform::InboundSamlConfigIdpConfigIdpCertificate>>,
+    pub r#idp_certificates: Vec<super::super::types::identityplatform::InboundSamlConfigIdpConfigIdpCertificate>,
     /// Unique identifier for all SAML entities
     #[builder(into)]
     #[serde(rename = "idpEntityId")]
-    pub r#idp_entity_id: Box<String>,
+    pub r#idp_entity_id: String,
     /// Indicates if outbounding SAMLRequest should be signed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "signRequest")]
-    pub r#sign_request: Box<Option<bool>>,
+    pub r#sign_request: Option<bool>,
     /// URL to send Authentication request to.
     #[builder(into)]
     #[serde(rename = "ssoUrl")]
-    pub r#sso_url: Box<String>,
+    pub r#sso_url: String,
 }

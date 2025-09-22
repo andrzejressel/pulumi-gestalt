@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2 {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessToken")]
-    pub r#access_token: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#access_token: Option<String>,
+    #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#client_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#client_secret: Option<String>,
+    #[builder(into)]
     #[serde(rename = "oauthRequest")]
-    pub r#oauth_request: Box<Option<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequest>>,
-    #[builder(into, default)]
+    pub r#oauth_request: Option<Box<super::super::types::appflow::ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequest>>,
+    #[builder(into)]
     #[serde(rename = "refreshToken")]
-    pub r#refresh_token: Box<Option<String>>,
+    pub r#refresh_token: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigClientPermissions {
     /// When true, end users cannot delete their account on the associated project through any of our API methods
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disabledUserDeletion")]
-    pub r#disabled_user_deletion: Box<Option<bool>>,
+    pub r#disabled_user_deletion: Option<bool>,
     /// When true, end users cannot sign up for a new account on the associated project through any of our API methods
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disabledUserSignup")]
-    pub r#disabled_user_signup: Box<Option<bool>>,
+    pub r#disabled_user_signup: Option<bool>,
 }

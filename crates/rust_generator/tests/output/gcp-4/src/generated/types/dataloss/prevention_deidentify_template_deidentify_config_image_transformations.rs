@@ -7,5 +7,5 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigImageTransformations {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "transforms")]
-    pub r#transforms: Box<Vec<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform>>,
+    pub r#transforms: Vec<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransform>,
 }

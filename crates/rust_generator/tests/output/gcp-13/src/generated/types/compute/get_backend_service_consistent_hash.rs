@@ -9,12 +9,12 @@ pub struct GetBackendServiceConsistentHash {
     /// This field is applicable if the sessionAffinity is set to HTTP_COOKIE.
     #[builder(into)]
     #[serde(rename = "httpCookies")]
-    pub r#http_cookies: Box<Vec<super::super::types::compute::GetBackendServiceConsistentHashHttpCooky>>,
+    pub r#http_cookies: Vec<super::super::types::compute::GetBackendServiceConsistentHashHttpCooky>,
     /// The hash based on the value of the specified header field.
     /// This field is applicable if the sessionAffinity is set to HEADER_FIELD.
     #[builder(into)]
     #[serde(rename = "httpHeaderName")]
-    pub r#http_header_name: Box<String>,
+    pub r#http_header_name: String,
     /// The minimum number of virtual nodes to use for the hash ring.
     /// Larger ring sizes result in more granular load
     /// distributions. If the number of hosts in the load balancing pool
@@ -23,5 +23,5 @@ pub struct GetBackendServiceConsistentHash {
     /// Defaults to 1024.
     #[builder(into)]
     #[serde(rename = "minimumRingSize")]
-    pub r#minimum_ring_size: Box<i32>,
+    pub r#minimum_ring_size: i32,
 }

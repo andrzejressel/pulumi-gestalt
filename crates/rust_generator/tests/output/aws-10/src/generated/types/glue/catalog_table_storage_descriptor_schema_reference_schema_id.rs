@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CatalogTableStorageDescriptorSchemaReferenceSchemaId {
     /// Name of the schema registry that contains the schema. Must be provided when `schema_name` is specified and conflicts with `schema_arn`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "registryName")]
-    pub r#registry_name: Box<Option<String>>,
+    pub r#registry_name: Option<String>,
     /// ARN of the schema. One of `schema_arn` or `schema_name` has to be provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schemaArn")]
-    pub r#schema_arn: Box<Option<String>>,
+    pub r#schema_arn: Option<String>,
     /// Name of the schema. One of `schema_arn` or `schema_name` has to be provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schemaName")]
-    pub r#schema_name: Box<Option<String>>,
+    pub r#schema_name: Option<String>,
 }

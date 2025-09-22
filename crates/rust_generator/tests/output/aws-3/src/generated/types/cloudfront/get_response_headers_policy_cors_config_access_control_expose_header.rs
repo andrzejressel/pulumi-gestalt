@@ -5,5 +5,5 @@
 pub struct GetResponseHeadersPolicyCorsConfigAccessControlExposeHeader {
     #[builder(into)]
     #[serde(rename = "items")]
-    pub r#items: Box<Vec<String>>,
+    pub r#items: Vec<String>,
 }

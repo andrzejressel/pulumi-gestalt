@@ -6,5 +6,5 @@ pub struct GetKeyXksKeyConfiguration {
     /// The globally unique identifier for the key
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

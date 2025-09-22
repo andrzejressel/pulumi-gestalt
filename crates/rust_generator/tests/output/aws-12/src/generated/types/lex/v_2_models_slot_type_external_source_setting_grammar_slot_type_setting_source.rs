@@ -6,13 +6,13 @@ pub struct V2ModelsSlotTypeExternalSourceSettingGrammarSlotTypeSettingSource {
     /// KMS key required to decrypt the contents of the grammar, if any.
     #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<String>,
+    pub r#kms_key_arn: String,
     /// Name of the Amazon S3 bucket that contains the grammar source.
     #[builder(into)]
     #[serde(rename = "s3BucketName")]
-    pub r#s_3_bucket_name: Box<String>,
+    pub r#s_3_bucket_name: String,
     /// Path to the grammar in the Amazon S3 bucket.
     #[builder(into)]
     #[serde(rename = "s3ObjectKey")]
-    pub r#s_3_object_key: Box<String>,
+    pub r#s_3_object_key: String,
 }

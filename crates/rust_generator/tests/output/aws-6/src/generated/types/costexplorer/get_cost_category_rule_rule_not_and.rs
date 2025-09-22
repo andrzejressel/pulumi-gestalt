@@ -6,13 +6,13 @@ pub struct GetCostCategoryRuleRuleNotAnd {
     /// Configuration block for the filter that's based on `CostCategory` values. See below.
     #[builder(into)]
     #[serde(rename = "costCategories")]
-    pub r#cost_categories: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleNotAndCostCategory>>,
+    pub r#cost_categories: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleNotAndCostCategory>,
     /// Configuration block for the specific `Dimension` to use for `Expression`. See below.
     #[builder(into)]
     #[serde(rename = "dimensions")]
-    pub r#dimensions: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleNotAndDimension>>,
+    pub r#dimensions: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleNotAndDimension>,
     /// Configuration block for the specific `Tag` to use for `Expression`. See below.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleNotAndTag>>,
+    pub r#tags: Vec<super::super::types::costexplorer::GetCostCategoryRuleRuleNotAndTag>,
 }

@@ -6,7 +6,7 @@ pub struct GetAiIndexMetadata {
     /// The configuration of the Matching Engine Index.
     #[builder(into)]
     #[serde(rename = "configs")]
-    pub r#configs: Box<Vec<super::super::types::vertex::GetAiIndexMetadataConfig>>,
+    pub r#configs: Vec<super::super::types::vertex::GetAiIndexMetadataConfig>,
     /// Allows inserting, updating  or deleting the contents of the Matching Engine Index.
     /// The string must be a valid Cloud Storage directory path. If this
     /// field is set when calling IndexService.UpdateIndex, then no other
@@ -15,10 +15,10 @@ pub struct GetAiIndexMetadata {
     /// described at https://cloud.google.com/vertex-ai/docs/matching-engine/using-matching-engine#input-data-format
     #[builder(into)]
     #[serde(rename = "contentsDeltaUri")]
-    pub r#contents_delta_uri: Box<String>,
+    pub r#contents_delta_uri: String,
     /// If this field is set together with contentsDeltaUri when calling IndexService.UpdateIndex,
     /// then existing content of the Index will be replaced by the data from the contentsDeltaUri.
     #[builder(into)]
     #[serde(rename = "isCompleteOverwrite")]
-    pub r#is_complete_overwrite: Box<bool>,
+    pub r#is_complete_overwrite: bool,
 }

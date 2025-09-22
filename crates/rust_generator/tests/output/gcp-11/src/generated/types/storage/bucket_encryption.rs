@@ -19,5 +19,5 @@ pub struct BucketEncryption {
     /// You should take care for race conditions when the same provider manages IAM policy on the Cloud KMS crypto key. See the data source page for more details.
     #[builder(into)]
     #[serde(rename = "defaultKmsKeyName")]
-    pub r#default_kms_key_name: Box<String>,
+    pub r#default_kms_key_name: String,
 }

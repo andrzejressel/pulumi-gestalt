@@ -6,5 +6,5 @@ pub struct ClusterOutpostConfigControlPlanePlacement {
     /// The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.
     #[builder(into)]
     #[serde(rename = "groupName")]
-    pub r#group_name: Box<String>,
+    pub r#group_name: String,
 }

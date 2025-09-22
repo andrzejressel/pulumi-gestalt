@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PlaceIndexDataSourceConfiguration {
     /// Specifies how the results of an operation will be stored by the caller. Valid values: `SingleUse`, `Storage`. Default: `SingleUse`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "intendedUse")]
-    pub r#intended_use: Box<Option<String>>,
+    pub r#intended_use: Option<String>,
 }

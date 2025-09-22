@@ -6,9 +6,9 @@ pub struct EventConnectionAuthParametersApiKey {
     /// Header Name.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Header Value. Created and stored in AWS Secrets Manager.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

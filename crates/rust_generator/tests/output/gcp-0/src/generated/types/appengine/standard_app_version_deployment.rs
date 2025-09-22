@@ -6,12 +6,12 @@ pub struct StandardAppVersionDeployment {
     /// Manifest of the files stored in Google Cloud Storage that are included as part of this version.
     /// All files must be readable using the credentials supplied with this call.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "files")]
-    pub r#files: Box<Option<Vec<super::super::types::appengine::StandardAppVersionDeploymentFile>>>,
+    pub r#files: Option<Vec<super::super::types::appengine::StandardAppVersionDeploymentFile>>,
     /// Zip File
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zip")]
-    pub r#zip: Box<Option<super::super::types::appengine::StandardAppVersionDeploymentZip>>,
+    pub r#zip: Option<Box<super::super::types::appengine::StandardAppVersionDeploymentZip>>,
 }

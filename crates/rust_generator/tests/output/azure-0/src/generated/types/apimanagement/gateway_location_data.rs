@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GatewayLocationData {
     /// The city or locality where the resource is located.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "city")]
-    pub r#city: Box<Option<String>>,
+    pub r#city: Option<String>,
     /// The district, state, or province where the resource is located.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "district")]
-    pub r#district: Box<Option<String>>,
+    pub r#district: Option<String>,
     /// A canonical name for the geographic or physical location.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The country or region where the resource is located.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
 }

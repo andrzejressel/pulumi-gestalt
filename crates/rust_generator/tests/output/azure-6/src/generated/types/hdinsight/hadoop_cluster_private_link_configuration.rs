@@ -6,12 +6,12 @@ pub struct HadoopClusterPrivateLinkConfiguration {
     /// The ID of the private link service group.
     #[builder(into)]
     #[serde(rename = "groupId")]
-    pub r#group_id: Box<String>,
+    pub r#group_id: String,
     #[builder(into)]
     #[serde(rename = "ipConfiguration")]
     pub r#ip_configuration: Box<super::super::types::hdinsight::HadoopClusterPrivateLinkConfigurationIpConfiguration>,
     /// The name of the private link configuration.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

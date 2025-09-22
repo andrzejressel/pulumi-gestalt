@@ -8,5 +8,5 @@ pub struct StandardAppVersionEntrypoint {
     /// - - -
     #[builder(into)]
     #[serde(rename = "shell")]
-    pub r#shell: Box<String>,
+    pub r#shell: String,
 }

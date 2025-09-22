@@ -5,8 +5,8 @@
 pub struct GetTableServerSideEncryption {
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<String>,
+    pub r#kms_key_arn: String,
 }

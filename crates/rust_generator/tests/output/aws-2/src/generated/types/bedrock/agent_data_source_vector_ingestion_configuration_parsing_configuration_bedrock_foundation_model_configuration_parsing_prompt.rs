@@ -6,5 +6,5 @@ pub struct AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedroc
     /// Instructions for interpreting the contents of the document.
     #[builder(into)]
     #[serde(rename = "parsingPromptString")]
-    pub r#parsing_prompt_string: Box<String>,
+    pub r#parsing_prompt_string: String,
 }

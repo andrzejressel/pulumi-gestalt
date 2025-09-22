@@ -6,5 +6,5 @@ pub struct GetEntitlementPrivilegedAccess {
     /// GcpIamAccess represents IAM based access control on a GCP resource. Refer to https://cloud.google.com/iam/docs to understand more about IAM.
     #[builder(into)]
     #[serde(rename = "gcpIamAccesses")]
-    pub r#gcp_iam_accesses: Box<Vec<super::super::types::privilegedaccessmanager::GetEntitlementPrivilegedAccessGcpIamAccess>>,
+    pub r#gcp_iam_accesses: Vec<super::super::types::privilegedaccessmanager::GetEntitlementPrivilegedAccessGcpIamAccess>,
 }

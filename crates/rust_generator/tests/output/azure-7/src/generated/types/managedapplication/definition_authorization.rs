@@ -6,9 +6,9 @@ pub struct DefinitionAuthorization {
     /// Specifies a role definition identifier for the provider. This role will define all the permissions that the provider must have on the managed application's container resource group. This role definition cannot have permission to delete the resource group.
     #[builder(into)]
     #[serde(rename = "roleDefinitionId")]
-    pub r#role_definition_id: Box<String>,
+    pub r#role_definition_id: String,
     /// Specifies a service principal identifier for the provider. This is the identity that the provider will use to call ARM to manage the managed application resources.
     #[builder(into)]
     #[serde(rename = "servicePrincipalId")]
-    pub r#service_principal_id: Box<String>,
+    pub r#service_principal_id: String,
 }

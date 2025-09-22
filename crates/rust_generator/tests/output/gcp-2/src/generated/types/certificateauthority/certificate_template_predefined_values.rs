@@ -5,26 +5,26 @@
 pub struct CertificateTemplatePredefinedValues {
     /// Optional. Describes custom X.509 extensions.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "additionalExtensions")]
-    pub r#additional_extensions: Box<Option<Vec<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesAdditionalExtension>>>,
+    pub r#additional_extensions: Option<Vec<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesAdditionalExtension>>,
     /// Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses that appear in the "Authority Information Access" extension in the certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "aiaOcspServers")]
-    pub r#aia_ocsp_servers: Box<Option<Vec<String>>>,
+    pub r#aia_ocsp_servers: Option<Vec<String>>,
     /// Optional. Describes options in this X509Parameters that are relevant in a CA certificate.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "caOptions")]
-    pub r#ca_options: Box<Option<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesCaOptions>>,
+    pub r#ca_options: Option<Box<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesCaOptions>>,
     /// Optional. Indicates the intended use for keys that correspond to a certificate.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyUsage")]
-    pub r#key_usage: Box<Option<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesKeyUsage>>,
+    pub r#key_usage: Option<Box<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesKeyUsage>>,
     /// Optional. Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "policyIds")]
-    pub r#policy_ids: Box<Option<Vec<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesPolicyId>>>,
+    pub r#policy_ids: Option<Vec<super::super::types::certificateauthority::CertificateTemplatePredefinedValuesPolicyId>>,
 }

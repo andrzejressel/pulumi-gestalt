@@ -6,17 +6,17 @@ pub struct WindowsFunctionAppSlotAuthSettingsFacebook {
     /// The App ID of the Facebook app used for login.
     #[builder(into)]
     #[serde(rename = "appId")]
-    pub r#app_id: Box<String>,
+    pub r#app_id: String,
     /// The App Secret of the Facebook app used for Facebook login. Cannot be specified with `app_secret_setting_name`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "appSecret")]
-    pub r#app_secret: Box<Option<String>>,
+    pub r#app_secret: Option<String>,
     /// The app setting name that contains the `app_secret` value used for Facebook login. Cannot be specified with `app_secret`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "appSecretSettingName")]
-    pub r#app_secret_setting_name: Box<Option<String>>,
+    pub r#app_secret_setting_name: Option<String>,
     /// Specifies a list of OAuth 2.0 scopes to be requested as part of Facebook Login authentication.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oauthScopes")]
-    pub r#oauth_scopes: Box<Option<Vec<String>>>,
+    pub r#oauth_scopes: Option<Vec<String>>,
 }

@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SigningJobSignedObject {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3s")]
-    pub r#s_3_s: Box<Option<Vec<super::super::types::signer::SigningJobSignedObjectS3>>>,
+    pub r#s_3_s: Option<Vec<super::super::types::signer::SigningJobSignedObjectS3>>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataLakeConfigurationLifecycleConfigurationExpiration {
     /// Number of days before data transition to a different S3 Storage Class in the Amazon Security Lake object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "days")]
-    pub r#days: Box<Option<i32>>,
+    pub r#days: Option<i32>,
 }

@@ -5,8 +5,8 @@
 pub struct GetPlanStageTargetChannelTargetInfo {
     #[builder(into)]
     #[serde(rename = "contactChannelId")]
-    pub r#contact_channel_id: Box<String>,
+    pub r#contact_channel_id: String,
     #[builder(into)]
     #[serde(rename = "retryIntervalInMinutes")]
-    pub r#retry_interval_in_minutes: Box<i32>,
+    pub r#retry_interval_in_minutes: i32,
 }

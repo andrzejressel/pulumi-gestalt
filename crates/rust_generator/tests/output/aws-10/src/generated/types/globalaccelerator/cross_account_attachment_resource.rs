@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CrossAccountAttachmentResource {
     /// IP address range, in CIDR format, that is specified as resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cidrBlock")]
-    pub r#cidr_block: Box<Option<String>>,
+    pub r#cidr_block: Option<String>,
     /// The endpoint ID for the endpoint that is specified as a AWS resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpointId")]
-    pub r#endpoint_id: Box<Option<String>>,
+    pub r#endpoint_id: Option<String>,
     /// The AWS Region where a shared endpoint resource is located.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
 }

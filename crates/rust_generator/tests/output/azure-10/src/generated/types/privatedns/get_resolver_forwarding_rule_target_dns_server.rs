@@ -6,9 +6,9 @@ pub struct GetResolverForwardingRuleTargetDnsServer {
     /// The DNS server IP address.
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
     /// The DNS server port.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

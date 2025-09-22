@@ -5,8 +5,8 @@
 pub struct GetVirtualGatewaySpecLoggingAccessLogFile {
     #[builder(into)]
     #[serde(rename = "formats")]
-    pub r#formats: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecLoggingAccessLogFileFormat>>,
+    pub r#formats: Vec<super::super::types::appmesh::GetVirtualGatewaySpecLoggingAccessLogFileFormat>,
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

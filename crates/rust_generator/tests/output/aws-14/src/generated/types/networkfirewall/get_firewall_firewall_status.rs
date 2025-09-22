@@ -6,16 +6,16 @@ pub struct GetFirewallFirewallStatus {
     /// Aggregated count of all resources used by reference sets in a firewall.
     #[builder(into)]
     #[serde(rename = "capacityUsageSummaries")]
-    pub r#capacity_usage_summaries: Box<Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusCapacityUsageSummary>>,
+    pub r#capacity_usage_summaries: Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusCapacityUsageSummary>,
     /// Summary of sync states for all availability zones in which the firewall is configured.
     #[builder(into)]
     #[serde(rename = "configurationSyncStateSummary")]
-    pub r#configuration_sync_state_summary: Box<String>,
+    pub r#configuration_sync_state_summary: String,
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
     /// Set of subnets configured for use by the firewall.
     #[builder(into)]
     #[serde(rename = "syncStates")]
-    pub r#sync_states: Box<Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusSyncState>>,
+    pub r#sync_states: Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusSyncState>,
 }

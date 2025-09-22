@@ -6,13 +6,13 @@ pub struct GetAppTemplateVolume {
     /// The name of the Container App.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The name of the `AzureFile` storage.
     #[builder(into)]
     #[serde(rename = "storageName")]
-    pub r#storage_name: Box<String>,
+    pub r#storage_name: String,
     /// The type of storage volume. Possible values include `AzureFile` and `EmptyDir`. Defaults to `EmptyDir`.
     #[builder(into)]
     #[serde(rename = "storageType")]
-    pub r#storage_type: Box<String>,
+    pub r#storage_type: String,
 }

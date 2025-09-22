@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppServiceBackup {
     /// Is this Backup enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Specifies the name for this Backup.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A `schedule` block as defined below.
     #[builder(into)]
     #[serde(rename = "schedule")]
@@ -18,5 +18,5 @@ pub struct AppServiceBackup {
     /// The SAS URL to a Storage Container where Backups should be saved.
     #[builder(into)]
     #[serde(rename = "storageAccountUrl")]
-    pub r#storage_account_url: Box<String>,
+    pub r#storage_account_url: String,
 }

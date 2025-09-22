@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceRelationalDatabaseConfig {
     /// Amazon RDS HTTP endpoint configuration. See `http_endpoint_config` Block for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpEndpointConfig")]
-    pub r#http_endpoint_config: Box<Option<super::super::types::appsync::DataSourceRelationalDatabaseConfigHttpEndpointConfig>>,
+    pub r#http_endpoint_config: Option<Box<super::super::types::appsync::DataSourceRelationalDatabaseConfigHttpEndpointConfig>>,
     /// Source type for the relational database. Valid values: `RDS_HTTP_ENDPOINT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceType")]
-    pub r#source_type: Box<Option<String>>,
+    pub r#source_type: Option<String>,
 }

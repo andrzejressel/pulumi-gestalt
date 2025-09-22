@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubernetesClusterNodePoolNodeNetworkProfile {
     /// One or more `allowed_host_ports` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedHostPorts")]
-    pub r#allowed_host_ports: Box<Option<Vec<super::super::types::containerservice::KubernetesClusterNodePoolNodeNetworkProfileAllowedHostPort>>>,
+    pub r#allowed_host_ports: Option<Vec<super::super::types::containerservice::KubernetesClusterNodePoolNodeNetworkProfileAllowedHostPort>>,
     /// A list of Application Security Group IDs which should be associated with this Node Pool.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applicationSecurityGroupIds")]
-    pub r#application_security_group_ids: Box<Option<Vec<String>>>,
+    pub r#application_security_group_ids: Option<Vec<String>>,
     /// Specifies a mapping of tags to the instance-level public IPs. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodePublicIpTags")]
-    pub r#node_public_ip_tags: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#node_public_ip_tags: Option<std::collections::HashMap<String, String>>,
 }

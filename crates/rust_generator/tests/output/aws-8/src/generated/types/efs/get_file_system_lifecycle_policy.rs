@@ -5,11 +5,11 @@
 pub struct GetFileSystemLifecyclePolicy {
     #[builder(into)]
     #[serde(rename = "transitionToArchive")]
-    pub r#transition_to_archive: Box<String>,
+    pub r#transition_to_archive: String,
     #[builder(into)]
     #[serde(rename = "transitionToIa")]
-    pub r#transition_to_ia: Box<String>,
+    pub r#transition_to_ia: String,
     #[builder(into)]
     #[serde(rename = "transitionToPrimaryStorageClass")]
-    pub r#transition_to_primary_storage_class: Box<String>,
+    pub r#transition_to_primary_storage_class: String,
 }

@@ -6,5 +6,5 @@ pub struct LocationAzureBlobSasConfiguration {
     /// A SAS token that provides permissions to access your Azure Blob Storage.
     #[builder(into)]
     #[serde(rename = "token")]
-    pub r#token: Box<String>,
+    pub r#token: String,
 }

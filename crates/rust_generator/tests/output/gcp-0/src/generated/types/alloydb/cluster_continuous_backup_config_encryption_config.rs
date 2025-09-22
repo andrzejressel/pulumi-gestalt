@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterContinuousBackupConfigEncryptionConfig {
     /// The fully-qualified resource name of the KMS key. Each Cloud KMS key is regionalized and has the following format: projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME].
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<Option<String>>,
+    pub r#kms_key_name: Option<String>,
 }

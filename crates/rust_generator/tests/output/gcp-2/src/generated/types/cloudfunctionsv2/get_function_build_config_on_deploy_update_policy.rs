@@ -6,5 +6,5 @@ pub struct GetFunctionBuildConfigOnDeployUpdatePolicy {
     /// The runtime version which was used during latest function deployment.
     #[builder(into)]
     #[serde(rename = "runtimeVersion")]
-    pub r#runtime_version: Box<String>,
+    pub r#runtime_version: String,
 }

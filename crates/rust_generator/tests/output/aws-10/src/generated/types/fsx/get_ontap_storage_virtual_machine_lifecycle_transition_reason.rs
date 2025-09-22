@@ -6,5 +6,5 @@ pub struct GetOntapStorageVirtualMachineLifecycleTransitionReason {
     /// A detailed message.
     #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<String>,
+    pub r#message: String,
 }

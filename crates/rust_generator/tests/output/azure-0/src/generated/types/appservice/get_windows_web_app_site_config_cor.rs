@@ -6,9 +6,9 @@ pub struct GetWindowsWebAppSiteConfigCor {
     /// A `allowed_origins` block as defined above.
     #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Vec<String>>,
+    pub r#allowed_origins: Vec<String>,
     /// Whether CORS requests with credentials are allowed.
     #[builder(into)]
     #[serde(rename = "supportCredentials")]
-    pub r#support_credentials: Box<bool>,
+    pub r#support_credentials: bool,
 }

@@ -6,9 +6,9 @@ pub struct GetAddonPodIdentityAssociation {
     /// ARN of the IAM role associated with the EKS add-on.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// Service account associated with the EKS add-on.
     #[builder(into)]
     #[serde(rename = "serviceAccount")]
-    pub r#service_account: Box<String>,
+    pub r#service_account: String,
 }

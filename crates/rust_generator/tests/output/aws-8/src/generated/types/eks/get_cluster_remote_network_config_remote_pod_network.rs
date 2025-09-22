@@ -6,5 +6,5 @@ pub struct GetClusterRemoteNetworkConfigRemotePodNetwork {
     /// List of network CIDRs that can contain pods that run Kubernetes webhooks on hybrid nodes.
     #[builder(into)]
     #[serde(rename = "cidrs")]
-    pub r#cidrs: Box<Vec<String>>,
+    pub r#cidrs: Vec<String>,
 }

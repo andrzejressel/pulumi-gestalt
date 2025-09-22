@@ -8,7 +8,7 @@ pub struct SettingsAccessSettingsReauthSettings {
     /// Example: "3.5s".
     #[builder(into)]
     #[serde(rename = "maxAge")]
-    pub r#max_age: Box<String>,
+    pub r#max_age: String,
     /// Reauth method requested. The possible values are:
     /// * `LOGIN`: Prompts the user to log in again.
     /// * `SECURE_KEY`: User must use their secure key 2nd factor device.
@@ -16,7 +16,7 @@ pub struct SettingsAccessSettingsReauthSettings {
     /// Possible values are: `LOGIN`, `SECURE_KEY`, `ENROLLED_SECOND_FACTORS`.
     #[builder(into)]
     #[serde(rename = "method")]
-    pub r#method: Box<String>,
+    pub r#method: String,
     /// How IAP determines the effective policy in cases of hierarchical policies.
     /// Policies are merged from higher in the hierarchy to lower in the hierarchy.
     /// The possible values are:
@@ -26,5 +26,5 @@ pub struct SettingsAccessSettingsReauthSettings {
     /// Possible values are: `MINIMUM`, `DEFAULT`.
     #[builder(into)]
     #[serde(rename = "policyType")]
-    pub r#policy_type: Box<String>,
+    pub r#policy_type: String,
 }

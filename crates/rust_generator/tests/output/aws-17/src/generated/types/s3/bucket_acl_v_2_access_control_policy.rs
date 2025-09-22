@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketAclV2AccessControlPolicy {
     /// Set of `grant` configuration blocks. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "grants")]
-    pub r#grants: Box<Option<Vec<super::super::types::s3::BucketAclV2AccessControlPolicyGrant>>>,
+    pub r#grants: Option<Vec<super::super::types::s3::BucketAclV2AccessControlPolicyGrant>>,
     /// Configuration block for the bucket owner's display name and ID. See below.
     #[builder(into)]
     #[serde(rename = "owner")]

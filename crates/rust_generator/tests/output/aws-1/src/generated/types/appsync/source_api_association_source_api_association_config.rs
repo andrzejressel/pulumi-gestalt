@@ -6,5 +6,5 @@ pub struct SourceApiAssociationSourceApiAssociationConfig {
     /// Merge type. Valid values: `MANUAL_MERGE`, `AUTO_MERGE`
     #[builder(into)]
     #[serde(rename = "mergeType")]
-    pub r#merge_type: Box<String>,
+    pub r#merge_type: String,
 }

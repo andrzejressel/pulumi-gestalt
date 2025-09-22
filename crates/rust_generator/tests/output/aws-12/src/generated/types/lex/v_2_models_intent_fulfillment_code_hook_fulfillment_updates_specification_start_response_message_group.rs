@@ -8,7 +8,7 @@ pub struct V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStart
     #[serde(rename = "message")]
     pub r#message: Box<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupMessage>,
     /// Configuration blocks for message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user. See `variation`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "variations")]
-    pub r#variations: Box<Option<Vec<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupVariation>>>,
+    pub r#variations: Option<Vec<super::super::types::lex::V2ModelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupVariation>>,
 }

@@ -6,5 +6,5 @@ pub struct V2ModelsIntentDialogCodeHook {
     /// Enables the dialog code hook so that it processes user requests.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

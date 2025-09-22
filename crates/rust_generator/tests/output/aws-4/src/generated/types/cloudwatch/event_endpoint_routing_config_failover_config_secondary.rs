@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventEndpointRoutingConfigFailoverConfigSecondary {
     /// The name of the secondary Region.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "route")]
-    pub r#route: Box<Option<String>>,
+    pub r#route: Option<String>,
 }

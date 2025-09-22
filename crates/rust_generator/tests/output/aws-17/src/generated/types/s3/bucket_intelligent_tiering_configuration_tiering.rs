@@ -6,9 +6,9 @@ pub struct BucketIntelligentTieringConfigurationTiering {
     /// S3 Intelligent-Tiering access tier. Valid values: `ARCHIVE_ACCESS`, `DEEP_ARCHIVE_ACCESS`.
     #[builder(into)]
     #[serde(rename = "accessTier")]
-    pub r#access_tier: Box<String>,
+    pub r#access_tier: String,
     /// Number of consecutive days of no access after which an object will be eligible to be transitioned to the corresponding tier.
     #[builder(into)]
     #[serde(rename = "days")]
-    pub r#days: Box<i32>,
+    pub r#days: i32,
 }

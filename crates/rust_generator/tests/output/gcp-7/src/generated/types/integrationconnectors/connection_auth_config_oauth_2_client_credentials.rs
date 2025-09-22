@@ -6,9 +6,9 @@ pub struct ConnectionAuthConfigOauth2ClientCredentials {
     /// Secret version of Password for Authentication.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// Secret version reference containing the client secret.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2ClientCredentialsClientSecret>>,
+    pub r#client_secret: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2ClientCredentialsClientSecret>>,
 }

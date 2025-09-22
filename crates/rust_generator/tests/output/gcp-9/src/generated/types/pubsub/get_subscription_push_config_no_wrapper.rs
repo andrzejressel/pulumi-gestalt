@@ -8,5 +8,5 @@ pub struct GetSubscriptionPushConfigNoWrapper {
     /// Pub/Sub message attributes to '<KEY>:<VAL>' headers of the HTTP request.
     #[builder(into)]
     #[serde(rename = "writeMetadata")]
-    pub r#write_metadata: Box<bool>,
+    pub r#write_metadata: bool,
 }

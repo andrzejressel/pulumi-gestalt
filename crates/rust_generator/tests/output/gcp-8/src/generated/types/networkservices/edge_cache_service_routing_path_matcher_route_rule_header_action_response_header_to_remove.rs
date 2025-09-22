@@ -7,5 +7,5 @@ pub struct EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeader
     /// Response headers are only sent to the client, and do not have an effect on the cache serving the response.
     #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<String>,
+    pub r#header_name: String,
 }

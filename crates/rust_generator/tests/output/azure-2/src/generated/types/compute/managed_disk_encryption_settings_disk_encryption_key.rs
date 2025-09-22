@@ -6,9 +6,9 @@ pub struct ManagedDiskEncryptionSettingsDiskEncryptionKey {
     /// The URL to the Key Vault Secret used as the Disk Encryption Key. This can be found as `id` on the `azure.keyvault.Secret` resource.
     #[builder(into)]
     #[serde(rename = "secretUrl")]
-    pub r#secret_url: Box<String>,
+    pub r#secret_url: String,
     /// The ID of the source Key Vault. This can be found as `id` on the `azure.keyvault.KeyVault` resource.
     #[builder(into)]
     #[serde(rename = "sourceVaultId")]
-    pub r#source_vault_id: Box<String>,
+    pub r#source_vault_id: String,
 }

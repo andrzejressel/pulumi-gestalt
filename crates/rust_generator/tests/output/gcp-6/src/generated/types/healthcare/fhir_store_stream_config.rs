@@ -15,7 +15,7 @@ pub struct FhirStoreStreamConfig {
     /// Supply a FHIR resource type (such as "Patient" or "Observation"). See
     /// https://www.hl7.org/fhir/valueset-resource-types.html for a list of all FHIR resource types. The server treats
     /// an empty list as an intent to stream all the supported resource types in this FHIR store.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceTypes")]
-    pub r#resource_types: Box<Option<Vec<String>>>,
+    pub r#resource_types: Option<Vec<String>>,
 }

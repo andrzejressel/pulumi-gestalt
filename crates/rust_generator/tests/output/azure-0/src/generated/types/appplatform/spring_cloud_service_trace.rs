@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudServiceTrace {
     /// The connection string used for Application Insights.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionString")]
-    pub r#connection_string: Box<Option<String>>,
+    pub r#connection_string: Option<String>,
     /// The sampling rate of Application Insights Agent. Must be between `0.0` and `100.0`. Defaults to `10.0`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sampleRate")]
-    pub r#sample_rate: Box<Option<f64>>,
+    pub r#sample_rate: Option<f64>,
 }

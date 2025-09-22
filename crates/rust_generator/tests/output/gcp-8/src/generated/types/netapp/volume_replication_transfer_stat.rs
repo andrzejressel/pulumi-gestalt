@@ -7,42 +7,42 @@ pub struct VolumeReplicationTransferStat {
     /// The elapsed time since the creation of the snapshot on the source volume that was last replicated
     /// to the destination volume. Lag time represents the difference in age of the destination volume
     /// data in relation to the source volume data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lagDuration")]
-    pub r#lag_duration: Box<Option<String>>,
+    pub r#lag_duration: Option<String>,
     /// (Output)
     /// Size of last completed transfer in bytes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastTransferBytes")]
-    pub r#last_transfer_bytes: Box<Option<String>>,
+    pub r#last_transfer_bytes: Option<String>,
     /// (Output)
     /// Time taken during last completed transfer.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastTransferDuration")]
-    pub r#last_transfer_duration: Box<Option<String>>,
+    pub r#last_transfer_duration: Option<String>,
     /// (Output)
     /// Time when last transfer completed. A timestamp in RFC3339 UTC "Zulu" format. Examples: "2023-06-22T09:13:01.617Z".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastTransferEndTime")]
-    pub r#last_transfer_end_time: Box<Option<String>>,
+    pub r#last_transfer_end_time: Option<String>,
     /// (Output)
     /// A message describing the cause of the last transfer failure.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastTransferError")]
-    pub r#last_transfer_error: Box<Option<String>>,
+    pub r#last_transfer_error: Option<String>,
     /// (Output)
     /// Cumulative time taken across all transfers for the replication relationship.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "totalTransferDuration")]
-    pub r#total_transfer_duration: Box<Option<String>>,
+    pub r#total_transfer_duration: Option<String>,
     /// (Output)
     /// Cumulative bytes transferred so far for the replication relationship.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transferBytes")]
-    pub r#transfer_bytes: Box<Option<String>>,
+    pub r#transfer_bytes: Option<String>,
     /// (Output)
     /// Time when progress was updated last. A timestamp in RFC3339 UTC "Zulu" format. Examples: "2023-06-22T09:13:01.617Z".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "updateTime")]
-    pub r#update_time: Box<Option<String>>,
+    pub r#update_time: Option<String>,
 }

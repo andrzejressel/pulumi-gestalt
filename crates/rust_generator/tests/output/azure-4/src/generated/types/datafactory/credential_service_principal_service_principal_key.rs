@@ -6,13 +6,13 @@ pub struct CredentialServicePrincipalServicePrincipalKey {
     /// The name of the Linked Service to use for the Service Principal Key.
     #[builder(into)]
     #[serde(rename = "linkedServiceName")]
-    pub r#linked_service_name: Box<String>,
+    pub r#linked_service_name: String,
     /// The name of the Secret in the Key Vault.
     #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<String>,
+    pub r#secret_name: String,
     /// The version of the Secret in the Key Vault.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretVersion")]
-    pub r#secret_version: Box<Option<String>>,
+    pub r#secret_version: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainOffPeakWindowOptionsOffPeakWindowWindowStartTime {
     /// Starting hour of the 10-hour window for updates
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hours")]
-    pub r#hours: Box<Option<i32>>,
+    pub r#hours: Option<i32>,
     /// Starting minute of the 10-hour window for updates
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minutes")]
-    pub r#minutes: Box<Option<i32>>,
+    pub r#minutes: Option<i32>,
 }

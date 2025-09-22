@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MeshSpecServiceDiscovery {
     /// The IP version to use to control traffic within the mesh. Valid values are `IPv6_PREFERRED`, `IPv4_PREFERRED`, `IPv4_ONLY`, and `IPv6_ONLY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipPreference")]
-    pub r#ip_preference: Box<Option<String>>,
+    pub r#ip_preference: Option<String>,
 }

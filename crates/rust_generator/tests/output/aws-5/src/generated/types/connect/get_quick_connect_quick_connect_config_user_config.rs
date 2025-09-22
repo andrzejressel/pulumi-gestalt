@@ -6,9 +6,9 @@ pub struct GetQuickConnectQuickConnectConfigUserConfig {
     /// Identifier of the contact flow.
     #[builder(into)]
     #[serde(rename = "contactFlowId")]
-    pub r#contact_flow_id: Box<String>,
+    pub r#contact_flow_id: String,
     /// Identifier for the user.
     #[builder(into)]
     #[serde(rename = "userId")]
-    pub r#user_id: Box<String>,
+    pub r#user_id: String,
 }

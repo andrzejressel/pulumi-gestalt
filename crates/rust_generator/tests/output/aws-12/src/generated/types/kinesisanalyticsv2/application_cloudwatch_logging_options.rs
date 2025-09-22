@@ -3,11 +3,11 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationCloudwatchLoggingOptions {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudwatchLoggingOptionId")]
-    pub r#cloudwatch_logging_option_id: Box<Option<String>>,
+    pub r#cloudwatch_logging_option_id: Option<String>,
     /// The ARN of the CloudWatch log stream to receive application messages.
     #[builder(into)]
     #[serde(rename = "logStreamArn")]
-    pub r#log_stream_arn: Box<String>,
+    pub r#log_stream_arn: String,
 }

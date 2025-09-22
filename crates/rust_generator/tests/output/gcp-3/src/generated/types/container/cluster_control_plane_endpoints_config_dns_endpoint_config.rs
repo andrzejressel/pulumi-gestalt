@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterControlPlaneEndpointsConfigDnsEndpointConfig {
     /// Controls whether user traffic is allowed over this endpoint. Note that GCP-managed services may still use the endpoint even if this is false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowExternalTraffic")]
-    pub r#allow_external_traffic: Box<Option<bool>>,
+    pub r#allow_external_traffic: Option<bool>,
     /// The cluster's DNS endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<Option<String>>,
+    pub r#endpoint: Option<String>,
 }

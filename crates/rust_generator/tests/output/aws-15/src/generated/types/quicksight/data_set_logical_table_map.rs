@@ -6,15 +6,15 @@ pub struct DataSetLogicalTableMap {
     /// A display name for the logical table.
     #[builder(into)]
     #[serde(rename = "alias")]
-    pub r#alias: Box<String>,
+    pub r#alias: String,
     /// Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. See data_transforms.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataTransforms")]
-    pub r#data_transforms: Box<Option<Vec<super::super::types::quicksight::DataSetLogicalTableMapDataTransform>>>,
+    pub r#data_transforms: Option<Vec<super::super::types::quicksight::DataSetLogicalTableMapDataTransform>>,
     /// Key of the logical table map.
     #[builder(into)]
     #[serde(rename = "logicalTableMapId")]
-    pub r#logical_table_map_id: Box<String>,
+    pub r#logical_table_map_id: String,
     /// Source of this logical table. See source.
     #[builder(into)]
     #[serde(rename = "source")]

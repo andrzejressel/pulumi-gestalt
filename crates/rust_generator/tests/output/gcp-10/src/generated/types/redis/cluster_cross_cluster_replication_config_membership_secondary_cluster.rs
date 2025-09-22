@@ -5,12 +5,12 @@
 pub struct ClusterCrossClusterReplicationConfigMembershipSecondaryCluster {
     /// (Output)
     /// The full resource path of the secondary cluster in the format: projects/{project}/locations/{region}/clusters/{cluster-id}
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cluster")]
-    pub r#cluster: Box<Option<String>>,
+    pub r#cluster: Option<String>,
     /// (Output)
     /// The unique id of the secondary cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uid")]
-    pub r#uid: Box<Option<String>>,
+    pub r#uid: Option<String>,
 }

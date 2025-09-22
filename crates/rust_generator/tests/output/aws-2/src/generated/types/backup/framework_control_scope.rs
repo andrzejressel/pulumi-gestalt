@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FrameworkControlScope {
     /// The ID of the only AWS resource that you want your control scope to contain. Minimum number of 1 item. Maximum number of 100 items.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "complianceResourceIds")]
-    pub r#compliance_resource_ids: Box<Option<Vec<String>>>,
+    pub r#compliance_resource_ids: Option<Vec<String>>,
     /// Describes whether the control scope includes one or more types of resources, such as EFS or RDS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "complianceResourceTypes")]
-    pub r#compliance_resource_types: Box<Option<Vec<String>>>,
+    pub r#compliance_resource_types: Option<Vec<String>>,
     /// The tag key-value pair applied to those AWS resources that you want to trigger an evaluation for a rule. A maximum of one key-value pair can be provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#tags: Option<std::collections::HashMap<String, String>>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BlockchainNodesEthereumDetailsAdditionalEndpoint {
     /// The assigned URL for the node's Beacon API endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "beaconApiEndpoint")]
-    pub r#beacon_api_endpoint: Box<Option<String>>,
+    pub r#beacon_api_endpoint: Option<String>,
     /// The assigned URL for the node's Beacon Prometheus metrics endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "beaconPrometheusMetricsApiEndpoint")]
-    pub r#beacon_prometheus_metrics_api_endpoint: Box<Option<String>>,
+    pub r#beacon_prometheus_metrics_api_endpoint: Option<String>,
     /// The assigned URL for the node's execution client's Prometheus metrics endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "executionClientPrometheusMetricsApiEndpoint")]
-    pub r#execution_client_prometheus_metrics_api_endpoint: Box<Option<String>>,
+    pub r#execution_client_prometheus_metrics_api_endpoint: Option<String>,
 }

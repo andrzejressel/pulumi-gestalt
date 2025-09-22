@@ -11,5 +11,5 @@ pub struct AlertPolicyConditionConditionThresholdForecastOptions {
     /// then the timeseries is considered to be failing.
     #[builder(into)]
     #[serde(rename = "forecastHorizon")]
-    pub r#forecast_horizon: Box<String>,
+    pub r#forecast_horizon: String,
 }

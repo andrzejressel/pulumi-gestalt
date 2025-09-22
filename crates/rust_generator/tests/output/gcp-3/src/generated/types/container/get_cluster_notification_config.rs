@@ -6,5 +6,5 @@ pub struct GetClusterNotificationConfig {
     /// Notification config for Cloud Pub/Sub
     #[builder(into)]
     #[serde(rename = "pubsubs")]
-    pub r#pubsubs: Box<Vec<super::super::types::container::GetClusterNotificationConfigPubsub>>,
+    pub r#pubsubs: Vec<super::super::types::container::GetClusterNotificationConfigPubsub>,
 }

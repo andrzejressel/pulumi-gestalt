@@ -8,5 +8,5 @@ pub struct GetMetastoreServiceHiveMetastoreConfigKerberosConfigKeytab {
     /// "projects/{projectNumber}/secrets/{secret_id}/versions/{version_id}".
     #[builder(into)]
     #[serde(rename = "cloudSecret")]
-    pub r#cloud_secret: Box<String>,
+    pub r#cloud_secret: String,
 }

@@ -9,5 +9,5 @@ pub struct AutonomousDatabasePropertiesCustomerContact {
     /// <a name="nested_apex_details"></a>The `apex_details` block contains:
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
 }

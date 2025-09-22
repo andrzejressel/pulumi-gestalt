@@ -6,13 +6,13 @@ pub struct KxClusterCode {
     /// Unique name for the S3 bucket.
     #[builder(into)]
     #[serde(rename = "s3Bucket")]
-    pub r#s_3_bucket: Box<String>,
+    pub r#s_3_bucket: String,
     /// Full S3 path (excluding bucket) to the .zip file that contains the code to be loaded onto the cluster when it’s started.
     #[builder(into)]
     #[serde(rename = "s3Key")]
-    pub r#s_3_key: Box<String>,
+    pub r#s_3_key: String,
     /// Version of an S3 Object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3ObjectVersion")]
-    pub r#s_3_object_version: Box<Option<String>>,
+    pub r#s_3_object_version: Option<String>,
 }

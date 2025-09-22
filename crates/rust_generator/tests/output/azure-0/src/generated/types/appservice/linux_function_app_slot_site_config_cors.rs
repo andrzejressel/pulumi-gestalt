@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LinuxFunctionAppSlotSiteConfigCors {
     /// Specifies a list of origins that should be allowed to make cross-origin calls.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Option<Vec<String>>>,
+    pub r#allowed_origins: Option<Vec<String>>,
     /// Are credentials allowed in CORS requests? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "supportCredentials")]
-    pub r#support_credentials: Box<Option<bool>>,
+    pub r#support_credentials: Option<bool>,
 }

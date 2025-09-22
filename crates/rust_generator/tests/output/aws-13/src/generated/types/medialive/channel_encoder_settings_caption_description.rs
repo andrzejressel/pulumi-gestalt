@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsCaptionDescription {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessibility")]
-    pub r#accessibility: Box<Option<String>>,
+    pub r#accessibility: Option<String>,
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
     #[builder(into)]
     #[serde(rename = "captionSelectorName")]
-    pub r#caption_selector_name: Box<String>,
+    pub r#caption_selector_name: String,
     /// Additional settings for captions destination that depend on the destination type. See Destination Settings for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destinationSettings")]
-    pub r#destination_settings: Box<Option<super::super::types::medialive::ChannelEncoderSettingsCaptionDescriptionDestinationSettings>>,
+    pub r#destination_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsCaptionDescriptionDestinationSettings>>,
     /// ISO 639-2 three-digit code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "languageCode")]
-    pub r#language_code: Box<Option<String>>,
+    pub r#language_code: Option<String>,
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "languageDescription")]
-    pub r#language_description: Box<Option<String>>,
+    pub r#language_description: Option<String>,
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

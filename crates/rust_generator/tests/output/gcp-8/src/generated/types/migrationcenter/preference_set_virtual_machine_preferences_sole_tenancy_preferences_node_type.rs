@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeType {
     /// Name of the Sole Tenant node. Consult https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeName")]
-    pub r#node_name: Box<Option<String>>,
+    pub r#node_name: Option<String>,
 }

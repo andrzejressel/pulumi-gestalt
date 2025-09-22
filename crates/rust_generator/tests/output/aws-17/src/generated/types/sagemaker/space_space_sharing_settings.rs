@@ -6,5 +6,5 @@ pub struct SpaceSpaceSharingSettings {
     /// Specifies the sharing type of the space. Valid values are `Private` and `Shared`.
     #[builder(into)]
     #[serde(rename = "sharingType")]
-    pub r#sharing_type: Box<String>,
+    pub r#sharing_type: String,
 }

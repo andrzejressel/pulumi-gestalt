@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LaunchGroup {
     /// Specifies the description of the launch group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Specifies the name of the feature that the launch is using.
     #[builder(into)]
     #[serde(rename = "feature")]
-    pub r#feature: Box<String>,
+    pub r#feature: String,
     /// Specifies the name of the lahnch group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the feature variation to use for this launch group.
     #[builder(into)]
     #[serde(rename = "variation")]
-    pub r#variation: Box<String>,
+    pub r#variation: String,
 }

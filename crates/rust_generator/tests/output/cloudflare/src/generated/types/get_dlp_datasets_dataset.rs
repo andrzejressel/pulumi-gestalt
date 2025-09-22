@@ -5,17 +5,17 @@
 pub struct GetDlpDatasetsDataset {
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "secret")]
-    pub r#secret: Box<bool>,
+    pub r#secret: bool,
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

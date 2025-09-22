@@ -7,5 +7,5 @@ pub struct ConnectionAuthConfigOauth2AuthCodeFlowClientSecret {
     /// format as: projects/*/secrets/*/versions/*.
     #[builder(into)]
     #[serde(rename = "secretVersion")]
-    pub r#secret_version: Box<String>,
+    pub r#secret_version: String,
 }

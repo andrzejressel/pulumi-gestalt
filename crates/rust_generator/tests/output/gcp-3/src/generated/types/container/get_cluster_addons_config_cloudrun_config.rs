@@ -5,8 +5,8 @@
 pub struct GetClusterAddonsConfigCloudrunConfig {
     #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<bool>,
+    pub r#disabled: bool,
     #[builder(into)]
     #[serde(rename = "loadBalancerType")]
-    pub r#load_balancer_type: Box<String>,
+    pub r#load_balancer_type: String,
 }

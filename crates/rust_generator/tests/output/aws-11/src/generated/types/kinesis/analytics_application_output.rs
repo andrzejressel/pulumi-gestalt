@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AnalyticsApplicationOutput {
     /// The ARN of the Kinesis Analytics Application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The Kinesis Firehose configuration for the destination stream. Conflicts with `kinesis_stream`.
     /// See Kinesis Firehose below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kinesisFirehose")]
-    pub r#kinesis_firehose: Box<Option<super::super::types::kinesis::AnalyticsApplicationOutputKinesisFirehose>>,
+    pub r#kinesis_firehose: Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputKinesisFirehose>>,
     /// The Kinesis Stream configuration for the destination stream. Conflicts with `kinesis_firehose`.
     /// See Kinesis Stream below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kinesisStream")]
-    pub r#kinesis_stream: Box<Option<super::super::types::kinesis::AnalyticsApplicationOutputKinesisStream>>,
+    pub r#kinesis_stream: Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputKinesisStream>>,
     /// The Lambda function destination. See Lambda below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lambda")]
-    pub r#lambda: Box<Option<super::super::types::kinesis::AnalyticsApplicationOutputLambda>>,
+    pub r#lambda: Option<Box<super::super::types::kinesis::AnalyticsApplicationOutputLambda>>,
     /// The Name of the in-application stream.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The Schema format of the data written to the destination. See Destination Schema below for more details.
     #[builder(into)]
     #[serde(rename = "schema")]

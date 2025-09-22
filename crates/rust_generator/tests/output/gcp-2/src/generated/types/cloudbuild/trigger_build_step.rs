@@ -6,25 +6,25 @@ pub struct TriggerBuildStep {
     /// Allow this build step to fail without failing the entire build if and
     /// only if the exit code is one of the specified codes.
     /// If `allowFailure` is also specified, this field will take precedence.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowExitCodes")]
-    pub r#allow_exit_codes: Box<Option<Vec<i32>>>,
+    pub r#allow_exit_codes: Option<Vec<i32>>,
     /// Allow this build step to fail without failing the entire build.
     /// If false, the entire build will fail if this step fails. Otherwise, the
     /// build will succeed, but this step will still have a failure status.
     /// Error information will be reported in the `failureDetail` field.
     /// `allowExitCodes` takes precedence over this field.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowFailure")]
-    pub r#allow_failure: Box<Option<bool>>,
+    pub r#allow_failure: Option<bool>,
     /// A list of arguments that will be presented to the step when it is started.
     /// If the image used to run the step's container has an entrypoint, the args
     /// are used as arguments to that entrypoint. If the image does not define an
     /// entrypoint, the first element in args is used as the entrypoint, and the
     /// remainder will be used as arguments.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "args")]
-    pub r#args: Box<Option<Vec<String>>>,
+    pub r#args: Option<Vec<String>>,
     /// Working directory to use when running this step's container.
     /// If this value is a relative path, it is relative to the build's working
     /// directory. If this value is absolute, it may be outside the build's working
@@ -34,27 +34,27 @@ pub struct TriggerBuildStep {
     /// `dir`,
     /// which specifies an absolute path, the `RepoSource` `dir` is ignored
     /// for the step's execution.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dir")]
-    pub r#dir: Box<Option<String>>,
+    pub r#dir: Option<String>,
     /// Entrypoint to be used instead of the build step image's
     /// default entrypoint.
     /// If unset, the image's default entrypoint is used
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "entrypoint")]
-    pub r#entrypoint: Box<Option<String>>,
+    pub r#entrypoint: Option<String>,
     /// A list of environment variable definitions to be used when
     /// running a step.
     /// The elements are of the form "KEY=VALUE" for the environment variable
     /// "KEY" being given the value "VALUE".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "envs")]
-    pub r#envs: Box<Option<Vec<String>>>,
+    pub r#envs: Option<Vec<String>>,
     /// Unique identifier for this build step, used in `wait_for` to
     /// reference this build step as a dependency.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The name of the container image that will run this particular build step.
     /// If the image is available in the host's Docker daemon's cache, it will be
     /// run directly. If not, the host will attempt to pull the image first, using
@@ -70,31 +70,31 @@ pub struct TriggerBuildStep {
     /// later build step.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A shell script to be executed in the step.
     /// When script is provided, the user cannot specify the entrypoint or args.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "script")]
-    pub r#script: Box<Option<String>>,
+    pub r#script: Option<String>,
     /// A list of environment variables which are encrypted using
     /// a Cloud Key
     /// Management Service crypto key. These values must be specified in
     /// the build's `Secret`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretEnvs")]
-    pub r#secret_envs: Box<Option<Vec<String>>>,
+    pub r#secret_envs: Option<Vec<String>>,
     /// Time limit for executing this build step. If not defined,
     /// the step has no
     /// time limit and will be allowed to continue to run until either it
     /// completes or the build itself times out.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Box<Option<String>>,
+    pub r#timeout: Option<String>,
     /// Output only. Stores timing information for executing this
     /// build step.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timing")]
-    pub r#timing: Box<Option<String>>,
+    pub r#timing: Option<String>,
     /// List of volumes to mount into the build step.
     /// Each volume is created as an empty volume prior to execution of the
     /// build step. Upon completion of the build, volumes and their contents
@@ -102,15 +102,15 @@ pub struct TriggerBuildStep {
     /// Using a named volume in only one step is not valid as it is
     /// indicative of a build request with an incorrect configuration.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "volumes")]
-    pub r#volumes: Box<Option<Vec<super::super::types::cloudbuild::TriggerBuildStepVolume>>>,
+    pub r#volumes: Option<Vec<super::super::types::cloudbuild::TriggerBuildStepVolume>>,
     /// The ID(s) of the step(s) that this build step depends on.
     /// This build step will not start until all the build steps in `wait_for`
     /// have completed successfully. If `wait_for` is empty, this build step
     /// will start when all previous build steps in the `Build.Steps` list
     /// have completed successfully.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "waitFors")]
-    pub r#wait_fors: Box<Option<Vec<String>>>,
+    pub r#wait_fors: Option<Vec<String>>,
 }

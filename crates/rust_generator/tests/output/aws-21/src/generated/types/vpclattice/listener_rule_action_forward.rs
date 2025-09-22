@@ -8,5 +8,5 @@ pub struct ListenerRuleActionForward {
     /// The default value is 1 with maximum number of 2. If only one target group is provided, there is no need to set the weight; 100% of traffic will go to that target group.
     #[builder(into)]
     #[serde(rename = "targetGroups")]
-    pub r#target_groups: Box<Vec<super::super::types::vpclattice::ListenerRuleActionForwardTargetGroup>>,
+    pub r#target_groups: Vec<super::super::types::vpclattice::ListenerRuleActionForwardTargetGroup>,
 }

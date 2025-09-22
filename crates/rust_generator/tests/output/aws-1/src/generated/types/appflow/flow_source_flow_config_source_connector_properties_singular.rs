@@ -5,5 +5,5 @@
 pub struct FlowSourceFlowConfigSourceConnectorPropertiesSingular {
     #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<String>,
+    pub r#object: String,
 }

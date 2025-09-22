@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NextGenerationFirewallVirtualHubLocalRulestackDestinationNat {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backendConfig")]
-    pub r#backend_config: Box<Option<super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackDestinationNatBackendConfig>>,
-    #[builder(into, default)]
+    pub r#backend_config: Option<Box<super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackDestinationNatBackendConfig>>,
+    #[builder(into)]
     #[serde(rename = "frontendConfig")]
-    pub r#frontend_config: Box<Option<super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackDestinationNatFrontendConfig>>,
+    pub r#frontend_config: Option<Box<super::super::types::paloalto::NextGenerationFirewallVirtualHubLocalRulestackDestinationNatFrontendConfig>>,
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
 }

@@ -6,9 +6,9 @@ pub struct GetPrivateLinkResourceSharedPrivateLinkResourceType {
     /// The description of the resource type that has been onboarded to private link service.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// The  name for the resource that has been onboarded to private link service.
     #[builder(into)]
     #[serde(rename = "subresourceName")]
-    pub r#subresource_name: Box<String>,
+    pub r#subresource_name: String,
 }

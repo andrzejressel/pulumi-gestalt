@@ -6,13 +6,13 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterD
     /// The absolute file path in the container where the tmpfs volume is mounted.
     #[builder(into)]
     #[serde(rename = "containerPath")]
-    pub r#container_path: Box<String>,
+    pub r#container_path: String,
     /// The path for the device on the host container instance.
     #[builder(into)]
     #[serde(rename = "hostPath")]
-    pub r#host_path: Box<String>,
+    pub r#host_path: String,
     /// The explicit permissions to provide to the container for the device.
     #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<Vec<String>>,
+    pub r#permissions: Vec<String>,
 }

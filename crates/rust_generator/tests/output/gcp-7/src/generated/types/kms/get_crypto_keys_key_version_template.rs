@@ -7,9 +7,9 @@ pub struct GetCryptoKeysKeyVersionTemplate {
     /// See the [algorithm reference](https://cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm) for possible inputs.
     #[builder(into)]
     #[serde(rename = "algorithm")]
-    pub r#algorithm: Box<String>,
+    pub r#algorithm: String,
     /// The protection level to use when creating a version based on this template. Possible values include "SOFTWARE", "HSM", "EXTERNAL", "EXTERNAL_VPC". Defaults to "SOFTWARE".
     #[builder(into)]
     #[serde(rename = "protectionLevel")]
-    pub r#protection_level: Box<String>,
+    pub r#protection_level: String,
 }

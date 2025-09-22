@@ -5,8 +5,8 @@
 pub struct GetDataSetRowLevelPermissionTagConfiguration {
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
     #[builder(into)]
     #[serde(rename = "tagRules")]
-    pub r#tag_rules: Box<Vec<super::super::types::quicksight::GetDataSetRowLevelPermissionTagConfigurationTagRule>>,
+    pub r#tag_rules: Vec<super::super::types::quicksight::GetDataSetRowLevelPermissionTagConfigurationTagRule>,
 }

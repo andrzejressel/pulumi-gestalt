@@ -5,7 +5,7 @@
 pub struct AiMetadataStoreState {
     /// (Output)
     /// The disk utilization of the MetadataStore in bytes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "diskUtilizationBytes")]
-    pub r#disk_utilization_bytes: Box<Option<String>>,
+    pub r#disk_utilization_bytes: Option<String>,
 }

@@ -6,18 +6,18 @@ pub struct EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd {
     /// The name of the header to add.
     #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<String>,
+    pub r#header_name: String,
     /// The value of the header to add.
     #[builder(into)]
     #[serde(rename = "headerValue")]
-    pub r#header_value: Box<String>,
+    pub r#header_value: String,
     /// Whether to replace all existing headers with the same name.
     /// By default, added header values are appended
     /// to the response or request headers with the
     /// same field names. The added values are
     /// separated by commas.
     /// To overwrite existing values, set `replace` to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replace")]
-    pub r#replace: Box<Option<bool>>,
+    pub r#replace: Option<bool>,
 }

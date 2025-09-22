@@ -3,14 +3,14 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionOriginVpcOriginConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "originKeepaliveTimeout")]
-    pub r#origin_keepalive_timeout: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#origin_keepalive_timeout: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "originReadTimeout")]
-    pub r#origin_read_timeout: Box<Option<i32>>,
+    pub r#origin_read_timeout: Option<i32>,
     /// The VPC origin ID.
     #[builder(into)]
     #[serde(rename = "vpcOriginId")]
-    pub r#vpc_origin_id: Box<String>,
+    pub r#vpc_origin_id: String,
 }

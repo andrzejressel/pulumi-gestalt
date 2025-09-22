@@ -5,8 +5,8 @@
 pub struct GetClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfo {
     #[builder(into)]
     #[serde(rename = "provisionedThroughputs")]
-    pub r#provisioned_throughputs: Box<Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput>>,
+    pub r#provisioned_throughputs: Vec<super::super::types::msk::GetClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput>,
     #[builder(into)]
     #[serde(rename = "volumeSize")]
-    pub r#volume_size: Box<i32>,
+    pub r#volume_size: i32,
 }

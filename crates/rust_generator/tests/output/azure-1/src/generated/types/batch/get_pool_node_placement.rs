@@ -6,5 +6,5 @@ pub struct GetPoolNodePlacement {
     /// The placement policy for allocating nodes in the pool.
     #[builder(into)]
     #[serde(rename = "policy")]
-    pub r#policy: Box<String>,
+    pub r#policy: String,
 }

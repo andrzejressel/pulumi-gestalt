@@ -6,5 +6,5 @@ pub struct GetInstanceTemplateDiskDiskEncryptionKey {
     /// The self link of the encryption key that is stored in Google Cloud KMS
     #[builder(into)]
     #[serde(rename = "kmsKeySelfLink")]
-    pub r#kms_key_self_link: Box<String>,
+    pub r#kms_key_self_link: String,
 }

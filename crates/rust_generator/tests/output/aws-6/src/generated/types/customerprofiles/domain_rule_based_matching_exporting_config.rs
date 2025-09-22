@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainRuleBasedMatchingExportingConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Exporting")]
-    pub r#s_3_exporting: Box<Option<super::super::types::customerprofiles::DomainRuleBasedMatchingExportingConfigS3Exporting>>,
+    pub r#s_3_exporting: Option<Box<super::super::types::customerprofiles::DomainRuleBasedMatchingExportingConfigS3Exporting>>,
 }

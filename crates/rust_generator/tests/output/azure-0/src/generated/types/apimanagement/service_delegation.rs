@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceDelegation {
     /// Should subscription requests be delegated to an external url? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subscriptionsEnabled")]
-    pub r#subscriptions_enabled: Box<Option<bool>>,
+    pub r#subscriptions_enabled: Option<bool>,
     /// The delegation URL.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<Option<String>>,
+    pub r#url: Option<String>,
     /// Should user registration requests be delegated to an external url? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userRegistrationEnabled")]
-    pub r#user_registration_enabled: Box<Option<bool>>,
+    pub r#user_registration_enabled: Option<bool>,
     /// A base64-encoded validation key to validate, that a request is coming from Azure API Management.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "validationKey")]
-    pub r#validation_key: Box<Option<String>>,
+    pub r#validation_key: Option<String>,
 }

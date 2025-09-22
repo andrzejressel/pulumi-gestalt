@@ -6,5 +6,5 @@ pub struct GetClusterNodeConfigWorkloadMetadataConfig {
     /// Mode is the configuration for how to expose metadata to workloads running on the node.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

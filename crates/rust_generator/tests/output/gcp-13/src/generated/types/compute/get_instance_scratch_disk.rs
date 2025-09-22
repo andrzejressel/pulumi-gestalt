@@ -7,13 +7,13 @@ pub struct GetInstanceScratchDisk {
     /// under `/dev/disk/by-id/`
     #[builder(into)]
     #[serde(rename = "deviceName")]
-    pub r#device_name: Box<String>,
+    pub r#device_name: String,
     /// The disk interface used for attaching this disk. One of `SCSI` or `NVME`.
     #[builder(into)]
     #[serde(rename = "interface")]
-    pub r#interface: Box<String>,
+    pub r#interface: String,
     /// The size of the image in gigabytes.
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<i32>,
+    pub r#size: i32,
 }

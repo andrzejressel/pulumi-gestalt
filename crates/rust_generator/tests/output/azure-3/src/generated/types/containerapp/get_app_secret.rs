@@ -6,17 +6,17 @@ pub struct GetAppSecret {
     /// Resource ID for the User Assigned Managed identity to use when pulling from the Container Registry.
     #[builder(into)]
     #[serde(rename = "identity")]
-    pub r#identity: Box<String>,
+    pub r#identity: String,
     /// The ID of a Key Vault secret.
     #[builder(into)]
     #[serde(rename = "keyVaultSecretId")]
-    pub r#key_vault_secret_id: Box<String>,
+    pub r#key_vault_secret_id: String,
     /// The name of the Container App.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The HTTP Header value.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

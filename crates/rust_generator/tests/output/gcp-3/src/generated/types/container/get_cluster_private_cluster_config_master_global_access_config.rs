@@ -6,5 +6,5 @@ pub struct GetClusterPrivateClusterConfigMasterGlobalAccessConfig {
     /// Whether the cluster master is accessible globally or not.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

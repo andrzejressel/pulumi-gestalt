@@ -6,9 +6,9 @@ pub struct SpokeLinkedRouterApplianceInstancesInstance {
     /// The IP address on the VM to use for peering.
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
     /// The URI of the virtual machine resource
     #[builder(into)]
     #[serde(rename = "virtualMachine")]
-    pub r#virtual_machine: Box<String>,
+    pub r#virtual_machine: String,
 }

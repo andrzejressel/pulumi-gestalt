@@ -6,21 +6,21 @@ pub struct GetServiceHostnameConfiguration {
     /// One or more `developer_portal` blocks as documented below.
     #[builder(into)]
     #[serde(rename = "developerPortals")]
-    pub r#developer_portals: Box<Vec<super::super::types::apimanagement::GetServiceHostnameConfigurationDeveloperPortal>>,
+    pub r#developer_portals: Vec<super::super::types::apimanagement::GetServiceHostnameConfigurationDeveloperPortal>,
     /// One or more `management` blocks as documented below.
     #[builder(into)]
     #[serde(rename = "managements")]
-    pub r#managements: Box<Vec<super::super::types::apimanagement::GetServiceHostnameConfigurationManagement>>,
+    pub r#managements: Vec<super::super::types::apimanagement::GetServiceHostnameConfigurationManagement>,
     /// One or more `portal` blocks as documented below.
     #[builder(into)]
     #[serde(rename = "portals")]
-    pub r#portals: Box<Vec<super::super::types::apimanagement::GetServiceHostnameConfigurationPortal>>,
+    pub r#portals: Vec<super::super::types::apimanagement::GetServiceHostnameConfigurationPortal>,
     /// One or more `proxy` blocks as documented below.
     #[builder(into)]
     #[serde(rename = "proxies")]
-    pub r#proxies: Box<Vec<super::super::types::apimanagement::GetServiceHostnameConfigurationProxy>>,
+    pub r#proxies: Vec<super::super::types::apimanagement::GetServiceHostnameConfigurationProxy>,
     /// One or more `scm` blocks as documented below.
     #[builder(into)]
     #[serde(rename = "scms")]
-    pub r#scms: Box<Vec<super::super::types::apimanagement::GetServiceHostnameConfigurationScm>>,
+    pub r#scms: Vec<super::super::types::apimanagement::GetServiceHostnameConfigurationScm>,
 }

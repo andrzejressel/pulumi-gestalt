@@ -5,12 +5,12 @@
 pub struct PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredType {
     /// (Output)
     /// The creation timestamp of an inspectTemplate. Set by the server.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "createTime")]
-    pub r#create_time: Box<Option<String>>,
+    pub r#create_time: Option<String>,
     /// Resource name of the requested StoredInfoType, for example `organizations/433245324/storedInfoTypes/432452342`
     /// or `projects/project-id/storedInfoTypes/432452342`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListItem {
     /// An optional comment for the item.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "comment")]
-    pub r#comment: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#comment: Option<String>,
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<super::types::ListItemValue>>,
+    pub r#value: Option<Box<super::types::ListItemValue>>,
 }

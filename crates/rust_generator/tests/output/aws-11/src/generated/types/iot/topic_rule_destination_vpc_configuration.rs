@@ -6,17 +6,17 @@ pub struct TopicRuleDestinationVpcConfiguration {
     /// The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// The security groups of the VPC destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "securityGroups")]
-    pub r#security_groups: Box<Option<Vec<String>>>,
+    pub r#security_groups: Option<Vec<String>>,
     /// The subnet IDs of the VPC destination.
     #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Vec<String>>,
+    pub r#subnet_ids: Vec<String>,
     /// The ID of the VPC.
     #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<String>,
+    pub r#vpc_id: String,
 }

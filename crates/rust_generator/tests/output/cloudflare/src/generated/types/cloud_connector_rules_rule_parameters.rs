@@ -6,5 +6,5 @@ pub struct CloudConnectorRulesRuleParameters {
     /// Host parameter for cloud connector rule
     #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<String>,
+    pub r#host: String,
 }

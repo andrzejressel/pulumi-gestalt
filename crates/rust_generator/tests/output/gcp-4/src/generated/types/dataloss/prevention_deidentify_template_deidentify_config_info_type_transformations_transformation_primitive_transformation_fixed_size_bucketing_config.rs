@@ -8,7 +8,7 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTr
     /// Precision up to 2 decimals works.
     #[builder(into)]
     #[serde(rename = "bucketSize")]
-    pub r#bucket_size: Box<f64>,
+    pub r#bucket_size: f64,
     /// Lower bound value of buckets.
     /// All values less than lower_bound are grouped together into a single bucket; for example if lower_bound = 10, then all values less than 10 are replaced with the value "-10".
     /// The `lower_bound` block must only contain one argument. See the `fixed_size_bucketing_config` block description for more information about choosing a data type.

@@ -5,12 +5,12 @@
 pub struct ResponseHeadersPolicyCustomHeadersConfigItem {
     #[builder(into)]
     #[serde(rename = "header")]
-    pub r#header: Box<String>,
+    pub r#header: String,
     #[builder(into)]
     #[serde(rename = "override")]
-    pub r#override_: Box<bool>,
+    pub r#override_: bool,
     /// The value for the HTTP response header.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

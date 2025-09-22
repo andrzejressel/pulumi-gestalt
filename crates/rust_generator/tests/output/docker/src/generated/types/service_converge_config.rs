@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceConvergeConfig {
     /// The interval to check if the desired state is reached `(ms|s)`. Defaults to `7s`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "delay")]
-    pub r#delay: Box<Option<String>>,
+    pub r#delay: Option<String>,
     /// The timeout of the service to reach the desired state `(s|m)`. Defaults to `3m`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeout")]
-    pub r#timeout: Box<Option<String>>,
+    pub r#timeout: Option<String>,
 }

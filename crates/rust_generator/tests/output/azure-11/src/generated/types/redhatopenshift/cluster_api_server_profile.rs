@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterApiServerProfile {
     /// The IP Address the Ingress Profile is associated with.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<Option<String>>,
+    pub r#ip_address: Option<String>,
     /// The URL the API Server Profile is associated with.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<Option<String>>,
+    pub r#url: Option<String>,
     /// Cluster API server visibility. Supported values are `Public` and `Private`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "visibility")]
-    pub r#visibility: Box<String>,
+    pub r#visibility: String,
 }

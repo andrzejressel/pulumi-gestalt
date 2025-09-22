@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SecurityPolicyRuleHeaderActionRequestHeadersToAdd {
     /// The name of the header to set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<Option<String>>,
+    pub r#header_name: Option<String>,
     /// The value to set the named header to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerValue")]
-    pub r#header_value: Box<Option<String>>,
+    pub r#header_value: Option<String>,
 }

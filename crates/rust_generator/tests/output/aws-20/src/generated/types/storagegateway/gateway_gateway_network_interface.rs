@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GatewayGatewayNetworkInterface {
     /// The Internet Protocol version 4 (IPv4) address of the interface.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv4Address")]
-    pub r#ipv_4_address: Box<Option<String>>,
+    pub r#ipv_4_address: Option<String>,
 }

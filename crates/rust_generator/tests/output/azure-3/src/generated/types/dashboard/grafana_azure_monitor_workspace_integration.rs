@@ -6,5 +6,5 @@ pub struct GrafanaAzureMonitorWorkspaceIntegration {
     /// Specifies the resource ID of the connected Azure Monitor Workspace.
     #[builder(into)]
     #[serde(rename = "resourceId")]
-    pub r#resource_id: Box<String>,
+    pub r#resource_id: String,
 }

@@ -6,12 +6,12 @@ pub struct TaskExecutionStatus {
     /// (Output)
     /// latest job execution.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "latestJobs")]
-    pub r#latest_jobs: Box<Option<Vec<super::super::types::dataplex::TaskExecutionStatusLatestJob>>>,
+    pub r#latest_jobs: Option<Vec<super::super::types::dataplex::TaskExecutionStatusLatestJob>>,
     /// (Output)
     /// Last update time of the status.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "updateTime")]
-    pub r#update_time: Box<Option<String>>,
+    pub r#update_time: Option<String>,
 }

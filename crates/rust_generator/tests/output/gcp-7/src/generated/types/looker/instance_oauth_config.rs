@@ -6,11 +6,11 @@ pub struct InstanceOauthConfig {
     /// The client ID for the Oauth config.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The client secret for the Oauth config.
     /// 
     /// - - -
     #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<String>,
+    pub r#client_secret: String,
 }

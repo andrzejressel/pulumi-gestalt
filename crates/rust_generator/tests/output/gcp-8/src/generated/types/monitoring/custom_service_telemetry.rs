@@ -6,7 +6,7 @@ pub struct CustomServiceTelemetry {
     /// The full name of the resource that defines this service.
     /// Formatted as described in
     /// https://cloud.google.com/apis/design/resource_names.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceName")]
-    pub r#resource_name: Box<Option<String>>,
+    pub r#resource_name: Option<String>,
 }

@@ -5,11 +5,11 @@
 pub struct ClusterMaintenancePolicyRecurringWindow {
     #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<String>,
+    pub r#end_time: String,
     #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<String>,
+    pub r#recurrence: String,
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
 }

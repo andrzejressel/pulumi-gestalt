@@ -11,7 +11,7 @@ pub struct ConnectionBitbucketDataCenterConfig {
     /// The URI of the Bitbucket Data Center host this connection is for.
     #[builder(into)]
     #[serde(rename = "hostUri")]
-    pub r#host_uri: Box<String>,
+    pub r#host_uri: String,
     /// Required. A http access token with the `REPO_READ` access.
     /// Structure is documented below.
     #[builder(into)]
@@ -19,20 +19,20 @@ pub struct ConnectionBitbucketDataCenterConfig {
     pub r#read_authorizer_credential: Box<super::super::types::cloudbuildv2::ConnectionBitbucketDataCenterConfigReadAuthorizerCredential>,
     /// (Output)
     /// Output only. Version of the Bitbucket Data Center running on the `host_uri`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serverVersion")]
-    pub r#server_version: Box<Option<String>>,
+    pub r#server_version: Option<String>,
     /// Configuration for using Service Directory to privately connect to a Bitbucket Data Center. This should only be set if the Bitbucket Data Center is hosted on-premises and not reachable by public internet. If this field is left empty, calls to the Bitbucket Data Center will be made over the public internet.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceDirectoryConfig")]
-    pub r#service_directory_config: Box<Option<super::super::types::cloudbuildv2::ConnectionBitbucketDataCenterConfigServiceDirectoryConfig>>,
+    pub r#service_directory_config: Option<Box<super::super::types::cloudbuildv2::ConnectionBitbucketDataCenterConfigServiceDirectoryConfig>>,
     /// SSL certificate to use for requests to the Bitbucket Data Center.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sslCa")]
-    pub r#ssl_ca: Box<Option<String>>,
+    pub r#ssl_ca: Option<String>,
     /// Required. Immutable. SecretManager resource containing the webhook secret used to verify webhook events, formatted as `projects/*/secrets/*/versions/*`.
     #[builder(into)]
     #[serde(rename = "webhookSecretSecretVersion")]
-    pub r#webhook_secret_secret_version: Box<String>,
+    pub r#webhook_secret_secret_version: String,
 }

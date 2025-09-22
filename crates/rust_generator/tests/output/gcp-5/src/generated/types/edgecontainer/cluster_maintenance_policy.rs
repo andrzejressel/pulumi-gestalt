@@ -7,9 +7,9 @@ pub struct ClusterMaintenancePolicy {
     /// in these windows. Each exclusion has a unique name and may be active or expired.
     /// The max number of maintenance exclusions allowed at a given time is 3.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maintenanceExclusions")]
-    pub r#maintenance_exclusions: Box<Option<Vec<super::super::types::edgecontainer::ClusterMaintenancePolicyMaintenanceExclusion>>>,
+    pub r#maintenance_exclusions: Option<Vec<super::super::types::edgecontainer::ClusterMaintenancePolicyMaintenanceExclusion>>,
     /// Specifies the maintenance window in which maintenance may be performed.
     /// Structure is documented below.
     #[builder(into)]

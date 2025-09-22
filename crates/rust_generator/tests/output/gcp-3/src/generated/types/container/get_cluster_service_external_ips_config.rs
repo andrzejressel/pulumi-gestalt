@@ -6,5 +6,5 @@ pub struct GetClusterServiceExternalIpsConfig {
     /// When enabled, services with external ips specified will be allowed.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

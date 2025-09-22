@@ -6,11 +6,11 @@ pub struct AutomationSource {
     /// Type of data that will trigger this automation. Must be one of `Alerts`, `Assessments`, `AssessmentsSnapshot`, `RegulatoryComplianceAssessment`, `RegulatoryComplianceAssessmentSnapshot`, `SecureScoreControls`, `SecureScoreControlsSnapshot`, `SecureScores`, `SecureScoresSnapshot`, `SubAssessments` or `SubAssessmentsSnapshot`. Note. assessments are also referred to as recommendations
     #[builder(into)]
     #[serde(rename = "eventSource")]
-    pub r#event_source: Box<String>,
+    pub r#event_source: String,
     /// A set of rules which evaluate upon event and data interception. This is defined in one or more `rule_set` blocks as defined below.
     /// 
     /// > **NOTE:** When multiple `rule_set` block are provided, a logical 'OR' is applied to the evaluation of them.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ruleSets")]
-    pub r#rule_sets: Box<Option<Vec<super::super::types::securitycenter::AutomationSourceRuleSet>>>,
+    pub r#rule_sets: Option<Vec<super::super::types::securitycenter::AutomationSourceRuleSet>>,
 }

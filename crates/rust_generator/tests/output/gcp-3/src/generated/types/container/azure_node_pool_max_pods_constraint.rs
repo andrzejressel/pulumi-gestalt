@@ -8,5 +8,5 @@ pub struct AzureNodePoolMaxPodsConstraint {
     /// - - -
     #[builder(into)]
     #[serde(rename = "maxPodsPerNode")]
-    pub r#max_pods_per_node: Box<i32>,
+    pub r#max_pods_per_node: i32,
 }

@@ -6,21 +6,21 @@ pub struct GetVpnGatewayBgpSetting {
     /// The ASN of the BGP Speaker.
     #[builder(into)]
     #[serde(rename = "asn")]
-    pub r#asn: Box<i32>,
+    pub r#asn: i32,
     /// The Address which should be used for the BGP Peering.
     #[builder(into)]
     #[serde(rename = "bgpPeeringAddress")]
-    pub r#bgp_peering_address: Box<String>,
+    pub r#bgp_peering_address: String,
     /// an `instance_bgp_peering_address` block as defined below.
     #[builder(into)]
     #[serde(rename = "instance0BgpPeeringAddresses")]
-    pub r#instance_0_bgp_peering_addresses: Box<Vec<super::super::types::network::GetVpnGatewayBgpSettingInstance0BgpPeeringAddress>>,
+    pub r#instance_0_bgp_peering_addresses: Vec<super::super::types::network::GetVpnGatewayBgpSettingInstance0BgpPeeringAddress>,
     /// an `instance_bgp_peering_address` block as defined below.
     #[builder(into)]
     #[serde(rename = "instance1BgpPeeringAddresses")]
-    pub r#instance_1_bgp_peering_addresses: Box<Vec<super::super::types::network::GetVpnGatewayBgpSettingInstance1BgpPeeringAddress>>,
+    pub r#instance_1_bgp_peering_addresses: Vec<super::super::types::network::GetVpnGatewayBgpSettingInstance1BgpPeeringAddress>,
     /// The weight added to Routes learned from this BGP Speaker.
     #[builder(into)]
     #[serde(rename = "peerWeight")]
-    pub r#peer_weight: Box<i32>,
+    pub r#peer_weight: i32,
 }

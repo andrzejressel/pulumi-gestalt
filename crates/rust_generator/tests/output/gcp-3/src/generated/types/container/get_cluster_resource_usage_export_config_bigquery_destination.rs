@@ -6,5 +6,5 @@ pub struct GetClusterResourceUsageExportConfigBigqueryDestination {
     /// The ID of a BigQuery Dataset.
     #[builder(into)]
     #[serde(rename = "datasetId")]
-    pub r#dataset_id: Box<String>,
+    pub r#dataset_id: String,
 }

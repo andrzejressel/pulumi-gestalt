@@ -6,25 +6,25 @@ pub struct GetRoleDefinitionPermission {
     /// A list of actions supported by this role.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<String>>,
+    pub r#actions: Vec<String>,
     /// The conditions on this role definition, which limits the resources it can be assigned to.
     #[builder(into)]
     #[serde(rename = "condition")]
-    pub r#condition: Box<String>,
+    pub r#condition: String,
     /// The version of the condition.
     #[builder(into)]
     #[serde(rename = "conditionVersion")]
-    pub r#condition_version: Box<String>,
+    pub r#condition_version: String,
     /// A list of data actions allowed by this role.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataActions")]
-    pub r#data_actions: Box<Option<Vec<String>>>,
+    pub r#data_actions: Option<Vec<String>>,
     /// A list of actions which are denied by this role.
     #[builder(into)]
     #[serde(rename = "notActions")]
-    pub r#not_actions: Box<Vec<String>>,
+    pub r#not_actions: Vec<String>,
     /// A list of data actions which are denied by this role.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notDataActions")]
-    pub r#not_data_actions: Box<Option<Vec<String>>>,
+    pub r#not_data_actions: Option<Vec<String>>,
 }

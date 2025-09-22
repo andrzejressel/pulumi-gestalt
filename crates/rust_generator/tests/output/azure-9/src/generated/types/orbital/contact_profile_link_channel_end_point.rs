@@ -6,17 +6,17 @@ pub struct ContactProfileLinkChannelEndPoint {
     /// Name of an end point.
     #[builder(into)]
     #[serde(rename = "endPointName")]
-    pub r#end_point_name: Box<String>,
+    pub r#end_point_name: String,
     /// IP address of an end point.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<Option<String>>,
+    pub r#ip_address: Option<String>,
     /// TCP port to listen on to receive data.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<String>,
+    pub r#port: String,
     /// Protocol of an end point. Possible values are `TCP` and `UDP`.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
 }

@@ -7,5 +7,5 @@ pub struct FeatureFleetDefaultMemberConfigMesh {
     /// Possible values are: `MANAGEMENT_UNSPECIFIED`, `MANAGEMENT_AUTOMATIC`, `MANAGEMENT_MANUAL`.
     #[builder(into)]
     #[serde(rename = "management")]
-    pub r#management: Box<String>,
+    pub r#management: String,
 }

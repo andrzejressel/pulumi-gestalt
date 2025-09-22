@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MetadataSupport {
     /// The email address of the support contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// The link for support help.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "link")]
-    pub r#link: Box<Option<String>>,
+    pub r#link: Option<String>,
     /// The name of the support contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The type of support for content item. Possible values are `Microsoft`, `Partner` and `Community`.
     #[builder(into)]
     #[serde(rename = "tier")]
-    pub r#tier: Box<String>,
+    pub r#tier: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScraperDestination {
     /// Configuration block for an Amazon Managed Prometheus workspace destination. See `amp`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "amp")]
-    pub r#amp: Box<Option<super::super::types::amp::ScraperDestinationAmp>>,
+    pub r#amp: Option<Box<super::super::types::amp::ScraperDestinationAmp>>,
 }

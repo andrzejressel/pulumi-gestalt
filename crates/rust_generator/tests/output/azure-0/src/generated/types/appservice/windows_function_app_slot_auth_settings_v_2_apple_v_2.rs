@@ -6,17 +6,17 @@ pub struct WindowsFunctionAppSlotAuthSettingsV2AppleV2 {
     /// The OpenID Connect Client ID for the Apple web application.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The app setting name that contains the `client_secret` value used for Apple Login.
     /// 
     /// !> **NOTE:** A setting with this name must exist in `app_settings` to function correctly.
     #[builder(into)]
     #[serde(rename = "clientSecretSettingName")]
-    pub r#client_secret_setting_name: Box<String>,
+    pub r#client_secret_setting_name: String,
     /// A list of Login Scopes provided by this Authentication Provider.
     /// 
     /// > **NOTE:** This is configured on the Authentication Provider side and is Read Only here.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loginScopes")]
-    pub r#login_scopes: Box<Option<Vec<String>>>,
+    pub r#login_scopes: Option<Vec<String>>,
 }

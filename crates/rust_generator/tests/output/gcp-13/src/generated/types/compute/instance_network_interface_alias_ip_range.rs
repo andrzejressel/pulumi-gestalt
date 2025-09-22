@@ -9,11 +9,11 @@ pub struct InstanceNetworkInterfaceAliasIpRange {
     /// (e.g. 10.2.3.4), a netmask (e.g. /24) or a CIDR format string (e.g. 10.1.2.0/24).
     #[builder(into)]
     #[serde(rename = "ipCidrRange")]
-    pub r#ip_cidr_range: Box<String>,
+    pub r#ip_cidr_range: String,
     /// The subnetwork secondary range name specifying
     /// the secondary range from which to allocate the IP CIDR range for this alias IP
     /// range. If left unspecified, the primary range of the subnetwork will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetworkRangeName")]
-    pub r#subnetwork_range_name: Box<Option<String>>,
+    pub r#subnetwork_range_name: Option<String>,
 }

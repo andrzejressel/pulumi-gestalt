@@ -5,12 +5,12 @@
 pub struct GetAppTemplateTcpScaleRule {
     #[builder(into)]
     #[serde(rename = "authentications")]
-    pub r#authentications: Box<Vec<super::super::types::containerapp::GetAppTemplateTcpScaleRuleAuthentication>>,
+    pub r#authentications: Vec<super::super::types::containerapp::GetAppTemplateTcpScaleRuleAuthentication>,
     #[builder(into)]
     #[serde(rename = "concurrentRequests")]
-    pub r#concurrent_requests: Box<String>,
+    pub r#concurrent_requests: String,
     /// The name of the Container App.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

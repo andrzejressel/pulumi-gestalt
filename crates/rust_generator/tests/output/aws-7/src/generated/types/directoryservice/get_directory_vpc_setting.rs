@@ -5,13 +5,13 @@
 pub struct GetDirectoryVpcSetting {
     #[builder(into)]
     #[serde(rename = "availabilityZones")]
-    pub r#availability_zones: Box<Vec<String>>,
+    pub r#availability_zones: Vec<String>,
     /// Identifiers of the subnets for the connector servers (2 subnets in 2 different AZs).
     #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Vec<String>>,
+    pub r#subnet_ids: Vec<String>,
     /// ID of the VPC that the connector is in.
     #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<String>,
+    pub r#vpc_id: String,
 }

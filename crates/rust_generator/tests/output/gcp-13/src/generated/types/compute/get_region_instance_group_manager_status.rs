@@ -6,17 +6,17 @@ pub struct GetRegionInstanceGroupManagerStatus {
     /// Status of all-instances configuration on the group.
     #[builder(into)]
     #[serde(rename = "allInstancesConfigs")]
-    pub r#all_instances_configs: Box<Vec<super::super::types::compute::GetRegionInstanceGroupManagerStatusAllInstancesConfig>>,
+    pub r#all_instances_configs: Vec<super::super::types::compute::GetRegionInstanceGroupManagerStatusAllInstancesConfig>,
     /// A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
     #[builder(into)]
     #[serde(rename = "isStable")]
-    pub r#is_stable: Box<bool>,
+    pub r#is_stable: bool,
     /// Stateful status of the given Instance Group Manager.
     #[builder(into)]
     #[serde(rename = "statefuls")]
-    pub r#statefuls: Box<Vec<super::super::types::compute::GetRegionInstanceGroupManagerStatusStateful>>,
+    pub r#statefuls: Vec<super::super::types::compute::GetRegionInstanceGroupManagerStatusStateful>,
     /// A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
     #[builder(into)]
     #[serde(rename = "versionTargets")]
-    pub r#version_targets: Box<Vec<super::super::types::compute::GetRegionInstanceGroupManagerStatusVersionTarget>>,
+    pub r#version_targets: Vec<super::super::types::compute::GetRegionInstanceGroupManagerStatusVersionTarget>,
 }

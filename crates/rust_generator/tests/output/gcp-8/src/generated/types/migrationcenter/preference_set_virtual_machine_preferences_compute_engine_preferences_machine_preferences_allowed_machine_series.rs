@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferencesAllowedMachineSeries {
     /// Code to identify a Compute Engine machine series. Consult https://cloud.google.com/compute/docs/machine-resource#machine_type_comparison for more details on the available series.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "code")]
-    pub r#code: Box<Option<String>>,
+    pub r#code: Option<String>,
 }

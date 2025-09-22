@@ -6,17 +6,17 @@ pub struct WindowsWebAppSlotSiteConfigVirtualApplication {
     /// The physical path for the Virtual Application.
     #[builder(into)]
     #[serde(rename = "physicalPath")]
-    pub r#physical_path: Box<String>,
+    pub r#physical_path: String,
     /// Should pre-loading be enabled.
     #[builder(into)]
     #[serde(rename = "preload")]
-    pub r#preload: Box<bool>,
+    pub r#preload: bool,
     /// One or more `virtual_directory` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualDirectories")]
-    pub r#virtual_directories: Box<Option<Vec<super::super::types::appservice::WindowsWebAppSlotSiteConfigVirtualApplicationVirtualDirectory>>>,
+    pub r#virtual_directories: Option<Vec<super::super::types::appservice::WindowsWebAppSlotSiteConfigVirtualApplicationVirtualDirectory>>,
     /// The Virtual Path for the Virtual Application.
     #[builder(into)]
     #[serde(rename = "virtualPath")]
-    pub r#virtual_path: Box<String>,
+    pub r#virtual_path: String,
 }

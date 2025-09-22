@@ -6,5 +6,5 @@ pub struct GetRepositoryRemoteRepositoryConfigUpstreamCredential {
     /// Use username and password to access the remote repository.
     #[builder(into)]
     #[serde(rename = "usernamePasswordCredentials")]
-    pub r#username_password_credentials: Box<Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential>>,
+    pub r#username_password_credentials: Vec<super::super::types::artifactregistry::GetRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePasswordCredential>,
 }

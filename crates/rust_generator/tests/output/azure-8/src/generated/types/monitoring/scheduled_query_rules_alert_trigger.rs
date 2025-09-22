@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScheduledQueryRulesAlertTrigger {
     /// A `metric_trigger` block as defined above. Trigger condition for metric query rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricTrigger")]
-    pub r#metric_trigger: Box<Option<super::super::types::monitoring::ScheduledQueryRulesAlertTriggerMetricTrigger>>,
+    pub r#metric_trigger: Option<Box<super::super::types::monitoring::ScheduledQueryRulesAlertTriggerMetricTrigger>>,
     /// Evaluation operation for rule - 'GreaterThan', GreaterThanOrEqual', 'LessThan', or 'LessThanOrEqual'.
     #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<String>,
+    pub r#operator: String,
     /// Result or count threshold based on which rule should be triggered. Values must be between 0 and 10000 inclusive.
     #[builder(into)]
     #[serde(rename = "threshold")]
-    pub r#threshold: Box<f64>,
+    pub r#threshold: f64,
 }

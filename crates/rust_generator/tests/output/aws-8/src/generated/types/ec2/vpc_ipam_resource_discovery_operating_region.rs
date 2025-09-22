@@ -6,5 +6,5 @@ pub struct VpcIpamResourceDiscoveryOperatingRegion {
     /// The name of the Region you want to add to the IPAM.
     #[builder(into)]
     #[serde(rename = "regionName")]
-    pub r#region_name: Box<String>,
+    pub r#region_name: String,
 }

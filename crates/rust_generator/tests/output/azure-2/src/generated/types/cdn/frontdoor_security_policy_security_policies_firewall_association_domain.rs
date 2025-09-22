@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FrontdoorSecurityPolicySecurityPoliciesFirewallAssociationDomain {
     /// Is the Front Door Custom Domain/Endpoint activated?
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "active")]
-    pub r#active: Box<Option<bool>>,
+    pub r#active: Option<bool>,
     /// The Resource Id of the **Front Door Custom Domain** or **Front Door Endpoint** that should be bound to this Front Door Security Policy. Changing this forces a new Front Door Security Policy to be created.
     #[builder(into)]
     #[serde(rename = "cdnFrontdoorDomainId")]
-    pub r#cdn_frontdoor_domain_id: Box<String>,
+    pub r#cdn_frontdoor_domain_id: String,
 }

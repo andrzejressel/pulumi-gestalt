@@ -6,5 +6,5 @@ pub struct DataTransferConfigEncryptionConfiguration {
     /// The name of the KMS key used for encrypting BigQuery data.
     #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<String>,
+    pub r#kms_key_name: String,
 }

@@ -6,17 +6,17 @@ pub struct AgentKnowledgeBaseStorageConfigurationPineconeConfiguration {
     /// Endpoint URL for your index management page.
     #[builder(into)]
     #[serde(rename = "connectionString")]
-    pub r#connection_string: Box<String>,
+    pub r#connection_string: String,
     /// ARN of the secret that you created in AWS Secrets Manager that is linked to your Pinecone API key.
     #[builder(into)]
     #[serde(rename = "credentialsSecretArn")]
-    pub r#credentials_secret_arn: Box<String>,
+    pub r#credentials_secret_arn: String,
     /// The names of the fields to which to map information about the vector store. This block supports the following arguments:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fieldMapping")]
-    pub r#field_mapping: Box<Option<super::super::types::bedrock::AgentKnowledgeBaseStorageConfigurationPineconeConfigurationFieldMapping>>,
+    pub r#field_mapping: Option<Box<super::super::types::bedrock::AgentKnowledgeBaseStorageConfigurationPineconeConfigurationFieldMapping>>,
     /// Namespace to be used to write new data to your database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<Option<String>>,
+    pub r#namespace: Option<String>,
 }

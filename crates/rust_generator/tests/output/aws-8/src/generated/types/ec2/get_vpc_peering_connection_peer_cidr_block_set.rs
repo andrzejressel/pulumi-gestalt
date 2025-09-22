@@ -6,5 +6,5 @@ pub struct GetVpcPeeringConnectionPeerCidrBlockSet {
     /// Primary CIDR block of the requester VPC of the specific VPC Peering Connection to retrieve.
     #[builder(into)]
     #[serde(rename = "cidrBlock")]
-    pub r#cidr_block: Box<String>,
+    pub r#cidr_block: String,
 }

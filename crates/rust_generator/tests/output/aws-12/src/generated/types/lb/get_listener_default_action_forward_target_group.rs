@@ -6,8 +6,8 @@ pub struct GetListenerDefaultActionForwardTargetGroup {
     /// ARN of the listener. Required if `load_balancer_arn` and `port` is not set.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<i32>,
+    pub r#weight: i32,
 }

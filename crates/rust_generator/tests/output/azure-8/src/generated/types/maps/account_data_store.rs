@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountDataStore {
     /// The ID of the Storage Account that should be linked to this Azure Maps Account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageAccountId")]
-    pub r#storage_account_id: Box<Option<String>>,
+    pub r#storage_account_id: Option<String>,
     /// The name given to the linked Storage Account.
     #[builder(into)]
     #[serde(rename = "uniqueName")]
-    pub r#unique_name: Box<String>,
+    pub r#unique_name: String,
 }

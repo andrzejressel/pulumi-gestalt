@@ -5,12 +5,12 @@
 pub struct SecretReplication {
     /// The Secret will automatically be replicated without any restrictions.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "auto")]
-    pub r#auto: Box<Option<super::super::types::secretmanager::SecretReplicationAuto>>,
+    pub r#auto: Option<Box<super::super::types::secretmanager::SecretReplicationAuto>>,
     /// The Secret will be replicated to the regions specified by the user.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userManaged")]
-    pub r#user_managed: Box<Option<super::super::types::secretmanager::SecretReplicationUserManaged>>,
+    pub r#user_managed: Option<Box<super::super::types::secretmanager::SecretReplicationUserManaged>>,
 }

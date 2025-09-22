@@ -14,13 +14,13 @@ pub struct ByteMatchSetByteMatchTuple {
     /// for all supported values.
     #[builder(into)]
     #[serde(rename = "positionalConstraint")]
-    pub r#positional_constraint: Box<String>,
+    pub r#positional_constraint: String,
     /// The value that you want to search for within the field specified by `field_to_match`, e.g., `badrefer1`.
     /// See [docs](https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ByteMatchTuple.html)
     /// for all supported values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetString")]
-    pub r#target_string: Box<Option<String>>,
+    pub r#target_string: Option<String>,
     /// Text transformations used to eliminate unusual formatting that attackers use in web requests in an effort to bypass AWS WAF.
     /// If you specify a transformation, AWS WAF performs the transformation on `target_string` before inspecting a request for a match.
     /// e.g., `CMD_LINE`, `HTML_ENTITY_DECODE` or `NONE`.
@@ -28,5 +28,5 @@ pub struct ByteMatchSetByteMatchTuple {
     /// for all supported values.
     #[builder(into)]
     #[serde(rename = "textTransformation")]
-    pub r#text_transformation: Box<String>,
+    pub r#text_transformation: String,
 }

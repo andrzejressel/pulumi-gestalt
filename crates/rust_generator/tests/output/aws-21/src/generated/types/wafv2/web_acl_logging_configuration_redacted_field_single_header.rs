@@ -6,5 +6,5 @@ pub struct WebAclLoggingConfigurationRedactedFieldSingleHeader {
     /// Name of the query header to redact. This setting must be provided in lowercase characters.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

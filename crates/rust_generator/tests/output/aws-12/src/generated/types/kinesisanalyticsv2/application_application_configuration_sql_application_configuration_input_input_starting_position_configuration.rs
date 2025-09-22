@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputStartingPositionConfiguration {
     /// The starting position on the stream. Valid values: `LAST_STOPPED_POINT`, `NOW`, `TRIM_HORIZON`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputStartingPosition")]
-    pub r#input_starting_position: Box<Option<String>>,
+    pub r#input_starting_position: Option<String>,
 }

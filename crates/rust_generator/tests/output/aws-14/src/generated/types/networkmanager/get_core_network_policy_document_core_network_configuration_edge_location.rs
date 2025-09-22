@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetCoreNetworkPolicyDocumentCoreNetworkConfigurationEdgeLocation {
     /// ASN of the Core Network Edge in an AWS Region. By default, the ASN will be a single integer automatically assigned from `asn_ranges`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "asn")]
-    pub r#asn: Box<Option<String>>,
+    pub r#asn: Option<String>,
     /// The local CIDR blocks for this Core Network Edge for AWS Transit Gateway Connect attachments. By default, this CIDR block will be one or more optional IPv4 and IPv6 CIDR prefixes auto-assigned from `inside_cidr_blocks`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "insideCidrBlocks")]
-    pub r#inside_cidr_blocks: Box<Option<Vec<String>>>,
+    pub r#inside_cidr_blocks: Option<Vec<String>>,
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
 }

@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CustomHostnameSslSetting {
     /// List of SSL/TLS ciphers to associate with this certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ciphers")]
-    pub r#ciphers: Box<Option<Vec<String>>>,
+    pub r#ciphers: Option<Vec<String>>,
     /// Whether early hints should be supported. Available values: `on`, `off`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "earlyHints")]
-    pub r#early_hints: Box<Option<String>>,
+    pub r#early_hints: Option<String>,
     /// Whether HTTP2 should be supported. Available values: `on`, `off`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "http2")]
-    pub r#http_2: Box<Option<String>>,
+    pub r#http_2: Option<String>,
     /// Lowest version of TLS this certificate should support. Available values: `1.0`, `1.1`, `1.2`, `1.3`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minTlsVersion")]
-    pub r#min_tls_version: Box<Option<String>>,
+    pub r#min_tls_version: Option<String>,
     /// Whether TLSv1.3 should be supported. Available values: `on`, `off`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tls13")]
-    pub r#tls_13: Box<Option<String>>,
+    pub r#tls_13: Option<String>,
 }

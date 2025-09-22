@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigShieldedInstanceConfig {
     /// Defines whether instances have [Integrity Monitoring](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#integrity-monitoring) enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableIntegrityMonitoring")]
-    pub r#enable_integrity_monitoring: Box<Option<bool>>,
+    pub r#enable_integrity_monitoring: Option<bool>,
     /// Defines whether instances have [Secure Boot](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#secure-boot) enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableSecureBoot")]
-    pub r#enable_secure_boot: Box<Option<bool>>,
+    pub r#enable_secure_boot: Option<bool>,
     /// Defines whether instances have the [vTPM](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#vtpm) enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableVtpm")]
-    pub r#enable_vtpm: Box<Option<bool>>,
+    pub r#enable_vtpm: Option<bool>,
 }

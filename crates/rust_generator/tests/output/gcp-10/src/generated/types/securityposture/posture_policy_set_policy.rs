@@ -5,20 +5,20 @@
 pub struct PosturePolicySetPolicy {
     /// Mapping for policy to security standards and controls.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "complianceStandards")]
-    pub r#compliance_standards: Box<Option<Vec<super::super::types::securityposture::PosturePolicySetPolicyComplianceStandard>>>,
+    pub r#compliance_standards: Option<Vec<super::super::types::securityposture::PosturePolicySetPolicyComplianceStandard>>,
     /// Policy constraint definition.It can have the definition of one of following constraints: orgPolicyConstraint orgPolicyConstraintCustom securityHealthAnalyticsModule securityHealthAnalyticsCustomModule
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "constraint")]
     pub r#constraint: Box<super::super::types::securityposture::PosturePolicySetPolicyConstraint>,
     /// Description of the policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// ID of the policy.
     #[builder(into)]
     #[serde(rename = "policyId")]
-    pub r#policy_id: Box<String>,
+    pub r#policy_id: String,
 }

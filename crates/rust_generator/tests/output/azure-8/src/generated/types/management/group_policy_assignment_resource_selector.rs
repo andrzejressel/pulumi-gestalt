@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupPolicyAssignmentResourceSelector {
     /// Specifies a name for the resource selector.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// One or more `resource_selector` block as defined below.
     #[builder(into)]
     #[serde(rename = "selectors")]
-    pub r#selectors: Box<Vec<super::super::types::management::GroupPolicyAssignmentResourceSelectorSelector>>,
+    pub r#selectors: Vec<super::super::types::management::GroupPolicyAssignmentResourceSelectorSelector>,
 }

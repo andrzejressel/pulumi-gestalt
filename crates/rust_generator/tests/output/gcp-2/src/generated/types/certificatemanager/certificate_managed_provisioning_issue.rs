@@ -6,11 +6,11 @@ pub struct CertificateManagedProvisioningIssue {
     /// Human readable explanation about the issue. Provided to help address
     /// the configuration issues.
     /// Not guaranteed to be stable. For programmatic access use 'reason' field.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "details")]
-    pub r#details: Box<Option<String>>,
+    pub r#details: Option<String>,
     /// Reason for provisioning failures.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reason")]
-    pub r#reason: Box<Option<String>>,
+    pub r#reason: Option<String>,
 }

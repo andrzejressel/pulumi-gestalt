@@ -5,7 +5,7 @@
 pub struct V2ModelsSlotTypeExternalSourceSetting {
     /// Settings required for a slot type based on a grammar that you provide.
     /// See `grammar_slot_type_setting` argument reference below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "grammarSlotTypeSetting")]
-    pub r#grammar_slot_type_setting: Box<Option<super::super::types::lex::V2ModelsSlotTypeExternalSourceSettingGrammarSlotTypeSetting>>,
+    pub r#grammar_slot_type_setting: Option<Box<super::super::types::lex::V2ModelsSlotTypeExternalSourceSettingGrammarSlotTypeSetting>>,
 }

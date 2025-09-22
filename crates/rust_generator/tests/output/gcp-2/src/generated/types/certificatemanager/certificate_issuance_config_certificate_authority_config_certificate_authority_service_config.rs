@@ -10,5 +10,5 @@ pub struct CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthori
     /// - - -
     #[builder(into)]
     #[serde(rename = "caPool")]
-    pub r#ca_pool: Box<String>,
+    pub r#ca_pool: String,
 }

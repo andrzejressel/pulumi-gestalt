@@ -6,13 +6,13 @@ pub struct AuthorityAccessUrl {
     /// (Output)
     /// The URL where this CertificateAuthority's CA certificate is published. This will only be
     /// set for CAs that have been activated.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "caCertificateAccessUrl")]
-    pub r#ca_certificate_access_url: Box<Option<String>>,
+    pub r#ca_certificate_access_url: Option<String>,
     /// (Output)
     /// The URL where this CertificateAuthority's CRLs are published. This will only be set for
     /// CAs that have been activated.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "crlAccessUrls")]
-    pub r#crl_access_urls: Box<Option<Vec<String>>>,
+    pub r#crl_access_urls: Option<Vec<String>>,
 }

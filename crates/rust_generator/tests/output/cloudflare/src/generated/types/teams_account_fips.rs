@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TeamsAccountFips {
     /// Only allow FIPS-compliant TLS configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Box<Option<bool>>,
+    pub r#tls: Option<bool>,
 }

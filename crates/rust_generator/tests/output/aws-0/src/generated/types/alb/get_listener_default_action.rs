@@ -5,26 +5,26 @@
 pub struct GetListenerDefaultAction {
     #[builder(into)]
     #[serde(rename = "authenticateCognitos")]
-    pub r#authenticate_cognitos: Box<Vec<super::super::types::alb::GetListenerDefaultActionAuthenticateCognito>>,
+    pub r#authenticate_cognitos: Vec<super::super::types::alb::GetListenerDefaultActionAuthenticateCognito>,
     #[builder(into)]
     #[serde(rename = "authenticateOidcs")]
-    pub r#authenticate_oidcs: Box<Vec<super::super::types::alb::GetListenerDefaultActionAuthenticateOidc>>,
+    pub r#authenticate_oidcs: Vec<super::super::types::alb::GetListenerDefaultActionAuthenticateOidc>,
     #[builder(into)]
     #[serde(rename = "fixedResponses")]
-    pub r#fixed_responses: Box<Vec<super::super::types::alb::GetListenerDefaultActionFixedResponse>>,
+    pub r#fixed_responses: Vec<super::super::types::alb::GetListenerDefaultActionFixedResponse>,
     #[builder(into)]
     #[serde(rename = "forwards")]
-    pub r#forwards: Box<Vec<super::super::types::alb::GetListenerDefaultActionForward>>,
+    pub r#forwards: Vec<super::super::types::alb::GetListenerDefaultActionForward>,
     #[builder(into)]
     #[serde(rename = "order")]
-    pub r#order: Box<i32>,
+    pub r#order: i32,
     #[builder(into)]
     #[serde(rename = "redirects")]
-    pub r#redirects: Box<Vec<super::super::types::alb::GetListenerDefaultActionRedirect>>,
+    pub r#redirects: Vec<super::super::types::alb::GetListenerDefaultActionRedirect>,
     #[builder(into)]
     #[serde(rename = "targetGroupArn")]
-    pub r#target_group_arn: Box<String>,
+    pub r#target_group_arn: String,
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

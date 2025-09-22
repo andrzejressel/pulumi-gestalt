@@ -6,9 +6,9 @@ pub struct GetLinuxWebAppLogApplicationLog {
     /// A `azure_blob_storage` block as defined above.
     #[builder(into)]
     #[serde(rename = "azureBlobStorages")]
-    pub r#azure_blob_storages: Box<Vec<super::super::types::appservice::GetLinuxWebAppLogApplicationLogAzureBlobStorage>>,
+    pub r#azure_blob_storages: Vec<super::super::types::appservice::GetLinuxWebAppLogApplicationLogAzureBlobStorage>,
     /// The logging level.
     #[builder(into)]
     #[serde(rename = "fileSystemLevel")]
-    pub r#file_system_level: Box<String>,
+    pub r#file_system_level: String,
 }

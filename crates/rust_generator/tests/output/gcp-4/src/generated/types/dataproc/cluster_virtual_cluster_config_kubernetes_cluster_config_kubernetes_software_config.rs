@@ -8,10 +8,10 @@ pub struct ClusterVirtualClusterConfigKubernetesClusterConfigKubernetesSoftwareC
     /// * **NOTE** : `component_version[SPARK]` is mandatory to set, or the creation of the cluster will fail.
     #[builder(into)]
     #[serde(rename = "componentVersion")]
-    pub r#component_version: Box<std::collections::HashMap<String, String>>,
+    pub r#component_version: std::collections::HashMap<String, String>,
     /// The properties to set on daemon config files. Property keys are specified in prefix:property format, 
     /// for example spark:spark.kubernetes.container.image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#properties: Option<std::collections::HashMap<String, String>>,
 }

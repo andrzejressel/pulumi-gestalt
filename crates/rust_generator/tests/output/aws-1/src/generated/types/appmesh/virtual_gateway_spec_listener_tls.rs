@@ -10,9 +10,9 @@ pub struct VirtualGatewaySpecListenerTls {
     /// Listener's TLS mode. Valid values: `DISABLED`, `PERMISSIVE`, `STRICT`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
     /// Listener's Transport Layer Security (TLS) validation context.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "validation")]
-    pub r#validation: Box<Option<super::super::types::appmesh::VirtualGatewaySpecListenerTlsValidation>>,
+    pub r#validation: Option<Box<super::super::types::appmesh::VirtualGatewaySpecListenerTlsValidation>>,
 }

@@ -6,9 +6,9 @@ pub struct HttpRouteRuleMatchHeaderRangeMatch {
     /// End of the range (exclusive).
     #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<i32>,
+    pub r#end: i32,
     /// Start of the range (inclusive).
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<i32>,
+    pub r#start: i32,
 }

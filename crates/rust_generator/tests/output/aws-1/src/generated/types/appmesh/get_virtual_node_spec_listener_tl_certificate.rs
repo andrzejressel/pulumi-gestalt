@@ -5,11 +5,11 @@
 pub struct GetVirtualNodeSpecListenerTlCertificate {
     #[builder(into)]
     #[serde(rename = "acms")]
-    pub r#acms: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlCertificateAcm>>,
+    pub r#acms: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlCertificateAcm>,
     #[builder(into)]
     #[serde(rename = "files")]
-    pub r#files: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlCertificateFile>>,
+    pub r#files: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlCertificateFile>,
     #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlCertificateSd>>,
+    pub r#sds: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlCertificateSd>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationSetDeliveryOptions {
     /// The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxDeliverySeconds")]
-    pub r#max_delivery_seconds: Box<Option<i32>>,
+    pub r#max_delivery_seconds: Option<i32>,
     /// The name of the dedicated IP pool to associate with the configuration set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sendingPoolName")]
-    pub r#sending_pool_name: Box<Option<String>>,
+    pub r#sending_pool_name: Option<String>,
     /// Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). Valid values: `REQUIRE`, `OPTIONAL`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tlsPolicy")]
-    pub r#tls_policy: Box<Option<String>>,
+    pub r#tls_policy: Option<String>,
 }

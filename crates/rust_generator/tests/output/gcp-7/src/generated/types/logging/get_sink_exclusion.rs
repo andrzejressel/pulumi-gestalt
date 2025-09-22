@@ -6,17 +6,17 @@ pub struct GetSinkExclusion {
     /// A description of this exclusion.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// Whether this exclusion is disabled and it does not exclude any log entries.
     #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<bool>,
+    pub r#disabled: bool,
     /// An advanced logs filter that matches the log entries to be excluded.
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<String>,
+    pub r#filter: String,
     /// A client-assigned identifier, such as `load-balancer-exclusion`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

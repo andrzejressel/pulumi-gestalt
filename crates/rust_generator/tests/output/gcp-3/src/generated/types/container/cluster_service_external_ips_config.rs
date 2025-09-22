@@ -6,5 +6,5 @@ pub struct ClusterServiceExternalIpsConfig {
     /// Controls whether external ips specified by a service will be allowed. It is enabled by default.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

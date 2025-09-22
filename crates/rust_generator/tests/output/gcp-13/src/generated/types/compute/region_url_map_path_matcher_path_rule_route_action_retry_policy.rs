@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy {
     /// Specifies the allowed number retries. This number must be > 0. If not specified, defaults to 1.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numRetries")]
-    pub r#num_retries: Box<Option<i32>>,
+    pub r#num_retries: Option<i32>,
     /// Specifies a non-zero timeout per retry attempt.
     /// If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set,
     /// will use the largest timeout among all backend services associated with the route.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "perTryTimeout")]
-    pub r#per_try_timeout: Box<Option<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicyPerTryTimeout>>,
+    pub r#per_try_timeout: Option<Box<super::super::types::compute::RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicyPerTryTimeout>>,
     /// Specifies one or more conditions when this retry policy applies.
     /// Valid values are listed below. Only the following codes are supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true: cancelled, deadline-exceeded, internal, resource-exhausted, unavailable.
     /// - 5xx : retry is attempted if the instance or endpoint responds with any 5xx response code, or if the instance or endpoint does not respond at all. For example, disconnects, reset, read timeout, connection failure, and refused streams.
@@ -26,7 +26,7 @@ pub struct RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicy {
     /// - internal :  a retry is attempted if the gRPC status code in the response header is set to internal.
     /// - resource-exhausted : a retry is attempted if the gRPC status code in the response header is set to resource-exhausted.
     /// - unavailable : a retry is attempted if the gRPC status code in the response header is set to unavailable.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retryConditions")]
-    pub r#retry_conditions: Box<Option<Vec<String>>>,
+    pub r#retry_conditions: Option<Vec<String>>,
 }

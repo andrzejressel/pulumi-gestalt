@@ -6,17 +6,17 @@ pub struct BackupPlanAssociationRulesConfigInfo {
     /// (Output)
     /// google.rpc.Status object to store the last backup error
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastBackupErrors")]
-    pub r#last_backup_errors: Box<Option<Vec<super::super::types::backupdisasterrecovery::BackupPlanAssociationRulesConfigInfoLastBackupError>>>,
+    pub r#last_backup_errors: Option<Vec<super::super::types::backupdisasterrecovery::BackupPlanAssociationRulesConfigInfoLastBackupError>>,
     /// (Output)
     /// State of last backup taken.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastBackupState")]
-    pub r#last_backup_state: Box<Option<String>>,
+    pub r#last_backup_state: Option<String>,
     /// (Output)
     /// Backup Rule id fetched from backup plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ruleId")]
-    pub r#rule_id: Box<Option<String>>,
+    pub r#rule_id: Option<String>,
 }

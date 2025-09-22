@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ContainerCapabilities {
     /// List of linux capabilities to add.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "adds")]
-    pub r#adds: Box<Option<Vec<String>>>,
+    pub r#adds: Option<Vec<String>>,
     /// List of linux capabilities to drop.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "drops")]
-    pub r#drops: Box<Option<Vec<String>>>,
+    pub r#drops: Option<Vec<String>>,
 }

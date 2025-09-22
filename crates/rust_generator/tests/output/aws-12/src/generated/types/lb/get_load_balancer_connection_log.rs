@@ -5,11 +5,11 @@
 pub struct GetLoadBalancerConnectionLog {
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<String>,
+    pub r#prefix: String,
 }

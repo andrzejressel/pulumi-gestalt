@@ -3,9 +3,9 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSource {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "referenceId")]
-    pub r#reference_id: Box<Option<String>>,
+    pub r#reference_id: Option<String>,
     /// Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
     #[builder(into)]
     #[serde(rename = "referenceSchema")]
@@ -17,5 +17,5 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationReferen
     /// The name of the in-application table to create.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
 }

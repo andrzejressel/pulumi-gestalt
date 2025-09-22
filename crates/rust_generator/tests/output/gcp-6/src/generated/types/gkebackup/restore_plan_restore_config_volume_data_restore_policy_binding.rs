@@ -9,11 +9,11 @@ pub struct RestorePlanRestoreConfigVolumeDataRestorePolicyBinding {
     /// Possible values are: `RESTORE_VOLUME_DATA_FROM_BACKUP`, `REUSE_VOLUME_HANDLE_FROM_BACKUP`, `NO_VOLUME_DATA_RESTORATION`.
     #[builder(into)]
     #[serde(rename = "policy")]
-    pub r#policy: Box<String>,
+    pub r#policy: String,
     /// The volume type, as determined by the PVC's
     /// bound PV, to apply the policy to.
     /// Possible values are: `GCE_PERSISTENT_DISK`.
     #[builder(into)]
     #[serde(rename = "volumeType")]
-    pub r#volume_type: Box<String>,
+    pub r#volume_type: String,
 }

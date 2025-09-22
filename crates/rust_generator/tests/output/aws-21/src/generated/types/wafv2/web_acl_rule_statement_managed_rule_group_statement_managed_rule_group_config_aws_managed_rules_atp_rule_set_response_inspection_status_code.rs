@@ -6,9 +6,9 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAws
     /// Status codes in the response that indicate a failed login attempt.
     #[builder(into)]
     #[serde(rename = "failureCodes")]
-    pub r#failure_codes: Box<Vec<i32>>,
+    pub r#failure_codes: Vec<i32>,
     /// Status codes in the response that indicate a successful login attempt.
     #[builder(into)]
     #[serde(rename = "successCodes")]
-    pub r#success_codes: Box<Vec<i32>>,
+    pub r#success_codes: Vec<i32>,
 }

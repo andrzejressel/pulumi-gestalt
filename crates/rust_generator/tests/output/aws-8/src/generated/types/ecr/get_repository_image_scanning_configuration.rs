@@ -6,5 +6,5 @@ pub struct GetRepositoryImageScanningConfiguration {
     /// Whether images are scanned after being pushed to the repository.
     #[builder(into)]
     #[serde(rename = "scanOnPush")]
-    pub r#scan_on_push: Box<bool>,
+    pub r#scan_on_push: bool,
 }

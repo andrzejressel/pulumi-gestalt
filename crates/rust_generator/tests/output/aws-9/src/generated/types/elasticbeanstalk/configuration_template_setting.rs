@@ -6,14 +6,14 @@ pub struct ConfigurationTemplateSetting {
     /// A unique name for this Template.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
-    #[builder(into, default)]
+    pub r#namespace: String,
+    #[builder(into)]
     #[serde(rename = "resource")]
-    pub r#resource: Box<Option<String>>,
+    pub r#resource: Option<String>,
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

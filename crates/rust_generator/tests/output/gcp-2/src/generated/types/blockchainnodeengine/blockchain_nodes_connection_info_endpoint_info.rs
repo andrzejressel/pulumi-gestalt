@@ -5,12 +5,12 @@
 pub struct BlockchainNodesConnectionInfoEndpointInfo {
     /// (Output)
     /// The assigned URL for the node JSON-RPC API endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "jsonRpcApiEndpoint")]
-    pub r#json_rpc_api_endpoint: Box<Option<String>>,
+    pub r#json_rpc_api_endpoint: Option<String>,
     /// (Output)
     /// The assigned URL for the node WebSockets API endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "websocketsApiEndpoint")]
-    pub r#websockets_api_endpoint: Box<Option<String>>,
+    pub r#websockets_api_endpoint: Option<String>,
 }

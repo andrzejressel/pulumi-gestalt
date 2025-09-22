@@ -5,8 +5,8 @@
 pub struct GetDevEnvironmentRepository {
     #[builder(into)]
     #[serde(rename = "branchName")]
-    pub r#branch_name: Box<String>,
+    pub r#branch_name: String,
     #[builder(into)]
     #[serde(rename = "repositoryName")]
-    pub r#repository_name: Box<String>,
+    pub r#repository_name: String,
 }

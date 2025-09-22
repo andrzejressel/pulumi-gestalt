@@ -9,23 +9,23 @@ pub struct BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNode
     /// Updating this field may impact scalability by changing the amount of
     /// traffic produced by image pulls.
     /// Defaults to 10.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "registryBurst")]
-    pub r#registry_burst: Box<Option<i32>>,
+    pub r#registry_burst: Option<i32>,
     /// The limit of registry pulls per second.
     /// Setting this value to 0 means no limit.
     /// Updating this field may impact scalability by changing the amount of
     /// traffic produced by image pulls.
     /// Defaults to 5.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "registryPullQps")]
-    pub r#registry_pull_qps: Box<Option<i32>>,
+    pub r#registry_pull_qps: Option<i32>,
     /// Prevents the Kubelet from pulling multiple images at a time.
     /// We recommend *not* changing the default value on nodes that run docker
     /// daemon with version  < 1.9 or an Another Union File System (Aufs) storage
     /// backend. Issue https://github.com/kubernetes/kubernetes/issues/10959 has
     /// more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serializeImagePullsDisabled")]
-    pub r#serialize_image_pulls_disabled: Box<Option<bool>>,
+    pub r#serialize_image_pulls_disabled: Option<bool>,
 }

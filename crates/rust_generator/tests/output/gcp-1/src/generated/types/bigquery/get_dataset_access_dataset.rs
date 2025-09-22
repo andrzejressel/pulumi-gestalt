@@ -6,10 +6,10 @@ pub struct GetDatasetAccessDataset {
     /// The dataset this entry applies to
     #[builder(into)]
     #[serde(rename = "datasets")]
-    pub r#datasets: Box<Vec<super::super::types::bigquery::GetDatasetAccessDatasetDataset>>,
+    pub r#datasets: Vec<super::super::types::bigquery::GetDatasetAccessDatasetDataset>,
     /// Which resources in the dataset this entry applies to. Currently, only views are supported,
     /// but additional target types may be added in the future. Possible values: VIEWS
     #[builder(into)]
     #[serde(rename = "targetTypes")]
-    pub r#target_types: Box<Vec<String>>,
+    pub r#target_types: Vec<String>,
 }

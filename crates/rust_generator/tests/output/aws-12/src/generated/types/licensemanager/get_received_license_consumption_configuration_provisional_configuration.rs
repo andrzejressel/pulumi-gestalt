@@ -6,5 +6,5 @@ pub struct GetReceivedLicenseConsumptionConfigurationProvisionalConfiguration {
     /// Maximum time for the provisional configuration, in minutes.
     #[builder(into)]
     #[serde(rename = "maxTimeToLiveInMinutes")]
-    pub r#max_time_to_live_in_minutes: Box<i32>,
+    pub r#max_time_to_live_in_minutes: i32,
 }

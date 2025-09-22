@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterParameterGroupParameter {
     /// Valid values are `immediate` and `pending-reboot`. Defaults to `pending-reboot`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applyMethod")]
-    pub r#apply_method: Box<Option<String>>,
+    pub r#apply_method: Option<String>,
     /// The name of the neptune parameter.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value of the neptune parameter.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

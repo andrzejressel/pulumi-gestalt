@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterIngressProfile {
     /// The IP Address the Ingress Profile is associated with.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<Option<String>>,
+    pub r#ip_address: Option<String>,
     /// The name of the Azure Red Hat OpenShift Cluster to create. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Cluster Ingress visibility. Supported values are `Public` and `Private`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "visibility")]
-    pub r#visibility: Box<String>,
+    pub r#visibility: String,
 }

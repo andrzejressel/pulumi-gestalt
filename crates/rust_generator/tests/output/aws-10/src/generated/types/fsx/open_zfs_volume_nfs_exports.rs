@@ -6,5 +6,5 @@ pub struct OpenZfsVolumeNfsExports {
     /// A list of configuration objects that contain the client and options for mounting the OpenZFS file system. Maximum of 25 items. See `client_configurations` Block below for details.
     #[builder(into)]
     #[serde(rename = "clientConfigurations")]
-    pub r#client_configurations: Box<Vec<super::super::types::fsx::OpenZfsVolumeNfsExportsClientConfiguration>>,
+    pub r#client_configurations: Vec<super::super::types::fsx::OpenZfsVolumeNfsExportsClientConfiguration>,
 }

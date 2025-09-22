@@ -6,9 +6,9 @@ pub struct SqlPoolRestore {
     /// Specifies the Snapshot time to restore formatted as an RFC3339 date string. Changing this forces a new Synapse SQL Pool to be created.
     #[builder(into)]
     #[serde(rename = "pointInTime")]
-    pub r#point_in_time: Box<String>,
+    pub r#point_in_time: String,
     /// The ID of the Synapse SQL Pool or SQL Database which is to restore. Changing this forces a new Synapse SQL Pool to be created.
     #[builder(into)]
     #[serde(rename = "sourceDatabaseId")]
-    pub r#source_database_id: Box<String>,
+    pub r#source_database_id: String,
 }

@@ -6,9 +6,9 @@ pub struct ReplicationConfigurationReplicationConfigurationRuleDestination {
     /// A Region to replicate to.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
     /// The account ID of the destination registry to replicate to.
     #[builder(into)]
     #[serde(rename = "registryId")]
-    pub r#registry_id: Box<String>,
+    pub r#registry_id: String,
 }

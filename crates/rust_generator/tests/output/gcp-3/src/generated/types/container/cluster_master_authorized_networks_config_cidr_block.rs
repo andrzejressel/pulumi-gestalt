@@ -7,9 +7,9 @@ pub struct ClusterMasterAuthorizedNetworksConfigCidrBlock {
     /// Must be specified in CIDR notation.
     #[builder(into)]
     #[serde(rename = "cidrBlock")]
-    pub r#cidr_block: Box<String>,
+    pub r#cidr_block: String,
     /// Field for users to identify CIDR blocks.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<Option<String>>,
+    pub r#display_name: Option<String>,
 }

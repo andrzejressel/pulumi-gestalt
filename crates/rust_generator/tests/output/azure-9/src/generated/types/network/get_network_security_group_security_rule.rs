@@ -6,63 +6,63 @@ pub struct GetNetworkSecurityGroupSecurityRule {
     /// Is network traffic is allowed or denied?
     #[builder(into)]
     #[serde(rename = "access")]
-    pub r#access: Box<String>,
+    pub r#access: String,
     /// The description for this rule.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// CIDR or destination IP range or * to match any IP.
     #[builder(into)]
     #[serde(rename = "destinationAddressPrefix")]
-    pub r#destination_address_prefix: Box<String>,
+    pub r#destination_address_prefix: String,
     /// A list of CIDRs or destination IP ranges.
     #[builder(into)]
     #[serde(rename = "destinationAddressPrefixes")]
-    pub r#destination_address_prefixes: Box<Vec<String>>,
+    pub r#destination_address_prefixes: Vec<String>,
     /// A List of destination Application Security Group IDs
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destinationApplicationSecurityGroupIds")]
-    pub r#destination_application_security_group_ids: Box<Option<Vec<String>>>,
+    pub r#destination_application_security_group_ids: Option<Vec<String>>,
     /// The Destination Port or Range.
     #[builder(into)]
     #[serde(rename = "destinationPortRange")]
-    pub r#destination_port_range: Box<String>,
+    pub r#destination_port_range: String,
     #[builder(into)]
     #[serde(rename = "destinationPortRanges")]
-    pub r#destination_port_ranges: Box<Vec<String>>,
+    pub r#destination_port_ranges: Vec<String>,
     /// The direction specifies if rule will be evaluated on incoming or outgoing traffic.
     #[builder(into)]
     #[serde(rename = "direction")]
-    pub r#direction: Box<String>,
+    pub r#direction: String,
     /// Specifies the Name of the Network Security Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The priority of the rule
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
     /// The network protocol this rule applies to.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     /// CIDR or source IP range or * to match any IP.
     #[builder(into)]
     #[serde(rename = "sourceAddressPrefix")]
-    pub r#source_address_prefix: Box<String>,
+    pub r#source_address_prefix: String,
     /// A list of CIDRs or source IP ranges.
     #[builder(into)]
     #[serde(rename = "sourceAddressPrefixes")]
-    pub r#source_address_prefixes: Box<Vec<String>>,
+    pub r#source_address_prefixes: Vec<String>,
     /// A List of source Application Security Group IDs
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceApplicationSecurityGroupIds")]
-    pub r#source_application_security_group_ids: Box<Option<Vec<String>>>,
+    pub r#source_application_security_group_ids: Option<Vec<String>>,
     /// The Source Port or Range.
     #[builder(into)]
     #[serde(rename = "sourcePortRange")]
-    pub r#source_port_range: Box<String>,
+    pub r#source_port_range: String,
     #[builder(into)]
     #[serde(rename = "sourcePortRanges")]
-    pub r#source_port_ranges: Box<Vec<String>>,
+    pub r#source_port_ranges: Vec<String>,
 }

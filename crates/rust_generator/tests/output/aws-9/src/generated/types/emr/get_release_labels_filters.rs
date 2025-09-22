@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetReleaseLabelsFilters {
     /// Optional release label application filter. For example, `Spark@2.1.0` or `Spark`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "application")]
-    pub r#application: Box<Option<String>>,
+    pub r#application: Option<String>,
     /// Optional release label version prefix filter. For example, `emr-5`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
 }

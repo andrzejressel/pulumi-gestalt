@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RepositoryDockerConfig {
     /// The repository which enabled this flag prevents all tags from being modified, moved or deleted. This does not prevent tags from being created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "immutableTags")]
-    pub r#immutable_tags: Box<Option<bool>>,
+    pub r#immutable_tags: Option<bool>,
 }

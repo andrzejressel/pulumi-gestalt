@@ -7,22 +7,22 @@ pub struct BareMetalClusterNetworkConfig {
     /// Load Balancing with BGP or the egress NAT gateway.
     /// Setting configuration for advanced networking features will automatically
     /// set this flag.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "advancedNetworking")]
-    pub r#advanced_networking: Box<Option<bool>>,
+    pub r#advanced_networking: Option<bool>,
     /// A nested object resource.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "islandModeCidr")]
-    pub r#island_mode_cidr: Box<Option<super::super::types::gkeonprem::BareMetalClusterNetworkConfigIslandModeCidr>>,
+    pub r#island_mode_cidr: Option<Box<super::super::types::gkeonprem::BareMetalClusterNetworkConfigIslandModeCidr>>,
     /// Configuration for multiple network interfaces.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "multipleNetworkInterfacesConfig")]
-    pub r#multiple_network_interfaces_config: Box<Option<super::super::types::gkeonprem::BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfig>>,
+    pub r#multiple_network_interfaces_config: Option<Box<super::super::types::gkeonprem::BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfig>>,
     /// Configuration for SR-IOV.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "srIovConfig")]
-    pub r#sr_iov_config: Box<Option<super::super::types::gkeonprem::BareMetalClusterNetworkConfigSrIovConfig>>,
+    pub r#sr_iov_config: Option<Box<super::super::types::gkeonprem::BareMetalClusterNetworkConfigSrIovConfig>>,
 }

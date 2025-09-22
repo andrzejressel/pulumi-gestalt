@@ -8,5 +8,5 @@ pub struct RegionalSecretTopic {
     /// Agent service account must have pubsub.publisher permissions on the topic.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -8,5 +8,5 @@ pub struct ResponsePlanIncidentTemplateNotificationTarget {
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "snsTopicArn")]
-    pub r#sns_topic_arn: Box<String>,
+    pub r#sns_topic_arn: String,
 }

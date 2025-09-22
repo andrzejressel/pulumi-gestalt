@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfigurationCheckCertificateRevocationStatus {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "revokedStatusAction")]
-    pub r#revoked_status_action: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#revoked_status_action: Option<String>,
+    #[builder(into)]
     #[serde(rename = "unknownStatusAction")]
-    pub r#unknown_status_action: Box<Option<String>>,
+    pub r#unknown_status_action: Option<String>,
 }

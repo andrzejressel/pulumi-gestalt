@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScheduleFlexibleTimeWindow {
     /// Maximum time window during which a schedule can be invoked. Ranges from `1` to `1440` minutes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximumWindowInMinutes")]
-    pub r#maximum_window_in_minutes: Box<Option<i32>>,
+    pub r#maximum_window_in_minutes: Option<i32>,
     /// Determines whether the schedule is invoked within a flexible time window. One of: `OFF`, `FLEXIBLE`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

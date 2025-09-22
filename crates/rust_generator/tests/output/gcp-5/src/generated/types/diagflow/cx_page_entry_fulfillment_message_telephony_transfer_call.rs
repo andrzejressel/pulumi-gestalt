@@ -6,5 +6,5 @@ pub struct CxPageEntryFulfillmentMessageTelephonyTransferCall {
     /// Transfer the call to a phone number in E.164 format.
     #[builder(into)]
     #[serde(rename = "phoneNumber")]
-    pub r#phone_number: Box<String>,
+    pub r#phone_number: String,
 }

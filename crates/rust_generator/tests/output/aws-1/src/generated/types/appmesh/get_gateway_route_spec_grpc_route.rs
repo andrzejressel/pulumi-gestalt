@@ -5,8 +5,8 @@
 pub struct GetGatewayRouteSpecGrpcRoute {
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecGrpcRouteAction>>,
+    pub r#actions: Vec<super::super::types::appmesh::GetGatewayRouteSpecGrpcRouteAction>,
     #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecGrpcRouteMatch>>,
+    pub r#matches: Vec<super::super::types::appmesh::GetGatewayRouteSpecGrpcRouteMatch>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionTrustedKeyGroup {
     /// `true` if any of the AWS accounts listed as trusted signers have active CloudFront key pairs
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// List of nested attributes for each trusted signer
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "items")]
-    pub r#items: Box<Option<Vec<super::super::types::cloudfront::DistributionTrustedKeyGroupItem>>>,
+    pub r#items: Option<Vec<super::super::types::cloudfront::DistributionTrustedKeyGroupItem>>,
 }

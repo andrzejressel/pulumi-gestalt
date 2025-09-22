@@ -6,17 +6,17 @@ pub struct GetRouteTableRoute {
     /// The destination CIDR to which the route applies.
     #[builder(into)]
     #[serde(rename = "addressPrefix")]
-    pub r#address_prefix: Box<String>,
+    pub r#address_prefix: String,
     /// The name of the Route Table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Contains the IP address packets should be forwarded to.
     #[builder(into)]
     #[serde(rename = "nextHopInIpAddress")]
-    pub r#next_hop_in_ip_address: Box<String>,
+    pub r#next_hop_in_ip_address: String,
     /// The type of Azure hop the packet should be sent to.
     #[builder(into)]
     #[serde(rename = "nextHopType")]
-    pub r#next_hop_type: Box<String>,
+    pub r#next_hop_type: String,
 }

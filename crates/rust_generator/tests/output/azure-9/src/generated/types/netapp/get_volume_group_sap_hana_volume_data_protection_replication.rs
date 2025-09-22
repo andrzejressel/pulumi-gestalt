@@ -6,17 +6,17 @@ pub struct GetVolumeGroupSapHanaVolumeDataProtectionReplication {
     /// The endpoint type.
     #[builder(into)]
     #[serde(rename = "endpointType")]
-    pub r#endpoint_type: Box<String>,
+    pub r#endpoint_type: String,
     /// Location of the primary volume.
     #[builder(into)]
     #[serde(rename = "remoteVolumeLocation")]
-    pub r#remote_volume_location: Box<String>,
+    pub r#remote_volume_location: String,
     /// Resource ID of the primary volume.
     #[builder(into)]
     #[serde(rename = "remoteVolumeResourceId")]
-    pub r#remote_volume_resource_id: Box<String>,
+    pub r#remote_volume_resource_id: String,
     /// Replication frequency.
     #[builder(into)]
     #[serde(rename = "replicationFrequency")]
-    pub r#replication_frequency: Box<String>,
+    pub r#replication_frequency: String,
 }

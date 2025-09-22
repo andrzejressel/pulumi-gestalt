@@ -5,14 +5,14 @@
 pub struct GetDataSetPhysicalTableMap {
     #[builder(into)]
     #[serde(rename = "customSqls")]
-    pub r#custom_sqls: Box<Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapCustomSql>>,
+    pub r#custom_sqls: Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapCustomSql>,
     #[builder(into)]
     #[serde(rename = "physicalTableMapId")]
-    pub r#physical_table_map_id: Box<String>,
+    pub r#physical_table_map_id: String,
     #[builder(into)]
     #[serde(rename = "relationalTables")]
-    pub r#relational_tables: Box<Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapRelationalTable>>,
+    pub r#relational_tables: Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapRelationalTable>,
     #[builder(into)]
     #[serde(rename = "s3Sources")]
-    pub r#s_3_sources: Box<Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapS3Source>>,
+    pub r#s_3_sources: Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapS3Source>,
 }

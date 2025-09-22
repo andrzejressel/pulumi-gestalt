@@ -6,15 +6,15 @@ pub struct GetDeploymentIdentity {
     /// List of identities attached to the NGINX Deployment.
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
     /// Type of identity attached to the NGINX Deployment.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

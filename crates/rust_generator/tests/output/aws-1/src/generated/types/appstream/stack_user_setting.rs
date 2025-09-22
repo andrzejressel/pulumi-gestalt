@@ -7,10 +7,10 @@ pub struct StackUserSetting {
     /// Valid values are `AUTO_TIME_ZONE_REDIRECTION`, `CLIPBOARD_COPY_FROM_LOCAL_DEVICE`, `CLIPBOARD_COPY_TO_LOCAL_DEVICE`, `DOMAIN_PASSWORD_SIGNIN`, `DOMAIN_SMART_CARD_SIGNIN`, `FILE_UPLOAD`, `FILE_DOWNLOAD`, or `PRINTING_TO_LOCAL_DEVICE`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// Whether the action is enabled or disabled.
     /// Valid values are `ENABLED` or `DISABLED`.
     #[builder(into)]
     #[serde(rename = "permission")]
-    pub r#permission: Box<String>,
+    pub r#permission: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListenerRuleMatch {
     /// The HTTP criteria that a rule must match.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpMatch")]
-    pub r#http_match: Box<Option<super::super::types::vpclattice::ListenerRuleMatchHttpMatch>>,
+    pub r#http_match: Option<Box<super::super::types::vpclattice::ListenerRuleMatchHttpMatch>>,
 }

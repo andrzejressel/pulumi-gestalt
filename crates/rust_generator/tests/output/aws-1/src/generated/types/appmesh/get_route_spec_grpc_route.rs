@@ -5,14 +5,14 @@
 pub struct GetRouteSpecGrpcRoute {
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteAction>>,
+    pub r#actions: Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteAction>,
     #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteMatch>>,
+    pub r#matches: Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteMatch>,
     #[builder(into)]
     #[serde(rename = "retryPolicies")]
-    pub r#retry_policies: Box<Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteRetryPolicy>>,
+    pub r#retry_policies: Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteRetryPolicy>,
     #[builder(into)]
     #[serde(rename = "timeouts")]
-    pub r#timeouts: Box<Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteTimeout>>,
+    pub r#timeouts: Vec<super::super::types::appmesh::GetRouteSpecGrpcRouteTimeout>,
 }

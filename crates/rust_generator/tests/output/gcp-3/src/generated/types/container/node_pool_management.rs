@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NodePoolManagement {
     /// Whether the nodes will be automatically repaired. Enabled by default.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoRepair")]
-    pub r#auto_repair: Box<Option<bool>>,
+    pub r#auto_repair: Option<bool>,
     /// Whether the nodes will be automatically upgraded. Enabled by default.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoUpgrade")]
-    pub r#auto_upgrade: Box<Option<bool>>,
+    pub r#auto_upgrade: Option<bool>,
 }

@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NodejsAppLayerCloudwatchConfiguration {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#enabled: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "logStreams")]
-    pub r#log_streams: Box<Option<Vec<super::super::types::opsworks::NodejsAppLayerCloudwatchConfigurationLogStream>>>,
+    pub r#log_streams: Option<Vec<super::super::types::opsworks::NodejsAppLayerCloudwatchConfigurationLogStream>>,
 }

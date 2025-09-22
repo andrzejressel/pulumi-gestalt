@@ -7,5 +7,5 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     /// Possible values are: `YEAR`, `MONTH`, `DAY_OF_MONTH`, `DAY_OF_WEEK`, `WEEK_OF_YEAR`, `HOUR_OF_DAY`.
     #[builder(into)]
     #[serde(rename = "partToExtract")]
-    pub r#part_to_extract: Box<String>,
+    pub r#part_to_extract: String,
 }

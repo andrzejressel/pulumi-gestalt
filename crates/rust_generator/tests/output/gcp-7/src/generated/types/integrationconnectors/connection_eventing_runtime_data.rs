@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionEventingRuntimeData {
     /// Events listener endpoint. The value will populated after provisioning the events listener.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventsListenerEndpoint")]
-    pub r#events_listener_endpoint: Box<Option<String>>,
+    pub r#events_listener_endpoint: Option<String>,
     /// (Output)
     /// Current status of eventing.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statuses")]
-    pub r#statuses: Box<Option<Vec<super::super::types::integrationconnectors::ConnectionEventingRuntimeDataStatus>>>,
+    pub r#statuses: Option<Vec<super::super::types::integrationconnectors::ConnectionEventingRuntimeDataStatus>>,
 }

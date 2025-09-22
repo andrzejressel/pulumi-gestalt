@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterClusterEndpoint {
     /// Cluster endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<Option<String>>,
+    pub r#endpoint: Option<String>,
     /// Region of the endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
 }

@@ -4,24 +4,24 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SnapshotSnapshotEncryptionKey {
     /// The name of the encryption key that is stored in Google Cloud KMS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeySelfLink")]
-    pub r#kms_key_self_link: Box<Option<String>>,
+    pub r#kms_key_self_link: Option<String>,
     /// The service account used for the encryption request for the given KMS key.
     /// If absent, the Compute Engine Service Agent service account is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyServiceAccount")]
-    pub r#kms_key_service_account: Box<Option<String>>,
+    pub r#kms_key_service_account: Option<String>,
     /// Specifies a 256-bit customer-supplied encryption key, encoded in
     /// RFC 4648 base64 to either encrypt or decrypt this resource.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rawKey")]
-    pub r#raw_key: Box<Option<String>>,
+    pub r#raw_key: Option<String>,
     /// (Output)
     /// The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied
     /// encryption key that protects this resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sha256")]
-    pub r#sha_256: Box<Option<String>>,
+    pub r#sha_256: Option<String>,
 }

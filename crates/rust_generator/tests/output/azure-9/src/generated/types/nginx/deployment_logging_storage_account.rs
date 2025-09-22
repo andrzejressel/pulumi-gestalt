@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeploymentLoggingStorageAccount {
     /// Specify the container name in the Storage Account for logging.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerName")]
-    pub r#container_name: Box<Option<String>>,
+    pub r#container_name: Option<String>,
     /// The name of the StorageAccount for NGINX Logging.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

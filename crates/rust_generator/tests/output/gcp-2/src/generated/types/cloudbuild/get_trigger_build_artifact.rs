@@ -12,7 +12,7 @@ pub struct GetTriggerBuildArtifact {
     /// If any of the images fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
     #[serde(rename = "images")]
-    pub r#images: Box<Vec<String>>,
+    pub r#images: Vec<String>,
     /// A Maven artifact to upload to Artifact Registry upon successful completion of all build steps.
     /// 
     /// The location and generation of the uploaded objects will be stored in the Build resource's results field.
@@ -20,7 +20,7 @@ pub struct GetTriggerBuildArtifact {
     /// If any objects fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
     #[serde(rename = "mavenArtifacts")]
-    pub r#maven_artifacts: Box<Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactMavenArtifact>>,
+    pub r#maven_artifacts: Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactMavenArtifact>,
     /// Npm package to upload to Artifact Registry upon successful completion of all build steps.
     /// 
     /// The location and generation of the uploaded objects will be stored in the Build resource's results field.
@@ -28,7 +28,7 @@ pub struct GetTriggerBuildArtifact {
     /// If any objects fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
     #[serde(rename = "npmPackages")]
-    pub r#npm_packages: Box<Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactNpmPackage>>,
+    pub r#npm_packages: Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactNpmPackage>,
     /// A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps.
     /// 
     /// Files in the workspace matching specified paths globs will be uploaded to the
@@ -39,7 +39,7 @@ pub struct GetTriggerBuildArtifact {
     /// If any objects fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
     #[serde(rename = "objects")]
-    pub r#objects: Box<Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactObject>>,
+    pub r#objects: Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactObject>,
     /// Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.
     /// 
     /// The location and generation of the uploaded objects will be stored in the Build resource's results field.
@@ -47,5 +47,5 @@ pub struct GetTriggerBuildArtifact {
     /// If any objects fail to be pushed, the build is marked FAILURE.
     #[builder(into)]
     #[serde(rename = "pythonPackages")]
-    pub r#python_packages: Box<Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactPythonPackage>>,
+    pub r#python_packages: Vec<super::super::types::cloudbuild::GetTriggerBuildArtifactPythonPackage>,
 }

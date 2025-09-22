@@ -6,9 +6,9 @@ pub struct DataSourceCredentialsCredentialPair {
     /// Password, maximum length of 1024 characters.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// User name, maximum length of 64 characters.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

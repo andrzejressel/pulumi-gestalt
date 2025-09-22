@@ -6,21 +6,21 @@ pub struct GetActionGroupAzureFunctionReceiver {
     /// The Azure resource ID of the function app.
     #[builder(into)]
     #[serde(rename = "functionAppResourceId")]
-    pub r#function_app_resource_id: Box<String>,
+    pub r#function_app_resource_id: String,
     /// The function name in the function app.
     #[builder(into)]
     #[serde(rename = "functionName")]
-    pub r#function_name: Box<String>,
+    pub r#function_name: String,
     /// The HTTP trigger url where HTTP request sent to.
     #[builder(into)]
     #[serde(rename = "httpTriggerUrl")]
-    pub r#http_trigger_url: Box<String>,
+    pub r#http_trigger_url: String,
     /// Specifies the name of the Action Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Indicates whether to use common alert schema.
     #[builder(into)]
     #[serde(rename = "useCommonAlertSchema")]
-    pub r#use_common_alert_schema: Box<bool>,
+    pub r#use_common_alert_schema: bool,
 }

@@ -6,33 +6,33 @@ pub struct AuthorityConfigSubjectConfigSubject {
     /// The common name of the distinguished name.
     #[builder(into)]
     #[serde(rename = "commonName")]
-    pub r#common_name: Box<String>,
+    pub r#common_name: String,
     /// The country code of the subject.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "countryCode")]
-    pub r#country_code: Box<Option<String>>,
+    pub r#country_code: Option<String>,
     /// The locality or city of the subject.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "locality")]
-    pub r#locality: Box<Option<String>>,
+    pub r#locality: Option<String>,
     /// The organization of the subject.
     #[builder(into)]
     #[serde(rename = "organization")]
-    pub r#organization: Box<String>,
+    pub r#organization: String,
     /// The organizational unit of the subject.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "organizationalUnit")]
-    pub r#organizational_unit: Box<Option<String>>,
+    pub r#organizational_unit: Option<String>,
     /// The postal code of the subject.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "postalCode")]
-    pub r#postal_code: Box<Option<String>>,
+    pub r#postal_code: Option<String>,
     /// The province, territory, or regional state of the subject.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "province")]
-    pub r#province: Box<Option<String>>,
+    pub r#province: Option<String>,
     /// The street address of the subject.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "streetAddress")]
-    pub r#street_address: Box<Option<String>>,
+    pub r#street_address: Option<String>,
 }

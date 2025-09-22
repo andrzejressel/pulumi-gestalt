@@ -7,10 +7,10 @@ pub struct GetAuthorityKeySpec {
     /// experience. All managed keys will be have their ProtectionLevel as HSM. Possible values: ["SIGN_HASH_ALGORITHM_UNSPECIFIED", "RSA_PSS_2048_SHA256", "RSA_PSS_3072_SHA256", "RSA_PSS_4096_SHA256", "RSA_PKCS1_2048_SHA256", "RSA_PKCS1_3072_SHA256", "RSA_PKCS1_4096_SHA256", "EC_P256_SHA256", "EC_P384_SHA384"]
     #[builder(into)]
     #[serde(rename = "algorithm")]
-    pub r#algorithm: Box<String>,
+    pub r#algorithm: String,
     /// The resource name for an existing Cloud KMS CryptoKeyVersion in the format
     /// 'projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*'.
     #[builder(into)]
     #[serde(rename = "cloudKmsKeyVersion")]
-    pub r#cloud_kms_key_version: Box<String>,
+    pub r#cloud_kms_key_version: String,
 }

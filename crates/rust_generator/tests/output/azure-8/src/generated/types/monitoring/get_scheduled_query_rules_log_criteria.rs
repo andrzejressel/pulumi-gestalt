@@ -6,9 +6,9 @@ pub struct GetScheduledQueryRulesLogCriteria {
     /// A `dimension` block as defined below.
     #[builder(into)]
     #[serde(rename = "dimensions")]
-    pub r#dimensions: Box<Vec<super::super::types::monitoring::GetScheduledQueryRulesLogCriteriaDimension>>,
+    pub r#dimensions: Vec<super::super::types::monitoring::GetScheduledQueryRulesLogCriteriaDimension>,
     /// Name of the metric.
     #[builder(into)]
     #[serde(rename = "metricName")]
-    pub r#metric_name: Box<String>,
+    pub r#metric_name: String,
 }

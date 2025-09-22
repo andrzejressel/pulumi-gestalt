@@ -3,17 +3,17 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterNode {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#address: Option<String>,
+    #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#availability_zone: Option<String>,
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The port used by the configuration endpoint
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
 }

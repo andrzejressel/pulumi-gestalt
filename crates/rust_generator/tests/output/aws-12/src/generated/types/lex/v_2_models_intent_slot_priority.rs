@@ -6,9 +6,9 @@ pub struct V2ModelsIntentSlotPriority {
     /// Priority that Amazon Lex should apply to the slot.
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
     /// Unique identifier of the slot.
     #[builder(into)]
     #[serde(rename = "slotId")]
-    pub r#slot_id: Box<String>,
+    pub r#slot_id: String,
 }

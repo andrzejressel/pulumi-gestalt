@@ -5,7 +5,7 @@
 pub struct BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfig {
     /// The generic configuration for a node pool running a load balancer.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodePoolConfig")]
-    pub r#node_pool_config: Box<Option<super::super::types::gkeonprem::BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfig>>,
+    pub r#node_pool_config: Option<Box<super::super::types::gkeonprem::BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfig>>,
 }

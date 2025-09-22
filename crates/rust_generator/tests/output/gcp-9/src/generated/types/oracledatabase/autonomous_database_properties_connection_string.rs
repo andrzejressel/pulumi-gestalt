@@ -5,32 +5,32 @@
 pub struct AutonomousDatabasePropertiesConnectionString {
     /// A list of all connection strings that can be used to connect to the
     /// Autonomous Database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allConnectionStrings")]
-    pub r#all_connection_strings: Box<Option<Vec<super::super::types::oracledatabase::AutonomousDatabasePropertiesConnectionStringAllConnectionString>>>,
+    pub r#all_connection_strings: Option<Vec<super::super::types::oracledatabase::AutonomousDatabasePropertiesConnectionStringAllConnectionString>>,
     /// The database service provides the least level of resources to each SQL
     /// statement, but supports the most number of concurrent SQL statements.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dedicated")]
-    pub r#dedicated: Box<Option<String>>,
+    pub r#dedicated: Option<String>,
     /// The database service provides the highest level of resources to each SQL
     /// statement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "high")]
-    pub r#high: Box<Option<String>>,
+    pub r#high: Option<String>,
     /// The database service provides the least level of resources to each SQL
     /// statement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "low")]
-    pub r#low: Box<Option<String>>,
+    pub r#low: Option<String>,
     /// The database service provides a lower level of resources to each SQL
     /// statement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "medium")]
-    pub r#medium: Box<Option<String>>,
+    pub r#medium: Option<String>,
     /// A list of connection string profiles to allow clients to group, filter, and
     /// select values based on the structured metadata.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "profiles")]
-    pub r#profiles: Box<Option<Vec<super::super::types::oracledatabase::AutonomousDatabasePropertiesConnectionStringProfile>>>,
+    pub r#profiles: Option<Vec<super::super::types::oracledatabase::AutonomousDatabasePropertiesConnectionStringProfile>>,
 }

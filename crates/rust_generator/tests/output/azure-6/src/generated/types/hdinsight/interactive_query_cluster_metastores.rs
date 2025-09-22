@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InteractiveQueryClusterMetastores {
     /// An `ambari` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ambari")]
-    pub r#ambari: Box<Option<super::super::types::hdinsight::InteractiveQueryClusterMetastoresAmbari>>,
+    pub r#ambari: Option<Box<super::super::types::hdinsight::InteractiveQueryClusterMetastoresAmbari>>,
     /// A `hive` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hive")]
-    pub r#hive: Box<Option<super::super::types::hdinsight::InteractiveQueryClusterMetastoresHive>>,
+    pub r#hive: Option<Box<super::super::types::hdinsight::InteractiveQueryClusterMetastoresHive>>,
     /// An `oozie` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oozie")]
-    pub r#oozie: Box<Option<super::super::types::hdinsight::InteractiveQueryClusterMetastoresOozie>>,
+    pub r#oozie: Option<Box<super::super::types::hdinsight::InteractiveQueryClusterMetastoresOozie>>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ZeroTrustAccessPolicyRequireGsuite {
     /// The email of the Google Workspace group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emails")]
-    pub r#emails: Box<Option<Vec<String>>>,
+    pub r#emails: Option<Vec<String>>,
     /// The ID of your Google Workspace identity provider.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityProviderId")]
-    pub r#identity_provider_id: Box<Option<String>>,
+    pub r#identity_provider_id: Option<String>,
 }

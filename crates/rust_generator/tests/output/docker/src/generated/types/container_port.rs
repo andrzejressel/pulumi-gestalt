@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ContainerPort {
     /// Port exposed out of the container. If not given a free random port `>= 32768` will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "external")]
-    pub r#external: Box<Option<i32>>,
+    pub r#external: Option<i32>,
     /// Port within the container.
     #[builder(into)]
     #[serde(rename = "internal")]
-    pub r#internal: Box<i32>,
+    pub r#internal: i32,
     /// IP address/mask that can access this port. Defaults to `0.0.0.0`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ip")]
-    pub r#ip: Box<Option<String>>,
+    pub r#ip: Option<String>,
     /// Protocol that can be used over this port. Defaults to `tcp`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
+    pub r#protocol: Option<String>,
 }

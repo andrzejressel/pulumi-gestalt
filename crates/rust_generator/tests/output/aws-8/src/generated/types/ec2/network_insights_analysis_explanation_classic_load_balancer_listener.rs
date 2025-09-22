@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInsightsAnalysisExplanationClassicLoadBalancerListener {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instancePort")]
-    pub r#instance_port: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#instance_port: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "loadBalancerPort")]
-    pub r#load_balancer_port: Box<Option<i32>>,
+    pub r#load_balancer_port: Option<i32>,
 }

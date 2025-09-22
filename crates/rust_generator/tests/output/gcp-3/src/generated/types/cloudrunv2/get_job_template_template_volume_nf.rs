@@ -6,13 +6,13 @@ pub struct GetJobTemplateTemplateVolumeNf {
     /// Path that is exported by the NFS server.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// If true, mount this volume as read-only in all mounts.
     #[builder(into)]
     #[serde(rename = "readOnly")]
-    pub r#read_only: Box<bool>,
+    pub r#read_only: bool,
     /// Hostname or IP address of the NFS server.
     #[builder(into)]
     #[serde(rename = "server")]
-    pub r#server: Box<String>,
+    pub r#server: String,
 }

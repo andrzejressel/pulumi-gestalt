@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeploymentGroupDeploymentStyle {
     /// Indicates whether to route deployment traffic behind a load balancer. Valid Values are `WITH_TRAFFIC_CONTROL` or `WITHOUT_TRAFFIC_CONTROL`. Default is `WITHOUT_TRAFFIC_CONTROL`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deploymentOption")]
-    pub r#deployment_option: Box<Option<String>>,
+    pub r#deployment_option: Option<String>,
     /// Indicates whether to run an in-place deployment or a blue/green deployment. Valid Values are `IN_PLACE` or `BLUE_GREEN`. Default is `IN_PLACE`.
     /// 
     /// _Only one `deployment_style` is allowed_.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deploymentType")]
-    pub r#deployment_type: Box<Option<String>>,
+    pub r#deployment_type: Option<String>,
 }

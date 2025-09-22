@@ -6,5 +6,5 @@ pub struct GetJobDefinitionEksPropertyPodPropertyMetadata {
     /// Key-value pairs used to identify, sort, and organize cube resources.
     #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<std::collections::HashMap<String, String>>,
+    pub r#labels: std::collections::HashMap<String, String>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IngestionDestinationDestinationConfigurationAuditLog {
     /// Contains information about an audit log destination. Only one destination (Firehose Stream) or (S3 Bucket) can be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destination")]
-    pub r#destination: Box<Option<super::super::types::appfabric::IngestionDestinationDestinationConfigurationAuditLogDestination>>,
+    pub r#destination: Option<Box<super::super::types::appfabric::IngestionDestinationDestinationConfigurationAuditLogDestination>>,
 }

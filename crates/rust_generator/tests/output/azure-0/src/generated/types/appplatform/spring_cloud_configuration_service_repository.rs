@@ -4,51 +4,51 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudConfigurationServiceRepository {
     /// Specifies the ID of the Certificate Authority used when retrieving the Git Repository via HTTPS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "caCertificateId")]
-    pub r#ca_certificate_id: Box<Option<String>>,
+    pub r#ca_certificate_id: Option<String>,
     /// Specifies the SSH public key of git repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostKey")]
-    pub r#host_key: Box<Option<String>>,
+    pub r#host_key: Option<String>,
     /// Specifies the SSH key algorithm of git repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostKeyAlgorithm")]
-    pub r#host_key_algorithm: Box<Option<String>>,
+    pub r#host_key_algorithm: Option<String>,
     /// Specifies the label of the repository.
     #[builder(into)]
     #[serde(rename = "label")]
-    pub r#label: Box<String>,
+    pub r#label: String,
     /// Specifies the name which should be used for this repository.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the password of git repository basic auth.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// Specifies the collection of patterns of the repository.
     #[builder(into)]
     #[serde(rename = "patterns")]
-    pub r#patterns: Box<Vec<String>>,
+    pub r#patterns: Vec<String>,
     /// Specifies the SSH private key of git repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateKey")]
-    pub r#private_key: Box<Option<String>>,
+    pub r#private_key: Option<String>,
     /// Specifies a list of searching path of the repository
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "searchPaths")]
-    pub r#search_paths: Box<Option<Vec<String>>>,
+    pub r#search_paths: Option<Vec<String>>,
     /// Specifies whether enable the strict host key checking.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "strictHostKeyChecking")]
-    pub r#strict_host_key_checking: Box<Option<bool>>,
+    pub r#strict_host_key_checking: Option<bool>,
     /// Specifies the URI of the repository.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
     /// Specifies the username of git repository basic auth.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

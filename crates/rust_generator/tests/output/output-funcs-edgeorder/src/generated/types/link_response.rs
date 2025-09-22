@@ -6,9 +6,9 @@ pub struct LinkResponse {
     /// Type of link
     #[builder(into)]
     #[serde(rename = "linkType")]
-    pub r#link_type: Box<String>,
+    pub r#link_type: String,
     /// Url of the link
     #[builder(into)]
     #[serde(rename = "linkUrl")]
-    pub r#link_url: Box<String>,
+    pub r#link_url: String,
 }

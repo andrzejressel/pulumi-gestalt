@@ -6,5 +6,5 @@ pub struct PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScal
     /// List of up to 10 structures that defines custom scaling metric in predictive scaling policy
     #[builder(into)]
     #[serde(rename = "metricDataQueries")]
-    pub r#metric_data_queries: Box<Vec<super::super::types::autoscaling::PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQuery>>,
+    pub r#metric_data_queries: Vec<super::super::types::autoscaling::PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQuery>,
 }

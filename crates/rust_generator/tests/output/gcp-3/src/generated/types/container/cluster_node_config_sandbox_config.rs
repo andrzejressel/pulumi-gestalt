@@ -9,5 +9,5 @@ pub struct ClusterNodeConfigSandboxConfig {
     /// * `"gvisor"`: Pods run within a gVisor sandbox.
     #[builder(into)]
     #[serde(rename = "sandboxType")]
-    pub r#sandbox_type: Box<String>,
+    pub r#sandbox_type: String,
 }

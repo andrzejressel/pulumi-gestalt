@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetFirewallPolicyFirewallPolicyStatefulRuleGroupReference {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "overrides")]
-    pub r#overrides: Box<Option<Vec<super::super::types::networkfirewall::GetFirewallPolicyFirewallPolicyStatefulRuleGroupReferenceOverride>>>,
+    pub r#overrides: Option<Vec<super::super::types::networkfirewall::GetFirewallPolicyFirewallPolicyStatefulRuleGroupReferenceOverride>>,
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
     #[builder(into)]
     #[serde(rename = "resourceArn")]
-    pub r#resource_arn: Box<String>,
+    pub r#resource_arn: String,
 }

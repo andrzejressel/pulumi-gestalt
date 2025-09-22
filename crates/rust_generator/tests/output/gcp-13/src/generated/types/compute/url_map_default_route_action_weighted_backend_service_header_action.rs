@@ -5,22 +5,22 @@
 pub struct UrlMapDefaultRouteActionWeightedBackendServiceHeaderAction {
     /// Headers to add to a matching request prior to forwarding the request to the backendService.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestHeadersToAdds")]
-    pub r#request_headers_to_adds: Box<Option<Vec<super::super::types::compute::UrlMapDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAdd>>>,
+    pub r#request_headers_to_adds: Option<Vec<super::super::types::compute::UrlMapDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAdd>>,
     /// A list of header names for headers that need to be removed from the request prior to
     /// forwarding the request to the backendService.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestHeadersToRemoves")]
-    pub r#request_headers_to_removes: Box<Option<Vec<String>>>,
+    pub r#request_headers_to_removes: Option<Vec<String>>,
     /// Headers to add the response prior to sending the response back to the client.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "responseHeadersToAdds")]
-    pub r#response_headers_to_adds: Box<Option<Vec<super::super::types::compute::UrlMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd>>>,
+    pub r#response_headers_to_adds: Option<Vec<super::super::types::compute::UrlMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAdd>>,
     /// A list of header names for headers that need to be removed from the response prior to sending the
     /// response back to the client.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "responseHeadersToRemoves")]
-    pub r#response_headers_to_removes: Box<Option<Vec<String>>>,
+    pub r#response_headers_to_removes: Option<Vec<String>>,
 }

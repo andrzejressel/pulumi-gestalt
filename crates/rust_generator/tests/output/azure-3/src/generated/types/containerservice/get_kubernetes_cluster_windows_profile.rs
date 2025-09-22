@@ -6,5 +6,5 @@ pub struct GetKubernetesClusterWindowsProfile {
     /// The username associated with the administrator account of the Windows VMs.
     #[builder(into)]
     #[serde(rename = "adminUsername")]
-    pub r#admin_username: Box<String>,
+    pub r#admin_username: String,
 }

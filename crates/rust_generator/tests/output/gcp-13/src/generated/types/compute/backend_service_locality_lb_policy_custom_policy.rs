@@ -5,9 +5,9 @@
 pub struct BackendServiceLocalityLbPolicyCustomPolicy {
     /// An optional, arbitrary JSON object with configuration data, understood
     /// by a locally installed custom policy implementation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "data")]
-    pub r#data: Box<Option<String>>,
+    pub r#data: Option<String>,
     /// Identifies the custom policy.
     /// The value should match the type the custom implementation is registered
     /// with on the gRPC clients. It should follow protocol buffer
@@ -17,5 +17,5 @@ pub struct BackendServiceLocalityLbPolicyCustomPolicy {
     /// backend is not a valid configuration and will be rejected.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

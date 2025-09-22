@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceMachineConfig {
     /// The number of CPU's in the VM instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cpuCount")]
-    pub r#cpu_count: Box<Option<i32>>,
+    pub r#cpu_count: Option<i32>,
 }

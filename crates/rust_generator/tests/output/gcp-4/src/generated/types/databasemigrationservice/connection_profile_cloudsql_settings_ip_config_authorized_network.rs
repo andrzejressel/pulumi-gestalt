@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetwork {
     /// The time when this access control entry expires in RFC 3339 format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expireTime")]
-    pub r#expire_time: Box<Option<String>>,
+    pub r#expire_time: Option<String>,
     /// A label to identify this entry.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "label")]
-    pub r#label: Box<Option<String>>,
+    pub r#label: Option<String>,
     /// Input only. The time-to-leave of this access control entry.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ttl")]
-    pub r#ttl: Box<Option<String>>,
+    pub r#ttl: Option<String>,
     /// The allowlisted value for the access control list.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

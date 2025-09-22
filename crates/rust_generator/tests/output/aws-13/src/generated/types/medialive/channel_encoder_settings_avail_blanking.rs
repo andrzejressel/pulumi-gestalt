@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsAvailBlanking {
     /// Blanking image to be used. See Avail Blanking Image for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availBlankingImage")]
-    pub r#avail_blanking_image: Box<Option<super::super::types::medialive::ChannelEncoderSettingsAvailBlankingAvailBlankingImage>>,
+    pub r#avail_blanking_image: Option<Box<super::super::types::medialive::ChannelEncoderSettingsAvailBlankingAvailBlankingImage>>,
     /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

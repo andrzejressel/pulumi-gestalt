@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AwsNodePoolConfigInstancePlacement {
     /// The tenancy for the instance. Possible values: TENANCY_UNSPECIFIED, DEFAULT, DEDICATED, HOST
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenancy")]
-    pub r#tenancy: Box<Option<String>>,
+    pub r#tenancy: Option<String>,
 }

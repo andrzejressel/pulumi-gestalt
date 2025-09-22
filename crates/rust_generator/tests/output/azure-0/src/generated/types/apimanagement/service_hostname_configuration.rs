@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceHostnameConfiguration {
     /// One or more `developer_portal` blocks as documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "developerPortals")]
-    pub r#developer_portals: Box<Option<Vec<super::super::types::apimanagement::ServiceHostnameConfigurationDeveloperPortal>>>,
+    pub r#developer_portals: Option<Vec<super::super::types::apimanagement::ServiceHostnameConfigurationDeveloperPortal>>,
     /// One or more `management` blocks as documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "managements")]
-    pub r#managements: Box<Option<Vec<super::super::types::apimanagement::ServiceHostnameConfigurationManagement>>>,
+    pub r#managements: Option<Vec<super::super::types::apimanagement::ServiceHostnameConfigurationManagement>>,
     /// One or more `portal` blocks as documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "portals")]
-    pub r#portals: Box<Option<Vec<super::super::types::apimanagement::ServiceHostnameConfigurationPortal>>>,
+    pub r#portals: Option<Vec<super::super::types::apimanagement::ServiceHostnameConfigurationPortal>>,
     /// One or more `proxy` blocks as documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "proxies")]
-    pub r#proxies: Box<Option<Vec<super::super::types::apimanagement::ServiceHostnameConfigurationProxy>>>,
+    pub r#proxies: Option<Vec<super::super::types::apimanagement::ServiceHostnameConfigurationProxy>>,
     /// One or more `scm` blocks as documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scms")]
-    pub r#scms: Box<Option<Vec<super::super::types::apimanagement::ServiceHostnameConfigurationScm>>>,
+    pub r#scms: Option<Vec<super::super::types::apimanagement::ServiceHostnameConfigurationScm>>,
 }

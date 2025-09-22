@@ -6,5 +6,5 @@ pub struct GetExperienceConfigurationUserIdentityConfiguration {
     /// The AWS SSO field name that contains the identifiers of your users, such as their emails.
     #[builder(into)]
     #[serde(rename = "identityAttributeName")]
-    pub r#identity_attribute_name: Box<String>,
+    pub r#identity_attribute_name: String,
 }

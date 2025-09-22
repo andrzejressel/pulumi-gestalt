@@ -6,5 +6,5 @@ pub struct GetNamespaceSku {
     /// Specifies the Name of the Notification Hub Namespace.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

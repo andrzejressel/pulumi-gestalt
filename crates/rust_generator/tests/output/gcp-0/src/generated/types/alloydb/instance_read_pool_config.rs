@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceReadPoolConfig {
     /// Read capacity, i.e. number of nodes in a read pool instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeCount")]
-    pub r#node_count: Box<Option<i32>>,
+    pub r#node_count: Option<i32>,
 }

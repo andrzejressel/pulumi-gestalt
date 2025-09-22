@@ -6,13 +6,13 @@ pub struct GetDataSharesDataShare {
     /// ARN (Amazon Resource Name) of the data share.
     #[builder(into)]
     #[serde(rename = "dataShareArn")]
-    pub r#data_share_arn: Box<String>,
+    pub r#data_share_arn: String,
     /// Identifier of a datashare to show its managing entity.
     #[builder(into)]
     #[serde(rename = "managedBy")]
-    pub r#managed_by: Box<String>,
+    pub r#managed_by: String,
     /// ARN (Amazon Resource Name) of the producer.
     #[builder(into)]
     #[serde(rename = "producerArn")]
-    pub r#producer_arn: Box<String>,
+    pub r#producer_arn: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegionCommitmentLicenseResource {
     /// The number of licenses purchased.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "amount")]
-    pub r#amount: Box<Option<String>>,
+    pub r#amount: Option<String>,
     /// Specifies the core range of the instance for which this license applies.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "coresPerLicense")]
-    pub r#cores_per_license: Box<Option<String>>,
+    pub r#cores_per_license: Option<String>,
     /// Any applicable license URI.
     #[builder(into)]
     #[serde(rename = "license")]
-    pub r#license: Box<String>,
+    pub r#license: String,
 }

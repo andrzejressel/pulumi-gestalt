@@ -11,17 +11,17 @@ pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModule {
     /// The display name of the Security Health Analytics custom module. This
     /// display name becomes the finding category for all findings that are
     /// returned by this custom module.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<Option<String>>,
+    pub r#display_name: Option<String>,
     /// (Output)
     /// A server generated id of custom module.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The state of enablement for the module at its level of the resource hierarchy.
     /// Possible values are: `ENABLEMENT_STATE_UNSPECIFIED`, `ENABLED`, `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "moduleEnablementState")]
-    pub r#module_enablement_state: Box<Option<String>>,
+    pub r#module_enablement_state: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct LoadTestEncryptionIdentity {
     /// The User Assigned Identity ID that should be assigned to this Load Test Encryption. Changing this forces a new Load Test to be created.
     #[builder(into)]
     #[serde(rename = "identityId")]
-    pub r#identity_id: Box<String>,
+    pub r#identity_id: String,
     /// Specifies the type of Managed Identity that should be assigned to this Load Test Encryption. Possible values are `SystemAssigned` or `UserAssigned`. Changing this forces a new Load Test to be created.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

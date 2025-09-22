@@ -18,11 +18,11 @@ pub struct ProductFamilyResponse {
     /// Display Name for the product system.
     #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<String>,
+    pub r#display_name: String,
     /// list of filters supported for a product
     #[builder(into)]
     #[serde(rename = "filterableProperties")]
-    pub r#filterable_properties: Box<Vec<super::types::FilterablePropertyResponse>>,
+    pub r#filterable_properties: Vec<super::types::FilterablePropertyResponse>,
     /// Hierarchy information of a product.
     #[builder(into)]
     #[serde(rename = "hierarchyInformation")]
@@ -30,9 +30,9 @@ pub struct ProductFamilyResponse {
     /// Image information for the product system.
     #[builder(into)]
     #[serde(rename = "imageInformation")]
-    pub r#image_information: Box<Vec<super::types::ImageInformationResponse>>,
+    pub r#image_information: Vec<super::types::ImageInformationResponse>,
     /// List of product lines supported in the product family
     #[builder(into)]
     #[serde(rename = "productLines")]
-    pub r#product_lines: Box<Vec<super::types::ProductLineResponse>>,
+    pub r#product_lines: Vec<super::types::ProductLineResponse>,
 }

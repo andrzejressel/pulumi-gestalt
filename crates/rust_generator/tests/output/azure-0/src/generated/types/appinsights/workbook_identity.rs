@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkbookIdentity {
     /// The list of User Assigned Managed Identity IDs assigned to this Workbook. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Option<Vec<String>>>,
+    pub r#identity_ids: Option<Vec<String>>,
     /// The Principal ID of the System Assigned Managed Service Identity that is configured on this Workbook.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<Option<String>>,
+    pub r#principal_id: Option<String>,
     /// The Tenant ID of the System Assigned Managed Service Identity that is configured on this Workbook.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<Option<String>>,
+    pub r#tenant_id: Option<String>,
     /// The type of Managed Service Identity that is configured on this Workbook. Possible values are `UserAssigned`, `SystemAssigned` and `SystemAssigned, UserAssigned`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

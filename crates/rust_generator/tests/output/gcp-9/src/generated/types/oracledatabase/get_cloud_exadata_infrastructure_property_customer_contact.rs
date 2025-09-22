@@ -7,5 +7,5 @@ pub struct GetCloudExadataInfrastructurePropertyCustomerContact {
     /// and infrastructure.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
 }

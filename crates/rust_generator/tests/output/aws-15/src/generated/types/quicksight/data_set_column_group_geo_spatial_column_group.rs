@@ -6,13 +6,13 @@ pub struct DataSetColumnGroupGeoSpatialColumnGroup {
     /// Columns in this hierarchy.
     #[builder(into)]
     #[serde(rename = "columns")]
-    pub r#columns: Box<Vec<String>>,
+    pub r#columns: Vec<String>,
     /// Country code. Valid values are `US`.
     #[builder(into)]
     #[serde(rename = "countryCode")]
-    pub r#country_code: Box<String>,
+    pub r#country_code: String,
     /// A display name for the hierarchy.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

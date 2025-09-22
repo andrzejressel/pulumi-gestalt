@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDir {
     /// Medium to store the volume. The default value is an empty string, which uses the storage of the node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "medium")]
-    pub r#medium: Box<Option<String>>,
+    pub r#medium: Option<String>,
     /// Maximum size of the volume. By default, there's no maximum size defined.
     #[builder(into)]
     #[serde(rename = "sizeLimit")]
-    pub r#size_limit: Box<String>,
+    pub r#size_limit: String,
 }

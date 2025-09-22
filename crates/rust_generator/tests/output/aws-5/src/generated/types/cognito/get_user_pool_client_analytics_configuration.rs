@@ -6,21 +6,21 @@ pub struct GetUserPoolClientAnalyticsConfiguration {
     /// (Optional) Application ARN for an Amazon Pinpoint application. Conflicts with `external_id` and `role_arn`.
     #[builder(into)]
     #[serde(rename = "applicationArn")]
-    pub r#application_arn: Box<String>,
+    pub r#application_arn: String,
     /// (Optional) Application ID for an Amazon Pinpoint application.
     #[builder(into)]
     #[serde(rename = "applicationId")]
-    pub r#application_id: Box<String>,
+    pub r#application_id: String,
     /// (Optional) ID for the Analytics Configuration. Conflicts with `application_arn`.
     #[builder(into)]
     #[serde(rename = "externalId")]
-    pub r#external_id: Box<String>,
+    pub r#external_id: String,
     /// (Optional) ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics. Conflicts with `application_arn`.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// (Optional) If set to `true`, Amazon Cognito will include user data in the events it publishes to Amazon Pinpoint analytics.
     #[builder(into)]
     #[serde(rename = "userDataShared")]
-    pub r#user_data_shared: Box<bool>,
+    pub r#user_data_shared: bool,
 }

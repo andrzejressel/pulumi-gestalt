@@ -6,5 +6,5 @@ pub struct PipeSourceParametersRabbitmqBrokerParametersCredentials {
     /// The ARN of the Secrets Manager secret containing the credentials.
     #[builder(into)]
     #[serde(rename = "basicAuth")]
-    pub r#basic_auth: Box<String>,
+    pub r#basic_auth: String,
 }

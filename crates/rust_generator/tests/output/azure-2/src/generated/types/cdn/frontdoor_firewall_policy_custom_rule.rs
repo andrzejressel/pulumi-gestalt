@@ -6,33 +6,33 @@ pub struct FrontdoorFirewallPolicyCustomRule {
     /// The action to perform when the rule is matched. Possible values are `Allow`, `Block`, `Log`, or `Redirect`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// Is the rule is enabled or disabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// One or more `match_condition` block defined below. Can support up to `10` `match_condition` blocks.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "matchConditions")]
-    pub r#match_conditions: Box<Option<Vec<super::super::types::cdn::FrontdoorFirewallPolicyCustomRuleMatchCondition>>>,
+    pub r#match_conditions: Option<Vec<super::super::types::cdn::FrontdoorFirewallPolicyCustomRuleMatchCondition>>,
     /// Gets name of the resource that is unique within a policy. This name can be used to access the resource.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The priority of the rule. Rules with a lower value will be evaluated before rules with a higher value. Defaults to `1`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<Option<i32>>,
+    pub r#priority: Option<i32>,
     /// The rate limit duration in minutes. Defaults to `1`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rateLimitDurationInMinutes")]
-    pub r#rate_limit_duration_in_minutes: Box<Option<i32>>,
+    pub r#rate_limit_duration_in_minutes: Option<i32>,
     /// The rate limit threshold. Defaults to `10`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rateLimitThreshold")]
-    pub r#rate_limit_threshold: Box<Option<i32>>,
+    pub r#rate_limit_threshold: Option<i32>,
     /// The type of rule. Possible values are `MatchRule` or `RateLimitRule`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -6,5 +6,5 @@ pub struct JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurati
     /// Amazon S3 destination URI for log publishing.
     #[builder(into)]
     #[serde(rename = "logUri")]
-    pub r#log_uri: Box<String>,
+    pub r#log_uri: String,
 }

@@ -6,5 +6,5 @@ pub struct CollectorPolicyIpfxIngestion {
     /// A list of ingestion source resource IDs. Changing this forces a new Network Function Collector Policy to be created.
     #[builder(into)]
     #[serde(rename = "sourceResourceIds")]
-    pub r#source_resource_ids: Box<Vec<String>>,
+    pub r#source_resource_ids: Vec<String>,
 }

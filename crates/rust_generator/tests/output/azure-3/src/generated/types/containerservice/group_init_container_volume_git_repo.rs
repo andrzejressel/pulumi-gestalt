@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupInitContainerVolumeGitRepo {
     /// Specifies the directory into which the repository should be cloned. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "directory")]
-    pub r#directory: Box<Option<String>>,
+    pub r#directory: Option<String>,
     /// Specifies the commit hash of the revision to be cloned. If unspecified, the HEAD revision is cloned. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "revision")]
-    pub r#revision: Box<Option<String>>,
+    pub r#revision: Option<String>,
     /// Specifies the Git repository to be cloned. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

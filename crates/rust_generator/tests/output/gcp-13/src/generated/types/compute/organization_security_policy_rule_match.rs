@@ -9,14 +9,14 @@ pub struct OrganizationSecurityPolicyRuleMatch {
     #[serde(rename = "config")]
     pub r#config: Box<super::super::types::compute::OrganizationSecurityPolicyRuleMatchConfig>,
     /// A description of the rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Preconfigured versioned expression. For organization security policy rules,
     /// the only supported type is "FIREWALL".
     /// Default value is `FIREWALL`.
     /// Possible values are: `FIREWALL`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "versionedExpr")]
-    pub r#versioned_expr: Box<Option<String>>,
+    pub r#versioned_expr: Option<String>,
 }

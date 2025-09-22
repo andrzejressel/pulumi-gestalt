@@ -9,11 +9,11 @@ pub struct IamAuditConfigAuditLogConfig {
     /// * **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.
     /// * **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.
     /// * **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exemptedMembers")]
-    pub r#exempted_members: Box<Option<Vec<String>>>,
+    pub r#exempted_members: Option<Vec<String>>,
     /// Permission type for which logging is to be configured.  Must be one of `DATA_READ`, `DATA_WRITE`, or `ADMIN_READ`.
     #[builder(into)]
     #[serde(rename = "logType")]
-    pub r#log_type: Box<String>,
+    pub r#log_type: String,
 }

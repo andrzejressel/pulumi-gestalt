@@ -5,5 +5,5 @@
 pub struct GetVirtualGatewaySpecListenerTlCertificateAcm {
     #[builder(into)]
     #[serde(rename = "certificateArn")]
-    pub r#certificate_arn: Box<String>,
+    pub r#certificate_arn: String,
 }

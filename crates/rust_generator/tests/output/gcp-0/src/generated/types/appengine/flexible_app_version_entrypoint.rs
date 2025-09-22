@@ -6,5 +6,5 @@ pub struct FlexibleAppVersionEntrypoint {
     /// The format should be a shell command that can be fed to bash -c.
     #[builder(into)]
     #[serde(rename = "shell")]
-    pub r#shell: Box<String>,
+    pub r#shell: String,
 }

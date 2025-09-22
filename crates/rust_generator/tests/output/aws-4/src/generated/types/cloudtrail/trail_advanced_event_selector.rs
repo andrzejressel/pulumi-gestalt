@@ -6,9 +6,9 @@ pub struct TrailAdvancedEventSelector {
     /// Specifies the selector statements in an advanced event selector. Fields documented below.
     #[builder(into)]
     #[serde(rename = "fieldSelectors")]
-    pub r#field_selectors: Box<Vec<super::super::types::cloudtrail::TrailAdvancedEventSelectorFieldSelector>>,
+    pub r#field_selectors: Vec<super::super::types::cloudtrail::TrailAdvancedEventSelectorFieldSelector>,
     /// Name of the trail.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

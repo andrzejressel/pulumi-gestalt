@@ -6,13 +6,13 @@ pub struct GetServiceTemplateSpecContainerEnv {
     /// The name of the Cloud Run Service.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Defaults to "".
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
     /// Source for the environment variable's value. Only supports secret_key_ref.
     #[builder(into)]
     #[serde(rename = "valueFroms")]
-    pub r#value_froms: Box<Vec<super::super::types::cloudrun::GetServiceTemplateSpecContainerEnvValueFrom>>,
+    pub r#value_froms: Vec<super::super::types::cloudrun::GetServiceTemplateSpecContainerEnvValueFrom>,
 }

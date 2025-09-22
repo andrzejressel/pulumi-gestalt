@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FunctionAppIdentity {
     /// Specifies a list of user managed identity ids to be assigned. Required if `type` is `UserAssigned`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Option<Vec<String>>>,
+    pub r#identity_ids: Option<Vec<String>>,
     /// The Principal ID for the Service Principal associated with the Managed Service Identity of this App Service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<Option<String>>,
+    pub r#principal_id: Option<String>,
     /// The Tenant ID for the Service Principal associated with the Managed Service Identity of this App Service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<Option<String>>,
+    pub r#tenant_id: Option<String>,
     /// Specifies the identity type of the Function App. Possible values are `SystemAssigned` (where Azure will generate a Service Principal for you), `UserAssigned` where you can specify the Service Principal IDs in the `identity_ids` field, and `SystemAssigned, UserAssigned` which assigns both a system managed identity as well as the specified user assigned identities.
     /// 
     /// > **NOTE:** When `type` is set to `SystemAssigned`, The assigned `principal_id` and `tenant_id` can be retrieved after the Function App has been created. More details are available below.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

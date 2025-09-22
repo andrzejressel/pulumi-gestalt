@@ -6,5 +6,5 @@ pub struct EventSourcesConfigEventSourceAmazonCodeGuruProfiler {
     /// Status of the CodeGuru Profiler integration. Valid values are `ENABLED` and `DISABLED`.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

@@ -4,25 +4,25 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HciLogicalNetworkSubnet {
     /// The address prefix in CIDR notation. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "addressPrefix")]
-    pub r#address_prefix: Box<Option<String>>,
+    pub r#address_prefix: Option<String>,
     /// The IP address allocation method for the subnet. Possible values are `Dynamic` and `Static`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "ipAllocationMethod")]
-    pub r#ip_allocation_method: Box<String>,
+    pub r#ip_allocation_method: String,
     /// One or more `ip_pool` block as defined above. Changing this forces a new resource to be created.
     /// 
     /// > **Note:** If `ip_pool` is not specified, it will be assigned by the server. If you experience a diff you may need to add this to `ignore_changes`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipPools")]
-    pub r#ip_pools: Box<Option<Vec<super::super::types::stack::HciLogicalNetworkSubnetIpPool>>>,
+    pub r#ip_pools: Option<Vec<super::super::types::stack::HciLogicalNetworkSubnetIpPool>>,
     /// A `route` block as defined above. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "routes")]
-    pub r#routes: Box<Option<Vec<super::super::types::stack::HciLogicalNetworkSubnetRoute>>>,
+    pub r#routes: Option<Vec<super::super::types::stack::HciLogicalNetworkSubnetRoute>>,
     /// The VLAN ID for the Logical Network. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vlanId")]
-    pub r#vlan_id: Box<Option<i32>>,
+    pub r#vlan_id: Option<i32>,
 }

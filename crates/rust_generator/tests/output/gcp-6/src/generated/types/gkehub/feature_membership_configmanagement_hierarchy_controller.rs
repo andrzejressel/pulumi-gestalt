@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureMembershipConfigmanagementHierarchyController {
     /// Whether hierarchical resource quota is enabled in this cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableHierarchicalResourceQuota")]
-    pub r#enable_hierarchical_resource_quota: Box<Option<bool>>,
+    pub r#enable_hierarchical_resource_quota: Option<bool>,
     /// Whether pod tree labels are enabled in this cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enablePodTreeLabels")]
-    pub r#enable_pod_tree_labels: Box<Option<bool>>,
+    pub r#enable_pod_tree_labels: Option<bool>,
     /// Whether Hierarchy Controller is enabled in this cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
 }

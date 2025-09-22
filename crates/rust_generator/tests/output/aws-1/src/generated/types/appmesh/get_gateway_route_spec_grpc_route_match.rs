@@ -5,8 +5,8 @@
 pub struct GetGatewayRouteSpecGrpcRouteMatch {
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<String>,
+    pub r#service_name: String,
 }

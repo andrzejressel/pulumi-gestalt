@@ -9,7 +9,7 @@ pub struct SloRequestBasedSliDistributionCut {
     /// MetricKind = DELTA or MetricKind = CUMULATIVE.
     #[builder(into)]
     #[serde(rename = "distributionFilter")]
-    pub r#distribution_filter: Box<String>,
+    pub r#distribution_filter: String,
     /// Range of numerical values. The computed good_service
     /// will be the count of values x in the Distribution such
     /// that range.min <= x <= range.max. inclusive of min and

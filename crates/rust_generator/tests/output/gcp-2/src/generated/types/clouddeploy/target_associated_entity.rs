@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TargetAssociatedEntity {
     /// Optional. Information specifying Anthos clusters as associated entities.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "anthosClusters")]
-    pub r#anthos_clusters: Box<Option<Vec<super::super::types::clouddeploy::TargetAssociatedEntityAnthosCluster>>>,
+    pub r#anthos_clusters: Option<Vec<super::super::types::clouddeploy::TargetAssociatedEntityAnthosCluster>>,
     /// The name for the key in the map for which this object is mapped to in the API
     #[builder(into)]
     #[serde(rename = "entityId")]
-    pub r#entity_id: Box<String>,
+    pub r#entity_id: String,
     /// Optional. Information specifying GKE clusters as associated entities.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gkeClusters")]
-    pub r#gke_clusters: Box<Option<Vec<super::super::types::clouddeploy::TargetAssociatedEntityGkeCluster>>>,
+    pub r#gke_clusters: Option<Vec<super::super::types::clouddeploy::TargetAssociatedEntityGkeCluster>>,
 }

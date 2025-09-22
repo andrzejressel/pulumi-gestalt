@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ProjectEnvironmentFleet {
     /// Compute fleet ARN for the build project.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fleetArn")]
-    pub r#fleet_arn: Box<Option<String>>,
+    pub r#fleet_arn: Option<String>,
 }

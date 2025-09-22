@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecLogging {
     #[builder(into)]
     #[serde(rename = "accessLogs")]
-    pub r#access_logs: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecLoggingAccessLog>>,
+    pub r#access_logs: Vec<super::super::types::appmesh::GetVirtualNodeSpecLoggingAccessLog>,
 }

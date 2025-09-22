@@ -6,8 +6,8 @@ pub struct GetVirtualNetworkGatewayVpnClientConfigurationRevokedCertificate {
     /// Specifies the name of the Virtual Network Gateway.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "thumbprint")]
-    pub r#thumbprint: Box<String>,
+    pub r#thumbprint: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RepositoryRemoteRepositoryConfigDockerRepositoryCustomRepository {
     /// Specific uri to the registry, e.g. `"https://pypi.io"`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<Option<String>>,
+    pub r#uri: Option<String>,
 }

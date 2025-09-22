@@ -6,5 +6,5 @@ pub struct RegistryTaskRegistryCredentialSource {
     /// The login mode for the source registry. Possible values are `None` and `Default`.
     #[builder(into)]
     #[serde(rename = "loginMode")]
-    pub r#login_mode: Box<String>,
+    pub r#login_mode: String,
 }

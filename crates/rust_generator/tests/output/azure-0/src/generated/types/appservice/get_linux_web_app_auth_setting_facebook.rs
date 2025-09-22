@@ -6,17 +6,17 @@ pub struct GetLinuxWebAppAuthSettingFacebook {
     /// The App ID of the Facebook app used for login.
     #[builder(into)]
     #[serde(rename = "appId")]
-    pub r#app_id: Box<String>,
+    pub r#app_id: String,
     /// The App Secret of the Facebook app used for Facebook login.
     #[builder(into)]
     #[serde(rename = "appSecret")]
-    pub r#app_secret: Box<String>,
+    pub r#app_secret: String,
     /// The app setting name that contains the `app_secret` value used for Facebook login.
     #[builder(into)]
     #[serde(rename = "appSecretSettingName")]
-    pub r#app_secret_setting_name: Box<String>,
+    pub r#app_secret_setting_name: String,
     /// A list of OAuth 2.0 scopes requested as part of Microsoft Account authentication.
     #[builder(into)]
     #[serde(rename = "oauthScopes")]
-    pub r#oauth_scopes: Box<Vec<String>>,
+    pub r#oauth_scopes: Vec<String>,
 }

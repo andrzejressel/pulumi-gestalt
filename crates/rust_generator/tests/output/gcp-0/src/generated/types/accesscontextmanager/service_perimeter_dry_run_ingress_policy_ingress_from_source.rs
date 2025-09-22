@@ -11,16 +11,16 @@ pub struct ServicePerimeterDryRunIngressPolicyIngressFromSource {
     /// with request origins within the perimeter.
     /// Example `accessPolicies/MY_POLICY/accessLevels/MY_LEVEL.`
     /// If * is specified, then all IngressSources will be allowed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessLevel")]
-    pub r#access_level: Box<Option<String>>,
+    pub r#access_level: Option<String>,
     /// A Google Cloud resource that is allowed to ingress the perimeter.
     /// Requests from these resources will be allowed to access perimeter data.
     /// Currently only projects are allowed. Format `projects/{project_number}`
     /// The project may be in any Google Cloud organization, not just the
     /// organization that the perimeter is defined in. `*` is not allowed, the case
     /// of allowing all Google Cloud resources only is not supported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resource")]
-    pub r#resource: Box<Option<String>>,
+    pub r#resource: Option<String>,
 }

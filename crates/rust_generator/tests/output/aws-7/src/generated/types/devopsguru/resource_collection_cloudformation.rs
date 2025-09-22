@@ -6,5 +6,5 @@ pub struct ResourceCollectionCloudformation {
     /// Array of the names of the AWS CloudFormation stacks. If `type` is `AWS_SERVICE` (all acccount resources) this array should be a single item containing a wildcard (`"*"`).
     #[builder(into)]
     #[serde(rename = "stackNames")]
-    pub r#stack_names: Box<Vec<String>>,
+    pub r#stack_names: Vec<String>,
 }

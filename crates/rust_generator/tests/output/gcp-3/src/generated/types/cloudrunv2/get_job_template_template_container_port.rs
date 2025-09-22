@@ -6,9 +6,9 @@ pub struct GetJobTemplateTemplateContainerPort {
     /// Port number the container listens on. This must be a valid TCP port number, 0 < containerPort < 65536.
     #[builder(into)]
     #[serde(rename = "containerPort")]
-    pub r#container_port: Box<i32>,
+    pub r#container_port: i32,
     /// The name of the Cloud Run v2 Job.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

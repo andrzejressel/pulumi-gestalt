@@ -6,17 +6,17 @@ pub struct ThreeTierVirtualInstanceThreeTierConfigurationCentralServerConfigurat
     /// Specifies the offer of the platform image or marketplace image used to create the virtual machine. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "offer")]
-    pub r#offer: Box<String>,
+    pub r#offer: String,
     /// The publisher of the Image. Possible values are `RedHat` and `SUSE`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<String>,
+    pub r#publisher: String,
     /// The SKU of the Image. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "sku")]
-    pub r#sku: Box<String>,
+    pub r#sku: String,
     /// Specifies the version of the platform image or marketplace image used to create the virtual machine. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

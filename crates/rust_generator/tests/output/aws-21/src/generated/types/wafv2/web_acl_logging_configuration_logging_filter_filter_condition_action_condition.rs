@@ -6,5 +6,5 @@ pub struct WebAclLoggingConfigurationLoggingFilterFilterConditionActionCondition
     /// Action setting that a log record must contain in order to meet the condition. Valid values for `action` are `ALLOW`, `BLOCK`, and `COUNT`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
 }

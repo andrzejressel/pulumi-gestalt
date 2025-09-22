@@ -5,8 +5,8 @@
 pub struct GetPlanStage {
     #[builder(into)]
     #[serde(rename = "durationInMinutes")]
-    pub r#duration_in_minutes: Box<i32>,
+    pub r#duration_in_minutes: i32,
     #[builder(into)]
     #[serde(rename = "targets")]
-    pub r#targets: Box<Vec<super::super::types::ssmcontacts::GetPlanStageTarget>>,
+    pub r#targets: Vec<super::super::types::ssmcontacts::GetPlanStageTarget>,
 }

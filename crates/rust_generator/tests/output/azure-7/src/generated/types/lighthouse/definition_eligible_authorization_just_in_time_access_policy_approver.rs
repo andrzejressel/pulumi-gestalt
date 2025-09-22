@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DefinitionEligibleAuthorizationJustInTimeAccessPolicyApprover {
     /// The display name of the Azure Active Directory Principal for the approver.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "principalDisplayName")]
-    pub r#principal_display_name: Box<Option<String>>,
+    pub r#principal_display_name: Option<String>,
     /// The Principal ID of the Azure Active Directory principal for the approver.
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
 }

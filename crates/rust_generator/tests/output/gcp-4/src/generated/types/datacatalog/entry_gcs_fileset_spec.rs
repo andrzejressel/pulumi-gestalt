@@ -16,14 +16,14 @@ pub struct EntryGcsFilesetSpec {
     /// * gs://another_bucket/a.txt: matches gs://another_bucket/a.txt
     #[builder(into)]
     #[serde(rename = "filePatterns")]
-    pub r#file_patterns: Box<Vec<String>>,
+    pub r#file_patterns: Vec<String>,
     /// (Output)
     /// Sample files contained in this fileset, not all files contained in this fileset are represented here.
     /// Structure is documented below.
     /// 
     /// 
     /// <a name="nested_sample_gcs_file_specs"></a>The `sample_gcs_file_specs` block contains:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sampleGcsFileSpecs")]
-    pub r#sample_gcs_file_specs: Box<Option<Vec<super::super::types::datacatalog::EntryGcsFilesetSpecSampleGcsFileSpec>>>,
+    pub r#sample_gcs_file_specs: Option<Vec<super::super::types::datacatalog::EntryGcsFilesetSpecSampleGcsFileSpec>>,
 }

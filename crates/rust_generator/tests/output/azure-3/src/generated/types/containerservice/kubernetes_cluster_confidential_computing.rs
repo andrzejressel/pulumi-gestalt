@@ -6,5 +6,5 @@ pub struct KubernetesClusterConfidentialComputing {
     /// Should the SGX quote helper be enabled?
     #[builder(into)]
     #[serde(rename = "sgxQuoteHelperEnabled")]
-    pub r#sgx_quote_helper_enabled: Box<bool>,
+    pub r#sgx_quote_helper_enabled: bool,
 }

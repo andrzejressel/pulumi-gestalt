@@ -7,18 +7,18 @@ pub struct InstanceConfigReplica {
     /// leader replicas are placed.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultLeaderLocation")]
-    pub r#default_leader_location: Box<Option<bool>>,
+    pub r#default_leader_location: Option<bool>,
     /// The location of the serving resources, e.g. "us-central1".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<Option<String>>,
+    pub r#location: Option<String>,
     /// Indicates the type of replica.  See the [replica types
     /// documentation](https://cloud.google.com/spanner/docs/replication#replica_types)
     /// for more details.
     /// Possible values are: `READ_WRITE`, `READ_ONLY`, `WITNESS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

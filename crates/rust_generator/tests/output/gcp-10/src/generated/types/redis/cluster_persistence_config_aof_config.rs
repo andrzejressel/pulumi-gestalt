@@ -8,7 +8,7 @@ pub struct ClusterPersistenceConfigAofConfig {
     /// - EVERYSEC - Call fsync() once per second in a background thread. A balance between performance and durability.
     /// - ALWAYS - Call fsync() for earch write command.
     /// Possible values are: `APPEND_FSYNC_UNSPECIFIED`, `NO`, `EVERYSEC`, `ALWAYS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "appendFsync")]
-    pub r#append_fsync: Box<Option<String>>,
+    pub r#append_fsync: Option<String>,
 }

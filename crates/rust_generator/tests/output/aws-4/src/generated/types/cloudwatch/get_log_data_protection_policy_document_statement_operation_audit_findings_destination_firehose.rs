@@ -6,5 +6,5 @@ pub struct GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDest
     /// Name of the Kinesis Firehose Delivery Stream to send findings to.
     #[builder(into)]
     #[serde(rename = "deliveryStream")]
-    pub r#delivery_stream: Box<String>,
+    pub r#delivery_stream: String,
 }

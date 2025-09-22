@@ -6,13 +6,13 @@ pub struct FlowMetadataCatalogConfigGlueDataCatalog {
     /// The name of an existing Glue database to store the metadata tables that Amazon AppFlow creates.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// The ARN of an IAM role that grants AppFlow the permissions it needs to create Data Catalog tables, databases, and partitions.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// A naming prefix for each Data Catalog table that Amazon AppFlow creates
     #[builder(into)]
     #[serde(rename = "tablePrefix")]
-    pub r#table_prefix: Box<String>,
+    pub r#table_prefix: String,
 }

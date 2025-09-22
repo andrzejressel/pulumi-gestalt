@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventTargetKinesisTarget {
     /// The JSON path to be extracted from the event and used as the partition key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "partitionKeyPath")]
-    pub r#partition_key_path: Box<Option<String>>,
+    pub r#partition_key_path: Option<String>,
 }

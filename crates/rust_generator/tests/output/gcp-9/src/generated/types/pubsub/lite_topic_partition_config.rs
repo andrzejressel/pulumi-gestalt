@@ -5,11 +5,11 @@
 pub struct LiteTopicPartitionConfig {
     /// The capacity configuration.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<Option<super::super::types::pubsub::LiteTopicPartitionConfigCapacity>>,
+    pub r#capacity: Option<Box<super::super::types::pubsub::LiteTopicPartitionConfigCapacity>>,
     /// The number of partitions in the topic. Must be at least 1.
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
 }

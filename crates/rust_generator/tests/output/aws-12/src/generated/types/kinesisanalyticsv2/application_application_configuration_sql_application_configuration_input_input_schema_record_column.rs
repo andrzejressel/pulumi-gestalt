@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordColumn {
     /// A reference to the data element in the streaming input or the reference data source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mapping")]
-    pub r#mapping: Box<Option<String>>,
+    pub r#mapping: Option<String>,
     /// The name of the column that is created in the in-application input stream or reference table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The type of column created in the in-application input stream or reference table.
     #[builder(into)]
     #[serde(rename = "sqlType")]
-    pub r#sql_type: Box<String>,
+    pub r#sql_type: String,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StreamProcessorRegionsOfInterestPolygon {
     /// The value of the X coordinate for a point on a Polygon.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "x")]
-    pub r#x: Box<Option<f64>>,
+    pub r#x: Option<f64>,
     /// The value of the Y coordinate for a point on a Polygon.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "y")]
-    pub r#y: Box<Option<f64>>,
+    pub r#y: Option<f64>,
 }

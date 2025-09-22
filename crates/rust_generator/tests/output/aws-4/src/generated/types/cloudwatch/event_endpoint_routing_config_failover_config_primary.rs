@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventEndpointRoutingConfigFailoverConfigPrimary {
     /// The ARN of the health check used by the endpoint to determine whether failover is triggered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "healthCheck")]
-    pub r#health_check: Box<Option<String>>,
+    pub r#health_check: Option<String>,
 }

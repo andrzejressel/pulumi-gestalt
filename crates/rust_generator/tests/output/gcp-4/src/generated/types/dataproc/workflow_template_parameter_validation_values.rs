@@ -6,5 +6,5 @@ pub struct WorkflowTemplateParameterValidationValues {
     /// Required. List of allowed values for the parameter.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

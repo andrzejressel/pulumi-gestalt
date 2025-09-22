@@ -6,9 +6,9 @@ pub struct FlexibleServerIdentity {
     /// A list of User Assigned Managed Identity IDs to be assigned to this PostgreSQL Flexible Server. Required if used together with `customer_managed_key` block.
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     /// Specifies the type of Managed Service Identity that should be configured on this PostgreSQL Flexible Server. The only possible value is `UserAssigned`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

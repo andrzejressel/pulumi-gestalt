@@ -5,11 +5,11 @@
 pub struct GetWindowsFileSystemAuditLogConfiguration {
     #[builder(into)]
     #[serde(rename = "auditLogDestination")]
-    pub r#audit_log_destination: Box<String>,
+    pub r#audit_log_destination: String,
     #[builder(into)]
     #[serde(rename = "fileAccessAuditLogLevel")]
-    pub r#file_access_audit_log_level: Box<String>,
+    pub r#file_access_audit_log_level: String,
     #[builder(into)]
     #[serde(rename = "fileShareAccessAuditLogLevel")]
-    pub r#file_share_access_audit_log_level: Box<String>,
+    pub r#file_share_access_audit_log_level: String,
 }

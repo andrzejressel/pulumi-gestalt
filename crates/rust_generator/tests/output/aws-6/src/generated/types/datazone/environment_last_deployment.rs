@@ -5,20 +5,20 @@
 pub struct EnvironmentLastDeployment {
     #[builder(into)]
     #[serde(rename = "deploymentId")]
-    pub r#deployment_id: Box<String>,
+    pub r#deployment_id: String,
     #[builder(into)]
     #[serde(rename = "deploymentStatus")]
-    pub r#deployment_status: Box<String>,
+    pub r#deployment_status: String,
     #[builder(into)]
     #[serde(rename = "deploymentType")]
-    pub r#deployment_type: Box<String>,
+    pub r#deployment_type: String,
     #[builder(into)]
     #[serde(rename = "failureReasons")]
-    pub r#failure_reasons: Box<Vec<super::super::types::datazone::EnvironmentLastDeploymentFailureReason>>,
+    pub r#failure_reasons: Vec<super::super::types::datazone::EnvironmentLastDeploymentFailureReason>,
     #[builder(into)]
     #[serde(rename = "isDeploymentComplete")]
-    pub r#is_deployment_complete: Box<bool>,
+    pub r#is_deployment_complete: bool,
     #[builder(into)]
     #[serde(rename = "messages")]
-    pub r#messages: Box<Vec<String>>,
+    pub r#messages: Vec<String>,
 }

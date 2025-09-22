@@ -6,13 +6,13 @@ pub struct GetClusterOutpostConfig {
     /// The Amazon EC2 instance type for all Kubernetes control plane instances.
     #[builder(into)]
     #[serde(rename = "controlPlaneInstanceType")]
-    pub r#control_plane_instance_type: Box<String>,
+    pub r#control_plane_instance_type: String,
     /// An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on AWS Outpost.
     #[builder(into)]
     #[serde(rename = "controlPlanePlacements")]
-    pub r#control_plane_placements: Box<Vec<super::super::types::eks::GetClusterOutpostConfigControlPlanePlacement>>,
+    pub r#control_plane_placements: Vec<super::super::types::eks::GetClusterOutpostConfigControlPlanePlacement>,
     /// List of ARNs of the Outposts hosting the EKS cluster. Only a single ARN is supported currently.
     #[builder(into)]
     #[serde(rename = "outpostArns")]
-    pub r#outpost_arns: Box<Vec<String>>,
+    pub r#outpost_arns: Vec<String>,
 }

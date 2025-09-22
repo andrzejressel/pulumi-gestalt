@@ -6,12 +6,12 @@ pub struct KeyRingImportJobAttestation {
     /// (Output)
     /// The attestation data provided by the HSM when the key operation was performed.
     /// A base64-encoded string.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<Option<String>>,
+    pub r#content: Option<String>,
     /// (Output)
     /// The format of the attestation data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "format")]
-    pub r#format: Box<Option<String>>,
+    pub r#format: Option<String>,
 }

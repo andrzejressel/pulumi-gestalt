@@ -6,5 +6,5 @@ pub struct TransferAgentPoolBandwidthLimit {
     /// Bandwidth rate in megabytes per second, distributed across all the agents in the pool.
     #[builder(into)]
     #[serde(rename = "limitMbps")]
-    pub r#limit_mbps: Box<String>,
+    pub r#limit_mbps: String,
 }

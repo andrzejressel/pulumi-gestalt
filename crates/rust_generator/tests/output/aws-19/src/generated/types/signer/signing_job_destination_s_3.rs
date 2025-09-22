@@ -5,9 +5,9 @@
 pub struct SigningJobDestinationS3 {
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// An Amazon S3 object key prefix that you can use to limit signed objects keys to begin with the specified prefix.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
 }

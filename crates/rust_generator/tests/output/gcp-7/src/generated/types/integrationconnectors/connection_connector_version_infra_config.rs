@@ -5,7 +5,7 @@
 pub struct ConnectionConnectorVersionInfraConfig {
     /// (Output)
     /// Max QPS supported by the connector version before throttling of requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ratelimitThreshold")]
-    pub r#ratelimit_threshold: Box<Option<String>>,
+    pub r#ratelimit_threshold: Option<String>,
 }

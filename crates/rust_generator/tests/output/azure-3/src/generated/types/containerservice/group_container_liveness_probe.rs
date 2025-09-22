@@ -4,31 +4,31 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupContainerLivenessProbe {
     /// Commands to be run to validate container readiness. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "execs")]
-    pub r#execs: Box<Option<Vec<String>>>,
+    pub r#execs: Option<Vec<String>>,
     /// How many times to try the probe before restarting the container (liveness probe) or marking the container as unhealthy (readiness probe). Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "failureThreshold")]
-    pub r#failure_threshold: Box<Option<i32>>,
+    pub r#failure_threshold: Option<i32>,
     /// The definition of the http_get for this container as documented in the `http_get` block below. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpGets")]
-    pub r#http_gets: Box<Option<Vec<super::super::types::containerservice::GroupContainerLivenessProbeHttpGet>>>,
+    pub r#http_gets: Option<Vec<super::super::types::containerservice::GroupContainerLivenessProbeHttpGet>>,
     /// Number of seconds after the container has started before liveness or readiness probes are initiated. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "initialDelaySeconds")]
-    pub r#initial_delay_seconds: Box<Option<i32>>,
+    pub r#initial_delay_seconds: Option<i32>,
     /// How often (in seconds) to perform the probe. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "periodSeconds")]
-    pub r#period_seconds: Box<Option<i32>>,
+    pub r#period_seconds: Option<i32>,
     /// Minimum consecutive successes for the probe to be considered successful after having failed. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "successThreshold")]
-    pub r#success_threshold: Box<Option<i32>>,
+    pub r#success_threshold: Option<i32>,
     /// Number of seconds after which the probe times out. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeoutSeconds")]
-    pub r#timeout_seconds: Box<Option<i32>>,
+    pub r#timeout_seconds: Option<i32>,
 }

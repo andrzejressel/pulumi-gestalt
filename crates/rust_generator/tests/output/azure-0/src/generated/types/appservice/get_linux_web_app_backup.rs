@@ -6,17 +6,17 @@ pub struct GetLinuxWebAppBackup {
     /// Is the Backup enabled?
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The name of this Linux Web App.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A `schedule` block as defined below.
     #[builder(into)]
     #[serde(rename = "schedules")]
-    pub r#schedules: Box<Vec<super::super::types::appservice::GetLinuxWebAppBackupSchedule>>,
+    pub r#schedules: Vec<super::super::types::appservice::GetLinuxWebAppBackupSchedule>,
     /// The SAS URL to the container.
     #[builder(into)]
     #[serde(rename = "storageAccountUrl")]
-    pub r#storage_account_url: Box<String>,
+    pub r#storage_account_url: String,
 }

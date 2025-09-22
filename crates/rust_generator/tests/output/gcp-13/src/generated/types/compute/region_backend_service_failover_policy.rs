@@ -11,16 +11,16 @@ pub struct RegionBackendServiceFailoverPolicy {
     /// of 10 min.
     /// This can be set to true only if the protocol is TCP.
     /// The default is false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disableConnectionDrainOnFailover")]
-    pub r#disable_connection_drain_on_failover: Box<Option<bool>>,
+    pub r#disable_connection_drain_on_failover: Option<bool>,
     /// This option is used only when no healthy VMs are detected in the primary
     /// and backup instance groups. When set to true, traffic is dropped. When
     /// set to false, new connections are sent across all VMs in the primary group.
     /// The default is false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dropTrafficIfUnhealthy")]
-    pub r#drop_traffic_if_unhealthy: Box<Option<bool>>,
+    pub r#drop_traffic_if_unhealthy: Option<bool>,
     /// The value of the field must be in [0, 1]. If the ratio of the healthy
     /// VMs in the primary backend is at or below this number, traffic arriving
     /// at the load-balanced IP will be directed to the failover backend.
@@ -29,7 +29,7 @@ pub struct RegionBackendServiceFailoverPolicy {
     /// backend in the "force" mode, where traffic will be spread to the healthy
     /// VMs with the best effort, or to all VMs when no VM is healthy.
     /// This field is only used with l4 load balancing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "failoverRatio")]
-    pub r#failover_ratio: Box<Option<f64>>,
+    pub r#failover_ratio: Option<f64>,
 }

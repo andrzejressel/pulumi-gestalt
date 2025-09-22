@@ -6,9 +6,9 @@ pub struct GetLinuxFunctionAppSiteConfigAppServiceLog {
     /// The amount of disk space used for logs.
     #[builder(into)]
     #[serde(rename = "diskQuotaMb")]
-    pub r#disk_quota_mb: Box<i32>,
+    pub r#disk_quota_mb: i32,
     /// After how many days backups are deleted.
     #[builder(into)]
     #[serde(rename = "retentionPeriodDays")]
-    pub r#retention_period_days: Box<i32>,
+    pub r#retention_period_days: i32,
 }

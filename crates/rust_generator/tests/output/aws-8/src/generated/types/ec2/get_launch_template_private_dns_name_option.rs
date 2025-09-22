@@ -5,11 +5,11 @@
 pub struct GetLaunchTemplatePrivateDnsNameOption {
     #[builder(into)]
     #[serde(rename = "enableResourceNameDnsARecord")]
-    pub r#enable_resource_name_dns_a_record: Box<bool>,
+    pub r#enable_resource_name_dns_a_record: bool,
     #[builder(into)]
     #[serde(rename = "enableResourceNameDnsAaaaRecord")]
-    pub r#enable_resource_name_dns_aaaa_record: Box<bool>,
+    pub r#enable_resource_name_dns_aaaa_record: bool,
     #[builder(into)]
     #[serde(rename = "hostnameType")]
-    pub r#hostname_type: Box<String>,
+    pub r#hostname_type: String,
 }

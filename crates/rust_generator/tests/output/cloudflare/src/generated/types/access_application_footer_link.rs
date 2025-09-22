@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccessApplicationFooterLink {
     /// The name of the footer link.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The URL of the footer link.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<Option<String>>,
+    pub r#url: Option<String>,
 }

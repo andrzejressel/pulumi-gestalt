@@ -6,9 +6,9 @@ pub struct AutoscalingPolicyBasicAlgorithm {
     /// Duration between scaling events. A scaling period starts after the
     /// update operation from the previous event has completed.
     /// Bounds: [2m, 1d]. Default: 2m.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cooldownPeriod")]
-    pub r#cooldown_period: Box<Option<String>>,
+    pub r#cooldown_period: Option<String>,
     /// YARN autoscaling configuration.
     /// Structure is documented below.
     #[builder(into)]

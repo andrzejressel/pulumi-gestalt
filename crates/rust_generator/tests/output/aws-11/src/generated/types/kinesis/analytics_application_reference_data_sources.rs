@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AnalyticsApplicationReferenceDataSources {
     /// The ARN of the Kinesis Analytics Application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The S3 configuration for the reference data source. See S3 Reference below for more details.
     #[builder(into)]
     #[serde(rename = "s3")]
@@ -18,5 +18,5 @@ pub struct AnalyticsApplicationReferenceDataSources {
     /// The in-application Table Name.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
 }

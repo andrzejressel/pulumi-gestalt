@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThreatIntelligenceIndicatorParsedPatternPatternTypeValue {
     /// The value of the parsed pattern type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
     /// The type of the value of the parsed pattern type value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "valueType")]
-    pub r#value_type: Box<Option<String>>,
+    pub r#value_type: Option<String>,
 }

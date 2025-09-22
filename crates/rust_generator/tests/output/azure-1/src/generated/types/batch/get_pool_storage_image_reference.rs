@@ -6,18 +6,18 @@ pub struct GetPoolStorageImageReference {
     /// The fully qualified ID of the certificate installed on the pool.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     #[builder(into)]
     #[serde(rename = "offer")]
-    pub r#offer: Box<String>,
+    pub r#offer: String,
     /// The name of the extension handler publisher.The name of the extension handler publisher.
     #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<String>,
+    pub r#publisher: String,
     #[builder(into)]
     #[serde(rename = "sku")]
-    pub r#sku: Box<String>,
+    pub r#sku: String,
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

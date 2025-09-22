@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertificateOrderCertificate {
     /// The name of the App Service Certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateName")]
-    pub r#certificate_name: Box<Option<String>>,
+    pub r#certificate_name: Option<String>,
     /// Key Vault resource Id.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyVaultId")]
-    pub r#key_vault_id: Box<Option<String>>,
+    pub r#key_vault_id: Option<String>,
     /// Key Vault secret name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keyVaultSecretName")]
-    pub r#key_vault_secret_name: Box<Option<String>>,
+    pub r#key_vault_secret_name: Option<String>,
     /// Status of the Key Vault secret.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "provisioningState")]
-    pub r#provisioning_state: Box<Option<String>>,
+    pub r#provisioning_state: Option<String>,
 }

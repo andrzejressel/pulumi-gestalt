@@ -6,13 +6,13 @@ pub struct FlexibleAppVersionResourcesVolume {
     /// Unique name for the volume.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Volume size in gigabytes.
     #[builder(into)]
     #[serde(rename = "sizeGb")]
-    pub r#size_gb: Box<i32>,
+    pub r#size_gb: i32,
     /// Underlying volume type, e.g. 'tmpfs'.
     #[builder(into)]
     #[serde(rename = "volumeType")]
-    pub r#volume_type: Box<String>,
+    pub r#volume_type: String,
 }

@@ -5,9 +5,9 @@
 pub struct GetTableAcl {
     #[builder(into)]
     #[serde(rename = "accessPolicies")]
-    pub r#access_policies: Box<Vec<super::super::types::storage::GetTableAclAccessPolicy>>,
+    pub r#access_policies: Vec<super::super::types::storage::GetTableAclAccessPolicy>,
     /// The ID of the Storage Table.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

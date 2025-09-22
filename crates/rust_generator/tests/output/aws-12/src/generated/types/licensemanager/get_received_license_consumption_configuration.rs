@@ -6,12 +6,12 @@ pub struct GetReceivedLicenseConsumptionConfiguration {
     /// Details about a borrow configuration. Detailed below
     #[builder(into)]
     #[serde(rename = "borrowConfigurations")]
-    pub r#borrow_configurations: Box<Vec<super::super::types::licensemanager::GetReceivedLicenseConsumptionConfigurationBorrowConfiguration>>,
+    pub r#borrow_configurations: Vec<super::super::types::licensemanager::GetReceivedLicenseConsumptionConfigurationBorrowConfiguration>,
     /// Details about a provisional configuration. Detailed below
     #[builder(into)]
     #[serde(rename = "provisionalConfigurations")]
-    pub r#provisional_configurations: Box<Vec<super::super::types::licensemanager::GetReceivedLicenseConsumptionConfigurationProvisionalConfiguration>>,
+    pub r#provisional_configurations: Vec<super::super::types::licensemanager::GetReceivedLicenseConsumptionConfigurationProvisionalConfiguration>,
     #[builder(into)]
     #[serde(rename = "renewType")]
-    pub r#renew_type: Box<String>,
+    pub r#renew_type: String,
 }

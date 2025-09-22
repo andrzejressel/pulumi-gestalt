@@ -6,5 +6,5 @@ pub struct AwsNodePoolConfigSshConfig {
     /// The name of the EC2 key pair used to login into cluster machines.
     #[builder(into)]
     #[serde(rename = "ec2KeyPair")]
-    pub r#ec_2_key_pair: Box<String>,
+    pub r#ec_2_key_pair: String,
 }

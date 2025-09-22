@@ -6,5 +6,5 @@ pub struct GetFirewallFirewallStatusCapacityUsageSummaryCidrIpSetReference {
     /// Total number of CIDR blocks used by the IP set references in a firewall.
     #[builder(into)]
     #[serde(rename = "resolvedCidrCount")]
-    pub r#resolved_cidr_count: Box<i32>,
+    pub r#resolved_cidr_count: i32,
 }

@@ -6,5 +6,5 @@ pub struct TrustConfigAllowlistedCertificate {
     /// PEM certificate that is allowlisted. The certificate can be up to 5k bytes, and must be a parseable X.509 certificate.
     #[builder(into)]
     #[serde(rename = "pemCertificate")]
-    pub r#pem_certificate: Box<String>,
+    pub r#pem_certificate: String,
 }

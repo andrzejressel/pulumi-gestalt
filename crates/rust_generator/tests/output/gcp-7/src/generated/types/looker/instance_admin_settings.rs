@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceAdminSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedEmailDomains")]
-    pub r#allowed_email_domains: Box<Option<Vec<String>>>,
+    pub r#allowed_email_domains: Option<Vec<String>>,
 }

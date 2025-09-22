@@ -6,9 +6,9 @@ pub struct ChannelDestinationMultiplexSettings {
     /// The ID of the Multiplex that the encoder is providing output to.
     #[builder(into)]
     #[serde(rename = "multiplexId")]
-    pub r#multiplex_id: Box<String>,
+    pub r#multiplex_id: String,
     /// The program name of the Multiplex program that the encoder is providing output to.
     #[builder(into)]
     #[serde(rename = "programName")]
-    pub r#program_name: Box<String>,
+    pub r#program_name: String,
 }

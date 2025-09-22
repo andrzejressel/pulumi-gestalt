@@ -5,8 +5,8 @@
 pub struct GetDataSetColumnLevelPermissionRule {
     #[builder(into)]
     #[serde(rename = "columnNames")]
-    pub r#column_names: Box<Vec<String>>,
+    pub r#column_names: Vec<String>,
     #[builder(into)]
     #[serde(rename = "principals")]
-    pub r#principals: Box<Vec<String>>,
+    pub r#principals: Vec<String>,
 }

@@ -6,9 +6,9 @@ pub struct GetNetworkSimPolicySliceDataNetworkSessionAggregateMaximumBitRate {
     /// Downlink bit rate.
     #[builder(into)]
     #[serde(rename = "downlink")]
-    pub r#downlink: Box<String>,
+    pub r#downlink: String,
     /// Uplink bit rate.
     #[builder(into)]
     #[serde(rename = "uplink")]
-    pub r#uplink: Box<String>,
+    pub r#uplink: String,
 }

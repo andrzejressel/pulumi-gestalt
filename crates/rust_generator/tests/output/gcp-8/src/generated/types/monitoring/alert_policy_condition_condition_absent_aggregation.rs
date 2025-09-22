@@ -17,9 +17,9 @@ pub struct AlertPolicyConditionConditionAbsentAggregation {
     /// does not equal ALIGN_NONE, then
     /// this field must be defined;
     /// otherwise an error is returned.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "alignmentPeriod")]
-    pub r#alignment_period: Box<Option<String>>,
+    pub r#alignment_period: Option<String>,
     /// The approach to be used to combine
     /// time series. Not all reducer
     /// functions may be applied to all
@@ -38,9 +38,9 @@ pub struct AlertPolicyConditionConditionAbsentAggregation {
     /// specified; otherwise, an error is
     /// returned.
     /// Possible values are: `REDUCE_NONE`, `REDUCE_MEAN`, `REDUCE_MIN`, `REDUCE_MAX`, `REDUCE_SUM`, `REDUCE_STDDEV`, `REDUCE_COUNT`, `REDUCE_COUNT_TRUE`, `REDUCE_COUNT_FALSE`, `REDUCE_FRACTION_TRUE`, `REDUCE_PERCENTILE_99`, `REDUCE_PERCENTILE_95`, `REDUCE_PERCENTILE_50`, `REDUCE_PERCENTILE_05`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "crossSeriesReducer")]
-    pub r#cross_series_reducer: Box<Option<String>>,
+    pub r#cross_series_reducer: Option<String>,
     /// The set of fields to preserve when
     /// crossSeriesReducer is specified.
     /// The groupByFields determine how
@@ -66,9 +66,9 @@ pub struct AlertPolicyConditionConditionAbsentAggregation {
     /// time series. If crossSeriesReducer
     /// is not defined, this field is
     /// ignored.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groupByFields")]
-    pub r#group_by_fields: Box<Option<Vec<String>>>,
+    pub r#group_by_fields: Option<Vec<String>>,
     /// The approach to be used to align
     /// individual time series. Not all
     /// alignment functions may be applied
@@ -87,7 +87,7 @@ pub struct AlertPolicyConditionConditionAbsentAggregation {
     /// specified; otherwise, an error is
     /// returned.
     /// Possible values are: `ALIGN_NONE`, `ALIGN_DELTA`, `ALIGN_RATE`, `ALIGN_INTERPOLATE`, `ALIGN_NEXT_OLDER`, `ALIGN_MIN`, `ALIGN_MAX`, `ALIGN_MEAN`, `ALIGN_COUNT`, `ALIGN_SUM`, `ALIGN_STDDEV`, `ALIGN_COUNT_TRUE`, `ALIGN_COUNT_FALSE`, `ALIGN_FRACTION_TRUE`, `ALIGN_PERCENTILE_99`, `ALIGN_PERCENTILE_95`, `ALIGN_PERCENTILE_50`, `ALIGN_PERCENTILE_05`, `ALIGN_PERCENT_CHANGE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "perSeriesAligner")]
-    pub r#per_series_aligner: Box<Option<String>>,
+    pub r#per_series_aligner: Option<String>,
 }

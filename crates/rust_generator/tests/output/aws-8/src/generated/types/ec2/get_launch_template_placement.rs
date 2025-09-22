@@ -5,26 +5,26 @@
 pub struct GetLaunchTemplatePlacement {
     #[builder(into)]
     #[serde(rename = "affinity")]
-    pub r#affinity: Box<String>,
+    pub r#affinity: String,
     #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<String>,
+    pub r#availability_zone: String,
     #[builder(into)]
     #[serde(rename = "groupName")]
-    pub r#group_name: Box<String>,
+    pub r#group_name: String,
     #[builder(into)]
     #[serde(rename = "hostId")]
-    pub r#host_id: Box<String>,
+    pub r#host_id: String,
     #[builder(into)]
     #[serde(rename = "hostResourceGroupArn")]
-    pub r#host_resource_group_arn: Box<String>,
+    pub r#host_resource_group_arn: String,
     #[builder(into)]
     #[serde(rename = "partitionNumber")]
-    pub r#partition_number: Box<i32>,
+    pub r#partition_number: i32,
     #[builder(into)]
     #[serde(rename = "spreadDomain")]
-    pub r#spread_domain: Box<String>,
+    pub r#spread_domain: String,
     #[builder(into)]
     #[serde(rename = "tenancy")]
-    pub r#tenancy: Box<String>,
+    pub r#tenancy: String,
 }

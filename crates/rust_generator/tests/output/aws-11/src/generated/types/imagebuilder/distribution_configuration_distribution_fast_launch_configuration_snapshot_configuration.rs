@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionConfigurationDistributionFastLaunchConfigurationSnapshotConfiguration {
     /// The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetResourceCount")]
-    pub r#target_resource_count: Box<Option<i32>>,
+    pub r#target_resource_count: Option<i32>,
 }

@@ -5,13 +5,13 @@
 pub struct SnapshotSourceDiskEncryptionKey {
     /// The service account used for the encryption request for the given KMS key.
     /// If absent, the Compute Engine Service Agent service account is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyServiceAccount")]
-    pub r#kms_key_service_account: Box<Option<String>>,
+    pub r#kms_key_service_account: Option<String>,
     /// Specifies a 256-bit customer-supplied encryption key, encoded in
     /// RFC 4648 base64 to either encrypt or decrypt this resource.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rawKey")]
-    pub r#raw_key: Box<Option<String>>,
+    pub r#raw_key: Option<String>,
 }

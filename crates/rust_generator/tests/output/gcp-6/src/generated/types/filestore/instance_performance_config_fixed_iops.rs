@@ -5,7 +5,7 @@
 pub struct InstancePerformanceConfigFixedIops {
     /// The number of IOPS to provision for the instance.
     /// max_iops must be in multiple of 1000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxIops")]
-    pub r#max_iops: Box<Option<i32>>,
+    pub r#max_iops: Option<i32>,
 }

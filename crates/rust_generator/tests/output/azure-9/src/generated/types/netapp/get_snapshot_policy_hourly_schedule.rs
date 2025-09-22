@@ -6,9 +6,9 @@ pub struct GetSnapshotPolicyHourlySchedule {
     /// Minute of the hour that the snapshots will be created.
     #[builder(into)]
     #[serde(rename = "minute")]
-    pub r#minute: Box<i32>,
+    pub r#minute: i32,
     /// How many hourly snapshots to keep.
     #[builder(into)]
     #[serde(rename = "snapshotsToKeep")]
-    pub r#snapshots_to_keep: Box<i32>,
+    pub r#snapshots_to_keep: i32,
 }

@@ -5,8 +5,8 @@
 pub struct UserPoolLambdaConfigPreTokenGenerationConfig {
     #[builder(into)]
     #[serde(rename = "lambdaArn")]
-    pub r#lambda_arn: Box<String>,
+    pub r#lambda_arn: String,
     #[builder(into)]
     #[serde(rename = "lambdaVersion")]
-    pub r#lambda_version: Box<String>,
+    pub r#lambda_version: String,
 }

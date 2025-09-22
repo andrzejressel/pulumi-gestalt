@@ -11,5 +11,5 @@ pub struct TagTemplateFieldTypeEnumType {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "allowedValues")]
-    pub r#allowed_values: Box<Vec<super::super::types::datacatalog::TagTemplateFieldTypeEnumTypeAllowedValue>>,
+    pub r#allowed_values: Vec<super::super::types::datacatalog::TagTemplateFieldTypeEnumTypeAllowedValue>,
 }

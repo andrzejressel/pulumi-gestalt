@@ -9,5 +9,5 @@ pub struct GcPolicyMaxVersion {
     /// `gc_rules` include 2 fields:
     #[builder(into)]
     #[serde(rename = "number")]
-    pub r#number: Box<i32>,
+    pub r#number: i32,
 }

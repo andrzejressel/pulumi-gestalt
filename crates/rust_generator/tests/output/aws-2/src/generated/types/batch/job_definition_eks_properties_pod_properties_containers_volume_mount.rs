@@ -5,12 +5,12 @@
 pub struct JobDefinitionEksPropertiesPodPropertiesContainersVolumeMount {
     #[builder(into)]
     #[serde(rename = "mountPath")]
-    pub r#mount_path: Box<String>,
+    pub r#mount_path: String,
     /// Name of the job definition.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
-    #[builder(into, default)]
+    pub r#name: String,
+    #[builder(into)]
     #[serde(rename = "readOnly")]
-    pub r#read_only: Box<Option<bool>>,
+    pub r#read_only: Option<bool>,
 }

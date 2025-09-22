@@ -6,5 +6,5 @@ pub struct GetDomainNameEndpointConfiguration {
     /// List of endpoint types.
     #[builder(into)]
     #[serde(rename = "types")]
-    pub r#types: Box<Vec<String>>,
+    pub r#types: Vec<String>,
 }

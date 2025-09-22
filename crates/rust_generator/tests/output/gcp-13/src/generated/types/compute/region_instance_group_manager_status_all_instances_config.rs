@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegionInstanceGroupManagerStatusAllInstancesConfig {
     /// Current all-instances configuration revision. This value is in RFC3339 text format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "currentRevision")]
-    pub r#current_revision: Box<Option<String>>,
+    pub r#current_revision: Option<String>,
     /// A bit indicating whether this configuration has been applied to all managed instances in the group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "effective")]
-    pub r#effective: Box<Option<bool>>,
+    pub r#effective: Option<bool>,
 }

@@ -8,15 +8,15 @@ pub struct ImageIamMemberCondition {
     /// > **Warning:** This provider considers the `role` and condition contents (`title`+`description`+`expression`) as the
     /// identifier for the binding. This means that if any part of the condition is changed out-of-band, the provider will
     /// consider it to be an entirely different resource and will treat it as such.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Textual representation of an expression in Common Expression Language syntax.
     #[builder(into)]
     #[serde(rename = "expression")]
-    pub r#expression: Box<String>,
+    pub r#expression: String,
     /// A title for the expression, i.e. a short string describing its purpose.
     #[builder(into)]
     #[serde(rename = "title")]
-    pub r#title: Box<String>,
+    pub r#title: String,
 }

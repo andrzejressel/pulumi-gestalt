@@ -6,13 +6,13 @@ pub struct GetDatabaseInstanceRestoreBackupContext {
     /// The ID of the backup run to restore from.
     #[builder(into)]
     #[serde(rename = "backupRunId")]
-    pub r#backup_run_id: Box<i32>,
+    pub r#backup_run_id: i32,
     /// The ID of the instance that the backup was taken from.
     #[builder(into)]
     #[serde(rename = "instanceId")]
-    pub r#instance_id: Box<String>,
+    pub r#instance_id: String,
     /// The ID of the project in which the resource belongs.
     #[builder(into)]
     #[serde(rename = "project")]
-    pub r#project: Box<String>,
+    pub r#project: String,
 }

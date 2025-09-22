@@ -6,9 +6,9 @@ pub struct OrchestratedVirtualMachineScaleSetIdentity {
     /// Specifies a list of User Managed Identity IDs to be assigned to this Windows Virtual Machine Scale Set.
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     /// The type of Managed Identity that should be configured on this Windows Virtual Machine Scale Set. Only possible value is `UserAssigned`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

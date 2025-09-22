@@ -6,9 +6,9 @@ pub struct VirtualMachineOsProfileSecret {
     /// Specifies the ID of the Key Vault to use.
     #[builder(into)]
     #[serde(rename = "sourceVaultId")]
-    pub r#source_vault_id: Box<String>,
+    pub r#source_vault_id: String,
     /// One or more `vault_certificates` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vaultCertificates")]
-    pub r#vault_certificates: Box<Option<Vec<super::super::types::compute::VirtualMachineOsProfileSecretVaultCertificate>>>,
+    pub r#vault_certificates: Option<Vec<super::super::types::compute::VirtualMachineOsProfileSecretVaultCertificate>>,
 }

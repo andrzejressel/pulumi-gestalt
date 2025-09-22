@@ -6,9 +6,9 @@ pub struct BackupPolicyPostgresqlFlexibleServerRetentionRuleLifeCycle {
     /// The type of data store. The only possible value is `VaultStore`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "dataStoreType")]
-    pub r#data_store_type: Box<String>,
+    pub r#data_store_type: String,
     /// The retention duration up to which the backups are to be retained in the data stores. It should follow `ISO 8601` duration format. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<String>,
+    pub r#duration: String,
 }

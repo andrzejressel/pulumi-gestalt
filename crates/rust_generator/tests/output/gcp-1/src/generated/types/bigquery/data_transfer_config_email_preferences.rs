@@ -6,5 +6,5 @@ pub struct DataTransferConfigEmailPreferences {
     /// If true, email notifications will be sent on transfer run failures.
     #[builder(into)]
     #[serde(rename = "enableFailureEmail")]
-    pub r#enable_failure_email: Box<bool>,
+    pub r#enable_failure_email: bool,
 }

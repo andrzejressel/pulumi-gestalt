@@ -5,12 +5,12 @@
 pub struct InstanceStateInfoUpdateInfo {
     /// (Output)
     /// Output only. Target number of replica nodes per shard for the instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetReplicaCount")]
-    pub r#target_replica_count: Box<Option<i32>>,
+    pub r#target_replica_count: Option<i32>,
     /// (Output)
     /// Output only. Target number of shards for the instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetShardCount")]
-    pub r#target_shard_count: Box<Option<i32>>,
+    pub r#target_shard_count: Option<i32>,
 }

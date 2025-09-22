@@ -6,5 +6,5 @@ pub struct GetClusterNodePoolQueuedProvisioning {
     /// Whether nodes in this node pool are obtainable solely through the ProvisioningRequest API
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

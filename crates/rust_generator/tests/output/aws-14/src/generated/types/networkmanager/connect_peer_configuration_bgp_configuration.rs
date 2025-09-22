@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectPeerConfigurationBgpConfiguration {
     /// A Connect peer core network address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "coreNetworkAddress")]
-    pub r#core_network_address: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#core_network_address: Option<String>,
+    #[builder(into)]
     #[serde(rename = "coreNetworkAsn")]
-    pub r#core_network_asn: Box<Option<i32>>,
+    pub r#core_network_asn: Option<i32>,
     /// The Connect peer address.
     /// 
     /// The following arguments are optional:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "peerAddress")]
-    pub r#peer_address: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#peer_address: Option<String>,
+    #[builder(into)]
     #[serde(rename = "peerAsn")]
-    pub r#peer_asn: Box<Option<i32>>,
+    pub r#peer_asn: Option<i32>,
 }

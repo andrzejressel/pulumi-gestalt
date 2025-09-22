@@ -6,13 +6,13 @@ pub struct GetCatalogTablePartitionKey {
     /// Free-form text comment.
     #[builder(into)]
     #[serde(rename = "comment")]
-    pub r#comment: Box<String>,
+    pub r#comment: String,
     /// Name of the table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Datatype of data in the Column.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

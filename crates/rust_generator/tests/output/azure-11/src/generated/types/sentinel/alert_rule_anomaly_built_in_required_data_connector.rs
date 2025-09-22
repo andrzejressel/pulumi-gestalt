@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AlertRuleAnomalyBuiltInRequiredDataConnector {
     /// The ID of the required Data Connector.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectorId")]
-    pub r#connector_id: Box<Option<String>>,
+    pub r#connector_id: Option<String>,
     /// A list of data types of the required Data Connector.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataTypes")]
-    pub r#data_types: Box<Option<Vec<String>>>,
+    pub r#data_types: Option<Vec<String>>,
 }

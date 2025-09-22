@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IoTHubNetworkRuleSet {
     /// Determines if Network Rule Set is also applied to the BuiltIn EventHub EndPoint of the IotHub. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applyToBuiltinEventhubEndpoint")]
-    pub r#apply_to_builtin_eventhub_endpoint: Box<Option<bool>>,
+    pub r#apply_to_builtin_eventhub_endpoint: Option<bool>,
     /// Default Action for Network Rule Set. Possible values are `DefaultActionDeny`, `DefaultActionAllow`. Defaults to `DefaultActionDeny`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultAction")]
-    pub r#default_action: Box<Option<String>>,
+    pub r#default_action: Option<String>,
     /// One or more `ip_rule` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipRules")]
-    pub r#ip_rules: Box<Option<Vec<super::super::types::iot::IoTHubNetworkRuleSetIpRule>>>,
+    pub r#ip_rules: Option<Vec<super::super::types::iot::IoTHubNetworkRuleSetIpRule>>,
 }

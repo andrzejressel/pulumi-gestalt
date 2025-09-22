@@ -6,5 +6,5 @@ pub struct EngineModelDefaultVersion {
     /// The name specified for the version when it was created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

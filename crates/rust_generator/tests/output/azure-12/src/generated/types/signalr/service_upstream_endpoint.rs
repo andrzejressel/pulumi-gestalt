@@ -6,21 +6,21 @@ pub struct ServiceUpstreamEndpoint {
     /// The categories to match on, or `*` for all.
     #[builder(into)]
     #[serde(rename = "categoryPatterns")]
-    pub r#category_patterns: Box<Vec<String>>,
+    pub r#category_patterns: Vec<String>,
     /// The events to match on, or `*` for all.
     #[builder(into)]
     #[serde(rename = "eventPatterns")]
-    pub r#event_patterns: Box<Vec<String>>,
+    pub r#event_patterns: Vec<String>,
     /// The hubs to match on, or `*` for all.
     #[builder(into)]
     #[serde(rename = "hubPatterns")]
-    pub r#hub_patterns: Box<Vec<String>>,
+    pub r#hub_patterns: Vec<String>,
     /// The upstream URL Template. This can be a url or a template such as `http://host.com/{hub}/api/{category}/{event}`.
     #[builder(into)]
     #[serde(rename = "urlTemplate")]
-    pub r#url_template: Box<String>,
+    pub r#url_template: String,
     /// Specifies the Managed Identity IDs to be assigned to this signalR upstream setting by using resource uuid as both system assigned and user assigned identity is supported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userAssignedIdentityId")]
-    pub r#user_assigned_identity_id: Box<Option<String>>,
+    pub r#user_assigned_identity_id: Option<String>,
 }

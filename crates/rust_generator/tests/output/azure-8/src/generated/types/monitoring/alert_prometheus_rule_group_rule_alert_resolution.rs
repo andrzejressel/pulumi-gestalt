@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AlertPrometheusRuleGroupRuleAlertResolution {
     /// Is the alert auto-resolution? Possible values are `true` and `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoResolved")]
-    pub r#auto_resolved: Box<Option<bool>>,
+    pub r#auto_resolved: Option<bool>,
     /// Specifies the alert auto-resolution interval, represented in ISO 8601 duration format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeToResolve")]
-    pub r#time_to_resolve: Box<Option<String>>,
+    pub r#time_to_resolve: Option<String>,
 }

@@ -6,21 +6,21 @@ pub struct GetDirectoryWorkspaceCreationProperty {
     /// The identifier of your custom security group. Should relate to the same VPC, where workspaces reside in.
     #[builder(into)]
     #[serde(rename = "customSecurityGroupId")]
-    pub r#custom_security_group_id: Box<String>,
+    pub r#custom_security_group_id: String,
     /// The default organizational unit (OU) for your WorkSpace directories.
     #[builder(into)]
     #[serde(rename = "defaultOu")]
-    pub r#default_ou: Box<String>,
+    pub r#default_ou: String,
     /// Indicates whether internet access is enabled for your WorkSpaces.
     #[builder(into)]
     #[serde(rename = "enableInternetAccess")]
-    pub r#enable_internet_access: Box<bool>,
+    pub r#enable_internet_access: bool,
     /// Indicates whether maintenance mode is enabled for your WorkSpaces. For more information, see [WorkSpace Maintenance](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html).
     #[builder(into)]
     #[serde(rename = "enableMaintenanceMode")]
-    pub r#enable_maintenance_mode: Box<bool>,
+    pub r#enable_maintenance_mode: bool,
     /// Indicates whether users are local administrators of their WorkSpaces.
     #[builder(into)]
     #[serde(rename = "userEnabledAsLocalAdministrator")]
-    pub r#user_enabled_as_local_administrator: Box<bool>,
+    pub r#user_enabled_as_local_administrator: bool,
 }

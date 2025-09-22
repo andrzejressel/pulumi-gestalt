@@ -6,9 +6,9 @@ pub struct CatalogTableStorageDescriptorSortColumn {
     /// Name of the column.
     #[builder(into)]
     #[serde(rename = "column")]
-    pub r#column: Box<String>,
+    pub r#column: String,
     /// Whether the column is sorted in ascending (`1`) or descending order (`0`).
     #[builder(into)]
     #[serde(rename = "sortOrder")]
-    pub r#sort_order: Box<i32>,
+    pub r#sort_order: i32,
 }

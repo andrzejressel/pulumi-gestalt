@@ -6,9 +6,9 @@ pub struct GetIamPolicyAuditConfig {
     /// A nested block that defines the operations you'd like to log.
     #[builder(into)]
     #[serde(rename = "auditLogConfigs")]
-    pub r#audit_log_configs: Box<Vec<super::super::types::organizations::GetIamPolicyAuditConfigAuditLogConfig>>,
+    pub r#audit_log_configs: Vec<super::super::types::organizations::GetIamPolicyAuditConfigAuditLogConfig>,
     /// Defines a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

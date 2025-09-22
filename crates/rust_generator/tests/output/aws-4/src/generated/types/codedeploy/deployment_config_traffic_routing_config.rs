@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeploymentConfigTrafficRoutingConfig {
     /// The time based canary configuration information. If `type` is `TimeBasedLinear`, use `time_based_linear` instead.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeBasedCanary")]
-    pub r#time_based_canary: Box<Option<super::super::types::codedeploy::DeploymentConfigTrafficRoutingConfigTimeBasedCanary>>,
+    pub r#time_based_canary: Option<Box<super::super::types::codedeploy::DeploymentConfigTrafficRoutingConfigTimeBasedCanary>>,
     /// The time based linear configuration information. If `type` is `TimeBasedCanary`, use `time_based_canary` instead.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeBasedLinear")]
-    pub r#time_based_linear: Box<Option<super::super::types::codedeploy::DeploymentConfigTrafficRoutingConfigTimeBasedLinear>>,
+    pub r#time_based_linear: Option<Box<super::super::types::codedeploy::DeploymentConfigTrafficRoutingConfigTimeBasedLinear>>,
     /// Type of traffic routing config. One of `TimeBasedCanary`, `TimeBasedLinear`, `AllAtOnce`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

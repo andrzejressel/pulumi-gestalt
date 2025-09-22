@@ -6,5 +6,5 @@ pub struct V2ModelsIntentInputContext {
     /// Name of the context.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

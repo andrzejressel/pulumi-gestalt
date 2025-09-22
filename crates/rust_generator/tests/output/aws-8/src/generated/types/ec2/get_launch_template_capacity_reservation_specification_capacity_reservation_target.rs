@@ -5,8 +5,8 @@
 pub struct GetLaunchTemplateCapacityReservationSpecificationCapacityReservationTarget {
     #[builder(into)]
     #[serde(rename = "capacityReservationId")]
-    pub r#capacity_reservation_id: Box<String>,
+    pub r#capacity_reservation_id: String,
     #[builder(into)]
     #[serde(rename = "capacityReservationResourceGroupArn")]
-    pub r#capacity_reservation_resource_group_arn: Box<String>,
+    pub r#capacity_reservation_resource_group_arn: String,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ExpressRouteConnectionRouting {
     /// The ID of the Virtual Hub Route Table associated with this Express Route Connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "associatedRouteTableId")]
-    pub r#associated_route_table_id: Box<Option<String>>,
+    pub r#associated_route_table_id: Option<String>,
     /// The ID of the Route Map associated with this Express Route Connection for inbound routes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inboundRouteMapId")]
-    pub r#inbound_route_map_id: Box<Option<String>>,
+    pub r#inbound_route_map_id: Option<String>,
     /// The ID of the Route Map associated with this Express Route Connection for outbound routes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "outboundRouteMapId")]
-    pub r#outbound_route_map_id: Box<Option<String>>,
+    pub r#outbound_route_map_id: Option<String>,
     /// A `propagated_route_table` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "propagatedRouteTable")]
-    pub r#propagated_route_table: Box<Option<super::super::types::network::ExpressRouteConnectionRoutingPropagatedRouteTable>>,
+    pub r#propagated_route_table: Option<Box<super::super::types::network::ExpressRouteConnectionRoutingPropagatedRouteTable>>,
 }

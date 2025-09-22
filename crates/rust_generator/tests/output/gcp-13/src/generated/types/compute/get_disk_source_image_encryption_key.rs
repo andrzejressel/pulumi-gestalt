@@ -10,20 +10,20 @@ pub struct GetDiskSourceImageEncryptionKey {
     /// See https://cloud.google.com/compute/docs/disks/customer-managed-encryption#encrypt_a_new_persistent_disk_with_your_own_keys
     #[builder(into)]
     #[serde(rename = "kmsKeySelfLink")]
-    pub r#kms_key_self_link: Box<String>,
+    pub r#kms_key_self_link: String,
     /// The service account used for the encryption request for the given KMS key.
     /// If absent, the Compute Engine Service Agent service account is used.
     #[builder(into)]
     #[serde(rename = "kmsKeyServiceAccount")]
-    pub r#kms_key_service_account: Box<String>,
+    pub r#kms_key_service_account: String,
     /// Specifies a 256-bit customer-supplied encryption key, encoded in
     /// RFC 4648 base64 to either encrypt or decrypt this resource.
     #[builder(into)]
     #[serde(rename = "rawKey")]
-    pub r#raw_key: Box<String>,
+    pub r#raw_key: String,
     /// The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied
     /// encryption key that protects this resource.
     #[builder(into)]
     #[serde(rename = "sha256")]
-    pub r#sha_256: Box<String>,
+    pub r#sha_256: String,
 }

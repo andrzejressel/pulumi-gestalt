@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventTargetRetryPolicy {
     /// The age in seconds to continue to make retry attempts.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximumEventAgeInSeconds")]
-    pub r#maximum_event_age_in_seconds: Box<Option<i32>>,
+    pub r#maximum_event_age_in_seconds: Option<i32>,
     /// maximum number of retry attempts to make before the request fails
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximumRetryAttempts")]
-    pub r#maximum_retry_attempts: Box<Option<i32>>,
+    pub r#maximum_retry_attempts: Option<i32>,
 }

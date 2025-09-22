@@ -6,5 +6,5 @@ pub struct KubernetesClusterLinuxProfileSshKey {
     /// The Public SSH Key used to access the cluster. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "keyData")]
-    pub r#key_data: Box<String>,
+    pub r#key_data: String,
 }

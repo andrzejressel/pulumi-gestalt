@@ -6,5 +6,5 @@ pub struct CustomProviderValidation {
     /// The endpoint where the validation specification is located.
     #[builder(into)]
     #[serde(rename = "specification")]
-    pub r#specification: Box<String>,
+    pub r#specification: String,
 }

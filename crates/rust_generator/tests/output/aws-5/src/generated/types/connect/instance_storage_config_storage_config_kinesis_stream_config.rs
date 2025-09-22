@@ -6,5 +6,5 @@ pub struct InstanceStorageConfigStorageConfigKinesisStreamConfig {
     /// The Amazon Resource Name (ARN) of the data stream.
     #[builder(into)]
     #[serde(rename = "streamArn")]
-    pub r#stream_arn: Box<String>,
+    pub r#stream_arn: String,
 }

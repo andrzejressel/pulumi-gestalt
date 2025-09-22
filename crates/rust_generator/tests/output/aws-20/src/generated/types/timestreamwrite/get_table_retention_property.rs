@@ -6,9 +6,9 @@ pub struct GetTableRetentionProperty {
     /// Duration in days in which the data must be stored in magnetic store.
     #[builder(into)]
     #[serde(rename = "magneticStoreRetentionPeriodInDays")]
-    pub r#magnetic_store_retention_period_in_days: Box<i32>,
+    pub r#magnetic_store_retention_period_in_days: i32,
     /// Duration in hours in which the data must be stored in memory store.
     #[builder(into)]
     #[serde(rename = "memoryStoreRetentionPeriodInHours")]
-    pub r#memory_store_retention_period_in_hours: Box<i32>,
+    pub r#memory_store_retention_period_in_hours: i32,
 }

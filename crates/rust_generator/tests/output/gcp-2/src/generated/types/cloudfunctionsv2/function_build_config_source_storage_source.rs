@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FunctionBuildConfigSourceStorageSource {
     /// Google Cloud Storage bucket containing the source
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<Option<String>>,
+    pub r#bucket: Option<String>,
     /// Google Cloud Storage generation for the object. If the generation
     /// is omitted, the latest generation will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "generation")]
-    pub r#generation: Box<Option<i32>>,
+    pub r#generation: Option<i32>,
     /// Google Cloud Storage object containing the source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<Option<String>>,
+    pub r#object: Option<String>,
 }

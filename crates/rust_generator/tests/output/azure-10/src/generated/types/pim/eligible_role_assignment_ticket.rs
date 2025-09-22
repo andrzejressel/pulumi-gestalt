@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EligibleRoleAssignmentTicket {
     /// User-supplied ticket number to be included with the request. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "number")]
-    pub r#number: Box<Option<String>>,
+    pub r#number: Option<String>,
     /// User-supplied ticket system name to be included with the request. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "system")]
-    pub r#system: Box<Option<String>>,
+    pub r#system: Option<String>,
 }

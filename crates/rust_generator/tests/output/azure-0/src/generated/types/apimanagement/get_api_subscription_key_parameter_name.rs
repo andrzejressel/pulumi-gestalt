@@ -6,9 +6,9 @@ pub struct GetApiSubscriptionKeyParameterName {
     /// The name of the HTTP Header which should be used for the Subscription Key.
     #[builder(into)]
     #[serde(rename = "header")]
-    pub r#header: Box<String>,
+    pub r#header: String,
     /// The name of the QueryString parameter which should be used for the Subscription Key.
     #[builder(into)]
     #[serde(rename = "query")]
-    pub r#query: Box<String>,
+    pub r#query: String,
 }

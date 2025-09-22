@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceFromMachineImageParams {
     /// A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT & PATCH) when empty.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceManagerTags")]
-    pub r#resource_manager_tags: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#resource_manager_tags: Option<std::collections::HashMap<String, String>>,
 }

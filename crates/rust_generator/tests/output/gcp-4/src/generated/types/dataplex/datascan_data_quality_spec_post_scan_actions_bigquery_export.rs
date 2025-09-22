@@ -5,7 +5,7 @@
 pub struct DatascanDataQualitySpecPostScanActionsBigqueryExport {
     /// The BigQuery table to export DataProfileScan results to.
     /// Format://bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resultsTable")]
-    pub r#results_table: Box<Option<String>>,
+    pub r#results_table: Option<String>,
 }

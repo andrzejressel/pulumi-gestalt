@@ -6,5 +6,5 @@ pub struct ConnectionEventingConfigAuthConfigAdditionalVariableSecretValue {
     /// Secret version of Secret Value for Config variable.
     #[builder(into)]
     #[serde(rename = "secretVersion")]
-    pub r#secret_version: Box<String>,
+    pub r#secret_version: String,
 }

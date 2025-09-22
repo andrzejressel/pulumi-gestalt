@@ -6,9 +6,9 @@ pub struct CapacityReservationSku {
     /// Specifies the number of instances to be reserved. It must be greater than or equal to `0` and not exceed the quota in the subscription.
     #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<i32>,
+    pub r#capacity: i32,
     /// Name of the sku, such as `Standard_F2`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

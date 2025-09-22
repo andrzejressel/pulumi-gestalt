@@ -5,11 +5,11 @@
 pub struct GetVirtualGatewaySpec {
     #[builder(into)]
     #[serde(rename = "backendDefaults")]
-    pub r#backend_defaults: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefault>>,
+    pub r#backend_defaults: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefault>,
     #[builder(into)]
     #[serde(rename = "listeners")]
-    pub r#listeners: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecListener>>,
+    pub r#listeners: Vec<super::super::types::appmesh::GetVirtualGatewaySpecListener>,
     #[builder(into)]
     #[serde(rename = "loggings")]
-    pub r#loggings: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecLogging>>,
+    pub r#loggings: Vec<super::super::types::appmesh::GetVirtualGatewaySpecLogging>,
 }

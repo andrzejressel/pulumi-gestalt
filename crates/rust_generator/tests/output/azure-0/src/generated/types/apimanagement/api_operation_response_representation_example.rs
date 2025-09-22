@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApiOperationResponseRepresentationExample {
     /// A long description for this example.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// A URL that points to the literal example.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "externalValue")]
-    pub r#external_value: Box<Option<String>>,
+    pub r#external_value: Option<String>,
     /// The name of this example.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A short description for this example.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "summary")]
-    pub r#summary: Box<Option<String>>,
+    pub r#summary: Option<String>,
     /// The example of the representation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

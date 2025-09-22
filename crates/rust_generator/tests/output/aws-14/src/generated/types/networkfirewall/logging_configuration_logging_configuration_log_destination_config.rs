@@ -9,13 +9,13 @@ pub struct LoggingConfigurationLoggingConfigurationLogDestinationConfig {
     /// * For a Kinesis Data Firehose delivery stream, specify the key `deliveryStream` with the name of the delivery stream.
     #[builder(into)]
     #[serde(rename = "logDestination")]
-    pub r#log_destination: Box<std::collections::HashMap<String, String>>,
+    pub r#log_destination: std::collections::HashMap<String, String>,
     /// The location to send logs to. Valid values: `S3`, `CloudWatchLogs`, `KinesisDataFirehose`.
     #[builder(into)]
     #[serde(rename = "logDestinationType")]
-    pub r#log_destination_type: Box<String>,
+    pub r#log_destination_type: String,
     /// The type of log to send. Valid values: `ALERT` or `FLOW` or `TLS`. Alert logs report traffic that matches a `StatefulRule` with an action setting that sends a log message. Flow logs are standard network traffic flow logs.
     #[builder(into)]
     #[serde(rename = "logType")]
-    pub r#log_type: Box<String>,
+    pub r#log_type: String,
 }

@@ -6,9 +6,9 @@ pub struct ScheduleWeeklyRecurrence {
     /// The time when the schedule takes effect.
     #[builder(into)]
     #[serde(rename = "time")]
-    pub r#time: Box<String>,
+    pub r#time: String,
     /// A list of days that this schedule takes effect . Possible values include `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday` and `Sunday`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weekDays")]
-    pub r#week_days: Box<Option<Vec<String>>>,
+    pub r#week_days: Option<Vec<String>>,
 }

@@ -5,5 +5,5 @@
 pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFields {
     #[builder(into)]
     #[serde(rename = "identifiers")]
-    pub r#identifiers: Box<Vec<String>>,
+    pub r#identifiers: Vec<String>,
 }

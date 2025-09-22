@@ -5,50 +5,50 @@
 pub struct GetEndpointPostgresSetting {
     #[builder(into)]
     #[serde(rename = "afterConnectScript")]
-    pub r#after_connect_script: Box<String>,
+    pub r#after_connect_script: String,
     #[builder(into)]
     #[serde(rename = "babelfishDatabaseName")]
-    pub r#babelfish_database_name: Box<String>,
+    pub r#babelfish_database_name: String,
     #[builder(into)]
     #[serde(rename = "captureDdls")]
-    pub r#capture_ddls: Box<bool>,
+    pub r#capture_ddls: bool,
     #[builder(into)]
     #[serde(rename = "databaseMode")]
-    pub r#database_mode: Box<String>,
+    pub r#database_mode: String,
     #[builder(into)]
     #[serde(rename = "ddlArtifactsSchema")]
-    pub r#ddl_artifacts_schema: Box<String>,
+    pub r#ddl_artifacts_schema: String,
     #[builder(into)]
     #[serde(rename = "executeTimeout")]
-    pub r#execute_timeout: Box<i32>,
+    pub r#execute_timeout: i32,
     #[builder(into)]
     #[serde(rename = "failTasksOnLobTruncation")]
-    pub r#fail_tasks_on_lob_truncation: Box<bool>,
+    pub r#fail_tasks_on_lob_truncation: bool,
     #[builder(into)]
     #[serde(rename = "heartbeatEnable")]
-    pub r#heartbeat_enable: Box<bool>,
+    pub r#heartbeat_enable: bool,
     #[builder(into)]
     #[serde(rename = "heartbeatFrequency")]
-    pub r#heartbeat_frequency: Box<i32>,
+    pub r#heartbeat_frequency: i32,
     #[builder(into)]
     #[serde(rename = "heartbeatSchema")]
-    pub r#heartbeat_schema: Box<String>,
+    pub r#heartbeat_schema: String,
     #[builder(into)]
     #[serde(rename = "mapBooleanAsBoolean")]
-    pub r#map_boolean_as_boolean: Box<bool>,
+    pub r#map_boolean_as_boolean: bool,
     #[builder(into)]
     #[serde(rename = "mapJsonbAsClob")]
-    pub r#map_jsonb_as_clob: Box<bool>,
+    pub r#map_jsonb_as_clob: bool,
     #[builder(into)]
     #[serde(rename = "mapLongVarcharAs")]
-    pub r#map_long_varchar_as: Box<String>,
+    pub r#map_long_varchar_as: String,
     #[builder(into)]
     #[serde(rename = "maxFileSize")]
-    pub r#max_file_size: Box<i32>,
+    pub r#max_file_size: i32,
     #[builder(into)]
     #[serde(rename = "pluginName")]
-    pub r#plugin_name: Box<String>,
+    pub r#plugin_name: String,
     #[builder(into)]
     #[serde(rename = "slotName")]
-    pub r#slot_name: Box<String>,
+    pub r#slot_name: String,
 }

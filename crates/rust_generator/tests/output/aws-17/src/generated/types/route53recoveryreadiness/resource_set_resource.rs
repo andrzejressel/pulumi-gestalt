@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResourceSetResource {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "componentId")]
-    pub r#component_id: Box<Option<String>>,
+    pub r#component_id: Option<String>,
     /// Component for DNS/Routing Control Readiness Checks.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dnsTargetResource")]
-    pub r#dns_target_resource: Box<Option<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResource>>,
+    pub r#dns_target_resource: Option<Box<super::super::types::route53recoveryreadiness::ResourceSetResourceDnsTargetResource>>,
     /// Recovery group ARN or cell ARN that contains this resource set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "readinessScopes")]
-    pub r#readiness_scopes: Box<Option<Vec<String>>>,
+    pub r#readiness_scopes: Option<Vec<String>>,
     /// ARN of the resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceArn")]
-    pub r#resource_arn: Box<Option<String>>,
+    pub r#resource_arn: Option<String>,
 }

@@ -6,5 +6,5 @@ pub struct BucketReplicationConfigRuleExistingObjectReplication {
     /// Whether the existing objects should be replicated. Either `"Enabled"` or `"Disabled"`.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

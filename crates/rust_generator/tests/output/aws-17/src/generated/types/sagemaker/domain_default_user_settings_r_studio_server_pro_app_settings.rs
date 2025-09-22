@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainDefaultUserSettingsRStudioServerProAppSettings {
     /// Indicates whether the current user has access to the RStudioServerPro app. Valid values are `ENABLED` and `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessStatus")]
-    pub r#access_status: Box<Option<String>>,
+    pub r#access_status: Option<String>,
     /// The level of permissions that the user has within the RStudioServerPro app. This value defaults to `R_STUDIO_USER`. The `R_STUDIO_ADMIN` value allows the user access to the RStudio Administrative Dashboard. Valid values are `R_STUDIO_USER` and `R_STUDIO_ADMIN`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userGroup")]
-    pub r#user_group: Box<Option<String>>,
+    pub r#user_group: Option<String>,
 }

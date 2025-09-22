@@ -6,5 +6,5 @@ pub struct WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchState
     /// Name of the query header to inspect. This setting must be provided as lower case characters.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

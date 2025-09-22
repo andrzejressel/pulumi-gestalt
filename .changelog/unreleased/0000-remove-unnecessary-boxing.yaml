@@ -1,0 +1,2 @@
+type: Feature
+title: Remove unnecessary boxing in the generated structs

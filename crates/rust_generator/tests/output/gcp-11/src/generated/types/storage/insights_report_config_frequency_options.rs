@@ -12,7 +12,7 @@ pub struct InsightsReportConfigFrequencyOptions {
     /// Possible values are: `DAILY`, `WEEKLY`.
     #[builder(into)]
     #[serde(rename = "frequency")]
-    pub r#frequency: Box<String>,
+    pub r#frequency: String,
     /// The date to start generating inventory reports. For example, {"day": 15, "month": 8, "year": 2022}.
     /// Structure is documented below.
     #[builder(into)]

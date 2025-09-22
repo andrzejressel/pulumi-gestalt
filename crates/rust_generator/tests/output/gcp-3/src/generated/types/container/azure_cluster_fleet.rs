@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AzureClusterFleet {
     /// The name of the managed Hub Membership resource associated to this cluster. Membership names are formatted as projects/<project-number>/locations/global/membership/<cluster-id>.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "membership")]
-    pub r#membership: Box<Option<String>>,
+    pub r#membership: Option<String>,
     /// The number of the Fleet host project where this cluster will be registered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "project")]
-    pub r#project: Box<Option<String>>,
+    pub r#project: Option<String>,
 }

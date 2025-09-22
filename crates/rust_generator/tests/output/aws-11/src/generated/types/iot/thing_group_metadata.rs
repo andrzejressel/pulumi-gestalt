@@ -3,14 +3,14 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThingGroupMetadata {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "creationDate")]
-    pub r#creation_date: Box<Option<String>>,
+    pub r#creation_date: Option<String>,
     /// The name of the parent Thing Group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parentGroupName")]
-    pub r#parent_group_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#parent_group_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "rootToParentGroups")]
-    pub r#root_to_parent_groups: Box<Option<Vec<super::super::types::iot::ThingGroupMetadataRootToParentGroup>>>,
+    pub r#root_to_parent_groups: Option<Vec<super::super::types::iot::ThingGroupMetadataRootToParentGroup>>,
 }

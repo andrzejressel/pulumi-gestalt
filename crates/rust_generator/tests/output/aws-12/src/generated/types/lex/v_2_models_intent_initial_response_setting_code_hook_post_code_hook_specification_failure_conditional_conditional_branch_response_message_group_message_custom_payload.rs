@@ -6,5 +6,5 @@ pub struct V2ModelsIntentInitialResponseSettingCodeHookPostCodeHookSpecification
     /// String that is sent to your application.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

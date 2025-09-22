@@ -5,12 +5,12 @@
 pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations {
     /// Transform the record by applying various field transformations.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fieldTransformations")]
-    pub r#field_transformations: Box<Option<Vec<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation>>>,
+    pub r#field_transformations: Option<Vec<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation>>,
     /// Configuration defining which records get suppressed entirely. Records that match any suppression rule are omitted from the output.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordSuppressions")]
-    pub r#record_suppressions: Box<Option<Vec<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression>>>,
+    pub r#record_suppressions: Option<Vec<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression>>,
 }

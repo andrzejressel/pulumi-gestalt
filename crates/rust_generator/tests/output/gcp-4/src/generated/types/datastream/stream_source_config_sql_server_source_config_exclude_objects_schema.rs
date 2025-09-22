@@ -6,10 +6,10 @@ pub struct StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchema {
     /// Schema name.
     #[builder(into)]
     #[serde(rename = "schema")]
-    pub r#schema: Box<String>,
+    pub r#schema: String,
     /// Tables in the database.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tables")]
-    pub r#tables: Box<Option<Vec<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTable>>>,
+    pub r#tables: Option<Vec<super::super::types::datastream::StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTable>>,
 }

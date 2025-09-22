@@ -6,21 +6,21 @@ pub struct GetTestablePermissionsPermission {
     /// Whether the corresponding API has been enabled for the resource.
     #[builder(into)]
     #[serde(rename = "apiDisabled")]
-    pub r#api_disabled: Box<bool>,
+    pub r#api_disabled: bool,
     /// The level of support for custom roles. Can be one of `"NOT_SUPPORTED"`, `"SUPPORTED"`, `"TESTING"`. Default is `"SUPPORTED"`
     #[builder(into)]
     #[serde(rename = "customSupportLevel")]
-    pub r#custom_support_level: Box<String>,
+    pub r#custom_support_level: String,
     /// Name of the permission.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Release stage of the permission.
     #[builder(into)]
     #[serde(rename = "stage")]
-    pub r#stage: Box<String>,
+    pub r#stage: String,
     /// Human readable title of the permission.
     #[builder(into)]
     #[serde(rename = "title")]
-    pub r#title: Box<String>,
+    pub r#title: String,
 }

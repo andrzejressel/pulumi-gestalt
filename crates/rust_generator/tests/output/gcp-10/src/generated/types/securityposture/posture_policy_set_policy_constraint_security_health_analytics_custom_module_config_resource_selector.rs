@@ -8,5 +8,5 @@ pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleCo
     /// - - -
     #[builder(into)]
     #[serde(rename = "resourceTypes")]
-    pub r#resource_types: Box<Vec<String>>,
+    pub r#resource_types: Vec<String>,
 }

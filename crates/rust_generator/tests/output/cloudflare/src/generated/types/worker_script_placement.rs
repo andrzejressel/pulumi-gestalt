@@ -6,5 +6,5 @@ pub struct WorkerScriptPlacement {
     /// The placement mode for the Worker. Available values: `smart`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

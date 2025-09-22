@@ -6,9 +6,9 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerVolumeEfsVolume
     /// The Amazon EFS access point ID to use.
     #[builder(into)]
     #[serde(rename = "accessPointId")]
-    pub r#access_point_id: Box<String>,
+    pub r#access_point_id: String,
     /// Whether or not to use the AWS Batch job IAM role defined in a job definition when mounting the Amazon EFS file system.
     #[builder(into)]
     #[serde(rename = "iam")]
-    pub r#iam: Box<String>,
+    pub r#iam: String,
 }

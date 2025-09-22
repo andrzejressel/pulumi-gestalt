@@ -7,14 +7,14 @@ pub struct OsPolicyAssignmentOsPolicy {
     /// policy compliance status when none of the resource groups within the policy
     /// are applicable for a VM. Set this value to `true` if the policy needs to be
     /// reported as compliant even if the policy has nothing to validate or enforce.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowNoResourceGroupMatch")]
-    pub r#allow_no_resource_group_match: Box<Option<bool>>,
+    pub r#allow_no_resource_group_match: Option<bool>,
     /// Policy description. Length of the description is
     /// limited to 1024 characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The id of the OS policy with the following restrictions:
     /// 
     /// *   Must contain only lowercase letters, numbers, and hyphens.
@@ -24,12 +24,12 @@ pub struct OsPolicyAssignmentOsPolicy {
     /// *   Must be unique within the assignment.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Policy mode Possible values are: `MODE_UNSPECIFIED`,
     /// `VALIDATION`, `ENFORCEMENT`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
     /// List of resource groups for the policy. For a
     /// particular VM, resource groups are evaluated in the order specified and the
     /// first resource group that is applicable is selected and the rest are
@@ -39,5 +39,5 @@ pub struct OsPolicyAssignmentOsPolicy {
     /// documented below.
     #[builder(into)]
     #[serde(rename = "resourceGroups")]
-    pub r#resource_groups: Box<Vec<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroup>>,
+    pub r#resource_groups: Vec<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroup>,
 }

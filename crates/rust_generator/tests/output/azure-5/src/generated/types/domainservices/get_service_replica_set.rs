@@ -6,25 +6,25 @@ pub struct GetServiceReplicaSet {
     /// A list of subnet IP addresses for the domain controllers in the replica set, typically two.
     #[builder(into)]
     #[serde(rename = "domainControllerIpAddresses")]
-    pub r#domain_controller_ip_addresses: Box<Vec<String>>,
+    pub r#domain_controller_ip_addresses: Vec<String>,
     /// The publicly routable IP address for the domain controllers in the replica set.
     #[builder(into)]
     #[serde(rename = "externalAccessIpAddress")]
-    pub r#external_access_ip_address: Box<String>,
+    pub r#external_access_ip_address: String,
     /// The ID of the Domain Service.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The Azure location in which the replica set resides.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// The current service status for the replica set.
     #[builder(into)]
     #[serde(rename = "serviceStatus")]
-    pub r#service_status: Box<String>,
+    pub r#service_status: String,
     /// The ID of the subnet in which the replica set resides.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

@@ -5,13 +5,13 @@
 pub struct GetAccountGeoLocation {
     #[builder(into)]
     #[serde(rename = "failoverPriority")]
-    pub r#failover_priority: Box<i32>,
+    pub r#failover_priority: i32,
     /// The ID of the virtual network subnet.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The name of the Azure region hosting replicated data.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
 }

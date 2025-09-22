@@ -6,5 +6,5 @@ pub struct RecommendationPreferencesExternalMetricsPreference {
     /// The source options for external metrics preferences. Valid values: `Datadog`, `Dynatrace`, `NewRelic`, `Instana`.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<String>,
+    pub r#source: String,
 }

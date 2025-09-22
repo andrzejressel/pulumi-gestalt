@@ -6,13 +6,13 @@ pub struct GetUserIdentityInfo {
     /// The email address.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
     /// The first name.
     #[builder(into)]
     #[serde(rename = "firstName")]
-    pub r#first_name: Box<String>,
+    pub r#first_name: String,
     /// The last name.
     #[builder(into)]
     #[serde(rename = "lastName")]
-    pub r#last_name: Box<String>,
+    pub r#last_name: String,
 }

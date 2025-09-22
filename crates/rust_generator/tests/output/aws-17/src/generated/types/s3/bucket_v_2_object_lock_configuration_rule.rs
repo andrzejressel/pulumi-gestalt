@@ -6,5 +6,5 @@ pub struct BucketV2ObjectLockConfigurationRule {
     /// Default retention period that you want to apply to new objects placed in this bucket (documented below).
     #[builder(into)]
     #[serde(rename = "defaultRetentions")]
-    pub r#default_retentions: Box<Vec<super::super::types::s3::BucketV2ObjectLockConfigurationRuleDefaultRetention>>,
+    pub r#default_retentions: Vec<super::super::types::s3::BucketV2ObjectLockConfigurationRuleDefaultRetention>,
 }

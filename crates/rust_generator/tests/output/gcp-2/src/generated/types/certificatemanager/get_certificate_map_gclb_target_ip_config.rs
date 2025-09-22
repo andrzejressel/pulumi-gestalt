@@ -6,9 +6,9 @@ pub struct GetCertificateMapGclbTargetIpConfig {
     /// An external IP address
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
     /// A list of ports
     #[builder(into)]
     #[serde(rename = "ports")]
-    pub r#ports: Box<Vec<i32>>,
+    pub r#ports: Vec<i32>,
 }

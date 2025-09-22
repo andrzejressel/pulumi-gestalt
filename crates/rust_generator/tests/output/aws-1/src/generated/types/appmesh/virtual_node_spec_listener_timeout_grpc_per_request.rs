@@ -6,9 +6,9 @@ pub struct VirtualNodeSpecListenerTimeoutGrpcPerRequest {
     /// Unit of time. Valid values: `ms`, `s`.
     #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<String>,
+    pub r#unit: String,
     /// Number of time units. Minimum value of `0`.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<i32>,
+    pub r#value: i32,
 }

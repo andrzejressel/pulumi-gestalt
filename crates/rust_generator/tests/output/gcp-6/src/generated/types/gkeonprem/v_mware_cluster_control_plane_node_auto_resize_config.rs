@@ -8,5 +8,5 @@ pub struct VMwareClusterControlPlaneNodeAutoResizeConfig {
     /// <a name="nested_vsphere_config"></a>The `vsphere_config` block contains:
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

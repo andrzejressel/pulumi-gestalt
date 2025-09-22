@@ -6,19 +6,19 @@ pub struct ConnectedRegistryNotification {
     /// The action of the artifact that wants to be subscribed for the Connected Registry. Possible values are `push`, `delete` and `*` (i.e. any).
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// The digest of the artifact that wants to be subscribed for the Connected Registry.
     /// 
     /// > **NOTE:** One of either `tag` or `digest` can be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "digest")]
-    pub r#digest: Box<Option<String>>,
+    pub r#digest: Option<String>,
     /// The name of the artifact that wants to be subscribed for the Connected Registry.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The tag of the artifact that wants to be subscribed for the Connected Registry.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<Option<String>>,
+    pub r#tag: Option<String>,
 }

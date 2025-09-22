@@ -11,5 +11,5 @@ pub struct EdgeCacheKeysetValidationSharedKey {
     /// See RFC 2104, Section 3 for more details on these recommendations.
     #[builder(into)]
     #[serde(rename = "secretVersion")]
-    pub r#secret_version: Box<String>,
+    pub r#secret_version: String,
 }

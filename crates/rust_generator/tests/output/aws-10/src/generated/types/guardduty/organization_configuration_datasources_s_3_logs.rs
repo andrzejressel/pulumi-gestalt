@@ -6,5 +6,5 @@ pub struct OrganizationConfigurationDatasourcesS3Logs {
     /// Set to `true` if you want S3 data event logs to be automatically enabled for new members of the organization. Default: `false`
     #[builder(into)]
     #[serde(rename = "autoEnable")]
-    pub r#auto_enable: Box<bool>,
+    pub r#auto_enable: bool,
 }

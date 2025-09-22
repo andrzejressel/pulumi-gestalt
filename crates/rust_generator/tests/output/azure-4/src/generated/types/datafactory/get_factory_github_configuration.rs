@@ -6,21 +6,21 @@ pub struct GetFactoryGithubConfiguration {
     /// The VSTS account name.
     #[builder(into)]
     #[serde(rename = "accountName")]
-    pub r#account_name: Box<String>,
+    pub r#account_name: String,
     /// The branch of the repository to get code from.
     #[builder(into)]
     #[serde(rename = "branchName")]
-    pub r#branch_name: Box<String>,
+    pub r#branch_name: String,
     /// The GitHub repository url.
     #[builder(into)]
     #[serde(rename = "gitUrl")]
-    pub r#git_url: Box<String>,
+    pub r#git_url: String,
     /// The name of the git repository.
     #[builder(into)]
     #[serde(rename = "repositoryName")]
-    pub r#repository_name: Box<String>,
+    pub r#repository_name: String,
     /// The root folder within the repository.
     #[builder(into)]
     #[serde(rename = "rootFolder")]
-    pub r#root_folder: Box<String>,
+    pub r#root_folder: String,
 }

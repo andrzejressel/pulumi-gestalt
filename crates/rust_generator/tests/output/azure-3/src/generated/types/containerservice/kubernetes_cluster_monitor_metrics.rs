@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubernetesClusterMonitorMetrics {
     /// Specifies a comma-separated list of Kubernetes annotation keys that will be used in the resource's labels metric.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "annotationsAllowed")]
-    pub r#annotations_allowed: Box<Option<String>>,
+    pub r#annotations_allowed: Option<String>,
     /// Specifies a Comma-separated list of additional Kubernetes label keys that will be used in the resource's labels metric.
     /// 
     /// > **Note:** Both properties `annotations_allowed` and `labels_allowed` are required if you are enabling Managed Prometheus with an existing Azure Monitor Workspace.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labelsAllowed")]
-    pub r#labels_allowed: Box<Option<String>>,
+    pub r#labels_allowed: Option<String>,
 }

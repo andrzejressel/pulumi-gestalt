@@ -5,11 +5,11 @@
 pub struct StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTable {
     /// PostgreSQL columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "postgresqlColumns")]
-    pub r#postgresql_columns: Box<Option<Vec<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn>>>,
+    pub r#postgresql_columns: Option<Vec<super::super::types::datastream::StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumn>>,
     /// Table name.
     #[builder(into)]
     #[serde(rename = "table")]
-    pub r#table: Box<String>,
+    pub r#table: String,
 }

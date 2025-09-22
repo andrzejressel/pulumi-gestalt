@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInsightsAnalysisForwardPathComponentSourceVpc {
     /// ARN of the Network Insights Analysis.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<Option<String>>,
+    pub r#arn: Option<String>,
     /// ID of the Network Insights Analysis.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

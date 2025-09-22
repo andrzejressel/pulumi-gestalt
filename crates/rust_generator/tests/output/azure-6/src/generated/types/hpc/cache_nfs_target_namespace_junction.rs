@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CacheNfsTargetNamespaceJunction {
     /// The name of the access policy applied to this target. Defaults to `default`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessPolicyName")]
-    pub r#access_policy_name: Box<Option<String>>,
+    pub r#access_policy_name: Option<String>,
     /// The client-facing file path of this NFS target within the HPC Cache NFS Target.
     #[builder(into)]
     #[serde(rename = "namespacePath")]
-    pub r#namespace_path: Box<String>,
+    pub r#namespace_path: String,
     /// The NFS export of this NFS target within the HPC Cache NFS Target.
     #[builder(into)]
     #[serde(rename = "nfsExport")]
-    pub r#nfs_export: Box<String>,
+    pub r#nfs_export: String,
     /// The relative subdirectory path from the `nfs_export` to map to the `namespace_path`. Defaults to `""`, in which case the whole `nfs_export` is exported.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetPath")]
-    pub r#target_path: Box<Option<String>>,
+    pub r#target_path: Option<String>,
 }

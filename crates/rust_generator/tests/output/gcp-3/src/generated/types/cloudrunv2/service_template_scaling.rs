@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTemplateScaling {
     /// Maximum number of serving instances that this resource should have.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxInstanceCount")]
-    pub r#max_instance_count: Box<Option<i32>>,
+    pub r#max_instance_count: Option<i32>,
     /// Minimum number of instances for the service, to be divided among all revisions receiving traffic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minInstanceCount")]
-    pub r#min_instance_count: Box<Option<i32>>,
+    pub r#min_instance_count: Option<i32>,
 }

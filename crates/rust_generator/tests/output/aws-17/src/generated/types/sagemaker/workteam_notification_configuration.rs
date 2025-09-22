@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkteamNotificationConfiguration {
     /// The ARN for the SNS topic to which notifications should be published.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notificationTopicArn")]
-    pub r#notification_topic_arn: Box<Option<String>>,
+    pub r#notification_topic_arn: Option<String>,
 }

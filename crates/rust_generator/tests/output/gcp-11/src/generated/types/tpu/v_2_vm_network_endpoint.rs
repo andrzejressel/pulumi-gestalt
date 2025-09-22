@@ -6,17 +6,17 @@ pub struct V2VmNetworkEndpoint {
     /// (Output)
     /// The access config for the TPU worker.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessConfigs")]
-    pub r#access_configs: Box<Option<Vec<super::super::types::tpu::V2VmNetworkEndpointAccessConfig>>>,
+    pub r#access_configs: Option<Vec<super::super::types::tpu::V2VmNetworkEndpointAccessConfig>>,
     /// (Output)
     /// The internal IP address of this network endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<Option<String>>,
+    pub r#ip_address: Option<String>,
     /// (Output)
     /// The port of this network endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
 }

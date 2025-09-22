@@ -7,23 +7,23 @@ pub struct GetTriggerGithub {
     /// For example: "projects/{$projectId}/locations/{$locationId}/githubEnterpriseConfigs/{$configId}"
     #[builder(into)]
     #[serde(rename = "enterpriseConfigResourceName")]
-    pub r#enterprise_config_resource_name: Box<String>,
+    pub r#enterprise_config_resource_name: String,
     /// Name of the repository. For example: The name for
     /// https://github.com/googlecloudplatform/cloud-builders is "cloud-builders".
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Owner of the repository. For example: The owner for
     /// https://github.com/googlecloudplatform/cloud-builders is "googlecloudplatform".
     #[builder(into)]
     #[serde(rename = "owner")]
-    pub r#owner: Box<String>,
+    pub r#owner: String,
     /// filter to match changes in pull requests. Specify only one of 'pull_request' or 'push'.
     #[builder(into)]
     #[serde(rename = "pullRequests")]
-    pub r#pull_requests: Box<Vec<super::super::types::cloudbuild::GetTriggerGithubPullRequest>>,
+    pub r#pull_requests: Vec<super::super::types::cloudbuild::GetTriggerGithubPullRequest>,
     /// filter to match changes in refs, like branches or tags. Specify only one of 'pull_request' or 'push'.
     #[builder(into)]
     #[serde(rename = "pushes")]
-    pub r#pushes: Box<Vec<super::super::types::cloudbuild::GetTriggerGithubPush>>,
+    pub r#pushes: Vec<super::super::types::cloudbuild::GetTriggerGithubPush>,
 }

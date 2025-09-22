@@ -6,9 +6,9 @@ pub struct GetRoleManagementPolicyEligibleAssignmentRule {
     /// (Boolean) Must an assignment have an expiry date.
     #[builder(into)]
     #[serde(rename = "expirationRequired")]
-    pub r#expiration_required: Box<bool>,
+    pub r#expiration_required: bool,
     /// (String) The maximum length of time an assignment can be valid, as an ISO8601 duration.
     #[builder(into)]
     #[serde(rename = "expireAfter")]
-    pub r#expire_after: Box<String>,
+    pub r#expire_after: String,
 }

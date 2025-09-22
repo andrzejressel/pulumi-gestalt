@@ -6,5 +6,5 @@ pub struct UserPoolUserPoolAddOns {
     /// Mode for advanced security, must be one of `OFF`, `AUDIT` or `ENFORCED`.
     #[builder(into)]
     #[serde(rename = "advancedSecurityMode")]
-    pub r#advanced_security_mode: Box<String>,
+    pub r#advanced_security_mode: String,
 }

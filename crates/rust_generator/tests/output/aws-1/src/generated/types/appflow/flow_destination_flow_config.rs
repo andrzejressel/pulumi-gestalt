@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowDestinationFlowConfig {
     /// API version that the destination connector uses.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "apiVersion")]
-    pub r#api_version: Box<Option<String>>,
+    pub r#api_version: Option<String>,
     /// Name of the connector profile. This name must be unique for each connector profile in the AWS account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectorProfileName")]
-    pub r#connector_profile_name: Box<Option<String>>,
+    pub r#connector_profile_name: Option<String>,
     /// Type of connector, such as Salesforce, Amplitude, and so on. Valid values are `Salesforce`, `Singular`, `Slack`, `Redshift`, `S3`, `Marketo`, `Googleanalytics`, `Zendesk`, `Servicenow`, `Datadog`, `Trendmicro`, `Snowflake`, `Dynatrace`, `Infornexus`, `Amplitude`, `Veeva`, `EventBridge`, `LookoutMetrics`, `Upsolver`, `Honeycode`, `CustomerProfiles`, `SAPOData`, and `CustomConnector`.
     #[builder(into)]
     #[serde(rename = "connectorType")]
-    pub r#connector_type: Box<String>,
+    pub r#connector_type: String,
     /// This stores the information that is required to query a particular connector. See Destination Connector Properties for more information.
     #[builder(into)]
     #[serde(rename = "destinationConnectorProperties")]

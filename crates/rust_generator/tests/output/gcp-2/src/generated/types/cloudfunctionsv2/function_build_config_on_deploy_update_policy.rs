@@ -5,7 +5,7 @@
 pub struct FunctionBuildConfigOnDeployUpdatePolicy {
     /// (Output)
     /// The runtime version which was used during latest function deployment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "runtimeVersion")]
-    pub r#runtime_version: Box<Option<String>>,
+    pub r#runtime_version: Option<String>,
 }

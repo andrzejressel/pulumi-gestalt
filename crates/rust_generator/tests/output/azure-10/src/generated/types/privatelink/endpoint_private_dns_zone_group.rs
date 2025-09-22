@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointPrivateDnsZoneGroup {
     /// The ID of the Private DNS Zone Config.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Specifies the Name of the Private DNS Zone Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the list of Private DNS Zones to include within the `private_dns_zone_group`.
     #[builder(into)]
     #[serde(rename = "privateDnsZoneIds")]
-    pub r#private_dns_zone_ids: Box<Vec<String>>,
+    pub r#private_dns_zone_ids: Vec<String>,
 }

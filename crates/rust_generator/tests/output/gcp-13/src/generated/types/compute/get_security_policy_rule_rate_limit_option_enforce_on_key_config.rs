@@ -6,9 +6,9 @@ pub struct GetSecurityPolicyRuleRateLimitOptionEnforceOnKeyConfig {
     /// Rate limit key name applicable only for the following key types: HTTP_HEADER -- Name of the HTTP header whose value is taken as the key value. HTTP_COOKIE -- Name of the HTTP cookie whose value is taken as the key value.
     #[builder(into)]
     #[serde(rename = "enforceOnKeyName")]
-    pub r#enforce_on_key_name: Box<String>,
+    pub r#enforce_on_key_name: String,
     /// Determines the key to enforce the rate_limit_threshold on
     #[builder(into)]
     #[serde(rename = "enforceOnKeyType")]
-    pub r#enforce_on_key_type: Box<String>,
+    pub r#enforce_on_key_type: String,
 }

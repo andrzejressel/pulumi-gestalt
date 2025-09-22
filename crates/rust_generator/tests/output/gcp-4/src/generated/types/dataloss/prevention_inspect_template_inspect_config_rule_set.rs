@@ -7,10 +7,10 @@ pub struct PreventionInspectTemplateInspectConfigRuleSet {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "infoTypes")]
-    pub r#info_types: Box<Vec<super::super::types::dataloss::PreventionInspectTemplateInspectConfigRuleSetInfoType>>,
+    pub r#info_types: Vec<super::super::types::dataloss::PreventionInspectTemplateInspectConfigRuleSetInfoType>,
     /// Set of rules to be applied to infoTypes. The rules are applied in order.
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<super::super::types::dataloss::PreventionInspectTemplateInspectConfigRuleSetRule>>,
+    pub r#rules: Vec<super::super::types::dataloss::PreventionInspectTemplateInspectConfigRuleSetRule>,
 }

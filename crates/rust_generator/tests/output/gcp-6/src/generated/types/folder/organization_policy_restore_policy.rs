@@ -6,5 +6,5 @@ pub struct OrganizationPolicyRestorePolicy {
     /// May only be set to true. If set, then the default Policy is restored.
     #[builder(into)]
     #[serde(rename = "default")]
-    pub r#default: Box<bool>,
+    pub r#default: bool,
 }

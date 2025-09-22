@@ -5,5 +5,5 @@
 pub struct GetFileSystemProtection {
     #[builder(into)]
     #[serde(rename = "replicationOverwrite")]
-    pub r#replication_overwrite: Box<String>,
+    pub r#replication_overwrite: String,
 }

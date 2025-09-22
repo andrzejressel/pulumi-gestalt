@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpLink {
     /// An optional description of this resize-request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// (Output)
     /// The URL of the link.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<Option<String>>,
+    pub r#url: Option<String>,
 }

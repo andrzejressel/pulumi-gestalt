@@ -7,5 +7,5 @@ pub struct DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOption
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "propertyDefinitions")]
-    pub r#property_definitions: Box<Vec<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinition>>,
+    pub r#property_definitions: Vec<super::super::types::essentialcontacts::DocumentAiWarehouseDocumentSchemaPropertyDefinitionPropertyTypeOptionsPropertyDefinition>,
 }

@@ -6,5 +6,5 @@ pub struct RuleGroupRuleGroupStatefulRuleOptions {
     /// Indicates how to manage the order of the rule evaluation for the rule group. Default value: `DEFAULT_ACTION_ORDER`. Valid values: `DEFAULT_ACTION_ORDER`, `STRICT_ORDER`.
     #[builder(into)]
     #[serde(rename = "ruleOrder")]
-    pub r#rule_order: Box<String>,
+    pub r#rule_order: String,
 }

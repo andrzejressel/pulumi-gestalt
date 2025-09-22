@@ -6,13 +6,13 @@ pub struct AgentDataSourceDataSourceConfigurationS3Configuration {
     /// ARN of the bucket that contains the data source.
     #[builder(into)]
     #[serde(rename = "bucketArn")]
-    pub r#bucket_arn: Box<String>,
+    pub r#bucket_arn: String,
     /// Bucket account owner ID for the S3 bucket.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucketOwnerAccountId")]
-    pub r#bucket_owner_account_id: Box<Option<String>>,
+    pub r#bucket_owner_account_id: Option<String>,
     /// List of S3 prefixes that define the object containing the data sources. For more information, see [Organizing objects using prefixes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inclusionPrefixes")]
-    pub r#inclusion_prefixes: Box<Option<Vec<String>>>,
+    pub r#inclusion_prefixes: Option<Vec<String>>,
 }

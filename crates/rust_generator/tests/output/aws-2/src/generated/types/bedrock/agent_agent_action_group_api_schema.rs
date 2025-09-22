@@ -5,12 +5,12 @@
 pub struct AgentAgentActionGroupApiSchema {
     /// JSON or YAML-formatted payload defining the OpenAPI schema for the action group.
     /// Only one of `payload` or `s3` can be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "payload")]
-    pub r#payload: Box<Option<String>>,
+    pub r#payload: Option<String>,
     /// Details about the S3 object containing the OpenAPI schema for the action group. See `s3` Block for details.
     /// Only one of `s3` or `payload` can be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3")]
-    pub r#s_3: Box<Option<super::super::types::bedrock::AgentAgentActionGroupApiSchemaS3>>,
+    pub r#s_3: Option<Box<super::super::types::bedrock::AgentAgentActionGroupApiSchemaS3>>,
 }

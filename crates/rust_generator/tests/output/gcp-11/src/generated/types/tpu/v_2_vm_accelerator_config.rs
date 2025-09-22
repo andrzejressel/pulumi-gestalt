@@ -6,9 +6,9 @@ pub struct V2VmAcceleratorConfig {
     /// Topology of TPU in chips.
     #[builder(into)]
     #[serde(rename = "topology")]
-    pub r#topology: Box<String>,
+    pub r#topology: String,
     /// Type of TPU. Please select one of the allowed types: https://cloud.google.com/tpu/docs/reference/rest/v2/AcceleratorConfig#Type
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

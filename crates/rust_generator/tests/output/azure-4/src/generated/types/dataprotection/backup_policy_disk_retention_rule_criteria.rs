@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BackupPolicyDiskRetentionRuleCriteria {
     /// Possible values are `FirstOfDay` and `FirstOfWeek`. Changing this forces a new Backup Policy Disk to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "absoluteCriteria")]
-    pub r#absolute_criteria: Box<Option<String>>,
+    pub r#absolute_criteria: Option<String>,
 }

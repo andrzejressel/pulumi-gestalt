@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipeTargetParametersSagemakerPipelineParameters {
     /// List of Parameter names and values for SageMaker Model Building Pipeline execution. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pipelineParameters")]
-    pub r#pipeline_parameters: Box<Option<Vec<super::super::types::pipes::PipeTargetParametersSagemakerPipelineParametersPipelineParameter>>>,
+    pub r#pipeline_parameters: Option<Vec<super::super::types::pipes::PipeTargetParametersSagemakerPipelineParametersPipelineParameter>>,
 }

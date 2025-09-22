@@ -4,28 +4,28 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigSignIn {
     /// Whether to allow more than one account to have the same email.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowDuplicateEmails")]
-    pub r#allow_duplicate_emails: Box<Option<bool>>,
+    pub r#allow_duplicate_emails: Option<bool>,
     /// Configuration options related to authenticating an anonymous user.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "anonymous")]
-    pub r#anonymous: Box<Option<super::super::types::identityplatform::ConfigSignInAnonymous>>,
+    pub r#anonymous: Option<Box<super::super::types::identityplatform::ConfigSignInAnonymous>>,
     /// Configuration options related to authenticating a user by their email address.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<super::super::types::identityplatform::ConfigSignInEmail>>,
+    pub r#email: Option<Box<super::super::types::identityplatform::ConfigSignInEmail>>,
     /// (Output)
     /// Output only. Hash config information.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hashConfigs")]
-    pub r#hash_configs: Box<Option<Vec<super::super::types::identityplatform::ConfigSignInHashConfig>>>,
+    pub r#hash_configs: Option<Vec<super::super::types::identityplatform::ConfigSignInHashConfig>>,
     /// Configuration options related to authenticated a user by their phone number.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "phoneNumber")]
-    pub r#phone_number: Box<Option<super::super::types::identityplatform::ConfigSignInPhoneNumber>>,
+    pub r#phone_number: Option<Box<super::super::types::identityplatform::ConfigSignInPhoneNumber>>,
 }

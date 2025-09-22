@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LaunchConfigurationMetadataOptions {
     /// The state of the metadata service: `enabled`, `disabled`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpEndpoint")]
-    pub r#http_endpoint: Box<Option<String>>,
+    pub r#http_endpoint: Option<String>,
     /// The desired HTTP PUT response hop limit for instance metadata requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpPutResponseHopLimit")]
-    pub r#http_put_response_hop_limit: Box<Option<i32>>,
+    pub r#http_put_response_hop_limit: Option<i32>,
     /// If session tokens are required: `optional`, `required`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpTokens")]
-    pub r#http_tokens: Box<Option<String>>,
+    pub r#http_tokens: Option<String>,
 }

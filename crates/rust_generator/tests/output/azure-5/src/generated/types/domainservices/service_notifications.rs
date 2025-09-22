@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceNotifications {
     /// A list of additional email addresses to notify when there are alerts in the managed domain.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "additionalRecipients")]
-    pub r#additional_recipients: Box<Option<Vec<String>>>,
+    pub r#additional_recipients: Option<Vec<String>>,
     /// Whether to notify members of the _AAD DC Administrators_ group when there are alerts in the managed domain.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notifyDcAdmins")]
-    pub r#notify_dc_admins: Box<Option<bool>>,
+    pub r#notify_dc_admins: Option<bool>,
     /// Whether to notify all Global Administrators when there are alerts in the managed domain.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notifyGlobalAdmins")]
-    pub r#notify_global_admins: Box<Option<bool>>,
+    pub r#notify_global_admins: Option<bool>,
 }

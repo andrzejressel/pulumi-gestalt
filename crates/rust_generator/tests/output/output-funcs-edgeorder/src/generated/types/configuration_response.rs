@@ -22,11 +22,11 @@ pub struct ConfigurationResponse {
     /// Display Name for the product system.
     #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<String>,
+    pub r#display_name: String,
     /// list of filters supported for a product
     #[builder(into)]
     #[serde(rename = "filterableProperties")]
-    pub r#filterable_properties: Box<Vec<super::types::FilterablePropertyResponse>>,
+    pub r#filterable_properties: Vec<super::types::FilterablePropertyResponse>,
     /// Hierarchy information of a product.
     #[builder(into)]
     #[serde(rename = "hierarchyInformation")]
@@ -34,9 +34,9 @@ pub struct ConfigurationResponse {
     /// Image information for the product system.
     #[builder(into)]
     #[serde(rename = "imageInformation")]
-    pub r#image_information: Box<Vec<super::types::ImageInformationResponse>>,
+    pub r#image_information: Vec<super::types::ImageInformationResponse>,
     /// Specifications of the configuration
     #[builder(into)]
     #[serde(rename = "specifications")]
-    pub r#specifications: Box<Vec<super::types::SpecificationResponse>>,
+    pub r#specifications: Vec<super::types::SpecificationResponse>,
 }

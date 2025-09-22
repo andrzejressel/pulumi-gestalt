@@ -6,9 +6,9 @@ pub struct DistributionConfigurationDistributionContainerDistributionConfigurati
     /// The name of the container repository where the output container image is stored. This name is prefixed by the repository location.
     #[builder(into)]
     #[serde(rename = "repositoryName")]
-    pub r#repository_name: Box<String>,
+    pub r#repository_name: String,
     /// The service in which this image is registered. Valid values: `ECR`.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

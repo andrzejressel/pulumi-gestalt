@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelInputAttachmentInputSettingsVideoSelector {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "colorSpace")]
-    pub r#color_space: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#color_space: Option<String>,
+    #[builder(into)]
     #[serde(rename = "colorSpaceUsage")]
-    pub r#color_space_usage: Box<Option<String>>,
+    pub r#color_space_usage: Option<String>,
 }

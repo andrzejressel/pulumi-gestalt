@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterConfigurationManagedStorageConfiguration {
     /// AWS Key Management Service key ID for the Fargate ephemeral storage.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fargateEphemeralStorageKmsKeyId")]
-    pub r#fargate_ephemeral_storage_kms_key_id: Box<Option<String>>,
+    pub r#fargate_ephemeral_storage_kms_key_id: Option<String>,
     /// AWS Key Management Service key ID to encrypt the managed storage.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<Option<String>>,
+    pub r#kms_key_id: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowDefinitionOutputConfig {
     /// The Amazon Key Management Service (KMS) key ARN for server-side encryption.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<Option<String>>,
+    pub r#kms_key_id: Option<String>,
     /// The Amazon S3 path where the object containing human output will be made available.
     #[builder(into)]
     #[serde(rename = "s3OutputPath")]
-    pub r#s_3_output_path: Box<String>,
+    pub r#s_3_output_path: String,
 }

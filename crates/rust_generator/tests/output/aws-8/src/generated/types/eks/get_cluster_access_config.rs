@@ -6,9 +6,9 @@ pub struct GetClusterAccessConfig {
     /// Values returned are `CONFIG_MAP`, `API` or `API_AND_CONFIG_MAP`
     #[builder(into)]
     #[serde(rename = "authenticationMode")]
-    pub r#authentication_mode: Box<String>,
+    pub r#authentication_mode: String,
     /// Default to `true`.
     #[builder(into)]
     #[serde(rename = "bootstrapClusterCreatorAdminPermissions")]
-    pub r#bootstrap_cluster_creator_admin_permissions: Box<bool>,
+    pub r#bootstrap_cluster_creator_admin_permissions: bool,
 }

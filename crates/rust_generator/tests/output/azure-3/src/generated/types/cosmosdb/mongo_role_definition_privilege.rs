@@ -6,7 +6,7 @@ pub struct MongoRoleDefinitionPrivilege {
     /// A list of actions that are allowed.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<String>>,
+    pub r#actions: Vec<String>,
     /// A `resource` block as defined below.
     #[builder(into)]
     #[serde(rename = "resource")]

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsHdr10Settings {
     /// Sets the MaxCLL value for HDR10.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxCll")]
-    pub r#max_cll: Box<Option<i32>>,
+    pub r#max_cll: Option<i32>,
     /// Sets the MaxFALL value for HDR10.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxFall")]
-    pub r#max_fall: Box<Option<i32>>,
+    pub r#max_fall: Option<i32>,
 }

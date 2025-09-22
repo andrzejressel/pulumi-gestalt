@@ -6,9 +6,9 @@ pub struct LedgerCertificateBasedSecurityPrincipal {
     /// Specifies the Ledger Role to grant this Certificate Security Principal. Possible values are `Administrator`, `Contributor` and `Reader`.
     #[builder(into)]
     #[serde(rename = "ledgerRoleName")]
-    pub r#ledger_role_name: Box<String>,
+    pub r#ledger_role_name: String,
     /// The public key, in PEM format, of the certificate used by this identity to authenticate with the Confidential Ledger.
     #[builder(into)]
     #[serde(rename = "pemPublicKey")]
-    pub r#pem_public_key: Box<String>,
+    pub r#pem_public_key: String,
 }

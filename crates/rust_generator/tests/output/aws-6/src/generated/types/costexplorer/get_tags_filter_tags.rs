@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetTagsFilterTags {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#key: Option<String>,
+    #[builder(into)]
     #[serde(rename = "matchOptions")]
-    pub r#match_options: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#match_options: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<Vec<String>>>,
+    pub r#values: Option<Vec<String>>,
 }

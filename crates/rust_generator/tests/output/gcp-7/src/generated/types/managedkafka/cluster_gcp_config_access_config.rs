@@ -7,5 +7,5 @@ pub struct ClusterGcpConfigAccessConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "networkConfigs")]
-    pub r#network_configs: Box<Vec<super::super::types::managedkafka::ClusterGcpConfigAccessConfigNetworkConfig>>,
+    pub r#network_configs: Vec<super::super::types::managedkafka::ClusterGcpConfigAccessConfigNetworkConfig>,
 }

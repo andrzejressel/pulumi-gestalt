@@ -9,5 +9,5 @@ pub struct PolicyAdmissionWhitelistPattern {
     /// part.
     #[builder(into)]
     #[serde(rename = "namePattern")]
-    pub r#name_pattern: Box<String>,
+    pub r#name_pattern: String,
 }

@@ -6,13 +6,13 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerUlimit {
     /// The hard limit for the ulimit type.
     #[builder(into)]
     #[serde(rename = "hardLimit")]
-    pub r#hard_limit: Box<i32>,
+    pub r#hard_limit: i32,
     /// The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The soft limit for the ulimit type.
     #[builder(into)]
     #[serde(rename = "softLimit")]
-    pub r#soft_limit: Box<i32>,
+    pub r#soft_limit: i32,
 }

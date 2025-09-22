@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceModeReplicated {
     /// The amount of replicas of the service. Defaults to `1`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replicas")]
-    pub r#replicas: Box<Option<i32>>,
+    pub r#replicas: Option<i32>,
 }

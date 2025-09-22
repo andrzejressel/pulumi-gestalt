@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterProtectConfig {
     /// WorkloadConfig defines which actions are enabled for a cluster's workload configurations. Structure is documented below
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "workloadConfig")]
-    pub r#workload_config: Box<Option<super::super::types::container::ClusterProtectConfigWorkloadConfig>>,
+    pub r#workload_config: Option<Box<super::super::types::container::ClusterProtectConfigWorkloadConfig>>,
     /// Sets which mode to use for Protect workload vulnerability scanning feature. Accepted values are DISABLED, BASIC.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "workloadVulnerabilityMode")]
-    pub r#workload_vulnerability_mode: Box<Option<String>>,
+    pub r#workload_vulnerability_mode: Option<String>,
 }

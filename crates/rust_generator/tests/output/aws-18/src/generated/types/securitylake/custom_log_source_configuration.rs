@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CustomLogSourceConfiguration {
     /// The configuration for the Glue Crawler for the third-party custom source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "crawlerConfiguration")]
-    pub r#crawler_configuration: Box<Option<super::super::types::securitylake::CustomLogSourceConfigurationCrawlerConfiguration>>,
+    pub r#crawler_configuration: Option<Box<super::super::types::securitylake::CustomLogSourceConfigurationCrawlerConfiguration>>,
     /// The identity of the log provider for the third-party custom source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "providerIdentity")]
-    pub r#provider_identity: Box<Option<super::super::types::securitylake::CustomLogSourceConfigurationProviderIdentity>>,
+    pub r#provider_identity: Option<Box<super::super::types::securitylake::CustomLogSourceConfigurationProviderIdentity>>,
 }

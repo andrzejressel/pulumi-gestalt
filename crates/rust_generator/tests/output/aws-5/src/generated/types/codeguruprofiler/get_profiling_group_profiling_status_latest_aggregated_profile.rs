@@ -5,8 +5,8 @@
 pub struct GetProfilingGroupProfilingStatusLatestAggregatedProfile {
     #[builder(into)]
     #[serde(rename = "period")]
-    pub r#period: Box<String>,
+    pub r#period: String,
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<String>,
+    pub r#start: String,
 }

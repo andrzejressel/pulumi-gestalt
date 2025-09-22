@@ -7,5 +7,5 @@ pub struct MangedSslCertificateManaged {
     /// there can be up to 100 domains in this list.
     #[builder(into)]
     #[serde(rename = "domains")]
-    pub r#domains: Box<Vec<String>>,
+    pub r#domains: Vec<String>,
 }

@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StackCustomCookbooksSource {
     /// Password to use when authenticating to the source. The provider cannot perform drift detection of this configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// For sources that are version-aware, the revision to use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "revision")]
-    pub r#revision: Box<Option<String>>,
+    pub r#revision: Option<String>,
     /// SSH key to use when authenticating to the source. This provider cannot perform drift detection of this configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sshKey")]
-    pub r#ssh_key: Box<Option<String>>,
+    pub r#ssh_key: Option<String>,
     /// The type of source to use. For example, "archive".
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// The URL where the cookbooks resource can be found.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
     /// Username to use when authenticating to the source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

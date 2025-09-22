@@ -6,9 +6,9 @@ pub struct GetAppServiceSiteConfigCor {
     /// A list of origins which are able to make cross-origin calls.
     #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Vec<String>>,
+    pub r#allowed_origins: Vec<String>,
     /// Are credentials supported?
     #[builder(into)]
     #[serde(rename = "supportCredentials")]
-    pub r#support_credentials: Box<bool>,
+    pub r#support_credentials: bool,
 }

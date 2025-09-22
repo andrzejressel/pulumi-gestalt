@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterRebalanceConfig {
     /// The rebalance behavior for the cluster. When not specified, defaults to `NO_REBALANCE`. Possible values: `MODE_UNSPECIFIED`, `NO_REBALANCE`, `AUTO_REBALANCE_ON_SCALE_UP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<Option<String>>,
+    pub r#mode: Option<String>,
 }

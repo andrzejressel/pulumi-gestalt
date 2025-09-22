@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThreeTierVirtualInstanceThreeTierConfigurationDatabaseServerConfiguration {
     /// The database type for the Database Server. Possible values are `DB2` and `HANA`. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "databaseType")]
-    pub r#database_type: Box<Option<String>>,
+    pub r#database_type: Option<String>,
     /// One or more `disk_volume_configuration` blocks as defined below. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "diskVolumeConfigurations")]
-    pub r#disk_volume_configurations: Box<Option<Vec<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationDatabaseServerConfigurationDiskVolumeConfiguration>>>,
+    pub r#disk_volume_configurations: Option<Vec<super::super::types::workloadssap::ThreeTierVirtualInstanceThreeTierConfigurationDatabaseServerConfigurationDiskVolumeConfiguration>>,
     /// The number of instances for the Database Server. Possible values are at least `1`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "instanceCount")]
-    pub r#instance_count: Box<i32>,
+    pub r#instance_count: i32,
     /// The resource ID of the Subnet for the Database Server. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
     /// A `virtual_machine_configuration` block as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "virtualMachineConfiguration")]

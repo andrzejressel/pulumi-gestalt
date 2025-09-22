@@ -6,17 +6,17 @@ pub struct BackendAddressPoolTunnelInterface {
     /// The unique identifier of this Gateway Load Balancer Tunnel Interface.
     #[builder(into)]
     #[serde(rename = "identifier")]
-    pub r#identifier: Box<i32>,
+    pub r#identifier: i32,
     /// The port number that this Gateway Load Balancer Tunnel Interface listens to.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     /// The protocol used for this Gateway Load Balancer Tunnel Interface. Possible values are `None`, `Native` and `VXLAN`.
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     /// The traffic type of this Gateway Load Balancer Tunnel Interface. Possible values are `None`, `Internal` and `External`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

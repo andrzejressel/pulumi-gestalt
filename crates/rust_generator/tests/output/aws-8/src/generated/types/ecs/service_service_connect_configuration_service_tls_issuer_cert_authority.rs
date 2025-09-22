@@ -6,5 +6,5 @@ pub struct ServiceServiceConnectConfigurationServiceTlsIssuerCertAuthority {
     /// ARN of the `aws.acmpca.CertificateAuthority` used to create the TLS Certificates.
     #[builder(into)]
     #[serde(rename = "awsPcaAuthorityArn")]
-    pub r#aws_pca_authority_arn: Box<String>,
+    pub r#aws_pca_authority_arn: String,
 }

@@ -6,13 +6,13 @@ pub struct GetShareAclAccessPolicy {
     /// The time at which this Access Policy is valid until.
     #[builder(into)]
     #[serde(rename = "expiry")]
-    pub r#expiry: Box<String>,
+    pub r#expiry: String,
     /// The permissions which should be associated with this Shared Identifier. Possible value is combination of `r` (read), `w` (write), `d` (delete), and `l` (list).
     #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<String>,
+    pub r#permissions: String,
     /// The time at which this Access Policy is valid from.
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<String>,
+    pub r#start: String,
 }

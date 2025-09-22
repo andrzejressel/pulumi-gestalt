@@ -6,9 +6,9 @@ pub struct TransferJobTransferSpecGcsDataSource {
     /// Google Cloud Storage bucket name.
     #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<String>,
+    pub r#bucket_name: String,
     /// Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
 }

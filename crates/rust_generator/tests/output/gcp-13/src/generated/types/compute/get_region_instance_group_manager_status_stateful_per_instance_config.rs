@@ -6,5 +6,5 @@ pub struct GetRegionInstanceGroupManagerStatusStatefulPerInstanceConfig {
     /// A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
     #[builder(into)]
     #[serde(rename = "allEffective")]
-    pub r#all_effective: Box<bool>,
+    pub r#all_effective: bool,
 }

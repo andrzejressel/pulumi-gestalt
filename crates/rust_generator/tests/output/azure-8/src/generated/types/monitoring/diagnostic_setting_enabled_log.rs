@@ -6,18 +6,18 @@ pub struct DiagnosticSettingEnabledLog {
     /// The name of a Diagnostic Log Category for this Resource.
     /// 
     /// > **NOTE:** The Log Categories available vary depending on the Resource being used. You may wish to use the `azure.monitoring.getDiagnosticCategories` Data Source or [list of service specific schemas](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-schema#service-specific-schemas) to identify which categories are available for a given Resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "category")]
-    pub r#category: Box<Option<String>>,
+    pub r#category: Option<String>,
     /// The name of a Diagnostic Log Category Group for this Resource.
     /// 
     /// > **NOTE:** Not all resources have category groups available.
     /// 
     /// > **NOTE:** Exactly one of `category` or `category_group` must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "categoryGroup")]
-    pub r#category_group: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#category_group: Option<String>,
+    #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Box<Option<super::super::types::monitoring::DiagnosticSettingEnabledLogRetentionPolicy>>,
+    pub r#retention_policy: Option<Box<super::super::types::monitoring::DiagnosticSettingEnabledLogRetentionPolicy>>,
 }

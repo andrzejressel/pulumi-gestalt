@@ -6,18 +6,18 @@ pub struct GetTriggerPubsubConfig {
     /// Service account that will make the push request.
     #[builder(into)]
     #[serde(rename = "serviceAccountEmail")]
-    pub r#service_account_email: Box<String>,
+    pub r#service_account_email: String,
     /// Potential issues with the underlying Pub/Sub subscription configuration.
     /// Only populated on get requests.
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
     /// Output only. Name of the subscription.
     #[builder(into)]
     #[serde(rename = "subscription")]
-    pub r#subscription: Box<String>,
+    pub r#subscription: String,
     /// The name of the topic from which this subscription is receiving messages.
     #[builder(into)]
     #[serde(rename = "topic")]
-    pub r#topic: Box<String>,
+    pub r#topic: String,
 }

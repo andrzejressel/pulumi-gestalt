@@ -6,9 +6,9 @@ pub struct IotHubDpsSku {
     /// The number of provisioned IoT Device Provisioning Service units.
     #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<i32>,
+    pub r#capacity: i32,
     /// The name of the sku. Currently can only be set to `S1`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

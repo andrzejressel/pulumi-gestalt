@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThemeConfigurationDataColorPalette {
     /// List of hexadecimal codes for the colors. Minimum of 8 items and maximum of 20 items.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "colors")]
-    pub r#colors: Box<Option<Vec<String>>>,
+    pub r#colors: Option<Vec<String>>,
     /// The hexadecimal code of a color that applies to charts where a lack of data is highlighted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emptyFillColor")]
-    pub r#empty_fill_color: Box<Option<String>>,
+    pub r#empty_fill_color: Option<String>,
     /// The minimum and maximum hexadecimal codes that describe a color gradient. List of exactly 2 items.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minMaxGradients")]
-    pub r#min_max_gradients: Box<Option<Vec<String>>>,
+    pub r#min_max_gradients: Option<Vec<String>>,
 }

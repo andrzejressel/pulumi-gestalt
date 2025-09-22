@@ -6,9 +6,9 @@ pub struct AppAuthorizationCredentialOauth2Credential {
     /// The client ID of the client application.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The client secret of the client application.
     #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<String>,
+    pub r#client_secret: String,
 }

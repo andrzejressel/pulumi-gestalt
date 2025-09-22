@@ -5,14 +5,14 @@
 pub struct GetDataSetPhysicalTableMapCustomSql {
     #[builder(into)]
     #[serde(rename = "columns")]
-    pub r#columns: Box<Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapCustomSqlColumn>>,
+    pub r#columns: Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapCustomSqlColumn>,
     #[builder(into)]
     #[serde(rename = "dataSourceArn")]
-    pub r#data_source_arn: Box<String>,
+    pub r#data_source_arn: String,
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "sqlQuery")]
-    pub r#sql_query: Box<String>,
+    pub r#sql_query: String,
 }

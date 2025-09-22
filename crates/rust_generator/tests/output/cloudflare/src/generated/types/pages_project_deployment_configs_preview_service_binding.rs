@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PagesProjectDeploymentConfigsPreviewServiceBinding {
     /// The name of the Worker environment to bind to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "environment")]
-    pub r#environment: Box<Option<String>>,
+    pub r#environment: Option<String>,
     /// The global variable for the binding in your Worker code.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The name of the Worker to bind to.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

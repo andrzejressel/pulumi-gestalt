@@ -5,19 +5,19 @@
 pub struct MetricBucketOptions {
     /// Specifies a set of buckets with arbitrary widths.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "explicitBuckets")]
-    pub r#explicit_buckets: Box<Option<super::super::types::logging::MetricBucketOptionsExplicitBuckets>>,
+    pub r#explicit_buckets: Option<Box<super::super::types::logging::MetricBucketOptionsExplicitBuckets>>,
     /// Specifies an exponential sequence of buckets that have a width that is proportional to the value of
     /// the lower bound. Each bucket represents a constant relative uncertainty on a specific value in the bucket.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exponentialBuckets")]
-    pub r#exponential_buckets: Box<Option<super::super::types::logging::MetricBucketOptionsExponentialBuckets>>,
+    pub r#exponential_buckets: Option<Box<super::super::types::logging::MetricBucketOptionsExponentialBuckets>>,
     /// Specifies a linear sequence of buckets that all have the same width (except overflow and underflow).
     /// Each bucket represents a constant absolute uncertainty on the specific value in the bucket.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "linearBuckets")]
-    pub r#linear_buckets: Box<Option<super::super::types::logging::MetricBucketOptionsLinearBuckets>>,
+    pub r#linear_buckets: Option<Box<super::super::types::logging::MetricBucketOptionsLinearBuckets>>,
 }

@@ -6,5 +6,5 @@ pub struct GetStaticWebAppBasicAuth {
     /// The Environment types which are configured to use Basic Auth access.
     #[builder(into)]
     #[serde(rename = "environments")]
-    pub r#environments: Box<String>,
+    pub r#environments: String,
 }

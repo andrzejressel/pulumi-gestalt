@@ -6,9 +6,9 @@ pub struct RouteRequestParameter {
     /// Request parameter key. This is a [request data mapping parameter](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-data-mapping.html#websocket-mapping-request-parameters).
     #[builder(into)]
     #[serde(rename = "requestParameterKey")]
-    pub r#request_parameter_key: Box<String>,
+    pub r#request_parameter_key: String,
     /// Boolean whether or not the parameter is required.
     #[builder(into)]
     #[serde(rename = "required")]
-    pub r#required: Box<bool>,
+    pub r#required: bool,
 }

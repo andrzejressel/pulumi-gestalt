@@ -5,9 +5,9 @@
 pub struct ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettingsNielsenNaesIiNwSetting {
     #[builder(into)]
     #[serde(rename = "checkDigitString")]
-    pub r#check_digit_string: Box<String>,
+    pub r#check_digit_string: String,
     /// The Nielsen Source ID to include in the watermark.
     #[builder(into)]
     #[serde(rename = "sid")]
-    pub r#sid: Box<f64>,
+    pub r#sid: f64,
 }

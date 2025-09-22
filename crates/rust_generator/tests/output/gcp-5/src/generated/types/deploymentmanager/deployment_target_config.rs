@@ -6,5 +6,5 @@ pub struct DeploymentTargetConfig {
     /// The full YAML contents of your configuration file.
     #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<String>,
+    pub r#content: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainDefaultUserSettingsJupyterLabAppSettingsAppLifecycleManagement {
     /// Settings related to idle shutdown of Studio applications. see `idle_settings` Block below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "idleSettings")]
-    pub r#idle_settings: Box<Option<super::super::types::sagemaker::DomainDefaultUserSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettings>>,
+    pub r#idle_settings: Option<Box<super::super::types::sagemaker::DomainDefaultUserSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettings>>,
 }

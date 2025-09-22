@@ -6,13 +6,13 @@ pub struct GetPrincipalApplicationAssignmentsApplicationAssignment {
     /// ARN of the application.
     #[builder(into)]
     #[serde(rename = "applicationArn")]
-    pub r#application_arn: Box<String>,
+    pub r#application_arn: String,
     /// An identifier for an object in IAM Identity Center, such as a user or group.
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     /// Entity type for which the assignment will be created. Valid values are `USER` or `GROUP`.
     #[builder(into)]
     #[serde(rename = "principalType")]
-    pub r#principal_type: Box<String>,
+    pub r#principal_type: String,
 }

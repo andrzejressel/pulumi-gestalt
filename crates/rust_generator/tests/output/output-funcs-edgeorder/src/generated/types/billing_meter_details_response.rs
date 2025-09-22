@@ -6,17 +6,17 @@ pub struct BillingMeterDetailsResponse {
     /// Frequency of recurrence
     #[builder(into)]
     #[serde(rename = "frequency")]
-    pub r#frequency: Box<String>,
+    pub r#frequency: String,
     /// Represents MeterDetails
     #[builder(into)]
     #[serde(rename = "meterDetails")]
-    pub r#meter_details: Box<pulumi_gestalt_rust::OneOf2<super::types::Pav2MeterDetailsResponse, super::types::PurchaseMeterDetailsResponse>>,
+    pub r#meter_details: pulumi_gestalt_rust::OneOf2<Box<super::types::Pav2MeterDetailsResponse>, Box<super::types::PurchaseMeterDetailsResponse>>,
     /// Represents Metering type (eg one-time or recurrent)
     #[builder(into)]
     #[serde(rename = "meteringType")]
-    pub r#metering_type: Box<String>,
+    pub r#metering_type: String,
     /// Represents Billing type name
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -4,36 +4,36 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HttpRouteRuleMatchHeader {
     /// The value of the header should match exactly the content of exactMatch.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exactMatch")]
-    pub r#exact_match: Box<Option<String>>,
+    pub r#exact_match: Option<String>,
     /// The name of the HTTP header to match against.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "header")]
-    pub r#header: Box<Option<String>>,
+    pub r#header: Option<String>,
     /// If specified, the match result will be inverted before checking. Default value is set to false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "invertMatch")]
-    pub r#invert_match: Box<Option<bool>>,
+    pub r#invert_match: Option<bool>,
     /// The value of the header must start with the contents of prefixMatch.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefixMatch")]
-    pub r#prefix_match: Box<Option<String>>,
+    pub r#prefix_match: Option<String>,
     /// A header with headerName must exist. The match takes place whether or not the header has a value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "presentMatch")]
-    pub r#present_match: Box<Option<bool>>,
+    pub r#present_match: Option<bool>,
     /// If specified, the rule will match if the request header value is within the range.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rangeMatch")]
-    pub r#range_match: Box<Option<super::super::types::networkservices::HttpRouteRuleMatchHeaderRangeMatch>>,
+    pub r#range_match: Option<Box<super::super::types::networkservices::HttpRouteRuleMatchHeaderRangeMatch>>,
     /// The value of the header must match the regular expression specified in regexMatch.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regexMatch")]
-    pub r#regex_match: Box<Option<String>>,
+    pub r#regex_match: Option<String>,
     /// The value of the header must end with the contents of suffixMatch.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "suffixMatch")]
-    pub r#suffix_match: Box<Option<String>>,
+    pub r#suffix_match: Option<String>,
 }

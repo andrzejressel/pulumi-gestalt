@@ -6,5 +6,5 @@ pub struct GetRepositoryRemoteRepositoryConfigMavenRepositoryCustomRepository {
     /// Specific uri to the registry, e.g. '"https://repo.maven.apache.org/maven2"'
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

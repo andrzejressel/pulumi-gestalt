@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNetworkGatewayPolicyGroup {
     /// Is this a Default Virtual Network Gateway Policy Group? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isDefault")]
-    pub r#is_default: Box<Option<bool>>,
+    pub r#is_default: Option<bool>,
     /// The name of the Virtual Network Gateway Policy Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// One or more `policy_member` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "policyMembers")]
-    pub r#policy_members: Box<Vec<super::super::types::network::VirtualNetworkGatewayPolicyGroupPolicyMember>>,
+    pub r#policy_members: Vec<super::super::types::network::VirtualNetworkGatewayPolicyGroupPolicyMember>,
     /// The priority for the Virtual Network Gateway Policy Group. Defaults to `0`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<Option<i32>>,
+    pub r#priority: Option<i32>,
 }

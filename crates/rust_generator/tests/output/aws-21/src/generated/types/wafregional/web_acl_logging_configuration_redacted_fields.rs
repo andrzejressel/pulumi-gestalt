@@ -6,5 +6,5 @@ pub struct WebAclLoggingConfigurationRedactedFields {
     /// Set of configuration blocks for fields to redact. Detailed below.
     #[builder(into)]
     #[serde(rename = "fieldToMatches")]
-    pub r#field_to_matches: Box<Vec<super::super::types::wafregional::WebAclLoggingConfigurationRedactedFieldsFieldToMatch>>,
+    pub r#field_to_matches: Vec<super::super::types::wafregional::WebAclLoggingConfigurationRedactedFieldsFieldToMatch>,
 }

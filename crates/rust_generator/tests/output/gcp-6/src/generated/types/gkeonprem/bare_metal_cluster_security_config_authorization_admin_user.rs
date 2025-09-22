@@ -6,5 +6,5 @@ pub struct BareMetalClusterSecurityConfigAuthorizationAdminUser {
     /// The name of the user, e.g. `my-gcp-id@gmail.com`.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

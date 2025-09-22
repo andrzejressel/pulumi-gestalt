@@ -6,5 +6,5 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationInputKi
     /// The ARN of the input Kinesis data stream to read.
     #[builder(into)]
     #[serde(rename = "resourceArn")]
-    pub r#resource_arn: Box<String>,
+    pub r#resource_arn: String,
 }

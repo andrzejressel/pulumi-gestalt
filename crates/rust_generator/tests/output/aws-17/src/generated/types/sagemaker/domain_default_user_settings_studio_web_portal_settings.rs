@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainDefaultUserSettingsStudioWebPortalSettings {
     /// The Applications supported in Studio that are hidden from the Studio left navigation pane.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hiddenAppTypes")]
-    pub r#hidden_app_types: Box<Option<Vec<String>>>,
+    pub r#hidden_app_types: Option<Vec<String>>,
     /// The instance types you are hiding from the Studio user interface.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hiddenInstanceTypes")]
-    pub r#hidden_instance_types: Box<Option<Vec<String>>>,
+    pub r#hidden_instance_types: Option<Vec<String>>,
     /// The machine learning tools that are hidden from the Studio left navigation pane.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hiddenMlTools")]
-    pub r#hidden_ml_tools: Box<Option<Vec<String>>>,
+    pub r#hidden_ml_tools: Option<Vec<String>>,
 }

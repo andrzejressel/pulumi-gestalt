@@ -5,9 +5,9 @@
 pub struct ResourcePolicySnapshotSchedulePolicy {
     /// Retention policy applied to snapshots created by this resource policy.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Box<Option<super::super::types::compute::ResourcePolicySnapshotSchedulePolicyRetentionPolicy>>,
+    pub r#retention_policy: Option<Box<super::super::types::compute::ResourcePolicySnapshotSchedulePolicyRetentionPolicy>>,
     /// Contains one of an `hourlySchedule`, `dailySchedule`, or `weeklySchedule`.
     /// Structure is documented below.
     #[builder(into)]
@@ -15,7 +15,7 @@ pub struct ResourcePolicySnapshotSchedulePolicy {
     pub r#schedule: Box<super::super::types::compute::ResourcePolicySnapshotSchedulePolicySchedule>,
     /// Properties with which the snapshots are created, such as labels.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "snapshotProperties")]
-    pub r#snapshot_properties: Box<Option<super::super::types::compute::ResourcePolicySnapshotSchedulePolicySnapshotProperties>>,
+    pub r#snapshot_properties: Option<Box<super::super::types::compute::ResourcePolicySnapshotSchedulePolicySnapshotProperties>>,
 }

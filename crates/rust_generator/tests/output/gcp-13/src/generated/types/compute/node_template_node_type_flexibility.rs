@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NodeTemplateNodeTypeFlexibility {
     /// Number of virtual CPUs to use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cpus")]
-    pub r#cpus: Box<Option<String>>,
+    pub r#cpus: Option<String>,
     /// (Output)
     /// Use local SSD
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "localSsd")]
-    pub r#local_ssd: Box<Option<String>>,
+    pub r#local_ssd: Option<String>,
     /// Physical memory available to the node, defined in MB.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "memory")]
-    pub r#memory: Box<Option<String>>,
+    pub r#memory: Option<String>,
 }

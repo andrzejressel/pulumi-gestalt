@@ -6,5 +6,5 @@ pub struct AccountCapability {
     /// Specifies the name of the CosmosDB Account. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -5,17 +5,17 @@
 pub struct GetLaunchTemplateMetadataOption {
     #[builder(into)]
     #[serde(rename = "httpEndpoint")]
-    pub r#http_endpoint: Box<String>,
+    pub r#http_endpoint: String,
     #[builder(into)]
     #[serde(rename = "httpProtocolIpv6")]
-    pub r#http_protocol_ipv_6: Box<String>,
+    pub r#http_protocol_ipv_6: String,
     #[builder(into)]
     #[serde(rename = "httpPutResponseHopLimit")]
-    pub r#http_put_response_hop_limit: Box<i32>,
+    pub r#http_put_response_hop_limit: i32,
     #[builder(into)]
     #[serde(rename = "httpTokens")]
-    pub r#http_tokens: Box<String>,
+    pub r#http_tokens: String,
     #[builder(into)]
     #[serde(rename = "instanceMetadataTags")]
-    pub r#instance_metadata_tags: Box<String>,
+    pub r#instance_metadata_tags: String,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionCacheBehaviorSettingsForwardedCookies {
     /// The specific cookies to forward to your distribution's origin.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cookiesAllowLists")]
-    pub r#cookies_allow_lists: Box<Option<Vec<String>>>,
+    pub r#cookies_allow_lists: Option<Vec<String>>,
     /// Specifies which cookies to forward to the distribution's origin for a cache behavior: all, none, or allow-list to forward only the cookies specified in the cookiesAllowList parameter.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "option")]
-    pub r#option: Box<Option<String>>,
+    pub r#option: Option<String>,
 }

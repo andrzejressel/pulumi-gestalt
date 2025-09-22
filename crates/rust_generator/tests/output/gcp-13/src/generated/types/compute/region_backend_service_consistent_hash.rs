@@ -8,21 +8,21 @@ pub struct RegionBackendServiceConsistentHash {
     /// balancer. If the cookie is not present, it will be generated.
     /// This field is applicable if the sessionAffinity is set to HTTP_COOKIE.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpCookie")]
-    pub r#http_cookie: Box<Option<super::super::types::compute::RegionBackendServiceConsistentHashHttpCookie>>,
+    pub r#http_cookie: Option<Box<super::super::types::compute::RegionBackendServiceConsistentHashHttpCookie>>,
     /// The hash based on the value of the specified header field.
     /// This field is applicable if the sessionAffinity is set to HEADER_FIELD.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpHeaderName")]
-    pub r#http_header_name: Box<Option<String>>,
+    pub r#http_header_name: Option<String>,
     /// The minimum number of virtual nodes to use for the hash ring.
     /// Larger ring sizes result in more granular load
     /// distributions. If the number of hosts in the load balancing pool
     /// is larger than the ring size, each host will be assigned a single
     /// virtual node.
     /// Defaults to 1024.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimumRingSize")]
-    pub r#minimum_ring_size: Box<Option<i32>>,
+    pub r#minimum_ring_size: Option<i32>,
 }

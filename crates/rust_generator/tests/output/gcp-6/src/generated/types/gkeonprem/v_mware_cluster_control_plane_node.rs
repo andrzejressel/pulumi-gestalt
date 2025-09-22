@@ -5,28 +5,28 @@
 pub struct VMwareClusterControlPlaneNode {
     /// AutoResizeConfig provides auto resizing configurations.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoResizeConfig")]
-    pub r#auto_resize_config: Box<Option<super::super::types::gkeonprem::VMwareClusterControlPlaneNodeAutoResizeConfig>>,
+    pub r#auto_resize_config: Option<Box<super::super::types::gkeonprem::VMwareClusterControlPlaneNodeAutoResizeConfig>>,
     /// The number of CPUs for each admin cluster node that serve as control planes
     /// for this VMware User Cluster. (default: 4 CPUs)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cpus")]
-    pub r#cpus: Box<Option<i32>>,
+    pub r#cpus: Option<i32>,
     /// The megabytes of memory for each admin cluster node that serves as a
     /// control plane for this VMware User Cluster (default: 8192 MB memory).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "memory")]
-    pub r#memory: Box<Option<i32>>,
+    pub r#memory: Option<i32>,
     /// The number of control plane nodes for this VMware User Cluster.
     /// (default: 1 replica).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replicas")]
-    pub r#replicas: Box<Option<i32>>,
+    pub r#replicas: Option<i32>,
     /// (Output)
     /// Vsphere-specific config.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vsphereConfigs")]
-    pub r#vsphere_configs: Box<Option<Vec<super::super::types::gkeonprem::VMwareClusterControlPlaneNodeVsphereConfig>>>,
+    pub r#vsphere_configs: Option<Vec<super::super::types::gkeonprem::VMwareClusterControlPlaneNodeVsphereConfig>>,
 }

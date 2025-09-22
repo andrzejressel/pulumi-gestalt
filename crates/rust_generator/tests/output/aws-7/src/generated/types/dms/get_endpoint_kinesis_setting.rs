@@ -5,29 +5,29 @@
 pub struct GetEndpointKinesisSetting {
     #[builder(into)]
     #[serde(rename = "includeControlDetails")]
-    pub r#include_control_details: Box<bool>,
+    pub r#include_control_details: bool,
     #[builder(into)]
     #[serde(rename = "includeNullAndEmpty")]
-    pub r#include_null_and_empty: Box<bool>,
+    pub r#include_null_and_empty: bool,
     #[builder(into)]
     #[serde(rename = "includePartitionValue")]
-    pub r#include_partition_value: Box<bool>,
+    pub r#include_partition_value: bool,
     #[builder(into)]
     #[serde(rename = "includeTableAlterOperations")]
-    pub r#include_table_alter_operations: Box<bool>,
+    pub r#include_table_alter_operations: bool,
     #[builder(into)]
     #[serde(rename = "includeTransactionDetails")]
-    pub r#include_transaction_details: Box<bool>,
+    pub r#include_transaction_details: bool,
     #[builder(into)]
     #[serde(rename = "messageFormat")]
-    pub r#message_format: Box<String>,
+    pub r#message_format: String,
     #[builder(into)]
     #[serde(rename = "partitionIncludeSchemaTable")]
-    pub r#partition_include_schema_table: Box<bool>,
+    pub r#partition_include_schema_table: bool,
     #[builder(into)]
     #[serde(rename = "serviceAccessRoleArn")]
-    pub r#service_access_role_arn: Box<String>,
+    pub r#service_access_role_arn: String,
     #[builder(into)]
     #[serde(rename = "streamArn")]
-    pub r#stream_arn: Box<String>,
+    pub r#stream_arn: String,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WindowsWebAppSiteCredential {
     /// The name which should be used for this Windows Web App. Changing this forces a new Windows Web App to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The Site Credentials Password used for publishing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
 }

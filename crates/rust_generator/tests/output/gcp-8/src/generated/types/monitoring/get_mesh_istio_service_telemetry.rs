@@ -8,5 +8,5 @@ pub struct GetMeshIstioServiceTelemetry {
     /// https://cloud.google.com/apis/design/resource_names.
     #[builder(into)]
     #[serde(rename = "resourceName")]
-    pub r#resource_name: Box<String>,
+    pub r#resource_name: String,
 }

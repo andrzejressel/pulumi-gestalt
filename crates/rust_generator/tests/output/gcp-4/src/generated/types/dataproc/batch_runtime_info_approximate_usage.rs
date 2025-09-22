@@ -5,22 +5,22 @@
 pub struct BatchRuntimeInfoApproximateUsage {
     /// (Output)
     /// Accelerator type being used, if any.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acceleratorType")]
-    pub r#accelerator_type: Box<Option<String>>,
+    pub r#accelerator_type: Option<String>,
     /// (Output)
     /// Accelerator usage in (milliAccelerator x seconds)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "milliAcceleratorSeconds")]
-    pub r#milli_accelerator_seconds: Box<Option<String>>,
+    pub r#milli_accelerator_seconds: Option<String>,
     /// (Output)
     /// DCU (Dataproc Compute Units) usage in (milliDCU x seconds)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "milliDcuSeconds")]
-    pub r#milli_dcu_seconds: Box<Option<String>>,
+    pub r#milli_dcu_seconds: Option<String>,
     /// (Output)
     /// Shuffle storage usage in (GB x seconds)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "shuffleStorageGbSeconds")]
-    pub r#shuffle_storage_gb_seconds: Box<Option<String>>,
+    pub r#shuffle_storage_gb_seconds: Option<String>,
 }

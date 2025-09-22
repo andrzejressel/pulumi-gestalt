@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClassificationJobScheduleFrequency {
     /// Specifies a daily recurrence pattern for running the job.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dailySchedule")]
-    pub r#daily_schedule: Box<Option<bool>>,
+    pub r#daily_schedule: Option<bool>,
     /// Specifies a monthly recurrence pattern for running the job.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "monthlySchedule")]
-    pub r#monthly_schedule: Box<Option<i32>>,
+    pub r#monthly_schedule: Option<i32>,
     /// Specifies a weekly recurrence pattern for running the job.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weeklySchedule")]
-    pub r#weekly_schedule: Box<Option<String>>,
+    pub r#weekly_schedule: Option<String>,
 }

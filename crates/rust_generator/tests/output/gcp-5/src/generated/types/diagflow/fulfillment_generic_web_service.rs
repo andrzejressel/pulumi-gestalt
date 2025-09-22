@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FulfillmentGenericWebService {
     /// The password for HTTP Basic authentication.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// The HTTP request headers to send together with fulfillment requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestHeaders")]
-    pub r#request_headers: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#request_headers: Option<std::collections::HashMap<String, String>>,
     /// The fulfillment URI for receiving POST requests. It must use https protocol.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
     /// The user name for HTTP Basic authentication.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

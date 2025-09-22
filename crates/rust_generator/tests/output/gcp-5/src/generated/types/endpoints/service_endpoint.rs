@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceEndpoint {
     /// The FQDN of the endpoint as described in the config.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<Option<String>>,
+    pub r#address: Option<String>,
     /// The simple name of the endpoint as described in the config.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

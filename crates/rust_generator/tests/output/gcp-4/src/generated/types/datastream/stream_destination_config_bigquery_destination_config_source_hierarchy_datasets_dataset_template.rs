@@ -5,21 +5,21 @@
 pub struct StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate {
     /// If supplied, every created dataset will have its name prefixed by the provided value.
     /// The prefix and name will be separated by an underscore. i.e. _.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datasetIdPrefix")]
-    pub r#dataset_id_prefix: Box<Option<String>>,
+    pub r#dataset_id_prefix: Option<String>,
     /// Describes the Cloud KMS encryption key that will be used to protect destination BigQuery
     /// table. The BigQuery Service Account associated with your project requires access to this
     /// encryption key. i.e. projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{cryptoKey}.
     /// See https://cloud.google.com/bigquery/docs/customer-managed-encryption for more information.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<Option<String>>,
+    pub r#kms_key_name: Option<String>,
     /// The geographic location where the dataset should reside.
     /// See https://cloud.google.com/bigquery/docs/locations for supported locations.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
 }

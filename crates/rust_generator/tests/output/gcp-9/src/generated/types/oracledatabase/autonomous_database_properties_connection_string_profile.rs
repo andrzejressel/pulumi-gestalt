@@ -11,61 +11,61 @@ pub struct AutonomousDatabasePropertiesConnectionStringProfile {
     /// LOW
     /// TP
     /// TPURGENT
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "consumerGroup")]
-    pub r#consumer_group: Box<Option<String>>,
+    pub r#consumer_group: Option<String>,
     /// The display name for the database connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<Option<String>>,
+    pub r#display_name: Option<String>,
     /// The host name format being currently used in connection string. 
     ///  Possible values:
     ///  HOST_FORMAT_UNSPECIFIED
     /// FQDN
     /// IP
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostFormat")]
-    pub r#host_format: Box<Option<String>>,
+    pub r#host_format: Option<String>,
     /// This field indicates if the connection string is regional and is only
     /// applicable for cross-region Data Guard.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isRegional")]
-    pub r#is_regional: Box<Option<bool>>,
+    pub r#is_regional: Option<bool>,
     /// The protocol being used by the connection. 
     ///  Possible values:
     ///  PROTOCOL_UNSPECIFIED
     /// TCP
     /// TCPS
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
+    pub r#protocol: Option<String>,
     /// The current session mode of the connection. 
     ///  Possible values:
     ///  SESSION_MODE_UNSPECIFIED
     /// DIRECT
     /// INDIRECT
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sessionMode")]
-    pub r#session_mode: Box<Option<String>>,
+    pub r#session_mode: Option<String>,
     /// The syntax of the connection string. 
     ///  Possible values:
     ///  SYNTAX_FORMAT_UNSPECIFIED
     /// LONG
     /// EZCONNECT
     /// EZCONNECTPLUS
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "syntaxFormat")]
-    pub r#syntax_format: Box<Option<String>>,
+    pub r#syntax_format: Option<String>,
     /// This field indicates the TLS authentication type of the connection. 
     ///  Possible values:
     ///  TLS_AUTHENTICATION_UNSPECIFIED
     /// SERVER
     /// MUTUAL
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tlsAuthentication")]
-    pub r#tls_authentication: Box<Option<String>>,
+    pub r#tls_authentication: Option<String>,
     /// The value of the connection string.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

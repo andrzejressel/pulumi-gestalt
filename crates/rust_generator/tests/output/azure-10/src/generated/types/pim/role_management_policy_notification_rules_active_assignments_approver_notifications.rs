@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RoleManagementPolicyNotificationRulesActiveAssignmentsApproverNotifications {
     /// The additional recipients to notify
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "additionalRecipients")]
-    pub r#additional_recipients: Box<Option<Vec<String>>>,
+    pub r#additional_recipients: Option<Vec<String>>,
     /// Whether the default recipients are notified
     #[builder(into)]
     #[serde(rename = "defaultRecipients")]
-    pub r#default_recipients: Box<bool>,
+    pub r#default_recipients: bool,
     /// What level of notifications are sent
     #[builder(into)]
     #[serde(rename = "notificationLevel")]
-    pub r#notification_level: Box<String>,
+    pub r#notification_level: String,
 }

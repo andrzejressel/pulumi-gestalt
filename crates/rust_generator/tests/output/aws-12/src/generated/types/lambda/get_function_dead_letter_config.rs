@@ -5,5 +5,5 @@
 pub struct GetFunctionDeadLetterConfig {
     #[builder(into)]
     #[serde(rename = "targetArn")]
-    pub r#target_arn: Box<String>,
+    pub r#target_arn: String,
 }

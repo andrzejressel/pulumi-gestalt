@@ -5,18 +5,18 @@
 pub struct RepositoryReleaseConfigRecentScheduledReleaseRecord {
     /// (Output)
     /// The name of the created compilation result, if one was successfully created. Must be in the format projects/*/locations/*/repositories/*/compilationResults/*.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "compilationResult")]
-    pub r#compilation_result: Box<Option<String>>,
+    pub r#compilation_result: Option<String>,
     /// (Output)
     /// The error status encountered upon this attempt to create the compilation result, if the attempt was unsuccessful.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorStatuses")]
-    pub r#error_statuses: Box<Option<Vec<super::super::types::dataform::RepositoryReleaseConfigRecentScheduledReleaseRecordErrorStatus>>>,
+    pub r#error_statuses: Option<Vec<super::super::types::dataform::RepositoryReleaseConfigRecentScheduledReleaseRecordErrorStatus>>,
     /// (Output)
     /// The timestamp of this release attempt.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "releaseTime")]
-    pub r#release_time: Box<Option<String>>,
+    pub r#release_time: Option<String>,
 }

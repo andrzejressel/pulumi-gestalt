@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegistryTaskTimerTrigger {
     /// Should the trigger be enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The name which should be used for this trigger.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The CRON expression for the task schedule.
     #[builder(into)]
     #[serde(rename = "schedule")]
-    pub r#schedule: Box<String>,
+    pub r#schedule: String,
 }

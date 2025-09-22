@@ -6,9 +6,9 @@ pub struct DomainMatchingJobSchedule {
     /// The day when the Identity Resolution Job should run every week.
     #[builder(into)]
     #[serde(rename = "dayOfTheWeek")]
-    pub r#day_of_the_week: Box<String>,
+    pub r#day_of_the_week: String,
     /// The time when the Identity Resolution Job should run every week.
     #[builder(into)]
     #[serde(rename = "time")]
-    pub r#time: Box<String>,
+    pub r#time: String,
 }

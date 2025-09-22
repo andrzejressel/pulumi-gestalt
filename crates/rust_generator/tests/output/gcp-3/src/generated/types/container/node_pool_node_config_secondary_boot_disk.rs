@@ -6,9 +6,9 @@ pub struct NodePoolNodeConfigSecondaryBootDisk {
     /// Disk image to create the secondary boot disk from
     #[builder(into)]
     #[serde(rename = "diskImage")]
-    pub r#disk_image: Box<String>,
+    pub r#disk_image: String,
     /// Mode for how the secondary boot disk is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<Option<String>>,
+    pub r#mode: Option<String>,
 }

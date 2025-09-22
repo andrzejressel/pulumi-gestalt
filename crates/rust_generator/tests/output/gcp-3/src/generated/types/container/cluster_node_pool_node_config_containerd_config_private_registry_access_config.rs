@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterNodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfig {
     /// List of configuration objects for CA and domains. Each object identifies a certificate and its assigned domains. See [how to configure for private container registries](https://cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates) for more detail. Example: 
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateAuthorityDomainConfigs")]
-    pub r#certificate_authority_domain_configs: Box<Option<Vec<super::super::types::container::ClusterNodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfig>>>,
+    pub r#certificate_authority_domain_configs: Option<Vec<super::super::types::container::ClusterNodePoolNodeConfigContainerdConfigPrivateRegistryAccessConfigCertificateAuthorityDomainConfig>>,
     /// Enables private registry config. If set to false, all other fields in this object must not be set.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

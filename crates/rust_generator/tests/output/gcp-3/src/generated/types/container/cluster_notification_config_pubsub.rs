@@ -6,14 +6,14 @@ pub struct ClusterNotificationConfigPubsub {
     /// Whether or not the notification config is enabled
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Choose what type of notifications you want to receive. If no filters are applied, you'll receive all notification types. Structure is documented below.
     /// 
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<Option<super::super::types::container::ClusterNotificationConfigPubsubFilter>>,
+    pub r#filter: Option<Box<super::super::types::container::ClusterNotificationConfigPubsubFilter>>,
     /// The pubsub topic to push upgrade notifications to. Must be in the same project as the cluster. Must be in the format: `projects/{project}/topics/{topic}`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "topic")]
-    pub r#topic: Box<Option<String>>,
+    pub r#topic: Option<String>,
 }

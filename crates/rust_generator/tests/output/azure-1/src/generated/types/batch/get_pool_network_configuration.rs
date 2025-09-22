@@ -5,25 +5,25 @@
 pub struct GetPoolNetworkConfiguration {
     #[builder(into)]
     #[serde(rename = "acceleratedNetworkingEnabled")]
-    pub r#accelerated_networking_enabled: Box<bool>,
+    pub r#accelerated_networking_enabled: bool,
     /// The scope of dynamic vnet assignment.
     #[builder(into)]
     #[serde(rename = "dynamicVnetAssignmentScope")]
-    pub r#dynamic_vnet_assignment_scope: Box<String>,
+    pub r#dynamic_vnet_assignment_scope: String,
     /// The inbound NAT pools that are used to address specific ports on the individual compute node externally.
     #[builder(into)]
     #[serde(rename = "endpointConfigurations")]
-    pub r#endpoint_configurations: Box<Vec<super::super::types::batch::GetPoolNetworkConfigurationEndpointConfiguration>>,
+    pub r#endpoint_configurations: Vec<super::super::types::batch::GetPoolNetworkConfigurationEndpointConfiguration>,
     /// Type of public IP address provisioning.
     #[builder(into)]
     #[serde(rename = "publicAddressProvisioningType")]
-    pub r#public_address_provisioning_type: Box<String>,
+    pub r#public_address_provisioning_type: String,
     /// A list of public IP ids that will be allocated to nodes.
     #[builder(into)]
     #[serde(rename = "publicIps")]
-    pub r#public_ips: Box<Vec<String>>,
+    pub r#public_ips: Vec<String>,
     /// The ARM resource identifier of the virtual network subnet which the compute nodes of the pool are joined too.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

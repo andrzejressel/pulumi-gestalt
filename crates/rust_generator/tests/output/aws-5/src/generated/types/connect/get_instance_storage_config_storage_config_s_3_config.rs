@@ -6,13 +6,13 @@ pub struct GetInstanceStorageConfigStorageConfigS3Config {
     /// The S3 bucket name.
     #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<String>,
+    pub r#bucket_name: String,
     /// The S3 bucket prefix.
     #[builder(into)]
     #[serde(rename = "bucketPrefix")]
-    pub r#bucket_prefix: Box<String>,
+    pub r#bucket_prefix: String,
     /// The encryption configuration. Documented below.
     #[builder(into)]
     #[serde(rename = "encryptionConfigs")]
-    pub r#encryption_configs: Box<Vec<super::super::types::connect::GetInstanceStorageConfigStorageConfigS3ConfigEncryptionConfig>>,
+    pub r#encryption_configs: Vec<super::super::types::connect::GetInstanceStorageConfigStorageConfigS3ConfigEncryptionConfig>,
 }

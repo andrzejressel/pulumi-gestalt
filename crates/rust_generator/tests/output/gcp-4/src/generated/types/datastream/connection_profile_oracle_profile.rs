@@ -4,28 +4,28 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionProfileOracleProfile {
     /// Connection string attributes
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionAttributes")]
-    pub r#connection_attributes: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#connection_attributes: Option<std::collections::HashMap<String, String>>,
     /// Database for the Oracle connection.
     #[builder(into)]
     #[serde(rename = "databaseService")]
-    pub r#database_service: Box<String>,
+    pub r#database_service: String,
     /// Hostname for the Oracle connection.
     #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<String>,
+    pub r#hostname: String,
     /// Password for the Oracle connection.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// Port for the Oracle connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// Username for the Oracle connection.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

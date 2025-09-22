@@ -7,10 +7,10 @@ pub struct LifecyclePolicyPolicyDetailsActionCrossRegionCopy {
     #[builder(into)]
     #[serde(rename = "encryptionConfiguration")]
     pub r#encryption_configuration: Box<super::super::types::dlm::LifecyclePolicyPolicyDetailsActionCrossRegionCopyEncryptionConfiguration>,
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retainRule")]
-    pub r#retain_rule: Box<Option<super::super::types::dlm::LifecyclePolicyPolicyDetailsActionCrossRegionCopyRetainRule>>,
+    pub r#retain_rule: Option<Box<super::super::types::dlm::LifecyclePolicyPolicyDetailsActionCrossRegionCopyRetainRule>>,
     #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<String>,
+    pub r#target: String,
 }

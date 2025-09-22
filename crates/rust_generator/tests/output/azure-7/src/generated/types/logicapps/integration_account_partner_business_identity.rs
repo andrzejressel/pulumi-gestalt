@@ -6,9 +6,9 @@ pub struct IntegrationAccountPartnerBusinessIdentity {
     /// The authenticating body that provides unique business identities to organizations.
     #[builder(into)]
     #[serde(rename = "qualifier")]
-    pub r#qualifier: Box<String>,
+    pub r#qualifier: String,
     /// The value that identifies the documents that your logic apps receive.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

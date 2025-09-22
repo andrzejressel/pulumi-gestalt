@@ -6,7 +6,7 @@ pub struct AlertRuleNrtIncident {
     /// Whether to create an incident from alerts triggered by this Sentinel NRT Alert Rule?
     #[builder(into)]
     #[serde(rename = "createIncidentEnabled")]
-    pub r#create_incident_enabled: Box<bool>,
+    pub r#create_incident_enabled: bool,
     /// A `grouping` block as defined below.
     #[builder(into)]
     #[serde(rename = "grouping")]

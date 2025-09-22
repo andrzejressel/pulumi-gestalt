@@ -6,9 +6,9 @@ pub struct DataSourceParametersRds {
     /// The database to which to connect.
     #[builder(into)]
     #[serde(rename = "database")]
-    pub r#database: Box<String>,
+    pub r#database: String,
     /// The instance ID to which to connect.
     #[builder(into)]
     #[serde(rename = "instanceId")]
-    pub r#instance_id: Box<String>,
+    pub r#instance_id: String,
 }

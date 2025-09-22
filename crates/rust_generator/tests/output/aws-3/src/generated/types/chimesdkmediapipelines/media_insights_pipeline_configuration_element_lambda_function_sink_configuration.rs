@@ -6,5 +6,5 @@ pub struct MediaInsightsPipelineConfigurationElementLambdaFunctionSinkConfigurat
     /// Lambda Function to deliver results.
     #[builder(into)]
     #[serde(rename = "insightsTarget")]
-    pub r#insights_target: Box<String>,
+    pub r#insights_target: String,
 }

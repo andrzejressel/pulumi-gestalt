@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BackendProxy {
     /// The password to connect to the proxy server.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// The URL of the proxy server.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
     /// The username to connect to the proxy server.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

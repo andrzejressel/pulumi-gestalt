@@ -11,9 +11,9 @@ pub struct ClusterVirtualClusterConfigKubernetesClusterConfig {
     /// If this namespace does not exist, it is created.
     /// If it  exists, Dataproc verifies that another Dataproc VirtualCluster is not installed into it.
     /// If not specified, the name of the Dataproc Cluster is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kubernetesNamespace")]
-    pub r#kubernetes_namespace: Box<Option<String>>,
+    pub r#kubernetes_namespace: Option<String>,
     /// The software configuration for this Dataproc cluster running on Kubernetes.
     #[builder(into)]
     #[serde(rename = "kubernetesSoftwareConfig")]

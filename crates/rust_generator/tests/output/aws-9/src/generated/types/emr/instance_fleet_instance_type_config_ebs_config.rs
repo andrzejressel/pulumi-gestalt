@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceFleetInstanceTypeConfigEbsConfig {
     /// The number of I/O operations per second (IOPS) that the volume supports
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "iops")]
-    pub r#iops: Box<Option<i32>>,
+    pub r#iops: Option<i32>,
     /// The volume size, in gibibytes (GiB).
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<i32>,
+    pub r#size: i32,
     /// The volume type. Valid options are `gp2`, `io1`, `standard` and `st1`. See [EBS Volume Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html).
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// The number of EBS volumes with this configuration to attach to each EC2 instance in the instance group (default is 1)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "volumesPerInstance")]
-    pub r#volumes_per_instance: Box<Option<i32>>,
+    pub r#volumes_per_instance: Option<i32>,
 }

@@ -8,22 +8,22 @@ pub struct TopicIngestionDataSourceSettingsAwsKinesis {
     /// required permissions that need to be attached to it.
     #[builder(into)]
     #[serde(rename = "awsRoleArn")]
-    pub r#aws_role_arn: Box<String>,
+    pub r#aws_role_arn: String,
     /// The Kinesis consumer ARN to used for ingestion in
     /// Enhanced Fan-Out mode. The consumer must be already
     /// created and ready to be used.
     #[builder(into)]
     #[serde(rename = "consumerArn")]
-    pub r#consumer_arn: Box<String>,
+    pub r#consumer_arn: String,
     /// The GCP service account to be used for Federated Identity authentication
     /// with Kinesis (via a `AssumeRoleWithWebIdentity` call for the provided
     /// role). The `awsRoleArn` must be set up with `accounts.google.com:sub`
     /// equals to this service account number.
     #[builder(into)]
     #[serde(rename = "gcpServiceAccount")]
-    pub r#gcp_service_account: Box<String>,
+    pub r#gcp_service_account: String,
     /// The Kinesis stream ARN to ingest data from.
     #[builder(into)]
     #[serde(rename = "streamArn")]
-    pub r#stream_arn: Box<String>,
+    pub r#stream_arn: String,
 }

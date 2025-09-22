@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelDestinationSetting {
     /// Key used to extract the password from EC2 Parameter store.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordParam")]
-    pub r#password_param: Box<Option<String>>,
+    pub r#password_param: Option<String>,
     /// Stream name RTMP destinations (URLs of type rtmp://)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "streamName")]
-    pub r#stream_name: Box<Option<String>>,
+    pub r#stream_name: Option<String>,
     /// A URL specifying a destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<Option<String>>,
+    pub r#url: Option<String>,
     /// Username for destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

@@ -5,11 +5,11 @@
 pub struct AppProfileSingleClusterRouting {
     /// If true, CheckAndMutateRow and ReadModifyWriteRow requests are allowed by this app profile.
     /// It is unsafe to send these requests to the same table/row/column in multiple clusters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowTransactionalWrites")]
-    pub r#allow_transactional_writes: Box<Option<bool>>,
+    pub r#allow_transactional_writes: Option<bool>,
     /// The cluster to which read/write requests should be routed.
     #[builder(into)]
     #[serde(rename = "clusterId")]
-    pub r#cluster_id: Box<String>,
+    pub r#cluster_id: String,
 }

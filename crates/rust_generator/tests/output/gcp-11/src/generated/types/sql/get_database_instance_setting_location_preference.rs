@@ -6,13 +6,13 @@ pub struct GetDatabaseInstanceSettingLocationPreference {
     /// A Google App Engine application whose zone to remain in. Must be in the same region as this instance.
     #[builder(into)]
     #[serde(rename = "followGaeApplication")]
-    pub r#follow_gae_application: Box<String>,
+    pub r#follow_gae_application: String,
     /// The preferred Compute Engine zone for the secondary/failover
     #[builder(into)]
     #[serde(rename = "secondaryZone")]
-    pub r#secondary_zone: Box<String>,
+    pub r#secondary_zone: String,
     /// The preferred compute engine zone.
     #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<String>,
+    pub r#zone: String,
 }

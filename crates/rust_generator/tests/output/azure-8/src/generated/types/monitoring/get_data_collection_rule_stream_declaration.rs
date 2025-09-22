@@ -6,9 +6,9 @@ pub struct GetDataCollectionRuleStreamDeclaration {
     /// One or more `column` blocks as defined above.
     #[builder(into)]
     #[serde(rename = "columns")]
-    pub r#columns: Box<Vec<super::super::types::monitoring::GetDataCollectionRuleStreamDeclarationColumn>>,
+    pub r#columns: Vec<super::super::types::monitoring::GetDataCollectionRuleStreamDeclarationColumn>,
     /// The name of the custom stream. This name should be unique across all `stream_declaration` blocks.
     #[builder(into)]
     #[serde(rename = "streamName")]
-    pub r#stream_name: Box<String>,
+    pub r#stream_name: String,
 }

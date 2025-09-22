@@ -6,9 +6,9 @@ pub struct SparkPoolLibraryRequirement {
     /// The content of library requirements.
     #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<String>,
+    pub r#content: String,
     /// The name of the library requirements file.
     #[builder(into)]
     #[serde(rename = "filename")]
-    pub r#filename: Box<String>,
+    pub r#filename: String,
 }

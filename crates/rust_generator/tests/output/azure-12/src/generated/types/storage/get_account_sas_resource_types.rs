@@ -6,13 +6,13 @@ pub struct GetAccountSasResourceTypes {
     /// Should permission be granted to the container?
     #[builder(into)]
     #[serde(rename = "container")]
-    pub r#container: Box<bool>,
+    pub r#container: bool,
     /// Should permission be granted only to a specific object?
     #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<bool>,
+    pub r#object: bool,
     /// Should permission be granted to the entire service?
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<bool>,
+    pub r#service: bool,
 }

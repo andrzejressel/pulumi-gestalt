@@ -6,13 +6,13 @@ pub struct GetServiceTemplateVpcAccess {
     /// VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number.
     #[builder(into)]
     #[serde(rename = "connector")]
-    pub r#connector: Box<String>,
+    pub r#connector: String,
     /// Traffic VPC egress settings. Possible values: ["ALL_TRAFFIC", "PRIVATE_RANGES_ONLY"]
     #[builder(into)]
     #[serde(rename = "egress")]
-    pub r#egress: Box<String>,
+    pub r#egress: String,
     /// Direct VPC egress settings. Currently only single network interface is supported.
     #[builder(into)]
     #[serde(rename = "networkInterfaces")]
-    pub r#network_interfaces: Box<Vec<super::super::types::cloudrunv2::GetServiceTemplateVpcAccessNetworkInterface>>,
+    pub r#network_interfaces: Vec<super::super::types::cloudrunv2::GetServiceTemplateVpcAccessNetworkInterface>,
 }

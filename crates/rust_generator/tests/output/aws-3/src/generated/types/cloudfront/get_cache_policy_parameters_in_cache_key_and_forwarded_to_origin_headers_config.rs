@@ -6,9 +6,9 @@ pub struct GetCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig {
     /// Determines whether any HTTP headers are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values are `none`, `whitelist`.
     #[builder(into)]
     #[serde(rename = "headerBehavior")]
-    pub r#header_behavior: Box<String>,
+    pub r#header_behavior: String,
     /// Object that contains a list of header names. See Items for more information.
     #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Vec<super::super::types::cloudfront::GetCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeader>>,
+    pub r#headers: Vec<super::super::types::cloudfront::GetCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeader>,
 }

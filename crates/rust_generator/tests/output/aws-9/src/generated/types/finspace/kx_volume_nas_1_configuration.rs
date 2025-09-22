@@ -6,9 +6,9 @@ pub struct KxVolumeNas1Configuration {
     /// The size of the network attached storage.
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<i32>,
+    pub r#size: i32,
     /// The type of the network attached storage.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

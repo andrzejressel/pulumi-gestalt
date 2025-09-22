@@ -6,5 +6,5 @@ pub struct ServiceCor {
     /// A list of origins which should be able to make cross-origin calls. `*` can be used to allow all calls.
     #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Vec<String>>,
+    pub r#allowed_origins: Vec<String>,
 }

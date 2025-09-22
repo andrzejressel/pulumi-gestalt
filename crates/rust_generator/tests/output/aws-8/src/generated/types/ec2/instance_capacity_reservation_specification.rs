@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceCapacityReservationSpecification {
     /// Indicates the instance's Capacity Reservation preferences. Can be `"open"` or `"none"`. (Default: `"open"`).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "capacityReservationPreference")]
-    pub r#capacity_reservation_preference: Box<Option<String>>,
+    pub r#capacity_reservation_preference: Option<String>,
     /// Information about the target Capacity Reservation. See Capacity Reservation Target below for more details.
     /// 
     /// For more information, see the documentation on [Capacity Reservations](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "capacityReservationTarget")]
-    pub r#capacity_reservation_target: Box<Option<super::super::types::ec2::InstanceCapacityReservationSpecificationCapacityReservationTarget>>,
+    pub r#capacity_reservation_target: Option<Box<super::super::types::ec2::InstanceCapacityReservationSpecificationCapacityReservationTarget>>,
 }

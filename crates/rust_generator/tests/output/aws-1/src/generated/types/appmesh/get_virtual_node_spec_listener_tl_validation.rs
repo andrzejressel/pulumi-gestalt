@@ -5,8 +5,8 @@
 pub struct GetVirtualNodeSpecListenerTlValidation {
     #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlValidationSubjectAlternativeName>>,
+    pub r#subject_alternative_names: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlValidationSubjectAlternativeName>,
     #[builder(into)]
     #[serde(rename = "trusts")]
-    pub r#trusts: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlValidationTrust>>,
+    pub r#trusts: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlValidationTrust>,
 }

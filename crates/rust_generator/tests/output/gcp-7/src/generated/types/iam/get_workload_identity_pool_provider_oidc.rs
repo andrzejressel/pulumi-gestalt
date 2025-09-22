@@ -17,11 +17,11 @@ pub struct GetWorkloadIdentityPoolProviderOidc {
     /// '''
     #[builder(into)]
     #[serde(rename = "allowedAudiences")]
-    pub r#allowed_audiences: Box<Vec<String>>,
+    pub r#allowed_audiences: Vec<String>,
     /// The OIDC issuer URL.
     #[builder(into)]
     #[serde(rename = "issuerUri")]
-    pub r#issuer_uri: Box<String>,
+    pub r#issuer_uri: String,
     /// OIDC JWKs in JSON String format. For details on definition of a
     /// JWK, see https:tools.ietf.org/html/rfc7517. If not set, then we
     /// use the 'jwks_uri' from the discovery document fetched from the
@@ -47,5 +47,5 @@ pub struct GetWorkloadIdentityPoolProviderOidc {
     /// '''
     #[builder(into)]
     #[serde(rename = "jwksJson")]
-    pub r#jwks_json: Box<String>,
+    pub r#jwks_json: String,
 }

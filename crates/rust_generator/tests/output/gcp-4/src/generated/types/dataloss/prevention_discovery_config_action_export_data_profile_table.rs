@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionDiscoveryConfigActionExportDataProfileTable {
     /// Dataset Id of the table
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datasetId")]
-    pub r#dataset_id: Box<Option<String>>,
+    pub r#dataset_id: Option<String>,
     /// The Google Cloud Platform project ID of the project containing the table. If omitted, the project ID is inferred from the API call.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<Option<String>>,
+    pub r#project_id: Option<String>,
     /// Name of the table
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tableId")]
-    pub r#table_id: Box<Option<String>>,
+    pub r#table_id: Option<String>,
 }

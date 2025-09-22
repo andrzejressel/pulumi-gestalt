@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountSharePropertiesRetentionPolicy {
     /// Specifies the number of days that the `azure.storage.Share` should be retained, between `1` and `365` days. Defaults to `7`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "days")]
-    pub r#days: Box<Option<i32>>,
+    pub r#days: Option<i32>,
 }

@@ -6,13 +6,13 @@ pub struct TableRangePartitioningRange {
     /// End of the range partitioning, exclusive.
     #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<i32>,
+    pub r#end: i32,
     /// The width of each range within the partition.
     #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<i32>,
+    pub r#interval: i32,
     /// Start of the range partitioning, inclusive.
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<i32>,
+    pub r#start: i32,
 }

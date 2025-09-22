@@ -6,13 +6,13 @@ pub struct GetDataCollectionRuleDataSourceWindowsEventLog {
     /// Specifies the name of the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies a list of streams that this data source will be sent to. A stream indicates what schema will be used for this data and usually what table in Log Analytics the data will be sent to.
     #[builder(into)]
     #[serde(rename = "streams")]
-    pub r#streams: Box<Vec<String>>,
+    pub r#streams: Vec<String>,
     /// Specifies a list of Windows Event Log queries in XPath expression.
     #[builder(into)]
     #[serde(rename = "xPathQueries")]
-    pub r#x_path_queries: Box<Vec<String>>,
+    pub r#x_path_queries: Vec<String>,
 }

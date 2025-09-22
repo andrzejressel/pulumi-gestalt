@@ -6,29 +6,29 @@ pub struct GetDataSourceDataSourceBackupApplianceApplication {
     /// Appliance Id of the Backup Appliance.
     #[builder(into)]
     #[serde(rename = "applianceId")]
-    pub r#appliance_id: Box<String>,
+    pub r#appliance_id: String,
     /// The appid field of the application within the Backup Appliance.
     #[builder(into)]
     #[serde(rename = "applicationId")]
-    pub r#application_id: Box<String>,
+    pub r#application_id: String,
     /// The name of the Application as known to the Backup Appliance.
     #[builder(into)]
     #[serde(rename = "applicationName")]
-    pub r#application_name: Box<String>,
+    pub r#application_name: String,
     /// Appliance name.
     #[builder(into)]
     #[serde(rename = "backupAppliance")]
-    pub r#backup_appliance: Box<String>,
+    pub r#backup_appliance: String,
     /// Hostid of the application host.
     #[builder(into)]
     #[serde(rename = "hostId")]
-    pub r#host_id: Box<String>,
+    pub r#host_id: String,
     /// Hostname of the host where the application is running.
     #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<String>,
+    pub r#hostname: String,
     /// The type of the application. e.g. VMBackup
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

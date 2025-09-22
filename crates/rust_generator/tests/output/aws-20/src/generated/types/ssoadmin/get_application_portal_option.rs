@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetApplicationPortalOption {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "signInOptions")]
-    pub r#sign_in_options: Box<Option<Vec<super::super::types::ssoadmin::GetApplicationPortalOptionSignInOption>>>,
+    pub r#sign_in_options: Option<Vec<super::super::types::ssoadmin::GetApplicationPortalOptionSignInOption>>,
     #[builder(into)]
     #[serde(rename = "visibility")]
-    pub r#visibility: Box<String>,
+    pub r#visibility: String,
 }

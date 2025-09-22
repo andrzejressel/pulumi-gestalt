@@ -6,11 +6,11 @@ pub struct ClusterZoneDistributionConfig {
     /// Immutable. The mode for zone distribution for Memorystore Redis cluster.
     /// If not provided, MULTI_ZONE will be used as default
     /// Possible values are: `MULTI_ZONE`, `SINGLE_ZONE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<Option<String>>,
+    pub r#mode: Option<String>,
     /// Immutable. The zone for single zone Memorystore Redis cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<Option<String>>,
+    pub r#zone: Option<String>,
 }

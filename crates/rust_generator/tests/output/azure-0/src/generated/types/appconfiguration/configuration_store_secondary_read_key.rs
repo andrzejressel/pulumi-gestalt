@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationStoreSecondaryReadKey {
     /// The Connection String for this Access Key - comprising of the Endpoint, ID and Secret.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionString")]
-    pub r#connection_string: Box<Option<String>>,
+    pub r#connection_string: Option<String>,
     /// The ID of the Access Key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The Secret of the Access Key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secret")]
-    pub r#secret: Box<Option<String>>,
+    pub r#secret: Option<String>,
 }

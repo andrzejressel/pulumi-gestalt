@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataCellsFilterTableDataColumnWildcard {
     /// (Optional) Excludes column names. Any column with this name will be excluded.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "excludedColumnNames")]
-    pub r#excluded_column_names: Box<Option<Vec<String>>>,
+    pub r#excluded_column_names: Option<Vec<String>>,
 }

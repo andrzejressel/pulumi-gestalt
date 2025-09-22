@@ -5,8 +5,8 @@
 pub struct GetVirtualGatewaySpecBackendDefaultClientPolicyTlCertificate {
     #[builder(into)]
     #[serde(rename = "files")]
-    pub r#files: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateFile>>,
+    pub r#files: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateFile>,
     #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateSd>>,
+    pub r#sds: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateSd>,
 }

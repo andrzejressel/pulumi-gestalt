@@ -6,5 +6,5 @@ pub struct TeamsRuleRuleSettingsAuditSsh {
     /// Log all SSH commands.
     #[builder(into)]
     #[serde(rename = "commandLogging")]
-    pub r#command_logging: Box<bool>,
+    pub r#command_logging: bool,
 }

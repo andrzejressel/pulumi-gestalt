@@ -7,11 +7,11 @@ pub struct ExtensionsInstanceRuntimeDataProcessingState {
     /// processing in progress or it could list errors or failures.
     /// This information will be shown in the console on the detail page
     /// for the extension instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "detailMessage")]
-    pub r#detail_message: Box<Option<String>>,
+    pub r#detail_message: Option<String>,
     /// The processing state of the extension instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

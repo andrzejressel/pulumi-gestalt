@@ -6,5 +6,5 @@ pub struct WorkspaceLoggingConfiguration {
     /// The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist.
     #[builder(into)]
     #[serde(rename = "logGroupArn")]
-    pub r#log_group_arn: Box<String>,
+    pub r#log_group_arn: String,
 }

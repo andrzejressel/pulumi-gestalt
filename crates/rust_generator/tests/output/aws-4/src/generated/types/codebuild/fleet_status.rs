@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetStatus {
     /// Additional information about a compute fleet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "context")]
-    pub r#context: Box<Option<String>>,
+    pub r#context: Option<String>,
     /// Message associated with the status of a compute fleet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
     /// Status code of the compute fleet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<Option<String>>,
+    pub r#status_code: Option<String>,
 }

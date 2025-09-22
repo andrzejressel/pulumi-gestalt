@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountNetworkProfileNodeManagementAccessIpRule {
     /// Specifies the action of the ip rule. The only possible value is `Allow`. Defaults to `Allow`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<Option<String>>,
+    pub r#action: Option<String>,
     /// The CIDR block from which requests will match the rule.
     #[builder(into)]
     #[serde(rename = "ipRange")]
-    pub r#ip_range: Box<String>,
+    pub r#ip_range: String,
 }

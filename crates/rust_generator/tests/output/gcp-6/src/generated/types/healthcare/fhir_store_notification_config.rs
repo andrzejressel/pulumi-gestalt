@@ -11,21 +11,21 @@ pub struct FhirStoreNotificationConfig {
     /// Cloud Pub/Sub topic. Not having adequate permissions will cause the calls that send notifications to fail.
     #[builder(into)]
     #[serde(rename = "pubsubTopic")]
-    pub r#pubsub_topic: Box<String>,
+    pub r#pubsub_topic: String,
     /// Whether to send full FHIR resource to this Pub/Sub topic for Create and Update operation.
     /// Note that setting this to true does not guarantee that all resources will be sent in the format of
     /// full FHIR resource. When a resource change is too large or during heavy traffic, only the resource name will be
     /// sent. Clients should always check the "payloadType" label from a Pub/Sub message to determine whether
     /// it needs to fetch the full resource as a separate operation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sendFullResource")]
-    pub r#send_full_resource: Box<Option<bool>>,
+    pub r#send_full_resource: Option<bool>,
     /// Whether to send full FHIR resource to this Pub/Sub topic for deleting FHIR resource. Note that setting this to
     /// true does not guarantee that all previous resources will be sent in the format of full FHIR resource. When a
     /// resource change is too large or during heavy traffic, only the resource name will be sent. Clients should always
     /// check the "payloadType" label from a Pub/Sub message to determine whether it needs to fetch the full previous
     /// resource as a separate operation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sendPreviousResourceOnDelete")]
-    pub r#send_previous_resource_on_delete: Box<Option<bool>>,
+    pub r#send_previous_resource_on_delete: Option<bool>,
 }

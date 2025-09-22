@@ -6,5 +6,5 @@ pub struct DistributionDefaultCacheBehavior {
     /// The cache behavior of the distribution. Valid values: `cache` and `dont-cache`.
     #[builder(into)]
     #[serde(rename = "behavior")]
-    pub r#behavior: Box<String>,
+    pub r#behavior: String,
 }

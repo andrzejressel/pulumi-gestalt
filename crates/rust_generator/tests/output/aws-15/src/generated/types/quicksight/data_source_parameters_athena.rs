@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceParametersAthena {
     /// The work-group to which to connect.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "workGroup")]
-    pub r#work_group: Box<Option<String>>,
+    pub r#work_group: Option<String>,
 }

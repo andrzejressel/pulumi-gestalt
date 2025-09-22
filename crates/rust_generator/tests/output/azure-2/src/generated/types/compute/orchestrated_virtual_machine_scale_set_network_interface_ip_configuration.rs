@@ -4,41 +4,41 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfiguration {
     /// A list of Backend Address Pools IDs from a Application Gateway which this Virtual Machine Scale Set should be connected to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applicationGatewayBackendAddressPoolIds")]
-    pub r#application_gateway_backend_address_pool_ids: Box<Option<Vec<String>>>,
+    pub r#application_gateway_backend_address_pool_ids: Option<Vec<String>>,
     /// A list of Application Security Group IDs which this Virtual Machine Scale Set should be connected to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applicationSecurityGroupIds")]
-    pub r#application_security_group_ids: Box<Option<Vec<String>>>,
+    pub r#application_security_group_ids: Option<Vec<String>>,
     /// A list of Backend Address Pools IDs from a Load Balancer which this Virtual Machine Scale Set should be connected to.
     /// 
     /// > **Note:** When using this field you'll also need to configure a Rule for the Load Balancer, and use a depends_on between this resource and the Load Balancer Rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loadBalancerBackendAddressPoolIds")]
-    pub r#load_balancer_backend_address_pool_ids: Box<Option<Vec<String>>>,
+    pub r#load_balancer_backend_address_pool_ids: Option<Vec<String>>,
     /// The Name which should be used for this IP Configuration.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Is this the Primary IP Configuration for this Network Interface? Possible values are `true` and `false`. Defaults to `false`.
     /// 
     /// > **Note:** One `ip_configuration` block must be marked as Primary for each Network Interface.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primary")]
-    pub r#primary: Box<Option<bool>>,
+    pub r#primary: Option<bool>,
     /// A `public_ip_address` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicIpAddresses")]
-    pub r#public_ip_addresses: Box<Option<Vec<super::super::types::compute::OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddress>>>,
+    pub r#public_ip_addresses: Option<Vec<super::super::types::compute::OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddress>>,
     /// The ID of the Subnet which this IP Configuration should be connected to.
     /// 
     /// > **Note:** `subnet_id` is required if version is set to `IPv4`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<Option<String>>,
+    pub r#subnet_id: Option<String>,
     /// The Internet Protocol Version which should be used for this IP Configuration. Possible values are `IPv4` and `IPv6`. Defaults to `IPv4`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

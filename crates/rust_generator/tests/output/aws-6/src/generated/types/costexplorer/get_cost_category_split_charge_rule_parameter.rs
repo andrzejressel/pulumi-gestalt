@@ -6,9 +6,9 @@ pub struct GetCostCategorySplitChargeRuleParameter {
     /// Parameter type.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// Parameter values.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

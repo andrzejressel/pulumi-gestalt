@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTaskSpecContainerSpecPrivileges {
     /// CredentialSpec for managed service account (Windows only)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "credentialSpec")]
-    pub r#credential_spec: Box<Option<super::types::ServiceTaskSpecContainerSpecPrivilegesCredentialSpec>>,
+    pub r#credential_spec: Option<Box<super::types::ServiceTaskSpecContainerSpecPrivilegesCredentialSpec>>,
     /// SELinux labels of the container
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "seLinuxContext")]
-    pub r#se_linux_context: Box<Option<super::types::ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext>>,
+    pub r#se_linux_context: Option<Box<super::types::ServiceTaskSpecContainerSpecPrivilegesSeLinuxContext>>,
 }

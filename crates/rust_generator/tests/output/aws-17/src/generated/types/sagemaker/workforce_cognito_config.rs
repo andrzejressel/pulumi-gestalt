@@ -6,9 +6,9 @@ pub struct WorkforceCognitoConfig {
     /// The client ID for your Amazon Cognito user pool.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// ID for your Amazon Cognito user pool.
     #[builder(into)]
     #[serde(rename = "userPool")]
-    pub r#user_pool: Box<String>,
+    pub r#user_pool: String,
 }

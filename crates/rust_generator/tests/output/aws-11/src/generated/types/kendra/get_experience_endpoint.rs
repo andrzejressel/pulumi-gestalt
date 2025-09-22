@@ -6,9 +6,9 @@ pub struct GetExperienceEndpoint {
     /// Endpoint of your Amazon Kendra Experience.
     #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<String>,
+    pub r#endpoint: String,
     /// Type of endpoint for your Amazon Kendra Experience.
     #[builder(into)]
     #[serde(rename = "endpointType")]
-    pub r#endpoint_type: Box<String>,
+    pub r#endpoint_type: String,
 }

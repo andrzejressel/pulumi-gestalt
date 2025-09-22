@@ -6,17 +6,17 @@ pub struct GetManagedHardwareSecurityModuleRoleDefinitionPermission {
     /// A list of action permission granted.
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<String>>,
+    pub r#actions: Vec<String>,
     /// A list of data action permission granted.
     #[builder(into)]
     #[serde(rename = "dataActions")]
-    pub r#data_actions: Box<Vec<String>>,
+    pub r#data_actions: Vec<String>,
     /// A list of action permission excluded (but not denied).
     #[builder(into)]
     #[serde(rename = "notActions")]
-    pub r#not_actions: Box<Vec<String>>,
+    pub r#not_actions: Vec<String>,
     /// (Optional) A list of data action permission granted.
     #[builder(into)]
     #[serde(rename = "notDataActions")]
-    pub r#not_data_actions: Box<Vec<String>>,
+    pub r#not_data_actions: Vec<String>,
 }

@@ -6,9 +6,9 @@ pub struct GetImagePipelineImageTestsConfiguration {
     /// Whether image tests are enabled.
     #[builder(into)]
     #[serde(rename = "imageTestsEnabled")]
-    pub r#image_tests_enabled: Box<bool>,
+    pub r#image_tests_enabled: bool,
     /// Number of minutes before image tests time out.
     #[builder(into)]
     #[serde(rename = "timeoutMinutes")]
-    pub r#timeout_minutes: Box<i32>,
+    pub r#timeout_minutes: i32,
 }

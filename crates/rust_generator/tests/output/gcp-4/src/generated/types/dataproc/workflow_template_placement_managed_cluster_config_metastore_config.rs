@@ -6,5 +6,5 @@ pub struct WorkflowTemplatePlacementManagedClusterConfigMetastoreConfig {
     /// Required. Resource name of an existing Dataproc Metastore service. Example: * `projects/`
     #[builder(into)]
     #[serde(rename = "dataprocMetastoreService")]
-    pub r#dataproc_metastore_service: Box<String>,
+    pub r#dataproc_metastore_service: String,
 }

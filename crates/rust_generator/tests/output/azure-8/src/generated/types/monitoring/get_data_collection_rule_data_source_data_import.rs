@@ -6,5 +6,5 @@ pub struct GetDataCollectionRuleDataSourceDataImport {
     /// An `event_hub_data_source` block as defined below.
     #[builder(into)]
     #[serde(rename = "eventHubDataSources")]
-    pub r#event_hub_data_sources: Box<Vec<super::super::types::monitoring::GetDataCollectionRuleDataSourceDataImportEventHubDataSource>>,
+    pub r#event_hub_data_sources: Vec<super::super::types::monitoring::GetDataCollectionRuleDataSourceDataImportEventHubDataSource>,
 }

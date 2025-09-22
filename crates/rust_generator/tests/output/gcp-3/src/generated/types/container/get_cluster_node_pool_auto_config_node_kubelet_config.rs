@@ -6,5 +6,5 @@ pub struct GetClusterNodePoolAutoConfigNodeKubeletConfig {
     /// Controls whether the kubelet read-only port is enabled. It is strongly recommended to set this to `FALSE`. Possible values: `TRUE`, `FALSE`.
     #[builder(into)]
     #[serde(rename = "insecureKubeletReadonlyPortEnabled")]
-    pub r#insecure_kubelet_readonly_port_enabled: Box<String>,
+    pub r#insecure_kubelet_readonly_port_enabled: String,
 }

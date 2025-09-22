@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LifecyclePolicyPolicyDetailsScheduleDeprecateRule {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#count: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#interval: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "intervalUnit")]
-    pub r#interval_unit: Box<Option<String>>,
+    pub r#interval_unit: Option<String>,
 }

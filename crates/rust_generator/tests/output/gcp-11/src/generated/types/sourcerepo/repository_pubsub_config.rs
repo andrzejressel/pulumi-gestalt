@@ -9,16 +9,16 @@ pub struct RepositoryPubsubConfig {
     /// Possible values are: `PROTOBUF`, `JSON`.
     #[builder(into)]
     #[serde(rename = "messageFormat")]
-    pub r#message_format: Box<String>,
+    pub r#message_format: String,
     /// Email address of the service account used for publishing Cloud Pub/Sub messages.
     /// This service account needs to be in the same project as the PubsubConfig. When added,
     /// the caller needs to have iam.serviceAccounts.actAs permission on this service account.
     /// If unspecified, it defaults to the compute engine default service account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAccountEmail")]
-    pub r#service_account_email: Box<Option<String>>,
+    pub r#service_account_email: Option<String>,
     /// The identifier for this object. Format specified above.
     #[builder(into)]
     #[serde(rename = "topic")]
-    pub r#topic: Box<String>,
+    pub r#topic: String,
 }

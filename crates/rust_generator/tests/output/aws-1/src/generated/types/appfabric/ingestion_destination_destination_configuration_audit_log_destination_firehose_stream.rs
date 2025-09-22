@@ -5,5 +5,5 @@
 pub struct IngestionDestinationDestinationConfigurationAuditLogDestinationFirehoseStream {
     #[builder(into)]
     #[serde(rename = "streamName")]
-    pub r#stream_name: Box<String>,
+    pub r#stream_name: String,
 }

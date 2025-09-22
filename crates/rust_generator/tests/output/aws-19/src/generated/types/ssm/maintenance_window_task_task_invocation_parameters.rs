@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MaintenanceWindowTaskTaskInvocationParameters {
     /// The parameters for an AUTOMATION task type. Documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "automationParameters")]
-    pub r#automation_parameters: Box<Option<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersAutomationParameters>>,
+    pub r#automation_parameters: Option<Box<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersAutomationParameters>>,
     /// The parameters for a LAMBDA task type. Documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lambdaParameters")]
-    pub r#lambda_parameters: Box<Option<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersLambdaParameters>>,
+    pub r#lambda_parameters: Option<Box<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersLambdaParameters>>,
     /// The parameters for a RUN_COMMAND task type. Documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "runCommandParameters")]
-    pub r#run_command_parameters: Box<Option<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersRunCommandParameters>>,
+    pub r#run_command_parameters: Option<Box<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersRunCommandParameters>>,
     /// The parameters for a STEP_FUNCTIONS task type. Documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stepFunctionsParameters")]
-    pub r#step_functions_parameters: Box<Option<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters>>,
+    pub r#step_functions_parameters: Option<Box<super::super::types::ssm::MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParameters>>,
 }

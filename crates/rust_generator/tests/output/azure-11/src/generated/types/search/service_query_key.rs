@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceQueryKey {
     /// The value of this Query Key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<String>>,
+    pub r#key: Option<String>,
     /// The Name which should be used for this Search Service. Changing this forces a new Search Service to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

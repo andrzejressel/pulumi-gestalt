@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig {
     /// Whether any HTTP headers are included in the cache key and automatically included in requests that CloudFront sends to the origin. Valid values for `header_behavior` are `none` and `whitelist`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerBehavior")]
-    pub r#header_behavior: Box<Option<String>>,
+    pub r#header_behavior: Option<String>,
     /// Object contains a list of header names. See Items for more information.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Option<super::super::types::cloudfront::CachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders>>,
+    pub r#headers: Option<Box<super::super::types::cloudfront::CachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders>>,
 }

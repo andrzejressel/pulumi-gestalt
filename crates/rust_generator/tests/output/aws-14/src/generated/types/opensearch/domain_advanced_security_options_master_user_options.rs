@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainAdvancedSecurityOptionsMasterUserOptions {
     /// ARN for the main user. Only specify if `internal_user_database_enabled` is not set or set to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "masterUserArn")]
-    pub r#master_user_arn: Box<Option<String>>,
+    pub r#master_user_arn: Option<String>,
     /// Main user's username, which is stored in the Amazon OpenSearch Service domain's internal database. Only specify if `internal_user_database_enabled` is set to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "masterUserName")]
-    pub r#master_user_name: Box<Option<String>>,
+    pub r#master_user_name: Option<String>,
     /// Main user's password, which is stored in the Amazon OpenSearch Service domain's internal database. Only specify if `internal_user_database_enabled` is set to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "masterUserPassword")]
-    pub r#master_user_password: Box<Option<String>>,
+    pub r#master_user_password: Option<String>,
 }

@@ -6,44 +6,44 @@ pub struct GetAccountSasPermissions {
     /// Should Add permissions be enabled for this SAS?
     #[builder(into)]
     #[serde(rename = "add")]
-    pub r#add: Box<bool>,
+    pub r#add: bool,
     /// Should Create permissions be enabled for this SAS?
     #[builder(into)]
     #[serde(rename = "create")]
-    pub r#create: Box<bool>,
+    pub r#create: bool,
     /// Should Delete permissions be enabled for this SAS?
     #[builder(into)]
     #[serde(rename = "delete")]
-    pub r#delete: Box<bool>,
+    pub r#delete: bool,
     /// Should Filter by Index Tags permissions be enabled for this SAS?
     /// 
     /// Refer to the [SAS creation reference from Azure](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
     /// for additional details on the fields above.
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<bool>,
+    pub r#filter: bool,
     /// Should List permissions be enabled for this SAS?
     #[builder(into)]
     #[serde(rename = "list")]
-    pub r#list: Box<bool>,
+    pub r#list: bool,
     /// Should Process permissions be enabled for this SAS?
     #[builder(into)]
     #[serde(rename = "process")]
-    pub r#process: Box<bool>,
+    pub r#process: bool,
     /// Should Read permissions be enabled for this SAS?
     #[builder(into)]
     #[serde(rename = "read")]
-    pub r#read: Box<bool>,
+    pub r#read: bool,
     /// Should Get / Set Index Tags permissions be enabled for this SAS?
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<bool>,
+    pub r#tag: bool,
     /// Should Update permissions be enabled for this SAS?
     #[builder(into)]
     #[serde(rename = "update")]
-    pub r#update: Box<bool>,
+    pub r#update: bool,
     /// Should Write permissions be enabled for this SAS?
     #[builder(into)]
     #[serde(rename = "write")]
-    pub r#write: Box<bool>,
+    pub r#write: bool,
 }

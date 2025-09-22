@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTemplateVolumeCloudSqlInstance {
     /// The Cloud SQL instance connection names, as can be found in https://console.cloud.google.com/sql/instances. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run. Format: {project}:{location}:{instance}
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instances")]
-    pub r#instances: Box<Option<Vec<String>>>,
+    pub r#instances: Option<Vec<String>>,
 }

@@ -8,23 +8,23 @@ pub struct GetInstanceMaintenancePolicy {
     /// resolution and up to nine fractional digits.
     #[builder(into)]
     #[serde(rename = "createTime")]
-    pub r#create_time: Box<String>,
+    pub r#create_time: String,
     /// Optional. Description of what this policy is for.
     /// Create/Update methods return INVALID_ARGUMENT if the
     /// length is greater than 512.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// Output only. The time when the policy was last updated.
     /// A timestamp in RFC3339 UTC "Zulu" format, with nanosecond
     /// resolution and up to nine fractional digits.
     #[builder(into)]
     #[serde(rename = "updateTime")]
-    pub r#update_time: Box<String>,
+    pub r#update_time: String,
     /// Optional. Maintenance window that is applied to resources covered by this policy.
     /// Minimum 1. For the current version, the maximum number
     /// of weekly_window is expected to be one.
     #[builder(into)]
     #[serde(rename = "weeklyMaintenanceWindows")]
-    pub r#weekly_maintenance_windows: Box<Vec<super::super::types::redis::GetInstanceMaintenancePolicyWeeklyMaintenanceWindow>>,
+    pub r#weekly_maintenance_windows: Vec<super::super::types::redis::GetInstanceMaintenancePolicyWeeklyMaintenanceWindow>,
 }

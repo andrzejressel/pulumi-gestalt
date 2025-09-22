@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SubscriptionCloudStorageConfigAvroConfig {
     /// When true, the output Cloud Storage file will be serialized using the topic schema, if it exists.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useTopicSchema")]
-    pub r#use_topic_schema: Box<Option<bool>>,
+    pub r#use_topic_schema: Option<bool>,
     /// When true, write the subscription name, messageId, publishTime, attributes, and orderingKey as additional fields in the output.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "writeMetadata")]
-    pub r#write_metadata: Box<Option<bool>>,
+    pub r#write_metadata: Option<bool>,
 }

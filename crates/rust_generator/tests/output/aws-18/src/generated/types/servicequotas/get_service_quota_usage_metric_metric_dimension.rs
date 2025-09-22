@@ -5,14 +5,14 @@
 pub struct GetServiceQuotaUsageMetricMetricDimension {
     #[builder(into)]
     #[serde(rename = "class")]
-    pub r#class: Box<String>,
+    pub r#class: String,
     #[builder(into)]
     #[serde(rename = "resource")]
-    pub r#resource: Box<String>,
+    pub r#resource: String,
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -6,9 +6,9 @@ pub struct GetServiceStatusGuestConfigurationService {
     /// The behavior of the service when the Arc-enabled machine starts up.
     #[builder(into)]
     #[serde(rename = "startupType")]
-    pub r#startup_type: Box<String>,
+    pub r#startup_type: String,
     /// The current status of the service.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

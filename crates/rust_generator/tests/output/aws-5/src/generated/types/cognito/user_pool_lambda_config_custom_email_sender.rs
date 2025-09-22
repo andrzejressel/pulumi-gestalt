@@ -6,9 +6,9 @@ pub struct UserPoolLambdaConfigCustomEmailSender {
     /// The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers to send email notifications to users.
     #[builder(into)]
     #[serde(rename = "lambdaArn")]
-    pub r#lambda_arn: Box<String>,
+    pub r#lambda_arn: String,
     /// The Lambda version represents the signature of the "request" attribute in the "event" information Amazon Cognito passes to your custom email Lambda function. The only supported value is `V1_0`.
     #[builder(into)]
     #[serde(rename = "lambdaVersion")]
-    pub r#lambda_version: Box<String>,
+    pub r#lambda_version: String,
 }

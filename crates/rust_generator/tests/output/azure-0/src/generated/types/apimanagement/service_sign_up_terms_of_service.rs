@@ -6,13 +6,13 @@ pub struct ServiceSignUpTermsOfService {
     /// Should the user be asked for consent during sign up?
     #[builder(into)]
     #[serde(rename = "consentRequired")]
-    pub r#consent_required: Box<bool>,
+    pub r#consent_required: bool,
     /// Should Terms of Service be displayed during sign up?.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The Terms of Service which users are required to agree to in order to sign up.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<Option<String>>,
+    pub r#text: Option<String>,
 }

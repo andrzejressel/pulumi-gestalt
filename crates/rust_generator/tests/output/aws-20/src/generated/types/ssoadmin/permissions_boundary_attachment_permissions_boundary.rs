@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PermissionsBoundaryAttachmentPermissionsBoundary {
     /// Specifies the name and path of a customer managed policy. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customerManagedPolicyReference")]
-    pub r#customer_managed_policy_reference: Box<Option<super::super::types::ssoadmin::PermissionsBoundaryAttachmentPermissionsBoundaryCustomerManagedPolicyReference>>,
+    pub r#customer_managed_policy_reference: Option<Box<super::super::types::ssoadmin::PermissionsBoundaryAttachmentPermissionsBoundaryCustomerManagedPolicyReference>>,
     /// AWS-managed IAM policy ARN to use as the permissions boundary.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "managedPolicyArn")]
-    pub r#managed_policy_arn: Box<Option<String>>,
+    pub r#managed_policy_arn: Option<String>,
 }

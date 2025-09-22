@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkAttachedDataNetworkNetworkAddressPortTranslationPortRange {
     /// Specifies the maximum port number.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximum")]
-    pub r#maximum: Box<Option<i32>>,
+    pub r#maximum: Option<i32>,
     /// Specifies the minimum port number.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimum")]
-    pub r#minimum: Box<Option<i32>>,
+    pub r#minimum: Option<i32>,
 }

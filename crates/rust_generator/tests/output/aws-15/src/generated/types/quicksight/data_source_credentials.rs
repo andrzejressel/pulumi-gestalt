@@ -5,15 +5,15 @@
 pub struct DataSourceCredentials {
     /// The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use.
     /// When the value is not null, the `credential_pair` from the data source in the ARN is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "copySourceArn")]
-    pub r#copy_source_arn: Box<Option<String>>,
+    pub r#copy_source_arn: Option<String>,
     /// Credential pair. See Credential Pair below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "credentialPair")]
-    pub r#credential_pair: Box<Option<super::super::types::quicksight::DataSourceCredentialsCredentialPair>>,
+    pub r#credential_pair: Option<Box<super::super::types::quicksight::DataSourceCredentialsCredentialPair>>,
     /// The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretArn")]
-    pub r#secret_arn: Box<Option<String>>,
+    pub r#secret_arn: Option<String>,
 }

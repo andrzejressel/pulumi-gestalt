@@ -7,5 +7,5 @@ pub struct GetServiceTemplateSpecContainerStartupProbeTcpSocket {
     /// If not specified, defaults to the same value as container.ports[0].containerPort.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

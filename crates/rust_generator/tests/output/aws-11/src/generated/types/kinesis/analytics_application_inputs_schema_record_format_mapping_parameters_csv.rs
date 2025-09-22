@@ -6,9 +6,9 @@ pub struct AnalyticsApplicationInputsSchemaRecordFormatMappingParametersCsv {
     /// The Column Delimiter.
     #[builder(into)]
     #[serde(rename = "recordColumnDelimiter")]
-    pub r#record_column_delimiter: Box<String>,
+    pub r#record_column_delimiter: String,
     /// The Row Delimiter.
     #[builder(into)]
     #[serde(rename = "recordRowDelimiter")]
-    pub r#record_row_delimiter: Box<String>,
+    pub r#record_row_delimiter: String,
 }

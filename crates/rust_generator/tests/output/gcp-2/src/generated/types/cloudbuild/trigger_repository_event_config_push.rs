@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TriggerRepositoryEventConfigPush {
     /// Regex of branches to match.  Specify only one of branch or tag.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "branch")]
-    pub r#branch: Box<Option<String>>,
+    pub r#branch: Option<String>,
     /// When true, only trigger a build if the revision regex does NOT match the gitRef regex.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "invertRegex")]
-    pub r#invert_regex: Box<Option<bool>>,
+    pub r#invert_regex: Option<bool>,
     /// Regex of tags to match.  Specify only one of branch or tag.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<Option<String>>,
+    pub r#tag: Option<String>,
 }

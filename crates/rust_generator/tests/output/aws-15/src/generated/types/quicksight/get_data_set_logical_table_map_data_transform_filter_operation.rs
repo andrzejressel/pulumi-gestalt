@@ -5,5 +5,5 @@
 pub struct GetDataSetLogicalTableMapDataTransformFilterOperation {
     #[builder(into)]
     #[serde(rename = "conditionExpression")]
-    pub r#condition_expression: Box<String>,
+    pub r#condition_expression: String,
 }

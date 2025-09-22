@@ -8,13 +8,13 @@ pub struct GetBackendServiceConsistentHashHttpCooky {
     /// - - -
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Path to set for the cookie.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// Lifetime of the cookie.
     #[builder(into)]
     #[serde(rename = "ttls")]
-    pub r#ttls: Box<Vec<super::super::types::compute::GetBackendServiceConsistentHashHttpCookyTtl>>,
+    pub r#ttls: Vec<super::super::types::compute::GetBackendServiceConsistentHashHttpCookyTtl>,
 }

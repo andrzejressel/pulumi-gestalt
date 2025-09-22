@@ -5,7 +5,7 @@
 pub struct AttachedClusterLoggingConfigComponentConfig {
     /// The components to be enabled.
     /// Each value may be one of: `SYSTEM_COMPONENTS`, `WORKLOADS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableComponents")]
-    pub r#enable_components: Box<Option<Vec<String>>>,
+    pub r#enable_components: Option<Vec<String>>,
 }

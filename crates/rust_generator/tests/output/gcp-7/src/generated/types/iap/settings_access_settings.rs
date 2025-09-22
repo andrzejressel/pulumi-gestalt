@@ -5,41 +5,41 @@
 pub struct SettingsAccessSettings {
     /// Settings to configure and enable allowed domains.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedDomainsSettings")]
-    pub r#allowed_domains_settings: Box<Option<super::super::types::iap::SettingsAccessSettingsAllowedDomainsSettings>>,
+    pub r#allowed_domains_settings: Option<Box<super::super::types::iap::SettingsAccessSettingsAllowedDomainsSettings>>,
     /// Configuration to allow cross-origin requests via IAP.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "corsSettings")]
-    pub r#cors_settings: Box<Option<super::super::types::iap::SettingsAccessSettingsCorsSettings>>,
+    pub r#cors_settings: Option<Box<super::super::types::iap::SettingsAccessSettingsCorsSettings>>,
     /// GCIP claims and endpoint configurations for 3p identity providers.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gcipSettings")]
-    pub r#gcip_settings: Box<Option<super::super::types::iap::SettingsAccessSettingsGcipSettings>>,
+    pub r#gcip_settings: Option<Box<super::super::types::iap::SettingsAccessSettingsGcipSettings>>,
     /// Identity sources that IAP can use to authenticate the end user. Only one identity source
     /// can be configured. The possible values are:
     /// * `WORKFORCE_IDENTITY_FEDERATION`: Use external identities set up on Google Cloud Workforce
     /// Identity Federation.
     /// Each value may be one of: `WORKFORCE_IDENTITY_FEDERATION`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identitySources")]
-    pub r#identity_sources: Box<Option<Vec<String>>>,
+    pub r#identity_sources: Option<Vec<String>>,
     /// Settings to configure IAP's OAuth behavior.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oauthSettings")]
-    pub r#oauth_settings: Box<Option<super::super::types::iap::SettingsAccessSettingsOauthSettings>>,
+    pub r#oauth_settings: Option<Box<super::super::types::iap::SettingsAccessSettingsOauthSettings>>,
     /// Settings to configure reauthentication policies in IAP.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reauthSettings")]
-    pub r#reauth_settings: Box<Option<super::super::types::iap::SettingsAccessSettingsReauthSettings>>,
+    pub r#reauth_settings: Option<Box<super::super::types::iap::SettingsAccessSettingsReauthSettings>>,
     /// Settings to configure the workforce identity federation, including workforce pools
     /// and OAuth 2.0 settings.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "workforceIdentitySettings")]
-    pub r#workforce_identity_settings: Box<Option<super::super::types::iap::SettingsAccessSettingsWorkforceIdentitySettings>>,
+    pub r#workforce_identity_settings: Option<Box<super::super::types::iap::SettingsAccessSettingsWorkforceIdentitySettings>>,
 }

@@ -8,5 +8,5 @@ pub struct OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationSecretCe
     /// > **Note:** This can be sourced from the `secret_id` field within the `azure.keyvault.Certificate` Resource.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

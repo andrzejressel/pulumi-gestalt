@@ -6,9 +6,9 @@ pub struct GetVpcIpamPoolCidrsIpamPoolCidr {
     /// A network CIDR.
     #[builder(into)]
     #[serde(rename = "cidr")]
-    pub r#cidr: Box<String>,
+    pub r#cidr: String,
     /// The provisioning state of that CIDR.
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

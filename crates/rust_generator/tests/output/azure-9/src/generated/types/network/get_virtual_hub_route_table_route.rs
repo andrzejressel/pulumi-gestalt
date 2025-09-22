@@ -6,21 +6,21 @@ pub struct GetVirtualHubRouteTableRoute {
     /// A list of destination addresses for this route.
     #[builder(into)]
     #[serde(rename = "destinations")]
-    pub r#destinations: Box<Vec<String>>,
+    pub r#destinations: Vec<String>,
     /// The type of destinations.
     #[builder(into)]
     #[serde(rename = "destinationsType")]
-    pub r#destinations_type: Box<String>,
+    pub r#destinations_type: String,
     /// The name of the Virtual Hub Route Table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The next hop's resource ID.
     #[builder(into)]
     #[serde(rename = "nextHop")]
-    pub r#next_hop: Box<String>,
+    pub r#next_hop: String,
     /// The type of next hop.
     #[builder(into)]
     #[serde(rename = "nextHopType")]
-    pub r#next_hop_type: Box<String>,
+    pub r#next_hop_type: String,
 }

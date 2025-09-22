@@ -6,5 +6,5 @@ pub struct MetricBucketOptionsExplicitBuckets {
     /// The values must be monotonically increasing.
     #[builder(into)]
     #[serde(rename = "bounds")]
-    pub r#bounds: Box<Vec<f64>>,
+    pub r#bounds: Vec<f64>,
 }

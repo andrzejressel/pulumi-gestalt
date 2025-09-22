@@ -6,9 +6,9 @@ pub struct RepositoryGitRemoteSettingsSshAuthenticationConfig {
     /// Content of a public SSH key to verify an identity of a remote Git host.
     #[builder(into)]
     #[serde(rename = "hostPublicKey")]
-    pub r#host_public_key: Box<String>,
+    pub r#host_public_key: String,
     /// The name of the Secret Manager secret version to use as a ssh private key for Git operations. Must be in the format projects/*/secrets/*/versions/*.
     #[builder(into)]
     #[serde(rename = "userPrivateKeySecretVersion")]
-    pub r#user_private_key_secret_version: Box<String>,
+    pub r#user_private_key_secret_version: String,
 }

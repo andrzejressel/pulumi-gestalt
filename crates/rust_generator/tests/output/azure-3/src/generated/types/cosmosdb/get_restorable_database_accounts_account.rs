@@ -6,21 +6,21 @@ pub struct GetRestorableDatabaseAccountsAccount {
     /// The API type of the Cosmos DB Restorable Database Account.
     #[builder(into)]
     #[serde(rename = "apiType")]
-    pub r#api_type: Box<String>,
+    pub r#api_type: String,
     /// The creation time of the regional Cosmos DB Restorable Database Account.
     #[builder(into)]
     #[serde(rename = "creationTime")]
-    pub r#creation_time: Box<String>,
+    pub r#creation_time: String,
     /// The deletion time of the regional Cosmos DB Restorable Database Account.
     #[builder(into)]
     #[serde(rename = "deletionTime")]
-    pub r#deletion_time: Box<String>,
+    pub r#deletion_time: String,
     /// The ID of the Cosmos DB Restorable Database Account.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// One or more `restorable_locations` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "restorableLocations")]
-    pub r#restorable_locations: Box<Vec<super::super::types::cosmosdb::GetRestorableDatabaseAccountsAccountRestorableLocation>>,
+    pub r#restorable_locations: Vec<super::super::types::cosmosdb::GetRestorableDatabaseAccountsAccountRestorableLocation>,
 }

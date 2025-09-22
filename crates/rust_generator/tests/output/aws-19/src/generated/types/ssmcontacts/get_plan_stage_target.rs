@@ -5,8 +5,8 @@
 pub struct GetPlanStageTarget {
     #[builder(into)]
     #[serde(rename = "channelTargetInfos")]
-    pub r#channel_target_infos: Box<Vec<super::super::types::ssmcontacts::GetPlanStageTargetChannelTargetInfo>>,
+    pub r#channel_target_infos: Vec<super::super::types::ssmcontacts::GetPlanStageTargetChannelTargetInfo>,
     #[builder(into)]
     #[serde(rename = "contactTargetInfos")]
-    pub r#contact_target_infos: Box<Vec<super::super::types::ssmcontacts::GetPlanStageTargetContactTargetInfo>>,
+    pub r#contact_target_infos: Vec<super::super::types::ssmcontacts::GetPlanStageTargetContactTargetInfo>,
 }

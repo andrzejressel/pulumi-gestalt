@@ -6,5 +6,5 @@ pub struct GetRegionInstanceGroupManagerInstanceFlexibilityPolicy {
     /// Named instance selections configuring properties that the group will use when creating new VMs.
     #[builder(into)]
     #[serde(rename = "instanceSelections")]
-    pub r#instance_selections: Box<Vec<super::super::types::compute::GetRegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection>>,
+    pub r#instance_selections: Vec<super::super::types::compute::GetRegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection>,
 }

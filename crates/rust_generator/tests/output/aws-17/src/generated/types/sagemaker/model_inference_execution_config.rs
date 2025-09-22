@@ -6,5 +6,5 @@ pub struct ModelInferenceExecutionConfig {
     /// The container hosts value `SingleModel/MultiModel`. The default value is `SingleModel`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

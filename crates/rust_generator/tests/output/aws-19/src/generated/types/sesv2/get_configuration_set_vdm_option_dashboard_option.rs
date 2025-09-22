@@ -6,5 +6,5 @@ pub struct GetConfigurationSetVdmOptionDashboardOption {
     /// Specifies the status of your VDM engagement metrics collection.
     #[builder(into)]
     #[serde(rename = "engagementMetrics")]
-    pub r#engagement_metrics: Box<String>,
+    pub r#engagement_metrics: String,
 }

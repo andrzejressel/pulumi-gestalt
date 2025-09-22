@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainConfigurationAuthorizerConfig {
     /// A Boolean that specifies whether the domain configuration's authorization service can be overridden.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowAuthorizerOverride")]
-    pub r#allow_authorizer_override: Box<Option<bool>>,
+    pub r#allow_authorizer_override: Option<bool>,
     /// The name of the authorization service for a domain configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultAuthorizerName")]
-    pub r#default_authorizer_name: Box<Option<String>>,
+    pub r#default_authorizer_name: Option<String>,
 }

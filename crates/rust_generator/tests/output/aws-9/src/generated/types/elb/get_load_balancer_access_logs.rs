@@ -5,14 +5,14 @@
 pub struct GetLoadBalancerAccessLogs {
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     #[builder(into)]
     #[serde(rename = "bucketPrefix")]
-    pub r#bucket_prefix: Box<String>,
+    pub r#bucket_prefix: String,
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<i32>,
+    pub r#interval: i32,
 }

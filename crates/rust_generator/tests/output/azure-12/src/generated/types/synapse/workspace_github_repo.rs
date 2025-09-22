@@ -6,27 +6,27 @@ pub struct WorkspaceGithubRepo {
     /// Specifies the GitHub account name.
     #[builder(into)]
     #[serde(rename = "accountName")]
-    pub r#account_name: Box<String>,
+    pub r#account_name: String,
     /// Specifies the collaboration branch of the repository to get code from.
     #[builder(into)]
     #[serde(rename = "branchName")]
-    pub r#branch_name: Box<String>,
+    pub r#branch_name: String,
     /// Specifies the GitHub Enterprise host name. For example: <https://github.mydomain.com>.
     /// 
     /// > **Note:** You must log in to the Synapse UI to complete the authentication to the GitHub repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gitUrl")]
-    pub r#git_url: Box<Option<String>>,
+    pub r#git_url: Option<String>,
     /// The last commit ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastCommitId")]
-    pub r#last_commit_id: Box<Option<String>>,
+    pub r#last_commit_id: Option<String>,
     /// Specifies the name of the git repository.
     #[builder(into)]
     #[serde(rename = "repositoryName")]
-    pub r#repository_name: Box<String>,
+    pub r#repository_name: String,
     /// Specifies the root folder within the repository. Set to `/` for the top level.
     #[builder(into)]
     #[serde(rename = "rootFolder")]
-    pub r#root_folder: Box<String>,
+    pub r#root_folder: String,
 }

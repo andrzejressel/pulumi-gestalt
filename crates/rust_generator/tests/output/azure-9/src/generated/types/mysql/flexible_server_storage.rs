@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlexibleServerStorage {
     /// Should Storage Auto Grow be enabled? Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoGrowEnabled")]
-    pub r#auto_grow_enabled: Box<Option<bool>>,
+    pub r#auto_grow_enabled: Option<bool>,
     /// Should IOPS be scaled automatically? If `true`, `iops` can not be set. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ioScalingEnabled")]
-    pub r#io_scaling_enabled: Box<Option<bool>>,
+    pub r#io_scaling_enabled: Option<bool>,
     /// The storage IOPS for the MySQL Flexible Server. Possible values are between `360` and `20000`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "iops")]
-    pub r#iops: Box<Option<i32>>,
+    pub r#iops: Option<i32>,
     /// The max storage allowed for the MySQL Flexible Server. Possible values are between `20` and `16384`.
     /// 
     /// > **Note:** Decreasing `size_gb` forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sizeGb")]
-    pub r#size_gb: Box<Option<i32>>,
+    pub r#size_gb: Option<i32>,
 }

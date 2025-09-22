@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointMongodbSettings {
     /// Authentication mechanism to access the MongoDB source endpoint. Default is `default`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authMechanism")]
-    pub r#auth_mechanism: Box<Option<String>>,
+    pub r#auth_mechanism: Option<String>,
     /// Authentication database name. Not used when `auth_type` is `no`. Default is `admin`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authSource")]
-    pub r#auth_source: Box<Option<String>>,
+    pub r#auth_source: Option<String>,
     /// Authentication type to access the MongoDB source endpoint. Default is `password`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authType")]
-    pub r#auth_type: Box<Option<String>>,
+    pub r#auth_type: Option<String>,
     /// Number of documents to preview to determine the document organization. Use this setting when `nesting_level` is set to `one`. Default is `1000`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "docsToInvestigate")]
-    pub r#docs_to_investigate: Box<Option<String>>,
+    pub r#docs_to_investigate: Option<String>,
     /// Document ID. Use this setting when `nesting_level` is set to `none`. Default is `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "extractDocId")]
-    pub r#extract_doc_id: Box<Option<String>>,
+    pub r#extract_doc_id: Option<String>,
     /// Specifies either document or table mode. Default is `none`. Valid values are `one` (table mode) and `none` (document mode).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nestingLevel")]
-    pub r#nesting_level: Box<Option<String>>,
+    pub r#nesting_level: Option<String>,
 }

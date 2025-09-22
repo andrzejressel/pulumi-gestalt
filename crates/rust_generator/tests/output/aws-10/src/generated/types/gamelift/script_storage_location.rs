@@ -6,17 +6,17 @@ pub struct ScriptStorageLocation {
     /// Name of your S3 bucket.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// Name of the zip file containing your script files.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// A specific version of the file. If not set, the latest version of the file is retrieved.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "objectVersion")]
-    pub r#object_version: Box<Option<String>>,
+    pub r#object_version: Option<String>,
     /// ARN of the access role that allows Amazon GameLift to access your S3 bucket.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
 }

@@ -7,7 +7,7 @@ pub struct BlockchainNodesEthereumDetailsGethDetails {
     /// Possible values are: `FULL`, `ARCHIVE`.
     /// 
     /// <a name="nested_additional_endpoints"></a>The `additional_endpoints` block contains:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "garbageCollectionMode")]
-    pub r#garbage_collection_mode: Box<Option<String>>,
+    pub r#garbage_collection_mode: Option<String>,
 }

@@ -6,7 +6,7 @@ pub struct WindowsVirtualMachineBootDiagnostics {
     /// The Primary/Secondary Endpoint for the Azure Storage Account which should be used to store Boot Diagnostics, including Console Output and Screenshots from the Hypervisor.
     /// 
     /// > **NOTE:** Passing a null value will utilize a Managed Storage Account to store Boot Diagnostics.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageAccountUri")]
-    pub r#storage_account_uri: Box<Option<String>>,
+    pub r#storage_account_uri: Option<String>,
 }

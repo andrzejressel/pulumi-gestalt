@@ -6,7 +6,7 @@ pub struct ThreeTierVirtualInstanceThreeTierConfigurationResourceNamesApplicatio
     /// A list of full names of Data Disks per Volume. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "names")]
-    pub r#names: Box<Vec<String>>,
+    pub r#names: Vec<String>,
     /// The name of the Volume. Changing this forces a new resource to be created.
     /// 
     /// > **Note:** Possible value for Application Server and Central Server is `default`.
@@ -14,5 +14,5 @@ pub struct ThreeTierVirtualInstanceThreeTierConfigurationResourceNamesApplicatio
     /// > **Note:** Possible values for Database Server are `hanaData`, `hanaLog`, `hanaShared` and `usrSap`.
     #[builder(into)]
     #[serde(rename = "volumeName")]
-    pub r#volume_name: Box<String>,
+    pub r#volume_name: String,
 }

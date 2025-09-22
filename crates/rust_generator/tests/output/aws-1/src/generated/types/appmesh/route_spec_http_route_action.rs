@@ -7,5 +7,5 @@ pub struct RouteSpecHttpRouteAction {
     /// You can specify one or more targets and their relative weights with which to distribute traffic.
     #[builder(into)]
     #[serde(rename = "weightedTargets")]
-    pub r#weighted_targets: Box<Vec<super::super::types::appmesh::RouteSpecHttpRouteActionWeightedTarget>>,
+    pub r#weighted_targets: Vec<super::super::types::appmesh::RouteSpecHttpRouteActionWeightedTarget>,
 }

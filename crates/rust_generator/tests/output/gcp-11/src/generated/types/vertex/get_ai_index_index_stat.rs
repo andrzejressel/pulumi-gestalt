@@ -6,9 +6,9 @@ pub struct GetAiIndexIndexStat {
     /// The number of shards in the Index.
     #[builder(into)]
     #[serde(rename = "shardsCount")]
-    pub r#shards_count: Box<i32>,
+    pub r#shards_count: i32,
     /// The number of vectors in the Index.
     #[builder(into)]
     #[serde(rename = "vectorsCount")]
-    pub r#vectors_count: Box<String>,
+    pub r#vectors_count: String,
 }

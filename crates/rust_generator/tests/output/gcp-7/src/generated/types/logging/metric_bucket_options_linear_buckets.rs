@@ -6,13 +6,13 @@ pub struct MetricBucketOptionsLinearBuckets {
     /// Must be greater than 0.
     #[builder(into)]
     #[serde(rename = "numFiniteBuckets")]
-    pub r#num_finite_buckets: Box<i32>,
+    pub r#num_finite_buckets: i32,
     /// Lower bound of the first bucket.
     #[builder(into)]
     #[serde(rename = "offset")]
-    pub r#offset: Box<f64>,
+    pub r#offset: f64,
     /// Must be greater than 0.
     #[builder(into)]
     #[serde(rename = "width")]
-    pub r#width: Box<f64>,
+    pub r#width: f64,
 }

@@ -5,5 +5,5 @@
 pub struct GetClusterServiceConnectDefault {
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
 }

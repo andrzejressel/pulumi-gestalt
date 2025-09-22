@@ -6,9 +6,9 @@ pub struct GetRoleRoleLastUsed {
     /// The date and time, in RFC 3339 format, that the role was last used.
     #[builder(into)]
     #[serde(rename = "lastUsedDate")]
-    pub r#last_used_date: Box<String>,
+    pub r#last_used_date: String,
     /// The name of the AWS Region in which the role was last used.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
 }

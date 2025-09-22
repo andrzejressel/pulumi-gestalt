@@ -8,13 +8,13 @@ pub struct ClusterMaintenancePolicy {
     /// where HH : \[00-23\] and MM : \[00-59\] GMT. For example:
     /// 
     /// Examples:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dailyMaintenanceWindow")]
-    pub r#daily_maintenance_window: Box<Option<super::super::types::container::ClusterMaintenancePolicyDailyMaintenanceWindow>>,
+    pub r#daily_maintenance_window: Option<Box<super::super::types::container::ClusterMaintenancePolicyDailyMaintenanceWindow>>,
     /// Exceptions to maintenance window. Non-emergency maintenance should not occur in these windows. A cluster can have up to 20 maintenance exclusions at a time [Maintenance Window and Exclusions](https://cloud.google.com/kubernetes-engine/docs/concepts/maintenance-windows-and-exclusions)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maintenanceExclusions")]
-    pub r#maintenance_exclusions: Box<Option<Vec<super::super::types::container::ClusterMaintenancePolicyMaintenanceExclusion>>>,
+    pub r#maintenance_exclusions: Option<Vec<super::super::types::container::ClusterMaintenancePolicyMaintenanceExclusion>>,
     /// Time window for recurring maintenance operations.
     /// 
     /// Specify `start_time` and `end_time` in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) "Zulu" date format.  The start time's date is
@@ -42,7 +42,7 @@ pub struct ClusterMaintenancePolicy {
     /// }
     /// }
     /// ```
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recurringWindow")]
-    pub r#recurring_window: Box<Option<super::super::types::container::ClusterMaintenancePolicyRecurringWindow>>,
+    pub r#recurring_window: Option<Box<super::super::types::container::ClusterMaintenancePolicyRecurringWindow>>,
 }

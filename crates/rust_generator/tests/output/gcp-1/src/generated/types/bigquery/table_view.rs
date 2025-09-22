@@ -6,10 +6,10 @@ pub struct TableView {
     /// A query that BigQuery executes when the view is referenced.
     #[builder(into)]
     #[serde(rename = "query")]
-    pub r#query: Box<String>,
+    pub r#query: String,
     /// Specifies whether to use BigQuery's legacy SQL for this view.
     /// The default value is true. If set to false, the view will use BigQuery's standard SQL.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useLegacySql")]
-    pub r#use_legacy_sql: Box<Option<bool>>,
+    pub r#use_legacy_sql: Option<bool>,
 }

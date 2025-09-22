@@ -7,9 +7,9 @@ pub struct RuleGroupRuleGroupRulesSourceStatefulRuleRuleOption {
     /// See [Snort General Rule Options](http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node31.html) or [Suricata Rule Options](https://suricata.readthedocs.io/en/suricata-5.0.1/rules/intro.html#rule-options) for more details.
     #[builder(into)]
     #[serde(rename = "keyword")]
-    pub r#keyword: Box<String>,
+    pub r#keyword: String,
     /// Set of strings for additional settings to use in stateful rule inspection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "settings")]
-    pub r#settings: Box<Option<Vec<String>>>,
+    pub r#settings: Option<Vec<String>>,
 }

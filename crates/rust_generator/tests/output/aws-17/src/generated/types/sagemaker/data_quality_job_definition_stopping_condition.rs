@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataQualityJobDefinitionStoppingCondition {
     /// The maximum runtime allowed in seconds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxRuntimeInSeconds")]
-    pub r#max_runtime_in_seconds: Box<Option<i32>>,
+    pub r#max_runtime_in_seconds: Option<i32>,
 }

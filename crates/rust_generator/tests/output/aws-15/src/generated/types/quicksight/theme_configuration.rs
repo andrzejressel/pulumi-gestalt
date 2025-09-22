@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThemeConfiguration {
     /// Color properties that apply to chart data colors. See data_color_palette.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataColorPalette")]
-    pub r#data_color_palette: Box<Option<super::super::types::quicksight::ThemeConfigurationDataColorPalette>>,
+    pub r#data_color_palette: Option<Box<super::super::types::quicksight::ThemeConfigurationDataColorPalette>>,
     /// Display options related to sheets. See sheet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sheet")]
-    pub r#sheet: Box<Option<super::super::types::quicksight::ThemeConfigurationSheet>>,
+    pub r#sheet: Option<Box<super::super::types::quicksight::ThemeConfigurationSheet>>,
     /// Determines the typography options. See typography.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "typography")]
-    pub r#typography: Box<Option<super::super::types::quicksight::ThemeConfigurationTypography>>,
+    pub r#typography: Option<Box<super::super::types::quicksight::ThemeConfigurationTypography>>,
     /// Color properties that apply to the UI and to charts, excluding the colors that apply to data. See ui_color_palette.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uiColorPalette")]
-    pub r#ui_color_palette: Box<Option<super::super::types::quicksight::ThemeConfigurationUiColorPalette>>,
+    pub r#ui_color_palette: Option<Box<super::super::types::quicksight::ThemeConfigurationUiColorPalette>>,
 }

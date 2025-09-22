@@ -6,13 +6,13 @@ pub struct GetEntitlementPrivilegedAccessGcpIamAccess {
     /// Name of the resource.
     #[builder(into)]
     #[serde(rename = "resource")]
-    pub r#resource: Box<String>,
+    pub r#resource: String,
     /// The type of this resource.
     #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<String>,
+    pub r#resource_type: String,
     /// Role bindings to be created on successful grant.
     #[builder(into)]
     #[serde(rename = "roleBindings")]
-    pub r#role_bindings: Box<Vec<super::super::types::privilegedaccessmanager::GetEntitlementPrivilegedAccessGcpIamAccessRoleBinding>>,
+    pub r#role_bindings: Vec<super::super::types::privilegedaccessmanager::GetEntitlementPrivilegedAccessGcpIamAccessRoleBinding>,
 }

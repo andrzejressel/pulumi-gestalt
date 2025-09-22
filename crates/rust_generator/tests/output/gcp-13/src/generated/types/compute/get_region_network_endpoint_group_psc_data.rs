@@ -9,5 +9,5 @@ pub struct GetRegionNetworkEndpointGroupPscData {
     /// available PSC producer port range.
     #[builder(into)]
     #[serde(rename = "producerPort")]
-    pub r#producer_port: Box<String>,
+    pub r#producer_port: String,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessage {
     /// Configuration block for a message in a custom format defined by the client application. See `custom_payload`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customPayload")]
-    pub r#custom_payload: Box<Option<super::super::types::lex::V2ModelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageCustomPayload>>,
+    pub r#custom_payload: Option<Box<super::super::types::lex::V2ModelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageCustomPayload>>,
     /// Configuration block for a message that defines a response card that the client application can show to the user. See `image_response_card`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageResponseCard")]
-    pub r#image_response_card: Box<Option<super::super::types::lex::V2ModelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageImageResponseCard>>,
+    pub r#image_response_card: Option<Box<super::super::types::lex::V2ModelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageImageResponseCard>>,
     /// Configuration block for a message in plain text format. See `plain_text_message`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "plainTextMessage")]
-    pub r#plain_text_message: Box<Option<super::super::types::lex::V2ModelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessagePlainTextMessage>>,
+    pub r#plain_text_message: Option<Box<super::super::types::lex::V2ModelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessagePlainTextMessage>>,
     /// Configuration block for a message in Speech Synthesis Markup Language (SSML). See `ssml_message`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ssmlMessage")]
-    pub r#ssml_message: Box<Option<super::super::types::lex::V2ModelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageSsmlMessage>>,
+    pub r#ssml_message: Option<Box<super::super::types::lex::V2ModelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageSsmlMessage>>,
 }

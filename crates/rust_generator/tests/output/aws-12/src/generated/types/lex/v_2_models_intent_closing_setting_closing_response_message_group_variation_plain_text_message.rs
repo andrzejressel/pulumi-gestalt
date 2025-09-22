@@ -6,5 +6,5 @@ pub struct V2ModelsIntentClosingSettingClosingResponseMessageGroupVariationPlain
     /// Message to send to the user.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

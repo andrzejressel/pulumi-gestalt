@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationAutoStopConfiguration {
     /// Enables the application to automatically stop after a certain amount of time being idle. Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The amount of idle time in minutes after which your application will automatically stop. Defaults to `15` minutes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "idleTimeoutMinutes")]
-    pub r#idle_timeout_minutes: Box<Option<i32>>,
+    pub r#idle_timeout_minutes: Option<i32>,
 }

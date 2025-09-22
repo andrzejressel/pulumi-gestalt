@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsMotionGraphicsConfiguration {
     /// Motion Graphics Insertion.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "motionGraphicsInsertion")]
-    pub r#motion_graphics_insertion: Box<Option<String>>,
+    pub r#motion_graphics_insertion: Option<String>,
     /// Motion Graphics Settings. See Motion Graphics Settings for more details.
     #[builder(into)]
     #[serde(rename = "motionGraphicsSettings")]

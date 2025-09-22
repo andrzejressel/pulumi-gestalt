@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureGroupOfflineStoreConfigDataCatalogConfig {
     /// The name of the Glue table catalog.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "catalog")]
-    pub r#catalog: Box<Option<String>>,
+    pub r#catalog: Option<String>,
     /// The name of the Glue table database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "database")]
-    pub r#database: Box<Option<String>>,
+    pub r#database: Option<String>,
     /// The name of the Glue table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<Option<String>>,
+    pub r#table_name: Option<String>,
 }

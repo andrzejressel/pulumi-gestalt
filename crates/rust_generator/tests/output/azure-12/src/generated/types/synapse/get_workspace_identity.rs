@@ -5,17 +5,17 @@
 pub struct GetWorkspaceIdentity {
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     /// The Principal ID for the Service Principal associated with the Managed Service Identity of this Synapse Workspace.
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     /// The Tenant ID for the Service Principal associated with the Managed Service Identity of this Synapse Workspace.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
     /// The Identity Type for the Service Principal associated with the Managed Service Identity of this Synapse Workspace.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

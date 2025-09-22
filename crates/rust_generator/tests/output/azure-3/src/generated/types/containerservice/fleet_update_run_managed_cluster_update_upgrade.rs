@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetUpdateRunManagedClusterUpdateUpgrade {
     /// Specifies the Kubernetes version to upgrade the member clusters to. This is required if `type` is set to `Full`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kubernetesVersion")]
-    pub r#kubernetes_version: Box<Option<String>>,
+    pub r#kubernetes_version: Option<String>,
     /// Specifies the type of upgrade to perform. Possible values are `Full` and `NodeImageOnly`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

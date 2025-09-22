@@ -5,8 +5,8 @@
 pub struct GetContactsRotationRecurrenceDailySetting {
     #[builder(into)]
     #[serde(rename = "hourOfDay")]
-    pub r#hour_of_day: Box<i32>,
+    pub r#hour_of_day: i32,
     #[builder(into)]
     #[serde(rename = "minuteOfHour")]
-    pub r#minute_of_hour: Box<i32>,
+    pub r#minute_of_hour: i32,
 }

@@ -6,17 +6,17 @@ pub struct GetServiceHostnameConfigurationProxy {
     /// Is this the default SSL Binding?
     #[builder(into)]
     #[serde(rename = "defaultSslBinding")]
-    pub r#default_ssl_binding: Box<bool>,
+    pub r#default_ssl_binding: bool,
     /// The Hostname used for the SCM URL.
     #[builder(into)]
     #[serde(rename = "hostName")]
-    pub r#host_name: Box<String>,
+    pub r#host_name: String,
     /// The ID of the Key Vault Secret which contains the SSL Certificate.
     #[builder(into)]
     #[serde(rename = "keyVaultId")]
-    pub r#key_vault_id: Box<String>,
+    pub r#key_vault_id: String,
     /// Is Client Certificate Negotiation enabled?
     #[builder(into)]
     #[serde(rename = "negotiateClientCertificate")]
-    pub r#negotiate_client_certificate: Box<bool>,
+    pub r#negotiate_client_certificate: bool,
 }

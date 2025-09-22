@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelHlsIngest {
     /// A list of the ingest endpoints
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ingestEndpoints")]
-    pub r#ingest_endpoints: Box<Option<Vec<super::super::types::mediapackage::ChannelHlsIngestIngestEndpoint>>>,
+    pub r#ingest_endpoints: Option<Vec<super::super::types::mediapackage::ChannelHlsIngestIngestEndpoint>>,
 }

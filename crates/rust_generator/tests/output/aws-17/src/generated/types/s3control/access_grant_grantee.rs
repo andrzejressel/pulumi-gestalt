@@ -6,9 +6,9 @@ pub struct AccessGrantGrantee {
     /// Grantee identifier.
     #[builder(into)]
     #[serde(rename = "granteeIdentifier")]
-    pub r#grantee_identifier: Box<String>,
+    pub r#grantee_identifier: String,
     /// Grantee types. Valid values: `DIRECTORY_USER`, `DIRECTORY_GROUP`, `IAM`.
     #[builder(into)]
     #[serde(rename = "granteeType")]
-    pub r#grantee_type: Box<String>,
+    pub r#grantee_type: String,
 }

@@ -6,5 +6,5 @@ pub struct GetHubGcmCredential {
     /// The API Key associated with the Google Cloud Messaging service.
     #[builder(into)]
     #[serde(rename = "apiKey")]
-    pub r#api_key: Box<String>,
+    pub r#api_key: String,
 }

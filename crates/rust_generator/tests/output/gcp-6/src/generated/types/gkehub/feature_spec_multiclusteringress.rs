@@ -6,5 +6,5 @@ pub struct FeatureSpecMulticlusteringress {
     /// Fully-qualified Membership name which hosts the MultiClusterIngress CRD. Example: `projects/foo-proj/locations/global/memberships/bar`
     #[builder(into)]
     #[serde(rename = "configMembership")]
-    pub r#config_membership: Box<String>,
+    pub r#config_membership: String,
 }

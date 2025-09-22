@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceQuotaUsageMetricMetricDimension {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "class")]
-    pub r#class: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#class: Option<String>,
+    #[builder(into)]
     #[serde(rename = "resource")]
-    pub r#resource: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#resource: Option<String>,
+    #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#service: Option<String>,
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

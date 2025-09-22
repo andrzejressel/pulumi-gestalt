@@ -5,8 +5,8 @@
 pub struct GetVirtualServiceSpecProvider {
     #[builder(into)]
     #[serde(rename = "virtualNodes")]
-    pub r#virtual_nodes: Box<Vec<super::super::types::appmesh::GetVirtualServiceSpecProviderVirtualNode>>,
+    pub r#virtual_nodes: Vec<super::super::types::appmesh::GetVirtualServiceSpecProviderVirtualNode>,
     #[builder(into)]
     #[serde(rename = "virtualRouters")]
-    pub r#virtual_routers: Box<Vec<super::super::types::appmesh::GetVirtualServiceSpecProviderVirtualRouter>>,
+    pub r#virtual_routers: Vec<super::super::types::appmesh::GetVirtualServiceSpecProviderVirtualRouter>,
 }

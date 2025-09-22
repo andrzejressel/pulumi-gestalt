@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterVirtualClusterConfigKubernetesClusterConfigGkeClusterConfigNodePoolTargetNodePoolConfigAutoscaling {
     /// The maximum number of nodes in the node pool. Must be >= minNodeCount, and must be > 0.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxNodeCount")]
-    pub r#max_node_count: Box<Option<i32>>,
+    pub r#max_node_count: Option<i32>,
     /// The minimum number of nodes in the node pool. Must be >= 0 and <= maxNodeCount.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minNodeCount")]
-    pub r#min_node_count: Box<Option<i32>>,
+    pub r#min_node_count: Option<i32>,
 }

@@ -6,9 +6,9 @@ pub struct IotHubDeviceUpdateInstanceDiagnosticStorageAccount {
     /// Connection String of the Diagnostic Storage Account.
     #[builder(into)]
     #[serde(rename = "connectionString")]
-    pub r#connection_string: Box<String>,
+    pub r#connection_string: String,
     /// Resource ID of the Diagnostic Storage Account.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
 }

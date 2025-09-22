@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobRegistry {
     /// A Managed Identity to use to authenticate with Azure Container Registry.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identity")]
-    pub r#identity: Box<Option<String>>,
+    pub r#identity: Option<String>,
     /// The name of the Secret that contains the registry login password.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordSecretName")]
-    pub r#password_secret_name: Box<Option<String>>,
+    pub r#password_secret_name: Option<String>,
     /// The URL of the Azure Container Registry server.
     #[builder(into)]
     #[serde(rename = "server")]
-    pub r#server: Box<String>,
+    pub r#server: String,
     /// The username to use to authenticate with Azure Container Registry.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

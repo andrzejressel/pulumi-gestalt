@@ -6,5 +6,5 @@ pub struct EnvironmentConfigEncryptionConfig {
     /// Optional. Customer-managed Encryption Key available through Google's Key Management Service. Cannot be updated.
     #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<String>,
+    pub r#kms_key_name: String,
 }

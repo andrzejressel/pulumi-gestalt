@@ -4,33 +4,33 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KeystoresAliasesSelfSignedCertSubject {
     /// Common name of the organization. Maximum length is 64 characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commonName")]
-    pub r#common_name: Box<Option<String>>,
+    pub r#common_name: Option<String>,
     /// Two-letter country code. Example, IN for India, US for United States of America.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "countryCode")]
-    pub r#country_code: Box<Option<String>>,
+    pub r#country_code: Option<String>,
     /// Email address. Max 255 characters.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<Option<String>>,
+    pub r#email: Option<String>,
     /// City or town name. Maximum length is 128 characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "locality")]
-    pub r#locality: Box<Option<String>>,
+    pub r#locality: Option<String>,
     /// Organization name. Maximum length is 64 characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "org")]
-    pub r#org: Box<Option<String>>,
+    pub r#org: Option<String>,
     /// Organization team name. Maximum length is 64 characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "orgUnit")]
-    pub r#org_unit: Box<Option<String>>,
+    pub r#org_unit: Option<String>,
     /// State or district name. Maximum length is 128 characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

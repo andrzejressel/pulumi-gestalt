@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InfrastructureConfigurationInstanceMetadataOptions {
     /// The number of hops that an instance can traverse to reach its destonation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpPutResponseHopLimit")]
-    pub r#http_put_response_hop_limit: Box<Option<i32>>,
+    pub r#http_put_response_hop_limit: Option<i32>,
     /// Whether a signed token is required for instance metadata retrieval requests. Valid values: `required`, `optional`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpTokens")]
-    pub r#http_tokens: Box<Option<String>>,
+    pub r#http_tokens: Option<String>,
 }

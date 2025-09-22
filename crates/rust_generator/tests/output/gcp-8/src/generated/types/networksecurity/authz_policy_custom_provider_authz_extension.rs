@@ -6,5 +6,5 @@ pub struct AuthzPolicyCustomProviderAuthzExtension {
     /// A list of references to authorization extensions that will be invoked for requests matching this policy. Limited to 1 custom provider.
     #[builder(into)]
     #[serde(rename = "resources")]
-    pub r#resources: Box<Vec<String>>,
+    pub r#resources: Vec<String>,
 }

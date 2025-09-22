@@ -6,9 +6,9 @@ pub struct GroupResourceQuery {
     /// The resource query as a JSON string.
     #[builder(into)]
     #[serde(rename = "query")]
-    pub r#query: Box<String>,
+    pub r#query: String,
     /// The type of the resource query. Defaults to `TAG_FILTERS_1_0`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

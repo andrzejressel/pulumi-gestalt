@@ -6,9 +6,9 @@ pub struct ManagedHardwareSecurityModuleNetworkAcls {
     /// Specifies which traffic can bypass the network rules. Possible values are `AzureServices` and `None`.
     #[builder(into)]
     #[serde(rename = "bypass")]
-    pub r#bypass: Box<String>,
+    pub r#bypass: String,
     /// The Default Action to use. Possible values are `Allow` and `Deny`.
     #[builder(into)]
     #[serde(rename = "defaultAction")]
-    pub r#default_action: Box<String>,
+    pub r#default_action: String,
 }

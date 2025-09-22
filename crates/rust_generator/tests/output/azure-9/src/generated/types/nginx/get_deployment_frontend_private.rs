@@ -6,13 +6,13 @@ pub struct GetDeploymentFrontendPrivate {
     /// The method of allocating the private IP to the NGINX Deployment.
     #[builder(into)]
     #[serde(rename = "allocationMethod")]
-    pub r#allocation_method: Box<String>,
+    pub r#allocation_method: String,
     /// The list of Public IP Resource IDs for this NGINX Deployment.
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
     /// The subnet resource ID of the NGINX Deployment.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

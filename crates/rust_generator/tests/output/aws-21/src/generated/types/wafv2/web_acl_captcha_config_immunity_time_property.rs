@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclCaptchaConfigImmunityTimeProperty {
     /// The amount of time, in seconds, that a CAPTCHA or challenge timestamp is considered valid by AWS WAF. The default setting is 300.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "immunityTime")]
-    pub r#immunity_time: Box<Option<i32>>,
+    pub r#immunity_time: Option<i32>,
 }

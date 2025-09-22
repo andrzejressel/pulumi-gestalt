@@ -5,7 +5,7 @@
 pub struct MembershipEndpoint {
     /// If this Membership is a Kubernetes API server hosted on GKE, this is a self link to its GCP resource.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gkeCluster")]
-    pub r#gke_cluster: Box<Option<super::super::types::gkehub::MembershipEndpointGkeCluster>>,
+    pub r#gke_cluster: Option<Box<super::super::types::gkehub::MembershipEndpointGkeCluster>>,
 }

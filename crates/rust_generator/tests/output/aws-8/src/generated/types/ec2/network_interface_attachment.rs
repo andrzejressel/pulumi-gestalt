@@ -3,15 +3,15 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInterfaceAttachment {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attachmentId")]
-    pub r#attachment_id: Box<Option<String>>,
+    pub r#attachment_id: Option<String>,
     /// Integer to define the devices index.
     #[builder(into)]
     #[serde(rename = "deviceIndex")]
-    pub r#device_index: Box<i32>,
+    pub r#device_index: i32,
     /// ID of the instance to attach to.
     #[builder(into)]
     #[serde(rename = "instance")]
-    pub r#instance: Box<String>,
+    pub r#instance: String,
 }

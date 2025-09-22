@@ -6,8 +6,8 @@ pub struct AadDiagnosticSettingEnabledLog {
     /// The log category for the Azure Active Directory Diagnostic.
     #[builder(into)]
     #[serde(rename = "category")]
-    pub r#category: Box<String>,
-    #[builder(into, default)]
+    pub r#category: String,
+    #[builder(into)]
     #[serde(rename = "retentionPolicy")]
-    pub r#retention_policy: Box<Option<super::super::types::monitoring::AadDiagnosticSettingEnabledLogRetentionPolicy>>,
+    pub r#retention_policy: Option<Box<super::super::types::monitoring::AadDiagnosticSettingEnabledLogRetentionPolicy>>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MongoCollectionSystemIndex {
     /// The list of system keys which are not settable for each Cosmos DB Mongo Collection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "keys")]
-    pub r#keys: Box<Option<Vec<String>>>,
+    pub r#keys: Option<Vec<String>>,
     /// Identifies whether the table contains no duplicate values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unique")]
-    pub r#unique: Box<Option<bool>>,
+    pub r#unique: Option<bool>,
 }

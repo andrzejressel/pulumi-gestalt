@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TransferJobNotificationConfig {
     /// Event types for which a notification is desired. If empty, send notifications for all event types. The valid types are "TRANSFER_OPERATION_SUCCESS", "TRANSFER_OPERATION_FAILED", "TRANSFER_OPERATION_ABORTED".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventTypes")]
-    pub r#event_types: Box<Option<Vec<String>>>,
+    pub r#event_types: Option<Vec<String>>,
     /// The desired format of the notification message payloads. One of "NONE" or "JSON".
     #[builder(into)]
     #[serde(rename = "payloadFormat")]
-    pub r#payload_format: Box<String>,
+    pub r#payload_format: String,
     /// The Topic.name of the Pub/Sub topic to which to publish notifications. Must be of the format: projects/{project}/topics/{topic}. Not matching this format results in an INVALID_ARGUMENT error.
     #[builder(into)]
     #[serde(rename = "pubsubTopic")]
-    pub r#pubsub_topic: Box<String>,
+    pub r#pubsub_topic: String,
 }

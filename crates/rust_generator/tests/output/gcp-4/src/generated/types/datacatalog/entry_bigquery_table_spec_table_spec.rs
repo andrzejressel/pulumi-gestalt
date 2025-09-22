@@ -8,7 +8,7 @@ pub struct EntryBigqueryTableSpecTableSpec {
     /// Data Catalog resource name of the date sharded grouped entry, for example,
     /// projects/{project_id}/locations/{location}/entrygroups/{entryGroupId}/entries/{entryId}.
     /// Otherwise, groupedEntry is empty.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "groupedEntry")]
-    pub r#grouped_entry: Box<Option<String>>,
+    pub r#grouped_entry: Option<String>,
 }

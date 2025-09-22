@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ImageBuilderDomainJoinInfo {
     /// Fully qualified name of the directory (for example, corp.example.com).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "directoryName")]
-    pub r#directory_name: Box<Option<String>>,
+    pub r#directory_name: Option<String>,
     /// Distinguished name of the organizational unit for computer accounts.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "organizationalUnitDistinguishedName")]
-    pub r#organizational_unit_distinguished_name: Box<Option<String>>,
+    pub r#organizational_unit_distinguished_name: Option<String>,
 }

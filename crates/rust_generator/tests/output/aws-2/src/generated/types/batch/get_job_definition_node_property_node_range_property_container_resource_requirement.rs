@@ -6,9 +6,9 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerResourceRequire
     /// The type of resource to assign to a container. The supported resources include `GPU`, `MEMORY`, and `VCPU`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// The quantity of the specified resource to reserve for the container.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

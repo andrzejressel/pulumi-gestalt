@@ -6,13 +6,13 @@ pub struct GetServiceNotification {
     /// A list of additional email addresses to notify when there are alerts in the managed domain.
     #[builder(into)]
     #[serde(rename = "additionalRecipients")]
-    pub r#additional_recipients: Box<Vec<String>>,
+    pub r#additional_recipients: Vec<String>,
     /// Whethermembers of the _AAD DC Administrators_ group are notified when there are alerts in the managed domain.
     #[builder(into)]
     #[serde(rename = "notifyDcAdmins")]
-    pub r#notify_dc_admins: Box<bool>,
+    pub r#notify_dc_admins: bool,
     /// Whether all Global Administrators are notified when there are alerts in the managed domain.
     #[builder(into)]
     #[serde(rename = "notifyGlobalAdmins")]
-    pub r#notify_global_admins: Box<bool>,
+    pub r#notify_global_admins: bool,
 }

@@ -5,11 +5,11 @@
 pub struct GetTableAclAccessPolicy {
     #[builder(into)]
     #[serde(rename = "expiry")]
-    pub r#expiry: Box<String>,
+    pub r#expiry: String,
     #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<String>,
+    pub r#permissions: String,
     #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<String>,
+    pub r#start: String,
 }

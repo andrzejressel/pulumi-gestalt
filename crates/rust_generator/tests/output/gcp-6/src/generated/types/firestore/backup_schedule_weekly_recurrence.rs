@@ -5,7 +5,7 @@
 pub struct BackupScheduleWeeklyRecurrence {
     /// The day of week to run.
     /// Possible values are: `DAY_OF_WEEK_UNSPECIFIED`, `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<Option<String>>,
+    pub r#day: Option<String>,
 }

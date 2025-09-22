@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreferenceSetVirtualMachinePreferencesRegionPreferences {
     /// A list of preferred regions, ordered by the most preferred region first. Set only valid Google Cloud region names. See https://cloud.google.com/compute/docs/regions-zones for available regions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preferredRegions")]
-    pub r#preferred_regions: Box<Option<Vec<String>>>,
+    pub r#preferred_regions: Option<Vec<String>>,
 }

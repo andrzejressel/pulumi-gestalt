@@ -6,9 +6,9 @@ pub struct NetworkWatcherFlowLogRetentionPolicy {
     /// The number of days to retain flow log records.
     #[builder(into)]
     #[serde(rename = "days")]
-    pub r#days: Box<i32>,
+    pub r#days: i32,
     /// Boolean flag to enable/disable retention.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

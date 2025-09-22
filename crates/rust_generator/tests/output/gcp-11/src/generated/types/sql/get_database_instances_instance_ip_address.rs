@@ -5,11 +5,11 @@
 pub struct GetDatabaseInstancesInstanceIpAddress {
     #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<String>,
+    pub r#ip_address: String,
     #[builder(into)]
     #[serde(rename = "timeToRetire")]
-    pub r#time_to_retire: Box<String>,
+    pub r#time_to_retire: String,
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

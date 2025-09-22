@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserPoolAdminCreateUserConfigInviteMessageTemplate {
     /// Message template for email messages. Must contain `{username}` and `{####}` placeholders, for username and temporary password, respectively.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emailMessage")]
-    pub r#email_message: Box<Option<String>>,
+    pub r#email_message: Option<String>,
     /// Subject line for email messages.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emailSubject")]
-    pub r#email_subject: Box<Option<String>>,
+    pub r#email_subject: Option<String>,
     /// Message template for SMS messages. Must contain `{username}` and `{####}` placeholders, for username and temporary password, respectively.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "smsMessage")]
-    pub r#sms_message: Box<Option<String>>,
+    pub r#sms_message: Option<String>,
 }

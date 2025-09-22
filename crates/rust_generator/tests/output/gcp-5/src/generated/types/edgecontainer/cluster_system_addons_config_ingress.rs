@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterSystemAddonsConfigIngress {
     /// Whether Ingress is disabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<Option<bool>>,
+    pub r#disabled: Option<bool>,
     /// Ingress VIP.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv4Vip")]
-    pub r#ipv_4_vip: Box<Option<String>>,
+    pub r#ipv_4_vip: Option<String>,
 }

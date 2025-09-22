@@ -6,5 +6,5 @@ pub struct UserPoolUsernameConfiguration {
     /// Whether username case sensitivity will be applied for all users in the user pool through Cognito APIs.
     #[builder(into)]
     #[serde(rename = "caseSensitive")]
-    pub r#case_sensitive: Box<bool>,
+    pub r#case_sensitive: bool,
 }

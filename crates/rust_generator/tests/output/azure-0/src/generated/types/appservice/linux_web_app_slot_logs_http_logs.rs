@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LinuxWebAppSlotLogsHttpLogs {
     /// A `azure_blob_storage_http` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "azureBlobStorage")]
-    pub r#azure_blob_storage: Box<Option<super::super::types::appservice::LinuxWebAppSlotLogsHttpLogsAzureBlobStorage>>,
+    pub r#azure_blob_storage: Option<Box<super::super::types::appservice::LinuxWebAppSlotLogsHttpLogsAzureBlobStorage>>,
     /// A `file_system` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fileSystem")]
-    pub r#file_system: Box<Option<super::super::types::appservice::LinuxWebAppSlotLogsHttpLogsFileSystem>>,
+    pub r#file_system: Option<Box<super::super::types::appservice::LinuxWebAppSlotLogsHttpLogsFileSystem>>,
 }

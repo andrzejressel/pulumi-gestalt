@@ -6,5 +6,5 @@ pub struct GetClusterNodePoolNodeConfigGuestAcceleratorGpuDriverInstallationConf
     /// Mode for how the GPU driver is installed.
     #[builder(into)]
     #[serde(rename = "gpuDriverVersion")]
-    pub r#gpu_driver_version: Box<String>,
+    pub r#gpu_driver_version: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListenerRuleMatchHttpMatch {
     /// The header matches. Matches incoming requests with rule based on request header value before applying rule action.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerMatches")]
-    pub r#header_matches: Box<Option<Vec<super::super::types::vpclattice::ListenerRuleMatchHttpMatchHeaderMatch>>>,
+    pub r#header_matches: Option<Vec<super::super::types::vpclattice::ListenerRuleMatchHttpMatchHeaderMatch>>,
     /// The HTTP method type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "method")]
-    pub r#method: Box<Option<String>>,
+    pub r#method: Option<String>,
     /// The path match.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pathMatch")]
-    pub r#path_match: Box<Option<super::super::types::vpclattice::ListenerRuleMatchHttpMatchPathMatch>>,
+    pub r#path_match: Option<Box<super::super::types::vpclattice::ListenerRuleMatchHttpMatchPathMatch>>,
 }

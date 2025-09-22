@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouteMapRuleActionParameter {
     /// A list of AS paths.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "asPaths")]
-    pub r#as_paths: Box<Option<Vec<String>>>,
+    pub r#as_paths: Option<Vec<String>>,
     /// A list of BGP communities.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "communities")]
-    pub r#communities: Box<Option<Vec<String>>>,
+    pub r#communities: Option<Vec<String>>,
     /// A list of route prefixes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "routePrefixes")]
-    pub r#route_prefixes: Box<Option<Vec<String>>>,
+    pub r#route_prefixes: Option<Vec<String>>,
 }

@@ -6,21 +6,21 @@ pub struct GetUserPoolEmailConfiguration {
     /// - Configuration set used for sending emails.
     #[builder(into)]
     #[serde(rename = "configurationSet")]
-    pub r#configuration_set: Box<String>,
+    pub r#configuration_set: String,
     /// - Email sending account.
     #[builder(into)]
     #[serde(rename = "emailSendingAccount")]
-    pub r#email_sending_account: Box<String>,
+    pub r#email_sending_account: String,
     /// - Email sender address.
     #[builder(into)]
     #[serde(rename = "from")]
-    pub r#from: Box<String>,
+    pub r#from: String,
     /// - Reply-to email address.
     #[builder(into)]
     #[serde(rename = "replyToEmailAddress")]
-    pub r#reply_to_email_address: Box<String>,
+    pub r#reply_to_email_address: String,
     /// - Source Amazon Resource Name (ARN) for emails.
     #[builder(into)]
     #[serde(rename = "sourceArn")]
-    pub r#source_arn: Box<String>,
+    pub r#source_arn: String,
 }

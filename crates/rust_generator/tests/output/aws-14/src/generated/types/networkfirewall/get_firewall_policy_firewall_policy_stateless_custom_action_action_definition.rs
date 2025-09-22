@@ -5,5 +5,5 @@
 pub struct GetFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition {
     #[builder(into)]
     #[serde(rename = "publishMetricActions")]
-    pub r#publish_metric_actions: Box<Vec<super::super::types::networkfirewall::GetFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricAction>>,
+    pub r#publish_metric_actions: Vec<super::super::types::networkfirewall::GetFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricAction>,
 }

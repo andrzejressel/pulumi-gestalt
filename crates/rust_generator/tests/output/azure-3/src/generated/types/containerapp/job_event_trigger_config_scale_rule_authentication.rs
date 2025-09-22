@@ -6,9 +6,9 @@ pub struct JobEventTriggerConfigScaleRuleAuthentication {
     /// Name of the secret from which to pull the auth params.
     #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<String>,
+    pub r#secret_name: String,
     /// Trigger Parameter that uses the secret.
     #[builder(into)]
     #[serde(rename = "triggerParameter")]
-    pub r#trigger_parameter: Box<String>,
+    pub r#trigger_parameter: String,
 }

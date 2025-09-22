@@ -5,7 +5,7 @@
 pub struct AttachedClusterBinaryAuthorization {
     /// Configure Binary Authorization evaluation mode.
     /// Possible values are: `DISABLED`, `PROJECT_SINGLETON_POLICY_ENFORCE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "evaluationMode")]
-    pub r#evaluation_mode: Box<Option<String>>,
+    pub r#evaluation_mode: Option<String>,
 }

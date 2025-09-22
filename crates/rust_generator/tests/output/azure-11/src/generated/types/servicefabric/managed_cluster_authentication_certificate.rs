@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ManagedClusterAuthenticationCertificate {
     /// The certificate's CN.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commonName")]
-    pub r#common_name: Box<Option<String>>,
+    pub r#common_name: Option<String>,
     /// The thumbprint of the certificate.
     #[builder(into)]
     #[serde(rename = "thumbprint")]
-    pub r#thumbprint: Box<String>,
+    pub r#thumbprint: String,
     /// The type of the certificate. Can be `AdminClient` or `ReadOnlyClient`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

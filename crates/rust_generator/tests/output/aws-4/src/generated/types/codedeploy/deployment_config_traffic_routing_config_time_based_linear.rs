@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeploymentConfigTrafficRoutingConfigTimeBasedLinear {
     /// The number of minutes between each incremental traffic shift of a `TimeBasedLinear` deployment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<Option<i32>>,
+    pub r#interval: Option<i32>,
     /// The percentage of traffic that is shifted at the start of each increment of a `TimeBasedLinear` deployment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "percentage")]
-    pub r#percentage: Box<Option<i32>>,
+    pub r#percentage: Option<i32>,
 }

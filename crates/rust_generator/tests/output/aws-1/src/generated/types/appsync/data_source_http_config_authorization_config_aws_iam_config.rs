@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceHttpConfigAuthorizationConfigAwsIamConfig {
     /// Signing Amazon Web Services Region for IAM authorization.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "signingRegion")]
-    pub r#signing_region: Box<Option<String>>,
+    pub r#signing_region: Option<String>,
     /// Signing service name for IAM authorization.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "signingServiceName")]
-    pub r#signing_service_name: Box<Option<String>>,
+    pub r#signing_service_name: Option<String>,
 }

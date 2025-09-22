@@ -6,5 +6,5 @@ pub struct BareMetalClusterLoadBalancerPortConfig {
     /// The port that control plane hosted load balancers will listen on.
     #[builder(into)]
     #[serde(rename = "controlPlaneLoadBalancerPort")]
-    pub r#control_plane_load_balancer_port: Box<i32>,
+    pub r#control_plane_load_balancer_port: i32,
 }

@@ -6,9 +6,9 @@ pub struct TemplateSourceEntitySourceAnalysis {
     /// The Amazon Resource Name (ARN) of the resource.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// A list of dataset references used as placeholders in the template. See data_set_references.
     #[builder(into)]
     #[serde(rename = "dataSetReferences")]
-    pub r#data_set_references: Box<Vec<super::super::types::quicksight::TemplateSourceEntitySourceAnalysisDataSetReference>>,
+    pub r#data_set_references: Vec<super::super::types::quicksight::TemplateSourceEntitySourceAnalysisDataSetReference>,
 }

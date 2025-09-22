@@ -5,12 +5,12 @@
 pub struct PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressionsCondition {
     /// The minimum data risk score that triggers the condition.
     /// Possible values are: `HIGH`, `MEDIUM_OR_HIGH`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimumRiskScore")]
-    pub r#minimum_risk_score: Box<Option<String>>,
+    pub r#minimum_risk_score: Option<String>,
     /// The minimum sensitivity level that triggers the condition.
     /// Possible values are: `HIGH`, `MEDIUM_OR_HIGH`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimumSensitivityScore")]
-    pub r#minimum_sensitivity_score: Box<Option<String>>,
+    pub r#minimum_sensitivity_score: Option<String>,
 }

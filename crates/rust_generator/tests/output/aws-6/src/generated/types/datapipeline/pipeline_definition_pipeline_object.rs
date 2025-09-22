@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipelineDefinitionPipelineObject {
     /// Configuration block for Key-value pairs that define the properties of the object. See below
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fields")]
-    pub r#fields: Box<Option<Vec<super::super::types::datapipeline::PipelineDefinitionPipelineObjectField>>>,
+    pub r#fields: Option<Vec<super::super::types::datapipeline::PipelineDefinitionPipelineObjectField>>,
     /// ID of the object.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// ARN of the storage connector.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

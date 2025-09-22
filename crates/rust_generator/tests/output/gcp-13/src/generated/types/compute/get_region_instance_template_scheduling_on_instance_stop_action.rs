@@ -6,5 +6,5 @@ pub struct GetRegionInstanceTemplateSchedulingOnInstanceStopAction {
     /// If true, the contents of any attached Local SSD disks will be discarded.
     #[builder(into)]
     #[serde(rename = "discardLocalSsd")]
-    pub r#discard_local_ssd: Box<bool>,
+    pub r#discard_local_ssd: bool,
 }

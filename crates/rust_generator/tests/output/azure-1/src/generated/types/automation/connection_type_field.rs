@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionTypeField {
     /// Whether to set the isEncrypted flag of the connection field definition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isEncrypted")]
-    pub r#is_encrypted: Box<Option<bool>>,
+    pub r#is_encrypted: Option<bool>,
     /// Whether to set the isOptional flag of the connection field definition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isOptional")]
-    pub r#is_optional: Box<Option<bool>>,
+    pub r#is_optional: Option<bool>,
     /// The name which should be used for this connection field definition.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The type of the connection field definition.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

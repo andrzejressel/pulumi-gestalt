@@ -6,11 +6,11 @@ pub struct AuthConfigDecryptedCredentialUsernameAndPassword {
     /// Password to be used.
     /// 
     /// <a name="nested_oauth2_authorization_code"></a>The `oauth2_authorization_code` block supports:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// Username to be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

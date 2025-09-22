@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LaunchTemplateCapacityReservationSpecification {
     /// Indicates the instance's Capacity Reservation preferences. Can be `open` or `none`. (Default `none`).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "capacityReservationPreference")]
-    pub r#capacity_reservation_preference: Box<Option<String>>,
+    pub r#capacity_reservation_preference: Option<String>,
     /// Used to target a specific Capacity Reservation:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "capacityReservationTarget")]
-    pub r#capacity_reservation_target: Box<Option<super::super::types::ec2::LaunchTemplateCapacityReservationSpecificationCapacityReservationTarget>>,
+    pub r#capacity_reservation_target: Option<Box<super::super::types::ec2::LaunchTemplateCapacityReservationSpecificationCapacityReservationTarget>>,
 }

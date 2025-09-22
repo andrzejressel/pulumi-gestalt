@@ -6,5 +6,5 @@ pub struct StreamProcessorInputKinesisVideoStream {
     /// ARN of the Kinesis video stream stream that streams the source video.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterIdentityOidc {
     /// Issuer URL for the OpenID Connect identity provider.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<Option<String>>,
+    pub r#issuer: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OntapStorageVirtualMachineEndpointIscsi {
     /// The Domain Name Service (DNS) name for the storage virtual machine. You can mount your storage virtual machine using its DNS name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dnsName")]
-    pub r#dns_name: Box<Option<String>>,
+    pub r#dns_name: Option<String>,
     /// IP addresses of the storage virtual machine endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Option<Vec<String>>>,
+    pub r#ip_addresses: Option<Vec<String>>,
 }

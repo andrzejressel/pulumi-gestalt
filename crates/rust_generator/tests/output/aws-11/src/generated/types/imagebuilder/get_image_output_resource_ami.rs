@@ -6,21 +6,21 @@ pub struct GetImageOutputResourceAmi {
     /// Account identifier of the AMI.
     #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<String>,
+    pub r#account_id: String,
     /// Description of the AMI.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// Identifier of the AMI.
     #[builder(into)]
     #[serde(rename = "image")]
-    pub r#image: Box<String>,
+    pub r#image: String,
     /// Name of the AMI.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Region of the container image.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
 }

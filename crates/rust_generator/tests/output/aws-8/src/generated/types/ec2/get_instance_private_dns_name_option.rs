@@ -6,13 +6,13 @@ pub struct GetInstancePrivateDnsNameOption {
     /// Indicates whether to respond to DNS queries for instance hostnames with DNS A records.
     #[builder(into)]
     #[serde(rename = "enableResourceNameDnsARecord")]
-    pub r#enable_resource_name_dns_a_record: Box<bool>,
+    pub r#enable_resource_name_dns_a_record: bool,
     /// Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.
     #[builder(into)]
     #[serde(rename = "enableResourceNameDnsAaaaRecord")]
-    pub r#enable_resource_name_dns_aaaa_record: Box<bool>,
+    pub r#enable_resource_name_dns_aaaa_record: bool,
     /// Type of hostname for EC2 instances.
     #[builder(into)]
     #[serde(rename = "hostnameType")]
-    pub r#hostname_type: Box<String>,
+    pub r#hostname_type: String,
 }

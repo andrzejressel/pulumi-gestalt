@@ -6,5 +6,5 @@ pub struct BackupPolicyBackupPolicy {
     /// A status of the backup policy. Valid values: `ENABLED`, `DISABLED`.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

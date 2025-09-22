@@ -6,5 +6,5 @@ pub struct PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsExcludedFie
     /// Name describing the field excluded from scanning.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

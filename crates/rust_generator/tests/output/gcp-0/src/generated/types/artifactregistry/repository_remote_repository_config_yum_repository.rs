@@ -5,7 +5,7 @@
 pub struct RepositoryRemoteRepositoryConfigYumRepository {
     /// One of the publicly available Yum repositories supported by Artifact Registry.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicRepository")]
-    pub r#public_repository: Box<Option<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository>>,
+    pub r#public_repository: Option<Box<super::super::types::artifactregistry::RepositoryRemoteRepositoryConfigYumRepositoryPublicRepository>>,
 }

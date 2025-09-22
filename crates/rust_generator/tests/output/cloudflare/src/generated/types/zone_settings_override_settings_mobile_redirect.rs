@@ -5,11 +5,11 @@
 pub struct ZoneSettingsOverrideSettingsMobileRedirect {
     #[builder(into)]
     #[serde(rename = "mobileSubdomain")]
-    pub r#mobile_subdomain: Box<String>,
+    pub r#mobile_subdomain: String,
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
     #[builder(into)]
     #[serde(rename = "stripUri")]
-    pub r#strip_uri: Box<bool>,
+    pub r#strip_uri: bool,
 }

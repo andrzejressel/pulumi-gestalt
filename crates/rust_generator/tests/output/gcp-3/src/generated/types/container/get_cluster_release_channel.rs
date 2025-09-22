@@ -11,5 +11,5 @@ pub struct GetClusterReleaseChannel {
     /// * EXTENDED: GKE provides extended support for Kubernetes minor versions through the Extended channel. With this channel, you can stay on a minor version for up to 24 months.
     #[builder(into)]
     #[serde(rename = "channel")]
-    pub r#channel: Box<String>,
+    pub r#channel: String,
 }

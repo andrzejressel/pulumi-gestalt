@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ThemeConfigurationSheetTile {
     /// The border around a tile. See border.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "border")]
-    pub r#border: Box<Option<super::super::types::quicksight::ThemeConfigurationSheetTileBorder>>,
+    pub r#border: Option<Box<super::super::types::quicksight::ThemeConfigurationSheetTileBorder>>,
 }

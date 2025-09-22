@@ -6,22 +6,22 @@ pub struct ConnectionProfilePostgresqlProfile {
     /// Database for the PostgreSQL connection.
     #[builder(into)]
     #[serde(rename = "database")]
-    pub r#database: Box<String>,
+    pub r#database: String,
     /// Hostname for the PostgreSQL connection.
     #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<String>,
+    pub r#hostname: String,
     /// Password for the PostgreSQL connection.
     /// **Note**: This property is sensitive and will not be displayed in the plan.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// Port for the PostgreSQL connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// Username for the PostgreSQL connection.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

@@ -6,9 +6,9 @@ pub struct ConnectorKafkaClusterApacheKafkaClusterVpc {
     /// The security groups for the connector.
     #[builder(into)]
     #[serde(rename = "securityGroups")]
-    pub r#security_groups: Box<Vec<String>>,
+    pub r#security_groups: Vec<String>,
     /// The subnets for the connector.
     #[builder(into)]
     #[serde(rename = "subnets")]
-    pub r#subnets: Box<Vec<String>>,
+    pub r#subnets: Vec<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetCoreNetworkPolicyDocumentSegmentActionVia {
     /// A list of strings. The network function group to use for the service insertion action.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkFunctionGroups")]
-    pub r#network_function_groups: Box<Option<Vec<String>>>,
+    pub r#network_function_groups: Option<Vec<String>>,
     /// Any edge overrides and the preferred edge to use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "withEdgeOverrides")]
-    pub r#with_edge_overrides: Box<Option<Vec<super::super::types::networkmanager::GetCoreNetworkPolicyDocumentSegmentActionViaWithEdgeOverride>>>,
+    pub r#with_edge_overrides: Option<Vec<super::super::types::networkmanager::GetCoreNetworkPolicyDocumentSegmentActionViaWithEdgeOverride>>,
 }

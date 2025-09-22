@@ -6,5 +6,5 @@ pub struct PipeLogConfigurationCloudwatchLogsLogDestination {
     /// Amazon Web Services Resource Name (ARN) for the CloudWatch log group to which EventBridge sends the log records.
     #[builder(into)]
     #[serde(rename = "logGroupArn")]
-    pub r#log_group_arn: Box<String>,
+    pub r#log_group_arn: String,
 }

@@ -6,5 +6,5 @@ pub struct GetSqlDatabaseAutoscaleSetting {
     /// The maximum throughput of the SQL database (RU/s).
     #[builder(into)]
     #[serde(rename = "maxThroughput")]
-    pub r#max_throughput: Box<i32>,
+    pub r#max_throughput: i32,
 }

@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ManagementFolderSecurityHealthAnalyticsCustomModuleCustomConfigCustomOutputProperty {
     /// Name of the property for the custom output.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The CEL expression for the custom output. A resource property can be specified
     /// to return the value of the property or a text string enclosed in quotation marks.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "valueExpression")]
-    pub r#value_expression: Box<Option<super::super::types::securitycenter::ManagementFolderSecurityHealthAnalyticsCustomModuleCustomConfigCustomOutputPropertyValueExpression>>,
+    pub r#value_expression: Option<Box<super::super::types::securitycenter::ManagementFolderSecurityHealthAnalyticsCustomModuleCustomConfigCustomOutputPropertyValueExpression>>,
 }

@@ -5,5 +5,5 @@
 pub struct GetContactChannelDeliveryAddress {
     #[builder(into)]
     #[serde(rename = "simpleAddress")]
-    pub r#simple_address: Box<String>,
+    pub r#simple_address: String,
 }

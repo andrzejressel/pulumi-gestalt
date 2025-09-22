@@ -7,22 +7,22 @@ pub struct GetResourcePolicyGroupPlacementPolicy {
     /// availability domain, they will not be put in the same low latency network
     #[builder(into)]
     #[serde(rename = "availabilityDomainCount")]
-    pub r#availability_domain_count: Box<i32>,
+    pub r#availability_domain_count: i32,
     /// Collocation specifies whether to place VMs inside the same availability domain on the same low-latency network.
     /// Specify 'COLLOCATED' to enable collocation. Can only be specified with 'vm_count'. If compute instances are created
     /// with a COLLOCATED policy, then exactly 'vm_count' instances must be created at the same time with the resource policy
     /// attached. Possible values: ["COLLOCATED"]
     #[builder(into)]
     #[serde(rename = "collocation")]
-    pub r#collocation: Box<String>,
+    pub r#collocation: String,
     /// Specifies the number of max logical switches.
     #[builder(into)]
     #[serde(rename = "maxDistance")]
-    pub r#max_distance: Box<i32>,
+    pub r#max_distance: i32,
     /// Number of VMs in this placement group. Google does not recommend that you use this field
     /// unless you use a compact policy and you want your policy to work only if it contains this
     /// exact number of VMs.
     #[builder(into)]
     #[serde(rename = "vmCount")]
-    pub r#vm_count: Box<i32>,
+    pub r#vm_count: i32,
 }

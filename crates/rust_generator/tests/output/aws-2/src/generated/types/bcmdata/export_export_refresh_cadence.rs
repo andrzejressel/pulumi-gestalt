@@ -6,5 +6,5 @@ pub struct ExportExportRefreshCadence {
     /// Frequency that data exports are updated. The export refreshes each time the source data updates, up to three times daily. Valid values `SYNCHRONOUS`.
     #[builder(into)]
     #[serde(rename = "frequency")]
-    pub r#frequency: Box<String>,
+    pub r#frequency: String,
 }

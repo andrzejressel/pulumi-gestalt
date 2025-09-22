@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LinuxWebAppLogs {
     /// A `application_logs` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applicationLogs")]
-    pub r#application_logs: Box<Option<super::super::types::appservice::LinuxWebAppLogsApplicationLogs>>,
+    pub r#application_logs: Option<Box<super::super::types::appservice::LinuxWebAppLogsApplicationLogs>>,
     /// Should detailed error messages be enabled?
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "detailedErrorMessages")]
-    pub r#detailed_error_messages: Box<Option<bool>>,
+    pub r#detailed_error_messages: Option<bool>,
     /// Should the failed request tracing be enabled?
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "failedRequestTracing")]
-    pub r#failed_request_tracing: Box<Option<bool>>,
+    pub r#failed_request_tracing: Option<bool>,
     /// An `http_logs` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpLogs")]
-    pub r#http_logs: Box<Option<super::super::types::appservice::LinuxWebAppLogsHttpLogs>>,
+    pub r#http_logs: Option<Box<super::super::types::appservice::LinuxWebAppLogsHttpLogs>>,
 }

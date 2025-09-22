@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetListsList {
     /// List description.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// List identifier.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// List kind.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kind")]
-    pub r#kind: Box<Option<String>>,
+    pub r#kind: Option<String>,
     /// The list name to target for the resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Number of items in list.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numitems")]
-    pub r#numitems: Box<Option<i32>>,
+    pub r#numitems: Option<i32>,
 }

@@ -6,5 +6,5 @@ pub struct ClusterSecretManagerConfig {
     /// Enable the Secret Manager add-on for this cluster.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

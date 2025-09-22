@@ -6,9 +6,9 @@ pub struct DomainDefaultSpaceSettingsCustomPosixUserConfig {
     /// The POSIX group ID.
     #[builder(into)]
     #[serde(rename = "gid")]
-    pub r#gid: Box<i32>,
+    pub r#gid: i32,
     /// The POSIX user ID.
     #[builder(into)]
     #[serde(rename = "uid")]
-    pub r#uid: Box<i32>,
+    pub r#uid: i32,
 }

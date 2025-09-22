@@ -6,5 +6,5 @@ pub struct GetMapConfiguration {
     /// The map style selected from an available data provider.
     #[builder(into)]
     #[serde(rename = "style")]
-    pub r#style: Box<String>,
+    pub r#style: String,
 }

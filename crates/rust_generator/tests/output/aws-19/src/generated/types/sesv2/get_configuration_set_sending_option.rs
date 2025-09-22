@@ -6,5 +6,5 @@ pub struct GetConfigurationSetSendingOption {
     /// Specifies whether email sending is enabled.
     #[builder(into)]
     #[serde(rename = "sendingEnabled")]
-    pub r#sending_enabled: Box<bool>,
+    pub r#sending_enabled: bool,
 }

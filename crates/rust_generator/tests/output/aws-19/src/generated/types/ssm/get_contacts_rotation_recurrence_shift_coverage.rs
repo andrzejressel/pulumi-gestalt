@@ -5,8 +5,8 @@
 pub struct GetContactsRotationRecurrenceShiftCoverage {
     #[builder(into)]
     #[serde(rename = "coverageTimes")]
-    pub r#coverage_times: Box<Vec<super::super::types::ssm::GetContactsRotationRecurrenceShiftCoverageCoverageTime>>,
+    pub r#coverage_times: Vec<super::super::types::ssm::GetContactsRotationRecurrenceShiftCoverageCoverageTime>,
     #[builder(into)]
     #[serde(rename = "mapBlockKey")]
-    pub r#map_block_key: Box<String>,
+    pub r#map_block_key: String,
 }

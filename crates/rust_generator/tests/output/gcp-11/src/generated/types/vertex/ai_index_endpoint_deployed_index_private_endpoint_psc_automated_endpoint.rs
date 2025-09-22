@@ -5,17 +5,17 @@
 pub struct AiIndexEndpointDeployedIndexPrivateEndpointPscAutomatedEndpoint {
     /// (Output)
     /// ip Address created by the automated forwarding rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "matchAddress")]
-    pub r#match_address: Box<Option<String>>,
+    pub r#match_address: Option<String>,
     /// (Output)
     /// Corresponding network in pscAutomationConfigs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<Option<String>>,
+    pub r#network: Option<String>,
     /// (Output)
     /// Corresponding projectId in pscAutomationConfigs
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<Option<String>>,
+    pub r#project_id: Option<String>,
 }

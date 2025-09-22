@@ -6,5 +6,5 @@ pub struct WorkstationClusterDomainConfig {
     /// Domain used by Workstations for HTTP ingress.
     #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<String>,
+    pub r#domain: String,
 }

@@ -6,9 +6,9 @@ pub struct SelectionConditionStringEqual {
     /// The key in a key-value pair.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The value in a key-value pair.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

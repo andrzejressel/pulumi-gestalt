@@ -6,13 +6,13 @@ pub struct GetScriptDagEdge {
     /// ID of the node at which the edge starts.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<String>,
+    pub r#source: String,
     /// ID of the node at which the edge ends.
     #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<String>,
+    pub r#target: String,
     /// Target of the edge.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetParameter")]
-    pub r#target_parameter: Box<Option<String>>,
+    pub r#target_parameter: Option<String>,
 }

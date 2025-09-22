@@ -6,13 +6,13 @@ pub struct JobTemplate {
     /// A `container` block as defined below.
     #[builder(into)]
     #[serde(rename = "containers")]
-    pub r#containers: Box<Vec<super::super::types::containerapp::JobTemplateContainer>>,
+    pub r#containers: Vec<super::super::types::containerapp::JobTemplateContainer>,
     /// A `init_container` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "initContainers")]
-    pub r#init_containers: Box<Option<Vec<super::super::types::containerapp::JobTemplateInitContainer>>>,
+    pub r#init_containers: Option<Vec<super::super::types::containerapp::JobTemplateInitContainer>>,
     /// A `volume` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "volumes")]
-    pub r#volumes: Box<Option<Vec<super::super::types::containerapp::JobTemplateVolume>>>,
+    pub r#volumes: Option<Vec<super::super::types::containerapp::JobTemplateVolume>>,
 }

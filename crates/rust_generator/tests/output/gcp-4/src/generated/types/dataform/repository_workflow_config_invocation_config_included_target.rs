@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RepositoryWorkflowConfigInvocationConfigIncludedTarget {
     /// The action's database (Google Cloud project ID).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "database")]
-    pub r#database: Box<Option<String>>,
+    pub r#database: Option<String>,
     /// The action's name, within database and schema.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The action's schema (BigQuery dataset ID), within database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schema")]
-    pub r#schema: Box<Option<String>>,
+    pub r#schema: Option<String>,
 }

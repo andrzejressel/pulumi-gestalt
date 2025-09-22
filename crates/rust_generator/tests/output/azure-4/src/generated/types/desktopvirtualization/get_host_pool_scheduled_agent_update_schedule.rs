@@ -6,9 +6,9 @@ pub struct GetHostPoolScheduledAgentUpdateSchedule {
     /// The day of the week on which agent updates should be performed.
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     /// The hour of day the update window should start.
     #[builder(into)]
     #[serde(rename = "hourOfDay")]
-    pub r#hour_of_day: Box<i32>,
+    pub r#hour_of_day: i32,
 }

@@ -6,9 +6,9 @@ pub struct VirtualHubRoute {
     /// A list of Address Prefixes.
     #[builder(into)]
     #[serde(rename = "addressPrefixes")]
-    pub r#address_prefixes: Box<Vec<String>>,
+    pub r#address_prefixes: Vec<String>,
     /// The IP Address that Packets should be forwarded to as the Next Hop.
     #[builder(into)]
     #[serde(rename = "nextHopIpAddress")]
-    pub r#next_hop_ip_address: Box<String>,
+    pub r#next_hop_ip_address: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetCoreNetworkPolicyDocumentSegmentActionViaWithEdgeOverride {
     /// A list of a list of strings. The list of edges associated with the network function group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "edgeSets")]
-    pub r#edge_sets: Box<Option<Vec<Vec<String>>>>,
+    pub r#edge_sets: Option<Vec<Vec<String>>>,
     /// The preferred edge to use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useEdge")]
-    pub r#use_edge: Box<Option<String>>,
+    pub r#use_edge: Option<String>,
     /// The preferred edge to use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useEdgeLocation")]
-    pub r#use_edge_location: Box<Option<String>>,
+    pub r#use_edge_location: Option<String>,
 }

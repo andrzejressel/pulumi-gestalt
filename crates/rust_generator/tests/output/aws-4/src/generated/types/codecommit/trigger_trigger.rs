@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TriggerTrigger {
     /// The branches that will be included in the trigger configuration. If no branches   are specified, the trigger will apply to all branches.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "branches")]
-    pub r#branches: Box<Option<Vec<String>>>,
+    pub r#branches: Option<Vec<String>>,
     /// Any custom data associated with the trigger that will be included in the information sent to the target of the trigger.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customData")]
-    pub r#custom_data: Box<Option<String>>,
+    pub r#custom_data: Option<String>,
     /// The ARN of the resource that is the target for a trigger. For example, the ARN of a topic in Amazon Simple Notification Service (SNS).
     #[builder(into)]
     #[serde(rename = "destinationArn")]
-    pub r#destination_arn: Box<String>,
+    pub r#destination_arn: String,
     /// The repository events that will cause the trigger to run actions in another service, such as sending a notification through Amazon Simple Notification Service (SNS). If no events are specified, the trigger will run for all repository events. Event types include: `all`, `updateReference`, `createReference`, `deleteReference`.
     #[builder(into)]
     #[serde(rename = "events")]
-    pub r#events: Box<Vec<String>>,
+    pub r#events: Vec<String>,
     /// The name of the trigger.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

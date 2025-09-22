@@ -6,13 +6,13 @@ pub struct GetConfigurationInstallPatch {
     /// A `linux` block as defined below.
     #[builder(into)]
     #[serde(rename = "linuxes")]
-    pub r#linuxes: Box<Vec<super::super::types::maintenance::GetConfigurationInstallPatchLinux>>,
+    pub r#linuxes: Vec<super::super::types::maintenance::GetConfigurationInstallPatchLinux>,
     /// Possible reboot preference as defined by the user based on which it would be decided to reboot the machine or not after the patch operation is completed.
     #[builder(into)]
     #[serde(rename = "reboot")]
-    pub r#reboot: Box<String>,
+    pub r#reboot: String,
     /// A `windows` block as defined below.
     #[builder(into)]
     #[serde(rename = "windows")]
-    pub r#windows: Box<Vec<super::super::types::maintenance::GetConfigurationInstallPatchWindow>>,
+    pub r#windows: Vec<super::super::types::maintenance::GetConfigurationInstallPatchWindow>,
 }

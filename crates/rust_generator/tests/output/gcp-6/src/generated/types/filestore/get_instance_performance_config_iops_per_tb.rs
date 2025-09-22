@@ -10,5 +10,5 @@ pub struct GetInstancePerformanceConfigIopsPerTb {
     /// capacity.
     #[builder(into)]
     #[serde(rename = "maxIopsPerTb")]
-    pub r#max_iops_per_tb: Box<i32>,
+    pub r#max_iops_per_tb: i32,
 }

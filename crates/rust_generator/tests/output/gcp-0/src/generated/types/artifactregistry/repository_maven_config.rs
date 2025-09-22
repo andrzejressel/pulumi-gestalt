@@ -5,13 +5,13 @@
 pub struct RepositoryMavenConfig {
     /// The repository with this flag will allow publishing the same
     /// snapshot versions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowSnapshotOverwrites")]
-    pub r#allow_snapshot_overwrites: Box<Option<bool>>,
+    pub r#allow_snapshot_overwrites: Option<bool>,
     /// Version policy defines the versions that the registry will accept.
     /// Default value is `VERSION_POLICY_UNSPECIFIED`.
     /// Possible values are: `VERSION_POLICY_UNSPECIFIED`, `RELEASE`, `SNAPSHOT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "versionPolicy")]
-    pub r#version_policy: Box<Option<String>>,
+    pub r#version_policy: Option<String>,
 }

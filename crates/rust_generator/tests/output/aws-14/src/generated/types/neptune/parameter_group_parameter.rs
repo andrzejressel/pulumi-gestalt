@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ParameterGroupParameter {
     /// The apply method of the Neptune parameter. Valid values are `immediate` and `pending-reboot`. Defaults to `pending-reboot`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applyMethod")]
-    pub r#apply_method: Box<Option<String>>,
+    pub r#apply_method: Option<String>,
     /// The name of the Neptune parameter.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value of the Neptune parameter.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

@@ -6,13 +6,13 @@ pub struct ManagedClusterAuthenticationActiveDirectory {
     /// The ID of the Client Application.
     #[builder(into)]
     #[serde(rename = "clientApplicationId")]
-    pub r#client_application_id: Box<String>,
+    pub r#client_application_id: String,
     /// The ID of the Cluster Application.
     #[builder(into)]
     #[serde(rename = "clusterApplicationId")]
-    pub r#cluster_application_id: Box<String>,
+    pub r#cluster_application_id: String,
     /// The ID of the Tenant.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
 }

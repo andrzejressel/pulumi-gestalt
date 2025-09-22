@@ -6,5 +6,5 @@ pub struct GetAdbsCharacterSetsCharacterSet {
     /// A valid Oracle character set.
     #[builder(into)]
     #[serde(rename = "characterSet")]
-    pub r#character_set: Box<String>,
+    pub r#character_set: String,
 }

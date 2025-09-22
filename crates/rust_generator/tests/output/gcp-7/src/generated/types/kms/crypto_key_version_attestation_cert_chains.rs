@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CryptoKeyVersionAttestationCertChains {
     /// Cavium certificate chain corresponding to the attestation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "caviumCerts")]
-    pub r#cavium_certs: Box<Option<Vec<String>>>,
+    pub r#cavium_certs: Option<Vec<String>>,
     /// Google card certificate chain corresponding to the attestation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "googleCardCerts")]
-    pub r#google_card_certs: Box<Option<Vec<String>>>,
+    pub r#google_card_certs: Option<Vec<String>>,
     /// Google partition certificate chain corresponding to the attestation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "googlePartitionCerts")]
-    pub r#google_partition_certs: Box<Option<Vec<String>>>,
+    pub r#google_partition_certs: Option<Vec<String>>,
 }

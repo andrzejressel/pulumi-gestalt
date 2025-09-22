@@ -4,33 +4,33 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LinuxVirtualMachineScaleSetNetworkInterface {
     /// A list of IP Addresses of DNS Servers which should be assigned to the Network Interface.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dnsServers")]
-    pub r#dns_servers: Box<Option<Vec<String>>>,
+    pub r#dns_servers: Option<Vec<String>>,
     /// Does this Network Interface support Accelerated Networking? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableAcceleratedNetworking")]
-    pub r#enable_accelerated_networking: Box<Option<bool>>,
+    pub r#enable_accelerated_networking: Option<bool>,
     /// Does this Network Interface support IP Forwarding? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableIpForwarding")]
-    pub r#enable_ip_forwarding: Box<Option<bool>>,
+    pub r#enable_ip_forwarding: Option<bool>,
     /// One or more `ip_configuration` blocks as defined above.
     #[builder(into)]
     #[serde(rename = "ipConfigurations")]
-    pub r#ip_configurations: Box<Vec<super::super::types::compute::LinuxVirtualMachineScaleSetNetworkInterfaceIpConfiguration>>,
+    pub r#ip_configurations: Vec<super::super::types::compute::LinuxVirtualMachineScaleSetNetworkInterfaceIpConfiguration>,
     /// The Name which should be used for this Network Interface. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The ID of a Network Security Group which should be assigned to this Network Interface.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkSecurityGroupId")]
-    pub r#network_security_group_id: Box<Option<String>>,
+    pub r#network_security_group_id: Option<String>,
     /// Is this the Primary IP Configuration?
     /// 
     /// > **Note:** If multiple `network_interface` blocks are specified, one must be set to `primary`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "primary")]
-    pub r#primary: Box<Option<bool>>,
+    pub r#primary: Option<bool>,
 }

@@ -5,12 +5,12 @@
 pub struct GetGatewayRouteSpecHttp2RouteMatchHeader {
     #[builder(into)]
     #[serde(rename = "invert")]
-    pub r#invert: Box<bool>,
+    pub r#invert: bool,
     #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteMatchHeaderMatch>>,
+    pub r#matches: Vec<super::super::types::appmesh::GetGatewayRouteSpecHttp2RouteMatchHeaderMatch>,
     /// Name of the gateway route.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

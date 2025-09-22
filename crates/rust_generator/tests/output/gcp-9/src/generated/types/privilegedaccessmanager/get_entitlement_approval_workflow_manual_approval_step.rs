@@ -9,13 +9,13 @@ pub struct GetEntitlementApprovalWorkflowManualApprovalStep {
     /// supported value.
     #[builder(into)]
     #[serde(rename = "approvalsNeeded")]
-    pub r#approvals_needed: Box<i32>,
+    pub r#approvals_needed: i32,
     /// Optional. Additional email addresses to be notified when a grant is pending approval.
     #[builder(into)]
     #[serde(rename = "approverEmailRecipients")]
-    pub r#approver_email_recipients: Box<Vec<String>>,
+    pub r#approver_email_recipients: Vec<String>,
     /// The potential set of approvers in this step. This list should contain at only one entry.
     #[builder(into)]
     #[serde(rename = "approvers")]
-    pub r#approvers: Box<Vec<super::super::types::privilegedaccessmanager::GetEntitlementApprovalWorkflowManualApprovalStepApprover>>,
+    pub r#approvers: Vec<super::super::types::privilegedaccessmanager::GetEntitlementApprovalWorkflowManualApprovalStepApprover>,
 }

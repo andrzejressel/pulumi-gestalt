@@ -6,11 +6,11 @@ pub struct BackupPlanBackupRule {
     /// Configures the duration for which backup data will be kept. The value should be greater than or equal to minimum enforced retention of the backup vault.
     #[builder(into)]
     #[serde(rename = "backupRetentionDays")]
-    pub r#backup_retention_days: Box<i32>,
+    pub r#backup_retention_days: i32,
     /// The unique ID of this `BackupRule`. The `rule_id` is unique per `BackupPlan`.
     #[builder(into)]
     #[serde(rename = "ruleId")]
-    pub r#rule_id: Box<String>,
+    pub r#rule_id: String,
     /// StandardSchedule defines a schedule that runs within the confines of a defined window of days.
     /// Structure is documented below.
     #[builder(into)]

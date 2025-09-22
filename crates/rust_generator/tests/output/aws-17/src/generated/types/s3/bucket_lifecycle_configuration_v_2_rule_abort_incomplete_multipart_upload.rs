@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketLifecycleConfigurationV2RuleAbortIncompleteMultipartUpload {
     /// Number of days after which Amazon S3 aborts an incomplete multipart upload.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "daysAfterInitiation")]
-    pub r#days_after_initiation: Box<Option<i32>>,
+    pub r#days_after_initiation: Option<i32>,
 }

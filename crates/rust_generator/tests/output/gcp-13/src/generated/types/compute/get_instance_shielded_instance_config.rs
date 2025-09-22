@@ -6,13 +6,13 @@ pub struct GetInstanceShieldedInstanceConfig {
     /// - Whether integrity monitoring is enabled for the instance.
     #[builder(into)]
     #[serde(rename = "enableIntegrityMonitoring")]
-    pub r#enable_integrity_monitoring: Box<bool>,
+    pub r#enable_integrity_monitoring: bool,
     /// - Whether secure boot is enabled for the instance.
     #[builder(into)]
     #[serde(rename = "enableSecureBoot")]
-    pub r#enable_secure_boot: Box<bool>,
+    pub r#enable_secure_boot: bool,
     /// - Whether the instance uses vTPM.
     #[builder(into)]
     #[serde(rename = "enableVtpm")]
-    pub r#enable_vtpm: Box<bool>,
+    pub r#enable_vtpm: bool,
 }

@@ -6,13 +6,13 @@ pub struct ListenerRuleActionFixedResponse {
     /// The content type. Valid values are `text/plain`, `text/css`, `text/html`, `application/javascript` and `application/json`.
     #[builder(into)]
     #[serde(rename = "contentType")]
-    pub r#content_type: Box<String>,
+    pub r#content_type: String,
     /// The message body.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "messageBody")]
-    pub r#message_body: Box<Option<String>>,
+    pub r#message_body: Option<String>,
     /// The HTTP response code. Valid values are `2XX`, `4XX`, or `5XX`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<Option<String>>,
+    pub r#status_code: Option<String>,
 }

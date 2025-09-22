@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SettingsApplicationSettingsAccessDeniedPageSettings {
     /// The URI to be redirected to when access is denied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessDeniedPageUri")]
-    pub r#access_denied_page_uri: Box<Option<String>>,
+    pub r#access_denied_page_uri: Option<String>,
     /// Whether to generate a troubleshooting URL on access denied events to this application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "generateTroubleshootingUri")]
-    pub r#generate_troubleshooting_uri: Box<Option<bool>>,
+    pub r#generate_troubleshooting_uri: Option<bool>,
     /// Whether to generate remediation token on access denied events to this application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "remediationTokenGenerationEnabled")]
-    pub r#remediation_token_generation_enabled: Box<Option<bool>>,
+    pub r#remediation_token_generation_enabled: Option<bool>,
 }

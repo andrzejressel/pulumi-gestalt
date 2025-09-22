@@ -6,9 +6,9 @@ pub struct DeploymentGroupEcsService {
     /// The name of the ECS cluster.
     #[builder(into)]
     #[serde(rename = "clusterName")]
-    pub r#cluster_name: Box<String>,
+    pub r#cluster_name: String,
     /// The name of the ECS service.
     #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<String>,
+    pub r#service_name: String,
 }

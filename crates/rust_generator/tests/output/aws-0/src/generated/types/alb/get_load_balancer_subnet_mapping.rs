@@ -5,17 +5,17 @@
 pub struct GetLoadBalancerSubnetMapping {
     #[builder(into)]
     #[serde(rename = "allocationId")]
-    pub r#allocation_id: Box<String>,
+    pub r#allocation_id: String,
     #[builder(into)]
     #[serde(rename = "ipv6Address")]
-    pub r#ipv_6_address: Box<String>,
+    pub r#ipv_6_address: String,
     #[builder(into)]
     #[serde(rename = "outpostId")]
-    pub r#outpost_id: Box<String>,
+    pub r#outpost_id: String,
     #[builder(into)]
     #[serde(rename = "privateIpv4Address")]
-    pub r#private_ipv_4_address: Box<String>,
+    pub r#private_ipv_4_address: String,
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

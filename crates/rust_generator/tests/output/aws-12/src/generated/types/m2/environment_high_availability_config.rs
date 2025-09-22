@@ -6,5 +6,5 @@ pub struct EnvironmentHighAvailabilityConfig {
     /// Desired number of instances for the Environment.
     #[builder(into)]
     #[serde(rename = "desiredCapacity")]
-    pub r#desired_capacity: Box<i32>,
+    pub r#desired_capacity: i32,
 }

@@ -5,21 +5,21 @@
 pub struct MigrationJobReverseSshConnectivity {
     /// The name of the virtual machine (Compute Engine) used as the bastion server
     /// for the SSH tunnel.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vm")]
-    pub r#vm: Box<Option<String>>,
+    pub r#vm: Option<String>,
     /// The IP of the virtual machine (Compute Engine) used as the bastion server
     /// for the SSH tunnel.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vmIp")]
-    pub r#vm_ip: Box<Option<String>>,
+    pub r#vm_ip: Option<String>,
     /// The forwarding port of the virtual machine (Compute Engine) used as the
     /// bastion server for the SSH tunnel.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vmPort")]
-    pub r#vm_port: Box<Option<i32>>,
+    pub r#vm_port: Option<i32>,
     /// The name of the VPC to peer with the Cloud SQL private network.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpc")]
-    pub r#vpc: Box<Option<String>>,
+    pub r#vpc: Option<String>,
 }

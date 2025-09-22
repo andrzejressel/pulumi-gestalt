@@ -6,9 +6,9 @@ pub struct AccountStorage {
     /// The ID of the storage account to be associated with the Video Indexer Account. Changing this forces a new Video Indexer Account to be created.
     #[builder(into)]
     #[serde(rename = "storageAccountId")]
-    pub r#storage_account_id: Box<String>,
+    pub r#storage_account_id: String,
     /// The reference to the user assigned identity to use to access the Storage Account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userAssignedIdentityId")]
-    pub r#user_assigned_identity_id: Box<Option<String>>,
+    pub r#user_assigned_identity_id: Option<String>,
 }

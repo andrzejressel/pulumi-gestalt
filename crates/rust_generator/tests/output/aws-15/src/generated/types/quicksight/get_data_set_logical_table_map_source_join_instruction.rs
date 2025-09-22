@@ -5,20 +5,20 @@
 pub struct GetDataSetLogicalTableMapSourceJoinInstruction {
     #[builder(into)]
     #[serde(rename = "leftJoinKeyProperties")]
-    pub r#left_join_key_properties: Box<Vec<super::super::types::quicksight::GetDataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyProperty>>,
+    pub r#left_join_key_properties: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapSourceJoinInstructionLeftJoinKeyProperty>,
     #[builder(into)]
     #[serde(rename = "leftOperand")]
-    pub r#left_operand: Box<String>,
+    pub r#left_operand: String,
     #[builder(into)]
     #[serde(rename = "onClause")]
-    pub r#on_clause: Box<String>,
+    pub r#on_clause: String,
     #[builder(into)]
     #[serde(rename = "rightJoinKeyProperties")]
-    pub r#right_join_key_properties: Box<Vec<super::super::types::quicksight::GetDataSetLogicalTableMapSourceJoinInstructionRightJoinKeyProperty>>,
+    pub r#right_join_key_properties: Vec<super::super::types::quicksight::GetDataSetLogicalTableMapSourceJoinInstructionRightJoinKeyProperty>,
     #[builder(into)]
     #[serde(rename = "rightOperand")]
-    pub r#right_operand: Box<String>,
+    pub r#right_operand: String,
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

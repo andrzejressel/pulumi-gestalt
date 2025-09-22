@@ -6,17 +6,17 @@ pub struct ChannelDestination {
     /// User-specified id. Ths is used in an output group or an output.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Destination settings for a MediaPackage output; one destination for both encoders. See Media Package Settings for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mediaPackageSettings")]
-    pub r#media_package_settings: Box<Option<Vec<super::super::types::medialive::ChannelDestinationMediaPackageSetting>>>,
+    pub r#media_package_settings: Option<Vec<super::super::types::medialive::ChannelDestinationMediaPackageSetting>>,
     /// Destination settings for a Multiplex output; one destination for both encoders. See Multiplex Settings for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "multiplexSettings")]
-    pub r#multiplex_settings: Box<Option<super::super::types::medialive::ChannelDestinationMultiplexSettings>>,
+    pub r#multiplex_settings: Option<Box<super::super::types::medialive::ChannelDestinationMultiplexSettings>>,
     /// Destination settings for a standard output; one destination for each redundant encoder. See Settings for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "settings")]
-    pub r#settings: Box<Option<Vec<super::super::types::medialive::ChannelDestinationSetting>>>,
+    pub r#settings: Option<Vec<super::super::types::medialive::ChannelDestinationSetting>>,
 }

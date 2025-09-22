@@ -5,16 +5,16 @@
 pub struct PacketMirroringMirroredResources {
     /// All the listed instances will be mirrored.  Specify at most 50.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instances")]
-    pub r#instances: Box<Option<Vec<super::super::types::compute::PacketMirroringMirroredResourcesInstance>>>,
+    pub r#instances: Option<Vec<super::super::types::compute::PacketMirroringMirroredResourcesInstance>>,
     /// All instances in one of these subnetworks will be mirrored.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetworks")]
-    pub r#subnetworks: Box<Option<Vec<super::super::types::compute::PacketMirroringMirroredResourcesSubnetwork>>>,
+    pub r#subnetworks: Option<Vec<super::super::types::compute::PacketMirroringMirroredResourcesSubnetwork>>,
     /// All instances with these tags will be mirrored.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<Vec<String>>>,
+    pub r#tags: Option<Vec<String>>,
 }

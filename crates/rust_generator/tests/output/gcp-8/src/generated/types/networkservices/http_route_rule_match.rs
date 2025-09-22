@@ -4,29 +4,29 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HttpRouteRuleMatch {
     /// The HTTP request path value should exactly match this value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fullPathMatch")]
-    pub r#full_path_match: Box<Option<String>>,
+    pub r#full_path_match: Option<String>,
     /// Specifies a list of HTTP request headers to match against.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Option<Vec<super::super::types::networkservices::HttpRouteRuleMatchHeader>>>,
+    pub r#headers: Option<Vec<super::super::types::networkservices::HttpRouteRuleMatchHeader>>,
     /// Specifies if prefixMatch and fullPathMatch matches are case sensitive. The default value is false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ignoreCase")]
-    pub r#ignore_case: Box<Option<bool>>,
+    pub r#ignore_case: Option<bool>,
     /// The HTTP request path value must begin with specified prefixMatch. prefixMatch must begin with a /.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefixMatch")]
-    pub r#prefix_match: Box<Option<String>>,
+    pub r#prefix_match: Option<String>,
     /// Specifies a list of query parameters to match against.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "queryParameters")]
-    pub r#query_parameters: Box<Option<Vec<super::super::types::networkservices::HttpRouteRuleMatchQueryParameter>>>,
+    pub r#query_parameters: Option<Vec<super::super::types::networkservices::HttpRouteRuleMatchQueryParameter>>,
     /// The HTTP request path value must satisfy the regular expression specified by regexMatch after removing any query parameters and anchor supplied with the original URL. For regular expression grammar, please see https://github.com/google/re2/wiki/Syntax
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regexMatch")]
-    pub r#regex_match: Box<Option<String>>,
+    pub r#regex_match: Option<String>,
 }

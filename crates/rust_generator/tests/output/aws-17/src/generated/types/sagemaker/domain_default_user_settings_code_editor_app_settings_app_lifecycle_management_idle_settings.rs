@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainDefaultUserSettingsCodeEditorAppSettingsAppLifecycleManagementIdleSettings {
     /// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between `60` and `525600`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "idleTimeoutInMinutes")]
-    pub r#idle_timeout_in_minutes: Box<Option<i32>>,
+    pub r#idle_timeout_in_minutes: Option<i32>,
     /// Indicates whether idle shutdown is activated for the application type. Valid values are `ENABLED` and `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lifecycleManagement")]
-    pub r#lifecycle_management: Box<Option<String>>,
+    pub r#lifecycle_management: Option<String>,
     /// The maximum value in minutes that custom idle shutdown can be set to by the user. Valid values are between `60` and `525600`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxIdleTimeoutInMinutes")]
-    pub r#max_idle_timeout_in_minutes: Box<Option<i32>>,
+    pub r#max_idle_timeout_in_minutes: Option<i32>,
     /// The minimum value in minutes that custom idle shutdown can be set to by the user. Valid values are between `60` and `525600`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minIdleTimeoutInMinutes")]
-    pub r#min_idle_timeout_in_minutes: Box<Option<i32>>,
+    pub r#min_idle_timeout_in_minutes: Option<i32>,
 }

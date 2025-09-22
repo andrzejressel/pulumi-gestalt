@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChatEngineCommonConfig {
     /// The name of the company, business or entity that is associated with the engine. Setting this may help improve LLM related features.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "companyName")]
-    pub r#company_name: Box<Option<String>>,
+    pub r#company_name: Option<String>,
 }

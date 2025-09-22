@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobConfigAdBreak {
     /// Start time in seconds for the ad break, relative to the output file timeline
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTimeOffset")]
-    pub r#start_time_offset: Box<Option<String>>,
+    pub r#start_time_offset: Option<String>,
 }

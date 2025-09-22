@@ -6,12 +6,12 @@ pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleCo
     /// Name of the property for the custom output.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The CEL expression for the custom output. A resource property can be
     /// specified to return the value of the property or a text string enclosed
     /// in quotation marks.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "valueExpression")]
-    pub r#value_expression: Box<Option<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigCustomOutputPropertyValueExpression>>,
+    pub r#value_expression: Option<Box<super::super::types::securityposture::PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfigCustomOutputPropertyValueExpression>>,
 }

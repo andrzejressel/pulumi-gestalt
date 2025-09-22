@@ -5,7 +5,7 @@
 pub struct PreventionDiscoveryConfigActionExportData {
     /// Store all table and column profiles in an existing table or a new table in an existing dataset. Each re-generation will result in a new row in BigQuery
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "profileTable")]
-    pub r#profile_table: Box<Option<super::super::types::dataloss::PreventionDiscoveryConfigActionExportDataProfileTable>>,
+    pub r#profile_table: Option<Box<super::super::types::dataloss::PreventionDiscoveryConfigActionExportDataProfileTable>>,
 }

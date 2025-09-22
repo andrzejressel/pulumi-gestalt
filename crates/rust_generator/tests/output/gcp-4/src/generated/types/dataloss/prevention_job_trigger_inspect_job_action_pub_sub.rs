@@ -6,5 +6,5 @@ pub struct PreventionJobTriggerInspectJobActionPubSub {
     /// Cloud Pub/Sub topic to send notifications to.
     #[builder(into)]
     #[serde(rename = "topic")]
-    pub r#topic: Box<String>,
+    pub r#topic: String,
 }

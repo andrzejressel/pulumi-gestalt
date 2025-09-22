@@ -4,31 +4,31 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudServiceConfigServerGitSettingRepository {
     /// A `http_basic_auth` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpBasicAuth")]
-    pub r#http_basic_auth: Box<Option<super::super::types::appplatform::SpringCloudServiceConfigServerGitSettingRepositoryHttpBasicAuth>>,
+    pub r#http_basic_auth: Option<Box<super::super::types::appplatform::SpringCloudServiceConfigServerGitSettingRepositoryHttpBasicAuth>>,
     /// The default label of the Git repository, should be the branch name, tag name, or commit-id of the repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "label")]
-    pub r#label: Box<Option<String>>,
+    pub r#label: Option<String>,
     /// A name to identify on the Git repository, required only if repos exists.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// An array of strings used to match an application name. For each pattern, use the `{application}/{profile}` format with wildcards.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "patterns")]
-    pub r#patterns: Box<Option<Vec<String>>>,
+    pub r#patterns: Option<Vec<String>>,
     /// An array of strings used to search subdirectories of the Git repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "searchPaths")]
-    pub r#search_paths: Box<Option<Vec<String>>>,
+    pub r#search_paths: Option<Vec<String>>,
     /// A `ssh_auth` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sshAuth")]
-    pub r#ssh_auth: Box<Option<super::super::types::appplatform::SpringCloudServiceConfigServerGitSettingRepositorySshAuth>>,
+    pub r#ssh_auth: Option<Box<super::super::types::appplatform::SpringCloudServiceConfigServerGitSettingRepositorySshAuth>>,
     /// The URI of the Git repository that's used as the Config Server back end should be started with `http://`, `https://`, `git@`, or `ssh://`.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

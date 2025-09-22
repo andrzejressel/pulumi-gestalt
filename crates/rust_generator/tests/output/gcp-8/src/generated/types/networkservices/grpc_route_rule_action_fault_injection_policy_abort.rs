@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GrpcRouteRuleActionFaultInjectionPolicyAbort {
     /// The HTTP status code used to abort the request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpStatus")]
-    pub r#http_status: Box<Option<i32>>,
+    pub r#http_status: Option<i32>,
     /// The percentage of traffic which will be aborted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "percentage")]
-    pub r#percentage: Box<Option<i32>>,
+    pub r#percentage: Option<i32>,
 }

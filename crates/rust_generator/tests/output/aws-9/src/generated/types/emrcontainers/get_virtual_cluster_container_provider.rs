@@ -6,13 +6,13 @@ pub struct GetVirtualClusterContainerProvider {
     /// The name of the container provider that is running your EMR Containers cluster
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Nested list containing information about the configuration of the container provider
     #[builder(into)]
     #[serde(rename = "infos")]
-    pub r#infos: Box<Vec<super::super::types::emrcontainers::GetVirtualClusterContainerProviderInfo>>,
+    pub r#infos: Vec<super::super::types::emrcontainers::GetVirtualClusterContainerProviderInfo>,
     /// The type of the container provider
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

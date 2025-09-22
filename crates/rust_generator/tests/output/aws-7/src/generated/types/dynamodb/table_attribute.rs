@@ -6,9 +6,9 @@ pub struct TableAttribute {
     /// Name of the attribute
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Attribute type. Valid values are `S` (string), `N` (number), `B` (binary).
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

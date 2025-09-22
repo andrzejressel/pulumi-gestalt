@@ -5,7 +5,7 @@
 pub struct CertificateCertificateDescriptionCertFingerprint {
     /// (Output)
     /// The SHA 256 hash, encoded in hexadecimal, of the DER x509 certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sha256Hash")]
-    pub r#sha_256_hash: Box<Option<String>>,
+    pub r#sha_256_hash: Option<String>,
 }

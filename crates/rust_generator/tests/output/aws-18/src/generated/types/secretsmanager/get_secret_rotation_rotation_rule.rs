@@ -5,11 +5,11 @@
 pub struct GetSecretRotationRotationRule {
     #[builder(into)]
     #[serde(rename = "automaticallyAfterDays")]
-    pub r#automatically_after_days: Box<i32>,
+    pub r#automatically_after_days: i32,
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<String>,
+    pub r#duration: String,
     #[builder(into)]
     #[serde(rename = "scheduleExpression")]
-    pub r#schedule_expression: Box<String>,
+    pub r#schedule_expression: String,
 }

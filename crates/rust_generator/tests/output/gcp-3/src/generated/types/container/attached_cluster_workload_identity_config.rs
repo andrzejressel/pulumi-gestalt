@@ -5,15 +5,15 @@
 pub struct AttachedClusterWorkloadIdentityConfig {
     /// The ID of the OIDC Identity Provider (IdP) associated to
     /// the Workload Identity Pool.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityProvider")]
-    pub r#identity_provider: Box<Option<String>>,
+    pub r#identity_provider: Option<String>,
     /// The OIDC issuer URL for this cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "issuerUri")]
-    pub r#issuer_uri: Box<Option<String>>,
+    pub r#issuer_uri: Option<String>,
     /// The Workload Identity Pool associated to the cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "workloadPool")]
-    pub r#workload_pool: Box<Option<String>>,
+    pub r#workload_pool: Option<String>,
 }

@@ -3,14 +3,14 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsAudioDescriptionCodecSettingsWavSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bitDepth")]
-    pub r#bit_depth: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#bit_depth: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "codingMode")]
-    pub r#coding_mode: Box<Option<String>>,
+    pub r#coding_mode: Option<String>,
     /// Sample rate in Hz.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sampleRate")]
-    pub r#sample_rate: Box<Option<f64>>,
+    pub r#sample_rate: Option<f64>,
 }

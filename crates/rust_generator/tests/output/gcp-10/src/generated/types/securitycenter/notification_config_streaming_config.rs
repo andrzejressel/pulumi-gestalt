@@ -26,5 +26,5 @@ pub struct NotificationConfigStreamingConfig {
     /// - - -
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<String>,
+    pub r#filter: String,
 }

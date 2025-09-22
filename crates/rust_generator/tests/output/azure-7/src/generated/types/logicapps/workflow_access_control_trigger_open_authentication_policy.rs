@@ -6,9 +6,9 @@ pub struct WorkflowAccessControlTriggerOpenAuthenticationPolicy {
     /// A `claim` block as defined below.
     #[builder(into)]
     #[serde(rename = "claims")]
-    pub r#claims: Box<Vec<super::super::types::logicapps::WorkflowAccessControlTriggerOpenAuthenticationPolicyClaim>>,
+    pub r#claims: Vec<super::super::types::logicapps::WorkflowAccessControlTriggerOpenAuthenticationPolicyClaim>,
     /// The OAuth policy name for the Logic App Workflow.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

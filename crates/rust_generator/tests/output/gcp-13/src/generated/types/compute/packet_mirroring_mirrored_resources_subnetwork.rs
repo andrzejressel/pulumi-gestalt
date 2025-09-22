@@ -6,5 +6,5 @@ pub struct PacketMirroringMirroredResourcesSubnetwork {
     /// The URL of the subnetwork where this rule should be active.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

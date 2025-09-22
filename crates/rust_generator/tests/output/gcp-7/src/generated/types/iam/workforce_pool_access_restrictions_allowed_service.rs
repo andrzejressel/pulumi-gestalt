@@ -5,7 +5,7 @@
 pub struct WorkforcePoolAccessRestrictionsAllowedService {
     /// Domain name of the service.
     /// Example: console.cloud.google
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<Option<String>>,
+    pub r#domain: Option<String>,
 }

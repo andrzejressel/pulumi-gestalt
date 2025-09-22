@@ -6,19 +6,19 @@ pub struct VirtualMachineAssessmentSchedule {
     /// What day of the week the assessment will be run. Possible values are `Friday`, `Monday`, `Saturday`, `Sunday`, `Thursday`, `Tuesday` and `Wednesday`.
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     /// How many months between assessment runs. Valid values are between `1` and `5`.
     /// 
     /// > **NOTE:** Either one of `weekly_interval` or `monthly_occurrence` must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "monthlyOccurrence")]
-    pub r#monthly_occurrence: Box<Option<i32>>,
+    pub r#monthly_occurrence: Option<i32>,
     /// What time the assessment will be run. Must be in the format `HH:mm`.
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
     /// How many weeks between assessment runs. Valid values are between `1` and `6`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weeklyInterval")]
-    pub r#weekly_interval: Box<Option<i32>>,
+    pub r#weekly_interval: Option<i32>,
 }

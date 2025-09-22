@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PresetAudioCodecOptions {
     /// The bit depth of a sample is how many bits of information are included in the audio samples. Valid values are `16` and `24`. (FLAC/PCM Only)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bitDepth")]
-    pub r#bit_depth: Box<Option<String>>,
+    pub r#bit_depth: Option<String>,
     /// The order the bits of a PCM sample are stored in. The supported value is LittleEndian. (PCM Only)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bitOrder")]
-    pub r#bit_order: Box<Option<String>>,
+    pub r#bit_order: Option<String>,
     /// If you specified AAC for Audio:Codec, choose the AAC profile for the output file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "profile")]
-    pub r#profile: Box<Option<String>>,
+    pub r#profile: Option<String>,
     /// Whether audio samples are represented with negative and positive numbers (signed) or only positive numbers (unsigned). The supported value is Signed. (PCM Only)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "signed")]
-    pub r#signed: Box<Option<String>>,
+    pub r#signed: Option<String>,
 }

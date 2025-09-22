@@ -9,9 +9,9 @@ pub struct GetInstanceConfidentialInstanceConfig {
     /// "AMD Milan" is currently required.
     #[builder(into)]
     #[serde(rename = "confidentialInstanceType")]
-    pub r#confidential_instance_type: Box<String>,
+    pub r#confidential_instance_type: String,
     /// Defines whether the instance should have confidential compute enabled. Field will be deprecated in a future release
     #[builder(into)]
     #[serde(rename = "enableConfidentialCompute")]
-    pub r#enable_confidential_compute: Box<bool>,
+    pub r#enable_confidential_compute: bool,
 }

@@ -6,9 +6,9 @@ pub struct GetSecretsSecretRotation {
     /// Timestamp in UTC at which the Secret is scheduled to rotate.
     #[builder(into)]
     #[serde(rename = "nextRotationTime")]
-    pub r#next_rotation_time: Box<String>,
+    pub r#next_rotation_time: String,
     /// The Duration between rotation notifications.
     #[builder(into)]
     #[serde(rename = "rotationPeriod")]
-    pub r#rotation_period: Box<String>,
+    pub r#rotation_period: String,
 }

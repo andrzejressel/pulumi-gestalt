@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FrameworkControl {
     /// One or more input parameter blocks. An example of a control with two parameters is: "backup plan frequency is at least daily and the retention period is at least 1 year". The first parameter is daily. The second parameter is 1 year. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputParameters")]
-    pub r#input_parameters: Box<Option<Vec<super::super::types::backup::FrameworkControlInputParameter>>>,
+    pub r#input_parameters: Option<Vec<super::super::types::backup::FrameworkControlInputParameter>>,
     /// The name of a control. This name is between 1 and 256 characters.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<Option<super::super::types::backup::FrameworkControlScope>>,
+    pub r#scope: Option<Box<super::super::types::backup::FrameworkControlScope>>,
 }

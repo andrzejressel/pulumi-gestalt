@@ -8,10 +8,10 @@ pub struct GetInstancePerformanceConfig {
     /// capacity.
     #[builder(into)]
     #[serde(rename = "fixedIops")]
-    pub r#fixed_iops: Box<Vec<super::super::types::filestore::GetInstancePerformanceConfigFixedIop>>,
+    pub r#fixed_iops: Vec<super::super::types::filestore::GetInstancePerformanceConfigFixedIop>,
     /// The instance provisioned IOPS will change dynamically
     /// based on the capacity of the instance.
     #[builder(into)]
     #[serde(rename = "iopsPerTbs")]
-    pub r#iops_per_tbs: Box<Vec<super::super::types::filestore::GetInstancePerformanceConfigIopsPerTb>>,
+    pub r#iops_per_tbs: Vec<super::super::types::filestore::GetInstancePerformanceConfigIopsPerTb>,
 }

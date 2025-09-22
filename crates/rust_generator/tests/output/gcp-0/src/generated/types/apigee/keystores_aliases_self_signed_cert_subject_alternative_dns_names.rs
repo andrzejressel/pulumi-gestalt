@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNames {
     /// Subject Alternative Name
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subjectAlternativeName")]
-    pub r#subject_alternative_name: Box<Option<String>>,
+    pub r#subject_alternative_name: Option<String>,
 }

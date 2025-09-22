@@ -3,25 +3,25 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TrustProviderOidcOptions {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authorizationEndpoint")]
-    pub r#authorization_endpoint: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#authorization_endpoint: Option<String>,
+    #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<Option<String>>,
+    pub r#client_id: Option<String>,
     #[builder(into)]
     #[serde(rename = "clientSecret")]
-    pub r#client_secret: Box<String>,
-    #[builder(into, default)]
+    pub r#client_secret: String,
+    #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#issuer: Option<String>,
+    #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#scope: Option<String>,
+    #[builder(into)]
     #[serde(rename = "tokenEndpoint")]
-    pub r#token_endpoint: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#token_endpoint: Option<String>,
+    #[builder(into)]
     #[serde(rename = "userInfoEndpoint")]
-    pub r#user_info_endpoint: Box<Option<String>>,
+    pub r#user_info_endpoint: Option<String>,
 }

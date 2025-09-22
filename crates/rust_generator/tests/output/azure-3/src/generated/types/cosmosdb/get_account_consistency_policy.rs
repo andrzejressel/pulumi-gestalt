@@ -6,13 +6,13 @@ pub struct GetAccountConsistencyPolicy {
     /// The Consistency Level used by this CosmosDB Account.
     #[builder(into)]
     #[serde(rename = "consistencyLevel")]
-    pub r#consistency_level: Box<String>,
+    pub r#consistency_level: String,
     /// The amount of staleness (in seconds) tolerated when the consistency level is Bounded Staleness.
     #[builder(into)]
     #[serde(rename = "maxIntervalInSeconds")]
-    pub r#max_interval_in_seconds: Box<i32>,
+    pub r#max_interval_in_seconds: i32,
     /// The number of stale requests tolerated when the consistency level is Bounded Staleness.
     #[builder(into)]
     #[serde(rename = "maxStalenessPrefix")]
-    pub r#max_staleness_prefix: Box<i32>,
+    pub r#max_staleness_prefix: i32,
 }

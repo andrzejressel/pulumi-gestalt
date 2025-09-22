@@ -6,5 +6,5 @@ pub struct MonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscripti
     /// A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution. Valid values are `Enabled` and `Disabled`. See below.
     #[builder(into)]
     #[serde(rename = "realtimeMetricsSubscriptionStatus")]
-    pub r#realtime_metrics_subscription_status: Box<String>,
+    pub r#realtime_metrics_subscription_status: String,
 }

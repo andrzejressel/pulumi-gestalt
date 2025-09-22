@@ -5,9 +5,9 @@
 pub struct CxIntentTrainingPhrase {
     /// (Output)
     /// The unique identifier of the training phrase.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The ordered list of training phrase parts. The parts are concatenated in order to form the training phrase.
     /// Note: The API does not automatically annotate training phrases like the Dialogflow Console does.
     /// Note: Do not forget to include whitespace at part boundaries, so the training phrase is well formatted when the parts are concatenated.
@@ -18,9 +18,9 @@ pub struct CxIntentTrainingPhrase {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "parts")]
-    pub r#parts: Box<Vec<super::super::types::diagflow::CxIntentTrainingPhrasePart>>,
+    pub r#parts: Vec<super::super::types::diagflow::CxIntentTrainingPhrasePart>,
     /// Indicates how many times this example was added to the intent.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repeatCount")]
-    pub r#repeat_count: Box<Option<i32>>,
+    pub r#repeat_count: Option<i32>,
 }

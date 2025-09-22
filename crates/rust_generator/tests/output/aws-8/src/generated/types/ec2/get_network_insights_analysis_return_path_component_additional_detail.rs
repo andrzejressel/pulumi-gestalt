@@ -5,8 +5,8 @@
 pub struct GetNetworkInsightsAnalysisReturnPathComponentAdditionalDetail {
     #[builder(into)]
     #[serde(rename = "additionalDetailType")]
-    pub r#additional_detail_type: Box<String>,
+    pub r#additional_detail_type: String,
     #[builder(into)]
     #[serde(rename = "components")]
-    pub r#components: Box<Vec<super::super::types::ec2::GetNetworkInsightsAnalysisReturnPathComponentAdditionalDetailComponent>>,
+    pub r#components: Vec<super::super::types::ec2::GetNetworkInsightsAnalysisReturnPathComponentAdditionalDetailComponent>,
 }

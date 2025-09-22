@@ -3,24 +3,24 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectPeerConfiguration {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bgpConfigurations")]
-    pub r#bgp_configurations: Box<Option<Vec<super::super::types::networkmanager::ConnectPeerConfigurationBgpConfiguration>>>,
+    pub r#bgp_configurations: Option<Vec<super::super::types::networkmanager::ConnectPeerConfigurationBgpConfiguration>>,
     /// A Connect peer core network address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "coreNetworkAddress")]
-    pub r#core_network_address: Box<Option<String>>,
+    pub r#core_network_address: Option<String>,
     /// The inside IP addresses used for BGP peering. Required when the Connect attachment protocol is `GRE`. See `aws.networkmanager.ConnectAttachment` for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "insideCidrBlocks")]
-    pub r#inside_cidr_blocks: Box<Option<Vec<String>>>,
+    pub r#inside_cidr_blocks: Option<Vec<String>>,
     /// The Connect peer address.
     /// 
     /// The following arguments are optional:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "peerAddress")]
-    pub r#peer_address: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#peer_address: Option<String>,
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
+    pub r#protocol: Option<String>,
 }

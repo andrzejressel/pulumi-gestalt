@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AgentDataSourceServerSideEncryptionConfiguration {
     /// ARN of the AWS KMS key used to encrypt the resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<Option<String>>,
+    pub r#kms_key_arn: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct GetPolicyAssignmentNonComplianceMessage {
     /// The non-compliance message text.
     #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<String>,
+    pub r#content: String,
     /// The ID of the Policy Definition that the non-compliance message applies to.
     #[builder(into)]
     #[serde(rename = "policyDefinitionReferenceId")]
-    pub r#policy_definition_reference_id: Box<String>,
+    pub r#policy_definition_reference_id: String,
 }

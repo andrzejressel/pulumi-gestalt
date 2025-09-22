@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTemplateServiceMesh {
     /// The Mesh resource name. For more information see https://cloud.google.com/service-mesh/docs/reference/network-services/rest/v1/projects.locations.meshes#resource:-mesh.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mesh")]
-    pub r#mesh: Box<Option<String>>,
+    pub r#mesh: Option<String>,
 }

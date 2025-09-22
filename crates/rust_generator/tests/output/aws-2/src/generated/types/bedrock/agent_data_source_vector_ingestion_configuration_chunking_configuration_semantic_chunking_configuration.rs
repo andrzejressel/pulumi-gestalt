@@ -6,13 +6,13 @@ pub struct AgentDataSourceVectorIngestionConfigurationChunkingConfigurationSeman
     /// The dissimilarity threshold for splitting chunks.
     #[builder(into)]
     #[serde(rename = "breakpointPercentileThreshold")]
-    pub r#breakpoint_percentile_threshold: Box<f64>,
+    pub r#breakpoint_percentile_threshold: f64,
     /// The buffer size.
     #[builder(into)]
     #[serde(rename = "bufferSize")]
-    pub r#buffer_size: Box<f64>,
+    pub r#buffer_size: f64,
     /// The maximum number of tokens a chunk can contain.
     #[builder(into)]
     #[serde(rename = "maxToken")]
-    pub r#max_token: Box<f64>,
+    pub r#max_token: f64,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualServiceSpecProvider {
     /// Virtual node associated with a virtual service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualNode")]
-    pub r#virtual_node: Box<Option<super::super::types::appmesh::VirtualServiceSpecProviderVirtualNode>>,
+    pub r#virtual_node: Option<Box<super::super::types::appmesh::VirtualServiceSpecProviderVirtualNode>>,
     /// Virtual router associated with a virtual service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualRouter")]
-    pub r#virtual_router: Box<Option<super::super::types::appmesh::VirtualServiceSpecProviderVirtualRouter>>,
+    pub r#virtual_router: Option<Box<super::super::types::appmesh::VirtualServiceSpecProviderVirtualRouter>>,
 }

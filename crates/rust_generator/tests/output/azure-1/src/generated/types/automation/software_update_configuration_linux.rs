@@ -8,17 +8,17 @@ pub struct SoftwareUpdateConfigurationLinux {
     /// > **NOTE:** The `classifications_included` property will become `Required` in version 4.0 of the Provider.
     #[builder(into)]
     #[serde(rename = "classificationsIncludeds")]
-    pub r#classifications_includeds: Box<Vec<String>>,
+    pub r#classifications_includeds: Vec<String>,
     /// Specifies a list of packages to excluded from the Software Update Configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "excludedPackages")]
-    pub r#excluded_packages: Box<Option<Vec<String>>>,
+    pub r#excluded_packages: Option<Vec<String>>,
     /// Specifies a list of packages to included from the Software Update Configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includedPackages")]
-    pub r#included_packages: Box<Option<Vec<String>>>,
+    pub r#included_packages: Option<Vec<String>>,
     /// Specifies the reboot settings after software update, possible values are `IfRequired`, `Never`, `RebootOnly` and `Always`. Defaults to `IfRequired`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reboot")]
-    pub r#reboot: Box<Option<String>>,
+    pub r#reboot: Option<String>,
 }

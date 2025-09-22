@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetLaunchTemplateConfig {
     /// Nested argument containing EC2 Launch Template to use. Defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "launchTemplateSpecification")]
-    pub r#launch_template_specification: Box<Option<super::super::types::ec2::FleetLaunchTemplateConfigLaunchTemplateSpecification>>,
+    pub r#launch_template_specification: Option<Box<super::super::types::ec2::FleetLaunchTemplateConfigLaunchTemplateSpecification>>,
     /// Nested argument(s) containing parameters to override the same parameters in the Launch Template. Defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "overrides")]
-    pub r#overrides: Box<Option<Vec<super::super::types::ec2::FleetLaunchTemplateConfigOverride>>>,
+    pub r#overrides: Option<Vec<super::super::types::ec2::FleetLaunchTemplateConfigOverride>>,
 }

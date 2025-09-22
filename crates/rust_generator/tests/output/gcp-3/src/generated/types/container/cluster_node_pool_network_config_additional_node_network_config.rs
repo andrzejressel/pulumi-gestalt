@@ -6,12 +6,12 @@ pub struct ClusterNodePoolNetworkConfigAdditionalNodeNetworkConfig {
     /// The name or self_link of the Google Compute Engine
     /// network to which the cluster is connected. For Shared VPC, set this to the self link of the
     /// shared network.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<Option<String>>,
+    pub r#network: Option<String>,
     /// The name or self_link of the Google Compute Engine
     /// subnetwork in which the cluster's instances are launched.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetwork")]
-    pub r#subnetwork: Box<Option<String>>,
+    pub r#subnetwork: Option<String>,
 }

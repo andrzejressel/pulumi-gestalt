@@ -4,21 +4,21 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HostingCustomDomainCertVerificationHttp {
     /// A text string to serve at the path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "desired")]
-    pub r#desired: Box<Option<String>>,
+    pub r#desired: Option<String>,
     /// Whether Hosting was able to find the required file contents on the
     /// specified path during its last check.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "discovered")]
-    pub r#discovered: Box<Option<String>>,
+    pub r#discovered: Option<String>,
     /// (Output)
     /// The last time Hosting systems checked for the file contents.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastCheckTime")]
-    pub r#last_check_time: Box<Option<String>>,
+    pub r#last_check_time: Option<String>,
     /// The path to the file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
 }

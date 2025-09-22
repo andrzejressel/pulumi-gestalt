@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesetRuleActionParametersEdgeTtl {
     /// Default edge TTL.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "default")]
-    pub r#default: Box<Option<i32>>,
+    pub r#default: Option<i32>,
     /// Mode of the edge TTL. Available values: `override_origin`, `respect_origin`, `bypass_by_default`
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
     /// Edge TTL for the status codes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusCodeTtls")]
-    pub r#status_code_ttls: Box<Option<Vec<super::types::RulesetRuleActionParametersEdgeTtlStatusCodeTtl>>>,
+    pub r#status_code_ttls: Option<Vec<super::types::RulesetRuleActionParametersEdgeTtlStatusCodeTtl>>,
 }

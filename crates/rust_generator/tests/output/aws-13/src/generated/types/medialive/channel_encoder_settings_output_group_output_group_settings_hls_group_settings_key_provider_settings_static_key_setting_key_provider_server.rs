@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingKeyProviderServer {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordParam")]
-    pub r#password_param: Box<Option<String>>,
+    pub r#password_param: Option<String>,
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
-    #[builder(into, default)]
+    pub r#uri: String,
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

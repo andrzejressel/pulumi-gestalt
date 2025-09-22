@@ -6,9 +6,9 @@ pub struct NetworkServicePccRuleQosPolicyMaximumBitRate {
     /// Downlink bit rate. Must be a number followed by `bps`, `Kbps`, `Mbps`, `Gbps` or `Tbps`.
     #[builder(into)]
     #[serde(rename = "downlink")]
-    pub r#downlink: Box<String>,
+    pub r#downlink: String,
     /// Uplink bit rate. Must be a number followed by `bps`, `Kbps`, `Mbps`, `Gbps` or `Tbps`.
     #[builder(into)]
     #[serde(rename = "uplink")]
-    pub r#uplink: Box<String>,
+    pub r#uplink: String,
 }

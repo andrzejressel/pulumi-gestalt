@@ -6,13 +6,13 @@ pub struct CloudExadataInfrastructurePropertiesMaintenanceWindow {
     /// Determines the amount of time the system will wait before the start of each
     /// database server patching operation. Custom action timeout is in minutes and
     /// valid value is between 15 to 120 (inclusive).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customActionTimeoutMins")]
-    pub r#custom_action_timeout_mins: Box<Option<i32>>,
+    pub r#custom_action_timeout_mins: Option<i32>,
     /// Days during the week when maintenance should be performed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "daysOfWeeks")]
-    pub r#days_of_weeks: Box<Option<Vec<String>>>,
+    pub r#days_of_weeks: Option<Vec<String>>,
     /// The window of hours during the day when maintenance should be performed.
     /// The window is a 4 hour slot. Valid values are:
     /// 0 - represents time slot 0:00 - 3:59 UTC
@@ -21,44 +21,44 @@ pub struct CloudExadataInfrastructurePropertiesMaintenanceWindow {
     /// 12 - represents time slot 12:00 - 15:59 UTC
     /// 16 - represents time slot 16:00 - 19:59 UTC
     /// 20 - represents time slot 20:00 - 23:59 UTC
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hoursOfDays")]
-    pub r#hours_of_days: Box<Option<Vec<i32>>>,
+    pub r#hours_of_days: Option<Vec<i32>>,
     /// If true, enables the configuration of a custom action timeout (waiting
     /// period) between database server patching operations.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isCustomActionTimeoutEnabled")]
-    pub r#is_custom_action_timeout_enabled: Box<Option<bool>>,
+    pub r#is_custom_action_timeout_enabled: Option<bool>,
     /// Lead time window allows user to set a lead time to prepare for a down time.
     /// The lead time is in weeks and valid value is between 1 to 4.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "leadTimeWeek")]
-    pub r#lead_time_week: Box<Option<i32>>,
+    pub r#lead_time_week: Option<i32>,
     /// Months during the year when maintenance should be performed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "months")]
-    pub r#months: Box<Option<Vec<String>>>,
+    pub r#months: Option<Vec<String>>,
     /// Cloud CloudExadataInfrastructure node patching method, either "ROLLING"
     /// or "NONROLLING". Default value is ROLLING.
     /// Possible values:
     /// PATCHING_MODE_UNSPECIFIED
     /// ROLLING
     /// NON_ROLLING
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "patchingMode")]
-    pub r#patching_mode: Box<Option<String>>,
+    pub r#patching_mode: Option<String>,
     /// The maintenance window scheduling preference.
     /// Possible values:
     /// MAINTENANCE_WINDOW_PREFERENCE_UNSPECIFIED
     /// CUSTOM_PREFERENCE
     /// NO_PREFERENCE
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preference")]
-    pub r#preference: Box<Option<String>>,
+    pub r#preference: Option<String>,
     /// Weeks during the month when maintenance should be performed. Weeks start on
     /// the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7
     /// days. Weeks start and end based on calendar dates, not days of the week.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weeksOfMonths")]
-    pub r#weeks_of_months: Box<Option<Vec<i32>>>,
+    pub r#weeks_of_months: Option<Vec<i32>>,
 }

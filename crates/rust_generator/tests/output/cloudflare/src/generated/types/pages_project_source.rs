@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PagesProjectSource {
     /// Configuration for the source of the Cloudflare Pages project.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "config")]
-    pub r#config: Box<Option<super::types::PagesProjectSourceConfig>>,
+    pub r#config: Option<Box<super::types::PagesProjectSourceConfig>>,
     /// Project host type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

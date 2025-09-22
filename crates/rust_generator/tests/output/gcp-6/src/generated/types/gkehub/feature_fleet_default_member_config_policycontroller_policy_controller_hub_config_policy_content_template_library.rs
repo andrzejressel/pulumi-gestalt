@@ -5,7 +5,7 @@
 pub struct FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibrary {
     /// Configures the manner in which the template library is installed on the cluster.
     /// Possible values are: `INSTALLATION_UNSPECIFIED`, `NOT_INSTALLED`, `ALL`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "installation")]
-    pub r#installation: Box<Option<String>>,
+    pub r#installation: Option<String>,
 }

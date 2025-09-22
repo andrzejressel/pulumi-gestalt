@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetLoadBalancerPoolsPoolLoadShedding {
     /// Percent of traffic to shed 0 - 100.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultPercent")]
-    pub r#default_percent: Box<Option<f64>>,
+    pub r#default_percent: Option<f64>,
     /// Method of shedding traffic. Available values: `""`, `hash`, `random`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultPolicy")]
-    pub r#default_policy: Box<Option<String>>,
+    pub r#default_policy: Option<String>,
     /// Percent of session traffic to shed 0 - 100.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sessionPercent")]
-    pub r#session_percent: Box<Option<f64>>,
+    pub r#session_percent: Option<f64>,
     /// Method of shedding traffic. Available values: `""`, `hash`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sessionPolicy")]
-    pub r#session_policy: Box<Option<String>>,
+    pub r#session_policy: Option<String>,
 }

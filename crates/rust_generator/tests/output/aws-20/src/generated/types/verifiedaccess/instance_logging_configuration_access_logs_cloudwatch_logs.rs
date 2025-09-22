@@ -6,9 +6,9 @@ pub struct InstanceLoggingConfigurationAccessLogsCloudwatchLogs {
     /// Indicates whether logging is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// The name of the CloudWatch Logs Log Group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logGroup")]
-    pub r#log_group: Box<Option<String>>,
+    pub r#log_group: Option<String>,
 }

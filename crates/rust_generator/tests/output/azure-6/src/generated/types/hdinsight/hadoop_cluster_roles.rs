@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HadoopClusterRoles {
     /// A `edge_node` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "edgeNode")]
-    pub r#edge_node: Box<Option<super::super::types::hdinsight::HadoopClusterRolesEdgeNode>>,
+    pub r#edge_node: Option<Box<super::super::types::hdinsight::HadoopClusterRolesEdgeNode>>,
     /// A `head_node` block as defined above.
     #[builder(into)]
     #[serde(rename = "headNode")]

@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OriginRequestPolicyHeadersConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerBehavior")]
-    pub r#header_behavior: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#header_behavior: Option<String>,
+    #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Option<super::super::types::cloudfront::OriginRequestPolicyHeadersConfigHeaders>>,
+    pub r#headers: Option<Box<super::super::types::cloudfront::OriginRequestPolicyHeadersConfigHeaders>>,
 }

@@ -9,12 +9,12 @@ pub struct InternalRangeMigration {
     /// An example /projects/{project}/regions/{region}/subnetworks/{subnet}
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<String>,
+    pub r#source: String,
     /// Resource path of the target resource. The target project can be
     /// different, as in the cases when migrating to peer networks. The resource
     /// may not exist yet.
     /// For example /projects/{project}/regions/{region}/subnetworks/{subnet}
     #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<String>,
+    pub r#target: String,
 }

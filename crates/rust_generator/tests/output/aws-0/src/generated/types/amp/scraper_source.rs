@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScraperSource {
     /// Configuration block for an EKS cluster source. See `eks`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eks")]
-    pub r#eks: Box<Option<super::super::types::amp::ScraperSourceEks>>,
+    pub r#eks: Option<Box<super::super::types::amp::ScraperSourceEks>>,
 }

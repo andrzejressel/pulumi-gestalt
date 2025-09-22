@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupImageRegistryCredential {
     /// The password with which to connect to the registry. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<Option<String>>,
+    pub r#password: Option<String>,
     /// The address to use to connect to the registry without protocol ("https"/"http"). For example: "myacr.acr.io". Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "server")]
-    pub r#server: Box<String>,
+    pub r#server: String,
     /// The identity ID for the private registry. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userAssignedIdentityId")]
-    pub r#user_assigned_identity_id: Box<Option<String>>,
+    pub r#user_assigned_identity_id: Option<String>,
     /// The username with which to connect to the registry. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

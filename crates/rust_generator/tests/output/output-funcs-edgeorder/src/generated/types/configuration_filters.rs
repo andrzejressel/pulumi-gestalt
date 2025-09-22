@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationFilters {
     /// Filters specific to product
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "filterableProperty")]
-    pub r#filterable_property: Box<Option<Vec<super::types::FilterableProperty>>>,
+    pub r#filterable_property: Option<Vec<super::types::FilterableProperty>>,
     /// Product hierarchy information
     #[builder(into)]
     #[serde(rename = "hierarchyInformation")]

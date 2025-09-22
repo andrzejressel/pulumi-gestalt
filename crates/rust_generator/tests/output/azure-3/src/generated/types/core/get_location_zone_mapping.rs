@@ -6,9 +6,9 @@ pub struct GetLocationZoneMapping {
     /// The logical zone id for the availability zone
     #[builder(into)]
     #[serde(rename = "logicalZone")]
-    pub r#logical_zone: Box<String>,
+    pub r#logical_zone: String,
     /// The fully qualified physical zone id of availability zone to which logical zone id is mapped to
     #[builder(into)]
     #[serde(rename = "physicalZone")]
-    pub r#physical_zone: Box<String>,
+    pub r#physical_zone: String,
 }

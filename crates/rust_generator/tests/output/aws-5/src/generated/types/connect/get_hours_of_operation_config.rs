@@ -6,13 +6,13 @@ pub struct GetHoursOfOperationConfig {
     /// Day that the hours of operation applies to.
     #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<String>,
+    pub r#day: String,
     /// End time block specifies the time that your contact center closes. The `end_time` is documented below.
     #[builder(into)]
     #[serde(rename = "endTimes")]
-    pub r#end_times: Box<Vec<super::super::types::connect::GetHoursOfOperationConfigEndTime>>,
+    pub r#end_times: Vec<super::super::types::connect::GetHoursOfOperationConfigEndTime>,
     /// Start time block specifies the time that your contact center opens. The `start_time` is documented below.
     #[builder(into)]
     #[serde(rename = "startTimes")]
-    pub r#start_times: Box<Vec<super::super::types::connect::GetHoursOfOperationConfigStartTime>>,
+    pub r#start_times: Vec<super::super::types::connect::GetHoursOfOperationConfigStartTime>,
 }

@@ -6,5 +6,5 @@ pub struct FlowSourceFlowConfigSourceConnectorPropertiesSapoDataParallelismConfi
     /// he maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.
     #[builder(into)]
     #[serde(rename = "maxPageSize")]
-    pub r#max_page_size: Box<i32>,
+    pub r#max_page_size: i32,
 }

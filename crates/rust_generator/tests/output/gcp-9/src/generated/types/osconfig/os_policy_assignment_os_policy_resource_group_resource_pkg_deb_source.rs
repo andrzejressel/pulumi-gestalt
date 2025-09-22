@@ -6,21 +6,21 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource {
     /// Defaults to false. When false, files are
     /// subject to validations based on the file type: Remote: A checksum must be
     /// specified. Cloud Storage: An object generation number must be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowInsecure")]
-    pub r#allow_insecure: Box<Option<bool>>,
+    pub r#allow_insecure: Option<bool>,
     /// A Cloud Storage object. Structure is
     /// documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gcs")]
-    pub r#gcs: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSourceGcs>>,
+    pub r#gcs: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSourceGcs>>,
     /// A local path within the VM to use.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "localPath")]
-    pub r#local_path: Box<Option<String>>,
+    pub r#local_path: Option<String>,
     /// A generic remote file. Structure is
     /// documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "remote")]
-    pub r#remote: Box<Option<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSourceRemote>>,
+    pub r#remote: Option<Box<super::super::types::osconfig::OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSourceRemote>>,
 }

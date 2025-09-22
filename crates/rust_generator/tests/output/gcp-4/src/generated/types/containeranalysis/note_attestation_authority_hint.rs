@@ -9,5 +9,5 @@ pub struct NoteAttestationAuthorityHint {
     /// - - -
     #[builder(into)]
     #[serde(rename = "humanReadableName")]
-    pub r#human_readable_name: Box<String>,
+    pub r#human_readable_name: String,
 }

@@ -6,9 +6,9 @@ pub struct AccountCustomDomain {
     /// The Custom Domain Name to use for the Storage Account, which will be validated by Azure.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Should the Custom Domain Name be validated by using indirect CNAME validation?
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useSubdomain")]
-    pub r#use_subdomain: Box<Option<bool>>,
+    pub r#use_subdomain: Option<bool>,
 }

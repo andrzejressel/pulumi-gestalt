@@ -6,9 +6,9 @@ pub struct GetMetastoreServiceScalingConfigAutoscalingConfigLimitConfig {
     /// The maximum scaling factor that the service will autoscale to. The default value is 6.0.
     #[builder(into)]
     #[serde(rename = "maxScalingFactor")]
-    pub r#max_scaling_factor: Box<f64>,
+    pub r#max_scaling_factor: f64,
     /// The minimum scaling factor that the service will autoscale to. The default value is 0.1.
     #[builder(into)]
     #[serde(rename = "minScalingFactor")]
-    pub r#min_scaling_factor: Box<f64>,
+    pub r#min_scaling_factor: f64,
 }

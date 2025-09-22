@@ -6,9 +6,9 @@ pub struct GetCertificateAuthorityRevocationConfigurationOcspConfiguration {
     /// Boolean value that specifies whether a custom OCSP responder is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// A CNAME specifying a customized OCSP domain.
     #[builder(into)]
     #[serde(rename = "ocspCustomCname")]
-    pub r#ocsp_custom_cname: Box<String>,
+    pub r#ocsp_custom_cname: String,
 }

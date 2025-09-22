@@ -4,20 +4,20 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TransferJobTransferSpecTransferOptions {
     /// Whether objects should be deleted from the source after they are transferred to the sink. Note that this option and `delete_objects_unique_in_sink` are mutually exclusive.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deleteObjectsFromSourceAfterTransfer")]
-    pub r#delete_objects_from_source_after_transfer: Box<Option<bool>>,
+    pub r#delete_objects_from_source_after_transfer: Option<bool>,
     /// Whether objects that exist only in the sink should be deleted. Note that this option and
     /// `delete_objects_from_source_after_transfer` are mutually exclusive.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deleteObjectsUniqueInSink")]
-    pub r#delete_objects_unique_in_sink: Box<Option<bool>>,
+    pub r#delete_objects_unique_in_sink: Option<bool>,
     /// Whether overwriting objects that already exist in the sink is allowed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "overwriteObjectsAlreadyExistingInSink")]
-    pub r#overwrite_objects_already_existing_in_sink: Box<Option<bool>>,
+    pub r#overwrite_objects_already_existing_in_sink: Option<bool>,
     /// When to overwrite objects that already exist in the sink. If not set, overwrite behavior is determined by `overwrite_objects_already_existing_in_sink`. Possible values: ALWAYS, DIFFERENT, NEVER.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "overwriteWhen")]
-    pub r#overwrite_when: Box<Option<String>>,
+    pub r#overwrite_when: Option<String>,
 }

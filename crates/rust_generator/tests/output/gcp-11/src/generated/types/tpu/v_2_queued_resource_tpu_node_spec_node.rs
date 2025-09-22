@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2QueuedResourceTpuNodeSpecNode {
     /// TPU accelerator type for the TPU. If not specified, this defaults to 'v2-8'.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acceleratorType")]
-    pub r#accelerator_type: Box<Option<String>>,
+    pub r#accelerator_type: Option<String>,
     /// Text description of the TPU.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Runtime version for the TPU.
     #[builder(into)]
     #[serde(rename = "runtimeVersion")]
-    pub r#runtime_version: Box<String>,
+    pub r#runtime_version: String,
 }

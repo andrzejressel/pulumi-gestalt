@@ -6,5 +6,5 @@ pub struct DomainMatchingAutoMergingConsolidation {
     /// A list of matching criteria.
     #[builder(into)]
     #[serde(rename = "matchingAttributesLists")]
-    pub r#matching_attributes_lists: Box<Vec<Vec<String>>>,
+    pub r#matching_attributes_lists: Vec<Vec<String>>,
 }

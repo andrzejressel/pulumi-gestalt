@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointConfigurationDataCaptureConfigCaptureContentTypeHeader {
     /// The CSV content type headers to capture.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "csvContentTypes")]
-    pub r#csv_content_types: Box<Option<Vec<String>>>,
+    pub r#csv_content_types: Option<Vec<String>>,
     /// The JSON content type headers to capture.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "jsonContentTypes")]
-    pub r#json_content_types: Box<Option<Vec<String>>>,
+    pub r#json_content_types: Option<Vec<String>>,
 }

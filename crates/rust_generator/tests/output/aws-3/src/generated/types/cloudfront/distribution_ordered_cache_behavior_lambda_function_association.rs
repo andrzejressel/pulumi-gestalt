@@ -6,13 +6,13 @@ pub struct DistributionOrderedCacheBehaviorLambdaFunctionAssociation {
     /// Specific event to trigger this function. Valid values: `viewer-request`, `origin-request`, `viewer-response`, `origin-response`.
     #[builder(into)]
     #[serde(rename = "eventType")]
-    pub r#event_type: Box<String>,
+    pub r#event_type: String,
     /// When set to true it exposes the request body to the lambda function. Defaults to false. Valid values: `true`, `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includeBody")]
-    pub r#include_body: Box<Option<bool>>,
+    pub r#include_body: Option<bool>,
     /// ARN of the Lambda function.
     #[builder(into)]
     #[serde(rename = "lambdaArn")]
-    pub r#lambda_arn: Box<String>,
+    pub r#lambda_arn: String,
 }

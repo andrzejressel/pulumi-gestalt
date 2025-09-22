@@ -6,9 +6,9 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourcePkgRpm {
     /// Whether dependencies should also be installed. -
     /// install when false: `rpm --upgrade --replacepkgs package.rpm` - install when
     /// true: `yum -y install package.rpm` or `zypper -y install package.rpm`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pullDeps")]
-    pub r#pull_deps: Box<Option<bool>>,
+    pub r#pull_deps: Option<bool>,
     /// An rpm package. Structure is
     /// documented below.
     #[builder(into)]

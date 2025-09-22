@@ -6,9 +6,9 @@ pub struct SnapshotImportDiskContainerUserBucket {
     /// The name of the Amazon S3 bucket where the disk image is located.
     #[builder(into)]
     #[serde(rename = "s3Bucket")]
-    pub r#s_3_bucket: Box<String>,
+    pub r#s_3_bucket: String,
     /// The file name of the disk image.
     #[builder(into)]
     #[serde(rename = "s3Key")]
-    pub r#s_3_key: Box<String>,
+    pub r#s_3_key: String,
 }

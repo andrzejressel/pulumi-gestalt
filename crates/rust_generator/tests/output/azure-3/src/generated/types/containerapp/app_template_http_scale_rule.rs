@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppTemplateHttpScaleRule {
     /// Zero or more `authentication` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authentications")]
-    pub r#authentications: Box<Option<Vec<super::super::types::containerapp::AppTemplateHttpScaleRuleAuthentication>>>,
+    pub r#authentications: Option<Vec<super::super::types::containerapp::AppTemplateHttpScaleRuleAuthentication>>,
     /// The number of concurrent requests to trigger scaling.
     #[builder(into)]
     #[serde(rename = "concurrentRequests")]
-    pub r#concurrent_requests: Box<String>,
+    pub r#concurrent_requests: String,
     /// The name of the Scaling Rule
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

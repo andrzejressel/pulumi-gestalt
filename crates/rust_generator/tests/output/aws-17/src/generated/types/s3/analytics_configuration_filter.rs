@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AnalyticsConfigurationFilter {
     /// Object prefix for filtering.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
     /// Set of object tags for filtering.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#tags: Option<std::collections::HashMap<String, String>>,
 }

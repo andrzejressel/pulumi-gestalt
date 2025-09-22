@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebhookScopeConfiguration {
     /// The domain of the GitHub Enterprise organization. Required if your project's source type is GITHUB_ENTERPRISE.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<Option<String>>,
+    pub r#domain: Option<String>,
     /// The name of either the enterprise or organization.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The type of scope for a GitHub webhook. Valid values for this parameter are: `GITHUB_ORGANIZATION`, `GITHUB_GLOBAL`.
     #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<String>,
+    pub r#scope: String,
 }

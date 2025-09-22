@@ -9,19 +9,19 @@ pub struct BackendServiceSecuritySettings {
     /// 
     /// 
     /// <a name="nested_aws_v4_authentication"></a>The `aws_v4_authentication` block supports:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "awsV4Authentication")]
-    pub r#aws_v_4_authentication: Box<Option<super::super::types::compute::BackendServiceSecuritySettingsAwsV4Authentication>>,
+    pub r#aws_v_4_authentication: Option<Box<super::super::types::compute::BackendServiceSecuritySettingsAwsV4Authentication>>,
     /// ClientTlsPolicy is a resource that specifies how a client should authenticate
     /// connections to backends of a service. This resource itself does not affect
     /// configuration unless it is attached to a backend service resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientTlsPolicy")]
-    pub r#client_tls_policy: Box<Option<String>>,
+    pub r#client_tls_policy: Option<String>,
     /// A list of alternate names to verify the subject identity in the certificate.
     /// If specified, the client will verify that the server certificate's subject
     /// alt name matches one of the specified values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subjectAltNames")]
-    pub r#subject_alt_names: Box<Option<Vec<String>>>,
+    pub r#subject_alt_names: Option<Vec<String>>,
 }

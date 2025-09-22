@@ -6,21 +6,21 @@ pub struct TopicRuleTimestream {
     /// The name of an Amazon Timestream database.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// Configuration blocks with metadata attributes of the time series that are written in each measure record. Nested arguments below.
     #[builder(into)]
     #[serde(rename = "dimensions")]
-    pub r#dimensions: Box<Vec<super::super::types::iot::TopicRuleTimestreamDimension>>,
+    pub r#dimensions: Vec<super::super::types::iot::TopicRuleTimestreamDimension>,
     /// The ARN of the role that grants permission to write to the Amazon Timestream database table.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// The name of the database table into which to write the measure records.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
     /// Configuration block specifying an application-defined value to replace the default value assigned to the Timestream record's timestamp in the time column. Nested arguments below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timestamp")]
-    pub r#timestamp: Box<Option<super::super::types::iot::TopicRuleTimestreamTimestamp>>,
+    pub r#timestamp: Option<Box<super::super::types::iot::TopicRuleTimestreamTimestamp>>,
 }

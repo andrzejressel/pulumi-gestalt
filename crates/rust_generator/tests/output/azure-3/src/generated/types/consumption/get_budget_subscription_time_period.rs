@@ -6,9 +6,9 @@ pub struct GetBudgetSubscriptionTimePeriod {
     /// The end date for the budget.
     #[builder(into)]
     #[serde(rename = "endDate")]
-    pub r#end_date: Box<String>,
+    pub r#end_date: String,
     /// The start date for the budget.
     #[builder(into)]
     #[serde(rename = "startDate")]
-    pub r#start_date: Box<String>,
+    pub r#start_date: String,
 }

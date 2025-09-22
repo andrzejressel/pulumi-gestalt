@@ -6,9 +6,9 @@ pub struct ResourceGroupCostManagementViewDatasetSorting {
     /// Direction of sort. Possible values are `Ascending` and `Descending`.
     #[builder(into)]
     #[serde(rename = "direction")]
-    pub r#direction: Box<String>,
+    pub r#direction: String,
     /// The name of the column to sort.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

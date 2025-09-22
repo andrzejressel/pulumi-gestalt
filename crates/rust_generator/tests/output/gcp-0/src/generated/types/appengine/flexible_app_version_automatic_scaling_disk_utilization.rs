@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlexibleAppVersionAutomaticScalingDiskUtilization {
     /// Target bytes read per second.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetReadBytesPerSecond")]
-    pub r#target_read_bytes_per_second: Box<Option<i32>>,
+    pub r#target_read_bytes_per_second: Option<i32>,
     /// Target ops read per seconds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetReadOpsPerSecond")]
-    pub r#target_read_ops_per_second: Box<Option<i32>>,
+    pub r#target_read_ops_per_second: Option<i32>,
     /// Target bytes written per second.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetWriteBytesPerSecond")]
-    pub r#target_write_bytes_per_second: Box<Option<i32>>,
+    pub r#target_write_bytes_per_second: Option<i32>,
     /// Target ops written per second.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetWriteOpsPerSecond")]
-    pub r#target_write_ops_per_second: Box<Option<i32>>,
+    pub r#target_write_ops_per_second: Option<i32>,
 }

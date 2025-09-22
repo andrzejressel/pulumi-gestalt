@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointNetworkInterface {
     /// Identifier of the Elastic Network Interface (ENI).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkInterfaceId")]
-    pub r#network_interface_id: Box<Option<String>>,
+    pub r#network_interface_id: Option<String>,
 }

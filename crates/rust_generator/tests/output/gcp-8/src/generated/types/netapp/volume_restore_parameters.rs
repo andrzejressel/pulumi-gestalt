@@ -6,13 +6,13 @@ pub struct VolumeRestoreParameters {
     /// Full name of the snapshot to use for creating this volume.
     /// `source_snapshot` and `source_backup` cannot be used simultaneously.
     /// Format: `projects/{{project}}/locations/{{location}}/backupVaults/{{backupVaultId}}/backups/{{backup}}`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceBackup")]
-    pub r#source_backup: Box<Option<String>>,
+    pub r#source_backup: Option<String>,
     /// Full name of the snapshot to use for creating this volume.
     /// `source_snapshot` and `source_backup` cannot be used simultaneously.
     /// Format: `projects/{{project}}/locations/{{location}}/volumes/{{volume}}/snapshots/{{snapshot}}`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sourceSnapshot")]
-    pub r#source_snapshot: Box<Option<String>>,
+    pub r#source_snapshot: Option<String>,
 }

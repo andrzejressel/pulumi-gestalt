@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocation {
     /// Specifies the details for the EFS file being copied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "efsFileLocation")]
-    pub r#efs_file_location: Box<Option<super::super::types::transfer::WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationEfsFileLocation>>,
+    pub r#efs_file_location: Option<Box<super::super::types::transfer::WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationEfsFileLocation>>,
     /// Specifies the details for the S3 file being copied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3FileLocation")]
-    pub r#s_3_file_location: Box<Option<super::super::types::transfer::WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationS3FileLocation>>,
+    pub r#s_3_file_location: Option<Box<super::super::types::transfer::WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationS3FileLocation>>,
 }

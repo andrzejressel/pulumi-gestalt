@@ -5,5 +5,5 @@
 pub struct GetClusterIpAllocationPolicyPodCidrOverprovisionConfig {
     #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<bool>,
+    pub r#disabled: bool,
 }

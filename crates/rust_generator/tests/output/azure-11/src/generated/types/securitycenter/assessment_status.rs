@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AssessmentStatus {
     /// Specifies the cause of the assessment status.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cause")]
-    pub r#cause: Box<Option<String>>,
+    pub r#cause: Option<String>,
     /// Specifies the programmatic code of the assessment status. Possible values are `Healthy`, `Unhealthy` and `NotApplicable`.
     #[builder(into)]
     #[serde(rename = "code")]
-    pub r#code: Box<String>,
+    pub r#code: String,
     /// Specifies the human readable description of the assessment status.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
 }

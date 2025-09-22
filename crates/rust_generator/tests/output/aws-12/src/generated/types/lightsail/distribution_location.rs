@@ -6,9 +6,9 @@ pub struct DistributionLocation {
     /// The Availability Zone. Follows the format us-east-2a (case-sensitive).
     #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<String>,
+    pub r#availability_zone: String,
     /// The AWS Region name.
     #[builder(into)]
     #[serde(rename = "regionName")]
-    pub r#region_name: Box<String>,
+    pub r#region_name: String,
 }

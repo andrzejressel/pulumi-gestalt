@@ -6,5 +6,5 @@ pub struct VirtualNodeSpecListenerConnectionPoolTcp {
     /// Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster. Minimum value of `1`.
     #[builder(into)]
     #[serde(rename = "maxConnections")]
-    pub r#max_connections: Box<i32>,
+    pub r#max_connections: i32,
 }

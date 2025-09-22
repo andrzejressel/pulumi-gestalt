@@ -12,5 +12,5 @@ pub struct TableMaintenanceConfigurationIcebergSnapshotManagement {
     /// Valid values are `enabled` and `disabled`.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

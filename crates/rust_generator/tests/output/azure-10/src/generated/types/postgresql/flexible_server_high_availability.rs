@@ -6,8 +6,8 @@ pub struct FlexibleServerHighAvailability {
     /// The high availability mode for the PostgreSQL Flexible Server. Possible value are `SameZone` or `ZoneRedundant`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
-    #[builder(into, default)]
+    pub r#mode: String,
+    #[builder(into)]
     #[serde(rename = "standbyAvailabilityZone")]
-    pub r#standby_availability_zone: Box<Option<String>>,
+    pub r#standby_availability_zone: Option<String>,
 }

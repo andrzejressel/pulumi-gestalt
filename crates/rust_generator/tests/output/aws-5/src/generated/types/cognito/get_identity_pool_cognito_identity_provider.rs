@@ -5,11 +5,11 @@
 pub struct GetIdentityPoolCognitoIdentityProvider {
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     #[builder(into)]
     #[serde(rename = "providerName")]
-    pub r#provider_name: Box<String>,
+    pub r#provider_name: String,
     #[builder(into)]
     #[serde(rename = "serverSideTokenCheck")]
-    pub r#server_side_token_check: Box<bool>,
+    pub r#server_side_token_check: bool,
 }

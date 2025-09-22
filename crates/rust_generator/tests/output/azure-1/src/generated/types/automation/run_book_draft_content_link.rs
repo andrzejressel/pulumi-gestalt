@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RunBookDraftContentLink {
     /// A `hash` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hash")]
-    pub r#hash: Box<Option<super::super::types::automation::RunBookDraftContentLinkHash>>,
+    pub r#hash: Option<Box<super::super::types::automation::RunBookDraftContentLinkHash>>,
     /// The URI of the runbook content.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
     /// Specifies the version of the content
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MongoRoleDefinitionPrivilegeResource {
     /// The name of the Mongo DB Collection that the Role Definition is applied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "collectionName")]
-    pub r#collection_name: Box<Option<String>>,
+    pub r#collection_name: Option<String>,
     /// The name of the Mongo DB that the Role Definition is applied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dbName")]
-    pub r#db_name: Box<Option<String>>,
+    pub r#db_name: Option<String>,
 }

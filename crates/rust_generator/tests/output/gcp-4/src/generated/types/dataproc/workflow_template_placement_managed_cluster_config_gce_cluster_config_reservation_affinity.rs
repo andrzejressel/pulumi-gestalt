@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigReservationAffinity {
     /// Type of reservation to consume Possible values: TYPE_UNSPECIFIED, NO_RESERVATION, ANY_RESERVATION, SPECIFIC_RESERVATION
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "consumeReservationType")]
-    pub r#consume_reservation_type: Box<Option<String>>,
+    pub r#consume_reservation_type: Option<String>,
     /// Corresponds to the label key of reservation resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<Option<String>>,
+    pub r#key: Option<String>,
     /// Corresponds to the label values of reservation resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<Vec<String>>>,
+    pub r#values: Option<Vec<String>>,
 }

@@ -5,17 +5,17 @@
 pub struct RuntimeVirtualMachine {
     /// (Output)
     /// The unique identifier of the Managed Compute Engine instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceId")]
-    pub r#instance_id: Box<Option<String>>,
+    pub r#instance_id: Option<String>,
     /// (Output)
     /// The user-friendly name of the Managed Compute Engine instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceName")]
-    pub r#instance_name: Box<Option<String>>,
+    pub r#instance_name: Option<String>,
     /// Virtual Machine configuration settings.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "virtualMachineConfig")]
-    pub r#virtual_machine_config: Box<Option<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfig>>,
+    pub r#virtual_machine_config: Option<Box<super::super::types::notebooks::RuntimeVirtualMachineVirtualMachineConfig>>,
 }

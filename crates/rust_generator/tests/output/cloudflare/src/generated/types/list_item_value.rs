@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListItemValue {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "asn")]
-    pub r#asn: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#asn: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "hostnames")]
-    pub r#hostnames: Box<Option<Vec<super::types::ListItemValueHostname>>>,
-    #[builder(into, default)]
+    pub r#hostnames: Option<Vec<super::types::ListItemValueHostname>>,
+    #[builder(into)]
     #[serde(rename = "ip")]
-    pub r#ip: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#ip: Option<String>,
+    #[builder(into)]
     #[serde(rename = "redirects")]
-    pub r#redirects: Box<Option<Vec<super::types::ListItemValueRedirect>>>,
+    pub r#redirects: Option<Vec<super::types::ListItemValueRedirect>>,
 }

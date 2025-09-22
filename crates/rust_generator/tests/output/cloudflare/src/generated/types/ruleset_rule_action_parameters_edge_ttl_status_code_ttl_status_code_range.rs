@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesetRuleActionParametersEdgeTtlStatusCodeTtlStatusCodeRange {
     /// From status code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "from")]
-    pub r#from: Box<Option<i32>>,
+    pub r#from: Option<i32>,
     /// To status code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "to")]
-    pub r#to: Box<Option<i32>>,
+    pub r#to: Option<i32>,
 }

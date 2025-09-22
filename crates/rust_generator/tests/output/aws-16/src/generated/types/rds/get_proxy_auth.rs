@@ -5,20 +5,20 @@
 pub struct GetProxyAuth {
     #[builder(into)]
     #[serde(rename = "authScheme")]
-    pub r#auth_scheme: Box<String>,
+    pub r#auth_scheme: String,
     #[builder(into)]
     #[serde(rename = "clientPasswordAuthType")]
-    pub r#client_password_auth_type: Box<String>,
+    pub r#client_password_auth_type: String,
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     #[builder(into)]
     #[serde(rename = "iamAuth")]
-    pub r#iam_auth: Box<String>,
+    pub r#iam_auth: String,
     #[builder(into)]
     #[serde(rename = "secretArn")]
-    pub r#secret_arn: Box<String>,
+    pub r#secret_arn: String,
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

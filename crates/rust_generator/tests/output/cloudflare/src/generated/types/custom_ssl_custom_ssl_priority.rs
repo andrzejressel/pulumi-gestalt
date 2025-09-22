@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CustomSslCustomSslPriority {
     /// The ID of this resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<Option<i32>>,
+    pub r#priority: Option<i32>,
 }

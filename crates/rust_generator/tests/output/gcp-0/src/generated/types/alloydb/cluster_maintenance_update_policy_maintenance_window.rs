@@ -7,7 +7,7 @@ pub struct ClusterMaintenanceUpdatePolicyMaintenanceWindow {
     /// Possible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.
     #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<String>,
+    pub r#day: String,
     /// Preferred time to start the maintenance operation on the specified day. Maintenance will start within 1 hour of this time.
     /// Structure is documented below.
     #[builder(into)]

@@ -6,5 +6,5 @@ pub struct GetResponseHeadersPolicySecurityHeadersConfigContentTypeOption {
     /// Whether CloudFront overrides the X-XSS-Protection HTTP response header received from the origin with the one specified in this response headers policy.
     #[builder(into)]
     #[serde(rename = "override")]
-    pub r#override_: Box<bool>,
+    pub r#override_: bool,
 }

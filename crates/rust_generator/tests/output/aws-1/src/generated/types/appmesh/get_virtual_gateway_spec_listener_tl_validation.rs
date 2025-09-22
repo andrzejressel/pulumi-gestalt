@@ -5,8 +5,8 @@
 pub struct GetVirtualGatewaySpecListenerTlValidation {
     #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecListenerTlValidationSubjectAlternativeName>>,
+    pub r#subject_alternative_names: Vec<super::super::types::appmesh::GetVirtualGatewaySpecListenerTlValidationSubjectAlternativeName>,
     #[builder(into)]
     #[serde(rename = "trusts")]
-    pub r#trusts: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecListenerTlValidationTrust>>,
+    pub r#trusts: Vec<super::super::types::appmesh::GetVirtualGatewaySpecListenerTlValidationTrust>,
 }

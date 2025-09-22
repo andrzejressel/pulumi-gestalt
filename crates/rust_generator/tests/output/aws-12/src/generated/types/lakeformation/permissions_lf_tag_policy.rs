@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PermissionsLfTagPolicy {
     /// Identifier for the Data Catalog. By default, it is the account ID of the caller.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "catalogId")]
-    pub r#catalog_id: Box<Option<String>>,
+    pub r#catalog_id: Option<String>,
     /// A list of tag conditions that apply to the resource's tag policy. Configuration block for tag conditions that apply to the policy. See `expression` below.
     /// 
     /// The following argument is optional:
     #[builder(into)]
     #[serde(rename = "expressions")]
-    pub r#expressions: Box<Vec<super::super::types::lakeformation::PermissionsLfTagPolicyExpression>>,
+    pub r#expressions: Vec<super::super::types::lakeformation::PermissionsLfTagPolicyExpression>,
     /// The resource type for which the tag policy applies. Valid values are `DATABASE` and `TABLE`.
     #[builder(into)]
     #[serde(rename = "resourceType")]
-    pub r#resource_type: Box<String>,
+    pub r#resource_type: String,
 }

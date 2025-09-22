@@ -6,25 +6,25 @@ pub struct GetReportPlanReportSetting {
     /// (Optional) Specifies the list of accounts a report covers.
     #[builder(into)]
     #[serde(rename = "accounts")]
-    pub r#accounts: Box<Vec<String>>,
+    pub r#accounts: Vec<String>,
     /// ARNs of the frameworks a report covers.
     #[builder(into)]
     #[serde(rename = "frameworkArns")]
-    pub r#framework_arns: Box<Vec<String>>,
+    pub r#framework_arns: Vec<String>,
     /// Specifies the number of frameworks a report covers.
     #[builder(into)]
     #[serde(rename = "numberOfFrameworks")]
-    pub r#number_of_frameworks: Box<i32>,
+    pub r#number_of_frameworks: i32,
     /// (Optional) Specifies the list of Organizational Units a report covers.
     #[builder(into)]
     #[serde(rename = "organizationUnits")]
-    pub r#organization_units: Box<Vec<String>>,
+    pub r#organization_units: Vec<String>,
     /// (Optional) Specifies the list of regions a report covers.
     #[builder(into)]
     #[serde(rename = "regions")]
-    pub r#regions: Box<Vec<String>>,
+    pub r#regions: Vec<String>,
     /// Identifies the report template for the report. Reports are built using a report template.
     #[builder(into)]
     #[serde(rename = "reportTemplate")]
-    pub r#report_template: Box<String>,
+    pub r#report_template: String,
 }

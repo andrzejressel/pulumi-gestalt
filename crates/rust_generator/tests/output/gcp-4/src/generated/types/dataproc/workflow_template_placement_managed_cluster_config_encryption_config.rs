@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkflowTemplatePlacementManagedClusterConfigEncryptionConfig {
     /// The Cloud KMS key name to use for PD disk encryption for all instances in the cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gcePdKmsKeyName")]
-    pub r#gce_pd_kms_key_name: Box<Option<String>>,
+    pub r#gce_pd_kms_key_name: Option<String>,
 }

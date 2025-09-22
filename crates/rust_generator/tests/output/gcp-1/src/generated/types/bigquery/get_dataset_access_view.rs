@@ -6,15 +6,15 @@ pub struct GetDatasetAccessView {
     /// The dataset ID.
     #[builder(into)]
     #[serde(rename = "datasetId")]
-    pub r#dataset_id: Box<String>,
+    pub r#dataset_id: String,
     /// The ID of the project containing this table.
     #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<String>,
+    pub r#project_id: String,
     /// The ID of the table. The ID must contain only letters (a-z,
     /// A-Z), numbers (0-9), or underscores (_). The maximum length
     /// is 1,024 characters.
     #[builder(into)]
     #[serde(rename = "tableId")]
-    pub r#table_id: Box<String>,
+    pub r#table_id: String,
 }

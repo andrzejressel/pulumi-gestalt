@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipelineNotifications {
     /// The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job in this pipeline.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "completed")]
-    pub r#completed: Box<Option<String>>,
+    pub r#completed: Option<String>,
     /// The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition while processing a job in this pipeline.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "error")]
-    pub r#error: Box<Option<String>>,
+    pub r#error: Option<String>,
     /// The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process a job in this pipeline.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "progressing")]
-    pub r#progressing: Box<Option<String>>,
+    pub r#progressing: Option<String>,
     /// The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition while processing a job in this pipeline.
     /// 
     /// The `thumbnail_config` object specifies information about the Amazon S3 bucket in
@@ -26,7 +26,7 @@ pub struct PipelineNotifications {
     /// whether to create thumbnails when you create a job. For more information, see
     /// ThumbnailPattern in the topic Create Job.) If you specify values for
     /// `content_config` and `thumbnail_config`, omit the OutputBucket object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "warning")]
-    pub r#warning: Box<Option<String>>,
+    pub r#warning: Option<String>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GraphQlApiAdditionalAuthenticationProviderUserPoolConfig {
     /// Regular expression for validating the incoming Amazon Cognito User Pool app client ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "appIdClientRegex")]
-    pub r#app_id_client_regex: Box<Option<String>>,
+    pub r#app_id_client_regex: Option<String>,
     /// AWS region in which the user pool was created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "awsRegion")]
-    pub r#aws_region: Box<Option<String>>,
+    pub r#aws_region: Option<String>,
     /// User pool ID.
     #[builder(into)]
     #[serde(rename = "userPoolId")]
-    pub r#user_pool_id: Box<String>,
+    pub r#user_pool_id: String,
 }

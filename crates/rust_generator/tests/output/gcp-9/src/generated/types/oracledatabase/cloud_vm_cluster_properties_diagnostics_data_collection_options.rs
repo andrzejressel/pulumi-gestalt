@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CloudVmClusterPropertiesDiagnosticsDataCollectionOptions {
     /// Indicates whether diagnostic collection is enabled for the VM cluster
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "diagnosticsEventsEnabled")]
-    pub r#diagnostics_events_enabled: Box<Option<bool>>,
+    pub r#diagnostics_events_enabled: Option<bool>,
     /// Indicates whether health monitoring is enabled for the VM cluster
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "healthMonitoringEnabled")]
-    pub r#health_monitoring_enabled: Box<Option<bool>>,
+    pub r#health_monitoring_enabled: Option<bool>,
     /// Indicates whether incident logs and trace collection are enabled for the VM
     /// cluster
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "incidentLogsEnabled")]
-    pub r#incident_logs_enabled: Box<Option<bool>>,
+    pub r#incident_logs_enabled: Option<bool>,
 }

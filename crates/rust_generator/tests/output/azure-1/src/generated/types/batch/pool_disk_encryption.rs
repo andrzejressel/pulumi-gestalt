@@ -6,5 +6,5 @@ pub struct PoolDiskEncryption {
     /// On Linux pool, only \"TemporaryDisk\" is supported; on Windows pool, \"OsDisk\" and \"TemporaryDisk\" must be specified.
     #[builder(into)]
     #[serde(rename = "diskEncryptionTarget")]
-    pub r#disk_encryption_target: Box<String>,
+    pub r#disk_encryption_target: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MaintenanceWindowTaskTaskInvocationParametersLambdaParameters {
     /// Pass client-specific information to the Lambda function that you are invoking.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientContext")]
-    pub r#client_context: Box<Option<String>>,
+    pub r#client_context: Option<String>,
     /// JSON to provide to your Lambda function as input.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "payload")]
-    pub r#payload: Box<Option<String>>,
+    pub r#payload: Option<String>,
     /// Specify a Lambda function version or alias name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "qualifier")]
-    pub r#qualifier: Box<Option<String>>,
+    pub r#qualifier: Option<String>,
 }

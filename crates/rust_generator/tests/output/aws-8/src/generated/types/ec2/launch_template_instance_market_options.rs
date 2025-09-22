@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LaunchTemplateInstanceMarketOptions {
     /// The market type. Can be `spot`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "marketType")]
-    pub r#market_type: Box<Option<String>>,
+    pub r#market_type: Option<String>,
     /// The options for [Spot Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "spotOptions")]
-    pub r#spot_options: Box<Option<super::super::types::ec2::LaunchTemplateInstanceMarketOptionsSpotOptions>>,
+    pub r#spot_options: Option<Box<super::super::types::ec2::LaunchTemplateInstanceMarketOptionsSpotOptions>>,
 }

@@ -6,9 +6,9 @@ pub struct GetForwardingRulesRuleServiceDirectoryRegistration {
     /// Service Directory namespace to register the forwarding rule under.
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
     /// Service Directory service to register the forwarding rule under.
     #[builder(into)]
     #[serde(rename = "service")]
-    pub r#service: Box<String>,
+    pub r#service: String,
 }

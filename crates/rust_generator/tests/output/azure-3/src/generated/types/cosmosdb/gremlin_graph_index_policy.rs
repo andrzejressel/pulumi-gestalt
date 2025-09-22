@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GremlinGraphIndexPolicy {
     /// Indicates if the indexing policy is automatic. Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "automatic")]
-    pub r#automatic: Box<Option<bool>>,
+    pub r#automatic: Option<bool>,
     /// One or more `composite_index` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "compositeIndices")]
-    pub r#composite_indices: Box<Option<Vec<super::super::types::cosmosdb::GremlinGraphIndexPolicyCompositeIndex>>>,
+    pub r#composite_indices: Option<Vec<super::super::types::cosmosdb::GremlinGraphIndexPolicyCompositeIndex>>,
     /// List of paths to exclude from indexing. Required if `indexing_mode` is `Consistent` or `Lazy`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "excludedPaths")]
-    pub r#excluded_paths: Box<Option<Vec<String>>>,
+    pub r#excluded_paths: Option<Vec<String>>,
     /// List of paths to include in the indexing. Required if `indexing_mode` is `Consistent` or `Lazy`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includedPaths")]
-    pub r#included_paths: Box<Option<Vec<String>>>,
+    pub r#included_paths: Option<Vec<String>>,
     /// Indicates the indexing mode. Possible values include: `Consistent`, `Lazy`, `None`.
     #[builder(into)]
     #[serde(rename = "indexingMode")]
-    pub r#indexing_mode: Box<String>,
+    pub r#indexing_mode: String,
     /// One or more `spatial_index` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "spatialIndices")]
-    pub r#spatial_indices: Box<Option<Vec<super::super::types::cosmosdb::GremlinGraphIndexPolicySpatialIndex>>>,
+    pub r#spatial_indices: Option<Vec<super::super::types::cosmosdb::GremlinGraphIndexPolicySpatialIndex>>,
 }

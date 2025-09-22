@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeviceAwsLocation {
     /// The Amazon Resource Name (ARN) of the subnet that the device is located in.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetArn")]
-    pub r#subnet_arn: Box<Option<String>>,
+    pub r#subnet_arn: Option<String>,
     /// The Zone that the device is located in. Specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<Option<String>>,
+    pub r#zone: Option<String>,
 }

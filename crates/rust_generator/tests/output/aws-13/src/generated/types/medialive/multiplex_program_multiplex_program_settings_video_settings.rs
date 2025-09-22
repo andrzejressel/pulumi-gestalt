@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MultiplexProgramMultiplexProgramSettingsVideoSettings {
     /// Constant bitrate value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "constantBitrate")]
-    pub r#constant_bitrate: Box<Option<i32>>,
+    pub r#constant_bitrate: Option<i32>,
     /// Statmux settings. See Statmux Settings for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statmuxSettings")]
-    pub r#statmux_settings: Box<Option<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsVideoSettingsStatmuxSettings>>,
+    pub r#statmux_settings: Option<Box<super::super::types::medialive::MultiplexProgramMultiplexProgramSettingsVideoSettingsStatmuxSettings>>,
 }

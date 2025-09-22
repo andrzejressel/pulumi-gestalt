@@ -3,11 +3,11 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSalesforce {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceUrl")]
-    pub r#instance_url: Box<Option<String>>,
+    pub r#instance_url: Option<String>,
     /// Indicates whether the connector profile applies to a sandbox or production environment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isSandboxEnvironment")]
-    pub r#is_sandbox_environment: Box<Option<bool>>,
+    pub r#is_sandbox_environment: Option<bool>,
 }

@@ -6,13 +6,13 @@ pub struct MonitorUser {
     /// Email of the user used by Datadog for contacting them if needed. Changing this forces a new Datadog Monitor to be created.
     #[builder(into)]
     #[serde(rename = "email")]
-    pub r#email: Box<String>,
+    pub r#email: String,
     /// The name which should be used for this user_info. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Phone number of the user used by Datadog for contacting them if needed. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "phoneNumber")]
-    pub r#phone_number: Box<Option<String>>,
+    pub r#phone_number: Option<String>,
 }

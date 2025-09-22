@@ -6,13 +6,13 @@ pub struct V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFai
     /// Which attempt to configure. Valid values are `Initial`, `Retry1`, `Retry2`, `Retry3`, `Retry4`, `Retry5`.
     #[builder(into)]
     #[serde(rename = "mapBlockKey")]
-    pub r#map_block_key: Box<String>,
+    pub r#map_block_key: String,
     /// When the shape value is `List`, `values` contains a list of slot values. When the value is `Scalar`, `value` contains a single value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "shape")]
-    pub r#shape: Box<Option<String>>,
+    pub r#shape: Option<String>,
     /// Configuration block for the current value of the slot. See `value`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentSlotValue>>,
+    pub r#value: Option<Box<super::super::types::lex::V2ModelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentSlotValue>>,
 }

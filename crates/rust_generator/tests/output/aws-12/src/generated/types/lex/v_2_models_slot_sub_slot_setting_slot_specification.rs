@@ -5,14 +5,14 @@
 pub struct V2ModelsSlotSubSlotSettingSlotSpecification {
     #[builder(into)]
     #[serde(rename = "mapBlockKey")]
-    pub r#map_block_key: Box<String>,
+    pub r#map_block_key: String,
     /// Unique identifier assigned to the slot type.
     #[builder(into)]
     #[serde(rename = "slotTypeId")]
-    pub r#slot_type_id: Box<String>,
+    pub r#slot_type_id: String,
     /// Elicitation setting details for constituent sub slots of a composite slot.
     /// See the `value_elicitation_setting` argument reference below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "valueElicitationSettings")]
-    pub r#value_elicitation_settings: Box<Option<Vec<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSetting>>>,
+    pub r#value_elicitation_settings: Option<Vec<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSetting>>,
 }

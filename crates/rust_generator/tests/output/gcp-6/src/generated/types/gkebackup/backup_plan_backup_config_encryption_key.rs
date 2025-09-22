@@ -6,5 +6,5 @@ pub struct BackupPlanBackupConfigEncryptionKey {
     /// Google Cloud KMS encryption key. Format: projects/*/locations/*/keyRings/*/cryptoKeys/*
     #[builder(into)]
     #[serde(rename = "gcpKmsEncryptionKey")]
-    pub r#gcp_kms_encryption_key: Box<String>,
+    pub r#gcp_kms_encryption_key: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationSetSuppressionOptions {
     /// A list that contains the reasons that email addresses are automatically added to the suppression list for your account. Valid values: `BOUNCE`, `COMPLAINT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "suppressedReasons")]
-    pub r#suppressed_reasons: Box<Option<Vec<String>>>,
+    pub r#suppressed_reasons: Option<Vec<String>>,
 }

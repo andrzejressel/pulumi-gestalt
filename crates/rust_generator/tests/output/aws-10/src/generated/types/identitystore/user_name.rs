@@ -6,27 +6,27 @@ pub struct UserName {
     /// The family name of the user.
     #[builder(into)]
     #[serde(rename = "familyName")]
-    pub r#family_name: Box<String>,
+    pub r#family_name: String,
     /// The name that is typically displayed when the name is shown for display.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "formatted")]
-    pub r#formatted: Box<Option<String>>,
+    pub r#formatted: Option<String>,
     /// The given name of the user.
     /// 
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "givenName")]
-    pub r#given_name: Box<String>,
+    pub r#given_name: String,
     /// The honorific prefix of the user.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "honorificPrefix")]
-    pub r#honorific_prefix: Box<Option<String>>,
+    pub r#honorific_prefix: Option<String>,
     /// The honorific suffix of the user.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "honorificSuffix")]
-    pub r#honorific_suffix: Box<Option<String>>,
+    pub r#honorific_suffix: Option<String>,
     /// The middle name of the user.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "middleName")]
-    pub r#middle_name: Box<Option<String>>,
+    pub r#middle_name: Option<String>,
 }

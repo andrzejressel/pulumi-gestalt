@@ -6,9 +6,9 @@ pub struct GetLinkBandwidth {
     /// Download speed in Mbps.
     #[builder(into)]
     #[serde(rename = "downloadSpeed")]
-    pub r#download_speed: Box<i32>,
+    pub r#download_speed: i32,
     /// Upload speed in Mbps.
     #[builder(into)]
     #[serde(rename = "uploadSpeed")]
-    pub r#upload_speed: Box<i32>,
+    pub r#upload_speed: i32,
 }

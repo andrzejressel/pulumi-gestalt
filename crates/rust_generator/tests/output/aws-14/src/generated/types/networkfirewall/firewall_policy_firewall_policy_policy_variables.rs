@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirewallPolicyFirewallPolicyPolicyVariables {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ruleVariables")]
-    pub r#rule_variables: Box<Option<Vec<super::super::types::networkfirewall::FirewallPolicyFirewallPolicyPolicyVariablesRuleVariable>>>,
+    pub r#rule_variables: Option<Vec<super::super::types::networkfirewall::FirewallPolicyFirewallPolicyPolicyVariablesRuleVariable>>,
 }

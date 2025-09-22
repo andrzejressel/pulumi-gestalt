@@ -6,12 +6,12 @@ pub struct AccessPolicyApprovalGroup {
     /// Number of approvals needed.
     #[builder(into)]
     #[serde(rename = "approvalsNeeded")]
-    pub r#approvals_needed: Box<i32>,
+    pub r#approvals_needed: i32,
     /// List of emails to request approval from.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emailAddresses")]
-    pub r#email_addresses: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#email_addresses: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "emailListUuid")]
-    pub r#email_list_uuid: Box<Option<String>>,
+    pub r#email_list_uuid: Option<String>,
 }

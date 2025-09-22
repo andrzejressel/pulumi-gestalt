@@ -5,5 +5,5 @@
 pub struct Type {
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

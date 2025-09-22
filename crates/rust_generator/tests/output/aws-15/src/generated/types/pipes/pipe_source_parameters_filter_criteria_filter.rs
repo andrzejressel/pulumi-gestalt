@@ -6,5 +6,5 @@ pub struct PipeSourceParametersFilterCriteriaFilter {
     /// The event pattern. At most 4096 characters.
     #[builder(into)]
     #[serde(rename = "pattern")]
-    pub r#pattern: Box<String>,
+    pub r#pattern: String,
 }

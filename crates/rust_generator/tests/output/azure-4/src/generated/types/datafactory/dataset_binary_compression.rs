@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DatasetBinaryCompression {
     /// The level of compression. Possible values are `Fastest` and `Optimal`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "level")]
-    pub r#level: Box<Option<String>>,
+    pub r#level: Option<String>,
     /// The type of compression used during transport. Possible values are `BZip2`, `Deflate`, `GZip`, `Tar`, `TarGZip` and `ZipDeflate`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

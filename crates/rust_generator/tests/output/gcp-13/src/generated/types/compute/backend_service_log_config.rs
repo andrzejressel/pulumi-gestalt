@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BackendServiceLogConfig {
     /// Whether to enable logging for the load balancer traffic served by this backend service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<Option<bool>>,
+    pub r#enable: Option<bool>,
     /// This field can only be specified if logging is enabled for this backend service. The value of
     /// the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer
     /// where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported.
     /// The default value is 1.0.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sampleRate")]
-    pub r#sample_rate: Box<Option<f64>>,
+    pub r#sample_rate: Option<f64>,
 }

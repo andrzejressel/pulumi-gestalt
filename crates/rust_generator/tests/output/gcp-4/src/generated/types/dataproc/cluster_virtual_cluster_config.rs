@@ -5,15 +5,15 @@
 pub struct ClusterVirtualClusterConfig {
     /// Configuration of auxiliary services used by this cluster. 
     /// Structure defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "auxiliaryServicesConfig")]
-    pub r#auxiliary_services_config: Box<Option<super::super::types::dataproc::ClusterVirtualClusterConfigAuxiliaryServicesConfig>>,
+    pub r#auxiliary_services_config: Option<Box<super::super::types::dataproc::ClusterVirtualClusterConfigAuxiliaryServicesConfig>>,
     /// The configuration for running the Dataproc cluster on Kubernetes.
     /// Structure defined below.
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kubernetesClusterConfig")]
-    pub r#kubernetes_cluster_config: Box<Option<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfig>>,
+    pub r#kubernetes_cluster_config: Option<Box<super::super::types::dataproc::ClusterVirtualClusterConfigKubernetesClusterConfig>>,
     /// The Cloud Storage staging bucket used to stage files,
     /// such as Hadoop jars, between client machines and the cluster.
     /// Note: If you don't explicitly specify a `staging_bucket`
@@ -21,7 +21,7 @@ pub struct ClusterVirtualClusterConfig {
     /// an auto generated bucket which is solely dedicated to your cluster; it may be shared
     /// with other clusters in the same region/zone also choosing to use the auto generation
     /// option.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stagingBucket")]
-    pub r#staging_bucket: Box<Option<String>>,
+    pub r#staging_bucket: Option<String>,
 }

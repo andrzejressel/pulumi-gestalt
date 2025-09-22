@@ -5,17 +5,17 @@
 pub struct AutonomousDatabasePropertiesConnectionStringAllConnectionString {
     /// The database service provides the highest level of resources to each SQL
     /// statement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "high")]
-    pub r#high: Box<Option<String>>,
+    pub r#high: Option<String>,
     /// The database service provides the least level of resources to each SQL
     /// statement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "low")]
-    pub r#low: Box<Option<String>>,
+    pub r#low: Option<String>,
     /// The database service provides a lower level of resources to each SQL
     /// statement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "medium")]
-    pub r#medium: Box<Option<String>>,
+    pub r#medium: Option<String>,
 }

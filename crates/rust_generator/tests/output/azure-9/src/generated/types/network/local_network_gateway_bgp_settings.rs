@@ -6,13 +6,13 @@ pub struct LocalNetworkGatewayBgpSettings {
     /// The BGP speaker's ASN.
     #[builder(into)]
     #[serde(rename = "asn")]
-    pub r#asn: Box<i32>,
+    pub r#asn: i32,
     /// The BGP peering address and BGP identifier of this BGP speaker.
     #[builder(into)]
     #[serde(rename = "bgpPeeringAddress")]
-    pub r#bgp_peering_address: Box<String>,
+    pub r#bgp_peering_address: String,
     /// The weight added to routes learned from this BGP speaker.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "peerWeight")]
-    pub r#peer_weight: Box<Option<i32>>,
+    pub r#peer_weight: Option<i32>,
 }

@@ -5,8 +5,8 @@
 pub struct GetLaunchTemplateInstanceMarketOption {
     #[builder(into)]
     #[serde(rename = "marketType")]
-    pub r#market_type: Box<String>,
+    pub r#market_type: String,
     #[builder(into)]
     #[serde(rename = "spotOptions")]
-    pub r#spot_options: Box<Vec<super::super::types::ec2::GetLaunchTemplateInstanceMarketOptionSpotOption>>,
+    pub r#spot_options: Vec<super::super::types::ec2::GetLaunchTemplateInstanceMarketOptionSpotOption>,
 }

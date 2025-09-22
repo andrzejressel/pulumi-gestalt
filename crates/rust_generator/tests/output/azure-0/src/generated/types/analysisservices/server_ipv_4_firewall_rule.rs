@@ -6,13 +6,13 @@ pub struct ServerIpv4FirewallRule {
     /// Specifies the name of the firewall rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// End of the firewall rule range as IPv4 address.
     #[builder(into)]
     #[serde(rename = "rangeEnd")]
-    pub r#range_end: Box<String>,
+    pub r#range_end: String,
     /// Start of the firewall rule range as IPv4 address.
     #[builder(into)]
     #[serde(rename = "rangeStart")]
-    pub r#range_start: Box<String>,
+    pub r#range_start: String,
 }

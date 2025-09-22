@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VpnServerConfigurationRadius {
     /// One or more `client_root_certificate` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientRootCertificates")]
-    pub r#client_root_certificates: Box<Option<Vec<super::super::types::network::VpnServerConfigurationRadiusClientRootCertificate>>>,
+    pub r#client_root_certificates: Option<Vec<super::super::types::network::VpnServerConfigurationRadiusClientRootCertificate>>,
     /// One or more `server_root_certificate` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serverRootCertificates")]
-    pub r#server_root_certificates: Box<Option<Vec<super::super::types::network::VpnServerConfigurationRadiusServerRootCertificate>>>,
+    pub r#server_root_certificates: Option<Vec<super::super::types::network::VpnServerConfigurationRadiusServerRootCertificate>>,
     /// One or more `server` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "servers")]
-    pub r#servers: Box<Option<Vec<super::super::types::network::VpnServerConfigurationRadiusServer>>>,
+    pub r#servers: Option<Vec<super::super::types::network::VpnServerConfigurationRadiusServer>>,
 }

@@ -6,5 +6,5 @@ pub struct BackupPolicyKubernetesClusterDefaultRetentionRule {
     /// A `life_cycle` block as defined below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "lifeCycles")]
-    pub r#life_cycles: Box<Vec<super::super::types::dataprotection::BackupPolicyKubernetesClusterDefaultRetentionRuleLifeCycle>>,
+    pub r#life_cycles: Vec<super::super::types::dataprotection::BackupPolicyKubernetesClusterDefaultRetentionRuleLifeCycle>,
 }

@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowMetadataCatalogConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "glueDataCatalog")]
-    pub r#glue_data_catalog: Box<Option<super::super::types::appflow::FlowMetadataCatalogConfigGlueDataCatalog>>,
+    pub r#glue_data_catalog: Option<Box<super::super::types::appflow::FlowMetadataCatalogConfigGlueDataCatalog>>,
 }

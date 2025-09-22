@@ -5,8 +5,8 @@
 pub struct GetVirtualNodeSpecServiceDiscovery {
     #[builder(into)]
     #[serde(rename = "awsCloudMaps")]
-    pub r#aws_cloud_maps: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecServiceDiscoveryAwsCloudMap>>,
+    pub r#aws_cloud_maps: Vec<super::super::types::appmesh::GetVirtualNodeSpecServiceDiscoveryAwsCloudMap>,
     #[builder(into)]
     #[serde(rename = "dns")]
-    pub r#dns: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecServiceDiscoveryDn>>,
+    pub r#dns: Vec<super::super::types::appmesh::GetVirtualNodeSpecServiceDiscoveryDn>,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AlertRuleAnomalyBuiltInPrioritizedExcludeObservation {
     /// The description of the threshold observation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The excluded value per `description`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exclude")]
-    pub r#exclude: Box<Option<String>>,
+    pub r#exclude: Option<String>,
     /// The Name of the built-in Anomaly Alert Rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The prioritized value per `description`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prioritize")]
-    pub r#prioritize: Box<Option<String>>,
+    pub r#prioritize: Option<String>,
 }

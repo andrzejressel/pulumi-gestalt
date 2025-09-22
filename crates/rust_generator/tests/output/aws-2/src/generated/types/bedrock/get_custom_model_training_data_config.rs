@@ -6,5 +6,5 @@ pub struct GetCustomModelTrainingDataConfig {
     /// The S3 URI where the validation data is stored..
     #[builder(into)]
     #[serde(rename = "s3Uri")]
-    pub r#s_3_uri: Box<String>,
+    pub r#s_3_uri: String,
 }

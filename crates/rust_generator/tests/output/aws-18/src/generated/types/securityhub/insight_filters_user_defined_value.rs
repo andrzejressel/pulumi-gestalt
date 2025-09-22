@@ -5,12 +5,12 @@
 pub struct InsightFiltersUserDefinedValue {
     #[builder(into)]
     #[serde(rename = "comparison")]
-    pub r#comparison: Box<String>,
+    pub r#comparison: String,
     /// The key of the map filter. For example, for `ResourceTags`, `Key` identifies the name of the tag. For `UserDefinedFields`, `Key` is the name of the field.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

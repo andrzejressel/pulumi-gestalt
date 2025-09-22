@@ -6,9 +6,9 @@ pub struct GetVirtualHubConnectionRoutingPropagatedRouteTable {
     /// The list of labels assigned to this route table.
     #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Vec<String>>,
+    pub r#labels: Vec<String>,
     /// A list of Route Table IDs associated with this Virtual Hub Connection.
     #[builder(into)]
     #[serde(rename = "routeTableIds")]
-    pub r#route_table_ids: Box<Vec<String>>,
+    pub r#route_table_ids: Vec<String>,
 }

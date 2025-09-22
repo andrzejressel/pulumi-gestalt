@@ -6,13 +6,13 @@ pub struct ScaleSetSku {
     /// Specifies the number of virtual machines in the scale set.
     #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<i32>,
+    pub r#capacity: i32,
     /// Specifies the size of virtual machines in a scale set.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the tier of virtual machines in a scale set. Possible values, `standard` or `basic`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tier")]
-    pub r#tier: Box<Option<String>>,
+    pub r#tier: Option<String>,
 }

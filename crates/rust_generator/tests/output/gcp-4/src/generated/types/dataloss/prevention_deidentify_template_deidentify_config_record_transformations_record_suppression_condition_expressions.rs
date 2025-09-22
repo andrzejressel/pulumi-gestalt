@@ -5,13 +5,13 @@
 pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressions {
     /// Conditions to apply to the expression.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "conditions")]
-    pub r#conditions: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditions>>,
+    pub r#conditions: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditions>>,
     /// The operator to apply to the result of conditions. Default and currently only supported value is AND.
     /// Default value is `AND`.
     /// Possible values are: `AND`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logicalOperator")]
-    pub r#logical_operator: Box<Option<String>>,
+    pub r#logical_operator: Option<String>,
 }

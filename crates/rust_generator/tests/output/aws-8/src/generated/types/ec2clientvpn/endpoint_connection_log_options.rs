@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointConnectionLogOptions {
     /// The name of the CloudWatch Logs log group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudwatchLogGroup")]
-    pub r#cloudwatch_log_group: Box<Option<String>>,
+    pub r#cloudwatch_log_group: Option<String>,
     /// The name of the CloudWatch Logs log stream to which the connection data is published.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudwatchLogStream")]
-    pub r#cloudwatch_log_stream: Box<Option<String>>,
+    pub r#cloudwatch_log_stream: Option<String>,
     /// Indicates whether connection logging is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

@@ -6,5 +6,5 @@ pub struct GuardrailWordPolicyConfigWordsConfig {
     /// The custom word text.
     #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<String>,
+    pub r#text: String,
 }

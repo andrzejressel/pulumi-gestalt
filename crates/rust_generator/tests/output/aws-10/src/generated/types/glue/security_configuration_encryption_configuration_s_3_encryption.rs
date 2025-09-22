@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SecurityConfigurationEncryptionConfigurationS3Encryption {
     /// Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<Option<String>>,
+    pub r#kms_key_arn: Option<String>,
     /// Encryption mode to use for S3 data. Valid values: `DISABLED`, `SSE-KMS`, `SSE-S3`. Default value: `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3EncryptionMode")]
-    pub r#s_3_encryption_mode: Box<Option<String>>,
+    pub r#s_3_encryption_mode: Option<String>,
 }

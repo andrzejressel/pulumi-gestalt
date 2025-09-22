@@ -5,15 +5,15 @@
 pub struct AccessBoundaryPolicyRuleAccessBoundaryRule {
     /// The availability condition further constrains the access allowed by the access boundary rule.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilityCondition")]
-    pub r#availability_condition: Box<Option<super::super::types::iam::AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition>>,
+    pub r#availability_condition: Option<Box<super::super::types::iam::AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition>>,
     /// A list of permissions that may be allowed for use on the specified resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availablePermissions")]
-    pub r#available_permissions: Box<Option<Vec<String>>>,
+    pub r#available_permissions: Option<Vec<String>>,
     /// The full resource name of a Google Cloud resource entity.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availableResource")]
-    pub r#available_resource: Box<Option<String>>,
+    pub r#available_resource: Option<String>,
 }

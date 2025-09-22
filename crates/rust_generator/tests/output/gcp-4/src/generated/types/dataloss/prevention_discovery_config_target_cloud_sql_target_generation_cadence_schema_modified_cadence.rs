@@ -5,12 +5,12 @@
 pub struct PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceSchemaModifiedCadence {
     /// Frequency to regenerate data profiles when the schema is modified. Defaults to monthly.
     /// Possible values are: `UPDATE_FREQUENCY_NEVER`, `UPDATE_FREQUENCY_DAILY`, `UPDATE_FREQUENCY_MONTHLY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "frequency")]
-    pub r#frequency: Box<Option<String>>,
+    pub r#frequency: Option<String>,
     /// The types of schema modifications to consider. Defaults to NEW_COLUMNS.
     /// Each value may be one of: `NEW_COLUMNS`, `REMOVED_COLUMNS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "types")]
-    pub r#types: Box<Option<Vec<String>>>,
+    pub r#types: Option<Vec<String>>,
 }

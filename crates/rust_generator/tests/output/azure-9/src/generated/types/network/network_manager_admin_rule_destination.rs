@@ -6,9 +6,9 @@ pub struct NetworkManagerAdminRuleDestination {
     /// Specifies the address prefix.
     #[builder(into)]
     #[serde(rename = "addressPrefix")]
-    pub r#address_prefix: Box<String>,
+    pub r#address_prefix: String,
     /// Specifies the address prefix type. Possible values are `IPPrefix` and `ServiceTag`. For more information, please see [this document](https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-security-admins#source-and-destination-types).
     #[builder(into)]
     #[serde(rename = "addressPrefixType")]
-    pub r#address_prefix_type: Box<String>,
+    pub r#address_prefix_type: String,
 }

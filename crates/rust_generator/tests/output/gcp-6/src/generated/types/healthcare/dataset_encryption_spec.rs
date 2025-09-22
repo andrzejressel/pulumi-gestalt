@@ -7,7 +7,7 @@ pub struct DatasetEncryptionSpec {
     /// encryption and the dataset must be in the same location. If empty, the default Google encryption
     /// key will be used to secure this dataset. The format is
     /// projects/{projectId}/locations/{locationId}/keyRings/{keyRingId}/cryptoKeys/{keyId}.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyName")]
-    pub r#kms_key_name: Box<Option<String>>,
+    pub r#kms_key_name: Option<String>,
 }

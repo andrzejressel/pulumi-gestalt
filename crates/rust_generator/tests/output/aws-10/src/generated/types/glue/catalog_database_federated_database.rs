@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CatalogDatabaseFederatedDatabase {
     /// Name of the connection to the external metastore.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionName")]
-    pub r#connection_name: Box<Option<String>>,
+    pub r#connection_name: Option<String>,
     /// Unique identifier for the federated database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identifier")]
-    pub r#identifier: Box<Option<String>>,
+    pub r#identifier: Option<String>,
 }

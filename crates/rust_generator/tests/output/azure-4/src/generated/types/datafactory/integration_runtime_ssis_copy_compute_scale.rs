@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IntegrationRuntimeSsisCopyComputeScale {
     /// Specifies the data integration unit number setting reserved for copy activity execution. Supported values are multiples of `4` in range 4-256.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataIntegrationUnit")]
-    pub r#data_integration_unit: Box<Option<i32>>,
+    pub r#data_integration_unit: Option<i32>,
     /// Specifies the time to live (in minutes) setting of integration runtime which will execute copy activity. Possible values are at least `5`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeToLive")]
-    pub r#time_to_live: Box<Option<i32>>,
+    pub r#time_to_live: Option<i32>,
 }

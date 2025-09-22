@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterBrokerNodeGroupInfoStorageInfo {
     /// A block that contains EBS volume information. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ebsStorageInfo")]
-    pub r#ebs_storage_info: Box<Option<super::super::types::msk::ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfo>>,
+    pub r#ebs_storage_info: Option<Box<super::super::types::msk::ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfo>>,
 }

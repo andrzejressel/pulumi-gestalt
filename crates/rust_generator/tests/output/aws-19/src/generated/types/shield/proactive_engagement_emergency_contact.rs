@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ProactiveEngagementEmergencyContact {
     /// Additional notes regarding the contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "contactNotes")]
-    pub r#contact_notes: Box<Option<String>>,
+    pub r#contact_notes: Option<String>,
     /// A valid email address that will be used for this contact.
     #[builder(into)]
     #[serde(rename = "emailAddress")]
-    pub r#email_address: Box<String>,
+    pub r#email_address: String,
     /// A phone number, starting with `+` and up to 15 digits that will be used for this contact.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "phoneNumber")]
-    pub r#phone_number: Box<Option<String>>,
+    pub r#phone_number: Option<String>,
 }

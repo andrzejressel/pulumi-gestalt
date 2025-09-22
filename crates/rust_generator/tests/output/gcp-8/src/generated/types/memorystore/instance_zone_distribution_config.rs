@@ -8,12 +8,12 @@ pub struct InstanceZoneDistributionConfig {
     /// MULTI_ZONE
     /// SINGLE_ZONE
     /// Possible values are: `MULTI_ZONE`, `SINGLE_ZONE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<Option<String>>,
+    pub r#mode: Option<String>,
     /// Optional. Defines zone where all resources will be allocated with SINGLE_ZONE mode.
     /// Ignored for MULTI_ZONE mode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<Option<String>>,
+    pub r#zone: Option<String>,
 }

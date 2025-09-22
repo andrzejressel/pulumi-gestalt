@@ -6,5 +6,5 @@ pub struct TemplateSourceEntitySourceTemplate {
     /// The Amazon Resource Name (ARN) of the resource.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
 }

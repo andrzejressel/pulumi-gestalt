@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetOnDemandOptionsCapacityReservationOptions {
     /// Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity. Valid values: `use-capacity-reservations-first`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "usageStrategy")]
-    pub r#usage_strategy: Box<Option<String>>,
+    pub r#usage_strategy: Option<String>,
 }

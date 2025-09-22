@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MetricDescriptorLabel {
     /// A human-readable description for the label.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The key for this label. The key must not exceed 100 characters. The first character of the key must be an upper- or lower-case letter, the remaining characters must be letters, digits or underscores, and the key must match the regular expression [a-zA-Z][a-zA-Z0-9_]*
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The type of data that can be assigned to the label.
     /// Default value is `STRING`.
     /// Possible values are: `STRING`, `BOOL`, `INT64`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "valueType")]
-    pub r#value_type: Box<Option<String>>,
+    pub r#value_type: Option<String>,
 }

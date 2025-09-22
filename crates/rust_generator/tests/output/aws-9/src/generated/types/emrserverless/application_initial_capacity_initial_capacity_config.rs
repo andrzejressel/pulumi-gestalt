@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationInitialCapacityInitialCapacityConfig {
     /// The resource configuration of the initial capacity configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "workerConfiguration")]
-    pub r#worker_configuration: Box<Option<super::super::types::emrserverless::ApplicationInitialCapacityInitialCapacityConfigWorkerConfiguration>>,
+    pub r#worker_configuration: Option<Box<super::super::types::emrserverless::ApplicationInitialCapacityInitialCapacityConfigWorkerConfiguration>>,
     /// The number of workers in the initial capacity configuration.
     #[builder(into)]
     #[serde(rename = "workerCount")]
-    pub r#worker_count: Box<i32>,
+    pub r#worker_count: i32,
 }

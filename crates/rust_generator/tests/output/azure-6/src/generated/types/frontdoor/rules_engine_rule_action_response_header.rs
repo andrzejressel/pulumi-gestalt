@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesEngineRuleActionResponseHeader {
     /// can be set to `Overwrite`, `Append` or `Delete`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerActionType")]
-    pub r#header_action_type: Box<Option<String>>,
+    pub r#header_action_type: Option<String>,
     /// header name (string).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<Option<String>>,
+    pub r#header_name: Option<String>,
     /// value name (string).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

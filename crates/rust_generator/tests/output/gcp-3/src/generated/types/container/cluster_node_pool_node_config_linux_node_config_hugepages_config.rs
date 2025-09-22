@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterNodePoolNodeConfigLinuxNodeConfigHugepagesConfig {
     /// Amount of 1G hugepages.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hugepageSize1g")]
-    pub r#hugepage_size_1_g: Box<Option<i32>>,
+    pub r#hugepage_size_1_g: Option<i32>,
     /// Amount of 2M hugepages.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hugepageSize2m")]
-    pub r#hugepage_size_2_m: Box<Option<i32>>,
+    pub r#hugepage_size_2_m: Option<i32>,
 }

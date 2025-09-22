@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualGatewaySpecBackendDefaultsClientPolicyTls {
     /// Listener's TLS certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificate")]
-    pub r#certificate: Box<Option<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate>>,
+    pub r#certificate: Option<Box<super::super::types::appmesh::VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate>>,
     /// Whether the policy is enforced. Default is `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enforce")]
-    pub r#enforce: Box<Option<bool>>,
+    pub r#enforce: Option<bool>,
     /// One or more ports that the policy is enforced for.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ports")]
-    pub r#ports: Box<Option<Vec<i32>>>,
+    pub r#ports: Option<Vec<i32>>,
     /// Listener's Transport Layer Security (TLS) validation context.
     #[builder(into)]
     #[serde(rename = "validation")]

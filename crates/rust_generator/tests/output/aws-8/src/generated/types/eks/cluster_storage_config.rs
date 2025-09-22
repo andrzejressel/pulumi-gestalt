@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterStorageConfig {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "blockStorage")]
-    pub r#block_storage: Box<Option<super::super::types::eks::ClusterStorageConfigBlockStorage>>,
+    pub r#block_storage: Option<Box<super::super::types::eks::ClusterStorageConfigBlockStorage>>,
 }

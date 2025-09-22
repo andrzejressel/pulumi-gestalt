@@ -6,9 +6,9 @@ pub struct GroupInsightsConfiguration {
     /// Specifies whether insights are enabled.
     #[builder(into)]
     #[serde(rename = "insightsEnabled")]
-    pub r#insights_enabled: Box<bool>,
+    pub r#insights_enabled: bool,
     /// Specifies whether insight notifications are enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notificationsEnabled")]
-    pub r#notifications_enabled: Box<Option<bool>>,
+    pub r#notifications_enabled: Option<bool>,
 }

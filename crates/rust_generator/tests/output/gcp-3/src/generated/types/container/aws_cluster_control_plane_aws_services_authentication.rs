@@ -6,9 +6,9 @@ pub struct AwsClusterControlPlaneAwsServicesAuthentication {
     /// The Amazon Resource Name (ARN) of the role that the Anthos Multi-Cloud API will assume when managing AWS resources on your account.
     #[builder(into)]
     #[serde(rename = "roleArn")]
-    pub r#role_arn: Box<String>,
+    pub r#role_arn: String,
     /// Optional. An identifier for the assumed role session. When unspecified, it defaults to `multicloud-service-agent`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "roleSessionName")]
-    pub r#role_session_name: Box<Option<String>>,
+    pub r#role_session_name: Option<String>,
 }

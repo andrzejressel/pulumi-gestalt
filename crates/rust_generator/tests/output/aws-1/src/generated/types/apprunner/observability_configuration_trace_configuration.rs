@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ObservabilityConfigurationTraceConfiguration {
     /// Implementation provider chosen for tracing App Runner services. Valid values: `AWSXRAY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vendor")]
-    pub r#vendor: Box<Option<String>>,
+    pub r#vendor: Option<String>,
 }

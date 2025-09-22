@@ -5,15 +5,15 @@
 pub struct GetClusterMaintenancePolicyMaintenanceExclusion {
     #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<String>,
+    pub r#end_time: String,
     #[builder(into)]
     #[serde(rename = "exclusionName")]
-    pub r#exclusion_name: Box<String>,
+    pub r#exclusion_name: String,
     /// Maintenance exclusion related options.
     #[builder(into)]
     #[serde(rename = "exclusionOptions")]
-    pub r#exclusion_options: Box<Vec<super::super::types::container::GetClusterMaintenancePolicyMaintenanceExclusionExclusionOption>>,
+    pub r#exclusion_options: Vec<super::super::types::container::GetClusterMaintenancePolicyMaintenanceExclusionExclusionOption>,
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
 }

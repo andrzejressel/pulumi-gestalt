@@ -6,5 +6,5 @@ pub struct GetJobTemplateTemplateContainerEnvValueSource {
     /// Selects a secret and a specific version from Cloud Secret Manager.
     #[builder(into)]
     #[serde(rename = "secretKeyReves")]
-    pub r#secret_key_reves: Box<Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateContainerEnvValueSourceSecretKeyRef>>,
+    pub r#secret_key_reves: Vec<super::super::types::cloudrunv2::GetJobTemplateTemplateContainerEnvValueSourceSecretKeyRef>,
 }

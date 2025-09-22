@@ -6,10 +6,10 @@ pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFiel
     /// The resource name of the KMS CryptoKey to use for unwrapping.
     #[builder(into)]
     #[serde(rename = "cryptoKeyName")]
-    pub r#crypto_key_name: Box<String>,
+    pub r#crypto_key_name: String,
     /// The wrapped data crypto key.
     /// A base64-encoded string.
     #[builder(into)]
     #[serde(rename = "wrappedKey")]
-    pub r#wrapped_key: Box<String>,
+    pub r#wrapped_key: String,
 }

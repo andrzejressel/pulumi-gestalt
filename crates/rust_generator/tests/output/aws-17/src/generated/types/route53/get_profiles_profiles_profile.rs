@@ -6,17 +6,17 @@ pub struct GetProfilesProfilesProfile {
     /// ARN of the Profile.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// ID of the Profile.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Name of the Profile.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Share status of the Profile. Valid values [AWS docs](https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_Profile.html)
     #[builder(into)]
     #[serde(rename = "shareStatus")]
-    pub r#share_status: Box<String>,
+    pub r#share_status: String,
 }

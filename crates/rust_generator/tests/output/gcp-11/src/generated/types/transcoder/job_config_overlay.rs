@@ -5,12 +5,12 @@
 pub struct JobConfigOverlay {
     /// List of animations. The list should be chronological, without any time overlap.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "animations")]
-    pub r#animations: Box<Option<Vec<super::super::types::transcoder::JobConfigOverlayAnimation>>>,
+    pub r#animations: Option<Vec<super::super::types::transcoder::JobConfigOverlayAnimation>>,
     /// Image overlay.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "image")]
-    pub r#image: Box<Option<super::super::types::transcoder::JobConfigOverlayImage>>,
+    pub r#image: Option<Box<super::super::types::transcoder::JobConfigOverlayImage>>,
 }

@@ -4,44 +4,44 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceConnectionPolicyPscConnection {
     /// The resource reference of the consumer address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "consumerAddress")]
-    pub r#consumer_address: Box<Option<String>>,
+    pub r#consumer_address: Option<String>,
     /// The resource reference of the PSC Forwarding Rule within the consumer VPC.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "consumerForwardingRule")]
-    pub r#consumer_forwarding_rule: Box<Option<String>>,
+    pub r#consumer_forwarding_rule: Option<String>,
     /// The project where the PSC connection is created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "consumerTargetProject")]
-    pub r#consumer_target_project: Box<Option<String>>,
+    pub r#consumer_target_project: Option<String>,
     /// The most recent error during operating this connection.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "error")]
-    pub r#error: Box<Option<super::super::types::networkconnectivity::ServiceConnectionPolicyPscConnectionError>>,
+    pub r#error: Option<Box<super::super::types::networkconnectivity::ServiceConnectionPolicyPscConnectionError>>,
     /// The error info for the latest error during operating this connection.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorInfo")]
-    pub r#error_info: Box<Option<super::super::types::networkconnectivity::ServiceConnectionPolicyPscConnectionErrorInfo>>,
+    pub r#error_info: Option<Box<super::super::types::networkconnectivity::ServiceConnectionPolicyPscConnectionErrorInfo>>,
     /// The error type indicates whether the error is consumer facing, producer
     /// facing or system internal.
     /// Possible values are: `CONNECTION_ERROR_TYPE_UNSPECIFIED`, `ERROR_INTERNAL`, `ERROR_CONSUMER_SIDE`, `ERROR_PRODUCER_SIDE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorType")]
-    pub r#error_type: Box<Option<String>>,
+    pub r#error_type: Option<String>,
     /// The last Compute Engine operation to setup PSC connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gceOperation")]
-    pub r#gce_operation: Box<Option<String>>,
+    pub r#gce_operation: Option<String>,
     /// The PSC connection id of the PSC forwarding rule.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pscConnectionId")]
-    pub r#psc_connection_id: Box<Option<String>>,
+    pub r#psc_connection_id: Option<String>,
     /// The state of the PSC connection.
     /// Possible values are: `STATE_UNSPECIFIED`, `ACTIVE`, `CREATING`, `DELETING`, `FAILED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PageRuleActionsCacheKeyFieldsUser {
     /// `true` - classifies a request as “mobile”, “desktop”, or “tablet” based on the User Agent; defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deviceType")]
-    pub r#device_type: Box<Option<bool>>,
+    pub r#device_type: Option<bool>,
     /// `true` - includes the client’s country, derived from the IP address; defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "geo")]
-    pub r#geo: Box<Option<bool>>,
+    pub r#geo: Option<bool>,
     /// `true` - includes the first language code contained in the `Accept-Language` header sent by the client; defaults to `false`.
     /// 
     /// Example:
@@ -67,7 +67,7 @@ pub struct PageRuleActionsCacheKeyFieldsUser {
     ///     );
     /// }
     /// ```
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lang")]
-    pub r#lang: Box<Option<bool>>,
+    pub r#lang: Option<bool>,
 }

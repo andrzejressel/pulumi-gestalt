@@ -6,5 +6,5 @@ pub struct GdcSparkApplicationSparkSqlApplicationConfigQueryList {
     /// The queries to run.
     #[builder(into)]
     #[serde(rename = "queries")]
-    pub r#queries: Box<Vec<String>>,
+    pub r#queries: Vec<String>,
 }

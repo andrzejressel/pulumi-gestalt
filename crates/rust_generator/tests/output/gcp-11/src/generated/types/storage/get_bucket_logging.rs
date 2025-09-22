@@ -6,9 +6,9 @@ pub struct GetBucketLogging {
     /// The bucket that will receive log objects.
     #[builder(into)]
     #[serde(rename = "logBucket")]
-    pub r#log_bucket: Box<String>,
+    pub r#log_bucket: String,
     /// The object prefix for log objects. If it's not provided, by default Google Cloud Storage sets this to this bucket's name.
     #[builder(into)]
     #[serde(rename = "logObjectPrefix")]
-    pub r#log_object_prefix: Box<String>,
+    pub r#log_object_prefix: String,
 }

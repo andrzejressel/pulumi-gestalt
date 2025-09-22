@@ -7,15 +7,15 @@ pub struct PrivateCloudManagementClusterNodeTypeConfig {
     /// This number must always be one of `nodeType.availableCustomCoreCounts`.
     /// If zero is provided max value from `nodeType.availableCustomCoreCounts` will be used.
     /// This cannot be changed once the PrivateCloud is created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customCoreCount")]
-    pub r#custom_core_count: Box<Option<i32>>,
+    pub r#custom_core_count: Option<i32>,
     /// The number of nodes of this type in the cluster.
     #[builder(into)]
     #[serde(rename = "nodeCount")]
-    pub r#node_count: Box<i32>,
+    pub r#node_count: i32,
     /// The identifier for this object. Format specified above.
     #[builder(into)]
     #[serde(rename = "nodeTypeId")]
-    pub r#node_type_id: Box<String>,
+    pub r#node_type_id: String,
 }

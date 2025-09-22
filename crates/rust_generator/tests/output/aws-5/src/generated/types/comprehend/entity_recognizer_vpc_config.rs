@@ -6,9 +6,9 @@ pub struct EntityRecognizerVpcConfig {
     /// List of security group IDs.
     #[builder(into)]
     #[serde(rename = "securityGroupIds")]
-    pub r#security_group_ids: Box<Vec<String>>,
+    pub r#security_group_ids: Vec<String>,
     /// List of VPC subnets.
     #[builder(into)]
     #[serde(rename = "subnets")]
-    pub r#subnets: Box<Vec<String>>,
+    pub r#subnets: Vec<String>,
 }

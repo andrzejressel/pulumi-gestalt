@@ -6,9 +6,9 @@ pub struct ProjectEnvironmentRegistryCredential {
     /// ARN or name of credentials created using AWS Secrets Manager.
     #[builder(into)]
     #[serde(rename = "credential")]
-    pub r#credential: Box<String>,
+    pub r#credential: String,
     /// Service that created the credentials to access a private Docker registry. Valid value: `SECRETS_MANAGER` (AWS Secrets Manager).
     #[builder(into)]
     #[serde(rename = "credentialProvider")]
-    pub r#credential_provider: Box<String>,
+    pub r#credential_provider: String,
 }

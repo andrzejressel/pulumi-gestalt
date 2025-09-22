@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServerlessCacheCacheUsageLimitsEcpuPerSecond {
     /// The maximum number of ECPUs the cache can consume per second. Must be between 1,000 and 15,000,000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximum")]
-    pub r#maximum: Box<Option<i32>>,
+    pub r#maximum: Option<i32>,
     /// The minimum number of ECPUs the cache can consume per second. Must be between 1,000 and 15,000,000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimum")]
-    pub r#minimum: Box<Option<i32>>,
+    pub r#minimum: Option<i32>,
 }

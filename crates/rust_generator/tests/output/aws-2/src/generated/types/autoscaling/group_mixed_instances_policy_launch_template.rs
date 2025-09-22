@@ -8,7 +8,7 @@ pub struct GroupMixedInstancesPolicyLaunchTemplate {
     #[serde(rename = "launchTemplateSpecification")]
     pub r#launch_template_specification: Box<super::super::types::autoscaling::GroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
     /// List of nested arguments provides the ability to specify multiple instance types. This will override the same parameter in the launch template. For on-demand instances, Auto Scaling considers the order of preference of instance types to launch based on the order specified in the overrides list. Defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "overrides")]
-    pub r#overrides: Box<Option<Vec<super::super::types::autoscaling::GroupMixedInstancesPolicyLaunchTemplateOverride>>>,
+    pub r#overrides: Option<Vec<super::super::types::autoscaling::GroupMixedInstancesPolicyLaunchTemplateOverride>>,
 }

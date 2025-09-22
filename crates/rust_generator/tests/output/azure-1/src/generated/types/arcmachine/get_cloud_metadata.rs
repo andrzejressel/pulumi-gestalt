@@ -6,5 +6,5 @@ pub struct GetCloudMetadata {
     /// Specifies the cloud provider. For example `Azure`, `AWS` and `GCP`.
     #[builder(into)]
     #[serde(rename = "provider")]
-    pub r#provider: Box<String>,
+    pub r#provider: String,
 }

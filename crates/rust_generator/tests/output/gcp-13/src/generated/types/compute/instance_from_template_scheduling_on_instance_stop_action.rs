@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceFromTemplateSchedulingOnInstanceStopAction {
     /// If true, the contents of any attached Local SSD disks will be discarded.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "discardLocalSsd")]
-    pub r#discard_local_ssd: Box<Option<bool>>,
+    pub r#discard_local_ssd: Option<bool>,
 }

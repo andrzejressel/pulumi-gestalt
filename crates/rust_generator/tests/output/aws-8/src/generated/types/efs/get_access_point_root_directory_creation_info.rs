@@ -6,13 +6,13 @@ pub struct GetAccessPointRootDirectoryCreationInfo {
     /// POSIX owner group ID
     #[builder(into)]
     #[serde(rename = "ownerGid")]
-    pub r#owner_gid: Box<i32>,
+    pub r#owner_gid: i32,
     /// POSIX owner user ID
     #[builder(into)]
     #[serde(rename = "ownerUid")]
-    pub r#owner_uid: Box<i32>,
+    pub r#owner_uid: i32,
     /// POSIX permissions mode
     #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<String>,
+    pub r#permissions: String,
 }

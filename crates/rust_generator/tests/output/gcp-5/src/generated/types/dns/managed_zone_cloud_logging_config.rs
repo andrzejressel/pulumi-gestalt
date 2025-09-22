@@ -6,5 +6,5 @@ pub struct ManagedZoneCloudLoggingConfig {
     /// If set, enable query logging for this ManagedZone. False by default, making logging opt-in.
     #[builder(into)]
     #[serde(rename = "enableLogging")]
-    pub r#enable_logging: Box<bool>,
+    pub r#enable_logging: bool,
 }

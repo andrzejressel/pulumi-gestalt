@@ -5,8 +5,8 @@
 pub struct GetJobQueueComputeEnvironmentOrder {
     #[builder(into)]
     #[serde(rename = "computeEnvironment")]
-    pub r#compute_environment: Box<String>,
+    pub r#compute_environment: String,
     #[builder(into)]
     #[serde(rename = "order")]
-    pub r#order: Box<i32>,
+    pub r#order: i32,
 }

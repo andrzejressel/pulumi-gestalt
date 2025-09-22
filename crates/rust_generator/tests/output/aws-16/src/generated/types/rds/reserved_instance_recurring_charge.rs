@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ReservedInstanceRecurringCharge {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recurringChargeAmount")]
-    pub r#recurring_charge_amount: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#recurring_charge_amount: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "recurringChargeFrequency")]
-    pub r#recurring_charge_frequency: Box<Option<String>>,
+    pub r#recurring_charge_frequency: Option<String>,
 }

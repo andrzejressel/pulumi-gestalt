@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterEnterpriseConfig {
     /// The effective tier of the cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clusterTier")]
-    pub r#cluster_tier: Box<Option<String>>,
+    pub r#cluster_tier: Option<String>,
     /// Sets the tier of the cluster. Available options include `STANDARD` and `ENTERPRISE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "desiredTier")]
-    pub r#desired_tier: Box<Option<String>>,
+    pub r#desired_tier: Option<String>,
 }

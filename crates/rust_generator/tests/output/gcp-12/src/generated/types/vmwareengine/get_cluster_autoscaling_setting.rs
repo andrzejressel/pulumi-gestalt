@@ -16,7 +16,7 @@ pub struct GetClusterAutoscalingSetting {
     /// that describes the autoscaling policy for compute nodes.
     #[builder(into)]
     #[serde(rename = "autoscalingPolicies")]
-    pub r#autoscaling_policies: Box<Vec<super::super::types::vmwareengine::GetClusterAutoscalingSettingAutoscalingPolicy>>,
+    pub r#autoscaling_policies: Vec<super::super::types::vmwareengine::GetClusterAutoscalingSettingAutoscalingPolicy>,
     /// The minimum duration between consecutive autoscale operations.
     /// It starts once addition or removal of nodes is fully completed.
     /// Minimum cool down period is 30m.
@@ -24,15 +24,15 @@ pub struct GetClusterAutoscalingSetting {
     /// Mandatory for successful addition of autoscaling settings in cluster.
     #[builder(into)]
     #[serde(rename = "coolDownPeriod")]
-    pub r#cool_down_period: Box<String>,
+    pub r#cool_down_period: String,
     /// Maximum number of nodes of any type in a cluster.
     /// Mandatory for successful addition of autoscaling settings in cluster.
     #[builder(into)]
     #[serde(rename = "maxClusterNodeCount")]
-    pub r#max_cluster_node_count: Box<i32>,
+    pub r#max_cluster_node_count: i32,
     /// Minimum number of nodes of any type in a cluster.
     /// Mandatory for successful addition of autoscaling settings in cluster.
     #[builder(into)]
     #[serde(rename = "minClusterNodeCount")]
-    pub r#min_cluster_node_count: Box<i32>,
+    pub r#min_cluster_node_count: i32,
 }

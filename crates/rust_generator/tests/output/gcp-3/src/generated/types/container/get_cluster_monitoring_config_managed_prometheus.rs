@@ -6,5 +6,5 @@ pub struct GetClusterMonitoringConfigManagedPrometheus {
     /// Whether or not the managed collection is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

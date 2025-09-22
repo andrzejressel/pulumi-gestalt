@@ -6,13 +6,13 @@ pub struct ClusterAzureActiveDirectory {
     /// The Azure Active Directory Client ID which should be used for the Client Application.
     #[builder(into)]
     #[serde(rename = "clientApplicationId")]
-    pub r#client_application_id: Box<String>,
+    pub r#client_application_id: String,
     /// The Azure Active Directory Cluster Application ID.
     #[builder(into)]
     #[serde(rename = "clusterApplicationId")]
-    pub r#cluster_application_id: Box<String>,
+    pub r#cluster_application_id: String,
     /// The Azure Active Directory Tenant ID.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
 }

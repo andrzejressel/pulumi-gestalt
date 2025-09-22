@@ -5,14 +5,14 @@
 pub struct GetInputDestination {
     #[builder(into)]
     #[serde(rename = "ip")]
-    pub r#ip: Box<String>,
+    pub r#ip: String,
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<String>,
+    pub r#port: String,
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
     #[builder(into)]
     #[serde(rename = "vpcs")]
-    pub r#vpcs: Box<Vec<super::super::types::medialive::GetInputDestinationVpc>>,
+    pub r#vpcs: Vec<super::super::types::medialive::GetInputDestinationVpc>,
 }

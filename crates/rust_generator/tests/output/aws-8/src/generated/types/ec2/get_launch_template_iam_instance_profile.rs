@@ -5,9 +5,9 @@
 pub struct GetLaunchTemplateIamInstanceProfile {
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// Name of the launch template.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

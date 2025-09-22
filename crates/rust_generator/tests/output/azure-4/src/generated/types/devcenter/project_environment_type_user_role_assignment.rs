@@ -6,9 +6,9 @@ pub struct ProjectEnvironmentTypeUserRoleAssignment {
     /// A list of roles to assign to the `user_id`.
     #[builder(into)]
     #[serde(rename = "roles")]
-    pub r#roles: Box<Vec<String>>,
+    pub r#roles: Vec<String>,
     /// The user object ID that is assigned roles.
     #[builder(into)]
     #[serde(rename = "userId")]
-    pub r#user_id: Box<String>,
+    pub r#user_id: String,
 }

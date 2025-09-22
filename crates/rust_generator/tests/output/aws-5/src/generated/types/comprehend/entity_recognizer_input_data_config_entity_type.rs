@@ -7,5 +7,5 @@ pub struct EntityRecognizerInputDataConfigEntityType {
     /// Cannot contain a newline (`\n`), carriage return (`\r`), or tab (`\t`).
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

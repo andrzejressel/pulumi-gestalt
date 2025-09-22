@@ -5,12 +5,12 @@
 pub struct ClusterControlPlane {
     /// Local control plane configuration.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "local")]
-    pub r#local: Box<Option<super::super::types::edgecontainer::ClusterControlPlaneLocal>>,
+    pub r#local: Option<Box<super::super::types::edgecontainer::ClusterControlPlaneLocal>>,
     /// Remote control plane configuration.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "remote")]
-    pub r#remote: Box<Option<super::super::types::edgecontainer::ClusterControlPlaneRemote>>,
+    pub r#remote: Option<Box<super::super::types::edgecontainer::ClusterControlPlaneRemote>>,
 }

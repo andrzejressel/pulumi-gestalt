@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountManagedResource {
     /// The ID of the managed event hub namespace.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventHubNamespaceId")]
-    pub r#event_hub_namespace_id: Box<Option<String>>,
+    pub r#event_hub_namespace_id: Option<String>,
     /// The ID of the managed resource group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "resourceGroupId")]
-    pub r#resource_group_id: Box<Option<String>>,
+    pub r#resource_group_id: Option<String>,
     /// The ID of the managed storage account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageAccountId")]
-    pub r#storage_account_id: Box<Option<String>>,
+    pub r#storage_account_id: Option<String>,
 }

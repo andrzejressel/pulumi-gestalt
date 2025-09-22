@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KubernetesClusterAciConnectorLinuxConnectorIdentity {
     /// The Client ID of the user-defined Managed Identity used for Web App Routing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<Option<String>>,
+    pub r#client_id: Option<String>,
     /// The Object ID of the user-defined Managed Identity used for Web App Routing
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "objectId")]
-    pub r#object_id: Box<Option<String>>,
+    pub r#object_id: Option<String>,
     /// The ID of the User Assigned Identity used for Web App Routing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userAssignedIdentityId")]
-    pub r#user_assigned_identity_id: Box<Option<String>>,
+    pub r#user_assigned_identity_id: Option<String>,
 }

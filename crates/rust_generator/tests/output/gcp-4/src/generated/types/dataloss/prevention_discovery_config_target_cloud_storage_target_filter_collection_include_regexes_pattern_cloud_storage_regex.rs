@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesPatternCloudStorageRegex {
     /// Regex to test the bucket name against. If empty, all buckets match. Example: "marketing2021" or "(marketing)\d{4}" will both match the bucket gs://marketing2021
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucketNameRegex")]
-    pub r#bucket_name_regex: Box<Option<String>>,
+    pub r#bucket_name_regex: Option<String>,
     /// For organizations, if unset, will match all projects.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectIdRegex")]
-    pub r#project_id_regex: Box<Option<String>>,
+    pub r#project_id_regex: Option<String>,
 }

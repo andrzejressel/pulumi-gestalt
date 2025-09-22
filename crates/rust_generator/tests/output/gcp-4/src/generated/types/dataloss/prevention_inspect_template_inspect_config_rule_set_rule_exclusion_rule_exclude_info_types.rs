@@ -7,5 +7,5 @@ pub struct PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExclude
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "infoTypes")]
-    pub r#info_types: Box<Vec<super::super::types::dataloss::PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoType>>,
+    pub r#info_types: Vec<super::super::types::dataloss::PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoType>,
 }

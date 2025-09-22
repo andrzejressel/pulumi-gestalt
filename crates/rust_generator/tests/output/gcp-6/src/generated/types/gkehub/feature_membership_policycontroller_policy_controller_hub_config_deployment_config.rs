@@ -6,21 +6,21 @@ pub struct FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentC
     /// The name of the component. One of `admission` `audit` or `mutation`
     #[builder(into)]
     #[serde(rename = "componentName")]
-    pub r#component_name: Box<String>,
+    pub r#component_name: String,
     /// Container resource requirements.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerResources")]
-    pub r#container_resources: Box<Option<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources>>,
+    pub r#container_resources: Option<Box<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResources>>,
     /// Pod affinity configuration. Possible values: AFFINITY_UNSPECIFIED, NO_AFFINITY, ANTI_AFFINITY
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "podAffinity")]
-    pub r#pod_affinity: Box<Option<String>>,
+    pub r#pod_affinity: Option<String>,
     /// Pod tolerations of node taints.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "podTolerations")]
-    pub r#pod_tolerations: Box<Option<Vec<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration>>>,
+    pub r#pod_tolerations: Option<Vec<super::super::types::gkehub::FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodToleration>>,
     /// Pod replica count.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replicaCount")]
-    pub r#replica_count: Box<Option<i32>>,
+    pub r#replica_count: Option<i32>,
 }

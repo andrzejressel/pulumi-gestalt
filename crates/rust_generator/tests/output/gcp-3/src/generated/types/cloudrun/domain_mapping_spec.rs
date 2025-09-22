@@ -8,19 +8,19 @@ pub struct DomainMappingSpec {
     /// Possible values are: `NONE`, `AUTOMATIC`.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateMode")]
-    pub r#certificate_mode: Box<Option<String>>,
+    pub r#certificate_mode: Option<String>,
     /// If set, the mapping will override any mapping set before this spec was set.
     /// It is recommended that the user leaves this empty to receive an error
     /// warning about a potential conflict and only set it once the respective UI
     /// has given such a warning.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "forceOverride")]
-    pub r#force_override: Box<Option<bool>>,
+    pub r#force_override: Option<bool>,
     /// The name of the Cloud Run Service that this DomainMapping applies to.
     /// The route must exist.
     #[builder(into)]
     #[serde(rename = "routeName")]
-    pub r#route_name: Box<String>,
+    pub r#route_name: String,
 }

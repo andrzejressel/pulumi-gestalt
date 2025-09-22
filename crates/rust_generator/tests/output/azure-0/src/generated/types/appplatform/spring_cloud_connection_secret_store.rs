@@ -6,5 +6,5 @@ pub struct SpringCloudConnectionSecretStore {
     /// The key vault id to store secret.
     #[builder(into)]
     #[serde(rename = "keyVaultId")]
-    pub r#key_vault_id: Box<String>,
+    pub r#key_vault_id: String,
 }

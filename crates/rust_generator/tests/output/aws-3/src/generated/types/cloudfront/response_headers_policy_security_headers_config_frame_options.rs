@@ -6,9 +6,9 @@ pub struct ResponseHeadersPolicySecurityHeadersConfigFrameOptions {
     /// The value of the `X-Frame-Options` HTTP response header. Valid values: `DENY` | `SAMEORIGIN`
     #[builder(into)]
     #[serde(rename = "frameOption")]
-    pub r#frame_option: Box<String>,
+    pub r#frame_option: String,
     /// Whether CloudFront overrides the `X-Frame-Options` HTTP response header received from the origin with the one specified in this response headers policy.
     #[builder(into)]
     #[serde(rename = "override")]
-    pub r#override_: Box<bool>,
+    pub r#override_: bool,
 }

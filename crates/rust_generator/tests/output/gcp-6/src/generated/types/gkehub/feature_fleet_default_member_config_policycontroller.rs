@@ -9,7 +9,7 @@ pub struct FeatureFleetDefaultMemberConfigPolicycontroller {
     #[serde(rename = "policyControllerHubConfig")]
     pub r#policy_controller_hub_config: Box<super::super::types::gkehub::FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfig>,
     /// Configures the version of Policy Controller
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

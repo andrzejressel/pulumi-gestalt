@@ -8,18 +8,18 @@ pub struct GetResourcePolicySnapshotSchedulePolicySnapshotProperty {
     /// with RFC1035.
     #[builder(into)]
     #[serde(rename = "chainName")]
-    pub r#chain_name: Box<String>,
+    pub r#chain_name: String,
     /// Whether to perform a 'guest aware' snapshot.
     #[builder(into)]
     #[serde(rename = "guestFlush")]
-    pub r#guest_flush: Box<bool>,
+    pub r#guest_flush: bool,
     /// A set of key-value pairs.
     #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<std::collections::HashMap<String, String>>,
+    pub r#labels: std::collections::HashMap<String, String>,
     /// Cloud Storage bucket location to store the auto snapshot
     /// (regional or multi-regional)
     #[builder(into)]
     #[serde(rename = "storageLocations")]
-    pub r#storage_locations: Box<Vec<String>>,
+    pub r#storage_locations: Vec<String>,
 }

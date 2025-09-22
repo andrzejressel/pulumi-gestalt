@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FunctionAppSourceControl {
     /// The branch of the remote repository to use. Defaults to 'master'.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "branch")]
-    pub r#branch: Box<Option<String>>,
+    pub r#branch: Option<String>,
     /// Limits to manual integration. Defaults to `false` if not specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "manualIntegration")]
-    pub r#manual_integration: Box<Option<bool>>,
+    pub r#manual_integration: Option<bool>,
     /// The URL of the source code repository.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repoUrl")]
-    pub r#repo_url: Box<Option<String>>,
+    pub r#repo_url: Option<String>,
     /// Enable roll-back for the repository. Defaults to `false` if not specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rollbackEnabled")]
-    pub r#rollback_enabled: Box<Option<bool>>,
+    pub r#rollback_enabled: Option<bool>,
     /// Use Mercurial if `true`, otherwise uses Git.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useMercurial")]
-    pub r#use_mercurial: Box<Option<bool>>,
+    pub r#use_mercurial: Option<bool>,
 }

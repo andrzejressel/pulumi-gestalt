@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceGroupEbsConfig {
     /// The number of I/O operations per second (IOPS) that the volume supports.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "iops")]
-    pub r#iops: Box<Option<i32>>,
+    pub r#iops: Option<i32>,
     /// The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is EBS-optimized, the minimum value is 10.
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<i32>,
+    pub r#size: i32,
     /// The volume type. Valid options are 'gp2', 'io1' and 'standard'.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// The number of EBS Volumes to attach per instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "volumesPerInstance")]
-    pub r#volumes_per_instance: Box<Option<i32>>,
+    pub r#volumes_per_instance: Option<i32>,
 }

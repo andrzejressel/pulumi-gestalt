@@ -5,8 +5,8 @@
 pub struct GetVirtualNodeSpecListenerTlValidationTrust {
     #[builder(into)]
     #[serde(rename = "files")]
-    pub r#files: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlValidationTrustFile>>,
+    pub r#files: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlValidationTrustFile>,
     #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlValidationTrustSd>>,
+    pub r#sds: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTlValidationTrustSd>,
 }

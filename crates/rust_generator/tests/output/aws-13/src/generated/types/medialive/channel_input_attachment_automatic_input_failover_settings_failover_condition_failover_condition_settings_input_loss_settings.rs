@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsInputLossSettings {
     /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputLossThresholdMsec")]
-    pub r#input_loss_threshold_msec: Box<Option<i32>>,
+    pub r#input_loss_threshold_msec: Option<i32>,
 }

@@ -6,13 +6,13 @@ pub struct GetFrontdoorCustomDomainTl {
     /// The Resource ID of the Front Door Secret.
     #[builder(into)]
     #[serde(rename = "cdnFrontdoorSecretId")]
-    pub r#cdn_frontdoor_secret_id: Box<String>,
+    pub r#cdn_frontdoor_secret_id: String,
     /// The SSL certificate type.
     #[builder(into)]
     #[serde(rename = "certificateType")]
-    pub r#certificate_type: Box<String>,
+    pub r#certificate_type: String,
     /// The TLS protocol version that will be used for Https connections.
     #[builder(into)]
     #[serde(rename = "minimumTlsVersion")]
-    pub r#minimum_tls_version: Box<String>,
+    pub r#minimum_tls_version: String,
 }

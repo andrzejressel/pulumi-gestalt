@@ -6,5 +6,5 @@ pub struct EventSourceMappingMetricsConfig {
     /// A list containing the metrics to be produced by the event source mapping. Valid values: `EventCount`.
     #[builder(into)]
     #[serde(rename = "metrics")]
-    pub r#metrics: Box<Vec<String>>,
+    pub r#metrics: Vec<String>,
 }

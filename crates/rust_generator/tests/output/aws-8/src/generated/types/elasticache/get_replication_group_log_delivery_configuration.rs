@@ -5,14 +5,14 @@
 pub struct GetReplicationGroupLogDeliveryConfiguration {
     #[builder(into)]
     #[serde(rename = "destination")]
-    pub r#destination: Box<String>,
+    pub r#destination: String,
     #[builder(into)]
     #[serde(rename = "destinationType")]
-    pub r#destination_type: Box<String>,
+    pub r#destination_type: String,
     #[builder(into)]
     #[serde(rename = "logFormat")]
-    pub r#log_format: Box<String>,
+    pub r#log_format: String,
     #[builder(into)]
     #[serde(rename = "logType")]
-    pub r#log_type: Box<String>,
+    pub r#log_type: String,
 }

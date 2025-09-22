@@ -6,9 +6,9 @@ pub struct GetInstanceAutoscalingConfigAsymmetricAutoscalingOption {
     /// A nested object resource.
     #[builder(into)]
     #[serde(rename = "overrides")]
-    pub r#overrides: Box<Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAsymmetricAutoscalingOptionOverride>>,
+    pub r#overrides: Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAsymmetricAutoscalingOptionOverride>,
     /// A nested object resource.
     #[builder(into)]
     #[serde(rename = "replicaSelections")]
-    pub r#replica_selections: Box<Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAsymmetricAutoscalingOptionReplicaSelection>>,
+    pub r#replica_selections: Vec<super::super::types::spanner::GetInstanceAutoscalingConfigAsymmetricAutoscalingOptionReplicaSelection>,
 }

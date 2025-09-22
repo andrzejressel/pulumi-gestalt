@@ -7,10 +7,10 @@ pub struct EndpointPolicyEndpointMatcherMetadataLabelMatcher {
     /// Possible values are: `MATCH_ANY`, `MATCH_ALL`.
     #[builder(into)]
     #[serde(rename = "metadataLabelMatchCriteria")]
-    pub r#metadata_label_match_criteria: Box<String>,
+    pub r#metadata_label_match_criteria: String,
     /// The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metadataLabels")]
-    pub r#metadata_labels: Box<Option<Vec<super::super::types::networkservices::EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel>>>,
+    pub r#metadata_labels: Option<Vec<super::super::types::networkservices::EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel>>,
 }

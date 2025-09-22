@@ -6,5 +6,5 @@ pub struct JobDefinitionEksPropertiesPodPropertiesVolumeHostPath {
     /// Path of the file or directory on the host to mount into containers on the pod.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

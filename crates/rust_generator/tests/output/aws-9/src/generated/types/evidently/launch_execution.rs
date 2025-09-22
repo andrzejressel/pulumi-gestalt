@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LaunchExecution {
     /// The date and time that the launch ended.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endedTime")]
-    pub r#ended_time: Box<Option<String>>,
+    pub r#ended_time: Option<String>,
     /// The date and time that the launch started.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startedTime")]
-    pub r#started_time: Box<Option<String>>,
+    pub r#started_time: Option<String>,
 }

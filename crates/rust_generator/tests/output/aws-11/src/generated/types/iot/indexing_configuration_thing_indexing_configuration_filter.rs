@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IndexingConfigurationThingIndexingConfigurationFilter {
     /// List of shadow names that you select to index.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namedShadowNames")]
-    pub r#named_shadow_names: Box<Option<Vec<String>>>,
+    pub r#named_shadow_names: Option<Vec<String>>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointConfigurationAsyncInferenceConfigClientConfig {
     /// The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, Amazon SageMaker will choose an optimal value for you.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxConcurrentInvocationsPerInstance")]
-    pub r#max_concurrent_invocations_per_instance: Box<Option<i32>>,
+    pub r#max_concurrent_invocations_per_instance: Option<i32>,
 }

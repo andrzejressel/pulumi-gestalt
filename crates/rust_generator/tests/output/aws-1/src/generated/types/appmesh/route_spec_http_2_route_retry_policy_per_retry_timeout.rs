@@ -6,9 +6,9 @@ pub struct RouteSpecHttp2RouteRetryPolicyPerRetryTimeout {
     /// Retry unit. Valid values: `ms`, `s`.
     #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<String>,
+    pub r#unit: String,
     /// Retry value.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<i32>,
+    pub r#value: i32,
 }

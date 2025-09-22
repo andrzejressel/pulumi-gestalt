@@ -9,14 +9,14 @@ pub struct GetGroupLookupGroupKey {
     /// to the Identity Source's requirements.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// (Optional) The namespace in which the entity exists.
     /// If not populated, the EntityKey represents a Google-managed entity
     /// such as a Google user or a Google Group.
     /// If populated, the EntityKey represents an external-identity-mapped group.
     /// The namespace must correspond to an identity source created in Admin Console
     /// and must be in the form of `identitysources/{identity_source_id}`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<Option<String>>,
+    pub r#namespace: Option<String>,
 }

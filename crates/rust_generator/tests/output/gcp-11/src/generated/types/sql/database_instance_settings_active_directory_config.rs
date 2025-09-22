@@ -7,5 +7,5 @@ pub struct DatabaseInstanceSettingsActiveDirectoryConfig {
     /// Can only be used with SQL Server.
     #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<String>,
+    pub r#domain: String,
 }

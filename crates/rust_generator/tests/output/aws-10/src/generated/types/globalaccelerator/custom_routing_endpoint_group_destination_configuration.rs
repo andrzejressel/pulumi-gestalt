@@ -6,13 +6,13 @@ pub struct CustomRoutingEndpointGroupDestinationConfiguration {
     /// The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.
     #[builder(into)]
     #[serde(rename = "fromPort")]
-    pub r#from_port: Box<i32>,
+    pub r#from_port: i32,
     /// The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either `"TCP"` or `"UDP"`.
     #[builder(into)]
     #[serde(rename = "protocols")]
-    pub r#protocols: Box<Vec<String>>,
+    pub r#protocols: Vec<String>,
     /// The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.
     #[builder(into)]
     #[serde(rename = "toPort")]
-    pub r#to_port: Box<i32>,
+    pub r#to_port: i32,
 }

@@ -6,12 +6,12 @@ pub struct ServerTlsPolicyServerCertificate {
     /// Optional if policy is to be used with Traffic Director. For external HTTPS load balancer must be empty.
     /// Defines a mechanism to provision server identity (public and private keys). Cannot be combined with allowOpen as a permissive mode that allows both plain text and TLS is not supported.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateProviderInstance")]
-    pub r#certificate_provider_instance: Box<Option<super::super::types::networksecurity::ServerTlsPolicyServerCertificateCertificateProviderInstance>>,
+    pub r#certificate_provider_instance: Option<Box<super::super::types::networksecurity::ServerTlsPolicyServerCertificateCertificateProviderInstance>>,
     /// gRPC specific configuration to access the gRPC server to obtain the cert and private key.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "grpcEndpoint")]
-    pub r#grpc_endpoint: Box<Option<super::super::types::networksecurity::ServerTlsPolicyServerCertificateGrpcEndpoint>>,
+    pub r#grpc_endpoint: Option<Box<super::super::types::networksecurity::ServerTlsPolicyServerCertificateGrpcEndpoint>>,
 }

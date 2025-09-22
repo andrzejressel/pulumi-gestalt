@@ -4,39 +4,39 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsAudioDescriptionCodecSettingsAacSettings {
     /// Average bitrate in bits/second.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bitrate")]
-    pub r#bitrate: Box<Option<f64>>,
+    pub r#bitrate: Option<f64>,
     /// Mono, Stereo, or 5.1 channel layout.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "codingMode")]
-    pub r#coding_mode: Box<Option<String>>,
+    pub r#coding_mode: Option<String>,
     /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputType")]
-    pub r#input_type: Box<Option<String>>,
+    pub r#input_type: Option<String>,
     /// AAC profile.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "profile")]
-    pub r#profile: Box<Option<String>>,
+    pub r#profile: Option<String>,
     /// The rate control mode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rateControlMode")]
-    pub r#rate_control_mode: Box<Option<String>>,
+    pub r#rate_control_mode: Option<String>,
     /// Sets LATM/LOAS AAC output for raw containers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rawFormat")]
-    pub r#raw_format: Box<Option<String>>,
+    pub r#raw_format: Option<String>,
     /// Sample rate in Hz.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sampleRate")]
-    pub r#sample_rate: Box<Option<f64>>,
+    pub r#sample_rate: Option<f64>,
     /// Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "spec")]
-    pub r#spec: Box<Option<String>>,
+    pub r#spec: Option<String>,
     /// VBR Quality Level - Only used if rateControlMode is VBR.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vbrQuality")]
-    pub r#vbr_quality: Box<Option<String>>,
+    pub r#vbr_quality: Option<String>,
 }

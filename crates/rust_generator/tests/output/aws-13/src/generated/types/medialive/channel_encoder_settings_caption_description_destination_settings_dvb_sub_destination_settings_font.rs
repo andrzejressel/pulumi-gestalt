@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettingsFont {
     /// Key used to extract the password from EC2 Parameter store.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "passwordParam")]
-    pub r#password_param: Box<Option<String>>,
+    pub r#password_param: Option<String>,
     /// Path to a file accessible to the live stream.
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
     /// Username to be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

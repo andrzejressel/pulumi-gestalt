@@ -6,13 +6,13 @@ pub struct GetPoolFixedScale {
     /// The timeout for resize operations.
     #[builder(into)]
     #[serde(rename = "resizeTimeout")]
-    pub r#resize_timeout: Box<String>,
+    pub r#resize_timeout: String,
     /// The number of nodes in the Batch pool.
     #[builder(into)]
     #[serde(rename = "targetDedicatedNodes")]
-    pub r#target_dedicated_nodes: Box<i32>,
+    pub r#target_dedicated_nodes: i32,
     /// The number of low priority nodes in the Batch pool.
     #[builder(into)]
     #[serde(rename = "targetLowPriorityNodes")]
-    pub r#target_low_priority_nodes: Box<i32>,
+    pub r#target_low_priority_nodes: i32,
 }

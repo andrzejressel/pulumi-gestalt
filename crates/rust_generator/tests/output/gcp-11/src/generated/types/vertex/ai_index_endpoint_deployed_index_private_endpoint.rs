@@ -5,18 +5,18 @@
 pub struct AiIndexEndpointDeployedIndexPrivateEndpoint {
     /// (Output)
     /// The ip address used to send match gRPC requests.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "matchGrpcAddress")]
-    pub r#match_grpc_address: Box<Option<String>>,
+    pub r#match_grpc_address: Option<String>,
     /// (Output)
     /// PscAutomatedEndpoints is populated if private service connect is enabled if PscAutomatedConfig is set.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pscAutomatedEndpoints")]
-    pub r#psc_automated_endpoints: Box<Option<Vec<super::super::types::vertex::AiIndexEndpointDeployedIndexPrivateEndpointPscAutomatedEndpoint>>>,
+    pub r#psc_automated_endpoints: Option<Vec<super::super::types::vertex::AiIndexEndpointDeployedIndexPrivateEndpointPscAutomatedEndpoint>>,
     /// (Output)
     /// The name of the service attachment resource. Populated if private service connect is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceAttachment")]
-    pub r#service_attachment: Box<Option<String>>,
+    pub r#service_attachment: Option<String>,
 }

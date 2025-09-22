@@ -6,9 +6,9 @@ pub struct SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig {
     /// Rate limit key name applicable only for the following key types:
     /// HTTP_HEADER -- Name of the HTTP header whose value is taken as the key value.
     /// HTTP_COOKIE -- Name of the HTTP cookie whose value is taken as the key value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enforceOnKeyName")]
-    pub r#enforce_on_key_name: Box<Option<String>>,
+    pub r#enforce_on_key_name: Option<String>,
     /// Determines the key to enforce the rateLimitThreshold on. Possible values are:
     /// * ALL: A single rate limit threshold is applied to all the requests matching this rule. This is the default value if "enforceOnKeyConfigs" is not configured.
     /// * IP: The source IP address of the request is the key. Each IP has this limit enforced separately.
@@ -21,7 +21,7 @@ pub struct SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfig {
     /// * TLS_JA3_FINGERPRINT: JA3 TLS/SSL fingerprint if the client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the key type defaults to ALL.
     /// * USER_IP: The IP address of the originating client, which is resolved based on "userIpRequestHeaders" configured with the security policy. If there is no "userIpRequestHeaders" configuration or an IP address cannot be resolved from it, the key type defaults to IP.
     /// Possible values are: `ALL`, `IP`, `HTTP_HEADER`, `XFF_IP`, `HTTP_COOKIE`, `HTTP_PATH`, `SNI`, `REGION_CODE`, `TLS_JA3_FINGERPRINT`, `USER_IP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enforceOnKeyType")]
-    pub r#enforce_on_key_type: Box<Option<String>>,
+    pub r#enforce_on_key_type: Option<String>,
 }

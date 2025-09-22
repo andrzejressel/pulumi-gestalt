@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateSd {
     #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<String>,
+    pub r#secret_name: String,
 }

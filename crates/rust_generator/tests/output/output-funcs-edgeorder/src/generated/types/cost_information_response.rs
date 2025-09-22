@@ -6,9 +6,9 @@ pub struct CostInformationResponse {
     /// Default url to display billing information
     #[builder(into)]
     #[serde(rename = "billingInfoUrl")]
-    pub r#billing_info_url: Box<String>,
+    pub r#billing_info_url: String,
     /// Details on the various billing aspects for the product system.
     #[builder(into)]
     #[serde(rename = "billingMeterDetails")]
-    pub r#billing_meter_details: Box<Vec<super::types::BillingMeterDetailsResponse>>,
+    pub r#billing_meter_details: Vec<super::types::BillingMeterDetailsResponse>,
 }

@@ -6,14 +6,14 @@ pub struct GetRepositoryVirtualRepositoryConfigUpstreamPolicy {
     /// The user-provided ID of the upstream policy.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Entries with a greater priority value take precedence in the pull order.
     #[builder(into)]
     #[serde(rename = "priority")]
-    pub r#priority: Box<i32>,
+    pub r#priority: i32,
     /// A reference to the repository resource, for example:
     /// "projects/p1/locations/us-central1/repository/repo1".
     #[builder(into)]
     #[serde(rename = "repository")]
-    pub r#repository: Box<String>,
+    pub r#repository: String,
 }

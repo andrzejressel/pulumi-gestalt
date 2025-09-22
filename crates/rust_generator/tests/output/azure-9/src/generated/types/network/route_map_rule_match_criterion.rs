@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouteMapRuleMatchCriterion {
     /// A list of AS paths which this criterion matches.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "asPaths")]
-    pub r#as_paths: Box<Option<Vec<String>>>,
+    pub r#as_paths: Option<Vec<String>>,
     /// A list of BGP communities which this criterion matches.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "communities")]
-    pub r#communities: Box<Option<Vec<String>>>,
+    pub r#communities: Option<Vec<String>>,
     /// The match condition to apply the rule of the Route Map. Possible values are `Contains`, `Equals`, `NotContains`, `NotEquals` and `Unknown`.
     #[builder(into)]
     #[serde(rename = "matchCondition")]
-    pub r#match_condition: Box<String>,
+    pub r#match_condition: String,
     /// A list of route prefixes which this criterion matches.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "routePrefixes")]
-    pub r#route_prefixes: Box<Option<Vec<String>>>,
+    pub r#route_prefixes: Option<Vec<String>>,
 }

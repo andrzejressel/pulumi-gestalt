@@ -5,5 +5,5 @@
 pub struct ContainerServicePublicDomainNames {
     #[builder(into)]
     #[serde(rename = "certificates")]
-    pub r#certificates: Box<Vec<super::super::types::lightsail::ContainerServicePublicDomainNamesCertificate>>,
+    pub r#certificates: Vec<super::super::types::lightsail::ContainerServicePublicDomainNamesCertificate>,
 }

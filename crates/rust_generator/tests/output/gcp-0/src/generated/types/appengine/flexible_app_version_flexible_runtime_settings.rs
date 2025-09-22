@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlexibleAppVersionFlexibleRuntimeSettings {
     /// Operating System of the application runtime.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operatingSystem")]
-    pub r#operating_system: Box<Option<String>>,
+    pub r#operating_system: Option<String>,
     /// The runtime version of an App Engine flexible application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "runtimeVersion")]
-    pub r#runtime_version: Box<Option<String>>,
+    pub r#runtime_version: Option<String>,
 }

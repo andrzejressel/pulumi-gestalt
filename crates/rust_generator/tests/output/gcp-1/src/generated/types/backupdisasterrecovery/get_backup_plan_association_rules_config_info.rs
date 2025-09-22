@@ -6,13 +6,13 @@ pub struct GetBackupPlanAssociationRulesConfigInfo {
     /// google.rpc.Status object to store the last backup error
     #[builder(into)]
     #[serde(rename = "lastBackupErrors")]
-    pub r#last_backup_errors: Box<Vec<super::super::types::backupdisasterrecovery::GetBackupPlanAssociationRulesConfigInfoLastBackupError>>,
+    pub r#last_backup_errors: Vec<super::super::types::backupdisasterrecovery::GetBackupPlanAssociationRulesConfigInfoLastBackupError>,
     /// State of last backup taken.
     #[builder(into)]
     #[serde(rename = "lastBackupState")]
-    pub r#last_backup_state: Box<String>,
+    pub r#last_backup_state: String,
     /// Backup Rule id fetched from backup plan.
     #[builder(into)]
     #[serde(rename = "ruleId")]
-    pub r#rule_id: Box<String>,
+    pub r#rule_id: String,
 }

@@ -6,13 +6,13 @@ pub struct GetPipelineDefinitionPipelineObjectField {
     /// Field identifier.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Field value, expressed as the identifier of another object
     #[builder(into)]
     #[serde(rename = "refValue")]
-    pub r#ref_value: Box<String>,
+    pub r#ref_value: String,
     /// Field value, expressed as a String.
     #[builder(into)]
     #[serde(rename = "stringValue")]
-    pub r#string_value: Box<String>,
+    pub r#string_value: String,
 }

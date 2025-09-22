@@ -6,5 +6,5 @@ pub struct ResourceGroupCostManagementViewKpi {
     /// KPI type. Possible values are `Budget` and `Forecast`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -6,5 +6,5 @@ pub struct PipeTargetParametersEcsTaskParametersOverridesEphemeralStorage {
     /// The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is 21 GiB and the maximum supported value is 200 GiB.
     #[builder(into)]
     #[serde(rename = "sizeInGib")]
-    pub r#size_in_gib: Box<i32>,
+    pub r#size_in_gib: i32,
 }

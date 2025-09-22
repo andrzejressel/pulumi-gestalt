@@ -5,11 +5,11 @@
 pub struct GetDataSetPhysicalTableMapS3Source {
     #[builder(into)]
     #[serde(rename = "dataSourceArn")]
-    pub r#data_source_arn: Box<String>,
+    pub r#data_source_arn: String,
     #[builder(into)]
     #[serde(rename = "inputColumns")]
-    pub r#input_columns: Box<Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapS3SourceInputColumn>>,
+    pub r#input_columns: Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapS3SourceInputColumn>,
     #[builder(into)]
     #[serde(rename = "uploadSettings")]
-    pub r#upload_settings: Box<Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapS3SourceUploadSetting>>,
+    pub r#upload_settings: Vec<super::super::types::quicksight::GetDataSetPhysicalTableMapS3SourceUploadSetting>,
 }

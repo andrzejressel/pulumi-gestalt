@@ -6,9 +6,9 @@ pub struct GetBucketObjectRetention {
     /// The object retention mode. Supported values include: "Unlocked", "Locked".
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
     /// Time in RFC 3339 (e.g. 2030-01-01T02:03:04Z) until which object retention protects this object.
     #[builder(into)]
     #[serde(rename = "retainUntilTime")]
-    pub r#retain_until_time: Box<String>,
+    pub r#retain_until_time: String,
 }

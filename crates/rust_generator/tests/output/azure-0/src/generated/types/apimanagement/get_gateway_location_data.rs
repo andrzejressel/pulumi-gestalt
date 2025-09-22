@@ -6,16 +6,16 @@ pub struct GetGatewayLocationData {
     /// The city or locality where the resource is located.
     #[builder(into)]
     #[serde(rename = "city")]
-    pub r#city: Box<String>,
+    pub r#city: String,
     /// The district, state, or province where the resource is located.
     #[builder(into)]
     #[serde(rename = "district")]
-    pub r#district: Box<String>,
+    pub r#district: String,
     /// The name of the API Management Gateway.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
 }

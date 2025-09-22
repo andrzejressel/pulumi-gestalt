@@ -6,21 +6,21 @@ pub struct GetAlertRuleAnomalyThresholdObservation {
     /// The description of the threshold observation.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// The max value of the threshold observation.
     #[builder(into)]
     #[serde(rename = "max")]
-    pub r#max: Box<String>,
+    pub r#max: String,
     /// The min value of the threshold observation.
     #[builder(into)]
     #[serde(rename = "min")]
-    pub r#min: Box<String>,
+    pub r#min: String,
     /// The guid of this Sentinel Alert Rule Template. Either `display_name` or `name` have to be specified.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value of the threshold observation.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

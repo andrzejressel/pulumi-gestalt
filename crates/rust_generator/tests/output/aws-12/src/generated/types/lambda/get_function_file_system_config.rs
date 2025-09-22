@@ -6,8 +6,8 @@ pub struct GetFunctionFileSystemConfig {
     /// Unqualified (no `:QUALIFIER` or `:VERSION` suffix) ARN identifying your Lambda Function. See also `qualified_arn`.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     #[builder(into)]
     #[serde(rename = "localMountPath")]
-    pub r#local_mount_path: Box<String>,
+    pub r#local_mount_path: String,
 }

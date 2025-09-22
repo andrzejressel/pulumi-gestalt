@@ -6,7 +6,7 @@ pub struct RepositoryVirtualRepositoryConfig {
     /// Policies that configure the upstream artifacts distributed by the Virtual
     /// Repository. Upstream policies cannot be set on a standard repository.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "upstreamPolicies")]
-    pub r#upstream_policies: Box<Option<Vec<super::super::types::artifactregistry::RepositoryVirtualRepositoryConfigUpstreamPolicy>>>,
+    pub r#upstream_policies: Option<Vec<super::super::types::artifactregistry::RepositoryVirtualRepositoryConfigUpstreamPolicy>>,
 }

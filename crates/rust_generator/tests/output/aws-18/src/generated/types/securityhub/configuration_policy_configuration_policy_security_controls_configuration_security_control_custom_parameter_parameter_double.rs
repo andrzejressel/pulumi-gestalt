@@ -5,5 +5,5 @@
 pub struct ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterDouble {
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<f64>,
+    pub r#value: f64,
 }

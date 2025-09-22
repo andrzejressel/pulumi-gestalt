@@ -6,9 +6,9 @@ pub struct GetDomainOffPeakWindowOptionsOffPeakWindowWindowStartTime {
     /// Starting hour of the 10-hour window for updates
     #[builder(into)]
     #[serde(rename = "hours")]
-    pub r#hours: Box<i32>,
+    pub r#hours: i32,
     /// Starting minute of the 10-hour window for updates
     #[builder(into)]
     #[serde(rename = "minutes")]
-    pub r#minutes: Box<i32>,
+    pub r#minutes: i32,
 }

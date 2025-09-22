@@ -6,9 +6,9 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo {
     /// The name of the repository.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The url of the repository.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

@@ -6,11 +6,11 @@ pub struct DevEnvironmentRepository {
     /// The name of the branch in a source repository.
     /// 
     /// persistent storage (` persistent_storage`) supports the following:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "branchName")]
-    pub r#branch_name: Box<Option<String>>,
+    pub r#branch_name: Option<String>,
     /// The name of the source repository.
     #[builder(into)]
     #[serde(rename = "repositoryName")]
-    pub r#repository_name: Box<String>,
+    pub r#repository_name: String,
 }

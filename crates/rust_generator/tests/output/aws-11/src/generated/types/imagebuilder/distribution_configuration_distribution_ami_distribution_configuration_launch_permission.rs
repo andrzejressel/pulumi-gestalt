@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission {
     /// Set of AWS Organization ARNs to assign.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "organizationArns")]
-    pub r#organization_arns: Box<Option<Vec<String>>>,
+    pub r#organization_arns: Option<Vec<String>>,
     /// Set of AWS Organizational Unit ARNs to assign.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "organizationalUnitArns")]
-    pub r#organizational_unit_arns: Box<Option<Vec<String>>>,
+    pub r#organizational_unit_arns: Option<Vec<String>>,
     /// Set of EC2 launch permission user groups to assign. Use `all` to distribute a public AMI.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userGroups")]
-    pub r#user_groups: Box<Option<Vec<String>>>,
+    pub r#user_groups: Option<Vec<String>>,
     /// Set of AWS Account identifiers to assign.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "userIds")]
-    pub r#user_ids: Box<Option<Vec<String>>>,
+    pub r#user_ids: Option<Vec<String>>,
 }

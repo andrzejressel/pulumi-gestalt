@@ -6,13 +6,13 @@ pub struct RepositoryAssociationRepositoryGithubEnterpriseServer {
     /// The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection.
     #[builder(into)]
     #[serde(rename = "connectionArn")]
-    pub r#connection_arn: Box<String>,
+    pub r#connection_arn: String,
     /// The name of the third party source repository.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The username for the account that owns the repository.
     #[builder(into)]
     #[serde(rename = "owner")]
-    pub r#owner: Box<String>,
+    pub r#owner: String,
 }

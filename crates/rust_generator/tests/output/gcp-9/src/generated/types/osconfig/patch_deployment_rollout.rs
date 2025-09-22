@@ -16,5 +16,5 @@ pub struct PatchDeploymentRollout {
     /// Possible values are: `ZONE_BY_ZONE`, `CONCURRENT_ZONES`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
 }

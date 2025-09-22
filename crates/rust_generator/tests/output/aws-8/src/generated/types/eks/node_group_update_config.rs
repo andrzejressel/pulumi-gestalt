@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NodeGroupUpdateConfig {
     /// Desired max number of unavailable worker nodes during node group update.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxUnavailable")]
-    pub r#max_unavailable: Box<Option<i32>>,
+    pub r#max_unavailable: Option<i32>,
     /// Desired max percentage of unavailable worker nodes during node group update.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxUnavailablePercentage")]
-    pub r#max_unavailable_percentage: Box<Option<i32>>,
+    pub r#max_unavailable_percentage: Option<i32>,
 }

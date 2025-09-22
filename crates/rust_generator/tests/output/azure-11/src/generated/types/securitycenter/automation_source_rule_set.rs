@@ -8,5 +8,5 @@ pub struct AutomationSourceRuleSet {
     /// > **NOTE:** This automation will trigger when all of the `rule`s in this `rule_set` are evaluated as 'true'. This is equivalent to a logical 'AND'.
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<super::super::types::securitycenter::AutomationSourceRuleSetRule>>,
+    pub r#rules: Vec<super::super::types::securitycenter::AutomationSourceRuleSetRule>,
 }

@@ -8,11 +8,11 @@ pub struct SettingsAccessSettingsOauthSettings {
     /// (https://developers.google.com/identity/protocols/OpenIDConnect#hd-param)
     /// Note: IAP does not verify that the id token's hd claim matches this value
     /// since access behavior is managed by IAM policies.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loginHint")]
-    pub r#login_hint: Box<Option<String>>,
+    pub r#login_hint: Option<String>,
     /// List of client ids allowed to use IAP programmatically.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "programmaticClients")]
-    pub r#programmatic_clients: Box<Option<Vec<String>>>,
+    pub r#programmatic_clients: Option<Vec<String>>,
 }

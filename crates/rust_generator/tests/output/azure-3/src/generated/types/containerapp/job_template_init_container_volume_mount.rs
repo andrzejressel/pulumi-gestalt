@@ -6,9 +6,9 @@ pub struct JobTemplateInitContainerVolumeMount {
     /// The name of the volume to mount. This must match the name of a volume defined in the `volume` block.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The path within the container at which the volume should be mounted. Must not contain `:`.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

@@ -8,9 +8,9 @@ pub struct GetCertificatesCertificateManagedProvisioningIssue {
     /// Not guaranteed to be stable. For programmatic access use 'reason' field.
     #[builder(into)]
     #[serde(rename = "details")]
-    pub r#details: Box<String>,
+    pub r#details: String,
     /// Reason for provisioning failures.
     #[builder(into)]
     #[serde(rename = "reason")]
-    pub r#reason: Box<String>,
+    pub r#reason: String,
 }

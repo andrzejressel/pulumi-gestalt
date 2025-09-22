@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirewallFirewallStatus {
     /// Set of subnets configured for use by the firewall.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "syncStates")]
-    pub r#sync_states: Box<Option<Vec<super::super::types::networkfirewall::FirewallFirewallStatusSyncState>>>,
+    pub r#sync_states: Option<Vec<super::super::types::networkfirewall::FirewallFirewallStatusSyncState>>,
 }

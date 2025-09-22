@@ -8,9 +8,9 @@ pub struct SecurityScanConfigAuthenticationGoogleAccount {
     /// **Note**: This property is sensitive and will not be displayed in the plan.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// The user name of the Google account.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

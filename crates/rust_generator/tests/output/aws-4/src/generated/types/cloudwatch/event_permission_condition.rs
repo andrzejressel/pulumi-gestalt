@@ -6,13 +6,13 @@ pub struct EventPermissionCondition {
     /// Key for the condition. Valid values: `aws:PrincipalOrgID`.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Type of condition. Value values: `StringEquals`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// Value for the key.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

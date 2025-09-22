@@ -7,5 +7,5 @@ pub struct VMwareClusterNetworkConfigStaticIpConfig {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "ipBlocks")]
-    pub r#ip_blocks: Box<Vec<super::super::types::gkeonprem::VMwareClusterNetworkConfigStaticIpConfigIpBlock>>,
+    pub r#ip_blocks: Vec<super::super::types::gkeonprem::VMwareClusterNetworkConfigStaticIpConfigIpBlock>,
 }

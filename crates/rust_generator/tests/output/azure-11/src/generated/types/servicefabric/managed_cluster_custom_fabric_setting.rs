@@ -6,13 +6,13 @@ pub struct ManagedClusterCustomFabricSetting {
     /// Parameter name.
     #[builder(into)]
     #[serde(rename = "parameter")]
-    pub r#parameter: Box<String>,
+    pub r#parameter: String,
     /// Section name.
     #[builder(into)]
     #[serde(rename = "section")]
-    pub r#section: Box<String>,
+    pub r#section: String,
     /// Parameter value.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

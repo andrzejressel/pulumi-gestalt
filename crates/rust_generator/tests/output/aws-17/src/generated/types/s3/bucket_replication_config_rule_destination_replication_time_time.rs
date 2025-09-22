@@ -6,5 +6,5 @@ pub struct BucketReplicationConfigRuleDestinationReplicationTimeTime {
     /// Time in minutes. Valid values: `15`.
     #[builder(into)]
     #[serde(rename = "minutes")]
-    pub r#minutes: Box<i32>,
+    pub r#minutes: i32,
 }

@@ -6,13 +6,13 @@ pub struct GetDistributionConfigurationDistributionLaunchTemplateConfiguration {
     /// The account ID that this configuration applies to.
     #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<String>,
+    pub r#account_id: String,
     /// Whether the specified Amazon EC2 launch template is set as the default launch template.
     #[builder(into)]
     #[serde(rename = "default")]
-    pub r#default: Box<bool>,
+    pub r#default: bool,
     /// ID of the Amazon EC2 launch template.
     #[builder(into)]
     #[serde(rename = "launchTemplateId")]
-    pub r#launch_template_id: Box<String>,
+    pub r#launch_template_id: String,
 }

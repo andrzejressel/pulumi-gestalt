@@ -12,5 +12,5 @@ pub struct RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelay {
     /// The value must be between 0.0 and 100.0 inclusive.
     #[builder(into)]
     #[serde(rename = "percentage")]
-    pub r#percentage: Box<f64>,
+    pub r#percentage: f64,
 }

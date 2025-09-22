@@ -5,15 +5,15 @@
 pub struct OrganizationCustomModuleCustomConfig {
     /// Custom output properties.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customOutput")]
-    pub r#custom_output: Box<Option<super::super::types::securitycenter::OrganizationCustomModuleCustomConfigCustomOutput>>,
+    pub r#custom_output: Option<Box<super::super::types::securitycenter::OrganizationCustomModuleCustomConfigCustomOutput>>,
     /// Text that describes the vulnerability or misconfiguration that the custom
     /// module detects. This explanation is returned with each finding instance to
     /// help investigators understand the detected issue. The text must be enclosed in quotation marks.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The CEL expression to evaluate to produce findings. When the expression evaluates
     /// to true against a resource, a finding is generated.
     /// Structure is documented below.
@@ -25,7 +25,7 @@ pub struct OrganizationCustomModuleCustomConfig {
     /// this module in the nextSteps property of the finding JSON.
     #[builder(into)]
     #[serde(rename = "recommendation")]
-    pub r#recommendation: Box<String>,
+    pub r#recommendation: String,
     /// The resource types that the custom module operates on. Each custom module
     /// can specify up to 5 resource types.
     /// Structure is documented below.
@@ -36,5 +36,5 @@ pub struct OrganizationCustomModuleCustomConfig {
     /// Possible values are: `CRITICAL`, `HIGH`, `MEDIUM`, `LOW`.
     #[builder(into)]
     #[serde(rename = "severity")]
-    pub r#severity: Box<String>,
+    pub r#severity: String,
 }

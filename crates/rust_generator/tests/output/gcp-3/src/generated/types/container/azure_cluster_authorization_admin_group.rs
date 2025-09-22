@@ -6,5 +6,5 @@ pub struct AzureClusterAuthorizationAdminGroup {
     /// The name of the group, e.g. `my-group@domain.com`.
     #[builder(into)]
     #[serde(rename = "group")]
-    pub r#group: Box<String>,
+    pub r#group: String,
 }

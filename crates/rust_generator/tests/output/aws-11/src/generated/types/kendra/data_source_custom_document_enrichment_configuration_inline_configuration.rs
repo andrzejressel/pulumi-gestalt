@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceCustomDocumentEnrichmentConfigurationInlineConfiguration {
     /// Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra. See condition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "condition")]
-    pub r#condition: Box<Option<super::super::types::kendra::DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationCondition>>,
+    pub r#condition: Option<Box<super::super::types::kendra::DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationCondition>>,
     /// `TRUE` to delete content if the condition used for the target attribute is met.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "documentContentDeletion")]
-    pub r#document_content_deletion: Box<Option<bool>>,
+    pub r#document_content_deletion: Option<bool>,
     /// Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<Option<super::super::types::kendra::DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTarget>>,
+    pub r#target: Option<Box<super::super::types::kendra::DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTarget>>,
 }

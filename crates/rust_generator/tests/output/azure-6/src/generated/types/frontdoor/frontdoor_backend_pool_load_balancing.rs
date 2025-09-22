@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FrontdoorBackendPoolLoadBalancing {
     /// The additional latency in milliseconds for probes to fall into the lowest latency bucket. Defaults to `0`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "additionalLatencyMilliseconds")]
-    pub r#additional_latency_milliseconds: Box<Option<i32>>,
+    pub r#additional_latency_milliseconds: Option<i32>,
     /// The ID of the FrontDoor.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Specifies the name of the Load Balancer.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The number of samples to consider for load balancing decisions. Defaults to `4`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sampleSize")]
-    pub r#sample_size: Box<Option<i32>>,
+    pub r#sample_size: Option<i32>,
     /// The number of samples within the sample period that must succeed. Defaults to `2`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "successfulSamplesRequired")]
-    pub r#successful_samples_required: Box<Option<i32>>,
+    pub r#successful_samples_required: Option<i32>,
 }

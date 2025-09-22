@@ -5,7 +5,7 @@
 pub struct OrganizationProperties {
     /// List of all properties in the object.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Option<Vec<super::super::types::apigee::OrganizationPropertiesProperty>>>,
+    pub r#properties: Option<Vec<super::super::types::apigee::OrganizationPropertiesProperty>>,
 }

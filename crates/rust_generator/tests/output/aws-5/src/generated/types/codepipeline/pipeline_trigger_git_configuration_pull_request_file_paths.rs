@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipelineTriggerGitConfigurationPullRequestFilePaths {
     /// A list of patterns of Git repository file paths that, when a commit is pushed, are to be excluded from starting the pipeline.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "excludes")]
-    pub r#excludes: Box<Option<Vec<String>>>,
+    pub r#excludes: Option<Vec<String>>,
     /// A list of patterns of Git repository file paths that, when a commit is pushed, are to be included as criteria that starts the pipeline.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includes")]
-    pub r#includes: Box<Option<Vec<String>>>,
+    pub r#includes: Option<Vec<String>>,
 }

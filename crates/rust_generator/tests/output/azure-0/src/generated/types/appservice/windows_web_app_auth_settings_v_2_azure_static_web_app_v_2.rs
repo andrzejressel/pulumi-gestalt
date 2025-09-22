@@ -6,5 +6,5 @@ pub struct WindowsWebAppAuthSettingsV2AzureStaticWebAppV2 {
     /// The ID of the Client to use to authenticate with Azure Static Web App Authentication.
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
 }

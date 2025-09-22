@@ -6,15 +6,15 @@ pub struct WindowsFunctionAppSlotAuthSettingsV2GithubV2 {
     /// The ID of the GitHub app used for login..
     #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<String>,
+    pub r#client_id: String,
     /// The app setting name that contains the `client_secret` value used for GitHub Login.
     /// 
     /// !> **NOTE:** A setting with this name must exist in `app_settings` to function correctly.
     #[builder(into)]
     #[serde(rename = "clientSecretSettingName")]
-    pub r#client_secret_setting_name: Box<String>,
+    pub r#client_secret_setting_name: String,
     /// The list of OAuth 2.0 scopes that should be requested as part of GitHub Login authentication.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "loginScopes")]
-    pub r#login_scopes: Box<Option<Vec<String>>>,
+    pub r#login_scopes: Option<Vec<String>>,
 }

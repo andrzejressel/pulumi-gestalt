@@ -6,11 +6,11 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationInputIn
     /// Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
     #[builder(into)]
     #[serde(rename = "recordColumns")]
-    pub r#record_columns: Box<Vec<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordColumn>>,
+    pub r#record_columns: Vec<super::super::types::kinesisanalyticsv2::ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordColumn>,
     /// Specifies the encoding of the records in the streaming source. For example, `UTF-8`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordEncoding")]
-    pub r#record_encoding: Box<Option<String>>,
+    pub r#record_encoding: Option<String>,
     /// Specifies the format of the records on the streaming source.
     #[builder(into)]
     #[serde(rename = "recordFormat")]

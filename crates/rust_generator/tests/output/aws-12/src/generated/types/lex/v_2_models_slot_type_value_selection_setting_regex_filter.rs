@@ -6,5 +6,5 @@ pub struct V2ModelsSlotTypeValueSelectionSettingRegexFilter {
     /// A regular expression used to validate the value of a slot.
     #[builder(into)]
     #[serde(rename = "pattern")]
-    pub r#pattern: Box<String>,
+    pub r#pattern: String,
 }

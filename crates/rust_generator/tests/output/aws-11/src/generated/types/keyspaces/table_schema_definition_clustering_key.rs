@@ -6,9 +6,9 @@ pub struct TableSchemaDefinitionClusteringKey {
     /// The name of the clustering key column.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The order modifier. Valid values: `ASC`, `DESC`.
     #[builder(into)]
     #[serde(rename = "orderBy")]
-    pub r#order_by: Box<String>,
+    pub r#order_by: String,
 }

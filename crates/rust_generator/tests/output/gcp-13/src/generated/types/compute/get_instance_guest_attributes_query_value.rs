@@ -6,13 +6,13 @@ pub struct GetInstanceGuestAttributesQueryValue {
     /// Key of the guest_attribute.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Namespace of the guest_attribute.
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
     /// Value of the guest_attribute.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

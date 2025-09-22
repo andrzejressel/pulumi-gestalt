@@ -6,13 +6,13 @@ pub struct GetAppDapr {
     /// The Dapr Application Identifier.
     #[builder(into)]
     #[serde(rename = "appId")]
-    pub r#app_id: Box<String>,
+    pub r#app_id: String,
     /// The port which the application is listening on. This is the same as the `ingress` port.
     #[builder(into)]
     #[serde(rename = "appPort")]
-    pub r#app_port: Box<i32>,
+    pub r#app_port: i32,
     /// The protocol for the app. Possible values include `http` and `grpc`. Defaults to `http`.
     #[builder(into)]
     #[serde(rename = "appProtocol")]
-    pub r#app_protocol: Box<String>,
+    pub r#app_protocol: String,
 }

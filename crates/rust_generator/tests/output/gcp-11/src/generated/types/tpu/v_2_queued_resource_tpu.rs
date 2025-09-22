@@ -5,7 +5,7 @@
 pub struct V2QueuedResourceTpu {
     /// The TPU node(s) being requested.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeSpecs")]
-    pub r#node_specs: Box<Option<Vec<super::super::types::tpu::V2QueuedResourceTpuNodeSpec>>>,
+    pub r#node_specs: Option<Vec<super::super::types::tpu::V2QueuedResourceTpuNodeSpec>>,
 }

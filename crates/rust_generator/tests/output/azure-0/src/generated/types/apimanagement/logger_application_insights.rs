@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LoggerApplicationInsights {
     /// The connection string of Application Insights.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionString")]
-    pub r#connection_string: Box<Option<String>>,
+    pub r#connection_string: Option<String>,
     /// The instrumentation key used to push data to Application Insights.
     /// 
     /// > **Note:** Either `connection_string` or `instrumentation_key` have to be specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instrumentationKey")]
-    pub r#instrumentation_key: Box<Option<String>>,
+    pub r#instrumentation_key: Option<String>,
 }

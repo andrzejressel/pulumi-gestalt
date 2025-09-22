@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSetLogicalTableMapDataTransformTagColumnOperationTag {
     /// A description for a column. See column_description.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "columnDescription")]
-    pub r#column_description: Box<Option<super::super::types::quicksight::DataSetLogicalTableMapDataTransformTagColumnOperationTagColumnDescription>>,
+    pub r#column_description: Option<Box<super::super::types::quicksight::DataSetLogicalTableMapDataTransformTagColumnOperationTagColumnDescription>>,
     /// A geospatial role for a column. Valid values are `COUNTRY`, `STATE`, `COUNTY`, `CITY`, `POSTCODE`, `LONGITUDE`, and `LATITUDE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "columnGeographicRole")]
-    pub r#column_geographic_role: Box<Option<String>>,
+    pub r#column_geographic_role: Option<String>,
 }

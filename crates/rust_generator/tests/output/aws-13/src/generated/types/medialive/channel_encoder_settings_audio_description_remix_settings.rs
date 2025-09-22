@@ -5,11 +5,11 @@
 pub struct ChannelEncoderSettingsAudioDescriptionRemixSettings {
     #[builder(into)]
     #[serde(rename = "channelMappings")]
-    pub r#channel_mappings: Box<Vec<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMapping>>,
-    #[builder(into, default)]
+    pub r#channel_mappings: Vec<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMapping>,
+    #[builder(into)]
     #[serde(rename = "channelsIn")]
-    pub r#channels_in: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#channels_in: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "channelsOut")]
-    pub r#channels_out: Box<Option<i32>>,
+    pub r#channels_out: Option<i32>,
 }

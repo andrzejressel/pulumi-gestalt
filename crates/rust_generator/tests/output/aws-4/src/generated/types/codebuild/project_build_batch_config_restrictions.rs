@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ProjectBuildBatchConfigRestrictions {
     /// An array of strings that specify the compute types that are allowed for the batch build. See [Build environment compute types](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html) in the AWS CodeBuild User Guide for these values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "computeTypesAlloweds")]
-    pub r#compute_types_alloweds: Box<Option<Vec<String>>>,
+    pub r#compute_types_alloweds: Option<Vec<String>>,
     /// Specifies the maximum number of builds allowed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximumBuildsAllowed")]
-    pub r#maximum_builds_allowed: Box<Option<i32>>,
+    pub r#maximum_builds_allowed: Option<i32>,
 }

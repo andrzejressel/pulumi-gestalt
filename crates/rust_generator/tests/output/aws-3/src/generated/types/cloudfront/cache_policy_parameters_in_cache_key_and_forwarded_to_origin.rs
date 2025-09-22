@@ -8,13 +8,13 @@ pub struct CachePolicyParametersInCacheKeyAndForwardedToOrigin {
     #[serde(rename = "cookiesConfig")]
     pub r#cookies_config: Box<super::super::types::cloudfront::CachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig>,
     /// Flag determines whether the Accept-Encoding HTTP header is included in the cache key and in requests that CloudFront sends to the origin.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableAcceptEncodingBrotli")]
-    pub r#enable_accept_encoding_brotli: Box<Option<bool>>,
+    pub r#enable_accept_encoding_brotli: Option<bool>,
     /// Whether the Accept-Encoding HTTP header is included in the cache key and in requests sent to the origin by CloudFront.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableAcceptEncodingGzip")]
-    pub r#enable_accept_encoding_gzip: Box<Option<bool>>,
+    pub r#enable_accept_encoding_gzip: Option<bool>,
     /// Whether any HTTP headers are included in the cache key and automatically included in requests that CloudFront sends to the origin. See Headers Config for more information.
     #[builder(into)]
     #[serde(rename = "headersConfig")]

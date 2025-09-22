@@ -6,9 +6,9 @@ pub struct ClusterOptimizedAutoScale {
     /// The maximum number of allowed instances. Must between `0` and `1000`.
     #[builder(into)]
     #[serde(rename = "maximumInstances")]
-    pub r#maximum_instances: Box<i32>,
+    pub r#maximum_instances: i32,
     /// The minimum number of allowed instances. Must between `0` and `1000`.
     #[builder(into)]
     #[serde(rename = "minimumInstances")]
-    pub r#minimum_instances: Box<i32>,
+    pub r#minimum_instances: i32,
 }

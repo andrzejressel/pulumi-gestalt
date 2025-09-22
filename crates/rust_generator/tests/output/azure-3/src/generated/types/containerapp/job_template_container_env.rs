@@ -6,13 +6,13 @@ pub struct JobTemplateContainerEnv {
     /// The name of the environment variable.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Name of the Container App secret from which to pull the environment variable value.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretName")]
-    pub r#secret_name: Box<Option<String>>,
+    pub r#secret_name: Option<String>,
     /// The value of the environment variable.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct GetVpnServerConfigurationClientRevokedCertificate {
     /// The Name of the VPN Server Configuration.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The Thumbprint of the Certificate.
     #[builder(into)]
     #[serde(rename = "thumbprint")]
-    pub r#thumbprint: Box<String>,
+    pub r#thumbprint: String,
 }

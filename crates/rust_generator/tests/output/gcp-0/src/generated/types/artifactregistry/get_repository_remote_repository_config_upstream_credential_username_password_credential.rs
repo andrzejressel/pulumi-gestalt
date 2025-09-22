@@ -8,9 +8,9 @@ pub struct GetRepositoryRemoteRepositoryConfigUpstreamCredentialUsernamePassword
     /// 'projects/{project}/secrets/{secret}/versions/{version}'.
     #[builder(into)]
     #[serde(rename = "passwordSecretVersion")]
-    pub r#password_secret_version: Box<String>,
+    pub r#password_secret_version: String,
     /// The username to access the remote repository.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

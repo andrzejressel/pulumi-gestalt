@@ -5,12 +5,12 @@
 pub struct PreventionJobTriggerInspectJobInspectConfigRuleSetRule {
     /// The rule that specifies conditions when findings of infoTypes specified in InspectionRuleSet are removed from results.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exclusionRule")]
-    pub r#exclusion_rule: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRule>>,
+    pub r#exclusion_rule: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRule>>,
     /// Hotword-based detection rule.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hotwordRule")]
-    pub r#hotword_rule: Box<Option<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRule>>,
+    pub r#hotword_rule: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRule>>,
 }

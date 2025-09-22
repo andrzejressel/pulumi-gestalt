@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipeSourceParametersSelfManagedKafkaParametersCredentials {
     /// The ARN of the Secrets Manager secret containing the credentials.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "basicAuth")]
-    pub r#basic_auth: Box<Option<String>>,
+    pub r#basic_auth: Option<String>,
     /// The ARN of the Secrets Manager secret containing the credentials.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientCertificateTlsAuth")]
-    pub r#client_certificate_tls_auth: Box<Option<String>>,
+    pub r#client_certificate_tls_auth: Option<String>,
     /// The ARN of the Secrets Manager secret containing the credentials.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "saslScram256Auth")]
-    pub r#sasl_scram_256_auth: Box<Option<String>>,
+    pub r#sasl_scram_256_auth: Option<String>,
     /// The ARN of the Secrets Manager secret containing the credentials.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "saslScram512Auth")]
-    pub r#sasl_scram_512_auth: Box<Option<String>>,
+    pub r#sasl_scram_512_auth: Option<String>,
 }

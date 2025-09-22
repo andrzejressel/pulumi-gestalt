@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicyDefinitionStatic {
     /// The description of the static policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The statement of the static policy.
     #[builder(into)]
     #[serde(rename = "statement")]
-    pub r#statement: Box<String>,
+    pub r#statement: String,
 }

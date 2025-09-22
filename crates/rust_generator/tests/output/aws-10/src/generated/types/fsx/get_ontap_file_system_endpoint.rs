@@ -6,9 +6,9 @@ pub struct GetOntapFileSystemEndpoint {
     /// A FileSystemEndpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems. See FileSystemEndpoint below.
     #[builder(into)]
     #[serde(rename = "interclusters")]
-    pub r#interclusters: Box<Vec<super::super::types::fsx::GetOntapFileSystemEndpointIntercluster>>,
+    pub r#interclusters: Vec<super::super::types::fsx::GetOntapFileSystemEndpointIntercluster>,
     /// A FileSystemEndpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See FileSystemEndpoint below.
     #[builder(into)]
     #[serde(rename = "managements")]
-    pub r#managements: Box<Vec<super::super::types::fsx::GetOntapFileSystemEndpointManagement>>,
+    pub r#managements: Vec<super::super::types::fsx::GetOntapFileSystemEndpointManagement>,
 }

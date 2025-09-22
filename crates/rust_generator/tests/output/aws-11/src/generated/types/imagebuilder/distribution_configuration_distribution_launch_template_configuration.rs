@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DistributionConfigurationDistributionLaunchTemplateConfiguration {
     /// The account ID that this configuration applies to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<Option<String>>,
+    pub r#account_id: Option<String>,
     /// Indicates whether to set the specified Amazon EC2 launch template as the default launch template. Defaults to `true`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "default")]
-    pub r#default: Box<Option<bool>>,
+    pub r#default: Option<bool>,
     /// The ID of the Amazon EC2 launch template to use.
     #[builder(into)]
     #[serde(rename = "launchTemplateId")]
-    pub r#launch_template_id: Box<String>,
+    pub r#launch_template_id: String,
 }

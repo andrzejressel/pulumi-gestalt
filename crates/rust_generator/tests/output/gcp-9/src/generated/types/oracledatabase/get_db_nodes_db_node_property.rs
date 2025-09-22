@@ -6,33 +6,33 @@ pub struct GetDbNodesDbNodeProperty {
     /// Output only
     #[builder(into)]
     #[serde(rename = "dbNodeStorageSizeGb")]
-    pub r#db_node_storage_size_gb: Box<i32>,
+    pub r#db_node_storage_size_gb: i32,
     /// Output only
     #[builder(into)]
     #[serde(rename = "dbServerOcid")]
-    pub r#db_server_ocid: Box<String>,
+    pub r#db_server_ocid: String,
     /// Output only
     #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<String>,
+    pub r#hostname: String,
     /// Output only
     #[builder(into)]
     #[serde(rename = "memorySizeGb")]
-    pub r#memory_size_gb: Box<i32>,
+    pub r#memory_size_gb: i32,
     /// Output only
     #[builder(into)]
     #[serde(rename = "ocid")]
-    pub r#ocid: Box<String>,
+    pub r#ocid: String,
     /// Output only
     #[builder(into)]
     #[serde(rename = "ocpuCount")]
-    pub r#ocpu_count: Box<i32>,
+    pub r#ocpu_count: i32,
     /// Output only
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
     /// Output only
     #[builder(into)]
     #[serde(rename = "totalCpuCoreCount")]
-    pub r#total_cpu_core_count: Box<i32>,
+    pub r#total_cpu_core_count: i32,
 }

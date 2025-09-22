@@ -10,5 +10,5 @@ pub struct InstanceGceSetupNetworkInterfaceAccessConfig {
     /// the zone of the instance.
     #[builder(into)]
     #[serde(rename = "externalIp")]
-    pub r#external_ip: Box<String>,
+    pub r#external_ip: String,
 }

@@ -5,5 +5,5 @@
 pub struct GetDataSetLogicalTableMapDataTransformTagColumnOperationTagColumnDescription {
     #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<String>,
+    pub r#text: String,
 }

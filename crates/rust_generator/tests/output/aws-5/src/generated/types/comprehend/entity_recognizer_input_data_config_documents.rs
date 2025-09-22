@@ -5,14 +5,14 @@
 pub struct EntityRecognizerInputDataConfigDocuments {
     /// Specifies how the input files should be processed.
     /// One of `ONE_DOC_PER_LINE` or `ONE_DOC_PER_FILE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputFormat")]
-    pub r#input_format: Box<Option<String>>,
+    pub r#input_format: Option<String>,
     /// Location of training documents.
     #[builder(into)]
     #[serde(rename = "s3Uri")]
-    pub r#s_3_uri: Box<String>,
-    #[builder(into, default)]
+    pub r#s_3_uri: String,
+    #[builder(into)]
     #[serde(rename = "testS3Uri")]
-    pub r#test_s_3_uri: Box<Option<String>>,
+    pub r#test_s_3_uri: Option<String>,
 }

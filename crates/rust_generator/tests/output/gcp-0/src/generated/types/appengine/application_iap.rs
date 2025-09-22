@@ -5,20 +5,20 @@
 pub struct ApplicationIap {
     /// (Optional) Whether the serving infrastructure will authenticate and authorize all incoming requests. 
     /// (default is false)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// OAuth2 client ID to use for the authentication flow.
     #[builder(into)]
     #[serde(rename = "oauth2ClientId")]
-    pub r#oauth_2_client_id: Box<String>,
+    pub r#oauth_2_client_id: String,
     /// OAuth2 client secret to use for the authentication flow.
     /// The SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field.
     #[builder(into)]
     #[serde(rename = "oauth2ClientSecret")]
-    pub r#oauth_2_client_secret: Box<String>,
+    pub r#oauth_2_client_secret: String,
     /// Hex-encoded SHA-256 hash of the client secret.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oauth2ClientSecretSha256")]
-    pub r#oauth_2_client_secret_sha_256: Box<Option<String>>,
+    pub r#oauth_2_client_secret_sha_256: Option<String>,
 }

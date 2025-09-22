@@ -7,5 +7,5 @@ pub struct DetectorDatasourcesS3Logs {
     /// Defaults to `true`.
     #[builder(into)]
     #[serde(rename = "enable")]
-    pub r#enable: Box<bool>,
+    pub r#enable: bool,
 }

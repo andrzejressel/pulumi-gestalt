@@ -6,9 +6,9 @@ pub struct CassandraTableSchemaColumn {
     /// Name of the column to be created.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Type of the column to be created.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

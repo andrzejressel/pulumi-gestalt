@@ -6,5 +6,5 @@ pub struct GetLinkLinkConfigurationLogGroupConfiguration {
     /// Filter string that specifies  which metrics are to be shared with the monitoring account. See [MetricConfiguration](https://docs.aws.amazon.com/OAM/latest/APIReference/API_MetricConfiguration.html) for details.
     #[builder(into)]
     #[serde(rename = "filter")]
-    pub r#filter: Box<String>,
+    pub r#filter: String,
 }

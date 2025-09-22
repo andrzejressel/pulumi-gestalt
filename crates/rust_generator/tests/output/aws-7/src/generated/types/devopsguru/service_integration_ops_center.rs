@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceIntegrationOpsCenter {
     /// Specifies if DevOps Guru is enabled to create an AWS Systems Manager OpsItem for each created insight. Valid values are `DISABLED` and `ENABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "optInStatus")]
-    pub r#opt_in_status: Box<Option<String>>,
+    pub r#opt_in_status: Option<String>,
 }

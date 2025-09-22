@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServerlessCacheCacheUsageLimitsDataStorage {
     /// The upper limit for data storage the cache is set to use. Must be between 1 and 5,000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maximum")]
-    pub r#maximum: Box<Option<i32>>,
+    pub r#maximum: Option<i32>,
     /// The lower limit for data storage the cache is set to use. Must be between 1 and 5,000.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minimum")]
-    pub r#minimum: Box<Option<i32>>,
+    pub r#minimum: Option<i32>,
     /// The unit that the storage is measured in, in GB.
     #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<String>,
+    pub r#unit: String,
 }

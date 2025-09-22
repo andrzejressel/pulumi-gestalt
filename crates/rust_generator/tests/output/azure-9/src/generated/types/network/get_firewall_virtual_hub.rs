@@ -6,17 +6,17 @@ pub struct GetFirewallVirtualHub {
     /// The private IP address associated with the Azure Firewall.
     #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<String>,
+    pub r#private_ip_address: String,
     /// The list of public IP addresses associated with the Azure Firewall.
     #[builder(into)]
     #[serde(rename = "publicIpAddresses")]
-    pub r#public_ip_addresses: Box<Vec<String>>,
+    pub r#public_ip_addresses: Vec<String>,
     /// The number of public IPs assigned to the Azure Firewall.
     #[builder(into)]
     #[serde(rename = "publicIpCount")]
-    pub r#public_ip_count: Box<i32>,
+    pub r#public_ip_count: i32,
     /// The ID of the Virtual Hub where the Azure Firewall resides in.
     #[builder(into)]
     #[serde(rename = "virtualHubId")]
-    pub r#virtual_hub_id: Box<String>,
+    pub r#virtual_hub_id: String,
 }

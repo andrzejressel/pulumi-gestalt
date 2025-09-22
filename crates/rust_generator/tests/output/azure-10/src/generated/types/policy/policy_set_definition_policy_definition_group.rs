@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PolicySetDefinitionPolicyDefinitionGroup {
     /// The ID of a resource that contains additional metadata about this policy definition group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "additionalMetadataResourceId")]
-    pub r#additional_metadata_resource_id: Box<Option<String>>,
+    pub r#additional_metadata_resource_id: Option<String>,
     /// The category of this policy definition group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "category")]
-    pub r#category: Box<Option<String>>,
+    pub r#category: Option<String>,
     /// The description of this policy definition group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The display name of this policy definition group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<Option<String>>,
+    pub r#display_name: Option<String>,
     /// The name of this policy definition group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

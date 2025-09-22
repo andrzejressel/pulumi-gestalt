@@ -6,11 +6,11 @@ pub struct ConnectionAuthConfigOauth2JwtBearer {
     /// Secret version reference containing a PKCS#8 PEM-encoded private key associated with the Client Certificate.
     /// This private key will be used to sign JWTs used for the jwt-bearer authorization grant.
     /// Specified in the form as: projects/*/secrets/*/versions/*.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientKey")]
-    pub r#client_key: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearerClientKey>>,
+    pub r#client_key: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearerClientKey>>,
     /// JwtClaims providers fields to generate the token.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "jwtClaims")]
-    pub r#jwt_claims: Box<Option<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearerJwtClaims>>,
+    pub r#jwt_claims: Option<Box<super::super::types::integrationconnectors::ConnectionAuthConfigOauth2JwtBearerJwtClaims>>,
 }

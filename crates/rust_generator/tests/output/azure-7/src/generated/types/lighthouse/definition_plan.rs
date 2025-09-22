@@ -6,17 +6,17 @@ pub struct DefinitionPlan {
     /// The plan name of the marketplace offer.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The product code of the plan.
     #[builder(into)]
     #[serde(rename = "product")]
-    pub r#product: Box<String>,
+    pub r#product: String,
     /// The publisher ID of the plan.
     #[builder(into)]
     #[serde(rename = "publisher")]
-    pub r#publisher: Box<String>,
+    pub r#publisher: String,
     /// The version of the plan.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

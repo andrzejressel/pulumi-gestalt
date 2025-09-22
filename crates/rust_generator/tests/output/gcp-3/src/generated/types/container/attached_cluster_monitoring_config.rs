@@ -5,7 +5,7 @@
 pub struct AttachedClusterMonitoringConfig {
     /// Enable Google Cloud Managed Service for Prometheus in the cluster.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "managedPrometheusConfig")]
-    pub r#managed_prometheus_config: Box<Option<super::super::types::container::AttachedClusterMonitoringConfigManagedPrometheusConfig>>,
+    pub r#managed_prometheus_config: Option<Box<super::super::types::container::AttachedClusterMonitoringConfigManagedPrometheusConfig>>,
 }

@@ -6,9 +6,9 @@ pub struct GetTriggerBuildSource {
     /// Location of the source in a Google Cloud Source Repository.
     #[builder(into)]
     #[serde(rename = "repoSources")]
-    pub r#repo_sources: Box<Vec<super::super::types::cloudbuild::GetTriggerBuildSourceRepoSource>>,
+    pub r#repo_sources: Vec<super::super::types::cloudbuild::GetTriggerBuildSourceRepoSource>,
     /// Location of the source in an archive file in Google Cloud Storage.
     #[builder(into)]
     #[serde(rename = "storageSources")]
-    pub r#storage_sources: Box<Vec<super::super::types::cloudbuild::GetTriggerBuildSourceStorageSource>>,
+    pub r#storage_sources: Vec<super::super::types::cloudbuild::GetTriggerBuildSourceStorageSource>,
 }

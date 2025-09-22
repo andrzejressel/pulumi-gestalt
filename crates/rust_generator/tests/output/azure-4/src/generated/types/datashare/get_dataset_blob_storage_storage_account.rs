@@ -6,13 +6,13 @@ pub struct GetDatasetBlobStorageStorageAccount {
     /// The name of this Data Share Blob Storage Dataset.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The resource group name of the storage account to be shared with the receiver.
     #[builder(into)]
     #[serde(rename = "resourceGroupName")]
-    pub r#resource_group_name: Box<String>,
+    pub r#resource_group_name: String,
     /// The subscription id of the storage account to be shared with the receiver.
     #[builder(into)]
     #[serde(rename = "subscriptionId")]
-    pub r#subscription_id: Box<String>,
+    pub r#subscription_id: String,
 }

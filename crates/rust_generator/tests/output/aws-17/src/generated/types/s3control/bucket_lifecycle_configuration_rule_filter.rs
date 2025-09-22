@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketLifecycleConfigurationRuleFilter {
     /// Object prefix for rule filtering.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
     /// Key-value map of object tags for rule filtering.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#tags: Option<std::collections::HashMap<String, String>>,
 }

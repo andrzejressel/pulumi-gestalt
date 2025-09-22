@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BackupPlanBackupScheduleRpoConfigExclusionWindowSingleOccurrenceDate {
     /// Day of a month.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<Option<i32>>,
+    pub r#day: Option<i32>,
     /// Month of a year.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "month")]
-    pub r#month: Box<Option<i32>>,
+    pub r#month: Option<i32>,
     /// Year of the date.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "year")]
-    pub r#year: Box<Option<i32>>,
+    pub r#year: Option<i32>,
 }

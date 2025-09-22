@@ -6,9 +6,9 @@ pub struct InstanceGroupNamedPort {
     /// The name which the port will be mapped to.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The port number to map the name to.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

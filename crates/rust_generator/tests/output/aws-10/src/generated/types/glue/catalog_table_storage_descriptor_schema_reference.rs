@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CatalogTableStorageDescriptorSchemaReference {
     /// Configuration block that contains schema identity fields. Either this or the `schema_version_id` has to be provided. See `schema_id` below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schemaId")]
-    pub r#schema_id: Box<Option<super::super::types::glue::CatalogTableStorageDescriptorSchemaReferenceSchemaId>>,
+    pub r#schema_id: Option<Box<super::super::types::glue::CatalogTableStorageDescriptorSchemaReferenceSchemaId>>,
     /// Unique ID assigned to a version of the schema. Either this or the `schema_id` has to be provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "schemaVersionId")]
-    pub r#schema_version_id: Box<Option<String>>,
+    pub r#schema_version_id: Option<String>,
     /// Version number of the schema.
     #[builder(into)]
     #[serde(rename = "schemaVersionNumber")]
-    pub r#schema_version_number: Box<i32>,
+    pub r#schema_version_number: i32,
 }

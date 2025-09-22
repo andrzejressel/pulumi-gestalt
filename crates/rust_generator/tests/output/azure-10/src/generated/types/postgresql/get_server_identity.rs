@@ -6,13 +6,13 @@ pub struct GetServerIdentity {
     /// The ID of the System Managed Service Principal assigned to the PostgreSQL Server.
     #[builder(into)]
     #[serde(rename = "principalId")]
-    pub r#principal_id: Box<String>,
+    pub r#principal_id: String,
     /// The ID of the Tenant of the System Managed Service Principal assigned to the PostgreSQL Server.
     #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<String>,
+    pub r#tenant_id: String,
     /// The identity type of the Managed Identity assigned to the PostgreSQL Server.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

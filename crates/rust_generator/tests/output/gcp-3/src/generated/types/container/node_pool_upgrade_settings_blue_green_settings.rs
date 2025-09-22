@@ -5,9 +5,9 @@
 pub struct NodePoolUpgradeSettingsBlueGreenSettings {
     /// Time needed after draining the entire blue pool.
     /// After this period, the blue pool will be cleaned up.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodePoolSoakDuration")]
-    pub r#node_pool_soak_duration: Box<Option<String>>,
+    pub r#node_pool_soak_duration: Option<String>,
     /// Specifies the standard policy settings for blue-green upgrades.
     #[builder(into)]
     #[serde(rename = "standardRolloutPolicy")]

@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrustAcm {
     #[builder(into)]
     #[serde(rename = "certificateAuthorityArns")]
-    pub r#certificate_authority_arns: Box<Vec<String>>,
+    pub r#certificate_authority_arns: Vec<String>,
 }

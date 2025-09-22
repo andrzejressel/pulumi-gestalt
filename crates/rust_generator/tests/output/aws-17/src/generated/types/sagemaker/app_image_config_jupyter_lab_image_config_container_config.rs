@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AppImageConfigJupyterLabImageConfigContainerConfig {
     /// The arguments for the container when you're running the application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerArguments")]
-    pub r#container_arguments: Box<Option<Vec<String>>>,
+    pub r#container_arguments: Option<Vec<String>>,
     /// The entrypoint used to run the application in the container.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerEntrypoints")]
-    pub r#container_entrypoints: Box<Option<Vec<String>>>,
+    pub r#container_entrypoints: Option<Vec<String>>,
     /// The environment variables to set in the container.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerEnvironmentVariables")]
-    pub r#container_environment_variables: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#container_environment_variables: Option<std::collections::HashMap<String, String>>,
 }

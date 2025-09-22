@@ -3,11 +3,11 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CustomLayerCloudwatchConfiguration {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// A block the specifies how an opsworks logs look like. See Log Streams.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logStreams")]
-    pub r#log_streams: Box<Option<Vec<super::super::types::opsworks::CustomLayerCloudwatchConfigurationLogStream>>>,
+    pub r#log_streams: Option<Vec<super::super::types::opsworks::CustomLayerCloudwatchConfigurationLogStream>>,
 }

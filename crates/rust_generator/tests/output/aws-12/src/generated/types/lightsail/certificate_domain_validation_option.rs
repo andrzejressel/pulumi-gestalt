@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertificateDomainValidationOption {
     /// A domain name for which the certificate should be issued.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#domain_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "resourceRecordName")]
-    pub r#resource_record_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#resource_record_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "resourceRecordType")]
-    pub r#resource_record_type: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#resource_record_type: Option<String>,
+    #[builder(into)]
     #[serde(rename = "resourceRecordValue")]
-    pub r#resource_record_value: Box<Option<String>>,
+    pub r#resource_record_value: Option<String>,
 }

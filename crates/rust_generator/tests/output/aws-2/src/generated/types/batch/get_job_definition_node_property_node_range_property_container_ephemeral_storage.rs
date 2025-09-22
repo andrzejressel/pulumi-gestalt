@@ -5,5 +5,5 @@
 pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerEphemeralStorage {
     #[builder(into)]
     #[serde(rename = "sizeInGib")]
-    pub r#size_in_gib: Box<i32>,
+    pub r#size_in_gib: i32,
 }

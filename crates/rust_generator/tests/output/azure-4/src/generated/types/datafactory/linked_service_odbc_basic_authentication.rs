@@ -6,9 +6,9 @@ pub struct LinkedServiceOdbcBasicAuthentication {
     /// The password associated with the username, which can be used to authenticate to the ODBC endpoint.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// The username which can be used to authenticate to the ODBC endpoint.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

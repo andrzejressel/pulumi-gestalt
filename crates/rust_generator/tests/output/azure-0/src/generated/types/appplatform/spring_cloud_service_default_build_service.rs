@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudServiceDefaultBuildService {
     /// Specifies the name of the container registry used in the default build service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "containerRegistryName")]
-    pub r#container_registry_name: Box<Option<String>>,
+    pub r#container_registry_name: Option<String>,
 }

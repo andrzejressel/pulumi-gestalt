@@ -8,5 +8,5 @@ pub struct ResponsePolicyGkeCluster {
     /// `projects/*/locations/*/clusters/*`
     #[builder(into)]
     #[serde(rename = "gkeClusterName")]
-    pub r#gke_cluster_name: Box<String>,
+    pub r#gke_cluster_name: String,
 }

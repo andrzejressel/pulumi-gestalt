@@ -6,9 +6,9 @@ pub struct AppAuthorizationTenant {
     /// The display name of the tenant.
     #[builder(into)]
     #[serde(rename = "tenantDisplayName")]
-    pub r#tenant_display_name: Box<String>,
+    pub r#tenant_display_name: String,
     /// The ID of the application tenant.
     #[builder(into)]
     #[serde(rename = "tenantIdentifier")]
-    pub r#tenant_identifier: Box<String>,
+    pub r#tenant_identifier: String,
 }

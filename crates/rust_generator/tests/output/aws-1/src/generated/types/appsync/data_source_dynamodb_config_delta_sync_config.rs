@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceDynamodbConfigDeltaSyncConfig {
     /// The number of minutes that an Item is stored in the data source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "baseTableTtl")]
-    pub r#base_table_ttl: Box<Option<i32>>,
+    pub r#base_table_ttl: Option<i32>,
     /// The table name.
     #[builder(into)]
     #[serde(rename = "deltaSyncTableName")]
-    pub r#delta_sync_table_name: Box<String>,
+    pub r#delta_sync_table_name: String,
     /// The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deltaSyncTableTtl")]
-    pub r#delta_sync_table_ttl: Box<Option<i32>>,
+    pub r#delta_sync_table_ttl: Option<i32>,
 }

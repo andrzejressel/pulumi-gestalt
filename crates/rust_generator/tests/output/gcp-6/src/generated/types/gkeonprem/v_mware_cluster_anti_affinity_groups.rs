@@ -8,5 +8,5 @@ pub struct VMwareClusterAntiAffinityGroups {
     /// Enabled by default.
     #[builder(into)]
     #[serde(rename = "aagConfigDisabled")]
-    pub r#aag_config_disabled: Box<bool>,
+    pub r#aag_config_disabled: bool,
 }

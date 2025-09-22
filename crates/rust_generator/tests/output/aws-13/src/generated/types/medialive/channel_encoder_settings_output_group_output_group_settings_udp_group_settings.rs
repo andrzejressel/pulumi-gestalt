@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsUdpGroupSettings {
     /// Specifies behavior of last resort when input video os lost.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputLossAction")]
-    pub r#input_loss_action: Box<Option<String>>,
+    pub r#input_loss_action: Option<String>,
     /// Indicates ID3 frame that has the timecode.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timedMetadataId3Frame")]
-    pub r#timed_metadata_id_3_frame: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#timed_metadata_id_3_frame: Option<String>,
+    #[builder(into)]
     #[serde(rename = "timedMetadataId3Period")]
-    pub r#timed_metadata_id_3_period: Box<Option<i32>>,
+    pub r#timed_metadata_id_3_period: Option<i32>,
 }

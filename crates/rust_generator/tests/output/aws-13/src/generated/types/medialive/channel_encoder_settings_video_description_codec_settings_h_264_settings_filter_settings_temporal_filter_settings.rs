@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettingsTemporalFilterSettings {
     /// Post filter sharpening.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "postFilterSharpening")]
-    pub r#post_filter_sharpening: Box<Option<String>>,
+    pub r#post_filter_sharpening: Option<String>,
     /// Filter strength.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "strength")]
-    pub r#strength: Box<Option<String>>,
+    pub r#strength: Option<String>,
 }

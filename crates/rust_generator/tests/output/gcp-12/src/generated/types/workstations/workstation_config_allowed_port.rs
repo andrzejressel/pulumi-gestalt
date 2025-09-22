@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkstationConfigAllowedPort {
     /// Starting port number for the current range of ports. Valid ports are 22, 80, and ports within the range 1024-65535.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "first")]
-    pub r#first: Box<Option<i32>>,
+    pub r#first: Option<i32>,
     /// Ending port number for the current range of ports. Valid ports are 22, 80, and ports within the range 1024-65535.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "last")]
-    pub r#last: Box<Option<i32>>,
+    pub r#last: Option<i32>,
 }

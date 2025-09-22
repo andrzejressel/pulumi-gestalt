@@ -5,13 +5,13 @@
 pub struct GetDomainAdvancedSecurityOption {
     #[builder(into)]
     #[serde(rename = "anonymousAuthEnabled")]
-    pub r#anonymous_auth_enabled: Box<bool>,
+    pub r#anonymous_auth_enabled: bool,
     /// Enabled disabled toggle for off-peak update window
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Whether the internal user database is enabled.
     #[builder(into)]
     #[serde(rename = "internalUserDatabaseEnabled")]
-    pub r#internal_user_database_enabled: Box<bool>,
+    pub r#internal_user_database_enabled: bool,
 }

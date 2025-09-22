@@ -6,9 +6,9 @@ pub struct ServerlessCacheEndpoint {
     /// The DNS hostname of the cache node.
     #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<String>,
+    pub r#address: String,
     /// The port number that the cache engine is listening on. Set as integer.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

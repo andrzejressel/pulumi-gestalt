@@ -6,16 +6,16 @@ pub struct GetGroupWarmPool {
     /// List of instance reuse policy objects.
     #[builder(into)]
     #[serde(rename = "instanceReusePolicies")]
-    pub r#instance_reuse_policies: Box<Vec<super::super::types::autoscaling::GetGroupWarmPoolInstanceReusePolicy>>,
+    pub r#instance_reuse_policies: Vec<super::super::types::autoscaling::GetGroupWarmPoolInstanceReusePolicy>,
     #[builder(into)]
     #[serde(rename = "maxGroupPreparedCapacity")]
-    pub r#max_group_prepared_capacity: Box<i32>,
+    pub r#max_group_prepared_capacity: i32,
     /// Minimum number of instances to maintain in the warm pool.
     #[builder(into)]
     #[serde(rename = "minSize")]
-    pub r#min_size: Box<i32>,
+    pub r#min_size: i32,
     /// Instance state to transition to after the lifecycle actions are complete.
     #[builder(into)]
     #[serde(rename = "poolState")]
-    pub r#pool_state: Box<String>,
+    pub r#pool_state: String,
 }

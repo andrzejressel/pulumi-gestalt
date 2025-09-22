@@ -6,9 +6,9 @@ pub struct GetInstanceAutoscalingConfigAsymmetricAutoscalingOptionOverrideAutosc
     /// The maximum number of nodes for this specific replica.
     #[builder(into)]
     #[serde(rename = "maxNodes")]
-    pub r#max_nodes: Box<i32>,
+    pub r#max_nodes: i32,
     /// The minimum number of nodes for this specific replica.
     #[builder(into)]
     #[serde(rename = "minNodes")]
-    pub r#min_nodes: Box<i32>,
+    pub r#min_nodes: i32,
 }

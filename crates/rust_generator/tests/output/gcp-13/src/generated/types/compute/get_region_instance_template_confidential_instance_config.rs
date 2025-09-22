@@ -9,9 +9,9 @@ pub struct GetRegionInstanceTemplateConfidentialInstanceConfig {
     /// "AMD Milan" is currently required.
     #[builder(into)]
     #[serde(rename = "confidentialInstanceType")]
-    pub r#confidential_instance_type: Box<String>,
+    pub r#confidential_instance_type: String,
     /// Defines whether the instance should have confidential compute enabled. `on_host_maintenance` has to be set to TERMINATE or this will fail to create the VM.
     #[builder(into)]
     #[serde(rename = "enableConfidentialCompute")]
-    pub r#enable_confidential_compute: Box<bool>,
+    pub r#enable_confidential_compute: bool,
 }

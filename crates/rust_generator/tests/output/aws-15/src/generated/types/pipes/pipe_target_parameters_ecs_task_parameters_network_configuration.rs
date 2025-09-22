@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipeTargetParametersEcsTaskParametersNetworkConfiguration {
     /// Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "awsVpcConfiguration")]
-    pub r#aws_vpc_configuration: Box<Option<super::super::types::pipes::PipeTargetParametersEcsTaskParametersNetworkConfigurationAwsVpcConfiguration>>,
+    pub r#aws_vpc_configuration: Option<Box<super::super::types::pipes::PipeTargetParametersEcsTaskParametersNetworkConfigurationAwsVpcConfiguration>>,
 }

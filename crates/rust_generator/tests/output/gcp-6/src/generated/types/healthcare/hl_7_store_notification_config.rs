@@ -11,5 +11,5 @@ pub struct Hl7StoreNotificationConfig {
     /// Cloud Pub/Sub topic. Not having adequate permissions will cause the calls that send notifications to fail.
     #[builder(into)]
     #[serde(rename = "pubsubTopic")]
-    pub r#pubsub_topic: Box<String>,
+    pub r#pubsub_topic: String,
 }

@@ -5,7 +5,7 @@
 pub struct BareMetalAdminClusterSecurityConfig {
     /// Configures user access to the Bare Metal User cluster.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "authorization")]
-    pub r#authorization: Box<Option<super::super::types::gkeonprem::BareMetalAdminClusterSecurityConfigAuthorization>>,
+    pub r#authorization: Option<Box<super::super::types::gkeonprem::BareMetalAdminClusterSecurityConfigAuthorization>>,
 }

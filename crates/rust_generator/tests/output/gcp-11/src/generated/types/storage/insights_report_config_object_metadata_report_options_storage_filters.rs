@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InsightsReportConfigObjectMetadataReportOptionsStorageFilters {
     /// The filter to use when specifying which bucket to generate inventory reports for.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<Option<String>>,
+    pub r#bucket: Option<String>,
 }

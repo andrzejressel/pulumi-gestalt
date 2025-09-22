@@ -6,9 +6,9 @@ pub struct WorkflowAccessControlTrigger {
     /// A list of the allowed caller IP address ranges.
     #[builder(into)]
     #[serde(rename = "allowedCallerIpAddressRanges")]
-    pub r#allowed_caller_ip_address_ranges: Box<Vec<String>>,
+    pub r#allowed_caller_ip_address_ranges: Vec<String>,
     /// A `open_authentication_policy` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "openAuthenticationPolicies")]
-    pub r#open_authentication_policies: Box<Option<Vec<super::super::types::logicapps::WorkflowAccessControlTriggerOpenAuthenticationPolicy>>>,
+    pub r#open_authentication_policies: Option<Vec<super::super::types::logicapps::WorkflowAccessControlTriggerOpenAuthenticationPolicy>>,
 }

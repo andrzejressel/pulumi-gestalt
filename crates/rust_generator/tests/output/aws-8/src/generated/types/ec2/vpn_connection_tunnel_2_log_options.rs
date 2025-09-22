@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VpnConnectionTunnel2LogOptions {
     /// Options for sending VPN tunnel logs to CloudWatch. See CloudWatch Log Options below for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudwatchLogOptions")]
-    pub r#cloudwatch_log_options: Box<Option<super::super::types::ec2::VpnConnectionTunnel2LogOptionsCloudwatchLogOptions>>,
+    pub r#cloudwatch_log_options: Option<Box<super::super::types::ec2::VpnConnectionTunnel2LogOptionsCloudwatchLogOptions>>,
 }

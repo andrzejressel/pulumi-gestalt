@@ -6,9 +6,9 @@ pub struct ClusterReverseProxyCertificateCommonNames {
     /// A `common_names` block as defined below.
     #[builder(into)]
     #[serde(rename = "commonNames")]
-    pub r#common_names: Box<Vec<super::super::types::servicefabric::ClusterReverseProxyCertificateCommonNamesCommonName>>,
+    pub r#common_names: Vec<super::super::types::servicefabric::ClusterReverseProxyCertificateCommonNamesCommonName>,
     /// The X509 Store where the Certificate Exists, such as `My`.
     #[builder(into)]
     #[serde(rename = "x509StoreName")]
-    pub r#x_509_store_name: Box<String>,
+    pub r#x_509_store_name: String,
 }

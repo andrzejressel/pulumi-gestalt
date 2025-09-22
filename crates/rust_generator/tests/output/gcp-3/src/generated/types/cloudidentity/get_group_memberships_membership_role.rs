@@ -7,9 +7,9 @@ pub struct GetGroupMembershipsMembershipRole {
     /// Other roles cannot be accompanied with MEMBER role having expiry.
     #[builder(into)]
     #[serde(rename = "expiryDetails")]
-    pub r#expiry_details: Box<Vec<super::super::types::cloudidentity::GetGroupMembershipsMembershipRoleExpiryDetail>>,
+    pub r#expiry_details: Vec<super::super::types::cloudidentity::GetGroupMembershipsMembershipRoleExpiryDetail>,
     /// The name of the MembershipRole. One of OWNER, MANAGER, MEMBER.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

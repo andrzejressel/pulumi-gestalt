@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceInstanceMarketOptions {
     /// Type of market for the instance. Valid values are `spot` and `capacity-block`. Defaults to `spot`. Required if `spot_options` is specified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "marketType")]
-    pub r#market_type: Box<Option<String>>,
+    pub r#market_type: Option<String>,
     /// Block to configure the options for Spot Instances. See Spot Options below for details on attributes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "spotOptions")]
-    pub r#spot_options: Box<Option<super::super::types::ec2::InstanceInstanceMarketOptionsSpotOptions>>,
+    pub r#spot_options: Option<Box<super::super::types::ec2::InstanceInstanceMarketOptionsSpotOptions>>,
 }

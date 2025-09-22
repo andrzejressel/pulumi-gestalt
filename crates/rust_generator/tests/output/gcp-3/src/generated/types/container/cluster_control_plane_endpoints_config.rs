@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterControlPlaneEndpointsConfig {
     /// DNS endpoint configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dnsEndpointConfig")]
-    pub r#dns_endpoint_config: Box<Option<super::super::types::container::ClusterControlPlaneEndpointsConfigDnsEndpointConfig>>,
+    pub r#dns_endpoint_config: Option<Box<super::super::types::container::ClusterControlPlaneEndpointsConfigDnsEndpointConfig>>,
 }

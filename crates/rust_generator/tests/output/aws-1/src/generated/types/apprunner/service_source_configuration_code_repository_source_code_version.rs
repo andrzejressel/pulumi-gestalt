@@ -6,9 +6,9 @@ pub struct ServiceSourceConfigurationCodeRepositorySourceCodeVersion {
     /// Type of version identifier. For a git-based repository, branches represent versions. Valid values: `BRANCH`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// Source code version. For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

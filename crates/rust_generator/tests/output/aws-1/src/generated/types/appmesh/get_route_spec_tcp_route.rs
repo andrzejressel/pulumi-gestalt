@@ -5,11 +5,11 @@
 pub struct GetRouteSpecTcpRoute {
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::appmesh::GetRouteSpecTcpRouteAction>>,
+    pub r#actions: Vec<super::super::types::appmesh::GetRouteSpecTcpRouteAction>,
     #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Vec<super::super::types::appmesh::GetRouteSpecTcpRouteMatch>>,
+    pub r#matches: Vec<super::super::types::appmesh::GetRouteSpecTcpRouteMatch>,
     #[builder(into)]
     #[serde(rename = "timeouts")]
-    pub r#timeouts: Box<Vec<super::super::types::appmesh::GetRouteSpecTcpRouteTimeout>>,
+    pub r#timeouts: Vec<super::super::types::appmesh::GetRouteSpecTcpRouteTimeout>,
 }

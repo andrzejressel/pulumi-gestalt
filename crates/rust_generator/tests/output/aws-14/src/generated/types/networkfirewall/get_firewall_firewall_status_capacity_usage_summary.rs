@@ -6,5 +6,5 @@ pub struct GetFirewallFirewallStatusCapacityUsageSummary {
     /// Capacity usage of CIDR blocks used by IP set references in a firewall.
     #[builder(into)]
     #[serde(rename = "cidrs")]
-    pub r#cidrs: Box<Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusCapacityUsageSummaryCidr>>,
+    pub r#cidrs: Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusCapacityUsageSummaryCidr>,
 }

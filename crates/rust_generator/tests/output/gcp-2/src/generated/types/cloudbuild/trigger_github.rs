@@ -5,27 +5,27 @@
 pub struct TriggerGithub {
     /// The resource name of the github enterprise config that should be applied to this installation.
     /// For example: "projects/{$projectId}/locations/{$locationId}/githubEnterpriseConfigs/{$configId}"
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enterpriseConfigResourceName")]
-    pub r#enterprise_config_resource_name: Box<Option<String>>,
+    pub r#enterprise_config_resource_name: Option<String>,
     /// Name of the repository. For example: The name for
     /// https://github.com/googlecloudplatform/cloud-builders is "cloud-builders".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Owner of the repository. For example: The owner for
     /// https://github.com/googlecloudplatform/cloud-builders is "googlecloudplatform".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "owner")]
-    pub r#owner: Box<Option<String>>,
+    pub r#owner: Option<String>,
     /// filter to match changes in pull requests. Specify only one of `pull_request` or `push`.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pullRequest")]
-    pub r#pull_request: Box<Option<super::super::types::cloudbuild::TriggerGithubPullRequest>>,
+    pub r#pull_request: Option<Box<super::super::types::cloudbuild::TriggerGithubPullRequest>>,
     /// filter to match changes in refs, like branches or tags. Specify only one of `pull_request` or `push`.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "push")]
-    pub r#push: Box<Option<super::super::types::cloudbuild::TriggerGithubPush>>,
+    pub r#push: Option<Box<super::super::types::cloudbuild::TriggerGithubPush>>,
 }

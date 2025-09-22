@@ -9,11 +9,11 @@ pub struct ServiceOrderedPlacementStrategy {
     /// needed. For more information, see [Placement Strategy](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PlacementStrategy.html).
     /// 
     /// > **Note:** for `spread`, `host` and `instanceId` will be normalized, by AWS, to be `instanceId`. This means the statefile will show `instanceId` but your config will differ if you use `host`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "field")]
-    pub r#field: Box<Option<String>>,
+    pub r#field: Option<String>,
     /// Type of placement strategy. Must be one of: `binpack`, `random`, or `spread`
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

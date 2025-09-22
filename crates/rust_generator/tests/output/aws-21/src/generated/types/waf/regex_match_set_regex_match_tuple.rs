@@ -10,12 +10,12 @@ pub struct RegexMatchSetRegexMatchTuple {
     /// The ID of a Regex Pattern Set.
     #[builder(into)]
     #[serde(rename = "regexPatternSetId")]
-    pub r#regex_pattern_set_id: Box<String>,
+    pub r#regex_pattern_set_id: String,
     /// Text transformations used to eliminate unusual formatting that attackers use in web requests in an effort to bypass AWS WAF.
     /// e.g., `CMD_LINE`, `HTML_ENTITY_DECODE` or `NONE`.
     /// See [docs](http://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchTuple.html#WAF-Type-ByteMatchTuple-TextTransformation)
     /// for all supported values.
     #[builder(into)]
     #[serde(rename = "textTransformation")]
-    pub r#text_transformation: Box<String>,
+    pub r#text_transformation: String,
 }

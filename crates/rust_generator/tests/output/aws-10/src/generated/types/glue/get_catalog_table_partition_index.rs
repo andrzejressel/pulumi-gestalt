@@ -6,12 +6,12 @@ pub struct GetCatalogTablePartitionIndex {
     /// Name of the partition index.
     #[builder(into)]
     #[serde(rename = "indexName")]
-    pub r#index_name: Box<String>,
+    pub r#index_name: String,
     #[builder(into)]
     #[serde(rename = "indexStatus")]
-    pub r#index_status: Box<String>,
+    pub r#index_status: String,
     /// Keys for the partition index.
     #[builder(into)]
     #[serde(rename = "keys")]
-    pub r#keys: Box<Vec<String>>,
+    pub r#keys: Vec<String>,
 }

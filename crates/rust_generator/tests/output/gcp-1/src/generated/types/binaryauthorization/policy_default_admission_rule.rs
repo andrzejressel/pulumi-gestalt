@@ -9,12 +9,12 @@ pub struct PolicyDefaultAdmissionRule {
     /// - - -
     #[builder(into)]
     #[serde(rename = "enforcementMode")]
-    pub r#enforcement_mode: Box<String>,
+    pub r#enforcement_mode: String,
     /// How this admission rule will be evaluated.
     /// Possible values are: `ALWAYS_ALLOW`, `REQUIRE_ATTESTATION`, `ALWAYS_DENY`.
     #[builder(into)]
     #[serde(rename = "evaluationMode")]
-    pub r#evaluation_mode: Box<String>,
+    pub r#evaluation_mode: String,
     /// The resource names of the attestors that must attest to a
     /// container image. If the attestor is in a different project from the
     /// policy, it should be specified in the format `projects/*/attestors/*`.
@@ -23,7 +23,7 @@ pub struct PolicyDefaultAdmissionRule {
     /// request must be able to read the attestor resource.
     /// Note: this field must be non-empty when the evaluation_mode field
     /// specifies REQUIRE_ATTESTATION, otherwise it must be empty.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requireAttestationsBies")]
-    pub r#require_attestations_bies: Box<Option<Vec<String>>>,
+    pub r#require_attestations_bies: Option<Vec<String>>,
 }

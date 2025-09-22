@@ -6,7 +6,7 @@ pub struct ResizeRequestStatusError {
     /// (Output)
     /// [Output Only] The array of errors encountered while processing this operation.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errors")]
-    pub r#errors: Box<Option<Vec<super::super::types::compute::ResizeRequestStatusErrorError>>>,
+    pub r#errors: Option<Vec<super::super::types::compute::ResizeRequestStatusErrorError>>,
 }

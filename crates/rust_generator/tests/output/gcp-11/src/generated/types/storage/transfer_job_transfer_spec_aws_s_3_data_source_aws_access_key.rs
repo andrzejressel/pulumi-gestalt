@@ -6,9 +6,9 @@ pub struct TransferJobTransferSpecAwsS3DataSourceAwsAccessKey {
     /// AWS Key ID.
     #[builder(into)]
     #[serde(rename = "accessKeyId")]
-    pub r#access_key_id: Box<String>,
+    pub r#access_key_id: String,
     /// AWS Secret Access Key.
     #[builder(into)]
     #[serde(rename = "secretAccessKey")]
-    pub r#secret_access_key: Box<String>,
+    pub r#secret_access_key: String,
 }

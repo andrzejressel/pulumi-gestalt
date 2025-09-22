@@ -6,17 +6,17 @@ pub struct SpringCloudServiceContainerRegistry {
     /// Specifies the name of the container registry.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the password of the container registry.
     #[builder(into)]
     #[serde(rename = "password")]
-    pub r#password: Box<String>,
+    pub r#password: String,
     /// Specifies the login server of the container registry.
     #[builder(into)]
     #[serde(rename = "server")]
-    pub r#server: Box<String>,
+    pub r#server: String,
     /// Specifies the username of the container registry.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

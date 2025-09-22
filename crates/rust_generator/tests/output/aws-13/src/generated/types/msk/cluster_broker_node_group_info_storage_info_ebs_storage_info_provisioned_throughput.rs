@@ -3,11 +3,11 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second. The minimum value is `250`. The maximum value varies between broker type. You can refer to the valid values for the maximum volume throughput at the following [documentation on throughput bottlenecks](https://docs.aws.amazon.com/msk/latest/developerguide/msk-provision-throughput.html#throughput-bottlenecks)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "volumeThroughput")]
-    pub r#volume_throughput: Box<Option<i32>>,
+    pub r#volume_throughput: Option<i32>,
 }

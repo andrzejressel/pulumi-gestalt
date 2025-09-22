@@ -10,19 +10,19 @@ pub struct RegistrationManagementSettings {
     /// When preferredRenewalMethod is set to AUTOMATIC_RENEWAL, the actual renewalMethod can be set to RENEWAL_DISABLED in case of
     /// problems with the billing account or reported domain abuse. In such cases, check the issues field on the Registration. After
     /// the problem is resolved, the renewalMethod is automatically updated to preferredRenewalMethod in a few hours.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preferredRenewalMethod")]
-    pub r#preferred_renewal_method: Box<Option<String>>,
+    pub r#preferred_renewal_method: Option<String>,
     /// (Output)
     /// Output only. The actual renewal method for this Registration. When preferredRenewalMethod is set to AUTOMATIC_RENEWAL,
     /// the actual renewalMethod can be equal to RENEWAL_DISABLED—for example, when there are problems with the billing account
     /// or reported domain abuse. In such cases, check the issues field on the Registration. After the problem is resolved, the
     /// renewalMethod is automatically updated to preferredRenewalMethod in a few hours.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "renewalMethod")]
-    pub r#renewal_method: Box<Option<String>>,
+    pub r#renewal_method: Option<String>,
     /// Controls whether the domain can be transferred to another registrar. Values are UNLOCKED or LOCKED.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transferLockState")]
-    pub r#transfer_lock_state: Box<Option<String>>,
+    pub r#transfer_lock_state: Option<String>,
 }

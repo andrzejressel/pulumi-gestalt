@@ -6,17 +6,17 @@ pub struct GetGroupUser {
     /// User ARN.
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// Path to the IAM user.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// Stable and unique string identifying the IAM user.
     #[builder(into)]
     #[serde(rename = "userId")]
-    pub r#user_id: Box<String>,
+    pub r#user_id: String,
     /// Name of the IAM user.
     #[builder(into)]
     #[serde(rename = "userName")]
-    pub r#user_name: Box<String>,
+    pub r#user_name: String,
 }

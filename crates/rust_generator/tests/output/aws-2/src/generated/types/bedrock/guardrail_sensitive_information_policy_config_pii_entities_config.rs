@@ -6,9 +6,9 @@ pub struct GuardrailSensitiveInformationPolicyConfigPiiEntitiesConfig {
     /// Options for sensitive information action.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// The currently supported PII entities.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

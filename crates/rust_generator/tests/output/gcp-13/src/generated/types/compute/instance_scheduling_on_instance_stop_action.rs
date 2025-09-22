@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceSchedulingOnInstanceStopAction {
     /// Whether to discard local SSDs attached to the VM while terminating using `max_run_duration`. Only supports `true` at this point.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "discardLocalSsd")]
-    pub r#discard_local_ssd: Box<Option<bool>>,
+    pub r#discard_local_ssd: Option<bool>,
 }

@@ -6,5 +6,5 @@ pub struct GetBundleComputeType {
     /// Name of the bundle. You cannot combine this parameter with `bundle_id`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

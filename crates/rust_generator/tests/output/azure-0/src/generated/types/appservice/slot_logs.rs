@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SlotLogs {
     /// An `application_logs` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "applicationLogs")]
-    pub r#application_logs: Box<Option<super::super::types::appservice::SlotLogsApplicationLogs>>,
+    pub r#application_logs: Option<Box<super::super::types::appservice::SlotLogsApplicationLogs>>,
     /// Should `Detailed error messages` be enabled on this App Service slot? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "detailedErrorMessagesEnabled")]
-    pub r#detailed_error_messages_enabled: Box<Option<bool>>,
+    pub r#detailed_error_messages_enabled: Option<bool>,
     /// Should `Failed request tracing` be enabled on this App Service slot? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "failedRequestTracingEnabled")]
-    pub r#failed_request_tracing_enabled: Box<Option<bool>>,
+    pub r#failed_request_tracing_enabled: Option<bool>,
     /// An `http_logs` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpLogs")]
-    pub r#http_logs: Box<Option<super::super::types::appservice::SlotLogsHttpLogs>>,
+    pub r#http_logs: Option<Box<super::super::types::appservice::SlotLogsHttpLogs>>,
 }

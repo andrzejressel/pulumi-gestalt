@@ -10,13 +10,13 @@ pub struct GetSharedImageVersionTargetRegion {
     /// > **Note:** In 3.0, `latest` may return an image version with `exclude_from_latest` set to `true`. Starting from 4.0 onwards `latest` will not return image versions with `exlude_from_latest` set to `true`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The number of replicas of the Image Version to be created per region.
     #[builder(into)]
     #[serde(rename = "regionalReplicaCount")]
-    pub r#regional_replica_count: Box<i32>,
+    pub r#regional_replica_count: i32,
     /// The storage account type for the image version.
     #[builder(into)]
     #[serde(rename = "storageAccountType")]
-    pub r#storage_account_type: Box<String>,
+    pub r#storage_account_type: String,
 }

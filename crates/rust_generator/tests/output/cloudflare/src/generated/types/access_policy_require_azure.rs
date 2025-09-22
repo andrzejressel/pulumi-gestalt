@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccessPolicyRequireAzure {
     /// The ID of the Azure identity provider.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "identityProviderId")]
-    pub r#identity_provider_id: Box<Option<String>>,
+    pub r#identity_provider_id: Option<String>,
     /// The ID of the Azure group or user.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ids")]
-    pub r#ids: Box<Option<Vec<String>>>,
+    pub r#ids: Option<Vec<String>>,
 }

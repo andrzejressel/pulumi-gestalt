@@ -6,5 +6,5 @@ pub struct NodePoolNodeConfigHostMaintenancePolicy {
     /// .
     #[builder(into)]
     #[serde(rename = "maintenanceInterval")]
-    pub r#maintenance_interval: Box<String>,
+    pub r#maintenance_interval: String,
 }

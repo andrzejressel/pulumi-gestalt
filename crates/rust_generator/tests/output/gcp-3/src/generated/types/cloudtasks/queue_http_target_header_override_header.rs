@@ -6,9 +6,9 @@ pub struct QueueHttpTargetHeaderOverrideHeader {
     /// The Key of the header.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The Value of the header.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

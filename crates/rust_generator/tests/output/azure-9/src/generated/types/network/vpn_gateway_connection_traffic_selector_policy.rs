@@ -6,9 +6,9 @@ pub struct VpnGatewayConnectionTrafficSelectorPolicy {
     /// A list of local address spaces in CIDR format for this VPN Gateway Connection.
     #[builder(into)]
     #[serde(rename = "localAddressRanges")]
-    pub r#local_address_ranges: Box<Vec<String>>,
+    pub r#local_address_ranges: Vec<String>,
     /// A list of remote address spaces in CIDR format for this VPN Gateway Connection.
     #[builder(into)]
     #[serde(rename = "remoteAddressRanges")]
-    pub r#remote_address_ranges: Box<Vec<String>>,
+    pub r#remote_address_ranges: Vec<String>,
 }

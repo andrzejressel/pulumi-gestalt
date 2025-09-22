@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionNodeConfig {
     /// Minimum number of nodes in the runtime nodes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxNodeCount")]
-    pub r#max_node_count: Box<Option<i32>>,
+    pub r#max_node_count: Option<i32>,
     /// Minimum number of nodes in the runtime nodes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minNodeCount")]
-    pub r#min_node_count: Box<Option<i32>>,
+    pub r#min_node_count: Option<i32>,
 }

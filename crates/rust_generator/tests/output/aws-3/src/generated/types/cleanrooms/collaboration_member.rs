@@ -5,14 +5,14 @@
 pub struct CollaborationMember {
     #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<String>,
+    pub r#account_id: String,
     #[builder(into)]
     #[serde(rename = "displayName")]
-    pub r#display_name: Box<String>,
+    pub r#display_name: String,
     #[builder(into)]
     #[serde(rename = "memberAbilities")]
-    pub r#member_abilities: Box<Vec<String>>,
-    #[builder(into, default)]
+    pub r#member_abilities: Vec<String>,
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
 }

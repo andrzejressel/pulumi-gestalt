@@ -6,9 +6,9 @@ pub struct TriggerSchedulePipeline {
     /// Reference pipeline name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The pipeline parameters that the trigger will act upon.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#parameters: Option<std::collections::HashMap<String, String>>,
 }

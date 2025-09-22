@@ -6,9 +6,9 @@ pub struct GetNetworkPacketCoreControlPlaneIdentity {
     /// A list of User Assigned Managed Identity IDs assigned to this resource.
     #[builder(into)]
     #[serde(rename = "identityIds")]
-    pub r#identity_ids: Box<Vec<String>>,
+    pub r#identity_ids: Vec<String>,
     /// The platform type where the packet core is deployed.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

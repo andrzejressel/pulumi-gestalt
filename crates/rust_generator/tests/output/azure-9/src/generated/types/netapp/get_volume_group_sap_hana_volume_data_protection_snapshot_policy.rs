@@ -6,5 +6,5 @@ pub struct GetVolumeGroupSapHanaVolumeDataProtectionSnapshotPolicy {
     /// Resource ID of the snapshot policy to apply to the volume.
     #[builder(into)]
     #[serde(rename = "snapshotPolicyId")]
-    pub r#snapshot_policy_id: Box<String>,
+    pub r#snapshot_policy_id: String,
 }

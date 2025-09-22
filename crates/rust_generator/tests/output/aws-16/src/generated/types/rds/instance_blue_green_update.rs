@@ -12,7 +12,7 @@ pub struct InstanceBlueGreenUpdate {
     /// https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html
     /// [blue-green]:
     /// https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
 }

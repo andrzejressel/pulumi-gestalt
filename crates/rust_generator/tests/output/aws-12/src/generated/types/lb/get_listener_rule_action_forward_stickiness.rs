@@ -6,9 +6,9 @@ pub struct GetListenerRuleActionForwardStickiness {
     /// The time period, in seconds, during which requests from a client should be routed to the same target group.
     #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<f64>,
+    pub r#duration: f64,
     /// Indicates whether target group stickiness is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

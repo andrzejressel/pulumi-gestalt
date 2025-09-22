@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximity {
     /// Number of characters after the finding to consider. Either this or window_before must be specified
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "windowAfter")]
-    pub r#window_after: Box<Option<i32>>,
+    pub r#window_after: Option<i32>,
     /// Number of characters before the finding to consider. Either this or window_after must be specified
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "windowBefore")]
-    pub r#window_before: Box<Option<i32>>,
+    pub r#window_before: Option<i32>,
 }

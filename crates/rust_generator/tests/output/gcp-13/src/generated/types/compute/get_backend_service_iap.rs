@@ -6,17 +6,17 @@ pub struct GetBackendServiceIap {
     /// Whether the serving infrastructure will authenticate and authorize all incoming requests.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// OAuth2 Client ID for IAP
     #[builder(into)]
     #[serde(rename = "oauth2ClientId")]
-    pub r#oauth_2_client_id: Box<String>,
+    pub r#oauth_2_client_id: String,
     /// OAuth2 Client Secret for IAP
     #[builder(into)]
     #[serde(rename = "oauth2ClientSecret")]
-    pub r#oauth_2_client_secret: Box<String>,
+    pub r#oauth_2_client_secret: String,
     /// OAuth2 Client Secret SHA-256 for IAP
     #[builder(into)]
     #[serde(rename = "oauth2ClientSecretSha256")]
-    pub r#oauth_2_client_secret_sha_256: Box<String>,
+    pub r#oauth_2_client_secret_sha_256: String,
 }

@@ -6,9 +6,9 @@ pub struct SystemTopicEventSubscriptionStorageBlobDeadLetterDestination {
     /// Specifies the id of the storage account id where the storage blob is located.
     #[builder(into)]
     #[serde(rename = "storageAccountId")]
-    pub r#storage_account_id: Box<String>,
+    pub r#storage_account_id: String,
     /// Specifies the name of the Storage blob container that is the destination of the deadletter events.
     #[builder(into)]
     #[serde(rename = "storageBlobContainerName")]
-    pub r#storage_blob_container_name: Box<String>,
+    pub r#storage_blob_container_name: String,
 }

@@ -5,5 +5,5 @@
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSingular {
     #[builder(into)]
     #[serde(rename = "apiKey")]
-    pub r#api_key: Box<String>,
+    pub r#api_key: String,
 }

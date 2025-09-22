@@ -6,9 +6,9 @@ pub struct GetApplicationGatewayBackendHttpSettingAuthenticationCertificate {
     /// The ID of the Rewrite Rule Set
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The name of this Application Gateway.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

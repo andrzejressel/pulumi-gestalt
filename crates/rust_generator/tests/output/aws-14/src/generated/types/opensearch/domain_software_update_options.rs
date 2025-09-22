@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainSoftwareUpdateOptions {
     /// Whether automatic service software updates are enabled for the domain. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "autoSoftwareUpdateEnabled")]
-    pub r#auto_software_update_enabled: Box<Option<bool>>,
+    pub r#auto_software_update_enabled: Option<bool>,
 }

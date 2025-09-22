@@ -6,5 +6,5 @@ pub struct RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActi
     /// The value to use in the custom metric dimension.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

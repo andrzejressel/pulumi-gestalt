@@ -6,9 +6,9 @@ pub struct FlowletDataFlowSourceSchemaLinkedService {
     /// The name for the Data Factory Linked Service with schema.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A map of parameters to associate with the Data Factory Linked Service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#parameters: Option<std::collections::HashMap<String, String>>,
 }

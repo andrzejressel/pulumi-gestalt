@@ -6,5 +6,5 @@ pub struct WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameCondit
     /// Name of the label that a log record must contain in order to meet the condition. It must be a fully qualified label name, which includes a prefix, optional namespaces, and the label name itself. The prefix identifies the rule group or web ACL context of the rule that added the label.
     #[builder(into)]
     #[serde(rename = "labelName")]
-    pub r#label_name: Box<String>,
+    pub r#label_name: String,
 }

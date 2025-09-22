@@ -5,8 +5,8 @@
 pub struct GetFunctionAppSiteConfigCors {
     #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Vec<String>>,
-    #[builder(into, default)]
+    pub r#allowed_origins: Vec<String>,
+    #[builder(into)]
     #[serde(rename = "supportCredentials")]
-    pub r#support_credentials: Box<Option<bool>>,
+    pub r#support_credentials: Option<bool>,
 }

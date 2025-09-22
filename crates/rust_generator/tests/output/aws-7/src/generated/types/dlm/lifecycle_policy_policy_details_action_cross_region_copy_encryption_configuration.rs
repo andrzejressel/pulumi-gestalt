@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct LifecyclePolicyPolicyDetailsActionCrossRegionCopyEncryptionConfiguration {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cmkArn")]
-    pub r#cmk_arn: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#cmk_arn: Option<String>,
+    #[builder(into)]
     #[serde(rename = "encrypted")]
-    pub r#encrypted: Box<Option<bool>>,
+    pub r#encrypted: Option<bool>,
 }

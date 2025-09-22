@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNodeSpec {
     /// Defaults for backends.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backendDefaults")]
-    pub r#backend_defaults: Box<Option<super::super::types::appmesh::VirtualNodeSpecBackendDefaults>>,
+    pub r#backend_defaults: Option<Box<super::super::types::appmesh::VirtualNodeSpecBackendDefaults>>,
     /// Backends to which the virtual node is expected to send outbound traffic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "backends")]
-    pub r#backends: Box<Option<Vec<super::super::types::appmesh::VirtualNodeSpecBackend>>>,
+    pub r#backends: Option<Vec<super::super::types::appmesh::VirtualNodeSpecBackend>>,
     /// Listeners from which the virtual node is expected to receive inbound traffic.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "listeners")]
-    pub r#listeners: Box<Option<Vec<super::super::types::appmesh::VirtualNodeSpecListener>>>,
+    pub r#listeners: Option<Vec<super::super::types::appmesh::VirtualNodeSpecListener>>,
     /// Inbound and outbound access logging information for the virtual node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logging")]
-    pub r#logging: Box<Option<super::super::types::appmesh::VirtualNodeSpecLogging>>,
+    pub r#logging: Option<Box<super::super::types::appmesh::VirtualNodeSpecLogging>>,
     /// Service discovery information for the virtual node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceDiscovery")]
-    pub r#service_discovery: Box<Option<super::super::types::appmesh::VirtualNodeSpecServiceDiscovery>>,
+    pub r#service_discovery: Option<Box<super::super::types::appmesh::VirtualNodeSpecServiceDiscovery>>,
 }

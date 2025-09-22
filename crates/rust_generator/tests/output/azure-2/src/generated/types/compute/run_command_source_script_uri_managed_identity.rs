@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RunCommandSourceScriptUriManagedIdentity {
     /// The client ID of the managed identity.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<Option<String>>,
+    pub r#client_id: Option<String>,
     /// The object ID of the managed identity.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "objectId")]
-    pub r#object_id: Box<Option<String>>,
+    pub r#object_id: Option<String>,
 }

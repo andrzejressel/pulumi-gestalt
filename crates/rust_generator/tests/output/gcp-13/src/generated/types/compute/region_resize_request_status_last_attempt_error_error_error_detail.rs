@@ -6,25 +6,25 @@ pub struct RegionResizeRequestStatusLastAttemptErrorErrorErrorDetail {
     /// (Output)
     /// A nested object resource.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "errorInfos")]
-    pub r#error_infos: Box<Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailErrorInfo>>>,
+    pub r#error_infos: Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailErrorInfo>>,
     /// (Output)
     /// A nested object resource.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "helps")]
-    pub r#helps: Box<Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelp>>>,
+    pub r#helps: Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelp>>,
     /// (Output)
     /// A nested object resource.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "localizedMessages")]
-    pub r#localized_messages: Box<Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailLocalizedMessage>>>,
+    pub r#localized_messages: Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailLocalizedMessage>>,
     /// (Output)
     /// A nested object resource.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "quotaInfos")]
-    pub r#quota_infos: Box<Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailQuotaInfo>>>,
+    pub r#quota_infos: Option<Vec<super::super::types::compute::RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailQuotaInfo>>,
 }

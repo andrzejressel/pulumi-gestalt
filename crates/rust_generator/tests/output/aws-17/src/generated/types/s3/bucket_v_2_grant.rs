@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketV2Grant {
     /// Canonical user id to grant for. Used only when `type` is `CanonicalUser`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// List of permissions to apply for grantee. Valid values are `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL`.
     #[builder(into)]
     #[serde(rename = "permissions")]
-    pub r#permissions: Box<Vec<String>>,
+    pub r#permissions: Vec<String>,
     /// Type of grantee to apply for. Valid values are `CanonicalUser` and `Group`. `AmazonCustomerByEmail` is not supported.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
     /// Uri address to grant for. Used only when `type` is `Group`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<Option<String>>,
+    pub r#uri: Option<String>,
 }

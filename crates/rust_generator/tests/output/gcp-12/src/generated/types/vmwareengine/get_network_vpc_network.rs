@@ -7,9 +7,9 @@ pub struct GetNetworkVpcNetwork {
     /// For example: projects/123123/global/networks/my-network
     #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<String>,
+    pub r#network: String,
     /// Type of VPC network (INTRANET, INTERNET, or GOOGLE_CLOUD)
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

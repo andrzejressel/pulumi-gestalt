@@ -5,14 +5,14 @@
 pub struct NetworkFirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTag {
     /// Name of the secure tag, created with TagManager's TagValue API.
     /// @pattern tagValues/[0-9]+
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// (Output)
     /// [Output Only] State of the secure tag, either `EFFECTIVE` or
     /// `INEFFECTIVE`. A secure tag is `INEFFECTIVE` when it is deleted
     /// or its network is deleted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

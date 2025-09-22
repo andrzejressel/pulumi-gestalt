@@ -6,5 +6,5 @@ pub struct NodePoolNodeConfigSandboxConfig {
     /// Type of the sandbox to use for the node (e.g. 'gvisor')
     #[builder(into)]
     #[serde(rename = "sandboxType")]
-    pub r#sandbox_type: Box<String>,
+    pub r#sandbox_type: String,
 }

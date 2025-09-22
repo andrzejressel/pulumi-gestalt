@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AzureClusterControlPlaneMainVolume {
     /// Optional. The size of the disk, in GiBs. When unspecified, a default value is provided. See the specific reference in the parent resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sizeGib")]
-    pub r#size_gib: Box<Option<i32>>,
+    pub r#size_gib: Option<i32>,
 }

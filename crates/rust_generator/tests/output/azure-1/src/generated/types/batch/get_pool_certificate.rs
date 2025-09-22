@@ -6,17 +6,17 @@ pub struct GetPoolCertificate {
     /// The fully qualified ID of the certificate installed on the pool.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The location of the certificate store on the compute node into which the certificate is installed, either `CurrentUser` or `LocalMachine`.
     #[builder(into)]
     #[serde(rename = "storeLocation")]
-    pub r#store_location: Box<String>,
+    pub r#store_location: String,
     /// The name of the certificate store on the compute node into which the certificate is installed.
     #[builder(into)]
     #[serde(rename = "storeName")]
-    pub r#store_name: Box<String>,
+    pub r#store_name: String,
     /// Which user accounts on the compute node have access to the private data of the certificate.
     #[builder(into)]
     #[serde(rename = "visibilities")]
-    pub r#visibilities: Box<Vec<String>>,
+    pub r#visibilities: Vec<String>,
 }

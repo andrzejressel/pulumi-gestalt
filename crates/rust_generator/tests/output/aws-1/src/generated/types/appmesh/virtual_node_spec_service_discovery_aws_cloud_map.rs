@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNodeSpecServiceDiscoveryAwsCloudMap {
     /// String map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attributes")]
-    pub r#attributes: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#attributes: Option<std::collections::HashMap<String, String>>,
     /// Name of the AWS Cloud Map namespace to use.
     /// Use the `aws.servicediscovery.HttpNamespace` resource to configure a Cloud Map namespace. Must be between 1 and 1024 characters in length.
     #[builder(into)]
     #[serde(rename = "namespaceName")]
-    pub r#namespace_name: Box<String>,
+    pub r#namespace_name: String,
     /// Name of the AWS Cloud Map service to use. Use the `aws.servicediscovery.Service` resource to configure a Cloud Map service. Must be between 1 and 1024 characters in length.
     #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<String>,
+    pub r#service_name: String,
 }

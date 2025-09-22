@@ -5,7 +5,7 @@
 pub struct FeatureSpecFleetobservabilityLoggingConfigDefaultConfig {
     /// Specified if fleet logging feature is enabled.
     /// Possible values are: `MODE_UNSPECIFIED`, `COPY`, `MOVE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<Option<String>>,
+    pub r#mode: Option<String>,
 }

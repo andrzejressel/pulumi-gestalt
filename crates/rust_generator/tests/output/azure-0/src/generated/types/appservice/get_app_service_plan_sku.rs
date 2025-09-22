@@ -6,13 +6,13 @@ pub struct GetAppServicePlanSku {
     /// Specifies the number of workers associated with this App Service Plan.
     #[builder(into)]
     #[serde(rename = "capacity")]
-    pub r#capacity: Box<i32>,
+    pub r#capacity: i32,
     /// Specifies the plan's instance size.
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<String>,
+    pub r#size: String,
     /// Specifies the plan's pricing tier.
     #[builder(into)]
     #[serde(rename = "tier")]
-    pub r#tier: Box<String>,
+    pub r#tier: String,
 }

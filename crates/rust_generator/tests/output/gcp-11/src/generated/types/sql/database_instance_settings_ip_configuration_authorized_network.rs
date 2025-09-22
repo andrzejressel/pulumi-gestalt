@@ -5,17 +5,17 @@
 pub struct DatabaseInstanceSettingsIpConfigurationAuthorizedNetwork {
     /// The [RFC 3339](https://tools.ietf.org/html/rfc3339)
     /// formatted date time string indicating when this whitelist expires.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expirationTime")]
-    pub r#expiration_time: Box<Option<String>>,
+    pub r#expiration_time: Option<String>,
     /// A name for this whitelist entry.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// A CIDR notation IPv4 or IPv6 address that is allowed to
     /// access this instance. Must be set even if other two attributes are not for
     /// the whitelist to become active.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

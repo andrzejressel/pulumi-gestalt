@@ -7,9 +7,9 @@ pub struct GetRepositoryMavenConfig {
     /// snapshot versions.
     #[builder(into)]
     #[serde(rename = "allowSnapshotOverwrites")]
-    pub r#allow_snapshot_overwrites: Box<bool>,
+    pub r#allow_snapshot_overwrites: bool,
     /// Version policy defines the versions that the registry will accept. Default value: "VERSION_POLICY_UNSPECIFIED" Possible values: ["VERSION_POLICY_UNSPECIFIED", "RELEASE", "SNAPSHOT"]
     #[builder(into)]
     #[serde(rename = "versionPolicy")]
-    pub r#version_policy: Box<String>,
+    pub r#version_policy: String,
 }

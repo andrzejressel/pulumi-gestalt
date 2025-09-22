@@ -6,9 +6,9 @@ pub struct GetClusterClusterAutoscalingAutoProvisioningDefaultManagementUpgradeO
     /// This field is set when upgrades are about to commence with the approximate start time for the upgrades, in RFC3339 text format.
     #[builder(into)]
     #[serde(rename = "autoUpgradeStartTime")]
-    pub r#auto_upgrade_start_time: Box<String>,
+    pub r#auto_upgrade_start_time: String,
     /// This field is set when upgrades are about to commence with the description of the upgrade.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
 }

@@ -6,5 +6,5 @@ pub struct WorkforceSourceIpConfig {
     /// A list of up to 10 CIDR values.
     #[builder(into)]
     #[serde(rename = "cidrs")]
-    pub r#cidrs: Box<Vec<String>>,
+    pub r#cidrs: Vec<String>,
 }

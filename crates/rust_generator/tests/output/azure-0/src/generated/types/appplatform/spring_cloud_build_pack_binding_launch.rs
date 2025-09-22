@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudBuildPackBindingLaunch {
     /// Specifies a map of non-sensitive properties for launchProperties.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#properties: Option<std::collections::HashMap<String, String>>,
     /// Specifies a map of sensitive properties for launchProperties.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secrets")]
-    pub r#secrets: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#secrets: Option<std::collections::HashMap<String, String>>,
 }

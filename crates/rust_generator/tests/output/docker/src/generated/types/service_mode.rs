@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceMode {
     /// When `true`, tasks will run on every worker node. Conflicts with `replicated`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "global")]
-    pub r#global: Box<Option<bool>>,
+    pub r#global: Option<bool>,
     /// The replicated service mode
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replicated")]
-    pub r#replicated: Box<Option<super::types::ServiceModeReplicated>>,
+    pub r#replicated: Option<Box<super::types::ServiceModeReplicated>>,
 }

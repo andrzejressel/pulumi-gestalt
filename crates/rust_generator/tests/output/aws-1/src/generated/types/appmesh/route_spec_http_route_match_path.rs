@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouteSpecHttpRouteMatchPath {
     /// The exact path to match on.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exact")]
-    pub r#exact: Box<Option<String>>,
+    pub r#exact: Option<String>,
     /// The regex used to match the path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<Option<String>>,
+    pub r#regex: Option<String>,
 }

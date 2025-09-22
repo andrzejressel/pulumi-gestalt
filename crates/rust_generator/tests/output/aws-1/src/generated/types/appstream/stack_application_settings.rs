@@ -6,11 +6,11 @@ pub struct StackApplicationSettings {
     /// Whether application settings should be persisted.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Name of the settings group.
     /// Required when `enabled` is `true`.
     /// Can be up to 100 characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "settingsGroup")]
-    pub r#settings_group: Box<Option<String>>,
+    pub r#settings_group: Option<String>,
 }

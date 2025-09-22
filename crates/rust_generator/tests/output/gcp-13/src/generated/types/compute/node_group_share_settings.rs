@@ -5,12 +5,12 @@
 pub struct NodeGroupShareSettings {
     /// A map of project id and project config. This is only valid when shareType's value is SPECIFIC_PROJECTS.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectMaps")]
-    pub r#project_maps: Box<Option<Vec<super::super::types::compute::NodeGroupShareSettingsProjectMap>>>,
+    pub r#project_maps: Option<Vec<super::super::types::compute::NodeGroupShareSettingsProjectMap>>,
     /// Node group sharing type.
     /// Possible values are: `ORGANIZATION`, `SPECIFIC_PROJECTS`, `LOCAL`.
     #[builder(into)]
     #[serde(rename = "shareType")]
-    pub r#share_type: Box<String>,
+    pub r#share_type: String,
 }

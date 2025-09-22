@@ -5,7 +5,7 @@
 pub struct ManagementFolderSecurityHealthAnalyticsCustomModuleCustomConfigCustomOutput {
     /// A list of custom output properties to add to the finding.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "properties")]
-    pub r#properties: Box<Option<Vec<super::super::types::securitycenter::ManagementFolderSecurityHealthAnalyticsCustomModuleCustomConfigCustomOutputProperty>>>,
+    pub r#properties: Option<Vec<super::super::types::securitycenter::ManagementFolderSecurityHealthAnalyticsCustomModuleCustomConfigCustomOutputProperty>>,
 }

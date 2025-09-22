@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TopicInboundIpRule {
     /// The action to take when the rule is matched. Possible values are `Allow`. Defaults to `Allow`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<Option<String>>,
+    pub r#action: Option<String>,
     /// The IP mask (CIDR) to match on.
     #[builder(into)]
     #[serde(rename = "ipMask")]
-    pub r#ip_mask: Box<String>,
+    pub r#ip_mask: String,
 }

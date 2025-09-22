@@ -6,21 +6,21 @@ pub struct GetBucketObjectsBucketObject {
     /// [Content-Type](https://tools.ietf.org/html/rfc7231#section-3.1.1.5) of the object data.
     #[builder(into)]
     #[serde(rename = "contentType")]
-    pub r#content_type: Box<String>,
+    pub r#content_type: String,
     /// A url reference to download this object.
     #[builder(into)]
     #[serde(rename = "mediaLink")]
-    pub r#media_link: Box<String>,
+    pub r#media_link: String,
     /// The name of the object.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A url reference to this object.
     #[builder(into)]
     #[serde(rename = "selfLink")]
-    pub r#self_link: Box<String>,
+    pub r#self_link: String,
     /// The [StorageClass](https://cloud.google.com/storage/docs/storage-classes) of the bucket object.
     #[builder(into)]
     #[serde(rename = "storageClass")]
-    pub r#storage_class: Box<String>,
+    pub r#storage_class: String,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CertifiateCertificatePolicyX509CertificatePropertiesSubjectAlternativeNames {
     /// A list of alternative DNS names (FQDNs) identified by the Certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dnsNames")]
-    pub r#dns_names: Box<Option<Vec<String>>>,
+    pub r#dns_names: Option<Vec<String>>,
     /// A list of email addresses identified by this Certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "emails")]
-    pub r#emails: Box<Option<Vec<String>>>,
+    pub r#emails: Option<Vec<String>>,
     /// A list of User Principal Names identified by the Certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "upns")]
-    pub r#upns: Box<Option<Vec<String>>>,
+    pub r#upns: Option<Vec<String>>,
 }

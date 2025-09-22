@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BucketVersioningV2VersioningConfiguration {
     /// Specifies whether MFA delete is enabled in the bucket versioning configuration. Valid values: `Enabled` or `Disabled`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mfaDelete")]
-    pub r#mfa_delete: Box<Option<String>>,
+    pub r#mfa_delete: Option<String>,
     /// Versioning state of the bucket. Valid values: `Enabled`, `Suspended`, or `Disabled`. `Disabled` should only be used when creating or importing resources that correspond to unversioned S3 buckets.
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
 }

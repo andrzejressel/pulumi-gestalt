@@ -5,7 +5,7 @@
 pub struct TargetSiteFailureReasonQuotaFailure {
     /// This number is an estimation on how much total quota this project
     /// needs to successfully complete indexing.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "totalRequiredQuota")]
-    pub r#total_required_quota: Box<Option<i32>>,
+    pub r#total_required_quota: Option<i32>,
 }

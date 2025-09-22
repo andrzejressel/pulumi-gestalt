@@ -8,5 +8,5 @@ pub struct GetSecretReplicationAuto {
     /// encryption is used.
     #[builder(into)]
     #[serde(rename = "customerManagedEncryptions")]
-    pub r#customer_managed_encryptions: Box<Vec<super::super::types::secretmanager::GetSecretReplicationAutoCustomerManagedEncryption>>,
+    pub r#customer_managed_encryptions: Vec<super::super::types::secretmanager::GetSecretReplicationAutoCustomerManagedEncryption>,
 }

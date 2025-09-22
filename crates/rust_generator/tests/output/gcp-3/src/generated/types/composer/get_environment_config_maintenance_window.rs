@@ -6,13 +6,13 @@ pub struct GetEnvironmentConfigMaintenanceWindow {
     /// Maintenance window end time. It is used only to calculate the duration of the maintenance window. The value for end-time must be in the future, relative to 'start_time'.
     #[builder(into)]
     #[serde(rename = "endTime")]
-    pub r#end_time: Box<String>,
+    pub r#end_time: String,
     /// Maintenance window recurrence. Format is a subset of RFC-5545 (https://tools.ietf.org/html/rfc5545) 'RRULE'. The only allowed values for 'FREQ' field are 'FREQ=DAILY' and 'FREQ=WEEKLY;BYDAY=...'. Example values: 'FREQ=WEEKLY;BYDAY=TU,WE', 'FREQ=DAILY'.
     #[builder(into)]
     #[serde(rename = "recurrence")]
-    pub r#recurrence: Box<String>,
+    pub r#recurrence: String,
     /// Start time of the first recurrence of the maintenance window.
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
 }

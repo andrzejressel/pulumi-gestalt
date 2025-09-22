@@ -5,15 +5,15 @@
 pub struct GetAppTemplateCustomScaleRule {
     #[builder(into)]
     #[serde(rename = "authentications")]
-    pub r#authentications: Box<Vec<super::super::types::containerapp::GetAppTemplateCustomScaleRuleAuthentication>>,
+    pub r#authentications: Vec<super::super::types::containerapp::GetAppTemplateCustomScaleRuleAuthentication>,
     #[builder(into)]
     #[serde(rename = "customRuleType")]
-    pub r#custom_rule_type: Box<String>,
+    pub r#custom_rule_type: String,
     #[builder(into)]
     #[serde(rename = "metadata")]
-    pub r#metadata: Box<std::collections::HashMap<String, String>>,
+    pub r#metadata: std::collections::HashMap<String, String>,
     /// The name of the Container App.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

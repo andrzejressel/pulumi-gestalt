@@ -6,14 +6,14 @@ pub struct GetTableLocalSecondaryIndex {
     /// Name of the DynamoDB table.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     #[builder(into)]
     #[serde(rename = "nonKeyAttributes")]
-    pub r#non_key_attributes: Box<Vec<String>>,
+    pub r#non_key_attributes: Vec<String>,
     #[builder(into)]
     #[serde(rename = "projectionType")]
-    pub r#projection_type: Box<String>,
+    pub r#projection_type: String,
     #[builder(into)]
     #[serde(rename = "rangeKey")]
-    pub r#range_key: Box<String>,
+    pub r#range_key: String,
 }

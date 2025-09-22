@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ListenerMutualAuthentication {
     /// Valid values are `off` and `on`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "advertiseTrustStoreCaNames")]
-    pub r#advertise_trust_store_ca_names: Box<Option<String>>,
+    pub r#advertise_trust_store_ca_names: Option<String>,
     /// Whether client certificate expiry is ignored. Default is `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ignoreClientCertificateExpiry")]
-    pub r#ignore_client_certificate_expiry: Box<Option<bool>>,
+    pub r#ignore_client_certificate_expiry: Option<bool>,
     /// Valid values are `off`, `verify` and `passthrough`.
     #[builder(into)]
     #[serde(rename = "mode")]
-    pub r#mode: Box<String>,
+    pub r#mode: String,
     /// ARN of the elbv2 Trust Store.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "trustStoreArn")]
-    pub r#trust_store_arn: Box<Option<String>>,
+    pub r#trust_store_arn: Option<String>,
 }

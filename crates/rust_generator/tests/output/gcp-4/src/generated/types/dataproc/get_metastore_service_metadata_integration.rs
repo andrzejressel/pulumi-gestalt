@@ -6,5 +6,5 @@ pub struct GetMetastoreServiceMetadataIntegration {
     /// The integration config for the Data Catalog service.
     #[builder(into)]
     #[serde(rename = "dataCatalogConfigs")]
-    pub r#data_catalog_configs: Box<Vec<super::super::types::dataproc::GetMetastoreServiceMetadataIntegrationDataCatalogConfig>>,
+    pub r#data_catalog_configs: Vec<super::super::types::dataproc::GetMetastoreServiceMetadataIntegrationDataCatalogConfig>,
 }

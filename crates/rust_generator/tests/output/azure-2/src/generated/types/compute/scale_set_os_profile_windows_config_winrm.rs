@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScaleSetOsProfileWindowsConfigWinrm {
     /// Specifies URL of the certificate with which new Virtual Machines is provisioned.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateUrl")]
-    pub r#certificate_url: Box<Option<String>>,
+    pub r#certificate_url: Option<String>,
     /// Specifies the protocol of listener
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
 }

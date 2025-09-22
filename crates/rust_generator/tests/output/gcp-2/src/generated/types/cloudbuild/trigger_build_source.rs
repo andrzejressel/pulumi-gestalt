@@ -5,12 +5,12 @@
 pub struct TriggerBuildSource {
     /// Location of the source in a Google Cloud Source Repository.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "repoSource")]
-    pub r#repo_source: Box<Option<super::super::types::cloudbuild::TriggerBuildSourceRepoSource>>,
+    pub r#repo_source: Option<Box<super::super::types::cloudbuild::TriggerBuildSourceRepoSource>>,
     /// Location of the source in an archive file in Google Cloud Storage.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageSource")]
-    pub r#storage_source: Box<Option<super::super::types::cloudbuild::TriggerBuildSourceStorageSource>>,
+    pub r#storage_source: Option<Box<super::super::types::cloudbuild::TriggerBuildSourceStorageSource>>,
 }

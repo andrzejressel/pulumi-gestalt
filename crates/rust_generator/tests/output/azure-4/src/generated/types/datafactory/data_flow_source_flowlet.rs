@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataFlowSourceFlowlet {
     /// Specifies the reference data flow parameters from dataset.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datasetParameters")]
-    pub r#dataset_parameters: Box<Option<String>>,
+    pub r#dataset_parameters: Option<String>,
     /// The name for the Data Factory Flowlet.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A map of parameters to associate with the Data Factory Flowlet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#parameters: Option<std::collections::HashMap<String, String>>,
 }

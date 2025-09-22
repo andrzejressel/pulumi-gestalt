@@ -6,5 +6,5 @@ pub struct ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTtmlDestin
     /// This field is not currently supported and will not affect the output styling. Leave the default value.
     #[builder(into)]
     #[serde(rename = "styleControl")]
-    pub r#style_control: Box<String>,
+    pub r#style_control: String,
 }

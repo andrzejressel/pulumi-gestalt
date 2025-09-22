@@ -6,9 +6,9 @@ pub struct GetInstanceReservationAffinity {
     /// Specifies the label selector for the reservation to use.
     #[builder(into)]
     #[serde(rename = "specificReservations")]
-    pub r#specific_reservations: Box<Vec<super::super::types::compute::GetInstanceReservationAffinitySpecificReservation>>,
+    pub r#specific_reservations: Vec<super::super::types::compute::GetInstanceReservationAffinitySpecificReservation>,
     /// The accelerator type resource exposed to this instance. E.g. `nvidia-tesla-k80`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

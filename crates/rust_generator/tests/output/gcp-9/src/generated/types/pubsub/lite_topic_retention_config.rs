@@ -8,12 +8,12 @@ pub struct LiteTopicRetentionConfig {
     /// dropped to make room for newer ones, regardless of the value of period.
     #[builder(into)]
     #[serde(rename = "perPartitionBytes")]
-    pub r#per_partition_bytes: Box<String>,
+    pub r#per_partition_bytes: String,
     /// How long a published message is retained. If unset, messages will be retained as
     /// long as the bytes retained for each partition is below perPartitionBytes. A
     /// duration in seconds with up to nine fractional digits, terminated by 's'.
     /// Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "period")]
-    pub r#period: Box<Option<String>>,
+    pub r#period: Option<String>,
 }

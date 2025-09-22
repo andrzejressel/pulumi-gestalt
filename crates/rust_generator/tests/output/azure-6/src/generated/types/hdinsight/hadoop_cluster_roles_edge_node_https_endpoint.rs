@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HadoopClusterRolesEdgeNodeHttpsEndpoint {
     /// A list of access modes for the application.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessModes")]
-    pub r#access_modes: Box<Option<Vec<String>>>,
+    pub r#access_modes: Option<Vec<String>>,
     /// The destination port to connect to.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destinationPort")]
-    pub r#destination_port: Box<Option<i32>>,
+    pub r#destination_port: Option<i32>,
     /// The value indicates whether the gateway authentication is enabled or not.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disableGatewayAuth")]
-    pub r#disable_gateway_auth: Box<Option<bool>>,
+    pub r#disable_gateway_auth: Option<bool>,
     /// The private ip address of the endpoint.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<Option<String>>,
+    pub r#private_ip_address: Option<String>,
     /// The application's subdomain suffix.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subDomainSuffix")]
-    pub r#sub_domain_suffix: Box<Option<String>>,
+    pub r#sub_domain_suffix: Option<String>,
 }

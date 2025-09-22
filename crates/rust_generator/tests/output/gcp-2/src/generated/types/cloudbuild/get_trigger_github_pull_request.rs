@@ -6,13 +6,13 @@ pub struct GetTriggerGithubPullRequest {
     /// Regex of branches to match.
     #[builder(into)]
     #[serde(rename = "branch")]
-    pub r#branch: Box<String>,
+    pub r#branch: String,
     /// Whether to block builds on a "/gcbrun" comment from a repository owner or collaborator. Possible values: ["COMMENTS_DISABLED", "COMMENTS_ENABLED", "COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY"]
     #[builder(into)]
     #[serde(rename = "commentControl")]
-    pub r#comment_control: Box<String>,
+    pub r#comment_control: String,
     /// If true, branches that do NOT match the git_ref will trigger a build.
     #[builder(into)]
     #[serde(rename = "invertRegex")]
-    pub r#invert_regex: Box<bool>,
+    pub r#invert_regex: bool,
 }

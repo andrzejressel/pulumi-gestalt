@@ -6,9 +6,9 @@ pub struct WindowsWebAppSlotSiteConfigAutoHealSettingTriggerRequests {
     /// The number of requests in the specified `interval` to trigger this rule.
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
     /// The interval in `hh:mm:ss`.
     #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<String>,
+    pub r#interval: String,
 }

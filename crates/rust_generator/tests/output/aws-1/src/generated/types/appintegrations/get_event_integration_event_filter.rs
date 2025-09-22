@@ -6,5 +6,5 @@ pub struct GetEventIntegrationEventFilter {
     /// The source of the events.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<String>,
+    pub r#source: String,
 }

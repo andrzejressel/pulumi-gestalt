@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AgentDataSourceVectorIngestionConfigurationCustomTransformationConfiguration {
     /// The intermediate storage for custom transformation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "intermediateStorage")]
-    pub r#intermediate_storage: Box<Option<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationIntermediateStorage>>,
+    pub r#intermediate_storage: Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationIntermediateStorage>>,
     /// A custom processing step for documents moving through the data source ingestion pipeline.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "transformation")]
-    pub r#transformation: Box<Option<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformation>>,
+    pub r#transformation: Option<Box<super::super::types::bedrock::AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformation>>,
 }

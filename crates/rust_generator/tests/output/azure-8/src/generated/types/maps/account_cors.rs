@@ -6,5 +6,5 @@ pub struct AccountCors {
     /// A list of origins that should be allowed to make cross-origin calls.
     #[builder(into)]
     #[serde(rename = "allowedOrigins")]
-    pub r#allowed_origins: Box<Vec<String>>,
+    pub r#allowed_origins: Vec<String>,
 }

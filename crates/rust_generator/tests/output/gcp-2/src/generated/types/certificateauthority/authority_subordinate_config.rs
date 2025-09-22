@@ -7,13 +7,13 @@ pub struct AuthoritySubordinateConfig {
     /// subordinate CertificateAuthority. This field is used for information
     /// and usability purposes only. The resource name is in the format
     /// `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "certificateAuthority")]
-    pub r#certificate_authority: Box<Option<String>>,
+    pub r#certificate_authority: Option<String>,
     /// Contains the PEM certificate chain for the issuers of this CertificateAuthority,
     /// but not pem certificate for this CA itself.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pemIssuerChain")]
-    pub r#pem_issuer_chain: Box<Option<super::super::types::certificateauthority::AuthoritySubordinateConfigPemIssuerChain>>,
+    pub r#pem_issuer_chain: Option<Box<super::super::types::certificateauthority::AuthoritySubordinateConfigPemIssuerChain>>,
 }

@@ -9,10 +9,10 @@ pub struct GetAuthoritySubordinateConfig {
     /// 'projects/*/locations/*/caPools/*/certificateAuthorities/*'.
     #[builder(into)]
     #[serde(rename = "certificateAuthority")]
-    pub r#certificate_authority: Box<String>,
+    pub r#certificate_authority: String,
     /// Contains the PEM certificate chain for the issuers of this CertificateAuthority,
     /// but not pem certificate for this CA itself.
     #[builder(into)]
     #[serde(rename = "pemIssuerChains")]
-    pub r#pem_issuer_chains: Box<Vec<super::super::types::certificateauthority::GetAuthoritySubordinateConfigPemIssuerChain>>,
+    pub r#pem_issuer_chains: Vec<super::super::types::certificateauthority::GetAuthoritySubordinateConfigPemIssuerChain>,
 }

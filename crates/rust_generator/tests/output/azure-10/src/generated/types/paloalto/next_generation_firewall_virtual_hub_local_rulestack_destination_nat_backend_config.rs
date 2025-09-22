@@ -5,8 +5,8 @@
 pub struct NextGenerationFirewallVirtualHubLocalRulestackDestinationNatBackendConfig {
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     #[builder(into)]
     #[serde(rename = "publicIpAddress")]
-    pub r#public_ip_address: Box<String>,
+    pub r#public_ip_address: String,
 }

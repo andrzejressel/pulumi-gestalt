@@ -6,21 +6,21 @@ pub struct GetInstanceMetadataOption {
     /// State of the metadata service: `enabled`, `disabled`.
     #[builder(into)]
     #[serde(rename = "httpEndpoint")]
-    pub r#http_endpoint: Box<String>,
+    pub r#http_endpoint: String,
     /// Whether the IPv6 endpoint for the instance metadata service is `enabled` or `disabled`
     #[builder(into)]
     #[serde(rename = "httpProtocolIpv6")]
-    pub r#http_protocol_ipv_6: Box<String>,
+    pub r#http_protocol_ipv_6: String,
     /// Desired HTTP PUT response hop limit for instance metadata requests.
     #[builder(into)]
     #[serde(rename = "httpPutResponseHopLimit")]
-    pub r#http_put_response_hop_limit: Box<i32>,
+    pub r#http_put_response_hop_limit: i32,
     /// If session tokens are required: `optional`, `required`.
     #[builder(into)]
     #[serde(rename = "httpTokens")]
-    pub r#http_tokens: Box<String>,
+    pub r#http_tokens: String,
     /// If access to instance tags is allowed from the metadata service: `enabled`, `disabled`.
     #[builder(into)]
     #[serde(rename = "instanceMetadataTags")]
-    pub r#instance_metadata_tags: Box<String>,
+    pub r#instance_metadata_tags: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServicePerimeterStatusEgressPolicyEgressFromSource {
     /// An AccessLevel resource name that allows resources outside the ServicePerimeter to be accessed from the inside.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accessLevel")]
-    pub r#access_level: Box<Option<String>>,
+    pub r#access_level: Option<String>,
 }

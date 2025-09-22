@@ -5,5 +5,5 @@
 pub struct GetVirtualNodeSpecBackendDefaultClientPolicyTlValidationSubjectAlternativeNameMatch {
     #[builder(into)]
     #[serde(rename = "exacts")]
-    pub r#exacts: Box<Vec<String>>,
+    pub r#exacts: Vec<String>,
 }

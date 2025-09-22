@@ -6,5 +6,5 @@ pub struct FirewallPolicyFirewallPolicyPolicyVariablesRuleVariableIpSet {
     /// Set of IPv4 or IPv6 addresses in CIDR notation to use for the Suricata `HOME_NET` variable.
     #[builder(into)]
     #[serde(rename = "definitions")]
-    pub r#definitions: Box<Vec<String>>,
+    pub r#definitions: Vec<String>,
 }

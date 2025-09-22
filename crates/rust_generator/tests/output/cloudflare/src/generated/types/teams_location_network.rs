@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TeamsLocationNetwork {
     /// The ID of this resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// CIDR notation representation of the network IP.
     #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<String>,
+    pub r#network: String,
 }

@@ -6,7 +6,7 @@ pub struct FeatureVariation {
     /// The name of the variation. Minimum length of `1`. Maximum length of `127`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// A block that specifies the value assigned to this variation. Detailed below
     #[builder(into)]
     #[serde(rename = "value")]

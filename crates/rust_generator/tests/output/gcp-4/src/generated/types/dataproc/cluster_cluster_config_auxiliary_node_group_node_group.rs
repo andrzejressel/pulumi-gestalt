@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterClusterConfigAuxiliaryNodeGroupNodeGroup {
     /// The Node group resource name.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// The node group instance group configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeGroupConfig")]
-    pub r#node_group_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig>>,
+    pub r#node_group_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig>>,
     /// Node group roles. 
     /// One of `"DRIVER"`.
     #[builder(into)]
     #[serde(rename = "roles")]
-    pub r#roles: Box<Vec<String>>,
+    pub r#roles: Vec<String>,
 }

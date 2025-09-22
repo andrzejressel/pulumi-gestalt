@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTemplateSpecContainerEnv {
     /// Name of the environment variable.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Defaults to "".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
     /// Source for the environment variable's value. Only supports secret_key_ref.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "valueFrom")]
-    pub r#value_from: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvValueFrom>>,
+    pub r#value_from: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvValueFrom>>,
 }

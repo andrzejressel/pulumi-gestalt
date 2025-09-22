@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NamespaceNetworkRuleSetNetworkRule {
     /// Should the ServiceBus Namespace Network Rule Set ignore missing Virtual Network Service Endpoint option in the Subnet? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ignoreMissingVnetServiceEndpoint")]
-    pub r#ignore_missing_vnet_service_endpoint: Box<Option<bool>>,
+    pub r#ignore_missing_vnet_service_endpoint: Option<bool>,
     /// The Subnet ID which should be able to access this ServiceBus Namespace.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

@@ -6,9 +6,9 @@ pub struct GetTriggerScheduleScheduleMonthly {
     /// The occurrence of the specified day during the month.
     #[builder(into)]
     #[serde(rename = "week")]
-    pub r#week: Box<i32>,
+    pub r#week: i32,
     /// The day of the week on which the trigger runs.
     #[builder(into)]
     #[serde(rename = "weekday")]
-    pub r#weekday: Box<String>,
+    pub r#weekday: String,
 }

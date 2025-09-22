@@ -6,5 +6,5 @@ pub struct HciDeploymentSettingScaleUnitOptionalService {
     /// Specifies the name of custom location. A custom location will be created after the deployment is completed. Changing this forces a new Stack HCI Deployment Setting to be created.
     #[builder(into)]
     #[serde(rename = "customLocation")]
-    pub r#custom_location: Box<String>,
+    pub r#custom_location: String,
 }

@@ -5,5 +5,5 @@
 pub struct RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3Fingerprint {
     #[builder(into)]
     #[serde(rename = "fallbackBehavior")]
-    pub r#fallback_behavior: Box<String>,
+    pub r#fallback_behavior: String,
 }

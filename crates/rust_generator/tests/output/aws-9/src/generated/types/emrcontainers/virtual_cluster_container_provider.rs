@@ -6,7 +6,7 @@ pub struct VirtualClusterContainerProvider {
     /// The name of the container provider that is running your EMR Containers cluster
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Nested list containing information about the configuration of the container provider
     #[builder(into)]
     #[serde(rename = "info")]
@@ -14,5 +14,5 @@ pub struct VirtualClusterContainerProvider {
     /// The type of the container provider
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

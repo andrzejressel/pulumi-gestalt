@@ -6,5 +6,5 @@ pub struct SqlContainerIndexingPolicyIncludedPath {
     /// Path for which the indexing behaviour applies to.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

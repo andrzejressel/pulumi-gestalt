@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IoTHubNetworkRuleSetIpRule {
     /// The desired action for requests captured by this rule. Possible values are `Allow`. Defaults to `Allow`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<Option<String>>,
+    pub r#action: Option<String>,
     /// The IP address range in CIDR notation for the ip rule.
     #[builder(into)]
     #[serde(rename = "ipMask")]
-    pub r#ip_mask: Box<String>,
+    pub r#ip_mask: String,
     /// The name of the ip rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

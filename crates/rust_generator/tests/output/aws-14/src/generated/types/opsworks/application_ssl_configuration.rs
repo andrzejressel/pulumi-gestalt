@@ -6,13 +6,13 @@ pub struct ApplicationSslConfiguration {
     /// The contents of the certificate's domain.crt file.
     #[builder(into)]
     #[serde(rename = "certificate")]
-    pub r#certificate: Box<String>,
+    pub r#certificate: String,
     /// Can be used to specify an intermediate certificate authority key or client authentication.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "chain")]
-    pub r#chain: Box<Option<String>>,
+    pub r#chain: Option<String>,
     /// The private key; the contents of the certificate's domain.key file.
     #[builder(into)]
     #[serde(rename = "privateKey")]
-    pub r#private_key: Box<String>,
+    pub r#private_key: String,
 }

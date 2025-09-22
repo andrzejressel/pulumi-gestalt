@@ -5,35 +5,35 @@
 pub struct GetBrokerLdapServerMetadata {
     #[builder(into)]
     #[serde(rename = "hosts")]
-    pub r#hosts: Box<Vec<String>>,
+    pub r#hosts: Vec<String>,
     #[builder(into)]
     #[serde(rename = "roleBase")]
-    pub r#role_base: Box<String>,
+    pub r#role_base: String,
     #[builder(into)]
     #[serde(rename = "roleName")]
-    pub r#role_name: Box<String>,
+    pub r#role_name: String,
     #[builder(into)]
     #[serde(rename = "roleSearchMatching")]
-    pub r#role_search_matching: Box<String>,
+    pub r#role_search_matching: String,
     #[builder(into)]
     #[serde(rename = "roleSearchSubtree")]
-    pub r#role_search_subtree: Box<bool>,
+    pub r#role_search_subtree: bool,
     #[builder(into)]
     #[serde(rename = "serviceAccountPassword")]
-    pub r#service_account_password: Box<String>,
+    pub r#service_account_password: String,
     #[builder(into)]
     #[serde(rename = "serviceAccountUsername")]
-    pub r#service_account_username: Box<String>,
+    pub r#service_account_username: String,
     #[builder(into)]
     #[serde(rename = "userBase")]
-    pub r#user_base: Box<String>,
+    pub r#user_base: String,
     #[builder(into)]
     #[serde(rename = "userRoleName")]
-    pub r#user_role_name: Box<String>,
+    pub r#user_role_name: String,
     #[builder(into)]
     #[serde(rename = "userSearchMatching")]
-    pub r#user_search_matching: Box<String>,
+    pub r#user_search_matching: String,
     #[builder(into)]
     #[serde(rename = "userSearchSubtree")]
-    pub r#user_search_subtree: Box<bool>,
+    pub r#user_search_subtree: bool,
 }

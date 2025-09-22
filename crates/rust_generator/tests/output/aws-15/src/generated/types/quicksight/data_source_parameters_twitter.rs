@@ -6,9 +6,9 @@ pub struct DataSourceParametersTwitter {
     /// The maximum number of rows to query.
     #[builder(into)]
     #[serde(rename = "maxRows")]
-    pub r#max_rows: Box<i32>,
+    pub r#max_rows: i32,
     /// The Twitter query to retrieve the data.
     #[builder(into)]
     #[serde(rename = "query")]
-    pub r#query: Box<String>,
+    pub r#query: String,
 }

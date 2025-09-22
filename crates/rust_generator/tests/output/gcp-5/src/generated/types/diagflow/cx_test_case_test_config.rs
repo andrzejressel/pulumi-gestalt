@@ -6,17 +6,17 @@ pub struct CxTestCaseTestConfig {
     /// Flow name to start the test case with.
     /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>.
     /// Only one of flow and page should be set to indicate the starting point of the test case. If neither is set, the test case will start with start page on the default start flow.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "flow")]
-    pub r#flow: Box<Option<String>>,
+    pub r#flow: Option<String>,
     /// The page to start the test case with.
     /// Format: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.
     /// Only one of flow and page should be set to indicate the starting point of the test case. If neither is set, the test case will start with start page on the default start flow.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "page")]
-    pub r#page: Box<Option<String>>,
+    pub r#page: Option<String>,
     /// Session parameters to be compared when calculating differences.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "trackingParameters")]
-    pub r#tracking_parameters: Box<Option<Vec<String>>>,
+    pub r#tracking_parameters: Option<Vec<String>>,
 }

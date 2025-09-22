@@ -8,5 +8,5 @@ pub struct ManagedZonePeeringConfigTargetNetwork {
     /// `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`
     #[builder(into)]
     #[serde(rename = "networkUrl")]
-    pub r#network_url: Box<String>,
+    pub r#network_url: String,
 }

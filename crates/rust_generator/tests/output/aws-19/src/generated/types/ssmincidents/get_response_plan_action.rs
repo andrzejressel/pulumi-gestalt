@@ -6,5 +6,5 @@ pub struct GetResponsePlanAction {
     /// The Systems Manager automation document to start as the runbook at the beginning of the incident. The following values are supported:
     #[builder(into)]
     #[serde(rename = "ssmAutomations")]
-    pub r#ssm_automations: Box<Vec<super::super::types::ssmincidents::GetResponsePlanActionSsmAutomation>>,
+    pub r#ssm_automations: Vec<super::super::types::ssmincidents::GetResponsePlanActionSsmAutomation>,
 }

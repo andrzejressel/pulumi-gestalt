@@ -6,9 +6,9 @@ pub struct GetMetastoreServiceNetworkConfig {
     /// The consumer-side network configuration for the Dataproc Metastore instance.
     #[builder(into)]
     #[serde(rename = "consumers")]
-    pub r#consumers: Box<Vec<super::super::types::dataproc::GetMetastoreServiceNetworkConfigConsumer>>,
+    pub r#consumers: Vec<super::super::types::dataproc::GetMetastoreServiceNetworkConfigConsumer>,
     /// Enables custom routes to be imported and exported for the Dataproc Metastore service's peered VPC network.
     #[builder(into)]
     #[serde(rename = "customRoutesEnabled")]
-    pub r#custom_routes_enabled: Box<bool>,
+    pub r#custom_routes_enabled: bool,
 }

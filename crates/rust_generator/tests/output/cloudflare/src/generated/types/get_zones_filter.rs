@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetZonesFilter {
     /// The account identifier to target for the resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<Option<String>>,
+    pub r#account_id: Option<String>,
     /// The type of search to perform for the `name` value when querying the zone API. Available values: `contains`, `exact`. Defaults to `exact`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lookupType")]
-    pub r#lookup_type: Box<Option<String>>,
+    pub r#lookup_type: Option<String>,
     /// A RE2 compatible regular expression to filter the	results. This is performed client side whereas the `name` and `lookup_type`	are performed on the Cloudflare server side.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Box<Option<String>>,
+    pub r#match_: Option<String>,
     /// A string value to search for.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
     /// Paused status of the zone to lookup. Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "paused")]
-    pub r#paused: Box<Option<bool>>,
+    pub r#paused: Option<bool>,
     /// Status of the zone to lookup.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
 }

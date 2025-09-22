@@ -3,10 +3,10 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInsightsAnalysisReturnPathComponentAdditionalDetail {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "additionalDetailType")]
-    pub r#additional_detail_type: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#additional_detail_type: Option<String>,
+    #[builder(into)]
     #[serde(rename = "components")]
-    pub r#components: Box<Option<Vec<super::super::types::ec2::NetworkInsightsAnalysisReturnPathComponentAdditionalDetailComponent>>>,
+    pub r#components: Option<Vec<super::super::types::ec2::NetworkInsightsAnalysisReturnPathComponentAdditionalDetailComponent>>,
 }

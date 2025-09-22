@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct QueueHttpTargetUriOverridePathOverride {
     /// The URI path (e.g., /users/1234). Default is an empty string.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
 }

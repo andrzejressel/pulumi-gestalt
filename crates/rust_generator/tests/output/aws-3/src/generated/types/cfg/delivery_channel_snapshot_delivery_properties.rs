@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DeliveryChannelSnapshotDeliveryProperties {
     /// The frequency with which AWS Config recurringly delivers configuration snapshotsE.g., `One_Hour` or `Three_Hours`. Valid values are listed [here](https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigSnapshotDeliveryProperties.html#API_ConfigSnapshotDeliveryProperties_Contents).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deliveryFrequency")]
-    pub r#delivery_frequency: Box<Option<String>>,
+    pub r#delivery_frequency: Option<String>,
 }

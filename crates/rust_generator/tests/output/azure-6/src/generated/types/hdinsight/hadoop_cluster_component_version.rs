@@ -6,5 +6,5 @@ pub struct HadoopClusterComponentVersion {
     /// The version of Hadoop which should be used for this HDInsight Hadoop Cluster. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "hadoop")]
-    pub r#hadoop: Box<String>,
+    pub r#hadoop: String,
 }

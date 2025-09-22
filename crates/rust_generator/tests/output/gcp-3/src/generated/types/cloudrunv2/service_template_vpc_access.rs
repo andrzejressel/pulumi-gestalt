@@ -4,17 +4,17 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceTemplateVpcAccess {
     /// VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connector")]
-    pub r#connector: Box<Option<String>>,
+    pub r#connector: Option<String>,
     /// Traffic VPC egress settings.
     /// Possible values are: `ALL_TRAFFIC`, `PRIVATE_RANGES_ONLY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "egress")]
-    pub r#egress: Box<Option<String>>,
+    pub r#egress: Option<String>,
     /// Direct VPC egress settings. Currently only single network interface is supported.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkInterfaces")]
-    pub r#network_interfaces: Box<Option<Vec<super::super::types::cloudrunv2::ServiceTemplateVpcAccessNetworkInterface>>>,
+    pub r#network_interfaces: Option<Vec<super::super::types::cloudrunv2::ServiceTemplateVpcAccessNetworkInterface>>,
 }

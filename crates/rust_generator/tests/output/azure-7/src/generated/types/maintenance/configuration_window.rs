@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationWindow {
     /// The duration of the maintenance window in HH:mm format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "duration")]
-    pub r#duration: Box<Option<String>>,
+    pub r#duration: Option<String>,
     /// Effective expiration date of the maintenance window in YYYY-MM-DD hh:mm format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expirationDateTime")]
-    pub r#expiration_date_time: Box<Option<String>>,
+    pub r#expiration_date_time: Option<String>,
     /// The rate at which a maintenance window is expected to recur. The rate can be expressed as daily, weekly, or monthly schedules.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recurEvery")]
-    pub r#recur_every: Box<Option<String>>,
+    pub r#recur_every: Option<String>,
     /// Effective start date of the maintenance window in YYYY-MM-DD hh:mm format.
     #[builder(into)]
     #[serde(rename = "startDateTime")]
-    pub r#start_date_time: Box<String>,
+    pub r#start_date_time: String,
     /// The time zone for the maintenance window. A list of timezones can be obtained by executing [System.TimeZoneInfo]::GetSystemTimeZones() in PowerShell.
     #[builder(into)]
     #[serde(rename = "timeZone")]
-    pub r#time_zone: Box<String>,
+    pub r#time_zone: String,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetCoreNetworkPolicyDocumentSegmentActionWhenSentTo {
     /// A list of strings. The list of segments that the `send-via` `action` uses.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "segments")]
-    pub r#segments: Box<Option<Vec<String>>>,
+    pub r#segments: Option<Vec<String>>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouteSpecGrpcRouteMatchMetadata {
     /// If `true`, the match is on the opposite of the `match` criteria. Default is `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "invert")]
-    pub r#invert: Box<Option<bool>>,
+    pub r#invert: Option<bool>,
     /// Data to match from the request.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "match")]
-    pub r#match_: Box<Option<super::super::types::appmesh::RouteSpecGrpcRouteMatchMetadataMatch>>,
+    pub r#match_: Option<Box<super::super::types::appmesh::RouteSpecGrpcRouteMatchMetadataMatch>>,
     /// Name of the route. Must be between 1 and 50 characters in length.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

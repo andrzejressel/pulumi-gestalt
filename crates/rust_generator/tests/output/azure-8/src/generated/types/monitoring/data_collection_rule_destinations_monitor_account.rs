@@ -6,9 +6,9 @@ pub struct DataCollectionRuleDestinationsMonitorAccount {
     /// The resource ID of the Monitor Account.
     #[builder(into)]
     #[serde(rename = "monitorAccountId")]
-    pub r#monitor_account_id: Box<String>,
+    pub r#monitor_account_id: String,
     /// The name which should be used for this destination. This name should be unique across all destinations regardless of type within the Data Collection Rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

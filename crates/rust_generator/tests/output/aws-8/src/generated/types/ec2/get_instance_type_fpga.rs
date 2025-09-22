@@ -5,15 +5,15 @@
 pub struct GetInstanceTypeFpga {
     #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<i32>,
+    pub r#count: i32,
     #[builder(into)]
     #[serde(rename = "manufacturer")]
-    pub r#manufacturer: Box<String>,
+    pub r#manufacturer: String,
     /// Size of the instance memory, in MiB.
     #[builder(into)]
     #[serde(rename = "memorySize")]
-    pub r#memory_size: Box<i32>,
+    pub r#memory_size: i32,
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -6,9 +6,9 @@ pub struct ScalingPlanApplicationSourceTagFilter {
     /// Tag key.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Tag values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<Vec<String>>>,
+    pub r#values: Option<Vec<String>>,
 }

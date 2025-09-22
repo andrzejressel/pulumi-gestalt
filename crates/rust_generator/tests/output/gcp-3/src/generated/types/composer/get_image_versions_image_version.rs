@@ -6,9 +6,9 @@ pub struct GetImageVersionsImageVersion {
     /// The string identifier of the image version, in the form: "composer-x.y.z-airflow-a.b.c"
     #[builder(into)]
     #[serde(rename = "imageVersionId")]
-    pub r#image_version_id: Box<String>,
+    pub r#image_version_id: String,
     /// Supported python versions for this image version
     #[builder(into)]
     #[serde(rename = "supportedPythonVersions")]
-    pub r#supported_python_versions: Box<Vec<String>>,
+    pub r#supported_python_versions: Vec<String>,
 }

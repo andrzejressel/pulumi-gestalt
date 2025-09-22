@@ -5,14 +5,14 @@
 pub struct CatalogCatalogGithub {
     #[builder(into)]
     #[serde(rename = "branch")]
-    pub r#branch: Box<String>,
+    pub r#branch: String,
     #[builder(into)]
     #[serde(rename = "keyVaultKeyUrl")]
-    pub r#key_vault_key_url: Box<String>,
+    pub r#key_vault_key_url: String,
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<String>,
+    pub r#uri: String,
 }

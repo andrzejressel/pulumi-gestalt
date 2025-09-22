@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionDiscoveryConfigTargetBigQueryTargetConditionsOrConditions {
     /// Duration format. The minimum age a table must have before Cloud DLP can profile it. Value greater than 1.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minAge")]
-    pub r#min_age: Box<Option<String>>,
+    pub r#min_age: Option<String>,
     /// Minimum number of rows that should be present before Cloud DLP profiles as a table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minRowCount")]
-    pub r#min_row_count: Box<Option<i32>>,
+    pub r#min_row_count: Option<i32>,
 }

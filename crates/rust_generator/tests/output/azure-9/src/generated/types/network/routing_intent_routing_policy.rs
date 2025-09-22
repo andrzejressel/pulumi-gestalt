@@ -6,13 +6,13 @@ pub struct RoutingIntentRoutingPolicy {
     /// A list of destinations which this routing policy is applicable to. Possible values are `Internet` and `PrivateTraffic`.
     #[builder(into)]
     #[serde(rename = "destinations")]
-    pub r#destinations: Box<Vec<String>>,
+    pub r#destinations: Vec<String>,
     /// The unique name for the routing policy.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The resource ID of the next hop on which this routing policy is applicable to.
     #[builder(into)]
     #[serde(rename = "nextHop")]
-    pub r#next_hop: Box<String>,
+    pub r#next_hop: String,
 }

@@ -5,20 +5,20 @@
 pub struct TableImportTable {
     /// Type of compression to be used on the input coming from the imported table.
     /// Valid values are `GZIP`, `ZSTD` and `NONE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputCompressionType")]
-    pub r#input_compression_type: Box<Option<String>>,
+    pub r#input_compression_type: Option<String>,
     /// The format of the source data.
     /// Valid values are `CSV`, `DYNAMODB_JSON`, and `ION`.
     #[builder(into)]
     #[serde(rename = "inputFormat")]
-    pub r#input_format: Box<String>,
+    pub r#input_format: String,
     /// Describe the format options for the data that was imported into the target table.
     /// There is one value, `csv`.
     /// See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "inputFormatOptions")]
-    pub r#input_format_options: Box<Option<super::super::types::dynamodb::TableImportTableInputFormatOptions>>,
+    pub r#input_format_options: Option<Box<super::super::types::dynamodb::TableImportTableInputFormatOptions>>,
     /// Values for the S3 bucket the source file is imported from.
     /// See below.
     #[builder(into)]

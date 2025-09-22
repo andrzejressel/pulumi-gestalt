@@ -3,15 +3,15 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DirectoryVpcSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilityZones")]
-    pub r#availability_zones: Box<Option<Vec<String>>>,
+    pub r#availability_zones: Option<Vec<String>>,
     /// The identifiers of the subnets for the directory servers (2 subnets in 2 different AZs).
     #[builder(into)]
     #[serde(rename = "subnetIds")]
-    pub r#subnet_ids: Box<Vec<String>>,
+    pub r#subnet_ids: Vec<String>,
     /// The identifier of the VPC that the directory is in.
     #[builder(into)]
     #[serde(rename = "vpcId")]
-    pub r#vpc_id: Box<String>,
+    pub r#vpc_id: String,
 }

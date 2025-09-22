@@ -5,8 +5,8 @@
 pub struct ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMapping {
     #[builder(into)]
     #[serde(rename = "inputChannelLevels")]
-    pub r#input_channel_levels: Box<Vec<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingInputChannelLevel>>,
+    pub r#input_channel_levels: Vec<super::super::types::medialive::ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingInputChannelLevel>,
     #[builder(into)]
     #[serde(rename = "outputChannel")]
-    pub r#output_channel: Box<i32>,
+    pub r#output_channel: i32,
 }

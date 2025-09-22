@@ -6,13 +6,13 @@ pub struct GetOrganizationalUnitDescendantOrganizationalUnitsChildren {
     /// ARN of the organizational unit
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// Parent identifier of the organizational units.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// Name of the organizational unit
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

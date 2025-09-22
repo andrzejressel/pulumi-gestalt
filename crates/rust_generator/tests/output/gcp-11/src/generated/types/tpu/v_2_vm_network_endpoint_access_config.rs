@@ -5,7 +5,7 @@
 pub struct V2VmNetworkEndpointAccessConfig {
     /// (Output)
     /// An external IP address associated with the TPU worker.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "externalIp")]
-    pub r#external_ip: Box<Option<String>>,
+    pub r#external_ip: Option<String>,
 }

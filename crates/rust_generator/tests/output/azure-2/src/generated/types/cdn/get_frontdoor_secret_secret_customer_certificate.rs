@@ -6,13 +6,13 @@ pub struct GetFrontdoorSecretSecretCustomerCertificate {
     /// The key vault certificate expiration date.
     #[builder(into)]
     #[serde(rename = "expirationDate")]
-    pub r#expiration_date: Box<String>,
+    pub r#expiration_date: String,
     /// The key vault certificate ID.
     #[builder(into)]
     #[serde(rename = "keyVaultCertificateId")]
-    pub r#key_vault_certificate_id: Box<String>,
+    pub r#key_vault_certificate_id: String,
     /// One or more `subject alternative names` contained within the key vault certificate.
     #[builder(into)]
     #[serde(rename = "subjectAlternativeNames")]
-    pub r#subject_alternative_names: Box<Vec<String>>,
+    pub r#subject_alternative_names: Vec<String>,
 }

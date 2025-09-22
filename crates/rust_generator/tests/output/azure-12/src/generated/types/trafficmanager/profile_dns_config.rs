@@ -6,9 +6,9 @@ pub struct ProfileDnsConfig {
     /// The relative domain name, this is combined with the domain name used by Traffic Manager to form the FQDN which is exported as documented below. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "relativeName")]
-    pub r#relative_name: Box<String>,
+    pub r#relative_name: String,
     /// The TTL value of the Profile used by Local DNS resolvers and clients.
     #[builder(into)]
     #[serde(rename = "ttl")]
-    pub r#ttl: Box<i32>,
+    pub r#ttl: i32,
 }

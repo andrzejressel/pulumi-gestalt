@@ -5,5 +5,5 @@
 pub struct GetGatewayRouteSpecHttpRouteActionRewriteHostname {
     #[builder(into)]
     #[serde(rename = "defaultTargetHostname")]
-    pub r#default_target_hostname: Box<String>,
+    pub r#default_target_hostname: String,
 }

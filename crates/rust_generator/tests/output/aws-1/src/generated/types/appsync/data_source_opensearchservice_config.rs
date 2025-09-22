@@ -6,9 +6,9 @@ pub struct DataSourceOpensearchserviceConfig {
     /// HTTP endpoint of the OpenSearch domain.
     #[builder(into)]
     #[serde(rename = "endpoint")]
-    pub r#endpoint: Box<String>,
+    pub r#endpoint: String,
     /// AWS region of the OpenSearch domain. Defaults to current region.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct RecommendationPreferencesUtilizationPreference {
     /// The name of the resource utilization metric name to customize. Valid values: `CpuUtilization`, `MemoryUtilization`.
     #[builder(into)]
     #[serde(rename = "metricName")]
-    pub r#metric_name: Box<String>,
+    pub r#metric_name: String,
     /// The parameters to set when customizing the resource utilization thresholds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metricParameters")]
-    pub r#metric_parameters: Box<Option<super::super::types::computeoptimizer::RecommendationPreferencesUtilizationPreferenceMetricParameters>>,
+    pub r#metric_parameters: Option<Box<super::super::types::computeoptimizer::RecommendationPreferencesUtilizationPreferenceMetricParameters>>,
 }

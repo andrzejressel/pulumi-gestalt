@@ -10,5 +10,5 @@ pub struct TrustAnchorSource {
     /// The type of the source of trust. Must be either `AWS_ACM_PCA` or `CERTIFICATE_BUNDLE`.
     #[builder(into)]
     #[serde(rename = "sourceType")]
-    pub r#source_type: Box<String>,
+    pub r#source_type: String,
 }

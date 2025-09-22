@@ -6,13 +6,13 @@ pub struct ServiceServiceConnectConfigurationLogConfiguration {
     /// Log driver to use for the container.
     #[builder(into)]
     #[serde(rename = "logDriver")]
-    pub r#log_driver: Box<String>,
+    pub r#log_driver: String,
     /// Configuration options to send to the log driver.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "options")]
-    pub r#options: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#options: Option<std::collections::HashMap<String, String>>,
     /// Secrets to pass to the log configuration. See below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretOptions")]
-    pub r#secret_options: Box<Option<Vec<super::super::types::ecs::ServiceServiceConnectConfigurationLogConfigurationSecretOption>>>,
+    pub r#secret_options: Option<Vec<super::super::types::ecs::ServiceServiceConnectConfigurationLogConfigurationSecretOption>>,
 }

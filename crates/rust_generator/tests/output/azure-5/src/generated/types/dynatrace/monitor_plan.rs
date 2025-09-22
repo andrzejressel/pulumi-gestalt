@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct MonitorPlan {
     /// Different billing cycles. Possible values are `MONTHLY` and `WEEKLY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "billingCycle")]
-    pub r#billing_cycle: Box<Option<String>>,
+    pub r#billing_cycle: Option<String>,
     /// Date when plan was applied.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "effectiveDate")]
-    pub r#effective_date: Box<Option<String>>,
+    pub r#effective_date: Option<String>,
     /// Plan id as published by Dynatrace.
     #[builder(into)]
     #[serde(rename = "plan")]
-    pub r#plan: Box<String>,
+    pub r#plan: String,
     /// Different usage type. Possible values are `PAYG` and `COMMITTED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "usageType")]
-    pub r#usage_type: Box<Option<String>>,
+    pub r#usage_type: Option<String>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSetLogicalTableMapSource {
     /// ARN of the parent data set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataSetArn")]
-    pub r#data_set_arn: Box<Option<String>>,
+    pub r#data_set_arn: Option<String>,
     /// Specifies the result of a join of two logical tables. See join_instruction.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "joinInstruction")]
-    pub r#join_instruction: Box<Option<super::super::types::quicksight::DataSetLogicalTableMapSourceJoinInstruction>>,
+    pub r#join_instruction: Option<Box<super::super::types::quicksight::DataSetLogicalTableMapSourceJoinInstruction>>,
     /// Physical table ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "physicalTableId")]
-    pub r#physical_table_id: Box<Option<String>>,
+    pub r#physical_table_id: Option<String>,
 }

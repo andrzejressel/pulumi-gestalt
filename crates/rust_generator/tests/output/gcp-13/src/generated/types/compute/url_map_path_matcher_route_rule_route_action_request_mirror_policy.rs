@@ -6,5 +6,5 @@ pub struct UrlMapPathMatcherRouteRuleRouteActionRequestMirrorPolicy {
     /// The full or partial URL to the BackendService resource being mirrored to.
     #[builder(into)]
     #[serde(rename = "backendService")]
-    pub r#backend_service: Box<String>,
+    pub r#backend_service: String,
 }

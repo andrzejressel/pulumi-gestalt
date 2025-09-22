@@ -6,18 +6,18 @@ pub struct GetReplicationSetRegion {
     /// The ARN of the AWS Key Management Service (AWS KMS) encryption key.
     #[builder(into)]
     #[serde(rename = "kmsKeyArn")]
-    pub r#kms_key_arn: Box<String>,
+    pub r#kms_key_arn: String,
     /// The name of the Region.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The current status of the Region.
     /// * Valid Values: `ACTIVE` | `CREATING` | `UPDATING` | `DELETING` | `FAILED`
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
     /// More information about the status of a Region.
     #[builder(into)]
     #[serde(rename = "statusMessage")]
-    pub r#status_message: Box<String>,
+    pub r#status_message: String,
 }

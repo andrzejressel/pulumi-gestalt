@@ -8,5 +8,5 @@ pub struct ClusterAddonsConfigNetworkPolicyConfig {
     /// <a name="nested_cluster_telemetry"></a>The `cluster_telemetry` block supports
     #[builder(into)]
     #[serde(rename = "disabled")]
-    pub r#disabled: Box<bool>,
+    pub r#disabled: bool,
 }

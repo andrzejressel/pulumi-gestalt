@@ -6,13 +6,13 @@ pub struct AccessPosixProfile {
     /// The POSIX group ID used for all EFS operations by this user.
     #[builder(into)]
     #[serde(rename = "gid")]
-    pub r#gid: Box<i32>,
+    pub r#gid: i32,
     /// The secondary POSIX group IDs used for all EFS operations by this user.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secondaryGids")]
-    pub r#secondary_gids: Box<Option<Vec<i32>>>,
+    pub r#secondary_gids: Option<Vec<i32>>,
     /// The POSIX user ID used for all EFS operations by this user.
     #[builder(into)]
     #[serde(rename = "uid")]
-    pub r#uid: Box<i32>,
+    pub r#uid: i32,
 }

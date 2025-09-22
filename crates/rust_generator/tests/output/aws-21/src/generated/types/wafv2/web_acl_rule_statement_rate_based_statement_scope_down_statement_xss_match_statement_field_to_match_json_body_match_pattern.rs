@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPattern {
     /// An empty configuration block that is used for inspecting all headers.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "all")]
-    pub r#all: Box<Option<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAll>>,
-    #[builder(into, default)]
+    pub r#all: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAll>>,
+    #[builder(into)]
     #[serde(rename = "includedPaths")]
-    pub r#included_paths: Box<Option<Vec<String>>>,
+    pub r#included_paths: Option<Vec<String>>,
 }

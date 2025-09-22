@@ -6,9 +6,9 @@ pub struct GetPatchBaselineApprovalRulePatchFilter {
     /// Key for the filter.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// Value for the filter.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

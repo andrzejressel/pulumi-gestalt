@@ -6,21 +6,21 @@ pub struct GetApplicationGatewayPrivateLinkConfigurationIpConfiguration {
     /// The name of this Application Gateway.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Is this the Primary IP Configuration?
     #[builder(into)]
     #[serde(rename = "primary")]
-    pub r#primary: Box<bool>,
+    pub r#primary: bool,
     /// The Static IP Address which is used.
     #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<String>,
+    pub r#private_ip_address: String,
     /// The allocation method used for the Private IP Address.
     #[builder(into)]
     #[serde(rename = "privateIpAddressAllocation")]
-    pub r#private_ip_address_allocation: Box<String>,
+    pub r#private_ip_address_allocation: String,
     /// The ID of the subnet the private link configuration is connected to.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

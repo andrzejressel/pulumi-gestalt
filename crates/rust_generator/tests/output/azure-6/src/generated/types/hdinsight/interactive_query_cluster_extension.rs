@@ -6,9 +6,9 @@ pub struct InteractiveQueryClusterExtension {
     /// The workspace ID of the log analytics extension.
     #[builder(into)]
     #[serde(rename = "logAnalyticsWorkspaceId")]
-    pub r#log_analytics_workspace_id: Box<String>,
+    pub r#log_analytics_workspace_id: String,
     /// The workspace key of the log analytics extension.
     #[builder(into)]
     #[serde(rename = "primaryKey")]
-    pub r#primary_key: Box<String>,
+    pub r#primary_key: String,
 }

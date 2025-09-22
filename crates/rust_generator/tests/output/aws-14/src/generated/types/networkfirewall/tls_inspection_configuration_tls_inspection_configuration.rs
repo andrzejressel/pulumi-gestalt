@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TlsInspectionConfigurationTlsInspectionConfiguration {
     /// Server certificate configurations that are associated with the TLS configuration. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serverCertificateConfiguration")]
-    pub r#server_certificate_configuration: Box<Option<super::super::types::networkfirewall::TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfiguration>>,
+    pub r#server_certificate_configuration: Option<Box<super::super::types::networkfirewall::TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfiguration>>,
 }

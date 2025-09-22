@@ -6,13 +6,13 @@ pub struct VirtualNodeSpecServiceDiscoveryDns {
     /// DNS host name for your virtual node.
     #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<String>,
+    pub r#hostname: String,
     /// The preferred IP version that this virtual node uses. Valid values: `IPv6_PREFERRED`, `IPv4_PREFERRED`, `IPv4_ONLY`, `IPv6_ONLY`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipPreference")]
-    pub r#ip_preference: Box<Option<String>>,
+    pub r#ip_preference: Option<String>,
     /// The DNS response type for the virtual node. Valid values: `LOADBALANCER`, `ENDPOINTS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "responseType")]
-    pub r#response_type: Box<Option<String>>,
+    pub r#response_type: Option<String>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterClusterNode {
     /// Whether the node is a leader node or a compute node
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nodeRole")]
-    pub r#node_role: Box<Option<String>>,
+    pub r#node_role: Option<String>,
     /// The private IP address of a node within a cluster
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<Option<String>>,
+    pub r#private_ip_address: Option<String>,
     /// The public IP address of a node within a cluster
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "publicIpAddress")]
-    pub r#public_ip_address: Box<Option<String>>,
+    pub r#public_ip_address: Option<String>,
 }

@@ -6,5 +6,5 @@ pub struct FunctionEventTriggerFailurePolicy {
     /// Whether the function should be retried on failure. Defaults to `false`.
     #[builder(into)]
     #[serde(rename = "retry")]
-    pub r#retry: Box<bool>,
+    pub r#retry: bool,
 }

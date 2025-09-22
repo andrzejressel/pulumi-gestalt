@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpaceSpaceSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettings {
     /// The time that SageMaker waits after the application becomes idle before shutting it down. Valid values are between `60` and `525600`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "idleTimeoutInMinutes")]
-    pub r#idle_timeout_in_minutes: Box<Option<i32>>,
+    pub r#idle_timeout_in_minutes: Option<i32>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CostCategorySplitChargeRuleParameter {
     /// Parameter type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
     /// Parameter values.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Option<Vec<String>>>,
+    pub r#values: Option<Vec<String>>,
 }

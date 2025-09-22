@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobEventTriggerConfig {
     /// Number of parallel replicas of a job that can run at a given time.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parallelism")]
-    pub r#parallelism: Box<Option<i32>>,
+    pub r#parallelism: Option<i32>,
     /// Minimum number of successful replica completions before overall job completion.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replicaCompletionCount")]
-    pub r#replica_completion_count: Box<Option<i32>>,
+    pub r#replica_completion_count: Option<i32>,
     /// A `scale` block as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scales")]
-    pub r#scales: Box<Option<Vec<super::super::types::containerapp::JobEventTriggerConfigScale>>>,
+    pub r#scales: Option<Vec<super::super::types::containerapp::JobEventTriggerConfigScale>>,
 }

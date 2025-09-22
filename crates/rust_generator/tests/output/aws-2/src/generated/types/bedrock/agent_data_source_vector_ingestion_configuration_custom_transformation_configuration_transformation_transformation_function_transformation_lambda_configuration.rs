@@ -6,5 +6,5 @@ pub struct AgentDataSourceVectorIngestionConfigurationCustomTransformationConfig
     /// The ARN of the lambda to use for custom transformation.
     #[builder(into)]
     #[serde(rename = "lambdaArn")]
-    pub r#lambda_arn: Box<String>,
+    pub r#lambda_arn: String,
 }

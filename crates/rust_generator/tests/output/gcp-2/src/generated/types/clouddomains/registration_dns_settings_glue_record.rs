@@ -6,15 +6,15 @@ pub struct RegistrationDnsSettingsGlueRecord {
     /// Required. Domain name of the host in Punycode format.
     #[builder(into)]
     #[serde(rename = "hostName")]
-    pub r#host_name: Box<String>,
+    pub r#host_name: String,
     /// List of IPv4 addresses corresponding to this host in the standard decimal format (e.g. 198.51.100.1).
     /// At least one of ipv4_address and ipv6_address must be set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv4Addresses")]
-    pub r#ipv_4_addresses: Box<Option<Vec<String>>>,
+    pub r#ipv_4_addresses: Option<Vec<String>>,
     /// List of IPv4 addresses corresponding to this host in the standard decimal format (e.g. 198.51.100.1).
     /// At least one of ipv4_address and ipv6_address must be set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipv6Addresses")]
-    pub r#ipv_6_addresses: Box<Option<Vec<String>>>,
+    pub r#ipv_6_addresses: Option<Vec<String>>,
 }

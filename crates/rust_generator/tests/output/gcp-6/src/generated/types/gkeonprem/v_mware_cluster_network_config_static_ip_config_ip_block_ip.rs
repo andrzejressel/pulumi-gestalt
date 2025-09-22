@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VMwareClusterNetworkConfigStaticIpConfigIpBlockIp {
     /// Hostname of the machine. VM's name will be used if this field is empty.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostname")]
-    pub r#hostname: Box<Option<String>>,
+    pub r#hostname: Option<String>,
     /// IP could be an IP address (like 1.2.3.4) or a CIDR (like 1.2.3.0/24).
     #[builder(into)]
     #[serde(rename = "ip")]
-    pub r#ip: Box<String>,
+    pub r#ip: String,
 }

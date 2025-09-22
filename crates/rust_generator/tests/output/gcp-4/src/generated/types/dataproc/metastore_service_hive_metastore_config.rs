@@ -9,27 +9,27 @@ pub struct MetastoreServiceHiveMetastoreConfig {
     /// The key is the auxiliary service name and it must match the regular expression a-z?.
     /// This means that the first character must be a lowercase letter, and all the following characters must be hyphens, lowercase letters, or digits, except the last character, which cannot be a hyphen.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "auxiliaryVersions")]
-    pub r#auxiliary_versions: Box<Option<Vec<super::super::types::dataproc::MetastoreServiceHiveMetastoreConfigAuxiliaryVersion>>>,
+    pub r#auxiliary_versions: Option<Vec<super::super::types::dataproc::MetastoreServiceHiveMetastoreConfigAuxiliaryVersion>>,
     /// A mapping of Hive metastore configuration key-value pairs to apply to the Hive metastore (configured in hive-site.xml).
     /// The mappings override system defaults (some keys cannot be overridden)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "configOverrides")]
-    pub r#config_overrides: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#config_overrides: Option<std::collections::HashMap<String, String>>,
     /// The protocol to use for the metastore service endpoint. If unspecified, defaults to `THRIFT`.
     /// Default value is `THRIFT`.
     /// Possible values are: `THRIFT`, `GRPC`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpointProtocol")]
-    pub r#endpoint_protocol: Box<Option<String>>,
+    pub r#endpoint_protocol: Option<String>,
     /// Information used to configure the Hive metastore service as a service principal in a Kerberos realm.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kerberosConfig")]
-    pub r#kerberos_config: Box<Option<super::super::types::dataproc::MetastoreServiceHiveMetastoreConfigKerberosConfig>>,
+    pub r#kerberos_config: Option<Box<super::super::types::dataproc::MetastoreServiceHiveMetastoreConfigKerberosConfig>>,
     /// The Hive metastore schema version.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
 }

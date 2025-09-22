@@ -6,9 +6,9 @@ pub struct ExportExportDataQuery {
     /// Query statement.
     #[builder(into)]
     #[serde(rename = "queryStatement")]
-    pub r#query_statement: Box<String>,
+    pub r#query_statement: String,
     /// Table configuration.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tableConfigurations")]
-    pub r#table_configurations: Box<Option<std::collections::HashMap<String, std::collections::HashMap<String, String>>>>,
+    pub r#table_configurations: Option<std::collections::HashMap<String, std::collections::HashMap<String, String>>>,
 }

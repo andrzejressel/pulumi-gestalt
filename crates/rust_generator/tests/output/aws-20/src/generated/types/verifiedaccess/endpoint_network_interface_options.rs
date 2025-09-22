@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointNetworkInterfaceOptions {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkInterfaceId")]
-    pub r#network_interface_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#network_interface_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#port: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<Option<String>>,
+    pub r#protocol: Option<String>,
 }

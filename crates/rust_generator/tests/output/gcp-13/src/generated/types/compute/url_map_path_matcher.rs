@@ -12,45 +12,45 @@ pub struct UrlMapPathMatcher {
     /// When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client.
     /// defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultCustomErrorResponsePolicy")]
-    pub r#default_custom_error_response_policy: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultCustomErrorResponsePolicy>>,
+    pub r#default_custom_error_response_policy: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultCustomErrorResponsePolicy>>,
     /// defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs
     /// advanced routing actions like URL rewrites, header transformations, etc. prior to forwarding the request
     /// to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set.
     /// Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices.
     /// Only one of defaultRouteAction or defaultUrlRedirect must be set.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultRouteAction")]
-    pub r#default_route_action: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultRouteAction>>,
+    pub r#default_route_action: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultRouteAction>>,
     /// The backend service or backend bucket to use when none of the given paths match.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultService")]
-    pub r#default_service: Box<Option<String>>,
+    pub r#default_service: Option<String>,
     /// When none of the specified hostRules match, the request is redirected to a URL specified
     /// by defaultUrlRedirect. If defaultUrlRedirect is specified, defaultService or
     /// defaultRouteAction must not be set.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "defaultUrlRedirect")]
-    pub r#default_url_redirect: Box<Option<super::super::types::compute::UrlMapPathMatcherDefaultUrlRedirect>>,
+    pub r#default_url_redirect: Option<Box<super::super::types::compute::UrlMapPathMatcherDefaultUrlRedirect>>,
     /// An optional description of this resource. Provide this property when you create
     /// the resource.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// Specifies changes to request and response headers that need to take effect for
     /// the selected backendService. HeaderAction specified here are applied after the
     /// matching HttpRouteRule HeaderAction and before the HeaderAction in the UrlMap
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerAction")]
-    pub r#header_action: Box<Option<super::super::types::compute::UrlMapPathMatcherHeaderAction>>,
+    pub r#header_action: Option<Box<super::super::types::compute::UrlMapPathMatcherHeaderAction>>,
     /// The name to which this PathMatcher is referred by the HostRule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The list of path rules. Use this list instead of routeRules when routing based
     /// on simple path matching is all that's required. The order by which path rules
     /// are specified does not matter. Matches are always done on the longest-path-first
@@ -58,9 +58,9 @@ pub struct UrlMapPathMatcher {
     /// irrespective of the order in which those paths appear in this list. Within a
     /// given pathMatcher, only one of pathRules or routeRules must be set.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pathRules")]
-    pub r#path_rules: Box<Option<Vec<super::super::types::compute::UrlMapPathMatcherPathRule>>>,
+    pub r#path_rules: Option<Vec<super::super::types::compute::UrlMapPathMatcherPathRule>>,
     /// The list of ordered HTTP route rules. Use this list instead of pathRules when
     /// advanced route matching and routing actions are desired. The order of specifying
     /// routeRules matters: the first rule that matches will cause its specified routing
@@ -68,7 +68,7 @@ pub struct UrlMapPathMatcher {
     /// routeRules must be set. routeRules are not supported in UrlMaps intended for
     /// External load balancers.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "routeRules")]
-    pub r#route_rules: Box<Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRule>>>,
+    pub r#route_rules: Option<Vec<super::super::types::compute::UrlMapPathMatcherRouteRule>>,
 }

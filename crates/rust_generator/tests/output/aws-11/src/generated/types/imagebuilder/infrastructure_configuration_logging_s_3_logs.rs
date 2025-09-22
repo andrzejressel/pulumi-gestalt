@@ -8,9 +8,9 @@ pub struct InfrastructureConfigurationLoggingS3Logs {
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "s3BucketName")]
-    pub r#s_3_bucket_name: Box<String>,
+    pub r#s_3_bucket_name: String,
     /// Prefix to use for S3 logs. Defaults to `/`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3KeyPrefix")]
-    pub r#s_3_key_prefix: Box<Option<String>>,
+    pub r#s_3_key_prefix: Option<String>,
 }

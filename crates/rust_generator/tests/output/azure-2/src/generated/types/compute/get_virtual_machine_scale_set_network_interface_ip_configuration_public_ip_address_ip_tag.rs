@@ -6,9 +6,9 @@ pub struct GetVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddre
     /// The IP Tag associated with the Public IP.
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<String>,
+    pub r#tag: String,
     /// The Type of IP Tag.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

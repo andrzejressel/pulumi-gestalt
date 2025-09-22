@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UserHierarchyGroupHierarchyPathLevelTwo {
     /// The Amazon Resource Name (ARN) of the hierarchy group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<Option<String>>,
+    pub r#arn: Option<String>,
     /// The identifier of the hierarchy group.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The name of the user hierarchy group. Must not be more than 100 characters.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
+    pub r#name: Option<String>,
 }

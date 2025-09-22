@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct OutboundConnectionConnectionPropertiesCrossClusterSearch {
     /// Skips unavailable clusters and can only be used for cross-cluster searches. Accepted values are `ENABLED` or `DISABLED`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "skipUnavailable")]
-    pub r#skip_unavailable: Box<Option<String>>,
+    pub r#skip_unavailable: Option<String>,
 }

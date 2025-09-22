@@ -3,25 +3,25 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NextGenerationFirewallVirtualHubPanoramaPanorama {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deviceGroupName")]
-    pub r#device_group_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#device_group_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "hostName")]
-    pub r#host_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#host_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "panoramaServer1")]
-    pub r#panorama_server_1: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#panorama_server_1: Option<String>,
+    #[builder(into)]
     #[serde(rename = "panoramaServer2")]
-    pub r#panorama_server_2: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#panorama_server_2: Option<String>,
+    #[builder(into)]
     #[serde(rename = "templateName")]
-    pub r#template_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#template_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "virtualMachineSshKey")]
-    pub r#virtual_machine_ssh_key: Box<Option<String>>,
+    pub r#virtual_machine_ssh_key: Option<String>,
 }

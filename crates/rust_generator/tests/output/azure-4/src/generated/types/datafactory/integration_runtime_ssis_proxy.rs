@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct IntegrationRuntimeSsisProxy {
     /// The path in the data store to be used when moving data between Self-Hosted and Azure-SSIS Integration Runtimes.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
     /// Name of Self Hosted Integration Runtime as a proxy.
     #[builder(into)]
     #[serde(rename = "selfHostedIntegrationRuntimeName")]
-    pub r#self_hosted_integration_runtime_name: Box<String>,
+    pub r#self_hosted_integration_runtime_name: String,
     /// Name of Azure Blob Storage linked service to reference the staging data store to be used when moving data between self-hosted and Azure-SSIS integration runtimes.
     #[builder(into)]
     #[serde(rename = "stagingStorageLinkedServiceName")]
-    pub r#staging_storage_linked_service_name: Box<String>,
+    pub r#staging_storage_linked_service_name: String,
 }

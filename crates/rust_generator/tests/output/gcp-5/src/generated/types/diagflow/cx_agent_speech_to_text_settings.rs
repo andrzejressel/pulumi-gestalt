@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CxAgentSpeechToTextSettings {
     /// Whether to use speech adaptation for speech recognition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableSpeechAdaptation")]
-    pub r#enable_speech_adaptation: Box<Option<bool>>,
+    pub r#enable_speech_adaptation: Option<bool>,
 }

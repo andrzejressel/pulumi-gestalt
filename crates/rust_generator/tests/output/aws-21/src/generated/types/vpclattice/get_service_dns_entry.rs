@@ -5,8 +5,8 @@
 pub struct GetServiceDnsEntry {
     #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<String>,
+    pub r#domain_name: String,
     #[builder(into)]
     #[serde(rename = "hostedZoneId")]
-    pub r#hosted_zone_id: Box<String>,
+    pub r#hosted_zone_id: String,
 }

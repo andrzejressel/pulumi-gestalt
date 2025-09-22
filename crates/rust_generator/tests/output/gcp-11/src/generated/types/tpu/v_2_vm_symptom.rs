@@ -5,22 +5,22 @@
 pub struct V2VmSymptom {
     /// (Output)
     /// Timestamp when the Symptom is created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "createTime")]
-    pub r#create_time: Box<Option<String>>,
+    pub r#create_time: Option<String>,
     /// (Output)
     /// Detailed information of the current Symptom.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "details")]
-    pub r#details: Box<Option<String>>,
+    pub r#details: Option<String>,
     /// (Output)
     /// Type of the Symptom.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "symptomType")]
-    pub r#symptom_type: Box<Option<String>>,
+    pub r#symptom_type: Option<String>,
     /// (Output)
     /// A string used to uniquely distinguish a worker within a TPU node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "workerId")]
-    pub r#worker_id: Box<Option<String>>,
+    pub r#worker_id: Option<String>,
 }

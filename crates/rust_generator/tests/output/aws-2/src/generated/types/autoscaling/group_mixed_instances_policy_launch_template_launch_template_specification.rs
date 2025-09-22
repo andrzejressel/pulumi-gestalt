@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification {
     /// ID of the launch template. Conflicts with `launch_template_name`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "launchTemplateId")]
-    pub r#launch_template_id: Box<Option<String>>,
+    pub r#launch_template_id: Option<String>,
     /// Name of the launch template. Conflicts with `launch_template_id`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "launchTemplateName")]
-    pub r#launch_template_name: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#launch_template_name: Option<String>,
+    #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<Option<String>>,
+    pub r#version: Option<String>,
 }

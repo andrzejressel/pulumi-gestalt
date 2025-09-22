@@ -10,5 +10,5 @@ pub struct ClusterClusterConfigMetastoreConfig {
     /// `projects/[projectId]/locations/[dataproc_region]/services/[service-name]`
     #[builder(into)]
     #[serde(rename = "dataprocMetastoreService")]
-    pub r#dataproc_metastore_service: Box<String>,
+    pub r#dataproc_metastore_service: String,
 }

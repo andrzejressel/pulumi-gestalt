@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ResourceSetResourceDnsTargetResourceTargetResourceR53Resource {
     /// Domain name that is targeted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domainName")]
-    pub r#domain_name: Box<Option<String>>,
+    pub r#domain_name: Option<String>,
     /// Resource record set ID that is targeted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordSetId")]
-    pub r#record_set_id: Box<Option<String>>,
+    pub r#record_set_id: Option<String>,
 }

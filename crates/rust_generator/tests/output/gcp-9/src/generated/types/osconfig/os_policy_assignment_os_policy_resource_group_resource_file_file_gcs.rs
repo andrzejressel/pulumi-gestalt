@@ -6,13 +6,13 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceFileFileGcs {
     /// Bucket of the Cloud Storage object.
     #[builder(into)]
     #[serde(rename = "bucket")]
-    pub r#bucket: Box<String>,
+    pub r#bucket: String,
     /// Generation number of the Cloud Storage object.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "generation")]
-    pub r#generation: Box<Option<i32>>,
+    pub r#generation: Option<i32>,
     /// Name of the Cloud Storage object.
     #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<String>,
+    pub r#object: String,
 }

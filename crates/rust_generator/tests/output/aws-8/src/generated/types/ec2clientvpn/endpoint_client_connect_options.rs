@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EndpointClientConnectOptions {
     /// Indicates whether client connect options are enabled. The default is `false` (not enabled).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lambdaFunctionArn")]
-    pub r#lambda_function_arn: Box<Option<String>>,
+    pub r#lambda_function_arn: Option<String>,
 }

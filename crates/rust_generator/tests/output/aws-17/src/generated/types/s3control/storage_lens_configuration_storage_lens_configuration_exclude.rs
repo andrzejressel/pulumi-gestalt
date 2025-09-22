@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StorageLensConfigurationStorageLensConfigurationExclude {
     /// List of S3 bucket ARNs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "buckets")]
-    pub r#buckets: Box<Option<Vec<String>>>,
+    pub r#buckets: Option<Vec<String>>,
     /// List of AWS Regions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regions")]
-    pub r#regions: Box<Option<Vec<String>>>,
+    pub r#regions: Option<Vec<String>>,
 }

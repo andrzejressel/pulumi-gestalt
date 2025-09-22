@@ -4,9 +4,9 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobConfigOverlayAnimationAnimationFade {
     /// The time to end the fade animation, in seconds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endTimeOffset")]
-    pub r#end_time_offset: Box<Option<String>>,
+    pub r#end_time_offset: Option<String>,
     /// Required. Type of fade animation: `FADE_IN` or `FADE_OUT`.
     /// The possible values are:
     /// * `FADE_TYPE_UNSPECIFIED`: The fade type is not specified.
@@ -15,14 +15,14 @@ pub struct JobConfigOverlayAnimationAnimationFade {
     /// Possible values are: `FADE_TYPE_UNSPECIFIED`, `FADE_IN`, `FADE_OUT`.
     #[builder(into)]
     #[serde(rename = "fadeType")]
-    pub r#fade_type: Box<String>,
+    pub r#fade_type: String,
     /// The time to start the fade animation, in seconds.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startTimeOffset")]
-    pub r#start_time_offset: Box<Option<String>>,
+    pub r#start_time_offset: Option<String>,
     /// Normalized coordinates based on output video resolution.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "xy")]
-    pub r#xy: Box<Option<super::super::types::transcoder::JobConfigOverlayAnimationAnimationFadeXy>>,
+    pub r#xy: Option<Box<super::super::types::transcoder::JobConfigOverlayAnimationAnimationFadeXy>>,
 }

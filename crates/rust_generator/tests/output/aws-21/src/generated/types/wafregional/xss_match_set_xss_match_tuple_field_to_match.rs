@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct XssMatchSetXssMatchTupleFieldToMatch {
     /// When the value of `type` is `HEADER`, enter the name of the header that you want the WAF to search, for example, `User-Agent` or `Referer`. If the value of `type` is any other value, omit `data`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "data")]
-    pub r#data: Box<Option<String>>,
+    pub r#data: Option<String>,
     /// The part of the web request that you want AWS WAF to search for a specified stringE.g., `HEADER` or `METHOD`
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

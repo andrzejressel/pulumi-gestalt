@@ -6,13 +6,13 @@ pub struct ResourceDeploymentScriptPowerShellEnvironmentVariable {
     /// Specifies the name of the environment variable.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Specifies the value of the secure environment variable.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secureValue")]
-    pub r#secure_value: Box<Option<String>>,
+    pub r#secure_value: Option<String>,
     /// Specifies the value of the environment variable.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

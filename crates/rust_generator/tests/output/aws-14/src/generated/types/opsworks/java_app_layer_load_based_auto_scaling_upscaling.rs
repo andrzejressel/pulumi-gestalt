@@ -3,25 +3,25 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JavaAppLayerLoadBasedAutoScalingUpscaling {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "alarms")]
-    pub r#alarms: Box<Option<Vec<String>>>,
-    #[builder(into, default)]
+    pub r#alarms: Option<Vec<String>>,
+    #[builder(into)]
     #[serde(rename = "cpuThreshold")]
-    pub r#cpu_threshold: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#cpu_threshold: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "ignoreMetricsTime")]
-    pub r#ignore_metrics_time: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#ignore_metrics_time: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "instanceCount")]
-    pub r#instance_count: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#instance_count: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "loadThreshold")]
-    pub r#load_threshold: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#load_threshold: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "memoryThreshold")]
-    pub r#memory_threshold: Box<Option<f64>>,
-    #[builder(into, default)]
+    pub r#memory_threshold: Option<f64>,
+    #[builder(into)]
     #[serde(rename = "thresholdsWaitTime")]
-    pub r#thresholds_wait_time: Box<Option<i32>>,
+    pub r#thresholds_wait_time: Option<i32>,
 }

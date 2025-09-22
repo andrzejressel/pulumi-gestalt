@@ -6,9 +6,9 @@ pub struct GetDeploymentLoggingStorageAccount {
     /// The container name of Storage Account for logging.
     #[builder(into)]
     #[serde(rename = "containerName")]
-    pub r#container_name: Box<String>,
+    pub r#container_name: String,
     /// The name of this NGINX Deployment.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

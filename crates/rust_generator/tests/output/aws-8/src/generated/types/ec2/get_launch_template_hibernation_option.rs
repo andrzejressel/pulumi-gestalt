@@ -5,5 +5,5 @@
 pub struct GetLaunchTemplateHibernationOption {
     #[builder(into)]
     #[serde(rename = "configured")]
-    pub r#configured: Box<bool>,
+    pub r#configured: bool,
 }

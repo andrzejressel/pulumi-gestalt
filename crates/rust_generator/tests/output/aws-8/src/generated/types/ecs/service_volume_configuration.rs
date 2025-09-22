@@ -10,5 +10,5 @@ pub struct ServiceVolumeConfiguration {
     /// Name of the volume.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

@@ -6,5 +6,5 @@ pub struct GetDataCollectionRuleDataSourceLogFileSetting {
     /// A `text` block as defined below.
     #[builder(into)]
     #[serde(rename = "texts")]
-    pub r#texts: Box<Vec<super::super::types::monitoring::GetDataCollectionRuleDataSourceLogFileSettingText>>,
+    pub r#texts: Vec<super::super::types::monitoring::GetDataCollectionRuleDataSourceLogFileSettingText>,
 }

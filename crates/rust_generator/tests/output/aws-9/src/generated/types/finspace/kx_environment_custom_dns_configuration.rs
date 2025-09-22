@@ -6,9 +6,9 @@ pub struct KxEnvironmentCustomDnsConfiguration {
     /// IP address of the DNS server.
     #[builder(into)]
     #[serde(rename = "customDnsServerIp")]
-    pub r#custom_dns_server_ip: Box<String>,
+    pub r#custom_dns_server_ip: String,
     /// Name of the DNS server.
     #[builder(into)]
     #[serde(rename = "customDnsServerName")]
-    pub r#custom_dns_server_name: Box<String>,
+    pub r#custom_dns_server_name: String,
 }

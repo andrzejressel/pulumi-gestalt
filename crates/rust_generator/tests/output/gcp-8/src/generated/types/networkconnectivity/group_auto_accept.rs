@@ -6,5 +6,5 @@ pub struct GroupAutoAccept {
     /// A list of project ids or project numbers for which you want to enable auto-accept. The auto-accept setting is applied to spokes being created or updated in these projects.
     #[builder(into)]
     #[serde(rename = "autoAcceptProjects")]
-    pub r#auto_accept_projects: Box<Vec<String>>,
+    pub r#auto_accept_projects: Vec<String>,
 }

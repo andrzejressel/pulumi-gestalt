@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct UsagePlanApiStageThrottle {
     /// The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds, depending upon whether the underlying token bucket is at its full capacity.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "burstLimit")]
-    pub r#burst_limit: Box<Option<i32>>,
+    pub r#burst_limit: Option<i32>,
     /// Method to apply the throttle settings for. Specfiy the path and method, for example `/test/GET`.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
     /// The API request steady-state rate limit.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "rateLimit")]
-    pub r#rate_limit: Box<Option<f64>>,
+    pub r#rate_limit: Option<f64>,
 }

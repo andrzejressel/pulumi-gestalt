@@ -6,7 +6,7 @@ pub struct ServiceSignUp {
     /// Can users sign up on the development portal?
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// A `terms_of_service` block as defined below.
     #[builder(into)]
     #[serde(rename = "termsOfService")]

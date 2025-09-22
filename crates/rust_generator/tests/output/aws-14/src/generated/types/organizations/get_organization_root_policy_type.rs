@@ -6,8 +6,8 @@ pub struct GetOrganizationRootPolicyType {
     /// The status of the policy type as it relates to the associated root
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

@@ -6,9 +6,9 @@ pub struct SoftwareUpdateConfigurationTargetAzureQueryTag {
     /// Specifies the name of the tag to filter.
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<String>,
+    pub r#tag: String,
     /// Specifies a list of values for this tag key.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

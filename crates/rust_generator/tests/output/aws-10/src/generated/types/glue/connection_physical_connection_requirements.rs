@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionPhysicalConnectionRequirements {
     /// The availability zone of the connection. This field is redundant and implied by `subnet_id`, but is currently an api requirement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<Option<String>>,
+    pub r#availability_zone: Option<String>,
     /// The security group ID list used by the connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "securityGroupIdLists")]
-    pub r#security_group_id_lists: Box<Option<Vec<String>>>,
+    pub r#security_group_id_lists: Option<Vec<String>>,
     /// The subnet ID used by the connection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<Option<String>>,
+    pub r#subnet_id: Option<String>,
 }

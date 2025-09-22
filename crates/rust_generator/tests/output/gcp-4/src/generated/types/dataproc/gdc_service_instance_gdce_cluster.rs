@@ -6,5 +6,5 @@ pub struct GdcServiceInstanceGdceCluster {
     /// Gdce cluster resource id.
     #[builder(into)]
     #[serde(rename = "gdceCluster")]
-    pub r#gdce_cluster: Box<String>,
+    pub r#gdce_cluster: String,
 }

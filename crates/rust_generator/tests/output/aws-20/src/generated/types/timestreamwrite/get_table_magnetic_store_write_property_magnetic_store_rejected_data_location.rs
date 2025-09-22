@@ -6,5 +6,5 @@ pub struct GetTableMagneticStoreWritePropertyMagneticStoreRejectedDataLocation {
     /// Object containing the following attributes to describe the configuration of an s3 location to write error reports for records rejected.
     #[builder(into)]
     #[serde(rename = "s3Configurations")]
-    pub r#s_3_configurations: Box<Vec<super::super::types::timestreamwrite::GetTableMagneticStoreWritePropertyMagneticStoreRejectedDataLocationS3Configuration>>,
+    pub r#s_3_configurations: Vec<super::super::types::timestreamwrite::GetTableMagneticStoreWritePropertyMagneticStoreRejectedDataLocationS3Configuration>,
 }

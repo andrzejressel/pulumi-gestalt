@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StackSetAutoDeployment {
     /// Whether or not auto-deployment is enabled.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Whether or not to retain stacks when the account is removed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retainStacksOnAccountRemoval")]
-    pub r#retain_stacks_on_account_removal: Box<Option<bool>>,
+    pub r#retain_stacks_on_account_removal: Option<bool>,
 }

@@ -28,13 +28,13 @@ pub struct AccessApprovalSettingsEnrolledService {
     /// * storage.googleapis.com
     #[builder(into)]
     #[serde(rename = "cloudProduct")]
-    pub r#cloud_product: Box<String>,
+    pub r#cloud_product: String,
     /// The enrollment level of the service.
     /// Default value is `BLOCK_ALL`.
     /// Possible values are: `BLOCK_ALL`.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enrollmentLevel")]
-    pub r#enrollment_level: Box<Option<String>>,
+    pub r#enrollment_level: Option<String>,
 }

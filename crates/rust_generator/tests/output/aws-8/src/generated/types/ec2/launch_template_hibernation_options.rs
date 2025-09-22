@@ -6,5 +6,5 @@ pub struct LaunchTemplateHibernationOptions {
     /// If set to `true`, the launched EC2 instance will hibernation enabled.
     #[builder(into)]
     #[serde(rename = "configured")]
-    pub r#configured: Box<bool>,
+    pub r#configured: bool,
 }

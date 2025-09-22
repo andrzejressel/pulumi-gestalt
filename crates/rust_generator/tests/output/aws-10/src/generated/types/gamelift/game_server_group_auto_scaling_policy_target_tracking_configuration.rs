@@ -6,5 +6,5 @@ pub struct GameServerGroupAutoScalingPolicyTargetTrackingConfiguration {
     /// Desired value to use with a game server group target-based scaling policy.
     #[builder(into)]
     #[serde(rename = "targetValue")]
-    pub r#target_value: Box<f64>,
+    pub r#target_value: f64,
 }

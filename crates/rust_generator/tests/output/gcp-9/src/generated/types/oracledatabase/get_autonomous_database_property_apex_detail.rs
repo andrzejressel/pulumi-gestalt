@@ -6,9 +6,9 @@ pub struct GetAutonomousDatabasePropertyApexDetail {
     /// The Oracle APEX Application Development version.
     #[builder(into)]
     #[serde(rename = "apexVersion")]
-    pub r#apex_version: Box<String>,
+    pub r#apex_version: String,
     /// The Oracle REST Data Services (ORDS) version.
     #[builder(into)]
     #[serde(rename = "ordsVersion")]
-    pub r#ords_version: Box<String>,
+    pub r#ords_version: String,
 }

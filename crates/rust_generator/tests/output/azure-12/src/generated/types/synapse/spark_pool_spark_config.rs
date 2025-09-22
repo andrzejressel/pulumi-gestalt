@@ -6,9 +6,9 @@ pub struct SparkPoolSparkConfig {
     /// The contents of a spark configuration.
     #[builder(into)]
     #[serde(rename = "content")]
-    pub r#content: Box<String>,
+    pub r#content: String,
     /// The name of the file where the spark configuration `content` will be stored.
     #[builder(into)]
     #[serde(rename = "filename")]
-    pub r#filename: Box<String>,
+    pub r#filename: String,
 }

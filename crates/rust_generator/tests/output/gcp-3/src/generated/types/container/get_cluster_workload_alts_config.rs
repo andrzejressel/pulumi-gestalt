@@ -6,5 +6,5 @@ pub struct GetClusterWorkloadAltsConfig {
     /// Whether the alts handshaker should be enabled or not for direct-path. Requires Workload Identity (workloadPool must be non-empty).
     #[builder(into)]
     #[serde(rename = "enableAlts")]
-    pub r#enable_alts: Box<bool>,
+    pub r#enable_alts: bool,
 }

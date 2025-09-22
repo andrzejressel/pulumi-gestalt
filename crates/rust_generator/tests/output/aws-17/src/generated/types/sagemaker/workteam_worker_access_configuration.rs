@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkteamWorkerAccessConfiguration {
     /// Defines any Amazon S3 resource constraints. see S3 Presign details below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Presign")]
-    pub r#s_3_presign: Box<Option<super::super::types::sagemaker::WorkteamWorkerAccessConfigurationS3Presign>>,
+    pub r#s_3_presign: Option<Box<super::super::types::sagemaker::WorkteamWorkerAccessConfigurationS3Presign>>,
 }

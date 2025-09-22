@@ -6,23 +6,23 @@ pub struct OutputServicebusTopicSerialization {
     /// The encoding of the incoming data in the case of input and the encoding of outgoing data in the case of output. It currently can only be set to `UTF8`.
     /// 
     /// > **NOTE:** This is required when `type` is set to `Csv` or `Json`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encoding")]
-    pub r#encoding: Box<Option<String>>,
+    pub r#encoding: Option<String>,
     /// The delimiter that will be used to separate comma-separated value (CSV) records. Possible values are ` ` (space), `,` (comma), `	` (tab), `|` (pipe) and `;`.
     /// 
     /// > **NOTE:** This is required when `type` is set to `Csv`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fieldDelimiter")]
-    pub r#field_delimiter: Box<Option<String>>,
+    pub r#field_delimiter: Option<String>,
     /// Specifies the format of the JSON the output will be written in. Possible values are `Array` and `LineSeparated`.
     /// 
     /// > **NOTE:** This is Required and can only be specified when `type` is set to `Json`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "format")]
-    pub r#format: Box<Option<String>>,
+    pub r#format: Option<String>,
     /// The serialization format used for outgoing data streams. Possible values are `Avro`, `Csv`, `Json` and `Parquet`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

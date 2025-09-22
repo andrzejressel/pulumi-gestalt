@@ -5,13 +5,13 @@
 pub struct ImageImageEncryptionKey {
     /// The self link of the encryption key that is stored in Google Cloud
     /// KMS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeySelfLink")]
-    pub r#kms_key_self_link: Box<Option<String>>,
+    pub r#kms_key_self_link: Option<String>,
     /// The service account being used for the encryption request for the
     /// given KMS key. If absent, the Compute Engine default service
     /// account is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "kmsKeyServiceAccount")]
-    pub r#kms_key_service_account: Box<Option<String>>,
+    pub r#kms_key_service_account: Option<String>,
 }

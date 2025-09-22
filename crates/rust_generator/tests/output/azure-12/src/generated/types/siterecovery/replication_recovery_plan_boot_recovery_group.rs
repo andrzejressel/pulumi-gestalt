@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ReplicationRecoveryPlanBootRecoveryGroup {
     /// one or more `action` block as defined below. which will be executed after the group recovery.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "postActions")]
-    pub r#post_actions: Box<Option<Vec<super::super::types::siterecovery::ReplicationRecoveryPlanBootRecoveryGroupPostAction>>>,
+    pub r#post_actions: Option<Vec<super::super::types::siterecovery::ReplicationRecoveryPlanBootRecoveryGroupPostAction>>,
     /// one or more `action` block as defined below. which will be executed before the group recovery.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preActions")]
-    pub r#pre_actions: Box<Option<Vec<super::super::types::siterecovery::ReplicationRecoveryPlanBootRecoveryGroupPreAction>>>,
+    pub r#pre_actions: Option<Vec<super::super::types::siterecovery::ReplicationRecoveryPlanBootRecoveryGroupPreAction>>,
     /// One or more protected VM IDs. It must not be specified when `type` is `Shutdown`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "replicatedProtectedItems")]
-    pub r#replicated_protected_items: Box<Option<Vec<String>>>,
+    pub r#replicated_protected_items: Option<Vec<String>>,
 }

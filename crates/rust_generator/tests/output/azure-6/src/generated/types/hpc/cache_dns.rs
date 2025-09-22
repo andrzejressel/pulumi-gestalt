@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CacheDns {
     /// The DNS search domain for the HPC Cache.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "searchDomain")]
-    pub r#search_domain: Box<Option<String>>,
+    pub r#search_domain: Option<String>,
     /// A list of DNS servers for the HPC Cache. At most three IP(s) are allowed to set.
     #[builder(into)]
     #[serde(rename = "servers")]
-    pub r#servers: Box<Vec<String>>,
+    pub r#servers: Vec<String>,
 }

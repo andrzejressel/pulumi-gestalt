@@ -6,5 +6,5 @@ pub struct FileCacheLustreConfigurationMetadataConfiguration {
     /// The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is `2400` GiB.
     #[builder(into)]
     #[serde(rename = "storageCapacity")]
-    pub r#storage_capacity: Box<i32>,
+    pub r#storage_capacity: i32,
 }

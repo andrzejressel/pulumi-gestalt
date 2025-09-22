@@ -5,5 +5,5 @@
 pub struct GetInstanceCreditSpecification {
     #[builder(into)]
     #[serde(rename = "cpuCredits")]
-    pub r#cpu_credits: Box<String>,
+    pub r#cpu_credits: String,
 }

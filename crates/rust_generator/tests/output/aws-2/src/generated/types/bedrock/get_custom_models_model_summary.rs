@@ -6,13 +6,13 @@ pub struct GetCustomModelsModelSummary {
     /// Creation time of the model.
     #[builder(into)]
     #[serde(rename = "creationTime")]
-    pub r#creation_time: Box<String>,
+    pub r#creation_time: String,
     /// The ARN of the custom model.
     #[builder(into)]
     #[serde(rename = "modelArn")]
-    pub r#model_arn: Box<String>,
+    pub r#model_arn: String,
     /// The name of the custom model.
     #[builder(into)]
     #[serde(rename = "modelName")]
-    pub r#model_name: Box<String>,
+    pub r#model_name: String,
 }

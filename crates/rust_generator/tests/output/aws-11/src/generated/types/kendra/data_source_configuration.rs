@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DataSourceConfiguration {
     /// A block that provides the configuration information to connect to an Amazon S3 bucket as your data source. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3Configuration")]
-    pub r#s_3_configuration: Box<Option<super::super::types::kendra::DataSourceConfigurationS3Configuration>>,
+    pub r#s_3_configuration: Option<Box<super::super::types::kendra::DataSourceConfigurationS3Configuration>>,
     /// A block that provides the configuration information required for Amazon Kendra Web Crawler. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "webCrawlerConfiguration")]
-    pub r#web_crawler_configuration: Box<Option<super::super::types::kendra::DataSourceConfigurationWebCrawlerConfiguration>>,
+    pub r#web_crawler_configuration: Option<Box<super::super::types::kendra::DataSourceConfigurationWebCrawlerConfiguration>>,
 }

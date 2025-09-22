@@ -7,11 +7,11 @@ pub struct AlertPolicyAlertStrategyNotificationChannelStrategy {
     /// correspond to the name field in one of the NotificationChannel objects
     /// referenced in the notification_channels field of this AlertPolicy. The format is
     /// `projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notificationChannelNames")]
-    pub r#notification_channel_names: Box<Option<Vec<String>>>,
+    pub r#notification_channel_names: Option<Vec<String>>,
     /// The frequency at which to send reminder notifications for open incidents.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "renotifyInterval")]
-    pub r#renotify_interval: Box<Option<String>>,
+    pub r#renotify_interval: Option<String>,
 }

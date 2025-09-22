@@ -6,9 +6,9 @@ pub struct GetIndexIndexStatistic {
     /// Block that specifies the number of question and answer topics in the index. Documented below.
     #[builder(into)]
     #[serde(rename = "faqStatistics")]
-    pub r#faq_statistics: Box<Vec<super::super::types::kendra::GetIndexIndexStatisticFaqStatistic>>,
+    pub r#faq_statistics: Vec<super::super::types::kendra::GetIndexIndexStatisticFaqStatistic>,
     /// A block that specifies the number of text documents indexed.
     #[builder(into)]
     #[serde(rename = "textDocumentStatistics")]
-    pub r#text_document_statistics: Box<Vec<super::super::types::kendra::GetIndexIndexStatisticTextDocumentStatistic>>,
+    pub r#text_document_statistics: Vec<super::super::types::kendra::GetIndexIndexStatisticTextDocumentStatistic>,
 }

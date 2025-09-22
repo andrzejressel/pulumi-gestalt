@@ -5,14 +5,14 @@
 pub struct ByteMatchSetByteMatchTupleFieldToMatch {
     /// When `type` is `HEADER`, enter the name of the header that you want to search, e.g., `User-Agent` or `Referer`.
     /// If `type` is any other value, omit this field.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "data")]
-    pub r#data: Box<Option<String>>,
+    pub r#data: Option<String>,
     /// The part of the web request that you want AWS WAF to search for a specified string.
     /// e.g., `HEADER`, `METHOD` or `BODY`.
     /// See [docs](http://docs.aws.amazon.com/waf/latest/APIReference/API_FieldToMatch.html)
     /// for all supported values.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

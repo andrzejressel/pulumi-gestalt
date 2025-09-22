@@ -5,12 +5,12 @@
 pub struct InstanceNode {
     /// (Output)
     /// Node identifying string. e.g. 'node-0', 'node-1'
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// (Output)
     /// Location of the node.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "zone")]
-    pub r#zone: Box<Option<String>>,
+    pub r#zone: Option<String>,
 }

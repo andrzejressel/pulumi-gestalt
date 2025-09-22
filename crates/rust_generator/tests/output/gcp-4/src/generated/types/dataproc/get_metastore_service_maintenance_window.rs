@@ -6,9 +6,9 @@ pub struct GetMetastoreServiceMaintenanceWindow {
     /// The day of week, when the window starts. Possible values: ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
     #[builder(into)]
     #[serde(rename = "dayOfWeek")]
-    pub r#day_of_week: Box<String>,
+    pub r#day_of_week: String,
     /// The hour of day (0-23) when the window starts.
     #[builder(into)]
     #[serde(rename = "hourOfDay")]
-    pub r#hour_of_day: Box<i32>,
+    pub r#hour_of_day: i32,
 }

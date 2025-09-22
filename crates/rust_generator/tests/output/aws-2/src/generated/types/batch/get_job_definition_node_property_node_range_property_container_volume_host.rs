@@ -6,5 +6,5 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerVolumeHost {
     /// The path on the host container instance that's presented to the container.
     #[builder(into)]
     #[serde(rename = "sourcePath")]
-    pub r#source_path: Box<String>,
+    pub r#source_path: String,
 }

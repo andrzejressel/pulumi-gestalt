@@ -3,7 +3,7 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct Type1 {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "property1")]
-    pub r#property_1: Box<Option<String>>,
+    pub r#property_1: Option<String>,
 }

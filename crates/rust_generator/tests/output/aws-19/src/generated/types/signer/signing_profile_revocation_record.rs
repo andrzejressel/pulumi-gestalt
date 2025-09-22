@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SigningProfileRevocationRecord {
     /// The time when revocation becomes effective.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "revocationEffectiveFrom")]
-    pub r#revocation_effective_from: Box<Option<String>>,
+    pub r#revocation_effective_from: Option<String>,
     /// The time when the signing profile was revoked.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "revokedAt")]
-    pub r#revoked_at: Box<Option<String>>,
+    pub r#revoked_at: Option<String>,
     /// The identity of the revoker.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "revokedBy")]
-    pub r#revoked_by: Box<Option<String>>,
+    pub r#revoked_by: Option<String>,
 }

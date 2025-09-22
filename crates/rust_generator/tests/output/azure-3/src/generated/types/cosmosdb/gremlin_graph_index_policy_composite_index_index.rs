@@ -6,9 +6,9 @@ pub struct GremlinGraphIndexPolicyCompositeIndexIndex {
     /// Order of the index. Possible values are `Ascending` or `Descending`.
     #[builder(into)]
     #[serde(rename = "order")]
-    pub r#order: Box<String>,
+    pub r#order: String,
     /// Path for which the indexing behaviour applies to.
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

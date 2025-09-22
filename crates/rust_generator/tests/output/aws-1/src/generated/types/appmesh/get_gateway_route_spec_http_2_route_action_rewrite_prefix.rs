@@ -5,8 +5,8 @@
 pub struct GetGatewayRouteSpecHttp2RouteActionRewritePrefix {
     #[builder(into)]
     #[serde(rename = "defaultPrefix")]
-    pub r#default_prefix: Box<String>,
+    pub r#default_prefix: String,
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

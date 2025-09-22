@@ -4,28 +4,28 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSnowflake {
     /// The name of the account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accountName")]
-    pub r#account_name: Box<Option<String>>,
+    pub r#account_name: Option<String>,
     #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<String>,
-    #[builder(into, default)]
+    pub r#bucket_name: String,
+    #[builder(into)]
     #[serde(rename = "bucketPrefix")]
-    pub r#bucket_prefix: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#bucket_prefix: Option<String>,
+    #[builder(into)]
     #[serde(rename = "privateLinkServiceName")]
-    pub r#private_link_service_name: Box<Option<String>>,
+    pub r#private_link_service_name: Option<String>,
     /// AWS Region of the Snowflake account.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<Option<String>>,
+    pub r#region: Option<String>,
     /// Name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: `<Database>.<Schema>.<Stage Name>`.
     #[builder(into)]
     #[serde(rename = "stage")]
-    pub r#stage: Box<String>,
+    pub r#stage: String,
     /// The name of the Snowflake warehouse.
     #[builder(into)]
     #[serde(rename = "warehouse")]
-    pub r#warehouse: Box<String>,
+    pub r#warehouse: String,
 }

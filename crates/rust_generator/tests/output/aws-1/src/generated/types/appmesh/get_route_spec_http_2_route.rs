@@ -5,14 +5,14 @@
 pub struct GetRouteSpecHttp2Route {
     #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteAction>>,
+    pub r#actions: Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteAction>,
     #[builder(into)]
     #[serde(rename = "matches")]
-    pub r#matches: Box<Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteMatch>>,
+    pub r#matches: Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteMatch>,
     #[builder(into)]
     #[serde(rename = "retryPolicies")]
-    pub r#retry_policies: Box<Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteRetryPolicy>>,
+    pub r#retry_policies: Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteRetryPolicy>,
     #[builder(into)]
     #[serde(rename = "timeouts")]
-    pub r#timeouts: Box<Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteTimeout>>,
+    pub r#timeouts: Vec<super::super::types::appmesh::GetRouteSpecHttp2RouteTimeout>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HciDeploymentSettingScaleUnitHostNetworkIntentAdapterPropertyOverride {
     /// The jumbo frame size of the adapter. This parameter should only be modified based on your OEM guidance. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "jumboPacket")]
-    pub r#jumbo_packet: Box<Option<String>>,
+    pub r#jumbo_packet: Option<String>,
     /// The network direct of the adapter. This parameter should only be modified based on your OEM guidance. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkDirect")]
-    pub r#network_direct: Box<Option<String>>,
+    pub r#network_direct: Option<String>,
     /// The network direct technology of the adapter. This parameter should only be modified based on your OEM guidance. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "networkDirectTechnology")]
-    pub r#network_direct_technology: Box<Option<String>>,
+    pub r#network_direct_technology: Option<String>,
 }

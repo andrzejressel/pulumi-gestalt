@@ -5,8 +5,8 @@
 pub struct GetLaunchTemplateCapacityReservationSpecification {
     #[builder(into)]
     #[serde(rename = "capacityReservationPreference")]
-    pub r#capacity_reservation_preference: Box<String>,
+    pub r#capacity_reservation_preference: String,
     #[builder(into)]
     #[serde(rename = "capacityReservationTargets")]
-    pub r#capacity_reservation_targets: Box<Vec<super::super::types::ec2::GetLaunchTemplateCapacityReservationSpecificationCapacityReservationTarget>>,
+    pub r#capacity_reservation_targets: Vec<super::super::types::ec2::GetLaunchTemplateCapacityReservationSpecificationCapacityReservationTarget>,
 }

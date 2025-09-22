@@ -6,5 +6,5 @@ pub struct GetVirtualNetworkGatewayCustomRoute {
     /// A list of address blocks reserved for this virtual network in CIDR notation.
     #[builder(into)]
     #[serde(rename = "addressPrefixes")]
-    pub r#address_prefixes: Box<Vec<String>>,
+    pub r#address_prefixes: Vec<String>,
 }

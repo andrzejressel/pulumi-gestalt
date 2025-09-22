@@ -8,5 +8,5 @@ pub struct ServiceTemplateNodeSelector {
     /// - - -
     #[builder(into)]
     #[serde(rename = "accelerator")]
-    pub r#accelerator: Box<String>,
+    pub r#accelerator: String,
 }

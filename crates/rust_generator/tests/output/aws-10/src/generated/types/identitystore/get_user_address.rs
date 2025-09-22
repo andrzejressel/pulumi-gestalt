@@ -6,33 +6,33 @@ pub struct GetUserAddress {
     /// The country that this address is in.
     #[builder(into)]
     #[serde(rename = "country")]
-    pub r#country: Box<String>,
+    pub r#country: String,
     /// The name that is typically displayed when the name is shown for display.
     #[builder(into)]
     #[serde(rename = "formatted")]
-    pub r#formatted: Box<String>,
+    pub r#formatted: String,
     /// The address locality.
     #[builder(into)]
     #[serde(rename = "locality")]
-    pub r#locality: Box<String>,
+    pub r#locality: String,
     /// The postal code of the address.
     #[builder(into)]
     #[serde(rename = "postalCode")]
-    pub r#postal_code: Box<String>,
+    pub r#postal_code: String,
     /// When `true`, this is the primary phone number associated with the user.
     #[builder(into)]
     #[serde(rename = "primary")]
-    pub r#primary: Box<bool>,
+    pub r#primary: bool,
     /// The region of the address.
     #[builder(into)]
     #[serde(rename = "region")]
-    pub r#region: Box<String>,
+    pub r#region: String,
     /// The street of the address.
     #[builder(into)]
     #[serde(rename = "streetAddress")]
-    pub r#street_address: Box<String>,
+    pub r#street_address: String,
     /// The type of phone number.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

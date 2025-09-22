@@ -11,7 +11,7 @@ pub struct GroupGroupKey {
     /// Must be unique within a namespace.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The namespace in which the entity exists.
     /// If not specified, the EntityKey represents a Google-managed entity
     /// such as a Google user or a Google Group.
@@ -20,7 +20,7 @@ pub struct GroupGroupKey {
     /// and must be in the form of `identitysources/{identity_source_id}`.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<Option<String>>,
+    pub r#namespace: Option<String>,
 }

@@ -7,16 +7,16 @@ pub struct MirroringEndpointGroupAssociationLocationsDetail {
     /// 
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<Option<String>>,
+    pub r#location: Option<String>,
     /// (Output)
     /// Output only. The association state in this location.
     /// Possible values:
     /// STATE_UNSPECIFIED
     /// ACTIVE
     /// OUT_OF_SYNC
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

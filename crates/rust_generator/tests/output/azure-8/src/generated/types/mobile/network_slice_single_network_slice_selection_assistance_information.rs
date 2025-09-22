@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkSliceSingleNetworkSliceSelectionAssistanceInformation {
     /// Slice differentiator (SD). Must be a 6 digit hex string.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sliceDifferentiator")]
-    pub r#slice_differentiator: Box<Option<String>>,
+    pub r#slice_differentiator: Option<String>,
     /// Slice/service type (SST). Must be between `0` and `255`.
     #[builder(into)]
     #[serde(rename = "sliceServiceType")]
-    pub r#slice_service_type: Box<i32>,
+    pub r#slice_service_type: i32,
 }

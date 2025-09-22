@@ -8,7 +8,7 @@ pub struct RiskConfigurationCompromisedCredentialsRiskConfiguration {
     #[serde(rename = "actions")]
     pub r#actions: Box<super::super::types::cognito::RiskConfigurationCompromisedCredentialsRiskConfigurationActions>,
     /// Perform the action for these events. The default is to perform all events if no event filter is specified. Valid values are `SIGN_IN`, `PASSWORD_CHANGE`, and `SIGN_UP`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eventFilters")]
-    pub r#event_filters: Box<Option<Vec<String>>>,
+    pub r#event_filters: Option<Vec<String>>,
 }

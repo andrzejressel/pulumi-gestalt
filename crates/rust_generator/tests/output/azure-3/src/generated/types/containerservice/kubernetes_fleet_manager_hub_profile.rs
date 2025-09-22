@@ -5,11 +5,11 @@
 pub struct KubernetesFleetManagerHubProfile {
     #[builder(into)]
     #[serde(rename = "dnsPrefix")]
-    pub r#dns_prefix: Box<String>,
-    #[builder(into, default)]
+    pub r#dns_prefix: String,
+    #[builder(into)]
     #[serde(rename = "fqdn")]
-    pub r#fqdn: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#fqdn: Option<String>,
+    #[builder(into)]
     #[serde(rename = "kubernetesVersion")]
-    pub r#kubernetes_version: Box<Option<String>>,
+    pub r#kubernetes_version: Option<String>,
 }

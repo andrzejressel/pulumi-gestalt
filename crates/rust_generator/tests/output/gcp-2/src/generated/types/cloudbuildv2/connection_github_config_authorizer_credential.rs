@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConnectionGithubConfigAuthorizerCredential {
     /// A SecretManager resource containing the OAuth token that authorizes the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "oauthTokenSecretVersion")]
-    pub r#oauth_token_secret_version: Box<Option<String>>,
+    pub r#oauth_token_secret_version: Option<String>,
     /// (Output)
     /// Output only. The username associated to this token.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<Option<String>>,
+    pub r#username: Option<String>,
 }

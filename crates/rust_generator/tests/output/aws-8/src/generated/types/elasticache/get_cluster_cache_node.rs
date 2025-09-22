@@ -5,20 +5,20 @@
 pub struct GetClusterCacheNode {
     #[builder(into)]
     #[serde(rename = "address")]
-    pub r#address: Box<String>,
+    pub r#address: String,
     /// Availability Zone for the cache cluster.
     #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<String>,
+    pub r#availability_zone: String,
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     #[builder(into)]
     #[serde(rename = "outpostArn")]
-    pub r#outpost_arn: Box<String>,
+    pub r#outpost_arn: String,
     /// The port number on which each of the cache nodes will
     /// accept connections.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
 }

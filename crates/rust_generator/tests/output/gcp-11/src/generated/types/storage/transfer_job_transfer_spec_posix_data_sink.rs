@@ -6,5 +6,5 @@ pub struct TransferJobTransferSpecPosixDataSink {
     /// Root directory path to the filesystem.
     #[builder(into)]
     #[serde(rename = "rootDirectory")]
-    pub r#root_directory: Box<String>,
+    pub r#root_directory: String,
 }

@@ -6,5 +6,5 @@ pub struct GetClusterGatewayApiConfig {
     /// The Gateway API release channel to use for Gateway API.
     #[builder(into)]
     #[serde(rename = "channel")]
-    pub r#channel: Box<String>,
+    pub r#channel: String,
 }

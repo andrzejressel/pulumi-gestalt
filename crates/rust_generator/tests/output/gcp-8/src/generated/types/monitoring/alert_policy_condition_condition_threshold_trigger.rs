@@ -6,13 +6,13 @@ pub struct AlertPolicyConditionConditionThresholdTrigger {
     /// The absolute number of time series
     /// that must fail the predicate for the
     /// condition to be triggered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<Option<i32>>,
+    pub r#count: Option<i32>,
     /// The percentage of time series that
     /// must fail the predicate for the
     /// condition to be triggered.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "percent")]
-    pub r#percent: Box<Option<f64>>,
+    pub r#percent: Option<f64>,
 }

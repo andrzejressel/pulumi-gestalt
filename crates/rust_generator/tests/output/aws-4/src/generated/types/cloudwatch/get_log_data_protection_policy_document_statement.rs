@@ -6,13 +6,13 @@ pub struct GetLogDataProtectionPolicyDocumentStatement {
     /// Set of at least 1 sensitive data identifiers that you want to mask. Read more in [Types of data that you can protect](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/protect-sensitive-log-data-types.html).
     #[builder(into)]
     #[serde(rename = "dataIdentifiers")]
-    pub r#data_identifiers: Box<Vec<String>>,
+    pub r#data_identifiers: Vec<String>,
     /// Configures the data protection operation applied by this statement.
     #[builder(into)]
     #[serde(rename = "operation")]
     pub r#operation: Box<super::super::types::cloudwatch::GetLogDataProtectionPolicyDocumentStatementOperation>,
     /// Name of this statement.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sid")]
-    pub r#sid: Box<Option<String>>,
+    pub r#sid: Option<String>,
 }

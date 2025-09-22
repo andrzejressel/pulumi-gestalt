@@ -6,5 +6,5 @@ pub struct PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSet {
     /// The url, in the format `gs://<bucket>/<path>`. Trailing wildcard in the path is allowed.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
 }

@@ -5,16 +5,16 @@
 pub struct ServiceTemplateContainerLivenessProbeHttpGet {
     /// Custom headers to set in the request. HTTP allows repeated headers.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpHeaders")]
-    pub r#http_headers: Box<Option<Vec<super::super::types::cloudrunv2::ServiceTemplateContainerLivenessProbeHttpGetHttpHeader>>>,
+    pub r#http_headers: Option<Vec<super::super::types::cloudrunv2::ServiceTemplateContainerLivenessProbeHttpGetHttpHeader>>,
     /// Path to access on the HTTP server. Defaults to '/'.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<Option<String>>,
+    pub r#path: Option<String>,
     /// Port number to access on the container. Must be in the range 1 to 65535.
     /// If not specified, defaults to the same value as container.ports[0].containerPort.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
 }

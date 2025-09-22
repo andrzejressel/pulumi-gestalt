@@ -6,13 +6,13 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerLinuxParameterT
     /// The absolute file path in the container where the tmpfs volume is mounted.
     #[builder(into)]
     #[serde(rename = "containerPath")]
-    pub r#container_path: Box<String>,
+    pub r#container_path: String,
     /// The list of tmpfs volume mount options.
     #[builder(into)]
     #[serde(rename = "mountOptions")]
-    pub r#mount_options: Box<Vec<String>>,
+    pub r#mount_options: Vec<String>,
     /// The size (in MiB) of the tmpfs volume.
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<i32>,
+    pub r#size: i32,
 }

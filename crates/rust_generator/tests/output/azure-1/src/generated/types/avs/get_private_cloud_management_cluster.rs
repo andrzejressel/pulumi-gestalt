@@ -6,13 +6,13 @@ pub struct GetPrivateCloudManagementCluster {
     /// The list of the hosts in the management cluster.
     #[builder(into)]
     #[serde(rename = "hosts")]
-    pub r#hosts: Box<Vec<String>>,
+    pub r#hosts: Vec<String>,
     /// The ID of the management cluster.
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<i32>,
+    pub r#id: i32,
     /// The size of the management cluster.
     #[builder(into)]
     #[serde(rename = "size")]
-    pub r#size: Box<i32>,
+    pub r#size: i32,
 }

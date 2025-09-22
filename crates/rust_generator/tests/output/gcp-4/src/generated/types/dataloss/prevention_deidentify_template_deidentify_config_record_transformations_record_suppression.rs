@@ -5,7 +5,7 @@
 pub struct PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression {
     /// A condition that when it evaluates to true will result in the record being evaluated to be suppressed from the transformed content.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "condition")]
-    pub r#condition: Box<Option<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionCondition>>,
+    pub r#condition: Option<Box<super::super::types::dataloss::PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionCondition>>,
 }

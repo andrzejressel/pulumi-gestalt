@@ -5,7 +5,7 @@
 pub struct EntryBigqueryTableSpecViewSpec {
     /// (Output)
     /// The query that defines the table view.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "viewQuery")]
-    pub r#view_query: Box<Option<String>>,
+    pub r#view_query: Option<String>,
 }

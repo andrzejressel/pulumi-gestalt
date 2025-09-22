@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NodePoolUpgradeSettingsBlueGreenSettingsStandardRolloutPolicy {
     /// Number of blue nodes to drain in a batch.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "batchNodeCount")]
-    pub r#batch_node_count: Box<Option<i32>>,
+    pub r#batch_node_count: Option<i32>,
     /// Percentage of the blue pool nodes to drain in a batch.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "batchPercentage")]
-    pub r#batch_percentage: Box<Option<f64>>,
+    pub r#batch_percentage: Option<f64>,
     /// Soak time after each batch gets drained.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "batchSoakDuration")]
-    pub r#batch_soak_duration: Box<Option<String>>,
+    pub r#batch_soak_duration: Option<String>,
 }

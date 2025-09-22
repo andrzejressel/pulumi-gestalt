@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetRulesetsRulesetRuleActionParametersFromValue {
     /// Preserve query string for redirect URL.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "preserveQueryString")]
-    pub r#preserve_query_string: Box<Option<bool>>,
+    pub r#preserve_query_string: Option<bool>,
     /// Status code for redirect.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<Option<i32>>,
+    pub r#status_code: Option<i32>,
     /// Target URL for redirect.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "targetUrl")]
-    pub r#target_url: Box<Option<super::types::GetRulesetsRulesetRuleActionParametersFromValueTargetUrl>>,
+    pub r#target_url: Option<Box<super::types::GetRulesetsRulesetRuleActionParametersFromValueTargetUrl>>,
 }

@@ -6,9 +6,9 @@ pub struct V2ModelsIntentConfirmationSettingPromptSpecificationMessageGroupVaria
     /// Text that appears on the button. Use this to tell the user what value is returned when they choose this button.
     #[builder(into)]
     #[serde(rename = "text")]
-    pub r#text: Box<String>,
+    pub r#text: String,
     /// Value returned to Amazon Lex when the user chooses this button. This must be one of the slot values configured for the slot.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

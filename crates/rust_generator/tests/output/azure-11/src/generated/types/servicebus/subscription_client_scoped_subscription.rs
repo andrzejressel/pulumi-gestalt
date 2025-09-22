@@ -6,15 +6,15 @@ pub struct SubscriptionClientScopedSubscription {
     /// Specifies the Client ID of the application that created the client-scoped subscription. Changing this forces a new resource to be created.
     /// 
     /// > **NOTE:** Client ID can be null or empty, but it must match the client ID set on the JMS client application. From the Azure Service Bus perspective, a null client ID and an empty client id have the same behavior. If the client ID is set to null or empty, it is only accessible to client applications whose client ID is also set to null or empty.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "clientId")]
-    pub r#client_id: Box<Option<String>>,
+    pub r#client_id: Option<String>,
     /// Whether the client scoped subscription is durable. This property can only be controlled from the application side.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isClientScopedSubscriptionDurable")]
-    pub r#is_client_scoped_subscription_durable: Box<Option<bool>>,
+    pub r#is_client_scoped_subscription_durable: Option<bool>,
     /// Whether the client scoped subscription is shareable. Defaults to `true` Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "isClientScopedSubscriptionShareable")]
-    pub r#is_client_scoped_subscription_shareable: Box<Option<bool>>,
+    pub r#is_client_scoped_subscription_shareable: Option<bool>,
 }

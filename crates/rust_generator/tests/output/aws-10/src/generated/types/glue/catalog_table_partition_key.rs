@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CatalogTablePartitionKey {
     /// Free-form text comment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "comment")]
-    pub r#comment: Box<Option<String>>,
+    pub r#comment: Option<String>,
     /// Name of the Partition Key.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Datatype of data in the Partition Key.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

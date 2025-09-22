@@ -8,5 +8,5 @@ pub struct ZoneResourceSpec {
     /// - - -
     #[builder(into)]
     #[serde(rename = "locationType")]
-    pub r#location_type: Box<String>,
+    pub r#location_type: String,
 }

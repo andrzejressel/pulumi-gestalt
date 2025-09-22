@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PeeringAttachmentOptions {
     /// Indicates whether dynamic routing is enabled or disabled.. Supports `enable` and `disable`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dynamicRouting")]
-    pub r#dynamic_routing: Box<Option<String>>,
+    pub r#dynamic_routing: Option<String>,
 }

@@ -5,5 +5,5 @@
 pub struct GetVirtualServiceSpec {
     #[builder(into)]
     #[serde(rename = "providers")]
-    pub r#providers: Box<Vec<super::super::types::appmesh::GetVirtualServiceSpecProvider>>,
+    pub r#providers: Vec<super::super::types::appmesh::GetVirtualServiceSpecProvider>,
 }

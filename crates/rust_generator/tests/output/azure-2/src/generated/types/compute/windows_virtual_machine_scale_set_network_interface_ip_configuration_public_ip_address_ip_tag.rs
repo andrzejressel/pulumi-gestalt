@@ -6,9 +6,9 @@ pub struct WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpA
     /// The IP Tag associated with the Public IP, such as `SQL` or `Storage`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "tag")]
-    pub r#tag: Box<String>,
+    pub r#tag: String,
     /// The Type of IP Tag, such as `FirstPartyUsage`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

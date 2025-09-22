@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceClientConnectionConfig {
     /// Configuration to enforce connectors only (ex: AuthProxy) connections to the database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requireConnectors")]
-    pub r#require_connectors: Box<Option<bool>>,
+    pub r#require_connectors: Option<bool>,
     /// SSL config option for this instance.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sslConfig")]
-    pub r#ssl_config: Box<Option<super::super::types::alloydb::InstanceClientConnectionConfigSslConfig>>,
+    pub r#ssl_config: Option<Box<super::super::types::alloydb::InstanceClientConnectionConfigSslConfig>>,
 }

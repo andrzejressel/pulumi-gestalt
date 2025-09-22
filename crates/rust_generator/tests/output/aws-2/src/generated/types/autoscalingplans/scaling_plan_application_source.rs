@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ScalingPlanApplicationSource {
     /// ARN of a AWS CloudFormation stack.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudformationStackArn")]
-    pub r#cloudformation_stack_arn: Box<Option<String>>,
+    pub r#cloudformation_stack_arn: Option<String>,
     /// Set of tags.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tagFilters")]
-    pub r#tag_filters: Box<Option<Vec<super::super::types::autoscalingplans::ScalingPlanApplicationSourceTagFilter>>>,
+    pub r#tag_filters: Option<Vec<super::super::types::autoscalingplans::ScalingPlanApplicationSourceTagFilter>>,
 }

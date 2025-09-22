@@ -5,7 +5,7 @@
 pub struct UptimeCheckConfigHttpCheckServiceAgentAuthentication {
     /// The type of authentication to use.
     /// Possible values are: `SERVICE_AGENT_AUTHENTICATION_TYPE_UNSPECIFIED`, `OIDC_TOKEN`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

@@ -5,11 +5,11 @@
 pub struct KxVolumeAttachedCluster {
     #[builder(into)]
     #[serde(rename = "clusterName")]
-    pub r#cluster_name: Box<String>,
+    pub r#cluster_name: String,
     #[builder(into)]
     #[serde(rename = "clusterStatus")]
-    pub r#cluster_status: Box<String>,
+    pub r#cluster_status: String,
     #[builder(into)]
     #[serde(rename = "clusterType")]
-    pub r#cluster_type: Box<String>,
+    pub r#cluster_type: String,
 }

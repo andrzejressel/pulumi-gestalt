@@ -5,11 +5,11 @@
 pub struct WorkstationConfigEphemeralDirectory {
     /// An EphemeralDirectory backed by a Compute Engine persistent disk.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gcePd")]
-    pub r#gce_pd: Box<Option<super::super::types::workstations::WorkstationConfigEphemeralDirectoryGcePd>>,
+    pub r#gce_pd: Option<Box<super::super::types::workstations::WorkstationConfigEphemeralDirectoryGcePd>>,
     /// Location of this directory in the running workstation.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "mountPath")]
-    pub r#mount_path: Box<Option<String>>,
+    pub r#mount_path: Option<String>,
 }

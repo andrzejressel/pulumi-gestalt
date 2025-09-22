@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SpringCloudCustomizedAcceleratorGitRepositorySshAuth {
     /// Specifies the Public SSH Key of git repository basic auth.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostKey")]
-    pub r#host_key: Box<Option<String>>,
+    pub r#host_key: Option<String>,
     /// Specifies the SSH Key algorithm of git repository basic auth.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "hostKeyAlgorithm")]
-    pub r#host_key_algorithm: Box<Option<String>>,
+    pub r#host_key_algorithm: Option<String>,
     /// Specifies the Private SSH Key of git repository basic auth.
     #[builder(into)]
     #[serde(rename = "privateKey")]
-    pub r#private_key: Box<String>,
+    pub r#private_key: String,
 }

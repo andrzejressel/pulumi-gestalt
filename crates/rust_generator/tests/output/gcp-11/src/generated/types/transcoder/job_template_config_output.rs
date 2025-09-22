@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobTemplateConfigOutput {
     /// URI for the output file(s). For example, gs://my-bucket/outputs/.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uri")]
-    pub r#uri: Box<Option<String>>,
+    pub r#uri: Option<String>,
 }

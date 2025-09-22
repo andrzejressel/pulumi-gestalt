@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TaskSetScale {
     /// The unit of measure for the scale value. Default: `PERCENT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "unit")]
-    pub r#unit: Box<Option<String>>,
+    pub r#unit: Option<String>,
     /// The value, specified as a percent total of a service's `desiredCount`, to scale the task set. Defaults to `0` if not specified. Accepted values are numbers between 0.0 and 100.0.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<f64>>,
+    pub r#value: Option<f64>,
 }

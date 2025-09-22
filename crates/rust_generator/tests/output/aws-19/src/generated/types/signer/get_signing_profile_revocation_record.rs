@@ -5,11 +5,11 @@
 pub struct GetSigningProfileRevocationRecord {
     #[builder(into)]
     #[serde(rename = "revocationEffectiveFrom")]
-    pub r#revocation_effective_from: Box<String>,
+    pub r#revocation_effective_from: String,
     #[builder(into)]
     #[serde(rename = "revokedAt")]
-    pub r#revoked_at: Box<String>,
+    pub r#revoked_at: String,
     #[builder(into)]
     #[serde(rename = "revokedBy")]
-    pub r#revoked_by: Box<String>,
+    pub r#revoked_by: String,
 }

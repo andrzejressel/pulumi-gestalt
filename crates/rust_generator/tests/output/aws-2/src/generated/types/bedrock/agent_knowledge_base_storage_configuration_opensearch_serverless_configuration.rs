@@ -6,13 +6,13 @@ pub struct AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurati
     /// ARN of the OpenSearch Service vector store.
     #[builder(into)]
     #[serde(rename = "collectionArn")]
-    pub r#collection_arn: Box<String>,
+    pub r#collection_arn: String,
     /// The names of the fields to which to map information about the vector store. This block supports the following arguments:
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fieldMapping")]
-    pub r#field_mapping: Box<Option<super::super::types::bedrock::AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationFieldMapping>>,
+    pub r#field_mapping: Option<Box<super::super::types::bedrock::AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationFieldMapping>>,
     /// Name of the vector store.
     #[builder(into)]
     #[serde(rename = "vectorIndexName")]
-    pub r#vector_index_name: Box<String>,
+    pub r#vector_index_name: String,
 }

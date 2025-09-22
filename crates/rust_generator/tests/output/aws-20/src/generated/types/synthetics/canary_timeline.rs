@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CanaryTimeline {
     /// Date and time the canary was created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "created")]
-    pub r#created: Box<Option<String>>,
+    pub r#created: Option<String>,
     /// Date and time the canary was most recently modified.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastModified")]
-    pub r#last_modified: Box<Option<String>>,
+    pub r#last_modified: Option<String>,
     /// Date and time that the canary's most recent run started.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastStarted")]
-    pub r#last_started: Box<Option<String>>,
+    pub r#last_started: Option<String>,
     /// Date and time that the canary's most recent run ended.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastStopped")]
-    pub r#last_stopped: Box<Option<String>>,
+    pub r#last_stopped: Option<String>,
 }

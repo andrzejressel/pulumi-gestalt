@@ -6,5 +6,5 @@ pub struct LaunchTemplateElasticInferenceAccelerator {
     /// Accelerator type.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

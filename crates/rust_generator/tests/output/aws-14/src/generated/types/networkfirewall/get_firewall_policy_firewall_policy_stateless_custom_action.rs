@@ -5,8 +5,8 @@
 pub struct GetFirewallPolicyFirewallPolicyStatelessCustomAction {
     #[builder(into)]
     #[serde(rename = "actionDefinitions")]
-    pub r#action_definitions: Box<Vec<super::super::types::networkfirewall::GetFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition>>,
+    pub r#action_definitions: Vec<super::super::types::networkfirewall::GetFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition>,
     #[builder(into)]
     #[serde(rename = "actionName")]
-    pub r#action_name: Box<String>,
+    pub r#action_name: String,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SoftwareUpdateConfigurationPostTask {
     /// Specifies a map of parameters for the task.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#parameters: Option<std::collections::HashMap<String, String>>,
     /// The name of the runbook for the post task.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<Option<String>>,
+    pub r#source: Option<String>,
 }

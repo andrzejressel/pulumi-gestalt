@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SecurityPolicyRuleMatchExprOptionsRecaptchaOptions {
     /// A list of site keys to be used during the validation of reCAPTCHA action-tokens. The provided site keys need to be created from reCAPTCHA API under the same project where the security policy is created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "actionTokenSiteKeys")]
-    pub r#action_token_site_keys: Box<Option<Vec<String>>>,
+    pub r#action_token_site_keys: Option<Vec<String>>,
     /// A list of site keys to be used during the validation of reCAPTCHA session-tokens. The provided site keys need to be created from reCAPTCHA API under the same project where the security policy is created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sessionTokenSiteKeys")]
-    pub r#session_token_site_keys: Box<Option<Vec<String>>>,
+    pub r#session_token_site_keys: Option<Vec<String>>,
 }

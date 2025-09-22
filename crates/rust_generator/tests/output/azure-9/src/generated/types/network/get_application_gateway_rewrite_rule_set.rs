@@ -6,13 +6,13 @@ pub struct GetApplicationGatewayRewriteRuleSet {
     /// The ID of the Rewrite Rule Set
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The name of this Application Gateway.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// One or more `rewrite_rule` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "rewriteRules")]
-    pub r#rewrite_rules: Box<Vec<super::super::types::network::GetApplicationGatewayRewriteRuleSetRewriteRule>>,
+    pub r#rewrite_rules: Vec<super::super::types::network::GetApplicationGatewayRewriteRuleSetRewriteRule>,
 }

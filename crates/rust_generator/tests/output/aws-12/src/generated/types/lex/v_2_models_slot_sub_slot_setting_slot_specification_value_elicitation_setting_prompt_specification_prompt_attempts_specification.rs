@@ -3,19 +3,19 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecification {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowInterrupt")]
-    pub r#allow_interrupt: Box<Option<bool>>,
+    pub r#allow_interrupt: Option<bool>,
     #[builder(into)]
     #[serde(rename = "allowedInputTypes")]
     pub r#allowed_input_types: Box<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAllowedInputTypes>,
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "audioAndDtmfInputSpecification")]
-    pub r#audio_and_dtmf_input_specification: Box<Option<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecification>>,
+    pub r#audio_and_dtmf_input_specification: Option<Box<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecification>>,
     #[builder(into)]
     #[serde(rename = "mapBlockKey")]
-    pub r#map_block_key: Box<String>,
-    #[builder(into, default)]
+    pub r#map_block_key: String,
+    #[builder(into)]
     #[serde(rename = "textInputSpecification")]
-    pub r#text_input_specification: Box<Option<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationTextInputSpecification>>,
+    pub r#text_input_specification: Option<Box<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationTextInputSpecification>>,
 }

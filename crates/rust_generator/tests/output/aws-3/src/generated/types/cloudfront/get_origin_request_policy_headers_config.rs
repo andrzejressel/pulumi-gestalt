@@ -5,8 +5,8 @@
 pub struct GetOriginRequestPolicyHeadersConfig {
     #[builder(into)]
     #[serde(rename = "headerBehavior")]
-    pub r#header_behavior: Box<String>,
+    pub r#header_behavior: String,
     #[builder(into)]
     #[serde(rename = "headers")]
-    pub r#headers: Box<Vec<super::super::types::cloudfront::GetOriginRequestPolicyHeadersConfigHeader>>,
+    pub r#headers: Vec<super::super::types::cloudfront::GetOriginRequestPolicyHeadersConfigHeader>,
 }

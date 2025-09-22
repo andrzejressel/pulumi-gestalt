@@ -6,13 +6,13 @@ pub struct GuardrailContentPolicyConfigFiltersConfig {
     /// Strength for filters.
     #[builder(into)]
     #[serde(rename = "inputStrength")]
-    pub r#input_strength: Box<String>,
+    pub r#input_strength: String,
     /// Strength for filters.
     #[builder(into)]
     #[serde(rename = "outputStrength")]
-    pub r#output_strength: Box<String>,
+    pub r#output_strength: String,
     /// Type of contextual grounding filter.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

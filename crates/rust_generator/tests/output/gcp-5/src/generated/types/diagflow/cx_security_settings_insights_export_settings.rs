@@ -6,5 +6,5 @@ pub struct CxSecuritySettingsInsightsExportSettings {
     /// If enabled, we will automatically exports conversations to Insights and Insights runs its analyzers.
     #[builder(into)]
     #[serde(rename = "enableInsightsExport")]
-    pub r#enable_insights_export: Box<bool>,
+    pub r#enable_insights_export: bool,
 }

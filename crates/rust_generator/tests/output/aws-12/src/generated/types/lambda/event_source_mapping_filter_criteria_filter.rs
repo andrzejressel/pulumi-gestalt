@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EventSourceMappingFilterCriteriaFilter {
     /// A filter pattern up to 4096 characters. See [Filter Rule Syntax](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "pattern")]
-    pub r#pattern: Box<Option<String>>,
+    pub r#pattern: Option<String>,
 }

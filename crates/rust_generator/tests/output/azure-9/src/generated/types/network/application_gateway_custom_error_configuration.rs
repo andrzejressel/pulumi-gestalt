@@ -6,13 +6,13 @@ pub struct ApplicationGatewayCustomErrorConfiguration {
     /// Error page URL of the application gateway customer error.
     #[builder(into)]
     #[serde(rename = "customErrorPageUrl")]
-    pub r#custom_error_page_url: Box<String>,
+    pub r#custom_error_page_url: String,
     /// The ID of the Rewrite Rule Set
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// Status code of the application gateway customer error. Possible values are `HttpStatus400`, `HttpStatus403`, `HttpStatus404`, `HttpStatus405`, `HttpStatus408`, `HttpStatus500`, `HttpStatus502`, `HttpStatus503` and `HttpStatus504`
     #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<String>,
+    pub r#status_code: String,
 }

@@ -5,12 +5,12 @@
 pub struct AiIndexIndexStat {
     /// (Output)
     /// The number of shards in the Index.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "shardsCount")]
-    pub r#shards_count: Box<Option<i32>>,
+    pub r#shards_count: Option<i32>,
     /// (Output)
     /// The number of vectors in the Index.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vectorsCount")]
-    pub r#vectors_count: Box<Option<String>>,
+    pub r#vectors_count: Option<String>,
 }

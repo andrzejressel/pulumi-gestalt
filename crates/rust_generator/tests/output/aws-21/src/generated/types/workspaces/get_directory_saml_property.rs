@@ -5,11 +5,11 @@
 pub struct GetDirectorySamlProperty {
     #[builder(into)]
     #[serde(rename = "relayStateParameterName")]
-    pub r#relay_state_parameter_name: Box<String>,
+    pub r#relay_state_parameter_name: String,
     #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<String>,
+    pub r#status: String,
     #[builder(into)]
     #[serde(rename = "userAccessUrl")]
-    pub r#user_access_url: Box<String>,
+    pub r#user_access_url: String,
 }

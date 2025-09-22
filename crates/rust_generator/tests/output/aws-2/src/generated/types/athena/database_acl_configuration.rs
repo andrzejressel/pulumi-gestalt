@@ -8,5 +8,5 @@ pub struct DatabaseAclConfiguration {
     /// > **NOTE:** When Athena queries are executed, result files may be created in the specified bucket. Consider using `force_destroy` on the bucket too in order to avoid any problems when destroying the bucket.
     #[builder(into)]
     #[serde(rename = "s3AclOption")]
-    pub r#s_3_acl_option: Box<String>,
+    pub r#s_3_acl_option: String,
 }

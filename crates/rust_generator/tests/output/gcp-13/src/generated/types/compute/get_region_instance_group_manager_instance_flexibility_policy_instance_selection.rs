@@ -6,13 +6,13 @@ pub struct GetRegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelecti
     /// Full machine-type names, e.g. "n1-standard-16"
     #[builder(into)]
     #[serde(rename = "machineTypes")]
-    pub r#machine_types: Box<Vec<String>>,
+    pub r#machine_types: Vec<String>,
     /// The name of the instance group. Either `name` or `self_link` must be provided.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// Preference of this instance selection. Lower number means higher preference. MIG will first try to create a VM based on the machine-type with lowest rank and fallback to next rank based on availability. Machine types and instance selections with the same rank have the same preference.
     #[builder(into)]
     #[serde(rename = "rank")]
-    pub r#rank: Box<i32>,
+    pub r#rank: i32,
 }

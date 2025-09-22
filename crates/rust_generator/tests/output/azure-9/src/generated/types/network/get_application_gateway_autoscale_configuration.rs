@@ -6,9 +6,9 @@ pub struct GetApplicationGatewayAutoscaleConfiguration {
     /// Maximum capacity for autoscaling.
     #[builder(into)]
     #[serde(rename = "maxCapacity")]
-    pub r#max_capacity: Box<i32>,
+    pub r#max_capacity: i32,
     /// Minimum capacity for autoscaling.
     #[builder(into)]
     #[serde(rename = "minCapacity")]
-    pub r#min_capacity: Box<i32>,
+    pub r#min_capacity: i32,
 }

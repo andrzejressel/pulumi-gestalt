@@ -5,8 +5,8 @@
 pub struct GetInputDestinationVpc {
     #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<String>,
+    pub r#availability_zone: String,
     #[builder(into)]
     #[serde(rename = "networkInterfaceId")]
-    pub r#network_interface_id: Box<String>,
+    pub r#network_interface_id: String,
 }

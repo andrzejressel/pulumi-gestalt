@@ -6,9 +6,9 @@ pub struct GetSubscriptionCloudStorageConfigAvroConfig {
     /// When true, the output Cloud Storage file will be serialized using the topic schema, if it exists.
     #[builder(into)]
     #[serde(rename = "useTopicSchema")]
-    pub r#use_topic_schema: Box<bool>,
+    pub r#use_topic_schema: bool,
     /// When true, write the subscription name, messageId, publishTime, attributes, and orderingKey as additional fields in the output.
     #[builder(into)]
     #[serde(rename = "writeMetadata")]
-    pub r#write_metadata: Box<bool>,
+    pub r#write_metadata: bool,
 }

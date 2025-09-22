@@ -5,8 +5,8 @@
 pub struct GetListenerDefaultActionForward {
     #[builder(into)]
     #[serde(rename = "stickinesses")]
-    pub r#stickinesses: Box<Vec<super::super::types::alb::GetListenerDefaultActionForwardStickiness>>,
+    pub r#stickinesses: Vec<super::super::types::alb::GetListenerDefaultActionForwardStickiness>,
     #[builder(into)]
     #[serde(rename = "targetGroups")]
-    pub r#target_groups: Box<Vec<super::super::types::alb::GetListenerDefaultActionForwardTargetGroup>>,
+    pub r#target_groups: Vec<super::super::types::alb::GetListenerDefaultActionForwardTargetGroup>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CrawlerLakeFormationConfiguration {
     /// Required for cross account crawls. For same account crawls as the target data, this can omitted.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accountId")]
-    pub r#account_id: Box<Option<String>>,
+    pub r#account_id: Option<String>,
     /// Specifies whether to use Lake Formation credentials for the crawler instead of the IAM role credentials.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "useLakeFormationCredentials")]
-    pub r#use_lake_formation_credentials: Box<Option<bool>>,
+    pub r#use_lake_formation_credentials: Option<bool>,
 }

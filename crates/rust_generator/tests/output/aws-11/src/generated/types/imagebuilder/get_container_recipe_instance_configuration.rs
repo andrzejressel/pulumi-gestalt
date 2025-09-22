@@ -6,9 +6,9 @@ pub struct GetContainerRecipeInstanceConfiguration {
     /// Set of objects with block device mappings for the instance configuration.
     #[builder(into)]
     #[serde(rename = "blockDeviceMappings")]
-    pub r#block_device_mappings: Box<Vec<super::super::types::imagebuilder::GetContainerRecipeInstanceConfigurationBlockDeviceMapping>>,
+    pub r#block_device_mappings: Vec<super::super::types::imagebuilder::GetContainerRecipeInstanceConfigurationBlockDeviceMapping>,
     /// AMI ID of the base image for container build and test instance.
     #[builder(into)]
     #[serde(rename = "image")]
-    pub r#image: Box<String>,
+    pub r#image: String,
 }

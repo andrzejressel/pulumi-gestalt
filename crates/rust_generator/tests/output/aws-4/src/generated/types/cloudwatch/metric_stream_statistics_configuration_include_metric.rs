@@ -6,8 +6,8 @@ pub struct MetricStreamStatisticsConfigurationIncludeMetric {
     /// The name of the metric.
     #[builder(into)]
     #[serde(rename = "metricName")]
-    pub r#metric_name: Box<String>,
+    pub r#metric_name: String,
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
 }

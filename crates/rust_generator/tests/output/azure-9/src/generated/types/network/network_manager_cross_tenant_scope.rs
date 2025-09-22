@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkManagerCrossTenantScope {
     /// List of management groups.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "managementGroups")]
-    pub r#management_groups: Box<Option<Vec<String>>>,
+    pub r#management_groups: Option<Vec<String>>,
     /// List of subscriptions.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subscriptions")]
-    pub r#subscriptions: Box<Option<Vec<String>>>,
+    pub r#subscriptions: Option<Vec<String>>,
     /// Tenant ID.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tenantId")]
-    pub r#tenant_id: Box<Option<String>>,
+    pub r#tenant_id: Option<String>,
 }

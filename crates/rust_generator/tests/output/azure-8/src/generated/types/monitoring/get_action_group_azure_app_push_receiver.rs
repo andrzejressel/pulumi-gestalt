@@ -6,9 +6,9 @@ pub struct GetActionGroupAzureAppPushReceiver {
     /// The email address of this receiver.
     #[builder(into)]
     #[serde(rename = "emailAddress")]
-    pub r#email_address: Box<String>,
+    pub r#email_address: String,
     /// Specifies the name of the Action Group.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

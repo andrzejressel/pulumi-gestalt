@@ -5,17 +5,17 @@
 pub struct CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSan {
     /// (Output)
     /// Indicates whether or not the name constraints are marked critical.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "critical")]
-    pub r#critical: Box<Option<bool>>,
+    pub r#critical: Option<bool>,
     /// (Output)
     /// Describes how some of the technical fields in a certificate should be populated.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "obectIds")]
-    pub r#obect_ids: Box<Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId>>>,
+    pub r#obect_ids: Option<Vec<super::super::types::certificateauthority::CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectId>>,
     /// The value of this X.509 extension. A base64-encoded string.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

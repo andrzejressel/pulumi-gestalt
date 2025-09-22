@@ -6,9 +6,9 @@ pub struct GetSubnetDhcpAddressRange {
     /// The first IP address of the range.
     #[builder(into)]
     #[serde(rename = "firstAddress")]
-    pub r#first_address: Box<String>,
+    pub r#first_address: String,
     /// The last IP address of the range.
     #[builder(into)]
     #[serde(rename = "lastAddress")]
-    pub r#last_address: Box<String>,
+    pub r#last_address: String,
 }

@@ -6,14 +6,14 @@ pub struct LifecyclePolicyPolicyDetailsScheduleFastRestoreRule {
     /// The Availability Zones in which to enable fast snapshot restore.
     #[builder(into)]
     #[serde(rename = "availabilityZones")]
-    pub r#availability_zones: Box<Vec<String>>,
-    #[builder(into, default)]
+    pub r#availability_zones: Vec<String>,
+    #[builder(into)]
     #[serde(rename = "count")]
-    pub r#count: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#count: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "interval")]
-    pub r#interval: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#interval: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "intervalUnit")]
-    pub r#interval_unit: Box<Option<String>>,
+    pub r#interval_unit: Option<String>,
 }

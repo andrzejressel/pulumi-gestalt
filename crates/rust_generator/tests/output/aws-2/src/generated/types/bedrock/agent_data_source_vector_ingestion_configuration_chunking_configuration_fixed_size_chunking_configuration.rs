@@ -6,9 +6,9 @@ pub struct AgentDataSourceVectorIngestionConfigurationChunkingConfigurationFixed
     /// Maximum number of tokens to include in a chunk.
     #[builder(into)]
     #[serde(rename = "maxTokens")]
-    pub r#max_tokens: Box<i32>,
+    pub r#max_tokens: i32,
     /// Percentage of overlap between adjacent chunks of a data source.
     #[builder(into)]
     #[serde(rename = "overlapPercentage")]
-    pub r#overlap_percentage: Box<i32>,
+    pub r#overlap_percentage: i32,
 }

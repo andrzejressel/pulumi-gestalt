@@ -5,11 +5,11 @@
 pub struct GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrust {
     #[builder(into)]
     #[serde(rename = "acms")]
-    pub r#acms: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustAcm>>,
+    pub r#acms: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustAcm>,
     #[builder(into)]
     #[serde(rename = "files")]
-    pub r#files: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustFile>>,
+    pub r#files: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustFile>,
     #[builder(into)]
     #[serde(rename = "sds")]
-    pub r#sds: Box<Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustSd>>,
+    pub r#sds: Vec<super::super::types::appmesh::GetVirtualGatewaySpecBackendDefaultClientPolicyTlValidationTrustSd>,
 }

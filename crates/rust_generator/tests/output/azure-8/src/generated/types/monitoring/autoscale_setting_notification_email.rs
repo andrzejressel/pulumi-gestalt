@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AutoscaleSettingNotificationEmail {
     /// Specifies a list of custom email addresses to which the email notifications will be sent.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "customEmails")]
-    pub r#custom_emails: Box<Option<Vec<String>>>,
+    pub r#custom_emails: Option<Vec<String>>,
     /// Should email notifications be sent to the subscription administrator? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sendToSubscriptionAdministrator")]
-    pub r#send_to_subscription_administrator: Box<Option<bool>>,
+    pub r#send_to_subscription_administrator: Option<bool>,
     /// Should email notifications be sent to the subscription co-administrator? Defaults to `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sendToSubscriptionCoAdministrator")]
-    pub r#send_to_subscription_co_administrator: Box<Option<bool>>,
+    pub r#send_to_subscription_co_administrator: Option<bool>,
 }

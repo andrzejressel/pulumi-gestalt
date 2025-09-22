@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelStorageMetricsSelectionCriteria {
     /// The delimiter of the selection criteria being used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "delimiter")]
-    pub r#delimiter: Box<Option<String>>,
+    pub r#delimiter: Option<String>,
     /// The max depth of the selection criteria.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxDepth")]
-    pub r#max_depth: Box<Option<i32>>,
+    pub r#max_depth: Option<i32>,
     /// The minimum number of storage bytes percentage whose metrics will be selected.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minStorageBytesPercentage")]
-    pub r#min_storage_bytes_percentage: Box<Option<f64>>,
+    pub r#min_storage_bytes_percentage: Option<f64>,
 }

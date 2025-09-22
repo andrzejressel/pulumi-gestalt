@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RegistryTaskSourceTriggerAuthentication {
     /// Time in seconds that the token remains valid.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expireInSeconds")]
-    pub r#expire_in_seconds: Box<Option<i32>>,
+    pub r#expire_in_seconds: Option<i32>,
     /// The refresh token used to refresh the access token.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "refreshToken")]
-    pub r#refresh_token: Box<Option<String>>,
+    pub r#refresh_token: Option<String>,
     /// The scope of the access token.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "scope")]
-    pub r#scope: Box<Option<String>>,
+    pub r#scope: Option<String>,
     /// The access token used to access the source control provider.
     #[builder(into)]
     #[serde(rename = "token")]
-    pub r#token: Box<String>,
+    pub r#token: String,
     /// The type of the token. Possible values are `PAT` (personal access token) and `OAuth`.
     #[builder(into)]
     #[serde(rename = "tokenType")]
-    pub r#token_type: Box<String>,
+    pub r#token_type: String,
 }

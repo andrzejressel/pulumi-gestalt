@@ -5,24 +5,24 @@
 pub struct AutonomousDatabasePropertiesLocalStandbyDb {
     /// The date and time the Autonomous Data Guard role was switched for the
     /// standby Autonomous Database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataGuardRoleChangedTime")]
-    pub r#data_guard_role_changed_time: Box<Option<String>>,
+    pub r#data_guard_role_changed_time: Option<String>,
     /// The date and time the Disaster Recovery role was switched for the standby
     /// Autonomous Database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "disasterRecoveryRoleChangedTime")]
-    pub r#disaster_recovery_role_changed_time: Box<Option<String>>,
+    pub r#disaster_recovery_role_changed_time: Option<String>,
     /// The amount of time, in seconds, that the data of the standby database lags
     /// in comparison to the data of the primary database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lagTimeDuration")]
-    pub r#lag_time_duration: Box<Option<String>>,
+    pub r#lag_time_duration: Option<String>,
     /// The additional details about the current lifecycle state of the
     /// Autonomous Database.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lifecycleDetails")]
-    pub r#lifecycle_details: Box<Option<String>>,
+    pub r#lifecycle_details: Option<String>,
     /// Possible values:
     ///  STATE_UNSPECIFIED
     /// PROVISIONING
@@ -46,7 +46,7 @@ pub struct AutonomousDatabasePropertiesLocalStandbyDb {
     /// UPGRADING
     /// INACCESSIBLE
     /// STANDBY
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
 }

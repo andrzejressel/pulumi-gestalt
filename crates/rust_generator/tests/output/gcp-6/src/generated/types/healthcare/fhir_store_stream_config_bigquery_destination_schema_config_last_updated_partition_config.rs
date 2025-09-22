@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FhirStoreStreamConfigBigqueryDestinationSchemaConfigLastUpdatedPartitionConfig {
     /// Number of milliseconds for which to keep the storage for a partition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expirationMs")]
-    pub r#expiration_ms: Box<Option<String>>,
+    pub r#expiration_ms: Option<String>,
     /// Type of partitioning.
     /// Possible values are: `PARTITION_TYPE_UNSPECIFIED`, `HOUR`, `DAY`, `MONTH`, `YEAR`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

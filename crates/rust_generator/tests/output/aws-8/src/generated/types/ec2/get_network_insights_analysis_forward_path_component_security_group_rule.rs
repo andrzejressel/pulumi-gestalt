@@ -5,20 +5,20 @@
 pub struct GetNetworkInsightsAnalysisForwardPathComponentSecurityGroupRule {
     #[builder(into)]
     #[serde(rename = "cidr")]
-    pub r#cidr: Box<String>,
+    pub r#cidr: String,
     #[builder(into)]
     #[serde(rename = "direction")]
-    pub r#direction: Box<String>,
+    pub r#direction: String,
     #[builder(into)]
     #[serde(rename = "portRanges")]
-    pub r#port_ranges: Box<Vec<super::super::types::ec2::GetNetworkInsightsAnalysisForwardPathComponentSecurityGroupRulePortRange>>,
+    pub r#port_ranges: Vec<super::super::types::ec2::GetNetworkInsightsAnalysisForwardPathComponentSecurityGroupRulePortRange>,
     #[builder(into)]
     #[serde(rename = "prefixListId")]
-    pub r#prefix_list_id: Box<String>,
+    pub r#prefix_list_id: String,
     #[builder(into)]
     #[serde(rename = "protocol")]
-    pub r#protocol: Box<String>,
+    pub r#protocol: String,
     #[builder(into)]
     #[serde(rename = "securityGroupId")]
-    pub r#security_group_id: Box<String>,
+    pub r#security_group_id: String,
 }

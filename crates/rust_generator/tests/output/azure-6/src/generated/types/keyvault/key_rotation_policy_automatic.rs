@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct KeyRotationPolicyAutomatic {
     /// Rotate automatically at a duration after create as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeAfterCreation")]
-    pub r#time_after_creation: Box<Option<String>>,
+    pub r#time_after_creation: Option<String>,
     /// Rotate automatically at a duration before expiry as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "timeBeforeExpiry")]
-    pub r#time_before_expiry: Box<Option<String>>,
+    pub r#time_before_expiry: Option<String>,
 }

@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SecurityPolicyRuleRedirectOptions {
     /// Target for the redirect action. This is required if the type is EXTERNAL_302 and cannot be specified for GOOGLE_RECAPTCHA.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "target")]
-    pub r#target: Box<Option<String>>,
+    pub r#target: Option<String>,
     /// Type of the redirect action.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

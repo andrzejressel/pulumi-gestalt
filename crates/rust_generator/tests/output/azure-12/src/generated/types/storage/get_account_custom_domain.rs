@@ -6,5 +6,5 @@ pub struct GetAccountCustomDomain {
     /// Specifies the name of the Storage Account
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

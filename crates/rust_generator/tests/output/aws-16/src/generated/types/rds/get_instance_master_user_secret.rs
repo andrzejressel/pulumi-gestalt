@@ -6,13 +6,13 @@ pub struct GetInstanceMasterUserSecret {
     /// The Amazon Web Services KMS key identifier that is used to encrypt the secret.
     #[builder(into)]
     #[serde(rename = "kmsKeyId")]
-    pub r#kms_key_id: Box<String>,
+    pub r#kms_key_id: String,
     /// The Amazon Resource Name (ARN) of the secret.
     #[builder(into)]
     #[serde(rename = "secretArn")]
-    pub r#secret_arn: Box<String>,
+    pub r#secret_arn: String,
     /// The status of the secret. Valid Values: `creating` | `active` | `rotating` | `impaired`.
     #[builder(into)]
     #[serde(rename = "secretStatus")]
-    pub r#secret_status: Box<String>,
+    pub r#secret_status: String,
 }

@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSet {
     /// Whether or not to allow the use of regular expressions in the login page path.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableRegexInPath")]
-    pub r#enable_regex_in_path: Box<Option<bool>>,
+    pub r#enable_regex_in_path: Option<bool>,
     /// The path of the login endpoint for your application.
     #[builder(into)]
     #[serde(rename = "loginPath")]
-    pub r#login_path: Box<String>,
+    pub r#login_path: String,
     /// The criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. See `request_inspection` for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requestInspection")]
-    pub r#request_inspection: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspection>>,
+    pub r#request_inspection: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspection>>,
     /// The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. Note that Response Inspection is available only on web ACLs that protect CloudFront distributions. See `response_inspection` for more details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "responseInspection")]
-    pub r#response_inspection: Box<Option<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspection>>,
+    pub r#response_inspection: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspection>>,
 }

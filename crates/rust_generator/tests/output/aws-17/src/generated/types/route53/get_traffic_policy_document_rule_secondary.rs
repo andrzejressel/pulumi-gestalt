@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetTrafficPolicyDocumentRuleSecondary {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "endpointReference")]
-    pub r#endpoint_reference: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#endpoint_reference: Option<String>,
+    #[builder(into)]
     #[serde(rename = "evaluateTargetHealth")]
-    pub r#evaluate_target_health: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#evaluate_target_health: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "healthCheck")]
-    pub r#health_check: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#health_check: Option<String>,
+    #[builder(into)]
     #[serde(rename = "ruleReference")]
-    pub r#rule_reference: Box<Option<String>>,
+    pub r#rule_reference: Option<String>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct BiReservationPreferredTable {
     /// The ID of the dataset in the above project.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "datasetId")]
-    pub r#dataset_id: Box<Option<String>>,
+    pub r#dataset_id: Option<String>,
     /// The assigned project ID of the project.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<Option<String>>,
+    pub r#project_id: Option<String>,
     /// The ID of the table in the above dataset.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "tableId")]
-    pub r#table_id: Box<Option<String>>,
+    pub r#table_id: Option<String>,
 }

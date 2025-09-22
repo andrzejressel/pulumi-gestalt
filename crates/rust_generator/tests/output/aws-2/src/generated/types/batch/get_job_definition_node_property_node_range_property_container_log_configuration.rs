@@ -6,13 +6,13 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerLogConfiguratio
     /// The log driver to use for the container.
     #[builder(into)]
     #[serde(rename = "logDriver")]
-    pub r#log_driver: Box<String>,
+    pub r#log_driver: String,
     /// The configuration options to send to the log driver.
     #[builder(into)]
     #[serde(rename = "options")]
-    pub r#options: Box<std::collections::HashMap<String, String>>,
+    pub r#options: std::collections::HashMap<String, String>,
     /// The secrets to pass to the log configuration.
     #[builder(into)]
     #[serde(rename = "secretOptions")]
-    pub r#secret_options: Box<Vec<super::super::types::batch::GetJobDefinitionNodePropertyNodeRangePropertyContainerLogConfigurationSecretOption>>,
+    pub r#secret_options: Vec<super::super::types::batch::GetJobDefinitionNodePropertyNodeRangePropertyContainerLogConfigurationSecretOption>,
 }

@@ -5,26 +5,26 @@
 pub struct BareMetalClusterStatusCondition {
     /// (Output)
     /// Last time the condition transit from one status to another.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "lastTransitionTime")]
-    pub r#last_transition_time: Box<Option<String>>,
+    pub r#last_transition_time: Option<String>,
     /// Human-readable message indicating details about last transition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
     /// (Output)
     /// A human-readable message of the check failure.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reason")]
-    pub r#reason: Box<Option<String>>,
+    pub r#reason: Option<String>,
     /// (Output)
     /// The lifecycle state of the condition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
     /// Type of the condition.
     /// (e.g., ClusterRunning, NodePoolRunning or ServerSidePreflightReady)
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

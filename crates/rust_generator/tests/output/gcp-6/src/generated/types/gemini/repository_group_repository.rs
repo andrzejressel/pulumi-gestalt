@@ -9,10 +9,10 @@ pub struct RepositoryGroupRepository {
     /// - - -
     #[builder(into)]
     #[serde(rename = "branchPattern")]
-    pub r#branch_pattern: Box<String>,
+    pub r#branch_pattern: String,
     /// Required. The DeveloperConnect repository full resource name, relative resource name
     /// or resource URL to be indexed.
     #[builder(into)]
     #[serde(rename = "resource")]
-    pub r#resource: Box<String>,
+    pub r#resource: String,
 }

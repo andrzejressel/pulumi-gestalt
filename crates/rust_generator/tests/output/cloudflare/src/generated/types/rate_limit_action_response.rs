@@ -6,9 +6,9 @@ pub struct RateLimitActionResponse {
     /// The body to return, the content here should conform to the `content_type`.
     #[builder(into)]
     #[serde(rename = "body")]
-    pub r#body: Box<String>,
+    pub r#body: String,
     /// The content-type of the body. Available values: `text/plain`, `text/xml`, `application/json`.
     #[builder(into)]
     #[serde(rename = "contentType")]
-    pub r#content_type: Box<String>,
+    pub r#content_type: String,
 }

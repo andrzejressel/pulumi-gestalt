@@ -7,9 +7,9 @@ pub struct StackAccessEndpoint {
     /// See the [`AccessEndpoint` AWS API documentation](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AccessEndpoint.html) for valid values.
     #[builder(into)]
     #[serde(rename = "endpointType")]
-    pub r#endpoint_type: Box<String>,
+    pub r#endpoint_type: String,
     /// ID of the VPC in which the interface endpoint is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpceId")]
-    pub r#vpce_id: Box<Option<String>>,
+    pub r#vpce_id: Option<String>,
 }

@@ -7,12 +7,12 @@ pub struct GetHealthCheckTcpHealthCheck {
     /// The default value is 443.
     #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<i32>,
+    pub r#port: i32,
     /// Port name as defined in InstanceGroup#NamedPort#name. If both port and
     /// port_name are defined, port takes precedence.
     #[builder(into)]
     #[serde(rename = "portName")]
-    pub r#port_name: Box<String>,
+    pub r#port_name: String,
     /// Specifies how port is selected for health checking, can be one of the
     /// following values:
     /// 
@@ -29,23 +29,23 @@ pub struct GetHealthCheckTcpHealthCheck {
     /// 'portName' fields. Possible values: ["USE_FIXED_PORT", "USE_NAMED_PORT", "USE_SERVING_PORT"]
     #[builder(into)]
     #[serde(rename = "portSpecification")]
-    pub r#port_specification: Box<String>,
+    pub r#port_specification: String,
     /// Specifies the type of proxy header to append before sending data to the
     /// backend. Default value: "NONE" Possible values: ["NONE", "PROXY_V1"]
     #[builder(into)]
     #[serde(rename = "proxyHeader")]
-    pub r#proxy_header: Box<String>,
+    pub r#proxy_header: String,
     /// The application data to send once the TCP connection has been
     /// established (default value is empty). If both request and response are
     /// empty, the connection establishment alone will indicate health. The request
     /// data can only be ASCII.
     #[builder(into)]
     #[serde(rename = "request")]
-    pub r#request: Box<String>,
+    pub r#request: String,
     /// The bytes to match against the beginning of the response data. If left empty
     /// (the default value), any response will indicate health. The response data
     /// can only be ASCII.
     #[builder(into)]
     #[serde(rename = "response")]
-    pub r#response: Box<String>,
+    pub r#response: String,
 }

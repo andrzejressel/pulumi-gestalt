@@ -6,9 +6,9 @@ pub struct VaultNotification {
     /// You can configure a vault to publish a notification for `ArchiveRetrievalCompleted` and `InventoryRetrievalCompleted` events.
     #[builder(into)]
     #[serde(rename = "events")]
-    pub r#events: Box<Vec<String>>,
+    pub r#events: Vec<String>,
     /// The SNS Topic ARN.
     #[builder(into)]
     #[serde(rename = "snsTopic")]
-    pub r#sns_topic: Box<String>,
+    pub r#sns_topic: String,
 }

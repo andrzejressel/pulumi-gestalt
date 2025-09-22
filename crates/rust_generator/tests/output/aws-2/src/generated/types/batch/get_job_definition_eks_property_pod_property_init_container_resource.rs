@@ -6,9 +6,9 @@ pub struct GetJobDefinitionEksPropertyPodPropertyInitContainerResource {
     /// The type and quantity of the resources to reserve for the container.
     #[builder(into)]
     #[serde(rename = "limits")]
-    pub r#limits: Box<std::collections::HashMap<String, String>>,
+    pub r#limits: std::collections::HashMap<String, String>,
     /// The type and quantity of the resources to request for the container.
     #[builder(into)]
     #[serde(rename = "requests")]
-    pub r#requests: Box<std::collections::HashMap<String, String>>,
+    pub r#requests: std::collections::HashMap<String, String>,
 }

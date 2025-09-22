@@ -6,5 +6,5 @@ pub struct RegistryTaskAgentSetting {
     /// The number of cores required for the Container Registry Task. Possible value is `2`.
     #[builder(into)]
     #[serde(rename = "cpu")]
-    pub r#cpu: Box<i32>,
+    pub r#cpu: i32,
 }

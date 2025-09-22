@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct GetGroupAlternateIdentifier {
     /// Configuration block for filtering by the identifier issued by an external identity provider. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "externalId")]
-    pub r#external_id: Box<Option<super::super::types::identitystore::GetGroupAlternateIdentifierExternalId>>,
+    pub r#external_id: Option<Box<super::super::types::identitystore::GetGroupAlternateIdentifierExternalId>>,
     /// An entity attribute that's unique to a specific entity. Detailed below.
     /// 
     /// > Exactly one of the above arguments must be provided.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uniqueAttribute")]
-    pub r#unique_attribute: Box<Option<super::super::types::identitystore::GetGroupAlternateIdentifierUniqueAttribute>>,
+    pub r#unique_attribute: Option<Box<super::super::types::identitystore::GetGroupAlternateIdentifierUniqueAttribute>>,
 }

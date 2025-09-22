@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ConfigurationFeatureTimewindowFilter {
     /// The latest timestamp the feature is enabled. The timestamp must be in RFC3339 format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "end")]
-    pub r#end: Box<Option<String>>,
+    pub r#end: Option<String>,
     /// The earliest timestamp the feature is enabled. The timestamp must be in RFC3339 format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "start")]
-    pub r#start: Box<Option<String>>,
+    pub r#start: Option<String>,
 }

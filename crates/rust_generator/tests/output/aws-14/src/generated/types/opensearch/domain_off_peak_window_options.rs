@@ -4,10 +4,10 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainOffPeakWindowOptions {
     /// Enabled disabled toggle for off-peak update window.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
-    #[builder(into, default)]
+    pub r#enabled: Option<bool>,
+    #[builder(into)]
     #[serde(rename = "offPeakWindow")]
-    pub r#off_peak_window: Box<Option<super::super::types::opensearch::DomainOffPeakWindowOptionsOffPeakWindow>>,
+    pub r#off_peak_window: Option<Box<super::super::types::opensearch::DomainOffPeakWindowOptionsOffPeakWindow>>,
 }

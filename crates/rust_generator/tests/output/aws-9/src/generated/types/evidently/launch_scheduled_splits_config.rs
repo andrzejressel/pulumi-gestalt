@@ -6,5 +6,5 @@ pub struct LaunchScheduledSplitsConfig {
     /// One or up to six blocks that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step. Detailed below.
     #[builder(into)]
     #[serde(rename = "steps")]
-    pub r#steps: Box<Vec<super::super::types::evidently::LaunchScheduledSplitsConfigStep>>,
+    pub r#steps: Vec<super::super::types::evidently::LaunchScheduledSplitsConfigStep>,
 }

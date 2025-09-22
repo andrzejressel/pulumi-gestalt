@@ -6,9 +6,9 @@ pub struct DataSetLogicalTableMapDataTransformRenameColumnOperation {
     /// Column to be renamed.
     #[builder(into)]
     #[serde(rename = "columnName")]
-    pub r#column_name: Box<String>,
+    pub r#column_name: String,
     /// New name for the column.
     #[builder(into)]
     #[serde(rename = "newColumnName")]
-    pub r#new_column_name: Box<String>,
+    pub r#new_column_name: String,
 }

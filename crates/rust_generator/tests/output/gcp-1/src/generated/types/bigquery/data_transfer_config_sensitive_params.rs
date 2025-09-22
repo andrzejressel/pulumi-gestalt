@@ -7,5 +7,5 @@ pub struct DataTransferConfigSensitiveParams {
     /// **Note**: This property is sensitive and will not be displayed in the plan.
     #[builder(into)]
     #[serde(rename = "secretAccessKey")]
-    pub r#secret_access_key: Box<String>,
+    pub r#secret_access_key: String,
 }

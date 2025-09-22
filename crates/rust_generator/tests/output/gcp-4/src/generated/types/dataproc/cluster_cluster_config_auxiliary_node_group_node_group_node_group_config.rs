@@ -5,33 +5,33 @@
 pub struct ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfig {
     /// The Compute Engine accelerator (GPU) configuration for these instances. Can be specified 
     /// multiple times.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "accelerators")]
-    pub r#accelerators: Box<Option<Vec<super::super::types::dataproc::ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfigAccelerator>>>,
+    pub r#accelerators: Option<Vec<super::super::types::dataproc::ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfigAccelerator>>,
     /// Disk Config
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "diskConfig")]
-    pub r#disk_config: Box<Option<super::super::types::dataproc::ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfigDiskConfig>>,
+    pub r#disk_config: Option<Box<super::super::types::dataproc::ClusterClusterConfigAuxiliaryNodeGroupNodeGroupNodeGroupConfigDiskConfig>>,
     /// List of auxiliary node group instance names which have been assigned to the cluster.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "instanceNames")]
-    pub r#instance_names: Box<Option<Vec<String>>>,
+    pub r#instance_names: Option<Vec<String>>,
     /// The name of a Google Compute Engine machine type
     /// to create for the node group. If not specified, GCP will default to a predetermined
     /// computed value (currently `n1-standard-4`).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "machineType")]
-    pub r#machine_type: Box<Option<String>>,
+    pub r#machine_type: Option<String>,
     /// The name of a minimum generation of CPU family
     /// for the node group. If not specified, GCP will default to a predetermined computed value
     /// for each zone. See [the guide](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
     /// for details about which CPU families are available (and defaulted) for each zone.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minCpuPlatform")]
-    pub r#min_cpu_platform: Box<Option<String>>,
+    pub r#min_cpu_platform: Option<String>,
     /// Specifies the number of master nodes to create.
     /// Please set a number greater than 0. Node Group must have at least 1 instance.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numInstances")]
-    pub r#num_instances: Box<Option<i32>>,
+    pub r#num_instances: Option<i32>,
 }

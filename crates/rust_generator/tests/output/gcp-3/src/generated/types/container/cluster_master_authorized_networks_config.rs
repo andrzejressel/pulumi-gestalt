@@ -5,16 +5,16 @@
 pub struct ClusterMasterAuthorizedNetworksConfig {
     /// External networks that can access the
     /// Kubernetes cluster master through HTTPS.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cidrBlocks")]
-    pub r#cidr_blocks: Box<Option<Vec<super::super::types::container::ClusterMasterAuthorizedNetworksConfigCidrBlock>>>,
+    pub r#cidr_blocks: Option<Vec<super::super::types::container::ClusterMasterAuthorizedNetworksConfigCidrBlock>>,
     /// Whether Kubernetes master is
     /// accessible via Google Compute Engine Public IPs.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gcpPublicCidrsAccessEnabled")]
-    pub r#gcp_public_cidrs_access_enabled: Box<Option<bool>>,
+    pub r#gcp_public_cidrs_access_enabled: Option<bool>,
     /// Whether authorized networks is enforced on the private endpoint or not. Defaults to false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "privateEndpointEnforcementEnabled")]
-    pub r#private_endpoint_enforcement_enabled: Box<Option<bool>>,
+    pub r#private_endpoint_enforcement_enabled: Option<bool>,
 }

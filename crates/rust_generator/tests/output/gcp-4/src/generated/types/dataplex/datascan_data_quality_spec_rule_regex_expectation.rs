@@ -6,5 +6,5 @@ pub struct DatascanDataQualitySpecRuleRegexExpectation {
     /// A regular expression the column value is expected to match.
     #[builder(into)]
     #[serde(rename = "regex")]
-    pub r#regex: Box<String>,
+    pub r#regex: String,
 }

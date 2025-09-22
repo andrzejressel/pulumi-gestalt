@@ -8,10 +8,10 @@ pub struct PrivateConnectionVpcPeeringConfig {
     /// - - -
     #[builder(into)]
     #[serde(rename = "subnet")]
-    pub r#subnet: Box<String>,
+    pub r#subnet: String,
     /// Fully qualified name of the VPC that Database Migration Service will peer to.
     /// Format: projects/{project}/global/{networks}/{name}
     #[builder(into)]
     #[serde(rename = "vpcName")]
-    pub r#vpc_name: Box<String>,
+    pub r#vpc_name: String,
 }

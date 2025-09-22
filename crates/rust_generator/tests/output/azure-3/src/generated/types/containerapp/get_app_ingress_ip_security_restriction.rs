@@ -6,17 +6,17 @@ pub struct GetAppIngressIpSecurityRestriction {
     /// The IP-filter action.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// Description of the IP restriction rule that is being sent to the container-app.
     #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<String>,
+    pub r#description: String,
     /// CIDR notation that matches the incoming IP address.
     #[builder(into)]
     #[serde(rename = "ipAddressRange")]
-    pub r#ip_address_range: Box<String>,
+    pub r#ip_address_range: String,
     /// The name of the Container App.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

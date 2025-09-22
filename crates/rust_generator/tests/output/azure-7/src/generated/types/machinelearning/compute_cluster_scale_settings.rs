@@ -6,13 +6,13 @@ pub struct ComputeClusterScaleSettings {
     /// Maximum node count. Changing this forces a new Machine Learning Compute Cluster to be created.
     #[builder(into)]
     #[serde(rename = "maxNodeCount")]
-    pub r#max_node_count: Box<i32>,
+    pub r#max_node_count: i32,
     /// Minimal node count. Changing this forces a new Machine Learning Compute Cluster to be created.
     #[builder(into)]
     #[serde(rename = "minNodeCount")]
-    pub r#min_node_count: Box<i32>,
+    pub r#min_node_count: i32,
     /// Node Idle Time Before Scale Down: defines the time until the compute is shutdown when it has gone into Idle state. Is defined according to W3C XML schema standard for duration. Changing this forces a new Machine Learning Compute Cluster to be created.
     #[builder(into)]
     #[serde(rename = "scaleDownNodesAfterIdleDuration")]
-    pub r#scale_down_nodes_after_idle_duration: Box<String>,
+    pub r#scale_down_nodes_after_idle_duration: String,
 }

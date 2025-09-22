@@ -6,9 +6,9 @@ pub struct AiIndexEndpointPrivateServiceConnectConfig {
     /// If set to true, the IndexEndpoint is created without private service access.
     #[builder(into)]
     #[serde(rename = "enablePrivateServiceConnect")]
-    pub r#enable_private_service_connect: Box<bool>,
+    pub r#enable_private_service_connect: bool,
     /// A list of Projects from which the forwarding rule will target the service attachment.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectAllowlists")]
-    pub r#project_allowlists: Box<Option<Vec<String>>>,
+    pub r#project_allowlists: Option<Vec<String>>,
 }

@@ -5,22 +5,22 @@
 pub struct ServiceStatusCondition {
     /// (Output)
     /// Human readable message indicating details about the current status.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
     /// (Output)
     /// One-word CamelCase reason for the condition's current status.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "reason")]
-    pub r#reason: Box<Option<String>>,
+    pub r#reason: Option<String>,
     /// (Output)
     /// Status of the condition, one of True, False, Unknown.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "status")]
-    pub r#status: Box<Option<String>>,
+    pub r#status: Option<String>,
     /// (Output)
     /// Type of domain mapping condition.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<Option<String>>,
+    pub r#type_: Option<String>,
 }

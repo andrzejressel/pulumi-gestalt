@@ -5,7 +5,7 @@
 pub struct VpcPeeringConnectionAccepter {
     /// Allow a local VPC to resolve public DNS hostnames to
     /// private IP addresses when queried from instances in the peer VPC.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowRemoteVpcDnsResolution")]
-    pub r#allow_remote_vpc_dns_resolution: Box<Option<bool>>,
+    pub r#allow_remote_vpc_dns_resolution: Option<bool>,
 }

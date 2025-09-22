@@ -7,5 +7,5 @@ pub struct CaPoolIssuancePolicyAllowedKeyTypeEllipticCurve {
     /// Possible values are: `ECDSA_P256`, `ECDSA_P384`, `EDDSA_25519`.
     #[builder(into)]
     #[serde(rename = "signatureAlgorithm")]
-    pub r#signature_algorithm: Box<String>,
+    pub r#signature_algorithm: String,
 }

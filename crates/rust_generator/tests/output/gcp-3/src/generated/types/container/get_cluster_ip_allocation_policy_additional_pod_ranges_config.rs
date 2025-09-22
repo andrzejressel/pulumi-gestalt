@@ -6,5 +6,5 @@ pub struct GetClusterIpAllocationPolicyAdditionalPodRangesConfig {
     /// Name for pod secondary ipv4 range which has the actual range defined ahead.
     #[builder(into)]
     #[serde(rename = "podRangeNames")]
-    pub r#pod_range_names: Box<Vec<String>>,
+    pub r#pod_range_names: Vec<String>,
 }

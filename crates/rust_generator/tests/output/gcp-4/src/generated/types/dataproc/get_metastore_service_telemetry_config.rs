@@ -6,5 +6,5 @@ pub struct GetMetastoreServiceTelemetryConfig {
     /// The output format of the Dataproc Metastore service's logs. Default value: "JSON" Possible values: ["LEGACY", "JSON"]
     #[builder(into)]
     #[serde(rename = "logFormat")]
-    pub r#log_format: Box<String>,
+    pub r#log_format: String,
 }

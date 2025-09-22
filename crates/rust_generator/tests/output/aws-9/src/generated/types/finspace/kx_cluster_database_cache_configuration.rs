@@ -6,9 +6,9 @@ pub struct KxClusterDatabaseCacheConfiguration {
     /// Type of disk cache.
     #[builder(into)]
     #[serde(rename = "cacheType")]
-    pub r#cache_type: Box<String>,
+    pub r#cache_type: String,
     /// Paths within the database to cache.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dbPaths")]
-    pub r#db_paths: Box<Option<Vec<String>>>,
+    pub r#db_paths: Option<Vec<String>>,
 }

@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HttpRouteRuleActionRetryPolicy {
     /// Specifies the allowed number of retries.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numRetries")]
-    pub r#num_retries: Box<Option<i32>>,
+    pub r#num_retries: Option<i32>,
     /// Specifies a non-zero timeout per retry attempt. A duration in seconds with up to nine fractional digits, ending with 's'. Example: "3.5s".
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "perTryTimeout")]
-    pub r#per_try_timeout: Box<Option<String>>,
+    pub r#per_try_timeout: Option<String>,
     /// Specifies one or more conditions when this retry policy applies.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retryConditions")]
-    pub r#retry_conditions: Box<Option<Vec<String>>>,
+    pub r#retry_conditions: Option<Vec<String>>,
 }

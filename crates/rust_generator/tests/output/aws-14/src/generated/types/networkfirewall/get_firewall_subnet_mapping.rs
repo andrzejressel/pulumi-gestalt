@@ -6,5 +6,5 @@ pub struct GetFirewallSubnetMapping {
     /// The unique identifier for the subnet.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

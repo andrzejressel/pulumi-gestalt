@@ -6,11 +6,11 @@ pub struct ManagementServerNetwork {
     /// Network with format `projects/{{project_id}}/global/networks/{{network_id}}`
     #[builder(into)]
     #[serde(rename = "network")]
-    pub r#network: Box<String>,
+    pub r#network: String,
     /// Type of Network peeringMode
     /// Default value is `PRIVATE_SERVICE_ACCESS`.
     /// Possible values are: `PRIVATE_SERVICE_ACCESS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "peeringMode")]
-    pub r#peering_mode: Box<Option<String>>,
+    pub r#peering_mode: Option<String>,
 }

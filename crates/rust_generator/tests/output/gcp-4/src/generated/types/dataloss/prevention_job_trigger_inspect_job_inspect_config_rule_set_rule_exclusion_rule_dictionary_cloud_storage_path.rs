@@ -6,5 +6,5 @@ pub struct PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDi
     /// A url representing a file or path (no wildcards) in Cloud Storage. Example: `gs://[BUCKET_NAME]/dictionary.txt`
     #[builder(into)]
     #[serde(rename = "path")]
-    pub r#path: Box<String>,
+    pub r#path: String,
 }

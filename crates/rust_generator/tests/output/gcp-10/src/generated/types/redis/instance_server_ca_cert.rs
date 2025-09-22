@@ -5,27 +5,27 @@
 pub struct InstanceServerCaCert {
     /// (Output)
     /// The certificate data in PEM format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cert")]
-    pub r#cert: Box<Option<String>>,
+    pub r#cert: Option<String>,
     /// (Output)
     /// The time when the certificate was created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "createTime")]
-    pub r#create_time: Box<Option<String>>,
+    pub r#create_time: Option<String>,
     /// (Output)
     /// The time when the certificate expires.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expireTime")]
-    pub r#expire_time: Box<Option<String>>,
+    pub r#expire_time: Option<String>,
     /// (Output)
     /// Serial number, as extracted from the certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serialNumber")]
-    pub r#serial_number: Box<Option<String>>,
+    pub r#serial_number: Option<String>,
     /// (Output)
     /// Sha1 Fingerprint of the certificate.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "sha1Fingerprint")]
-    pub r#sha_1_fingerprint: Box<Option<String>>,
+    pub r#sha_1_fingerprint: Option<String>,
 }

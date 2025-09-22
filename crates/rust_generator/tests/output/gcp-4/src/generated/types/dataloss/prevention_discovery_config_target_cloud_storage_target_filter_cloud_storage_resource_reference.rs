@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PreventionDiscoveryConfigTargetCloudStorageTargetFilterCloudStorageResourceReference {
     /// The bucket to scan.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bucketName")]
-    pub r#bucket_name: Box<Option<String>>,
+    pub r#bucket_name: Option<String>,
     /// If within a project-level config, then this must match the config's project id.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectId")]
-    pub r#project_id: Box<Option<String>>,
+    pub r#project_id: Option<String>,
 }

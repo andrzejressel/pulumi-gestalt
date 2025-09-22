@@ -6,5 +6,5 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationOutputK
     /// The ARN of the destination Kinesis data stream to write to.
     #[builder(into)]
     #[serde(rename = "resourceArn")]
-    pub r#resource_arn: Box<String>,
+    pub r#resource_arn: String,
 }

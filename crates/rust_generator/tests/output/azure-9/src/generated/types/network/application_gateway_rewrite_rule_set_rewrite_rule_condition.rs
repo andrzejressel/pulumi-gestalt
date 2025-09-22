@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ApplicationGatewayRewriteRuleSetRewriteRuleCondition {
     /// Perform a case in-sensitive comparison. Defaults to `false`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ignoreCase")]
-    pub r#ignore_case: Box<Option<bool>>,
+    pub r#ignore_case: Option<bool>,
     /// Negate the result of the condition evaluation. Defaults to `false`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "negate")]
-    pub r#negate: Box<Option<bool>>,
+    pub r#negate: Option<bool>,
     /// The pattern, either fixed string or regular expression, that evaluates the truthfulness of the condition.
     #[builder(into)]
     #[serde(rename = "pattern")]
-    pub r#pattern: Box<String>,
+    pub r#pattern: String,
     /// The [variable](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers#server-variables) of the condition.
     #[builder(into)]
     #[serde(rename = "variable")]
-    pub r#variable: Box<String>,
+    pub r#variable: String,
 }

@@ -5,17 +5,17 @@
 pub struct WorkstationConfigCondition {
     /// (Output)
     /// The status code, which should be an enum value of google.rpc.Code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "code")]
-    pub r#code: Box<Option<i32>>,
+    pub r#code: Option<i32>,
     /// (Output)
     /// A list of messages that carry the error details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "details")]
-    pub r#details: Box<Option<Vec<std::collections::HashMap<String, String>>>>,
+    pub r#details: Option<Vec<std::collections::HashMap<String, String>>>,
     /// (Output)
     /// Human readable message indicating details about the current status.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "message")]
-    pub r#message: Box<Option<String>>,
+    pub r#message: Option<String>,
 }

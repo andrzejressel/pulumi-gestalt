@@ -10,11 +10,11 @@ pub struct RegionInstanceTemplateNetworkInterfaceAliasIpRange {
     /// error.
     #[builder(into)]
     #[serde(rename = "ipCidrRange")]
-    pub r#ip_cidr_range: Box<String>,
+    pub r#ip_cidr_range: String,
     /// The subnetwork secondary range name specifying
     /// the secondary range from which to allocate the IP CIDR range for this alias IP
     /// range. If left unspecified, the primary range of the subnetwork will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "subnetworkRangeName")]
-    pub r#subnetwork_range_name: Box<Option<String>>,
+    pub r#subnetwork_range_name: Option<String>,
 }

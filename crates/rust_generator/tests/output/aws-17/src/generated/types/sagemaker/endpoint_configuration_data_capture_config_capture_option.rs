@@ -6,5 +6,5 @@ pub struct EndpointConfigurationDataCaptureConfigCaptureOption {
     /// Specifies the data to be captured. Should be one of `Input`, `Output` or `InputAndOutput`.
     #[builder(into)]
     #[serde(rename = "captureMode")]
-    pub r#capture_mode: Box<String>,
+    pub r#capture_mode: String,
 }

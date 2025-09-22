@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RouteMapRuleAction {
     /// A `parameter` block as defined below. Required if `type` is anything other than `Drop`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "parameters")]
-    pub r#parameters: Box<Option<Vec<super::super::types::network::RouteMapRuleActionParameter>>>,
+    pub r#parameters: Option<Vec<super::super::types::network::RouteMapRuleActionParameter>>,
     /// The type of the action to be taken. Possible values are `Add`, `Drop`, `Remove`, `Replace` and `Unknown`.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<String>,
+    pub r#type_: String,
 }

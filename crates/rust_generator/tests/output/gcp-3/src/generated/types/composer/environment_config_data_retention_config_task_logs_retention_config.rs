@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentConfigDataRetentionConfigTaskLogsRetentionConfig {
     /// Whether logs in cloud logging only is enabled or not. This field is supported for Cloud Composer environments in versions composer-2.0.32-airflow-2.1.4 and newer.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "storageMode")]
-    pub r#storage_mode: Box<Option<String>>,
+    pub r#storage_mode: Option<String>,
 }

@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfigAggregationConfig {
     /// Whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. Valid values are `None` and `SingleFile`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "aggregationType")]
-    pub r#aggregation_type: Box<Option<String>>,
+    pub r#aggregation_type: Option<String>,
 }

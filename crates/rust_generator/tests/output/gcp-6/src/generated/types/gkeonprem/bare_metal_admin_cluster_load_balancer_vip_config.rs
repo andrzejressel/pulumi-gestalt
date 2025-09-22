@@ -6,5 +6,5 @@ pub struct BareMetalAdminClusterLoadBalancerVipConfig {
     /// The VIP which you previously set aside for the Kubernetes API of this Bare Metal Admin Cluster.
     #[builder(into)]
     #[serde(rename = "controlPlaneVip")]
-    pub r#control_plane_vip: Box<String>,
+    pub r#control_plane_vip: String,
 }

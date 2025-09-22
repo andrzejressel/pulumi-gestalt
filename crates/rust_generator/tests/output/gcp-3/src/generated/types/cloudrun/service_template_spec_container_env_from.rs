@@ -5,16 +5,16 @@
 pub struct ServiceTemplateSpecContainerEnvFrom {
     /// The ConfigMap to select from.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "configMapRef")]
-    pub r#config_map_ref: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromConfigMapRef>>,
+    pub r#config_map_ref: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromConfigMapRef>>,
     /// An optional identifier to prepend to each key in the ConfigMap.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "prefix")]
-    pub r#prefix: Box<Option<String>>,
+    pub r#prefix: Option<String>,
     /// The Secret to select from.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "secretRef")]
-    pub r#secret_ref: Box<Option<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromSecretRef>>,
+    pub r#secret_ref: Option<Box<super::super::types::cloudrun::ServiceTemplateSpecContainerEnvFromSecretRef>>,
 }

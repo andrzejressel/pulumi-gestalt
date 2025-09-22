@@ -3,17 +3,17 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettings {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "h265PackagingType")]
-    pub r#h_265_packaging_type: Box<Option<String>>,
+    pub r#h_265_packaging_type: Option<String>,
     #[builder(into)]
     #[serde(rename = "hlsSettings")]
     pub r#hls_settings: Box<super::super::types::medialive::ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettings>,
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "nameModifier")]
-    pub r#name_modifier: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#name_modifier: Option<String>,
+    #[builder(into)]
     #[serde(rename = "segmentModifier")]
-    pub r#segment_modifier: Box<Option<String>>,
+    pub r#segment_modifier: Option<String>,
 }

@@ -5,24 +5,24 @@
 pub struct TableExternalDataConfigurationCsvOptions {
     /// Indicates if BigQuery should accept rows
     /// that are missing trailing optional columns.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowJaggedRows")]
-    pub r#allow_jagged_rows: Box<Option<bool>>,
+    pub r#allow_jagged_rows: Option<bool>,
     /// Indicates if BigQuery should allow
     /// quoted data sections that contain newline characters in a CSV file.
     /// The default value is false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowQuotedNewlines")]
-    pub r#allow_quoted_newlines: Box<Option<bool>>,
+    pub r#allow_quoted_newlines: Option<bool>,
     /// The character encoding of the data. The supported
     /// values are UTF-8 or ISO-8859-1.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "encoding")]
-    pub r#encoding: Box<Option<String>>,
+    pub r#encoding: Option<String>,
     /// The separator for fields in a CSV file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fieldDelimiter")]
-    pub r#field_delimiter: Box<Option<String>>,
+    pub r#field_delimiter: Option<String>,
     /// The value that is used to quote data sections in a
     /// CSV file. If your data does not contain quoted sections, set the
     /// property value to an empty string. If your data contains quoted newline
@@ -32,10 +32,10 @@ pub struct TableExternalDataConfigurationCsvOptions {
     /// explicitly set.
     #[builder(into)]
     #[serde(rename = "quote")]
-    pub r#quote: Box<String>,
+    pub r#quote: String,
     /// The number of rows at the top of a CSV
     /// file that BigQuery will skip when reading the data.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "skipLeadingRows")]
-    pub r#skip_leading_rows: Box<Option<i32>>,
+    pub r#skip_leading_rows: Option<i32>,
 }

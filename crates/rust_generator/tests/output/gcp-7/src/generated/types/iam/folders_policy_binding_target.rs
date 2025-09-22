@@ -7,7 +7,7 @@ pub struct FoldersPolicyBindingTarget {
     /// The binding parent and policy must belong to the same Organization (or Project).
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "principalSet")]
-    pub r#principal_set: Box<Option<String>>,
+    pub r#principal_set: Option<String>,
 }

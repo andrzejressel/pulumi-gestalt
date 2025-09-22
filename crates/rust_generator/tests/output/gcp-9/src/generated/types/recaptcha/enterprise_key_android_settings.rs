@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnterpriseKeyAndroidSettings {
     /// If set to true, it means allowed_package_names will not be enforced.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowAllPackageNames")]
-    pub r#allow_all_package_names: Box<Option<bool>>,
+    pub r#allow_all_package_names: Option<bool>,
     /// Android package names of apps allowed to use the key. Example: 'com.companyname.appname'
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedPackageNames")]
-    pub r#allowed_package_names: Box<Option<Vec<String>>>,
+    pub r#allowed_package_names: Option<Vec<String>>,
 }

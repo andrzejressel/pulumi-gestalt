@@ -3,15 +3,15 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EnvironmentLoggingConfigurationTaskLogs {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "cloudWatchLogGroupArn")]
-    pub r#cloud_watch_log_group_arn: Box<Option<String>>,
+    pub r#cloud_watch_log_group_arn: Option<String>,
     /// Enabling or disabling the collection of logs
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Logging level. Valid values: `CRITICAL`, `ERROR`, `WARNING`, `INFO`, `DEBUG`. Will be `INFO` by default.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "logLevel")]
-    pub r#log_level: Box<Option<String>>,
+    pub r#log_level: Option<String>,
 }

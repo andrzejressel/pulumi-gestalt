@@ -6,9 +6,9 @@ pub struct GetFleetScalingConfigurationTargetTrackingScalingConfig {
     /// The metric type to determine auto-scaling.
     #[builder(into)]
     #[serde(rename = "metricType")]
-    pub r#metric_type: Box<String>,
+    pub r#metric_type: String,
     /// The value of metric_type when to start scaling.
     #[builder(into)]
     #[serde(rename = "targetValue")]
-    pub r#target_value: Box<f64>,
+    pub r#target_value: f64,
 }

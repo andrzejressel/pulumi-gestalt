@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct DomainAdvancedSecurityOptions {
     /// Whether Anonymous auth is enabled. Enables fine-grained access control on an existing domain. Ignored unless `advanced_security_options` are enabled. _Can only be enabled on an existing domain._
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "anonymousAuthEnabled")]
-    pub r#anonymous_auth_enabled: Box<Option<bool>>,
+    pub r#anonymous_auth_enabled: Option<bool>,
     /// Whether advanced security is enabled.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
     /// Whether the internal user database is enabled. Default is `false`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "internalUserDatabaseEnabled")]
-    pub r#internal_user_database_enabled: Box<Option<bool>>,
+    pub r#internal_user_database_enabled: Option<bool>,
     /// Configuration block for the main user. Detailed below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "masterUserOptions")]
-    pub r#master_user_options: Box<Option<super::super::types::opensearch::DomainAdvancedSecurityOptionsMasterUserOptions>>,
+    pub r#master_user_options: Option<Box<super::super::types::opensearch::DomainAdvancedSecurityOptionsMasterUserOptions>>,
 }

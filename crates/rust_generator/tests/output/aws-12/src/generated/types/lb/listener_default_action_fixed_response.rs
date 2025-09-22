@@ -8,13 +8,13 @@ pub struct ListenerDefaultActionFixedResponse {
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "contentType")]
-    pub r#content_type: Box<String>,
+    pub r#content_type: String,
     /// Message body.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "messageBody")]
-    pub r#message_body: Box<Option<String>>,
+    pub r#message_body: Option<String>,
     /// HTTP response code. Valid values are `2XX`, `4XX`, or `5XX`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "statusCode")]
-    pub r#status_code: Box<Option<String>>,
+    pub r#status_code: Option<String>,
 }

@@ -6,9 +6,9 @@ pub struct ScheduleTargetEventbridgeParameters {
     /// Free-form string used to decide what fields to expect in the event detail. Up to 128 characters.
     #[builder(into)]
     #[serde(rename = "detailType")]
-    pub r#detail_type: Box<String>,
+    pub r#detail_type: String,
     /// Source of the event.
     #[builder(into)]
     #[serde(rename = "source")]
-    pub r#source: Box<String>,
+    pub r#source: String,
 }

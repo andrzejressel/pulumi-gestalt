@@ -6,9 +6,9 @@ pub struct ContainerHost {
     /// Hostname to add
     #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<String>,
+    pub r#host: String,
     /// IP address this hostname should resolve to.
     #[builder(into)]
     #[serde(rename = "ip")]
-    pub r#ip: Box<String>,
+    pub r#ip: String,
 }

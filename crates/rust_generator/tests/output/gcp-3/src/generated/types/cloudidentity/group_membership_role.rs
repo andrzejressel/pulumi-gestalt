@@ -6,12 +6,12 @@ pub struct GroupMembershipRole {
     /// The MembershipRole expiry details, only supported for MEMBER role.
     /// Other roles cannot be accompanied with MEMBER role having expiry.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expiryDetail")]
-    pub r#expiry_detail: Box<Option<super::super::types::cloudidentity::GroupMembershipRoleExpiryDetail>>,
+    pub r#expiry_detail: Option<Box<super::super::types::cloudidentity::GroupMembershipRoleExpiryDetail>>,
     /// The name of the MembershipRole. Must be one of OWNER, MANAGER, MEMBER.
     /// Possible values are: `OWNER`, `MANAGER`, `MEMBER`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

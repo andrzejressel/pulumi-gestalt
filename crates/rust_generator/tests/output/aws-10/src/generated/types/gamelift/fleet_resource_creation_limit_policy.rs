@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FleetResourceCreationLimitPolicy {
     /// Maximum number of game sessions that an individual can create during the policy period.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "newGameSessionsPerCreator")]
-    pub r#new_game_sessions_per_creator: Box<Option<i32>>,
+    pub r#new_game_sessions_per_creator: Option<i32>,
     /// Time span used in evaluating the resource creation limit policy.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "policyPeriodInMinutes")]
-    pub r#policy_period_in_minutes: Box<Option<i32>>,
+    pub r#policy_period_in_minutes: Option<i32>,
 }

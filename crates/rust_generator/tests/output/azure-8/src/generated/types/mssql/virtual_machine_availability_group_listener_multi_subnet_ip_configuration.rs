@@ -6,15 +6,15 @@ pub struct VirtualMachineAvailabilityGroupListenerMultiSubnetIpConfiguration {
     /// The private IP Address of the listener. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "privateIpAddress")]
-    pub r#private_ip_address: Box<String>,
+    pub r#private_ip_address: String,
     /// The ID of the Sql Virtual Machine. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "sqlVirtualMachineId")]
-    pub r#sql_virtual_machine_id: Box<String>,
+    pub r#sql_virtual_machine_id: String,
     /// The ID of the Subnet to create the listener. Changing this forces a new resource to be created.
     /// 
     /// > **NOTE:** `sql_virtual_machine_id` should match with the SQL Virtual Machines specified in `replica`.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

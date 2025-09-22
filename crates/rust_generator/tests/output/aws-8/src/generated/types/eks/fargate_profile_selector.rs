@@ -4,13 +4,13 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FargateProfileSelector {
     /// Key-value map of Kubernetes labels for selection.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// Kubernetes namespace for selection.
     /// 
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "namespace")]
-    pub r#namespace: Box<String>,
+    pub r#namespace: String,
 }

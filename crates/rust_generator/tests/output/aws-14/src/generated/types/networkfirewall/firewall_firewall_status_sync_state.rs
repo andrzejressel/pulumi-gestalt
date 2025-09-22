@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirewallFirewallStatusSyncState {
     /// Nested list describing the attachment status of the firewall's association with a single VPC subnet.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "attachments")]
-    pub r#attachments: Box<Option<Vec<super::super::types::networkfirewall::FirewallFirewallStatusSyncStateAttachment>>>,
+    pub r#attachments: Option<Vec<super::super::types::networkfirewall::FirewallFirewallStatusSyncStateAttachment>>,
     /// The Availability Zone where the subnet is configured.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "availabilityZone")]
-    pub r#availability_zone: Box<Option<String>>,
+    pub r#availability_zone: Option<String>,
 }

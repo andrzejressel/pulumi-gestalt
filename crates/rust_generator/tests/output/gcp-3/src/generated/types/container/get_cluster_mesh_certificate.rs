@@ -6,5 +6,5 @@ pub struct GetClusterMeshCertificate {
     /// When enabled the GKE Workload Identity Certificates controller and node agent will be deployed in the cluster.
     #[builder(into)]
     #[serde(rename = "enableCertificates")]
-    pub r#enable_certificates: Box<bool>,
+    pub r#enable_certificates: bool,
 }

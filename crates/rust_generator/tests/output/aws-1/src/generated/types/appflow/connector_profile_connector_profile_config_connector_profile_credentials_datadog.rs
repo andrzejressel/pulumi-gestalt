@@ -5,9 +5,9 @@
 pub struct ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDatadog {
     #[builder(into)]
     #[serde(rename = "apiKey")]
-    pub r#api_key: Box<String>,
+    pub r#api_key: String,
     /// Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API.
     #[builder(into)]
     #[serde(rename = "applicationKey")]
-    pub r#application_key: Box<String>,
+    pub r#application_key: String,
 }

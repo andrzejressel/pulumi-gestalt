@@ -5,11 +5,11 @@
 pub struct GetVirtualNodeSpecServiceDiscoveryAwsCloudMap {
     #[builder(into)]
     #[serde(rename = "attributes")]
-    pub r#attributes: Box<std::collections::HashMap<String, String>>,
+    pub r#attributes: std::collections::HashMap<String, String>,
     #[builder(into)]
     #[serde(rename = "namespaceName")]
-    pub r#namespace_name: Box<String>,
+    pub r#namespace_name: String,
     #[builder(into)]
     #[serde(rename = "serviceName")]
-    pub r#service_name: Box<String>,
+    pub r#service_name: String,
 }

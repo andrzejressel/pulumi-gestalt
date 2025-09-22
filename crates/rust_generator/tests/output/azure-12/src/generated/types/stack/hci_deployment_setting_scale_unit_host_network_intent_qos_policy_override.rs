@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct HciDeploymentSettingScaleUnitHostNetworkIntentQosPolicyOverride {
     /// Specifies the percentage of the allocated storage traffic bandwidth. This parameter should only be modified based on your OEM guidance. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "bandwidthPercentageSmb")]
-    pub r#bandwidth_percentage_smb: Box<Option<String>>,
+    pub r#bandwidth_percentage_smb: Option<String>,
     /// Specifies the Cluster traffic priority. This parameter should only be modified based on your OEM guidance. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "priorityValue8021ActionCluster")]
-    pub r#priority_value_8021_action_cluster: Box<Option<String>>,
+    pub r#priority_value_8021_action_cluster: Option<String>,
     /// Specifies the Priority Flow Control where Data Center Bridging (DCB) is used. This parameter should only be modified based on your OEM guidance. Changing this forces a new Stack HCI Deployment Setting to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "priorityValue8021ActionSmb")]
-    pub r#priority_value_8021_action_smb: Box<Option<String>>,
+    pub r#priority_value_8021_action_smb: Option<String>,
 }

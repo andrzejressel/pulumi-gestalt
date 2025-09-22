@@ -6,13 +6,13 @@ pub struct GetNodeGroupTaint {
     /// The effect of the taint.
     #[builder(into)]
     #[serde(rename = "effect")]
-    pub r#effect: Box<String>,
+    pub r#effect: String,
     /// The key of the taint.
     #[builder(into)]
     #[serde(rename = "key")]
-    pub r#key: Box<String>,
+    pub r#key: String,
     /// The value of the taint.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

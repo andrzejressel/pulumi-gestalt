@@ -7,9 +7,9 @@ pub struct GetSecretsSecretReplicationUserManagedReplica {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "customerManagedEncryptions")]
-    pub r#customer_managed_encryptions: Box<Vec<super::super::types::secretmanager::GetSecretsSecretReplicationUserManagedReplicaCustomerManagedEncryption>>,
+    pub r#customer_managed_encryptions: Vec<super::super::types::secretmanager::GetSecretsSecretReplicationUserManagedReplicaCustomerManagedEncryption>,
     /// The canonical IDs of the location to replicate data.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
 }

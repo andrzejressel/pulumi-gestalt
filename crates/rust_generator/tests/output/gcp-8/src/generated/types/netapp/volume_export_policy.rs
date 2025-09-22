@@ -7,5 +7,5 @@ pub struct VolumeExportPolicy {
     /// Structure is documented below.
     #[builder(into)]
     #[serde(rename = "rules")]
-    pub r#rules: Box<Vec<super::super::types::netapp::VolumeExportPolicyRule>>,
+    pub r#rules: Vec<super::super::types::netapp::VolumeExportPolicyRule>,
 }

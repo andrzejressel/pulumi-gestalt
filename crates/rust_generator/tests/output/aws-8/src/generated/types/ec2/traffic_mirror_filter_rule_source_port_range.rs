@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct TrafficMirrorFilterRuleSourcePortRange {
     /// Starting port of the range
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "fromPort")]
-    pub r#from_port: Box<Option<i32>>,
+    pub r#from_port: Option<i32>,
     /// Ending port of the range
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "toPort")]
-    pub r#to_port: Box<Option<i32>>,
+    pub r#to_port: Option<i32>,
 }

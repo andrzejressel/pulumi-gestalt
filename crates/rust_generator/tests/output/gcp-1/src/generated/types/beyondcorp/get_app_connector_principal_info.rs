@@ -6,5 +6,5 @@ pub struct GetAppConnectorPrincipalInfo {
     /// ServiceAccount represents a GCP service account.
     #[builder(into)]
     #[serde(rename = "serviceAccounts")]
-    pub r#service_accounts: Box<Vec<super::super::types::beyondcorp::GetAppConnectorPrincipalInfoServiceAccount>>,
+    pub r#service_accounts: Vec<super::super::types::beyondcorp::GetAppConnectorPrincipalInfoServiceAccount>,
 }

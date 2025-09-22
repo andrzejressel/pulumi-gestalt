@@ -6,5 +6,5 @@ pub struct GetEnvironmentConfigRecoveryConfig {
     /// The configuration settings for scheduled snapshots.
     #[builder(into)]
     #[serde(rename = "scheduledSnapshotsConfigs")]
-    pub r#scheduled_snapshots_configs: Box<Vec<super::super::types::composer::GetEnvironmentConfigRecoveryConfigScheduledSnapshotsConfig>>,
+    pub r#scheduled_snapshots_configs: Vec<super::super::types::composer::GetEnvironmentConfigRecoveryConfigScheduledSnapshotsConfig>,
 }

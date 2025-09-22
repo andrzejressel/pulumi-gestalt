@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct AccountStaticWebsite {
     /// The absolute path to a custom webpage that should be used when a request is made which does not correspond to an existing file.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "error404Document")]
-    pub r#error_404_document: Box<Option<String>>,
+    pub r#error_404_document: Option<String>,
     /// The webpage that Azure Storage serves for requests to the root of a website or any subfolder. For example, index.html. The value is case-sensitive.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "indexDocument")]
-    pub r#index_document: Box<Option<String>>,
+    pub r#index_document: Option<String>,
 }

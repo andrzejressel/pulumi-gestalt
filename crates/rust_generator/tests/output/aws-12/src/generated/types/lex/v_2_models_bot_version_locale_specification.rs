@@ -5,5 +5,5 @@
 pub struct V2ModelsBotVersionLocaleSpecification {
     #[builder(into)]
     #[serde(rename = "sourceBotVersion")]
-    pub r#source_bot_version: Box<String>,
+    pub r#source_bot_version: String,
 }

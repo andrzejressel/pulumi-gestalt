@@ -6,5 +6,5 @@ pub struct ExperimentTemplateLogConfigurationCloudwatchLogsConfiguration {
     /// The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.
     #[builder(into)]
     #[serde(rename = "logGroupArn")]
-    pub r#log_group_arn: Box<String>,
+    pub r#log_group_arn: String,
 }

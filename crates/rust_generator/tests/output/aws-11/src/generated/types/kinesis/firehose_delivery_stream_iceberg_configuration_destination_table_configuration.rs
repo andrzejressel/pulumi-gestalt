@@ -6,17 +6,17 @@ pub struct FirehoseDeliveryStreamIcebergConfigurationDestinationTableConfigurati
     /// The name of the Apache Iceberg database.
     #[builder(into)]
     #[serde(rename = "databaseName")]
-    pub r#database_name: Box<String>,
+    pub r#database_name: String,
     /// The table specific S3 error output prefix. All the errors that occurred while delivering to this table will be prefixed with this value in S3 destination.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "s3ErrorOutputPrefix")]
-    pub r#s_3_error_output_prefix: Box<Option<String>>,
+    pub r#s_3_error_output_prefix: Option<String>,
     /// The name of the Apache Iceberg Table.
     #[builder(into)]
     #[serde(rename = "tableName")]
-    pub r#table_name: Box<String>,
+    pub r#table_name: String,
     /// A list of unique keys for a given Apache Iceberg table. Firehose will use these for running Create, Update, or Delete operations on the given Iceberg table.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "uniqueKeys")]
-    pub r#unique_keys: Box<Option<Vec<String>>>,
+    pub r#unique_keys: Option<Vec<String>>,
 }

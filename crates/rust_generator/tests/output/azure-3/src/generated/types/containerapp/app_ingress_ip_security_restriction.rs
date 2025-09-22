@@ -8,17 +8,17 @@ pub struct AppIngressIpSecurityRestriction {
     /// > **NOTE:** The `action` types in an all `ip_security_restriction` blocks must be the same for the `ingress`, mixing `Allow` and `Deny` rules is not currently supported by the service.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// Describe the IP restriction rule that is being sent to the container-app.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The incoming IP address or range of IP addresses (in CIDR notation).
     #[builder(into)]
     #[serde(rename = "ipAddressRange")]
-    pub r#ip_address_range: Box<String>,
+    pub r#ip_address_range: String,
     /// Name for the IP restriction rule.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

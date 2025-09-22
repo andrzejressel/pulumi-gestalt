@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FileSystemSizeInByte {
     /// The latest known metered size (in bytes) of data stored in the file system.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<i32>>,
+    pub r#value: Option<i32>,
     /// The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "valueInIa")]
-    pub r#value_in_ia: Box<Option<i32>>,
+    pub r#value_in_ia: Option<i32>,
     /// The latest known metered size (in bytes) of data stored in the Standard storage class.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "valueInStandard")]
-    pub r#value_in_standard: Box<Option<i32>>,
+    pub r#value_in_standard: Option<i32>,
 }

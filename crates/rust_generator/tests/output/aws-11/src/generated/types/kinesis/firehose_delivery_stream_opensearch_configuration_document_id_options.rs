@@ -6,5 +6,5 @@ pub struct FirehoseDeliveryStreamOpensearchConfigurationDocumentIdOptions {
     /// The method for setting up document ID. Valid values: `FIREHOSE_DEFAULT`, `NO_DOCUMENT_ID`.
     #[builder(into)]
     #[serde(rename = "defaultDocumentIdFormat")]
-    pub r#default_document_id_format: Box<String>,
+    pub r#default_document_id_format: String,
 }

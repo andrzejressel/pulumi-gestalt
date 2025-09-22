@@ -4,16 +4,16 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct InstanceVmImage {
     /// Use this VM image family to find the image; the newest image in this family will be used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageFamily")]
-    pub r#image_family: Box<Option<String>>,
+    pub r#image_family: Option<String>,
     /// Use VM image name to find the image.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "imageName")]
-    pub r#image_name: Box<Option<String>>,
+    pub r#image_name: Option<String>,
     /// The name of the Google Cloud project that this VM image belongs to.
     /// Format: projects/{project_id}
     #[builder(into)]
     #[serde(rename = "project")]
-    pub r#project: Box<String>,
+    pub r#project: String,
 }

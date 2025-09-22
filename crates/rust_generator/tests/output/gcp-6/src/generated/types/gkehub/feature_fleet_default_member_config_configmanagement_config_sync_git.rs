@@ -4,35 +4,35 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGit {
     /// The Google Cloud Service Account Email used for auth when secretType is gcpServiceAccount
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "gcpServiceAccountEmail")]
-    pub r#gcp_service_account_email: Box<Option<String>>,
+    pub r#gcp_service_account_email: Option<String>,
     /// URL for the HTTPS Proxy to be used when communicating with the Git repo
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "httpsProxy")]
-    pub r#https_proxy: Box<Option<String>>,
+    pub r#https_proxy: Option<String>,
     /// The path within the Git repository that represents the top level of the repo to sync
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "policyDir")]
-    pub r#policy_dir: Box<Option<String>>,
+    pub r#policy_dir: Option<String>,
     /// Type of secret configured for access to the Git repo
     #[builder(into)]
     #[serde(rename = "secretType")]
-    pub r#secret_type: Box<String>,
+    pub r#secret_type: String,
     /// The branch of the repository to sync from. Default: master
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "syncBranch")]
-    pub r#sync_branch: Box<Option<String>>,
+    pub r#sync_branch: Option<String>,
     /// The URL of the Git repository to use as the source of truth
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "syncRepo")]
-    pub r#sync_repo: Box<Option<String>>,
+    pub r#sync_repo: Option<String>,
     /// Git revision (tag or hash) to check out. Default HEAD
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "syncRev")]
-    pub r#sync_rev: Box<Option<String>>,
+    pub r#sync_rev: Option<String>,
     /// Period in seconds between consecutive syncs. Default: 15
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "syncWaitSecs")]
-    pub r#sync_wait_secs: Box<Option<String>>,
+    pub r#sync_wait_secs: Option<String>,
 }

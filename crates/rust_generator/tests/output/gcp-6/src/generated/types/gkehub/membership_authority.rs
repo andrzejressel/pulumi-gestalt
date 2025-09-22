@@ -5,5 +5,5 @@
 pub struct MembershipAuthority {
     #[builder(into)]
     #[serde(rename = "issuer")]
-    pub r#issuer: Box<String>,
+    pub r#issuer: String,
 }

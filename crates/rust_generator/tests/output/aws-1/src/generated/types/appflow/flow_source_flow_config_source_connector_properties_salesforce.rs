@@ -4,14 +4,14 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FlowSourceFlowConfigSourceConnectorPropertiesSalesforce {
     /// Flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enableDynamicFieldUpdate")]
-    pub r#enable_dynamic_field_update: Box<Option<bool>>,
+    pub r#enable_dynamic_field_update: Option<bool>,
     /// Whether Amazon AppFlow includes deleted files in the flow run.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "includeDeletedRecords")]
-    pub r#include_deleted_records: Box<Option<bool>>,
+    pub r#include_deleted_records: Option<bool>,
     #[builder(into)]
     #[serde(rename = "object")]
-    pub r#object: Box<String>,
+    pub r#object: String,
 }

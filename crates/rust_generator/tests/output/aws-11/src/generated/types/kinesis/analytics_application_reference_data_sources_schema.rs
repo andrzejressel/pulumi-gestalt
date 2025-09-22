@@ -7,11 +7,11 @@ pub struct AnalyticsApplicationReferenceDataSourcesSchema {
     /// See Record Columns below for more details.
     #[builder(into)]
     #[serde(rename = "recordColumns")]
-    pub r#record_columns: Box<Vec<super::super::types::kinesis::AnalyticsApplicationReferenceDataSourcesSchemaRecordColumn>>,
+    pub r#record_columns: Vec<super::super::types::kinesis::AnalyticsApplicationReferenceDataSourcesSchemaRecordColumn>,
     /// The Encoding of the record in the streaming source.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "recordEncoding")]
-    pub r#record_encoding: Box<Option<String>>,
+    pub r#record_encoding: Option<String>,
     /// The Record Format and mapping information to schematize a record.
     /// See Record Format below for more details.
     #[builder(into)]

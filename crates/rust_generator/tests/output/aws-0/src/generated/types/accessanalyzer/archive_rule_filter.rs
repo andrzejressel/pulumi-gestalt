@@ -4,23 +4,23 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ArchiveRuleFilter {
     /// Contains comparator.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "contains")]
-    pub r#contains: Box<Option<Vec<String>>>,
+    pub r#contains: Option<Vec<String>>,
     /// Filter criteria.
     #[builder(into)]
     #[serde(rename = "criteria")]
-    pub r#criteria: Box<String>,
+    pub r#criteria: String,
     /// Equals comparator.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "eqs")]
-    pub r#eqs: Box<Option<Vec<String>>>,
+    pub r#eqs: Option<Vec<String>>,
     /// Boolean comparator.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "exists")]
-    pub r#exists: Box<Option<String>>,
+    pub r#exists: Option<String>,
     /// Not Equals comparator.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "neqs")]
-    pub r#neqs: Box<Option<Vec<String>>>,
+    pub r#neqs: Option<Vec<String>>,
 }

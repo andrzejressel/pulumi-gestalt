@@ -10,9 +10,9 @@ pub struct DeploymentGroupLoadBalancerInfoTargetGroupPairInfo {
     /// Configuration blocks for a target group within a target group pair (documented below).
     #[builder(into)]
     #[serde(rename = "targetGroups")]
-    pub r#target_groups: Box<Vec<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup>>,
+    pub r#target_groups: Vec<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup>,
     /// Configuration block for the test traffic route (documented below).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "testTrafficRoute")]
-    pub r#test_traffic_route: Box<Option<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute>>,
+    pub r#test_traffic_route: Option<Box<super::super::types::codedeploy::DeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute>>,
 }

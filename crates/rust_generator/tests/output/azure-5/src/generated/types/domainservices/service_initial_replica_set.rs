@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ServiceInitialReplicaSet {
     /// A list of subnet IP addresses for the domain controllers in the initial replica set, typically two.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "domainControllerIpAddresses")]
-    pub r#domain_controller_ip_addresses: Box<Option<Vec<String>>>,
+    pub r#domain_controller_ip_addresses: Option<Vec<String>>,
     /// The publicly routable IP address for the domain controllers in the initial replica set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "externalAccessIpAddress")]
-    pub r#external_access_ip_address: Box<Option<String>>,
+    pub r#external_access_ip_address: Option<String>,
     /// A unique ID for the replica set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<Option<String>>,
+    pub r#id: Option<String>,
     /// The Azure location where the Domain Service exists. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<Option<String>>,
+    pub r#location: Option<String>,
     /// The current service status for the initial replica set.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "serviceStatus")]
-    pub r#service_status: Box<Option<String>>,
+    pub r#service_status: Option<String>,
     /// The ID of the subnet in which to place the initial replica set. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "subnetId")]
-    pub r#subnet_id: Box<String>,
+    pub r#subnet_id: String,
 }

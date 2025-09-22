@@ -6,9 +6,9 @@ pub struct GetInfrastructureConfigurationLoggingS3Log {
     /// Name of the S3 Bucket for logging.
     #[builder(into)]
     #[serde(rename = "s3BucketName")]
-    pub r#s_3_bucket_name: Box<String>,
+    pub r#s_3_bucket_name: String,
     /// Key prefix for S3 Bucket logging.
     #[builder(into)]
     #[serde(rename = "s3KeyPrefix")]
-    pub r#s_3_key_prefix: Box<String>,
+    pub r#s_3_key_prefix: String,
 }

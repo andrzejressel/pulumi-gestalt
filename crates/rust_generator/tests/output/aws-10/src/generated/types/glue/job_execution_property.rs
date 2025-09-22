@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct JobExecutionProperty {
     /// The maximum number of concurrent runs allowed for a job. The default is 1.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxConcurrentRuns")]
-    pub r#max_concurrent_runs: Box<Option<i32>>,
+    pub r#max_concurrent_runs: Option<i32>,
 }

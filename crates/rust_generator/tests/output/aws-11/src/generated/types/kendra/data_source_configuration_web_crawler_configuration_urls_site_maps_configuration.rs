@@ -6,5 +6,5 @@ pub struct DataSourceConfigurationWebCrawlerConfigurationUrlsSiteMapsConfigurati
     /// The list of sitemap URLs of the websites you want to crawl. The list can include a maximum of `3` sitemap URLs.
     #[builder(into)]
     #[serde(rename = "siteMaps")]
-    pub r#site_maps: Box<Vec<String>>,
+    pub r#site_maps: Vec<String>,
 }

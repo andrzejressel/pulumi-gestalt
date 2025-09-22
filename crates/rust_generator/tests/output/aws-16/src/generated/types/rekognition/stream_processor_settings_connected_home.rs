@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct StreamProcessorSettingsConnectedHome {
     /// Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: `PERSON`, `PET`, `PACKAGE`, and `ALL`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<Vec<String>>>,
+    pub r#labels: Option<Vec<String>>,
     /// Minimum confidence required to label an object in the video.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "minConfidence")]
-    pub r#min_confidence: Box<Option<f64>>,
+    pub r#min_confidence: Option<f64>,
 }

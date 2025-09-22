@@ -6,5 +6,5 @@ pub struct GetListenerRuleConditionHostHeader {
     /// Set of `key`-`value` pairs indicating the query string parameters to match.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

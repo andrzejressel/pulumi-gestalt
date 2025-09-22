@@ -6,5 +6,5 @@ pub struct ViewIncludedProperty {
     /// The name of the property that is included in this view. Valid values: `tags`.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

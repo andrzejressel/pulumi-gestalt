@@ -8,11 +8,11 @@ pub struct GetResourcesResourceTagMappingListComplianceDetail {
     /// * `non_compliant_keys ` - Set of non-compliant tag keys.
     #[builder(into)]
     #[serde(rename = "complianceStatus")]
-    pub r#compliance_status: Box<bool>,
+    pub r#compliance_status: bool,
     #[builder(into)]
     #[serde(rename = "keysWithNoncompliantValues")]
-    pub r#keys_with_noncompliant_values: Box<Vec<String>>,
+    pub r#keys_with_noncompliant_values: Vec<String>,
     #[builder(into)]
     #[serde(rename = "nonCompliantKeys")]
-    pub r#non_compliant_keys: Box<Vec<String>>,
+    pub r#non_compliant_keys: Vec<String>,
 }

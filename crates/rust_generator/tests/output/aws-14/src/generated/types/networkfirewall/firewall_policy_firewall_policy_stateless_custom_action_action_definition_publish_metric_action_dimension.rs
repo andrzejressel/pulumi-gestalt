@@ -6,5 +6,5 @@ pub struct FirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPubl
     /// The string value to use in the custom metric dimension.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

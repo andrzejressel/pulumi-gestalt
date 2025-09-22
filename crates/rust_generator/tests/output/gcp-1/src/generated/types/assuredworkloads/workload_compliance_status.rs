@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct WorkloadComplianceStatus {
     /// Number of current orgPolicy violations which are acknowledged.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "acknowledgedViolationCounts")]
-    pub r#acknowledged_violation_counts: Box<Option<Vec<i32>>>,
+    pub r#acknowledged_violation_counts: Option<Vec<i32>>,
     /// Number of current orgPolicy violations which are not acknowledged.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "activeViolationCounts")]
-    pub r#active_violation_counts: Box<Option<Vec<i32>>>,
+    pub r#active_violation_counts: Option<Vec<i32>>,
 }

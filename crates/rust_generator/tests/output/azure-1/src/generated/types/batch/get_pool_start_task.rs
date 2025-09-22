@@ -6,29 +6,29 @@ pub struct GetPoolStartTask {
     /// The command line executed by the start task.
     #[builder(into)]
     #[serde(rename = "commandLine")]
-    pub r#command_line: Box<String>,
+    pub r#command_line: String,
     /// A map of strings (key,value) that represents the environment variables to set in the start task.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commonEnvironmentProperties")]
-    pub r#common_environment_properties: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#common_environment_properties: Option<std::collections::HashMap<String, String>>,
     /// The settings for the container under which the start task runs.
     #[builder(into)]
     #[serde(rename = "containers")]
-    pub r#containers: Box<Vec<super::super::types::batch::GetPoolStartTaskContainer>>,
+    pub r#containers: Vec<super::super::types::batch::GetPoolStartTaskContainer>,
     /// One or more `resource_file` blocks that describe the files to be downloaded to a compute node.
     #[builder(into)]
     #[serde(rename = "resourceFiles")]
-    pub r#resource_files: Box<Vec<super::super::types::batch::GetPoolStartTaskResourceFile>>,
+    pub r#resource_files: Vec<super::super::types::batch::GetPoolStartTaskResourceFile>,
     /// The number of retry count
     #[builder(into)]
     #[serde(rename = "taskRetryMaximum")]
-    pub r#task_retry_maximum: Box<i32>,
+    pub r#task_retry_maximum: i32,
     /// A `user_identity` block that describes the user identity under which the start task runs.
     #[builder(into)]
     #[serde(rename = "userIdentities")]
-    pub r#user_identities: Box<Vec<super::super::types::batch::GetPoolStartTaskUserIdentity>>,
+    pub r#user_identities: Vec<super::super::types::batch::GetPoolStartTaskUserIdentity>,
     /// A flag that indicates if the Batch pool should wait for the start task to be completed.
     #[builder(into)]
     #[serde(rename = "waitForSuccess")]
-    pub r#wait_for_success: Box<bool>,
+    pub r#wait_for_success: bool,
 }

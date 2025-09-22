@@ -6,5 +6,5 @@ pub struct AnalyticsApplicationOutputSchema {
     /// The Format Type of the records on the output stream. Can be `CSV` or `JSON`.
     #[builder(into)]
     #[serde(rename = "recordFormatType")]
-    pub r#record_format_type: Box<String>,
+    pub r#record_format_type: String,
 }

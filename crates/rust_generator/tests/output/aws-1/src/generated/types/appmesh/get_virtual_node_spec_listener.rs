@@ -5,20 +5,20 @@
 pub struct GetVirtualNodeSpecListener {
     #[builder(into)]
     #[serde(rename = "connectionPools")]
-    pub r#connection_pools: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerConnectionPool>>,
+    pub r#connection_pools: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerConnectionPool>,
     #[builder(into)]
     #[serde(rename = "healthChecks")]
-    pub r#health_checks: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerHealthCheck>>,
+    pub r#health_checks: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerHealthCheck>,
     #[builder(into)]
     #[serde(rename = "outlierDetections")]
-    pub r#outlier_detections: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerOutlierDetection>>,
+    pub r#outlier_detections: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerOutlierDetection>,
     #[builder(into)]
     #[serde(rename = "portMappings")]
-    pub r#port_mappings: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerPortMapping>>,
+    pub r#port_mappings: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerPortMapping>,
     #[builder(into)]
     #[serde(rename = "timeouts")]
-    pub r#timeouts: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTimeout>>,
+    pub r#timeouts: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTimeout>,
     #[builder(into)]
     #[serde(rename = "tls")]
-    pub r#tls: Box<Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTl>>,
+    pub r#tls: Vec<super::super::types::appmesh::GetVirtualNodeSpecListenerTl>,
 }

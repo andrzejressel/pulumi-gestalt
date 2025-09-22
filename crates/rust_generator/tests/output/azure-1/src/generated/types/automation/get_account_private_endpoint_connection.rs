@@ -6,9 +6,9 @@ pub struct GetAccountPrivateEndpointConnection {
     /// The ID of the Automation Account
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// The name of the Automation Account.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

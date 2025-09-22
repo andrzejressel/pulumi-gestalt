@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct CatalogTableOptimizerConfigurationOrphanFileDeletionConfiguration {
     /// The configuration for an Iceberg orphan file deletion optimizer.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "icebergConfiguration")]
-    pub r#iceberg_configuration: Box<Option<super::super::types::glue::CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationIcebergConfiguration>>,
+    pub r#iceberg_configuration: Option<Box<super::super::types::glue::CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationIcebergConfiguration>>,
 }

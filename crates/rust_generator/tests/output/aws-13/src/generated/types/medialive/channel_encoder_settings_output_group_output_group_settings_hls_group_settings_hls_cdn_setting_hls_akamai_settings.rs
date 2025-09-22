@@ -4,27 +4,27 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsAkamaiSettings {
     /// Number of seconds to wait before retrying connection to the flash media server if the connection is lost.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "connectionRetryInterval")]
-    pub r#connection_retry_interval: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#connection_retry_interval: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "filecacheDuration")]
-    pub r#filecache_duration: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#filecache_duration: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "httpTransferMode")]
-    pub r#http_transfer_mode: Box<Option<String>>,
+    pub r#http_transfer_mode: Option<String>,
     /// Number of retry attempts.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "numRetries")]
-    pub r#num_retries: Box<Option<i32>>,
+    pub r#num_retries: Option<i32>,
     /// Number of seconds to wait until a restart is initiated.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "restartDelay")]
-    pub r#restart_delay: Box<Option<i32>>,
-    #[builder(into, default)]
+    pub r#restart_delay: Option<i32>,
+    #[builder(into)]
     #[serde(rename = "salt")]
-    pub r#salt: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#salt: Option<String>,
+    #[builder(into)]
     #[serde(rename = "token")]
-    pub r#token: Box<Option<String>>,
+    pub r#token: Option<String>,
 }

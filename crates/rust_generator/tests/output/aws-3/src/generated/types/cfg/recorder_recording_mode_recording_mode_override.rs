@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RecorderRecordingModeRecordingModeOverride {
     /// A description you provide of the override.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The recording frequency for the resources in the override block. `CONTINUOUS` or `DAILY`.
     #[builder(into)]
     #[serde(rename = "recordingFrequency")]
-    pub r#recording_frequency: Box<String>,
+    pub r#recording_frequency: String,
     /// A list that specifies the types of AWS resources for which the override applies to.  See [restrictions in the AWS Docs](https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingModeOverride.html)
     #[builder(into)]
     #[serde(rename = "resourceTypes")]
-    pub r#resource_types: Box<Vec<String>>,
+    pub r#resource_types: Vec<String>,
 }

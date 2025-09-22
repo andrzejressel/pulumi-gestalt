@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct VirtualNetworkSubnetSharedPublicIpAddress {
     /// A list of `allowed_ports` blocks as defined below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "allowedPorts")]
-    pub r#allowed_ports: Box<Option<Vec<super::super::types::devtest::VirtualNetworkSubnetSharedPublicIpAddressAllowedPort>>>,
+    pub r#allowed_ports: Option<Vec<super::super::types::devtest::VirtualNetworkSubnetSharedPublicIpAddressAllowedPort>>,
 }

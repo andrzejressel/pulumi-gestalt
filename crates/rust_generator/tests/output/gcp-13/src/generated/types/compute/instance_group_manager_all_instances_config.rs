@@ -6,11 +6,11 @@ pub struct InstanceGroupManagerAllInstancesConfig {
     /// , The label key-value pairs that you want to patch onto the instance.
     /// 
     /// - - -
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "labels")]
-    pub r#labels: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#labels: Option<std::collections::HashMap<String, String>>,
     /// , The metadata key-value pairs that you want to patch onto the instance. For more information, see [Project and instance metadata](https://cloud.google.com/compute/docs/metadata#project_and_instance_metadata).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "metadata")]
-    pub r#metadata: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#metadata: Option<std::collections::HashMap<String, String>>,
 }

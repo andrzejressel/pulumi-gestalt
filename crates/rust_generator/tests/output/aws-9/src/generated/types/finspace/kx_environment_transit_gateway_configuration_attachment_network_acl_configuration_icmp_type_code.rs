@@ -6,9 +6,9 @@ pub struct KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigura
     /// ICMP code. A value of `-1` means all codes for the specified ICMP type.
     #[builder(into)]
     #[serde(rename = "code")]
-    pub r#code: Box<i32>,
+    pub r#code: i32,
     /// ICMP type. A value of `-1` means all types.
     #[builder(into)]
     #[serde(rename = "type")]
-    pub r#type_: Box<i32>,
+    pub r#type_: i32,
 }

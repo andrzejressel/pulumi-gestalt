@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfiguration {
     /// Describes the metadata sent to the HTTP endpoint destination. See `common_attributes` block below for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "commonAttributes")]
-    pub r#common_attributes: Box<Option<Vec<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationCommonAttribute>>>,
+    pub r#common_attributes: Option<Vec<super::super::types::kinesis::FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationCommonAttribute>>,
     /// Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. Valid values are `NONE` and `GZIP`.  Default value is `NONE`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "contentEncoding")]
-    pub r#content_encoding: Box<Option<String>>,
+    pub r#content_encoding: Option<String>,
 }

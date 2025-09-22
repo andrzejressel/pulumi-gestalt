@@ -6,9 +6,9 @@ pub struct GetListenerRuleConditionHttpHeader {
     /// Name of the HTTP header to match.
     #[builder(into)]
     #[serde(rename = "httpHeaderName")]
-    pub r#http_header_name: Box<String>,
+    pub r#http_header_name: String,
     /// Set of `key`-`value` pairs indicating the query string parameters to match.
     #[builder(into)]
     #[serde(rename = "values")]
-    pub r#values: Box<Vec<String>>,
+    pub r#values: Vec<String>,
 }

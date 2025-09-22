@@ -12,9 +12,9 @@ pub struct SubscriptionDeadLetterPolicy {
     /// The operation will fail if the topic does not exist.
     /// Users should ensure that there is a subscription attached to this topic
     /// since messages published to a topic with no subscriptions are lost.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "deadLetterTopic")]
-    pub r#dead_letter_topic: Box<Option<String>>,
+    pub r#dead_letter_topic: Option<String>,
     /// The maximum number of delivery attempts for any message. The value must be
     /// between 5 and 100.
     /// The number of delivery attempts is defined as 1 + (the sum of number of
@@ -23,7 +23,7 @@ pub struct SubscriptionDeadLetterPolicy {
     /// client libraries may automatically extend ack_deadlines.
     /// This field will be honored on a best effort basis.
     /// If this parameter is 0, a default value of 5 is used.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "maxDeliveryAttempts")]
-    pub r#max_delivery_attempts: Box<Option<i32>>,
+    pub r#max_delivery_attempts: Option<i32>,
 }

@@ -6,17 +6,17 @@ pub struct GetApplicationGatewayBackendAddressPool {
     /// A list of FQDNs which are part of the Backend Address Pool.
     #[builder(into)]
     #[serde(rename = "fqdns")]
-    pub r#fqdns: Box<Vec<String>>,
+    pub r#fqdns: Vec<String>,
     /// The ID of the Rewrite Rule Set
     #[builder(into)]
     #[serde(rename = "id")]
-    pub r#id: Box<String>,
+    pub r#id: String,
     /// A list of IP Addresses which are part of the Backend Address Pool.
     #[builder(into)]
     #[serde(rename = "ipAddresses")]
-    pub r#ip_addresses: Box<Vec<String>>,
+    pub r#ip_addresses: Vec<String>,
     /// The name of this Application Gateway.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
 }

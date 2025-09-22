@@ -9,7 +9,7 @@ pub struct AiFeatureGroupBigQuery {
     #[serde(rename = "bigQuerySource")]
     pub r#big_query_source: Box<super::super::types::vertex::AiFeatureGroupBigQueryBigQuerySource>,
     /// Columns to construct entityId / row keys. If not provided defaults to entityId.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "entityIdColumns")]
-    pub r#entity_id_columns: Box<Option<Vec<String>>>,
+    pub r#entity_id_columns: Option<Vec<String>>,
 }

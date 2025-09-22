@@ -6,13 +6,13 @@ pub struct DomainLogPublishingOption {
     /// ARN of the Cloudwatch log group to which log needs to be published.
     #[builder(into)]
     #[serde(rename = "cloudwatchLogGroupArn")]
-    pub r#cloudwatch_log_group_arn: Box<String>,
+    pub r#cloudwatch_log_group_arn: String,
     /// Whether given log publishing option is enabled or not.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<Option<bool>>,
+    pub r#enabled: Option<bool>,
     /// Type of OpenSearch log. Valid values: `INDEX_SLOW_LOGS`, `SEARCH_SLOW_LOGS`, `ES_APPLICATION_LOGS`, `AUDIT_LOGS`.
     #[builder(into)]
     #[serde(rename = "logType")]
-    pub r#log_type: Box<String>,
+    pub r#log_type: String,
 }

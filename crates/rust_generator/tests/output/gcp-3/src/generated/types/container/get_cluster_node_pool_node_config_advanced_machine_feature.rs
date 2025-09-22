@@ -6,9 +6,9 @@ pub struct GetClusterNodePoolNodeConfigAdvancedMachineFeature {
     /// Whether the node should have nested virtualization enabled.
     #[builder(into)]
     #[serde(rename = "enableNestedVirtualization")]
-    pub r#enable_nested_virtualization: Box<bool>,
+    pub r#enable_nested_virtualization: bool,
     /// The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
     #[builder(into)]
     #[serde(rename = "threadsPerCore")]
-    pub r#threads_per_core: Box<i32>,
+    pub r#threads_per_core: i32,
 }

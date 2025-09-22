@@ -6,9 +6,9 @@ pub struct ApplicationGatewayBackendHttpSettingConnectionDraining {
     /// The number of seconds connection draining is active. Acceptable values are from `1` second to `3600` seconds.
     #[builder(into)]
     #[serde(rename = "drainTimeoutSec")]
-    pub r#drain_timeout_sec: Box<i32>,
+    pub r#drain_timeout_sec: i32,
     /// If connection draining is enabled or not.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

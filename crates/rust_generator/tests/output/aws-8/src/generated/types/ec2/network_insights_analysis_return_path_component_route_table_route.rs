@@ -3,34 +3,34 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct NetworkInsightsAnalysisReturnPathComponentRouteTableRoute {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "destinationCidr")]
-    pub r#destination_cidr: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#destination_cidr: Option<String>,
+    #[builder(into)]
     #[serde(rename = "destinationPrefixListId")]
-    pub r#destination_prefix_list_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#destination_prefix_list_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "egressOnlyInternetGatewayId")]
-    pub r#egress_only_internet_gateway_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#egress_only_internet_gateway_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "gatewayId")]
-    pub r#gateway_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#gateway_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "instanceId")]
-    pub r#instance_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#instance_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "natGatewayId")]
-    pub r#nat_gateway_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#nat_gateway_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "networkInterfaceId")]
-    pub r#network_interface_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#network_interface_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "origin")]
-    pub r#origin: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#origin: Option<String>,
+    #[builder(into)]
     #[serde(rename = "transitGatewayId")]
-    pub r#transit_gateway_id: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#transit_gateway_id: Option<String>,
+    #[builder(into)]
     #[serde(rename = "vpcPeeringConnectionId")]
-    pub r#vpc_peering_connection_id: Box<Option<String>>,
+    pub r#vpc_peering_connection_id: Option<String>,
 }

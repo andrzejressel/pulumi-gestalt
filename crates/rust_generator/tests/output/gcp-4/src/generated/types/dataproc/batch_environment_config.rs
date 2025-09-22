@@ -5,12 +5,12 @@
 pub struct BatchEnvironmentConfig {
     /// Execution configuration for a workload.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "executionConfig")]
-    pub r#execution_config: Box<Option<super::super::types::dataproc::BatchEnvironmentConfigExecutionConfig>>,
+    pub r#execution_config: Option<Box<super::super::types::dataproc::BatchEnvironmentConfigExecutionConfig>>,
     /// Peripherals configuration that workload has access to.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "peripheralsConfig")]
-    pub r#peripherals_config: Box<Option<super::super::types::dataproc::BatchEnvironmentConfigPeripheralsConfig>>,
+    pub r#peripherals_config: Option<Box<super::super::types::dataproc::BatchEnvironmentConfigPeripheralsConfig>>,
 }

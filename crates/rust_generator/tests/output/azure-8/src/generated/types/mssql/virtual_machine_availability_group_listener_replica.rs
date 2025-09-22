@@ -6,21 +6,21 @@ pub struct VirtualMachineAvailabilityGroupListenerReplica {
     /// The replica commit mode for the availability group. Possible values are `Synchronous_Commit` and `Asynchronous_Commit`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "commit")]
-    pub r#commit: Box<String>,
+    pub r#commit: String,
     /// The replica failover mode for the availability group. Possible values are `Manual` and `Automatic`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "failoverMode")]
-    pub r#failover_mode: Box<String>,
+    pub r#failover_mode: String,
     /// The replica readable secondary mode for the availability group. Possible values are `No`, `Read_Only` and `All`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "readableSecondary")]
-    pub r#readable_secondary: Box<String>,
+    pub r#readable_secondary: String,
     /// The replica role for the availability group. Possible values are `Primary` and `Secondary`. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "role")]
-    pub r#role: Box<String>,
+    pub r#role: String,
     /// The ID of the SQL Virtual Machine. Changing this forces a new resource to be created.
     #[builder(into)]
     #[serde(rename = "sqlVirtualMachineId")]
-    pub r#sql_virtual_machine_id: Box<String>,
+    pub r#sql_virtual_machine_id: String,
 }

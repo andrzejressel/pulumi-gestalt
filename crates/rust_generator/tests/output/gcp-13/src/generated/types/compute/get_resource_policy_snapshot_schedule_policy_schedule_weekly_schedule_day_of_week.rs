@@ -6,10 +6,10 @@ pub struct GetResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWee
     /// The day of the week to create the snapshot. e.g. MONDAY Possible values: ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
     #[builder(into)]
     #[serde(rename = "day")]
-    pub r#day: Box<String>,
+    pub r#day: String,
     /// Time within the window to start the operations.
     /// It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
     #[builder(into)]
     #[serde(rename = "startTime")]
-    pub r#start_time: Box<String>,
+    pub r#start_time: String,
 }

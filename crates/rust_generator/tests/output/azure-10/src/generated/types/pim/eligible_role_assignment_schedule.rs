@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct EligibleRoleAssignmentSchedule {
     /// An `expiration` block as defined above.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "expiration")]
-    pub r#expiration: Box<Option<super::super::types::pim::EligibleRoleAssignmentScheduleExpiration>>,
+    pub r#expiration: Option<Box<super::super::types::pim::EligibleRoleAssignmentScheduleExpiration>>,
     /// The start date/time of the role assignment. Changing this forces a new resource to be created.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "startDateTime")]
-    pub r#start_date_time: Box<Option<String>>,
+    pub r#start_date_time: Option<String>,
 }

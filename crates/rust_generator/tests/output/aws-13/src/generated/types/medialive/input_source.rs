@@ -6,13 +6,13 @@ pub struct InputSource {
     /// The key used to extract the password from EC2 Parameter store.
     #[builder(into)]
     #[serde(rename = "passwordParam")]
-    pub r#password_param: Box<String>,
+    pub r#password_param: String,
     /// The URL where the stream is pulled from.
     #[builder(into)]
     #[serde(rename = "url")]
-    pub r#url: Box<String>,
+    pub r#url: String,
     /// The username for the input source.
     #[builder(into)]
     #[serde(rename = "username")]
-    pub r#username: Box<String>,
+    pub r#username: String,
 }

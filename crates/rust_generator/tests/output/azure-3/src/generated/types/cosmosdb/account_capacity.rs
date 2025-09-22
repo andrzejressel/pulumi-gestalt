@@ -6,5 +6,5 @@ pub struct AccountCapacity {
     /// The total throughput limit imposed on this Cosmos DB account (RU/s). Possible values are at least `-1`. `-1` means no limit.
     #[builder(into)]
     #[serde(rename = "totalThroughputLimit")]
-    pub r#total_throughput_limit: Box<i32>,
+    pub r#total_throughput_limit: i32,
 }

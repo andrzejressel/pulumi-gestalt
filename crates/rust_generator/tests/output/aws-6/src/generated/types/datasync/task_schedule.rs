@@ -6,5 +6,5 @@ pub struct TaskSchedule {
     /// Specifies the schedule you want your task to use for repeated executions. For more information, see [Schedule Expressions for Rules](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html).
     #[builder(into)]
     #[serde(rename = "scheduleExpression")]
-    pub r#schedule_expression: Box<String>,
+    pub r#schedule_expression: String,
 }

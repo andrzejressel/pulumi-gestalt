@@ -5,15 +5,15 @@
 pub struct GetJobQueueJobStateTimeLimitAction {
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     #[builder(into)]
     #[serde(rename = "maxTimeSeconds")]
-    pub r#max_time_seconds: Box<i32>,
+    pub r#max_time_seconds: i32,
     #[builder(into)]
     #[serde(rename = "reason")]
-    pub r#reason: Box<String>,
+    pub r#reason: String,
     /// Describes the ability of the queue to accept new jobs (for example, `ENABLED` or `DISABLED`).
     #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<String>,
+    pub r#state: String,
 }

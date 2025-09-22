@@ -6,17 +6,17 @@ pub struct GuardrailSensitiveInformationPolicyConfigRegexesConfig {
     /// Options for sensitive information action.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// The regex description.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "description")]
-    pub r#description: Box<Option<String>>,
+    pub r#description: Option<String>,
     /// The regex name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The regex pattern.
     #[builder(into)]
     #[serde(rename = "pattern")]
-    pub r#pattern: Box<String>,
+    pub r#pattern: String,
 }

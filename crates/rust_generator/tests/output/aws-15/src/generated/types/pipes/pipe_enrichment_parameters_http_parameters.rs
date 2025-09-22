@@ -3,13 +3,13 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct PipeEnrichmentParametersHttpParameters {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "headerParameters")]
-    pub r#header_parameters: Box<Option<std::collections::HashMap<String, String>>>,
-    #[builder(into, default)]
+    pub r#header_parameters: Option<std::collections::HashMap<String, String>>,
+    #[builder(into)]
     #[serde(rename = "pathParameterValues")]
-    pub r#path_parameter_values: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#path_parameter_values: Option<String>,
+    #[builder(into)]
     #[serde(rename = "queryStringParameters")]
-    pub r#query_string_parameters: Box<Option<std::collections::HashMap<String, String>>>,
+    pub r#query_string_parameters: Option<std::collections::HashMap<String, String>>,
 }

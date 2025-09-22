@@ -4,19 +4,19 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RoleDefinitionPermission {
     /// One or more Allowed Actions, such as `*`, `Microsoft.Resources/subscriptions/resourceGroups/read`. See ['Azure Resource Manager resource provider operations'](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations) for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "actions")]
-    pub r#actions: Box<Option<Vec<String>>>,
+    pub r#actions: Option<Vec<String>>,
     /// One or more Allowed Data Actions, such as `*`, `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read`. See ['Azure Resource Manager resource provider operations'](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations) for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataActions")]
-    pub r#data_actions: Box<Option<Vec<String>>>,
+    pub r#data_actions: Option<Vec<String>>,
     /// One or more Disallowed Actions, such as `*`, `Microsoft.Resources/subscriptions/resourceGroups/read`. See ['Azure Resource Manager resource provider operations'](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations) for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notActions")]
-    pub r#not_actions: Box<Option<Vec<String>>>,
+    pub r#not_actions: Option<Vec<String>>,
     /// One or more Disallowed Data Actions, such as `*`, `Microsoft.Resources/subscriptions/resourceGroups/read`. See ['Azure Resource Manager resource provider operations'](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations) for details.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "notDataActions")]
-    pub r#not_data_actions: Box<Option<Vec<String>>>,
+    pub r#not_data_actions: Option<Vec<String>>,
 }

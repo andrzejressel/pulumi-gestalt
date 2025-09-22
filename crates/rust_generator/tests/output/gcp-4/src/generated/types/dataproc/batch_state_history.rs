@@ -5,17 +5,17 @@
 pub struct BatchStateHistory {
     /// (Output)
     /// The state of the batch at this point in history. For possible values, see the [API documentation](https://cloud.google.com/dataproc-serverless/docs/reference/rest/v1/projects.locations.batches#State).
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "state")]
-    pub r#state: Box<Option<String>>,
+    pub r#state: Option<String>,
     /// (Output)
     /// Details about the state at this point in history.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stateMessage")]
-    pub r#state_message: Box<Option<String>>,
+    pub r#state_message: Option<String>,
     /// (Output)
     /// The time when the batch entered the historical state.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "stateStartTime")]
-    pub r#state_start_time: Box<Option<String>>,
+    pub r#state_start_time: Option<String>,
 }

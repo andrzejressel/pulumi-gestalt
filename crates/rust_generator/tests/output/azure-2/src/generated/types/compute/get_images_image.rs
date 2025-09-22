@@ -6,25 +6,25 @@ pub struct GetImagesImage {
     /// One or more `data_disk` blocks as defined below.
     #[builder(into)]
     #[serde(rename = "dataDisks")]
-    pub r#data_disks: Box<Vec<super::super::types::compute::GetImagesImageDataDisk>>,
+    pub r#data_disks: Vec<super::super::types::compute::GetImagesImageDataDisk>,
     /// The supported Azure location where the Image exists.
     #[builder(into)]
     #[serde(rename = "location")]
-    pub r#location: Box<String>,
+    pub r#location: String,
     /// The name of the Image.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// An `os_disk` block as defined below.
     #[builder(into)]
     #[serde(rename = "osDisks")]
-    pub r#os_disks: Box<Vec<super::super::types::compute::GetImagesImageOsDisk>>,
+    pub r#os_disks: Vec<super::super::types::compute::GetImagesImageOsDisk>,
     /// A mapping of tags assigned to the Image.
     #[builder(into)]
     #[serde(rename = "tags")]
-    pub r#tags: Box<std::collections::HashMap<String, String>>,
+    pub r#tags: std::collections::HashMap<String, String>,
     /// Is zone resiliency enabled?
     #[builder(into)]
     #[serde(rename = "zoneResilient")]
-    pub r#zone_resilient: Box<bool>,
+    pub r#zone_resilient: bool,
 }

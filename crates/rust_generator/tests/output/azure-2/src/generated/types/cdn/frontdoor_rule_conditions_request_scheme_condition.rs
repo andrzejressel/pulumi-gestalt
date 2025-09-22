@@ -4,15 +4,15 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct FrontdoorRuleConditionsRequestSchemeCondition {
     /// The requests protocol to match. Possible values include `HTTP` or `HTTPS`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "matchValues")]
-    pub r#match_values: Box<Option<String>>,
+    pub r#match_values: Option<String>,
     /// If `true` operator becomes the opposite of its value. Possible values `true` or `false`. Defaults to `false`. Details can be found in the `Condition Operator List` below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "negateCondition")]
-    pub r#negate_condition: Box<Option<bool>>,
+    pub r#negate_condition: Option<bool>,
     /// Possible value `Equal`. Defaults to `Equal`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "operator")]
-    pub r#operator: Box<Option<String>>,
+    pub r#operator: Option<String>,
 }

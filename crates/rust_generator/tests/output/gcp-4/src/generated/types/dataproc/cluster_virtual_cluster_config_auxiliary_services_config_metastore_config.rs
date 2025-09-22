@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ClusterVirtualClusterConfigAuxiliaryServicesConfigMetastoreConfig {
     /// Resource name of an existing Dataproc Metastore service.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "dataprocMetastoreService")]
-    pub r#dataproc_metastore_service: Box<Option<String>>,
+    pub r#dataproc_metastore_service: Option<String>,
 }

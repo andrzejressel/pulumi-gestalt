@@ -6,9 +6,9 @@ pub struct ApplicationGatewayRewriteRuleSetRewriteRuleRequestHeaderConfiguration
     /// Header name of the header configuration.
     #[builder(into)]
     #[serde(rename = "headerName")]
-    pub r#header_name: Box<String>,
+    pub r#header_name: String,
     /// Header value of the header configuration. To delete a request header set this property to an empty string.
     #[builder(into)]
     #[serde(rename = "headerValue")]
-    pub r#header_value: Box<String>,
+    pub r#header_value: String,
 }

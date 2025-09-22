@@ -6,5 +6,5 @@ pub struct GetOsProfileLinux {
     /// A `patch` block as defined above.
     #[builder(into)]
     #[serde(rename = "patches")]
-    pub r#patches: Box<Vec<super::super::types::arcmachine::GetOsProfileLinuxPatch>>,
+    pub r#patches: Vec<super::super::types::arcmachine::GetOsProfileLinuxPatch>,
 }

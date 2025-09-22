@@ -7,9 +7,9 @@ pub struct AccessLevelsAccessLevelBasicCondition {
     /// the Condition to be true. If not specified, all devices are
     /// allowed.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "devicePolicy")]
-    pub r#device_policy: Box<Option<super::super::types::accesscontextmanager::AccessLevelsAccessLevelBasicConditionDevicePolicy>>,
+    pub r#device_policy: Option<Box<super::super::types::accesscontextmanager::AccessLevelsAccessLevelBasicConditionDevicePolicy>>,
     /// A list of CIDR block IP subnetwork specification. May be IPv4
     /// or IPv6.
     /// Note that for a CIDR IP address block, the specified IP address
@@ -20,9 +20,9 @@ pub struct AccessLevelsAccessLevelBasicCondition {
     /// is not. The originating IP of a request must be in one of the
     /// listed subnets in order for this Condition to be true.
     /// If empty, all IP addresses are allowed.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipSubnetworks")]
-    pub r#ip_subnetworks: Box<Option<Vec<String>>>,
+    pub r#ip_subnetworks: Option<Vec<String>>,
     /// An allowed list of members (users, service accounts).
     /// Using groups is not supported yet.
     /// The signed-in user originating the request must be a part of one
@@ -30,32 +30,32 @@ pub struct AccessLevelsAccessLevelBasicCondition {
     /// from any user (logged in/not logged in, not present in any
     /// groups, etc.).
     /// Formats: `user:{emailid}`, `serviceAccount:{emailid}`
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "members")]
-    pub r#members: Box<Option<Vec<String>>>,
+    pub r#members: Option<Vec<String>>,
     /// Whether to negate the Condition. If true, the Condition becomes
     /// a NAND over its non-empty fields, each field must be false for
     /// the Condition overall to be satisfied. Defaults to false.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "negate")]
-    pub r#negate: Box<Option<bool>>,
+    pub r#negate: Option<bool>,
     /// The request must originate from one of the provided
     /// countries/regions.
     /// Format: A valid ISO 3166-1 alpha-2 code.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "regions")]
-    pub r#regions: Box<Option<Vec<String>>>,
+    pub r#regions: Option<Vec<String>>,
     /// A list of other access levels defined in the same Policy,
     /// referenced by resource name. Referencing an AccessLevel which
     /// does not exist is an error. All access levels listed must be
     /// granted for the Condition to be true.
     /// Format: accessPolicies/{policy_id}/accessLevels/{short_name}
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "requiredAccessLevels")]
-    pub r#required_access_levels: Box<Option<Vec<String>>>,
+    pub r#required_access_levels: Option<Vec<String>>,
     /// The request must originate from one of the provided VPC networks in Google Cloud. Cannot specify this field together with `ip_subnetworks`.
     /// Structure is documented below.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "vpcNetworkSources")]
-    pub r#vpc_network_sources: Box<Option<Vec<super::super::types::accesscontextmanager::AccessLevelsAccessLevelBasicConditionVpcNetworkSource>>>,
+    pub r#vpc_network_sources: Option<Vec<super::super::types::accesscontextmanager::AccessLevelsAccessLevelBasicConditionVpcNetworkSource>>,
 }

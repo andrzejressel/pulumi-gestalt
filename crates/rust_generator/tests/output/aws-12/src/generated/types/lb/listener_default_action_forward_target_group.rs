@@ -8,9 +8,9 @@ pub struct ListenerDefaultActionForwardTargetGroup {
     /// The following arguments are optional:
     #[builder(into)]
     #[serde(rename = "arn")]
-    pub r#arn: Box<String>,
+    pub r#arn: String,
     /// Weight. The range is 0 to 999.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "weight")]
-    pub r#weight: Box<Option<i32>>,
+    pub r#weight: Option<i32>,
 }

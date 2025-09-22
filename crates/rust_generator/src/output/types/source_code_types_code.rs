@@ -17,9 +17,8 @@ static INTEGER_ENUM_TEMPLATE: &str = include_str!("types_code_integer_enum.rs.ha
 struct Property {
     name: String,
     original_name: String,
-    type_: String,
+    cycle_safe_type: String,
     description_lines: Vec<String>,
-    default: bool,
     skip: bool,
     private: bool,
 }
@@ -100,8 +99,9 @@ fn convert_resource(package: &Package, element_id: &ElementId) -> GenerateResour
                     .map(|global_type_property| Property {
                         name: global_type_property.get_field_name(),
                         original_name: global_type_property.name.clone(),
-                        type_: global_type_property.r#type.get_rust_type(depth),
-                        default: matches!(global_type_property.r#type, Type::Option(_)),
+                        cycle_safe_type: global_type_property
+                            .r#type
+                            .get_cycle_safe_rust_type(depth),
                         skip: matches!(global_type_property.r#type, Type::ConstString(_)),
                         private: matches!(global_type_property.r#type, Type::ConstString(_)),
                         description_lines: crate::utils::to_lines(

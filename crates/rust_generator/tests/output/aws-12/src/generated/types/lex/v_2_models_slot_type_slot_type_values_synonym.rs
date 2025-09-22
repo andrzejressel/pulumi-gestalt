@@ -6,5 +6,5 @@ pub struct V2ModelsSlotTypeSlotTypeValuesSynonym {
     /// Value that can be used for a slot type.
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

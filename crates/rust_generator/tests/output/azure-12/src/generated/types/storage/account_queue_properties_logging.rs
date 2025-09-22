@@ -6,21 +6,21 @@ pub struct AccountQueuePropertiesLogging {
     /// Indicates whether all delete requests should be logged.
     #[builder(into)]
     #[serde(rename = "delete")]
-    pub r#delete: Box<bool>,
+    pub r#delete: bool,
     /// Indicates whether all read requests should be logged.
     #[builder(into)]
     #[serde(rename = "read")]
-    pub r#read: Box<bool>,
+    pub r#read: bool,
     /// Specifies the number of days that logs will be retained.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "retentionPolicyDays")]
-    pub r#retention_policy_days: Box<Option<i32>>,
+    pub r#retention_policy_days: Option<i32>,
     /// The version of storage analytics to configure.
     #[builder(into)]
     #[serde(rename = "version")]
-    pub r#version: Box<String>,
+    pub r#version: String,
     /// Indicates whether all write requests should be logged.
     #[builder(into)]
     #[serde(rename = "write")]
-    pub r#write: Box<bool>,
+    pub r#write: bool,
 }

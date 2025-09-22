@@ -4,12 +4,12 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ObjectAccessControlProjectTeam {
     /// The project team associated with the entity
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "projectNumber")]
-    pub r#project_number: Box<Option<String>>,
+    pub r#project_number: Option<String>,
     /// The team.
     /// Possible values are: `editors`, `owners`, `viewers`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "team")]
-    pub r#team: Box<Option<String>>,
+    pub r#team: Option<String>,
 }

@@ -6,5 +6,5 @@ pub struct DataSourceParametersAmazonElasticsearch {
     /// The OpenSearch domain.
     #[builder(into)]
     #[serde(rename = "domain")]
-    pub r#domain: Box<String>,
+    pub r#domain: String,
 }

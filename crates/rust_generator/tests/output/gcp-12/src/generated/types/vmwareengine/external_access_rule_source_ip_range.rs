@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct ExternalAccessRuleSourceIpRange {
     /// A single IP address.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddress")]
-    pub r#ip_address: Box<Option<String>>,
+    pub r#ip_address: Option<String>,
     /// An IP address range in the CIDR format.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "ipAddressRange")]
-    pub r#ip_address_range: Box<Option<String>>,
+    pub r#ip_address_range: Option<String>,
 }

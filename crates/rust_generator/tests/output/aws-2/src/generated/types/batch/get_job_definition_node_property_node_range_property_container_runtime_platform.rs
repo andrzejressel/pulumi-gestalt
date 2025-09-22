@@ -6,9 +6,9 @@ pub struct GetJobDefinitionNodePropertyNodeRangePropertyContainerRuntimePlatform
     /// The vCPU architecture. The default value is X86_64. Valid values are X86_64 and ARM64.
     #[builder(into)]
     #[serde(rename = "cpuArchitecture")]
-    pub r#cpu_architecture: Box<String>,
+    pub r#cpu_architecture: String,
     /// The operating system for the compute environment. V
     #[builder(into)]
     #[serde(rename = "operatingSystemFamily")]
-    pub r#operating_system_family: Box<String>,
+    pub r#operating_system_family: String,
 }

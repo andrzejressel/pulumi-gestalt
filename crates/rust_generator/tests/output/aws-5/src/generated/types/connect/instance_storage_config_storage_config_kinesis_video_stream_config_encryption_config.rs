@@ -6,9 +6,9 @@ pub struct InstanceStorageConfigStorageConfigKinesisVideoStreamConfigEncryptionC
     /// The type of encryption. Valid Values: `KMS`.
     #[builder(into)]
     #[serde(rename = "encryptionType")]
-    pub r#encryption_type: Box<String>,
+    pub r#encryption_type: String,
     /// The full ARN of the encryption key. Be sure to provide the full ARN of the encryption key, not just the ID.
     #[builder(into)]
     #[serde(rename = "keyId")]
-    pub r#key_id: Box<String>,
+    pub r#key_id: String,
 }

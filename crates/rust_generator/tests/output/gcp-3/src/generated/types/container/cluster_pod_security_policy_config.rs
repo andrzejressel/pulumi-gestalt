@@ -7,5 +7,5 @@ pub struct ClusterPodSecurityPolicyConfig {
     /// If enabled, pods must be valid under a PodSecurityPolicy to be created.
     #[builder(into)]
     #[serde(rename = "enabled")]
-    pub r#enabled: Box<bool>,
+    pub r#enabled: bool,
 }

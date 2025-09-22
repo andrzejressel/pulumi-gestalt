@@ -4,11 +4,11 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct RulesetRuleActionParametersOrigin {
     /// Origin Hostname where request is sent.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "host")]
-    pub r#host: Box<Option<String>>,
+    pub r#host: Option<String>,
     /// Origin Port where request is sent.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
 }

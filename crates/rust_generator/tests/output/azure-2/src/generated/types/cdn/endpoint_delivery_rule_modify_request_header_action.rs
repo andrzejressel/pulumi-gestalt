@@ -6,13 +6,13 @@ pub struct EndpointDeliveryRuleModifyRequestHeaderAction {
     /// Action to be executed on a header value. Valid values are `Append`, `Delete` and `Overwrite`.
     #[builder(into)]
     #[serde(rename = "action")]
-    pub r#action: Box<String>,
+    pub r#action: String,
     /// The header name.
     #[builder(into)]
     #[serde(rename = "name")]
-    pub r#name: Box<String>,
+    pub r#name: String,
     /// The value of the header. Only needed when `action` is set to `Append` or `overwrite`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<Option<String>>,
+    pub r#value: Option<String>,
 }

@@ -8,20 +8,20 @@ pub struct RegionHealthCheckGrpcHealthCheck {
     /// * Empty serviceName means the overall status of all services at the backend.
     /// * Non-empty serviceName means the health of that gRPC service, as defined by the owner of the service.
     /// The grpcServiceName can only be ASCII.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "grpcServiceName")]
-    pub r#grpc_service_name: Box<Option<String>>,
+    pub r#grpc_service_name: Option<String>,
     /// The port number for the health check request.
     /// Must be specified if portName and portSpecification are not set
     /// or if port_specification is USE_FIXED_PORT. Valid values are 1 through 65535.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "port")]
-    pub r#port: Box<Option<i32>>,
+    pub r#port: Option<i32>,
     /// Port name as defined in InstanceGroup#NamedPort#name. If both port and
     /// port_name are defined, port takes precedence.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "portName")]
-    pub r#port_name: Box<Option<String>>,
+    pub r#port_name: Option<String>,
     /// Specifies how port is selected for health checking, can be one of the
     /// following values:
     /// * `USE_FIXED_PORT`: The port number in `port` is used for health checking.
@@ -33,7 +33,7 @@ pub struct RegionHealthCheckGrpcHealthCheck {
     /// If not specified, gRPC health check follows behavior specified in `port` and
     /// `portName` fields.
     /// Possible values are: `USE_FIXED_PORT`, `USE_NAMED_PORT`, `USE_SERVING_PORT`.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "portSpecification")]
-    pub r#port_specification: Box<Option<String>>,
+    pub r#port_specification: Option<String>,
 }

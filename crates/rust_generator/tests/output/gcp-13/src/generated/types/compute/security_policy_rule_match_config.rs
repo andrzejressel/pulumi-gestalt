@@ -4,7 +4,7 @@
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct SecurityPolicyRuleMatchConfig {
     /// CIDR IP address range. Maximum number of srcIpRanges allowed is 10.
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "srcIpRanges")]
-    pub r#src_ip_ranges: Box<Option<Vec<String>>>,
+    pub r#src_ip_ranges: Option<Vec<String>>,
 }

@@ -3,16 +3,16 @@
 #[allow(dead_code)]
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub struct V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCard {
-    #[builder(into, default)]
+    #[builder(into)]
     #[serde(rename = "buttons")]
-    pub r#buttons: Box<Option<Vec<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCardButton>>>,
-    #[builder(into, default)]
+    pub r#buttons: Option<Vec<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCardButton>>,
+    #[builder(into)]
     #[serde(rename = "imageUrl")]
-    pub r#image_url: Box<Option<String>>,
-    #[builder(into, default)]
+    pub r#image_url: Option<String>,
+    #[builder(into)]
     #[serde(rename = "subtitle")]
-    pub r#subtitle: Box<Option<String>>,
+    pub r#subtitle: Option<String>,
     #[builder(into)]
     #[serde(rename = "title")]
-    pub r#title: Box<String>,
+    pub r#title: String,
 }

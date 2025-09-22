@@ -5,8 +5,8 @@
 pub struct InsightFiltersWorkflowStatus {
     #[builder(into)]
     #[serde(rename = "comparison")]
-    pub r#comparison: Box<String>,
+    pub r#comparison: String,
     #[builder(into)]
     #[serde(rename = "value")]
-    pub r#value: Box<String>,
+    pub r#value: String,
 }

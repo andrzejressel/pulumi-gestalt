@@ -5,8 +5,8 @@
 pub struct VirtualMachineStorageConfigurationDataSettings {
     #[builder(into)]
     #[serde(rename = "defaultFilePath")]
-    pub r#default_file_path: Box<String>,
+    pub r#default_file_path: String,
     #[builder(into)]
     #[serde(rename = "luns")]
-    pub r#luns: Box<Vec<i32>>,
+    pub r#luns: Vec<i32>,
 }
