@@ -70,6 +70,9 @@ pub mod mover_source_endpoint {
     }
     #[allow(dead_code)]
     pub struct MoverSourceEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a description for the Storage Mover Source Endpoint.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the directory being exported from the server. Changing this forces a new resource to be created.
@@ -133,6 +136,7 @@ pub mod mover_source_endpoint {
         };
         let o = context.register_resource(request);
         MoverSourceEndpointResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             export: o.get_field("export"),
             host: o.get_field("host"),

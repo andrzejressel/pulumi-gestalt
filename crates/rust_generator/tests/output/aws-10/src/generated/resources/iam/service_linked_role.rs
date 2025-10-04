@@ -46,6 +46,9 @@ pub mod service_linked_role {
     }
     #[allow(dead_code)]
     pub struct ServiceLinkedRoleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) specifying the role.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The AWS service to which this role is attached. You use a string similar to a URL but without the `http://` in front. For example: `elasticbeanstalk.amazonaws.com`. To find the full list of services that support service-linked roles, check [the docs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html).
@@ -111,6 +114,7 @@ pub mod service_linked_role {
         };
         let o = context.register_resource(request);
         ServiceLinkedRoleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             aws_service_name: o.get_field("awsServiceName"),
             create_date: o.get_field("createDate"),

@@ -76,6 +76,9 @@ pub mod vault {
     }
     #[allow(dead_code)]
     pub struct VaultResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The policy document. This is a JSON formatted string.
         /// The heredoc syntax or `file` function is helpful here. Use the [Glacier Developer Guide](https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html) for more information on Glacier Vault Policy
         pub access_policy: pulumi_gestalt_rust::Output<Option<String>>,
@@ -138,6 +141,7 @@ pub mod vault {
         };
         let o = context.register_resource(request);
         VaultResult {
+            id: o.get_field("id"),
             access_policy: o.get_field("accessPolicy"),
             arn: o.get_field("arn"),
             location: o.get_field("location"),

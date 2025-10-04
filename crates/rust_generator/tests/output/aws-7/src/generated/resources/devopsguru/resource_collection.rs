@@ -123,6 +123,9 @@ pub mod resource_collection {
     }
     #[allow(dead_code)]
     pub struct ResourceCollectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A collection of AWS CloudFormation stacks. See `cloudformation` below for additional details.
         pub cloudformation: pulumi_gestalt_rust::Output<
             Option<super::super::types::devopsguru::ResourceCollectionCloudformation>,
@@ -171,6 +174,7 @@ pub mod resource_collection {
         };
         let o = context.register_resource(request);
         ResourceCollectionResult {
+            id: o.get_field("id"),
             cloudformation: o.get_field("cloudformation"),
             tags: o.get_field("tags"),
             type_: o.get_field("type"),

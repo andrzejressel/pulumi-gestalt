@@ -177,6 +177,9 @@ pub mod association {
     }
     #[allow(dead_code)]
     pub struct AssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// By default, when you create a new or update associations, the system runs it immediately and then according to the schedule you specified. Enable this option if you do not want an association to run immediately after you create or update it. This parameter is not supported for rate expressions. Default: `false`.
         pub apply_only_at_cron_interval: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The ARN of the SSM association
@@ -336,6 +339,7 @@ pub mod association {
         };
         let o = context.register_resource(request);
         AssociationResult {
+            id: o.get_field("id"),
             apply_only_at_cron_interval: o.get_field("applyOnlyAtCronInterval"),
             arn: o.get_field("arn"),
             association_id: o.get_field("associationId"),

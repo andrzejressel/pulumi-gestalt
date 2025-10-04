@@ -78,6 +78,9 @@ pub mod network_manager_scope_connection {
     }
     #[allow(dead_code)]
     pub struct NetworkManagerScopeConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Connection state of the Network Manager Scope Connection.
         pub connection_state: pulumi_gestalt_rust::Output<String>,
         /// A description of the Network Manager Scope Connection.
@@ -137,6 +140,7 @@ pub mod network_manager_scope_connection {
         };
         let o = context.register_resource(request);
         NetworkManagerScopeConnectionResult {
+            id: o.get_field("id"),
             connection_state: o.get_field("connectionState"),
             description: o.get_field("description"),
             name: o.get_field("name"),

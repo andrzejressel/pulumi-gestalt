@@ -98,6 +98,9 @@ pub mod route_server {
     }
     #[allow(dead_code)]
     pub struct RouteServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable route exchange between Azure Route Server and the gateway(s)
         pub branch_to_branch_traffic_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies the supported Azure location where the Route Server should exist. Changing this forces a new resource to be created.
@@ -184,6 +187,7 @@ pub mod route_server {
         };
         let o = context.register_resource(request);
         RouteServerResult {
+            id: o.get_field("id"),
             branch_to_branch_traffic_enabled: o
                 .get_field("branchToBranchTrafficEnabled"),
             location: o.get_field("location"),

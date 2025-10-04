@@ -43,6 +43,9 @@ pub mod vpn_gateway {
     }
     #[allow(dead_code)]
     pub struct VpnGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Autonomous System Number (ASN) for the Amazon side of the gateway. If you don't specify an ASN, the virtual private gateway is created with the default ASN.
         pub amazon_side_asn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the VPN Gateway.
@@ -100,6 +103,7 @@ pub mod vpn_gateway {
         };
         let o = context.register_resource(request);
         VpnGatewayResult {
+            id: o.get_field("id"),
             amazon_side_asn: o.get_field("amazonSideAsn"),
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),

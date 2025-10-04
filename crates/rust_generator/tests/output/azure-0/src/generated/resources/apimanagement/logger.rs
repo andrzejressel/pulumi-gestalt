@@ -96,6 +96,9 @@ pub mod logger {
     }
     #[allow(dead_code)]
     pub struct LoggerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the API Management Service. Changing this forces a new resource to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// An `application_insights` block as documented below. Changing this forces a new resource to be created.
@@ -177,6 +180,7 @@ pub mod logger {
         };
         let o = context.register_resource(request);
         LoggerResult {
+            id: o.get_field("id"),
             api_management_name: o.get_field("apiManagementName"),
             application_insights: o.get_field("applicationInsights"),
             buffered: o.get_field("buffered"),

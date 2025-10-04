@@ -146,6 +146,9 @@ pub mod dicom_store_iam_policy {
     }
     #[allow(dead_code)]
     pub struct DicomStoreIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The DICOM store ID, in the form
         /// `{project_id}/{location_name}/{dataset_name}/{dicom_store_name}` or
         /// `{location_name}/{dataset_name}/{dicom_store_name}`. In the second form, the provider's
@@ -187,6 +190,7 @@ pub mod dicom_store_iam_policy {
         };
         let o = context.register_resource(request);
         DicomStoreIamPolicyResult {
+            id: o.get_field("id"),
             dicom_store_id: o.get_field("dicomStoreId"),
             etag: o.get_field("etag"),
             policy_data: o.get_field("policyData"),

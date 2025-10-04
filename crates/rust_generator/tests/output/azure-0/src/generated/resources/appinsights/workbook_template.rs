@@ -112,6 +112,9 @@ pub mod workbook_template {
     }
     #[allow(dead_code)]
     pub struct WorkbookTemplateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Information about the author of the workbook template.
         pub author: pulumi_gestalt_rust::Output<Option<String>>,
         /// A `galleries` block as defined below.
@@ -200,6 +203,7 @@ pub mod workbook_template {
         };
         let o = context.register_resource(request);
         WorkbookTemplateResult {
+            id: o.get_field("id"),
             author: o.get_field("author"),
             galleries: o.get_field("galleries"),
             localized: o.get_field("localized"),

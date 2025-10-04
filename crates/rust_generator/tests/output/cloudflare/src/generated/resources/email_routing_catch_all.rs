@@ -56,6 +56,9 @@ pub mod email_routing_catch_all {
     }
     #[allow(dead_code)]
     pub struct EmailRoutingCatchAllResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List actions patterns.
         pub actions: pulumi_gestalt_rust::Output<
             Vec<super::types::EmailRoutingCatchAllAction>,
@@ -118,6 +121,7 @@ pub mod email_routing_catch_all {
         };
         let o = context.register_resource(request);
         EmailRoutingCatchAllResult {
+            id: o.get_field("id"),
             actions: o.get_field("actions"),
             enabled: o.get_field("enabled"),
             matchers: o.get_field("matchers"),

@@ -86,6 +86,9 @@ pub mod virtual_hub_connection {
     }
     #[allow(dead_code)]
     pub struct VirtualHubConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Should Internet Security be enabled to secure internet traffic? Defaults to `false`.
         pub internet_security_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The Name which should be used for this Connection, which must be unique within the Virtual Hub. Changing this forces a new resource to be created.
@@ -148,6 +151,7 @@ pub mod virtual_hub_connection {
         };
         let o = context.register_resource(request);
         VirtualHubConnectionResult {
+            id: o.get_field("id"),
             internet_security_enabled: o.get_field("internetSecurityEnabled"),
             name: o.get_field("name"),
             remote_virtual_network_id: o.get_field("remoteVirtualNetworkId"),

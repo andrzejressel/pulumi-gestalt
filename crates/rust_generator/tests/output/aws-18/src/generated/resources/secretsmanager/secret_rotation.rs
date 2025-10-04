@@ -62,6 +62,9 @@ pub mod secret_rotation {
     }
     #[allow(dead_code)]
     pub struct SecretRotationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in `rotation_rules`. For secrets that use a Lambda rotation function to rotate, if you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the testSecret step (https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html) of the Lambda rotation function. The test creates an AWSPENDING version of the secret and then removes it. Defaults to `true`.
         pub rotate_immediately: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies whether automatic rotation is enabled for this secret.
@@ -115,6 +118,7 @@ pub mod secret_rotation {
         };
         let o = context.register_resource(request);
         SecretRotationResult {
+            id: o.get_field("id"),
             rotate_immediately: o.get_field("rotateImmediately"),
             rotation_enabled: o.get_field("rotationEnabled"),
             rotation_lambda_arn: o.get_field("rotationLambdaArn"),

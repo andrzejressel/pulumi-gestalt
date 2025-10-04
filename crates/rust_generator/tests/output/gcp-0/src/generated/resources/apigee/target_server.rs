@@ -164,6 +164,9 @@ pub mod target_server {
     }
     #[allow(dead_code)]
     pub struct TargetServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A human-readable description of this TargetServer.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Apigee environment group associated with the Apigee environment,
@@ -249,6 +252,7 @@ pub mod target_server {
         };
         let o = context.register_resource(request);
         TargetServerResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             env_id: o.get_field("envId"),
             host: o.get_field("host"),

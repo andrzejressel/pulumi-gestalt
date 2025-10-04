@@ -99,6 +99,9 @@ pub mod router_interface {
     }
     #[allow(dead_code)]
     pub struct RouterInterfaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name or resource link to the
         /// VLAN interconnect for this interface. Changing this forces a new interface to
         /// be created. Only one of `vpn_tunnel`, `interconnect_attachment` or `subnetwork` can be specified.
@@ -215,6 +218,7 @@ pub mod router_interface {
         };
         let o = context.register_resource(request);
         RouterInterfaceResult {
+            id: o.get_field("id"),
             interconnect_attachment: o.get_field("interconnectAttachment"),
             ip_range: o.get_field("ipRange"),
             ip_version: o.get_field("ipVersion"),

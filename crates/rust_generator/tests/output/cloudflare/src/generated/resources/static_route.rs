@@ -64,6 +64,9 @@ pub mod static_route {
     }
     #[allow(dead_code)]
     pub struct StaticRouteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// List of Cloudflare colocation regions for this static route.
@@ -141,6 +144,7 @@ pub mod static_route {
         };
         let o = context.register_resource(request);
         StaticRouteResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             colo_names: o.get_field("coloNames"),
             colo_regions: o.get_field("coloRegions"),

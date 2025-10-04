@@ -45,6 +45,9 @@ pub mod hostname_tls_setting_ciphers {
     }
     #[allow(dead_code)]
     pub struct HostnameTlsSettingCiphersResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub created_at: pulumi_gestalt_rust::Output<String>,
         /// Hostname that belongs to this zone name. **Modifying this attribute will force creation of a new resource.**
         pub hostname: pulumi_gestalt_rust::Output<String>,
@@ -97,6 +100,7 @@ pub mod hostname_tls_setting_ciphers {
         };
         let o = context.register_resource(request);
         HostnameTlsSettingCiphersResult {
+            id: o.get_field("id"),
             created_at: o.get_field("createdAt"),
             hostname: o.get_field("hostname"),
             ports: o.get_field("ports"),

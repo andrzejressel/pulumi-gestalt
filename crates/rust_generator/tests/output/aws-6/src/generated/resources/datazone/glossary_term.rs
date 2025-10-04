@@ -121,6 +121,9 @@ pub mod glossary_term {
     }
     #[allow(dead_code)]
     pub struct GlossaryTermResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Time of glossary term creation.
         pub created_at: pulumi_gestalt_rust::Output<String>,
         /// Creator of glossary term.
@@ -207,6 +210,7 @@ pub mod glossary_term {
         };
         let o = context.register_resource(request);
         GlossaryTermResult {
+            id: o.get_field("id"),
             created_at: o.get_field("createdAt"),
             created_by: o.get_field("createdBy"),
             domain_identifier: o.get_field("domainIdentifier"),

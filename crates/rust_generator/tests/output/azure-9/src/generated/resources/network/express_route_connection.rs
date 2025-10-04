@@ -145,6 +145,9 @@ pub mod express_route_connection {
     }
     #[allow(dead_code)]
     pub struct ExpressRouteConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The authorization key to establish the Express Route Connection.
         pub authorization_key: pulumi_gestalt_rust::Output<Option<String>>,
         /// Is Internet security enabled for this Express Route Connection?
@@ -243,6 +246,7 @@ pub mod express_route_connection {
         };
         let o = context.register_resource(request);
         ExpressRouteConnectionResult {
+            id: o.get_field("id"),
             authorization_key: o.get_field("authorizationKey"),
             enable_internet_security: o.get_field("enableInternetSecurity"),
             express_route_circuit_peering_id: o

@@ -67,6 +67,9 @@ pub mod data_connector_iot {
     }
     #[allow(dead_code)]
     pub struct DataConnectorIotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Log Analytics Workspace that this Iot Data Connector resides in. Changing this forces a new Iot Data Connector to be created.
         pub log_analytics_workspace_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Iot Data Connector. Changing this forces a new Iot Data Connector to be created.
@@ -111,6 +114,7 @@ pub mod data_connector_iot {
         };
         let o = context.register_resource(request);
         DataConnectorIotResult {
+            id: o.get_field("id"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             name: o.get_field("name"),
             subscription_id: o.get_field("subscriptionId"),

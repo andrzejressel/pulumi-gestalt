@@ -49,6 +49,9 @@ pub mod resource_group_template_deployment {
     }
     #[allow(dead_code)]
     pub struct ResourceGroupTemplateDeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Debug Level which should be used for this Resource Group Template Deployment. Possible values are `none`, `requestContent`, `responseContent` and `requestContent, responseContent`.
         pub debug_level: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Deployment Mode for this Resource Group Template Deployment. Possible values are `Complete` (where resources in the Resource Group not specified in the ARM Template will be destroyed) and `Incremental` (where resources are additive only).
@@ -137,6 +140,7 @@ pub mod resource_group_template_deployment {
         };
         let o = context.register_resource(request);
         ResourceGroupTemplateDeploymentResult {
+            id: o.get_field("id"),
             debug_level: o.get_field("debugLevel"),
             deployment_mode: o.get_field("deploymentMode"),
             name: o.get_field("name"),

@@ -171,6 +171,9 @@ pub mod insight {
     }
     #[allow(dead_code)]
     pub struct InsightResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the insight.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A configuration block including one or more (up to 10 distinct) attributes used to filter the findings included in the insight. The insight only includes findings that match criteria defined in the filters. See filters below for more details.
@@ -217,6 +220,7 @@ pub mod insight {
         };
         let o = context.register_resource(request);
         InsightResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             filters: o.get_field("filters"),
             group_by_attribute: o.get_field("groupByAttribute"),

@@ -91,6 +91,9 @@ pub mod vpc_endpoint_service {
     }
     #[allow(dead_code)]
     pub struct VpcEndpointServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether or not VPC endpoint connection requests to the service must be accepted by the service owner - `true` or `false`.
         pub acceptance_required: pulumi_gestalt_rust::Output<bool>,
         /// The ARNs of one or more principals allowed to discover the endpoint service.
@@ -198,6 +201,7 @@ pub mod vpc_endpoint_service {
         };
         let o = context.register_resource(request);
         VpcEndpointServiceResult {
+            id: o.get_field("id"),
             acceptance_required: o.get_field("acceptanceRequired"),
             allowed_principals: o.get_field("allowedPrincipals"),
             arn: o.get_field("arn"),

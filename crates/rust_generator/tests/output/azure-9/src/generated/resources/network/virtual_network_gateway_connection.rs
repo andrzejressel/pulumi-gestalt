@@ -354,6 +354,9 @@ pub mod virtual_network_gateway_connection {
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkGatewayConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The authorization key associated with the Express Route Circuit. This field is required only if the type is an ExpressRoute connection.
         pub authorization_key: pulumi_gestalt_rust::Output<Option<String>>,
         /// Connection mode to use. Possible values are `Default`, `InitiatorOnly` and `ResponderOnly`. Defaults to `Default`. Changing this value will force a resource to be created.
@@ -590,6 +593,7 @@ pub mod virtual_network_gateway_connection {
         };
         let o = context.register_resource(request);
         VirtualNetworkGatewayConnectionResult {
+            id: o.get_field("id"),
             authorization_key: o.get_field("authorizationKey"),
             connection_mode: o.get_field("connectionMode"),
             connection_protocol: o.get_field("connectionProtocol"),

@@ -59,6 +59,9 @@ pub mod service_identity {
     }
     #[allow(dead_code)]
     pub struct ServiceIdentityResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The email address of the Google managed service account.
         pub email: pulumi_gestalt_rust::Output<String>,
         /// The Identity of the Google managed service account in the form 'serviceAccount:{email}'. This value is often used to refer to the service account in order to grant IAM permissions.
@@ -101,6 +104,7 @@ pub mod service_identity {
         };
         let o = context.register_resource(request);
         ServiceIdentityResult {
+            id: o.get_field("id"),
             email: o.get_field("email"),
             member: o.get_field("member"),
             project: o.get_field("project"),

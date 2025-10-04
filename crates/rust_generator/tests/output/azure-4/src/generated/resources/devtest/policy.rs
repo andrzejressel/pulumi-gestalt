@@ -79,6 +79,9 @@ pub mod policy {
     }
     #[allow(dead_code)]
     pub struct PolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description for the Policy.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Evaluation Type used for this Policy. Possible values include: 'AllowedValuesPolicy', 'MaxValuePolicy'. Changing this forces a new resource to be created.
@@ -165,6 +168,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             evaluator_type: o.get_field("evaluatorType"),
             fact_data: o.get_field("factData"),

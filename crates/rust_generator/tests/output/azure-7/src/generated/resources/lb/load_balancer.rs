@@ -88,6 +88,9 @@ pub mod load_balancer {
     }
     #[allow(dead_code)]
     pub struct LoadBalancerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Edge Zone within the Azure Region where this Load Balancer should exist. Changing this forces a new Load Balancer to be created.
         pub edge_zone: pulumi_gestalt_rust::Output<Option<String>>,
         /// One or more `frontend_ip_configuration` blocks as documented below.
@@ -177,6 +180,7 @@ pub mod load_balancer {
         };
         let o = context.register_resource(request);
         LoadBalancerResult {
+            id: o.get_field("id"),
             edge_zone: o.get_field("edgeZone"),
             frontend_ip_configurations: o.get_field("frontendIpConfigurations"),
             location: o.get_field("location"),

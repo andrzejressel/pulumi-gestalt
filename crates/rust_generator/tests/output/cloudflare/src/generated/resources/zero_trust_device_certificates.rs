@@ -40,6 +40,9 @@ pub mod zero_trust_device_certificates {
     }
     #[allow(dead_code)]
     pub struct ZeroTrustDeviceCertificatesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// `true` if certificate generation is enabled.
         pub enabled: pulumi_gestalt_rust::Output<bool>,
         /// The zone identifier to target for the resource.
@@ -76,6 +79,7 @@ pub mod zero_trust_device_certificates {
         };
         let o = context.register_resource(request);
         ZeroTrustDeviceCertificatesResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
             zone_id: o.get_field("zoneId"),
         }

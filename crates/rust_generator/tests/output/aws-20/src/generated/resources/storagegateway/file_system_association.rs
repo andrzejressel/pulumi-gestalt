@@ -124,6 +124,9 @@ pub mod file_system_association {
     }
     #[allow(dead_code)]
     pub struct FileSystemAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the newly created file system association.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the storage used for the audit logs.
@@ -209,6 +212,7 @@ pub mod file_system_association {
         };
         let o = context.register_resource(request);
         FileSystemAssociationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             audit_destination_arn: o.get_field("auditDestinationArn"),
             cache_attributes: o.get_field("cacheAttributes"),

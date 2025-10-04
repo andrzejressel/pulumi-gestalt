@@ -140,6 +140,9 @@ pub mod agent_agent {
     }
     #[allow(dead_code)]
     pub struct AgentAgentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the agent.
         pub agent_arn: pulumi_gestalt_rust::Output<String>,
         /// Agents collaboration role. Valid values: `SUPERVISOR`, `SUPERVISOR_ROUTER`, `DISABLED`.
@@ -290,6 +293,7 @@ pub mod agent_agent {
         };
         let o = context.register_resource(request);
         AgentAgentResult {
+            id: o.get_field("id"),
             agent_arn: o.get_field("agentArn"),
             agent_collaboration: o.get_field("agentCollaboration"),
             agent_id: o.get_field("agentId"),

@@ -43,6 +43,9 @@ pub mod account {
     }
     #[allow(dead_code)]
     pub struct AccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether 2FA is enforced on the account. Defaults to `false`.
         pub enforce_twofactor: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The name of the account that is displayed in the Cloudflare dashboard.
@@ -85,6 +88,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
+            id: o.get_field("id"),
             enforce_twofactor: o.get_field("enforceTwofactor"),
             name: o.get_field("name"),
             type_: o.get_field("type"),

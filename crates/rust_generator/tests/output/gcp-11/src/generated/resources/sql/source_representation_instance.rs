@@ -134,6 +134,9 @@ pub mod source_representation_instance {
     }
     #[allow(dead_code)]
     pub struct SourceRepresentationInstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The CA certificate on the external server. Include only if SSL/TLS is used on the external server.
         pub ca_certificate: pulumi_gestalt_rust::Output<Option<String>>,
         /// The client certificate on the external server. Required only for server-client authentication. Include only if SSL/TLS is used on the external server.
@@ -248,6 +251,7 @@ pub mod source_representation_instance {
         };
         let o = context.register_resource(request);
         SourceRepresentationInstanceResult {
+            id: o.get_field("id"),
             ca_certificate: o.get_field("caCertificate"),
             client_certificate: o.get_field("clientCertificate"),
             client_key: o.get_field("clientKey"),

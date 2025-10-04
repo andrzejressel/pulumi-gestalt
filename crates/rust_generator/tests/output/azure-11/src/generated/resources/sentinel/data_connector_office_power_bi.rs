@@ -69,6 +69,9 @@ pub mod data_connector_office_power_bi {
     }
     #[allow(dead_code)]
     pub struct DataConnectorOfficePowerBiResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Log Analytics Workspace that this Office Power BI Data Connector resides in. Changing this forces a new Office Power BI Data Connector to be created.
         pub log_analytics_workspace_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Office Power BI Data Connector. Changing this forces a new Office Power BI Data Connector to be created.
@@ -116,6 +119,7 @@ pub mod data_connector_office_power_bi {
         };
         let o = context.register_resource(request);
         DataConnectorOfficePowerBiResult {
+            id: o.get_field("id"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             name: o.get_field("name"),
             tenant_id: o.get_field("tenantId"),

@@ -119,6 +119,9 @@ pub mod network_interface {
     }
     #[allow(dead_code)]
     pub struct NetworkInterfaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Should Accelerated Networking be enabled? Defaults to `false`.
         ///
         /// > **Note:** Only certain Virtual Machine sizes are supported for Accelerated Networking - [more information can be found in this document](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli).
@@ -256,6 +259,7 @@ pub mod network_interface {
         };
         let o = context.register_resource(request);
         NetworkInterfaceResult {
+            id: o.get_field("id"),
             accelerated_networking_enabled: o.get_field("acceleratedNetworkingEnabled"),
             applied_dns_servers: o.get_field("appliedDnsServers"),
             auxiliary_mode: o.get_field("auxiliaryMode"),

@@ -168,6 +168,9 @@ pub mod cx_test_case {
     }
     #[allow(dead_code)]
     pub struct CxTestCaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// When the test was created. A timestamp in RFC3339 text format.
         pub creation_time: pulumi_gestalt_rust::Output<String>,
         /// The human-readable name of the test case, unique within the agent. Limit of 200 characters.
@@ -256,6 +259,7 @@ pub mod cx_test_case {
         };
         let o = context.register_resource(request);
         CxTestCaseResult {
+            id: o.get_field("id"),
             creation_time: o.get_field("creationTime"),
             display_name: o.get_field("displayName"),
             last_test_results: o.get_field("lastTestResults"),

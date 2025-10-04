@@ -132,6 +132,9 @@ pub mod classifier {
     }
     #[allow(dead_code)]
     pub struct ClassifierResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A classifier for CSV content. Defined below.
         pub csv_classifier: pulumi_gestalt_rust::Output<
             Option<super::super::types::glue::ClassifierCsvClassifier>,
@@ -196,6 +199,7 @@ pub mod classifier {
         };
         let o = context.register_resource(request);
         ClassifierResult {
+            id: o.get_field("id"),
             csv_classifier: o.get_field("csvClassifier"),
             grok_classifier: o.get_field("grokClassifier"),
             json_classifier: o.get_field("jsonClassifier"),

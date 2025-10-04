@@ -68,6 +68,9 @@ pub mod trust_provider {
     }
     #[allow(dead_code)]
     pub struct TrustProviderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description for the AWS Verified Access trust provider.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// A block of options for device identity based trust providers.
@@ -162,6 +165,7 @@ pub mod trust_provider {
         };
         let o = context.register_resource(request);
         TrustProviderResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             device_options: o.get_field("deviceOptions"),
             device_trust_provider_type: o.get_field("deviceTrustProviderType"),

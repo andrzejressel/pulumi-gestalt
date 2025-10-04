@@ -180,6 +180,9 @@ pub mod key_handle {
     }
     #[allow(dead_code)]
     pub struct KeyHandleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A reference to a Cloud KMS CryptoKey that can be used for CMEK in the requested
         /// product/project/location, for example
         /// `projects/1/locations/us-east1/keyRings/foo/cryptoKeys/bar-ffffff`
@@ -241,6 +244,7 @@ pub mod key_handle {
         };
         let o = context.register_resource(request);
         KeyHandleResult {
+            id: o.get_field("id"),
             kms_key: o.get_field("kmsKey"),
             location: o.get_field("location"),
             name: o.get_field("name"),

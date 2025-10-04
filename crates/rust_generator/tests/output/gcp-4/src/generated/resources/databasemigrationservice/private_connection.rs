@@ -90,6 +90,9 @@ pub mod private_connection {
     }
     #[allow(dead_code)]
     pub struct PrivateConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Display name.
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
@@ -180,6 +183,7 @@ pub mod private_connection {
         };
         let o = context.register_resource(request);
         PrivateConnectionResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             effective_labels: o.get_field("effectiveLabels"),
             errors: o.get_field("errors"),

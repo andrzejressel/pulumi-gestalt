@@ -77,6 +77,9 @@ pub mod product {
     }
     #[allow(dead_code)]
     pub struct ProductResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         pub accept_language: pulumi_gestalt_rust::Output<Option<String>>,
         /// ARN of the product.
@@ -195,6 +198,7 @@ pub mod product {
         };
         let o = context.register_resource(request);
         ProductResult {
+            id: o.get_field("id"),
             accept_language: o.get_field("acceptLanguage"),
             arn: o.get_field("arn"),
             created_time: o.get_field("createdTime"),

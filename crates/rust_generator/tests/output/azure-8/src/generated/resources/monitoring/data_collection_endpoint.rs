@@ -65,6 +65,9 @@ pub mod data_collection_endpoint {
     }
     #[allow(dead_code)]
     pub struct DataCollectionEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The endpoint used for accessing configuration, e.g., `https://mydce-abcd.eastus-1.control.monitor.azure.com`.
         pub configuration_access_endpoint: pulumi_gestalt_rust::Output<String>,
         /// Specifies a description for the Data Collection Endpoint.
@@ -146,6 +149,7 @@ pub mod data_collection_endpoint {
         };
         let o = context.register_resource(request);
         DataCollectionEndpointResult {
+            id: o.get_field("id"),
             configuration_access_endpoint: o.get_field("configurationAccessEndpoint"),
             description: o.get_field("description"),
             immutable_id: o.get_field("immutableId"),

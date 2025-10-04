@@ -48,6 +48,9 @@ pub mod monitor {
     }
     #[allow(dead_code)]
     pub struct MonitorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either 30 or 60.
         pub aggregation_period: pulumi_gestalt_rust::Output<i32>,
         /// The ARN of the monitor.
@@ -100,6 +103,7 @@ pub mod monitor {
         };
         let o = context.register_resource(request);
         MonitorResult {
+            id: o.get_field("id"),
             aggregation_period: o.get_field("aggregationPeriod"),
             arn: o.get_field("arn"),
             monitor_name: o.get_field("monitorName"),

@@ -72,6 +72,9 @@ pub mod volume {
     }
     #[allow(dead_code)]
     pub struct VolumeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Driver type for the volume. Defaults to `local`.
         pub driver: pulumi_gestalt_rust::Output<String>,
         /// Options specific to the driver.
@@ -125,6 +128,7 @@ pub mod volume {
         };
         let o = context.register_resource(request);
         VolumeResult {
+            id: o.get_field("id"),
             driver: o.get_field("driver"),
             driver_opts: o.get_field("driverOpts"),
             labels: o.get_field("labels"),

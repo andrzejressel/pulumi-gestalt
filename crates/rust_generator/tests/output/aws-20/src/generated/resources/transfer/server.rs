@@ -283,6 +283,9 @@ pub mod server {
     }
     #[allow(dead_code)]
     pub struct ServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of Transfer Server
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. This is required when `protocols` is set to `FTPS`
@@ -512,6 +515,7 @@ pub mod server {
         };
         let o = context.register_resource(request);
         ServerResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             certificate: o.get_field("certificate"),
             directory_id: o.get_field("directoryId"),

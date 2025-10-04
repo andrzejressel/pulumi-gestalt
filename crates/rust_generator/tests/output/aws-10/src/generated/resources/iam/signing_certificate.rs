@@ -60,6 +60,9 @@ pub mod signing_certificate {
     }
     #[allow(dead_code)]
     pub struct SigningCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The contents of the signing certificate in PEM-encoded format.
         pub certificate_body: pulumi_gestalt_rust::Output<String>,
         /// The ID for the signing certificate.
@@ -104,6 +107,7 @@ pub mod signing_certificate {
         };
         let o = context.register_resource(request);
         SigningCertificateResult {
+            id: o.get_field("id"),
             certificate_body: o.get_field("certificateBody"),
             certificate_id: o.get_field("certificateId"),
             status: o.get_field("status"),

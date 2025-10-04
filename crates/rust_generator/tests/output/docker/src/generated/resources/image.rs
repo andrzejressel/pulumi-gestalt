@@ -161,6 +161,9 @@ pub mod image {
     }
     #[allow(dead_code)]
     pub struct ImageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The fully qualified image name that was pushed to the registry.
         pub base_image_name: pulumi_gestalt_rust::Output<String>,
         /// The path to the build context to use.
@@ -227,6 +230,7 @@ pub mod image {
         };
         let o = context.register_resource(request);
         ImageResult {
+            id: o.get_field("id"),
             base_image_name: o.get_field("baseImageName"),
             context: o.get_field("context"),
             dockerfile: o.get_field("dockerfile"),

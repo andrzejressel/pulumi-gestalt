@@ -60,6 +60,9 @@ pub mod device {
     }
     #[allow(dead_code)]
     pub struct DeviceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `device_properties` block as defined below.
         pub device_properties: pulumi_gestalt_rust::Output<
             Vec<super::super::types::databoxedge::DeviceDeviceProperty>,
@@ -122,6 +125,7 @@ pub mod device {
         };
         let o = context.register_resource(request);
         DeviceResult {
+            id: o.get_field("id"),
             device_properties: o.get_field("deviceProperties"),
             location: o.get_field("location"),
             name: o.get_field("name"),

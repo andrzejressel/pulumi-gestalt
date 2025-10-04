@@ -46,6 +46,9 @@ pub mod human_task_ui {
     }
     #[allow(dead_code)]
     pub struct HumanTaskUIResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Human Task UI.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Human Task UI.
@@ -98,6 +101,7 @@ pub mod human_task_ui {
         };
         let o = context.register_resource(request);
         HumanTaskUIResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             human_task_ui_name: o.get_field("humanTaskUiName"),
             tags: o.get_field("tags"),

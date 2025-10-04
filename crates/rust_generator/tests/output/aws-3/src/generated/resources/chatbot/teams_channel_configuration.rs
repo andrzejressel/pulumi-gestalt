@@ -84,6 +84,9 @@ pub mod teams_channel_configuration {
     }
     #[allow(dead_code)]
     pub struct TeamsChannelConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the Microsoft Teams channel.
         pub channel_id: pulumi_gestalt_rust::Output<String>,
         /// Name of the Microsoft Teams channel.
@@ -212,6 +215,7 @@ pub mod teams_channel_configuration {
         };
         let o = context.register_resource(request);
         TeamsChannelConfigurationResult {
+            id: o.get_field("id"),
             channel_id: o.get_field("channelId"),
             channel_name: o.get_field("channelName"),
             chat_configuration_arn: o.get_field("chatConfigurationArn"),

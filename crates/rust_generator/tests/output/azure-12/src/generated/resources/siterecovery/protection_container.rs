@@ -66,6 +66,9 @@ pub mod protection_container {
     }
     #[allow(dead_code)]
     pub struct ProtectionContainerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the protection container. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Name of fabric that should contain this protection container. Changing this forces a new resource to be created.
@@ -115,6 +118,7 @@ pub mod protection_container {
         };
         let o = context.register_resource(request);
         ProtectionContainerResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             recovery_fabric_name: o.get_field("recoveryFabricName"),
             recovery_vault_name: o.get_field("recoveryVaultName"),

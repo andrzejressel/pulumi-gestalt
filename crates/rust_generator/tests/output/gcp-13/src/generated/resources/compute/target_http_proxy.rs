@@ -229,6 +229,9 @@ pub mod target_http_proxy {
     }
     #[allow(dead_code)]
     pub struct TargetHttpProxyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp in RFC3339 text format.
         pub creation_timestamp: pulumi_gestalt_rust::Output<String>,
         /// An optional description of this resource.
@@ -320,6 +323,7 @@ pub mod target_http_proxy {
         };
         let o = context.register_resource(request);
         TargetHttpProxyResult {
+            id: o.get_field("id"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),
             http_keep_alive_timeout_sec: o.get_field("httpKeepAliveTimeoutSec"),

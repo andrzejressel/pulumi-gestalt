@@ -86,6 +86,9 @@ pub mod scheduled_action {
     }
     #[allow(dead_code)]
     pub struct ScheduledActionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// UTC day on which cost analysis data will be emailed. Must be between `1` and `31`. This property is applicable when `frequency` is `Monthly`.
         pub day_of_month: pulumi_gestalt_rust::Output<Option<i32>>,
         /// Specifies a list of day names on which cost analysis data will be emailed. This property is applicable when frequency is `Weekly` or `Monthly`. Possible values are `Friday`, `Monday`, `Saturday`, `Sunday`, `Thursday`, `Tuesday` and `Wednesday`.
@@ -205,6 +208,7 @@ pub mod scheduled_action {
         };
         let o = context.register_resource(request);
         ScheduledActionResult {
+            id: o.get_field("id"),
             day_of_month: o.get_field("dayOfMonth"),
             days_of_weeks: o.get_field("daysOfWeeks"),
             display_name: o.get_field("displayName"),

@@ -174,6 +174,9 @@ pub mod job_iam_policy {
     }
     #[allow(dead_code)]
     pub struct JobIAMPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the jobs's IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
         pub job_id: pulumi_gestalt_rust::Output<String>,
@@ -228,6 +231,7 @@ pub mod job_iam_policy {
         };
         let o = context.register_resource(request);
         JobIAMPolicyResult {
+            id: o.get_field("id"),
             etag: o.get_field("etag"),
             job_id: o.get_field("jobId"),
             policy_data: o.get_field("policyData"),

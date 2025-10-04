@@ -101,6 +101,9 @@ pub mod usage_export_bucket {
     }
     #[allow(dead_code)]
     pub struct UsageExportBucketResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The bucket to store reports in.
         pub bucket_name: pulumi_gestalt_rust::Output<String>,
         /// A prefix for the reports, for instance, the project name.
@@ -143,6 +146,7 @@ pub mod usage_export_bucket {
         };
         let o = context.register_resource(request);
         UsageExportBucketResult {
+            id: o.get_field("id"),
             bucket_name: o.get_field("bucketName"),
             prefix: o.get_field("prefix"),
             project: o.get_field("project"),

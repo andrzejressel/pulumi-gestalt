@@ -46,6 +46,9 @@ pub mod table_bucket {
     }
     #[allow(dead_code)]
     pub struct TableBucketResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the table bucket.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Date and time when the bucket was created.
@@ -97,6 +100,7 @@ pub mod table_bucket {
         };
         let o = context.register_resource(request);
         TableBucketResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_at: o.get_field("createdAt"),
             maintenance_configuration: o.get_field("maintenanceConfiguration"),

@@ -43,6 +43,9 @@ pub mod saml_provider {
     }
     #[allow(dead_code)]
     pub struct SamlProviderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN assigned by AWS for this provider.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the provider to create.
@@ -97,6 +100,7 @@ pub mod saml_provider {
         };
         let o = context.register_resource(request);
         SamlProviderResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             saml_metadata_document: o.get_field("samlMetadataDocument"),

@@ -61,6 +61,9 @@ pub mod directory {
     }
     #[allow(dead_code)]
     pub struct DirectoryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The type of billing for the AAD B2C tenant. Possible values include: `MAU` or `Auths`.
         pub billing_type: pulumi_gestalt_rust::Output<String>,
         /// Country code of the B2C tenant. The `country_code` should be valid for the specified `data_residency_location`. See [official docs](https://aka.ms/B2CDataResidency) for valid country codes. Required when creating a new resource. Changing this forces a new AAD B2C Directory to be created.
@@ -141,6 +144,7 @@ pub mod directory {
         };
         let o = context.register_resource(request);
         DirectoryResult {
+            id: o.get_field("id"),
             billing_type: o.get_field("billingType"),
             country_code: o.get_field("countryCode"),
             data_residency_location: o.get_field("dataResidencyLocation"),

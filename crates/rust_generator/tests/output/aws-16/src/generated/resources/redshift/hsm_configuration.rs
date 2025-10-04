@@ -60,6 +60,9 @@ pub mod hsm_configuration {
     }
     #[allow(dead_code)]
     pub struct HsmConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Hsm Client Certificate.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A text description of the HSM configuration to be created.
@@ -144,6 +147,7 @@ pub mod hsm_configuration {
         };
         let o = context.register_resource(request);
         HsmConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             hsm_configuration_identifier: o.get_field("hsmConfigurationIdentifier"),

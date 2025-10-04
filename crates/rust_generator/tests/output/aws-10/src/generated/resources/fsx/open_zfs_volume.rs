@@ -85,6 +85,9 @@ pub mod open_zfs_volume {
     }
     #[allow(dead_code)]
     pub struct OpenZfsVolumeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name of the file system.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A boolean flag indicating whether tags for the file system should be copied to snapshots. The default value is false.
@@ -229,6 +232,7 @@ pub mod open_zfs_volume {
         };
         let o = context.register_resource(request);
         OpenZfsVolumeResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             copy_tags_to_snapshots: o.get_field("copyTagsToSnapshots"),
             data_compression_type: o.get_field("dataCompressionType"),

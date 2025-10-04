@@ -234,6 +234,9 @@ pub mod stream_processor {
     }
     #[allow(dead_code)]
     pub struct StreamProcessorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// See `data_sharing_preference`.
         pub data_sharing_preference: pulumi_gestalt_rust::Output<
             Option<
@@ -361,6 +364,7 @@ pub mod stream_processor {
         };
         let o = context.register_resource(request);
         StreamProcessorResult {
+            id: o.get_field("id"),
             data_sharing_preference: o.get_field("dataSharingPreference"),
             input: o.get_field("input"),
             kms_key_id: o.get_field("kmsKeyId"),

@@ -97,6 +97,9 @@ pub mod document {
     }
     #[allow(dead_code)]
     pub struct DocumentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the document.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// One or more configuration blocks describing attachments sources to a version of a document. See `attachments_source` block below for details.
@@ -219,6 +222,7 @@ pub mod document {
         };
         let o = context.register_resource(request);
         DocumentResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             attachments_sources: o.get_field("attachmentsSources"),
             content: o.get_field("content"),

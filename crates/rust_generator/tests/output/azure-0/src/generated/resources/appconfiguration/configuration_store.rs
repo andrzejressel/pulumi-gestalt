@@ -209,6 +209,9 @@ pub mod configuration_store {
     }
     #[allow(dead_code)]
     pub struct ConfigurationStoreResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `encryption` block as defined below.
         pub encryption: pulumi_gestalt_rust::Output<
             Option<super::super::types::appconfiguration::ConfigurationStoreEncryption>,
@@ -358,6 +361,7 @@ pub mod configuration_store {
         };
         let o = context.register_resource(request);
         ConfigurationStoreResult {
+            id: o.get_field("id"),
             encryption: o.get_field("encryption"),
             endpoint: o.get_field("endpoint"),
             identity: o.get_field("identity"),

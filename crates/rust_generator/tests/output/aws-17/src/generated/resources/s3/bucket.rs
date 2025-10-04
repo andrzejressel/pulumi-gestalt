@@ -441,6 +441,9 @@ pub mod bucket {
     }
     #[allow(dead_code)]
     pub struct BucketResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Sets the accelerate configuration of an existing bucket. Can be `Enabled` or `Suspended`.
         pub acceleration_status: pulumi_gestalt_rust::Output<String>,
         /// The [canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl) to apply. Valid values are `private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, and `log-delivery-write`. Defaults to `private`.  Conflicts with `grant`.
@@ -650,6 +653,7 @@ pub mod bucket {
         };
         let o = context.register_resource(request);
         BucketResult {
+            id: o.get_field("id"),
             acceleration_status: o.get_field("accelerationStatus"),
             acl: o.get_field("acl"),
             arn: o.get_field("arn"),

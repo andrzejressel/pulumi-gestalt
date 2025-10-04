@@ -172,6 +172,9 @@ pub mod document {
     }
     #[allow(dead_code)]
     pub struct DocumentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The collection ID, relative to database. For example: chatrooms or chatrooms/my-document/private-messages.
         pub collection: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp in RFC3339 format.
@@ -241,6 +244,7 @@ pub mod document {
         };
         let o = context.register_resource(request);
         DocumentResult {
+            id: o.get_field("id"),
             collection: o.get_field("collection"),
             create_time: o.get_field("createTime"),
             database: o.get_field("database"),

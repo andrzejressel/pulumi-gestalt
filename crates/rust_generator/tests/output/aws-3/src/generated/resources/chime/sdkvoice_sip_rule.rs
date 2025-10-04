@@ -62,6 +62,9 @@ pub mod sdkvoice_sip_rule {
     }
     #[allow(dead_code)]
     pub struct SdkvoiceSipRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Enables or disables a rule. You must disable rules before you can delete them.
         pub disabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The name of the SIP rule.
@@ -122,6 +125,7 @@ pub mod sdkvoice_sip_rule {
         };
         let o = context.register_resource(request);
         SdkvoiceSipRuleResult {
+            id: o.get_field("id"),
             disabled: o.get_field("disabled"),
             name: o.get_field("name"),
             target_applications: o.get_field("targetApplications"),

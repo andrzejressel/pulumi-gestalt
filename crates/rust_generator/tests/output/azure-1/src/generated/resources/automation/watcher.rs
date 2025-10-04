@@ -106,6 +106,9 @@ pub mod watcher {
     }
     #[allow(dead_code)]
     pub struct WatcherResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of Automation Account to manage this Watcher. Changing this forces a new Watcher to be created.
         pub automation_account_id: pulumi_gestalt_rust::Output<String>,
         /// A description of this Automation Watcher.
@@ -207,6 +210,7 @@ pub mod watcher {
         };
         let o = context.register_resource(request);
         WatcherResult {
+            id: o.get_field("id"),
             automation_account_id: o.get_field("automationAccountId"),
             description: o.get_field("description"),
             etag: o.get_field("etag"),

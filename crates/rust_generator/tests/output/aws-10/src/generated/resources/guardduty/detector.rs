@@ -83,6 +83,9 @@ pub mod detector {
     }
     #[allow(dead_code)]
     pub struct DetectorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AWS account ID of the GuardDuty detector
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the GuardDuty detector
@@ -146,6 +149,7 @@ pub mod detector {
         };
         let o = context.register_resource(request);
         DetectorResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             arn: o.get_field("arn"),
             datasources: o.get_field("datasources"),

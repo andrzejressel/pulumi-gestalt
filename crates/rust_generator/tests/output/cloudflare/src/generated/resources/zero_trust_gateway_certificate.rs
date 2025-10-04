@@ -24,6 +24,9 @@ pub mod zero_trust_gateway_certificate {
     }
     #[allow(dead_code)]
     pub struct ZeroTrustGatewayCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Whether or not to activate a certificate. A certificate must be activated to use in Gateway certificate settings. Defaults to `false`.
@@ -89,6 +92,7 @@ pub mod zero_trust_gateway_certificate {
         };
         let o = context.register_resource(request);
         ZeroTrustGatewayCertificateResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             activate: o.get_field("activate"),
             binding_status: o.get_field("bindingStatus"),

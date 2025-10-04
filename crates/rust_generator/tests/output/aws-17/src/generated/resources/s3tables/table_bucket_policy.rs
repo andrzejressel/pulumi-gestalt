@@ -47,6 +47,9 @@ pub mod table_bucket_policy {
     }
     #[allow(dead_code)]
     pub struct TableBucketPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Web Services resource-based policy document in JSON format.
         pub resource_policy: pulumi_gestalt_rust::Output<String>,
         /// ARN referencing the Table Bucket that owns this policy.
@@ -82,6 +85,7 @@ pub mod table_bucket_policy {
         };
         let o = context.register_resource(request);
         TableBucketPolicyResult {
+            id: o.get_field("id"),
             resource_policy: o.get_field("resourcePolicy"),
             table_bucket_arn: o.get_field("tableBucketArn"),
         }

@@ -167,6 +167,9 @@ pub mod backup_instance_postgresql {
     }
     #[allow(dead_code)]
     pub struct BackupInstancePostgresqlResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Backup Policy.
         pub backup_policy_id: pulumi_gestalt_rust::Output<String>,
         /// The ID or versionless ID of the key vault secret which stores the connection string of the database.
@@ -235,6 +238,7 @@ pub mod backup_instance_postgresql {
         };
         let o = context.register_resource(request);
         BackupInstancePostgresqlResult {
+            id: o.get_field("id"),
             backup_policy_id: o.get_field("backupPolicyId"),
             database_credential_key_vault_secret_id: o
                 .get_field("databaseCredentialKeyVaultSecretId"),

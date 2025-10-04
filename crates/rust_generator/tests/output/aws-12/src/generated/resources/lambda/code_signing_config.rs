@@ -55,6 +55,9 @@ pub mod code_signing_config {
     }
     #[allow(dead_code)]
     pub struct CodeSigningConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A configuration block of allowed publishers as signing profiles for this code signing configuration. Detailed below.
         pub allowed_publishers: pulumi_gestalt_rust::Output<
             super::super::types::lambda::CodeSigningConfigAllowedPublishers,
@@ -120,6 +123,7 @@ pub mod code_signing_config {
         };
         let o = context.register_resource(request);
         CodeSigningConfigResult {
+            id: o.get_field("id"),
             allowed_publishers: o.get_field("allowedPublishers"),
             arn: o.get_field("arn"),
             config_id: o.get_field("configId"),

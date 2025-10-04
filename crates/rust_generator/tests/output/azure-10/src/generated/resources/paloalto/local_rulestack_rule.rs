@@ -134,6 +134,9 @@ pub mod local_rulestack_rule {
     }
     #[allow(dead_code)]
     pub struct LocalRulestackRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The action to take on the rule being triggered. Possible values are `Allow`, `DenyResetBoth`, `DenyResetServer` and `DenySilent`.
         pub action: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of Applications.
@@ -302,6 +305,7 @@ pub mod local_rulestack_rule {
         };
         let o = context.register_resource(request);
         LocalRulestackRuleResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             applications: o.get_field("applications"),
             audit_comment: o.get_field("auditComment"),

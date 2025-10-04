@@ -79,6 +79,9 @@ pub mod log_resource_policy {
     }
     #[allow(dead_code)]
     pub struct LogResourcePolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Details of the resource policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. Maximum length of 5120 characters.
         pub policy_document: pulumi_gestalt_rust::Output<String>,
         /// Name of the resource policy.
@@ -114,6 +117,7 @@ pub mod log_resource_policy {
         };
         let o = context.register_resource(request);
         LogResourcePolicyResult {
+            id: o.get_field("id"),
             policy_document: o.get_field("policyDocument"),
             policy_name: o.get_field("policyName"),
         }

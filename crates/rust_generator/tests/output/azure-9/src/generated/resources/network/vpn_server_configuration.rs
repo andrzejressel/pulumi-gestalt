@@ -104,6 +104,9 @@ pub mod vpn_server_configuration {
     }
     #[allow(dead_code)]
     pub struct VpnServerConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub azure_active_directory_authentications: pulumi_gestalt_rust::Output<
             Option<
                 Vec<
@@ -230,6 +233,7 @@ pub mod vpn_server_configuration {
         };
         let o = context.register_resource(request);
         VpnServerConfigurationResult {
+            id: o.get_field("id"),
             azure_active_directory_authentications: o
                 .get_field("azureActiveDirectoryAuthentications"),
             client_revoked_certificates: o.get_field("clientRevokedCertificates"),

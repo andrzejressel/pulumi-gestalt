@@ -27,6 +27,9 @@ pub mod web_acl_association {
     }
     #[allow(dead_code)]
     pub struct WebAclAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the resource to associate with the web ACL. This must be an ARN of an Application Load Balancer, an Amazon API Gateway stage (REST only, HTTP is unsupported), an Amazon Cognito User Pool, an Amazon AppSync GraphQL API, an Amazon App Runner service, or an Amazon Verified Access instance.
         pub resource_arn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource.
@@ -62,6 +65,7 @@ pub mod web_acl_association {
         };
         let o = context.register_resource(request);
         WebAclAssociationResult {
+            id: o.get_field("id"),
             resource_arn: o.get_field("resourceArn"),
             web_acl_arn: o.get_field("webAclArn"),
         }

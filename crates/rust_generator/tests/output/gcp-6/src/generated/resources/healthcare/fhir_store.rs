@@ -258,6 +258,9 @@ pub mod fhir_store {
     }
     #[allow(dead_code)]
     pub struct FhirStoreResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Enable parsing of references within complex FHIR data types such as Extensions. If this value is set to ENABLED, then features like referential integrity and Bundle reference rewriting apply to all references. If this flag has not been specified the behavior of the FHIR store will not change, references in complex data types will not be parsed. New stores will have this value set to ENABLED by default after a notification period. Warning: turning on this flag causes processing existing resources to fail if they contain references to non-existent resources.
         /// Possible values are: `COMPLEX_DATA_TYPE_REFERENCE_PARSING_UNSPECIFIED`, `DISABLED`, `ENABLED`.
         pub complex_data_type_reference_parsing: pulumi_gestalt_rust::Output<String>,
@@ -460,6 +463,7 @@ pub mod fhir_store {
         };
         let o = context.register_resource(request);
         FhirStoreResult {
+            id: o.get_field("id"),
             complex_data_type_reference_parsing: o
                 .get_field("complexDataTypeReferenceParsing"),
             dataset: o.get_field("dataset"),

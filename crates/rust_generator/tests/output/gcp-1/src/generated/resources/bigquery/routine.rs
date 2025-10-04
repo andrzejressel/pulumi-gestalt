@@ -389,6 +389,9 @@ pub mod routine {
     }
     #[allow(dead_code)]
     pub struct RoutineResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Input/output argument of a function or a stored procedure.
         /// Structure is documented below.
         pub arguments: pulumi_gestalt_rust::Output<
@@ -553,6 +556,7 @@ pub mod routine {
         };
         let o = context.register_resource(request);
         RoutineResult {
+            id: o.get_field("id"),
             arguments: o.get_field("arguments"),
             creation_time: o.get_field("creationTime"),
             data_governance_type: o.get_field("dataGovernanceType"),

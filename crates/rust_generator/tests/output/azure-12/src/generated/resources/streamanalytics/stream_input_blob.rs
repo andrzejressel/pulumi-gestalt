@@ -100,6 +100,9 @@ pub mod stream_input_blob {
     }
     #[allow(dead_code)]
     pub struct StreamInputBlobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The date format. Wherever `{date}` appears in `path_pattern`, the value of this property is used as the date format instead.
         pub date_format: pulumi_gestalt_rust::Output<String>,
         /// The name of the Stream Input Blob. Changing this forces a new resource to be created.
@@ -197,6 +200,7 @@ pub mod stream_input_blob {
         };
         let o = context.register_resource(request);
         StreamInputBlobResult {
+            id: o.get_field("id"),
             date_format: o.get_field("dateFormat"),
             name: o.get_field("name"),
             path_pattern: o.get_field("pathPattern"),

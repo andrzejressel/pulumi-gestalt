@@ -61,6 +61,9 @@ pub mod tag {
     }
     #[allow(dead_code)]
     pub struct TagResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the API Management. Changing this forces a new API Management Tag to be created.
         pub api_management_id: pulumi_gestalt_rust::Output<String>,
         /// The display name of the API Management Tag. Defaults to the `name`.
@@ -103,6 +106,7 @@ pub mod tag {
         };
         let o = context.register_resource(request);
         TagResult {
+            id: o.get_field("id"),
             api_management_id: o.get_field("apiManagementId"),
             display_name: o.get_field("displayName"),
             name: o.get_field("name"),

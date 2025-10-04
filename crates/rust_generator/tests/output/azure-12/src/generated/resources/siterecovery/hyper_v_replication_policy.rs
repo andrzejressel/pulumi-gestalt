@@ -70,6 +70,9 @@ pub mod hyper_v_replication_policy {
     }
     #[allow(dead_code)]
     pub struct HyperVReplicationPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the frequency at which to create application consistent recovery points.
         pub application_consistent_snapshot_frequency_in_hours: pulumi_gestalt_rust::Output<
             i32,
@@ -136,6 +139,7 @@ pub mod hyper_v_replication_policy {
         };
         let o = context.register_resource(request);
         HyperVReplicationPolicyResult {
+            id: o.get_field("id"),
             application_consistent_snapshot_frequency_in_hours: o
                 .get_field("applicationConsistentSnapshotFrequencyInHours"),
             name: o.get_field("name"),

@@ -180,6 +180,9 @@ pub mod linked_service_azure_databricks {
     }
     #[allow(dead_code)]
     pub struct LinkedServiceAzureDatabricksResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Authenticate to ADB via an access token.
         pub access_token: pulumi_gestalt_rust::Output<Option<String>>,
         /// The domain URL of the databricks instance.
@@ -322,6 +325,7 @@ pub mod linked_service_azure_databricks {
         };
         let o = context.register_resource(request);
         LinkedServiceAzureDatabricksResult {
+            id: o.get_field("id"),
             access_token: o.get_field("accessToken"),
             adb_domain: o.get_field("adbDomain"),
             additional_properties: o.get_field("additionalProperties"),

@@ -151,6 +151,9 @@ pub mod policy {
     }
     #[allow(dead_code)]
     pub struct PolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A boolean policy is a constraint that is either enforced or not. Structure is documented
         /// below.
         pub boolean_policy: pulumi_gestalt_rust::Output<
@@ -232,6 +235,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
+            id: o.get_field("id"),
             boolean_policy: o.get_field("booleanPolicy"),
             constraint: o.get_field("constraint"),
             etag: o.get_field("etag"),

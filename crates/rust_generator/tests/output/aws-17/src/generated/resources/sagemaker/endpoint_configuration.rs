@@ -77,6 +77,9 @@ pub mod endpoint_configuration {
     }
     #[allow(dead_code)]
     pub struct EndpointConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this endpoint configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies configuration for how an endpoint performs asynchronous inference.
@@ -182,6 +185,7 @@ pub mod endpoint_configuration {
         };
         let o = context.register_resource(request);
         EndpointConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             async_inference_config: o.get_field("asyncInferenceConfig"),
             data_capture_config: o.get_field("dataCaptureConfig"),

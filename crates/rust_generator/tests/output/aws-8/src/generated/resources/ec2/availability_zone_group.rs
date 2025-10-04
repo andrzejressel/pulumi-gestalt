@@ -41,6 +41,9 @@ pub mod availability_zone_group {
     }
     #[allow(dead_code)]
     pub struct AvailabilityZoneGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the Availability Zone Group.
         pub group_name: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether to enable or disable Availability Zone Group. Valid values: `opted-in` or `not-opted-in`.
@@ -76,6 +79,7 @@ pub mod availability_zone_group {
         };
         let o = context.register_resource(request);
         AvailabilityZoneGroupResult {
+            id: o.get_field("id"),
             group_name: o.get_field("groupName"),
             opt_in_status: o.get_field("optInStatus"),
         }

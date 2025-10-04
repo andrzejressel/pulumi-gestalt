@@ -150,6 +150,9 @@ pub mod crypto_key {
     }
     #[allow(dead_code)]
     pub struct CryptoKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The resource name of the backend environment associated with all CryptoKeyVersions within this CryptoKey.
         /// The resource name is in the format "projects/*/locations/*/ekmConnections/*" and only applies to "EXTERNAL_VPC" keys.
         pub crypto_key_backend: pulumi_gestalt_rust::Output<String>,
@@ -301,6 +304,7 @@ pub mod crypto_key {
         };
         let o = context.register_resource(request);
         CryptoKeyResult {
+            id: o.get_field("id"),
             crypto_key_backend: o.get_field("cryptoKeyBackend"),
             destroy_scheduled_duration: o.get_field("destroyScheduledDuration"),
             effective_labels: o.get_field("effectiveLabels"),

@@ -185,6 +185,9 @@ pub mod flexible_server {
     }
     #[allow(dead_code)]
     pub struct FlexibleServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Administrator login for the MySQL Flexible Server. Required when `create_mode` is `Default`. Changing this forces a new MySQL Flexible Server to be created.
         pub administrator_login: pulumi_gestalt_rust::Output<String>,
         /// The Password associated with the `administrator_login` for the MySQL Flexible Server. Required when `create_mode` is `Default`.
@@ -399,6 +402,7 @@ pub mod flexible_server {
         };
         let o = context.register_resource(request);
         FlexibleServerResult {
+            id: o.get_field("id"),
             administrator_login: o.get_field("administratorLogin"),
             administrator_password: o.get_field("administratorPassword"),
             backup_retention_days: o.get_field("backupRetentionDays"),

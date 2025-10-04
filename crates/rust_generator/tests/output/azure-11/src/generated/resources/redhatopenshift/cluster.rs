@@ -190,6 +190,9 @@ pub mod cluster {
     }
     #[allow(dead_code)]
     pub struct ClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `api_server_profile` block as defined below. Changing this forces a new resource to be created.
         pub api_server_profile: pulumi_gestalt_rust::Output<
             super::super::types::redhatopenshift::ClusterApiServerProfile,
@@ -306,6 +309,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
+            id: o.get_field("id"),
             api_server_profile: o.get_field("apiServerProfile"),
             cluster_profile: o.get_field("clusterProfile"),
             console_url: o.get_field("consoleUrl"),

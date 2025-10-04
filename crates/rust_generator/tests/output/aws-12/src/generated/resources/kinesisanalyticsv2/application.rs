@@ -301,6 +301,9 @@ pub mod application {
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The application's configuration
         pub application_configuration: pulumi_gestalt_rust::Output<
             super::super::types::kinesisanalyticsv2::ApplicationApplicationConfiguration,
@@ -420,6 +423,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
+            id: o.get_field("id"),
             application_configuration: o.get_field("applicationConfiguration"),
             application_mode: o.get_field("applicationMode"),
             arn: o.get_field("arn"),

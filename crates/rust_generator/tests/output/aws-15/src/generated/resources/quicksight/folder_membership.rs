@@ -50,6 +50,9 @@ pub mod folder_membership {
     }
     #[allow(dead_code)]
     pub struct FolderMembershipResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// AWS account ID.
         pub aws_account_id: pulumi_gestalt_rust::Output<String>,
         /// Identifier for the folder.
@@ -101,6 +104,7 @@ pub mod folder_membership {
         };
         let o = context.register_resource(request);
         FolderMembershipResult {
+            id: o.get_field("id"),
             aws_account_id: o.get_field("awsAccountId"),
             folder_id: o.get_field("folderId"),
             member_id: o.get_field("memberId"),

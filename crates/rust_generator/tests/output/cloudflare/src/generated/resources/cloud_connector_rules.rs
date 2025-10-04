@@ -33,6 +33,9 @@ pub mod cloud_connector_rules {
     }
     #[allow(dead_code)]
     pub struct CloudConnectorRulesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of Cloud Connector Rules
         pub rules: pulumi_gestalt_rust::Output<
             Option<Vec<super::types::CloudConnectorRulesRule>>,
@@ -70,6 +73,7 @@ pub mod cloud_connector_rules {
         };
         let o = context.register_resource(request);
         CloudConnectorRulesResult {
+            id: o.get_field("id"),
             rules: o.get_field("rules"),
             zone_id: o.get_field("zoneId"),
         }

@@ -69,6 +69,9 @@ pub mod server {
     }
     #[allow(dead_code)]
     pub struct ServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `customer_managed_key` block as defined below. Changing this forces a new resource to be created.
         pub customer_managed_key: pulumi_gestalt_rust::Output<
             Option<super::super::types::fluidrelay::ServerCustomerManagedKey>,
@@ -157,6 +160,7 @@ pub mod server {
         };
         let o = context.register_resource(request);
         ServerResult {
+            id: o.get_field("id"),
             customer_managed_key: o.get_field("customerManagedKey"),
             frs_tenant_id: o.get_field("frsTenantId"),
             identity: o.get_field("identity"),

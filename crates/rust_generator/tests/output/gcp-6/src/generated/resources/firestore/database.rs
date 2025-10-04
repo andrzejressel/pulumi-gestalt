@@ -291,6 +291,9 @@ pub mod database {
     }
     #[allow(dead_code)]
     pub struct DatabaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The App Engine integration mode to use for this database.
         /// Possible values are: `ENABLED`, `DISABLED`.
         pub app_engine_integration_mode: pulumi_gestalt_rust::Output<String>,
@@ -438,6 +441,7 @@ pub mod database {
         };
         let o = context.register_resource(request);
         DatabaseResult {
+            id: o.get_field("id"),
             app_engine_integration_mode: o.get_field("appEngineIntegrationMode"),
             cmek_config: o.get_field("cmekConfig"),
             concurrency_mode: o.get_field("concurrencyMode"),

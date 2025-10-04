@@ -183,6 +183,9 @@ pub mod cx_agent {
     }
     #[allow(dead_code)]
     pub struct CxAgentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Hierarchical advanced settings for this agent. The settings exposed at the lower level overrides the settings exposed at the higher level.
         /// Hierarchy: Agent->Flow->Page->Fulfillment/Parameter.
         /// Structure is documented below.
@@ -352,6 +355,7 @@ pub mod cx_agent {
         };
         let o = context.register_resource(request);
         CxAgentResult {
+            id: o.get_field("id"),
             advanced_settings: o.get_field("advancedSettings"),
             avatar_uri: o.get_field("avatarUri"),
             default_language_code: o.get_field("defaultLanguageCode"),

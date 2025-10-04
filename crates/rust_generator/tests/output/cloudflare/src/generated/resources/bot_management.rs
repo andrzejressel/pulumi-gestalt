@@ -80,6 +80,9 @@ pub mod bot_management {
     }
     #[allow(dead_code)]
     pub struct BotManagementResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Enable rule to block AI Scrapers and Crawlers.
         pub ai_bots_protection: pulumi_gestalt_rust::Output<String>,
         /// Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes).
@@ -188,6 +191,7 @@ pub mod bot_management {
         };
         let o = context.register_resource(request);
         BotManagementResult {
+            id: o.get_field("id"),
             ai_bots_protection: o.get_field("aiBotsProtection"),
             auto_update_model: o.get_field("autoUpdateModel"),
             enable_js: o.get_field("enableJs"),

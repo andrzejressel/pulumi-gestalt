@@ -233,6 +233,9 @@ pub mod analytics_application {
     }
     #[allow(dead_code)]
     pub struct AnalyticsApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Kinesis Analytics Appliation.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The CloudWatch log stream options to monitor application errors.
@@ -352,6 +355,7 @@ pub mod analytics_application {
         };
         let o = context.register_resource(request);
         AnalyticsApplicationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cloudwatch_logging_options: o.get_field("cloudwatchLoggingOptions"),
             code: o.get_field("code"),

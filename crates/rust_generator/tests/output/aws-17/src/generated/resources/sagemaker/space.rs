@@ -61,6 +61,9 @@ pub mod space {
     }
     #[allow(dead_code)]
     pub struct SpaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The space's Amazon Resource Name (ARN).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the associated Domain.
@@ -151,6 +154,7 @@ pub mod space {
         };
         let o = context.register_resource(request);
         SpaceResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             domain_id: o.get_field("domainId"),
             home_efs_file_system_uid: o.get_field("homeEfsFileSystemUid"),

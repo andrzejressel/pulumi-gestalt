@@ -145,6 +145,9 @@ pub mod global_address {
     }
     #[allow(dead_code)]
     pub struct GlobalAddressResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IP address or beginning of the address range represented by this
         /// resource. This can be supplied as an input to reserve a specific
         /// address or omitted to allow GCP to choose a valid one for you.
@@ -282,6 +285,7 @@ pub mod global_address {
         };
         let o = context.register_resource(request);
         GlobalAddressResult {
+            id: o.get_field("id"),
             address: o.get_field("address"),
             address_type: o.get_field("addressType"),
             creation_timestamp: o.get_field("creationTimestamp"),

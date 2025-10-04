@@ -95,6 +95,9 @@ pub mod organization_sink {
     }
     #[allow(dead_code)]
     pub struct OrganizationSinkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Options that affect sinks exporting data to BigQuery. Structure documented below.
         pub bigquery_options: pulumi_gestalt_rust::Output<
             super::super::types::logging::OrganizationSinkBigqueryOptions,
@@ -205,6 +208,7 @@ pub mod organization_sink {
         };
         let o = context.register_resource(request);
         OrganizationSinkResult {
+            id: o.get_field("id"),
             bigquery_options: o.get_field("bigqueryOptions"),
             description: o.get_field("description"),
             destination: o.get_field("destination"),

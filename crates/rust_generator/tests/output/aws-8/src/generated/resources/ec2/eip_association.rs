@@ -73,6 +73,9 @@ pub mod eip_association {
     }
     #[allow(dead_code)]
     pub struct EipAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The allocation ID. This is required for EC2-VPC.
         pub allocation_id: pulumi_gestalt_rust::Output<String>,
         /// Whether to allow an Elastic IP to
@@ -145,6 +148,7 @@ pub mod eip_association {
         };
         let o = context.register_resource(request);
         EipAssociationResult {
+            id: o.get_field("id"),
             allocation_id: o.get_field("allocationId"),
             allow_reassociation: o.get_field("allowReassociation"),
             instance_id: o.get_field("instanceId"),

@@ -173,6 +173,9 @@ pub mod serverless_security_policy {
     }
     #[allow(dead_code)]
     pub struct ServerlessSecurityPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Description of the policy. Typically used to store information about the permissions defined in the policy.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Name of the policy.
@@ -227,6 +230,7 @@ pub mod serverless_security_policy {
         };
         let o = context.register_resource(request);
         ServerlessSecurityPolicyResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             name: o.get_field("name"),
             policy: o.get_field("policy"),

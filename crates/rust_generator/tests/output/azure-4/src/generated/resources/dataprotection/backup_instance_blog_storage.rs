@@ -96,6 +96,9 @@ pub mod backup_instance_blog_storage {
     }
     #[allow(dead_code)]
     pub struct BackupInstanceBlogStorageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Backup Policy.
         pub backup_policy_id: pulumi_gestalt_rust::Output<String>,
         /// The location of the source Storage Account. Changing this forces a new Backup Instance Blob Storage to be created.
@@ -166,6 +169,7 @@ pub mod backup_instance_blog_storage {
         };
         let o = context.register_resource(request);
         BackupInstanceBlogStorageResult {
+            id: o.get_field("id"),
             backup_policy_id: o.get_field("backupPolicyId"),
             location: o.get_field("location"),
             name: o.get_field("name"),

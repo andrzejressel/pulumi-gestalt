@@ -77,6 +77,9 @@ pub mod firewall_rule {
     }
     #[allow(dead_code)]
     pub struct FirewallRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The action to apply to a matched request. Available values: `block`, `challenge`, `allow`, `js_challenge`, `managed_challenge`, `log`, `bypass`.
         pub action: pulumi_gestalt_rust::Output<String>,
         /// A description of the rule to help identify it.
@@ -147,6 +150,7 @@ pub mod firewall_rule {
         };
         let o = context.register_resource(request);
         FirewallRuleResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             description: o.get_field("description"),
             filter_id: o.get_field("filterId"),

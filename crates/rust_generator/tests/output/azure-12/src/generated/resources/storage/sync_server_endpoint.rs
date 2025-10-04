@@ -122,6 +122,9 @@ pub mod sync_server_endpoint {
     }
     #[allow(dead_code)]
     pub struct SyncServerEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Is Cloud Tiering Enabled? Defaults to `false`.
         pub cloud_tiering_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies how the server initially downloads the Azure file share data. Valid Values includes `NamespaceThenModifiedFiles`, `NamespaceOnly`, and `AvoidTieredFiles`. Defaults to `NamespaceThenModifiedFiles`.
@@ -218,6 +221,7 @@ pub mod sync_server_endpoint {
         };
         let o = context.register_resource(request);
         SyncServerEndpointResult {
+            id: o.get_field("id"),
             cloud_tiering_enabled: o.get_field("cloudTieringEnabled"),
             initial_download_policy: o.get_field("initialDownloadPolicy"),
             local_cache_mode: o.get_field("localCacheMode"),

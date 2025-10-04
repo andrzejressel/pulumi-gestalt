@@ -340,6 +340,9 @@ pub mod pipeline_job {
     }
     #[allow(dead_code)]
     pub struct PipelineJobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the backfill configuration.
         /// Structure is documented below.
         pub backfill_pipeline_job: pulumi_gestalt_rust::Output<
@@ -458,6 +461,7 @@ pub mod pipeline_job {
         };
         let o = context.register_resource(request);
         PipelineJobResult {
+            id: o.get_field("id"),
             backfill_pipeline_job: o.get_field("backfillPipelineJob"),
             dataset: o.get_field("dataset"),
             disable_lineage: o.get_field("disableLineage"),

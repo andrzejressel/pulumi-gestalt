@@ -52,6 +52,9 @@ pub mod snapshot_schedule {
     }
     #[allow(dead_code)]
     pub struct SnapshotScheduleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Redshift Snapshot Schedule.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The definition of the snapshot schedule. The definition is made up of schedule expressions, for example `cron(30 12 *)` or `rate(12 hours)`.
@@ -124,6 +127,7 @@ pub mod snapshot_schedule {
         };
         let o = context.register_resource(request);
         SnapshotScheduleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             definitions: o.get_field("definitions"),
             description: o.get_field("description"),

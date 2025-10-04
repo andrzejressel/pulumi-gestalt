@@ -9,11 +9,21 @@ pub mod type_ {
             Option<super::super::super::super::types::impl_::let_::loop_::Type>,
         >,
     }
+    #[allow(dead_code)]
+    pub struct TypeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
+    }
     ///
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn create(context: &pulumi_gestalt_rust::Context, name: &str, args: TypeArgs) {
+    pub fn create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+        args: TypeArgs,
+    ) -> TypeResult {
         use std::collections::HashMap;
         use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let type__binding = args.type_.get_output(context);
@@ -28,6 +38,9 @@ pub mod type_ {
                 },
             ],
         };
-        context.register_resource(request);
+        let o = context.register_resource(request);
+        TypeResult {
+            id: o.get_field("id"),
+        }
     }
 }

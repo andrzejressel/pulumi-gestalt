@@ -117,6 +117,9 @@ pub mod table {
     }
     #[allow(dead_code)]
     pub struct TableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Defines an automated backup policy for a table, specified by Retention Period and Frequency. To disable, set both Retention Period and Frequency to 0.
         ///
         /// -----
@@ -207,6 +210,7 @@ pub mod table {
         };
         let o = context.register_resource(request);
         TableResult {
+            id: o.get_field("id"),
             automated_backup_policy: o.get_field("automatedBackupPolicy"),
             change_stream_retention: o.get_field("changeStreamRetention"),
             column_families: o.get_field("columnFamilies"),

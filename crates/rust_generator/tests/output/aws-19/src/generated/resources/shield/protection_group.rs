@@ -114,6 +114,9 @@ pub mod protection_group {
     }
     #[allow(dead_code)]
     pub struct ProtectionGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.
         pub aggregation: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set `pattern` to ARBITRARY and you must not set it for any other `pattern` setting.
@@ -185,6 +188,7 @@ pub mod protection_group {
         };
         let o = context.register_resource(request);
         ProtectionGroupResult {
+            id: o.get_field("id"),
             aggregation: o.get_field("aggregation"),
             members: o.get_field("members"),
             pattern: o.get_field("pattern"),

@@ -49,6 +49,9 @@ pub mod transit_gateway_connect_peer_association {
     }
     #[allow(dead_code)]
     pub struct TransitGatewayConnectPeerAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the device.
         pub device_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the global network.
@@ -101,6 +104,7 @@ pub mod transit_gateway_connect_peer_association {
         };
         let o = context.register_resource(request);
         TransitGatewayConnectPeerAssociationResult {
+            id: o.get_field("id"),
             device_id: o.get_field("deviceId"),
             global_network_id: o.get_field("globalNetworkId"),
             link_id: o.get_field("linkId"),

@@ -241,6 +241,9 @@ pub mod instance_iam_member {
     }
     #[allow(dead_code)]
     pub struct InstanceIamMemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::notebooks::InstanceIamMemberCondition>,
         >,
@@ -322,6 +325,7 @@ pub mod instance_iam_member {
         };
         let o = context.register_resource(request);
         InstanceIamMemberResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),
             instance_name: o.get_field("instanceName"),

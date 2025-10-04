@@ -80,6 +80,9 @@ pub mod organization_settings {
     }
     #[allow(dead_code)]
     pub struct OrganizationSettingsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// If set to true, the _Default sink in newly created projects and folders will created in a disabled state. This can be used to automatically disable log storage if there is already an aggregated sink configured in the hierarchy. The _Default sink can be re-enabled manually if needed.
         pub disable_default_sink: pulumi_gestalt_rust::Output<bool>,
         /// The resource name for the configured Cloud KMS key.
@@ -138,6 +141,7 @@ pub mod organization_settings {
         };
         let o = context.register_resource(request);
         OrganizationSettingsResult {
+            id: o.get_field("id"),
             disable_default_sink: o.get_field("disableDefaultSink"),
             kms_key_name: o.get_field("kmsKeyName"),
             kms_service_account_id: o.get_field("kmsServiceAccountId"),

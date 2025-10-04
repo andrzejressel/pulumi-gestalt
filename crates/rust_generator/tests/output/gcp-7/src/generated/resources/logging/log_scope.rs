@@ -75,6 +75,9 @@ pub mod log_scope {
     }
     #[allow(dead_code)]
     pub struct LogScopeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Output only. The creation timestamp of the log scopes.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Describes this log scopes.
@@ -138,6 +141,7 @@ pub mod log_scope {
         };
         let o = context.register_resource(request);
         LogScopeResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             location: o.get_field("location"),

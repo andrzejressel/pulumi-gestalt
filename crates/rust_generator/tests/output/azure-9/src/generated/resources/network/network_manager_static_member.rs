@@ -79,6 +79,9 @@ pub mod network_manager_static_member {
     }
     #[allow(dead_code)]
     pub struct NetworkManagerStaticMemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name which should be used for this Network Manager Static Member. Changing this forces a new Network Manager Static Member to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the Network Manager Group. Changing this forces a new Network Manager Static Member to be created.
@@ -126,6 +129,7 @@ pub mod network_manager_static_member {
         };
         let o = context.register_resource(request);
         NetworkManagerStaticMemberResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             network_group_id: o.get_field("networkGroupId"),
             region: o.get_field("region"),

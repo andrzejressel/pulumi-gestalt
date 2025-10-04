@@ -137,6 +137,9 @@ pub mod workers_script {
     }
     #[allow(dead_code)]
     pub struct WorkersScriptResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         pub analytics_engine_bindings: pulumi_gestalt_rust::Output<
@@ -314,6 +317,7 @@ pub mod workers_script {
         };
         let o = context.register_resource(request);
         WorkersScriptResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             analytics_engine_bindings: o.get_field("analyticsEngineBindings"),
             compatibility_date: o.get_field("compatibilityDate"),

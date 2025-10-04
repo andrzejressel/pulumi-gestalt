@@ -35,6 +35,9 @@ pub mod shared_directory {
     }
     #[allow(dead_code)]
     pub struct SharedDirectoryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the Managed Microsoft AD directory that you want to share with other accounts.
         pub directory_id: pulumi_gestalt_rust::Output<String>,
         /// Method used when sharing a directory. Valid values are `ORGANIZATIONS` and `HANDSHAKE`. Default is `HANDSHAKE`.
@@ -90,6 +93,7 @@ pub mod shared_directory {
         };
         let o = context.register_resource(request);
         SharedDirectoryResult {
+            id: o.get_field("id"),
             directory_id: o.get_field("directoryId"),
             method: o.get_field("method"),
             notes: o.get_field("notes"),

@@ -77,6 +77,9 @@ pub mod image {
     }
     #[allow(dead_code)]
     pub struct ImageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `data_disk` blocks as defined below.
         pub data_disks: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::compute::ImageDataDisk>>,
@@ -171,6 +174,7 @@ pub mod image {
         };
         let o = context.register_resource(request);
         ImageResult {
+            id: o.get_field("id"),
             data_disks: o.get_field("dataDisks"),
             hyper_v_generation: o.get_field("hyperVGeneration"),
             location: o.get_field("location"),

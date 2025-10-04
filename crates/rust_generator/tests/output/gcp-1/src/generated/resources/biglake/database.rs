@@ -81,6 +81,9 @@ pub mod database {
     }
     #[allow(dead_code)]
     pub struct DatabaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The parent catalog.
         pub catalog: pulumi_gestalt_rust::Output<String>,
         /// Output only. The creation time of the database. A timestamp in RFC3339
@@ -153,6 +156,7 @@ pub mod database {
         };
         let o = context.register_resource(request);
         DatabaseResult {
+            id: o.get_field("id"),
             catalog: o.get_field("catalog"),
             create_time: o.get_field("createTime"),
             delete_time: o.get_field("deleteTime"),

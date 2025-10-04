@@ -95,6 +95,9 @@ pub mod magic_wan_ipsec_tunnel {
     }
     #[allow(dead_code)]
     pub struct MagicWanIpsecTunnelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies if this tunnel may use a null cipher (ENCR_NULL) in Phase 2. Defaults to `false`.
@@ -244,6 +247,7 @@ pub mod magic_wan_ipsec_tunnel {
         };
         let o = context.register_resource(request);
         MagicWanIpsecTunnelResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             allow_null_cipher: o.get_field("allowNullCipher"),
             cloudflare_endpoint: o.get_field("cloudflareEndpoint"),

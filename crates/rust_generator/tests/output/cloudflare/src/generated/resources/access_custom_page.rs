@@ -46,6 +46,9 @@ pub mod access_custom_page {
     }
     #[allow(dead_code)]
     pub struct AccessCustomPageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. Conflicts with `zone_id`. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Number of apps to display on the custom page.
@@ -109,6 +112,7 @@ pub mod access_custom_page {
         };
         let o = context.register_resource(request);
         AccessCustomPageResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             app_count: o.get_field("appCount"),
             custom_html: o.get_field("customHtml"),

@@ -82,6 +82,9 @@ pub mod domain_association {
     }
     #[allow(dead_code)]
     pub struct DomainAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Unique ID for an Amplify app.
         pub app_id: pulumi_gestalt_rust::Output<String>,
         /// ARN for the domain association.
@@ -157,6 +160,7 @@ pub mod domain_association {
         };
         let o = context.register_resource(request);
         DomainAssociationResult {
+            id: o.get_field("id"),
             app_id: o.get_field("appId"),
             arn: o.get_field("arn"),
             certificate_settings: o.get_field("certificateSettings"),

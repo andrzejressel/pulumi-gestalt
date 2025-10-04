@@ -944,6 +944,9 @@ pub mod function {
     }
     #[allow(dead_code)]
     pub struct FunctionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Describes the Build step of the function that builds a container
         /// from the given source.
         /// Structure is documented below.
@@ -1067,6 +1070,7 @@ pub mod function {
         };
         let o = context.register_resource(request);
         FunctionResult {
+            id: o.get_field("id"),
             build_config: o.get_field("buildConfig"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

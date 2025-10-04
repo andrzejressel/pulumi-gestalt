@@ -128,6 +128,9 @@ pub mod dataset {
     }
     #[allow(dead_code)]
     pub struct DatasetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A nested object resource.
         /// Structure is documented below.
         pub encryption_spec: pulumi_gestalt_rust::Output<
@@ -195,6 +198,7 @@ pub mod dataset {
         };
         let o = context.register_resource(request);
         DatasetResult {
+            id: o.get_field("id"),
             encryption_spec: o.get_field("encryptionSpec"),
             location: o.get_field("location"),
             name: o.get_field("name"),

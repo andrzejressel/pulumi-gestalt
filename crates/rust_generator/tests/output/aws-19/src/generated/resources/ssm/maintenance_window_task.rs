@@ -171,6 +171,9 @@ pub mod maintenance_window_task {
     }
     #[allow(dead_code)]
     pub struct MaintenanceWindowTaskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the maintenance window task.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. Valid values are `CONTINUE_TASK` and `CANCEL_TASK`.
@@ -288,6 +291,7 @@ pub mod maintenance_window_task {
         };
         let o = context.register_resource(request);
         MaintenanceWindowTaskResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cutoff_behavior: o.get_field("cutoffBehavior"),
             description: o.get_field("description"),

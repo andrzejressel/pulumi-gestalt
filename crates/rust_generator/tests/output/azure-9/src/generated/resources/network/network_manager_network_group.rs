@@ -62,6 +62,9 @@ pub mod network_manager_network_group {
     }
     #[allow(dead_code)]
     pub struct NetworkManagerNetworkGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description of the Network Manager Network Group.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the name which should be used for this Network Manager Network Group. Changing this forces a new Network Manager Network Group to be created.
@@ -105,6 +108,7 @@ pub mod network_manager_network_group {
         };
         let o = context.register_resource(request);
         NetworkManagerNetworkGroupResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             name: o.get_field("name"),
             network_manager_id: o.get_field("networkManagerId"),

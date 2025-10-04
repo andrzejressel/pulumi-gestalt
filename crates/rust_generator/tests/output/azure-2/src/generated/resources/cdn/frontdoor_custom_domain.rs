@@ -130,6 +130,9 @@ pub mod frontdoor_custom_domain {
     }
     #[allow(dead_code)]
     pub struct FrontdoorCustomDomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Front Door Profile. Changing this forces a new Front Door Custom Domain to be created.
         pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Azure DNS Zone which should be used for this Front Door Custom Domain. If you are using Azure to host your [DNS domains](https://learn.microsoft.com/azure/dns/dns-overview), you must delegate the domain provider's domain name system (DNS) to an Azure DNS Zone. For more information, see [Delegate a domain to Azure DNS](https://learn.microsoft.com/azure/dns/dns-delegate-domain-azure-dns). Otherwise, if you're using your own domain provider to handle your DNS, you must validate the Front Door Custom Domain by creating the DNS TXT records manually.
@@ -198,6 +201,7 @@ pub mod frontdoor_custom_domain {
         };
         let o = context.register_resource(request);
         FrontdoorCustomDomainResult {
+            id: o.get_field("id"),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             dns_zone_id: o.get_field("dnsZoneId"),
             expiration_date: o.get_field("expirationDate"),

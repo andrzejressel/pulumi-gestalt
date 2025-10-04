@@ -83,6 +83,9 @@ pub mod resolver_firewall_rule {
     }
     #[allow(dead_code)]
     pub struct ResolverFirewallRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list. Valid values: `ALLOW`, `BLOCK`, `ALERT`.
         pub action: pulumi_gestalt_rust::Output<String>,
         /// The DNS record's type. This determines the format of the record value that you provided in BlockOverrideDomain. Value values: `CNAME`.
@@ -193,6 +196,7 @@ pub mod resolver_firewall_rule {
         };
         let o = context.register_resource(request);
         ResolverFirewallRuleResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             block_override_dns_type: o.get_field("blockOverrideDnsType"),
             block_override_domain: o.get_field("blockOverrideDomain"),

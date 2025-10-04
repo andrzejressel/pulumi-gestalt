@@ -129,6 +129,9 @@ pub mod job_schedule {
     }
     #[allow(dead_code)]
     pub struct JobScheduleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time at which the Stream Analytics job last produced an output.
         pub last_output_time: pulumi_gestalt_rust::Output<String>,
         /// The starting mode of the Stream Analytics Job. Possible values are `JobStartTime`, `CustomTime` and `LastOutputEventTime`.
@@ -177,6 +180,7 @@ pub mod job_schedule {
         };
         let o = context.register_resource(request);
         JobScheduleResult {
+            id: o.get_field("id"),
             last_output_time: o.get_field("lastOutputTime"),
             start_mode: o.get_field("startMode"),
             start_time: o.get_field("startTime"),

@@ -45,6 +45,9 @@ pub mod connect_attachment {
     }
     #[allow(dead_code)]
     pub struct ConnectAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the attachment.
         pub arn: pulumi_gestalt_rust::Output<String>,
         pub attachment_id: pulumi_gestalt_rust::Output<String>,
@@ -130,6 +133,7 @@ pub mod connect_attachment {
         };
         let o = context.register_resource(request);
         ConnectAttachmentResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             attachment_id: o.get_field("attachmentId"),
             attachment_policy_rule_number: o.get_field("attachmentPolicyRuleNumber"),

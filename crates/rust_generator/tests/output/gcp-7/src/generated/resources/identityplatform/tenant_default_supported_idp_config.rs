@@ -98,6 +98,9 @@ pub mod tenant_default_supported_idp_config {
     }
     #[allow(dead_code)]
     pub struct TenantDefaultSupportedIdpConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// OAuth client ID
         pub client_id: pulumi_gestalt_rust::Output<String>,
         /// OAuth client secret
@@ -178,6 +181,7 @@ pub mod tenant_default_supported_idp_config {
         };
         let o = context.register_resource(request);
         TenantDefaultSupportedIdpConfigResult {
+            id: o.get_field("id"),
             client_id: o.get_field("clientId"),
             client_secret: o.get_field("clientSecret"),
             enabled: o.get_field("enabled"),

@@ -79,6 +79,9 @@ pub mod dedicated_host {
     }
     #[allow(dead_code)]
     pub struct DedicatedHostResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Should the Dedicated Host automatically be replaced in case of a Hardware Failure? Defaults to `true`.
         pub auto_replace_on_failure: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies the ID of the Dedicated Host Group where the Dedicated Host should exist. Changing this forces a new resource to be created.
@@ -164,6 +167,7 @@ pub mod dedicated_host {
         };
         let o = context.register_resource(request);
         DedicatedHostResult {
+            id: o.get_field("id"),
             auto_replace_on_failure: o.get_field("autoReplaceOnFailure"),
             dedicated_host_group_id: o.get_field("dedicatedHostGroupId"),
             license_type: o.get_field("licenseType"),

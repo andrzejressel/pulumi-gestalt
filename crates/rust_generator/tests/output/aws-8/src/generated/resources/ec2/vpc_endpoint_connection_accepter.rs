@@ -58,6 +58,9 @@ pub mod vpc_endpoint_connection_accepter {
     }
     #[allow(dead_code)]
     pub struct VpcEndpointConnectionAccepterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// AWS VPC Endpoint ID.
         pub vpc_endpoint_id: pulumi_gestalt_rust::Output<String>,
         /// AWS VPC Endpoint Service ID.
@@ -98,6 +101,7 @@ pub mod vpc_endpoint_connection_accepter {
         };
         let o = context.register_resource(request);
         VpcEndpointConnectionAccepterResult {
+            id: o.get_field("id"),
             vpc_endpoint_id: o.get_field("vpcEndpointId"),
             vpc_endpoint_service_id: o.get_field("vpcEndpointServiceId"),
             vpc_endpoint_state: o.get_field("vpcEndpointState"),

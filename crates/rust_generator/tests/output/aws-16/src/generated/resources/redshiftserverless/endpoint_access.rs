@@ -50,6 +50,9 @@ pub mod endpoint_access {
     }
     #[allow(dead_code)]
     pub struct EndpointAccessResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The DNS address of the VPC endpoint.
         pub address: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Redshift Serverless Endpoint Access.
@@ -118,6 +121,7 @@ pub mod endpoint_access {
         };
         let o = context.register_resource(request);
         EndpointAccessResult {
+            id: o.get_field("id"),
             address: o.get_field("address"),
             arn: o.get_field("arn"),
             endpoint_name: o.get_field("endpointName"),

@@ -192,6 +192,9 @@ pub mod security_group_rule {
     }
     #[allow(dead_code)]
     pub struct SecurityGroupRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of CIDR blocks. Cannot be specified with `source_security_group_id` or `self`.
         pub cidr_blocks: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Description of the rule.
@@ -299,6 +302,7 @@ pub mod security_group_rule {
         };
         let o = context.register_resource(request);
         SecurityGroupRuleResult {
+            id: o.get_field("id"),
             cidr_blocks: o.get_field("cidrBlocks"),
             description: o.get_field("description"),
             from_port: o.get_field("fromPort"),

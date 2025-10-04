@@ -84,6 +84,9 @@ pub mod registry_webhook {
     }
     #[allow(dead_code)]
     pub struct RegistryWebhookResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of actions that trigger the Webhook to post notifications. At least one action needs to be specified. Valid values are: `push`, `delete`, `quarantine`, `chart_push`, `chart_delete`
         pub actions: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Custom headers that will be added to the webhook notifications request.
@@ -179,6 +182,7 @@ pub mod registry_webhook {
         };
         let o = context.register_resource(request);
         RegistryWebhookResult {
+            id: o.get_field("id"),
             actions: o.get_field("actions"),
             custom_headers: o.get_field("customHeaders"),
             location: o.get_field("location"),

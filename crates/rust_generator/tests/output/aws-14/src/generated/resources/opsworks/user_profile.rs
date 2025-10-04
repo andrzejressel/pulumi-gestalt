@@ -37,6 +37,9 @@ pub mod user_profile {
     }
     #[allow(dead_code)]
     pub struct UserProfileResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether users can specify their own SSH public key through the My Settings page
         pub allow_self_management: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The users public key
@@ -88,6 +91,7 @@ pub mod user_profile {
         };
         let o = context.register_resource(request);
         UserProfileResult {
+            id: o.get_field("id"),
             allow_self_management: o.get_field("allowSelfManagement"),
             ssh_public_key: o.get_field("sshPublicKey"),
             ssh_username: o.get_field("sshUsername"),

@@ -55,6 +55,9 @@ pub mod distribution_configuration {
     }
     #[allow(dead_code)]
     pub struct DistributionConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Required) Amazon Resource Name (ARN) of the distribution configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Date the distribution configuration was created.
@@ -121,6 +124,7 @@ pub mod distribution_configuration {
         };
         let o = context.register_resource(request);
         DistributionConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             date_created: o.get_field("dateCreated"),
             date_updated: o.get_field("dateUpdated"),

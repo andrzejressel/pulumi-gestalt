@@ -58,6 +58,9 @@ pub mod permission_set {
     }
     #[allow(dead_code)]
     pub struct PermissionSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Permission Set.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The date the Permission Set was created in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).
@@ -131,6 +134,7 @@ pub mod permission_set {
         };
         let o = context.register_resource(request);
         PermissionSetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_date: o.get_field("createdDate"),
             description: o.get_field("description"),

@@ -115,6 +115,9 @@ pub mod organization_security_policy_rule {
     }
     #[allow(dead_code)]
     pub struct OrganizationSecurityPolicyRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Action to perform when the client connection triggers the rule. Can currently be either
         /// "allow", "deny" or "goto_next".
         pub action: pulumi_gestalt_rust::Output<String>,
@@ -218,6 +221,7 @@ pub mod organization_security_policy_rule {
         };
         let o = context.register_resource(request);
         OrganizationSecurityPolicyRuleResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             description: o.get_field("description"),
             direction: o.get_field("direction"),

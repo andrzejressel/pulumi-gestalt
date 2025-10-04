@@ -135,6 +135,9 @@ pub mod backup_vault {
     }
     #[allow(dead_code)]
     pub struct BackupVaultResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Access restriction for the backup vault. Default value is `WITHIN_ORGANIZATION` if not provided during creation.
         /// Default value is `WITHIN_ORGANIZATION`.
         /// Possible values are: `ACCESS_RESTRICTION_UNSPECIFIED`, `WITHIN_PROJECT`, `WITHIN_ORGANIZATION`, `UNRESTRICTED`, `WITHIN_ORG_BUT_UNRESTRICTED_FOR_BA`.
@@ -326,6 +329,7 @@ pub mod backup_vault {
         };
         let o = context.register_resource(request);
         BackupVaultResult {
+            id: o.get_field("id"),
             access_restriction: o.get_field("accessRestriction"),
             allow_missing: o.get_field("allowMissing"),
             annotations: o.get_field("annotations"),

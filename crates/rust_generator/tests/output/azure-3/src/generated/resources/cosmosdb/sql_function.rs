@@ -63,6 +63,9 @@ pub mod sql_function {
     }
     #[allow(dead_code)]
     pub struct SqlFunctionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Body of the User Defined Function.
         pub body: pulumi_gestalt_rust::Output<String>,
         /// The id of the Cosmos DB SQL Container to create the SQL User Defined Function within. Changing this forces a new SQL User Defined Function to be created.
@@ -105,6 +108,7 @@ pub mod sql_function {
         };
         let o = context.register_resource(request);
         SqlFunctionResult {
+            id: o.get_field("id"),
             body: o.get_field("body"),
             container_id: o.get_field("containerId"),
             name: o.get_field("name"),

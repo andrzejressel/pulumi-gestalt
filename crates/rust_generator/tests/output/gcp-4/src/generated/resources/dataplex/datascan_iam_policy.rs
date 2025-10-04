@@ -223,6 +223,9 @@ pub mod datascan_iam_policy {
     }
     #[allow(dead_code)]
     pub struct DatascanIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub data_scan_id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -278,6 +281,7 @@ pub mod datascan_iam_policy {
         };
         let o = context.register_resource(request);
         DatascanIamPolicyResult {
+            id: o.get_field("id"),
             data_scan_id: o.get_field("dataScanId"),
             etag: o.get_field("etag"),
             location: o.get_field("location"),

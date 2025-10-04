@@ -442,6 +442,9 @@ pub mod job_template {
     }
     #[allow(dead_code)]
     pub struct JobTemplateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The configuration for this template.
         /// Structure is documented below.
         pub config: pulumi_gestalt_rust::Output<
@@ -521,6 +524,7 @@ pub mod job_template {
         };
         let o = context.register_resource(request);
         JobTemplateResult {
+            id: o.get_field("id"),
             config: o.get_field("config"),
             effective_labels: o.get_field("effectiveLabels"),
             job_template_id: o.get_field("jobTemplateId"),

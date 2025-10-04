@@ -41,6 +41,9 @@ pub mod account {
     }
     #[allow(dead_code)]
     pub struct AccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The date and time, in UTC and extended RFC 3339 format, when the Amazon Macie account was created.
         pub created_at: pulumi_gestalt_rust::Output<String>,
         /// Specifies how often to publish updates to policy findings for the account. This includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). Valid values are `FIFTEEN_MINUTES`, `ONE_HOUR` or `SIX_HOURS`.
@@ -84,6 +87,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
+            id: o.get_field("id"),
             created_at: o.get_field("createdAt"),
             finding_publishing_frequency: o.get_field("findingPublishingFrequency"),
             service_role: o.get_field("serviceRole"),

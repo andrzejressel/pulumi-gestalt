@@ -97,6 +97,9 @@ pub mod api_key {
     }
     #[allow(dead_code)]
     pub struct ApiKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The API Key secret (Sensitive).
         pub api_key: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Application Insights component on which the API key operates. Changing this forces a new resource to be created.
@@ -152,6 +155,7 @@ pub mod api_key {
         };
         let o = context.register_resource(request);
         ApiKeyResult {
+            id: o.get_field("id"),
             api_key: o.get_field("apiKey"),
             application_insights_id: o.get_field("applicationInsightsId"),
             name: o.get_field("name"),

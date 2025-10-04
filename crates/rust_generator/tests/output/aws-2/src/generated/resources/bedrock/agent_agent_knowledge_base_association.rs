@@ -60,6 +60,9 @@ pub mod agent_agent_knowledge_base_association {
     }
     #[allow(dead_code)]
     pub struct AgentAgentKnowledgeBaseAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Unique identifier of the agent with which you want to associate the knowledge base.
         pub agent_id: pulumi_gestalt_rust::Output<String>,
         /// Version of the agent with which you want to associate the knowledge base. Valid values: `DRAFT`.
@@ -129,6 +132,7 @@ pub mod agent_agent_knowledge_base_association {
         };
         let o = context.register_resource(request);
         AgentAgentKnowledgeBaseAssociationResult {
+            id: o.get_field("id"),
             agent_id: o.get_field("agentId"),
             agent_version: o.get_field("agentVersion"),
             description: o.get_field("description"),

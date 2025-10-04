@@ -97,6 +97,9 @@ pub mod user_hierarchy_structure {
     }
     #[allow(dead_code)]
     pub struct UserHierarchyStructureResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A block that defines the hierarchy structure's levels. The `hierarchy_structure` block is documented below.
         pub hierarchy_structure: pulumi_gestalt_rust::Output<
             super::super::types::connect::UserHierarchyStructureHierarchyStructure,
@@ -134,6 +137,7 @@ pub mod user_hierarchy_structure {
         };
         let o = context.register_resource(request);
         UserHierarchyStructureResult {
+            id: o.get_field("id"),
             hierarchy_structure: o.get_field("hierarchyStructure"),
             instance_id: o.get_field("instanceId"),
         }

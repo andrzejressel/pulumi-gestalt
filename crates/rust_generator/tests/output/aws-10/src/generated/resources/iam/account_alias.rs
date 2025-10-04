@@ -35,6 +35,9 @@ pub mod account_alias {
     }
     #[allow(dead_code)]
     pub struct AccountAliasResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account alias
         pub account_alias: pulumi_gestalt_rust::Output<String>,
     }
@@ -63,6 +66,7 @@ pub mod account_alias {
         };
         let o = context.register_resource(request);
         AccountAliasResult {
+            id: o.get_field("id"),
             account_alias: o.get_field("accountAlias"),
         }
     }

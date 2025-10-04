@@ -56,6 +56,9 @@ pub mod repository_group {
     }
     #[allow(dead_code)]
     pub struct RepositoryGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Required. Id of the Code Repository Index.
         pub code_repository_index: pulumi_gestalt_rust::Output<String>,
         /// Output only. Create time stamp
@@ -141,6 +144,7 @@ pub mod repository_group {
         };
         let o = context.register_resource(request);
         RepositoryGroupResult {
+            id: o.get_field("id"),
             code_repository_index: o.get_field("codeRepositoryIndex"),
             create_time: o.get_field("createTime"),
             effective_labels: o.get_field("effectiveLabels"),

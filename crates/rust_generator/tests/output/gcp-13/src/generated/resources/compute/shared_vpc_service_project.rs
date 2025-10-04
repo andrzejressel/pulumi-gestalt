@@ -59,6 +59,9 @@ pub mod shared_vpc_service_project {
     }
     #[allow(dead_code)]
     pub struct SharedVPCServiceProjectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The deletion policy for the shared VPC service. Setting ABANDON allows the resource to be abandoned rather than deleted. Possible values are: "ABANDON".
         pub deletion_policy: pulumi_gestalt_rust::Output<Option<String>>,
         /// The ID of a host project to associate.
@@ -101,6 +104,7 @@ pub mod shared_vpc_service_project {
         };
         let o = context.register_resource(request);
         SharedVPCServiceProjectResult {
+            id: o.get_field("id"),
             deletion_policy: o.get_field("deletionPolicy"),
             host_project: o.get_field("hostProject"),
             service_project: o.get_field("serviceProject"),

@@ -55,6 +55,9 @@ pub mod frontdoor_rule_set {
     }
     #[allow(dead_code)]
     pub struct FrontdoorRuleSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Front Door Profile. Changing this forces a new Front Door Rule Set to be created.
         pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Front Door Rule Set. Changing this forces a new Front Door Rule Set to be created.
@@ -92,6 +95,7 @@ pub mod frontdoor_rule_set {
         };
         let o = context.register_resource(request);
         FrontdoorRuleSetResult {
+            id: o.get_field("id"),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             name: o.get_field("name"),
         }

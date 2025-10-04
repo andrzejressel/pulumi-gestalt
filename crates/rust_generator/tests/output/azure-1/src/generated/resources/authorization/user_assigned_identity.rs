@@ -64,6 +64,9 @@ pub mod user_assigned_identity {
     }
     #[allow(dead_code)]
     pub struct UserAssignedIdentityResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the app associated with the Identity.
         pub client_id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the User Assigned Identity should exist. Changing this forces a new User Assigned Identity to be created.
@@ -122,6 +125,7 @@ pub mod user_assigned_identity {
         };
         let o = context.register_resource(request);
         UserAssignedIdentityResult {
+            id: o.get_field("id"),
             client_id: o.get_field("clientId"),
             location: o.get_field("location"),
             name: o.get_field("name"),

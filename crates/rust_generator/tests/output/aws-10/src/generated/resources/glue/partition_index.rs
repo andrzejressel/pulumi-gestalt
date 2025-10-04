@@ -102,6 +102,9 @@ pub mod partition_index {
     }
     #[allow(dead_code)]
     pub struct PartitionIndexResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The catalog ID where the table resides.
         pub catalog_id: pulumi_gestalt_rust::Output<String>,
         /// Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase.
@@ -153,6 +156,7 @@ pub mod partition_index {
         };
         let o = context.register_resource(request);
         PartitionIndexResult {
+            id: o.get_field("id"),
             catalog_id: o.get_field("catalogId"),
             database_name: o.get_field("databaseName"),
             partition_index: o.get_field("partitionIndex"),

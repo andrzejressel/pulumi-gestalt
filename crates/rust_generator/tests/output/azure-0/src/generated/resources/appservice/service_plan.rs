@@ -91,6 +91,9 @@ pub mod service_plan {
     }
     #[allow(dead_code)]
     pub struct ServicePlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the App Service Environment to create this Service Plan in.
         ///
         /// > **NOTE:** Requires an Isolated SKU. Use one of `I1`, `I2`, `I3` for `azurerm_app_service_environment`, or `I1v2`, `I2v2`, `I3v2` for `azure.appservice.EnvironmentV3`
@@ -211,6 +214,7 @@ pub mod service_plan {
         };
         let o = context.register_resource(request);
         ServicePlanResult {
+            id: o.get_field("id"),
             app_service_environment_id: o.get_field("appServiceEnvironmentId"),
             kind: o.get_field("kind"),
             location: o.get_field("location"),

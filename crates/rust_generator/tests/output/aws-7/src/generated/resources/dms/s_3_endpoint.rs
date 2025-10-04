@@ -263,6 +263,9 @@ pub mod s_3_endpoint {
     }
     #[allow(dead_code)]
     pub struct S3EndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to add column name information to the .csv output file. Default is `false`.
         pub add_column_name: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Whether to add padding. Default is `false`. (Ignored for source endpoints.)
@@ -682,6 +685,7 @@ pub mod s_3_endpoint {
         };
         let o = context.register_resource(request);
         S3EndpointResult {
+            id: o.get_field("id"),
             add_column_name: o.get_field("addColumnName"),
             add_trailing_padding_character: o.get_field("addTrailingPaddingCharacter"),
             bucket_folder: o.get_field("bucketFolder"),

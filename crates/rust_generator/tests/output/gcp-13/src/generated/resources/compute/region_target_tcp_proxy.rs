@@ -119,6 +119,9 @@ pub mod region_target_tcp_proxy {
     }
     #[allow(dead_code)]
     pub struct RegionTargetTcpProxyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A reference to the BackendService resource.
         ///
         ///
@@ -210,6 +213,7 @@ pub mod region_target_tcp_proxy {
         };
         let o = context.register_resource(request);
         RegionTargetTcpProxyResult {
+            id: o.get_field("id"),
             backend_service: o.get_field("backendService"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

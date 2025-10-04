@@ -87,6 +87,9 @@ pub mod registry_token {
     }
     #[allow(dead_code)]
     pub struct RegistryTokenResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Container Registry. Changing this forces a new resource to be created.
         pub container_registry_name: pulumi_gestalt_rust::Output<String>,
         /// Should the Container Registry token be enabled? Defaults to `true`.
@@ -145,6 +148,7 @@ pub mod registry_token {
         };
         let o = context.register_resource(request);
         RegistryTokenResult {
+            id: o.get_field("id"),
             container_registry_name: o.get_field("containerRegistryName"),
             enabled: o.get_field("enabled"),
             name: o.get_field("name"),

@@ -427,6 +427,9 @@ pub mod aws_node_pool {
     }
     #[allow(dead_code)]
     pub struct AwsNodePoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Optional. Annotations on the node pool. This field has the same restrictions as Kubernetes annotations. The total size
         /// of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required),
         /// separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with
@@ -573,6 +576,7 @@ pub mod aws_node_pool {
         };
         let o = context.register_resource(request);
         AwsNodePoolResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             autoscaling: o.get_field("autoscaling"),
             cluster: o.get_field("cluster"),

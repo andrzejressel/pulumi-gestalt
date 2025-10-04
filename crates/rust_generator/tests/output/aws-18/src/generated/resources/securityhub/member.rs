@@ -44,6 +44,9 @@ pub mod member {
     }
     #[allow(dead_code)]
     pub struct MemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the member AWS account.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The email of the member AWS account.
@@ -90,6 +93,7 @@ pub mod member {
         };
         let o = context.register_resource(request);
         MemberResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             email: o.get_field("email"),
             invite: o.get_field("invite"),

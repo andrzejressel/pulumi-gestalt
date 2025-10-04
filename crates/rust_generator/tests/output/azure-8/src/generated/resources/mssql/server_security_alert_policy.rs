@@ -93,6 +93,9 @@ pub mod server_security_alert_policy {
     }
     #[allow(dead_code)]
     pub struct ServerSecurityAlertPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies an array of alerts that are disabled. Allowed values are: `Sql_Injection`, `Sql_Injection_Vulnerability`, `Access_Anomaly`, `Data_Exfiltration`, `Unsafe_Action`.
         pub disabled_alerts: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Boolean flag which specifies if the alert is sent to the account administrators or not. Defaults to `false`.
@@ -182,6 +185,7 @@ pub mod server_security_alert_policy {
         };
         let o = context.register_resource(request);
         ServerSecurityAlertPolicyResult {
+            id: o.get_field("id"),
             disabled_alerts: o.get_field("disabledAlerts"),
             email_account_admins: o.get_field("emailAccountAdmins"),
             email_addresses: o.get_field("emailAddresses"),

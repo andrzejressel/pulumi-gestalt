@@ -28,6 +28,7 @@ fn test_integration() -> Result<()> {
     let result_2 = stack.get_string("/result_2")?;
     let secret = stack.get_string("/secret_config")?;
     let secret_uncovered = stack_secret.get_string("/secret_config")?;
+    let id = stack.get_string("/id")?;
 
     assert_eq!(result.len(), 36);
     assert_eq!(transformed_result, format!("Result: {}", result));
@@ -38,6 +39,7 @@ fn test_integration() -> Result<()> {
     assert_eq!(result_2.len(), 13);
     assert_eq!(secret, "[secret]");
     assert_eq!(secret_uncovered, "secret_value");
+    assert_eq!(id.len(), 36);
 
     Ok(())
 }

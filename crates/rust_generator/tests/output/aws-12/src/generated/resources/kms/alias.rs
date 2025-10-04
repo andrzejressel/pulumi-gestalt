@@ -46,6 +46,9 @@ pub mod alias {
     }
     #[allow(dead_code)]
     pub struct AliasResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the key alias.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The display name of the alias. The name must start with the word "alias" followed by a forward slash (alias/)
@@ -93,6 +96,7 @@ pub mod alias {
         };
         let o = context.register_resource(request);
         AliasResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             name_prefix: o.get_field("namePrefix"),

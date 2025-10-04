@@ -86,6 +86,9 @@ pub mod fleet {
     }
     #[allow(dead_code)]
     pub struct FleetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the created WorkLink Fleet.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Amazon Kinesis data stream that receives the audit events. Kinesis data stream name must begin with `"AmazonWorkLink-"`.
@@ -176,6 +179,7 @@ pub mod fleet {
         };
         let o = context.register_resource(request);
         FleetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             audit_stream_arn: o.get_field("auditStreamArn"),
             company_code: o.get_field("companyCode"),

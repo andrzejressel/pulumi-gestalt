@@ -49,6 +49,9 @@ pub mod sms_preferences {
     }
     #[allow(dead_code)]
     pub struct SmsPreferencesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A string, such as your business brand, that is displayed as the sender on the receiving device.
         pub default_sender_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The type of SMS message that you will send by default. Possible values are: Promotional, Transactional
@@ -120,6 +123,7 @@ pub mod sms_preferences {
         };
         let o = context.register_resource(request);
         SmsPreferencesResult {
+            id: o.get_field("id"),
             default_sender_id: o.get_field("defaultSenderId"),
             default_sms_type: o.get_field("defaultSmsType"),
             delivery_status_iam_role_arn: o.get_field("deliveryStatusIamRoleArn"),

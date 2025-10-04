@@ -109,6 +109,9 @@ pub mod event_data_store {
     }
     #[allow(dead_code)]
     pub struct EventDataStoreResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The advanced event selectors to use to select the events for the data store. For more information about how to use advanced event selectors, see [Log events by using advanced event selectors](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced) in the CloudTrail User Guide.
         pub advanced_event_selectors: pulumi_gestalt_rust::Output<
             Vec<super::super::types::cloudtrail::EventDataStoreAdvancedEventSelector>,
@@ -207,6 +210,7 @@ pub mod event_data_store {
         };
         let o = context.register_resource(request);
         EventDataStoreResult {
+            id: o.get_field("id"),
             advanced_event_selectors: o.get_field("advancedEventSelectors"),
             arn: o.get_field("arn"),
             billing_mode: o.get_field("billingMode"),

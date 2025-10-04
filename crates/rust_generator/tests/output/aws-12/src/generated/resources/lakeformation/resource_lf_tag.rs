@@ -72,6 +72,9 @@ pub mod resource_lf_tag {
     }
     #[allow(dead_code)]
     pub struct ResourceLfTagResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
         pub catalog_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Configuration block for a database resource. See Database for more details.
@@ -148,6 +151,7 @@ pub mod resource_lf_tag {
         };
         let o = context.register_resource(request);
         ResourceLfTagResult {
+            id: o.get_field("id"),
             catalog_id: o.get_field("catalogId"),
             database: o.get_field("database"),
             lf_tag: o.get_field("lfTag"),

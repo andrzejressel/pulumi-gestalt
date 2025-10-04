@@ -80,6 +80,9 @@ pub mod provider {
     }
     #[allow(dead_code)]
     pub struct ProviderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The URI of the Attestation Service.
         pub attestation_uri: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Attestation Provider should exist. Changing this forces a new resource to be created.
@@ -182,6 +185,7 @@ pub mod provider {
         };
         let o = context.register_resource(request);
         ProviderResult {
+            id: o.get_field("id"),
             attestation_uri: o.get_field("attestationUri"),
             location: o.get_field("location"),
             name: o.get_field("name"),

@@ -134,6 +134,9 @@ pub mod firewall {
     }
     #[allow(dead_code)]
     pub struct FirewallResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether DNS proxy is enabled. It will forward DNS requests to the DNS servers when set to `true`. It will be set to `true` if `dns_servers` provided with a not empty list.
         pub dns_proxy_enabled: pulumi_gestalt_rust::Output<bool>,
         /// A list of DNS servers that the Azure Firewall will direct DNS traffic to the for name resolution.
@@ -272,6 +275,7 @@ pub mod firewall {
         };
         let o = context.register_resource(request);
         FirewallResult {
+            id: o.get_field("id"),
             dns_proxy_enabled: o.get_field("dnsProxyEnabled"),
             dns_servers: o.get_field("dnsServers"),
             firewall_policy_id: o.get_field("firewallPolicyId"),

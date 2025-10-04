@@ -70,6 +70,9 @@ pub mod logpush_job {
     }
     #[allow(dead_code)]
     pub struct LogpushJobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. Must provide only one of `account_id`, `zone_id`.
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The kind of the dataset to use with the logpush job. Available values: `access_requests`, `casb_findings`, `firewall_events`, `http_requests`, `spectrum_events`, `nel_reports`, `audit_logs`, `gateway_dns`, `gateway_http`, `gateway_network`, `dns_logs`, `network_analytics_logs`, `workers_trace_events`, `device_posture_results`, `zero_trust_network_sessions`, `magic_ids_detections`, `page_shield_events`.
@@ -200,6 +203,7 @@ pub mod logpush_job {
         };
         let o = context.register_resource(request);
         LogpushJobResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             dataset: o.get_field("dataset"),
             destination_conf: o.get_field("destinationConf"),

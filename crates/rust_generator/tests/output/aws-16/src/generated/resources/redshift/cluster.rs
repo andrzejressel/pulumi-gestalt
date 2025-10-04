@@ -234,6 +234,9 @@ pub mod cluster {
     }
     #[allow(dead_code)]
     pub struct ClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// If true , major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. Default is `true`.
         pub allow_version_upgrade: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. Default is `false`.
@@ -626,6 +629,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
+            id: o.get_field("id"),
             allow_version_upgrade: o.get_field("allowVersionUpgrade"),
             apply_immediately: o.get_field("applyImmediately"),
             aqua_configuration_status: o.get_field("aquaConfigurationStatus"),

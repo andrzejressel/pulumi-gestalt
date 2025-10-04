@@ -102,6 +102,9 @@ pub mod release {
     }
     #[allow(dead_code)]
     pub struct ReleaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Output only. Time the release was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Disable the release to keep it from being served. The response code of NOT_FOUND will be given for executables generated from this Release.
@@ -154,6 +157,7 @@ pub mod release {
         };
         let o = context.register_resource(request);
         ReleaseResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             disabled: o.get_field("disabled"),
             name: o.get_field("name"),

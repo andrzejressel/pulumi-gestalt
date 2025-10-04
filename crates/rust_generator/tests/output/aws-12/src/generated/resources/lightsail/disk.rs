@@ -52,6 +52,9 @@ pub mod disk {
     }
     #[allow(dead_code)]
     pub struct DiskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Lightsail disk.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The Availability Zone in which to create your disk.
@@ -113,6 +116,7 @@ pub mod disk {
         };
         let o = context.register_resource(request);
         DiskResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),
             created_at: o.get_field("createdAt"),

@@ -228,6 +228,9 @@ pub mod metric {
     }
     #[allow(dead_code)]
     pub struct MetricResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The resource name of the Log Bucket that owns the Log Metric. Only Log Buckets in projects
         /// are supported. The bucket has to be in the same project as the metric.
         pub bucket_name: pulumi_gestalt_rust::Output<Option<String>>,
@@ -351,6 +354,7 @@ pub mod metric {
         };
         let o = context.register_resource(request);
         MetricResult {
+            id: o.get_field("id"),
             bucket_name: o.get_field("bucketName"),
             bucket_options: o.get_field("bucketOptions"),
             description: o.get_field("description"),

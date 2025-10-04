@@ -109,6 +109,9 @@ pub mod faq {
     }
     #[allow(dead_code)]
     pub struct FaqResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the FAQ.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The Unix datetime that the FAQ was created.
@@ -200,6 +203,7 @@ pub mod faq {
         };
         let o = context.register_resource(request);
         FaqResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_at: o.get_field("createdAt"),
             description: o.get_field("description"),

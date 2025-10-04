@@ -75,6 +75,9 @@ pub mod project_info {
     }
     #[allow(dead_code)]
     pub struct ProjectInfoResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the billing account associated with the project, if
         /// any. Set to empty string to disable billing for the project.
         /// For example, `"012345-567890-ABCDEF"` or `""`.
@@ -116,6 +119,7 @@ pub mod project_info {
         };
         let o = context.register_resource(request);
         ProjectInfoResult {
+            id: o.get_field("id"),
             billing_account: o.get_field("billingAccount"),
             project: o.get_field("project"),
         }

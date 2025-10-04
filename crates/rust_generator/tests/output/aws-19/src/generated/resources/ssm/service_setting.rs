@@ -41,6 +41,9 @@ pub mod service_setting {
     }
     #[allow(dead_code)]
     pub struct ServiceSettingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the service setting.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ID of the service setting.
@@ -80,6 +83,7 @@ pub mod service_setting {
         };
         let o = context.register_resource(request);
         ServiceSettingResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             setting_id: o.get_field("settingId"),
             setting_value: o.get_field("settingValue"),

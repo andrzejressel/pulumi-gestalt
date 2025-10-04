@@ -78,6 +78,9 @@ pub mod encryption_config {
     }
     #[allow(dead_code)]
     pub struct EncryptionConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An AWS KMS customer master key (CMK) ARN.
         pub key_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The type of encryption. Set to `KMS` to use your own key for encryption. Set to `NONE` for default encryption.
@@ -113,6 +116,7 @@ pub mod encryption_config {
         };
         let o = context.register_resource(request);
         EncryptionConfigResult {
+            id: o.get_field("id"),
             key_id: o.get_field("keyId"),
             type_: o.get_field("type"),
         }

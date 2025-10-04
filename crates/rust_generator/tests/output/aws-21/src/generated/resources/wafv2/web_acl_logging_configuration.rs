@@ -108,6 +108,9 @@ pub mod web_acl_logging_configuration {
     }
     #[allow(dead_code)]
     pub struct WebAclLoggingConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Configuration block that allows you to associate Amazon Kinesis Data Firehose, Cloudwatch Log log group, or S3 bucket Amazon Resource Names (ARNs) with the web ACL. **Note:** data firehose, log group, or bucket name **must** be prefixed with `aws-waf-logs-`, e.g. `aws-waf-logs-example-firehose`, `aws-waf-logs-example-log-group`, or `aws-waf-logs-example-bucket`.
         pub log_destination_configs: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Configuration block that specifies which web requests are kept in the logs and which are dropped. It allows filtering based on the rule action and the web request labels applied by matching rules during web ACL evaluation. For more details, refer to the Logging Filter section below.
@@ -166,6 +169,7 @@ pub mod web_acl_logging_configuration {
         };
         let o = context.register_resource(request);
         WebAclLoggingConfigurationResult {
+            id: o.get_field("id"),
             log_destination_configs: o.get_field("logDestinationConfigs"),
             logging_filter: o.get_field("loggingFilter"),
             redacted_fields: o.get_field("redactedFields"),

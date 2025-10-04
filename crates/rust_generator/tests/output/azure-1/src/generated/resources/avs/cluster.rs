@@ -71,6 +71,9 @@ pub mod cluster {
     }
     #[allow(dead_code)]
     pub struct ClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The count of the Azure VMware Solution Cluster nodes.
         pub cluster_node_count: pulumi_gestalt_rust::Output<i32>,
         /// A number that identifies this Cluster in its Azure VMware Solution Private Cloud.
@@ -124,6 +127,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
+            id: o.get_field("id"),
             cluster_node_count: o.get_field("clusterNodeCount"),
             cluster_number: o.get_field("clusterNumber"),
             hosts: o.get_field("hosts"),

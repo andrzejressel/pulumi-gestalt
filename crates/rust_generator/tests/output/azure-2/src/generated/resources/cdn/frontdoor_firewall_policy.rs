@@ -157,6 +157,9 @@ pub mod frontdoor_firewall_policy {
     }
     #[allow(dead_code)]
     pub struct FrontdoorFirewallPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// If a `custom_rule` block's action type is `block`, this is the response body. The body must be specified in base64 encoding.
         pub custom_block_response_body: pulumi_gestalt_rust::Output<Option<String>>,
         /// If a `custom_rule` block's action type is `block`, this is the response status code. Possible values are `200`, `403`, `405`, `406`, or `429`.
@@ -280,6 +283,7 @@ pub mod frontdoor_firewall_policy {
         };
         let o = context.register_resource(request);
         FrontdoorFirewallPolicyResult {
+            id: o.get_field("id"),
             custom_block_response_body: o.get_field("customBlockResponseBody"),
             custom_block_response_status_code: o
                 .get_field("customBlockResponseStatusCode"),

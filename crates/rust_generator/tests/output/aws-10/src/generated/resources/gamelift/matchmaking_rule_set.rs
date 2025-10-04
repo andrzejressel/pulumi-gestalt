@@ -26,6 +26,9 @@ pub mod matchmaking_rule_set {
     }
     #[allow(dead_code)]
     pub struct MatchmakingRuleSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Rule Set ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the matchmaking rule set.
@@ -75,6 +78,7 @@ pub mod matchmaking_rule_set {
         };
         let o = context.register_resource(request);
         MatchmakingRuleSetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             rule_set_body: o.get_field("ruleSetBody"),

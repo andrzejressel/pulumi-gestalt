@@ -89,6 +89,9 @@ pub mod backend_address_pool_address {
     }
     #[allow(dead_code)]
     pub struct BackendAddressPoolAddressResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ip config ID of the regional load balancer that's added to the global load balancer's backend address pool.
         ///
         /// > **Note:** For cross-region load balancer, please append the name of the load balancers, virtual machines, and other resources in each region with a -R1 and -R2.
@@ -159,6 +162,7 @@ pub mod backend_address_pool_address {
         };
         let o = context.register_resource(request);
         BackendAddressPoolAddressResult {
+            id: o.get_field("id"),
             backend_address_ip_configuration_id: o
                 .get_field("backendAddressIpConfigurationId"),
             backend_address_pool_id: o.get_field("backendAddressPoolId"),

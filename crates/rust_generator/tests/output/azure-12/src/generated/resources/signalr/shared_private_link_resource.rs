@@ -86,6 +86,9 @@ pub mod shared_private_link_resource {
     }
     #[allow(dead_code)]
     pub struct SharedPrivateLinkResourceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Signalr Shared Private Link Resource. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The request message for requesting approval of the Shared Private Link Enabled Remote Resource.
@@ -147,6 +150,7 @@ pub mod shared_private_link_resource {
         };
         let o = context.register_resource(request);
         SharedPrivateLinkResourceResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             request_message: o.get_field("requestMessage"),
             signalr_service_id: o.get_field("signalrServiceId"),

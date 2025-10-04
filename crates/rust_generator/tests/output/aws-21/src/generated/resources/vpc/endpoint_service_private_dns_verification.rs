@@ -51,6 +51,9 @@ pub mod endpoint_service_private_dns_verification {
     }
     #[allow(dead_code)]
     pub struct EndpointServicePrivateDnsVerificationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the endpoint service.
         ///
         /// The following arguments are optional:
@@ -101,6 +104,7 @@ pub mod endpoint_service_private_dns_verification {
         };
         let o = context.register_resource(request);
         EndpointServicePrivateDnsVerificationResult {
+            id: o.get_field("id"),
             service_id: o.get_field("serviceId"),
             timeouts: o.get_field("timeouts"),
             wait_for_verification: o.get_field("waitForVerification"),

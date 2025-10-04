@@ -60,6 +60,9 @@ pub mod group {
     }
     #[allow(dead_code)]
     pub struct GroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN assigned by AWS for this resource group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. See below for details.
@@ -128,6 +131,7 @@ pub mod group {
         };
         let o = context.register_resource(request);
         GroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             configurations: o.get_field("configurations"),
             description: o.get_field("description"),

@@ -89,6 +89,9 @@ pub mod protected_vm {
     }
     #[allow(dead_code)]
     pub struct ProtectedVMResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the id of the backup policy to use. Required in creation or when `protection_stopped` is not specified.
         pub backup_policy_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// A list of Disks' Logical Unit Numbers(LUN) to be excluded for VM Protection.
@@ -162,6 +165,7 @@ pub mod protected_vm {
         };
         let o = context.register_resource(request);
         ProtectedVMResult {
+            id: o.get_field("id"),
             backup_policy_id: o.get_field("backupPolicyId"),
             exclude_disk_luns: o.get_field("excludeDiskLuns"),
             include_disk_luns: o.get_field("includeDiskLuns"),

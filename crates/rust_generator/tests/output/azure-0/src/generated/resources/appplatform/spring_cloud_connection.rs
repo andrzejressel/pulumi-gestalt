@@ -114,6 +114,9 @@ pub mod spring_cloud_connection {
     }
     #[allow(dead_code)]
     pub struct SpringCloudConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The authentication info. An `authentication` block as defined below.
         pub authentication: pulumi_gestalt_rust::Output<
             super::super::types::appplatform::SpringCloudConnectionAuthentication,
@@ -186,6 +189,7 @@ pub mod spring_cloud_connection {
         };
         let o = context.register_resource(request);
         SpringCloudConnectionResult {
+            id: o.get_field("id"),
             authentication: o.get_field("authentication"),
             client_type: o.get_field("clientType"),
             name: o.get_field("name"),

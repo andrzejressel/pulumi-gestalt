@@ -65,6 +65,9 @@ pub mod vm_ware_replication_policy {
     }
     #[allow(dead_code)]
     pub struct VMWareReplicationPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the frequency at which to create application consistent recovery points. Must between `0` to `720`.
         pub application_consistent_snapshot_frequency_in_minutes: pulumi_gestalt_rust::Output<
             i32,
@@ -122,6 +125,7 @@ pub mod vm_ware_replication_policy {
         };
         let o = context.register_resource(request);
         VMWareReplicationPolicyResult {
+            id: o.get_field("id"),
             application_consistent_snapshot_frequency_in_minutes: o
                 .get_field("applicationConsistentSnapshotFrequencyInMinutes"),
             name: o.get_field("name"),

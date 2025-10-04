@@ -33,6 +33,9 @@ pub mod receipt_rule_set {
     }
     #[allow(dead_code)]
     pub struct ReceiptRuleSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// SES receipt rule set ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the rule set.
@@ -63,6 +66,7 @@ pub mod receipt_rule_set {
         };
         let o = context.register_resource(request);
         ReceiptRuleSetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             rule_set_name: o.get_field("ruleSetName"),
         }

@@ -53,6 +53,9 @@ pub mod application {
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The application definition ID to deploy.
         pub application_definition_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The kind of the managed application to deploy. Possible values are `MarketPlace` and `ServiceCatalog`. Changing this forces a new resource to be created.
@@ -149,6 +152,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
+            id: o.get_field("id"),
             application_definition_id: o.get_field("applicationDefinitionId"),
             kind: o.get_field("kind"),
             location: o.get_field("location"),

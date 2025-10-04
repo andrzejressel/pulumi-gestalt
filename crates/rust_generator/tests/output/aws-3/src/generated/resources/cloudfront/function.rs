@@ -44,6 +44,9 @@ pub mod function {
     }
     #[allow(dead_code)]
     pub struct FunctionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) identifying your CloudFront Function.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Source code of the function
@@ -121,6 +124,7 @@ pub mod function {
         };
         let o = context.register_resource(request);
         FunctionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             code: o.get_field("code"),
             comment: o.get_field("comment"),

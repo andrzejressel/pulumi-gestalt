@@ -44,6 +44,9 @@ pub mod event_configurations {
     }
     #[allow(dead_code)]
     pub struct EventConfigurationsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Map. The new event configuration values. You can use only these strings as keys: `THING_GROUP_HIERARCHY`, `THING_GROUP_MEMBERSHIP`, `THING_TYPE`, `THING_TYPE_ASSOCIATION`, `THING_GROUP`, `THING`, `POLICY`, `CA_CERTIFICATE`, `JOB_EXECUTION`, `CERTIFICATE`, `JOB`. Use boolean for values of mapping.
         pub event_configurations: pulumi_gestalt_rust::Output<
             std::collections::HashMap<String, bool>,
@@ -74,6 +77,7 @@ pub mod event_configurations {
         };
         let o = context.register_resource(request);
         EventConfigurationsResult {
+            id: o.get_field("id"),
             event_configurations: o.get_field("eventConfigurations"),
         }
     }

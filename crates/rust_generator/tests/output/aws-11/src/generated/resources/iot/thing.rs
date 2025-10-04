@@ -39,6 +39,9 @@ pub mod thing {
     }
     #[allow(dead_code)]
     pub struct ThingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the thing.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Map of attributes of the thing.
@@ -89,6 +92,7 @@ pub mod thing {
         };
         let o = context.register_resource(request);
         ThingResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             attributes: o.get_field("attributes"),
             default_client_id: o.get_field("defaultClientId"),

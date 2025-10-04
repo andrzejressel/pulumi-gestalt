@@ -45,6 +45,9 @@ pub mod user_policy_attachment {
     }
     #[allow(dead_code)]
     pub struct UserPolicyAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the policy you want to apply
         pub policy_arn: pulumi_gestalt_rust::Output<String>,
         /// The user the policy should be applied to
@@ -80,6 +83,7 @@ pub mod user_policy_attachment {
         };
         let o = context.register_resource(request);
         UserPolicyAttachmentResult {
+            id: o.get_field("id"),
             policy_arn: o.get_field("policyArn"),
             user: o.get_field("user"),
         }

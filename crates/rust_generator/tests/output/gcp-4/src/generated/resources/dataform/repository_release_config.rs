@@ -129,6 +129,9 @@ pub mod repository_release_config {
     }
     #[allow(dead_code)]
     pub struct RepositoryReleaseConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Optional. If set, fields of codeCompilationConfig override the default compilation settings that are specified in dataform.json.
         /// Structure is documented below.
         pub code_compilation_config: pulumi_gestalt_rust::Output<
@@ -224,6 +227,7 @@ pub mod repository_release_config {
         };
         let o = context.register_resource(request);
         RepositoryReleaseConfigResult {
+            id: o.get_field("id"),
             code_compilation_config: o.get_field("codeCompilationConfig"),
             cron_schedule: o.get_field("cronSchedule"),
             git_commitish: o.get_field("gitCommitish"),

@@ -80,6 +80,9 @@ pub mod analytics_configuration {
     }
     #[allow(dead_code)]
     pub struct AnalyticsConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the bucket this analytics configuration is associated with.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// Object filtering that accepts a prefix, tags, or a logical AND of prefix and tags (documented below).
@@ -135,6 +138,7 @@ pub mod analytics_configuration {
         };
         let o = context.register_resource(request);
         AnalyticsConfigurationResult {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             filter: o.get_field("filter"),
             name: o.get_field("name"),

@@ -59,6 +59,9 @@ pub mod access_grants_instance {
     }
     #[allow(dead_code)]
     pub struct AccessGrantsInstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the S3 Access Grants instance.
         pub access_grants_instance_arn: pulumi_gestalt_rust::Output<String>,
         /// Unique ID of the S3 Access Grants instance.
@@ -112,6 +115,7 @@ pub mod access_grants_instance {
         };
         let o = context.register_resource(request);
         AccessGrantsInstanceResult {
+            id: o.get_field("id"),
             access_grants_instance_arn: o.get_field("accessGrantsInstanceArn"),
             access_grants_instance_id: o.get_field("accessGrantsInstanceId"),
             account_id: o.get_field("accountId"),

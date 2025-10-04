@@ -102,6 +102,9 @@ pub mod hosting_channel {
     }
     #[allow(dead_code)]
     pub struct HostingChannelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Required. Immutable. A unique ID within the site that identifies the channel.
         ///
         ///
@@ -191,6 +194,7 @@ pub mod hosting_channel {
         };
         let o = context.register_resource(request);
         HostingChannelResult {
+            id: o.get_field("id"),
             channel_id: o.get_field("channelId"),
             effective_labels: o.get_field("effectiveLabels"),
             expire_time: o.get_field("expireTime"),

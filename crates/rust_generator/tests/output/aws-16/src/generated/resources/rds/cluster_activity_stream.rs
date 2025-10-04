@@ -83,6 +83,9 @@ pub mod cluster_activity_stream {
     }
     #[allow(dead_code)]
     pub struct ClusterActivityStreamResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether the database activity stream includes engine-native audit fields. This option only applies to an Oracle DB instance. By default, no engine-native audit fields are included. Defaults `false`.
         pub engine_native_audit_fields_included: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -138,6 +141,7 @@ pub mod cluster_activity_stream {
         };
         let o = context.register_resource(request);
         ClusterActivityStreamResult {
+            id: o.get_field("id"),
             engine_native_audit_fields_included: o
                 .get_field("engineNativeAuditFieldsIncluded"),
             kinesis_stream_name: o.get_field("kinesisStreamName"),

@@ -76,6 +76,9 @@ pub mod router_nat_address {
     }
     #[allow(dead_code)]
     pub struct RouterNatAddressResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of URLs of the IP resources to be drained. These IPs must be
         /// valid static external IPs that have been assigned to the NAT.
         pub drain_nat_ips: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
@@ -145,6 +148,7 @@ pub mod router_nat_address {
         };
         let o = context.register_resource(request);
         RouterNatAddressResult {
+            id: o.get_field("id"),
             drain_nat_ips: o.get_field("drainNatIps"),
             nat_ips: o.get_field("natIps"),
             project: o.get_field("project"),

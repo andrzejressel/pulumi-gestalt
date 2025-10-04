@@ -62,6 +62,9 @@ pub mod route_response {
     }
     #[allow(dead_code)]
     pub struct RouteResponseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// API identifier.
         pub api_id: pulumi_gestalt_rust::Output<String>,
         /// The [model selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-model-selection-expressions) for the route response.
@@ -122,6 +125,7 @@ pub mod route_response {
         };
         let o = context.register_resource(request);
         RouteResponseResult {
+            id: o.get_field("id"),
             api_id: o.get_field("apiId"),
             model_selection_expression: o.get_field("modelSelectionExpression"),
             response_models: o.get_field("responseModels"),

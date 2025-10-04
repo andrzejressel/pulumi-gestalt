@@ -73,6 +73,9 @@ pub mod data_share_consumer_association {
     }
     #[allow(dead_code)]
     pub struct DataShareConsumerAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to allow write operations for a datashare.
         pub allow_writes: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Whether the datashare is associated with the entire account. Conflicts with `consumer_arn` and `consumer_region`.
@@ -138,6 +141,7 @@ pub mod data_share_consumer_association {
         };
         let o = context.register_resource(request);
         DataShareConsumerAssociationResult {
+            id: o.get_field("id"),
             allow_writes: o.get_field("allowWrites"),
             associate_entire_account: o.get_field("associateEntireAccount"),
             consumer_arn: o.get_field("consumerArn"),

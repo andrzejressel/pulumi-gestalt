@@ -61,6 +61,9 @@ pub mod vpc_endpoint_policy {
     }
     #[allow(dead_code)]
     pub struct VpcEndpointPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A policy to attach to the endpoint that controls access to the service. Defaults to full access. All `Gateway` and some `Interface` endpoints support policies - see the [relevant AWS documentation](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-access.html) for more details.
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// The VPC Endpoint ID.
@@ -96,6 +99,7 @@ pub mod vpc_endpoint_policy {
         };
         let o = context.register_resource(request);
         VpcEndpointPolicyResult {
+            id: o.get_field("id"),
             policy: o.get_field("policy"),
             vpc_endpoint_id: o.get_field("vpcEndpointId"),
         }

@@ -113,6 +113,9 @@ pub mod output_blob {
     }
     #[allow(dead_code)]
     pub struct OutputBlobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The authentication mode for the Stream Output. Possible values are `Msi` and `ConnectionString`. Defaults to `ConnectionString`.
         pub authentication_mode: pulumi_gestalt_rust::Output<Option<String>>,
         /// The maximum wait time per batch in `hh:mm:ss` e.g. `00:02:00` for two minutes.
@@ -238,6 +241,7 @@ pub mod output_blob {
         };
         let o = context.register_resource(request);
         OutputBlobResult {
+            id: o.get_field("id"),
             authentication_mode: o.get_field("authenticationMode"),
             batch_max_wait_time: o.get_field("batchMaxWaitTime"),
             batch_min_rows: o.get_field("batchMinRows"),

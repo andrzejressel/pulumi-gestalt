@@ -120,6 +120,9 @@ pub mod schema {
     }
     #[allow(dead_code)]
     pub struct SchemaResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The definition of the schema.
         /// This should contain a string representing the full definition of the schema
         /// that is a valid schema definition of the type specified in type. Changes
@@ -181,6 +184,7 @@ pub mod schema {
         };
         let o = context.register_resource(request);
         SchemaResult {
+            id: o.get_field("id"),
             definition: o.get_field("definition"),
             name: o.get_field("name"),
             project: o.get_field("project"),

@@ -145,6 +145,9 @@ pub mod region_autoscaler {
     }
     #[allow(dead_code)]
     pub struct RegionAutoscalerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The configuration parameters for the autoscaling algorithm. You can
         /// define one or more of the policies for an autoscaler: cpuUtilization,
         /// customMetricUtilizations, and loadBalancingUtilization.
@@ -222,6 +225,7 @@ pub mod region_autoscaler {
         };
         let o = context.register_resource(request);
         RegionAutoscalerResult {
+            id: o.get_field("id"),
             autoscaling_policy: o.get_field("autoscalingPolicy"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

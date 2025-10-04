@@ -37,6 +37,9 @@ pub mod authentication_profile {
     }
     #[allow(dead_code)]
     pub struct AuthenticationProfileResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.
         pub authentication_profile_content: pulumi_gestalt_rust::Output<String>,
         /// The name of the authentication profile.
@@ -76,6 +79,7 @@ pub mod authentication_profile {
         };
         let o = context.register_resource(request);
         AuthenticationProfileResult {
+            id: o.get_field("id"),
             authentication_profile_content: o.get_field("authenticationProfileContent"),
             authentication_profile_name: o.get_field("authenticationProfileName"),
         }

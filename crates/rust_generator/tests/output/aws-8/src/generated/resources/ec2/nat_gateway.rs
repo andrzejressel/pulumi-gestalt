@@ -120,6 +120,9 @@ pub mod nat_gateway {
     }
     #[allow(dead_code)]
     pub struct NatGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Allocation ID of the Elastic IP address for the NAT Gateway. Required for `connectivity_type` of `public`.
         pub allocation_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The association ID of the Elastic IP address that's associated with the NAT Gateway. Only available when `connectivity_type` is `public`.
@@ -215,6 +218,7 @@ pub mod nat_gateway {
         };
         let o = context.register_resource(request);
         NatGatewayResult {
+            id: o.get_field("id"),
             allocation_id: o.get_field("allocationId"),
             association_id: o.get_field("associationId"),
             connectivity_type: o.get_field("connectivityType"),

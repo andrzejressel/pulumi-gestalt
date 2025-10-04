@@ -139,6 +139,9 @@ pub mod project {
     }
     #[allow(dead_code)]
     pub struct ProjectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Create the 'default' network automatically. Default true. If set to false, the default network will be deleted. Note
         /// that, for quota purposes, you will still need to have 1 network slot available to create the project successfully, even
         /// if you set auto_create_network to false, since the network will exist momentarily.
@@ -253,6 +256,7 @@ pub mod project {
         };
         let o = context.register_resource(request);
         ProjectResult {
+            id: o.get_field("id"),
             auto_create_network: o.get_field("autoCreateNetwork"),
             billing_account: o.get_field("billingAccount"),
             deletion_policy: o.get_field("deletionPolicy"),

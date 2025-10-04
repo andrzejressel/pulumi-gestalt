@@ -69,6 +69,9 @@ pub mod alert_rule_machine_learning_behavior_analytics {
     }
     #[allow(dead_code)]
     pub struct AlertRuleMachineLearningBehaviorAnalyticsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The GUID of the alert rule template which is used for this Sentinel Machine Learning Behavior Analytics Alert Rule. Changing this forces a new Sentinel Machine Learning Behavior Analytics Alert Rule to be created.
         pub alert_rule_template_guid: pulumi_gestalt_rust::Output<String>,
         /// Should this Sentinel Machine Learning Behavior Analytics Alert Rule be enabled? Defaults to `true`.
@@ -123,6 +126,7 @@ pub mod alert_rule_machine_learning_behavior_analytics {
         };
         let o = context.register_resource(request);
         AlertRuleMachineLearningBehaviorAnalyticsResult {
+            id: o.get_field("id"),
             alert_rule_template_guid: o.get_field("alertRuleTemplateGuid"),
             enabled: o.get_field("enabled"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),

@@ -71,6 +71,9 @@ pub mod volume {
     }
     #[allow(dead_code)]
     pub struct VolumeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The volume ARN (e.g., arn:aws:ec2:us-east-1:123456789012:volume/vol-59fcb34e).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The AZ where the EBS volume will exist.
@@ -186,6 +189,7 @@ pub mod volume {
         };
         let o = context.register_resource(request);
         VolumeResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),
             encrypted: o.get_field("encrypted"),

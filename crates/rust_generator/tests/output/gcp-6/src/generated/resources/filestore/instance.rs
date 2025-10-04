@@ -254,6 +254,9 @@ pub mod instance {
     }
     #[allow(dead_code)]
     pub struct InstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp in RFC3339 text format.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether the instance is protected against deletion.
@@ -407,6 +410,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             deletion_protection_enabled: o.get_field("deletionProtectionEnabled"),
             deletion_protection_reason: o.get_field("deletionProtectionReason"),

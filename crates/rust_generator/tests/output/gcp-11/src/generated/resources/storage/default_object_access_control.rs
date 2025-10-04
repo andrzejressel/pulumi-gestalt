@@ -89,6 +89,9 @@ pub mod default_object_access_control {
     }
     #[allow(dead_code)]
     pub struct DefaultObjectAccessControlResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the bucket.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// The domain associated with the entity.
@@ -164,6 +167,7 @@ pub mod default_object_access_control {
         };
         let o = context.register_resource(request);
         DefaultObjectAccessControlResult {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             domain: o.get_field("domain"),
             email: o.get_field("email"),

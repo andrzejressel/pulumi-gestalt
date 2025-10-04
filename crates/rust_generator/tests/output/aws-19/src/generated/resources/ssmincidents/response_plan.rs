@@ -113,6 +113,9 @@ pub mod response_plan {
     }
     #[allow(dead_code)]
     pub struct ResponsePlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub action: pulumi_gestalt_rust::Output<
             Option<super::super::types::ssmincidents::ResponsePlanAction>,
         >,
@@ -197,6 +200,7 @@ pub mod response_plan {
         };
         let o = context.register_resource(request);
         ResponsePlanResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             arn: o.get_field("arn"),
             chat_channels: o.get_field("chatChannels"),

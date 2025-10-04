@@ -73,6 +73,9 @@ pub mod subnet_nat_gateway_association {
     }
     #[allow(dead_code)]
     pub struct SubnetNatGatewayAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the NAT Gateway which should be associated with the Subnet. Changing this forces a new resource to be created.
         pub nat_gateway_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Subnet. Changing this forces a new resource to be created.
@@ -109,6 +112,7 @@ pub mod subnet_nat_gateway_association {
         };
         let o = context.register_resource(request);
         SubnetNatGatewayAssociationResult {
+            id: o.get_field("id"),
             nat_gateway_id: o.get_field("natGatewayId"),
             subnet_id: o.get_field("subnetId"),
         }

@@ -58,6 +58,9 @@ pub mod posture_deployment {
     }
     #[allow(dead_code)]
     pub struct PostureDeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Time the posture deployment was created in UTC.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Description of the posture deployment.
@@ -163,6 +166,7 @@ pub mod posture_deployment {
         };
         let o = context.register_resource(request);
         PostureDeploymentResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             desired_posture_id: o.get_field("desiredPostureId"),

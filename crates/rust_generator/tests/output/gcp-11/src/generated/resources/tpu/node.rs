@@ -171,6 +171,9 @@ pub mod node {
     }
     #[allow(dead_code)]
     pub struct NodeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The type of hardware accelerators associated with this node.
         pub accelerator_type: pulumi_gestalt_rust::Output<String>,
         /// The CIDR block that the TPU node will use when selecting an IP
@@ -316,6 +319,7 @@ pub mod node {
         };
         let o = context.register_resource(request);
         NodeResult {
+            id: o.get_field("id"),
             accelerator_type: o.get_field("acceleratorType"),
             cidr_block: o.get_field("cidrBlock"),
             description: o.get_field("description"),

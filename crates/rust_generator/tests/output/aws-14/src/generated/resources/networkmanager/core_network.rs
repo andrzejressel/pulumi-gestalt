@@ -139,6 +139,9 @@ pub mod core_network {
     }
     #[allow(dead_code)]
     pub struct CoreNetworkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Core Network Amazon Resource Name (ARN).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Sets the base policy document for the core network. Refer to the [Core network policies documentation](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policy-change-sets.html) for more information.
@@ -254,6 +257,7 @@ pub mod core_network {
         };
         let o = context.register_resource(request);
         CoreNetworkResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             base_policy_document: o.get_field("basePolicyDocument"),
             base_policy_region: o.get_field("basePolicyRegion"),

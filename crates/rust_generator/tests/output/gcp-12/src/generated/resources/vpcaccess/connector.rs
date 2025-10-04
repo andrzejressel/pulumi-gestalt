@@ -144,6 +144,9 @@ pub mod connector {
     }
     #[allow(dead_code)]
     pub struct ConnectorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of projects using the connector.
         pub connected_projects: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The range of internal addresses that follows RFC 4632 notation. Example: `10.132.0.0/28`.
@@ -261,6 +264,7 @@ pub mod connector {
         };
         let o = context.register_resource(request);
         ConnectorResult {
+            id: o.get_field("id"),
             connected_projects: o.get_field("connectedProjects"),
             ip_cidr_range: o.get_field("ipCidrRange"),
             machine_type: o.get_field("machineType"),

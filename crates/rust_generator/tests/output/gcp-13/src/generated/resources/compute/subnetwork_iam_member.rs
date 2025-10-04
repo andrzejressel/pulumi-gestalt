@@ -401,6 +401,9 @@ pub mod subnetwork_iam_member {
     }
     #[allow(dead_code)]
     pub struct SubnetworkIAMMemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
         /// Structure is documented below.
         pub condition: pulumi_gestalt_rust::Output<
@@ -485,6 +488,7 @@ pub mod subnetwork_iam_member {
         };
         let o = context.register_resource(request);
         SubnetworkIAMMemberResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),
             member: o.get_field("member"),

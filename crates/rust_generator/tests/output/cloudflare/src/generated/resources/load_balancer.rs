@@ -155,6 +155,9 @@ pub mod load_balancer {
     }
     #[allow(dead_code)]
     pub struct LoadBalancerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Controls features that modify the routing of requests to pools and origins in response to dynamic conditions, such as during the interval between active health monitoring requests.
         pub adaptive_routings: pulumi_gestalt_rust::Output<
             Option<Vec<super::types::LoadBalancerAdaptiveRouting>>,
@@ -331,6 +334,7 @@ pub mod load_balancer {
         };
         let o = context.register_resource(request);
         LoadBalancerResult {
+            id: o.get_field("id"),
             adaptive_routings: o.get_field("adaptiveRoutings"),
             country_pools: o.get_field("countryPools"),
             created_on: o.get_field("createdOn"),

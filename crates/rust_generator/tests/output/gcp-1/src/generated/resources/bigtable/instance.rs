@@ -129,6 +129,9 @@ pub mod instance {
     }
     #[allow(dead_code)]
     pub struct InstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A block of cluster configuration options. This can be specified at least once, and up
         /// to as many as possible within 8 cloud regions. Removing the field entirely from the config will cause the provider
         /// to default to the backend value. See structure below.
@@ -233,6 +236,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
+            id: o.get_field("id"),
             clusters: o.get_field("clusters"),
             deletion_protection: o.get_field("deletionProtection"),
             display_name: o.get_field("displayName"),

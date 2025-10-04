@@ -81,6 +81,9 @@ pub mod watchlist {
     }
     #[allow(dead_code)]
     pub struct WatchlistResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The default duration in ISO8601 duration form of this Sentinel Watchlist. Changing this forces a new Sentinel Watchlist to be created.
         pub default_duration: pulumi_gestalt_rust::Output<Option<String>>,
         /// The description of this Sentinel Watchlist. Changing this forces a new Sentinel Watchlist to be created.
@@ -153,6 +156,7 @@ pub mod watchlist {
         };
         let o = context.register_resource(request);
         WatchlistResult {
+            id: o.get_field("id"),
             default_duration: o.get_field("defaultDuration"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

@@ -36,6 +36,9 @@ pub mod organization_delegated_admin_account {
     }
     #[allow(dead_code)]
     pub struct OrganizationDelegatedAdminAccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An organization member account ID that you want to designate as a delegated administrator.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the delegated administrator's account.
@@ -73,6 +76,7 @@ pub mod organization_delegated_admin_account {
         };
         let o = context.register_resource(request);
         OrganizationDelegatedAdminAccountResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             arn: o.get_field("arn"),
             email: o.get_field("email"),

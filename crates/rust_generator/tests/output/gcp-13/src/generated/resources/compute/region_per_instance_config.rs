@@ -173,6 +173,9 @@ pub mod region_per_instance_config {
     }
     #[allow(dead_code)]
     pub struct RegionPerInstanceConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The minimal action to perform on the instance during an update.
         /// Default is `NONE`. Possible values are:
         /// * REPLACE
@@ -285,6 +288,7 @@ pub mod region_per_instance_config {
         };
         let o = context.register_resource(request);
         RegionPerInstanceConfigResult {
+            id: o.get_field("id"),
             minimal_action: o.get_field("minimalAction"),
             most_disruptive_allowed_action: o.get_field("mostDisruptiveAllowedAction"),
             name: o.get_field("name"),

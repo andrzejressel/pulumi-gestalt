@@ -104,6 +104,9 @@ pub mod parameter {
     }
     #[allow(dead_code)]
     pub struct ParameterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Regular expression used to validate the parameter value.
         pub allowed_pattern: pulumi_gestalt_rust::Output<Option<String>>,
         /// ARN of the parameter.
@@ -221,6 +224,7 @@ pub mod parameter {
         };
         let o = context.register_resource(request);
         ParameterResult {
+            id: o.get_field("id"),
             allowed_pattern: o.get_field("allowedPattern"),
             arn: o.get_field("arn"),
             data_type: o.get_field("dataType"),

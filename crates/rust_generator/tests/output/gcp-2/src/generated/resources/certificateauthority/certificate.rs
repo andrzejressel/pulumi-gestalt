@@ -539,6 +539,9 @@ pub mod certificate {
     }
     #[allow(dead_code)]
     pub struct CertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Certificate Authority ID that should issue the certificate. For example, to issue a Certificate from
         /// a Certificate Authority with resource name `projects/my-project/locations/us-central1/caPools/my-pool/certificateAuthorities/my-ca`,
         /// argument `pool` should be set to `projects/my-project/locations/us-central1/caPools/my-pool`, argument `certificate_authority`
@@ -688,6 +691,7 @@ pub mod certificate {
         };
         let o = context.register_resource(request);
         CertificateResult {
+            id: o.get_field("id"),
             certificate_authority: o.get_field("certificateAuthority"),
             certificate_descriptions: o.get_field("certificateDescriptions"),
             certificate_template: o.get_field("certificateTemplate"),

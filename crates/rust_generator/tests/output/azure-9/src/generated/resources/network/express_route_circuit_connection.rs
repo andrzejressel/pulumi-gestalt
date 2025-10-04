@@ -144,6 +144,9 @@ pub mod express_route_circuit_connection {
     }
     #[allow(dead_code)]
     pub struct ExpressRouteCircuitConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IPv4 address space from which to allocate customer address for global reach. Changing this forces a new Express Route Circuit Connection to be created.
         pub address_prefix_ipv4: pulumi_gestalt_rust::Output<String>,
         /// The IPv6 address space from which to allocate customer addresses for global reach.
@@ -210,6 +213,7 @@ pub mod express_route_circuit_connection {
         };
         let o = context.register_resource(request);
         ExpressRouteCircuitConnectionResult {
+            id: o.get_field("id"),
             address_prefix_ipv4: o.get_field("addressPrefixIpv4"),
             address_prefix_ipv6: o.get_field("addressPrefixIpv6"),
             authorization_key: o.get_field("authorizationKey"),

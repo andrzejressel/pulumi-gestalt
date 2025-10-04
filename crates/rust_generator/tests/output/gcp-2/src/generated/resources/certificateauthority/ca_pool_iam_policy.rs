@@ -356,6 +356,9 @@ pub mod ca_pool_iam_policy {
     }
     #[allow(dead_code)]
     pub struct CaPoolIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Used to find the parent resource to bind the IAM policy to
         pub ca_pool: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
@@ -413,6 +416,7 @@ pub mod ca_pool_iam_policy {
         };
         let o = context.register_resource(request);
         CaPoolIamPolicyResult {
+            id: o.get_field("id"),
             ca_pool: o.get_field("caPool"),
             etag: o.get_field("etag"),
             location: o.get_field("location"),

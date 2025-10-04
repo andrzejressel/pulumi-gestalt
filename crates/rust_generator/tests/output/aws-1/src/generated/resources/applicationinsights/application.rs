@@ -68,6 +68,9 @@ pub mod application {
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Application.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether Application Insights automatically configures unmonitored resources in the resource group.
@@ -157,6 +160,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             auto_config_enabled: o.get_field("autoConfigEnabled"),
             auto_create: o.get_field("autoCreate"),

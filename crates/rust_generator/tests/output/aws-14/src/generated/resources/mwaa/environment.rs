@@ -125,6 +125,9 @@ pub mod environment {
     }
     #[allow(dead_code)]
     pub struct EnvironmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The `airflow_configuration_options` parameter specifies airflow override options. Check the [Official documentation](https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html#configuring-env-variables-reference) for all possible configuration options.
         pub airflow_configuration_options: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -369,6 +372,7 @@ pub mod environment {
         };
         let o = context.register_resource(request);
         EnvironmentResult {
+            id: o.get_field("id"),
             airflow_configuration_options: o.get_field("airflowConfigurationOptions"),
             airflow_version: o.get_field("airflowVersion"),
             arn: o.get_field("arn"),

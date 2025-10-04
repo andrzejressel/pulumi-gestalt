@@ -118,6 +118,9 @@ pub mod subnet {
     }
     #[allow(dead_code)]
     pub struct SubnetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The address prefixes to use for the subnet.
         ///
         /// > **NOTE:** Currently only a single address prefix can be set as the [Multiple Subnet Address Prefixes Feature](https://github.com/Azure/azure-cli/issues/18194#issuecomment-880484269) is not yet in public preview or general availability.
@@ -238,6 +241,7 @@ pub mod subnet {
         };
         let o = context.register_resource(request);
         SubnetResult {
+            id: o.get_field("id"),
             address_prefixes: o.get_field("addressPrefixes"),
             default_outbound_access_enabled: o.get_field("defaultOutboundAccessEnabled"),
             delegations: o.get_field("delegations"),

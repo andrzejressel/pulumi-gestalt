@@ -63,6 +63,9 @@ pub mod instance_state {
     }
     #[allow(dead_code)]
     pub struct InstanceStateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to request a forced stop when `state` is `stopped`. Otherwise (_i.e._, `state` is `running`), ignored. When an instance is forced to stop, it does not flush file system caches or file system metadata, and you must subsequently perform file system check and repair. Not recommended for Windows instances. Defaults to `false`.
         pub force: pulumi_gestalt_rust::Output<Option<bool>>,
         /// ID of the instance.
@@ -107,6 +110,7 @@ pub mod instance_state {
         };
         let o = context.register_resource(request);
         InstanceStateResult {
+            id: o.get_field("id"),
             force: o.get_field("force"),
             instance_id: o.get_field("instanceId"),
             state: o.get_field("state"),

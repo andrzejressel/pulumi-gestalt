@@ -91,6 +91,9 @@ pub mod spring_cloud_new_relic_application_performance_monitoring {
     }
     #[allow(dead_code)]
     pub struct SpringCloudNewRelicApplicationPerformanceMonitoringResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether enable the agent. Defaults to `true`.
         pub agent_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies the application name used to report data to New Relic.
@@ -207,6 +210,7 @@ pub mod spring_cloud_new_relic_application_performance_monitoring {
         };
         let o = context.register_resource(request);
         SpringCloudNewRelicApplicationPerformanceMonitoringResult {
+            id: o.get_field("id"),
             agent_enabled: o.get_field("agentEnabled"),
             app_name: o.get_field("appName"),
             app_server_port: o.get_field("appServerPort"),

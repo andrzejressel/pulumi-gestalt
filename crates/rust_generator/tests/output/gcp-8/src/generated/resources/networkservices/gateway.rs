@@ -353,6 +353,9 @@ pub mod gateway {
     }
     #[allow(dead_code)]
     pub struct GatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Zero or one IPv4-address on which the Gateway will receive the traffic. When no address is provided,
         /// an IP from the subnetwork is allocated This field only applies to gateways of type 'SECURE_WEB_GATEWAY'.
         /// Gateways of type 'OPEN_MESH' listen on 0.0.0.0.
@@ -534,6 +537,7 @@ pub mod gateway {
         };
         let o = context.register_resource(request);
         GatewayResult {
+            id: o.get_field("id"),
             addresses: o.get_field("addresses"),
             certificate_urls: o.get_field("certificateUrls"),
             create_time: o.get_field("createTime"),

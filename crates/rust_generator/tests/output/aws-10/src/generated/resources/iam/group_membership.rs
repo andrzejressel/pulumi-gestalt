@@ -54,6 +54,9 @@ pub mod group_membership {
     }
     #[allow(dead_code)]
     pub struct GroupMembershipResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IAM Group name to attach the list of `users` to
         pub group: pulumi_gestalt_rust::Output<String>,
         /// The name to identify the Group Membership
@@ -96,6 +99,7 @@ pub mod group_membership {
         };
         let o = context.register_resource(request);
         GroupMembershipResult {
+            id: o.get_field("id"),
             group: o.get_field("group"),
             name: o.get_field("name"),
             users: o.get_field("users"),

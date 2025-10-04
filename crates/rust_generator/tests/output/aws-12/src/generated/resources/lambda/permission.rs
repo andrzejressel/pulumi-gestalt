@@ -269,6 +269,9 @@ pub mod permission {
     }
     #[allow(dead_code)]
     pub struct PermissionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AWS Lambda action you want to allow in this statement. (e.g., `lambda:InvokeFunction`)
         pub action: pulumi_gestalt_rust::Output<String>,
         /// The Event Source Token to validate.  Used with [Alexa Skills](https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html#use-aws-cli).
@@ -377,6 +380,7 @@ pub mod permission {
         };
         let o = context.register_resource(request);
         PermissionResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             event_source_token: o.get_field("eventSourceToken"),
             function: o.get_field("function"),

@@ -86,6 +86,9 @@ pub mod spring_cloud_java_deployment {
     }
     #[allow(dead_code)]
     pub struct SpringCloudJavaDeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the environment variables of the Spring Cloud Deployment as a map of key-value pairs.
         pub environment_variables: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -163,6 +166,7 @@ pub mod spring_cloud_java_deployment {
         };
         let o = context.register_resource(request);
         SpringCloudJavaDeploymentResult {
+            id: o.get_field("id"),
             environment_variables: o.get_field("environmentVariables"),
             instance_count: o.get_field("instanceCount"),
             jvm_options: o.get_field("jvmOptions"),

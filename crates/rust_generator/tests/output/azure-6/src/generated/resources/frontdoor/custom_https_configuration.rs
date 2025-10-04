@@ -108,6 +108,9 @@ pub mod custom_https_configuration {
     }
     #[allow(dead_code)]
     pub struct CustomHttpsConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `custom_https_configuration` block as defined above.
         pub custom_https_configuration: pulumi_gestalt_rust::Output<
             Option<
@@ -159,6 +162,7 @@ pub mod custom_https_configuration {
         };
         let o = context.register_resource(request);
         CustomHttpsConfigurationResult {
+            id: o.get_field("id"),
             custom_https_configuration: o.get_field("customHttpsConfiguration"),
             custom_https_provisioning_enabled: o
                 .get_field("customHttpsProvisioningEnabled"),

@@ -145,6 +145,9 @@ pub mod access_application {
     }
     #[allow(dead_code)]
     pub struct AccessApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. Conflicts with `zone_id`.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// When set to true, users can authenticate to this application using their WARP session. When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
@@ -438,6 +441,7 @@ pub mod access_application {
         };
         let o = context.register_resource(request);
         AccessApplicationResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             allow_authenticate_via_warp: o.get_field("allowAuthenticateViaWarp"),
             allowed_idps: o.get_field("allowedIdps"),

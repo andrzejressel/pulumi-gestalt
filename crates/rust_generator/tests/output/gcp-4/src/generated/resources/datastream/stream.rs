@@ -1032,6 +1032,9 @@ pub mod stream {
     }
     #[allow(dead_code)]
     pub struct StreamResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Backfill strategy to automatically backfill the Stream's objects. Specific objects can be excluded.
         pub backfill_all: pulumi_gestalt_rust::Output<
             Option<super::super::types::datastream::StreamBackfillAll>,
@@ -1169,6 +1172,7 @@ pub mod stream {
         };
         let o = context.register_resource(request);
         StreamResult {
+            id: o.get_field("id"),
             backfill_all: o.get_field("backfillAll"),
             backfill_none: o.get_field("backfillNone"),
             create_without_validation: o.get_field("createWithoutValidation"),

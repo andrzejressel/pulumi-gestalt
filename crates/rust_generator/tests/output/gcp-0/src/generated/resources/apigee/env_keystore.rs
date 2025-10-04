@@ -44,6 +44,9 @@ pub mod env_keystore {
     }
     #[allow(dead_code)]
     pub struct EnvKeystoreResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Aliases in this keystore.
         pub aliases: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The Apigee environment group associated with the Apigee environment,
@@ -85,6 +88,7 @@ pub mod env_keystore {
         };
         let o = context.register_resource(request);
         EnvKeystoreResult {
+            id: o.get_field("id"),
             aliases: o.get_field("aliases"),
             env_id: o.get_field("envId"),
             name: o.get_field("name"),

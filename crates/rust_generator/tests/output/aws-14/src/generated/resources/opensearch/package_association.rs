@@ -58,6 +58,9 @@ pub mod package_association {
     }
     #[allow(dead_code)]
     pub struct PackageAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the domain to associate the package with.
         pub domain_name: pulumi_gestalt_rust::Output<String>,
         /// Internal ID of the package to associate with a domain.
@@ -94,6 +97,7 @@ pub mod package_association {
         };
         let o = context.register_resource(request);
         PackageAssociationResult {
+            id: o.get_field("id"),
             domain_name: o.get_field("domainName"),
             package_id: o.get_field("packageId"),
             reference_path: o.get_field("referencePath"),

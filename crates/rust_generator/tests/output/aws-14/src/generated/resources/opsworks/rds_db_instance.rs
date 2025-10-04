@@ -39,6 +39,9 @@ pub mod rds_db_instance {
     }
     #[allow(dead_code)]
     pub struct RdsDbInstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A db password
         pub db_password: pulumi_gestalt_rust::Output<String>,
         /// A db username
@@ -88,6 +91,7 @@ pub mod rds_db_instance {
         };
         let o = context.register_resource(request);
         RdsDbInstanceResult {
+            id: o.get_field("id"),
             db_password: o.get_field("dbPassword"),
             db_user: o.get_field("dbUser"),
             rds_db_instance_arn: o.get_field("rdsDbInstanceArn"),

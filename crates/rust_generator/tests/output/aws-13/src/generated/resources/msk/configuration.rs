@@ -48,6 +48,9 @@ pub mod configuration {
     }
     #[allow(dead_code)]
     pub struct ConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Description of the configuration.
@@ -101,6 +104,7 @@ pub mod configuration {
         };
         let o = context.register_resource(request);
         ConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             kafka_versions: o.get_field("kafkaVersions"),

@@ -208,6 +208,9 @@ pub mod connectivity_test {
     }
     #[allow(dead_code)]
     pub struct ConnectivityTestResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The user-supplied description of the Connectivity Test. Maximum of 512 characters.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Required. Destination specification of the Connectivity Test.
@@ -334,6 +337,7 @@ pub mod connectivity_test {
         };
         let o = context.register_resource(request);
         ConnectivityTestResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             destination: o.get_field("destination"),
             effective_labels: o.get_field("effectiveLabels"),

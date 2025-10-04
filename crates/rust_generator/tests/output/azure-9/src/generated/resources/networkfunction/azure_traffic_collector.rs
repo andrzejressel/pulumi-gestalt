@@ -51,6 +51,9 @@ pub mod azure_traffic_collector {
     }
     #[allow(dead_code)]
     pub struct AzureTrafficCollectorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The list of Resource IDs of collector policies.
         pub collector_policy_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Specifies the Azure Region where the Network Function Azure Traffic Collector should exist. Changing this forces a new Network Function Azure Traffic Collector to be created.
@@ -107,6 +110,7 @@ pub mod azure_traffic_collector {
         };
         let o = context.register_resource(request);
         AzureTrafficCollectorResult {
+            id: o.get_field("id"),
             collector_policy_ids: o.get_field("collectorPolicyIds"),
             location: o.get_field("location"),
             name: o.get_field("name"),

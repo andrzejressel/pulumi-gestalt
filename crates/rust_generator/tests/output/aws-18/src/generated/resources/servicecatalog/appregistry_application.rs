@@ -62,6 +62,9 @@ pub mod appregistry_application {
     }
     #[allow(dead_code)]
     pub struct AppregistryApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map with a single tag key-value pair used to associate resources with the application. This attribute can be passed directly into the `tags` argument of another resource, or merged into a map of existing tags.
         pub application_tag: pulumi_gestalt_rust::Output<
             std::collections::HashMap<String, String>,
@@ -119,6 +122,7 @@ pub mod appregistry_application {
         };
         let o = context.register_resource(request);
         AppregistryApplicationResult {
+            id: o.get_field("id"),
             application_tag: o.get_field("applicationTag"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),

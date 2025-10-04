@@ -185,6 +185,9 @@ pub mod integration {
     }
     #[allow(dead_code)]
     pub struct IntegrationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// API identifier.
         pub api_id: pulumi_gestalt_rust::Output<String>,
         /// ID of the VPC link for a private integration. Supported only for HTTP APIs. Must be between 1 and 1024 characters in length.
@@ -358,6 +361,7 @@ pub mod integration {
         };
         let o = context.register_resource(request);
         IntegrationResult {
+            id: o.get_field("id"),
             api_id: o.get_field("apiId"),
             connection_id: o.get_field("connectionId"),
             connection_type: o.get_field("connectionType"),

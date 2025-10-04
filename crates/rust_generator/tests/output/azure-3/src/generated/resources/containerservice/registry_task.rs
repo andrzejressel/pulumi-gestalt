@@ -139,6 +139,9 @@ pub mod registry_task {
     }
     #[allow(dead_code)]
     pub struct RegistryTaskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the dedicated Container Registry Agent Pool for this Container Registry Task.
         pub agent_pool_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// A `agent_setting` block as defined below.
@@ -312,6 +315,7 @@ pub mod registry_task {
         };
         let o = context.register_resource(request);
         RegistryTaskResult {
+            id: o.get_field("id"),
             agent_pool_name: o.get_field("agentPoolName"),
             agent_setting: o.get_field("agentSetting"),
             base_image_trigger: o.get_field("baseImageTrigger"),

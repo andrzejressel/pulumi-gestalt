@@ -101,6 +101,9 @@ pub mod output_synapse {
     }
     #[allow(dead_code)]
     pub struct OutputSynapseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Azure SQL database. Changing this forces a new resource to be created.
         pub database: pulumi_gestalt_rust::Output<String>,
         /// The name of the Stream Output. Changing this forces a new resource to be created.
@@ -180,6 +183,7 @@ pub mod output_synapse {
         };
         let o = context.register_resource(request);
         OutputSynapseResult {
+            id: o.get_field("id"),
             database: o.get_field("database"),
             name: o.get_field("name"),
             password: o.get_field("password"),

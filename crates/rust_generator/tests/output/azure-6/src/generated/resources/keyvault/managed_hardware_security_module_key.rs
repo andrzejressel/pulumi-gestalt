@@ -108,6 +108,9 @@ pub mod managed_hardware_security_module_key {
     }
     #[allow(dead_code)]
     pub struct ManagedHardwareSecurityModuleKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the curve to use when creating an `EC-HSM` key. Possible values are `P-256`, `P-256K`, `P-384`, and `P-521`. This field is required if `key_type` is `EC-HSM`. Changing this forces a new resource to be created.
         pub curve: pulumi_gestalt_rust::Output<Option<String>>,
         /// Expiration UTC datetime (Y-m-d'T'H:M:S'Z'). When this parameter gets changed on reruns, if newer date is ahead of current date, an update is performed. If the newer date is before the current date, resource will be force created.
@@ -199,6 +202,7 @@ pub mod managed_hardware_security_module_key {
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleKeyResult {
+            id: o.get_field("id"),
             curve: o.get_field("curve"),
             expiration_date: o.get_field("expirationDate"),
             key_opts: o.get_field("keyOpts"),

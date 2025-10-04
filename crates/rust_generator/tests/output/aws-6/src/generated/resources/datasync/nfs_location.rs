@@ -61,6 +61,9 @@ pub mod nfs_location {
     }
     #[allow(dead_code)]
     pub struct NfsLocationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the DataSync Location.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block containing mount options used by DataSync to access the NFS Server.
@@ -130,6 +133,7 @@ pub mod nfs_location {
         };
         let o = context.register_resource(request);
         NfsLocationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             mount_options: o.get_field("mountOptions"),
             on_prem_config: o.get_field("onPremConfig"),

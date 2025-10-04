@@ -49,6 +49,9 @@ pub mod image {
     }
     #[allow(dead_code)]
     pub struct ImageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Image.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The description of the image.
@@ -113,6 +116,7 @@ pub mod image {
         };
         let o = context.register_resource(request);
         ImageResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

@@ -55,6 +55,9 @@ pub mod deployment {
     }
     #[allow(dead_code)]
     pub struct DeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Application to deploy.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// Version to application to deploy
@@ -119,6 +122,7 @@ pub mod deployment {
         };
         let o = context.register_resource(request);
         DeploymentResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             application_version: o.get_field("applicationVersion"),
             deployment_id: o.get_field("deploymentId"),

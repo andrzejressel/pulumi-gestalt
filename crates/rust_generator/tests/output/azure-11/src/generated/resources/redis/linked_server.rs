@@ -86,6 +86,9 @@ pub mod linked_server {
     }
     #[allow(dead_code)]
     pub struct LinkedServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The geo-replicated primary hostname for this linked server.
         pub geo_replicated_primary_host_name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the linked Redis cache. Changing this forces a new Redis to be created.
@@ -152,6 +155,7 @@ pub mod linked_server {
         };
         let o = context.register_resource(request);
         LinkedServerResult {
+            id: o.get_field("id"),
             geo_replicated_primary_host_name: o
                 .get_field("geoReplicatedPrimaryHostName"),
             linked_redis_cache_id: o.get_field("linkedRedisCacheId"),

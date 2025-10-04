@@ -52,6 +52,9 @@ pub mod local_gateway_route_table_vpc_association {
     }
     #[allow(dead_code)]
     pub struct LocalGatewayRouteTableVpcAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub local_gateway_id: pulumi_gestalt_rust::Output<String>,
         /// Identifier of EC2 Local Gateway Route Table.
         pub local_gateway_route_table_id: pulumi_gestalt_rust::Output<String>,
@@ -106,6 +109,7 @@ pub mod local_gateway_route_table_vpc_association {
         };
         let o = context.register_resource(request);
         LocalGatewayRouteTableVpcAssociationResult {
+            id: o.get_field("id"),
             local_gateway_id: o.get_field("localGatewayId"),
             local_gateway_route_table_id: o.get_field("localGatewayRouteTableId"),
             tags: o.get_field("tags"),

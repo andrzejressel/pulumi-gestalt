@@ -102,6 +102,9 @@ pub mod url_list {
     }
     #[allow(dead_code)]
     pub struct UrlListResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Output only. Time when the security policy was created.
         /// A timestamp in RFC3339 UTC 'Zulu' format, with nanosecond resolution and up to nine fractional digits.
         /// Examples: '2014-10-02T15:01:23Z' and '2014-10-02T15:01:23.045123456Z'
@@ -171,6 +174,7 @@ pub mod url_list {
         };
         let o = context.register_resource(request);
         UrlListResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             location: o.get_field("location"),

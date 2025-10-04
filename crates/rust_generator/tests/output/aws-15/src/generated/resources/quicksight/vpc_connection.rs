@@ -94,6 +94,9 @@ pub mod vpc_connection {
     }
     #[allow(dead_code)]
     pub struct VpcConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the VPC connection.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The availability status of the VPC connection. Valid values are `AVAILABLE`, `UNAVAILABLE` or `PARTIALLY_AVAILABLE`.
@@ -191,6 +194,7 @@ pub mod vpc_connection {
         };
         let o = context.register_resource(request);
         VpcConnectionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             availability_status: o.get_field("availabilityStatus"),
             aws_account_id: o.get_field("awsAccountId"),

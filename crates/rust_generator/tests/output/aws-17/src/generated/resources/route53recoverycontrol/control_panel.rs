@@ -41,6 +41,9 @@ pub mod control_panel {
     }
     #[allow(dead_code)]
     pub struct ControlPanelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the control panel.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the cluster in which this control panel will reside.
@@ -84,6 +87,7 @@ pub mod control_panel {
         };
         let o = context.register_resource(request);
         ControlPanelResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cluster_arn: o.get_field("clusterArn"),
             default_control_panel: o.get_field("defaultControlPanel"),

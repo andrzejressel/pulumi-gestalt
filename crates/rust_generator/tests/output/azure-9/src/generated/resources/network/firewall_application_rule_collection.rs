@@ -106,6 +106,9 @@ pub mod firewall_application_rule_collection {
     }
     #[allow(dead_code)]
     pub struct FirewallApplicationRuleCollectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the action the rule will apply to matching traffic. Possible values are `Allow` and `Deny`.
         pub action: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Firewall in which the Application Rule Collection should be created. Changing this forces a new resource to be created.
@@ -172,6 +175,7 @@ pub mod firewall_application_rule_collection {
         };
         let o = context.register_resource(request);
         FirewallApplicationRuleCollectionResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             azure_firewall_name: o.get_field("azureFirewallName"),
             name: o.get_field("name"),

@@ -109,6 +109,9 @@ pub mod deployment_config {
     }
     #[allow(dead_code)]
     pub struct DeploymentConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the deployment config.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The compute platform can be `Server`, `Lambda`, or `ECS`. Default is `Server`.
@@ -181,6 +184,7 @@ pub mod deployment_config {
         };
         let o = context.register_resource(request);
         DeploymentConfigResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             compute_platform: o.get_field("computePlatform"),
             deployment_config_id: o.get_field("deploymentConfigId"),

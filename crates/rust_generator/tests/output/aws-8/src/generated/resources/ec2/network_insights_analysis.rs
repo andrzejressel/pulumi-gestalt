@@ -56,6 +56,9 @@ pub mod network_insights_analysis {
     }
     #[allow(dead_code)]
     pub struct NetworkInsightsAnalysisResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Potential intermediate components of a feasible path. Described below.
         pub alternate_path_hints: pulumi_gestalt_rust::Output<
             Vec<super::super::types::ec2::NetworkInsightsAnalysisAlternatePathHint>,
@@ -143,6 +146,7 @@ pub mod network_insights_analysis {
         };
         let o = context.register_resource(request);
         NetworkInsightsAnalysisResult {
+            id: o.get_field("id"),
             alternate_path_hints: o.get_field("alternatePathHints"),
             arn: o.get_field("arn"),
             explanations: o.get_field("explanations"),

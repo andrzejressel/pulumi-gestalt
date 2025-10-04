@@ -148,6 +148,9 @@ pub mod contacts_rotation {
     }
     #[allow(dead_code)]
     pub struct ContactsRotationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the rotation.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Names (ARNs) of the contacts to add to the rotation. The order in which you list the contacts is their shift order in the rotation schedule.
@@ -223,6 +226,7 @@ pub mod contacts_rotation {
         };
         let o = context.register_resource(request);
         ContactsRotationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             contact_ids: o.get_field("contactIds"),
             name: o.get_field("name"),

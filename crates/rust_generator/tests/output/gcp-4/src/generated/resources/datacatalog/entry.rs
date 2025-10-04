@@ -168,6 +168,9 @@ pub mod entry {
     }
     #[allow(dead_code)]
     pub struct EntryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specification for a group of BigQuery tables with name pattern [prefix]YYYYMMDD.
         /// Context: https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
         /// Structure is documented below.
@@ -301,6 +304,7 @@ pub mod entry {
         };
         let o = context.register_resource(request);
         EntryResult {
+            id: o.get_field("id"),
             bigquery_date_sharded_specs: o.get_field("bigqueryDateShardedSpecs"),
             bigquery_table_specs: o.get_field("bigqueryTableSpecs"),
             description: o.get_field("description"),

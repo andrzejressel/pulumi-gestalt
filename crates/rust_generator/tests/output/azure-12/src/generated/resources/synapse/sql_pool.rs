@@ -102,6 +102,9 @@ pub mod sql_pool {
     }
     #[allow(dead_code)]
     pub struct SqlPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the collation to use with this pool, only applicable when `create_mode` is set to `Default`. Azure default is `SQL_LATIN1_GENERAL_CP1_CI_AS`. Changing this forces a new Synapse SQL Pool to be created.
         pub collation: pulumi_gestalt_rust::Output<String>,
         /// Specifies how to create the SQL Pool. Valid values are: `Default`, `Recovery` or `PointInTimeRestore`. Must be `Default` to create a new database. Defaults to `Default`. Changing this forces a new Synapse SQL Pool to be created.
@@ -206,6 +209,7 @@ pub mod sql_pool {
         };
         let o = context.register_resource(request);
         SqlPoolResult {
+            id: o.get_field("id"),
             collation: o.get_field("collation"),
             create_mode: o.get_field("createMode"),
             data_encrypted: o.get_field("dataEncrypted"),

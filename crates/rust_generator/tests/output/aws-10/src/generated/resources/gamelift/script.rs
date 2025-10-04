@@ -58,6 +58,9 @@ pub mod script {
     }
     #[allow(dead_code)]
     pub struct ScriptResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// GameLift Script ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the script
@@ -124,6 +127,7 @@ pub mod script {
         };
         let o = context.register_resource(request);
         ScriptResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             storage_location: o.get_field("storageLocation"),

@@ -83,6 +83,9 @@ pub mod entry_group {
     }
     #[allow(dead_code)]
     pub struct EntryGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Entry group description, which can consist of several sentences or paragraphs that describe entry group contents.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// A short name to identify the entry group, for example, "analytics data - jan 2011".
@@ -146,6 +149,7 @@ pub mod entry_group {
         };
         let o = context.register_resource(request);
         EntryGroupResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             entry_group_id: o.get_field("entryGroupId"),

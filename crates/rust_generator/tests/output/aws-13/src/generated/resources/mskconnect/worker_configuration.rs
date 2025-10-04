@@ -53,6 +53,9 @@ pub mod worker_configuration {
     }
     #[allow(dead_code)]
     pub struct WorkerConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// the Amazon Resource Name (ARN) of the worker configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A summary description of the worker configuration.
@@ -116,6 +119,7 @@ pub mod worker_configuration {
         };
         let o = context.register_resource(request);
         WorkerConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             latest_revision: o.get_field("latestRevision"),

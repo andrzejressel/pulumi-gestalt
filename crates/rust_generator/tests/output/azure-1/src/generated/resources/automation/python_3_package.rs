@@ -75,6 +75,9 @@ pub mod python_3_package {
     }
     #[allow(dead_code)]
     pub struct Python3PackageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the automation account in which the Python3 Package is created. Changing this forces a new resource to be created.
         pub automation_account_name: pulumi_gestalt_rust::Output<String>,
         /// The URL of the python package. Changing this forces a new Automation Python3 Package to be created.
@@ -156,6 +159,7 @@ pub mod python_3_package {
         };
         let o = context.register_resource(request);
         Python3PackageResult {
+            id: o.get_field("id"),
             automation_account_name: o.get_field("automationAccountName"),
             content_uri: o.get_field("contentUri"),
             content_version: o.get_field("contentVersion"),

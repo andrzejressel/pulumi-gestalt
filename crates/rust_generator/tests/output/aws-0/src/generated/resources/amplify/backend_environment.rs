@@ -51,6 +51,9 @@ pub mod backend_environment {
     }
     #[allow(dead_code)]
     pub struct BackendEnvironmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Unique ID for an Amplify app.
         pub app_id: pulumi_gestalt_rust::Output<String>,
         /// ARN for a backend environment that is part of an Amplify app.
@@ -102,6 +105,7 @@ pub mod backend_environment {
         };
         let o = context.register_resource(request);
         BackendEnvironmentResult {
+            id: o.get_field("id"),
             app_id: o.get_field("appId"),
             arn: o.get_field("arn"),
             deployment_artifacts: o.get_field("deploymentArtifacts"),

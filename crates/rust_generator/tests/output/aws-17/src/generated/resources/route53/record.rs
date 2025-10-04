@@ -255,6 +255,9 @@ pub mod record {
     }
     #[allow(dead_code)]
     pub struct RecordResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An alias block. Conflicts with `ttl` & `records`.
         /// Documented below.
         pub aliases: pulumi_gestalt_rust::Output<
@@ -419,6 +422,7 @@ pub mod record {
         };
         let o = context.register_resource(request);
         RecordResult {
+            id: o.get_field("id"),
             aliases: o.get_field("aliases"),
             allow_overwrite: o.get_field("allowOverwrite"),
             cidr_routing_policy: o.get_field("cidrRoutingPolicy"),

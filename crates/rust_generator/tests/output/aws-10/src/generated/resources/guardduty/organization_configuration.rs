@@ -86,6 +86,9 @@ pub mod organization_configuration {
     }
     #[allow(dead_code)]
     pub struct OrganizationConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// *Deprecated:* Use `auto_enable_organization_members` instead. When this setting is enabled, all new accounts that are created in, or added to, the organization are added as a member accounts of the organization’s GuardDuty delegated administrator and GuardDuty is enabled in that AWS Region.
         pub auto_enable: pulumi_gestalt_rust::Output<bool>,
         /// Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. Valid values are `ALL`, `NEW`, `NONE`.
@@ -140,6 +143,7 @@ pub mod organization_configuration {
         };
         let o = context.register_resource(request);
         OrganizationConfigurationResult {
+            id: o.get_field("id"),
             auto_enable: o.get_field("autoEnable"),
             auto_enable_organization_members: o
                 .get_field("autoEnableOrganizationMembers"),

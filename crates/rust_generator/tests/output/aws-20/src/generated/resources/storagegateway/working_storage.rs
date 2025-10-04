@@ -41,6 +41,9 @@ pub mod working_storage {
     }
     #[allow(dead_code)]
     pub struct WorkingStorageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Local disk identifier. For example, `pci-0000:03:00.0-scsi-0:0:0:0`.
         pub disk_id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the gateway.
@@ -76,6 +79,7 @@ pub mod working_storage {
         };
         let o = context.register_resource(request);
         WorkingStorageResult {
+            id: o.get_field("id"),
             disk_id: o.get_field("diskId"),
             gateway_arn: o.get_field("gatewayArn"),
         }

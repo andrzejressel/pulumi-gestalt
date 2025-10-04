@@ -53,6 +53,9 @@ pub mod ssl_cert {
     }
     #[allow(dead_code)]
     pub struct SslCertResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The actual certificate data for this client certificate.
         pub cert: pulumi_gestalt_rust::Output<String>,
         /// The serial number extracted from the certificate data.
@@ -114,6 +117,7 @@ pub mod ssl_cert {
         };
         let o = context.register_resource(request);
         SslCertResult {
+            id: o.get_field("id"),
             cert: o.get_field("cert"),
             cert_serial_number: o.get_field("certSerialNumber"),
             common_name: o.get_field("commonName"),

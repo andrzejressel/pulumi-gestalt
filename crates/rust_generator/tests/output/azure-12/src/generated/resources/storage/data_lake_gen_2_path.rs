@@ -78,6 +78,9 @@ pub mod data_lake_gen_2_path {
     }
     #[allow(dead_code)]
     pub struct DataLakeGen2PathResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `ace` blocks as defined below to specify the entries for the ACL for the path.
         pub aces: pulumi_gestalt_rust::Output<
             Vec<super::super::types::storage::DataLakeGen2PathAce>,
@@ -150,6 +153,7 @@ pub mod data_lake_gen_2_path {
         };
         let o = context.register_resource(request);
         DataLakeGen2PathResult {
+            id: o.get_field("id"),
             aces: o.get_field("aces"),
             filesystem_name: o.get_field("filesystemName"),
             group: o.get_field("group"),

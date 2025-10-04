@@ -287,6 +287,9 @@ pub mod job {
     }
     #[allow(dead_code)]
     pub struct JobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// App Engine HTTP target.
         /// If the job providers a App Engine HTTP target the cron will
         /// send a request to the service instance
@@ -429,6 +432,7 @@ pub mod job {
         };
         let o = context.register_resource(request);
         JobResult {
+            id: o.get_field("id"),
             app_engine_http_target: o.get_field("appEngineHttpTarget"),
             attempt_deadline: o.get_field("attemptDeadline"),
             description: o.get_field("description"),

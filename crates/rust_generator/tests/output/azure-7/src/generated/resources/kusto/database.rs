@@ -72,6 +72,9 @@ pub mod database {
     }
     #[allow(dead_code)]
     pub struct DatabaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Kusto Cluster this database will be added to. Changing this forces a new resource to be created.
         pub cluster_name: pulumi_gestalt_rust::Output<String>,
         /// The time the data that should be kept in cache for fast queries as ISO 8601 timespan. Default is unlimited. For more information see: [ISO 8601 Timespan](https://en.wikipedia.org/wiki/ISO_8601#Durations)
@@ -137,6 +140,7 @@ pub mod database {
         };
         let o = context.register_resource(request);
         DatabaseResult {
+            id: o.get_field("id"),
             cluster_name: o.get_field("clusterName"),
             hot_cache_period: o.get_field("hotCachePeriod"),
             location: o.get_field("location"),

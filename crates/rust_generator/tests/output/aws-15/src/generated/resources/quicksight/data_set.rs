@@ -271,6 +271,9 @@ pub mod data_set {
     }
     #[allow(dead_code)]
     pub struct DataSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the data set.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// AWS account ID.
@@ -442,6 +445,7 @@ pub mod data_set {
         };
         let o = context.register_resource(request);
         DataSetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             aws_account_id: o.get_field("awsAccountId"),
             column_groups: o.get_field("columnGroups"),

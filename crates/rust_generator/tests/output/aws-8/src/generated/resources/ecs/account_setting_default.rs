@@ -43,6 +43,9 @@ pub mod account_setting_default {
     }
     #[allow(dead_code)]
     pub struct AccountSettingDefaultResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the account setting to set.
         pub name: pulumi_gestalt_rust::Output<String>,
         pub principal_arn: pulumi_gestalt_rust::Output<String>,
@@ -79,6 +82,7 @@ pub mod account_setting_default {
         };
         let o = context.register_resource(request);
         AccountSettingDefaultResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             principal_arn: o.get_field("principalArn"),
             value: o.get_field("value"),

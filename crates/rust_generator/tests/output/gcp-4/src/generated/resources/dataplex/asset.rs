@@ -125,6 +125,9 @@ pub mod asset {
     }
     #[allow(dead_code)]
     pub struct AssetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Output only. The time when the asset was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// The zone for the resource
@@ -252,6 +255,7 @@ pub mod asset {
         };
         let o = context.register_resource(request);
         AssetResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             dataplex_zone: o.get_field("dataplexZone"),
             description: o.get_field("description"),

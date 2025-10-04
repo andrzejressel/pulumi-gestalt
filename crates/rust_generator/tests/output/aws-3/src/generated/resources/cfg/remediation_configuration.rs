@@ -112,6 +112,9 @@ pub mod remediation_configuration {
     }
     #[allow(dead_code)]
     pub struct RemediationConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Config Remediation Configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Remediation is triggered automatically if `true`.
@@ -215,6 +218,7 @@ pub mod remediation_configuration {
         };
         let o = context.register_resource(request);
         RemediationConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             automatic: o.get_field("automatic"),
             config_rule_name: o.get_field("configRuleName"),

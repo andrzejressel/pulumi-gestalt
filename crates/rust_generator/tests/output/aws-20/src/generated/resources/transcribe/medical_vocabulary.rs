@@ -65,6 +65,9 @@ pub mod medical_vocabulary {
     }
     #[allow(dead_code)]
     pub struct MedicalVocabularyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the MedicalVocabulary.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Generated download URI.
@@ -125,6 +128,7 @@ pub mod medical_vocabulary {
         };
         let o = context.register_resource(request);
         MedicalVocabularyResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             download_uri: o.get_field("downloadUri"),
             language_code: o.get_field("languageCode"),

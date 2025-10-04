@@ -64,6 +64,9 @@ pub mod monitor_sso_configuration {
     }
     #[allow(dead_code)]
     pub struct MonitorSsoConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Datadog Monitor Id which should be used for this Datadog Monitor SSO Configuration. Changing this forces a new Datadog Monitor SSO Configuration to be created.
         pub datadog_monitor_id: pulumi_gestalt_rust::Output<String>,
         /// The application Id to perform SSO operation.
@@ -120,6 +123,7 @@ pub mod monitor_sso_configuration {
         };
         let o = context.register_resource(request);
         MonitorSsoConfigurationResult {
+            id: o.get_field("id"),
             datadog_monitor_id: o.get_field("datadogMonitorId"),
             enterprise_application_id: o.get_field("enterpriseApplicationId"),
             login_url: o.get_field("loginUrl"),

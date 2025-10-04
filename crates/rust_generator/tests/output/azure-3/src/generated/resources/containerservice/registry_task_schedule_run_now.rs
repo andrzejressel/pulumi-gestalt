@@ -61,6 +61,9 @@ pub mod registry_task_schedule_run_now {
     }
     #[allow(dead_code)]
     pub struct RegistryTaskScheduleRunNowResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Container Registry Task that to be scheduled. Changing this forces a new Container Registry Task Schedule to be created.
         pub container_registry_task_id: pulumi_gestalt_rust::Output<String>,
     }
@@ -92,6 +95,7 @@ pub mod registry_task_schedule_run_now {
         };
         let o = context.register_resource(request);
         RegistryTaskScheduleRunNowResult {
+            id: o.get_field("id"),
             container_registry_task_id: o.get_field("containerRegistryTaskId"),
         }
     }

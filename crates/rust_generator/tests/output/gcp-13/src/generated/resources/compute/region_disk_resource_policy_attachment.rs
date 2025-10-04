@@ -119,6 +119,9 @@ pub mod region_disk_resource_policy_attachment {
     }
     #[allow(dead_code)]
     pub struct RegionDiskResourcePolicyAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the regional disk in which the resource policies are attached to.
         ///
         ///
@@ -174,6 +177,7 @@ pub mod region_disk_resource_policy_attachment {
         };
         let o = context.register_resource(request);
         RegionDiskResourcePolicyAttachmentResult {
+            id: o.get_field("id"),
             disk: o.get_field("disk"),
             name: o.get_field("name"),
             project: o.get_field("project"),

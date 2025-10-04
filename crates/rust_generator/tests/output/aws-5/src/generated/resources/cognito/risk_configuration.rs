@@ -73,6 +73,9 @@ pub mod risk_configuration {
     }
     #[allow(dead_code)]
     pub struct RiskConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account takeover risk configuration. See details below.
         pub account_takeover_risk_configuration: pulumi_gestalt_rust::Output<
             Option<
@@ -148,6 +151,7 @@ pub mod risk_configuration {
         };
         let o = context.register_resource(request);
         RiskConfigurationResult {
+            id: o.get_field("id"),
             account_takeover_risk_configuration: o
                 .get_field("accountTakeoverRiskConfiguration"),
             client_id: o.get_field("clientId"),

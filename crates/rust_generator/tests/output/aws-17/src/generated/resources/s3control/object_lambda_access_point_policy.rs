@@ -68,6 +68,9 @@ pub mod object_lambda_access_point_policy {
     }
     #[allow(dead_code)]
     pub struct ObjectLambdaAccessPointPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AWS account ID for the account that owns the Object Lambda Access Point. Defaults to automatically determined account ID of the AWS provider.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether this access point currently has a policy that allows public access.
@@ -113,6 +116,7 @@ pub mod object_lambda_access_point_policy {
         };
         let o = context.register_resource(request);
         ObjectLambdaAccessPointPolicyResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             has_public_access_policy: o.get_field("hasPublicAccessPolicy"),
             name: o.get_field("name"),

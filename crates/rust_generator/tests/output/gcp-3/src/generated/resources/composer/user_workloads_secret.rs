@@ -88,6 +88,9 @@ pub mod user_workloads_secret {
     }
     #[allow(dead_code)]
     pub struct UserWorkloadsSecretResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of the secret data.
         pub data: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -147,6 +150,7 @@ pub mod user_workloads_secret {
         };
         let o = context.register_resource(request);
         UserWorkloadsSecretResult {
+            id: o.get_field("id"),
             data: o.get_field("data"),
             environment: o.get_field("environment"),
             name: o.get_field("name"),

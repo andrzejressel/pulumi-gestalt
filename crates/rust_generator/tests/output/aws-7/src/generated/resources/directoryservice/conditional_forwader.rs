@@ -43,6 +43,9 @@ pub mod conditional_forwader {
     }
     #[allow(dead_code)]
     pub struct ConditionalForwaderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of directory.
         pub directory_id: pulumi_gestalt_rust::Output<String>,
         /// A list of forwarder IP addresses.
@@ -85,6 +88,7 @@ pub mod conditional_forwader {
         };
         let o = context.register_resource(request);
         ConditionalForwaderResult {
+            id: o.get_field("id"),
             directory_id: o.get_field("directoryId"),
             dns_ips: o.get_field("dnsIps"),
             remote_domain_name: o.get_field("remoteDomainName"),

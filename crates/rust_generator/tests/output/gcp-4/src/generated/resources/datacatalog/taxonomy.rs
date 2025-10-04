@@ -78,6 +78,9 @@ pub mod taxonomy {
     }
     #[allow(dead_code)]
     pub struct TaxonomyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of policy types that are activated for this taxonomy. If not set,
         /// defaults to an empty list.
         /// Each value may be one of: `POLICY_TYPE_UNSPECIFIED`, `FINE_GRAINED_ACCESS_CONTROL`.
@@ -151,6 +154,7 @@ pub mod taxonomy {
         };
         let o = context.register_resource(request);
         TaxonomyResult {
+            id: o.get_field("id"),
             activated_policy_types: o.get_field("activatedPolicyTypes"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

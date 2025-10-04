@@ -81,6 +81,9 @@ pub mod endpoint_group {
     }
     #[allow(dead_code)]
     pub struct EndpointGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the endpoint group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The list of endpoint objects. Fields documented below.
@@ -195,6 +198,7 @@ pub mod endpoint_group {
         };
         let o = context.register_resource(request);
         EndpointGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             endpoint_configurations: o.get_field("endpointConfigurations"),
             endpoint_group_region: o.get_field("endpointGroupRegion"),

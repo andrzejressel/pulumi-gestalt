@@ -121,6 +121,9 @@ pub mod web_acl {
     }
     #[allow(dead_code)]
     pub struct WebAclResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the WAF WebACL.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block with action that you want AWS WAF to take when a request doesn't match the criteria in any of the rules that are associated with the web ACL. Detailed below.
@@ -200,6 +203,7 @@ pub mod web_acl {
         };
         let o = context.register_resource(request);
         WebAclResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             default_action: o.get_field("defaultAction"),
             logging_configuration: o.get_field("loggingConfiguration"),

@@ -152,6 +152,9 @@ pub mod account_customer_managed_key {
     }
     #[allow(dead_code)]
     pub struct AccountCustomerManagedKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Cognitive Account. Changing this forces a new resource to be created.
         pub cognitive_account_id: pulumi_gestalt_rust::Output<String>,
         /// The Client ID of the User Assigned Identity that has access to the key. This property only needs to be specified when there're multiple identities attached to the Cognitive Account.
@@ -195,6 +198,7 @@ pub mod account_customer_managed_key {
         };
         let o = context.register_resource(request);
         AccountCustomerManagedKeyResult {
+            id: o.get_field("id"),
             cognitive_account_id: o.get_field("cognitiveAccountId"),
             identity_client_id: o.get_field("identityClientId"),
             key_vault_key_id: o.get_field("keyVaultKeyId"),

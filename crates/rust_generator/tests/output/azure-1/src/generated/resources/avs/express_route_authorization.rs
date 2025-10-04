@@ -63,6 +63,9 @@ pub mod express_route_authorization {
     }
     #[allow(dead_code)]
     pub struct ExpressRouteAuthorizationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Azure VMware Solution ExpressRoute Circuit Authorization.
         pub express_route_authorization_id: pulumi_gestalt_rust::Output<String>,
         /// The key of the Azure VMware Solution ExpressRoute Circuit Authorization.
@@ -103,6 +106,7 @@ pub mod express_route_authorization {
         };
         let o = context.register_resource(request);
         ExpressRouteAuthorizationResult {
+            id: o.get_field("id"),
             express_route_authorization_id: o.get_field("expressRouteAuthorizationId"),
             express_route_authorization_key: o.get_field("expressRouteAuthorizationKey"),
             name: o.get_field("name"),

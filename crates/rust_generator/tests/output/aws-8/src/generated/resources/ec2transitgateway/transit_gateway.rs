@@ -77,6 +77,9 @@ pub mod transit_gateway {
     }
     #[allow(dead_code)]
     pub struct TransitGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is `64512` to `65534` for 16-bit ASNs and `4200000000` to `4294967294` for 32-bit ASNs. Default value: `64512`.
         ///
         /// > **NOTE:** Modifying `amazon_side_asn` on a Transit Gateway with active BGP sessions is [not allowed](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayOptions.html). You must first delete all Transit Gateway attachments that have BGP configured prior to modifying `amazon_side_asn`.
@@ -205,6 +208,7 @@ pub mod transit_gateway {
         };
         let o = context.register_resource(request);
         TransitGatewayResult {
+            id: o.get_field("id"),
             amazon_side_asn: o.get_field("amazonSideAsn"),
             arn: o.get_field("arn"),
             association_default_route_table_id: o

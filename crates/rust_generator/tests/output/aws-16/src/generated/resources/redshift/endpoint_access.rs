@@ -51,6 +51,9 @@ pub mod endpoint_access {
     }
     #[allow(dead_code)]
     pub struct EndpointAccessResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The DNS address of the endpoint.
         pub address: pulumi_gestalt_rust::Output<String>,
         /// The cluster identifier of the cluster to access.
@@ -117,6 +120,7 @@ pub mod endpoint_access {
         };
         let o = context.register_resource(request);
         EndpointAccessResult {
+            id: o.get_field("id"),
             address: o.get_field("address"),
             cluster_identifier: o.get_field("clusterIdentifier"),
             endpoint_name: o.get_field("endpointName"),

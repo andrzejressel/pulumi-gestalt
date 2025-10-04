@@ -40,6 +40,9 @@ pub mod parameter_group {
     }
     #[allow(dead_code)]
     pub struct ParameterGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the db parameter group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The description of the DB parameter group. Defaults to "Managed by Pulumi".
@@ -119,6 +122,7 @@ pub mod parameter_group {
         };
         let o = context.register_resource(request);
         ParameterGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             family: o.get_field("family"),

@@ -98,6 +98,9 @@ pub mod topic {
     }
     #[allow(dead_code)]
     pub struct TopicResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The cluster name.
         pub cluster: pulumi_gestalt_rust::Output<String>,
         /// Configuration for the topic that are overridden from the cluster defaults. The key of the map is a Kafka topic property name, for example: `cleanup.policy=compact`, `compression.type=producer`.
@@ -176,6 +179,7 @@ pub mod topic {
         };
         let o = context.register_resource(request);
         TopicResult {
+            id: o.get_field("id"),
             cluster: o.get_field("cluster"),
             configs: o.get_field("configs"),
             location: o.get_field("location"),

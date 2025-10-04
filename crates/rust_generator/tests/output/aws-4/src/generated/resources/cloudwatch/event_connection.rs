@@ -206,6 +206,9 @@ pub mod event_connection {
     }
     #[allow(dead_code)]
     pub struct EventConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the connection.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Parameters used for authorization. A maximum of 1 are allowed. Documented below.
@@ -261,6 +264,7 @@ pub mod event_connection {
         };
         let o = context.register_resource(request);
         EventConnectionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             auth_parameters: o.get_field("authParameters"),
             authorization_type: o.get_field("authorizationType"),

@@ -126,6 +126,9 @@ pub mod identity_source {
     }
     #[allow(dead_code)]
     pub struct IdentitySourceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the details required to communicate with the identity provider (IdP) associated with this identity source. See Configuration below.
         pub configuration: pulumi_gestalt_rust::Output<
             Option<super::super::types::verifiedpermissions::IdentitySourceConfiguration>,
@@ -172,6 +175,7 @@ pub mod identity_source {
         };
         let o = context.register_resource(request);
         IdentitySourceResult {
+            id: o.get_field("id"),
             configuration: o.get_field("configuration"),
             policy_store_id: o.get_field("policyStoreId"),
             principal_entity_type: o.get_field("principalEntityType"),

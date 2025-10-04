@@ -83,6 +83,9 @@ pub mod flexible_server_active_directory_administrator {
     }
     #[allow(dead_code)]
     pub struct FlexibleServerActiveDirectoryAdministratorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The object ID of a user, service principal or security group in the Azure Active Directory tenant set as the Flexible Server Admin. Changing this forces a new resource to be created.
         pub object_id: pulumi_gestalt_rust::Output<String>,
         /// The name of Azure Active Directory principal. Changing this forces a new resource to be created.
@@ -147,6 +150,7 @@ pub mod flexible_server_active_directory_administrator {
         };
         let o = context.register_resource(request);
         FlexibleServerActiveDirectoryAdministratorResult {
+            id: o.get_field("id"),
             object_id: o.get_field("objectId"),
             principal_name: o.get_field("principalName"),
             principal_type: o.get_field("principalType"),

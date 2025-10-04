@@ -52,6 +52,9 @@ pub mod instance_connect_endpoint {
     }
     #[allow(dead_code)]
     pub struct InstanceConnectEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The Availability Zone of the EC2 Instance Connect Endpoint.
@@ -132,6 +135,7 @@ pub mod instance_connect_endpoint {
         };
         let o = context.register_resource(request);
         InstanceConnectEndpointResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),
             dns_name: o.get_field("dnsName"),

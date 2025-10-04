@@ -182,6 +182,9 @@ pub mod network_peering_routes_config {
     }
     #[allow(dead_code)]
     pub struct NetworkPeeringRoutesConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to export the custom routes to the peer network.
         pub export_custom_routes: pulumi_gestalt_rust::Output<bool>,
         /// Whether to import the custom routes to the peer network.
@@ -243,6 +246,7 @@ pub mod network_peering_routes_config {
         };
         let o = context.register_resource(request);
         NetworkPeeringRoutesConfigResult {
+            id: o.get_field("id"),
             export_custom_routes: o.get_field("exportCustomRoutes"),
             import_custom_routes: o.get_field("importCustomRoutes"),
             network: o.get_field("network"),

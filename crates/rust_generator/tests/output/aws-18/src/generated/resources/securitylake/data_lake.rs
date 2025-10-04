@@ -106,6 +106,9 @@ pub mod data_lake {
     }
     #[allow(dead_code)]
     pub struct DataLakeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Data Lake.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specify the Region or Regions that will contribute data to the rollup region.
@@ -170,6 +173,7 @@ pub mod data_lake {
         };
         let o = context.register_resource(request);
         DataLakeResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             configuration: o.get_field("configuration"),
             meta_store_manager_role_arn: o.get_field("metaStoreManagerRoleArn"),

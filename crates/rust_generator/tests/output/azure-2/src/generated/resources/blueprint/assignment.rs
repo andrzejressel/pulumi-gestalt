@@ -147,6 +147,9 @@ pub mod assignment {
     }
     #[allow(dead_code)]
     pub struct AssignmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the blueprint assigned
         pub blueprint_name: pulumi_gestalt_rust::Output<String>,
         /// The Description on the Blueprint
@@ -255,6 +258,7 @@ pub mod assignment {
         };
         let o = context.register_resource(request);
         AssignmentResult {
+            id: o.get_field("id"),
             blueprint_name: o.get_field("blueprintName"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

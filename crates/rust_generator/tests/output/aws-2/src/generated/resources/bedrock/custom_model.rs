@@ -95,6 +95,9 @@ pub mod custom_model {
     }
     #[allow(dead_code)]
     pub struct CustomModelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the base model.
         pub base_model_identifier: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the output model.
@@ -244,6 +247,7 @@ pub mod custom_model {
         };
         let o = context.register_resource(request);
         CustomModelResult {
+            id: o.get_field("id"),
             base_model_identifier: o.get_field("baseModelIdentifier"),
             custom_model_arn: o.get_field("customModelArn"),
             custom_model_kms_key_id: o.get_field("customModelKmsKeyId"),

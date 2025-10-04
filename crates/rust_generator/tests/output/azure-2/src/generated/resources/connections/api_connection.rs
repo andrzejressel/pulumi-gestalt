@@ -77,6 +77,9 @@ pub mod api_connection {
     }
     #[allow(dead_code)]
     pub struct ApiConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A display name for this API Connection. Defaults to `Service Bus`. Changing this forces a new API Connection to be created.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// The ID of the Managed API which this API Connection is linked to. Changing this forces a new API Connection to be created.
@@ -143,6 +146,7 @@ pub mod api_connection {
         };
         let o = context.register_resource(request);
         ApiConnectionResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             managed_api_id: o.get_field("managedApiId"),
             name: o.get_field("name"),

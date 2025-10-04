@@ -93,6 +93,9 @@ pub mod file_system {
     }
     #[allow(dead_code)]
     pub struct FileSystemResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name of the file system.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The identifier of the Availability Zone in which the file system's One Zone storage classes exist.
@@ -217,6 +220,7 @@ pub mod file_system {
         };
         let o = context.register_resource(request);
         FileSystemResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             availability_zone_id: o.get_field("availabilityZoneId"),
             availability_zone_name: o.get_field("availabilityZoneName"),

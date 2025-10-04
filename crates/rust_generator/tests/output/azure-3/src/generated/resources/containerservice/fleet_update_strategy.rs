@@ -68,6 +68,9 @@ pub mod fleet_update_strategy {
     }
     #[allow(dead_code)]
     pub struct FleetUpdateStrategyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Fleet Manager. Changing this forces a new Kubernetes Fleet Update Strategy to be created.
         pub kubernetes_fleet_manager_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Kubernetes Fleet Update Strategy. Changing this forces a new Kubernetes Fleet Update Strategy to be created.
@@ -115,6 +118,7 @@ pub mod fleet_update_strategy {
         };
         let o = context.register_resource(request);
         FleetUpdateStrategyResult {
+            id: o.get_field("id"),
             kubernetes_fleet_manager_id: o.get_field("kubernetesFleetManagerId"),
             name: o.get_field("name"),
             stages: o.get_field("stages"),

@@ -51,6 +51,9 @@ pub mod internet_gateway {
     }
     #[allow(dead_code)]
     pub struct InternetGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Internet Gateway.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the AWS account that owns the internet gateway.
@@ -111,6 +114,7 @@ pub mod internet_gateway {
         };
         let o = context.register_resource(request);
         InternetGatewayResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             owner_id: o.get_field("ownerId"),
             tags: o.get_field("tags"),

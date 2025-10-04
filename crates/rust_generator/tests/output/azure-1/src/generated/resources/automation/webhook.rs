@@ -91,6 +91,9 @@ pub mod webhook {
     }
     #[allow(dead_code)]
     pub struct WebhookResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the automation account in which the Webhook is created. Changing this forces a new resource to be created.
         pub automation_account_name: pulumi_gestalt_rust::Output<String>,
         /// Controls if Webhook is enabled. Defaults to `true`.
@@ -179,6 +182,7 @@ pub mod webhook {
         };
         let o = context.register_resource(request);
         WebhookResult {
+            id: o.get_field("id"),
             automation_account_name: o.get_field("automationAccountName"),
             enabled: o.get_field("enabled"),
             expiry_time: o.get_field("expiryTime"),

@@ -42,6 +42,9 @@ pub mod snapshot {
     }
     #[allow(dead_code)]
     pub struct SnapshotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.
         pub accounts_with_provisioned_restore_accesses: pulumi_gestalt_rust::Output<
             Vec<String>,
@@ -100,6 +103,7 @@ pub mod snapshot {
         };
         let o = context.register_resource(request);
         SnapshotResult {
+            id: o.get_field("id"),
             accounts_with_provisioned_restore_accesses: o
                 .get_field("accountsWithProvisionedRestoreAccesses"),
             accounts_with_restore_accesses: o.get_field("accountsWithRestoreAccesses"),

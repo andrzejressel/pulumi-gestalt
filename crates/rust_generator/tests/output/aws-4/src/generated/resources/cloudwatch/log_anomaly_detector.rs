@@ -65,6 +65,9 @@ pub mod log_anomaly_detector {
     }
     #[allow(dead_code)]
     pub struct LogAnomalyDetectorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Number of days to have visibility on an anomaly. After this time period has elapsed for an anomaly, it will be automatically baselined and the anomaly detector will treat new occurrences of a similar anomaly as normal. Therefore, if you do not correct the cause of an anomaly during the time period specified in `anomaly_visibility_time`, it will be considered normal going forward and will not be detected as an anomaly. Valid Range: Minimum value of 7. Maximum value of 90.
         pub anomaly_visibility_time: pulumi_gestalt_rust::Output<i32>,
         /// ARN of the log anomaly detector that you just created.
@@ -151,6 +154,7 @@ pub mod log_anomaly_detector {
         };
         let o = context.register_resource(request);
         LogAnomalyDetectorResult {
+            id: o.get_field("id"),
             anomaly_visibility_time: o.get_field("anomalyVisibilityTime"),
             arn: o.get_field("arn"),
             detector_name: o.get_field("detectorName"),

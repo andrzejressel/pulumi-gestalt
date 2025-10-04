@@ -103,6 +103,9 @@ pub mod share {
     }
     #[allow(dead_code)]
     pub struct ShareResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The access tier of the File Share. Possible values are `Hot`, `Cool` and `TransactionOptimized`, `Premium`.
         ///
         /// ~>**NOTE:** The `FileStorage` `account_kind` of the `azure.storage.Account` requires `Premium` `access_tier`.
@@ -198,6 +201,7 @@ pub mod share {
         };
         let o = context.register_resource(request);
         ShareResult {
+            id: o.get_field("id"),
             access_tier: o.get_field("accessTier"),
             acls: o.get_field("acls"),
             enabled_protocol: o.get_field("enabledProtocol"),

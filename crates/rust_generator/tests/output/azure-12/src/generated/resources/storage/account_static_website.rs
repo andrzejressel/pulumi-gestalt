@@ -54,6 +54,9 @@ pub mod account_static_website {
     }
     #[allow(dead_code)]
     pub struct AccountStaticWebsiteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The absolute path to a custom webpage that should be used when a request is made which does not correspond to an existing file.
         pub error404_document: pulumi_gestalt_rust::Output<Option<String>>,
         /// The webpage that Azure Storage serves for requests to the root of a website or any subfolder. For example, index.html.
@@ -96,6 +99,7 @@ pub mod account_static_website {
         };
         let o = context.register_resource(request);
         AccountStaticWebsiteResult {
+            id: o.get_field("id"),
             error404_document: o.get_field("error404Document"),
             index_document: o.get_field("indexDocument"),
             storage_account_id: o.get_field("storageAccountId"),

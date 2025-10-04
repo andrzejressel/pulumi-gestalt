@@ -89,6 +89,9 @@ pub mod backup_policy_blob_storage {
     }
     #[allow(dead_code)]
     pub struct BackupPolicyBlobStorageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of repeating time interval. It should follow `ISO 8601` repeating time interval. Changing this forces a new Backup Policy Blob Storage to be created.
         pub backup_repeating_time_intervals: pulumi_gestalt_rust::Output<
             Option<Vec<String>>,
@@ -182,6 +185,7 @@ pub mod backup_policy_blob_storage {
         };
         let o = context.register_resource(request);
         BackupPolicyBlobStorageResult {
+            id: o.get_field("id"),
             backup_repeating_time_intervals: o.get_field("backupRepeatingTimeIntervals"),
             name: o.get_field("name"),
             operational_default_retention_duration: o

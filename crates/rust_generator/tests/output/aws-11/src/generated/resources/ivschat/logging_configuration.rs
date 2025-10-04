@@ -129,6 +129,9 @@ pub mod logging_configuration {
     }
     #[allow(dead_code)]
     pub struct LoggingConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Logging Configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Object containing destination configuration for where chat activity will be logged. This object must contain exactly one of the following children arguments:
@@ -187,6 +190,7 @@ pub mod logging_configuration {
         };
         let o = context.register_resource(request);
         LoggingConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             destination_configuration: o.get_field("destinationConfiguration"),
             name: o.get_field("name"),

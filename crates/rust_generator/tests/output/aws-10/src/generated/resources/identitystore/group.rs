@@ -47,6 +47,9 @@ pub mod group {
     }
     #[allow(dead_code)]
     pub struct GroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A string containing the description of the group.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// A string containing the name of the group. This value is commonly displayed when the group is referenced.
@@ -97,6 +100,7 @@ pub mod group {
         };
         let o = context.register_resource(request);
         GroupResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             external_ids: o.get_field("externalIds"),

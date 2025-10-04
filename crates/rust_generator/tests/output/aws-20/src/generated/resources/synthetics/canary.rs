@@ -108,6 +108,9 @@ pub mod canary {
     }
     #[allow(dead_code)]
     pub struct CanaryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Canary.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. See Artifact Config.
@@ -287,6 +290,7 @@ pub mod canary {
         };
         let o = context.register_resource(request);
         CanaryResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             artifact_config: o.get_field("artifactConfig"),
             artifact_s3_location: o.get_field("artifactS3Location"),

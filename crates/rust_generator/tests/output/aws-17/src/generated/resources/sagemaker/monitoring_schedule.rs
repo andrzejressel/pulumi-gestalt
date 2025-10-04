@@ -55,6 +55,9 @@ pub mod monitoring_schedule {
     }
     #[allow(dead_code)]
     pub struct MonitoringScheduleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this monitoring schedule.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The configuration object that specifies the monitoring schedule and defines the monitoring job. Fields are documented below.
@@ -109,6 +112,7 @@ pub mod monitoring_schedule {
         };
         let o = context.register_resource(request);
         MonitoringScheduleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             monitoring_schedule_config: o.get_field("monitoringScheduleConfig"),
             name: o.get_field("name"),

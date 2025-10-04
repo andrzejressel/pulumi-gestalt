@@ -37,6 +37,9 @@ pub mod vpc_network_performance_metric_subscription {
     }
     #[allow(dead_code)]
     pub struct VpcNetworkPerformanceMetricSubscriptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The target Region or Availability Zone that the metric subscription is enabled for. For example, `eu-west-1`.
         pub destination: pulumi_gestalt_rust::Output<String>,
         /// The metric used for the enabled subscription. Valid values: `aggregate-latency`. Default: `aggregate-latency`.
@@ -89,6 +92,7 @@ pub mod vpc_network_performance_metric_subscription {
         };
         let o = context.register_resource(request);
         VpcNetworkPerformanceMetricSubscriptionResult {
+            id: o.get_field("id"),
             destination: o.get_field("destination"),
             metric: o.get_field("metric"),
             period: o.get_field("period"),

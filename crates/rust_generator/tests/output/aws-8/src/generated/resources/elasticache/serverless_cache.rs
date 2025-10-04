@@ -79,6 +79,9 @@ pub mod serverless_cache {
     }
     #[allow(dead_code)]
     pub struct ServerlessCacheResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the serverless cache.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Sets the cache usage limits for storage and ElastiCache Processing Units for the cache. See `cache_usage_limits` Block for details.
@@ -229,6 +232,7 @@ pub mod serverless_cache {
         };
         let o = context.register_resource(request);
         ServerlessCacheResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cache_usage_limits: o.get_field("cacheUsageLimits"),
             create_time: o.get_field("createTime"),

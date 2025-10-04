@@ -104,6 +104,9 @@ pub mod continuous_deployment_policy {
     }
     #[allow(dead_code)]
     pub struct ContinuousDeploymentPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether this continuous deployment policy is enabled.
         pub enabled: pulumi_gestalt_rust::Output<bool>,
         /// Current version of the continuous distribution policy.
@@ -161,6 +164,7 @@ pub mod continuous_deployment_policy {
         };
         let o = context.register_resource(request);
         ContinuousDeploymentPolicyResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
             etag: o.get_field("etag"),
             last_modified_time: o.get_field("lastModifiedTime"),

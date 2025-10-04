@@ -47,6 +47,9 @@ pub mod tracker_association {
     }
     #[allow(dead_code)]
     pub struct TrackerAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all AWS.
         pub consumer_arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the tracker resource to be associated with a geofence collection.
@@ -82,6 +85,7 @@ pub mod tracker_association {
         };
         let o = context.register_resource(request);
         TrackerAssociationResult {
+            id: o.get_field("id"),
             consumer_arn: o.get_field("consumerArn"),
             tracker_name: o.get_field("trackerName"),
         }

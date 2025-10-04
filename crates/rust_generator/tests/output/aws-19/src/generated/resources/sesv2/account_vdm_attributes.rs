@@ -59,6 +59,9 @@ pub mod account_vdm_attributes {
     }
     #[allow(dead_code)]
     pub struct AccountVdmAttributesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies additional settings for your VDM configuration as applicable to the Dashboard.
         pub dashboard_attributes: pulumi_gestalt_rust::Output<
             super::super::types::sesv2::AccountVdmAttributesDashboardAttributes,
@@ -107,6 +110,7 @@ pub mod account_vdm_attributes {
         };
         let o = context.register_resource(request);
         AccountVdmAttributesResult {
+            id: o.get_field("id"),
             dashboard_attributes: o.get_field("dashboardAttributes"),
             guardian_attributes: o.get_field("guardianAttributes"),
             vdm_enabled: o.get_field("vdmEnabled"),

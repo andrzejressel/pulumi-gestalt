@@ -101,6 +101,9 @@ pub mod env_group {
     }
     #[allow(dead_code)]
     pub struct EnvGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Hostnames of the environment group.
         pub hostnames: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The resource ID of the environment group.
@@ -147,6 +150,7 @@ pub mod env_group {
         };
         let o = context.register_resource(request);
         EnvGroupResult {
+            id: o.get_field("id"),
             hostnames: o.get_field("hostnames"),
             name: o.get_field("name"),
             org_id: o.get_field("orgId"),

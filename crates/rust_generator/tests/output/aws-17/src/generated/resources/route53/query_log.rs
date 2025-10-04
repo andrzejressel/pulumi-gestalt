@@ -78,6 +78,9 @@ pub mod query_log {
     }
     #[allow(dead_code)]
     pub struct QueryLogResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Query Logging Config.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// CloudWatch log group ARN to send query logs.
@@ -117,6 +120,7 @@ pub mod query_log {
         };
         let o = context.register_resource(request);
         QueryLogResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cloudwatch_log_group_arn: o.get_field("cloudwatchLogGroupArn"),
             zone_id: o.get_field("zoneId"),

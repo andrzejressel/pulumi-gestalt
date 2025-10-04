@@ -128,6 +128,9 @@ pub mod cluster_trusted_access_role_binding {
     }
     #[allow(dead_code)]
     pub struct ClusterTrustedAccessRoleBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Kubernetes Cluster Id within which this Kubernetes Cluster Trusted Access Role Binding should exist. Changing this forces a new Kubernetes Cluster Trusted Access Role Binding to be created.
         pub kubernetes_cluster_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of this Kubernetes Cluster Trusted Access Role Binding. Changing this forces a new Kubernetes Cluster Trusted Access Role Binding to be created.
@@ -180,6 +183,7 @@ pub mod cluster_trusted_access_role_binding {
         };
         let o = context.register_resource(request);
         ClusterTrustedAccessRoleBindingResult {
+            id: o.get_field("id"),
             kubernetes_cluster_id: o.get_field("kubernetesClusterId"),
             name: o.get_field("name"),
             roles: o.get_field("roles"),

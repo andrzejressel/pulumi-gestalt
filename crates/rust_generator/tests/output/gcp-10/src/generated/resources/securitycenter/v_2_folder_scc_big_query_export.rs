@@ -119,6 +119,9 @@ pub mod v_2_folder_scc_big_query_export {
     }
     #[allow(dead_code)]
     pub struct V2FolderSccBigQueryExportResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// This must be unique within the organization.  It must consist of only lowercase letters,
         /// numbers, and hyphens, must start with a letter, must end with either a letter or a number,
         /// and must be 63 characters or less.
@@ -226,6 +229,7 @@ pub mod v_2_folder_scc_big_query_export {
         };
         let o = context.register_resource(request);
         V2FolderSccBigQueryExportResult {
+            id: o.get_field("id"),
             big_query_export_id: o.get_field("bigQueryExportId"),
             create_time: o.get_field("createTime"),
             dataset: o.get_field("dataset"),

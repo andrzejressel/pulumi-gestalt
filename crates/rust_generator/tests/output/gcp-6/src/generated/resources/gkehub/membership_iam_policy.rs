@@ -224,6 +224,9 @@ pub mod membership_iam_policy {
     }
     #[allow(dead_code)]
     pub struct MembershipIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
         /// Location of the membership.
@@ -280,6 +283,7 @@ pub mod membership_iam_policy {
         };
         let o = context.register_resource(request);
         MembershipIamPolicyResult {
+            id: o.get_field("id"),
             etag: o.get_field("etag"),
             location: o.get_field("location"),
             membership_id: o.get_field("membershipId"),

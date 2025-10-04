@@ -111,6 +111,9 @@ pub mod scheduled_action {
     }
     #[allow(dead_code)]
     pub struct ScheduledActionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the scheduled action.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Date and time for the scheduled action to end in RFC 3339 format. The timezone is not affected by the setting of `timezone`.
@@ -201,6 +204,7 @@ pub mod scheduled_action {
         };
         let o = context.register_resource(request);
         ScheduledActionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             end_time: o.get_field("endTime"),
             name: o.get_field("name"),

@@ -110,6 +110,9 @@ pub mod linked_service_azure_sql_database {
     }
     #[allow(dead_code)]
     pub struct LinkedServiceAzureSqlDatabaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Linked Service Azure SQL Database.
         pub additional_properties: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -257,6 +260,7 @@ pub mod linked_service_azure_sql_database {
         };
         let o = context.register_resource(request);
         LinkedServiceAzureSqlDatabaseResult {
+            id: o.get_field("id"),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),
             connection_string: o.get_field("connectionString"),

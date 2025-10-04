@@ -150,6 +150,9 @@ pub mod gateway_security_policy_rule {
     }
     #[allow(dead_code)]
     pub struct GatewaySecurityPolicyRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// CEL expression for matching on L7/application level criteria.
         pub application_matcher: pulumi_gestalt_rust::Output<Option<String>>,
         /// Profile which tells what the primitive action should be. Possible values are: * ALLOW * DENY.
@@ -270,6 +273,7 @@ pub mod gateway_security_policy_rule {
         };
         let o = context.register_resource(request);
         GatewaySecurityPolicyRuleResult {
+            id: o.get_field("id"),
             application_matcher: o.get_field("applicationMatcher"),
             basic_profile: o.get_field("basicProfile"),
             create_time: o.get_field("createTime"),

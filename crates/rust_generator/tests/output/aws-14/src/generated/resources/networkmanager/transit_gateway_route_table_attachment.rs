@@ -46,6 +46,9 @@ pub mod transit_gateway_route_table_attachment {
     }
     #[allow(dead_code)]
     pub struct TransitGatewayRouteTableAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Attachment Amazon Resource Name (ARN).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The policy rule number associated with the attachment.
@@ -117,6 +120,7 @@ pub mod transit_gateway_route_table_attachment {
         };
         let o = context.register_resource(request);
         TransitGatewayRouteTableAttachmentResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             attachment_policy_rule_number: o.get_field("attachmentPolicyRuleNumber"),
             attachment_type: o.get_field("attachmentType"),

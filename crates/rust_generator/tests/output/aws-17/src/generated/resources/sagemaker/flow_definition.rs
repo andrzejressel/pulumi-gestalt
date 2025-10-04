@@ -177,6 +177,9 @@ pub mod flow_definition {
     }
     #[allow(dead_code)]
     pub struct FlowDefinitionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Flow Definition.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of your flow definition.
@@ -269,6 +272,7 @@ pub mod flow_definition {
         };
         let o = context.register_resource(request);
         FlowDefinitionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             flow_definition_name: o.get_field("flowDefinitionName"),
             human_loop_activation_config: o.get_field("humanLoopActivationConfig"),

@@ -199,6 +199,9 @@ pub mod app_group {
     }
     #[allow(dead_code)]
     pub struct AppGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Internal identifier that cannot be edited
         pub app_group_id: pulumi_gestalt_rust::Output<String>,
         /// A list of attributes
@@ -285,6 +288,7 @@ pub mod app_group {
         };
         let o = context.register_resource(request);
         AppGroupResult {
+            id: o.get_field("id"),
             app_group_id: o.get_field("appGroupId"),
             attributes: o.get_field("attributes"),
             channel_id: o.get_field("channelId"),

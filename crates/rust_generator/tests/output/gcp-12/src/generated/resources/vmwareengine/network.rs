@@ -115,6 +115,9 @@ pub mod network {
     }
     #[allow(dead_code)]
     pub struct NetworkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// User-provided description for this VMware Engine network.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The location where the VMwareEngineNetwork should reside.
@@ -186,6 +189,7 @@ pub mod network {
         };
         let o = context.register_resource(request);
         NetworkResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             location: o.get_field("location"),
             name: o.get_field("name"),

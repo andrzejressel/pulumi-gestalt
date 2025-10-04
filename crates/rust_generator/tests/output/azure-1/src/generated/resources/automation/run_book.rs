@@ -104,6 +104,9 @@ pub mod run_book {
     }
     #[allow(dead_code)]
     pub struct RunBookResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the automation account in which the Runbook is created. Changing this forces a new resource to be created.
         pub automation_account_name: pulumi_gestalt_rust::Output<String>,
         /// The desired content of the runbook.
@@ -239,6 +242,7 @@ pub mod run_book {
         };
         let o = context.register_resource(request);
         RunBookResult {
+            id: o.get_field("id"),
             automation_account_name: o.get_field("automationAccountName"),
             content: o.get_field("content"),
             description: o.get_field("description"),

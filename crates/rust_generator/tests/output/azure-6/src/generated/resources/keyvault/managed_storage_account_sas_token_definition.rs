@@ -134,6 +134,9 @@ pub mod managed_storage_account_sas_token_definition {
     }
     #[allow(dead_code)]
     pub struct ManagedStorageAccountSasTokenDefinitionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Managed Storage Account.
         pub managed_storage_account_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this SAS Definition.
@@ -204,6 +207,7 @@ pub mod managed_storage_account_sas_token_definition {
         };
         let o = context.register_resource(request);
         ManagedStorageAccountSasTokenDefinitionResult {
+            id: o.get_field("id"),
             managed_storage_account_id: o.get_field("managedStorageAccountId"),
             name: o.get_field("name"),
             sas_template_uri: o.get_field("sasTemplateUri"),

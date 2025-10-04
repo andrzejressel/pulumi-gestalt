@@ -95,6 +95,9 @@ pub mod user {
     }
     #[allow(dead_code)]
     pub struct UserResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Details about the user's address. At most 1 address is allowed. Detailed below.
         pub addresses: pulumi_gestalt_rust::Output<
             Option<super::super::types::identitystore::UserAddresses>,
@@ -230,6 +233,7 @@ pub mod user {
         };
         let o = context.register_resource(request);
         UserResult {
+            id: o.get_field("id"),
             addresses: o.get_field("addresses"),
             display_name: o.get_field("displayName"),
             emails: o.get_field("emails"),

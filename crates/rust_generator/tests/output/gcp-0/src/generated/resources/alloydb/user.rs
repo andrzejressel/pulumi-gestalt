@@ -190,6 +190,9 @@ pub mod user {
     }
     #[allow(dead_code)]
     pub struct UserResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifies the alloydb cluster. Must be in the format
         /// 'projects/{project}/locations/{location}/clusters/{cluster_id}'
         pub cluster: pulumi_gestalt_rust::Output<String>,
@@ -253,6 +256,7 @@ pub mod user {
         };
         let o = context.register_resource(request);
         UserResult {
+            id: o.get_field("id"),
             cluster: o.get_field("cluster"),
             database_roles: o.get_field("databaseRoles"),
             name: o.get_field("name"),

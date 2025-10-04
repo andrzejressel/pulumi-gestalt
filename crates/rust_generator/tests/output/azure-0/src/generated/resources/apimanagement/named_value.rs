@@ -83,6 +83,9 @@ pub mod named_value {
     }
     #[allow(dead_code)]
     pub struct NamedValueResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the API Management Service in which the API Management Named Value should exist. Changing this forces a new resource to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// The display name of this API Management Named Value.
@@ -164,6 +167,7 @@ pub mod named_value {
         };
         let o = context.register_resource(request);
         NamedValueResult {
+            id: o.get_field("id"),
             api_management_name: o.get_field("apiManagementName"),
             display_name: o.get_field("displayName"),
             name: o.get_field("name"),

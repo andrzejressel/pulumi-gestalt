@@ -66,6 +66,9 @@ pub mod enterprise_cluster {
     }
     #[allow(dead_code)]
     pub struct EnterpriseClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// DNS name of the cluster endpoint.
         pub hostname: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Redis Enterprise Cluster should exist. Changing this forces a new Redis Enterprise Cluster to be created.
@@ -140,6 +143,7 @@ pub mod enterprise_cluster {
         };
         let o = context.register_resource(request);
         EnterpriseClusterResult {
+            id: o.get_field("id"),
             hostname: o.get_field("hostname"),
             location: o.get_field("location"),
             minimum_tls_version: o.get_field("minimumTlsVersion"),

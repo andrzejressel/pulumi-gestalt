@@ -51,6 +51,9 @@ pub mod instance_public_ports {
     }
     #[allow(dead_code)]
     pub struct InstancePublicPortsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the Lightsail Instance.
         pub instance_name: pulumi_gestalt_rust::Output<String>,
         /// Configuration block with port information. AWS closes all currently open ports that are not included in the `port_info`. Detailed below.
@@ -88,6 +91,7 @@ pub mod instance_public_ports {
         };
         let o = context.register_resource(request);
         InstancePublicPortsResult {
+            id: o.get_field("id"),
             instance_name: o.get_field("instanceName"),
             port_infos: o.get_field("portInfos"),
         }

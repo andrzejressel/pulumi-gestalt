@@ -121,6 +121,9 @@ pub mod client_tls_policy {
     }
     #[allow(dead_code)]
     pub struct ClientTlsPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Defines a mechanism to provision client identity (public and private keys) for peer to peer authentication. The presence of this dictates mTLS.
         /// Structure is documented below.
         pub client_certificate: pulumi_gestalt_rust::Output<
@@ -234,6 +237,7 @@ pub mod client_tls_policy {
         };
         let o = context.register_resource(request);
         ClientTlsPolicyResult {
+            id: o.get_field("id"),
             client_certificate: o.get_field("clientCertificate"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

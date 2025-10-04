@@ -80,6 +80,9 @@ pub mod cross_account_attachment {
     }
     #[allow(dead_code)]
     pub struct CrossAccountAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Cross Account Attachment.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Creation Time when the Cross Account Attachment.
@@ -150,6 +153,7 @@ pub mod cross_account_attachment {
         };
         let o = context.register_resource(request);
         CrossAccountAttachmentResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_time: o.get_field("createdTime"),
             last_modified_time: o.get_field("lastModifiedTime"),

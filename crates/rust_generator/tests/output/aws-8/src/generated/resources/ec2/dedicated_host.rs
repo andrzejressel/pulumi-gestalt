@@ -61,6 +61,9 @@ pub mod dedicated_host {
     }
     #[allow(dead_code)]
     pub struct DedicatedHostResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Dedicated Host.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Outpost hardware asset on which to allocate the Dedicated Hosts. This parameter is supported only if you specify OutpostArn. If you are allocating the Dedicated Hosts in a Region, omit this parameter.
@@ -148,6 +151,7 @@ pub mod dedicated_host {
         };
         let o = context.register_resource(request);
         DedicatedHostResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             asset_id: o.get_field("assetId"),
             auto_placement: o.get_field("autoPlacement"),

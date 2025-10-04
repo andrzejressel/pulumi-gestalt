@@ -111,6 +111,9 @@ pub mod backup_policy_mysql_flexible_server {
     }
     #[allow(dead_code)]
     pub struct BackupPolicyMysqlFlexibleServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of repeating time interval. It supports weekly back. It should follow `ISO 8601` repeating time interval format. Changing this forces a new resource to be created.
         pub backup_repeating_time_intervals: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A `default_retention_rule` block as defined below. Changing this forces a new resource to be created.
@@ -187,6 +190,7 @@ pub mod backup_policy_mysql_flexible_server {
         };
         let o = context.register_resource(request);
         BackupPolicyMysqlFlexibleServerResult {
+            id: o.get_field("id"),
             backup_repeating_time_intervals: o.get_field("backupRepeatingTimeIntervals"),
             default_retention_rule: o.get_field("defaultRetentionRule"),
             name: o.get_field("name"),

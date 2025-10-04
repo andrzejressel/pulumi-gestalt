@@ -182,6 +182,9 @@ pub mod management_folder_security_health_analytics_custom_module {
     }
     #[allow(dead_code)]
     pub struct ManagementFolderSecurityHealthAnalyticsCustomModuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// If empty, indicates that the custom module was created in the organization, folder,
         /// or project in which you are viewing the custom module. Otherwise, ancestor_module
         /// specifies the organization or folder from which the custom module is inherited.
@@ -265,6 +268,7 @@ pub mod management_folder_security_health_analytics_custom_module {
         };
         let o = context.register_resource(request);
         ManagementFolderSecurityHealthAnalyticsCustomModuleResult {
+            id: o.get_field("id"),
             ancestor_module: o.get_field("ancestorModule"),
             custom_config: o.get_field("customConfig"),
             display_name: o.get_field("displayName"),

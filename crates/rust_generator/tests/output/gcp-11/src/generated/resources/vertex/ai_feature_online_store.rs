@@ -168,6 +168,9 @@ pub mod ai_feature_online_store {
     }
     #[allow(dead_code)]
     pub struct AiFeatureOnlineStoreResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Settings for Cloud Bigtable instance that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore.
         /// Structure is documented below.
         pub bigtable: pulumi_gestalt_rust::Output<
@@ -292,6 +295,7 @@ pub mod ai_feature_online_store {
         };
         let o = context.register_resource(request);
         AiFeatureOnlineStoreResult {
+            id: o.get_field("id"),
             bigtable: o.get_field("bigtable"),
             create_time: o.get_field("createTime"),
             dedicated_serving_endpoint: o.get_field("dedicatedServingEndpoint"),

@@ -52,6 +52,9 @@ pub mod managed_prefix_list_entry {
     }
     #[allow(dead_code)]
     pub struct ManagedPrefixListEntryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// CIDR block of this entry.
         pub cidr: pulumi_gestalt_rust::Output<String>,
         /// Description of this entry. Please note that due to API limitations, updating only the description of an entry will require recreating the entry.
@@ -94,6 +97,7 @@ pub mod managed_prefix_list_entry {
         };
         let o = context.register_resource(request);
         ManagedPrefixListEntryResult {
+            id: o.get_field("id"),
             cidr: o.get_field("cidr"),
             description: o.get_field("description"),
             prefix_list_id: o.get_field("prefixListId"),

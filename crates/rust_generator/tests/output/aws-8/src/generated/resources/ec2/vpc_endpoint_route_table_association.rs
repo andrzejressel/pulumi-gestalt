@@ -39,6 +39,9 @@ pub mod vpc_endpoint_route_table_association {
     }
     #[allow(dead_code)]
     pub struct VpcEndpointRouteTableAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the EC2 Route Table to be associated with the VPC Endpoint.
         pub route_table_id: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the VPC Endpoint with which the EC2 Route Table will be associated.
@@ -75,6 +78,7 @@ pub mod vpc_endpoint_route_table_association {
         };
         let o = context.register_resource(request);
         VpcEndpointRouteTableAssociationResult {
+            id: o.get_field("id"),
             route_table_id: o.get_field("routeTableId"),
             vpc_endpoint_id: o.get_field("vpcEndpointId"),
         }

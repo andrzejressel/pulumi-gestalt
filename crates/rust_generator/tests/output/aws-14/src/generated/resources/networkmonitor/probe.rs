@@ -71,6 +71,9 @@ pub mod probe {
     }
     #[allow(dead_code)]
     pub struct ProbeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub address_family: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the attachment.
         pub arn: pulumi_gestalt_rust::Output<String>,
@@ -154,6 +157,7 @@ pub mod probe {
         };
         let o = context.register_resource(request);
         ProbeResult {
+            id: o.get_field("id"),
             address_family: o.get_field("addressFamily"),
             arn: o.get_field("arn"),
             destination: o.get_field("destination"),

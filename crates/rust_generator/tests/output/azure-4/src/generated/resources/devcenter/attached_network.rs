@@ -80,6 +80,9 @@ pub mod attached_network {
     }
     #[allow(dead_code)]
     pub struct AttachedNetworkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the associated Dev Center. Changing this forces a new resource to be created.
         pub dev_center_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of this Dev Center Attached Network. Changing this forces a new resource to be created.
@@ -124,6 +127,7 @@ pub mod attached_network {
         };
         let o = context.register_resource(request);
         AttachedNetworkResult {
+            id: o.get_field("id"),
             dev_center_id: o.get_field("devCenterId"),
             name: o.get_field("name"),
             network_connection_id: o.get_field("networkConnectionId"),

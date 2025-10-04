@@ -51,6 +51,9 @@ pub mod enrollment_status {
     }
     #[allow(dead_code)]
     pub struct EnrollmentStatusResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Flag to enroll member accounts of the organization if the account is the management account. No drift detection is currently supported for this argument. Default value is `false`.
         pub include_member_accounts: pulumi_gestalt_rust::Output<bool>,
         pub status: pulumi_gestalt_rust::Output<String>,
@@ -82,6 +85,7 @@ pub mod enrollment_status {
         };
         let o = context.register_resource(request);
         EnrollmentStatusResult {
+            id: o.get_field("id"),
             include_member_accounts: o.get_field("includeMemberAccounts"),
             status: o.get_field("status"),
         }

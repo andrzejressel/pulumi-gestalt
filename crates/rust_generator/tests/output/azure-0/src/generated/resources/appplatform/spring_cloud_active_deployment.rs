@@ -70,6 +70,9 @@ pub mod spring_cloud_active_deployment {
     }
     #[allow(dead_code)]
     pub struct SpringCloudActiveDeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of Spring Cloud Deployment which is going to be active.
         pub deployment_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies the id of the Spring Cloud Application. Changing this forces a new resource to be created.
@@ -106,6 +109,7 @@ pub mod spring_cloud_active_deployment {
         };
         let o = context.register_resource(request);
         SpringCloudActiveDeploymentResult {
+            id: o.get_field("id"),
             deployment_name: o.get_field("deploymentName"),
             spring_cloud_app_id: o.get_field("springCloudAppId"),
         }

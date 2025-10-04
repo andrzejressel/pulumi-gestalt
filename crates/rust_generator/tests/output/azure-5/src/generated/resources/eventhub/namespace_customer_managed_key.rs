@@ -244,6 +244,9 @@ pub mod namespace_customer_managed_key {
     }
     #[allow(dead_code)]
     pub struct NamespaceCustomerManagedKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the EventHub Namespace. Changing this forces a new resource to be created.
         pub eventhub_namespace_id: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable Infrastructure Encryption (Double Encryption). Changing this forces a new resource to be created.
@@ -304,6 +307,7 @@ pub mod namespace_customer_managed_key {
         };
         let o = context.register_resource(request);
         NamespaceCustomerManagedKeyResult {
+            id: o.get_field("id"),
             eventhub_namespace_id: o.get_field("eventhubNamespaceId"),
             infrastructure_encryption_enabled: o
                 .get_field("infrastructureEncryptionEnabled"),

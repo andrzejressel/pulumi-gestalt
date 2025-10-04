@@ -157,6 +157,9 @@ pub mod custom_domain {
     }
     #[allow(dead_code)]
     pub struct CustomDomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Binding type. Possible values include `Disabled` and `SniEnabled`.
         pub certificate_binding_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// The ID of the Container App Environment Certificate to use. Changing this forces a new resource to be created.
@@ -220,6 +223,7 @@ pub mod custom_domain {
         };
         let o = context.register_resource(request);
         CustomDomainResult {
+            id: o.get_field("id"),
             certificate_binding_type: o.get_field("certificateBindingType"),
             container_app_environment_certificate_id: o
                 .get_field("containerAppEnvironmentCertificateId"),

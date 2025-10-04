@@ -100,6 +100,9 @@ pub mod fleet {
     }
     #[allow(dead_code)]
     pub struct FleetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Fleet ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Build ARN.
@@ -254,6 +257,7 @@ pub mod fleet {
         };
         let o = context.register_resource(request);
         FleetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             build_arn: o.get_field("buildArn"),
             build_id: o.get_field("buildId"),

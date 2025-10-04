@@ -63,6 +63,9 @@ pub mod log_data_protection_policy {
     }
     #[allow(dead_code)]
     pub struct LogDataProtectionPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the log group under which the log stream is to be created.
         pub log_group_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies the data protection policy in JSON. Read more at [Data protection policy syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-start.html#mask-sensitive-log-data-policysyntax).
@@ -99,6 +102,7 @@ pub mod log_data_protection_policy {
         };
         let o = context.register_resource(request);
         LogDataProtectionPolicyResult {
+            id: o.get_field("id"),
             log_group_name: o.get_field("logGroupName"),
             policy_document: o.get_field("policyDocument"),
         }

@@ -99,6 +99,9 @@ pub mod connector_profile {
     }
     #[allow(dead_code)]
     pub struct ConnectorProfileResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the connector profile.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Indicates the connection mode and specifies whether it is public or private. Private flows use AWS PrivateLink to route data over AWS infrastructure without exposing it to the public internet. One of: `Public`, `Private`.
@@ -169,6 +172,7 @@ pub mod connector_profile {
         };
         let o = context.register_resource(request);
         ConnectorProfileResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             connection_mode: o.get_field("connectionMode"),
             connector_label: o.get_field("connectorLabel"),

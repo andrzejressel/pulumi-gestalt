@@ -72,6 +72,9 @@ pub mod monitored_project {
     }
     #[allow(dead_code)]
     pub struct MonitoredProjectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Output only. The time when this `MonitoredProject` was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Required. The resource name of the existing Metrics Scope that will monitor this project. Example: locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}
@@ -112,6 +115,7 @@ pub mod monitored_project {
         };
         let o = context.register_resource(request);
         MonitoredProjectResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             metrics_scope: o.get_field("metricsScope"),
             name: o.get_field("name"),

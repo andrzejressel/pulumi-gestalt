@@ -86,6 +86,9 @@ pub mod ssl_certificate {
     }
     #[allow(dead_code)]
     pub struct SSLCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The certificate in PEM format.
         /// The certificate chain must be no greater than 5 certs long.
         /// The chain must include at least one intermediate cert.
@@ -179,6 +182,7 @@ pub mod ssl_certificate {
         };
         let o = context.register_resource(request);
         SSLCertificateResult {
+            id: o.get_field("id"),
             certificate: o.get_field("certificate"),
             certificate_id: o.get_field("certificateId"),
             creation_timestamp: o.get_field("creationTimestamp"),

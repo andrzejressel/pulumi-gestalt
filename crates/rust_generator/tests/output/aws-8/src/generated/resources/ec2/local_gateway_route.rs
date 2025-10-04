@@ -47,6 +47,9 @@ pub mod local_gateway_route {
     }
     #[allow(dead_code)]
     pub struct LocalGatewayRouteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// IPv4 CIDR range used for destination matches. Routing decisions are based on the most specific match.
         pub destination_cidr_block: pulumi_gestalt_rust::Output<String>,
         /// Identifier of EC2 Local Gateway Route Table.
@@ -97,6 +100,7 @@ pub mod local_gateway_route {
         };
         let o = context.register_resource(request);
         LocalGatewayRouteResult {
+            id: o.get_field("id"),
             destination_cidr_block: o.get_field("destinationCidrBlock"),
             local_gateway_route_table_id: o.get_field("localGatewayRouteTableId"),
             local_gateway_virtual_interface_group_id: o

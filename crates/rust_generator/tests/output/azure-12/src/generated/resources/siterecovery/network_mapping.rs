@@ -108,6 +108,9 @@ pub mod network_mapping {
     }
     #[allow(dead_code)]
     pub struct NetworkMappingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the network mapping. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The name of the vault that should be updated. Changing this forces a new resource to be created.
@@ -182,6 +185,7 @@ pub mod network_mapping {
         };
         let o = context.register_resource(request);
         NetworkMappingResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             recovery_vault_name: o.get_field("recoveryVaultName"),
             resource_group_name: o.get_field("resourceGroupName"),

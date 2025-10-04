@@ -63,6 +63,9 @@ pub mod rest_api_policy {
     }
     #[allow(dead_code)]
     pub struct RestApiPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// JSON formatted policy document that controls access to the API Gateway.
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// ID of the REST API.
@@ -98,6 +101,7 @@ pub mod rest_api_policy {
         };
         let o = context.register_resource(request);
         RestApiPolicyResult {
+            id: o.get_field("id"),
             policy: o.get_field("policy"),
             rest_api_id: o.get_field("restApiId"),
         }

@@ -75,6 +75,9 @@ pub mod virtual_machine_group {
     }
     #[allow(dead_code)]
     pub struct VirtualMachineGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Microsoft SQL Virtual Machine Group should exist. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for the Microsoft SQL Virtual Machine Group. Changing this forces a new resource to be created.
@@ -149,6 +152,7 @@ pub mod virtual_machine_group {
         };
         let o = context.register_resource(request);
         VirtualMachineGroupResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

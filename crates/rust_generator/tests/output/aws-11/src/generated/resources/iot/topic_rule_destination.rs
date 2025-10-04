@@ -25,6 +25,9 @@ pub mod topic_rule_destination {
     }
     #[allow(dead_code)]
     pub struct TopicRuleDestinationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the topic rule destination
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Whether or not to enable the destination. Default: `true`.
@@ -64,6 +67,7 @@ pub mod topic_rule_destination {
         };
         let o = context.register_resource(request);
         TopicRuleDestinationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             enabled: o.get_field("enabled"),
             vpc_configuration: o.get_field("vpcConfiguration"),

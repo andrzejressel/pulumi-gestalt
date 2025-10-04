@@ -101,6 +101,9 @@ pub mod identity_provider_aadb_2_c {
     }
     #[allow(dead_code)]
     pub struct IdentityProviderAadb2cResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The allowed AAD tenant, usually your B2C tenant domain.
         pub allowed_tenant: pulumi_gestalt_rust::Output<String>,
         /// The Name of the API Management Service where this AAD Identity Provider should be created. Changing this forces a new resource to be created.
@@ -211,6 +214,7 @@ pub mod identity_provider_aadb_2_c {
         };
         let o = context.register_resource(request);
         IdentityProviderAadb2cResult {
+            id: o.get_field("id"),
             allowed_tenant: o.get_field("allowedTenant"),
             api_management_name: o.get_field("apiManagementName"),
             authority: o.get_field("authority"),

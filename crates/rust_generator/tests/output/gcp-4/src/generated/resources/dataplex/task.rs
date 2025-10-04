@@ -258,6 +258,9 @@ pub mod task {
     }
     #[allow(dead_code)]
     pub struct TaskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time when the task was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// User-provided description of the task.
@@ -398,6 +401,7 @@ pub mod task {
         };
         let o = context.register_resource(request);
         TaskResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

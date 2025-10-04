@@ -135,6 +135,9 @@ pub mod router_route_policy {
     }
     #[allow(dead_code)]
     pub struct RouterRoutePolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The fingerprint used for optimistic locking of this resource.  Used
         /// internally during updates.
         pub fingerprint: pulumi_gestalt_rust::Output<String>,
@@ -204,6 +207,7 @@ pub mod router_route_policy {
         };
         let o = context.register_resource(request);
         RouterRoutePolicyResult {
+            id: o.get_field("id"),
             fingerprint: o.get_field("fingerprint"),
             name: o.get_field("name"),
             project: o.get_field("project"),

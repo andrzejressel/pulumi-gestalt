@@ -79,6 +79,9 @@ pub mod firewall_endpoint {
     }
     #[allow(dead_code)]
     pub struct FirewallEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of networks that are associated with this endpoint in the local zone.
         /// This is a projection of the FirewallEndpointAssociations pointing at this
         /// endpoint. A network will only appear in this list after traffic routing is
@@ -168,6 +171,7 @@ pub mod firewall_endpoint {
         };
         let o = context.register_resource(request);
         FirewallEndpointResult {
+            id: o.get_field("id"),
             associated_networks: o.get_field("associatedNetworks"),
             billing_project_id: o.get_field("billingProjectId"),
             create_time: o.get_field("createTime"),

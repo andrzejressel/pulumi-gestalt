@@ -62,6 +62,9 @@ pub mod queue {
     }
     #[allow(dead_code)]
     pub struct QueueResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A mapping of MetaData which should be assigned to this Storage Queue.
         pub metadata: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -108,6 +111,7 @@ pub mod queue {
         };
         let o = context.register_resource(request);
         QueueResult {
+            id: o.get_field("id"),
             metadata: o.get_field("metadata"),
             name: o.get_field("name"),
             resource_manager_id: o.get_field("resourceManagerId"),

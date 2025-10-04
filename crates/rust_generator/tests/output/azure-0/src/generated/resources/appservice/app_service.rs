@@ -143,6 +143,9 @@ pub mod app_service {
     }
     #[allow(dead_code)]
     pub struct AppServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the App Service Plan within which to create this App Service.
         pub app_service_plan_id: pulumi_gestalt_rust::Output<String>,
         /// A key-value pair of App Settings.
@@ -344,6 +347,7 @@ pub mod app_service {
         };
         let o = context.register_resource(request);
         AppServiceResult {
+            id: o.get_field("id"),
             app_service_plan_id: o.get_field("appServicePlanId"),
             app_settings: o.get_field("appSettings"),
             auth_settings: o.get_field("authSettings"),

@@ -50,6 +50,9 @@ pub mod appregistry_attribute_group_association {
     }
     #[allow(dead_code)]
     pub struct AppregistryAttributeGroupAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the application.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// ID of the attribute group to associate with the application.
@@ -86,6 +89,7 @@ pub mod appregistry_attribute_group_association {
         };
         let o = context.register_resource(request);
         AppregistryAttributeGroupAssociationResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             attribute_group_id: o.get_field("attributeGroupId"),
         }

@@ -72,6 +72,9 @@ pub mod kx_user {
     }
     #[allow(dead_code)]
     pub struct KxUserResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) identifier of the KX user.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Unique identifier for the KX environment.
@@ -131,6 +134,7 @@ pub mod kx_user {
         };
         let o = context.register_resource(request);
         KxUserResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             environment_id: o.get_field("environmentId"),
             iam_role: o.get_field("iamRole"),

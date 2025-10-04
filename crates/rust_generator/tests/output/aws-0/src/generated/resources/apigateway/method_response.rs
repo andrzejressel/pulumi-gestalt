@@ -158,6 +158,9 @@ pub mod method_response {
     }
     #[allow(dead_code)]
     pub struct MethodResponseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The HTTP verb of the method resource (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`).
         pub http_method: pulumi_gestalt_rust::Output<String>,
         /// The Resource identifier for the method resource.
@@ -227,6 +230,7 @@ pub mod method_response {
         };
         let o = context.register_resource(request);
         MethodResponseResult {
+            id: o.get_field("id"),
             http_method: o.get_field("httpMethod"),
             resource_id: o.get_field("resourceId"),
             response_models: o.get_field("responseModels"),

@@ -163,6 +163,9 @@ pub mod cluster {
     }
     #[allow(dead_code)]
     pub struct ClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A List of one or more features which should be enabled, such as `DnsService`.
         pub add_on_features: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// An `azure_active_directory` block as defined below.
@@ -403,6 +406,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
+            id: o.get_field("id"),
             add_on_features: o.get_field("addOnFeatures"),
             azure_active_directory: o.get_field("azureActiveDirectory"),
             certificate: o.get_field("certificate"),

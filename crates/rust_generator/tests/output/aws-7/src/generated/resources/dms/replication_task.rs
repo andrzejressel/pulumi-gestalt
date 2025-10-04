@@ -78,6 +78,9 @@ pub mod replication_task {
     }
     #[allow(dead_code)]
     pub struct ReplicationTaskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Indicates when you want a change data capture (CDC) operation to start. The value can be a RFC3339 formatted date, a checkpoint, or a LSN/SCN format depending on the source engine. For more information see [Determining a CDC native start point](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native).
         pub cdc_start_position: pulumi_gestalt_rust::Output<String>,
         /// RFC3339 formatted date string or UNIX timestamp for the start of the Change Data Capture (CDC) operation.
@@ -199,6 +202,7 @@ pub mod replication_task {
         };
         let o = context.register_resource(request);
         ReplicationTaskResult {
+            id: o.get_field("id"),
             cdc_start_position: o.get_field("cdcStartPosition"),
             cdc_start_time: o.get_field("cdcStartTime"),
             migration_type: o.get_field("migrationType"),

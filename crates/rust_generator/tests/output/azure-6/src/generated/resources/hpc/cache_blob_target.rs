@@ -123,6 +123,9 @@ pub mod cache_blob_target {
     }
     #[allow(dead_code)]
     pub struct CacheBlobTargetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the access policy applied to this target. Defaults to `default`.
         pub access_policy_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name HPC Cache, which the HPC Cache Blob Target will be added to. Changing this forces a new resource to be created.
@@ -188,6 +191,7 @@ pub mod cache_blob_target {
         };
         let o = context.register_resource(request);
         CacheBlobTargetResult {
+            id: o.get_field("id"),
             access_policy_name: o.get_field("accessPolicyName"),
             cache_name: o.get_field("cacheName"),
             name: o.get_field("name"),

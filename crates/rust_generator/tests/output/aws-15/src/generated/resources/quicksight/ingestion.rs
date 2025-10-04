@@ -50,6 +50,9 @@ pub mod ingestion {
     }
     #[allow(dead_code)]
     pub struct IngestionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Ingestion.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// AWS account ID.
@@ -105,6 +108,7 @@ pub mod ingestion {
         };
         let o = context.register_resource(request);
         IngestionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             aws_account_id: o.get_field("awsAccountId"),
             data_set_id: o.get_field("dataSetId"),

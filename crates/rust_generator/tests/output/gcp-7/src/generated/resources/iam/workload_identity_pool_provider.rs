@@ -443,6 +443,9 @@ pub mod workload_identity_pool_provider {
     }
     #[allow(dead_code)]
     pub struct WorkloadIdentityPoolProviderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// [A Common Expression Language](https://opensource.google/projects/cel) expression, in
         /// plain text, to restrict what otherwise valid authentication credentials issued by the
         /// provider should not be accepted.
@@ -642,6 +645,7 @@ pub mod workload_identity_pool_provider {
         };
         let o = context.register_resource(request);
         WorkloadIdentityPoolProviderResult {
+            id: o.get_field("id"),
             attribute_condition: o.get_field("attributeCondition"),
             attribute_mapping: o.get_field("attributeMapping"),
             aws: o.get_field("aws"),

@@ -104,6 +104,9 @@ pub mod virtual_hub_ip {
     }
     #[allow(dead_code)]
     pub struct VirtualHubIpResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Virtual Hub IP. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The private IP address of the IP configuration.
@@ -169,6 +172,7 @@ pub mod virtual_hub_ip {
         };
         let o = context.register_resource(request);
         VirtualHubIpResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             private_ip_address: o.get_field("privateIpAddress"),
             private_ip_allocation_method: o.get_field("privateIpAllocationMethod"),

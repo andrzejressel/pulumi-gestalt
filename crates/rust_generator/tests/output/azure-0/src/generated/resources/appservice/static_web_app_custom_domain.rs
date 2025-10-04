@@ -117,6 +117,9 @@ pub mod static_web_app_custom_domain {
     }
     #[allow(dead_code)]
     pub struct StaticWebAppCustomDomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Domain Name which should be associated with this Static Site. Changing this forces a new Static Site Custom Domain to be created.
         pub domain_name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Static Site. Changing this forces a new Static Site Custom Domain to be created.
@@ -161,6 +164,7 @@ pub mod static_web_app_custom_domain {
         };
         let o = context.register_resource(request);
         StaticWebAppCustomDomainResult {
+            id: o.get_field("id"),
             domain_name: o.get_field("domainName"),
             static_web_app_id: o.get_field("staticWebAppId"),
             validation_token: o.get_field("validationToken"),

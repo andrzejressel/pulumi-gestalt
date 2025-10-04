@@ -171,6 +171,9 @@ pub mod data_policy {
     }
     #[allow(dead_code)]
     pub struct DataPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The data masking policy that specifies the data masking rule to use.
         /// Structure is documented below.
         pub data_masking_policy: pulumi_gestalt_rust::Output<
@@ -244,6 +247,7 @@ pub mod data_policy {
         };
         let o = context.register_resource(request);
         DataPolicyResult {
+            id: o.get_field("id"),
             data_masking_policy: o.get_field("dataMaskingPolicy"),
             data_policy_id: o.get_field("dataPolicyId"),
             data_policy_type: o.get_field("dataPolicyType"),

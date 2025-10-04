@@ -186,6 +186,9 @@ pub mod system_topic_event_subscription {
     }
     #[allow(dead_code)]
     pub struct SystemTopicEventSubscriptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `advanced_filter` block as defined below.
         pub advanced_filter: pulumi_gestalt_rust::Output<
             Option<
@@ -424,6 +427,7 @@ pub mod system_topic_event_subscription {
         };
         let o = context.register_resource(request);
         SystemTopicEventSubscriptionResult {
+            id: o.get_field("id"),
             advanced_filter: o.get_field("advancedFilter"),
             advanced_filtering_on_arrays_enabled: o
                 .get_field("advancedFilteringOnArraysEnabled"),

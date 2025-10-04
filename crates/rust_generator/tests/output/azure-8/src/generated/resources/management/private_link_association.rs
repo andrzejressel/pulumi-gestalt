@@ -91,6 +91,9 @@ pub mod private_link_association {
     }
     #[allow(dead_code)]
     pub struct PrivateLinkAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Management Group ID within which this Private Link Association should exist. Changing this forces a new Private Link Association to be created.
         ///
         /// > **Note:** For now, `management_group_id` must be the ID of [Root Management Group](https://learn.microsoft.com/en-us/azure/governance/management-groups/overview#root-management-group-for-each-directory).
@@ -167,6 +170,7 @@ pub mod private_link_association {
         };
         let o = context.register_resource(request);
         PrivateLinkAssociationResult {
+            id: o.get_field("id"),
             management_group_id: o.get_field("managementGroupId"),
             name: o.get_field("name"),
             public_network_access_enabled: o.get_field("publicNetworkAccessEnabled"),

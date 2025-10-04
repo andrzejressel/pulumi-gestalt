@@ -70,6 +70,9 @@ pub mod domain {
     }
     #[allow(dead_code)]
     pub struct DomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The domain's ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The service endpoint for updating documents in a search domain.
@@ -140,6 +143,7 @@ pub mod domain {
         };
         let o = context.register_resource(request);
         DomainResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             document_service_endpoint: o.get_field("documentServiceEndpoint"),
             domain_id: o.get_field("domainId"),

@@ -72,6 +72,9 @@ pub mod address_map {
     }
     #[allow(dead_code)]
     pub struct AddressMapResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// If set to false, then the Address Map cannot be deleted via API. This is true for Cloudflare-managed maps.
@@ -141,6 +144,7 @@ pub mod address_map {
         };
         let o = context.register_resource(request);
         AddressMapResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             can_delete: o.get_field("canDelete"),
             can_modify_ips: o.get_field("canModifyIps"),

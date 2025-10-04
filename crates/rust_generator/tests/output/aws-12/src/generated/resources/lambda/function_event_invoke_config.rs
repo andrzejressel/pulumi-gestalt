@@ -165,6 +165,9 @@ pub mod function_event_invoke_config {
     }
     #[allow(dead_code)]
     pub struct FunctionEventInvokeConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Configuration block with destination configuration. See below for details.
         pub destination_config: pulumi_gestalt_rust::Output<
             Option<
@@ -232,6 +235,7 @@ pub mod function_event_invoke_config {
         };
         let o = context.register_resource(request);
         FunctionEventInvokeConfigResult {
+            id: o.get_field("id"),
             destination_config: o.get_field("destinationConfig"),
             function_name: o.get_field("functionName"),
             maximum_event_age_in_seconds: o.get_field("maximumEventAgeInSeconds"),

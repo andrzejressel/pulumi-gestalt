@@ -54,6 +54,9 @@ pub mod region_settings {
     }
     #[allow(dead_code)]
     pub struct RegionSettingsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of services along with the management preferences for the Region. For more information, see the [AWS Documentation](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRegionSettings.html#API_UpdateRegionSettings_RequestSyntax).
         pub resource_type_management_preference: pulumi_gestalt_rust::Output<
             std::collections::HashMap<String, bool>,
@@ -97,6 +100,7 @@ pub mod region_settings {
         };
         let o = context.register_resource(request);
         RegionSettingsResult {
+            id: o.get_field("id"),
             resource_type_management_preference: o
                 .get_field("resourceTypeManagementPreference"),
             resource_type_opt_in_preference: o.get_field("resourceTypeOptInPreference"),

@@ -72,6 +72,9 @@ pub mod domain_configuration {
     }
     #[allow(dead_code)]
     pub struct DomainConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the domain configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// An object that specifies the authorization service for a domain. See the `authorizer_config` Block below for details.
@@ -174,6 +177,7 @@ pub mod domain_configuration {
         };
         let o = context.register_resource(request);
         DomainConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             authorizer_config: o.get_field("authorizerConfig"),
             domain_name: o.get_field("domainName"),

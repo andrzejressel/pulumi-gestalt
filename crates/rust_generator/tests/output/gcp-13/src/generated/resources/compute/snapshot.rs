@@ -185,6 +185,9 @@ pub mod snapshot {
     }
     #[allow(dead_code)]
     pub struct SnapshotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Creates the new snapshot in the snapshot chain labeled with the
         /// specified name. The chain name must be 1-63 characters long and
         /// comply with RFC1035. This is an uncommon option only for advanced
@@ -345,6 +348,7 @@ pub mod snapshot {
         };
         let o = context.register_resource(request);
         SnapshotResult {
+            id: o.get_field("id"),
             chain_name: o.get_field("chainName"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

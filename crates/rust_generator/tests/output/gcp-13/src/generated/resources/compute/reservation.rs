@@ -118,6 +118,9 @@ pub mod reservation {
     }
     #[allow(dead_code)]
     pub struct ReservationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Full or partial URL to a parent commitment. This field displays for
         /// reservations that are tied to a commitment.
         pub commitment: pulumi_gestalt_rust::Output<String>,
@@ -210,6 +213,7 @@ pub mod reservation {
         };
         let o = context.register_resource(request);
         ReservationResult {
+            id: o.get_field("id"),
             commitment: o.get_field("commitment"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

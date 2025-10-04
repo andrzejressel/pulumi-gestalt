@@ -54,6 +54,9 @@ pub mod sync {
     }
     #[allow(dead_code)]
     pub struct SyncResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Incoming traffic policy. Possible values are `AllowAllTraffic` and `AllowVirtualNetworksOnly`. Defaults to `AllowAllTraffic`.
         pub incoming_traffic_policy: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Azure Region where the Storage Sync should exist. Changing this forces a new Storage Sync to be created.
@@ -116,6 +119,7 @@ pub mod sync {
         };
         let o = context.register_resource(request);
         SyncResult {
+            id: o.get_field("id"),
             incoming_traffic_policy: o.get_field("incomingTrafficPolicy"),
             location: o.get_field("location"),
             name: o.get_field("name"),

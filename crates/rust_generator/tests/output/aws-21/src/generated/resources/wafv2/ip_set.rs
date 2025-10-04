@@ -55,6 +55,9 @@ pub mod ip_set {
     }
     #[allow(dead_code)]
     pub struct IpSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for `/0`.
         pub addresses: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The Amazon Resource Name (ARN) of the IP set.
@@ -127,6 +130,7 @@ pub mod ip_set {
         };
         let o = context.register_resource(request);
         IpSetResult {
+            id: o.get_field("id"),
             addresses: o.get_field("addresses"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),

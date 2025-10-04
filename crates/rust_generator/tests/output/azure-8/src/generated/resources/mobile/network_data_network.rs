@@ -64,6 +64,9 @@ pub mod network_data_network {
     }
     #[allow(dead_code)]
     pub struct NetworkDataNetworkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description of this Mobile Network Data Network.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the Azure Region where the Mobile Network Data Network should exist. Changing this forces a new Mobile Network Data Network to be created.
@@ -122,6 +125,7 @@ pub mod network_data_network {
         };
         let o = context.register_resource(request);
         NetworkDataNetworkResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             location: o.get_field("location"),
             mobile_network_id: o.get_field("mobileNetworkId"),

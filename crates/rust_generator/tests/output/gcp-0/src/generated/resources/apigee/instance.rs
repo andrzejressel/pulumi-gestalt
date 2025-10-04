@@ -315,6 +315,9 @@ pub mod instance {
     }
     #[allow(dead_code)]
     pub struct InstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Optional. Customer accept list represents the list of projects (id/number) on customer
         /// side that can privately connect to the service attachment. It is an optional field
         /// which the customers can provide during the instance creation. By default, the customer
@@ -426,6 +429,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
+            id: o.get_field("id"),
             consumer_accept_lists: o.get_field("consumerAcceptLists"),
             description: o.get_field("description"),
             disk_encryption_key_name: o.get_field("diskEncryptionKeyName"),

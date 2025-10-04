@@ -130,6 +130,9 @@ pub mod blockchain_nodes {
     }
     #[allow(dead_code)]
     pub struct BlockchainNodesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the requesting object.
         ///
         ///
@@ -228,6 +231,7 @@ pub mod blockchain_nodes {
         };
         let o = context.register_resource(request);
         BlockchainNodesResult {
+            id: o.get_field("id"),
             blockchain_node_id: o.get_field("blockchainNodeId"),
             blockchain_type: o.get_field("blockchainType"),
             connection_infos: o.get_field("connectionInfos"),

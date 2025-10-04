@@ -66,6 +66,9 @@ pub mod container_policy {
     }
     #[allow(dead_code)]
     pub struct ContainerPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the container.
         pub container_name: pulumi_gestalt_rust::Output<String>,
         /// The contents of the policy.
@@ -101,6 +104,7 @@ pub mod container_policy {
         };
         let o = context.register_resource(request);
         ContainerPolicyResult {
+            id: o.get_field("id"),
             container_name: o.get_field("containerName"),
             policy: o.get_field("policy"),
         }

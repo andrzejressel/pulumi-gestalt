@@ -87,6 +87,9 @@ pub mod peering {
     }
     #[allow(dead_code)]
     pub struct PeeringResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The full names of the Google Compute Engine networks to which the instance is connected. Caller needs to make sure that CIDR subnets do not overlap between networks, else peering creation will fail.
         pub authorized_network: pulumi_gestalt_rust::Output<String>,
         /// Full domain resource path for the Managed AD Domain involved in peering. The resource path should be in the form projects/{projectId}/locations/global/domains/{domainName}
@@ -173,6 +176,7 @@ pub mod peering {
         };
         let o = context.register_resource(request);
         PeeringResult {
+            id: o.get_field("id"),
             authorized_network: o.get_field("authorizedNetwork"),
             domain_resource: o.get_field("domainResource"),
             effective_labels: o.get_field("effectiveLabels"),

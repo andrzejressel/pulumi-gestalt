@@ -120,6 +120,9 @@ pub mod managed_cluster {
     }
     #[allow(dead_code)]
     pub struct ManagedClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Controls how connections to the cluster are authenticated. A `authentication` block as defined below.
         pub authentication: pulumi_gestalt_rust::Output<
             Option<super::super::types::servicefabric::ManagedClusterAuthentication>,
@@ -280,6 +283,7 @@ pub mod managed_cluster {
         };
         let o = context.register_resource(request);
         ManagedClusterResult {
+            id: o.get_field("id"),
             authentication: o.get_field("authentication"),
             backup_service_enabled: o.get_field("backupServiceEnabled"),
             client_connection_port: o.get_field("clientConnectionPort"),

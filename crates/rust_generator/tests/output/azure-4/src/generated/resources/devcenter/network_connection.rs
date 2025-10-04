@@ -94,6 +94,9 @@ pub mod network_connection {
     }
     #[allow(dead_code)]
     pub struct NetworkConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Active Directory Join type. Possible values are `AzureADJoin` and `HybridAzureADJoin`. Changing this forces a new resource to be created.
         pub domain_join_type: pulumi_gestalt_rust::Output<String>,
         /// The name of the Azure Active Directory domain.
@@ -187,6 +190,7 @@ pub mod network_connection {
         };
         let o = context.register_resource(request);
         NetworkConnectionResult {
+            id: o.get_field("id"),
             domain_join_type: o.get_field("domainJoinType"),
             domain_name: o.get_field("domainName"),
             domain_password: o.get_field("domainPassword"),

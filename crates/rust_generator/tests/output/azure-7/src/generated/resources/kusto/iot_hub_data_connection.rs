@@ -134,6 +134,9 @@ pub mod iot_hub_data_connection {
     }
     #[allow(dead_code)]
     pub struct IotHubDataConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Kusto Cluster this data connection will be added to. Changing this forces a new resource to be created.
         pub cluster_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies the IotHub consumer group this data connection will use for ingestion. Changing this forces a new resource to be created.
@@ -252,6 +255,7 @@ pub mod iot_hub_data_connection {
         };
         let o = context.register_resource(request);
         IotHubDataConnectionResult {
+            id: o.get_field("id"),
             cluster_name: o.get_field("clusterName"),
             consumer_group: o.get_field("consumerGroup"),
             data_format: o.get_field("dataFormat"),

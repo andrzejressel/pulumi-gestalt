@@ -96,6 +96,9 @@ pub mod ai_services {
     }
     #[allow(dead_code)]
     pub struct AIServicesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The subdomain name used for token-based authentication. This property is required when `network_acls` is specified. Changing this forces a new resource to be created.
         pub custom_subdomain_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// A `customer_managed_key` block as documented below.
@@ -243,6 +246,7 @@ pub mod ai_services {
         };
         let o = context.register_resource(request);
         AIServicesResult {
+            id: o.get_field("id"),
             custom_subdomain_name: o.get_field("customSubdomainName"),
             customer_managed_key: o.get_field("customerManagedKey"),
             endpoint: o.get_field("endpoint"),

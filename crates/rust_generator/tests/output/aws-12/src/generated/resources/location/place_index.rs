@@ -54,6 +54,9 @@ pub mod place_index {
     }
     #[allow(dead_code)]
     pub struct PlaceIndexResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The timestamp for when the place index resource was created in ISO 8601 format.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Specifies the geospatial data provider for the new place index.
@@ -128,6 +131,7 @@ pub mod place_index {
         };
         let o = context.register_resource(request);
         PlaceIndexResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             data_source: o.get_field("dataSource"),
             data_source_configuration: o.get_field("dataSourceConfiguration"),

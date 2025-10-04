@@ -25,6 +25,9 @@ pub mod foo {
     }
     #[allow(dead_code)]
     pub struct FooResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A test for plain types
         pub default_kube_client_settings: pulumi_gestalt_rust::Output<
             Option<super::types::KubeClientSettings>,
@@ -72,6 +75,7 @@ pub mod foo {
         };
         let o = context.register_resource(request);
         FooResult {
+            id: o.get_field("id"),
             default_kube_client_settings: o.get_field("defaultKubeClientSettings"),
         }
     }

@@ -68,6 +68,9 @@ pub mod slot_type {
     }
     #[allow(dead_code)]
     pub struct SlotTypeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Checksum identifying the version of the slot type that was created. The checksum is
         /// not included as an argument because the resource will add it automatically when updating the slot type.
         pub checksum: pulumi_gestalt_rust::Output<String>,
@@ -144,6 +147,7 @@ pub mod slot_type {
         };
         let o = context.register_resource(request);
         SlotTypeResult {
+            id: o.get_field("id"),
             checksum: o.get_field("checksum"),
             create_version: o.get_field("createVersion"),
             created_date: o.get_field("createdDate"),

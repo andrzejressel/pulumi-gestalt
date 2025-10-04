@@ -76,6 +76,9 @@ pub mod trigger_recurrence {
     }
     #[allow(dead_code)]
     pub struct TriggerRecurrenceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Frequency at which this Trigger should be run. Possible values include `Month`, `Week`, `Day`, `Hour`, `Minute` and `Second`.
         pub frequency: pulumi_gestalt_rust::Output<String>,
         /// Specifies interval used for the Frequency, for example a value of `4` for `interval` and `hour` for `frequency` would run the Trigger every 4 hours.
@@ -150,6 +153,7 @@ pub mod trigger_recurrence {
         };
         let o = context.register_resource(request);
         TriggerRecurrenceResult {
+            id: o.get_field("id"),
             frequency: o.get_field("frequency"),
             interval: o.get_field("interval"),
             logic_app_id: o.get_field("logicAppId"),

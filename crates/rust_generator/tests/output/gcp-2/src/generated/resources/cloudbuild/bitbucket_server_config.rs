@@ -200,6 +200,9 @@ pub mod bitbucket_server_config {
     }
     #[allow(dead_code)]
     pub struct BitbucketServerConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Immutable. API Key that will be attached to webhook. Once this field has been set, it cannot be changed.
         /// Changing this field will result in deleting/ recreating the resource.
         pub api_key: pulumi_gestalt_rust::Output<String>,
@@ -312,6 +315,7 @@ pub mod bitbucket_server_config {
         };
         let o = context.register_resource(request);
         BitbucketServerConfigResult {
+            id: o.get_field("id"),
             api_key: o.get_field("apiKey"),
             config_id: o.get_field("configId"),
             connected_repositories: o.get_field("connectedRepositories"),

@@ -58,6 +58,9 @@ pub mod workspace {
     }
     #[allow(dead_code)]
     pub struct WorkspaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The scope of VMs to send their security data to the desired workspace, unless overridden by a setting with more specific scope.
         pub scope: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Log Analytics Workspace to save the data in.
@@ -93,6 +96,7 @@ pub mod workspace {
         };
         let o = context.register_resource(request);
         WorkspaceResult {
+            id: o.get_field("id"),
             scope: o.get_field("scope"),
             workspace_id: o.get_field("workspaceId"),
         }

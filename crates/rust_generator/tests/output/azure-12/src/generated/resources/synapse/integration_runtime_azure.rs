@@ -99,6 +99,9 @@ pub mod integration_runtime_azure {
     }
     #[allow(dead_code)]
     pub struct IntegrationRuntimeAzureResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Compute type of the cluster which will execute data flow job. Valid values are `General`, `ComputeOptimized` and `MemoryOptimized`. Defaults to `General`.
         pub compute_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// Core count of the cluster which will execute data flow job. Valid values are `8`, `16`, `32`, `48`, `80`, `144` and `272`. Defaults to `8`.
@@ -170,6 +173,7 @@ pub mod integration_runtime_azure {
         };
         let o = context.register_resource(request);
         IntegrationRuntimeAzureResult {
+            id: o.get_field("id"),
             compute_type: o.get_field("computeType"),
             core_count: o.get_field("coreCount"),
             description: o.get_field("description"),

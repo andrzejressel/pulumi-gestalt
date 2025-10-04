@@ -39,6 +39,9 @@ pub mod regional_tiered_cache {
     }
     #[allow(dead_code)]
     pub struct RegionalTieredCacheResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Value of the Regional Tiered Cache zone setting.
         pub value: pulumi_gestalt_rust::Output<String>,
         /// The zone identifier to target for the resource.
@@ -74,6 +77,7 @@ pub mod regional_tiered_cache {
         };
         let o = context.register_resource(request);
         RegionalTieredCacheResult {
+            id: o.get_field("id"),
             value: o.get_field("value"),
             zone_id: o.get_field("zoneId"),
         }

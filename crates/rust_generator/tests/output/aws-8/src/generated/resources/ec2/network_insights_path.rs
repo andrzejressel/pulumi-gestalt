@@ -59,6 +59,9 @@ pub mod network_insights_path {
     }
     #[allow(dead_code)]
     pub struct NetworkInsightsPathResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Network Insights Path.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ID or ARN of the resource which is the destination of the path. Can be an Instance, Internet Gateway, Network Interface, Transit Gateway, VPC Endpoint, VPC Peering Connection or VPN Gateway. If the resource is in another account, you must specify an ARN.
@@ -143,6 +146,7 @@ pub mod network_insights_path {
         };
         let o = context.register_resource(request);
         NetworkInsightsPathResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             destination: o.get_field("destination"),
             destination_arn: o.get_field("destinationArn"),

@@ -86,6 +86,9 @@ pub mod backend_address_pool {
     }
     #[allow(dead_code)]
     pub struct BackendAddressPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Backend IP Configurations associated with this Backend Address Pool.
         pub backend_ip_configurations: pulumi_gestalt_rust::Output<Vec<String>>,
         /// An array of the Load Balancing Inbound NAT Rules associated with this Backend Address Pool.
@@ -154,6 +157,7 @@ pub mod backend_address_pool {
         };
         let o = context.register_resource(request);
         BackendAddressPoolResult {
+            id: o.get_field("id"),
             backend_ip_configurations: o.get_field("backendIpConfigurations"),
             inbound_nat_rules: o.get_field("inboundNatRules"),
             load_balancing_rules: o.get_field("loadBalancingRules"),

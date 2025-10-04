@@ -195,6 +195,9 @@ pub mod virtual_network_swift_connection {
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkSwiftConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the App Service or Function App to associate to the VNet. Changing this forces a new resource to be created.
         pub app_service_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the subnet the app service will be associated to (the subnet must have a `service_delegation` configured for `Microsoft.Web/serverFarms`).
@@ -231,6 +234,7 @@ pub mod virtual_network_swift_connection {
         };
         let o = context.register_resource(request);
         VirtualNetworkSwiftConnectionResult {
+            id: o.get_field("id"),
             app_service_id: o.get_field("appServiceId"),
             subnet_id: o.get_field("subnetId"),
         }

@@ -60,6 +60,9 @@ pub mod profiles_association {
     }
     #[allow(dead_code)]
     pub struct ProfilesAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the Profile Association. Must match a regex of `(?!^[0-9]+$)([a-zA-Z0-9\\-_' ']+)`.
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -129,6 +132,7 @@ pub mod profiles_association {
         };
         let o = context.register_resource(request);
         ProfilesAssociationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             owner_id: o.get_field("ownerId"),

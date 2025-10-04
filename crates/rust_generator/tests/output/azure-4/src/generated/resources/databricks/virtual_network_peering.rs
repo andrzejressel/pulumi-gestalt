@@ -98,6 +98,9 @@ pub mod virtual_network_peering {
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkPeeringResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of address blocks reserved for this virtual network in CIDR notation.
         pub address_space_prefixes: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Can the forwarded traffic from the VMs in the local virtual network be forwarded to the remote virtual network? Defaults to `false`.
@@ -202,6 +205,7 @@ pub mod virtual_network_peering {
         };
         let o = context.register_resource(request);
         VirtualNetworkPeeringResult {
+            id: o.get_field("id"),
             address_space_prefixes: o.get_field("addressSpacePrefixes"),
             allow_forwarded_traffic: o.get_field("allowForwardedTraffic"),
             allow_gateway_transit: o.get_field("allowGatewayTransit"),

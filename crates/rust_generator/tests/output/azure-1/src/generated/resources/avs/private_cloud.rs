@@ -90,6 +90,9 @@ pub mod private_cloud {
     }
     #[allow(dead_code)]
     pub struct PrivateCloudResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `circuit` block as defined below.
         pub circuits: pulumi_gestalt_rust::Output<
             Vec<super::super::types::avs::PrivateCloudCircuit>,
@@ -209,6 +212,7 @@ pub mod private_cloud {
         };
         let o = context.register_resource(request);
         PrivateCloudResult {
+            id: o.get_field("id"),
             circuits: o.get_field("circuits"),
             hcx_cloud_manager_endpoint: o.get_field("hcxCloudManagerEndpoint"),
             internet_connection_enabled: o.get_field("internetConnectionEnabled"),

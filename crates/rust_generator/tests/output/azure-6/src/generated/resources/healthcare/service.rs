@@ -117,6 +117,9 @@ pub mod service {
     }
     #[allow(dead_code)]
     pub struct ServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub access_policy_object_ids: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// An `authentication_configuration` block as defined below.
         pub authentication_configuration: pulumi_gestalt_rust::Output<
@@ -254,6 +257,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
+            id: o.get_field("id"),
             access_policy_object_ids: o.get_field("accessPolicyObjectIds"),
             authentication_configuration: o.get_field("authenticationConfiguration"),
             configuration_export_storage_account_name: o

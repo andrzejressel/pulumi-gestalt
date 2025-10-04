@@ -41,6 +41,9 @@ pub mod setting {
     }
     #[allow(dead_code)]
     pub struct SettingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Boolean flag to enable/disable data access.
         pub enabled: pulumi_gestalt_rust::Output<bool>,
         /// The setting to manage. Possible values are `MCAS` , `WDATP`, `WDATP_EXCLUDE_LINUX_PUBLIC_PREVIEW`, `WDATP_UNIFIED_SOLUTION` and `Sentinel`. Changing this forces a new resource to be created.
@@ -76,6 +79,7 @@ pub mod setting {
         };
         let o = context.register_resource(request);
         SettingResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
             setting_name: o.get_field("settingName"),
         }

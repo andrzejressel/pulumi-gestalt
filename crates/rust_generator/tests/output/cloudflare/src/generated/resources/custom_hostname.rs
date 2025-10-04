@@ -60,6 +60,9 @@ pub mod custom_hostname {
     }
     #[allow(dead_code)]
     pub struct CustomHostnameResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Custom metadata associated with custom hostname. Only supports primitive string values, all other values are accessible via the API directly.
         pub custom_metadata: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -144,6 +147,7 @@ pub mod custom_hostname {
         };
         let o = context.register_resource(request);
         CustomHostnameResult {
+            id: o.get_field("id"),
             custom_metadata: o.get_field("customMetadata"),
             custom_origin_server: o.get_field("customOriginServer"),
             custom_origin_sni: o.get_field("customOriginSni"),

@@ -131,6 +131,9 @@ pub mod catalog_table_optimizer {
     }
     #[allow(dead_code)]
     pub struct CatalogTableOptimizerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Catalog ID of the table.
         pub catalog_id: pulumi_gestalt_rust::Output<String>,
         /// A configuration block that defines the table optimizer settings. See Configuration for additional details.
@@ -189,6 +192,7 @@ pub mod catalog_table_optimizer {
         };
         let o = context.register_resource(request);
         CatalogTableOptimizerResult {
+            id: o.get_field("id"),
             catalog_id: o.get_field("catalogId"),
             configuration: o.get_field("configuration"),
             database_name: o.get_field("databaseName"),

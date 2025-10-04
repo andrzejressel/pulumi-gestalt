@@ -41,6 +41,9 @@ pub mod resolver_query_log_config {
     }
     #[allow(dead_code)]
     pub struct ResolverQueryLogConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN (Amazon Resource Name) of the Route 53 Resolver query logging configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the resource that you want Route 53 Resolver to send query logs.
@@ -98,6 +101,7 @@ pub mod resolver_query_log_config {
         };
         let o = context.register_resource(request);
         ResolverQueryLogConfigResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             destination_arn: o.get_field("destinationArn"),
             name: o.get_field("name"),

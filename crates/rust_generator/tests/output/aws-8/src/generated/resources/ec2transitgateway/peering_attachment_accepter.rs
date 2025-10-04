@@ -36,6 +36,9 @@ pub mod peering_attachment_accepter {
     }
     #[allow(dead_code)]
     pub struct PeeringAttachmentAccepterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the AWS account that owns the EC2 TGW peering.
         pub peer_account_id: pulumi_gestalt_rust::Output<String>,
         pub peer_region: pulumi_gestalt_rust::Output<String>,
@@ -87,6 +90,7 @@ pub mod peering_attachment_accepter {
         };
         let o = context.register_resource(request);
         PeeringAttachmentAccepterResult {
+            id: o.get_field("id"),
             peer_account_id: o.get_field("peerAccountId"),
             peer_region: o.get_field("peerRegion"),
             peer_transit_gateway_id: o.get_field("peerTransitGatewayId"),

@@ -120,6 +120,9 @@ pub mod software_update_configuration {
     }
     #[allow(dead_code)]
     pub struct SoftwareUpdateConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of Automation Account to manage this Source Control. Changing this forces a new Automation Source Control to be created.
         pub automation_account_id: pulumi_gestalt_rust::Output<String>,
         /// Maximum time allowed for the software update configuration run. using format `PT[n]H[n]M[n]S` as per ISO8601. Defaults to `PT2H`.
@@ -241,6 +244,7 @@ pub mod software_update_configuration {
         };
         let o = context.register_resource(request);
         SoftwareUpdateConfigurationResult {
+            id: o.get_field("id"),
             automation_account_id: o.get_field("automationAccountId"),
             duration: o.get_field("duration"),
             error_code: o.get_field("errorCode"),

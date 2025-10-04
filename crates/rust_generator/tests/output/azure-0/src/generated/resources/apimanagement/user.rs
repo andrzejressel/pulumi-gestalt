@@ -89,6 +89,9 @@ pub mod user {
     }
     #[allow(dead_code)]
     pub struct UserResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the API Management Service in which the User should be created. Changing this forces a new resource to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// The kind of confirmation email which will be sent to this user. Possible values are `invite` and `signup`. Changing this forces a new resource to be created.
@@ -182,6 +185,7 @@ pub mod user {
         };
         let o = context.register_resource(request);
         UserResult {
+            id: o.get_field("id"),
             api_management_name: o.get_field("apiManagementName"),
             confirmation: o.get_field("confirmation"),
             email: o.get_field("email"),

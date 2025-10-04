@@ -48,6 +48,9 @@ pub mod zero_trust_tunnel_virtual_network {
     }
     #[allow(dead_code)]
     pub struct ZeroTrustTunnelVirtualNetworkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Description of the tunnel virtual network.
@@ -98,6 +101,7 @@ pub mod zero_trust_tunnel_virtual_network {
         };
         let o = context.register_resource(request);
         ZeroTrustTunnelVirtualNetworkResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             comment: o.get_field("comment"),
             is_default_network: o.get_field("isDefaultNetwork"),

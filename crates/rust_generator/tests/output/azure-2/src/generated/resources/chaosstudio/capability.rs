@@ -67,6 +67,9 @@ pub mod capability {
     }
     #[allow(dead_code)]
     pub struct CapabilityResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The capability that should be applied to the Chaos Studio Target. For supported values please see this Chaos Studio [Fault Library](https://learn.microsoft.com/azure/chaos-studio/chaos-studio-fault-library). Changing this forces a new Chaos Studio Capability to be created.
         pub capability_type: pulumi_gestalt_rust::Output<String>,
         /// The Unique Resource Name of the Capability.
@@ -106,6 +109,7 @@ pub mod capability {
         };
         let o = context.register_resource(request);
         CapabilityResult {
+            id: o.get_field("id"),
             capability_type: o.get_field("capabilityType"),
             capability_urn: o.get_field("capabilityUrn"),
             chaos_studio_target_id: o.get_field("chaosStudioTargetId"),

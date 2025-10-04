@@ -73,6 +73,9 @@ pub mod virtual_router {
     }
     #[allow(dead_code)]
     pub struct VirtualRouterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the virtual router.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Creation date of the virtual router.
@@ -145,6 +148,7 @@ pub mod virtual_router {
         };
         let o = context.register_resource(request);
         VirtualRouterResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_date: o.get_field("createdDate"),
             last_updated_date: o.get_field("lastUpdatedDate"),

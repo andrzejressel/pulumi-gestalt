@@ -48,6 +48,9 @@ pub mod virtual_mfa_device {
     }
     #[allow(dead_code)]
     pub struct VirtualMfaDeviceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) specifying the virtual mfa device.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The base32 seed defined as specified in [RFC3548](https://tools.ietf.org/html/rfc3548.txt). The `base_32_string_seed` is base64-encoded.
@@ -108,6 +111,7 @@ pub mod virtual_mfa_device {
         };
         let o = context.register_resource(request);
         VirtualMfaDeviceResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             base32_string_seed: o.get_field("base32StringSeed"),
             enable_date: o.get_field("enableDate"),

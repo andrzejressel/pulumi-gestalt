@@ -89,6 +89,9 @@ pub mod caches_iscsi_volume {
     }
     #[allow(dead_code)]
     pub struct CachesIscsiVolumeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Volume Amazon Resource Name (ARN), e.g., `arn:aws:storagegateway:us-east-1:123456789012:gateway/sgw-12345678/volume/vol-12345678`.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Whether mutual CHAP is enabled for the iSCSI target.
@@ -193,6 +196,7 @@ pub mod caches_iscsi_volume {
         };
         let o = context.register_resource(request);
         CachesIscsiVolumeResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             chap_enabled: o.get_field("chapEnabled"),
             gateway_arn: o.get_field("gatewayArn"),

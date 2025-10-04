@@ -182,6 +182,9 @@ pub mod volume_group {
     }
     #[allow(dead_code)]
     pub struct VolumeGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Elastic SAN ID within which this Elastic SAN Volume Group should exist. Changing this forces a new resource to be created.
         pub elastic_san_id: pulumi_gestalt_rust::Output<String>,
         /// An `encryption` block as defined below.
@@ -260,6 +263,7 @@ pub mod volume_group {
         };
         let o = context.register_resource(request);
         VolumeGroupResult {
+            id: o.get_field("id"),
             elastic_san_id: o.get_field("elasticSanId"),
             encryption: o.get_field("encryption"),
             encryption_type: o.get_field("encryptionType"),

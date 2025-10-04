@@ -42,6 +42,9 @@ pub mod index {
     }
     #[allow(dead_code)]
     pub struct IndexResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Resource Explorer index.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -93,6 +96,7 @@ pub mod index {
         };
         let o = context.register_resource(request);
         IndexResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             tags: o.get_field("tags"),
             tags_all: o.get_field("tagsAll"),

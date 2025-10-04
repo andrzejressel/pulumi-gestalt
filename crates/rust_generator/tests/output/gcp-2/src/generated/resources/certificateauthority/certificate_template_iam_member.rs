@@ -376,6 +376,9 @@ pub mod certificate_template_iam_member {
     }
     #[allow(dead_code)]
     pub struct CertificateTemplateIamMemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Used to find the parent resource to bind the IAM policy to
         pub certificate_template: pulumi_gestalt_rust::Output<String>,
         /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
@@ -462,6 +465,7 @@ pub mod certificate_template_iam_member {
         };
         let o = context.register_resource(request);
         CertificateTemplateIamMemberResult {
+            id: o.get_field("id"),
             certificate_template: o.get_field("certificateTemplate"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

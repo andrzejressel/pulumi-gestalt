@@ -81,6 +81,9 @@ pub mod report_definition {
     }
     #[allow(dead_code)]
     pub struct ReportDefinitionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of additional artifacts. Valid values are: `REDSHIFT`, `QUICKSIGHT`, `ATHENA`. When ATHENA exists within additional_artifacts, no other artifact type can be declared and report_versioning must be `OVERWRITE_REPORT`.
         pub additional_artifacts: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// A list of schema elements. Valid values are: `RESOURCES`, `SPLIT_COST_ALLOCATION_DATA`.
@@ -198,6 +201,7 @@ pub mod report_definition {
         };
         let o = context.register_resource(request);
         ReportDefinitionResult {
+            id: o.get_field("id"),
             additional_artifacts: o.get_field("additionalArtifacts"),
             additional_schema_elements: o.get_field("additionalSchemaElements"),
             arn: o.get_field("arn"),

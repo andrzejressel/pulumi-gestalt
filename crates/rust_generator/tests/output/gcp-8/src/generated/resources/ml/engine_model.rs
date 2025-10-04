@@ -119,6 +119,9 @@ pub mod engine_model {
     }
     #[allow(dead_code)]
     pub struct EngineModelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The default version of the model. This version will be used to handle
         /// prediction requests that do not specify a version.
         /// Structure is documented below.
@@ -222,6 +225,7 @@ pub mod engine_model {
         };
         let o = context.register_resource(request);
         EngineModelResult {
+            id: o.get_field("id"),
             default_version: o.get_field("defaultVersion"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

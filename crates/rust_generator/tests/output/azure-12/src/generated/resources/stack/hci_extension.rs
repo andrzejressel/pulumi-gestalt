@@ -79,6 +79,9 @@ pub mod hci_extension {
     }
     #[allow(dead_code)]
     pub struct HciExtensionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Azure Stack HCI Cluster Arc Setting. Changing this forces a new resource to be created.
         pub arc_setting_id: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true. Changing this forces a new resource to be created. Possible values are `true` and `false`. Defaults to `true`.
@@ -171,6 +174,7 @@ pub mod hci_extension {
         };
         let o = context.register_resource(request);
         HciExtensionResult {
+            id: o.get_field("id"),
             arc_setting_id: o.get_field("arcSettingId"),
             auto_upgrade_minor_version_enabled: o
                 .get_field("autoUpgradeMinorVersionEnabled"),

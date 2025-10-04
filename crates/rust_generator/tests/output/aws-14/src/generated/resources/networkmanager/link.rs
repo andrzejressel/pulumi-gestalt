@@ -62,6 +62,9 @@ pub mod link {
     }
     #[allow(dead_code)]
     pub struct LinkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Link Amazon Resource Name (ARN).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The upload speed and download speed in Mbps. Documented below.
@@ -142,6 +145,7 @@ pub mod link {
         };
         let o = context.register_resource(request);
         LinkResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             bandwidth: o.get_field("bandwidth"),
             description: o.get_field("description"),

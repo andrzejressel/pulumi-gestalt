@@ -232,6 +232,9 @@ pub mod managed_disk {
     }
     #[allow(dead_code)]
     pub struct ManagedDiskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The method to use when creating the managed disk. Changing this forces a new resource to be created. Possible values include:
         /// * `Import` - Import a VHD file in to the managed disk (VHD specified with `source_uri`).
         /// * `ImportSecure` - Securely import a VHD file in to the managed disk (VHD specified with `source_uri`).
@@ -560,6 +563,7 @@ pub mod managed_disk {
         };
         let o = context.register_resource(request);
         ManagedDiskResult {
+            id: o.get_field("id"),
             create_option: o.get_field("createOption"),
             disk_access_id: o.get_field("diskAccessId"),
             disk_encryption_set_id: o.get_field("diskEncryptionSetId"),

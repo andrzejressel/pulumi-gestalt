@@ -121,6 +121,9 @@ pub mod spring_cloud_app_cosmos_db_association {
     }
     #[allow(dead_code)]
     pub struct SpringCloudAppCosmosDBAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the API type which should be used when connecting to the CosmosDB Account. Possible values are `cassandra`, `gremlin`, `mongo`, `sql` or `table`. Changing this forces a new resource to be created.
         pub api_type: pulumi_gestalt_rust::Output<String>,
         /// Specifies the CosmosDB Account access key.
@@ -225,6 +228,7 @@ pub mod spring_cloud_app_cosmos_db_association {
         };
         let o = context.register_resource(request);
         SpringCloudAppCosmosDBAssociationResult {
+            id: o.get_field("id"),
             api_type: o.get_field("apiType"),
             cosmosdb_access_key: o.get_field("cosmosdbAccessKey"),
             cosmosdb_account_id: o.get_field("cosmosdbAccountId"),

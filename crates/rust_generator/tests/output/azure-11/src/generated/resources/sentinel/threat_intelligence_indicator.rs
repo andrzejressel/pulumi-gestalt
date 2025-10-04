@@ -139,6 +139,9 @@ pub mod threat_intelligence_indicator {
     }
     #[allow(dead_code)]
     pub struct ThreatIntelligenceIndicatorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Confidence levels of the Threat Intelligence Indicator.
         pub confidence: pulumi_gestalt_rust::Output<Option<i32>>,
         /// The creator of the Threat Intelligence Indicator.
@@ -337,6 +340,7 @@ pub mod threat_intelligence_indicator {
         };
         let o = context.register_resource(request);
         ThreatIntelligenceIndicatorResult {
+            id: o.get_field("id"),
             confidence: o.get_field("confidence"),
             created_by: o.get_field("createdBy"),
             created_on: o.get_field("createdOn"),

@@ -57,6 +57,9 @@ pub mod ip_group {
     }
     #[allow(dead_code)]
     pub struct IPGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub cidrs: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// A list of ID of Firewall.
         pub firewall_ids: pulumi_gestalt_rust::Output<Vec<String>>,
@@ -118,6 +121,7 @@ pub mod ip_group {
         };
         let o = context.register_resource(request);
         IPGroupResult {
+            id: o.get_field("id"),
             cidrs: o.get_field("cidrs"),
             firewall_ids: o.get_field("firewallIds"),
             firewall_policy_ids: o.get_field("firewallPolicyIds"),

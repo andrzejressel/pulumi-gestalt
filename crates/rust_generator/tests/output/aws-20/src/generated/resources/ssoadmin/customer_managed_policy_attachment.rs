@@ -69,6 +69,9 @@ pub mod customer_managed_policy_attachment {
     }
     #[allow(dead_code)]
     pub struct CustomerManagedPolicyAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name and path of a customer managed policy. See below.
         pub customer_managed_policy_reference: pulumi_gestalt_rust::Output<
             super::super::types::ssoadmin::CustomerManagedPolicyAttachmentCustomerManagedPolicyReference,
@@ -116,6 +119,7 @@ pub mod customer_managed_policy_attachment {
         };
         let o = context.register_resource(request);
         CustomerManagedPolicyAttachmentResult {
+            id: o.get_field("id"),
             customer_managed_policy_reference: o
                 .get_field("customerManagedPolicyReference"),
             instance_arn: o.get_field("instanceArn"),

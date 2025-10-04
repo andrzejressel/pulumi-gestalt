@@ -49,6 +49,9 @@ pub mod zone {
     }
     #[allow(dead_code)]
     pub struct ZoneResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Optional) Maximum number of Records in the zone. Defaults to `1000`.
         pub max_number_of_record_sets: pulumi_gestalt_rust::Output<i32>,
         /// The name of the DNS Zone. Must be a valid domain name. Changing this forces a new resource to be created.
@@ -108,6 +111,7 @@ pub mod zone {
         };
         let o = context.register_resource(request);
         ZoneResult {
+            id: o.get_field("id"),
             max_number_of_record_sets: o.get_field("maxNumberOfRecordSets"),
             name: o.get_field("name"),
             name_servers: o.get_field("nameServers"),

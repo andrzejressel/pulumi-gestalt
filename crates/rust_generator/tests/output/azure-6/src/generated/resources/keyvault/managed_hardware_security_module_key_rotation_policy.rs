@@ -57,6 +57,9 @@ pub mod managed_hardware_security_module_key_rotation_policy {
     }
     #[allow(dead_code)]
     pub struct ManagedHardwareSecurityModuleKeyRotationPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specify the expiration duration on a newly rotated key as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `P28D`.
         pub expire_after: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Managed HSM Key. Changing this forces a new Managed HSM Key rotation policy to be created.
@@ -107,6 +110,7 @@ pub mod managed_hardware_security_module_key_rotation_policy {
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleKeyRotationPolicyResult {
+            id: o.get_field("id"),
             expire_after: o.get_field("expireAfter"),
             managed_hsm_key_id: o.get_field("managedHsmKeyId"),
             time_after_creation: o.get_field("timeAfterCreation"),

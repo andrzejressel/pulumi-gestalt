@@ -272,6 +272,9 @@ pub mod instance_group_manager {
     }
     #[allow(dead_code)]
     pub struct InstanceGroupManagerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Properties to set on all instances in the group. After setting
         /// allInstancesConfig on the group, you must update the group's instances to
         /// apply the configuration.
@@ -543,6 +546,7 @@ pub mod instance_group_manager {
         };
         let o = context.register_resource(request);
         InstanceGroupManagerResult {
+            id: o.get_field("id"),
             all_instances_config: o.get_field("allInstancesConfig"),
             auto_healing_policies: o.get_field("autoHealingPolicies"),
             base_instance_name: o.get_field("baseInstanceName"),

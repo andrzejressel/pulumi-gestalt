@@ -56,6 +56,9 @@ pub mod vpcsc_config {
     }
     #[allow(dead_code)]
     pub struct VpcscConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the location this config is located in.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The name of the project's VPC SC Config.
@@ -103,6 +106,7 @@ pub mod vpcsc_config {
         };
         let o = context.register_resource(request);
         VpcscConfigResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             project: o.get_field("project"),

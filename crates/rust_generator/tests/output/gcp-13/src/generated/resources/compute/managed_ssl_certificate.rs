@@ -153,6 +153,9 @@ pub mod managed_ssl_certificate {
     }
     #[allow(dead_code)]
     pub struct ManagedSslCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The unique identifier for the resource.
         pub certificate_id: pulumi_gestalt_rust::Output<i32>,
         /// Creation timestamp in RFC3339 text format.
@@ -234,6 +237,7 @@ pub mod managed_ssl_certificate {
         };
         let o = context.register_resource(request);
         ManagedSslCertificateResult {
+            id: o.get_field("id"),
             certificate_id: o.get_field("certificateId"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

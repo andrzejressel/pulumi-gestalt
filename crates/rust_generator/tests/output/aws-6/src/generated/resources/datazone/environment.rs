@@ -89,6 +89,9 @@ pub mod environment {
     }
     #[allow(dead_code)]
     pub struct EnvironmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Amazon Web Services account where the environment exists
         pub account_identifier: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Web Services region where the environment exists.
@@ -204,6 +207,7 @@ pub mod environment {
         };
         let o = context.register_resource(request);
         EnvironmentResult {
+            id: o.get_field("id"),
             account_identifier: o.get_field("accountIdentifier"),
             account_region: o.get_field("accountRegion"),
             blueprint_identifier: o.get_field("blueprintIdentifier"),

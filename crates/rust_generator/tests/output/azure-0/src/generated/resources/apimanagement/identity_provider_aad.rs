@@ -76,6 +76,9 @@ pub mod identity_provider_aad {
     }
     #[allow(dead_code)]
     pub struct IdentityProviderAadResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of allowed AAD Tenants.
         pub allowed_tenants: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The Name of the API Management Service where this AAD Identity Provider should be created. Changing this forces a new resource to be created.
@@ -146,6 +149,7 @@ pub mod identity_provider_aad {
         };
         let o = context.register_resource(request);
         IdentityProviderAadResult {
+            id: o.get_field("id"),
             allowed_tenants: o.get_field("allowedTenants"),
             api_management_name: o.get_field("apiManagementName"),
             client_id: o.get_field("clientId"),

@@ -88,6 +88,9 @@ pub mod grafana_managed_private_endpoint {
     }
     #[allow(dead_code)]
     pub struct GrafanaManagedPrivateEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The id of the associated managed Grafana. Changing this forces a new Dashboard Grafana Managed Private Endpoint to be created.
         pub grafana_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of private link group IDs. The value of this will depend on the private link resource to which you are connecting. Changing this forces a new Dashboard Grafana Managed Private Endpoint to be created.
@@ -172,6 +175,7 @@ pub mod grafana_managed_private_endpoint {
         };
         let o = context.register_resource(request);
         GrafanaManagedPrivateEndpointResult {
+            id: o.get_field("id"),
             grafana_id: o.get_field("grafanaId"),
             group_ids: o.get_field("groupIds"),
             location: o.get_field("location"),

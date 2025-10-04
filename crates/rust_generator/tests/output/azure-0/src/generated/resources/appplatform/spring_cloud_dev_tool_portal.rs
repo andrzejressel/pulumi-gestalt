@@ -86,6 +86,9 @@ pub mod spring_cloud_dev_tool_portal {
     }
     #[allow(dead_code)]
     pub struct SpringCloudDevToolPortalResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Should the Accelerator plugin be enabled?
         pub application_accelerator_enabled: pulumi_gestalt_rust::Output<bool>,
         /// Should the Application Live View be enabled?
@@ -160,6 +163,7 @@ pub mod spring_cloud_dev_tool_portal {
         };
         let o = context.register_resource(request);
         SpringCloudDevToolPortalResult {
+            id: o.get_field("id"),
             application_accelerator_enabled: o
                 .get_field("applicationAcceleratorEnabled"),
             application_live_view_enabled: o.get_field("applicationLiveViewEnabled"),

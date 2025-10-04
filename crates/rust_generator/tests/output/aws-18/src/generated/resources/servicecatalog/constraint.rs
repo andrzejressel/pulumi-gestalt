@@ -56,6 +56,9 @@ pub mod constraint {
     }
     #[allow(dead_code)]
     pub struct ConstraintResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
         pub accept_language: pulumi_gestalt_rust::Output<Option<String>>,
         /// Description of the constraint.
@@ -124,6 +127,7 @@ pub mod constraint {
         };
         let o = context.register_resource(request);
         ConstraintResult {
+            id: o.get_field("id"),
             accept_language: o.get_field("acceptLanguage"),
             description: o.get_field("description"),
             owner: o.get_field("owner"),

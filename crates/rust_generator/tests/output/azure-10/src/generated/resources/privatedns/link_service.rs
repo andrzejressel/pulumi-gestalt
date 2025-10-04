@@ -135,6 +135,9 @@ pub mod link_service {
     }
     #[allow(dead_code)]
     pub struct LinkServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A globally unique DNS Name for your Private Link Service. You can use this alias to request a connection to your Private Link Service.
         pub alias: pulumi_gestalt_rust::Output<String>,
         /// A list of Subscription UUID/GUID's that will be automatically be able to use this Private Link Service.
@@ -251,6 +254,7 @@ pub mod link_service {
         };
         let o = context.register_resource(request);
         LinkServiceResult {
+            id: o.get_field("id"),
             alias: o.get_field("alias"),
             auto_approval_subscription_ids: o.get_field("autoApprovalSubscriptionIds"),
             enable_proxy_protocol: o.get_field("enableProxyProtocol"),

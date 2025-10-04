@@ -278,6 +278,9 @@ pub mod resource_policy {
     }
     #[allow(dead_code)]
     pub struct ResourcePolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An optional description of this resource. Provide this property when you create the resource.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Replication consistency group for asynchronous disk replication.
@@ -389,6 +392,7 @@ pub mod resource_policy {
         };
         let o = context.register_resource(request);
         ResourcePolicyResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             disk_consistency_group_policy: o.get_field("diskConsistencyGroupPolicy"),
             group_placement_policy: o.get_field("groupPlacementPolicy"),

@@ -147,6 +147,9 @@ pub mod linked_service_sql_server {
     }
     #[allow(dead_code)]
     pub struct LinkedServiceSqlServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Linked Service SQL Server.
         pub additional_properties: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -264,6 +267,7 @@ pub mod linked_service_sql_server {
         };
         let o = context.register_resource(request);
         LinkedServiceSqlServerResult {
+            id: o.get_field("id"),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),
             connection_string: o.get_field("connectionString"),

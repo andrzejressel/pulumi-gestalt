@@ -47,6 +47,9 @@ pub mod internet_gateway_attachment {
     }
     #[allow(dead_code)]
     pub struct InternetGatewayAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the internet gateway.
         pub internet_gateway_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the VPC.
@@ -82,6 +85,7 @@ pub mod internet_gateway_attachment {
         };
         let o = context.register_resource(request);
         InternetGatewayAttachmentResult {
+            id: o.get_field("id"),
             internet_gateway_id: o.get_field("internetGatewayId"),
             vpc_id: o.get_field("vpcId"),
         }

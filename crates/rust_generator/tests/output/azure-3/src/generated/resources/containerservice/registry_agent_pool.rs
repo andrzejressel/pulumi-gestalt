@@ -80,6 +80,9 @@ pub mod registry_agent_pool {
     }
     #[allow(dead_code)]
     pub struct RegistryAgentPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of Azure Container Registry to create an Agent Pool for. Changing this forces a new Azure Container Registry Agent Pool to be created.
         pub container_registry_name: pulumi_gestalt_rust::Output<String>,
         /// VMSS instance count. Defaults to `1`.
@@ -163,6 +166,7 @@ pub mod registry_agent_pool {
         };
         let o = context.register_resource(request);
         RegistryAgentPoolResult {
+            id: o.get_field("id"),
             container_registry_name: o.get_field("containerRegistryName"),
             instance_count: o.get_field("instanceCount"),
             location: o.get_field("location"),

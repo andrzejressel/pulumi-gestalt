@@ -46,6 +46,9 @@ pub mod geofence_collection {
     }
     #[allow(dead_code)]
     pub struct GeofenceCollectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS.
         pub collection_arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the geofence collection.
@@ -108,6 +111,7 @@ pub mod geofence_collection {
         };
         let o = context.register_resource(request);
         GeofenceCollectionResult {
+            id: o.get_field("id"),
             collection_arn: o.get_field("collectionArn"),
             collection_name: o.get_field("collectionName"),
             create_time: o.get_field("createTime"),

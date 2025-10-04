@@ -107,6 +107,9 @@ pub mod instance_automated_backups_replication {
     }
     #[allow(dead_code)]
     pub struct InstanceAutomatedBackupsReplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example, `arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE`.
         pub kms_key_id: pulumi_gestalt_rust::Output<String>,
         /// A URL that contains a [Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) signed request for the [`StartDBInstanceAutomatedBackupsReplication`](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBInstanceAutomatedBackupsReplication.html) action to be called in the AWS Region of the source DB instance.
@@ -159,6 +162,7 @@ pub mod instance_automated_backups_replication {
         };
         let o = context.register_resource(request);
         InstanceAutomatedBackupsReplicationResult {
+            id: o.get_field("id"),
             kms_key_id: o.get_field("kmsKeyId"),
             pre_signed_url: o.get_field("preSignedUrl"),
             retention_period: o.get_field("retentionPeriod"),

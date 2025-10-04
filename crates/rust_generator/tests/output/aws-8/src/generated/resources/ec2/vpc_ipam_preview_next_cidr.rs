@@ -59,6 +59,9 @@ pub mod vpc_ipam_preview_next_cidr {
     }
     #[allow(dead_code)]
     pub struct VpcIpamPreviewNextCidrResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The previewed CIDR from the pool.
         pub cidr: pulumi_gestalt_rust::Output<String>,
         /// Exclude a particular CIDR range from being returned by the pool.
@@ -103,6 +106,7 @@ pub mod vpc_ipam_preview_next_cidr {
         };
         let o = context.register_resource(request);
         VpcIpamPreviewNextCidrResult {
+            id: o.get_field("id"),
             cidr: o.get_field("cidr"),
             disallowed_cidrs: o.get_field("disallowedCidrs"),
             ipam_pool_id: o.get_field("ipamPoolId"),

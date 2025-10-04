@@ -85,6 +85,9 @@ pub mod stage {
     }
     #[allow(dead_code)]
     pub struct StageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Settings for logging access in this stage.
         /// Use the `aws.apigateway.Account` resource to configure [permissions for CloudWatch Logging](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-permissions).
         pub access_log_settings: pulumi_gestalt_rust::Output<
@@ -214,6 +217,7 @@ pub mod stage {
         };
         let o = context.register_resource(request);
         StageResult {
+            id: o.get_field("id"),
             access_log_settings: o.get_field("accessLogSettings"),
             api_id: o.get_field("apiId"),
             arn: o.get_field("arn"),

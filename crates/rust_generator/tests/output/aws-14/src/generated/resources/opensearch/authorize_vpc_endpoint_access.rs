@@ -40,6 +40,9 @@ pub mod authorize_vpc_endpoint_access {
     }
     #[allow(dead_code)]
     pub struct AuthorizeVpcEndpointAccessResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// AWS account ID to grant access to.
         pub account: pulumi_gestalt_rust::Output<String>,
         /// Information about the Amazon Web Services account or service that was provided access to the domain. See authorized principal attribute for further details.
@@ -82,6 +85,7 @@ pub mod authorize_vpc_endpoint_access {
         };
         let o = context.register_resource(request);
         AuthorizeVpcEndpointAccessResult {
+            id: o.get_field("id"),
             account: o.get_field("account"),
             authorized_principals: o.get_field("authorizedPrincipals"),
             domain_name: o.get_field("domainName"),

@@ -76,6 +76,9 @@ pub mod integration_account_certificate {
     }
     #[allow(dead_code)]
     pub struct IntegrationAccountCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Logic App Integration Account. Changing this forces a new Logic App Integration Account Certificate to be created.
         pub integration_account_name: pulumi_gestalt_rust::Output<String>,
         /// A `key_vault_key` block as documented below.
@@ -146,6 +149,7 @@ pub mod integration_account_certificate {
         };
         let o = context.register_resource(request);
         IntegrationAccountCertificateResult {
+            id: o.get_field("id"),
             integration_account_name: o.get_field("integrationAccountName"),
             key_vault_key: o.get_field("keyVaultKey"),
             metadata: o.get_field("metadata"),

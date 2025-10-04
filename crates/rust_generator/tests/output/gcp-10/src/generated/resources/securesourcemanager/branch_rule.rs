@@ -162,6 +162,9 @@ pub mod branch_rule {
     }
     #[allow(dead_code)]
     pub struct BranchRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Determines if allow stale reviews or approvals before merging to the branch.
         pub allow_stale_reviews: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The ID for the BranchRule.
@@ -287,6 +290,7 @@ pub mod branch_rule {
         };
         let o = context.register_resource(request);
         BranchRuleResult {
+            id: o.get_field("id"),
             allow_stale_reviews: o.get_field("allowStaleReviews"),
             branch_rule_id: o.get_field("branchRuleId"),
             create_time: o.get_field("createTime"),

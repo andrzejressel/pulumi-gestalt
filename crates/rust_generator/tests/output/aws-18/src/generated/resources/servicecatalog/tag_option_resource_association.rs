@@ -43,6 +43,9 @@ pub mod tag_option_resource_association {
     }
     #[allow(dead_code)]
     pub struct TagOptionResourceAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the resource.
         pub resource_arn: pulumi_gestalt_rust::Output<String>,
         /// Creation time of the resource.
@@ -87,6 +90,7 @@ pub mod tag_option_resource_association {
         };
         let o = context.register_resource(request);
         TagOptionResourceAssociationResult {
+            id: o.get_field("id"),
             resource_arn: o.get_field("resourceArn"),
             resource_created_time: o.get_field("resourceCreatedTime"),
             resource_description: o.get_field("resourceDescription"),

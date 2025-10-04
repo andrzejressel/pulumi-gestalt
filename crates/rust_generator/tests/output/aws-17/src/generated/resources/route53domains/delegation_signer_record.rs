@@ -111,6 +111,9 @@ pub mod delegation_signer_record {
     }
     #[allow(dead_code)]
     pub struct DelegationSignerRecordResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An ID assigned to the created DS record.
         pub dnssec_key_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the domain that will have its parent DNS zone updated with the Delegation Signer record.
@@ -161,6 +164,7 @@ pub mod delegation_signer_record {
         };
         let o = context.register_resource(request);
         DelegationSignerRecordResult {
+            id: o.get_field("id"),
             dnssec_key_id: o.get_field("dnssecKeyId"),
             domain_name: o.get_field("domainName"),
             signing_attributes: o.get_field("signingAttributes"),

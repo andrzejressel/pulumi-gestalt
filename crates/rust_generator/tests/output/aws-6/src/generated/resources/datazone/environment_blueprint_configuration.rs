@@ -75,6 +75,9 @@ pub mod environment_blueprint_configuration {
     }
     #[allow(dead_code)]
     pub struct EnvironmentBlueprintConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the Domain.
         pub domain_id: pulumi_gestalt_rust::Output<String>,
         /// Regions in which the blueprint is enabled
@@ -154,6 +157,7 @@ pub mod environment_blueprint_configuration {
         };
         let o = context.register_resource(request);
         EnvironmentBlueprintConfigurationResult {
+            id: o.get_field("id"),
             domain_id: o.get_field("domainId"),
             enabled_regions: o.get_field("enabledRegions"),
             environment_blueprint_id: o.get_field("environmentBlueprintId"),

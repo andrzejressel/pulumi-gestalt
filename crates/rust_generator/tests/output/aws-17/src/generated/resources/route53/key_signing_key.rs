@@ -100,6 +100,9 @@ pub mod key_signing_key {
     }
     #[allow(dead_code)]
     pub struct KeySigningKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by [RFC-8624 Section 3.3](https://tools.ietf.org/html/rfc8624#section-3.3).
         pub digest_algorithm_mnemonic: pulumi_gestalt_rust::Output<String>,
         /// An integer used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by [RFC-8624 Section 3.3](https://tools.ietf.org/html/rfc8624#section-3.3).
@@ -173,6 +176,7 @@ pub mod key_signing_key {
         };
         let o = context.register_resource(request);
         KeySigningKeyResult {
+            id: o.get_field("id"),
             digest_algorithm_mnemonic: o.get_field("digestAlgorithmMnemonic"),
             digest_algorithm_type: o.get_field("digestAlgorithmType"),
             digest_value: o.get_field("digestValue"),

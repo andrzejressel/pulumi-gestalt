@@ -48,6 +48,9 @@ pub mod vpc_link {
     }
     #[allow(dead_code)]
     pub struct VpcLinkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// VPC Link ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the VPC Link. Must be between 1 and 128 characters in length.
@@ -105,6 +108,7 @@ pub mod vpc_link {
         };
         let o = context.register_resource(request);
         VpcLinkResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             security_group_ids: o.get_field("securityGroupIds"),

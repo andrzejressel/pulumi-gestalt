@@ -184,6 +184,9 @@ pub mod launch_template {
     }
     #[allow(dead_code)]
     pub struct LaunchTemplateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the launch template.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specify volumes to attach to the instance besides the volumes specified by the AMI.
@@ -549,6 +552,7 @@ pub mod launch_template {
         };
         let o = context.register_resource(request);
         LaunchTemplateResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             block_device_mappings: o.get_field("blockDeviceMappings"),
             capacity_reservation_specification: o

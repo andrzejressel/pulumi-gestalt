@@ -185,6 +185,9 @@ pub mod instance_from_machine_image {
     }
     #[allow(dead_code)]
     pub struct InstanceFromMachineImageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Controls for advanced machine-related behavior features.
         pub advanced_machine_features: pulumi_gestalt_rust::Output<
             super::super::types::compute::InstanceFromMachineImageAdvancedMachineFeatures,
@@ -512,6 +515,7 @@ pub mod instance_from_machine_image {
         };
         let o = context.register_resource(request);
         InstanceFromMachineImageResult {
+            id: o.get_field("id"),
             advanced_machine_features: o.get_field("advancedMachineFeatures"),
             allow_stopping_for_update: o.get_field("allowStoppingForUpdate"),
             attached_disks: o.get_field("attachedDisks"),

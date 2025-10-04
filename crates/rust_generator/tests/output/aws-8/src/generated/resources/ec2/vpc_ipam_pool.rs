@@ -137,6 +137,9 @@ pub mod vpc_ipam_pool {
     }
     #[allow(dead_code)]
     pub struct VpcIpamPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IP protocol assigned to this pool. You must choose either IPv4 or IPv6 protocol for a pool.
         pub address_family: pulumi_gestalt_rust::Output<String>,
         /// A default netmask length for allocations added to this pool. If, for example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new allocations will default to 10.0.0.0/16 (unless you provide a different netmask value when you create the new allocation).
@@ -288,6 +291,7 @@ pub mod vpc_ipam_pool {
         };
         let o = context.register_resource(request);
         VpcIpamPoolResult {
+            id: o.get_field("id"),
             address_family: o.get_field("addressFamily"),
             allocation_default_netmask_length: o
                 .get_field("allocationDefaultNetmaskLength"),

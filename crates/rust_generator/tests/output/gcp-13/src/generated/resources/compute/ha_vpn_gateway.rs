@@ -212,6 +212,9 @@ pub mod ha_vpn_gateway {
     }
     #[allow(dead_code)]
     pub struct HaVpnGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An optional description of this resource.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
@@ -309,6 +312,7 @@ pub mod ha_vpn_gateway {
         };
         let o = context.register_resource(request);
         HaVpnGatewayResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             gateway_ip_version: o.get_field("gatewayIpVersion"),
             name: o.get_field("name"),

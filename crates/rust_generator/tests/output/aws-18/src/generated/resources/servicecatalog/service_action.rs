@@ -56,6 +56,9 @@ pub mod service_action {
     }
     #[allow(dead_code)]
     pub struct ServiceActionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Language code. Valid values are `en` (English), `jp` (Japanese), and `zh` (Chinese). Default is `en`.
         pub accept_language: pulumi_gestalt_rust::Output<Option<String>>,
         /// Self-service action definition configuration block. Detailed below.
@@ -109,6 +112,7 @@ pub mod service_action {
         };
         let o = context.register_resource(request);
         ServiceActionResult {
+            id: o.get_field("id"),
             accept_language: o.get_field("acceptLanguage"),
             definition: o.get_field("definition"),
             description: o.get_field("description"),

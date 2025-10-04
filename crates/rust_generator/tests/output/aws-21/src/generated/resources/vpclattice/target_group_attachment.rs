@@ -40,6 +40,9 @@ pub mod target_group_attachment {
     }
     #[allow(dead_code)]
     pub struct TargetGroupAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The target.
         pub target: pulumi_gestalt_rust::Output<
             super::super::types::vpclattice::TargetGroupAttachmentTarget,
@@ -79,6 +82,7 @@ pub mod target_group_attachment {
         };
         let o = context.register_resource(request);
         TargetGroupAttachmentResult {
+            id: o.get_field("id"),
             target: o.get_field("target"),
             target_group_identifier: o.get_field("targetGroupIdentifier"),
         }

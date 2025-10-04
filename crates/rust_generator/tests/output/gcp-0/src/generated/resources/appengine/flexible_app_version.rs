@@ -288,6 +288,9 @@ pub mod flexible_app_version {
     }
     #[allow(dead_code)]
     pub struct FlexibleAppVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Serving configuration for Google Cloud Endpoints.
         pub api_config: pulumi_gestalt_rust::Output<
             Option<super::super::types::appengine::FlexibleAppVersionApiConfig>,
@@ -573,6 +576,7 @@ pub mod flexible_app_version {
         };
         let o = context.register_resource(request);
         FlexibleAppVersionResult {
+            id: o.get_field("id"),
             api_config: o.get_field("apiConfig"),
             automatic_scaling: o.get_field("automaticScaling"),
             beta_settings: o.get_field("betaSettings"),

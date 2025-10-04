@@ -379,6 +379,9 @@ pub mod managed_folder_iam_member {
     }
     #[allow(dead_code)]
     pub struct ManagedFolderIamMemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the bucket that contains the managed folder. Used to find the parent resource to bind the IAM policy to
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
@@ -452,6 +455,7 @@ pub mod managed_folder_iam_member {
         };
         let o = context.register_resource(request);
         ManagedFolderIamMemberResult {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

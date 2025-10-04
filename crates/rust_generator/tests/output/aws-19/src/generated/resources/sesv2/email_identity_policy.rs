@@ -51,6 +51,9 @@ pub mod email_identity_policy {
     }
     #[allow(dead_code)]
     pub struct EmailIdentityPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The email identity.
         pub email_identity: pulumi_gestalt_rust::Output<String>,
         /// The text of the policy in JSON format.
@@ -93,6 +96,7 @@ pub mod email_identity_policy {
         };
         let o = context.register_resource(request);
         EmailIdentityPolicyResult {
+            id: o.get_field("id"),
             email_identity: o.get_field("emailIdentity"),
             policy: o.get_field("policy"),
             policy_name: o.get_field("policyName"),

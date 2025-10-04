@@ -107,6 +107,9 @@ pub mod monitor {
     }
     #[allow(dead_code)]
     pub struct MonitorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `datadog_organization` block as defined below.
         pub datadog_organization: pulumi_gestalt_rust::Output<
             super::super::types::datadog::MonitorDatadogOrganization,
@@ -199,6 +202,7 @@ pub mod monitor {
         };
         let o = context.register_resource(request);
         MonitorResult {
+            id: o.get_field("id"),
             datadog_organization: o.get_field("datadogOrganization"),
             identity: o.get_field("identity"),
             location: o.get_field("location"),

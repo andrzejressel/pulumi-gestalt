@@ -46,6 +46,9 @@ pub mod rule_group_namespace {
     }
     #[allow(dead_code)]
     pub struct RuleGroupNamespaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// the rule group namespace data that you want to be applied. See more [in AWS Docs](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-Ruler.html).
         pub data: pulumi_gestalt_rust::Output<String>,
         /// The name of the rule group namespace
@@ -88,6 +91,7 @@ pub mod rule_group_namespace {
         };
         let o = context.register_resource(request);
         RuleGroupNamespaceResult {
+            id: o.get_field("id"),
             data: o.get_field("data"),
             name: o.get_field("name"),
             workspace_id: o.get_field("workspaceId"),

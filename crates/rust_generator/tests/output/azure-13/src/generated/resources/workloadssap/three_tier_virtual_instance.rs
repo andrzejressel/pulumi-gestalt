@@ -60,6 +60,9 @@ pub mod three_tier_virtual_instance {
     }
     #[allow(dead_code)]
     pub struct ThreeTierVirtualInstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Geo-Location where the SAP system is to be created. Changing this forces a new resource to be created.
         pub app_location: pulumi_gestalt_rust::Output<String>,
         /// The environment type for the SAP Three Tier Virtual Instance. Possible values are `NonProd` and `Prod`. Changing this forces a new resource to be created.
@@ -169,6 +172,7 @@ pub mod three_tier_virtual_instance {
         };
         let o = context.register_resource(request);
         ThreeTierVirtualInstanceResult {
+            id: o.get_field("id"),
             app_location: o.get_field("appLocation"),
             environment: o.get_field("environment"),
             identity: o.get_field("identity"),

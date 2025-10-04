@@ -91,6 +91,9 @@ pub mod entity_type {
     }
     #[allow(dead_code)]
     pub struct EntityTypeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of this entity type to be displayed on the console.
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// Enables fuzzy entity extraction during classification.
@@ -164,6 +167,7 @@ pub mod entity_type {
         };
         let o = context.register_resource(request);
         EntityTypeResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             enable_fuzzy_extraction: o.get_field("enableFuzzyExtraction"),
             entities: o.get_field("entities"),

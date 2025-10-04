@@ -60,6 +60,9 @@ pub mod private_link_scope {
     }
     #[allow(dead_code)]
     pub struct PrivateLinkScopeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The default ingestion access mode for the associated private endpoints in scope. Possible values are `Open` and `PrivateOnly`. Defaults to `Open`.
         pub ingestion_access_mode: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of the Azure Monitor Private Link Scope. Changing this forces a new resource to be created.
@@ -120,6 +123,7 @@ pub mod private_link_scope {
         };
         let o = context.register_resource(request);
         PrivateLinkScopeResult {
+            id: o.get_field("id"),
             ingestion_access_mode: o.get_field("ingestionAccessMode"),
             name: o.get_field("name"),
             query_access_mode: o.get_field("queryAccessMode"),

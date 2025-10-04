@@ -118,6 +118,9 @@ pub mod service_custom_domain {
     }
     #[allow(dead_code)]
     pub struct ServiceCustomDomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the custom domain name of the SignalR Custom Domain. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Please ensure the custom domain name is included in the Subject Alternative Names of the selected SignalR Custom Certificate.
@@ -171,6 +174,7 @@ pub mod service_custom_domain {
         };
         let o = context.register_resource(request);
         ServiceCustomDomainResult {
+            id: o.get_field("id"),
             domain_name: o.get_field("domainName"),
             name: o.get_field("name"),
             signalr_custom_certificate_id: o.get_field("signalrCustomCertificateId"),

@@ -72,6 +72,9 @@ pub mod storage_lens_configuration {
     }
     #[allow(dead_code)]
     pub struct StorageLensConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AWS account ID for the S3 Storage Lens configuration. Defaults to automatically determined account ID of the AWS provider.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the S3 Storage Lens configuration.
@@ -134,6 +137,7 @@ pub mod storage_lens_configuration {
         };
         let o = context.register_resource(request);
         StorageLensConfigurationResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             arn: o.get_field("arn"),
             config_id: o.get_field("configId"),

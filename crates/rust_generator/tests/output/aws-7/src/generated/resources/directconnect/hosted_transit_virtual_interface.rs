@@ -68,6 +68,9 @@ pub mod hosted_transit_virtual_interface {
     }
     #[allow(dead_code)]
     pub struct HostedTransitVirtualInterfaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The address family for the BGP peer. `ipv4 ` or `ipv6`.
         pub address_family: pulumi_gestalt_rust::Output<String>,
         /// The IPv4 CIDR address to use to send traffic to Amazon. Required for IPv4 BGP peers.
@@ -167,6 +170,7 @@ pub mod hosted_transit_virtual_interface {
         };
         let o = context.register_resource(request);
         HostedTransitVirtualInterfaceResult {
+            id: o.get_field("id"),
             address_family: o.get_field("addressFamily"),
             amazon_address: o.get_field("amazonAddress"),
             amazon_side_asn: o.get_field("amazonSideAsn"),

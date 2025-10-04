@@ -98,6 +98,9 @@ pub mod transfer_agent_pool {
     }
     #[allow(dead_code)]
     pub struct TransferAgentPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the bandwidth limit details. If this field is unspecified, the default value is set as 'No Limit'.
         /// Structure is documented below.
         pub bandwidth_limit: pulumi_gestalt_rust::Output<
@@ -163,6 +166,7 @@ pub mod transfer_agent_pool {
         };
         let o = context.register_resource(request);
         TransferAgentPoolResult {
+            id: o.get_field("id"),
             bandwidth_limit: o.get_field("bandwidthLimit"),
             display_name: o.get_field("displayName"),
             name: o.get_field("name"),

@@ -146,6 +146,9 @@ pub mod account {
     }
     #[allow(dead_code)]
     pub struct AccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// If `kind` is `TextAnalytics` this specifies the ID of the Search service.
         pub custom_question_answering_search_service_id: pulumi_gestalt_rust::Output<
             Option<String>,
@@ -382,6 +385,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
+            id: o.get_field("id"),
             custom_question_answering_search_service_id: o
                 .get_field("customQuestionAnsweringSearchServiceId"),
             custom_question_answering_search_service_key: o

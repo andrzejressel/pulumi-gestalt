@@ -136,6 +136,9 @@ pub mod secret_version {
     }
     #[allow(dead_code)]
     pub struct SecretVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time at which the Secret was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// The deletion policy for the secret version. Setting `ABANDON` allows the resource
@@ -212,6 +215,7 @@ pub mod secret_version {
         };
         let o = context.register_resource(request);
         SecretVersionResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             deletion_policy: o.get_field("deletionPolicy"),
             destroy_time: o.get_field("destroyTime"),

@@ -113,6 +113,9 @@ pub mod linked_dataset {
     }
     #[allow(dead_code)]
     pub struct LinkedDatasetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The information of a BigQuery Dataset. When a link is created, a BigQuery dataset is created along
         /// with it, in the same project as the LogBucket it's linked to. This dataset will also have BigQuery
         /// Views corresponding to the LogViews in the bucket.
@@ -193,6 +196,7 @@ pub mod linked_dataset {
         };
         let o = context.register_resource(request);
         LinkedDatasetResult {
+            id: o.get_field("id"),
             bigquery_datasets: o.get_field("bigqueryDatasets"),
             bucket: o.get_field("bucket"),
             create_time: o.get_field("createTime"),

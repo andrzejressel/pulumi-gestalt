@@ -100,6 +100,9 @@ pub mod sync_authorization {
     }
     #[allow(dead_code)]
     pub struct SyncAuthorizationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Entity tag (ETag) used for optimistic concurrency control as a way to help prevent simultaneous updates from overwriting each other.
         /// Used internally during updates.
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -144,6 +147,7 @@ pub mod sync_authorization {
         };
         let o = context.register_resource(request);
         SyncAuthorizationResult {
+            id: o.get_field("id"),
             etag: o.get_field("etag"),
             identities: o.get_field("identities"),
             name: o.get_field("name"),

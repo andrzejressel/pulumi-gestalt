@@ -73,6 +73,9 @@ pub mod user {
     }
     #[allow(dead_code)]
     pub struct UserResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN assigned by AWS for this user.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// When destroying this user, destroy even if it
@@ -141,6 +144,7 @@ pub mod user {
         };
         let o = context.register_resource(request);
         UserResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             force_destroy: o.get_field("forceDestroy"),
             name: o.get_field("name"),

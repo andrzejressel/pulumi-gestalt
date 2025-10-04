@@ -83,6 +83,9 @@ pub mod principal_access_boundary_policy {
     }
     #[allow(dead_code)]
     pub struct PrincipalAccessBoundaryPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// User defined annotations. See https://google.aip.dev/148#annotations
         /// for more details such as format and size limitations
         ///
@@ -176,6 +179,7 @@ pub mod principal_access_boundary_policy {
         };
         let o = context.register_resource(request);
         PrincipalAccessBoundaryPolicyResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             create_time: o.get_field("createTime"),
             details: o.get_field("details"),

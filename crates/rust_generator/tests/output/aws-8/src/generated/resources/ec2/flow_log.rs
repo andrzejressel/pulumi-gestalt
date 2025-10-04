@@ -261,6 +261,9 @@ pub mod flow_log {
     }
     #[allow(dead_code)]
     pub struct FlowLogResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Flow Log.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the IAM role that allows Amazon EC2 to publish flow logs across accounts.
@@ -406,6 +409,7 @@ pub mod flow_log {
         };
         let o = context.register_resource(request);
         FlowLogResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             deliver_cross_account_role: o.get_field("deliverCrossAccountRole"),
             destination_options: o.get_field("destinationOptions"),

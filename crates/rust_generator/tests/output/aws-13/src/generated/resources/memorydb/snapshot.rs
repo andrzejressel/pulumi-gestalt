@@ -52,6 +52,9 @@ pub mod snapshot {
     }
     #[allow(dead_code)]
     pub struct SnapshotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the snapshot.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The configuration of the cluster from which the snapshot was taken.
@@ -122,6 +125,7 @@ pub mod snapshot {
         };
         let o = context.register_resource(request);
         SnapshotResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cluster_configurations: o.get_field("clusterConfigurations"),
             cluster_name: o.get_field("clusterName"),

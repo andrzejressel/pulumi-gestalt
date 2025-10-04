@@ -115,6 +115,9 @@ pub mod target_group_attachment {
     }
     #[allow(dead_code)]
     pub struct TargetGroupAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Availability Zone where the IP address of the target is to be registered. If the private IP address is outside of the VPC scope, this value must be set to `all`.
         pub availability_zone: pulumi_gestalt_rust::Output<Option<String>>,
         /// The port on which targets receive traffic.
@@ -166,6 +169,7 @@ pub mod target_group_attachment {
         };
         let o = context.register_resource(request);
         TargetGroupAttachmentResult {
+            id: o.get_field("id"),
             availability_zone: o.get_field("availabilityZone"),
             port: o.get_field("port"),
             target_group_arn: o.get_field("targetGroupArn"),

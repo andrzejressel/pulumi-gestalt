@@ -113,6 +113,9 @@ pub mod security_scan_config {
     }
     #[allow(dead_code)]
     pub struct SecurityScanConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The authentication configuration.
         /// If specified, service will use the authentication configuration during scanning.
         /// Structure is documented below.
@@ -229,6 +232,7 @@ pub mod security_scan_config {
         };
         let o = context.register_resource(request);
         SecurityScanConfigResult {
+            id: o.get_field("id"),
             authentication: o.get_field("authentication"),
             blacklist_patterns: o.get_field("blacklistPatterns"),
             display_name: o.get_field("displayName"),

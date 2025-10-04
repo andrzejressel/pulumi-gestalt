@@ -78,6 +78,9 @@ pub mod zero_trust_gateway_policy {
     }
     #[allow(dead_code)]
     pub struct ZeroTrustGatewayPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The action executed by matched teams rule. Available values: `allow`, `block`, `safesearch`, `ytrestricted`, `on`, `off`, `scan`, `noscan`, `isolate`, `noisolate`, `override`, `l4_override`, `egress`, `audit_ssh`, `resolve`.
@@ -180,6 +183,7 @@ pub mod zero_trust_gateway_policy {
         };
         let o = context.register_resource(request);
         ZeroTrustGatewayPolicyResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             action: o.get_field("action"),
             description: o.get_field("description"),

@@ -116,6 +116,9 @@ pub mod launch_configuration {
     }
     #[allow(dead_code)]
     pub struct LaunchConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name of the launch configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Associate a public ip address with an instance in a VPC.
@@ -281,6 +284,7 @@ pub mod launch_configuration {
         };
         let o = context.register_resource(request);
         LaunchConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             associate_public_ip_address: o.get_field("associatePublicIpAddress"),
             ebs_block_devices: o.get_field("ebsBlockDevices"),

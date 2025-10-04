@@ -62,6 +62,9 @@ pub mod route_filter {
     }
     #[allow(dead_code)]
     pub struct RouteFilterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Route Filter should exist. Changing this forces a new Route Filter to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The Name which should be used for this Route Filter.
@@ -122,6 +125,7 @@ pub mod route_filter {
         };
         let o = context.register_resource(request);
         RouteFilterResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

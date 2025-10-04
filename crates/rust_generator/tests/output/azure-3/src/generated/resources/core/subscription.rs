@@ -119,6 +119,9 @@ pub mod subscription {
     }
     #[allow(dead_code)]
     pub struct SubscriptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Alias name for the subscription. This provider will generate a new GUID if this is not supplied. Changing this forces a new Subscription to be created.
         pub alias: pulumi_gestalt_rust::Output<String>,
         /// The Azure Billing Scope ID. Can be a Microsoft Customer Account Billing Scope ID, a Microsoft Partner Account Billing Scope ID or an Enrollment Billing Scope ID.
@@ -190,6 +193,7 @@ pub mod subscription {
         };
         let o = context.register_resource(request);
         SubscriptionResult {
+            id: o.get_field("id"),
             alias: o.get_field("alias"),
             billing_scope_id: o.get_field("billingScopeId"),
             subscription_id: o.get_field("subscriptionId"),

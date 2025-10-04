@@ -57,6 +57,9 @@ pub mod anomaly_alert {
     }
     #[allow(dead_code)]
     pub struct AnomalyAlertResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The display name which should be used for this Cost Anomaly Alert.
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of email addresses which the Anomaly Alerts are send to.
@@ -120,6 +123,7 @@ pub mod anomaly_alert {
         };
         let o = context.register_resource(request);
         AnomalyAlertResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             email_addresses: o.get_field("emailAddresses"),
             email_subject: o.get_field("emailSubject"),

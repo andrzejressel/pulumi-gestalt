@@ -93,6 +93,9 @@ pub mod static_web_app_function_app_registration {
     }
     #[allow(dead_code)]
     pub struct StaticWebAppFunctionAppRegistrationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of a Linux or Windows Function App to connect to the Static Web App as a Backend. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** Only one Function App can be connected to a Static Web App. Multiple Function Apps are not currently supported.
@@ -133,6 +136,7 @@ pub mod static_web_app_function_app_registration {
         };
         let o = context.register_resource(request);
         StaticWebAppFunctionAppRegistrationResult {
+            id: o.get_field("id"),
             function_app_id: o.get_field("functionAppId"),
             static_web_app_id: o.get_field("staticWebAppId"),
         }

@@ -345,6 +345,9 @@ pub mod windows_virtual_machine {
     }
     #[allow(dead_code)]
     pub struct WindowsVirtualMachineResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `additional_capabilities` block as defined below.
         pub additional_capabilities: pulumi_gestalt_rust::Output<
             Option<
@@ -849,6 +852,7 @@ pub mod windows_virtual_machine {
         };
         let o = context.register_resource(request);
         WindowsVirtualMachineResult {
+            id: o.get_field("id"),
             additional_capabilities: o.get_field("additionalCapabilities"),
             additional_unattend_contents: o.get_field("additionalUnattendContents"),
             admin_password: o.get_field("adminPassword"),

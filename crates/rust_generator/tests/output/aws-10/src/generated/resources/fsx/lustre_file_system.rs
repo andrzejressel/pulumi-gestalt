@@ -138,6 +138,9 @@ pub mod lustre_file_system {
     }
     #[allow(dead_code)]
     pub struct LustreFileSystemResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name of the file system.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// How Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. see [Auto Import Data Repo](https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html) for more details. Only supported on `PERSISTENT_1` deployment types.
@@ -391,6 +394,7 @@ pub mod lustre_file_system {
         };
         let o = context.register_resource(request);
         LustreFileSystemResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             auto_import_policy: o.get_field("autoImportPolicy"),
             automatic_backup_retention_days: o.get_field("automaticBackupRetentionDays"),

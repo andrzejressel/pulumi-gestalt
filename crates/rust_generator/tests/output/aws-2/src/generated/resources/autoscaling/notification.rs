@@ -59,6 +59,9 @@ pub mod notification {
     }
     #[allow(dead_code)]
     pub struct NotificationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of AutoScaling Group Names
         pub group_names: pulumi_gestalt_rust::Output<Vec<String>>,
         /// List of Notification Types that trigger
@@ -102,6 +105,7 @@ pub mod notification {
         };
         let o = context.register_resource(request);
         NotificationResult {
+            id: o.get_field("id"),
             group_names: o.get_field("groupNames"),
             notifications: o.get_field("notifications"),
             topic_arn: o.get_field("topicArn"),

@@ -90,6 +90,9 @@ pub mod subscription {
     }
     #[allow(dead_code)]
     pub struct SubscriptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Determines whether tracing can be enabled. Defaults to `true`.
         pub allow_tracing: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The ID of the API which should be assigned to this Subscription. Changing this forces a new resource to be created.
@@ -192,6 +195,7 @@ pub mod subscription {
         };
         let o = context.register_resource(request);
         SubscriptionResult {
+            id: o.get_field("id"),
             allow_tracing: o.get_field("allowTracing"),
             api_id: o.get_field("apiId"),
             api_management_name: o.get_field("apiManagementName"),

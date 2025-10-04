@@ -79,6 +79,9 @@ pub mod intercept_deployment_group {
     }
     #[allow(dead_code)]
     pub struct InterceptDeploymentGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Output only. The list of Intercept Endpoint Groups that are connected to this resource.
         /// Structure is documented below.
         pub connected_endpoint_groups: pulumi_gestalt_rust::Output<
@@ -182,6 +185,7 @@ pub mod intercept_deployment_group {
         };
         let o = context.register_resource(request);
         InterceptDeploymentGroupResult {
+            id: o.get_field("id"),
             connected_endpoint_groups: o.get_field("connectedEndpointGroups"),
             create_time: o.get_field("createTime"),
             effective_labels: o.get_field("effectiveLabels"),

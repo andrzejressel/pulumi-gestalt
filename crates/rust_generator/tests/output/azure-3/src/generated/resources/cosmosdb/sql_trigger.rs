@@ -71,6 +71,9 @@ pub mod sql_trigger {
     }
     #[allow(dead_code)]
     pub struct SqlTriggerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Body of the Trigger.
         pub body: pulumi_gestalt_rust::Output<String>,
         /// The id of the Cosmos DB SQL Container to create the SQL Trigger within. Changing this forces a new SQL Trigger to be created.
@@ -127,6 +130,7 @@ pub mod sql_trigger {
         };
         let o = context.register_resource(request);
         SqlTriggerResult {
+            id: o.get_field("id"),
             body: o.get_field("body"),
             container_id: o.get_field("containerId"),
             name: o.get_field("name"),

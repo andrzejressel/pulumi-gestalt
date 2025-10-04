@@ -224,6 +224,9 @@ pub mod backup_plan_iam_policy {
     }
     #[allow(dead_code)]
     pub struct BackupPlanIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
         /// The region of the Backup Plan.
@@ -280,6 +283,7 @@ pub mod backup_plan_iam_policy {
         };
         let o = context.register_resource(request);
         BackupPlanIamPolicyResult {
+            id: o.get_field("id"),
             etag: o.get_field("etag"),
             location: o.get_field("location"),
             name: o.get_field("name"),

@@ -85,6 +85,9 @@ pub mod vpn_server_configuration_policy_group {
     }
     #[allow(dead_code)]
     pub struct VpnServerConfigurationPolicyGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Is this a default VPN Server Configuration Policy Group? Defaults to `false`. Changing this forces a new resource to be created.
         pub is_default: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The Name which should be used for this VPN Server Configuration Policy Group. Changing this forces a new resource to be created.
@@ -146,6 +149,7 @@ pub mod vpn_server_configuration_policy_group {
         };
         let o = context.register_resource(request);
         VpnServerConfigurationPolicyGroupResult {
+            id: o.get_field("id"),
             is_default: o.get_field("isDefault"),
             name: o.get_field("name"),
             policies: o.get_field("policies"),

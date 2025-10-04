@@ -137,6 +137,9 @@ pub mod virtual_hub_route_table_route {
     }
     #[allow(dead_code)]
     pub struct VirtualHubRouteTableRouteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of destination addresses for this route.
         pub destinations: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The type of destinations. Possible values are `CIDR`, `ResourceId` and `Service`.
@@ -201,6 +204,7 @@ pub mod virtual_hub_route_table_route {
         };
         let o = context.register_resource(request);
         VirtualHubRouteTableRouteResult {
+            id: o.get_field("id"),
             destinations: o.get_field("destinations"),
             destinations_type: o.get_field("destinationsType"),
             name: o.get_field("name"),

@@ -91,6 +91,9 @@ pub mod model {
     }
     #[allow(dead_code)]
     pub struct ModelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this model.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies containers in the inference pipeline. If not specified, the `primary_container` argument is required. Fields are documented below.
@@ -188,6 +191,7 @@ pub mod model {
         };
         let o = context.register_resource(request);
         ModelResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             containers: o.get_field("containers"),
             enable_network_isolation: o.get_field("enableNetworkIsolation"),

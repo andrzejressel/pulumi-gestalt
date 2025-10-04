@@ -153,6 +153,9 @@ pub mod access_level_condition {
     }
     #[allow(dead_code)]
     pub struct AccessLevelConditionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Access Level to add this condition to.
         ///
         ///
@@ -273,6 +276,7 @@ pub mod access_level_condition {
         };
         let o = context.register_resource(request);
         AccessLevelConditionResult {
+            id: o.get_field("id"),
             access_level: o.get_field("accessLevel"),
             device_policy: o.get_field("devicePolicy"),
             ip_subnetworks: o.get_field("ipSubnetworks"),
