@@ -51,6 +51,9 @@ pub mod lb_certificate {
     }
     #[allow(dead_code)]
     pub struct LbCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the lightsail certificate.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The timestamp when the instance was created.
@@ -110,6 +113,7 @@ pub mod lb_certificate {
         };
         let o = context.register_resource(request);
         LbCertificateResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_at: o.get_field("createdAt"),
             domain_name: o.get_field("domainName"),

@@ -128,6 +128,9 @@ pub mod cluster_instance {
     }
     #[allow(dead_code)]
     pub struct ClusterInstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether any database modifications
         /// are applied immediately, or during the next maintenance window. Default is`false`.
         pub apply_immediately: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -316,6 +319,7 @@ pub mod cluster_instance {
         };
         let o = context.register_resource(request);
         ClusterInstanceResult {
+            id: o.get_field("id"),
             apply_immediately: o.get_field("applyImmediately"),
             arn: o.get_field("arn"),
             auto_minor_version_upgrade: o.get_field("autoMinorVersionUpgrade"),

@@ -104,6 +104,9 @@ pub mod output_event_hub {
     }
     #[allow(dead_code)]
     pub struct OutputEventHubResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The authentication mode for the Stream Output. Possible values are `Msi` and `ConnectionString`. Defaults to `ConnectionString`.
         pub authentication_mode: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of the Event Hub.
@@ -210,6 +213,7 @@ pub mod output_event_hub {
         };
         let o = context.register_resource(request);
         OutputEventHubResult {
+            id: o.get_field("id"),
             authentication_mode: o.get_field("authenticationMode"),
             eventhub_name: o.get_field("eventhubName"),
             name: o.get_field("name"),

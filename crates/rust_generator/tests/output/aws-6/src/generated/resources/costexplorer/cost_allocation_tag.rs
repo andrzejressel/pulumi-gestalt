@@ -39,6 +39,9 @@ pub mod cost_allocation_tag {
     }
     #[allow(dead_code)]
     pub struct CostAllocationTagResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The status of a cost allocation tag. Valid values are `Active` and `Inactive`.
         pub status: pulumi_gestalt_rust::Output<String>,
         /// The key for the cost allocation tag.
@@ -76,6 +79,7 @@ pub mod cost_allocation_tag {
         };
         let o = context.register_resource(request);
         CostAllocationTagResult {
+            id: o.get_field("id"),
             status: o.get_field("status"),
             tag_key: o.get_field("tagKey"),
             type_: o.get_field("type"),

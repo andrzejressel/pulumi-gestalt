@@ -56,6 +56,9 @@ pub mod data_catalog_encryption_settings {
     }
     #[allow(dead_code)]
     pub struct DataCatalogEncryptionSettingsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Data Catalog to set the security configuration for. If none is provided, the AWS account ID is used by default.
         pub catalog_id: pulumi_gestalt_rust::Output<String>,
         /// The security configuration to set. see Data Catalog Encryption Settings.
@@ -96,6 +99,7 @@ pub mod data_catalog_encryption_settings {
         };
         let o = context.register_resource(request);
         DataCatalogEncryptionSettingsResult {
+            id: o.get_field("id"),
             catalog_id: o.get_field("catalogId"),
             data_catalog_encryption_settings: o
                 .get_field("dataCatalogEncryptionSettings"),

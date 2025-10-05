@@ -149,6 +149,9 @@ pub mod guardrail {
     }
     #[allow(dead_code)]
     pub struct GuardrailResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Message to return when the guardrail blocks a prompt.
         pub blocked_input_messaging: pulumi_gestalt_rust::Output<String>,
         /// Message to return when the guardrail blocks a model response.
@@ -296,6 +299,7 @@ pub mod guardrail {
         };
         let o = context.register_resource(request);
         GuardrailResult {
+            id: o.get_field("id"),
             blocked_input_messaging: o.get_field("blockedInputMessaging"),
             blocked_outputs_messaging: o.get_field("blockedOutputsMessaging"),
             content_policy_config: o.get_field("contentPolicyConfig"),

@@ -41,6 +41,9 @@ pub mod resolver_query_log_config_association {
     }
     #[allow(dead_code)]
     pub struct ResolverQueryLogConfigAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Route 53 Resolver query logging configuration that you want to associate a VPC with.
         pub resolver_query_log_config_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of a VPC that you want this query logging configuration to log queries for.
@@ -79,6 +82,7 @@ pub mod resolver_query_log_config_association {
         };
         let o = context.register_resource(request);
         ResolverQueryLogConfigAssociationResult {
+            id: o.get_field("id"),
             resolver_query_log_config_id: o.get_field("resolverQueryLogConfigId"),
             resource_id: o.get_field("resourceId"),
         }

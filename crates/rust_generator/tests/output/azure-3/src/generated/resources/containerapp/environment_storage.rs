@@ -100,6 +100,9 @@ pub mod environment_storage {
     }
     #[allow(dead_code)]
     pub struct EnvironmentStorageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Storage Account Access Key.
         pub access_key: pulumi_gestalt_rust::Output<String>,
         /// The access mode to connect this storage to the Container App. Possible values include `ReadOnly` and `ReadWrite`. Changing this forces a new resource to be created.
@@ -165,6 +168,7 @@ pub mod environment_storage {
         };
         let o = context.register_resource(request);
         EnvironmentStorageResult {
+            id: o.get_field("id"),
             access_key: o.get_field("accessKey"),
             access_mode: o.get_field("accessMode"),
             account_name: o.get_field("accountName"),

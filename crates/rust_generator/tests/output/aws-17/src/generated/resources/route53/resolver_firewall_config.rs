@@ -47,6 +47,9 @@ pub mod resolver_firewall_config {
     }
     #[allow(dead_code)]
     pub struct ResolverFirewallConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability. DNS Firewall blocks queries that it is unable to evaluate properly. If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. Valid values: `ENABLED`, `DISABLED`.
         pub firewall_fail_open: pulumi_gestalt_rust::Output<String>,
         /// The AWS account ID of the owner of the VPC that this firewall configuration applies to.
@@ -84,6 +87,7 @@ pub mod resolver_firewall_config {
         };
         let o = context.register_resource(request);
         ResolverFirewallConfigResult {
+            id: o.get_field("id"),
             firewall_fail_open: o.get_field("firewallFailOpen"),
             owner_id: o.get_field("ownerId"),
             resource_id: o.get_field("resourceId"),

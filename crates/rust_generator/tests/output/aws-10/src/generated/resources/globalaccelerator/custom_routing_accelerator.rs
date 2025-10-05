@@ -66,6 +66,9 @@ pub mod custom_routing_accelerator {
     }
     #[allow(dead_code)]
     pub struct CustomRoutingAcceleratorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The attributes of the accelerator. Fields documented below.
         pub attributes: pulumi_gestalt_rust::Output<
             Option<
@@ -150,6 +153,7 @@ pub mod custom_routing_accelerator {
         };
         let o = context.register_resource(request);
         CustomRoutingAcceleratorResult {
+            id: o.get_field("id"),
             attributes: o.get_field("attributes"),
             dns_name: o.get_field("dnsName"),
             enabled: o.get_field("enabled"),

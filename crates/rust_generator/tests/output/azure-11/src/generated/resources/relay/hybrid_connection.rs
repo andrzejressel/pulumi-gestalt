@@ -64,6 +64,9 @@ pub mod hybrid_connection {
     }
     #[allow(dead_code)]
     pub struct HybridConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Azure Relay Hybrid Connection. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The name of the Azure Relay in which to create the Azure Relay Hybrid Connection. Changing this forces a new resource to be created.
@@ -122,6 +125,7 @@ pub mod hybrid_connection {
         };
         let o = context.register_resource(request);
         HybridConnectionResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             relay_namespace_name: o.get_field("relayNamespaceName"),
             requires_client_authorization: o.get_field("requiresClientAuthorization"),

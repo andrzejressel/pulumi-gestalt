@@ -126,6 +126,9 @@ pub mod virtual_machine_configuration_assignment {
     }
     #[allow(dead_code)]
     pub struct VirtualMachineConfigurationAssignmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `configuration` block as defined below.
         pub configuration: pulumi_gestalt_rust::Output<
             super::super::types::policy::VirtualMachineConfigurationAssignmentConfiguration,
@@ -178,6 +181,7 @@ pub mod virtual_machine_configuration_assignment {
         };
         let o = context.register_resource(request);
         VirtualMachineConfigurationAssignmentResult {
+            id: o.get_field("id"),
             configuration: o.get_field("configuration"),
             location: o.get_field("location"),
             name: o.get_field("name"),

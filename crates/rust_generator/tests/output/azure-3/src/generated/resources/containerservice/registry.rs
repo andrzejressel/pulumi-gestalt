@@ -207,6 +207,9 @@ pub mod registry {
     }
     #[allow(dead_code)]
     pub struct RegistryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether the admin user is enabled. Defaults to `false`.
         pub admin_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The Password associated with the Container Registry Admin account - if the admin account is enabled.
@@ -401,6 +404,7 @@ pub mod registry {
         };
         let o = context.register_resource(request);
         RegistryResult {
+            id: o.get_field("id"),
             admin_enabled: o.get_field("adminEnabled"),
             admin_password: o.get_field("adminPassword"),
             admin_username: o.get_field("adminUsername"),

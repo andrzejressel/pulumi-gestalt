@@ -126,6 +126,9 @@ pub mod gdc_application_environment {
     }
     #[allow(dead_code)]
     pub struct GdcApplicationEnvironmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The annotations to associate with this application environment. Annotations may be used to store client information, but are not used by the server.
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
@@ -252,6 +255,7 @@ pub mod gdc_application_environment {
         };
         let o = context.register_resource(request);
         GdcApplicationEnvironmentResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             application_environment_id: o.get_field("applicationEnvironmentId"),
             create_time: o.get_field("createTime"),

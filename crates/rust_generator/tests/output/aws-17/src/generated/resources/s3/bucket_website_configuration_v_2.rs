@@ -125,6 +125,9 @@ pub mod bucket_website_configuration_v_2 {
     }
     #[allow(dead_code)]
     pub struct BucketWebsiteConfigurationV2Result {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the bucket.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// Name of the error document for the website. See below.
@@ -215,6 +218,7 @@ pub mod bucket_website_configuration_v_2 {
         };
         let o = context.register_resource(request);
         BucketWebsiteConfigurationV2Result {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             error_document: o.get_field("errorDocument"),
             expected_bucket_owner: o.get_field("expectedBucketOwner"),

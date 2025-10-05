@@ -84,6 +84,9 @@ pub mod deployment {
     }
     #[allow(dead_code)]
     pub struct DeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Cognitive Services Account. Changing this forces a new resource to be created.
         pub cognitive_account_id: pulumi_gestalt_rust::Output<String>,
         /// Whether dynamic throttling is enabled.
@@ -162,6 +165,7 @@ pub mod deployment {
         };
         let o = context.register_resource(request);
         DeploymentResult {
+            id: o.get_field("id"),
             cognitive_account_id: o.get_field("cognitiveAccountId"),
             dynamic_throttling_enabled: o.get_field("dynamicThrottlingEnabled"),
             model: o.get_field("model"),

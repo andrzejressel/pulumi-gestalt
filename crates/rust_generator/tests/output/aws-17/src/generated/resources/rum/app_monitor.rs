@@ -54,6 +54,9 @@ pub mod app_monitor {
     }
     #[allow(dead_code)]
     pub struct AppMonitorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// configuration data for the app monitor. See app_monitor_configuration below.
         pub app_monitor_configuration: pulumi_gestalt_rust::Output<
             super::super::types::rum::AppMonitorAppMonitorConfiguration,
@@ -135,6 +138,7 @@ pub mod app_monitor {
         };
         let o = context.register_resource(request);
         AppMonitorResult {
+            id: o.get_field("id"),
             app_monitor_configuration: o.get_field("appMonitorConfiguration"),
             app_monitor_id: o.get_field("appMonitorId"),
             arn: o.get_field("arn"),

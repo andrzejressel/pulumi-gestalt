@@ -65,6 +65,9 @@ pub mod local_rulestack_prefix_list {
     }
     #[allow(dead_code)]
     pub struct LocalRulestackPrefixListResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The comment for Audit purposes.
         pub audit_comment: pulumi_gestalt_rust::Output<Option<String>>,
         /// The description for the Prefix List.
@@ -122,6 +125,7 @@ pub mod local_rulestack_prefix_list {
         };
         let o = context.register_resource(request);
         LocalRulestackPrefixListResult {
+            id: o.get_field("id"),
             audit_comment: o.get_field("auditComment"),
             description: o.get_field("description"),
             name: o.get_field("name"),

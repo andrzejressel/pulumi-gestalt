@@ -291,6 +291,9 @@ pub mod budget {
     }
     #[allow(dead_code)]
     pub struct BudgetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Defines notifications that are sent on every update to the billing account's spend, regardless of the thresholds defined
         /// using threshold rules.
         pub all_updates_rule: pulumi_gestalt_rust::Output<
@@ -377,6 +380,7 @@ pub mod budget {
         };
         let o = context.register_resource(request);
         BudgetResult {
+            id: o.get_field("id"),
             all_updates_rule: o.get_field("allUpdatesRule"),
             amount: o.get_field("amount"),
             billing_account: o.get_field("billingAccount"),

@@ -272,6 +272,9 @@ pub mod data_transfer_config {
     }
     #[allow(dead_code)]
     pub struct DataTransferConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The number of days to look back to automatically refresh the data.
         /// For example, if dataRefreshWindowDays = 10, then every day BigQuery
         /// reingests data for [today-10, today-1], rather than ingesting data for
@@ -457,6 +460,7 @@ pub mod data_transfer_config {
         };
         let o = context.register_resource(request);
         DataTransferConfigResult {
+            id: o.get_field("id"),
             data_refresh_window_days: o.get_field("dataRefreshWindowDays"),
             data_source_id: o.get_field("dataSourceId"),
             destination_dataset_id: o.get_field("destinationDatasetId"),

@@ -122,6 +122,9 @@ pub mod global_cluster {
     }
     #[allow(dead_code)]
     pub struct GlobalClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Global Cluster Amazon Resource Name (ARN)
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Name for an automatically created database on cluster creation.
@@ -206,6 +209,7 @@ pub mod global_cluster {
         };
         let o = context.register_resource(request);
         GlobalClusterResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             database_name: o.get_field("databaseName"),
             deletion_protection: o.get_field("deletionProtection"),

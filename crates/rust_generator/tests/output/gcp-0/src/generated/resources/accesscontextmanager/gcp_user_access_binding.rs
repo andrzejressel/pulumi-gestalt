@@ -89,6 +89,9 @@ pub mod gcp_user_access_binding {
     }
     #[allow(dead_code)]
     pub struct GcpUserAccessBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Required. Access level that a user must have to be granted access. Only one access level is supported, not multiple. This repeated field must have exactly one element. Example: "accessPolicies/9522/accessLevels/device_trusted"
         pub access_levels: pulumi_gestalt_rust::Output<String>,
         /// Required. Immutable. Google Group id whose members are subject to this binding's restrictions. See "id" in the G Suite Directory API's Groups resource. If a group's email address/alias is changed, this resource will continue to point at the changed group. This field does not accept group email addresses or aliases. Example: "01d520gv4vjcrht"
@@ -137,6 +140,7 @@ pub mod gcp_user_access_binding {
         };
         let o = context.register_resource(request);
         GcpUserAccessBindingResult {
+            id: o.get_field("id"),
             access_levels: o.get_field("accessLevels"),
             group_key: o.get_field("groupKey"),
             name: o.get_field("name"),

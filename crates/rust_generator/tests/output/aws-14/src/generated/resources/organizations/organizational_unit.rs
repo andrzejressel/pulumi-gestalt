@@ -44,6 +44,9 @@ pub mod organizational_unit {
     }
     #[allow(dead_code)]
     pub struct OrganizationalUnitResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of child accounts for this Organizational Unit. Does not return account information for child Organizational Units. All elements have these attributes:
         pub accounts: pulumi_gestalt_rust::Output<
             Vec<super::super::types::organizations::OrganizationalUnitAccount>,
@@ -98,6 +101,7 @@ pub mod organizational_unit {
         };
         let o = context.register_resource(request);
         OrganizationalUnitResult {
+            id: o.get_field("id"),
             accounts: o.get_field("accounts"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),

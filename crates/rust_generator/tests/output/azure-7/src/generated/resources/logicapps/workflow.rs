@@ -97,6 +97,9 @@ pub mod workflow {
     }
     #[allow(dead_code)]
     pub struct WorkflowResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `access_control` block as defined below.
         pub access_control: pulumi_gestalt_rust::Output<
             Option<super::super::types::logicapps::WorkflowAccessControl>,
@@ -239,6 +242,7 @@ pub mod workflow {
         };
         let o = context.register_resource(request);
         WorkflowResult {
+            id: o.get_field("id"),
             access_control: o.get_field("accessControl"),
             access_endpoint: o.get_field("accessEndpoint"),
             connector_endpoint_ip_addresses: o.get_field("connectorEndpointIpAddresses"),

@@ -105,6 +105,9 @@ pub mod certificate_authority_certificate {
     }
     #[allow(dead_code)]
     pub struct CertificateAuthorityCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// PEM-encoded certificate for the Certificate Authority.
         pub certificate: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Certificate Authority.
@@ -150,6 +153,7 @@ pub mod certificate_authority_certificate {
         };
         let o = context.register_resource(request);
         CertificateAuthorityCertificateResult {
+            id: o.get_field("id"),
             certificate: o.get_field("certificate"),
             certificate_authority_arn: o.get_field("certificateAuthorityArn"),
             certificate_chain: o.get_field("certificateChain"),

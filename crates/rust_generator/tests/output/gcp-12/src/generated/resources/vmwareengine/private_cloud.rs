@@ -153,6 +153,9 @@ pub mod private_cloud {
     }
     #[allow(dead_code)]
     pub struct PrivateCloudResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The number of hours to delay this request. You can set this value to an hour between 0 to 8, where setting it to 0
         /// starts the deletion request immediately. If no value is set, a default value is set at the API Level.
         pub deletion_delay_hours: pulumi_gestalt_rust::Output<Option<i32>>,
@@ -267,6 +270,7 @@ pub mod private_cloud {
         };
         let o = context.register_resource(request);
         PrivateCloudResult {
+            id: o.get_field("id"),
             deletion_delay_hours: o.get_field("deletionDelayHours"),
             description: o.get_field("description"),
             hcxes: o.get_field("hcxes"),

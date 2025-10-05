@@ -66,6 +66,9 @@ pub mod target {
     }
     #[allow(dead_code)]
     pub struct TargetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Chaos Studio Target should exist. Changing this forces a new Chaos Studio Target to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Target Resource Id within which this Chaos Studio Target should exist. Changing this forces a new Chaos Studio Target to be created.
@@ -108,6 +111,7 @@ pub mod target {
         };
         let o = context.register_resource(request);
         TargetResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             target_resource_id: o.get_field("targetResourceId"),
             target_type: o.get_field("targetType"),

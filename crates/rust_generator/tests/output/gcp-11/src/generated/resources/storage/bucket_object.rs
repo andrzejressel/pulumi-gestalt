@@ -117,6 +117,9 @@ pub mod bucket_object {
     }
     #[allow(dead_code)]
     pub struct BucketObjectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the containing bucket.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// [Cache-Control](https://tools.ietf.org/html/rfc7234#section-5.2)
@@ -284,6 +287,7 @@ pub mod bucket_object {
         };
         let o = context.register_resource(request);
         BucketObjectResult {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             cache_control: o.get_field("cacheControl"),
             content: o.get_field("content"),

@@ -68,6 +68,9 @@ pub mod snapshot_copy {
     }
     #[allow(dead_code)]
     pub struct SnapshotCopyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the EBS Snapshot.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies a completion duration to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration.  Value must be between 15 and 2880 minutes, in 15 minute increments only.
@@ -181,6 +184,7 @@ pub mod snapshot_copy {
         };
         let o = context.register_resource(request);
         SnapshotCopyResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             completion_duration_minutes: o.get_field("completionDurationMinutes"),
             data_encryption_key_id: o.get_field("dataEncryptionKeyId"),

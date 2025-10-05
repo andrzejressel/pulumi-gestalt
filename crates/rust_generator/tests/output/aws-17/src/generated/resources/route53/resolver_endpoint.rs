@@ -68,6 +68,9 @@ pub mod resolver_endpoint {
     }
     #[allow(dead_code)]
     pub struct ResolverEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Route 53 Resolver endpoint.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Direction of DNS queries to or from the Route 53 Resolver endpoint.
@@ -155,6 +158,7 @@ pub mod resolver_endpoint {
         };
         let o = context.register_resource(request);
         ResolverEndpointResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             direction: o.get_field("direction"),
             host_vpc_id: o.get_field("hostVpcId"),

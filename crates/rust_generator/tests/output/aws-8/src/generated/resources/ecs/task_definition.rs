@@ -289,6 +289,9 @@ pub mod task_definition {
     }
     #[allow(dead_code)]
     pub struct TaskDefinitionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Full ARN of the Task Definition (including both `family` and `revision`).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Task Definition with the trailing `revision` removed. This may be useful for situations where the latest task definition is always desired. If a revision isn't specified, the latest ACTIVE revision is used. See the [AWS documentation](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StartTask.html#ECS-StartTask-request-taskDefinition) for details.
@@ -477,6 +480,7 @@ pub mod task_definition {
         };
         let o = context.register_resource(request);
         TaskDefinitionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             arn_without_revision: o.get_field("arnWithoutRevision"),
             container_definitions: o.get_field("containerDefinitions"),

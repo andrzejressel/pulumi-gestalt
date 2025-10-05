@@ -43,6 +43,9 @@ pub mod invitation_accepter {
     }
     #[allow(dead_code)]
     pub struct InvitationAccepterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the behavior graph that the member account is accepting the invitation for.
         pub graph_arn: pulumi_gestalt_rust::Output<String>,
     }
@@ -71,6 +74,7 @@ pub mod invitation_accepter {
         };
         let o = context.register_resource(request);
         InvitationAccepterResult {
+            id: o.get_field("id"),
             graph_arn: o.get_field("graphArn"),
         }
     }

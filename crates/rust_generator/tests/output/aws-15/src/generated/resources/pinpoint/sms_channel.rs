@@ -43,6 +43,9 @@ pub mod sms_channel {
     }
     #[allow(dead_code)]
     pub struct SmsChannelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the application.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// Whether the channel is enabled or disabled. By default, it is set to `true`.
@@ -96,6 +99,7 @@ pub mod sms_channel {
         };
         let o = context.register_resource(request);
         SmsChannelResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             enabled: o.get_field("enabled"),
             promotional_messages_per_second: o.get_field("promotionalMessagesPerSecond"),

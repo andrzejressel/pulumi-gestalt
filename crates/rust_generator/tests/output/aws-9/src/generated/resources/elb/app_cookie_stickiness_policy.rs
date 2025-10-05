@@ -64,6 +64,9 @@ pub mod app_cookie_stickiness_policy {
     }
     #[allow(dead_code)]
     pub struct AppCookieStickinessPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Application cookie whose lifetime the ELB's cookie should follow.
         pub cookie_name: pulumi_gestalt_rust::Output<String>,
         /// Load balancer port to which the policy
@@ -116,6 +119,7 @@ pub mod app_cookie_stickiness_policy {
         };
         let o = context.register_resource(request);
         AppCookieStickinessPolicyResult {
+            id: o.get_field("id"),
             cookie_name: o.get_field("cookieName"),
             lb_port: o.get_field("lbPort"),
             load_balancer: o.get_field("loadBalancer"),

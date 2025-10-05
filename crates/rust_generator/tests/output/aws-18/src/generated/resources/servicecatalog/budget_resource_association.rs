@@ -43,6 +43,9 @@ pub mod budget_resource_association {
     }
     #[allow(dead_code)]
     pub struct BudgetResourceAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Budget name.
         pub budget_name: pulumi_gestalt_rust::Output<String>,
         /// Resource identifier.
@@ -79,6 +82,7 @@ pub mod budget_resource_association {
         };
         let o = context.register_resource(request);
         BudgetResourceAssociationResult {
+            id: o.get_field("id"),
             budget_name: o.get_field("budgetName"),
             resource_id: o.get_field("resourceId"),
         }

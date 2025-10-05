@@ -71,6 +71,9 @@ pub mod replica_key {
     }
     #[allow(dead_code)]
     pub struct ReplicaKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the replica key. The key ARNs of related multi-Region keys differ only in the Region value.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A flag to indicate whether to bypass the key policy lockout safety check.
@@ -167,6 +170,7 @@ pub mod replica_key {
         };
         let o = context.register_resource(request);
         ReplicaKeyResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             bypass_policy_lockout_safety_check: o
                 .get_field("bypassPolicyLockoutSafetyCheck"),

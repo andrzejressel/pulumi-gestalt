@@ -90,6 +90,9 @@ pub mod stream_input_iot_hub {
     }
     #[allow(dead_code)]
     pub struct StreamInputIotHubResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IoT Hub endpoint to connect to (ie. messages/events, messages/operationsMonitoringEvents, etc.).
         pub endpoint: pulumi_gestalt_rust::Output<String>,
         /// The name of an Event Hub Consumer Group that should be used to read events from the Event Hub. Specifying distinct consumer group names for multiple inputs allows each of those inputs to receive the same events from the Event Hub.
@@ -184,6 +187,7 @@ pub mod stream_input_iot_hub {
         };
         let o = context.register_resource(request);
         StreamInputIotHubResult {
+            id: o.get_field("id"),
             endpoint: o.get_field("endpoint"),
             eventhub_consumer_group_name: o.get_field("eventhubConsumerGroupName"),
             iothub_namespace: o.get_field("iothubNamespace"),

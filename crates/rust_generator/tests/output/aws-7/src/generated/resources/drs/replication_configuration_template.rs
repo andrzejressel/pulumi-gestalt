@@ -81,6 +81,9 @@ pub mod replication_configuration_template {
     }
     #[allow(dead_code)]
     pub struct ReplicationConfigurationTemplateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Replication configuration template ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.
@@ -250,6 +253,7 @@ pub mod replication_configuration_template {
         };
         let o = context.register_resource(request);
         ReplicationConfigurationTemplateResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             associate_default_security_group: o
                 .get_field("associateDefaultSecurityGroup"),

@@ -73,6 +73,9 @@ pub mod traffic_mirror_target {
     }
     #[allow(dead_code)]
     pub struct TrafficMirrorTargetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the traffic mirror target.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A description of the traffic mirror session.
@@ -147,6 +150,7 @@ pub mod traffic_mirror_target {
         };
         let o = context.register_resource(request);
         TrafficMirrorTargetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             gateway_load_balancer_endpoint_id: o

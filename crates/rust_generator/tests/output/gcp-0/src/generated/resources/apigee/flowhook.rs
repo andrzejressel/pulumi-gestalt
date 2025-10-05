@@ -52,6 +52,9 @@ pub mod flowhook {
     }
     #[allow(dead_code)]
     pub struct FlowhookResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Flag that specifies whether execution should continue if the flow hook throws an exception. Set to true to continue execution. Set to false to stop execution if the flow hook throws an exception. Defaults to true.
         pub continue_on_error: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Description of the flow hook.
@@ -115,6 +118,7 @@ pub mod flowhook {
         };
         let o = context.register_resource(request);
         FlowhookResult {
+            id: o.get_field("id"),
             continue_on_error: o.get_field("continueOnError"),
             description: o.get_field("description"),
             environment: o.get_field("environment"),

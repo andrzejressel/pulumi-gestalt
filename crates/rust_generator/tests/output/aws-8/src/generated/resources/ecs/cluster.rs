@@ -177,6 +177,9 @@ pub mod cluster {
     }
     #[allow(dead_code)]
     pub struct ClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN that identifies the cluster.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Execute command configuration for the cluster. See `configuration` Block for details.
@@ -251,6 +254,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             configuration: o.get_field("configuration"),
             name: o.get_field("name"),

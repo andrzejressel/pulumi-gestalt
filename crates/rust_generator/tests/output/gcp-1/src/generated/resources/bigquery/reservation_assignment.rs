@@ -90,6 +90,9 @@ pub mod reservation_assignment {
     }
     #[allow(dead_code)]
     pub struct ReservationAssignmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The resource which will use the reservation. E.g. projects/myproject, folders/123, organizations/456.
         pub assignee: pulumi_gestalt_rust::Output<String>,
         /// Types of job, which could be specified when using the reservation. Possible values: JOB_TYPE_UNSPECIFIED, PIPELINE, QUERY
@@ -155,6 +158,7 @@ pub mod reservation_assignment {
         };
         let o = context.register_resource(request);
         ReservationAssignmentResult {
+            id: o.get_field("id"),
             assignee: o.get_field("assignee"),
             job_type: o.get_field("jobType"),
             location: o.get_field("location"),

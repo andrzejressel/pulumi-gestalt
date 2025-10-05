@@ -67,6 +67,9 @@ pub mod services_communications_gateway_test_line {
     }
     #[allow(dead_code)]
     pub struct ServicesCommunicationsGatewayTestLineResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Azure Region where the Voice Services Communications Gateway Test Line should exist. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name which should be used for this Voice Services Communications Gateway Test Line. Changing this forces a new resource to be created.
@@ -137,6 +140,7 @@ pub mod services_communications_gateway_test_line {
         };
         let o = context.register_resource(request);
         ServicesCommunicationsGatewayTestLineResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             phone_number: o.get_field("phoneNumber"),

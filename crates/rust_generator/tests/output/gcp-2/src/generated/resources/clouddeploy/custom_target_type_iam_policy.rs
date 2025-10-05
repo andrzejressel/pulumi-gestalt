@@ -15,6 +15,9 @@ pub mod custom_target_type_iam_policy {
     }
     #[allow(dead_code)]
     pub struct CustomTargetTypeIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub etag: pulumi_gestalt_rust::Output<String>,
         pub location: pulumi_gestalt_rust::Output<String>,
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -62,6 +65,7 @@ pub mod custom_target_type_iam_policy {
         };
         let o = context.register_resource(request);
         CustomTargetTypeIamPolicyResult {
+            id: o.get_field("id"),
             etag: o.get_field("etag"),
             location: o.get_field("location"),
             name: o.get_field("name"),

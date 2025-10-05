@@ -64,6 +64,9 @@ pub mod managed_scaling_policy {
     }
     #[allow(dead_code)]
     pub struct ManagedScalingPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the EMR cluster
         pub cluster_id: pulumi_gestalt_rust::Output<String>,
         /// Configuration block with compute limit settings. Described below.
@@ -101,6 +104,7 @@ pub mod managed_scaling_policy {
         };
         let o = context.register_resource(request);
         ManagedScalingPolicyResult {
+            id: o.get_field("id"),
             cluster_id: o.get_field("clusterId"),
             compute_limits: o.get_field("computeLimits"),
         }

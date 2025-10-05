@@ -99,6 +99,9 @@ pub mod group {
     }
     #[allow(dead_code)]
     pub struct GroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Optional. The auto-accept setting for this group.
         /// Structure is documented below.
         pub auto_accept: pulumi_gestalt_rust::Output<
@@ -193,6 +196,7 @@ pub mod group {
         };
         let o = context.register_resource(request);
         GroupResult {
+            id: o.get_field("id"),
             auto_accept: o.get_field("autoAccept"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

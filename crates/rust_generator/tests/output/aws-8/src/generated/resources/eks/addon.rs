@@ -210,6 +210,9 @@ pub mod addon {
     }
     #[allow(dead_code)]
     pub struct AddonResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the EKS add-on. The name must match one of
         /// the names returned by [describe-addon-versions](https://docs.aws.amazon.com/cli/latest/reference/eks/describe-addon-versions.html).
         pub addon_name: pulumi_gestalt_rust::Output<String>,
@@ -344,6 +347,7 @@ pub mod addon {
         };
         let o = context.register_resource(request);
         AddonResult {
+            id: o.get_field("id"),
             addon_name: o.get_field("addonName"),
             addon_version: o.get_field("addonVersion"),
             arn: o.get_field("arn"),

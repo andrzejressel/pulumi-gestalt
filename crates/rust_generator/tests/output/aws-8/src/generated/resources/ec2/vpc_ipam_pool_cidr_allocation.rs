@@ -111,6 +111,9 @@ pub mod vpc_ipam_pool_cidr_allocation {
     }
     #[allow(dead_code)]
     pub struct VpcIpamPoolCidrAllocationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The CIDR you want to assign to the pool.
         pub cidr: pulumi_gestalt_rust::Output<String>,
         /// The description for the allocation.
@@ -174,6 +177,7 @@ pub mod vpc_ipam_pool_cidr_allocation {
         };
         let o = context.register_resource(request);
         VpcIpamPoolCidrAllocationResult {
+            id: o.get_field("id"),
             cidr: o.get_field("cidr"),
             description: o.get_field("description"),
             disallowed_cidrs: o.get_field("disallowedCidrs"),

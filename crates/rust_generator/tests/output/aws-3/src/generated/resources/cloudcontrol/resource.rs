@@ -41,6 +41,9 @@ pub mod resource {
     }
     #[allow(dead_code)]
     pub struct ResourceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// JSON string matching the CloudFormation resource type schema with desired configuration.
         pub desired_state: pulumi_gestalt_rust::Output<String>,
         /// JSON string matching the CloudFormation resource type schema with current configuration. Underlying attributes can be referenced via the `jsondecode()` function, for example, `jsondecode(data.aws_cloudcontrolapi_resource.example.properties)["example"]`.
@@ -101,6 +104,7 @@ pub mod resource {
         };
         let o = context.register_resource(request);
         ResourceResult {
+            id: o.get_field("id"),
             desired_state: o.get_field("desiredState"),
             properties: o.get_field("properties"),
             role_arn: o.get_field("roleArn"),

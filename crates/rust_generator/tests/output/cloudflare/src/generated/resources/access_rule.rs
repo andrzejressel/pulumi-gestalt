@@ -98,6 +98,9 @@ pub mod access_rule {
     }
     #[allow(dead_code)]
     pub struct AccessRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. Must provide only one of `account_id`, `zone_id`. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Rule configuration to apply to a matched request. **Modifying this attribute will force creation of a new resource.**
@@ -156,6 +159,7 @@ pub mod access_rule {
         };
         let o = context.register_resource(request);
         AccessRuleResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             configuration: o.get_field("configuration"),
             mode: o.get_field("mode"),

@@ -61,6 +61,9 @@ pub mod resource_guard {
     }
     #[allow(dead_code)]
     pub struct ResourceGuardResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Resource Guard should exist. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The name of the Resource Guard. Changing this forces a new resource to be created.
@@ -123,6 +126,7 @@ pub mod resource_guard {
         };
         let o = context.register_resource(request);
         ResourceGuardResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

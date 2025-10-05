@@ -86,6 +86,9 @@ pub mod secret_ciphertext {
     }
     #[allow(dead_code)]
     pub struct SecretCiphertextResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The additional authenticated data used for integrity checks during encryption and decryption.
         /// **Note**: This property is sensitive and will not be displayed in the plan.
         pub additional_authenticated_data: pulumi_gestalt_rust::Output<Option<String>>,
@@ -138,6 +141,7 @@ pub mod secret_ciphertext {
         };
         let o = context.register_resource(request);
         SecretCiphertextResult {
+            id: o.get_field("id"),
             additional_authenticated_data: o.get_field("additionalAuthenticatedData"),
             ciphertext: o.get_field("ciphertext"),
             crypto_key: o.get_field("cryptoKey"),

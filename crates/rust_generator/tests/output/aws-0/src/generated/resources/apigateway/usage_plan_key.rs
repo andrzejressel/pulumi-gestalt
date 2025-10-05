@@ -63,6 +63,9 @@ pub mod usage_plan_key {
     }
     #[allow(dead_code)]
     pub struct UsagePlanKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the API key resource.
         pub key_id: pulumi_gestalt_rust::Output<String>,
         /// Type of the API key resource. Currently, the valid key type is API_KEY.
@@ -109,6 +112,7 @@ pub mod usage_plan_key {
         };
         let o = context.register_resource(request);
         UsagePlanKeyResult {
+            id: o.get_field("id"),
             key_id: o.get_field("keyId"),
             key_type: o.get_field("keyType"),
             name: o.get_field("name"),

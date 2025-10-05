@@ -60,6 +60,9 @@ pub mod role_association {
     }
     #[allow(dead_code)]
     pub struct RoleAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AWS SSO group ids to be assigned the role given in `role`.
         pub group_ids: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The grafana role. Valid values can be found [here](https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateInstruction.html#ManagedGrafana-Type-UpdateInstruction-role).
@@ -111,6 +114,7 @@ pub mod role_association {
         };
         let o = context.register_resource(request);
         RoleAssociationResult {
+            id: o.get_field("id"),
             group_ids: o.get_field("groupIds"),
             role: o.get_field("role"),
             user_ids: o.get_field("userIds"),

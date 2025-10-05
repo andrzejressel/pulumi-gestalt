@@ -49,6 +49,9 @@ pub mod route_calculation {
     }
     #[allow(dead_code)]
     pub struct RouteCalculationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.
         pub calculator_arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the route calculator resource.
@@ -112,6 +115,7 @@ pub mod route_calculation {
         };
         let o = context.register_resource(request);
         RouteCalculationResult {
+            id: o.get_field("id"),
             calculator_arn: o.get_field("calculatorArn"),
             calculator_name: o.get_field("calculatorName"),
             create_time: o.get_field("createTime"),

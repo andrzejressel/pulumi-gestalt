@@ -42,6 +42,9 @@ pub mod subscription {
     }
     #[allow(dead_code)]
     pub struct SubscriptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Toggle for automated renewal of the subscription. Valid values are `ENABLED` or `DISABLED`. Default is `ENABLED`.
         pub auto_renew: pulumi_gestalt_rust::Output<String>,
         /// Skip attempting to disable automated renewal upon destruction. If set to `true`, the `auto_renew` value will be left as-is and the resource will simply be removed from state.
@@ -77,6 +80,7 @@ pub mod subscription {
         };
         let o = context.register_resource(request);
         SubscriptionResult {
+            id: o.get_field("id"),
             auto_renew: o.get_field("autoRenew"),
             skip_destroy: o.get_field("skipDestroy"),
         }

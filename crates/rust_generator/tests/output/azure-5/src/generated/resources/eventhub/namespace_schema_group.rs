@@ -62,6 +62,9 @@ pub mod namespace_schema_group {
     }
     #[allow(dead_code)]
     pub struct NamespaceSchemaGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of this schema group. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the EventHub Namespace. Changing this forces a new resource to be created.
@@ -111,6 +114,7 @@ pub mod namespace_schema_group {
         };
         let o = context.register_resource(request);
         NamespaceSchemaGroupResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             namespace_id: o.get_field("namespaceId"),
             schema_compatibility: o.get_field("schemaCompatibility"),

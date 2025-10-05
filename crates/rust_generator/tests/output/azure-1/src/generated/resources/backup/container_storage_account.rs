@@ -74,6 +74,9 @@ pub mod container_storage_account {
     }
     #[allow(dead_code)]
     pub struct ContainerStorageAccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the vault where the storage account will be registered. Changing this forces a new resource to be created.
         pub recovery_vault_name: pulumi_gestalt_rust::Output<String>,
         /// Name of the resource group where the vault is located. Changing this forces a new resource to be created.
@@ -118,6 +121,7 @@ pub mod container_storage_account {
         };
         let o = context.register_resource(request);
         ContainerStorageAccountResult {
+            id: o.get_field("id"),
             recovery_vault_name: o.get_field("recoveryVaultName"),
             resource_group_name: o.get_field("resourceGroupName"),
             storage_account_id: o.get_field("storageAccountId"),

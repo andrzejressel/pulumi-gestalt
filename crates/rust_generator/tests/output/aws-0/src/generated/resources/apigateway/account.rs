@@ -78,6 +78,9 @@ pub mod account {
     }
     #[allow(dead_code)]
     pub struct AccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The version of the API keys used for the account.
         pub api_key_version: pulumi_gestalt_rust::Output<String>,
         /// ARN of an IAM role for CloudWatch (to allow logging & monitoring). See more [in AWS Docs](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-stage-settings.html#how-to-stage-settings-console). Logging & monitoring can be enabled/disabled and otherwise tuned on the API Gateway Stage level.
@@ -123,6 +126,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
+            id: o.get_field("id"),
             api_key_version: o.get_field("apiKeyVersion"),
             cloudwatch_role_arn: o.get_field("cloudwatchRoleArn"),
             features: o.get_field("features"),

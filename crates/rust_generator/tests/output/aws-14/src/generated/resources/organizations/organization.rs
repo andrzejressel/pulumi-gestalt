@@ -52,6 +52,9 @@ pub mod organization {
     }
     #[allow(dead_code)]
     pub struct OrganizationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of organization accounts including the master account. For a list excluding the master account, see the `non_master_accounts` attribute. All elements have these attributes:
         pub accounts: pulumi_gestalt_rust::Output<
             Vec<super::super::types::organizations::OrganizationAccount>,
@@ -120,6 +123,7 @@ pub mod organization {
         };
         let o = context.register_resource(request);
         OrganizationResult {
+            id: o.get_field("id"),
             accounts: o.get_field("accounts"),
             arn: o.get_field("arn"),
             aws_service_access_principals: o.get_field("awsServiceAccessPrincipals"),

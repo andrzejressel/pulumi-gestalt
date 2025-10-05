@@ -129,6 +129,9 @@ pub mod prefix {
     }
     #[allow(dead_code)]
     pub struct PrefixResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The `cidr` of the Custom IP Prefix, either IPv4 or IPv6. Changing this forces a new resource to be created.
         pub cidr: pulumi_gestalt_rust::Output<String>,
         /// Specifies that the custom IP prefix should be commissioned after provisioning in Azure. Defaults to `false`.
@@ -245,6 +248,7 @@ pub mod prefix {
         };
         let o = context.register_resource(request);
         PrefixResult {
+            id: o.get_field("id"),
             cidr: o.get_field("cidr"),
             commissioning_enabled: o.get_field("commissioningEnabled"),
             internet_advertising_disabled: o.get_field("internetAdvertisingDisabled"),

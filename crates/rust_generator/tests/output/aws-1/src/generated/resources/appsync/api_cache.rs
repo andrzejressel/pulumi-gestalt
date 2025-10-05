@@ -60,6 +60,9 @@ pub mod api_cache {
     }
     #[allow(dead_code)]
     pub struct ApiCacheResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Caching behavior. Valid values are `FULL_REQUEST_CACHING` and `PER_RESOLVER_CACHING`.
         pub api_caching_behavior: pulumi_gestalt_rust::Output<String>,
         /// GraphQL API ID.
@@ -127,6 +130,7 @@ pub mod api_cache {
         };
         let o = context.register_resource(request);
         ApiCacheResult {
+            id: o.get_field("id"),
             api_caching_behavior: o.get_field("apiCachingBehavior"),
             api_id: o.get_field("apiId"),
             at_rest_encryption_enabled: o.get_field("atRestEncryptionEnabled"),

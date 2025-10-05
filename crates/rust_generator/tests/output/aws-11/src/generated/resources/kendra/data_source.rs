@@ -487,6 +487,9 @@ pub mod data_source {
     }
     #[allow(dead_code)]
     pub struct DataSourceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Data Source.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A block with the configuration information to connect to your Data Source repository. You can't specify the `configuration` block when the `type` parameter is set to `CUSTOM`. Detailed below.
@@ -606,6 +609,7 @@ pub mod data_source {
         };
         let o = context.register_resource(request);
         DataSourceResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             configuration: o.get_field("configuration"),
             created_at: o.get_field("createdAt"),

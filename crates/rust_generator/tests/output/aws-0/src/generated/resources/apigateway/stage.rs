@@ -88,6 +88,9 @@ pub mod stage {
     }
     #[allow(dead_code)]
     pub struct StageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Enables access logs for the API stage. See Access Log Settings below.
         pub access_log_settings: pulumi_gestalt_rust::Output<
             Option<super::super::types::apigateway::StageAccessLogSettings>,
@@ -229,6 +232,7 @@ pub mod stage {
         };
         let o = context.register_resource(request);
         StageResult {
+            id: o.get_field("id"),
             access_log_settings: o.get_field("accessLogSettings"),
             arn: o.get_field("arn"),
             cache_cluster_enabled: o.get_field("cacheClusterEnabled"),

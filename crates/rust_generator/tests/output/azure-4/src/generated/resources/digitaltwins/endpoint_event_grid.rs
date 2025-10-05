@@ -84,6 +84,9 @@ pub mod endpoint_event_grid {
     }
     #[allow(dead_code)]
     pub struct EndpointEventGridResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The storage secret of the dead-lettering, whose format is `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>`. When an endpoint can't deliver an event within a certain time period or after trying to deliver the event a certain number of times, it can send the undelivered event to a storage account.
         pub dead_letter_storage_secret: pulumi_gestalt_rust::Output<Option<String>>,
         /// The resource ID of the Digital Twins Instance. Changing this forces a new Digital Twins Eventgrid Endpoint to be created.
@@ -155,6 +158,7 @@ pub mod endpoint_event_grid {
         };
         let o = context.register_resource(request);
         EndpointEventGridResult {
+            id: o.get_field("id"),
             dead_letter_storage_secret: o.get_field("deadLetterStorageSecret"),
             digital_twins_id: o.get_field("digitalTwinsId"),
             eventgrid_topic_endpoint: o.get_field("eventgridTopicEndpoint"),

@@ -54,6 +54,9 @@ pub mod video_stream {
     }
     #[allow(dead_code)]
     pub struct VideoStreamResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) specifying the Stream (same as `id`)
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A time stamp that indicates when the stream was created.
@@ -132,6 +135,7 @@ pub mod video_stream {
         };
         let o = context.register_resource(request);
         VideoStreamResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             creation_time: o.get_field("creationTime"),
             data_retention_in_hours: o.get_field("dataRetentionInHours"),

@@ -44,6 +44,9 @@ pub mod endpoint_private_dns {
     }
     #[allow(dead_code)]
     pub struct EndpointPrivateDnsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether a private hosted zone is associated with the VPC. Only applicable for `Interface` endpoints.
         pub private_dns_enabled: pulumi_gestalt_rust::Output<bool>,
         /// VPC endpoint identifier.
@@ -79,6 +82,7 @@ pub mod endpoint_private_dns {
         };
         let o = context.register_resource(request);
         EndpointPrivateDnsResult {
+            id: o.get_field("id"),
             private_dns_enabled: o.get_field("privateDnsEnabled"),
             vpc_endpoint_id: o.get_field("vpcEndpointId"),
         }

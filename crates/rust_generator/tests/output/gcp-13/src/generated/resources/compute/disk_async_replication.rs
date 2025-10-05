@@ -48,6 +48,9 @@ pub mod disk_async_replication {
     }
     #[allow(dead_code)]
     pub struct DiskAsyncReplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The primary disk (source of replication).
         pub primary_disk: pulumi_gestalt_rust::Output<String>,
         /// The secondary disk (target of replication). You can specify only one value. Structure is documented below.
@@ -87,6 +90,7 @@ pub mod disk_async_replication {
         };
         let o = context.register_resource(request);
         DiskAsyncReplicationResult {
+            id: o.get_field("id"),
             primary_disk: o.get_field("primaryDisk"),
             secondary_disk: o.get_field("secondaryDisk"),
         }

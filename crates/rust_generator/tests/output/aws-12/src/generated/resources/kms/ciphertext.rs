@@ -45,6 +45,9 @@ pub mod ciphertext {
     }
     #[allow(dead_code)]
     pub struct CiphertextResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Base64 encoded ciphertext
         pub ciphertext_blob: pulumi_gestalt_rust::Output<String>,
         /// An optional mapping that makes up the encryption context.
@@ -91,6 +94,7 @@ pub mod ciphertext {
         };
         let o = context.register_resource(request);
         CiphertextResult {
+            id: o.get_field("id"),
             ciphertext_blob: o.get_field("ciphertextBlob"),
             context: o.get_field("context"),
             key_id: o.get_field("keyId"),

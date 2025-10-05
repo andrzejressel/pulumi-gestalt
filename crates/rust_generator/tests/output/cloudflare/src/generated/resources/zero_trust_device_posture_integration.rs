@@ -63,6 +63,9 @@ pub mod zero_trust_device_posture_integration {
     }
     #[allow(dead_code)]
     pub struct ZeroTrustDevicePostureIntegrationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The device posture integration's connection authorization parameters.
@@ -128,6 +131,7 @@ pub mod zero_trust_device_posture_integration {
         };
         let o = context.register_resource(request);
         ZeroTrustDevicePostureIntegrationResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             configs: o.get_field("configs"),
             identifier: o.get_field("identifier"),

@@ -106,6 +106,9 @@ pub mod dlp_profile {
     }
     #[allow(dead_code)]
     pub struct DlpProfileResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Related DLP policies will trigger when the match count exceeds the number set.
@@ -185,6 +188,7 @@ pub mod dlp_profile {
         };
         let o = context.register_resource(request);
         DlpProfileResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             allowed_match_count: o.get_field("allowedMatchCount"),
             context_awareness: o.get_field("contextAwareness"),

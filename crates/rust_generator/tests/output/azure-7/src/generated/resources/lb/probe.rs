@@ -92,6 +92,9 @@ pub mod probe {
     }
     #[allow(dead_code)]
     pub struct ProbeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The interval, in seconds between probes to the backend endpoint for health status. The default value is 15, the minimum value is 5.
         pub interval_in_seconds: pulumi_gestalt_rust::Output<Option<i32>>,
         pub load_balancer_rules: pulumi_gestalt_rust::Output<Vec<String>>,
@@ -170,6 +173,7 @@ pub mod probe {
         };
         let o = context.register_resource(request);
         ProbeResult {
+            id: o.get_field("id"),
             interval_in_seconds: o.get_field("intervalInSeconds"),
             load_balancer_rules: o.get_field("loadBalancerRules"),
             loadbalancer_id: o.get_field("loadbalancerId"),

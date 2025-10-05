@@ -44,6 +44,9 @@ pub mod usage_plan {
     }
     #[allow(dead_code)]
     pub struct UsagePlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Associated API stages of the usage plan.
         pub api_stages: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::apigateway::UsagePlanApiStage>>,
@@ -127,6 +130,7 @@ pub mod usage_plan {
         };
         let o = context.register_resource(request);
         UsagePlanResult {
+            id: o.get_field("id"),
             api_stages: o.get_field("apiStages"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),

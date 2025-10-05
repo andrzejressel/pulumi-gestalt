@@ -301,6 +301,9 @@ pub mod datascan {
     }
     #[allow(dead_code)]
     pub struct DatascanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time when the scan was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// The data source for DataScan.
@@ -431,6 +434,7 @@ pub mod datascan {
         };
         let o = context.register_resource(request);
         DatascanResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             data: o.get_field("data"),
             data_profile_spec: o.get_field("dataProfileSpec"),

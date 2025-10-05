@@ -91,6 +91,9 @@ pub mod s_quota_preference {
     }
     #[allow(dead_code)]
     pub struct SQuotaPreferenceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An email address that can be used for quota related communication between the Google Cloud and the user in case the
         /// Google Cloud needs further information to make a decision on whether the user preferred quota can be granted. The Google
         /// account for the email address must have quota update permission for the project, folder or organization this quota
@@ -200,6 +203,7 @@ pub mod s_quota_preference {
         };
         let o = context.register_resource(request);
         SQuotaPreferenceResult {
+            id: o.get_field("id"),
             contact_email: o.get_field("contactEmail"),
             create_time: o.get_field("createTime"),
             dimensions: o.get_field("dimensions"),

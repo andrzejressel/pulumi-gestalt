@@ -64,6 +64,9 @@ pub mod channel_alexa {
     }
     #[allow(dead_code)]
     pub struct ChannelAlexaResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
         pub bot_name: pulumi_gestalt_rust::Output<String>,
         /// The supported Azure location where the resource exists. Changing this forces a new resource to be created.
@@ -113,6 +116,7 @@ pub mod channel_alexa {
         };
         let o = context.register_resource(request);
         ChannelAlexaResult {
+            id: o.get_field("id"),
             bot_name: o.get_field("botName"),
             location: o.get_field("location"),
             resource_group_name: o.get_field("resourceGroupName"),

@@ -87,6 +87,9 @@ pub mod email_channel {
     }
     #[allow(dead_code)]
     pub struct EmailChannelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The application ID.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Amazon SES configuration set that you want to apply to messages that you send through the channel.
@@ -152,6 +155,7 @@ pub mod email_channel {
         };
         let o = context.register_resource(request);
         EmailChannelResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             configuration_set: o.get_field("configurationSet"),
             enabled: o.get_field("enabled"),

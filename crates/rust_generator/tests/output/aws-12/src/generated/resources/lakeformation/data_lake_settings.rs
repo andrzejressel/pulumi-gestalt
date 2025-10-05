@@ -164,6 +164,9 @@ pub mod data_lake_settings {
     }
     #[allow(dead_code)]
     pub struct DataLakeSettingsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Set of ARNs of AWS Lake Formation principals (IAM users or roles).
         pub admins: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Whether to allow Amazon EMR clusters to access data managed by Lake Formation.
@@ -292,6 +295,7 @@ pub mod data_lake_settings {
         };
         let o = context.register_resource(request);
         DataLakeSettingsResult {
+            id: o.get_field("id"),
             admins: o.get_field("admins"),
             allow_external_data_filtering: o.get_field("allowExternalDataFiltering"),
             allow_full_table_external_data_access: o

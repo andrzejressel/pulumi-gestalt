@@ -104,6 +104,9 @@ pub mod deployment {
     }
     #[allow(dead_code)]
     pub struct DeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Set the policy to use for creating new resources. Only used on create and update. Valid values are 'CREATE_OR_ACQUIRE'
         /// (default) or 'ACQUIRE'. If set to 'ACQUIRE' and resources do not already exist, the deployment will fail. Note that
         /// updating this field does not actually affect the deployment, just how it is updated. Default value: "CREATE_OR_ACQUIRE"
@@ -198,6 +201,7 @@ pub mod deployment {
         };
         let o = context.register_resource(request);
         DeploymentResult {
+            id: o.get_field("id"),
             create_policy: o.get_field("createPolicy"),
             delete_policy: o.get_field("deletePolicy"),
             deployment_id: o.get_field("deploymentId"),

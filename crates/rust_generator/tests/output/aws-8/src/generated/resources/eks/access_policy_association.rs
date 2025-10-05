@@ -46,6 +46,9 @@ pub mod access_policy_association {
     }
     #[allow(dead_code)]
     pub struct AccessPolicyAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The configuration block to determine the scope of the access. See `access_scope` Block below.
         pub access_scope: pulumi_gestalt_rust::Output<
             super::super::types::eks::AccessPolicyAssociationAccessScope,
@@ -101,6 +104,7 @@ pub mod access_policy_association {
         };
         let o = context.register_resource(request);
         AccessPolicyAssociationResult {
+            id: o.get_field("id"),
             access_scope: o.get_field("accessScope"),
             associated_at: o.get_field("associatedAt"),
             cluster_name: o.get_field("clusterName"),

@@ -127,6 +127,9 @@ pub mod point_to_point_vpn_gateway {
     }
     #[allow(dead_code)]
     pub struct PointToPointVpnGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `connection_configuration` block as defined below.
         pub connection_configurations: pulumi_gestalt_rust::Output<
             Vec<
@@ -232,6 +235,7 @@ pub mod point_to_point_vpn_gateway {
         };
         let o = context.register_resource(request);
         PointToPointVpnGatewayResult {
+            id: o.get_field("id"),
             connection_configurations: o.get_field("connectionConfigurations"),
             dns_servers: o.get_field("dnsServers"),
             location: o.get_field("location"),

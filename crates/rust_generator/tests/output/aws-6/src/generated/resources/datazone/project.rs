@@ -69,6 +69,9 @@ pub mod project {
     }
     #[allow(dead_code)]
     pub struct ProjectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Timestamp of when the project was made.
         pub created_at: pulumi_gestalt_rust::Output<String>,
         /// Creator of the project.
@@ -147,6 +150,7 @@ pub mod project {
         };
         let o = context.register_resource(request);
         ProjectResult {
+            id: o.get_field("id"),
             created_at: o.get_field("createdAt"),
             created_by: o.get_field("createdBy"),
             description: o.get_field("description"),

@@ -78,6 +78,9 @@ pub mod threat_intel_set {
     }
     #[allow(dead_code)]
     pub struct ThreatIntelSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether GuardDuty is to start using the uploaded ThreatIntelSet.
         pub activate: pulumi_gestalt_rust::Output<bool>,
         /// Amazon Resource Name (ARN) of the GuardDuty ThreatIntelSet.
@@ -149,6 +152,7 @@ pub mod threat_intel_set {
         };
         let o = context.register_resource(request);
         ThreatIntelSetResult {
+            id: o.get_field("id"),
             activate: o.get_field("activate"),
             arn: o.get_field("arn"),
             detector_id: o.get_field("detectorId"),

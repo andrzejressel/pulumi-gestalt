@@ -78,6 +78,9 @@ pub mod product_subscription {
     }
     #[allow(dead_code)]
     pub struct ProductSubscriptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of a resource that represents your subscription to the product that generates the findings that you want to import into Security Hub.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the product that generates findings that you want to import into Security Hub - see below.
@@ -146,6 +149,7 @@ pub mod product_subscription {
         };
         let o = context.register_resource(request);
         ProductSubscriptionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             product_arn: o.get_field("productArn"),
         }

@@ -109,6 +109,9 @@ pub mod app_check_device_check_config {
     }
     #[allow(dead_code)]
     pub struct AppCheckDeviceCheckConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of an
         /// [Apple App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.iosApps#IosApp.FIELDS.app_id).
         ///
@@ -179,6 +182,7 @@ pub mod app_check_device_check_config {
         };
         let o = context.register_resource(request);
         AppCheckDeviceCheckConfigResult {
+            id: o.get_field("id"),
             app_id: o.get_field("appId"),
             key_id: o.get_field("keyId"),
             name: o.get_field("name"),

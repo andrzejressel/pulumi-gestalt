@@ -50,6 +50,9 @@ pub mod tape_pool {
     }
     #[allow(dead_code)]
     pub struct TapePoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Volume Amazon Resource Name (ARN), e.g., `aws_storagegateway_tape_pool.example arn:aws:storagegateway:us-east-1:123456789012:tapepool/pool-12345678`.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the new custom tape pool.
@@ -116,6 +119,7 @@ pub mod tape_pool {
         };
         let o = context.register_resource(request);
         TapePoolResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             pool_name: o.get_field("poolName"),
             retention_lock_time_in_days: o.get_field("retentionLockTimeInDays"),

@@ -44,6 +44,9 @@ pub mod security_group_association {
     }
     #[allow(dead_code)]
     pub struct SecurityGroupAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether this association should replace the association with the VPC's default security group that is created when no security groups are specified during VPC endpoint creation. At most 1 association per-VPC endpoint should be configured with `replace_default_association = true`.
         pub replace_default_association: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The ID of the security group to be associated with the VPC endpoint.
@@ -88,6 +91,7 @@ pub mod security_group_association {
         };
         let o = context.register_resource(request);
         SecurityGroupAssociationResult {
+            id: o.get_field("id"),
             replace_default_association: o.get_field("replaceDefaultAssociation"),
             security_group_id: o.get_field("securityGroupId"),
             vpc_endpoint_id: o.get_field("vpcEndpointId"),

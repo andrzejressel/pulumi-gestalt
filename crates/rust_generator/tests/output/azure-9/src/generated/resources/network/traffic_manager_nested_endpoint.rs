@@ -131,6 +131,9 @@ pub mod traffic_manager_nested_endpoint {
     }
     #[allow(dead_code)]
     pub struct TrafficManagerNestedEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `custom_header` blocks as defined below.
         pub custom_headers: pulumi_gestalt_rust::Output<
             Option<
@@ -264,6 +267,7 @@ pub mod traffic_manager_nested_endpoint {
         };
         let o = context.register_resource(request);
         TrafficManagerNestedEndpointResult {
+            id: o.get_field("id"),
             custom_headers: o.get_field("customHeaders"),
             enabled: o.get_field("enabled"),
             endpoint_location: o.get_field("endpointLocation"),

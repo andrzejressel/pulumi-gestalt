@@ -124,6 +124,9 @@ pub mod vpn_gateway_connection {
     }
     #[allow(dead_code)]
     pub struct VpnGatewayConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether Internet Security is enabled for this VPN Connection. Defaults to `false`.
         pub internet_security_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The name which should be used for this VPN Gateway Connection. Changing this forces a new VPN Gateway Connection to be created.
@@ -208,6 +211,7 @@ pub mod vpn_gateway_connection {
         };
         let o = context.register_resource(request);
         VpnGatewayConnectionResult {
+            id: o.get_field("id"),
             internet_security_enabled: o.get_field("internetSecurityEnabled"),
             name: o.get_field("name"),
             remote_vpn_site_id: o.get_field("remoteVpnSiteId"),

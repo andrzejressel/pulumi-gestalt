@@ -81,6 +81,9 @@ pub mod user_pool_domain {
     }
     #[allow(dead_code)]
     pub struct UserPoolDomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AWS account ID for the user pool owner.
         pub aws_account_id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of an ISSUED ACM certificate in us-east-1 for a custom domain.
@@ -135,6 +138,7 @@ pub mod user_pool_domain {
         };
         let o = context.register_resource(request);
         UserPoolDomainResult {
+            id: o.get_field("id"),
             aws_account_id: o.get_field("awsAccountId"),
             certificate_arn: o.get_field("certificateArn"),
             cloudfront_distribution: o.get_field("cloudfrontDistribution"),

@@ -239,6 +239,9 @@ pub mod firewall {
     }
     #[allow(dead_code)]
     pub struct FirewallResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The list of ALLOW rules specified by this firewall. Each rule
         /// specifies a protocol and port-range tuple that describes a permitted
         /// connection.
@@ -461,6 +464,7 @@ pub mod firewall {
         };
         let o = context.register_resource(request);
         FirewallResult {
+            id: o.get_field("id"),
             allows: o.get_field("allows"),
             creation_timestamp: o.get_field("creationTimestamp"),
             denies: o.get_field("denies"),

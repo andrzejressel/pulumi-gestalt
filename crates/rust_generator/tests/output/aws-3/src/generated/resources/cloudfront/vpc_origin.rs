@@ -76,6 +76,9 @@ pub mod vpc_origin {
     }
     #[allow(dead_code)]
     pub struct VpcOriginResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The VPC origin ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The current version of the origin.
@@ -131,6 +134,7 @@ pub mod vpc_origin {
         };
         let o = context.register_resource(request);
         VpcOriginResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             etag: o.get_field("etag"),
             tags: o.get_field("tags"),

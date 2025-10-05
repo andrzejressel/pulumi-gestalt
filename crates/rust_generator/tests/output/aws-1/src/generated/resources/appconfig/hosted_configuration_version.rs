@@ -93,6 +93,9 @@ pub mod hosted_configuration_version {
     }
     #[allow(dead_code)]
     pub struct HostedConfigurationVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Application ID.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the AppConfig  hosted configuration version.
@@ -156,6 +159,7 @@ pub mod hosted_configuration_version {
         };
         let o = context.register_resource(request);
         HostedConfigurationVersionResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             arn: o.get_field("arn"),
             configuration_profile_id: o.get_field("configurationProfileId"),

@@ -39,6 +39,9 @@ pub mod pages_domain {
     }
     #[allow(dead_code)]
     pub struct PagesDomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Custom domain. **Modifying this attribute will force creation of a new resource.**
@@ -83,6 +86,7 @@ pub mod pages_domain {
         };
         let o = context.register_resource(request);
         PagesDomainResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             domain: o.get_field("domain"),
             project_name: o.get_field("projectName"),

@@ -43,6 +43,9 @@ pub mod revision {
     }
     #[allow(dead_code)]
     pub struct RevisionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name of this data set.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// An optional comment about the revision.
@@ -95,6 +98,7 @@ pub mod revision {
         };
         let o = context.register_resource(request);
         RevisionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             comment: o.get_field("comment"),
             data_set_id: o.get_field("dataSetId"),

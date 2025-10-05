@@ -38,6 +38,9 @@ pub mod app_bundle {
     }
     #[allow(dead_code)]
     pub struct AppBundleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the AppBundle.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) key to use to encrypt the application data. If this is not specified, an AWS owned key is used for encryption.
@@ -83,6 +86,7 @@ pub mod app_bundle {
         };
         let o = context.register_resource(request);
         AppBundleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             customer_managed_key_arn: o.get_field("customerManagedKeyArn"),
             tags: o.get_field("tags"),

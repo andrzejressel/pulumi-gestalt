@@ -114,6 +114,9 @@ pub mod replicated_vm {
     }
     #[allow(dead_code)]
     pub struct ReplicatedVMResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `managed_disk` block as defined below. Changing this forces a new resource to be created.
         pub managed_disks: pulumi_gestalt_rust::Output<
             Vec<super::super::types::siterecovery::ReplicatedVmManagedDisk>,
@@ -343,6 +346,7 @@ pub mod replicated_vm {
         };
         let o = context.register_resource(request);
         ReplicatedVMResult {
+            id: o.get_field("id"),
             managed_disks: o.get_field("managedDisks"),
             multi_vm_group_name: o.get_field("multiVmGroupName"),
             name: o.get_field("name"),

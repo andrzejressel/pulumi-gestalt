@@ -309,6 +309,9 @@ pub mod disk {
     }
     #[allow(dead_code)]
     pub struct DiskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The accessMode of the disk.
         /// For example:
         /// * READ_WRITE_SINGLE
@@ -657,6 +660,7 @@ pub mod disk {
         };
         let o = context.register_resource(request);
         DiskResult {
+            id: o.get_field("id"),
             access_mode: o.get_field("accessMode"),
             async_primary_disk: o.get_field("asyncPrimaryDisk"),
             creation_timestamp: o.get_field("creationTimestamp"),

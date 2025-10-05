@@ -79,6 +79,9 @@ pub mod application_version {
     }
     #[allow(dead_code)]
     pub struct ApplicationVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the Beanstalk Application the version is associated with.
         pub application: pulumi_gestalt_rust::Output<String>,
         /// ARN assigned by AWS for this Elastic Beanstalk Application.
@@ -166,6 +169,7 @@ pub mod application_version {
         };
         let o = context.register_resource(request);
         ApplicationVersionResult {
+            id: o.get_field("id"),
             application: o.get_field("application"),
             arn: o.get_field("arn"),
             bucket: o.get_field("bucket"),

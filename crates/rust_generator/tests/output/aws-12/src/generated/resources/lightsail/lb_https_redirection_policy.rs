@@ -55,6 +55,9 @@ pub mod lb_https_redirection_policy {
     }
     #[allow(dead_code)]
     pub struct LbHttpsRedirectionPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Https Redirection state of the load balancer. `true` to activate http to https redirection or `false` to deactivate http to https redirection.
         pub enabled: pulumi_gestalt_rust::Output<bool>,
         /// The name of the load balancer to which you want to enable http to https redirection.
@@ -91,6 +94,7 @@ pub mod lb_https_redirection_policy {
         };
         let o = context.register_resource(request);
         LbHttpsRedirectionPolicyResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
             lb_name: o.get_field("lbName"),
         }

@@ -297,6 +297,9 @@ pub mod hosting_version {
     }
     #[allow(dead_code)]
     pub struct HostingVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The configuration for the behavior of the site. This configuration exists in the `firebase.json` file.
         /// Structure is documented below.
         pub config: pulumi_gestalt_rust::Output<
@@ -343,6 +346,7 @@ pub mod hosting_version {
         };
         let o = context.register_resource(request);
         HostingVersionResult {
+            id: o.get_field("id"),
             config: o.get_field("config"),
             name: o.get_field("name"),
             site_id: o.get_field("siteId"),

@@ -69,6 +69,9 @@ pub mod resource_provider_registration {
     }
     #[allow(dead_code)]
     pub struct ResourceProviderRegistrationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub features: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::core::ResourceProviderRegistrationFeature>>,
         >,
@@ -106,6 +109,7 @@ pub mod resource_provider_registration {
         };
         let o = context.register_resource(request);
         ResourceProviderRegistrationResult {
+            id: o.get_field("id"),
             features: o.get_field("features"),
             name: o.get_field("name"),
         }

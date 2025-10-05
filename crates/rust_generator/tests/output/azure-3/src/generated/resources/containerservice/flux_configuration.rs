@@ -102,6 +102,9 @@ pub mod flux_configuration {
     }
     #[allow(dead_code)]
     pub struct FluxConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `blob_storage` block as defined below.
         pub blob_storage: pulumi_gestalt_rust::Output<
             Option<super::super::types::containerservice::FluxConfigurationBlobStorage>,
@@ -196,6 +199,7 @@ pub mod flux_configuration {
         };
         let o = context.register_resource(request);
         FluxConfigurationResult {
+            id: o.get_field("id"),
             blob_storage: o.get_field("blobStorage"),
             bucket: o.get_field("bucket"),
             cluster_id: o.get_field("clusterId"),

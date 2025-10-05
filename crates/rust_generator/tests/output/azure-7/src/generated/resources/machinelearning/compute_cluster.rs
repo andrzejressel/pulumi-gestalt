@@ -158,6 +158,9 @@ pub mod compute_cluster {
     }
     #[allow(dead_code)]
     pub struct ComputeClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The description of the Machine Learning compute. Changing this forces a new Machine Learning Compute Cluster to be created.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// An `identity` block as defined below.
@@ -291,6 +294,7 @@ pub mod compute_cluster {
         };
         let o = context.register_resource(request);
         ComputeClusterResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             identity: o.get_field("identity"),
             local_auth_enabled: o.get_field("localAuthEnabled"),

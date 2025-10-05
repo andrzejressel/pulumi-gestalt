@@ -25,9 +25,11 @@ pub struct {{resource.struct_name}}Args {
 }
 {{/if}}
 
-{{#if resource.output_properties}}
 #[allow(dead_code)]
 pub struct {{resource.struct_name}}Result {
+    /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+    /// It is set during deployments and may be missing (unknown) during planning phases.
+    pub id: pulumi_gestalt_rust::Output<String>,
 {{#each resource.output_properties}}
     {{#each description_lines}}
         /// {{&this}}
@@ -35,7 +37,6 @@ pub struct {{resource.struct_name}}Result {
     pub {{arg_name}}: pulumi_gestalt_rust::Output<{{&type_}}>,
 {{/each}}
 }
-{{/if}}
 
 ///
 /// Registers a new resource with the given unique name and arguments
@@ -47,7 +48,7 @@ pub fn create(
 {{#if resource.input_properties}}
     args: {{resource.struct_name}}Args
 {{/if}}
-) {{#if resource.output_properties}} -> {{resource.struct_name}}Result{{/if}} {
+) -> {{resource.struct_name}}Result {
     use std::collections::HashMap;
     use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
 
@@ -66,16 +67,12 @@ pub fn create(
         ]
     };
 
-{{#if resource.output_properties}}
     let o = context.register_resource(request);
     {{resource.struct_name}}Result {
+        id: o.get_field("id"),
     {{#each resource.output_properties}}
         {{arg_name}}: o.get_field("{{name}}"),
     {{/each}}
     }
-{{else}}
-    context.register_resource(request);
-{{/if}}
 }
-
 }

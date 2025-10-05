@@ -266,6 +266,9 @@ pub mod workspace {
     }
     #[allow(dead_code)]
     pub struct WorkspaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `azure_devops_repo` block as defined below.
         pub azure_devops_repo: pulumi_gestalt_rust::Output<
             Option<super::super::types::synapse::WorkspaceAzureDevopsRepo>,
@@ -467,6 +470,7 @@ pub mod workspace {
         };
         let o = context.register_resource(request);
         WorkspaceResult {
+            id: o.get_field("id"),
             azure_devops_repo: o.get_field("azureDevopsRepo"),
             azuread_authentication_only: o.get_field("azureadAuthenticationOnly"),
             compute_subnet_id: o.get_field("computeSubnetId"),

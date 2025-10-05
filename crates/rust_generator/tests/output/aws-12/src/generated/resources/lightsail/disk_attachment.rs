@@ -62,6 +62,9 @@ pub mod disk_attachment {
     }
     #[allow(dead_code)]
     pub struct Disk_attachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Lightsail Disk.
         pub disk_name: pulumi_gestalt_rust::Output<String>,
         /// The disk path to expose to the instance.
@@ -104,6 +107,7 @@ pub mod disk_attachment {
         };
         let o = context.register_resource(request);
         Disk_attachmentResult {
+            id: o.get_field("id"),
             disk_name: o.get_field("diskName"),
             disk_path: o.get_field("diskPath"),
             instance_name: o.get_field("instanceName"),

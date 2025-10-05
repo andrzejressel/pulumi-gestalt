@@ -84,6 +84,9 @@ pub mod account_subscription {
     }
     #[allow(dead_code)]
     pub struct AccountSubscriptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of your Amazon QuickSight account. This name is unique over all of AWS, and it appears only when users sign in.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// Status of the Amazon QuickSight account's subscription.
@@ -229,6 +232,7 @@ pub mod account_subscription {
         };
         let o = context.register_resource(request);
         AccountSubscriptionResult {
+            id: o.get_field("id"),
             account_name: o.get_field("accountName"),
             account_subscription_status: o.get_field("accountSubscriptionStatus"),
             active_directory_name: o.get_field("activeDirectoryName"),

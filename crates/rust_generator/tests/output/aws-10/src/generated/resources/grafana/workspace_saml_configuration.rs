@@ -96,6 +96,9 @@ pub mod workspace_saml_configuration {
     }
     #[allow(dead_code)]
     pub struct WorkspaceSamlConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The admin role values.
         pub admin_role_values: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The allowed organizations.
@@ -217,6 +220,7 @@ pub mod workspace_saml_configuration {
         };
         let o = context.register_resource(request);
         WorkspaceSamlConfigurationResult {
+            id: o.get_field("id"),
             admin_role_values: o.get_field("adminRoleValues"),
             allowed_organizations: o.get_field("allowedOrganizations"),
             editor_role_values: o.get_field("editorRoleValues"),

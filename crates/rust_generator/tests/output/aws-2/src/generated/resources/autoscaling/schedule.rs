@@ -82,6 +82,9 @@ pub mod schedule {
     }
     #[allow(dead_code)]
     pub struct ScheduleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN assigned by AWS to the autoscaling schedule.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Auto Scaling group.
@@ -176,6 +179,7 @@ pub mod schedule {
         };
         let o = context.register_resource(request);
         ScheduleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),
             desired_capacity: o.get_field("desiredCapacity"),

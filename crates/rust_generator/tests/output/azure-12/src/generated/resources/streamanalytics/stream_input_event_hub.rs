@@ -118,6 +118,9 @@ pub mod stream_input_event_hub {
     }
     #[allow(dead_code)]
     pub struct StreamInputEventHubResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The authentication mode for the Stream Output. Possible values are `Msi` and `ConnectionString`. Defaults to `ConnectionString`.
         pub authentication_mode: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of an Event Hub Consumer Group that should be used to read events from the Event Hub. Specifying distinct consumer group names for multiple inputs allows each of those inputs to receive the same events from the Event Hub. If not set the input will use the Event Hub's default consumer group.
@@ -227,6 +230,7 @@ pub mod stream_input_event_hub {
         };
         let o = context.register_resource(request);
         StreamInputEventHubResult {
+            id: o.get_field("id"),
             authentication_mode: o.get_field("authenticationMode"),
             eventhub_consumer_group_name: o.get_field("eventhubConsumerGroupName"),
             eventhub_name: o.get_field("eventhubName"),

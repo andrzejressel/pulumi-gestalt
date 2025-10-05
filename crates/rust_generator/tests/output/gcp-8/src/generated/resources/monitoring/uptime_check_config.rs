@@ -292,6 +292,9 @@ pub mod uptime_check_config {
     }
     #[allow(dead_code)]
     pub struct UptimeCheckConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The checker type to use for the check. If the monitored resource type is `servicedirectory_service`, `checker_type` must be set to `VPC_CHECKERS`.
         /// Possible values are: `STATIC_IP_CHECKERS`, `VPC_CHECKERS`.
         pub checker_type: pulumi_gestalt_rust::Output<String>,
@@ -435,6 +438,7 @@ pub mod uptime_check_config {
         };
         let o = context.register_resource(request);
         UptimeCheckConfigResult {
+            id: o.get_field("id"),
             checker_type: o.get_field("checkerType"),
             content_matchers: o.get_field("contentMatchers"),
             display_name: o.get_field("displayName"),

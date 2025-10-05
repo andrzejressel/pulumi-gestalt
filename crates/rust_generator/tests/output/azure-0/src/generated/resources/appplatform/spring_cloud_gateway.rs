@@ -169,6 +169,9 @@ pub mod spring_cloud_gateway {
     }
     #[allow(dead_code)]
     pub struct SpringCloudGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `api_metadata` block as defined below.
         pub api_metadata: pulumi_gestalt_rust::Output<
             Option<super::super::types::appplatform::SpringCloudGatewayApiMetadata>,
@@ -348,6 +351,7 @@ pub mod spring_cloud_gateway {
         };
         let o = context.register_resource(request);
         SpringCloudGatewayResult {
+            id: o.get_field("id"),
             api_metadata: o.get_field("apiMetadata"),
             application_performance_monitoring_ids: o
                 .get_field("applicationPerformanceMonitoringIds"),

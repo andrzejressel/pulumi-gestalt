@@ -48,6 +48,9 @@ pub mod subnet_group {
     }
     #[allow(dead_code)]
     pub struct SubnetGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the db subnet group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The description of the DB subnet group. Defaults to "Managed by Pulumi".
@@ -116,6 +119,7 @@ pub mod subnet_group {
         };
         let o = context.register_resource(request);
         SubnetGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             name: o.get_field("name"),

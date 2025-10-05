@@ -155,6 +155,9 @@ pub mod job {
     }
     #[allow(dead_code)]
     pub struct JobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Container App Environment in which to create the Container App Job. Changing this forces a new resource to be created.
         pub container_app_environment_id: pulumi_gestalt_rust::Output<String>,
         /// The endpoint for the Container App Job event stream.
@@ -313,6 +316,7 @@ pub mod job {
         };
         let o = context.register_resource(request);
         JobResult {
+            id: o.get_field("id"),
             container_app_environment_id: o.get_field("containerAppEnvironmentId"),
             event_stream_endpoint: o.get_field("eventStreamEndpoint"),
             event_trigger_config: o.get_field("eventTriggerConfig"),

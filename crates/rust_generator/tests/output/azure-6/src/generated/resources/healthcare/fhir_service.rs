@@ -126,6 +126,9 @@ pub mod fhir_service {
     }
     #[allow(dead_code)]
     pub struct FhirServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of the access policies of the service instance.
         pub access_policy_object_ids: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// An `authentication` block as defined below.
@@ -260,6 +263,7 @@ pub mod fhir_service {
         };
         let o = context.register_resource(request);
         FhirServiceResult {
+            id: o.get_field("id"),
             access_policy_object_ids: o.get_field("accessPolicyObjectIds"),
             authentication: o.get_field("authentication"),
             configuration_export_storage_account_name: o

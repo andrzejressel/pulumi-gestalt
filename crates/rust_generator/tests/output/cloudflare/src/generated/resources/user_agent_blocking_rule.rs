@@ -72,6 +72,9 @@ pub mod user_agent_blocking_rule {
     }
     #[allow(dead_code)]
     pub struct UserAgentBlockingRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The configuration object for the current rule.
         pub configuration: pulumi_gestalt_rust::Output<
             super::types::UserAgentBlockingRuleConfiguration,
@@ -130,6 +133,7 @@ pub mod user_agent_blocking_rule {
         };
         let o = context.register_resource(request);
         UserAgentBlockingRuleResult {
+            id: o.get_field("id"),
             configuration: o.get_field("configuration"),
             description: o.get_field("description"),
             mode: o.get_field("mode"),

@@ -123,6 +123,9 @@ pub mod virtual_hub_route_table {
     }
     #[allow(dead_code)]
     pub struct VirtualHubRouteTableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of labels associated with this route table.
         pub labels: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The name which should be used for Virtual Hub Route Table. Changing this forces a new resource to be created.
@@ -174,6 +177,7 @@ pub mod virtual_hub_route_table {
         };
         let o = context.register_resource(request);
         VirtualHubRouteTableResult {
+            id: o.get_field("id"),
             labels: o.get_field("labels"),
             name: o.get_field("name"),
             routes: o.get_field("routes"),

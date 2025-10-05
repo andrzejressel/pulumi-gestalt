@@ -56,6 +56,9 @@ pub mod provisioned_model_throughput {
     }
     #[allow(dead_code)]
     pub struct ProvisionedModelThroughputResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Commitment duration requested for the Provisioned Throughput. For custom models, you can purchase on-demand Provisioned Throughput by omitting this argument. Valid values: `OneMonth`, `SixMonths`.
         pub commitment_duration: pulumi_gestalt_rust::Output<Option<String>>,
         /// ARN of the model to associate with this Provisioned Throughput.
@@ -131,6 +134,7 @@ pub mod provisioned_model_throughput {
         };
         let o = context.register_resource(request);
         ProvisionedModelThroughputResult {
+            id: o.get_field("id"),
             commitment_duration: o.get_field("commitmentDuration"),
             model_arn: o.get_field("modelArn"),
             model_units: o.get_field("modelUnits"),

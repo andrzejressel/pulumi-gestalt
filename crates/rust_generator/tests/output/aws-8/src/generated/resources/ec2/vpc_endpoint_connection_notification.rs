@@ -73,6 +73,9 @@ pub mod vpc_endpoint_connection_notification {
     }
     #[allow(dead_code)]
     pub struct VpcEndpointConnectionNotificationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more endpoint [events](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointConnectionNotification.html#API_CreateVpcEndpointConnectionNotification_RequestParameters) for which to receive notifications.
         ///
         /// > **NOTE:** One of `vpc_endpoint_service_id` or `vpc_endpoint_id` must be specified.
@@ -133,6 +136,7 @@ pub mod vpc_endpoint_connection_notification {
         };
         let o = context.register_resource(request);
         VpcEndpointConnectionNotificationResult {
+            id: o.get_field("id"),
             connection_events: o.get_field("connectionEvents"),
             connection_notification_arn: o.get_field("connectionNotificationArn"),
             notification_type: o.get_field("notificationType"),

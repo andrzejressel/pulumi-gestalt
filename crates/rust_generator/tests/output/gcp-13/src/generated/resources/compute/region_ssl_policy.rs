@@ -95,6 +95,9 @@ pub mod region_ssl_policy {
     }
     #[allow(dead_code)]
     pub struct RegionSslPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp in RFC3339 text format.
         pub creation_timestamp: pulumi_gestalt_rust::Output<String>,
         /// A list of features enabled when the selected profile is CUSTOM. The
@@ -201,6 +204,7 @@ pub mod region_ssl_policy {
         };
         let o = context.register_resource(request);
         RegionSslPolicyResult {
+            id: o.get_field("id"),
             creation_timestamp: o.get_field("creationTimestamp"),
             custom_features: o.get_field("customFeatures"),
             description: o.get_field("description"),

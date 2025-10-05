@@ -60,6 +60,9 @@ pub mod link_aggregation_group {
     }
     #[allow(dead_code)]
     pub struct LinkAggregationGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the LAG.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of an existing dedicated connection to migrate to the LAG.
@@ -146,6 +149,7 @@ pub mod link_aggregation_group {
         };
         let o = context.register_resource(request);
         LinkAggregationGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             connection_id: o.get_field("connectionId"),
             connections_bandwidth: o.get_field("connectionsBandwidth"),

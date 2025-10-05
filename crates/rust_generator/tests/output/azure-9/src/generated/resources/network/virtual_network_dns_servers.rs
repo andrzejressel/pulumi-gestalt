@@ -53,6 +53,9 @@ pub mod virtual_network_dns_servers {
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkDnsServersResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of IP addresses of DNS servers
         pub dns_servers: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The ID of the Virtual Network that should be linked to the DNS Zone. Changing this forces a new resource to be created.
@@ -89,6 +92,7 @@ pub mod virtual_network_dns_servers {
         };
         let o = context.register_resource(request);
         VirtualNetworkDnsServersResult {
+            id: o.get_field("id"),
             dns_servers: o.get_field("dnsServers"),
             virtual_network_id: o.get_field("virtualNetworkId"),
         }

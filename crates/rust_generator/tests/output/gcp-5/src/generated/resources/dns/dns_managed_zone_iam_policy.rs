@@ -210,6 +210,9 @@ pub mod dns_managed_zone_iam_policy {
     }
     #[allow(dead_code)]
     pub struct DnsManagedZoneIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
         /// Used to find the parent resource to bind the IAM policy to
@@ -256,6 +259,7 @@ pub mod dns_managed_zone_iam_policy {
         };
         let o = context.register_resource(request);
         DnsManagedZoneIamPolicyResult {
+            id: o.get_field("id"),
             etag: o.get_field("etag"),
             managed_zone: o.get_field("managedZone"),
             policy_data: o.get_field("policyData"),

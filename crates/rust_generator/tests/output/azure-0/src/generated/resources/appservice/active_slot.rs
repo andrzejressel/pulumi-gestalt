@@ -47,6 +47,9 @@ pub mod active_slot {
     }
     #[allow(dead_code)]
     pub struct ActiveSlotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the App Service within which the Slot exists. Changing this forces a new resource to be created.
         pub app_service_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the App Service Slot which should be promoted to the Production Slot within the App Service.
@@ -91,6 +94,7 @@ pub mod active_slot {
         };
         let o = context.register_resource(request);
         ActiveSlotResult {
+            id: o.get_field("id"),
             app_service_name: o.get_field("appServiceName"),
             app_service_slot_name: o.get_field("appServiceSlotName"),
             resource_group_name: o.get_field("resourceGroupName"),

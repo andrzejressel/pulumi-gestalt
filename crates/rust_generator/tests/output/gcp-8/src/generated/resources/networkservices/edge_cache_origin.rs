@@ -236,6 +236,9 @@ pub mod edge_cache_origin {
     }
     #[allow(dead_code)]
     pub struct EdgeCacheOriginResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Enable AWS Signature Version 4 origin authentication.
         /// Structure is documented below.
         pub aws_v4_authentication: pulumi_gestalt_rust::Output<
@@ -424,6 +427,7 @@ pub mod edge_cache_origin {
         };
         let o = context.register_resource(request);
         EdgeCacheOriginResult {
+            id: o.get_field("id"),
             aws_v4_authentication: o.get_field("awsV4Authentication"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

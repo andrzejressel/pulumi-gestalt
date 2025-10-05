@@ -59,6 +59,9 @@ pub mod zone {
     }
     #[allow(dead_code)]
     pub struct ZoneResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The maximum number of record sets that can be created in this Private DNS zone.
         pub max_number_of_record_sets: pulumi_gestalt_rust::Output<i32>,
         /// The maximum number of virtual networks that can be linked to this Private DNS zone.
@@ -124,6 +127,7 @@ pub mod zone {
         };
         let o = context.register_resource(request);
         ZoneResult {
+            id: o.get_field("id"),
             max_number_of_record_sets: o.get_field("maxNumberOfRecordSets"),
             max_number_of_virtual_network_links: o
                 .get_field("maxNumberOfVirtualNetworkLinks"),

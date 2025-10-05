@@ -65,6 +65,9 @@ pub mod vault_policy {
     }
     #[allow(dead_code)]
     pub struct VaultPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the vault.
         pub backup_vault_arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the backup vault to add policy for.
@@ -102,6 +105,7 @@ pub mod vault_policy {
         };
         let o = context.register_resource(request);
         VaultPolicyResult {
+            id: o.get_field("id"),
             backup_vault_arn: o.get_field("backupVaultArn"),
             backup_vault_name: o.get_field("backupVaultName"),
             policy: o.get_field("policy"),

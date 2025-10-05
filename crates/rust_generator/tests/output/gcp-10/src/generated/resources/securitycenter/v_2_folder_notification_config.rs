@@ -103,6 +103,9 @@ pub mod v_2_folder_notification_config {
     }
     #[allow(dead_code)]
     pub struct V2FolderNotificationConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// This must be unique within the organization.
         pub config_id: pulumi_gestalt_rust::Output<String>,
         /// The description of the notification config (max of 1024 characters).
@@ -177,6 +180,7 @@ pub mod v_2_folder_notification_config {
         };
         let o = context.register_resource(request);
         V2FolderNotificationConfigResult {
+            id: o.get_field("id"),
             config_id: o.get_field("configId"),
             description: o.get_field("description"),
             folder: o.get_field("folder"),

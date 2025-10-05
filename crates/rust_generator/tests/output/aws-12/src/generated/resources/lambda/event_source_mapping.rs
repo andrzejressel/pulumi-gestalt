@@ -320,6 +320,9 @@ pub mod event_source_mapping {
     }
     #[allow(dead_code)]
     pub struct EventSourceMappingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Additional configuration block for Amazon Managed Kafka sources. Incompatible with "self_managed_event_source" and "self_managed_kafka_event_source_config". Detailed below.
         pub amazon_managed_kafka_event_source_config: pulumi_gestalt_rust::Output<
             super::super::types::lambda::EventSourceMappingAmazonManagedKafkaEventSourceConfig,
@@ -606,6 +609,7 @@ pub mod event_source_mapping {
         };
         let o = context.register_resource(request);
         EventSourceMappingResult {
+            id: o.get_field("id"),
             amazon_managed_kafka_event_source_config: o
                 .get_field("amazonManagedKafkaEventSourceConfig"),
             arn: o.get_field("arn"),

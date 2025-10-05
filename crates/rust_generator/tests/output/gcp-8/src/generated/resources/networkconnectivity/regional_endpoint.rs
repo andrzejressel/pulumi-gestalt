@@ -155,6 +155,9 @@ pub mod regional_endpoint {
     }
     #[allow(dead_code)]
     pub struct RegionalEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The access type of this regional endpoint. This field is reflected in the PSC Forwarding Rule configuration to enable global access.
         /// Possible values are: `GLOBAL`, `REGIONAL`.
         pub access_type: pulumi_gestalt_rust::Output<String>,
@@ -272,6 +275,7 @@ pub mod regional_endpoint {
         };
         let o = context.register_resource(request);
         RegionalEndpointResult {
+            id: o.get_field("id"),
             access_type: o.get_field("accessType"),
             address: o.get_field("address"),
             create_time: o.get_field("createTime"),

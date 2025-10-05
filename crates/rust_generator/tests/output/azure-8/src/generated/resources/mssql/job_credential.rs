@@ -83,6 +83,9 @@ pub mod job_credential {
     }
     #[allow(dead_code)]
     pub struct JobCredentialResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Elastic Job Agent. Changing this forces a new Elastic Job Credential to be created.
         pub job_agent_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Elastic Job Credential. Changing this forces a new Elastic Job Credential to be created.
@@ -132,6 +135,7 @@ pub mod job_credential {
         };
         let o = context.register_resource(request);
         JobCredentialResult {
+            id: o.get_field("id"),
             job_agent_id: o.get_field("jobAgentId"),
             name: o.get_field("name"),
             password: o.get_field("password"),

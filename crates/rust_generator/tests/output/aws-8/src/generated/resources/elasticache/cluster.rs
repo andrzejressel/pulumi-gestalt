@@ -294,6 +294,9 @@ pub mod cluster {
     }
     #[allow(dead_code)]
     pub struct ClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether any database modifications are applied immediately, or during the next maintenance window. Default is `false`. See [Amazon ElastiCache Documentation for more information.](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheCluster.html).
         pub apply_immediately: pulumi_gestalt_rust::Output<bool>,
         /// The ARN of the created ElastiCache Cluster.
@@ -574,6 +577,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
+            id: o.get_field("id"),
             apply_immediately: o.get_field("applyImmediately"),
             arn: o.get_field("arn"),
             auto_minor_version_upgrade: o.get_field("autoMinorVersionUpgrade"),

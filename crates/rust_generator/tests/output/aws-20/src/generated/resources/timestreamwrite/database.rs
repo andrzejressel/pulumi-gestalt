@@ -56,6 +56,9 @@ pub mod database {
     }
     #[allow(dead_code)]
     pub struct DatabaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN that uniquely identifies this database.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Timestream database. Minimum length of 3. Maximum length of 64.
@@ -108,6 +111,7 @@ pub mod database {
         };
         let o = context.register_resource(request);
         DatabaseResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             database_name: o.get_field("databaseName"),
             kms_key_id: o.get_field("kmsKeyId"),

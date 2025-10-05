@@ -55,6 +55,9 @@ pub mod permission {
     }
     #[allow(dead_code)]
     pub struct PermissionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Actions that the specified AWS service principal can use. These include `IssueCertificate`, `GetCertificate`, and `ListPermissions`. Note that in order for ACM to automatically rotate certificates issued by a PCA, it must be granted permission on all 3 actions, as per the example above.
         pub actions: pulumi_gestalt_rust::Output<Vec<String>>,
         /// ARN of the CA that grants the permissions.
@@ -108,6 +111,7 @@ pub mod permission {
         };
         let o = context.register_resource(request);
         PermissionResult {
+            id: o.get_field("id"),
             actions: o.get_field("actions"),
             certificate_authority_arn: o.get_field("certificateAuthorityArn"),
             policy: o.get_field("policy"),

@@ -86,6 +86,9 @@ pub mod event_grid_topic {
     }
     #[allow(dead_code)]
     pub struct EventGridTopicResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Endpoint associated with the EventGrid Topic.
         pub endpoint: pulumi_gestalt_rust::Output<String>,
         /// An `identity` block as defined below.
@@ -206,6 +209,7 @@ pub mod event_grid_topic {
         };
         let o = context.register_resource(request);
         EventGridTopicResult {
+            id: o.get_field("id"),
             endpoint: o.get_field("endpoint"),
             identity: o.get_field("identity"),
             inbound_ip_rules: o.get_field("inboundIpRules"),

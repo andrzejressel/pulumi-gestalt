@@ -89,6 +89,9 @@ pub mod express_route_circuit {
     }
     #[allow(dead_code)]
     pub struct ExpressRouteCircuitResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Allow the circuit to interact with classic (RDFE) resources. Defaults to `false`.
         pub allow_classic_operations: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The authorization key. This can be used to set up an ExpressRoute Circuit with an ExpressRoute Port from another subscription.
@@ -214,6 +217,7 @@ pub mod express_route_circuit {
         };
         let o = context.register_resource(request);
         ExpressRouteCircuitResult {
+            id: o.get_field("id"),
             allow_classic_operations: o.get_field("allowClassicOperations"),
             authorization_key: o.get_field("authorizationKey"),
             bandwidth_in_gbps: o.get_field("bandwidthInGbps"),

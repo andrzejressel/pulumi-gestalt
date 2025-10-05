@@ -36,6 +36,9 @@ pub mod scaling_plan {
     }
     #[allow(dead_code)]
     pub struct ScalingPlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// CloudFormation stack or set of tags. You can create one scaling plan per application source.
         pub application_source: pulumi_gestalt_rust::Output<
             super::super::types::autoscalingplans::ScalingPlanApplicationSource,
@@ -84,6 +87,7 @@ pub mod scaling_plan {
         };
         let o = context.register_resource(request);
         ScalingPlanResult {
+            id: o.get_field("id"),
             application_source: o.get_field("applicationSource"),
             name: o.get_field("name"),
             scaling_instructions: o.get_field("scalingInstructions"),

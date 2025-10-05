@@ -118,6 +118,9 @@ pub mod block_public_access_configuration {
     }
     #[allow(dead_code)]
     pub struct BlockPublicAccessConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Enable or disable EMR Block Public Access.
         ///
         /// The following arguments are optional:
@@ -167,6 +170,7 @@ pub mod block_public_access_configuration {
         };
         let o = context.register_resource(request);
         BlockPublicAccessConfigurationResult {
+            id: o.get_field("id"),
             block_public_security_group_rules: o
                 .get_field("blockPublicSecurityGroupRules"),
             permitted_public_security_group_rule_ranges: o

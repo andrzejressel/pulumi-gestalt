@@ -78,6 +78,9 @@ pub mod custom_hostname_binding {
     }
     #[allow(dead_code)]
     pub struct CustomHostnameBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the App Service in which to add the Custom Hostname Binding. Changing this forces a new resource to be created.
         pub app_service_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Custom Hostname to use for the App Service, example `www.example.com`. Changing this forces a new resource to be created.
@@ -140,6 +143,7 @@ pub mod custom_hostname_binding {
         };
         let o = context.register_resource(request);
         CustomHostnameBindingResult {
+            id: o.get_field("id"),
             app_service_name: o.get_field("appServiceName"),
             hostname: o.get_field("hostname"),
             resource_group_name: o.get_field("resourceGroupName"),

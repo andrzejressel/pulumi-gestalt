@@ -46,6 +46,9 @@ pub mod assessment_report {
     }
     #[allow(dead_code)]
     pub struct AssessmentReportResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Unique identifier of the assessment to create the report from.
         ///
         /// The following arguments are optional:
@@ -94,6 +97,7 @@ pub mod assessment_report {
         };
         let o = context.register_resource(request);
         AssessmentReportResult {
+            id: o.get_field("id"),
             assessment_id: o.get_field("assessmentId"),
             author: o.get_field("author"),
             description: o.get_field("description"),

@@ -56,6 +56,9 @@ pub mod drt_access_role_arn_association {
     }
     #[allow(dead_code)]
     pub struct DrtAccessRoleArnAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the role the SRT will use to access your AWS account. Prior to making the AssociateDRTRole request, you must attach the `AWSShieldDRTAccessPolicy` managed policy to this role.
         pub role_arn: pulumi_gestalt_rust::Output<String>,
         pub timeouts: pulumi_gestalt_rust::Output<
@@ -93,6 +96,7 @@ pub mod drt_access_role_arn_association {
         };
         let o = context.register_resource(request);
         DrtAccessRoleArnAssociationResult {
+            id: o.get_field("id"),
             role_arn: o.get_field("roleArn"),
             timeouts: o.get_field("timeouts"),
         }

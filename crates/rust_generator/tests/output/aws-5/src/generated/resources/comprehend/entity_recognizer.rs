@@ -118,6 +118,9 @@ pub mod entity_recognizer {
     }
     #[allow(dead_code)]
     pub struct EntityRecognizerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Entity Recognizer version.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ARN for an IAM Role which allows Comprehend to read the training and testing data.
@@ -237,6 +240,7 @@ pub mod entity_recognizer {
         };
         let o = context.register_resource(request);
         EntityRecognizerResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             data_access_role_arn: o.get_field("dataAccessRoleArn"),
             input_data_config: o.get_field("inputDataConfig"),

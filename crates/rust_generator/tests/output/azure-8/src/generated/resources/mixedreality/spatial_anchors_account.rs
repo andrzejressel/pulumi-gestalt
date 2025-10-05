@@ -56,6 +56,9 @@ pub mod spatial_anchors_account {
     }
     #[allow(dead_code)]
     pub struct SpatialAnchorsAccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The domain of the Spatial Anchors Account.
         pub account_domain: pulumi_gestalt_rust::Output<String>,
         /// The account ID of the Spatial Anchors Account.
@@ -112,6 +115,7 @@ pub mod spatial_anchors_account {
         };
         let o = context.register_resource(request);
         SpatialAnchorsAccountResult {
+            id: o.get_field("id"),
             account_domain: o.get_field("accountDomain"),
             account_id: o.get_field("accountId"),
             location: o.get_field("location"),

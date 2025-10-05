@@ -132,6 +132,9 @@ pub mod database {
     }
     #[allow(dead_code)]
     pub struct DatabaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The dialect of the Cloud Spanner Database.
         /// If it is not provided, "GOOGLE_STANDARD_SQL" will be used.
         /// Possible values are: `GOOGLE_STANDARD_SQL`, `POSTGRESQL`.
@@ -239,6 +242,7 @@ pub mod database {
         };
         let o = context.register_resource(request);
         DatabaseResult {
+            id: o.get_field("id"),
             database_dialect: o.get_field("databaseDialect"),
             ddls: o.get_field("ddls"),
             deletion_protection: o.get_field("deletionProtection"),

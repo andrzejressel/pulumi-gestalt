@@ -56,6 +56,9 @@ pub mod email_service {
     }
     #[allow(dead_code)]
     pub struct EmailServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The location where the Email Communication service stores its data at rest. Possible values are `Africa`, `Asia Pacific`, `Australia`, `Brazil`, `Canada`, `Europe`, `France`, `Germany`, `India`, `Japan`, `Korea`, `Norway`, `Switzerland`, `UAE`, `UK` `usgov` and `United States`. Changing this forces a new Email Communication Service to be created.
         pub data_location: pulumi_gestalt_rust::Output<String>,
         /// The name of the Email Communication Service resource. Changing this forces a new Email Communication Service to be created.
@@ -107,6 +110,7 @@ pub mod email_service {
         };
         let o = context.register_resource(request);
         EmailServiceResult {
+            id: o.get_field("id"),
             data_location: o.get_field("dataLocation"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

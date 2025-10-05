@@ -45,6 +45,9 @@ pub mod metrics_destination {
     }
     #[allow(dead_code)]
     pub struct MetricsDestinationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the CloudWatch RUM app monitor that will send the metrics.
         pub app_monitor_name: pulumi_gestalt_rust::Output<String>,
         /// Defines the destination to send the metrics to. Valid values are `CloudWatch` and `Evidently`. If you specify `Evidently`, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.
@@ -94,6 +97,7 @@ pub mod metrics_destination {
         };
         let o = context.register_resource(request);
         MetricsDestinationResult {
+            id: o.get_field("id"),
             app_monitor_name: o.get_field("appMonitorName"),
             destination: o.get_field("destination"),
             destination_arn: o.get_field("destinationArn"),

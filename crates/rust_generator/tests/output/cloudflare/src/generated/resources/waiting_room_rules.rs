@@ -54,6 +54,9 @@ pub mod waiting_room_rules {
     }
     #[allow(dead_code)]
     pub struct WaitingRoomRulesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of rules to apply to the ruleset.
         pub rules: pulumi_gestalt_rust::Output<
             Option<Vec<super::types::WaitingRoomRulesRule>>,
@@ -98,6 +101,7 @@ pub mod waiting_room_rules {
         };
         let o = context.register_resource(request);
         WaitingRoomRulesResult {
+            id: o.get_field("id"),
             rules: o.get_field("rules"),
             waiting_room_id: o.get_field("waitingRoomId"),
             zone_id: o.get_field("zoneId"),

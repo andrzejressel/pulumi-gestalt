@@ -89,6 +89,9 @@ pub mod spring_cloud_build_deployment {
     }
     #[allow(dead_code)]
     pub struct SpringCloudBuildDeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A JSON object that contains the addon configurations of the Spring Cloud Build Deployment.
         pub addon_json: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of Spring Cloud Application Performance Monitoring IDs.
@@ -177,6 +180,7 @@ pub mod spring_cloud_build_deployment {
         };
         let o = context.register_resource(request);
         SpringCloudBuildDeploymentResult {
+            id: o.get_field("id"),
             addon_json: o.get_field("addonJson"),
             application_performance_monitoring_ids: o
                 .get_field("applicationPerformanceMonitoringIds"),

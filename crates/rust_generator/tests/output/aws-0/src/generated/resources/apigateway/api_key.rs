@@ -52,6 +52,9 @@ pub mod api_key {
     }
     #[allow(dead_code)]
     pub struct ApiKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Creation date of the API key
@@ -127,6 +130,7 @@ pub mod api_key {
         };
         let o = context.register_resource(request);
         ApiKeyResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_date: o.get_field("createdDate"),
             customer_id: o.get_field("customerId"),

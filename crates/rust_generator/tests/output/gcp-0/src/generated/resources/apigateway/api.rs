@@ -78,6 +78,9 @@ pub mod api {
     }
     #[allow(dead_code)]
     pub struct ApiResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifier to assign to the API. Must be unique within scope of the parent resource(project)
         ///
         ///
@@ -157,6 +160,7 @@ pub mod api {
         };
         let o = context.register_resource(request);
         ApiResult {
+            id: o.get_field("id"),
             api_id: o.get_field("apiId"),
             create_time: o.get_field("createTime"),
             display_name: o.get_field("displayName"),

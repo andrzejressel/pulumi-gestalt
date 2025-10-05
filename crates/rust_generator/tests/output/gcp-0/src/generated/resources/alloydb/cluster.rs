@@ -374,6 +374,9 @@ pub mod cluster {
     }
     #[allow(dead_code)]
     pub struct ClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels. https://google.aip.dev/128
         /// An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         ///
@@ -651,6 +654,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             automated_backup_policy: o.get_field("automatedBackupPolicy"),
             backup_sources: o.get_field("backupSources"),

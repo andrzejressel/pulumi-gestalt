@@ -178,6 +178,9 @@ pub mod app_connection {
     }
     #[allow(dead_code)]
     pub struct AppConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Address of the remote application endpoint for the BeyondCorp AppConnection.
         /// Structure is documented below.
         pub application_endpoint: pulumi_gestalt_rust::Output<
@@ -281,6 +284,7 @@ pub mod app_connection {
         };
         let o = context.register_resource(request);
         AppConnectionResult {
+            id: o.get_field("id"),
             application_endpoint: o.get_field("applicationEndpoint"),
             connectors: o.get_field("connectors"),
             display_name: o.get_field("displayName"),

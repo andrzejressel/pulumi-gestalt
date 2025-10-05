@@ -140,6 +140,9 @@ pub mod backup {
     }
     #[allow(dead_code)]
     pub struct BackupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Type of backup, manually created or created by a backup policy. Possible Values : [TYPE_UNSPECIFIED, MANUAL, SCHEDULED]
         pub backup_type: pulumi_gestalt_rust::Output<String>,
         /// Backups of a volume build incrementally on top of each other. They form a "backup chain".
@@ -248,6 +251,7 @@ pub mod backup {
         };
         let o = context.register_resource(request);
         BackupResult {
+            id: o.get_field("id"),
             backup_type: o.get_field("backupType"),
             chain_storage_bytes: o.get_field("chainStorageBytes"),
             create_time: o.get_field("createTime"),

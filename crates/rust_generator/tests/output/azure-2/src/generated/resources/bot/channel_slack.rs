@@ -78,6 +78,9 @@ pub mod channel_slack {
     }
     #[allow(dead_code)]
     pub struct ChannelSlackResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
         pub bot_name: pulumi_gestalt_rust::Output<String>,
         /// The Client ID that will be used to authenticate with Slack.
@@ -155,6 +158,7 @@ pub mod channel_slack {
         };
         let o = context.register_resource(request);
         ChannelSlackResult {
+            id: o.get_field("id"),
             bot_name: o.get_field("botName"),
             client_id: o.get_field("clientId"),
             client_secret: o.get_field("clientSecret"),

@@ -198,6 +198,9 @@ pub mod security_policy {
     }
     #[allow(dead_code)]
     pub struct SecurityPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Configuration for [Google Cloud Armor Adaptive Protection](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.
         pub adaptive_protection_config: pulumi_gestalt_rust::Output<
             Option<super::super::types::compute::SecurityPolicyAdaptiveProtectionConfig>,
@@ -306,6 +309,7 @@ pub mod security_policy {
         };
         let o = context.register_resource(request);
         SecurityPolicyResult {
+            id: o.get_field("id"),
             adaptive_protection_config: o.get_field("adaptiveProtectionConfig"),
             advanced_options_config: o.get_field("advancedOptionsConfig"),
             description: o.get_field("description"),

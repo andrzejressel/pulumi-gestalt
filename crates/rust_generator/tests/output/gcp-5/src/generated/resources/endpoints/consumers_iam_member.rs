@@ -85,6 +85,9 @@ pub mod consumers_iam_member {
     }
     #[allow(dead_code)]
     pub struct ConsumersIamMemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::endpoints::ConsumersIamMemberCondition>,
         >,
@@ -154,6 +157,7 @@ pub mod consumers_iam_member {
         };
         let o = context.register_resource(request);
         ConsumersIamMemberResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             consumer_project: o.get_field("consumerProject"),
             etag: o.get_field("etag"),

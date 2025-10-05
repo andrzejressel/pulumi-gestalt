@@ -76,6 +76,9 @@ pub mod elasticsearch {
     }
     #[allow(dead_code)]
     pub struct ElasticsearchResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Deployment within Elastic Cloud.
         pub elastic_cloud_deployment_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Email Address which should be associated with this Elasticsearch account. Changing this forces a new Elasticsearch to be created.
@@ -175,6 +178,7 @@ pub mod elasticsearch {
         };
         let o = context.register_resource(request);
         ElasticsearchResult {
+            id: o.get_field("id"),
             elastic_cloud_deployment_id: o.get_field("elasticCloudDeploymentId"),
             elastic_cloud_email_address: o.get_field("elasticCloudEmailAddress"),
             elastic_cloud_sso_default_url: o.get_field("elasticCloudSsoDefaultUrl"),

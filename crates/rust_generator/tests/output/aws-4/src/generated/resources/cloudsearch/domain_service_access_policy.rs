@@ -61,6 +61,9 @@ pub mod domain_service_access_policy {
     }
     #[allow(dead_code)]
     pub struct DomainServiceAccessPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The access rules you want to configure. These rules replace any existing rules. See the [AWS documentation](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html) for details.
         pub access_policy: pulumi_gestalt_rust::Output<String>,
         /// The CloudSearch domain name the policy applies to.
@@ -97,6 +100,7 @@ pub mod domain_service_access_policy {
         };
         let o = context.register_resource(request);
         DomainServiceAccessPolicyResult {
+            id: o.get_field("id"),
             access_policy: o.get_field("accessPolicy"),
             domain_name: o.get_field("domainName"),
         }

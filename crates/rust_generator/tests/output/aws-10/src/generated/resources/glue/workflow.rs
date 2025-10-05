@@ -67,6 +67,9 @@ pub mod workflow {
     }
     #[allow(dead_code)]
     pub struct WorkflowResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of Glue Workflow
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A map of default run properties for this workflow. These properties are passed to all jobs associated to the workflow.
@@ -135,6 +138,7 @@ pub mod workflow {
         };
         let o = context.register_resource(request);
         WorkflowResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             default_run_properties: o.get_field("defaultRunProperties"),
             description: o.get_field("description"),

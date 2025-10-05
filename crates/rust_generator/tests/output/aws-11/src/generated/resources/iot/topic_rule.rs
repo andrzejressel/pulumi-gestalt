@@ -183,6 +183,9 @@ pub mod topic_rule {
     }
     #[allow(dead_code)]
     pub struct TopicRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the topic rule
         pub arn: pulumi_gestalt_rust::Output<String>,
         pub cloudwatch_alarms: pulumi_gestalt_rust::Output<
@@ -415,6 +418,7 @@ pub mod topic_rule {
         };
         let o = context.register_resource(request);
         TopicRuleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cloudwatch_alarms: o.get_field("cloudwatchAlarms"),
             cloudwatch_logs: o.get_field("cloudwatchLogs"),

@@ -47,6 +47,9 @@ pub mod ip_set {
     }
     #[allow(dead_code)]
     pub struct IpSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the WAF IPSet.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// One or more pairs specifying the IP address type (IPV4 or IPV6) and the IP address range (in CIDR notation) from which web requests originate.
@@ -86,6 +89,7 @@ pub mod ip_set {
         };
         let o = context.register_resource(request);
         IpSetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             ip_set_descriptors: o.get_field("ipSetDescriptors"),
             name: o.get_field("name"),

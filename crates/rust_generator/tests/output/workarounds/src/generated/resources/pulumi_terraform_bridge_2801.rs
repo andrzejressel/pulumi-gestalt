@@ -10,6 +10,12 @@ pub mod pulumi_terraform_bridge_2801 {
         #[builder(into, default)]
         pub type_: pulumi_gestalt_rust::InputOrOutput<Option<String>>,
     }
+    #[allow(dead_code)]
+    pub struct PulumiTerraformBridge2801Result {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
+    }
     ///
     /// Registers a new resource with the given unique name and arguments
     ///
@@ -18,7 +24,7 @@ pub mod pulumi_terraform_bridge_2801 {
         context: &pulumi_gestalt_rust::Context,
         name: &str,
         args: PulumiTerraformBridge2801Args,
-    ) {
+    ) -> PulumiTerraformBridge2801Result {
         use std::collections::HashMap;
         use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let type__binding = args.type_.get_output(context);
@@ -33,6 +39,9 @@ pub mod pulumi_terraform_bridge_2801 {
                 },
             ],
         };
-        context.register_resource(request);
+        let o = context.register_resource(request);
+        PulumiTerraformBridge2801Result {
+            id: o.get_field("id"),
+        }
     }
 }

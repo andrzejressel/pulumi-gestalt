@@ -107,6 +107,9 @@ pub mod web_app {
     }
     #[allow(dead_code)]
     pub struct WebAppResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the WebApp.
         /// If apiKeyId is not set during creation, then Firebase automatically associates an apiKeyId with the WebApp.
         /// This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned.
@@ -169,6 +172,7 @@ pub mod web_app {
         };
         let o = context.register_resource(request);
         WebAppResult {
+            id: o.get_field("id"),
             api_key_id: o.get_field("apiKeyId"),
             app_id: o.get_field("appId"),
             app_urls: o.get_field("appUrls"),

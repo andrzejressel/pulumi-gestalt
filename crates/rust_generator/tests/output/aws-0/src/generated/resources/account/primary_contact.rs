@@ -80,6 +80,9 @@ pub mod primary_contact {
     }
     #[allow(dead_code)]
     pub struct PrimaryContactResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the target account when managing member accounts. Will manage current user's account by default if omitted.
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The first line of the primary contact address.
@@ -192,6 +195,7 @@ pub mod primary_contact {
         };
         let o = context.register_resource(request);
         PrimaryContactResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             address_line1: o.get_field("addressLine1"),
             address_line2: o.get_field("addressLine2"),

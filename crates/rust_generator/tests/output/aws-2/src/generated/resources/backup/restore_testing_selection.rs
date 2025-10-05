@@ -87,6 +87,9 @@ pub mod restore_testing_selection {
     }
     #[allow(dead_code)]
     pub struct RestoreTestingSelectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the IAM role.
         pub iam_role_arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the backup restore testing selection.
@@ -182,6 +185,7 @@ pub mod restore_testing_selection {
         };
         let o = context.register_resource(request);
         RestoreTestingSelectionResult {
+            id: o.get_field("id"),
             iam_role_arn: o.get_field("iamRoleArn"),
             name: o.get_field("name"),
             protected_resource_arns: o.get_field("protectedResourceArns"),

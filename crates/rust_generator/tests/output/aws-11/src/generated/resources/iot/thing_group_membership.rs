@@ -43,6 +43,9 @@ pub mod thing_group_membership {
     }
     #[allow(dead_code)]
     pub struct ThingGroupMembershipResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.
         pub override_dynamic_group: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The name of the group to which you are adding a thing.
@@ -87,6 +90,7 @@ pub mod thing_group_membership {
         };
         let o = context.register_resource(request);
         ThingGroupMembershipResult {
+            id: o.get_field("id"),
             override_dynamic_group: o.get_field("overrideDynamicGroup"),
             thing_group_name: o.get_field("thingGroupName"),
             thing_name: o.get_field("thingName"),

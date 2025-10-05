@@ -104,6 +104,9 @@ pub mod conformance_pack {
     }
     #[allow(dead_code)]
     pub struct ConformancePackResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the conformance pack.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Amazon S3 bucket where AWS Config stores conformance pack templates. Maximum length of 63.
@@ -173,6 +176,7 @@ pub mod conformance_pack {
         };
         let o = context.register_resource(request);
         ConformancePackResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             delivery_s3_bucket: o.get_field("deliveryS3Bucket"),
             delivery_s3_key_prefix: o.get_field("deliveryS3KeyPrefix"),

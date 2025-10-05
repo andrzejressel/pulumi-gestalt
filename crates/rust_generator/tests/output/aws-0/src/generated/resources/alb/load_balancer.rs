@@ -175,6 +175,9 @@ pub mod load_balancer {
     }
     #[allow(dead_code)]
     pub struct LoadBalancerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Access Logs block. See below.
         pub access_logs: pulumi_gestalt_rust::Output<
             Option<super::super::types::alb::LoadBalancerAccessLogs>,
@@ -434,6 +437,7 @@ pub mod load_balancer {
         };
         let o = context.register_resource(request);
         LoadBalancerResult {
+            id: o.get_field("id"),
             access_logs: o.get_field("accessLogs"),
             arn: o.get_field("arn"),
             arn_suffix: o.get_field("arnSuffix"),

@@ -47,6 +47,9 @@ pub mod service_quota {
     }
     #[allow(dead_code)]
     pub struct ServiceQuotaResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether the service quota can be increased.
         pub adjustable: pulumi_gestalt_rust::Output<bool>,
         /// Amazon Resource Name (ARN) of the service quota.
@@ -105,6 +108,7 @@ pub mod service_quota {
         };
         let o = context.register_resource(request);
         ServiceQuotaResult {
+            id: o.get_field("id"),
             adjustable: o.get_field("adjustable"),
             arn: o.get_field("arn"),
             default_value: o.get_field("defaultValue"),

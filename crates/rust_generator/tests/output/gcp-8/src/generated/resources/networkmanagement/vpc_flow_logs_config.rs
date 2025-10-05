@@ -331,6 +331,9 @@ pub mod vpc_flow_logs_config {
     }
     #[allow(dead_code)]
     pub struct VpcFlowLogsConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Optional. The aggregation interval for the logs. Default value is
         /// INTERVAL_5_SEC.   Possible values:  AGGREGATION_INTERVAL_UNSPECIFIED INTERVAL_5_SEC INTERVAL_30_SEC INTERVAL_1_MIN INTERVAL_5_MIN INTERVAL_10_MIN INTERVAL_15_MIN"
         pub aggregation_interval: pulumi_gestalt_rust::Output<String>,
@@ -482,6 +485,7 @@ pub mod vpc_flow_logs_config {
         };
         let o = context.register_resource(request);
         VpcFlowLogsConfigResult {
+            id: o.get_field("id"),
             aggregation_interval: o.get_field("aggregationInterval"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

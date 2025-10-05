@@ -114,6 +114,9 @@ pub mod datastore_fileshare {
     }
     #[allow(dead_code)]
     pub struct DatastoreFileshareResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The access key of the Storage Account. Conflicts with `shared_access_signature`.
         pub account_key: pulumi_gestalt_rust::Output<Option<String>>,
         /// Text used to describe the asset. Changing this forces a new Machine Learning DataStore to be created.
@@ -199,6 +202,7 @@ pub mod datastore_fileshare {
         };
         let o = context.register_resource(request);
         DatastoreFileshareResult {
+            id: o.get_field("id"),
             account_key: o.get_field("accountKey"),
             description: o.get_field("description"),
             is_default: o.get_field("isDefault"),

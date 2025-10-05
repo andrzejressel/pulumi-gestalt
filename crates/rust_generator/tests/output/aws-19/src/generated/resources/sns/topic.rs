@@ -203,6 +203,9 @@ pub mod topic {
     }
     #[allow(dead_code)]
     pub struct TopicResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// IAM role for failure feedback
         pub application_failure_feedback_role_arn: pulumi_gestalt_rust::Output<
             Option<String>,
@@ -475,6 +478,7 @@ pub mod topic {
         };
         let o = context.register_resource(request);
         TopicResult {
+            id: o.get_field("id"),
             application_failure_feedback_role_arn: o
                 .get_field("applicationFailureFeedbackRoleArn"),
             application_success_feedback_role_arn: o

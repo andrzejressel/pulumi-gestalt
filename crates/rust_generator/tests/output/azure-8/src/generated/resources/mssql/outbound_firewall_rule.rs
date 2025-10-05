@@ -59,6 +59,9 @@ pub mod outbound_firewall_rule {
     }
     #[allow(dead_code)]
     pub struct OutboundFirewallRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the outbound firewall rule. This should be a FQDN. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The resource ID of the SQL Server on which to create the Outbound Firewall Rule. Changing this forces a new resource to be created.
@@ -94,6 +97,7 @@ pub mod outbound_firewall_rule {
         };
         let o = context.register_resource(request);
         OutboundFirewallRuleResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             server_id: o.get_field("serverId"),
         }

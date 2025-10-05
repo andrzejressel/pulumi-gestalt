@@ -71,6 +71,9 @@ pub mod federated_identity_credential {
     }
     #[allow(dead_code)]
     pub struct FederatedIdentityCredentialResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the audience for this Federated Identity Credential.
         pub audience: pulumi_gestalt_rust::Output<String>,
         /// Specifies the issuer of this Federated Identity Credential.
@@ -135,6 +138,7 @@ pub mod federated_identity_credential {
         };
         let o = context.register_resource(request);
         FederatedIdentityCredentialResult {
+            id: o.get_field("id"),
             audience: o.get_field("audience"),
             issuer: o.get_field("issuer"),
             name: o.get_field("name"),

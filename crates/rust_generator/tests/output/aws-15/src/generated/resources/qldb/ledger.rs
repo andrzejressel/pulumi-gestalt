@@ -46,6 +46,9 @@ pub mod ledger {
     }
     #[allow(dead_code)]
     pub struct LedgerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the QLDB Ledger
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The deletion protection for the QLDB Ledger instance. By default it is `true`. To delete this resource via the provider, this value must be configured to `false` and applied first before attempting deletion.
@@ -110,6 +113,7 @@ pub mod ledger {
         };
         let o = context.register_resource(request);
         LedgerResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             deletion_protection: o.get_field("deletionProtection"),
             kms_key: o.get_field("kmsKey"),

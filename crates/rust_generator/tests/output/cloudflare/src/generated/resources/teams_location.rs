@@ -59,6 +59,9 @@ pub mod teams_location {
     }
     #[allow(dead_code)]
     pub struct TeamsLocationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Indicator that anonymized logs are enabled.
@@ -126,6 +129,7 @@ pub mod teams_location {
         };
         let o = context.register_resource(request);
         TeamsLocationResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             anonymized_logs_enabled: o.get_field("anonymizedLogsEnabled"),
             client_default: o.get_field("clientDefault"),

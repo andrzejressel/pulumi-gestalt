@@ -108,6 +108,9 @@ pub mod cloud_vm_cluster {
     }
     #[allow(dead_code)]
     pub struct CloudVmClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The backup subnet CIDR of the Virtual Network associated with the Cloud VM Cluster. Changing this forces a new Cloud VM Cluster to be created.
         pub backup_subnet_cidr: pulumi_gestalt_rust::Output<Option<String>>,
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure. Changing this forces a new Cloud VM Cluster to be created.
@@ -349,6 +352,7 @@ pub mod cloud_vm_cluster {
         };
         let o = context.register_resource(request);
         CloudVmClusterResult {
+            id: o.get_field("id"),
             backup_subnet_cidr: o.get_field("backupSubnetCidr"),
             cloud_exadata_infrastructure_id: o.get_field("cloudExadataInfrastructureId"),
             cluster_name: o.get_field("clusterName"),

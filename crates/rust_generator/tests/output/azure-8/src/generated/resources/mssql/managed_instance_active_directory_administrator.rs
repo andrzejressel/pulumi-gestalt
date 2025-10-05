@@ -109,6 +109,9 @@ pub mod managed_instance_active_directory_administrator {
     }
     #[allow(dead_code)]
     pub struct ManagedInstanceActiveDirectoryAdministratorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// When `true`, only permit logins from AAD users and administrators. When `false`, also allow local database users.
         pub azuread_authentication_only: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The login name of the principal to set as the Managed Instance Administrator.
@@ -168,6 +171,7 @@ pub mod managed_instance_active_directory_administrator {
         };
         let o = context.register_resource(request);
         ManagedInstanceActiveDirectoryAdministratorResult {
+            id: o.get_field("id"),
             azuread_authentication_only: o.get_field("azureadAuthenticationOnly"),
             login_username: o.get_field("loginUsername"),
             managed_instance_id: o.get_field("managedInstanceId"),

@@ -86,6 +86,9 @@ pub mod mover_target_endpoint {
     }
     #[allow(dead_code)]
     pub struct MoverTargetEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a description for the Storage Mover Target Endpoint.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the name which should be used for this Storage Mover Target Endpoint. Changing this forces a new resource to be created.
@@ -144,6 +147,7 @@ pub mod mover_target_endpoint {
         };
         let o = context.register_resource(request);
         MoverTargetEndpointResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             name: o.get_field("name"),
             storage_account_id: o.get_field("storageAccountId"),

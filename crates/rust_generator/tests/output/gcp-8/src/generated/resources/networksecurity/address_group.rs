@@ -137,6 +137,9 @@ pub mod address_group {
     }
     #[allow(dead_code)]
     pub struct AddressGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Capacity of the Address Group.
         pub capacity: pulumi_gestalt_rust::Output<i32>,
         /// The timestamp when the resource was created.
@@ -250,6 +253,7 @@ pub mod address_group {
         };
         let o = context.register_resource(request);
         AddressGroupResult {
+            id: o.get_field("id"),
             capacity: o.get_field("capacity"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

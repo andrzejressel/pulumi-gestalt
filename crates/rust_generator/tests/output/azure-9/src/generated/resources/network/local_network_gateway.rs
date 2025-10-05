@@ -74,6 +74,9 @@ pub mod local_network_gateway {
     }
     #[allow(dead_code)]
     pub struct LocalNetworkGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The list of string CIDRs representing the address spaces the gateway exposes.
         pub address_spaces: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// A `bgp_settings` block as defined below containing the Local Network Gateway's BGP speaker settings.
@@ -157,6 +160,7 @@ pub mod local_network_gateway {
         };
         let o = context.register_resource(request);
         LocalNetworkGatewayResult {
+            id: o.get_field("id"),
             address_spaces: o.get_field("addressSpaces"),
             bgp_settings: o.get_field("bgpSettings"),
             gateway_address: o.get_field("gatewayAddress"),

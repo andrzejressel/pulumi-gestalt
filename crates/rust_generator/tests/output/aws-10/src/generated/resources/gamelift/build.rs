@@ -59,6 +59,9 @@ pub mod build {
     }
     #[allow(dead_code)]
     pub struct BuildResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// GameLift Build ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the build
@@ -125,6 +128,7 @@ pub mod build {
         };
         let o = context.register_resource(request);
         BuildResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             operating_system: o.get_field("operatingSystem"),

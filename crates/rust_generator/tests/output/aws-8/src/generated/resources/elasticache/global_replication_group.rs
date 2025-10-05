@@ -149,6 +149,9 @@ pub mod global_replication_group {
     }
     #[allow(dead_code)]
     pub struct GlobalReplicationGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the ElastiCache Global Replication Group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A flag that indicate whether the encryption at rest is enabled.
@@ -272,6 +275,7 @@ pub mod global_replication_group {
         };
         let o = context.register_resource(request);
         GlobalReplicationGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             at_rest_encryption_enabled: o.get_field("atRestEncryptionEnabled"),
             auth_token_enabled: o.get_field("authTokenEnabled"),

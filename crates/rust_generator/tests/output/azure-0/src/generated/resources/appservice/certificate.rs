@@ -77,6 +77,9 @@ pub mod certificate {
     }
     #[allow(dead_code)]
     pub struct CertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the associated App Service plan. Must be specified when the certificate is used inside an App Service Environment hosted App Service or with Premium App Service plans. Changing this forces a new resource to be created.
         pub app_service_plan_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The expiration date for the certificate.
@@ -183,6 +186,7 @@ pub mod certificate {
         };
         let o = context.register_resource(request);
         CertificateResult {
+            id: o.get_field("id"),
             app_service_plan_id: o.get_field("appServicePlanId"),
             expiration_date: o.get_field("expirationDate"),
             friendly_name: o.get_field("friendlyName"),

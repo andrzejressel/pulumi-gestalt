@@ -160,6 +160,9 @@ pub mod instance {
     }
     #[allow(dead_code)]
     pub struct InstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The full name of the GCE network to connect the instance to. If not provided, 'default' will be used.
         pub authorized_network: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp in RFC3339 text format.
@@ -312,6 +315,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
+            id: o.get_field("id"),
             authorized_network: o.get_field("authorizedNetwork"),
             create_time: o.get_field("createTime"),
             discovery_endpoint: o.get_field("discoveryEndpoint"),

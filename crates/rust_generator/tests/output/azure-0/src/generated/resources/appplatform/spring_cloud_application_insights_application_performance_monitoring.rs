@@ -93,6 +93,9 @@ pub mod spring_cloud_application_insights_application_performance_monitoring {
     }
     #[allow(dead_code)]
     pub struct SpringCloudApplicationInsightsApplicationPerformanceMonitoringResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The instrumentation key used to push data to Application Insights.
         pub connection_string: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies whether the Spring Cloud Application Performance Monitoring resource for Application Insights is enabled globally. Defaults to `false`.
@@ -175,6 +178,7 @@ pub mod spring_cloud_application_insights_application_performance_monitoring {
         };
         let o = context.register_resource(request);
         SpringCloudApplicationInsightsApplicationPerformanceMonitoringResult {
+            id: o.get_field("id"),
             connection_string: o.get_field("connectionString"),
             globally_enabled: o.get_field("globallyEnabled"),
             name: o.get_field("name"),

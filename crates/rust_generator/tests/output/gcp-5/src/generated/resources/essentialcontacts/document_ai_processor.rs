@@ -80,6 +80,9 @@ pub mod document_ai_processor {
     }
     #[allow(dead_code)]
     pub struct DocumentAiProcessorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The display name. Must be unique.
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// The KMS key used for encryption/decryption in CMEK scenarios. See https://cloud.google.com/security-key-management.
@@ -143,6 +146,7 @@ pub mod document_ai_processor {
         };
         let o = context.register_resource(request);
         DocumentAiProcessorResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             kms_key_name: o.get_field("kmsKeyName"),
             location: o.get_field("location"),

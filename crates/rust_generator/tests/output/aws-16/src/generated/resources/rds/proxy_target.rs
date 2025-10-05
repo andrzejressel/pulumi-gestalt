@@ -85,6 +85,9 @@ pub mod proxy_target {
     }
     #[allow(dead_code)]
     pub struct ProxyTargetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// DB cluster identifier.
         ///
         /// **NOTE:** Either `db_instance_identifier` or `db_cluster_identifier` should be specified and both should not be specified together
@@ -152,6 +155,7 @@ pub mod proxy_target {
         };
         let o = context.register_resource(request);
         ProxyTargetResult {
+            id: o.get_field("id"),
             db_cluster_identifier: o.get_field("dbClusterIdentifier"),
             db_instance_identifier: o.get_field("dbInstanceIdentifier"),
             db_proxy_name: o.get_field("dbProxyName"),

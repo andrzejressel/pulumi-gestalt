@@ -87,6 +87,9 @@ pub mod notification_config {
     }
     #[allow(dead_code)]
     pub struct NotificationConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// This must be unique within the organization.
         pub config_id: pulumi_gestalt_rust::Output<String>,
         /// The description of the notification config (max of 1024 characters).
@@ -154,6 +157,7 @@ pub mod notification_config {
         };
         let o = context.register_resource(request);
         NotificationConfigResult {
+            id: o.get_field("id"),
             config_id: o.get_field("configId"),
             description: o.get_field("description"),
             name: o.get_field("name"),

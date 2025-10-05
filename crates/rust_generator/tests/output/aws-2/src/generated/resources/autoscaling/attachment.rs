@@ -51,6 +51,9 @@ pub mod attachment {
     }
     #[allow(dead_code)]
     pub struct AttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of ASG to associate with the ELB.
         pub autoscaling_group_name: pulumi_gestalt_rust::Output<String>,
         /// Name of the ELB.
@@ -95,6 +98,7 @@ pub mod attachment {
         };
         let o = context.register_resource(request);
         AttachmentResult {
+            id: o.get_field("id"),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),
             elb: o.get_field("elb"),
             lb_target_group_arn: o.get_field("lbTargetGroupArn"),

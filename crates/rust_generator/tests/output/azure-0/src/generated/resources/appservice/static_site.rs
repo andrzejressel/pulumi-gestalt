@@ -76,6 +76,9 @@ pub mod static_site {
     }
     #[allow(dead_code)]
     pub struct StaticSiteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The API key of this Static Web App, which is used for later interacting with this Static Web App from other clients, e.g. GitHub Action.
         pub api_key: pulumi_gestalt_rust::Output<String>,
         /// A key-value pair of App Settings.
@@ -163,6 +166,7 @@ pub mod static_site {
         };
         let o = context.register_resource(request);
         StaticSiteResult {
+            id: o.get_field("id"),
             api_key: o.get_field("apiKey"),
             app_settings: o.get_field("appSettings"),
             default_host_name: o.get_field("defaultHostName"),

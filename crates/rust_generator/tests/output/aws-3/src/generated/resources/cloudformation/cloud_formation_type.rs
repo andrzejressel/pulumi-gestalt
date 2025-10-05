@@ -35,6 +35,9 @@ pub mod cloud_formation_type {
     }
     #[allow(dead_code)]
     pub struct CloudFormationTypeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Optional) Amazon Resource Name (ARN) of the CloudFormation Type version. See also `type_arn`.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the CloudFormation Type default version.
@@ -119,6 +122,7 @@ pub mod cloud_formation_type {
         };
         let o = context.register_resource(request);
         CloudFormationTypeResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             default_version_id: o.get_field("defaultVersionId"),
             deprecated_status: o.get_field("deprecatedStatus"),

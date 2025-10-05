@@ -144,6 +144,9 @@ pub mod integration_runtime_ssis {
     }
     #[allow(dead_code)]
     pub struct IntegrationRuntimeSsisResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `catalog_info` block as defined below.
         pub catalog_info: pulumi_gestalt_rust::Output<
             Option<super::super::types::datafactory::IntegrationRuntimeSsisCatalogInfo>,
@@ -339,6 +342,7 @@ pub mod integration_runtime_ssis {
         };
         let o = context.register_resource(request);
         IntegrationRuntimeSsisResult {
+            id: o.get_field("id"),
             catalog_info: o.get_field("catalogInfo"),
             copy_compute_scale: o.get_field("copyComputeScale"),
             credential_name: o.get_field("credentialName"),

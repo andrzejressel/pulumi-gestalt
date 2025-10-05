@@ -121,6 +121,9 @@ pub mod key {
     }
     #[allow(dead_code)]
     pub struct KeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the curve to use when creating an `EC` key. Possible values are `P-256`, `P-256K`, `P-384`, and `P-521`. This field will be required in a future release if `key_type` is `EC` or `EC-HSM`. The API will default to `P-256` if nothing is specified. Changing this forces a new resource to be created.
         pub curve: pulumi_gestalt_rust::Output<String>,
         /// The RSA public exponent of this Key Vault Key.
@@ -240,6 +243,7 @@ pub mod key {
         };
         let o = context.register_resource(request);
         KeyResult {
+            id: o.get_field("id"),
             curve: o.get_field("curve"),
             e: o.get_field("e"),
             expiration_date: o.get_field("expirationDate"),

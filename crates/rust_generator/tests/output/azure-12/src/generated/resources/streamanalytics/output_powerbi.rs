@@ -71,6 +71,9 @@ pub mod output_powerbi {
     }
     #[allow(dead_code)]
     pub struct OutputPowerbiResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Power BI dataset.
         pub dataset: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Power BI group, this must be a valid UUID.
@@ -154,6 +157,7 @@ pub mod output_powerbi {
         };
         let o = context.register_resource(request);
         OutputPowerbiResult {
+            id: o.get_field("id"),
             dataset: o.get_field("dataset"),
             group_id: o.get_field("groupId"),
             group_name: o.get_field("groupName"),

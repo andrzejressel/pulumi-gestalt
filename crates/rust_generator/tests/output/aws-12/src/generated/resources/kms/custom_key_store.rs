@@ -48,6 +48,9 @@ pub mod custom_key_store {
     }
     #[allow(dead_code)]
     pub struct CustomKeyStoreResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Cluster ID of CloudHSM.
         pub cloud_hsm_cluster_id: pulumi_gestalt_rust::Output<String>,
         /// Unique name for Custom Key Store.
@@ -101,6 +104,7 @@ pub mod custom_key_store {
         };
         let o = context.register_resource(request);
         CustomKeyStoreResult {
+            id: o.get_field("id"),
             cloud_hsm_cluster_id: o.get_field("cloudHsmClusterId"),
             custom_key_store_name: o.get_field("customKeyStoreName"),
             key_store_password: o.get_field("keyStorePassword"),

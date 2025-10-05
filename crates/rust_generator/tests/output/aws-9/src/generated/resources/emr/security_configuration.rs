@@ -45,6 +45,9 @@ pub mod security_configuration {
     }
     #[allow(dead_code)]
     pub struct SecurityConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A JSON formatted Security Configuration
         pub configuration: pulumi_gestalt_rust::Output<String>,
         /// Date the Security Configuration was created
@@ -90,6 +93,7 @@ pub mod security_configuration {
         };
         let o = context.register_resource(request);
         SecurityConfigurationResult {
+            id: o.get_field("id"),
             configuration: o.get_field("configuration"),
             creation_date: o.get_field("creationDate"),
             name: o.get_field("name"),

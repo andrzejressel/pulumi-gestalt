@@ -307,6 +307,9 @@ pub mod prevention_inspect_template {
     }
     #[allow(dead_code)]
     pub struct PreventionInspectTemplateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description of the inspect template.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// User set display name of the inspect template.
@@ -378,6 +381,7 @@ pub mod prevention_inspect_template {
         };
         let o = context.register_resource(request);
         PreventionInspectTemplateResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             inspect_config: o.get_field("inspectConfig"),

@@ -40,6 +40,9 @@ pub mod location {
     }
     #[allow(dead_code)]
     pub struct LocationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the Location resource.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the project in which the resource belongs.
@@ -78,6 +81,7 @@ pub mod location {
         };
         let o = context.register_resource(request);
         LocationResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             project: o.get_field("project"),
             self_link: o.get_field("selfLink"),

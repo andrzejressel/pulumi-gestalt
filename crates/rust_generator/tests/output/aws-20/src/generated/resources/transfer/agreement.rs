@@ -62,6 +62,9 @@ pub mod agreement {
     }
     #[allow(dead_code)]
     pub struct AgreementResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IAM Role which provides read and write access to the parent directory of the file location mentioned in the StartFileTransfer request.
         pub access_role: pulumi_gestalt_rust::Output<String>,
         /// The unique identifier for the AS2 agreement.
@@ -142,6 +145,7 @@ pub mod agreement {
         };
         let o = context.register_resource(request);
         AgreementResult {
+            id: o.get_field("id"),
             access_role: o.get_field("accessRole"),
             agreement_id: o.get_field("agreementId"),
             arn: o.get_field("arn"),

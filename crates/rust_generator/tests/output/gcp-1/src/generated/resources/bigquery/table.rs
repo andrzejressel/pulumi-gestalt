@@ -214,6 +214,9 @@ pub mod table {
     }
     #[allow(dead_code)]
     pub struct TableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the configuration of a BigLake managed table. Structure is documented below
         pub biglake_configuration: pulumi_gestalt_rust::Output<
             Option<super::super::types::bigquery::TableBiglakeConfiguration>,
@@ -496,6 +499,7 @@ pub mod table {
         };
         let o = context.register_resource(request);
         TableResult {
+            id: o.get_field("id"),
             biglake_configuration: o.get_field("biglakeConfiguration"),
             clusterings: o.get_field("clusterings"),
             creation_time: o.get_field("creationTime"),

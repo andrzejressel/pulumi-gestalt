@@ -55,6 +55,9 @@ pub mod account_registration {
     }
     #[allow(dead_code)]
     pub struct AccountRegistrationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifier for the delegated administrator account.
         pub delegated_admin_account: pulumi_gestalt_rust::Output<Option<String>>,
         /// Flag to deregister AuditManager in the account upon destruction. Defaults to `false` (ie. AuditManager will remain active in the account, even if this resource is removed).
@@ -103,6 +106,7 @@ pub mod account_registration {
         };
         let o = context.register_resource(request);
         AccountRegistrationResult {
+            id: o.get_field("id"),
             delegated_admin_account: o.get_field("delegatedAdminAccount"),
             deregister_on_destroy: o.get_field("deregisterOnDestroy"),
             kms_key: o.get_field("kmsKey"),

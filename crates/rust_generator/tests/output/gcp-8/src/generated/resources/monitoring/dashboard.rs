@@ -81,6 +81,9 @@ pub mod dashboard {
     }
     #[allow(dead_code)]
     pub struct DashboardResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The JSON representation of a dashboard, following the format at
         /// https://cloud.google.com/monitoring/api/ref_v3/rest/v1/projects.dashboards.
         pub dashboard_json: pulumi_gestalt_rust::Output<String>,
@@ -118,6 +121,7 @@ pub mod dashboard {
         };
         let o = context.register_resource(request);
         DashboardResult {
+            id: o.get_field("id"),
             dashboard_json: o.get_field("dashboardJson"),
             project: o.get_field("project"),
         }

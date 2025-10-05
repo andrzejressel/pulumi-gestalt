@@ -227,6 +227,9 @@ pub mod kubernetes_cluster_node_pool {
     }
     #[allow(dead_code)]
     pub struct KubernetesClusterNodePoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable [auto-scaler](https://docs.microsoft.com/azure/aks/cluster-autoscaler).
         pub auto_scaling_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies the ID of the Capacity Reservation Group where this Node Pool should exist. Changing this forces a new resource to be created.
@@ -591,6 +594,7 @@ pub mod kubernetes_cluster_node_pool {
         };
         let o = context.register_resource(request);
         KubernetesClusterNodePoolResult {
+            id: o.get_field("id"),
             auto_scaling_enabled: o.get_field("autoScalingEnabled"),
             capacity_reservation_group_id: o.get_field("capacityReservationGroupId"),
             eviction_policy: o.get_field("evictionPolicy"),

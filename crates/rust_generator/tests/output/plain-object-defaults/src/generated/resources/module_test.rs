@@ -9,6 +9,12 @@ pub mod module_test {
         #[builder(into, default)]
         pub val: pulumi_gestalt_rust::InputOrOutput<Option<super::types::Typ>>,
     }
+    #[allow(dead_code)]
+    pub struct moduleTestResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
+    }
     ///
     /// Registers a new resource with the given unique name and arguments
     ///
@@ -17,7 +23,7 @@ pub mod module_test {
         context: &pulumi_gestalt_rust::Context,
         name: &str,
         args: moduleTestArgs,
-    ) {
+    ) -> moduleTestResult {
         use std::collections::HashMap;
         use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mod1_binding = args.mod1.get_output(context);
@@ -37,6 +43,9 @@ pub mod module_test {
                 },
             ],
         };
-        context.register_resource(request);
+        let o = context.register_resource(request);
+        moduleTestResult {
+            id: o.get_field("id"),
+        }
     }
 }

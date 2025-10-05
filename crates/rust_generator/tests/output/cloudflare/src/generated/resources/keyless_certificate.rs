@@ -58,6 +58,9 @@ pub mod keyless_certificate {
     }
     #[allow(dead_code)]
     pub struct KeylessCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it. Available values: `ubiquitous`, `optimal`, `force`. Defaults to `ubiquitous`. **Modifying this attribute will force creation of a new resource.**
         pub bundle_method: pulumi_gestalt_rust::Output<Option<String>>,
         /// The zone's SSL certificate or SSL certificate and intermediate(s). **Modifying this attribute will force creation of a new resource.**
@@ -130,6 +133,7 @@ pub mod keyless_certificate {
         };
         let o = context.register_resource(request);
         KeylessCertificateResult {
+            id: o.get_field("id"),
             bundle_method: o.get_field("bundleMethod"),
             certificate: o.get_field("certificate"),
             enabled: o.get_field("enabled"),

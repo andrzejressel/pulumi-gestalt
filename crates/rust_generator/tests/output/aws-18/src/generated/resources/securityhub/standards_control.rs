@@ -50,6 +50,9 @@ pub mod standards_control {
     }
     #[allow(dead_code)]
     pub struct StandardsControlResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The identifier of the security standard control.
         pub control_id: pulumi_gestalt_rust::Output<String>,
         /// The control status could be `ENABLED` or `DISABLED`. You have to specify `disabled_reason` argument for `DISABLED` control status.
@@ -108,6 +111,7 @@ pub mod standards_control {
         };
         let o = context.register_resource(request);
         StandardsControlResult {
+            id: o.get_field("id"),
             control_id: o.get_field("controlId"),
             control_status: o.get_field("controlStatus"),
             control_status_updated_at: o.get_field("controlStatusUpdatedAt"),

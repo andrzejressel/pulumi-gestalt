@@ -29,6 +29,9 @@ pub mod role_assignment {
     }
     #[allow(dead_code)]
     pub struct RoleAssignmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<Option<String>>,
         pub condition_version: pulumi_gestalt_rust::Output<Option<String>>,
         pub delegated_managed_identity_resource_id: pulumi_gestalt_rust::Output<
@@ -111,6 +114,7 @@ pub mod role_assignment {
         };
         let o = context.register_resource(request);
         RoleAssignmentResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             condition_version: o.get_field("conditionVersion"),
             delegated_managed_identity_resource_id: o

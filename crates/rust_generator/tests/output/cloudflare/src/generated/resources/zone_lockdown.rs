@@ -56,6 +56,9 @@ pub mod zone_lockdown {
     }
     #[allow(dead_code)]
     pub struct ZoneLockdownResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of IP addresses or IP ranges to match the request against specified in target, value pairs.
         pub configurations: pulumi_gestalt_rust::Output<
             Vec<super::types::ZoneLockdownConfiguration>,
@@ -120,6 +123,7 @@ pub mod zone_lockdown {
         };
         let o = context.register_resource(request);
         ZoneLockdownResult {
+            id: o.get_field("id"),
             configurations: o.get_field("configurations"),
             description: o.get_field("description"),
             paused: o.get_field("paused"),

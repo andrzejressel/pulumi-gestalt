@@ -68,6 +68,9 @@ pub mod location_object_storage {
     }
     #[allow(dead_code)]
     pub struct LocationObjectStorageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use `access_key` and `secret_key` to provide the user name and password, respectively.
         pub access_key: pulumi_gestalt_rust::Output<Option<String>>,
         /// A list of DataSync Agent ARNs with which this location will be associated.
@@ -169,6 +172,7 @@ pub mod location_object_storage {
         };
         let o = context.register_resource(request);
         LocationObjectStorageResult {
+            id: o.get_field("id"),
             access_key: o.get_field("accessKey"),
             agent_arns: o.get_field("agentArns"),
             arn: o.get_field("arn"),

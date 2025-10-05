@@ -49,6 +49,9 @@ pub mod byte_match_set {
     }
     #[allow(dead_code)]
     pub struct ByteMatchSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Settings for the ByteMatchSet, such as the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests. ByteMatchTuple documented below.
         pub byte_match_tuples: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::wafregional::ByteMatchSetByteMatchTuple>>,
@@ -86,6 +89,7 @@ pub mod byte_match_set {
         };
         let o = context.register_resource(request);
         ByteMatchSetResult {
+            id: o.get_field("id"),
             byte_match_tuples: o.get_field("byteMatchTuples"),
             name: o.get_field("name"),
         }

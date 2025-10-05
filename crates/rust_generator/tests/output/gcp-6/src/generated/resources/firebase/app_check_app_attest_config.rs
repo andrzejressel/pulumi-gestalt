@@ -125,6 +125,9 @@ pub mod app_check_app_attest_config {
     }
     #[allow(dead_code)]
     pub struct AppCheckAppAttestConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of an
         /// [Apple App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.iosApps#IosApp.FIELDS.app_id).
         ///
@@ -176,6 +179,7 @@ pub mod app_check_app_attest_config {
         };
         let o = context.register_resource(request);
         AppCheckAppAttestConfigResult {
+            id: o.get_field("id"),
             app_id: o.get_field("appId"),
             name: o.get_field("name"),
             project: o.get_field("project"),

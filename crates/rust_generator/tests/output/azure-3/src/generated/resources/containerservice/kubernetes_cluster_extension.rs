@@ -85,6 +85,9 @@ pub mod kubernetes_cluster_extension {
     }
     #[allow(dead_code)]
     pub struct KubernetesClusterExtensionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `aks_assigned_identity` block as defined below.
         pub aks_assigned_identities: pulumi_gestalt_rust::Output<
             Vec<
@@ -195,6 +198,7 @@ pub mod kubernetes_cluster_extension {
         };
         let o = context.register_resource(request);
         KubernetesClusterExtensionResult {
+            id: o.get_field("id"),
             aks_assigned_identities: o.get_field("aksAssignedIdentities"),
             cluster_id: o.get_field("clusterId"),
             configuration_protected_settings: o

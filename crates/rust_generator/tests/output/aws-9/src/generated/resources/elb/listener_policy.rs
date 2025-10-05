@@ -102,6 +102,9 @@ pub mod listener_policy {
     }
     #[allow(dead_code)]
     pub struct ListenerPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The load balancer to attach the policy to.
         pub load_balancer_name: pulumi_gestalt_rust::Output<String>,
         /// The load balancer listener port to apply the policy to.
@@ -153,6 +156,7 @@ pub mod listener_policy {
         };
         let o = context.register_resource(request);
         ListenerPolicyResult {
+            id: o.get_field("id"),
             load_balancer_name: o.get_field("loadBalancerName"),
             load_balancer_port: o.get_field("loadBalancerPort"),
             policy_names: o.get_field("policyNames"),

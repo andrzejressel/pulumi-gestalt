@@ -106,6 +106,9 @@ pub mod vault {
     }
     #[allow(dead_code)]
     pub struct VaultResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable the Classic experience for VMware replication. If set to `false` VMware machines will be protected using the new stateless ASR replication appliance. Changing this forces a new resource to be created.
         pub classic_vmware_replication_enabled: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -247,6 +250,7 @@ pub mod vault {
         };
         let o = context.register_resource(request);
         VaultResult {
+            id: o.get_field("id"),
             classic_vmware_replication_enabled: o
                 .get_field("classicVmwareReplicationEnabled"),
             cross_region_restore_enabled: o.get_field("crossRegionRestoreEnabled"),

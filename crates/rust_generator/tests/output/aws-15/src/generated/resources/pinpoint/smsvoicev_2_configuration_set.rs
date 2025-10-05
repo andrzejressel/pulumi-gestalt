@@ -48,6 +48,9 @@ pub mod smsvoicev_2_configuration_set {
     }
     #[allow(dead_code)]
     pub struct Smsvoicev2ConfigurationSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the configuration set.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The default message type. Must either be "TRANSACTIONAL" or "PROMOTIONAL"
@@ -106,6 +109,7 @@ pub mod smsvoicev_2_configuration_set {
         };
         let o = context.register_resource(request);
         Smsvoicev2ConfigurationSetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             default_message_type: o.get_field("defaultMessageType"),
             default_sender_id: o.get_field("defaultSenderId"),

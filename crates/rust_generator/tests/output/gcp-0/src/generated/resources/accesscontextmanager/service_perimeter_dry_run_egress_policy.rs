@@ -55,6 +55,9 @@ pub mod service_perimeter_dry_run_egress_policy {
     }
     #[allow(dead_code)]
     pub struct ServicePerimeterDryRunEgressPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Defines conditions on the source of a request causing this `EgressPolicy` to apply.
         /// Structure is documented below.
         pub egress_from: pulumi_gestalt_rust::Output<
@@ -112,6 +115,7 @@ pub mod service_perimeter_dry_run_egress_policy {
         };
         let o = context.register_resource(request);
         ServicePerimeterDryRunEgressPolicyResult {
+            id: o.get_field("id"),
             egress_from: o.get_field("egressFrom"),
             egress_to: o.get_field("egressTo"),
             perimeter: o.get_field("perimeter"),

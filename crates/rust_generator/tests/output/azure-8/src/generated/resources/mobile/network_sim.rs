@@ -136,6 +136,9 @@ pub mod network_sim {
     }
     #[allow(dead_code)]
     pub struct NetworkSimResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Ki value for the SIM.
         pub authentication_key: pulumi_gestalt_rust::Output<String>,
         /// An optional free-form text field that can be used to record the device type this SIM is associated with, for example `Video camera`. The Azure portal allows SIMs to be grouped and filtered based on this value.
@@ -238,6 +241,7 @@ pub mod network_sim {
         };
         let o = context.register_resource(request);
         NetworkSimResult {
+            id: o.get_field("id"),
             authentication_key: o.get_field("authenticationKey"),
             device_type: o.get_field("deviceType"),
             integrated_circuit_card_identifier: o

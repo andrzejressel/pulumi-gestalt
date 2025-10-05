@@ -281,6 +281,9 @@ pub mod ai_index_endpoint_deployed_index {
     }
     #[allow(dead_code)]
     pub struct AiIndexEndpointDeployedIndexResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description of resources that the DeployedIndex uses, which to large degree are decided by Vertex AI, and optionally allows only a modest additional configuration.
         /// Structure is documented below.
         pub automatic_resources: pulumi_gestalt_rust::Output<
@@ -415,6 +418,7 @@ pub mod ai_index_endpoint_deployed_index {
         };
         let o = context.register_resource(request);
         AiIndexEndpointDeployedIndexResult {
+            id: o.get_field("id"),
             automatic_resources: o.get_field("automaticResources"),
             create_time: o.get_field("createTime"),
             dedicated_resources: o.get_field("dedicatedResources"),

@@ -573,6 +573,9 @@ pub mod instance {
     }
     #[allow(dead_code)]
     pub struct InstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Time the Instance was created in UTC.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
@@ -687,6 +690,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             effective_labels: o.get_field("effectiveLabels"),
             host_configs: o.get_field("hostConfigs"),

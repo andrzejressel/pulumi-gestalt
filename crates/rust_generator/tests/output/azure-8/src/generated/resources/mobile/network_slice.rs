@@ -71,6 +71,9 @@ pub mod network_slice {
     }
     #[allow(dead_code)]
     pub struct NetworkSliceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description for this Mobile Network Slice.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the Azure Region where the Mobile Network Slice should exist. Changing this forces a new Mobile Network Slice to be created.
@@ -141,6 +144,7 @@ pub mod network_slice {
         };
         let o = context.register_resource(request);
         NetworkSliceResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             location: o.get_field("location"),
             mobile_network_id: o.get_field("mobileNetworkId"),

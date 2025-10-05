@@ -271,6 +271,9 @@ pub mod endpoint {
     }
     #[allow(dead_code)]
     pub struct EndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `custom_dns_configs` block as defined below.
         pub custom_dns_configs: pulumi_gestalt_rust::Output<
             Vec<super::super::types::privatelink::EndpointCustomDnsConfig>,
@@ -381,6 +384,7 @@ pub mod endpoint {
         };
         let o = context.register_resource(request);
         EndpointResult {
+            id: o.get_field("id"),
             custom_dns_configs: o.get_field("customDnsConfigs"),
             custom_network_interface_name: o.get_field("customNetworkInterfaceName"),
             ip_configurations: o.get_field("ipConfigurations"),

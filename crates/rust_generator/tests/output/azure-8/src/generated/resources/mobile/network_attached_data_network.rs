@@ -164,6 +164,9 @@ pub mod network_attached_data_network {
     }
     #[allow(dead_code)]
     pub struct NetworkAttachedDataNetworkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the DNS servers to signal to UEs to use for this attached data network.
         pub dns_addresses: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Specifies the Azure Region where the Mobile Network Attached Data Network should exist. Changing this forces a new Mobile Network Attached Data Network to be created.
@@ -303,6 +306,7 @@ pub mod network_attached_data_network {
         };
         let o = context.register_resource(request);
         NetworkAttachedDataNetworkResult {
+            id: o.get_field("id"),
             dns_addresses: o.get_field("dnsAddresses"),
             location: o.get_field("location"),
             mobile_network_data_network_name: o

@@ -58,6 +58,9 @@ pub mod account {
     }
     #[allow(dead_code)]
     pub struct AccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `identity` block as defined below. Changing this forces a new resource to be created.
         pub identity: pulumi_gestalt_rust::Output<
             super::super::types::datashare::AccountIdentity,
@@ -118,6 +121,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
+            id: o.get_field("id"),
             identity: o.get_field("identity"),
             location: o.get_field("location"),
             name: o.get_field("name"),

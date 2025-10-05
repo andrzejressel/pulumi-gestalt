@@ -124,6 +124,9 @@ pub mod diagnostic_setting {
     }
     #[allow(dead_code)]
     pub struct DiagnosticSettingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `enabled_log` blocks as defined below.
         ///
         /// > **NOTE:** At least one `enabled_log` or `metric` block must be specified. At least one type of Log or Metric must be enabled.
@@ -245,6 +248,7 @@ pub mod diagnostic_setting {
         };
         let o = context.register_resource(request);
         DiagnosticSettingResult {
+            id: o.get_field("id"),
             enabled_logs: o.get_field("enabledLogs"),
             eventhub_authorization_rule_id: o.get_field("eventhubAuthorizationRuleId"),
             eventhub_name: o.get_field("eventhubName"),

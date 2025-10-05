@@ -60,6 +60,9 @@ pub mod lb_attachment {
     }
     #[allow(dead_code)]
     pub struct LbAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the instance to attach to the load balancer.
         pub instance_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the Lightsail load balancer.
@@ -95,6 +98,7 @@ pub mod lb_attachment {
         };
         let o = context.register_resource(request);
         LbAttachmentResult {
+            id: o.get_field("id"),
             instance_name: o.get_field("instanceName"),
             lb_name: o.get_field("lbName"),
         }

@@ -49,6 +49,9 @@ pub mod aws_log_source {
     }
     #[allow(dead_code)]
     pub struct AwsLogSourceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specify the natively-supported AWS service to add as a source in Security Lake.
         pub source: pulumi_gestalt_rust::Output<
             Option<super::super::types::securitylake::AwsLogSourceSource>,
@@ -79,6 +82,7 @@ pub mod aws_log_source {
         };
         let o = context.register_resource(request);
         AwsLogSourceResult {
+            id: o.get_field("id"),
             source: o.get_field("source"),
         }
     }

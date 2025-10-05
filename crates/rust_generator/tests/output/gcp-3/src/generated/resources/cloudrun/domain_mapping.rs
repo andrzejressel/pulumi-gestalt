@@ -112,6 +112,9 @@ pub mod domain_mapping {
     }
     #[allow(dead_code)]
     pub struct DomainMappingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The location of the cloud run instance. eg us-central1
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Metadata associated with this DomainMapping.
@@ -177,6 +180,7 @@ pub mod domain_mapping {
         };
         let o = context.register_resource(request);
         DomainMappingResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             metadata: o.get_field("metadata"),
             name: o.get_field("name"),

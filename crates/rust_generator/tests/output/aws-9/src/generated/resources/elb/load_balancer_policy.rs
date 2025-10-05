@@ -99,6 +99,9 @@ pub mod load_balancer_policy {
     }
     #[allow(dead_code)]
     pub struct LoadBalancerPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The load balancer on which the policy is defined.
         pub load_balancer_name: pulumi_gestalt_rust::Output<String>,
         /// Policy attribute to apply to the policy.
@@ -150,6 +153,7 @@ pub mod load_balancer_policy {
         };
         let o = context.register_resource(request);
         LoadBalancerPolicyResult {
+            id: o.get_field("id"),
             load_balancer_name: o.get_field("loadBalancerName"),
             policy_attributes: o.get_field("policyAttributes"),
             policy_name: o.get_field("policyName"),

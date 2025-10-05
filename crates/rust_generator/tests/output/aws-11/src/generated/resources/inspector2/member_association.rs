@@ -35,6 +35,9 @@ pub mod member_association {
     }
     #[allow(dead_code)]
     pub struct MemberAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the account to associate
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Account ID of the delegated administrator account
@@ -69,6 +72,7 @@ pub mod member_association {
         };
         let o = context.register_resource(request);
         MemberAssociationResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             delegated_admin_account_id: o.get_field("delegatedAdminAccountId"),
             relationship_status: o.get_field("relationshipStatus"),

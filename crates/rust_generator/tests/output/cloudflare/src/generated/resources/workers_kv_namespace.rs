@@ -38,6 +38,9 @@ pub mod workers_kv_namespace {
     }
     #[allow(dead_code)]
     pub struct WorkersKvNamespaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Title value of the Worker KV Namespace.
@@ -73,6 +76,7 @@ pub mod workers_kv_namespace {
         };
         let o = context.register_resource(request);
         WorkersKvNamespaceResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             title: o.get_field("title"),
         }

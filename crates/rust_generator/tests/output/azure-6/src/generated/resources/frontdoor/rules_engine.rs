@@ -127,6 +127,9 @@ pub mod rules_engine {
     }
     #[allow(dead_code)]
     pub struct RulesEngineResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether this Rules engine configuration is enabled? Defaults to `true`.
         pub enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The name of the Front Door instance. Changing this forces a new resource to be created.
@@ -186,6 +189,7 @@ pub mod rules_engine {
         };
         let o = context.register_resource(request);
         RulesEngineResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
             frontdoor_name: o.get_field("frontdoorName"),
             location: o.get_field("location"),

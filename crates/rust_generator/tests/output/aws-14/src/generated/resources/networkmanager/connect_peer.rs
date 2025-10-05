@@ -54,6 +54,9 @@ pub mod connect_peer {
     }
     #[allow(dead_code)]
     pub struct ConnectPeerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the attachment.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The Connect peer BGP options.
@@ -150,6 +153,7 @@ pub mod connect_peer {
         };
         let o = context.register_resource(request);
         ConnectPeerResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             bgp_options: o.get_field("bgpOptions"),
             configurations: o.get_field("configurations"),

@@ -87,6 +87,9 @@ pub mod backup_plan {
     }
     #[allow(dead_code)]
     pub struct BackupPlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the backup plan
         pub backup_plan_id: pulumi_gestalt_rust::Output<String>,
         /// The backup rules for this `BackupPlan`. There must be at least one `BackupRule` message.
@@ -167,6 +170,7 @@ pub mod backup_plan {
         };
         let o = context.register_resource(request);
         BackupPlanResult {
+            id: o.get_field("id"),
             backup_plan_id: o.get_field("backupPlanId"),
             backup_rules: o.get_field("backupRules"),
             backup_vault: o.get_field("backupVault"),

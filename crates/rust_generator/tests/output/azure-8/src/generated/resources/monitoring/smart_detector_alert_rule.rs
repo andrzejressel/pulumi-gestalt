@@ -104,6 +104,9 @@ pub mod smart_detector_alert_rule {
     }
     #[allow(dead_code)]
     pub struct SmartDetectorAlertRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `action_group` block as defined below.
         pub action_group: pulumi_gestalt_rust::Output<
             super::super::types::monitoring::SmartDetectorAlertRuleActionGroup,
@@ -207,6 +210,7 @@ pub mod smart_detector_alert_rule {
         };
         let o = context.register_resource(request);
         SmartDetectorAlertRuleResult {
+            id: o.get_field("id"),
             action_group: o.get_field("actionGroup"),
             description: o.get_field("description"),
             detector_type: o.get_field("detectorType"),

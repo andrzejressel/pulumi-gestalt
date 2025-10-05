@@ -64,6 +64,9 @@ pub mod table {
     }
     #[allow(dead_code)]
     pub struct TableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `acl` blocks as defined below.
         pub acls: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::storage::TableAcl>>,
@@ -108,6 +111,7 @@ pub mod table {
         };
         let o = context.register_resource(request);
         TableResult {
+            id: o.get_field("id"),
             acls: o.get_field("acls"),
             name: o.get_field("name"),
             storage_account_name: o.get_field("storageAccountName"),

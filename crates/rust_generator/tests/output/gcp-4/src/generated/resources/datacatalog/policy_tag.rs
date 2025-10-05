@@ -123,6 +123,9 @@ pub mod policy_tag {
     }
     #[allow(dead_code)]
     pub struct PolicyTagResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Resource names of child policy tags of this policy tag.
         pub child_policy_tags: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Description of this policy tag. It must: contain only unicode characters, tabs,
@@ -187,6 +190,7 @@ pub mod policy_tag {
         };
         let o = context.register_resource(request);
         PolicyTagResult {
+            id: o.get_field("id"),
             child_policy_tags: o.get_field("childPolicyTags"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

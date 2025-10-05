@@ -98,6 +98,9 @@ pub mod project_cloud_armor_tier {
     }
     #[allow(dead_code)]
     pub struct ProjectCloudArmorTierResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Managed protection tier to be set.
         /// Possible values are: `CA_STANDARD`, `CA_ENTERPRISE_PAYGO`, `CA_ENTERPRISE_ANNUAL`.
         ///
@@ -138,6 +141,7 @@ pub mod project_cloud_armor_tier {
         };
         let o = context.register_resource(request);
         ProjectCloudArmorTierResult {
+            id: o.get_field("id"),
             cloud_armor_tier: o.get_field("cloudArmorTier"),
             project: o.get_field("project"),
         }

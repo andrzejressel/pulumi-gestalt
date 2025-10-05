@@ -163,6 +163,9 @@ pub mod certificate {
     }
     #[allow(dead_code)]
     pub struct CertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Name of the API Management Service where this Service should be created. Changing this forces a new resource to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// The base-64 encoded certificate data, which must be a PFX file.
@@ -247,6 +250,7 @@ pub mod certificate {
         };
         let o = context.register_resource(request);
         CertificateResult {
+            id: o.get_field("id"),
             api_management_name: o.get_field("apiManagementName"),
             data: o.get_field("data"),
             expiration: o.get_field("expiration"),

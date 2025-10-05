@@ -41,6 +41,9 @@ pub mod vpc_block_public_access_options {
     }
     #[allow(dead_code)]
     pub struct VpcBlockPublicAccessOptionsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AWS account id to which these options apply.
         pub aws_account_id: pulumi_gestalt_rust::Output<String>,
         /// The AWS region to which these options apply.
@@ -84,6 +87,7 @@ pub mod vpc_block_public_access_options {
         };
         let o = context.register_resource(request);
         VpcBlockPublicAccessOptionsResult {
+            id: o.get_field("id"),
             aws_account_id: o.get_field("awsAccountId"),
             aws_region: o.get_field("awsRegion"),
             internet_gateway_block_mode: o.get_field("internetGatewayBlockMode"),

@@ -49,6 +49,9 @@ pub mod workspace {
     }
     #[allow(dead_code)]
     pub struct WorkspaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Azure Region where the Healthcare Workspace should be created. Changing this forces a new Healthcare Workspace to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Healthcare Workspace. Changing this forces a new Healthcare Workspace to be created.
@@ -103,6 +106,7 @@ pub mod workspace {
         };
         let o = context.register_resource(request);
         WorkspaceResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             private_endpoint_connections: o.get_field("privateEndpointConnections"),

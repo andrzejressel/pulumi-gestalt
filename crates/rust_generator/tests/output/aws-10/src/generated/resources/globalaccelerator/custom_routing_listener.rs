@@ -61,6 +61,9 @@ pub mod custom_routing_listener {
     }
     #[allow(dead_code)]
     pub struct CustomRoutingListenerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of a custom routing accelerator.
         pub accelerator_arn: pulumi_gestalt_rust::Output<String>,
         /// The list of port ranges for the connections from clients to the accelerator. Fields documented below.
@@ -99,6 +102,7 @@ pub mod custom_routing_listener {
         };
         let o = context.register_resource(request);
         CustomRoutingListenerResult {
+            id: o.get_field("id"),
             accelerator_arn: o.get_field("acceleratorArn"),
             port_ranges: o.get_field("portRanges"),
         }

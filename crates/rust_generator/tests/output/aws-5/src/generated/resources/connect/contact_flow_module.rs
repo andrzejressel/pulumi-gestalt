@@ -122,6 +122,9 @@ pub mod contact_flow_module {
     }
     #[allow(dead_code)]
     pub struct ContactFlowModuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Contact Flow Module.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The identifier of the Contact Flow Module.
@@ -202,6 +205,7 @@ pub mod contact_flow_module {
         };
         let o = context.register_resource(request);
         ContactFlowModuleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             contact_flow_module_id: o.get_field("contactFlowModuleId"),
             content: o.get_field("content"),

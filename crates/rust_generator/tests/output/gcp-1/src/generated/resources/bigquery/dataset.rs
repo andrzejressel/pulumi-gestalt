@@ -365,6 +365,9 @@ pub mod dataset {
     }
     #[allow(dead_code)]
     pub struct DatasetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An array of objects that define dataset access for one or more entities.
         /// Structure is documented below.
         pub accesses: pulumi_gestalt_rust::Output<
@@ -624,6 +627,7 @@ pub mod dataset {
         };
         let o = context.register_resource(request);
         DatasetResult {
+            id: o.get_field("id"),
             accesses: o.get_field("accesses"),
             creation_time: o.get_field("creationTime"),
             dataset_id: o.get_field("datasetId"),

@@ -78,6 +78,9 @@ pub mod configuration {
     }
     #[allow(dead_code)]
     pub struct ConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The in guest user patch mode. Possible values are `Platform` or `User`. Must be specified when `scope` is `InGuestPatch`.
         pub in_guest_user_patch_mode: pulumi_gestalt_rust::Output<Option<String>>,
         /// An `install_patches` block as defined below.
@@ -181,6 +184,7 @@ pub mod configuration {
         };
         let o = context.register_resource(request);
         ConfigurationResult {
+            id: o.get_field("id"),
             in_guest_user_patch_mode: o.get_field("inGuestUserPatchMode"),
             install_patches: o.get_field("installPatches"),
             location: o.get_field("location"),

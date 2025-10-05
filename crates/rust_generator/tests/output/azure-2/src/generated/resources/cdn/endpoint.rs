@@ -130,6 +130,9 @@ pub mod endpoint {
     }
     #[allow(dead_code)]
     pub struct EndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An array of strings that indicates a content types on which compression will be applied. The value for the elements should be MIME types.
         pub content_types_to_compresses: pulumi_gestalt_rust::Output<
             Option<Vec<String>>,
@@ -299,6 +302,7 @@ pub mod endpoint {
         };
         let o = context.register_resource(request);
         EndpointResult {
+            id: o.get_field("id"),
             content_types_to_compresses: o.get_field("contentTypesToCompresses"),
             delivery_rules: o.get_field("deliveryRules"),
             fqdn: o.get_field("fqdn"),

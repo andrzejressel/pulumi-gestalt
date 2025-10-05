@@ -73,6 +73,9 @@ pub mod public_ip_prefix {
     }
     #[allow(dead_code)]
     pub struct PublicIpPrefixResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IP address prefix value that was allocated.
         pub ip_prefix: pulumi_gestalt_rust::Output<String>,
         /// The IP Version to use, `IPv6` or `IPv4`. Changing this forces a new resource to be created. Default is `IPv4`.
@@ -167,6 +170,7 @@ pub mod public_ip_prefix {
         };
         let o = context.register_resource(request);
         PublicIpPrefixResult {
+            id: o.get_field("id"),
             ip_prefix: o.get_field("ipPrefix"),
             ip_version: o.get_field("ipVersion"),
             location: o.get_field("location"),

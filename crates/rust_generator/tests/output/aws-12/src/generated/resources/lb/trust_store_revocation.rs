@@ -58,6 +58,9 @@ pub mod trust_store_revocation {
     }
     #[allow(dead_code)]
     pub struct TrustStoreRevocationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// AWS assigned RevocationId, (number).
         pub revocation_id: pulumi_gestalt_rust::Output<i32>,
         /// S3 Bucket name holding the client certificate CA bundle.
@@ -113,6 +116,7 @@ pub mod trust_store_revocation {
         };
         let o = context.register_resource(request);
         TrustStoreRevocationResult {
+            id: o.get_field("id"),
             revocation_id: o.get_field("revocationId"),
             revocations_s3_bucket: o.get_field("revocationsS3Bucket"),
             revocations_s3_key: o.get_field("revocationsS3Key"),

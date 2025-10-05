@@ -53,6 +53,9 @@ pub mod default_object_acl {
     }
     #[allow(dead_code)]
     pub struct DefaultObjectACLResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the bucket it applies to.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// List of role/entity pairs in the form `ROLE:entity`.
@@ -90,6 +93,7 @@ pub mod default_object_acl {
         };
         let o = context.register_resource(request);
         DefaultObjectACLResult {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             role_entities: o.get_field("roleEntities"),
         }

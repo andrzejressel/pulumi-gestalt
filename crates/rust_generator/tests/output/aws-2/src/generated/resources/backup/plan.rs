@@ -54,6 +54,9 @@ pub mod plan {
     }
     #[allow(dead_code)]
     pub struct PlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An object that specifies backup options for each resource type.
         pub advanced_backup_settings: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::backup::PlanAdvancedBackupSetting>>,
@@ -119,6 +122,7 @@ pub mod plan {
         };
         let o = context.register_resource(request);
         PlanResult {
+            id: o.get_field("id"),
             advanced_backup_settings: o.get_field("advancedBackupSettings"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),

@@ -146,6 +146,9 @@ pub mod certificate {
     }
     #[allow(dead_code)]
     pub struct CertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specify the path to the certificate file of this certificate.
         pub certificate_virtual_path: pulumi_gestalt_rust::Output<String>,
         /// Specify the ID of the Key Vault Secret for this certificate.
@@ -204,6 +207,7 @@ pub mod certificate {
         };
         let o = context.register_resource(request);
         CertificateResult {
+            id: o.get_field("id"),
             certificate_virtual_path: o.get_field("certificateVirtualPath"),
             key_vault_secret_id: o.get_field("keyVaultSecretId"),
             key_virtual_path: o.get_field("keyVirtualPath"),

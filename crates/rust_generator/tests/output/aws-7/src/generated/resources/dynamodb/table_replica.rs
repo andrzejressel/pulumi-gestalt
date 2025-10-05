@@ -73,6 +73,9 @@ pub mod table_replica {
     }
     #[allow(dead_code)]
     pub struct TableReplicaResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the table replica.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Whether deletion protection is enabled (true) or disabled (false) on the table replica.
@@ -150,6 +153,7 @@ pub mod table_replica {
         };
         let o = context.register_resource(request);
         TableReplicaResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             deletion_protection_enabled: o.get_field("deletionProtectionEnabled"),
             global_table_arn: o.get_field("globalTableArn"),

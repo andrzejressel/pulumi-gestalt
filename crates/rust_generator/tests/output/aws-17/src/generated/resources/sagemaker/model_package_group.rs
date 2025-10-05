@@ -47,6 +47,9 @@ pub mod model_package_group {
     }
     #[allow(dead_code)]
     pub struct ModelPackageGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Model Package Group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A description for the model group.
@@ -101,6 +104,7 @@ pub mod model_package_group {
         };
         let o = context.register_resource(request);
         ModelPackageGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             model_package_group_description: o.get_field("modelPackageGroupDescription"),
             model_package_group_name: o.get_field("modelPackageGroupName"),

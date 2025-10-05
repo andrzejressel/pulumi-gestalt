@@ -75,6 +75,9 @@ pub mod public_certificate {
     }
     #[allow(dead_code)]
     pub struct PublicCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the App Service. Changing this forces a new App Service Public Certificate to be created.
         pub app_service_name: pulumi_gestalt_rust::Output<String>,
         /// The base64-encoded contents of the certificate. Changing this forces a new App Service Public Certificate to be created.
@@ -133,6 +136,7 @@ pub mod public_certificate {
         };
         let o = context.register_resource(request);
         PublicCertificateResult {
+            id: o.get_field("id"),
             app_service_name: o.get_field("appServiceName"),
             blob: o.get_field("blob"),
             certificate_location: o.get_field("certificateLocation"),

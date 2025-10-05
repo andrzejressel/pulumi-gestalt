@@ -91,6 +91,9 @@ pub mod instance {
     }
     #[allow(dead_code)]
     pub struct InstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map contains the attributes of the instance. Check the [doc](https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html#API_RegisterInstance_RequestSyntax) for the supported attributes and syntax.
         pub attributes: pulumi_gestalt_rust::Output<
             std::collections::HashMap<String, String>,
@@ -135,6 +138,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
+            id: o.get_field("id"),
             attributes: o.get_field("attributes"),
             instance_id: o.get_field("instanceId"),
             service_id: o.get_field("serviceId"),

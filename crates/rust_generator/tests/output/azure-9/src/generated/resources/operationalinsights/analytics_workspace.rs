@@ -114,6 +114,9 @@ pub mod analytics_workspace {
     }
     #[allow(dead_code)]
     pub struct AnalyticsWorkspaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies if the log Analytics Workspace allow users accessing to data associated with resources they have permission to view, without permission to workspace. Defaults to `true`.
         pub allow_resource_only_permissions: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Is Customer Managed Storage mandatory for query management?
@@ -284,6 +287,7 @@ pub mod analytics_workspace {
         };
         let o = context.register_resource(request);
         AnalyticsWorkspaceResult {
+            id: o.get_field("id"),
             allow_resource_only_permissions: o.get_field("allowResourceOnlyPermissions"),
             cmk_for_query_forced: o.get_field("cmkForQueryForced"),
             daily_quota_gb: o.get_field("dailyQuotaGb"),

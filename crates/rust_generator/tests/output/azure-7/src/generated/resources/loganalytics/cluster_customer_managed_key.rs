@@ -95,6 +95,9 @@ pub mod cluster_customer_managed_key {
     }
     #[allow(dead_code)]
     pub struct ClusterCustomerManagedKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Key Vault Key to use for encryption.
         pub key_vault_key_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Log Analytics Cluster. Changing this forces a new Log Analytics Cluster Customer Managed Key to be created.
@@ -133,6 +136,7 @@ pub mod cluster_customer_managed_key {
         };
         let o = context.register_resource(request);
         ClusterCustomerManagedKeyResult {
+            id: o.get_field("id"),
             key_vault_key_id: o.get_field("keyVaultKeyId"),
             log_analytics_cluster_id: o.get_field("logAnalyticsClusterId"),
         }

@@ -98,6 +98,9 @@ pub mod access_boundary_policy {
     }
     #[allow(dead_code)]
     pub struct AccessBoundaryPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The display name of the rule.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// The hash of the resource. Used internally during updates.
@@ -152,6 +155,7 @@ pub mod access_boundary_policy {
         };
         let o = context.register_resource(request);
         AccessBoundaryPolicyResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             etag: o.get_field("etag"),
             name: o.get_field("name"),

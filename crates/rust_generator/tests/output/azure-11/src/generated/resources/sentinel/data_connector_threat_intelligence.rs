@@ -72,6 +72,9 @@ pub mod data_connector_threat_intelligence {
     }
     #[allow(dead_code)]
     pub struct DataConnectorThreatIntelligenceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Log Analytics Workspace that this Threat Intelligence Data Connector resides in. Changing this forces a new Threat Intelligence Data Connector to be created.
         pub log_analytics_workspace_id: pulumi_gestalt_rust::Output<String>,
         /// The lookback date for the this Threat Intelligence Data Connector in RFC3339. Defaults to `1970-01-01T00:00:00Z`. Changing this forces a new resource to be created.
@@ -126,6 +129,7 @@ pub mod data_connector_threat_intelligence {
         };
         let o = context.register_resource(request);
         DataConnectorThreatIntelligenceResult {
+            id: o.get_field("id"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             lookback_date: o.get_field("lookbackDate"),
             name: o.get_field("name"),

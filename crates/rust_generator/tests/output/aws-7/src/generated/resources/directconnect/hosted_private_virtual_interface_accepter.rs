@@ -68,6 +68,9 @@ pub mod hosted_private_virtual_interface_accepter {
     }
     #[allow(dead_code)]
     pub struct HostedPrivateVirtualInterfaceAccepterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the virtual interface.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Direct Connect gateway to which to connect the virtual interface.
@@ -126,6 +129,7 @@ pub mod hosted_private_virtual_interface_accepter {
         };
         let o = context.register_resource(request);
         HostedPrivateVirtualInterfaceAccepterResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             dx_gateway_id: o.get_field("dxGatewayId"),
             tags: o.get_field("tags"),

@@ -68,6 +68,9 @@ pub mod organization {
     }
     #[allow(dead_code)]
     pub struct OrganizationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Custom `display_name` for the organization.
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// The application `id`. Changing this forces a new resource to be created.
@@ -121,6 +124,7 @@ pub mod organization {
         };
         let o = context.register_resource(request);
         OrganizationResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             iotcentral_application_id: o.get_field("iotcentralApplicationId"),
             organization_id: o.get_field("organizationId"),

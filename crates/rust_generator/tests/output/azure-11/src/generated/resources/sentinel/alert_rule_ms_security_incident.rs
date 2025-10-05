@@ -97,6 +97,9 @@ pub mod alert_rule_ms_security_incident {
     }
     #[allow(dead_code)]
     pub struct AlertRuleMsSecurityIncidentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The GUID of the alert rule template which is used to create this Sentinel Scheduled Alert Rule. Changing this forces a new Sentinel MS Security Incident Alert Rule to be created.
         pub alert_rule_template_guid: pulumi_gestalt_rust::Output<Option<String>>,
         /// The description of this Sentinel MS Security Incident Alert Rule.
@@ -199,6 +202,7 @@ pub mod alert_rule_ms_security_incident {
         };
         let o = context.register_resource(request);
         AlertRuleMsSecurityIncidentResult {
+            id: o.get_field("id"),
             alert_rule_template_guid: o.get_field("alertRuleTemplateGuid"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

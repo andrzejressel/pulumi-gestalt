@@ -79,6 +79,9 @@ pub mod replication_config {
     }
     #[allow(dead_code)]
     pub struct ReplicationConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) for the serverless replication config.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block for provisioning an DMS Serverless replication.
@@ -191,6 +194,7 @@ pub mod replication_config {
         };
         let o = context.register_resource(request);
         ReplicationConfigResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             compute_config: o.get_field("computeConfig"),
             replication_config_identifier: o.get_field("replicationConfigIdentifier"),

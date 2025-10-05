@@ -147,6 +147,9 @@ pub mod domain {
     }
     #[allow(dead_code)]
     pub struct DomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the VPC used for non-EFS traffic. The default value is `PublicInternetOnly`. Valid values are `PublicInternetOnly` and `VpcOnly`.
         pub app_network_access_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// The entity that creates and manages the required security groups for inter-app communication in `VPCOnly` mode. Valid values are `Service` and `Customer`.
@@ -297,6 +300,7 @@ pub mod domain {
         };
         let o = context.register_resource(request);
         DomainResult {
+            id: o.get_field("id"),
             app_network_access_type: o.get_field("appNetworkAccessType"),
             app_security_group_management: o.get_field("appSecurityGroupManagement"),
             arn: o.get_field("arn"),

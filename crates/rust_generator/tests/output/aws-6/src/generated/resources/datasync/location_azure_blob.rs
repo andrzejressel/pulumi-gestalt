@@ -71,6 +71,9 @@ pub mod location_azure_blob {
     }
     #[allow(dead_code)]
     pub struct LocationAzureBlobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The access tier that you want your objects or files transferred into. Valid values: `HOT`, `COOL` and `ARCHIVE`. Default: `HOT`.
         pub access_tier: pulumi_gestalt_rust::Output<Option<String>>,
         /// A list of DataSync Agent ARNs with which this location will be associated.
@@ -159,6 +162,7 @@ pub mod location_azure_blob {
         };
         let o = context.register_resource(request);
         LocationAzureBlobResult {
+            id: o.get_field("id"),
             access_tier: o.get_field("accessTier"),
             agent_arns: o.get_field("agentArns"),
             arn: o.get_field("arn"),

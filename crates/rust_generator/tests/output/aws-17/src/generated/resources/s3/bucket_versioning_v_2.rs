@@ -138,6 +138,9 @@ pub mod bucket_versioning_v_2 {
     }
     #[allow(dead_code)]
     pub struct BucketVersioningV2Result {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the S3 bucket.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// Account ID of the expected bucket owner.
@@ -193,6 +196,7 @@ pub mod bucket_versioning_v_2 {
         };
         let o = context.register_resource(request);
         BucketVersioningV2Result {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             expected_bucket_owner: o.get_field("expectedBucketOwner"),
             mfa: o.get_field("mfa"),

@@ -146,6 +146,9 @@ pub mod hl_7_store_iam_policy {
     }
     #[allow(dead_code)]
     pub struct Hl7StoreIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the HL7v2 store's IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
         /// The HL7v2 store ID, in the form
@@ -187,6 +190,7 @@ pub mod hl_7_store_iam_policy {
         };
         let o = context.register_resource(request);
         Hl7StoreIamPolicyResult {
+            id: o.get_field("id"),
             etag: o.get_field("etag"),
             hl7_v2_store_id: o.get_field("hl7V2StoreId"),
             policy_data: o.get_field("policyData"),

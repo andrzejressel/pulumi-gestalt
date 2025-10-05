@@ -39,6 +39,9 @@ pub mod single_scram_secret_association {
     }
     #[allow(dead_code)]
     pub struct SingleScramSecretAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the MSK cluster.
         pub cluster_arn: pulumi_gestalt_rust::Output<String>,
         /// AWS Secrets Manager secret ARN.
@@ -75,6 +78,7 @@ pub mod single_scram_secret_association {
         };
         let o = context.register_resource(request);
         SingleScramSecretAssociationResult {
+            id: o.get_field("id"),
             cluster_arn: o.get_field("clusterArn"),
             secret_arn: o.get_field("secretArn"),
         }

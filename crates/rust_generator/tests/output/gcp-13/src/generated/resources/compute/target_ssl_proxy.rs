@@ -134,6 +134,9 @@ pub mod target_ssl_proxy {
     }
     #[allow(dead_code)]
     pub struct TargetSSLProxyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A reference to the BackendService resource.
         ///
         ///
@@ -236,6 +239,7 @@ pub mod target_ssl_proxy {
         };
         let o = context.register_resource(request);
         TargetSSLProxyResult {
+            id: o.get_field("id"),
             backend_service: o.get_field("backendService"),
             certificate_map: o.get_field("certificateMap"),
             creation_timestamp: o.get_field("creationTimestamp"),

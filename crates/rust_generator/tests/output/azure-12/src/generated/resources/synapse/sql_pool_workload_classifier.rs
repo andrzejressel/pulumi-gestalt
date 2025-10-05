@@ -112,6 +112,9 @@ pub mod sql_pool_workload_classifier {
     }
     #[allow(dead_code)]
     pub struct SqlPoolWorkloadClassifierResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the session context value that a request can be classified against.
         pub context: pulumi_gestalt_rust::Output<Option<String>>,
         /// The workload classifier end time for classification. It's of the `HH:MM` format in UTC time zone.
@@ -190,6 +193,7 @@ pub mod sql_pool_workload_classifier {
         };
         let o = context.register_resource(request);
         SqlPoolWorkloadClassifierResult {
+            id: o.get_field("id"),
             context: o.get_field("context"),
             end_time: o.get_field("endTime"),
             importance: o.get_field("importance"),

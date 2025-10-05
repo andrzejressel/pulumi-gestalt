@@ -43,6 +43,9 @@ pub mod argo {
     }
     #[allow(dead_code)]
     pub struct ArgoResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether smart routing is enabled. Available values: `on`, `off`.
         pub smart_routing: pulumi_gestalt_rust::Output<Option<String>>,
         /// Whether tiered caching is enabled. Available values: `on`, `off`.
@@ -85,6 +88,7 @@ pub mod argo {
         };
         let o = context.register_resource(request);
         ArgoResult {
+            id: o.get_field("id"),
             smart_routing: o.get_field("smartRouting"),
             tiered_caching: o.get_field("tieredCaching"),
             zone_id: o.get_field("zoneId"),

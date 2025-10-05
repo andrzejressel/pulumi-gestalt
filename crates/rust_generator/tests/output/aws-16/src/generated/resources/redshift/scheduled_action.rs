@@ -131,6 +131,9 @@ pub mod scheduled_action {
     }
     #[allow(dead_code)]
     pub struct ScheduledActionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The description of the scheduled action.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Whether to enable the scheduled action. Default is `true` .
@@ -210,6 +213,7 @@ pub mod scheduled_action {
         };
         let o = context.register_resource(request);
         ScheduledActionResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             enable: o.get_field("enable"),
             end_time: o.get_field("endTime"),

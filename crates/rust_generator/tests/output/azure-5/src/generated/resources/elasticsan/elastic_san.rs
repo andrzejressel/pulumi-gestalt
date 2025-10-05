@@ -79,6 +79,9 @@ pub mod elastic_san {
     }
     #[allow(dead_code)]
     pub struct ElasticSanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the base size of the Elastic SAN resource in TiB. Possible values are between `1` and `100`.
         ///
         /// > **NOTE** When updating `base_size_in_tib`, the new value should be greater than the existing one.
@@ -176,6 +179,7 @@ pub mod elastic_san {
         };
         let o = context.register_resource(request);
         ElasticSanResult {
+            id: o.get_field("id"),
             base_size_in_tib: o.get_field("baseSizeInTib"),
             extended_size_in_tib: o.get_field("extendedSizeInTib"),
             location: o.get_field("location"),

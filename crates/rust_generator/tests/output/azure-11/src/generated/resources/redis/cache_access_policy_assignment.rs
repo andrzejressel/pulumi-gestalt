@@ -72,6 +72,9 @@ pub mod cache_access_policy_assignment {
     }
     #[allow(dead_code)]
     pub struct CacheAccessPolicyAssignmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Access Policy to be assigned. Changing this forces a new Redis Cache Access Policy Assignment to be created.
         pub access_policy_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the Redis Cache Access Policy Assignment. Changing this forces a new Redis Cache Access Policy Assignment to be created.
@@ -129,6 +132,7 @@ pub mod cache_access_policy_assignment {
         };
         let o = context.register_resource(request);
         CacheAccessPolicyAssignmentResult {
+            id: o.get_field("id"),
             access_policy_name: o.get_field("accessPolicyName"),
             name: o.get_field("name"),
             object_id: o.get_field("objectId"),

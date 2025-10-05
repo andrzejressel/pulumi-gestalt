@@ -95,6 +95,9 @@ pub mod management_policy {
     }
     #[allow(dead_code)]
     pub struct ManagementPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `rule` block as documented below.
         pub rules: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::storage::ManagementPolicyRule>>,
@@ -132,6 +135,7 @@ pub mod management_policy {
         };
         let o = context.register_resource(request);
         ManagementPolicyResult {
+            id: o.get_field("id"),
             rules: o.get_field("rules"),
             storage_account_id: o.get_field("storageAccountId"),
         }

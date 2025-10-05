@@ -228,6 +228,9 @@ pub mod consent_store_iam_binding {
     }
     #[allow(dead_code)]
     pub struct ConsentStoreIamBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::healthcare::ConsentStoreIamBindingCondition>,
         >,
@@ -301,6 +304,7 @@ pub mod consent_store_iam_binding {
         };
         let o = context.register_resource(request);
         ConsentStoreIamBindingResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             consent_store_id: o.get_field("consentStoreId"),
             dataset: o.get_field("dataset"),

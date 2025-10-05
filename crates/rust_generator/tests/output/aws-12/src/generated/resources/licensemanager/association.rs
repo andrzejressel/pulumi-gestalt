@@ -60,6 +60,9 @@ pub mod association {
     }
     #[allow(dead_code)]
     pub struct AssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the license configuration.
         pub license_configuration_arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the resource associated with the license configuration.
@@ -97,6 +100,7 @@ pub mod association {
         };
         let o = context.register_resource(request);
         AssociationResult {
+            id: o.get_field("id"),
             license_configuration_arn: o.get_field("licenseConfigurationArn"),
             resource_arn: o.get_field("resourceArn"),
         }

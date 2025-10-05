@@ -93,6 +93,9 @@ pub mod routing_intent {
     }
     #[allow(dead_code)]
     pub struct RoutingIntentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Virtual Hub Routing Intent. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// One or more `routing_policy` blocks as defined below.
@@ -137,6 +140,7 @@ pub mod routing_intent {
         };
         let o = context.register_resource(request);
         RoutingIntentResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             routing_policies: o.get_field("routingPolicies"),
             virtual_hub_id: o.get_field("virtualHubId"),

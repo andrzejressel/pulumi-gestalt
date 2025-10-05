@@ -65,6 +65,9 @@ pub mod vault_resource_guard_association {
     }
     #[allow(dead_code)]
     pub struct VaultResourceGuardAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the Resource Guard which should be associated with. Changing this forces a new resource to be created.
         pub resource_guard_id: pulumi_gestalt_rust::Output<String>,
         /// ID of the Recovery Services Vault which should be associated with. Changing this forces a new resource to be created.
@@ -101,6 +104,7 @@ pub mod vault_resource_guard_association {
         };
         let o = context.register_resource(request);
         VaultResourceGuardAssociationResult {
+            id: o.get_field("id"),
             resource_guard_id: o.get_field("resourceGuardId"),
             vault_id: o.get_field("vaultId"),
         }

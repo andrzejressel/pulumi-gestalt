@@ -172,6 +172,9 @@ pub mod configuration_key {
     }
     #[allow(dead_code)]
     pub struct ConfigurationKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the id of the App Configuration. Changing this forces a new resource to be created.
         pub configuration_store_id: pulumi_gestalt_rust::Output<String>,
         /// The content type of the App Configuration Key. This should only be set when type is set to `kv`.
@@ -273,6 +276,7 @@ pub mod configuration_key {
         };
         let o = context.register_resource(request);
         ConfigurationKeyResult {
+            id: o.get_field("id"),
             configuration_store_id: o.get_field("configurationStoreId"),
             content_type: o.get_field("contentType"),
             etag: o.get_field("etag"),

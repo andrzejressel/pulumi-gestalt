@@ -67,6 +67,9 @@ pub mod source_credential {
     }
     #[allow(dead_code)]
     pub struct SourceCredentialResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of Source Credential.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API.
@@ -118,6 +121,7 @@ pub mod source_credential {
         };
         let o = context.register_resource(request);
         SourceCredentialResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             auth_type: o.get_field("authType"),
             server_type: o.get_field("serverType"),

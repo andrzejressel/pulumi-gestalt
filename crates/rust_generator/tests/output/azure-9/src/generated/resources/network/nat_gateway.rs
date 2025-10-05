@@ -72,6 +72,9 @@ pub mod nat_gateway {
     }
     #[allow(dead_code)]
     pub struct NatGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The idle timeout which should be used in minutes. Defaults to `4`.
         pub idle_timeout_in_minutes: pulumi_gestalt_rust::Output<Option<i32>>,
         /// Specifies the supported Azure location where the NAT Gateway should exist. Changing this forces a new resource to be created.
@@ -150,6 +153,7 @@ pub mod nat_gateway {
         };
         let o = context.register_resource(request);
         NatGatewayResult {
+            id: o.get_field("id"),
             idle_timeout_in_minutes: o.get_field("idleTimeoutInMinutes"),
             location: o.get_field("location"),
             name: o.get_field("name"),

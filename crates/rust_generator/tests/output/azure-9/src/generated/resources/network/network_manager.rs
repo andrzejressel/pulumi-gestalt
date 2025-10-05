@@ -74,6 +74,9 @@ pub mod network_manager {
     }
     #[allow(dead_code)]
     pub struct NetworkManagerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `cross_tenant_scopes` blocks as defined below.
         pub cross_tenant_scopes: pulumi_gestalt_rust::Output<
             Vec<super::super::types::network::NetworkManagerCrossTenantScope>,
@@ -152,6 +155,7 @@ pub mod network_manager {
         };
         let o = context.register_resource(request);
         NetworkManagerResult {
+            id: o.get_field("id"),
             cross_tenant_scopes: o.get_field("crossTenantScopes"),
             description: o.get_field("description"),
             location: o.get_field("location"),

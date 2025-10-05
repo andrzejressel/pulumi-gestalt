@@ -39,6 +39,9 @@ pub mod serverless_cluster {
     }
     #[allow(dead_code)]
     pub struct ServerlessClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the serverless cluster.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies client authentication information for the serverless cluster. See below.
@@ -104,6 +107,7 @@ pub mod serverless_cluster {
         };
         let o = context.register_resource(request);
         ServerlessClusterResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             client_authentication: o.get_field("clientAuthentication"),
             cluster_name: o.get_field("clusterName"),

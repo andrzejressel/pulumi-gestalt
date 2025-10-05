@@ -150,6 +150,9 @@ pub mod volume_replication {
     }
     #[allow(dead_code)]
     pub struct VolumeReplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Create time of the active directory. A timestamp in RFC3339 UTC "Zulu" format. Examples: "2023-06-22T09:13:01.617Z".
         pub create_time: pulumi_gestalt_rust::Output<String>,
         pub delete_destination_volume: pulumi_gestalt_rust::Output<Option<bool>>,
@@ -315,6 +318,7 @@ pub mod volume_replication {
         };
         let o = context.register_resource(request);
         VolumeReplicationResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             delete_destination_volume: o.get_field("deleteDestinationVolume"),
             description: o.get_field("description"),

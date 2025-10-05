@@ -56,6 +56,9 @@ pub mod keystores_aliases_pkcs_12 {
     }
     #[allow(dead_code)]
     pub struct KeystoresAliasesPkcs12Result {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Alias Name
         pub alias: pulumi_gestalt_rust::Output<String>,
         /// Chain of certificates under this alias.
@@ -135,6 +138,7 @@ pub mod keystores_aliases_pkcs_12 {
         };
         let o = context.register_resource(request);
         KeystoresAliasesPkcs12Result {
+            id: o.get_field("id"),
             alias: o.get_field("alias"),
             certs_infos: o.get_field("certsInfos"),
             environment: o.get_field("environment"),

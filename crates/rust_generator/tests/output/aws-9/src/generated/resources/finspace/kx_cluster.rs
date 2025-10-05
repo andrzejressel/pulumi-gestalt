@@ -149,6 +149,9 @@ pub mod kx_cluster {
     }
     #[allow(dead_code)]
     pub struct KxClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) identifier of the KX cluster.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Configuration based on which FinSpace will scale in or scale out nodes in your cluster. See auto_scaling_configuration.
@@ -373,6 +376,7 @@ pub mod kx_cluster {
         };
         let o = context.register_resource(request);
         KxClusterResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             auto_scaling_configuration: o.get_field("autoScalingConfiguration"),
             availability_zone_id: o.get_field("availabilityZoneId"),

@@ -86,6 +86,9 @@ pub mod subscription_cost_management_view {
     }
     #[allow(dead_code)]
     pub struct SubscriptionCostManagementViewResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether the costs data in the Cost Management View are accumulated over time. Changing this forces a new Cost Management View for a Subscription to be created.
         pub accumulated: pulumi_gestalt_rust::Output<bool>,
         /// Chart type of the main view in Cost Analysis. Possible values are `Area`, `GroupedColumn`, `Line`, `StackedColumn` and `Table`.
@@ -184,6 +187,7 @@ pub mod subscription_cost_management_view {
         };
         let o = context.register_resource(request);
         SubscriptionCostManagementViewResult {
+            id: o.get_field("id"),
             accumulated: o.get_field("accumulated"),
             chart_type: o.get_field("chartType"),
             dataset: o.get_field("dataset"),

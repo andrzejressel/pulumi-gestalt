@@ -227,6 +227,9 @@ pub mod queue {
     }
     #[allow(dead_code)]
     pub struct QueueResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Overrides for task-level appEngineRouting. These settings apply only
         /// to App Engine tasks in this queue
         /// Structure is documented below.
@@ -334,6 +337,7 @@ pub mod queue {
         };
         let o = context.register_resource(request);
         QueueResult {
+            id: o.get_field("id"),
             app_engine_routing_override: o.get_field("appEngineRoutingOverride"),
             http_target: o.get_field("httpTarget"),
             location: o.get_field("location"),

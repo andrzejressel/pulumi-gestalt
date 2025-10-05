@@ -71,6 +71,9 @@ pub mod ptr_record {
     }
     #[allow(dead_code)]
     pub struct PTRRecordResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The FQDN of the DNS PTR Record.
         pub fqdn: pulumi_gestalt_rust::Output<String>,
         /// The name of the DNS PTR Record. Changing this forces a new resource to be created.
@@ -138,6 +141,7 @@ pub mod ptr_record {
         };
         let o = context.register_resource(request);
         PTRRecordResult {
+            id: o.get_field("id"),
             fqdn: o.get_field("fqdn"),
             name: o.get_field("name"),
             records: o.get_field("records"),

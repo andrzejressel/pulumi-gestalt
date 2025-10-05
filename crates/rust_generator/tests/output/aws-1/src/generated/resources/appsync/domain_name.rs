@@ -42,6 +42,9 @@ pub mod domain_name {
     }
     #[allow(dead_code)]
     pub struct DomainNameResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Domain name that AppSync provides.
         pub appsync_domain_name: pulumi_gestalt_rust::Output<String>,
         /// ARN of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate. The certifiacte must reside in us-east-1.
@@ -88,6 +91,7 @@ pub mod domain_name {
         };
         let o = context.register_resource(request);
         DomainNameResult {
+            id: o.get_field("id"),
             appsync_domain_name: o.get_field("appsyncDomainName"),
             certificate_arn: o.get_field("certificateArn"),
             description: o.get_field("description"),

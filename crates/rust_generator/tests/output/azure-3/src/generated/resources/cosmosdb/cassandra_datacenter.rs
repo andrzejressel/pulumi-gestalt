@@ -134,6 +134,9 @@ pub mod cassandra_datacenter {
     }
     #[allow(dead_code)]
     pub struct CassandraDatacenterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Determines whether availability zones are enabled. Defaults to `true`.
         pub availability_zones_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The key URI of the customer key to use for the encryption of the backup Storage Account.
@@ -253,6 +256,7 @@ pub mod cassandra_datacenter {
         };
         let o = context.register_resource(request);
         CassandraDatacenterResult {
+            id: o.get_field("id"),
             availability_zones_enabled: o.get_field("availabilityZonesEnabled"),
             backup_storage_customer_key_uri: o.get_field("backupStorageCustomerKeyUri"),
             base64_encoded_yaml_fragment: o.get_field("base64EncodedYamlFragment"),

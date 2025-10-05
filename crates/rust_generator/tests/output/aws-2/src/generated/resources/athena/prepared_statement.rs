@@ -58,6 +58,9 @@ pub mod prepared_statement {
     }
     #[allow(dead_code)]
     pub struct PreparedStatementResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Brief explanation of prepared statement. Maximum length of 1024.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of the prepared statement. Maximum length of 256.
@@ -107,6 +110,7 @@ pub mod prepared_statement {
         };
         let o = context.register_resource(request);
         PreparedStatementResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             name: o.get_field("name"),
             query_statement: o.get_field("queryStatement"),

@@ -76,6 +76,9 @@ pub mod gallery {
     }
     #[allow(dead_code)]
     pub struct GalleryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the Dev Center within which this Dev Center Gallery should exist. Changing this forces a new Dev Center Gallery to be created.
         pub dev_center_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of this Dev Center Gallery. Changing this forces a new Dev Center Gallery to be created.
@@ -118,6 +121,7 @@ pub mod gallery {
         };
         let o = context.register_resource(request);
         GalleryResult {
+            id: o.get_field("id"),
             dev_center_id: o.get_field("devCenterId"),
             name: o.get_field("name"),
             shared_gallery_id: o.get_field("sharedGalleryId"),

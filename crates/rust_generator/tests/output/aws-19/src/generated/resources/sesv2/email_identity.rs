@@ -111,6 +111,9 @@ pub mod email_identity {
     }
     #[allow(dead_code)]
     pub struct EmailIdentityResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Email Identity.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.
@@ -180,6 +183,7 @@ pub mod email_identity {
         };
         let o = context.register_resource(request);
         EmailIdentityResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             configuration_set_name: o.get_field("configurationSetName"),
             dkim_signing_attributes: o.get_field("dkimSigningAttributes"),

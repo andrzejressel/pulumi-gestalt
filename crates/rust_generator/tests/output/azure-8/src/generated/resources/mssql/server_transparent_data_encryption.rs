@@ -158,6 +158,9 @@ pub mod server_transparent_data_encryption {
     }
     #[allow(dead_code)]
     pub struct ServerTransparentDataEncryptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// When enabled, the server will continuously check the key vault for any new versions of the key being used as the TDE protector. If a new version of the key is detected, the TDE protector on the server will be automatically rotated to the latest key version within 60 minutes.
         pub auto_rotation_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// To use customer managed keys from Azure Key Vault, provide the AKV Key ID. To use service managed keys, omit this field.
@@ -213,6 +216,7 @@ pub mod server_transparent_data_encryption {
         };
         let o = context.register_resource(request);
         ServerTransparentDataEncryptionResult {
+            id: o.get_field("id"),
             auto_rotation_enabled: o.get_field("autoRotationEnabled"),
             key_vault_key_id: o.get_field("keyVaultKeyId"),
             managed_hsm_key_id: o.get_field("managedHsmKeyId"),

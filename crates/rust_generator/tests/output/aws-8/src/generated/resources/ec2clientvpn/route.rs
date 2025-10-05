@@ -72,6 +72,9 @@ pub mod route {
     }
     #[allow(dead_code)]
     pub struct RouteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Client VPN endpoint.
         pub client_vpn_endpoint_id: pulumi_gestalt_rust::Output<String>,
         /// A brief description of the route.
@@ -129,6 +132,7 @@ pub mod route {
         };
         let o = context.register_resource(request);
         RouteResult {
+            id: o.get_field("id"),
             client_vpn_endpoint_id: o.get_field("clientVpnEndpointId"),
             description: o.get_field("description"),
             destination_cidr_block: o.get_field("destinationCidrBlock"),

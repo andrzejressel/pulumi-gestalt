@@ -83,6 +83,9 @@ pub mod data_export_rule {
     }
     #[allow(dead_code)]
     pub struct DataExportRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The destination resource ID. It should be a storage account, an event hub namespace or an event hub. If the destination is an event hub namespace, an event hub would be created for each table automatically.
         pub destination_resource_id: pulumi_gestalt_rust::Output<String>,
         /// Is this Log Analytics Data Export Rule enabled? Possible values include `true` or `false`. Defaults to `false`.
@@ -152,6 +155,7 @@ pub mod data_export_rule {
         };
         let o = context.register_resource(request);
         DataExportRuleResult {
+            id: o.get_field("id"),
             destination_resource_id: o.get_field("destinationResourceId"),
             enabled: o.get_field("enabled"),
             export_rule_id: o.get_field("exportRuleId"),

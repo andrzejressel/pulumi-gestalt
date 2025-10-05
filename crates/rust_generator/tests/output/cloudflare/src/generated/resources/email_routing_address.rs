@@ -38,6 +38,9 @@ pub mod email_routing_address {
     }
     #[allow(dead_code)]
     pub struct EmailRoutingAddressResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The date and time the destination address has been created.
@@ -81,6 +84,7 @@ pub mod email_routing_address {
         };
         let o = context.register_resource(request);
         EmailRoutingAddressResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             created: o.get_field("created"),
             email: o.get_field("email"),

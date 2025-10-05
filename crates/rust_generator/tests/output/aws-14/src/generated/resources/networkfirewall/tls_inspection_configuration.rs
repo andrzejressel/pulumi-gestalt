@@ -319,6 +319,9 @@ pub mod tls_inspection_configuration {
     }
     #[allow(dead_code)]
     pub struct TlsInspectionConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the TLS Inspection Configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Certificate Manager certificate block. See Certificate Authority below for details.
@@ -424,6 +427,7 @@ pub mod tls_inspection_configuration {
         };
         let o = context.register_resource(request);
         TlsInspectionConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             certificate_authorities: o.get_field("certificateAuthorities"),
             certificates: o.get_field("certificates"),

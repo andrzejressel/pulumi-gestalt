@@ -204,6 +204,9 @@ pub mod alert_policy {
     }
     #[allow(dead_code)]
     pub struct AlertPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Control over how this alert policy's notification channels are notified.
         pub alert_strategy: pulumi_gestalt_rust::Output<
             Option<super::super::types::monitoring::AlertPolicyAlertStrategy>,
@@ -332,6 +335,7 @@ pub mod alert_policy {
         };
         let o = context.register_resource(request);
         AlertPolicyResult {
+            id: o.get_field("id"),
             alert_strategy: o.get_field("alertStrategy"),
             combiner: o.get_field("combiner"),
             conditions: o.get_field("conditions"),

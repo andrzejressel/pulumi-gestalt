@@ -306,6 +306,9 @@ pub mod managed_instance {
     }
     #[allow(dead_code)]
     pub struct ManagedInstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The administrator login name for the new SQL Managed Instance. Changing this forces a new resource to be created.
         pub administrator_login: pulumi_gestalt_rust::Output<String>,
         /// The password associated with the `administrator_login` user. Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx)
@@ -499,6 +502,7 @@ pub mod managed_instance {
         };
         let o = context.register_resource(request);
         ManagedInstanceResult {
+            id: o.get_field("id"),
             administrator_login: o.get_field("administratorLogin"),
             administrator_login_password: o.get_field("administratorLoginPassword"),
             collation: o.get_field("collation"),

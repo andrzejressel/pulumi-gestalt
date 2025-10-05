@@ -132,6 +132,9 @@ pub mod task {
     }
     #[allow(dead_code)]
     pub struct TaskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the DataSync Task.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the CloudWatch Log Group that is used to monitor and log events in the sync task.
@@ -245,6 +248,7 @@ pub mod task {
         };
         let o = context.register_resource(request);
         TaskResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cloudwatch_log_group_arn: o.get_field("cloudwatchLogGroupArn"),
             destination_location_arn: o.get_field("destinationLocationArn"),

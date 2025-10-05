@@ -60,6 +60,9 @@ pub mod queue_policy {
     }
     #[allow(dead_code)]
     pub struct QueuePolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The JSON policy for the SQS queue.
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// The URL of the SQS Queue to which to attach the policy
@@ -95,6 +98,7 @@ pub mod queue_policy {
         };
         let o = context.register_resource(request);
         QueuePolicyResult {
+            id: o.get_field("id"),
             policy: o.get_field("policy"),
             queue_url: o.get_field("queueUrl"),
         }

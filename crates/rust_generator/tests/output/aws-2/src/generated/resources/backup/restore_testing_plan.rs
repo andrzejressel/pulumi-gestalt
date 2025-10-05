@@ -64,6 +64,9 @@ pub mod restore_testing_plan {
     }
     #[allow(dead_code)]
     pub struct RestoreTestingPlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Restore Testing Plan.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the restore testing plan. Must be between 1 and 50 characters long and contain only alphanumeric characters and underscores.
@@ -140,6 +143,7 @@ pub mod restore_testing_plan {
         };
         let o = context.register_resource(request);
         RestoreTestingPlanResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             recovery_point_selection: o.get_field("recoveryPointSelection"),

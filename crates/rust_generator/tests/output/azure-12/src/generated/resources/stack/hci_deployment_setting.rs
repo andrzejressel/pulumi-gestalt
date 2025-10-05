@@ -35,6 +35,9 @@ pub mod hci_deployment_setting {
     }
     #[allow(dead_code)]
     pub struct HciDeploymentSettingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of IDs of Azure ARC machine resource to be part of cluster. Changing this forces a new Stack HCI Deployment Setting to be created.
         pub arc_resource_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// One or more `scale_unit` blocks as defined below. Changing this forces a new Stack HCI Deployment Setting to be created.
@@ -86,6 +89,7 @@ pub mod hci_deployment_setting {
         };
         let o = context.register_resource(request);
         HciDeploymentSettingResult {
+            id: o.get_field("id"),
             arc_resource_ids: o.get_field("arcResourceIds"),
             scale_units: o.get_field("scaleUnits"),
             stack_hci_cluster_id: o.get_field("stackHciClusterId"),

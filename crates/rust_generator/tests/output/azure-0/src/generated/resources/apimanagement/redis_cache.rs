@@ -79,6 +79,9 @@ pub mod redis_cache {
     }
     #[allow(dead_code)]
     pub struct RedisCacheResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The resource ID of the API Management Service from which to create this external cache. Changing this forces a new API Management Redis Cache to be created.
         pub api_management_id: pulumi_gestalt_rust::Output<String>,
         /// The location where to use cache from. Possible values are `default` and valid Azure regions. Defaults to `default`.
@@ -142,6 +145,7 @@ pub mod redis_cache {
         };
         let o = context.register_resource(request);
         RedisCacheResult {
+            id: o.get_field("id"),
             api_management_id: o.get_field("apiManagementId"),
             cache_location: o.get_field("cacheLocation"),
             connection_string: o.get_field("connectionString"),

@@ -51,6 +51,9 @@ pub mod ingestion {
     }
     #[allow(dead_code)]
     pub struct IngestionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the application.
         /// Refer to the AWS Documentation for the [list of valid values](https://docs.aws.amazon.com/appfabric/latest/api/API_CreateIngestion.html#appfabric-CreateIngestion-request-app)
         pub app: pulumi_gestalt_rust::Output<String>,
@@ -116,6 +119,7 @@ pub mod ingestion {
         };
         let o = context.register_resource(request);
         IngestionResult {
+            id: o.get_field("id"),
             app: o.get_field("app"),
             app_bundle_arn: o.get_field("appBundleArn"),
             arn: o.get_field("arn"),

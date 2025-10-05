@@ -135,6 +135,9 @@ pub mod role_management_policy {
     }
     #[allow(dead_code)]
     pub struct RoleManagementPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `activation_rules` block as defined below.
         pub activation_rules: pulumi_gestalt_rust::Output<
             super::super::types::pim::RoleManagementPolicyActivationRules,
@@ -214,6 +217,7 @@ pub mod role_management_policy {
         };
         let o = context.register_resource(request);
         RoleManagementPolicyResult {
+            id: o.get_field("id"),
             activation_rules: o.get_field("activationRules"),
             active_assignment_rules: o.get_field("activeAssignmentRules"),
             description: o.get_field("description"),

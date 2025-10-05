@@ -160,6 +160,9 @@ pub mod dataset_iam_member {
     }
     #[allow(dead_code)]
     pub struct DatasetIamMemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::healthcare::DatasetIamMemberCondition>,
         >,
@@ -224,6 +227,7 @@ pub mod dataset_iam_member {
         };
         let o = context.register_resource(request);
         DatasetIamMemberResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             dataset_id: o.get_field("datasetId"),
             etag: o.get_field("etag"),

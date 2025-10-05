@@ -47,6 +47,9 @@ pub mod virtual_cluster {
     }
     #[allow(dead_code)]
     pub struct VirtualClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the cluster.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block for the container provider associated with your cluster.
@@ -99,6 +102,7 @@ pub mod virtual_cluster {
         };
         let o = context.register_resource(request);
         VirtualClusterResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             container_provider: o.get_field("containerProvider"),
             name: o.get_field("name"),

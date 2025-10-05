@@ -53,6 +53,9 @@ pub mod env_references {
     }
     #[allow(dead_code)]
     pub struct EnvReferencesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Optional. A human-readable description of this reference.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Apigee environment group associated with the Apigee environment,
@@ -113,6 +116,7 @@ pub mod env_references {
         };
         let o = context.register_resource(request);
         EnvReferencesResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             env_id: o.get_field("envId"),
             name: o.get_field("name"),

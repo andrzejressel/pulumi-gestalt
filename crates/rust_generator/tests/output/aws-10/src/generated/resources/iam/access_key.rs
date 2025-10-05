@@ -80,6 +80,9 @@ pub mod access_key {
     }
     #[allow(dead_code)]
     pub struct AccessKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Date and time in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) that the access key was created.
         pub create_date: pulumi_gestalt_rust::Output<String>,
         /// Encrypted secret, base64 encoded, if `pgp_key` was specified. This attribute is not available for imported resources. The encrypted secret may be decrypted using the command line.
@@ -134,6 +137,7 @@ pub mod access_key {
         };
         let o = context.register_resource(request);
         AccessKeyResult {
+            id: o.get_field("id"),
             create_date: o.get_field("createDate"),
             encrypted_secret: o.get_field("encryptedSecret"),
             encrypted_ses_smtp_password_v4: o.get_field("encryptedSesSmtpPasswordV4"),

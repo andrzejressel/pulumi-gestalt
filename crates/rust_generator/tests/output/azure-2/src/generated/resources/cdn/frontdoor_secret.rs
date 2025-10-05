@@ -575,6 +575,9 @@ pub mod frontdoor_secret {
     }
     #[allow(dead_code)]
     pub struct FrontdoorSecretResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Resource ID of the Front Door Profile. Changing this forces a new Front Door Secret to be created.
         pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Front Door Profile containing this Front Door Secret.
@@ -623,6 +626,7 @@ pub mod frontdoor_secret {
         };
         let o = context.register_resource(request);
         FrontdoorSecretResult {
+            id: o.get_field("id"),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             cdn_frontdoor_profile_name: o.get_field("cdnFrontdoorProfileName"),
             name: o.get_field("name"),

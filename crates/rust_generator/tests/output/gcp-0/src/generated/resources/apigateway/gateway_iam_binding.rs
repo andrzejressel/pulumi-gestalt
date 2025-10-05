@@ -239,6 +239,9 @@ pub mod gateway_iam_binding {
     }
     #[allow(dead_code)]
     pub struct GatewayIamBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::apigateway::GatewayIamBindingCondition>,
         >,
@@ -320,6 +323,7 @@ pub mod gateway_iam_binding {
         };
         let o = context.register_resource(request);
         GatewayIamBindingResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),
             gateway: o.get_field("gateway"),

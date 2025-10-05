@@ -65,6 +65,9 @@ pub mod domain_permissions {
     }
     #[allow(dead_code)]
     pub struct DomainPermissionsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the domain on which to set the resource policy.
         pub domain: pulumi_gestalt_rust::Output<String>,
         /// The account number of the AWS account that owns the domain.
@@ -116,6 +119,7 @@ pub mod domain_permissions {
         };
         let o = context.register_resource(request);
         DomainPermissionsResult {
+            id: o.get_field("id"),
             domain: o.get_field("domain"),
             domain_owner: o.get_field("domainOwner"),
             policy_document: o.get_field("policyDocument"),

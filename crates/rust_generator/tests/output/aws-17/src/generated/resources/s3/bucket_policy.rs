@@ -58,6 +58,9 @@ pub mod bucket_policy {
     }
     #[allow(dead_code)]
     pub struct BucketPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the bucket to which to apply the policy.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// Text of the policy. Although this is a bucket policy rather than an IAM policy, the `aws.iam.getPolicyDocument` data source may be used, so long as it specifies a principal. For more information about building AWS IAM policy documents, see the AWS IAM Policy Document Guide. Note: Bucket policies are limited to 20 KB in size.
@@ -93,6 +96,7 @@ pub mod bucket_policy {
         };
         let o = context.register_resource(request);
         BucketPolicyResult {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             policy: o.get_field("policy"),
         }

@@ -49,6 +49,9 @@ pub mod workers_domain {
     }
     #[allow(dead_code)]
     pub struct WorkersDomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Worker environment. Defaults to `production`.
@@ -105,6 +108,7 @@ pub mod workers_domain {
         };
         let o = context.register_resource(request);
         WorkersDomainResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             environment: o.get_field("environment"),
             hostname: o.get_field("hostname"),

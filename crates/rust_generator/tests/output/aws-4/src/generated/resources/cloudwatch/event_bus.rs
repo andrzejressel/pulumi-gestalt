@@ -68,6 +68,9 @@ pub mod event_bus {
     }
     #[allow(dead_code)]
     pub struct EventBusResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the event bus.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Event bus description.
@@ -134,6 +137,7 @@ pub mod event_bus {
         };
         let o = context.register_resource(request);
         EventBusResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             event_source_name: o.get_field("eventSourceName"),

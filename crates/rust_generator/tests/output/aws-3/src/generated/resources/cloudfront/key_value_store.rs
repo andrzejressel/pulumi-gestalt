@@ -47,6 +47,9 @@ pub mod key_value_store {
     }
     #[allow(dead_code)]
     pub struct KeyValueStoreResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) identifying your CloudFront KeyValueStore.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Comment.
@@ -97,6 +100,7 @@ pub mod key_value_store {
         };
         let o = context.register_resource(request);
         KeyValueStoreResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             comment: o.get_field("comment"),
             etag: o.get_field("etag"),

@@ -67,6 +67,9 @@ pub mod data_connector_azure_security_center {
     }
     #[allow(dead_code)]
     pub struct DataConnectorAzureSecurityCenterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Log Analytics Workspace that this Azure Security Center Data Connector resides in. Changing this forces a new Azure Security Center Data Connector to be created.
         pub log_analytics_workspace_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Azure Security Center Data Connector. Changing this forces a new Azure Security Center Data Connector to be created.
@@ -112,6 +115,7 @@ pub mod data_connector_azure_security_center {
         };
         let o = context.register_resource(request);
         DataConnectorAzureSecurityCenterResult {
+            id: o.get_field("id"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),
             name: o.get_field("name"),
             subscription_id: o.get_field("subscriptionId"),

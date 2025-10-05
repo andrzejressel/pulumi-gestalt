@@ -149,6 +149,9 @@ pub mod node_group {
     }
     #[allow(dead_code)]
     pub struct NodeGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Type of Amazon Machine Image (AMI) associated with the EKS Node Group. See the [AWS documentation](https://docs.aws.amazon.com/eks/latest/APIReference/API_Nodegroup.html#AmazonEKS-Type-Nodegroup-amiType) for valid values. This provider will only perform drift detection if a configuration value is provided.
         pub ami_type: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the EKS Node Group.
@@ -333,6 +336,7 @@ pub mod node_group {
         };
         let o = context.register_resource(request);
         NodeGroupResult {
+            id: o.get_field("id"),
             ami_type: o.get_field("amiType"),
             arn: o.get_field("arn"),
             capacity_type: o.get_field("capacityType"),

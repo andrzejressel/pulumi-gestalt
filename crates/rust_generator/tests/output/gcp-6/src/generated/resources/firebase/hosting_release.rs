@@ -184,6 +184,9 @@ pub mod hosting_release {
     }
     #[allow(dead_code)]
     pub struct HostingReleaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the channel to which the release belongs. If not provided, the release will
         /// belong to the default "live" channel
         pub channel_id: pulumi_gestalt_rust::Output<Option<String>>,
@@ -258,6 +261,7 @@ pub mod hosting_release {
         };
         let o = context.register_resource(request);
         HostingReleaseResult {
+            id: o.get_field("id"),
             channel_id: o.get_field("channelId"),
             message: o.get_field("message"),
             name: o.get_field("name"),

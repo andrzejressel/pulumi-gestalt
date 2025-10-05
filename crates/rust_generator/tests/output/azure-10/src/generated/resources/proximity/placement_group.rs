@@ -61,6 +61,9 @@ pub mod placement_group {
     }
     #[allow(dead_code)]
     pub struct PlacementGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the supported sizes of Virtual Machines that can be created in the Proximity Placement Group.
         ///
         /// > **NOTE:** Removing `allowed_vm_sizes` after it is set forces a new resource to be created.
@@ -130,6 +133,7 @@ pub mod placement_group {
         };
         let o = context.register_resource(request);
         PlacementGroupResult {
+            id: o.get_field("id"),
             allowed_vm_sizes: o.get_field("allowedVmSizes"),
             location: o.get_field("location"),
             name: o.get_field("name"),

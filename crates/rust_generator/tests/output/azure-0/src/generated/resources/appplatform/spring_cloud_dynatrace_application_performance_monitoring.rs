@@ -90,6 +90,9 @@ pub mod spring_cloud_dynatrace_application_performance_monitoring {
     }
     #[allow(dead_code)]
     pub struct SpringCloudDynatraceApplicationPerformanceMonitoringResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the API token of the Dynatrace environment.
         pub api_token: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the API Url of the Dynatrace environment.
@@ -177,6 +180,7 @@ pub mod spring_cloud_dynatrace_application_performance_monitoring {
         };
         let o = context.register_resource(request);
         SpringCloudDynatraceApplicationPerformanceMonitoringResult {
+            id: o.get_field("id"),
             api_token: o.get_field("apiToken"),
             api_url: o.get_field("apiUrl"),
             connection_point: o.get_field("connectionPoint"),

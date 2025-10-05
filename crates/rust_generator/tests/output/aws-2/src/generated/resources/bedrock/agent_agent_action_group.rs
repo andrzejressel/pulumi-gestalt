@@ -196,6 +196,9 @@ pub mod agent_agent_action_group {
     }
     #[allow(dead_code)]
     pub struct AgentAgentActionGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Lambda function containing the business logic that is carried out upon invoking the action or custom control method for handling the information elicited from the user. See `action_group_executor` Block for details.
         ///
         /// The following arguments are optional:
@@ -322,6 +325,7 @@ pub mod agent_agent_action_group {
         };
         let o = context.register_resource(request);
         AgentAgentActionGroupResult {
+            id: o.get_field("id"),
             action_group_executor: o.get_field("actionGroupExecutor"),
             action_group_id: o.get_field("actionGroupId"),
             action_group_name: o.get_field("actionGroupName"),

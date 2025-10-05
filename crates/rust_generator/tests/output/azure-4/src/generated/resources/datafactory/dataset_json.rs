@@ -117,6 +117,9 @@ pub mod dataset_json {
     }
     #[allow(dead_code)]
     pub struct DatasetJsonResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Dataset.
         ///
         /// The following supported arguments are specific to JSON Dataset:
@@ -240,6 +243,7 @@ pub mod dataset_json {
         };
         let o = context.register_resource(request);
         DatasetJsonResult {
+            id: o.get_field("id"),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),
             azure_blob_storage_location: o.get_field("azureBlobStorageLocation"),

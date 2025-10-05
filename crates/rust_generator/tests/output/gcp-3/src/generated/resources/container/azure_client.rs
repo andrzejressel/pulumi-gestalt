@@ -76,6 +76,9 @@ pub mod azure_client {
     }
     #[allow(dead_code)]
     pub struct AzureClientResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Active Directory Application ID.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// Output only. The PEM encoded x509 certificate.
@@ -142,6 +145,7 @@ pub mod azure_client {
         };
         let o = context.register_resource(request);
         AzureClientResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             certificate: o.get_field("certificate"),
             create_time: o.get_field("createTime"),

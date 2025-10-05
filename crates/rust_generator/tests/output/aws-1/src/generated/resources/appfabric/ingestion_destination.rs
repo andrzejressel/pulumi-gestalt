@@ -83,6 +83,9 @@ pub mod ingestion_destination {
     }
     #[allow(dead_code)]
     pub struct IngestionDestinationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the app bundle to use for the request.
         pub app_bundle_arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Ingestion Destination.
@@ -167,6 +170,7 @@ pub mod ingestion_destination {
         };
         let o = context.register_resource(request);
         IngestionDestinationResult {
+            id: o.get_field("id"),
             app_bundle_arn: o.get_field("appBundleArn"),
             arn: o.get_field("arn"),
             destination_configuration: o.get_field("destinationConfiguration"),

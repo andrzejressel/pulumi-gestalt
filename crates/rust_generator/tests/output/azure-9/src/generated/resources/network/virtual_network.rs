@@ -114,6 +114,9 @@ pub mod virtual_network {
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The address space that is used the virtual network. You can supply more than one address space.
         pub address_spaces: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The BGP community attribute in format `<as-number>:<community-value>`.
@@ -237,6 +240,7 @@ pub mod virtual_network {
         };
         let o = context.register_resource(request);
         VirtualNetworkResult {
+            id: o.get_field("id"),
             address_spaces: o.get_field("addressSpaces"),
             bgp_community: o.get_field("bgpCommunity"),
             ddos_protection_plan: o.get_field("ddosProtectionPlan"),

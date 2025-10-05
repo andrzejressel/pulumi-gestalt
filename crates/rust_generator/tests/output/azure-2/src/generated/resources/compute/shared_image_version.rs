@@ -113,6 +113,9 @@ pub mod shared_image_version {
     }
     #[allow(dead_code)]
     pub struct SharedImageVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// URI of the Azure Storage Blob used to create the Image Version. Changing this forces a new resource to be created.
         ///
         /// > **NOTE:** You must specify exact one of `blob_uri`, `managed_image_id` and `os_disk_snapshot_id`.
@@ -259,6 +262,7 @@ pub mod shared_image_version {
         };
         let o = context.register_resource(request);
         SharedImageVersionResult {
+            id: o.get_field("id"),
             blob_uri: o.get_field("blobUri"),
             deletion_of_replicated_locations_enabled: o
                 .get_field("deletionOfReplicatedLocationsEnabled"),

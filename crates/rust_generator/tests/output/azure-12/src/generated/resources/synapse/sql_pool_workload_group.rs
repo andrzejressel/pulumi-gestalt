@@ -106,6 +106,9 @@ pub mod sql_pool_workload_group {
     }
     #[allow(dead_code)]
     pub struct SqlPoolWorkloadGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The workload group importance level. Defaults to `normal`.
         pub importance: pulumi_gestalt_rust::Output<Option<String>>,
         /// The workload group cap percentage resource.
@@ -189,6 +192,7 @@ pub mod sql_pool_workload_group {
         };
         let o = context.register_resource(request);
         SqlPoolWorkloadGroupResult {
+            id: o.get_field("id"),
             importance: o.get_field("importance"),
             max_resource_percent: o.get_field("maxResourcePercent"),
             max_resource_percent_per_request: o

@@ -66,6 +66,9 @@ pub mod key {
     }
     #[allow(dead_code)]
     pub struct KeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the key.
         pub arn: pulumi_gestalt_rust::Output<String>,
         pub deletion_window_in_days: pulumi_gestalt_rust::Output<i32>,
@@ -158,6 +161,7 @@ pub mod key {
         };
         let o = context.register_resource(request);
         KeyResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             deletion_window_in_days: o.get_field("deletionWindowInDays"),
             enabled: o.get_field("enabled"),

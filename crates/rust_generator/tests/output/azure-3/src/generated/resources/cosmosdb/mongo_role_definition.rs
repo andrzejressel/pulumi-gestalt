@@ -95,6 +95,9 @@ pub mod mongo_role_definition {
     }
     #[allow(dead_code)]
     pub struct MongoRoleDefinitionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The resource ID of the Mongo DB. Changing this forces a new resource to be created.
         pub cosmos_mongo_database_id: pulumi_gestalt_rust::Output<String>,
         /// A list of Mongo Roles which are inherited to the Mongo Role Definition.
@@ -150,6 +153,7 @@ pub mod mongo_role_definition {
         };
         let o = context.register_resource(request);
         MongoRoleDefinitionResult {
+            id: o.get_field("id"),
             cosmos_mongo_database_id: o.get_field("cosmosMongoDatabaseId"),
             inherited_role_names: o.get_field("inheritedRoleNames"),
             privileges: o.get_field("privileges"),

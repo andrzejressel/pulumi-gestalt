@@ -60,6 +60,9 @@ pub mod group_membership {
     }
     #[allow(dead_code)]
     pub struct GroupMembershipResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The identifier for a group in the Identity Store.
         pub group_id: pulumi_gestalt_rust::Output<String>,
         /// Identity Store ID associated with the Single Sign-On Instance.
@@ -104,6 +107,7 @@ pub mod group_membership {
         };
         let o = context.register_resource(request);
         GroupMembershipResult {
+            id: o.get_field("id"),
             group_id: o.get_field("groupId"),
             identity_store_id: o.get_field("identityStoreId"),
             member_id: o.get_field("memberId"),

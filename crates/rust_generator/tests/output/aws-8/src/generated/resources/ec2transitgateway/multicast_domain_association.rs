@@ -53,6 +53,9 @@ pub mod multicast_domain_association {
     }
     #[allow(dead_code)]
     pub struct MulticastDomainAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the subnet to associate with the transit gateway multicast domain.
         pub subnet_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the transit gateway attachment.
@@ -100,6 +103,7 @@ pub mod multicast_domain_association {
         };
         let o = context.register_resource(request);
         MulticastDomainAssociationResult {
+            id: o.get_field("id"),
             subnet_id: o.get_field("subnetId"),
             transit_gateway_attachment_id: o.get_field("transitGatewayAttachmentId"),
             transit_gateway_multicast_domain_id: o

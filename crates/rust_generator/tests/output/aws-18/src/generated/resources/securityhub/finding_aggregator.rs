@@ -81,6 +81,9 @@ pub mod finding_aggregator {
     }
     #[allow(dead_code)]
     pub struct FindingAggregatorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether to aggregate findings from all of the available Regions or from a specified list. The options are `ALL_REGIONS`, `ALL_REGIONS_EXCEPT_SPECIFIED` or `SPECIFIED_REGIONS`. When `ALL_REGIONS` or `ALL_REGIONS_EXCEPT_SPECIFIED` are used, Security Hub will automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.
         pub linking_mode: pulumi_gestalt_rust::Output<String>,
         /// List of regions to include or exclude (required if `linking_mode` is set to `ALL_REGIONS_EXCEPT_SPECIFIED` or `SPECIFIED_REGIONS`)
@@ -116,6 +119,7 @@ pub mod finding_aggregator {
         };
         let o = context.register_resource(request);
         FindingAggregatorResult {
+            id: o.get_field("id"),
             linking_mode: o.get_field("linkingMode"),
             specified_regions: o.get_field("specifiedRegions"),
         }

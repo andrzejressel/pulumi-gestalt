@@ -54,6 +54,9 @@ pub mod user_profile {
     }
     #[allow(dead_code)]
     pub struct UserProfileResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Details about the user profile.
         pub details: pulumi_gestalt_rust::Output<
             Vec<super::super::types::datazone::UserProfileDetail>,
@@ -119,6 +122,7 @@ pub mod user_profile {
         };
         let o = context.register_resource(request);
         UserProfileResult {
+            id: o.get_field("id"),
             details: o.get_field("details"),
             domain_identifier: o.get_field("domainIdentifier"),
             status: o.get_field("status"),

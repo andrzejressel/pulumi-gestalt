@@ -112,6 +112,9 @@ pub mod application {
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Resource ID for a Virtual Desktop Application Group to associate with the Virtual Desktop Application. Changing this forces a new resource to be created.
         pub application_group_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether this published application can be launched with command line arguments provided by the client, command line arguments specified at publish time, or no command line arguments at all. Possible values include: `DoNotAllow`, `Allow`, `Require`.
@@ -207,6 +210,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
+            id: o.get_field("id"),
             application_group_id: o.get_field("applicationGroupId"),
             command_line_argument_policy: o.get_field("commandLineArgumentPolicy"),
             command_line_arguments: o.get_field("commandLineArguments"),

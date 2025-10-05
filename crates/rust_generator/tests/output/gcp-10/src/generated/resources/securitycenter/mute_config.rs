@@ -72,6 +72,9 @@ pub mod mute_config {
     }
     #[allow(dead_code)]
     pub struct MuteConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time at which the mute config was created. This field is set by
         /// the server and will be ignored if provided on config creation.
         pub create_time: pulumi_gestalt_rust::Output<String>,
@@ -146,6 +149,7 @@ pub mod mute_config {
         };
         let o = context.register_resource(request);
         MuteConfigResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             filter: o.get_field("filter"),

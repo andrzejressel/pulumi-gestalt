@@ -80,6 +80,9 @@ pub mod definition {
     }
     #[allow(dead_code)]
     pub struct DefinitionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The description of the policy definition.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The display name of the policy definition.
@@ -168,6 +171,7 @@ pub mod definition {
         };
         let o = context.register_resource(request);
         DefinitionResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             management_group_id: o.get_field("managementGroupId"),

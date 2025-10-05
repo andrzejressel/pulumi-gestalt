@@ -106,6 +106,9 @@ pub mod dataset_azure_blob {
     }
     #[allow(dead_code)]
     pub struct DatasetAzureBlobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Dataset.
         ///
         /// The following supported arguments are specific to Azure Blob Dataset:
@@ -230,6 +233,7 @@ pub mod dataset_azure_blob {
         };
         let o = context.register_resource(request);
         DatasetAzureBlobResult {
+            id: o.get_field("id"),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),
             data_factory_id: o.get_field("dataFactoryId"),

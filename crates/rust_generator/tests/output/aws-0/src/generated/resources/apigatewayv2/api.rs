@@ -111,6 +111,9 @@ pub mod api {
     }
     #[allow(dead_code)]
     pub struct ApiResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// URI of the API, of the form `https://{api-id}.execute-api.{region}.amazonaws.com` for HTTP APIs and `wss://{api-id}.execute-api.{region}.amazonaws.com` for WebSocket APIs.
         pub api_endpoint: pulumi_gestalt_rust::Output<String>,
         /// An [API key selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions).
@@ -259,6 +262,7 @@ pub mod api {
         };
         let o = context.register_resource(request);
         ApiResult {
+            id: o.get_field("id"),
             api_endpoint: o.get_field("apiEndpoint"),
             api_key_selection_expression: o.get_field("apiKeySelectionExpression"),
             arn: o.get_field("arn"),

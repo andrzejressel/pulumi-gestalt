@@ -47,6 +47,9 @@ pub mod source_code_token {
     }
     #[allow(dead_code)]
     pub struct SourceCodeTokenResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The OAuth access token.
         pub token: pulumi_gestalt_rust::Output<String>,
         /// The OAuth access token secret.
@@ -89,6 +92,7 @@ pub mod source_code_token {
         };
         let o = context.register_resource(request);
         SourceCodeTokenResult {
+            id: o.get_field("id"),
             token: o.get_field("token"),
             token_secret: o.get_field("tokenSecret"),
             type_: o.get_field("type"),

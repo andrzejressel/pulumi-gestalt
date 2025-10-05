@@ -67,6 +67,9 @@ pub mod alias {
     }
     #[allow(dead_code)]
     pub struct AliasResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) identifying your state machine alias.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The date the state machine alias was created.
@@ -117,6 +120,7 @@ pub mod alias {
         };
         let o = context.register_resource(request);
         AliasResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             creation_date: o.get_field("creationDate"),
             description: o.get_field("description"),

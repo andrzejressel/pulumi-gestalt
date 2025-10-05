@@ -66,6 +66,9 @@ pub mod dev_box_definition {
     }
     #[allow(dead_code)]
     pub struct DevBoxDefinitionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the associated Dev Center. Changing this forces a new resource to be created.
         pub dev_center_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the image for the Dev Center Dev Box Definition.
@@ -131,6 +134,7 @@ pub mod dev_box_definition {
         };
         let o = context.register_resource(request);
         DevBoxDefinitionResult {
+            id: o.get_field("id"),
             dev_center_id: o.get_field("devCenterId"),
             image_reference_id: o.get_field("imageReferenceId"),
             location: o.get_field("location"),

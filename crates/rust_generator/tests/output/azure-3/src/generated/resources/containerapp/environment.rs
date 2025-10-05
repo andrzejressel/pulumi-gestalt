@@ -111,6 +111,9 @@ pub mod environment {
     }
     #[allow(dead_code)]
     pub struct EnvironmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Custom Domain Verification for this Container App Environment.
         pub custom_domain_verification_id: pulumi_gestalt_rust::Output<String>,
         /// Application Insights connection string used by Dapr to export Service to Service communication telemetry. Changing this forces a new resource to be created.
@@ -259,6 +262,7 @@ pub mod environment {
         };
         let o = context.register_resource(request);
         EnvironmentResult {
+            id: o.get_field("id"),
             custom_domain_verification_id: o.get_field("customDomainVerificationId"),
             dapr_application_insights_connection_string: o
                 .get_field("daprApplicationInsightsConnectionString"),

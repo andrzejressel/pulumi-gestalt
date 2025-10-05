@@ -94,6 +94,9 @@ pub mod configuration_policy_association {
     }
     #[allow(dead_code)]
     pub struct ConfigurationPolicyAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The universally unique identifier (UUID) of the configuration policy.
         pub policy_id: pulumi_gestalt_rust::Output<String>,
         /// The identifier of the target account, organizational unit, or the root to associate with the specified configuration.
@@ -130,6 +133,7 @@ pub mod configuration_policy_association {
         };
         let o = context.register_resource(request);
         ConfigurationPolicyAssociationResult {
+            id: o.get_field("id"),
             policy_id: o.get_field("policyId"),
             target_id: o.get_field("targetId"),
         }

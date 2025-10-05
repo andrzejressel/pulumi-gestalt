@@ -67,6 +67,9 @@ pub mod file_system_policy {
     }
     #[allow(dead_code)]
     pub struct FileSystemPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A flag to indicate whether to bypass the `aws.efs.FileSystemPolicy` lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future `PutFileSystemPolicy` requests on the file system. Set `bypass_policy_lockout_safety_check` to `true` only when you intend to prevent the principal that is making the request from making a subsequent `PutFileSystemPolicy` request on the file system. The default value is `false`.
         pub bypass_policy_lockout_safety_check: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -115,6 +118,7 @@ pub mod file_system_policy {
         };
         let o = context.register_resource(request);
         FileSystemPolicyResult {
+            id: o.get_field("id"),
             bypass_policy_lockout_safety_check: o
                 .get_field("bypassPolicyLockoutSafetyCheck"),
             file_system_id: o.get_field("fileSystemId"),

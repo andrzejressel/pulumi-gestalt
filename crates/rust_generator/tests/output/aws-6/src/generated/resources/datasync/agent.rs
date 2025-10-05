@@ -98,6 +98,9 @@ pub mod agent {
     }
     #[allow(dead_code)]
     pub struct AgentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// DataSync Agent activation key during resource creation. Conflicts with `ip_address`. If an `ip_address` is provided instead, the provider will retrieve the `activation_key` as part of the resource creation.
         pub activation_key: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the DataSync Agent.
@@ -185,6 +188,7 @@ pub mod agent {
         };
         let o = context.register_resource(request);
         AgentResult {
+            id: o.get_field("id"),
             activation_key: o.get_field("activationKey"),
             arn: o.get_field("arn"),
             ip_address: o.get_field("ipAddress"),

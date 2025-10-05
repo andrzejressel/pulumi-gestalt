@@ -85,6 +85,9 @@ pub mod statement {
     }
     #[allow(dead_code)]
     pub struct StatementResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.
         pub cluster_identifier: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of the database.
@@ -172,6 +175,7 @@ pub mod statement {
         };
         let o = context.register_resource(request);
         StatementResult {
+            id: o.get_field("id"),
             cluster_identifier: o.get_field("clusterIdentifier"),
             database: o.get_field("database"),
             db_user: o.get_field("dbUser"),

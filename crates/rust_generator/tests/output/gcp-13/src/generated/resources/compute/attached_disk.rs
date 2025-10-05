@@ -131,6 +131,9 @@ pub mod attached_disk {
     }
     #[allow(dead_code)]
     pub struct AttachedDiskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a unique device name of your choice that is
         /// reflected into the /dev/disk/by-id/google-* tree of a Linux operating
         /// system running within the instance. This name can be used to
@@ -231,6 +234,7 @@ pub mod attached_disk {
         };
         let o = context.register_resource(request);
         AttachedDiskResult {
+            id: o.get_field("id"),
             device_name: o.get_field("deviceName"),
             disk: o.get_field("disk"),
             instance: o.get_field("instance"),

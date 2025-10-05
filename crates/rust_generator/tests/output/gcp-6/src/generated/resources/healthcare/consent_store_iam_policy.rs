@@ -210,6 +210,9 @@ pub mod consent_store_iam_policy {
     }
     #[allow(dead_code)]
     pub struct ConsentStoreIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Used to find the parent resource to bind the IAM policy to
         pub consent_store_id: pulumi_gestalt_rust::Output<String>,
         /// Identifies the dataset addressed by this request. Must be in the format
@@ -257,6 +260,7 @@ pub mod consent_store_iam_policy {
         };
         let o = context.register_resource(request);
         ConsentStoreIamPolicyResult {
+            id: o.get_field("id"),
             consent_store_id: o.get_field("consentStoreId"),
             dataset: o.get_field("dataset"),
             etag: o.get_field("etag"),

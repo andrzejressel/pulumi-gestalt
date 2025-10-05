@@ -38,6 +38,9 @@ pub mod group {
     }
     #[allow(dead_code)]
     pub struct GroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN assigned by AWS for this group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The group's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: `=,.@-_.`. Group names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
@@ -77,6 +80,7 @@ pub mod group {
         };
         let o = context.register_resource(request);
         GroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             path: o.get_field("path"),

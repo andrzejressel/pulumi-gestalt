@@ -57,6 +57,9 @@ pub mod data_integration {
     }
     #[allow(dead_code)]
     pub struct DataIntegrationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Data Integration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the description of the Data Integration.
@@ -130,6 +133,7 @@ pub mod data_integration {
         };
         let o = context.register_resource(request);
         DataIntegrationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             kms_key: o.get_field("kmsKey"),

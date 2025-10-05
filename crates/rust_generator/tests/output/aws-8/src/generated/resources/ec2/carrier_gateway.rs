@@ -36,6 +36,9 @@ pub mod carrier_gateway {
     }
     #[allow(dead_code)]
     pub struct CarrierGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the carrier gateway.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The AWS account ID of the owner of the carrier gateway.
@@ -81,6 +84,7 @@ pub mod carrier_gateway {
         };
         let o = context.register_resource(request);
         CarrierGatewayResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             owner_id: o.get_field("ownerId"),
             tags: o.get_field("tags"),

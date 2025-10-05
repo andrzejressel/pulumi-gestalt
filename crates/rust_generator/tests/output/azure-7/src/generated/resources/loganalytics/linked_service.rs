@@ -68,6 +68,9 @@ pub mod linked_service {
     }
     #[allow(dead_code)]
     pub struct LinkedServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The generated name of the Linked Service. The format for this attribute is always `<workspace name>/<linked service type>`(e.g. `workspace1/Automation` or `workspace1/Cluster`)
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the readable Resource that will be linked to the workspace. This should be used for linking to an Automation Account resource.
@@ -121,6 +124,7 @@ pub mod linked_service {
         };
         let o = context.register_resource(request);
         LinkedServiceResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             read_access_id: o.get_field("readAccessId"),
             resource_group_name: o.get_field("resourceGroupName"),

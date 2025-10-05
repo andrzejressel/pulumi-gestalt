@@ -97,6 +97,9 @@ pub mod dataset_cosmos_db_api {
     }
     #[allow(dead_code)]
     pub struct DatasetCosmosDBApiResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Dataset.
         ///
         /// The following supported arguments are specific to Azure Cosmos DB SQL API Dataset:
@@ -198,6 +201,7 @@ pub mod dataset_cosmos_db_api {
         };
         let o = context.register_resource(request);
         DatasetCosmosDBApiResult {
+            id: o.get_field("id"),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),
             collection_name: o.get_field("collectionName"),

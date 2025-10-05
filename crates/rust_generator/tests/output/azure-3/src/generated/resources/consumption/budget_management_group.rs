@@ -109,6 +109,9 @@ pub mod budget_management_group {
     }
     #[allow(dead_code)]
     pub struct BudgetManagementGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The total amount of cost to track with the budget.
         pub amount: pulumi_gestalt_rust::Output<f64>,
         /// (Optional) The ETag of the Management Group Consumption Budget.
@@ -193,6 +196,7 @@ pub mod budget_management_group {
         };
         let o = context.register_resource(request);
         BudgetManagementGroupResult {
+            id: o.get_field("id"),
             amount: o.get_field("amount"),
             etag: o.get_field("etag"),
             filter: o.get_field("filter"),

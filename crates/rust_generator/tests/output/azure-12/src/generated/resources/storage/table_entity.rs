@@ -66,6 +66,9 @@ pub mod table_entity {
     }
     #[allow(dead_code)]
     pub struct TableEntityResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of key/value pairs that describe the entity to be inserted/merged in to the storage table.
         pub entity: pulumi_gestalt_rust::Output<
             std::collections::HashMap<String, String>,
@@ -117,6 +120,7 @@ pub mod table_entity {
         };
         let o = context.register_resource(request);
         TableEntityResult {
+            id: o.get_field("id"),
             entity: o.get_field("entity"),
             partition_key: o.get_field("partitionKey"),
             row_key: o.get_field("rowKey"),

@@ -189,6 +189,9 @@ pub mod enterprise_key {
     }
     #[allow(dead_code)]
     pub struct EnterpriseKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Settings for keys that can be used by Android apps.
         pub android_settings: pulumi_gestalt_rust::Output<
             Option<super::super::types::recaptcha::EnterpriseKeyAndroidSettings>,
@@ -297,6 +300,7 @@ pub mod enterprise_key {
         };
         let o = context.register_resource(request);
         EnterpriseKeyResult {
+            id: o.get_field("id"),
             android_settings: o.get_field("androidSettings"),
             create_time: o.get_field("createTime"),
             display_name: o.get_field("displayName"),

@@ -50,6 +50,9 @@ pub mod framework_share {
     }
     #[allow(dead_code)]
     pub struct FrameworkShareResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Comment from the sender about the share request.
         pub comment: pulumi_gestalt_rust::Output<Option<String>>,
         /// Amazon Web Services account of the recipient.
@@ -103,6 +106,7 @@ pub mod framework_share {
         };
         let o = context.register_resource(request);
         FrameworkShareResult {
+            id: o.get_field("id"),
             comment: o.get_field("comment"),
             destination_account: o.get_field("destinationAccount"),
             destination_region: o.get_field("destinationRegion"),

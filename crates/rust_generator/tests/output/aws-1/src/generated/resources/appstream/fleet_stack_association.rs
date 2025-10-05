@@ -54,6 +54,9 @@ pub mod fleet_stack_association {
     }
     #[allow(dead_code)]
     pub struct FleetStackAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the fleet.
         pub fleet_name: pulumi_gestalt_rust::Output<String>,
         /// Name of the stack.
@@ -89,6 +92,7 @@ pub mod fleet_stack_association {
         };
         let o = context.register_resource(request);
         FleetStackAssociationResult {
+            id: o.get_field("id"),
             fleet_name: o.get_field("fleetName"),
             stack_name: o.get_field("stackName"),
         }

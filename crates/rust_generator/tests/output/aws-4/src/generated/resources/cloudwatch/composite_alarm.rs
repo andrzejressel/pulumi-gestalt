@@ -71,6 +71,9 @@ pub mod composite_alarm {
     }
     #[allow(dead_code)]
     pub struct CompositeAlarmResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. Defaults to `true`.
         pub actions_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Actions will be suppressed if the suppressor alarm is in the ALARM state.
@@ -167,6 +170,7 @@ pub mod composite_alarm {
         };
         let o = context.register_resource(request);
         CompositeAlarmResult {
+            id: o.get_field("id"),
             actions_enabled: o.get_field("actionsEnabled"),
             actions_suppressor: o.get_field("actionsSuppressor"),
             alarm_actions: o.get_field("alarmActions"),

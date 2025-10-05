@@ -97,6 +97,9 @@ pub mod connector {
     }
     #[allow(dead_code)]
     pub struct ConnectorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IAM Role which provides read and write access to the parent directory of the file location mentioned in the StartFileTransfer request.
         pub access_role: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the connector.
@@ -180,6 +183,7 @@ pub mod connector {
         };
         let o = context.register_resource(request);
         ConnectorResult {
+            id: o.get_field("id"),
             access_role: o.get_field("accessRole"),
             arn: o.get_field("arn"),
             as2_config: o.get_field("as2Config"),

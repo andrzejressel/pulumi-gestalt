@@ -450,6 +450,9 @@ pub mod spoke {
     }
     #[allow(dead_code)]
     pub struct SpokeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Output only. The time the spoke was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// An optional description of the spoke.
@@ -600,6 +603,7 @@ pub mod spoke {
         };
         let o = context.register_resource(request);
         SpokeResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

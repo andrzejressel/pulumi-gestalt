@@ -58,6 +58,9 @@ pub mod get_host_pool_registration_info {
     }
     #[allow(dead_code)]
     pub struct getHostPoolRegistrationInfoResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A valid `RFC3339Time` for the expiration of the token..
         pub expiration_date: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Virtual Desktop Host Pool to link the Registration Info to. Changing this forces a new Registration Info resource to be created. Only a single virtual_desktop_host_pool_registration_info resource should be associated with a given hostpool. Assigning multiple resources will produce inconsistent results.
@@ -96,6 +99,7 @@ pub mod get_host_pool_registration_info {
         };
         let o = context.register_resource(request);
         getHostPoolRegistrationInfoResult {
+            id: o.get_field("id"),
             expiration_date: o.get_field("expirationDate"),
             hostpool_id: o.get_field("hostpoolId"),
             token: o.get_field("token"),

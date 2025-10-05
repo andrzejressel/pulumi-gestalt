@@ -129,6 +129,9 @@ pub mod folder_feed {
     }
     #[allow(dead_code)]
     pub struct FolderFeedResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of the full names of the assets to receive updates. You must specify either or both of assetNames and assetTypes.
         /// Only asset updates matching specified assetNames and assetTypes are exported to the feed. For example:
         /// //compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1. See
@@ -228,6 +231,7 @@ pub mod folder_feed {
         };
         let o = context.register_resource(request);
         FolderFeedResult {
+            id: o.get_field("id"),
             asset_names: o.get_field("assetNames"),
             asset_types: o.get_field("assetTypes"),
             billing_project: o.get_field("billingProject"),

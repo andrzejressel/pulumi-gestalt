@@ -67,6 +67,9 @@ pub mod voice_connector_termination_credentials {
     }
     #[allow(dead_code)]
     pub struct VoiceConnectorTerminationCredentialsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of termination SIP credentials.
         pub credentials: pulumi_gestalt_rust::Output<
             Vec<
@@ -107,6 +110,7 @@ pub mod voice_connector_termination_credentials {
         };
         let o = context.register_resource(request);
         VoiceConnectorTerminationCredentialsResult {
+            id: o.get_field("id"),
             credentials: o.get_field("credentials"),
             voice_connector_id: o.get_field("voiceConnectorId"),
         }

@@ -241,6 +241,9 @@ pub mod security_policy_rule {
     }
     #[allow(dead_code)]
     pub struct SecurityPolicyRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Action to perform when the rule is matched. The following are the valid actions:
         /// * allow: allow access to target.
         /// * deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for STATUS are 403, 404, and 502.
@@ -371,6 +374,7 @@ pub mod security_policy_rule {
         };
         let o = context.register_resource(request);
         SecurityPolicyRuleResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             description: o.get_field("description"),
             header_action: o.get_field("headerAction"),

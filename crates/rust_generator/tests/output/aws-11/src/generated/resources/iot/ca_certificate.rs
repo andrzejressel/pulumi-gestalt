@@ -96,6 +96,9 @@ pub mod ca_certificate {
     }
     #[allow(dead_code)]
     pub struct CaCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Boolean flag to indicate if the certificate should be active for device authentication.
         pub active: pulumi_gestalt_rust::Output<bool>,
         /// Boolean flag to indicate if the certificate should be active for device regisration.
@@ -189,6 +192,7 @@ pub mod ca_certificate {
         };
         let o = context.register_resource(request);
         CaCertificateResult {
+            id: o.get_field("id"),
             active: o.get_field("active"),
             allow_auto_registration: o.get_field("allowAutoRegistration"),
             arn: o.get_field("arn"),

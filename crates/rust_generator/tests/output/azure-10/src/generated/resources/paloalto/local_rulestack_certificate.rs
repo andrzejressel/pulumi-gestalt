@@ -70,6 +70,9 @@ pub mod local_rulestack_certificate {
     }
     #[allow(dead_code)]
     pub struct LocalRulestackCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The comment for Audit purposes.
         pub audit_comment: pulumi_gestalt_rust::Output<Option<String>>,
         /// The description for the Certificate.
@@ -138,6 +141,7 @@ pub mod local_rulestack_certificate {
         };
         let o = context.register_resource(request);
         LocalRulestackCertificateResult {
+            id: o.get_field("id"),
             audit_comment: o.get_field("auditComment"),
             description: o.get_field("description"),
             key_vault_certificate_id: o.get_field("keyVaultCertificateId"),

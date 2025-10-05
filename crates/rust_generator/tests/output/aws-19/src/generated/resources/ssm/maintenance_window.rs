@@ -73,6 +73,9 @@ pub mod maintenance_window {
     }
     #[allow(dead_code)]
     pub struct MaintenanceWindowResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets.
         pub allow_unassociated_targets: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new tasks for execution.
@@ -186,6 +189,7 @@ pub mod maintenance_window {
         };
         let o = context.register_resource(request);
         MaintenanceWindowResult {
+            id: o.get_field("id"),
             allow_unassociated_targets: o.get_field("allowUnassociatedTargets"),
             cutoff: o.get_field("cutoff"),
             description: o.get_field("description"),

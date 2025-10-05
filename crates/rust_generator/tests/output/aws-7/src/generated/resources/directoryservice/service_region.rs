@@ -41,6 +41,9 @@ pub mod service_region {
     }
     #[allow(dead_code)]
     pub struct ServiceRegionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The number of domain controllers desired in the replicated directory. Minimum value of `2`.
         pub desired_number_of_domain_controllers: pulumi_gestalt_rust::Output<i32>,
         /// The identifier of the directory to which you want to add Region replication.
@@ -107,6 +110,7 @@ pub mod service_region {
         };
         let o = context.register_resource(request);
         ServiceRegionResult {
+            id: o.get_field("id"),
             desired_number_of_domain_controllers: o
                 .get_field("desiredNumberOfDomainControllers"),
             directory_id: o.get_field("directoryId"),

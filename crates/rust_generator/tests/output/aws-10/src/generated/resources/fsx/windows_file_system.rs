@@ -154,6 +154,9 @@ pub mod windows_file_system {
     }
     #[allow(dead_code)]
     pub struct WindowsFileSystemResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID for an existing Microsoft Active Directory instance that the file system should join when it's created. Cannot be specified with `self_managed_active_directory`.
         pub active_directory_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// An array DNS alias names that you want to associate with the Amazon FSx file system.  For more information, see [Working with DNS Aliases](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html)
@@ -364,6 +367,7 @@ pub mod windows_file_system {
         };
         let o = context.register_resource(request);
         WindowsFileSystemResult {
+            id: o.get_field("id"),
             active_directory_id: o.get_field("activeDirectoryId"),
             aliases: o.get_field("aliases"),
             arn: o.get_field("arn"),

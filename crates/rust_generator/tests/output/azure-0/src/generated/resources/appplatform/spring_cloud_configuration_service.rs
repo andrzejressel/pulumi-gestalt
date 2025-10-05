@@ -82,6 +82,9 @@ pub mod spring_cloud_configuration_service {
     }
     #[allow(dead_code)]
     pub struct SpringCloudConfigurationServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The generation of the Spring Cloud Configuration Service. Possible values are `Gen1` and `Gen2`.
         pub generation: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name which should be used for this Spring Cloud Configuration Service. The only possible value is `default`. Changing this forces a new Spring Cloud Configuration Service to be created.
@@ -149,6 +152,7 @@ pub mod spring_cloud_configuration_service {
         };
         let o = context.register_resource(request);
         SpringCloudConfigurationServiceResult {
+            id: o.get_field("id"),
             generation: o.get_field("generation"),
             name: o.get_field("name"),
             refresh_interval_in_seconds: o.get_field("refreshIntervalInSeconds"),

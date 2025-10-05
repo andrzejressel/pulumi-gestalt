@@ -40,6 +40,9 @@ pub mod multicast_group_source {
     }
     #[allow(dead_code)]
     pub struct MulticastGroupSourceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IP address assigned to the transit gateway multicast group.
         pub group_ip_address: pulumi_gestalt_rust::Output<String>,
         /// The group members' network interface ID to register with the transit gateway multicast group.
@@ -85,6 +88,7 @@ pub mod multicast_group_source {
         };
         let o = context.register_resource(request);
         MulticastGroupSourceResult {
+            id: o.get_field("id"),
             group_ip_address: o.get_field("groupIpAddress"),
             network_interface_id: o.get_field("networkInterfaceId"),
             transit_gateway_multicast_domain_id: o

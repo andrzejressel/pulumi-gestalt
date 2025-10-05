@@ -114,6 +114,9 @@ pub mod service_connection_policy {
     }
     #[allow(dead_code)]
     pub struct ServiceConnectionPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The timestamp when the resource was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Free-text description of the resource.
@@ -231,6 +234,7 @@ pub mod service_connection_policy {
         };
         let o = context.register_resource(request);
         ServiceConnectionPolicyResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

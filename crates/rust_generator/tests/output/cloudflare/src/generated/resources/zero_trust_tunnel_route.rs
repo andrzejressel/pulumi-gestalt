@@ -32,6 +32,9 @@ pub mod zero_trust_tunnel_route {
     }
     #[allow(dead_code)]
     pub struct ZeroTrustTunnelRouteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Description of the tunnel route.
@@ -88,6 +91,7 @@ pub mod zero_trust_tunnel_route {
         };
         let o = context.register_resource(request);
         ZeroTrustTunnelRouteResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             comment: o.get_field("comment"),
             network: o.get_field("network"),

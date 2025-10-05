@@ -51,6 +51,9 @@ pub mod lab {
     }
     #[allow(dead_code)]
     pub struct LabResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Storage Account used for Artifact Storage.
         pub artifacts_storage_account_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Default Premium Storage Account for this Dev Test Lab.
@@ -114,6 +117,7 @@ pub mod lab {
         };
         let o = context.register_resource(request);
         LabResult {
+            id: o.get_field("id"),
             artifacts_storage_account_id: o.get_field("artifactsStorageAccountId"),
             default_premium_storage_account_id: o
                 .get_field("defaultPremiumStorageAccountId"),

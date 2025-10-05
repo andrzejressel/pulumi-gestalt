@@ -95,6 +95,9 @@ pub mod protected_file_share {
     }
     #[allow(dead_code)]
     pub struct ProtectedFileShareResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the backup policy to use. The policy must be an Azure File Share backup policy. Other types are not supported.
         pub backup_policy_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created.
@@ -157,6 +160,7 @@ pub mod protected_file_share {
         };
         let o = context.register_resource(request);
         ProtectedFileShareResult {
+            id: o.get_field("id"),
             backup_policy_id: o.get_field("backupPolicyId"),
             recovery_vault_name: o.get_field("recoveryVaultName"),
             resource_group_name: o.get_field("resourceGroupName"),

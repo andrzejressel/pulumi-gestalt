@@ -73,6 +73,9 @@ pub mod alert_rule_anomaly_built_in {
     }
     #[allow(dead_code)]
     pub struct AlertRuleAnomalyBuiltInResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The version of the Anomaly Security ML Analytics Settings.
         pub anomaly_settings_version: pulumi_gestalt_rust::Output<i32>,
         /// The anomaly version of the Anomaly Alert Rule.
@@ -178,6 +181,7 @@ pub mod alert_rule_anomaly_built_in {
         };
         let o = context.register_resource(request);
         AlertRuleAnomalyBuiltInResult {
+            id: o.get_field("id"),
             anomaly_settings_version: o.get_field("anomalySettingsVersion"),
             anomaly_version: o.get_field("anomalyVersion"),
             description: o.get_field("description"),

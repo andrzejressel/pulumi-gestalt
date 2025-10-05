@@ -70,6 +70,9 @@ pub mod provisioned_concurrency_config {
     }
     #[allow(dead_code)]
     pub struct ProvisionedConcurrencyConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name or Amazon Resource Name (ARN) of the Lambda Function.
         pub function_name: pulumi_gestalt_rust::Output<String>,
         /// Amount of capacity to allocate. Must be greater than or equal to `1`.
@@ -124,6 +127,7 @@ pub mod provisioned_concurrency_config {
         };
         let o = context.register_resource(request);
         ProvisionedConcurrencyConfigResult {
+            id: o.get_field("id"),
             function_name: o.get_field("functionName"),
             provisioned_concurrent_executions: o
                 .get_field("provisionedConcurrentExecutions"),

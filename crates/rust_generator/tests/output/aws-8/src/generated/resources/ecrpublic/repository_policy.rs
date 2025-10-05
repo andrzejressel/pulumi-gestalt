@@ -70,6 +70,9 @@ pub mod repository_policy {
     }
     #[allow(dead_code)]
     pub struct RepositoryPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The policy document. This is a JSON formatted string.
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// The registry ID where the repository was created.
@@ -107,6 +110,7 @@ pub mod repository_policy {
         };
         let o = context.register_resource(request);
         RepositoryPolicyResult {
+            id: o.get_field("id"),
             policy: o.get_field("policy"),
             registry_id: o.get_field("registryId"),
             repository_name: o.get_field("repositoryName"),

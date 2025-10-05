@@ -78,6 +78,9 @@ pub mod registry_scanning_configuration {
     }
     #[allow(dead_code)]
     pub struct RegistryScanningConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The registry ID the scanning configuration applies to.
         pub registry_id: pulumi_gestalt_rust::Output<String>,
         /// One or multiple blocks specifying scanning rules to determine which repository filters are used and at what frequency scanning will occur. See below for schema.
@@ -118,6 +121,7 @@ pub mod registry_scanning_configuration {
         };
         let o = context.register_resource(request);
         RegistryScanningConfigurationResult {
+            id: o.get_field("id"),
             registry_id: o.get_field("registryId"),
             rules: o.get_field("rules"),
             scan_type: o.get_field("scanType"),

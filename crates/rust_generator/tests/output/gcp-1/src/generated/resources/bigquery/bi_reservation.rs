@@ -73,6 +73,9 @@ pub mod bi_reservation {
     }
     #[allow(dead_code)]
     pub struct BiReservationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// LOCATION_DESCRIPTION
         ///
         ///
@@ -134,6 +137,7 @@ pub mod bi_reservation {
         };
         let o = context.register_resource(request);
         BiReservationResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             preferred_tables: o.get_field("preferredTables"),

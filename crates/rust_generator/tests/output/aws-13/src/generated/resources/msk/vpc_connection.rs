@@ -39,6 +39,9 @@ pub mod vpc_connection {
     }
     #[allow(dead_code)]
     pub struct VpcConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the VPC connection.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The authentication type for the client VPC connection. Specify one of these auth type strings: SASL_IAM, SASL_SCRAM, or TLS.
@@ -110,6 +113,7 @@ pub mod vpc_connection {
         };
         let o = context.register_resource(request);
         VpcConnectionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             authentication: o.get_field("authentication"),
             client_subnets: o.get_field("clientSubnets"),

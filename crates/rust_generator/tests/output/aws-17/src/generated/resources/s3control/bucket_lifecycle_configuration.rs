@@ -58,6 +58,9 @@ pub mod bucket_lifecycle_configuration {
     }
     #[allow(dead_code)]
     pub struct BucketLifecycleConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the bucket.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// Configuration block(s) containing lifecycle rules for the bucket.
@@ -96,6 +99,7 @@ pub mod bucket_lifecycle_configuration {
         };
         let o = context.register_resource(request);
         BucketLifecycleConfigurationResult {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             rules: o.get_field("rules"),
         }

@@ -85,6 +85,9 @@ pub mod sql_role_definition {
     }
     #[allow(dead_code)]
     pub struct SqlRoleDefinitionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Cosmos DB Account. Changing this forces a new resource to be created.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// A list of fully qualified scopes at or below which Role Assignments may be created using this Cosmos DB SQL Role Definition. It will allow application of this Cosmos DB SQL Role Definition on the entire Database Account or any underlying Database/Collection. Scopes higher than Database Account are not enforceable as assignable scopes.
@@ -159,6 +162,7 @@ pub mod sql_role_definition {
         };
         let o = context.register_resource(request);
         SqlRoleDefinitionResult {
+            id: o.get_field("id"),
             account_name: o.get_field("accountName"),
             assignable_scopes: o.get_field("assignableScopes"),
             name: o.get_field("name"),

@@ -52,6 +52,9 @@ pub mod vpc_ipv_4_cidr_block_association {
     }
     #[allow(dead_code)]
     pub struct VpcIpv4CidrBlockAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IPv4 CIDR block for the VPC. CIDR can be explicitly set or it can be derived from IPAM using `ipv4_netmask_length`.
         pub cidr_block: pulumi_gestalt_rust::Output<String>,
         /// The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. IPAM is a VPC feature that you can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and auditing IP addresses across AWS Regions and accounts. Using IPAM you can monitor IP address usage throughout your AWS Organization.
@@ -102,6 +105,7 @@ pub mod vpc_ipv_4_cidr_block_association {
         };
         let o = context.register_resource(request);
         VpcIpv4CidrBlockAssociationResult {
+            id: o.get_field("id"),
             cidr_block: o.get_field("cidrBlock"),
             ipv4_ipam_pool_id: o.get_field("ipv4IpamPoolId"),
             ipv4_netmask_length: o.get_field("ipv4NetmaskLength"),

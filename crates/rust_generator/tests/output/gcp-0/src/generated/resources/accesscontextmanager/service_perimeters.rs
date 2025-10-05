@@ -99,6 +99,9 @@ pub mod service_perimeters {
     }
     #[allow(dead_code)]
     pub struct ServicePerimetersResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AccessPolicy this ServicePerimeter lives in.
         /// Format: accessPolicies/{policy_id}
         ///
@@ -145,6 +148,7 @@ pub mod service_perimeters {
         };
         let o = context.register_resource(request);
         ServicePerimetersResult {
+            id: o.get_field("id"),
             parent: o.get_field("parent"),
             service_perimeters: o.get_field("servicePerimeters"),
         }

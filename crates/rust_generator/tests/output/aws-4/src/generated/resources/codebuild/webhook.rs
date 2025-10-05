@@ -97,6 +97,9 @@ pub mod webhook {
     }
     #[allow(dead_code)]
     pub struct WebhookResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A regular expression used to determine which branches get built. Default is all branches are built. We recommend using `filter_group` over `branch_filter`.
         pub branch_filter: pulumi_gestalt_rust::Output<Option<String>>,
         /// The type of build this webhook will trigger. Valid values for this parameter are: `BUILD`, `BUILD_BATCH`.
@@ -163,6 +166,7 @@ pub mod webhook {
         };
         let o = context.register_resource(request);
         WebhookResult {
+            id: o.get_field("id"),
             branch_filter: o.get_field("branchFilter"),
             build_type: o.get_field("buildType"),
             filter_groups: o.get_field("filterGroups"),

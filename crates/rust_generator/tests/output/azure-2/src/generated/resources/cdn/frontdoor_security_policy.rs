@@ -132,6 +132,9 @@ pub mod frontdoor_security_policy {
     }
     #[allow(dead_code)]
     pub struct FrontdoorSecurityPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Front Door Profile Resource Id that is linked to this Front Door Security Policy. Changing this forces a new Front Door Security Policy to be created.
         pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Front Door Security Policy. Possible values must not be an empty string. Changing this forces a new Front Door Security Policy to be created.
@@ -178,6 +181,7 @@ pub mod frontdoor_security_policy {
         };
         let o = context.register_resource(request);
         FrontdoorSecurityPolicyResult {
+            id: o.get_field("id"),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             name: o.get_field("name"),
             security_policies: o.get_field("securityPolicies"),

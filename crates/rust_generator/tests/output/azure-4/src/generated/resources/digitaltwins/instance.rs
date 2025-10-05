@@ -56,6 +56,9 @@ pub mod instance {
     }
     #[allow(dead_code)]
     pub struct InstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The API endpoint to work with this Digital Twins instance.
         pub host_name: pulumi_gestalt_rust::Output<String>,
         /// An `identity` block as defined below.
@@ -118,6 +121,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
+            id: o.get_field("id"),
             host_name: o.get_field("hostName"),
             identity: o.get_field("identity"),
             location: o.get_field("location"),

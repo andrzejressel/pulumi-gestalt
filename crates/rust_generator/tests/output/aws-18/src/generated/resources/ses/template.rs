@@ -49,6 +49,9 @@ pub mod template {
     }
     #[allow(dead_code)]
     pub struct TemplateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the SES template
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The HTML body of the email. Must be less than 500KB in size, including both the text and HTML parts.
@@ -100,6 +103,7 @@ pub mod template {
         };
         let o = context.register_resource(request);
         TemplateResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             html: o.get_field("html"),
             name: o.get_field("name"),

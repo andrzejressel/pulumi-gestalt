@@ -119,6 +119,9 @@ pub mod agent_agent_alias {
     }
     #[allow(dead_code)]
     pub struct AgentAgentAliasResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the alias.
         pub agent_alias_arn: pulumi_gestalt_rust::Output<String>,
         /// Unique identifier of the alias.
@@ -199,6 +202,7 @@ pub mod agent_agent_alias {
         };
         let o = context.register_resource(request);
         AgentAgentAliasResult {
+            id: o.get_field("id"),
             agent_alias_arn: o.get_field("agentAliasArn"),
             agent_alias_id: o.get_field("agentAliasId"),
             agent_alias_name: o.get_field("agentAliasName"),

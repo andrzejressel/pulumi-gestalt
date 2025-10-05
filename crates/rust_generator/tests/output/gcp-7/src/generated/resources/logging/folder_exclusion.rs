@@ -64,6 +64,9 @@ pub mod folder_exclusion {
     }
     #[allow(dead_code)]
     pub struct FolderExclusionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A human-readable description.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Whether this exclusion rule should be disabled or not. This defaults to
@@ -124,6 +127,7 @@ pub mod folder_exclusion {
         };
         let o = context.register_resource(request);
         FolderExclusionResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             disabled: o.get_field("disabled"),
             filter: o.get_field("filter"),

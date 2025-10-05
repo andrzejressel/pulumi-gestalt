@@ -159,6 +159,9 @@ pub mod database_instance {
     }
     #[allow(dead_code)]
     pub struct DatabaseInstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The database URL in the form of https://{instance-id}.firebaseio.com for us-central1 instances
         /// or https://{instance-id}.{region}.firebasedatabase.app in other regions.
         pub database_url: pulumi_gestalt_rust::Output<String>,
@@ -236,6 +239,7 @@ pub mod database_instance {
         };
         let o = context.register_resource(request);
         DatabaseInstanceResult {
+            id: o.get_field("id"),
             database_url: o.get_field("databaseUrl"),
             desired_state: o.get_field("desiredState"),
             instance_id: o.get_field("instanceId"),

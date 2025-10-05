@@ -77,6 +77,9 @@ pub mod namespace_disaster_recovery_config {
     }
     #[allow(dead_code)]
     pub struct NamespaceDisasterRecoveryConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Shared access policies used to access the connection string for the alias.
         pub alias_authorization_rule_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The primary access key for the authorization rule `RootManageSharedAccessKey`.
@@ -137,6 +140,7 @@ pub mod namespace_disaster_recovery_config {
         };
         let o = context.register_resource(request);
         NamespaceDisasterRecoveryConfigResult {
+            id: o.get_field("id"),
             alias_authorization_rule_id: o.get_field("aliasAuthorizationRuleId"),
             default_primary_key: o.get_field("defaultPrimaryKey"),
             default_secondary_key: o.get_field("defaultSecondaryKey"),

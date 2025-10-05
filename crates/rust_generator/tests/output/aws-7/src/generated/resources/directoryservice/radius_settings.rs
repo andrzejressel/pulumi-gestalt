@@ -66,6 +66,9 @@ pub mod radius_settings {
     }
     #[allow(dead_code)]
     pub struct RadiusSettingsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The protocol specified for your RADIUS endpoints. Valid values: `PAP`, `CHAP`, `MS-CHAPv1`, `MS-CHAPv2`.
         pub authentication_protocol: pulumi_gestalt_rust::Output<String>,
         /// The identifier of the directory for which you want to manager RADIUS settings.
@@ -152,6 +155,7 @@ pub mod radius_settings {
         };
         let o = context.register_resource(request);
         RadiusSettingsResult {
+            id: o.get_field("id"),
             authentication_protocol: o.get_field("authenticationProtocol"),
             directory_id: o.get_field("directoryId"),
             display_label: o.get_field("displayLabel"),

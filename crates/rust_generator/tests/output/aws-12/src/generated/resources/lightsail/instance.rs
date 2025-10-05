@@ -121,6 +121,9 @@ pub mod instance {
     }
     #[allow(dead_code)]
     pub struct InstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The add on configuration for the instance. Detailed below.
         pub add_on: pulumi_gestalt_rust::Output<
             Option<super::super::types::lightsail::InstanceAddOn>,
@@ -238,6 +241,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
+            id: o.get_field("id"),
             add_on: o.get_field("addOn"),
             arn: o.get_field("arn"),
             availability_zone: o.get_field("availabilityZone"),

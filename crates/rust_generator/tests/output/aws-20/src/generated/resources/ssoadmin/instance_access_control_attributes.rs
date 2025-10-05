@@ -49,6 +49,9 @@ pub mod instance_access_control_attributes {
     }
     #[allow(dead_code)]
     pub struct InstanceAccessControlAttributesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// See AccessControlAttribute for more details.
         pub attributes: pulumi_gestalt_rust::Output<
             Vec<super::super::types::ssoadmin::InstanceAccessControlAttributesAttribute>,
@@ -89,6 +92,7 @@ pub mod instance_access_control_attributes {
         };
         let o = context.register_resource(request);
         InstanceAccessControlAttributesResult {
+            id: o.get_field("id"),
             attributes: o.get_field("attributes"),
             instance_arn: o.get_field("instanceArn"),
             status: o.get_field("status"),

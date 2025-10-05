@@ -72,6 +72,9 @@ pub mod integration_runtime_self_hosted {
     }
     #[allow(dead_code)]
     pub struct IntegrationRuntimeSelfHostedResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Data Factory ID in which to associate the Linked Service with. Changing this forces a new resource.
         pub data_factory_id: pulumi_gestalt_rust::Output<String>,
         /// Integration runtime description.
@@ -144,6 +147,7 @@ pub mod integration_runtime_self_hosted {
         };
         let o = context.register_resource(request);
         IntegrationRuntimeSelfHostedResult {
+            id: o.get_field("id"),
             data_factory_id: o.get_field("dataFactoryId"),
             description: o.get_field("description"),
             name: o.get_field("name"),

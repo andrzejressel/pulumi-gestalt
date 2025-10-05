@@ -43,6 +43,9 @@ pub mod tag_option {
     }
     #[allow(dead_code)]
     pub struct TagOptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether tag option is active. Default is `true`.
         pub active: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Tag option key.
@@ -88,6 +91,7 @@ pub mod tag_option {
         };
         let o = context.register_resource(request);
         TagOptionResult {
+            id: o.get_field("id"),
             active: o.get_field("active"),
             key: o.get_field("key"),
             owner: o.get_field("owner"),

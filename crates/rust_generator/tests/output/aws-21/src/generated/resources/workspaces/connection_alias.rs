@@ -46,6 +46,9 @@ pub mod connection_alias {
     }
     #[allow(dead_code)]
     pub struct ConnectionAliasResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as www.example.com.
         pub connection_string: pulumi_gestalt_rust::Output<String>,
         /// The identifier of the Amazon Web Services account that owns the connection alias.
@@ -99,6 +102,7 @@ pub mod connection_alias {
         };
         let o = context.register_resource(request);
         ConnectionAliasResult {
+            id: o.get_field("id"),
             connection_string: o.get_field("connectionString"),
             owner_account_id: o.get_field("ownerAccountId"),
             state: o.get_field("state"),

@@ -65,6 +65,9 @@ pub mod connect {
     }
     #[allow(dead_code)]
     pub struct ConnectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The tunnel protocol. Valid values: `gre`. Default is `gre`.
         pub protocol: pulumi_gestalt_rust::Output<Option<String>>,
         /// Key-value tags for the EC2 Transit Gateway Connect. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -146,6 +149,7 @@ pub mod connect {
         };
         let o = context.register_resource(request);
         ConnectResult {
+            id: o.get_field("id"),
             protocol: o.get_field("protocol"),
             tags: o.get_field("tags"),
             tags_all: o.get_field("tagsAll"),

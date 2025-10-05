@@ -78,6 +78,9 @@ pub mod filter {
     }
     #[allow(dead_code)]
     pub struct FilterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the action that is to be applied to the findings that match the filter. Can be one of `ARCHIVE` or `NOOP`.
         pub action: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the GuardDuty filter.
@@ -158,6 +161,7 @@ pub mod filter {
         };
         let o = context.register_resource(request);
         FilterResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),

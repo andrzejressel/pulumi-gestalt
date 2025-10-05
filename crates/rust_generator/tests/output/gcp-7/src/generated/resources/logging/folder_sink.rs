@@ -103,6 +103,9 @@ pub mod folder_sink {
     }
     #[allow(dead_code)]
     pub struct FolderSinkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Options that affect sinks exporting data to BigQuery. Structure documented below.
         pub bigquery_options: pulumi_gestalt_rust::Output<
             super::super::types::logging::FolderSinkBigqueryOptions,
@@ -214,6 +217,7 @@ pub mod folder_sink {
         };
         let o = context.register_resource(request);
         FolderSinkResult {
+            id: o.get_field("id"),
             bigquery_options: o.get_field("bigqueryOptions"),
             description: o.get_field("description"),
             destination: o.get_field("destination"),

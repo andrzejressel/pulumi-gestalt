@@ -102,6 +102,9 @@ pub mod ssh_key {
     }
     #[allow(dead_code)]
     pub struct SshKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The public key portion of an SSH key pair.
         pub body: pulumi_gestalt_rust::Output<String>,
         /// The Server ID of the Transfer Server (e.g., `s-12345678`)
@@ -145,6 +148,7 @@ pub mod ssh_key {
         };
         let o = context.register_resource(request);
         SshKeyResult {
+            id: o.get_field("id"),
             body: o.get_field("body"),
             server_id: o.get_field("serverId"),
             ssh_key_id: o.get_field("sshKeyId"),

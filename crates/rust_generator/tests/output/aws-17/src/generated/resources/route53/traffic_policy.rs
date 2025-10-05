@@ -47,6 +47,9 @@ pub mod traffic_policy {
     }
     #[allow(dead_code)]
     pub struct TrafficPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Comment for the traffic policy.
         pub comment: pulumi_gestalt_rust::Output<Option<String>>,
         /// Policy document. This is a JSON formatted string. For more information about building Route53 traffic policy documents, see the [AWS Route53 Traffic Policy document format](https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html)
@@ -95,6 +98,7 @@ pub mod traffic_policy {
         };
         let o = context.register_resource(request);
         TrafficPolicyResult {
+            id: o.get_field("id"),
             comment: o.get_field("comment"),
             document: o.get_field("document"),
             name: o.get_field("name"),

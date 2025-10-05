@@ -142,6 +142,9 @@ pub mod cx_intent {
     }
     #[allow(dead_code)]
     pub struct CxIntentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Human readable description for better understanding an intent like its scope, content, result etc. Maximum character limit: 140 characters.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The human-readable name of the intent, unique within the agent.
@@ -285,6 +288,7 @@ pub mod cx_intent {
         };
         let o = context.register_resource(request);
         CxIntentResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             effective_labels: o.get_field("effectiveLabels"),

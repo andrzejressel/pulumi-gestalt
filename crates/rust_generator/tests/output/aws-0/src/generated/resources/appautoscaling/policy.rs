@@ -291,6 +291,9 @@ pub mod policy {
     }
     #[allow(dead_code)]
     pub struct PolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of CloudWatch alarm ARNs associated with the scaling policy.
         pub alarm_arns: pulumi_gestalt_rust::Output<Vec<String>>,
         /// ARN assigned by AWS to the scaling policy.
@@ -378,6 +381,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
+            id: o.get_field("id"),
             alarm_arns: o.get_field("alarmArns"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),

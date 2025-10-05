@@ -62,6 +62,9 @@ pub mod app {
     }
     #[allow(dead_code)]
     pub struct AppResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Application ID of the Pinpoint App.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the PinPoint Application
@@ -141,6 +144,7 @@ pub mod app {
         };
         let o = context.register_resource(request);
         AppResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             arn: o.get_field("arn"),
             campaign_hook: o.get_field("campaignHook"),

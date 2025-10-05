@@ -48,6 +48,9 @@ pub mod workers_for_platforms_dispatch_namespace {
     }
     #[allow(dead_code)]
     pub struct WorkersForPlatformsDispatchNamespaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Workers for Platforms namespace.
@@ -84,6 +87,7 @@ pub mod workers_for_platforms_dispatch_namespace {
         };
         let o = context.register_resource(request);
         WorkersForPlatformsDispatchNamespaceResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             name: o.get_field("name"),
         }

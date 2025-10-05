@@ -59,6 +59,9 @@ pub mod tag {
     }
     #[allow(dead_code)]
     pub struct TagResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Tag name.
         pub key: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Transfer Family resource to tag.
@@ -101,6 +104,7 @@ pub mod tag {
         };
         let o = context.register_resource(request);
         TagResult {
+            id: o.get_field("id"),
             key: o.get_field("key"),
             resource_arn: o.get_field("resourceArn"),
             value: o.get_field("value"),

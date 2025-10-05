@@ -90,6 +90,9 @@ pub mod backup_policy_disk {
     }
     #[allow(dead_code)]
     pub struct BackupPolicyDiskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of repeating time interval. It should follow `ISO 8601` repeating time interval . Changing this forces a new Backup Policy Disk to be created.
         pub backup_repeating_time_intervals: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The duration of default retention rule. It should follow `ISO 8601` duration format. Changing this forces a new Backup Policy Disk to be created.
@@ -161,6 +164,7 @@ pub mod backup_policy_disk {
         };
         let o = context.register_resource(request);
         BackupPolicyDiskResult {
+            id: o.get_field("id"),
             backup_repeating_time_intervals: o.get_field("backupRepeatingTimeIntervals"),
             default_retention_duration: o.get_field("defaultRetentionDuration"),
             name: o.get_field("name"),

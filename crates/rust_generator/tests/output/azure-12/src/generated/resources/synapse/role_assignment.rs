@@ -103,6 +103,9 @@ pub mod role_assignment {
     }
     #[allow(dead_code)]
     pub struct RoleAssignmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Principal (User, Group or Service Principal) to assign the Synapse Role Definition to. Changing this forces a new resource to be created.
         pub principal_id: pulumi_gestalt_rust::Output<String>,
         /// The Type of the Principal. One of `User`, `Group` or `ServicePrincipal`. Changing this forces a new resource to be created.
@@ -169,6 +172,7 @@ pub mod role_assignment {
         };
         let o = context.register_resource(request);
         RoleAssignmentResult {
+            id: o.get_field("id"),
             principal_id: o.get_field("principalId"),
             principal_type: o.get_field("principalType"),
             role_name: o.get_field("roleName"),

@@ -187,6 +187,9 @@ pub mod hosting_custom_domain {
     }
     #[allow(dead_code)]
     pub struct HostingCustomDomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A field that lets you specify which SSL certificate type Hosting creates
         /// for your domain name. Spark plan `CustomDomain`s only have access to the
         /// `GROUPED` cert type, while Blaze plan can select any option.
@@ -357,6 +360,7 @@ pub mod hosting_custom_domain {
         };
         let o = context.register_resource(request);
         HostingCustomDomainResult {
+            id: o.get_field("id"),
             cert_preference: o.get_field("certPreference"),
             certs: o.get_field("certs"),
             create_time: o.get_field("createTime"),

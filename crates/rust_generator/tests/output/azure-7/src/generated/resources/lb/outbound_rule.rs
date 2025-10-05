@@ -108,6 +108,9 @@ pub mod outbound_rule {
     }
     #[allow(dead_code)]
     pub struct OutboundRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The number of outbound ports to be used for NAT. Defaults to `1024`.
         pub allocated_outbound_ports: pulumi_gestalt_rust::Output<Option<i32>>,
         /// The ID of the Backend Address Pool. Outbound traffic is randomly load balanced across IPs in the backend IPs.
@@ -195,6 +198,7 @@ pub mod outbound_rule {
         };
         let o = context.register_resource(request);
         OutboundRuleResult {
+            id: o.get_field("id"),
             allocated_outbound_ports: o.get_field("allocatedOutboundPorts"),
             backend_address_pool_id: o.get_field("backendAddressPoolId"),
             enable_tcp_reset: o.get_field("enableTcpReset"),

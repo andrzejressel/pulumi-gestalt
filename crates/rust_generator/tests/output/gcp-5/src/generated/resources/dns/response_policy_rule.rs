@@ -103,6 +103,9 @@ pub mod response_policy_rule {
     }
     #[allow(dead_code)]
     pub struct ResponsePolicyRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Answer this query with a behavior rather than DNS data. Acceptable values are 'behaviorUnspecified', and 'bypassResponsePolicy'
         pub behavior: pulumi_gestalt_rust::Output<Option<String>>,
         /// The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
@@ -174,6 +177,7 @@ pub mod response_policy_rule {
         };
         let o = context.register_resource(request);
         ResponsePolicyRuleResult {
+            id: o.get_field("id"),
             behavior: o.get_field("behavior"),
             dns_name: o.get_field("dnsName"),
             local_data: o.get_field("localData"),

@@ -209,6 +209,9 @@ pub mod cloud_vm_cluster {
     }
     #[allow(dead_code)]
     pub struct CloudVmClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// CIDR range of the backup subnet.
         pub backup_subnet_cidr: pulumi_gestalt_rust::Output<String>,
         /// Network settings. CIDR to use for cluster IP allocation.
@@ -342,6 +345,7 @@ pub mod cloud_vm_cluster {
         };
         let o = context.register_resource(request);
         CloudVmClusterResult {
+            id: o.get_field("id"),
             backup_subnet_cidr: o.get_field("backupSubnetCidr"),
             cidr: o.get_field("cidr"),
             cloud_vm_cluster_id: o.get_field("cloudVmClusterId"),

@@ -116,6 +116,9 @@ pub mod repository_creation_template {
     }
     #[allow(dead_code)]
     pub struct RepositoryCreationTemplateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Which features this template applies to. Must contain one or more of `PULL_THROUGH_CACHE` or `REPLICATION`.
         pub applied_fors: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A custom IAM role to use for repository creation. Required if using repository tags or KMS encryption.
@@ -212,6 +215,7 @@ pub mod repository_creation_template {
         };
         let o = context.register_resource(request);
         RepositoryCreationTemplateResult {
+            id: o.get_field("id"),
             applied_fors: o.get_field("appliedFors"),
             custom_role_arn: o.get_field("customRoleArn"),
             description: o.get_field("description"),

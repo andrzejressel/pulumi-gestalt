@@ -68,6 +68,9 @@ pub mod vault_notifications {
     }
     #[allow(dead_code)]
     pub struct VaultNotificationsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the vault.
         pub backup_vault_arn: pulumi_gestalt_rust::Output<String>,
         /// An array of events that indicate the status of jobs to back up resources to the backup vault.
@@ -112,6 +115,7 @@ pub mod vault_notifications {
         };
         let o = context.register_resource(request);
         VaultNotificationsResult {
+            id: o.get_field("id"),
             backup_vault_arn: o.get_field("backupVaultArn"),
             backup_vault_events: o.get_field("backupVaultEvents"),
             backup_vault_name: o.get_field("backupVaultName"),

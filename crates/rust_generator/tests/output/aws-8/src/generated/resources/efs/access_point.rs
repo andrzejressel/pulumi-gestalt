@@ -48,6 +48,9 @@ pub mod access_point {
     }
     #[allow(dead_code)]
     pub struct AccessPointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the access point.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ARN of the file system.
@@ -112,6 +115,7 @@ pub mod access_point {
         };
         let o = context.register_resource(request);
         AccessPointResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             file_system_arn: o.get_field("fileSystemArn"),
             file_system_id: o.get_field("fileSystemId"),

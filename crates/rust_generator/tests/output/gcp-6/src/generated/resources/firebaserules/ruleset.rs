@@ -97,6 +97,9 @@ pub mod ruleset {
     }
     #[allow(dead_code)]
     pub struct RulesetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Output only. Time the `Ruleset` was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Output only. The metadata for this ruleset.
@@ -142,6 +145,7 @@ pub mod ruleset {
         };
         let o = context.register_resource(request);
         RulesetResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             metadatas: o.get_field("metadatas"),
             name: o.get_field("name"),

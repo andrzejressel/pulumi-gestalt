@@ -78,6 +78,9 @@ pub mod random_password {
     }
     #[allow(dead_code)]
     pub struct RandomPasswordResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A bcrypt hash of the generated random string. **NOTE**: If the generated random string is greater than 72 bytes in length, `bcrypt_hash` will contain a hash of the first 72 bytes.
         pub bcrypt_hash: pulumi_gestalt_rust::Output<String>,
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
@@ -189,6 +192,7 @@ pub mod random_password {
         };
         let o = context.register_resource(request);
         RandomPasswordResult {
+            id: o.get_field("id"),
             bcrypt_hash: o.get_field("bcryptHash"),
             keepers: o.get_field("keepers"),
             length: o.get_field("length"),

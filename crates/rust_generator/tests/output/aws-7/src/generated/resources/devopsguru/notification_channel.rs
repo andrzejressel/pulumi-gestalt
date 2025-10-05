@@ -76,6 +76,9 @@ pub mod notification_channel {
     }
     #[allow(dead_code)]
     pub struct NotificationChannelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Filter configurations for the Amazon SNS notification topic. See the `filters` argument reference below.
         pub filters: pulumi_gestalt_rust::Output<
             Option<super::super::types::devopsguru::NotificationChannelFilters>,
@@ -117,6 +120,7 @@ pub mod notification_channel {
         };
         let o = context.register_resource(request);
         NotificationChannelResult {
+            id: o.get_field("id"),
             filters: o.get_field("filters"),
             sns: o.get_field("sns"),
         }

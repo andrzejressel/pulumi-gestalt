@@ -120,6 +120,9 @@ pub mod cluster_customer_managed_key {
     }
     #[allow(dead_code)]
     pub struct ClusterCustomerManagedKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Kusto Cluster. Changing this forces a new resource to be created.
         pub cluster_id: pulumi_gestalt_rust::Output<String>,
         /// The name of Key Vault Key.
@@ -177,6 +180,7 @@ pub mod cluster_customer_managed_key {
         };
         let o = context.register_resource(request);
         ClusterCustomerManagedKeyResult {
+            id: o.get_field("id"),
             cluster_id: o.get_field("clusterId"),
             key_name: o.get_field("keyName"),
             key_vault_id: o.get_field("keyVaultId"),

@@ -147,6 +147,9 @@ pub mod bastion_host {
     }
     #[allow(dead_code)]
     pub struct BastionHostResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Is Copy/Paste feature enabled for the Bastion Host. Defaults to `true`.
         pub copy_paste_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The FQDN for the Bastion Host.
@@ -306,6 +309,7 @@ pub mod bastion_host {
         };
         let o = context.register_resource(request);
         BastionHostResult {
+            id: o.get_field("id"),
             copy_paste_enabled: o.get_field("copyPasteEnabled"),
             dns_name: o.get_field("dnsName"),
             file_copy_enabled: o.get_field("fileCopyEnabled"),

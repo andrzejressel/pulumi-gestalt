@@ -92,6 +92,9 @@ pub mod namespace {
     }
     #[allow(dead_code)]
     pub struct NamespaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the capacity. When `sku` is `Premium`, capacity can be `1`, `2`, `4`, `8` or `16`. When `sku` is `Basic` or `Standard`, capacity can be `0` only.
         pub capacity: pulumi_gestalt_rust::Output<Option<i32>>,
         /// An `customer_managed_key` block as defined below.
@@ -229,6 +232,7 @@ pub mod namespace {
         };
         let o = context.register_resource(request);
         NamespaceResult {
+            id: o.get_field("id"),
             capacity: o.get_field("capacity"),
             customer_managed_key: o.get_field("customerManagedKey"),
             default_primary_connection_string: o

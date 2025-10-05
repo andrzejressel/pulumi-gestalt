@@ -102,6 +102,9 @@ pub mod sync_cloud_endpoint {
     }
     #[allow(dead_code)]
     pub struct SyncCloudEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Storage Share name to be synchronized in this Storage Sync Cloud Endpoint. Changing this forces a new Storage Sync Cloud Endpoint to be created.
         pub file_share_name: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Storage Sync Cloud Endpoint. Changing this forces a new Storage Sync Cloud Endpoint to be created.
@@ -162,6 +165,7 @@ pub mod sync_cloud_endpoint {
         };
         let o = context.register_resource(request);
         SyncCloudEndpointResult {
+            id: o.get_field("id"),
             file_share_name: o.get_field("fileShareName"),
             name: o.get_field("name"),
             storage_account_id: o.get_field("storageAccountId"),

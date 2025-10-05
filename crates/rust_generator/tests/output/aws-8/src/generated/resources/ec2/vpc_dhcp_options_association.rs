@@ -44,6 +44,9 @@ pub mod vpc_dhcp_options_association {
     }
     #[allow(dead_code)]
     pub struct VpcDhcpOptionsAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the DHCP Options Set to associate to the VPC.
         pub dhcp_options_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the VPC to which we would like to associate a DHCP Options Set.
@@ -79,6 +82,7 @@ pub mod vpc_dhcp_options_association {
         };
         let o = context.register_resource(request);
         VpcDhcpOptionsAssociationResult {
+            id: o.get_field("id"),
             dhcp_options_id: o.get_field("dhcpOptionsId"),
             vpc_id: o.get_field("vpcId"),
         }

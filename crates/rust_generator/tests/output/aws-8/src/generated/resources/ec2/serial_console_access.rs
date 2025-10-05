@@ -35,6 +35,9 @@ pub mod serial_console_access {
     }
     #[allow(dead_code)]
     pub struct SerialConsoleAccessResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether or not serial console access is enabled. Valid values are `true` or `false`. Defaults to `true`.
         pub enabled: pulumi_gestalt_rust::Output<Option<bool>>,
     }
@@ -63,6 +66,7 @@ pub mod serial_console_access {
         };
         let o = context.register_resource(request);
         SerialConsoleAccessResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
         }
     }

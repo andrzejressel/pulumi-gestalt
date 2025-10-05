@@ -111,6 +111,9 @@ pub mod workspace {
     }
     #[allow(dead_code)]
     pub struct WorkspaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Access Connector ID to use when default storage account firewall is enabled.
         ///
         /// > **Note:** The `access_connector_id` field is only required if `default_storage_firewall_enabled` is set to `true`.
@@ -337,6 +340,7 @@ pub mod workspace {
         };
         let o = context.register_resource(request);
         WorkspaceResult {
+            id: o.get_field("id"),
             access_connector_id: o.get_field("accessConnectorId"),
             custom_parameters: o.get_field("customParameters"),
             customer_managed_key_enabled: o.get_field("customerManagedKeyEnabled"),

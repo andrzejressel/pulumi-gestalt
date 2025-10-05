@@ -132,6 +132,9 @@ pub mod policy {
     }
     #[allow(dead_code)]
     pub struct PolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `custom_rules` blocks as defined below.
         pub custom_rules: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::waf::PolicyCustomRule>>,
@@ -214,6 +217,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
+            id: o.get_field("id"),
             custom_rules: o.get_field("customRules"),
             http_listener_ids: o.get_field("httpListenerIds"),
             location: o.get_field("location"),

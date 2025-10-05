@@ -82,6 +82,9 @@ pub mod code_repository {
     }
     #[allow(dead_code)]
     pub struct CodeRepositoryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Code Repository.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Code Repository (must be unique).
@@ -134,6 +137,7 @@ pub mod code_repository {
         };
         let o = context.register_resource(request);
         CodeRepositoryResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             code_repository_name: o.get_field("codeRepositoryName"),
             git_config: o.get_field("gitConfig"),

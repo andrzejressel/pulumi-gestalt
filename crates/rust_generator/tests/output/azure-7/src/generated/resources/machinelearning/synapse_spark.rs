@@ -139,6 +139,9 @@ pub mod synapse_spark {
     }
     #[allow(dead_code)]
     pub struct SynapseSparkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The description of the Machine Learning Synapse Spark. Changing this forces a new Machine Learning Synapse Spark to be created.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// An `identity` block as defined below. Changing this forces a new Machine Learning Synapse Spark to be created.
@@ -224,6 +227,7 @@ pub mod synapse_spark {
         };
         let o = context.register_resource(request);
         SynapseSparkResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             identity: o.get_field("identity"),
             local_auth_enabled: o.get_field("localAuthEnabled"),

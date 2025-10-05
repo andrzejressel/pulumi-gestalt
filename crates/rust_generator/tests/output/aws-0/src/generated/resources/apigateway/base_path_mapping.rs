@@ -49,6 +49,9 @@ pub mod base_path_mapping {
     }
     #[allow(dead_code)]
     pub struct BasePathMappingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Path segment that must be prepended to the path when accessing the API via this mapping. If omitted, the API is exposed at the root of the given domain.
         pub base_path: pulumi_gestalt_rust::Output<Option<String>>,
         /// Already-registered domain name to connect the API to.
@@ -105,6 +108,7 @@ pub mod base_path_mapping {
         };
         let o = context.register_resource(request);
         BasePathMappingResult {
+            id: o.get_field("id"),
             base_path: o.get_field("basePath"),
             domain_name: o.get_field("domainName"),
             domain_name_id: o.get_field("domainNameId"),

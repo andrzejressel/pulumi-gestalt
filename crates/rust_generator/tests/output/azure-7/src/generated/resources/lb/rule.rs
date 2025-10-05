@@ -114,6 +114,9 @@ pub mod rule {
     }
     #[allow(dead_code)]
     pub struct RuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of reference to a Backend Address Pool over which this Load Balancing Rule operates.
         ///
         /// > **NOTE:** In most cases users can only set one Backend Address Pool ID in the `backend_address_pool_ids`. Especially, when the sku of the LB is `Gateway`, users can set up to two IDs in the `backend_address_pool_ids`.
@@ -237,6 +240,7 @@ pub mod rule {
         };
         let o = context.register_resource(request);
         RuleResult {
+            id: o.get_field("id"),
             backend_address_pool_ids: o.get_field("backendAddressPoolIds"),
             backend_port: o.get_field("backendPort"),
             disable_outbound_snat: o.get_field("disableOutboundSnat"),

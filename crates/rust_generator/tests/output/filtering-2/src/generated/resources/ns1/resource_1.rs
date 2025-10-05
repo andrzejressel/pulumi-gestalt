@@ -15,6 +15,9 @@ pub mod resource_1 {
     }
     #[allow(dead_code)]
     pub struct Resource1Result {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub common_type: pulumi_gestalt_rust::Output<
             Option<super::super::types::common::CommonType>,
         >,
@@ -50,6 +53,7 @@ pub mod resource_1 {
         };
         let o = context.register_resource(request);
         Resource1Result {
+            id: o.get_field("id"),
             common_type: o.get_field("commonType"),
             type1: o.get_field("type1"),
         }

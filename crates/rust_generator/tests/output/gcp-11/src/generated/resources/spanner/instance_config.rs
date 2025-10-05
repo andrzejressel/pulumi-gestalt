@@ -70,6 +70,9 @@ pub mod instance_config {
     }
     #[allow(dead_code)]
     pub struct InstanceConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Base configuration name, e.g. nam3, based on which this configuration is created. Only set for user managed
         /// configurations. baseConfig must refer to a configuration of type GOOGLE_MANAGED in the same project as this
         /// configuration.
@@ -153,6 +156,7 @@ pub mod instance_config {
         };
         let o = context.register_resource(request);
         InstanceConfigResult {
+            id: o.get_field("id"),
             base_config: o.get_field("baseConfig"),
             config_type: o.get_field("configType"),
             display_name: o.get_field("displayName"),

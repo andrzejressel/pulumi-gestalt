@@ -73,6 +73,9 @@ pub mod key_ring {
     }
     #[allow(dead_code)]
     pub struct KeyRingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The location for the KeyRing.
         /// A full list of valid locations can be found by running `gcloud kms locations list`.
         ///
@@ -120,6 +123,7 @@ pub mod key_ring {
         };
         let o = context.register_resource(request);
         KeyRingResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             project: o.get_field("project"),

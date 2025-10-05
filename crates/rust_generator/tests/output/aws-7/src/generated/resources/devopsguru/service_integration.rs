@@ -71,6 +71,9 @@ pub mod service_integration {
     }
     #[allow(dead_code)]
     pub struct ServiceIntegrationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Information about whether DevOps Guru is configured to encrypt server-side data using KMS. See `kms_server_side_encryption` below.
         pub kms_server_side_encryption: pulumi_gestalt_rust::Output<
             Option<
@@ -127,6 +130,7 @@ pub mod service_integration {
         };
         let o = context.register_resource(request);
         ServiceIntegrationResult {
+            id: o.get_field("id"),
             kms_server_side_encryption: o.get_field("kmsServerSideEncryption"),
             logs_anomaly_detection: o.get_field("logsAnomalyDetection"),
             ops_center: o.get_field("opsCenter"),

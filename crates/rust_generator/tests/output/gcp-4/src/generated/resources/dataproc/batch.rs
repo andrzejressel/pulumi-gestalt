@@ -357,6 +357,9 @@ pub mod batch {
     }
     #[allow(dead_code)]
     pub struct BatchResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID to use for the batch, which will become the final component of the batch's resource name.
         /// This value must be 4-63 characters. Valid characters are /[a-z][0-9]-/.
         pub batch_id: pulumi_gestalt_rust::Output<Option<String>>,
@@ -510,6 +513,7 @@ pub mod batch {
         };
         let o = context.register_resource(request);
         BatchResult {
+            id: o.get_field("id"),
             batch_id: o.get_field("batchId"),
             create_time: o.get_field("createTime"),
             creator: o.get_field("creator"),

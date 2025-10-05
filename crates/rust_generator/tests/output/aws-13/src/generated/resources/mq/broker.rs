@@ -205,6 +205,9 @@ pub mod broker {
     }
     #[allow(dead_code)]
     pub struct BrokerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether any broker modifications are applied immediately, or during the next maintenance window. Default is `false`.
         pub apply_immediately: pulumi_gestalt_rust::Output<Option<bool>>,
         /// ARN of the broker.
@@ -411,6 +414,7 @@ pub mod broker {
         };
         let o = context.register_resource(request);
         BrokerResult {
+            id: o.get_field("id"),
             apply_immediately: o.get_field("applyImmediately"),
             arn: o.get_field("arn"),
             authentication_strategy: o.get_field("authenticationStrategy"),

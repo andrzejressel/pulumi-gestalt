@@ -52,6 +52,9 @@ pub mod ssh_key {
     }
     #[allow(dead_code)]
     pub struct SshKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use `SSH`. To retrieve the public key in PEM format, use `PEM`.
         pub encoding: pulumi_gestalt_rust::Output<String>,
         /// The MD5 message digest of the SSH public key.
@@ -105,6 +108,7 @@ pub mod ssh_key {
         };
         let o = context.register_resource(request);
         SshKeyResult {
+            id: o.get_field("id"),
             encoding: o.get_field("encoding"),
             fingerprint: o.get_field("fingerprint"),
             public_key: o.get_field("publicKey"),

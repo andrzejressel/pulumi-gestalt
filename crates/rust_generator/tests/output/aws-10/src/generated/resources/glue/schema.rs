@@ -61,6 +61,9 @@ pub mod schema {
     }
     #[allow(dead_code)]
     pub struct SchemaResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the schema.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The compatibility mode of the schema. Values values are: `NONE`, `DISABLED`, `BACKWARD`, `BACKWARD_ALL`, `FORWARD`, `FORWARD_ALL`, `FULL`, and `FULL_ALL`.
@@ -147,6 +150,7 @@ pub mod schema {
         };
         let o = context.register_resource(request);
         SchemaResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             compatibility: o.get_field("compatibility"),
             data_format: o.get_field("dataFormat"),

@@ -102,6 +102,9 @@ pub mod domain_name {
     }
     #[allow(dead_code)]
     pub struct DomainNameResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// [API mapping selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-mapping-selection-expressions) for the domain name.
         pub api_mapping_selection_expression: pulumi_gestalt_rust::Output<String>,
         /// ARN of the domain name.
@@ -169,6 +172,7 @@ pub mod domain_name {
         };
         let o = context.register_resource(request);
         DomainNameResult {
+            id: o.get_field("id"),
             api_mapping_selection_expression: o
                 .get_field("apiMappingSelectionExpression"),
             arn: o.get_field("arn"),

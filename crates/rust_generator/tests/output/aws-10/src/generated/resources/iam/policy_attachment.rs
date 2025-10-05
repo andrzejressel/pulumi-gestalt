@@ -91,6 +91,9 @@ pub mod policy_attachment {
     }
     #[allow(dead_code)]
     pub struct PolicyAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Group(s) the policy should be applied to.
         pub groups: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Name of the attachment. This cannot be an empty string.
@@ -147,6 +150,7 @@ pub mod policy_attachment {
         };
         let o = context.register_resource(request);
         PolicyAttachmentResult {
+            id: o.get_field("id"),
             groups: o.get_field("groups"),
             name: o.get_field("name"),
             policy_arn: o.get_field("policyArn"),

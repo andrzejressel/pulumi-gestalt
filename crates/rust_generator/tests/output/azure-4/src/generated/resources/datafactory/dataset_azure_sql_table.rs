@@ -101,6 +101,9 @@ pub mod dataset_azure_sql_table {
     }
     #[allow(dead_code)]
     pub struct DatasetAzureSqlTableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Dataset Azure SQL Table.
         pub additional_properties: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -209,6 +212,7 @@ pub mod dataset_azure_sql_table {
         };
         let o = context.register_resource(request);
         DatasetAzureSqlTableResult {
+            id: o.get_field("id"),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),
             data_factory_id: o.get_field("dataFactoryId"),

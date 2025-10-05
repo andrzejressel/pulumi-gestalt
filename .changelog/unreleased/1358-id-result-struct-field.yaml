@@ -1,0 +1,2 @@
+type: Added
+title: Add `id` field to all resource result structs

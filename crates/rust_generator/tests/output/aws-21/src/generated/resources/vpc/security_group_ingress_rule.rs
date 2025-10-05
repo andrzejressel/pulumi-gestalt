@@ -79,6 +79,9 @@ pub mod security_group_ingress_rule {
     }
     #[allow(dead_code)]
     pub struct SecurityGroupIngressRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the security group rule.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The source IPv4 CIDR range.
@@ -182,6 +185,7 @@ pub mod security_group_ingress_rule {
         };
         let o = context.register_resource(request);
         SecurityGroupIngressRuleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cidr_ipv4: o.get_field("cidrIpv4"),
             cidr_ipv6: o.get_field("cidrIpv6"),

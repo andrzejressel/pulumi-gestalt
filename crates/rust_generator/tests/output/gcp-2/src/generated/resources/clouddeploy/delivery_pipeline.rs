@@ -225,6 +225,9 @@ pub mod delivery_pipeline {
     }
     #[allow(dead_code)]
     pub struct DeliveryPipelineResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy. See
         /// https://google.aip.dev/128#annotations for more details such as format and size limitations. **Note**: This field is
         /// non-authoritative, and will only manage the annotations present in your configuration. Please refer to the field
@@ -340,6 +343,7 @@ pub mod delivery_pipeline {
         };
         let o = context.register_resource(request);
         DeliveryPipelineResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             conditions: o.get_field("conditions"),
             create_time: o.get_field("createTime"),

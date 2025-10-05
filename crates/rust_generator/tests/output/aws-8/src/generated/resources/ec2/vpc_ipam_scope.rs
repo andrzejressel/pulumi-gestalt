@@ -51,6 +51,9 @@ pub mod vpc_ipam_scope {
     }
     #[allow(dead_code)]
     pub struct VpcIpamScopeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the scope.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A description for the scope you're creating.
@@ -107,6 +110,7 @@ pub mod vpc_ipam_scope {
         };
         let o = context.register_resource(request);
         VpcIpamScopeResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             ipam_arn: o.get_field("ipamArn"),

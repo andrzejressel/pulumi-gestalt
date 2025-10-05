@@ -81,6 +81,9 @@ pub mod subnet_network_security_group_association {
     }
     #[allow(dead_code)]
     pub struct SubnetNetworkSecurityGroupAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Network Security Group which should be associated with the Subnet. Changing this forces a new resource to be created.
         pub network_security_group_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Subnet. Changing this forces a new resource to be created.
@@ -119,6 +122,7 @@ pub mod subnet_network_security_group_association {
         };
         let o = context.register_resource(request);
         SubnetNetworkSecurityGroupAssociationResult {
+            id: o.get_field("id"),
             network_security_group_id: o.get_field("networkSecurityGroupId"),
             subnet_id: o.get_field("subnetId"),
         }

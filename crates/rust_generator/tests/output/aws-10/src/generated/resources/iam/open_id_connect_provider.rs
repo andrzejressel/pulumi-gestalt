@@ -70,6 +70,9 @@ pub mod open_id_connect_provider {
     }
     #[allow(dead_code)]
     pub struct OpenIdConnectProviderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN assigned by AWS for this provider.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// List of client IDs (audiences) that identify the application registered with the OpenID Connect provider. This is the value sent as the `client_id` parameter in OAuth requests.
@@ -126,6 +129,7 @@ pub mod open_id_connect_provider {
         };
         let o = context.register_resource(request);
         OpenIdConnectProviderResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             client_id_lists: o.get_field("clientIdLists"),
             tags: o.get_field("tags"),

@@ -205,6 +205,9 @@ pub mod slot {
     }
     #[allow(dead_code)]
     pub struct SlotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the App Service within which to create the App Service Slot. Changing this forces a new resource to be created.
         pub app_service_name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the App Service Plan within which to create this App Service Slot. Changing this forces a new resource to be created.
@@ -369,6 +372,7 @@ pub mod slot {
         };
         let o = context.register_resource(request);
         SlotResult {
+            id: o.get_field("id"),
             app_service_name: o.get_field("appServiceName"),
             app_service_plan_id: o.get_field("appServicePlanId"),
             app_settings: o.get_field("appSettings"),

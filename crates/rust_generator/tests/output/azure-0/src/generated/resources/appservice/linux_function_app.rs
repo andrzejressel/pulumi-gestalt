@@ -222,6 +222,9 @@ pub mod linux_function_app {
     }
     #[allow(dead_code)]
     pub struct LinuxFunctionAppResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of key-value pairs for [App
         /// Settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-app-settings) and custom values.
         pub app_settings: pulumi_gestalt_rust::Output<
@@ -572,6 +575,7 @@ pub mod linux_function_app {
         };
         let o = context.register_resource(request);
         LinuxFunctionAppResult {
+            id: o.get_field("id"),
             app_settings: o.get_field("appSettings"),
             auth_settings: o.get_field("authSettings"),
             auth_settings_v2: o.get_field("authSettingsV2"),

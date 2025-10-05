@@ -85,6 +85,9 @@ pub mod named_query {
     }
     #[allow(dead_code)]
     pub struct NamedQueryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Database to which the query belongs.
         pub database: pulumi_gestalt_rust::Output<String>,
         /// Brief explanation of the query. Maximum length of 1024.
@@ -141,6 +144,7 @@ pub mod named_query {
         };
         let o = context.register_resource(request);
         NamedQueryResult {
+            id: o.get_field("id"),
             database: o.get_field("database"),
             description: o.get_field("description"),
             name: o.get_field("name"),

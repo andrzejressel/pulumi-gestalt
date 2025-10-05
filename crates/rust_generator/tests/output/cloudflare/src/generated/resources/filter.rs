@@ -59,6 +59,9 @@ pub mod filter {
     }
     #[allow(dead_code)]
     pub struct FilterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A note that you can use to describe the purpose of the filter.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The filter expression to be used.
@@ -115,6 +118,7 @@ pub mod filter {
         };
         let o = context.register_resource(request);
         FilterResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             expression: o.get_field("expression"),
             paused: o.get_field("paused"),

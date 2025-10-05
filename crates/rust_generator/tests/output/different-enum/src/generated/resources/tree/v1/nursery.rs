@@ -20,6 +20,12 @@ pub mod nursery {
             Vec<super::super::super::types::tree::v1::RubberTreeVariety>,
         >,
     }
+    #[allow(dead_code)]
+    pub struct NurseryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
+    }
     ///
     /// Registers a new resource with the given unique name and arguments
     ///
@@ -28,7 +34,7 @@ pub mod nursery {
         context: &pulumi_gestalt_rust::Context,
         name: &str,
         args: NurseryArgs,
-    ) {
+    ) -> NurseryResult {
         use std::collections::HashMap;
         use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let sizes_binding = args.sizes.get_output(context);
@@ -48,6 +54,9 @@ pub mod nursery {
                 },
             ],
         };
-        context.register_resource(request);
+        let o = context.register_resource(request);
+        NurseryResult {
+            id: o.get_field("id"),
+        }
     }
 }

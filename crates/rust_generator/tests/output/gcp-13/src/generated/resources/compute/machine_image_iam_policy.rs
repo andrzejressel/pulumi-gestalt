@@ -357,6 +357,9 @@ pub mod machine_image_iam_policy {
     }
     #[allow(dead_code)]
     pub struct MachineImageIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
         /// Used to find the parent resource to bind the IAM policy to
@@ -403,6 +406,7 @@ pub mod machine_image_iam_policy {
         };
         let o = context.register_resource(request);
         MachineImageIamPolicyResult {
+            id: o.get_field("id"),
             etag: o.get_field("etag"),
             machine_image: o.get_field("machineImage"),
             policy_data: o.get_field("policyData"),

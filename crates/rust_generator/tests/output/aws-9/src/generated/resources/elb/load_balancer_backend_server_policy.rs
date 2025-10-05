@@ -67,6 +67,9 @@ pub mod load_balancer_backend_server_policy {
     }
     #[allow(dead_code)]
     pub struct LoadBalancerBackendServerPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The instance port to apply the policy to.
         pub instance_port: pulumi_gestalt_rust::Output<i32>,
         /// The load balancer to attach the policy to.
@@ -110,6 +113,7 @@ pub mod load_balancer_backend_server_policy {
         };
         let o = context.register_resource(request);
         LoadBalancerBackendServerPolicyResult {
+            id: o.get_field("id"),
             instance_port: o.get_field("instancePort"),
             load_balancer_name: o.get_field("loadBalancerName"),
             policy_names: o.get_field("policyNames"),

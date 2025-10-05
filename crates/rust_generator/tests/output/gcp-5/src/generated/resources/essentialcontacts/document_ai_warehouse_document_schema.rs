@@ -89,6 +89,9 @@ pub mod document_ai_warehouse_document_schema {
     }
     #[allow(dead_code)]
     pub struct DocumentAiWarehouseDocumentSchemaResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the schema given by the user.
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// Tells whether the document is a folder or a typical document.
@@ -153,6 +156,7 @@ pub mod document_ai_warehouse_document_schema {
         };
         let o = context.register_resource(request);
         DocumentAiWarehouseDocumentSchemaResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             document_is_folder: o.get_field("documentIsFolder"),
             location: o.get_field("location"),

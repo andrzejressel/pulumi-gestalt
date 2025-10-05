@@ -92,6 +92,9 @@ pub mod identity_pool {
     }
     #[allow(dead_code)]
     pub struct IdentityPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Enables or disables the classic / basic authentication flow. Default is `false`.
         pub allow_classic_flow: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Whether the identity pool supports unauthenticated logins or not.
@@ -203,6 +206,7 @@ pub mod identity_pool {
         };
         let o = context.register_resource(request);
         IdentityPoolResult {
+            id: o.get_field("id"),
             allow_classic_flow: o.get_field("allowClassicFlow"),
             allow_unauthenticated_identities: o
                 .get_field("allowUnauthenticatedIdentities"),

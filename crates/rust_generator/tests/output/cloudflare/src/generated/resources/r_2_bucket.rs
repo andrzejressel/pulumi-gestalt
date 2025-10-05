@@ -42,6 +42,9 @@ pub mod r_2_bucket {
     }
     #[allow(dead_code)]
     pub struct R2BucketResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The location hint of the R2 bucket. Available values: `WNAM`, `ENAM`, `WEUR`, `EEUR`, `APAC`
@@ -84,6 +87,7 @@ pub mod r_2_bucket {
         };
         let o = context.register_resource(request);
         R2BucketResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             location: o.get_field("location"),
             name: o.get_field("name"),

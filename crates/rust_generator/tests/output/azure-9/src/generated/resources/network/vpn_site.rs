@@ -96,6 +96,9 @@ pub mod vpn_site {
     }
     #[allow(dead_code)]
     pub struct VpnSiteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of IP address CIDRs that are located on your on-premises site. Traffic destined for these address spaces is routed to your local site.
         ///
         /// > **NOTE:** The `address_cidrs` has to be set when the `link.bgp` isn't specified.
@@ -195,6 +198,7 @@ pub mod vpn_site {
         };
         let o = context.register_resource(request);
         VpnSiteResult {
+            id: o.get_field("id"),
             address_cidrs: o.get_field("addressCidrs"),
             device_model: o.get_field("deviceModel"),
             device_vendor: o.get_field("deviceVendor"),

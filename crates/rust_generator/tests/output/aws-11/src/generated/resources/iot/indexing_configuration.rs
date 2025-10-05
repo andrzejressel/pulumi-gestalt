@@ -65,6 +65,9 @@ pub mod indexing_configuration {
     }
     #[allow(dead_code)]
     pub struct IndexingConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Thing group indexing configuration. See below.
         pub thing_group_indexing_configuration: pulumi_gestalt_rust::Output<
             super::super::types::iot::IndexingConfigurationThingGroupIndexingConfiguration,
@@ -108,6 +111,7 @@ pub mod indexing_configuration {
         };
         let o = context.register_resource(request);
         IndexingConfigurationResult {
+            id: o.get_field("id"),
             thing_group_indexing_configuration: o
                 .get_field("thingGroupIndexingConfiguration"),
             thing_indexing_configuration: o.get_field("thingIndexingConfiguration"),

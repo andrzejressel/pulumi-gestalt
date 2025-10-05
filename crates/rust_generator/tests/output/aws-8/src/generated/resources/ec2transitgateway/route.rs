@@ -74,6 +74,9 @@ pub mod route {
     }
     #[allow(dead_code)]
     pub struct RouteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether to drop traffic that matches this route (default to `false`).
         pub blackhole: pulumi_gestalt_rust::Output<Option<bool>>,
         /// IPv4 or IPv6 RFC1924 CIDR used for destination matches. Routing decisions are based on the most specific match.
@@ -129,6 +132,7 @@ pub mod route {
         };
         let o = context.register_resource(request);
         RouteResult {
+            id: o.get_field("id"),
             blackhole: o.get_field("blackhole"),
             destination_cidr_block: o.get_field("destinationCidrBlock"),
             transit_gateway_attachment_id: o.get_field("transitGatewayAttachmentId"),

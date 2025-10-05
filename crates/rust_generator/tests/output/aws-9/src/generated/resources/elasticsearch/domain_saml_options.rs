@@ -60,6 +60,9 @@ pub mod domain_saml_options {
     }
     #[allow(dead_code)]
     pub struct DomainSamlOptionsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the domain.
         ///
         /// The following arguments are optional:
@@ -99,6 +102,7 @@ pub mod domain_saml_options {
         };
         let o = context.register_resource(request);
         DomainSamlOptionsResult {
+            id: o.get_field("id"),
             domain_name: o.get_field("domainName"),
             saml_options: o.get_field("samlOptions"),
         }

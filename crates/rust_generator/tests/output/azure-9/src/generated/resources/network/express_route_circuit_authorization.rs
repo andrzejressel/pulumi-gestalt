@@ -60,6 +60,9 @@ pub mod express_route_circuit_authorization {
     }
     #[allow(dead_code)]
     pub struct ExpressRouteCircuitAuthorizationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Authorization Key.
         pub authorization_key: pulumi_gestalt_rust::Output<String>,
         /// The authorization use status.
@@ -109,6 +112,7 @@ pub mod express_route_circuit_authorization {
         };
         let o = context.register_resource(request);
         ExpressRouteCircuitAuthorizationResult {
+            id: o.get_field("id"),
             authorization_key: o.get_field("authorizationKey"),
             authorization_use_status: o.get_field("authorizationUseStatus"),
             express_route_circuit_name: o.get_field("expressRouteCircuitName"),

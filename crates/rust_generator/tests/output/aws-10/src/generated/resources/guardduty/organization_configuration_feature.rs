@@ -56,6 +56,9 @@ pub mod organization_configuration_feature {
     }
     #[allow(dead_code)]
     pub struct OrganizationConfigurationFeatureResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Additional feature configuration block for features `EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`. See below.
         pub additional_configurations: pulumi_gestalt_rust::Output<
             Option<
@@ -114,6 +117,7 @@ pub mod organization_configuration_feature {
         };
         let o = context.register_resource(request);
         OrganizationConfigurationFeatureResult {
+            id: o.get_field("id"),
             additional_configurations: o.get_field("additionalConfigurations"),
             auto_enable: o.get_field("autoEnable"),
             detector_id: o.get_field("detectorId"),

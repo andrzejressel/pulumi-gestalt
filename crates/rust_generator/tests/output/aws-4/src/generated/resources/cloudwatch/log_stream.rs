@@ -43,6 +43,9 @@ pub mod log_stream {
     }
     #[allow(dead_code)]
     pub struct LogStreamResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) specifying the log stream.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the log group under which the log stream is to be created.
@@ -80,6 +83,7 @@ pub mod log_stream {
         };
         let o = context.register_resource(request);
         LogStreamResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             log_group_name: o.get_field("logGroupName"),
             name: o.get_field("name"),

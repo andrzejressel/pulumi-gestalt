@@ -150,6 +150,9 @@ pub mod transfer_job {
     }
     #[allow(dead_code)]
     pub struct TransferJobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// When the Transfer Job was created.
         pub creation_time: pulumi_gestalt_rust::Output<String>,
         /// When the Transfer Job was deleted.
@@ -244,6 +247,7 @@ pub mod transfer_job {
         };
         let o = context.register_resource(request);
         TransferJobResult {
+            id: o.get_field("id"),
             creation_time: o.get_field("creationTime"),
             deletion_time: o.get_field("deletionTime"),
             description: o.get_field("description"),

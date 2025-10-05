@@ -100,6 +100,9 @@ pub mod output_cosmosdb {
     }
     #[allow(dead_code)]
     pub struct OutputCosmosdbResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the CosmosDB container.
         pub container_name: pulumi_gestalt_rust::Output<String>,
         /// The account key for the CosmosDB database.
@@ -174,6 +177,7 @@ pub mod output_cosmosdb {
         };
         let o = context.register_resource(request);
         OutputCosmosdbResult {
+            id: o.get_field("id"),
             container_name: o.get_field("containerName"),
             cosmosdb_account_key: o.get_field("cosmosdbAccountKey"),
             cosmosdb_sql_database_id: o.get_field("cosmosdbSqlDatabaseId"),

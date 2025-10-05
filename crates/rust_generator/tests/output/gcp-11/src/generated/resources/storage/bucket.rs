@@ -233,6 +233,9 @@ pub mod bucket {
     }
     #[allow(dead_code)]
     pub struct BucketResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The bucket's [Autoclass](https://cloud.google.com/storage/docs/autoclass) configuration.  Structure is documented below.
         pub autoclass: pulumi_gestalt_rust::Output<
             Option<super::super::types::storage::BucketAutoclass>,
@@ -470,6 +473,7 @@ pub mod bucket {
         };
         let o = context.register_resource(request);
         BucketResult {
+            id: o.get_field("id"),
             autoclass: o.get_field("autoclass"),
             cors: o.get_field("cors"),
             custom_placement_config: o.get_field("customPlacementConfig"),

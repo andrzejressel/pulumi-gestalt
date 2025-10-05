@@ -341,6 +341,9 @@ pub mod iam_policy {
     }
     #[allow(dead_code)]
     pub struct IAMPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the organization's IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
         /// The organization id of the target organization.
@@ -385,6 +388,7 @@ pub mod iam_policy {
         };
         let o = context.register_resource(request);
         IAMPolicyResult {
+            id: o.get_field("id"),
             etag: o.get_field("etag"),
             org_id: o.get_field("orgId"),
             policy_data: o.get_field("policyData"),

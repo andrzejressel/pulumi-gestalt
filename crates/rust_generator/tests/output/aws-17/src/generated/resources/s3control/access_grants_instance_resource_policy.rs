@@ -44,6 +44,9 @@ pub mod access_grants_instance_resource_policy {
     }
     #[allow(dead_code)]
     pub struct AccessGrantsInstanceResourcePolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The policy document.
         pub policy: pulumi_gestalt_rust::Output<String>,
@@ -79,6 +82,7 @@ pub mod access_grants_instance_resource_policy {
         };
         let o = context.register_resource(request);
         AccessGrantsInstanceResourcePolicyResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             policy: o.get_field("policy"),
         }

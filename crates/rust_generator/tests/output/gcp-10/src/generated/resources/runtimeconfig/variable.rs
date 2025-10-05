@@ -93,6 +93,9 @@ pub mod variable {
     }
     #[allow(dead_code)]
     pub struct VariableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the variable to manage. Note that variable
         /// names can be hierarchical using slashes (e.g. "prod-variables/hostname").
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -160,6 +163,7 @@ pub mod variable {
         };
         let o = context.register_resource(request);
         VariableResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             parent: o.get_field("parent"),
             project: o.get_field("project"),

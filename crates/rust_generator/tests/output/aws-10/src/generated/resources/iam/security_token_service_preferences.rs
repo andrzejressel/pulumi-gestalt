@@ -27,6 +27,9 @@ pub mod security_token_service_preferences {
     }
     #[allow(dead_code)]
     pub struct SecurityTokenServicePreferencesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The version of the STS global endpoint token. Valid values: `v1Token`, `v2Token`.
         pub global_endpoint_token_version: pulumi_gestalt_rust::Output<String>,
     }
@@ -58,6 +61,7 @@ pub mod security_token_service_preferences {
         };
         let o = context.register_resource(request);
         SecurityTokenServicePreferencesResult {
+            id: o.get_field("id"),
             global_endpoint_token_version: o.get_field("globalEndpointTokenVersion"),
         }
     }

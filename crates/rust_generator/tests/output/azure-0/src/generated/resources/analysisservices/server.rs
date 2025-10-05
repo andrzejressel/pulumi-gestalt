@@ -84,6 +84,9 @@ pub mod server {
     }
     #[allow(dead_code)]
     pub struct ServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of email addresses of admin users.
         pub admin_users: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// URI and SAS token for a blob container to store backups.
@@ -187,6 +190,7 @@ pub mod server {
         };
         let o = context.register_resource(request);
         ServerResult {
+            id: o.get_field("id"),
             admin_users: o.get_field("adminUsers"),
             backup_blob_container_uri: o.get_field("backupBlobContainerUri"),
             ipv4_firewall_rules: o.get_field("ipv4FirewallRules"),

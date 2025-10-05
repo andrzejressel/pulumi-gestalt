@@ -58,6 +58,9 @@ pub mod gateway_association_proposal {
     }
     #[allow(dead_code)]
     pub struct GatewayAssociationProposalResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured.
         pub allowed_prefixes: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The ID of the VGW or transit gateway with which to associate the Direct Connect gateway.
@@ -116,6 +119,7 @@ pub mod gateway_association_proposal {
         };
         let o = context.register_resource(request);
         GatewayAssociationProposalResult {
+            id: o.get_field("id"),
             allowed_prefixes: o.get_field("allowedPrefixes"),
             associated_gateway_id: o.get_field("associatedGatewayId"),
             associated_gateway_owner_account_id: o

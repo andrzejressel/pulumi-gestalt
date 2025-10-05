@@ -242,6 +242,9 @@ pub mod launch {
     }
     #[allow(dead_code)]
     pub struct LaunchResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the launch.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The date and time that the launch is created.
@@ -349,6 +352,7 @@ pub mod launch {
         };
         let o = context.register_resource(request);
         LaunchResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_time: o.get_field("createdTime"),
             description: o.get_field("description"),

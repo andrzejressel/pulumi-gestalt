@@ -75,5 +75,6 @@ fn pulumi_main(context: &Context) -> Result<()> {
     add_export("keepers", &keepers);
     add_export("result_2", &random_string_2.result);
     add_export("secret_config", &secret_config);
+    add_export("id", &random_string.id);
     Ok(())
 }

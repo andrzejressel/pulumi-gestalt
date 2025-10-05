@@ -47,6 +47,9 @@ pub mod static_ip_attachment {
     }
     #[allow(dead_code)]
     pub struct StaticIpAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Lightsail instance to attach the IP to
         pub instance_name: pulumi_gestalt_rust::Output<String>,
         /// The allocated static IP address
@@ -84,6 +87,7 @@ pub mod static_ip_attachment {
         };
         let o = context.register_resource(request);
         StaticIpAttachmentResult {
+            id: o.get_field("id"),
             instance_name: o.get_field("instanceName"),
             ip_address: o.get_field("ipAddress"),
             static_ip_name: o.get_field("staticIpName"),

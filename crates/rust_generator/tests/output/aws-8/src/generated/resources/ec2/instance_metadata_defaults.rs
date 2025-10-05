@@ -37,6 +37,9 @@ pub mod instance_metadata_defaults {
     }
     #[allow(dead_code)]
     pub struct InstanceMetadataDefaultsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether the metadata service is available. Can be `"enabled"`, `"disabled"`, or `"no-preference"`. Default: `"no-preference"`.
         pub http_endpoint: pulumi_gestalt_rust::Output<String>,
         /// The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. Can be an integer from `1` to `64`, or `-1` to indicate no preference. Default: `-1`.
@@ -90,6 +93,7 @@ pub mod instance_metadata_defaults {
         };
         let o = context.register_resource(request);
         InstanceMetadataDefaultsResult {
+            id: o.get_field("id"),
             http_endpoint: o.get_field("httpEndpoint"),
             http_put_response_hop_limit: o.get_field("httpPutResponseHopLimit"),
             http_tokens: o.get_field("httpTokens"),

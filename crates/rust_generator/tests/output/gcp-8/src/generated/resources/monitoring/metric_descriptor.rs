@@ -173,6 +173,9 @@ pub mod metric_descriptor {
     }
     #[allow(dead_code)]
     pub struct MetricDescriptorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A detailed description of the metric, which can be used in documentation.
         pub description: pulumi_gestalt_rust::Output<String>,
         /// A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example "Request count".
@@ -297,6 +300,7 @@ pub mod metric_descriptor {
         };
         let o = context.register_resource(request);
         MetricDescriptorResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             labels: o.get_field("labels"),

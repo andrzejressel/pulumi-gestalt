@@ -121,6 +121,9 @@ pub mod backup_schedule {
     }
     #[allow(dead_code)]
     pub struct BackupScheduleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// For a schedule that runs daily.
         pub daily_recurrence: pulumi_gestalt_rust::Output<
             Option<super::super::types::firestore::BackupScheduleDailyRecurrence>,
@@ -191,6 +194,7 @@ pub mod backup_schedule {
         };
         let o = context.register_resource(request);
         BackupScheduleResult {
+            id: o.get_field("id"),
             daily_recurrence: o.get_field("dailyRecurrence"),
             database: o.get_field("database"),
             name: o.get_field("name"),

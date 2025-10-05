@@ -181,6 +181,9 @@ pub mod vpc_endpoint {
     }
     #[allow(dead_code)]
     pub struct VpcEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the VPC endpoint.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Accept the VPC endpoint (the VPC endpoint and service need to be in the same AWS account).
@@ -332,6 +335,7 @@ pub mod vpc_endpoint {
         };
         let o = context.register_resource(request);
         VpcEndpointResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             auto_accept: o.get_field("autoAccept"),
             cidr_blocks: o.get_field("cidrBlocks"),

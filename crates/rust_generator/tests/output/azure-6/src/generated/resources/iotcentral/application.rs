@@ -79,6 +79,9 @@ pub mod application {
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `display_name` name. Custom display name for the IoT Central application. Default is resource name.
         ///
         /// > **NOTE:** Due to a bug in the provider, the default value of `display_name` of a newly created IoT Central App will be the Resource Group Name, it will be fixed and use resource name in 4.0. For an existing IoT Central App, this could be fixed by specifying the `display_name` explicitly.
@@ -178,6 +181,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             identity: o.get_field("identity"),
             location: o.get_field("location"),

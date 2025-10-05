@@ -89,6 +89,9 @@ pub mod managed_folder {
     }
     #[allow(dead_code)]
     pub struct ManagedFolderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the bucket that contains the managed folder.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// The timestamp at which this managed folder was created.
@@ -146,6 +149,7 @@ pub mod managed_folder {
         };
         let o = context.register_resource(request);
         ManagedFolderResult {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             create_time: o.get_field("createTime"),
             force_destroy: o.get_field("forceDestroy"),

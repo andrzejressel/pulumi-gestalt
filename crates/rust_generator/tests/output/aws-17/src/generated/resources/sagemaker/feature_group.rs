@@ -87,6 +87,9 @@ pub mod feature_group {
     }
     #[allow(dead_code)]
     pub struct FeatureGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this feature_group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A free-form description of a Feature Group.
@@ -197,6 +200,7 @@ pub mod feature_group {
         };
         let o = context.register_resource(request);
         FeatureGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             event_time_feature_name: o.get_field("eventTimeFeatureName"),

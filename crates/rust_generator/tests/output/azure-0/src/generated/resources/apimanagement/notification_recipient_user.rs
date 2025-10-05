@@ -74,6 +74,9 @@ pub mod notification_recipient_user {
     }
     #[allow(dead_code)]
     pub struct NotificationRecipientUserResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the API Management Service from which to create this Notification Recipient User. Changing this forces a new API Management Notification Recipient User to be created.
         pub api_management_id: pulumi_gestalt_rust::Output<String>,
         /// The Notification Name to be received. Changing this forces a new API Management Notification Recipient User to be created. Possible values are `AccountClosedPublisher`, `BCC`, `NewApplicationNotificationMessage`, `NewIssuePublisherNotificationMessage`, `PurchasePublisherNotificationMessage`, `QuotaLimitApproachingPublisherNotificationMessage`, and `RequestPublisherNotificationMessage`.
@@ -117,6 +120,7 @@ pub mod notification_recipient_user {
         };
         let o = context.register_resource(request);
         NotificationRecipientUserResult {
+            id: o.get_field("id"),
             api_management_id: o.get_field("apiManagementId"),
             notification_type: o.get_field("notificationType"),
             user_id: o.get_field("userId"),

@@ -113,6 +113,9 @@ pub mod gallery_application_assignment {
     }
     #[allow(dead_code)]
     pub struct GalleryApplicationAssignmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the URI to an Azure Blob that will replace the default configuration for the package if provided. Changing this forces a new resource to be created.
         pub configuration_blob_uri: pulumi_gestalt_rust::Output<Option<String>>,
         /// The ID of the Gallery Application Version. Changing this forces a new resource to be created.
@@ -174,6 +177,7 @@ pub mod gallery_application_assignment {
         };
         let o = context.register_resource(request);
         GalleryApplicationAssignmentResult {
+            id: o.get_field("id"),
             configuration_blob_uri: o.get_field("configurationBlobUri"),
             gallery_application_version_id: o.get_field("galleryApplicationVersionId"),
             order: o.get_field("order"),

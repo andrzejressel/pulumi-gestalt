@@ -55,6 +55,9 @@ pub mod mover {
     }
     #[allow(dead_code)]
     pub struct MoverResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description for the Storage Mover.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the Azure Region where the Storage Mover should exist. Changing this forces a new Storage Mover to be created.
@@ -113,6 +116,7 @@ pub mod mover {
         };
         let o = context.register_resource(request);
         MoverResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             location: o.get_field("location"),
             name: o.get_field("name"),

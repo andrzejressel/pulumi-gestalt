@@ -326,6 +326,9 @@ pub mod policy {
     }
     #[allow(dead_code)]
     pub struct PolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether the adjustment is an absolute number or a percentage of the current capacity. Valid values are `ChangeInCapacity`, `ExactCapacity`, and `PercentChangeInCapacity`.
         pub adjustment_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// ARN assigned by AWS to the scaling policy.
@@ -508,6 +511,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
+            id: o.get_field("id"),
             adjustment_type: o.get_field("adjustmentType"),
             arn: o.get_field("arn"),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),

@@ -223,6 +223,9 @@ pub mod entry_type_iam_policy {
     }
     #[allow(dead_code)]
     pub struct EntryTypeIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub entry_type_id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -278,6 +281,7 @@ pub mod entry_type_iam_policy {
         };
         let o = context.register_resource(request);
         EntryTypeIamPolicyResult {
+            id: o.get_field("id"),
             entry_type_id: o.get_field("entryTypeId"),
             etag: o.get_field("etag"),
             location: o.get_field("location"),

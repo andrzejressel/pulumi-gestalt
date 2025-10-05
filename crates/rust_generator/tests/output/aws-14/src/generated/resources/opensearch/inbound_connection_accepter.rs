@@ -53,6 +53,9 @@ pub mod inbound_connection_accepter {
     }
     #[allow(dead_code)]
     pub struct InboundConnectionAccepterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the connection to accept.
         pub connection_id: pulumi_gestalt_rust::Output<String>,
         /// Status of the connection request.
@@ -84,6 +87,7 @@ pub mod inbound_connection_accepter {
         };
         let o = context.register_resource(request);
         InboundConnectionAccepterResult {
+            id: o.get_field("id"),
             connection_id: o.get_field("connectionId"),
             connection_status: o.get_field("connectionStatus"),
         }
