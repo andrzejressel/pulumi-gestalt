@@ -74,7 +74,7 @@ macro_rules! include_provider {
 macro_rules! pulumi_main {
     () => {
         #[cfg(target_arch = "wasm32")]
-        #[unsafe(export_name = "component:pulumi-gestalt/pulumi-main@0.0.4#main")]
+        #[unsafe(export_name = "component:pulumi-gestalt/pulumi-main@0.0.0-DEV#main")]
         unsafe extern "C" fn __exported() {
             pulumi_gestalt_rust::__private::pulumi_gestalt_rust_adapter_wasm::runner::run(
                 |engine| pulumi_main(&engine),
