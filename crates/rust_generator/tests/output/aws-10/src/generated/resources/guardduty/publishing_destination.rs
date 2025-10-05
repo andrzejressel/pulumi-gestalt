@@ -132,6 +132,9 @@ pub mod publishing_destination {
     }
     #[allow(dead_code)]
     pub struct PublishingDestinationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The bucket arn and prefix under which the findings get exported. Bucket-ARN is required, the prefix is optional and will be `AWSLogs/[Account-ID]/GuardDuty/[Region]/` if not provided
         pub destination_arn: pulumi_gestalt_rust::Output<String>,
         /// Currently there is only "S3" available as destination type which is also the default value
@@ -183,6 +186,7 @@ pub mod publishing_destination {
         };
         let o = context.register_resource(request);
         PublishingDestinationResult {
+            id: o.get_field("id"),
             destination_arn: o.get_field("destinationArn"),
             destination_type: o.get_field("destinationType"),
             detector_id: o.get_field("detectorId"),

@@ -143,6 +143,9 @@ pub mod eventhub_data_connection {
     }
     #[allow(dead_code)]
     pub struct EventhubDataConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Kusto Cluster this data connection will be added to. Changing this forces a new resource to be created.
         pub cluster_name: pulumi_gestalt_rust::Output<String>,
         /// Specifies compression type for the connection. Allowed values: `GZip` and `None`. Defaults to `None`. Changing this forces a new resource to be created.
@@ -266,6 +269,7 @@ pub mod eventhub_data_connection {
         };
         let o = context.register_resource(request);
         EventhubDataConnectionResult {
+            id: o.get_field("id"),
             cluster_name: o.get_field("clusterName"),
             compression: o.get_field("compression"),
             consumer_group: o.get_field("consumerGroup"),

@@ -26,6 +26,9 @@ pub mod multi_region_access_point_policy {
     }
     #[allow(dead_code)]
     pub struct MultiRegionAccessPointPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AWS account ID for the owner of the Multi-Region Access Point. Defaults to automatically determined account ID of the AWS provider.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// A configuration block containing details about the policy for the Multi-Region Access Point. See Details Configuration Block below for more details
@@ -68,6 +71,7 @@ pub mod multi_region_access_point_policy {
         };
         let o = context.register_resource(request);
         MultiRegionAccessPointPolicyResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             details: o.get_field("details"),
             established: o.get_field("established"),

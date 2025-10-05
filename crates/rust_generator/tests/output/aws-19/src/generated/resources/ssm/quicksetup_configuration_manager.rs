@@ -45,6 +45,9 @@ pub mod quicksetup_configuration_manager {
     }
     #[allow(dead_code)]
     pub struct QuicksetupConfigurationManagerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Definition of the Quick Setup configuration that the configuration manager deploys. See `configuration_definition` below.
         pub configuration_definition: pulumi_gestalt_rust::Output<
             Option<
@@ -123,6 +126,7 @@ pub mod quicksetup_configuration_manager {
         };
         let o = context.register_resource(request);
         QuicksetupConfigurationManagerResult {
+            id: o.get_field("id"),
             configuration_definition: o.get_field("configurationDefinition"),
             description: o.get_field("description"),
             manager_arn: o.get_field("managerArn"),

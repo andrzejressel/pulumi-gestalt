@@ -47,6 +47,9 @@ pub mod namespace {
     }
     #[allow(dead_code)]
     pub struct NamespaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Date and time when the namespace was created.
         pub created_at: pulumi_gestalt_rust::Output<String>,
         /// Account ID of the account that created the namespace.
@@ -90,6 +93,7 @@ pub mod namespace {
         };
         let o = context.register_resource(request);
         NamespaceResult {
+            id: o.get_field("id"),
             created_at: o.get_field("createdAt"),
             created_by: o.get_field("createdBy"),
             namespace: o.get_field("namespace"),

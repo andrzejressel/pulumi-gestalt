@@ -63,6 +63,9 @@ pub mod policy {
     }
     #[allow(dead_code)]
     pub struct PolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the policy.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The policy content to add to the new policy.
@@ -138,6 +141,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             content: o.get_field("content"),
             description: o.get_field("description"),

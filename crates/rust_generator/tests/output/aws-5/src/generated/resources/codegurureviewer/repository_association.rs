@@ -61,6 +61,9 @@ pub mod repository_association {
     }
     #[allow(dead_code)]
     pub struct RepositoryAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) identifying the repository association.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the repository association.
@@ -137,6 +140,7 @@ pub mod repository_association {
         };
         let o = context.register_resource(request);
         RepositoryAssociationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             association_id: o.get_field("associationId"),
             connection_arn: o.get_field("connectionArn"),

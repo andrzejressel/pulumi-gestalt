@@ -60,6 +60,9 @@ pub mod rule_group {
     }
     #[allow(dead_code)]
     pub struct RuleGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of activated rules, see below
         pub activated_rules: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::waf::RuleGroupActivatedRule>>,
@@ -119,6 +122,7 @@ pub mod rule_group {
         };
         let o = context.register_resource(request);
         RuleGroupResult {
+            id: o.get_field("id"),
             activated_rules: o.get_field("activatedRules"),
             arn: o.get_field("arn"),
             metric_name: o.get_field("metricName"),

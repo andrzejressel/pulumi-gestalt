@@ -215,6 +215,9 @@ pub mod gateway {
     }
     #[allow(dead_code)]
     pub struct GatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Gateway activation key during resource creation. Conflicts with `gateway_ip_address`. Additional information is available in the [Storage Gateway User Guide](https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html).
         pub activation_key: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the gateway.
@@ -400,6 +403,7 @@ pub mod gateway {
         };
         let o = context.register_resource(request);
         GatewayResult {
+            id: o.get_field("id"),
             activation_key: o.get_field("activationKey"),
             arn: o.get_field("arn"),
             average_download_rate_limit_in_bits_per_sec: o

@@ -59,6 +59,9 @@ pub mod network {
     }
     #[allow(dead_code)]
     pub struct NetworkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Azure Region where the Mobile Network should exist. Changing this forces a new Mobile Network to be created. The possible values are `eastus` and `northeurope`.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Mobile country code (MCC), defined in https://www.itu.int/rec/T-REC-E.212 . Changing this forces a new resource to be created.
@@ -126,6 +129,7 @@ pub mod network {
         };
         let o = context.register_resource(request);
         NetworkResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             mobile_country_code: o.get_field("mobileCountryCode"),
             mobile_network_code: o.get_field("mobileNetworkCode"),

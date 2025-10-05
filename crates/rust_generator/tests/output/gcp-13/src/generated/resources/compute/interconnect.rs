@@ -151,6 +151,9 @@ pub mod interconnect {
     }
     #[allow(dead_code)]
     pub struct InterconnectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Administrative status of the interconnect. When this is set to true, the Interconnect is
         /// functional and can carry traffic. When set to false, no packets can be carried over the
         /// interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
@@ -384,6 +387,7 @@ pub mod interconnect {
         };
         let o = context.register_resource(request);
         InterconnectResult {
+            id: o.get_field("id"),
             admin_enabled: o.get_field("adminEnabled"),
             available_features: o.get_field("availableFeatures"),
             circuit_infos: o.get_field("circuitInfos"),

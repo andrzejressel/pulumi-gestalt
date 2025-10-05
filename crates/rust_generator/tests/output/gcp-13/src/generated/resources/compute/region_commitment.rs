@@ -166,6 +166,9 @@ pub mod region_commitment {
     }
     #[allow(dead_code)]
     pub struct RegionCommitmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether to enable automatic renewal for the commitment.
         /// The default value is false if not specified.
         /// If the field is set to true, the commitment will be automatically renewed for either
@@ -309,6 +312,7 @@ pub mod region_commitment {
         };
         let o = context.register_resource(request);
         RegionCommitmentResult {
+            id: o.get_field("id"),
             auto_renew: o.get_field("autoRenew"),
             category: o.get_field("category"),
             commitment_id: o.get_field("commitmentId"),

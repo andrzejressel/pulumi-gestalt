@@ -76,6 +76,9 @@ pub mod dsc_node_configuration {
     }
     #[allow(dead_code)]
     pub struct DscNodeConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the automation account in which the DSC Node Configuration is created. Changing this forces a new resource to be created.
         pub automation_account_name: pulumi_gestalt_rust::Output<String>,
         pub configuration_name: pulumi_gestalt_rust::Output<String>,
@@ -128,6 +131,7 @@ pub mod dsc_node_configuration {
         };
         let o = context.register_resource(request);
         DscNodeConfigurationResult {
+            id: o.get_field("id"),
             automation_account_name: o.get_field("automationAccountName"),
             configuration_name: o.get_field("configurationName"),
             content_embedded: o.get_field("contentEmbedded"),

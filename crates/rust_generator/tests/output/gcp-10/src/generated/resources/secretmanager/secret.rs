@@ -189,6 +189,9 @@ pub mod secret {
     }
     #[allow(dead_code)]
     pub struct SecretResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Custom metadata about the secret. Annotations are distinct from various forms of labels. Annotations exist to allow
         /// client tools to store their own state information without requiring a database. Annotation keys must be between 1 and 63
         /// characters long, have a UTF-8 encoding of maximum 128 bytes, begin and end with an alphanumeric character ([a-z0-9A-Z]),
@@ -341,6 +344,7 @@ pub mod secret {
         };
         let o = context.register_resource(request);
         SecretResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             create_time: o.get_field("createTime"),
             effective_annotations: o.get_field("effectiveAnnotations"),

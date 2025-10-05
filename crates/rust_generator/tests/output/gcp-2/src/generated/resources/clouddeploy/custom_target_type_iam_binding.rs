@@ -21,6 +21,9 @@ pub mod custom_target_type_iam_binding {
     }
     #[allow(dead_code)]
     pub struct CustomTargetTypeIamBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::clouddeploy::CustomTargetTypeIamBindingCondition>,
         >,
@@ -82,6 +85,7 @@ pub mod custom_target_type_iam_binding {
         };
         let o = context.register_resource(request);
         CustomTargetTypeIamBindingResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),
             location: o.get_field("location"),

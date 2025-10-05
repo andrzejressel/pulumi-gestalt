@@ -54,6 +54,9 @@ pub mod hub {
     }
     #[allow(dead_code)]
     pub struct HubResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Hub.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A description of the hub.
@@ -127,6 +130,7 @@ pub mod hub {
         };
         let o = context.register_resource(request);
         HubResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             hub_description: o.get_field("hubDescription"),
             hub_display_name: o.get_field("hubDisplayName"),

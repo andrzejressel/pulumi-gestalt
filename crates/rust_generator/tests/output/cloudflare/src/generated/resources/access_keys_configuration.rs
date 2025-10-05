@@ -15,6 +15,9 @@ pub mod access_keys_configuration {
     }
     #[allow(dead_code)]
     pub struct AccessKeysConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Number of days to trigger a rotation of the keys.
@@ -53,6 +56,7 @@ pub mod access_keys_configuration {
         };
         let o = context.register_resource(request);
         AccessKeysConfigurationResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             key_rotation_interval_days: o.get_field("keyRotationIntervalDays"),
         }

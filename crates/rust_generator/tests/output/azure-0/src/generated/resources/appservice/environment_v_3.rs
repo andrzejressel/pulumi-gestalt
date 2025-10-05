@@ -125,6 +125,9 @@ pub mod environment_v_3 {
     }
     #[allow(dead_code)]
     pub struct EnvironmentV3Result {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Should new Private Endpoint Connections be allowed. Defaults to `true`.
         pub allow_new_private_endpoint_connections: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -253,6 +256,7 @@ pub mod environment_v_3 {
         };
         let o = context.register_resource(request);
         EnvironmentV3Result {
+            id: o.get_field("id"),
             allow_new_private_endpoint_connections: o
                 .get_field("allowNewPrivateEndpointConnections"),
             cluster_settings: o.get_field("clusterSettings"),

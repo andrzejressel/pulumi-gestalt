@@ -193,6 +193,9 @@ pub mod node_template {
     }
     #[allow(dead_code)]
     pub struct NodeTemplateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of the type and count of accelerator cards attached to the
         /// node template
         /// Structure is documented below.
@@ -323,6 +326,7 @@ pub mod node_template {
         };
         let o = context.register_resource(request);
         NodeTemplateResult {
+            id: o.get_field("id"),
             accelerators: o.get_field("accelerators"),
             cpu_overcommit_type: o.get_field("cpuOvercommitType"),
             creation_timestamp: o.get_field("creationTimestamp"),

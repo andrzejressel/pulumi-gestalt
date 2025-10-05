@@ -41,6 +41,9 @@ pub mod proxy_endpoint {
     }
     #[allow(dead_code)]
     pub struct ProxyEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) for the proxy endpoint.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The identifier for the proxy endpoint. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
@@ -121,6 +124,7 @@ pub mod proxy_endpoint {
         };
         let o = context.register_resource(request);
         ProxyEndpointResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             db_proxy_endpoint_name: o.get_field("dbProxyEndpointName"),
             db_proxy_name: o.get_field("dbProxyName"),

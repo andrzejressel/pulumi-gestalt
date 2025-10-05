@@ -57,6 +57,9 @@ pub mod frontdoor_endpoint {
     }
     #[allow(dead_code)]
     pub struct FrontdoorEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Front Door Profile within which this Front Door Endpoint should exist. Changing this forces a new Front Door Endpoint to be created.
         pub cdn_frontdoor_profile_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies if this Front Door Endpoint is enabled? Defaults to `true`.
@@ -112,6 +115,7 @@ pub mod frontdoor_endpoint {
         };
         let o = context.register_resource(request);
         FrontdoorEndpointResult {
+            id: o.get_field("id"),
             cdn_frontdoor_profile_id: o.get_field("cdnFrontdoorProfileId"),
             enabled: o.get_field("enabled"),
             host_name: o.get_field("hostName"),

@@ -81,6 +81,9 @@ pub mod event_stream {
     }
     #[allow(dead_code)]
     pub struct EventStreamResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The application ID.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery stream to which you want to publish events.
@@ -125,6 +128,7 @@ pub mod event_stream {
         };
         let o = context.register_resource(request);
         EventStreamResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             destination_stream_arn: o.get_field("destinationStreamArn"),
             role_arn: o.get_field("roleArn"),

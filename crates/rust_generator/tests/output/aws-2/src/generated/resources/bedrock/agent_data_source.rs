@@ -70,6 +70,9 @@ pub mod agent_data_source {
     }
     #[allow(dead_code)]
     pub struct AgentDataSourceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Data deletion policy for a data source. Valid values: `RETAIN`, `DELETE`.
         pub data_deletion_policy: pulumi_gestalt_rust::Output<String>,
         /// Details about how the data source is stored. See `data_source_configuration` block for details.
@@ -168,6 +171,7 @@ pub mod agent_data_source {
         };
         let o = context.register_resource(request);
         AgentDataSourceResult {
+            id: o.get_field("id"),
             data_deletion_policy: o.get_field("dataDeletionPolicy"),
             data_source_configuration: o.get_field("dataSourceConfiguration"),
             data_source_id: o.get_field("dataSourceId"),

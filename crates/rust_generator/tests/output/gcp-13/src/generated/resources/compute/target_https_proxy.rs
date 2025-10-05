@@ -434,6 +434,9 @@ pub mod target_https_proxy {
     }
     #[allow(dead_code)]
     pub struct TargetHttpsProxyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// URLs to certificate manager certificate resources that are used to authenticate connections between users and the load balancer.
         /// Certificate manager certificates only apply when the load balancing scheme is set to INTERNAL_MANAGED.
         /// For EXTERNAL and EXTERNAL_MANAGED, use certificate_map instead.
@@ -610,6 +613,7 @@ pub mod target_https_proxy {
         };
         let o = context.register_resource(request);
         TargetHttpsProxyResult {
+            id: o.get_field("id"),
             certificate_manager_certificates: o
                 .get_field("certificateManagerCertificates"),
             certificate_map: o.get_field("certificateMap"),

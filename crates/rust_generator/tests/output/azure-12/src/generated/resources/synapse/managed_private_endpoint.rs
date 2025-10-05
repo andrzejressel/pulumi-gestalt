@@ -103,6 +103,9 @@ pub mod managed_private_endpoint {
     }
     #[allow(dead_code)]
     pub struct ManagedPrivateEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name which should be used for this Managed Private Endpoint. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Specifies the sub resource name which the Synapse Private Endpoint is able to connect to. Changing this forces a new resource to be created.
@@ -156,6 +159,7 @@ pub mod managed_private_endpoint {
         };
         let o = context.register_resource(request);
         ManagedPrivateEndpointResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             subresource_name: o.get_field("subresourceName"),
             synapse_workspace_id: o.get_field("synapseWorkspaceId"),

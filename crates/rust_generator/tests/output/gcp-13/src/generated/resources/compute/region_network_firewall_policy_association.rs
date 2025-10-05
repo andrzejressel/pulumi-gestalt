@@ -108,6 +108,9 @@ pub mod region_network_firewall_policy_association {
     }
     #[allow(dead_code)]
     pub struct RegionNetworkFirewallPolicyAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The target that the firewall policy is attached to.
         pub attachment_target: pulumi_gestalt_rust::Output<String>,
         /// The firewall policy of the resource.
@@ -171,6 +174,7 @@ pub mod region_network_firewall_policy_association {
         };
         let o = context.register_resource(request);
         RegionNetworkFirewallPolicyAssociationResult {
+            id: o.get_field("id"),
             attachment_target: o.get_field("attachmentTarget"),
             firewall_policy: o.get_field("firewallPolicy"),
             name: o.get_field("name"),

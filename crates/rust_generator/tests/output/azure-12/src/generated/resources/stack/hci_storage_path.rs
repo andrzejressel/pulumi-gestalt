@@ -59,6 +59,9 @@ pub mod hci_storage_path {
     }
     #[allow(dead_code)]
     pub struct HciStoragePathResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of Custom Location where the Azure Stack HCI Storage Path should exist. Changing this forces a new resource to be created.
         pub custom_location_id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Azure Stack HCI Storage Path should exist. Changing this forces a new resource to be created.
@@ -124,6 +127,7 @@ pub mod hci_storage_path {
         };
         let o = context.register_resource(request);
         HciStoragePathResult {
+            id: o.get_field("id"),
             custom_location_id: o.get_field("customLocationId"),
             location: o.get_field("location"),
             name: o.get_field("name"),

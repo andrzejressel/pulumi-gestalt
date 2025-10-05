@@ -50,6 +50,9 @@ pub mod local_rulestack_outbound_trust_certificate_association {
     }
     #[allow(dead_code)]
     pub struct LocalRulestackOutboundTrustCertificateAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Certificate to use as the Outbound Trust Certificate. Changing this forces a new Palo Alto Networks Rulestack Outbound Trust Certificate Association to be created.
         pub certificate_id: pulumi_gestalt_rust::Output<String>,
     }
@@ -79,6 +82,7 @@ pub mod local_rulestack_outbound_trust_certificate_association {
         };
         let o = context.register_resource(request);
         LocalRulestackOutboundTrustCertificateAssociationResult {
+            id: o.get_field("id"),
             certificate_id: o.get_field("certificateId"),
         }
     }

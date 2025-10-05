@@ -357,6 +357,9 @@ pub mod bare_metal_cluster {
     }
     #[allow(dead_code)]
     pub struct BareMetalClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Admin Cluster this Bare Metal User Cluster belongs to.
         /// This is the full resource name of the Admin Cluster's hub membership.
         pub admin_cluster_membership: pulumi_gestalt_rust::Output<String>,
@@ -616,6 +619,7 @@ pub mod bare_metal_cluster {
         };
         let o = context.register_resource(request);
         BareMetalClusterResult {
+            id: o.get_field("id"),
             admin_cluster_membership: o.get_field("adminClusterMembership"),
             annotations: o.get_field("annotations"),
             bare_metal_version: o.get_field("bareMetalVersion"),

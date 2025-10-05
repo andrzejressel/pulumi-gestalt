@@ -53,6 +53,9 @@ pub mod resource_set {
     }
     #[allow(dead_code)]
     pub struct ResourceSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Resource Set.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Details about the resource set to be created or updated. See `resource_set` Attribute Reference below.
@@ -104,6 +107,7 @@ pub mod resource_set {
         };
         let o = context.register_resource(request);
         ResourceSetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             resource_sets: o.get_field("resourceSets"),
             tags: o.get_field("tags"),

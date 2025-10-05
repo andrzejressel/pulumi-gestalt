@@ -279,6 +279,9 @@ pub mod service {
     }
     #[allow(dead_code)]
     pub struct ServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Information about the CloudWatch alarms. See below.
         pub alarms: pulumi_gestalt_rust::Output<
             Option<super::super::types::ecs::ServiceAlarms>,
@@ -589,6 +592,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
+            id: o.get_field("id"),
             alarms: o.get_field("alarms"),
             availability_zone_rebalancing: o.get_field("availabilityZoneRebalancing"),
             capacity_provider_strategies: o.get_field("capacityProviderStrategies"),

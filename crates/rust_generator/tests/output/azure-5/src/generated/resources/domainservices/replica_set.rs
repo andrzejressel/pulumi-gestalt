@@ -276,6 +276,9 @@ pub mod replica_set {
     }
     #[allow(dead_code)]
     pub struct ReplicaSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of subnet IP addresses for the domain controllers in this Replica Set, typically two.
         pub domain_controller_ip_addresses: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The ID of the Domain Service for which to create this Replica Set. Changing this forces a new resource to be created.
@@ -324,6 +327,7 @@ pub mod replica_set {
         };
         let o = context.register_resource(request);
         ReplicaSetResult {
+            id: o.get_field("id"),
             domain_controller_ip_addresses: o.get_field("domainControllerIpAddresses"),
             domain_service_id: o.get_field("domainServiceId"),
             external_access_ip_address: o.get_field("externalAccessIpAddress"),

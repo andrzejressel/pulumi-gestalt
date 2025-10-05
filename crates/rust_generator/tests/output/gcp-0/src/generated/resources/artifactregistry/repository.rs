@@ -678,6 +678,9 @@ pub mod repository {
     }
     #[allow(dead_code)]
     pub struct RepositoryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Cleanup policies for this repository. Cleanup policies indicate when
         /// certain package versions can be automatically deleted.
         /// Map keys are policy IDs supplied by users during policy creation. They must
@@ -871,6 +874,7 @@ pub mod repository {
         };
         let o = context.register_resource(request);
         RepositoryResult {
+            id: o.get_field("id"),
             cleanup_policies: o.get_field("cleanupPolicies"),
             cleanup_policy_dry_run: o.get_field("cleanupPolicyDryRun"),
             create_time: o.get_field("createTime"),

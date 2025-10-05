@@ -127,6 +127,9 @@ pub mod project_pool {
     }
     #[allow(dead_code)]
     pub struct ProjectPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Dev Center Dev Box Definition.
         pub dev_box_definition_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the Dev Center Attached Network in parent Project of the Dev Center Project Pool.
@@ -218,6 +221,7 @@ pub mod project_pool {
         };
         let o = context.register_resource(request);
         ProjectPoolResult {
+            id: o.get_field("id"),
             dev_box_definition_name: o.get_field("devBoxDefinitionName"),
             dev_center_attached_network_name: o
                 .get_field("devCenterAttachedNetworkName"),

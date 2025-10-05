@@ -52,6 +52,9 @@ pub mod vpc_attachment_accepter {
     }
     #[allow(dead_code)]
     pub struct VpcAttachmentAccepterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether Appliance Mode support is enabled. Valid values: `disable`, `enable`.
         pub appliance_mode_support: pulumi_gestalt_rust::Output<String>,
         /// Whether DNS support is enabled. Valid values: `disable`, `enable`.
@@ -136,6 +139,7 @@ pub mod vpc_attachment_accepter {
         };
         let o = context.register_resource(request);
         VpcAttachmentAccepterResult {
+            id: o.get_field("id"),
             appliance_mode_support: o.get_field("applianceModeSupport"),
             dns_support: o.get_field("dnsSupport"),
             ipv6_support: o.get_field("ipv6Support"),

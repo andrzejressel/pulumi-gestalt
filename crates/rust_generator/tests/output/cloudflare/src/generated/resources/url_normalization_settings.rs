@@ -35,6 +35,9 @@ pub mod url_normalization_settings {
     }
     #[allow(dead_code)]
     pub struct UrlNormalizationSettingsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The scope of the URL normalization.
         pub scope: pulumi_gestalt_rust::Output<String>,
         /// The type of URL normalization performed by Cloudflare.
@@ -78,6 +81,7 @@ pub mod url_normalization_settings {
         };
         let o = context.register_resource(request);
         UrlNormalizationSettingsResult {
+            id: o.get_field("id"),
             scope: o.get_field("scope"),
             type_: o.get_field("type"),
             zone_id: o.get_field("zoneId"),

@@ -25,11 +25,20 @@
 /// ```
 #[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
 pub mod sharing_with_organization {
+    #[allow(dead_code)]
+    pub struct SharingWithOrganizationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
+    }
     ///
     /// Registers a new resource with the given unique name and arguments
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
-    pub fn create(context: &pulumi_gestalt_rust::Context, name: &str) {
+    pub fn create(
+        context: &pulumi_gestalt_rust::Context,
+        name: &str,
+    ) -> SharingWithOrganizationResult {
         use std::collections::HashMap;
         use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
@@ -38,6 +47,9 @@ pub mod sharing_with_organization {
             version: super::super::get_version(),
             object: &[],
         };
-        context.register_resource(request);
+        let o = context.register_resource(request);
+        SharingWithOrganizationResult {
+            id: o.get_field("id"),
+        }
     }
 }

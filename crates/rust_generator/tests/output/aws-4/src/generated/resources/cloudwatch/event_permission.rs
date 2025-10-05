@@ -73,6 +73,9 @@ pub mod event_permission {
     }
     #[allow(dead_code)]
     pub struct EventPermissionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The action that you are enabling the other account to perform. Defaults to `events:PutEvents`.
         pub action: pulumi_gestalt_rust::Output<Option<String>>,
         /// Configuration block to limit the event bus permissions you are granting to only accounts that fulfill the condition. Specified below.
@@ -132,6 +135,7 @@ pub mod event_permission {
         };
         let o = context.register_resource(request);
         EventPermissionResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             condition: o.get_field("condition"),
             event_bus_name: o.get_field("eventBusName"),

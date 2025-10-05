@@ -169,6 +169,9 @@ pub mod kx_environment {
     }
     #[allow(dead_code)]
     pub struct KxEnvironmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) identifier of the KX environment.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// AWS Availability Zone IDs that this environment is available in. Important when selecting VPC subnets to use in cluster creation.
@@ -264,6 +267,7 @@ pub mod kx_environment {
         };
         let o = context.register_resource(request);
         KxEnvironmentResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             availability_zones: o.get_field("availabilityZones"),
             created_timestamp: o.get_field("createdTimestamp"),

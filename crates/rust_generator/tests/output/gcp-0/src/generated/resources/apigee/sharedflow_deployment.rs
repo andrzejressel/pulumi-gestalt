@@ -52,6 +52,9 @@ pub mod sharedflow_deployment {
     }
     #[allow(dead_code)]
     pub struct SharedflowDeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The resource ID of the environment.
         pub environment: pulumi_gestalt_rust::Output<String>,
         /// The Apigee Organization associated with the Sharedflow
@@ -111,6 +114,7 @@ pub mod sharedflow_deployment {
         };
         let o = context.register_resource(request);
         SharedflowDeploymentResult {
+            id: o.get_field("id"),
             environment: o.get_field("environment"),
             org_id: o.get_field("orgId"),
             revision: o.get_field("revision"),

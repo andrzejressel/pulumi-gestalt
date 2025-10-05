@@ -138,6 +138,9 @@ pub mod cache {
     }
     #[allow(dead_code)]
     pub struct CacheResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether the HPC Cache automatically rotates Encryption Key to the latest version.
         pub automatically_rotate_key_to_latest_enabled: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -307,6 +310,7 @@ pub mod cache {
         };
         let o = context.register_resource(request);
         CacheResult {
+            id: o.get_field("id"),
             automatically_rotate_key_to_latest_enabled: o
                 .get_field("automaticallyRotateKeyToLatestEnabled"),
             cache_size_in_gb: o.get_field("cacheSizeInGb"),

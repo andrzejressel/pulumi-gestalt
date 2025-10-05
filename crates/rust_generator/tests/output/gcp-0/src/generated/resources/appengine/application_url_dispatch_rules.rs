@@ -81,6 +81,9 @@ pub mod application_url_dispatch_rules {
     }
     #[allow(dead_code)]
     pub struct ApplicationUrlDispatchRulesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Rules to match an HTTP request and dispatch that request to a service.
         /// Structure is documented below.
         pub dispatch_rules: pulumi_gestalt_rust::Output<
@@ -119,6 +122,7 @@ pub mod application_url_dispatch_rules {
         };
         let o = context.register_resource(request);
         ApplicationUrlDispatchRulesResult {
+            id: o.get_field("id"),
             dispatch_rules: o.get_field("dispatchRules"),
             project: o.get_field("project"),
         }

@@ -35,6 +35,9 @@ pub mod domain {
     }
     #[allow(dead_code)]
     pub struct DomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the SimpleDB domain
         pub name: pulumi_gestalt_rust::Output<String>,
     }
@@ -63,6 +66,7 @@ pub mod domain {
         };
         let o = context.register_resource(request);
         DomainResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
         }
     }

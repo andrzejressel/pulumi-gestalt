@@ -48,6 +48,9 @@ pub mod resource_policy {
     }
     #[allow(dead_code)]
     pub struct ResourcePolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Set this parameter to true to confirm that you want to remove your permissions to change the policy of this resource in the future.
         pub confirm_remove_self_resource_access: pulumi_gestalt_rust::Output<bool>,
         /// n Amazon Web Services resource-based policy document in JSON format. The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. For a full list of all considerations that you should keep in mind while attaching a resource-based policy, see Resource-based policy considerations.
@@ -96,6 +99,7 @@ pub mod resource_policy {
         };
         let o = context.register_resource(request);
         ResourcePolicyResult {
+            id: o.get_field("id"),
             confirm_remove_self_resource_access: o
                 .get_field("confirmRemoveSelfResourceAccess"),
             policy: o.get_field("policy"),

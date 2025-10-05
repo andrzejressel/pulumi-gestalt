@@ -54,6 +54,9 @@ pub mod hyper_v_site {
     }
     #[allow(dead_code)]
     pub struct HyperVSiteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Recovery Service. Changing this forces a new Site to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Recovery Services Vault where the Site created. Changing this forces a new Site to be created.
@@ -89,6 +92,7 @@ pub mod hyper_v_site {
         };
         let o = context.register_resource(request);
         HyperVSiteResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             recovery_vault_id: o.get_field("recoveryVaultId"),
         }

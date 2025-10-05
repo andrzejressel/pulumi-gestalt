@@ -68,6 +68,9 @@ pub mod default_vpc {
     }
     #[allow(dead_code)]
     pub struct DefaultVpcResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub arn: pulumi_gestalt_rust::Output<String>,
         pub assign_generated_ipv6_cidr_block: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The primary IPv4 CIDR block for the VPC
@@ -174,6 +177,7 @@ pub mod default_vpc {
         };
         let o = context.register_resource(request);
         DefaultVpcResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             assign_generated_ipv6_cidr_block: o
                 .get_field("assignGeneratedIpv6CidrBlock"),

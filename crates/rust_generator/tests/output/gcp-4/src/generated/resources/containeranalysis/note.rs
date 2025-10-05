@@ -141,6 +141,9 @@ pub mod note {
     }
     #[allow(dead_code)]
     pub struct NoteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Note kind that represents a logical attestation "role" or "authority".
         /// For example, an organization might have one AttestationAuthority for
         /// "QA" and one for "build". This Note is intended to act strictly as a
@@ -238,6 +241,7 @@ pub mod note {
         };
         let o = context.register_resource(request);
         NoteResult {
+            id: o.get_field("id"),
             attestation_authority: o.get_field("attestationAuthority"),
             create_time: o.get_field("createTime"),
             expiration_time: o.get_field("expirationTime"),

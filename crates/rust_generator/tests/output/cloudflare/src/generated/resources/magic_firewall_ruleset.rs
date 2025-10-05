@@ -52,6 +52,9 @@ pub mod magic_firewall_ruleset {
     }
     #[allow(dead_code)]
     pub struct MagicFirewallRulesetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the account where the ruleset is being created.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// A note that can be used to annotate the rule.
@@ -102,6 +105,7 @@ pub mod magic_firewall_ruleset {
         };
         let o = context.register_resource(request);
         MagicFirewallRulesetResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             description: o.get_field("description"),
             name: o.get_field("name"),

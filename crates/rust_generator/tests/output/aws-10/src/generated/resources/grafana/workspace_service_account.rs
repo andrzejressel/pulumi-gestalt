@@ -43,6 +43,9 @@ pub mod workspace_service_account {
     }
     #[allow(dead_code)]
     pub struct WorkspaceServiceAccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The permission level to use for this service account. For more information about the roles and the permissions each has, see the [User roles](https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html) documentation.
         pub grafana_role: pulumi_gestalt_rust::Output<String>,
         /// A name for the service account. The name must be unique within the workspace, as it determines the ID associated with the service account.
@@ -87,6 +90,7 @@ pub mod workspace_service_account {
         };
         let o = context.register_resource(request);
         WorkspaceServiceAccountResult {
+            id: o.get_field("id"),
             grafana_role: o.get_field("grafanaRole"),
             name: o.get_field("name"),
             service_account_id: o.get_field("serviceAccountId"),

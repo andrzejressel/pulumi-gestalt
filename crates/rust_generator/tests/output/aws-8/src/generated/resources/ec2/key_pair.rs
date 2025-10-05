@@ -59,6 +59,9 @@ pub mod key_pair {
     }
     #[allow(dead_code)]
     pub struct KeyPairResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The key pair ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The MD5 public key fingerprint as specified in section 4 of RFC 4716.
@@ -122,6 +125,7 @@ pub mod key_pair {
         };
         let o = context.register_resource(request);
         KeyPairResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             fingerprint: o.get_field("fingerprint"),
             key_name: o.get_field("keyName"),

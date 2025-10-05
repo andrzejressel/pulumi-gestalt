@@ -105,6 +105,9 @@ pub mod authomation_rule {
     }
     #[allow(dead_code)]
     pub struct AuthomationRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `action_incident` blocks as defined below.
         pub action_incidents: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::sentinel::AuthomationRuleActionIncident>>,
@@ -211,6 +214,7 @@ pub mod authomation_rule {
         };
         let o = context.register_resource(request);
         AuthomationRuleResult {
+            id: o.get_field("id"),
             action_incidents: o.get_field("actionIncidents"),
             action_playbooks: o.get_field("actionPlaybooks"),
             condition_json: o.get_field("conditionJson"),

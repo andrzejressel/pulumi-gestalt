@@ -119,6 +119,9 @@ pub mod key {
     }
     #[allow(dead_code)]
     pub struct KeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Arbitrary map of values that, when changed, will trigger a new key to be generated.
         pub keepers: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -204,6 +207,7 @@ pub mod key {
         };
         let o = context.register_resource(request);
         KeyResult {
+            id: o.get_field("id"),
             keepers: o.get_field("keepers"),
             key_algorithm: o.get_field("keyAlgorithm"),
             name: o.get_field("name"),

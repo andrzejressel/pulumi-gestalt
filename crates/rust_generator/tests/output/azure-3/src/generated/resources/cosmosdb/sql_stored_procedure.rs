@@ -76,6 +76,9 @@ pub mod sql_stored_procedure {
     }
     #[allow(dead_code)]
     pub struct SqlStoredProcedureResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Cosmos DB Account to create the stored procedure within. Changing this forces a new resource to be created.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// The body of the stored procedure.
@@ -139,6 +142,7 @@ pub mod sql_stored_procedure {
         };
         let o = context.register_resource(request);
         SqlStoredProcedureResult {
+            id: o.get_field("id"),
             account_name: o.get_field("accountName"),
             body: o.get_field("body"),
             container_name: o.get_field("containerName"),

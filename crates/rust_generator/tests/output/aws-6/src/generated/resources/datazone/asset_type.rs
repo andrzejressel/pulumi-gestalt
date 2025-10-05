@@ -60,6 +60,9 @@ pub mod asset_type {
     }
     #[allow(dead_code)]
     pub struct AssetTypeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The timestamp when the custom asset type was created.
         pub created_at: pulumi_gestalt_rust::Output<String>,
         /// The user who created the custom asset type.
@@ -136,6 +139,7 @@ pub mod asset_type {
         };
         let o = context.register_resource(request);
         AssetTypeResult {
+            id: o.get_field("id"),
             created_at: o.get_field("createdAt"),
             created_by: o.get_field("createdBy"),
             description: o.get_field("description"),

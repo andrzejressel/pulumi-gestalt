@@ -60,6 +60,9 @@ pub mod log_metric_filter {
     }
     #[allow(dead_code)]
     pub struct LogMetricFilterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the log group to associate the metric filter with.
         pub log_group_name: pulumi_gestalt_rust::Output<String>,
         /// A block defining collection of information needed to define how metric data gets emitted. See below.
@@ -114,6 +117,7 @@ pub mod log_metric_filter {
         };
         let o = context.register_resource(request);
         LogMetricFilterResult {
+            id: o.get_field("id"),
             log_group_name: o.get_field("logGroupName"),
             metric_transformation: o.get_field("metricTransformation"),
             name: o.get_field("name"),

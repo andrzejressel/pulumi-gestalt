@@ -189,6 +189,9 @@ pub mod configuration_set_event_destination {
     }
     #[allow(dead_code)]
     pub struct ConfigurationSetEventDestinationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the configuration set.
         pub configuration_set_name: pulumi_gestalt_rust::Output<String>,
         /// A name that identifies the event destination within the configuration set.
@@ -238,6 +241,7 @@ pub mod configuration_set_event_destination {
         };
         let o = context.register_resource(request);
         ConfigurationSetEventDestinationResult {
+            id: o.get_field("id"),
             configuration_set_name: o.get_field("configurationSetName"),
             event_destination: o.get_field("eventDestination"),
             event_destination_name: o.get_field("eventDestinationName"),

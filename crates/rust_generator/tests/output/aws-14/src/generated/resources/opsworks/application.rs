@@ -117,6 +117,9 @@ pub mod application {
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// SCM configuration of the app as described below.
         pub app_sources: pulumi_gestalt_rust::Output<
             Vec<super::super::types::opsworks::ApplicationAppSource>,
@@ -269,6 +272,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
+            id: o.get_field("id"),
             app_sources: o.get_field("appSources"),
             auto_bundle_on_deploy: o.get_field("autoBundleOnDeploy"),
             aws_flow_ruby_settings: o.get_field("awsFlowRubySettings"),

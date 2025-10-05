@@ -147,6 +147,9 @@ pub mod app_check_play_integrity_config {
     }
     #[allow(dead_code)]
     pub struct AppCheckPlayIntegrityConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of an
         /// [Android App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.androidApps#AndroidApp.FIELDS.app_id).
         ///
@@ -199,6 +202,7 @@ pub mod app_check_play_integrity_config {
         };
         let o = context.register_resource(request);
         AppCheckPlayIntegrityConfigResult {
+            id: o.get_field("id"),
             app_id: o.get_field("appId"),
             name: o.get_field("name"),
             project: o.get_field("project"),

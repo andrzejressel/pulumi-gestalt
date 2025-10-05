@@ -157,6 +157,9 @@ pub mod diagnostic {
     }
     #[allow(dead_code)]
     pub struct DiagnosticResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Always log errors. Send telemetry if there is an erroneous condition, regardless of sampling settings.
         pub always_log_errors: pulumi_gestalt_rust::Output<bool>,
         /// The id of the target API Management Logger where the API Management Diagnostic should be saved.
@@ -290,6 +293,7 @@ pub mod diagnostic {
         };
         let o = context.register_resource(request);
         DiagnosticResult {
+            id: o.get_field("id"),
             always_log_errors: o.get_field("alwaysLogErrors"),
             api_management_logger_id: o.get_field("apiManagementLoggerId"),
             api_management_name: o.get_field("apiManagementName"),

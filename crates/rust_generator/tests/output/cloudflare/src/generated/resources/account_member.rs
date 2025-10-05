@@ -50,6 +50,9 @@ pub mod account_member {
     }
     #[allow(dead_code)]
     pub struct AccountMemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Account ID to create the account member in.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The email address of the user who you wish to manage. Following creation, this field becomes read only via the API and cannot be updated.
@@ -99,6 +102,7 @@ pub mod account_member {
         };
         let o = context.register_resource(request);
         AccountMemberResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             email_address: o.get_field("emailAddress"),
             role_ids: o.get_field("roleIds"),

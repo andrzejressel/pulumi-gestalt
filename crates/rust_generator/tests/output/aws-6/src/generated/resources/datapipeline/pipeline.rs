@@ -41,6 +41,9 @@ pub mod pipeline {
     }
     #[allow(dead_code)]
     pub struct PipelineResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The description of Pipeline.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of Pipeline.
@@ -89,6 +92,7 @@ pub mod pipeline {
         };
         let o = context.register_resource(request);
         PipelineResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             name: o.get_field("name"),
             tags: o.get_field("tags"),

@@ -366,6 +366,9 @@ pub mod region_health_check {
     }
     #[allow(dead_code)]
     pub struct RegionHealthCheckResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// How often (in seconds) to send a health check. The default value is 5
         /// seconds.
         pub check_interval_sec: pulumi_gestalt_rust::Output<Option<i32>>,
@@ -538,6 +541,7 @@ pub mod region_health_check {
         };
         let o = context.register_resource(request);
         RegionHealthCheckResult {
+            id: o.get_field("id"),
             check_interval_sec: o.get_field("checkIntervalSec"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

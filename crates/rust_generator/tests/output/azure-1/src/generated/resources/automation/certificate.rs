@@ -69,6 +69,9 @@ pub mod certificate {
     }
     #[allow(dead_code)]
     pub struct CertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the automation account in which the Certificate is created. Changing this forces a new resource to be created.
         pub automation_account_name: pulumi_gestalt_rust::Output<String>,
         /// Base64 encoded value of the certificate. Changing this forces a new resource to be created.
@@ -136,6 +139,7 @@ pub mod certificate {
         };
         let o = context.register_resource(request);
         CertificateResult {
+            id: o.get_field("id"),
             automation_account_name: o.get_field("automationAccountName"),
             base64: o.get_field("base64"),
             description: o.get_field("description"),

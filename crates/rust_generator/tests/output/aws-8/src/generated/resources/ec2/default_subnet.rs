@@ -80,6 +80,9 @@ pub mod default_subnet {
     }
     #[allow(dead_code)]
     pub struct DefaultSubnetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub arn: pulumi_gestalt_rust::Output<String>,
         pub assign_ipv6_address_on_creation: pulumi_gestalt_rust::Output<Option<bool>>,
         /// is required
@@ -222,6 +225,7 @@ pub mod default_subnet {
         };
         let o = context.register_resource(request);
         DefaultSubnetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             assign_ipv6_address_on_creation: o.get_field("assignIpv6AddressOnCreation"),
             availability_zone: o.get_field("availabilityZone"),

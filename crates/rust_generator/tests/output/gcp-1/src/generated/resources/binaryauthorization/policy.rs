@@ -186,6 +186,9 @@ pub mod policy {
     }
     #[allow(dead_code)]
     pub struct PolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A whitelist of image patterns to exclude from admission rules. If an image's name matches a whitelist pattern, the
         /// image's admission requests will always be permitted regardless of your admission rules.
         pub admission_whitelist_patterns: pulumi_gestalt_rust::Output<
@@ -275,6 +278,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
+            id: o.get_field("id"),
             admission_whitelist_patterns: o.get_field("admissionWhitelistPatterns"),
             cluster_admission_rules: o.get_field("clusterAdmissionRules"),
             default_admission_rule: o.get_field("defaultAdmissionRule"),

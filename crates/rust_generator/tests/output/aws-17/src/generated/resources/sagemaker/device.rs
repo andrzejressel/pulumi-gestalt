@@ -43,6 +43,9 @@ pub mod device {
     }
     #[allow(dead_code)]
     pub struct DeviceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub agent_version: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Device.
         pub arn: pulumi_gestalt_rust::Output<String>,
@@ -83,6 +86,7 @@ pub mod device {
         };
         let o = context.register_resource(request);
         DeviceResult {
+            id: o.get_field("id"),
             agent_version: o.get_field("agentVersion"),
             arn: o.get_field("arn"),
             device: o.get_field("device"),

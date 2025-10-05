@@ -191,6 +191,9 @@ pub mod membership {
     }
     #[allow(dead_code)]
     pub struct MembershipResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Authority encodes how Google will recognize identities from this Membership.
         /// See the workload identity documentation for more details:
         /// https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
@@ -292,6 +295,7 @@ pub mod membership {
         };
         let o = context.register_resource(request);
         MembershipResult {
+            id: o.get_field("id"),
             authority: o.get_field("authority"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

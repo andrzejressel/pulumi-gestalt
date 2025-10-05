@@ -128,6 +128,9 @@ pub mod job_queue {
     }
     #[allow(dead_code)]
     pub struct JobQueueResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name of the job queue.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment runs a specific job. Compute environments must be in the VALID state before you can associate them with a job queue. You can associate up to three compute environments with a job queue.
@@ -232,6 +235,7 @@ pub mod job_queue {
         };
         let o = context.register_resource(request);
         JobQueueResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             compute_environment_orders: o.get_field("computeEnvironmentOrders"),
             compute_environments: o.get_field("computeEnvironments"),

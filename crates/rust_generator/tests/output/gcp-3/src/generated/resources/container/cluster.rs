@@ -603,6 +603,9 @@ pub mod cluster {
     }
     #[allow(dead_code)]
     pub struct ClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The configuration for addons supported by GKE.
         /// Structure is documented below.
         pub addons_config: pulumi_gestalt_rust::Output<
@@ -1440,6 +1443,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
+            id: o.get_field("id"),
             addons_config: o.get_field("addonsConfig"),
             allow_net_admin: o.get_field("allowNetAdmin"),
             authenticator_groups_config: o.get_field("authenticatorGroupsConfig"),

@@ -90,6 +90,9 @@ pub mod vpc_dhcp_options {
     }
     #[allow(dead_code)]
     pub struct VpcDhcpOptionsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the DHCP Options Set.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// the suffix domain name to use by default when resolving non Fully Qualified Domain Names. In other words, this is what ends up being the `search` value in the `/etc/resolv.conf` file.
@@ -174,6 +177,7 @@ pub mod vpc_dhcp_options {
         };
         let o = context.register_resource(request);
         VpcDhcpOptionsResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             domain_name: o.get_field("domainName"),
             domain_name_servers: o.get_field("domainNameServers"),

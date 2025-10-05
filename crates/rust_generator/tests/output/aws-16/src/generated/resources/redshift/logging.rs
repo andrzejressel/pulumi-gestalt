@@ -72,6 +72,9 @@ pub mod logging {
     }
     #[allow(dead_code)]
     pub struct LoggingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of an existing S3 bucket where the log files are to be stored. Required when `log_destination_type` is `s3`. Must be in the same region as the cluster and the cluster must have read bucket and put object permissions. For more information on the permissions required for the bucket, please read the AWS [documentation](http://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html#db-auditing-enable-logging)
         pub bucket_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// Identifier of the source cluster.
@@ -130,6 +133,7 @@ pub mod logging {
         };
         let o = context.register_resource(request);
         LoggingResult {
+            id: o.get_field("id"),
             bucket_name: o.get_field("bucketName"),
             cluster_identifier: o.get_field("clusterIdentifier"),
             log_destination_type: o.get_field("logDestinationType"),

@@ -322,6 +322,9 @@ pub mod patch_deployment {
     }
     #[allow(dead_code)]
     pub struct PatchDeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Time the patch deployment was created. Timestamp is in RFC3339 text format.
         /// A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
         pub create_time: pulumi_gestalt_rust::Output<String>,
@@ -434,6 +437,7 @@ pub mod patch_deployment {
         };
         let o = context.register_resource(request);
         PatchDeploymentResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             duration: o.get_field("duration"),

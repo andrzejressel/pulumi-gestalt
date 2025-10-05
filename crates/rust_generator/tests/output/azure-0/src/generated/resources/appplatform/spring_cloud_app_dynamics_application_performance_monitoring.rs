@@ -98,6 +98,9 @@ pub mod spring_cloud_app_dynamics_application_performance_monitoring {
     }
     #[allow(dead_code)]
     pub struct SpringCloudAppDynamicsApplicationPerformanceMonitoringResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the account access key used to authenticate with the Controller.
         pub agent_account_access_key: pulumi_gestalt_rust::Output<String>,
         /// Specifies the account name of the App Dynamics account.
@@ -212,6 +215,7 @@ pub mod spring_cloud_app_dynamics_application_performance_monitoring {
         };
         let o = context.register_resource(request);
         SpringCloudAppDynamicsApplicationPerformanceMonitoringResult {
+            id: o.get_field("id"),
             agent_account_access_key: o.get_field("agentAccountAccessKey"),
             agent_account_name: o.get_field("agentAccountName"),
             agent_application_name: o.get_field("agentApplicationName"),

@@ -116,6 +116,9 @@ pub mod monitor {
     }
     #[allow(dead_code)]
     pub struct MonitorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the source of account creation. Possible values are `LIFTR` and `NEWRELIC`. Defaults to `LIFTR`. Changing this forces a new Azure Native New Relic Monitor to be created.
         pub account_creation_source: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the account id. Changing this forces a new Azure Native New Relic Monitor to be created.
@@ -233,6 +236,7 @@ pub mod monitor {
         };
         let o = context.register_resource(request);
         MonitorResult {
+            id: o.get_field("id"),
             account_creation_source: o.get_field("accountCreationSource"),
             account_id: o.get_field("accountId"),
             identity: o.get_field("identity"),

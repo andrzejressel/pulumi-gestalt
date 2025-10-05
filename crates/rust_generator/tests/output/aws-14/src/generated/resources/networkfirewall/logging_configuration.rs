@@ -75,6 +75,9 @@ pub mod logging_configuration {
     }
     #[allow(dead_code)]
     pub struct LoggingConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Network Firewall firewall.
         pub firewall_arn: pulumi_gestalt_rust::Output<String>,
         /// A configuration block describing how AWS Network Firewall performs logging for a firewall. See Logging Configuration below for details.
@@ -115,6 +118,7 @@ pub mod logging_configuration {
         };
         let o = context.register_resource(request);
         LoggingConfigurationResult {
+            id: o.get_field("id"),
             firewall_arn: o.get_field("firewallArn"),
             logging_configuration: o.get_field("loggingConfiguration"),
         }

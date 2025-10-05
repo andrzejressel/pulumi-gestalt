@@ -46,6 +46,9 @@ pub mod organization_admin_account {
     }
     #[allow(dead_code)]
     pub struct OrganizationAdminAccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// AWS account identifier to designate as a delegated administrator for GuardDuty.
         pub admin_account_id: pulumi_gestalt_rust::Output<String>,
     }
@@ -75,6 +78,7 @@ pub mod organization_admin_account {
         };
         let o = context.register_resource(request);
         OrganizationAdminAccountResult {
+            id: o.get_field("id"),
             admin_account_id: o.get_field("adminAccountId"),
         }
     }

@@ -56,6 +56,9 @@ pub mod service_trust {
     }
     #[allow(dead_code)]
     pub struct ServiceTrustResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Active Directory Domain Service. Changing this forces a new Active Directory Domain Service Trust to be created.
         pub domain_service_id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Active Directory Domain Service Trust. Changing this forces a new Active Directory Domain Service Trust to be created.
@@ -114,6 +117,7 @@ pub mod service_trust {
         };
         let o = context.register_resource(request);
         ServiceTrustResult {
+            id: o.get_field("id"),
             domain_service_id: o.get_field("domainServiceId"),
             name: o.get_field("name"),
             password: o.get_field("password"),

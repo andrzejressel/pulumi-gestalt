@@ -38,6 +38,9 @@ pub mod resolver_firewall_rule_group {
     }
     #[allow(dead_code)]
     pub struct ResolverFirewallRuleGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN (Amazon Resource Name) of the rule group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A name that lets you identify the rule group, to manage and use it.
@@ -86,6 +89,7 @@ pub mod resolver_firewall_rule_group {
         };
         let o = context.register_resource(request);
         ResolverFirewallRuleGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             owner_id: o.get_field("ownerId"),

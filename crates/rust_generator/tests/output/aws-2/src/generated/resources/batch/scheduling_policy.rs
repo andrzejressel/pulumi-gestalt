@@ -48,6 +48,9 @@ pub mod scheduling_policy {
     }
     #[allow(dead_code)]
     pub struct SchedulingPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name of the scheduling policy.
         pub arn: pulumi_gestalt_rust::Output<String>,
         pub fair_share_policy: pulumi_gestalt_rust::Output<
@@ -99,6 +102,7 @@ pub mod scheduling_policy {
         };
         let o = context.register_resource(request);
         SchedulingPolicyResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             fair_share_policy: o.get_field("fairSharePolicy"),
             name: o.get_field("name"),

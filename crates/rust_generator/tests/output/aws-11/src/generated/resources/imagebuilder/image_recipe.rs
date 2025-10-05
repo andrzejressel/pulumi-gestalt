@@ -81,6 +81,9 @@ pub mod image_recipe {
     }
     #[allow(dead_code)]
     pub struct ImageRecipeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the image recipe.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block(s) with block device mappings for the image recipe. Detailed below.
@@ -198,6 +201,7 @@ pub mod image_recipe {
         };
         let o = context.register_resource(request);
         ImageRecipeResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             block_device_mappings: o.get_field("blockDeviceMappings"),
             components: o.get_field("components"),

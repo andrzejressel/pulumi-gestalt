@@ -148,6 +148,9 @@ pub mod os_policy_assignment {
     }
     #[allow(dead_code)]
     pub struct OsPolicyAssignmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Output only. Indicates that this revision has been successfully
         /// rolled out in this zone and new VMs will be assigned OS policies from this
         /// revision. For a given OS policy assignment, there is only one revision with
@@ -262,6 +265,7 @@ pub mod os_policy_assignment {
         };
         let o = context.register_resource(request);
         OsPolicyAssignmentResult {
+            id: o.get_field("id"),
             baseline: o.get_field("baseline"),
             deleted: o.get_field("deleted"),
             description: o.get_field("description"),

@@ -61,6 +61,9 @@ pub mod hyperdrive_config {
     }
     #[allow(dead_code)]
     pub struct HyperdriveConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The caching details for the Hyperdrive configuration.
@@ -117,6 +120,7 @@ pub mod hyperdrive_config {
         };
         let o = context.register_resource(request);
         HyperdriveConfigResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             caching: o.get_field("caching"),
             name: o.get_field("name"),

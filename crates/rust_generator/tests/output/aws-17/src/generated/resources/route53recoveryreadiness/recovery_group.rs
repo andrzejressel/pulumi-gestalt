@@ -45,6 +45,9 @@ pub mod recovery_group {
     }
     #[allow(dead_code)]
     pub struct RecoveryGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the recovery group
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// List of cell arns to add as nested fault domains within this recovery group
@@ -97,6 +100,7 @@ pub mod recovery_group {
         };
         let o = context.register_resource(request);
         RecoveryGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cells: o.get_field("cells"),
             recovery_group_name: o.get_field("recoveryGroupName"),

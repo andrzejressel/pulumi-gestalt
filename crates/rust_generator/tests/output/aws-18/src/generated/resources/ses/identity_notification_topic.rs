@@ -47,6 +47,9 @@ pub mod identity_notification_topic {
     }
     #[allow(dead_code)]
     pub struct IdentityNotificationTopicResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The identity for which the Amazon SNS topic will be set. You can specify an identity by using its name or by using its Amazon Resource Name (ARN).
         pub identity: pulumi_gestalt_rust::Output<String>,
         /// Whether SES should include original email headers in SNS notifications of this type. `false` by default.
@@ -98,6 +101,7 @@ pub mod identity_notification_topic {
         };
         let o = context.register_resource(request);
         IdentityNotificationTopicResult {
+            id: o.get_field("id"),
             identity: o.get_field("identity"),
             include_original_headers: o.get_field("includeOriginalHeaders"),
             notification_type: o.get_field("notificationType"),

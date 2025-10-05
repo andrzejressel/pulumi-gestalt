@@ -179,6 +179,9 @@ pub mod managed_user_pool_client {
     }
     #[allow(dead_code)]
     pub struct ManagedUserPoolClientResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Time limit, between 5 minutes and 1 day, after which the access token is no longer valid and cannot be used. By default, the unit is hours. The unit can be overridden by a value in `token_validity_units.access_token`.
         pub access_token_validity: pulumi_gestalt_rust::Output<i32>,
         /// List of allowed OAuth flows, including `code`, `implicit`, and `client_credentials`. `allowed_oauth_flows_user_pool_client` must be set to `true` before you can configure this option.
@@ -387,6 +390,7 @@ pub mod managed_user_pool_client {
         };
         let o = context.register_resource(request);
         ManagedUserPoolClientResult {
+            id: o.get_field("id"),
             access_token_validity: o.get_field("accessTokenValidity"),
             allowed_oauth_flows: o.get_field("allowedOauthFlows"),
             allowed_oauth_flows_user_pool_client: o

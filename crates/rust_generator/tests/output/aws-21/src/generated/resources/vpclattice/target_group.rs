@@ -147,6 +147,9 @@ pub mod target_group {
     }
     #[allow(dead_code)]
     pub struct TargetGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the target group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The target group configuration.
@@ -210,6 +213,7 @@ pub mod target_group {
         };
         let o = context.register_resource(request);
         TargetGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             config: o.get_field("config"),
             name: o.get_field("name"),

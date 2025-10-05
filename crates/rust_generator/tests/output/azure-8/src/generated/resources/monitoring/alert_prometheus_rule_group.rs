@@ -128,6 +128,9 @@ pub mod alert_prometheus_rule_group {
     }
     #[allow(dead_code)]
     pub struct AlertPrometheusRuleGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Managed Kubernetes Cluster.
         pub cluster_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// The description of the Alert Management Prometheus Rule Group.
@@ -224,6 +227,7 @@ pub mod alert_prometheus_rule_group {
         };
         let o = context.register_resource(request);
         AlertPrometheusRuleGroupResult {
+            id: o.get_field("id"),
             cluster_name: o.get_field("clusterName"),
             description: o.get_field("description"),
             interval: o.get_field("interval"),

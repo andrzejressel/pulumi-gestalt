@@ -114,6 +114,9 @@ pub mod autonomous_database {
     }
     #[allow(dead_code)]
     pub struct AutonomousDatabaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The password must be between `12` and `30 `characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. Changing this forces a new Autonomous Database to be created.
         pub admin_password: pulumi_gestalt_rust::Output<String>,
         /// Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `true`.
@@ -298,6 +301,7 @@ pub mod autonomous_database {
         };
         let o = context.register_resource(request);
         AutonomousDatabaseResult {
+            id: o.get_field("id"),
             admin_password: o.get_field("adminPassword"),
             auto_scaling_enabled: o.get_field("autoScalingEnabled"),
             auto_scaling_for_storage_enabled: o

@@ -116,6 +116,9 @@ pub mod membership_binding {
     }
     #[allow(dead_code)]
     pub struct MembershipBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Time the MembershipBinding was created in UTC.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Time the MembershipBinding was deleted in UTC.
@@ -215,6 +218,7 @@ pub mod membership_binding {
         };
         let o = context.register_resource(request);
         MembershipBindingResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             delete_time: o.get_field("deleteTime"),
             effective_labels: o.get_field("effectiveLabels"),

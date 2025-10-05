@@ -85,6 +85,9 @@ pub mod folder_bucket_config {
     }
     #[allow(dead_code)]
     pub struct FolderBucketConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the logging bucket. Logging automatically creates two log buckets: `_Required` and `_Default`.
         pub bucket_id: pulumi_gestalt_rust::Output<String>,
         /// The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK
@@ -165,6 +168,7 @@ pub mod folder_bucket_config {
         };
         let o = context.register_resource(request);
         FolderBucketConfigResult {
+            id: o.get_field("id"),
             bucket_id: o.get_field("bucketId"),
             cmek_settings: o.get_field("cmekSettings"),
             description: o.get_field("description"),

@@ -48,6 +48,9 @@ pub mod route_table_association {
     }
     #[allow(dead_code)]
     pub struct RouteTableAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Boolean whether the Gateway Attachment should remove any current Route Table association before associating with the specified Route Table. Default value: `false`. This argument is intended for use with EC2 Transit Gateways shared into the current account, otherwise the `transit_gateway_default_route_table_association` argument of the `aws.ec2transitgateway.VpcAttachment` resource should be used.
         pub replace_existing_association: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Identifier of the resource
@@ -101,6 +104,7 @@ pub mod route_table_association {
         };
         let o = context.register_resource(request);
         RouteTableAssociationResult {
+            id: o.get_field("id"),
             replace_existing_association: o.get_field("replaceExistingAssociation"),
             resource_id: o.get_field("resourceId"),
             resource_type: o.get_field("resourceType"),

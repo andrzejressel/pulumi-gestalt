@@ -81,6 +81,9 @@ pub mod security_device_group {
     }
     #[allow(dead_code)]
     pub struct SecurityDeviceGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// an `allow_rule` blocks as defined below.
         pub allow_rule: pulumi_gestalt_rust::Output<
             Option<super::super::types::iot::SecurityDeviceGroupAllowRule>,
@@ -134,6 +137,7 @@ pub mod security_device_group {
         };
         let o = context.register_resource(request);
         SecurityDeviceGroupResult {
+            id: o.get_field("id"),
             allow_rule: o.get_field("allowRule"),
             iothub_id: o.get_field("iothubId"),
             name: o.get_field("name"),

@@ -99,6 +99,9 @@ pub mod capacity_commitment {
     }
     #[allow(dead_code)]
     pub struct CapacityCommitmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The optional capacity commitment ID. Capacity commitment name will be generated automatically if this field is
         /// empty. This field must only contain lower case alphanumeric characters or dashes. The first and last character
         /// cannot be a dash. Max length is 64 characters. NOTE: this ID won't be kept if the capacity commitment is split
@@ -198,6 +201,7 @@ pub mod capacity_commitment {
         };
         let o = context.register_resource(request);
         CapacityCommitmentResult {
+            id: o.get_field("id"),
             capacity_commitment_id: o.get_field("capacityCommitmentId"),
             commitment_end_time: o.get_field("commitmentEndTime"),
             commitment_start_time: o.get_field("commitmentStartTime"),

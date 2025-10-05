@@ -38,6 +38,9 @@ pub mod api_shield {
     }
     #[allow(dead_code)]
     pub struct ApiShieldResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Characteristics define properties across which auth-ids can be computed in a privacy-preserving manner.
         pub auth_id_characteristics: pulumi_gestalt_rust::Output<
             Option<Vec<super::types::ApiShieldAuthIdCharacteristic>>,
@@ -77,6 +80,7 @@ pub mod api_shield {
         };
         let o = context.register_resource(request);
         ApiShieldResult {
+            id: o.get_field("id"),
             auth_id_characteristics: o.get_field("authIdCharacteristics"),
             zone_id: o.get_field("zoneId"),
         }

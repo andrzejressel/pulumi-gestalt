@@ -105,6 +105,9 @@ pub mod app_check_debug_token {
     }
     #[allow(dead_code)]
     pub struct AppCheckDebugTokenResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of a
         /// [Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id),
         /// [Apple App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.iosApps#IosApp.FIELDS.app_id),
@@ -169,6 +172,7 @@ pub mod app_check_debug_token {
         };
         let o = context.register_resource(request);
         AppCheckDebugTokenResult {
+            id: o.get_field("id"),
             app_id: o.get_field("appId"),
             debug_token_id: o.get_field("debugTokenId"),
             display_name: o.get_field("displayName"),

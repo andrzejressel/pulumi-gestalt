@@ -70,6 +70,9 @@ pub mod function_url {
     }
     #[allow(dead_code)]
     pub struct FunctionUrlResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The type of authentication that the function URL uses. Set to `"AWS_IAM"` to restrict access to authenticated IAM users only. Set to `"NONE"` to bypass IAM authentication and create a public endpoint. See the [AWS documentation](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html) for more details.
         pub authorization_type: pulumi_gestalt_rust::Output<String>,
         /// The [cross-origin resource sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) settings for the function URL. Documented below.
@@ -134,6 +137,7 @@ pub mod function_url {
         };
         let o = context.register_resource(request);
         FunctionUrlResult {
+            id: o.get_field("id"),
             authorization_type: o.get_field("authorizationType"),
             cors: o.get_field("cors"),
             function_arn: o.get_field("functionArn"),

@@ -30,6 +30,9 @@ pub mod identity_pool_provider_principal_tag {
     }
     #[allow(dead_code)]
     pub struct IdentityPoolProviderPrincipalTagResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An identity pool ID.
         pub identity_pool_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the identity provider.
@@ -84,6 +87,7 @@ pub mod identity_pool_provider_principal_tag {
         };
         let o = context.register_resource(request);
         IdentityPoolProviderPrincipalTagResult {
+            id: o.get_field("id"),
             identity_pool_id: o.get_field("identityPoolId"),
             identity_provider_name: o.get_field("identityProviderName"),
             principal_tags: o.get_field("principalTags"),

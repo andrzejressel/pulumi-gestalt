@@ -125,6 +125,9 @@ pub mod resource_deployment_script_azure_cli {
     }
     #[allow(dead_code)]
     pub struct ResourceDeploymentScriptAzureCliResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the cleanup preference when the script execution gets in a terminal state. Possible values are `Always`, `OnExpiration`, `OnSuccess`. Defaults to `Always`. Changing this forces a new Resource Deployment Script to be created.
         pub cleanup_preference: pulumi_gestalt_rust::Output<Option<String>>,
         /// Command line arguments to pass to the script. Changing this forces a new Resource Deployment Script to be created.
@@ -288,6 +291,7 @@ pub mod resource_deployment_script_azure_cli {
         };
         let o = context.register_resource(request);
         ResourceDeploymentScriptAzureCliResult {
+            id: o.get_field("id"),
             cleanup_preference: o.get_field("cleanupPreference"),
             command_line: o.get_field("commandLine"),
             container: o.get_field("container"),

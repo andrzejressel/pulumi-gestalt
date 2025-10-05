@@ -62,6 +62,9 @@ pub mod log_analytics_workspace_onboarding {
     }
     #[allow(dead_code)]
     pub struct LogAnalyticsWorkspaceOnboardingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies if the Workspace is using Customer managed key. Defaults to `false`. Changing this forces a new resource to be created.
         ///
         /// > **Note:** To set up Microsoft Sentinel customer-managed key it needs to enable CMK on the workspace and add access policy to your Azure Key Vault. Details could be found on [this document](https://learn.microsoft.com/en-us/azure/sentinel/customer-managed-keys)
@@ -104,6 +107,7 @@ pub mod log_analytics_workspace_onboarding {
         };
         let o = context.register_resource(request);
         LogAnalyticsWorkspaceOnboardingResult {
+            id: o.get_field("id"),
             customer_managed_key_enabled: o.get_field("customerManagedKeyEnabled"),
             workspace_id: o.get_field("workspaceId"),
         }

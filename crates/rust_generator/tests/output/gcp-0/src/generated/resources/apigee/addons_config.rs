@@ -159,6 +159,9 @@ pub mod addons_config {
     }
     #[allow(dead_code)]
     pub struct AddonsConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Addon configurations of the Apigee organization.
         /// Structure is documented below.
         pub addons_config: pulumi_gestalt_rust::Output<
@@ -200,6 +203,7 @@ pub mod addons_config {
         };
         let o = context.register_resource(request);
         AddonsConfigResult {
+            id: o.get_field("id"),
             addons_config: o.get_field("addonsConfig"),
             org: o.get_field("org"),
         }

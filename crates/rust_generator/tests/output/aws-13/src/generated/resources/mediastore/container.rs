@@ -38,6 +38,9 @@ pub mod container {
     }
     #[allow(dead_code)]
     pub struct ContainerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the container.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The DNS endpoint of the container.
@@ -83,6 +86,7 @@ pub mod container {
         };
         let o = context.register_resource(request);
         ContainerResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             endpoint: o.get_field("endpoint"),
             name: o.get_field("name"),

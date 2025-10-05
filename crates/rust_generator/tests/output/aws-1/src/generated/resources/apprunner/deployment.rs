@@ -31,6 +31,9 @@ pub mod deployment {
     }
     #[allow(dead_code)]
     pub struct DeploymentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The unique ID of the operation associated with deployment.
         pub operation_id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the App Runner service to start the deployment for.
@@ -71,6 +74,7 @@ pub mod deployment {
         };
         let o = context.register_resource(request);
         DeploymentResult {
+            id: o.get_field("id"),
             operation_id: o.get_field("operationId"),
             service_arn: o.get_field("serviceArn"),
             status: o.get_field("status"),

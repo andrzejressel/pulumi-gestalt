@@ -47,6 +47,9 @@ pub mod sharedflow {
     }
     #[allow(dead_code)]
     pub struct SharedflowResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Path to the config zip bundle.
         ///
         /// - - -
@@ -108,6 +111,7 @@ pub mod sharedflow {
         };
         let o = context.register_resource(request);
         SharedflowResult {
+            id: o.get_field("id"),
             config_bundle: o.get_field("configBundle"),
             detect_md5hash: o.get_field("detectMd5hash"),
             latest_revision_id: o.get_field("latestRevisionId"),

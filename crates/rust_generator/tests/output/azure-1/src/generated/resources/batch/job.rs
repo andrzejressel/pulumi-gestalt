@@ -90,6 +90,9 @@ pub mod job {
     }
     #[allow(dead_code)]
     pub struct JobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Batch Pool. Changing this forces a new Batch Job to be created.
         pub batch_pool_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a map of common environment settings applied to this Batch Job. Changing this forces a new Batch Job to be created.
@@ -157,6 +160,7 @@ pub mod job {
         };
         let o = context.register_resource(request);
         JobResult {
+            id: o.get_field("id"),
             batch_pool_id: o.get_field("batchPoolId"),
             common_environment_properties: o.get_field("commonEnvironmentProperties"),
             display_name: o.get_field("displayName"),

@@ -35,6 +35,9 @@ pub mod bucket_access_key {
     }
     #[allow(dead_code)]
     pub struct BucketAccessKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the access key.
         pub access_key_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the bucket that the new access key will belong to, and grant access to.
@@ -71,6 +74,7 @@ pub mod bucket_access_key {
         };
         let o = context.register_resource(request);
         BucketAccessKeyResult {
+            id: o.get_field("id"),
             access_key_id: o.get_field("accessKeyId"),
             bucket_name: o.get_field("bucketName"),
             created_at: o.get_field("createdAt"),

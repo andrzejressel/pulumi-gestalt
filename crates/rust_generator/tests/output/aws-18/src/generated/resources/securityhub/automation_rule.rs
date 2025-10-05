@@ -76,6 +76,9 @@ pub mod automation_rule {
     }
     #[allow(dead_code)]
     pub struct AutomationRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A block that specifies one or more actions to update finding fields if a finding matches the conditions specified in `Criteria`. Documented below.
         pub actions: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::securityhub::AutomationRuleAction>>,
@@ -163,6 +166,7 @@ pub mod automation_rule {
         };
         let o = context.register_resource(request);
         AutomationRuleResult {
+            id: o.get_field("id"),
             actions: o.get_field("actions"),
             arn: o.get_field("arn"),
             criteria: o.get_field("criteria"),

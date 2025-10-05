@@ -47,6 +47,9 @@ pub mod instance_desired_state {
     }
     #[allow(dead_code)]
     pub struct InstanceDesiredStateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// DB Instance Identifier
         pub identifier: pulumi_gestalt_rust::Output<String>,
         /// Configured state of the DB Instance. Valid values are `available` and `stopped`.
@@ -90,6 +93,7 @@ pub mod instance_desired_state {
         };
         let o = context.register_resource(request);
         InstanceDesiredStateResult {
+            id: o.get_field("id"),
             identifier: o.get_field("identifier"),
             state: o.get_field("state"),
             timeouts: o.get_field("timeouts"),

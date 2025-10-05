@@ -67,6 +67,9 @@ pub mod workspace_table {
     }
     #[allow(dead_code)]
     pub struct WorkspaceTableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of a table in a Log Analytics Workspace.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Specify the system how to handle and charge the logs ingested to the table. Possible values are `Analytics` and `Basic`. Defaults to `Analytics`.
@@ -131,6 +134,7 @@ pub mod workspace_table {
         };
         let o = context.register_resource(request);
         WorkspaceTableResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             plan: o.get_field("plan"),
             retention_in_days: o.get_field("retentionInDays"),

@@ -56,6 +56,9 @@ pub mod services_account {
     }
     #[allow(dead_code)]
     pub struct ServicesAccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Customer owned application ID. Changing this forces a new Account to be created.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// Billing Plan Id.
@@ -109,6 +112,7 @@ pub mod services_account {
         };
         let o = context.register_resource(request);
         ServicesAccountResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             billing_plan_id: o.get_field("billingPlanId"),
             name: o.get_field("name"),

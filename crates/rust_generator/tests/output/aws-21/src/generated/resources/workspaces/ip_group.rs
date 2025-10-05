@@ -57,6 +57,9 @@ pub mod ip_group {
     }
     #[allow(dead_code)]
     pub struct IpGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The description of the IP group.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of the IP group.
@@ -114,6 +117,7 @@ pub mod ip_group {
         };
         let o = context.register_resource(request);
         IpGroupResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             name: o.get_field("name"),
             rules: o.get_field("rules"),

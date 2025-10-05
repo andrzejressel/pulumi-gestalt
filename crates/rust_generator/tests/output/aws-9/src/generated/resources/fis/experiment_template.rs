@@ -98,6 +98,9 @@ pub mod experiment_template {
     }
     #[allow(dead_code)]
     pub struct ExperimentTemplateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Action to be performed during an experiment. See below.
         pub actions: pulumi_gestalt_rust::Output<
             Vec<super::super::types::fis::ExperimentTemplateAction>,
@@ -192,6 +195,7 @@ pub mod experiment_template {
         };
         let o = context.register_resource(request);
         ExperimentTemplateResult {
+            id: o.get_field("id"),
             actions: o.get_field("actions"),
             description: o.get_field("description"),
             experiment_options: o.get_field("experimentOptions"),

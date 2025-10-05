@@ -124,6 +124,9 @@ pub mod location_hdfs {
     }
     #[allow(dead_code)]
     pub struct LocationHdfsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of DataSync Agent ARNs with which this location will be associated.
         pub agent_arns: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Amazon Resource Name (ARN) of the DataSync Location.
@@ -267,6 +270,7 @@ pub mod location_hdfs {
         };
         let o = context.register_resource(request);
         LocationHdfsResult {
+            id: o.get_field("id"),
             agent_arns: o.get_field("agentArns"),
             arn: o.get_field("arn"),
             authentication_type: o.get_field("authenticationType"),

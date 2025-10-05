@@ -71,6 +71,9 @@ pub mod zone_cache_variants {
     }
     #[allow(dead_code)]
     pub struct ZoneCacheVariantsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of strings with the MIME types of all the variants that should be served for avif.
         pub avifs: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// List of strings with the MIME types of all the variants that should be served for bmp.
@@ -176,6 +179,7 @@ pub mod zone_cache_variants {
         };
         let o = context.register_resource(request);
         ZoneCacheVariantsResult {
+            id: o.get_field("id"),
             avifs: o.get_field("avifs"),
             bmps: o.get_field("bmps"),
             gifs: o.get_field("gifs"),

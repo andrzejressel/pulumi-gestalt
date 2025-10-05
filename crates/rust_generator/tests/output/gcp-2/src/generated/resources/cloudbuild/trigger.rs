@@ -764,6 +764,9 @@ pub mod trigger {
     }
     #[allow(dead_code)]
     pub struct TriggerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Configuration for manual approval to start a build invocation of this BuildTrigger.
         /// Builds created by this trigger will require approval before they execute.
         /// Any user with a Cloud Build Approver role for the project can approve a build.
@@ -1026,6 +1029,7 @@ pub mod trigger {
         };
         let o = context.register_resource(request);
         TriggerResult {
+            id: o.get_field("id"),
             approval_config: o.get_field("approvalConfig"),
             bitbucket_server_trigger_config: o.get_field("bitbucketServerTriggerConfig"),
             build: o.get_field("build"),

@@ -43,6 +43,9 @@ pub mod permission {
     }
     #[allow(dead_code)]
     pub struct PermissionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether the user is allowed to use SSH to communicate with the instance
         pub allow_ssh: pulumi_gestalt_rust::Output<bool>,
         /// Whether the user is allowed to use sudo to elevate privileges
@@ -99,6 +102,7 @@ pub mod permission {
         };
         let o = context.register_resource(request);
         PermissionResult {
+            id: o.get_field("id"),
             allow_ssh: o.get_field("allowSsh"),
             allow_sudo: o.get_field("allowSudo"),
             level: o.get_field("level"),

@@ -132,6 +132,9 @@ pub mod certificate_map_entry {
     }
     #[allow(dead_code)]
     pub struct CertificateMapEntryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A set of Certificates defines for the given hostname.
         /// There can be defined up to fifteen certificates in each Certificate Map Entry.
         /// Each certificate must match pattern projects/*/locations/*/certificates/*.
@@ -246,6 +249,7 @@ pub mod certificate_map_entry {
         };
         let o = context.register_resource(request);
         CertificateMapEntryResult {
+            id: o.get_field("id"),
             certificates: o.get_field("certificates"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

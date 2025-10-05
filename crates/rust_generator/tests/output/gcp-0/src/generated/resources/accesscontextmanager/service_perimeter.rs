@@ -255,6 +255,9 @@ pub mod service_perimeter {
     }
     #[allow(dead_code)]
     pub struct ServicePerimeterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Time the AccessPolicy was created in UTC.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Description of the ServicePerimeter and its use. Does not affect
@@ -379,6 +382,7 @@ pub mod service_perimeter {
         };
         let o = context.register_resource(request);
         ServicePerimeterResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             name: o.get_field("name"),

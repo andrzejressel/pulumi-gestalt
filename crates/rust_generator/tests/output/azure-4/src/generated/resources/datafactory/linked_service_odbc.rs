@@ -105,6 +105,9 @@ pub mod linked_service_odbc {
     }
     #[allow(dead_code)]
     pub struct LinkedServiceOdbcResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of additional properties to associate with the Data Factory Linked Service ODBC.
         pub additional_properties: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -201,6 +204,7 @@ pub mod linked_service_odbc {
         };
         let o = context.register_resource(request);
         LinkedServiceOdbcResult {
+            id: o.get_field("id"),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),
             basic_authentication: o.get_field("basicAuthentication"),

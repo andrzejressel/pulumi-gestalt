@@ -67,6 +67,9 @@ pub mod route_table_association {
     }
     #[allow(dead_code)]
     pub struct RouteTableAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The gateway ID to create an association. Conflicts with `subnet_id`.
         pub gateway_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The ID of the routing table to associate with.
@@ -109,6 +112,7 @@ pub mod route_table_association {
         };
         let o = context.register_resource(request);
         RouteTableAssociationResult {
+            id: o.get_field("id"),
             gateway_id: o.get_field("gatewayId"),
             route_table_id: o.get_field("routeTableId"),
             subnet_id: o.get_field("subnetId"),

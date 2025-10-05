@@ -31,6 +31,9 @@ pub mod identity_pool_role_attachment {
     }
     #[allow(dead_code)]
     pub struct IdentityPoolRoleAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An identity pool ID in the format `REGION_GUID`.
         pub identity_pool_id: pulumi_gestalt_rust::Output<String>,
         /// A List of Role Mapping.
@@ -80,6 +83,7 @@ pub mod identity_pool_role_attachment {
         };
         let o = context.register_resource(request);
         IdentityPoolRoleAttachmentResult {
+            id: o.get_field("id"),
             identity_pool_id: o.get_field("identityPoolId"),
             role_mappings: o.get_field("roleMappings"),
             roles: o.get_field("roles"),

@@ -42,6 +42,9 @@ pub mod zone_cache_reserve {
     }
     #[allow(dead_code)]
     pub struct ZoneCacheReserveResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable or disable Cache Reserve support for a given zone.
         pub enabled: pulumi_gestalt_rust::Output<bool>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
@@ -77,6 +80,7 @@ pub mod zone_cache_reserve {
         };
         let o = context.register_resource(request);
         ZoneCacheReserveResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
             zone_id: o.get_field("zoneId"),
         }

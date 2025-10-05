@@ -166,6 +166,9 @@ pub mod custom_target_type {
     }
     #[allow(dead_code)]
     pub struct CustomTargetTypeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
@@ -273,6 +276,7 @@ pub mod custom_target_type {
         };
         let o = context.register_resource(request);
         CustomTargetTypeResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             create_time: o.get_field("createTime"),
             custom_actions: o.get_field("customActions"),

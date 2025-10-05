@@ -79,6 +79,9 @@ pub mod spring_cloud_build_pack_binding {
     }
     #[allow(dead_code)]
     pub struct SpringCloudBuildPackBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Build Pack Binding Type. Allowed values are `ApacheSkyWalking`, `AppDynamics`, `ApplicationInsights`, `Dynatrace`, `ElasticAPM` and `NewRelic`.
         pub binding_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// A `launch` block as defined below.
@@ -133,6 +136,7 @@ pub mod spring_cloud_build_pack_binding {
         };
         let o = context.register_resource(request);
         SpringCloudBuildPackBindingResult {
+            id: o.get_field("id"),
             binding_type: o.get_field("bindingType"),
             launch: o.get_field("launch"),
             name: o.get_field("name"),

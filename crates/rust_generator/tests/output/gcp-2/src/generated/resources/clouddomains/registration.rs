@@ -140,6 +140,9 @@ pub mod registration {
     }
     #[allow(dead_code)]
     pub struct RegistrationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The list of contact notices that the caller acknowledges. Possible value is PUBLIC_CONTACT_DATA_ACKNOWLEDGEMENT
         pub contact_notices: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// Required. Settings for contact information linked to the Registration.
@@ -268,6 +271,7 @@ pub mod registration {
         };
         let o = context.register_resource(request);
         RegistrationResult {
+            id: o.get_field("id"),
             contact_notices: o.get_field("contactNotices"),
             contact_settings: o.get_field("contactSettings"),
             create_time: o.get_field("createTime"),

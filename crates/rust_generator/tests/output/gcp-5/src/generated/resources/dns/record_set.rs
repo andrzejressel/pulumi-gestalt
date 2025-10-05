@@ -352,6 +352,9 @@ pub mod record_set {
     }
     #[allow(dead_code)]
     pub struct RecordSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the zone in which this record set will
         /// reside.
         pub managed_zone: pulumi_gestalt_rust::Output<String>,
@@ -429,6 +432,7 @@ pub mod record_set {
         };
         let o = context.register_resource(request);
         RecordSetResult {
+            id: o.get_field("id"),
             managed_zone: o.get_field("managedZone"),
             name: o.get_field("name"),
             project: o.get_field("project"),

@@ -65,6 +65,9 @@ pub mod postgresql_node_configuration {
     }
     #[allow(dead_code)]
     pub struct PostgresqlNodeConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The resource ID of the Azure Cosmos DB for PostgreSQL Cluster where we want to change configuration. Changing this forces a new resource to be created.
         pub cluster_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Node Configuration on Azure Cosmos DB for PostgreSQL Cluster. Changing this forces a new resource to be created.
@@ -108,6 +111,7 @@ pub mod postgresql_node_configuration {
         };
         let o = context.register_resource(request);
         PostgresqlNodeConfigurationResult {
+            id: o.get_field("id"),
             cluster_id: o.get_field("clusterId"),
             name: o.get_field("name"),
             value: o.get_field("value"),

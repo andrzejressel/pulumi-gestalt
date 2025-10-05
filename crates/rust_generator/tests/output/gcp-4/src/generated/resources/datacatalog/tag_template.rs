@@ -85,6 +85,9 @@ pub mod tag_template {
     }
     #[allow(dead_code)]
     pub struct TagTemplateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The display name for this template.
         pub display_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// Set of tag template field IDs and the settings for the field. This set is an exhaustive list of the allowed fields. This set must contain at least one field and at most 500 fields. The change of field_id will be resulting in re-creating of field. The change of primitive_type will be resulting in re-creating of field, however if the field is a required, you cannot update it.
@@ -153,6 +156,7 @@ pub mod tag_template {
         };
         let o = context.register_resource(request);
         TagTemplateResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             fields: o.get_field("fields"),
             force_delete: o.get_field("forceDelete"),

@@ -100,6 +100,9 @@ pub mod replication_configuration {
     }
     #[allow(dead_code)]
     pub struct ReplicationConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The registry ID where the replication configuration was created.
         pub registry_id: pulumi_gestalt_rust::Output<String>,
         /// Replication configuration for a registry. See Replication Configuration.
@@ -136,6 +139,7 @@ pub mod replication_configuration {
         };
         let o = context.register_resource(request);
         ReplicationConfigurationResult {
+            id: o.get_field("id"),
             registry_id: o.get_field("registryId"),
             replication_configuration: o.get_field("replicationConfiguration"),
         }

@@ -67,6 +67,9 @@ pub mod rule {
     }
     #[allow(dead_code)]
     pub struct RuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the WAF rule.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name or description for the Amazon CloudWatch metric of this rule. The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace.
@@ -126,6 +129,7 @@ pub mod rule {
         };
         let o = context.register_resource(request);
         RuleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             metric_name: o.get_field("metricName"),
             name: o.get_field("name"),

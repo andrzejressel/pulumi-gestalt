@@ -283,6 +283,9 @@ pub mod bucket_objectv_2 {
     }
     #[allow(dead_code)]
     pub struct BucketObjectv2Result {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// [Canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl) to apply. Valid values are `private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, and `bucket-owner-full-control`.
         pub acl: pulumi_gestalt_rust::Output<String>,
         /// ARN of the object.
@@ -520,6 +523,7 @@ pub mod bucket_objectv_2 {
         };
         let o = context.register_resource(request);
         BucketObjectv2Result {
+            id: o.get_field("id"),
             acl: o.get_field("acl"),
             arn: o.get_field("arn"),
             bucket: o.get_field("bucket"),

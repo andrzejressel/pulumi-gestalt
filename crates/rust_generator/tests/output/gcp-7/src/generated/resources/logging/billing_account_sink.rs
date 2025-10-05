@@ -91,6 +91,9 @@ pub mod billing_account_sink {
     }
     #[allow(dead_code)]
     pub struct BillingAccountSinkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Options that affect sinks exporting data to BigQuery. Structure documented below.
         pub bigquery_options: pulumi_gestalt_rust::Output<
             super::super::types::logging::BillingAccountSinkBigqueryOptions,
@@ -185,6 +188,7 @@ pub mod billing_account_sink {
         };
         let o = context.register_resource(request);
         BillingAccountSinkResult {
+            id: o.get_field("id"),
             bigquery_options: o.get_field("bigqueryOptions"),
             billing_account: o.get_field("billingAccount"),
             description: o.get_field("description"),

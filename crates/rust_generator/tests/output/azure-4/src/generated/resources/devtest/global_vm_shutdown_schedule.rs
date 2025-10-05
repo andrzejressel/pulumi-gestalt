@@ -121,6 +121,9 @@ pub mod global_vm_shutdown_schedule {
     }
     #[allow(dead_code)]
     pub struct GlobalVMShutdownScheduleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time each day when the schedule takes effect. Must match the format HHmm where HH is 00-23 and mm is 00-59 (e.g. 0930, 2300, etc.)
         pub daily_recurrence_time: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable the schedule. Possible values are `true` and `false`. Defaults to `true`.
@@ -200,6 +203,7 @@ pub mod global_vm_shutdown_schedule {
         };
         let o = context.register_resource(request);
         GlobalVMShutdownScheduleResult {
+            id: o.get_field("id"),
             daily_recurrence_time: o.get_field("dailyRecurrenceTime"),
             enabled: o.get_field("enabled"),
             location: o.get_field("location"),

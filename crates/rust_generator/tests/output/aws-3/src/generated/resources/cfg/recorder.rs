@@ -137,6 +137,9 @@ pub mod recorder {
     }
     #[allow(dead_code)]
     pub struct RecorderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the recorder. Defaults to `default`. Changing it recreates the resource.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// Recording group - see below.
@@ -190,6 +193,7 @@ pub mod recorder {
         };
         let o = context.register_resource(request);
         RecorderResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             recording_group: o.get_field("recordingGroup"),
             recording_mode: o.get_field("recordingMode"),

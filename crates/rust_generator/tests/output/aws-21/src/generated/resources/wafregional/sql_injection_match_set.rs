@@ -52,6 +52,9 @@ pub mod sql_injection_match_set {
     }
     #[allow(dead_code)]
     pub struct SqlInjectionMatchSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name or description of the SizeConstraintSet.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The parts of web requests that you want AWS WAF to inspect for malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.
@@ -95,6 +98,7 @@ pub mod sql_injection_match_set {
         };
         let o = context.register_resource(request);
         SqlInjectionMatchSetResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             sql_injection_match_tuples: o.get_field("sqlInjectionMatchTuples"),
         }

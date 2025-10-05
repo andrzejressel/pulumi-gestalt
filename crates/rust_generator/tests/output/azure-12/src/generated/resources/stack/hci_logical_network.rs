@@ -77,6 +77,9 @@ pub mod hci_logical_network {
     }
     #[allow(dead_code)]
     pub struct HciLogicalNetworkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of Custom Location where the Azure Stack HCI Logical Network should exist. Changing this forces a new resource to be created.
         pub custom_location_id: pulumi_gestalt_rust::Output<String>,
         /// A list of IPv4 addresses of DNS servers available to VMs deployed in the Logical Networks. Changing this forces a new resource to be created.
@@ -158,6 +161,7 @@ pub mod hci_logical_network {
         };
         let o = context.register_resource(request);
         HciLogicalNetworkResult {
+            id: o.get_field("id"),
             custom_location_id: o.get_field("customLocationId"),
             dns_servers: o.get_field("dnsServers"),
             location: o.get_field("location"),

@@ -67,6 +67,9 @@ pub mod container_service_deployment_version {
     }
     #[allow(dead_code)]
     pub struct ContainerServiceDeploymentVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A set of configuration blocks that describe the settings of the containers that will be launched on the container service. Maximum of 53. Detailed below.
         pub containers: pulumi_gestalt_rust::Output<
             Vec<
@@ -124,6 +127,7 @@ pub mod container_service_deployment_version {
         };
         let o = context.register_resource(request);
         ContainerServiceDeploymentVersionResult {
+            id: o.get_field("id"),
             containers: o.get_field("containers"),
             created_at: o.get_field("createdAt"),
             public_endpoint: o.get_field("publicEndpoint"),

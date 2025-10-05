@@ -74,6 +74,9 @@ pub mod resiliency_policy {
     }
     #[allow(dead_code)]
     pub struct ResiliencyPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Resiliency Policy.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Data Location Constraint of the Policy.
@@ -165,6 +168,7 @@ pub mod resiliency_policy {
         };
         let o = context.register_resource(request);
         ResiliencyPolicyResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             data_location_constraint: o.get_field("dataLocationConstraint"),
             description: o.get_field("description"),

@@ -65,6 +65,9 @@ pub mod external_key {
     }
     #[allow(dead_code)]
     pub struct ExternalKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the key.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether to disable the policy lockout check performed when creating or updating the key's policy. Setting this value to `true` increases the risk that the key becomes unmanageable. For more information, refer to the scenario in the [Default Key Policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam) section in the AWS Key Management Service Developer Guide. Defaults to `false`.
@@ -169,6 +172,7 @@ pub mod external_key {
         };
         let o = context.register_resource(request);
         ExternalKeyResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             bypass_policy_lockout_safety_check: o
                 .get_field("bypassPolicyLockoutSafetyCheck"),

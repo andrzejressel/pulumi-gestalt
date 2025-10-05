@@ -98,6 +98,9 @@ pub mod organization_configuration {
     }
     #[allow(dead_code)]
     pub struct OrganizationConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to automatically enable Security Hub for new accounts in the organization.
         pub auto_enable: pulumi_gestalt_rust::Output<bool>,
         /// Whether to automatically enable Security Hub default standards for new member accounts in the organization. By default, this parameter is equal to `DEFAULT`, and new member accounts are automatically enabled with default Security Hub standards. To opt out of enabling default standards for new member accounts, set this parameter equal to `NONE`.
@@ -147,6 +150,7 @@ pub mod organization_configuration {
         };
         let o = context.register_resource(request);
         OrganizationConfigurationResult {
+            id: o.get_field("id"),
             auto_enable: o.get_field("autoEnable"),
             auto_enable_standards: o.get_field("autoEnableStandards"),
             organization_configuration: o.get_field("organizationConfiguration"),

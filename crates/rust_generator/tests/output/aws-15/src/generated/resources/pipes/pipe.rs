@@ -262,6 +262,9 @@ pub mod pipe {
     }
     #[allow(dead_code)]
     pub struct PipeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of this pipe.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A description of the pipe. At most 512 characters.
@@ -394,6 +397,7 @@ pub mod pipe {
         };
         let o = context.register_resource(request);
         PipeResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             desired_state: o.get_field("desiredState"),

@@ -68,6 +68,9 @@ pub mod dedicated_host_group {
     }
     #[allow(dead_code)]
     pub struct DedicatedHostGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Would virtual machines or virtual machine scale sets be placed automatically on this Dedicated Host Group? Defaults to `false`. Changing this forces a new resource to be created.
         pub automatic_placement_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The Azure location where the Dedicated Host Group exists. Changing this forces a new resource to be created.
@@ -144,6 +147,7 @@ pub mod dedicated_host_group {
         };
         let o = context.register_resource(request);
         DedicatedHostGroupResult {
+            id: o.get_field("id"),
             automatic_placement_enabled: o.get_field("automaticPlacementEnabled"),
             location: o.get_field("location"),
             name: o.get_field("name"),

@@ -162,6 +162,9 @@ pub mod scaling_plan {
     }
     #[allow(dead_code)]
     pub struct ScalingPlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description of the Scaling Plan.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of the tag associated with the VMs you want to exclude from autoscaling.
@@ -259,6 +262,7 @@ pub mod scaling_plan {
         };
         let o = context.register_resource(request);
         ScalingPlanResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             exclusion_tag: o.get_field("exclusionTag"),
             friendly_name: o.get_field("friendlyName"),

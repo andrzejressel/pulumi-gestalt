@@ -196,6 +196,9 @@ pub mod repository {
     }
     #[allow(dead_code)]
     pub struct RepositoryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Allows clients to store small amounts of arbitrary data.
         /// **Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.
         /// Please refer to the field `effective_annotations` for all of the annotations present on the resource.
@@ -276,6 +279,7 @@ pub mod repository {
         };
         let o = context.register_resource(request);
         RepositoryResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             create_time: o.get_field("createTime"),
             effective_annotations: o.get_field("effectiveAnnotations"),

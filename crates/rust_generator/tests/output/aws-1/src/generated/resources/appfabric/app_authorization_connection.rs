@@ -42,6 +42,9 @@ pub mod app_authorization_connection {
     }
     #[allow(dead_code)]
     pub struct AppAuthorizationConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the application.
         pub app: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.
@@ -103,6 +106,7 @@ pub mod app_authorization_connection {
         };
         let o = context.register_resource(request);
         AppAuthorizationConnectionResult {
+            id: o.get_field("id"),
             app: o.get_field("app"),
             app_authorization_arn: o.get_field("appAuthorizationArn"),
             app_bundle_arn: o.get_field("appBundleArn"),

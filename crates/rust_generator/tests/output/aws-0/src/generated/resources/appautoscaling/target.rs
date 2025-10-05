@@ -170,6 +170,9 @@ pub mod target {
     }
     #[allow(dead_code)]
     pub struct TargetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the scalable target.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Max capacity of the scalable target.
@@ -257,6 +260,7 @@ pub mod target {
         };
         let o = context.register_resource(request);
         TargetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             max_capacity: o.get_field("maxCapacity"),
             min_capacity: o.get_field("minCapacity"),

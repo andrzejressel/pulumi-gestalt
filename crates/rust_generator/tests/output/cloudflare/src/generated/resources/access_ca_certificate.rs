@@ -64,6 +64,9 @@ pub mod access_ca_certificate {
     }
     #[allow(dead_code)]
     pub struct AccessCaCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. Conflicts with `zone_id`.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The Access Application ID to associate with the CA certificate.
@@ -110,6 +113,7 @@ pub mod access_ca_certificate {
         };
         let o = context.register_resource(request);
         AccessCaCertificateResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             application_id: o.get_field("applicationId"),
             aud: o.get_field("aud"),

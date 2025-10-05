@@ -153,6 +153,9 @@ pub mod environment {
     }
     #[allow(dead_code)]
     pub struct EnvironmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub apply_changes_during_maintenance_window: pulumi_gestalt_rust::Output<
             Option<bool>,
         >,
@@ -310,6 +313,7 @@ pub mod environment {
         };
         let o = context.register_resource(request);
         EnvironmentResult {
+            id: o.get_field("id"),
             apply_changes_during_maintenance_window: o
                 .get_field("applyChangesDuringMaintenanceWindow"),
             arn: o.get_field("arn"),

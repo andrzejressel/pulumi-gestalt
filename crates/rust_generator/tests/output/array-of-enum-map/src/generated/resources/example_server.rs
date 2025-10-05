@@ -18,6 +18,9 @@ pub mod example_server {
     }
     #[allow(dead_code)]
     pub struct ExampleServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub map_array_enum: pulumi_gestalt_rust::Output<
             Option<
                 Vec<
@@ -54,6 +57,7 @@ pub mod example_server {
         };
         let o = context.register_resource(request);
         ExampleServerResult {
+            id: o.get_field("id"),
             map_array_enum: o.get_field("mapArrayEnum"),
         }
     }

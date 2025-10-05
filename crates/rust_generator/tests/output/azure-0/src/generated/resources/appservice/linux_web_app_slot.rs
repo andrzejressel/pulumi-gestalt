@@ -173,6 +173,9 @@ pub mod linux_web_app_slot {
     }
     #[allow(dead_code)]
     pub struct LinuxWebAppSlotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `app_metadata`.
         pub app_metadata: pulumi_gestalt_rust::Output<
             std::collections::HashMap<String, String>,
@@ -442,6 +445,7 @@ pub mod linux_web_app_slot {
         };
         let o = context.register_resource(request);
         LinuxWebAppSlotResult {
+            id: o.get_field("id"),
             app_metadata: o.get_field("appMetadata"),
             app_service_id: o.get_field("appServiceId"),
             app_settings: o.get_field("appSettings"),

@@ -48,6 +48,9 @@ pub mod vpc_connector {
     }
     #[allow(dead_code)]
     pub struct VpcConnectorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of VPC connector.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// List of IDs of security groups that App Runner should use for access to AWS resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.
@@ -109,6 +112,7 @@ pub mod vpc_connector {
         };
         let o = context.register_resource(request);
         VpcConnectorResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             security_groups: o.get_field("securityGroups"),
             status: o.get_field("status"),

@@ -45,6 +45,9 @@ pub mod egress_only_internet_gateway {
     }
     #[allow(dead_code)]
     pub struct EgressOnlyInternetGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
         pub tags: pulumi_gestalt_rust::Output<
             Option<std::collections::HashMap<String, String>>,
@@ -86,6 +89,7 @@ pub mod egress_only_internet_gateway {
         };
         let o = context.register_resource(request);
         EgressOnlyInternetGatewayResult {
+            id: o.get_field("id"),
             tags: o.get_field("tags"),
             tags_all: o.get_field("tagsAll"),
             vpc_id: o.get_field("vpcId"),

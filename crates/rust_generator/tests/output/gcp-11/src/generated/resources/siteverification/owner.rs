@@ -113,6 +113,9 @@ pub mod owner {
     }
     #[allow(dead_code)]
     pub struct OwnerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The email of the user to be added as an owner.
         ///
         /// - - -
@@ -151,6 +154,7 @@ pub mod owner {
         };
         let o = context.register_resource(request);
         OwnerResult {
+            id: o.get_field("id"),
             email: o.get_field("email"),
             web_resource_id: o.get_field("webResourceId"),
         }

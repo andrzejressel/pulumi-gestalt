@@ -32,6 +32,9 @@ pub mod logpull_retention {
     }
     #[allow(dead_code)]
     pub struct LogpullRetentionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether you wish to retain logs or not.
         pub enabled: pulumi_gestalt_rust::Output<bool>,
         /// The zone identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
@@ -67,6 +70,7 @@ pub mod logpull_retention {
         };
         let o = context.register_resource(request);
         LogpullRetentionResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
             zone_id: o.get_field("zoneId"),
         }

@@ -49,6 +49,9 @@ pub mod monitoring_subscription {
     }
     #[allow(dead_code)]
     pub struct MonitoringSubscriptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the distribution that you are enabling metrics for.
         pub distribution_id: pulumi_gestalt_rust::Output<String>,
         /// A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.
@@ -88,6 +91,7 @@ pub mod monitoring_subscription {
         };
         let o = context.register_resource(request);
         MonitoringSubscriptionResult {
+            id: o.get_field("id"),
             distribution_id: o.get_field("distributionId"),
             monitoring_subscription: o.get_field("monitoringSubscription"),
         }

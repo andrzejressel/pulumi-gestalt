@@ -82,6 +82,9 @@ pub mod virtual_machine_manager_availability_set {
     }
     #[allow(dead_code)]
     pub struct VirtualMachineManagerAvailabilitySetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Custom Location for the System Center Virtual Machine Manager Availability Set. Changing this forces a new resource to be created.
         pub custom_location_id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the System Center Virtual Machine Manager Availability Set should exist. Changing this forces a new resource to be created.
@@ -153,6 +156,7 @@ pub mod virtual_machine_manager_availability_set {
         };
         let o = context.register_resource(request);
         VirtualMachineManagerAvailabilitySetResult {
+            id: o.get_field("id"),
             custom_location_id: o.get_field("customLocationId"),
             location: o.get_field("location"),
             name: o.get_field("name"),

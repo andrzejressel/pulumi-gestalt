@@ -214,6 +214,9 @@ pub mod bare_metal_node_pool {
     }
     #[allow(dead_code)]
     pub struct BareMetalNodePoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Annotations on the Bare Metal Node Pool. This field has the same restrictions as Kubernetes annotations. The total size
         /// of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required),
         /// separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with
@@ -320,6 +323,7 @@ pub mod bare_metal_node_pool {
         };
         let o = context.register_resource(request);
         BareMetalNodePoolResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             bare_metal_cluster: o.get_field("bareMetalCluster"),
             create_time: o.get_field("createTime"),

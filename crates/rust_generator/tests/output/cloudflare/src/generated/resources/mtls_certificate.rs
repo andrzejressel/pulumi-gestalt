@@ -54,6 +54,9 @@ pub mod mtls_certificate {
     }
     #[allow(dead_code)]
     pub struct MtlsCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource. **Modifying this attribute will force creation of a new resource.**
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Whether this is a CA or leaf certificate. **Modifying this attribute will force creation of a new resource.**
@@ -120,6 +123,7 @@ pub mod mtls_certificate {
         };
         let o = context.register_resource(request);
         MtlsCertificateResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             ca: o.get_field("ca"),
             certificates: o.get_field("certificates"),

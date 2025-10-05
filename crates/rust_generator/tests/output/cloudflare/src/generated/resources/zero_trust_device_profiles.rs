@@ -107,6 +107,9 @@ pub mod zero_trust_device_profiles {
     }
     #[allow(dead_code)]
     pub struct ZeroTrustDeviceProfilesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Whether to allow mode switch for this policy.
@@ -264,6 +267,7 @@ pub mod zero_trust_device_profiles {
         };
         let o = context.register_resource(request);
         ZeroTrustDeviceProfilesResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             allow_mode_switch: o.get_field("allowModeSwitch"),
             allow_updates: o.get_field("allowUpdates"),

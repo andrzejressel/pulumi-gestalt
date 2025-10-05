@@ -54,6 +54,9 @@ pub mod serverless_vpc_endpoint {
     }
     #[allow(dead_code)]
     pub struct ServerlessVpcEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the interface endpoint.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// One or more security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint. Up to 5 security groups can be provided.
@@ -113,6 +116,7 @@ pub mod serverless_vpc_endpoint {
         };
         let o = context.register_resource(request);
         ServerlessVpcEndpointResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             security_group_ids: o.get_field("securityGroupIds"),
             subnet_ids: o.get_field("subnetIds"),

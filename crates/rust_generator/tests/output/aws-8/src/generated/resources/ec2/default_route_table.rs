@@ -70,6 +70,9 @@ pub mod default_route_table {
     }
     #[allow(dead_code)]
     pub struct DefaultRouteTableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the route table.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ID of the default route table.
@@ -137,6 +140,7 @@ pub mod default_route_table {
         };
         let o = context.register_resource(request);
         DefaultRouteTableResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             default_route_table_id: o.get_field("defaultRouteTableId"),
             owner_id: o.get_field("ownerId"),

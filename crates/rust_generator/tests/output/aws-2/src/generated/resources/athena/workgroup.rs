@@ -71,6 +71,9 @@ pub mod workgroup {
     }
     #[allow(dead_code)]
     pub struct WorkgroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the workgroup
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block with various settings for the workgroup. Documented below.
@@ -144,6 +147,7 @@ pub mod workgroup {
         };
         let o = context.register_resource(request);
         WorkgroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             configuration: o.get_field("configuration"),
             description: o.get_field("description"),

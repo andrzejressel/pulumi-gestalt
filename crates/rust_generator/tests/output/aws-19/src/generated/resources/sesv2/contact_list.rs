@@ -74,6 +74,9 @@ pub mod contact_list {
     }
     #[allow(dead_code)]
     pub struct ContactListResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the contact list.
         ///
@@ -137,6 +140,7 @@ pub mod contact_list {
         };
         let o = context.register_resource(request);
         ContactListResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             contact_list_name: o.get_field("contactListName"),
             created_timestamp: o.get_field("createdTimestamp"),

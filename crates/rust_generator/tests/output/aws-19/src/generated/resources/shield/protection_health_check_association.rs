@@ -76,6 +76,9 @@ pub mod protection_health_check_association {
     }
     #[allow(dead_code)]
     pub struct ProtectionHealthCheckAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN (Amazon Resource Name) of the Route53 Health Check resource which will be associated to the protected resource.
         pub health_check_arn: pulumi_gestalt_rust::Output<String>,
         /// The ID of the protected resource.
@@ -112,6 +115,7 @@ pub mod protection_health_check_association {
         };
         let o = context.register_resource(request);
         ProtectionHealthCheckAssociationResult {
+            id: o.get_field("id"),
             health_check_arn: o.get_field("healthCheckArn"),
             shield_protection_id: o.get_field("shieldProtectionId"),
         }

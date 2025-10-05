@@ -46,6 +46,9 @@ pub mod lb {
     }
     #[allow(dead_code)]
     pub struct LbResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Lightsail load balancer.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The timestamp when the load balancer was created.
@@ -119,6 +122,7 @@ pub mod lb {
         };
         let o = context.register_resource(request);
         LbResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_at: o.get_field("createdAt"),
             dns_name: o.get_field("dnsName"),

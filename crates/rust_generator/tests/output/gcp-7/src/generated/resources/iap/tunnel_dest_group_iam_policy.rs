@@ -382,6 +382,9 @@ pub mod tunnel_dest_group_iam_policy {
     }
     #[allow(dead_code)]
     pub struct TunnelDestGroupIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub dest_group: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
         pub etag: pulumi_gestalt_rust::Output<String>,
@@ -437,6 +440,7 @@ pub mod tunnel_dest_group_iam_policy {
         };
         let o = context.register_resource(request);
         TunnelDestGroupIamPolicyResult {
+            id: o.get_field("id"),
             dest_group: o.get_field("destGroup"),
             etag: o.get_field("etag"),
             policy_data: o.get_field("policyData"),

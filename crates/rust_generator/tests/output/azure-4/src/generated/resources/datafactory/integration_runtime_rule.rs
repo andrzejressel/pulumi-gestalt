@@ -77,6 +77,9 @@ pub mod integration_runtime_rule {
     }
     #[allow(dead_code)]
     pub struct IntegrationRuntimeRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Cluster will not be recycled and it will be used in next data flow activity run until TTL (time to live) is reached if this is set as `false`. Defaults to `true`.
         pub cleanup_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Compute type of the cluster which will execute data flow job. Valid values are `General`, `ComputeOptimized` and `MemoryOptimized`. Defaults to `General`.
@@ -164,6 +167,7 @@ pub mod integration_runtime_rule {
         };
         let o = context.register_resource(request);
         IntegrationRuntimeRuleResult {
+            id: o.get_field("id"),
             cleanup_enabled: o.get_field("cleanupEnabled"),
             compute_type: o.get_field("computeType"),
             core_count: o.get_field("coreCount"),

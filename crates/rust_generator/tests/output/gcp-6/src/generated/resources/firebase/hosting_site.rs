@@ -95,6 +95,9 @@ pub mod hosting_site {
     }
     #[allow(dead_code)]
     pub struct HostingSiteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Optional. The [ID of a Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id)
         /// associated with the Hosting site.
         pub app_id: pulumi_gestalt_rust::Output<Option<String>>,
@@ -151,6 +154,7 @@ pub mod hosting_site {
         };
         let o = context.register_resource(request);
         HostingSiteResult {
+            id: o.get_field("id"),
             app_id: o.get_field("appId"),
             default_url: o.get_field("defaultUrl"),
             name: o.get_field("name"),

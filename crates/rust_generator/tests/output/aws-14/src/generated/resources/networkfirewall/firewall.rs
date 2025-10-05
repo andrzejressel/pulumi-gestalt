@@ -71,6 +71,9 @@ pub mod firewall {
     }
     #[allow(dead_code)]
     pub struct FirewallResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) that identifies the firewall.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A flag indicating whether the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. Defaults to `false`.
@@ -186,6 +189,7 @@ pub mod firewall {
         };
         let o = context.register_resource(request);
         FirewallResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             delete_protection: o.get_field("deleteProtection"),
             description: o.get_field("description"),

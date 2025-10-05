@@ -47,6 +47,9 @@ pub mod invite_accepter {
     }
     #[allow(dead_code)]
     pub struct InviteAccepterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the invitation.
         pub invitation_id: pulumi_gestalt_rust::Output<String>,
         /// The account ID of the master Security Hub account whose invitation you're accepting.
@@ -77,6 +80,7 @@ pub mod invite_accepter {
         };
         let o = context.register_resource(request);
         InviteAccepterResult {
+            id: o.get_field("id"),
             invitation_id: o.get_field("invitationId"),
             master_id: o.get_field("masterId"),
         }

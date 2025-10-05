@@ -628,6 +628,9 @@ pub mod instance {
     }
     #[allow(dead_code)]
     pub struct InstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the DNS address of the DB instance.
         pub address: pulumi_gestalt_rust::Output<String>,
         /// The allocated storage in gibibytes. If `max_allocated_storage` is configured, this argument represents the initial storage allocation and differences from the configuration will be ignored automatically when Storage Autoscaling occurs. If `replicate_source_db` is set, the value is ignored during the creation of the instance.
@@ -1296,6 +1299,7 @@ pub mod instance {
         };
         let o = context.register_resource(request);
         InstanceResult {
+            id: o.get_field("id"),
             address: o.get_field("address"),
             allocated_storage: o.get_field("allocatedStorage"),
             allow_major_version_upgrade: o.get_field("allowMajorVersionUpgrade"),

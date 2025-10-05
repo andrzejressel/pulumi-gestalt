@@ -58,6 +58,9 @@ pub mod sdkvoice_sip_media_application {
     }
     #[allow(dead_code)]
     pub struct SdkvoiceSipMediaApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN (Amazon Resource Name) of the AWS Chime SDK Voice Sip Media Application
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The AWS Region in which the AWS Chime SDK Voice Sip Media Application is created.
@@ -120,6 +123,7 @@ pub mod sdkvoice_sip_media_application {
         };
         let o = context.register_resource(request);
         SdkvoiceSipMediaApplicationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             aws_region: o.get_field("awsRegion"),
             endpoints: o.get_field("endpoints"),

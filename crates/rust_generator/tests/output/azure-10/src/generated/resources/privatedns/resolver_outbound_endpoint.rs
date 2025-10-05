@@ -87,6 +87,9 @@ pub mod resolver_outbound_endpoint {
     }
     #[allow(dead_code)]
     pub struct ResolverOutboundEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Azure Region where the Private DNS Resolver Outbound Endpoint should exist. Changing this forces a new Private DNS Resolver Outbound Endpoint to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name which should be used for this Private DNS Resolver Outbound Endpoint. Changing this forces a new Private DNS Resolver Outbound Endpoint to be created.
@@ -148,6 +151,7 @@ pub mod resolver_outbound_endpoint {
         };
         let o = context.register_resource(request);
         ResolverOutboundEndpointResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             private_dns_resolver_id: o.get_field("privateDnsResolverId"),

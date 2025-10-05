@@ -69,6 +69,9 @@ pub mod resource_bridge_appliance {
     }
     #[allow(dead_code)]
     pub struct ResourceBridgeApplianceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a supported Fabric/Infrastructure for this Arc Resource Bridge Appliance. The possible value is `AKSEdge`.
         pub distro: pulumi_gestalt_rust::Output<String>,
         /// An `identity` block as defined below. Changing this forces a new resource to be created.
@@ -152,6 +155,7 @@ pub mod resource_bridge_appliance {
         };
         let o = context.register_resource(request);
         ResourceBridgeApplianceResult {
+            id: o.get_field("id"),
             distro: o.get_field("distro"),
             identity: o.get_field("identity"),
             infrastructure_provider: o.get_field("infrastructureProvider"),

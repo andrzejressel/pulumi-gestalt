@@ -47,6 +47,9 @@ pub mod endpoint {
     }
     #[allow(dead_code)]
     pub struct EndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this endpoint.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations. See Deployment Config.
@@ -106,6 +109,7 @@ pub mod endpoint {
         };
         let o = context.register_resource(request);
         EndpointResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             deployment_config: o.get_field("deploymentConfig"),
             endpoint_config_name: o.get_field("endpointConfigName"),

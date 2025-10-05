@@ -59,6 +59,9 @@ pub mod authorization_rule {
     }
     #[allow(dead_code)]
     pub struct AuthorizationRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the group to which the authorization rule grants access. One of `access_group_id` or `authorize_all_groups` must be set.
         pub access_group_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Indicates whether the authorization rule grants access to all clients. One of `access_group_id` or `authorize_all_groups` must be set.
@@ -117,6 +120,7 @@ pub mod authorization_rule {
         };
         let o = context.register_resource(request);
         AuthorizationRuleResult {
+            id: o.get_field("id"),
             access_group_id: o.get_field("accessGroupId"),
             authorize_all_groups: o.get_field("authorizeAllGroups"),
             client_vpn_endpoint_id: o.get_field("clientVpnEndpointId"),

@@ -86,6 +86,9 @@ pub mod express_route_port {
     }
     #[allow(dead_code)]
     pub struct ExpressRoutePortResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Bandwidth of the Express Route Port in Gbps. Changing this forces a new Express Route Port to be created.
         pub bandwidth_in_gbps: pulumi_gestalt_rust::Output<i32>,
         /// The billing type of the Express Route Port. Possible values are `MeteredData` and `UnlimitedData`. Defaults to `MeteredData`.
@@ -198,6 +201,7 @@ pub mod express_route_port {
         };
         let o = context.register_resource(request);
         ExpressRoutePortResult {
+            id: o.get_field("id"),
             bandwidth_in_gbps: o.get_field("bandwidthInGbps"),
             billing_type: o.get_field("billingType"),
             encapsulation: o.get_field("encapsulation"),

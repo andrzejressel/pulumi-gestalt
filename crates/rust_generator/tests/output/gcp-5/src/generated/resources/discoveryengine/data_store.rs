@@ -166,6 +166,9 @@ pub mod data_store {
     }
     #[allow(dead_code)]
     pub struct DataStoreResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The content config of the data store.
         /// Possible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.
         pub content_config: pulumi_gestalt_rust::Output<String>,
@@ -294,6 +297,7 @@ pub mod data_store {
         };
         let o = context.register_resource(request);
         DataStoreResult {
+            id: o.get_field("id"),
             content_config: o.get_field("contentConfig"),
             create_advanced_site_search: o.get_field("createAdvancedSiteSearch"),
             create_time: o.get_field("createTime"),

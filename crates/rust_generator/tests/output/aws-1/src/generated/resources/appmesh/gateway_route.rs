@@ -60,6 +60,9 @@ pub mod gateway_route {
     }
     #[allow(dead_code)]
     pub struct GatewayRouteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the gateway route.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Creation date of the gateway route.
@@ -139,6 +142,7 @@ pub mod gateway_route {
         };
         let o = context.register_resource(request);
         GatewayRouteResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_date: o.get_field("createdDate"),
             last_updated_date: o.get_field("lastUpdatedDate"),

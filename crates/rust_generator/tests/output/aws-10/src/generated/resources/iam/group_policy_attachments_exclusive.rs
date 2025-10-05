@@ -22,6 +22,9 @@ pub mod group_policy_attachments_exclusive {
     }
     #[allow(dead_code)]
     pub struct GroupPolicyAttachmentsExclusiveResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// IAM group name.
         pub group_name: pulumi_gestalt_rust::Output<String>,
         /// A list of managed IAM policy ARNs to be attached to the group. Policies attached to this group but not configured in this argument will be removed.
@@ -58,6 +61,7 @@ pub mod group_policy_attachments_exclusive {
         };
         let o = context.register_resource(request);
         GroupPolicyAttachmentsExclusiveResult {
+            id: o.get_field("id"),
             group_name: o.get_field("groupName"),
             policy_arns: o.get_field("policyArns"),
         }

@@ -106,6 +106,9 @@ pub mod global_network_endpoint_group {
     }
     #[allow(dead_code)]
     pub struct GlobalNetworkEndpointGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The default port used if the port number is not specified in the
         /// network endpoint.
         pub default_port: pulumi_gestalt_rust::Output<Option<i32>>,
@@ -180,6 +183,7 @@ pub mod global_network_endpoint_group {
         };
         let o = context.register_resource(request);
         GlobalNetworkEndpointGroupResult {
+            id: o.get_field("id"),
             default_port: o.get_field("defaultPort"),
             description: o.get_field("description"),
             name: o.get_field("name"),

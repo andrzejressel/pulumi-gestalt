@@ -70,6 +70,9 @@ pub mod managed_hardware_security_module_role_definition {
     }
     #[allow(dead_code)]
     pub struct ManagedHardwareSecurityModuleRoleDefinitionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a text description about this KeyVault Role Definition.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         pub managed_hsm_id: pulumi_gestalt_rust::Output<String>,
@@ -136,6 +139,7 @@ pub mod managed_hardware_security_module_role_definition {
         };
         let o = context.register_resource(request);
         ManagedHardwareSecurityModuleRoleDefinitionResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             managed_hsm_id: o.get_field("managedHsmId"),
             name: o.get_field("name"),

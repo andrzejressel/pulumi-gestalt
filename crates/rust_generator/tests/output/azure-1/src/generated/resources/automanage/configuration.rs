@@ -131,6 +131,9 @@ pub mod configuration {
     }
     #[allow(dead_code)]
     pub struct ConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `antimalware` block as defined below.
         pub antimalware: pulumi_gestalt_rust::Output<
             Option<super::super::types::automanage::ConfigurationAntimalware>,
@@ -264,6 +267,7 @@ pub mod configuration {
         };
         let o = context.register_resource(request);
         ConfigurationResult {
+            id: o.get_field("id"),
             antimalware: o.get_field("antimalware"),
             automation_account_enabled: o.get_field("automationAccountEnabled"),
             azure_security_baseline: o.get_field("azureSecurityBaseline"),

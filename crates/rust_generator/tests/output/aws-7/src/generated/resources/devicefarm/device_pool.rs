@@ -61,6 +61,9 @@ pub mod device_pool {
     }
     #[allow(dead_code)]
     pub struct DevicePoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name of this Device Pool
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The device pool's description.
@@ -135,6 +138,7 @@ pub mod device_pool {
         };
         let o = context.register_resource(request);
         DevicePoolResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             max_devices: o.get_field("maxDevices"),

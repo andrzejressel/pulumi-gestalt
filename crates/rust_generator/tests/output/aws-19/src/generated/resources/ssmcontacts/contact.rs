@@ -66,6 +66,9 @@ pub mod contact {
     }
     #[allow(dead_code)]
     pub struct ContactResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A unique and identifiable alias for the contact or escalation plan. Must be between 1 and 255 characters, and may contain alphanumerics, underscores (`_`), and hyphens (`-`).
         pub alias: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the contact or escalation plan.
@@ -126,6 +129,7 @@ pub mod contact {
         };
         let o = context.register_resource(request);
         ContactResult {
+            id: o.get_field("id"),
             alias: o.get_field("alias"),
             arn: o.get_field("arn"),
             display_name: o.get_field("displayName"),

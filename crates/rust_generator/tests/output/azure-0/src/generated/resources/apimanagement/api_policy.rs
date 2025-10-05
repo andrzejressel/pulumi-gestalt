@@ -60,6 +60,9 @@ pub mod api_policy {
     }
     #[allow(dead_code)]
     pub struct ApiPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the API Management Service. Changing this forces a new resource to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the API Management API within the API Management Service. Changing this forces a new resource to be created.
@@ -116,6 +119,7 @@ pub mod api_policy {
         };
         let o = context.register_resource(request);
         ApiPolicyResult {
+            id: o.get_field("id"),
             api_management_name: o.get_field("apiManagementName"),
             api_name: o.get_field("apiName"),
             resource_group_name: o.get_field("resourceGroupName"),

@@ -91,6 +91,9 @@ pub mod mail_from {
     }
     #[allow(dead_code)]
     pub struct MailFromResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. Defaults to `UseDefaultValue`. See the [SES API documentation](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityMailFromDomain.html) for more information.
         pub behavior_on_mx_failure: pulumi_gestalt_rust::Output<Option<String>>,
         /// Verified domain name or email identity to generate DKIM tokens for.
@@ -137,6 +140,7 @@ pub mod mail_from {
         };
         let o = context.register_resource(request);
         MailFromResult {
+            id: o.get_field("id"),
             behavior_on_mx_failure: o.get_field("behaviorOnMxFailure"),
             domain: o.get_field("domain"),
             mail_from_domain: o.get_field("mailFromDomain"),

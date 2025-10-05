@@ -66,6 +66,9 @@ pub mod flexible_server_database {
     }
     #[allow(dead_code)]
     pub struct FlexibleServerDatabaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Charset for the Azure PostgreSQL Flexible Server Database, which needs [to be a valid PostgreSQL Charset](https://www.postgresql.org/docs/current/static/multibyte.html). Defaults to `UTF8`. Changing this forces a new Azure PostgreSQL Flexible Server Database to be created.
         pub charset: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the Collation for the Azure PostgreSQL Flexible Server Database, which needs [to be a valid PostgreSQL Collation](https://www.postgresql.org/docs/current/static/collation.html). Defaults to `en_US.utf8`. Changing this forces a new Azure PostgreSQL Flexible Server Database to be created.
@@ -116,6 +119,7 @@ pub mod flexible_server_database {
         };
         let o = context.register_resource(request);
         FlexibleServerDatabaseResult {
+            id: o.get_field("id"),
             charset: o.get_field("charset"),
             collation: o.get_field("collation"),
             name: o.get_field("name"),

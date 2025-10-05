@@ -94,6 +94,9 @@ pub mod repository {
     }
     #[allow(dead_code)]
     pub struct RepositoryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// If set to true, skip repository creation if a repository with the same name already exists.
         pub create_ignore_already_exists: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Resource name of the repository, of the form `{{repo}}`.
@@ -158,6 +161,7 @@ pub mod repository {
         };
         let o = context.register_resource(request);
         RepositoryResult {
+            id: o.get_field("id"),
             create_ignore_already_exists: o.get_field("createIgnoreAlreadyExists"),
             name: o.get_field("name"),
             project: o.get_field("project"),

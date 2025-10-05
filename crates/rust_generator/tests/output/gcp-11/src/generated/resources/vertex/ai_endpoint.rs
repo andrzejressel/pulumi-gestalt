@@ -227,6 +227,9 @@ pub mod ai_endpoint {
     }
     #[allow(dead_code)]
     pub struct AiEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// (Output)
         /// Output only. Timestamp when the DeployedModel was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
@@ -394,6 +397,7 @@ pub mod ai_endpoint {
         };
         let o = context.register_resource(request);
         AiEndpointResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             dedicated_endpoint_dns: o.get_field("dedicatedEndpointDns"),
             dedicated_endpoint_enabled: o.get_field("dedicatedEndpointEnabled"),

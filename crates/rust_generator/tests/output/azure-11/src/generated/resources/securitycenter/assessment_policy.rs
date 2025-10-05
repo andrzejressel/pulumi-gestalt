@@ -59,6 +59,9 @@ pub mod assessment_policy {
     }
     #[allow(dead_code)]
     pub struct AssessmentPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of the categories of resource that is at risk when the Security Center Assessment is unhealthy. Possible values are `Unknown`, `Compute`, `Data`, `IdentityAndAccess`, `IoT` and `Networking`.
         pub categories: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The description of the Security Center Assessment.
@@ -142,6 +145,7 @@ pub mod assessment_policy {
         };
         let o = context.register_resource(request);
         AssessmentPolicyResult {
+            id: o.get_field("id"),
             categories: o.get_field("categories"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),

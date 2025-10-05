@@ -85,6 +85,9 @@ pub mod discovery_virtual_instance {
     }
     #[allow(dead_code)]
     pub struct DiscoveryVirtualInstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Virtual Machine of the Central Server. Changing this forces a new resource to be created.
         pub central_server_virtual_machine_id: pulumi_gestalt_rust::Output<String>,
         /// The environment type for the SAP Discovery Virtual Instance. Possible values are `NonProd` and `Prod`. Changing this forces a new resource to be created.
@@ -187,6 +190,7 @@ pub mod discovery_virtual_instance {
         };
         let o = context.register_resource(request);
         DiscoveryVirtualInstanceResult {
+            id: o.get_field("id"),
             central_server_virtual_machine_id: o
                 .get_field("centralServerVirtualMachineId"),
             environment: o.get_field("environment"),

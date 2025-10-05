@@ -210,6 +210,9 @@ pub mod network_connection_monitor {
     }
     #[allow(dead_code)]
     pub struct NetworkConnectionMonitorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `endpoint` block as defined below.
         pub endpoints: pulumi_gestalt_rust::Output<
             Vec<super::super::types::network::NetworkConnectionMonitorEndpoint>,
@@ -307,6 +310,7 @@ pub mod network_connection_monitor {
         };
         let o = context.register_resource(request);
         NetworkConnectionMonitorResult {
+            id: o.get_field("id"),
             endpoints: o.get_field("endpoints"),
             location: o.get_field("location"),
             name: o.get_field("name"),

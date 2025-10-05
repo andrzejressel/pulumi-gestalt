@@ -356,6 +356,9 @@ pub mod bucket_lifecycle_configuration_v_2 {
     }
     #[allow(dead_code)]
     pub struct BucketLifecycleConfigurationV2Result {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the source S3 bucket you want Amazon S3 to monitor.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// Account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
@@ -412,6 +415,7 @@ pub mod bucket_lifecycle_configuration_v_2 {
         };
         let o = context.register_resource(request);
         BucketLifecycleConfigurationV2Result {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             expected_bucket_owner: o.get_field("expectedBucketOwner"),
             rules: o.get_field("rules"),

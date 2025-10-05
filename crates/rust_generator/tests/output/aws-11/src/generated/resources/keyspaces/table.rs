@@ -102,6 +102,9 @@ pub mod table {
     }
     #[allow(dead_code)]
     pub struct TableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the table.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the read/write throughput capacity mode for the table.
@@ -232,6 +235,7 @@ pub mod table {
         };
         let o = context.register_resource(request);
         TableResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             capacity_specification: o.get_field("capacitySpecification"),
             client_side_timestamps: o.get_field("clientSideTimestamps"),

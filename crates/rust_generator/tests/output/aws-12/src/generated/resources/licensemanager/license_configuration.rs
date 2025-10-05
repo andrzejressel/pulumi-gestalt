@@ -71,6 +71,9 @@ pub mod license_configuration {
     }
     #[allow(dead_code)]
     pub struct LicenseConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The license configuration ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Description of the license configuration.
@@ -155,6 +158,7 @@ pub mod license_configuration {
         };
         let o = context.register_resource(request);
         LicenseConfigurationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             license_count: o.get_field("licenseCount"),

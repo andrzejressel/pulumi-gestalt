@@ -75,6 +75,9 @@ pub mod v_2_organization_source {
     }
     #[allow(dead_code)]
     pub struct V2OrganizationSourceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The description of the source (max of 1024 characters).
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The source’s display name. A source’s display name must be unique
@@ -128,6 +131,7 @@ pub mod v_2_organization_source {
         };
         let o = context.register_resource(request);
         V2OrganizationSourceResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             name: o.get_field("name"),

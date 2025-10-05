@@ -74,6 +74,9 @@ pub mod crypto_key_version {
     }
     #[allow(dead_code)]
     pub struct CryptoKeyVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The CryptoKeyVersionAlgorithm that this CryptoKeyVersion supports.
         pub algorithm: pulumi_gestalt_rust::Output<String>,
         /// Statement that was generated and signed by the HSM at key creation time. Use this statement to verify attributes of the key as stored on the HSM, independently of Google.
@@ -142,6 +145,7 @@ pub mod crypto_key_version {
         };
         let o = context.register_resource(request);
         CryptoKeyVersionResult {
+            id: o.get_field("id"),
             algorithm: o.get_field("algorithm"),
             attestations: o.get_field("attestations"),
             crypto_key: o.get_field("cryptoKey"),

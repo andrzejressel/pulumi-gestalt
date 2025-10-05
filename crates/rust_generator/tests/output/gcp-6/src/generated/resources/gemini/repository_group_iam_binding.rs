@@ -82,6 +82,9 @@ pub mod repository_group_iam_binding {
     }
     #[allow(dead_code)]
     pub struct RepositoryGroupIamBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub code_repository_index: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::gemini::RepositoryGroupIamBindingCondition>,
@@ -171,6 +174,7 @@ pub mod repository_group_iam_binding {
         };
         let o = context.register_resource(request);
         RepositoryGroupIamBindingResult {
+            id: o.get_field("id"),
             code_repository_index: o.get_field("codeRepositoryIndex"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

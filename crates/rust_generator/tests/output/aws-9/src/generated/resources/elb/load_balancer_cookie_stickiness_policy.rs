@@ -57,6 +57,9 @@ pub mod load_balancer_cookie_stickiness_policy {
     }
     #[allow(dead_code)]
     pub struct LoadBalancerCookieStickinessPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time period after which
         /// the session cookie should be considered stale, expressed in seconds.
         pub cookie_expiration_period: pulumi_gestalt_rust::Output<Option<i32>>,
@@ -113,6 +116,7 @@ pub mod load_balancer_cookie_stickiness_policy {
         };
         let o = context.register_resource(request);
         LoadBalancerCookieStickinessPolicyResult {
+            id: o.get_field("id"),
             cookie_expiration_period: o.get_field("cookieExpirationPeriod"),
             lb_port: o.get_field("lbPort"),
             load_balancer: o.get_field("loadBalancer"),

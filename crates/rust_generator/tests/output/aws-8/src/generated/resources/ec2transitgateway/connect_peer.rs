@@ -61,6 +61,9 @@ pub mod connect_peer {
     }
     #[allow(dead_code)]
     pub struct ConnectPeerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// EC2 Transit Gateway Connect Peer ARN
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The BGP ASN number assigned customer device. If not provided, it will use the same BGP ASN as is associated with Transit Gateway.
@@ -140,6 +143,7 @@ pub mod connect_peer {
         };
         let o = context.register_resource(request);
         ConnectPeerResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             bgp_asn: o.get_field("bgpAsn"),
             bgp_peer_address: o.get_field("bgpPeerAddress"),

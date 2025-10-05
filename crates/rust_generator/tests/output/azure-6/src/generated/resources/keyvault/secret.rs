@@ -87,6 +87,9 @@ pub mod secret {
     }
     #[allow(dead_code)]
     pub struct SecretResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the content type for the Key Vault Secret.
         pub content_type: pulumi_gestalt_rust::Output<Option<String>>,
         /// Expiration UTC datetime (Y-m-d'T'H:M:S'Z').
@@ -169,6 +172,7 @@ pub mod secret {
         };
         let o = context.register_resource(request);
         SecretResult {
+            id: o.get_field("id"),
             content_type: o.get_field("contentType"),
             expiration_date: o.get_field("expirationDate"),
             key_vault_id: o.get_field("keyVaultId"),

@@ -790,6 +790,9 @@ pub mod firehose_delivery_stream {
     }
     #[allow(dead_code)]
     pub struct FirehoseDeliveryStreamResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) specifying the Stream
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// This is the destination to where the data is delivered. The only options are `s3` (Deprecated, use `extended_s3` instead), `extended_s3`, `redshift`, `elasticsearch`, `splunk`, `http_endpoint`, `opensearch`, `opensearchserverless` and `snowflake`.
@@ -1013,6 +1016,7 @@ pub mod firehose_delivery_stream {
         };
         let o = context.register_resource(request);
         FirehoseDeliveryStreamResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             destination: o.get_field("destination"),
             destination_id: o.get_field("destinationId"),

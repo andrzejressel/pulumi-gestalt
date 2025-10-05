@@ -174,6 +174,9 @@ pub mod flex_template_job {
     }
     #[allow(dead_code)]
     pub struct FlexTemplateJobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of experiments that should be used by the job. An example value is `["enable_stackdriver_agent_metrics"]`.
         pub additional_experiments: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The algorithm to use for autoscaling.
@@ -410,6 +413,7 @@ pub mod flex_template_job {
         };
         let o = context.register_resource(request);
         FlexTemplateJobResult {
+            id: o.get_field("id"),
             additional_experiments: o.get_field("additionalExperiments"),
             autoscaling_algorithm: o.get_field("autoscalingAlgorithm"),
             container_spec_gcs_path: o.get_field("containerSpecGcsPath"),

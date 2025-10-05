@@ -47,6 +47,9 @@ pub mod geo_match_set {
     }
     #[allow(dead_code)]
     pub struct GeoMatchSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Geo Match Constraint objects which contain the country that you want AWS WAF to search for.
         pub geo_match_constraints: pulumi_gestalt_rust::Output<
             Option<Vec<super::super::types::wafregional::GeoMatchSetGeoMatchConstraint>>,
@@ -86,6 +89,7 @@ pub mod geo_match_set {
         };
         let o = context.register_resource(request);
         GeoMatchSetResult {
+            id: o.get_field("id"),
             geo_match_constraints: o.get_field("geoMatchConstraints"),
             name: o.get_field("name"),
         }

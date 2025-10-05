@@ -81,6 +81,9 @@ pub mod application {
     }
     #[allow(dead_code)]
     pub struct ApplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Batch account. Changing this forces a new resource to be created.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// A value indicating whether packages within the application may be overwritten using the same version string. Defaults to `true`.
@@ -144,6 +147,7 @@ pub mod application {
         };
         let o = context.register_resource(request);
         ApplicationResult {
+            id: o.get_field("id"),
             account_name: o.get_field("accountName"),
             allow_updates: o.get_field("allowUpdates"),
             default_version: o.get_field("defaultVersion"),

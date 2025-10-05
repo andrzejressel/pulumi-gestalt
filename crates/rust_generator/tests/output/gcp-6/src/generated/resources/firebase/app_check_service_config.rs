@@ -136,6 +136,9 @@ pub mod app_check_service_config {
     }
     #[allow(dead_code)]
     pub struct AppCheckServiceConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub enforcement_mode: pulumi_gestalt_rust::Output<Option<String>>,
         /// The fully-qualified resource name of the service enforcement configuration.
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -187,6 +190,7 @@ pub mod app_check_service_config {
         };
         let o = context.register_resource(request);
         AppCheckServiceConfigResult {
+            id: o.get_field("id"),
             enforcement_mode: o.get_field("enforcementMode"),
             name: o.get_field("name"),
             project: o.get_field("project"),

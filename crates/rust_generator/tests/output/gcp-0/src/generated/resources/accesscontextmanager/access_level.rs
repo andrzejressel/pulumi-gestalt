@@ -96,6 +96,9 @@ pub mod access_level {
     }
     #[allow(dead_code)]
     pub struct AccessLevelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A set of predefined conditions for the access level and a combining function.
         /// Structure is documented below.
         pub basic: pulumi_gestalt_rust::Output<
@@ -172,6 +175,7 @@ pub mod access_level {
         };
         let o = context.register_resource(request);
         AccessLevelResult {
+            id: o.get_field("id"),
             basic: o.get_field("basic"),
             custom: o.get_field("custom"),
             description: o.get_field("description"),

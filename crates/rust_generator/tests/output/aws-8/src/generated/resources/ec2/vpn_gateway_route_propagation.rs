@@ -35,6 +35,9 @@ pub mod vpn_gateway_route_propagation {
     }
     #[allow(dead_code)]
     pub struct VpnGatewayRoutePropagationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The id of the `aws.ec2.RouteTable` to propagate routes into.
         pub route_table_id: pulumi_gestalt_rust::Output<String>,
         /// The id of the `aws.ec2.VpnGateway` to propagate routes from.
@@ -71,6 +74,7 @@ pub mod vpn_gateway_route_propagation {
         };
         let o = context.register_resource(request);
         VpnGatewayRoutePropagationResult {
+            id: o.get_field("id"),
             route_table_id: o.get_field("routeTableId"),
             vpn_gateway_id: o.get_field("vpnGatewayId"),
         }

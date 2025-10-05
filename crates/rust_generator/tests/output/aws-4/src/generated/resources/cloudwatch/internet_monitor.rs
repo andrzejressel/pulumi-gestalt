@@ -68,6 +68,9 @@ pub mod internet_monitor {
     }
     #[allow(dead_code)]
     pub struct InternetMonitorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Monitor.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users. See Health Events Config below.
@@ -167,6 +170,7 @@ pub mod internet_monitor {
         };
         let o = context.register_resource(request);
         InternetMonitorResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             health_events_config: o.get_field("healthEventsConfig"),
             internet_measurements_log_delivery: o

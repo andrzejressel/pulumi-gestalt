@@ -218,6 +218,9 @@ pub mod topic_subscription {
     }
     #[allow(dead_code)]
     pub struct TopicSubscriptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the subscription.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Integer indicating number of minutes to wait in retrying mode for fetching subscription arn before marking it as failure. Only applicable for http and https protocols. Default is `1`.
@@ -339,6 +342,7 @@ pub mod topic_subscription {
         };
         let o = context.register_resource(request);
         TopicSubscriptionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             confirmation_timeout_in_minutes: o.get_field("confirmationTimeoutInMinutes"),
             confirmation_was_authenticated: o.get_field("confirmationWasAuthenticated"),

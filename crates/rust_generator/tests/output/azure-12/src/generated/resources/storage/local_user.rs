@@ -105,6 +105,9 @@ pub mod local_user {
     }
     #[allow(dead_code)]
     pub struct LocalUserResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The home directory of the Storage Account Local User.
         pub home_directory: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name which should be used for this Storage Account Local User. Changing this forces a new Storage Account Local User to be created.
@@ -183,6 +186,7 @@ pub mod local_user {
         };
         let o = context.register_resource(request);
         LocalUserResult {
+            id: o.get_field("id"),
             home_directory: o.get_field("homeDirectory"),
             name: o.get_field("name"),
             password: o.get_field("password"),

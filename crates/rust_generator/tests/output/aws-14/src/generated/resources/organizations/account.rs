@@ -74,6 +74,9 @@ pub mod account {
     }
     #[allow(dead_code)]
     pub struct AccountResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN for this account.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// If true, a deletion event will close the account. Otherwise, it will only remove from the organization. This is not supported for GovCloud accounts.
@@ -169,6 +172,7 @@ pub mod account {
         };
         let o = context.register_resource(request);
         AccountResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             close_on_deletion: o.get_field("closeOnDeletion"),
             create_govcloud: o.get_field("createGovcloud"),

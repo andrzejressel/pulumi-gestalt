@@ -129,6 +129,9 @@ pub mod cluster {
     }
     #[allow(dead_code)]
     pub struct ClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of allowed FQDNs(Fully Qualified Domain Name) for egress from Cluster.
         pub allowed_fqdns: pulumi_gestalt_rust::Output<Option<Vec<String>>>,
         /// The list of ips in the format of CIDR allowed to connect to the cluster.
@@ -333,6 +336,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
+            id: o.get_field("id"),
             allowed_fqdns: o.get_field("allowedFqdns"),
             allowed_ip_ranges: o.get_field("allowedIpRanges"),
             auto_stop_enabled: o.get_field("autoStopEnabled"),

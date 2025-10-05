@@ -139,6 +139,9 @@ pub mod healthcheck {
     }
     #[allow(dead_code)]
     pub struct HealthcheckResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The hostname or IP address of the origin server to run health checks on.
         pub address: pulumi_gestalt_rust::Output<String>,
         /// Do not validate the certificate when the health check uses HTTPS. Defaults to `false`.
@@ -308,6 +311,7 @@ pub mod healthcheck {
         };
         let o = context.register_resource(request);
         HealthcheckResult {
+            id: o.get_field("id"),
             address: o.get_field("address"),
             allow_insecure: o.get_field("allowInsecure"),
             check_regions: o.get_field("checkRegions"),

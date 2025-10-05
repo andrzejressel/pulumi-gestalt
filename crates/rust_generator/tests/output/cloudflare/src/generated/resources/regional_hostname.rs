@@ -45,6 +45,9 @@ pub mod regional_hostname {
     }
     #[allow(dead_code)]
     pub struct RegionalHostnameResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The RFC3339 timestamp of when the hostname was created.
         pub created_on: pulumi_gestalt_rust::Output<String>,
         /// The hostname to regionalize.
@@ -89,6 +92,7 @@ pub mod regional_hostname {
         };
         let o = context.register_resource(request);
         RegionalHostnameResult {
+            id: o.get_field("id"),
             created_on: o.get_field("createdOn"),
             hostname: o.get_field("hostname"),
             region_key: o.get_field("regionKey"),

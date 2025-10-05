@@ -71,6 +71,9 @@ pub mod queue_authorization_rule {
     }
     #[allow(dead_code)]
     pub struct QueueAuthorizationRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Does this Authorization Rule have Listen permissions to the ServiceBus Queue? Defaults to `false`.
         pub listen: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Does this Authorization Rule have Manage permissions to the ServiceBus Queue? When this property is `true` - both `listen` and `send` must be too. Defaults to `false`.
@@ -141,6 +144,7 @@ pub mod queue_authorization_rule {
         };
         let o = context.register_resource(request);
         QueueAuthorizationRuleResult {
+            id: o.get_field("id"),
             listen: o.get_field("listen"),
             manage: o.get_field("manage"),
             name: o.get_field("name"),

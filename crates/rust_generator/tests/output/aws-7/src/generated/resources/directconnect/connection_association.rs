@@ -47,6 +47,9 @@ pub mod connection_association {
     }
     #[allow(dead_code)]
     pub struct ConnectionAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the connection.
         pub connection_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the LAG with which to associate the connection.
@@ -83,6 +86,7 @@ pub mod connection_association {
         };
         let o = context.register_resource(request);
         ConnectionAssociationResult {
+            id: o.get_field("id"),
             connection_id: o.get_field("connectionId"),
             lag_id: o.get_field("lagId"),
         }

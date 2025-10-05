@@ -130,6 +130,9 @@ pub mod mongo_cluster {
     }
     #[allow(dead_code)]
     pub struct MongoClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Password associated with the `administrator_username` for the MongoDB Cluster.
         pub administrator_password: pulumi_gestalt_rust::Output<Option<String>>,
         /// The administrator username of the MongoDB Cluster. Changing this forces a new resource to be created.
@@ -275,6 +278,7 @@ pub mod mongo_cluster {
         };
         let o = context.register_resource(request);
         MongoClusterResult {
+            id: o.get_field("id"),
             administrator_password: o.get_field("administratorPassword"),
             administrator_username: o.get_field("administratorUsername"),
             compute_tier: o.get_field("computeTier"),

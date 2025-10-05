@@ -123,6 +123,9 @@ pub mod route {
     }
     #[allow(dead_code)]
     pub struct RouteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// API identifier.
         pub api_id: pulumi_gestalt_rust::Output<String>,
         /// Boolean whether an API key is required for the route. Defaults to `false`. Supported only for WebSocket APIs.
@@ -241,6 +244,7 @@ pub mod route {
         };
         let o = context.register_resource(request);
         RouteResult {
+            id: o.get_field("id"),
             api_id: o.get_field("apiId"),
             api_key_required: o.get_field("apiKeyRequired"),
             authorization_scopes: o.get_field("authorizationScopes"),

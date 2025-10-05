@@ -21,6 +21,9 @@ pub mod catalog {
     }
     #[allow(dead_code)]
     pub struct CatalogResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub catalog_adogit: pulumi_gestalt_rust::Output<
             Option<super::super::types::devcenter::CatalogCatalogAdogit>,
         >,
@@ -76,6 +79,7 @@ pub mod catalog {
         };
         let o = context.register_resource(request);
         CatalogResult {
+            id: o.get_field("id"),
             catalog_adogit: o.get_field("catalogAdogit"),
             catalog_github: o.get_field("catalogGithub"),
             dev_center_id: o.get_field("devCenterId"),

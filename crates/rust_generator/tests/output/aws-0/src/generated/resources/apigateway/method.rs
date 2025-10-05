@@ -137,6 +137,9 @@ pub mod method {
     }
     #[allow(dead_code)]
     pub struct MethodResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specify if the method requires an API key
         pub api_key_required: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Type of authorization used for the method (`NONE`, `CUSTOM`, `AWS_IAM`, `COGNITO_USER_POOLS`)
@@ -242,6 +245,7 @@ pub mod method {
         };
         let o = context.register_resource(request);
         MethodResult {
+            id: o.get_field("id"),
             api_key_required: o.get_field("apiKeyRequired"),
             authorization: o.get_field("authorization"),
             authorization_scopes: o.get_field("authorizationScopes"),

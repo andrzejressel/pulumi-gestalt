@@ -328,6 +328,9 @@ pub mod managed_zone {
     }
     #[allow(dead_code)]
     pub struct ManagedZoneResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Cloud logging configuration
         /// Structure is documented below.
         pub cloud_logging_config: pulumi_gestalt_rust::Output<
@@ -504,6 +507,7 @@ pub mod managed_zone {
         };
         let o = context.register_resource(request);
         ManagedZoneResult {
+            id: o.get_field("id"),
             cloud_logging_config: o.get_field("cloudLoggingConfig"),
             creation_time: o.get_field("creationTime"),
             description: o.get_field("description"),

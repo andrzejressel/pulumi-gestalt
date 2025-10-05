@@ -70,6 +70,9 @@ pub mod subscriber_notification {
     }
     #[allow(dead_code)]
     pub struct SubscriberNotificationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specify the configuration using which you want to create the subscriber notification..
         pub configuration: pulumi_gestalt_rust::Output<
             Option<
@@ -114,6 +117,7 @@ pub mod subscriber_notification {
         };
         let o = context.register_resource(request);
         SubscriberNotificationResult {
+            id: o.get_field("id"),
             configuration: o.get_field("configuration"),
             endpoint_id: o.get_field("endpointId"),
             subscriber_endpoint: o.get_field("subscriberEndpoint"),

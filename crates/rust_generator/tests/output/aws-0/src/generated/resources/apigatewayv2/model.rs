@@ -53,6 +53,9 @@ pub mod model {
     }
     #[allow(dead_code)]
     pub struct ModelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// API identifier.
         pub api_id: pulumi_gestalt_rust::Output<String>,
         /// The content-type for the model, for example, `application/json`. Must be between 1 and 256 characters in length.
@@ -109,6 +112,7 @@ pub mod model {
         };
         let o = context.register_resource(request);
         ModelResult {
+            id: o.get_field("id"),
             api_id: o.get_field("apiId"),
             content_type: o.get_field("contentType"),
             description: o.get_field("description"),

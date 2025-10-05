@@ -76,6 +76,9 @@ pub mod signing_job {
     }
     #[allow(dead_code)]
     pub struct SigningJobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Date and time in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) that the signing job was completed.
         pub completed_at: pulumi_gestalt_rust::Output<String>,
         /// Date and time in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) that the signing job was created.
@@ -163,6 +166,7 @@ pub mod signing_job {
         };
         let o = context.register_resource(request);
         SigningJobResult {
+            id: o.get_field("id"),
             completed_at: o.get_field("completedAt"),
             created_at: o.get_field("createdAt"),
             destination: o.get_field("destination"),

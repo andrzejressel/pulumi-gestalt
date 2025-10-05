@@ -25,6 +25,9 @@ pub mod organizations_access {
     }
     #[allow(dead_code)]
     pub struct OrganizationsAccessResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable AWS Organizations access.
         pub enabled: pulumi_gestalt_rust::Output<bool>,
     }
@@ -53,6 +56,7 @@ pub mod organizations_access {
         };
         let o = context.register_resource(request);
         OrganizationsAccessResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
         }
     }

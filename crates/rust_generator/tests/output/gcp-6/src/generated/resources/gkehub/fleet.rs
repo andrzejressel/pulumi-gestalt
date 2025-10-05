@@ -77,6 +77,9 @@ pub mod fleet {
     }
     #[allow(dead_code)]
     pub struct FleetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time the fleet was created, in RFC3339 text format.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// The default cluster configurations to apply across the fleet.
@@ -141,6 +144,7 @@ pub mod fleet {
         };
         let o = context.register_resource(request);
         FleetResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             default_cluster_config: o.get_field("defaultClusterConfig"),
             delete_time: o.get_field("deleteTime"),

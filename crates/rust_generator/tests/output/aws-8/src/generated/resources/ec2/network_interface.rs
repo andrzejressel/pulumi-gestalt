@@ -125,6 +125,9 @@ pub mod network_interface {
     }
     #[allow(dead_code)]
     pub struct NetworkInterfaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the network interface.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Configuration block to define the attachment of the ENI. See Attachment below for more details!
@@ -315,6 +318,7 @@ pub mod network_interface {
         };
         let o = context.register_resource(request);
         NetworkInterfaceResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             attachments: o.get_field("attachments"),
             description: o.get_field("description"),

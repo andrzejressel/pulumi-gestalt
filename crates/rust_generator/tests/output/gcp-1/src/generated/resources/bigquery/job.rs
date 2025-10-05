@@ -380,6 +380,9 @@ pub mod job {
     }
     #[allow(dead_code)]
     pub struct JobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Copies a table.
         pub copy: pulumi_gestalt_rust::Output<
             Option<super::super::types::bigquery::JobCopy>,
@@ -496,6 +499,7 @@ pub mod job {
         };
         let o = context.register_resource(request);
         JobResult {
+            id: o.get_field("id"),
             copy: o.get_field("copy"),
             effective_labels: o.get_field("effectiveLabels"),
             extract: o.get_field("extract"),

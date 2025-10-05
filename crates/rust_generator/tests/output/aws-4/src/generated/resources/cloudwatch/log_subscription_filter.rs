@@ -55,6 +55,9 @@ pub mod log_subscription_filter {
     }
     #[allow(dead_code)]
     pub struct LogSubscriptionFilterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the destination to deliver matching log events to. Kinesis stream or Lambda function ARN.
         pub destination_arn: pulumi_gestalt_rust::Output<String>,
         /// The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. Valid values are "Random" and "ByLogStream".
@@ -118,6 +121,7 @@ pub mod log_subscription_filter {
         };
         let o = context.register_resource(request);
         LogSubscriptionFilterResult {
+            id: o.get_field("id"),
             destination_arn: o.get_field("destinationArn"),
             distribution: o.get_field("distribution"),
             filter_pattern: o.get_field("filterPattern"),

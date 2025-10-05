@@ -82,6 +82,9 @@ pub mod zero_trust_tunnel_cloudflared_config {
     }
     #[allow(dead_code)]
     pub struct ZeroTrustTunnelCloudflaredConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Configuration block for Tunnel Configuration.
@@ -127,6 +130,7 @@ pub mod zero_trust_tunnel_cloudflared_config {
         };
         let o = context.register_resource(request);
         ZeroTrustTunnelCloudflaredConfigResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             config: o.get_field("config"),
             tunnel_id: o.get_field("tunnelId"),

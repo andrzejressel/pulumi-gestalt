@@ -109,6 +109,9 @@ pub mod load_balancer_pool {
     }
     #[allow(dead_code)]
     pub struct LoadBalancerPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// A list of regions (specified by region code) from which to run health checks. Empty means every Cloudflare data center (the default), but requires an Enterprise plan. Region codes can be found [here](https://developers.cloudflare.com/load-balancing/reference/region-mapping-api).
@@ -231,6 +234,7 @@ pub mod load_balancer_pool {
         };
         let o = context.register_resource(request);
         LoadBalancerPoolResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             check_regions: o.get_field("checkRegions"),
             created_on: o.get_field("createdOn"),

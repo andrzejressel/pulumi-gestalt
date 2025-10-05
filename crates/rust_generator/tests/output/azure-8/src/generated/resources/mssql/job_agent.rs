@@ -76,6 +76,9 @@ pub mod job_agent {
     }
     #[allow(dead_code)]
     pub struct JobAgentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the database to store metadata for the Elastic Job Agent. Changing this forces a new Elastic Job Agent to be created.
         pub database_id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Elastic Job Agent should exist. Changing this forces a new Elastic Job Agent to be created.
@@ -127,6 +130,7 @@ pub mod job_agent {
         };
         let o = context.register_resource(request);
         JobAgentResult {
+            id: o.get_field("id"),
             database_id: o.get_field("databaseId"),
             location: o.get_field("location"),
             name: o.get_field("name"),

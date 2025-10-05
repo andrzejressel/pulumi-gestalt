@@ -66,6 +66,9 @@ pub mod namespace_authorization_rule {
     }
     #[allow(dead_code)]
     pub struct NamespaceAuthorizationRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Grants listen access to this Authorization Rule. Defaults to `false`.
         pub listen: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Grants manage access to this Authorization Rule. When this property is `true` - both `listen` and `send` must be set to `true` too. Defaults to `false`.
@@ -138,6 +141,7 @@ pub mod namespace_authorization_rule {
         };
         let o = context.register_resource(request);
         NamespaceAuthorizationRuleResult {
+            id: o.get_field("id"),
             listen: o.get_field("listen"),
             manage: o.get_field("manage"),
             name: o.get_field("name"),

@@ -61,6 +61,9 @@ pub mod vpc_ipam {
     }
     #[allow(dead_code)]
     pub struct VpcIpamResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of IPAM
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes.
@@ -147,6 +150,7 @@ pub mod vpc_ipam {
         };
         let o = context.register_resource(request);
         VpcIpamResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cascade: o.get_field("cascade"),
             default_resource_discovery_association_id: o

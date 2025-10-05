@@ -48,6 +48,9 @@ pub mod hsm {
     }
     #[allow(dead_code)]
     pub struct HsmResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The IDs of AZ in which HSM module will be located. Conflicts with `subnet_id`.
         pub availability_zone: pulumi_gestalt_rust::Output<String>,
         /// The ID of Cloud HSM v2 cluster to which HSM will be added.
@@ -103,6 +106,7 @@ pub mod hsm {
         };
         let o = context.register_resource(request);
         HsmResult {
+            id: o.get_field("id"),
             availability_zone: o.get_field("availabilityZone"),
             cluster_id: o.get_field("clusterId"),
             hsm_eni_id: o.get_field("hsmEniId"),

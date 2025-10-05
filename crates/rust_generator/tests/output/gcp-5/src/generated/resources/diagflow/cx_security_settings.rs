@@ -214,6 +214,9 @@ pub mod cx_security_settings {
     }
     #[allow(dead_code)]
     pub struct CxSecuritySettingsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Controls audio export settings for post-conversation analytics when ingesting audio to conversations.
         /// If retention_strategy is set to REMOVE_AFTER_CONVERSATION or gcs_bucket is empty, audio export is disabled.
         /// If audio export is enabled, audio is recorded and saved to gcs_bucket, subject to retention policy of gcs_bucket.
@@ -357,6 +360,7 @@ pub mod cx_security_settings {
         };
         let o = context.register_resource(request);
         CxSecuritySettingsResult {
+            id: o.get_field("id"),
             audio_export_settings: o.get_field("audioExportSettings"),
             deidentify_template: o.get_field("deidentifyTemplate"),
             display_name: o.get_field("displayName"),

@@ -467,6 +467,9 @@ pub mod connection_profile {
     }
     #[allow(dead_code)]
     pub struct ConnectionProfileResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies required connection parameters, and the parameters required to create an AlloyDB destination cluster.
         /// Structure is documented below.
         pub alloydb: pulumi_gestalt_rust::Output<
@@ -615,6 +618,7 @@ pub mod connection_profile {
         };
         let o = context.register_resource(request);
         ConnectionProfileResult {
+            id: o.get_field("id"),
             alloydb: o.get_field("alloydb"),
             cloudsql: o.get_field("cloudsql"),
             connection_profile_id: o.get_field("connectionProfileId"),

@@ -107,6 +107,9 @@ pub mod alert_processing_rule_action_group {
     }
     #[allow(dead_code)]
     pub struct AlertProcessingRuleActionGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a list of Action Group IDs.
         pub add_action_group_ids: pulumi_gestalt_rust::Output<Vec<String>>,
         /// A `condition` block as defined below.
@@ -202,6 +205,7 @@ pub mod alert_processing_rule_action_group {
         };
         let o = context.register_resource(request);
         AlertProcessingRuleActionGroupResult {
+            id: o.get_field("id"),
             add_action_group_ids: o.get_field("addActionGroupIds"),
             condition: o.get_field("condition"),
             description: o.get_field("description"),

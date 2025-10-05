@@ -143,6 +143,9 @@ pub mod resize_request {
     }
     #[allow(dead_code)]
     pub struct ResizeRequestResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The creation timestamp for this resize request in RFC3339 text format.
         pub creation_timestamp: pulumi_gestalt_rust::Output<String>,
         /// An optional description of this resize-request.
@@ -235,6 +238,7 @@ pub mod resize_request {
         };
         let o = context.register_resource(request);
         ResizeRequestResult {
+            id: o.get_field("id"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),
             instance_group_manager: o.get_field("instanceGroupManager"),

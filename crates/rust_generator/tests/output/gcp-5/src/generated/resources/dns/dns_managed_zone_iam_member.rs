@@ -228,6 +228,9 @@ pub mod dns_managed_zone_iam_member {
     }
     #[allow(dead_code)]
     pub struct DnsManagedZoneIamMemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::dns::DnsManagedZoneIamMemberCondition>,
         >,
@@ -300,6 +303,7 @@ pub mod dns_managed_zone_iam_member {
         };
         let o = context.register_resource(request);
         DnsManagedZoneIamMemberResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),
             managed_zone: o.get_field("managedZone"),

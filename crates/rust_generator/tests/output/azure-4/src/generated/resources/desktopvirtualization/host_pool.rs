@@ -127,6 +127,9 @@ pub mod host_pool {
     }
     #[allow(dead_code)]
     pub struct HostPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A valid custom RDP properties string for the Virtual Desktop Host Pool, available properties can be [found in this article](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files).
         pub custom_rdp_properties: pulumi_gestalt_rust::Output<Option<String>>,
         /// A description for the Virtual Desktop Host Pool.
@@ -292,6 +295,7 @@ pub mod host_pool {
         };
         let o = context.register_resource(request);
         HostPoolResult {
+            id: o.get_field("id"),
             custom_rdp_properties: o.get_field("customRdpProperties"),
             description: o.get_field("description"),
             friendly_name: o.get_field("friendlyName"),

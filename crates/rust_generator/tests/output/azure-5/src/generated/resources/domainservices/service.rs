@@ -197,6 +197,9 @@ pub mod service {
     }
     #[allow(dead_code)]
     pub struct ServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A unique ID for the managed domain deployment.
         pub deployment_id: pulumi_gestalt_rust::Output<String>,
         /// The configuration type of this Active Directory Domain. Possible values are `FullySynced` and `ResourceTrusting`. Changing this forces a new resource to be created.
@@ -323,6 +326,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
+            id: o.get_field("id"),
             deployment_id: o.get_field("deploymentId"),
             domain_configuration_type: o.get_field("domainConfigurationType"),
             domain_name: o.get_field("domainName"),

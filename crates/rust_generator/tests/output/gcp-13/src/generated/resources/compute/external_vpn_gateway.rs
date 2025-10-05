@@ -213,6 +213,9 @@ pub mod external_vpn_gateway {
     }
     #[allow(dead_code)]
     pub struct ExternalVpnGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An optional description of this resource.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// All of labels (key/value pairs) present on the resource in GCP, including the labels configured through Pulumi, other clients and services.
@@ -308,6 +311,7 @@ pub mod external_vpn_gateway {
         };
         let o = context.register_resource(request);
         ExternalVpnGatewayResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),
             interfaces: o.get_field("interfaces"),

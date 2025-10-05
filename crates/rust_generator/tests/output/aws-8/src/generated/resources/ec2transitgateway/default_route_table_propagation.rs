@@ -41,6 +41,9 @@ pub mod default_route_table_propagation {
     }
     #[allow(dead_code)]
     pub struct DefaultRouteTablePropagationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub original_default_route_table_id: pulumi_gestalt_rust::Output<String>,
         pub timeouts: pulumi_gestalt_rust::Output<
             Option<
@@ -90,6 +93,7 @@ pub mod default_route_table_propagation {
         };
         let o = context.register_resource(request);
         DefaultRouteTablePropagationResult {
+            id: o.get_field("id"),
             original_default_route_table_id: o.get_field("originalDefaultRouteTableId"),
             timeouts: o.get_field("timeouts"),
             transit_gateway_id: o.get_field("transitGatewayId"),

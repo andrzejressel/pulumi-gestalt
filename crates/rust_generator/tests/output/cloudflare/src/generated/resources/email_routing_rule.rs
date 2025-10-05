@@ -67,6 +67,9 @@ pub mod email_routing_rule {
     }
     #[allow(dead_code)]
     pub struct EmailRoutingRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Actions to take when a match is found.
         pub actions: pulumi_gestalt_rust::Output<
             Option<Vec<super::types::EmailRoutingRuleAction>>,
@@ -136,6 +139,7 @@ pub mod email_routing_rule {
         };
         let o = context.register_resource(request);
         EmailRoutingRuleResult {
+            id: o.get_field("id"),
             actions: o.get_field("actions"),
             enabled: o.get_field("enabled"),
             matchers: o.get_field("matchers"),

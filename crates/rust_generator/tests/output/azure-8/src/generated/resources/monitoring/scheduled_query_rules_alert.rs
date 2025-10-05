@@ -79,6 +79,9 @@ pub mod scheduled_query_rules_alert {
     }
     #[allow(dead_code)]
     pub struct ScheduledQueryRulesAlertResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `action` block as defined below.
         pub action: pulumi_gestalt_rust::Output<
             super::super::types::monitoring::ScheduledQueryRulesAlertAction,
@@ -231,6 +234,7 @@ pub mod scheduled_query_rules_alert {
         };
         let o = context.register_resource(request);
         ScheduledQueryRulesAlertResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             authorized_resource_ids: o.get_field("authorizedResourceIds"),
             auto_mitigation_enabled: o.get_field("autoMitigationEnabled"),

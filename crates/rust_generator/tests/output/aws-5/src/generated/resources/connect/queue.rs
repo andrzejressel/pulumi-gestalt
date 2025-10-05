@@ -101,6 +101,9 @@ pub mod queue {
     }
     #[allow(dead_code)]
     pub struct QueueResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Queue.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the description of the Queue.
@@ -201,6 +204,7 @@ pub mod queue {
         };
         let o = context.register_resource(request);
         QueueResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             hours_of_operation_id: o.get_field("hoursOfOperationId"),

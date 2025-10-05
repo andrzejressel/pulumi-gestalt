@@ -58,6 +58,9 @@ pub mod shared_vpc_host_project {
     }
     #[allow(dead_code)]
     pub struct SharedVPCHostProjectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the project that will serve as a Shared VPC host project
         pub project: pulumi_gestalt_rust::Output<String>,
     }
@@ -86,6 +89,7 @@ pub mod shared_vpc_host_project {
         };
         let o = context.register_resource(request);
         SharedVPCHostProjectResult {
+            id: o.get_field("id"),
             project: o.get_field("project"),
         }
     }

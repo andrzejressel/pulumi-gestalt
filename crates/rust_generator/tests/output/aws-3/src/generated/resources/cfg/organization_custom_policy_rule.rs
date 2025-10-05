@@ -88,6 +88,9 @@ pub mod organization_custom_policy_rule {
     }
     #[allow(dead_code)]
     pub struct OrganizationCustomPolicyRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the rule
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// List of AWS account identifiers to exclude from the rule
@@ -213,6 +216,7 @@ pub mod organization_custom_policy_rule {
         };
         let o = context.register_resource(request);
         OrganizationCustomPolicyRuleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             debug_log_delivery_accounts: o.get_field("debugLogDeliveryAccounts"),
             description: o.get_field("description"),

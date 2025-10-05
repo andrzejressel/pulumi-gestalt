@@ -298,6 +298,9 @@ pub mod key_ring_iam_binding {
     }
     #[allow(dead_code)]
     pub struct KeyRingIAMBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
         /// Structure is documented below.
         pub condition: pulumi_gestalt_rust::Output<
@@ -364,6 +367,7 @@ pub mod key_ring_iam_binding {
         };
         let o = context.register_resource(request);
         KeyRingIAMBindingResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),
             key_ring_id: o.get_field("keyRingId"),

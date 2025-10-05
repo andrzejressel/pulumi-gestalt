@@ -377,6 +377,9 @@ pub mod bucket_notification {
     }
     #[allow(dead_code)]
     pub struct BucketNotificationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the bucket for notification configuration.
         ///
         /// The following arguments are optional:
@@ -441,6 +444,7 @@ pub mod bucket_notification {
         };
         let o = context.register_resource(request);
         BucketNotificationResult {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             eventbridge: o.get_field("eventbridge"),
             lambda_functions: o.get_field("lambdaFunctions"),

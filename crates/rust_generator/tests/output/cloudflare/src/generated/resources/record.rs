@@ -89,6 +89,9 @@ pub mod record {
     }
     #[allow(dead_code)]
     pub struct RecordResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub allow_overwrite: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Comments or notes about the DNS record. This field has no effect on DNS responses.
         pub comment: pulumi_gestalt_rust::Output<Option<String>>,
@@ -205,6 +208,7 @@ pub mod record {
         };
         let o = context.register_resource(request);
         RecordResult {
+            id: o.get_field("id"),
             allow_overwrite: o.get_field("allowOverwrite"),
             comment: o.get_field("comment"),
             content: o.get_field("content"),

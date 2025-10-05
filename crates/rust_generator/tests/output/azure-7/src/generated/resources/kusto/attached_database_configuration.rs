@@ -129,6 +129,9 @@ pub mod attached_database_configuration {
     }
     #[allow(dead_code)]
     pub struct AttachedDatabaseConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The list of databases from the `cluster_resource_id` which are currently attached to the cluster.
         pub attached_database_names: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Specifies the name of the Kusto Cluster for which the configuration will be created. Changing this forces a new resource to be created.
@@ -215,6 +218,7 @@ pub mod attached_database_configuration {
         };
         let o = context.register_resource(request);
         AttachedDatabaseConfigurationResult {
+            id: o.get_field("id"),
             attached_database_names: o.get_field("attachedDatabaseNames"),
             cluster_name: o.get_field("clusterName"),
             cluster_resource_id: o.get_field("clusterResourceId"),

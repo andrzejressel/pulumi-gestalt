@@ -54,6 +54,9 @@ pub mod logically_air_gapped_vault {
     }
     #[allow(dead_code)]
     pub struct LogicallyAirGappedVaultResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Logically Air Gapped Backup Vault.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Maximum retention period that the Logically Air Gapped Backup Vault retains recovery points.
@@ -119,6 +122,7 @@ pub mod logically_air_gapped_vault {
         };
         let o = context.register_resource(request);
         LogicallyAirGappedVaultResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             max_retention_days: o.get_field("maxRetentionDays"),
             min_retention_days: o.get_field("minRetentionDays"),

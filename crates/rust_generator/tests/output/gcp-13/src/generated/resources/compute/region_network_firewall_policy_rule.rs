@@ -193,6 +193,9 @@ pub mod region_network_firewall_policy_rule {
     }
     #[allow(dead_code)]
     pub struct RegionNetworkFirewallPolicyRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny", "goto_next" and "apply_security_profile_group".
         pub action: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp in RFC3339 text format.
@@ -352,6 +355,7 @@ pub mod region_network_firewall_policy_rule {
         };
         let o = context.register_resource(request);
         RegionNetworkFirewallPolicyRuleResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

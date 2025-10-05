@@ -177,6 +177,9 @@ pub mod cluster_iam_policy {
     }
     #[allow(dead_code)]
     pub struct ClusterIAMPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name or relative resource id of the cluster to manage IAM policies for.
         ///
         /// For `gcp.dataproc.ClusterIAMMember` or `gcp.dataproc.ClusterIAMBinding`:
@@ -234,6 +237,7 @@ pub mod cluster_iam_policy {
         };
         let o = context.register_resource(request);
         ClusterIAMPolicyResult {
+            id: o.get_field("id"),
             cluster: o.get_field("cluster"),
             etag: o.get_field("etag"),
             policy_data: o.get_field("policyData"),

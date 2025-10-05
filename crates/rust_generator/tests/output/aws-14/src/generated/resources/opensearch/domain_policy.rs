@@ -51,6 +51,9 @@ pub mod domain_policy {
     }
     #[allow(dead_code)]
     pub struct DomainPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// IAM policy document specifying the access policies for the domain
         pub access_policies: pulumi_gestalt_rust::Output<String>,
         /// Name of the domain.
@@ -86,6 +89,7 @@ pub mod domain_policy {
         };
         let o = context.register_resource(request);
         DomainPolicyResult {
+            id: o.get_field("id"),
             access_policies: o.get_field("accessPolicies"),
             domain_name: o.get_field("domainName"),
         }

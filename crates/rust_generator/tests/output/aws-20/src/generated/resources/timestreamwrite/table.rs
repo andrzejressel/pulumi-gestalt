@@ -95,6 +95,9 @@ pub mod table {
     }
     #[allow(dead_code)]
     pub struct TableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN that uniquely identifies this table.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Timestream database.
@@ -174,6 +177,7 @@ pub mod table {
         };
         let o = context.register_resource(request);
         TableResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             database_name: o.get_field("databaseName"),
             magnetic_store_write_properties: o.get_field("magneticStoreWriteProperties"),

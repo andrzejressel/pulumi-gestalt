@@ -49,6 +49,9 @@ pub mod lb_certificate_attachment {
     }
     #[allow(dead_code)]
     pub struct LbCertificateAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of your SSL/TLS certificate.
         pub certificate_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the load balancer to which you want to associate the SSL/TLS certificate.
@@ -85,6 +88,7 @@ pub mod lb_certificate_attachment {
         };
         let o = context.register_resource(request);
         LbCertificateAttachmentResult {
+            id: o.get_field("id"),
             certificate_name: o.get_field("certificateName"),
             lb_name: o.get_field("lbName"),
         }

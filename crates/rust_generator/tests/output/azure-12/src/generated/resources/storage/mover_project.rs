@@ -59,6 +59,9 @@ pub mod mover_project {
     }
     #[allow(dead_code)]
     pub struct MoverProjectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies a description for this Storage Mover Project.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies the name which should be used for this Storage Mover Project. Changing this forces a new resource to be created.
@@ -101,6 +104,7 @@ pub mod mover_project {
         };
         let o = context.register_resource(request);
         MoverProjectResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             name: o.get_field("name"),
             storage_mover_id: o.get_field("storageMoverId"),

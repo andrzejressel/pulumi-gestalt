@@ -140,6 +140,9 @@ pub mod environment_keyvaluemaps_entries {
     }
     #[allow(dead_code)]
     pub struct EnvironmentKeyvaluemapsEntriesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Apigee environment keyvalumaps Id associated with the Apigee environment,
         /// in the format `organizations/{{org_name}}/environments/{{env_name}}/keyvaluemaps/{{keyvaluemap_name}}`.
         ///
@@ -187,6 +190,7 @@ pub mod environment_keyvaluemaps_entries {
         };
         let o = context.register_resource(request);
         EnvironmentKeyvaluemapsEntriesResult {
+            id: o.get_field("id"),
             env_keyvaluemap_id: o.get_field("envKeyvaluemapId"),
             name: o.get_field("name"),
             value: o.get_field("value"),

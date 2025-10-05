@@ -157,6 +157,9 @@ pub mod time_series_database_connection {
     }
     #[allow(dead_code)]
     pub struct TimeSeriesDatabaseConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Digital Twins. Changing this forces a new resource to be created.
         pub digital_twins_id: pulumi_gestalt_rust::Output<String>,
         /// Name of the Event Hub Consumer Group. Changing this forces a new resource to be created. Defaults to `$Default`.
@@ -255,6 +258,7 @@ pub mod time_series_database_connection {
         };
         let o = context.register_resource(request);
         TimeSeriesDatabaseConnectionResult {
+            id: o.get_field("id"),
             digital_twins_id: o.get_field("digitalTwinsId"),
             eventhub_consumer_group_name: o.get_field("eventhubConsumerGroupName"),
             eventhub_name: o.get_field("eventhubName"),

@@ -46,6 +46,9 @@ pub mod resource_group {
     }
     #[allow(dead_code)]
     pub struct ResourceGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Azure Region where the Resource Group should exist. Changing this forces a new Resource Group to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// The ID of the resource or application that manages this Resource Group.
@@ -97,6 +100,7 @@ pub mod resource_group {
         };
         let o = context.register_resource(request);
         ResourceGroupResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             managed_by: o.get_field("managedBy"),
             name: o.get_field("name"),

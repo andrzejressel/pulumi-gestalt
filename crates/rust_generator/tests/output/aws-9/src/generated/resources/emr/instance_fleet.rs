@@ -88,6 +88,9 @@ pub mod instance_fleet {
     }
     #[allow(dead_code)]
     pub struct InstanceFleetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the EMR Cluster to attach to. Changing this forces a new resource to be created.
         pub cluster_id: pulumi_gestalt_rust::Output<String>,
         /// Configuration block for instance fleet
@@ -167,6 +170,7 @@ pub mod instance_fleet {
         };
         let o = context.register_resource(request);
         InstanceFleetResult {
+            id: o.get_field("id"),
             cluster_id: o.get_field("clusterId"),
             instance_type_configs: o.get_field("instanceTypeConfigs"),
             launch_specifications: o.get_field("launchSpecifications"),

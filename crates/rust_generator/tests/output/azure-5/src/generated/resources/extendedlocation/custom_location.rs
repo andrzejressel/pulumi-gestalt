@@ -48,6 +48,9 @@ pub mod custom_location {
     }
     #[allow(dead_code)]
     pub struct CustomLocationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `authentication` block as defined below.
         pub authentication: pulumi_gestalt_rust::Output<
             Option<super::super::types::extendedlocation::CustomLocationAuthentication>,
@@ -136,6 +139,7 @@ pub mod custom_location {
         };
         let o = context.register_resource(request);
         CustomLocationResult {
+            id: o.get_field("id"),
             authentication: o.get_field("authentication"),
             cluster_extension_ids: o.get_field("clusterExtensionIds"),
             display_name: o.get_field("displayName"),

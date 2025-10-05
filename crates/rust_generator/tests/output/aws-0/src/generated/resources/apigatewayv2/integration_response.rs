@@ -61,6 +61,9 @@ pub mod integration_response {
     }
     #[allow(dead_code)]
     pub struct IntegrationResponseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// API identifier.
         pub api_id: pulumi_gestalt_rust::Output<String>,
         /// How to handle response payload content type conversions. Valid values: `CONVERT_TO_BINARY`, `CONVERT_TO_TEXT`.
@@ -132,6 +135,7 @@ pub mod integration_response {
         };
         let o = context.register_resource(request);
         IntegrationResponseResult {
+            id: o.get_field("id"),
             api_id: o.get_field("apiId"),
             content_handling_strategy: o.get_field("contentHandlingStrategy"),
             integration_id: o.get_field("integrationId"),

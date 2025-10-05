@@ -96,6 +96,9 @@ pub mod log_account_policy {
     }
     #[allow(dead_code)]
     pub struct LogAccountPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Text of the account policy. Refer to the [AWS docs](https://docs.aws.amazon.com/cli/latest/reference/logs/put-account-policy.html) for more information.
         pub policy_document: pulumi_gestalt_rust::Output<String>,
         /// Name of the account policy.
@@ -152,6 +155,7 @@ pub mod log_account_policy {
         };
         let o = context.register_resource(request);
         LogAccountPolicyResult {
+            id: o.get_field("id"),
             policy_document: o.get_field("policyDocument"),
             policy_name: o.get_field("policyName"),
             policy_type: o.get_field("policyType"),

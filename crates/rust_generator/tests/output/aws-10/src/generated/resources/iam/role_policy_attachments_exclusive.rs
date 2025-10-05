@@ -68,6 +68,9 @@ pub mod role_policy_attachments_exclusive {
     }
     #[allow(dead_code)]
     pub struct RolePolicyAttachmentsExclusiveResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of managed IAM policy ARNs to be attached to the role. Policies attached to this role but not configured in this argument will be removed.
         pub policy_arns: pulumi_gestalt_rust::Output<Vec<String>>,
         /// IAM role name.
@@ -104,6 +107,7 @@ pub mod role_policy_attachments_exclusive {
         };
         let o = context.register_resource(request);
         RolePolicyAttachmentsExclusiveResult {
+            id: o.get_field("id"),
             policy_arns: o.get_field("policyArns"),
             role_name: o.get_field("roleName"),
         }

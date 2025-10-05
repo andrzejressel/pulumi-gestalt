@@ -49,6 +49,9 @@ pub mod proxy_protocol_policy {
     }
     #[allow(dead_code)]
     pub struct ProxyProtocolPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of instance ports to which the policy
         /// should be applied. This can be specified if the protocol is SSL or TCP.
         pub instance_ports: pulumi_gestalt_rust::Output<Vec<String>>,
@@ -86,6 +89,7 @@ pub mod proxy_protocol_policy {
         };
         let o = context.register_resource(request);
         ProxyProtocolPolicyResult {
+            id: o.get_field("id"),
             instance_ports: o.get_field("instancePorts"),
             load_balancer: o.get_field("loadBalancer"),
         }

@@ -81,6 +81,9 @@ pub mod event_subscription {
     }
     #[allow(dead_code)]
     pub struct EventSubscriptionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name of the DocumentDB event notification subscription
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The AWS customer account associated with the DocumentDB event notification subscription
@@ -167,6 +170,7 @@ pub mod event_subscription {
         };
         let o = context.register_resource(request);
         EventSubscriptionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             customer_aws_id: o.get_field("customerAwsId"),
             enabled: o.get_field("enabled"),

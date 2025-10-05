@@ -130,6 +130,9 @@ pub mod location_tag_binding {
     }
     #[allow(dead_code)]
     pub struct LocationTagBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Location of the target resource.
         ///
         /// - - -
@@ -176,6 +179,7 @@ pub mod location_tag_binding {
         };
         let o = context.register_resource(request);
         LocationTagBindingResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             parent: o.get_field("parent"),

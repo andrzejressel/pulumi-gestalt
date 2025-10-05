@@ -34,6 +34,9 @@ pub mod logging_options {
     }
     #[allow(dead_code)]
     pub struct LoggingOptionsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The default logging level. Valid Values: `"DEBUG"`, `"INFO"`, `"ERROR"`, `"WARN"`, `"DISABLED"`.
         pub default_log_level: pulumi_gestalt_rust::Output<String>,
         /// If `true` all logs are disabled. The default is `false`.
@@ -76,6 +79,7 @@ pub mod logging_options {
         };
         let o = context.register_resource(request);
         LoggingOptionsResult {
+            id: o.get_field("id"),
             default_log_level: o.get_field("defaultLogLevel"),
             disable_all_logs: o.get_field("disableAllLogs"),
             role_arn: o.get_field("roleArn"),

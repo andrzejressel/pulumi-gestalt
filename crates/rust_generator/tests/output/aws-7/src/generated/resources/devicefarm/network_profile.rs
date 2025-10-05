@@ -80,6 +80,9 @@ pub mod network_profile {
     }
     #[allow(dead_code)]
     pub struct NetworkProfileResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name of this network profile.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The description of the network profile.
@@ -206,6 +209,7 @@ pub mod network_profile {
         };
         let o = context.register_resource(request);
         NetworkProfileResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             downlink_bandwidth_bits: o.get_field("downlinkBandwidthBits"),

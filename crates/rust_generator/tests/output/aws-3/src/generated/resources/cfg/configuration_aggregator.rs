@@ -105,6 +105,9 @@ pub mod configuration_aggregator {
     }
     #[allow(dead_code)]
     pub struct ConfigurationAggregatorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account(s) to aggregate config data from as documented below.
         pub account_aggregation_source: pulumi_gestalt_rust::Output<
             Option<
@@ -176,6 +179,7 @@ pub mod configuration_aggregator {
         };
         let o = context.register_resource(request);
         ConfigurationAggregatorResult {
+            id: o.get_field("id"),
             account_aggregation_source: o.get_field("accountAggregationSource"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),

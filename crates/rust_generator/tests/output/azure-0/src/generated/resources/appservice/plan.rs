@@ -183,6 +183,9 @@ pub mod plan {
     }
     #[allow(dead_code)]
     pub struct PlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the App Service Environment where the App Service Plan should be located. Changing forces a new resource to be created.
         ///
         /// > **NOTE:** Attaching to an App Service Environment requires the App Service Plan use a `Premium` SKU (when using an ASEv1) and the `Isolated` SKU (for an ASEv2).
@@ -302,6 +305,7 @@ pub mod plan {
         };
         let o = context.register_resource(request);
         PlanResult {
+            id: o.get_field("id"),
             app_service_environment_id: o.get_field("appServiceEnvironmentId"),
             is_xenon: o.get_field("isXenon"),
             kind: o.get_field("kind"),

@@ -333,6 +333,9 @@ pub mod service {
     }
     #[allow(dead_code)]
     pub struct ServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Part of `parent`.  Full resource name of a parent Application. Example: projects/{HOST_PROJECT_ID}/locations/{LOCATION}/applications/{APPLICATION_ID}
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// Consumer provided attributes.
@@ -439,6 +442,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             attributes: o.get_field("attributes"),
             create_time: o.get_field("createTime"),

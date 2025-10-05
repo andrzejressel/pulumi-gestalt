@@ -66,6 +66,9 @@ pub mod kx_database {
     }
     #[allow(dead_code)]
     pub struct KxDatabaseResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) identifier of the KX database.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Timestamp at which the databse is created in FinSpace. Value determined as epoch time in seconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000.
@@ -129,6 +132,7 @@ pub mod kx_database {
         };
         let o = context.register_resource(request);
         KxDatabaseResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_timestamp: o.get_field("createdTimestamp"),
             description: o.get_field("description"),

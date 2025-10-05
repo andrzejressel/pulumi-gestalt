@@ -105,6 +105,9 @@ pub mod blob {
     }
     #[allow(dead_code)]
     pub struct BlobResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The access tier of the storage blob. Possible values are `Archive`, `Cool` and `Hot`.
         pub access_tier: pulumi_gestalt_rust::Output<String>,
         /// Controls the [cache control header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) content of the response when blob is requested .
@@ -241,6 +244,7 @@ pub mod blob {
         };
         let o = context.register_resource(request);
         BlobResult {
+            id: o.get_field("id"),
             access_tier: o.get_field("accessTier"),
             cache_control: o.get_field("cacheControl"),
             content_md5: o.get_field("contentMd5"),

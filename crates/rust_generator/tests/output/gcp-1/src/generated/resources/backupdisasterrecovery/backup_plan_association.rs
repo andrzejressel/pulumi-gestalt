@@ -120,6 +120,9 @@ pub mod backup_plan_association {
     }
     #[allow(dead_code)]
     pub struct BackupPlanAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The BP with which resource needs to be created
         pub backup_plan: pulumi_gestalt_rust::Output<String>,
         /// The id of backupplan association
@@ -207,6 +210,7 @@ pub mod backup_plan_association {
         };
         let o = context.register_resource(request);
         BackupPlanAssociationResult {
+            id: o.get_field("id"),
             backup_plan: o.get_field("backupPlan"),
             backup_plan_association_id: o.get_field("backupPlanAssociationId"),
             create_time: o.get_field("createTime"),

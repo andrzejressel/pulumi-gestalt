@@ -96,6 +96,9 @@ pub mod scope_rbac_role_binding {
     }
     #[allow(dead_code)]
     pub struct ScopeRbacRoleBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Time the RBAC Role Binding was created in UTC.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Time the RBAC Role Binding was deleted in UTC.
@@ -200,6 +203,7 @@ pub mod scope_rbac_role_binding {
         };
         let o = context.register_resource(request);
         ScopeRbacRoleBindingResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             delete_time: o.get_field("deleteTime"),
             effective_labels: o.get_field("effectiveLabels"),

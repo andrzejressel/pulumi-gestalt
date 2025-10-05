@@ -77,6 +77,9 @@ pub mod container_immutability_policy {
     }
     #[allow(dead_code)]
     pub struct ContainerImmutabilityPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time interval in days that the data needs to be kept in a non-erasable and non-modifiable state.
         pub immutability_period_in_days: pulumi_gestalt_rust::Output<i32>,
         /// Whether to lock this immutability policy. Cannot be set to `false` once the policy has been locked.
@@ -146,6 +149,7 @@ pub mod container_immutability_policy {
         };
         let o = context.register_resource(request);
         ContainerImmutabilityPolicyResult {
+            id: o.get_field("id"),
             immutability_period_in_days: o.get_field("immutabilityPeriodInDays"),
             locked: o.get_field("locked"),
             protected_append_writes_all_enabled: o

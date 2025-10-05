@@ -189,6 +189,9 @@ pub mod instance_logging_configuration {
     }
     #[allow(dead_code)]
     pub struct InstanceLoggingConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A block that specifies the configuration options for Verified Access instances. Detailed below.
         pub access_logs: pulumi_gestalt_rust::Output<
             super::super::types::verifiedaccess::InstanceLoggingConfigurationAccessLogs,
@@ -229,6 +232,7 @@ pub mod instance_logging_configuration {
         };
         let o = context.register_resource(request);
         InstanceLoggingConfigurationResult {
+            id: o.get_field("id"),
             access_logs: o.get_field("accessLogs"),
             verifiedaccess_instance_id: o.get_field("verifiedaccessInstanceId"),
         }

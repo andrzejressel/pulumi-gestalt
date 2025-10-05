@@ -64,6 +64,9 @@ pub mod plugin {
     }
     #[allow(dead_code)]
     pub struct PluginResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Docker Plugin alias
         pub alias: pulumi_gestalt_rust::Output<String>,
         /// HTTP client timeout to enable the plugin
@@ -154,6 +157,7 @@ pub mod plugin {
         };
         let o = context.register_resource(request);
         PluginResult {
+            id: o.get_field("id"),
             alias: o.get_field("alias"),
             enable_timeout: o.get_field("enableTimeout"),
             enabled: o.get_field("enabled"),

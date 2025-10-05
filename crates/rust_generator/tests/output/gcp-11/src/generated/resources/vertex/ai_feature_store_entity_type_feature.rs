@@ -122,6 +122,9 @@ pub mod ai_feature_store_entity_type_feature {
     }
     #[allow(dead_code)]
     pub struct AiFeatureStoreEntityTypeFeatureResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The timestamp of when the entity type was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Description of the feature.
@@ -204,6 +207,7 @@ pub mod ai_feature_store_entity_type_feature {
         };
         let o = context.register_resource(request);
         AiFeatureStoreEntityTypeFeatureResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

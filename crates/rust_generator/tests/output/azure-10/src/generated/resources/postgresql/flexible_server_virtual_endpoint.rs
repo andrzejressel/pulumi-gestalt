@@ -89,6 +89,9 @@ pub mod flexible_server_virtual_endpoint {
     }
     #[allow(dead_code)]
     pub struct FlexibleServerVirtualEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Virtual Endpoint
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The Resource ID of the *Replica* Postgres Flexible Server this should be associated with
@@ -139,6 +142,7 @@ pub mod flexible_server_virtual_endpoint {
         };
         let o = context.register_resource(request);
         FlexibleServerVirtualEndpointResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             replica_server_id: o.get_field("replicaServerId"),
             source_server_id: o.get_field("sourceServerId"),

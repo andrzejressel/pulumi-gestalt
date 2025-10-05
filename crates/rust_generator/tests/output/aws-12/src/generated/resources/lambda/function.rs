@@ -384,6 +384,9 @@ pub mod function {
     }
     #[allow(dead_code)]
     pub struct FunctionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Instruction set architecture for your Lambda function. Valid values are `["x86_64"]` and `["arm64"]`. Default is `["x86_64"]`. Removing this attribute, function's architecture stay the same.
         pub architectures: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Amazon Resource Name (ARN) identifying your Lambda Function.
@@ -698,6 +701,7 @@ pub mod function {
         };
         let o = context.register_resource(request);
         FunctionResult {
+            id: o.get_field("id"),
             architectures: o.get_field("architectures"),
             arn: o.get_field("arn"),
             code: o.get_field("code"),

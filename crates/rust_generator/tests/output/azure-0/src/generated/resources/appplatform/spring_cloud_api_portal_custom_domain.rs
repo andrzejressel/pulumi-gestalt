@@ -76,6 +76,9 @@ pub mod spring_cloud_api_portal_custom_domain {
     }
     #[allow(dead_code)]
     pub struct SpringCloudApiPortalCustomDomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Spring Cloud API Portal Domain. Changing this forces a new Spring Cloud API Portal Domain to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Spring Cloud API Portal. Changing this forces a new Spring Cloud API Portal Domain to be created.
@@ -121,6 +124,7 @@ pub mod spring_cloud_api_portal_custom_domain {
         };
         let o = context.register_resource(request);
         SpringCloudApiPortalCustomDomainResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             spring_cloud_api_portal_id: o.get_field("springCloudApiPortalId"),
             thumbprint: o.get_field("thumbprint"),

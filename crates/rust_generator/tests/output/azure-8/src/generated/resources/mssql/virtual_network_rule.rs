@@ -88,6 +88,9 @@ pub mod virtual_network_rule {
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Create the virtual network rule before the subnet has the virtual network service endpoint enabled. Defaults to `false`.
         ///
         /// > **NOTE:** If `ignore_missing_vnet_service_endpoint` is false, and the target subnet does not contain the `Microsoft.SQL` endpoint in the `service_endpoints` array, the deployment will fail when it tries to create the SQL virtual network rule.
@@ -143,6 +146,7 @@ pub mod virtual_network_rule {
         };
         let o = context.register_resource(request);
         VirtualNetworkRuleResult {
+            id: o.get_field("id"),
             ignore_missing_vnet_service_endpoint: o
                 .get_field("ignoreMissingVnetServiceEndpoint"),
             name: o.get_field("name"),

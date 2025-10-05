@@ -71,6 +71,9 @@ pub mod policy {
     }
     #[allow(dead_code)]
     pub struct PolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// JSON-formatted IAM policy to attach to the specified private CA resource.
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// ARN of the private CA to associate with the policy.
@@ -106,6 +109,7 @@ pub mod policy {
         };
         let o = context.register_resource(request);
         PolicyResult {
+            id: o.get_field("id"),
             policy: o.get_field("policy"),
             resource_arn: o.get_field("resourceArn"),
         }

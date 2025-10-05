@@ -33,6 +33,9 @@ pub mod cidr_collection {
     }
     #[allow(dead_code)]
     pub struct CidrCollectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the CIDR collection.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Unique name for the CIDR collection.
@@ -65,6 +68,7 @@ pub mod cidr_collection {
         };
         let o = context.register_resource(request);
         CidrCollectionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             version: o.get_field("version"),

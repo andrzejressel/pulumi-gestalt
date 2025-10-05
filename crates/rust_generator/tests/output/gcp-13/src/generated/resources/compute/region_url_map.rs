@@ -701,6 +701,9 @@ pub mod region_url_map {
     }
     #[allow(dead_code)]
     pub struct RegionUrlMapResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp in RFC3339 text format.
         pub creation_timestamp: pulumi_gestalt_rust::Output<String>,
         /// defaultRouteAction takes effect when none of the hostRules match. The load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. If defaultRouteAction specifies any weightedBackendServices, defaultService must not be set. Conversely if defaultService is set, defaultRouteAction cannot contain any weightedBackendServices.
@@ -840,6 +843,7 @@ pub mod region_url_map {
         };
         let o = context.register_resource(request);
         RegionUrlMapResult {
+            id: o.get_field("id"),
             creation_timestamp: o.get_field("creationTimestamp"),
             default_route_action: o.get_field("defaultRouteAction"),
             default_service: o.get_field("defaultService"),

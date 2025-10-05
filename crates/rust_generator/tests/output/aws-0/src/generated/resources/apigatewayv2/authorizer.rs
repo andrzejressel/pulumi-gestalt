@@ -110,6 +110,9 @@ pub mod authorizer {
     }
     #[allow(dead_code)]
     pub struct AuthorizerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// API identifier.
         pub api_id: pulumi_gestalt_rust::Output<String>,
         /// Required credentials as an IAM role for API Gateway to invoke the authorizer.
@@ -225,6 +228,7 @@ pub mod authorizer {
         };
         let o = context.register_resource(request);
         AuthorizerResult {
+            id: o.get_field("id"),
             api_id: o.get_field("apiId"),
             authorizer_credentials_arn: o.get_field("authorizerCredentialsArn"),
             authorizer_payload_format_version: o

@@ -63,6 +63,9 @@ pub mod alternative_contact {
     }
     #[allow(dead_code)]
     pub struct AlternativeContactResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the target account when managing member accounts. Will manage current user's account by default if omitted.
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Type of the alternate contact. Allowed values are: `BILLING`, `OPERATIONS`, `SECURITY`.
@@ -128,6 +131,7 @@ pub mod alternative_contact {
         };
         let o = context.register_resource(request);
         AlternativeContactResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             alternate_contact_type: o.get_field("alternateContactType"),
             email_address: o.get_field("emailAddress"),

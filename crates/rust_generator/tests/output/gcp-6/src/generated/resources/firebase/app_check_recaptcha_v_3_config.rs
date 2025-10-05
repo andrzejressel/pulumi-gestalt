@@ -98,6 +98,9 @@ pub mod app_check_recaptcha_v_3_config {
     }
     #[allow(dead_code)]
     pub struct AppCheckRecaptchaV3ConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of an
         /// [Web App](https://firebase.google.com/docs/reference/firebase-management/rest/v1beta1/projects.webApps#WebApp.FIELDS.app_id).
         ///
@@ -161,6 +164,7 @@ pub mod app_check_recaptcha_v_3_config {
         };
         let o = context.register_resource(request);
         AppCheckRecaptchaV3ConfigResult {
+            id: o.get_field("id"),
             app_id: o.get_field("appId"),
             name: o.get_field("name"),
             project: o.get_field("project"),

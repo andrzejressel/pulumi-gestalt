@@ -109,6 +109,9 @@ pub mod output_servicebus_topic {
     }
     #[allow(dead_code)]
     pub struct OutputServicebusTopicResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The authentication mode for the Stream Output. Possible values are `Msi` and `ConnectionString`. Defaults to `ConnectionString`.
         pub authentication_mode: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of the Stream Output. Changing this forces a new resource to be created.
@@ -222,6 +225,7 @@ pub mod output_servicebus_topic {
         };
         let o = context.register_resource(request);
         OutputServicebusTopicResult {
+            id: o.get_field("id"),
             authentication_mode: o.get_field("authenticationMode"),
             name: o.get_field("name"),
             property_columns: o.get_field("propertyColumns"),

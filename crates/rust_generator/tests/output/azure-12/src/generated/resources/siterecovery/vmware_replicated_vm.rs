@@ -226,6 +226,9 @@ pub mod vmware_replicated_vm {
     }
     #[allow(dead_code)]
     pub struct VmwareReplicatedVmResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of VMWare appliance which handles the replication. Changing this forces a new resource to be created.
         pub appliance_name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the stroage account that should be used for logging during replication.
@@ -458,6 +461,7 @@ pub mod vmware_replicated_vm {
         };
         let o = context.register_resource(request);
         VmwareReplicatedVmResult {
+            id: o.get_field("id"),
             appliance_name: o.get_field("applianceName"),
             default_log_storage_account_id: o.get_field("defaultLogStorageAccountId"),
             default_recovery_disk_type: o.get_field("defaultRecoveryDiskType"),

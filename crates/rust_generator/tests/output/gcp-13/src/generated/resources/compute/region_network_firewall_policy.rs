@@ -77,6 +77,9 @@ pub mod region_network_firewall_policy {
     }
     #[allow(dead_code)]
     pub struct RegionNetworkFirewallPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp in RFC3339 text format.
         pub creation_timestamp: pulumi_gestalt_rust::Output<String>,
         /// An optional description of this resource. Provide this property when you create the resource.
@@ -143,6 +146,7 @@ pub mod region_network_firewall_policy {
         };
         let o = context.register_resource(request);
         RegionNetworkFirewallPolicyResult {
+            id: o.get_field("id"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),
             fingerprint: o.get_field("fingerprint"),

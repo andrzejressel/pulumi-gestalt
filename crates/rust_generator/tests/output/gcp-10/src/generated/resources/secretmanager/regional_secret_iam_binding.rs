@@ -400,6 +400,9 @@ pub mod regional_secret_iam_binding {
     }
     #[allow(dead_code)]
     pub struct RegionalSecretIamBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
         /// Structure is documented below.
         pub condition: pulumi_gestalt_rust::Output<
@@ -484,6 +487,7 @@ pub mod regional_secret_iam_binding {
         };
         let o = context.register_resource(request);
         RegionalSecretIamBindingResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),
             location: o.get_field("location"),

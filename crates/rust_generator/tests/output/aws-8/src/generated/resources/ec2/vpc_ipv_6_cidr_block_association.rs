@@ -59,6 +59,9 @@ pub mod vpc_ipv_6_cidr_block_association {
     }
     #[allow(dead_code)]
     pub struct VpcIpv6CidrBlockAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR block. Default is `false`. Conflicts with `ipv6_pam_pool_id`, `ipv6_pool`, `ipv6_cidr_block` and `ipv6_netmask_length`.
         pub assign_generated_ipv6_cidr_block: pulumi_gestalt_rust::Output<bool>,
         /// The source that allocated the IP address space. Values: `amazon`, `byoip`, `none`.
@@ -129,6 +132,7 @@ pub mod vpc_ipv_6_cidr_block_association {
         };
         let o = context.register_resource(request);
         VpcIpv6CidrBlockAssociationResult {
+            id: o.get_field("id"),
             assign_generated_ipv6_cidr_block: o
                 .get_field("assignGeneratedIpv6CidrBlock"),
             ip_source: o.get_field("ipSource"),

@@ -165,6 +165,9 @@ pub mod region_security_policy {
     }
     #[allow(dead_code)]
     pub struct RegionSecurityPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Configuration for Google Cloud Armor DDOS Proctection Config.
         /// Structure is documented below.
         pub ddos_protection_config: pulumi_gestalt_rust::Output<
@@ -279,6 +282,7 @@ pub mod region_security_policy {
         };
         let o = context.register_resource(request);
         RegionSecurityPolicyResult {
+            id: o.get_field("id"),
             ddos_protection_config: o.get_field("ddosProtectionConfig"),
             description: o.get_field("description"),
             fingerprint: o.get_field("fingerprint"),

@@ -114,6 +114,9 @@ pub mod object_replication {
     }
     #[allow(dead_code)]
     pub struct ObjectReplicationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Object Replication in the destination storage account.
         pub destination_object_replication_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the destination storage account. Changing this forces a new Storage Object Replication to be created.
@@ -166,6 +169,7 @@ pub mod object_replication {
         };
         let o = context.register_resource(request);
         ObjectReplicationResult {
+            id: o.get_field("id"),
             destination_object_replication_id: o
                 .get_field("destinationObjectReplicationId"),
             destination_storage_account_id: o.get_field("destinationStorageAccountId"),

@@ -123,6 +123,9 @@ pub mod auth_config {
     }
     #[allow(dead_code)]
     pub struct AuthConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Certificate id for client certificate.
         pub certificate_id: pulumi_gestalt_rust::Output<String>,
         /// Raw client certificate
@@ -254,6 +257,7 @@ pub mod auth_config {
         };
         let o = context.register_resource(request);
         AuthConfigResult {
+            id: o.get_field("id"),
             certificate_id: o.get_field("certificateId"),
             client_certificate: o.get_field("clientCertificate"),
             create_time: o.get_field("createTime"),

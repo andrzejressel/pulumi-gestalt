@@ -77,6 +77,9 @@ pub mod ai_metadata_store {
     }
     #[allow(dead_code)]
     pub struct AiMetadataStoreResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The timestamp of when the MetadataStore was created in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// Description of the MetadataStore.
@@ -146,6 +149,7 @@ pub mod ai_metadata_store {
         };
         let o = context.register_resource(request);
         AiMetadataStoreResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             encryption_spec: o.get_field("encryptionSpec"),

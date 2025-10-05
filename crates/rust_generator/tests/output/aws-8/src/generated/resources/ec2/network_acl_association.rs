@@ -43,6 +43,9 @@ pub mod network_acl_association {
     }
     #[allow(dead_code)]
     pub struct NetworkAclAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the network ACL.
         pub network_acl_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the associated Subnet.
@@ -78,6 +81,7 @@ pub mod network_acl_association {
         };
         let o = context.register_resource(request);
         NetworkAclAssociationResult {
+            id: o.get_field("id"),
             network_acl_id: o.get_field("networkAclId"),
             subnet_id: o.get_field("subnetId"),
         }

@@ -58,6 +58,9 @@ pub mod user {
     }
     #[allow(dead_code)]
     pub struct UserResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the user
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.
@@ -137,6 +140,7 @@ pub mod user {
         };
         let o = context.register_resource(request);
         UserResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             aws_account_id: o.get_field("awsAccountId"),
             email: o.get_field("email"),

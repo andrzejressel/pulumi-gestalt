@@ -38,6 +38,9 @@ pub mod portal_dashboard {
     }
     #[allow(dead_code)]
     pub struct PortalDashboardResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// JSON data representing dashboard body. See above for details on how to obtain this from the Portal.
         pub dashboard_properties: pulumi_gestalt_rust::Output<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
@@ -98,6 +101,7 @@ pub mod portal_dashboard {
         };
         let o = context.register_resource(request);
         PortalDashboardResult {
+            id: o.get_field("id"),
             dashboard_properties: o.get_field("dashboardProperties"),
             location: o.get_field("location"),
             name: o.get_field("name"),

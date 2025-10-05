@@ -58,6 +58,9 @@ pub mod registry {
     }
     #[allow(dead_code)]
     pub struct RegistryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The URI of the created resource.
         pub bucket_self_link: pulumi_gestalt_rust::Output<String>,
         /// The location of the registry. One of `ASIA`, `EU`, `US` or not specified. See [the official documentation](https://cloud.google.com/container-registry/docs/pushing-and-pulling#pushing_an_image_to_a_registry) for more information on registry locations.
@@ -95,6 +98,7 @@ pub mod registry {
         };
         let o = context.register_resource(request);
         RegistryResult {
+            id: o.get_field("id"),
             bucket_self_link: o.get_field("bucketSelfLink"),
             location: o.get_field("location"),
             project: o.get_field("project"),

@@ -48,6 +48,9 @@ pub mod data_share_authorization {
     }
     #[allow(dead_code)]
     pub struct DataShareAuthorizationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to allow write operations for a datashare.
         pub allow_writes: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Identifier of the data consumer that is authorized to access the datashare. This identifier is an AWS account ID or a keyword, such as `ADX`.
@@ -96,6 +99,7 @@ pub mod data_share_authorization {
         };
         let o = context.register_resource(request);
         DataShareAuthorizationResult {
+            id: o.get_field("id"),
             allow_writes: o.get_field("allowWrites"),
             consumer_identifier: o.get_field("consumerIdentifier"),
             data_share_arn: o.get_field("dataShareArn"),

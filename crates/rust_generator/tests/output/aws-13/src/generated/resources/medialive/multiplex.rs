@@ -66,6 +66,9 @@ pub mod multiplex {
     }
     #[allow(dead_code)]
     pub struct MultiplexResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Multiplex.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A list of availability zones. You must specify exactly two.
@@ -133,6 +136,7 @@ pub mod multiplex {
         };
         let o = context.register_resource(request);
         MultiplexResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             availability_zones: o.get_field("availabilityZones"),
             multiplex_settings: o.get_field("multiplexSettings"),

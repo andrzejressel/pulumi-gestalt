@@ -88,6 +88,9 @@ pub mod multi_region_cluster {
     }
     #[allow(dead_code)]
     pub struct MultiRegionClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the multi-region cluster.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// description for the multi-region cluster.
@@ -203,6 +206,7 @@ pub mod multi_region_cluster {
         };
         let o = context.register_resource(request);
         MultiRegionClusterResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             engine: o.get_field("engine"),

@@ -70,6 +70,9 @@ pub mod schema {
     }
     #[allow(dead_code)]
     pub struct SchemaResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the discoverer.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The schema specification. Must be a valid Open API 3.0 spec.
@@ -147,6 +150,7 @@ pub mod schema {
         };
         let o = context.register_resource(request);
         SchemaResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             content: o.get_field("content"),
             description: o.get_field("description"),

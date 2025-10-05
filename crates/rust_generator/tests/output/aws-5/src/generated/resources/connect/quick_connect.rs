@@ -54,6 +54,9 @@ pub mod quick_connect {
     }
     #[allow(dead_code)]
     pub struct QuickConnectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the Quick Connect.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies the description of the Quick Connect.
@@ -122,6 +125,7 @@ pub mod quick_connect {
         };
         let o = context.register_resource(request);
         QuickConnectResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             instance_id: o.get_field("instanceId"),

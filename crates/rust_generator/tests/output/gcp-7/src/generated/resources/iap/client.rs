@@ -95,6 +95,9 @@ pub mod client {
     }
     #[allow(dead_code)]
     pub struct ClientResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the brand to which this client
         /// is attached to. The format is
         /// `projects/{project_number}/brands/{brand_id}`.
@@ -140,6 +143,7 @@ pub mod client {
         };
         let o = context.register_resource(request);
         ClientResult {
+            id: o.get_field("id"),
             brand: o.get_field("brand"),
             client_id: o.get_field("clientId"),
             display_name: o.get_field("displayName"),

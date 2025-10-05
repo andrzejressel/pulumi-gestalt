@@ -212,6 +212,9 @@ pub mod backend_bucket {
     }
     #[allow(dead_code)]
     pub struct BackendBucketResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Cloud Storage bucket name.
         pub bucket_name: pulumi_gestalt_rust::Output<String>,
         /// Cloud CDN configuration for this Backend Bucket.
@@ -317,6 +320,7 @@ pub mod backend_bucket {
         };
         let o = context.register_resource(request);
         BackendBucketResult {
+            id: o.get_field("id"),
             bucket_name: o.get_field("bucketName"),
             cdn_policy: o.get_field("cdnPolicy"),
             compression_mode: o.get_field("compressionMode"),

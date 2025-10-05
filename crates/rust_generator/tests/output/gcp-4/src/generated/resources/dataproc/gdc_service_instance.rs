@@ -100,6 +100,9 @@ pub mod gdc_service_instance {
     }
     #[allow(dead_code)]
     pub struct GdcServiceInstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The timestamp when the resource was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// User-provided human-readable name to be used in user interfaces.
@@ -239,6 +242,7 @@ pub mod gdc_service_instance {
         };
         let o = context.register_resource(request);
         GdcServiceInstanceResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             display_name: o.get_field("displayName"),
             effective_labels: o.get_field("effectiveLabels"),

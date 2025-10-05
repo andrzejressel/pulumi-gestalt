@@ -121,6 +121,9 @@ pub mod endpoint_policy {
     }
     #[allow(dead_code)]
     pub struct EndpointPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// This field specifies the URL of AuthorizationPolicy resource that applies authorization policies to the inbound traffic
         /// at the matched endpoints.
         pub authorization_policy: pulumi_gestalt_rust::Output<Option<String>>,
@@ -241,6 +244,7 @@ pub mod endpoint_policy {
         };
         let o = context.register_resource(request);
         EndpointPolicyResult {
+            id: o.get_field("id"),
             authorization_policy: o.get_field("authorizationPolicy"),
             client_tls_policy: o.get_field("clientTlsPolicy"),
             create_time: o.get_field("createTime"),

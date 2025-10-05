@@ -143,6 +143,9 @@ pub mod authz_extension {
     }
     #[allow(dead_code)]
     pub struct AuthzExtensionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The :authority header in the gRPC request sent from Envoy to the extension service.
         pub authority: pulumi_gestalt_rust::Output<String>,
         /// The timestamp when the resource was created.
@@ -291,6 +294,7 @@ pub mod authz_extension {
         };
         let o = context.register_resource(request);
         AuthzExtensionResult {
+            id: o.get_field("id"),
             authority: o.get_field("authority"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

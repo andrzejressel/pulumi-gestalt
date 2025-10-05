@@ -100,6 +100,9 @@ pub mod table_export {
     }
     #[allow(dead_code)]
     pub struct TableExportResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Table Export.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Billable size of the table export.
@@ -193,6 +196,7 @@ pub mod table_export {
         };
         let o = context.register_resource(request);
         TableExportResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             billed_size_in_bytes: o.get_field("billedSizeInBytes"),
             end_time: o.get_field("endTime"),

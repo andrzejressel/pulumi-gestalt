@@ -352,6 +352,9 @@ pub mod database_instance {
     }
     #[allow(dead_code)]
     pub struct DatabaseInstanceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The list of all maintenance versions applicable on the instance.
         pub available_maintenance_versions: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The context needed to create this instance as a clone of another instance. When this field is set during
@@ -548,6 +551,7 @@ pub mod database_instance {
         };
         let o = context.register_resource(request);
         DatabaseInstanceResult {
+            id: o.get_field("id"),
             available_maintenance_versions: o.get_field("availableMaintenanceVersions"),
             clone: o.get_field("clone"),
             connection_name: o.get_field("connectionName"),

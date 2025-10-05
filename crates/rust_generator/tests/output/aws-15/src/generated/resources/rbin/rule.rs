@@ -64,6 +64,9 @@ pub mod rule {
     }
     #[allow(dead_code)]
     pub struct RuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The retention rule description.
         pub description: pulumi_gestalt_rust::Output<String>,
@@ -146,6 +149,7 @@ pub mod rule {
         };
         let o = context.register_resource(request);
         RuleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             lock_configuration: o.get_field("lockConfiguration"),

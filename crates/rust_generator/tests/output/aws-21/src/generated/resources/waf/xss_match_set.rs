@@ -51,6 +51,9 @@ pub mod xss_match_set {
     }
     #[allow(dead_code)]
     pub struct XssMatchSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN)
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name or description of the SizeConstraintSet.
@@ -90,6 +93,7 @@ pub mod xss_match_set {
         };
         let o = context.register_resource(request);
         XssMatchSetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             name: o.get_field("name"),
             xss_match_tuples: o.get_field("xssMatchTuples"),

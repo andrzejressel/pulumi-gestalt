@@ -70,6 +70,9 @@ pub mod user_defined_function {
     }
     #[allow(dead_code)]
     pub struct UserDefinedFunctionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Glue User Defined Function.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// ID of the Glue Catalog to create the function in. If omitted, this defaults to the AWS Account ID.
@@ -146,6 +149,7 @@ pub mod user_defined_function {
         };
         let o = context.register_resource(request);
         UserDefinedFunctionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             catalog_id: o.get_field("catalogId"),
             class_name: o.get_field("className"),

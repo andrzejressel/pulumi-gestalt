@@ -200,6 +200,9 @@ pub mod server_microsoft_support_auditing_policy {
     }
     #[allow(dead_code)]
     pub struct ServerMicrosoftSupportAuditingPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The blob storage endpoint (e.g. https://example.blob.core.windows.net). This blob storage will hold all Microsoft support auditing logs.
         pub blob_storage_endpoint: pulumi_gestalt_rust::Output<Option<String>>,
         /// Whether to enable the extended auditing policy. Possible values are `true` and `false`. Defaults to `true`.
@@ -274,6 +277,7 @@ pub mod server_microsoft_support_auditing_policy {
         };
         let o = context.register_resource(request);
         ServerMicrosoftSupportAuditingPolicyResult {
+            id: o.get_field("id"),
             blob_storage_endpoint: o.get_field("blobStorageEndpoint"),
             enabled: o.get_field("enabled"),
             log_monitoring_enabled: o.get_field("logMonitoringEnabled"),

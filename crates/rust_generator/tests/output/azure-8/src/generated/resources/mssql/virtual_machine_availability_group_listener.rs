@@ -54,6 +54,9 @@ pub mod virtual_machine_availability_group_listener {
     }
     #[allow(dead_code)]
     pub struct VirtualMachineAvailabilityGroupListenerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Availability Group. Changing this forces a new resource to be created.
         pub availability_group_name: pulumi_gestalt_rust::Output<Option<String>>,
         /// A `load_balancer_configuration` block as defined below. Changing this forces a new resource to be created.
@@ -149,6 +152,7 @@ pub mod virtual_machine_availability_group_listener {
         };
         let o = context.register_resource(request);
         VirtualMachineAvailabilityGroupListenerResult {
+            id: o.get_field("id"),
             availability_group_name: o.get_field("availabilityGroupName"),
             load_balancer_configuration: o.get_field("loadBalancerConfiguration"),
             multi_subnet_ip_configurations: o.get_field("multiSubnetIpConfigurations"),

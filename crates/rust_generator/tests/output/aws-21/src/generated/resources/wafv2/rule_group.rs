@@ -41,6 +41,9 @@ pub mod rule_group {
     }
     #[allow(dead_code)]
     pub struct RuleGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the WAF rule group.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The web ACL capacity units (WCUs) required for this rule group. See [here](https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRuleGroup.html#API_CreateRuleGroup_RequestSyntax) for general information and [here](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statements-list.html) for capacity specific information.
@@ -141,6 +144,7 @@ pub mod rule_group {
         };
         let o = context.register_resource(request);
         RuleGroupResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             capacity: o.get_field("capacity"),
             custom_response_bodies: o.get_field("customResponseBodies"),

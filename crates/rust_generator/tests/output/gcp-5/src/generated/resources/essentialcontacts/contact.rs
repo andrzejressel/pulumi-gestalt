@@ -73,6 +73,9 @@ pub mod contact {
     }
     #[allow(dead_code)]
     pub struct ContactResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The email address to send notifications to. This does not need to be a Google account.
         pub email: pulumi_gestalt_rust::Output<String>,
         /// The preferred language for notifications, as a ISO 639-1 language code. See Supported languages for a list of supported languages.
@@ -131,6 +134,7 @@ pub mod contact {
         };
         let o = context.register_resource(request);
         ContactResult {
+            id: o.get_field("id"),
             email: o.get_field("email"),
             language_tag: o.get_field("languageTag"),
             name: o.get_field("name"),

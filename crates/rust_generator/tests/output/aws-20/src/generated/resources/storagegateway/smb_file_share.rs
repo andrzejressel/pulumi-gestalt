@@ -141,6 +141,9 @@ pub mod smb_file_share {
     }
     #[allow(dead_code)]
     pub struct SmbFileShareResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The files and folders on this share will only be visible to users with read access. Default value is `false`.
         pub access_based_enumeration: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A list of users in the Active Directory that have admin access to the file share. Only valid if `authentication` is set to `ActiveDirectory`.
@@ -363,6 +366,7 @@ pub mod smb_file_share {
         };
         let o = context.register_resource(request);
         SmbFileShareResult {
+            id: o.get_field("id"),
             access_based_enumeration: o.get_field("accessBasedEnumeration"),
             admin_user_lists: o.get_field("adminUserLists"),
             arn: o.get_field("arn"),

@@ -174,6 +174,9 @@ pub mod response_headers_policy {
     }
     #[allow(dead_code)]
     pub struct ResponseHeadersPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A comment to describe the response headers policy. The comment cannot be longer than 128 characters.
         pub comment: pulumi_gestalt_rust::Output<Option<String>>,
         /// A configuration for a set of HTTP response headers that are used for Cross-Origin Resource Sharing (CORS). See Cors Config for more information.
@@ -277,6 +280,7 @@ pub mod response_headers_policy {
         };
         let o = context.register_resource(request);
         ResponseHeadersPolicyResult {
+            id: o.get_field("id"),
             comment: o.get_field("comment"),
             cors_config: o.get_field("corsConfig"),
             custom_headers_config: o.get_field("customHeadersConfig"),

@@ -41,6 +41,9 @@ pub mod resolver_firewall_domain_list {
     }
     #[allow(dead_code)]
     pub struct ResolverFirewallDomainListResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN (Amazon Resource Name) of the domain list.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A array of domains for the firewall domain list.
@@ -92,6 +95,7 @@ pub mod resolver_firewall_domain_list {
         };
         let o = context.register_resource(request);
         ResolverFirewallDomainListResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             domains: o.get_field("domains"),
             name: o.get_field("name"),

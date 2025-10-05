@@ -112,6 +112,9 @@ pub mod collector_policy {
     }
     #[allow(dead_code)]
     pub struct CollectorPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `ipfx_emission` block as defined below. Changing this forces a new Network Function Collector Policy to be created.
         pub ipfx_emission: pulumi_gestalt_rust::Output<
             super::super::types::networkfunction::CollectorPolicyIpfxEmission,
@@ -181,6 +184,7 @@ pub mod collector_policy {
         };
         let o = context.register_resource(request);
         CollectorPolicyResult {
+            id: o.get_field("id"),
             ipfx_emission: o.get_field("ipfxEmission"),
             ipfx_ingestion: o.get_field("ipfxIngestion"),
             location: o.get_field("location"),

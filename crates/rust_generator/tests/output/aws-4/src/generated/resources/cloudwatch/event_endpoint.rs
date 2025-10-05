@@ -89,6 +89,9 @@ pub mod event_endpoint {
     }
     #[allow(dead_code)]
     pub struct EventEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the endpoint that was created.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A description of the global endpoint.
@@ -162,6 +165,7 @@ pub mod event_endpoint {
         };
         let o = context.register_resource(request);
         EventEndpointResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             endpoint_url: o.get_field("endpointUrl"),

@@ -53,6 +53,9 @@ pub mod registry_policy {
     }
     #[allow(dead_code)]
     pub struct RegistryPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Resource Policy for EventBridge Schema Registry
         pub policy: pulumi_gestalt_rust::Output<String>,
         /// Name of EventBridge Schema Registry
@@ -88,6 +91,7 @@ pub mod registry_policy {
         };
         let o = context.register_resource(request);
         RegistryPolicyResult {
+            id: o.get_field("id"),
             policy: o.get_field("policy"),
             registry_name: o.get_field("registryName"),
         }

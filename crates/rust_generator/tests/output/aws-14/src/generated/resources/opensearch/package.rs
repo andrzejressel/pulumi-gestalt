@@ -65,6 +65,9 @@ pub mod package {
     }
     #[allow(dead_code)]
     pub struct PackageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The current version of the package.
         pub available_package_version: pulumi_gestalt_rust::Output<String>,
         /// Description of the package.
@@ -119,6 +122,7 @@ pub mod package {
         };
         let o = context.register_resource(request);
         PackageResult {
+            id: o.get_field("id"),
             available_package_version: o.get_field("availablePackageVersion"),
             package_description: o.get_field("packageDescription"),
             package_id: o.get_field("packageId"),

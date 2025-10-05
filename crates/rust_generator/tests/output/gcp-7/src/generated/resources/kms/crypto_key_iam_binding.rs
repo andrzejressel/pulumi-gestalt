@@ -199,6 +199,9 @@ pub mod crypto_key_iam_binding {
     }
     #[allow(dead_code)]
     pub struct CryptoKeyIAMBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
         /// Structure is documented below.
         pub condition: pulumi_gestalt_rust::Output<
@@ -264,6 +267,7 @@ pub mod crypto_key_iam_binding {
         };
         let o = context.register_resource(request);
         CryptoKeyIAMBindingResult {
+            id: o.get_field("id"),
             condition: o.get_field("condition"),
             crypto_key_id: o.get_field("cryptoKeyId"),
             etag: o.get_field("etag"),

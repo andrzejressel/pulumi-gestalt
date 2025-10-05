@@ -124,6 +124,9 @@ pub mod ganglia_layer {
     }
     #[allow(dead_code)]
     pub struct GangliaLayerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name(ARN) of the layer.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Whether to automatically assign an elastic IP address to the layer's instances.
@@ -368,6 +371,7 @@ pub mod ganglia_layer {
         };
         let o = context.register_resource(request);
         GangliaLayerResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             auto_assign_elastic_ips: o.get_field("autoAssignElasticIps"),
             auto_assign_public_ips: o.get_field("autoAssignPublicIps"),

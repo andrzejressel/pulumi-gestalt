@@ -95,6 +95,9 @@ pub mod network_sim_group {
     }
     #[allow(dead_code)]
     pub struct NetworkSimGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A key to encrypt the SIM data that belongs to this SIM group.
         pub encryption_key_url: pulumi_gestalt_rust::Output<Option<String>>,
         /// An `identity` block as defined below.
@@ -164,6 +167,7 @@ pub mod network_sim_group {
         };
         let o = context.register_resource(request);
         NetworkSimGroupResult {
+            id: o.get_field("id"),
             encryption_key_url: o.get_field("encryptionKeyUrl"),
             identity: o.get_field("identity"),
             location: o.get_field("location"),

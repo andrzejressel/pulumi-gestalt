@@ -224,6 +224,9 @@ pub mod data_exchange_iam_policy {
     }
     #[allow(dead_code)]
     pub struct DataExchangeIamPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the data exchange. Must contain only Unicode letters, numbers (0-9), underscores (_). Should not use characters that require URL-escaping, or characters outside of ASCII, spaces. Used to find the parent resource to bind the IAM policy to
         pub data_exchange_id: pulumi_gestalt_rust::Output<String>,
         /// (Computed) The etag of the IAM policy.
@@ -281,6 +284,7 @@ pub mod data_exchange_iam_policy {
         };
         let o = context.register_resource(request);
         DataExchangeIamPolicyResult {
+            id: o.get_field("id"),
             data_exchange_id: o.get_field("dataExchangeId"),
             etag: o.get_field("etag"),
             location: o.get_field("location"),

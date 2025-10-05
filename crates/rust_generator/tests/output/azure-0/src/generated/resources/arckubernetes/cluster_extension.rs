@@ -88,6 +88,9 @@ pub mod cluster_extension {
     }
     #[allow(dead_code)]
     pub struct ClusterExtensionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Cluster ID. Changing this forces a new Arc Kubernetes Cluster Extension to be created.
         pub cluster_id: pulumi_gestalt_rust::Output<String>,
         /// Configuration settings that are sensitive, as name-value pairs for configuring this extension.
@@ -191,6 +194,7 @@ pub mod cluster_extension {
         };
         let o = context.register_resource(request);
         ClusterExtensionResult {
+            id: o.get_field("id"),
             cluster_id: o.get_field("clusterId"),
             configuration_protected_settings: o
                 .get_field("configurationProtectedSettings"),

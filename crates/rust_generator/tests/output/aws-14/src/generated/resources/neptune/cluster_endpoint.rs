@@ -54,6 +54,9 @@ pub mod cluster_endpoint {
     }
     #[allow(dead_code)]
     pub struct ClusterEndpointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Neptune Cluster Endpoint Amazon Resource Name (ARN).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The identifier of the endpoint.
@@ -129,6 +132,7 @@ pub mod cluster_endpoint {
         };
         let o = context.register_resource(request);
         ClusterEndpointResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cluster_endpoint_identifier: o.get_field("clusterEndpointIdentifier"),
             cluster_identifier: o.get_field("clusterIdentifier"),

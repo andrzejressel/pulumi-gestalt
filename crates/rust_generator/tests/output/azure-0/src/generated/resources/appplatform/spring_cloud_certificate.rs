@@ -131,6 +131,9 @@ pub mod spring_cloud_certificate {
     }
     #[allow(dead_code)]
     pub struct SpringCloudCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The content of uploaded certificate. Changing this forces a new resource to be created.
         pub certificate_content: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies whether the private key should be excluded from the Key Vault Certificate. Changing this forces a new resource to be created. Defaults to `false`.
@@ -199,6 +202,7 @@ pub mod spring_cloud_certificate {
         };
         let o = context.register_resource(request);
         SpringCloudCertificateResult {
+            id: o.get_field("id"),
             certificate_content: o.get_field("certificateContent"),
             exclude_private_key: o.get_field("excludePrivateKey"),
             key_vault_certificate_id: o.get_field("keyVaultCertificateId"),

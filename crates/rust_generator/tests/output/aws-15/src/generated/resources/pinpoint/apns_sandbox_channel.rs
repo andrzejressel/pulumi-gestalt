@@ -80,6 +80,9 @@ pub mod apns_sandbox_channel {
     }
     #[allow(dead_code)]
     pub struct ApnsSandboxChannelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The application ID.
         pub application_id: pulumi_gestalt_rust::Output<String>,
         /// The ID assigned to your iOS app. To find this value, choose Certificates, IDs & Profiles, choose App IDs in the Identifiers section, and choose your app.
@@ -175,6 +178,7 @@ pub mod apns_sandbox_channel {
         };
         let o = context.register_resource(request);
         ApnsSandboxChannelResult {
+            id: o.get_field("id"),
             application_id: o.get_field("applicationId"),
             bundle_id: o.get_field("bundleId"),
             certificate: o.get_field("certificate"),

@@ -47,6 +47,9 @@ pub mod default_auto_scaling_configuration_version {
     }
     #[allow(dead_code)]
     pub struct DefaultAutoScalingConfigurationVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the App Runner auto scaling configuration that you want to set as the default.
         pub auto_scaling_configuration_arn: pulumi_gestalt_rust::Output<String>,
     }
@@ -78,6 +81,7 @@ pub mod default_auto_scaling_configuration_version {
         };
         let o = context.register_resource(request);
         DefaultAutoScalingConfigurationVersionResult {
+            id: o.get_field("id"),
             auto_scaling_configuration_arn: o.get_field("autoScalingConfigurationArn"),
         }
     }

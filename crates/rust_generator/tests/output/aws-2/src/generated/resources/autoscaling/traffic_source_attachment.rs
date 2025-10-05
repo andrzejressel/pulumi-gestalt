@@ -35,6 +35,9 @@ pub mod traffic_source_attachment {
     }
     #[allow(dead_code)]
     pub struct TrafficSourceAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Auto Scaling group.
         pub autoscaling_group_name: pulumi_gestalt_rust::Output<String>,
         /// The unique identifiers of a traffic sources.
@@ -77,6 +80,7 @@ pub mod traffic_source_attachment {
         };
         let o = context.register_resource(request);
         TrafficSourceAttachmentResult {
+            id: o.get_field("id"),
             autoscaling_group_name: o.get_field("autoscalingGroupName"),
             traffic_source: o.get_field("trafficSource"),
         }

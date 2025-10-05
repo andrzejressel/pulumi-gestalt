@@ -81,6 +81,9 @@ pub mod spring_cloud_builder {
     }
     #[allow(dead_code)]
     pub struct SpringCloudBuilderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `build_pack_group` blocks as defined below.
         pub build_pack_groups: pulumi_gestalt_rust::Output<
             Vec<super::super::types::appplatform::SpringCloudBuilderBuildPackGroup>,
@@ -136,6 +139,7 @@ pub mod spring_cloud_builder {
         };
         let o = context.register_resource(request);
         SpringCloudBuilderResult {
+            id: o.get_field("id"),
             build_pack_groups: o.get_field("buildPackGroups"),
             name: o.get_field("name"),
             spring_cloud_service_id: o.get_field("springCloudServiceId"),

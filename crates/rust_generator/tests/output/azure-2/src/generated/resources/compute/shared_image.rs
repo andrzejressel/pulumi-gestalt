@@ -156,6 +156,9 @@ pub mod shared_image {
     }
     #[allow(dead_code)]
     pub struct SharedImageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies if the Shared Image supports Accelerated Network. Changing this forces a new resource to be created.
         pub accelerated_network_support_enabled: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -409,6 +412,7 @@ pub mod shared_image {
         };
         let o = context.register_resource(request);
         SharedImageResult {
+            id: o.get_field("id"),
             accelerated_network_support_enabled: o
                 .get_field("acceleratedNetworkSupportEnabled"),
             architecture: o.get_field("architecture"),

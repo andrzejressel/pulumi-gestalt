@@ -103,6 +103,9 @@ pub mod virtual_network_rule {
     }
     #[allow(dead_code)]
     pub struct VirtualNetworkRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Should the Virtual Network Rule be created before the Subnet has the Virtual Network Service Endpoint enabled?
         pub ignore_missing_vnet_service_endpoint: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -169,6 +172,7 @@ pub mod virtual_network_rule {
         };
         let o = context.register_resource(request);
         VirtualNetworkRuleResult {
+            id: o.get_field("id"),
             ignore_missing_vnet_service_endpoint: o
                 .get_field("ignoreMissingVnetServiceEndpoint"),
             name: o.get_field("name"),

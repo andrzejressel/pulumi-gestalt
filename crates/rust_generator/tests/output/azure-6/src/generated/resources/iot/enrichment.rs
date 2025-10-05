@@ -107,6 +107,9 @@ pub mod enrichment {
     }
     #[allow(dead_code)]
     pub struct EnrichmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The list of endpoints which will be enriched.
         pub endpoint_names: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The IoTHub name of the enrichment. Changing this forces a new resource to be created.
@@ -163,6 +166,7 @@ pub mod enrichment {
         };
         let o = context.register_resource(request);
         EnrichmentResult {
+            id: o.get_field("id"),
             endpoint_names: o.get_field("endpointNames"),
             iothub_name: o.get_field("iothubName"),
             key: o.get_field("key"),

@@ -221,6 +221,9 @@ pub mod runtime {
     }
     #[allow(dead_code)]
     pub struct RuntimeResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The config settings for accessing runtime.
         /// Structure is documented below.
         pub access_config: pulumi_gestalt_rust::Output<
@@ -335,6 +338,7 @@ pub mod runtime {
         };
         let o = context.register_resource(request);
         RuntimeResult {
+            id: o.get_field("id"),
             access_config: o.get_field("accessConfig"),
             effective_labels: o.get_field("effectiveLabels"),
             health_state: o.get_field("healthState"),

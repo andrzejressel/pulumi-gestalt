@@ -56,6 +56,9 @@ pub mod certificate_validation {
     }
     #[allow(dead_code)]
     pub struct CertificateValidationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the certificate that is being validated.
         pub certificate_arn: pulumi_gestalt_rust::Output<String>,
         /// List of FQDNs that implement the validation. Only valid for DNS validation method ACM certificates. If this is set, the resource can implement additional sanity checks and has an explicit dependency on the resource that is implementing the validation
@@ -93,6 +96,7 @@ pub mod certificate_validation {
         };
         let o = context.register_resource(request);
         CertificateValidationResult {
+            id: o.get_field("id"),
             certificate_arn: o.get_field("certificateArn"),
             validation_record_fqdns: o.get_field("validationRecordFqdns"),
         }

@@ -79,6 +79,9 @@ pub mod data_connector_microsoft_cloud_app_security {
     }
     #[allow(dead_code)]
     pub struct DataConnectorMicrosoftCloudAppSecurityResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Should the alerts be enabled? Defaults to `true`.
         pub alerts_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Should the Discovery Logs be enabled? Defaults to `true`.
@@ -144,6 +147,7 @@ pub mod data_connector_microsoft_cloud_app_security {
         };
         let o = context.register_resource(request);
         DataConnectorMicrosoftCloudAppSecurityResult {
+            id: o.get_field("id"),
             alerts_enabled: o.get_field("alertsEnabled"),
             discovery_logs_enabled: o.get_field("discoveryLogsEnabled"),
             log_analytics_workspace_id: o.get_field("logAnalyticsWorkspaceId"),

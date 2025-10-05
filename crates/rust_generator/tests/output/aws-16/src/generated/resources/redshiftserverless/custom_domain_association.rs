@@ -58,6 +58,9 @@ pub mod custom_domain_association {
     }
     #[allow(dead_code)]
     pub struct CustomDomainAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the certificate for the custom domain association.
         pub custom_domain_certificate_arn: pulumi_gestalt_rust::Output<String>,
         /// Expiration time for the certificate.
@@ -105,6 +108,7 @@ pub mod custom_domain_association {
         };
         let o = context.register_resource(request);
         CustomDomainAssociationResult {
+            id: o.get_field("id"),
             custom_domain_certificate_arn: o.get_field("customDomainCertificateArn"),
             custom_domain_certificate_expiry_time: o
                 .get_field("customDomainCertificateExpiryTime"),

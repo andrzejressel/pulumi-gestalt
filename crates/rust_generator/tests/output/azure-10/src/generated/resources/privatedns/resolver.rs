@@ -69,6 +69,9 @@ pub mod resolver {
     }
     #[allow(dead_code)]
     pub struct ResolverResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Azure Region where the Private DNS Resolver should exist. Changing this forces a new Private DNS Resolver to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name which should be used for this Private DNS Resolver. Changing this forces a new Private DNS Resolver to be created.
@@ -127,6 +130,7 @@ pub mod resolver {
         };
         let o = context.register_resource(request);
         ResolverResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

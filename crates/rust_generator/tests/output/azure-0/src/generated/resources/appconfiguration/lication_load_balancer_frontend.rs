@@ -53,6 +53,9 @@ pub mod lication_load_balancer_frontend {
     }
     #[allow(dead_code)]
     pub struct LicationLoadBalancerFrontendResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Application Gateway for Containers. Changing this forces a new resource to be created.
         pub application_load_balancer_id: pulumi_gestalt_rust::Output<String>,
         /// The Fully Qualified Domain Name of the DNS record associated to an Application Gateway for Containers Frontend.
@@ -102,6 +105,7 @@ pub mod lication_load_balancer_frontend {
         };
         let o = context.register_resource(request);
         LicationLoadBalancerFrontendResult {
+            id: o.get_field("id"),
             application_load_balancer_id: o.get_field("applicationLoadBalancerId"),
             fully_qualified_domain_name: o.get_field("fullyQualifiedDomainName"),
             name: o.get_field("name"),

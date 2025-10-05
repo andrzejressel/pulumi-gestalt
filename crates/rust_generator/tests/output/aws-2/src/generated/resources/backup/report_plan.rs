@@ -57,6 +57,9 @@ pub mod report_plan {
     }
     #[allow(dead_code)]
     pub struct ReportPlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the backup report plan.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC).
@@ -131,6 +134,7 @@ pub mod report_plan {
         };
         let o = context.register_resource(request);
         ReportPlanResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             creation_time: o.get_field("creationTime"),
             deployment_status: o.get_field("deploymentStatus"),

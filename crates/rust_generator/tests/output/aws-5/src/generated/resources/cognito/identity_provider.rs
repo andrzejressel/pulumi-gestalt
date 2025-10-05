@@ -64,6 +64,9 @@ pub mod identity_provider {
     }
     #[allow(dead_code)]
     pub struct IdentityProviderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The map of attribute mapping of user pool attributes. [AttributeMapping in AWS API documentation](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html#CognitoUserPools-CreateIdentityProvider-request-AttributeMapping)
         pub attribute_mapping: pulumi_gestalt_rust::Output<
             std::collections::HashMap<String, String>,
@@ -131,6 +134,7 @@ pub mod identity_provider {
         };
         let o = context.register_resource(request);
         IdentityProviderResult {
+            id: o.get_field("id"),
             attribute_mapping: o.get_field("attributeMapping"),
             idp_identifiers: o.get_field("idpIdentifiers"),
             provider_details: o.get_field("providerDetails"),

@@ -35,6 +35,9 @@ pub mod encryption_by_default {
     }
     #[allow(dead_code)]
     pub struct EncryptionByDefaultResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether or not default EBS encryption is enabled. Valid values are `true` or `false`. Defaults to `true`.
         pub enabled: pulumi_gestalt_rust::Output<Option<bool>>,
     }
@@ -63,6 +66,7 @@ pub mod encryption_by_default {
         };
         let o = context.register_resource(request);
         EncryptionByDefaultResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
         }
     }

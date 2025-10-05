@@ -124,6 +124,9 @@ pub mod network_watcher_flow_log {
     }
     #[allow(dead_code)]
     pub struct NetworkWatcherFlowLogResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Should Network Flow Logging be Enabled?
         pub enabled: pulumi_gestalt_rust::Output<bool>,
         /// The location where the Network Watcher Flow Log resides. Changing this forces a new resource to be created. Defaults to the `location` of the Network Watcher.
@@ -236,6 +239,7 @@ pub mod network_watcher_flow_log {
         };
         let o = context.register_resource(request);
         NetworkWatcherFlowLogResult {
+            id: o.get_field("id"),
             enabled: o.get_field("enabled"),
             location: o.get_field("location"),
             name: o.get_field("name"),

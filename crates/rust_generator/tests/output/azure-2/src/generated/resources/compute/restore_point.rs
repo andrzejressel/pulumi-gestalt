@@ -113,6 +113,9 @@ pub mod restore_point {
     }
     #[allow(dead_code)]
     pub struct RestorePointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Is Crash Consistent the Consistency Mode of the Virtual Machine Restore Point. Defaults to `false`. Changing this forces a new resource to be created.
         pub crash_consistency_mode_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A list of disks that will be excluded from the Virtual Machine Restore Point. Changing this forces a new resource to be created.
@@ -168,6 +171,7 @@ pub mod restore_point {
         };
         let o = context.register_resource(request);
         RestorePointResult {
+            id: o.get_field("id"),
             crash_consistency_mode_enabled: o.get_field("crashConsistencyModeEnabled"),
             excluded_disks: o.get_field("excludedDisks"),
             name: o.get_field("name"),

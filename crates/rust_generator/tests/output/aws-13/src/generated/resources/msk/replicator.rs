@@ -44,6 +44,9 @@ pub mod replicator {
     }
     #[allow(dead_code)]
     pub struct ReplicatorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Replicator. Do not begin the description with "An", "The", "Defines", "Indicates", or "Specifies," as these are verbose. In other words, "Indicates the amount of storage," can be rewritten as "Amount of storage," without losing any information.
         pub arn: pulumi_gestalt_rust::Output<String>,
         pub current_version: pulumi_gestalt_rust::Output<String>,
@@ -122,6 +125,7 @@ pub mod replicator {
         };
         let o = context.register_resource(request);
         ReplicatorResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             current_version: o.get_field("currentVersion"),
             description: o.get_field("description"),

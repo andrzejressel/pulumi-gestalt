@@ -276,6 +276,9 @@ pub mod budget {
     }
     #[allow(dead_code)]
     pub struct BudgetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the target account for budget. Will use current user's account_id by default if omitted.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the budget.
@@ -422,6 +425,7 @@ pub mod budget {
         };
         let o = context.register_resource(request);
         BudgetResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             arn: o.get_field("arn"),
             auto_adjust_data: o.get_field("autoAdjustData"),

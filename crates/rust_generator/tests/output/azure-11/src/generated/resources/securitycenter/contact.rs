@@ -54,6 +54,9 @@ pub mod contact {
     }
     #[allow(dead_code)]
     pub struct ContactResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to send security alerts notifications to the security contact.
         pub alert_notifications: pulumi_gestalt_rust::Output<bool>,
         /// Whether to send security alerts notifications to subscription admins.
@@ -110,6 +113,7 @@ pub mod contact {
         };
         let o = context.register_resource(request);
         ContactResult {
+            id: o.get_field("id"),
             alert_notifications: o.get_field("alertNotifications"),
             alerts_to_admins: o.get_field("alertsToAdmins"),
             email: o.get_field("email"),

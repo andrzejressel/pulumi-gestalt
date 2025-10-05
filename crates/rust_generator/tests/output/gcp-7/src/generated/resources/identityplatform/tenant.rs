@@ -83,6 +83,9 @@ pub mod tenant {
     }
     #[allow(dead_code)]
     pub struct TenantResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to allow email/password user authentication.
         pub allow_password_signup: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Whether authentication is disabled for the tenant. If true, the users under
@@ -151,6 +154,7 @@ pub mod tenant {
         };
         let o = context.register_resource(request);
         TenantResult {
+            id: o.get_field("id"),
             allow_password_signup: o.get_field("allowPasswordSignup"),
             disable_auth: o.get_field("disableAuth"),
             display_name: o.get_field("displayName"),

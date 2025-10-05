@@ -67,6 +67,9 @@ pub mod project {
     }
     #[allow(dead_code)]
     pub struct ProjectResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The GCP project display name
         pub display_name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the project in which the resource belongs.
@@ -100,6 +103,7 @@ pub mod project {
         };
         let o = context.register_resource(request);
         ProjectResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             project: o.get_field("project"),
             project_number: o.get_field("projectNumber"),

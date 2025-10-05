@@ -48,6 +48,9 @@ pub mod portfolio {
     }
     #[allow(dead_code)]
     pub struct PortfolioResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub arn: pulumi_gestalt_rust::Output<String>,
         pub created_time: pulumi_gestalt_rust::Output<String>,
         /// Description of the portfolio
@@ -105,6 +108,7 @@ pub mod portfolio {
         };
         let o = context.register_resource(request);
         PortfolioResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             created_time: o.get_field("createdTime"),
             description: o.get_field("description"),

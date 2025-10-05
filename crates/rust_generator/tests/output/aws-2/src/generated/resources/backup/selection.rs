@@ -187,6 +187,9 @@ pub mod selection {
     }
     #[allow(dead_code)]
     pub struct SelectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of conditions that you define to assign resources to your backup plans using tags.
         pub conditions: pulumi_gestalt_rust::Output<
             Vec<super::super::types::backup::SelectionCondition>,
@@ -261,6 +264,7 @@ pub mod selection {
         };
         let o = context.register_resource(request);
         SelectionResult {
+            id: o.get_field("id"),
             conditions: o.get_field("conditions"),
             iam_role_arn: o.get_field("iamRoleArn"),
             name: o.get_field("name"),

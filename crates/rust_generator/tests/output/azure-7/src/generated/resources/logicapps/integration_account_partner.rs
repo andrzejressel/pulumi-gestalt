@@ -76,6 +76,9 @@ pub mod integration_account_partner {
     }
     #[allow(dead_code)]
     pub struct IntegrationAccountPartnerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `business_identity` block as documented below.
         pub business_identities: pulumi_gestalt_rust::Output<
             Vec<
@@ -139,6 +142,7 @@ pub mod integration_account_partner {
         };
         let o = context.register_resource(request);
         IntegrationAccountPartnerResult {
+            id: o.get_field("id"),
             business_identities: o.get_field("businessIdentities"),
             integration_account_name: o.get_field("integrationAccountName"),
             metadata: o.get_field("metadata"),

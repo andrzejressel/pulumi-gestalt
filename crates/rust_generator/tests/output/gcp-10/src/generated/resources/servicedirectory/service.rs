@@ -80,6 +80,9 @@ pub mod service {
     }
     #[allow(dead_code)]
     pub struct ServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Metadata for the service. This data can be consumed
         /// by service clients. The entire metadata dictionary may contain
         /// up to 2000 characters, spread across all key-value pairs.
@@ -134,6 +137,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
+            id: o.get_field("id"),
             metadata: o.get_field("metadata"),
             name: o.get_field("name"),
             namespace: o.get_field("namespace"),

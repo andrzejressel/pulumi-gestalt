@@ -125,6 +125,9 @@ pub mod invocation {
     }
     #[allow(dead_code)]
     pub struct InvocationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the lambda function.
         pub function_name: pulumi_gestalt_rust::Output<String>,
         /// JSON payload to the lambda function.
@@ -193,6 +196,7 @@ pub mod invocation {
         };
         let o = context.register_resource(request);
         InvocationResult {
+            id: o.get_field("id"),
             function_name: o.get_field("functionName"),
             input: o.get_field("input"),
             lifecycle_scope: o.get_field("lifecycleScope"),

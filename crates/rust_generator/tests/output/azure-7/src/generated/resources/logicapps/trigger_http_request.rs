@@ -71,6 +71,9 @@ pub mod trigger_http_request {
     }
     #[allow(dead_code)]
     pub struct TriggerHttpRequestResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The URL of the Trigger within the Logic App Workflow. For use with certain resources like monitor_action_group and security_center_automation.
         pub callback_url: pulumi_gestalt_rust::Output<String>,
         /// Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created.
@@ -133,6 +136,7 @@ pub mod trigger_http_request {
         };
         let o = context.register_resource(request);
         TriggerHttpRequestResult {
+            id: o.get_field("id"),
             callback_url: o.get_field("callbackUrl"),
             logic_app_id: o.get_field("logicAppId"),
             method: o.get_field("method"),

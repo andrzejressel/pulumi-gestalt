@@ -31,6 +31,9 @@ pub mod domain {
     }
     #[allow(dead_code)]
     pub struct DomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the Lightsail domain
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The name of the Lightsail domain to manage
@@ -61,6 +64,7 @@ pub mod domain {
         };
         let o = context.register_resource(request);
         DomainResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             domain_name: o.get_field("domainName"),
         }

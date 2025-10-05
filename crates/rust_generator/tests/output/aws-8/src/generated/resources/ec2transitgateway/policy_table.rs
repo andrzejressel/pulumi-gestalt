@@ -36,6 +36,9 @@ pub mod policy_table {
     }
     #[allow(dead_code)]
     pub struct PolicyTableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// EC2 Transit Gateway Policy Table Amazon Resource Name (ARN).
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The state of the EC2 Transit Gateway Policy Table.
@@ -81,6 +84,7 @@ pub mod policy_table {
         };
         let o = context.register_resource(request);
         PolicyTableResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             state: o.get_field("state"),
             tags: o.get_field("tags"),

@@ -234,6 +234,9 @@ pub mod v_2_vm {
     }
     #[allow(dead_code)]
     pub struct V2VmResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AccleratorConfig for the TPU Node. `accelerator_config` cannot be used at the same time
         /// as `accelerator_type`. If neither is specified, `accelerator_type` defaults to 'v2-8'.
         /// Structure is documented below.
@@ -448,6 +451,7 @@ pub mod v_2_vm {
         };
         let o = context.register_resource(request);
         V2VmResult {
+            id: o.get_field("id"),
             accelerator_config: o.get_field("acceleratorConfig"),
             accelerator_type: o.get_field("acceleratorType"),
             api_version: o.get_field("apiVersion"),

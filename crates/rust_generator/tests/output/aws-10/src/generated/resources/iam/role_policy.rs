@@ -68,6 +68,9 @@ pub mod role_policy {
     }
     #[allow(dead_code)]
     pub struct RolePolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the role policy. If omitted, this provider will
         /// assign a random, unique name.
         pub name: pulumi_gestalt_rust::Output<String>,
@@ -119,6 +122,7 @@ pub mod role_policy {
         };
         let o = context.register_resource(request);
         RolePolicyResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             name_prefix: o.get_field("namePrefix"),
             policy: o.get_field("policy"),

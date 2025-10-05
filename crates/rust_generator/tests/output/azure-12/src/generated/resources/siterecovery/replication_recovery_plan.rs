@@ -62,6 +62,9 @@ pub mod replication_recovery_plan {
     }
     #[allow(dead_code)]
     pub struct ReplicationRecoveryPlanResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `azure_to_azure_settings` block as defined below.
         pub azure_to_azure_settings: pulumi_gestalt_rust::Output<
             Option<
@@ -168,6 +171,7 @@ pub mod replication_recovery_plan {
         };
         let o = context.register_resource(request);
         ReplicationRecoveryPlanResult {
+            id: o.get_field("id"),
             azure_to_azure_settings: o.get_field("azureToAzureSettings"),
             boot_recovery_groups: o.get_field("bootRecoveryGroups"),
             failover_recovery_group: o.get_field("failoverRecoveryGroup"),

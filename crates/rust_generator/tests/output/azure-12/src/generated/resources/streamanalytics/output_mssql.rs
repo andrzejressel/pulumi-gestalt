@@ -103,6 +103,9 @@ pub mod output_mssql {
     }
     #[allow(dead_code)]
     pub struct OutputMssqlResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The authentication mode for the Stream Output. Possible values are `Msi` and `ConnectionString`. Defaults to `ConnectionString`.
         pub authentication_mode: pulumi_gestalt_rust::Output<Option<String>>,
         /// The MS SQL database name where the reference table exists. Changing this forces a new resource to be created.
@@ -203,6 +206,7 @@ pub mod output_mssql {
         };
         let o = context.register_resource(request);
         OutputMssqlResult {
+            id: o.get_field("id"),
             authentication_mode: o.get_field("authenticationMode"),
             database: o.get_field("database"),
             max_batch_count: o.get_field("maxBatchCount"),

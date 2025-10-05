@@ -138,6 +138,9 @@ pub mod vpn_connection {
     }
     #[allow(dead_code)]
     pub struct VpnConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The canonical Cluster name to connect to. It is in the form of projects/{project}/locations/{location}/clusters/{cluster}.
         pub cluster: pulumi_gestalt_rust::Output<String>,
         /// The time when the VPN connection was created.
@@ -261,6 +264,7 @@ pub mod vpn_connection {
         };
         let o = context.register_resource(request);
         VpnConnectionResult {
+            id: o.get_field("id"),
             cluster: o.get_field("cluster"),
             create_time: o.get_field("createTime"),
             details: o.get_field("details"),

@@ -52,6 +52,9 @@ pub mod keyvaluestore_key {
     }
     #[allow(dead_code)]
     pub struct KeyvaluestoreKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Key to put.
         pub key: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Key Value Store.
@@ -96,6 +99,7 @@ pub mod keyvaluestore_key {
         };
         let o = context.register_resource(request);
         KeyvaluestoreKeyResult {
+            id: o.get_field("id"),
             key: o.get_field("key"),
             key_value_store_arn: o.get_field("keyValueStoreArn"),
             total_size_in_bytes: o.get_field("totalSizeInBytes"),

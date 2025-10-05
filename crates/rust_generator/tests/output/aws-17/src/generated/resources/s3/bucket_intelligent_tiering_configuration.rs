@@ -83,6 +83,9 @@ pub mod bucket_intelligent_tiering_configuration {
     }
     #[allow(dead_code)]
     pub struct BucketIntelligentTieringConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the bucket this intelligent tiering configuration is associated with.
         pub bucket: pulumi_gestalt_rust::Output<String>,
         /// Bucket filter. The configuration only includes objects that meet the filter's criteria (documented below).
@@ -144,6 +147,7 @@ pub mod bucket_intelligent_tiering_configuration {
         };
         let o = context.register_resource(request);
         BucketIntelligentTieringConfigurationResult {
+            id: o.get_field("id"),
             bucket: o.get_field("bucket"),
             filter: o.get_field("filter"),
             name: o.get_field("name"),

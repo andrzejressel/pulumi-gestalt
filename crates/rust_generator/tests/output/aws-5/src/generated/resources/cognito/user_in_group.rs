@@ -64,6 +64,9 @@ pub mod user_in_group {
     }
     #[allow(dead_code)]
     pub struct UserInGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the group to which the user is to be added.
         pub group_name: pulumi_gestalt_rust::Output<String>,
         /// The user pool ID of the user and group.
@@ -106,6 +109,7 @@ pub mod user_in_group {
         };
         let o = context.register_resource(request);
         UserInGroupResult {
+            id: o.get_field("id"),
             group_name: o.get_field("groupName"),
             user_pool_id: o.get_field("userPoolId"),
             username: o.get_field("username"),

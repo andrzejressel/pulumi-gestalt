@@ -36,6 +36,9 @@ pub mod organization_configuration {
     }
     #[allow(dead_code)]
     pub struct OrganizationConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// When this setting is enabled, all new accounts that are created in, or added to, the organization are added as a member accounts of the organization’s Detective delegated administrator and Detective is enabled in that AWS Region.
         pub auto_enable: pulumi_gestalt_rust::Output<bool>,
         /// ARN of the behavior graph.
@@ -72,6 +75,7 @@ pub mod organization_configuration {
         };
         let o = context.register_resource(request);
         OrganizationConfigurationResult {
+            id: o.get_field("id"),
             auto_enable: o.get_field("autoEnable"),
             graph_arn: o.get_field("graphArn"),
         }

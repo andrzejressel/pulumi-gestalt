@@ -43,6 +43,9 @@ pub mod random_shuffle {
     }
     #[allow(dead_code)]
     pub struct RandomShuffleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The list of strings to shuffle.
         pub inputs: pulumi_gestalt_rust::Output<Vec<String>>,
         /// Arbitrary map of values that, when changed, will trigger recreation of resource. See the main provider documentation for more information.
@@ -96,6 +99,7 @@ pub mod random_shuffle {
         };
         let o = context.register_resource(request);
         RandomShuffleResult {
+            id: o.get_field("id"),
             inputs: o.get_field("inputs"),
             keepers: o.get_field("keepers"),
             result_count: o.get_field("resultCount"),

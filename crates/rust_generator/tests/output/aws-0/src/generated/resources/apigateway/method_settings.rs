@@ -133,6 +133,9 @@ pub mod method_settings {
     }
     #[allow(dead_code)]
     pub struct MethodSettingsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Method path defined as `{resource_path}/{http_method}` for an individual method override, or `*/*` for overriding all methods in the stage. Ensure to trim any leading forward slashes in the path (e.g., `trimprefix(aws_api_gateway_resource.example.path, "/")`).
         pub method_path: pulumi_gestalt_rust::Output<String>,
         /// ID of the REST API
@@ -184,6 +187,7 @@ pub mod method_settings {
         };
         let o = context.register_resource(request);
         MethodSettingsResult {
+            id: o.get_field("id"),
             method_path: o.get_field("methodPath"),
             rest_api: o.get_field("restApi"),
             settings: o.get_field("settings"),

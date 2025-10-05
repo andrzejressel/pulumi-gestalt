@@ -63,6 +63,9 @@ pub mod application_assignment {
     }
     #[allow(dead_code)]
     pub struct ApplicationAssignmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the application.
         pub application_arn: pulumi_gestalt_rust::Output<String>,
         /// An identifier for an object in IAM Identity Center, such as a user or group.
@@ -105,6 +108,7 @@ pub mod application_assignment {
         };
         let o = context.register_resource(request);
         ApplicationAssignmentResult {
+            id: o.get_field("id"),
             application_arn: o.get_field("applicationArn"),
             principal_id: o.get_field("principalId"),
             principal_type: o.get_field("principalType"),

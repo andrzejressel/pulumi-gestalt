@@ -84,6 +84,9 @@ pub mod fulfillment {
     }
     #[allow(dead_code)]
     pub struct FulfillmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The human-readable name of the fulfillment, unique within the agent.
         ///
         ///
@@ -153,6 +156,7 @@ pub mod fulfillment {
         };
         let o = context.register_resource(request);
         FulfillmentResult {
+            id: o.get_field("id"),
             display_name: o.get_field("displayName"),
             enabled: o.get_field("enabled"),
             features: o.get_field("features"),

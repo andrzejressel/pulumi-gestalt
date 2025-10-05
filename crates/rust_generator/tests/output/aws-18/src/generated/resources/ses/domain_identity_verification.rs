@@ -45,6 +45,9 @@ pub mod domain_identity_verification {
     }
     #[allow(dead_code)]
     pub struct DomainIdentityVerificationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the domain identity.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The domain name of the SES domain identity to verify.
@@ -76,6 +79,7 @@ pub mod domain_identity_verification {
         };
         let o = context.register_resource(request);
         DomainIdentityVerificationResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             domain: o.get_field("domain"),
         }

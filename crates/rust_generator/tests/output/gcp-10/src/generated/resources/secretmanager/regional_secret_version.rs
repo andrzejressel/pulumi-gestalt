@@ -146,6 +146,9 @@ pub mod regional_secret_version {
     }
     #[allow(dead_code)]
     pub struct RegionalSecretVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The time at which the regional secret version was created.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// The customer-managed encryption configuration of the regional secret.
@@ -232,6 +235,7 @@ pub mod regional_secret_version {
         };
         let o = context.register_resource(request);
         RegionalSecretVersionResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             customer_managed_encryptions: o.get_field("customerManagedEncryptions"),
             deletion_policy: o.get_field("deletionPolicy"),

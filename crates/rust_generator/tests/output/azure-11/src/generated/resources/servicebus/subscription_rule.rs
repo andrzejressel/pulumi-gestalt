@@ -130,6 +130,9 @@ pub mod subscription_rule {
     }
     #[allow(dead_code)]
     pub struct SubscriptionRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Represents set of actions written in SQL language-based syntax that is performed against a BrokeredMessage.
         pub action: pulumi_gestalt_rust::Output<Option<String>>,
         /// A `correlation_filter` block as documented below to be evaluated against a BrokeredMessage. Required when `filter_type` is set to `CorrelationFilter`.
@@ -196,6 +199,7 @@ pub mod subscription_rule {
         };
         let o = context.register_resource(request);
         SubscriptionRuleResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             correlation_filter: o.get_field("correlationFilter"),
             filter_type: o.get_field("filterType"),

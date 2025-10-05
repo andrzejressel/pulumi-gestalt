@@ -39,6 +39,9 @@ pub mod cluster_snapshot {
     }
     #[allow(dead_code)]
     pub struct ClusterSnapshotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// List of EC2 Availability Zones that instances in the DocumentDB cluster snapshot can be restored in.
         pub availability_zones: pulumi_gestalt_rust::Output<Vec<String>>,
         /// The DocumentDB Cluster Identifier from which to take the snapshot.
@@ -98,6 +101,7 @@ pub mod cluster_snapshot {
         };
         let o = context.register_resource(request);
         ClusterSnapshotResult {
+            id: o.get_field("id"),
             availability_zones: o.get_field("availabilityZones"),
             db_cluster_identifier: o.get_field("dbClusterIdentifier"),
             db_cluster_snapshot_arn: o.get_field("dbClusterSnapshotArn"),

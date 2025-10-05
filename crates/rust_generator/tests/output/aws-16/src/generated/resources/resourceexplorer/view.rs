@@ -68,6 +68,9 @@ pub mod view {
     }
     #[allow(dead_code)]
     pub struct ViewResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the Resource Explorer view.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether the view is the [_default view_](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-about.html#manage-views-about-default) for the AWS Region. Default: `false`.
@@ -143,6 +146,7 @@ pub mod view {
         };
         let o = context.register_resource(request);
         ViewResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             default_view: o.get_field("defaultView"),
             filters: o.get_field("filters"),

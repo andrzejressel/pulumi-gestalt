@@ -174,6 +174,9 @@ pub mod packet_mirroring {
     }
     #[allow(dead_code)]
     pub struct PacketMirroringResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Forwarding Rule resource (of type load_balancing_scheme=INTERNAL)
         /// that will be used as collector for mirrored traffic. The
         /// specified forwarding rule must have is_mirroring_collector
@@ -274,6 +277,7 @@ pub mod packet_mirroring {
         };
         let o = context.register_resource(request);
         PacketMirroringResult {
+            id: o.get_field("id"),
             collector_ilb: o.get_field("collectorIlb"),
             description: o.get_field("description"),
             filter: o.get_field("filter"),

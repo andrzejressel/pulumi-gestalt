@@ -32,6 +32,9 @@ pub mod split_tunnel {
     }
     #[allow(dead_code)]
     pub struct SplitTunnelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// The mode of the split tunnel policy. Available values: `include`, `exclude`.
@@ -81,6 +84,7 @@ pub mod split_tunnel {
         };
         let o = context.register_resource(request);
         SplitTunnelResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             mode: o.get_field("mode"),
             policy_id: o.get_field("policyId"),

@@ -85,6 +85,9 @@ pub mod monitor {
     }
     #[allow(dead_code)]
     pub struct MonitorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The kind of managed identity assigned to this resource.  A `identity` block as defined below.
         pub identity: pulumi_gestalt_rust::Output<
             super::super::types::dynatrace::MonitorIdentity,
@@ -179,6 +182,7 @@ pub mod monitor {
         };
         let o = context.register_resource(request);
         MonitorResult {
+            id: o.get_field("id"),
             identity: o.get_field("identity"),
             location: o.get_field("location"),
             marketplace_subscription: o.get_field("marketplaceSubscription"),

@@ -176,6 +176,9 @@ pub mod automation {
     }
     #[allow(dead_code)]
     pub struct AutomationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. Annotations
         /// must meet the following constraints: * Annotations are key/value pairs. * Valid annotation keys have two segments: an
         /// optional prefix and name, separated by a slash ('/'). * The name segment is required and must be 63 characters or less,
@@ -317,6 +320,7 @@ pub mod automation {
         };
         let o = context.register_resource(request);
         AutomationResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             create_time: o.get_field("createTime"),
             delivery_pipeline: o.get_field("deliveryPipeline"),

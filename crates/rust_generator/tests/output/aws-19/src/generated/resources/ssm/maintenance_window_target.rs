@@ -108,6 +108,9 @@ pub mod maintenance_window_target {
     }
     #[allow(dead_code)]
     pub struct MaintenanceWindowTargetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The description of the maintenance window target.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The name of the maintenance window target.
@@ -174,6 +177,7 @@ pub mod maintenance_window_target {
         };
         let o = context.register_resource(request);
         MaintenanceWindowTargetResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             name: o.get_field("name"),
             owner_information: o.get_field("ownerInformation"),

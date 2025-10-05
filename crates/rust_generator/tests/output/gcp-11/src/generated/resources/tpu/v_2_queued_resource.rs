@@ -93,6 +93,9 @@ pub mod v_2_queued_resource {
     }
     #[allow(dead_code)]
     pub struct V2QueuedResourceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The immutable name of the Queued Resource.
         ///
         ///
@@ -149,6 +152,7 @@ pub mod v_2_queued_resource {
         };
         let o = context.register_resource(request);
         V2QueuedResourceResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             project: o.get_field("project"),
             tpu: o.get_field("tpu"),

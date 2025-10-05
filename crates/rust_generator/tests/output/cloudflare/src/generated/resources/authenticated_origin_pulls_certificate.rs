@@ -57,6 +57,9 @@ pub mod authenticated_origin_pulls_certificate {
     }
     #[allow(dead_code)]
     pub struct AuthenticatedOriginPullsCertificateResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The public client certificate. **Modifying this attribute will force creation of a new resource.**
         pub certificate: pulumi_gestalt_rust::Output<String>,
         /// **Modifying this attribute will force creation of a new resource.**
@@ -119,6 +122,7 @@ pub mod authenticated_origin_pulls_certificate {
         };
         let o = context.register_resource(request);
         AuthenticatedOriginPullsCertificateResult {
+            id: o.get_field("id"),
             certificate: o.get_field("certificate"),
             expires_on: o.get_field("expiresOn"),
             issuer: o.get_field("issuer"),

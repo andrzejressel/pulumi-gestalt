@@ -56,6 +56,9 @@ pub mod data_cells_filter {
     }
     #[allow(dead_code)]
     pub struct DataCellsFilterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Information about the data cells filter. See Table Data below for details.
         pub table_data: pulumi_gestalt_rust::Output<
             Option<super::super::types::lakeformation::DataCellsFilterTableData>,
@@ -94,6 +97,7 @@ pub mod data_cells_filter {
         };
         let o = context.register_resource(request);
         DataCellsFilterResult {
+            id: o.get_field("id"),
             table_data: o.get_field("tableData"),
             timeouts: o.get_field("timeouts"),
         }

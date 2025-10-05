@@ -89,6 +89,9 @@ pub mod snapshot_copy {
     }
     #[allow(dead_code)]
     pub struct SnapshotCopyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the allocated storage size in gigabytes (GB).
         pub allocated_storage: pulumi_gestalt_rust::Output<i32>,
         /// Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot.
@@ -216,6 +219,7 @@ pub mod snapshot_copy {
         };
         let o = context.register_resource(request);
         SnapshotCopyResult {
+            id: o.get_field("id"),
             allocated_storage: o.get_field("allocatedStorage"),
             availability_zone: o.get_field("availabilityZone"),
             copy_tags: o.get_field("copyTags"),

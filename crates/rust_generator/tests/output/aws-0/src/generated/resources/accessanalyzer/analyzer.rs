@@ -73,6 +73,9 @@ pub mod analyzer {
     }
     #[allow(dead_code)]
     pub struct AnalyzerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Name of the Analyzer.
         ///
         /// The following arguments are optional:
@@ -134,6 +137,7 @@ pub mod analyzer {
         };
         let o = context.register_resource(request);
         AnalyzerResult {
+            id: o.get_field("id"),
             analyzer_name: o.get_field("analyzerName"),
             arn: o.get_field("arn"),
             configuration: o.get_field("configuration"),

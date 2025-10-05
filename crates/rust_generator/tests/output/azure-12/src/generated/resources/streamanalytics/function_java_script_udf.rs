@@ -72,6 +72,9 @@ pub mod function_java_script_udf {
     }
     #[allow(dead_code)]
     pub struct FunctionJavaScriptUDFResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `input` blocks as defined below.
         pub inputs: pulumi_gestalt_rust::Output<
             Vec<super::super::types::streamanalytics::FunctionJavaScriptUdfInput>,
@@ -142,6 +145,7 @@ pub mod function_java_script_udf {
         };
         let o = context.register_resource(request);
         FunctionJavaScriptUDFResult {
+            id: o.get_field("id"),
             inputs: o.get_field("inputs"),
             name: o.get_field("name"),
             output: o.get_field("output"),

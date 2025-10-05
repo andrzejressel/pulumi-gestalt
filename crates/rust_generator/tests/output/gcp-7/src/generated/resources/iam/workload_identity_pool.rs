@@ -102,6 +102,9 @@ pub mod workload_identity_pool {
     }
     #[allow(dead_code)]
     pub struct WorkloadIdentityPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description of the pool. Cannot exceed 256 characters.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// Whether the pool is disabled. You cannot use a disabled pool to exchange tokens, or use
@@ -181,6 +184,7 @@ pub mod workload_identity_pool {
         };
         let o = context.register_resource(request);
         WorkloadIdentityPoolResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             disabled: o.get_field("disabled"),
             display_name: o.get_field("displayName"),

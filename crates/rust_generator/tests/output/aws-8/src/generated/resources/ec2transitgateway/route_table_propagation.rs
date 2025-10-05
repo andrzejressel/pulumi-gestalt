@@ -43,6 +43,9 @@ pub mod route_table_propagation {
     }
     #[allow(dead_code)]
     pub struct RouteTablePropagationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the resource
         pub resource_id: pulumi_gestalt_rust::Output<String>,
         /// Type of the resource
@@ -87,6 +90,7 @@ pub mod route_table_propagation {
         };
         let o = context.register_resource(request);
         RouteTablePropagationResult {
+            id: o.get_field("id"),
             resource_id: o.get_field("resourceId"),
             resource_type: o.get_field("resourceType"),
             transit_gateway_attachment_id: o.get_field("transitGatewayAttachmentId"),

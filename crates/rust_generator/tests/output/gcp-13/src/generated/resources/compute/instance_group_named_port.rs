@@ -133,6 +133,9 @@ pub mod instance_group_named_port {
     }
     #[allow(dead_code)]
     pub struct InstanceGroupNamedPortResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the instance group.
         ///
         ///
@@ -194,6 +197,7 @@ pub mod instance_group_named_port {
         };
         let o = context.register_resource(request);
         InstanceGroupNamedPortResult {
+            id: o.get_field("id"),
             group: o.get_field("group"),
             name: o.get_field("name"),
             port: o.get_field("port"),

@@ -100,6 +100,9 @@ pub mod reservation {
     }
     #[allow(dead_code)]
     pub struct ReservationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The configuration parameters for the auto scaling feature.
         /// Structure is documented below.
         pub autoscale: pulumi_gestalt_rust::Output<
@@ -188,6 +191,7 @@ pub mod reservation {
         };
         let o = context.register_resource(request);
         ReservationResult {
+            id: o.get_field("id"),
             autoscale: o.get_field("autoscale"),
             concurrency: o.get_field("concurrency"),
             edition: o.get_field("edition"),

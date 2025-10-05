@@ -44,6 +44,9 @@ pub mod trigger {
     }
     #[allow(dead_code)]
     pub struct TriggerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// System-generated unique identifier.
         pub configuration_id: pulumi_gestalt_rust::Output<String>,
         /// The name for the repository. This needs to be less than 100 characters.
@@ -83,6 +86,7 @@ pub mod trigger {
         };
         let o = context.register_resource(request);
         TriggerResult {
+            id: o.get_field("id"),
             configuration_id: o.get_field("configurationId"),
             repository_name: o.get_field("repositoryName"),
             triggers: o.get_field("triggers"),

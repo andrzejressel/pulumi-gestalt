@@ -55,6 +55,9 @@ pub mod redrive_policy {
     }
     #[allow(dead_code)]
     pub struct RedrivePolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The URL of the SQS Queue to which to attach the policy
         pub queue_url: pulumi_gestalt_rust::Output<String>,
         /// The JSON redrive policy for the SQS queue. Accepts two key/val pairs: `deadLetterTargetArn` and `maxReceiveCount`. Learn more in the [Amazon SQS dead-letter queues documentation](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html).
@@ -90,6 +93,7 @@ pub mod redrive_policy {
         };
         let o = context.register_resource(request);
         RedrivePolicyResult {
+            id: o.get_field("id"),
             queue_url: o.get_field("queueUrl"),
             redrive_policy: o.get_field("redrivePolicy"),
         }

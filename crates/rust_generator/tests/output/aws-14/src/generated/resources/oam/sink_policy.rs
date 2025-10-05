@@ -57,6 +57,9 @@ pub mod sink_policy {
     }
     #[allow(dead_code)]
     pub struct SinkPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Sink.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.
@@ -96,6 +99,7 @@ pub mod sink_policy {
         };
         let o = context.register_resource(request);
         SinkPolicyResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             policy: o.get_field("policy"),
             sink_id: o.get_field("sinkId"),

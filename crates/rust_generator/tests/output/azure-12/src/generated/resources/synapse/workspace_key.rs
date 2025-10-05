@@ -143,6 +143,9 @@ pub mod workspace_key {
     }
     #[allow(dead_code)]
     pub struct WorkspaceKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies if the workspace should be encrypted with this key.
         ///
         /// > **Note:** Only one key can actively encrypt a workspace. When performing a key rotation, setting a new key as the active key will disable existing keys.
@@ -200,6 +203,7 @@ pub mod workspace_key {
         };
         let o = context.register_resource(request);
         WorkspaceKeyResult {
+            id: o.get_field("id"),
             active: o.get_field("active"),
             customer_managed_key_name: o.get_field("customerManagedKeyName"),
             customer_managed_key_versionless_id: o

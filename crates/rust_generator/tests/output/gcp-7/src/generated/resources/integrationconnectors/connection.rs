@@ -319,6 +319,9 @@ pub mod connection {
     }
     #[allow(dead_code)]
     pub struct ConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// authConfig for the connection.
         /// Structure is documented below.
         pub auth_config: pulumi_gestalt_rust::Output<
@@ -543,6 +546,7 @@ pub mod connection {
         };
         let o = context.register_resource(request);
         ConnectionResult {
+            id: o.get_field("id"),
             auth_config: o.get_field("authConfig"),
             config_variables: o.get_field("configVariables"),
             connection_revision: o.get_field("connectionRevision"),

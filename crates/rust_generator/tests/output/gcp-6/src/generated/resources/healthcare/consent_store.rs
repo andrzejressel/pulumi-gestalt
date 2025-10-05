@@ -130,6 +130,9 @@ pub mod consent_store {
     }
     #[allow(dead_code)]
     pub struct ConsentStoreResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifies the dataset addressed by this request. Must be in the format
         /// 'projects/{project}/locations/{location}/datasets/{dataset}'
         ///
@@ -215,6 +218,7 @@ pub mod consent_store {
         };
         let o = context.register_resource(request);
         ConsentStoreResult {
+            id: o.get_field("id"),
             dataset: o.get_field("dataset"),
             default_consent_ttl: o.get_field("defaultConsentTtl"),
             effective_labels: o.get_field("effectiveLabels"),

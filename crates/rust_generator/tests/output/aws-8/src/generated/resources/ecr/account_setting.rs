@@ -39,6 +39,9 @@ pub mod account_setting {
     }
     #[allow(dead_code)]
     pub struct AccountSettingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the ECR Scan Type. This should be `BASIC_SCAN_TYPE_VERSION`.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The value of the ECR Scan Type. This can be `AWS_NATIVE` or `CLAIR`.
@@ -74,6 +77,7 @@ pub mod account_setting {
         };
         let o = context.register_resource(request);
         AccountSettingResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             value: o.get_field("value"),
         }

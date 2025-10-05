@@ -51,6 +51,9 @@ pub mod byte_match_set {
     }
     #[allow(dead_code)]
     pub struct ByteMatchSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the bytes (typically a string that corresponds
         /// with ASCII characters) that you want to search for in web requests,
         /// the location in requests that you want to search, and other settings.
@@ -90,6 +93,7 @@ pub mod byte_match_set {
         };
         let o = context.register_resource(request);
         ByteMatchSetResult {
+            id: o.get_field("id"),
             byte_match_tuples: o.get_field("byteMatchTuples"),
             name: o.get_field("name"),
         }

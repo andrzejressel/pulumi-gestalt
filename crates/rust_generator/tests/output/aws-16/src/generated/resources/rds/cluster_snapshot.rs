@@ -47,6 +47,9 @@ pub mod cluster_snapshot {
     }
     #[allow(dead_code)]
     pub struct ClusterSnapshotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Allocated storage size in gigabytes (GB).
         pub allocated_storage: pulumi_gestalt_rust::Output<i32>,
         /// List of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
@@ -130,6 +133,7 @@ pub mod cluster_snapshot {
         };
         let o = context.register_resource(request);
         ClusterSnapshotResult {
+            id: o.get_field("id"),
             allocated_storage: o.get_field("allocatedStorage"),
             availability_zones: o.get_field("availabilityZones"),
             db_cluster_identifier: o.get_field("dbClusterIdentifier"),

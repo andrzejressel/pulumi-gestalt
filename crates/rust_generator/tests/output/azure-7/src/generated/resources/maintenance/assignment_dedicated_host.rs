@@ -79,6 +79,9 @@ pub mod assignment_dedicated_host {
     }
     #[allow(dead_code)]
     pub struct AssignmentDedicatedHostResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Dedicated Host ID to which the Maintenance Configuration will be assigned. Changing this forces a new resource to be created.
         pub dedicated_host_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
@@ -124,6 +127,7 @@ pub mod assignment_dedicated_host {
         };
         let o = context.register_resource(request);
         AssignmentDedicatedHostResult {
+            id: o.get_field("id"),
             dedicated_host_id: o.get_field("dedicatedHostId"),
             location: o.get_field("location"),
             maintenance_configuration_id: o.get_field("maintenanceConfigurationId"),

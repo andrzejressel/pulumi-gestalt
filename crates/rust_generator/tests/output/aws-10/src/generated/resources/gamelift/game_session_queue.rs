@@ -71,6 +71,9 @@ pub mod game_session_queue {
     }
     #[allow(dead_code)]
     pub struct GameSessionQueueResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Game Session Queue ARN.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Information to be added to all events that are related to this game session queue.
@@ -155,6 +158,7 @@ pub mod game_session_queue {
         };
         let o = context.register_resource(request);
         GameSessionQueueResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             custom_event_data: o.get_field("customEventData"),
             destinations: o.get_field("destinations"),

@@ -133,6 +133,9 @@ pub mod postgresql_cluster {
     }
     #[allow(dead_code)]
     pub struct PostgresqlClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The password of the administrator login. This is required when `source_resource_id` is not set.
         pub administrator_login_password: pulumi_gestalt_rust::Output<Option<String>>,
         /// The citus extension version on the Azure Cosmos DB for PostgreSQL Cluster. Possible values are `8.3`, `9.0`, `9.1`, `9.2`, `9.3`, `9.4`, `9.5`, `10.0`, `10.1`, `10.2`, `11.0`, `11.1`, `11.2`, `11.3` and `12.1`.
@@ -347,6 +350,7 @@ pub mod postgresql_cluster {
         };
         let o = context.register_resource(request);
         PostgresqlClusterResult {
+            id: o.get_field("id"),
             administrator_login_password: o.get_field("administratorLoginPassword"),
             citus_version: o.get_field("citusVersion"),
             coordinator_public_ip_access_enabled: o

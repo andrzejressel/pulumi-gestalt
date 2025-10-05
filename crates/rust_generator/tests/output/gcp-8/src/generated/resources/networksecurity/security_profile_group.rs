@@ -85,6 +85,9 @@ pub mod security_profile_group {
     }
     #[allow(dead_code)]
     pub struct SecurityProfileGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Time the security profile group was created in UTC.
         pub create_time: pulumi_gestalt_rust::Output<String>,
         /// An optional description of the profile. The Max length is 512 characters.
@@ -178,6 +181,7 @@ pub mod security_profile_group {
         };
         let o = context.register_resource(request);
         SecurityProfileGroupResult {
+            id: o.get_field("id"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),
             effective_labels: o.get_field("effectiveLabels"),

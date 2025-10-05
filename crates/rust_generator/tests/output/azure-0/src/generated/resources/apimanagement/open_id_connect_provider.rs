@@ -81,6 +81,9 @@ pub mod open_id_connect_provider {
     }
     #[allow(dead_code)]
     pub struct OpenIdConnectProviderResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the API Management Service in which this OpenID Connect Provider should be created. Changing this forces a new resource to be created.
         pub api_management_name: pulumi_gestalt_rust::Output<String>,
         /// The Client ID used for the Client Application.
@@ -159,6 +162,7 @@ pub mod open_id_connect_provider {
         };
         let o = context.register_resource(request);
         OpenIdConnectProviderResult {
+            id: o.get_field("id"),
             api_management_name: o.get_field("apiManagementName"),
             client_id: o.get_field("clientId"),
             client_secret: o.get_field("clientSecret"),

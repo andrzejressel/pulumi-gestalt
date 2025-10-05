@@ -32,6 +32,9 @@ pub mod global_settings {
     }
     #[allow(dead_code)]
     pub struct GlobalSettingsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of resources along with the opt-in preferences for the account.
         pub global_settings: pulumi_gestalt_rust::Output<
             std::collections::HashMap<String, String>,
@@ -62,6 +65,7 @@ pub mod global_settings {
         };
         let o = context.register_resource(request);
         GlobalSettingsResult {
+            id: o.get_field("id"),
             global_settings: o.get_field("globalSettings"),
         }
     }

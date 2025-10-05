@@ -99,6 +99,9 @@ pub mod network_acl_rule {
     }
     #[allow(dead_code)]
     pub struct NetworkAclRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The network range to allow or deny, in CIDR notation (for example 172.16.0.0/24 ).
         pub cidr_block: pulumi_gestalt_rust::Output<Option<String>>,
         /// Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet). Default `false`.
@@ -203,6 +206,7 @@ pub mod network_acl_rule {
         };
         let o = context.register_resource(request);
         NetworkAclRuleResult {
+            id: o.get_field("id"),
             cidr_block: o.get_field("cidrBlock"),
             egress: o.get_field("egress"),
             from_port: o.get_field("fromPort"),

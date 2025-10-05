@@ -122,6 +122,9 @@ pub mod connected_registry {
     }
     #[allow(dead_code)]
     pub struct ConnectedRegistryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Should the log auditing be enabled?
         pub audit_log_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies a list of IDs of Container Registry Tokens, which are meant to be used by the clients to connect to the Connected Registry.
@@ -235,6 +238,7 @@ pub mod connected_registry {
         };
         let o = context.register_resource(request);
         ConnectedRegistryResult {
+            id: o.get_field("id"),
             audit_log_enabled: o.get_field("auditLogEnabled"),
             client_token_ids: o.get_field("clientTokenIds"),
             container_registry_id: o.get_field("containerRegistryId"),

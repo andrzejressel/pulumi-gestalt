@@ -33,6 +33,9 @@ pub mod image_block_public_access {
     }
     #[allow(dead_code)]
     pub struct ImageBlockPublicAccessResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The state of block public access for AMIs at the account level in the configured AWS Region. Valid values: `unblocked` and `block-new-sharing`.
         pub state: pulumi_gestalt_rust::Output<String>,
     }
@@ -61,6 +64,7 @@ pub mod image_block_public_access {
         };
         let o = context.register_resource(request);
         ImageBlockPublicAccessResult {
+            id: o.get_field("id"),
             state: o.get_field("state"),
         }
     }

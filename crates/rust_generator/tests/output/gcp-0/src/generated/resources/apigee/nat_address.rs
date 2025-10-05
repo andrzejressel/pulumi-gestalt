@@ -225,6 +225,9 @@ pub mod nat_address {
     }
     #[allow(dead_code)]
     pub struct NatAddressResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Flag that specifies whether the reserved NAT address should be activate.
         pub activate: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The Apigee instance associated with the Apigee environment,
@@ -275,6 +278,7 @@ pub mod nat_address {
         };
         let o = context.register_resource(request);
         NatAddressResult {
+            id: o.get_field("id"),
             activate: o.get_field("activate"),
             instance_id: o.get_field("instanceId"),
             ip_address: o.get_field("ipAddress"),

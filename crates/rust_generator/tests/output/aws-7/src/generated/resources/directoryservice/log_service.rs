@@ -61,6 +61,9 @@ pub mod log_service {
     }
     #[allow(dead_code)]
     pub struct LogServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of directory.
         pub directory_id: pulumi_gestalt_rust::Output<String>,
         /// Name of the cloudwatch log group to which the logs should be published. The log group should be already created and the directory service principal should be provided with required permission to create stream and publish logs. Changing this value would delete the current subscription and create a new one. A directory can only have one log subscription at a time.
@@ -96,6 +99,7 @@ pub mod log_service {
         };
         let o = context.register_resource(request);
         LogServiceResult {
+            id: o.get_field("id"),
             directory_id: o.get_field("directoryId"),
             log_group_name: o.get_field("logGroupName"),
         }

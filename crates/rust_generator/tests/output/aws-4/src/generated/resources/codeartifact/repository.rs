@@ -132,6 +132,9 @@ pub mod repository {
     }
     #[allow(dead_code)]
     pub struct RepositoryResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account number of the AWS account that manages the repository.
         pub administrator_account: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the repository.
@@ -216,6 +219,7 @@ pub mod repository {
         };
         let o = context.register_resource(request);
         RepositoryResult {
+            id: o.get_field("id"),
             administrator_account: o.get_field("administratorAccount"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),

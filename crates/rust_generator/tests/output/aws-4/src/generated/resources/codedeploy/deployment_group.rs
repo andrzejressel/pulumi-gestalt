@@ -310,6 +310,9 @@ pub mod deployment_group {
     }
     #[allow(dead_code)]
     pub struct DeploymentGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Configuration block of alarms associated with the deployment group (documented below).
         pub alarm_configuration: pulumi_gestalt_rust::Output<
             Option<super::super::types::codedeploy::DeploymentGroupAlarmConfiguration>,
@@ -513,6 +516,7 @@ pub mod deployment_group {
         };
         let o = context.register_resource(request);
         DeploymentGroupResult {
+            id: o.get_field("id"),
             alarm_configuration: o.get_field("alarmConfiguration"),
             app_name: o.get_field("appName"),
             arn: o.get_field("arn"),

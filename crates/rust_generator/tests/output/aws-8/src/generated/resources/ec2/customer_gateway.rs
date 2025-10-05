@@ -54,6 +54,9 @@ pub mod customer_gateway {
     }
     #[allow(dead_code)]
     pub struct CustomerGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the customer gateway.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN). Valid values are from  `1` to `2147483647`. Conflicts with `bgp_asn_extended`.
@@ -133,6 +136,7 @@ pub mod customer_gateway {
         };
         let o = context.register_resource(request);
         CustomerGatewayResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             bgp_asn: o.get_field("bgpAsn"),
             bgp_asn_extended: o.get_field("bgpAsnExtended"),

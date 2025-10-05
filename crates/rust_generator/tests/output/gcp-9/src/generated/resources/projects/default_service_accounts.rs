@@ -73,6 +73,9 @@ pub mod default_service_accounts {
     }
     #[allow(dead_code)]
     pub struct DefaultServiceAccountsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The action to be performed in the default service accounts. Valid values are: `DEPRIVILEGE`, `DELETE`, `DISABLE`. Note that `DEPRIVILEGE` action will ignore the REVERT configuration in the restore_policy
         pub action: pulumi_gestalt_rust::Output<String>,
         /// The project ID where service accounts are created.
@@ -122,6 +125,7 @@ pub mod default_service_accounts {
         };
         let o = context.register_resource(request);
         DefaultServiceAccountsResult {
+            id: o.get_field("id"),
             action: o.get_field("action"),
             project: o.get_field("project"),
             restore_policy: o.get_field("restorePolicy"),

@@ -143,6 +143,9 @@ pub mod attestor {
     }
     #[allow(dead_code)]
     pub struct AttestorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A Container Analysis ATTESTATION_AUTHORITY Note, created by the user.
         /// Structure is documented below.
         pub attestation_authority_note: pulumi_gestalt_rust::Output<
@@ -196,6 +199,7 @@ pub mod attestor {
         };
         let o = context.register_resource(request);
         AttestorResult {
+            id: o.get_field("id"),
             attestation_authority_note: o.get_field("attestationAuthorityNote"),
             description: o.get_field("description"),
             name: o.get_field("name"),

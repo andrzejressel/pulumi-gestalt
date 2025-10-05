@@ -132,6 +132,9 @@ pub mod workspace_root_dbfs_customer_managed_key {
     }
     #[allow(dead_code)]
     pub struct WorkspaceRootDbfsCustomerManagedKeyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub key_vault_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// The resource ID of the Key Vault Key to be used.
         pub key_vault_key_id: pulumi_gestalt_rust::Output<String>,
@@ -174,6 +177,7 @@ pub mod workspace_root_dbfs_customer_managed_key {
         };
         let o = context.register_resource(request);
         WorkspaceRootDbfsCustomerManagedKeyResult {
+            id: o.get_field("id"),
             key_vault_id: o.get_field("keyVaultId"),
             key_vault_key_id: o.get_field("keyVaultKeyId"),
             workspace_id: o.get_field("workspaceId"),

@@ -127,6 +127,9 @@ pub mod trigger_tumbling_window {
     }
     #[allow(dead_code)]
     pub struct TriggerTumblingWindowResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies if the Data Factory Tumbling Window Trigger is activated. Defaults to `true`.
         pub activated: pulumi_gestalt_rust::Output<Option<bool>>,
         /// A map of additional properties to associate with the Data Factory Tumbling Window Trigger.
@@ -268,6 +271,7 @@ pub mod trigger_tumbling_window {
         };
         let o = context.register_resource(request);
         TriggerTumblingWindowResult {
+            id: o.get_field("id"),
             activated: o.get_field("activated"),
             additional_properties: o.get_field("additionalProperties"),
             annotations: o.get_field("annotations"),

@@ -376,6 +376,9 @@ pub mod ca_pool_iam_member {
     }
     #[allow(dead_code)]
     pub struct CaPoolIamMemberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Used to find the parent resource to bind the IAM policy to
         pub ca_pool: pulumi_gestalt_rust::Output<String>,
         /// An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
@@ -461,6 +464,7 @@ pub mod ca_pool_iam_member {
         };
         let o = context.register_resource(request);
         CaPoolIamMemberResult {
+            id: o.get_field("id"),
             ca_pool: o.get_field("caPool"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

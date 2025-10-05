@@ -241,6 +241,9 @@ pub mod aspect_type_iam_binding {
     }
     #[allow(dead_code)]
     pub struct AspectTypeIamBindingResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub aspect_type_id: pulumi_gestalt_rust::Output<String>,
         pub condition: pulumi_gestalt_rust::Output<
             Option<super::super::types::dataplex::AspectTypeIamBindingCondition>,
@@ -322,6 +325,7 @@ pub mod aspect_type_iam_binding {
         };
         let o = context.register_resource(request);
         AspectTypeIamBindingResult {
+            id: o.get_field("id"),
             aspect_type_id: o.get_field("aspectTypeId"),
             condition: o.get_field("condition"),
             etag: o.get_field("etag"),

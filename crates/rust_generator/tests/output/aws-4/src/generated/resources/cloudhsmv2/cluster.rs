@@ -42,6 +42,9 @@ pub mod cluster {
     }
     #[allow(dead_code)]
     pub struct ClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The list of cluster certificates.
         pub cluster_certificates: pulumi_gestalt_rust::Output<
             Vec<super::super::types::cloudhsmv2::ClusterClusterCertificate>,
@@ -118,6 +121,7 @@ pub mod cluster {
         };
         let o = context.register_resource(request);
         ClusterResult {
+            id: o.get_field("id"),
             cluster_certificates: o.get_field("clusterCertificates"),
             cluster_id: o.get_field("clusterId"),
             cluster_state: o.get_field("clusterState"),

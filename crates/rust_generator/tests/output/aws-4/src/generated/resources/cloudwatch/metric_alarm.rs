@@ -254,6 +254,9 @@ pub mod metric_alarm {
     }
     #[allow(dead_code)]
     pub struct MetricAlarmResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Indicates whether or not actions should be executed during any changes to the alarm's state. Defaults to `true`.
         pub actions_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The list of actions to execute when this alarm transitions into an ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).
@@ -454,6 +457,7 @@ pub mod metric_alarm {
         };
         let o = context.register_resource(request);
         MetricAlarmResult {
+            id: o.get_field("id"),
             actions_enabled: o.get_field("actionsEnabled"),
             alarm_actions: o.get_field("alarmActions"),
             alarm_description: o.get_field("alarmDescription"),

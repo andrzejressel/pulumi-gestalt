@@ -74,6 +74,9 @@ pub mod zone_settings_override {
     }
     #[allow(dead_code)]
     pub struct ZoneSettingsOverrideResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub initial_settings: pulumi_gestalt_rust::Output<
             Vec<super::types::ZoneSettingsOverrideInitialSetting>,
         >,
@@ -117,6 +120,7 @@ pub mod zone_settings_override {
         };
         let o = context.register_resource(request);
         ZoneSettingsOverrideResult {
+            id: o.get_field("id"),
             initial_settings: o.get_field("initialSettings"),
             initial_settings_read_at: o.get_field("initialSettingsReadAt"),
             readonly_settings: o.get_field("readonlySettings"),

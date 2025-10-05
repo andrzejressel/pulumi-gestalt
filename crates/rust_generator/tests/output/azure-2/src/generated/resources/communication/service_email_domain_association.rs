@@ -71,6 +71,9 @@ pub mod service_email_domain_association {
     }
     #[allow(dead_code)]
     pub struct ServiceEmailDomainAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Communication Service. Changing this forces a new communication service email domain association to be created.
         pub communication_service_id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the EMail Service Domain. Changing this forces a new communication service email domain association to be created.
@@ -111,6 +114,7 @@ pub mod service_email_domain_association {
         };
         let o = context.register_resource(request);
         ServiceEmailDomainAssociationResult {
+            id: o.get_field("id"),
             communication_service_id: o.get_field("communicationServiceId"),
             email_service_domain_id: o.get_field("emailServiceDomainId"),
         }

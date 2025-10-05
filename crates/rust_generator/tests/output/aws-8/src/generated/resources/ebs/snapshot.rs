@@ -59,6 +59,9 @@ pub mod snapshot {
     }
     #[allow(dead_code)]
     pub struct SnapshotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Amazon Resource Name (ARN) of the EBS Snapshot.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The data encryption key identifier for the snapshot.
@@ -151,6 +154,7 @@ pub mod snapshot {
         };
         let o = context.register_resource(request);
         SnapshotResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             data_encryption_key_id: o.get_field("dataEncryptionKeyId"),
             description: o.get_field("description"),

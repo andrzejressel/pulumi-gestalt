@@ -53,6 +53,9 @@ pub mod regex_pattern_set {
     }
     #[allow(dead_code)]
     pub struct RegexPatternSetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) that identifies the cluster.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// A friendly description of the regular expression pattern set.
@@ -120,6 +123,7 @@ pub mod regex_pattern_set {
         };
         let o = context.register_resource(request);
         RegexPatternSetResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             description: o.get_field("description"),
             lock_token: o.get_field("lockToken"),

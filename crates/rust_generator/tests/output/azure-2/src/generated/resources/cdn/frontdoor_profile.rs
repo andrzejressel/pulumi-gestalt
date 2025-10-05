@@ -54,6 +54,9 @@ pub mod frontdoor_profile {
     }
     #[allow(dead_code)]
     pub struct FrontdoorProfileResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Front Door Profile. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The name of the Resource Group where this Front Door Profile should exist. Changing this forces a new resource to be created.
@@ -116,6 +119,7 @@ pub mod frontdoor_profile {
         };
         let o = context.register_resource(request);
         FrontdoorProfileResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),
             resource_guid: o.get_field("resourceGuid"),

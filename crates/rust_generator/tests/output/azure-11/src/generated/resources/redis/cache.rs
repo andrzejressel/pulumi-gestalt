@@ -145,6 +145,9 @@ pub mod cache {
     }
     #[allow(dead_code)]
     pub struct CacheResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether access key authentication is enabled? Defaults to `true`. `active_directory_authentication_enabled` must be set to `true` to disable access key authentication.
         pub access_keys_authentication_enabled: pulumi_gestalt_rust::Output<
             Option<bool>,
@@ -358,6 +361,7 @@ pub mod cache {
         };
         let o = context.register_resource(request);
         CacheResult {
+            id: o.get_field("id"),
             access_keys_authentication_enabled: o
                 .get_field("accessKeysAuthenticationEnabled"),
             capacity: o.get_field("capacity"),

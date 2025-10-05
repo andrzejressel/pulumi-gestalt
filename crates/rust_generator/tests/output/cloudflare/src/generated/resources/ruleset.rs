@@ -52,6 +52,9 @@ pub mod ruleset {
     }
     #[allow(dead_code)]
     pub struct RulesetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account identifier to target for the resource.
         pub account_id: pulumi_gestalt_rust::Output<Option<String>>,
         /// Brief summary of the ruleset and its intended use.
@@ -122,6 +125,7 @@ pub mod ruleset {
         };
         let o = context.register_resource(request);
         RulesetResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             description: o.get_field("description"),
             kind: o.get_field("kind"),

@@ -93,6 +93,9 @@ pub mod v_2_models_bot {
     }
     #[allow(dead_code)]
     pub struct V2modelsBotResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Provides information on additional privacy protections Amazon Lex should use with the bot's data. See `data_privacy`
         pub data_privacies: pulumi_gestalt_rust::Output<
@@ -201,6 +204,7 @@ pub mod v_2_models_bot {
         };
         let o = context.register_resource(request);
         V2modelsBotResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             data_privacies: o.get_field("dataPrivacies"),
             description: o.get_field("description"),

@@ -194,6 +194,9 @@ pub mod h_base_cluster {
     }
     #[allow(dead_code)]
     pub struct HBaseClusterResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the Version of HDInsights which should be used for this Cluster. Changing this forces a new resource to be created.
         pub cluster_version: pulumi_gestalt_rust::Output<String>,
         /// A `component_version` block as defined below.
@@ -391,6 +394,7 @@ pub mod h_base_cluster {
         };
         let o = context.register_resource(request);
         HBaseClusterResult {
+            id: o.get_field("id"),
             cluster_version: o.get_field("clusterVersion"),
             component_version: o.get_field("componentVersion"),
             compute_isolation: o.get_field("computeIsolation"),

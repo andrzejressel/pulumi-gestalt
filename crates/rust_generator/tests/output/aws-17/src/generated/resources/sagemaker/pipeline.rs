@@ -68,6 +68,9 @@ pub mod pipeline {
     }
     #[allow(dead_code)]
     pub struct PipelineResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) assigned by AWS to this Pipeline.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default. see Parallelism Configuration details below.
@@ -163,6 +166,7 @@ pub mod pipeline {
         };
         let o = context.register_resource(request);
         PipelineResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             parallelism_configuration: o.get_field("parallelismConfiguration"),
             pipeline_definition: o.get_field("pipelineDefinition"),

@@ -105,6 +105,9 @@ pub mod service {
     }
     #[allow(dead_code)]
     pub struct ServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Configuration for the authentication for pulling the images of the service
         pub auth: pulumi_gestalt_rust::Output<Option<super::types::ServiceAuth>>,
         /// A configuration to ensure that a service converges aka reaches the desired that of all task up and running
@@ -197,6 +200,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
+            id: o.get_field("id"),
             auth: o.get_field("auth"),
             converge_config: o.get_field("convergeConfig"),
             endpoint_spec: o.get_field("endpointSpec"),

@@ -135,6 +135,9 @@ pub mod insights {
     }
     #[allow(dead_code)]
     pub struct InsightsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The App ID associated with this Application Insights component.
         pub app_id: pulumi_gestalt_rust::Output<String>,
         /// Specifies the type of Application Insights to create. Valid values are `ios` for _iOS_, `java` for _Java web_, `MobileCenter` for _App Center_, `Node.JS` for _Node.js_, `other` for _General_, `phone` for _Windows Phone_, `store` for _Windows Store_ and `web` for _ASP.NET_. Please note these values are case sensitive; unmatched values are treated as _ASP.NET_ by Azure. Changing this forces a new resource to be created.
@@ -285,6 +288,7 @@ pub mod insights {
         };
         let o = context.register_resource(request);
         InsightsResult {
+            id: o.get_field("id"),
             app_id: o.get_field("appId"),
             application_type: o.get_field("applicationType"),
             connection_string: o.get_field("connectionString"),

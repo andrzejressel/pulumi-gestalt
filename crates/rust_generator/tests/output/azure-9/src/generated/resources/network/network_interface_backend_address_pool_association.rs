@@ -114,6 +114,9 @@ pub mod network_interface_backend_address_pool_association {
     }
     #[allow(dead_code)]
     pub struct NetworkInterfaceBackendAddressPoolAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Load Balancer Backend Address Pool which this Network Interface should be connected to. Changing this forces a new resource to be created.
         pub backend_address_pool_id: pulumi_gestalt_rust::Output<String>,
         /// The Name of the IP Configuration within the Network Interface which should be connected to the Backend Address Pool. Changing this forces a new resource to be created.
@@ -161,6 +164,7 @@ pub mod network_interface_backend_address_pool_association {
         };
         let o = context.register_resource(request);
         NetworkInterfaceBackendAddressPoolAssociationResult {
+            id: o.get_field("id"),
             backend_address_pool_id: o.get_field("backendAddressPoolId"),
             ip_configuration_name: o.get_field("ipConfigurationName"),
             network_interface_id: o.get_field("networkInterfaceId"),

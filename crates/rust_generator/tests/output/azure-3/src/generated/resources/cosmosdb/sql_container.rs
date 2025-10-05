@@ -114,6 +114,9 @@ pub mod sql_container {
     }
     #[allow(dead_code)]
     pub struct SqlContainerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Cosmos DB Account to create the container within. Changing this forces a new resource to be created.
         pub account_name: pulumi_gestalt_rust::Output<String>,
         /// The default time to live of Analytical Storage for this SQL container. If present and the value is set to `-1`, it is equal to infinity, and items don’t expire by default. If present and the value is set to some number `n` – items will expire `n` seconds after their last modified time.
@@ -251,6 +254,7 @@ pub mod sql_container {
         };
         let o = context.register_resource(request);
         SqlContainerResult {
+            id: o.get_field("id"),
             account_name: o.get_field("accountName"),
             analytical_storage_ttl: o.get_field("analyticalStorageTtl"),
             autoscale_settings: o.get_field("autoscaleSettings"),

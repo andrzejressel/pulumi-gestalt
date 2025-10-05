@@ -287,6 +287,9 @@ pub mod region_disk {
     }
     #[allow(dead_code)]
     pub struct RegionDiskResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A nested object resource.
         /// Structure is documented below.
         pub async_primary_disk: pulumi_gestalt_rust::Output<
@@ -529,6 +532,7 @@ pub mod region_disk {
         };
         let o = context.register_resource(request);
         RegionDiskResult {
+            id: o.get_field("id"),
             async_primary_disk: o.get_field("asyncPrimaryDisk"),
             creation_timestamp: o.get_field("creationTimestamp"),
             description: o.get_field("description"),

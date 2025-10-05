@@ -78,6 +78,9 @@ pub mod zone_association {
     }
     #[allow(dead_code)]
     pub struct ZoneAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The account ID of the account that created the hosted zone.
         pub owning_account: pulumi_gestalt_rust::Output<String>,
         /// The VPC to associate with the private hosted zone.
@@ -122,6 +125,7 @@ pub mod zone_association {
         };
         let o = context.register_resource(request);
         ZoneAssociationResult {
+            id: o.get_field("id"),
             owning_account: o.get_field("owningAccount"),
             vpc_id: o.get_field("vpcId"),
             vpc_region: o.get_field("vpcRegion"),

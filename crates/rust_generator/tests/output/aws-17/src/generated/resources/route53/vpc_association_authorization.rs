@@ -72,6 +72,9 @@ pub mod vpc_association_authorization {
     }
     #[allow(dead_code)]
     pub struct VpcAssociationAuthorizationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The VPC to authorize for association with the private hosted zone.
         pub vpc_id: pulumi_gestalt_rust::Output<String>,
         /// The VPC's region. Defaults to the region of the AWS provider.
@@ -115,6 +118,7 @@ pub mod vpc_association_authorization {
         };
         let o = context.register_resource(request);
         VpcAssociationAuthorizationResult {
+            id: o.get_field("id"),
             vpc_id: o.get_field("vpcId"),
             vpc_region: o.get_field("vpcRegion"),
             zone_id: o.get_field("zoneId"),

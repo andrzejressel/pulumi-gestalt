@@ -79,6 +79,9 @@ pub mod iot_hub_dps {
     }
     #[allow(dead_code)]
     pub struct IotHubDpsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The allocation policy of the IoT Device Provisioning Service (`Hashed`, `GeoLatency` or `Static`). Defaults to `Hashed`.
         pub allocation_policy: pulumi_gestalt_rust::Output<Option<String>>,
         /// Specifies if the IoT Device Provisioning Service has data residency and disaster recovery enabled. Defaults to `false`. Changing this forces a new resource to be created.
@@ -186,6 +189,7 @@ pub mod iot_hub_dps {
         };
         let o = context.register_resource(request);
         IotHubDpsResult {
+            id: o.get_field("id"),
             allocation_policy: o.get_field("allocationPolicy"),
             data_residency_enabled: o.get_field("dataResidencyEnabled"),
             device_provisioning_host_name: o.get_field("deviceProvisioningHostName"),

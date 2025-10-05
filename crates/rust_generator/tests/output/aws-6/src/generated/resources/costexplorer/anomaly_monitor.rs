@@ -78,6 +78,9 @@ pub mod anomaly_monitor {
     }
     #[allow(dead_code)]
     pub struct AnomalyMonitorResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the anomaly monitor.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The dimensions to evaluate. Valid values: `SERVICE`.
@@ -144,6 +147,7 @@ pub mod anomaly_monitor {
         };
         let o = context.register_resource(request);
         AnomalyMonitorResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             monitor_dimension: o.get_field("monitorDimension"),
             monitor_specification: o.get_field("monitorSpecification"),

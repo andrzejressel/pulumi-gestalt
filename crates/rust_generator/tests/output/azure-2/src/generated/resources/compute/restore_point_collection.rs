@@ -109,6 +109,9 @@ pub mod restore_point_collection {
     }
     #[allow(dead_code)]
     pub struct RestorePointCollectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Azure location where the Virtual Machine Restore Point Collection should exist. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of the Virtual Machine Restore Point Collection. Changing this forces a new resource to be created.
@@ -169,6 +172,7 @@ pub mod restore_point_collection {
         };
         let o = context.register_resource(request);
         RestorePointCollectionResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

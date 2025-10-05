@@ -67,6 +67,9 @@ pub mod object_lambda_access_point {
     }
     #[allow(dead_code)]
     pub struct ObjectLambdaAccessPointResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The AWS account ID for the owner of the bucket for which you want to create an Object Lambda Access Point. Defaults to automatically determined account ID of the AWS provider.
         pub account_id: pulumi_gestalt_rust::Output<String>,
         /// Alias for the S3 Object Lambda Access Point.
@@ -116,6 +119,7 @@ pub mod object_lambda_access_point {
         };
         let o = context.register_resource(request);
         ObjectLambdaAccessPointResult {
+            id: o.get_field("id"),
             account_id: o.get_field("accountId"),
             alias: o.get_field("alias"),
             arn: o.get_field("arn"),

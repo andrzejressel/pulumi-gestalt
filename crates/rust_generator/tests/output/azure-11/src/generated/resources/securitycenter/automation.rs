@@ -118,6 +118,9 @@ pub mod automation {
     }
     #[allow(dead_code)]
     pub struct AutomationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// One or more `action` blocks as defined below. An `action` tells this automation where the data is to be sent to upon being evaluated by the rules in the `source`.
         pub actions: pulumi_gestalt_rust::Output<
             Vec<super::super::types::securitycenter::AutomationAction>,
@@ -210,6 +213,7 @@ pub mod automation {
         };
         let o = context.register_resource(request);
         AutomationResult {
+            id: o.get_field("id"),
             actions: o.get_field("actions"),
             description: o.get_field("description"),
             enabled: o.get_field("enabled"),

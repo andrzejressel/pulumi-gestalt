@@ -19,6 +19,9 @@
 pub mod sql_resource_sql_container {
     #[allow(dead_code)]
     pub struct SqlResourceSqlContainerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         pub resource: pulumi_gestalt_rust::Output<
             Option<
                 super::super::types::documentdb::SqlContainerGetPropertiesResponseResource,
@@ -43,6 +46,7 @@ pub mod sql_resource_sql_container {
         };
         let o = context.register_resource(request);
         SqlResourceSqlContainerResult {
+            id: o.get_field("id"),
             resource: o.get_field("resource"),
         }
     }

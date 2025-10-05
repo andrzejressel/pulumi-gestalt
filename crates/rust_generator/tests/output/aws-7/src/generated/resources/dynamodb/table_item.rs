@@ -63,6 +63,9 @@ pub mod table_item {
     }
     #[allow(dead_code)]
     pub struct TableItemResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Hash key to use for lookups and identification of the item
         pub hash_key: pulumi_gestalt_rust::Output<String>,
         /// JSON representation of a map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.
@@ -112,6 +115,7 @@ pub mod table_item {
         };
         let o = context.register_resource(request);
         TableItemResult {
+            id: o.get_field("id"),
             hash_key: o.get_field("hashKey"),
             item: o.get_field("item"),
             range_key: o.get_field("rangeKey"),

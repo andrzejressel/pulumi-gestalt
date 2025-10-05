@@ -71,6 +71,9 @@ pub mod cname_record {
     }
     #[allow(dead_code)]
     pub struct CnameRecordResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The FQDN of the DNS CNAME Record.
         pub fqdn: pulumi_gestalt_rust::Output<String>,
         /// The name of the DNS CNAME Record. Changing this forces a new resource to be created.
@@ -138,6 +141,7 @@ pub mod cname_record {
         };
         let o = context.register_resource(request);
         CnameRecordResult {
+            id: o.get_field("id"),
             fqdn: o.get_field("fqdn"),
             name: o.get_field("name"),
             record: o.get_field("record"),

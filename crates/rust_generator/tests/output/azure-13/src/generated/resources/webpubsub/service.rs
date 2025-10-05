@@ -90,6 +90,9 @@ pub mod service {
     }
     #[allow(dead_code)]
     pub struct ServiceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether to enable AAD auth? Defaults to `true`.
         pub aad_auth_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// Specifies the number of units associated with this Web PubSub resource. Valid values are `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `20`, `30`, `40`, `50`, `60`, `70`, `80`, `90`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900` and `1000`.
@@ -224,6 +227,7 @@ pub mod service {
         };
         let o = context.register_resource(request);
         ServiceResult {
+            id: o.get_field("id"),
             aad_auth_enabled: o.get_field("aadAuthEnabled"),
             capacity: o.get_field("capacity"),
             external_ip: o.get_field("externalIp"),

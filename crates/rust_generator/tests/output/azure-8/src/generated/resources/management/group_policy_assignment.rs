@@ -112,6 +112,9 @@ pub mod group_policy_assignment {
     }
     #[allow(dead_code)]
     pub struct GroupPolicyAssignmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A description which should be used for this Policy Assignment.
         pub description: pulumi_gestalt_rust::Output<Option<String>>,
         /// The Display Name for this Policy Assignment.
@@ -251,6 +254,7 @@ pub mod group_policy_assignment {
         };
         let o = context.register_resource(request);
         GroupPolicyAssignmentResult {
+            id: o.get_field("id"),
             description: o.get_field("description"),
             display_name: o.get_field("displayName"),
             enforce: o.get_field("enforce"),

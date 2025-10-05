@@ -48,6 +48,9 @@ pub mod auto_scaling_configuration_version {
     }
     #[allow(dead_code)]
     pub struct AutoScalingConfigurationVersionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of this auto scaling configuration version.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Name of the auto scaling configuration.
@@ -123,6 +126,7 @@ pub mod auto_scaling_configuration_version {
         };
         let o = context.register_resource(request);
         AutoScalingConfigurationVersionResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             auto_scaling_configuration_name: o.get_field("autoScalingConfigurationName"),
             auto_scaling_configuration_revision: o

@@ -156,6 +156,9 @@ pub mod worker_pool {
     }
     #[allow(dead_code)]
     pub struct WorkerPoolResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// User specified annotations. See https://google.aip.dev/128#annotations for more details such as format and size
         /// limitations. **Note**: This field is non-authoritative, and will only manage the annotations present in your
         /// configuration. Please refer to the field `effective_annotations` for all of the annotations present on the resource.
@@ -261,6 +264,7 @@ pub mod worker_pool {
         };
         let o = context.register_resource(request);
         WorkerPoolResult {
+            id: o.get_field("id"),
             annotations: o.get_field("annotations"),
             create_time: o.get_field("createTime"),
             delete_time: o.get_field("deleteTime"),

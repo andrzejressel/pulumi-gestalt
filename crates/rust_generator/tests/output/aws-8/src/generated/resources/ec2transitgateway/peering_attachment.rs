@@ -70,6 +70,9 @@ pub mod peering_attachment {
     }
     #[allow(dead_code)]
     pub struct PeeringAttachmentResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Describes whether dynamic routing is enabled or disabled for the transit gateway peering request. See options below for more details!
         pub options: pulumi_gestalt_rust::Output<
             Option<super::super::types::ec2transitgateway::PeeringAttachmentOptions>,
@@ -144,6 +147,7 @@ pub mod peering_attachment {
         };
         let o = context.register_resource(request);
         PeeringAttachmentResult {
+            id: o.get_field("id"),
             options: o.get_field("options"),
             peer_account_id: o.get_field("peerAccountId"),
             peer_region: o.get_field("peerRegion"),

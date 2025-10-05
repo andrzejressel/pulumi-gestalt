@@ -43,6 +43,9 @@ pub mod security_group_vpc_association {
     }
     #[allow(dead_code)]
     pub struct SecurityGroupVpcAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the security group.
         pub security_group_id: pulumi_gestalt_rust::Output<String>,
         /// State of the VPC association. See the [AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroupVpcAssociation.html) for possible values.
@@ -89,6 +92,7 @@ pub mod security_group_vpc_association {
         };
         let o = context.register_resource(request);
         SecurityGroupVpcAssociationResult {
+            id: o.get_field("id"),
             security_group_id: o.get_field("securityGroupId"),
             state: o.get_field("state"),
             timeouts: o.get_field("timeouts"),

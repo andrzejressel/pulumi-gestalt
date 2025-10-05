@@ -92,6 +92,9 @@ pub mod source_control {
     }
     #[allow(dead_code)]
     pub struct SourceControlResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Whether auto async the Source Control.
         pub automatic_sync: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The ID of Automation Account to manage this Source Control. Changing this forces a new Automation Source Control to be created.
@@ -189,6 +192,7 @@ pub mod source_control {
         };
         let o = context.register_resource(request);
         SourceControlResult {
+            id: o.get_field("id"),
             automatic_sync: o.get_field("automaticSync"),
             automation_account_id: o.get_field("automationAccountId"),
             branch: o.get_field("branch"),

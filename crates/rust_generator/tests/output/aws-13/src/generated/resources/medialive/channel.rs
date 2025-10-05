@@ -160,6 +160,9 @@ pub mod channel {
     }
     #[allow(dead_code)]
     pub struct ChannelResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the Channel.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Specification of CDI inputs for this channel. See CDI Input Specification for more details.
@@ -299,6 +302,7 @@ pub mod channel {
         };
         let o = context.register_resource(request);
         ChannelResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             cdi_input_specification: o.get_field("cdiInputSpecification"),
             channel_class: o.get_field("channelClass"),

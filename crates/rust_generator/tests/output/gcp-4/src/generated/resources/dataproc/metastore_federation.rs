@@ -137,6 +137,9 @@ pub mod metastore_federation {
     }
     #[allow(dead_code)]
     pub struct MetastoreFederationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A map from BackendMetastore rank to BackendMetastores from which the federation service serves metadata at query time. The map key represents the order in which BackendMetastores should be evaluated to resolve database names at query time and should be greater than or equal to zero. A BackendMetastore with a lower number will be evaluated before a BackendMetastore with a higher number.
         /// Structure is documented below.
         pub backend_metastores: pulumi_gestalt_rust::Output<
@@ -227,6 +230,7 @@ pub mod metastore_federation {
         };
         let o = context.register_resource(request);
         MetastoreFederationResult {
+            id: o.get_field("id"),
             backend_metastores: o.get_field("backendMetastores"),
             effective_labels: o.get_field("effectiveLabels"),
             endpoint_uri: o.get_field("endpointUri"),

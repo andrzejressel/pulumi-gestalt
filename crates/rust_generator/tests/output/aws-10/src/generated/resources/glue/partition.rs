@@ -50,6 +50,9 @@ pub mod partition {
     }
     #[allow(dead_code)]
     pub struct PartitionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ID of the Glue Catalog and database to create the table in. If omitted, this defaults to the AWS Account ID plus the database name.
         pub catalog_id: pulumi_gestalt_rust::Output<String>,
         /// The time at which the partition was created.
@@ -122,6 +125,7 @@ pub mod partition {
         };
         let o = context.register_resource(request);
         PartitionResult {
+            id: o.get_field("id"),
             catalog_id: o.get_field("catalogId"),
             creation_time: o.get_field("creationTime"),
             database_name: o.get_field("databaseName"),

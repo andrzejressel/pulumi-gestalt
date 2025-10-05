@@ -77,6 +77,9 @@ pub mod smsvoicev_2_phone_number {
     }
     #[allow(dead_code)]
     pub struct Smsvoicev2PhoneNumberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the phone number.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// By default this is set to `false`. When set to true the phone number can’t be deleted.
@@ -200,6 +203,7 @@ pub mod smsvoicev_2_phone_number {
         };
         let o = context.register_resource(request);
         Smsvoicev2PhoneNumberResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             deletion_protection_enabled: o.get_field("deletionProtectionEnabled"),
             iso_country_code: o.get_field("isoCountryCode"),

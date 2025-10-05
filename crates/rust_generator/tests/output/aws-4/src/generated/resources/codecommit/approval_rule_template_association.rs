@@ -41,6 +41,9 @@ pub mod approval_rule_template_association {
     }
     #[allow(dead_code)]
     pub struct ApprovalRuleTemplateAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name for the approval rule template.
         pub approval_rule_template_name: pulumi_gestalt_rust::Output<String>,
         /// The name of the repository that you want to associate with the template.
@@ -79,6 +82,7 @@ pub mod approval_rule_template_association {
         };
         let o = context.register_resource(request);
         ApprovalRuleTemplateAssociationResult {
+            id: o.get_field("id"),
             approval_rule_template_name: o.get_field("approvalRuleTemplateName"),
             repository_name: o.get_field("repositoryName"),
         }

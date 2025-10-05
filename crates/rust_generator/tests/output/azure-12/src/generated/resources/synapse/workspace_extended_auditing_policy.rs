@@ -96,6 +96,9 @@ pub mod workspace_extended_auditing_policy {
     }
     #[allow(dead_code)]
     pub struct WorkspaceExtendedAuditingPolicyResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Enable audit events to Azure Monitor? To enable server audit events to Azure Monitor, please enable its master database audit events to Azure Monitor. Defaults to `true`.
         pub log_monitoring_enabled: pulumi_gestalt_rust::Output<Option<bool>>,
         /// The number of days to retain logs for in the storage account. Defaults to `0`.
@@ -168,6 +171,7 @@ pub mod workspace_extended_auditing_policy {
         };
         let o = context.register_resource(request);
         WorkspaceExtendedAuditingPolicyResult {
+            id: o.get_field("id"),
             log_monitoring_enabled: o.get_field("logMonitoringEnabled"),
             retention_in_days: o.get_field("retentionInDays"),
             storage_account_access_key: o.get_field("storageAccountAccessKey"),

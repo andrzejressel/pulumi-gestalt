@@ -216,6 +216,9 @@ pub mod frontdoor_route {
     }
     #[allow(dead_code)]
     pub struct FrontdoorRouteResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A `cache` block as defined below.
         ///
         /// > **NOTE:** To disable caching, do not provide the `cache` block in the configuration file.
@@ -361,6 +364,7 @@ pub mod frontdoor_route {
         };
         let o = context.register_resource(request);
         FrontdoorRouteResult {
+            id: o.get_field("id"),
             cache: o.get_field("cache"),
             cdn_frontdoor_custom_domain_ids: o.get_field("cdnFrontdoorCustomDomainIds"),
             cdn_frontdoor_endpoint_id: o.get_field("cdnFrontdoorEndpointId"),

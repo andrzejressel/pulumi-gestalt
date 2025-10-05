@@ -48,6 +48,9 @@ pub mod domain_name_access_association {
     }
     #[allow(dead_code)]
     pub struct DomainNameAccessAssociationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The identifier of the domain name access association source. For a `VPCE`, the value is the VPC endpoint ID.
         pub access_association_source: pulumi_gestalt_rust::Output<String>,
         /// The type of the domain name access association source. Valid values are `VPCE`.
@@ -110,6 +113,7 @@ pub mod domain_name_access_association {
         };
         let o = context.register_resource(request);
         DomainNameAccessAssociationResult {
+            id: o.get_field("id"),
             access_association_source: o.get_field("accessAssociationSource"),
             access_association_source_type: o.get_field("accessAssociationSourceType"),
             arn: o.get_field("arn"),

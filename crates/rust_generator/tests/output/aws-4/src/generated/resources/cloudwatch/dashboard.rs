@@ -57,6 +57,9 @@ pub mod dashboard {
     }
     #[allow(dead_code)]
     pub struct DashboardResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Resource Name (ARN) of the dashboard.
         pub dashboard_arn: pulumi_gestalt_rust::Output<String>,
         /// The detailed information about the dashboard, including what widgets are included and their location on the dashboard. You can read more about the body structure in the [documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html).
@@ -94,6 +97,7 @@ pub mod dashboard {
         };
         let o = context.register_resource(request);
         DashboardResult {
+            id: o.get_field("id"),
             dashboard_arn: o.get_field("dashboardArn"),
             dashboard_body: o.get_field("dashboardBody"),
             dashboard_name: o.get_field("dashboardName"),

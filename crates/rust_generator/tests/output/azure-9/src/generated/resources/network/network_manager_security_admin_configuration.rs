@@ -75,6 +75,9 @@ pub mod network_manager_security_admin_configuration {
     }
     #[allow(dead_code)]
     pub struct NetworkManagerSecurityAdminConfigurationResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// A list of network intent policy based services. Possible values are `All`, `None` and `AllowRulesOnly`. Exactly one value should be set. The `All` option requires `Microsoft.Network/AllowAdminRulesOnNipBasedServices` feature registration to Subscription. Please see [this document](https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-security-admins#network-intent-policies-and-security-admin-rules) for more information.
         pub apply_on_network_intent_policy_based_services: pulumi_gestalt_rust::Output<
             Option<String>,
@@ -130,6 +133,7 @@ pub mod network_manager_security_admin_configuration {
         };
         let o = context.register_resource(request);
         NetworkManagerSecurityAdminConfigurationResult {
+            id: o.get_field("id"),
             apply_on_network_intent_policy_based_services: o
                 .get_field("applyOnNetworkIntentPolicyBasedServices"),
             description: o.get_field("description"),

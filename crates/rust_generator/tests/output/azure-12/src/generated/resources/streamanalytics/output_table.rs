@@ -94,6 +94,9 @@ pub mod output_table {
     }
     #[allow(dead_code)]
     pub struct OutputTableResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The number of records for a batch operation. Must be between `1` and `100`.
         pub batch_size: pulumi_gestalt_rust::Output<i32>,
         /// A list of the column names to be removed from output event entities.
@@ -187,6 +190,7 @@ pub mod output_table {
         };
         let o = context.register_resource(request);
         OutputTableResult {
+            id: o.get_field("id"),
             batch_size: o.get_field("batchSize"),
             columns_to_removes: o.get_field("columnsToRemoves"),
             name: o.get_field("name"),

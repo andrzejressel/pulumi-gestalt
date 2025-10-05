@@ -59,6 +59,9 @@ pub mod capacity_reservation_group {
     }
     #[allow(dead_code)]
     pub struct CapacityReservationGroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Azure location where the Capacity Reservation Group exists. Changing this forces a new resource to be created.
         pub location: pulumi_gestalt_rust::Output<String>,
         /// Specifies the name of this Capacity Reservation Group. Changing this forces a new resource to be created.
@@ -118,6 +121,7 @@ pub mod capacity_reservation_group {
         };
         let o = context.register_resource(request);
         CapacityReservationGroupResult {
+            id: o.get_field("id"),
             location: o.get_field("location"),
             name: o.get_field("name"),
             resource_group_name: o.get_field("resourceGroupName"),

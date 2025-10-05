@@ -91,6 +91,9 @@ pub mod phone_number {
     }
     #[allow(dead_code)]
     pub struct PhoneNumberResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN of the phone number.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The ISO country code. For a list of Valid values, refer to [PhoneNumberCountryCode](https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html#connect-SearchAvailablePhoneNumbers-request-PhoneNumberCountryCode).
@@ -168,6 +171,7 @@ pub mod phone_number {
         };
         let o = context.register_resource(request);
         PhoneNumberResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             country_code: o.get_field("countryCode"),
             description: o.get_field("description"),

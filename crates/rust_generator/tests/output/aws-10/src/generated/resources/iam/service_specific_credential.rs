@@ -46,6 +46,9 @@ pub mod service_specific_credential {
     }
     #[allow(dead_code)]
     pub struct ServiceSpecificCredentialResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the AWS service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.
         pub service_name: pulumi_gestalt_rust::Output<String>,
         /// The generated password for the service-specific credential.
@@ -94,6 +97,7 @@ pub mod service_specific_credential {
         };
         let o = context.register_resource(request);
         ServiceSpecificCredentialResult {
+            id: o.get_field("id"),
             service_name: o.get_field("serviceName"),
             service_password: o.get_field("servicePassword"),
             service_specific_credential_id: o.get_field("serviceSpecificCredentialId"),

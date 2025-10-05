@@ -72,6 +72,9 @@ pub mod sql_dedicated_gateway {
     }
     #[allow(dead_code)]
     pub struct SqlDedicatedGatewayResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The resource ID of the CosmosDB Account. Changing this forces a new resource to be created.
         pub cosmosdb_account_id: pulumi_gestalt_rust::Output<String>,
         /// The instance count for the CosmosDB SQL Dedicated Gateway. Possible value is between `1` and `5`.
@@ -114,6 +117,7 @@ pub mod sql_dedicated_gateway {
         };
         let o = context.register_resource(request);
         SqlDedicatedGatewayResult {
+            id: o.get_field("id"),
             cosmosdb_account_id: o.get_field("cosmosdbAccountId"),
             instance_count: o.get_field("instanceCount"),
             instance_size: o.get_field("instanceSize"),

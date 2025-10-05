@@ -75,6 +75,9 @@ pub mod prevention_discovery_config {
     }
     #[allow(dead_code)]
     pub struct PreventionDiscoveryConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Actions to execute at the completion of scanning
         /// Structure is documented below.
         pub actions: pulumi_gestalt_rust::Output<
@@ -181,6 +184,7 @@ pub mod prevention_discovery_config {
         };
         let o = context.register_resource(request);
         PreventionDiscoveryConfigResult {
+            id: o.get_field("id"),
             actions: o.get_field("actions"),
             create_time: o.get_field("createTime"),
             display_name: o.get_field("displayName"),

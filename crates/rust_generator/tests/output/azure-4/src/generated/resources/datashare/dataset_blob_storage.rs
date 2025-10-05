@@ -109,6 +109,9 @@ pub mod dataset_blob_storage {
     }
     #[allow(dead_code)]
     pub struct DatasetBlobStorageResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name of the storage account container to be shared with the receiver. Changing this forces a new Data Share Blob Storage Dataset to be created.
         pub container_name: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Data Share in which this Data Share Blob Storage Dataset should be created. Changing this forces a new Data Share Blob Storage Dataset to be created.
@@ -176,6 +179,7 @@ pub mod dataset_blob_storage {
         };
         let o = context.register_resource(request);
         DatasetBlobStorageResult {
+            id: o.get_field("id"),
             container_name: o.get_field("containerName"),
             data_share_id: o.get_field("dataShareId"),
             display_name: o.get_field("displayName"),

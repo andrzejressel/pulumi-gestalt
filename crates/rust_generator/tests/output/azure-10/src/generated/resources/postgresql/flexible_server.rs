@@ -236,6 +236,9 @@ pub mod flexible_server {
     }
     #[allow(dead_code)]
     pub struct FlexibleServerResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The Administrator login for the PostgreSQL Flexible Server. Required when `create_mode` is `Default` and `authentication.password_auth_enabled` is `true`.
         ///
         /// > **Note:** Once `administrator_login` is specified, changing this forces a new PostgreSQL Flexible Server to be created.
@@ -488,6 +491,7 @@ pub mod flexible_server {
         };
         let o = context.register_resource(request);
         FlexibleServerResult {
+            id: o.get_field("id"),
             administrator_login: o.get_field("administratorLogin"),
             administrator_password: o.get_field("administratorPassword"),
             authentication: o.get_field("authentication"),

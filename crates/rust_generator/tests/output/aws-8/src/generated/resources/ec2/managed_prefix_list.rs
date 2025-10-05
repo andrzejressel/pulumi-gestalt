@@ -68,6 +68,9 @@ pub mod managed_prefix_list {
     }
     #[allow(dead_code)]
     pub struct ManagedPrefixListResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Address family (`IPv4` or `IPv6`) of this prefix list.
         pub address_family: pulumi_gestalt_rust::Output<String>,
         /// ARN of the prefix list.
@@ -138,6 +141,7 @@ pub mod managed_prefix_list {
         };
         let o = context.register_resource(request);
         ManagedPrefixListResult {
+            id: o.get_field("id"),
             address_family: o.get_field("addressFamily"),
             arn: o.get_field("arn"),
             entries: o.get_field("entries"),

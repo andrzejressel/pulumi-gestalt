@@ -240,6 +240,9 @@ pub mod network {
     }
     #[allow(dead_code)]
     pub struct NetworkResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// When set to `true`, the network is created in "auto subnet mode" and
         /// it will create a subnet for each region automatically across the
         /// `10.128.0.0/9` address range.
@@ -421,6 +424,7 @@ pub mod network {
         };
         let o = context.register_resource(request);
         NetworkResult {
+            id: o.get_field("id"),
             auto_create_subnetworks: o.get_field("autoCreateSubnetworks"),
             bgp_always_compare_med: o.get_field("bgpAlwaysCompareMed"),
             bgp_best_path_selection_mode: o.get_field("bgpBestPathSelectionMode"),

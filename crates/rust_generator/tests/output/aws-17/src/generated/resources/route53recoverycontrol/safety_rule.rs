@@ -77,6 +77,9 @@ pub mod safety_rule {
     }
     #[allow(dead_code)]
     pub struct SafetyRuleResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the safety rule.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// Routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed.
@@ -155,6 +158,7 @@ pub mod safety_rule {
         };
         let o = context.register_resource(request);
         SafetyRuleResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             asserted_controls: o.get_field("assertedControls"),
             control_panel_arn: o.get_field("controlPanelArn"),

@@ -109,6 +109,9 @@ pub mod custom_constraint {
     }
     #[allow(dead_code)]
     pub struct CustomConstraintResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The action to take if the condition is met.
         /// Possible values are: `ALLOW`, `DENY`.
         pub action_type: pulumi_gestalt_rust::Output<String>,
@@ -192,6 +195,7 @@ pub mod custom_constraint {
         };
         let o = context.register_resource(request);
         CustomConstraintResult {
+            id: o.get_field("id"),
             action_type: o.get_field("actionType"),
             condition: o.get_field("condition"),
             description: o.get_field("description"),

@@ -104,6 +104,9 @@ pub mod zone {
     }
     #[allow(dead_code)]
     pub struct ZoneResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Output only. Aggregated status of the underlying assets of the zone.
         pub asset_statuses: pulumi_gestalt_rust::Output<
             Vec<super::super::types::dataplex::ZoneAssetStatus>,
@@ -223,6 +226,7 @@ pub mod zone {
         };
         let o = context.register_resource(request);
         ZoneResult {
+            id: o.get_field("id"),
             asset_statuses: o.get_field("assetStatuses"),
             create_time: o.get_field("createTime"),
             description: o.get_field("description"),

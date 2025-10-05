@@ -92,6 +92,9 @@ pub mod realtime_log_config {
     }
     #[allow(dead_code)]
     pub struct RealtimeLogConfigResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ARN (Amazon Resource Name) of the CloudFront real-time log configuration.
         pub arn: pulumi_gestalt_rust::Output<String>,
         /// The Amazon Kinesis data streams where real-time log data is sent.
@@ -145,6 +148,7 @@ pub mod realtime_log_config {
         };
         let o = context.register_resource(request);
         RealtimeLogConfigResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             endpoint: o.get_field("endpoint"),
             fields: o.get_field("fields"),

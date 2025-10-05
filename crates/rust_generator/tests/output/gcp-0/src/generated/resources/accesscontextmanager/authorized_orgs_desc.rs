@@ -108,6 +108,9 @@ pub mod authorized_orgs_desc {
     }
     #[allow(dead_code)]
     pub struct AuthorizedOrgsDescResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The type of entities that need to use the authorization relationship during
         /// evaluation, such as a device. Valid values are "ASSET_TYPE_DEVICE" and
         /// "ASSET_TYPE_CREDENTIAL_STRENGTH".
@@ -205,6 +208,7 @@ pub mod authorized_orgs_desc {
         };
         let o = context.register_resource(request);
         AuthorizedOrgsDescResult {
+            id: o.get_field("id"),
             asset_type: o.get_field("assetType"),
             authorization_direction: o.get_field("authorizationDirection"),
             authorization_type: o.get_field("authorizationType"),

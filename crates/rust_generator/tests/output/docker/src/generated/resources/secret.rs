@@ -25,6 +25,9 @@ pub mod secret {
     }
     #[allow(dead_code)]
     pub struct SecretResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Base64-url-safe-encoded secret data
         pub data: pulumi_gestalt_rust::Output<String>,
         /// User-defined key/value metadata
@@ -67,6 +70,7 @@ pub mod secret {
         };
         let o = context.register_resource(request);
         SecretResult {
+            id: o.get_field("id"),
             data: o.get_field("data"),
             labels: o.get_field("labels"),
             name: o.get_field("name"),

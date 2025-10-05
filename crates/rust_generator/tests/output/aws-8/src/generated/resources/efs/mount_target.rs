@@ -59,6 +59,9 @@ pub mod mount_target {
     }
     #[allow(dead_code)]
     pub struct MountTargetResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in.
         pub availability_zone_id: pulumi_gestalt_rust::Output<String>,
         /// The name of the Availability Zone (AZ) that the mount target resides in.
@@ -124,6 +127,7 @@ pub mod mount_target {
         };
         let o = context.register_resource(request);
         MountTargetResult {
+            id: o.get_field("id"),
             availability_zone_id: o.get_field("availabilityZoneId"),
             availability_zone_name: o.get_field("availabilityZoneName"),
             dns_name: o.get_field("dnsName"),

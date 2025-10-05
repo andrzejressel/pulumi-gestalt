@@ -58,6 +58,9 @@ pub mod location_fsx_ontap_file_system {
     }
     #[allow(dead_code)]
     pub struct LocationFsxOntapFileSystemResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// ARN of the DataSync Location for the FSx Ontap File System.
         pub arn: pulumi_gestalt_rust::Output<String>,
         pub creation_time: pulumi_gestalt_rust::Output<String>,
@@ -135,6 +138,7 @@ pub mod location_fsx_ontap_file_system {
         };
         let o = context.register_resource(request);
         LocationFsxOntapFileSystemResult {
+            id: o.get_field("id"),
             arn: o.get_field("arn"),
             creation_time: o.get_field("creationTime"),
             fsx_filesystem_arn: o.get_field("fsxFilesystemArn"),

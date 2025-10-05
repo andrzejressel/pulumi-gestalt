@@ -136,6 +136,9 @@ pub mod settings {
     }
     #[allow(dead_code)]
     pub struct SettingsResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Top level wrapper for all access related setting in IAP.
         /// Structure is documented below.
         pub access_settings: pulumi_gestalt_rust::Output<
@@ -198,6 +201,7 @@ pub mod settings {
         };
         let o = context.register_resource(request);
         SettingsResult {
+            id: o.get_field("id"),
             access_settings: o.get_field("accessSettings"),
             application_settings: o.get_field("applicationSettings"),
             name: o.get_field("name"),

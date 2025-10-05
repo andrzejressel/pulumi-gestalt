@@ -211,6 +211,9 @@ pub mod virtual_machine {
     }
     #[allow(dead_code)]
     pub struct VirtualMachineResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// An `additional_capabilities` block as defined below.
         pub additional_capabilities: pulumi_gestalt_rust::Output<
             Option<super::super::types::compute::VirtualMachineAdditionalCapabilities>,
@@ -452,6 +455,7 @@ pub mod virtual_machine {
         };
         let o = context.register_resource(request);
         VirtualMachineResult {
+            id: o.get_field("id"),
             additional_capabilities: o.get_field("additionalCapabilities"),
             availability_set_id: o.get_field("availabilitySetId"),
             boot_diagnostics: o.get_field("bootDiagnostics"),

@@ -88,6 +88,9 @@ pub mod route_server_bgp_connection {
     }
     #[allow(dead_code)]
     pub struct RouteServerBgpConnectionResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The name which should be used for this Route Server Bgp Connection. Changing this forces a new resource to be created.
         pub name: pulumi_gestalt_rust::Output<String>,
         /// The peer autonomous system number for the Route Server Bgp Connection. Changing this forces a new resource to be created.
@@ -138,6 +141,7 @@ pub mod route_server_bgp_connection {
         };
         let o = context.register_resource(request);
         RouteServerBgpConnectionResult {
+            id: o.get_field("id"),
             name: o.get_field("name"),
             peer_asn: o.get_field("peerAsn"),
             peer_ip: o.get_field("peerIp"),

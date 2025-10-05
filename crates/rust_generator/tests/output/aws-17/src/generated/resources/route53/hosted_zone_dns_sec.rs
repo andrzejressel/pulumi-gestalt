@@ -85,6 +85,9 @@ pub mod hosted_zone_dns_sec {
     }
     #[allow(dead_code)]
     pub struct HostedZoneDnsSecResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Identifier of the Route 53 Hosted Zone.
         ///
         /// The following arguments are optional:
@@ -122,6 +125,7 @@ pub mod hosted_zone_dns_sec {
         };
         let o = context.register_resource(request);
         HostedZoneDnsSecResult {
+            id: o.get_field("id"),
             hosted_zone_id: o.get_field("hostedZoneId"),
             signing_status: o.get_field("signingStatus"),
         }

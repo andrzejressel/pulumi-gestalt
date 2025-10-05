@@ -101,6 +101,9 @@ pub mod endpoint_custom_domain {
     }
     #[allow(dead_code)]
     pub struct EndpointCustomDomainResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the CDN Endpoint. Changing this forces a new CDN Endpoint Custom Domain to be created.
         pub cdn_endpoint_id: pulumi_gestalt_rust::Output<String>,
         /// A `cdn_managed_https` block as defined below.
@@ -163,6 +166,7 @@ pub mod endpoint_custom_domain {
         };
         let o = context.register_resource(request);
         EndpointCustomDomainResult {
+            id: o.get_field("id"),
             cdn_endpoint_id: o.get_field("cdnEndpointId"),
             cdn_managed_https: o.get_field("cdnManagedHttps"),
             host_name: o.get_field("hostName"),

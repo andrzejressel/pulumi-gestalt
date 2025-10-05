@@ -107,6 +107,9 @@ pub mod reference_input_mssql {
     }
     #[allow(dead_code)]
     pub struct ReferenceInputMssqlResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The MS SQL database name where the reference data exists.
         pub database: pulumi_gestalt_rust::Output<String>,
         /// The query used to retrieve incremental changes in the reference data from the MS SQL database. Cannot be set when `refresh_type` is `Static`.
@@ -217,6 +220,7 @@ pub mod reference_input_mssql {
         };
         let o = context.register_resource(request);
         ReferenceInputMssqlResult {
+            id: o.get_field("id"),
             database: o.get_field("database"),
             delta_snapshot_query: o.get_field("deltaSnapshotQuery"),
             full_snapshot_query: o.get_field("fullSnapshotQuery"),

@@ -173,6 +173,9 @@ pub mod eip {
     }
     #[allow(dead_code)]
     pub struct EipResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// IP address from an EC2 BYOIP pool. This option is only available for VPC EIPs.
         pub address: pulumi_gestalt_rust::Output<Option<String>>,
         /// ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.
@@ -307,6 +310,7 @@ pub mod eip {
         };
         let o = context.register_resource(request);
         EipResult {
+            id: o.get_field("id"),
             address: o.get_field("address"),
             allocation_id: o.get_field("allocationId"),
             arn: o.get_field("arn"),

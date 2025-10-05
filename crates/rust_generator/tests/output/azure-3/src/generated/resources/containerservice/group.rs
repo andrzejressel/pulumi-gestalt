@@ -154,6 +154,9 @@ pub mod group {
     }
     #[allow(dead_code)]
     pub struct GroupResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The definition of a container that is part of the group as documented in the `container` block below. Changing this forces a new resource to be created.
         pub containers: pulumi_gestalt_rust::Output<
             Vec<super::super::types::containerservice::GroupContainer>,
@@ -375,6 +378,7 @@ pub mod group {
         };
         let o = context.register_resource(request);
         GroupResult {
+            id: o.get_field("id"),
             containers: o.get_field("containers"),
             diagnostics: o.get_field("diagnostics"),
             dns_config: o.get_field("dnsConfig"),

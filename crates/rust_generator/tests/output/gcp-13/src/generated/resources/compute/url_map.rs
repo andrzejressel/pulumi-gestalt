@@ -798,6 +798,9 @@ pub mod url_map {
     }
     #[allow(dead_code)]
     pub struct URLMapResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Creation timestamp in RFC3339 text format.
         pub creation_timestamp: pulumi_gestalt_rust::Output<String>,
         /// defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendService or BackendBucket responds with an error.
@@ -955,6 +958,7 @@ pub mod url_map {
         };
         let o = context.register_resource(request);
         URLMapResult {
+            id: o.get_field("id"),
             creation_timestamp: o.get_field("creationTimestamp"),
             default_custom_error_response_policy: o
                 .get_field("defaultCustomErrorResponsePolicy"),

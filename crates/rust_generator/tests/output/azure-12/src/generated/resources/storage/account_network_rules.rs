@@ -113,6 +113,9 @@ pub mod account_network_rules {
     }
     #[allow(dead_code)]
     pub struct AccountNetworkRulesResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Valid options are any combination of `Logging`, `Metrics`, `AzureServices`, or `None`. Defaults to `["AzureServices"]`.
         ///
         /// > **NOTE** User has to explicitly set `bypass` to empty slice (`[]`) to remove it.
@@ -196,6 +199,7 @@ pub mod account_network_rules {
         };
         let o = context.register_resource(request);
         AccountNetworkRulesResult {
+            id: o.get_field("id"),
             bypasses: o.get_field("bypasses"),
             default_action: o.get_field("defaultAction"),
             ip_rules: o.get_field("ipRules"),

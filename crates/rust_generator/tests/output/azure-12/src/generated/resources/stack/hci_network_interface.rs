@@ -95,6 +95,9 @@ pub mod hci_network_interface {
     }
     #[allow(dead_code)]
     pub struct HciNetworkInterfaceResult {
+        /// Pulumi ID is the provider-assigned unique ID for this managed resource.
+        /// It is set during deployments and may be missing (unknown) during planning phases.
+        pub id: pulumi_gestalt_rust::Output<String>,
         /// The ID of the Custom Location where the Azure Stack HCI Network Interface should exist. Changing this forces a new resource to be created.
         pub custom_location_id: pulumi_gestalt_rust::Output<String>,
         /// A list of IPv4 addresses of DNS servers available to VMs deployed in the Network Interface. Changing this forces a new resource to be created.
@@ -178,6 +181,7 @@ pub mod hci_network_interface {
         };
         let o = context.register_resource(request);
         HciNetworkInterfaceResult {
+            id: o.get_field("id"),
             custom_location_id: o.get_field("customLocationId"),
             dns_servers: o.get_field("dnsServers"),
             ip_configuration: o.get_field("ipConfiguration"),
