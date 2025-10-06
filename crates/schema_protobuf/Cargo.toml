@@ -6,6 +6,7 @@ repository.workspace = true
 license.workspace = true
 readme.workspace = true
 description = "Pulumi schema returned as protobuf"
+exclude = ["tests/**"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
