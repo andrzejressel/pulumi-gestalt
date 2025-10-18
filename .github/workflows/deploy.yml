@@ -92,7 +92,7 @@ jobs:
         run: just package-language-plugin "$VERSION"
 
       - name: Release
-        uses: softprops/action-gh-release@aec2ec56f94eb8180ceec724245f64ef008b89f5 # v2.4.0
+        uses: softprops/action-gh-release@6da8fa9354ddfdc4aeace5fc48d7f679b5214090 # v2.4.1
         with:
           name: ${{ env.VERSION }}
           tag_name: ${{ env.GITHUB_REF_NAME }}
@@ -191,7 +191,7 @@ jobs:
         if: matrix.os != 'windows-2022'
 
       - name: Release
-        uses: softprops/action-gh-release@aec2ec56f94eb8180ceec724245f64ef008b89f5 # v2.4.0
+        uses: softprops/action-gh-release@6da8fa9354ddfdc4aeace5fc48d7f679b5214090 # v2.4.1
         with:
           name: ${{ env.VERSION }}
           tag_name: ${{ env.GITHUB_REF_NAME }}
@@ -293,7 +293,7 @@ jobs:
         if: matrix.os_type == 'windows'
 
       - name: Release
-        uses: softprops/action-gh-release@aec2ec56f94eb8180ceec724245f64ef008b89f5 # v2.4.0
+        uses: softprops/action-gh-release@6da8fa9354ddfdc4aeace5fc48d7f679b5214090 # v2.4.1
         with:
           name: ${{ env.VERSION }}
           tag_name: ${{ env.GITHUB_REF_NAME }}
@@ -316,7 +316,7 @@ jobs:
         if: matrix.os_type == 'linux'
 
       - name: Release
-        uses: softprops/action-gh-release@aec2ec56f94eb8180ceec724245f64ef008b89f5 # v2.4.0
+        uses: softprops/action-gh-release@6da8fa9354ddfdc4aeace5fc48d7f679b5214090 # v2.4.1
         with:
           name: ${{ env.VERSION }}
           tag_name: ${{ env.GITHUB_REF_NAME }}
@@ -337,7 +337,7 @@ jobs:
         if: matrix.os_type == 'macos'
 
       - name: Release
-        uses: softprops/action-gh-release@aec2ec56f94eb8180ceec724245f64ef008b89f5 # v2.4.0
+        uses: softprops/action-gh-release@6da8fa9354ddfdc4aeace5fc48d7f679b5214090 # v2.4.1
         with:
           name: ${{ env.VERSION }}
           tag_name: ${{ env.GITHUB_REF_NAME }}
@@ -360,7 +360,7 @@ jobs:
           echo "VERSION=$VERSION" >> $GITHUB_ENV
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Release
-        uses: softprops/action-gh-release@aec2ec56f94eb8180ceec724245f64ef008b89f5 # v2.4.0
+        uses: softprops/action-gh-release@6da8fa9354ddfdc4aeace5fc48d7f679b5214090 # v2.4.1
         with:
           name: ${{ env.VERSION }}
           tag_name: ${{ env.GITHUB_REF_NAME }}
