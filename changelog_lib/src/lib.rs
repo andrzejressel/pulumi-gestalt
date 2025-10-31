@@ -256,7 +256,7 @@ fn generate_history(options: &Options, new_version_name: Option<String>) -> Resu
     let commit_id_to_tag = commit_id_to_tag;
 
     let head_commit = head_ref
-        .peel_to_commit_in_place()
+        .peel_to_commit()
         .context("Failed to peel HEAD reference to commit")?;
 
     let rev_walk = repo.rev_walk(vec![head_commit.id]);
