@@ -11,7 +11,7 @@ WASI_TARGET := "wasm32-wasip2"
 @default: build-language-plugin build-pulumi-test regenerator install-requirements build-wasm-components build-wasm-components-release test-all rust-docs fmt
 
 # Regenerate "DO NOT EDIT" sections, recreate generator examples (but does not compile them), reformat whole project, check changelog
-housekeeping-ci-flow: regenerator regenerate-pulumi-test-schem regenerate-generator-tests changelog-dry-run fmt
+housekeeping-ci-flow: regenerator regenerate-pulumi-test-schema regenerate-generator-tests changelog-dry-run fmt
 
 # Runs all amd64 unit and doc tests tests
 base-ci-flow: test
@@ -86,6 +86,7 @@ check:
 
 fmt:
     cd pulumi-language-gestalt && just fmt
+    cd pulumi-test && just fmt
     cargo fmt
     cargo clippy --tests --all-features --fix --allow-dirty --allow-staged
 

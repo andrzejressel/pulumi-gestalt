@@ -2,11 +2,13 @@ set windows-shell := ["pwsh.exe", "-c"]
 
 [windows]
 pulumi-test-regenerate-schema-json:
+    pulumi plugin rm resource test -y
     go build
     pulumi package get-schema .\pulumi-test.exe > schema.json
 
 [unix]
 pulumi-test-regenerate-schema-json:
+    pulumi plugin rm resource test -y
     go build
     pulumi package get-schema .\pulumi-test > schema.json
 
@@ -19,3 +21,6 @@ pulumi-test-install:
 pulumi-test-install:
     go build
     pulumi plugin install resource test 0.1 --file .\pulumi-test
+
+fmt:
+    go fmt .
