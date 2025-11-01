@@ -25,7 +25,7 @@ generator-ci-flow COMPILATION_NAME:
 
 c-ci-flow: build-language-plugin build-static-library test-c
 
-native-ci-flow: build-language-plugin build-native-examples test-native
+native-ci-flow: build-language-plugin build-pulumi-test build-native-examples test-native
 
 # Test docs examples and creates docs
 test-docs-ci-flow: test-docs
