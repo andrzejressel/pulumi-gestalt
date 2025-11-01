@@ -1,0 +1,74 @@
+{
+  "name": "test",
+  "displayName": "yourdisplayname",
+  "version": "0.1.0",
+  "namespace": "yournamespace",
+  "meta": {
+    "moduleFormat": "(.*)"
+  },
+  "language": {
+    "csharp": {
+      "respectSchemaVersion": true
+    },
+    "go": {
+      "generateResourceContainerTypes": true,
+      "importBasePath": "github.com/yournamespace/yourdisplayname/sdk/go/yourdisplayname",
+      "respectSchemaVersion": true
+    },
+    "nodejs": {
+      "respectSchemaVersion": true
+    },
+    "python": {
+      "pyproject": {
+        "enabled": true
+      },
+      "respectSchemaVersion": true
+    }
+  },
+  "config": {
+    "variables": {
+      "prefix": {
+        "type": "string"
+      }
+    }
+  },
+  "provider": {
+    "properties": {
+      "prefix": {
+        "type": "string"
+      }
+    },
+    "type": "object",
+    "inputProperties": {
+      "prefix": {
+        "type": "string"
+      }
+    }
+  },
+  "resources": {
+    "test:index:CombineString": {
+      "description": "Combines provider prefix with provided string",
+      "properties": {
+        "result": {
+          "type": "string"
+        },
+        "suffix": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "result",
+        "suffix"
+      ],
+      "inputProperties": {
+        "suffix": {
+          "type": "string"
+        }
+      },
+      "requiredInputs": [
+        "suffix"
+      ]
+    }
+  }
+}

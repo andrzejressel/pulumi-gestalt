@@ -8,16 +8,16 @@ CARGO_LLVM_COV_VERSION := "0.6.13"
 
 WASI_TARGET := "wasm32-wasip2"
 
-@default: build-language-plugin regenerator install-requirements build-wasm-components build-wasm-components-release test-all rust-docs fmt
+@default: build-language-plugin build-pulumi-test regenerator install-requirements build-wasm-components build-wasm-components-release test-all rust-docs fmt
 
 # Regenerate "DO NOT EDIT" sections, recreate generator examples (but does not compile them), reformat whole project, check changelog
-housekeeping-ci-flow: regenerator regenerate-generator-tests changelog-dry-run fmt
+housekeeping-ci-flow: regenerator regenerate-pulumi-test-schema regenerate-generator-tests changelog-dry-run fmt
 
 # Runs all amd64 unit and doc tests tests
 base-ci-flow: test
 
 # Runs all examples/*
-examples-ci-flow: build-language-plugin build-wasm-components build-wasm-components-release test-examples
+examples-ci-flow: build-language-plugin build-pulumi-test build-wasm-components build-wasm-components-release test-examples
 
 # Regenerates provider from generator's integration test
 generator-ci-flow COMPILATION_NAME:
@@ -25,7 +25,7 @@ generator-ci-flow COMPILATION_NAME:
 
 c-ci-flow: build-language-plugin build-static-library test-c
 
-native-ci-flow: build-language-plugin build-native-examples test-native
+native-ci-flow: build-language-plugin build-pulumi-test build-native-examples test-native
 
 # Test docs examples and creates docs
 test-docs-ci-flow: test-docs
@@ -36,6 +36,9 @@ fix-issues:
 
 build-language-plugin:
     cd pulumi-language-gestalt && just
+
+build-pulumi-test:
+    cd pulumi-test && just pulumi-test-install
 
 package-language-plugin VERSION:
     cd pulumi-language-gestalt && just package-language-plugin-all {{VERSION}}
@@ -50,7 +53,8 @@ install-requirements:
 build-native-examples:
     cargo build \
      -p pulumi_gestalt_example_native \
-     -p pulumi_gestalt_example_raw_rust
+     -p pulumi_gestalt_example_raw_rust \
+     -p pulumi_gestalt_example_test
 
 # Compiling everything together causes linking issues
 build-wasm-components:
@@ -82,6 +86,7 @@ check:
 
 fmt:
     cd pulumi-language-gestalt && just fmt
+    cd pulumi-test && just fmt
     cargo fmt
     cargo clippy --tests --all-features --fix --allow-dirty --allow-staged
 
@@ -97,6 +102,9 @@ recreate-lock-files-in-generator-tests $REMOVE_LOCK_FILES="true" $DO_NOT_COMPILE
 
 regenerate-generator-tests $DO_NOT_COMPILE="true":
     cargo nextest run -p pulumi_gestalt_generator --all-features --test '*' --profile all_cores
+
+regenerate-pulumi-test-schema:
+    cd pulumi-test && just pulumi-test-regenerate-schema-json
 
 publish:
     cargo publish --workspace --all-features
@@ -124,6 +132,7 @@ test-native:
     cargo llvm-cov nextest \
         -p pulumi_gestalt_example_native \
         -p pulumi_gestalt_example_raw_rust \
+        -p pulumi_gestalt_example_test \
         --cobertura --output-path covertura.xml --features example_test
 
 generator-tests:
