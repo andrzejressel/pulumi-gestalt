@@ -34,6 +34,7 @@ members = [
     "examples/raw_rust",
     "examples/secret",
     "examples/simple",
+    "examples/test",
     "examples/typesystem",
     "providers/aws-mini",
     "providers/azure-mini",
@@ -41,6 +42,7 @@ members = [
     "providers/docker",
     "providers/gcp-mini",
     "providers/random",
+    "providers/test",
     "providers/typesystem",
     "regenerator",
 ]
@@ -61,6 +63,7 @@ pulumi_gestalt_proto = { version = "=0.0.0-DEV", path = "crates/proto" }
 pulumi_gestalt_wit = { version = "=0.0.0-DEV", path = "crates/wit" }
 pulumi_gestalt_providers_docker = { version = "=0.0.0-DEV", path = "providers/docker" }
 pulumi_gestalt_providers_random = { version = "=0.0.0-DEV", path = "providers/random" }
+pulumi_gestalt_providers_test = { version = "=0.0.0-DEV", path = "providers/test" }
 pulumi_gestalt_providers_typesystem = { version = "=0.0.0-DEV", path = "providers/typesystem" }
 pulumi_gestalt_examples_common = { version = "=0.0.0-DEV", path = "examples/common" }
 pulumi_gestalt_grpc_connection = { version = "=0.0.0-DEV", path = "crates/grpc" }

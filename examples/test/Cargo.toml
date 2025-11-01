@@ -1,0 +1,16 @@
+[package]
+name = "pulumi_gestalt_example_test"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[features]
+example_test = []
+
+[dependencies]
+anyhow.workspace = true
+pulumi_gestalt_rust.workspace = true
+pulumi_gestalt_providers_test.workspace = true
+
+[dev-dependencies]
+pulumi_gestalt_examples_common.workspace = true
