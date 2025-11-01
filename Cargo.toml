@@ -34,7 +34,7 @@ members = [
     "examples/raw_rust",
     "examples/secret",
     "examples/simple",
-    'examples/test',
+    "examples/test",
     "examples/typesystem",
     "providers/aws-mini",
     "providers/azure-mini",
