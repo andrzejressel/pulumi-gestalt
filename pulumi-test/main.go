@@ -46,7 +46,7 @@ type HelloWorldState struct {
 	Result string `pulumi:"result"`
 }
 
-// All resources must implement Create at a minumum.
+// All resources must implement Create at a minimum.
 func (CombineString) Create(
 	ctx context.Context, req infer.CreateRequest[CombineStringArgs],
 ) (infer.CreateResponse[HelloWorldState], error) {
