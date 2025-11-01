@@ -4,65 +4,68 @@ import (
 	"context"
 	"fmt"
 	"os"
-	"strings"
 
 	"github.com/pulumi/pulumi-go-provider/infer"
 )
 
 func main() {
 	// We tell the provider what resources it needs to support.
-	// In this case, a single custom resource called HelloWorld.
+	// In this case, a single custom resource called CombineString.
 	p, err := infer.NewProviderBuilder().
 		WithResources(
-			infer.Resource(HelloWorld{}),
+			infer.Resource(CombineString{}),
+		).
+		WithConfig(
+			infer.Config(&Config{}),
 		).
 		Build()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
-    p.Run(context.Background(), "test", "0.1.0")
+	p.Run(context.Background(), "test", "0.1.0")
+}
+
+type Config struct {
+	Prefix *string `pulumi:"prefix,optional"`
 }
 
 // Each resource has a controlling struct.
-type HelloWorld struct{}
+type CombineString struct{}
 
 // Each resource has in input struct, defining what arguments it accepts.
-type HelloWorldArgs struct {
-	// Fields projected into Pulumi must be public and hava a `pulumi:"..."` tag.
-	// The pulumi tag doesn't need to match the field name, but its generally a
-	// good idea.
-	Name string `pulumi:"name"`
-	// Fields marked `optional` are optional, so they should have a pointer
-	// ahead of their type.
-	Loud *bool `pulumi:"loud,optional"`
+type CombineStringArgs struct {
+	Suffix string `pulumi:"suffix"`
 }
 
 // Each resource has a state, describing the fields that exist on the created resource.
 type HelloWorldState struct {
 	// It is generally a good idea to embed args in outputs, but it isn't strictly necessary.
-	HelloWorldArgs
+	CombineStringArgs
 	// Here we define a required output called message.
-	Message string `pulumi:"message"`
+	Result string `pulumi:"result"`
 }
 
 // All resources must implement Create at a minumum.
-func (HelloWorld) Create(
-	ctx context.Context, req infer.CreateRequest[HelloWorldArgs],
+func (CombineString) Create(
+	ctx context.Context, req infer.CreateRequest[CombineStringArgs],
 ) (infer.CreateResponse[HelloWorldState], error) {
+	config := infer.GetConfig[Config](ctx)
+	prefixPtr := config.Prefix
+	prefix := ""
+	if prefixPtr != nil {
+		prefix = *prefixPtr
+	}
 	name := req.Name
 	inputs := req.Inputs
-	state := HelloWorldState{HelloWorldArgs: inputs}
+	state := HelloWorldState{CombineStringArgs: inputs}
 	if req.DryRun {
 		return infer.CreateResponse[HelloWorldState]{ID: name, Output: state}, nil
 	}
-	state.Message = fmt.Sprintf("Hello, %s", inputs.Name)
-	if inputs.Loud != nil && *inputs.Loud {
-		state.Message = strings.ToUpper(state.Message)
-	}
+	state.Result = prefix + inputs.Suffix
 	return infer.CreateResponse[HelloWorldState]{ID: name, Output: state}, nil
 }
 
-func (r *HelloWorld) Annotate(a infer.Annotator) {
-	a.Describe(&r, "Produces a Hello message.")
+func (r *CombineString) Annotate(a infer.Annotator) {
+	a.Describe(&r, "Combines provider prefix with provided string")
 }

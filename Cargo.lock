@@ -3468,6 +3468,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "pulumi_gestalt_example_test"
+version = "0.0.0-DEV"
+dependencies = [
+ "anyhow",
+ "pulumi_gestalt_examples_common",
+ "pulumi_gestalt_providers_test",
+ "pulumi_gestalt_rust",
+]
+
+[[package]]
 name = "pulumi_gestalt_example_typesystem"
 version = "0.0.0-DEV"
 dependencies = [
@@ -3587,6 +3597,17 @@ dependencies = [
 
 [[package]]
 name = "pulumi_gestalt_providers_random"
+version = "0.0.0-DEV"
+dependencies = [
+ "bon",
+ "pulumi_gestalt_build",
+ "pulumi_gestalt_rust",
+ "serde",
+ "wit-bindgen",
+]
+
+[[package]]
+name = "pulumi_gestalt_providers_test"
 version = "0.0.0-DEV"
 dependencies = [
  "bon",

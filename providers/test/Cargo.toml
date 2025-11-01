@@ -1,0 +1,14 @@
+[package]
+name = "pulumi_gestalt_providers_test"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[dependencies]
+pulumi_gestalt_rust.workspace = true
+wit-bindgen.workspace = true
+bon.workspace = true
+serde.workspace = true
+
+[build-dependencies]
+pulumi_gestalt_build.workspace = true
