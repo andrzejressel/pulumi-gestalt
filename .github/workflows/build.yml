@@ -400,7 +400,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: protoc --version
       - uses: Swatinem/rust-cache@f13886b937689c021905a6b90929199931d60db1 # v2.8.1
-      - run: just build-native-examples
+      - run: just native-ci-flow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: git add . && git diff
