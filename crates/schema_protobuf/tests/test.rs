@@ -94,6 +94,11 @@ fn reserved_names() -> Result<()> {
 }
 
 #[test]
+fn tls() -> Result<()> {
+    run_pulumi_generator_test("tls", "tls", None)
+}
+
+#[test]
 fn unions_inline() -> Result<()> {
     run_pulumi_generator_test("unions-inline", "unions-inline", None)
 }

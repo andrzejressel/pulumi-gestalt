@@ -115,6 +115,12 @@ fn reserved_names() -> Result<()> {
 }
 
 #[test]
+#[cfg_attr(not(feature = "generator_tls"), ignore)]
+fn tls() -> Result<()> {
+    run_pulumi_generator_test("tls", "tls", None)
+}
+
+#[test]
 #[cfg_attr(not(feature = "generator_unions-inline"), ignore)]
 fn unions_inline() -> Result<()> {
     run_pulumi_generator_test("unions-inline", "unions-inline", None)

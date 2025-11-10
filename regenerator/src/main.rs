@@ -85,6 +85,10 @@ fn main() {
             name: "cloudflare",
             version: "5.43.1",
         },
+        Provider {
+            name: "tls",
+            version: "5.2.2",
+        },
     ];
     filtered_tests.sort_by(|a, b| a.name.cmp(b.name));
     providers.sort_by(|a, b| a.name.cmp(b.name));
@@ -105,6 +109,7 @@ fn main() {
         "plain-object-disable-defaults",
         "random",
         "reserved_names",
+        "tls",
         "unions-inline",
         "unions-inside-arrays",
         "workarounds",

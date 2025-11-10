@@ -363,7 +363,7 @@ fn convert_output_property_object_type(
             let mut type_ = new_type_mapper(&output_property.r#type)
                 .context(format!("Cannot handle [{output_name}] type"))?;
             if !object_type.required.contains(output_name)
-                || forced_options.contains(&(element_id.clone(), output_name.clone()))
+                || forced_options.contains(&(element_id.clone(), output_name))
             {
                 type_ = crate::model::Type::Option(Box::new(type_));
             }
@@ -581,16 +581,16 @@ fn create_number_enum(
     )
 }
 
-fn invalid_required_complextype_required_fields() -> HashSet<(ElementId, String)> {
+fn invalid_required_complextype_required_fields() -> HashSet<(ElementId, &'static str)> {
     HashSet::from([
         // https://github.com/pulumi/pulumi-docker/issues/1052
         (
             ElementId::new("docker:index/container:Container").unwrap(),
-            "containerLogs".to_string(),
+            "containerLogs",
         ),
         (
             ElementId::new("docker:index/container:Container").unwrap(),
-            "healthcheck".to_string(),
+            "healthcheck",
         ),
         //
     ])

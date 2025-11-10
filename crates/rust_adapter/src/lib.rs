@@ -41,7 +41,7 @@ pub trait GestaltOutput<T>: Clone {
     ///
     /// Can be used to work around Pulumi provider incorrect types
     ///
-    /// MUST NOT change the underlying value - only the projected type
+    /// DOES NOT change the underlying value - only the projected type
     ///
     /// # Safety
     ///
