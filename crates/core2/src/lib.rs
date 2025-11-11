@@ -1,5 +1,4 @@
 mod config;
-mod constants;
 mod engine;
 mod model;
 
@@ -7,12 +6,9 @@ pub use crate::config::Config;
 pub use crate::engine::Engine;
 pub use crate::model::FunctionName;
 pub use crate::model::OutputId;
-use anyhow::Result;
-use futures::FutureExt;
 use futures::future::{BoxFuture, Shared};
-use pulumi_gestalt_domain::{FieldName, NodeValue, ResourceFields};
-use serde_json::Value;
-use std::collections::HashMap;
+use futures::FutureExt;
+use pulumi_gestalt_domain::{NodeValue, ResourceFields};
 use std::sync::Arc;
 
 type RawOutput = Output<NodeValue>;
