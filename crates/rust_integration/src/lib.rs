@@ -1,21 +1,22 @@
-mod native_pulumi_connector;
-
 use anyhow::Context as AnyHowContext;
 use anyhow::Result;
-use pulumi_gestalt_core::{
-    Config, Engine, FieldName, ForeignFunctionToInvoke, FunctionName, OutputId, PulumiServiceImpl,
-};
+use pulumi_gestalt_core::{Config, Engine, FunctionName, RawOutput, RegisterResourceOutput};
+use pulumi_gestalt_domain::FieldName;
+use pulumi_gestalt_grpc_connection::RealPulumiConnector;
 use pulumi_gestalt_schema::model;
 use serde_json::Value;
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::ops::Deref;
 use std::rc::Rc;
+use tokio::runtime::Handle;
+#[cfg(feature = "sync")]
+use tokio::runtime::Handle;
 use uuid::Uuid;
 
 #[derive(Clone)]
 pub struct Output {
-    output_id: OutputId,
+    output_id: RawOutput,
     engine: Rc<RefCell<InnerPulumiEngine>>,
 }
 
@@ -30,7 +31,7 @@ pub struct ObjectField<'a> {
 }
 
 pub struct CompositeOutput {
-    output_id: OutputId,
+    output_id: RegisterResourceOutput,
     engine: Rc<RefCell<InnerPulumiEngine>>,
 }
 
@@ -42,6 +43,7 @@ pub(crate) struct InnerPulumiEngine {
 pub struct Context {
     inner: Rc<RefCell<InnerPulumiEngine>>,
     project_name: String,
+    runtime: Handle,
 }
 
 pub struct RegisterResourceRequest<'a> {
@@ -58,8 +60,8 @@ pub struct InvokeResourceRequest<'a> {
 }
 
 impl Context {
-    pub fn create_context() -> Context {
-        let engine = get_engine();
+    pub fn create_context_sync() -> Context {
+        let runtime = tokio::runtime::Builder::new_multi_thread().enable_all().build().unwrap();
         let project_name = std::env::var("PULUMI_PROJECT").unwrap();
         let inner = InnerPulumiEngine {
             engine,
@@ -68,6 +70,21 @@ impl Context {
         Context {
             inner: Rc::new(RefCell::new(inner)),
             project_name,
+            runtime: runtime.handle().clone(),
+        }
+    }
+    
+    pub async fn create_context() -> Context {
+        let engine = get_engine().await;
+        let project_name = std::env::var("PULUMI_PROJECT").unwrap();
+        let inner = InnerPulumiEngine {
+            engine,
+            functions: HashMap::new(),
+        };
+        Context {
+            inner: Rc::new(RefCell::new(inner)),
+            project_name,
+            runtime: Handle::current()
         }
     }
 
@@ -241,6 +258,8 @@ impl CompositeOutput {
         let pulumi_engine = &self.engine;
         let output_id = &self.output_id;
 
+        // let output = self.output_id
+
         let output = pulumi_engine
             .borrow_mut()
             .engine
@@ -253,7 +272,7 @@ impl CompositeOutput {
     }
 }
 
-pub fn get_engine() -> Engine {
+pub async fn get_engine() -> Engine {
     let pulumi_engine_url = std::env::var("PULUMI_ENGINE").unwrap();
     let pulumi_monitor_url = std::env::var("PULUMI_MONITOR").unwrap();
     let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();
@@ -264,21 +283,22 @@ pub fn get_engine() -> Engine {
         _ => false,
     };
 
-    let native_pulumi_connector = native_pulumi_connector::NativePulumiConnector::new(
-        pulumi_monitor_url,
-        pulumi_engine_url,
-        pulumi_project,
-        pulumi_stack,
-    );
+    let pulumi_connector = RealPulumiConnector::new(
+        pulumi_monitor_url.clone(),
+        pulumi_engine_url.clone(),
+        pulumi_project.clone(),
+        pulumi_stack.clone(),
+        in_preview,
+    )
+    .await
+    .context("Failed to create Pulumi connector")
+    .unwrap();
 
     let config = Config::from_env_vars()
         .context("Failed to create config instance")
         .unwrap();
 
-    Engine::new(
-        PulumiServiceImpl::new(native_pulumi_connector, in_preview),
-        config,
-    )
+    Engine::new(pulumi_connector, config)
 }
 
 /// Requires `pulumi` CLI to be installed and available in PATH

@@ -1,18 +1,48 @@
 mod config;
-mod constants;
 mod engine;
 mod model;
-mod nodes;
-mod pulumi;
 
-// pub use crate::nodes::ResourceOperation;
-pub use crate::config::Config;
 pub use crate::engine::ConfigValue;
+pub use crate::config::Config;
 pub use crate::engine::Engine;
-pub use crate::engine::ForeignFunctionToInvoke;
-pub use crate::model::FieldName;
 pub use crate::model::FunctionName;
-pub use crate::model::OutputId;
-pub use crate::pulumi::connector::PulumiConnector;
-pub use crate::pulumi::service::PerformResourceRequest;
-pub use crate::pulumi::service_impl::PulumiServiceImpl;
+use futures::future::{BoxFuture, Shared};
+use futures::FutureExt;
+use pulumi_gestalt_domain::{NodeValue, ResourceFields};
+use std::sync::Arc;
+
+pub type RawOutput = Output<NodeValue>;
+
+impl RawOutput {
+    pub fn from_node_value(value: NodeValue) -> Self {
+        let f = async move { value };
+        Self {
+            value: f.boxed().shared(),
+        }
+    }
+}
+
+pub type RegisterResourceOutput = Output<Arc<ResourceFields>>;
+
+#[derive(Clone)]
+struct Output<T> {
+    value: Shared<BoxFuture<'static, T>>,
+}
+
+impl<T: Clone> Output<T> {
+    pub fn from_future<F>(future: F) -> Output<T>
+    where
+        F: Future<Output = T> + Send + 'static,
+    {
+        Self {
+            value: future.boxed().shared(),
+        }
+    }
+
+    // Used for mappings to ensure they will be invoked (even if the result is not needed)
+    pub fn invoke_void(self) -> impl Future<Output = ()> {
+        async move {
+            self.value.await;
+        }
+    }
+}

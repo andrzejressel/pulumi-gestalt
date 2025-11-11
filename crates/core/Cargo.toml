@@ -10,6 +10,7 @@ description = "Core Pulumi Gestalt implementation"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+futures.workspace = true
 anyhow.workspace = true
 prost.workspace = true
 prost-types.workspace = true
@@ -17,6 +18,11 @@ uuid.workspace = true
 log.workspace = true
 serde_json.workspace = true
 pulumi_gestalt_proto = { workspace = true, features = ["pulumi"] }
+tokio.workspace = true
+static_assertions.workspace = true
+bon.workspace = true
+pulumi_gestalt_domain.workspace = true
 
 [dev-dependencies]
 mockall.workspace = true
+pulumi_gestalt_domain = {workspace = true, features = ["test-utils"] }

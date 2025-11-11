@@ -8,7 +8,6 @@ members = [
     "changelog_lib",
     "crates/c_ffi",
     "crates/core",
-    "crates/core2",
     "crates/domain",
     "crates/grpc",
     "crates/proto", 
