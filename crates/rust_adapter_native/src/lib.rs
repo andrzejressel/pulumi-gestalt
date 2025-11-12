@@ -49,7 +49,7 @@ impl Default for NativeContext {
 impl NativeContext {
     pub fn new() -> NativeContext {
         NativeContext {
-            inner: integration::Context::create_context(),
+            inner: integration::Context::create_context_sync(),
         }
     }
 

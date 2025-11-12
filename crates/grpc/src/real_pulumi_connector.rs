@@ -228,7 +228,14 @@ impl PulumiConnector for RealPulumiConnector {
     }
 
     async fn register_outputs(&self, req: RegisterOutputsRequest) -> () {
-        todo!()
+        let req = RegisterResourceOutputsRequest {
+            urn: self.root_resource.clone(),
+            outputs: Some(create_protobuf_struct(req.outputs)),
+        };
+        self.register_resource_outputs(req)
+            .await
+            .context("Failed to register resource outputs")
+            .unwrap();
     }
 }
 

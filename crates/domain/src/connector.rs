@@ -41,7 +41,7 @@ pub struct ResourceInvokeResult {
 
 #[derive(Builder, Debug, PartialEq)]
 pub struct RegisterOutputsRequest {
-    outputs: HashMap<FieldName, NodeValue>,
+    pub outputs: HashMap<FieldName, NodeValue>,
 }
 
 impl RegisterOutputsRequest {

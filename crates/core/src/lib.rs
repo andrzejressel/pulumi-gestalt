@@ -2,14 +2,15 @@ mod config;
 mod engine;
 mod model;
 
-pub use crate::engine::ConfigValue;
-pub use crate::config::Config;
-pub use crate::engine::Engine;
-pub use crate::model::FunctionName;
+pub use engine::ConfigValue;
+pub use config::Config;
+pub use engine::Engine;
+pub use model::FunctionName;
 use futures::future::{BoxFuture, Shared};
 use futures::FutureExt;
 use pulumi_gestalt_domain::{NodeValue, ResourceFields};
 use std::sync::Arc;
+pub use engine::NativeFunctionRequest;
 
 pub type RawOutput = Output<NodeValue>;
 
@@ -25,11 +26,11 @@ impl RawOutput {
 pub type RegisterResourceOutput = Output<Arc<ResourceFields>>;
 
 #[derive(Clone)]
-struct Output<T> {
+pub struct Output<T> {
     value: Shared<BoxFuture<'static, T>>,
 }
 
-impl<T: Clone> Output<T> {
+impl<T: Clone + 'static + std::marker::Send + std::marker::Sync> Output<T> {
     pub fn from_future<F>(future: F) -> Output<T>
     where
         F: Future<Output = T> + Send + 'static,
@@ -40,9 +41,9 @@ impl<T: Clone> Output<T> {
     }
 
     // Used for mappings to ensure they will be invoked (even if the result is not needed)
-    pub fn invoke_void(self) -> impl Future<Output = ()> {
+    pub fn invoke_void(self) -> Shared<BoxFuture<'static, ()>> {
         async move {
             self.value.await;
-        }
+        }.boxed().shared()
     }
 }

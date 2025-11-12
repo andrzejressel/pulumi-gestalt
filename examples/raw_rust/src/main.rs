@@ -121,7 +121,7 @@ fn obtain_schema() {
 }
 
 fn main() {
-    let ctx = Context::create_context();
+    let ctx = Context::create_context_sync();
 
     generate_random_value(&ctx);
     run_command(&ctx);
@@ -130,5 +130,5 @@ fn main() {
     perform_operations_on_custom_config(&ctx);
     obtain_schema();
 
-    ctx.finish();
+    ctx.finish_sync();
 }

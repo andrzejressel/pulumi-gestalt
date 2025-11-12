@@ -1,6 +1,8 @@
 use anyhow::Context as AnyHowContext;
 use anyhow::Result;
-use pulumi_gestalt_core::{Config, Engine, FunctionName, RawOutput, RegisterResourceOutput};
+use pulumi_gestalt_core::{
+    Config, Engine, FunctionName, NativeFunctionRequest, RawOutput, RegisterResourceOutput,
+};
 use pulumi_gestalt_domain::FieldName;
 use pulumi_gestalt_grpc_connection::RealPulumiConnector;
 use pulumi_gestalt_schema::model;
@@ -9,9 +11,7 @@ use std::cell::RefCell;
 use std::collections::HashMap;
 use std::ops::Deref;
 use std::rc::Rc;
-use tokio::runtime::Handle;
-#[cfg(feature = "sync")]
-use tokio::runtime::Handle;
+use tokio::runtime::{Handle, Runtime};
 use uuid::Uuid;
 
 #[derive(Clone)]
@@ -43,7 +43,8 @@ pub(crate) struct InnerPulumiEngine {
 pub struct Context {
     inner: Rc<RefCell<InnerPulumiEngine>>,
     project_name: String,
-    runtime: Handle,
+    handle: Handle,
+    runtime: Option<Runtime>
 }
 
 pub struct RegisterResourceRequest<'a> {
@@ -61,19 +62,16 @@ pub struct InvokeResourceRequest<'a> {
 
 impl Context {
     pub fn create_context_sync() -> Context {
-        let runtime = tokio::runtime::Builder::new_multi_thread().enable_all().build().unwrap();
-        let project_name = std::env::var("PULUMI_PROJECT").unwrap();
-        let inner = InnerPulumiEngine {
-            engine,
-            functions: HashMap::new(),
-        };
-        Context {
-            inner: Rc::new(RefCell::new(inner)),
-            project_name,
-            runtime: runtime.handle().clone(),
-        }
+        let runtime = tokio::runtime::Builder::new_multi_thread()
+            .enable_all()
+            .build()
+            .unwrap();
+        let handle = runtime.handle().clone();
+        let mut c = handle.block_on(async { Self::create_context().await });
+        c.runtime = Some(runtime);
+        c
     }
-    
+
     pub async fn create_context() -> Context {
         let engine = get_engine().await;
         let project_name = std::env::var("PULUMI_PROJECT").unwrap();
@@ -84,7 +82,8 @@ impl Context {
         Context {
             inner: Rc::new(RefCell::new(inner)),
             project_name,
-            runtime: Handle::current()
+            handle: Handle::current(),
+            runtime: None
         }
     }
 
@@ -109,7 +108,7 @@ impl Context {
 
         let mut objects_map = HashMap::new();
         for object in request.inputs {
-            objects_map.insert(FieldName::from(&object.name), object.value.output_id);
+            objects_map.insert(FieldName::from(&object.name), object.value.output_id.clone());
         }
 
         let output_id = self
@@ -128,7 +127,7 @@ impl Context {
     pub fn invoke_resource(&self, request: InvokeResourceRequest) -> CompositeOutput {
         let mut objects_map = HashMap::new();
         for object in request.inputs {
-            objects_map.insert(FieldName::from(&object.name), object.value.output_id);
+            objects_map.insert(FieldName::from(&object.name), object.value.output_id.clone());
         }
 
         let output_id = self
@@ -144,35 +143,30 @@ impl Context {
         }
     }
 
-    pub fn finish(&self) {
-        self.finish_loop(HashMap::new());
+    pub fn finish_sync(&self) {
+        self.handle.block_on(async { self.finish().await });
     }
-
-    fn finish_loop(&self, mut native_function_result: HashMap<OutputId, Value>) {
+    
+    pub async fn finish(&self) {
         let mut inner = self.inner.borrow_mut();
         loop {
-            let result = inner.engine.run(native_function_result);
+            let result = inner.engine.run().await;
 
             match result {
                 None => break,
-                Some(functions_to_invoke) => {
-                    native_function_result = HashMap::new();
+                Some(NativeFunctionRequest {
+                    function_name,
+                    data,
+                    return_mailbox,
+                }) => {
+                    let function = inner.functions.get(&function_name).unwrap();
+                    let s = data.to_string();
 
-                    for ForeignFunctionToInvoke {
-                        output_id,
-                        function_name,
-                        value,
-                    } in functions_to_invoke.iter()
-                    {
-                        let function = inner.functions.get(function_name).unwrap();
-                        let s = value.to_string();
+                    let result = function(s);
 
-                        let result = function(s);
+                    let result = serde_json::from_str(&result).unwrap();
 
-                        let result = serde_json::from_str(&result).unwrap();
-
-                        native_function_result.insert(*output_id, result);
-                    }
+                    return_mailbox.send(result).unwrap();
                 }
             }
         }
@@ -205,7 +199,7 @@ impl Context {
 impl Output {
     pub fn add_export(&self, name: String) {
         let pulumi_engine = &self.engine;
-        let output_id = self.output_id;
+        let output_id = self.output_id.clone();
         pulumi_engine
             .deref()
             .borrow_mut()
@@ -214,7 +208,7 @@ impl Output {
     }
 
     pub fn map(&self, function: Box<dyn Fn(String) -> String>) -> Output {
-        let output_id = self.output_id;
+        let output_id = &self.output_id;
         let function_uuid = Uuid::new_v4();
         let function_name: FunctionName = function_uuid.to_string().into();
 
@@ -222,7 +216,7 @@ impl Output {
 
         let output = inner
             .engine
-            .create_native_function_node(function_name.clone(), output_id);
+            .create_native_function_node(function_name.clone(), output_id.clone());
         let output = Output {
             output_id: output,
             engine: Rc::clone(&self.engine),
@@ -236,9 +230,9 @@ impl Output {
     pub fn combine(&self, others: &[&Output]) -> Output {
         let pulumi_engine = &self.engine;
         let mut outputs = Vec::with_capacity(others.len() + 1);
-        outputs.push(self.output_id);
+        outputs.push(self.output_id.clone());
         for o in others {
-            outputs.push(o.output_id);
+            outputs.push(o.output_id.clone());
         }
 
         let output = pulumi_engine
@@ -263,7 +257,7 @@ impl CompositeOutput {
         let output = pulumi_engine
             .borrow_mut()
             .engine
-            .create_extract_field(field_name.into(), *output_id);
+            .create_extract_field(field_name.into(), output_id.clone());
 
         Output {
             output_id: output,

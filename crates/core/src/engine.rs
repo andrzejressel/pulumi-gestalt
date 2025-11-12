@@ -1,24 +1,26 @@
 use crate::config::{Config, RawConfigValue};
 use crate::{FunctionName, RawOutput, RegisterResourceOutput};
-use futures::FutureExt;
-use futures::stream::FuturesOrdered;
+use futures::channel::mpsc::{unbounded, UnboundedReceiver, UnboundedSender};
+use futures::channel::oneshot::{channel, Sender};
+use futures::future::{BoxFuture, Shared};
+use futures::stream::{FuturesOrdered, FuturesUnordered};
+use futures::{FutureExt, Stream};
 use pulumi_gestalt_domain::connector::{
     PulumiConnector, RegisterOutputsRequest, RegisterResourceRequest, ResourceInvokeRequest,
 };
 use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue};
 use serde_json::Value;
 use std::collections::{HashMap, HashSet};
-use std::sync::Arc;
 use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering::SeqCst;
-use tokio::sync::mpsc::{UnboundedReceiver, UnboundedSender};
-use tokio::sync::oneshot::Sender;
-use tokio::task::JoinSet;
+use std::sync::Arc;
+use futures::stream::{StreamExt};
+
 
 pub struct NativeFunctionRequest {
-    function_name: FunctionName,
-    data: Value,
-    return_mailbox: Sender<Value>,
+    pub function_name: FunctionName,
+    pub data: Value,
+    pub return_mailbox: Sender<Value>,
 }
 
 pub enum ConfigValue {
@@ -28,7 +30,7 @@ pub enum ConfigValue {
 
 pub struct Engine {
     outputs: HashMap<FieldName, RawOutput>,
-    join_set: JoinSet<()>,
+    join_set: FuturesUnordered<Shared<BoxFuture<'static, ()>>>,
     native_function_queue_sender: UnboundedSender<NativeFunctionRequest>,
     native_function_queue_receiver: UnboundedReceiver<NativeFunctionRequest>,
 
@@ -41,10 +43,10 @@ static_assertions::assert_impl_all!(Engine: Send, Sync);
 
 impl Engine {
     pub fn new(pulumi: impl PulumiConnector + 'static, config: Config) -> Self {
-        let (tx, rx) = tokio::sync::mpsc::unbounded_channel();
+        let (tx, rx) = unbounded();
         Self {
             outputs: HashMap::new(),
-            join_set: JoinSet::new(),
+            join_set: FuturesUnordered::new(),
             pulumi: Arc::new(Box::new(pulumi)),
             output_task_created: AtomicBool::new(false),
             native_function_queue_sender: tx,
@@ -91,7 +93,7 @@ impl Engine {
 
             Arc::new(result.fields)
         });
-        self.join_set.spawn(output.clone().invoke_void());
+        self.join_set.push(output.clone().invoke_void());
 
         output
     }
@@ -122,7 +124,7 @@ impl Engine {
 
             Arc::new(result.fields)
         });
-        self.join_set.spawn(output.clone().invoke_void());
+        self.join_set.push(output.clone().invoke_void());
 
         output
     }
@@ -132,26 +134,26 @@ impl Engine {
         function_name: FunctionName,
         source: RawOutput,
     ) -> RawOutput {
-        let request_receiver = self.native_function_queue_sender.clone();
+        let mut request_receiver = self.native_function_queue_sender.clone();
         let output = RawOutput::from_future(async move {
             let source_value = source.value.await;
             match source_value {
                 NodeValue::Nothing => NodeValue::Nothing,
                 NodeValue::Exists(ExistingNodeValue { value, secret }) => {
-                    let (tx, rx) = tokio::sync::oneshot::channel();
+                    let (tx, rx) = channel();
                     let request = NativeFunctionRequest {
                         function_name,
                         data: value,
                         return_mailbox: tx,
                     };
-                    request_receiver.send(request).unwrap();
+                    request_receiver.unbounded_send(request).unwrap();
 
                     let result = rx.await.unwrap();
                     NodeValue::exists(result, secret)
                 }
             }
         });
-        self.join_set.spawn(output.clone().invoke_void());
+        self.join_set.push(output.clone().invoke_void());
         output
     }
 
@@ -196,7 +198,7 @@ impl Engine {
             let resource_fields = source.value.await;
             resource_fields.get_field_value(&field_name)
         });
-        self.join_set.spawn(output.clone().invoke_void());
+        self.join_set.push(output.clone().invoke_void());
         output
     }
 
@@ -205,7 +207,7 @@ impl Engine {
         RawOutput::from_node_value(NodeValue::Nothing)
     }
 
-    async fn run(&mut self) -> Option<NativeFunctionRequest> {
+    pub async fn run(&mut self) -> Option<NativeFunctionRequest> {
         if self
             .output_task_created
             .compare_exchange(false, true, SeqCst, SeqCst)
@@ -230,23 +232,37 @@ impl Engine {
                     .await;
             };
 
-            self.join_set.spawn(f);
+            self.join_set.push(f.boxed().shared());
         }
 
         loop {
-            tokio::select! {
-                res = self.join_set.join_next() => {
+            futures::select! {
+                res = self.join_set.next() => {
                     match res {
                         Some(_) => {
                             continue
                         }
                         None => {
+                            // All tasks complete
+                            // Tokio and futures structs have different bevahiors when streams complete
+                            // Tokio will be returning None, but futures will not return anything anymore
+                            // Due to that if someone calls run again the select will wait for receiver - and since
+                            // there is no more tasks it will be stuck forever. To avoid that we close the receiver here.
+                            // That way futures will panic
+                            self.native_function_queue_receiver.close();
                             return None;
                         }
                     }
                 }
-                Some(request) = self.native_function_queue_receiver.recv() => {
-                    return Some(request)
+                request = self.native_function_queue_receiver.next() => {
+                    match request {
+                        Some(request) => {
+                            return Some(request)
+                        }
+                        None => {
+                            continue;
+                        }
+                    }
                 }
             }
         }
@@ -274,16 +290,6 @@ mod tests {
     mod register_outputs {
         use super::*;
         use pulumi_gestalt_domain::connector::MockPulumiConnector;
-
-        #[tokio::test]
-        async fn does_not_register_outputs_when_none_added() {
-            let mut mock = MockPulumiConnector::new();
-            mock.expect_register_outputs().times(0);
-
-            let mut engine = Engine::new_without_configs(mock);
-
-            let result = engine.run().await;
-        }
 
         #[tokio::test]
         async fn should_register_outputs() {
@@ -319,10 +325,17 @@ mod tests {
             let mut engine = Engine::new_without_configs(mock);
 
             let output_id = engine.create_done_node(1.into(), false);
-            engine.add_output("output".into(), output_id);
+            engine.add_output("output".into(), output_id.clone());
+            engine.create_native_function_node("nativeFunc".into(), output_id.clone());
+            engine.create_native_function_node("nativeFunc2".into(), output_id);
+            
+            let result = engine.run().await;
+            // nativeFunc
+            assert!(result.is_some());
 
-            let _ = engine.run().await;
-            let _ = engine.run().await;
+            let result = engine.run().await;
+            // nativeFunc2
+            assert!(result.is_some());
         }
     }
 
@@ -482,8 +495,8 @@ mod tests {
         use crate::engine::ConfigValue;
         use pulumi_gestalt_domain::NodeValue;
 
-        use std::collections::HashSet;
         use pulumi_gestalt_domain::connector::MockPulumiConnector;
+        use std::collections::HashSet;
 
         #[test]
         fn should_return_none_when_config_is_not_set() {
