@@ -1,337 +1,12 @@
+use pulumi_gestalt_schema::model::Package;
+use anyhow::{Context, Result};
+use pulumi_gestalt_core::{Config, Engine};
+use pulumi_gestalt_grpc_connection::RealPulumiConnector;
+
 pub mod r#async;
 pub mod sync;
 
-use anyhow::Context as AnyHowContext;
-use anyhow::Result;
-use futures::future::{BoxFuture, Shared};
-use pulumi_gestalt_core::{
-    Config, Engine, FunctionName, NativeFunctionRequest, RawOutput, RegisterResourceOutput,
-};
-use pulumi_gestalt_domain::FieldName;
-use pulumi_gestalt_grpc_connection::RealPulumiConnector;
-use pulumi_gestalt_schema::model;
-use std::cell::RefCell;
-use std::collections::HashMap;
-use std::ops::Deref;
-use std::rc::Rc;
-use tokio::runtime::{Handle, Runtime};
-use uuid::Uuid;
-
-pub struct Output {
-    output_id: RawOutput,
-    engine: Rc<RefCell<InnerPulumiEngine>>,
-}
-
-
-static_assertions::assert_impl_all!(Output: Send);
-
-pub enum ConfigValue {
-    PlainText(String),
-    Secret(Output),
-}
-
-pub struct ObjectField<'a> {
-    pub name: String,
-    pub value: &'a Output,
-}
-
-
-static_assertions::assert_impl_all!(ObjectField: Send);
-
-pub struct CompositeOutput {
-    output_id: RegisterResourceOutput,
-    engine: Rc<RefCell<InnerPulumiEngine>>,
-}
-
-
-static_assertions::assert_impl_all!(CompositeOutput: Send);
-
-#[cfg(all(feature = "async_functions", feature = "send_functions"))]
-type FunctionType = Box<dyn Fn(String) -> Shared<BoxFuture<'static, String>> + Send>;
-#[cfg(all(feature = "async_functions", not(feature = "send_functions")))]
-type FunctionType = Box<dyn Fn(String) -> Shared<BoxFuture<'static, String>>>;
-#[cfg(all(not(feature = "async_functions"), feature = "send_functions"))]
-type FunctionType = Box<dyn Fn(String) -> String + Send>;
-#[cfg(all(not(feature = "async_functions"), not(feature = "send_functions")))]
-type FunctionType = Box<dyn Fn(String) -> String>;
-
-pub(crate) struct InnerPulumiEngine {
-    engine: Engine,
-    functions: HashMap<FunctionName, FunctionType>,
-}
-
-
-static_assertions::assert_impl_all!(InnerPulumiEngine: Send);
-
-pub struct Context {
-    inner: Rc<RefCell<InnerPulumiEngine>>,
-    project_name: String,
-    handle: Handle,
-    runtime: Option<Runtime>,
-}
-
-
-static_assertions::assert_impl_all!(Context: Send);
-
-pub struct RegisterResourceRequest<'a> {
-    pub type_: String,
-    pub name: String,
-    pub version: String,
-    pub inputs: &'a [ObjectField<'a>],
-}
-
-pub struct InvokeResourceRequest<'a> {
-    pub token: String,
-    pub version: String,
-    pub inputs: &'a [ObjectField<'a>],
-}
-
-impl Context {
-    
-    // Synchronous context creation for use in sync environments
-    // Under the hood creates a tokio runtime to run async code
-    pub fn create_context_sync() -> Context {
-        let runtime = tokio::runtime::Builder::new_multi_thread()
-            .enable_all()
-            .build()
-            .unwrap();
-        let handle = runtime.handle().clone();
-        let mut c = handle.block_on(async { Self::create_context().await });
-        c.runtime = Some(runtime);
-        c
-    }
-
-    pub async fn create_context() -> Context {
-        let engine = get_engine().await;
-        let project_name = std::env::var("PULUMI_PROJECT").unwrap();
-        let inner = InnerPulumiEngine {
-            engine,
-            functions: HashMap::new(),
-        };
-        Context {
-            inner: Rc::new(RefCell::new(inner)),
-            project_name,
-            handle: Handle::current(),
-            runtime: None,
-        }
-    }
-
-    pub fn create_output(&self, value: String, secret: bool) -> Output {
-        let value = serde_json::from_str(&value).unwrap();
-        let output_id = self
-            .inner
-            .deref()
-            .borrow_mut()
-            .engine
-            .create_done_node(value, secret);
-        Output {
-            output_id,
-            engine: Rc::clone(&self.inner),
-        }
-    }
-
-    pub fn register_resource(&self, request: RegisterResourceRequest) -> CompositeOutput {
-        let type_ = request.type_;
-        let name = request.name;
-        let version = request.version;
-
-        let mut objects_map = HashMap::new();
-        for object in request.inputs {
-            objects_map.insert(
-                FieldName::from(&object.name),
-                object.value.output_id.clone(),
-            );
-        }
-
-        let output_id = self
-            .inner
-            .deref()
-            .borrow_mut()
-            .engine
-            .create_register_resource_node(type_, name, objects_map, version);
-
-        CompositeOutput {
-            output_id,
-            engine: Rc::clone(&self.inner),
-        }
-    }
-
-    pub fn invoke_resource(&self, request: InvokeResourceRequest) -> CompositeOutput {
-        let mut objects_map = HashMap::new();
-        for object in request.inputs {
-            objects_map.insert(
-                FieldName::from(&object.name),
-                object.value.output_id.clone(),
-            );
-        }
-
-        let output_id = self
-            .inner
-            .deref()
-            .borrow_mut()
-            .engine
-            .create_resource_invoke_node(request.token, objects_map, request.version);
-
-        CompositeOutput {
-            output_id,
-            engine: Rc::clone(&self.inner),
-        }
-    }
-
-    // Synchronous version of finish for use in sync contexts
-    // Ensures that all functions will be run on thread that
-    // run this method
-    pub fn finish_sync(&self) {
-        let mut inner = self.inner.borrow_mut();
-        loop {
-            let result = self.handle.block_on(async { inner.engine.run().await });
-
-            match result {
-                None => break,
-                Some(NativeFunctionRequest {
-                    function_name,
-                    data,
-                    return_mailbox,
-                }) => {
-                    let function = inner.functions.get(&function_name).unwrap();
-                    let s = data.to_string();
-
-                    #[cfg(feature = "async_functions")]
-                    let result = self.handle.block_on(async { function(s).await });
-                    #[cfg(not(feature = "async_functions"))]
-                    let result = function(s);
-
-                    let result = serde_json::from_str(&result).unwrap();
-
-                    return_mailbox.send(result).unwrap();
-                }
-            }
-        }
-    }
-
-    // Asynchronous version of finish for use in async contexts
-    // Functions may be called on any thread managed by current runtime
-    pub async fn finish(&self) {
-        let mut inner = self.inner.borrow_mut();
-        loop {
-            let result = inner.engine.run().await;
-
-            match result {
-                None => break,
-                Some(NativeFunctionRequest {
-                    function_name,
-                    data,
-                    return_mailbox,
-                }) => {
-                    let function = inner.functions.get(&function_name).unwrap();
-                    let s = data.to_string();
-
-                    #[cfg(feature = "async_functions")]
-                    let result = function(s).await;
-                    #[cfg(not(feature = "async_functions"))]
-                    let result = function(s);
-
-                    let result = serde_json::from_str(&result).unwrap();
-
-                    return_mailbox.send(result).unwrap();
-                }
-            }
-        }
-    }
-
-    pub fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
-        let pulumi_engine = &self.inner;
-        let name = name.unwrap_or(&self.project_name);
-
-        match pulumi_engine
-            .borrow_mut()
-            .engine
-            .get_config_value(name, key)
-        {
-            None => None,
-            Some(pulumi_gestalt_core::ConfigValue::PlainText(value)) => {
-                Some(ConfigValue::PlainText(value))
-            }
-            Some(pulumi_gestalt_core::ConfigValue::Secret(output_id)) => {
-                let output = Output {
-                    output_id,
-                    engine: Rc::clone(pulumi_engine),
-                };
-                Some(ConfigValue::Secret(output))
-            }
-        }
-    }
-}
-
-impl Output {
-    pub fn add_export(&self, name: String) {
-        let pulumi_engine = &self.engine;
-        let output_id = self.output_id.clone();
-        pulumi_engine
-            .deref()
-            .borrow_mut()
-            .engine
-            .add_output(name.into(), output_id);
-    }
-
-    pub fn map(&self, function: Box<FunctionType>) -> Output {
-        let output_id = &self.output_id;
-        let function_uuid = Uuid::new_v4();
-        let function_name: FunctionName = function_uuid.to_string().into();
-
-        let mut inner = self.engine.borrow_mut();
-
-        let output = inner
-            .engine
-            .create_native_function_node(function_name.clone(), output_id.clone());
-        let output = Output {
-            output_id: output,
-            engine: Rc::clone(&self.engine),
-        };
-
-        inner.functions.insert(function_name, function);
-
-        output
-    }
-
-    pub fn combine(&self, others: &[&Output]) -> Output {
-        let pulumi_engine = &self.engine;
-        let mut outputs = Vec::with_capacity(others.len() + 1);
-        outputs.push(self.output_id.clone());
-        for o in others {
-            outputs.push(o.output_id.clone());
-        }
-
-        let output = pulumi_engine
-            .borrow_mut()
-            .engine
-            .create_combine_outputs(outputs);
-
-        Output {
-            output_id: output,
-            engine: Rc::clone(pulumi_engine),
-        }
-    }
-}
-
-impl CompositeOutput {
-    pub fn get_field(&self, field_name: String) -> Output {
-        let pulumi_engine = &self.engine;
-        let output_id = &self.output_id;
-
-        let output = pulumi_engine
-            .borrow_mut()
-            .engine
-            .create_extract_field(field_name.into(), output_id.clone());
-
-        Output {
-            output_id: output,
-            engine: Rc::clone(pulumi_engine),
-        }
-    }
-}
-
-pub async fn get_engine() -> Engine {
+pub(crate) async fn get_engine() -> Engine {
     let pulumi_engine_url = std::env::var("PULUMI_ENGINE").unwrap();
     let pulumi_monitor_url = std::env::var("PULUMI_MONITOR").unwrap();
     let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();
@@ -349,9 +24,9 @@ pub async fn get_engine() -> Engine {
         pulumi_stack,
         in_preview,
     )
-    .await
-    .context("Failed to create Pulumi connector")
-    .unwrap();
+        .await
+        .context("Failed to create Pulumi connector")
+        .unwrap();
 
     let config = Config::from_env_vars()
         .context("Failed to create config instance")
@@ -359,6 +34,7 @@ pub async fn get_engine() -> Engine {
 
     Engine::new(pulumi_connector, config)
 }
+
 
 /// Requires `pulumi` CLI to be installed and available in PATH
 /// Modules for provider can be found in Pulumi registry on left side with (M) icon:
@@ -372,7 +48,7 @@ pub fn get_schema(
     provider_name: &str,
     provider_version: &str,
     modules: Option<&[&str]>,
-) -> Result<model::Package> {
+) -> Result<Package> {
     pulumi_gestalt_schema::get_schema(provider_name, provider_version, modules)
 }
 

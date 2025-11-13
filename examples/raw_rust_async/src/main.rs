@@ -1,7 +1,7 @@
-use pulumi_gestalt_rust_integration::get_schema;
-use pulumi_gestalt_rust_integration::sync::{
+use pulumi_gestalt_rust_integration::r#async::{
     ConfigValue, Context, InvokeResourceRequest, ObjectField, RegisterResourceRequest,
 };
+use pulumi_gestalt_rust_integration::get_schema;
 
 fn generate_random_value(ctx: &Context) {
     let output = ctx.create_output("16".to_string(), false);
@@ -46,11 +46,11 @@ fn run_command(ctx: &Context) {
 fn perform_operations_on_outputs(ctx: &Context) {
     let output = ctx.create_output("16".to_string(), false);
 
-    let output_2 = output.map(Box::new(|s| {
+    let output_2 = output.map(|s| async move  {
         let i = s.parse::<i32>().unwrap();
         (i * 2).to_string()
-    }));
-    let output_3 = output_2.map(Box::new(|_| "\"my_string\"".to_string()));
+    });
+    let output_3 = output_2.map(|_| async move { "\"my_string\"".to_string() });
 
     let output_4 = output.combine(&[&output_2, &output_3]);
 
@@ -121,8 +121,9 @@ fn obtain_schema() {
     let _ = get_schema("docker", "4.5.3", None).unwrap();
 }
 
-fn main() {
-    let ctx = Context::create_context();
+#[tokio::main]
+async fn main() {
+    let ctx = Context::create_context().await;
 
     generate_random_value(&ctx);
     run_command(&ctx);
@@ -131,5 +132,5 @@ fn main() {
     perform_operations_on_custom_config(&ctx);
     obtain_schema();
 
-    ctx.finish();
+    ctx.finish().await;
 }

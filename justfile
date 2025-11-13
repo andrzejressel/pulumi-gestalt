@@ -54,6 +54,7 @@ build-native-examples:
     cargo build \
      -p pulumi_gestalt_example_native \
      -p pulumi_gestalt_example_raw_rust \
+     -p pulumi_gestalt_example_raw_rust_async \
      -p pulumi_gestalt_example_test
 
 # Compiling everything together causes linking issues
@@ -132,6 +133,7 @@ test-native:
     cargo llvm-cov nextest \
         -p pulumi_gestalt_example_native \
         -p pulumi_gestalt_example_raw_rust \
+        -p pulumi_gestalt_example_raw_rust_async \
         -p pulumi_gestalt_example_test \
         --cobertura --output-path covertura.xml --features example_test
 

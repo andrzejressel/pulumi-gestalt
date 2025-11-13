@@ -33,6 +33,7 @@ members = [
     "examples/native",
     "examples/plugins",
     "examples/raw_rust",
+    "examples/raw_rust_async",
     "examples/secret",
     "examples/simple",
     "examples/test",
