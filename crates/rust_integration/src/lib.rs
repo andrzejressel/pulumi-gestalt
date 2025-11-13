@@ -1,5 +1,6 @@
 use anyhow::Context as AnyHowContext;
 use anyhow::Result;
+use futures::future::{BoxFuture, Shared};
 use pulumi_gestalt_core::{
     Config, Engine, FunctionName, NativeFunctionRequest, RawOutput, RegisterResourceOutput,
 };
@@ -10,7 +11,6 @@ use std::cell::RefCell;
 use std::collections::HashMap;
 use std::ops::Deref;
 use std::rc::Rc;
-use futures::future::{BoxFuture, Shared};
 use tokio::runtime::{Handle, Runtime};
 use uuid::Uuid;
 
@@ -19,6 +19,7 @@ pub struct Output {
     engine: Rc<RefCell<InnerPulumiEngine>>,
 }
 
+#[cfg(feature = "send_functions")]
 static_assertions::assert_impl_all!(Output: Send);
 
 pub enum ConfigValue {
@@ -31,6 +32,7 @@ pub struct ObjectField<'a> {
     pub value: &'a Output,
 }
 
+#[cfg(feature = "send_functions")]
 static_assertions::assert_impl_all!(ObjectField: Send);
 
 pub struct CompositeOutput {
@@ -38,25 +40,34 @@ pub struct CompositeOutput {
     engine: Rc<RefCell<InnerPulumiEngine>>,
 }
 
+#[cfg(feature = "send_functions")]
 static_assertions::assert_impl_all!(CompositeOutput: Send);
+
+#[cfg(all(feature = "async_functions", feature = "send_functions"))]
+type FunctionType = Box<dyn Fn(String) -> Shared<BoxFuture<'static, String>> + Send>;
+#[cfg(all(feature = "async_functions", not(feature = "send_functions")))]
+type FunctionType = Box<dyn Fn(String) -> Shared<BoxFuture<'static, String>>>;
+#[cfg(all(not(feature = "async_functions"), feature = "send_functions"))]
+type FunctionType = Box<dyn Fn(String) -> String + Send>;
+#[cfg(all(not(feature = "async_functions"), not(feature = "send_functions")))]
+type FunctionType = Box<dyn Fn(String) -> String>;
 
 pub(crate) struct InnerPulumiEngine {
     engine: Engine,
-    #[cfg(feature = "async_functions")]
-    functions: HashMap<FunctionName, Box<dyn Fn(String) -> Shared<BoxFuture<'static, String>> + Send + Sync>>,
-    #[cfg(not(feature = "async_functions"))]
-    functions: HashMap<FunctionName, Box<dyn Fn(String) -> String>>,
+    functions: HashMap<FunctionName, FunctionType>,
 }
 
+#[cfg(feature = "send_functions")]
 static_assertions::assert_impl_all!(InnerPulumiEngine: Send);
 
 pub struct Context {
     inner: Rc<RefCell<InnerPulumiEngine>>,
     project_name: String,
     handle: Handle,
-    runtime: Option<Runtime>
+    runtime: Option<Runtime>,
 }
 
+#[cfg(feature = "send_functions")]
 static_assertions::assert_impl_all!(Context: Send);
 
 pub struct RegisterResourceRequest<'a> {
@@ -73,6 +84,9 @@ pub struct InvokeResourceRequest<'a> {
 }
 
 impl Context {
+    
+    // Synchronous context creation for use in sync environments
+    // Under the hood creates a tokio runtime to run async code
     pub fn create_context_sync() -> Context {
         let runtime = tokio::runtime::Builder::new_multi_thread()
             .enable_all()
@@ -95,7 +109,7 @@ impl Context {
             inner: Rc::new(RefCell::new(inner)),
             project_name,
             handle: Handle::current(),
-            runtime: None
+            runtime: None,
         }
     }
 
@@ -120,7 +134,10 @@ impl Context {
 
         let mut objects_map = HashMap::new();
         for object in request.inputs {
-            objects_map.insert(FieldName::from(&object.name), object.value.output_id.clone());
+            objects_map.insert(
+                FieldName::from(&object.name),
+                object.value.output_id.clone(),
+            );
         }
 
         let output_id = self
@@ -139,7 +156,10 @@ impl Context {
     pub fn invoke_resource(&self, request: InvokeResourceRequest) -> CompositeOutput {
         let mut objects_map = HashMap::new();
         for object in request.inputs {
-            objects_map.insert(FieldName::from(&object.name), object.value.output_id.clone());
+            objects_map.insert(
+                FieldName::from(&object.name),
+                object.value.output_id.clone(),
+            );
         }
 
         let output_id = self
@@ -155,10 +175,39 @@ impl Context {
         }
     }
 
+    // Synchronous version of finish for use in sync contexts
+    // Ensures that all functions will be run on thread that
+    // run this method
     pub fn finish_sync(&self) {
-        self.handle.block_on(async { self.finish().await });
+        let mut inner = self.inner.borrow_mut();
+        loop {
+            let result = self.handle.block_on(async { inner.engine.run().await });
+
+            match result {
+                None => break,
+                Some(NativeFunctionRequest {
+                    function_name,
+                    data,
+                    return_mailbox,
+                }) => {
+                    let function = inner.functions.get(&function_name).unwrap();
+                    let s = data.to_string();
+
+                    #[cfg(feature = "async_functions")]
+                    let result = self.handle.block_on(async { function(s).await });
+                    #[cfg(not(feature = "async_functions"))]
+                    let result = function(s);
+
+                    let result = serde_json::from_str(&result).unwrap();
+
+                    return_mailbox.send(result).unwrap();
+                }
+            }
+        }
     }
-    
+
+    // Asynchronous version of finish for use in async contexts
+    // Functions may be called on any thread managed by current runtime
     pub async fn finish(&self) {
         let mut inner = self.inner.borrow_mut();
         loop {
@@ -174,6 +223,9 @@ impl Context {
                     let function = inner.functions.get(&function_name).unwrap();
                     let s = data.to_string();
 
+                    #[cfg(feature = "async_functions")]
+                    let result = function(s).await;
+                    #[cfg(not(feature = "async_functions"))]
                     let result = function(s);
 
                     let result = serde_json::from_str(&result).unwrap();
@@ -219,7 +271,7 @@ impl Output {
             .add_output(name.into(), output_id);
     }
 
-    pub fn map(&self, function: Box<dyn Fn(String) -> String>) -> Output {
+    pub fn map(&self, function: Box<FunctionType>) -> Output {
         let output_id = &self.output_id;
         let function_uuid = Uuid::new_v4();
         let function_name: FunctionName = function_uuid.to_string().into();
@@ -319,4 +371,10 @@ pub fn get_schema(
     modules: Option<&[&str]>,
 ) -> Result<model::Package> {
     pulumi_gestalt_schema::get_schema(provider_name, provider_version, modules)
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {}
 }

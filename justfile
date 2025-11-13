@@ -148,6 +148,11 @@ test-all-release:
     cargo llvm-cov nextest --cobertura --output-path covertura.xml --all-features --release
 
 test:
+    cargo test -p pulumi_gestalt_rust_integration
+    cargo test --features async_functions -p pulumi_gestalt_rust_integration
+    cargo test --features send_functions -p pulumi_gestalt_rust_integration
+    cargo test --features async_functions,send_functions -p pulumi_gestalt_rust_integration
+    
     cargo llvm-cov nextest --cobertura --output-path covertura.xml
 
 docs:

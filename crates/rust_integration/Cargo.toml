@@ -9,6 +9,7 @@ description = "Rust helper functions for Pulumi Gestalt"
 
 [features]
 async_functions = []
+send_functions = []
 
 [dependencies]
 anyhow.workspace = true
