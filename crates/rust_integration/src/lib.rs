@@ -6,19 +6,20 @@ use pulumi_gestalt_core::{
 use pulumi_gestalt_domain::FieldName;
 use pulumi_gestalt_grpc_connection::RealPulumiConnector;
 use pulumi_gestalt_schema::model;
-use serde_json::Value;
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::ops::Deref;
 use std::rc::Rc;
+use futures::future::{BoxFuture, Shared};
 use tokio::runtime::{Handle, Runtime};
 use uuid::Uuid;
 
-#[derive(Clone)]
 pub struct Output {
     output_id: RawOutput,
     engine: Rc<RefCell<InnerPulumiEngine>>,
 }
+
+static_assertions::assert_impl_all!(Output: Send);
 
 pub enum ConfigValue {
     PlainText(String),
@@ -30,15 +31,24 @@ pub struct ObjectField<'a> {
     pub value: &'a Output,
 }
 
+static_assertions::assert_impl_all!(ObjectField: Send);
+
 pub struct CompositeOutput {
     output_id: RegisterResourceOutput,
     engine: Rc<RefCell<InnerPulumiEngine>>,
 }
 
+static_assertions::assert_impl_all!(CompositeOutput: Send);
+
 pub(crate) struct InnerPulumiEngine {
     engine: Engine,
+    #[cfg(feature = "async_functions")]
+    functions: HashMap<FunctionName, Box<dyn Fn(String) -> Shared<BoxFuture<'static, String>> + Send + Sync>>,
+    #[cfg(not(feature = "async_functions"))]
     functions: HashMap<FunctionName, Box<dyn Fn(String) -> String>>,
 }
+
+static_assertions::assert_impl_all!(InnerPulumiEngine: Send);
 
 pub struct Context {
     inner: Rc<RefCell<InnerPulumiEngine>>,
@@ -46,6 +56,8 @@ pub struct Context {
     handle: Handle,
     runtime: Option<Runtime>
 }
+
+static_assertions::assert_impl_all!(Context: Send);
 
 pub struct RegisterResourceRequest<'a> {
     pub type_: String,
@@ -252,8 +264,6 @@ impl CompositeOutput {
         let pulumi_engine = &self.engine;
         let output_id = &self.output_id;
 
-        // let output = self.output_id
-
         let output = pulumi_engine
             .borrow_mut()
             .engine
@@ -278,10 +288,10 @@ pub async fn get_engine() -> Engine {
     };
 
     let pulumi_connector = RealPulumiConnector::new(
-        pulumi_monitor_url.clone(),
-        pulumi_engine_url.clone(),
-        pulumi_project.clone(),
-        pulumi_stack.clone(),
+        pulumi_monitor_url,
+        pulumi_engine_url,
+        pulumi_project,
+        pulumi_stack,
         in_preview,
     )
     .await

@@ -198,7 +198,6 @@ impl Engine {
             let resource_fields = source.value.await;
             resource_fields.get_field_value(&field_name)
         });
-        self.join_set.push(output.clone().invoke_void());
         output
     }
 
@@ -244,7 +243,7 @@ impl Engine {
                         }
                         None => {
                             // All tasks complete
-                            // Tokio and futures structs have different bevahiors when streams complete
+                            // Tokio and futures structs have different behaviors when streams complete
                             // Tokio will be returning None, but futures will not return anything anymore
                             // Due to that if someone calls run again the select will wait for receiver - and since
                             // there is no more tasks it will be stuck forever. To avoid that we close the receiver here.

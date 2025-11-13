@@ -173,6 +173,7 @@ impl PulumiConnector for RealPulumiConnector {
             name: req.name,
             object: Some(create_protobuf_struct(req.object)),
             version: req.version,
+            custom: true,
             ..Default::default()
         };
         let response = self
@@ -201,9 +202,9 @@ impl PulumiConnector for RealPulumiConnector {
         req: pulumi_gestalt_domain::connector::ResourceInvokeRequest,
     ) -> ResourceInvokeResult {
         let req = ResourceInvokeRequest {
+            tok: req.token,
             args: Some(create_protobuf_struct(req.object)),
             version: req.version,
-            tok: req.token,
             ..Default::default()
         };
         let response = self

@@ -7,6 +7,9 @@ license.workspace = true
 readme.workspace = true
 description = "Rust helper functions for Pulumi Gestalt"
 
+[features]
+async_functions = []
+
 [dependencies]
 anyhow.workspace = true
 pulumi_gestalt_core.workspace = true
@@ -17,6 +20,8 @@ uuid.workspace = true
 pulumi_gestalt_schema.workspace = true
 pulumi_gestalt_domain.workspace = true
 tokio.workspace = true
+static_assertions.workspace = true
+futures.workspace = true
 
 [lints]
 workspace = true

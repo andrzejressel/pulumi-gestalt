@@ -19,5 +19,5 @@ pulumi_gestalt_domain.workspace = true
 
 [dev-dependencies]
 mockall.workspace = true
-pulumi_gestalt_domain = {workspace = true, features = ["test-utils"] }
+pulumi_gestalt_domain = { workspace = true, features = ["test-utils"] }
 tokio.workspace = true
