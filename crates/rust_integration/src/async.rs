@@ -1,9 +1,5 @@
-pub mod r#async;
-pub mod sync;
-
 use anyhow::Context as AnyHowContext;
 use anyhow::Result;
-use futures::future::{BoxFuture, Shared};
 use pulumi_gestalt_core::{
     Config, Engine, FunctionName, NativeFunctionRequest, RawOutput, RegisterResourceOutput,
 };

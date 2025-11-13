@@ -1,9 +1,5 @@
-pub mod r#async;
-pub mod sync;
-
 use anyhow::Context as AnyHowContext;
 use anyhow::Result;
-use futures::future::{BoxFuture, Shared};
 use pulumi_gestalt_core::{
     Config, Engine, FunctionName, NativeFunctionRequest, RawOutput, RegisterResourceOutput,
 };
@@ -22,9 +18,6 @@ pub struct Output {
     engine: Rc<RefCell<InnerPulumiEngine>>,
 }
 
-
-static_assertions::assert_impl_all!(Output: Send);
-
 pub enum ConfigValue {
     PlainText(String),
     Secret(Output),
@@ -35,14 +28,12 @@ pub struct ObjectField<'a> {
     pub value: &'a Output,
 }
 
-
 static_assertions::assert_impl_all!(ObjectField: Send);
 
 pub struct CompositeOutput {
     output_id: RegisterResourceOutput,
     engine: Rc<RefCell<InnerPulumiEngine>>,
 }
-
 
 static_assertions::assert_impl_all!(CompositeOutput: Send);
 
@@ -60,7 +51,6 @@ pub(crate) struct InnerPulumiEngine {
     functions: HashMap<FunctionName, FunctionType>,
 }
 
-
 static_assertions::assert_impl_all!(InnerPulumiEngine: Send);
 
 pub struct Context {
@@ -69,7 +59,6 @@ pub struct Context {
     handle: Handle,
     runtime: Option<Runtime>,
 }
-
 
 static_assertions::assert_impl_all!(Context: Send);
 
@@ -87,7 +76,6 @@ pub struct InvokeResourceRequest<'a> {
 }
 
 impl Context {
-    
     // Synchronous context creation for use in sync environments
     // Under the hood creates a tokio runtime to run async code
     pub fn create_context_sync() -> Context {
