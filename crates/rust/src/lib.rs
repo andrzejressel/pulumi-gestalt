@@ -1,5 +1,5 @@
-mod output;
-pub use output::ToOutput;
+mod macros;
+pub use macros::ToOutput;
 
 #[doc(hidden)]
 #[path = "private/mod.rs"]
