@@ -241,7 +241,7 @@ jobs:
       - name: Ensure no files have changed
         run: git add . && git diff --quiet && git diff --cached --quiet
 
-  build-examples:
+  build-wasm:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -292,7 +292,7 @@ jobs:
       - uses: Swatinem/rust-cache@f13886b937689c021905a6b90929199931d60db1 # v2.8.1
         with:
           shared-key: build-examples
-      - run: just examples-ci-flow
+      - run: just wasm-ci-flow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: git add . && git diff
