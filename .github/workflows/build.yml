@@ -122,6 +122,19 @@ jobs:
       - run: just test-provider-compilation ${{ matrix.provider }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload coverage data to codecov
+        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
+        with:
+          files: covertura.xml
+          fail_ci_if_error: true
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@47f89e9acb64b76debcd5ea40642d25a4adced9f # v1.1.1
+        with:
+          files: target/nextest/default/junit.xml
+          fail_ci_if_error: true
+#      - name: Publish Results to Testspace
+#        run: testspace "[ provider/${{ matrix.provider }} ]target/nextest/default/junit.xml"
       - run: git add . && git diff
       - run: git diff --cached
       - name: Ensure no files have changed
