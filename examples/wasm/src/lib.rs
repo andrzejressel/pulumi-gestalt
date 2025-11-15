@@ -114,6 +114,12 @@ fn perform_operations_on_custom_config(ctx: &Context) {
     }
 }
 
+#[cfg(target_arch = "wasm32")]
+#[unsafe(export_name = "component:pulumi-gestalt/pulumi-main@0.0.0-DEV#main")]
+unsafe extern "C" fn __wasm_main() {
+    main();
+}
+
 fn main() {
     let ctx = Context::new();
     generate_random_value(&ctx);
@@ -156,10 +162,4 @@ fn run_loop(context: &Context) {
 
         function_requests = context.finish(&function_results);
     }
-}
-
-#[cfg(target_arch = "wasm32")]
-#[unsafe(export_name = "component:pulumi-gestalt/pulumi-main@0.0.0-DEV#main")]
-unsafe extern "C" fn __wasm_main() {
-    main();
 }
