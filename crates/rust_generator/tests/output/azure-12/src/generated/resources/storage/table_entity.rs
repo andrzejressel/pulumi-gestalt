@@ -43,7 +43,11 @@
 /// $ pulumi import azure:storage/tableEntity:TableEntity entity1 https://example.table.core.windows.net/table1(PartitionKey='samplepartition',RowKey='samplerow')
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod table_entity {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]

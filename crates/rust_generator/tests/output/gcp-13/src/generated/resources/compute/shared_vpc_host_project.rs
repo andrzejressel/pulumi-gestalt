@@ -46,7 +46,11 @@
 /// $ pulumi import gcp:compute/sharedVPCHostProject:SharedVPCHostProject default {{project_id}}
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod shared_vpc_host_project {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]

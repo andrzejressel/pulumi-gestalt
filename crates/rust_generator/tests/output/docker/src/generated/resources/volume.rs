@@ -47,7 +47,11 @@
 /// $ pulumi import docker:index/volume:Volume foo 524b0457aa2a87dd2b75c74c3e4e53f406974249e63ab3ed9bf21e5644f9dc7d
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod volume {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]

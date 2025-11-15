@@ -44,7 +44,11 @@
 /// ```sh
 /// $ pulumi import aws:lambda/functionUrl:FunctionUrl test_lambda_url my_test_lambda_function
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod function_url {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]

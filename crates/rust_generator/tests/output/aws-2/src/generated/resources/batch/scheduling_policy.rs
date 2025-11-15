@@ -27,7 +27,11 @@
 /// ```sh
 /// $ pulumi import aws:batch/schedulingPolicy:SchedulingPolicy test_policy arn:aws:batch:us-east-1:123456789012:scheduling-policy/sample
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod scheduling_policy {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]

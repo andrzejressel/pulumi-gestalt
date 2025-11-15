@@ -37,7 +37,11 @@
 /// $ pulumi import cloudflare:index/devicePostureRule:DevicePostureRule example <account_id>/<device_posture_rule_id>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod device_posture_rule {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]

@@ -1,7 +1,7 @@
 #[derive(pulumi_gestalt_rust::__private::serde::Deserialize, pulumi_gestalt_rust::__private::serde::Serialize, pulumi_gestalt_rust::__private::bon::Builder, Debug, PartialEq, Clone)]
 #[builder(finish_fn = build_struct)]
 #[allow(dead_code)]
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub struct RegistrationManagementSettings {
     /// The desired renewal method for this Registration. The actual renewalMethod is automatically updated to reflect this choice.
     /// If unset or equal to RENEWAL_METHOD_UNSPECIFIED, the actual renewalMethod is treated as if it were set to AUTOMATIC_RENEWAL.

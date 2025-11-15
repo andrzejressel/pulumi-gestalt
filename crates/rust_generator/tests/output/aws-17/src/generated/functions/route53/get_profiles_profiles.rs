@@ -1,4 +1,8 @@
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod get_profiles_profiles {
     #[allow(dead_code)]
     pub struct GetProfilesProfilesResult {
