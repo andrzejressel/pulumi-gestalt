@@ -1,0 +1,23 @@
+set windows-shell := ["pwsh.exe", "-c"]
+binary := "../../target/release/pulumi_gestalt_wasm_runner"
+wasm := "../../target/wasm32-wasip2/release/pulumi_gestalt_example_wasm.wasm"
+WASI_TARGET := "wasm32-wasip2"
+
+run:
+    {{binary}} run "{{wasm}}"
+
+plugins TEMP_FILE:
+    {{binary}} plugins "{{wasm}}" "{{TEMP_FILE}}"
+
+[windows]
+local-test $RUST_BACKTRACE="full":
+    #!pwsh
+    Set-StrictMode -Version Latest
+    $ErrorActionPreference = "Stop"
+    $PSNativeCommandUseErrorActionPreference = $true
+
+    cargo build -p pulumi_gestalt_wasm_runner --release
+    cargo build -p pulumi_gestalt_example_wasm --release --target={{WASI_TARGET}}
+    $env:PULUMI_CONFIG_PASSPHRASE=" "
+    pulumi destroy -y
+    pulumi up -y

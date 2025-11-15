@@ -60,6 +60,7 @@ build-wasm-components:
     cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_secret --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}}
+    cargo build -p pulumi_gestalt_example_wasm --target={{WASI_TARGET}}
 
 build-wasm-components-release:
     cargo build -p pulumi_gestalt_wasm_runner --release
@@ -70,6 +71,7 @@ build-wasm-components-release:
     cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_secret --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}} --release
+    cargo build -p pulumi_gestalt_example_wasm --target={{WASI_TARGET}} --release
 
 build-static-library:
     cargo build -p pulumi_native_c
@@ -115,6 +117,7 @@ test-examples:
         -p pulumi_gestalt_example_secret \
         -p pulumi_gestalt_example_simple \
         -p pulumi_gestalt_example_typesystem \
+        -p pulumi_gestalt_example_wasm \
         --features example_test
 
 test-c:
