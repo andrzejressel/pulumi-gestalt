@@ -25,7 +25,7 @@ generator-ci-flow COMPILATION_NAME:
 
 c-ci-flow: build-language-plugin build-static-library test-c
 
-native-ci-flow: build-language-plugin build-pulumi-test build-native-examples test-native
+native-ci-flow: build-language-plugin build-pulumi-test test-native
 
 # Test docs examples and creates docs
 test-docs-ci-flow: test-docs
@@ -49,12 +49,6 @@ install-requirements:
     cargo binstall --no-confirm cargo-nextest@{{NEXTEST_VERSION}}
     cargo binstall --no-confirm sd@{{SD_VERSION}}
     cargo binstall --no-confirm cargo-llvm-cov@{{CARGO_LLVM_COV_VERSION}}
-
-build-native-examples:
-    cargo build \
-     -p pulumi_gestalt_example_native \
-     -p pulumi_gestalt_example_raw_rust \
-     -p pulumi_gestalt_example_test
 
 # Compiling everything together causes linking issues
 build-wasm-components:
