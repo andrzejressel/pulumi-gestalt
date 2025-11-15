@@ -53,24 +53,10 @@ install-requirements:
 # Compiling everything together causes linking issues
 build-wasm-components:
     cargo build -p pulumi_gestalt_wasm_runner
-    cargo build -p pulumi_gestalt_example_dependencies --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_failure --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_multiple_providers --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_secret --target={{WASI_TARGET}}
-    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}}
     cargo build -p pulumi_gestalt_example_wasm --target={{WASI_TARGET}}
 
 build-wasm-components-release:
     cargo build -p pulumi_gestalt_wasm_runner --release
-    cargo build -p pulumi_gestalt_example_dependencies --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_docker --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_failure --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_multiple_providers --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_plugins --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_secret --target={{WASI_TARGET}} --release
-    cargo build -p pulumi_gestalt_example_simple --target={{WASI_TARGET}} --release
     cargo build -p pulumi_gestalt_example_wasm --target={{WASI_TARGET}} --release
 
 build-static-library:

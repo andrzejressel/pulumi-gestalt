@@ -1,8 +1,9 @@
+test_name := "test"
+
 set windows-shell := ["pwsh.exe", "-c"]
-binary := "../../target/debug/pulumi_gestalt_example_test"
 
 run:
-    {{binary}}
+    ../../target/debug/pulumi_gestalt_example_{{test_name}}
 
 [windows]
 local-test:
@@ -11,7 +12,7 @@ local-test:
     $ErrorActionPreference = "Stop"
     $PSNativeCommandUseErrorActionPreference = $true
 
-    cargo build -p pulumi_gestalt_example_test
+    cargo build -p pulumi_gestalt_example_{{test_name}}
     $env:PULUMI_CONFIG_PASSPHRASE=" "
     pulumi destroy -y
     pulumi up -y
