@@ -1,0 +1,18 @@
+[package]
+name = "pulumi_gestalt_example_wasm"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+example_test = []
+
+[dependencies]
+pulumi_gestalt_wit = { workspace = true, features = ["client"] }
+anyhow.workspace = true
+
+[dev-dependencies]
+pulumi_gestalt_examples_common.workspace = true
