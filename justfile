@@ -113,7 +113,7 @@ test-provider-compilation COMPILATION_NAME:
     cargo llvm-cov nextest -p pulumi_gestalt_generator --cobertura --output-path covertura.xml --features generator_{{COMPILATION_NAME}} --test '*'
 
 test-examples:
-    cargo llvm-cov nextest \
+    cargo nextest run \
         -p pulumi_gestalt_example_dependencies \
         -p pulumi_gestalt_example_docker \
         -p pulumi_gestalt_example_multiple_providers \
@@ -121,19 +121,19 @@ test-examples:
         -p pulumi_gestalt_example_secret \
         -p pulumi_gestalt_example_simple \
         -p pulumi_gestalt_example_typesystem \
-        --cobertura --output-path covertura.xml --features example_test
+        --features example_test
 
 test-c:
-    cargo llvm-cov nextest \
+    cargo nextest run \
         -p pulumi_gestalt_example_c \
-        --cobertura --output-path covertura.xml --features example_test
+        --features example_test
 
 test-native:
-    cargo llvm-cov nextest \
+    cargo nextest run \
         -p pulumi_gestalt_example_native \
         -p pulumi_gestalt_example_raw_rust \
         -p pulumi_gestalt_example_test \
-        --cobertura --output-path covertura.xml --features example_test
+        --features example_test
 
 generator-tests:
     cargo nextest run --all-features -p pulumi_gestalt_generator
