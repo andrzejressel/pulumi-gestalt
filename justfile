@@ -110,7 +110,7 @@ publish:
     cargo publish --workspace --all-features
 
 test-provider-compilation COMPILATION_NAME:
-    cargo llvm-cov nextest -p pulumi_gestalt_generator --cobertura --output-path covertura.xml --features generator_{{COMPILATION_NAME}} --test '*'
+    cargo nextest run -p pulumi_gestalt_generator --features generator_{{COMPILATION_NAME}} --test '*'
 
 test-examples:
     cargo nextest run \
