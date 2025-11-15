@@ -1,5 +1,7 @@
 use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::context::Context;
-use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::types::{ConfigValue, FunctionInvocationResult};
+use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::types::{
+    ConfigValue, FunctionInvocationResult,
+};
 use pulumi_gestalt_wit::client_bindings::component::pulumi_gestalt::types::{
     FunctionInvocationRequest, ObjectField, RegisterResourceRequest, ResourceInvokeRequest,
 };

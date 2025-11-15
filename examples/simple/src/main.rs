@@ -1,9 +1,9 @@
 use anyhow::Result;
 use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
-use pulumi_gestalt_rust::{add_export, pulumi_combine, pulumi_format};
-use pulumi_gestalt_rust::{ConfigValue, Context, Output};
 use pulumi_gestalt_rust::ToOutput;
+use pulumi_gestalt_rust::{ConfigValue, Context, Output};
+use pulumi_gestalt_rust::{add_export, pulumi_combine, pulumi_format};
 
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
