@@ -23,7 +23,11 @@
 /// ```sh
 /// $ pulumi import aws:ram/sharingWithOrganization:SharingWithOrganization example 123456789012
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
+#[allow(
+    clippy::doc_lazy_continuation,
+    clippy::tabs_in_doc_comments,
+    clippy::should_implement_trait
+)]
 pub mod sharing_with_organization {
     #[allow(dead_code)]
     pub struct SharingWithOrganizationResult {
