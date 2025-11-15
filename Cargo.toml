@@ -36,6 +36,7 @@ members = [
     "examples/simple",
     "examples/test",
     "examples/typesystem",
+    "examples/wasm",
     "providers/aws-mini",
     "providers/azure-mini",
     "providers/cloudflare",

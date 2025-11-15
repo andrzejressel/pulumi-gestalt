@@ -100,3 +100,11 @@ pulumi_wasm_runner run <WASM_FILE>
 ```title="world.wit"
 --8<-- "crates/wit/wit/world.wit"
 ```
+
+## Example
+
+An example of Wasm integration in Rust
+
+```rust title="lib.rs"
+--8<-- "examples/wasm/src/lib.rs"
+```
