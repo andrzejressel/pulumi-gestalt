@@ -1,13 +1,14 @@
 use anyhow::Result;
 use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
+use pulumi_gestalt_rust::{add_export, pulumi_combine, pulumi_format};
 use pulumi_gestalt_rust::{ConfigValue, Context, Output};
-use pulumi_gestalt_rust::{GestaltContext, add_export, pulumi_combine, pulumi_format};
-use pulumi_gestalt_rust::{GestaltOutput, ToOutput};
+use pulumi_gestalt_rust::ToOutput;
 
-#[cfg(target_arch = "wasm32")]
-pulumi_gestalt_rust::pulumi_main!();
-#[allow(dead_code)]
+fn main() {
+    pulumi_gestalt_rust::run(pulumi_main).unwrap();
+}
+
 fn pulumi_main(context: &Context) -> Result<()> {
     let length: Output<i32> = context.new_output(&12).map(|i: i32| i * 3);
 

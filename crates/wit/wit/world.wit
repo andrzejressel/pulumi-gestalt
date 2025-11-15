@@ -4,7 +4,7 @@ world pulumi-gestalt {
     import output-interface;
     import types;
     import context;
-    export pulumi-main; // Used by macro
+    export pulumi-main;
 }
 
 interface pulumi-main {

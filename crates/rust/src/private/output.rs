@@ -1,5 +1,4 @@
 use crate::Output;
-use pulumi_gestalt_rust_adapter::GestaltOutput;
 use serde::Serialize;
 
 macro_rules! impl_combine {

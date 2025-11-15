@@ -11,9 +11,6 @@ members = [
     "crates/grpc",
     "crates/proto",
     "crates/rust",
-    "crates/rust_adapter",
-    "crates/rust_adapter_native",
-    "crates/rust_adapter_wasm",
     "crates/rust_build",
     "crates/rust_generator",
     "crates/rust_integration",
@@ -36,6 +33,7 @@ members = [
     "examples/simple",
     "examples/test",
     "examples/typesystem",
+    "examples/wasm",
     "providers/aws-mini",
     "providers/azure-mini",
     "providers/cloudflare",
@@ -67,10 +65,7 @@ pulumi_gestalt_providers_test = { version = "=0.0.0-DEV", path = "providers/test
 pulumi_gestalt_providers_typesystem = { version = "=0.0.0-DEV", path = "providers/typesystem" }
 pulumi_gestalt_examples_common = { version = "=0.0.0-DEV", path = "examples/common" }
 pulumi_gestalt_grpc_connection = { version = "=0.0.0-DEV", path = "crates/grpc" }
-pulumi_gestalt_rust_adapter = { version = "=0.0.0-DEV", path = "crates/rust_adapter" }
-pulumi_gestalt_rust_adapter_wasm = { version = "=0.0.0-DEV", path = "crates/rust_adapter_wasm" }
 pulumi_gestalt_rust_integration = { version = "=0.0.0-DEV", path = "crates/rust_integration" }
-pulumi_gestalt_rust_adapter_native = { version = "=0.0.0-DEV", path = "crates/rust_adapter_native" }
 pulumi_gestalt_schema = { version = "=0.0.0-DEV", path = "crates/schema" }
 pulumi_gestalt_schema_protobuf = { version = "=0.0.0-DEV", path = "crates/schema_protobuf" }
 changelog_lib = { version = "=0.0.0-DEV", path = "changelog_lib" }
