@@ -96,7 +96,7 @@
 /// ```sh
 /// $ pulumi import aws:datazone/glossary:Glossary example domain-id,glossary-id,owning-project-identifier
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub mod glossary {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]

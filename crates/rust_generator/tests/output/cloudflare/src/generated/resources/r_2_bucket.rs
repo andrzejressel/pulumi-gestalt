@@ -24,7 +24,7 @@
 /// $ pulumi import cloudflare:index/r2Bucket:R2Bucket default <account id>/<bucket name>
 /// ```
 ///
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub mod r_2_bucket {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]

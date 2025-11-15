@@ -1,6 +1,6 @@
 #[derive(Debug, PartialEq, Clone)]
 #[allow(dead_code)]
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub enum ContainerBrightness {
     ZeroPointOne,
     One,

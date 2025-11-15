@@ -16,7 +16,7 @@
 /// ```sh
 /// $ pulumi import aws:cloudhsmv2/cluster:Cluster test_cluster cluster-aeb282a201
 /// ```
-#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments)]
+#[allow(clippy::doc_lazy_continuation, clippy::tabs_in_doc_comments, clippy::should_implement_trait)]
 pub mod cluster {
     #[derive(pulumi_gestalt_rust::__private::bon::Builder)]
     #[builder(finish_fn = build_struct)]
