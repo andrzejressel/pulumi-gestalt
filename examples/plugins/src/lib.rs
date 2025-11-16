@@ -14,5 +14,5 @@ fn main() {
 #[unsafe(link_section = "pulumi_gestalt_provider::random")]
 #[unsafe(no_mangle)]
 #[cfg(target_arch = "wasm32")]
-static PULUMI_WASM_PROVIDER_RANDOM: [u8; _] =
+static PULUMI_WASM_PROVIDER_RANDOM: [u8; 45] =
     *b"{\"version\":\"4.15.1\",\"pluginDownloadURL\":null}";
