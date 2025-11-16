@@ -391,7 +391,13 @@ fn generate_commit_message(
         short_sha, options.repository, commit_sha
     ));
 
-    Ok(format!("- {}\n", title))
+    let mut title = format!("- {}\n", title);
+
+    if let Some(description) = &entry.description {
+        title.push_str(&format!("\n    {}\n", description));
+    }
+
+    Ok(title)
 }
 
 fn get_file_creation_commit(file_path: &Path, options: &Options) -> Result<(String, String)> {

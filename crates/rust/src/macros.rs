@@ -1,4 +1,4 @@
-use crate::{Context, GestaltContext, Output};
+use crate::{Context, Output};
 use serde::Serialize;
 
 /// Generates Output<String> with formatted string. Supports up to 16 arguments.

@@ -1,9 +1,11 @@
 use anyhow::Error;
 use pulumi_gestalt_providers_random::random_bytes;
 use pulumi_gestalt_rust::{Context, add_export, pulumi_combine};
-use pulumi_gestalt_rust::{GestaltContext, GestaltOutput};
 
-pulumi_gestalt_rust::pulumi_main!();
+fn main() {
+    pulumi_gestalt_rust::run(pulumi_main).unwrap();
+}
+
 fn pulumi_main(context: &Context) -> Result<(), Error> {
     let custom_secret = context.new_secret(&10);
     let non_secret = context.new_output(&1);

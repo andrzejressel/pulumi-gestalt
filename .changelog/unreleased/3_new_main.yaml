@@ -1,0 +1,4 @@
+type: Changed
+title: Change Pulumi entrypoint
+description: |
+  Entrypoint was changed from `pulumi_gestalt_rust::pulumi_main!` macro to function `pulumi_gestalt_rust::run`.

@@ -1,6 +1,4 @@
 use crate::{Context, Output};
-use pulumi_gestalt_rust_adapter::GestaltContext;
-use pulumi_gestalt_rust_adapter::GestaltOutput;
 use serde::Serialize;
 use serde::de::DeserializeOwned;
 

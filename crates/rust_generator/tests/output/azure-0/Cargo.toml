@@ -7,7 +7,5 @@ edition = "2021"
 pulumi_gestalt_rust = { path = "../../../../rust" }
 serde = "1.0.197"
 bon = "3.3.1"
-wit-bindgen = "0.36.0"
-
 
 [workspace]

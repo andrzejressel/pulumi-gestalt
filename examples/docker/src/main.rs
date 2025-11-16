@@ -2,10 +2,11 @@ use pulumi_gestalt_providers_docker::functions::get_remote_image;
 use pulumi_gestalt_providers_docker::functions::get_remote_image::GetRemoteImageArgs;
 use pulumi_gestalt_providers_docker::types::{ContainerLabel, DockerBuild};
 use pulumi_gestalt_providers_docker::{container, image};
-use pulumi_gestalt_rust::GestaltOutput;
 use pulumi_gestalt_rust::{Context, add_export};
 
-pulumi_gestalt_rust::pulumi_main!();
+fn main() {
+    pulumi_gestalt_rust::run(pulumi_main).unwrap();
+}
 
 fn pulumi_main(context: &Context) -> anyhow::Result<()> {
     let cont = container::create(

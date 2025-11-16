@@ -9,14 +9,13 @@ publish = false
 [lib]
 crate-type = ["cdylib"]
 
+[dependencies]
+pulumi_gestalt_wit = { workspace = true, features = ["client"] }
+
 [features]
 example_test = []
 
-[dependencies]
-anyhow.workspace = true
-pulumi_gestalt_rust.workspace = true
-pulumi_gestalt_providers_random.workspace = true
-
 [dev-dependencies]
+anyhow.workspace = true
 assert_cmd.workspace = true
 pulumi_gestalt_examples_common.workspace = true
