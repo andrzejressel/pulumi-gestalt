@@ -6,7 +6,6 @@ use pulumi_gestalt_rust::add_export;
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
 }
-
 fn pulumi_main(context: &Context) -> Result<()> {
     let combine_string_res = pulumi_gestalt_providers_test::combine_string::create(
         context,

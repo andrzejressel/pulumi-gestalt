@@ -9,7 +9,6 @@ fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
 }
 
-#[allow(dead_code)]
 fn pulumi_main(context: &Context) -> Result<()> {
     let length: Output<i32> = context.new_output(&12).map(|i: i32| i * 3);
 
