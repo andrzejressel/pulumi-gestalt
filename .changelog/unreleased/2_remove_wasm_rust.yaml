@@ -1,4 +1,4 @@
 type: Removed
 title: Remove Rust abstraction over Wasm
 description: |
-  This change simplifies code and documentation by removing the Rust abstraction layer over Wasm. It had no advantages for users and introduced unnecessary complexity. Wasm joins C FFI as integration only feature that users does not need to interact with directly.
+  This change simplifies code and documentation by removing the Rust abstraction layer over Wasm. It had no advantages for users and introduced unnecessary complexity. Wasm joins C FFI as integration only feature that users do not need to interact with directly.
