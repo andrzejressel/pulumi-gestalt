@@ -1,7 +1,6 @@
 use anyhow::Error;
 use pulumi_gestalt_providers_random::random_bytes;
 use pulumi_gestalt_rust::{Context, add_export, pulumi_combine};
-use pulumi_gestalt_rust::{GestaltContext, GestaltOutput};
 
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();

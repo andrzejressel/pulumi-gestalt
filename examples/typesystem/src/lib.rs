@@ -7,7 +7,6 @@ mod tests {
     };
     use pulumi_gestalt_providers_typesystem::typesystem_server::TypesystemServerArgs;
     use pulumi_gestalt_rust::OneOf2;
-    use pulumi_gestalt_rust::{GestaltContext, GestaltOutput};
 
     #[test]
     fn test_case_deserialization() {

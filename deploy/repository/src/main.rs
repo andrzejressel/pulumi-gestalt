@@ -13,7 +13,9 @@ use std::ops::Deref;
 mod github;
 mod github_workflow;
 
-pulumi_gestalt_rust::pulumi_main!();
+fn main() {
+    pulumi_gestalt_rust::run(pulumi_main).unwrap();
+}
 
 enum GithubIntegration {
     Any,
