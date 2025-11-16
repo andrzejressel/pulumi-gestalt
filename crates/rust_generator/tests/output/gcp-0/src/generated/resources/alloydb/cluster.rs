@@ -532,8 +532,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let automated_backup_policy_binding = args
             .automated_backup_policy

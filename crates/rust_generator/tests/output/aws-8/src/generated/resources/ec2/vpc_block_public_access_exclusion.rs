@@ -125,8 +125,6 @@ pub mod vpc_block_public_access_exclusion {
         name: &str,
         args: VpcBlockPublicAccessExclusionArgs,
     ) -> VpcBlockPublicAccessExclusionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let internet_gateway_exclusion_mode_binding = args
             .internet_gateway_exclusion_mode
             .get_output(context);

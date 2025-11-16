@@ -218,8 +218,6 @@ pub mod consumer_quota_override {
         name: &str,
         args: ConsumerQuotaOverrideArgs,
     ) -> ConsumerQuotaOverrideResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dimensions_binding = args.dimensions.get_output(context);
         let force_binding = args.force.get_output(context);
         let limit_binding = args.limit.get_output(context);

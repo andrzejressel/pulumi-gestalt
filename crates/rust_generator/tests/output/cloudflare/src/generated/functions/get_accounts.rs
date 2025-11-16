@@ -30,8 +30,6 @@ pub mod get_accounts {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccountsArgs,
     ) -> GetAccountsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getAccounts:getAccounts".into(),

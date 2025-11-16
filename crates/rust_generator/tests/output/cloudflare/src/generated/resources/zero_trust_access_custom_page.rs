@@ -75,8 +75,6 @@ pub mod zero_trust_access_custom_page {
         name: &str,
         args: ZeroTrustAccessCustomPageArgs,
     ) -> ZeroTrustAccessCustomPageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let app_count_binding = args.app_count.get_output(context);
         let custom_html_binding = args.custom_html.get_output(context);

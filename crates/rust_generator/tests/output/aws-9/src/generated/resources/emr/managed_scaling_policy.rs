@@ -87,8 +87,6 @@ pub mod managed_scaling_policy {
         name: &str,
         args: ManagedScalingPolicyArgs,
     ) -> ManagedScalingPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_id_binding = args.cluster_id.get_output(context);
         let compute_limits_binding = args.compute_limits.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

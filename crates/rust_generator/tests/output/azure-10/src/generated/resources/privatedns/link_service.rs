@@ -186,8 +186,6 @@ pub mod link_service {
         name: &str,
         args: LinkServiceArgs,
     ) -> LinkServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_approval_subscription_ids_binding = args
             .auto_approval_subscription_ids
             .get_output(context);

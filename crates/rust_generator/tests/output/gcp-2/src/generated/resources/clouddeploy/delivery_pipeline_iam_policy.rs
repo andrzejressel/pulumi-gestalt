@@ -37,8 +37,6 @@ pub mod delivery_pipeline_iam_policy {
         name: &str,
         args: DeliveryPipelineIamPolicyArgs,
     ) -> DeliveryPipelineIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);

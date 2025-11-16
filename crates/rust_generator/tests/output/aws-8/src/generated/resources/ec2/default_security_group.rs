@@ -141,8 +141,6 @@ pub mod default_security_group {
         name: &str,
         args: DefaultSecurityGroupArgs,
     ) -> DefaultSecurityGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let egress_binding = args.egress.get_output(context);
         let ingress_binding = args.ingress.get_output(context);
         let revoke_rules_on_delete_binding = args

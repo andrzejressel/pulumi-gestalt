@@ -68,8 +68,6 @@ pub mod get_volume {
         context: &pulumi_gestalt_rust::Context,
         args: GetVolumeArgs,
     ) -> GetVolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let most_recent_binding = args.most_recent.get_output(context);
         let tags_binding = args.tags.get_output(context);

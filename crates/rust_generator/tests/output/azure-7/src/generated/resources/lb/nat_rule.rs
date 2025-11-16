@@ -179,8 +179,6 @@ pub mod nat_rule {
         name: &str,
         args: NatRuleArgs,
     ) -> NatRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backend_address_pool_id_binding = args
             .backend_address_pool_id
             .get_output(context);

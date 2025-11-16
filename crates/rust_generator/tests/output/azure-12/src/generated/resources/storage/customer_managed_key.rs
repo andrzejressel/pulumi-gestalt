@@ -177,8 +177,6 @@ pub mod customer_managed_key {
         name: &str,
         args: CustomerManagedKeyArgs,
     ) -> CustomerManagedKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let federated_identity_client_id_binding = args
             .federated_identity_client_id
             .get_output(context);

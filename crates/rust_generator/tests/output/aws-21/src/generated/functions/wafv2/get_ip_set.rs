@@ -38,8 +38,6 @@ pub mod get_ip_set {
         context: &pulumi_gestalt_rust::Context,
         args: GetIpSetArgs,
     ) -> GetIpSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let scope_binding = args.scope.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

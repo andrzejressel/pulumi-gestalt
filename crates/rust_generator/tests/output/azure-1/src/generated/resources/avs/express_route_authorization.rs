@@ -88,8 +88,6 @@ pub mod express_route_authorization {
         name: &str,
         args: ExpressRouteAuthorizationArgs,
     ) -> ExpressRouteAuthorizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let private_cloud_id_binding = args.private_cloud_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

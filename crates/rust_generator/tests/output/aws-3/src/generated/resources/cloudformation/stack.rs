@@ -152,8 +152,6 @@ pub mod stack {
         name: &str,
         args: StackArgs,
     ) -> StackResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capabilities_binding = args.capabilities.get_output(context);
         let disable_rollback_binding = args.disable_rollback.get_output(context);
         let iam_role_arn_binding = args.iam_role_arn.get_output(context);

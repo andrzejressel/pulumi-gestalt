@@ -411,8 +411,6 @@ pub mod flexible_app_version {
         name: &str,
         args: FlexibleAppVersionArgs,
     ) -> FlexibleAppVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_config_binding = args.api_config.get_output(context);
         let automatic_scaling_binding = args.automatic_scaling.get_output(context);
         let beta_settings_binding = args.beta_settings.get_output(context);

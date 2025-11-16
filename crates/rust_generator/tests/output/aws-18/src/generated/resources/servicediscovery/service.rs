@@ -172,8 +172,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let dns_config_binding = args.dns_config.get_output(context);
         let force_destroy_binding = args.force_destroy.get_output(context);

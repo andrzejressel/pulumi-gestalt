@@ -93,8 +93,6 @@ pub mod snapshot {
         name: &str,
         args: SnapshotArgs,
     ) -> SnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let kms_key_arn_binding = args.kms_key_arn.get_output(context);
         let name_binding = args.name.get_output(context);

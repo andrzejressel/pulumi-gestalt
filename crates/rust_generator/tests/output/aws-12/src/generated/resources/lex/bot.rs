@@ -187,8 +187,6 @@ pub mod bot {
         name: &str,
         args: BotArgs,
     ) -> BotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let abort_statement_binding = args.abort_statement.get_output(context);
         let child_directed_binding = args.child_directed.get_output(context);
         let clarification_prompt_binding = args.clarification_prompt.get_output(context);

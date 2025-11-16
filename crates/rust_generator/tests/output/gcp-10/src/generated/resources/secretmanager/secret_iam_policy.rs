@@ -386,8 +386,6 @@ pub mod secret_iam_policy {
         name: &str,
         args: SecretIamPolicyArgs,
     ) -> SecretIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);
         let secret_id_binding = args.secret_id.get_output(context);

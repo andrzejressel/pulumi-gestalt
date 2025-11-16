@@ -729,8 +729,6 @@ pub mod subscription {
         name: &str,
         args: SubscriptionArgs,
     ) -> SubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ack_deadline_seconds_binding = args.ack_deadline_seconds.get_output(context);
         let bigquery_config_binding = args.bigquery_config.get_output(context);
         let cloud_storage_config_binding = args.cloud_storage_config.get_output(context);

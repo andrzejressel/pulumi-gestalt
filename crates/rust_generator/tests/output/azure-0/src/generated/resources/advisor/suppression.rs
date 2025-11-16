@@ -79,8 +79,6 @@ pub mod suppression {
         name: &str,
         args: SuppressionArgs,
     ) -> SuppressionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let recommendation_id_binding = args.recommendation_id.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);

@@ -93,8 +93,6 @@ pub mod table_entity {
         name: &str,
         args: TableEntityArgs,
     ) -> TableEntityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let entity_binding = args.entity.get_output(context);
         let partition_key_binding = args.partition_key.get_output(context);
         let row_key_binding = args.row_key.get_output(context);

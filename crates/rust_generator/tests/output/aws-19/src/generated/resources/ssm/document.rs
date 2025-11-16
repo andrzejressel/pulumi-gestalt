@@ -170,8 +170,6 @@ pub mod document {
         name: &str,
         args: DocumentArgs,
     ) -> DocumentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attachments_sources_binding = args.attachments_sources.get_output(context);
         let content_binding = args.content.get_output(context);
         let document_format_binding = args.document_format.get_output(context);

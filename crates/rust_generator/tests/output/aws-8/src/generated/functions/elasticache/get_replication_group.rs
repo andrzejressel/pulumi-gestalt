@@ -66,8 +66,6 @@ pub mod get_replication_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetReplicationGroupArgs,
     ) -> GetReplicationGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let replication_group_id_binding = args.replication_group_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:elasticache/getReplicationGroup:getReplicationGroup".into(),

@@ -38,8 +38,6 @@ pub mod get_instance_profile {
         context: &pulumi_gestalt_rust::Context,
         args: GetInstanceProfileArgs,
     ) -> GetInstanceProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getInstanceProfile:getInstanceProfile".into(),

@@ -74,8 +74,6 @@ pub mod bucket_ownership_controls {
         name: &str,
         args: BucketOwnershipControlsArgs,
     ) -> BucketOwnershipControlsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let rule_binding = args.rule.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

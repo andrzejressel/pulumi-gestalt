@@ -65,8 +65,6 @@ pub mod get_cloud_formation_type {
         context: &pulumi_gestalt_rust::Context,
         args: GetCloudFormationTypeArgs,
     ) -> GetCloudFormationTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let type__binding = args.type_.get_output(context);
         let type_name_binding = args.type_name.get_output(context);

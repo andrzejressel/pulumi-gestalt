@@ -131,8 +131,6 @@ pub mod kx_volume {
         name: &str,
         args: KxVolumeArgs,
     ) -> KxVolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zones_binding = args.availability_zones.get_output(context);
         let az_mode_binding = args.az_mode.get_output(context);
         let description_binding = args.description.get_output(context);

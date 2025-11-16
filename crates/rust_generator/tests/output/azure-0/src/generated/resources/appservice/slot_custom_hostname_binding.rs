@@ -116,8 +116,6 @@ pub mod slot_custom_hostname_binding {
         name: &str,
         args: SlotCustomHostnameBindingArgs,
     ) -> SlotCustomHostnameBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_slot_id_binding = args.app_service_slot_id.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
         let ssl_state_binding = args.ssl_state.get_output(context);

@@ -294,8 +294,6 @@ pub mod data_exchange_iam_member {
         name: &str,
         args: DataExchangeIamMemberArgs,
     ) -> DataExchangeIamMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let data_exchange_id_binding = args.data_exchange_id.get_output(context);
         let location_binding = args.location.get_output(context);

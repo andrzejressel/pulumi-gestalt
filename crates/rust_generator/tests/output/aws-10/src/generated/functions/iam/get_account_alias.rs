@@ -16,8 +16,6 @@ pub mod get_account_alias {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetAccountAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getAccountAlias:getAccountAlias".into(),
             version: super::super::super::get_version(),

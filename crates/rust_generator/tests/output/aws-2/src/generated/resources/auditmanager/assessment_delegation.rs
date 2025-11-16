@@ -87,8 +87,6 @@ pub mod assessment_delegation {
         name: &str,
         args: AssessmentDelegationArgs,
     ) -> AssessmentDelegationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assessment_id_binding = args.assessment_id.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let control_set_id_binding = args.control_set_id.get_output(context);

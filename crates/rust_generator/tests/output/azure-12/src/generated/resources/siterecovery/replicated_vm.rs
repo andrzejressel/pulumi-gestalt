@@ -195,8 +195,6 @@ pub mod replicated_vm {
         name: &str,
         args: ReplicatedVMArgs,
     ) -> ReplicatedVMResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let managed_disks_binding = args.managed_disks.get_output(context);
         let multi_vm_group_name_binding = args.multi_vm_group_name.get_output(context);
         let name_binding = args.name.get_output(context);

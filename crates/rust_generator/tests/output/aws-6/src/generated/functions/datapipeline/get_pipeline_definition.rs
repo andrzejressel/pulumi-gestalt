@@ -55,8 +55,6 @@ pub mod get_pipeline_definition {
         context: &pulumi_gestalt_rust::Context,
         args: GetPipelineDefinitionArgs,
     ) -> GetPipelineDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parameter_values_binding = args.parameter_values.get_output(context);
         let pipeline_id_binding = args.pipeline_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

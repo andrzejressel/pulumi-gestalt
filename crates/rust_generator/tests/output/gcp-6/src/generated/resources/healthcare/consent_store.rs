@@ -184,8 +184,6 @@ pub mod consent_store {
         name: &str,
         args: ConsentStoreArgs,
     ) -> ConsentStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dataset_binding = args.dataset.get_output(context);
         let default_consent_ttl_binding = args.default_consent_ttl.get_output(context);
         let enable_consent_create_on_update_binding = args

@@ -78,8 +78,6 @@ pub mod get_ontap_file_system {
         context: &pulumi_gestalt_rust::Context,
         args: GetOntapFileSystemArgs,
     ) -> GetOntapFileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let id_binding = args.id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

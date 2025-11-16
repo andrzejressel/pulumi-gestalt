@@ -111,8 +111,6 @@ pub mod hosted_private_virtual_interface {
         name: &str,
         args: HostedPrivateVirtualInterfaceArgs,
     ) -> HostedPrivateVirtualInterfaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_family_binding = args.address_family.get_output(context);
         let amazon_address_binding = args.amazon_address.get_output(context);
         let bgp_asn_binding = args.bgp_asn.get_output(context);

@@ -123,8 +123,6 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let definition_binding = args.definition.get_output(context);
         let description_binding = args.description.get_output(context);
         let engine_type_binding = args.engine_type.get_output(context);

@@ -67,8 +67,6 @@ pub mod vpc_block_public_access_options {
         name: &str,
         args: VpcBlockPublicAccessOptionsArgs,
     ) -> VpcBlockPublicAccessOptionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let internet_gateway_block_mode_binding = args
             .internet_gateway_block_mode
             .get_output(context);

@@ -81,8 +81,6 @@ pub mod enabler {
         name: &str,
         args: EnablerArgs,
     ) -> EnablerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_ids_binding = args.account_ids.get_output(context);
         let resource_types_binding = args.resource_types.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

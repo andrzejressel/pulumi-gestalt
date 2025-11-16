@@ -114,8 +114,6 @@ pub mod traffic_mirror_target {
         name: &str,
         args: TrafficMirrorTargetArgs,
     ) -> TrafficMirrorTargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let gateway_load_balancer_endpoint_id_binding = args
             .gateway_load_balancer_endpoint_id

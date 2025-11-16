@@ -44,8 +44,6 @@ pub mod get_project {
         context: &pulumi_gestalt_rust::Context,
         args: GetProjectArgs,
     ) -> GetProjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_id_binding = args.project_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:organizations/getProject:getProject".into(),

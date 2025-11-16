@@ -160,8 +160,6 @@ pub mod spring_cloud_app_cosmos_db_association {
         name: &str,
         args: SpringCloudAppCosmosDBAssociationArgs,
     ) -> SpringCloudAppCosmosDBAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_type_binding = args.api_type.get_output(context);
         let cosmosdb_access_key_binding = args.cosmosdb_access_key.get_output(context);
         let cosmosdb_account_id_binding = args.cosmosdb_account_id.get_output(context);

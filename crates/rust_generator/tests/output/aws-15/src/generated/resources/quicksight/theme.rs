@@ -139,8 +139,6 @@ pub mod theme {
         name: &str,
         args: ThemeArgs,
     ) -> ThemeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let base_theme_id_binding = args.base_theme_id.get_output(context);
         let configuration_binding = args.configuration.get_output(context);

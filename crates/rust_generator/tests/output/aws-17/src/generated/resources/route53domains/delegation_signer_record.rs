@@ -141,8 +141,6 @@ pub mod delegation_signer_record {
         name: &str,
         args: DelegationSignerRecordArgs,
     ) -> DelegationSignerRecordResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let signing_attributes_binding = args.signing_attributes.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

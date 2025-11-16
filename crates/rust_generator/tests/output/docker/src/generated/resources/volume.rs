@@ -101,8 +101,6 @@ pub mod volume {
         name: &str,
         args: VolumeArgs,
     ) -> VolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let driver_binding = args.driver.get_output(context);
         let driver_opts_binding = args.driver_opts.get_output(context);
         let labels_binding = args.labels.get_output(context);

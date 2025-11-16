@@ -81,8 +81,6 @@ pub mod ledger {
         name: &str,
         args: LedgerArgs,
     ) -> LedgerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let kms_key_binding = args.kms_key.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -46,8 +46,6 @@ pub mod get_script {
         context: &pulumi_gestalt_rust::Context,
         args: GetScriptArgs,
     ) -> GetScriptResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dag_edges_binding = args.dag_edges.get_output(context);
         let dag_nodes_binding = args.dag_nodes.get_output(context);
         let language_binding = args.language.get_output(context);

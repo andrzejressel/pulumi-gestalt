@@ -388,8 +388,6 @@ pub mod server {
         name: &str,
         args: ServerArgs,
     ) -> ServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_binding = args.certificate.get_output(context);
         let directory_id_binding = args.directory_id.get_output(context);
         let domain_binding = args.domain.get_output(context);

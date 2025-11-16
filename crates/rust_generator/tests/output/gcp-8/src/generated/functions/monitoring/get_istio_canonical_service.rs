@@ -61,8 +61,6 @@ pub mod get_istio_canonical_service {
         context: &pulumi_gestalt_rust::Context,
         args: GetIstioCanonicalServiceArgs,
     ) -> GetIstioCanonicalServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let canonical_service_binding = args.canonical_service.get_output(context);
         let canonical_service_namespace_binding = args
             .canonical_service_namespace

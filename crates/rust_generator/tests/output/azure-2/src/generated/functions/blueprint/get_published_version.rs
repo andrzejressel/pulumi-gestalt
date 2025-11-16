@@ -44,8 +44,6 @@ pub mod get_published_version {
         context: &pulumi_gestalt_rust::Context,
         args: GetPublishedVersionArgs,
     ) -> GetPublishedVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let blueprint_name_binding = args.blueprint_name.get_output(context);
         let scope_id_binding = args.scope_id.get_output(context);
         let version_binding = args.version.get_output(context);

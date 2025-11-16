@@ -87,8 +87,6 @@ pub mod scraper {
         name: &str,
         args: ScraperArgs,
     ) -> ScraperResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_binding = args.alias.get_output(context);
         let destination_binding = args.destination.get_output(context);
         let scrape_configuration_binding = args.scrape_configuration.get_output(context);

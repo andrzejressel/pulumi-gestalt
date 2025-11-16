@@ -81,8 +81,6 @@ pub mod next_generation_firewall_virtual_hub_panorama {
         name: &str,
         args: NextGenerationFirewallVirtualHubPanoramaArgs,
     ) -> NextGenerationFirewallVirtualHubPanoramaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_nats_binding = args.destination_nats.get_output(context);
         let dns_settings_binding = args.dns_settings.get_output(context);
         let location_binding = args.location.get_output(context);

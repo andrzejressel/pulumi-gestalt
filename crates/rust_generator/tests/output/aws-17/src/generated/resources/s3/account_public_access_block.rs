@@ -89,8 +89,6 @@ pub mod account_public_access_block {
         name: &str,
         args: AccountPublicAccessBlockArgs,
     ) -> AccountPublicAccessBlockResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let block_public_acls_binding = args.block_public_acls.get_output(context);
         let block_public_policy_binding = args.block_public_policy.get_output(context);

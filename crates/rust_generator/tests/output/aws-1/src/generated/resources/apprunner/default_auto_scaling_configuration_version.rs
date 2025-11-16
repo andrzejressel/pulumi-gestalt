@@ -66,8 +66,6 @@ pub mod default_auto_scaling_configuration_version {
         name: &str,
         args: DefaultAutoScalingConfigurationVersionArgs,
     ) -> DefaultAutoScalingConfigurationVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_scaling_configuration_arn_binding = args
             .auto_scaling_configuration_arn
             .get_output(context);

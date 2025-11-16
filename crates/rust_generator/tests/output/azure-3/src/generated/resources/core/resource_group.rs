@@ -73,8 +73,6 @@ pub mod resource_group {
         name: &str,
         args: ResourceGroupArgs,
     ) -> ResourceGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let managed_by_binding = args.managed_by.get_output(context);
         let name_binding = args.name.get_output(context);

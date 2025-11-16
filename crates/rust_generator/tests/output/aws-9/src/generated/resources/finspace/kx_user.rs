@@ -107,8 +107,6 @@ pub mod kx_user {
         name: &str,
         args: KxUserArgs,
     ) -> KxUserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let environment_id_binding = args.environment_id.get_output(context);
         let iam_role_binding = args.iam_role.get_output(context);
         let name_binding = args.name.get_output(context);

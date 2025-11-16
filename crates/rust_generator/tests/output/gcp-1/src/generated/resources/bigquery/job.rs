@@ -447,8 +447,6 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let copy_binding = args.copy.get_output(context);
         let extract_binding = args.extract.get_output(context);
         let job_id_binding = args.job_id.get_output(context);

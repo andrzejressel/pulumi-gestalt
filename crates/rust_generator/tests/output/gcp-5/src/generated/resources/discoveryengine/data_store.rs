@@ -234,8 +234,6 @@ pub mod data_store {
         name: &str,
         args: DataStoreArgs,
     ) -> DataStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_config_binding = args.content_config.get_output(context);
         let create_advanced_site_search_binding = args
             .create_advanced_site_search

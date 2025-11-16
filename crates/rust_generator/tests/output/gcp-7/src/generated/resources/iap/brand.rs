@@ -123,8 +123,6 @@ pub mod brand {
         name: &str,
         args: BrandArgs,
     ) -> BrandResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_title_binding = args.application_title.get_output(context);
         let project_binding = args.project.get_output(context);
         let support_email_binding = args.support_email.get_output(context);

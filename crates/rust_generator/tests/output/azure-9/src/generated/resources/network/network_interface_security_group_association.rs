@@ -109,8 +109,6 @@ pub mod network_interface_security_group_association {
         name: &str,
         args: NetworkInterfaceSecurityGroupAssociationArgs,
     ) -> NetworkInterfaceSecurityGroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let network_interface_id_binding = args.network_interface_id.get_output(context);
         let network_security_group_id_binding = args
             .network_security_group_id

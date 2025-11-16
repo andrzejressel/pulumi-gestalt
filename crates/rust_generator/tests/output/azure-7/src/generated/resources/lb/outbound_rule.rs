@@ -143,8 +143,6 @@ pub mod outbound_rule {
         name: &str,
         args: OutboundRuleArgs,
     ) -> OutboundRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocated_outbound_ports_binding = args
             .allocated_outbound_ports
             .get_output(context);

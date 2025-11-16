@@ -144,8 +144,6 @@ pub mod linked_custom_service {
         name: &str,
         args: LinkedCustomServiceArgs,
     ) -> LinkedCustomServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);

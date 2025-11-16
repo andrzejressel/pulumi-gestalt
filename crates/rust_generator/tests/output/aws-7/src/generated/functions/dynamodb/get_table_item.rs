@@ -47,8 +47,6 @@ pub mod get_table_item {
         context: &pulumi_gestalt_rust::Context,
         args: GetTableItemArgs,
     ) -> GetTableItemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let expression_attribute_names_binding = args
             .expression_attribute_names
             .get_output(context);

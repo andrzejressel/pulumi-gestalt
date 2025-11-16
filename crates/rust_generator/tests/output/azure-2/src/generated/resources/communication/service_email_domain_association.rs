@@ -92,8 +92,6 @@ pub mod service_email_domain_association {
         name: &str,
         args: ServiceEmailDomainAssociationArgs,
     ) -> ServiceEmailDomainAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let communication_service_id_binding = args
             .communication_service_id
             .get_output(context);

@@ -47,8 +47,6 @@ pub mod get_portfolio {
         context: &pulumi_gestalt_rust::Context,
         args: GetPortfolioArgs,
     ) -> GetPortfolioResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accept_language_binding = args.accept_language.get_output(context);
         let id_binding = args.id.get_output(context);
         let tags_binding = args.tags.get_output(context);

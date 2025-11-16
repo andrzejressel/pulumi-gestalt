@@ -84,8 +84,6 @@ pub mod replicator {
         name: &str,
         args: ReplicatorArgs,
     ) -> ReplicatorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let kafka_clusters_binding = args.kafka_clusters.get_output(context);
         let replication_info_list_binding = args

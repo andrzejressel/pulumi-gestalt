@@ -558,8 +558,6 @@ pub mod connection_profile {
         name: &str,
         args: ConnectionProfileArgs,
     ) -> ConnectionProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alloydb_binding = args.alloydb.get_output(context);
         let cloudsql_binding = args.cloudsql.get_output(context);
         let connection_profile_id_binding = args

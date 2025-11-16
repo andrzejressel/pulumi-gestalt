@@ -38,8 +38,6 @@ pub mod get_stream_consumer {
         context: &pulumi_gestalt_rust::Context,
         args: GetStreamConsumerArgs,
     ) -> GetStreamConsumerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let name_binding = args.name.get_output(context);
         let stream_arn_binding = args.stream_arn.get_output(context);

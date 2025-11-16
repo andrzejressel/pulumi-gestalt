@@ -49,8 +49,6 @@ pub mod get_crypto_key_latest_version {
         context: &pulumi_gestalt_rust::Context,
         args: GetCryptoKeyLatestVersionArgs,
     ) -> GetCryptoKeyLatestVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crypto_key_binding = args.crypto_key.get_output(context);
         let filter_binding = args.filter.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

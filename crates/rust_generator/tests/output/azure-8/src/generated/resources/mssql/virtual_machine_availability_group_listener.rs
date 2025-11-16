@@ -101,8 +101,6 @@ pub mod virtual_machine_availability_group_listener {
         name: &str,
         args: VirtualMachineAvailabilityGroupListenerArgs,
     ) -> VirtualMachineAvailabilityGroupListenerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_group_name_binding = args
             .availability_group_name
             .get_output(context);

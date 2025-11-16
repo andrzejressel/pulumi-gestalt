@@ -114,8 +114,6 @@ pub mod routing_profile {
         name: &str,
         args: RoutingProfileArgs,
     ) -> RoutingProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_outbound_queue_id_binding = args
             .default_outbound_queue_id
             .get_output(context);

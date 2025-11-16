@@ -56,8 +56,6 @@ pub mod get_bucket_objects {
         context: &pulumi_gestalt_rust::Context,
         args: GetBucketObjectsArgs,
     ) -> GetBucketObjectsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let delimiter_binding = args.delimiter.get_output(context);
         let encoding_type_binding = args.encoding_type.get_output(context);

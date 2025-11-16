@@ -109,8 +109,6 @@ pub mod nat_gateway {
         name: &str,
         args: NatGatewayArgs,
     ) -> NatGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let idle_timeout_in_minutes_binding = args
             .idle_timeout_in_minutes
             .get_output(context);

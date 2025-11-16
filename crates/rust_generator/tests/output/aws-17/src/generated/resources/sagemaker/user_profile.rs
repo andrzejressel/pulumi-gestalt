@@ -102,8 +102,6 @@ pub mod user_profile {
         name: &str,
         args: UserProfileArgs,
     ) -> UserProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_id_binding = args.domain_id.get_output(context);
         let single_sign_on_user_identifier_binding = args
             .single_sign_on_user_identifier

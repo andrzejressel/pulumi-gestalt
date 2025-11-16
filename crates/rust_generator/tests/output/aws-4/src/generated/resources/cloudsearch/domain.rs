@@ -111,8 +111,6 @@ pub mod domain {
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let endpoint_options_binding = args.endpoint_options.get_output(context);
         let index_fields_binding = args.index_fields.get_output(context);
         let multi_az_binding = args.multi_az.get_output(context);

@@ -95,8 +95,6 @@ pub mod data_source_windows_event {
         name: &str,
         args: DataSourceWindowsEventArgs,
     ) -> DataSourceWindowsEventResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let event_log_name_binding = args.event_log_name.get_output(context);
         let event_types_binding = args.event_types.get_output(context);
         let name_binding = args.name.get_output(context);

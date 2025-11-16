@@ -453,8 +453,6 @@ pub mod feature_membership {
         name: &str,
         args: FeatureMembershipArgs,
     ) -> FeatureMembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configmanagement_binding = args.configmanagement.get_output(context);
         let feature_binding = args.feature.get_output(context);
         let location_binding = args.location.get_output(context);

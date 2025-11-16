@@ -241,8 +241,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_question_answering_search_service_id_binding = args
             .custom_question_answering_search_service_id
             .get_output(context);

@@ -398,8 +398,6 @@ pub mod s_3_endpoint {
         name: &str,
         args: S3EndpointArgs,
     ) -> S3EndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let add_column_name_binding = args.add_column_name.get_output(context);
         let add_trailing_padding_character_binding = args
             .add_trailing_padding_character

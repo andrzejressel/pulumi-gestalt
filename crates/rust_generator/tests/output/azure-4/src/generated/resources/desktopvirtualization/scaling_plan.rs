@@ -205,8 +205,6 @@ pub mod scaling_plan {
         name: &str,
         args: ScalingPlanArgs,
     ) -> ScalingPlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let exclusion_tag_binding = args.exclusion_tag.get_output(context);
         let friendly_name_binding = args.friendly_name.get_output(context);

@@ -81,8 +81,6 @@ pub mod regex_match_set {
         name: &str,
         args: RegexMatchSetArgs,
     ) -> RegexMatchSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let regex_match_tuples_binding = args.regex_match_tuples.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

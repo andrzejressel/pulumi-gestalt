@@ -39,8 +39,6 @@ pub mod risk_behavior {
         name: &str,
         args: RiskBehaviorArgs,
     ) -> RiskBehaviorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let behaviors_binding = args.behaviors.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

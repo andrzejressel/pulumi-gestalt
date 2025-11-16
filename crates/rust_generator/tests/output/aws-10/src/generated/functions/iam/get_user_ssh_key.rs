@@ -40,8 +40,6 @@ pub mod get_user_ssh_key {
         context: &pulumi_gestalt_rust::Context,
         args: GetUserSshKeyArgs,
     ) -> GetUserSshKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let encoding_binding = args.encoding.get_output(context);
         let ssh_public_key_id_binding = args.ssh_public_key_id.get_output(context);
         let username_binding = args.username.get_output(context);

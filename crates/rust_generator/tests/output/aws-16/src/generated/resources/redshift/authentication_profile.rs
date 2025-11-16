@@ -58,8 +58,6 @@ pub mod authentication_profile {
         name: &str,
         args: AuthenticationProfileArgs,
     ) -> AuthenticationProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_profile_content_binding = args
             .authentication_profile_content
             .get_output(context);

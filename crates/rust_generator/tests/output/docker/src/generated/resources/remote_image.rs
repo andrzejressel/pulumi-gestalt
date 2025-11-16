@@ -138,8 +138,6 @@ pub mod remote_image {
         name: &str,
         args: RemoteImageArgs,
     ) -> RemoteImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let build_binding = args.build.get_output(context);
         let force_remove_binding = args.force_remove.get_output(context);
         let keep_locally_binding = args.keep_locally.get_output(context);

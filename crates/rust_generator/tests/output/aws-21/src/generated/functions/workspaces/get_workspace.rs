@@ -53,8 +53,6 @@ pub mod get_workspace {
         context: &pulumi_gestalt_rust::Context,
         args: GetWorkspaceArgs,
     ) -> GetWorkspaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let directory_id_binding = args.directory_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let user_name_binding = args.user_name.get_output(context);

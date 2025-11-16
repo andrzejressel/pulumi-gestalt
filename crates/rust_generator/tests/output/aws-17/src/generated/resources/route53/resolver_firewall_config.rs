@@ -70,8 +70,6 @@ pub mod resolver_firewall_config {
         name: &str,
         args: ResolverFirewallConfigArgs,
     ) -> ResolverFirewallConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let firewall_fail_open_binding = args.firewall_fail_open.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

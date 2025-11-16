@@ -125,8 +125,6 @@ pub mod manangement_lock {
         name: &str,
         args: ManangementLockArgs,
     ) -> ManangementLockResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let lock_level_binding = args.lock_level.get_output(context);
         let name_binding = args.name.get_output(context);
         let notes_binding = args.notes.get_output(context);

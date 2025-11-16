@@ -67,8 +67,6 @@ pub mod spot_datafeed_subscription {
         name: &str,
         args: SpotDatafeedSubscriptionArgs,
     ) -> SpotDatafeedSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let prefix_binding = args.prefix.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

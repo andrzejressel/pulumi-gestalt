@@ -129,8 +129,6 @@ pub mod ekm_connection {
         name: &str,
         args: EkmConnectionArgs,
     ) -> EkmConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crypto_space_path_binding = args.crypto_space_path.get_output(context);
         let etag_binding = args.etag.get_output(context);
         let key_management_mode_binding = args.key_management_mode.get_output(context);

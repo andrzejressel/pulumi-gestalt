@@ -71,8 +71,6 @@ pub mod instance_desired_state {
         name: &str,
         args: InstanceDesiredStateArgs,
     ) -> InstanceDesiredStateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identifier_binding = args.identifier.get_output(context);
         let state_binding = args.state.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

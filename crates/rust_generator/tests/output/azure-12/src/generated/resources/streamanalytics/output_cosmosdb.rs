@@ -131,8 +131,6 @@ pub mod output_cosmosdb {
         name: &str,
         args: OutputCosmosdbArgs,
     ) -> OutputCosmosdbResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_name_binding = args.container_name.get_output(context);
         let cosmosdb_account_key_binding = args.cosmosdb_account_key.get_output(context);
         let cosmosdb_sql_database_id_binding = args

@@ -35,8 +35,6 @@ pub mod get_node_types {
         context: &pulumi_gestalt_rust::Context,
         args: GetNodeTypesArgs,
     ) -> GetNodeTypesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let zone_binding = args.zone.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

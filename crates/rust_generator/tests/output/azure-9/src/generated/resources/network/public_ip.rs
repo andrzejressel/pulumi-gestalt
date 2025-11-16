@@ -187,8 +187,6 @@ pub mod public_ip {
         name: &str,
         args: PublicIpArgs,
     ) -> PublicIpResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_method_binding = args.allocation_method.get_output(context);
         let ddos_protection_mode_binding = args.ddos_protection_mode.get_output(context);
         let ddos_protection_plan_id_binding = args

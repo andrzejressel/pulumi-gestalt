@@ -40,8 +40,6 @@ pub mod get_frontdoor_secret {
         context: &pulumi_gestalt_rust::Context,
         args: GetFrontdoorSecretArgs,
     ) -> GetFrontdoorSecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let profile_name_binding = args.profile_name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

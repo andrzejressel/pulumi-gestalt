@@ -53,8 +53,6 @@ pub mod get_vpn_attachment {
         context: &pulumi_gestalt_rust::Context,
         args: GetVpnAttachmentArgs,
     ) -> GetVpnAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let transit_gateway_id_binding = args.transit_gateway_id.get_output(context);

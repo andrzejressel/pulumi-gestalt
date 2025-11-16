@@ -181,8 +181,6 @@ pub mod container_recipe {
         name: &str,
         args: ContainerRecipeArgs,
     ) -> ContainerRecipeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let components_binding = args.components.get_output(context);
         let container_type_binding = args.container_type.get_output(context);
         let description_binding = args.description.get_output(context);

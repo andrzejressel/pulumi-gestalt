@@ -32,8 +32,6 @@ pub mod get_client {
         context: &pulumi_gestalt_rust::Context,
         args: GetClientArgs,
     ) -> GetClientResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let brand_binding = args.brand.get_output(context);
         let client_id_binding = args.client_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

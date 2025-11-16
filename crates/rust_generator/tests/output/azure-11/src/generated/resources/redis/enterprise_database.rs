@@ -150,8 +150,6 @@ pub mod enterprise_database {
         name: &str,
         args: EnterpriseDatabaseArgs,
     ) -> EnterpriseDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_protocol_binding = args.client_protocol.get_output(context);
         let cluster_id_binding = args.cluster_id.get_output(context);
         let clustering_policy_binding = args.clustering_policy.get_output(context);

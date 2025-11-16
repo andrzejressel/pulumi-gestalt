@@ -104,8 +104,6 @@ pub mod multiplex {
         name: &str,
         args: MultiplexArgs,
     ) -> MultiplexResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zones_binding = args.availability_zones.get_output(context);
         let multiplex_settings_binding = args.multiplex_settings.get_output(context);
         let name_binding = args.name.get_output(context);

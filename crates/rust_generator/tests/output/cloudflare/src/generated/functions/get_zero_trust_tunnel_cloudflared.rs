@@ -43,8 +43,6 @@ pub mod get_zero_trust_tunnel_cloudflared {
         context: &pulumi_gestalt_rust::Context,
         args: GetZeroTrustTunnelCloudflaredArgs,
     ) -> GetZeroTrustTunnelCloudflaredResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let is_deleted_binding = args.is_deleted.get_output(context);
         let name_binding = args.name.get_output(context);

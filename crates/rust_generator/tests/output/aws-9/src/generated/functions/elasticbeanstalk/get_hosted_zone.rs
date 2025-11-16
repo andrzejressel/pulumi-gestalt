@@ -27,8 +27,6 @@ pub mod get_hosted_zone {
         context: &pulumi_gestalt_rust::Context,
         args: GetHostedZoneArgs,
     ) -> GetHostedZoneResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let region_binding = args.region.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:elasticbeanstalk/getHostedZone:getHostedZone".into(),

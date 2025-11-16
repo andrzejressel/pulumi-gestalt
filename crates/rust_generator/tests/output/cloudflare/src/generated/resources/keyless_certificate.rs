@@ -91,8 +91,6 @@ pub mod keyless_certificate {
         name: &str,
         args: KeylessCertificateArgs,
     ) -> KeylessCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bundle_method_binding = args.bundle_method.get_output(context);
         let certificate_binding = args.certificate.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

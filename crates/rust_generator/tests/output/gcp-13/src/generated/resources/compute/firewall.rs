@@ -368,8 +368,6 @@ pub mod firewall {
         name: &str,
         args: FirewallArgs,
     ) -> FirewallResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allows_binding = args.allows.get_output(context);
         let denies_binding = args.denies.get_output(context);
         let description_binding = args.description.get_output(context);

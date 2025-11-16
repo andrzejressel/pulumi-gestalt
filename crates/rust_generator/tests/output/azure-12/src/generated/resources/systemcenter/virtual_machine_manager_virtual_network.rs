@@ -111,8 +111,6 @@ pub mod virtual_machine_manager_virtual_network {
         name: &str,
         args: VirtualMachineManagerVirtualNetworkArgs,
     ) -> VirtualMachineManagerVirtualNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_location_id_binding = args.custom_location_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);

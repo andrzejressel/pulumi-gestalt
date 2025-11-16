@@ -79,8 +79,6 @@ pub mod resolver_query_log_config {
         name: &str,
         args: ResolverQueryLogConfigArgs,
     ) -> ResolverQueryLogConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_arn_binding = args.destination_arn.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);

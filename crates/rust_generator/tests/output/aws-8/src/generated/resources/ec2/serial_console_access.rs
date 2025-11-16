@@ -54,8 +54,6 @@ pub mod serial_console_access {
         name: &str,
         args: SerialConsoleAccessArgs,
     ) -> SerialConsoleAccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ec2/serialConsoleAccess:SerialConsoleAccess".into(),

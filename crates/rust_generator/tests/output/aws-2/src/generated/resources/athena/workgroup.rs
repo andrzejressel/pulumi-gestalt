@@ -110,8 +110,6 @@ pub mod workgroup {
         name: &str,
         args: WorkgroupArgs,
     ) -> WorkgroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_binding = args.configuration.get_output(context);
         let description_binding = args.description.get_output(context);
         let force_destroy_binding = args.force_destroy.get_output(context);

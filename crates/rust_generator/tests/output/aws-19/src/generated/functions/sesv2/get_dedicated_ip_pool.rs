@@ -41,8 +41,6 @@ pub mod get_dedicated_ip_pool {
         context: &pulumi_gestalt_rust::Context,
         args: GetDedicatedIpPoolArgs,
     ) -> GetDedicatedIpPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let pool_name_binding = args.pool_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

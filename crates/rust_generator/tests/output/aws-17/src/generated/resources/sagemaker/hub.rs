@@ -93,8 +93,6 @@ pub mod hub {
         name: &str,
         args: HubArgs,
     ) -> HubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hub_description_binding = args.hub_description.get_output(context);
         let hub_display_name_binding = args.hub_display_name.get_output(context);
         let hub_name_binding = args.hub_name.get_output(context);

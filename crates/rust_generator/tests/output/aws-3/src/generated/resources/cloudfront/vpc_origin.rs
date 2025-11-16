@@ -110,8 +110,6 @@ pub mod vpc_origin {
         name: &str,
         args: VpcOriginArgs,
     ) -> VpcOriginResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let vpc_origin_endpoint_config_binding = args

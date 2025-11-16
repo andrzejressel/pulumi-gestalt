@@ -40,8 +40,6 @@ pub mod get_ontap_storage_virtual_machines {
         context: &pulumi_gestalt_rust::Context,
         args: GetOntapStorageVirtualMachinesArgs,
     ) -> GetOntapStorageVirtualMachinesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:fsx/getOntapStorageVirtualMachines:getOntapStorageVirtualMachines"

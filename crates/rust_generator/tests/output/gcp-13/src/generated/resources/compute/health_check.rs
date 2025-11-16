@@ -529,8 +529,6 @@ pub mod health_check {
         name: &str,
         args: HealthCheckArgs,
     ) -> HealthCheckResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let check_interval_sec_binding = args.check_interval_sec.get_output(context);
         let description_binding = args.description.get_output(context);
         let grpc_health_check_binding = args.grpc_health_check.get_output(context);

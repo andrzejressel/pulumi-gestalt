@@ -78,8 +78,6 @@ pub mod endpoint_authorization {
         name: &str,
         args: EndpointAuthorizationArgs,
     ) -> EndpointAuthorizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_binding = args.account.get_output(context);
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let force_delete_binding = args.force_delete.get_output(context);

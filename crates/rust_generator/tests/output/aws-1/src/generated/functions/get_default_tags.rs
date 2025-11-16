@@ -25,8 +25,6 @@ pub mod get_default_tags {
         context: &pulumi_gestalt_rust::Context,
         args: GetDefaultTagsArgs,
     ) -> GetDefaultTagsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let id_binding = args.id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:index/getDefaultTags:getDefaultTags".into(),

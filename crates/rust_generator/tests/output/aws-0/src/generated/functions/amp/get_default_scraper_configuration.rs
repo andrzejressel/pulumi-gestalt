@@ -18,8 +18,6 @@ pub mod get_default_scraper_configuration {
     pub fn invoke(
         context: &pulumi_gestalt_rust::Context,
     ) -> GetDefaultScraperConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:amp/getDefaultScraperConfiguration:getDefaultScraperConfiguration"
                 .into(),

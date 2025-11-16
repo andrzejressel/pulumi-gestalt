@@ -72,8 +72,6 @@ pub mod ip_set {
         name: &str,
         args: IpSetArgs,
     ) -> IpSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ip_set_descriptors_binding = args.ip_set_descriptors.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

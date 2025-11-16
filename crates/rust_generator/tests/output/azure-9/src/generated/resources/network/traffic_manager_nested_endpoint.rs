@@ -188,8 +188,6 @@ pub mod traffic_manager_nested_endpoint {
         name: &str,
         args: TrafficManagerNestedEndpointArgs,
     ) -> TrafficManagerNestedEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_headers_binding = args.custom_headers.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let endpoint_location_binding = args.endpoint_location.get_output(context);

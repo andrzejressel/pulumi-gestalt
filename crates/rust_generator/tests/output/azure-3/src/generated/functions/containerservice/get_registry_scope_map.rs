@@ -37,8 +37,6 @@ pub mod get_registry_scope_map {
         context: &pulumi_gestalt_rust::Context,
         args: GetRegistryScopeMapArgs,
     ) -> GetRegistryScopeMapResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_registry_name_binding = args
             .container_registry_name
             .get_output(context);

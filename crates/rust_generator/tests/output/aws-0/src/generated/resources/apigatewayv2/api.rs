@@ -179,8 +179,6 @@ pub mod api {
         name: &str,
         args: ApiArgs,
     ) -> ApiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_key_selection_expression_binding = args
             .api_key_selection_expression
             .get_output(context);

@@ -139,8 +139,6 @@ pub mod sql_pool_workload_group {
         name: &str,
         args: SqlPoolWorkloadGroupArgs,
     ) -> SqlPoolWorkloadGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let importance_binding = args.importance.get_output(context);
         let max_resource_percent_binding = args.max_resource_percent.get_output(context);
         let max_resource_percent_per_request_binding = args

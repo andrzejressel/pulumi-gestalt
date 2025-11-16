@@ -184,8 +184,6 @@ pub mod app_gateway {
         name: &str,
         args: AppGatewayArgs,
     ) -> AppGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let host_type_binding = args.host_type.get_output(context);
         let labels_binding = args.labels.get_output(context);

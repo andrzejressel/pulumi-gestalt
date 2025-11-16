@@ -114,8 +114,6 @@ pub mod vpn_server_configuration_policy_group {
         name: &str,
         args: VpnServerConfigurationPolicyGroupArgs,
     ) -> VpnServerConfigurationPolicyGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let is_default_binding = args.is_default.get_output(context);
         let name_binding = args.name.get_output(context);
         let policies_binding = args.policies.get_output(context);

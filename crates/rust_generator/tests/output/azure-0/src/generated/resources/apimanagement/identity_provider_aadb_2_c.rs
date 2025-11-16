@@ -142,8 +142,6 @@ pub mod identity_provider_aadb_2_c {
         name: &str,
         args: IdentityProviderAadb2cArgs,
     ) -> IdentityProviderAadb2cResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_tenant_binding = args.allowed_tenant.get_output(context);
         let api_management_name_binding = args.api_management_name.get_output(context);
         let authority_binding = args.authority.get_output(context);

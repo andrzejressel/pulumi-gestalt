@@ -143,8 +143,6 @@ pub mod reference_input_blob {
         name: &str,
         args: ReferenceInputBlobArgs,
     ) -> ReferenceInputBlobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let date_format_binding = args.date_format.get_output(context);
         let name_binding = args.name.get_output(context);

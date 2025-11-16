@@ -108,8 +108,6 @@ pub mod configured_table {
         name: &str,
         args: ConfiguredTableArgs,
     ) -> ConfiguredTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_columns_binding = args.allowed_columns.get_output(context);
         let analysis_method_binding = args.analysis_method.get_output(context);
         let description_binding = args.description.get_output(context);

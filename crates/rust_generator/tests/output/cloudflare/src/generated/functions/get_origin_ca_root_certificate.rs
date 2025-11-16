@@ -29,8 +29,6 @@ pub mod get_origin_ca_root_certificate {
         context: &pulumi_gestalt_rust::Context,
         args: GetOriginCaRootCertificateArgs,
     ) -> GetOriginCaRootCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let algorithm_binding = args.algorithm.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getOriginCaRootCertificate:getOriginCaRootCertificate"

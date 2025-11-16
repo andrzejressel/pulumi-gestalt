@@ -211,8 +211,6 @@ pub mod deployment {
         name: &str,
         args: DeploymentArgs,
     ) -> DeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_scale_profiles_binding = args.auto_scale_profiles.get_output(context);
         let automatic_upgrade_channel_binding = args
             .automatic_upgrade_channel

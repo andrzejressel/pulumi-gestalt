@@ -76,8 +76,6 @@ pub mod product_portfolio_association {
         name: &str,
         args: ProductPortfolioAssociationArgs,
     ) -> ProductPortfolioAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accept_language_binding = args.accept_language.get_output(context);
         let portfolio_id_binding = args.portfolio_id.get_output(context);
         let product_id_binding = args.product_id.get_output(context);

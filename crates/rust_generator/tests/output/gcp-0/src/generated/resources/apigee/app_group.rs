@@ -246,8 +246,6 @@ pub mod app_group {
         name: &str,
         args: AppGroupArgs,
     ) -> AppGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let channel_id_binding = args.channel_id.get_output(context);
         let channel_uri_binding = args.channel_uri.get_output(context);

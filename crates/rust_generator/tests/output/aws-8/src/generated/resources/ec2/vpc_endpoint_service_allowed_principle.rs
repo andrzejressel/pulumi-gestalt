@@ -60,8 +60,6 @@ pub mod vpc_endpoint_service_allowed_principle {
         name: &str,
         args: VpcEndpointServiceAllowedPrincipleArgs,
     ) -> VpcEndpointServiceAllowedPrincipleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let principal_arn_binding = args.principal_arn.get_output(context);
         let vpc_endpoint_service_id_binding = args
             .vpc_endpoint_service_id

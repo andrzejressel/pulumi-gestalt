@@ -179,8 +179,6 @@ pub mod services_communications_gateway {
         name: &str,
         args: ServicesCommunicationsGatewayArgs,
     ) -> ServicesCommunicationsGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_bridge_binding = args.api_bridge.get_output(context);
         let auto_generated_domain_name_label_scope_binding = args
             .auto_generated_domain_name_label_scope

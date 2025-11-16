@@ -36,8 +36,6 @@ pub mod get_project_service_account {
         context: &pulumi_gestalt_rust::Context,
         args: GetProjectServiceAccountArgs,
     ) -> GetProjectServiceAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let user_project_binding = args.user_project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

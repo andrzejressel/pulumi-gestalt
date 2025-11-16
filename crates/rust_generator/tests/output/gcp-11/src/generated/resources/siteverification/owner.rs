@@ -137,8 +137,6 @@ pub mod owner {
         name: &str,
         args: OwnerArgs,
     ) -> OwnerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let email_binding = args.email.get_output(context);
         let web_resource_id_binding = args.web_resource_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

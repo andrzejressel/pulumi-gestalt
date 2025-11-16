@@ -83,8 +83,6 @@ pub mod proxy_endpoint {
         name: &str,
         args: ProxyEndpointArgs,
     ) -> ProxyEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let db_proxy_endpoint_name_binding = args
             .db_proxy_endpoint_name
             .get_output(context);

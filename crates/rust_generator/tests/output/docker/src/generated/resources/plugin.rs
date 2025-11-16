@@ -103,8 +103,6 @@ pub mod plugin {
         name: &str,
         args: PluginArgs,
     ) -> PluginResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_binding = args.alias.get_output(context);
         let enable_timeout_binding = args.enable_timeout.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

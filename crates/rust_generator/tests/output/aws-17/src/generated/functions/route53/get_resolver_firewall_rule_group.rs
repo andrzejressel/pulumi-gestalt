@@ -38,8 +38,6 @@ pub mod get_resolver_firewall_rule_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetResolverFirewallRuleGroupArgs,
     ) -> GetResolverFirewallRuleGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let firewall_rule_group_id_binding = args
             .firewall_rule_group_id
             .get_output(context);

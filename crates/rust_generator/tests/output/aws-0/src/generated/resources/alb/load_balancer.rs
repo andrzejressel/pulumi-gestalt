@@ -273,8 +273,6 @@ pub mod load_balancer {
         name: &str,
         args: LoadBalancerArgs,
     ) -> LoadBalancerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_logs_binding = args.access_logs.get_output(context);
         let client_keep_alive_binding = args.client_keep_alive.get_output(context);
         let connection_logs_binding = args.connection_logs.get_output(context);

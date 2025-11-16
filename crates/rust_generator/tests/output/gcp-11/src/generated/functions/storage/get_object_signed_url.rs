@@ -67,8 +67,6 @@ pub mod get_object_signed_url {
         context: &pulumi_gestalt_rust::Context,
         args: GetObjectSignedUrlArgs,
     ) -> GetObjectSignedUrlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let content_md5_binding = args.content_md5.get_output(context);
         let content_type_binding = args.content_type.get_output(context);

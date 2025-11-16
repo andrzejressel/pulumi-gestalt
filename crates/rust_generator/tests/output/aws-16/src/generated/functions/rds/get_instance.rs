@@ -114,8 +114,6 @@ pub mod get_instance {
         context: &pulumi_gestalt_rust::Context,
         args: GetInstanceArgs,
     ) -> GetInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let db_instance_identifier_binding = args
             .db_instance_identifier
             .get_output(context);

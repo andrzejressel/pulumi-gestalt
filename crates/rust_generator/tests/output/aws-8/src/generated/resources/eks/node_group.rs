@@ -232,8 +232,6 @@ pub mod node_group {
         name: &str,
         args: NodeGroupArgs,
     ) -> NodeGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ami_type_binding = args.ami_type.get_output(context);
         let capacity_type_binding = args.capacity_type.get_output(context);
         let cluster_name_binding = args.cluster_name.get_output(context);

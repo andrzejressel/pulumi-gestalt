@@ -52,8 +52,6 @@ pub mod domain {
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lightsail/domain:Domain".into(),

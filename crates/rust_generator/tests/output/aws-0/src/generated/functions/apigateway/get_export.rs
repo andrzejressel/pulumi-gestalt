@@ -52,8 +52,6 @@ pub mod get_export {
         context: &pulumi_gestalt_rust::Context,
         args: GetExportArgs,
     ) -> GetExportResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accepts_binding = args.accepts.get_output(context);
         let export_type_binding = args.export_type.get_output(context);
         let parameters_binding = args.parameters.get_output(context);

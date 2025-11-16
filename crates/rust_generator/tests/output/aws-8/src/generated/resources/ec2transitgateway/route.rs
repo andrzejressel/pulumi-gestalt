@@ -99,8 +99,6 @@ pub mod route {
         name: &str,
         args: RouteArgs,
     ) -> RouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let blackhole_binding = args.blackhole.get_output(context);
         let destination_cidr_block_binding = args
             .destination_cidr_block

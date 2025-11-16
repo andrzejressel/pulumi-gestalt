@@ -36,8 +36,6 @@ pub mod get_web_type_app_engine_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetWebTypeAppEngineIamPolicyArgs,
     ) -> GetWebTypeAppEngineIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

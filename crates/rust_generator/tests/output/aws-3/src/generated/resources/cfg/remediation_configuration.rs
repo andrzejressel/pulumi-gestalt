@@ -157,8 +157,6 @@ pub mod remediation_configuration {
         name: &str,
         args: RemediationConfigurationArgs,
     ) -> RemediationConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automatic_binding = args.automatic.get_output(context);
         let config_rule_name_binding = args.config_rule_name.get_output(context);
         let execution_controls_binding = args.execution_controls.get_output(context);

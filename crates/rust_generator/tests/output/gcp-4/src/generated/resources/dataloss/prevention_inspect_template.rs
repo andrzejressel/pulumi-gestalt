@@ -348,8 +348,6 @@ pub mod prevention_inspect_template {
         name: &str,
         args: PreventionInspectTemplateArgs,
     ) -> PreventionInspectTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let inspect_config_binding = args.inspect_config.get_output(context);

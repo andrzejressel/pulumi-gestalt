@@ -210,8 +210,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_fqdns_binding = args.allowed_fqdns.get_output(context);
         let allowed_ip_ranges_binding = args.allowed_ip_ranges.get_output(context);
         let auto_stop_enabled_binding = args.auto_stop_enabled.get_output(context);

@@ -80,8 +80,6 @@ pub mod workspace_service_account_token {
         name: &str,
         args: WorkspaceServiceAccountTokenArgs,
     ) -> WorkspaceServiceAccountTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let seconds_to_live_binding = args.seconds_to_live.get_output(context);
         let service_account_id_binding = args.service_account_id.get_output(context);

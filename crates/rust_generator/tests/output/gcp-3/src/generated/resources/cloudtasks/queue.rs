@@ -286,8 +286,6 @@ pub mod queue {
         name: &str,
         args: QueueArgs,
     ) -> QueueResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_engine_routing_override_binding = args
             .app_engine_routing_override
             .get_output(context);

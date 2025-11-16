@@ -253,8 +253,6 @@ pub mod kx_cluster {
         name: &str,
         args: KxClusterArgs,
     ) -> KxClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_scaling_configuration_binding = args
             .auto_scaling_configuration
             .get_output(context);

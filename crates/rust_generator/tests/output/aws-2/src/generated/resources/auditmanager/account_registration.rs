@@ -80,8 +80,6 @@ pub mod account_registration {
         name: &str,
         args: AccountRegistrationArgs,
     ) -> AccountRegistrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delegated_admin_account_binding = args
             .delegated_admin_account
             .get_output(context);

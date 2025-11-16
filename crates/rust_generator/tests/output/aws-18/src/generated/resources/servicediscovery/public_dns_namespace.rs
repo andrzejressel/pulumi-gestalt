@@ -77,8 +77,6 @@ pub mod public_dns_namespace {
         name: &str,
         args: PublicDnsNamespaceArgs,
     ) -> PublicDnsNamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);

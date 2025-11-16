@@ -154,8 +154,6 @@ pub mod output_servicebus_topic {
         name: &str,
         args: OutputServicebusTopicArgs,
     ) -> OutputServicebusTopicResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let name_binding = args.name.get_output(context);
         let property_columns_binding = args.property_columns.get_output(context);

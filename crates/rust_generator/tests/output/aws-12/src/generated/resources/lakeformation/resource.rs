@@ -80,8 +80,6 @@ pub mod resource {
         name: &str,
         args: ResourceArgs,
     ) -> ResourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let hybrid_access_enabled_binding = args
             .hybrid_access_enabled

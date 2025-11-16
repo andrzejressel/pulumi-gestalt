@@ -74,8 +74,6 @@ pub mod get_account_sas {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccountSasArgs,
     ) -> GetAccountSasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_string_binding = args.connection_string.get_output(context);
         let expiry_binding = args.expiry.get_output(context);
         let https_only_binding = args.https_only.get_output(context);

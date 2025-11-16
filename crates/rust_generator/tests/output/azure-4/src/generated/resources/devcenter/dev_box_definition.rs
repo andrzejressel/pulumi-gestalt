@@ -97,8 +97,6 @@ pub mod dev_box_definition {
         name: &str,
         args: DevBoxDefinitionArgs,
     ) -> DevBoxDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dev_center_id_binding = args.dev_center_id.get_output(context);
         let image_reference_id_binding = args.image_reference_id.get_output(context);
         let location_binding = args.location.get_output(context);

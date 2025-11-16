@@ -51,8 +51,6 @@ pub mod get_compute_environment {
         context: &pulumi_gestalt_rust::Context,
         args: GetComputeEnvironmentArgs,
     ) -> GetComputeEnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let compute_environment_name_binding = args
             .compute_environment_name
             .get_output(context);

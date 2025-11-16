@@ -121,8 +121,6 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let batch_pool_id_binding = args.batch_pool_id.get_output(context);
         let common_environment_properties_binding = args
             .common_environment_properties

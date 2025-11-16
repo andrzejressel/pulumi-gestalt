@@ -219,8 +219,6 @@ pub mod ontap_volume {
         name: &str,
         args: OntapVolumeArgs,
     ) -> OntapVolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aggregate_configuration_binding = args
             .aggregate_configuration
             .get_output(context);

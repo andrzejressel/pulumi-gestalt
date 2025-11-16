@@ -286,8 +286,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_locations_binding = args.additional_locations.get_output(context);
         let certificates_binding = args.certificates.get_output(context);
         let client_certificate_enabled_binding = args

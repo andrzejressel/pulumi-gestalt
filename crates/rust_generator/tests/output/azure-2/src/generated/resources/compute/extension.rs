@@ -226,8 +226,6 @@ pub mod extension {
         name: &str,
         args: ExtensionArgs,
     ) -> ExtensionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_upgrade_minor_version_binding = args
             .auto_upgrade_minor_version
             .get_output(context);

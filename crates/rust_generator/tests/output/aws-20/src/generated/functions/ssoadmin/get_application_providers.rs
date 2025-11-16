@@ -39,8 +39,6 @@ pub mod get_application_providers {
         context: &pulumi_gestalt_rust::Context,
         args: GetApplicationProvidersArgs,
     ) -> GetApplicationProvidersResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_providers_binding = args
             .application_providers
             .get_output(context);

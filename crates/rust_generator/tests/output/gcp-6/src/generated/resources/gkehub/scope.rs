@@ -152,8 +152,6 @@ pub mod scope {
         name: &str,
         args: ScopeArgs,
     ) -> ScopeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let labels_binding = args.labels.get_output(context);
         let namespace_labels_binding = args.namespace_labels.get_output(context);
         let project_binding = args.project.get_output(context);

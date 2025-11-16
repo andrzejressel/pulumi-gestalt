@@ -117,8 +117,6 @@ pub mod gcp_user_access_binding {
         name: &str,
         args: GcpUserAccessBindingArgs,
     ) -> GcpUserAccessBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_levels_binding = args.access_levels.get_output(context);
         let group_key_binding = args.group_key.get_output(context);
         let organization_id_binding = args.organization_id.get_output(context);

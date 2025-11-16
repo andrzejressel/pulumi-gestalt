@@ -81,8 +81,6 @@ pub mod bucket_lifecycle_configuration {
         name: &str,
         args: BucketLifecycleConfigurationArgs,
     ) -> BucketLifecycleConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let rules_binding = args.rules.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

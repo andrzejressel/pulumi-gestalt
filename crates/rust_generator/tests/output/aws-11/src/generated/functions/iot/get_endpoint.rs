@@ -33,8 +33,6 @@ pub mod get_endpoint {
         context: &pulumi_gestalt_rust::Context,
         args: GetEndpointArgs,
     ) -> GetEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let endpoint_type_binding = args.endpoint_type.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iot/getEndpoint:getEndpoint".into(),

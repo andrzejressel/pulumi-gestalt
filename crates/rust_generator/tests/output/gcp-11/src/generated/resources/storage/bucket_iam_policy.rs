@@ -367,8 +367,6 @@ pub mod bucket_iam_policy {
         name: &str,
         args: BucketIAMPolicyArgs,
     ) -> BucketIAMPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

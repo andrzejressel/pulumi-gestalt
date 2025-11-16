@@ -67,8 +67,6 @@ pub mod api_shield_operation_schema_validation_settings {
         name: &str,
         args: ApiShieldOperationSchemaValidationSettingsArgs,
     ) -> ApiShieldOperationSchemaValidationSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mitigation_action_binding = args.mitigation_action.get_output(context);
         let operation_id_binding = args.operation_id.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

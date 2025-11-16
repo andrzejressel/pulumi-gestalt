@@ -34,8 +34,6 @@ pub mod get_access_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccessPolicyArgs,
     ) -> GetAccessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_binding = args.parent.get_output(context);
         let scopes_binding = args.scopes.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

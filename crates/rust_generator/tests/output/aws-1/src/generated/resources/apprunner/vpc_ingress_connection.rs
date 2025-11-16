@@ -87,8 +87,6 @@ pub mod vpc_ingress_connection {
         name: &str,
         args: VpcIngressConnectionArgs,
     ) -> VpcIngressConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ingress_vpc_configuration_binding = args
             .ingress_vpc_configuration
             .get_output(context);

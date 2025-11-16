@@ -270,8 +270,6 @@ pub mod entry_group_iam_member {
         name: &str,
         args: EntryGroupIamMemberArgs,
     ) -> EntryGroupIamMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let entry_group_binding = args.entry_group.get_output(context);
         let member_binding = args.member.get_output(context);

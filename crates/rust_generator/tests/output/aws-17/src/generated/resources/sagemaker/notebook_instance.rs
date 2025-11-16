@@ -178,8 +178,6 @@ pub mod notebook_instance {
         name: &str,
         args: NotebookInstanceArgs,
     ) -> NotebookInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerator_types_binding = args.accelerator_types.get_output(context);
         let additional_code_repositories_binding = args
             .additional_code_repositories

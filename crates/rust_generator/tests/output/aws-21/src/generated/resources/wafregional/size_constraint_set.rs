@@ -69,8 +69,6 @@ pub mod size_constraint_set {
         name: &str,
         args: SizeConstraintSetArgs,
     ) -> SizeConstraintSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let size_constraints_binding = args.size_constraints.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -100,8 +100,6 @@ pub mod asset_type {
         name: &str,
         args: AssetTypeArgs,
     ) -> AssetTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let domain_identifier_binding = args.domain_identifier.get_output(context);
         let forms_inputs_binding = args.forms_inputs.get_output(context);

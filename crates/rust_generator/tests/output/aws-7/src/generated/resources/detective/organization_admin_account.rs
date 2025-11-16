@@ -59,8 +59,6 @@ pub mod organization_admin_account {
         name: &str,
         args: OrganizationAdminAccountArgs,
     ) -> OrganizationAdminAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:detective/organizationAdminAccount:OrganizationAdminAccount"

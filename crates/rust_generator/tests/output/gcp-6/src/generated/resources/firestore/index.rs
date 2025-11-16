@@ -215,8 +215,6 @@ pub mod index {
         name: &str,
         args: IndexArgs,
     ) -> IndexResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_scope_binding = args.api_scope.get_output(context);
         let collection_binding = args.collection.get_output(context);
         let database_binding = args.database.get_output(context);

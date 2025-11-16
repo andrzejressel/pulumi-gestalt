@@ -88,8 +88,6 @@ pub mod hyperdrive_config {
         name: &str,
         args: HyperdriveConfigArgs,
     ) -> HyperdriveConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let caching_binding = args.caching.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -94,8 +94,6 @@ pub mod dedicated_ip_pool {
         name: &str,
         args: DedicatedIpPoolArgs,
     ) -> DedicatedIpPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let pool_name_binding = args.pool_name.get_output(context);
         let scaling_mode_binding = args.scaling_mode.get_output(context);
         let tags_binding = args.tags.get_output(context);

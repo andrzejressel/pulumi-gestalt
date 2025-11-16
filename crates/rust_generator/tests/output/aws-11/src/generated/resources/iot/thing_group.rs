@@ -94,8 +94,6 @@ pub mod thing_group {
         name: &str,
         args: ThingGroupArgs,
     ) -> ThingGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let parent_group_name_binding = args.parent_group_name.get_output(context);
         let properties_binding = args.properties.get_output(context);

@@ -860,8 +860,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let binary_authorization_binding = args.binary_authorization.get_output(context);
         let client_binding = args.client.get_output(context);

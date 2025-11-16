@@ -66,8 +66,6 @@ pub mod conditional_forwader {
         name: &str,
         args: ConditionalForwaderArgs,
     ) -> ConditionalForwaderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let directory_id_binding = args.directory_id.get_output(context);
         let dns_ips_binding = args.dns_ips.get_output(context);
         let remote_domain_name_binding = args.remote_domain_name.get_output(context);

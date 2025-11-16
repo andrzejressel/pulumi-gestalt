@@ -31,8 +31,6 @@ pub mod get_dlp_datasets {
         context: &pulumi_gestalt_rust::Context,
         args: GetDlpDatasetsArgs,
     ) -> GetDlpDatasetsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getDlpDatasets:getDlpDatasets".into(),

@@ -70,8 +70,6 @@ pub mod zero_trust_access_service_token {
         name: &str,
         args: ZeroTrustAccessServiceTokenArgs,
     ) -> ZeroTrustAccessServiceTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let duration_binding = args.duration.get_output(context);
         let min_days_for_renewal_binding = args.min_days_for_renewal.get_output(context);

@@ -56,8 +56,6 @@ pub mod vpn_gateway_route_propagation {
         name: &str,
         args: VpnGatewayRoutePropagationArgs,
     ) -> VpnGatewayRoutePropagationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let route_table_id_binding = args.route_table_id.get_output(context);
         let vpn_gateway_id_binding = args.vpn_gateway_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

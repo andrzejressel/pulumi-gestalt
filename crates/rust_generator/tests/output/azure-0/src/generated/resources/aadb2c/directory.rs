@@ -100,8 +100,6 @@ pub mod directory {
         name: &str,
         args: DirectoryArgs,
     ) -> DirectoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let country_code_binding = args.country_code.get_output(context);
         let data_residency_location_binding = args
             .data_residency_location

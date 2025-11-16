@@ -174,8 +174,6 @@ pub mod ai_feature_store_entity_type_feature {
         name: &str,
         args: AiFeatureStoreEntityTypeFeatureArgs,
     ) -> AiFeatureStoreEntityTypeFeatureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let entitytype_binding = args.entitytype.get_output(context);
         let labels_binding = args.labels.get_output(context);

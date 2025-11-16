@@ -320,8 +320,6 @@ pub mod tls_inspection_policy {
         name: &str,
         args: TlsInspectionPolicyArgs,
     ) -> TlsInspectionPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ca_pool_binding = args.ca_pool.get_output(context);
         let custom_tls_features_binding = args.custom_tls_features.get_output(context);
         let description_binding = args.description.get_output(context);

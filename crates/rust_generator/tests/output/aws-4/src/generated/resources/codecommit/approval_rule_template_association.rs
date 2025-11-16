@@ -62,8 +62,6 @@ pub mod approval_rule_template_association {
         name: &str,
         args: ApprovalRuleTemplateAssociationArgs,
     ) -> ApprovalRuleTemplateAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let approval_rule_template_name_binding = args
             .approval_rule_template_name
             .get_output(context);

@@ -129,8 +129,6 @@ pub mod account_queue_properties {
         name: &str,
         args: AccountQueuePropertiesArgs,
     ) -> AccountQueuePropertiesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cors_rules_binding = args.cors_rules.get_output(context);
         let hour_metrics_binding = args.hour_metrics.get_output(context);
         let logging_binding = args.logging.get_output(context);

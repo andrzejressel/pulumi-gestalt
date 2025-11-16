@@ -150,8 +150,6 @@ pub mod virtual_hub_route_table {
         name: &str,
         args: VirtualHubRouteTableArgs,
     ) -> VirtualHubRouteTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let labels_binding = args.labels.get_output(context);
         let name_binding = args.name.get_output(context);
         let routes_binding = args.routes.get_output(context);

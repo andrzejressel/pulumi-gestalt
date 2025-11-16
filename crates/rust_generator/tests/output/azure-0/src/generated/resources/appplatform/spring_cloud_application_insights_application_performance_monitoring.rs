@@ -126,8 +126,6 @@ pub mod spring_cloud_application_insights_application_performance_monitoring {
         name: &str,
         args: SpringCloudApplicationInsightsApplicationPerformanceMonitoringArgs,
     ) -> SpringCloudApplicationInsightsApplicationPerformanceMonitoringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_string_binding = args.connection_string.get_output(context);
         let globally_enabled_binding = args.globally_enabled.get_output(context);
         let name_binding = args.name.get_output(context);

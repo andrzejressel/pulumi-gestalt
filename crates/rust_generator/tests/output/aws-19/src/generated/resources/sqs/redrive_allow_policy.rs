@@ -71,8 +71,6 @@ pub mod redrive_allow_policy {
         name: &str,
         args: RedriveAllowPolicyArgs,
     ) -> RedriveAllowPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let queue_url_binding = args.queue_url.get_output(context);
         let redrive_allow_policy_binding = args.redrive_allow_policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

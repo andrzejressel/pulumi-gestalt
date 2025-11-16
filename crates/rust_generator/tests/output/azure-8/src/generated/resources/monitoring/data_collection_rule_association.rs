@@ -195,8 +195,6 @@ pub mod data_collection_rule_association {
         name: &str,
         args: DataCollectionRuleAssociationArgs,
     ) -> DataCollectionRuleAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_collection_endpoint_id_binding = args
             .data_collection_endpoint_id
             .get_output(context);

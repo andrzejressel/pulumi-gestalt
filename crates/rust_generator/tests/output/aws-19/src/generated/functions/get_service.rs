@@ -46,8 +46,6 @@ pub mod get_service {
         context: &pulumi_gestalt_rust::Context,
         args: GetServiceArgs,
     ) -> GetServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dns_name_binding = args.dns_name.get_output(context);
         let id_binding = args.id.get_output(context);
         let region_binding = args.region.get_output(context);

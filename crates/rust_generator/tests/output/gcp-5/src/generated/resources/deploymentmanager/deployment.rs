@@ -154,8 +154,6 @@ pub mod deployment {
         name: &str,
         args: DeploymentArgs,
     ) -> DeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let create_policy_binding = args.create_policy.get_output(context);
         let delete_policy_binding = args.delete_policy.get_output(context);
         let description_binding = args.description.get_output(context);

@@ -104,8 +104,6 @@ pub mod connect {
         name: &str,
         args: ConnectArgs,
     ) -> ConnectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let protocol_binding = args.protocol.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let transit_gateway_default_route_table_association_binding = args

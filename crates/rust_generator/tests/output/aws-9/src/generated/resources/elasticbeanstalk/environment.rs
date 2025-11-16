@@ -240,8 +240,6 @@ pub mod environment {
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_binding = args.application.get_output(context);
         let cname_prefix_binding = args.cname_prefix.get_output(context);
         let description_binding = args.description.get_output(context);

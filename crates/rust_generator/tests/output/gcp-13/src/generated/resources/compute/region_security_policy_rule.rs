@@ -447,8 +447,6 @@ pub mod region_security_policy_rule {
         name: &str,
         args: RegionSecurityPolicyRuleArgs,
     ) -> RegionSecurityPolicyRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let match__binding = args.match_.get_output(context);

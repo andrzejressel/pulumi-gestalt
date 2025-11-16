@@ -155,8 +155,6 @@ pub mod dataset_http {
         name: &str,
         args: DatasetHttpArgs,
     ) -> DatasetHttpResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);

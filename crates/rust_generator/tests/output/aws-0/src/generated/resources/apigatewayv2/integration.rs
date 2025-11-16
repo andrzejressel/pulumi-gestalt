@@ -258,8 +258,6 @@ pub mod integration {
         name: &str,
         args: IntegrationArgs,
     ) -> IntegrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let connection_id_binding = args.connection_id.get_output(context);
         let connection_type_binding = args.connection_type.get_output(context);

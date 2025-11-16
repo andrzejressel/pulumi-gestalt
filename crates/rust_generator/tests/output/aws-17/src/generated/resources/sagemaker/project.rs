@@ -92,8 +92,6 @@ pub mod project {
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_description_binding = args.project_description.get_output(context);
         let project_name_binding = args.project_name.get_output(context);
         let service_catalog_provisioning_details_binding = args

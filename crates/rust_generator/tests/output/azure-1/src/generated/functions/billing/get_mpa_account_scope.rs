@@ -30,8 +30,6 @@ pub mod get_mpa_account_scope {
         context: &pulumi_gestalt_rust::Context,
         args: GetMpaAccountScopeArgs,
     ) -> GetMpaAccountScopeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let billing_account_name_binding = args.billing_account_name.get_output(context);
         let customer_name_binding = args.customer_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

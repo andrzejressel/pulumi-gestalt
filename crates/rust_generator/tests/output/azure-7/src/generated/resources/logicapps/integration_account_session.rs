@@ -89,8 +89,6 @@ pub mod integration_account_session {
         name: &str,
         args: IntegrationAccountSessionArgs,
     ) -> IntegrationAccountSessionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_binding = args.content.get_output(context);
         let integration_account_name_binding = args
             .integration_account_name

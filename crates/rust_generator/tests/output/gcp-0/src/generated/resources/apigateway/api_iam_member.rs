@@ -269,8 +269,6 @@ pub mod api_iam_member {
         name: &str,
         args: ApiIamMemberArgs,
     ) -> ApiIamMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_binding = args.api.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let member_binding = args.member.get_output(context);

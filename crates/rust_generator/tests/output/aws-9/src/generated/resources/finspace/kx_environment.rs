@@ -226,8 +226,6 @@ pub mod kx_environment {
         name: &str,
         args: KxEnvironmentArgs,
     ) -> KxEnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_dns_configurations_binding = args
             .custom_dns_configurations
             .get_output(context);

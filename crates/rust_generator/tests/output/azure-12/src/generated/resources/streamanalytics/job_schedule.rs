@@ -156,8 +156,6 @@ pub mod job_schedule {
         name: &str,
         args: JobScheduleArgs,
     ) -> JobScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let start_mode_binding = args.start_mode.get_output(context);
         let start_time_binding = args.start_time.get_output(context);
         let stream_analytics_job_id_binding = args

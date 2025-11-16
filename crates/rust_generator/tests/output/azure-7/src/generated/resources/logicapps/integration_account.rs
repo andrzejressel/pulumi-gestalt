@@ -93,8 +93,6 @@ pub mod integration_account {
         name: &str,
         args: IntegrationAccountArgs,
     ) -> IntegrationAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let integration_service_environment_id_binding = args
             .integration_service_environment_id
             .get_output(context);

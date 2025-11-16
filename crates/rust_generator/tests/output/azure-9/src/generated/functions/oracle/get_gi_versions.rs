@@ -28,8 +28,6 @@ pub mod get_gi_versions {
         context: &pulumi_gestalt_rust::Context,
         args: GetGiVersionsArgs,
     ) -> GetGiVersionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:oracle/getGiVersions:getGiVersions".into(),

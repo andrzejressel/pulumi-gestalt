@@ -308,8 +308,6 @@ pub mod key_ring_iam_policy {
         name: &str,
         args: KeyRingIAMPolicyArgs,
     ) -> KeyRingIAMPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_ring_id_binding = args.key_ring_id.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

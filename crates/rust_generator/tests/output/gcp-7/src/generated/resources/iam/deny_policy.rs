@@ -128,8 +128,6 @@ pub mod deny_policy {
         name: &str,
         args: DenyPolicyArgs,
     ) -> DenyPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let parent_binding = args.parent.get_output(context);

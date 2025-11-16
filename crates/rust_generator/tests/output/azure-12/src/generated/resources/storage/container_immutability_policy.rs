@@ -108,8 +108,6 @@ pub mod container_immutability_policy {
         name: &str,
         args: ContainerImmutabilityPolicyArgs,
     ) -> ContainerImmutabilityPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let immutability_period_in_days_binding = args
             .immutability_period_in_days
             .get_output(context);

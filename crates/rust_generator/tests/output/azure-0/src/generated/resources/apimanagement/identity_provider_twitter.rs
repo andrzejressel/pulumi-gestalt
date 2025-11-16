@@ -91,8 +91,6 @@ pub mod identity_provider_twitter {
         name: &str,
         args: IdentityProviderTwitterArgs,
     ) -> IdentityProviderTwitterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_key_binding = args.api_key.get_output(context);
         let api_management_name_binding = args.api_management_name.get_output(context);
         let api_secret_key_binding = args.api_secret_key.get_output(context);

@@ -200,8 +200,6 @@ pub mod subnet {
         name: &str,
         args: SubnetArgs,
     ) -> SubnetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assign_ipv6_address_on_creation_binding = args
             .assign_ipv6_address_on_creation
             .get_output(context);

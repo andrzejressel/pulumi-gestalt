@@ -113,8 +113,6 @@ pub mod anomaly_monitor {
         name: &str,
         args: AnomalyMonitorArgs,
     ) -> AnomalyMonitorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let monitor_dimension_binding = args.monitor_dimension.get_output(context);
         let monitor_specification_binding = args
             .monitor_specification

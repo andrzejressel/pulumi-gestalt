@@ -81,8 +81,6 @@ pub mod association {
         name: &str,
         args: AssociationArgs,
     ) -> AssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let license_configuration_arn_binding = args
             .license_configuration_arn
             .get_output(context);

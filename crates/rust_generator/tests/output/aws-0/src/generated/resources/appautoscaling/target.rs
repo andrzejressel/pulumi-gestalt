@@ -213,8 +213,6 @@ pub mod target {
         name: &str,
         args: TargetArgs,
     ) -> TargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let max_capacity_binding = args.max_capacity.get_output(context);
         let min_capacity_binding = args.min_capacity.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);

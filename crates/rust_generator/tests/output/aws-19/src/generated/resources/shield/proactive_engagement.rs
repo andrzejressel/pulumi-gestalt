@@ -102,8 +102,6 @@ pub mod proactive_engagement {
         name: &str,
         args: ProactiveEngagementArgs,
     ) -> ProactiveEngagementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let emergency_contacts_binding = args.emergency_contacts.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

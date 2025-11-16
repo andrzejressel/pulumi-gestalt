@@ -198,8 +198,6 @@ pub mod image {
         name: &str,
         args: ImageArgs,
     ) -> ImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let build_binding = args.build.get_output(context);
         let build_on_preview_binding = args.build_on_preview.get_output(context);
         let image_name_binding = args.image_name.get_output(context);

@@ -63,8 +63,6 @@ pub mod get_bucket_object_content {
         context: &pulumi_gestalt_rust::Context,
         args: GetBucketObjectContentArgs,
     ) -> GetBucketObjectContentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let content_binding = args.content.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -31,8 +31,6 @@ pub mod get_caller_identity {
         context: &pulumi_gestalt_rust::Context,
         args: GetCallerIdentityArgs,
     ) -> GetCallerIdentityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let id_binding = args.id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:index/getCallerIdentity:getCallerIdentity".into(),

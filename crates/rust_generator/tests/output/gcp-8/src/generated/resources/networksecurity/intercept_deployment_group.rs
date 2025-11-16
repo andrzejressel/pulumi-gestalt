@@ -150,8 +150,6 @@ pub mod intercept_deployment_group {
         name: &str,
         args: InterceptDeploymentGroupArgs,
     ) -> InterceptDeploymentGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let intercept_deployment_group_id_binding = args
             .intercept_deployment_group_id
             .get_output(context);

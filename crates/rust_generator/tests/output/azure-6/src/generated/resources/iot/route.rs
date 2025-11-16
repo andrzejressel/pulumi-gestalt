@@ -134,8 +134,6 @@ pub mod route {
         name: &str,
         args: RouteArgs,
     ) -> RouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let endpoint_names_binding = args.endpoint_names.get_output(context);

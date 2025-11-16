@@ -312,8 +312,6 @@ pub mod db_instance {
         name: &str,
         args: DbInstanceArgs,
     ) -> DbInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocated_storage_binding = args.allocated_storage.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let db_instance_type_binding = args.db_instance_type.get_output(context);

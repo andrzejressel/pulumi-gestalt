@@ -58,8 +58,6 @@ pub mod organization_admin_account_registration {
         name: &str,
         args: OrganizationAdminAccountRegistrationArgs,
     ) -> OrganizationAdminAccountRegistrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_account_id_binding = args.admin_account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:auditmanager/organizationAdminAccountRegistration:OrganizationAdminAccountRegistration"

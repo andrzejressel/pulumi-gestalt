@@ -32,8 +32,6 @@ pub mod get_transfer_project_servie_account {
         context: &pulumi_gestalt_rust::Context,
         args: GetTransferProjectServieAccountArgs,
     ) -> GetTransferProjectServieAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:storage/getTransferProjectServieAccount:getTransferProjectServieAccount"

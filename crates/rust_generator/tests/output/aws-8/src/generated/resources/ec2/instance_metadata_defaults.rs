@@ -62,8 +62,6 @@ pub mod instance_metadata_defaults {
         name: &str,
         args: InstanceMetadataDefaultsArgs,
     ) -> InstanceMetadataDefaultsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let http_endpoint_binding = args.http_endpoint.get_output(context);
         let http_put_response_hop_limit_binding = args
             .http_put_response_hop_limit

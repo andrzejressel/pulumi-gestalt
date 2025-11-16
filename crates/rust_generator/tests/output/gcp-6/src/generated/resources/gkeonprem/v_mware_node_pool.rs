@@ -269,8 +269,6 @@ pub mod v_mware_node_pool {
         name: &str,
         args: VMwareNodePoolArgs,
     ) -> VMwareNodePoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let config_binding = args.config.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

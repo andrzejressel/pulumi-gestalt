@@ -174,8 +174,6 @@ pub mod function_app_active_slot {
         name: &str,
         args: FunctionAppActiveSlotArgs,
     ) -> FunctionAppActiveSlotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let overwrite_network_config_binding = args
             .overwrite_network_config
             .get_output(context);

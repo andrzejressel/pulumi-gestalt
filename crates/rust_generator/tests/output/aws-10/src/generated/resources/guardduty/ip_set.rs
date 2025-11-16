@@ -112,8 +112,6 @@ pub mod ip_set {
         name: &str,
         args: IPSetArgs,
     ) -> IPSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let activate_binding = args.activate.get_output(context);
         let detector_id_binding = args.detector_id.get_output(context);
         let format_binding = args.format.get_output(context);

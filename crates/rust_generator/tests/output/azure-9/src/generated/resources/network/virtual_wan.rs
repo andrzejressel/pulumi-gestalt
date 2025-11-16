@@ -109,8 +109,6 @@ pub mod virtual_wan {
         name: &str,
         args: VirtualWanArgs,
     ) -> VirtualWanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_branch_to_branch_traffic_binding = args
             .allow_branch_to_branch_traffic
             .get_output(context);

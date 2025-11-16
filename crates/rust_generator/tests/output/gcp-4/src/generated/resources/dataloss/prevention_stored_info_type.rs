@@ -237,8 +237,6 @@ pub mod prevention_stored_info_type {
         name: &str,
         args: PreventionStoredInfoTypeArgs,
     ) -> PreventionStoredInfoTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let dictionary_binding = args.dictionary.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

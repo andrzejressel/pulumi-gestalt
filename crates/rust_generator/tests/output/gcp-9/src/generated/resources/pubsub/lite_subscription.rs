@@ -142,8 +142,6 @@ pub mod lite_subscription {
         name: &str,
         args: LiteSubscriptionArgs,
     ) -> LiteSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delivery_config_binding = args.delivery_config.get_output(context);
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);

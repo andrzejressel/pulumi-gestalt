@@ -86,8 +86,6 @@ pub mod vault_resource_guard_association {
         name: &str,
         args: VaultResourceGuardAssociationArgs,
     ) -> VaultResourceGuardAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_guard_id_binding = args.resource_guard_id.get_output(context);
         let vault_id_binding = args.vault_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

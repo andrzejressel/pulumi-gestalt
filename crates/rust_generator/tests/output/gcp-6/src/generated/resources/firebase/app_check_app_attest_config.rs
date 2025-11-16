@@ -157,8 +157,6 @@ pub mod app_check_app_attest_config {
         name: &str,
         args: AppCheckAppAttestConfigArgs,
     ) -> AppCheckAppAttestConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let token_ttl_binding = args.token_ttl.get_output(context);

@@ -118,8 +118,6 @@ pub mod user_workloads_secret {
         name: &str,
         args: UserWorkloadsSecretArgs,
     ) -> UserWorkloadsSecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_binding = args.data.get_output(context);
         let environment_binding = args.environment.get_output(context);
         let name_binding = args.name.get_output(context);

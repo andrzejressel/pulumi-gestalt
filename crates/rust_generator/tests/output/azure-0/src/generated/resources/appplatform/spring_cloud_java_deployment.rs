@@ -121,8 +121,6 @@ pub mod spring_cloud_java_deployment {
         name: &str,
         args: SpringCloudJavaDeploymentArgs,
     ) -> SpringCloudJavaDeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let environment_variables_binding = args
             .environment_variables
             .get_output(context);

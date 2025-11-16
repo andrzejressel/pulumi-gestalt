@@ -120,8 +120,6 @@ pub mod activation {
         name: &str,
         args: ActivationArgs,
     ) -> ActivationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let expiration_date_binding = args.expiration_date.get_output(context);
         let iam_role_binding = args.iam_role.get_output(context);

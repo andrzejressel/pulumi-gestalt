@@ -200,8 +200,6 @@ pub mod agent {
         name: &str,
         args: AgentArgs,
     ) -> AgentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_version_binding = args.api_version.get_output(context);
         let avatar_uri_binding = args.avatar_uri.get_output(context);
         let classification_threshold_binding = args

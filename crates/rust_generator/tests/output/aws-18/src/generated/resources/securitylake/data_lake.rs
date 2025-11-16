@@ -144,8 +144,6 @@ pub mod data_lake {
         name: &str,
         args: DataLakeArgs,
     ) -> DataLakeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_binding = args.configuration.get_output(context);
         let meta_store_manager_role_arn_binding = args
             .meta_store_manager_role_arn

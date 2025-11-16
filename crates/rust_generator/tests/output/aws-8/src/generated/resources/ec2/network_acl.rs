@@ -115,8 +115,6 @@ pub mod network_acl {
         name: &str,
         args: NetworkAclArgs,
     ) -> NetworkAclResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let egress_binding = args.egress.get_output(context);
         let ingress_binding = args.ingress.get_output(context);
         let subnet_ids_binding = args.subnet_ids.get_output(context);

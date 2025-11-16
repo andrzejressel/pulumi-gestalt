@@ -96,8 +96,6 @@ pub mod layer_version_permission {
         name: &str,
         args: LayerVersionPermissionArgs,
     ) -> LayerVersionPermissionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let layer_name_binding = args.layer_name.get_output(context);
         let organization_id_binding = args.organization_id.get_output(context);

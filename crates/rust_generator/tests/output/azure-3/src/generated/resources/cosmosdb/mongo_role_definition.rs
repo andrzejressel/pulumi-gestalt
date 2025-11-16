@@ -124,8 +124,6 @@ pub mod mongo_role_definition {
         name: &str,
         args: MongoRoleDefinitionArgs,
     ) -> MongoRoleDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cosmos_mongo_database_id_binding = args
             .cosmos_mongo_database_id
             .get_output(context);

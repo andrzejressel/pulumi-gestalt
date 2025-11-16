@@ -109,8 +109,6 @@ pub mod room {
         name: &str,
         args: RoomArgs,
     ) -> RoomResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let logging_configuration_identifiers_binding = args
             .logging_configuration_identifiers
             .get_output(context);

@@ -73,8 +73,6 @@ pub mod disk_async_replication {
         name: &str,
         args: DiskAsyncReplicationArgs,
     ) -> DiskAsyncReplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let primary_disk_binding = args.primary_disk.get_output(context);
         let secondary_disk_binding = args.secondary_disk.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

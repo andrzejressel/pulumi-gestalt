@@ -56,8 +56,6 @@ pub mod get_nat_gateway {
         context: &pulumi_gestalt_rust::Context,
         args: GetNatGatewayArgs,
     ) -> GetNatGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let public_ip_address_ids_binding = args
             .public_ip_address_ids

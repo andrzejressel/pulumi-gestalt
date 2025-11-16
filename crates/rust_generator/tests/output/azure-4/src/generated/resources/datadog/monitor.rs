@@ -150,8 +150,6 @@ pub mod monitor {
         name: &str,
         args: MonitorArgs,
     ) -> MonitorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let datadog_organization_binding = args.datadog_organization.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let location_binding = args.location.get_output(context);

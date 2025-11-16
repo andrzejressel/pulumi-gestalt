@@ -118,8 +118,6 @@ pub mod container {
         name: &str,
         args: ContainerArgs,
     ) -> ContainerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_access_type_binding = args
             .container_access_type
             .get_output(context);

@@ -197,8 +197,6 @@ pub mod app {
         name: &str,
         args: AppArgs,
     ) -> AppResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_app_environment_id_binding = args
             .container_app_environment_id
             .get_output(context);

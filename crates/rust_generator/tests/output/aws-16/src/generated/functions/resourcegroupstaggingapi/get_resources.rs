@@ -64,8 +64,6 @@ pub mod get_resources {
         context: &pulumi_gestalt_rust::Context,
         args: GetResourcesArgs,
     ) -> GetResourcesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let exclude_compliant_resources_binding = args
             .exclude_compliant_resources
             .get_output(context);

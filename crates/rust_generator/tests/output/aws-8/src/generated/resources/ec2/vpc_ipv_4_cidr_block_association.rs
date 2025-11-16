@@ -77,8 +77,6 @@ pub mod vpc_ipv_4_cidr_block_association {
         name: &str,
         args: VpcIpv4CidrBlockAssociationArgs,
     ) -> VpcIpv4CidrBlockAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_block_binding = args.cidr_block.get_output(context);
         let ipv4_ipam_pool_id_binding = args.ipv4_ipam_pool_id.get_output(context);
         let ipv4_netmask_length_binding = args.ipv4_netmask_length.get_output(context);

@@ -141,8 +141,6 @@ pub mod connector {
         name: &str,
         args: ConnectorArgs,
     ) -> ConnectorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_role_binding = args.access_role.get_output(context);
         let as2_config_binding = args.as2_config.get_output(context);
         let logging_role_binding = args.logging_role.get_output(context);

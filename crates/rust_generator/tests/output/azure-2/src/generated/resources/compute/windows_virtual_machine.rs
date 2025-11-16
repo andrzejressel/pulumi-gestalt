@@ -548,8 +548,6 @@ pub mod windows_virtual_machine {
         name: &str,
         args: WindowsVirtualMachineArgs,
     ) -> WindowsVirtualMachineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_capabilities_binding = args
             .additional_capabilities
             .get_output(context);

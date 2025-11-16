@@ -79,8 +79,6 @@ pub mod resource_policy {
         name: &str,
         args: ResourcePolicyArgs,
     ) -> ResourcePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enable_hybrid_binding = args.enable_hybrid.get_output(context);
         let policy_binding = args.policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

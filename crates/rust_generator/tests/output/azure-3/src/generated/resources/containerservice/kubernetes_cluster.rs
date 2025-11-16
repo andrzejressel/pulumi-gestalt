@@ -730,8 +730,6 @@ pub mod kubernetes_cluster {
         name: &str,
         args: KubernetesClusterArgs,
     ) -> KubernetesClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aci_connector_linux_binding = args.aci_connector_linux.get_output(context);
         let api_server_access_profile_binding = args
             .api_server_access_profile

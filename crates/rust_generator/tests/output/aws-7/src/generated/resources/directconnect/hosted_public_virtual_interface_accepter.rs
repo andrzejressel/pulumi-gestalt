@@ -88,8 +88,6 @@ pub mod hosted_public_virtual_interface_accepter {
         name: &str,
         args: HostedPublicVirtualInterfaceAccepterArgs,
     ) -> HostedPublicVirtualInterfaceAccepterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let virtual_interface_id_binding = args.virtual_interface_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

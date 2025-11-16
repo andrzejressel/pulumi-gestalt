@@ -311,8 +311,6 @@ pub mod vpn_tunnel {
         name: &str,
         args: VPNTunnelArgs,
     ) -> VPNTunnelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let ike_version_binding = args.ike_version.get_output(context);
         let labels_binding = args.labels.get_output(context);

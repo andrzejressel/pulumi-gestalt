@@ -234,8 +234,6 @@ pub mod job_iam_binding {
         name: &str,
         args: JobIAMBindingArgs,
     ) -> JobIAMBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let job_id_binding = args.job_id.get_output(context);
         let members_binding = args.members.get_output(context);

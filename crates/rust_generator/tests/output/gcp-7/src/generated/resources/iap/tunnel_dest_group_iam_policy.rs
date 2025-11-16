@@ -413,8 +413,6 @@ pub mod tunnel_dest_group_iam_policy {
         name: &str,
         args: TunnelDestGroupIamPolicyArgs,
     ) -> TunnelDestGroupIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dest_group_binding = args.dest_group.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);

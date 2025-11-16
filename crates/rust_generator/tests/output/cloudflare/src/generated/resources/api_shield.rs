@@ -61,8 +61,6 @@ pub mod api_shield {
         name: &str,
         args: ApiShieldArgs,
     ) -> ApiShieldResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auth_id_characteristics_binding = args
             .auth_id_characteristics
             .get_output(context);

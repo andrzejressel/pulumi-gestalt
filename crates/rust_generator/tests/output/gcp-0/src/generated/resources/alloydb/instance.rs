@@ -378,8 +378,6 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let availability_type_binding = args.availability_type.get_output(context);
         let client_connection_config_binding = args

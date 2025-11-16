@@ -174,8 +174,6 @@ pub mod engine_model {
         name: &str,
         args: EngineModelArgs,
     ) -> EngineModelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_version_binding = args.default_version.get_output(context);
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);

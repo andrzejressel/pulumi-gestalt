@@ -89,8 +89,6 @@ pub mod vpc_ipam_resource_discovery {
         name: &str,
         args: VpcIpamResourceDiscoveryArgs,
     ) -> VpcIpamResourceDiscoveryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let operating_regions_binding = args.operating_regions.get_output(context);
         let tags_binding = args.tags.get_output(context);

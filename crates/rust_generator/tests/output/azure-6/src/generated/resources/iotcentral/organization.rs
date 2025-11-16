@@ -93,8 +93,6 @@ pub mod organization {
         name: &str,
         args: OrganizationArgs,
     ) -> OrganizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let iotcentral_application_id_binding = args
             .iotcentral_application_id

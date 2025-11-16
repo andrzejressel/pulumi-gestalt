@@ -278,8 +278,6 @@ pub mod api_config_iam_binding {
         name: &str,
         args: ApiConfigIamBindingArgs,
     ) -> ApiConfigIamBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_binding = args.api.get_output(context);
         let api_config_binding = args.api_config.get_output(context);
         let condition_binding = args.condition.get_output(context);

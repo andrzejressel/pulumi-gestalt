@@ -98,8 +98,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auth_type_binding = args.auth_type.get_output(context);
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let custom_domain_name_binding = args.custom_domain_name.get_output(context);

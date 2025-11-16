@@ -107,8 +107,6 @@ pub mod app {
         name: &str,
         args: AppArgs,
     ) -> AppResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let campaign_hook_binding = args.campaign_hook.get_output(context);
         let limits_binding = args.limits.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -139,8 +139,6 @@ pub mod component {
         name: &str,
         args: ComponentArgs,
     ) -> ComponentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let change_description_binding = args.change_description.get_output(context);
         let data_binding = args.data.get_output(context);
         let description_binding = args.description.get_output(context);

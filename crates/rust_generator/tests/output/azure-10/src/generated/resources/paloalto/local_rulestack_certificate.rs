@@ -101,8 +101,6 @@ pub mod local_rulestack_certificate {
         name: &str,
         args: LocalRulestackCertificateArgs,
     ) -> LocalRulestackCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let audit_comment_binding = args.audit_comment.get_output(context);
         let description_binding = args.description.get_output(context);
         let key_vault_certificate_id_binding = args

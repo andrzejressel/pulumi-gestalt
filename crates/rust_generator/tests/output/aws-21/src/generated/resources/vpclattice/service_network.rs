@@ -78,8 +78,6 @@ pub mod service_network {
         name: &str,
         args: ServiceNetworkArgs,
     ) -> ServiceNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auth_type_binding = args.auth_type.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);

@@ -266,8 +266,6 @@ pub mod asset_iam_policy {
         name: &str,
         args: AssetIamPolicyArgs,
     ) -> AssetIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let asset_binding = args.asset.get_output(context);
         let dataplex_zone_binding = args.dataplex_zone.get_output(context);
         let lake_binding = args.lake.get_output(context);

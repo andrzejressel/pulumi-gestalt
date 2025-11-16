@@ -38,8 +38,6 @@ pub mod get_environment_blueprint {
         context: &pulumi_gestalt_rust::Context,
         args: GetEnvironmentBlueprintArgs,
     ) -> GetEnvironmentBlueprintResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_id_binding = args.domain_id.get_output(context);
         let managed_binding = args.managed.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -37,8 +37,6 @@ pub mod tag {
         name: &str,
         args: TagArgs,
     ) -> TagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let source_image_binding = args.source_image.get_output(context);
         let target_image_binding = args.target_image.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

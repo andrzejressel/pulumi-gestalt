@@ -575,8 +575,6 @@ pub mod migration_job {
         name: &str,
         args: MigrationJobArgs,
     ) -> MigrationJobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_binding = args.destination.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let dump_flags_binding = args.dump_flags.get_output(context);

@@ -138,8 +138,6 @@ pub mod teams_channel_configuration {
         name: &str,
         args: TeamsChannelConfigurationArgs,
     ) -> TeamsChannelConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let channel_id_binding = args.channel_id.get_output(context);
         let channel_name_binding = args.channel_name.get_output(context);
         let configuration_name_binding = args.configuration_name.get_output(context);

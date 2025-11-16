@@ -144,8 +144,6 @@ pub mod local_user {
         name: &str,
         args: LocalUserArgs,
     ) -> LocalUserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let home_directory_binding = args.home_directory.get_output(context);
         let name_binding = args.name.get_output(context);
         let permission_scopes_binding = args.permission_scopes.get_output(context);

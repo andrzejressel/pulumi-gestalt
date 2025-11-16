@@ -183,8 +183,6 @@ pub mod launch_configuration {
         name: &str,
         args: LaunchConfigurationArgs,
     ) -> LaunchConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let associate_public_ip_address_binding = args
             .associate_public_ip_address
             .get_output(context);

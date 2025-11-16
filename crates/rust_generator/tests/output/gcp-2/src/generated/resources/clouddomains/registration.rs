@@ -214,8 +214,6 @@ pub mod registration {
         name: &str,
         args: RegistrationArgs,
     ) -> RegistrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_notices_binding = args.contact_notices.get_output(context);
         let contact_settings_binding = args.contact_settings.get_output(context);
         let dns_settings_binding = args.dns_settings.get_output(context);

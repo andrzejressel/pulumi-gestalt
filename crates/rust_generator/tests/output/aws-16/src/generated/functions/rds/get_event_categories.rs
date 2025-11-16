@@ -28,8 +28,6 @@ pub mod get_event_categories {
         context: &pulumi_gestalt_rust::Context,
         args: GetEventCategoriesArgs,
     ) -> GetEventCategoriesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let source_type_binding = args.source_type.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:rds/getEventCategories:getEventCategories".into(),

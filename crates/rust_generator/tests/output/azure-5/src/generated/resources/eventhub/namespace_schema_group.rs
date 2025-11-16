@@ -87,8 +87,6 @@ pub mod namespace_schema_group {
         name: &str,
         args: NamespaceSchemaGroupArgs,
     ) -> NamespaceSchemaGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let namespace_id_binding = args.namespace_id.get_output(context);
         let schema_compatibility_binding = args.schema_compatibility.get_output(context);

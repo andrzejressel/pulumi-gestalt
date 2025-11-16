@@ -191,8 +191,6 @@ pub mod workforce_pool {
         name: &str,
         args: WorkforcePoolArgs,
     ) -> WorkforcePoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_restrictions_binding = args.access_restrictions.get_output(context);
         let description_binding = args.description.get_output(context);
         let disabled_binding = args.disabled.get_output(context);

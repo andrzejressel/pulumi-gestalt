@@ -151,8 +151,6 @@ pub mod image_builder {
         name: &str,
         args: ImageBuilderArgs,
     ) -> ImageBuilderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_endpoints_binding = args.access_endpoints.get_output(context);
         let appstream_agent_version_binding = args
             .appstream_agent_version

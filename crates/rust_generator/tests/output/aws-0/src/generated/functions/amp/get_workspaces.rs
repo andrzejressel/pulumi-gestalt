@@ -32,8 +32,6 @@ pub mod get_workspaces {
         context: &pulumi_gestalt_rust::Context,
         args: GetWorkspacesArgs,
     ) -> GetWorkspacesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_prefix_binding = args.alias_prefix.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:amp/getWorkspaces:getWorkspaces".into(),

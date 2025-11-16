@@ -218,8 +218,6 @@ pub mod pipeline {
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let pipeline_sources_binding = args.pipeline_sources.get_output(context);

@@ -332,8 +332,6 @@ pub mod listener {
         name: &str,
         args: ListenerArgs,
     ) -> ListenerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alpn_policy_binding = args.alpn_policy.get_output(context);
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let default_actions_binding = args.default_actions.get_output(context);

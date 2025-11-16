@@ -187,8 +187,6 @@ pub mod ami {
         name: &str,
         args: AmiArgs,
     ) -> AmiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let architecture_binding = args.architecture.get_output(context);
         let boot_mode_binding = args.boot_mode.get_output(context);
         let deprecation_time_binding = args.deprecation_time.get_output(context);

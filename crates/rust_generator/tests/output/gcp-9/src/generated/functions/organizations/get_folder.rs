@@ -44,8 +44,6 @@ pub mod get_folder {
         context: &pulumi_gestalt_rust::Context,
         args: GetFolderArgs,
     ) -> GetFolderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let folder_binding = args.folder.get_output(context);
         let lookup_organization_binding = args.lookup_organization.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

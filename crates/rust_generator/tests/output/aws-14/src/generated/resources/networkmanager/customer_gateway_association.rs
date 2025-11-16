@@ -112,8 +112,6 @@ pub mod customer_gateway_association {
         name: &str,
         args: CustomerGatewayAssociationArgs,
     ) -> CustomerGatewayAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let customer_gateway_arn_binding = args.customer_gateway_arn.get_output(context);
         let device_id_binding = args.device_id.get_output(context);
         let global_network_id_binding = args.global_network_id.get_output(context);

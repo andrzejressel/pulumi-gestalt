@@ -791,8 +791,6 @@ pub mod repository {
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cleanup_policies_binding = args.cleanup_policies.get_output(context);
         let cleanup_policy_dry_run_binding = args
             .cleanup_policy_dry_run

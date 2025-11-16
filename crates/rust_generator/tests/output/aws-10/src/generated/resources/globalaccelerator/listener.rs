@@ -95,8 +95,6 @@ pub mod listener {
         name: &str,
         args: ListenerArgs,
     ) -> ListenerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerator_arn_binding = args.accelerator_arn.get_output(context);
         let client_affinity_binding = args.client_affinity.get_output(context);
         let port_ranges_binding = args.port_ranges.get_output(context);

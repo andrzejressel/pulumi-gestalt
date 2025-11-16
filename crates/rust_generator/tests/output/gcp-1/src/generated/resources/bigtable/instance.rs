@@ -189,8 +189,6 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let clusters_binding = args.clusters.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

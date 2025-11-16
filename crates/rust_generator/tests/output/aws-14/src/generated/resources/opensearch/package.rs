@@ -95,8 +95,6 @@ pub mod package {
         name: &str,
         args: PackageArgs,
     ) -> PackageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let package_description_binding = args.package_description.get_output(context);
         let package_name_binding = args.package_name.get_output(context);
         let package_source_binding = args.package_source.get_output(context);

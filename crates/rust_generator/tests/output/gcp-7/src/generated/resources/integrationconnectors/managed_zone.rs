@@ -198,8 +198,6 @@ pub mod managed_zone {
         name: &str,
         args: ManagedZoneArgs,
     ) -> ManagedZoneResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let dns_binding = args.dns.get_output(context);
         let labels_binding = args.labels.get_output(context);

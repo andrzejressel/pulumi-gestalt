@@ -153,8 +153,6 @@ pub mod private_cloud {
         name: &str,
         args: PrivateCloudArgs,
     ) -> PrivateCloudResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let internet_connection_enabled_binding = args
             .internet_connection_enabled
             .get_output(context);

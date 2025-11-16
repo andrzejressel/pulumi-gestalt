@@ -119,8 +119,6 @@ pub mod domain_association {
         name: &str,
         args: DomainAssociationArgs,
     ) -> DomainAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let certificate_settings_binding = args.certificate_settings.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);

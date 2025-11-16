@@ -133,8 +133,6 @@ pub mod vpc_dhcp_options {
         name: &str,
         args: VpcDhcpOptionsArgs,
     ) -> VpcDhcpOptionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let domain_name_servers_binding = args.domain_name_servers.get_output(context);
         let ipv6_address_preferred_lease_time_binding = args

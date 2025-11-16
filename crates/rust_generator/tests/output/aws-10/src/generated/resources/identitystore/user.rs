@@ -156,8 +156,6 @@ pub mod user {
         name: &str,
         args: UserArgs,
     ) -> UserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let addresses_binding = args.addresses.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let emails_binding = args.emails.get_output(context);

@@ -43,8 +43,6 @@ pub mod get_metastore_service_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetMetastoreServiceIamPolicyArgs,
     ) -> GetMetastoreServiceIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let project_binding = args.project.get_output(context);
         let service_id_binding = args.service_id.get_output(context);

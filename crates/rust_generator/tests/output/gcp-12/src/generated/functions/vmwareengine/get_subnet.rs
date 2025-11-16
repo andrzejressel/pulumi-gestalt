@@ -45,8 +45,6 @@ pub mod get_subnet {
         context: &pulumi_gestalt_rust::Context,
         args: GetSubnetArgs,
     ) -> GetSubnetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

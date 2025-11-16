@@ -205,8 +205,6 @@ pub mod network_peering {
         name: &str,
         args: NetworkPeeringArgs,
     ) -> NetworkPeeringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let export_custom_routes_binding = args.export_custom_routes.get_output(context);
         let export_custom_routes_with_public_ip_binding = args

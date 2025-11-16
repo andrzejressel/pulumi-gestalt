@@ -82,8 +82,6 @@ pub mod license_grant {
         name: &str,
         args: LicenseGrantArgs,
     ) -> LicenseGrantResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_operations_binding = args.allowed_operations.get_output(context);
         let license_arn_binding = args.license_arn.get_output(context);
         let name_binding = args.name.get_output(context);

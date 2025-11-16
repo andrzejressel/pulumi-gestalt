@@ -108,8 +108,6 @@ pub mod job_credential {
         name: &str,
         args: JobCredentialArgs,
     ) -> JobCredentialResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let job_agent_id_binding = args.job_agent_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let password_binding = args.password.get_output(context);

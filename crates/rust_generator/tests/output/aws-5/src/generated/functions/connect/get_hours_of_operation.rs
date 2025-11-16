@@ -54,8 +54,6 @@ pub mod get_hours_of_operation {
         context: &pulumi_gestalt_rust::Context,
         args: GetHoursOfOperationArgs,
     ) -> GetHoursOfOperationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hours_of_operation_id_binding = args
             .hours_of_operation_id
             .get_output(context);

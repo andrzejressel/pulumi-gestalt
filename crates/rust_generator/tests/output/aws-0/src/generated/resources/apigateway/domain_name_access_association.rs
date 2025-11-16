@@ -81,8 +81,6 @@ pub mod domain_name_access_association {
         name: &str,
         args: DomainNameAccessAssociationArgs,
     ) -> DomainNameAccessAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_association_source_binding = args
             .access_association_source
             .get_output(context);

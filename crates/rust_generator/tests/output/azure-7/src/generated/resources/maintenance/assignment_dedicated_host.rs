@@ -102,8 +102,6 @@ pub mod assignment_dedicated_host {
         name: &str,
         args: AssignmentDedicatedHostArgs,
     ) -> AssignmentDedicatedHostResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dedicated_host_id_binding = args.dedicated_host_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let maintenance_configuration_id_binding = args

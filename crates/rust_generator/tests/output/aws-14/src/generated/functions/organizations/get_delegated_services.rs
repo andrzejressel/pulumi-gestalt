@@ -32,8 +32,6 @@ pub mod get_delegated_services {
         context: &pulumi_gestalt_rust::Context,
         args: GetDelegatedServicesArgs,
     ) -> GetDelegatedServicesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:organizations/getDelegatedServices:getDelegatedServices".into(),

@@ -122,8 +122,6 @@ pub mod posture_deployment {
         name: &str,
         args: PostureDeploymentArgs,
     ) -> PostureDeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let location_binding = args.location.get_output(context);
         let parent_binding = args.parent.get_output(context);

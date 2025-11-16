@@ -281,8 +281,6 @@ pub mod topic_rule {
         name: &str,
         args: TopicRuleArgs,
     ) -> TopicRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloudwatch_alarms_binding = args.cloudwatch_alarms.get_output(context);
         let cloudwatch_logs_binding = args.cloudwatch_logs.get_output(context);
         let cloudwatch_metrics_binding = args.cloudwatch_metrics.get_output(context);

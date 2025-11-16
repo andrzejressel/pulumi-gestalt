@@ -168,8 +168,6 @@ pub mod configuration {
         name: &str,
         args: ConfigurationArgs,
     ) -> ConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_files_binding = args.config_files.get_output(context);
         let nginx_deployment_id_binding = args.nginx_deployment_id.get_output(context);
         let package_data_binding = args.package_data.get_output(context);

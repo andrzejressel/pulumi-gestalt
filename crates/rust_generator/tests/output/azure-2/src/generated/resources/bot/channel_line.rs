@@ -95,8 +95,6 @@ pub mod channel_line {
         name: &str,
         args: ChannelLineArgs,
     ) -> ChannelLineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bot_name_binding = args.bot_name.get_output(context);
         let line_channels_binding = args.line_channels.get_output(context);
         let location_binding = args.location.get_output(context);

@@ -147,8 +147,6 @@ pub mod block_public_access_configuration {
         name: &str,
         args: BlockPublicAccessConfigurationArgs,
     ) -> BlockPublicAccessConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let block_public_security_group_rules_binding = args
             .block_public_security_group_rules
             .get_output(context);

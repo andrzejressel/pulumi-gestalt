@@ -65,8 +65,6 @@ pub mod resolver_rule_association {
         name: &str,
         args: ResolverRuleAssociationArgs,
     ) -> ResolverRuleAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let resolver_rule_id_binding = args.resolver_rule_id.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);

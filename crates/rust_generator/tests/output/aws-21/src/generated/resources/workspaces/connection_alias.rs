@@ -80,8 +80,6 @@ pub mod connection_alias {
         name: &str,
         args: ConnectionAliasArgs,
     ) -> ConnectionAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_string_binding = args.connection_string.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

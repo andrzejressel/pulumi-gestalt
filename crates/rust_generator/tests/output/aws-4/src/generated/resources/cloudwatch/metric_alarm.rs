@@ -336,8 +336,6 @@ pub mod metric_alarm {
         name: &str,
         args: MetricAlarmArgs,
     ) -> MetricAlarmResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_enabled_binding = args.actions_enabled.get_output(context);
         let alarm_actions_binding = args.alarm_actions.get_output(context);
         let alarm_description_binding = args.alarm_description.get_output(context);

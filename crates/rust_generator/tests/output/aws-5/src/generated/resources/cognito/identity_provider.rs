@@ -97,8 +97,6 @@ pub mod identity_provider {
         name: &str,
         args: IdentityProviderArgs,
     ) -> IdentityProviderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attribute_mapping_binding = args.attribute_mapping.get_output(context);
         let idp_identifiers_binding = args.idp_identifiers.get_output(context);
         let provider_details_binding = args.provider_details.get_output(context);

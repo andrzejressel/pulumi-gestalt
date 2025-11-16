@@ -184,8 +184,6 @@ pub mod folder_feed {
         name: &str,
         args: FolderFeedArgs,
     ) -> FolderFeedResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let asset_names_binding = args.asset_names.get_output(context);
         let asset_types_binding = args.asset_types.get_output(context);
         let billing_project_binding = args.billing_project.get_output(context);

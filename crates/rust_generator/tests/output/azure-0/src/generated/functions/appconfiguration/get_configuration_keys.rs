@@ -40,8 +40,6 @@ pub mod get_configuration_keys {
         context: &pulumi_gestalt_rust::Context,
         args: GetConfigurationKeysArgs,
     ) -> GetConfigurationKeysResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_store_id_binding = args
             .configuration_store_id
             .get_output(context);

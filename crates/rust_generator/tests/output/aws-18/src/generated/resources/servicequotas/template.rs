@@ -78,8 +78,6 @@ pub mod template {
         name: &str,
         args: TemplateArgs,
     ) -> TemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let quota_code_binding = args.quota_code.get_output(context);
         let region_binding = args.region.get_output(context);
         let service_code_binding = args.service_code.get_output(context);

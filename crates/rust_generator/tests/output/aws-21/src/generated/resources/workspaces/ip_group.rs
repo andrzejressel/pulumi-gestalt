@@ -90,8 +90,6 @@ pub mod ip_group {
         name: &str,
         args: IpGroupArgs,
     ) -> IpGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let rules_binding = args.rules.get_output(context);

@@ -182,8 +182,6 @@ pub mod network_sim_policy {
         name: &str,
         args: NetworkSimPolicyArgs,
     ) -> NetworkSimPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_slice_id_binding = args.default_slice_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let mobile_network_id_binding = args.mobile_network_id.get_output(context);

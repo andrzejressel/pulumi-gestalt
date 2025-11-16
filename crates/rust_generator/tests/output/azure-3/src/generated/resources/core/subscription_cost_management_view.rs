@@ -129,8 +129,6 @@ pub mod subscription_cost_management_view {
         name: &str,
         args: SubscriptionCostManagementViewArgs,
     ) -> SubscriptionCostManagementViewResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accumulated_binding = args.accumulated.get_output(context);
         let chart_type_binding = args.chart_type.get_output(context);
         let dataset_binding = args.dataset.get_output(context);

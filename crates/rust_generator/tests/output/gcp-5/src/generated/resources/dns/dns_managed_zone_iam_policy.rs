@@ -237,8 +237,6 @@ pub mod dns_managed_zone_iam_policy {
         name: &str,
         args: DnsManagedZoneIamPolicyArgs,
     ) -> DnsManagedZoneIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let managed_zone_binding = args.managed_zone.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -277,8 +277,6 @@ pub mod flexible_server {
         name: &str,
         args: FlexibleServerArgs,
     ) -> FlexibleServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let administrator_login_binding = args.administrator_login.get_output(context);
         let administrator_password_binding = args
             .administrator_password

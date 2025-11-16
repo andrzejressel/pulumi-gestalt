@@ -206,8 +206,6 @@ pub mod gateway_security_policy_rule {
         name: &str,
         args: GatewaySecurityPolicyRuleArgs,
     ) -> GatewaySecurityPolicyRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_matcher_binding = args.application_matcher.get_output(context);
         let basic_profile_binding = args.basic_profile.get_output(context);
         let description_binding = args.description.get_output(context);

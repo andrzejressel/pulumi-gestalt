@@ -948,8 +948,6 @@ pub mod backend_service {
         name: &str,
         args: BackendServiceArgs,
     ) -> BackendServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let affinity_cookie_ttl_sec_binding = args
             .affinity_cookie_ttl_sec
             .get_output(context);

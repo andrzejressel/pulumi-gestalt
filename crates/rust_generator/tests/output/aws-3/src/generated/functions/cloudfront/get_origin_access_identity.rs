@@ -43,8 +43,6 @@ pub mod get_origin_access_identity {
         context: &pulumi_gestalt_rust::Context,
         args: GetOriginAccessIdentityArgs,
     ) -> GetOriginAccessIdentityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let id_binding = args.id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cloudfront/getOriginAccessIdentity:getOriginAccessIdentity"

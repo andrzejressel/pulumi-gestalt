@@ -105,8 +105,6 @@ pub mod kx_database {
         name: &str,
         args: KxDatabaseArgs,
     ) -> KxDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let environment_id_binding = args.environment_id.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -120,8 +120,6 @@ pub mod lien {
         name: &str,
         args: LienArgs,
     ) -> LienResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let origin_binding = args.origin.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let reason_binding = args.reason.get_output(context);

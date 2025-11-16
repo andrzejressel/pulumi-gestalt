@@ -54,8 +54,6 @@ pub mod encryption_by_default {
         name: &str,
         args: EncryptionByDefaultArgs,
     ) -> EncryptionByDefaultResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ebs/encryptionByDefault:EncryptionByDefault".into(),

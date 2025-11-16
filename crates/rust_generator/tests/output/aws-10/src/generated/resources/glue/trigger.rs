@@ -264,8 +264,6 @@ pub mod trigger {
         name: &str,
         args: TriggerArgs,
     ) -> TriggerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let description_binding = args.description.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

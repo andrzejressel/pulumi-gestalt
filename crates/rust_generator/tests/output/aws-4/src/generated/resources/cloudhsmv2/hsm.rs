@@ -79,8 +79,6 @@ pub mod hsm {
         name: &str,
         args: HsmArgs,
     ) -> HsmResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_binding = args.availability_zone.get_output(context);
         let cluster_id_binding = args.cluster_id.get_output(context);
         let ip_address_binding = args.ip_address.get_output(context);

@@ -354,8 +354,6 @@ pub mod table {
         name: &str,
         args: TableArgs,
     ) -> TableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let billing_mode_binding = args.billing_mode.get_output(context);
         let deletion_protection_enabled_binding = args

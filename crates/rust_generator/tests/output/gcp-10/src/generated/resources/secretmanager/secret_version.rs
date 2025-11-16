@@ -181,8 +181,6 @@ pub mod secret_version {
         name: &str,
         args: SecretVersionArgs,
     ) -> SecretVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_policy_binding = args.deletion_policy.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let is_secret_data_base64_binding = args

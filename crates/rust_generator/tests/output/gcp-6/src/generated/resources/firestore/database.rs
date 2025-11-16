@@ -378,8 +378,6 @@ pub mod database {
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_engine_integration_mode_binding = args
             .app_engine_integration_mode
             .get_output(context);

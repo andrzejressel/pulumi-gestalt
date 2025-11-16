@@ -127,8 +127,6 @@ pub mod mongo_collection {
         name: &str,
         args: MongoCollectionArgs,
     ) -> MongoCollectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let analytical_storage_ttl_binding = args
             .analytical_storage_ttl

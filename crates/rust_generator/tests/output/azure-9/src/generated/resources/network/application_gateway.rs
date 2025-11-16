@@ -446,8 +446,6 @@ pub mod application_gateway {
         name: &str,
         args: ApplicationGatewayArgs,
     ) -> ApplicationGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_certificates_binding = args
             .authentication_certificates
             .get_output(context);

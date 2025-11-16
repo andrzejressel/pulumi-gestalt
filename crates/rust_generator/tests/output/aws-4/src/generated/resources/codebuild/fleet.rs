@@ -159,8 +159,6 @@ pub mod fleet {
         name: &str,
         args: FleetArgs,
     ) -> FleetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_capacity_binding = args.base_capacity.get_output(context);
         let compute_type_binding = args.compute_type.get_output(context);
         let environment_type_binding = args.environment_type.get_output(context);

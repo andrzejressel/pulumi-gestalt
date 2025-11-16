@@ -148,8 +148,6 @@ pub mod nat_pool {
         name: &str,
         args: NatPoolArgs,
     ) -> NatPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backend_port_binding = args.backend_port.get_output(context);
         let floating_ip_enabled_binding = args.floating_ip_enabled.get_output(context);
         let frontend_ip_configuration_name_binding = args

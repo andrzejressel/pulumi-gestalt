@@ -87,8 +87,6 @@ pub mod standards_control {
         name: &str,
         args: StandardsControlArgs,
     ) -> StandardsControlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let control_status_binding = args.control_status.get_output(context);
         let disabled_reason_binding = args.disabled_reason.get_output(context);
         let standards_control_arn_binding = args

@@ -119,8 +119,6 @@ pub mod permissions_boundary_attachment {
         name: &str,
         args: PermissionsBoundaryAttachmentArgs,
     ) -> PermissionsBoundaryAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_arn_binding = args.instance_arn.get_output(context);
         let permission_set_arn_binding = args.permission_set_arn.get_output(context);
         let permissions_boundary_binding = args.permissions_boundary.get_output(context);

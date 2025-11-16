@@ -186,8 +186,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autoscaling_settings_binding = args.autoscaling_settings.get_output(context);
         let name_binding = args.name.get_output(context);
         let node_type_configs_binding = args.node_type_configs.get_output(context);

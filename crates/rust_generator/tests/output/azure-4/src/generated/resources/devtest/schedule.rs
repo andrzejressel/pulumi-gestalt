@@ -151,8 +151,6 @@ pub mod schedule {
         name: &str,
         args: ScheduleArgs,
     ) -> ScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let daily_recurrence_binding = args.daily_recurrence.get_output(context);
         let hourly_recurrence_binding = args.hourly_recurrence.get_output(context);
         let lab_name_binding = args.lab_name.get_output(context);

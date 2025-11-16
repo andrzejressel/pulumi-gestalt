@@ -291,8 +291,6 @@ pub mod azure_cluster {
         name: &str,
         args: AzureClusterArgs,
     ) -> AzureClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let authorization_binding = args.authorization.get_output(context);
         let azure_region_binding = args.azure_region.get_output(context);

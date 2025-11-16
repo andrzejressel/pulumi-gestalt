@@ -102,8 +102,6 @@ pub mod device_fleet {
         name: &str,
         args: DeviceFleetArgs,
     ) -> DeviceFleetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let device_fleet_name_binding = args.device_fleet_name.get_output(context);
         let enable_iot_role_alias_binding = args

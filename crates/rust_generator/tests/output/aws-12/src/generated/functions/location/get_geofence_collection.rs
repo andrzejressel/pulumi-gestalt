@@ -46,8 +46,6 @@ pub mod get_geofence_collection {
         context: &pulumi_gestalt_rust::Context,
         args: GetGeofenceCollectionArgs,
     ) -> GetGeofenceCollectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let collection_name_binding = args.collection_name.get_output(context);
         let kms_key_id_binding = args.kms_key_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

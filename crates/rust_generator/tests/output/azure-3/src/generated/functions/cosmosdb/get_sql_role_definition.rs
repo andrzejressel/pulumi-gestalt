@@ -44,8 +44,6 @@ pub mod get_sql_role_definition {
         context: &pulumi_gestalt_rust::Context,
         args: GetSqlRoleDefinitionArgs,
     ) -> GetSqlRoleDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let role_definition_id_binding = args.role_definition_id.get_output(context);

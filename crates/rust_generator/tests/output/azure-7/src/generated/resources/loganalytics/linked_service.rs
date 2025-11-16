@@ -97,8 +97,6 @@ pub mod linked_service {
         name: &str,
         args: LinkedServiceArgs,
     ) -> LinkedServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let read_access_id_binding = args.read_access_id.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);

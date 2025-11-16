@@ -132,8 +132,6 @@ pub mod elastic_san {
         name: &str,
         args: ElasticSanArgs,
     ) -> ElasticSanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_size_in_tib_binding = args.base_size_in_tib.get_output(context);
         let extended_size_in_tib_binding = args.extended_size_in_tib.get_output(context);
         let location_binding = args.location.get_output(context);

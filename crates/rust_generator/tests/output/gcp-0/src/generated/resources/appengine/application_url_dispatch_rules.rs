@@ -104,8 +104,6 @@ pub mod application_url_dispatch_rules {
         name: &str,
         args: ApplicationUrlDispatchRulesArgs,
     ) -> ApplicationUrlDispatchRulesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dispatch_rules_binding = args.dispatch_rules.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

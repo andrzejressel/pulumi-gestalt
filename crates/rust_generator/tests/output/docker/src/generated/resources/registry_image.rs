@@ -79,8 +79,6 @@ pub mod registry_image {
         name: &str,
         args: RegistryImageArgs,
     ) -> RegistryImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let insecure_skip_verify_binding = args.insecure_skip_verify.get_output(context);
         let keep_remotely_binding = args.keep_remotely.get_output(context);
         let name_binding = args.name.get_output(context);

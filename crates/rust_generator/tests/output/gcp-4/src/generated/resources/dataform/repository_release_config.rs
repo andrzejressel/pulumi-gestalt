@@ -178,8 +178,6 @@ pub mod repository_release_config {
         name: &str,
         args: RepositoryReleaseConfigArgs,
     ) -> RepositoryReleaseConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let code_compilation_config_binding = args
             .code_compilation_config
             .get_output(context);

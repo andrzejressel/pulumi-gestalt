@@ -83,8 +83,6 @@ pub mod service_trust {
         name: &str,
         args: ServiceTrustArgs,
     ) -> ServiceTrustResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_service_id_binding = args.domain_service_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let password_binding = args.password.get_output(context);

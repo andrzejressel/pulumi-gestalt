@@ -101,8 +101,6 @@ pub mod logging {
         name: &str,
         args: LoggingArgs,
     ) -> LoggingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_name_binding = args.bucket_name.get_output(context);
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let log_destination_type_binding = args.log_destination_type.get_output(context);

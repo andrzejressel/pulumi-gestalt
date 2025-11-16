@@ -95,8 +95,6 @@ pub mod subscription_template_deployment {
         name: &str,
         args: SubscriptionTemplateDeploymentArgs,
     ) -> SubscriptionTemplateDeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let debug_level_binding = args.debug_level.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);

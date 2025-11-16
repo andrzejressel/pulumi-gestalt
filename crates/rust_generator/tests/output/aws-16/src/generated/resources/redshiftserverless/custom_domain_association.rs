@@ -83,8 +83,6 @@ pub mod custom_domain_association {
         name: &str,
         args: CustomDomainAssociationArgs,
     ) -> CustomDomainAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_domain_certificate_arn_binding = args
             .custom_domain_certificate_arn
             .get_output(context);

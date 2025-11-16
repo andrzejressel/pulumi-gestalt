@@ -337,8 +337,6 @@ pub mod resource_policy {
         name: &str,
         args: ResourcePolicyArgs,
     ) -> ResourcePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let disk_consistency_group_policy_binding = args
             .disk_consistency_group_policy

@@ -42,8 +42,6 @@ pub mod get_orderable_cluster {
         context: &pulumi_gestalt_rust::Context,
         args: GetOrderableClusterArgs,
     ) -> GetOrderableClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_type_binding = args.cluster_type.get_output(context);
         let cluster_version_binding = args.cluster_version.get_output(context);
         let node_type_binding = args.node_type.get_output(context);

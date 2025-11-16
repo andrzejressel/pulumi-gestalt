@@ -36,8 +36,6 @@ pub mod get_managed_zone_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetManagedZoneIamPolicyArgs,
     ) -> GetManagedZoneIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let managed_zone_binding = args.managed_zone.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

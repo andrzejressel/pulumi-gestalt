@@ -107,8 +107,6 @@ pub mod zero_trust_tunnel_cloudflared_config {
         name: &str,
         args: ZeroTrustTunnelCloudflaredConfigArgs,
     ) -> ZeroTrustTunnelCloudflaredConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let config_binding = args.config.get_output(context);
         let tunnel_id_binding = args.tunnel_id.get_output(context);

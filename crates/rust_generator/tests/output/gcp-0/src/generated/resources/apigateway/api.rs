@@ -128,8 +128,6 @@ pub mod api {
         name: &str,
         args: ApiArgs,
     ) -> ApiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let labels_binding = args.labels.get_output(context);

@@ -166,8 +166,6 @@ pub mod list_item {
         name: &str,
         args: ListItemArgs,
     ) -> ListItemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let asn_binding = args.asn.get_output(context);
         let comment_binding = args.comment.get_output(context);

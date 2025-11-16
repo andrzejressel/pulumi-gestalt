@@ -293,8 +293,6 @@ pub mod system_topic_event_subscription {
         name: &str,
         args: SystemTopicEventSubscriptionArgs,
     ) -> SystemTopicEventSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let advanced_filter_binding = args.advanced_filter.get_output(context);
         let advanced_filtering_on_arrays_enabled_binding = args
             .advanced_filtering_on_arrays_enabled

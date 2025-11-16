@@ -33,8 +33,6 @@ pub mod get_fhir_store_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetFhirStoreIamPolicyArgs,
     ) -> GetFhirStoreIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let fhir_store_id_binding = args.fhir_store_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:healthcare/getFhirStoreIamPolicy:getFhirStoreIamPolicy".into(),

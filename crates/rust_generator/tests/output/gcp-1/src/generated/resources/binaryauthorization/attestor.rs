@@ -170,8 +170,6 @@ pub mod attestor {
         name: &str,
         args: AttestorArgs,
     ) -> AttestorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attestation_authority_note_binding = args
             .attestation_authority_note
             .get_output(context);

@@ -292,8 +292,6 @@ pub mod data_policy_iam_binding {
         name: &str,
         args: DataPolicyIamBindingArgs,
     ) -> DataPolicyIamBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let data_policy_id_binding = args.data_policy_id.get_output(context);
         let location_binding = args.location.get_output(context);

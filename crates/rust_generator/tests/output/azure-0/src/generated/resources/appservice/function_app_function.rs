@@ -231,8 +231,6 @@ pub mod function_app_function {
         name: &str,
         args: FunctionAppFunctionArgs,
     ) -> FunctionAppFunctionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_json_binding = args.config_json.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let files_binding = args.files.get_output(context);

@@ -101,8 +101,6 @@ pub mod deployment_strategy {
         name: &str,
         args: DeploymentStrategyArgs,
     ) -> DeploymentStrategyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deployment_duration_in_minutes_binding = args
             .deployment_duration_in_minutes
             .get_output(context);

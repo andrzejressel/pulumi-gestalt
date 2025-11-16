@@ -107,8 +107,6 @@ pub mod route_table {
         name: &str,
         args: RouteTableArgs,
     ) -> RouteTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bgp_route_propagation_enabled_binding = args
             .bgp_route_propagation_enabled
             .get_output(context);

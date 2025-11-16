@@ -388,8 +388,6 @@ pub mod regional_secret {
         name: &str,
         args: RegionalSecretArgs,
     ) -> RegionalSecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let customer_managed_encryption_binding = args
             .customer_managed_encryption

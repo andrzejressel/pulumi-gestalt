@@ -411,8 +411,6 @@ pub mod instance_iam_policy {
         name: &str,
         args: InstanceIAMPolicyArgs,
     ) -> InstanceIAMPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_name_binding = args.instance_name.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);

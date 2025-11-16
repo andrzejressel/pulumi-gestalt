@@ -160,8 +160,6 @@ pub mod peering_connection_options {
         name: &str,
         args: PeeringConnectionOptionsArgs,
     ) -> PeeringConnectionOptionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accepter_binding = args.accepter.get_output(context);
         let requester_binding = args.requester.get_output(context);
         let vpc_peering_connection_id_binding = args

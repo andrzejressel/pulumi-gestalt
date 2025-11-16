@@ -94,8 +94,6 @@ pub mod agent_agent_knowledge_base_association {
         name: &str,
         args: AgentAgentKnowledgeBaseAssociationArgs,
     ) -> AgentAgentKnowledgeBaseAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_id_binding = args.agent_id.get_output(context);
         let agent_version_binding = args.agent_version.get_output(context);
         let description_binding = args.description.get_output(context);

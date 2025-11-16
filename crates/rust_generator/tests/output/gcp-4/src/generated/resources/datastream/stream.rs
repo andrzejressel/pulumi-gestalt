@@ -1101,8 +1101,6 @@ pub mod stream {
         name: &str,
         args: StreamArgs,
     ) -> StreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backfill_all_binding = args.backfill_all.get_output(context);
         let backfill_none_binding = args.backfill_none.get_output(context);
         let create_without_validation_binding = args

@@ -144,8 +144,6 @@ pub mod authorized_view {
         name: &str,
         args: AuthorizedViewArgs,
     ) -> AuthorizedViewResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let instance_name_binding = args.instance_name.get_output(context);
         let name_binding = args.name.get_output(context);

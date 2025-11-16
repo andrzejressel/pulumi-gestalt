@@ -121,8 +121,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identity_binding = args.identity.get_output(context);
         let location_binding = args.location.get_output(context);
         let managed_resource_group_name_binding = args

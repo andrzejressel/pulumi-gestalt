@@ -294,8 +294,6 @@ pub mod virtual_network_gateway {
         name: &str,
         args: VirtualNetworkGatewayArgs,
     ) -> VirtualNetworkGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_active_binding = args.active_active.get_output(context);
         let bgp_route_translation_for_nat_enabled_binding = args
             .bgp_route_translation_for_nat_enabled

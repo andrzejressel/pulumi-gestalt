@@ -198,8 +198,6 @@ pub mod asset {
         name: &str,
         args: AssetArgs,
     ) -> AssetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dataplex_zone_binding = args.dataplex_zone.get_output(context);
         let description_binding = args.description.get_output(context);
         let discovery_spec_binding = args.discovery_spec.get_output(context);

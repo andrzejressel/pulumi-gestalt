@@ -121,8 +121,6 @@ pub mod realtime_log_config {
         name: &str,
         args: RealtimeLogConfigArgs,
     ) -> RealtimeLogConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let endpoint_binding = args.endpoint.get_output(context);
         let fields_binding = args.fields.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -276,8 +276,6 @@ pub mod alert_policy {
         name: &str,
         args: AlertPolicyArgs,
     ) -> AlertPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alert_strategy_binding = args.alert_strategy.get_output(context);
         let combiner_binding = args.combiner.get_output(context);
         let conditions_binding = args.conditions.get_output(context);

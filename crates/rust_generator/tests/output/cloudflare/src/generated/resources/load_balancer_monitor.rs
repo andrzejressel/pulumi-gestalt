@@ -128,8 +128,6 @@ pub mod load_balancer_monitor {
         name: &str,
         args: LoadBalancerMonitorArgs,
     ) -> LoadBalancerMonitorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let allow_insecure_binding = args.allow_insecure.get_output(context);
         let consecutive_down_binding = args.consecutive_down.get_output(context);

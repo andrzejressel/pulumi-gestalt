@@ -34,8 +34,6 @@ pub mod get_subscriptions {
         context: &pulumi_gestalt_rust::Context,
         args: GetSubscriptionsArgs,
     ) -> GetSubscriptionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_contains_binding = args
             .display_name_contains
             .get_output(context);

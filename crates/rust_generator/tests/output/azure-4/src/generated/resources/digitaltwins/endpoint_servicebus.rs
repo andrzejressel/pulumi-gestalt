@@ -129,8 +129,6 @@ pub mod endpoint_servicebus {
         name: &str,
         args: EndpointServicebusArgs,
     ) -> EndpointServicebusResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dead_letter_storage_secret_binding = args
             .dead_letter_storage_secret
             .get_output(context);

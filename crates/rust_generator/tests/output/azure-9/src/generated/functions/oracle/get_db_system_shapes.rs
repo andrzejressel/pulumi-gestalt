@@ -30,8 +30,6 @@ pub mod get_db_system_shapes {
         context: &pulumi_gestalt_rust::Context,
         args: GetDbSystemShapesArgs,
     ) -> GetDbSystemShapesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:oracle/getDbSystemShapes:getDbSystemShapes".into(),

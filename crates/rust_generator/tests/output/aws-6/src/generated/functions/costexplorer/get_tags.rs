@@ -58,8 +58,6 @@ pub mod get_tags {
         context: &pulumi_gestalt_rust::Context,
         args: GetTagsArgs,
     ) -> GetTagsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filter_binding = args.filter.get_output(context);
         let search_string_binding = args.search_string.get_output(context);
         let sort_bies_binding = args.sort_bies.get_output(context);

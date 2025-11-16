@@ -106,8 +106,6 @@ pub mod cluster_parameter_group {
         name: &str,
         args: ClusterParameterGroupArgs,
     ) -> ClusterParameterGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let family_binding = args.family.get_output(context);
         let name_binding = args.name.get_output(context);

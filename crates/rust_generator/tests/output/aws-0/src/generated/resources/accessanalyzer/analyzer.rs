@@ -110,8 +110,6 @@ pub mod analyzer {
         name: &str,
         args: AnalyzerArgs,
     ) -> AnalyzerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let analyzer_name_binding = args.analyzer_name.get_output(context);
         let configuration_binding = args.configuration.get_output(context);
         let tags_binding = args.tags.get_output(context);

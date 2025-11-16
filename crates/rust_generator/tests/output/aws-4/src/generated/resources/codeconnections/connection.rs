@@ -94,8 +94,6 @@ pub mod connection {
         name: &str,
         args: ConnectionArgs,
     ) -> ConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let host_arn_binding = args.host_arn.get_output(context);
         let name_binding = args.name.get_output(context);
         let provider_type_binding = args.provider_type.get_output(context);

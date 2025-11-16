@@ -114,8 +114,6 @@ pub mod rule {
         name: &str,
         args: RuleArgs,
     ) -> RuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let metric_name_binding = args.metric_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let predicates_binding = args.predicates.get_output(context);

@@ -28,8 +28,6 @@ pub mod module_test {
         name: &str,
         args: moduleTestArgs,
     ) -> moduleTestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mod1_binding = args.mod1.get_output(context);
         let val_binding = args.val.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

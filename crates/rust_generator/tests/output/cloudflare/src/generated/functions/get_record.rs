@@ -55,8 +55,6 @@ pub mod get_record {
         context: &pulumi_gestalt_rust::Context,
         args: GetRecordArgs,
     ) -> GetRecordResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_binding = args.content.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
         let priority_binding = args.priority.get_output(context);

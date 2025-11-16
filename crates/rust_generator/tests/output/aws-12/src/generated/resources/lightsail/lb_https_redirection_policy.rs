@@ -76,8 +76,6 @@ pub mod lb_https_redirection_policy {
         name: &str,
         args: LbHttpsRedirectionPolicyArgs,
     ) -> LbHttpsRedirectionPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let lb_name_binding = args.lb_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

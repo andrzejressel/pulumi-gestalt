@@ -131,8 +131,6 @@ pub mod workspace {
         name: &str,
         args: WorkspaceArgs,
     ) -> WorkspaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bundle_id_binding = args.bundle_id.get_output(context);
         let directory_id_binding = args.directory_id.get_output(context);
         let root_volume_encryption_enabled_binding = args

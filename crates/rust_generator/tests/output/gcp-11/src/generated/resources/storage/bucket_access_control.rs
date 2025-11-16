@@ -140,8 +140,6 @@ pub mod bucket_access_control {
         name: &str,
         args: BucketAccessControlArgs,
     ) -> BucketAccessControlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let entity_binding = args.entity.get_output(context);
         let role_binding = args.role.get_output(context);

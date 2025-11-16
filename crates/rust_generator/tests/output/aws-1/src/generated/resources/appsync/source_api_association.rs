@@ -102,8 +102,6 @@ pub mod source_api_association {
         name: &str,
         args: SourceApiAssociationArgs,
     ) -> SourceApiAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let merged_api_arn_binding = args.merged_api_arn.get_output(context);
         let merged_api_id_binding = args.merged_api_id.get_output(context);

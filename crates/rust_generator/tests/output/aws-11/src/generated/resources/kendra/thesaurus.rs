@@ -93,8 +93,6 @@ pub mod thesaurus {
         name: &str,
         args: ThesaurusArgs,
     ) -> ThesaurusResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let index_id_binding = args.index_id.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -118,8 +118,6 @@ pub mod event_hub {
         name: &str,
         args: EventHubArgs,
     ) -> EventHubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capture_description_binding = args.capture_description.get_output(context);
         let message_retention_binding = args.message_retention.get_output(context);
         let name_binding = args.name.get_output(context);

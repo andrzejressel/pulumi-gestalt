@@ -218,8 +218,6 @@ pub mod packet_capture {
         name: &str,
         args: PacketCaptureArgs,
     ) -> PacketCaptureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let maximum_bytes_per_packet_binding = args
             .maximum_bytes_per_packet

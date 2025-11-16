@@ -38,8 +38,6 @@ pub mod get_image_pipelines {
         context: &pulumi_gestalt_rust::Context,
         args: GetImagePipelinesArgs,
     ) -> GetImagePipelinesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:imagebuilder/getImagePipelines:getImagePipelines".into(),

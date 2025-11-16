@@ -48,8 +48,6 @@ pub mod web_acl_association {
         name: &str,
         args: WebAclAssociationArgs,
     ) -> WebAclAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_arn_binding = args.resource_arn.get_output(context);
         let web_acl_arn_binding = args.web_acl_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -110,8 +110,6 @@ pub mod product_tag {
         name: &str,
         args: ProductTagArgs,
     ) -> ProductTagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_name_binding = args.api_management_name.get_output(context);
         let api_management_product_id_binding = args
             .api_management_product_id

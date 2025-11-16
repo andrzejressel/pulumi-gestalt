@@ -63,8 +63,6 @@ pub mod multicast_group_source {
         name: &str,
         args: MulticastGroupSourceArgs,
     ) -> MulticastGroupSourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_ip_address_binding = args.group_ip_address.get_output(context);
         let network_interface_id_binding = args.network_interface_id.get_output(context);
         let transit_gateway_multicast_domain_id_binding = args

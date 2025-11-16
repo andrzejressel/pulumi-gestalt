@@ -274,8 +274,6 @@ pub mod branch {
         name: &str,
         args: BranchArgs,
     ) -> BranchResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let backend_environment_arn_binding = args
             .backend_environment_arn

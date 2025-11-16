@@ -171,8 +171,6 @@ pub mod bucket_website_configuration_v_2 {
         name: &str,
         args: BucketWebsiteConfigurationV2Args,
     ) -> BucketWebsiteConfigurationV2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let error_document_binding = args.error_document.get_output(context);
         let expected_bucket_owner_binding = args

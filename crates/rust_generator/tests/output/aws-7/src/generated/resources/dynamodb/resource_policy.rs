@@ -75,8 +75,6 @@ pub mod resource_policy {
         name: &str,
         args: ResourcePolicyArgs,
     ) -> ResourcePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let confirm_remove_self_resource_access_binding = args
             .confirm_remove_self_resource_access
             .get_output(context);

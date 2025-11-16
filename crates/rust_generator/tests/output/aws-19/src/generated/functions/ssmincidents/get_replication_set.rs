@@ -43,8 +43,6 @@ pub mod get_replication_set {
         context: &pulumi_gestalt_rust::Context,
         args: GetReplicationSetArgs,
     ) -> GetReplicationSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ssmincidents/getReplicationSet:getReplicationSet".into(),

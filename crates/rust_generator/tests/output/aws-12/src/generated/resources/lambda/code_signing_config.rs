@@ -96,8 +96,6 @@ pub mod code_signing_config {
         name: &str,
         args: CodeSigningConfigArgs,
     ) -> CodeSigningConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_publishers_binding = args.allowed_publishers.get_output(context);
         let description_binding = args.description.get_output(context);
         let policies_binding = args.policies.get_output(context);

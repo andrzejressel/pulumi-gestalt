@@ -134,8 +134,6 @@ pub mod sampling_rule {
         name: &str,
         args: SamplingRuleArgs,
     ) -> SamplingRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let fixed_rate_binding = args.fixed_rate.get_output(context);
         let host_binding = args.host.get_output(context);

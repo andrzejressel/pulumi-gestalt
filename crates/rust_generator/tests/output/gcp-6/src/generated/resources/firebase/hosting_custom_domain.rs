@@ -321,8 +321,6 @@ pub mod hosting_custom_domain {
         name: &str,
         args: HostingCustomDomainArgs,
     ) -> HostingCustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cert_preference_binding = args.cert_preference.get_output(context);
         let custom_domain_binding = args.custom_domain.get_output(context);
         let project_binding = args.project.get_output(context);

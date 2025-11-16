@@ -78,8 +78,6 @@ pub mod notification_policy_webhooks {
         name: &str,
         args: NotificationPolicyWebhooksArgs,
     ) -> NotificationPolicyWebhooksResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let secret_binding = args.secret.get_output(context);

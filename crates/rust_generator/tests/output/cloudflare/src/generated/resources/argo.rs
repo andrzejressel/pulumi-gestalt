@@ -66,8 +66,6 @@ pub mod argo {
         name: &str,
         args: ArgoArgs,
     ) -> ArgoResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let smart_routing_binding = args.smart_routing.get_output(context);
         let tiered_caching_binding = args.tiered_caching.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

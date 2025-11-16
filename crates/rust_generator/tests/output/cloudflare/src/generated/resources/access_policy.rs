@@ -142,8 +142,6 @@ pub mod access_policy {
         name: &str,
         args: AccessPolicyArgs,
     ) -> AccessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let application_id_binding = args.application_id.get_output(context);
         let approval_groups_binding = args.approval_groups.get_output(context);

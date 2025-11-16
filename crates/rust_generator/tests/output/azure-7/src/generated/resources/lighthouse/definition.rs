@@ -109,8 +109,6 @@ pub mod definition {
         name: &str,
         args: DefinitionArgs,
     ) -> DefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorizations_binding = args.authorizations.get_output(context);
         let description_binding = args.description.get_output(context);
         let eligible_authorizations_binding = args

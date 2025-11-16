@@ -42,8 +42,6 @@ pub mod get_dps_shared_access_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetDpsSharedAccessPolicyArgs,
     ) -> GetDpsSharedAccessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let iothub_dps_name_binding = args.iothub_dps_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

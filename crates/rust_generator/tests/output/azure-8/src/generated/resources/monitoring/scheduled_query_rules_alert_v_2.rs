@@ -273,8 +273,6 @@ pub mod scheduled_query_rules_alert_v_2 {
         name: &str,
         args: ScheduledQueryRulesAlertV2Args,
     ) -> ScheduledQueryRulesAlertV2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let auto_mitigation_enabled_binding = args
             .auto_mitigation_enabled

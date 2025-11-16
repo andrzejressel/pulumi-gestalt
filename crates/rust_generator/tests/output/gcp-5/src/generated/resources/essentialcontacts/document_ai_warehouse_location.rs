@@ -112,8 +112,6 @@ pub mod document_ai_warehouse_location {
         name: &str,
         args: DocumentAiWarehouseLocationArgs,
     ) -> DocumentAiWarehouseLocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_control_mode_binding = args.access_control_mode.get_output(context);
         let database_type_binding = args.database_type.get_output(context);
         let document_creator_default_role_binding = args

@@ -729,8 +729,6 @@ pub mod event_target {
         name: &str,
         args: EventTargetArgs,
     ) -> EventTargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let appsync_target_binding = args.appsync_target.get_output(context);
         let arn_binding = args.arn.get_output(context);
         let batch_target_binding = args.batch_target.get_output(context);

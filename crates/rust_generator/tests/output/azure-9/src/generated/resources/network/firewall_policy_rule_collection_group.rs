@@ -173,8 +173,6 @@ pub mod firewall_policy_rule_collection_group {
         name: &str,
         args: FirewallPolicyRuleCollectionGroupArgs,
     ) -> FirewallPolicyRuleCollectionGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_rule_collections_binding = args
             .application_rule_collections
             .get_output(context);

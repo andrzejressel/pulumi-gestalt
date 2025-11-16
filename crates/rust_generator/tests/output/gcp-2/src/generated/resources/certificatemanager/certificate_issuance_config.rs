@@ -206,8 +206,6 @@ pub mod certificate_issuance_config {
         name: &str,
         args: CertificateIssuanceConfigArgs,
     ) -> CertificateIssuanceConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_authority_config_binding = args
             .certificate_authority_config
             .get_output(context);

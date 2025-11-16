@@ -37,8 +37,6 @@ pub mod get_addon_version {
         context: &pulumi_gestalt_rust::Context,
         args: GetAddonVersionArgs,
     ) -> GetAddonVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let addon_name_binding = args.addon_name.get_output(context);
         let kubernetes_version_binding = args.kubernetes_version.get_output(context);
         let most_recent_binding = args.most_recent.get_output(context);

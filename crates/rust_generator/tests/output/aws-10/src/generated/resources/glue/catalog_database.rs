@@ -147,8 +147,6 @@ pub mod catalog_database {
         name: &str,
         args: CatalogDatabaseArgs,
     ) -> CatalogDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let create_table_default_permissions_binding = args
             .create_table_default_permissions

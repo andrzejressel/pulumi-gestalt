@@ -131,8 +131,6 @@ pub mod network_profile {
         name: &str,
         args: NetworkProfileArgs,
     ) -> NetworkProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let downlink_bandwidth_bits_binding = args
             .downlink_bandwidth_bits

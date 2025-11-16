@@ -84,8 +84,6 @@ pub mod location_fsx_lustre {
         name: &str,
         args: LocationFsxLustreArgs,
     ) -> LocationFsxLustreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let fsx_filesystem_arn_binding = args.fsx_filesystem_arn.get_output(context);
         let security_group_arns_binding = args.security_group_arns.get_output(context);
         let subdirectory_binding = args.subdirectory.get_output(context);

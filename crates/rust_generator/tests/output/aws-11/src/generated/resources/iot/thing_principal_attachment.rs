@@ -60,8 +60,6 @@ pub mod thing_principal_attachment {
         name: &str,
         args: ThingPrincipalAttachmentArgs,
     ) -> ThingPrincipalAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let principal_binding = args.principal.get_output(context);
         let thing_binding = args.thing.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

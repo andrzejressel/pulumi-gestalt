@@ -172,8 +172,6 @@ pub mod mover_job_definition {
         name: &str,
         args: MoverJobDefinitionArgs,
     ) -> MoverJobDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_name_binding = args.agent_name.get_output(context);
         let copy_mode_binding = args.copy_mode.get_output(context);
         let description_binding = args.description.get_output(context);

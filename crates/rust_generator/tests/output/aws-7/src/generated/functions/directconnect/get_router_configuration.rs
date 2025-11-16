@@ -55,8 +55,6 @@ pub mod get_router_configuration {
         context: &pulumi_gestalt_rust::Context,
         args: GetRouterConfigurationArgs,
     ) -> GetRouterConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let router_type_identifier_binding = args
             .router_type_identifier
             .get_output(context);

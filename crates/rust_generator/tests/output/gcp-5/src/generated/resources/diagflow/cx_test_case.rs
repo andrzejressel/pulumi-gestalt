@@ -220,8 +220,6 @@ pub mod cx_test_case {
         name: &str,
         args: CxTestCaseArgs,
     ) -> CxTestCaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let notes_binding = args.notes.get_output(context);
         let parent_binding = args.parent.get_output(context);

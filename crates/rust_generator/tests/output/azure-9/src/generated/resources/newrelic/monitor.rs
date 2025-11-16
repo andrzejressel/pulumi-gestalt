@@ -167,8 +167,6 @@ pub mod monitor {
         name: &str,
         args: MonitorArgs,
     ) -> MonitorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_creation_source_binding = args
             .account_creation_source
             .get_output(context);

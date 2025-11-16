@@ -102,8 +102,6 @@ pub mod gateway {
         name: &str,
         args: GatewayArgs,
     ) -> GatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_id_binding = args.api_management_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let location_data_binding = args.location_data.get_output(context);

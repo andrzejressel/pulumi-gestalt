@@ -121,8 +121,6 @@ pub mod vpc_attachment {
         name: &str,
         args: VpcAttachmentArgs,
     ) -> VpcAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let appliance_mode_support_binding = args
             .appliance_mode_support
             .get_output(context);

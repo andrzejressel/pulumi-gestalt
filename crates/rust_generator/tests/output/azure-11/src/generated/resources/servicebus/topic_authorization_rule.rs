@@ -111,8 +111,6 @@ pub mod topic_authorization_rule {
         name: &str,
         args: TopicAuthorizationRuleArgs,
     ) -> TopicAuthorizationRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let listen_binding = args.listen.get_output(context);
         let manage_binding = args.manage.get_output(context);
         let name_binding = args.name.get_output(context);

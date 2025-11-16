@@ -131,8 +131,6 @@ pub mod workgroup {
         name: &str,
         args: WorkgroupArgs,
     ) -> WorkgroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_capacity_binding = args.base_capacity.get_output(context);
         let config_parameters_binding = args.config_parameters.get_output(context);
         let enhanced_vpc_routing_binding = args.enhanced_vpc_routing.get_output(context);

@@ -202,8 +202,6 @@ pub mod healthcheck {
         name: &str,
         args: HealthcheckArgs,
     ) -> HealthcheckResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_binding = args.address.get_output(context);
         let allow_insecure_binding = args.allow_insecure.get_output(context);
         let check_regions_binding = args.check_regions.get_output(context);

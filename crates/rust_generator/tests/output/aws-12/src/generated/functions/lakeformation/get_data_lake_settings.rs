@@ -58,8 +58,6 @@ pub mod get_data_lake_settings {
         context: &pulumi_gestalt_rust::Context,
         args: GetDataLakeSettingsArgs,
     ) -> GetDataLakeSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lakeformation/getDataLakeSettings:getDataLakeSettings".into(),

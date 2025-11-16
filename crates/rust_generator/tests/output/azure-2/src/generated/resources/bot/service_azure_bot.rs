@@ -209,8 +209,6 @@ pub mod service_azure_bot {
         name: &str,
         args: ServiceAzureBotArgs,
     ) -> ServiceAzureBotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cmk_key_vault_key_url_binding = args
             .cmk_key_vault_key_url
             .get_output(context);

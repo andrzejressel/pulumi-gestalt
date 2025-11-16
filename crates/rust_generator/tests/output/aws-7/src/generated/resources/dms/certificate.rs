@@ -81,8 +81,6 @@ pub mod certificate {
         name: &str,
         args: CertificateArgs,
     ) -> CertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_id_binding = args.certificate_id.get_output(context);
         let certificate_pem_binding = args.certificate_pem.get_output(context);
         let certificate_wallet_binding = args.certificate_wallet.get_output(context);

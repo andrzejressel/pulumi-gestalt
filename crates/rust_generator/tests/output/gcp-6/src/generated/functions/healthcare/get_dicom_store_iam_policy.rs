@@ -33,8 +33,6 @@ pub mod get_dicom_store_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetDicomStoreIamPolicyArgs,
     ) -> GetDicomStoreIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dicom_store_id_binding = args.dicom_store_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:healthcare/getDicomStoreIamPolicy:getDicomStoreIamPolicy".into(),

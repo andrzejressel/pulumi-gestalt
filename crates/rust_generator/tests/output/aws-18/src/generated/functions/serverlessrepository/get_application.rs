@@ -39,8 +39,6 @@ pub mod get_application {
         context: &pulumi_gestalt_rust::Context,
         args: GetApplicationArgs,
     ) -> GetApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let semantic_version_binding = args.semantic_version.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

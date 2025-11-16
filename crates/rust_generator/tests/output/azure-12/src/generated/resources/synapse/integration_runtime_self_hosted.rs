@@ -113,8 +113,6 @@ pub mod integration_runtime_self_hosted {
         name: &str,
         args: IntegrationRuntimeSelfHostedArgs,
     ) -> IntegrationRuntimeSelfHostedResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let synapse_workspace_id_binding = args.synapse_workspace_id.get_output(context);

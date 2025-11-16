@@ -202,8 +202,6 @@ pub mod serverless_security_policy {
         name: &str,
         args: ServerlessSecurityPolicyArgs,
     ) -> ServerlessSecurityPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_binding = args.policy.get_output(context);

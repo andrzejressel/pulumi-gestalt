@@ -93,8 +93,6 @@ pub mod share_directory {
         name: &str,
         args: ShareDirectoryArgs,
     ) -> ShareDirectoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let metadata_binding = args.metadata.get_output(context);
         let name_binding = args.name.get_output(context);
         let storage_share_id_binding = args.storage_share_id.get_output(context);

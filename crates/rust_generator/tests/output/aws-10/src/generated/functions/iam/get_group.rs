@@ -36,8 +36,6 @@ pub mod get_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetGroupArgs,
     ) -> GetGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_name_binding = args.group_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getGroup:getGroup".into(),

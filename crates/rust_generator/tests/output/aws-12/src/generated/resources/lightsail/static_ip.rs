@@ -52,8 +52,6 @@ pub mod static_ip {
         name: &str,
         args: StaticIpArgs,
     ) -> StaticIpResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:lightsail/staticIp:StaticIp".into(),

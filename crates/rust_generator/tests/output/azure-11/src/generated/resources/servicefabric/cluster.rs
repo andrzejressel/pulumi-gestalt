@@ -268,8 +268,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let add_on_features_binding = args.add_on_features.get_output(context);
         let azure_active_directory_binding = args
             .azure_active_directory

@@ -97,8 +97,6 @@ pub mod flexible_database {
         name: &str,
         args: FlexibleDatabaseArgs,
     ) -> FlexibleDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let charset_binding = args.charset.get_output(context);
         let collation_binding = args.collation.get_output(context);
         let name_binding = args.name.get_output(context);

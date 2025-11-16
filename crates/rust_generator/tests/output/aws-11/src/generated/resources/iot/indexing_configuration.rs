@@ -90,8 +90,6 @@ pub mod indexing_configuration {
         name: &str,
         args: IndexingConfigurationArgs,
     ) -> IndexingConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let thing_group_indexing_configuration_binding = args
             .thing_group_indexing_configuration
             .get_output(context);

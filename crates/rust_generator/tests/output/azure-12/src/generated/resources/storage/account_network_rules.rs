@@ -158,8 +158,6 @@ pub mod account_network_rules {
         name: &str,
         args: AccountNetworkRulesArgs,
     ) -> AccountNetworkRulesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bypasses_binding = args.bypasses.get_output(context);
         let default_action_binding = args.default_action.get_output(context);
         let ip_rules_binding = args.ip_rules.get_output(context);

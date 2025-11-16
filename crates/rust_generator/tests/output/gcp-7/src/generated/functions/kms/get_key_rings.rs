@@ -34,8 +34,6 @@ pub mod get_key_rings {
         context: &pulumi_gestalt_rust::Context,
         args: GetKeyRingsArgs,
     ) -> GetKeyRingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filter_binding = args.filter.get_output(context);
         let location_binding = args.location.get_output(context);
         let project_binding = args.project.get_output(context);

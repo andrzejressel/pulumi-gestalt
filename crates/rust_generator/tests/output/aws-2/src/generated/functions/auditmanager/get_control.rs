@@ -50,8 +50,6 @@ pub mod get_control {
         context: &pulumi_gestalt_rust::Context,
         args: GetControlArgs,
     ) -> GetControlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let control_mapping_sources_binding = args
             .control_mapping_sources
             .get_output(context);

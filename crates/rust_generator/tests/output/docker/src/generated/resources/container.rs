@@ -469,8 +469,6 @@ pub mod container {
         name: &str,
         args: ContainerArgs,
     ) -> ContainerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attach_binding = args.attach.get_output(context);
         let capabilities_binding = args.capabilities.get_output(context);
         let cgroupns_mode_binding = args.cgroupns_mode.get_output(context);

@@ -28,8 +28,6 @@ pub mod get_tracker_associations {
         context: &pulumi_gestalt_rust::Context,
         args: GetTrackerAssociationsArgs,
     ) -> GetTrackerAssociationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tracker_name_binding = args.tracker_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:location/getTrackerAssociations:getTrackerAssociations".into(),

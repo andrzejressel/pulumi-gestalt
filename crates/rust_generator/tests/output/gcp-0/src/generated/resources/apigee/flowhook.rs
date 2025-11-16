@@ -81,8 +81,6 @@ pub mod flowhook {
         name: &str,
         args: FlowhookArgs,
     ) -> FlowhookResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let continue_on_error_binding = args.continue_on_error.get_output(context);
         let description_binding = args.description.get_output(context);
         let environment_binding = args.environment.get_output(context);

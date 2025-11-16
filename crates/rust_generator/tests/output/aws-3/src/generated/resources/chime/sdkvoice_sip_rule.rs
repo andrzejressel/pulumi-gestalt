@@ -93,8 +93,6 @@ pub mod sdkvoice_sip_rule {
         name: &str,
         args: SdkvoiceSipRuleArgs,
     ) -> SdkvoiceSipRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disabled_binding = args.disabled.get_output(context);
         let name_binding = args.name.get_output(context);
         let target_applications_binding = args.target_applications.get_output(context);

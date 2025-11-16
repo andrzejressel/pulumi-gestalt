@@ -104,8 +104,6 @@ pub mod data_connector_microsoft_threat_intelligence {
         name: &str,
         args: DataConnectorMicrosoftThreatIntelligenceArgs,
     ) -> DataConnectorMicrosoftThreatIntelligenceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
             .get_output(context);

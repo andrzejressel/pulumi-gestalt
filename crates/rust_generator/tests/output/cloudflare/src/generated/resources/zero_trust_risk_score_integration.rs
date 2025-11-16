@@ -52,8 +52,6 @@ pub mod zero_trust_risk_score_integration {
         name: &str,
         args: ZeroTrustRiskScoreIntegrationArgs,
     ) -> ZeroTrustRiskScoreIntegrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let active_binding = args.active.get_output(context);
         let integration_type_binding = args.integration_type.get_output(context);

@@ -57,8 +57,6 @@ pub mod get_security_group_rule {
         context: &pulumi_gestalt_rust::Context,
         args: GetSecurityGroupRuleArgs,
     ) -> GetSecurityGroupRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let security_group_rule_id_binding = args
             .security_group_rule_id

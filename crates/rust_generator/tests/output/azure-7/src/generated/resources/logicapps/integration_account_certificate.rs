@@ -109,8 +109,6 @@ pub mod integration_account_certificate {
         name: &str,
         args: IntegrationAccountCertificateArgs,
     ) -> IntegrationAccountCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let integration_account_name_binding = args
             .integration_account_name
             .get_output(context);

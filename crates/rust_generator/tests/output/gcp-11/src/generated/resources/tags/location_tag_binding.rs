@@ -157,8 +157,6 @@ pub mod location_tag_binding {
         name: &str,
         args: LocationTagBindingArgs,
     ) -> LocationTagBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let tag_value_binding = args.tag_value.get_output(context);

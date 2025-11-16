@@ -917,8 +917,6 @@ pub mod region_backend_service {
         name: &str,
         args: RegionBackendServiceArgs,
     ) -> RegionBackendServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let affinity_cookie_ttl_sec_binding = args
             .affinity_cookie_ttl_sec
             .get_output(context);

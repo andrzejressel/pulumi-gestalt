@@ -82,8 +82,6 @@ pub mod log_service {
         name: &str,
         args: LogServiceArgs,
     ) -> LogServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let directory_id_binding = args.directory_id.get_output(context);
         let log_group_name_binding = args.log_group_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

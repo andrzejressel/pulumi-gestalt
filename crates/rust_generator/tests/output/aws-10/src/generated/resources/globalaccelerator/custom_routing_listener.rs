@@ -84,8 +84,6 @@ pub mod custom_routing_listener {
         name: &str,
         args: CustomRoutingListenerArgs,
     ) -> CustomRoutingListenerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerator_arn_binding = args.accelerator_arn.get_output(context);
         let port_ranges_binding = args.port_ranges.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

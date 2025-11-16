@@ -145,8 +145,6 @@ pub mod output_event_hub {
         name: &str,
         args: OutputEventHubArgs,
     ) -> OutputEventHubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let eventhub_name_binding = args.eventhub_name.get_output(context);
         let name_binding = args.name.get_output(context);

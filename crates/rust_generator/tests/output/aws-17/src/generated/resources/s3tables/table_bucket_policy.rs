@@ -68,8 +68,6 @@ pub mod table_bucket_policy {
         name: &str,
         args: TableBucketPolicyArgs,
     ) -> TableBucketPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_policy_binding = args.resource_policy.get_output(context);
         let table_bucket_arn_binding = args.table_bucket_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

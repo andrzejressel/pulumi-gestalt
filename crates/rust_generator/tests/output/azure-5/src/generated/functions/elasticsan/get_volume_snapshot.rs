@@ -36,8 +36,6 @@ pub mod get_volume_snapshot {
         context: &pulumi_gestalt_rust::Context,
         args: GetVolumeSnapshotArgs,
     ) -> GetVolumeSnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let volume_group_id_binding = args.volume_group_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

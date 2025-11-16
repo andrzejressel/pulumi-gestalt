@@ -79,8 +79,6 @@ pub mod data_catalog_encryption_settings {
         name: &str,
         args: DataCatalogEncryptionSettingsArgs,
     ) -> DataCatalogEncryptionSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let data_catalog_encryption_settings_binding = args
             .data_catalog_encryption_settings

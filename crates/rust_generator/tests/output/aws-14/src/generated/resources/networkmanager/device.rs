@@ -119,8 +119,6 @@ pub mod device {
         name: &str,
         args: DeviceArgs,
     ) -> DeviceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_location_binding = args.aws_location.get_output(context);
         let description_binding = args.description.get_output(context);
         let global_network_id_binding = args.global_network_id.get_output(context);

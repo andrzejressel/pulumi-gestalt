@@ -123,8 +123,6 @@ pub mod cache_policy {
         name: &str,
         args: CachePolicyArgs,
     ) -> CachePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let comment_binding = args.comment.get_output(context);
         let default_ttl_binding = args.default_ttl.get_output(context);
         let max_ttl_binding = args.max_ttl.get_output(context);

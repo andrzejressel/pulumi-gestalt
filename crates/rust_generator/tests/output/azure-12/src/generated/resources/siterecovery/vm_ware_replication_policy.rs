@@ -92,8 +92,6 @@ pub mod vm_ware_replication_policy {
         name: &str,
         args: VMWareReplicationPolicyArgs,
     ) -> VMWareReplicationPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_consistent_snapshot_frequency_in_minutes_binding = args
             .application_consistent_snapshot_frequency_in_minutes
             .get_output(context);

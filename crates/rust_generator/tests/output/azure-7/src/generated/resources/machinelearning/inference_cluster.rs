@@ -199,8 +199,6 @@ pub mod inference_cluster {
         name: &str,
         args: InferenceClusterArgs,
     ) -> InferenceClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_purpose_binding = args.cluster_purpose.get_output(context);
         let description_binding = args.description.get_output(context);
         let identity_binding = args.identity.get_output(context);

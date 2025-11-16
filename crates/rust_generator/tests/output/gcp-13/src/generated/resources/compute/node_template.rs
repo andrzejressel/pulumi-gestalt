@@ -262,8 +262,6 @@ pub mod node_template {
         name: &str,
         args: NodeTemplateArgs,
     ) -> NodeTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerators_binding = args.accelerators.get_output(context);
         let cpu_overcommit_type_binding = args.cpu_overcommit_type.get_output(context);
         let description_binding = args.description.get_output(context);

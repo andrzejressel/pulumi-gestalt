@@ -57,8 +57,6 @@ pub mod organization_configuration {
         name: &str,
         args: OrganizationConfigurationArgs,
     ) -> OrganizationConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_enable_binding = args.auto_enable.get_output(context);
         let graph_arn_binding = args.graph_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

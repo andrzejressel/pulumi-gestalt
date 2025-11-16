@@ -214,8 +214,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let acl_name_binding = args.acl_name.get_output(context);
         let auto_minor_version_upgrade_binding = args
             .auto_minor_version_upgrade

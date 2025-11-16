@@ -237,8 +237,6 @@ pub mod developer {
         name: &str,
         args: DeveloperArgs,
     ) -> DeveloperResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let email_binding = args.email.get_output(context);
         let first_name_binding = args.first_name.get_output(context);

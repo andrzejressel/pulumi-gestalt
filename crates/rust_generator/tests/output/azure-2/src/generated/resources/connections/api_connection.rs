@@ -109,8 +109,6 @@ pub mod api_connection {
         name: &str,
         args: ApiConnectionArgs,
     ) -> ApiConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let managed_api_id_binding = args.managed_api_id.get_output(context);
         let name_binding = args.name.get_output(context);

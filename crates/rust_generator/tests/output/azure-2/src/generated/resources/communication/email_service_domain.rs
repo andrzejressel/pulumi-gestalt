@@ -106,8 +106,6 @@ pub mod email_service_domain {
         name: &str,
         args: EmailServiceDomainArgs,
     ) -> EmailServiceDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_management_binding = args.domain_management.get_output(context);
         let email_service_id_binding = args.email_service_id.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -103,8 +103,6 @@ pub mod data_connector_aws_s_3 {
         name: &str,
         args: DataConnectorAwsS3Args,
     ) -> DataConnectorAwsS3Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_role_arn_binding = args.aws_role_arn.get_output(context);
         let destination_table_binding = args.destination_table.get_output(context);
         let log_analytics_workspace_id_binding = args

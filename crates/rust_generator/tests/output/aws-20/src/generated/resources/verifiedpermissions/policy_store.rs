@@ -74,8 +74,6 @@ pub mod policy_store {
         name: &str,
         args: PolicyStoreArgs,
     ) -> PolicyStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let validation_settings_binding = args.validation_settings.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

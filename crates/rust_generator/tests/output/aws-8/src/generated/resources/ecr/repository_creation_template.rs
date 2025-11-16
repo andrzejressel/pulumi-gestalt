@@ -160,8 +160,6 @@ pub mod repository_creation_template {
         name: &str,
         args: RepositoryCreationTemplateArgs,
     ) -> RepositoryCreationTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let applied_fors_binding = args.applied_fors.get_output(context);
         let custom_role_arn_binding = args.custom_role_arn.get_output(context);
         let description_binding = args.description.get_output(context);

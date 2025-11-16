@@ -305,8 +305,6 @@ pub mod interconnect {
         name: &str,
         args: InterconnectArgs,
     ) -> InterconnectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_enabled_binding = args.admin_enabled.get_output(context);
         let customer_name_binding = args.customer_name.get_output(context);
         let description_binding = args.description.get_output(context);

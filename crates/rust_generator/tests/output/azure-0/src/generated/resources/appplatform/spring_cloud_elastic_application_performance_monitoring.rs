@@ -103,8 +103,6 @@ pub mod spring_cloud_elastic_application_performance_monitoring {
         name: &str,
         args: SpringCloudElasticApplicationPerformanceMonitoringArgs,
     ) -> SpringCloudElasticApplicationPerformanceMonitoringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_packages_binding = args.application_packages.get_output(context);
         let globally_enabled_binding = args.globally_enabled.get_output(context);
         let name_binding = args.name.get_output(context);

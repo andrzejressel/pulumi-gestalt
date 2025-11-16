@@ -296,8 +296,6 @@ pub mod delivery_pipeline {
         name: &str,
         args: DeliveryPipelineArgs,
     ) -> DeliveryPipelineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);

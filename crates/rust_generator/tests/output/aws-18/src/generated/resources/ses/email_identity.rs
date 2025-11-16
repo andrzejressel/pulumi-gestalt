@@ -54,8 +54,6 @@ pub mod email_identity {
         name: &str,
         args: EmailIdentityArgs,
     ) -> EmailIdentityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let email_binding = args.email.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/emailIdentity:EmailIdentity".into(),

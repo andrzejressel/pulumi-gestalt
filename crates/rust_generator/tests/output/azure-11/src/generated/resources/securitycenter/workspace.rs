@@ -79,8 +79,6 @@ pub mod workspace {
         name: &str,
         args: WorkspaceArgs,
     ) -> WorkspaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let scope_binding = args.scope.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

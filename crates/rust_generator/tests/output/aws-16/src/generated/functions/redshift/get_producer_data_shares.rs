@@ -46,8 +46,6 @@ pub mod get_producer_data_shares {
         context: &pulumi_gestalt_rust::Context,
         args: GetProducerDataSharesArgs,
     ) -> GetProducerDataSharesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_shares_binding = args.data_shares.get_output(context);
         let producer_arn_binding = args.producer_arn.get_output(context);
         let status_binding = args.status.get_output(context);

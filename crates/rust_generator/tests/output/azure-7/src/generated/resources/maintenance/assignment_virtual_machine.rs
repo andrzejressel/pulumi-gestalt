@@ -131,8 +131,6 @@ pub mod assignment_virtual_machine {
         name: &str,
         args: AssignmentVirtualMachineArgs,
     ) -> AssignmentVirtualMachineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let maintenance_configuration_id_binding = args
             .maintenance_configuration_id

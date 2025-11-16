@@ -70,8 +70,6 @@ pub mod control_panel {
         name: &str,
         args: ControlPanelArgs,
     ) -> ControlPanelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_arn_binding = args.cluster_arn.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

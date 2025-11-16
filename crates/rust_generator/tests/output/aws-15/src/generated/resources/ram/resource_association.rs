@@ -62,8 +62,6 @@ pub mod resource_association {
         name: &str,
         args: ResourceAssociationArgs,
     ) -> ResourceAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_arn_binding = args.resource_arn.get_output(context);
         let resource_share_arn_binding = args.resource_share_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

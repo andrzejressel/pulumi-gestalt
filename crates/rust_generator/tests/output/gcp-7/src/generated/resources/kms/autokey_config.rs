@@ -170,8 +170,6 @@ pub mod autokey_config {
         name: &str,
         args: AutokeyConfigArgs,
     ) -> AutokeyConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let folder_binding = args.folder.get_output(context);
         let key_project_binding = args.key_project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

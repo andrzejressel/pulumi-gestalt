@@ -113,8 +113,6 @@ pub mod control {
         name: &str,
         args: ControlArgs,
     ) -> ControlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_plan_instructions_binding = args
             .action_plan_instructions
             .get_output(context);

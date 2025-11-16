@@ -43,8 +43,6 @@ pub mod get_instance_type_offerings {
         context: &pulumi_gestalt_rust::Context,
         args: GetInstanceTypeOfferingsArgs,
     ) -> GetInstanceTypeOfferingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let engine_type_binding = args.engine_type.get_output(context);
         let host_instance_type_binding = args.host_instance_type.get_output(context);
         let storage_type_binding = args.storage_type.get_output(context);

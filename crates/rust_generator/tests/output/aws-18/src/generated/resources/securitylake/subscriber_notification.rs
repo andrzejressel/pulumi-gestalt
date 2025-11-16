@@ -99,8 +99,6 @@ pub mod subscriber_notification {
         name: &str,
         args: SubscriberNotificationArgs,
     ) -> SubscriberNotificationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_binding = args.configuration.get_output(context);
         let subscriber_id_binding = args.subscriber_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

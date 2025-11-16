@@ -77,8 +77,6 @@ pub mod data_share_authorization {
         name: &str,
         args: DataShareAuthorizationArgs,
     ) -> DataShareAuthorizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_writes_binding = args.allow_writes.get_output(context);
         let consumer_identifier_binding = args.consumer_identifier.get_output(context);
         let data_share_arn_binding = args.data_share_arn.get_output(context);

@@ -70,8 +70,6 @@ pub mod metrics_destination {
         name: &str,
         args: MetricsDestinationArgs,
     ) -> MetricsDestinationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_monitor_name_binding = args.app_monitor_name.get_output(context);
         let destination_binding = args.destination.get_output(context);
         let destination_arn_binding = args.destination_arn.get_output(context);

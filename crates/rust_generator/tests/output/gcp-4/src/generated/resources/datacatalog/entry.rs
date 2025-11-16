@@ -245,8 +245,6 @@ pub mod entry {
         name: &str,
         args: EntryArgs,
     ) -> EntryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let entry_group_binding = args.entry_group.get_output(context);

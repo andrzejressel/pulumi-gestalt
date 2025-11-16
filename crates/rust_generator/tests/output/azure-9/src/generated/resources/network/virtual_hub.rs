@@ -137,8 +137,6 @@ pub mod virtual_hub {
         name: &str,
         args: VirtualHubArgs,
     ) -> VirtualHubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_prefix_binding = args.address_prefix.get_output(context);
         let hub_routing_preference_binding = args
             .hub_routing_preference

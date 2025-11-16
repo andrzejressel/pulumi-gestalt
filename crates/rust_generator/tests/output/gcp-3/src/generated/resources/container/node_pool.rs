@@ -338,8 +338,6 @@ pub mod node_pool {
         name: &str,
         args: NodePoolArgs,
     ) -> NodePoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autoscaling_binding = args.autoscaling.get_output(context);
         let cluster_binding = args.cluster.get_output(context);
         let initial_node_count_binding = args.initial_node_count.get_output(context);

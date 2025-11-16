@@ -360,8 +360,6 @@ pub mod attached_cluster {
         name: &str,
         args: AttachedClusterArgs,
     ) -> AttachedClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let authorization_binding = args.authorization.get_output(context);
         let binary_authorization_binding = args.binary_authorization.get_output(context);

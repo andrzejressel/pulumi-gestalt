@@ -143,8 +143,6 @@ pub mod object_replication {
         name: &str,
         args: ObjectReplicationArgs,
     ) -> ObjectReplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_storage_account_id_binding = args
             .destination_storage_account_id
             .get_output(context);

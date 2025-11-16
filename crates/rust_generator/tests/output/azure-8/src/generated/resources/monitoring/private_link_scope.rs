@@ -89,8 +89,6 @@ pub mod private_link_scope {
         name: &str,
         args: PrivateLinkScopeArgs,
     ) -> PrivateLinkScopeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ingestion_access_mode_binding = args
             .ingestion_access_mode
             .get_output(context);

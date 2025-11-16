@@ -76,8 +76,6 @@ pub mod shared_directory_accepter {
         name: &str,
         args: SharedDirectoryAccepterArgs,
     ) -> SharedDirectoryAccepterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let shared_directory_id_binding = args.shared_directory_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:directoryservice/sharedDirectoryAccepter:SharedDirectoryAccepter"

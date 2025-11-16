@@ -227,8 +227,6 @@ pub mod event_grid_data_connection {
         name: &str,
         args: EventGridDataConnectionArgs,
     ) -> EventGridDataConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let blob_storage_event_type_binding = args
             .blob_storage_event_type
             .get_output(context);

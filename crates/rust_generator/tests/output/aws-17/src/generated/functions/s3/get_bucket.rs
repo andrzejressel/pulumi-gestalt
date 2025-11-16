@@ -40,8 +40,6 @@ pub mod get_bucket {
         context: &pulumi_gestalt_rust::Context,
         args: GetBucketArgs,
     ) -> GetBucketResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:s3/getBucket:getBucket".into(),

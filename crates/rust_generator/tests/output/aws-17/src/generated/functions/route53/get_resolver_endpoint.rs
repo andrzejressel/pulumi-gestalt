@@ -46,8 +46,6 @@ pub mod get_resolver_endpoint {
         context: &pulumi_gestalt_rust::Context,
         args: GetResolverEndpointArgs,
     ) -> GetResolverEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let resolver_endpoint_id_binding = args.resolver_endpoint_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

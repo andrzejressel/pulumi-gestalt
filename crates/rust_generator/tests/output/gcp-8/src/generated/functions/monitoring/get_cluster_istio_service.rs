@@ -64,8 +64,6 @@ pub mod get_cluster_istio_service {
         context: &pulumi_gestalt_rust::Context,
         args: GetClusterIstioServiceArgs,
     ) -> GetClusterIstioServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let location_binding = args.location.get_output(context);
         let project_binding = args.project.get_output(context);

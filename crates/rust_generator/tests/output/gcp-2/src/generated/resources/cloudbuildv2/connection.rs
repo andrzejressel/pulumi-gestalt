@@ -310,8 +310,6 @@ pub mod connection {
         name: &str,
         args: ConnectionArgs,
     ) -> ConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let bitbucket_cloud_config_binding = args
             .bitbucket_cloud_config

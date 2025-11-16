@@ -114,8 +114,6 @@ pub mod organization_settings {
         name: &str,
         args: OrganizationSettingsArgs,
     ) -> OrganizationSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disable_default_sink_binding = args.disable_default_sink.get_output(context);
         let kms_key_name_binding = args.kms_key_name.get_output(context);
         let organization_binding = args.organization.get_output(context);

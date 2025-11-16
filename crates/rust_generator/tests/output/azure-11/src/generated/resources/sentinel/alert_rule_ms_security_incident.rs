@@ -138,8 +138,6 @@ pub mod alert_rule_ms_security_incident {
         name: &str,
         args: AlertRuleMsSecurityIncidentArgs,
     ) -> AlertRuleMsSecurityIncidentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alert_rule_template_guid_binding = args
             .alert_rule_template_guid
             .get_output(context);

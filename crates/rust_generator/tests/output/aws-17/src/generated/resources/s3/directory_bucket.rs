@@ -81,8 +81,6 @@ pub mod directory_bucket {
         name: &str,
         args: DirectoryBucketArgs,
     ) -> DirectoryBucketResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let data_redundancy_binding = args.data_redundancy.get_output(context);
         let force_destroy_binding = args.force_destroy.get_output(context);

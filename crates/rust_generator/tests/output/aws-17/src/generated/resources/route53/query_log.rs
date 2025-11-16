@@ -101,8 +101,6 @@ pub mod query_log {
         name: &str,
         args: QueryLogArgs,
     ) -> QueryLogResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloudwatch_log_group_arn_binding = args
             .cloudwatch_log_group_arn
             .get_output(context);

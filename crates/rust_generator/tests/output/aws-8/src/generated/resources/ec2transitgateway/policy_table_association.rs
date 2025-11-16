@@ -68,8 +68,6 @@ pub mod policy_table_association {
         name: &str,
         args: PolicyTableAssociationArgs,
     ) -> PolicyTableAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let transit_gateway_attachment_id_binding = args
             .transit_gateway_attachment_id
             .get_output(context);

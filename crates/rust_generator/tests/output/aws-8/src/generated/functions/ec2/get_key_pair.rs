@@ -59,8 +59,6 @@ pub mod get_key_pair {
         context: &pulumi_gestalt_rust::Context,
         args: GetKeyPairArgs,
     ) -> GetKeyPairResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let include_public_key_binding = args.include_public_key.get_output(context);
         let key_name_binding = args.key_name.get_output(context);

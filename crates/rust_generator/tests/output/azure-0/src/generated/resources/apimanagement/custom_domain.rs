@@ -163,8 +163,6 @@ pub mod custom_domain {
         name: &str,
         args: CustomDomainArgs,
     ) -> CustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_id_binding = args.api_management_id.get_output(context);
         let developer_portals_binding = args.developer_portals.get_output(context);
         let gateways_binding = args.gateways.get_output(context);

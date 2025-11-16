@@ -119,8 +119,6 @@ pub mod instance_config {
         name: &str,
         args: InstanceConfigArgs,
     ) -> InstanceConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_config_binding = args.base_config.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let labels_binding = args.labels.get_output(context);

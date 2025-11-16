@@ -90,8 +90,6 @@ pub mod bot_alias {
         name: &str,
         args: BotAliasArgs,
     ) -> BotAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bot_name_binding = args.bot_name.get_output(context);
         let bot_version_binding = args.bot_version.get_output(context);
         let conversation_logs_binding = args.conversation_logs.get_output(context);

@@ -38,8 +38,6 @@ pub mod get_table_entities {
         context: &pulumi_gestalt_rust::Context,
         args: GetTableEntitiesArgs,
     ) -> GetTableEntitiesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filter_binding = args.filter.get_output(context);
         let selects_binding = args.selects.get_output(context);
         let storage_table_id_binding = args.storage_table_id.get_output(context);

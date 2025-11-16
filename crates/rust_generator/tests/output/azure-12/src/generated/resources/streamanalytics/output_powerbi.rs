@@ -104,8 +104,6 @@ pub mod output_powerbi {
         name: &str,
         args: OutputPowerbiArgs,
     ) -> OutputPowerbiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dataset_binding = args.dataset.get_output(context);
         let group_id_binding = args.group_id.get_output(context);
         let group_name_binding = args.group_name.get_output(context);

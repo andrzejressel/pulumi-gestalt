@@ -136,8 +136,6 @@ pub mod kubernetes_cluster_extension {
         name: &str,
         args: KubernetesClusterExtensionArgs,
     ) -> KubernetesClusterExtensionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_id_binding = args.cluster_id.get_output(context);
         let configuration_protected_settings_binding = args
             .configuration_protected_settings

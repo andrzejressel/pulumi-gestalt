@@ -18,8 +18,6 @@ pub mod func_with_const_input {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(context: &pulumi_gestalt_rust::Context, args: FuncWithConstInputArgs) {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let plain_input_binding = args.plain_input.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "mypkg::funcWithConstInput".into(),

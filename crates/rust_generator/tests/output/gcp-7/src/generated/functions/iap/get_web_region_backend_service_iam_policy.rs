@@ -39,8 +39,6 @@ pub mod get_web_region_backend_service_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetWebRegionBackendServiceIamPolicyArgs,
     ) -> GetWebRegionBackendServiceIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let region_binding = args.region.get_output(context);
         let web_region_backend_service_binding = args

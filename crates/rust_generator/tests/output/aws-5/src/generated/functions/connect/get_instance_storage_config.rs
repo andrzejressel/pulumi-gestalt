@@ -40,8 +40,6 @@ pub mod get_instance_storage_config {
         context: &pulumi_gestalt_rust::Context,
         args: GetInstanceStorageConfigArgs,
     ) -> GetInstanceStorageConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let association_id_binding = args.association_id.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let resource_type_binding = args.resource_type.get_output(context);

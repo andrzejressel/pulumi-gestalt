@@ -84,8 +84,6 @@ pub mod user_login_profile {
         name: &str,
         args: UserLoginProfileArgs,
     ) -> UserLoginProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let password_length_binding = args.password_length.get_output(context);
         let password_reset_required_binding = args
             .password_reset_required

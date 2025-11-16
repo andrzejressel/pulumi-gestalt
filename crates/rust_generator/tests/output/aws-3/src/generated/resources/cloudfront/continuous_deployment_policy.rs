@@ -139,8 +139,6 @@ pub mod continuous_deployment_policy {
         name: &str,
         args: ContinuousDeploymentPolicyArgs,
     ) -> ContinuousDeploymentPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let staging_distribution_dns_names_binding = args
             .staging_distribution_dns_names

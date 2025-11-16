@@ -119,8 +119,6 @@ pub mod static_site {
         name: &str,
         args: StaticSiteArgs,
     ) -> StaticSiteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_settings_binding = args.app_settings.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let location_binding = args.location.get_output(context);

@@ -127,8 +127,6 @@ pub mod server {
         name: &str,
         args: ServerArgs,
     ) -> ServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_users_binding = args.admin_users.get_output(context);
         let backup_blob_container_uri_binding = args
             .backup_blob_container_uri

@@ -196,8 +196,6 @@ pub mod insights {
         name: &str,
         args: InsightsArgs,
     ) -> InsightsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_type_binding = args.application_type.get_output(context);
         let daily_data_cap_in_gb_binding = args.daily_data_cap_in_gb.get_output(context);
         let daily_data_cap_notifications_disabled_binding = args

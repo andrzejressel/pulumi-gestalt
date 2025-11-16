@@ -109,8 +109,6 @@ pub mod recording_configuration {
         name: &str,
         args: RecordingConfigurationArgs,
     ) -> RecordingConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_configuration_binding = args
             .destination_configuration
             .get_output(context);

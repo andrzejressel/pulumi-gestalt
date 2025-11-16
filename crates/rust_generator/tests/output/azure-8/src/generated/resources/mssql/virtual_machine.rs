@@ -186,8 +186,6 @@ pub mod virtual_machine {
         name: &str,
         args: VirtualMachineArgs,
     ) -> VirtualMachineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assessment_binding = args.assessment.get_output(context);
         let auto_backup_binding = args.auto_backup.get_output(context);
         let auto_patching_binding = args.auto_patching.get_output(context);

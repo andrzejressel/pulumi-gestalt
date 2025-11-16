@@ -44,8 +44,6 @@ pub mod get_user {
         context: &pulumi_gestalt_rust::Context,
         args: GetUserArgs,
     ) -> GetUserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_name_binding = args.api_management_name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let user_id_binding = args.user_id.get_output(context);

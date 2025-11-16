@@ -231,8 +231,6 @@ pub mod user {
         name: &str,
         args: UserArgs,
     ) -> UserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_policy_binding = args.deletion_policy.get_output(context);
         let host_binding = args.host.get_output(context);
         let instance_binding = args.instance.get_output(context);

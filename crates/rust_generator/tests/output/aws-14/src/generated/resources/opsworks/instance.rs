@@ -288,8 +288,6 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_version_binding = args.agent_version.get_output(context);
         let ami_id_binding = args.ami_id.get_output(context);
         let architecture_binding = args.architecture.get_output(context);

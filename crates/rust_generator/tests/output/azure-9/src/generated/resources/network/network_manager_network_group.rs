@@ -85,8 +85,6 @@ pub mod network_manager_network_group {
         name: &str,
         args: NetworkManagerNetworkGroupArgs,
     ) -> NetworkManagerNetworkGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let network_manager_id_binding = args.network_manager_id.get_output(context);

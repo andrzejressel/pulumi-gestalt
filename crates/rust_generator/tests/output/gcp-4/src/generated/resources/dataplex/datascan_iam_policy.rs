@@ -254,8 +254,6 @@ pub mod datascan_iam_policy {
         name: &str,
         args: DatascanIamPolicyArgs,
     ) -> DatascanIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_scan_id_binding = args.data_scan_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);

@@ -135,8 +135,6 @@ pub mod data_catalog {
         name: &str,
         args: DataCatalogArgs,
     ) -> DataCatalogResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let parameters_binding = args.parameters.get_output(context);

@@ -72,8 +72,6 @@ pub mod identity_notification_topic {
         name: &str,
         args: IdentityNotificationTopicArgs,
     ) -> IdentityNotificationTopicResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identity_binding = args.identity.get_output(context);
         let include_original_headers_binding = args
             .include_original_headers

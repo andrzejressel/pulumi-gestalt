@@ -46,8 +46,6 @@ pub mod access_tag {
         name: &str,
         args: AccessTagArgs,
     ) -> AccessTagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let app_count_binding = args.app_count.get_output(context);
         let name_binding = args.name.get_output(context);

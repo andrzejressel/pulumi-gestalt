@@ -70,8 +70,6 @@ pub mod active_slot {
         name: &str,
         args: ActiveSlotArgs,
     ) -> ActiveSlotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_name_binding = args.app_service_name.get_output(context);
         let app_service_slot_name_binding = args
             .app_service_slot_name

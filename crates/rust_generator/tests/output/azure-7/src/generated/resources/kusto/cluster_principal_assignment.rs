@@ -110,8 +110,6 @@ pub mod cluster_principal_assignment {
         name: &str,
         args: ClusterPrincipalAssignmentArgs,
     ) -> ClusterPrincipalAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let principal_id_binding = args.principal_id.get_output(context);

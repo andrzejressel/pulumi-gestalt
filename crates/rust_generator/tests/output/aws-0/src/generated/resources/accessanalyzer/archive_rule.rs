@@ -74,8 +74,6 @@ pub mod archive_rule {
         name: &str,
         args: ArchiveRuleArgs,
     ) -> ArchiveRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let analyzer_name_binding = args.analyzer_name.get_output(context);
         let filters_binding = args.filters.get_output(context);
         let rule_name_binding = args.rule_name.get_output(context);

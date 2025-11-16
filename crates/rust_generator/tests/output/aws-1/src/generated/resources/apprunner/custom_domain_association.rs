@@ -77,8 +77,6 @@ pub mod custom_domain_association {
         name: &str,
         args: CustomDomainAssociationArgs,
     ) -> CustomDomainAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let enable_www_subdomain_binding = args.enable_www_subdomain.get_output(context);
         let service_arn_binding = args.service_arn.get_output(context);

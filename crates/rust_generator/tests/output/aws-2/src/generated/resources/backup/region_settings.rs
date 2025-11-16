@@ -79,8 +79,6 @@ pub mod region_settings {
         name: &str,
         args: RegionSettingsArgs,
     ) -> RegionSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_type_management_preference_binding = args
             .resource_type_management_preference
             .get_output(context);

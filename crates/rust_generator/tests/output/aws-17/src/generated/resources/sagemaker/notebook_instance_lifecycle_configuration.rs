@@ -74,8 +74,6 @@ pub mod notebook_instance_lifecycle_configuration {
         name: &str,
         args: NotebookInstanceLifecycleConfigurationArgs,
     ) -> NotebookInstanceLifecycleConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let on_create_binding = args.on_create.get_output(context);
         let on_start_binding = args.on_start.get_output(context);

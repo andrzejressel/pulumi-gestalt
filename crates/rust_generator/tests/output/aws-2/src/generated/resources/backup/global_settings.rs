@@ -53,8 +53,6 @@ pub mod global_settings {
         name: &str,
         args: GlobalSettingsArgs,
     ) -> GlobalSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let global_settings_binding = args.global_settings.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:backup/globalSettings:GlobalSettings".into(),

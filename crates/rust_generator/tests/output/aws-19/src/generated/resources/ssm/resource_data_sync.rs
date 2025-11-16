@@ -102,8 +102,6 @@ pub mod resource_data_sync {
         name: &str,
         args: ResourceDataSyncArgs,
     ) -> ResourceDataSyncResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let s3_destination_binding = args.s3_destination.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

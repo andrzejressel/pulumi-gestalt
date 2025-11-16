@@ -176,8 +176,6 @@ pub mod synapse_spark {
         name: &str,
         args: SynapseSparkArgs,
     ) -> SynapseSparkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let local_auth_enabled_binding = args.local_auth_enabled.get_output(context);

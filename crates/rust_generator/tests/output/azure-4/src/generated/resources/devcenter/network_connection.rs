@@ -133,8 +133,6 @@ pub mod network_connection {
         name: &str,
         args: NetworkConnectionArgs,
     ) -> NetworkConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_join_type_binding = args.domain_join_type.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
         let domain_password_binding = args.domain_password.get_output(context);

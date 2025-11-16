@@ -134,8 +134,6 @@ pub mod endpoint_configuration {
         name: &str,
         args: EndpointConfigurationArgs,
     ) -> EndpointConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let async_inference_config_binding = args
             .async_inference_config
             .get_output(context);

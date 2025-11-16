@@ -80,8 +80,6 @@ pub mod access_mutual_tls_hostname_settings {
         name: &str,
         args: AccessMutualTlsHostnameSettingsArgs,
     ) -> AccessMutualTlsHostnameSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let settings_binding = args.settings.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

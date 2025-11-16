@@ -216,8 +216,6 @@ pub mod private_cloud {
         name: &str,
         args: PrivateCloudArgs,
     ) -> PrivateCloudResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_delay_hours_binding = args.deletion_delay_hours.get_output(context);
         let description_binding = args.description.get_output(context);
         let location_binding = args.location.get_output(context);

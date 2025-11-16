@@ -90,8 +90,6 @@ pub mod hci_storage_path {
         name: &str,
         args: HciStoragePathArgs,
     ) -> HciStoragePathResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_location_id_binding = args.custom_location_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);

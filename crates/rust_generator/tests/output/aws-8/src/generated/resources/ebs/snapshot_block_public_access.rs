@@ -52,8 +52,6 @@ pub mod snapshot_block_public_access {
         name: &str,
         args: SnapshotBlockPublicAccessArgs,
     ) -> SnapshotBlockPublicAccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let state_binding = args.state.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ebs/snapshotBlockPublicAccess:SnapshotBlockPublicAccess".into(),

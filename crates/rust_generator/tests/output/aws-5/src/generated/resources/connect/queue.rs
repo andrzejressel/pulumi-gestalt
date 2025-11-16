@@ -148,8 +148,6 @@ pub mod queue {
         name: &str,
         args: QueueArgs,
     ) -> QueueResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let hours_of_operation_id_binding = args
             .hours_of_operation_id

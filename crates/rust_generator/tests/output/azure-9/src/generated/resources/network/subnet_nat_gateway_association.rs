@@ -94,8 +94,6 @@ pub mod subnet_nat_gateway_association {
         name: &str,
         args: SubnetNatGatewayAssociationArgs,
     ) -> SubnetNatGatewayAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let nat_gateway_id_binding = args.nat_gateway_id.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

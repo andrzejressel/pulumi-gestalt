@@ -158,8 +158,6 @@ pub mod trigger_schedule {
         name: &str,
         args: TriggerScheduleArgs,
     ) -> TriggerScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let activated_binding = args.activated.get_output(context);
         let annotations_binding = args.annotations.get_output(context);
         let data_factory_id_binding = args.data_factory_id.get_output(context);

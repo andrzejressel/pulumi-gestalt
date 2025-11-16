@@ -127,8 +127,6 @@ pub mod instance_fleet {
         name: &str,
         args: InstanceFleetArgs,
     ) -> InstanceFleetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_id_binding = args.cluster_id.get_output(context);
         let instance_type_configs_binding = args
             .instance_type_configs

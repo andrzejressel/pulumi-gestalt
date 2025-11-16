@@ -96,8 +96,6 @@ pub mod data_integration {
         name: &str,
         args: DataIntegrationArgs,
     ) -> DataIntegrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let kms_key_binding = args.kms_key.get_output(context);
         let name_binding = args.name.get_output(context);

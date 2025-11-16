@@ -100,8 +100,6 @@ pub mod hosted_transit_virtual_interface_acceptor {
         name: &str,
         args: HostedTransitVirtualInterfaceAcceptorArgs,
     ) -> HostedTransitVirtualInterfaceAcceptorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dx_gateway_id_binding = args.dx_gateway_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let virtual_interface_id_binding = args.virtual_interface_id.get_output(context);

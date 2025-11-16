@@ -103,8 +103,6 @@ pub mod configuration_template {
         name: &str,
         args: ConfigurationTemplateArgs,
     ) -> ConfigurationTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_binding = args.application.get_output(context);
         let description_binding = args.description.get_output(context);
         let environment_id_binding = args.environment_id.get_output(context);

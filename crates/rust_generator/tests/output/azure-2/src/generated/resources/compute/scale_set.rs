@@ -495,8 +495,6 @@ pub mod scale_set {
         name: &str,
         args: ScaleSetArgs,
     ) -> ScaleSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automatic_os_upgrade_binding = args.automatic_os_upgrade.get_output(context);
         let boot_diagnostics_binding = args.boot_diagnostics.get_output(context);
         let eviction_policy_binding = args.eviction_policy.get_output(context);

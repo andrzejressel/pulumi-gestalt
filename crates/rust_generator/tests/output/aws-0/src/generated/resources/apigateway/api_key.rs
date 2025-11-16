@@ -93,8 +93,6 @@ pub mod api_key {
         name: &str,
         args: ApiKeyArgs,
     ) -> ApiKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let customer_id_binding = args.customer_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

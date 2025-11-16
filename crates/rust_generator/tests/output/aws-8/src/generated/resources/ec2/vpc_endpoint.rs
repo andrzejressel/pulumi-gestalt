@@ -256,8 +256,6 @@ pub mod vpc_endpoint {
         name: &str,
         args: VpcEndpointArgs,
     ) -> VpcEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_accept_binding = args.auto_accept.get_output(context);
         let dns_options_binding = args.dns_options.get_output(context);
         let ip_address_type_binding = args.ip_address_type.get_output(context);

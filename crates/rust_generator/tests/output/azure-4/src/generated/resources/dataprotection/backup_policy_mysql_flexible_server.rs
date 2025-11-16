@@ -148,8 +148,6 @@ pub mod backup_policy_mysql_flexible_server {
         name: &str,
         args: BackupPolicyMysqlFlexibleServerArgs,
     ) -> BackupPolicyMysqlFlexibleServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_repeating_time_intervals_binding = args
             .backup_repeating_time_intervals
             .get_output(context);

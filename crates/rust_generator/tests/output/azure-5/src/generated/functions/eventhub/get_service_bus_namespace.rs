@@ -52,8 +52,6 @@ pub mod get_service_bus_namespace {
         context: &pulumi_gestalt_rust::Context,
         args: GetServiceBusNamespaceArgs,
     ) -> GetServiceBusNamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

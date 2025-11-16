@@ -91,8 +91,6 @@ pub mod access_ca_certificate {
         name: &str,
         args: AccessCaCertificateArgs,
     ) -> AccessCaCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let application_id_binding = args.application_id.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

@@ -220,8 +220,6 @@ pub mod domain {
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_network_access_type_binding = args
             .app_network_access_type
             .get_output(context);

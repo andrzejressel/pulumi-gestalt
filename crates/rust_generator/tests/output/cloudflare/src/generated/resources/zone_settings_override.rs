@@ -103,8 +103,6 @@ pub mod zone_settings_override {
         name: &str,
         args: ZoneSettingsOverrideArgs,
     ) -> ZoneSettingsOverrideResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let settings_binding = args.settings.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -162,8 +162,6 @@ pub mod backup_schedule {
         name: &str,
         args: BackupScheduleArgs,
     ) -> BackupScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let daily_recurrence_binding = args.daily_recurrence.get_output(context);
         let database_binding = args.database.get_output(context);
         let project_binding = args.project.get_output(context);

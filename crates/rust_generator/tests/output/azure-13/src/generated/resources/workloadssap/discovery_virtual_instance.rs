@@ -126,8 +126,6 @@ pub mod discovery_virtual_instance {
         name: &str,
         args: DiscoveryVirtualInstanceArgs,
     ) -> DiscoveryVirtualInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let central_server_virtual_machine_id_binding = args
             .central_server_virtual_machine_id
             .get_output(context);

@@ -75,8 +75,6 @@ pub mod application_layer_automatic_response {
         name: &str,
         args: ApplicationLayerAutomaticResponseArgs,
     ) -> ApplicationLayerAutomaticResponseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let resource_arn_binding = args.resource_arn.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

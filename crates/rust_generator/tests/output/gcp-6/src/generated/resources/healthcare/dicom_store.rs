@@ -207,8 +207,6 @@ pub mod dicom_store {
         name: &str,
         args: DicomStoreArgs,
     ) -> DicomStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dataset_binding = args.dataset.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let name_binding = args.name.get_output(context);

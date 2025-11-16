@@ -78,8 +78,6 @@ pub mod webhook {
         name: &str,
         args: WebhookArgs,
     ) -> WebhookResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let branch_name_binding = args.branch_name.get_output(context);
         let description_binding = args.description.get_output(context);

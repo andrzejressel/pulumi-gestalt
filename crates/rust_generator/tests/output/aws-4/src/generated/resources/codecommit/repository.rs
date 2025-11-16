@@ -113,8 +113,6 @@ pub mod repository {
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_branch_binding = args.default_branch.get_output(context);
         let description_binding = args.description.get_output(context);
         let kms_key_id_binding = args.kms_key_id.get_output(context);

@@ -29,8 +29,6 @@ pub mod pulumi_terraform_bridge_2801 {
         name: &str,
         args: PulumiTerraformBridge2801Args,
     ) -> PulumiTerraformBridge2801Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let type__binding = args.type_.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "example:index:PulumiTerraformBridge2801".into(),

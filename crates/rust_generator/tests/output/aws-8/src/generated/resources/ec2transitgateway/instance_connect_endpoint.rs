@@ -102,8 +102,6 @@ pub mod instance_connect_endpoint {
         name: &str,
         args: InstanceConnectEndpointArgs,
     ) -> InstanceConnectEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let preserve_client_ip_binding = args.preserve_client_ip.get_output(context);
         let security_group_ids_binding = args.security_group_ids.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);

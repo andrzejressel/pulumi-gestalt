@@ -239,8 +239,6 @@ pub mod state_machine {
         name: &str,
         args: StateMachineArgs,
     ) -> StateMachineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let definition_binding = args.definition.get_output(context);
         let encryption_configuration_binding = args
             .encryption_configuration

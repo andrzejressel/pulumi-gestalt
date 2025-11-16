@@ -54,8 +54,6 @@ pub mod active_receipt_rule_set {
         name: &str,
         args: ActiveReceiptRuleSetArgs,
     ) -> ActiveReceiptRuleSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let rule_set_name_binding = args.rule_set_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/activeReceiptRuleSet:ActiveReceiptRuleSet".into(),

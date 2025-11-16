@@ -408,8 +408,6 @@ pub mod orchestrated_virtual_machine_scale_set {
         name: &str,
         args: OrchestratedVirtualMachineScaleSetArgs,
     ) -> OrchestratedVirtualMachineScaleSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_capabilities_binding = args
             .additional_capabilities
             .get_output(context);

@@ -132,8 +132,6 @@ pub mod repository {
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let create_ignore_already_exists_binding = args
             .create_ignore_already_exists
             .get_output(context);

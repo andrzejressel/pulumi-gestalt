@@ -35,8 +35,6 @@ pub mod get_image {
         context: &pulumi_gestalt_rust::Context,
         args: GetImageArgs,
     ) -> GetImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let image_id_binding = args.image_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:workspaces/getImage:getImage".into(),

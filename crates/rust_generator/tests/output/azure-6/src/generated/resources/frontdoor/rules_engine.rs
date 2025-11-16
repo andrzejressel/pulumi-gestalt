@@ -157,8 +157,6 @@ pub mod rules_engine {
         name: &str,
         args: RulesEngineArgs,
     ) -> RulesEngineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let frontdoor_name_binding = args.frontdoor_name.get_output(context);
         let name_binding = args.name.get_output(context);

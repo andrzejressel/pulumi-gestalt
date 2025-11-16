@@ -85,8 +85,6 @@ pub mod usage_limit {
         name: &str,
         args: UsageLimitArgs,
     ) -> UsageLimitResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let amount_binding = args.amount.get_output(context);
         let breach_action_binding = args.breach_action.get_output(context);
         let period_binding = args.period.get_output(context);

@@ -108,8 +108,6 @@ pub mod key_ring_import_job {
         name: &str,
         args: KeyRingImportJobArgs,
     ) -> KeyRingImportJobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let import_job_id_binding = args.import_job_id.get_output(context);
         let import_method_binding = args.import_method.get_output(context);
         let key_ring_binding = args.key_ring.get_output(context);

@@ -30,8 +30,6 @@ pub mod get_user_pools {
         context: &pulumi_gestalt_rust::Context,
         args: GetUserPoolsArgs,
     ) -> GetUserPoolsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cognito/getUserPools:getUserPools".into(),

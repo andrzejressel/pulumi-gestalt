@@ -239,8 +239,6 @@ pub mod lustre_file_system {
         name: &str,
         args: LustreFileSystemArgs,
     ) -> LustreFileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_import_policy_binding = args.auto_import_policy.get_output(context);
         let automatic_backup_retention_days_binding = args
             .automatic_backup_retention_days

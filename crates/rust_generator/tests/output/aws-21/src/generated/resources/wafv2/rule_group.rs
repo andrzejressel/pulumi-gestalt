@@ -90,8 +90,6 @@ pub mod rule_group {
         name: &str,
         args: RuleGroupArgs,
     ) -> RuleGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capacity_binding = args.capacity.get_output(context);
         let custom_response_bodies_binding = args
             .custom_response_bodies

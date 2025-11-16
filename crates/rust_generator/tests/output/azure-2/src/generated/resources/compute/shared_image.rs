@@ -241,8 +241,6 @@ pub mod shared_image {
         name: &str,
         args: SharedImageArgs,
     ) -> SharedImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerated_network_support_enabled_binding = args
             .accelerated_network_support_enabled
             .get_output(context);

@@ -130,8 +130,6 @@ pub mod spring_cloud_app_mysql_association {
         name: &str,
         args: SpringCloudAppMysqlAssociationArgs,
     ) -> SpringCloudAppMysqlAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_name_binding = args.database_name.get_output(context);
         let mysql_server_id_binding = args.mysql_server_id.get_output(context);
         let name_binding = args.name.get_output(context);

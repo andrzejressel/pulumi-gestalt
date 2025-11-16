@@ -137,8 +137,6 @@ pub mod spring_cloud_api_portal {
         name: &str,
         args: SpringCloudApiPortalArgs,
     ) -> SpringCloudApiPortalResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_try_out_enabled_binding = args.api_try_out_enabled.get_output(context);
         let gateway_ids_binding = args.gateway_ids.get_output(context);
         let https_only_enabled_binding = args.https_only_enabled.get_output(context);

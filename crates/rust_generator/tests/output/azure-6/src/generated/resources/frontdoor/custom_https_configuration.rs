@@ -135,8 +135,6 @@ pub mod custom_https_configuration {
         name: &str,
         args: CustomHttpsConfigurationArgs,
     ) -> CustomHttpsConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_https_configuration_binding = args
             .custom_https_configuration
             .get_output(context);

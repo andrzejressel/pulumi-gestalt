@@ -151,8 +151,6 @@ pub mod workbook_template {
         name: &str,
         args: WorkbookTemplateArgs,
     ) -> WorkbookTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let author_binding = args.author.get_output(context);
         let galleries_binding = args.galleries.get_output(context);
         let localized_binding = args.localized.get_output(context);

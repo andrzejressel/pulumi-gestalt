@@ -91,8 +91,6 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let fips_enabled_binding = args.fips_enabled.get_output(context);
         let tags_binding = args.tags.get_output(context);

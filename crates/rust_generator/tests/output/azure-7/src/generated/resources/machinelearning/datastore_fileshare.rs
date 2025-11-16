@@ -151,8 +151,6 @@ pub mod datastore_fileshare {
         name: &str,
         args: DatastoreFileshareArgs,
     ) -> DatastoreFileshareResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_key_binding = args.account_key.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);

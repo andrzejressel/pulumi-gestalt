@@ -234,8 +234,6 @@ pub mod listener {
         name: &str,
         args: ListenerArgs,
     ) -> ListenerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_action_binding = args.default_action.get_output(context);
         let name_binding = args.name.get_output(context);
         let port_binding = args.port.get_output(context);

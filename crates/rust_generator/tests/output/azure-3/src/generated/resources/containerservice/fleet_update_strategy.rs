@@ -93,8 +93,6 @@ pub mod fleet_update_strategy {
         name: &str,
         args: FleetUpdateStrategyArgs,
     ) -> FleetUpdateStrategyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let kubernetes_fleet_manager_id_binding = args
             .kubernetes_fleet_manager_id
             .get_output(context);

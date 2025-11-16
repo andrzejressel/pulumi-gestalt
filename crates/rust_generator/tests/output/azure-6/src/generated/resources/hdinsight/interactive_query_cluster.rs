@@ -326,8 +326,6 @@ pub mod interactive_query_cluster {
         name: &str,
         args: InteractiveQueryClusterArgs,
     ) -> InteractiveQueryClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_version_binding = args.cluster_version.get_output(context);
         let component_version_binding = args.component_version.get_output(context);
         let compute_isolation_binding = args.compute_isolation.get_output(context);

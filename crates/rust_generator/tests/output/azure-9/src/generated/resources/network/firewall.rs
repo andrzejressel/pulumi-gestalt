@@ -191,8 +191,6 @@ pub mod firewall {
         name: &str,
         args: FirewallArgs,
     ) -> FirewallResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dns_proxy_enabled_binding = args.dns_proxy_enabled.get_output(context);
         let dns_servers_binding = args.dns_servers.get_output(context);
         let firewall_policy_id_binding = args.firewall_policy_id.get_output(context);

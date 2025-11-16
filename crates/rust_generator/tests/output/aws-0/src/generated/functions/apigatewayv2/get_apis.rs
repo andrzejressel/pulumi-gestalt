@@ -41,8 +41,6 @@ pub mod get_apis {
         context: &pulumi_gestalt_rust::Context,
         args: GetApisArgs,
     ) -> GetApisResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let protocol_type_binding = args.protocol_type.get_output(context);
         let tags_binding = args.tags.get_output(context);

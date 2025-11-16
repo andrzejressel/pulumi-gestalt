@@ -144,8 +144,6 @@ pub mod notification {
         name: &str,
         args: NotificationArgs,
     ) -> NotificationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let custom_attributes_binding = args.custom_attributes.get_output(context);
         let event_types_binding = args.event_types.get_output(context);

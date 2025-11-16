@@ -113,8 +113,6 @@ pub mod document_ai_processor {
         name: &str,
         args: DocumentAiProcessorArgs,
     ) -> DocumentAiProcessorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let kms_key_name_binding = args.kms_key_name.get_output(context);
         let location_binding = args.location.get_output(context);

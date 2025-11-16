@@ -173,8 +173,6 @@ pub mod security_scan_config {
         name: &str,
         args: SecurityScanConfigArgs,
     ) -> SecurityScanConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_binding = args.authentication.get_output(context);
         let blacklist_patterns_binding = args.blacklist_patterns.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

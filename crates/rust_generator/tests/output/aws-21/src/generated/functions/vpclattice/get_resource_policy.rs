@@ -28,8 +28,6 @@ pub mod get_resource_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetResourcePolicyArgs,
     ) -> GetResourcePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_arn_binding = args.resource_arn.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:vpclattice/getResourcePolicy:getResourcePolicy".into(),

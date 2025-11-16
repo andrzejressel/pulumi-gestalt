@@ -113,8 +113,6 @@ pub mod replication_recovery_plan {
         name: &str,
         args: ReplicationRecoveryPlanArgs,
     ) -> ReplicationRecoveryPlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let azure_to_azure_settings_binding = args
             .azure_to_azure_settings
             .get_output(context);

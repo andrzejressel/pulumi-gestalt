@@ -42,8 +42,6 @@ pub mod workspace_customer_managed_key {
         name: &str,
         args: WorkspaceCustomerManagedKeyArgs,
     ) -> WorkspaceCustomerManagedKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_vault_key_id_binding = args.key_vault_key_id.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

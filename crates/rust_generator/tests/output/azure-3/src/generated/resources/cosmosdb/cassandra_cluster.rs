@@ -187,8 +187,6 @@ pub mod cassandra_cluster {
         name: &str,
         args: CassandraClusterArgs,
     ) -> CassandraClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_method_binding = args
             .authentication_method
             .get_output(context);

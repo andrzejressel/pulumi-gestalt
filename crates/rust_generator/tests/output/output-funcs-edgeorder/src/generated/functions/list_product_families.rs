@@ -45,8 +45,6 @@ pub mod list_product_families {
         context: &pulumi_gestalt_rust::Context,
         args: ListProductFamiliesArgs,
     ) -> ListProductFamiliesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let customer_subscription_details_binding = args
             .customer_subscription_details
             .get_output(context);

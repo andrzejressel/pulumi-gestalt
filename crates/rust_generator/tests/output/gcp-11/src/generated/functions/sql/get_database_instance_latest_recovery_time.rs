@@ -34,8 +34,6 @@ pub mod get_database_instance_latest_recovery_time {
         context: &pulumi_gestalt_rust::Context,
         args: GetDatabaseInstanceLatestRecoveryTimeArgs,
     ) -> GetDatabaseInstanceLatestRecoveryTimeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_binding = args.instance.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -143,8 +143,6 @@ pub mod open_zfs_volume {
         name: &str,
         args: OpenZfsVolumeArgs,
     ) -> OpenZfsVolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let copy_tags_to_snapshots_binding = args
             .copy_tags_to_snapshots
             .get_output(context);

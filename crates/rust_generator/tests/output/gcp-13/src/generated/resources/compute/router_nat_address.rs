@@ -111,8 +111,6 @@ pub mod router_nat_address {
         name: &str,
         args: RouterNatAddressArgs,
     ) -> RouterNatAddressResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let drain_nat_ips_binding = args.drain_nat_ips.get_output(context);
         let nat_ips_binding = args.nat_ips.get_output(context);
         let project_binding = args.project.get_output(context);

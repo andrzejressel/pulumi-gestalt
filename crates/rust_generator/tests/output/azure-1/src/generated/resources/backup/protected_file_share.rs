@@ -124,8 +124,6 @@ pub mod protected_file_share {
         name: &str,
         args: ProtectedFileShareArgs,
     ) -> ProtectedFileShareResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let recovery_vault_name_binding = args.recovery_vault_name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

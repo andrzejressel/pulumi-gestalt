@@ -92,8 +92,6 @@ pub mod service_perimeter_egress_policy {
         name: &str,
         args: ServicePerimeterEgressPolicyArgs,
     ) -> ServicePerimeterEgressPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let egress_from_binding = args.egress_from.get_output(context);
         let egress_to_binding = args.egress_to.get_output(context);
         let perimeter_binding = args.perimeter.get_output(context);

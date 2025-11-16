@@ -123,8 +123,6 @@ pub mod snapshot_copy {
         name: &str,
         args: SnapshotCopyArgs,
     ) -> SnapshotCopyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let completion_duration_minutes_binding = args
             .completion_duration_minutes
             .get_output(context);

@@ -84,8 +84,6 @@ pub mod log_subscription_filter {
         name: &str,
         args: LogSubscriptionFilterArgs,
     ) -> LogSubscriptionFilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_arn_binding = args.destination_arn.get_output(context);
         let distribution_binding = args.distribution.get_output(context);
         let filter_pattern_binding = args.filter_pattern.get_output(context);

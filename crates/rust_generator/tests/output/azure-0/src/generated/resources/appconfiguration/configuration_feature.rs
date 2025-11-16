@@ -165,8 +165,6 @@ pub mod configuration_feature {
         name: &str,
         args: ConfigurationFeatureArgs,
     ) -> ConfigurationFeatureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_store_id_binding = args
             .configuration_store_id
             .get_output(context);

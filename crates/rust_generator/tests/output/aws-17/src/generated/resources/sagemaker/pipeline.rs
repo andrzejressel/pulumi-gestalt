@@ -113,8 +113,6 @@ pub mod pipeline {
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parallelism_configuration_binding = args
             .parallelism_configuration
             .get_output(context);

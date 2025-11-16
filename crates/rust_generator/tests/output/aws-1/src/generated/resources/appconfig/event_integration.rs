@@ -88,8 +88,6 @@ pub mod event_integration {
         name: &str,
         args: EventIntegrationArgs,
     ) -> EventIntegrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let event_filter_binding = args.event_filter.get_output(context);
         let eventbridge_bus_binding = args.eventbridge_bus.get_output(context);

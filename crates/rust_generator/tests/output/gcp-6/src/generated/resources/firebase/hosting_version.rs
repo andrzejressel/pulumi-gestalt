@@ -329,8 +329,6 @@ pub mod hosting_version {
         name: &str,
         args: HostingVersionArgs,
     ) -> HostingVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_binding = args.config.get_output(context);
         let site_id_binding = args.site_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

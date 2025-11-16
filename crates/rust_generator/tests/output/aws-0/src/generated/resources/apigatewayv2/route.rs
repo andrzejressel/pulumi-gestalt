@@ -173,8 +173,6 @@ pub mod route {
         name: &str,
         args: RouteArgs,
     ) -> RouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let api_key_required_binding = args.api_key_required.get_output(context);
         let authorization_scopes_binding = args.authorization_scopes.get_output(context);

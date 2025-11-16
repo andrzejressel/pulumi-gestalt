@@ -39,8 +39,6 @@ pub mod get_runtime_versions {
         context: &pulumi_gestalt_rust::Context,
         args: GetRuntimeVersionsArgs,
     ) -> GetRuntimeVersionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let runtime_versions_binding = args.runtime_versions.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:synthetics/getRuntimeVersions:getRuntimeVersions".into(),

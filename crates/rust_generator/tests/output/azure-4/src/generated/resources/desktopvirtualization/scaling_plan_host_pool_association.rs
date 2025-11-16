@@ -131,8 +131,6 @@ pub mod scaling_plan_host_pool_association {
         name: &str,
         args: ScalingPlanHostPoolAssociationArgs,
     ) -> ScalingPlanHostPoolAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let host_pool_id_binding = args.host_pool_id.get_output(context);
         let scaling_plan_id_binding = args.scaling_plan_id.get_output(context);

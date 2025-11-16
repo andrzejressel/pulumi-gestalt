@@ -173,8 +173,6 @@ pub mod endpoint_cosmosdb_account {
         name: &str,
         args: EndpointCosmosdbAccountArgs,
     ) -> EndpointCosmosdbAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_type_binding = args.authentication_type.get_output(context);
         let container_name_binding = args.container_name.get_output(context);
         let database_name_binding = args.database_name.get_output(context);

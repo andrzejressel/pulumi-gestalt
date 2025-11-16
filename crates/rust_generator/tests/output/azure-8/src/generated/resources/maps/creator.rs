@@ -93,8 +93,6 @@ pub mod creator {
         name: &str,
         args: CreatorArgs,
     ) -> CreatorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let maps_account_id_binding = args.maps_account_id.get_output(context);
         let name_binding = args.name.get_output(context);

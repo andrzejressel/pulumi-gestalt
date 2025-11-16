@@ -113,8 +113,6 @@ pub mod vpc_ipam {
         name: &str,
         args: VpcIpamArgs,
     ) -> VpcIpamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cascade_binding = args.cascade.get_output(context);
         let description_binding = args.description.get_output(context);
         let enable_private_gua_binding = args.enable_private_gua.get_output(context);

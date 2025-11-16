@@ -129,8 +129,6 @@ pub mod backup_instance_blog_storage {
         name: &str,
         args: BackupInstanceBlogStorageArgs,
     ) -> BackupInstanceBlogStorageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);

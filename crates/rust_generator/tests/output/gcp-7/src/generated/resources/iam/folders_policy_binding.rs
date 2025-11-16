@@ -196,8 +196,6 @@ pub mod folders_policy_binding {
         name: &str,
         args: FoldersPolicyBindingArgs,
     ) -> FoldersPolicyBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

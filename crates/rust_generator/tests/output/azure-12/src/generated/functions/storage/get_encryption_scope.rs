@@ -34,8 +34,6 @@ pub mod get_encryption_scope {
         context: &pulumi_gestalt_rust::Context,
         args: GetEncryptionScopeArgs,
     ) -> GetEncryptionScopeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let storage_account_id_binding = args.storage_account_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

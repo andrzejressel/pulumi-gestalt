@@ -316,8 +316,6 @@ pub mod permission {
         name: &str,
         args: PermissionArgs,
     ) -> PermissionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let event_source_token_binding = args.event_source_token.get_output(context);
         let function_binding = args.function.get_output(context);

@@ -69,8 +69,6 @@ pub mod get_file_system {
         context: &pulumi_gestalt_rust::Context,
         args: GetFileSystemArgs,
     ) -> GetFileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let creation_token_binding = args.creation_token.get_output(context);
         let file_system_id_binding = args.file_system_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

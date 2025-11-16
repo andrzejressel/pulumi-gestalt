@@ -53,8 +53,6 @@ pub mod get_ip_ranges {
         context: &pulumi_gestalt_rust::Context,
         args: GetIpRangesArgs,
     ) -> GetIpRangesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let id_binding = args.id.get_output(context);
         let regions_binding = args.regions.get_output(context);
         let services_binding = args.services.get_output(context);

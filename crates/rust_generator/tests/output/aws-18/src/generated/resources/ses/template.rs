@@ -76,8 +76,6 @@ pub mod template {
         name: &str,
         args: TemplateArgs,
     ) -> TemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let html_binding = args.html.get_output(context);
         let name_binding = args.name.get_output(context);
         let subject_binding = args.subject.get_output(context);

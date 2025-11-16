@@ -99,8 +99,6 @@ pub mod log_group {
         name: &str,
         args: LogGroupArgs,
     ) -> LogGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let kms_key_id_binding = args.kms_key_id.get_output(context);
         let log_group_class_binding = args.log_group_class.get_output(context);
         let name_binding = args.name.get_output(context);

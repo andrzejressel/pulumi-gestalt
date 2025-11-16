@@ -102,8 +102,6 @@ pub mod subnet_network_security_group_association {
         name: &str,
         args: SubnetNetworkSecurityGroupAssociationArgs,
     ) -> SubnetNetworkSecurityGroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let network_security_group_id_binding = args
             .network_security_group_id
             .get_output(context);

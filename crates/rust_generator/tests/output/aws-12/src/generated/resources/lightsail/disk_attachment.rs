@@ -85,8 +85,6 @@ pub mod disk_attachment {
         name: &str,
         args: Disk_attachmentArgs,
     ) -> Disk_attachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disk_name_binding = args.disk_name.get_output(context);
         let disk_path_binding = args.disk_path.get_output(context);
         let instance_name_binding = args.instance_name.get_output(context);

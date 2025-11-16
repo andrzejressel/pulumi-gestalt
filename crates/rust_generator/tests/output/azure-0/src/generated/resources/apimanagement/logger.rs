@@ -133,8 +133,6 @@ pub mod logger {
         name: &str,
         args: LoggerArgs,
     ) -> LoggerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_name_binding = args.api_management_name.get_output(context);
         let application_insights_binding = args.application_insights.get_output(context);
         let buffered_binding = args.buffered.get_output(context);

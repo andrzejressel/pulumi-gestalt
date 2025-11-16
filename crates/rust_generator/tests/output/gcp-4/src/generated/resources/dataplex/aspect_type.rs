@@ -289,8 +289,6 @@ pub mod aspect_type {
         name: &str,
         args: AspectTypeArgs,
     ) -> AspectTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aspect_type_id_binding = args.aspect_type_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

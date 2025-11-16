@@ -122,8 +122,6 @@ pub mod lication_load_balancer_subnet_association {
         name: &str,
         args: LicationLoadBalancerSubnetAssociationArgs,
     ) -> LicationLoadBalancerSubnetAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_load_balancer_id_binding = args
             .application_load_balancer_id
             .get_output(context);

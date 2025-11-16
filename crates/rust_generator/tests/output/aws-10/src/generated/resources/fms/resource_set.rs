@@ -85,8 +85,6 @@ pub mod resource_set {
         name: &str,
         args: ResourceSetArgs,
     ) -> ResourceSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_sets_binding = args.resource_sets.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

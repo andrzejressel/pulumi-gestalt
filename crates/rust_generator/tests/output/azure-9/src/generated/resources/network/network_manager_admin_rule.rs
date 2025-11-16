@@ -173,8 +173,6 @@ pub mod network_manager_admin_rule {
         name: &str,
         args: NetworkManagerAdminRuleArgs,
     ) -> NetworkManagerAdminRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let admin_rule_collection_id_binding = args
             .admin_rule_collection_id

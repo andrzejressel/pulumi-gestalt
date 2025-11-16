@@ -177,8 +177,6 @@ pub mod subscription_policy_assignment {
         name: &str,
         args: SubscriptionPolicyAssignmentArgs,
     ) -> SubscriptionPolicyAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enforce_binding = args.enforce.get_output(context);

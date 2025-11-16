@@ -274,8 +274,6 @@ pub mod volume_group_sap_hana {
         name: &str,
         args: VolumeGroupSapHanaArgs,
     ) -> VolumeGroupSapHanaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let application_identifier_binding = args
             .application_identifier

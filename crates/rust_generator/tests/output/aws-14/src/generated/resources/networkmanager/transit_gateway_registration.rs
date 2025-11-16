@@ -70,8 +70,6 @@ pub mod transit_gateway_registration {
         name: &str,
         args: TransitGatewayRegistrationArgs,
     ) -> TransitGatewayRegistrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let global_network_id_binding = args.global_network_id.get_output(context);
         let transit_gateway_arn_binding = args.transit_gateway_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -378,8 +378,6 @@ pub mod aws_cluster {
         name: &str,
         args: AwsClusterArgs,
     ) -> AwsClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let authorization_binding = args.authorization.get_output(context);
         let aws_region_binding = args.aws_region.get_output(context);

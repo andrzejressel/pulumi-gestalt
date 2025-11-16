@@ -38,8 +38,6 @@ pub mod get_asset {
         context: &pulumi_gestalt_rust::Context,
         args: GetAssetArgs,
     ) -> GetAssetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let asset_id_binding = args.asset_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

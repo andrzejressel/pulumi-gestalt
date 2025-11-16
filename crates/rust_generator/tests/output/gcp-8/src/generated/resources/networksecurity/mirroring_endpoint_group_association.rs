@@ -186,8 +186,6 @@ pub mod mirroring_endpoint_group_association {
         name: &str,
         args: MirroringEndpointGroupAssociationArgs,
     ) -> MirroringEndpointGroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);
         let mirroring_endpoint_group_binding = args

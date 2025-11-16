@@ -121,8 +121,6 @@ pub mod domain_configuration {
         name: &str,
         args: DomainConfigurationArgs,
     ) -> DomainConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorizer_config_binding = args.authorizer_config.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
         let name_binding = args.name.get_output(context);

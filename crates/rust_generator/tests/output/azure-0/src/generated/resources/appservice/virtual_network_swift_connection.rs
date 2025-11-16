@@ -216,8 +216,6 @@ pub mod virtual_network_swift_connection {
         name: &str,
         args: VirtualNetworkSwiftConnectionArgs,
     ) -> VirtualNetworkSwiftConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_id_binding = args.app_service_id.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

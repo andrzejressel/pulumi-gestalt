@@ -99,8 +99,6 @@ pub mod organization {
         name: &str,
         args: OrganizationArgs,
     ) -> OrganizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_service_access_principals_binding = args
             .aws_service_access_principals
             .get_output(context);

@@ -94,8 +94,6 @@ pub mod vmware_replication_policy_association {
         name: &str,
         args: VmwareReplicationPolicyAssociationArgs,
     ) -> VmwareReplicationPolicyAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let policy_id_binding = args.policy_id.get_output(context);
         let recovery_vault_id_binding = args.recovery_vault_id.get_output(context);

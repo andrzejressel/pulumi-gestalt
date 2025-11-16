@@ -30,8 +30,6 @@ pub mod get_groups {
         context: &pulumi_gestalt_rust::Context,
         args: GetGroupsArgs,
     ) -> GetGroupsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identity_store_id_binding = args.identity_store_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:identitystore/getGroups:getGroups".into(),

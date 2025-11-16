@@ -112,8 +112,6 @@ pub mod vpc_attachment {
         name: &str,
         args: VpcAttachmentArgs,
     ) -> VpcAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let core_network_id_binding = args.core_network_id.get_output(context);
         let options_binding = args.options.get_output(context);
         let subnet_arns_binding = args.subnet_arns.get_output(context);

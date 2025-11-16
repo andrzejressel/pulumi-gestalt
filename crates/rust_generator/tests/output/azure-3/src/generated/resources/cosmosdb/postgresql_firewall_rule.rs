@@ -92,8 +92,6 @@ pub mod postgresql_firewall_rule {
         name: &str,
         args: PostgresqlFirewallRuleArgs,
     ) -> PostgresqlFirewallRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_id_binding = args.cluster_id.get_output(context);
         let end_ip_address_binding = args.end_ip_address.get_output(context);
         let name_binding = args.name.get_output(context);

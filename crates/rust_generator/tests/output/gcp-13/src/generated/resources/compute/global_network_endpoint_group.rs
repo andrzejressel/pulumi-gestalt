@@ -148,8 +148,6 @@ pub mod global_network_endpoint_group {
         name: &str,
         args: GlobalNetworkEndpointGroupArgs,
     ) -> GlobalNetworkEndpointGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_port_binding = args.default_port.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);

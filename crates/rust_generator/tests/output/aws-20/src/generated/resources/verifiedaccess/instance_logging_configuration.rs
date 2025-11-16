@@ -212,8 +212,6 @@ pub mod instance_logging_configuration {
         name: &str,
         args: InstanceLoggingConfigurationArgs,
     ) -> InstanceLoggingConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_logs_binding = args.access_logs.get_output(context);
         let verifiedaccess_instance_id_binding = args
             .verifiedaccess_instance_id

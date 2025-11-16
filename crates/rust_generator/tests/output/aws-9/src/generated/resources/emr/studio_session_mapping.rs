@@ -77,8 +77,6 @@ pub mod studio_session_mapping {
         name: &str,
         args: StudioSessionMappingArgs,
     ) -> StudioSessionMappingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identity_id_binding = args.identity_id.get_output(context);
         let identity_name_binding = args.identity_name.get_output(context);
         let identity_type_binding = args.identity_type.get_output(context);

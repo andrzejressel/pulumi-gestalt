@@ -120,8 +120,6 @@ pub mod teams_rule {
         name: &str,
         args: TeamsRuleArgs,
     ) -> TeamsRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);

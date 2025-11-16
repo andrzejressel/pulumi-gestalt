@@ -201,8 +201,6 @@ pub mod dicom_store_iam_binding {
         name: &str,
         args: DicomStoreIamBindingArgs,
     ) -> DicomStoreIamBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let dicom_store_id_binding = args.dicom_store_id.get_output(context);
         let members_binding = args.members.get_output(context);

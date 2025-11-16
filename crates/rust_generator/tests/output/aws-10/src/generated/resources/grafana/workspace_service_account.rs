@@ -68,8 +68,6 @@ pub mod workspace_service_account {
         name: &str,
         args: WorkspaceServiceAccountArgs,
     ) -> WorkspaceServiceAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let grafana_role_binding = args.grafana_role.get_output(context);
         let name_binding = args.name.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);

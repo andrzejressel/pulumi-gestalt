@@ -34,8 +34,6 @@ pub mod get_containers {
         context: &pulumi_gestalt_rust::Context,
         args: GetContainersArgs,
     ) -> GetContainersResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_prefix_binding = args.name_prefix.get_output(context);
         let storage_account_id_binding = args.storage_account_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

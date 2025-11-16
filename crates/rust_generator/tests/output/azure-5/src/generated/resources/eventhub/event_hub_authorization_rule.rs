@@ -127,8 +127,6 @@ pub mod event_hub_authorization_rule {
         name: &str,
         args: EventHubAuthorizationRuleArgs,
     ) -> EventHubAuthorizationRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let eventhub_name_binding = args.eventhub_name.get_output(context);
         let listen_binding = args.listen.get_output(context);
         let manage_binding = args.manage.get_output(context);

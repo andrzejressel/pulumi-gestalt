@@ -43,8 +43,6 @@ pub mod get_kms_crypto_key_version {
         context: &pulumi_gestalt_rust::Context,
         args: GetKmsCryptoKeyVersionArgs,
     ) -> GetKmsCryptoKeyVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crypto_key_binding = args.crypto_key.get_output(context);
         let version_binding = args.version.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

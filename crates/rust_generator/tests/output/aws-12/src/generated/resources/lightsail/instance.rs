@@ -189,8 +189,6 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let add_on_binding = args.add_on.get_output(context);
         let availability_zone_binding = args.availability_zone.get_output(context);
         let blueprint_id_binding = args.blueprint_id.get_output(context);

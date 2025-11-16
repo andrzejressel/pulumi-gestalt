@@ -90,8 +90,6 @@ pub mod trigger_custom {
         name: &str,
         args: TriggerCustomArgs,
     ) -> TriggerCustomResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let body_binding = args.body.get_output(context);
         let logic_app_id_binding = args.logic_app_id.get_output(context);
         let name_binding = args.name.get_output(context);

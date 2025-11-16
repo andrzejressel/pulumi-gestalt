@@ -152,8 +152,6 @@ pub mod email_identity {
         name: &str,
         args: EmailIdentityArgs,
     ) -> EmailIdentityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_set_name_binding = args
             .configuration_set_name
             .get_output(context);

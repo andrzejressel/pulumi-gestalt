@@ -126,8 +126,6 @@ pub mod framework {
         name: &str,
         args: FrameworkArgs,
     ) -> FrameworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let controls_binding = args.controls.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);

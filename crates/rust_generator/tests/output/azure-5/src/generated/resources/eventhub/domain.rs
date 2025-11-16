@@ -155,8 +155,6 @@ pub mod domain {
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_create_topic_with_first_subscription_binding = args
             .auto_create_topic_with_first_subscription
             .get_output(context);

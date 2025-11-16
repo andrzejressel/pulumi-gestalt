@@ -110,8 +110,6 @@ pub mod namespace_disaster_recovery_config {
         name: &str,
         args: NamespaceDisasterRecoveryConfigArgs,
     ) -> NamespaceDisasterRecoveryConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_authorization_rule_id_binding = args
             .alias_authorization_rule_id
             .get_output(context);

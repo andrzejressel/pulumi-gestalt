@@ -120,8 +120,6 @@ pub mod detector {
         name: &str,
         args: DetectorArgs,
     ) -> DetectorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let datasources_binding = args.datasources.get_output(context);
         let enable_binding = args.enable.get_output(context);
         let finding_publishing_frequency_binding = args

@@ -117,8 +117,6 @@ pub mod slot_virtual_network_swift_connection {
         name: &str,
         args: SlotVirtualNetworkSwiftConnectionArgs,
     ) -> SlotVirtualNetworkSwiftConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_id_binding = args.app_service_id.get_output(context);
         let slot_name_binding = args.slot_name.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);

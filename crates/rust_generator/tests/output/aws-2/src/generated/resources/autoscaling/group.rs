@@ -834,8 +834,6 @@ pub mod group {
         name: &str,
         args: GroupArgs,
     ) -> GroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_distribution_binding = args
             .availability_zone_distribution
             .get_output(context);

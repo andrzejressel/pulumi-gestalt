@@ -439,8 +439,6 @@ pub mod event_source_mapping {
         name: &str,
         args: EventSourceMappingArgs,
     ) -> EventSourceMappingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let amazon_managed_kafka_event_source_config_binding = args
             .amazon_managed_kafka_event_source_config
             .get_output(context);

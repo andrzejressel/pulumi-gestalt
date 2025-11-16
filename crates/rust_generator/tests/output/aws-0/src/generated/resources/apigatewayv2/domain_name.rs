@@ -141,8 +141,6 @@ pub mod domain_name {
         name: &str,
         args: DomainNameArgs,
     ) -> DomainNameResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let domain_name_configuration_binding = args
             .domain_name_configuration

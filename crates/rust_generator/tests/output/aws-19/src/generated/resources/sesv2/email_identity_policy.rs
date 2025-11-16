@@ -74,8 +74,6 @@ pub mod email_identity_policy {
         name: &str,
         args: EmailIdentityPolicyArgs,
     ) -> EmailIdentityPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let email_identity_binding = args.email_identity.get_output(context);
         let policy_binding = args.policy.get_output(context);
         let policy_name_binding = args.policy_name.get_output(context);

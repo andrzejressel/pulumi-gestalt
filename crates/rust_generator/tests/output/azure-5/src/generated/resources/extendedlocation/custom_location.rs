@@ -85,8 +85,6 @@ pub mod custom_location {
         name: &str,
         args: CustomLocationArgs,
     ) -> CustomLocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_binding = args.authentication.get_output(context);
         let cluster_extension_ids_binding = args
             .cluster_extension_ids

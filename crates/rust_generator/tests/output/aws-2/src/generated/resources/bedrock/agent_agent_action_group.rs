@@ -252,8 +252,6 @@ pub mod agent_agent_action_group {
         name: &str,
         args: AgentAgentActionGroupArgs,
     ) -> AgentAgentActionGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_group_executor_binding = args
             .action_group_executor
             .get_output(context);

@@ -126,8 +126,6 @@ pub mod reservation_assignment {
         name: &str,
         args: ReservationAssignmentArgs,
     ) -> ReservationAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assignee_binding = args.assignee.get_output(context);
         let job_type_binding = args.job_type.get_output(context);
         let location_binding = args.location.get_output(context);

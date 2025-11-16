@@ -89,8 +89,6 @@ pub mod upload_buffer {
         name: &str,
         args: UploadBufferArgs,
     ) -> UploadBufferResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disk_id_binding = args.disk_id.get_output(context);
         let disk_path_binding = args.disk_path.get_output(context);
         let gateway_arn_binding = args.gateway_arn.get_output(context);

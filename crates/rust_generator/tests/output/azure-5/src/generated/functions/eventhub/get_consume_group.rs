@@ -40,8 +40,6 @@ pub mod get_consume_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetConsumeGroupArgs,
     ) -> GetConsumeGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let eventhub_name_binding = args.eventhub_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let namespace_name_binding = args.namespace_name.get_output(context);

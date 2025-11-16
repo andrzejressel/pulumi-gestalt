@@ -410,8 +410,6 @@ pub mod slo {
         name: &str,
         args: SloArgs,
     ) -> SloResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let basic_sli_binding = args.basic_sli.get_output(context);
         let calendar_period_binding = args.calendar_period.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

@@ -159,8 +159,6 @@ pub mod invocation {
         name: &str,
         args: InvocationArgs,
     ) -> InvocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let function_name_binding = args.function_name.get_output(context);
         let input_binding = args.input.get_output(context);
         let lifecycle_scope_binding = args.lifecycle_scope.get_output(context);

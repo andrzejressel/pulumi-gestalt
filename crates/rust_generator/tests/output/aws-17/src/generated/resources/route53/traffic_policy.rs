@@ -76,8 +76,6 @@ pub mod traffic_policy {
         name: &str,
         args: TrafficPolicyArgs,
     ) -> TrafficPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let comment_binding = args.comment.get_output(context);
         let document_binding = args.document.get_output(context);
         let name_binding = args.name.get_output(context);

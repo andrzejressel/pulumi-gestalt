@@ -134,8 +134,6 @@ pub mod phone_number {
         name: &str,
         args: PhoneNumberArgs,
     ) -> PhoneNumberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let country_code_binding = args.country_code.get_output(context);
         let description_binding = args.description.get_output(context);
         let prefix_binding = args.prefix.get_output(context);

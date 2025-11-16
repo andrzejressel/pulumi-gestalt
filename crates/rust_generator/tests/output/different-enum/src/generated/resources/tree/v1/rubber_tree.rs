@@ -69,8 +69,6 @@ pub mod rubber_tree {
         name: &str,
         args: RubberTreeArgs,
     ) -> RubberTreeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_binding = args.container.get_output(context);
         let diameter_binding = args.diameter.get_output(context);
         let farm_binding = args.farm.get_output(context);

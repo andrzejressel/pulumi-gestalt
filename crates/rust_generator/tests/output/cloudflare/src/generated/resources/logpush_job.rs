@@ -119,8 +119,6 @@ pub mod logpush_job {
         name: &str,
         args: LogpushJobArgs,
     ) -> LogpushJobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let dataset_binding = args.dataset.get_output(context);
         let destination_conf_binding = args.destination_conf.get_output(context);

@@ -139,8 +139,6 @@ pub mod restore_point {
         name: &str,
         args: RestorePointArgs,
     ) -> RestorePointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crash_consistency_mode_enabled_binding = args
             .crash_consistency_mode_enabled
             .get_output(context);

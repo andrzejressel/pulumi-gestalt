@@ -65,8 +65,6 @@ pub mod group_association {
         name: &str,
         args: GroupAssociationArgs,
     ) -> GroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let canary_arn_binding = args.canary_arn.get_output(context);
         let group_name_binding = args.group_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

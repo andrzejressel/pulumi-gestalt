@@ -152,8 +152,6 @@ pub mod alert_processing_rule_action_group {
         name: &str,
         args: AlertProcessingRuleActionGroupArgs,
     ) -> AlertProcessingRuleActionGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let add_action_group_ids_binding = args.add_action_group_ids.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let description_binding = args.description.get_output(context);

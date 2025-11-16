@@ -116,8 +116,6 @@ pub mod user_pool_domain {
         name: &str,
         args: UserPoolDomainArgs,
     ) -> UserPoolDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let domain_binding = args.domain.get_output(context);
         let user_pool_id_binding = args.user_pool_id.get_output(context);

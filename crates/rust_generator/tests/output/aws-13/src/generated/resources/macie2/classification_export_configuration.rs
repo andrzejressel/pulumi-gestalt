@@ -69,8 +69,6 @@ pub mod classification_export_configuration {
         name: &str,
         args: ClassificationExportConfigurationArgs,
     ) -> ClassificationExportConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let s3_destination_binding = args.s3_destination.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:macie2/classificationExportConfiguration:ClassificationExportConfiguration"

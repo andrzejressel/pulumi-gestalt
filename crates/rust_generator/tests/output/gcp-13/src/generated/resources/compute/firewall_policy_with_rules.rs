@@ -201,8 +201,6 @@ pub mod firewall_policy_with_rules {
         name: &str,
         args: FirewallPolicyWithRulesArgs,
     ) -> FirewallPolicyWithRulesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let rules_binding = args.rules.get_output(context);

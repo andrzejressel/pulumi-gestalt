@@ -154,8 +154,6 @@ pub mod serverless_access_policy {
         name: &str,
         args: ServerlessAccessPolicyArgs,
     ) -> ServerlessAccessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_binding = args.policy.get_output(context);

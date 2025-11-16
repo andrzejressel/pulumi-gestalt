@@ -98,8 +98,6 @@ pub mod spring_cloud_storage {
         name: &str,
         args: SpringCloudStorageArgs,
     ) -> SpringCloudStorageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let spring_cloud_service_id_binding = args
             .spring_cloud_service_id

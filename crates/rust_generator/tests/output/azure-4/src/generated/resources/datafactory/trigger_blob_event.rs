@@ -164,8 +164,6 @@ pub mod trigger_blob_event {
         name: &str,
         args: TriggerBlobEventArgs,
     ) -> TriggerBlobEventResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let activated_binding = args.activated.get_output(context);
         let additional_properties_binding = args
             .additional_properties

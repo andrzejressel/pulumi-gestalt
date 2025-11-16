@@ -118,8 +118,6 @@ pub mod hci_extension {
         name: &str,
         args: HciExtensionArgs,
     ) -> HciExtensionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arc_setting_id_binding = args.arc_setting_id.get_output(context);
         let auto_upgrade_minor_version_enabled_binding = args
             .auto_upgrade_minor_version_enabled

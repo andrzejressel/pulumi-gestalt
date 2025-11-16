@@ -123,8 +123,6 @@ pub mod schedule {
         name: &str,
         args: ScheduleArgs,
     ) -> ScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autoscaling_group_name_binding = args
             .autoscaling_group_name
             .get_output(context);

@@ -32,8 +32,6 @@ pub mod get_diagnostic_categories {
         context: &pulumi_gestalt_rust::Context,
         args: GetDiagnosticCategoriesArgs,
     ) -> GetDiagnosticCategoriesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_id_binding = args.resource_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:monitoring/getDiagnosticCategories:getDiagnosticCategories"

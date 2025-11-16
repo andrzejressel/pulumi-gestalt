@@ -69,8 +69,6 @@ pub mod security_group_vpc_association {
         name: &str,
         args: SecurityGroupVpcAssociationArgs,
     ) -> SecurityGroupVpcAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let security_group_id_binding = args.security_group_id.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);

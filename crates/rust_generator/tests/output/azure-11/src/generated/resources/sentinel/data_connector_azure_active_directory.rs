@@ -94,8 +94,6 @@ pub mod data_connector_azure_active_directory {
         name: &str,
         args: DataConnectorAzureActiveDirectoryArgs,
     ) -> DataConnectorAzureActiveDirectoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
             .get_output(context);

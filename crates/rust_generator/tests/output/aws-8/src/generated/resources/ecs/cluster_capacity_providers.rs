@@ -89,8 +89,6 @@ pub mod cluster_capacity_providers {
         name: &str,
         args: ClusterCapacityProvidersArgs,
     ) -> ClusterCapacityProvidersResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capacity_providers_binding = args.capacity_providers.get_output(context);
         let cluster_name_binding = args.cluster_name.get_output(context);
         let default_capacity_provider_strategies_binding = args

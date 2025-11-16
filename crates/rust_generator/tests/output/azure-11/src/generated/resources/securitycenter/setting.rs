@@ -62,8 +62,6 @@ pub mod setting {
         name: &str,
         args: SettingArgs,
     ) -> SettingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let setting_name_binding = args.setting_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

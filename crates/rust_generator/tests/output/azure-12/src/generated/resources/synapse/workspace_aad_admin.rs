@@ -145,8 +145,6 @@ pub mod workspace_aad_admin {
         name: &str,
         args: WorkspaceAadAdminArgs,
     ) -> WorkspaceAadAdminResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let login_binding = args.login.get_output(context);
         let object_id_binding = args.object_id.get_output(context);
         let synapse_workspace_id_binding = args.synapse_workspace_id.get_output(context);

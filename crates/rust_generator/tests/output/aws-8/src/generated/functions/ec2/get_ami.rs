@@ -151,8 +151,6 @@ pub mod get_ami {
         context: &pulumi_gestalt_rust::Context,
         args: GetAmiArgs,
     ) -> GetAmiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let executable_users_binding = args.executable_users.get_output(context);
         let filters_binding = args.filters.get_output(context);
         let include_deprecated_binding = args.include_deprecated.get_output(context);

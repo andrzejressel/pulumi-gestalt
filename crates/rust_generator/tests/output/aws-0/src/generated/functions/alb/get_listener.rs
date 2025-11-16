@@ -49,8 +49,6 @@ pub mod get_listener {
         context: &pulumi_gestalt_rust::Context,
         args: GetListenerArgs,
     ) -> GetListenerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let load_balancer_arn_binding = args.load_balancer_arn.get_output(context);
         let port_binding = args.port.get_output(context);

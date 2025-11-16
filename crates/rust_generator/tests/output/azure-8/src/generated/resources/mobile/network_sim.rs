@@ -181,8 +181,6 @@ pub mod network_sim {
         name: &str,
         args: NetworkSimArgs,
     ) -> NetworkSimResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_key_binding = args.authentication_key.get_output(context);
         let device_type_binding = args.device_type.get_output(context);
         let integrated_circuit_card_identifier_binding = args

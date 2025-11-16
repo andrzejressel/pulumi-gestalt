@@ -336,8 +336,6 @@ pub mod run_command {
         name: &str,
         args: RunCommandArgs,
     ) -> RunCommandResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let error_blob_managed_identity_binding = args
             .error_blob_managed_identity
             .get_output(context);

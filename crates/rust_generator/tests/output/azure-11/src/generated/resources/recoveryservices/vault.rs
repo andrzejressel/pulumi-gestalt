@@ -167,8 +167,6 @@ pub mod vault {
         name: &str,
         args: VaultArgs,
     ) -> VaultResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let classic_vmware_replication_enabled_binding = args
             .classic_vmware_replication_enabled
             .get_output(context);

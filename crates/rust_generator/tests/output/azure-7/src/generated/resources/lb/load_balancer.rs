@@ -131,8 +131,6 @@ pub mod load_balancer {
         name: &str,
         args: LoadBalancerArgs,
     ) -> LoadBalancerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let edge_zone_binding = args.edge_zone.get_output(context);
         let frontend_ip_configurations_binding = args
             .frontend_ip_configurations

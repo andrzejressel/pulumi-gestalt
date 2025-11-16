@@ -116,8 +116,6 @@ pub mod safety_rule {
         name: &str,
         args: SafetyRuleArgs,
     ) -> SafetyRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let asserted_controls_binding = args.asserted_controls.get_output(context);
         let control_panel_arn_binding = args.control_panel_arn.get_output(context);
         let gating_controls_binding = args.gating_controls.get_output(context);

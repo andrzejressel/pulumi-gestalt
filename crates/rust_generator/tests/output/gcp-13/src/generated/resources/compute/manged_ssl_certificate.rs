@@ -205,8 +205,6 @@ pub mod manged_ssl_certificate {
         name: &str,
         args: MangedSslCertificateArgs,
     ) -> MangedSslCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let managed_binding = args.managed.get_output(context);
         let name_binding = args.name.get_output(context);

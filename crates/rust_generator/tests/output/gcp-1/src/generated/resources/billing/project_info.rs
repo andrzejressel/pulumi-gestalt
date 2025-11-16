@@ -102,8 +102,6 @@ pub mod project_info {
         name: &str,
         args: ProjectInfoArgs,
     ) -> ProjectInfoResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let billing_account_binding = args.billing_account.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

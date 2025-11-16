@@ -119,8 +119,6 @@ pub mod filter {
         name: &str,
         args: FilterArgs,
     ) -> FilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let detector_id_binding = args.detector_id.get_output(context);

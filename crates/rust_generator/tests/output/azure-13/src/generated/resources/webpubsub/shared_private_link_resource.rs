@@ -121,8 +121,6 @@ pub mod shared_private_link_resource {
         name: &str,
         args: SharedPrivateLinkResourceArgs,
     ) -> SharedPrivateLinkResourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request_message_binding = args.request_message.get_output(context);
         let subresource_name_binding = args.subresource_name.get_output(context);

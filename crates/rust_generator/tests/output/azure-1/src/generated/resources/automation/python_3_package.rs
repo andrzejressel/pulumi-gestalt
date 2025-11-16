@@ -110,8 +110,6 @@ pub mod python_3_package {
         name: &str,
         args: Python3PackageArgs,
     ) -> Python3PackageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automation_account_name_binding = args
             .automation_account_name
             .get_output(context);

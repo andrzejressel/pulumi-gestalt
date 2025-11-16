@@ -78,8 +78,6 @@ pub mod auth_policy {
         name: &str,
         args: AuthPolicyArgs,
     ) -> AuthPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_binding = args.policy.get_output(context);
         let resource_identifier_binding = args.resource_identifier.get_output(context);
         let state_binding = args.state.get_output(context);

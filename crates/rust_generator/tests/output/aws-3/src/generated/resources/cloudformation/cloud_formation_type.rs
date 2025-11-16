@@ -88,8 +88,6 @@ pub mod cloud_formation_type {
         name: &str,
         args: CloudFormationTypeArgs,
     ) -> CloudFormationTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let execution_role_arn_binding = args.execution_role_arn.get_output(context);
         let logging_config_binding = args.logging_config.get_output(context);
         let schema_handler_package_binding = args

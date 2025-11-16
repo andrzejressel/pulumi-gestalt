@@ -156,8 +156,6 @@ pub mod faq {
         name: &str,
         args: FaqArgs,
     ) -> FaqResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let file_format_binding = args.file_format.get_output(context);
         let index_id_binding = args.index_id.get_output(context);

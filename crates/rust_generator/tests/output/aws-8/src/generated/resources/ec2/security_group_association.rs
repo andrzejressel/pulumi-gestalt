@@ -67,8 +67,6 @@ pub mod security_group_association {
         name: &str,
         args: SecurityGroupAssociationArgs,
     ) -> SecurityGroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let replace_default_association_binding = args
             .replace_default_association
             .get_output(context);

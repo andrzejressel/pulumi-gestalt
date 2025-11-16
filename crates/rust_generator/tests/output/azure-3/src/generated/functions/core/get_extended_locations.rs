@@ -28,8 +28,6 @@ pub mod get_extended_locations {
         context: &pulumi_gestalt_rust::Context,
         args: GetExtendedLocationsArgs,
     ) -> GetExtendedLocationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:core/getExtendedLocations:getExtendedLocations".into(),

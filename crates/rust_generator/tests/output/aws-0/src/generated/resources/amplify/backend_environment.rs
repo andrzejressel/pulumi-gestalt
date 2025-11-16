@@ -78,8 +78,6 @@ pub mod backend_environment {
         name: &str,
         args: BackendEnvironmentArgs,
     ) -> BackendEnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let deployment_artifacts_binding = args.deployment_artifacts.get_output(context);
         let environment_name_binding = args.environment_name.get_output(context);

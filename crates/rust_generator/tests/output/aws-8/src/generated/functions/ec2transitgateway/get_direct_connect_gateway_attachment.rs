@@ -53,8 +53,6 @@ pub mod get_direct_connect_gateway_attachment {
         context: &pulumi_gestalt_rust::Context,
         args: GetDirectConnectGatewayAttachmentArgs,
     ) -> GetDirectConnectGatewayAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dx_gateway_id_binding = args.dx_gateway_id.get_output(context);
         let filters_binding = args.filters.get_output(context);
         let tags_binding = args.tags.get_output(context);

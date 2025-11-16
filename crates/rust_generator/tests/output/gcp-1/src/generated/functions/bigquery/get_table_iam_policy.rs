@@ -38,8 +38,6 @@ pub mod get_table_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetTableIamPolicyArgs,
     ) -> GetTableIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dataset_id_binding = args.dataset_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let table_id_binding = args.table_id.get_output(context);

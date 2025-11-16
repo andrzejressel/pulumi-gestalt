@@ -147,8 +147,6 @@ pub mod elastic_cluster {
         name: &str,
         args: ElasticClusterArgs,
     ) -> ElasticClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_user_name_binding = args.admin_user_name.get_output(context);
         let admin_user_password_binding = args.admin_user_password.get_output(context);
         let auth_type_binding = args.auth_type.get_output(context);

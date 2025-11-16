@@ -113,8 +113,6 @@ pub mod mover_target_endpoint {
         name: &str,
         args: MoverTargetEndpointArgs,
     ) -> MoverTargetEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let storage_account_id_binding = args.storage_account_id.get_output(context);

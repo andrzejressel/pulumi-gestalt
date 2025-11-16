@@ -254,8 +254,6 @@ pub mod zero_trust_gateway_settings {
         name: &str,
         args: ZeroTrustGatewaySettingsArgs,
     ) -> ZeroTrustGatewaySettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let activity_log_enabled_binding = args.activity_log_enabled.get_output(context);
         let antivirus_binding = args.antivirus.get_output(context);

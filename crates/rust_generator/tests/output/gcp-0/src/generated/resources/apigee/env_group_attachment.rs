@@ -73,8 +73,6 @@ pub mod env_group_attachment {
         name: &str,
         args: EnvGroupAttachmentArgs,
     ) -> EnvGroupAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let envgroup_id_binding = args.envgroup_id.get_output(context);
         let environment_binding = args.environment.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

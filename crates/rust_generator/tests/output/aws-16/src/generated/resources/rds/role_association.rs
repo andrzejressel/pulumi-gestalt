@@ -53,8 +53,6 @@ pub mod role_association {
         name: &str,
         args: RoleAssociationArgs,
     ) -> RoleAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let db_instance_identifier_binding = args
             .db_instance_identifier
             .get_output(context);

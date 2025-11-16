@@ -191,8 +191,6 @@ pub mod alert_rule_anomaly_duplicate {
         name: &str,
         args: AlertRuleAnomalyDuplicateArgs,
     ) -> AlertRuleAnomalyDuplicateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let built_in_rule_id_binding = args.built_in_rule_id.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

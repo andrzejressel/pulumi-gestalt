@@ -30,8 +30,6 @@ pub mod get_plan {
         context: &pulumi_gestalt_rust::Context,
         args: GetPlanArgs,
     ) -> GetPlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_id_binding = args.contact_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ssmcontacts/getPlan:getPlan".into(),

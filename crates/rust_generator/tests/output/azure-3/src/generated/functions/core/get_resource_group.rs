@@ -31,8 +31,6 @@ pub mod get_resource_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetResourceGroupArgs,
     ) -> GetResourceGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:core/getResourceGroup:getResourceGroup".into(),

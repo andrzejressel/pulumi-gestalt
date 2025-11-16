@@ -79,8 +79,6 @@ pub mod environment_membership {
         name: &str,
         args: EnvironmentMembershipArgs,
     ) -> EnvironmentMembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let environment_id_binding = args.environment_id.get_output(context);
         let permissions_binding = args.permissions.get_output(context);
         let user_arn_binding = args.user_arn.get_output(context);

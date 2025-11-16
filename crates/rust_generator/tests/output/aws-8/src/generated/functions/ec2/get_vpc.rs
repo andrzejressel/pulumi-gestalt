@@ -84,8 +84,6 @@ pub mod get_vpc {
         context: &pulumi_gestalt_rust::Context,
         args: GetVpcArgs,
     ) -> GetVpcResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_block_binding = args.cidr_block.get_output(context);
         let default_binding = args.default.get_output(context);
         let dhcp_options_id_binding = args.dhcp_options_id.get_output(context);

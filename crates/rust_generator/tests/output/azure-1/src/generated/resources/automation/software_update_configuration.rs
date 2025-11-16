@@ -177,8 +177,6 @@ pub mod software_update_configuration {
         name: &str,
         args: SoftwareUpdateConfigurationArgs,
     ) -> SoftwareUpdateConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automation_account_id_binding = args
             .automation_account_id
             .get_output(context);

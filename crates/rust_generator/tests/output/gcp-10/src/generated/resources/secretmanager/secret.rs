@@ -282,8 +282,6 @@ pub mod secret {
         name: &str,
         args: SecretArgs,
     ) -> SecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let expire_time_binding = args.expire_time.get_output(context);
         let labels_binding = args.labels.get_output(context);

@@ -120,8 +120,6 @@ pub mod stream {
         name: &str,
         args: StreamArgs,
     ) -> StreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let encryption_type_binding = args.encryption_type.get_output(context);
         let enforce_consumer_deletion_binding = args

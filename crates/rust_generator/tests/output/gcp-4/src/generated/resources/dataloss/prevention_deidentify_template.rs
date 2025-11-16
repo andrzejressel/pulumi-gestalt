@@ -225,8 +225,6 @@ pub mod prevention_deidentify_template {
         name: &str,
         args: PreventionDeidentifyTemplateArgs,
     ) -> PreventionDeidentifyTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deidentify_config_binding = args.deidentify_config.get_output(context);
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

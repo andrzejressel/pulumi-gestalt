@@ -145,8 +145,6 @@ pub mod v_2_models_bot {
         name: &str,
         args: V2modelsBotArgs,
     ) -> V2modelsBotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_privacies_binding = args.data_privacies.get_output(context);
         let description_binding = args.description.get_output(context);
         let idle_session_ttl_in_seconds_binding = args

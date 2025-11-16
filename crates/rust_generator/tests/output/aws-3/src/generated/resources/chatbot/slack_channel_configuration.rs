@@ -124,8 +124,6 @@ pub mod slack_channel_configuration {
         name: &str,
         args: SlackChannelConfigurationArgs,
     ) -> SlackChannelConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_name_binding = args.configuration_name.get_output(context);
         let guardrail_policy_arns_binding = args
             .guardrail_policy_arns

@@ -75,8 +75,6 @@ pub mod project_default_network_tier {
         name: &str,
         args: ProjectDefaultNetworkTierArgs,
     ) -> ProjectDefaultNetworkTierResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let network_tier_binding = args.network_tier.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

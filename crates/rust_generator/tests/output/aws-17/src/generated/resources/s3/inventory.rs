@@ -155,8 +155,6 @@ pub mod inventory {
         name: &str,
         args: InventoryArgs,
     ) -> InventoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let destination_binding = args.destination.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

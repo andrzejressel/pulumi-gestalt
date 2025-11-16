@@ -83,8 +83,6 @@ pub mod automanage_configuration_assignment {
         name: &str,
         args: AutomanageConfigurationAssignmentArgs,
     ) -> AutomanageConfigurationAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arc_machine_id_binding = args.arc_machine_id.get_output(context);
         let configuration_id_binding = args.configuration_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

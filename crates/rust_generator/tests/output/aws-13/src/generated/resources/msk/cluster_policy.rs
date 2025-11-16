@@ -79,8 +79,6 @@ pub mod cluster_policy {
         name: &str,
         args: ClusterPolicyArgs,
     ) -> ClusterPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_arn_binding = args.cluster_arn.get_output(context);
         let policy_binding = args.policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

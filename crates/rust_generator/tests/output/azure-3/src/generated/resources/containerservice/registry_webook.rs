@@ -125,8 +125,6 @@ pub mod registry_webook {
         name: &str,
         args: RegistryWebookArgs,
     ) -> RegistryWebookResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let custom_headers_binding = args.custom_headers.get_output(context);
         let location_binding = args.location.get_output(context);

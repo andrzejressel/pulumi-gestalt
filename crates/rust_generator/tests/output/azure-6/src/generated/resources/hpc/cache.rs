@@ -211,8 +211,6 @@ pub mod cache {
         name: &str,
         args: CacheArgs,
     ) -> CacheResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automatically_rotate_key_to_latest_enabled_binding = args
             .automatically_rotate_key_to_latest_enabled
             .get_output(context);

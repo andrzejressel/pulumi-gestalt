@@ -72,8 +72,6 @@ pub mod website_certificate_authority_association {
         name: &str,
         args: WebsiteCertificateAuthorityAssociationArgs,
     ) -> WebsiteCertificateAuthorityAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_binding = args.certificate.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let fleet_arn_binding = args.fleet_arn.get_output(context);

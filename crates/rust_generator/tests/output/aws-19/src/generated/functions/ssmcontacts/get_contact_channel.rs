@@ -40,8 +40,6 @@ pub mod get_contact_channel {
         context: &pulumi_gestalt_rust::Context,
         args: GetContactChannelArgs,
     ) -> GetContactChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ssmcontacts/getContactChannel:getContactChannel".into(),

@@ -87,8 +87,6 @@ pub mod user_in_group {
         name: &str,
         args: UserInGroupArgs,
     ) -> UserInGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_name_binding = args.group_name.get_output(context);
         let user_pool_id_binding = args.user_pool_id.get_output(context);
         let username_binding = args.username.get_output(context);

@@ -99,8 +99,6 @@ pub mod mover_source_endpoint {
         name: &str,
         args: MoverSourceEndpointArgs,
     ) -> MoverSourceEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let export_binding = args.export.get_output(context);
         let host_binding = args.host.get_output(context);

@@ -37,8 +37,6 @@ pub mod get_resolver_firewall_domain_list {
         context: &pulumi_gestalt_rust::Context,
         args: GetResolverFirewallDomainListArgs,
     ) -> GetResolverFirewallDomainListResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let firewall_domain_list_id_binding = args
             .firewall_domain_list_id
             .get_output(context);

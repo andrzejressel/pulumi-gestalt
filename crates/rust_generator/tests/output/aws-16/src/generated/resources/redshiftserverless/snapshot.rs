@@ -81,8 +81,6 @@ pub mod snapshot {
         name: &str,
         args: SnapshotArgs,
     ) -> SnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let namespace_name_binding = args.namespace_name.get_output(context);
         let retention_period_binding = args.retention_period.get_output(context);
         let snapshot_name_binding = args.snapshot_name.get_output(context);

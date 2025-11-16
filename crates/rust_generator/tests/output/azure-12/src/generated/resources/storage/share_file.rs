@@ -128,8 +128,6 @@ pub mod share_file {
         name: &str,
         args: ShareFileArgs,
     ) -> ShareFileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_disposition_binding = args.content_disposition.get_output(context);
         let content_encoding_binding = args.content_encoding.get_output(context);
         let content_md5_binding = args.content_md5.get_output(context);

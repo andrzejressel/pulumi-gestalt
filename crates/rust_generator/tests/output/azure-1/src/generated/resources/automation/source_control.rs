@@ -131,8 +131,6 @@ pub mod source_control {
         name: &str,
         args: SourceControlArgs,
     ) -> SourceControlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automatic_sync_binding = args.automatic_sync.get_output(context);
         let automation_account_id_binding = args
             .automation_account_id

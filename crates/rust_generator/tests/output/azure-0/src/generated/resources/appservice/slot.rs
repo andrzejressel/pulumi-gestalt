@@ -276,8 +276,6 @@ pub mod slot {
         name: &str,
         args: SlotArgs,
     ) -> SlotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_name_binding = args.app_service_name.get_output(context);
         let app_service_plan_id_binding = args.app_service_plan_id.get_output(context);
         let app_settings_binding = args.app_settings.get_output(context);

@@ -451,8 +451,6 @@ pub mod tunnel_dest_group_iam_member {
         name: &str,
         args: TunnelDestGroupIamMemberArgs,
     ) -> TunnelDestGroupIamMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let dest_group_binding = args.dest_group.get_output(context);
         let member_binding = args.member.get_output(context);

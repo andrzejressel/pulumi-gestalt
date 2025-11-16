@@ -239,8 +239,6 @@ pub mod ai_index_endpoint {
         name: &str,
         args: AiIndexEndpointArgs,
     ) -> AiIndexEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let labels_binding = args.labels.get_output(context);

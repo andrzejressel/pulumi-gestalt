@@ -154,8 +154,6 @@ pub mod traffic_mirror_filter_rule {
         name: &str,
         args: TrafficMirrorFilterRuleArgs,
     ) -> TrafficMirrorFilterRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let destination_cidr_block_binding = args
             .destination_cidr_block

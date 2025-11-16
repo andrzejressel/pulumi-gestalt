@@ -117,8 +117,6 @@ pub mod ai_metadata_store {
         name: &str,
         args: AiMetadataStoreArgs,
     ) -> AiMetadataStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let encryption_spec_binding = args.encryption_spec.get_output(context);
         let name_binding = args.name.get_output(context);

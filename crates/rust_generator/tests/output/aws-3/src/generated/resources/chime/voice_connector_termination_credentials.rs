@@ -92,8 +92,6 @@ pub mod voice_connector_termination_credentials {
         name: &str,
         args: VoiceConnectorTerminationCredentialsArgs,
     ) -> VoiceConnectorTerminationCredentialsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let credentials_binding = args.credentials.get_output(context);
         let voice_connector_id_binding = args.voice_connector_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

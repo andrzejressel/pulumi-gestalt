@@ -62,8 +62,6 @@ pub mod cost_allocation_tag {
         name: &str,
         args: CostAllocationTagArgs,
     ) -> CostAllocationTagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let status_binding = args.status.get_output(context);
         let tag_key_binding = args.tag_key.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

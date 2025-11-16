@@ -82,8 +82,6 @@ pub mod managed_hardware_security_module_key_rotation_policy {
         name: &str,
         args: ManagedHardwareSecurityModuleKeyRotationPolicyArgs,
     ) -> ManagedHardwareSecurityModuleKeyRotationPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let expire_after_binding = args.expire_after.get_output(context);
         let managed_hsm_key_id_binding = args.managed_hsm_key_id.get_output(context);
         let time_after_creation_binding = args.time_after_creation.get_output(context);

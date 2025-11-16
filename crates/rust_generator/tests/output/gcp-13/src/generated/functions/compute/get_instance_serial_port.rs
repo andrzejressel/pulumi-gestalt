@@ -44,8 +44,6 @@ pub mod get_instance_serial_port {
         context: &pulumi_gestalt_rust::Context,
         args: GetInstanceSerialPortArgs,
     ) -> GetInstanceSerialPortResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_binding = args.instance.get_output(context);
         let port_binding = args.port.get_output(context);
         let project_binding = args.project.get_output(context);

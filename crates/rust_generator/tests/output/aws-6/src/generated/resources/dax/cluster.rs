@@ -187,8 +187,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zones_binding = args.availability_zones.get_output(context);
         let cluster_endpoint_encryption_type_binding = args
             .cluster_endpoint_encryption_type

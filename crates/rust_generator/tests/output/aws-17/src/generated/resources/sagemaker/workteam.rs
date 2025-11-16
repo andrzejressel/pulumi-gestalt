@@ -147,8 +147,6 @@ pub mod workteam {
         name: &str,
         args: WorkteamArgs,
     ) -> WorkteamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let member_definitions_binding = args.member_definitions.get_output(context);
         let notification_configuration_binding = args

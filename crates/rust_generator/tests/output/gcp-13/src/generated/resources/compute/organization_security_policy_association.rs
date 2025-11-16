@@ -130,8 +130,6 @@ pub mod organization_security_policy_association {
         name: &str,
         args: OrganizationSecurityPolicyAssociationArgs,
     ) -> OrganizationSecurityPolicyAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attachment_id_binding = args.attachment_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_id_binding = args.policy_id.get_output(context);

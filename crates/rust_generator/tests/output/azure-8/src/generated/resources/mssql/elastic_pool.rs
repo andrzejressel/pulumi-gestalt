@@ -180,8 +180,6 @@ pub mod elastic_pool {
         name: &str,
         args: ElasticPoolArgs,
     ) -> ElasticPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enclave_type_binding = args.enclave_type.get_output(context);
         let license_type_binding = args.license_type.get_output(context);
         let location_binding = args.location.get_output(context);

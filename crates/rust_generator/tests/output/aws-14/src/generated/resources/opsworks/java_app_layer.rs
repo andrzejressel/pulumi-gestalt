@@ -211,8 +211,6 @@ pub mod java_app_layer {
         name: &str,
         args: JavaAppLayerArgs,
     ) -> JavaAppLayerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_server_binding = args.app_server.get_output(context);
         let app_server_version_binding = args.app_server_version.get_output(context);
         let auto_assign_elastic_ips_binding = args

@@ -111,8 +111,6 @@ pub mod environment {
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_binding = args.config.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let name_binding = args.name.get_output(context);

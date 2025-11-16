@@ -129,8 +129,6 @@ pub mod environment_storage {
         name: &str,
         args: EnvironmentStorageArgs,
     ) -> EnvironmentStorageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_key_binding = args.access_key.get_output(context);
         let access_mode_binding = args.access_mode.get_output(context);
         let account_name_binding = args.account_name.get_output(context);

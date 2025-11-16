@@ -369,8 +369,6 @@ pub mod kubernetes_cluster_node_pool {
         name: &str,
         args: KubernetesClusterNodePoolArgs,
     ) -> KubernetesClusterNodePoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_scaling_enabled_binding = args.auto_scaling_enabled.get_output(context);
         let capacity_reservation_group_id_binding = args
             .capacity_reservation_group_id

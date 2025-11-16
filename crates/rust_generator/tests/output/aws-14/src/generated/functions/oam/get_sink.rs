@@ -39,8 +39,6 @@ pub mod get_sink {
         context: &pulumi_gestalt_rust::Context,
         args: GetSinkArgs,
     ) -> GetSinkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let sink_identifier_binding = args.sink_identifier.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

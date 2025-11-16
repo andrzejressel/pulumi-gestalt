@@ -131,8 +131,6 @@ pub mod project_sink {
         name: &str,
         args: ProjectSinkArgs,
     ) -> ProjectSinkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bigquery_options_binding = args.bigquery_options.get_output(context);
         let custom_writer_identity_binding = args
             .custom_writer_identity

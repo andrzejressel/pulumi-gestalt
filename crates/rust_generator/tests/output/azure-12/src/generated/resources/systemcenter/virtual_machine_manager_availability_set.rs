@@ -115,8 +115,6 @@ pub mod virtual_machine_manager_availability_set {
         name: &str,
         args: VirtualMachineManagerAvailabilitySetArgs,
     ) -> VirtualMachineManagerAvailabilitySetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_location_id_binding = args.custom_location_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);

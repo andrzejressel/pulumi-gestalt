@@ -128,8 +128,6 @@ pub mod user_pool_ui_customization {
         name: &str,
         args: UserPoolUICustomizationArgs,
     ) -> UserPoolUICustomizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_id_binding = args.client_id.get_output(context);
         let css_binding = args.css.get_output(context);
         let image_file_binding = args.image_file.get_output(context);

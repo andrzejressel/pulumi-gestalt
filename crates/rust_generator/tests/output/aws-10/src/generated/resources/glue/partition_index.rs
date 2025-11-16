@@ -129,8 +129,6 @@ pub mod partition_index {
         name: &str,
         args: PartitionIndexArgs,
     ) -> PartitionIndexResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let database_name_binding = args.database_name.get_output(context);
         let partition_index_binding = args.partition_index.get_output(context);

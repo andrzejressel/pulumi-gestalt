@@ -133,8 +133,6 @@ pub mod option_group {
         name: &str,
         args: OptionGroupArgs,
     ) -> OptionGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let engine_name_binding = args.engine_name.get_output(context);
         let major_engine_version_binding = args.major_engine_version.get_output(context);
         let name_binding = args.name.get_output(context);

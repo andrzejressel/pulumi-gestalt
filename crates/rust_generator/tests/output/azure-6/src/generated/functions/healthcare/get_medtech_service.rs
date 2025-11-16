@@ -42,8 +42,6 @@ pub mod get_medtech_service {
         context: &pulumi_gestalt_rust::Context,
         args: GetMedtechServiceArgs,
     ) -> GetMedtechServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

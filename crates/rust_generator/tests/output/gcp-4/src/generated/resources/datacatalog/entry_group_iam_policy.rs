@@ -236,8 +236,6 @@ pub mod entry_group_iam_policy {
         name: &str,
         args: EntryGroupIamPolicyArgs,
     ) -> EntryGroupIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let entry_group_binding = args.entry_group.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -40,8 +40,6 @@ pub mod get_date_time_variable {
         context: &pulumi_gestalt_rust::Context,
         args: GetDateTimeVariableArgs,
     ) -> GetDateTimeVariableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automation_account_name_binding = args
             .automation_account_name
             .get_output(context);

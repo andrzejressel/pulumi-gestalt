@@ -31,8 +31,6 @@ pub mod get_data_shares {
         context: &pulumi_gestalt_rust::Context,
         args: GetDataSharesArgs,
     ) -> GetDataSharesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_shares_binding = args.data_shares.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:redshift/getDataShares:getDataShares".into(),

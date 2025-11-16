@@ -54,8 +54,6 @@ pub mod servicecatalog_portfolio_status {
         name: &str,
         args: ServicecatalogPortfolioStatusArgs,
     ) -> ServicecatalogPortfolioStatusResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let status_binding = args.status.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:sagemaker/servicecatalogPortfolioStatus:ServicecatalogPortfolioStatus"

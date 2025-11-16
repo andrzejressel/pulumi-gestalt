@@ -282,8 +282,6 @@ pub mod standard {
         name: &str,
         args: StandardArgs,
     ) -> StandardResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_plan_id_binding = args.app_service_plan_id.get_output(context);
         let app_settings_binding = args.app_settings.get_output(context);
         let bundle_version_binding = args.bundle_version.get_output(context);

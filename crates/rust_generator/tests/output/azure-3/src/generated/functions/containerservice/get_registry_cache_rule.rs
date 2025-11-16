@@ -36,8 +36,6 @@ pub mod get_registry_cache_rule {
         context: &pulumi_gestalt_rust::Context,
         args: GetRegistryCacheRuleArgs,
     ) -> GetRegistryCacheRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_registry_id_binding = args
             .container_registry_id
             .get_output(context);

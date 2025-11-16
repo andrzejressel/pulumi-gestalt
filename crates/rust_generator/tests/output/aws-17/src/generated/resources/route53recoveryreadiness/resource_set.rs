@@ -96,8 +96,6 @@ pub mod resource_set {
         name: &str,
         args: ResourceSetArgs,
     ) -> ResourceSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_set_name_binding = args.resource_set_name.get_output(context);
         let resource_set_type_binding = args.resource_set_type.get_output(context);
         let resources_binding = args.resources.get_output(context);

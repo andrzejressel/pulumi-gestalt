@@ -266,8 +266,6 @@ pub mod backend_bucket {
         name: &str,
         args: BackendBucketArgs,
     ) -> BackendBucketResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_name_binding = args.bucket_name.get_output(context);
         let cdn_policy_binding = args.cdn_policy.get_output(context);
         let compression_mode_binding = args.compression_mode.get_output(context);

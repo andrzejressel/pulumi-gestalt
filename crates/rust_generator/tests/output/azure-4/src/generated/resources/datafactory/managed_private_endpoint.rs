@@ -109,8 +109,6 @@ pub mod managed_private_endpoint {
         name: &str,
         args: ManagedPrivateEndpointArgs,
     ) -> ManagedPrivateEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_factory_id_binding = args.data_factory_id.get_output(context);
         let fqdns_binding = args.fqdns.get_output(context);
         let name_binding = args.name.get_output(context);

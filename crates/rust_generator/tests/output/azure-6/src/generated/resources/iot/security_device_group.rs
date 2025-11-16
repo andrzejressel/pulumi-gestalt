@@ -110,8 +110,6 @@ pub mod security_device_group {
         name: &str,
         args: SecurityDeviceGroupArgs,
     ) -> SecurityDeviceGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_rule_binding = args.allow_rule.get_output(context);
         let iothub_id_binding = args.iothub_id.get_output(context);
         let name_binding = args.name.get_output(context);

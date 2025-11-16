@@ -127,8 +127,6 @@ pub mod managed_folder {
         name: &str,
         args: ManagedFolderArgs,
     ) -> ManagedFolderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let force_destroy_binding = args.force_destroy.get_output(context);
         let name_binding = args.name.get_output(context);

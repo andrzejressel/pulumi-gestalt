@@ -47,8 +47,6 @@ pub mod get_router_status {
         context: &pulumi_gestalt_rust::Context,
         args: GetRouterStatusArgs,
     ) -> GetRouterStatusResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
         let region_binding = args.region.get_output(context);

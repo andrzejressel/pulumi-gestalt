@@ -184,8 +184,6 @@ pub mod location_hdfs {
         name: &str,
         args: LocationHdfsArgs,
     ) -> LocationHdfsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_arns_binding = args.agent_arns.get_output(context);
         let authentication_type_binding = args.authentication_type.get_output(context);
         let block_size_binding = args.block_size.get_output(context);

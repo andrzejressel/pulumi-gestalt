@@ -39,8 +39,6 @@ pub mod get_testable_permissions {
         context: &pulumi_gestalt_rust::Context,
         args: GetTestablePermissionsArgs,
     ) -> GetTestablePermissionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_support_level_binding = args.custom_support_level.get_output(context);
         let full_resource_name_binding = args.full_resource_name.get_output(context);
         let stages_binding = args.stages.get_output(context);

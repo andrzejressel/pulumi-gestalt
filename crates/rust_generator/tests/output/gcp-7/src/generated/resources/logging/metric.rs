@@ -297,8 +297,6 @@ pub mod metric {
         name: &str,
         args: MetricArgs,
     ) -> MetricResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_name_binding = args.bucket_name.get_output(context);
         let bucket_options_binding = args.bucket_options.get_output(context);
         let description_binding = args.description.get_output(context);

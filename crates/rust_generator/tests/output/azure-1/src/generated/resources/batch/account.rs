@@ -192,8 +192,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_authentication_modes_binding = args
             .allowed_authentication_modes
             .get_output(context);

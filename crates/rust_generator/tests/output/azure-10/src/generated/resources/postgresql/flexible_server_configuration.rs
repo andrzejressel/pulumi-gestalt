@@ -131,8 +131,6 @@ pub mod flexible_server_configuration {
         name: &str,
         args: FlexibleServerConfigurationArgs,
     ) -> FlexibleServerConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let server_id_binding = args.server_id.get_output(context);
         let value_binding = args.value.get_output(context);

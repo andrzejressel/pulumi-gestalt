@@ -199,8 +199,6 @@ pub mod mirroring_deployment {
         name: &str,
         args: MirroringDeploymentArgs,
     ) -> MirroringDeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let forwarding_rule_binding = args.forwarding_rule.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);

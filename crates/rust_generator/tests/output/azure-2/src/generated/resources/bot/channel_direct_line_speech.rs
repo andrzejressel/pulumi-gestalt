@@ -119,8 +119,6 @@ pub mod channel_direct_line_speech {
         name: &str,
         args: ChannelDirectLineSpeechArgs,
     ) -> ChannelDirectLineSpeechResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bot_name_binding = args.bot_name.get_output(context);
         let cognitive_account_id_binding = args.cognitive_account_id.get_output(context);
         let cognitive_service_access_key_binding = args

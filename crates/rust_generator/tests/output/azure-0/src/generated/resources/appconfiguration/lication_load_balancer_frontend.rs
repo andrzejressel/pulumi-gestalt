@@ -80,8 +80,6 @@ pub mod lication_load_balancer_frontend {
         name: &str,
         args: LicationLoadBalancerFrontendArgs,
     ) -> LicationLoadBalancerFrontendResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_load_balancer_id_binding = args
             .application_load_balancer_id
             .get_output(context);

@@ -378,8 +378,6 @@ pub mod connection {
         name: &str,
         args: ConnectionArgs,
     ) -> ConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let connection_properties_binding = args
             .connection_properties

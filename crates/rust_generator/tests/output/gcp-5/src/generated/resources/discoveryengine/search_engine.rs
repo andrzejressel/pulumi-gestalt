@@ -161,8 +161,6 @@ pub mod search_engine {
         name: &str,
         args: SearchEngineArgs,
     ) -> SearchEngineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let collection_id_binding = args.collection_id.get_output(context);
         let common_config_binding = args.common_config.get_output(context);
         let data_store_ids_binding = args.data_store_ids.get_output(context);

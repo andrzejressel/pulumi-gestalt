@@ -325,8 +325,6 @@ pub mod volume {
         name: &str,
         args: VolumeArgs,
     ) -> VolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_config_binding = args.backup_config.get_output(context);
         let capacity_gib_binding = args.capacity_gib.get_output(context);
         let deletion_policy_binding = args.deletion_policy.get_output(context);

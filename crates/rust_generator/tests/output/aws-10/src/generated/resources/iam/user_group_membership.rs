@@ -85,8 +85,6 @@ pub mod user_group_membership {
         name: &str,
         args: UserGroupMembershipArgs,
     ) -> UserGroupMembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let groups_binding = args.groups.get_output(context);
         let user_binding = args.user.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

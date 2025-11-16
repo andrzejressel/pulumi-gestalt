@@ -112,8 +112,6 @@ pub mod zone_cache_variants {
         name: &str,
         args: ZoneCacheVariantsArgs,
     ) -> ZoneCacheVariantsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let avifs_binding = args.avifs.get_output(context);
         let bmps_binding = args.bmps.get_output(context);
         let gifs_binding = args.gifs.get_output(context);

@@ -89,8 +89,6 @@ pub mod resource_policy {
         name: &str,
         args: ResourcePolicyArgs,
     ) -> ResourcePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_binding = args.policy.get_output(context);
         let resource_arn_binding = args.resource_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

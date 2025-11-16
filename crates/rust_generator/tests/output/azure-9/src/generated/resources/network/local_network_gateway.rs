@@ -113,8 +113,6 @@ pub mod local_network_gateway {
         name: &str,
         args: LocalNetworkGatewayArgs,
     ) -> LocalNetworkGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_spaces_binding = args.address_spaces.get_output(context);
         let bgp_settings_binding = args.bgp_settings.get_output(context);
         let gateway_address_binding = args.gateway_address.get_output(context);

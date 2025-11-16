@@ -30,8 +30,6 @@ pub mod get_enrollment_account_scope {
         context: &pulumi_gestalt_rust::Context,
         args: GetEnrollmentAccountScopeArgs,
     ) -> GetEnrollmentAccountScopeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let billing_account_name_binding = args.billing_account_name.get_output(context);
         let enrollment_account_name_binding = args
             .enrollment_account_name

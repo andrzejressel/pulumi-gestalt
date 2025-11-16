@@ -177,8 +177,6 @@ pub mod dev_endpoint {
         name: &str,
         args: DevEndpointArgs,
     ) -> DevEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arguments_binding = args.arguments.get_output(context);
         let extra_jars_s3_path_binding = args.extra_jars_s3_path.get_output(context);
         let extra_python_libs_s3_path_binding = args

@@ -60,8 +60,6 @@ pub mod account_setting {
         name: &str,
         args: AccountSettingArgs,
     ) -> AccountSettingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let value_binding = args.value.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

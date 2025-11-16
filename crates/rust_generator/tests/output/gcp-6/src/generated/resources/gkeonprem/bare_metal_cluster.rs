@@ -508,8 +508,6 @@ pub mod bare_metal_cluster {
         name: &str,
         args: BareMetalClusterArgs,
     ) -> BareMetalClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_cluster_membership_binding = args
             .admin_cluster_membership
             .get_output(context);

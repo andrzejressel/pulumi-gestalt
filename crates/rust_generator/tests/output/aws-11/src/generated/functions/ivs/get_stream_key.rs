@@ -37,8 +37,6 @@ pub mod get_stream_key {
         context: &pulumi_gestalt_rust::Context,
         args: GetStreamKeyArgs,
     ) -> GetStreamKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let channel_arn_binding = args.channel_arn.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

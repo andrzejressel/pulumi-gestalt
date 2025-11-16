@@ -77,8 +77,6 @@ pub mod input_security_group {
         name: &str,
         args: InputSecurityGroupArgs,
     ) -> InputSecurityGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let whitelist_rules_binding = args.whitelist_rules.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -47,8 +47,6 @@ pub mod get_application {
         context: &pulumi_gestalt_rust::Context,
         args: GetApplicationArgs,
     ) -> GetApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_arn_binding = args.application_arn.get_output(context);
         let portal_options_binding = args.portal_options.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

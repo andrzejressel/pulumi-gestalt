@@ -112,8 +112,6 @@ pub mod flexible_server_active_directory_administrator {
         name: &str,
         args: FlexibleServerActiveDirectoryAdministratorArgs,
     ) -> FlexibleServerActiveDirectoryAdministratorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let object_id_binding = args.object_id.get_output(context);
         let principal_name_binding = args.principal_name.get_output(context);
         let principal_type_binding = args.principal_type.get_output(context);

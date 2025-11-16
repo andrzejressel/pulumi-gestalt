@@ -104,8 +104,6 @@ pub mod event_stream {
         name: &str,
         args: EventStreamArgs,
     ) -> EventStreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let destination_stream_arn_binding = args
             .destination_stream_arn

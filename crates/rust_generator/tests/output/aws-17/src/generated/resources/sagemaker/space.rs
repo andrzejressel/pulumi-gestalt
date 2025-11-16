@@ -110,8 +110,6 @@ pub mod space {
         name: &str,
         args: SpaceArgs,
     ) -> SpaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_id_binding = args.domain_id.get_output(context);
         let ownership_settings_binding = args.ownership_settings.get_output(context);
         let space_display_name_binding = args.space_display_name.get_output(context);

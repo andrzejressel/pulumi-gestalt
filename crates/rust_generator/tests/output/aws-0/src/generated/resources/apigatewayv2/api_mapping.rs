@@ -74,8 +74,6 @@ pub mod api_mapping {
         name: &str,
         args: ApiMappingArgs,
     ) -> ApiMappingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let api_mapping_key_binding = args.api_mapping_key.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);

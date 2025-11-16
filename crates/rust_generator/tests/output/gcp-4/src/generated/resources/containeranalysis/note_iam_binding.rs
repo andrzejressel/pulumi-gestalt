@@ -271,8 +271,6 @@ pub mod note_iam_binding {
         name: &str,
         args: NoteIamBindingArgs,
     ) -> NoteIamBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let members_binding = args.members.get_output(context);
         let note_binding = args.note.get_output(context);

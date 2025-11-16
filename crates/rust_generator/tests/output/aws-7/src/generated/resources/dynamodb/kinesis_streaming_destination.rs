@@ -84,8 +84,6 @@ pub mod kinesis_streaming_destination {
         name: &str,
         args: KinesisStreamingDestinationArgs,
     ) -> KinesisStreamingDestinationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let approximate_creation_date_time_precision_binding = args
             .approximate_creation_date_time_precision
             .get_output(context);

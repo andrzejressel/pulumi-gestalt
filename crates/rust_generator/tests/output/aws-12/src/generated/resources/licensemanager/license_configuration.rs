@@ -112,8 +112,6 @@ pub mod license_configuration {
         name: &str,
         args: LicenseConfigurationArgs,
     ) -> LicenseConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let license_count_binding = args.license_count.get_output(context);
         let license_count_hard_limit_binding = args

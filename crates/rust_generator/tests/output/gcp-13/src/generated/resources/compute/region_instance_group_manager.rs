@@ -445,8 +445,6 @@ pub mod region_instance_group_manager {
         name: &str,
         args: RegionInstanceGroupManagerArgs,
     ) -> RegionInstanceGroupManagerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let all_instances_config_binding = args.all_instances_config.get_output(context);
         let auto_healing_policies_binding = args
             .auto_healing_policies

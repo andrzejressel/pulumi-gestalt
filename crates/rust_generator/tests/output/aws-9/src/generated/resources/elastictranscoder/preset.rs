@@ -163,8 +163,6 @@ pub mod preset {
         name: &str,
         args: PresetArgs,
     ) -> PresetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let audio_binding = args.audio.get_output(context);
         let audio_codec_options_binding = args.audio_codec_options.get_output(context);
         let container_binding = args.container.get_output(context);

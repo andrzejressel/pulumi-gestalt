@@ -131,8 +131,6 @@ pub mod spring_cloud_customized_accelerator {
         name: &str,
         args: SpringCloudCustomizedAcceleratorArgs,
     ) -> SpringCloudCustomizedAcceleratorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerator_tags_binding = args.accelerator_tags.get_output(context);
         let accelerator_type_binding = args.accelerator_type.get_output(context);
         let description_binding = args.description.get_output(context);

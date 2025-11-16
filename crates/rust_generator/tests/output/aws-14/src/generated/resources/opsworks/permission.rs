@@ -70,8 +70,6 @@ pub mod permission {
         name: &str,
         args: PermissionArgs,
     ) -> PermissionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_ssh_binding = args.allow_ssh.get_output(context);
         let allow_sudo_binding = args.allow_sudo.get_output(context);
         let level_binding = args.level.get_output(context);

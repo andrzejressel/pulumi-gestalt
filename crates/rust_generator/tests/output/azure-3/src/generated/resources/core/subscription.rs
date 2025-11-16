@@ -156,8 +156,6 @@ pub mod subscription {
         name: &str,
         args: SubscriptionArgs,
     ) -> SubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_binding = args.alias.get_output(context);
         let billing_scope_id_binding = args.billing_scope_id.get_output(context);
         let subscription_id_binding = args.subscription_id.get_output(context);

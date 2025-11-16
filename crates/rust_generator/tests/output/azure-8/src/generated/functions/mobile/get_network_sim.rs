@@ -50,8 +50,6 @@ pub mod get_network_sim {
         context: &pulumi_gestalt_rust::Context,
         args: GetNetworkSimArgs,
     ) -> GetNetworkSimResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mobile_network_sim_group_id_binding = args
             .mobile_network_sim_group_id
             .get_output(context);

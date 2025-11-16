@@ -75,8 +75,6 @@ pub mod hyper_v_site {
         name: &str,
         args: HyperVSiteArgs,
     ) -> HyperVSiteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let recovery_vault_id_binding = args.recovery_vault_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -211,8 +211,6 @@ pub mod organization_policy {
         name: &str,
         args: OrganizationPolicyArgs,
     ) -> OrganizationPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let boolean_policy_binding = args.boolean_policy.get_output(context);
         let constraint_binding = args.constraint.get_output(context);
         let folder_binding = args.folder.get_output(context);

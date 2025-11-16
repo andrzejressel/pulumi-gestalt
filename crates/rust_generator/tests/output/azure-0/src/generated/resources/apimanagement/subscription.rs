@@ -133,8 +133,6 @@ pub mod subscription {
         name: &str,
         args: SubscriptionArgs,
     ) -> SubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_tracing_binding = args.allow_tracing.get_output(context);
         let api_id_binding = args.api_id.get_output(context);
         let api_management_name_binding = args.api_management_name.get_output(context);

@@ -134,8 +134,6 @@ pub mod certificate {
         name: &str,
         args: CertificateArgs,
     ) -> CertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_plan_id_binding = args.app_service_plan_id.get_output(context);
         let key_vault_id_binding = args.key_vault_id.get_output(context);
         let key_vault_secret_id_binding = args.key_vault_secret_id.get_output(context);

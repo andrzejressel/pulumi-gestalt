@@ -87,8 +87,6 @@ pub mod transit_gateway_peering {
         name: &str,
         args: TransitGatewayPeeringArgs,
     ) -> TransitGatewayPeeringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let core_network_id_binding = args.core_network_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let transit_gateway_arn_binding = args.transit_gateway_arn.get_output(context);

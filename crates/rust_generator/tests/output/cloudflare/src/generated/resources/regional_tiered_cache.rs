@@ -60,8 +60,6 @@ pub mod regional_tiered_cache {
         name: &str,
         args: RegionalTieredCacheArgs,
     ) -> RegionalTieredCacheResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let value_binding = args.value.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

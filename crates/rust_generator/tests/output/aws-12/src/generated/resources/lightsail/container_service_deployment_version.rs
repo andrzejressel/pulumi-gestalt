@@ -104,8 +104,6 @@ pub mod container_service_deployment_version {
         name: &str,
         args: ContainerServiceDeploymentVersionArgs,
     ) -> ContainerServiceDeploymentVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let containers_binding = args.containers.get_output(context);
         let public_endpoint_binding = args.public_endpoint.get_output(context);
         let service_name_binding = args.service_name.get_output(context);

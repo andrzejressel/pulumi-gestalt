@@ -60,8 +60,6 @@ pub mod traffic_source_attachment {
         name: &str,
         args: TrafficSourceAttachmentArgs,
     ) -> TrafficSourceAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autoscaling_group_name_binding = args
             .autoscaling_group_name
             .get_output(context);

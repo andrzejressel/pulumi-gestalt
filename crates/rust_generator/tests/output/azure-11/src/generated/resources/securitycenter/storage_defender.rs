@@ -115,8 +115,6 @@ pub mod storage_defender {
         name: &str,
         args: StorageDefenderArgs,
     ) -> StorageDefenderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let malware_scanning_on_upload_cap_gb_per_month_binding = args
             .malware_scanning_on_upload_cap_gb_per_month
             .get_output(context);

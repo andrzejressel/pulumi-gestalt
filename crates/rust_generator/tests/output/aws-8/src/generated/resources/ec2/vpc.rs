@@ -197,8 +197,6 @@ pub mod vpc {
         name: &str,
         args: VpcArgs,
     ) -> VpcResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assign_generated_ipv6_cidr_block_binding = args
             .assign_generated_ipv6_cidr_block
             .get_output(context);

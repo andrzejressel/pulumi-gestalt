@@ -198,8 +198,6 @@ pub mod intercept_deployment {
         name: &str,
         args: InterceptDeploymentArgs,
     ) -> InterceptDeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let forwarding_rule_binding = args.forwarding_rule.get_output(context);
         let intercept_deployment_group_binding = args
             .intercept_deployment_group

@@ -110,8 +110,6 @@ pub mod ami_launch_permission {
         name: &str,
         args: AmiLaunchPermissionArgs,
     ) -> AmiLaunchPermissionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let group_binding = args.group.get_output(context);
         let image_id_binding = args.image_id.get_output(context);

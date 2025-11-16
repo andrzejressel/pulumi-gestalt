@@ -33,8 +33,6 @@ pub mod get_standards_control_associations {
         context: &pulumi_gestalt_rust::Context,
         args: GetStandardsControlAssociationsArgs,
     ) -> GetStandardsControlAssociationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let security_control_id_binding = args.security_control_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:securityhub/getStandardsControlAssociations:getStandardsControlAssociations"

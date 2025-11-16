@@ -113,8 +113,6 @@ pub mod organization_configuration {
         name: &str,
         args: OrganizationConfigurationArgs,
     ) -> OrganizationConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_enable_binding = args.auto_enable.get_output(context);
         let auto_enable_organization_members_binding = args
             .auto_enable_organization_members

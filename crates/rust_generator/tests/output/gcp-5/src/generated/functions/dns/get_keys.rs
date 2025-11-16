@@ -38,8 +38,6 @@ pub mod get_keys {
         context: &pulumi_gestalt_rust::Context,
         args: GetKeysArgs,
     ) -> GetKeysResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let managed_zone_binding = args.managed_zone.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

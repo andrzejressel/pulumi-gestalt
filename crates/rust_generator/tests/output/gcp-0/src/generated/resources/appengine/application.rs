@@ -145,8 +145,6 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auth_domain_binding = args.auth_domain.get_output(context);
         let database_type_binding = args.database_type.get_output(context);
         let feature_settings_binding = args.feature_settings.get_output(context);

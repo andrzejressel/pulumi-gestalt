@@ -101,8 +101,6 @@ pub mod subscription_pricing {
         name: &str,
         args: SubscriptionPricingArgs,
     ) -> SubscriptionPricingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let extensions_binding = args.extensions.get_output(context);
         let resource_type_binding = args.resource_type.get_output(context);
         let subplan_binding = args.subplan.get_output(context);

@@ -83,8 +83,6 @@ pub mod notification {
         name: &str,
         args: NotificationArgs,
     ) -> NotificationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_names_binding = args.group_names.get_output(context);
         let notifications_binding = args.notifications.get_output(context);
         let topic_arn_binding = args.topic_arn.get_output(context);

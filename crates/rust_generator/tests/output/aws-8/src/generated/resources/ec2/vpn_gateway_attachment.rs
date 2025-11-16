@@ -70,8 +70,6 @@ pub mod vpn_gateway_attachment {
         name: &str,
         args: VpnGatewayAttachmentArgs,
     ) -> VpnGatewayAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let vpc_id_binding = args.vpc_id.get_output(context);
         let vpn_gateway_id_binding = args.vpn_gateway_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

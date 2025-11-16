@@ -198,8 +198,6 @@ pub mod gallery_application_version {
         name: &str,
         args: GalleryApplicationVersionArgs,
     ) -> GalleryApplicationVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_file_binding = args.config_file.get_output(context);
         let enable_health_check_binding = args.enable_health_check.get_output(context);
         let end_of_life_date_binding = args.end_of_life_date.get_output(context);

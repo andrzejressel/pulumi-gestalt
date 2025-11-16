@@ -42,8 +42,6 @@ pub mod get_prebuilt_ecr_image {
         context: &pulumi_gestalt_rust::Context,
         args: GetPrebuiltEcrImageArgs,
     ) -> GetPrebuiltEcrImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dns_suffix_binding = args.dns_suffix.get_output(context);
         let image_tag_binding = args.image_tag.get_output(context);
         let region_binding = args.region.get_output(context);

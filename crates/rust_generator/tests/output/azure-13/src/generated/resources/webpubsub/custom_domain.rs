@@ -145,8 +145,6 @@ pub mod custom_domain {
         name: &str,
         args: CustomDomainArgs,
     ) -> CustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let web_pubsub_custom_certificate_id_binding = args

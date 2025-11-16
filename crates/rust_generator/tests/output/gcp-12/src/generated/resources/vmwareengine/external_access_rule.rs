@@ -223,8 +223,6 @@ pub mod external_access_rule {
         name: &str,
         args: ExternalAccessRuleArgs,
     ) -> ExternalAccessRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let destination_ip_ranges_binding = args

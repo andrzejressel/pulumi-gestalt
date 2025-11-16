@@ -169,8 +169,6 @@ pub mod zone {
         name: &str,
         args: ZoneArgs,
     ) -> ZoneResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let discovery_spec_binding = args.discovery_spec.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

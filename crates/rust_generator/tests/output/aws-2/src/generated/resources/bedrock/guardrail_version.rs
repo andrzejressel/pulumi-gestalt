@@ -81,8 +81,6 @@ pub mod guardrail_version {
         name: &str,
         args: GuardrailVersionArgs,
     ) -> GuardrailVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let guardrail_arn_binding = args.guardrail_arn.get_output(context);
         let skip_destroy_binding = args.skip_destroy.get_output(context);

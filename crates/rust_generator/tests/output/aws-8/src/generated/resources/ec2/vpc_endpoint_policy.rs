@@ -82,8 +82,6 @@ pub mod vpc_endpoint_policy {
         name: &str,
         args: VpcEndpointPolicyArgs,
     ) -> VpcEndpointPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_binding = args.policy.get_output(context);
         let vpc_endpoint_id_binding = args.vpc_endpoint_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

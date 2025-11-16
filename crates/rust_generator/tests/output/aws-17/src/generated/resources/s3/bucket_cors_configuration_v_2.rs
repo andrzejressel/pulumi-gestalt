@@ -96,8 +96,6 @@ pub mod bucket_cors_configuration_v_2 {
         name: &str,
         args: BucketCorsConfigurationV2Args,
     ) -> BucketCorsConfigurationV2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let cors_rules_binding = args.cors_rules.get_output(context);
         let expected_bucket_owner_binding = args

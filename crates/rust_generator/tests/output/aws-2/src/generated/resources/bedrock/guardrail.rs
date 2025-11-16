@@ -222,8 +222,6 @@ pub mod guardrail {
         name: &str,
         args: GuardrailArgs,
     ) -> GuardrailResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let blocked_input_messaging_binding = args
             .blocked_input_messaging
             .get_output(context);

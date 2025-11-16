@@ -142,8 +142,6 @@ pub mod gateway_host_name_configuration {
         name: &str,
         args: GatewayHostNameConfigurationArgs,
     ) -> GatewayHostNameConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_id_binding = args.api_management_id.get_output(context);
         let certificate_id_binding = args.certificate_id.get_output(context);
         let gateway_name_binding = args.gateway_name.get_output(context);

@@ -143,8 +143,6 @@ pub mod event_grid_topic {
         name: &str,
         args: EventGridTopicArgs,
     ) -> EventGridTopicResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identity_binding = args.identity.get_output(context);
         let inbound_ip_rules_binding = args.inbound_ip_rules.get_output(context);
         let input_mapping_default_values_binding = args

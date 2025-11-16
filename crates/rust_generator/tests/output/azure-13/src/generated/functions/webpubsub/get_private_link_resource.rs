@@ -32,8 +32,6 @@ pub mod get_private_link_resource {
         context: &pulumi_gestalt_rust::Context,
         args: GetPrivateLinkResourceArgs,
     ) -> GetPrivateLinkResourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let web_pubsub_id_binding = args.web_pubsub_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:webpubsub/getPrivateLinkResource:getPrivateLinkResource"

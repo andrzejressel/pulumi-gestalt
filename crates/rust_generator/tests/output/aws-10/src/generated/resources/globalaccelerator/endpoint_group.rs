@@ -131,8 +131,6 @@ pub mod endpoint_group {
         name: &str,
         args: EndpointGroupArgs,
     ) -> EndpointGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let endpoint_configurations_binding = args
             .endpoint_configurations
             .get_output(context);

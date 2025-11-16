@@ -136,8 +136,6 @@ pub mod web_app {
         name: &str,
         args: WebAppArgs,
     ) -> WebAppResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let developer_app_insights_api_key_binding = args
             .developer_app_insights_api_key
             .get_output(context);

@@ -85,8 +85,6 @@ pub mod deployment {
         name: &str,
         args: DeploymentArgs,
     ) -> DeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let application_version_binding = args.application_version.get_output(context);
         let environment_id_binding = args.environment_id.get_output(context);

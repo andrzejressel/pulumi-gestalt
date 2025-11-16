@@ -204,8 +204,6 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let architecture_binding = args.architecture.get_output(context);
         let auto_start_configuration_binding = args
             .auto_start_configuration

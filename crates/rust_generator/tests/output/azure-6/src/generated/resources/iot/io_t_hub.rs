@@ -287,8 +287,6 @@ pub mod io_t_hub {
         name: &str,
         args: IoTHubArgs,
     ) -> IoTHubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloud_to_device_binding = args.cloud_to_device.get_output(context);
         let endpoints_binding = args.endpoints.get_output(context);
         let enrichments_binding = args.enrichments.get_output(context);

@@ -144,8 +144,6 @@ pub mod identity_pool {
         name: &str,
         args: IdentityPoolArgs,
     ) -> IdentityPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_classic_flow_binding = args.allow_classic_flow.get_output(context);
         let allow_unauthenticated_identities_binding = args
             .allow_unauthenticated_identities

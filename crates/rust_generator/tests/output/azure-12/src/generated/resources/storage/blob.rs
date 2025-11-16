@@ -160,8 +160,6 @@ pub mod blob {
         name: &str,
         args: BlobArgs,
     ) -> BlobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_tier_binding = args.access_tier.get_output(context);
         let cache_control_binding = args.cache_control.get_output(context);
         let content_md5_binding = args.content_md5.get_output(context);

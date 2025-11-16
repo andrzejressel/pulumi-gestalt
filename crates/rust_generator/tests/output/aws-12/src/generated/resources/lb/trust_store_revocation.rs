@@ -85,8 +85,6 @@ pub mod trust_store_revocation {
         name: &str,
         args: TrustStoreRevocationArgs,
     ) -> TrustStoreRevocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let revocations_s3_bucket_binding = args
             .revocations_s3_bucket
             .get_output(context);

@@ -44,8 +44,6 @@ pub mod get_namespace_disaster_recovery_config {
         context: &pulumi_gestalt_rust::Context,
         args: GetNamespaceDisasterRecoveryConfigArgs,
     ) -> GetNamespaceDisasterRecoveryConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_authorization_rule_id_binding = args
             .alias_authorization_rule_id
             .get_output(context);

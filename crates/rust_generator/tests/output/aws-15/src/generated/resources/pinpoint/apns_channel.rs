@@ -123,8 +123,6 @@ pub mod apns_channel {
         name: &str,
         args: ApnsChannelArgs,
     ) -> ApnsChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let bundle_id_binding = args.bundle_id.get_output(context);
         let certificate_binding = args.certificate.get_output(context);

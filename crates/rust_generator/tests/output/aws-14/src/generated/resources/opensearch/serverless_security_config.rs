@@ -65,8 +65,6 @@ pub mod serverless_security_config {
         name: &str,
         args: ServerlessSecurityConfigArgs,
     ) -> ServerlessSecurityConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let saml_options_binding = args.saml_options.get_output(context);

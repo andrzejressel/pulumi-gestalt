@@ -55,8 +55,6 @@ pub mod get_web_app_config {
         context: &pulumi_gestalt_rust::Context,
         args: GetWebAppConfigArgs,
     ) -> GetWebAppConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let web_app_id_binding = args.web_app_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -283,8 +283,6 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capacity_gib_binding = args.capacity_gib.get_output(context);
         let description_binding = args.description.get_output(context);
         let directory_stripe_level_binding = args

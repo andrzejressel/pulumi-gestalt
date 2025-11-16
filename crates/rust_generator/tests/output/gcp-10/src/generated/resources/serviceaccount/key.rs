@@ -170,8 +170,6 @@ pub mod key {
         name: &str,
         args: KeyArgs,
     ) -> KeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let keepers_binding = args.keepers.get_output(context);
         let key_algorithm_binding = args.key_algorithm.get_output(context);
         let private_key_type_binding = args.private_key_type.get_output(context);

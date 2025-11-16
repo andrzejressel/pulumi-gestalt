@@ -84,8 +84,6 @@ pub mod tag {
         name: &str,
         args: TagArgs,
     ) -> TagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_id_binding = args.api_management_id.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);

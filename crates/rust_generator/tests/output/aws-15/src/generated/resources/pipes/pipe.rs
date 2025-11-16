@@ -323,8 +323,6 @@ pub mod pipe {
         name: &str,
         args: PipeArgs,
     ) -> PipeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let desired_state_binding = args.desired_state.get_output(context);
         let enrichment_binding = args.enrichment.get_output(context);

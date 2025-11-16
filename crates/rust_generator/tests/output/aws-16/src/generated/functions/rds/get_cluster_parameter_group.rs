@@ -32,8 +32,6 @@ pub mod get_cluster_parameter_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetClusterParameterGroupArgs,
     ) -> GetClusterParameterGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:rds/getClusterParameterGroup:getClusterParameterGroup".into(),

@@ -106,8 +106,6 @@ pub mod data_share_consumer_association {
         name: &str,
         args: DataShareConsumerAssociationArgs,
     ) -> DataShareConsumerAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_writes_binding = args.allow_writes.get_output(context);
         let associate_entire_account_binding = args
             .associate_entire_account

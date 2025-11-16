@@ -51,8 +51,6 @@ pub mod get_custom_routing_accelerator {
         context: &pulumi_gestalt_rust::Context,
         args: GetCustomRoutingAcceleratorArgs,
     ) -> GetCustomRoutingAcceleratorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);

@@ -80,8 +80,6 @@ pub mod scheduling_policy {
         name: &str,
         args: SchedulingPolicyArgs,
     ) -> SchedulingPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let fair_share_policy_binding = args.fair_share_policy.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);

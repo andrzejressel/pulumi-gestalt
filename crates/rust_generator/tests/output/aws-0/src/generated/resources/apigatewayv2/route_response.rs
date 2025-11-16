@@ -91,8 +91,6 @@ pub mod route_response {
         name: &str,
         args: RouteResponseArgs,
     ) -> RouteResponseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let model_selection_expression_binding = args
             .model_selection_expression

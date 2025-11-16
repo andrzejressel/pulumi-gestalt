@@ -117,8 +117,6 @@ pub mod linked_server {
         name: &str,
         args: LinkedServerArgs,
     ) -> LinkedServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let linked_redis_cache_id_binding = args
             .linked_redis_cache_id
             .get_output(context);

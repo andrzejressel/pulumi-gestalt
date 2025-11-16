@@ -75,8 +75,6 @@ pub mod route_table_association {
         name: &str,
         args: RouteTableAssociationArgs,
     ) -> RouteTableAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let replace_existing_association_binding = args
             .replace_existing_association
             .get_output(context);

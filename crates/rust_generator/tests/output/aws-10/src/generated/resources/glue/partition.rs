@@ -88,8 +88,6 @@ pub mod partition {
         name: &str,
         args: PartitionArgs,
     ) -> PartitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let database_name_binding = args.database_name.get_output(context);
         let parameters_binding = args.parameters.get_output(context);

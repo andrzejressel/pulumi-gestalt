@@ -105,8 +105,6 @@ pub mod function_java_script_udf {
         name: &str,
         args: FunctionJavaScriptUDFArgs,
     ) -> FunctionJavaScriptUDFResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let inputs_binding = args.inputs.get_output(context);
         let name_binding = args.name.get_output(context);
         let output_binding = args.output.get_output(context);

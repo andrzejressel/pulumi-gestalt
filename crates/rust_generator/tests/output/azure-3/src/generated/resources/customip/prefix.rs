@@ -176,8 +176,6 @@ pub mod prefix {
         name: &str,
         args: PrefixArgs,
     ) -> PrefixResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_binding = args.cidr.get_output(context);
         let commissioning_enabled_binding = args
             .commissioning_enabled

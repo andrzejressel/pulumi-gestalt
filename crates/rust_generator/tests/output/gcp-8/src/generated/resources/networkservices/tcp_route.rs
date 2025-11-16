@@ -289,8 +289,6 @@ pub mod tcp_route {
         name: &str,
         args: TcpRouteArgs,
     ) -> TcpRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let gateways_binding = args.gateways.get_output(context);
         let labels_binding = args.labels.get_output(context);

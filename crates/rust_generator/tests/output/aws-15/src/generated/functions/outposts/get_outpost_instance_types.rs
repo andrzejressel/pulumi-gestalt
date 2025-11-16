@@ -28,8 +28,6 @@ pub mod get_outpost_instance_types {
         context: &pulumi_gestalt_rust::Context,
         args: GetOutpostInstanceTypesArgs,
     ) -> GetOutpostInstanceTypesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:outposts/getOutpostInstanceTypes:getOutpostInstanceTypes".into(),

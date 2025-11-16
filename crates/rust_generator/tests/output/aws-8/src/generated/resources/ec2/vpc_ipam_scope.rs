@@ -88,8 +88,6 @@ pub mod vpc_ipam_scope {
         name: &str,
         args: VpcIpamScopeArgs,
     ) -> VpcIpamScopeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let ipam_id_binding = args.ipam_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

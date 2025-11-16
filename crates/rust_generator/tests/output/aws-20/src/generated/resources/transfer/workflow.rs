@@ -126,8 +126,6 @@ pub mod workflow {
         name: &str,
         args: WorkflowArgs,
     ) -> WorkflowResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let on_exception_steps_binding = args.on_exception_steps.get_output(context);
         let steps_binding = args.steps.get_output(context);

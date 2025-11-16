@@ -66,8 +66,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enforce_twofactor_binding = args.enforce_twofactor.get_output(context);
         let name_binding = args.name.get_output(context);
         let type__binding = args.type_.get_output(context);

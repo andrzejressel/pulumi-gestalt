@@ -78,8 +78,6 @@ pub mod traffic_policy_instance {
         name: &str,
         args: TrafficPolicyInstanceArgs,
     ) -> TrafficPolicyInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hosted_zone_id_binding = args.hosted_zone_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let traffic_policy_id_binding = args.traffic_policy_id.get_output(context);

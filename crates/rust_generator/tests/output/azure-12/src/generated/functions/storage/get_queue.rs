@@ -41,8 +41,6 @@ pub mod get_queue {
         context: &pulumi_gestalt_rust::Context,
         args: GetQueueArgs,
     ) -> GetQueueResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let metadata_binding = args.metadata.get_output(context);
         let name_binding = args.name.get_output(context);
         let storage_account_name_binding = args.storage_account_name.get_output(context);

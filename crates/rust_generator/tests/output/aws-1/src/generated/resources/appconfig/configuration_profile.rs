@@ -112,8 +112,6 @@ pub mod configuration_profile {
         name: &str,
         args: ConfigurationProfileArgs,
     ) -> ConfigurationProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let kms_key_identifier_binding = args.kms_key_identifier.get_output(context);

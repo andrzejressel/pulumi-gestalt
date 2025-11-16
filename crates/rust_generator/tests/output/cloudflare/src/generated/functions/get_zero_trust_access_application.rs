@@ -44,8 +44,6 @@ pub mod get_zero_trust_access_application {
         context: &pulumi_gestalt_rust::Context,
         args: GetZeroTrustAccessApplicationArgs,
     ) -> GetZeroTrustAccessApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let domain_binding = args.domain.get_output(context);
         let name_binding = args.name.get_output(context);

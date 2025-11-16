@@ -198,8 +198,6 @@ pub mod insight {
         name: &str,
         args: InsightArgs,
     ) -> InsightResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let group_by_attribute_binding = args.group_by_attribute.get_output(context);
         let name_binding = args.name.get_output(context);

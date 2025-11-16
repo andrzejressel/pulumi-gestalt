@@ -145,8 +145,6 @@ pub mod environment {
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_identifier_binding = args.account_identifier.get_output(context);
         let account_region_binding = args.account_region.get_output(context);
         let blueprint_identifier_binding = args.blueprint_identifier.get_output(context);

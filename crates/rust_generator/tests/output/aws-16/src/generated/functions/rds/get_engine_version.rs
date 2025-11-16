@@ -115,8 +115,6 @@ pub mod get_engine_version {
         context: &pulumi_gestalt_rust::Context,
         args: GetEngineVersionArgs,
     ) -> GetEngineVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_only_binding = args.default_only.get_output(context);
         let engine_binding = args.engine.get_output(context);
         let filters_binding = args.filters.get_output(context);

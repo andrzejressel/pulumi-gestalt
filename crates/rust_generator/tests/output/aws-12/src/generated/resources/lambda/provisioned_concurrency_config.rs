@@ -97,8 +97,6 @@ pub mod provisioned_concurrency_config {
         name: &str,
         args: ProvisionedConcurrencyConfigArgs,
     ) -> ProvisionedConcurrencyConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let function_name_binding = args.function_name.get_output(context);
         let provisioned_concurrent_executions_binding = args
             .provisioned_concurrent_executions

@@ -186,8 +186,6 @@ pub mod ai_tensorboard {
         name: &str,
         args: AiTensorboardArgs,
     ) -> AiTensorboardResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let encryption_spec_binding = args.encryption_spec.get_output(context);

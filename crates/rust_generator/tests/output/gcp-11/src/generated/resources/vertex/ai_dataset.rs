@@ -123,8 +123,6 @@ pub mod ai_dataset {
         name: &str,
         args: AiDatasetArgs,
     ) -> AiDatasetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let encryption_spec_binding = args.encryption_spec.get_output(context);
         let labels_binding = args.labels.get_output(context);

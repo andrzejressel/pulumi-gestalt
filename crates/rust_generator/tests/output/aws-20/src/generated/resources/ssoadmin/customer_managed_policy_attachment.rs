@@ -94,8 +94,6 @@ pub mod customer_managed_policy_attachment {
         name: &str,
         args: CustomerManagedPolicyAttachmentArgs,
     ) -> CustomerManagedPolicyAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let customer_managed_policy_reference_binding = args
             .customer_managed_policy_reference
             .get_output(context);

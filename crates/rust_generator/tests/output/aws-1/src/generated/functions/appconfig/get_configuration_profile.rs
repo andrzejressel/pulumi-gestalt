@@ -54,8 +54,6 @@ pub mod get_configuration_profile {
         context: &pulumi_gestalt_rust::Context,
         args: GetConfigurationProfileArgs,
     ) -> GetConfigurationProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let configuration_profile_id_binding = args
             .configuration_profile_id

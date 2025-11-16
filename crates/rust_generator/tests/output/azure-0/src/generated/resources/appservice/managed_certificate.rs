@@ -151,8 +151,6 @@ pub mod managed_certificate {
         name: &str,
         args: ManagedCertificateArgs,
     ) -> ManagedCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_hostname_binding_id_binding = args
             .custom_hostname_binding_id
             .get_output(context);

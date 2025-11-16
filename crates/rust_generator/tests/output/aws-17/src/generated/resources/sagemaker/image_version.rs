@@ -69,8 +69,6 @@ pub mod image_version {
         name: &str,
         args: ImageVersionArgs,
     ) -> ImageVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_image_binding = args.base_image.get_output(context);
         let image_name_binding = args.image_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

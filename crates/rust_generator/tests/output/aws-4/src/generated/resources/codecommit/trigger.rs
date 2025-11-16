@@ -69,8 +69,6 @@ pub mod trigger {
         name: &str,
         args: TriggerArgs,
     ) -> TriggerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let repository_name_binding = args.repository_name.get_output(context);
         let triggers_binding = args.triggers.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

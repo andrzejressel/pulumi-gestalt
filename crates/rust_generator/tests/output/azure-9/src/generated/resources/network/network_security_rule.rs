@@ -187,8 +187,6 @@ pub mod network_security_rule {
         name: &str,
         args: NetworkSecurityRuleArgs,
     ) -> NetworkSecurityRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_binding = args.access.get_output(context);
         let description_binding = args.description.get_output(context);
         let destination_address_prefix_binding = args

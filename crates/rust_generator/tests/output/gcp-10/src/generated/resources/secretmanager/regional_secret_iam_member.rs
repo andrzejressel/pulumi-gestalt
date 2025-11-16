@@ -449,8 +449,6 @@ pub mod regional_secret_iam_member {
         name: &str,
         args: RegionalSecretIamMemberArgs,
     ) -> RegionalSecretIamMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let location_binding = args.location.get_output(context);
         let member_binding = args.member.get_output(context);

@@ -214,8 +214,6 @@ pub mod entry_type {
         name: &str,
         args: EntryTypeArgs,
     ) -> EntryTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let entry_type_id_binding = args.entry_type_id.get_output(context);

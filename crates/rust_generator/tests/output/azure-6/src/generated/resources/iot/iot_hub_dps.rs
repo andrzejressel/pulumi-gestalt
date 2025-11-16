@@ -128,8 +128,6 @@ pub mod iot_hub_dps {
         name: &str,
         args: IotHubDpsArgs,
     ) -> IotHubDpsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_policy_binding = args.allocation_policy.get_output(context);
         let data_residency_enabled_binding = args
             .data_residency_enabled

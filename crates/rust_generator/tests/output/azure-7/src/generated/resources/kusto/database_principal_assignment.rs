@@ -126,8 +126,6 @@ pub mod database_principal_assignment {
         name: &str,
         args: DatabasePrincipalAssignmentArgs,
     ) -> DatabasePrincipalAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let database_name_binding = args.database_name.get_output(context);
         let name_binding = args.name.get_output(context);

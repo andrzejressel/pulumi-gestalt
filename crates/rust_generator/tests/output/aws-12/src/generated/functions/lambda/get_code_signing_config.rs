@@ -40,8 +40,6 @@ pub mod get_code_signing_config {
         context: &pulumi_gestalt_rust::Context,
         args: GetCodeSigningConfigArgs,
     ) -> GetCodeSigningConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:lambda/getCodeSigningConfig:getCodeSigningConfig".into(),

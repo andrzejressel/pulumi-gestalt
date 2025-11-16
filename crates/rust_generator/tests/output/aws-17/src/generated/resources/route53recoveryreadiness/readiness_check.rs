@@ -79,8 +79,6 @@ pub mod readiness_check {
         name: &str,
         args: ReadinessCheckArgs,
     ) -> ReadinessCheckResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let readiness_check_name_binding = args.readiness_check_name.get_output(context);
         let resource_set_name_binding = args.resource_set_name.get_output(context);
         let tags_binding = args.tags.get_output(context);

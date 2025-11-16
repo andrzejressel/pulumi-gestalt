@@ -175,8 +175,6 @@ pub mod ai_feature_group {
         name: &str,
         args: AiFeatureGroupArgs,
     ) -> AiFeatureGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let big_query_binding = args.big_query.get_output(context);
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);

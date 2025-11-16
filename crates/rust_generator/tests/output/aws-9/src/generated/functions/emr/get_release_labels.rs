@@ -32,8 +32,6 @@ pub mod get_release_labels {
         context: &pulumi_gestalt_rust::Context,
         args: GetReleaseLabelsArgs,
     ) -> GetReleaseLabelsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:emr/getReleaseLabels:getReleaseLabels".into(),

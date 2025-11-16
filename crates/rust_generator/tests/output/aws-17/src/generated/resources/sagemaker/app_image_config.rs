@@ -117,8 +117,6 @@ pub mod app_image_config {
         name: &str,
         args: AppImageConfigArgs,
     ) -> AppImageConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_image_config_name_binding = args
             .app_image_config_name
             .get_output(context);

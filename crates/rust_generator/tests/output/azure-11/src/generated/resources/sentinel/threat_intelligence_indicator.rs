@@ -232,8 +232,6 @@ pub mod threat_intelligence_indicator {
         name: &str,
         args: ThreatIntelligenceIndicatorArgs,
     ) -> ThreatIntelligenceIndicatorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let confidence_binding = args.confidence.get_output(context);
         let created_by_binding = args.created_by.get_output(context);
         let description_binding = args.description.get_output(context);

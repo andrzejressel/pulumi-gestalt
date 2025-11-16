@@ -104,8 +104,6 @@ pub mod table_policy {
         name: &str,
         args: TablePolicyArgs,
     ) -> TablePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let namespace_binding = args.namespace.get_output(context);
         let resource_policy_binding = args.resource_policy.get_output(context);

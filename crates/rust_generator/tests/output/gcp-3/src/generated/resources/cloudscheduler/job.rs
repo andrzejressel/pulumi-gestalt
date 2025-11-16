@@ -363,8 +363,6 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_engine_http_target_binding = args
             .app_engine_http_target
             .get_output(context);

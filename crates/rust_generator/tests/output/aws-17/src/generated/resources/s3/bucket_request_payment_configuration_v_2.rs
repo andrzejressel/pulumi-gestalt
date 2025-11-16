@@ -78,8 +78,6 @@ pub mod bucket_request_payment_configuration_v_2 {
         name: &str,
         args: BucketRequestPaymentConfigurationV2Args,
     ) -> BucketRequestPaymentConfigurationV2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let expected_bucket_owner_binding = args
             .expected_bucket_owner

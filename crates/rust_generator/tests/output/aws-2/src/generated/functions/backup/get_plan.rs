@@ -43,8 +43,6 @@ pub mod get_plan {
         context: &pulumi_gestalt_rust::Context,
         args: GetPlanArgs,
     ) -> GetPlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let plan_id_binding = args.plan_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

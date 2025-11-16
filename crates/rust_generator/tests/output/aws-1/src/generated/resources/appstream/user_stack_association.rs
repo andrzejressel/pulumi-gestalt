@@ -86,8 +86,6 @@ pub mod user_stack_association {
         name: &str,
         args: UserStackAssociationArgs,
     ) -> UserStackAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_type_binding = args.authentication_type.get_output(context);
         let send_email_notification_binding = args
             .send_email_notification

@@ -103,8 +103,6 @@ pub mod location_fsx_ontap_file_system {
         name: &str,
         args: LocationFsxOntapFileSystemArgs,
     ) -> LocationFsxOntapFileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let protocol_binding = args.protocol.get_output(context);
         let security_group_arns_binding = args.security_group_arns.get_output(context);
         let storage_virtual_machine_arn_binding = args

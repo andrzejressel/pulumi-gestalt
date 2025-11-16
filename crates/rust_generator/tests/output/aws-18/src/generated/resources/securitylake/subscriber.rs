@@ -135,8 +135,6 @@ pub mod subscriber {
         name: &str,
         args: SubscriberArgs,
     ) -> SubscriberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_type_binding = args.access_type.get_output(context);
         let source_binding = args.source.get_output(context);
         let subscriber_description_binding = args

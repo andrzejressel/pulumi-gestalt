@@ -85,8 +85,6 @@ pub mod sync {
         name: &str,
         args: SyncArgs,
     ) -> SyncResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let incoming_traffic_policy_binding = args
             .incoming_traffic_policy
             .get_output(context);

@@ -247,8 +247,6 @@ pub mod volume_replication {
         name: &str,
         args: VolumeReplicationArgs,
     ) -> VolumeReplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delete_destination_volume_binding = args
             .delete_destination_volume
             .get_output(context);

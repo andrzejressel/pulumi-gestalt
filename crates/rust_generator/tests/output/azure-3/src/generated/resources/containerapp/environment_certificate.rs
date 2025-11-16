@@ -114,8 +114,6 @@ pub mod environment_certificate {
         name: &str,
         args: EnvironmentCertificateArgs,
     ) -> EnvironmentCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_blob_base64_binding = args
             .certificate_blob_base64
             .get_output(context);

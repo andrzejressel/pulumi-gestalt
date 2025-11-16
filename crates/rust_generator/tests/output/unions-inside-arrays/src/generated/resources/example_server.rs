@@ -36,8 +36,6 @@ pub mod example_server {
         name: &str,
         args: ExampleServerArgs,
     ) -> ExampleServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let properties_collection_binding = args
             .properties_collection
             .get_output(context);

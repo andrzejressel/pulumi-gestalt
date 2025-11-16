@@ -67,8 +67,6 @@ pub mod get_route_table {
         context: &pulumi_gestalt_rust::Context,
         args: GetRouteTableArgs,
     ) -> GetRouteTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let gateway_id_binding = args.gateway_id.get_output(context);
         let route_table_id_binding = args.route_table_id.get_output(context);

@@ -40,8 +40,6 @@ pub mod get_plugin {
         context: &pulumi_gestalt_rust::Context,
         args: GetPluginArgs,
     ) -> GetPluginResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_binding = args.alias.get_output(context);
         let id_binding = args.id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

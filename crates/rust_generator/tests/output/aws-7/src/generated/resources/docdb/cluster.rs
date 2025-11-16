@@ -262,8 +262,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_major_version_upgrade_binding = args
             .allow_major_version_upgrade
             .get_output(context);

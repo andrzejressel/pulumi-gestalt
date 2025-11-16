@@ -100,8 +100,6 @@ pub mod mount_target {
         name: &str,
         args: MountTargetArgs,
     ) -> MountTargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let file_system_id_binding = args.file_system_id.get_output(context);
         let ip_address_binding = args.ip_address.get_output(context);
         let security_groups_binding = args.security_groups.get_output(context);

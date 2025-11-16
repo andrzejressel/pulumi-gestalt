@@ -59,8 +59,6 @@ pub mod zero_trust_tunnel_route {
         name: &str,
         args: ZeroTrustTunnelRouteArgs,
     ) -> ZeroTrustTunnelRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let network_binding = args.network.get_output(context);

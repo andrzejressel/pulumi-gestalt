@@ -120,8 +120,6 @@ pub mod maintenance_window {
         name: &str,
         args: MaintenanceWindowArgs,
     ) -> MaintenanceWindowResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_unassociated_targets_binding = args
             .allow_unassociated_targets
             .get_output(context);

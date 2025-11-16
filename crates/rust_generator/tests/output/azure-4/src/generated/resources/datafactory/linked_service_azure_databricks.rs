@@ -241,8 +241,6 @@ pub mod linked_service_azure_databricks {
         name: &str,
         args: LinkedServiceAzureDatabricksArgs,
     ) -> LinkedServiceAzureDatabricksResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_token_binding = args.access_token.get_output(context);
         let adb_domain_binding = args.adb_domain.get_output(context);
         let additional_properties_binding = args

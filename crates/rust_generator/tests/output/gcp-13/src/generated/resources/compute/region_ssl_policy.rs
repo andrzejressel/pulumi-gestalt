@@ -162,8 +162,6 @@ pub mod region_ssl_policy {
         name: &str,
         args: RegionSslPolicyArgs,
     ) -> RegionSslPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_features_binding = args.custom_features.get_output(context);
         let description_binding = args.description.get_output(context);
         let min_tls_version_binding = args.min_tls_version.get_output(context);

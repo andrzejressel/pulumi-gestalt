@@ -244,8 +244,6 @@ pub mod intent {
         name: &str,
         args: IntentArgs,
     ) -> IntentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let conclusion_statement_binding = args.conclusion_statement.get_output(context);
         let confirmation_prompt_binding = args.confirmation_prompt.get_output(context);
         let create_version_binding = args.create_version.get_output(context);

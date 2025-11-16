@@ -87,8 +87,6 @@ pub mod container_policy {
         name: &str,
         args: ContainerPolicyArgs,
     ) -> ContainerPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_name_binding = args.container_name.get_output(context);
         let policy_binding = args.policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

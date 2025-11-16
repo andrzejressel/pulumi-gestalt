@@ -169,8 +169,6 @@ pub mod api_config {
         name: &str,
         args: ApiConfigArgs,
     ) -> ApiConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_binding = args.api.get_output(context);
         let api_config_id_binding = args.api_config_id.get_output(context);
         let api_config_id_prefix_binding = args.api_config_id_prefix.get_output(context);

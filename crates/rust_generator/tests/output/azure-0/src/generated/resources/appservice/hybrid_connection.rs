@@ -141,8 +141,6 @@ pub mod hybrid_connection {
         name: &str,
         args: HybridConnectionArgs,
     ) -> HybridConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_name_binding = args.app_service_name.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
         let port_binding = args.port.get_output(context);

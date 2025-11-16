@@ -294,8 +294,6 @@ pub mod linux_web_app_slot {
         name: &str,
         args: LinuxWebAppSlotArgs,
     ) -> LinuxWebAppSlotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_id_binding = args.app_service_id.get_output(context);
         let app_settings_binding = args.app_settings.get_output(context);
         let auth_settings_binding = args.auth_settings.get_output(context);

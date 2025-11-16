@@ -116,8 +116,6 @@ pub mod policy {
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let evaluator_type_binding = args.evaluator_type.get_output(context);
         let fact_data_binding = args.fact_data.get_output(context);

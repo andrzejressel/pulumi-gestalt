@@ -111,8 +111,6 @@ pub mod integration_account_assembly {
         name: &str,
         args: IntegrationAccountAssemblyArgs,
     ) -> IntegrationAccountAssemblyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assembly_name_binding = args.assembly_name.get_output(context);
         let assembly_version_binding = args.assembly_version.get_output(context);
         let content_binding = args.content.get_output(context);

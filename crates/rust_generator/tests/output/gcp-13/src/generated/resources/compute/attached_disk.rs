@@ -192,8 +192,6 @@ pub mod attached_disk {
         name: &str,
         args: AttachedDiskArgs,
     ) -> AttachedDiskResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let device_name_binding = args.device_name.get_output(context);
         let disk_binding = args.disk.get_output(context);
         let instance_binding = args.instance.get_output(context);

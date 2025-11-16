@@ -313,8 +313,6 @@ pub mod app_profile {
         name: &str,
         args: AppProfileArgs,
     ) -> AppProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_profile_id_binding = args.app_profile_id.get_output(context);
         let data_boost_isolation_read_only_binding = args
             .data_boost_isolation_read_only

@@ -64,8 +64,6 @@ pub mod dedicated_ip_assignment {
         name: &str,
         args: DedicatedIpAssignmentArgs,
     ) -> DedicatedIpAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_pool_name_binding = args
             .destination_pool_name
             .get_output(context);

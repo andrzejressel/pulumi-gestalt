@@ -191,8 +191,6 @@ pub mod connector {
         name: &str,
         args: ConnectorArgs,
     ) -> ConnectorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capacity_binding = args.capacity.get_output(context);
         let connector_configuration_binding = args
             .connector_configuration

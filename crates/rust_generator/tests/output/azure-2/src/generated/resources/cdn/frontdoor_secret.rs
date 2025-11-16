@@ -602,8 +602,6 @@ pub mod frontdoor_secret {
         name: &str,
         args: FrontdoorSecretArgs,
     ) -> FrontdoorSecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cdn_frontdoor_profile_id_binding = args
             .cdn_frontdoor_profile_id
             .get_output(context);

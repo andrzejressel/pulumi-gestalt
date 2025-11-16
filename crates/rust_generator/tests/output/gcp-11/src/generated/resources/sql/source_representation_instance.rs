@@ -183,8 +183,6 @@ pub mod source_representation_instance {
         name: &str,
         args: SourceRepresentationInstanceArgs,
     ) -> SourceRepresentationInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ca_certificate_binding = args.ca_certificate.get_output(context);
         let client_certificate_binding = args.client_certificate.get_output(context);
         let client_key_binding = args.client_key.get_output(context);

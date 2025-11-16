@@ -45,8 +45,6 @@ pub mod get_volume_group_sap_hana {
         context: &pulumi_gestalt_rust::Context,
         args: GetVolumeGroupSapHanaArgs,
     ) -> GetVolumeGroupSapHanaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

@@ -125,8 +125,6 @@ pub mod v_2_queued_resource {
         name: &str,
         args: V2QueuedResourceArgs,
     ) -> V2QueuedResourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
         let tpu_binding = args.tpu.get_output(context);

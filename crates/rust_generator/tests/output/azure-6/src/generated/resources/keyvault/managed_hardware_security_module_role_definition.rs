@@ -106,8 +106,6 @@ pub mod managed_hardware_security_module_role_definition {
         name: &str,
         args: ManagedHardwareSecurityModuleRoleDefinitionArgs,
     ) -> ManagedHardwareSecurityModuleRoleDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let managed_hsm_id_binding = args.managed_hsm_id.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -328,8 +328,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorization_binding = args.authorization.get_output(context);
         let control_plane_binding = args.control_plane.get_output(context);
         let control_plane_encryption_binding = args

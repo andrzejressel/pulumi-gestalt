@@ -87,8 +87,6 @@ pub mod voice_connector {
         name: &str,
         args: VoiceConnectorArgs,
     ) -> VoiceConnectorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_region_binding = args.aws_region.get_output(context);
         let name_binding = args.name.get_output(context);
         let require_encryption_binding = args.require_encryption.get_output(context);

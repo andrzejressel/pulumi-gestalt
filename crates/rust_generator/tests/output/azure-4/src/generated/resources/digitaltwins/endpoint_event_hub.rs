@@ -134,8 +134,6 @@ pub mod endpoint_event_hub {
         name: &str,
         args: EndpointEventHubArgs,
     ) -> EndpointEventHubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dead_letter_storage_secret_binding = args
             .dead_letter_storage_secret
             .get_output(context);

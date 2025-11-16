@@ -122,8 +122,6 @@ pub mod volume {
         name: &str,
         args: VolumeArgs,
     ) -> VolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_binding = args.availability_zone.get_output(context);
         let encrypted_binding = args.encrypted.get_output(context);
         let final_snapshot_binding = args.final_snapshot.get_output(context);

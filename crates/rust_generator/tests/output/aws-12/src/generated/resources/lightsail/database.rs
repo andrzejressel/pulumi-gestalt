@@ -317,8 +317,6 @@ pub mod database {
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let apply_immediately_binding = args.apply_immediately.get_output(context);
         let availability_zone_binding = args.availability_zone.get_output(context);
         let backup_retention_enabled_binding = args

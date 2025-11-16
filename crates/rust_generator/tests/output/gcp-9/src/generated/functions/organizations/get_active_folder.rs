@@ -36,8 +36,6 @@ pub mod get_active_folder {
         context: &pulumi_gestalt_rust::Context,
         args: GetActiveFolderArgs,
     ) -> GetActiveFolderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_method_binding = args.api_method.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let parent_binding = args.parent.get_output(context);

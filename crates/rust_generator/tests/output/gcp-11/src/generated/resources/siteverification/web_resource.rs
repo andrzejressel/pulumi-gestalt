@@ -121,8 +121,6 @@ pub mod web_resource {
         name: &str,
         args: WebResourceArgs,
     ) -> WebResourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let site_binding = args.site.get_output(context);
         let verification_method_binding = args.verification_method.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

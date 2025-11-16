@@ -33,8 +33,6 @@ pub mod get_key_ring_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetKeyRingIamPolicyArgs,
     ) -> GetKeyRingIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_ring_id_binding = args.key_ring_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:kms/getKeyRingIamPolicy:getKeyRingIamPolicy".into(),

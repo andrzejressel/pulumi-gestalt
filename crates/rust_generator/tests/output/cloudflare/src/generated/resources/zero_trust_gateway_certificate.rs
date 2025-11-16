@@ -59,8 +59,6 @@ pub mod zero_trust_gateway_certificate {
         name: &str,
         args: ZeroTrustGatewayCertificateArgs,
     ) -> ZeroTrustGatewayCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let activate_binding = args.activate.get_output(context);
         let custom_binding = args.custom.get_output(context);

@@ -109,8 +109,6 @@ pub mod efs_location {
         name: &str,
         args: EfsLocationArgs,
     ) -> EfsLocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_point_arn_binding = args.access_point_arn.get_output(context);
         let ec2_config_binding = args.ec2_config.get_output(context);
         let efs_file_system_arn_binding = args.efs_file_system_arn.get_output(context);

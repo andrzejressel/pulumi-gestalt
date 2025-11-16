@@ -377,8 +377,6 @@ pub mod datascan {
         name: &str,
         args: DatascanArgs,
     ) -> DatascanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_binding = args.data.get_output(context);
         let data_profile_spec_binding = args.data_profile_spec.get_output(context);
         let data_quality_spec_binding = args.data_quality_spec.get_output(context);

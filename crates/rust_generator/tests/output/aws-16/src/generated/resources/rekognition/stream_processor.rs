@@ -300,8 +300,6 @@ pub mod stream_processor {
         name: &str,
         args: StreamProcessorArgs,
     ) -> StreamProcessorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_sharing_preference_binding = args
             .data_sharing_preference
             .get_output(context);

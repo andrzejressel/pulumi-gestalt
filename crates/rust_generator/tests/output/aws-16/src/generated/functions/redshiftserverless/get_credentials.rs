@@ -40,8 +40,6 @@ pub mod get_credentials {
         context: &pulumi_gestalt_rust::Context,
         args: GetCredentialsArgs,
     ) -> GetCredentialsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let db_name_binding = args.db_name.get_output(context);
         let duration_seconds_binding = args.duration_seconds.get_output(context);
         let workgroup_name_binding = args.workgroup_name.get_output(context);

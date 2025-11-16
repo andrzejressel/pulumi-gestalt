@@ -100,8 +100,6 @@ pub mod workspace_table {
         name: &str,
         args: WorkspaceTableArgs,
     ) -> WorkspaceTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let plan_binding = args.plan.get_output(context);
         let retention_in_days_binding = args.retention_in_days.get_output(context);

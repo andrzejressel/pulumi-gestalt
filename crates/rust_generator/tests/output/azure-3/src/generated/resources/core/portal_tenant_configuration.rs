@@ -67,8 +67,6 @@ pub mod portal_tenant_configuration {
         name: &str,
         args: PortalTenantConfigurationArgs,
     ) -> PortalTenantConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let private_markdown_storage_enforced_binding = args
             .private_markdown_storage_enforced
             .get_output(context);

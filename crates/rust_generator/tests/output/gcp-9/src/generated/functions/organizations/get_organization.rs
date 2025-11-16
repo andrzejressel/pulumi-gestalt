@@ -42,8 +42,6 @@ pub mod get_organization {
         context: &pulumi_gestalt_rust::Context,
         args: GetOrganizationArgs,
     ) -> GetOrganizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_binding = args.domain.get_output(context);
         let organization_binding = args.organization.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -140,8 +140,6 @@ pub mod image_recipe {
         name: &str,
         args: ImageRecipeArgs,
     ) -> ImageRecipeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let block_device_mappings_binding = args
             .block_device_mappings
             .get_output(context);

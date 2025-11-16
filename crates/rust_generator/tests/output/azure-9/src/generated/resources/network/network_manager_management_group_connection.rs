@@ -120,8 +120,6 @@ pub mod network_manager_management_group_connection {
         name: &str,
         args: NetworkManagerManagementGroupConnectionArgs,
     ) -> NetworkManagerManagementGroupConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let management_group_id_binding = args.management_group_id.get_output(context);
         let name_binding = args.name.get_output(context);

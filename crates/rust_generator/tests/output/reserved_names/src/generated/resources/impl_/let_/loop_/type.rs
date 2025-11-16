@@ -28,8 +28,6 @@ pub mod type_ {
         name: &str,
         args: TypeArgs,
     ) -> TypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let type__binding = args.type_.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "example:impl/let/loop:Type".into(),

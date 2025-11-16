@@ -30,8 +30,6 @@ pub mod get_log_groups {
         context: &pulumi_gestalt_rust::Context,
         args: GetLogGroupsArgs,
     ) -> GetLogGroupsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_group_name_prefix_binding = args
             .log_group_name_prefix
             .get_output(context);

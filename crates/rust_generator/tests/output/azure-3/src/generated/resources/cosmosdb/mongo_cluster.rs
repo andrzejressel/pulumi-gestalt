@@ -183,8 +183,6 @@ pub mod mongo_cluster {
         name: &str,
         args: MongoClusterArgs,
     ) -> MongoClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let administrator_password_binding = args
             .administrator_password
             .get_output(context);

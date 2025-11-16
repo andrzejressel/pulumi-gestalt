@@ -44,8 +44,6 @@ pub mod get_bot_alias {
         context: &pulumi_gestalt_rust::Context,
         args: GetBotAliasArgs,
     ) -> GetBotAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bot_name_binding = args.bot_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

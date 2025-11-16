@@ -124,8 +124,6 @@ pub mod managed_policy_attachment {
         name: &str,
         args: ManagedPolicyAttachmentArgs,
     ) -> ManagedPolicyAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_arn_binding = args.instance_arn.get_output(context);
         let managed_policy_arn_binding = args.managed_policy_arn.get_output(context);
         let permission_set_arn_binding = args.permission_set_arn.get_output(context);

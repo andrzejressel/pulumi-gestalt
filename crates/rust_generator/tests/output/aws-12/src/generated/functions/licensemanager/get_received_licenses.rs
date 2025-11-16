@@ -43,8 +43,6 @@ pub mod get_received_licenses {
         context: &pulumi_gestalt_rust::Context,
         args: GetReceivedLicensesArgs,
     ) -> GetReceivedLicensesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:licensemanager/getReceivedLicenses:getReceivedLicenses".into(),

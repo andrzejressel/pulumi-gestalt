@@ -175,8 +175,6 @@ pub mod express_route_circuit_connection {
         name: &str,
         args: ExpressRouteCircuitConnectionArgs,
     ) -> ExpressRouteCircuitConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_prefix_ipv4_binding = args.address_prefix_ipv4.get_output(context);
         let address_prefix_ipv6_binding = args.address_prefix_ipv6.get_output(context);
         let authorization_key_binding = args.authorization_key.get_output(context);

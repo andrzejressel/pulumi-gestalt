@@ -116,8 +116,6 @@ pub mod service_network_settings {
         name: &str,
         args: ServiceNetworkSettingsArgs,
     ) -> ServiceNetworkSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let network_settings_binding = args.network_settings.get_output(context);
         let project_binding = args.project.get_output(context);
         let service_binding = args.service.get_output(context);

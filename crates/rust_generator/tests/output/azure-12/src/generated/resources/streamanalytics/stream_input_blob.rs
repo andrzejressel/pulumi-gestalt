@@ -139,8 +139,6 @@ pub mod stream_input_blob {
         name: &str,
         args: StreamInputBlobArgs,
     ) -> StreamInputBlobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let date_format_binding = args.date_format.get_output(context);
         let name_binding = args.name.get_output(context);
         let path_pattern_binding = args.path_pattern.get_output(context);

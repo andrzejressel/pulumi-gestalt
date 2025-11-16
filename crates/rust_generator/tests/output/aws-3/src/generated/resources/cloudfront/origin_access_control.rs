@@ -86,8 +86,6 @@ pub mod origin_access_control {
         name: &str,
         args: OriginAccessControlArgs,
     ) -> OriginAccessControlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let origin_access_control_origin_type_binding = args

@@ -148,8 +148,6 @@ pub mod dataset_azure_sql_table {
         name: &str,
         args: DatasetAzureSqlTableArgs,
     ) -> DatasetAzureSqlTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);

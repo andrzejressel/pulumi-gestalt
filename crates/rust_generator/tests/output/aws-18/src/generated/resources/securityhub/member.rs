@@ -71,8 +71,6 @@ pub mod member {
         name: &str,
         args: MemberArgs,
     ) -> MemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let email_binding = args.email.get_output(context);
         let invite_binding = args.invite.get_output(context);

@@ -338,8 +338,6 @@ pub mod budget {
         name: &str,
         args: BudgetArgs,
     ) -> BudgetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let all_updates_rule_binding = args.all_updates_rule.get_output(context);
         let amount_binding = args.amount.get_output(context);
         let billing_account_binding = args.billing_account.get_output(context);

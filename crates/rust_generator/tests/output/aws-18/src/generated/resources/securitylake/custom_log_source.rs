@@ -106,8 +106,6 @@ pub mod custom_log_source {
         name: &str,
         args: CustomLogSourceArgs,
     ) -> CustomLogSourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_binding = args.configuration.get_output(context);
         let event_classes_binding = args.event_classes.get_output(context);
         let source_name_binding = args.source_name.get_output(context);

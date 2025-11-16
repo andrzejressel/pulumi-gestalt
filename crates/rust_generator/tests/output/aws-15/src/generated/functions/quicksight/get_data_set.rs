@@ -82,8 +82,6 @@ pub mod get_data_set {
         context: &pulumi_gestalt_rust::Context,
         args: GetDataSetArgs,
     ) -> GetDataSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let data_set_id_binding = args.data_set_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

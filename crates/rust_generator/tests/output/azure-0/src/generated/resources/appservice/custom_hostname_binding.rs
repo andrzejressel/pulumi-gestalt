@@ -111,8 +111,6 @@ pub mod custom_hostname_binding {
         name: &str,
         args: CustomHostnameBindingArgs,
     ) -> CustomHostnameBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_name_binding = args.app_service_name.get_output(context);
         let hostname_binding = args.hostname.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

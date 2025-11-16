@@ -93,8 +93,6 @@ pub mod flexible_server_firewall_rule {
         name: &str,
         args: FlexibleServerFirewallRuleArgs,
     ) -> FlexibleServerFirewallRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let end_ip_address_binding = args.end_ip_address.get_output(context);
         let name_binding = args.name.get_output(context);
         let server_id_binding = args.server_id.get_output(context);

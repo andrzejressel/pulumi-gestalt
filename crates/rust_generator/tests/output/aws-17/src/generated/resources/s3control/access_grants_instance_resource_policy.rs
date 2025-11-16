@@ -64,8 +64,6 @@ pub mod access_grants_instance_resource_policy {
         name: &str,
         args: AccessGrantsInstanceResourcePolicyArgs,
     ) -> AccessGrantsInstanceResourcePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let policy_binding = args.policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

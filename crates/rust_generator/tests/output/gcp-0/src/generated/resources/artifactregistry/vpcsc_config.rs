@@ -84,8 +84,6 @@ pub mod vpcsc_config {
         name: &str,
         args: VpcscConfigArgs,
     ) -> VpcscConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let project_binding = args.project.get_output(context);
         let vpcsc_policy_binding = args.vpcsc_policy.get_output(context);

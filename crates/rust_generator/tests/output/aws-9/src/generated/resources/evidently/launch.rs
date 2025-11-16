@@ -303,8 +303,6 @@ pub mod launch {
         name: &str,
         args: LaunchArgs,
     ) -> LaunchResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let groups_binding = args.groups.get_output(context);
         let metric_monitors_binding = args.metric_monitors.get_output(context);

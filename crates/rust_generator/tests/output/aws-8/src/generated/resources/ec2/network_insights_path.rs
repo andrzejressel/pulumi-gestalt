@@ -104,8 +104,6 @@ pub mod network_insights_path {
         name: &str,
         args: NetworkInsightsPathArgs,
     ) -> NetworkInsightsPathResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_binding = args.destination.get_output(context);
         let destination_ip_binding = args.destination_ip.get_output(context);
         let destination_port_binding = args.destination_port.get_output(context);

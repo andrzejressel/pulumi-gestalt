@@ -92,8 +92,6 @@ pub mod alternative_contact {
         name: &str,
         args: AlternativeContactArgs,
     ) -> AlternativeContactResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let alternate_contact_type_binding = args
             .alternate_contact_type

@@ -89,8 +89,6 @@ pub mod attachment_accepter {
         name: &str,
         args: AttachmentAccepterArgs,
     ) -> AttachmentAccepterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attachment_id_binding = args.attachment_id.get_output(context);
         let attachment_type_binding = args.attachment_type.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

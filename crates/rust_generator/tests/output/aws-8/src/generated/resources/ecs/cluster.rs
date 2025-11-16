@@ -220,8 +220,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_binding = args.configuration.get_output(context);
         let name_binding = args.name.get_output(context);
         let service_connect_defaults_binding = args

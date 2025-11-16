@@ -80,8 +80,6 @@ pub mod dashboard {
         name: &str,
         args: DashboardArgs,
     ) -> DashboardResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dashboard_body_binding = args.dashboard_body.get_output(context);
         let dashboard_name_binding = args.dashboard_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

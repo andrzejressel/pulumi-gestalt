@@ -30,8 +30,6 @@ pub mod get_email_identity_mail_from_attributes {
         context: &pulumi_gestalt_rust::Context,
         args: GetEmailIdentityMailFromAttributesArgs,
     ) -> GetEmailIdentityMailFromAttributesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let email_identity_binding = args.email_identity.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:sesv2/getEmailIdentityMailFromAttributes:getEmailIdentityMailFromAttributes"

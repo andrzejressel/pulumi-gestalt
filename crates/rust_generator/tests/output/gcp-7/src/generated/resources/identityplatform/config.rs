@@ -235,8 +235,6 @@ pub mod config {
         name: &str,
         args: ConfigArgs,
     ) -> ConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorized_domains_binding = args.authorized_domains.get_output(context);
         let autodelete_anonymous_users_binding = args
             .autodelete_anonymous_users

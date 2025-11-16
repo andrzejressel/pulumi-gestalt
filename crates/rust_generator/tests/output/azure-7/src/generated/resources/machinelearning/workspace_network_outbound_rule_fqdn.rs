@@ -113,8 +113,6 @@ pub mod workspace_network_outbound_rule_fqdn {
         name: &str,
         args: WorkspaceNetworkOutboundRuleFqdnArgs,
     ) -> WorkspaceNetworkOutboundRuleFqdnResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_fqdn_binding = args.destination_fqdn.get_output(context);
         let name_binding = args.name.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);

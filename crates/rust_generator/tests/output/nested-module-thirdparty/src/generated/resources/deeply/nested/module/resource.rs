@@ -27,8 +27,6 @@ pub mod resource {
         name: &str,
         args: ResourceArgs,
     ) -> ResourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let baz_binding = args.baz.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "foo-bar:deeply/nested/module:Resource".into(),

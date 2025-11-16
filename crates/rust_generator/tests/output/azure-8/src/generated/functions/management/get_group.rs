@@ -44,8 +44,6 @@ pub mod get_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetGroupArgs,
     ) -> GetGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

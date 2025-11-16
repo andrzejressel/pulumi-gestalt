@@ -189,8 +189,6 @@ pub mod contacts_rotation {
         name: &str,
         args: ContactsRotationArgs,
     ) -> ContactsRotationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_ids_binding = args.contact_ids.get_output(context);
         let name_binding = args.name.get_output(context);
         let recurrence_binding = args.recurrence.get_output(context);

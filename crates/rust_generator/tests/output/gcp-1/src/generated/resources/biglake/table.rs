@@ -172,8 +172,6 @@ pub mod table {
         name: &str,
         args: TableArgs,
     ) -> TableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_binding = args.database.get_output(context);
         let hive_options_binding = args.hive_options.get_output(context);
         let name_binding = args.name.get_output(context);

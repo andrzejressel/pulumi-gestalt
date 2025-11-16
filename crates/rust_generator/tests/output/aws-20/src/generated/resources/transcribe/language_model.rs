@@ -138,8 +138,6 @@ pub mod language_model {
         name: &str,
         args: LanguageModelArgs,
     ) -> LanguageModelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_model_name_binding = args.base_model_name.get_output(context);
         let input_data_config_binding = args.input_data_config.get_output(context);
         let language_code_binding = args.language_code.get_output(context);

@@ -128,8 +128,6 @@ pub mod env_group {
         name: &str,
         args: EnvGroupArgs,
     ) -> EnvGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hostnames_binding = args.hostnames.get_output(context);
         let name_binding = args.name.get_output(context);
         let org_id_binding = args.org_id.get_output(context);

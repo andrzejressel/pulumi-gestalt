@@ -48,8 +48,6 @@ pub mod get_authorizer {
         context: &pulumi_gestalt_rust::Context,
         args: GetAuthorizerArgs,
     ) -> GetAuthorizerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorizer_id_binding = args.authorizer_id.get_output(context);
         let rest_api_id_binding = args.rest_api_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

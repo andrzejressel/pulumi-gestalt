@@ -160,8 +160,6 @@ pub mod refresh_schedule {
         name: &str,
         args: RefreshScheduleArgs,
     ) -> RefreshScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let data_set_id_binding = args.data_set_id.get_output(context);
         let schedule_binding = args.schedule.get_output(context);

@@ -115,8 +115,6 @@ pub mod profile {
         name: &str,
         args: ProfileArgs,
     ) -> ProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let duration_seconds_binding = args.duration_seconds.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let managed_policy_arns_binding = args.managed_policy_arns.get_output(context);

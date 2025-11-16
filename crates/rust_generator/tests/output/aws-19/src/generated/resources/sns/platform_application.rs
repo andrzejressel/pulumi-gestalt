@@ -186,8 +186,6 @@ pub mod platform_application {
         name: &str,
         args: PlatformApplicationArgs,
     ) -> PlatformApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let apple_platform_bundle_id_binding = args
             .apple_platform_bundle_id
             .get_output(context);

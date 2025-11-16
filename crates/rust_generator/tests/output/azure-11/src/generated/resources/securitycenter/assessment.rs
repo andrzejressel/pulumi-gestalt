@@ -138,8 +138,6 @@ pub mod assessment {
         name: &str,
         args: AssessmentArgs,
     ) -> AssessmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_data_binding = args.additional_data.get_output(context);
         let assessment_policy_id_binding = args.assessment_policy_id.get_output(context);
         let status_binding = args.status.get_output(context);

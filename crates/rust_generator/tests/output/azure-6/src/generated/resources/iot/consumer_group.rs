@@ -85,8 +85,6 @@ pub mod consumer_group {
         name: &str,
         args: ConsumerGroupArgs,
     ) -> ConsumerGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let eventhub_endpoint_name_binding = args
             .eventhub_endpoint_name
             .get_output(context);

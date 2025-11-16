@@ -75,8 +75,6 @@ pub mod assessment_report {
         name: &str,
         args: AssessmentReportArgs,
     ) -> AssessmentReportResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assessment_id_binding = args.assessment_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -274,8 +274,6 @@ pub mod compute_environment {
         name: &str,
         args: ComputeEnvironmentArgs,
     ) -> ComputeEnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let compute_environment_name_binding = args
             .compute_environment_name
             .get_output(context);

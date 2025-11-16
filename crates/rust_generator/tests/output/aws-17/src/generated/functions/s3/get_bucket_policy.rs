@@ -28,8 +28,6 @@ pub mod get_bucket_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetBucketPolicyArgs,
     ) -> GetBucketPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:s3/getBucketPolicy:getBucketPolicy".into(),

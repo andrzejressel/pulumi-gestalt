@@ -49,8 +49,6 @@ pub mod network_interface_application_gateway_backend_address_pool_association {
         name: &str,
         args: NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationArgs,
     ) -> NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backend_address_pool_id_binding = args
             .backend_address_pool_id
             .get_output(context);

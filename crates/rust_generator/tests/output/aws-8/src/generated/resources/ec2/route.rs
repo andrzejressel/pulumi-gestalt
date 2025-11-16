@@ -198,8 +198,6 @@ pub mod route {
         name: &str,
         args: RouteArgs,
     ) -> RouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let carrier_gateway_id_binding = args.carrier_gateway_id.get_output(context);
         let core_network_arn_binding = args.core_network_arn.get_output(context);
         let destination_cidr_block_binding = args

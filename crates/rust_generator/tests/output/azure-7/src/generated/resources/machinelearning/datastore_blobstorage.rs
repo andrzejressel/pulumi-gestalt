@@ -164,8 +164,6 @@ pub mod datastore_blobstorage {
         name: &str,
         args: DatastoreBlobstorageArgs,
     ) -> DatastoreBlobstorageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_key_binding = args.account_key.get_output(context);
         let description_binding = args.description.get_output(context);
         let is_default_binding = args.is_default.get_output(context);

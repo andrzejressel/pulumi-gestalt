@@ -152,8 +152,6 @@ pub mod managed_hardware_security_module {
         name: &str,
         args: ManagedHardwareSecurityModuleArgs,
     ) -> ManagedHardwareSecurityModuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_object_ids_binding = args.admin_object_ids.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);

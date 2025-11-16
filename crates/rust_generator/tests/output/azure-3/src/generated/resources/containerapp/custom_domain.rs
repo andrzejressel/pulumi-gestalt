@@ -192,8 +192,6 @@ pub mod custom_domain {
         name: &str,
         args: CustomDomainArgs,
     ) -> CustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_binding_type_binding = args
             .certificate_binding_type
             .get_output(context);

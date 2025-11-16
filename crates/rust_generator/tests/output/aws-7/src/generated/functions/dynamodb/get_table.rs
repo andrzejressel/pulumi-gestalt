@@ -68,8 +68,6 @@ pub mod get_table {
         context: &pulumi_gestalt_rust::Context,
         args: GetTableArgs,
     ) -> GetTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let server_side_encryption_binding = args
             .server_side_encryption

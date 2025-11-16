@@ -109,8 +109,6 @@ pub mod view {
         name: &str,
         args: ViewArgs,
     ) -> ViewResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_view_binding = args.default_view.get_output(context);
         let filters_binding = args.filters.get_output(context);
         let included_properties_binding = args.included_properties.get_output(context);

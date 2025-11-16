@@ -42,8 +42,6 @@ pub mod get_network_slice {
         context: &pulumi_gestalt_rust::Context,
         args: GetNetworkSliceArgs,
     ) -> GetNetworkSliceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mobile_network_id_binding = args.mobile_network_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -85,8 +85,6 @@ pub mod function {
         name: &str,
         args: FunctionArgs,
     ) -> FunctionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let code_binding = args.code.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let key_value_store_associations_binding = args

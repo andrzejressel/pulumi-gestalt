@@ -68,8 +68,6 @@ pub mod random_bytes {
         name: &str,
         args: RandomBytesArgs,
     ) -> RandomBytesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let keepers_binding = args.keepers.get_output(context);
         let length_binding = args.length.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

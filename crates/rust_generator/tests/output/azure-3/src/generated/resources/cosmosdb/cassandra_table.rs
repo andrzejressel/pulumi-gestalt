@@ -153,8 +153,6 @@ pub mod cassandra_table {
         name: &str,
         args: CassandraTableArgs,
     ) -> CassandraTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let analytical_storage_ttl_binding = args
             .analytical_storage_ttl
             .get_output(context);

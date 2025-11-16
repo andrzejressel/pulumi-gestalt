@@ -136,8 +136,6 @@ pub mod transit_gateway {
         name: &str,
         args: TransitGatewayArgs,
     ) -> TransitGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let amazon_side_asn_binding = args.amazon_side_asn.get_output(context);
         let auto_accept_shared_attachments_binding = args
             .auto_accept_shared_attachments

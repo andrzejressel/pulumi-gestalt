@@ -113,8 +113,6 @@ pub mod environment_blueprint_configuration {
         name: &str,
         args: EnvironmentBlueprintConfigurationArgs,
     ) -> EnvironmentBlueprintConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_id_binding = args.domain_id.get_output(context);
         let enabled_regions_binding = args.enabled_regions.get_output(context);
         let environment_blueprint_id_binding = args

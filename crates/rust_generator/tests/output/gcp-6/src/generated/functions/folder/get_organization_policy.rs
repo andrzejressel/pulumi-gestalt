@@ -42,8 +42,6 @@ pub mod get_organization_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetOrganizationPolicyArgs,
     ) -> GetOrganizationPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let constraint_binding = args.constraint.get_output(context);
         let folder_binding = args.folder.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

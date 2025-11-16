@@ -118,8 +118,6 @@ pub mod lifecycle_hook {
         name: &str,
         args: LifecycleHookArgs,
     ) -> LifecycleHookResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autoscaling_group_name_binding = args
             .autoscaling_group_name
             .get_output(context);

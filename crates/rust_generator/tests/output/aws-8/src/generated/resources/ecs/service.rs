@@ -395,8 +395,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alarms_binding = args.alarms.get_output(context);
         let availability_zone_rebalancing_binding = args
             .availability_zone_rebalancing

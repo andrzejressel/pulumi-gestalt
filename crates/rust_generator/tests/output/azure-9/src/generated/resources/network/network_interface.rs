@@ -186,8 +186,6 @@ pub mod network_interface {
         name: &str,
         args: NetworkInterfaceArgs,
     ) -> NetworkInterfaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accelerated_networking_enabled_binding = args
             .accelerated_networking_enabled
             .get_output(context);

@@ -472,8 +472,6 @@ pub mod routine {
         name: &str,
         args: RoutineArgs,
     ) -> RoutineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arguments_binding = args.arguments.get_output(context);
         let data_governance_type_binding = args.data_governance_type.get_output(context);
         let dataset_id_binding = args.dataset_id.get_output(context);

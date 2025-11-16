@@ -42,8 +42,6 @@ pub mod get_parameters_by_path {
         context: &pulumi_gestalt_rust::Context,
         args: GetParametersByPathArgs,
     ) -> GetParametersByPathResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let path_binding = args.path.get_output(context);
         let recursive_binding = args.recursive.get_output(context);
         let with_decryption_binding = args.with_decryption.get_output(context);

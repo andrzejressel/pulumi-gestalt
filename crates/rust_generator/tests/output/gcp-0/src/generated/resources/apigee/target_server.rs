@@ -205,8 +205,6 @@ pub mod target_server {
         name: &str,
         args: TargetServerArgs,
     ) -> TargetServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let env_id_binding = args.env_id.get_output(context);
         let host_binding = args.host.get_output(context);

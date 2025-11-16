@@ -124,8 +124,6 @@ pub mod group {
         name: &str,
         args: GroupArgs,
     ) -> GroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let policy_document_binding = args.policy_document.get_output(context);
         let sse_configuration_binding = args.sse_configuration.get_output(context);

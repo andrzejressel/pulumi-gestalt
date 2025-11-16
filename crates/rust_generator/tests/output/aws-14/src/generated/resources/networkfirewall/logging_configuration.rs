@@ -98,8 +98,6 @@ pub mod logging_configuration {
         name: &str,
         args: LoggingConfigurationArgs,
     ) -> LoggingConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let firewall_arn_binding = args.firewall_arn.get_output(context);
         let logging_configuration_binding = args
             .logging_configuration

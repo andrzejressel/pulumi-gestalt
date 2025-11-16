@@ -35,8 +35,6 @@ pub mod get_tables {
         context: &pulumi_gestalt_rust::Context,
         args: GetTablesArgs,
     ) -> GetTablesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dataset_id_binding = args.dataset_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

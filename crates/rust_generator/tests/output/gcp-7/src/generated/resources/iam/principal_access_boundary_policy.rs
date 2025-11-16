@@ -139,8 +139,6 @@ pub mod principal_access_boundary_policy {
         name: &str,
         args: PrincipalAccessBoundaryPolicyArgs,
     ) -> PrincipalAccessBoundaryPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let details_binding = args.details.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

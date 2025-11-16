@@ -147,8 +147,6 @@ pub mod resolver_forwarding_rule {
         name: &str,
         args: ResolverForwardingRuleArgs,
     ) -> ResolverForwardingRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dns_forwarding_ruleset_id_binding = args
             .dns_forwarding_ruleset_id
             .get_output(context);

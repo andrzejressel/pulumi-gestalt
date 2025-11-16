@@ -167,8 +167,6 @@ pub mod file_system_association {
         name: &str,
         args: FileSystemAssociationArgs,
     ) -> FileSystemAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let audit_destination_arn_binding = args
             .audit_destination_arn
             .get_output(context);

@@ -146,8 +146,6 @@ pub mod ca_certificate {
         name: &str,
         args: CaCertificateArgs,
     ) -> CaCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_binding = args.active.get_output(context);
         let allow_auto_registration_binding = args
             .allow_auto_registration

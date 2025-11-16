@@ -40,8 +40,6 @@ pub mod get_devices {
         context: &pulumi_gestalt_rust::Context,
         args: GetDevicesArgs,
     ) -> GetDevicesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let global_network_id_binding = args.global_network_id.get_output(context);
         let site_id_binding = args.site_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

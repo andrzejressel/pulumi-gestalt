@@ -38,8 +38,6 @@ pub mod get_patch_baselines {
         context: &pulumi_gestalt_rust::Context,
         args: GetPatchBaselinesArgs,
     ) -> GetPatchBaselinesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_baselines_binding = args.default_baselines.get_output(context);
         let filters_binding = args.filters.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

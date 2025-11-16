@@ -104,8 +104,6 @@ pub mod dedicated_host {
         name: &str,
         args: DedicatedHostArgs,
     ) -> DedicatedHostResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let asset_id_binding = args.asset_id.get_output(context);
         let auto_placement_binding = args.auto_placement.get_output(context);
         let availability_zone_binding = args.availability_zone.get_output(context);

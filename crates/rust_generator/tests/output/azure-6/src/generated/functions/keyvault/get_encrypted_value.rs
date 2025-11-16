@@ -42,8 +42,6 @@ pub mod get_encrypted_value {
         context: &pulumi_gestalt_rust::Context,
         args: GetEncryptedValueArgs,
     ) -> GetEncryptedValueResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let algorithm_binding = args.algorithm.get_output(context);
         let encrypted_data_binding = args.encrypted_data.get_output(context);
         let key_vault_key_id_binding = args.key_vault_key_id.get_output(context);

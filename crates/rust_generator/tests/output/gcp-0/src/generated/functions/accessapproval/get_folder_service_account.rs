@@ -31,8 +31,6 @@ pub mod get_folder_service_account {
         context: &pulumi_gestalt_rust::Context,
         args: GetFolderServiceAccountArgs,
     ) -> GetFolderServiceAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let folder_id_binding = args.folder_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:accessapproval/getFolderServiceAccount:getFolderServiceAccount"

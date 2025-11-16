@@ -137,8 +137,6 @@ pub mod signing_job {
         name: &str,
         args: SigningJobArgs,
     ) -> SigningJobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_binding = args.destination.get_output(context);
         let ignore_signing_job_failure_binding = args
             .ignore_signing_job_failure

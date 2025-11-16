@@ -133,8 +133,6 @@ pub mod extension {
         name: &str,
         args: ExtensionArgs,
     ) -> ExtensionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arc_machine_id_binding = args.arc_machine_id.get_output(context);
         let automatic_upgrade_enabled_binding = args
             .automatic_upgrade_enabled

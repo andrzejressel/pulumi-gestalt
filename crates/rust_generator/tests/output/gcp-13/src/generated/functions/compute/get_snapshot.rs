@@ -71,8 +71,6 @@ pub mod get_snapshot {
         context: &pulumi_gestalt_rust::Context,
         args: GetSnapshotArgs,
     ) -> GetSnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filter_binding = args.filter.get_output(context);
         let most_recent_binding = args.most_recent.get_output(context);
         let name_binding = args.name.get_output(context);

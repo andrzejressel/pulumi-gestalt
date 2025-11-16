@@ -223,8 +223,6 @@ pub mod tag_value_iam_policy {
         name: &str,
         args: TagValueIamPolicyArgs,
     ) -> TagValueIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_data_binding = args.policy_data.get_output(context);
         let tag_value_binding = args.tag_value.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

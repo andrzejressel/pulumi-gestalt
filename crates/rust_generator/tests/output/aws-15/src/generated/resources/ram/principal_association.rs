@@ -93,8 +93,6 @@ pub mod principal_association {
         name: &str,
         args: PrincipalAssociationArgs,
     ) -> PrincipalAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let principal_binding = args.principal.get_output(context);
         let resource_share_arn_binding = args.resource_share_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

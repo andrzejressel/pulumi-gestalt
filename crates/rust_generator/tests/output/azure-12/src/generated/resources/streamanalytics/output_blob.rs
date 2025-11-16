@@ -160,8 +160,6 @@ pub mod output_blob {
         name: &str,
         args: OutputBlobArgs,
     ) -> OutputBlobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let batch_max_wait_time_binding = args.batch_max_wait_time.get_output(context);
         let batch_min_rows_binding = args.batch_min_rows.get_output(context);

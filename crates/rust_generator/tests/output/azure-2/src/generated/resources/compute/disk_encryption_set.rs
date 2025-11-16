@@ -296,8 +296,6 @@ pub mod disk_encryption_set {
         name: &str,
         args: DiskEncryptionSetArgs,
     ) -> DiskEncryptionSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_key_rotation_enabled_binding = args
             .auto_key_rotation_enabled
             .get_output(context);

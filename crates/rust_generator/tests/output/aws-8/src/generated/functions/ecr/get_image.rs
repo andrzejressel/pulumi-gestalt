@@ -50,8 +50,6 @@ pub mod get_image {
         context: &pulumi_gestalt_rust::Context,
         args: GetImageArgs,
     ) -> GetImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let image_digest_binding = args.image_digest.get_output(context);
         let image_tag_binding = args.image_tag.get_output(context);
         let most_recent_binding = args.most_recent.get_output(context);

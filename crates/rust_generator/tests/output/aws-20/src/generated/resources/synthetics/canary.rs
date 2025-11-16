@@ -189,8 +189,6 @@ pub mod canary {
         name: &str,
         args: CanaryArgs,
     ) -> CanaryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let artifact_config_binding = args.artifact_config.get_output(context);
         let artifact_s3_location_binding = args.artifact_s3_location.get_output(context);
         let delete_lambda_binding = args.delete_lambda.get_output(context);

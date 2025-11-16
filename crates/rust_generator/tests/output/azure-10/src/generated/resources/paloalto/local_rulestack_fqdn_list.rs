@@ -94,8 +94,6 @@ pub mod local_rulestack_fqdn_list {
         name: &str,
         args: LocalRulestackFqdnListArgs,
     ) -> LocalRulestackFqdnListResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let audit_comment_binding = args.audit_comment.get_output(context);
         let description_binding = args.description.get_output(context);
         let fully_qualified_domain_names_binding = args

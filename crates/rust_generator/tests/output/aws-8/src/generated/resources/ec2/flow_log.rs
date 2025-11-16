@@ -321,8 +321,6 @@ pub mod flow_log {
         name: &str,
         args: FlowLogArgs,
     ) -> FlowLogResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deliver_cross_account_role_binding = args
             .deliver_cross_account_role
             .get_output(context);

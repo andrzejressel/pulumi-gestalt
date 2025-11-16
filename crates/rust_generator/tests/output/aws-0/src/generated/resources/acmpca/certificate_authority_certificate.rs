@@ -128,8 +128,6 @@ pub mod certificate_authority_certificate {
         name: &str,
         args: CertificateAuthorityCertificateArgs,
     ) -> CertificateAuthorityCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_binding = args.certificate.get_output(context);
         let certificate_authority_arn_binding = args
             .certificate_authority_arn

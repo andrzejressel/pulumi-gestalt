@@ -47,8 +47,6 @@ pub mod get_quicksight_analysis {
         context: &pulumi_gestalt_rust::Context,
         args: GetQuicksightAnalysisArgs,
     ) -> GetQuicksightAnalysisResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let analysis_id_binding = args.analysis_id.get_output(context);
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

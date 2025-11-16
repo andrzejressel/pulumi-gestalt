@@ -148,8 +148,6 @@ pub mod configuration_aggregator {
         name: &str,
         args: ConfigurationAggregatorArgs,
     ) -> ConfigurationAggregatorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_aggregation_source_binding = args
             .account_aggregation_source
             .get_output(context);

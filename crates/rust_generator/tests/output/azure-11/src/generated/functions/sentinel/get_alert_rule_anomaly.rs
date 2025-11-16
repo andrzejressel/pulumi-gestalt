@@ -84,8 +84,6 @@ pub mod get_alert_rule_anomaly {
         context: &pulumi_gestalt_rust::Context,
         args: GetAlertRuleAnomalyArgs,
     ) -> GetAlertRuleAnomalyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id

@@ -95,8 +95,6 @@ pub mod multi_region_access_point {
         name: &str,
         args: MultiRegionAccessPointArgs,
     ) -> MultiRegionAccessPointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let details_binding = args.details.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

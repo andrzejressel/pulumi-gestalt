@@ -323,8 +323,6 @@ pub mod record {
         name: &str,
         args: RecordArgs,
     ) -> RecordResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aliases_binding = args.aliases.get_output(context);
         let allow_overwrite_binding = args.allow_overwrite.get_output(context);
         let cidr_routing_policy_binding = args.cidr_routing_policy.get_output(context);

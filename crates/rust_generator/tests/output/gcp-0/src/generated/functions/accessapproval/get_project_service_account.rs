@@ -31,8 +31,6 @@ pub mod get_project_service_account {
         context: &pulumi_gestalt_rust::Context,
         args: GetProjectServiceAccountArgs,
     ) -> GetProjectServiceAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_id_binding = args.project_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:accessapproval/getProjectServiceAccount:getProjectServiceAccount"

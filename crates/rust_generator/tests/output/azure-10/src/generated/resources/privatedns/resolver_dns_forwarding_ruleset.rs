@@ -131,8 +131,6 @@ pub mod resolver_dns_forwarding_ruleset {
         name: &str,
         args: ResolverDnsForwardingRulesetArgs,
     ) -> ResolverDnsForwardingRulesetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let private_dns_resolver_outbound_endpoint_ids_binding = args

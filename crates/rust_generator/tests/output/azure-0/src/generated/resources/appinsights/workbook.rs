@@ -133,8 +133,6 @@ pub mod workbook {
         name: &str,
         args: WorkbookArgs,
     ) -> WorkbookResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let category_binding = args.category.get_output(context);
         let data_json_binding = args.data_json.get_output(context);
         let description_binding = args.description.get_output(context);

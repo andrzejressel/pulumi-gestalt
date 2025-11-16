@@ -36,8 +36,6 @@ pub mod get_default_service_account {
         context: &pulumi_gestalt_rust::Context,
         args: GetDefaultServiceAccountArgs,
     ) -> GetDefaultServiceAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getDefaultServiceAccount:getDefaultServiceAccount"

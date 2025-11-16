@@ -30,8 +30,6 @@ pub mod get_tag_keys {
         context: &pulumi_gestalt_rust::Context,
         args: GetTagKeysArgs,
     ) -> GetTagKeysResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_binding = args.parent.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:tags/getTagKeys:getTagKeys".into(),

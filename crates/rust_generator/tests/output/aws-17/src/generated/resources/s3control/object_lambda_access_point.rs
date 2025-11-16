@@ -96,8 +96,6 @@ pub mod object_lambda_access_point {
         name: &str,
         args: ObjectLambdaAccessPointArgs,
     ) -> ObjectLambdaAccessPointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let configuration_binding = args.configuration.get_output(context);
         let name_binding = args.name.get_output(context);

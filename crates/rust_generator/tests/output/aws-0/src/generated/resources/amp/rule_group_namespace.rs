@@ -69,8 +69,6 @@ pub mod rule_group_namespace {
         name: &str,
         args: RuleGroupNamespaceArgs,
     ) -> RuleGroupNamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_binding = args.data.get_output(context);
         let name_binding = args.name.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);

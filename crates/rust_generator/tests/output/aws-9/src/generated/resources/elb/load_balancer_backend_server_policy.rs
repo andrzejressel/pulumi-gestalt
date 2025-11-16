@@ -90,8 +90,6 @@ pub mod load_balancer_backend_server_policy {
         name: &str,
         args: LoadBalancerBackendServerPolicyArgs,
     ) -> LoadBalancerBackendServerPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_port_binding = args.instance_port.get_output(context);
         let load_balancer_name_binding = args.load_balancer_name.get_output(context);
         let policy_names_binding = args.policy_names.get_output(context);

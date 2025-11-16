@@ -126,8 +126,6 @@ pub mod ssh_key {
         name: &str,
         args: SshKeyArgs,
     ) -> SshKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let body_binding = args.body.get_output(context);
         let server_id_binding = args.server_id.get_output(context);
         let user_name_binding = args.user_name.get_output(context);

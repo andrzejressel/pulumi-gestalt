@@ -105,8 +105,6 @@ pub mod vault_lock {
         name: &str,
         args: VaultLockArgs,
     ) -> VaultLockResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let complete_lock_binding = args.complete_lock.get_output(context);
         let ignore_deletion_error_binding = args
             .ignore_deletion_error

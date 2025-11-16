@@ -38,8 +38,6 @@ pub mod get_dedicated_host {
         context: &pulumi_gestalt_rust::Context,
         args: GetDedicatedHostArgs,
     ) -> GetDedicatedHostResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dedicated_host_group_name_binding = args
             .dedicated_host_group_name
             .get_output(context);

@@ -136,8 +136,6 @@ pub mod app_check_recaptcha_v_3_config {
         name: &str,
         args: AppCheckRecaptchaV3ConfigArgs,
     ) -> AppCheckRecaptchaV3ConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let site_secret_binding = args.site_secret.get_output(context);

@@ -46,8 +46,6 @@ pub mod get_network_packet_core_data_plane {
         context: &pulumi_gestalt_rust::Context,
         args: GetNetworkPacketCoreDataPlaneArgs,
     ) -> GetNetworkPacketCoreDataPlaneResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mobile_network_packet_core_control_plane_id_binding = args
             .mobile_network_packet_core_control_plane_id
             .get_output(context);

@@ -115,8 +115,6 @@ pub mod contact_channel {
         name: &str,
         args: ContactChannelArgs,
     ) -> ContactChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_id_binding = args.contact_id.get_output(context);
         let delivery_address_binding = args.delivery_address.get_output(context);
         let name_binding = args.name.get_output(context);

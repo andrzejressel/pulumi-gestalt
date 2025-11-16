@@ -134,8 +134,6 @@ pub mod enrichment {
         name: &str,
         args: EnrichmentArgs,
     ) -> EnrichmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let endpoint_names_binding = args.endpoint_names.get_output(context);
         let iothub_name_binding = args.iothub_name.get_output(context);
         let key_binding = args.key.get_output(context);

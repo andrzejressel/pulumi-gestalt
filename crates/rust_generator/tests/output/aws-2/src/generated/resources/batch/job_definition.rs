@@ -345,8 +345,6 @@ pub mod job_definition {
         name: &str,
         args: JobDefinitionArgs,
     ) -> JobDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_properties_binding = args.container_properties.get_output(context);
         let deregister_on_new_revision_binding = args
             .deregister_on_new_revision

@@ -157,8 +157,6 @@ pub mod voice_connector_streaming {
         name: &str,
         args: VoiceConnectorStreamingArgs,
     ) -> VoiceConnectorStreamingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_retention_binding = args.data_retention.get_output(context);
         let disabled_binding = args.disabled.get_output(context);
         let media_insights_configuration_binding = args

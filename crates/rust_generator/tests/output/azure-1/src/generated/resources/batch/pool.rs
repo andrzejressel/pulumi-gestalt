@@ -350,8 +350,6 @@ pub mod pool {
         name: &str,
         args: PoolArgs,
     ) -> PoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let auto_scale_binding = args.auto_scale.get_output(context);
         let certificates_binding = args.certificates.get_output(context);

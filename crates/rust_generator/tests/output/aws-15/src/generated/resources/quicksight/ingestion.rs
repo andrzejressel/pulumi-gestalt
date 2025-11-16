@@ -81,8 +81,6 @@ pub mod ingestion {
         name: &str,
         args: IngestionArgs,
     ) -> IngestionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let data_set_id_binding = args.data_set_id.get_output(context);
         let ingestion_id_binding = args.ingestion_id.get_output(context);

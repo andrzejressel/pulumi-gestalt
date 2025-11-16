@@ -106,8 +106,6 @@ pub mod instance_settings {
         name: &str,
         args: InstanceSettingsArgs,
     ) -> InstanceSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let metadata_binding = args.metadata.get_output(context);
         let project_binding = args.project.get_output(context);
         let zone_binding = args.zone.get_output(context);

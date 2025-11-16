@@ -333,8 +333,6 @@ pub mod network {
         name: &str,
         args: NetworkArgs,
     ) -> NetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_create_subnetworks_binding = args
             .auto_create_subnetworks
             .get_output(context);

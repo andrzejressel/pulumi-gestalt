@@ -114,8 +114,6 @@ pub mod resolver_endpoint {
         name: &str,
         args: ResolverEndpointArgs,
     ) -> ResolverEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let direction_binding = args.direction.get_output(context);
         let ip_addresses_binding = args.ip_addresses.get_output(context);
         let name_binding = args.name.get_output(context);

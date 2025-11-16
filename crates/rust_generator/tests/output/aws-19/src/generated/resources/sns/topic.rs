@@ -304,8 +304,6 @@ pub mod topic {
         name: &str,
         args: TopicArgs,
     ) -> TopicResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_failure_feedback_role_arn_binding = args
             .application_failure_feedback_role_arn
             .get_output(context);

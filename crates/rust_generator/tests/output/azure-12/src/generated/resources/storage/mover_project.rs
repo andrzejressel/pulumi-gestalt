@@ -82,8 +82,6 @@ pub mod mover_project {
         name: &str,
         args: MoverProjectArgs,
     ) -> MoverProjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let storage_mover_id_binding = args.storage_mover_id.get_output(context);

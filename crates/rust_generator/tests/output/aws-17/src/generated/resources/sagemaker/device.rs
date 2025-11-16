@@ -69,8 +69,6 @@ pub mod device {
         name: &str,
         args: DeviceArgs,
     ) -> DeviceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let device_binding = args.device.get_output(context);
         let device_fleet_name_binding = args.device_fleet_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

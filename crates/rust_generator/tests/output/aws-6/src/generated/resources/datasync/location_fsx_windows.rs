@@ -101,8 +101,6 @@ pub mod location_fsx_windows {
         name: &str,
         args: LocationFsxWindowsArgs,
     ) -> LocationFsxWindowsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_binding = args.domain.get_output(context);
         let fsx_filesystem_arn_binding = args.fsx_filesystem_arn.get_output(context);
         let password_binding = args.password.get_output(context);

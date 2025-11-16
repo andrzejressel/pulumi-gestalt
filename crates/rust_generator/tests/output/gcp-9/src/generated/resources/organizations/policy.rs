@@ -198,8 +198,6 @@ pub mod policy {
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let boolean_policy_binding = args.boolean_policy.get_output(context);
         let constraint_binding = args.constraint.get_output(context);
         let list_policy_binding = args.list_policy.get_output(context);

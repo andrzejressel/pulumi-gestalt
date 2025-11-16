@@ -72,8 +72,6 @@ pub mod instance_trust_provider_attachment {
         name: &str,
         args: InstanceTrustProviderAttachmentArgs,
     ) -> InstanceTrustProviderAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let verifiedaccess_instance_id_binding = args
             .verifiedaccess_instance_id
             .get_output(context);

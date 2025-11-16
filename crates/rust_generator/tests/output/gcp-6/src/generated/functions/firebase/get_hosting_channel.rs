@@ -44,8 +44,6 @@ pub mod get_hosting_channel {
         context: &pulumi_gestalt_rust::Context,
         args: GetHostingChannelArgs,
     ) -> GetHostingChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let channel_id_binding = args.channel_id.get_output(context);
         let site_id_binding = args.site_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

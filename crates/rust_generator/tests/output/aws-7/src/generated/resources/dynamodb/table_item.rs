@@ -88,8 +88,6 @@ pub mod table_item {
         name: &str,
         args: TableItemArgs,
     ) -> TableItemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hash_key_binding = args.hash_key.get_output(context);
         let item_binding = args.item.get_output(context);
         let range_key_binding = args.range_key.get_output(context);

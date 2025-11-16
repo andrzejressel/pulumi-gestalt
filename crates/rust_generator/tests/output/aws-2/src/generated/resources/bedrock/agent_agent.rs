@@ -204,8 +204,6 @@ pub mod agent_agent {
         name: &str,
         args: AgentAgentArgs,
     ) -> AgentAgentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_collaboration_binding = args.agent_collaboration.get_output(context);
         let agent_name_binding = args.agent_name.get_output(context);
         let agent_resource_role_arn_binding = args

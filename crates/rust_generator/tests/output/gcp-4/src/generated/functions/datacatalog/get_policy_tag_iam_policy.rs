@@ -31,8 +31,6 @@ pub mod get_policy_tag_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetPolicyTagIamPolicyArgs,
     ) -> GetPolicyTagIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_tag_binding = args.policy_tag.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:datacatalog/getPolicyTagIamPolicy:getPolicyTagIamPolicy".into(),

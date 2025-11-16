@@ -177,8 +177,6 @@ pub mod iot_hub_data_connection {
         name: &str,
         args: IotHubDataConnectionArgs,
     ) -> IotHubDataConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let consumer_group_binding = args.consumer_group.get_output(context);
         let data_format_binding = args.data_format.get_output(context);

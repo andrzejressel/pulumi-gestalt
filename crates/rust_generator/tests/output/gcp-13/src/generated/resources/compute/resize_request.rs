@@ -192,8 +192,6 @@ pub mod resize_request {
         name: &str,
         args: ResizeRequestArgs,
     ) -> ResizeRequestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let instance_group_manager_binding = args
             .instance_group_manager

@@ -126,8 +126,6 @@ pub mod folder_bucket_config {
         name: &str,
         args: FolderBucketConfigArgs,
     ) -> FolderBucketConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_id_binding = args.bucket_id.get_output(context);
         let cmek_settings_binding = args.cmek_settings.get_output(context);
         let description_binding = args.description.get_output(context);

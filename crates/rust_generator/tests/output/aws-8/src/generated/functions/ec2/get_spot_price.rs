@@ -42,8 +42,6 @@ pub mod get_spot_price {
         context: &pulumi_gestalt_rust::Context,
         args: GetSpotPriceArgs,
     ) -> GetSpotPriceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_binding = args.availability_zone.get_output(context);
         let filters_binding = args.filters.get_output(context);
         let instance_type_binding = args.instance_type.get_output(context);

@@ -34,8 +34,6 @@ pub mod get_location {
         context: &pulumi_gestalt_rust::Context,
         args: GetLocationArgs,
     ) -> GetLocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_code_binding = args.location_code.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:directconnect/getLocation:getLocation".into(),

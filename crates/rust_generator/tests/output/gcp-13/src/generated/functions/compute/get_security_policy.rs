@@ -55,8 +55,6 @@ pub mod get_security_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetSecurityPolicyArgs,
     ) -> GetSecurityPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
         let self_link_binding = args.self_link.get_output(context);

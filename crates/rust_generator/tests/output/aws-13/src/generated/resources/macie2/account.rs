@@ -68,8 +68,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let finding_publishing_frequency_binding = args
             .finding_publishing_frequency
             .get_output(context);

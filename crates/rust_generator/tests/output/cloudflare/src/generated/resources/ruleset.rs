@@ -83,8 +83,6 @@ pub mod ruleset {
         name: &str,
         args: RulesetArgs,
     ) -> RulesetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let kind_binding = args.kind.get_output(context);

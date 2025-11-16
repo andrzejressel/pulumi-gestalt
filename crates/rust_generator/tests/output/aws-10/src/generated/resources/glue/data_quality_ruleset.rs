@@ -151,8 +151,6 @@ pub mod data_quality_ruleset {
         name: &str,
         args: DataQualityRulesetArgs,
     ) -> DataQualityRulesetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let ruleset_binding = args.ruleset.get_output(context);

@@ -180,8 +180,6 @@ pub mod repository {
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let initial_config_binding = args.initial_config.get_output(context);
         let instance_binding = args.instance.get_output(context);

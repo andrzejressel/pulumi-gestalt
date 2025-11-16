@@ -95,8 +95,6 @@ pub mod sdkvoice_sip_media_application {
         name: &str,
         args: SdkvoiceSipMediaApplicationArgs,
     ) -> SdkvoiceSipMediaApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_region_binding = args.aws_region.get_output(context);
         let endpoints_binding = args.endpoints.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -66,8 +66,6 @@ pub mod get_database {
         context: &pulumi_gestalt_rust::Context,
         args: GetDatabaseArgs,
     ) -> GetDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let server_id_binding = args.server_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

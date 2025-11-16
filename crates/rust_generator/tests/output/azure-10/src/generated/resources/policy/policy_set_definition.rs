@@ -136,8 +136,6 @@ pub mod policy_set_definition {
         name: &str,
         args: PolicySetDefinitionArgs,
     ) -> PolicySetDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let management_group_id_binding = args.management_group_id.get_output(context);

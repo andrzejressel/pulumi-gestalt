@@ -456,8 +456,6 @@ pub mod batch {
         name: &str,
         args: BatchArgs,
     ) -> BatchResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let batch_id_binding = args.batch_id.get_output(context);
         let environment_config_binding = args.environment_config.get_output(context);
         let labels_binding = args.labels.get_output(context);

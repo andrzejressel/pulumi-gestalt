@@ -154,8 +154,6 @@ pub mod kmsconfig {
         name: &str,
         args: KmsconfigArgs,
     ) -> KmsconfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crypto_key_name_binding = args.crypto_key_name.get_output(context);
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);

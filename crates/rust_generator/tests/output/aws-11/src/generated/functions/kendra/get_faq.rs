@@ -61,8 +61,6 @@ pub mod get_faq {
         context: &pulumi_gestalt_rust::Context,
         args: GetFaqArgs,
     ) -> GetFaqResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let faq_id_binding = args.faq_id.get_output(context);
         let index_id_binding = args.index_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

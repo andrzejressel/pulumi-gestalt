@@ -40,8 +40,6 @@ pub mod sql_resource_sql_container {
         context: &pulumi_gestalt_rust::Context,
         name: &str,
     ) -> SqlResourceSqlContainerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure-native:documentdb:SqlResourceSqlContainer".into(),
             name: name.to_string(),

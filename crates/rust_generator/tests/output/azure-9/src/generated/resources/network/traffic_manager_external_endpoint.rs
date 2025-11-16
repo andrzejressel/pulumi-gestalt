@@ -148,8 +148,6 @@ pub mod traffic_manager_external_endpoint {
         name: &str,
         args: TrafficManagerExternalEndpointArgs,
     ) -> TrafficManagerExternalEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let always_serve_enabled_binding = args.always_serve_enabled.get_output(context);
         let custom_headers_binding = args.custom_headers.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

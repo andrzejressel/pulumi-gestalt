@@ -168,8 +168,6 @@ pub mod target_pool {
         name: &str,
         args: TargetPoolArgs,
     ) -> TargetPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_pool_binding = args.backup_pool.get_output(context);
         let description_binding = args.description.get_output(context);
         let failover_ratio_binding = args.failover_ratio.get_output(context);

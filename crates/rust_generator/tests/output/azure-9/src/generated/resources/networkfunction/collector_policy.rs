@@ -147,8 +147,6 @@ pub mod collector_policy {
         name: &str,
         args: CollectorPolicyArgs,
     ) -> CollectorPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ipfx_emission_binding = args.ipfx_emission.get_output(context);
         let ipfx_ingestion_binding = args.ipfx_ingestion.get_output(context);
         let location_binding = args.location.get_output(context);

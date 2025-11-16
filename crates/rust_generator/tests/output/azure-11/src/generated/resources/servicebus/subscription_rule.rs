@@ -162,8 +162,6 @@ pub mod subscription_rule {
         name: &str,
         args: SubscriptionRuleArgs,
     ) -> SubscriptionRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let correlation_filter_binding = args.correlation_filter.get_output(context);
         let filter_type_binding = args.filter_type.get_output(context);

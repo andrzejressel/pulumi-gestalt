@@ -78,8 +78,6 @@ pub mod public_key {
         name: &str,
         args: PublicKeyArgs,
     ) -> PublicKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let comment_binding = args.comment.get_output(context);
         let encoded_key_binding = args.encoded_key.get_output(context);
         let name_binding = args.name.get_output(context);

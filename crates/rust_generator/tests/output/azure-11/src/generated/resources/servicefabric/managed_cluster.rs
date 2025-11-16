@@ -185,8 +185,6 @@ pub mod managed_cluster {
         name: &str,
         args: ManagedClusterArgs,
     ) -> ManagedClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_binding = args.authentication.get_output(context);
         let backup_service_enabled_binding = args
             .backup_service_enabled

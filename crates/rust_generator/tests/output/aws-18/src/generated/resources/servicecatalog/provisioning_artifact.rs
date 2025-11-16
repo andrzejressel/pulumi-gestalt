@@ -122,8 +122,6 @@ pub mod provisioning_artifact {
         name: &str,
         args: ProvisioningArtifactArgs,
     ) -> ProvisioningArtifactResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accept_language_binding = args.accept_language.get_output(context);
         let active_binding = args.active.get_output(context);
         let description_binding = args.description.get_output(context);

@@ -188,8 +188,6 @@ pub mod client_tls_policy {
         name: &str,
         args: ClientTlsPolicyArgs,
     ) -> ClientTlsPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_certificate_binding = args.client_certificate.get_output(context);
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);

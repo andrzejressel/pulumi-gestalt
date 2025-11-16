@@ -38,8 +38,6 @@ pub mod get_workspace_private_endpoint_connection {
         context: &pulumi_gestalt_rust::Context,
         args: GetWorkspacePrivateEndpointConnectionArgs,
     ) -> GetWorkspacePrivateEndpointConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let private_endpoint_id_binding = args.private_endpoint_id.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -44,8 +44,6 @@ pub mod get_folder_settings {
         context: &pulumi_gestalt_rust::Context,
         args: GetFolderSettingsArgs,
     ) -> GetFolderSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let folder_binding = args.folder.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:logging/getFolderSettings:getFolderSettings".into(),

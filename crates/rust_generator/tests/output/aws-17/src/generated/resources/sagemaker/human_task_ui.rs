@@ -79,8 +79,6 @@ pub mod human_task_ui {
         name: &str,
         args: HumanTaskUIArgs,
     ) -> HumanTaskUIResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let human_task_ui_name_binding = args.human_task_ui_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let ui_template_binding = args.ui_template.get_output(context);

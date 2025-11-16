@@ -287,8 +287,6 @@ pub mod snapshot {
         name: &str,
         args: SnapshotArgs,
     ) -> SnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let chain_name_binding = args.chain_name.get_output(context);
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);

@@ -70,8 +70,6 @@ pub mod aws_log_source {
         name: &str,
         args: AwsLogSourceArgs,
     ) -> AwsLogSourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let source_binding = args.source.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:securitylake/awsLogSource:AwsLogSource".into(),

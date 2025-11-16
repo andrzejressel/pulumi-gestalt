@@ -114,8 +114,6 @@ pub mod assessment_template {
         name: &str,
         args: AssessmentTemplateArgs,
     ) -> AssessmentTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let duration_binding = args.duration.get_output(context);
         let event_subscriptions_binding = args.event_subscriptions.get_output(context);
         let name_binding = args.name.get_output(context);

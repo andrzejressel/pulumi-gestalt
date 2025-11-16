@@ -35,8 +35,6 @@ pub mod get_templates {
         context: &pulumi_gestalt_rust::Context,
         args: GetTemplatesArgs,
     ) -> GetTemplatesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let region_binding = args.region.get_output(context);
         let templates_binding = args.templates.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

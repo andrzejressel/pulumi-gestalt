@@ -114,8 +114,6 @@ pub mod dev_environment {
         name: &str,
         args: DevEnvironmentArgs,
     ) -> DevEnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_binding = args.alias.get_output(context);
         let ides_binding = args.ides.get_output(context);
         let inactivity_timeout_minutes_binding = args

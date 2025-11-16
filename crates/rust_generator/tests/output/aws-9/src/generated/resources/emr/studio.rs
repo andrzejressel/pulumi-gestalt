@@ -139,8 +139,6 @@ pub mod studio {
         name: &str,
         args: StudioArgs,
     ) -> StudioResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auth_mode_binding = args.auth_mode.get_output(context);
         let default_s3_location_binding = args.default_s3_location.get_output(context);
         let description_binding = args.description.get_output(context);

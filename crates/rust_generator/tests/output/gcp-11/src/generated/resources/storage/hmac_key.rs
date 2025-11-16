@@ -120,8 +120,6 @@ pub mod hmac_key {
         name: &str,
         args: HmacKeyArgs,
     ) -> HmacKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let service_account_email_binding = args
             .service_account_email

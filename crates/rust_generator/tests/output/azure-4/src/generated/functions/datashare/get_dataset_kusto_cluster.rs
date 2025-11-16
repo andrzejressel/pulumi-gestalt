@@ -36,8 +36,6 @@ pub mod get_dataset_kusto_cluster {
         context: &pulumi_gestalt_rust::Context,
         args: GetDatasetKustoClusterArgs,
     ) -> GetDatasetKustoClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let share_id_binding = args.share_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

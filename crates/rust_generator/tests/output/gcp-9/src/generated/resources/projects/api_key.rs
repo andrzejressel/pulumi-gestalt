@@ -225,8 +225,6 @@ pub mod api_key {
         name: &str,
         args: ApiKeyArgs,
     ) -> ApiKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);

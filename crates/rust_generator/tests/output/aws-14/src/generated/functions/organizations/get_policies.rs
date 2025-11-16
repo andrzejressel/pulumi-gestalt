@@ -28,8 +28,6 @@ pub mod get_policies {
         context: &pulumi_gestalt_rust::Context,
         args: GetPoliciesArgs,
     ) -> GetPoliciesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filter_binding = args.filter.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:organizations/getPolicies:getPolicies".into(),

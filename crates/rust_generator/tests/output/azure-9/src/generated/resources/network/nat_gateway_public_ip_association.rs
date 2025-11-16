@@ -87,8 +87,6 @@ pub mod nat_gateway_public_ip_association {
         name: &str,
         args: NatGatewayPublicIpAssociationArgs,
     ) -> NatGatewayPublicIpAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let nat_gateway_id_binding = args.nat_gateway_id.get_output(context);
         let public_ip_address_id_binding = args.public_ip_address_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

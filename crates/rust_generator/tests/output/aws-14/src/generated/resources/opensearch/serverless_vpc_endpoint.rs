@@ -84,8 +84,6 @@ pub mod serverless_vpc_endpoint {
         name: &str,
         args: ServerlessVpcEndpointArgs,
     ) -> ServerlessVpcEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let security_group_ids_binding = args.security_group_ids.get_output(context);
         let subnet_ids_binding = args.subnet_ids.get_output(context);

@@ -122,8 +122,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_directory_binding = args.active_directory.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let location_binding = args.location.get_output(context);

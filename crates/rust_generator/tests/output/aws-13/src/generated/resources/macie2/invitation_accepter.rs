@@ -67,8 +67,6 @@ pub mod invitation_accepter {
         name: &str,
         args: InvitationAccepterArgs,
     ) -> InvitationAccepterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let administrator_account_id_binding = args
             .administrator_account_id
             .get_output(context);

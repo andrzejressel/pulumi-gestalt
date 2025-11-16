@@ -82,8 +82,6 @@ pub mod domain {
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_binding = args.domain.get_output(context);
         let encryption_key_binding = args.encryption_key.get_output(context);
         let tags_binding = args.tags.get_output(context);

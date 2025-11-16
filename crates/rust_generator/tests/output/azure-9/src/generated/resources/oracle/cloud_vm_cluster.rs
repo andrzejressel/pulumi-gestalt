@@ -189,8 +189,6 @@ pub mod cloud_vm_cluster {
         name: &str,
         args: CloudVmClusterArgs,
     ) -> CloudVmClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_subnet_cidr_binding = args.backup_subnet_cidr.get_output(context);
         let cloud_exadata_infrastructure_id_binding = args
             .cloud_exadata_infrastructure_id

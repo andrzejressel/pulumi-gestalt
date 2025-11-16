@@ -492,8 +492,6 @@ pub mod job_template {
         name: &str,
         args: JobTemplateArgs,
     ) -> JobTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_binding = args.config.get_output(context);
         let job_template_id_binding = args.job_template_id.get_output(context);
         let labels_binding = args.labels.get_output(context);

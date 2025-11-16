@@ -288,8 +288,6 @@ pub mod function_iam_member {
         name: &str,
         args: FunctionIamMemberArgs,
     ) -> FunctionIamMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloud_function_binding = args.cloud_function.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let location_binding = args.location.get_output(context);

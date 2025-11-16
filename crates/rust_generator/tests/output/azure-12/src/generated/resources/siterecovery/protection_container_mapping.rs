@@ -89,8 +89,6 @@ pub mod protection_container_mapping {
         name: &str,
         args: ProtectionContainerMappingArgs,
     ) -> ProtectionContainerMappingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automatic_update_binding = args.automatic_update.get_output(context);
         let name_binding = args.name.get_output(context);
         let recovery_fabric_name_binding = args.recovery_fabric_name.get_output(context);

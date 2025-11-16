@@ -18,8 +18,6 @@ pub mod get_serial_console_access {
     pub fn invoke(
         context: &pulumi_gestalt_rust::Context,
     ) -> GetSerialConsoleAccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getSerialConsoleAccess:getSerialConsoleAccess".into(),
             version: super::super::super::get_version(),

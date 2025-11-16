@@ -188,8 +188,6 @@ pub mod firewall_policy {
         name: &str,
         args: FirewallPolicyArgs,
     ) -> FirewallPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_learn_private_ranges_enabled_binding = args
             .auto_learn_private_ranges_enabled
             .get_output(context);

@@ -62,8 +62,6 @@ pub mod availability_zone_group {
         name: &str,
         args: AvailabilityZoneGroupArgs,
     ) -> AvailabilityZoneGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_name_binding = args.group_name.get_output(context);
         let opt_in_status_binding = args.opt_in_status.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

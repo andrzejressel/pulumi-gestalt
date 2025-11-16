@@ -328,8 +328,6 @@ pub mod frontdoor_origin {
         name: &str,
         args: FrontdoorOriginArgs,
     ) -> FrontdoorOriginResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cdn_frontdoor_origin_group_id_binding = args
             .cdn_frontdoor_origin_group_id
             .get_output(context);

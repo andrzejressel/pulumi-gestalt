@@ -133,8 +133,6 @@ pub mod cluster_extension {
         name: &str,
         args: ClusterExtensionArgs,
     ) -> ClusterExtensionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_id_binding = args.cluster_id.get_output(context);
         let configuration_protected_settings_binding = args
             .configuration_protected_settings

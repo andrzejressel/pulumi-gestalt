@@ -127,8 +127,6 @@ pub mod workspace_extended_auditing_policy {
         name: &str,
         args: WorkspaceExtendedAuditingPolicyArgs,
     ) -> WorkspaceExtendedAuditingPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_monitoring_enabled_binding = args
             .log_monitoring_enabled
             .get_output(context);

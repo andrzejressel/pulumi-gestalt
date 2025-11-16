@@ -296,8 +296,6 @@ pub mod runtime {
         name: &str,
         args: RuntimeArgs,
     ) -> RuntimeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_config_binding = args.access_config.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);

@@ -100,8 +100,6 @@ pub mod profiles_association {
         name: &str,
         args: ProfilesAssociationArgs,
     ) -> ProfilesAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let profile_id_binding = args.profile_id.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);

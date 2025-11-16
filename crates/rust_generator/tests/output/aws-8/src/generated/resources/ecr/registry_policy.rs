@@ -76,8 +76,6 @@ pub mod registry_policy {
         name: &str,
         args: RegistryPolicyArgs,
     ) -> RegistryPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_binding = args.policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ecr/registryPolicy:RegistryPolicy".into(),

@@ -18,8 +18,6 @@ pub mod get_encryption_by_default {
     pub fn invoke(
         context: &pulumi_gestalt_rust::Context,
     ) -> GetEncryptionByDefaultResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ebs/getEncryptionByDefault:getEncryptionByDefault".into(),
             version: super::super::super::get_version(),

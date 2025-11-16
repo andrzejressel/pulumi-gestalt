@@ -63,8 +63,6 @@ pub mod get_theme {
         context: &pulumi_gestalt_rust::Context,
         args: GetThemeArgs,
     ) -> GetThemeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let theme_id_binding = args.theme_id.get_output(context);

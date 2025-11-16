@@ -36,8 +36,6 @@ pub mod get_table {
         context: &pulumi_gestalt_rust::Context,
         args: GetTableArgs,
     ) -> GetTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let storage_account_name_binding = args.storage_account_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

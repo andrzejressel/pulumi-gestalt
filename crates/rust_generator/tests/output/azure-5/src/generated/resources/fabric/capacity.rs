@@ -102,8 +102,6 @@ pub mod capacity {
         name: &str,
         args: CapacityArgs,
     ) -> CapacityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let administration_members_binding = args
             .administration_members
             .get_output(context);

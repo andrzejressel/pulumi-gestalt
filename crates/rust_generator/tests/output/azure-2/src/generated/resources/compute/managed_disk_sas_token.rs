@@ -91,8 +91,6 @@ pub mod managed_disk_sas_token {
         name: &str,
         args: ManagedDiskSasTokenArgs,
     ) -> ManagedDiskSasTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_level_binding = args.access_level.get_output(context);
         let duration_in_seconds_binding = args.duration_in_seconds.get_output(context);
         let managed_disk_id_binding = args.managed_disk_id.get_output(context);

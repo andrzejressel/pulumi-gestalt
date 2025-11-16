@@ -141,8 +141,6 @@ pub mod tenant_inbound_saml_config {
         name: &str,
         args: TenantInboundSamlConfigArgs,
     ) -> TenantInboundSamlConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let idp_config_binding = args.idp_config.get_output(context);

@@ -41,8 +41,6 @@ pub mod get_public_ipv_4_pools {
         context: &pulumi_gestalt_rust::Context,
         args: GetPublicIpv4PoolsArgs,
     ) -> GetPublicIpv4PoolsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

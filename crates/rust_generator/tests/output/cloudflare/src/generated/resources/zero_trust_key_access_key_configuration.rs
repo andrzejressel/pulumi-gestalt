@@ -36,8 +36,6 @@ pub mod zero_trust_key_access_key_configuration {
         name: &str,
         args: ZeroTrustKeyAccessKeyConfigurationArgs,
     ) -> ZeroTrustKeyAccessKeyConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let key_rotation_interval_days_binding = args
             .key_rotation_interval_days

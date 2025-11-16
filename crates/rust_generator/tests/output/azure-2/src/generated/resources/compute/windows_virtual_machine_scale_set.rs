@@ -601,8 +601,6 @@ pub mod windows_virtual_machine_scale_set {
         name: &str,
         args: WindowsVirtualMachineScaleSetArgs,
     ) -> WindowsVirtualMachineScaleSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_capabilities_binding = args
             .additional_capabilities
             .get_output(context);

@@ -63,8 +63,6 @@ pub mod target_group_attachment {
         name: &str,
         args: TargetGroupAttachmentArgs,
     ) -> TargetGroupAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let target_binding = args.target.get_output(context);
         let target_group_identifier_binding = args
             .target_group_identifier

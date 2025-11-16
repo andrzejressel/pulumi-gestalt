@@ -83,8 +83,6 @@ pub mod snapshot_copy {
         name: &str,
         args: SnapshotCopyArgs,
     ) -> SnapshotCopyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let destination_region_binding = args.destination_region.get_output(context);
         let manual_snapshot_retention_period_binding = args

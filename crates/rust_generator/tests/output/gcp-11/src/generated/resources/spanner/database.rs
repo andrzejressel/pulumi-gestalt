@@ -186,8 +186,6 @@ pub mod database {
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_dialect_binding = args.database_dialect.get_output(context);
         let ddls_binding = args.ddls.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);

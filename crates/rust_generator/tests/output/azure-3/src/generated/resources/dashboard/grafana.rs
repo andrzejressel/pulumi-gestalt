@@ -168,8 +168,6 @@ pub mod grafana {
         name: &str,
         args: GrafanaArgs,
     ) -> GrafanaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_key_enabled_binding = args.api_key_enabled.get_output(context);
         let auto_generated_domain_name_label_scope_binding = args
             .auto_generated_domain_name_label_scope

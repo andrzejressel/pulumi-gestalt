@@ -115,8 +115,6 @@ pub mod custom_routing_accelerator {
         name: &str,
         args: CustomRoutingAcceleratorArgs,
     ) -> CustomRoutingAcceleratorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let ip_address_type_binding = args.ip_address_type.get_output(context);

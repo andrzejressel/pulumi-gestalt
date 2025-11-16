@@ -91,8 +91,6 @@ pub mod resource_provider_registration {
         name: &str,
         args: ResourceProviderRegistrationArgs,
     ) -> ResourceProviderRegistrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let features_binding = args.features.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

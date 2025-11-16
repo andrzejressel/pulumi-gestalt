@@ -84,8 +84,6 @@ pub mod sharedflow {
         name: &str,
         args: SharedflowArgs,
     ) -> SharedflowResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_bundle_binding = args.config_bundle.get_output(context);
         let detect_md5hash_binding = args.detect_md5hash.get_output(context);
         let name_binding = args.name.get_output(context);

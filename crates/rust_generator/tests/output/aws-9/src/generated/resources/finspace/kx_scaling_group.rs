@@ -111,8 +111,6 @@ pub mod kx_scaling_group {
         name: &str,
         args: KxScalingGroupArgs,
     ) -> KxScalingGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_id_binding = args.availability_zone_id.get_output(context);
         let environment_id_binding = args.environment_id.get_output(context);
         let host_type_binding = args.host_type.get_output(context);

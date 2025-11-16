@@ -410,8 +410,6 @@ pub mod spot_fleet_request {
         name: &str,
         args: SpotFleetRequestArgs,
     ) -> SpotFleetRequestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_strategy_binding = args.allocation_strategy.get_output(context);
         let context_binding = args.context.get_output(context);
         let excess_capacity_termination_policy_binding = args

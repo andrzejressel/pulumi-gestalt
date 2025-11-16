@@ -85,8 +85,6 @@ pub mod domain_saml_options {
         name: &str,
         args: DomainSamlOptionsArgs,
     ) -> DomainSamlOptionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let saml_options_binding = args.saml_options.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

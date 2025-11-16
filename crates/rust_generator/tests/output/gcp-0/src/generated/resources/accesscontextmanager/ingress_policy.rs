@@ -59,8 +59,6 @@ pub mod ingress_policy {
         name: &str,
         args: IngressPolicyArgs,
     ) -> IngressPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ingress_policy_name_binding = args.ingress_policy_name.get_output(context);
         let resource_binding = args.resource.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

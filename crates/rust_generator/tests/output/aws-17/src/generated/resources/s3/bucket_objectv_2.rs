@@ -380,8 +380,6 @@ pub mod bucket_objectv_2 {
         name: &str,
         args: BucketObjectv2Args,
     ) -> BucketObjectv2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let acl_binding = args.acl.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let bucket_key_enabled_binding = args.bucket_key_enabled.get_output(context);

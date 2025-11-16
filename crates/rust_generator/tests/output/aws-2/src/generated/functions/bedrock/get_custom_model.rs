@@ -71,8 +71,6 @@ pub mod get_custom_model {
         context: &pulumi_gestalt_rust::Context,
         args: GetCustomModelArgs,
     ) -> GetCustomModelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let model_id_binding = args.model_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:bedrock/getCustomModel:getCustomModel".into(),

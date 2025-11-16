@@ -218,8 +218,6 @@ pub mod regional_endpoint {
         name: &str,
         args: RegionalEndpointArgs,
     ) -> RegionalEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_type_binding = args.access_type.get_output(context);
         let address_binding = args.address.get_output(context);
         let description_binding = args.description.get_output(context);

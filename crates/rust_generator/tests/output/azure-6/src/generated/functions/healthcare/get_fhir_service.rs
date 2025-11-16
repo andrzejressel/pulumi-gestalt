@@ -65,8 +65,6 @@ pub mod get_fhir_service {
         context: &pulumi_gestalt_rust::Context,
         args: GetFhirServiceArgs,
     ) -> GetFhirServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);

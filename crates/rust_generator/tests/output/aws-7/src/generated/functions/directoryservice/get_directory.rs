@@ -64,8 +64,6 @@ pub mod get_directory {
         context: &pulumi_gestalt_rust::Context,
         args: GetDirectoryArgs,
     ) -> GetDirectoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let directory_id_binding = args.directory_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

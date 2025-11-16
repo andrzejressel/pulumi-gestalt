@@ -131,8 +131,6 @@ pub mod scheduled_action {
         name: &str,
         args: ScheduledActionArgs,
     ) -> ScheduledActionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let day_of_month_binding = args.day_of_month.get_output(context);
         let days_of_weeks_binding = args.days_of_weeks.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

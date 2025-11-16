@@ -70,8 +70,6 @@ pub mod partner {
         name: &str,
         args: PartnerArgs,
     ) -> PartnerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let database_name_binding = args.database_name.get_output(context);

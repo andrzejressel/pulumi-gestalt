@@ -82,8 +82,6 @@ pub mod vault {
         name: &str,
         args: VaultArgs,
     ) -> VaultResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let force_destroy_binding = args.force_destroy.get_output(context);
         let kms_key_arn_binding = args.kms_key_arn.get_output(context);
         let name_binding = args.name.get_output(context);

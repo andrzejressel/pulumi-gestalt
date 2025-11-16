@@ -29,8 +29,6 @@ pub mod get_dcv_delegation {
         context: &pulumi_gestalt_rust::Context,
         args: GetDcvDelegationArgs,
     ) -> GetDcvDelegationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let zone_id_binding = args.zone_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getDcvDelegation:getDcvDelegation".into(),

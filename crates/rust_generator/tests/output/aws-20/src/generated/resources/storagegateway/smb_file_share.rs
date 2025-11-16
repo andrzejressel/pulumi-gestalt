@@ -224,8 +224,6 @@ pub mod smb_file_share {
         name: &str,
         args: SmbFileShareArgs,
     ) -> SmbFileShareResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_based_enumeration_binding = args
             .access_based_enumeration
             .get_output(context);

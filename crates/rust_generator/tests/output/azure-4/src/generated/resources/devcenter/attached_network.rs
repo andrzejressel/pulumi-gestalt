@@ -103,8 +103,6 @@ pub mod attached_network {
         name: &str,
         args: AttachedNetworkArgs,
     ) -> AttachedNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dev_center_id_binding = args.dev_center_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let network_connection_id_binding = args

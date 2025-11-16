@@ -322,8 +322,6 @@ pub mod authz_policy {
         name: &str,
         args: AuthzPolicyArgs,
     ) -> AuthzPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let custom_provider_binding = args.custom_provider.get_output(context);
         let description_binding = args.description.get_output(context);

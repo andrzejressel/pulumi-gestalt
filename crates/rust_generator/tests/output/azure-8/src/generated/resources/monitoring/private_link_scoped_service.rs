@@ -96,8 +96,6 @@ pub mod private_link_scoped_service {
         name: &str,
         args: PrivateLinkScopedServiceArgs,
     ) -> PrivateLinkScopedServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let linked_resource_id_binding = args.linked_resource_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

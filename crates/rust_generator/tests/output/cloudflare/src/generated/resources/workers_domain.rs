@@ -76,8 +76,6 @@ pub mod workers_domain {
         name: &str,
         args: WorkersDomainArgs,
     ) -> WorkersDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let environment_binding = args.environment.get_output(context);
         let hostname_binding = args.hostname.get_output(context);

@@ -145,8 +145,6 @@ pub mod sql_pool {
         name: &str,
         args: SqlPoolArgs,
     ) -> SqlPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let collation_binding = args.collation.get_output(context);
         let create_mode_binding = args.create_mode.get_output(context);
         let data_encrypted_binding = args.data_encrypted.get_output(context);

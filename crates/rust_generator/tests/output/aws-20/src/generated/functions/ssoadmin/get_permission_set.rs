@@ -48,8 +48,6 @@ pub mod get_permission_set {
         context: &pulumi_gestalt_rust::Context,
         args: GetPermissionSetArgs,
     ) -> GetPermissionSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let instance_arn_binding = args.instance_arn.get_output(context);
         let name_binding = args.name.get_output(context);

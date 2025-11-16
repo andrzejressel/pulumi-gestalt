@@ -112,8 +112,6 @@ pub mod integration_account_batch_configuration {
         name: &str,
         args: IntegrationAccountBatchConfigurationArgs,
     ) -> IntegrationAccountBatchConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let batch_group_name_binding = args.batch_group_name.get_output(context);
         let integration_account_name_binding = args
             .integration_account_name

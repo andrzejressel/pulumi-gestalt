@@ -188,8 +188,6 @@ pub mod budget_action {
         name: &str,
         args: BudgetActionArgs,
     ) -> BudgetActionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let action_threshold_binding = args.action_threshold.get_output(context);
         let action_type_binding = args.action_type.get_output(context);

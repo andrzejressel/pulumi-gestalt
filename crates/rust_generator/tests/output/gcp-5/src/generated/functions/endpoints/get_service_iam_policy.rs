@@ -30,8 +30,6 @@ pub mod get_service_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetServiceIamPolicyArgs,
     ) -> GetServiceIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let service_name_binding = args.service_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:endpoints/getServiceIamPolicy:getServiceIamPolicy".into(),

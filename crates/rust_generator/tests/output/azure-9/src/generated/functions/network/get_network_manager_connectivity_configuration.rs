@@ -50,8 +50,6 @@ pub mod get_network_manager_connectivity_configuration {
         context: &pulumi_gestalt_rust::Context,
         args: GetNetworkManagerConnectivityConfigurationArgs,
     ) -> GetNetworkManagerConnectivityConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let network_manager_id_binding = args.network_manager_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

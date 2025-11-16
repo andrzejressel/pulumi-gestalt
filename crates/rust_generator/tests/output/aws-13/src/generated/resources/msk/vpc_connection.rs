@@ -76,8 +76,6 @@ pub mod vpc_connection {
         name: &str,
         args: VpcConnectionArgs,
     ) -> VpcConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_binding = args.authentication.get_output(context);
         let client_subnets_binding = args.client_subnets.get_output(context);
         let security_groups_binding = args.security_groups.get_output(context);

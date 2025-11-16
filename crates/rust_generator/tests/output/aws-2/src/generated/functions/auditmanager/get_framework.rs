@@ -39,8 +39,6 @@ pub mod get_framework {
         context: &pulumi_gestalt_rust::Context,
         args: GetFrameworkArgs,
     ) -> GetFrameworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let control_sets_binding = args.control_sets.get_output(context);
         let framework_type_binding = args.framework_type.get_output(context);
         let name_binding = args.name.get_output(context);

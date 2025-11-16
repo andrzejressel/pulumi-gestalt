@@ -295,8 +295,6 @@ pub mod target_instance {
         name: &str,
         args: TargetInstanceArgs,
     ) -> TargetInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let instance_binding = args.instance.get_output(context);
         let name_binding = args.name.get_output(context);

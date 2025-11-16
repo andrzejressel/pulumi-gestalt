@@ -61,8 +61,6 @@ pub mod get_api {
         context: &pulumi_gestalt_rust::Context,
         args: GetApiArgs,
     ) -> GetApiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

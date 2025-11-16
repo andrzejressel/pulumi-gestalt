@@ -56,8 +56,6 @@ pub mod template_association {
         name: &str,
         args: TemplateAssociationArgs,
     ) -> TemplateAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let skip_destroy_binding = args.skip_destroy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:servicequotas/templateAssociation:TemplateAssociation".into(),

@@ -159,8 +159,6 @@ pub mod lite_topic {
         name: &str,
         args: LiteTopicArgs,
     ) -> LiteTopicResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let partition_config_binding = args.partition_config.get_output(context);
         let project_binding = args.project.get_output(context);

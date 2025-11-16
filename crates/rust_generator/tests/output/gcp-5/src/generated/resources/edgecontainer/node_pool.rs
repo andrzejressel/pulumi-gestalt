@@ -295,8 +295,6 @@ pub mod node_pool {
         name: &str,
         args: NodePoolArgs,
     ) -> NodePoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_binding = args.cluster.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let local_disk_encryption_binding = args

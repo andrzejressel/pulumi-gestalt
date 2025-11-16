@@ -74,8 +74,6 @@ pub mod service_config {
         name: &str,
         args: ServiceConfigArgs,
     ) -> ServiceConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_binding = args.data.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -228,8 +228,6 @@ pub mod channel {
         name: &str,
         args: ChannelArgs,
     ) -> ChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cdi_input_specification_binding = args
             .cdi_input_specification
             .get_output(context);

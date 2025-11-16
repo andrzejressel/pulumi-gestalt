@@ -108,8 +108,6 @@ pub mod database {
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let acl_configuration_binding = args.acl_configuration.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let comment_binding = args.comment.get_output(context);

@@ -18,8 +18,6 @@ pub mod get_profiles_profiles {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetProfilesProfilesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getProfilesProfiles:getProfilesProfiles".into(),
             version: super::super::super::get_version(),

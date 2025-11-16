@@ -85,8 +85,6 @@ pub mod iam_member_remove {
         name: &str,
         args: IamMemberRemoveArgs,
     ) -> IamMemberRemoveResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let member_binding = args.member.get_output(context);
         let project_binding = args.project.get_output(context);
         let role_binding = args.role.get_output(context);

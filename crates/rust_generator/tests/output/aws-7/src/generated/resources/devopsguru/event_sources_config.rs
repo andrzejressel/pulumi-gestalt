@@ -64,8 +64,6 @@ pub mod event_sources_config {
         name: &str,
         args: EventSourcesConfigArgs,
     ) -> EventSourcesConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let event_sources_binding = args.event_sources.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:devopsguru/eventSourcesConfig:EventSourcesConfig".into(),

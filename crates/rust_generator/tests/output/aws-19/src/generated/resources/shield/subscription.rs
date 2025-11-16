@@ -63,8 +63,6 @@ pub mod subscription {
         name: &str,
         args: SubscriptionArgs,
     ) -> SubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_renew_binding = args.auto_renew.get_output(context);
         let skip_destroy_binding = args.skip_destroy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -270,8 +270,6 @@ pub mod flex_template_job {
         name: &str,
         args: FlexTemplateJobArgs,
     ) -> FlexTemplateJobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_experiments_binding = args
             .additional_experiments
             .get_output(context);

@@ -73,8 +73,6 @@ pub mod pull_through_cache_rule {
         name: &str,
         args: PullThroughCacheRuleArgs,
     ) -> PullThroughCacheRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let credential_arn_binding = args.credential_arn.get_output(context);
         let ecr_repository_prefix_binding = args
             .ecr_repository_prefix

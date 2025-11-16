@@ -44,8 +44,6 @@ pub mod get_virtual_network_peering {
         context: &pulumi_gestalt_rust::Context,
         args: GetVirtualNetworkPeeringArgs,
     ) -> GetVirtualNetworkPeeringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let virtual_network_id_binding = args.virtual_network_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

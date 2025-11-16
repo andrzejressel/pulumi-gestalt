@@ -172,8 +172,6 @@ pub mod dataset_iam_policy {
         name: &str,
         args: DatasetIamPolicyArgs,
     ) -> DatasetIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dataset_id_binding = args.dataset_id.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

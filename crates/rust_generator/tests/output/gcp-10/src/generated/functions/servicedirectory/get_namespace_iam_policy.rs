@@ -31,8 +31,6 @@ pub mod get_namespace_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetNamespaceIamPolicyArgs,
     ) -> GetNamespaceIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:servicedirectory/getNamespaceIamPolicy:getNamespaceIamPolicy"

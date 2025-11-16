@@ -179,8 +179,6 @@ pub mod cassandra_datacenter {
         name: &str,
         args: CassandraDatacenterArgs,
     ) -> CassandraDatacenterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zones_enabled_binding = args
             .availability_zones_enabled
             .get_output(context);
