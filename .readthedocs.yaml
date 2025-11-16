@@ -22,8 +22,6 @@ build:
       - curl -fsSL https://get.pulumi.com | sh
       - /home/docs/.pulumi/bin/pulumi version
 
-      - mkdir $READTHEDOCS_OUTPUT/html
-
       - PATH="$PATH:/home/docs/.pulumi/bin" just rust-docs
       - ls -al target/doc
       - mv target/doc $READTHEDOCS_OUTPUT/html/rust-docs
