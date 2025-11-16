@@ -24,8 +24,7 @@ nav:
       - Overview: languages/overview.md
       - Rust:
           - languages/rust/index.md
-          - rustdoc (Native): rust-docs/native/pulumi_gestalt_rust/index.html
-          - rustdoc (Wasm): rust-docs/wasm/pulumi_gestalt_rust/index.html
+          - rustdoc: rust-docs/native/pulumi_gestalt_rust/index.html
   - Integrations:
       - Overview: integrations/overview.md
       - Schema: integrations/schema.md

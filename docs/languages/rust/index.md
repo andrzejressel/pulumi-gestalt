@@ -6,20 +6,11 @@
 !!! note "TL/DR"
     Example project is available at [pulumi-gestalt-example](https://github.com/andrzejressel/pulumi-gestalt-example)
 
-
-Support for Rust is provided in two flavors:
-
-- **Native**
-- **Wasm**
-
-If you don't know which one to choose, go with the native version. Currently, Wasm doesn’t give any benefits and is more complex to use.
-
 ## Requirements
 
 - [Rust](https://www.rust-lang.org/tools/install)
 - [Just](https://github.com/casey/just)
 - Pulumi Gestalt language plugin: `pulumi plugin install language gestalt "<PULUMI_GESTALT_VERSION>" --server github://api.github.com/andrzejressel/pulumi-gestalt`
-- (Wasm only) Pulumi Gestalt Wasm Runner: `cargo binstall -y pulumi_gestalt_wasm_runner@<PULUMI_GESTALT_VERSION>`
 
 ## Project setup
 
@@ -53,96 +44,50 @@ pulumi_gestalt_rust::include_provider!("random");
 
 ### Use provider
 
-=== "Native"
+```rust title="src/main.rs"
+mod random;
+use anyhow::Result;
+use random::random_string;
+use random::random_string::RandomStringArgs;
+use pulumi_gestalt_rust::*;
 
-    ```rust title="src/main.rs"
-    mod random;
-    use anyhow::Result;
-    use random::random_string;
-    use random::random_string::RandomStringArgs;
-    use pulumi_gestalt_rust::*;
-    
-    pulumi_main!();
-    
-    fn pulumi_main(context: &Context) -> Result<()> {
-        let length: Output<i32> = context.new_output(&4);
-        let random_string_1 = random_string::create(
-            context,
-            "test_1",
-            RandomStringArgs::builder().length(length).build_struct(),
-        );
-    
-        let new_length = random_string_1.result.map(|s| s.len() as i32);
-    
-        let random_string_2 = random_string::create(
-            context,
-            "test_2",
-            RandomStringArgs::builder()
-                .length(new_length)
-                .build_struct(),
-        );
-    
-        let random_string_3 = random_string::create(
-            context,
-            "test_3",
-            RandomStringArgs::builder()
-                .length(random_string_2.length.map(|i| i * 2))
-                .build_struct(),
-        );
-    
-        add_export("result", &random_string_1.result);
-        add_export("number_1", &random_string_1.length);
-        add_export("number_2", &random_string_2.length);
-        add_export("number_3", &random_string_3.length);
-        Ok(())
-    }
-    ```
+fn main() {
+    run(pulumi_main).unwrap();
+}
 
-=== "Wasm"
-    ```rust title="src/lib.rs"
-    mod random;
-    use anyhow::Result;
-    use random::random_string;
-    use random::random_string::RandomStringArgs;
-    use pulumi_gestalt_rust::*;
-    
-    pulumi_main!();
-    
-    fn pulumi_main(context: &Context) -> Result<()> {
-        let length: Output<i32> = context.new_output(&4);
-        let random_string_1 = random_string::create(
-            context,
-            "test_1",
-            RandomStringArgs::builder().length(length).build_struct(),
-        );
-    
-        let new_length = random_string_1.result.map(|s| s.len() as i32);
-    
-        let random_string_2 = random_string::create(
-            context,
-            "test_2",
-            RandomStringArgs::builder()
-                .length(new_length)
-                .build_struct(),
-        );
-    
-        let random_string_3 = random_string::create(
-            context,
-            "test_3",
-            RandomStringArgs::builder()
-                .length(random_string_2.length.map(|i| i * 2))
-                .build_struct(),
-        );
-    
-        add_export("result", &random_string_1.result);
-        add_export("number_1", &random_string_1.length);
-        add_export("number_2", &random_string_2.length);
-        add_export("number_3", &random_string_3.length);
-        Ok(())
-    }
-    ```
+fn pulumi_main(context: &Context) -> Result<()> {
+    let length: Output<i32> = context.new_output(&4);
+    let random_string_1 = random_string::create(
+        context,
+        "test_1",
+        RandomStringArgs::builder().length(length).build_struct(),
+    );
 
-(the difference is in the `main.rs` vs `lib.rs` file name)
+    let new_length = random_string_1.result.map(|s| s.len() as i32);
+
+    let random_string_2 = random_string::create(
+        context,
+        "test_2",
+        RandomStringArgs::builder()
+            .length(new_length)
+            .build_struct(),
+    );
+
+    let random_string_3 = random_string::create(
+        context,
+        "test_3",
+        RandomStringArgs::builder()
+            .length(random_string_2.length.map(|i| i * 2))
+            .build_struct(),
+    );
+
+    add_export("result", &random_string_1.result);
+    add_export("number_1", &random_string_1.length);
+    add_export("number_2", &random_string_2.length);
+    add_export("number_3", &random_string_3.length);
+    Ok(())
+}
+```
 
 ### Add Pulumi.yaml
 
@@ -154,23 +99,9 @@ runtime: gestalt
 
 ### Add justfile
 
-=== "Native"
-
-    ```justfile title="justfile" 
-    run:
-        cargo run
-    ```
-
-=== "Wasm"
-    ```justfile title="justfile" 
-    binary := "pulumi_gestalt_wasm_runner"
-    wasm := "target/wasm32-wasip2/debug/<PROJECT_NAME>.wasm"
-    WASI_TARGET := "wasm32-wasip2"
-    
-    run:
-        cargo build --target={{WASI_TARGET}}
-        {{binary}} run --debug "{{wasm}}"
-    ```
-
+```justfile title="justfile" 
+run:
+    cargo run
+```
 
 You can now setup Pulumi stack using `pulumi stack` and run program using `pulumi up`

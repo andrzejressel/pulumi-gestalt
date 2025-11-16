@@ -140,7 +140,6 @@ docs:
 test-docs:
     cargo test --doc
     just rust-docs
-    just rust-docs-wasm
 
 rust-docs:
     cargo doc --no-deps \
@@ -151,19 +150,8 @@ rust-docs:
         -p pulumi_gestalt_providers_docker \
         -p pulumi_gestalt_providers_random
 
-rust-docs-wasm:
-    cargo doc --no-deps --target {{WASI_TARGET}} \
-        -p pulumi_gestalt_serde_constant_string \
-        -p pulumi_gestalt_rust \
-        -p pulumi_gestalt_providers_cloudflare \
-        -p pulumi_gestalt_providers_docker \
-        -p pulumi_gestalt_providers_random
-
 rust-docs-release $RUSTDOCFLAGS="--html-in-header docs_additions/umami.html":
     just rust-docs
-
-rust-docs-wasm-release $RUSTDOCFLAGS="--html-in-header docs_additions/umami.html":
-    just rust-docs-wasm
 
 update-version NEW_VERSION:
     sd "0.0.0-DEV" "{{NEW_VERSION}}" "crates/wit/wit/world.wit" "examples/wasm/src/lib.rs" \
