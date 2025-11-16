@@ -10,7 +10,7 @@ plugins TEMP_FILE:
     {{binary}} plugins "{{wasm}}" "{{TEMP_FILE}}"
 
 [windows]
-local-test:
+local-test $RUST_BACKTRACE="full":
     #!pwsh
     Set-StrictMode -Version Latest
     $ErrorActionPreference = "Stop"

@@ -3417,8 +3417,7 @@ dependencies = [
  "anyhow",
  "assert_cmd",
  "pulumi_gestalt_examples_common",
- "pulumi_gestalt_providers_random",
- "pulumi_gestalt_rust",
+ "pulumi_gestalt_wit",
 ]
 
 [[package]]
