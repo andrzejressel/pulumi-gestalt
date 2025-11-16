@@ -903,8 +903,6 @@ pub mod trigger {
         name: &str,
         args: TriggerArgs,
     ) -> TriggerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let approval_config_binding = args.approval_config.get_output(context);
         let bitbucket_server_trigger_config_binding = args
             .bitbucket_server_trigger_config

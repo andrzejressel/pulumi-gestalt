@@ -77,8 +77,6 @@ pub mod resource {
         name: &str,
         args: ResourceArgs,
     ) -> ResourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_arn_binding = args.group_arn.get_output(context);
         let resource_arn_binding = args.resource_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

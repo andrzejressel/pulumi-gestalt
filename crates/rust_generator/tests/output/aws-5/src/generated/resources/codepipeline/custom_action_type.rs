@@ -127,8 +127,6 @@ pub mod custom_action_type {
         name: &str,
         args: CustomActionTypeArgs,
     ) -> CustomActionTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let category_binding = args.category.get_output(context);
         let configuration_properties_binding = args
             .configuration_properties

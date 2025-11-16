@@ -262,8 +262,6 @@ pub mod patch_baseline {
         name: &str,
         args: PatchBaselineArgs,
     ) -> PatchBaselineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let approval_rules_binding = args.approval_rules.get_output(context);
         let approved_patches_binding = args.approved_patches.get_output(context);
         let approved_patches_compliance_level_binding = args

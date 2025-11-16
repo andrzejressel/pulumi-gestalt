@@ -192,8 +192,6 @@ pub mod note {
         name: &str,
         args: NoteArgs,
     ) -> NoteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attestation_authority_binding = args
             .attestation_authority
             .get_output(context);

@@ -142,8 +142,6 @@ pub mod object_access_control {
         name: &str,
         args: ObjectAccessControlArgs,
     ) -> ObjectAccessControlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let entity_binding = args.entity.get_output(context);
         let object_binding = args.object.get_output(context);

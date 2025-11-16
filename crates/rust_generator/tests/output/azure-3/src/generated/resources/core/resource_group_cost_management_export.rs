@@ -123,8 +123,6 @@ pub mod resource_group_cost_management_export {
         name: &str,
         args: ResourceGroupCostManagementExportArgs,
     ) -> ResourceGroupCostManagementExportResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_binding = args.active.get_output(context);
         let export_data_options_binding = args.export_data_options.get_output(context);
         let export_data_storage_location_binding = args

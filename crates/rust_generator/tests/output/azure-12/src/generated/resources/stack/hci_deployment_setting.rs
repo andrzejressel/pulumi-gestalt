@@ -62,8 +62,6 @@ pub mod hci_deployment_setting {
         name: &str,
         args: HciDeploymentSettingArgs,
     ) -> HciDeploymentSettingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arc_resource_ids_binding = args.arc_resource_ids.get_output(context);
         let scale_units_binding = args.scale_units.get_output(context);
         let stack_hci_cluster_id_binding = args.stack_hci_cluster_id.get_output(context);

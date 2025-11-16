@@ -184,8 +184,6 @@ pub mod occurence {
         name: &str,
         args: OccurenceArgs,
     ) -> OccurenceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attestation_binding = args.attestation.get_output(context);
         let note_name_binding = args.note_name.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -211,8 +211,6 @@ pub mod container_service {
         name: &str,
         args: ContainerServiceArgs,
     ) -> ContainerServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let is_disabled_binding = args.is_disabled.get_output(context);
         let name_binding = args.name.get_output(context);
         let power_binding = args.power.get_output(context);

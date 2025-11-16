@@ -105,8 +105,6 @@ pub mod user_group {
         name: &str,
         args: UserGroupArgs,
     ) -> UserGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let precedence_binding = args.precedence.get_output(context);

@@ -204,8 +204,6 @@ pub mod multicast_domain {
         name: &str,
         args: MulticastDomainArgs,
     ) -> MulticastDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_accept_shared_associations_binding = args
             .auto_accept_shared_associations
             .get_output(context);

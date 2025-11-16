@@ -90,8 +90,6 @@ pub mod snapshot_schedule {
         name: &str,
         args: SnapshotScheduleArgs,
     ) -> SnapshotScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let definitions_binding = args.definitions.get_output(context);
         let description_binding = args.description.get_output(context);
         let force_destroy_binding = args.force_destroy.get_output(context);

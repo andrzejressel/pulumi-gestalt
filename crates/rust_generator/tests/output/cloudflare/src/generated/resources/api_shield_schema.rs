@@ -70,8 +70,6 @@ pub mod api_shield_schema {
         name: &str,
         args: ApiShieldSchemaArgs,
     ) -> ApiShieldSchemaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let kind_binding = args.kind.get_output(context);
         let name_binding = args.name.get_output(context);
         let source_binding = args.source.get_output(context);

@@ -246,8 +246,6 @@ pub mod association {
         name: &str,
         args: AssociationArgs,
     ) -> AssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let apply_only_at_cron_interval_binding = args
             .apply_only_at_cron_interval
             .get_output(context);

@@ -73,8 +73,6 @@ pub mod instance_attachment {
         name: &str,
         args: InstanceAttachmentArgs,
     ) -> InstanceAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let environment_binding = args.environment.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

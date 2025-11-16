@@ -154,8 +154,6 @@ pub mod link {
         name: &str,
         args: LinkArgs,
     ) -> LinkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let label_template_binding = args.label_template.get_output(context);
         let link_configuration_binding = args.link_configuration.get_output(context);
         let resource_types_binding = args.resource_types.get_output(context);

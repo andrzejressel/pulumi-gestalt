@@ -42,8 +42,6 @@ pub mod get_aspect_type_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetAspectTypeIamPolicyArgs,
     ) -> GetAspectTypeIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aspect_type_id_binding = args.aspect_type_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let project_binding = args.project.get_output(context);

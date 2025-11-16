@@ -50,8 +50,6 @@ pub mod get_netblock_ip_ranges {
         context: &pulumi_gestalt_rust::Context,
         args: GetNetblockIpRangesArgs,
     ) -> GetNetblockIpRangesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let range_type_binding = args.range_type.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getNetblockIPRanges:getNetblockIPRanges".into(),

@@ -149,8 +149,6 @@ pub mod data_source {
         name: &str,
         args: DataSourceArgs,
     ) -> DataSourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let credentials_binding = args.credentials.get_output(context);
         let data_source_id_binding = args.data_source_id.get_output(context);

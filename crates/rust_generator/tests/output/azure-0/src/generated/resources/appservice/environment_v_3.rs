@@ -193,8 +193,6 @@ pub mod environment_v_3 {
         name: &str,
         args: EnvironmentV3Args,
     ) -> EnvironmentV3Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_new_private_endpoint_connections_binding = args
             .allow_new_private_endpoint_connections
             .get_output(context);

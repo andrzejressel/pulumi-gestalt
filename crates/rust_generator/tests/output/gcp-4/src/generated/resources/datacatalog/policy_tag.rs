@@ -163,8 +163,6 @@ pub mod policy_tag {
         name: &str,
         args: PolicyTagArgs,
     ) -> PolicyTagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let parent_policy_tag_binding = args.parent_policy_tag.get_output(context);

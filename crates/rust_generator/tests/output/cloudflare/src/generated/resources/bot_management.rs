@@ -121,8 +121,6 @@ pub mod bot_management {
         name: &str,
         args: BotManagementArgs,
     ) -> BotManagementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ai_bots_protection_binding = args.ai_bots_protection.get_output(context);
         let auto_update_model_binding = args.auto_update_model.get_output(context);
         let enable_js_binding = args.enable_js.get_output(context);

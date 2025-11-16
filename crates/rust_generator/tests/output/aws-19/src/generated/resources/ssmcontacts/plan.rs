@@ -135,8 +135,6 @@ pub mod plan {
         name: &str,
         args: PlanArgs,
     ) -> PlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_id_binding = args.contact_id.get_output(context);
         let stages_binding = args.stages.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

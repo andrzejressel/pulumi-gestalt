@@ -216,8 +216,6 @@ pub mod repository {
         name: &str,
         args: RepositoryArgs,
     ) -> RepositoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let git_remote_settings_binding = args.git_remote_settings.get_output(context);
         let kms_key_name_binding = args.kms_key_name.get_output(context);

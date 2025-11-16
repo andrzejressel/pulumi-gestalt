@@ -118,8 +118,6 @@ pub mod group_policy_exemption {
         name: &str,
         args: GroupPolicyExemptionArgs,
     ) -> GroupPolicyExemptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let exemption_category_binding = args.exemption_category.get_output(context);

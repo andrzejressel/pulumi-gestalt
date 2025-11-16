@@ -192,8 +192,6 @@ pub mod static_web_layer {
         name: &str,
         args: StaticWebLayerArgs,
     ) -> StaticWebLayerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_assign_elastic_ips_binding = args
             .auto_assign_elastic_ips
             .get_output(context);

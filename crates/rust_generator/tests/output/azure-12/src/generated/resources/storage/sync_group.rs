@@ -76,8 +76,6 @@ pub mod sync_group {
         name: &str,
         args: SyncGroupArgs,
     ) -> SyncGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let storage_sync_id_binding = args.storage_sync_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

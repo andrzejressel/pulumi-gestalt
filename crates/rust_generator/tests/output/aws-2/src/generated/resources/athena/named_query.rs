@@ -112,8 +112,6 @@ pub mod named_query {
         name: &str,
         args: NamedQueryArgs,
     ) -> NamedQueryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_binding = args.database.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);

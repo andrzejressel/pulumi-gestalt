@@ -88,8 +88,6 @@ pub mod account_vdm_attributes {
         name: &str,
         args: AccountVdmAttributesArgs,
     ) -> AccountVdmAttributesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dashboard_attributes_binding = args.dashboard_attributes.get_output(context);
         let guardian_attributes_binding = args.guardian_attributes.get_output(context);
         let vdm_enabled_binding = args.vdm_enabled.get_output(context);

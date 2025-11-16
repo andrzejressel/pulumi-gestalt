@@ -149,8 +149,6 @@ pub mod table_export {
         name: &str,
         args: TableExportArgs,
     ) -> TableExportResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let export_format_binding = args.export_format.get_output(context);
         let export_time_binding = args.export_time.get_output(context);
         let s3_bucket_binding = args.s3_bucket.get_output(context);

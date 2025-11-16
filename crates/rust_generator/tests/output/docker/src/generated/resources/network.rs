@@ -150,8 +150,6 @@ pub mod network {
         name: &str,
         args: NetworkArgs,
     ) -> NetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attachable_binding = args.attachable.get_output(context);
         let check_duplicate_binding = args.check_duplicate.get_output(context);
         let driver_binding = args.driver.get_output(context);

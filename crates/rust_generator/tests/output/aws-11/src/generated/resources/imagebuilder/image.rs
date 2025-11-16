@@ -149,8 +149,6 @@ pub mod image {
         name: &str,
         args: ImageArgs,
     ) -> ImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_recipe_arn_binding = args.container_recipe_arn.get_output(context);
         let distribution_configuration_arn_binding = args
             .distribution_configuration_arn

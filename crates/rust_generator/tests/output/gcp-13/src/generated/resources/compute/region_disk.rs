@@ -436,8 +436,6 @@ pub mod region_disk {
         name: &str,
         args: RegionDiskArgs,
     ) -> RegionDiskResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let async_primary_disk_binding = args.async_primary_disk.get_output(context);
         let description_binding = args.description.get_output(context);
         let disk_encryption_key_binding = args.disk_encryption_key.get_output(context);

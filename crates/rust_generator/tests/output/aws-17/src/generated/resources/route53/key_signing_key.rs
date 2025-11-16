@@ -147,8 +147,6 @@ pub mod key_signing_key {
         name: &str,
         args: KeySigningKeyArgs,
     ) -> KeySigningKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hosted_zone_id_binding = args.hosted_zone_id.get_output(context);
         let key_management_service_arn_binding = args
             .key_management_service_arn

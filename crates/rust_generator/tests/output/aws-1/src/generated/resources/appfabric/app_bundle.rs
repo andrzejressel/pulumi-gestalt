@@ -67,8 +67,6 @@ pub mod app_bundle {
         name: &str,
         args: AppBundleArgs,
     ) -> AppBundleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let customer_managed_key_arn_binding = args
             .customer_managed_key_arn
             .get_output(context);

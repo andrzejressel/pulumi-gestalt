@@ -145,8 +145,6 @@ pub mod service_custom_domain {
         name: &str,
         args: ServiceCustomDomainArgs,
     ) -> ServiceCustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let signalr_custom_certificate_id_binding = args

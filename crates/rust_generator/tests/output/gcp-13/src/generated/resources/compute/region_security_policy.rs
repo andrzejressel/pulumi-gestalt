@@ -233,8 +233,6 @@ pub mod region_security_policy {
         name: &str,
         args: RegionSecurityPolicyArgs,
     ) -> RegionSecurityPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ddos_protection_config_binding = args
             .ddos_protection_config
             .get_output(context);

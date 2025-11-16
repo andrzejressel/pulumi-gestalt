@@ -92,8 +92,6 @@ pub mod integration_response {
         name: &str,
         args: IntegrationResponseArgs,
     ) -> IntegrationResponseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let content_handling_strategy_binding = args
             .content_handling_strategy

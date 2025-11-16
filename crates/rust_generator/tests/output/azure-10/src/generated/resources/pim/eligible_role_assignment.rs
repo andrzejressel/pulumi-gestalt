@@ -154,8 +154,6 @@ pub mod eligible_role_assignment {
         name: &str,
         args: EligibleRoleAssignmentArgs,
     ) -> EligibleRoleAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let justification_binding = args.justification.get_output(context);
         let principal_id_binding = args.principal_id.get_output(context);
         let role_definition_id_binding = args.role_definition_id.get_output(context);

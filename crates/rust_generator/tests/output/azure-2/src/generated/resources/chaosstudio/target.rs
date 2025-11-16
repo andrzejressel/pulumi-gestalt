@@ -89,8 +89,6 @@ pub mod target {
         name: &str,
         args: TargetArgs,
     ) -> TargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let target_resource_id_binding = args.target_resource_id.get_output(context);
         let target_type_binding = args.target_type.get_output(context);

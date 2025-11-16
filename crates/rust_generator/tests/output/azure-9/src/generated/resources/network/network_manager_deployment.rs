@@ -235,8 +235,6 @@ pub mod network_manager_deployment {
         name: &str,
         args: NetworkManagerDeploymentArgs,
     ) -> NetworkManagerDeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_ids_binding = args.configuration_ids.get_output(context);
         let location_binding = args.location.get_output(context);
         let network_manager_id_binding = args.network_manager_id.get_output(context);

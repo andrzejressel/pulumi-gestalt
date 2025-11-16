@@ -126,8 +126,6 @@ pub mod access {
         name: &str,
         args: AccessArgs,
     ) -> AccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let external_id_binding = args.external_id.get_output(context);
         let home_directory_binding = args.home_directory.get_output(context);
         let home_directory_mappings_binding = args

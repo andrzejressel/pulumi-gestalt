@@ -323,8 +323,6 @@ pub mod target_group {
         name: &str,
         args: TargetGroupArgs,
     ) -> TargetGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_termination_binding = args
             .connection_termination
             .get_output(context);

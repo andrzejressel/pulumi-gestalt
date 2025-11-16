@@ -159,8 +159,6 @@ pub mod publishing_destination {
         name: &str,
         args: PublishingDestinationArgs,
     ) -> PublishingDestinationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_arn_binding = args.destination_arn.get_output(context);
         let destination_type_binding = args.destination_type.get_output(context);
         let detector_id_binding = args.detector_id.get_output(context);

@@ -145,8 +145,6 @@ pub mod virtual_gateway {
         name: &str,
         args: VirtualGatewayArgs,
     ) -> VirtualGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mesh_name_binding = args.mesh_name.get_output(context);
         let mesh_owner_binding = args.mesh_owner.get_output(context);
         let name_binding = args.name.get_output(context);

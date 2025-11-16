@@ -111,8 +111,6 @@ pub mod trigger_recurrence {
         name: &str,
         args: TriggerRecurrenceArgs,
     ) -> TriggerRecurrenceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let frequency_binding = args.frequency.get_output(context);
         let interval_binding = args.interval.get_output(context);
         let logic_app_id_binding = args.logic_app_id.get_output(context);

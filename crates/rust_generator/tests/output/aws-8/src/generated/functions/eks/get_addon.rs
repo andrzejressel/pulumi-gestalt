@@ -53,8 +53,6 @@ pub mod get_addon {
         context: &pulumi_gestalt_rust::Context,
         args: GetAddonArgs,
     ) -> GetAddonResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let addon_name_binding = args.addon_name.get_output(context);
         let cluster_name_binding = args.cluster_name.get_output(context);
         let tags_binding = args.tags.get_output(context);

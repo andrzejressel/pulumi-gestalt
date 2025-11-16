@@ -112,8 +112,6 @@ pub mod cluster_activity_stream {
         name: &str,
         args: ClusterActivityStreamArgs,
     ) -> ClusterActivityStreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let engine_native_audit_fields_included_binding = args
             .engine_native_audit_fields_included
             .get_output(context);

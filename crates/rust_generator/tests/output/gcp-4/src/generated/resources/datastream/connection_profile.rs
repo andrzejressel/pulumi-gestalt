@@ -444,8 +444,6 @@ pub mod connection_profile {
         name: &str,
         args: ConnectionProfileArgs,
     ) -> ConnectionProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bigquery_profile_binding = args.bigquery_profile.get_output(context);
         let connection_profile_id_binding = args
             .connection_profile_id

@@ -273,8 +273,6 @@ pub mod metric_stream {
         name: &str,
         args: MetricStreamArgs,
     ) -> MetricStreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let exclude_filters_binding = args.exclude_filters.get_output(context);
         let firehose_arn_binding = args.firehose_arn.get_output(context);
         let include_filters_binding = args.include_filters.get_output(context);

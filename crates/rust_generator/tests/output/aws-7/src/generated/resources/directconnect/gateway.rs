@@ -64,8 +64,6 @@ pub mod gateway {
         name: &str,
         args: GatewayArgs,
     ) -> GatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let amazon_side_asn_binding = args.amazon_side_asn.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

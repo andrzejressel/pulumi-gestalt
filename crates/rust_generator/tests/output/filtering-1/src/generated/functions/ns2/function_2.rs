@@ -29,8 +29,6 @@ pub mod function_2 {
         context: &pulumi_gestalt_rust::Context,
         args: Function2Args,
     ) -> Function2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let common_type_binding = args.common_type.get_output(context);
         let type2_binding = args.type2.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -112,8 +112,6 @@ pub mod signing_profile {
         name: &str,
         args: SigningProfileArgs,
     ) -> SigningProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);
         let platform_id_binding = args.platform_id.get_output(context);

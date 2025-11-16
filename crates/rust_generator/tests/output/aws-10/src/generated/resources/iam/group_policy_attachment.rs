@@ -66,8 +66,6 @@ pub mod group_policy_attachment {
         name: &str,
         args: GroupPolicyAttachmentArgs,
     ) -> GroupPolicyAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_binding = args.group.get_output(context);
         let policy_arn_binding = args.policy_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

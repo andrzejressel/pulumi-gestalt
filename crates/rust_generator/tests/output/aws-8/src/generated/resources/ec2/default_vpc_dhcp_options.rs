@@ -82,8 +82,6 @@ pub mod default_vpc_dhcp_options {
         name: &str,
         args: DefaultVpcDhcpOptionsArgs,
     ) -> DefaultVpcDhcpOptionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let owner_id_binding = args.owner_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

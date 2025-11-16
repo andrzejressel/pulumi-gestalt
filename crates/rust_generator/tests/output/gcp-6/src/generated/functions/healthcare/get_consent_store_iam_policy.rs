@@ -37,8 +37,6 @@ pub mod get_consent_store_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetConsentStoreIamPolicyArgs,
     ) -> GetConsentStoreIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let consent_store_id_binding = args.consent_store_id.get_output(context);
         let dataset_binding = args.dataset.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -46,8 +46,6 @@ pub mod foo {
         name: &str,
         args: FooArgs,
     ) -> FooResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let argument_binding = args.argument.get_output(context);
         let backup_kube_client_settings_binding = args
             .backup_kube_client_settings

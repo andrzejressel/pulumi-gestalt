@@ -38,8 +38,6 @@ pub mod get_appregistry_attribute_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetAppregistryAttributeGroupArgs,
     ) -> GetAppregistryAttributeGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let id_binding = args.id.get_output(context);
         let name_binding = args.name.get_output(context);

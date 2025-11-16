@@ -104,8 +104,6 @@ pub mod vpc_endpoint_connection_notification {
         name: &str,
         args: VpcEndpointConnectionNotificationArgs,
     ) -> VpcEndpointConnectionNotificationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_events_binding = args.connection_events.get_output(context);
         let connection_notification_arn_binding = args
             .connection_notification_arn

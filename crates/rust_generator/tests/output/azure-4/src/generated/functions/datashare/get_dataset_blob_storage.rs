@@ -45,8 +45,6 @@ pub mod get_dataset_blob_storage {
         context: &pulumi_gestalt_rust::Context,
         args: GetDatasetBlobStorageArgs,
     ) -> GetDatasetBlobStorageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_share_id_binding = args.data_share_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

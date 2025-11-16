@@ -193,8 +193,6 @@ pub mod database {
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let charset_binding = args.charset.get_output(context);
         let collation_binding = args.collation.get_output(context);
         let deletion_policy_binding = args.deletion_policy.get_output(context);

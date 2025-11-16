@@ -40,8 +40,6 @@ pub mod search {
         context: &pulumi_gestalt_rust::Context,
         args: SearchArgs,
     ) -> SearchResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let query_string_binding = args.query_string.get_output(context);
         let view_arn_binding = args.view_arn.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -125,8 +125,6 @@ pub mod configuration {
         name: &str,
         args: ConfigurationArgs,
     ) -> ConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let in_guest_user_patch_mode_binding = args
             .in_guest_user_patch_mode
             .get_output(context);

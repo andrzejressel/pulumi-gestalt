@@ -41,8 +41,6 @@ pub mod get_model {
         context: &pulumi_gestalt_rust::Context,
         args: GetModelArgs,
     ) -> GetModelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let model_id_binding = args.model_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:bedrockfoundation/getModel:getModel".into(),

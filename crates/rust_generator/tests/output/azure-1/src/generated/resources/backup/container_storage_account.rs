@@ -99,8 +99,6 @@ pub mod container_storage_account {
         name: &str,
         args: ContainerStorageAccountArgs,
     ) -> ContainerStorageAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let recovery_vault_name_binding = args.recovery_vault_name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let storage_account_id_binding = args.storage_account_id.get_output(context);

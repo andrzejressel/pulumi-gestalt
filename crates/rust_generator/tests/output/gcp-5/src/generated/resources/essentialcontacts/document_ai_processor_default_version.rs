@@ -86,8 +86,6 @@ pub mod document_ai_processor_default_version {
         name: &str,
         args: DocumentAiProcessorDefaultVersionArgs,
     ) -> DocumentAiProcessorDefaultVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let processor_binding = args.processor.get_output(context);
         let version_binding = args.version.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

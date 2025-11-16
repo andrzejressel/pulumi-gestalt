@@ -90,8 +90,6 @@ pub mod member {
         name: &str,
         args: MemberArgs,
     ) -> MemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let disable_email_notification_binding = args
             .disable_email_notification

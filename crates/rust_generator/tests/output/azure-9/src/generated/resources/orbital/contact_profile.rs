@@ -166,8 +166,6 @@ pub mod contact_profile {
         name: &str,
         args: ContactProfileArgs,
     ) -> ContactProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_tracking_binding = args.auto_tracking.get_output(context);
         let event_hub_uri_binding = args.event_hub_uri.get_output(context);
         let links_binding = args.links.get_output(context);

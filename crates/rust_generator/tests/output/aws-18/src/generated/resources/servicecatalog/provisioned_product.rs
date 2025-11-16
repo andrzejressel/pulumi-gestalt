@@ -188,8 +188,6 @@ pub mod provisioned_product {
         name: &str,
         args: ProvisionedProductArgs,
     ) -> ProvisionedProductResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accept_language_binding = args.accept_language.get_output(context);
         let ignore_errors_binding = args.ignore_errors.get_output(context);
         let name_binding = args.name.get_output(context);

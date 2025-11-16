@@ -110,8 +110,6 @@ pub mod api_tag_description {
         name: &str,
         args: ApiTagDescriptionArgs,
     ) -> ApiTagDescriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_tag_id_binding = args.api_tag_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let external_documentation_description_binding = args

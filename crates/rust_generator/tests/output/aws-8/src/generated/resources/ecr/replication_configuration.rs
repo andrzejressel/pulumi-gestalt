@@ -125,8 +125,6 @@ pub mod replication_configuration {
         name: &str,
         args: ReplicationConfigurationArgs,
     ) -> ReplicationConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let replication_configuration_binding = args
             .replication_configuration
             .get_output(context);

@@ -157,8 +157,6 @@ pub mod parameter {
         name: &str,
         args: ParameterArgs,
     ) -> ParameterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_pattern_binding = args.allowed_pattern.get_output(context);
         let arn_binding = args.arn.get_output(context);
         let data_type_binding = args.data_type.get_output(context);

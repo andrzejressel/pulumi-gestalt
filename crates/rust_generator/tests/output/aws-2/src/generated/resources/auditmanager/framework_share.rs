@@ -79,8 +79,6 @@ pub mod framework_share {
         name: &str,
         args: FrameworkShareArgs,
     ) -> FrameworkShareResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let comment_binding = args.comment.get_output(context);
         let destination_account_binding = args.destination_account.get_output(context);
         let destination_region_binding = args.destination_region.get_output(context);

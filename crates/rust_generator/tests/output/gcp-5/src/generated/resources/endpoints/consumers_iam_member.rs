@@ -125,8 +125,6 @@ pub mod consumers_iam_member {
         name: &str,
         args: ConsumersIamMemberArgs,
     ) -> ConsumersIamMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let consumer_project_binding = args.consumer_project.get_output(context);
         let member_binding = args.member.get_output(context);

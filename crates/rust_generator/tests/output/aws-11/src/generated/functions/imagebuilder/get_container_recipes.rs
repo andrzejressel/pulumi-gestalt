@@ -42,8 +42,6 @@ pub mod get_container_recipes {
         context: &pulumi_gestalt_rust::Context,
         args: GetContainerRecipesArgs,
     ) -> GetContainerRecipesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let owner_binding = args.owner.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

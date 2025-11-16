@@ -105,8 +105,6 @@ pub mod three_tier_virtual_instance {
         name: &str,
         args: ThreeTierVirtualInstanceArgs,
     ) -> ThreeTierVirtualInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_location_binding = args.app_location.get_output(context);
         let environment_binding = args.environment.get_output(context);
         let identity_binding = args.identity.get_output(context);

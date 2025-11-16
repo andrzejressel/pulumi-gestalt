@@ -135,8 +135,6 @@ pub mod sql_pool_extended_auditing_policy {
         name: &str,
         args: SqlPoolExtendedAuditingPolicyArgs,
     ) -> SqlPoolExtendedAuditingPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_monitoring_enabled_binding = args
             .log_monitoring_enabled
             .get_output(context);

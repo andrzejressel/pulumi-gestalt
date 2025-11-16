@@ -553,8 +553,6 @@ pub mod vpn_connection {
         name: &str,
         args: VpnConnectionArgs,
     ) -> VpnConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let customer_gateway_id_binding = args.customer_gateway_id.get_output(context);
         let enable_acceleration_binding = args.enable_acceleration.get_output(context);
         let local_ipv4_network_cidr_binding = args

@@ -79,8 +79,6 @@ pub mod project_metadata_item {
         name: &str,
         args: ProjectMetadataItemArgs,
     ) -> ProjectMetadataItemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_binding = args.key.get_output(context);
         let project_binding = args.project.get_output(context);
         let value_binding = args.value.get_output(context);

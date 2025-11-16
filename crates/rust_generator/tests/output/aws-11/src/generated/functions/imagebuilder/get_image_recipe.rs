@@ -61,8 +61,6 @@ pub mod get_image_recipe {
         context: &pulumi_gestalt_rust::Context,
         args: GetImageRecipeArgs,
     ) -> GetImageRecipeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

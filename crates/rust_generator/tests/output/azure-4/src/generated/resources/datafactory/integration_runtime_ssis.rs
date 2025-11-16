@@ -233,8 +233,6 @@ pub mod integration_runtime_ssis {
         name: &str,
         args: IntegrationRuntimeSsisArgs,
     ) -> IntegrationRuntimeSsisResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_info_binding = args.catalog_info.get_output(context);
         let copy_compute_scale_binding = args.copy_compute_scale.get_output(context);
         let credential_name_binding = args.credential_name.get_output(context);

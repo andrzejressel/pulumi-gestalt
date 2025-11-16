@@ -78,8 +78,6 @@ pub mod type_ {
         name: &str,
         args: TypeArgs,
     ) -> TypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let definition_binding = args.definition.get_output(context);
         let format_binding = args.format.get_output(context);

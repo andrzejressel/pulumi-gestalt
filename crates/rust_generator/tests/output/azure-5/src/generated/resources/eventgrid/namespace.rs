@@ -124,8 +124,6 @@ pub mod namespace {
         name: &str,
         args: NamespaceArgs,
     ) -> NamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capacity_binding = args.capacity.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let inbound_ip_rules_binding = args.inbound_ip_rules.get_output(context);

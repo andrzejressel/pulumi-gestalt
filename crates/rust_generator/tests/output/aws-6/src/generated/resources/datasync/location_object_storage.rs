@@ -115,8 +115,6 @@ pub mod location_object_storage {
         name: &str,
         args: LocationObjectStorageArgs,
     ) -> LocationObjectStorageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_key_binding = args.access_key.get_output(context);
         let agent_arns_binding = args.agent_arns.get_output(context);
         let bucket_name_binding = args.bucket_name.get_output(context);

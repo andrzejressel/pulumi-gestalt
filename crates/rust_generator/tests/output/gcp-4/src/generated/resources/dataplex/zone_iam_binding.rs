@@ -291,8 +291,6 @@ pub mod zone_iam_binding {
         name: &str,
         args: ZoneIamBindingArgs,
     ) -> ZoneIamBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let dataplex_zone_binding = args.dataplex_zone.get_output(context);
         let lake_binding = args.lake.get_output(context);

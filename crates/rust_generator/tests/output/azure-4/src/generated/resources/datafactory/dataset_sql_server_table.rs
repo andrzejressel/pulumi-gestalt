@@ -143,8 +143,6 @@ pub mod dataset_sql_server_table {
         name: &str,
         args: DatasetSqlServerTableArgs,
     ) -> DatasetSqlServerTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);

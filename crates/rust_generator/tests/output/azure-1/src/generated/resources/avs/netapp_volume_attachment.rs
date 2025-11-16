@@ -228,8 +228,6 @@ pub mod netapp_volume_attachment {
         name: &str,
         args: NetappVolumeAttachmentArgs,
     ) -> NetappVolumeAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let netapp_volume_id_binding = args.netapp_volume_id.get_output(context);
         let vmware_cluster_id_binding = args.vmware_cluster_id.get_output(context);

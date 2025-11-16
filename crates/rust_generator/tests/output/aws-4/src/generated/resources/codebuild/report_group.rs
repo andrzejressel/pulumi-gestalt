@@ -126,8 +126,6 @@ pub mod report_group {
         name: &str,
         args: ReportGroupArgs,
     ) -> ReportGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delete_reports_binding = args.delete_reports.get_output(context);
         let export_config_binding = args.export_config.get_output(context);
         let name_binding = args.name.get_output(context);

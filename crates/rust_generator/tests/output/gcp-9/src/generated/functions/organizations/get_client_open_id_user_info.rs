@@ -17,8 +17,6 @@ pub mod get_client_open_id_user_info {
     pub fn invoke(
         context: &pulumi_gestalt_rust::Context,
     ) -> GetClientOpenIdUserInfoResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:organizations/getClientOpenIdUserInfo:getClientOpenIdUserInfo"
                 .into(),

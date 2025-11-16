@@ -78,8 +78,6 @@ pub mod web_analytics_site {
         name: &str,
         args: WebAnalyticsSiteArgs,
     ) -> WebAnalyticsSiteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let auto_install_binding = args.auto_install.get_output(context);
         let host_binding = args.host.get_output(context);

@@ -427,8 +427,6 @@ pub mod policy {
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let adjustment_type_binding = args.adjustment_type.get_output(context);
         let autoscaling_group_name_binding = args
             .autoscaling_group_name

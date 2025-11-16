@@ -42,8 +42,6 @@ pub mod get_outposts {
         context: &pulumi_gestalt_rust::Context,
         args: GetOutpostsArgs,
     ) -> GetOutpostsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_binding = args.availability_zone.get_output(context);
         let availability_zone_id_binding = args.availability_zone_id.get_output(context);
         let owner_id_binding = args.owner_id.get_output(context);

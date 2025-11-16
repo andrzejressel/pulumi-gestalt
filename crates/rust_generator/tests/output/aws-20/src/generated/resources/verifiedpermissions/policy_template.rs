@@ -77,8 +77,6 @@ pub mod policy_template {
         name: &str,
         args: PolicyTemplateArgs,
     ) -> PolicyTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let policy_store_id_binding = args.policy_store_id.get_output(context);
         let statement_binding = args.statement.get_output(context);

@@ -296,8 +296,6 @@ pub mod gateway {
         name: &str,
         args: GatewayArgs,
     ) -> GatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let activation_key_binding = args.activation_key.get_output(context);
         let average_download_rate_limit_in_bits_per_sec_binding = args
             .average_download_rate_limit_in_bits_per_sec

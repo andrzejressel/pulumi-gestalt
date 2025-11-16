@@ -384,8 +384,6 @@ pub mod machine_image_iam_policy {
         name: &str,
         args: MachineImageIamPolicyArgs,
     ) -> MachineImageIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let machine_image_binding = args.machine_image.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -343,8 +343,6 @@ pub mod workspace {
         name: &str,
         args: WorkspaceArgs,
     ) -> WorkspaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let azure_devops_repo_binding = args.azure_devops_repo.get_output(context);
         let azuread_authentication_only_binding = args
             .azuread_authentication_only

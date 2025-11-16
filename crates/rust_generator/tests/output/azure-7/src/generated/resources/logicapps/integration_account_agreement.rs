@@ -154,8 +154,6 @@ pub mod integration_account_agreement {
         name: &str,
         args: IntegrationAccountAgreementArgs,
     ) -> IntegrationAccountAgreementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agreement_type_binding = args.agreement_type.get_output(context);
         let content_binding = args.content.get_output(context);
         let guest_identity_binding = args.guest_identity.get_output(context);

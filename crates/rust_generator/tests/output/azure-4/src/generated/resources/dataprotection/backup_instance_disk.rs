@@ -127,8 +127,6 @@ pub mod backup_instance_disk {
         name: &str,
         args: BackupInstanceDiskArgs,
     ) -> BackupInstanceDiskResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let disk_id_binding = args.disk_id.get_output(context);
         let location_binding = args.location.get_output(context);

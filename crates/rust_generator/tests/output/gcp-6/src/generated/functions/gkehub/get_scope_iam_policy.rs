@@ -35,8 +35,6 @@ pub mod get_scope_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetScopeIamPolicyArgs,
     ) -> GetScopeIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let scope_id_binding = args.scope_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

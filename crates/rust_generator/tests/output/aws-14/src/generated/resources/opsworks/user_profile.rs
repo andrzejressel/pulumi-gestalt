@@ -62,8 +62,6 @@ pub mod user_profile {
         name: &str,
         args: UserProfileArgs,
     ) -> UserProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_self_management_binding = args
             .allow_self_management
             .get_output(context);

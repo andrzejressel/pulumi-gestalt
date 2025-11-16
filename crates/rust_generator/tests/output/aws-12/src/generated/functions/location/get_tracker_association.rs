@@ -30,8 +30,6 @@ pub mod get_tracker_association {
         context: &pulumi_gestalt_rust::Context,
         args: GetTrackerAssociationArgs,
     ) -> GetTrackerAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let consumer_arn_binding = args.consumer_arn.get_output(context);
         let tracker_name_binding = args.tracker_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -57,8 +57,6 @@ pub mod gcm_channel {
         name: &str,
         args: GcmChannelArgs,
     ) -> GcmChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_key_binding = args.api_key.get_output(context);
         let application_id_binding = args.application_id.get_output(context);
         let default_authentication_method_binding = args

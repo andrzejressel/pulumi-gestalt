@@ -131,8 +131,6 @@ pub mod tunnel_dest_group {
         name: &str,
         args: TunnelDestGroupArgs,
     ) -> TunnelDestGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidrs_binding = args.cidrs.get_output(context);
         let fqdns_binding = args.fqdns.get_output(context);
         let group_name_binding = args.group_name.get_output(context);

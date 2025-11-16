@@ -343,8 +343,6 @@ pub mod instance_from_machine_image {
         name: &str,
         args: InstanceFromMachineImageArgs,
     ) -> InstanceFromMachineImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let advanced_machine_features_binding = args
             .advanced_machine_features
             .get_output(context);

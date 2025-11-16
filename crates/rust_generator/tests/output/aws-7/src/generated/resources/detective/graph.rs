@@ -60,8 +60,6 @@ pub mod graph {
         name: &str,
         args: GraphArgs,
     ) -> GraphResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:detective/graph:Graph".into(),

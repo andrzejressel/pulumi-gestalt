@@ -48,8 +48,6 @@ pub mod get_reserved_instance_offering {
         context: &pulumi_gestalt_rust::Context,
         args: GetReservedInstanceOfferingArgs,
     ) -> GetReservedInstanceOfferingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let db_instance_class_binding = args.db_instance_class.get_output(context);
         let duration_binding = args.duration.get_output(context);
         let multi_az_binding = args.multi_az.get_output(context);

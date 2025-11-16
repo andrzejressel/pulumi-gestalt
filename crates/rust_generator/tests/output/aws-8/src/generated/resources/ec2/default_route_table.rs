@@ -111,8 +111,6 @@ pub mod default_route_table {
         name: &str,
         args: DefaultRouteTableArgs,
     ) -> DefaultRouteTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_route_table_id_binding = args
             .default_route_table_id
             .get_output(context);

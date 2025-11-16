@@ -111,8 +111,6 @@ pub mod eip_association {
         name: &str,
         args: EipAssociationArgs,
     ) -> EipAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_id_binding = args.allocation_id.get_output(context);
         let allow_reassociation_binding = args.allow_reassociation.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);

@@ -27,8 +27,6 @@ pub mod func_with_dict_param {
         context: &pulumi_gestalt_rust::Context,
         args: FuncWithDictParamArgs,
     ) -> FuncWithDictParamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let a_binding = args.a.get_output(context);
         let b_binding = args.b.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -193,8 +193,6 @@ pub mod task_set {
         name: &str,
         args: TaskSetArgs,
     ) -> TaskSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capacity_provider_strategies_binding = args
             .capacity_provider_strategies
             .get_output(context);

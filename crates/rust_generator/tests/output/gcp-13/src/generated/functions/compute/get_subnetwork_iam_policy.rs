@@ -43,8 +43,6 @@ pub mod get_subnetwork_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetSubnetworkIamPolicyArgs,
     ) -> GetSubnetworkIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let region_binding = args.region.get_output(context);
         let subnetwork_binding = args.subnetwork.get_output(context);

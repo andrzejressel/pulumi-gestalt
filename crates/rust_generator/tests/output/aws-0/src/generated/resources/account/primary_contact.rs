@@ -123,8 +123,6 @@ pub mod primary_contact {
         name: &str,
         args: PrimaryContactArgs,
     ) -> PrimaryContactResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let address_line1_binding = args.address_line1.get_output(context);
         let address_line2_binding = args.address_line2.get_output(context);

@@ -30,8 +30,6 @@ pub mod get_resolver_firewall_config {
         context: &pulumi_gestalt_rust::Context,
         args: GetResolverFirewallConfigArgs,
     ) -> GetResolverFirewallConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let resource_id_binding = args.resource_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:route53/getResolverFirewallConfig:getResolverFirewallConfig"

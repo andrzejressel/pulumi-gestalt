@@ -87,8 +87,6 @@ pub mod ingestion {
         name: &str,
         args: IngestionArgs,
     ) -> IngestionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_binding = args.app.get_output(context);
         let app_bundle_arn_binding = args.app_bundle_arn.get_output(context);
         let ingestion_type_binding = args.ingestion_type.get_output(context);

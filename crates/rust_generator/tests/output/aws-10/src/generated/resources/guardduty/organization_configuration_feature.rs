@@ -87,8 +87,6 @@ pub mod organization_configuration_feature {
         name: &str,
         args: OrganizationConfigurationFeatureArgs,
     ) -> OrganizationConfigurationFeatureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_configurations_binding = args
             .additional_configurations
             .get_output(context);

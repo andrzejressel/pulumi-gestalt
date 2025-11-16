@@ -86,8 +86,6 @@ pub mod load_balancer_cookie_stickiness_policy {
         name: &str,
         args: LoadBalancerCookieStickinessPolicyArgs,
     ) -> LoadBalancerCookieStickinessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cookie_expiration_period_binding = args
             .cookie_expiration_period
             .get_output(context);

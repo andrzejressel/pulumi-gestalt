@@ -568,8 +568,6 @@ pub mod region_network_endpoint_group {
         name: &str,
         args: RegionNetworkEndpointGroupArgs,
     ) -> RegionNetworkEndpointGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_engine_binding = args.app_engine.get_output(context);
         let cloud_function_binding = args.cloud_function.get_output(context);
         let cloud_run_binding = args.cloud_run.get_output(context);

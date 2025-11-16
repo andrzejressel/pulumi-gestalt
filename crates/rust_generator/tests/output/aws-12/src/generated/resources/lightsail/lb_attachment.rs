@@ -81,8 +81,6 @@ pub mod lb_attachment {
         name: &str,
         args: LbAttachmentArgs,
     ) -> LbAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_name_binding = args.instance_name.get_output(context);
         let lb_name_binding = args.lb_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

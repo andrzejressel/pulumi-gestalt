@@ -72,8 +72,6 @@ pub mod license_grant_accepter {
         name: &str,
         args: LicenseGrantAccepterArgs,
     ) -> LicenseGrantAccepterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let grant_arn_binding = args.grant_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:licensemanager/licenseGrantAccepter:LicenseGrantAccepter".into(),

@@ -112,8 +112,6 @@ pub mod findings_filter {
         name: &str,
         args: FindingsFilterArgs,
     ) -> FindingsFilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let finding_criteria_binding = args.finding_criteria.get_output(context);

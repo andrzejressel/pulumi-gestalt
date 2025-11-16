@@ -102,8 +102,6 @@ pub mod namespace {
         name: &str,
         args: NamespaceArgs,
     ) -> NamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);

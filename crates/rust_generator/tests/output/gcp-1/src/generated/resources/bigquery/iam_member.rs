@@ -280,8 +280,6 @@ pub mod iam_member {
         name: &str,
         args: IamMemberArgs,
     ) -> IamMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let dataset_id_binding = args.dataset_id.get_output(context);
         let member_binding = args.member.get_output(context);

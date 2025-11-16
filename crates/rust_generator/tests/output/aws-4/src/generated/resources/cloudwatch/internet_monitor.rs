@@ -117,8 +117,6 @@ pub mod internet_monitor {
         name: &str,
         args: InternetMonitorArgs,
     ) -> InternetMonitorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let health_events_config_binding = args.health_events_config.get_output(context);
         let internet_measurements_log_delivery_binding = args
             .internet_measurements_log_delivery

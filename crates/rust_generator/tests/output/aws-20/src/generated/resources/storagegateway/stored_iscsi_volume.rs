@@ -151,8 +151,6 @@ pub mod stored_iscsi_volume {
         name: &str,
         args: StoredIscsiVolumeArgs,
     ) -> StoredIscsiVolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disk_id_binding = args.disk_id.get_output(context);
         let gateway_arn_binding = args.gateway_arn.get_output(context);
         let kms_encrypted_binding = args.kms_encrypted.get_output(context);

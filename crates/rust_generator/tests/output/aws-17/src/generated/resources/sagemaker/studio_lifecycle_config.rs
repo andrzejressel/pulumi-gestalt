@@ -82,8 +82,6 @@ pub mod studio_lifecycle_config {
         name: &str,
         args: StudioLifecycleConfigArgs,
     ) -> StudioLifecycleConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let studio_lifecycle_config_app_type_binding = args
             .studio_lifecycle_config_app_type
             .get_output(context);

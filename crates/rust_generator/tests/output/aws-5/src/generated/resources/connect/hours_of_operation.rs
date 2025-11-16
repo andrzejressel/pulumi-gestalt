@@ -110,8 +110,6 @@ pub mod hours_of_operation {
         name: &str,
         args: HoursOfOperationArgs,
     ) -> HoursOfOperationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configs_binding = args.configs.get_output(context);
         let description_binding = args.description.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);

@@ -128,8 +128,6 @@ pub mod event_endpoint {
         name: &str,
         args: EventEndpointArgs,
     ) -> EventEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let event_buses_binding = args.event_buses.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -158,8 +158,6 @@ pub mod security_solution {
         name: &str,
         args: SecuritySolutionArgs,
     ) -> SecuritySolutionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_workspaces_binding = args
             .additional_workspaces
             .get_output(context);

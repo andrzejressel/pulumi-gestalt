@@ -138,8 +138,6 @@ pub mod firewall_endpoint_association {
         name: &str,
         args: FirewallEndpointAssociationArgs,
     ) -> FirewallEndpointAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disabled_binding = args.disabled.get_output(context);
         let firewall_endpoint_binding = args.firewall_endpoint.get_output(context);
         let labels_binding = args.labels.get_output(context);

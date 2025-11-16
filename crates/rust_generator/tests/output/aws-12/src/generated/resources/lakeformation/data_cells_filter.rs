@@ -80,8 +80,6 @@ pub mod data_cells_filter {
         name: &str,
         args: DataCellsFilterArgs,
     ) -> DataCellsFilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let table_data_binding = args.table_data.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

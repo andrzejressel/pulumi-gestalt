@@ -64,8 +64,6 @@ pub mod budget_resource_association {
         name: &str,
         args: BudgetResourceAssociationArgs,
     ) -> BudgetResourceAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let budget_name_binding = args.budget_name.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

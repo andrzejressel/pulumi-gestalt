@@ -897,8 +897,6 @@ pub mod firehose_delivery_stream {
         name: &str,
         args: FirehoseDeliveryStreamArgs,
     ) -> FirehoseDeliveryStreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let destination_binding = args.destination.get_output(context);
         let destination_id_binding = args.destination_id.get_output(context);

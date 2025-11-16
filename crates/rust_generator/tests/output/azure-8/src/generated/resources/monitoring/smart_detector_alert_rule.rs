@@ -147,8 +147,6 @@ pub mod smart_detector_alert_rule {
         name: &str,
         args: SmartDetectorAlertRuleArgs,
     ) -> SmartDetectorAlertRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_group_binding = args.action_group.get_output(context);
         let description_binding = args.description.get_output(context);
         let detector_type_binding = args.detector_type.get_output(context);

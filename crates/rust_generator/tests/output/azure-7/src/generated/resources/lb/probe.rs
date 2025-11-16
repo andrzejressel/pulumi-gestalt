@@ -126,8 +126,6 @@ pub mod probe {
         name: &str,
         args: ProbeArgs,
     ) -> ProbeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let interval_in_seconds_binding = args.interval_in_seconds.get_output(context);
         let loadbalancer_id_binding = args.loadbalancer_id.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -111,8 +111,6 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_config_enabled_binding = args.auto_config_enabled.get_output(context);
         let auto_create_binding = args.auto_create.get_output(context);
         let cwe_monitor_enabled_binding = args.cwe_monitor_enabled.get_output(context);

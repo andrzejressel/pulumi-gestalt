@@ -145,8 +145,6 @@ pub mod ontap_storage_virtual_machine {
         name: &str,
         args: OntapStorageVirtualMachineArgs,
     ) -> OntapStorageVirtualMachineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_directory_configuration_binding = args
             .active_directory_configuration
             .get_output(context);

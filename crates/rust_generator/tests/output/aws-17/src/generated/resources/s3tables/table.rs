@@ -131,8 +131,6 @@ pub mod table {
         name: &str,
         args: TableArgs,
     ) -> TableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let format_binding = args.format.get_output(context);
         let maintenance_configuration_binding = args
             .maintenance_configuration

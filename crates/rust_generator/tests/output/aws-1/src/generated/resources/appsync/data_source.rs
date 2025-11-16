@@ -192,8 +192,6 @@ pub mod data_source {
         name: &str,
         args: DataSourceArgs,
     ) -> DataSourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let dynamodb_config_binding = args.dynamodb_config.get_output(context);

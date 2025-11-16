@@ -107,8 +107,6 @@ pub mod route_map {
         name: &str,
         args: RouteMapArgs,
     ) -> RouteMapResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let rules_binding = args.rules.get_output(context);
         let virtual_hub_id_binding = args.virtual_hub_id.get_output(context);

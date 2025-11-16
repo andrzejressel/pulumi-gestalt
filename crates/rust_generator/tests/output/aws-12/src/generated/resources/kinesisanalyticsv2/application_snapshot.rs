@@ -65,8 +65,6 @@ pub mod application_snapshot {
         name: &str,
         args: ApplicationSnapshotArgs,
     ) -> ApplicationSnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_name_binding = args.application_name.get_output(context);
         let snapshot_name_binding = args.snapshot_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

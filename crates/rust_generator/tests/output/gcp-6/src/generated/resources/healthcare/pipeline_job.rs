@@ -410,8 +410,6 @@ pub mod pipeline_job {
         name: &str,
         args: PipelineJobArgs,
     ) -> PipelineJobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backfill_pipeline_job_binding = args
             .backfill_pipeline_job
             .get_output(context);

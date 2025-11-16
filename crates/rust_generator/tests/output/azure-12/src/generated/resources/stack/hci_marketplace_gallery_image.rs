@@ -140,8 +140,6 @@ pub mod hci_marketplace_gallery_image {
         name: &str,
         args: HciMarketplaceGalleryImageArgs,
     ) -> HciMarketplaceGalleryImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_location_id_binding = args.custom_location_id.get_output(context);
         let hyperv_generation_binding = args.hyperv_generation.get_output(context);
         let identifier_binding = args.identifier.get_output(context);

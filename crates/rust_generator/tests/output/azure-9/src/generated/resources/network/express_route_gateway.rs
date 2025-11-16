@@ -113,8 +113,6 @@ pub mod express_route_gateway {
         name: &str,
         args: ExpressRouteGatewayArgs,
     ) -> ExpressRouteGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_non_virtual_wan_traffic_binding = args
             .allow_non_virtual_wan_traffic
             .get_output(context);

@@ -105,8 +105,6 @@ pub mod sql_stored_procedure {
         name: &str,
         args: SqlStoredProcedureArgs,
     ) -> SqlStoredProcedureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let body_binding = args.body.get_output(context);
         let container_name_binding = args.container_name.get_output(context);

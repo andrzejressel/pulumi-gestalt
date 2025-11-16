@@ -108,8 +108,6 @@ pub mod schema {
         name: &str,
         args: SchemaArgs,
     ) -> SchemaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let compatibility_binding = args.compatibility.get_output(context);
         let data_format_binding = args.data_format.get_output(context);
         let description_binding = args.description.get_output(context);

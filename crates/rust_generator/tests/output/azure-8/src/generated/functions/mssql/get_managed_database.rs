@@ -46,8 +46,6 @@ pub mod get_managed_database {
         context: &pulumi_gestalt_rust::Context,
         args: GetManagedDatabaseArgs,
     ) -> GetManagedDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let managed_instance_id_binding = args.managed_instance_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

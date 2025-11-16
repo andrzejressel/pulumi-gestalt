@@ -225,8 +225,6 @@ pub mod response_headers_policy {
         name: &str,
         args: ResponseHeadersPolicyArgs,
     ) -> ResponseHeadersPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let comment_binding = args.comment.get_output(context);
         let cors_config_binding = args.cors_config.get_output(context);
         let custom_headers_config_binding = args

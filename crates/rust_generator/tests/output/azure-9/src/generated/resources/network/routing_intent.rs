@@ -118,8 +118,6 @@ pub mod routing_intent {
         name: &str,
         args: RoutingIntentArgs,
     ) -> RoutingIntentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let routing_policies_binding = args.routing_policies.get_output(context);
         let virtual_hub_id_binding = args.virtual_hub_id.get_output(context);

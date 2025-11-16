@@ -121,8 +121,6 @@ pub mod app_authorization {
         name: &str,
         args: AppAuthorizationArgs,
     ) -> AppAuthorizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_binding = args.app.get_output(context);
         let app_bundle_arn_binding = args.app_bundle_arn.get_output(context);
         let auth_type_binding = args.auth_type.get_output(context);

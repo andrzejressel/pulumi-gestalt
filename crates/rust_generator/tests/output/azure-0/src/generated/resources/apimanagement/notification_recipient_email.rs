@@ -85,8 +85,6 @@ pub mod notification_recipient_email {
         name: &str,
         args: NotificationRecipientEmailArgs,
     ) -> NotificationRecipientEmailResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_id_binding = args.api_management_id.get_output(context);
         let email_binding = args.email.get_output(context);
         let notification_type_binding = args.notification_type.get_output(context);

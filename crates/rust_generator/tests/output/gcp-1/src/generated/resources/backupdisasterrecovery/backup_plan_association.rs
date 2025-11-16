@@ -170,8 +170,6 @@ pub mod backup_plan_association {
         name: &str,
         args: BackupPlanAssociationArgs,
     ) -> BackupPlanAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_plan_binding = args.backup_plan.get_output(context);
         let backup_plan_association_id_binding = args
             .backup_plan_association_id

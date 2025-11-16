@@ -101,8 +101,6 @@ pub mod enterprise_cluster {
         name: &str,
         args: EnterpriseClusterArgs,
     ) -> EnterpriseClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let minimum_tls_version_binding = args.minimum_tls_version.get_output(context);
         let name_binding = args.name.get_output(context);

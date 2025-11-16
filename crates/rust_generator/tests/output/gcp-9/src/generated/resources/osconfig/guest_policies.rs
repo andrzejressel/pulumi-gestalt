@@ -268,8 +268,6 @@ pub mod guest_policies {
         name: &str,
         args: GuestPoliciesArgs,
     ) -> GuestPoliciesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assignment_binding = args.assignment.get_output(context);
         let description_binding = args.description.get_output(context);
         let etag_binding = args.etag.get_output(context);

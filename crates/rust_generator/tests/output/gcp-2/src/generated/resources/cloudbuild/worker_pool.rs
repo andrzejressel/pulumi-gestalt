@@ -215,8 +215,6 @@ pub mod worker_pool {
         name: &str,
         args: WorkerPoolArgs,
     ) -> WorkerPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let location_binding = args.location.get_output(context);

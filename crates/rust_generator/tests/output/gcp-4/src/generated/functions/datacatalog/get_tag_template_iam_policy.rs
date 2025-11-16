@@ -39,8 +39,6 @@ pub mod get_tag_template_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetTagTemplateIamPolicyArgs,
     ) -> GetTagTemplateIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let region_binding = args.region.get_output(context);
         let tag_template_binding = args.tag_template.get_output(context);

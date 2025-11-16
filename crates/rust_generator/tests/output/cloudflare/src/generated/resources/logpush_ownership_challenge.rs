@@ -62,8 +62,6 @@ pub mod logpush_ownership_challenge {
         name: &str,
         args: LogpushOwnershipChallengeArgs,
     ) -> LogpushOwnershipChallengeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let destination_conf_binding = args.destination_conf.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

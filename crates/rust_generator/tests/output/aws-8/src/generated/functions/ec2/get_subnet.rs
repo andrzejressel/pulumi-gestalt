@@ -100,8 +100,6 @@ pub mod get_subnet {
         context: &pulumi_gestalt_rust::Context,
         args: GetSubnetArgs,
     ) -> GetSubnetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_binding = args.availability_zone.get_output(context);
         let availability_zone_id_binding = args.availability_zone_id.get_output(context);
         let cidr_block_binding = args.cidr_block.get_output(context);

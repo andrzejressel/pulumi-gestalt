@@ -102,8 +102,6 @@ pub mod connect_peer {
         name: &str,
         args: ConnectPeerArgs,
     ) -> ConnectPeerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bgp_asn_binding = args.bgp_asn.get_output(context);
         let inside_cidr_blocks_binding = args.inside_cidr_blocks.get_output(context);
         let peer_address_binding = args.peer_address.get_output(context);

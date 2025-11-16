@@ -193,8 +193,6 @@ pub mod method_response {
         name: &str,
         args: MethodResponseArgs,
     ) -> MethodResponseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let http_method_binding = args.http_method.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);
         let response_models_binding = args.response_models.get_output(context);

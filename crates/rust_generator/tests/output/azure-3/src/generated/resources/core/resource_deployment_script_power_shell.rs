@@ -202,8 +202,6 @@ pub mod resource_deployment_script_power_shell {
         name: &str,
         args: ResourceDeploymentScriptPowerShellArgs,
     ) -> ResourceDeploymentScriptPowerShellResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cleanup_preference_binding = args.cleanup_preference.get_output(context);
         let command_line_binding = args.command_line.get_output(context);
         let container_binding = args.container.get_output(context);

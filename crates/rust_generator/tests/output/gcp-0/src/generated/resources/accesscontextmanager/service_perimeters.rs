@@ -131,8 +131,6 @@ pub mod service_perimeters {
         name: &str,
         args: ServicePerimetersArgs,
     ) -> ServicePerimetersResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_binding = args.parent.get_output(context);
         let service_perimeters_binding = args.service_perimeters.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

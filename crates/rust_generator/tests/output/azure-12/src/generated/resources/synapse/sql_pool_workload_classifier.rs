@@ -145,8 +145,6 @@ pub mod sql_pool_workload_classifier {
         name: &str,
         args: SqlPoolWorkloadClassifierArgs,
     ) -> SqlPoolWorkloadClassifierResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let context_binding = args.context.get_output(context);
         let end_time_binding = args.end_time.get_output(context);
         let importance_binding = args.importance.get_output(context);

@@ -167,8 +167,6 @@ pub mod insights_report_config {
         name: &str,
         args: InsightsReportConfigArgs,
     ) -> InsightsReportConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let csv_options_binding = args.csv_options.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let frequency_options_binding = args.frequency_options.get_output(context);

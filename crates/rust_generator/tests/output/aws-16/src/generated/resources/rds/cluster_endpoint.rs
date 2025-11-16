@@ -140,8 +140,6 @@ pub mod cluster_endpoint {
         name: &str,
         args: ClusterEndpointArgs,
     ) -> ClusterEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_endpoint_identifier_binding = args
             .cluster_endpoint_identifier
             .get_output(context);

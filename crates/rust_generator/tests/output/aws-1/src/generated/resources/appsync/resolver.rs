@@ -217,8 +217,6 @@ pub mod resolver {
         name: &str,
         args: ResolverArgs,
     ) -> ResolverResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let caching_config_binding = args.caching_config.get_output(context);
         let code_binding = args.code.get_output(context);

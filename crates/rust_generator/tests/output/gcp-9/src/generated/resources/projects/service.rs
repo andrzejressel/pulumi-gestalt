@@ -105,8 +105,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let check_if_service_has_usage_on_destroy_binding = args
             .check_if_service_has_usage_on_destroy
             .get_output(context);

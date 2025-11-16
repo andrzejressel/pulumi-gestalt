@@ -176,8 +176,6 @@ pub mod stack {
         name: &str,
         args: StackArgs,
     ) -> StackResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_endpoints_binding = args.access_endpoints.get_output(context);
         let application_settings_binding = args.application_settings.get_output(context);
         let description_binding = args.description.get_output(context);

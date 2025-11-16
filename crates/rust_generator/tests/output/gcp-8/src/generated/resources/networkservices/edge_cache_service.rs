@@ -476,8 +476,6 @@ pub mod edge_cache_service {
         name: &str,
         args: EdgeCacheServiceArgs,
     ) -> EdgeCacheServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let disable_http2_binding = args.disable_http2.get_output(context);
         let disable_quic_binding = args.disable_quic.get_output(context);

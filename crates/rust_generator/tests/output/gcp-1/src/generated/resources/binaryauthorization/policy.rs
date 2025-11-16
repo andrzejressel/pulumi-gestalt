@@ -233,8 +233,6 @@ pub mod policy {
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admission_whitelist_patterns_binding = args
             .admission_whitelist_patterns
             .get_output(context);

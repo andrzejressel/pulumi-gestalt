@@ -163,8 +163,6 @@ pub mod channels_registration {
         name: &str,
         args: ChannelsRegistrationArgs,
     ) -> ChannelsRegistrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cmk_key_vault_url_binding = args.cmk_key_vault_url.get_output(context);
         let description_binding = args.description.get_output(context);
         let developer_app_insights_api_key_binding = args

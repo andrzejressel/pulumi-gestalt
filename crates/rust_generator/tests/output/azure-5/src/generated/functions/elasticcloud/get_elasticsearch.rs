@@ -62,8 +62,6 @@ pub mod get_elasticsearch {
         context: &pulumi_gestalt_rust::Context,
         args: GetElasticsearchArgs,
     ) -> GetElasticsearchResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let logs_binding = args.logs.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

@@ -78,8 +78,6 @@ pub mod drt_access_log_bucket_association {
         name: &str,
         args: DrtAccessLogBucketAssociationArgs,
     ) -> DrtAccessLogBucketAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_bucket_binding = args.log_bucket.get_output(context);
         let role_arn_association_id_binding = args
             .role_arn_association_id

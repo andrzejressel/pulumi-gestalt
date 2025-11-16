@@ -156,8 +156,6 @@ pub mod data_disk_attachment {
         name: &str,
         args: DataDiskAttachmentArgs,
     ) -> DataDiskAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let caching_binding = args.caching.get_output(context);
         let create_option_binding = args.create_option.get_output(context);
         let lun_binding = args.lun.get_output(context);

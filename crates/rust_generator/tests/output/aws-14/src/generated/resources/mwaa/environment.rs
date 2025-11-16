@@ -222,8 +222,6 @@ pub mod environment {
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let airflow_configuration_options_binding = args
             .airflow_configuration_options
             .get_output(context);

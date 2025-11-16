@@ -176,8 +176,6 @@ pub mod role_management_policy {
         name: &str,
         args: RoleManagementPolicyArgs,
     ) -> RoleManagementPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let activation_rules_binding = args.activation_rules.get_output(context);
         let active_assignment_rules_binding = args
             .active_assignment_rules

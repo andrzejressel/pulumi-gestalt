@@ -75,8 +75,6 @@ pub mod managed_prefix_list_entry {
         name: &str,
         args: ManagedPrefixListEntryArgs,
     ) -> ManagedPrefixListEntryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_binding = args.cidr.get_output(context);
         let description_binding = args.description.get_output(context);
         let prefix_list_id_binding = args.prefix_list_id.get_output(context);

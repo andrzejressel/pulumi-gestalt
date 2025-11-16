@@ -90,8 +90,6 @@ pub mod tracker {
         name: &str,
         args: TrackerArgs,
     ) -> TrackerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let kms_key_id_binding = args.kms_key_id.get_output(context);
         let position_filtering_binding = args.position_filtering.get_output(context);

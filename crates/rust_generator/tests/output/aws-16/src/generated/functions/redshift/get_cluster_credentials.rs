@@ -50,8 +50,6 @@ pub mod get_cluster_credentials {
         context: &pulumi_gestalt_rust::Context,
         args: GetClusterCredentialsArgs,
     ) -> GetClusterCredentialsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_create_binding = args.auto_create.get_output(context);
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let db_groups_binding = args.db_groups.get_output(context);

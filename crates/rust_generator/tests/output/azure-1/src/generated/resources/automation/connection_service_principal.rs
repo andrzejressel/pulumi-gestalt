@@ -115,8 +115,6 @@ pub mod connection_service_principal {
         name: &str,
         args: ConnectionServicePrincipalArgs,
     ) -> ConnectionServicePrincipalResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let automation_account_name_binding = args
             .automation_account_name

@@ -72,8 +72,6 @@ pub mod egress_only_internet_gateway {
         name: &str,
         args: EgressOnlyInternetGatewayArgs,
     ) -> EgressOnlyInternetGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let vpc_id_binding = args.vpc_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -83,8 +83,6 @@ pub mod security_configuration {
         name: &str,
         args: SecurityConfigurationArgs,
     ) -> SecurityConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let encryption_configuration_binding = args
             .encryption_configuration
             .get_output(context);

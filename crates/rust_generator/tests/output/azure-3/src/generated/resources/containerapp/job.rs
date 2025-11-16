@@ -224,8 +224,6 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_app_environment_id_binding = args
             .container_app_environment_id
             .get_output(context);

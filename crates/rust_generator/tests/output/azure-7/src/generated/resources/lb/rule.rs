@@ -160,8 +160,6 @@ pub mod rule {
         name: &str,
         args: RuleArgs,
     ) -> RuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backend_address_pool_ids_binding = args
             .backend_address_pool_ids
             .get_output(context);

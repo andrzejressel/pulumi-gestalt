@@ -209,8 +209,6 @@ pub mod instance_storage_config {
         name: &str,
         args: InstanceStorageConfigArgs,
     ) -> InstanceStorageConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_id_binding = args.instance_id.get_output(context);
         let resource_type_binding = args.resource_type.get_output(context);
         let storage_config_binding = args.storage_config.get_output(context);

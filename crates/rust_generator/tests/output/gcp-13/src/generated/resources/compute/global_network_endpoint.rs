@@ -115,8 +115,6 @@ pub mod global_network_endpoint {
         name: &str,
         args: GlobalNetworkEndpointArgs,
     ) -> GlobalNetworkEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let fqdn_binding = args.fqdn.get_output(context);
         let global_network_endpoint_group_binding = args
             .global_network_endpoint_group

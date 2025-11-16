@@ -129,8 +129,6 @@ pub mod capacity_reservation {
         name: &str,
         args: CapacityReservationArgs,
     ) -> CapacityReservationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_binding = args.availability_zone.get_output(context);
         let ebs_optimized_binding = args.ebs_optimized.get_output(context);
         let end_date_binding = args.end_date.get_output(context);

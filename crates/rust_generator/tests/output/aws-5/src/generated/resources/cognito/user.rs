@@ -174,8 +174,6 @@ pub mod user {
         name: &str,
         args: UserArgs,
     ) -> UserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let client_metadata_binding = args.client_metadata.get_output(context);
         let desired_delivery_mediums_binding = args

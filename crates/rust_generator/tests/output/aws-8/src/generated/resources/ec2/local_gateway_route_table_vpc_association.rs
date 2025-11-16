@@ -84,8 +84,6 @@ pub mod local_gateway_route_table_vpc_association {
         name: &str,
         args: LocalGatewayRouteTableVpcAssociationArgs,
     ) -> LocalGatewayRouteTableVpcAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let local_gateway_route_table_id_binding = args
             .local_gateway_route_table_id
             .get_output(context);

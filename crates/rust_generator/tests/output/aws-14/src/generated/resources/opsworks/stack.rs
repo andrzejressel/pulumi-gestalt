@@ -194,8 +194,6 @@ pub mod stack {
         name: &str,
         args: StackArgs,
     ) -> StackResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_version_binding = args.agent_version.get_output(context);
         let berkshelf_version_binding = args.berkshelf_version.get_output(context);
         let color_binding = args.color.get_output(context);

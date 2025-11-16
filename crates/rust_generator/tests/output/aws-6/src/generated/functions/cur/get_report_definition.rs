@@ -53,8 +53,6 @@ pub mod get_report_definition {
         context: &pulumi_gestalt_rust::Context,
         args: GetReportDefinitionArgs,
     ) -> GetReportDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let report_name_binding = args.report_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

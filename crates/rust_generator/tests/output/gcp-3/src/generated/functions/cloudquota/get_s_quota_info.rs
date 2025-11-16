@@ -68,8 +68,6 @@ pub mod get_s_quota_info {
         context: &pulumi_gestalt_rust::Context,
         args: GetSQuotaInfoArgs,
     ) -> GetSQuotaInfoResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_binding = args.parent.get_output(context);
         let quota_id_binding = args.quota_id.get_output(context);
         let service_binding = args.service.get_output(context);

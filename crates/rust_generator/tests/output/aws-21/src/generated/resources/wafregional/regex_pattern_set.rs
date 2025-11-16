@@ -62,8 +62,6 @@ pub mod regex_pattern_set {
         name: &str,
         args: RegexPatternSetArgs,
     ) -> RegexPatternSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let regex_pattern_strings_binding = args
             .regex_pattern_strings

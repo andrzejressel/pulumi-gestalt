@@ -148,8 +148,6 @@ pub mod reference_input_mssql {
         name: &str,
         args: ReferenceInputMssqlArgs,
     ) -> ReferenceInputMssqlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_binding = args.database.get_output(context);
         let delta_snapshot_query_binding = args.delta_snapshot_query.get_output(context);
         let full_snapshot_query_binding = args.full_snapshot_query.get_output(context);

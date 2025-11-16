@@ -103,8 +103,6 @@ pub mod notification_channel {
         name: &str,
         args: NotificationChannelArgs,
     ) -> NotificationChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let sns_binding = args.sns.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

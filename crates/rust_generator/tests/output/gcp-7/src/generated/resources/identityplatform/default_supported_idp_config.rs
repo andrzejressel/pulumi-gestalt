@@ -133,8 +133,6 @@ pub mod default_supported_idp_config {
         name: &str,
         args: DefaultSupportedIdpConfigArgs,
     ) -> DefaultSupportedIdpConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_id_binding = args.client_id.get_output(context);
         let client_secret_binding = args.client_secret.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

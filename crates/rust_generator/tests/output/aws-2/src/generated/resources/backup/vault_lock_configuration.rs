@@ -74,8 +74,6 @@ pub mod vault_lock_configuration {
         name: &str,
         args: VaultLockConfigurationArgs,
     ) -> VaultLockConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_vault_name_binding = args.backup_vault_name.get_output(context);
         let changeable_for_days_binding = args.changeable_for_days.get_output(context);
         let max_retention_days_binding = args.max_retention_days.get_output(context);

@@ -164,8 +164,6 @@ pub mod connection {
         name: &str,
         args: ConnectionArgs,
     ) -> ConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bandwidth_binding = args.bandwidth.get_output(context);
         let encryption_mode_binding = args.encryption_mode.get_output(context);
         let location_binding = args.location.get_output(context);

@@ -91,8 +91,6 @@ pub mod mtls_certificate {
         name: &str,
         args: MtlsCertificateArgs,
     ) -> MtlsCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let ca_binding = args.ca.get_output(context);
         let certificates_binding = args.certificates.get_output(context);

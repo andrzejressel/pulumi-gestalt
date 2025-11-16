@@ -42,8 +42,6 @@ pub mod get_database {
         context: &pulumi_gestalt_rust::Context,
         args: GetDatabaseArgs,
     ) -> GetDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

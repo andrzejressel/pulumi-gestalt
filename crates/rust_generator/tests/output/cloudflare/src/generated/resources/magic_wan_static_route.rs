@@ -97,8 +97,6 @@ pub mod magic_wan_static_route {
         name: &str,
         args: MagicWanStaticRouteArgs,
     ) -> MagicWanStaticRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let colo_names_binding = args.colo_names.get_output(context);
         let colo_regions_binding = args.colo_regions.get_output(context);

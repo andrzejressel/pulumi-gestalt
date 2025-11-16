@@ -218,8 +218,6 @@ pub mod folder_custom_module {
         name: &str,
         args: FolderCustomModuleArgs,
     ) -> FolderCustomModuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_config_binding = args.custom_config.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enablement_state_binding = args.enablement_state.get_output(context);

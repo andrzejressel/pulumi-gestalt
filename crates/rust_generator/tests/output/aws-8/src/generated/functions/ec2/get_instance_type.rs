@@ -140,8 +140,6 @@ pub mod get_instance_type {
         context: &pulumi_gestalt_rust::Context,
         args: GetInstanceTypeArgs,
     ) -> GetInstanceTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_type_binding = args.instance_type.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ec2/getInstanceType:getInstanceType".into(),

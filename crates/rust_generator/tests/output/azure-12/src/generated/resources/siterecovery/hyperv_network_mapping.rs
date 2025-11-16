@@ -98,8 +98,6 @@ pub mod hyperv_network_mapping {
         name: &str,
         args: HypervNetworkMappingArgs,
     ) -> HypervNetworkMappingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let recovery_vault_id_binding = args.recovery_vault_id.get_output(context);
         let source_network_name_binding = args.source_network_name.get_output(context);

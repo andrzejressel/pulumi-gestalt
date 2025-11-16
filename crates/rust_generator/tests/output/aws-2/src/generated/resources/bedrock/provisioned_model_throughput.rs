@@ -94,8 +94,6 @@ pub mod provisioned_model_throughput {
         name: &str,
         args: ProvisionedModelThroughputArgs,
     ) -> ProvisionedModelThroughputResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let commitment_duration_binding = args.commitment_duration.get_output(context);
         let model_arn_binding = args.model_arn.get_output(context);
         let model_units_binding = args.model_units.get_output(context);

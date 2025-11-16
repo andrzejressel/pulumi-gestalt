@@ -150,8 +150,6 @@ pub mod authomation_rule {
         name: &str,
         args: AuthomationRuleArgs,
     ) -> AuthomationRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_incidents_binding = args.action_incidents.get_output(context);
         let action_playbooks_binding = args.action_playbooks.get_output(context);
         let condition_json_binding = args.condition_json.get_output(context);

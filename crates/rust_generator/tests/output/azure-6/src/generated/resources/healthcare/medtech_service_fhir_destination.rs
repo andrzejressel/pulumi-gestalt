@@ -164,8 +164,6 @@ pub mod medtech_service_fhir_destination {
         name: &str,
         args: MedtechServiceFhirDestinationArgs,
     ) -> MedtechServiceFhirDestinationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_fhir_mapping_json_binding = args
             .destination_fhir_mapping_json
             .get_output(context);

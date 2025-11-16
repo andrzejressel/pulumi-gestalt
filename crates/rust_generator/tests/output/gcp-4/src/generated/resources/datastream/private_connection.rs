@@ -147,8 +147,6 @@ pub mod private_connection {
         name: &str,
         args: PrivateConnectionArgs,
     ) -> PrivateConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let create_without_validation_binding = args
             .create_without_validation
             .get_output(context);

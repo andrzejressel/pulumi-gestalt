@@ -126,8 +126,6 @@ pub mod backend_address_pool_address {
         name: &str,
         args: BackendAddressPoolAddressArgs,
     ) -> BackendAddressPoolAddressResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backend_address_ip_configuration_id_binding = args
             .backend_address_ip_configuration_id
             .get_output(context);

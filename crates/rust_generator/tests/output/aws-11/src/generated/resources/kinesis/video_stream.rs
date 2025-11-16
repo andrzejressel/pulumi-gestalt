@@ -96,8 +96,6 @@ pub mod video_stream {
         name: &str,
         args: VideoStreamArgs,
     ) -> VideoStreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_retention_in_hours_binding = args
             .data_retention_in_hours
             .get_output(context);

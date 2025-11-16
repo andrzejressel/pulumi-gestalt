@@ -115,8 +115,6 @@ pub mod probe {
         name: &str,
         args: ProbeArgs,
     ) -> ProbeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_binding = args.destination.get_output(context);
         let destination_port_binding = args.destination_port.get_output(context);
         let monitor_name_binding = args.monitor_name.get_output(context);

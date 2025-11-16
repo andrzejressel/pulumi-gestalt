@@ -289,8 +289,6 @@ pub mod anomaly_subscription {
         name: &str,
         args: AnomalySubscriptionArgs,
     ) -> AnomalySubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let frequency_binding = args.frequency.get_output(context);
         let monitor_arn_lists_binding = args.monitor_arn_lists.get_output(context);

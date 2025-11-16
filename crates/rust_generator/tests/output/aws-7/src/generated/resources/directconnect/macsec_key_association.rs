@@ -100,8 +100,6 @@ pub mod macsec_key_association {
         name: &str,
         args: MacsecKeyAssociationArgs,
     ) -> MacsecKeyAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cak_binding = args.cak.get_output(context);
         let ckn_binding = args.ckn.get_output(context);
         let connection_id_binding = args.connection_id.get_output(context);

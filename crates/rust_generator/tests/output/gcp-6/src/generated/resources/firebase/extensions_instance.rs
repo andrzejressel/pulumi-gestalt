@@ -143,8 +143,6 @@ pub mod extensions_instance {
         name: &str,
         args: ExtensionsInstanceArgs,
     ) -> ExtensionsInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_binding = args.config.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let project_binding = args.project.get_output(context);

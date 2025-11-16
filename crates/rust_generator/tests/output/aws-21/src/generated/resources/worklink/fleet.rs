@@ -133,8 +133,6 @@ pub mod fleet {
         name: &str,
         args: FleetArgs,
     ) -> FleetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let audit_stream_arn_binding = args.audit_stream_arn.get_output(context);
         let device_ca_certificate_binding = args
             .device_ca_certificate

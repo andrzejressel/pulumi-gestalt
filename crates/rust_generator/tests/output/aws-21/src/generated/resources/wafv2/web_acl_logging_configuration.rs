@@ -139,8 +139,6 @@ pub mod web_acl_logging_configuration {
         name: &str,
         args: WebAclLoggingConfigurationArgs,
     ) -> WebAclLoggingConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_destination_configs_binding = args
             .log_destination_configs
             .get_output(context);

@@ -115,8 +115,6 @@ pub mod configuration_policy_association {
         name: &str,
         args: ConfigurationPolicyAssociationArgs,
     ) -> ConfigurationPolicyAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_id_binding = args.policy_id.get_output(context);
         let target_id_binding = args.target_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

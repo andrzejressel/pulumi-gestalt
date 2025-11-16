@@ -164,8 +164,6 @@ pub mod file_system {
         name: &str,
         args: FileSystemArgs,
     ) -> FileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let encryption_key_binding = args.encryption_key.get_output(context);
         let hsm_setting_binding = args.hsm_setting.get_output(context);
         let identity_binding = args.identity.get_output(context);

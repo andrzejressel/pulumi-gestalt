@@ -141,8 +141,6 @@ pub mod group {
         name: &str,
         args: GroupArgs,
     ) -> GroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let group_key_binding = args.group_key.get_output(context);

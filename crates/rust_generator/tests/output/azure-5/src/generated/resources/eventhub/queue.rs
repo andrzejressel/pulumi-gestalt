@@ -178,8 +178,6 @@ pub mod queue {
         name: &str,
         args: QueueArgs,
     ) -> QueueResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_delete_on_idle_binding = args.auto_delete_on_idle.get_output(context);
         let batched_operations_enabled_binding = args
             .batched_operations_enabled

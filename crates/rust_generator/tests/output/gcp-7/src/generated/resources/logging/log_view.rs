@@ -118,8 +118,6 @@ pub mod log_view {
         name: &str,
         args: LogViewArgs,
     ) -> LogViewResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let description_binding = args.description.get_output(context);
         let filter_binding = args.filter.get_output(context);

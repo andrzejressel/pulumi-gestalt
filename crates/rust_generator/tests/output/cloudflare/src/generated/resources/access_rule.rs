@@ -127,8 +127,6 @@ pub mod access_rule {
         name: &str,
         args: AccessRuleArgs,
     ) -> AccessRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let configuration_binding = args.configuration.get_output(context);
         let mode_binding = args.mode.get_output(context);

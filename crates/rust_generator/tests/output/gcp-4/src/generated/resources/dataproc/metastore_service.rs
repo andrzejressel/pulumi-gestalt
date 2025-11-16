@@ -661,8 +661,6 @@ pub mod metastore_service {
         name: &str,
         args: MetastoreServiceArgs,
     ) -> MetastoreServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_type_binding = args.database_type.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let encryption_config_binding = args.encryption_config.get_output(context);

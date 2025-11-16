@@ -147,8 +147,6 @@ pub mod application_group {
         name: &str,
         args: ApplicationGroupArgs,
     ) -> ApplicationGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_desktop_display_name_binding = args
             .default_desktop_display_name
             .get_output(context);

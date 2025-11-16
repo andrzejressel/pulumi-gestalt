@@ -47,8 +47,6 @@ pub mod get_zone_dnssec {
         context: &pulumi_gestalt_rust::Context,
         args: GetZoneDnssecArgs,
     ) -> GetZoneDnssecResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let zone_id_binding = args.zone_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getZoneDnssec:getZoneDnssec".into(),

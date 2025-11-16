@@ -43,8 +43,6 @@ pub mod user_policies_exclusive {
         name: &str,
         args: UserPoliciesExclusiveArgs,
     ) -> UserPoliciesExclusiveResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_names_binding = args.policy_names.get_output(context);
         let user_name_binding = args.user_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

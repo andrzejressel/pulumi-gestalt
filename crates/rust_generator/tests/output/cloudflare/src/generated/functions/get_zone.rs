@@ -47,8 +47,6 @@ pub mod get_zone {
         context: &pulumi_gestalt_rust::Context,
         args: GetZoneArgs,
     ) -> GetZoneResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

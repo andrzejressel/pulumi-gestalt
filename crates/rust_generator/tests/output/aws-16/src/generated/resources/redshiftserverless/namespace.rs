@@ -121,8 +121,6 @@ pub mod namespace {
         name: &str,
         args: NamespaceArgs,
     ) -> NamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_password_secret_kms_key_id_binding = args
             .admin_password_secret_kms_key_id
             .get_output(context);

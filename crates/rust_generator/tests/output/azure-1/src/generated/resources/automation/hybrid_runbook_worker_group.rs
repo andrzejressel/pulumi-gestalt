@@ -88,8 +88,6 @@ pub mod hybrid_runbook_worker_group {
         name: &str,
         args: HybridRunbookWorkerGroupArgs,
     ) -> HybridRunbookWorkerGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automation_account_name_binding = args
             .automation_account_name
             .get_output(context);

@@ -66,8 +66,6 @@ pub mod service_setting {
         name: &str,
         args: ServiceSettingArgs,
     ) -> ServiceSettingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let setting_id_binding = args.setting_id.get_output(context);
         let setting_value_binding = args.setting_value.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

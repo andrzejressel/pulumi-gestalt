@@ -89,8 +89,6 @@ pub mod api_operation_tag {
         name: &str,
         args: ApiOperationTagArgs,
     ) -> ApiOperationTagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_operation_id_binding = args.api_operation_id.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);

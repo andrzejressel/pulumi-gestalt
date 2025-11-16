@@ -107,8 +107,6 @@ pub mod address_map {
         name: &str,
         args: AddressMapArgs,
     ) -> AddressMapResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let default_sni_binding = args.default_sni.get_output(context);
         let description_binding = args.description.get_output(context);

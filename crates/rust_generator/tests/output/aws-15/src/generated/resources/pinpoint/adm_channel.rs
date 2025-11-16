@@ -74,8 +74,6 @@ pub mod adm_channel {
         name: &str,
         args: AdmChannelArgs,
     ) -> AdmChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let client_id_binding = args.client_id.get_output(context);
         let client_secret_binding = args.client_secret.get_output(context);

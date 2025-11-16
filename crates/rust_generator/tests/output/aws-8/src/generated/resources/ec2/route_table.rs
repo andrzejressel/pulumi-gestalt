@@ -191,8 +191,6 @@ pub mod route_table {
         name: &str,
         args: RouteTableArgs,
     ) -> RouteTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let propagating_vgws_binding = args.propagating_vgws.get_output(context);
         let routes_binding = args.routes.get_output(context);
         let tags_binding = args.tags.get_output(context);

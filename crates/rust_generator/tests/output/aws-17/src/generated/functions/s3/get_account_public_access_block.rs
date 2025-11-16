@@ -34,8 +34,6 @@ pub mod get_account_public_access_block {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccountPublicAccessBlockArgs,
     ) -> GetAccountPublicAccessBlockResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:s3/getAccountPublicAccessBlock:getAccountPublicAccessBlock"

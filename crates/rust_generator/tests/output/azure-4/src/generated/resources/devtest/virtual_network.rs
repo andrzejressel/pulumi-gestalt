@@ -104,8 +104,6 @@ pub mod virtual_network {
         name: &str,
         args: VirtualNetworkArgs,
     ) -> VirtualNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let lab_name_binding = args.lab_name.get_output(context);
         let name_binding = args.name.get_output(context);

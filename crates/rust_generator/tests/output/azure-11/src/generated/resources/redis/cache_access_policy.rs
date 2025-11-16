@@ -82,8 +82,6 @@ pub mod cache_access_policy {
         name: &str,
         args: CacheAccessPolicyArgs,
     ) -> CacheAccessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let permissions_binding = args.permissions.get_output(context);
         let redis_cache_id_binding = args.redis_cache_id.get_output(context);

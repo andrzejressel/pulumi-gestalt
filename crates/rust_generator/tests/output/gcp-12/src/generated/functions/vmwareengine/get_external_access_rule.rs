@@ -50,8 +50,6 @@ pub mod get_external_access_rule {
         context: &pulumi_gestalt_rust::Context,
         args: GetExternalAccessRuleArgs,
     ) -> GetExternalAccessRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

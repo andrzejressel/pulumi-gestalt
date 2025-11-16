@@ -176,8 +176,6 @@ pub mod endpoint {
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_options_binding = args
             .authentication_options
             .get_output(context);

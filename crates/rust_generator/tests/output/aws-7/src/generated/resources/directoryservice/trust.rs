@@ -184,8 +184,6 @@ pub mod trust {
         name: &str,
         args: TrustArgs,
     ) -> TrustResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let conditional_forwarder_ip_addrs_binding = args
             .conditional_forwarder_ip_addrs
             .get_output(context);

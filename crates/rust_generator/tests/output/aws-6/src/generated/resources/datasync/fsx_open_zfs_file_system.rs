@@ -106,8 +106,6 @@ pub mod fsx_open_zfs_file_system {
         name: &str,
         args: FsxOpenZfsFileSystemArgs,
     ) -> FsxOpenZfsFileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let fsx_filesystem_arn_binding = args.fsx_filesystem_arn.get_output(context);
         let protocol_binding = args.protocol.get_output(context);
         let security_group_arns_binding = args.security_group_arns.get_output(context);

@@ -34,8 +34,6 @@ pub mod get_v_2_runtime_versions {
         context: &pulumi_gestalt_rust::Context,
         args: GetV2RuntimeVersionsArgs,
     ) -> GetV2RuntimeVersionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let zone_binding = args.zone.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

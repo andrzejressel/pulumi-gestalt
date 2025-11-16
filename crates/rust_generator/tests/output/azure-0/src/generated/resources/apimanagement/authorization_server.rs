@@ -189,8 +189,6 @@ pub mod authorization_server {
         name: &str,
         args: AuthorizationServerArgs,
     ) -> AuthorizationServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_name_binding = args.api_management_name.get_output(context);
         let authorization_endpoint_binding = args
             .authorization_endpoint

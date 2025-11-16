@@ -90,8 +90,6 @@ pub mod route_table_association {
         name: &str,
         args: RouteTableAssociationArgs,
     ) -> RouteTableAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let gateway_id_binding = args.gateway_id.get_output(context);
         let route_table_id_binding = args.route_table_id.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);

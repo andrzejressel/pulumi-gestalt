@@ -91,8 +91,6 @@ pub mod service_network_service_association {
         name: &str,
         args: ServiceNetworkServiceAssociationArgs,
     ) -> ServiceNetworkServiceAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let service_identifier_binding = args.service_identifier.get_output(context);
         let service_network_identifier_binding = args
             .service_network_identifier

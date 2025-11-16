@@ -124,8 +124,6 @@ pub mod action_http {
         name: &str,
         args: ActionHttpArgs,
     ) -> ActionHttpResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let body_binding = args.body.get_output(context);
         let headers_binding = args.headers.get_output(context);
         let logic_app_id_binding = args.logic_app_id.get_output(context);

@@ -175,8 +175,6 @@ pub mod subnet {
         name: &str,
         args: SubnetArgs,
     ) -> SubnetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_prefixes_binding = args.address_prefixes.get_output(context);
         let default_outbound_access_enabled_binding = args
             .default_outbound_access_enabled

@@ -144,8 +144,6 @@ pub mod caches_iscsi_volume {
         name: &str,
         args: CachesIscsiVolumeArgs,
     ) -> CachesIscsiVolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let gateway_arn_binding = args.gateway_arn.get_output(context);
         let kms_encrypted_binding = args.kms_encrypted.get_output(context);
         let kms_key_binding = args.kms_key.get_output(context);

@@ -72,8 +72,6 @@ pub mod sms_channel {
         name: &str,
         args: SmsChannelArgs,
     ) -> SmsChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let sender_id_binding = args.sender_id.get_output(context);

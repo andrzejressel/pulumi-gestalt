@@ -112,8 +112,6 @@ pub mod integration_runtime_rule {
         name: &str,
         args: IntegrationRuntimeRuleArgs,
     ) -> IntegrationRuntimeRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cleanup_enabled_binding = args.cleanup_enabled.get_output(context);
         let compute_type_binding = args.compute_type.get_output(context);
         let core_count_binding = args.core_count.get_output(context);

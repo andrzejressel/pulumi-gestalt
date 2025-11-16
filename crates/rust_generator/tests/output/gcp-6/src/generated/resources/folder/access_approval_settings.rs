@@ -201,8 +201,6 @@ pub mod access_approval_settings {
         name: &str,
         args: AccessApprovalSettingsArgs,
     ) -> AccessApprovalSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_key_version_binding = args.active_key_version.get_output(context);
         let enrolled_services_binding = args.enrolled_services.get_output(context);
         let folder_id_binding = args.folder_id.get_output(context);

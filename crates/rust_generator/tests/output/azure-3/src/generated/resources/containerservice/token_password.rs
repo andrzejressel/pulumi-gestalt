@@ -105,8 +105,6 @@ pub mod token_password {
         name: &str,
         args: TokenPasswordArgs,
     ) -> TokenPasswordResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_registry_token_id_binding = args
             .container_registry_token_id
             .get_output(context);

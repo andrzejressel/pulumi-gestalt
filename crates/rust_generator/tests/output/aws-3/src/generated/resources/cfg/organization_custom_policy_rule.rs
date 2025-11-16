@@ -137,8 +137,6 @@ pub mod organization_custom_policy_rule {
         name: &str,
         args: OrganizationCustomPolicyRuleArgs,
     ) -> OrganizationCustomPolicyRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let debug_log_delivery_accounts_binding = args
             .debug_log_delivery_accounts
             .get_output(context);

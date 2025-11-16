@@ -331,8 +331,6 @@ pub mod frontdoor_rule {
         name: &str,
         args: FrontdoorRuleArgs,
     ) -> FrontdoorRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let behavior_on_match_binding = args.behavior_on_match.get_output(context);
         let cdn_frontdoor_rule_set_id_binding = args

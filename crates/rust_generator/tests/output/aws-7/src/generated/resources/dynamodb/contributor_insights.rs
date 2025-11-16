@@ -57,8 +57,6 @@ pub mod contributor_insights {
         name: &str,
         args: ContributorInsightsArgs,
     ) -> ContributorInsightsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let index_name_binding = args.index_name.get_output(context);
         let table_name_binding = args.table_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

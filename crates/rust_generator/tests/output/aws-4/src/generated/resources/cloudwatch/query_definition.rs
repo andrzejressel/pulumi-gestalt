@@ -70,8 +70,6 @@ pub mod query_definition {
         name: &str,
         args: QueryDefinitionArgs,
     ) -> QueryDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_group_names_binding = args.log_group_names.get_output(context);
         let name_binding = args.name.get_output(context);
         let query_string_binding = args.query_string.get_output(context);

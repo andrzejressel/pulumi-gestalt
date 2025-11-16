@@ -93,8 +93,6 @@ pub mod ip_set {
         name: &str,
         args: IpSetArgs,
     ) -> IpSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let addresses_binding = args.addresses.get_output(context);
         let description_binding = args.description.get_output(context);
         let ip_address_version_binding = args.ip_address_version.get_output(context);

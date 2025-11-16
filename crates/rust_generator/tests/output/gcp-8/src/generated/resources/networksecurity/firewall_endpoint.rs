@@ -139,8 +139,6 @@ pub mod firewall_endpoint {
         name: &str,
         args: FirewallEndpointArgs,
     ) -> FirewallEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let billing_project_id_binding = args.billing_project_id.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);

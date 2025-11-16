@@ -90,8 +90,6 @@ pub mod origin_ca_certificate {
         name: &str,
         args: OriginCaCertificateArgs,
     ) -> OriginCaCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let csr_binding = args.csr.get_output(context);
         let hostnames_binding = args.hostnames.get_output(context);
         let min_days_for_renewal_binding = args.min_days_for_renewal.get_output(context);

@@ -514,8 +514,6 @@ pub mod dataset {
         name: &str,
         args: DatasetArgs,
     ) -> DatasetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accesses_binding = args.accesses.get_output(context);
         let dataset_id_binding = args.dataset_id.get_output(context);
         let default_collation_binding = args.default_collation.get_output(context);

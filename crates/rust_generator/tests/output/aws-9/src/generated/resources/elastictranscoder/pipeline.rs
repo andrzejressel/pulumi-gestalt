@@ -165,8 +165,6 @@ pub mod pipeline {
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_kms_key_arn_binding = args.aws_kms_key_arn.get_output(context);
         let content_config_binding = args.content_config.get_output(context);
         let content_config_permissions_binding = args

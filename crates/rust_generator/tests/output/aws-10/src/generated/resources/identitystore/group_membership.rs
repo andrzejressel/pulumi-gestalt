@@ -85,8 +85,6 @@ pub mod group_membership {
         name: &str,
         args: GroupMembershipArgs,
     ) -> GroupMembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_id_binding = args.group_id.get_output(context);
         let identity_store_id_binding = args.identity_store_id.get_output(context);
         let member_id_binding = args.member_id.get_output(context);

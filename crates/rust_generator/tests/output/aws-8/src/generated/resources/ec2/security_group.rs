@@ -312,8 +312,6 @@ pub mod security_group {
         name: &str,
         args: SecurityGroupArgs,
     ) -> SecurityGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let egress_binding = args.egress.get_output(context);
         let ingress_binding = args.ingress.get_output(context);

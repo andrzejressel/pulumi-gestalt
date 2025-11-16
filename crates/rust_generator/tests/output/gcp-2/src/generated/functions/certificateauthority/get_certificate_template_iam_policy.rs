@@ -42,8 +42,6 @@ pub mod get_certificate_template_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetCertificateTemplateIamPolicyArgs,
     ) -> GetCertificateTemplateIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_template_binding = args.certificate_template.get_output(context);
         let location_binding = args.location.get_output(context);
         let project_binding = args.project.get_output(context);

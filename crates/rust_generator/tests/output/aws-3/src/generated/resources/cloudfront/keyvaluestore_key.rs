@@ -77,8 +77,6 @@ pub mod keyvaluestore_key {
         name: &str,
         args: KeyvaluestoreKeyArgs,
     ) -> KeyvaluestoreKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_binding = args.key.get_output(context);
         let key_value_store_arn_binding = args.key_value_store_arn.get_output(context);
         let value_binding = args.value.get_output(context);

@@ -196,8 +196,6 @@ pub mod volume_quota_rule {
         name: &str,
         args: VolumeQuotaRuleArgs,
     ) -> VolumeQuotaRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let quota_size_in_kib_binding = args.quota_size_in_kib.get_output(context);

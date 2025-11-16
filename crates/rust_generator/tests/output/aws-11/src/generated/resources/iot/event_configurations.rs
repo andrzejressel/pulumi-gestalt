@@ -65,8 +65,6 @@ pub mod event_configurations {
         name: &str,
         args: EventConfigurationsArgs,
     ) -> EventConfigurationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let event_configurations_binding = args.event_configurations.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iot/eventConfigurations:EventConfigurations".into(),

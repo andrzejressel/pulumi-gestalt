@@ -104,8 +104,6 @@ pub mod prefix_list_reference {
         name: &str,
         args: PrefixListReferenceArgs,
     ) -> PrefixListReferenceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let blackhole_binding = args.blackhole.get_output(context);
         let prefix_list_id_binding = args.prefix_list_id.get_output(context);
         let transit_gateway_attachment_id_binding = args

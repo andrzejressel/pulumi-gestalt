@@ -74,8 +74,6 @@ pub mod documentation_part {
         name: &str,
         args: DocumentationPartArgs,
     ) -> DocumentationPartResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let properties_binding = args.properties.get_output(context);
         let rest_api_id_binding = args.rest_api_id.get_output(context);

@@ -114,8 +114,6 @@ pub mod dedicated_host {
         name: &str,
         args: DedicatedHostArgs,
     ) -> DedicatedHostResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_replace_on_failure_binding = args
             .auto_replace_on_failure
             .get_output(context);

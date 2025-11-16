@@ -58,8 +58,6 @@ pub mod url_normalization_settings {
         name: &str,
         args: UrlNormalizationSettingsArgs,
     ) -> UrlNormalizationSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let scope_binding = args.scope.get_output(context);
         let type__binding = args.type_.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

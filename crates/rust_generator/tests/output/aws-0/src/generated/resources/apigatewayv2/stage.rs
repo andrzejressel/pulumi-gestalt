@@ -151,8 +151,6 @@ pub mod stage {
         name: &str,
         args: StageArgs,
     ) -> StageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_log_settings_binding = args.access_log_settings.get_output(context);
         let api_id_binding = args.api_id.get_output(context);
         let auto_deploy_binding = args.auto_deploy.get_output(context);

@@ -181,8 +181,6 @@ pub mod volume {
         name: &str,
         args: VolumeArgs,
     ) -> VolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let create_source_binding = args.create_source.get_output(context);
         let name_binding = args.name.get_output(context);
         let size_in_gib_binding = args.size_in_gib.get_output(context);

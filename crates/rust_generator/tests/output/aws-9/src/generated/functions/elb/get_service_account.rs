@@ -29,8 +29,6 @@ pub mod get_service_account {
         context: &pulumi_gestalt_rust::Context,
         args: GetServiceAccountArgs,
     ) -> GetServiceAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let region_binding = args.region.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:elb/getServiceAccount:getServiceAccount".into(),

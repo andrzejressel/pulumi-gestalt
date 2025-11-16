@@ -140,8 +140,6 @@ pub mod multi_region_cluster {
         name: &str,
         args: MultiRegionClusterArgs,
     ) -> MultiRegionClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let engine_binding = args.engine.get_output(context);
         let engine_version_binding = args.engine_version.get_output(context);

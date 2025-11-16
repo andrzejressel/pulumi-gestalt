@@ -41,8 +41,6 @@ pub mod get_crypto_keys {
         context: &pulumi_gestalt_rust::Context,
         args: GetCryptoKeysArgs,
     ) -> GetCryptoKeysResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filter_binding = args.filter.get_output(context);
         let key_ring_binding = args.key_ring.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

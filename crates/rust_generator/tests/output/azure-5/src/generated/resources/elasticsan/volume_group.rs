@@ -221,8 +221,6 @@ pub mod volume_group {
         name: &str,
         args: VolumeGroupArgs,
     ) -> VolumeGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let elastic_san_id_binding = args.elastic_san_id.get_output(context);
         let encryption_binding = args.encryption.get_output(context);
         let encryption_type_binding = args.encryption_type.get_output(context);

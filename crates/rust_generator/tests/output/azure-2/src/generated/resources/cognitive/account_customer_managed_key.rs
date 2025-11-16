@@ -175,8 +175,6 @@ pub mod account_customer_managed_key {
         name: &str,
         args: AccountCustomerManagedKeyArgs,
     ) -> AccountCustomerManagedKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cognitive_account_id_binding = args.cognitive_account_id.get_output(context);
         let identity_client_id_binding = args.identity_client_id.get_output(context);
         let key_vault_key_id_binding = args.key_vault_key_id.get_output(context);

@@ -59,8 +59,6 @@ pub mod get_open_zfs_snapshot {
         context: &pulumi_gestalt_rust::Context,
         args: GetOpenZfsSnapshotArgs,
     ) -> GetOpenZfsSnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let most_recent_binding = args.most_recent.get_output(context);
         let name_binding = args.name.get_output(context);

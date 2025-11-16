@@ -115,8 +115,6 @@ pub mod spring_cloud_configuration_service {
         name: &str,
         args: SpringCloudConfigurationServiceArgs,
     ) -> SpringCloudConfigurationServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let generation_binding = args.generation.get_output(context);
         let name_binding = args.name.get_output(context);
         let refresh_interval_in_seconds_binding = args

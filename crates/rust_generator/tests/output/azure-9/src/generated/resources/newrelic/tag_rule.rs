@@ -141,8 +141,6 @@ pub mod tag_rule {
         name: &str,
         args: TagRuleArgs,
     ) -> TagRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let activity_log_enabled_binding = args.activity_log_enabled.get_output(context);
         let azure_active_directory_log_enabled_binding = args
             .azure_active_directory_log_enabled

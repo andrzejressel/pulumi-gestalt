@@ -174,8 +174,6 @@ pub mod client {
         name: &str,
         args: ClientArgs,
     ) -> ClientResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloud_kms_config_binding = args.cloud_kms_config.get_output(context);
         let create_sample_integrations_binding = args
             .create_sample_integrations

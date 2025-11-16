@@ -138,8 +138,6 @@ pub mod activity_log_alert {
         name: &str,
         args: ActivityLogAlertArgs,
     ) -> ActivityLogAlertResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let criteria_binding = args.criteria.get_output(context);
         let description_binding = args.description.get_output(context);

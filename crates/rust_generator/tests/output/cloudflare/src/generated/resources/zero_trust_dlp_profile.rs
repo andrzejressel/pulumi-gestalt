@@ -143,8 +143,6 @@ pub mod zero_trust_dlp_profile {
         name: &str,
         args: ZeroTrustDlpProfileArgs,
     ) -> ZeroTrustDlpProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let allowed_match_count_binding = args.allowed_match_count.get_output(context);
         let context_awareness_binding = args.context_awareness.get_output(context);

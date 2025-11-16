@@ -142,8 +142,6 @@ pub mod mesh {
         name: &str,
         args: MeshArgs,
     ) -> MeshResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let interception_port_binding = args.interception_port.get_output(context);
         let labels_binding = args.labels.get_output(context);

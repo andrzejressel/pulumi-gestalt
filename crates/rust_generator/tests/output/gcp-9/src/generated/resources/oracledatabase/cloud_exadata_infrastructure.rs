@@ -206,8 +206,6 @@ pub mod cloud_exadata_infrastructure {
         name: &str,
         args: CloudExadataInfrastructureArgs,
     ) -> CloudExadataInfrastructureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloud_exadata_infrastructure_id_binding = args
             .cloud_exadata_infrastructure_id
             .get_output(context);

@@ -122,8 +122,6 @@ pub mod application_version {
         name: &str,
         args: ApplicationVersionArgs,
     ) -> ApplicationVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_binding = args.application.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let description_binding = args.description.get_output(context);

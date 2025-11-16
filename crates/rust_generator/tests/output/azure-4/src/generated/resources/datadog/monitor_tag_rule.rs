@@ -102,8 +102,6 @@ pub mod monitor_tag_rule {
         name: &str,
         args: MonitorTagRuleArgs,
     ) -> MonitorTagRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let datadog_monitor_id_binding = args.datadog_monitor_id.get_output(context);
         let logs_binding = args.logs.get_output(context);
         let metrics_binding = args.metrics.get_output(context);

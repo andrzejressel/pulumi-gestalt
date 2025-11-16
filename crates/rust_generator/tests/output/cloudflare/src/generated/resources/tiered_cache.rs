@@ -53,8 +53,6 @@ pub mod tiered_cache {
         name: &str,
         args: TieredCacheArgs,
     ) -> TieredCacheResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cache_type_binding = args.cache_type.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

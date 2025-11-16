@@ -129,8 +129,6 @@ pub mod service_network_acl {
         name: &str,
         args: ServiceNetworkAclArgs,
     ) -> ServiceNetworkAclResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_action_binding = args.default_action.get_output(context);
         let private_endpoints_binding = args.private_endpoints.get_output(context);
         let public_network_binding = args.public_network.get_output(context);

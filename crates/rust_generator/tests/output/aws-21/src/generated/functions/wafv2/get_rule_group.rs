@@ -34,8 +34,6 @@ pub mod get_rule_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetRuleGroupArgs,
     ) -> GetRuleGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let scope_binding = args.scope.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

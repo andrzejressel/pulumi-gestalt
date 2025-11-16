@@ -115,8 +115,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let metadata_binding = args.metadata.get_output(context);
         let namespace_binding = args.namespace.get_output(context);
         let service_id_binding = args.service_id.get_output(context);

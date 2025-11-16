@@ -124,8 +124,6 @@ pub mod resiliency_policy {
         name: &str,
         args: ResiliencyPolicyArgs,
     ) -> ResiliencyPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_location_constraint_binding = args
             .data_location_constraint
             .get_output(context);

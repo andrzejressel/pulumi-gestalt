@@ -1,5 +1,6 @@
 mod macros;
 pub use macros::ToOutput;
+mod native;
 
 #[doc(hidden)]
 #[path = "private/mod.rs"]
@@ -15,11 +16,6 @@ pub use oneof::OneOf4;
 
 use anyhow::{Context as AnyhowContext, Result};
 
-pub type GestaltContext = Context;
-pub type GestaltOutput<T> = Output<T>;
-pub type GestaltCompositeOutput = CompositeOutput;
-
-pub mod native;
 pub use native::{
     CompositeOutput, ConfigValue, Context, InvokeResourceRequest, Output, RegisterResourceRequest,
     ResourceRequestObjectField,

@@ -36,8 +36,6 @@ pub mod get_config_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetConfigIamPolicyArgs,
     ) -> GetConfigIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_binding = args.config.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -165,8 +165,6 @@ pub mod resource_lf_tags {
         name: &str,
         args: ResourceLfTagsArgs,
     ) -> ResourceLfTagsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let database_binding = args.database.get_output(context);
         let lf_tags_binding = args.lf_tags.get_output(context);

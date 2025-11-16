@@ -113,8 +113,6 @@ pub mod project {
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let domain_identifier_binding = args.domain_identifier.get_output(context);
         let glossary_terms_binding = args.glossary_terms.get_output(context);

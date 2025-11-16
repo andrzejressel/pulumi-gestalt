@@ -100,8 +100,6 @@ pub mod blob_inventory_policy {
         name: &str,
         args: BlobInventoryPolicyArgs,
     ) -> BlobInventoryPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let rules_binding = args.rules.get_output(context);
         let storage_account_id_binding = args.storage_account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

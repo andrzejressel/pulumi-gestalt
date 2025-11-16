@@ -237,8 +237,6 @@ pub mod health_check {
         name: &str,
         args: HealthCheckArgs,
     ) -> HealthCheckResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let child_health_threshold_binding = args
             .child_health_threshold
             .get_output(context);

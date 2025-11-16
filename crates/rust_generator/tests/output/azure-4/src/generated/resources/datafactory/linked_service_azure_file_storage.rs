@@ -152,8 +152,6 @@ pub mod linked_service_azure_file_storage {
         name: &str,
         args: LinkedServiceAzureFileStorageArgs,
     ) -> LinkedServiceAzureFileStorageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);

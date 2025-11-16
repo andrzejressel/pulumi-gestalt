@@ -98,8 +98,6 @@ pub mod key_pair {
         name: &str,
         args: KeyPairArgs,
     ) -> KeyPairResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_name_binding = args.key_name.get_output(context);
         let key_name_prefix_binding = args.key_name_prefix.get_output(context);
         let public_key_binding = args.public_key.get_output(context);

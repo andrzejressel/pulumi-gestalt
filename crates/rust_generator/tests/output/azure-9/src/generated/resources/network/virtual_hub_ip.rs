@@ -133,8 +133,6 @@ pub mod virtual_hub_ip {
         name: &str,
         args: VirtualHubIpArgs,
     ) -> VirtualHubIpResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let private_ip_address_binding = args.private_ip_address.get_output(context);
         let private_ip_allocation_method_binding = args

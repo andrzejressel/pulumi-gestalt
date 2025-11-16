@@ -74,8 +74,6 @@ pub mod key_alias {
         name: &str,
         args: KeyAliasArgs,
     ) -> KeyAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_name_binding = args.alias_name.get_output(context);
         let key_arn_binding = args.key_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -185,8 +185,6 @@ pub mod firewall_policy {
         name: &str,
         args: FirewallPolicyArgs,
     ) -> FirewallPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_block_response_body_binding = args
             .custom_block_response_body
             .get_output(context);

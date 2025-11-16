@@ -32,8 +32,6 @@ pub mod get_delegated_administrators {
         context: &pulumi_gestalt_rust::Context,
         args: GetDelegatedAdministratorsArgs,
     ) -> GetDelegatedAdministratorsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let service_principal_binding = args.service_principal.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:organizations/getDelegatedAdministrators:getDelegatedAdministrators"

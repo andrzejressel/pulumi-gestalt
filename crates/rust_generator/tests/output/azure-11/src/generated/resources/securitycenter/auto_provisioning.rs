@@ -57,8 +57,6 @@ pub mod auto_provisioning {
         name: &str,
         args: AutoProvisioningArgs,
     ) -> AutoProvisioningResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_provision_binding = args.auto_provision.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:securitycenter/autoProvisioning:AutoProvisioning".into(),

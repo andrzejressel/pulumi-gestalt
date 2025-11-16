@@ -168,8 +168,6 @@ pub mod v_2_models_intent {
         name: &str,
         args: V2modelsIntentArgs,
     ) -> V2modelsIntentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bot_id_binding = args.bot_id.get_output(context);
         let bot_version_binding = args.bot_version.get_output(context);
         let closing_setting_binding = args.closing_setting.get_output(context);

@@ -120,8 +120,6 @@ pub mod fleet {
         name: &str,
         args: FleetArgs,
     ) -> FleetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_cluster_config_binding = args
             .default_cluster_config
             .get_output(context);

@@ -40,8 +40,6 @@ pub mod get_api_config_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetApiConfigIamPolicyArgs,
     ) -> GetApiConfigIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_binding = args.api.get_output(context);
         let api_config_binding = args.api_config.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -535,8 +535,6 @@ pub mod bucket {
         name: &str,
         args: BucketArgs,
     ) -> BucketResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let acceleration_status_binding = args.acceleration_status.get_output(context);
         let acl_binding = args.acl.get_output(context);
         let arn_binding = args.arn.get_output(context);

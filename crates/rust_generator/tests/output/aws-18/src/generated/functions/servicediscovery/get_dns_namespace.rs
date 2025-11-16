@@ -43,8 +43,6 @@ pub mod get_dns_namespace {
         context: &pulumi_gestalt_rust::Context,
         args: GetDnsNamespaceArgs,
     ) -> GetDnsNamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let type__binding = args.type_.get_output(context);

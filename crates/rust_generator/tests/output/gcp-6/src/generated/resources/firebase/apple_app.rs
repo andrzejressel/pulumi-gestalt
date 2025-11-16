@@ -170,8 +170,6 @@ pub mod apple_app {
         name: &str,
         args: AppleAppArgs,
     ) -> AppleAppResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_key_id_binding = args.api_key_id.get_output(context);
         let app_store_id_binding = args.app_store_id.get_output(context);
         let bundle_id_binding = args.bundle_id.get_output(context);

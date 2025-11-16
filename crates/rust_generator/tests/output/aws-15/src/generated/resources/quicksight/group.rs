@@ -69,8 +69,6 @@ pub mod group {
         name: &str,
         args: GroupArgs,
     ) -> GroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let group_name_binding = args.group_name.get_output(context);

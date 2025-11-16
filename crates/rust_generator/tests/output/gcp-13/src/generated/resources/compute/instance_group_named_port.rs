@@ -165,8 +165,6 @@ pub mod instance_group_named_port {
         name: &str,
         args: InstanceGroupNamedPortArgs,
     ) -> InstanceGroupNamedPortResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_binding = args.group.get_output(context);
         let name_binding = args.name.get_output(context);
         let port_binding = args.port.get_output(context);

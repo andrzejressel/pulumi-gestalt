@@ -65,8 +65,6 @@ pub mod scaling_plan {
         name: &str,
         args: ScalingPlanArgs,
     ) -> ScalingPlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_source_binding = args.application_source.get_output(context);
         let name_binding = args.name.get_output(context);
         let scaling_instructions_binding = args.scaling_instructions.get_output(context);

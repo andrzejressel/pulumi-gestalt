@@ -38,8 +38,6 @@ pub mod get_provisioning_artifacts {
         context: &pulumi_gestalt_rust::Context,
         args: GetProvisioningArtifactsArgs,
     ) -> GetProvisioningArtifactsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accept_language_binding = args.accept_language.get_output(context);
         let product_id_binding = args.product_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

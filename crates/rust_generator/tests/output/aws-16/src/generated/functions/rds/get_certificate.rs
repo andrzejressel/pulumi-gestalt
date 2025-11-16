@@ -42,8 +42,6 @@ pub mod get_certificate {
         context: &pulumi_gestalt_rust::Context,
         args: GetCertificateArgs,
     ) -> GetCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let id_binding = args.id.get_output(context);
         let latest_valid_till_binding = args.latest_valid_till.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

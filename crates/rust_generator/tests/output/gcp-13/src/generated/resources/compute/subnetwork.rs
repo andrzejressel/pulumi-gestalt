@@ -521,8 +521,6 @@ pub mod subnetwork {
         name: &str,
         args: SubnetworkArgs,
     ) -> SubnetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_subnet_cidr_routes_overlap_binding = args
             .allow_subnet_cidr_routes_overlap
             .get_output(context);

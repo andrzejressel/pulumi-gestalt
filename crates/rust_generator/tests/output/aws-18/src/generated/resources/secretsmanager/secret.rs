@@ -110,8 +110,6 @@ pub mod secret {
         name: &str,
         args: SecretArgs,
     ) -> SecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let force_overwrite_replica_secret_binding = args
             .force_overwrite_replica_secret

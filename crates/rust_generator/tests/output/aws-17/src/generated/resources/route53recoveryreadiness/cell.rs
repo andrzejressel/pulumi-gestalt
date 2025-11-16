@@ -78,8 +78,6 @@ pub mod cell {
         name: &str,
         args: CellArgs,
     ) -> CellResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cell_name_binding = args.cell_name.get_output(context);
         let cells_binding = args.cells.get_output(context);
         let tags_binding = args.tags.get_output(context);

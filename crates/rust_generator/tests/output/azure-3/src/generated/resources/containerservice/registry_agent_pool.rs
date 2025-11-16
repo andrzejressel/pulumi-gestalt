@@ -115,8 +115,6 @@ pub mod registry_agent_pool {
         name: &str,
         args: RegistryAgentPoolArgs,
     ) -> RegistryAgentPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_registry_name_binding = args
             .container_registry_name
             .get_output(context);

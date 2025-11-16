@@ -228,8 +228,6 @@ pub mod workflow_template {
         name: &str,
         args: WorkflowTemplateArgs,
     ) -> WorkflowTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dag_timeout_binding = args.dag_timeout.get_output(context);
         let jobs_binding = args.jobs.get_output(context);
         let labels_binding = args.labels.get_output(context);

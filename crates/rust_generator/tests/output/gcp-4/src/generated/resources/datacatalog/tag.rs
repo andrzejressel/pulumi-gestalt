@@ -316,8 +316,6 @@ pub mod tag {
         name: &str,
         args: TagArgs,
     ) -> TagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let column_binding = args.column.get_output(context);
         let fields_binding = args.fields.get_output(context);
         let parent_binding = args.parent.get_output(context);

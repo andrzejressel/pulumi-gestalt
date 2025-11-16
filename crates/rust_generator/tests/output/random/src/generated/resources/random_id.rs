@@ -103,8 +103,6 @@ pub mod random_id {
         name: &str,
         args: RandomIdArgs,
     ) -> RandomIdResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let byte_length_binding = args.byte_length.get_output(context);
         let keepers_binding = args.keepers.get_output(context);
         let prefix_binding = args.prefix.get_output(context);

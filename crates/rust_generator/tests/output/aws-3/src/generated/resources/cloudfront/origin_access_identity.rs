@@ -138,8 +138,6 @@ pub mod origin_access_identity {
         name: &str,
         args: OriginAccessIdentityArgs,
     ) -> OriginAccessIdentityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let comment_binding = args.comment.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:cloudfront/originAccessIdentity:OriginAccessIdentity".into(),

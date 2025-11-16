@@ -193,8 +193,6 @@ pub mod policy_vm {
         name: &str,
         args: PolicyVMArgs,
     ) -> PolicyVMResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_binding = args.backup.get_output(context);
         let instant_restore_resource_group_binding = args
             .instant_restore_resource_group

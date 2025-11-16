@@ -38,8 +38,6 @@ pub mod get_recommendations {
         context: &pulumi_gestalt_rust::Context,
         args: GetRecommendationsArgs,
     ) -> GetRecommendationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filter_by_categories_binding = args.filter_by_categories.get_output(context);
         let filter_by_resource_groups_binding = args
             .filter_by_resource_groups

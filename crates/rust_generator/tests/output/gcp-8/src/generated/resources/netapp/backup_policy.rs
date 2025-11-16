@@ -161,8 +161,6 @@ pub mod backup_policy {
         name: &str,
         args: BackupPolicyArgs,
     ) -> BackupPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let daily_backup_limit_binding = args.daily_backup_limit.get_output(context);
         let description_binding = args.description.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

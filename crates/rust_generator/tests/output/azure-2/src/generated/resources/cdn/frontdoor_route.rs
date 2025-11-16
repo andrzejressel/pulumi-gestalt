@@ -271,8 +271,6 @@ pub mod frontdoor_route {
         name: &str,
         args: FrontdoorRouteArgs,
     ) -> FrontdoorRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cache_binding = args.cache.get_output(context);
         let cdn_frontdoor_custom_domain_ids_binding = args
             .cdn_frontdoor_custom_domain_ids

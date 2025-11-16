@@ -159,8 +159,6 @@ pub mod table {
         name: &str,
         args: TableArgs,
     ) -> TableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automated_backup_policy_binding = args
             .automated_backup_policy
             .get_output(context);

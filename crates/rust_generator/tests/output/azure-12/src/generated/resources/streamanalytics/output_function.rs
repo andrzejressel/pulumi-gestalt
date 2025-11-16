@@ -148,8 +148,6 @@ pub mod output_function {
         name: &str,
         args: OutputFunctionArgs,
     ) -> OutputFunctionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_key_binding = args.api_key.get_output(context);
         let batch_max_count_binding = args.batch_max_count.get_output(context);
         let batch_max_in_bytes_binding = args.batch_max_in_bytes.get_output(context);

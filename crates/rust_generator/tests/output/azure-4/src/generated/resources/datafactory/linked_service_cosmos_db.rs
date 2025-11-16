@@ -137,8 +137,6 @@ pub mod linked_service_cosmos_db {
         name: &str,
         args: LinkedServiceCosmosDbArgs,
     ) -> LinkedServiceCosmosDbResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_endpoint_binding = args.account_endpoint.get_output(context);
         let account_key_binding = args.account_key.get_output(context);
         let additional_properties_binding = args

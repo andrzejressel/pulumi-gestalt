@@ -78,8 +78,6 @@ pub mod domain_identity {
         name: &str,
         args: DomainIdentityArgs,
     ) -> DomainIdentityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_binding = args.domain.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ses/domainIdentity:DomainIdentity".into(),

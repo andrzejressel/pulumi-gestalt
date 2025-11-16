@@ -94,8 +94,6 @@ pub mod placement_group {
         name: &str,
         args: PlacementGroupArgs,
     ) -> PlacementGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let partition_count_binding = args.partition_count.get_output(context);
         let spread_level_binding = args.spread_level.get_output(context);

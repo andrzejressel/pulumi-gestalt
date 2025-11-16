@@ -44,8 +44,6 @@ pub mod get_ca_pool_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetCaPoolIamPolicyArgs,
     ) -> GetCaPoolIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ca_pool_binding = args.ca_pool.get_output(context);
         let location_binding = args.location.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -95,8 +95,6 @@ pub mod service_perimeter_ingress_policy {
         name: &str,
         args: ServicePerimeterIngressPolicyArgs,
     ) -> ServicePerimeterIngressPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ingress_from_binding = args.ingress_from.get_output(context);
         let ingress_to_binding = args.ingress_to.get_output(context);
         let perimeter_binding = args.perimeter.get_output(context);

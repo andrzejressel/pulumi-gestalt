@@ -151,8 +151,6 @@ pub mod kx_dataview {
         name: &str,
         args: KxDataviewArgs,
     ) -> KxDataviewResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_update_binding = args.auto_update.get_output(context);
         let availability_zone_id_binding = args.availability_zone_id.get_output(context);
         let az_mode_binding = args.az_mode.get_output(context);

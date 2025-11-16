@@ -105,8 +105,6 @@ pub mod event_bus {
         name: &str,
         args: EventBusArgs,
     ) -> EventBusResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let event_source_name_binding = args.event_source_name.get_output(context);
         let kms_key_identifier_binding = args.kms_key_identifier.get_output(context);

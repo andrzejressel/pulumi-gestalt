@@ -54,8 +54,6 @@ pub mod get_experience {
         context: &pulumi_gestalt_rust::Context,
         args: GetExperienceArgs,
     ) -> GetExperienceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let experience_id_binding = args.experience_id.get_output(context);
         let index_id_binding = args.index_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -148,8 +148,6 @@ pub mod environment_keyvaluemaps {
         name: &str,
         args: EnvironmentKeyvaluemapsArgs,
     ) -> EnvironmentKeyvaluemapsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let env_id_binding = args.env_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

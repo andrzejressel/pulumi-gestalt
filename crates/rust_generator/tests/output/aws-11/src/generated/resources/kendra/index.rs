@@ -605,8 +605,6 @@ pub mod index {
         name: &str,
         args: IndexArgs,
     ) -> IndexResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capacity_units_binding = args.capacity_units.get_output(context);
         let description_binding = args.description.get_output(context);
         let document_metadata_configuration_updates_binding = args

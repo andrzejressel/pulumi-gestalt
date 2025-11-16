@@ -149,8 +149,6 @@ pub mod workforce {
         name: &str,
         args: WorkforceArgs,
     ) -> WorkforceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cognito_config_binding = args.cognito_config.get_output(context);
         let oidc_config_binding = args.oidc_config.get_output(context);
         let source_ip_config_binding = args.source_ip_config.get_output(context);

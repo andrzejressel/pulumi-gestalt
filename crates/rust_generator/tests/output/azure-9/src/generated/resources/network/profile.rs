@@ -133,8 +133,6 @@ pub mod profile {
         name: &str,
         args: ProfileArgs,
     ) -> ProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_network_interface_binding = args
             .container_network_interface
             .get_output(context);

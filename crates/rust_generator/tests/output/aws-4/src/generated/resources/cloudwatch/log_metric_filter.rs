@@ -88,8 +88,6 @@ pub mod log_metric_filter {
         name: &str,
         args: LogMetricFilterArgs,
     ) -> LogMetricFilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_group_name_binding = args.log_group_name.get_output(context);
         let metric_transformation_binding = args
             .metric_transformation

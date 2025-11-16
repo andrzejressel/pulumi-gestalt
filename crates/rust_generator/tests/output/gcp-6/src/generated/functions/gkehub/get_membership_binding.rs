@@ -52,8 +52,6 @@ pub mod get_membership_binding {
         context: &pulumi_gestalt_rust::Context,
         args: GetMembershipBindingArgs,
     ) -> GetMembershipBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let membership_binding_id_binding = args
             .membership_binding_id

@@ -26,8 +26,6 @@ pub mod get_log_delivery_canonical_user_id {
         context: &pulumi_gestalt_rust::Context,
         args: GetLogDeliveryCanonicalUserIdArgs,
     ) -> GetLogDeliveryCanonicalUserIdResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let region_binding = args.region.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cloudfront/getLogDeliveryCanonicalUserId:getLogDeliveryCanonicalUserId"

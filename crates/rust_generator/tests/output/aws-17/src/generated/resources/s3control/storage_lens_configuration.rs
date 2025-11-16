@@ -107,8 +107,6 @@ pub mod storage_lens_configuration {
         name: &str,
         args: StorageLensConfigurationArgs,
     ) -> StorageLensConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let config_id_binding = args.config_id.get_output(context);
         let storage_lens_configuration_binding = args

@@ -299,8 +299,6 @@ pub mod analytics_application {
         name: &str,
         args: AnalyticsApplicationArgs,
     ) -> AnalyticsApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloudwatch_logging_options_binding = args
             .cloudwatch_logging_options
             .get_output(context);

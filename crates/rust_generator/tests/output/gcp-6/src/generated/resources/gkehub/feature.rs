@@ -591,8 +591,6 @@ pub mod feature {
         name: &str,
         args: FeatureArgs,
     ) -> FeatureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let fleet_default_member_config_binding = args
             .fleet_default_member_config
             .get_output(context);

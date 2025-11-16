@@ -215,8 +215,6 @@ pub mod branch_rule {
         name: &str,
         args: BranchRuleArgs,
     ) -> BranchRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_stale_reviews_binding = args.allow_stale_reviews.get_output(context);
         let branch_rule_id_binding = args.branch_rule_id.get_output(context);
         let disabled_binding = args.disabled.get_output(context);

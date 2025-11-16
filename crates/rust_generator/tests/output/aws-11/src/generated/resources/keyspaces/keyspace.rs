@@ -82,8 +82,6 @@ pub mod keyspace {
         name: &str,
         args: KeyspaceArgs,
     ) -> KeyspaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let replication_specification_binding = args
             .replication_specification

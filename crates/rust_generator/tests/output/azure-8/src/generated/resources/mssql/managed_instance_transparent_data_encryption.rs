@@ -223,8 +223,6 @@ pub mod managed_instance_transparent_data_encryption {
         name: &str,
         args: ManagedInstanceTransparentDataEncryptionArgs,
     ) -> ManagedInstanceTransparentDataEncryptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_rotation_enabled_binding = args
             .auto_rotation_enabled
             .get_output(context);

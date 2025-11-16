@@ -88,8 +88,6 @@ pub mod route_calculation {
         name: &str,
         args: RouteCalculationArgs,
     ) -> RouteCalculationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let calculator_name_binding = args.calculator_name.get_output(context);
         let data_source_binding = args.data_source.get_output(context);
         let description_binding = args.description.get_output(context);

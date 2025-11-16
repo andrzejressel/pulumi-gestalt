@@ -85,8 +85,6 @@ pub mod group_policy {
         name: &str,
         args: GroupPolicyArgs,
     ) -> GroupPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_binding = args.group.get_output(context);
         let name_binding = args.name.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);

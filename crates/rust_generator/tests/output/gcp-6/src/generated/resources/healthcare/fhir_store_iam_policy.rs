@@ -173,8 +173,6 @@ pub mod fhir_store_iam_policy {
         name: &str,
         args: FhirStoreIamPolicyArgs,
     ) -> FhirStoreIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let fhir_store_id_binding = args.fhir_store_id.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

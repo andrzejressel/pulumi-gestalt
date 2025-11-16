@@ -138,8 +138,6 @@ pub mod role_assignment {
         name: &str,
         args: RoleAssignmentArgs,
     ) -> RoleAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let principal_id_binding = args.principal_id.get_output(context);
         let principal_type_binding = args.principal_type.get_output(context);
         let role_name_binding = args.role_name.get_output(context);

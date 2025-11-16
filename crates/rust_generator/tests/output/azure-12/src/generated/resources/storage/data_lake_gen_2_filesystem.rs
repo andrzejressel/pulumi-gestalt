@@ -113,8 +113,6 @@ pub mod data_lake_gen_2_filesystem {
         name: &str,
         args: DataLakeGen2FilesystemArgs,
     ) -> DataLakeGen2FilesystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aces_binding = args.aces.get_output(context);
         let default_encryption_scope_binding = args
             .default_encryption_scope

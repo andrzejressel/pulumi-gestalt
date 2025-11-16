@@ -30,8 +30,6 @@ pub mod get_adbs_character_sets {
         context: &pulumi_gestalt_rust::Context,
         args: GetAdbsCharacterSetsArgs,
     ) -> GetAdbsCharacterSetsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:oracle/getAdbsCharacterSets:getAdbsCharacterSets".into(),

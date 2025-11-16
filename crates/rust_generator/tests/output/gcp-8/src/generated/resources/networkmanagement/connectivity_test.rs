@@ -290,8 +290,6 @@ pub mod connectivity_test {
         name: &str,
         args: ConnectivityTestArgs,
     ) -> ConnectivityTestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let destination_binding = args.destination.get_output(context);
         let labels_binding = args.labels.get_output(context);

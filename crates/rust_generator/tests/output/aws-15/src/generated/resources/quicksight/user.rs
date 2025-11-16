@@ -93,8 +93,6 @@ pub mod user {
         name: &str,
         args: UserArgs,
     ) -> UserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let email_binding = args.email.get_output(context);
         let iam_arn_binding = args.iam_arn.get_output(context);

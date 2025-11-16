@@ -30,8 +30,6 @@ pub mod get_access_keys {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccessKeysArgs,
     ) -> GetAccessKeysResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let user_binding = args.user.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:iam/getAccessKeys:getAccessKeys".into(),

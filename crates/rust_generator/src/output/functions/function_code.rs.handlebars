@@ -47,8 +47,6 @@ pub fn invoke(
     args: {{function.struct_name}}Args
 {{/if}}
 ){{#if function.output_properties}} -> {{function.struct_name}}Result{{/if}} {
-    use std::collections::HashMap;
-    use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
 
 {{#each function.input_properties}}
     let {{arg_name}}_binding = args.{{arg_name}}.get_output(context);

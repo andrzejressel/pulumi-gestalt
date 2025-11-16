@@ -68,8 +68,6 @@ pub mod workspace_api_key {
         name: &str,
         args: WorkspaceApiKeyArgs,
     ) -> WorkspaceApiKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_name_binding = args.key_name.get_output(context);
         let key_role_binding = args.key_role.get_output(context);
         let seconds_to_live_binding = args.seconds_to_live.get_output(context);

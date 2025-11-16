@@ -106,8 +106,6 @@ pub mod certificate_contacts {
         name: &str,
         args: CertificateContactsArgs,
     ) -> CertificateContactsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contacts_binding = args.contacts.get_output(context);
         let key_vault_id_binding = args.key_vault_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

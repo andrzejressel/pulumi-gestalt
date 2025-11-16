@@ -28,8 +28,6 @@ pub mod get_firehose_delivery_stream {
         context: &pulumi_gestalt_rust::Context,
         args: GetFirehoseDeliveryStreamArgs,
     ) -> GetFirehoseDeliveryStreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:kinesis/getFirehoseDeliveryStream:getFirehoseDeliveryStream"

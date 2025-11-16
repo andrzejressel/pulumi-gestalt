@@ -109,8 +109,6 @@ pub mod device_posture_rule {
         name: &str,
         args: DevicePostureRuleArgs,
     ) -> DevicePostureRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let expiration_binding = args.expiration.get_output(context);

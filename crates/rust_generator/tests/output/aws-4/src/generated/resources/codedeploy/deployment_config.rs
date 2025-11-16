@@ -146,8 +146,6 @@ pub mod deployment_config {
         name: &str,
         args: DeploymentConfigArgs,
     ) -> DeploymentConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let compute_platform_binding = args.compute_platform.get_output(context);
         let deployment_config_name_binding = args
             .deployment_config_name

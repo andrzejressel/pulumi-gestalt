@@ -191,8 +191,6 @@ pub mod memcached_layer {
         name: &str,
         args: MemcachedLayerArgs,
     ) -> MemcachedLayerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocated_memory_binding = args.allocated_memory.get_output(context);
         let auto_assign_elastic_ips_binding = args
             .auto_assign_elastic_ips

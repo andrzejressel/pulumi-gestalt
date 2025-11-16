@@ -41,8 +41,6 @@ pub mod get_attached_install_manifest {
         context: &pulumi_gestalt_rust::Context,
         args: GetAttachedInstallManifestArgs,
     ) -> GetAttachedInstallManifestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_id_binding = args.cluster_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let platform_version_binding = args.platform_version.get_output(context);

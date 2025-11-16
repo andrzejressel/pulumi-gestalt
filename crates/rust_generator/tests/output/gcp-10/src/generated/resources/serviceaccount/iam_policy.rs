@@ -299,8 +299,6 @@ pub mod iam_policy {
         name: &str,
         args: IAMPolicyArgs,
     ) -> IAMPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_data_binding = args.policy_data.get_output(context);
         let service_account_id_binding = args.service_account_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

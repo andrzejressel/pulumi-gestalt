@@ -78,8 +78,6 @@ pub mod recovery_group {
         name: &str,
         args: RecoveryGroupArgs,
     ) -> RecoveryGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cells_binding = args.cells.get_output(context);
         let recovery_group_name_binding = args.recovery_group_name.get_output(context);
         let tags_binding = args.tags.get_output(context);

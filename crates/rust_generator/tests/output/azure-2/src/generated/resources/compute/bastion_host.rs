@@ -218,8 +218,6 @@ pub mod bastion_host {
         name: &str,
         args: BastionHostArgs,
     ) -> BastionHostResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let copy_paste_enabled_binding = args.copy_paste_enabled.get_output(context);
         let file_copy_enabled_binding = args.file_copy_enabled.get_output(context);
         let ip_configuration_binding = args.ip_configuration.get_output(context);

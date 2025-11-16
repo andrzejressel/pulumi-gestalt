@@ -86,8 +86,6 @@ pub mod anomaly_alert {
         name: &str,
         args: AnomalyAlertArgs,
     ) -> AnomalyAlertResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let email_addresses_binding = args.email_addresses.get_output(context);
         let email_subject_binding = args.email_subject.get_output(context);

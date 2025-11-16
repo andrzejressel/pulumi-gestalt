@@ -90,8 +90,6 @@ pub mod turnstile_widget {
         name: &str,
         args: TurnstileWidgetArgs,
     ) -> TurnstileWidgetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let bot_fight_mode_binding = args.bot_fight_mode.get_output(context);
         let domains_binding = args.domains.get_output(context);

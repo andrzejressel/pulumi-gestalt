@@ -110,8 +110,6 @@ pub mod authorizer {
         name: &str,
         args: AuthorizerArgs,
     ) -> AuthorizerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorizer_function_arn_binding = args
             .authorizer_function_arn
             .get_output(context);

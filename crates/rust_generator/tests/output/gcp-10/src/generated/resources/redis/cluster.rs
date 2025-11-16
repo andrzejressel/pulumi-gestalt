@@ -580,8 +580,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorization_mode_binding = args.authorization_mode.get_output(context);
         let cross_cluster_replication_config_binding = args
             .cross_cluster_replication_config

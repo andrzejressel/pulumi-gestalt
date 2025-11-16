@@ -144,8 +144,6 @@ pub mod network_acl_rule {
         name: &str,
         args: NetworkAclRuleArgs,
     ) -> NetworkAclRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_block_binding = args.cidr_block.get_output(context);
         let egress_binding = args.egress.get_output(context);
         let from_port_binding = args.from_port.get_output(context);

@@ -198,8 +198,6 @@ pub mod linked_service_sql_server {
         name: &str,
         args: LinkedServiceSqlServerArgs,
     ) -> LinkedServiceSqlServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);

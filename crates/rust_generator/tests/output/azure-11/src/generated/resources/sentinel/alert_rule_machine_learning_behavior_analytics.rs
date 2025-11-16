@@ -94,8 +94,6 @@ pub mod alert_rule_machine_learning_behavior_analytics {
         name: &str,
         args: AlertRuleMachineLearningBehaviorAnalyticsArgs,
     ) -> AlertRuleMachineLearningBehaviorAnalyticsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alert_rule_template_guid_binding = args
             .alert_rule_template_guid
             .get_output(context);

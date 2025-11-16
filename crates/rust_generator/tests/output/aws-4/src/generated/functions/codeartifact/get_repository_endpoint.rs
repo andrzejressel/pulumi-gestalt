@@ -40,8 +40,6 @@ pub mod get_repository_endpoint {
         context: &pulumi_gestalt_rust::Context,
         args: GetRepositoryEndpointArgs,
     ) -> GetRepositoryEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_binding = args.domain.get_output(context);
         let domain_owner_binding = args.domain_owner.get_output(context);
         let format_binding = args.format.get_output(context);

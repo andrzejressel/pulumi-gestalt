@@ -191,8 +191,6 @@ pub mod host_pool {
         name: &str,
         args: HostPoolArgs,
     ) -> HostPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_rdp_properties_binding = args
             .custom_rdp_properties
             .get_output(context);

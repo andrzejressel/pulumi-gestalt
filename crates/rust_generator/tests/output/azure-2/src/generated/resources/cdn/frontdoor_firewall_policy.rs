@@ -210,8 +210,6 @@ pub mod frontdoor_firewall_policy {
         name: &str,
         args: FrontdoorFirewallPolicyArgs,
     ) -> FrontdoorFirewallPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_block_response_body_binding = args
             .custom_block_response_body
             .get_output(context);

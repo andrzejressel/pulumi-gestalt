@@ -36,8 +36,6 @@ pub mod get_tunnel_virtual_network {
         context: &pulumi_gestalt_rust::Context,
         args: GetTunnelVirtualNetworkArgs,
     ) -> GetTunnelVirtualNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

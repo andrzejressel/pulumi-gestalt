@@ -64,8 +64,6 @@ pub mod network_acl_association {
         name: &str,
         args: NetworkAclAssociationArgs,
     ) -> NetworkAclAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let network_acl_id_binding = args.network_acl_id.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

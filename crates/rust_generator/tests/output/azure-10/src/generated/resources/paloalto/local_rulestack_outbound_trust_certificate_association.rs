@@ -69,8 +69,6 @@ pub mod local_rulestack_outbound_trust_certificate_association {
         name: &str,
         args: LocalRulestackOutboundTrustCertificateAssociationArgs,
     ) -> LocalRulestackOutboundTrustCertificateAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_id_binding = args.certificate_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "azure:paloalto/localRulestackOutboundTrustCertificateAssociation:LocalRulestackOutboundTrustCertificateAssociation"

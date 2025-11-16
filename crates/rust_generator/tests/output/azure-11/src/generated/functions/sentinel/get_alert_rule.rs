@@ -30,8 +30,6 @@ pub mod get_alert_rule {
         context: &pulumi_gestalt_rust::Context,
         args: GetAlertRuleArgs,
     ) -> GetAlertRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
             .get_output(context);

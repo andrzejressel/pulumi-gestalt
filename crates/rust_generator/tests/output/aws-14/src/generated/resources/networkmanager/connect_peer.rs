@@ -109,8 +109,6 @@ pub mod connect_peer {
         name: &str,
         args: ConnectPeerArgs,
     ) -> ConnectPeerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bgp_options_binding = args.bgp_options.get_output(context);
         let connect_attachment_id_binding = args
             .connect_attachment_id

@@ -370,8 +370,6 @@ pub mod task_definition {
         name: &str,
         args: TaskDefinitionArgs,
     ) -> TaskDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_definitions_binding = args
             .container_definitions
             .get_output(context);

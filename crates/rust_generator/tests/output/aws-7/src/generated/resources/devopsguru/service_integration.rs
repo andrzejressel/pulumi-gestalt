@@ -104,8 +104,6 @@ pub mod service_integration {
         name: &str,
         args: ServiceIntegrationArgs,
     ) -> ServiceIntegrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let kms_server_side_encryption_binding = args
             .kms_server_side_encryption
             .get_output(context);

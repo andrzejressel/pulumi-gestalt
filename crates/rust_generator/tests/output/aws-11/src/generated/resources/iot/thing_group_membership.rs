@@ -66,8 +66,6 @@ pub mod thing_group_membership {
         name: &str,
         args: ThingGroupMembershipArgs,
     ) -> ThingGroupMembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let override_dynamic_group_binding = args
             .override_dynamic_group
             .get_output(context);

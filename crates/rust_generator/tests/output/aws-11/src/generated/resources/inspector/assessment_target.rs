@@ -62,8 +62,6 @@ pub mod assessment_target {
         name: &str,
         args: AssessmentTargetArgs,
     ) -> AssessmentTargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let resource_group_arn_binding = args.resource_group_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -148,8 +148,6 @@ pub mod account_encryption {
         name: &str,
         args: AccountEncryptionArgs,
     ) -> AccountEncryptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let encryption_key_binding = args.encryption_key.get_output(context);
         let netapp_account_id_binding = args.netapp_account_id.get_output(context);
         let system_assigned_identity_principal_id_binding = args

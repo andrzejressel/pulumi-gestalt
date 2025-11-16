@@ -101,8 +101,6 @@ pub mod dedicated_host_group {
         name: &str,
         args: DedicatedHostGroupArgs,
     ) -> DedicatedHostGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automatic_placement_enabled_binding = args
             .automatic_placement_enabled
             .get_output(context);

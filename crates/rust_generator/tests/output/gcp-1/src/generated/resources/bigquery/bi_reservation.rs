@@ -110,8 +110,6 @@ pub mod bi_reservation {
         name: &str,
         args: BiReservationArgs,
     ) -> BiReservationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let preferred_tables_binding = args.preferred_tables.get_output(context);
         let project_binding = args.project.get_output(context);

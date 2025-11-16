@@ -521,8 +521,6 @@ pub mod router_nat {
         name: &str,
         args: RouterNatArgs,
     ) -> RouterNatResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_network_tier_binding = args.auto_network_tier.get_output(context);
         let drain_nat_ips_binding = args.drain_nat_ips.get_output(context);
         let enable_dynamic_port_allocation_binding = args

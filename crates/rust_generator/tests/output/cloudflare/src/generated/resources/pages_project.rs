@@ -86,8 +86,6 @@ pub mod pages_project {
         name: &str,
         args: PagesProjectArgs,
     ) -> PagesProjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let build_config_binding = args.build_config.get_output(context);
         let deployment_configs_binding = args.deployment_configs.get_output(context);

@@ -158,8 +158,6 @@ pub mod provisioning_template {
         name: &str,
         args: ProvisioningTemplateArgs,
     ) -> ProvisioningTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let name_binding = args.name.get_output(context);

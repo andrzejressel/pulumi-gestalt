@@ -193,8 +193,6 @@ pub mod cluster_instance {
         name: &str,
         args: ClusterInstanceArgs,
     ) -> ClusterInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let apply_immediately_binding = args.apply_immediately.get_output(context);
         let auto_minor_version_upgrade_binding = args
             .auto_minor_version_upgrade

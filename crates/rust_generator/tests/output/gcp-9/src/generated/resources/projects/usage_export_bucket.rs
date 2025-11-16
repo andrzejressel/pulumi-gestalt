@@ -124,8 +124,6 @@ pub mod usage_export_bucket {
         name: &str,
         args: UsageExportBucketArgs,
     ) -> UsageExportBucketResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_name_binding = args.bucket_name.get_output(context);
         let prefix_binding = args.prefix.get_output(context);
         let project_binding = args.project.get_output(context);

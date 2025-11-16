@@ -236,8 +236,6 @@ pub mod bucket_v_2 {
         name: &str,
         args: BucketV2Args,
     ) -> BucketV2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let acceleration_status_binding = args.acceleration_status.get_output(context);
         let acl_binding = args.acl.get_output(context);
         let bucket_binding = args.bucket.get_output(context);

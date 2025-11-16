@@ -149,8 +149,6 @@ pub mod watcher {
         name: &str,
         args: WatcherArgs,
     ) -> WatcherResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automation_account_id_binding = args
             .automation_account_id
             .get_output(context);

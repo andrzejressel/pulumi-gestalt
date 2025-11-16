@@ -106,8 +106,6 @@ pub mod custom_data_identifier {
         name: &str,
         args: CustomDataIdentifierArgs,
     ) -> CustomDataIdentifierResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let ignore_words_binding = args.ignore_words.get_output(context);
         let keywords_binding = args.keywords.get_output(context);

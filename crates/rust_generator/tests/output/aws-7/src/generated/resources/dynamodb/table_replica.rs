@@ -112,8 +112,6 @@ pub mod table_replica {
         name: &str,
         args: TableReplicaArgs,
     ) -> TableReplicaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_protection_enabled_binding = args
             .deletion_protection_enabled
             .get_output(context);

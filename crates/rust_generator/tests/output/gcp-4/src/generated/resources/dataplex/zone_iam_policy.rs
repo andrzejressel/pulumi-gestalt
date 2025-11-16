@@ -257,8 +257,6 @@ pub mod zone_iam_policy {
         name: &str,
         args: ZoneIamPolicyArgs,
     ) -> ZoneIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dataplex_zone_binding = args.dataplex_zone.get_output(context);
         let lake_binding = args.lake.get_output(context);
         let location_binding = args.location.get_output(context);

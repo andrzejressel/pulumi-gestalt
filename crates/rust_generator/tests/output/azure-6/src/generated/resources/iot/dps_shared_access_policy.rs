@@ -128,8 +128,6 @@ pub mod dps_shared_access_policy {
         name: &str,
         args: DpsSharedAccessPolicyArgs,
     ) -> DpsSharedAccessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enrollment_read_binding = args.enrollment_read.get_output(context);
         let enrollment_write_binding = args.enrollment_write.get_output(context);
         let iothub_dps_name_binding = args.iothub_dps_name.get_output(context);

@@ -131,8 +131,6 @@ pub mod matchmaking_configuration {
         name: &str,
         args: MatchmakingConfigurationArgs,
     ) -> MatchmakingConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let acceptance_required_binding = args.acceptance_required.get_output(context);
         let acceptance_timeout_seconds_binding = args
             .acceptance_timeout_seconds

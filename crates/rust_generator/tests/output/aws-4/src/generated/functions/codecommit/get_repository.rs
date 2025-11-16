@@ -36,8 +36,6 @@ pub mod get_repository {
         context: &pulumi_gestalt_rust::Context,
         args: GetRepositoryArgs,
     ) -> GetRepositoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let repository_name_binding = args.repository_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:codecommit/getRepository:getRepository".into(),

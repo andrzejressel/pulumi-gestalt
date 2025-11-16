@@ -107,8 +107,6 @@ pub mod dataset_kusto_cluster {
         name: &str,
         args: DatasetKustoClusterArgs,
     ) -> DatasetKustoClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let kusto_cluster_id_binding = args.kusto_cluster_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let share_id_binding = args.share_id.get_output(context);

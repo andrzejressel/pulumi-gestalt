@@ -91,8 +91,6 @@ pub mod application_network_rule_set {
         name: &str,
         args: ApplicationNetworkRuleSetArgs,
     ) -> ApplicationNetworkRuleSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let apply_to_device_binding = args.apply_to_device.get_output(context);
         let default_action_binding = args.default_action.get_output(context);
         let iotcentral_application_id_binding = args

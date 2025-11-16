@@ -188,8 +188,6 @@ pub mod v_2_project_scc_big_query_export {
         name: &str,
         args: V2ProjectSccBigQueryExportArgs,
     ) -> V2ProjectSccBigQueryExportResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let big_query_export_id_binding = args.big_query_export_id.get_output(context);
         let dataset_binding = args.dataset.get_output(context);
         let description_binding = args.description.get_output(context);

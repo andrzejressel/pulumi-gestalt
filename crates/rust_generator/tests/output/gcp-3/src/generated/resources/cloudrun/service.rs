@@ -408,8 +408,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autogenerate_revision_name_binding = args
             .autogenerate_revision_name
             .get_output(context);

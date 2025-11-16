@@ -55,8 +55,6 @@ pub mod get_routing_profile {
         context: &pulumi_gestalt_rust::Context,
         args: GetRoutingProfileArgs,
     ) -> GetRoutingProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_id_binding = args.instance_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let routing_profile_id_binding = args.routing_profile_id.get_output(context);

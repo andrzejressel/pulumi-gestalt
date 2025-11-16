@@ -126,8 +126,6 @@ pub mod restore_testing_selection {
         name: &str,
         args: RestoreTestingSelectionArgs,
     ) -> RestoreTestingSelectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let iam_role_arn_binding = args.iam_role_arn.get_output(context);
         let name_binding = args.name.get_output(context);
         let protected_resource_arns_binding = args

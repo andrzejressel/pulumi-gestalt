@@ -48,8 +48,6 @@ pub mod get_function_url {
         context: &pulumi_gestalt_rust::Context,
         args: GetFunctionUrlArgs,
     ) -> GetFunctionUrlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let function_name_binding = args.function_name.get_output(context);
         let qualifier_binding = args.qualifier.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

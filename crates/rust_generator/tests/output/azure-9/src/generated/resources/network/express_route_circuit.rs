@@ -144,8 +144,6 @@ pub mod express_route_circuit {
         name: &str,
         args: ExpressRouteCircuitArgs,
     ) -> ExpressRouteCircuitResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_classic_operations_binding = args
             .allow_classic_operations
             .get_output(context);

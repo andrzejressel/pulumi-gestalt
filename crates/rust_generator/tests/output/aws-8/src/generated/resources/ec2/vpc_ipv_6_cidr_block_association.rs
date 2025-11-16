@@ -92,8 +92,6 @@ pub mod vpc_ipv_6_cidr_block_association {
         name: &str,
         args: VpcIpv6CidrBlockAssociationArgs,
     ) -> VpcIpv6CidrBlockAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assign_generated_ipv6_cidr_block_binding = args
             .assign_generated_ipv6_cidr_block
             .get_output(context);

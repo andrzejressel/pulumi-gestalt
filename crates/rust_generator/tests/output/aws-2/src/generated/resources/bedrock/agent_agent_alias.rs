@@ -163,8 +163,6 @@ pub mod agent_agent_alias {
         name: &str,
         args: AgentAgentAliasArgs,
     ) -> AgentAgentAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let agent_alias_name_binding = args.agent_alias_name.get_output(context);
         let agent_id_binding = args.agent_id.get_output(context);
         let description_binding = args.description.get_output(context);

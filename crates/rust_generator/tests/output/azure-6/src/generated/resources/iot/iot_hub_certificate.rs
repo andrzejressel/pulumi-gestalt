@@ -93,8 +93,6 @@ pub mod iot_hub_certificate {
         name: &str,
         args: IotHubCertificateArgs,
     ) -> IotHubCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_content_binding = args.certificate_content.get_output(context);
         let iot_dps_name_binding = args.iot_dps_name.get_output(context);
         let is_verified_binding = args.is_verified.get_output(context);

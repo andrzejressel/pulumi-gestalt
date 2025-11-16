@@ -646,8 +646,6 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_id_binding = args.instance_id.get_output(context);
         let kms_key_binding = args.kms_key.get_output(context);
         let labels_binding = args.labels.get_output(context);

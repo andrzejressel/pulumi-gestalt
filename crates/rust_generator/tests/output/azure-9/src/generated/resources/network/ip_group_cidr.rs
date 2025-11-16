@@ -82,8 +82,6 @@ pub mod ip_group_cidr {
         name: &str,
         args: IPGroupCIDRArgs,
     ) -> IPGroupCIDRResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_binding = args.cidr.get_output(context);
         let ip_group_id_binding = args.ip_group_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -188,8 +188,6 @@ pub mod feature {
         name: &str,
         args: FeatureArgs,
     ) -> FeatureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_variation_binding = args.default_variation.get_output(context);
         let description_binding = args.description.get_output(context);
         let entity_overrides_binding = args.entity_overrides.get_output(context);

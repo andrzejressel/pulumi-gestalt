@@ -134,8 +134,6 @@ pub mod configuration_set {
         name: &str,
         args: ConfigurationSetArgs,
     ) -> ConfigurationSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delivery_options_binding = args.delivery_options.get_output(context);
         let name_binding = args.name.get_output(context);
         let reputation_metrics_enabled_binding = args

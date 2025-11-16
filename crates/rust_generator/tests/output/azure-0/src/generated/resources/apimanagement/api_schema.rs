@@ -104,8 +104,6 @@ pub mod api_schema {
         name: &str,
         args: ApiSchemaArgs,
     ) -> ApiSchemaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_name_binding = args.api_management_name.get_output(context);
         let api_name_binding = args.api_name.get_output(context);
         let components_binding = args.components.get_output(context);

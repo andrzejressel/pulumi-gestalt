@@ -151,8 +151,6 @@ pub mod organization_sink {
         name: &str,
         args: OrganizationSinkArgs,
     ) -> OrganizationSinkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bigquery_options_binding = args.bigquery_options.get_output(context);
         let description_binding = args.description.get_output(context);
         let destination_binding = args.destination.get_output(context);

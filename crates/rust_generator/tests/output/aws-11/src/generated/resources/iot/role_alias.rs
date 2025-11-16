@@ -91,8 +91,6 @@ pub mod role_alias {
         name: &str,
         args: RoleAliasArgs,
     ) -> RoleAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_binding = args.alias.get_output(context);
         let credential_duration_binding = args.credential_duration.get_output(context);
         let role_arn_binding = args.role_arn.get_output(context);

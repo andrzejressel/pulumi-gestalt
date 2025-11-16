@@ -101,8 +101,6 @@ pub mod credential {
         name: &str,
         args: CredentialArgs,
     ) -> CredentialResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automation_account_name_binding = args
             .automation_account_name
             .get_output(context);

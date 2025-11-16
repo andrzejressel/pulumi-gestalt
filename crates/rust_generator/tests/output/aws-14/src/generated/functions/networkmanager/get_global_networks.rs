@@ -32,8 +32,6 @@ pub mod get_global_networks {
         context: &pulumi_gestalt_rust::Context,
         args: GetGlobalNetworksArgs,
     ) -> GetGlobalNetworksResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:networkmanager/getGlobalNetworks:getGlobalNetworks".into(),

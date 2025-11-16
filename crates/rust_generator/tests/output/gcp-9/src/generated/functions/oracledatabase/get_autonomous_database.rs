@@ -60,8 +60,6 @@ pub mod get_autonomous_database {
         context: &pulumi_gestalt_rust::Context,
         args: GetAutonomousDatabaseArgs,
     ) -> GetAutonomousDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autonomous_database_id_binding = args
             .autonomous_database_id
             .get_output(context);

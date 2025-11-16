@@ -319,8 +319,6 @@ pub mod ai_endpoint {
         name: &str,
         args: AiEndpointArgs,
     ) -> AiEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dedicated_endpoint_enabled_binding = args
             .dedicated_endpoint_enabled
             .get_output(context);

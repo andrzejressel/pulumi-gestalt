@@ -190,8 +190,6 @@ pub mod network_policy {
         name: &str,
         args: NetworkPolicyArgs,
     ) -> NetworkPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let edge_services_cidr_binding = args.edge_services_cidr.get_output(context);
         let external_ip_binding = args.external_ip.get_output(context);

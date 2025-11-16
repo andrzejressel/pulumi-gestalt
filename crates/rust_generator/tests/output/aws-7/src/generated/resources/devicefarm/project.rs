@@ -77,8 +77,6 @@ pub mod project {
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_job_timeout_minutes_binding = args
             .default_job_timeout_minutes
             .get_output(context);

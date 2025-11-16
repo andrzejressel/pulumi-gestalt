@@ -65,8 +65,6 @@ pub mod get_infrastructure_access_targets {
         context: &pulumi_gestalt_rust::Context,
         args: GetInfrastructureAccessTargetsArgs,
     ) -> GetInfrastructureAccessTargetsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let created_after_binding = args.created_after.get_output(context);
         let hostname_binding = args.hostname.get_output(context);

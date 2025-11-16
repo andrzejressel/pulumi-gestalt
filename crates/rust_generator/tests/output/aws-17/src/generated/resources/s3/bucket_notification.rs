@@ -412,8 +412,6 @@ pub mod bucket_notification {
         name: &str,
         args: BucketNotificationArgs,
     ) -> BucketNotificationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let eventbridge_binding = args.eventbridge.get_output(context);
         let lambda_functions_binding = args.lambda_functions.get_output(context);

@@ -81,8 +81,6 @@ pub mod get_host_pool_registration_info {
         name: &str,
         args: getHostPoolRegistrationInfoArgs,
     ) -> getHostPoolRegistrationInfoResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let expiration_date_binding = args.expiration_date.get_output(context);
         let hostpool_id_binding = args.hostpool_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

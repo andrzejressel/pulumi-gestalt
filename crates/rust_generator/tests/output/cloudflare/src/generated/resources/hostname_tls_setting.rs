@@ -73,8 +73,6 @@ pub mod hostname_tls_setting {
         name: &str,
         args: HostnameTlsSettingArgs,
     ) -> HostnameTlsSettingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hostname_binding = args.hostname.get_output(context);
         let setting_binding = args.setting.get_output(context);
         let value_binding = args.value.get_output(context);

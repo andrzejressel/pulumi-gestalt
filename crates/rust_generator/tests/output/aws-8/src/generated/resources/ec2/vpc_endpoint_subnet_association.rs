@@ -68,8 +68,6 @@ pub mod vpc_endpoint_subnet_association {
         name: &str,
         args: VpcEndpointSubnetAssociationArgs,
     ) -> VpcEndpointSubnetAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let subnet_id_binding = args.subnet_id.get_output(context);
         let vpc_endpoint_id_binding = args.vpc_endpoint_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

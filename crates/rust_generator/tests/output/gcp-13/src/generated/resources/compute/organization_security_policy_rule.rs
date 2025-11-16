@@ -161,8 +161,6 @@ pub mod organization_security_policy_rule {
         name: &str,
         args: OrganizationSecurityPolicyRuleArgs,
     ) -> OrganizationSecurityPolicyRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let direction_binding = args.direction.get_output(context);

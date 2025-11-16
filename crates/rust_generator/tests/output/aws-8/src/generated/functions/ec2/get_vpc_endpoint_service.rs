@@ -73,8 +73,6 @@ pub mod get_vpc_endpoint_service {
         context: &pulumi_gestalt_rust::Context,
         args: GetVpcEndpointServiceArgs,
     ) -> GetVpcEndpointServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let service_binding = args.service.get_output(context);
         let service_name_binding = args.service_name.get_output(context);

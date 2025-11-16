@@ -222,8 +222,6 @@ pub mod selection {
         name: &str,
         args: SelectionArgs,
     ) -> SelectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let conditions_binding = args.conditions.get_output(context);
         let iam_role_arn_binding = args.iam_role_arn.get_output(context);
         let name_binding = args.name.get_output(context);

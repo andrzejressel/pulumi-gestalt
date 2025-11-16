@@ -135,8 +135,6 @@ pub mod bgp_connection {
         name: &str,
         args: BgpConnectionArgs,
     ) -> BgpConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let peer_asn_binding = args.peer_asn.get_output(context);
         let peer_ip_binding = args.peer_ip.get_output(context);

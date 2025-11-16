@@ -113,8 +113,6 @@ pub mod data_connector_office_365 {
         name: &str,
         args: DataConnectorOffice365Args,
     ) -> DataConnectorOffice365Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let exchange_enabled_binding = args.exchange_enabled.get_output(context);
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id

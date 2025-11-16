@@ -560,8 +560,6 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ami_binding = args.ami.get_output(context);
         let associate_public_ip_address_binding = args
             .associate_public_ip_address

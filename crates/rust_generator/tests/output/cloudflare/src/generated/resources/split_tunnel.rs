@@ -57,8 +57,6 @@ pub mod split_tunnel {
         name: &str,
         args: SplitTunnelArgs,
     ) -> SplitTunnelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let mode_binding = args.mode.get_output(context);
         let policy_id_binding = args.policy_id.get_output(context);

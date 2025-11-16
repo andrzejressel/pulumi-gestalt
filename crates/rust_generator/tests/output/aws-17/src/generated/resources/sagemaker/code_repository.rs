@@ -115,8 +115,6 @@ pub mod code_repository {
         name: &str,
         args: CodeRepositoryArgs,
     ) -> CodeRepositoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let code_repository_name_binding = args.code_repository_name.get_output(context);
         let git_config_binding = args.git_config.get_output(context);
         let tags_binding = args.tags.get_output(context);

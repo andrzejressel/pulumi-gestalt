@@ -119,8 +119,6 @@ pub mod network_interface_security_group_attachment {
         name: &str,
         args: NetworkInterfaceSecurityGroupAttachmentArgs,
     ) -> NetworkInterfaceSecurityGroupAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let network_interface_id_binding = args.network_interface_id.get_output(context);
         let security_group_id_binding = args.security_group_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

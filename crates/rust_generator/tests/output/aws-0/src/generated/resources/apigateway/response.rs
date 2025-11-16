@@ -86,8 +86,6 @@ pub mod response {
         name: &str,
         args: ResponseArgs,
     ) -> ResponseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let response_parameters_binding = args.response_parameters.get_output(context);
         let response_templates_binding = args.response_templates.get_output(context);
         let response_type_binding = args.response_type.get_output(context);

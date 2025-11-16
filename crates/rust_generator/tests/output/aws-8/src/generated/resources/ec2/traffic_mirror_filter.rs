@@ -78,8 +78,6 @@ pub mod traffic_mirror_filter {
         name: &str,
         args: TrafficMirrorFilterArgs,
     ) -> TrafficMirrorFilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let network_services_binding = args.network_services.get_output(context);
         let tags_binding = args.tags.get_output(context);

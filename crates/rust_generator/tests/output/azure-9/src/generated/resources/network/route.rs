@@ -103,8 +103,6 @@ pub mod route {
         name: &str,
         args: RouteArgs,
     ) -> RouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_prefix_binding = args.address_prefix.get_output(context);
         let name_binding = args.name.get_output(context);
         let next_hop_in_ip_address_binding = args

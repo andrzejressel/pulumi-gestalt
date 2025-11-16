@@ -124,8 +124,6 @@ pub mod proxy_target {
         name: &str,
         args: ProxyTargetArgs,
     ) -> ProxyTargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let db_cluster_identifier_binding = args
             .db_cluster_identifier
             .get_output(context);

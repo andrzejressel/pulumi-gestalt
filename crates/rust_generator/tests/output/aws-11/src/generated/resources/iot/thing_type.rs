@@ -81,8 +81,6 @@ pub mod thing_type {
         name: &str,
         args: ThingTypeArgs,
     ) -> ThingTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deprecated_binding = args.deprecated.get_output(context);
         let name_binding = args.name.get_output(context);
         let properties_binding = args.properties.get_output(context);

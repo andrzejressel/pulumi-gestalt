@@ -181,8 +181,6 @@ pub mod configuration {
         name: &str,
         args: ConfigurationArgs,
     ) -> ConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let antimalware_binding = args.antimalware.get_output(context);
         let automation_account_enabled_binding = args
             .automation_account_enabled

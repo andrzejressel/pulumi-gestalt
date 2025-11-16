@@ -102,8 +102,6 @@ pub mod finding_aggregator {
         name: &str,
         args: FindingAggregatorArgs,
     ) -> FindingAggregatorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let linking_mode_binding = args.linking_mode.get_output(context);
         let specified_regions_binding = args.specified_regions.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

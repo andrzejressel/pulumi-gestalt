@@ -101,8 +101,6 @@ pub mod nfs_location {
         name: &str,
         args: NfsLocationArgs,
     ) -> NfsLocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mount_options_binding = args.mount_options.get_output(context);
         let on_prem_config_binding = args.on_prem_config.get_output(context);
         let server_hostname_binding = args.server_hostname.get_output(context);

@@ -116,8 +116,6 @@ pub mod mail_from {
         name: &str,
         args: MailFromArgs,
     ) -> MailFromResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let behavior_on_mx_failure_binding = args
             .behavior_on_mx_failure
             .get_output(context);

@@ -239,8 +239,6 @@ pub mod policy {
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dry_run_spec_binding = args.dry_run_spec.get_output(context);
         let name_binding = args.name.get_output(context);
         let parent_binding = args.parent.get_output(context);

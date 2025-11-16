@@ -173,8 +173,6 @@ pub mod template {
         name: &str,
         args: TemplateArgs,
     ) -> TemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let permissions_binding = args.permissions.get_output(context);

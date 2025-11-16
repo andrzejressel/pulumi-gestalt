@@ -42,8 +42,6 @@ pub mod get_distribution_configurations {
         context: &pulumi_gestalt_rust::Context,
         args: GetDistributionConfigurationsArgs,
     ) -> GetDistributionConfigurationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:imagebuilder/getDistributionConfigurations:getDistributionConfigurations"

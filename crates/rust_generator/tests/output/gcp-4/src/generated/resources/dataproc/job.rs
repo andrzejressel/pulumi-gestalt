@@ -225,8 +225,6 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let force_delete_binding = args.force_delete.get_output(context);
         let hadoop_config_binding = args.hadoop_config.get_output(context);
         let hive_config_binding = args.hive_config.get_output(context);

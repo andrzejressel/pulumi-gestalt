@@ -140,8 +140,6 @@ pub mod layer_version {
         name: &str,
         args: LayerVersionArgs,
     ) -> LayerVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let code_binding = args.code.get_output(context);
         let compatible_architectures_binding = args
             .compatible_architectures

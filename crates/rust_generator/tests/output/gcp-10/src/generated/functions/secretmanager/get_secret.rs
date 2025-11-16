@@ -62,8 +62,6 @@ pub mod get_secret {
         context: &pulumi_gestalt_rust::Context,
         args: GetSecretArgs,
     ) -> GetSecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let secret_id_binding = args.secret_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

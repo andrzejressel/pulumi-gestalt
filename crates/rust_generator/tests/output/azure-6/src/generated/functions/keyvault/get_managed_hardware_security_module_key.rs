@@ -48,8 +48,6 @@ pub mod get_managed_hardware_security_module_key {
         context: &pulumi_gestalt_rust::Context,
         args: GetManagedHardwareSecurityModuleKeyArgs,
     ) -> GetManagedHardwareSecurityModuleKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let managed_hsm_id_binding = args.managed_hsm_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

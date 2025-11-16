@@ -97,8 +97,6 @@ pub mod get_principal_policy_simulation {
         context: &pulumi_gestalt_rust::Context,
         args: GetPrincipalPolicySimulationArgs,
     ) -> GetPrincipalPolicySimulationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_names_binding = args.action_names.get_output(context);
         let additional_policies_jsons_binding = args
             .additional_policies_jsons

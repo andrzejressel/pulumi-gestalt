@@ -141,8 +141,6 @@ pub mod static_web_app_custom_domain {
         name: &str,
         args: StaticWebAppCustomDomainArgs,
     ) -> StaticWebAppCustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let static_web_app_id_binding = args.static_web_app_id.get_output(context);
         let validation_type_binding = args.validation_type.get_output(context);

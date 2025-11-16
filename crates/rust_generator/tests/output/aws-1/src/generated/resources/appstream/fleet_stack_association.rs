@@ -75,8 +75,6 @@ pub mod fleet_stack_association {
         name: &str,
         args: FleetStackAssociationArgs,
     ) -> FleetStackAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let fleet_name_binding = args.fleet_name.get_output(context);
         let stack_name_binding = args.stack_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

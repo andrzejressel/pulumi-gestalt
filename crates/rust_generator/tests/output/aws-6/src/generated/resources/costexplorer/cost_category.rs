@@ -128,8 +128,6 @@ pub mod cost_category {
         name: &str,
         args: CostCategoryArgs,
     ) -> CostCategoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_value_binding = args.default_value.get_output(context);
         let effective_start_binding = args.effective_start.get_output(context);
         let name_binding = args.name.get_output(context);

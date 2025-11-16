@@ -134,8 +134,6 @@ pub mod file_upload {
         name: &str,
         args: FileUploadArgs,
     ) -> FileUploadResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_type_binding = args.authentication_type.get_output(context);
         let connection_string_binding = args.connection_string.get_output(context);
         let container_name_binding = args.container_name.get_output(context);

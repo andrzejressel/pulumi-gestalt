@@ -200,8 +200,6 @@ pub mod spark_pool {
         name: &str,
         args: SparkPoolArgs,
     ) -> SparkPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_pause_binding = args.auto_pause.get_output(context);
         let auto_scale_binding = args.auto_scale.get_output(context);
         let cache_size_binding = args.cache_size.get_output(context);

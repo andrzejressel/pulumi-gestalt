@@ -101,8 +101,6 @@ pub mod channel_sms {
         name: &str,
         args: ChannelSmsArgs,
     ) -> ChannelSmsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bot_name_binding = args.bot_name.get_output(context);
         let location_binding = args.location.get_output(context);
         let phone_number_binding = args.phone_number.get_output(context);

@@ -80,8 +80,6 @@ pub mod package_association {
         name: &str,
         args: PackageAssociationArgs,
     ) -> PackageAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_name_binding = args.domain_name.get_output(context);
         let package_id_binding = args.package_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -156,8 +156,6 @@ pub mod namespace {
         name: &str,
         args: NamespaceArgs,
     ) -> NamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capacity_binding = args.capacity.get_output(context);
         let customer_managed_key_binding = args.customer_managed_key.get_output(context);
         let identity_binding = args.identity.get_output(context);

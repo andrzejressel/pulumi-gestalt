@@ -84,8 +84,6 @@ pub mod vpc_ipam_preview_next_cidr {
         name: &str,
         args: VpcIpamPreviewNextCidrArgs,
     ) -> VpcIpamPreviewNextCidrResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disallowed_cidrs_binding = args.disallowed_cidrs.get_output(context);
         let ipam_pool_id_binding = args.ipam_pool_id.get_output(context);
         let netmask_length_binding = args.netmask_length.get_output(context);

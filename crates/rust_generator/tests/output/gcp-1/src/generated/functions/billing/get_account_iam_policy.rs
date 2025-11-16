@@ -30,8 +30,6 @@ pub mod get_account_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccountIamPolicyArgs,
     ) -> GetAccountIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let billing_account_id_binding = args.billing_account_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:billing/getAccountIamPolicy:getAccountIamPolicy".into(),

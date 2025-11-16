@@ -31,8 +31,6 @@ pub mod get_hosted_zone_id {
         context: &pulumi_gestalt_rust::Context,
         args: GetHostedZoneIdArgs,
     ) -> GetHostedZoneIdResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let load_balancer_type_binding = args.load_balancer_type.get_output(context);
         let region_binding = args.region.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

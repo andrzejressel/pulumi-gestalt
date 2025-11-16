@@ -70,8 +70,6 @@ pub mod zone_hold {
         name: &str,
         args: ZoneHoldArgs,
     ) -> ZoneHoldResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hold_binding = args.hold.get_output(context);
         let hold_after_binding = args.hold_after.get_output(context);
         let include_subdomains_binding = args.include_subdomains.get_output(context);

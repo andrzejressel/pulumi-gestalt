@@ -250,8 +250,6 @@ pub mod domain_name {
         name: &str,
         args: DomainNameArgs,
     ) -> DomainNameResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let certificate_body_binding = args.certificate_body.get_output(context);
         let certificate_chain_binding = args.certificate_chain.get_output(context);

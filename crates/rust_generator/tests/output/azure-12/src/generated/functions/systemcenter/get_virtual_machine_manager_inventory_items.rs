@@ -40,8 +40,6 @@ pub mod get_virtual_machine_manager_inventory_items {
         context: &pulumi_gestalt_rust::Context,
         args: GetVirtualMachineManagerInventoryItemsArgs,
     ) -> GetVirtualMachineManagerInventoryItemsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let inventory_type_binding = args.inventory_type.get_output(context);
         let system_center_virtual_machine_manager_server_id_binding = args
             .system_center_virtual_machine_manager_server_id

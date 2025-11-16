@@ -240,8 +240,6 @@ pub mod cluster_iam_binding {
         name: &str,
         args: ClusterIAMBindingArgs,
     ) -> ClusterIAMBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_binding = args.cluster.get_output(context);
         let condition_binding = args.condition.get_output(context);
         let members_binding = args.members.get_output(context);

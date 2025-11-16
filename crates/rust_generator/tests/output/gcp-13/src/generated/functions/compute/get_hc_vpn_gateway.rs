@@ -47,8 +47,6 @@ pub mod get_hc_vpn_gateway {
         context: &pulumi_gestalt_rust::Context,
         args: GetHcVpnGatewayArgs,
     ) -> GetHcVpnGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
         let region_binding = args.region.get_output(context);

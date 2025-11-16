@@ -210,8 +210,6 @@ pub mod postgresql_cluster {
         name: &str,
         args: PostgresqlClusterArgs,
     ) -> PostgresqlClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let administrator_login_password_binding = args
             .administrator_login_password
             .get_output(context);

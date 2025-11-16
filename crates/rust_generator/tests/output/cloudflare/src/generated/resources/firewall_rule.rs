@@ -108,8 +108,6 @@ pub mod firewall_rule {
         name: &str,
         args: FirewallRuleArgs,
     ) -> FirewallRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let filter_id_binding = args.filter_id.get_output(context);

@@ -76,8 +76,6 @@ pub mod principal_portfolio_association {
         name: &str,
         args: PrincipalPortfolioAssociationArgs,
     ) -> PrincipalPortfolioAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accept_language_binding = args.accept_language.get_output(context);
         let portfolio_id_binding = args.portfolio_id.get_output(context);
         let principal_arn_binding = args.principal_arn.get_output(context);

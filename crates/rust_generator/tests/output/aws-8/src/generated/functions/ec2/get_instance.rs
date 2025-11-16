@@ -164,8 +164,6 @@ pub mod get_instance {
         context: &pulumi_gestalt_rust::Context,
         args: GetInstanceArgs,
     ) -> GetInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let get_password_data_binding = args.get_password_data.get_output(context);
         let get_user_data_binding = args.get_user_data.get_output(context);

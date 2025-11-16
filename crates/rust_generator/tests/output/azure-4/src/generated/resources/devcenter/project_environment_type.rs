@@ -150,8 +150,6 @@ pub mod project_environment_type {
         name: &str,
         args: ProjectEnvironmentTypeArgs,
     ) -> ProjectEnvironmentTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let creator_role_assignment_roles_binding = args
             .creator_role_assignment_roles
             .get_output(context);

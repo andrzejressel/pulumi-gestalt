@@ -66,8 +66,6 @@ pub mod log_stream {
         name: &str,
         args: LogStreamArgs,
     ) -> LogStreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_group_name_binding = args.log_group_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

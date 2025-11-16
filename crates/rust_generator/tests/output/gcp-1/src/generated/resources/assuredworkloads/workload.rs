@@ -275,8 +275,6 @@ pub mod workload {
         name: &str,
         args: WorkloadArgs,
     ) -> WorkloadResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let billing_account_binding = args.billing_account.get_output(context);
         let compliance_regime_binding = args.compliance_regime.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

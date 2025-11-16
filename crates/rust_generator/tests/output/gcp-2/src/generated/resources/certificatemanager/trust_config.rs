@@ -210,8 +210,6 @@ pub mod trust_config {
         name: &str,
         args: TrustConfigArgs,
     ) -> TrustConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowlisted_certificates_binding = args
             .allowlisted_certificates
             .get_output(context);

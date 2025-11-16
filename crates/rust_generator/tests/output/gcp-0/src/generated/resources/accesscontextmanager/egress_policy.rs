@@ -59,8 +59,6 @@ pub mod egress_policy {
         name: &str,
         args: EgressPolicyArgs,
     ) -> EgressPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let egress_policy_name_binding = args.egress_policy_name.get_output(context);
         let resource_binding = args.resource.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

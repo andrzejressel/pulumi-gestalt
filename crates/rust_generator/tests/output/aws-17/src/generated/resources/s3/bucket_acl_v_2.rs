@@ -205,8 +205,6 @@ pub mod bucket_acl_v_2 {
         name: &str,
         args: BucketAclV2Args,
     ) -> BucketAclV2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_control_policy_binding = args
             .access_control_policy
             .get_output(context);

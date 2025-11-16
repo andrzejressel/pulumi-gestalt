@@ -39,8 +39,6 @@ pub mod get_state_machine {
         context: &pulumi_gestalt_rust::Context,
         args: GetStateMachineArgs,
     ) -> GetStateMachineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:sfn/getStateMachine:getStateMachine".into(),

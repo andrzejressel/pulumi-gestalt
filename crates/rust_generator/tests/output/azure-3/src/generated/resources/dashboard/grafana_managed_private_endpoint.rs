@@ -123,8 +123,6 @@ pub mod grafana_managed_private_endpoint {
         name: &str,
         args: GrafanaManagedPrivateEndpointArgs,
     ) -> GrafanaManagedPrivateEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let grafana_id_binding = args.grafana_id.get_output(context);
         let group_ids_binding = args.group_ids.get_output(context);
         let location_binding = args.location.get_output(context);

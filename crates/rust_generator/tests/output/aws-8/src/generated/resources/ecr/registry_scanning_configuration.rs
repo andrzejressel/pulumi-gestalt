@@ -103,8 +103,6 @@ pub mod registry_scanning_configuration {
         name: &str,
         args: RegistryScanningConfigurationArgs,
     ) -> RegistryScanningConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let rules_binding = args.rules.get_output(context);
         let scan_type_binding = args.scan_type.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

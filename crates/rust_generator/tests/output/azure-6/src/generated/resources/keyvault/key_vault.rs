@@ -205,8 +205,6 @@ pub mod key_vault {
         name: &str,
         args: KeyVaultArgs,
     ) -> KeyVaultResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_policies_binding = args.access_policies.get_output(context);
         let contacts_binding = args.contacts.get_output(context);
         let enable_rbac_authorization_binding = args

@@ -209,8 +209,6 @@ pub mod stack_set {
         name: &str,
         args: StackSetArgs,
     ) -> StackSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let administration_role_arn_binding = args
             .administration_role_arn
             .get_output(context);

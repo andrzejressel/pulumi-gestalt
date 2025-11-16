@@ -32,8 +32,6 @@ pub mod get_organizational_unit {
         context: &pulumi_gestalt_rust::Context,
         args: GetOrganizationalUnitArgs,
     ) -> GetOrganizationalUnitResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let parent_id_binding = args.parent_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

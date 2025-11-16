@@ -140,8 +140,6 @@ pub mod maintenance_window_target {
         name: &str,
         args: MaintenanceWindowTargetArgs,
     ) -> MaintenanceWindowTargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let owner_information_binding = args.owner_information.get_output(context);

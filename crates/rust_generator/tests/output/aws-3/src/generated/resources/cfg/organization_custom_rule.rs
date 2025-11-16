@@ -134,8 +134,6 @@ pub mod organization_custom_rule {
         name: &str,
         args: OrganizationCustomRuleArgs,
     ) -> OrganizationCustomRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let excluded_accounts_binding = args.excluded_accounts.get_output(context);
         let input_parameters_binding = args.input_parameters.get_output(context);

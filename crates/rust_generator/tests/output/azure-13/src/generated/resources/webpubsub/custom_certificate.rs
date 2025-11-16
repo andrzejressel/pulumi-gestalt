@@ -138,8 +138,6 @@ pub mod custom_certificate {
         name: &str,
         args: CustomCertificateArgs,
     ) -> CustomCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_certificate_id_binding = args
             .custom_certificate_id
             .get_output(context);

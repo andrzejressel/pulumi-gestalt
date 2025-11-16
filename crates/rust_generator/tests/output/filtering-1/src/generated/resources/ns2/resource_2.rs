@@ -36,8 +36,6 @@ pub mod resource_2 {
         name: &str,
         args: Resource2Args,
     ) -> Resource2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let common_type_binding = args.common_type.get_output(context);
         let type2_binding = args.type2.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

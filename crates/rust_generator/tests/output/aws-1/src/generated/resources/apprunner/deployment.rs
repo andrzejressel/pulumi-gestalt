@@ -57,8 +57,6 @@ pub mod deployment {
         name: &str,
         args: DeploymentArgs,
     ) -> DeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let service_arn_binding = args.service_arn.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

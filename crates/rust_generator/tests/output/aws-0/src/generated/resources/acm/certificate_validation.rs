@@ -77,8 +77,6 @@ pub mod certificate_validation {
         name: &str,
         args: CertificateValidationArgs,
     ) -> CertificateValidationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let validation_record_fqdns_binding = args
             .validation_record_fqdns

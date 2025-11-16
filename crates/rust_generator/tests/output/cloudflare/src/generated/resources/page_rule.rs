@@ -88,8 +88,6 @@ pub mod page_rule {
         name: &str,
         args: PageRuleArgs,
     ) -> PageRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let priority_binding = args.priority.get_output(context);
         let status_binding = args.status.get_output(context);

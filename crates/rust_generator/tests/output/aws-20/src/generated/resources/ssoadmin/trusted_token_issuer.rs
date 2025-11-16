@@ -111,8 +111,6 @@ pub mod trusted_token_issuer {
         name: &str,
         args: TrustedTokenIssuerArgs,
     ) -> TrustedTokenIssuerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_token_binding = args.client_token.get_output(context);
         let instance_arn_binding = args.instance_arn.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -269,8 +269,6 @@ pub mod node_group {
         name: &str,
         args: NodeGroupArgs,
     ) -> NodeGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autoscaling_policy_binding = args.autoscaling_policy.get_output(context);
         let description_binding = args.description.get_output(context);
         let initial_size_binding = args.initial_size.get_output(context);

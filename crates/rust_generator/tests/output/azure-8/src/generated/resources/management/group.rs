@@ -90,8 +90,6 @@ pub mod group {
         name: &str,
         args: GroupArgs,
     ) -> GroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let parent_management_group_id_binding = args

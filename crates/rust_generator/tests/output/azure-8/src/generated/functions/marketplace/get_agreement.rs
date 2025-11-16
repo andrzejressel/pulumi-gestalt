@@ -36,8 +36,6 @@ pub mod get_agreement {
         context: &pulumi_gestalt_rust::Context,
         args: GetAgreementArgs,
     ) -> GetAgreementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let offer_binding = args.offer.get_output(context);
         let plan_binding = args.plan.get_output(context);
         let publisher_binding = args.publisher.get_output(context);

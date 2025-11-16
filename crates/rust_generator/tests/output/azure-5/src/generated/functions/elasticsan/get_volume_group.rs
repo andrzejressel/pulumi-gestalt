@@ -46,8 +46,6 @@ pub mod get_volume_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetVolumeGroupArgs,
     ) -> GetVolumeGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let elastic_san_id_binding = args.elastic_san_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -131,8 +131,6 @@ pub mod managed_database {
         name: &str,
         args: ManagedDatabaseArgs,
     ) -> ManagedDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let long_term_retention_policy_binding = args
             .long_term_retention_policy
             .get_output(context);

@@ -201,8 +201,6 @@ pub mod certificate_map_entry {
         name: &str,
         args: CertificateMapEntryArgs,
     ) -> CertificateMapEntryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificates_binding = args.certificates.get_output(context);
         let description_binding = args.description.get_output(context);
         let hostname_binding = args.hostname.get_output(context);

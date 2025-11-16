@@ -90,8 +90,6 @@ pub mod capacity_provider {
         name: &str,
         args: CapacityProviderArgs,
     ) -> CapacityProviderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_scaling_group_provider_binding = args
             .auto_scaling_group_provider
             .get_output(context);

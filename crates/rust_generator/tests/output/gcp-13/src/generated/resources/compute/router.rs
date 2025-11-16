@@ -190,8 +190,6 @@ pub mod router {
         name: &str,
         args: RouterArgs,
     ) -> RouterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bgp_binding = args.bgp.get_output(context);
         let description_binding = args.description.get_output(context);
         let encrypted_interconnect_router_binding = args

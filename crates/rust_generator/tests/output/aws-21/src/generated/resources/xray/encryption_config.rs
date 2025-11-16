@@ -99,8 +99,6 @@ pub mod encryption_config {
         name: &str,
         args: EncryptionConfigArgs,
     ) -> EncryptionConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_id_binding = args.key_id.get_output(context);
         let type__binding = args.type_.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

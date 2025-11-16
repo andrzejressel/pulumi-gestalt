@@ -124,8 +124,6 @@ pub mod project_cloud_armor_tier {
         name: &str,
         args: ProjectCloudArmorTierArgs,
     ) -> ProjectCloudArmorTierResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloud_armor_tier_binding = args.cloud_armor_tier.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

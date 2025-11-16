@@ -373,8 +373,6 @@ pub mod project {
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let artifacts_binding = args.artifacts.get_output(context);
         let badge_enabled_binding = args.badge_enabled.get_output(context);
         let build_batch_config_binding = args.build_batch_config.get_output(context);

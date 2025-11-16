@@ -52,8 +52,6 @@ pub mod get_resource_collection {
         context: &pulumi_gestalt_rust::Context,
         args: GetResourceCollectionArgs,
     ) -> GetResourceCollectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloudformations_binding = args.cloudformations.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let type__binding = args.type_.get_output(context);

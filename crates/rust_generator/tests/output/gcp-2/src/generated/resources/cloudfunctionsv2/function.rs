@@ -1018,8 +1018,6 @@ pub mod function {
         name: &str,
         args: FunctionArgs,
     ) -> FunctionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let build_config_binding = args.build_config.get_output(context);
         let description_binding = args.description.get_output(context);
         let event_trigger_binding = args.event_trigger.get_output(context);

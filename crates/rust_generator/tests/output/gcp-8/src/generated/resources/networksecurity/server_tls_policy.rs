@@ -254,8 +254,6 @@ pub mod server_tls_policy {
         name: &str,
         args: ServerTlsPolicyArgs,
     ) -> ServerTlsPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_open_binding = args.allow_open.get_output(context);
         let description_binding = args.description.get_output(context);
         let labels_binding = args.labels.get_output(context);

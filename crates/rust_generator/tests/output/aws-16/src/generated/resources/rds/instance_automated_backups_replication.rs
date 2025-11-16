@@ -132,8 +132,6 @@ pub mod instance_automated_backups_replication {
         name: &str,
         args: InstanceAutomatedBackupsReplicationArgs,
     ) -> InstanceAutomatedBackupsReplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let kms_key_id_binding = args.kms_key_id.get_output(context);
         let pre_signed_url_binding = args.pre_signed_url.get_output(context);
         let retention_period_binding = args.retention_period.get_output(context);

@@ -205,8 +205,6 @@ pub mod workflow {
         name: &str,
         args: WorkflowArgs,
     ) -> WorkflowResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let call_log_level_binding = args.call_log_level.get_output(context);
         let crypto_key_name_binding = args.crypto_key_name.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);

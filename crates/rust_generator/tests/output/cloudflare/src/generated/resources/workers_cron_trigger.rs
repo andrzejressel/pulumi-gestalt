@@ -77,8 +77,6 @@ pub mod workers_cron_trigger {
         name: &str,
         args: WorkersCronTriggerArgs,
     ) -> WorkersCronTriggerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let schedules_binding = args.schedules.get_output(context);
         let script_name_binding = args.script_name.get_output(context);

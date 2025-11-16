@@ -205,8 +205,6 @@ pub mod vpn_connection {
         name: &str,
         args: VpnConnectionArgs,
     ) -> VpnConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_binding = args.cluster.get_output(context);
         let enable_high_availability_binding = args
             .enable_high_availability

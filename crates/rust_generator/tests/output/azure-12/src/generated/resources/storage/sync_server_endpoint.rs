@@ -159,8 +159,6 @@ pub mod sync_server_endpoint {
         name: &str,
         args: SyncServerEndpointArgs,
     ) -> SyncServerEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloud_tiering_enabled_binding = args
             .cloud_tiering_enabled
             .get_output(context);

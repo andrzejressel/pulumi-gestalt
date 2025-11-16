@@ -44,8 +44,6 @@ pub mod get_runtime_version {
         context: &pulumi_gestalt_rust::Context,
         args: GetRuntimeVersionArgs,
     ) -> GetRuntimeVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let latest_binding = args.latest.get_output(context);
         let prefix_binding = args.prefix.get_output(context);
         let version_binding = args.version.get_output(context);

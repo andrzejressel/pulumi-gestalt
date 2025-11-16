@@ -89,8 +89,6 @@ pub mod peered_dns_domain {
         name: &str,
         args: PeeredDnsDomainArgs,
     ) -> PeeredDnsDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dns_suffix_binding = args.dns_suffix.get_output(context);
         let name_binding = args.name.get_output(context);
         let network_binding = args.network.get_output(context);

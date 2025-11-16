@@ -126,8 +126,6 @@ pub mod folder_notification_config {
         name: &str,
         args: FolderNotificationConfigArgs,
     ) -> FolderNotificationConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_id_binding = args.config_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let folder_binding = args.folder.get_output(context);

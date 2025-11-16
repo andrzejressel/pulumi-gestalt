@@ -102,8 +102,6 @@ pub mod portfolio_share {
         name: &str,
         args: PortfolioShareArgs,
     ) -> PortfolioShareResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accept_language_binding = args.accept_language.get_output(context);
         let portfolio_id_binding = args.portfolio_id.get_output(context);
         let principal_id_binding = args.principal_id.get_output(context);

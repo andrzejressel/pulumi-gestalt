@@ -137,8 +137,6 @@ pub mod scheduled_query_rules_alert {
         name: &str,
         args: ScheduledQueryRulesAlertArgs,
     ) -> ScheduledQueryRulesAlertResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let authorized_resource_ids_binding = args
             .authorized_resource_ids

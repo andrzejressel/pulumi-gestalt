@@ -168,8 +168,6 @@ pub mod snapshot_policy {
         name: &str,
         args: SnapshotPolicyArgs,
     ) -> SnapshotPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let daily_schedule_binding = args.daily_schedule.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

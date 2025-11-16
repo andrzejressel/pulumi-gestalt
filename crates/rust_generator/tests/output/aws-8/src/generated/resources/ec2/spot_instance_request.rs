@@ -460,8 +460,6 @@ pub mod spot_instance_request {
         name: &str,
         args: SpotInstanceRequestArgs,
     ) -> SpotInstanceRequestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ami_binding = args.ami.get_output(context);
         let associate_public_ip_address_binding = args
             .associate_public_ip_address

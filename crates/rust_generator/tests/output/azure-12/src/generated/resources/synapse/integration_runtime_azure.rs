@@ -130,8 +130,6 @@ pub mod integration_runtime_azure {
         name: &str,
         args: IntegrationRuntimeAzureArgs,
     ) -> IntegrationRuntimeAzureResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let compute_type_binding = args.compute_type.get_output(context);
         let core_count_binding = args.core_count.get_output(context);
         let description_binding = args.description.get_output(context);

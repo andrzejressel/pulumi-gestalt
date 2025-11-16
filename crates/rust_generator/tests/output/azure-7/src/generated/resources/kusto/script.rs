@@ -153,8 +153,6 @@ pub mod script {
         name: &str,
         args: ScriptArgs,
     ) -> ScriptResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let continue_on_errors_enabled_binding = args
             .continue_on_errors_enabled
             .get_output(context);

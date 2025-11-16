@@ -47,8 +47,6 @@ pub mod get_integration_runtime_object_metadatum {
         context: &pulumi_gestalt_rust::Context,
         args: GetIntegrationRuntimeObjectMetadatumArgs,
     ) -> GetIntegrationRuntimeObjectMetadatumResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let factory_name_binding = args.factory_name.get_output(context);
         let integration_runtime_name_binding = args
             .integration_runtime_name

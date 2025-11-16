@@ -442,8 +442,6 @@ pub mod virtual_network_gateway_connection {
         name: &str,
         args: VirtualNetworkGatewayConnectionArgs,
     ) -> VirtualNetworkGatewayConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorization_key_binding = args.authorization_key.get_output(context);
         let connection_mode_binding = args.connection_mode.get_output(context);
         let connection_protocol_binding = args.connection_protocol.get_output(context);

@@ -154,8 +154,6 @@ pub mod share {
         name: &str,
         args: ShareArgs,
     ) -> ShareResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_tier_binding = args.access_tier.get_output(context);
         let acls_binding = args.acls.get_output(context);
         let enabled_protocol_binding = args.enabled_protocol.get_output(context);

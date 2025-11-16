@@ -81,8 +81,6 @@ pub mod bucket {
         name: &str,
         args: BucketArgs,
     ) -> BucketResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let outpost_id_binding = args.outpost_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

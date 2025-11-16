@@ -152,8 +152,6 @@ pub mod budget_subscription {
         name: &str,
         args: BudgetSubscriptionArgs,
     ) -> BudgetSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let amount_binding = args.amount.get_output(context);
         let etag_binding = args.etag.get_output(context);
         let filter_binding = args.filter.get_output(context);

@@ -57,8 +57,6 @@ pub mod get_server {
         context: &pulumi_gestalt_rust::Context,
         args: GetServerArgs,
     ) -> GetServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let server_id_binding = args.server_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

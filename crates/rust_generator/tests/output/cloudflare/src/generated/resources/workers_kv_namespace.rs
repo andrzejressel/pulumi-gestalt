@@ -59,8 +59,6 @@ pub mod workers_kv_namespace {
         name: &str,
         args: WorkersKvNamespaceArgs,
     ) -> WorkersKvNamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let title_binding = args.title.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

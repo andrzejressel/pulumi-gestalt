@@ -95,8 +95,6 @@ pub mod ssl_cert {
         name: &str,
         args: SslCertArgs,
     ) -> SslCertResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let common_name_binding = args.common_name.get_output(context);
         let instance_binding = args.instance.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -122,8 +122,6 @@ pub mod backup_policy {
         name: &str,
         args: BackupPolicyArgs,
     ) -> BackupPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let daily_backups_to_keep_binding = args
             .daily_backups_to_keep

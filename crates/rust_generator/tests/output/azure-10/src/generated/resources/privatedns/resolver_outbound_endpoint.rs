@@ -116,8 +116,6 @@ pub mod resolver_outbound_endpoint {
         name: &str,
         args: ResolverOutboundEndpointArgs,
     ) -> ResolverOutboundEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let private_dns_resolver_id_binding = args

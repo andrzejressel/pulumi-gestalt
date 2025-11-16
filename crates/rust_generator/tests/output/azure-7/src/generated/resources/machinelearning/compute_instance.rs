@@ -203,8 +203,6 @@ pub mod compute_instance {
         name: &str,
         args: ComputeInstanceArgs,
     ) -> ComputeInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assign_to_user_binding = args.assign_to_user.get_output(context);
         let authorization_type_binding = args.authorization_type.get_output(context);
         let description_binding = args.description.get_output(context);

@@ -28,8 +28,6 @@ pub mod get_node_groups {
         context: &pulumi_gestalt_rust::Context,
         args: GetNodeGroupsArgs,
     ) -> GetNodeGroupsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:eks/getNodeGroups:getNodeGroups".into(),

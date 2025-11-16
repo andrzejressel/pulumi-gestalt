@@ -122,8 +122,6 @@ pub mod gallery_application {
         name: &str,
         args: GalleryApplicationArgs,
     ) -> GalleryApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let end_of_life_date_binding = args.end_of_life_date.get_output(context);
         let eula_binding = args.eula.get_output(context);

@@ -146,8 +146,6 @@ pub mod integration_response {
         name: &str,
         args: IntegrationResponseArgs,
     ) -> IntegrationResponseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_handling_binding = args.content_handling.get_output(context);
         let http_method_binding = args.http_method.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);

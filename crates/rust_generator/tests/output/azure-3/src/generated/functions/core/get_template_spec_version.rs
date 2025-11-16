@@ -38,8 +38,6 @@ pub mod get_template_spec_version {
         context: &pulumi_gestalt_rust::Context,
         args: GetTemplateSpecVersionArgs,
     ) -> GetTemplateSpecVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let version_binding = args.version.get_output(context);

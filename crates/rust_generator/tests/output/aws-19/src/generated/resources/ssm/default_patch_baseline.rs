@@ -117,8 +117,6 @@ pub mod default_patch_baseline {
         name: &str,
         args: DefaultPatchBaselineArgs,
     ) -> DefaultPatchBaselineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let baseline_id_binding = args.baseline_id.get_output(context);
         let operating_system_binding = args.operating_system.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

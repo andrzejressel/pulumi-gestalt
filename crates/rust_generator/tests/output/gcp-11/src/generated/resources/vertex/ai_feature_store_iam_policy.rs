@@ -94,8 +94,6 @@ pub mod ai_feature_store_iam_policy {
         name: &str,
         args: AiFeatureStoreIamPolicyArgs,
     ) -> AiFeatureStoreIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let featurestore_binding = args.featurestore.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);

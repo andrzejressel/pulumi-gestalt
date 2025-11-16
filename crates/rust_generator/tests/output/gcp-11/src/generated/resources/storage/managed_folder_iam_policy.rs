@@ -385,8 +385,6 @@ pub mod managed_folder_iam_policy {
         name: &str,
         args: ManagedFolderIamPolicyArgs,
     ) -> ManagedFolderIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let managed_folder_binding = args.managed_folder.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);

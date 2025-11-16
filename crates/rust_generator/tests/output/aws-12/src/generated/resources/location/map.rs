@@ -94,8 +94,6 @@ pub mod map {
         name: &str,
         args: MapArgs,
     ) -> MapResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_binding = args.configuration.get_output(context);
         let description_binding = args.description.get_output(context);
         let map_name_binding = args.map_name.get_output(context);

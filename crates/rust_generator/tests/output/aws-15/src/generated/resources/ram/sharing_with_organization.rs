@@ -43,8 +43,6 @@ pub mod sharing_with_organization {
         context: &pulumi_gestalt_rust::Context,
         name: &str,
     ) -> SharingWithOrganizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ram/sharingWithOrganization:SharingWithOrganization".into(),
             name: name.to_string(),

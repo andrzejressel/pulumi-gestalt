@@ -173,8 +173,6 @@ pub mod hl_7_store_iam_policy {
         name: &str,
         args: Hl7StoreIamPolicyArgs,
     ) -> Hl7StoreIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hl7_v2_store_id_binding = args.hl7_v2_store_id.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

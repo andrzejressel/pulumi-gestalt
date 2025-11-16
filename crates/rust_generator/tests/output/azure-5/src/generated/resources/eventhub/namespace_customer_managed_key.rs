@@ -273,8 +273,6 @@ pub mod namespace_customer_managed_key {
         name: &str,
         args: NamespaceCustomerManagedKeyArgs,
     ) -> NamespaceCustomerManagedKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let eventhub_namespace_id_binding = args
             .eventhub_namespace_id
             .get_output(context);

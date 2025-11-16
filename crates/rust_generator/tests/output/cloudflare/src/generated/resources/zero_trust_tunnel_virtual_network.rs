@@ -73,8 +73,6 @@ pub mod zero_trust_tunnel_virtual_network {
         name: &str,
         args: ZeroTrustTunnelVirtualNetworkArgs,
     ) -> ZeroTrustTunnelVirtualNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let is_default_network_binding = args.is_default_network.get_output(context);

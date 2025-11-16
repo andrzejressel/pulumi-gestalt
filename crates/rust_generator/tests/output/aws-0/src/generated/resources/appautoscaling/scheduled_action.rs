@@ -150,8 +150,6 @@ pub mod scheduled_action {
         name: &str,
         args: ScheduledActionArgs,
     ) -> ScheduledActionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let end_time_binding = args.end_time.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_id_binding = args.resource_id.get_output(context);

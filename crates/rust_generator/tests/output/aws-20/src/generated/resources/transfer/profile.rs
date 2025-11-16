@@ -79,8 +79,6 @@ pub mod profile {
         name: &str,
         args: ProfileArgs,
     ) -> ProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let as2_id_binding = args.as2_id.get_output(context);
         let certificate_ids_binding = args.certificate_ids.get_output(context);
         let profile_type_binding = args.profile_type.get_output(context);

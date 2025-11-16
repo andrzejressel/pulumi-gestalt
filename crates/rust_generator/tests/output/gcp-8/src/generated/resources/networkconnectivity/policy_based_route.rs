@@ -230,8 +230,6 @@ pub mod policy_based_route {
         name: &str,
         args: PolicyBasedRouteArgs,
     ) -> PolicyBasedRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let filter_binding = args.filter.get_output(context);
         let interconnect_attachment_binding = args

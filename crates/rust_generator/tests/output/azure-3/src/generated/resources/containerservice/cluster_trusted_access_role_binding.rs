@@ -153,8 +153,6 @@ pub mod cluster_trusted_access_role_binding {
         name: &str,
         args: ClusterTrustedAccessRoleBindingArgs,
     ) -> ClusterTrustedAccessRoleBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let kubernetes_cluster_id_binding = args
             .kubernetes_cluster_id
             .get_output(context);

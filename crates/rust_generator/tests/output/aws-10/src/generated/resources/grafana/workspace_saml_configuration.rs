@@ -143,8 +143,6 @@ pub mod workspace_saml_configuration {
         name: &str,
         args: WorkspaceSamlConfigurationArgs,
     ) -> WorkspaceSamlConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_role_values_binding = args.admin_role_values.get_output(context);
         let allowed_organizations_binding = args
             .allowed_organizations

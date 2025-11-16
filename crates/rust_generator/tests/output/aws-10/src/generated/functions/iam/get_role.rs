@@ -53,8 +53,6 @@ pub mod get_role {
         context: &pulumi_gestalt_rust::Context,
         args: GetRoleArgs,
     ) -> GetRoleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

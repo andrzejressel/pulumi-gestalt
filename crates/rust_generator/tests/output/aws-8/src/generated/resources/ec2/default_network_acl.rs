@@ -195,8 +195,6 @@ pub mod default_network_acl {
         name: &str,
         args: DefaultNetworkAclArgs,
     ) -> DefaultNetworkAclResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_network_acl_id_binding = args
             .default_network_acl_id
             .get_output(context);

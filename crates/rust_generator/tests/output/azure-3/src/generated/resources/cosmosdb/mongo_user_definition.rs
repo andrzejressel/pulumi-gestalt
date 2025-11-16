@@ -121,8 +121,6 @@ pub mod mongo_user_definition {
         name: &str,
         args: MongoUserDefinitionArgs,
     ) -> MongoUserDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cosmos_mongo_database_id_binding = args
             .cosmos_mongo_database_id
             .get_output(context);

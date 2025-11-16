@@ -403,8 +403,6 @@ pub mod deployment_group {
         name: &str,
         args: DeploymentGroupArgs,
     ) -> DeploymentGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alarm_configuration_binding = args.alarm_configuration.get_output(context);
         let app_name_binding = args.app_name.get_output(context);
         let auto_rollback_configuration_binding = args

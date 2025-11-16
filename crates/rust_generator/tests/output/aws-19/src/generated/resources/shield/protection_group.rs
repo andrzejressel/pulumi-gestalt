@@ -151,8 +151,6 @@ pub mod protection_group {
         name: &str,
         args: ProtectionGroupArgs,
     ) -> ProtectionGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aggregation_binding = args.aggregation.get_output(context);
         let members_binding = args.members.get_output(context);
         let pattern_binding = args.pattern.get_output(context);

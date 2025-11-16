@@ -42,8 +42,6 @@ pub mod get_metastore_federation_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetMetastoreFederationIamPolicyArgs,
     ) -> GetMetastoreFederationIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let federation_id_binding = args.federation_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -250,8 +250,6 @@ pub mod group {
         name: &str,
         args: GroupArgs,
     ) -> GroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let containers_binding = args.containers.get_output(context);
         let diagnostics_binding = args.diagnostics.get_output(context);
         let dns_config_binding = args.dns_config.get_output(context);

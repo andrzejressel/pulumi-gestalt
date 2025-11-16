@@ -142,8 +142,6 @@ pub mod network_interface_nat_rule_association {
         name: &str,
         args: NetworkInterfaceNatRuleAssociationArgs,
     ) -> NetworkInterfaceNatRuleAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ip_configuration_name_binding = args
             .ip_configuration_name
             .get_output(context);

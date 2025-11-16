@@ -177,8 +177,6 @@ pub mod job_queue {
         name: &str,
         args: JobQueueArgs,
     ) -> JobQueueResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let compute_environment_orders_binding = args
             .compute_environment_orders
             .get_output(context);

@@ -141,8 +141,6 @@ pub mod record {
         name: &str,
         args: RecordArgs,
     ) -> RecordResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_overwrite_binding = args.allow_overwrite.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let content_binding = args.content.get_output(context);

@@ -68,8 +68,6 @@ pub mod default_route_table_propagation {
         name: &str,
         args: DefaultRouteTablePropagationArgs,
     ) -> DefaultRouteTablePropagationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let timeouts_binding = args.timeouts.get_output(context);
         let transit_gateway_id_binding = args.transit_gateway_id.get_output(context);
         let transit_gateway_route_table_id_binding = args

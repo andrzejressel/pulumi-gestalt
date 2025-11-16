@@ -91,8 +91,6 @@ pub mod spring_cloud_active_deployment {
         name: &str,
         args: SpringCloudActiveDeploymentArgs,
     ) -> SpringCloudActiveDeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deployment_name_binding = args.deployment_name.get_output(context);
         let spring_cloud_app_id_binding = args.spring_cloud_app_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

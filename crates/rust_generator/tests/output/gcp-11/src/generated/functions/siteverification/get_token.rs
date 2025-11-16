@@ -43,8 +43,6 @@ pub mod get_token {
         context: &pulumi_gestalt_rust::Context,
         args: GetTokenArgs,
     ) -> GetTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identifier_binding = args.identifier.get_output(context);
         let type__binding = args.type_.get_output(context);
         let verification_method_binding = args.verification_method.get_output(context);

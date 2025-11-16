@@ -31,8 +31,6 @@ pub mod get_gateway_categories {
         context: &pulumi_gestalt_rust::Context,
         args: GetGatewayCategoriesArgs,
     ) -> GetGatewayCategoriesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getGatewayCategories:getGatewayCategories".into(),

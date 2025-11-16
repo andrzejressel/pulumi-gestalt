@@ -28,8 +28,6 @@ pub mod get_trigger_schedules {
         context: &pulumi_gestalt_rust::Context,
         args: GetTriggerSchedulesArgs,
     ) -> GetTriggerSchedulesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_factory_id_binding = args.data_factory_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:datafactory/getTriggerSchedules:getTriggerSchedules".into(),

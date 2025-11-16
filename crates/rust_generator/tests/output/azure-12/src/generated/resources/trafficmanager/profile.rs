@@ -145,8 +145,6 @@ pub mod profile {
         name: &str,
         args: ProfileArgs,
     ) -> ProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dns_config_binding = args.dns_config.get_output(context);
         let max_return_binding = args.max_return.get_output(context);
         let monitor_config_binding = args.monitor_config.get_output(context);

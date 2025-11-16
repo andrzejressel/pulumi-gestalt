@@ -241,8 +241,6 @@ pub mod ai_feature_online_store {
         name: &str,
         args: AiFeatureOnlineStoreArgs,
     ) -> AiFeatureOnlineStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bigtable_binding = args.bigtable.get_output(context);
         let dedicated_serving_endpoint_binding = args
             .dedicated_serving_endpoint

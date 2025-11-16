@@ -121,8 +121,6 @@ pub mod project_notification_config {
         name: &str,
         args: ProjectNotificationConfigArgs,
     ) -> ProjectNotificationConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let config_id_binding = args.config_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let project_binding = args.project.get_output(context);

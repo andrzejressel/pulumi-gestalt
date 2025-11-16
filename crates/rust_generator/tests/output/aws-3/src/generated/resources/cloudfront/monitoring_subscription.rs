@@ -72,8 +72,6 @@ pub mod monitoring_subscription {
         name: &str,
         args: MonitoringSubscriptionArgs,
     ) -> MonitoringSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let distribution_id_binding = args.distribution_id.get_output(context);
         let monitoring_subscription_binding = args
             .monitoring_subscription

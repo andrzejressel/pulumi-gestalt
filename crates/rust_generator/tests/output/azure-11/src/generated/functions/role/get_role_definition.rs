@@ -48,8 +48,6 @@ pub mod get_role_definition {
         context: &pulumi_gestalt_rust::Context,
         args: GetRoleDefinitionArgs,
     ) -> GetRoleDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let role_definition_id_binding = args.role_definition_id.get_output(context);
         let scope_binding = args.scope.get_output(context);

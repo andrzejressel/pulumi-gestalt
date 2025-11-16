@@ -154,8 +154,6 @@ pub mod target_tcp_proxy {
         name: &str,
         args: TargetTCPProxyArgs,
     ) -> TargetTCPProxyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backend_service_binding = args.backend_service.get_output(context);
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);

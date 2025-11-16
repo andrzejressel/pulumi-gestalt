@@ -38,8 +38,6 @@ pub mod get_search_all_resources {
         context: &pulumi_gestalt_rust::Context,
         args: GetSearchAllResourcesArgs,
     ) -> GetSearchAllResourcesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let asset_types_binding = args.asset_types.get_output(context);
         let query_binding = args.query.get_output(context);
         let scope_binding = args.scope.get_output(context);

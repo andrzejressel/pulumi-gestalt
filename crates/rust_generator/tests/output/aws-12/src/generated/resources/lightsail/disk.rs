@@ -89,8 +89,6 @@ pub mod disk {
         name: &str,
         args: DiskArgs,
     ) -> DiskResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_binding = args.availability_zone.get_output(context);
         let name_binding = args.name.get_output(context);
         let size_in_gb_binding = args.size_in_gb.get_output(context);

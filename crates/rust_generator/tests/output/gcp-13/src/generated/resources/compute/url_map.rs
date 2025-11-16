@@ -894,8 +894,6 @@ pub mod url_map {
         name: &str,
         args: URLMapArgs,
     ) -> URLMapResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let default_custom_error_response_policy_binding = args
             .default_custom_error_response_policy
             .get_output(context);

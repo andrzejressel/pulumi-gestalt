@@ -33,8 +33,6 @@ pub mod get_event_connection {
         context: &pulumi_gestalt_rust::Context,
         args: GetEventConnectionArgs,
     ) -> GetEventConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cloudwatch/getEventConnection:getEventConnection".into(),

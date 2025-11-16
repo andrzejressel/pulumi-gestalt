@@ -136,8 +136,6 @@ pub mod prevention_discovery_config {
         name: &str,
         args: PreventionDiscoveryConfigArgs,
     ) -> PreventionDiscoveryConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let inspect_templates_binding = args.inspect_templates.get_output(context);

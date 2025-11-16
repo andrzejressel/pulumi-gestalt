@@ -329,8 +329,6 @@ pub mod assignment {
         name: &str,
         args: AssignmentArgs,
     ) -> AssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let condition_version_binding = args.condition_version.get_output(context);
         let delegated_managed_identity_resource_id_binding = args

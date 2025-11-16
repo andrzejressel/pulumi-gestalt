@@ -30,8 +30,6 @@ pub mod get_sync_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetSyncGroupArgs,
     ) -> GetSyncGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let storage_sync_id_binding = args.storage_sync_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -50,8 +50,6 @@ pub mod get_origin_request_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetOriginRequestPolicyArgs,
     ) -> GetOriginRequestPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let id_binding = args.id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

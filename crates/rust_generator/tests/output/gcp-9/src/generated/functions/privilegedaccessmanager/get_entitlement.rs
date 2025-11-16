@@ -65,8 +65,6 @@ pub mod get_entitlement {
         context: &pulumi_gestalt_rust::Context,
         args: GetEntitlementArgs,
     ) -> GetEntitlementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let entitlement_id_binding = args.entitlement_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let parent_binding = args.parent.get_output(context);

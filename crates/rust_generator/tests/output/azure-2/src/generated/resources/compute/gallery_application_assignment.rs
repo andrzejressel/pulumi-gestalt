@@ -140,8 +140,6 @@ pub mod gallery_application_assignment {
         name: &str,
         args: GalleryApplicationAssignmentArgs,
     ) -> GalleryApplicationAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_blob_uri_binding = args
             .configuration_blob_uri
             .get_output(context);

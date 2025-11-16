@@ -53,8 +53,6 @@ pub mod get_circuit_peering {
         context: &pulumi_gestalt_rust::Context,
         args: GetCircuitPeeringArgs,
     ) -> GetCircuitPeeringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let express_route_circuit_name_binding = args
             .express_route_circuit_name
             .get_output(context);

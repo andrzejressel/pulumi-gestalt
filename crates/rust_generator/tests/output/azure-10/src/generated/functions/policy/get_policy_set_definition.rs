@@ -60,8 +60,6 @@ pub mod get_policy_set_definition {
         context: &pulumi_gestalt_rust::Context,
         args: GetPolicySetDefinitionArgs,
     ) -> GetPolicySetDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let management_group_name_binding = args
             .management_group_name

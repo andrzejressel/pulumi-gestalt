@@ -95,8 +95,6 @@ pub mod channel {
         name: &str,
         args: ChannelArgs,
     ) -> ChannelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorized_binding = args.authorized.get_output(context);
         let latency_mode_binding = args.latency_mode.get_output(context);
         let name_binding = args.name.get_output(context);

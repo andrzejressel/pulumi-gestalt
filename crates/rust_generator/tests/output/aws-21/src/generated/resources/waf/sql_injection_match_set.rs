@@ -75,8 +75,6 @@ pub mod sql_injection_match_set {
         name: &str,
         args: SqlInjectionMatchSetArgs,
     ) -> SqlInjectionMatchSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let sql_injection_match_tuples_binding = args
             .sql_injection_match_tuples

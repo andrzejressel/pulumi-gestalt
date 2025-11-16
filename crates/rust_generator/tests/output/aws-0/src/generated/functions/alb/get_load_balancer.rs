@@ -76,8 +76,6 @@ pub mod get_load_balancer {
         context: &pulumi_gestalt_rust::Context,
         args: GetLoadBalancerArgs,
     ) -> GetLoadBalancerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);

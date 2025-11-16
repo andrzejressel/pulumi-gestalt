@@ -63,8 +63,6 @@ pub mod get_job_definition {
         context: &pulumi_gestalt_rust::Context,
         args: GetJobDefinitionArgs,
     ) -> GetJobDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let name_binding = args.name.get_output(context);
         let revision_binding = args.revision.get_output(context);

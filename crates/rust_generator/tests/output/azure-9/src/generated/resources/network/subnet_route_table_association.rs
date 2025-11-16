@@ -101,8 +101,6 @@ pub mod subnet_route_table_association {
         name: &str,
         args: SubnetRouteTableAssociationArgs,
     ) -> SubnetRouteTableAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let route_table_id_binding = args.route_table_id.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

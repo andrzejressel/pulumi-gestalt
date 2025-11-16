@@ -65,8 +65,6 @@ pub mod landing_zone {
         name: &str,
         args: LandingZoneArgs,
     ) -> LandingZoneResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let manifest_json_binding = args.manifest_json.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let version_binding = args.version.get_output(context);

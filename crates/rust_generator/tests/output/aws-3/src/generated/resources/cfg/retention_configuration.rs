@@ -55,8 +55,6 @@ pub mod retention_configuration {
         name: &str,
         args: RetentionConfigurationArgs,
     ) -> RetentionConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let retention_period_in_days_binding = args
             .retention_period_in_days
             .get_output(context);

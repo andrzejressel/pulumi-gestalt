@@ -139,8 +139,6 @@ pub mod account_subscription {
         name: &str,
         args: AccountSubscriptionArgs,
     ) -> AccountSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let active_directory_name_binding = args
             .active_directory_name

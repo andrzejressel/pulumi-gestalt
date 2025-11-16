@@ -211,8 +211,6 @@ pub mod open_zfs_file_system {
         name: &str,
         args: OpenZfsFileSystemArgs,
     ) -> OpenZfsFileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automatic_backup_retention_days_binding = args
             .automatic_backup_retention_days
             .get_output(context);

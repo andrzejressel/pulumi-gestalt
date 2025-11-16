@@ -166,8 +166,6 @@ pub mod dataset {
         name: &str,
         args: DatasetArgs,
     ) -> DatasetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let encryption_spec_binding = args.encryption_spec.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);

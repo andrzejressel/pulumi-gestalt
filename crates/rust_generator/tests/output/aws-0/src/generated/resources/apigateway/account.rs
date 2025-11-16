@@ -109,8 +109,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloudwatch_role_arn_binding = args.cloudwatch_role_arn.get_output(context);
         let reset_on_delete_binding = args.reset_on_delete.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -71,8 +71,6 @@ pub mod workers_secret {
         name: &str,
         args: WorkersSecretArgs,
     ) -> WorkersSecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let script_name_binding = args.script_name.get_output(context);

@@ -157,8 +157,6 @@ pub mod contact {
         name: &str,
         args: ContactArgs,
     ) -> ContactResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_profile_id_binding = args.contact_profile_id.get_output(context);
         let ground_station_name_binding = args.ground_station_name.get_output(context);
         let name_binding = args.name.get_output(context);

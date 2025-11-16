@@ -75,8 +75,6 @@ pub mod service_specific_credential {
         name: &str,
         args: ServiceSpecificCredentialArgs,
     ) -> ServiceSpecificCredentialResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let service_name_binding = args.service_name.get_output(context);
         let status_binding = args.status.get_output(context);
         let user_name_binding = args.user_name.get_output(context);

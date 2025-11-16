@@ -89,8 +89,6 @@ pub mod email_routing_catch_all {
         name: &str,
         args: EmailRoutingCatchAllArgs,
     ) -> EmailRoutingCatchAllResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let matchers_binding = args.matchers.get_output(context);

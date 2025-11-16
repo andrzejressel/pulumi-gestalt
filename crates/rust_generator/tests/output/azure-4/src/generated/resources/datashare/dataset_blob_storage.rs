@@ -142,8 +142,6 @@ pub mod dataset_blob_storage {
         name: &str,
         args: DatasetBlobStorageArgs,
     ) -> DatasetBlobStorageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_name_binding = args.container_name.get_output(context);
         let data_share_id_binding = args.data_share_id.get_output(context);
         let file_path_binding = args.file_path.get_output(context);

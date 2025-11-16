@@ -38,8 +38,6 @@ pub mod get_forwarding_rules {
         context: &pulumi_gestalt_rust::Context,
         args: GetForwardingRulesArgs,
     ) -> GetForwardingRulesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let region_binding = args.region.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

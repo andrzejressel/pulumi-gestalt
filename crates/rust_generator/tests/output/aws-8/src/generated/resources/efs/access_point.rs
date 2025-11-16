@@ -88,8 +88,6 @@ pub mod access_point {
         name: &str,
         args: AccessPointArgs,
     ) -> AccessPointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let file_system_id_binding = args.file_system_id.get_output(context);
         let posix_user_binding = args.posix_user.get_output(context);
         let root_directory_binding = args.root_directory.get_output(context);

@@ -88,8 +88,6 @@ pub mod postgresql_coordinator_configuration {
         name: &str,
         args: PostgresqlCoordinatorConfigurationArgs,
     ) -> PostgresqlCoordinatorConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_id_binding = args.cluster_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let value_binding = args.value.get_output(context);

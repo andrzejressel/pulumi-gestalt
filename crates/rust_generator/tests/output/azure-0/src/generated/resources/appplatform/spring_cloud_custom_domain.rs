@@ -110,8 +110,6 @@ pub mod spring_cloud_custom_domain {
         name: &str,
         args: SpringCloudCustomDomainArgs,
     ) -> SpringCloudCustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_name_binding = args.certificate_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let spring_cloud_app_id_binding = args.spring_cloud_app_id.get_output(context);

@@ -97,8 +97,6 @@ pub mod access_mutual_tls_certificate {
         name: &str,
         args: AccessMutualTlsCertificateArgs,
     ) -> AccessMutualTlsCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let associated_hostnames_binding = args.associated_hostnames.get_output(context);
         let certificate_binding = args.certificate.get_output(context);

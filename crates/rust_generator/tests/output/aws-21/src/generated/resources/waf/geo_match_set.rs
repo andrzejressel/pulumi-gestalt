@@ -72,8 +72,6 @@ pub mod geo_match_set {
         name: &str,
         args: GeoMatchSetArgs,
     ) -> GeoMatchSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let geo_match_constraints_binding = args
             .geo_match_constraints
             .get_output(context);

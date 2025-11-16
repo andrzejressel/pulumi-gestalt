@@ -269,8 +269,6 @@ pub mod topic_subscription {
         name: &str,
         args: TopicSubscriptionArgs,
     ) -> TopicSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let confirmation_timeout_in_minutes_binding = args
             .confirmation_timeout_in_minutes
             .get_output(context);

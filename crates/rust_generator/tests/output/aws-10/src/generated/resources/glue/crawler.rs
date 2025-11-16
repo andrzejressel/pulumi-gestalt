@@ -354,8 +354,6 @@ pub mod crawler {
         name: &str,
         args: CrawlerArgs,
     ) -> CrawlerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_targets_binding = args.catalog_targets.get_output(context);
         let classifiers_binding = args.classifiers.get_output(context);
         let configuration_binding = args.configuration.get_output(context);

@@ -163,8 +163,6 @@ pub mod glossary_term {
         name: &str,
         args: GlossaryTermArgs,
     ) -> GlossaryTermResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_identifier_binding = args.domain_identifier.get_output(context);
         let glossary_identifier_binding = args.glossary_identifier.get_output(context);
         let long_description_binding = args.long_description.get_output(context);

@@ -90,8 +90,6 @@ pub mod storage_bucket {
         name: &str,
         args: StorageBucketArgs,
     ) -> StorageBucketResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_id_binding = args.bucket_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

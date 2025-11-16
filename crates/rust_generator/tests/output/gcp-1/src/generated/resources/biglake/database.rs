@@ -129,8 +129,6 @@ pub mod database {
         name: &str,
         args: DatabaseArgs,
     ) -> DatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_binding = args.catalog.get_output(context);
         let hive_options_binding = args.hive_options.get_output(context);
         let name_binding = args.name.get_output(context);

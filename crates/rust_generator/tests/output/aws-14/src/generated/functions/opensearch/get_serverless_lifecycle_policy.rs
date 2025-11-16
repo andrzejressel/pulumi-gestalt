@@ -39,8 +39,6 @@ pub mod get_serverless_lifecycle_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetServerlessLifecyclePolicyArgs,
     ) -> GetServerlessLifecyclePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let type__binding = args.type_.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

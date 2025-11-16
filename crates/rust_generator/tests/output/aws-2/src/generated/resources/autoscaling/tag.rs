@@ -49,8 +49,6 @@ pub mod tag {
         name: &str,
         args: TagArgs,
     ) -> TagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autoscaling_group_name_binding = args
             .autoscaling_group_name
             .get_output(context);

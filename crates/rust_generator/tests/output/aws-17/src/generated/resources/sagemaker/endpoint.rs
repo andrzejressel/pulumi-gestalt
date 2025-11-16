@@ -82,8 +82,6 @@ pub mod endpoint {
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deployment_config_binding = args.deployment_config.get_output(context);
         let endpoint_config_name_binding = args.endpoint_config_name.get_output(context);
         let name_binding = args.name.get_output(context);

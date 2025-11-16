@@ -114,8 +114,6 @@ pub mod flexible_server_virtual_endpoint {
         name: &str,
         args: FlexibleServerVirtualEndpointArgs,
     ) -> FlexibleServerVirtualEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let replica_server_id_binding = args.replica_server_id.get_output(context);
         let source_server_id_binding = args.source_server_id.get_output(context);

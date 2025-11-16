@@ -45,8 +45,6 @@ pub mod example_server {
         name: &str,
         args: ExampleServerArgs,
     ) -> ExampleServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let map_array_enum_binding = args.map_array_enum.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "example:index:ExampleServer".into(),

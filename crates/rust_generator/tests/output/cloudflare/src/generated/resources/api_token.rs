@@ -67,8 +67,6 @@ pub mod api_token {
         name: &str,
         args: ApiTokenArgs,
     ) -> ApiTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let expires_on_binding = args.expires_on.get_output(context);
         let name_binding = args.name.get_output(context);

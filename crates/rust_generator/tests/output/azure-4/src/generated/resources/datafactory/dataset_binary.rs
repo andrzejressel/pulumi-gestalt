@@ -177,8 +177,6 @@ pub mod dataset_binary {
         name: &str,
         args: DatasetBinaryArgs,
     ) -> DatasetBinaryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_properties_binding = args
             .additional_properties
             .get_output(context);

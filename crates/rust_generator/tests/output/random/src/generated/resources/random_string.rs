@@ -126,8 +126,6 @@ pub mod random_string {
         name: &str,
         args: RandomStringArgs,
     ) -> RandomStringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let keepers_binding = args.keepers.get_output(context);
         let length_binding = args.length.get_output(context);
         let lower_binding = args.lower.get_output(context);

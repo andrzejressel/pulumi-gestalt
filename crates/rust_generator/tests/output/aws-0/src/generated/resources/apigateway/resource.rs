@@ -75,8 +75,6 @@ pub mod resource {
         name: &str,
         args: ResourceArgs,
     ) -> ResourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_id_binding = args.parent_id.get_output(context);
         let path_part_binding = args.path_part.get_output(context);
         let rest_api_binding = args.rest_api.get_output(context);

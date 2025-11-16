@@ -77,8 +77,6 @@ pub mod account_static_website {
         name: &str,
         args: AccountStaticWebsiteArgs,
     ) -> AccountStaticWebsiteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let error404_document_binding = args.error404_document.get_output(context);
         let index_document_binding = args.index_document.get_output(context);
         let storage_account_id_binding = args.storage_account_id.get_output(context);

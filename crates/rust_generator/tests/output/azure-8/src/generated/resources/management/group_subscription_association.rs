@@ -69,8 +69,6 @@ pub mod group_subscription_association {
         name: &str,
         args: GroupSubscriptionAssociationArgs,
     ) -> GroupSubscriptionAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let management_group_id_binding = args.management_group_id.get_output(context);
         let subscription_id_binding = args.subscription_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

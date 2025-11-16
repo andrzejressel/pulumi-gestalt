@@ -72,8 +72,6 @@ pub mod ciphertext {
         name: &str,
         args: CiphertextArgs,
     ) -> CiphertextResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let context_binding = args.context.get_output(context);
         let key_id_binding = args.key_id.get_output(context);
         let plaintext_binding = args.plaintext.get_output(context);

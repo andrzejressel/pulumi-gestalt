@@ -903,8 +903,6 @@ pub mod global_forwarding_rule {
         name: &str,
         args: GlobalForwardingRuleArgs,
     ) -> GlobalForwardingRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_psc_global_access_binding = args
             .allow_psc_global_access
             .get_output(context);

@@ -128,8 +128,6 @@ pub mod user {
         name: &str,
         args: UserArgs,
     ) -> UserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_name_binding = args.api_management_name.get_output(context);
         let confirmation_binding = args.confirmation.get_output(context);
         let email_binding = args.email.get_output(context);

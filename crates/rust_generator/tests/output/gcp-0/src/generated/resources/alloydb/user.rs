@@ -224,8 +224,6 @@ pub mod user {
         name: &str,
         args: UserArgs,
     ) -> UserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_binding = args.cluster.get_output(context);
         let database_roles_binding = args.database_roles.get_output(context);
         let password_binding = args.password.get_output(context);

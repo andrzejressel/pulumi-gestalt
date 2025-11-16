@@ -154,8 +154,6 @@ pub mod snapshot {
         name: &str,
         args: SnapshotArgs,
     ) -> SnapshotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let create_option_binding = args.create_option.get_output(context);
         let disk_access_id_binding = args.disk_access_id.get_output(context);
         let disk_size_gb_binding = args.disk_size_gb.get_output(context);

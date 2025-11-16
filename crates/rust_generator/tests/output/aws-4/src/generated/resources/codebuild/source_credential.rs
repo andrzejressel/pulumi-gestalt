@@ -94,8 +94,6 @@ pub mod source_credential {
         name: &str,
         args: SourceCredentialArgs,
     ) -> SourceCredentialResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auth_type_binding = args.auth_type.get_output(context);
         let server_type_binding = args.server_type.get_output(context);
         let token_binding = args.token.get_output(context);

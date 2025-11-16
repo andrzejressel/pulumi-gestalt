@@ -194,8 +194,6 @@ pub mod blockchain_nodes {
         name: &str,
         args: BlockchainNodesArgs,
     ) -> BlockchainNodesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let blockchain_node_id_binding = args.blockchain_node_id.get_output(context);
         let blockchain_type_binding = args.blockchain_type.get_output(context);
         let ethereum_details_binding = args.ethereum_details.get_output(context);

@@ -82,8 +82,6 @@ pub mod domain_service_access_policy {
         name: &str,
         args: DomainServiceAccessPolicyArgs,
     ) -> DomainServiceAccessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_policy_binding = args.access_policy.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -49,8 +49,6 @@ pub mod get_app_engine_service {
         context: &pulumi_gestalt_rust::Context,
         args: GetAppEngineServiceArgs,
     ) -> GetAppEngineServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let module_id_binding = args.module_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

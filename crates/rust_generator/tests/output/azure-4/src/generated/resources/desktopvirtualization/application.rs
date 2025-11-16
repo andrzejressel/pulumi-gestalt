@@ -149,8 +149,6 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_group_id_binding = args.application_group_id.get_output(context);
         let command_line_argument_policy_binding = args
             .command_line_argument_policy

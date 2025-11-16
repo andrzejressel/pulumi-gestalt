@@ -249,8 +249,6 @@ pub mod instance {
         name: &str,
         args: InstanceArgs,
     ) -> InstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autoscaling_config_binding = args.autoscaling_config.get_output(context);
         let config_binding = args.config.get_output(context);
         let default_backup_schedule_type_binding = args

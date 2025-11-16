@@ -144,8 +144,6 @@ pub mod vpn_gateway {
         name: &str,
         args: VpnGatewayArgs,
     ) -> VpnGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bgp_route_translation_for_nat_enabled_binding = args
             .bgp_route_translation_for_nat_enabled
             .get_output(context);

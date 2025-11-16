@@ -451,8 +451,6 @@ pub mod workforce_pool_provider {
         name: &str,
         args: WorkforcePoolProviderArgs,
     ) -> WorkforcePoolProviderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attribute_condition_binding = args.attribute_condition.get_output(context);
         let attribute_mapping_binding = args.attribute_mapping.get_output(context);
         let description_binding = args.description.get_output(context);

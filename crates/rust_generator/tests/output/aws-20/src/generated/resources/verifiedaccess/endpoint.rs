@@ -161,8 +161,6 @@ pub mod endpoint {
         name: &str,
         args: EndpointArgs,
     ) -> EndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_domain_binding = args.application_domain.get_output(context);
         let attachment_type_binding = args.attachment_type.get_output(context);
         let description_binding = args.description.get_output(context);

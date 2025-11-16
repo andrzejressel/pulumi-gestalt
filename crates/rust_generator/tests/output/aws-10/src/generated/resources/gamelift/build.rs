@@ -96,8 +96,6 @@ pub mod build {
         name: &str,
         args: BuildArgs,
     ) -> BuildResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let operating_system_binding = args.operating_system.get_output(context);
         let storage_location_binding = args.storage_location.get_output(context);

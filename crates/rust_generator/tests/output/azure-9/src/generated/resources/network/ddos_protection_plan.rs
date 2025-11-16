@@ -89,8 +89,6 @@ pub mod ddos_protection_plan {
         name: &str,
         args: DdosProtectionPlanArgs,
     ) -> DdosProtectionPlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

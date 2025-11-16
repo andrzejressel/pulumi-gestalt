@@ -281,8 +281,6 @@ pub mod bare_metal_node_pool {
         name: &str,
         args: BareMetalNodePoolArgs,
     ) -> BareMetalNodePoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let bare_metal_cluster_binding = args.bare_metal_cluster.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

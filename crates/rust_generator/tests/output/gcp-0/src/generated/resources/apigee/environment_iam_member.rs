@@ -266,8 +266,6 @@ pub mod environment_iam_member {
         name: &str,
         args: EnvironmentIamMemberArgs,
     ) -> EnvironmentIamMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let env_id_binding = args.env_id.get_output(context);
         let member_binding = args.member.get_output(context);

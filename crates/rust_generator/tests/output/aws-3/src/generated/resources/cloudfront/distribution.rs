@@ -377,8 +377,6 @@ pub mod distribution {
         name: &str,
         args: DistributionArgs,
     ) -> DistributionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aliases_binding = args.aliases.get_output(context);
         let comment_binding = args.comment.get_output(context);
         let continuous_deployment_policy_id_binding = args

@@ -123,8 +123,6 @@ pub mod protected_vm {
         name: &str,
         args: ProtectedVMArgs,
     ) -> ProtectedVMResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let exclude_disk_luns_binding = args.exclude_disk_luns.get_output(context);
         let include_disk_luns_binding = args.include_disk_luns.get_output(context);

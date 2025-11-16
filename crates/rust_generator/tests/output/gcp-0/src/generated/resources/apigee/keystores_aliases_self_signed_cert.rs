@@ -231,8 +231,6 @@ pub mod keystores_aliases_self_signed_cert {
         name: &str,
         args: KeystoresAliasesSelfSignedCertArgs,
     ) -> KeystoresAliasesSelfSignedCertResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_binding = args.alias.get_output(context);
         let cert_validity_in_days_binding = args
             .cert_validity_in_days

@@ -220,8 +220,6 @@ pub mod authz_extension {
         name: &str,
         args: AuthzExtensionArgs,
     ) -> AuthzExtensionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authority_binding = args.authority.get_output(context);
         let description_binding = args.description.get_output(context);
         let fail_open_binding = args.fail_open.get_output(context);

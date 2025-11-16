@@ -68,8 +68,6 @@ pub mod get_regional_secret {
         context: &pulumi_gestalt_rust::Context,
         args: GetRegionalSecretArgs,
     ) -> GetRegionalSecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let project_binding = args.project.get_output(context);
         let secret_id_binding = args.secret_id.get_output(context);

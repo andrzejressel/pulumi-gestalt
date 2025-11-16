@@ -159,8 +159,6 @@ pub mod webhook {
         name: &str,
         args: WebhookArgs,
     ) -> WebhookResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_binding = args.authentication.get_output(context);
         let authentication_configuration_binding = args
             .authentication_configuration

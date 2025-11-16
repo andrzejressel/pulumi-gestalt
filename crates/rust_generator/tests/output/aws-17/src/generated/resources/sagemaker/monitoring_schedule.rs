@@ -88,8 +88,6 @@ pub mod monitoring_schedule {
         name: &str,
         args: MonitoringScheduleArgs,
     ) -> MonitoringScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let monitoring_schedule_config_binding = args
             .monitoring_schedule_config
             .get_output(context);

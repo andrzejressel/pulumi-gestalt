@@ -90,8 +90,6 @@ pub mod user_profile {
         name: &str,
         args: UserProfileArgs,
     ) -> UserProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_identifier_binding = args.domain_identifier.get_output(context);
         let status_binding = args.status.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

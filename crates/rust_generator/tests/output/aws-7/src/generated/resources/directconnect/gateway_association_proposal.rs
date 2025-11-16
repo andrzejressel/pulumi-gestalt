@@ -87,8 +87,6 @@ pub mod gateway_association_proposal {
         name: &str,
         args: GatewayAssociationProposalArgs,
     ) -> GatewayAssociationProposalResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_prefixes_binding = args.allowed_prefixes.get_output(context);
         let associated_gateway_id_binding = args
             .associated_gateway_id

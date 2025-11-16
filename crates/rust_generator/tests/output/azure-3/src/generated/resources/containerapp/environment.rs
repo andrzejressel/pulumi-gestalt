@@ -182,8 +182,6 @@ pub mod environment {
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dapr_application_insights_connection_string_binding = args
             .dapr_application_insights_connection_string
             .get_output(context);

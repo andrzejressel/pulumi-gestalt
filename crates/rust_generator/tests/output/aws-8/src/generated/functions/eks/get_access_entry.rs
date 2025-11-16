@@ -53,8 +53,6 @@ pub mod get_access_entry {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccessEntryArgs,
     ) -> GetAccessEntryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let principal_arn_binding = args.principal_arn.get_output(context);
         let tags_binding = args.tags.get_output(context);

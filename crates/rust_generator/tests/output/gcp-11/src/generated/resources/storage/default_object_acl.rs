@@ -76,8 +76,6 @@ pub mod default_object_acl {
         name: &str,
         args: DefaultObjectACLArgs,
     ) -> DefaultObjectACLResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let role_entities_binding = args.role_entities.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

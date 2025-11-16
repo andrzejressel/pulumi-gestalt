@@ -171,8 +171,6 @@ pub mod virtual_network {
         name: &str,
         args: VirtualNetworkArgs,
     ) -> VirtualNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_spaces_binding = args.address_spaces.get_output(context);
         let bgp_community_binding = args.bgp_community.get_output(context);
         let ddos_protection_plan_binding = args.ddos_protection_plan.get_output(context);

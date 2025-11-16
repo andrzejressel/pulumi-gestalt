@@ -162,8 +162,6 @@ pub mod zero_trust_device_profiles {
         name: &str,
         args: ZeroTrustDeviceProfilesArgs,
     ) -> ZeroTrustDeviceProfilesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let allow_mode_switch_binding = args.allow_mode_switch.get_output(context);
         let allow_updates_binding = args.allow_updates.get_output(context);

@@ -236,8 +236,6 @@ pub mod ai_index {
         name: &str,
         args: AiIndexArgs,
     ) -> AiIndexResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let index_update_method_binding = args.index_update_method.get_output(context);

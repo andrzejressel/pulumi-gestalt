@@ -93,8 +93,6 @@ pub mod role_policy_attachment {
         name: &str,
         args: RolePolicyAttachmentArgs,
     ) -> RolePolicyAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_arn_binding = args.policy_arn.get_output(context);
         let role_binding = args.role.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

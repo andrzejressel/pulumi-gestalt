@@ -140,8 +140,6 @@ pub mod response_policy_rule {
         name: &str,
         args: ResponsePolicyRuleArgs,
     ) -> ResponsePolicyRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let behavior_binding = args.behavior.get_output(context);
         let dns_name_binding = args.dns_name.get_output(context);
         let local_data_binding = args.local_data.get_output(context);

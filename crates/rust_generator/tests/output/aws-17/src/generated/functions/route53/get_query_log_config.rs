@@ -56,8 +56,6 @@ pub mod get_query_log_config {
         context: &pulumi_gestalt_rust::Context,
         args: GetQueryLogConfigArgs,
     ) -> GetQueryLogConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let name_binding = args.name.get_output(context);
         let resolver_query_log_config_id_binding = args

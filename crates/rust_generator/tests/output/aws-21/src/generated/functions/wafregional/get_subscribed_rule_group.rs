@@ -30,8 +30,6 @@ pub mod get_subscribed_rule_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetSubscribedRuleGroupArgs,
     ) -> GetSubscribedRuleGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let metric_name_binding = args.metric_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

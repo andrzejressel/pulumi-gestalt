@@ -256,8 +256,6 @@ pub mod membership_iam_policy {
         name: &str,
         args: MembershipIamPolicyArgs,
     ) -> MembershipIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let membership_id_binding = args.membership_id.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);

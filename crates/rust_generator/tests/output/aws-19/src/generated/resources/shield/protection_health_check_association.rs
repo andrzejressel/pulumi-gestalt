@@ -97,8 +97,6 @@ pub mod protection_health_check_association {
         name: &str,
         args: ProtectionHealthCheckAssociationArgs,
     ) -> ProtectionHealthCheckAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let health_check_arn_binding = args.health_check_arn.get_output(context);
         let shield_protection_id_binding = args.shield_protection_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

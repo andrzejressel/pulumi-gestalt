@@ -134,8 +134,6 @@ pub mod product {
         name: &str,
         args: ProductArgs,
     ) -> ProductResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accept_language_binding = args.accept_language.get_output(context);
         let description_binding = args.description.get_output(context);
         let distributor_binding = args.distributor.get_output(context);

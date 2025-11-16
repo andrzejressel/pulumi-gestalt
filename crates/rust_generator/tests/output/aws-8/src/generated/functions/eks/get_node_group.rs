@@ -81,8 +81,6 @@ pub mod get_node_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetNodeGroupArgs,
     ) -> GetNodeGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let node_group_name_binding = args.node_group_name.get_output(context);
         let tags_binding = args.tags.get_output(context);

@@ -160,8 +160,6 @@ pub mod event_hub_namespace {
         name: &str,
         args: EventHubNamespaceArgs,
     ) -> EventHubNamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_inflate_enabled_binding = args.auto_inflate_enabled.get_output(context);
         let capacity_binding = args.capacity.get_output(context);
         let dedicated_cluster_id_binding = args.dedicated_cluster_id.get_output(context);

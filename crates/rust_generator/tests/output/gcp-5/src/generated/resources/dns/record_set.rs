@@ -390,8 +390,6 @@ pub mod record_set {
         name: &str,
         args: RecordSetArgs,
     ) -> RecordSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let managed_zone_binding = args.managed_zone.get_output(context);
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);

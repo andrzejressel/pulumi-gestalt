@@ -305,8 +305,6 @@ pub mod replica_set {
         name: &str,
         args: ReplicaSetArgs,
     ) -> ReplicaSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_service_id_binding = args.domain_service_id.get_output(context);
         let location_binding = args.location.get_output(context);
         let subnet_id_binding = args.subnet_id.get_output(context);

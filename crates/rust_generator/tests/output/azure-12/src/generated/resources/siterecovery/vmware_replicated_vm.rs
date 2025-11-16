@@ -325,8 +325,6 @@ pub mod vmware_replicated_vm {
         name: &str,
         args: VmwareReplicatedVmArgs,
     ) -> VmwareReplicatedVmResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let appliance_name_binding = args.appliance_name.get_output(context);
         let default_log_storage_account_id_binding = args
             .default_log_storage_account_id

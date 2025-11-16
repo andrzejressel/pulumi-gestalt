@@ -219,8 +219,6 @@ pub mod global_replication_group {
         name: &str,
         args: GlobalReplicationGroupArgs,
     ) -> GlobalReplicationGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automatic_failover_enabled_binding = args
             .automatic_failover_enabled
             .get_output(context);

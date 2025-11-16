@@ -151,8 +151,6 @@ pub mod generic_service {
         name: &str,
         args: GenericServiceArgs,
     ) -> GenericServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let basic_service_binding = args.basic_service.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let project_binding = args.project.get_output(context);

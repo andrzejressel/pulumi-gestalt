@@ -165,8 +165,6 @@ pub mod domain {
         name: &str,
         args: DomainArgs,
     ) -> DomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dead_letter_queue_url_binding = args
             .dead_letter_queue_url
             .get_output(context);

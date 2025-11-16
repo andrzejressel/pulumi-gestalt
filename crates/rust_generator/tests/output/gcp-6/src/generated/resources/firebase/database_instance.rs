@@ -207,8 +207,6 @@ pub mod database_instance {
         name: &str,
         args: DatabaseInstanceArgs,
     ) -> DatabaseInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let desired_state_binding = args.desired_state.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let project_binding = args.project.get_output(context);

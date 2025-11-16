@@ -219,8 +219,6 @@ pub mod haproxy_layer {
         name: &str,
         args: HaproxyLayerArgs,
     ) -> HaproxyLayerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_assign_elastic_ips_binding = args
             .auto_assign_elastic_ips
             .get_output(context);

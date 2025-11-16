@@ -119,8 +119,6 @@ pub mod automation_rule {
         name: &str,
         args: AutomationRuleArgs,
     ) -> AutomationRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let criteria_binding = args.criteria.get_output(context);
         let description_binding = args.description.get_output(context);

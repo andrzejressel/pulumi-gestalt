@@ -26,8 +26,6 @@ pub mod get_traffic_manager {
         context: &pulumi_gestalt_rust::Context,
         args: GetTrafficManagerArgs,
     ) -> GetTrafficManagerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:network/getTrafficManager:getTrafficManager".into(),

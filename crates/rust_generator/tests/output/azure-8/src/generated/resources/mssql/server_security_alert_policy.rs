@@ -130,8 +130,6 @@ pub mod server_security_alert_policy {
         name: &str,
         args: ServerSecurityAlertPolicyArgs,
     ) -> ServerSecurityAlertPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disabled_alerts_binding = args.disabled_alerts.get_output(context);
         let email_account_admins_binding = args.email_account_admins.get_output(context);
         let email_addresses_binding = args.email_addresses.get_output(context);

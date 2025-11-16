@@ -143,8 +143,6 @@ pub mod management_server {
         name: &str,
         args: ManagementServerArgs,
     ) -> ManagementServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);
         let networks_binding = args.networks.get_output(context);

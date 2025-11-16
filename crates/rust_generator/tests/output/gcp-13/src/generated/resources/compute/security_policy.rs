@@ -256,8 +256,6 @@ pub mod security_policy {
         name: &str,
         args: SecurityPolicyArgs,
     ) -> SecurityPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let adaptive_protection_config_binding = args
             .adaptive_protection_config
             .get_output(context);

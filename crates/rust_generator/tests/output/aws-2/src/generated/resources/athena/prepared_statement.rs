@@ -83,8 +83,6 @@ pub mod prepared_statement {
         name: &str,
         args: PreparedStatementArgs,
     ) -> PreparedStatementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let query_statement_binding = args.query_statement.get_output(context);

@@ -86,8 +86,6 @@ pub mod alias {
         name: &str,
         args: AliasArgs,
     ) -> AliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let function_name_binding = args.function_name.get_output(context);
         let function_version_binding = args.function_version.get_output(context);

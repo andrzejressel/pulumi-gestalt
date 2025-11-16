@@ -142,8 +142,6 @@ pub mod target_group_attachment {
         name: &str,
         args: TargetGroupAttachmentArgs,
     ) -> TargetGroupAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_binding = args.availability_zone.get_output(context);
         let port_binding = args.port.get_output(context);
         let target_group_arn_binding = args.target_group_arn.get_output(context);

@@ -201,8 +201,6 @@ pub mod local_rulestack_rule {
         name: &str,
         args: LocalRulestackRuleArgs,
     ) -> LocalRulestackRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let applications_binding = args.applications.get_output(context);
         let audit_comment_binding = args.audit_comment.get_output(context);

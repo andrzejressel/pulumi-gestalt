@@ -168,8 +168,6 @@ pub mod authorized_orgs_desc {
         name: &str,
         args: AuthorizedOrgsDescArgs,
     ) -> AuthorizedOrgsDescResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let asset_type_binding = args.asset_type.get_output(context);
         let authorization_direction_binding = args
             .authorization_direction

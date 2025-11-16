@@ -137,8 +137,6 @@ pub mod topic {
         name: &str,
         args: TopicArgs,
     ) -> TopicResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_binding = args.cluster.get_output(context);
         let configs_binding = args.configs.get_output(context);
         let location_binding = args.location.get_output(context);

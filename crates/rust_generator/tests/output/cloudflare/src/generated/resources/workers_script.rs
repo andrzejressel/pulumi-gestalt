@@ -204,8 +204,6 @@ pub mod workers_script {
         name: &str,
         args: WorkersScriptArgs,
     ) -> WorkersScriptResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let analytics_engine_bindings_binding = args
             .analytics_engine_bindings

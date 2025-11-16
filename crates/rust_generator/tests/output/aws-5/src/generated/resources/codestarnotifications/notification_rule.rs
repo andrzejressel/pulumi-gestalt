@@ -131,8 +131,6 @@ pub mod notification_rule {
         name: &str,
         args: NotificationRuleArgs,
     ) -> NotificationRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let detail_type_binding = args.detail_type.get_output(context);
         let event_type_ids_binding = args.event_type_ids.get_output(context);
         let name_binding = args.name.get_output(context);

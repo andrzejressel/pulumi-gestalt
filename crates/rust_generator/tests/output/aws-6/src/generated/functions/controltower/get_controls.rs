@@ -28,8 +28,6 @@ pub mod get_controls {
         context: &pulumi_gestalt_rust::Context,
         args: GetControlsArgs,
     ) -> GetControlsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let target_identifier_binding = args.target_identifier.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:controltower/getControls:getControls".into(),

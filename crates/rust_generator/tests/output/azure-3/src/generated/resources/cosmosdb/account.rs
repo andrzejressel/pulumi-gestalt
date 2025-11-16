@@ -345,8 +345,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_key_metadata_writes_enabled_binding = args
             .access_key_metadata_writes_enabled
             .get_output(context);

@@ -323,8 +323,6 @@ pub mod database_iam_policy {
         name: &str,
         args: DatabaseIAMPolicyArgs,
     ) -> DatabaseIAMPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_binding = args.database.get_output(context);
         let instance_binding = args.instance.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);

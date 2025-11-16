@@ -96,8 +96,6 @@ pub mod integration_account_schema {
         name: &str,
         args: IntegrationAccountSchemaArgs,
     ) -> IntegrationAccountSchemaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_binding = args.content.get_output(context);
         let file_name_binding = args.file_name.get_output(context);
         let integration_account_name_binding = args

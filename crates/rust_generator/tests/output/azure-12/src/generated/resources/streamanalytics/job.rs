@@ -190,8 +190,6 @@ pub mod job {
         name: &str,
         args: JobArgs,
     ) -> JobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let compatibility_level_binding = args.compatibility_level.get_output(context);
         let content_storage_policy_binding = args
             .content_storage_policy

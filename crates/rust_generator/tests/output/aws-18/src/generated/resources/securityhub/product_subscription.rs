@@ -137,8 +137,6 @@ pub mod product_subscription {
         name: &str,
         args: ProductSubscriptionArgs,
     ) -> ProductSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let product_arn_binding = args.product_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:securityhub/productSubscription:ProductSubscription".into(),

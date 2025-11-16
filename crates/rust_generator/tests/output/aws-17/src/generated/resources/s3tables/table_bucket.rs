@@ -81,8 +81,6 @@ pub mod table_bucket {
         name: &str,
         args: TableBucketArgs,
     ) -> TableBucketResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let maintenance_configuration_binding = args
             .maintenance_configuration
             .get_output(context);

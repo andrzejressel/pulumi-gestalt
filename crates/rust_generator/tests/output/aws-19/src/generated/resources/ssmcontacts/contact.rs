@@ -102,8 +102,6 @@ pub mod contact {
         name: &str,
         args: ContactArgs,
     ) -> ContactResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_binding = args.alias.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let tags_binding = args.tags.get_output(context);

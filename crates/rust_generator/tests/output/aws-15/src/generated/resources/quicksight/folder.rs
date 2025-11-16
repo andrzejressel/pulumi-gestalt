@@ -158,8 +158,6 @@ pub mod folder {
         name: &str,
         args: FolderArgs,
     ) -> FolderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let folder_id_binding = args.folder_id.get_output(context);
         let folder_type_binding = args.folder_type.get_output(context);

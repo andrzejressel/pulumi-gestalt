@@ -137,8 +137,6 @@ pub mod firewall_application_rule_collection {
         name: &str,
         args: FirewallApplicationRuleCollectionArgs,
     ) -> FirewallApplicationRuleCollectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let azure_firewall_name_binding = args.azure_firewall_name.get_output(context);
         let name_binding = args.name.get_output(context);

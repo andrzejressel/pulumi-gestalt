@@ -161,8 +161,6 @@ pub mod infrastructure_configuration {
         name: &str,
         args: InfrastructureConfigurationArgs,
     ) -> InfrastructureConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let instance_metadata_options_binding = args
             .instance_metadata_options

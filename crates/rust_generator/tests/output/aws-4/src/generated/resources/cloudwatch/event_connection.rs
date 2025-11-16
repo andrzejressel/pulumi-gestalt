@@ -237,8 +237,6 @@ pub mod event_connection {
         name: &str,
         args: EventConnectionArgs,
     ) -> EventConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auth_parameters_binding = args.auth_parameters.get_output(context);
         let authorization_type_binding = args.authorization_type.get_output(context);
         let description_binding = args.description.get_output(context);

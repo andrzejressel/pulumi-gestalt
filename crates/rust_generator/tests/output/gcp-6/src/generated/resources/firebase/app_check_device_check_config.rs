@@ -149,8 +149,6 @@ pub mod app_check_device_check_config {
         name: &str,
         args: AppCheckDeviceCheckConfigArgs,
     ) -> AppCheckDeviceCheckConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let key_id_binding = args.key_id.get_output(context);
         let private_key_binding = args.private_key.get_output(context);

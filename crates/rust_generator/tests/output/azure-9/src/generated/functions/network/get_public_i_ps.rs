@@ -42,8 +42,6 @@ pub mod get_public_i_ps {
         context: &pulumi_gestalt_rust::Context,
         args: GetPublicIPsArgs,
     ) -> GetPublicIPsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_type_binding = args.allocation_type.get_output(context);
         let attachment_status_binding = args.attachment_status.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);

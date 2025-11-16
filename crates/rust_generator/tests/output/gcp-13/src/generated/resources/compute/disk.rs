@@ -518,8 +518,6 @@ pub mod disk {
         name: &str,
         args: DiskArgs,
     ) -> DiskResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_mode_binding = args.access_mode.get_output(context);
         let async_primary_disk_binding = args.async_primary_disk.get_output(context);
         let description_binding = args.description.get_output(context);

@@ -20,8 +20,6 @@ pub mod get_active_receipt_rule_set {
     pub fn invoke(
         context: &pulumi_gestalt_rust::Context,
     ) -> GetActiveReceiptRuleSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ses/getActiveReceiptRuleSet:getActiveReceiptRuleSet".into(),
             version: super::super::super::get_version(),

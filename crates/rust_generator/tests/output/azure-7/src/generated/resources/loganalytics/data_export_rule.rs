@@ -114,8 +114,6 @@ pub mod data_export_rule {
         name: &str,
         args: DataExportRuleArgs,
     ) -> DataExportRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_resource_id_binding = args
             .destination_resource_id
             .get_output(context);

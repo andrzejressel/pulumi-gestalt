@@ -118,8 +118,6 @@ pub mod hybrid_connection_authorization_rule {
         name: &str,
         args: HybridConnectionAuthorizationRuleArgs,
     ) -> HybridConnectionAuthorizationRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hybrid_connection_name_binding = args
             .hybrid_connection_name
             .get_output(context);

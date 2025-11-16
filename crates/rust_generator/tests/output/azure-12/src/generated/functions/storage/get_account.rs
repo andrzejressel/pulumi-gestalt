@@ -221,8 +221,6 @@ pub mod get_account {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccountArgs,
     ) -> GetAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let min_tls_version_binding = args.min_tls_version.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

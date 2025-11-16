@@ -66,8 +66,6 @@ pub mod shared_directory {
         name: &str,
         args: SharedDirectoryArgs,
     ) -> SharedDirectoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let directory_id_binding = args.directory_id.get_output(context);
         let method_binding = args.method.get_output(context);
         let notes_binding = args.notes.get_output(context);

@@ -105,8 +105,6 @@ pub mod link_aggregation_group {
         name: &str,
         args: LinkAggregationGroupArgs,
     ) -> LinkAggregationGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_id_binding = args.connection_id.get_output(context);
         let connections_bandwidth_binding = args
             .connections_bandwidth

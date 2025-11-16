@@ -184,8 +184,6 @@ pub mod express_route_connection {
         name: &str,
         args: ExpressRouteConnectionArgs,
     ) -> ExpressRouteConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorization_key_binding = args.authorization_key.get_output(context);
         let enable_internet_security_binding = args
             .enable_internet_security

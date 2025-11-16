@@ -41,8 +41,6 @@ pub mod get_tag_value {
         context: &pulumi_gestalt_rust::Context,
         args: GetTagValueArgs,
     ) -> GetTagValueResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_binding = args.parent.get_output(context);
         let short_name_binding = args.short_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

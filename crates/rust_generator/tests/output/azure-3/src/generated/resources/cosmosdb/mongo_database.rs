@@ -92,8 +92,6 @@ pub mod mongo_database {
         name: &str,
         args: MongoDatabaseArgs,
     ) -> MongoDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let autoscale_settings_binding = args.autoscale_settings.get_output(context);
         let name_binding = args.name.get_output(context);

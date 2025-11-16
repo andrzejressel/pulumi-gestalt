@@ -84,8 +84,6 @@ pub mod log_data_protection_policy {
         name: &str,
         args: LogDataProtectionPolicyArgs,
     ) -> LogDataProtectionPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_group_name_binding = args.log_group_name.get_output(context);
         let policy_document_binding = args.policy_document.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -550,8 +550,6 @@ pub mod data_source {
         name: &str,
         args: DataSourceArgs,
     ) -> DataSourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_binding = args.configuration.get_output(context);
         let custom_document_enrichment_configuration_binding = args
             .custom_document_enrichment_configuration

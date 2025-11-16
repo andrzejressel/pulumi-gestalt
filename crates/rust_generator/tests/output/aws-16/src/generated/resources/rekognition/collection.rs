@@ -78,8 +78,6 @@ pub mod collection {
         name: &str,
         args: CollectionArgs,
     ) -> CollectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let collection_id_binding = args.collection_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

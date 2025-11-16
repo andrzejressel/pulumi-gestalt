@@ -99,8 +99,6 @@ pub mod spring_cloud_api_portal_custom_domain {
         name: &str,
         args: SpringCloudApiPortalCustomDomainArgs,
     ) -> SpringCloudApiPortalCustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let spring_cloud_api_portal_id_binding = args
             .spring_cloud_api_portal_id

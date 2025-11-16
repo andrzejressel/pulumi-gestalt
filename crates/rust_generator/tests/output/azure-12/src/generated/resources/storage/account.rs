@@ -568,8 +568,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_tier_binding = args.access_tier.get_output(context);
         let account_kind_binding = args.account_kind.get_output(context);
         let account_replication_type_binding = args

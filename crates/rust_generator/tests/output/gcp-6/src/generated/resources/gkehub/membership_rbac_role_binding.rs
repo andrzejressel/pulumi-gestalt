@@ -149,8 +149,6 @@ pub mod membership_rbac_role_binding {
         name: &str,
         args: MembershipRbacRoleBindingArgs,
     ) -> MembershipRbacRoleBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let membership_id_binding = args.membership_id.get_output(context);
         let membership_rbac_role_binding_id_binding = args

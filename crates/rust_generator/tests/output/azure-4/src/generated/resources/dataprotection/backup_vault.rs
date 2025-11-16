@@ -137,8 +137,6 @@ pub mod backup_vault {
         name: &str,
         args: BackupVaultArgs,
     ) -> BackupVaultResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cross_region_restore_enabled_binding = args
             .cross_region_restore_enabled
             .get_output(context);

@@ -244,8 +244,6 @@ pub mod bucket_replication_config {
         name: &str,
         args: BucketReplicationConfigArgs,
     ) -> BucketReplicationConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let role_binding = args.role.get_output(context);
         let rules_binding = args.rules.get_output(context);

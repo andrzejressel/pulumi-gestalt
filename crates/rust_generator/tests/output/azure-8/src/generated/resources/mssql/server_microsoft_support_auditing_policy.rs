@@ -231,8 +231,6 @@ pub mod server_microsoft_support_auditing_policy {
         name: &str,
         args: ServerMicrosoftSupportAuditingPolicyArgs,
     ) -> ServerMicrosoftSupportAuditingPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let blob_storage_endpoint_binding = args
             .blob_storage_endpoint
             .get_output(context);

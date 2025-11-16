@@ -225,8 +225,6 @@ pub mod packet_mirroring {
         name: &str,
         args: PacketMirroringArgs,
     ) -> PacketMirroringResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let collector_ilb_binding = args.collector_ilb.get_output(context);
         let description_binding = args.description.get_output(context);
         let filter_binding = args.filter.get_output(context);

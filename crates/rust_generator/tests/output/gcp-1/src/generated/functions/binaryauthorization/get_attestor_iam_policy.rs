@@ -36,8 +36,6 @@ pub mod get_attestor_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetAttestorIamPolicyArgs,
     ) -> GetAttestorIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attestor_binding = args.attestor.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

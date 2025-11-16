@@ -236,8 +236,6 @@ pub mod crypto_key {
         name: &str,
         args: CryptoKeyArgs,
     ) -> CryptoKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crypto_key_backend_binding = args.crypto_key_backend.get_output(context);
         let destroy_scheduled_duration_binding = args
             .destroy_scheduled_duration

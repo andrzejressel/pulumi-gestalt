@@ -103,8 +103,6 @@ pub mod ssh_public_key {
         name: &str,
         args: SshPublicKeyArgs,
     ) -> SshPublicKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let expiration_time_usec_binding = args.expiration_time_usec.get_output(context);
         let key_binding = args.key.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -49,8 +49,6 @@ pub fn create(
     args: {{resource.struct_name}}Args
 {{/if}}
 ) -> {{resource.struct_name}}Result {
-    use std::collections::HashMap;
-    use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
 
 {{#each resource.input_properties}}
     let {{arg_name}}_binding = args.{{arg_name}}.get_output(context);

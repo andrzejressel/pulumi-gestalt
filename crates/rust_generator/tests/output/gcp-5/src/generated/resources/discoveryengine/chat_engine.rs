@@ -241,8 +241,6 @@ pub mod chat_engine {
         name: &str,
         args: ChatEngineArgs,
     ) -> ChatEngineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let chat_engine_config_binding = args.chat_engine_config.get_output(context);
         let collection_id_binding = args.collection_id.get_output(context);
         let common_config_binding = args.common_config.get_output(context);

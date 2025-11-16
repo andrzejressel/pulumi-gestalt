@@ -68,8 +68,6 @@ pub mod invite_accepter {
         name: &str,
         args: InviteAccepterArgs,
     ) -> InviteAccepterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let master_id_binding = args.master_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:securityhub/inviteAccepter:InviteAccepter".into(),

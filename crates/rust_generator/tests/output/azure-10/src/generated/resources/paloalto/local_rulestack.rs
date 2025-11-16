@@ -109,8 +109,6 @@ pub mod local_rulestack {
         name: &str,
         args: LocalRulestackArgs,
     ) -> LocalRulestackResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let anti_spyware_profile_binding = args.anti_spyware_profile.get_output(context);
         let anti_virus_profile_binding = args.anti_virus_profile.get_output(context);
         let description_binding = args.description.get_output(context);

@@ -49,8 +49,6 @@ pub mod get_mesh {
         context: &pulumi_gestalt_rust::Context,
         args: GetMeshArgs,
     ) -> GetMeshResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let mesh_owner_binding = args.mesh_owner.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);

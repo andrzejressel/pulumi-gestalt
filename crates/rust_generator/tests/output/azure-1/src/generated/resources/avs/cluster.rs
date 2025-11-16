@@ -100,8 +100,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_node_count_binding = args.cluster_node_count.get_output(context);
         let name_binding = args.name.get_output(context);
         let sku_name_binding = args.sku_name.get_output(context);

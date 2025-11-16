@@ -99,8 +99,6 @@ pub mod connect_attachment {
         name: &str,
         args: ConnectAttachmentArgs,
     ) -> ConnectAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let core_network_id_binding = args.core_network_id.get_output(context);
         let edge_location_binding = args.edge_location.get_output(context);
         let options_binding = args.options.get_output(context);

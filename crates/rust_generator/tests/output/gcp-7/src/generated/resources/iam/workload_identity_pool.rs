@@ -150,8 +150,6 @@ pub mod workload_identity_pool {
         name: &str,
         args: WorkloadIdentityPoolArgs,
     ) -> WorkloadIdentityPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let disabled_binding = args.disabled.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

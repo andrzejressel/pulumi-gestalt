@@ -60,8 +60,6 @@ pub mod random_uuid {
         name: &str,
         args: RandomUuidArgs,
     ) -> RandomUuidResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let keepers_binding = args.keepers.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "random:index/randomUuid:RandomUuid".into(),

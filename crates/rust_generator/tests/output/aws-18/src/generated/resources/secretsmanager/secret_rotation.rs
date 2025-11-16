@@ -91,8 +91,6 @@ pub mod secret_rotation {
         name: &str,
         args: SecretRotationArgs,
     ) -> SecretRotationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let rotate_immediately_binding = args.rotate_immediately.get_output(context);
         let rotation_lambda_arn_binding = args.rotation_lambda_arn.get_output(context);
         let rotation_rules_binding = args.rotation_rules.get_output(context);

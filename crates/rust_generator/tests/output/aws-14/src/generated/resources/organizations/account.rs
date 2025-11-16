@@ -123,8 +123,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let close_on_deletion_binding = args.close_on_deletion.get_output(context);
         let create_govcloud_binding = args.create_govcloud.get_output(context);
         let email_binding = args.email.get_output(context);

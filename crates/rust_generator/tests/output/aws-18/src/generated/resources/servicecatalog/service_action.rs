@@ -85,8 +85,6 @@ pub mod service_action {
         name: &str,
         args: ServiceActionArgs,
     ) -> ServiceActionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accept_language_binding = args.accept_language.get_output(context);
         let definition_binding = args.definition.get_output(context);
         let description_binding = args.description.get_output(context);

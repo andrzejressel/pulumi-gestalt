@@ -139,8 +139,6 @@ pub mod endpoint_eventhub {
         name: &str,
         args: EndpointEventhubArgs,
     ) -> EndpointEventhubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_type_binding = args.authentication_type.get_output(context);
         let connection_string_binding = args.connection_string.get_output(context);
         let endpoint_uri_binding = args.endpoint_uri.get_output(context);

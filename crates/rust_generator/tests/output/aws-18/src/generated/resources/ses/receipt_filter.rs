@@ -68,8 +68,6 @@ pub mod receipt_filter {
         name: &str,
         args: ReceiptFilterArgs,
     ) -> ReceiptFilterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_binding = args.cidr.get_output(context);
         let name_binding = args.name.get_output(context);
         let policy_binding = args.policy.get_output(context);

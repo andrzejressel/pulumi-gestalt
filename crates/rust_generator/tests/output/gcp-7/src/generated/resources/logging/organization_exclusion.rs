@@ -88,8 +88,6 @@ pub mod organization_exclusion {
         name: &str,
         args: OrganizationExclusionArgs,
     ) -> OrganizationExclusionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let disabled_binding = args.disabled.get_output(context);
         let filter_binding = args.filter.get_output(context);

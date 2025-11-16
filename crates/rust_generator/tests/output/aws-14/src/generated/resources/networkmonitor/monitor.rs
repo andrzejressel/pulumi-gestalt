@@ -81,8 +81,6 @@ pub mod monitor {
         name: &str,
         args: MonitorArgs,
     ) -> MonitorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aggregation_period_binding = args.aggregation_period.get_output(context);
         let monitor_name_binding = args.monitor_name.get_output(context);
         let tags_binding = args.tags.get_output(context);

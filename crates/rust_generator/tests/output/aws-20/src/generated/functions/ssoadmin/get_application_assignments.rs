@@ -43,8 +43,6 @@ pub mod get_application_assignments {
         context: &pulumi_gestalt_rust::Context,
         args: GetApplicationAssignmentsArgs,
     ) -> GetApplicationAssignmentsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_arn_binding = args.application_arn.get_output(context);
         let application_assignments_binding = args
             .application_assignments

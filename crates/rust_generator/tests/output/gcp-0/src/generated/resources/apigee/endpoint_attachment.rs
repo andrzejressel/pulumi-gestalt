@@ -140,8 +140,6 @@ pub mod endpoint_attachment {
         name: &str,
         args: EndpointAttachmentArgs,
     ) -> EndpointAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let endpoint_attachment_id_binding = args
             .endpoint_attachment_id
             .get_output(context);

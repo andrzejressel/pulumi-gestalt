@@ -87,8 +87,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hsm_type_binding = args.hsm_type.get_output(context);
         let mode_binding = args.mode.get_output(context);
         let source_backup_identifier_binding = args

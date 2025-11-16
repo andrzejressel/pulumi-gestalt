@@ -154,8 +154,6 @@ pub mod router_interface {
         name: &str,
         args: RouterInterfaceArgs,
     ) -> RouterInterfaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let interconnect_attachment_binding = args
             .interconnect_attachment
             .get_output(context);

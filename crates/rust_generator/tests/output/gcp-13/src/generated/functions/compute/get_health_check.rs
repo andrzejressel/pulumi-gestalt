@@ -63,8 +63,6 @@ pub mod get_health_check {
         context: &pulumi_gestalt_rust::Context,
         args: GetHealthCheckArgs,
     ) -> GetHealthCheckResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

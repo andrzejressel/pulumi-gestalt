@@ -91,8 +91,6 @@ pub mod queue {
         name: &str,
         args: QueueArgs,
     ) -> QueueResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let pricing_plan_binding = args.pricing_plan.get_output(context);

@@ -169,8 +169,6 @@ pub mod connected_registry {
         name: &str,
         args: ConnectedRegistryArgs,
     ) -> ConnectedRegistryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let audit_log_enabled_binding = args.audit_log_enabled.get_output(context);
         let client_token_ids_binding = args.client_token_ids.get_output(context);
         let container_registry_id_binding = args

@@ -76,8 +76,6 @@ pub mod byte_match_set {
         name: &str,
         args: ByteMatchSetArgs,
     ) -> ByteMatchSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let byte_match_tuples_binding = args.byte_match_tuples.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

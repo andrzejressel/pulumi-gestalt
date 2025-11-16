@@ -271,8 +271,6 @@ pub mod dns_managed_zone_iam_binding {
         name: &str,
         args: DnsManagedZoneIamBindingArgs,
     ) -> DnsManagedZoneIamBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let managed_zone_binding = args.managed_zone.get_output(context);
         let members_binding = args.members.get_output(context);

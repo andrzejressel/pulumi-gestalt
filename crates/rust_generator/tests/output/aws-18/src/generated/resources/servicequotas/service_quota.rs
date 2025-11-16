@@ -86,8 +86,6 @@ pub mod service_quota {
         name: &str,
         args: ServiceQuotaArgs,
     ) -> ServiceQuotaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let quota_code_binding = args.quota_code.get_output(context);
         let service_code_binding = args.service_code.get_output(context);
         let value_binding = args.value.get_output(context);

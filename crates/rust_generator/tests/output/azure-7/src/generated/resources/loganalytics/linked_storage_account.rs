@@ -99,8 +99,6 @@ pub mod linked_storage_account {
         name: &str,
         args: LinkedStorageAccountArgs,
     ) -> LinkedStorageAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_source_type_binding = args.data_source_type.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let storage_account_ids_binding = args.storage_account_ids.get_output(context);

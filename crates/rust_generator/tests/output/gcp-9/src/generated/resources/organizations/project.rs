@@ -204,8 +204,6 @@ pub mod project {
         name: &str,
         args: ProjectArgs,
     ) -> ProjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_create_network_binding = args.auto_create_network.get_output(context);
         let billing_account_binding = args.billing_account.get_output(context);
         let deletion_policy_binding = args.deletion_policy.get_output(context);

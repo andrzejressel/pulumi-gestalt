@@ -119,8 +119,6 @@ pub mod reserved_cache_node {
         name: &str,
         args: ReservedCacheNodeArgs,
     ) -> ReservedCacheNodeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cache_node_count_binding = args.cache_node_count.get_output(context);
         let reserved_cache_nodes_offering_id_binding = args
             .reserved_cache_nodes_offering_id

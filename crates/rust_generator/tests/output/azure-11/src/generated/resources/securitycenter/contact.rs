@@ -81,8 +81,6 @@ pub mod contact {
         name: &str,
         args: ContactArgs,
     ) -> ContactResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alert_notifications_binding = args.alert_notifications.get_output(context);
         let alerts_to_admins_binding = args.alerts_to_admins.get_output(context);
         let email_binding = args.email.get_output(context);

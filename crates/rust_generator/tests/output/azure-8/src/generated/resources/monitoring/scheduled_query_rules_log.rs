@@ -159,8 +159,6 @@ pub mod scheduled_query_rules_log {
         name: &str,
         args: ScheduledQueryRulesLogArgs,
     ) -> ScheduledQueryRulesLogResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorized_resource_ids_binding = args
             .authorized_resource_ids
             .get_output(context);

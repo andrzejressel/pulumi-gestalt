@@ -82,8 +82,6 @@ pub mod zero_trust_device_managed_networks {
         name: &str,
         args: ZeroTrustDeviceManagedNetworksArgs,
     ) -> ZeroTrustDeviceManagedNetworksResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let config_binding = args.config.get_output(context);
         let name_binding = args.name.get_output(context);

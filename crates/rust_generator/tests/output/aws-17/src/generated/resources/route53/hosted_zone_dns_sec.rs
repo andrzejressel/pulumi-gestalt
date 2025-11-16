@@ -108,8 +108,6 @@ pub mod hosted_zone_dns_sec {
         name: &str,
         args: HostedZoneDnsSecArgs,
     ) -> HostedZoneDnsSecResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hosted_zone_id_binding = args.hosted_zone_id.get_output(context);
         let signing_status_binding = args.signing_status.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

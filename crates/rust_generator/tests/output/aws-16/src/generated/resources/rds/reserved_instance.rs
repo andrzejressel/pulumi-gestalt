@@ -119,8 +119,6 @@ pub mod reserved_instance {
         name: &str,
         args: ReservedInstanceArgs,
     ) -> ReservedInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_count_binding = args.instance_count.get_output(context);
         let offering_id_binding = args.offering_id.get_output(context);
         let reservation_id_binding = args.reservation_id.get_output(context);

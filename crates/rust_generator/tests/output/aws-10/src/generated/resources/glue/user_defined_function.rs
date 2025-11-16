@@ -107,8 +107,6 @@ pub mod user_defined_function {
         name: &str,
         args: UserDefinedFunctionArgs,
     ) -> UserDefinedFunctionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_id_binding = args.catalog_id.get_output(context);
         let class_name_binding = args.class_name.get_output(context);
         let database_name_binding = args.database_name.get_output(context);

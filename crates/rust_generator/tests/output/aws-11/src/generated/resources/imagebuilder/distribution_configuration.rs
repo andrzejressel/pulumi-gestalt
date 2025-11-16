@@ -96,8 +96,6 @@ pub mod distribution_configuration {
         name: &str,
         args: DistributionConfigurationArgs,
     ) -> DistributionConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let distributions_binding = args.distributions.get_output(context);
         let name_binding = args.name.get_output(context);

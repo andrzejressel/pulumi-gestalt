@@ -573,8 +573,6 @@ pub mod workload_identity_pool_provider {
         name: &str,
         args: WorkloadIdentityPoolProviderArgs,
     ) -> WorkloadIdentityPoolProviderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attribute_condition_binding = args.attribute_condition.get_output(context);
         let attribute_mapping_binding = args.attribute_mapping.get_output(context);
         let aws_binding = args.aws.get_output(context);

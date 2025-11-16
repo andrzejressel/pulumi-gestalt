@@ -208,8 +208,6 @@ pub mod machine_image {
         name: &str,
         args: MachineImageArgs,
     ) -> MachineImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let guest_flush_binding = args.guest_flush.get_output(context);
         let machine_image_encryption_key_binding = args

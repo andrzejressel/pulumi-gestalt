@@ -123,8 +123,6 @@ pub mod log_account_policy {
         name: &str,
         args: LogAccountPolicyArgs,
     ) -> LogAccountPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let policy_document_binding = args.policy_document.get_output(context);
         let policy_name_binding = args.policy_name.get_output(context);
         let policy_type_binding = args.policy_type.get_output(context);

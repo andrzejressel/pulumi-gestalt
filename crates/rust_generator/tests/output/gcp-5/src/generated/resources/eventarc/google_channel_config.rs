@@ -122,8 +122,6 @@ pub mod google_channel_config {
         name: &str,
         args: GoogleChannelConfigArgs,
     ) -> GoogleChannelConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crypto_key_name_binding = args.crypto_key_name.get_output(context);
         let location_binding = args.location.get_output(context);
         let name_binding = args.name.get_output(context);

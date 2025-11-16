@@ -100,8 +100,6 @@ pub mod embedded {
         name: &str,
         args: EmbeddedArgs,
     ) -> EmbeddedResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let administrators_binding = args.administrators.get_output(context);
         let location_binding = args.location.get_output(context);
         let mode_binding = args.mode.get_output(context);

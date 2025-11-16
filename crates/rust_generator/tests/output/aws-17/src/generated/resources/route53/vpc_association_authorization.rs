@@ -95,8 +95,6 @@ pub mod vpc_association_authorization {
         name: &str,
         args: VpcAssociationAuthorizationArgs,
     ) -> VpcAssociationAuthorizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let vpc_id_binding = args.vpc_id.get_output(context);
         let vpc_region_binding = args.vpc_region.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

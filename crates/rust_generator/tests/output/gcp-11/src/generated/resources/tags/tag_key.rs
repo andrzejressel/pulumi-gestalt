@@ -125,8 +125,6 @@ pub mod tag_key {
         name: &str,
         args: TagKeyArgs,
     ) -> TagKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let purpose_binding = args.purpose.get_output(context);

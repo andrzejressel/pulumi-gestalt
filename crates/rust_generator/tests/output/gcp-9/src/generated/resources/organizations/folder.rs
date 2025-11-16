@@ -93,8 +93,6 @@ pub mod folder {
         name: &str,
         args: FolderArgs,
     ) -> FolderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let parent_binding = args.parent.get_output(context);

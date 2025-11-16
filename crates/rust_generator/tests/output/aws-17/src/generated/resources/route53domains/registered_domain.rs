@@ -167,8 +167,6 @@ pub mod registered_domain {
         name: &str,
         args: RegisteredDomainArgs,
     ) -> RegisteredDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_contact_binding = args.admin_contact.get_output(context);
         let admin_privacy_binding = args.admin_privacy.get_output(context);
         let auto_renew_binding = args.auto_renew.get_output(context);

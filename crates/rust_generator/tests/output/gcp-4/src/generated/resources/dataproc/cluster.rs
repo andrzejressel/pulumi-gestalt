@@ -199,8 +199,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_config_binding = args.cluster_config.get_output(context);
         let graceful_decommission_timeout_binding = args
             .graceful_decommission_timeout

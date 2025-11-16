@@ -95,8 +95,6 @@ pub mod mover_agent {
         name: &str,
         args: MoverAgentArgs,
     ) -> MoverAgentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arc_virtual_machine_id_binding = args
             .arc_virtual_machine_id
             .get_output(context);

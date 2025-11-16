@@ -66,8 +66,6 @@ pub mod email_identity_feedback_attributes {
         name: &str,
         args: EmailIdentityFeedbackAttributesArgs,
     ) -> EmailIdentityFeedbackAttributesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let email_forwarding_enabled_binding = args
             .email_forwarding_enabled
             .get_output(context);

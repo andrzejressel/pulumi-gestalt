@@ -87,8 +87,6 @@ pub mod identity_provider_config {
         name: &str,
         args: IdentityProviderConfigArgs,
     ) -> IdentityProviderConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let oidc_binding = args.oidc.get_output(context);
         let tags_binding = args.tags.get_output(context);

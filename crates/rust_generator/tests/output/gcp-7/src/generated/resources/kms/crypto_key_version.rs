@@ -121,8 +121,6 @@ pub mod crypto_key_version {
         name: &str,
         args: CryptoKeyVersionArgs,
     ) -> CryptoKeyVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let crypto_key_binding = args.crypto_key.get_output(context);
         let external_protection_level_options_binding = args
             .external_protection_level_options

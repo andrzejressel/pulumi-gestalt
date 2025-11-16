@@ -54,8 +54,6 @@ pub mod account_alias {
         name: &str,
         args: AccountAliasArgs,
     ) -> AccountAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_alias_binding = args.account_alias.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:iam/accountAlias:AccountAlias".into(),

@@ -109,8 +109,6 @@ pub mod dx_gateway_attachment {
         name: &str,
         args: DxGatewayAttachmentArgs,
     ) -> DxGatewayAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let core_network_id_binding = args.core_network_id.get_output(context);
         let direct_connect_gateway_arn_binding = args
             .direct_connect_gateway_arn

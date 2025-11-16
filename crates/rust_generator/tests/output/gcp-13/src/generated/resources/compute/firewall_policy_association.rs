@@ -97,8 +97,6 @@ pub mod firewall_policy_association {
         name: &str,
         args: FirewallPolicyAssociationArgs,
     ) -> FirewallPolicyAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attachment_target_binding = args.attachment_target.get_output(context);
         let firewall_policy_binding = args.firewall_policy.get_output(context);
         let name_binding = args.name.get_output(context);

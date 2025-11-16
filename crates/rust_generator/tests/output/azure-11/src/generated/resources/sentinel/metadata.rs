@@ -227,8 +227,6 @@ pub mod metadata {
         name: &str,
         args: MetadataArgs,
     ) -> MetadataResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let author_binding = args.author.get_output(context);
         let category_binding = args.category.get_output(context);
         let content_id_binding = args.content_id.get_output(context);

@@ -120,8 +120,6 @@ pub mod taxonomy {
         name: &str,
         args: TaxonomyArgs,
     ) -> TaxonomyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let activated_policy_types_binding = args
             .activated_policy_types
             .get_output(context);

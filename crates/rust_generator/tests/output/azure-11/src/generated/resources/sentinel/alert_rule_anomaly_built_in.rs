@@ -146,8 +146,6 @@ pub mod alert_rule_anomaly_built_in {
         name: &str,
         args: AlertRuleAnomalyBuiltInArgs,
     ) -> AlertRuleAnomalyBuiltInResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let log_analytics_workspace_id_binding = args

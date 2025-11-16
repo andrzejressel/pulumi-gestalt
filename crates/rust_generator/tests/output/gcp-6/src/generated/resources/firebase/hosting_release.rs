@@ -229,8 +229,6 @@ pub mod hosting_release {
         name: &str,
         args: HostingReleaseArgs,
     ) -> HostingReleaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let channel_id_binding = args.channel_id.get_output(context);
         let message_binding = args.message.get_output(context);
         let site_id_binding = args.site_id.get_output(context);

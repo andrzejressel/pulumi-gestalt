@@ -49,8 +49,6 @@ pub mod get_budget_subscription {
         context: &pulumi_gestalt_rust::Context,
         args: GetBudgetSubscriptionArgs,
     ) -> GetBudgetSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let subscription_id_binding = args.subscription_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

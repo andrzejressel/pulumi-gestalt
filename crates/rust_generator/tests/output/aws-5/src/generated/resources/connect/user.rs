@@ -275,8 +275,6 @@ pub mod user {
         name: &str,
         args: UserArgs,
     ) -> UserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let directory_user_id_binding = args.directory_user_id.get_output(context);
         let hierarchy_group_id_binding = args.hierarchy_group_id.get_output(context);
         let identity_info_binding = args.identity_info.get_output(context);

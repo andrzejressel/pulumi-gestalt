@@ -117,8 +117,6 @@ pub mod virtual_network_rule {
         name: &str,
         args: VirtualNetworkRuleArgs,
     ) -> VirtualNetworkRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ignore_missing_vnet_service_endpoint_binding = args
             .ignore_missing_vnet_service_endpoint
             .get_output(context);

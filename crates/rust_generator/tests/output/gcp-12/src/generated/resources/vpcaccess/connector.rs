@@ -202,8 +202,6 @@ pub mod connector {
         name: &str,
         args: ConnectorArgs,
     ) -> ConnectorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
         let machine_type_binding = args.machine_type.get_output(context);
         let max_instances_binding = args.max_instances.get_output(context);

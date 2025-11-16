@@ -244,8 +244,6 @@ pub mod access_application {
         name: &str,
         args: AccessApplicationArgs,
     ) -> AccessApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let allow_authenticate_via_warp_binding = args
             .allow_authenticate_via_warp

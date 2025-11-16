@@ -45,8 +45,6 @@ pub mod get_service_network {
         context: &pulumi_gestalt_rust::Context,
         args: GetServiceNetworkArgs,
     ) -> GetServiceNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let service_network_identifier_binding = args
             .service_network_identifier
             .get_output(context);

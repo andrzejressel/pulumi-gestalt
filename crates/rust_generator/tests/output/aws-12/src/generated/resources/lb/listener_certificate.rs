@@ -76,8 +76,6 @@ pub mod listener_certificate {
         name: &str,
         args: ListenerCertificateArgs,
     ) -> ListenerCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_arn_binding = args.certificate_arn.get_output(context);
         let listener_arn_binding = args.listener_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

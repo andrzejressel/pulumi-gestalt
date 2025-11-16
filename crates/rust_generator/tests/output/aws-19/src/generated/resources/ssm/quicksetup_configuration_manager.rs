@@ -91,8 +91,6 @@ pub mod quicksetup_configuration_manager {
         name: &str,
         args: QuicksetupConfigurationManagerArgs,
     ) -> QuicksetupConfigurationManagerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_definition_binding = args
             .configuration_definition
             .get_output(context);

@@ -60,8 +60,6 @@ pub mod single_scram_secret_association {
         name: &str,
         args: SingleScramSecretAssociationArgs,
     ) -> SingleScramSecretAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_arn_binding = args.cluster_arn.get_output(context);
         let secret_arn_binding = args.secret_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

@@ -192,8 +192,6 @@ pub mod windows_virtual_machine {
         name: &str,
         args: WindowsVirtualMachineArgs,
     ) -> WindowsVirtualMachineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_claim_binding = args.allow_claim.get_output(context);
         let disallow_public_ip_address_binding = args
             .disallow_public_ip_address

@@ -46,8 +46,6 @@ pub mod get_secret_version_access {
         context: &pulumi_gestalt_rust::Context,
         args: GetSecretVersionAccessArgs,
     ) -> GetSecretVersionAccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let is_secret_data_base64_binding = args
             .is_secret_data_base64
             .get_output(context);

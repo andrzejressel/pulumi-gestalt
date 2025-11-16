@@ -94,8 +94,6 @@ pub mod data_connector_office_365_project {
         name: &str,
         args: DataConnectorOffice365ProjectArgs,
     ) -> DataConnectorOffice365ProjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
             .get_output(context);

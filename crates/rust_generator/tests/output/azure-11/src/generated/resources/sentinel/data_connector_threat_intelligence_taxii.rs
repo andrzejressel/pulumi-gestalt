@@ -132,8 +132,6 @@ pub mod data_connector_threat_intelligence_taxii {
         name: &str,
         args: DataConnectorThreatIntelligenceTaxiiArgs,
     ) -> DataConnectorThreatIntelligenceTaxiiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_root_url_binding = args.api_root_url.get_output(context);
         let collection_id_binding = args.collection_id.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

@@ -165,8 +165,6 @@ pub mod schedule {
         name: &str,
         args: ScheduleArgs,
     ) -> ScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let end_date_binding = args.end_date.get_output(context);
         let flexible_time_window_binding = args.flexible_time_window.get_output(context);

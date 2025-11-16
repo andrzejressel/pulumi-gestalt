@@ -62,8 +62,6 @@ pub mod get_listener_rule {
         context: &pulumi_gestalt_rust::Context,
         args: GetListenerRuleArgs,
     ) -> GetListenerRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let arn_binding = args.arn.get_output(context);
         let conditions_binding = args.conditions.get_output(context);

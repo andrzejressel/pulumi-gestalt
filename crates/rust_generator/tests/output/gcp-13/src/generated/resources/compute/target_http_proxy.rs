@@ -284,8 +284,6 @@ pub mod target_http_proxy {
         name: &str,
         args: TargetHttpProxyArgs,
     ) -> TargetHttpProxyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let http_keep_alive_timeout_sec_binding = args
             .http_keep_alive_timeout_sec

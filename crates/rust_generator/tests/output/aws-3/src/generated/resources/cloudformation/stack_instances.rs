@@ -194,8 +194,6 @@ pub mod stack_instances {
         name: &str,
         args: StackInstancesArgs,
     ) -> StackInstancesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accounts_binding = args.accounts.get_output(context);
         let call_as_binding = args.call_as.get_output(context);
         let deployment_targets_binding = args.deployment_targets.get_output(context);

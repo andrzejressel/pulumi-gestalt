@@ -132,8 +132,6 @@ pub mod web_app_hybrid_connection {
         name: &str,
         args: WebAppHybridConnectionArgs,
     ) -> WebAppHybridConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hostname_binding = args.hostname.get_output(context);
         let port_binding = args.port.get_output(context);
         let relay_id_binding = args.relay_id.get_output(context);

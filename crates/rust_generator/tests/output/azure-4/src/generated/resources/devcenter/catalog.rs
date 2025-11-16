@@ -47,8 +47,6 @@ pub mod catalog {
         name: &str,
         args: CatalogArgs,
     ) -> CatalogResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let catalog_adogit_binding = args.catalog_adogit.get_output(context);
         let catalog_github_binding = args.catalog_github.get_output(context);
         let dev_center_id_binding = args.dev_center_id.get_output(context);

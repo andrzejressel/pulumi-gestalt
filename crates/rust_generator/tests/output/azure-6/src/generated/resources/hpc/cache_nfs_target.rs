@@ -191,8 +191,6 @@ pub mod cache_nfs_target {
         name: &str,
         args: CacheNfsTargetArgs,
     ) -> CacheNfsTargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cache_name_binding = args.cache_name.get_output(context);
         let name_binding = args.name.get_output(context);
         let namespace_junctions_binding = args.namespace_junctions.get_output(context);

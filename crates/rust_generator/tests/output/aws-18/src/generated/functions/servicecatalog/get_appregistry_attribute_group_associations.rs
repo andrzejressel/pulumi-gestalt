@@ -32,8 +32,6 @@ pub mod get_appregistry_attribute_group_associations {
         context: &pulumi_gestalt_rust::Context,
         args: GetAppregistryAttributeGroupAssociationsArgs,
     ) -> GetAppregistryAttributeGroupAssociationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let id_binding = args.id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

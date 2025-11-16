@@ -116,8 +116,6 @@ pub mod recorder_status {
         name: &str,
         args: RecorderStatusArgs,
     ) -> RecorderStatusResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let is_enabled_binding = args.is_enabled.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

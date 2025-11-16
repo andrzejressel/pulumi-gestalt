@@ -70,8 +70,6 @@ pub mod resolver_config {
         name: &str,
         args: ResolverConfigArgs,
     ) -> ResolverConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let autodefined_reverse_flag_binding = args
             .autodefined_reverse_flag
             .get_output(context);

@@ -338,8 +338,6 @@ pub mod authority {
         name: &str,
         args: AuthorityArgs,
     ) -> AuthorityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_authority_id_binding = args
             .certificate_authority_id
             .get_output(context);

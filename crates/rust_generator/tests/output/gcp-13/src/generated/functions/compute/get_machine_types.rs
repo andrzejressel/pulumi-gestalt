@@ -38,8 +38,6 @@ pub mod get_machine_types {
         context: &pulumi_gestalt_rust::Context,
         args: GetMachineTypesArgs,
     ) -> GetMachineTypesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filter_binding = args.filter.get_output(context);
         let project_binding = args.project.get_output(context);
         let zone_binding = args.zone.get_output(context);

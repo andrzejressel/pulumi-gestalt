@@ -46,8 +46,6 @@ pub mod connection_confirmation {
         name: &str,
         args: ConnectionConfirmationArgs,
     ) -> ConnectionConfirmationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_id_binding = args.connection_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:directconnect/connectionConfirmation:ConnectionConfirmation"

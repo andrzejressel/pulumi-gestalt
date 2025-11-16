@@ -141,8 +141,6 @@ pub mod certificate_order {
         name: &str,
         args: CertificateOrderArgs,
     ) -> CertificateOrderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_renew_binding = args.auto_renew.get_output(context);
         let csr_binding = args.csr.get_output(context);
         let distinguished_name_binding = args.distinguished_name.get_output(context);

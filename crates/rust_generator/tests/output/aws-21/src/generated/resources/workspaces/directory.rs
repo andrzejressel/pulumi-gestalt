@@ -254,8 +254,6 @@ pub mod directory {
         name: &str,
         args: DirectoryArgs,
     ) -> DirectoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let directory_id_binding = args.directory_id.get_output(context);
         let ip_group_ids_binding = args.ip_group_ids.get_output(context);
         let saml_properties_binding = args.saml_properties.get_output(context);

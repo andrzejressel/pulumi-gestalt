@@ -174,8 +174,6 @@ pub mod nfs_file_share {
         name: &str,
         args: NfsFileShareArgs,
     ) -> NfsFileShareResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let audit_destination_arn_binding = args
             .audit_destination_arn
             .get_output(context);

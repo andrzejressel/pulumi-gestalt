@@ -169,8 +169,6 @@ pub mod policy {
         name: &str,
         args: PolicyArgs,
     ) -> PolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delete_all_policy_resources_binding = args
             .delete_all_policy_resources
             .get_output(context);

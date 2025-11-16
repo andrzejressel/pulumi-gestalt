@@ -151,8 +151,6 @@ pub mod s_quota_preference {
         name: &str,
         args: SQuotaPreferenceArgs,
     ) -> SQuotaPreferenceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let contact_email_binding = args.contact_email.get_output(context);
         let dimensions_binding = args.dimensions.get_output(context);
         let ignore_safety_checks_binding = args.ignore_safety_checks.get_output(context);

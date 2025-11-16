@@ -81,8 +81,6 @@ pub mod profiles_profile {
         name: &str,
         args: ProfilesProfileArgs,
     ) -> ProfilesProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);

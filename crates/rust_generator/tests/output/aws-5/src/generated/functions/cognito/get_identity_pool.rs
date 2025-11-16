@@ -55,8 +55,6 @@ pub mod get_identity_pool {
         context: &pulumi_gestalt_rust::Context,
         args: GetIdentityPoolArgs,
     ) -> GetIdentityPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identity_pool_name_binding = args.identity_pool_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

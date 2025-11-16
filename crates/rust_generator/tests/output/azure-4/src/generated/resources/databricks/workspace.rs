@@ -206,8 +206,6 @@ pub mod workspace {
         name: &str,
         args: WorkspaceArgs,
     ) -> WorkspaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_connector_id_binding = args.access_connector_id.get_output(context);
         let custom_parameters_binding = args.custom_parameters.get_output(context);
         let customer_managed_key_enabled_binding = args

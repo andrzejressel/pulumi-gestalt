@@ -154,8 +154,6 @@ pub mod workspace_root_dbfs_customer_managed_key {
         name: &str,
         args: WorkspaceRootDbfsCustomerManagedKeyArgs,
     ) -> WorkspaceRootDbfsCustomerManagedKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_vault_id_binding = args.key_vault_id.get_output(context);
         let key_vault_key_id_binding = args.key_vault_key_id.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);

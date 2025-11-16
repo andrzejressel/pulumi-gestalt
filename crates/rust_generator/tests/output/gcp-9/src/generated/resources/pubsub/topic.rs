@@ -341,8 +341,6 @@ pub mod topic {
         name: &str,
         args: TopicArgs,
     ) -> TopicResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ingestion_data_source_settings_binding = args
             .ingestion_data_source_settings
             .get_output(context);

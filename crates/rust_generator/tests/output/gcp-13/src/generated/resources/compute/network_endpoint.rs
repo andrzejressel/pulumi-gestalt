@@ -177,8 +177,6 @@ pub mod network_endpoint {
         name: &str,
         args: NetworkEndpointArgs,
     ) -> NetworkEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_binding = args.instance.get_output(context);
         let ip_address_binding = args.ip_address.get_output(context);
         let network_endpoint_group_binding = args

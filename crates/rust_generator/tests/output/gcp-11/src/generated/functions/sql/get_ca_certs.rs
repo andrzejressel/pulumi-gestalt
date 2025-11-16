@@ -36,8 +36,6 @@ pub mod get_ca_certs {
         context: &pulumi_gestalt_rust::Context,
         args: GetCaCertsArgs,
     ) -> GetCaCertsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_binding = args.instance.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

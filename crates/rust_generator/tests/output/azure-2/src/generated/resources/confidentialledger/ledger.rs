@@ -124,8 +124,6 @@ pub mod ledger {
         name: &str,
         args: LedgerArgs,
     ) -> LedgerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let azuread_based_service_principals_binding = args
             .azuread_based_service_principals
             .get_output(context);

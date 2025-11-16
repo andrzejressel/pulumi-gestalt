@@ -98,8 +98,6 @@ pub mod sql_trigger {
         name: &str,
         args: SqlTriggerArgs,
     ) -> SqlTriggerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let body_binding = args.body.get_output(context);
         let container_id_binding = args.container_id.get_output(context);
         let name_binding = args.name.get_output(context);

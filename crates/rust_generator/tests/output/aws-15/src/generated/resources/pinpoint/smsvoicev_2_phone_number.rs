@@ -130,8 +130,6 @@ pub mod smsvoicev_2_phone_number {
         name: &str,
         args: Smsvoicev2PhoneNumberArgs,
     ) -> Smsvoicev2PhoneNumberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_protection_enabled_binding = args
             .deletion_protection_enabled
             .get_output(context);

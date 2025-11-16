@@ -235,8 +235,6 @@ pub mod region_network_endpoint {
         name: &str,
         args: RegionNetworkEndpointArgs,
     ) -> RegionNetworkEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_destination_port_binding = args
             .client_destination_port
             .get_output(context);

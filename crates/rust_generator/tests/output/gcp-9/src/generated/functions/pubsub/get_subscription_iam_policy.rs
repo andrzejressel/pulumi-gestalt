@@ -35,8 +35,6 @@ pub mod get_subscription_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetSubscriptionIamPolicyArgs,
     ) -> GetSubscriptionIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let subscription_binding = args.subscription.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

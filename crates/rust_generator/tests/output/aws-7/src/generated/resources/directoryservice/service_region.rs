@@ -76,8 +76,6 @@ pub mod service_region {
         name: &str,
         args: ServiceRegionArgs,
     ) -> ServiceRegionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let desired_number_of_domain_controllers_binding = args
             .desired_number_of_domain_controllers
             .get_output(context);

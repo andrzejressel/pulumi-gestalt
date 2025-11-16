@@ -56,8 +56,6 @@ pub mod get_policy_assignment {
         context: &pulumi_gestalt_rust::Context,
         args: GetPolicyAssignmentArgs,
     ) -> GetPolicyAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let scope_id_binding = args.scope_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

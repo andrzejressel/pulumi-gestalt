@@ -172,8 +172,6 @@ pub mod workspace_key {
         name: &str,
         args: WorkspaceKeyArgs,
     ) -> WorkspaceKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_binding = args.active.get_output(context);
         let customer_managed_key_name_binding = args
             .customer_managed_key_name

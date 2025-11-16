@@ -310,8 +310,6 @@ pub mod security_policy_rule {
         name: &str,
         args: SecurityPolicyRuleArgs,
     ) -> SecurityPolicyRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let description_binding = args.description.get_output(context);
         let header_action_binding = args.header_action.get_output(context);

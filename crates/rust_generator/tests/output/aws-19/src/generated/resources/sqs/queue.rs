@@ -260,8 +260,6 @@ pub mod queue {
         name: &str,
         args: QueueArgs,
     ) -> QueueResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_based_deduplication_binding = args
             .content_based_deduplication
             .get_output(context);

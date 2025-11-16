@@ -130,8 +130,6 @@ pub mod report_definition {
         name: &str,
         args: ReportDefinitionArgs,
     ) -> ReportDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_artifacts_binding = args.additional_artifacts.get_output(context);
         let additional_schema_elements_binding = args
             .additional_schema_elements

@@ -46,8 +46,6 @@ pub mod get_shared_image_versions {
         context: &pulumi_gestalt_rust::Context,
         args: GetSharedImageVersionsArgs,
     ) -> GetSharedImageVersionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let gallery_name_binding = args.gallery_name.get_output(context);
         let image_name_binding = args.image_name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

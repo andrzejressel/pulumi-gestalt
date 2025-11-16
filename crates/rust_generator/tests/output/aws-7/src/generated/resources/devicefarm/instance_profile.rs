@@ -93,8 +93,6 @@ pub mod instance_profile {
         name: &str,
         args: InstanceProfileArgs,
     ) -> InstanceProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let exclude_app_packages_from_cleanups_binding = args
             .exclude_app_packages_from_cleanups

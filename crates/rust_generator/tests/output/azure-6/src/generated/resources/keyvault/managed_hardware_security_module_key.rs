@@ -149,8 +149,6 @@ pub mod managed_hardware_security_module_key {
         name: &str,
         args: ManagedHardwareSecurityModuleKeyArgs,
     ) -> ManagedHardwareSecurityModuleKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let curve_binding = args.curve.get_output(context);
         let expiration_date_binding = args.expiration_date.get_output(context);
         let key_opts_binding = args.key_opts.get_output(context);

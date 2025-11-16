@@ -223,8 +223,6 @@ pub mod per_instance_config {
         name: &str,
         args: PerInstanceConfigArgs,
     ) -> PerInstanceConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_group_manager_binding = args
             .instance_group_manager
             .get_output(context);

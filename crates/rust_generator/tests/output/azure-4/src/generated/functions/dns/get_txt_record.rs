@@ -44,8 +44,6 @@ pub mod get_txt_record {
         context: &pulumi_gestalt_rust::Context,
         args: GetTxtRecordArgs,
     ) -> GetTxtRecordResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let zone_name_binding = args.zone_name.get_output(context);

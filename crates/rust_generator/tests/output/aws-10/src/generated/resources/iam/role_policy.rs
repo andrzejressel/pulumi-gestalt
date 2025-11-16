@@ -95,8 +95,6 @@ pub mod role_policy {
         name: &str,
         args: RolePolicyArgs,
     ) -> RolePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);
         let policy_binding = args.policy.get_output(context);

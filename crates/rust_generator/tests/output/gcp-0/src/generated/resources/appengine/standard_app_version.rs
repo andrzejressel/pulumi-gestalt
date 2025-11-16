@@ -316,8 +316,6 @@ pub mod standard_app_version {
         name: &str,
         args: StandardAppVersionArgs,
     ) -> StandardAppVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_engine_apis_binding = args.app_engine_apis.get_output(context);
         let automatic_scaling_binding = args.automatic_scaling.get_output(context);
         let basic_scaling_binding = args.basic_scaling.get_output(context);

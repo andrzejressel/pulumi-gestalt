@@ -62,8 +62,6 @@ pub mod invitation_accepter {
         name: &str,
         args: InvitationAccepterArgs,
     ) -> InvitationAccepterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let graph_arn_binding = args.graph_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:detective/invitationAccepter:InvitationAccepter".into(),

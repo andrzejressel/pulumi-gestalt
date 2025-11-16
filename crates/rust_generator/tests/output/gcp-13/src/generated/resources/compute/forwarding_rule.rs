@@ -1426,8 +1426,6 @@ pub mod forwarding_rule {
         name: &str,
         args: ForwardingRuleArgs,
     ) -> ForwardingRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let all_ports_binding = args.all_ports.get_output(context);
         let allow_global_access_binding = args.allow_global_access.get_output(context);
         let allow_psc_global_access_binding = args

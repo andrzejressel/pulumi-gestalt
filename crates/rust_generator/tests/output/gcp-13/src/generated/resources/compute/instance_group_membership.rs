@@ -134,8 +134,6 @@ pub mod instance_group_membership {
         name: &str,
         args: InstanceGroupMembershipArgs,
     ) -> InstanceGroupMembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_binding = args.instance.get_output(context);
         let instance_group_binding = args.instance_group.get_output(context);
         let project_binding = args.project.get_output(context);

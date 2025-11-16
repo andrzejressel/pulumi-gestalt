@@ -78,8 +78,6 @@ pub mod get_key {
         context: &pulumi_gestalt_rust::Context,
         args: GetKeyArgs,
     ) -> GetKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let grant_tokens_binding = args.grant_tokens.get_output(context);
         let key_id_binding = args.key_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

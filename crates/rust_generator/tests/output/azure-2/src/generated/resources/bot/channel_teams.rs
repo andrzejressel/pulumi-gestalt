@@ -98,8 +98,6 @@ pub mod channel_teams {
         name: &str,
         args: ChannelTeamsArgs,
     ) -> ChannelTeamsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bot_name_binding = args.bot_name.get_output(context);
         let calling_web_hook_binding = args.calling_web_hook.get_output(context);
         let deployment_environment_binding = args

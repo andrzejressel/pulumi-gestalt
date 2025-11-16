@@ -108,8 +108,6 @@ pub mod certificate_issuer {
         name: &str,
         args: CertificateIssuerArgs,
     ) -> CertificateIssuerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let admins_binding = args.admins.get_output(context);
         let key_vault_id_binding = args.key_vault_id.get_output(context);

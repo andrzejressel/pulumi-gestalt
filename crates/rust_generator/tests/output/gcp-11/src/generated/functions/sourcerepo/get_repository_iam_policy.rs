@@ -36,8 +36,6 @@ pub mod get_repository_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetRepositoryIamPolicyArgs,
     ) -> GetRepositoryIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let repository_binding = args.repository.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

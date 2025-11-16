@@ -117,8 +117,6 @@ pub mod subscription_policy_remediation {
         name: &str,
         args: SubscriptionPolicyRemediationArgs,
     ) -> SubscriptionPolicyRemediationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let failure_percentage_binding = args.failure_percentage.get_output(context);
         let location_filters_binding = args.location_filters.get_output(context);
         let name_binding = args.name.get_output(context);

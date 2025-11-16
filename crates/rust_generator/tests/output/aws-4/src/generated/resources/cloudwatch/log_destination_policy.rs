@@ -82,8 +82,6 @@ pub mod log_destination_policy {
         name: &str,
         args: LogDestinationPolicyArgs,
     ) -> LogDestinationPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_policy_binding = args.access_policy.get_output(context);
         let destination_name_binding = args.destination_name.get_output(context);
         let force_update_binding = args.force_update.get_output(context);

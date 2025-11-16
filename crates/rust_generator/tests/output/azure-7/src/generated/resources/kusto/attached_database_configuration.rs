@@ -168,8 +168,6 @@ pub mod attached_database_configuration {
         name: &str,
         args: AttachedDatabaseConfigurationArgs,
     ) -> AttachedDatabaseConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let cluster_resource_id_binding = args.cluster_resource_id.get_output(context);
         let database_name_binding = args.database_name.get_output(context);

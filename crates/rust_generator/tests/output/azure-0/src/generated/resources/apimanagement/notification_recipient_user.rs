@@ -97,8 +97,6 @@ pub mod notification_recipient_user {
         name: &str,
         args: NotificationRecipientUserArgs,
     ) -> NotificationRecipientUserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_id_binding = args.api_management_id.get_output(context);
         let notification_type_binding = args.notification_type.get_output(context);
         let user_id_binding = args.user_id.get_output(context);

@@ -115,8 +115,6 @@ pub mod shared_access_policy {
         name: &str,
         args: SharedAccessPolicyArgs,
     ) -> SharedAccessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let device_connect_binding = args.device_connect.get_output(context);
         let iothub_name_binding = args.iothub_name.get_output(context);
         let name_binding = args.name.get_output(context);

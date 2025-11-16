@@ -90,8 +90,6 @@ pub mod user {
         name: &str,
         args: UserArgs,
     ) -> UserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_type_binding = args.authentication_type.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let first_name_binding = args.first_name.get_output(context);

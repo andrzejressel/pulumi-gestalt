@@ -131,8 +131,6 @@ pub mod output_table {
         name: &str,
         args: OutputTableArgs,
     ) -> OutputTableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let batch_size_binding = args.batch_size.get_output(context);
         let columns_to_removes_binding = args.columns_to_removes.get_output(context);
         let name_binding = args.name.get_output(context);

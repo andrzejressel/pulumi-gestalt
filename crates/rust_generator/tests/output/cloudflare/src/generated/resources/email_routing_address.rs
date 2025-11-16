@@ -67,8 +67,6 @@ pub mod email_routing_address {
         name: &str,
         args: EmailRoutingAddressArgs,
     ) -> EmailRoutingAddressResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let email_binding = args.email.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

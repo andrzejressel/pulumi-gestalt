@@ -152,8 +152,6 @@ pub mod get_orderable_db_instance {
         context: &pulumi_gestalt_rust::Context,
         args: GetOrderableDbInstanceArgs,
     ) -> GetOrderableDbInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_group_binding = args
             .availability_zone_group
             .get_output(context);

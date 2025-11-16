@@ -65,8 +65,6 @@ pub mod assignment {
         name: &str,
         args: AssignmentArgs,
     ) -> AssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let lighthouse_definition_id_binding = args
             .lighthouse_definition_id
             .get_output(context);

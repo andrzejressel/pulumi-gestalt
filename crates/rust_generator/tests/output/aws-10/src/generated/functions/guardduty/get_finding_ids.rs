@@ -29,8 +29,6 @@ pub mod get_finding_ids {
         context: &pulumi_gestalt_rust::Context,
         args: GetFindingIdsArgs,
     ) -> GetFindingIdsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let detector_id_binding = args.detector_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:guardduty/getFindingIds:getFindingIds".into(),

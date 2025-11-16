@@ -183,8 +183,6 @@ pub mod cx_entity_type {
         name: &str,
         args: CxEntityTypeArgs,
     ) -> CxEntityTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_expansion_mode_binding = args.auto_expansion_mode.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enable_fuzzy_extraction_binding = args

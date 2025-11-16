@@ -370,8 +370,6 @@ pub mod data_transfer_config {
         name: &str,
         args: DataTransferConfigArgs,
     ) -> DataTransferConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_refresh_window_days_binding = args
             .data_refresh_window_days
             .get_output(context);

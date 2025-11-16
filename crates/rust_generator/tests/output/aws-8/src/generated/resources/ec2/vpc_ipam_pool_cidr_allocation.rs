@@ -145,8 +145,6 @@ pub mod vpc_ipam_pool_cidr_allocation {
         name: &str,
         args: VpcIpamPoolCidrAllocationArgs,
     ) -> VpcIpamPoolCidrAllocationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_binding = args.cidr.get_output(context);
         let description_binding = args.description.get_output(context);
         let disallowed_cidrs_binding = args.disallowed_cidrs.get_output(context);

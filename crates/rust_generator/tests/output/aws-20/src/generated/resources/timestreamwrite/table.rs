@@ -138,8 +138,6 @@ pub mod table {
         name: &str,
         args: TableArgs,
     ) -> TableResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_name_binding = args.database_name.get_output(context);
         let magnetic_store_write_properties_binding = args
             .magnetic_store_write_properties

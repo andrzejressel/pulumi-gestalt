@@ -126,8 +126,6 @@ pub mod load_balancer_policy {
         name: &str,
         args: LoadBalancerPolicyArgs,
     ) -> LoadBalancerPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let load_balancer_name_binding = args.load_balancer_name.get_output(context);
         let policy_attributes_binding = args.policy_attributes.get_output(context);
         let policy_name_binding = args.policy_name.get_output(context);

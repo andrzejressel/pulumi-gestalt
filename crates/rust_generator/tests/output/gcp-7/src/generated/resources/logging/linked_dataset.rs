@@ -159,8 +159,6 @@ pub mod linked_dataset {
         name: &str,
         args: LinkedDatasetArgs,
     ) -> LinkedDatasetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bigquery_datasets_binding = args.bigquery_datasets.get_output(context);
         let bucket_binding = args.bucket.get_output(context);
         let description_binding = args.description.get_output(context);

@@ -99,8 +99,6 @@ pub mod app_monitor {
         name: &str,
         args: AppMonitorArgs,
     ) -> AppMonitorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_monitor_configuration_binding = args
             .app_monitor_configuration
             .get_output(context);

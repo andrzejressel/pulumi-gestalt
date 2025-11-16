@@ -79,8 +79,6 @@ pub mod endpoint_service_private_dns_verification {
         name: &str,
         args: EndpointServicePrivateDnsVerificationArgs,
     ) -> EndpointServicePrivateDnsVerificationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let service_id_binding = args.service_id.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let wait_for_verification_binding = args

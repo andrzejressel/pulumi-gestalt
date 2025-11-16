@@ -87,8 +87,6 @@ pub mod sdkvoice_voice_profile_domain {
         name: &str,
         args: SdkvoiceVoiceProfileDomainArgs,
     ) -> SdkvoiceVoiceProfileDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let server_side_encryption_configuration_binding = args

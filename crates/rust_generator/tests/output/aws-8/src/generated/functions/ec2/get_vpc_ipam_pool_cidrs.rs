@@ -38,8 +38,6 @@ pub mod get_vpc_ipam_pool_cidrs {
         context: &pulumi_gestalt_rust::Context,
         args: GetVpcIpamPoolCidrsArgs,
     ) -> GetVpcIpamPoolCidrsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let ipam_pool_id_binding = args.ipam_pool_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

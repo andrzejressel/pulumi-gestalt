@@ -118,8 +118,6 @@ pub mod tenant {
         name: &str,
         args: TenantArgs,
     ) -> TenantResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_password_signup_binding = args
             .allow_password_signup
             .get_output(context);

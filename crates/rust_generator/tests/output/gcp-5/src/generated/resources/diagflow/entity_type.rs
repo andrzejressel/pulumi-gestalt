@@ -133,8 +133,6 @@ pub mod entity_type {
         name: &str,
         args: EntityTypeArgs,
     ) -> EntityTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let enable_fuzzy_extraction_binding = args
             .enable_fuzzy_extraction

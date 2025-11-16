@@ -169,8 +169,6 @@ pub mod alert_prometheus_rule_group {
         name: &str,
         args: AlertPrometheusRuleGroupArgs,
     ) -> AlertPrometheusRuleGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_name_binding = args.cluster_name.get_output(context);
         let description_binding = args.description.get_output(context);
         let interval_binding = args.interval.get_output(context);

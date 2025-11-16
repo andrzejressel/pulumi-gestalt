@@ -70,8 +70,6 @@ pub mod thing {
         name: &str,
         args: ThingArgs,
     ) -> ThingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let attributes_binding = args.attributes.get_output(context);
         let name_binding = args.name.get_output(context);
         let thing_type_name_binding = args.thing_type_name.get_output(context);

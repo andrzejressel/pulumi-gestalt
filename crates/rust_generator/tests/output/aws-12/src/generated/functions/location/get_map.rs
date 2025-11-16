@@ -45,8 +45,6 @@ pub mod get_map {
         context: &pulumi_gestalt_rust::Context,
         args: GetMapArgs,
     ) -> GetMapResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let map_name_binding = args.map_name.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

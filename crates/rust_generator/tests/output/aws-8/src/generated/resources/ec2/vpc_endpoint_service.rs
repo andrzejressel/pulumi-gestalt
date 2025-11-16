@@ -148,8 +148,6 @@ pub mod vpc_endpoint_service {
         name: &str,
         args: VpcEndpointServiceArgs,
     ) -> VpcEndpointServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let acceptance_required_binding = args.acceptance_required.get_output(context);
         let allowed_principals_binding = args.allowed_principals.get_output(context);
         let gateway_load_balancer_arns_binding = args

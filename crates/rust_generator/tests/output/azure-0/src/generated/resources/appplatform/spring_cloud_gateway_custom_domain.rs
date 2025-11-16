@@ -91,8 +91,6 @@ pub mod spring_cloud_gateway_custom_domain {
         name: &str,
         args: SpringCloudGatewayCustomDomainArgs,
     ) -> SpringCloudGatewayCustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let spring_cloud_gateway_id_binding = args
             .spring_cloud_gateway_id

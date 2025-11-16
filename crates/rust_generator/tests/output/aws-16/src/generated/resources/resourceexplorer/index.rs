@@ -74,8 +74,6 @@ pub mod index {
         name: &str,
         args: IndexArgs,
     ) -> IndexResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let tags_binding = args.tags.get_output(context);
         let timeouts_binding = args.timeouts.get_output(context);
         let type__binding = args.type_.get_output(context);

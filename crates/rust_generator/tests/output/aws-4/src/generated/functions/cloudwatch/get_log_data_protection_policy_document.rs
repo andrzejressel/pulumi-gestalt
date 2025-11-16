@@ -50,8 +50,6 @@ pub mod get_log_data_protection_policy_document {
         context: &pulumi_gestalt_rust::Context,
         args: GetLogDataProtectionPolicyDocumentArgs,
     ) -> GetLogDataProtectionPolicyDocumentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let statements_binding = args.statements.get_output(context);

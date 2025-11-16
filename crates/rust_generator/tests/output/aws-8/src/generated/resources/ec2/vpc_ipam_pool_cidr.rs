@@ -130,8 +130,6 @@ pub mod vpc_ipam_pool_cidr {
         name: &str,
         args: VpcIpamPoolCidrArgs,
     ) -> VpcIpamPoolCidrResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cidr_binding = args.cidr.get_output(context);
         let cidr_authorization_context_binding = args
             .cidr_authorization_context

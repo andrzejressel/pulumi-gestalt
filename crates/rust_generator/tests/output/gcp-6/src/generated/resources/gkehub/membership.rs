@@ -253,8 +253,6 @@ pub mod membership {
         name: &str,
         args: MembershipArgs,
     ) -> MembershipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authority_binding = args.authority.get_output(context);
         let description_binding = args.description.get_output(context);
         let endpoint_binding = args.endpoint.get_output(context);

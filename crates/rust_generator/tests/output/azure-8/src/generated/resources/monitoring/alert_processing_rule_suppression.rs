@@ -138,8 +138,6 @@ pub mod alert_processing_rule_suppression {
         name: &str,
         args: AlertProcessingRuleSuppressionArgs,
     ) -> AlertProcessingRuleSuppressionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let description_binding = args.description.get_output(context);
         let enabled_binding = args.enabled.get_output(context);

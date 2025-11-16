@@ -219,8 +219,6 @@ pub mod network_attached_data_network {
         name: &str,
         args: NetworkAttachedDataNetworkArgs,
     ) -> NetworkAttachedDataNetworkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dns_addresses_binding = args.dns_addresses.get_output(context);
         let location_binding = args.location.get_output(context);
         let mobile_network_data_network_name_binding = args

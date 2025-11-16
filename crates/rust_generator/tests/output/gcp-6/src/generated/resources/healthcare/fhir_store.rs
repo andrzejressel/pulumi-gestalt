@@ -374,8 +374,6 @@ pub mod fhir_store {
         name: &str,
         args: FhirStoreArgs,
     ) -> FhirStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let complex_data_type_reference_parsing_binding = args
             .complex_data_type_reference_parsing
             .get_output(context);

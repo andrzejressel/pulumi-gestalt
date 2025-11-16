@@ -143,8 +143,6 @@ pub mod private_connection {
         name: &str,
         args: PrivateConnectionArgs,
     ) -> PrivateConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let location_binding = args.location.get_output(context);

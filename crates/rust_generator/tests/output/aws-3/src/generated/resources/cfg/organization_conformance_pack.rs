@@ -159,8 +159,6 @@ pub mod organization_conformance_pack {
         name: &str,
         args: OrganizationConformancePackArgs,
     ) -> OrganizationConformancePackResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delivery_s3_bucket_binding = args.delivery_s3_bucket.get_output(context);
         let delivery_s3_key_prefix_binding = args
             .delivery_s3_key_prefix

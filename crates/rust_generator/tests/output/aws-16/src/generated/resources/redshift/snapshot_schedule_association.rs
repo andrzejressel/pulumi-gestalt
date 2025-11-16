@@ -76,8 +76,6 @@ pub mod snapshot_schedule_association {
         name: &str,
         args: SnapshotScheduleAssociationArgs,
     ) -> SnapshotScheduleAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let schedule_identifier_binding = args.schedule_identifier.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

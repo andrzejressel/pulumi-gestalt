@@ -24,8 +24,6 @@ pub mod get_authorization_token {
     pub fn invoke(
         context: &pulumi_gestalt_rust::Context,
     ) -> GetAuthorizationTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ecrpublic/getAuthorizationToken:getAuthorizationToken".into(),
             version: super::super::super::get_version(),

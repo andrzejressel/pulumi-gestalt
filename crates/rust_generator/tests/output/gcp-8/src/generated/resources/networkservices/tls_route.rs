@@ -236,8 +236,6 @@ pub mod tls_route {
         name: &str,
         args: TlsRouteArgs,
     ) -> TlsRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let gateways_binding = args.gateways.get_output(context);
         let meshes_binding = args.meshes.get_output(context);

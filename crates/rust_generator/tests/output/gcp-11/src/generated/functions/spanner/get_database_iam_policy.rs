@@ -39,8 +39,6 @@ pub mod get_database_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetDatabaseIamPolicyArgs,
     ) -> GetDatabaseIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_binding = args.database.get_output(context);
         let instance_binding = args.instance.get_output(context);
         let project_binding = args.project.get_output(context);

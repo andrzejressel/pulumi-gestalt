@@ -74,8 +74,6 @@ pub mod request_validator {
         name: &str,
         args: RequestValidatorArgs,
     ) -> RequestValidatorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let rest_api_binding = args.rest_api.get_output(context);
         let validate_request_body_binding = args

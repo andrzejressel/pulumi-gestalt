@@ -56,8 +56,6 @@ pub mod attachment {
         name: &str,
         args: AttachmentArgs,
     ) -> AttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let elb_binding = args.elb.get_output(context);
         let instance_binding = args.instance.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

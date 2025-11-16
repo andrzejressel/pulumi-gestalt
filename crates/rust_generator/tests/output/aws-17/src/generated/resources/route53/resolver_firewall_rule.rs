@@ -124,8 +124,6 @@ pub mod resolver_firewall_rule {
         name: &str,
         args: ResolverFirewallRuleArgs,
     ) -> ResolverFirewallRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let block_override_dns_type_binding = args
             .block_override_dns_type

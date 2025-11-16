@@ -39,8 +39,6 @@ pub mod get_regions {
         context: &pulumi_gestalt_rust::Context,
         args: GetRegionsArgs,
     ) -> GetRegionsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let all_regions_binding = args.all_regions.get_output(context);
         let filters_binding = args.filters.get_output(context);
         let id_binding = args.id.get_output(context);

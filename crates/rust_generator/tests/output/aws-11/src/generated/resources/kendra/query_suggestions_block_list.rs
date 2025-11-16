@@ -95,8 +95,6 @@ pub mod query_suggestions_block_list {
         name: &str,
         args: QuerySuggestionsBlockListArgs,
     ) -> QuerySuggestionsBlockListResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let index_id_binding = args.index_id.get_output(context);
         let name_binding = args.name.get_output(context);

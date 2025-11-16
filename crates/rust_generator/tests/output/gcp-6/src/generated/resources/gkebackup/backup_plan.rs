@@ -663,8 +663,6 @@ pub mod backup_plan {
         name: &str,
         args: BackupPlanArgs,
     ) -> BackupPlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_config_binding = args.backup_config.get_output(context);
         let backup_schedule_binding = args.backup_schedule.get_output(context);
         let cluster_binding = args.cluster.get_output(context);

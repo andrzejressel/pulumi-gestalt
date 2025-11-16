@@ -244,8 +244,6 @@ pub mod eip {
         name: &str,
         args: EipArgs,
     ) -> EipResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_binding = args.address.get_output(context);
         let associate_with_private_ip_binding = args
             .associate_with_private_ip

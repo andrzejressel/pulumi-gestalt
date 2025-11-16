@@ -228,8 +228,6 @@ pub mod v_2_organization_source_iam_policy {
         name: &str,
         args: V2OrganizationSourceIamPolicyArgs,
     ) -> V2OrganizationSourceIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let organization_binding = args.organization.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let source_binding = args.source.get_output(context);

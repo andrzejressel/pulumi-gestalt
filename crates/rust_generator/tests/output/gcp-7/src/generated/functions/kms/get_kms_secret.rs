@@ -40,8 +40,6 @@ pub mod get_kms_secret {
         context: &pulumi_gestalt_rust::Context,
         args: GetKmsSecretArgs,
     ) -> GetKmsSecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_authenticated_data_binding = args
             .additional_authenticated_data
             .get_output(context);

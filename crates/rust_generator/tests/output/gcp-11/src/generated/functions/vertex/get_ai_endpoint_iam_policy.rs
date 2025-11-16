@@ -42,8 +42,6 @@ pub mod get_ai_endpoint_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetAiEndpointIamPolicyArgs,
     ) -> GetAiEndpointIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let endpoint_binding = args.endpoint.get_output(context);
         let location_binding = args.location.get_output(context);
         let project_binding = args.project.get_output(context);

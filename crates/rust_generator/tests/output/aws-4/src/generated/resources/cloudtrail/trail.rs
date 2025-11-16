@@ -433,8 +433,6 @@ pub mod trail {
         name: &str,
         args: TrailArgs,
     ) -> TrailResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let advanced_event_selectors_binding = args
             .advanced_event_selectors
             .get_output(context);

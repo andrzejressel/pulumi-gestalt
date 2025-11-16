@@ -99,8 +99,6 @@ pub mod hsm_configuration {
         name: &str,
         args: HsmConfigurationArgs,
     ) -> HsmConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let hsm_configuration_identifier_binding = args
             .hsm_configuration_identifier

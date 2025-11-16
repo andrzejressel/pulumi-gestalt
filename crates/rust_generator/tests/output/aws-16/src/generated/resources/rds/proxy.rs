@@ -99,8 +99,6 @@ pub mod proxy {
         name: &str,
         args: ProxyArgs,
     ) -> ProxyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auths_binding = args.auths.get_output(context);
         let debug_logging_binding = args.debug_logging.get_output(context);
         let engine_family_binding = args.engine_family.get_output(context);

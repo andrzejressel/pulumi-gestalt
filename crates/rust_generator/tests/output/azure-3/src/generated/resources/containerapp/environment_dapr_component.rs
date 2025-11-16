@@ -144,8 +144,6 @@ pub mod environment_dapr_component {
         name: &str,
         args: EnvironmentDaprComponentArgs,
     ) -> EnvironmentDaprComponentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let component_type_binding = args.component_type.get_output(context);
         let container_app_environment_id_binding = args
             .container_app_environment_id

@@ -99,8 +99,6 @@ pub mod gallery {
         name: &str,
         args: GalleryArgs,
     ) -> GalleryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dev_center_id_binding = args.dev_center_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let shared_gallery_id_binding = args.shared_gallery_id.get_output(context);

@@ -71,8 +71,6 @@ pub mod observatory_scheduled_test {
         name: &str,
         args: ObservatoryScheduledTestArgs,
     ) -> ObservatoryScheduledTestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let frequency_binding = args.frequency.get_output(context);
         let region_binding = args.region.get_output(context);
         let url_binding = args.url.get_output(context);

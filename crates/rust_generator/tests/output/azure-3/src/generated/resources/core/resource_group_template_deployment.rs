@@ -90,8 +90,6 @@ pub mod resource_group_template_deployment {
         name: &str,
         args: ResourceGroupTemplateDeploymentArgs,
     ) -> ResourceGroupTemplateDeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let debug_level_binding = args.debug_level.get_output(context);
         let deployment_mode_binding = args.deployment_mode.get_output(context);
         let name_binding = args.name.get_output(context);

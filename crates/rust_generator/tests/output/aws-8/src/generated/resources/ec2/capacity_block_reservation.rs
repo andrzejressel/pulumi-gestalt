@@ -108,8 +108,6 @@ pub mod capacity_block_reservation {
         name: &str,
         args: CapacityBlockReservationArgs,
     ) -> CapacityBlockReservationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capacity_block_offering_id_binding = args
             .capacity_block_offering_id
             .get_output(context);

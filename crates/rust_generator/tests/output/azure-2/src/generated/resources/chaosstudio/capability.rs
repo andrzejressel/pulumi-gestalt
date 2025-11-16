@@ -90,8 +90,6 @@ pub mod capability {
         name: &str,
         args: CapabilityArgs,
     ) -> CapabilityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let capability_type_binding = args.capability_type.get_output(context);
         let chaos_studio_target_id_binding = args
             .chaos_studio_target_id

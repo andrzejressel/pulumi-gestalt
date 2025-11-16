@@ -39,8 +39,6 @@ pub mod get_replication_subnet_group {
         context: &pulumi_gestalt_rust::Context,
         args: GetReplicationSubnetGroupArgs,
     ) -> GetReplicationSubnetGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let replication_subnet_group_id_binding = args
             .replication_subnet_group_id
             .get_output(context);

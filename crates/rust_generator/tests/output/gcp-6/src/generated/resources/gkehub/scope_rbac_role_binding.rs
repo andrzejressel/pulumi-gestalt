@@ -159,8 +159,6 @@ pub mod scope_rbac_role_binding {
         name: &str,
         args: ScopeRbacRoleBindingArgs,
     ) -> ScopeRbacRoleBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_binding = args.group.get_output(context);
         let labels_binding = args.labels.get_output(context);
         let project_binding = args.project.get_output(context);

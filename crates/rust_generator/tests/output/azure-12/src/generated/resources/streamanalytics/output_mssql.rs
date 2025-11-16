@@ -142,8 +142,6 @@ pub mod output_mssql {
         name: &str,
         args: OutputMssqlArgs,
     ) -> OutputMssqlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_mode_binding = args.authentication_mode.get_output(context);
         let database_binding = args.database.get_output(context);
         let max_batch_count_binding = args.max_batch_count.get_output(context);

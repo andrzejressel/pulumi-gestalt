@@ -129,8 +129,6 @@ pub mod repository_group_iam_binding {
         name: &str,
         args: RepositoryGroupIamBindingArgs,
     ) -> RepositoryGroupIamBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let code_repository_index_binding = args
             .code_repository_index
             .get_output(context);

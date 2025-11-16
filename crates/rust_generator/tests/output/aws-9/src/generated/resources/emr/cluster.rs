@@ -558,8 +558,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_info_binding = args.additional_info.get_output(context);
         let applications_binding = args.applications.get_output(context);
         let auto_termination_policy_binding = args

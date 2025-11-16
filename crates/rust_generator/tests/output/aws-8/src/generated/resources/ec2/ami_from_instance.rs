@@ -163,8 +163,6 @@ pub mod ami_from_instance {
         name: &str,
         args: AmiFromInstanceArgs,
     ) -> AmiFromInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deprecation_time_binding = args.deprecation_time.get_output(context);
         let description_binding = args.description.get_output(context);
         let ebs_block_devices_binding = args.ebs_block_devices.get_output(context);

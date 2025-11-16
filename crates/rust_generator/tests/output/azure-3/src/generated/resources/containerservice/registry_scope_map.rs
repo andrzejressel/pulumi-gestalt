@@ -105,8 +105,6 @@ pub mod registry_scope_map {
         name: &str,
         args: RegistryScopeMapArgs,
     ) -> RegistryScopeMapResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let container_registry_name_binding = args
             .container_registry_name

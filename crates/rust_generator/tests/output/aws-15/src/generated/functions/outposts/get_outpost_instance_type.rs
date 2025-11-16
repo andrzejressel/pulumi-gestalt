@@ -38,8 +38,6 @@ pub mod get_outpost_instance_type {
         context: &pulumi_gestalt_rust::Context,
         args: GetOutpostInstanceTypeArgs,
     ) -> GetOutpostInstanceTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let instance_type_binding = args.instance_type.get_output(context);
         let preferred_instance_types_binding = args

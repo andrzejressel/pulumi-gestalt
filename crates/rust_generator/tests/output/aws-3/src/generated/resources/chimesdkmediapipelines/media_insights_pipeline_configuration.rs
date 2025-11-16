@@ -344,8 +344,6 @@ pub mod media_insights_pipeline_configuration {
         name: &str,
         args: MediaInsightsPipelineConfigurationArgs,
     ) -> MediaInsightsPipelineConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let elements_binding = args.elements.get_output(context);
         let name_binding = args.name.get_output(context);
         let real_time_alert_configuration_binding = args

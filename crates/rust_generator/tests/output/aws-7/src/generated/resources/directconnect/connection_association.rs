@@ -68,8 +68,6 @@ pub mod connection_association {
         name: &str,
         args: ConnectionAssociationArgs,
     ) -> ConnectionAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_id_binding = args.connection_id.get_output(context);
         let lag_id_binding = args.lag_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

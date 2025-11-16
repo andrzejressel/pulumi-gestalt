@@ -161,8 +161,6 @@ pub mod file_cache {
         name: &str,
         args: FileCacheArgs,
     ) -> FileCacheResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let copy_tags_to_data_repository_associations_binding = args
             .copy_tags_to_data_repository_associations
             .get_output(context);

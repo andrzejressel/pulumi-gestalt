@@ -115,8 +115,6 @@ pub mod key {
         name: &str,
         args: KeyArgs,
     ) -> KeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let deletion_window_in_days_binding = args
             .deletion_window_in_days
             .get_output(context);

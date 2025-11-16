@@ -141,8 +141,6 @@ pub mod vpn_site {
         name: &str,
         args: VpnSiteArgs,
     ) -> VpnSiteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let address_cidrs_binding = args.address_cidrs.get_output(context);
         let device_model_binding = args.device_model.get_output(context);
         let device_vendor_binding = args.device_vendor.get_output(context);

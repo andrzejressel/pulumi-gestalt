@@ -160,8 +160,6 @@ pub mod contact_flow {
         name: &str,
         args: ContactFlowArgs,
     ) -> ContactFlowResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_binding = args.content.get_output(context);
         let content_hash_binding = args.content_hash.get_output(context);
         let description_binding = args.description.get_output(context);

@@ -155,8 +155,6 @@ pub mod app_connection {
         name: &str,
         args: AppConnectionArgs,
     ) -> AppConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_binding = args.authentication.get_output(context);
         let client_type_binding = args.client_type.get_output(context);
         let function_app_id_binding = args.function_app_id.get_output(context);

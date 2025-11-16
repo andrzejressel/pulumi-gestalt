@@ -91,8 +91,6 @@ pub mod v_2_models_bot_version {
         name: &str,
         args: V2modelsBotVersionArgs,
     ) -> V2modelsBotVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bot_id_binding = args.bot_id.get_output(context);
         let bot_version_binding = args.bot_version.get_output(context);
         let description_binding = args.description.get_output(context);

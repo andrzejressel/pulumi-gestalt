@@ -72,8 +72,6 @@ pub mod advanced_threat_protection {
         name: &str,
         args: AdvancedThreatProtectionArgs,
     ) -> AdvancedThreatProtectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let target_resource_id_binding = args.target_resource_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

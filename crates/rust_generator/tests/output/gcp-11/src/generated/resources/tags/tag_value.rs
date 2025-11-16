@@ -113,8 +113,6 @@ pub mod tag_value {
         name: &str,
         args: TagValueArgs,
     ) -> TagValueResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let parent_binding = args.parent.get_output(context);
         let short_name_binding = args.short_name.get_output(context);

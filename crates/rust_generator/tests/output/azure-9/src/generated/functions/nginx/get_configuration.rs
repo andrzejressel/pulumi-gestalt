@@ -38,8 +38,6 @@ pub mod get_configuration {
         context: &pulumi_gestalt_rust::Context,
         args: GetConfigurationArgs,
     ) -> GetConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let nginx_deployment_id_binding = args.nginx_deployment_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:nginx/getConfiguration:getConfiguration".into(),

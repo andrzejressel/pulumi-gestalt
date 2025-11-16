@@ -67,8 +67,6 @@ pub mod authorize_vpc_endpoint_access {
         name: &str,
         args: AuthorizeVpcEndpointAccessArgs,
     ) -> AuthorizeVpcEndpointAccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_binding = args.account.get_output(context);
         let domain_name_binding = args.domain_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

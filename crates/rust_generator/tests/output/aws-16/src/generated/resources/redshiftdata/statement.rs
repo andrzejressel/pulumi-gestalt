@@ -123,8 +123,6 @@ pub mod statement {
         name: &str,
         args: StatementArgs,
     ) -> StatementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let database_binding = args.database.get_output(context);
         let db_user_binding = args.db_user.get_output(context);

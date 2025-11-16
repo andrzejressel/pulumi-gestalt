@@ -163,8 +163,6 @@ pub mod event_destination {
         name: &str,
         args: EventDestinationArgs,
     ) -> EventDestinationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloudwatch_destinations_binding = args
             .cloudwatch_destinations
             .get_output(context);

@@ -401,8 +401,6 @@ pub mod gdc_spark_application {
         name: &str,
         args: GdcSparkApplicationArgs,
     ) -> GdcSparkApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let application_environment_binding = args
             .application_environment

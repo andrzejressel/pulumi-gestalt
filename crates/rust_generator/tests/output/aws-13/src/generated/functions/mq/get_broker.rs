@@ -67,8 +67,6 @@ pub mod get_broker {
         context: &pulumi_gestalt_rust::Context,
         args: GetBrokerArgs,
     ) -> GetBrokerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let broker_id_binding = args.broker_id.get_output(context);
         let broker_name_binding = args.broker_name.get_output(context);
         let tags_binding = args.tags.get_output(context);

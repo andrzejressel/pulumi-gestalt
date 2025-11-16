@@ -96,8 +96,6 @@ pub mod active_directory_administrator {
         name: &str,
         args: ActiveDirectoryAdministratorArgs,
     ) -> ActiveDirectoryAdministratorResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let login_binding = args.login.get_output(context);
         let object_id_binding = args.object_id.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);

@@ -36,8 +36,6 @@ pub mod get_product {
         context: &pulumi_gestalt_rust::Context,
         args: GetProductArgs,
     ) -> GetProductResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let service_code_binding = args.service_code.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

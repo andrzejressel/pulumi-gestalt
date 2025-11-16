@@ -86,8 +86,6 @@ pub mod endpoint_access {
         name: &str,
         args: EndpointAccessArgs,
     ) -> EndpointAccessResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_identifier_binding = args.cluster_identifier.get_output(context);
         let endpoint_name_binding = args.endpoint_name.get_output(context);
         let resource_owner_binding = args.resource_owner.get_output(context);

@@ -113,8 +113,6 @@ pub mod slot_type {
         name: &str,
         args: SlotTypeArgs,
     ) -> SlotTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let create_version_binding = args.create_version.get_output(context);
         let description_binding = args.description.get_output(context);
         let enumeration_values_binding = args.enumeration_values.get_output(context);

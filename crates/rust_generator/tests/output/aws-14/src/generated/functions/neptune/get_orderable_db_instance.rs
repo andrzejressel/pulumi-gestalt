@@ -78,8 +78,6 @@ pub mod get_orderable_db_instance {
         context: &pulumi_gestalt_rust::Context,
         args: GetOrderableDbInstanceArgs,
     ) -> GetOrderableDbInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let engine_binding = args.engine.get_output(context);
         let engine_version_binding = args.engine_version.get_output(context);
         let instance_class_binding = args.instance_class.get_output(context);

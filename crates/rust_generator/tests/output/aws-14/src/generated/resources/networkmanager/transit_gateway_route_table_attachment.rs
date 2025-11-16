@@ -95,8 +95,6 @@ pub mod transit_gateway_route_table_attachment {
         name: &str,
         args: TransitGatewayRouteTableAttachmentArgs,
     ) -> TransitGatewayRouteTableAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let peering_id_binding = args.peering_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let transit_gateway_route_table_arn_binding = args

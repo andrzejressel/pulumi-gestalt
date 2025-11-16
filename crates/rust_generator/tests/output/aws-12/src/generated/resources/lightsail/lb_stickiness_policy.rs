@@ -69,8 +69,6 @@ pub mod lb_stickiness_policy {
         name: &str,
         args: LbStickinessPolicyArgs,
     ) -> LbStickinessPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cookie_duration_binding = args.cookie_duration.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let lb_name_binding = args.lb_name.get_output(context);

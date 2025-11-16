@@ -148,8 +148,6 @@ pub mod ipsec_tunnel {
         name: &str,
         args: IpsecTunnelArgs,
     ) -> IpsecTunnelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let allow_null_cipher_binding = args.allow_null_cipher.get_output(context);
         let cloudflare_endpoint_binding = args.cloudflare_endpoint.get_output(context);

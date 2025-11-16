@@ -165,8 +165,6 @@ pub mod nat_gateway {
         name: &str,
         args: NatGatewayArgs,
     ) -> NatGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_id_binding = args.allocation_id.get_output(context);
         let connectivity_type_binding = args.connectivity_type.get_output(context);
         let private_ip_binding = args.private_ip.get_output(context);

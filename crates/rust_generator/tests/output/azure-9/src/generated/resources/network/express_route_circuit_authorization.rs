@@ -87,8 +87,6 @@ pub mod express_route_circuit_authorization {
         name: &str,
         args: ExpressRouteCircuitAuthorizationArgs,
     ) -> ExpressRouteCircuitAuthorizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let express_route_circuit_name_binding = args
             .express_route_circuit_name
             .get_output(context);

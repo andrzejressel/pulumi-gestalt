@@ -105,8 +105,6 @@ pub mod function_url {
         name: &str,
         args: FunctionUrlArgs,
     ) -> FunctionUrlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorization_type_binding = args.authorization_type.get_output(context);
         let cors_binding = args.cors.get_output(context);
         let function_name_binding = args.function_name.get_output(context);

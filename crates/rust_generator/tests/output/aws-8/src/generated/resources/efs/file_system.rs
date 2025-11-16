@@ -159,8 +159,6 @@ pub mod file_system {
         name: &str,
         args: FileSystemArgs,
     ) -> FileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let availability_zone_name_binding = args
             .availability_zone_name
             .get_output(context);

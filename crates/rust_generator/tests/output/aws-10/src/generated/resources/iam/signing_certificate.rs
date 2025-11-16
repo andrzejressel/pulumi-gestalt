@@ -85,8 +85,6 @@ pub mod signing_certificate {
         name: &str,
         args: SigningCertificateArgs,
     ) -> SigningCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_body_binding = args.certificate_body.get_output(context);
         let status_binding = args.status.get_output(context);
         let user_name_binding = args.user_name.get_output(context);

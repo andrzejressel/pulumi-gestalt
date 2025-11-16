@@ -176,8 +176,6 @@ pub mod integration {
         name: &str,
         args: IntegrationArgs,
     ) -> IntegrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_encryption_context_binding = args
             .additional_encryption_context
             .get_output(context);

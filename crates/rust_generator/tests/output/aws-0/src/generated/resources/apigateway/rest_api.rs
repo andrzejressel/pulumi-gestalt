@@ -134,8 +134,6 @@ pub mod rest_api {
         name: &str,
         args: RestApiArgs,
     ) -> RestApiResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_key_source_binding = args.api_key_source.get_output(context);
         let binary_media_types_binding = args.binary_media_types.get_output(context);
         let body_binding = args.body.get_output(context);

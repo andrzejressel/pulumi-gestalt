@@ -48,8 +48,6 @@ pub mod get_sdk {
         context: &pulumi_gestalt_rust::Context,
         args: GetSdkArgs,
     ) -> GetSdkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parameters_binding = args.parameters.get_output(context);
         let rest_api_id_binding = args.rest_api_id.get_output(context);
         let sdk_type_binding = args.sdk_type.get_output(context);

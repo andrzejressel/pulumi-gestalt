@@ -104,8 +104,6 @@ pub mod trigger_http_request {
         name: &str,
         args: TriggerHttpRequestArgs,
     ) -> TriggerHttpRequestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let logic_app_id_binding = args.logic_app_id.get_output(context);
         let method_binding = args.method.get_output(context);
         let name_binding = args.name.get_output(context);

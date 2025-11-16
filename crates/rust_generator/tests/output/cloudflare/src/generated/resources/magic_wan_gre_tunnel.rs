@@ -113,8 +113,6 @@ pub mod magic_wan_gre_tunnel {
         name: &str,
         args: MagicWanGreTunnelArgs,
     ) -> MagicWanGreTunnelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let cloudflare_gre_endpoint_binding = args
             .cloudflare_gre_endpoint

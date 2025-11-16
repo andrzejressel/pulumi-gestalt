@@ -57,8 +57,6 @@ pub mod get_resource_share {
         context: &pulumi_gestalt_rust::Context,
         args: GetResourceShareArgs,
     ) -> GetResourceShareResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let name_binding = args.name.get_output(context);
         let resource_owner_binding = args.resource_owner.get_output(context);

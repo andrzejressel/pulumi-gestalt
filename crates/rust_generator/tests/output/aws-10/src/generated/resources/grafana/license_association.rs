@@ -87,8 +87,6 @@ pub mod license_association {
         name: &str,
         args: LicenseAssociationArgs,
     ) -> LicenseAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let grafana_token_binding = args.grafana_token.get_output(context);
         let license_type_binding = args.license_type.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);

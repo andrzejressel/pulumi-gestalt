@@ -104,8 +104,6 @@ pub mod spring_cloud_app_redis_association {
         name: &str,
         args: SpringCloudAppRedisAssociationArgs,
     ) -> SpringCloudAppRedisAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let redis_access_key_binding = args.redis_access_key.get_output(context);
         let redis_cache_id_binding = args.redis_cache_id.get_output(context);

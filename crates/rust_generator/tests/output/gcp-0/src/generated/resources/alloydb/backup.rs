@@ -317,8 +317,6 @@ pub mod backup {
         name: &str,
         args: BackupArgs,
     ) -> BackupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let backup_id_binding = args.backup_id.get_output(context);
         let cluster_name_binding = args.cluster_name.get_output(context);

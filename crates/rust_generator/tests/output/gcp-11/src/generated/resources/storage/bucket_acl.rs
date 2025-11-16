@@ -83,8 +83,6 @@ pub mod bucket_acl {
         name: &str,
         args: BucketACLArgs,
     ) -> BucketACLResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let default_acl_binding = args.default_acl.get_output(context);
         let predefined_acl_binding = args.predefined_acl.get_output(context);

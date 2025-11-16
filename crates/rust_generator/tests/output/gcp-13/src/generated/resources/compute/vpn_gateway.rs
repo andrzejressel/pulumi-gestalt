@@ -189,8 +189,6 @@ pub mod vpn_gateway {
         name: &str,
         args: VPNGatewayArgs,
     ) -> VPNGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let network_binding = args.network.get_output(context);

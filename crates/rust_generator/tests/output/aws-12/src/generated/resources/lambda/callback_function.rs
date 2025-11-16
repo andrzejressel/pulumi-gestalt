@@ -466,8 +466,6 @@ pub mod callback_function {
         name: &str,
         args: CallbackFunctionArgs,
     ) -> CallbackFunctionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let architectures_binding = args.architectures.get_output(context);
         let callback_binding = args.callback.get_output(context);
         let callback_factory_binding = args.callback_factory.get_output(context);

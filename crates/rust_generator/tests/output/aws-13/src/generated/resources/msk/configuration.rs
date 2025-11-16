@@ -77,8 +77,6 @@ pub mod configuration {
         name: &str,
         args: ConfigurationArgs,
     ) -> ConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let kafka_versions_binding = args.kafka_versions.get_output(context);
         let name_binding = args.name.get_output(context);

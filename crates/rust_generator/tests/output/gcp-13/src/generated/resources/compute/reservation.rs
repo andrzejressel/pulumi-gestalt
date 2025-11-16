@@ -169,8 +169,6 @@ pub mod reservation {
         name: &str,
         args: ReservationArgs,
     ) -> ReservationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let project_binding = args.project.get_output(context);

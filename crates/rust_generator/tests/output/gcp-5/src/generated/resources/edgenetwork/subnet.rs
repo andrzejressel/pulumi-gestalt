@@ -221,8 +221,6 @@ pub mod subnet {
         name: &str,
         args: SubnetArgs,
     ) -> SubnetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let ipv4_cidrs_binding = args.ipv4_cidrs.get_output(context);
         let ipv6_cidrs_binding = args.ipv6_cidrs.get_output(context);

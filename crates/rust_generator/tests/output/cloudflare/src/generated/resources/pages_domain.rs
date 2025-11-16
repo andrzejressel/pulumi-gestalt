@@ -64,8 +64,6 @@ pub mod pages_domain {
         name: &str,
         args: PagesDomainArgs,
     ) -> PagesDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let domain_binding = args.domain.get_output(context);
         let project_name_binding = args.project_name.get_output(context);

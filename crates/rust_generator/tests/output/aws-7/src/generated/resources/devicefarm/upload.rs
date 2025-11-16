@@ -85,8 +85,6 @@ pub mod upload {
         name: &str,
         args: UploadArgs,
     ) -> UploadResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_type_binding = args.content_type.get_output(context);
         let name_binding = args.name.get_output(context);
         let project_arn_binding = args.project_arn.get_output(context);

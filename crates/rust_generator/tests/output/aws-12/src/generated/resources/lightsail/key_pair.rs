@@ -128,8 +128,6 @@ pub mod key_pair {
         name: &str,
         args: KeyPairArgs,
     ) -> KeyPairResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);
         let pgp_key_binding = args.pgp_key.get_output(context);

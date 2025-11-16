@@ -110,8 +110,6 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let allow_updates_binding = args.allow_updates.get_output(context);
         let default_version_binding = args.default_version.get_output(context);

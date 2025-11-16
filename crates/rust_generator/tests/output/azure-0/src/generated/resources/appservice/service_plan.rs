@@ -144,8 +144,6 @@ pub mod service_plan {
         name: &str,
         args: ServicePlanArgs,
     ) -> ServicePlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_environment_id_binding = args
             .app_service_environment_id
             .get_output(context);

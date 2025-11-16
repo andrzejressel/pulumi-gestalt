@@ -57,8 +57,6 @@ pub mod identity_pool_provider_principal_tag {
         name: &str,
         args: IdentityPoolProviderPrincipalTagArgs,
     ) -> IdentityPoolProviderPrincipalTagResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identity_pool_id_binding = args.identity_pool_id.get_output(context);
         let identity_provider_name_binding = args
             .identity_provider_name

@@ -69,8 +69,6 @@ pub mod workers_for_platforms_dispatch_namespace {
         name: &str,
         args: WorkersForPlatformsDispatchNamespaceArgs,
     ) -> WorkersForPlatformsDispatchNamespaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

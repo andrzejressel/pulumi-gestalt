@@ -147,8 +147,6 @@ pub mod account_assignment {
         name: &str,
         args: AccountAssignmentArgs,
     ) -> AccountAssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_arn_binding = args.instance_arn.get_output(context);
         let permission_set_arn_binding = args.permission_set_arn.get_output(context);
         let principal_id_binding = args.principal_id.get_output(context);

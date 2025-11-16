@@ -33,8 +33,6 @@ pub mod get_dataset_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetDatasetIamPolicyArgs,
     ) -> GetDatasetIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dataset_id_binding = args.dataset_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:healthcare/getDatasetIamPolicy:getDatasetIamPolicy".into(),

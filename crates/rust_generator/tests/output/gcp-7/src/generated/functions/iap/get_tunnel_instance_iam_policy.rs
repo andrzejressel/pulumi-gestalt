@@ -39,8 +39,6 @@ pub mod get_tunnel_instance_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetTunnelInstanceIamPolicyArgs,
     ) -> GetTunnelInstanceIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_binding = args.instance.get_output(context);
         let project_binding = args.project.get_output(context);
         let zone_binding = args.zone.get_output(context);

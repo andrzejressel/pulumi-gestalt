@@ -193,8 +193,6 @@ pub mod ecs_cluster_layer {
         name: &str,
         args: EcsClusterLayerArgs,
     ) -> EcsClusterLayerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_assign_elastic_ips_binding = args
             .auto_assign_elastic_ips
             .get_output(context);

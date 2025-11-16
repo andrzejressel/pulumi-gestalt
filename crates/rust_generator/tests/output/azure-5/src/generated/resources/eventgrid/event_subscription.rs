@@ -248,8 +248,6 @@ pub mod event_subscription {
         name: &str,
         args: EventSubscriptionArgs,
     ) -> EventSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let advanced_filter_binding = args.advanced_filter.get_output(context);
         let advanced_filtering_on_arrays_enabled_binding = args
             .advanced_filtering_on_arrays_enabled

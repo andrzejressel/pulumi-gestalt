@@ -110,8 +110,6 @@ pub mod extension_association {
         name: &str,
         args: ExtensionAssociationArgs,
     ) -> ExtensionAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let extension_arn_binding = args.extension_arn.get_output(context);
         let parameters_binding = args.parameters.get_output(context);
         let resource_arn_binding = args.resource_arn.get_output(context);

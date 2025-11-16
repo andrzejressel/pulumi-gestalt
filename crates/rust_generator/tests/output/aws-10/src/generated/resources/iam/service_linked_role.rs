@@ -87,8 +87,6 @@ pub mod service_linked_role {
         name: &str,
         args: ServiceLinkedRoleArgs,
     ) -> ServiceLinkedRoleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_service_name_binding = args.aws_service_name.get_output(context);
         let custom_suffix_binding = args.custom_suffix.get_output(context);
         let description_binding = args.description.get_output(context);

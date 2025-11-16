@@ -94,8 +94,6 @@ pub mod watchlist_item {
         name: &str,
         args: WatchlistItemArgs,
     ) -> WatchlistItemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let properties_binding = args.properties.get_output(context);
         let watchlist_id_binding = args.watchlist_id.get_output(context);

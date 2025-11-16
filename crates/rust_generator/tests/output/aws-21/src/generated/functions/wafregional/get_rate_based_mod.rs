@@ -26,8 +26,6 @@ pub mod get_rate_based_mod {
         context: &pulumi_gestalt_rust::Context,
         args: GetRateBasedModArgs,
     ) -> GetRateBasedModResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:wafregional/getRateBasedMod:getRateBasedMod".into(),

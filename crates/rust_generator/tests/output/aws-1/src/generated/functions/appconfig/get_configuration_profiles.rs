@@ -28,8 +28,6 @@ pub mod get_configuration_profiles {
         context: &pulumi_gestalt_rust::Context,
         args: GetConfigurationProfilesArgs,
     ) -> GetConfigurationProfilesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_id_binding = args.application_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:appconfig/getConfigurationProfiles:getConfigurationProfiles"

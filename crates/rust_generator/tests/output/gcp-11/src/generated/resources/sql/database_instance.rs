@@ -465,8 +465,6 @@ pub mod database_instance {
         name: &str,
         args: DatabaseInstanceArgs,
     ) -> DatabaseInstanceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let clone_binding = args.clone.get_output(context);
         let database_version_binding = args.database_version.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);

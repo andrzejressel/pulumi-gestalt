@@ -103,8 +103,6 @@ pub mod default_service_accounts {
         name: &str,
         args: DefaultServiceAccountsArgs,
     ) -> DefaultServiceAccountsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let project_binding = args.project.get_output(context);
         let restore_policy_binding = args.restore_policy.get_output(context);

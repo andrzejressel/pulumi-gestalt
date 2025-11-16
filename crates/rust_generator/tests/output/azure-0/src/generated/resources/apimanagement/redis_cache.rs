@@ -108,8 +108,6 @@ pub mod redis_cache {
         name: &str,
         args: RedisCacheArgs,
     ) -> RedisCacheResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_id_binding = args.api_management_id.get_output(context);
         let cache_location_binding = args.cache_location.get_output(context);
         let connection_string_binding = args.connection_string.get_output(context);

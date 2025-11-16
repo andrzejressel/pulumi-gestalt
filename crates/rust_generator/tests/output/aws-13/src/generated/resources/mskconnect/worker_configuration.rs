@@ -90,8 +90,6 @@ pub mod worker_configuration {
         name: &str,
         args: WorkerConfigurationArgs,
     ) -> WorkerConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let properties_file_content_binding = args

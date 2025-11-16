@@ -167,8 +167,6 @@ pub mod environment_keyvaluemaps_entries {
         name: &str,
         args: EnvironmentKeyvaluemapsEntriesArgs,
     ) -> EnvironmentKeyvaluemapsEntriesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let env_keyvaluemap_id_binding = args.env_keyvaluemap_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let value_binding = args.value.get_output(context);

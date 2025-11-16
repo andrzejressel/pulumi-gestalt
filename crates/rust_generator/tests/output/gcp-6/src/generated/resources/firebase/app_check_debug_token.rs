@@ -145,8 +145,6 @@ pub mod app_check_debug_token {
         name: &str,
         args: AppCheckDebugTokenArgs,
     ) -> AppCheckDebugTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let project_binding = args.project.get_output(context);

@@ -136,8 +136,6 @@ pub mod subnet {
         name: &str,
         args: SubnetArgs,
     ) -> SubnetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ip_cidr_range_binding = args.ip_cidr_range.get_output(context);
         let name_binding = args.name.get_output(context);
         let parent_binding = args.parent.get_output(context);

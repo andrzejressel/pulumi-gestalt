@@ -72,8 +72,6 @@ pub mod hostname_tls_setting_ciphers {
         name: &str,
         args: HostnameTlsSettingCiphersArgs,
     ) -> HostnameTlsSettingCiphersResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let hostname_binding = args.hostname.get_output(context);
         let ports_binding = args.ports.get_output(context);
         let values_binding = args.values.get_output(context);

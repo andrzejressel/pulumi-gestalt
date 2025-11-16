@@ -103,8 +103,6 @@ pub mod custom_hostname {
         name: &str,
         args: CustomHostnameArgs,
     ) -> CustomHostnameResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_metadata_binding = args.custom_metadata.get_output(context);
         let custom_origin_server_binding = args.custom_origin_server.get_output(context);
         let custom_origin_sni_binding = args.custom_origin_sni.get_output(context);

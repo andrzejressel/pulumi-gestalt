@@ -107,8 +107,6 @@ pub mod data_source_windows_performance_counter {
         name: &str,
         args: DataSourceWindowsPerformanceCounterArgs,
     ) -> DataSourceWindowsPerformanceCounterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let counter_name_binding = args.counter_name.get_output(context);
         let instance_name_binding = args.instance_name.get_output(context);
         let interval_seconds_binding = args.interval_seconds.get_output(context);

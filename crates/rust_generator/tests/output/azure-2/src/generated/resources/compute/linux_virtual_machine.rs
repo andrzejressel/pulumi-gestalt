@@ -516,8 +516,6 @@ pub mod linux_virtual_machine {
         name: &str,
         args: LinuxVirtualMachineArgs,
     ) -> LinuxVirtualMachineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_capabilities_binding = args
             .additional_capabilities
             .get_output(context);

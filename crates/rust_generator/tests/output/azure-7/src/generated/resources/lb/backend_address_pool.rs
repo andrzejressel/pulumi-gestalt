@@ -125,8 +125,6 @@ pub mod backend_address_pool {
         name: &str,
         args: BackendAddressPoolArgs,
     ) -> BackendAddressPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let loadbalancer_id_binding = args.loadbalancer_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let synchronous_mode_binding = args.synchronous_mode.get_output(context);

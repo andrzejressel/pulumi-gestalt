@@ -186,8 +186,6 @@ pub mod pipeline {
         name: &str,
         args: PipelineArgs,
     ) -> PipelineResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let buffer_options_binding = args.buffer_options.get_output(context);
         let encryption_at_rest_options_binding = args
             .encryption_at_rest_options

@@ -131,8 +131,6 @@ pub mod medtech_service {
         name: &str,
         args: MedtechServiceArgs,
     ) -> MedtechServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let device_mapping_json_binding = args.device_mapping_json.get_output(context);
         let eventhub_consumer_group_name_binding = args
             .eventhub_consumer_group_name

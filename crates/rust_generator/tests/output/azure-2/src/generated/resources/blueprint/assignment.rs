@@ -197,8 +197,6 @@ pub mod assignment {
         name: &str,
         args: AssignmentArgs,
     ) -> AssignmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let identity_binding = args.identity.get_output(context);
         let location_binding = args.location.get_output(context);
         let lock_exclude_actions_binding = args.lock_exclude_actions.get_output(context);

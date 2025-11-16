@@ -103,8 +103,6 @@ pub mod custom_routing_endpoint_group {
         name: &str,
         args: CustomRoutingEndpointGroupArgs,
     ) -> CustomRoutingEndpointGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_configurations_binding = args
             .destination_configurations
             .get_output(context);

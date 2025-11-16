@@ -254,8 +254,6 @@ pub mod managed_user_pool_client {
         name: &str,
         args: ManagedUserPoolClientArgs,
     ) -> ManagedUserPoolClientResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_token_validity_binding = args
             .access_token_validity
             .get_output(context);

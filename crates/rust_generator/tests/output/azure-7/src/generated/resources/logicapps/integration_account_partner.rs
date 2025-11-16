@@ -107,8 +107,6 @@ pub mod integration_account_partner {
         name: &str,
         args: IntegrationAccountPartnerArgs,
     ) -> IntegrationAccountPartnerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let business_identities_binding = args.business_identities.get_output(context);
         let integration_account_name_binding = args
             .integration_account_name

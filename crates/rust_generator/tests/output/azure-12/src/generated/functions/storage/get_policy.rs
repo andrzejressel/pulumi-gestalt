@@ -30,8 +30,6 @@ pub mod get_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetPolicyArgs,
     ) -> GetPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let storage_account_id_binding = args.storage_account_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:storage/getPolicy:getPolicy".into(),

@@ -127,8 +127,6 @@ pub mod hci_cluster {
         name: &str,
         args: HciClusterArgs,
     ) -> HciClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let automanage_configuration_id_binding = args
             .automanage_configuration_id
             .get_output(context);

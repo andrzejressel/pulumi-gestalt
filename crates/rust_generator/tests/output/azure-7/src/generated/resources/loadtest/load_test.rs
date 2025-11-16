@@ -124,8 +124,6 @@ pub mod load_test {
         name: &str,
         args: LoadTestArgs,
     ) -> LoadTestResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let encryption_binding = args.encryption.get_output(context);
         let identity_binding = args.identity.get_output(context);

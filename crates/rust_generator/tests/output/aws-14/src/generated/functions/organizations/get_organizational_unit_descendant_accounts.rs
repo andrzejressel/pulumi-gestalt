@@ -32,8 +32,6 @@ pub mod get_organizational_unit_descendant_accounts {
         context: &pulumi_gestalt_rust::Context,
         args: GetOrganizationalUnitDescendantAccountsArgs,
     ) -> GetOrganizationalUnitDescendantAccountsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_id_binding = args.parent_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:organizations/getOrganizationalUnitDescendantAccounts:getOrganizationalUnitDescendantAccounts"

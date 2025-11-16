@@ -217,8 +217,6 @@ pub mod configuration_key {
         name: &str,
         args: ConfigurationKeyArgs,
     ) -> ConfigurationKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_store_id_binding = args
             .configuration_store_id
             .get_output(context);

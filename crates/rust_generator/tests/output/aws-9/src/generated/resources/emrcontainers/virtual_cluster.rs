@@ -80,8 +80,6 @@ pub mod virtual_cluster {
         name: &str,
         args: VirtualClusterArgs,
     ) -> VirtualClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_provider_binding = args.container_provider.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);

@@ -80,8 +80,6 @@ pub mod get_vpc_ipam_pool {
         context: &pulumi_gestalt_rust::Context,
         args: GetVpcIpamPoolArgs,
     ) -> GetVpcIpamPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allocation_resource_tags_binding = args
             .allocation_resource_tags
             .get_output(context);

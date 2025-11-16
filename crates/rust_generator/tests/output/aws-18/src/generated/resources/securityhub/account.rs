@@ -65,8 +65,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_enable_controls_binding = args.auto_enable_controls.get_output(context);
         let control_finding_generator_binding = args
             .control_finding_generator

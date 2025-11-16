@@ -134,8 +134,6 @@ pub mod hub {
         name: &str,
         args: HubArgs,
     ) -> HubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let apns_credential_binding = args.apns_credential.get_output(context);
         let browser_credential_binding = args.browser_credential.get_output(context);
         let gcm_credential_binding = args.gcm_credential.get_output(context);

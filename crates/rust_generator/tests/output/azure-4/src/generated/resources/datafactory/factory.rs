@@ -150,8 +150,6 @@ pub mod factory {
         name: &str,
         args: FactoryArgs,
     ) -> FactoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let customer_managed_key_id_binding = args
             .customer_managed_key_id
             .get_output(context);

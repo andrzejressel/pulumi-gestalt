@@ -81,8 +81,6 @@ pub mod directory_config {
         name: &str,
         args: DirectoryConfigArgs,
     ) -> DirectoryConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let directory_name_binding = args.directory_name.get_output(context);
         let organizational_unit_distinguished_names_binding = args
             .organizational_unit_distinguished_names

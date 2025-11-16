@@ -136,8 +136,6 @@ pub mod lb_traffic_extension {
         name: &str,
         args: LbTrafficExtensionArgs,
     ) -> LbTrafficExtensionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let extension_chains_binding = args.extension_chains.get_output(context);
         let forwarding_rules_binding = args.forwarding_rules.get_output(context);

@@ -120,8 +120,6 @@ pub mod snapshot_import {
         name: &str,
         args: SnapshotImportArgs,
     ) -> SnapshotImportResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_data_binding = args.client_data.get_output(context);
         let description_binding = args.description.get_output(context);
         let disk_container_binding = args.disk_container.get_output(context);

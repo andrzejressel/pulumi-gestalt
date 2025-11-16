@@ -228,8 +228,6 @@ pub mod gc_policy {
         name: &str,
         args: GCPolicyArgs,
     ) -> GCPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let column_family_binding = args.column_family.get_output(context);
         let deletion_policy_binding = args.deletion_policy.get_output(context);
         let gc_rules_binding = args.gc_rules.get_output(context);

@@ -135,8 +135,6 @@ pub mod dataset_data_lake_gen_2 {
         name: &str,
         args: DatasetDataLakeGen2Args,
     ) -> DatasetDataLakeGen2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let file_path_binding = args.file_path.get_output(context);
         let file_system_name_binding = args.file_system_name.get_output(context);
         let folder_path_binding = args.folder_path.get_output(context);

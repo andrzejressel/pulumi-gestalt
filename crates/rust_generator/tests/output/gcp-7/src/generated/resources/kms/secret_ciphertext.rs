@@ -117,8 +117,6 @@ pub mod secret_ciphertext {
         name: &str,
         args: SecretCiphertextArgs,
     ) -> SecretCiphertextResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_authenticated_data_binding = args
             .additional_authenticated_data
             .get_output(context);

@@ -78,8 +78,6 @@ pub mod get_user_pool_client {
         context: &pulumi_gestalt_rust::Context,
         args: GetUserPoolClientArgs,
     ) -> GetUserPoolClientResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_id_binding = args.client_id.get_output(context);
         let user_pool_id_binding = args.user_pool_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

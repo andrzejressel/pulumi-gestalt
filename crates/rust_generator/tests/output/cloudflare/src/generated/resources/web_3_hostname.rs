@@ -56,8 +56,6 @@ pub mod web_3_hostname {
         name: &str,
         args: Web3HostnameArgs,
     ) -> Web3HostnameResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let dnslink_binding = args.dnslink.get_output(context);
         let name_binding = args.name.get_output(context);

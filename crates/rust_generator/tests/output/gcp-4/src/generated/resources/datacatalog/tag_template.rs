@@ -119,8 +119,6 @@ pub mod tag_template {
         name: &str,
         args: TagTemplateArgs,
     ) -> TagTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let fields_binding = args.fields.get_output(context);
         let force_delete_binding = args.force_delete.get_output(context);

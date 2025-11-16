@@ -39,8 +39,6 @@ pub mod nursery {
         name: &str,
         args: NurseryArgs,
     ) -> NurseryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let sizes_binding = args.sizes.get_output(context);
         let varieties_binding = args.varieties.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

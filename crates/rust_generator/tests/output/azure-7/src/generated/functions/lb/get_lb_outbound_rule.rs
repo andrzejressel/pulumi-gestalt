@@ -45,8 +45,6 @@ pub mod get_lb_outbound_rule {
         context: &pulumi_gestalt_rust::Context,
         args: GetLbOutboundRuleArgs,
     ) -> GetLbOutboundRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let loadbalancer_id_binding = args.loadbalancer_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

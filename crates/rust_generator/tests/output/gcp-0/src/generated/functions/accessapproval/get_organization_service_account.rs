@@ -31,8 +31,6 @@ pub mod get_organization_service_account {
         context: &pulumi_gestalt_rust::Context,
         args: GetOrganizationServiceAccountArgs,
     ) -> GetOrganizationServiceAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let organization_id_binding = args.organization_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:accessapproval/getOrganizationServiceAccount:getOrganizationServiceAccount"

@@ -125,8 +125,6 @@ pub mod cross_account_attachment {
         name: &str,
         args: CrossAccountAttachmentArgs,
     ) -> CrossAccountAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let principals_binding = args.principals.get_output(context);
         let resources_binding = args.resources.get_output(context);

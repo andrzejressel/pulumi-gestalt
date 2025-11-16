@@ -77,8 +77,6 @@ pub mod custom_ssl {
         name: &str,
         args: CustomSslArgs,
     ) -> CustomSslResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_ssl_options_binding = args.custom_ssl_options.get_output(context);
         let custom_ssl_priorities_binding = args
             .custom_ssl_priorities

@@ -247,8 +247,6 @@ pub mod cluster {
         name: &str,
         args: ClusterArgs,
     ) -> ClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_server_profile_binding = args.api_server_profile.get_output(context);
         let cluster_profile_binding = args.cluster_profile.get_output(context);
         let ingress_profile_binding = args.ingress_profile.get_output(context);

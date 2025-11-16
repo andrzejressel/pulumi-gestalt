@@ -56,8 +56,6 @@ pub mod cidr_collection {
         name: &str,
         args: CidrCollectionArgs,
     ) -> CidrCollectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:route53/cidrCollection:CidrCollection".into(),

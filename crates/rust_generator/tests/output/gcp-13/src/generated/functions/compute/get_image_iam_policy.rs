@@ -36,8 +36,6 @@ pub mod get_image_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetImageIamPolicyArgs,
     ) -> GetImageIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let image_binding = args.image.get_output(context);
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

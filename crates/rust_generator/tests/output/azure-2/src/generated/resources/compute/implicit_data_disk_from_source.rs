@@ -176,8 +176,6 @@ pub mod implicit_data_disk_from_source {
         name: &str,
         args: ImplicitDataDiskFromSourceArgs,
     ) -> ImplicitDataDiskFromSourceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let caching_binding = args.caching.get_output(context);
         let create_option_binding = args.create_option.get_output(context);
         let disk_size_gb_binding = args.disk_size_gb.get_output(context);

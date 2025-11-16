@@ -92,8 +92,6 @@ pub mod stream {
         name: &str,
         args: StreamArgs,
     ) -> StreamResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let exclusive_end_time_binding = args.exclusive_end_time.get_output(context);
         let inclusive_start_time_binding = args.inclusive_start_time.get_output(context);
         let kinesis_configuration_binding = args

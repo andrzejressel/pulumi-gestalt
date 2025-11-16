@@ -496,8 +496,6 @@ pub mod region_target_https_proxy {
         name: &str,
         args: RegionTargetHttpsProxyArgs,
     ) -> RegionTargetHttpsProxyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_manager_certificates_binding = args
             .certificate_manager_certificates
             .get_output(context);

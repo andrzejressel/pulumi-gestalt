@@ -59,8 +59,6 @@ pub mod default_kms_key {
         name: &str,
         args: DefaultKmsKeyArgs,
     ) -> DefaultKmsKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let key_arn_binding = args.key_arn.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {
             type_: "aws:ebs/defaultKmsKey:DefaultKmsKey".into(),

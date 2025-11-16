@@ -146,8 +146,6 @@ pub mod spring_cloud_connection {
         name: &str,
         args: SpringCloudConnectionArgs,
     ) -> SpringCloudConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authentication_binding = args.authentication.get_output(context);
         let client_type_binding = args.client_type.get_output(context);
         let name_binding = args.name.get_output(context);

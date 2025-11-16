@@ -102,8 +102,6 @@ pub mod open_id_connect_provider {
         name: &str,
         args: OpenIdConnectProviderArgs,
     ) -> OpenIdConnectProviderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let client_id_lists_binding = args.client_id_lists.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let thumbprint_lists_binding = args.thumbprint_lists.get_output(context);

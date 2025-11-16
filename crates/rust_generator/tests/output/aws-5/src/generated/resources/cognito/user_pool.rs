@@ -312,8 +312,6 @@ pub mod user_pool {
         name: &str,
         args: UserPoolArgs,
     ) -> UserPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_recovery_setting_binding = args
             .account_recovery_setting
             .get_output(context);

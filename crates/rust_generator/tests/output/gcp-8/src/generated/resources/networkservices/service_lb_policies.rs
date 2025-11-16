@@ -183,8 +183,6 @@ pub mod service_lb_policies {
         name: &str,
         args: ServiceLbPoliciesArgs,
     ) -> ServiceLbPoliciesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_capacity_drain_binding = args.auto_capacity_drain.get_output(context);
         let description_binding = args.description.get_output(context);
         let failover_config_binding = args.failover_config.get_output(context);

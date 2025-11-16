@@ -69,8 +69,6 @@ pub mod cluster_role_association {
         name: &str,
         args: ClusterRoleAssociationArgs,
     ) -> ClusterRoleAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let db_cluster_identifier_binding = args
             .db_cluster_identifier
             .get_output(context);

@@ -40,8 +40,6 @@ pub mod get_document {
         context: &pulumi_gestalt_rust::Context,
         args: GetDocumentArgs,
     ) -> GetDocumentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let document_format_binding = args.document_format.get_output(context);
         let document_version_binding = args.document_version.get_output(context);
         let name_binding = args.name.get_output(context);

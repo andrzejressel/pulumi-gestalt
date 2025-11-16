@@ -140,8 +140,6 @@ pub mod database_extended_auditing_policy {
         name: &str,
         args: DatabaseExtendedAuditingPolicyArgs,
     ) -> DatabaseExtendedAuditingPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_id_binding = args.database_id.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let log_monitoring_enabled_binding = args

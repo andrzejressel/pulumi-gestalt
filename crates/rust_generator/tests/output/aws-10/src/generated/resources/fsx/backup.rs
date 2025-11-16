@@ -164,8 +164,6 @@ pub mod backup {
         name: &str,
         args: BackupArgs,
     ) -> BackupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let file_system_id_binding = args.file_system_id.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let volume_id_binding = args.volume_id.get_output(context);

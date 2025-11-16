@@ -103,8 +103,6 @@ pub mod agreement {
         name: &str,
         args: AgreementArgs,
     ) -> AgreementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_role_binding = args.access_role.get_output(context);
         let base_directory_binding = args.base_directory.get_output(context);
         let description_binding = args.description.get_output(context);

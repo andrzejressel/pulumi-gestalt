@@ -28,8 +28,6 @@ pub mod get_user_pool_signing_certificate {
         context: &pulumi_gestalt_rust::Context,
         args: GetUserPoolSigningCertificateArgs,
     ) -> GetUserPoolSigningCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let user_pool_id_binding = args.user_pool_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:cognito/getUserPoolSigningCertificate:getUserPoolSigningCertificate"

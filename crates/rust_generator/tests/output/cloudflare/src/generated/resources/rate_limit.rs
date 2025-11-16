@@ -143,8 +143,6 @@ pub mod rate_limit {
         name: &str,
         args: RateLimitArgs,
     ) -> RateLimitResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let bypass_url_patterns_binding = args.bypass_url_patterns.get_output(context);
         let correlate_binding = args.correlate.get_output(context);

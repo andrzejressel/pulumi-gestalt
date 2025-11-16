@@ -243,8 +243,6 @@ pub mod windows_file_system {
         name: &str,
         args: WindowsFileSystemArgs,
     ) -> WindowsFileSystemResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_directory_id_binding = args.active_directory_id.get_output(context);
         let aliases_binding = args.aliases.get_output(context);
         let audit_log_configuration_binding = args

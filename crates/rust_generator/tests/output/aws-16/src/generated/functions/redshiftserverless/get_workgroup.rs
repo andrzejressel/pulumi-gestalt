@@ -43,8 +43,6 @@ pub mod get_workgroup {
         context: &pulumi_gestalt_rust::Context,
         args: GetWorkgroupArgs,
     ) -> GetWorkgroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let workgroup_name_binding = args.workgroup_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:redshiftserverless/getWorkgroup:getWorkgroup".into(),

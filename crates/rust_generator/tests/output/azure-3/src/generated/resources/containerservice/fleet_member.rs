@@ -105,8 +105,6 @@ pub mod fleet_member {
         name: &str,
         args: FleetMemberArgs,
     ) -> FleetMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_binding = args.group.get_output(context);
         let kubernetes_cluster_id_binding = args
             .kubernetes_cluster_id

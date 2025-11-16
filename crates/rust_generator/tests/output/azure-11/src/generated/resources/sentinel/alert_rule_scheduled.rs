@@ -249,8 +249,6 @@ pub mod alert_rule_scheduled {
         name: &str,
         args: AlertRuleScheduledArgs,
     ) -> AlertRuleScheduledResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alert_details_overrides_binding = args
             .alert_details_overrides
             .get_output(context);

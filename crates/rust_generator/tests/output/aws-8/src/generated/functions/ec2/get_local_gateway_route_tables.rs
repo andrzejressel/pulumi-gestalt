@@ -46,8 +46,6 @@ pub mod get_local_gateway_route_tables {
         context: &pulumi_gestalt_rust::Context,
         args: GetLocalGatewayRouteTablesArgs,
     ) -> GetLocalGatewayRouteTablesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

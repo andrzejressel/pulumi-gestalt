@@ -55,8 +55,6 @@ pub mod get_availability_zones {
         context: &pulumi_gestalt_rust::Context,
         args: GetAvailabilityZonesArgs,
     ) -> GetAvailabilityZonesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let all_availability_zones_binding = args
             .all_availability_zones
             .get_output(context);

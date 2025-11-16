@@ -104,8 +104,6 @@ pub mod public_certificate {
         name: &str,
         args: PublicCertificateArgs,
     ) -> PublicCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_name_binding = args.app_service_name.get_output(context);
         let blob_binding = args.blob.get_output(context);
         let certificate_location_binding = args.certificate_location.get_output(context);

@@ -173,8 +173,6 @@ pub mod dicom_store_iam_policy {
         name: &str,
         args: DicomStoreIamPolicyArgs,
     ) -> DicomStoreIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let dicom_store_id_binding = args.dicom_store_id.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

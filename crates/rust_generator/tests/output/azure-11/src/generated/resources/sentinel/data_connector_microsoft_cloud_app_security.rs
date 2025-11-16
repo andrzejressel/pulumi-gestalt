@@ -110,8 +110,6 @@ pub mod data_connector_microsoft_cloud_app_security {
         name: &str,
         args: DataConnectorMicrosoftCloudAppSecurityArgs,
     ) -> DataConnectorMicrosoftCloudAppSecurityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alerts_enabled_binding = args.alerts_enabled.get_output(context);
         let discovery_logs_enabled_binding = args
             .discovery_logs_enabled

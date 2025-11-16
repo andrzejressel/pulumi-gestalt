@@ -256,8 +256,6 @@ pub mod intent {
         name: &str,
         args: IntentArgs,
     ) -> IntentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let default_response_platforms_binding = args
             .default_response_platforms

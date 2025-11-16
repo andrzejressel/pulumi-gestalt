@@ -28,8 +28,6 @@ pub mod get_slack_workspace {
         context: &pulumi_gestalt_rust::Context,
         args: GetSlackWorkspaceArgs,
     ) -> GetSlackWorkspaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let slack_team_name_binding = args.slack_team_name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:chatbot/getSlackWorkspace:getSlackWorkspace".into(),

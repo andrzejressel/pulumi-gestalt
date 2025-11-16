@@ -128,8 +128,6 @@ pub mod spring_cloud_build_deployment {
         name: &str,
         args: SpringCloudBuildDeploymentArgs,
     ) -> SpringCloudBuildDeploymentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let addon_json_binding = args.addon_json.get_output(context);
         let application_performance_monitoring_ids_binding = args
             .application_performance_monitoring_ids

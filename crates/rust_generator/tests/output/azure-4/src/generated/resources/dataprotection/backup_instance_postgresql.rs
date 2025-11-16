@@ -198,8 +198,6 @@ pub mod backup_instance_postgresql {
         name: &str,
         args: BackupInstancePostgresqlArgs,
     ) -> BackupInstancePostgresqlResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_policy_id_binding = args.backup_policy_id.get_output(context);
         let database_credential_key_vault_secret_id_binding = args
             .database_credential_key_vault_secret_id

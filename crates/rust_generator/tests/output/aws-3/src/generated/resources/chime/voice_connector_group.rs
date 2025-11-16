@@ -89,8 +89,6 @@ pub mod voice_connector_group {
         name: &str,
         args: VoiceConnectorGroupArgs,
     ) -> VoiceConnectorGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connectors_binding = args.connectors.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

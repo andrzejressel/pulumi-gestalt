@@ -172,8 +172,6 @@ pub mod authorizer {
         name: &str,
         args: AuthorizerArgs,
     ) -> AuthorizerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authorizer_credentials_binding = args
             .authorizer_credentials
             .get_output(context);

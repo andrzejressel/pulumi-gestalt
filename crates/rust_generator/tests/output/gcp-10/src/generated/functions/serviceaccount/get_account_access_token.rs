@@ -40,8 +40,6 @@ pub mod get_account_access_token {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccountAccessTokenArgs,
     ) -> GetAccountAccessTokenResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delegates_binding = args.delegates.get_output(context);
         let lifetime_binding = args.lifetime.get_output(context);
         let scopes_binding = args.scopes.get_output(context);

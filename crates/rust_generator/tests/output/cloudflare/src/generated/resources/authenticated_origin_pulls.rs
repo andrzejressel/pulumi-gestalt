@@ -124,8 +124,6 @@ pub mod authenticated_origin_pulls {
         name: &str,
         args: AuthenticatedOriginPullsArgs,
     ) -> AuthenticatedOriginPullsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let authenticated_origin_pulls_certificate_binding = args
             .authenticated_origin_pulls_certificate
             .get_output(context);

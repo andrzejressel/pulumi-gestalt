@@ -81,8 +81,6 @@ pub mod trust_store {
         name: &str,
         args: TrustStoreArgs,
     ) -> TrustStoreResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let ca_certificates_bundle_s3_bucket_binding = args
             .ca_certificates_bundle_s3_bucket
             .get_output(context);

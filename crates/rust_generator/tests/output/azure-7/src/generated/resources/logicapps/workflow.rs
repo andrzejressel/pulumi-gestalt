@@ -166,8 +166,6 @@ pub mod workflow {
         name: &str,
         args: WorkflowArgs,
     ) -> WorkflowResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_control_binding = args.access_control.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let identity_binding = args.identity.get_output(context);

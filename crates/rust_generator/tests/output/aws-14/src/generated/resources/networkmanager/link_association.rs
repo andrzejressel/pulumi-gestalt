@@ -68,8 +68,6 @@ pub mod link_association {
         name: &str,
         args: LinkAssociationArgs,
     ) -> LinkAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let device_id_binding = args.device_id.get_output(context);
         let global_network_id_binding = args.global_network_id.get_output(context);
         let link_id_binding = args.link_id.get_output(context);

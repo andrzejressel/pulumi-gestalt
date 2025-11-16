@@ -73,8 +73,6 @@ pub mod random_pet {
         name: &str,
         args: RandomPetArgs,
     ) -> RandomPetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let keepers_binding = args.keepers.get_output(context);
         let length_binding = args.length.get_output(context);
         let prefix_binding = args.prefix.get_output(context);

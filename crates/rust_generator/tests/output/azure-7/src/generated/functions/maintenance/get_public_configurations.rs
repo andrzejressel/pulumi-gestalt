@@ -40,8 +40,6 @@ pub mod get_public_configurations {
         context: &pulumi_gestalt_rust::Context,
         args: GetPublicConfigurationsArgs,
     ) -> GetPublicConfigurationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let recur_every_binding = args.recur_every.get_output(context);
         let scope_binding = args.scope.get_output(context);

@@ -91,8 +91,6 @@ pub mod identity_provider_facebook {
         name: &str,
         args: IdentityProviderFacebookArgs,
     ) -> IdentityProviderFacebookResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_name_binding = args.api_management_name.get_output(context);
         let app_id_binding = args.app_id.get_output(context);
         let app_secret_binding = args.app_secret.get_output(context);

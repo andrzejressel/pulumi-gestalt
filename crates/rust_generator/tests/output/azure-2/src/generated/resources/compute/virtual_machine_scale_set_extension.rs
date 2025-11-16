@@ -190,8 +190,6 @@ pub mod virtual_machine_scale_set_extension {
         name: &str,
         args: VirtualMachineScaleSetExtensionArgs,
     ) -> VirtualMachineScaleSetExtensionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auto_upgrade_minor_version_binding = args
             .auto_upgrade_minor_version
             .get_output(context);

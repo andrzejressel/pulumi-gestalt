@@ -94,8 +94,6 @@ pub mod data_connector_office_irm {
         name: &str,
         args: DataConnectorOfficeIrmArgs,
     ) -> DataConnectorOfficeIrmResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let log_analytics_workspace_id_binding = args
             .log_analytics_workspace_id
             .get_output(context);

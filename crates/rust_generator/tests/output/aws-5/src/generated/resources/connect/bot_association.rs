@@ -121,8 +121,6 @@ pub mod bot_association {
         name: &str,
         args: BotAssociationArgs,
     ) -> BotAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_id_binding = args.instance_id.get_output(context);
         let lex_bot_binding = args.lex_bot.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

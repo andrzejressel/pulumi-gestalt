@@ -167,8 +167,6 @@ pub mod cx_webhook {
         name: &str,
         args: CxWebhookArgs,
     ) -> CxWebhookResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disabled_binding = args.disabled.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let enable_spell_correction_binding = args

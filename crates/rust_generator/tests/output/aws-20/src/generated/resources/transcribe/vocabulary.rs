@@ -106,8 +106,6 @@ pub mod vocabulary {
         name: &str,
         args: VocabularyArgs,
     ) -> VocabularyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let language_code_binding = args.language_code.get_output(context);
         let phrases_binding = args.phrases.get_output(context);
         let tags_binding = args.tags.get_output(context);

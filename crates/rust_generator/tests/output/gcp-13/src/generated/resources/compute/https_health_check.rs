@@ -180,8 +180,6 @@ pub mod https_health_check {
         name: &str,
         args: HttpsHealthCheckArgs,
     ) -> HttpsHealthCheckResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let check_interval_sec_binding = args.check_interval_sec.get_output(context);
         let description_binding = args.description.get_output(context);
         let healthy_threshold_binding = args.healthy_threshold.get_output(context);

@@ -148,8 +148,6 @@ pub mod backend {
         name: &str,
         args: BackendArgs,
     ) -> BackendResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_name_binding = args.api_management_name.get_output(context);
         let credentials_binding = args.credentials.get_output(context);
         let description_binding = args.description.get_output(context);

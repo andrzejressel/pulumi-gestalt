@@ -77,8 +77,6 @@ pub mod registry {
         name: &str,
         args: RegistryArgs,
     ) -> RegistryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let tags_binding = args.tags.get_output(context);

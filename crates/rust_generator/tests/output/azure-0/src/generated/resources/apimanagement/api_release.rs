@@ -104,8 +104,6 @@ pub mod api_release {
         name: &str,
         args: ApiReleaseArgs,
     ) -> ApiReleaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_id_binding = args.api_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let notes_binding = args.notes.get_output(context);

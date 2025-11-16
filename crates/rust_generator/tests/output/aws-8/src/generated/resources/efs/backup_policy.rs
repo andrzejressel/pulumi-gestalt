@@ -71,8 +71,6 @@ pub mod backup_policy {
         name: &str,
         args: BackupPolicyArgs,
     ) -> BackupPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_policy_binding = args.backup_policy.get_output(context);
         let file_system_id_binding = args.file_system_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

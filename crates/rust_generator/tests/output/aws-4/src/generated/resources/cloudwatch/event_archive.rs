@@ -105,8 +105,6 @@ pub mod event_archive {
         name: &str,
         args: EventArchiveArgs,
     ) -> EventArchiveResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let event_pattern_binding = args.event_pattern.get_output(context);
         let event_source_arn_binding = args.event_source_arn.get_output(context);

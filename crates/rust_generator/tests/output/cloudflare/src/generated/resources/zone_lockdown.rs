@@ -86,8 +86,6 @@ pub mod zone_lockdown {
         name: &str,
         args: ZoneLockdownArgs,
     ) -> ZoneLockdownResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configurations_binding = args.configurations.get_output(context);
         let description_binding = args.description.get_output(context);
         let paused_binding = args.paused.get_output(context);

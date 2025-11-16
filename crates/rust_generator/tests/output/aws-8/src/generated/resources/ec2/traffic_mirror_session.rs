@@ -121,8 +121,6 @@ pub mod traffic_mirror_session {
         name: &str,
         args: TrafficMirrorSessionArgs,
     ) -> TrafficMirrorSessionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let network_interface_id_binding = args.network_interface_id.get_output(context);
         let packet_length_binding = args.packet_length.get_output(context);

@@ -118,8 +118,6 @@ pub mod virtual_machine_manager_server {
         name: &str,
         args: VirtualMachineManagerServerArgs,
     ) -> VirtualMachineManagerServerResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_location_id_binding = args.custom_location_id.get_output(context);
         let fqdn_binding = args.fqdn.get_output(context);
         let location_binding = args.location.get_output(context);

@@ -216,8 +216,6 @@ pub mod vpc_peering_connection {
         name: &str,
         args: VpcPeeringConnectionArgs,
     ) -> VpcPeeringConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accepter_binding = args.accepter.get_output(context);
         let auto_accept_binding = args.auto_accept.get_output(context);
         let peer_owner_id_binding = args.peer_owner_id.get_output(context);

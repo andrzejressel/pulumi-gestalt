@@ -78,8 +78,6 @@ pub mod preferences {
         name: &str,
         args: PreferencesArgs,
     ) -> PreferencesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let member_account_discount_visibility_binding = args
             .member_account_discount_visibility
             .get_output(context);

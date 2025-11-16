@@ -108,8 +108,6 @@ pub mod gateway_certificate_authority {
         name: &str,
         args: GatewayCertificateAuthorityArgs,
     ) -> GatewayCertificateAuthorityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_id_binding = args.api_management_id.get_output(context);
         let certificate_name_binding = args.certificate_name.get_output(context);
         let gateway_name_binding = args.gateway_name.get_output(context);

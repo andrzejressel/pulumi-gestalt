@@ -355,8 +355,6 @@ pub mod data_set {
         name: &str,
         args: DataSetArgs,
     ) -> DataSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let column_groups_binding = args.column_groups.get_output(context);
         let column_level_permission_rules_binding = args

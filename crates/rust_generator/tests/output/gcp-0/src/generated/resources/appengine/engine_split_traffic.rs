@@ -140,8 +140,6 @@ pub mod engine_split_traffic {
         name: &str,
         args: EngineSplitTrafficArgs,
     ) -> EngineSplitTrafficResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let migrate_traffic_binding = args.migrate_traffic.get_output(context);
         let project_binding = args.project.get_output(context);
         let service_binding = args.service.get_output(context);

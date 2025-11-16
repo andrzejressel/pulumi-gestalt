@@ -73,8 +73,6 @@ pub mod vpc_endpoint {
         name: &str,
         args: VpcEndpointArgs,
     ) -> VpcEndpointResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let domain_arn_binding = args.domain_arn.get_output(context);
         let vpc_options_binding = args.vpc_options.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

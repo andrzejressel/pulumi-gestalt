@@ -59,8 +59,6 @@ pub mod get_vpn_gateway {
         context: &pulumi_gestalt_rust::Context,
         args: GetVpnGatewayArgs,
     ) -> GetVpnGatewayResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let amazon_side_asn_binding = args.amazon_side_asn.get_output(context);
         let attached_vpc_id_binding = args.attached_vpc_id.get_output(context);
         let availability_zone_binding = args.availability_zone.get_output(context);

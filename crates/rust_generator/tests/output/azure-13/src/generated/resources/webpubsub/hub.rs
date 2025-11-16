@@ -150,8 +150,6 @@ pub mod hub {
         name: &str,
         args: HubArgs,
     ) -> HubResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let anonymous_connections_enabled_binding = args
             .anonymous_connections_enabled
             .get_output(context);

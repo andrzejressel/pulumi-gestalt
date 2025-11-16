@@ -138,8 +138,6 @@ pub mod private_link_association {
         name: &str,
         args: PrivateLinkAssociationArgs,
     ) -> PrivateLinkAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let management_group_id_binding = args.management_group_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let public_network_access_enabled_binding = args

@@ -153,8 +153,6 @@ pub mod response_plan {
         name: &str,
         args: ResponsePlanArgs,
     ) -> ResponsePlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let action_binding = args.action.get_output(context);
         let chat_channels_binding = args.chat_channels.get_output(context);
         let display_name_binding = args.display_name.get_output(context);

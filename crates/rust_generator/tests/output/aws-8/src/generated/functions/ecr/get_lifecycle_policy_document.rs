@@ -31,8 +31,6 @@ pub mod get_lifecycle_policy_document {
         context: &pulumi_gestalt_rust::Context,
         args: GetLifecyclePolicyDocumentArgs,
     ) -> GetLifecyclePolicyDocumentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let rules_binding = args.rules.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ecr/getLifecyclePolicyDocument:getLifecyclePolicyDocument"

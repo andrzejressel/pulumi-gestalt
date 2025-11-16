@@ -125,8 +125,6 @@ pub mod agent_knowledge_base {
         name: &str,
         args: AgentKnowledgeBaseArgs,
     ) -> AgentKnowledgeBaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let knowledge_base_configuration_binding = args
             .knowledge_base_configuration

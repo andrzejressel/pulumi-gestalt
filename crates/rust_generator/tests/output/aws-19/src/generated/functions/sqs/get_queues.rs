@@ -28,8 +28,6 @@ pub mod get_queues {
         context: &pulumi_gestalt_rust::Context,
         args: GetQueuesArgs,
     ) -> GetQueuesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let queue_name_prefix_binding = args.queue_name_prefix.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:sqs/getQueues:getQueues".into(),

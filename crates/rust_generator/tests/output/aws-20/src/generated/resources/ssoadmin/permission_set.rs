@@ -97,8 +97,6 @@ pub mod permission_set {
         name: &str,
         args: PermissionSetArgs,
     ) -> PermissionSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let instance_arn_binding = args.instance_arn.get_output(context);
         let name_binding = args.name.get_output(context);

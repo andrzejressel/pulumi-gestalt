@@ -156,8 +156,6 @@ pub mod global_vm_shutdown_schedule {
         name: &str,
         args: GlobalVMShutdownScheduleArgs,
     ) -> GlobalVMShutdownScheduleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let daily_recurrence_time_binding = args
             .daily_recurrence_time
             .get_output(context);

@@ -116,8 +116,6 @@ pub mod bucket_metric {
         name: &str,
         args: BucketMetricArgs,
     ) -> BucketMetricResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let filter_binding = args.filter.get_output(context);
         let name_binding = args.name.get_output(context);

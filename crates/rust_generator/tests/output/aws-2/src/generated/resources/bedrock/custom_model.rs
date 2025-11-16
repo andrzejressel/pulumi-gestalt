@@ -169,8 +169,6 @@ pub mod custom_model {
         name: &str,
         args: CustomModelArgs,
     ) -> CustomModelResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let base_model_identifier_binding = args
             .base_model_identifier
             .get_output(context);

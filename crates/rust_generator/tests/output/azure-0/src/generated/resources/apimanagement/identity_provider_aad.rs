@@ -107,8 +107,6 @@ pub mod identity_provider_aad {
         name: &str,
         args: IdentityProviderAadArgs,
     ) -> IdentityProviderAadResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_tenants_binding = args.allowed_tenants.get_output(context);
         let api_management_name_binding = args.api_management_name.get_output(context);
         let client_id_binding = args.client_id.get_output(context);

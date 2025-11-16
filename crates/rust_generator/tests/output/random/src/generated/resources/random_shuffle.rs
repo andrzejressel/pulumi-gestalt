@@ -72,8 +72,6 @@ pub mod random_shuffle {
         name: &str,
         args: RandomShuffleArgs,
     ) -> RandomShuffleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let inputs_binding = args.inputs.get_output(context);
         let keepers_binding = args.keepers.get_output(context);
         let result_count_binding = args.result_count.get_output(context);

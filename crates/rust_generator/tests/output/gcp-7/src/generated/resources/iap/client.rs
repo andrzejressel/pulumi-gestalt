@@ -126,8 +126,6 @@ pub mod client {
         name: &str,
         args: ClientArgs,
     ) -> ClientResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let brand_binding = args.brand.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

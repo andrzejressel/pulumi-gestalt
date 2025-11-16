@@ -39,8 +39,6 @@ pub mod list_configurations {
         context: &pulumi_gestalt_rust::Context,
         args: ListConfigurationsArgs,
     ) -> ListConfigurationsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_filters_binding = args
             .configuration_filters
             .get_output(context);

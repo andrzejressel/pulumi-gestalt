@@ -93,8 +93,6 @@ pub mod device_posture_integration {
         name: &str,
         args: DevicePostureIntegrationArgs,
     ) -> DevicePostureIntegrationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let configs_binding = args.configs.get_output(context);
         let identifier_binding = args.identifier.get_output(context);

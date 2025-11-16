@@ -86,8 +86,6 @@ pub mod get_cluster_node_pool {
         context: &pulumi_gestalt_rust::Context,
         args: GetClusterNodePoolArgs,
     ) -> GetClusterNodePoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let kubernetes_cluster_name_binding = args
             .kubernetes_cluster_name
             .get_output(context);

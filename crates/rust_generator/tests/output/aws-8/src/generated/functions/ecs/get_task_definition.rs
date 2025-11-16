@@ -42,8 +42,6 @@ pub mod get_task_definition {
         context: &pulumi_gestalt_rust::Context,
         args: GetTaskDefinitionArgs,
     ) -> GetTaskDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let task_definition_binding = args.task_definition.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:ecs/getTaskDefinition:getTaskDefinition".into(),

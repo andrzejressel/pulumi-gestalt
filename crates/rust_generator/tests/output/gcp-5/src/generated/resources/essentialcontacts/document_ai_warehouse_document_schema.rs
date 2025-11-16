@@ -123,8 +123,6 @@ pub mod document_ai_warehouse_document_schema {
         name: &str,
         args: DocumentAiWarehouseDocumentSchemaArgs,
     ) -> DocumentAiWarehouseDocumentSchemaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let display_name_binding = args.display_name.get_output(context);
         let document_is_folder_binding = args.document_is_folder.get_output(context);
         let location_binding = args.location.get_output(context);

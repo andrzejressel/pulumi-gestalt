@@ -105,8 +105,6 @@ pub mod source_iam_member {
         name: &str,
         args: SourceIamMemberArgs,
     ) -> SourceIamMemberResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let member_binding = args.member.get_output(context);
         let organization_binding = args.organization.get_output(context);

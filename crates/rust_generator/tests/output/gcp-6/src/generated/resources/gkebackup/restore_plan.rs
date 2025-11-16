@@ -841,8 +841,6 @@ pub mod restore_plan {
         name: &str,
         args: RestorePlanArgs,
     ) -> RestorePlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_plan_binding = args.backup_plan.get_output(context);
         let cluster_binding = args.cluster.get_output(context);
         let description_binding = args.description.get_output(context);

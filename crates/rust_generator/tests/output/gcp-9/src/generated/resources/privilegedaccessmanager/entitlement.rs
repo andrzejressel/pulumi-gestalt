@@ -222,8 +222,6 @@ pub mod entitlement {
         name: &str,
         args: entitlementArgs,
     ) -> entitlementResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let additional_notification_targets_binding = args
             .additional_notification_targets
             .get_output(context);

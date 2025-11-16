@@ -50,8 +50,6 @@ pub mod topic_rule_destination {
         name: &str,
         args: TopicRuleDestinationArgs,
     ) -> TopicRuleDestinationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let enabled_binding = args.enabled.get_output(context);
         let vpc_configuration_binding = args.vpc_configuration.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

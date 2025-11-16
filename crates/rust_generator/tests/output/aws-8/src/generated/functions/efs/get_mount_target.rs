@@ -54,8 +54,6 @@ pub mod get_mount_target {
         context: &pulumi_gestalt_rust::Context,
         args: GetMountTargetArgs,
     ) -> GetMountTargetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_point_id_binding = args.access_point_id.get_output(context);
         let file_system_id_binding = args.file_system_id.get_output(context);
         let mount_target_id_binding = args.mount_target_id.get_output(context);

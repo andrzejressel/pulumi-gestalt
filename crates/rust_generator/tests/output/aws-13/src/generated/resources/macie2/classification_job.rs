@@ -142,8 +142,6 @@ pub mod classification_job {
         name: &str,
         args: ClassificationJobArgs,
     ) -> ClassificationJobResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_data_identifier_ids_binding = args
             .custom_data_identifier_ids
             .get_output(context);

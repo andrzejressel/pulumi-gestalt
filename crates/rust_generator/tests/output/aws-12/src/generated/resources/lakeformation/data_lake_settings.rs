@@ -219,8 +219,6 @@ pub mod data_lake_settings {
         name: &str,
         args: DataLakeSettingsArgs,
     ) -> DataLakeSettingsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admins_binding = args.admins.get_output(context);
         let allow_external_data_filtering_binding = args
             .allow_external_data_filtering

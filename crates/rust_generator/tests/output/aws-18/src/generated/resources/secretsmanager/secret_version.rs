@@ -108,8 +108,6 @@ pub mod secret_version {
         name: &str,
         args: SecretVersionArgs,
     ) -> SecretVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let secret_binary_binding = args.secret_binary.get_output(context);
         let secret_id_binding = args.secret_id.get_output(context);
         let secret_string_binding = args.secret_string.get_output(context);

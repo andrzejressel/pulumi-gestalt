@@ -117,8 +117,6 @@ pub mod ai_feature_store_entity_type_iam_binding {
         name: &str,
         args: AiFeatureStoreEntityTypeIamBindingArgs,
     ) -> AiFeatureStoreEntityTypeIamBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let condition_binding = args.condition.get_output(context);
         let entitytype_binding = args.entitytype.get_output(context);
         let featurestore_binding = args.featurestore.get_output(context);

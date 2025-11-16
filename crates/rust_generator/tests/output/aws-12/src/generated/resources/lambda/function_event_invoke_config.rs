@@ -198,8 +198,6 @@ pub mod function_event_invoke_config {
         name: &str,
         args: FunctionEventInvokeConfigArgs,
     ) -> FunctionEventInvokeConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_config_binding = args.destination_config.get_output(context);
         let function_name_binding = args.function_name.get_output(context);
         let maximum_event_age_in_seconds_binding = args

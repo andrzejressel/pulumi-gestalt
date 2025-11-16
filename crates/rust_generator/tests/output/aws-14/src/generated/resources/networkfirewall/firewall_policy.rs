@@ -164,8 +164,6 @@ pub mod firewall_policy {
         name: &str,
         args: FirewallPolicyArgs,
     ) -> FirewallPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let encryption_configuration_binding = args
             .encryption_configuration

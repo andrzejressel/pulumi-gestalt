@@ -256,8 +256,6 @@ pub mod nat_address {
         name: &str,
         args: NatAddressArgs,
     ) -> NatAddressResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let activate_binding = args.activate.get_output(context);
         let instance_id_binding = args.instance_id.get_output(context);
         let name_binding = args.name.get_output(context);

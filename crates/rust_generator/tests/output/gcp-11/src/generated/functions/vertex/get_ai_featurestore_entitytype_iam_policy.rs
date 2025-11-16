@@ -35,8 +35,6 @@ pub mod get_ai_featurestore_entitytype_iam_policy {
         context: &pulumi_gestalt_rust::Context,
         args: GetAiFeaturestoreEntitytypeIamPolicyArgs,
     ) -> GetAiFeaturestoreEntitytypeIamPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let entitytype_binding = args.entitytype.get_output(context);
         let featurestore_binding = args.featurestore.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

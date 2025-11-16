@@ -124,8 +124,6 @@ pub mod fleet_update_run {
         name: &str,
         args: FleetUpdateRunArgs,
     ) -> FleetUpdateRunResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let fleet_update_strategy_id_binding = args
             .fleet_update_strategy_id
             .get_output(context);

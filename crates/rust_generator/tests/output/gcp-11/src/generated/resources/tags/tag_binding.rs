@@ -114,8 +114,6 @@ pub mod tag_binding {
         name: &str,
         args: TagBindingArgs,
     ) -> TagBindingResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_binding = args.parent.get_output(context);
         let tag_value_binding = args.tag_value.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

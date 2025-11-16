@@ -148,8 +148,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let auth_binding = args.auth.get_output(context);
         let converge_config_binding = args.converge_config.get_output(context);
         let endpoint_spec_binding = args.endpoint_spec.get_output(context);

@@ -130,8 +130,6 @@ pub mod network_sim_group {
         name: &str,
         args: NetworkSimGroupArgs,
     ) -> NetworkSimGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let encryption_key_url_binding = args.encryption_key_url.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let location_binding = args.location.get_output(context);

@@ -76,8 +76,6 @@ pub mod custom_pages {
         name: &str,
         args: CustomPagesArgs,
     ) -> CustomPagesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let state_binding = args.state.get_output(context);
         let type__binding = args.type_.get_output(context);

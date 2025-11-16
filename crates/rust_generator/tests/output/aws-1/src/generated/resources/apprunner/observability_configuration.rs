@@ -86,8 +86,6 @@ pub mod observability_configuration {
         name: &str,
         args: ObservabilityConfigurationArgs,
     ) -> ObservabilityConfigurationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let observability_configuration_name_binding = args
             .observability_configuration_name
             .get_output(context);

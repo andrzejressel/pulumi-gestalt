@@ -413,8 +413,6 @@ pub mod iam_audit_config {
         name: &str,
         args: IAMAuditConfigArgs,
     ) -> IAMAuditConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let audit_log_configs_binding = args.audit_log_configs.get_output(context);
         let project_binding = args.project.get_output(context);
         let service_binding = args.service.get_output(context);

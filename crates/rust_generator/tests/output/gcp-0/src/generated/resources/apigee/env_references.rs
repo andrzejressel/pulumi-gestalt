@@ -84,8 +84,6 @@ pub mod env_references {
         name: &str,
         args: EnvReferencesArgs,
     ) -> EnvReferencesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let env_id_binding = args.env_id.get_output(context);
         let name_binding = args.name.get_output(context);

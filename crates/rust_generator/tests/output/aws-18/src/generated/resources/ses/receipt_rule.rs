@@ -165,8 +165,6 @@ pub mod receipt_rule {
         name: &str,
         args: ReceiptRuleArgs,
     ) -> ReceiptRuleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let add_header_actions_binding = args.add_header_actions.get_output(context);
         let after_binding = args.after.get_output(context);
         let bounce_actions_binding = args.bounce_actions.get_output(context);

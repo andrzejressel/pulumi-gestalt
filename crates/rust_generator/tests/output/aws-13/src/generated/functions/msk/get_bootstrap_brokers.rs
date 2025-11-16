@@ -50,8 +50,6 @@ pub mod get_bootstrap_brokers {
         context: &pulumi_gestalt_rust::Context,
         args: GetBootstrapBrokersArgs,
     ) -> GetBootstrapBrokersResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_arn_binding = args.cluster_arn.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:msk/getBootstrapBrokers:getBootstrapBrokers".into(),

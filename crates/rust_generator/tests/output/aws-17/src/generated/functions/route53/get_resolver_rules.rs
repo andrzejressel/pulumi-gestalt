@@ -46,8 +46,6 @@ pub mod get_resolver_rules {
         context: &pulumi_gestalt_rust::Context,
         args: GetResolverRulesArgs,
     ) -> GetResolverRulesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_regex_binding = args.name_regex.get_output(context);
         let owner_id_binding = args.owner_id.get_output(context);
         let resolver_endpoint_id_binding = args.resolver_endpoint_id.get_output(context);

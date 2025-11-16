@@ -236,8 +236,6 @@ pub mod app_service {
         name: &str,
         args: AppServiceArgs,
     ) -> AppServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_service_plan_id_binding = args.app_service_plan_id.get_output(context);
         let app_settings_binding = args.app_settings.get_output(context);
         let auth_settings_binding = args.auth_settings.get_output(context);

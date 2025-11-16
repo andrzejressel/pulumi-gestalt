@@ -112,8 +112,6 @@ pub mod trust_provider {
         name: &str,
         args: TrustProviderArgs,
     ) -> TrustProviderResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let device_options_binding = args.device_options.get_output(context);
         let device_trust_provider_type_binding = args

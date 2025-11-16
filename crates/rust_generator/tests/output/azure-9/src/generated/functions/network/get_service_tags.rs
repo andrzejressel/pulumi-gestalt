@@ -42,8 +42,6 @@ pub mod get_service_tags {
         context: &pulumi_gestalt_rust::Context,
         args: GetServiceTagsArgs,
     ) -> GetServiceTagsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let location_filter_binding = args.location_filter.get_output(context);
         let service_binding = args.service.get_output(context);

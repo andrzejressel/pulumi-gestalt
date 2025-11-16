@@ -123,8 +123,6 @@ pub mod account {
         name: &str,
         args: AccountArgs,
     ) -> AccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let encryptions_binding = args.encryptions.get_output(context);
         let identity_binding = args.identity.get_output(context);
         let local_authentication_enabled_binding = args

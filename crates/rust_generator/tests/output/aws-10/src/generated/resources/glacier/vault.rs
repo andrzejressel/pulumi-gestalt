@@ -114,8 +114,6 @@ pub mod vault {
         name: &str,
         args: VaultArgs,
     ) -> VaultResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_policy_binding = args.access_policy.get_output(context);
         let name_binding = args.name.get_output(context);
         let notification_binding = args.notification.get_output(context);

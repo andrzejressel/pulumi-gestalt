@@ -186,8 +186,6 @@ pub mod profile {
         name: &str,
         args: ProfileArgs,
     ) -> ProfileResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_number_binding = args.account_number.get_output(context);
         let additional_information_binding = args
             .additional_information

@@ -150,8 +150,6 @@ pub mod cluster_snapshot_copy {
         name: &str,
         args: ClusterSnapshotCopyArgs,
     ) -> ClusterSnapshotCopyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let copy_tags_binding = args.copy_tags.get_output(context);
         let destination_region_binding = args.destination_region.get_output(context);
         let kms_key_id_binding = args.kms_key_id.get_output(context);

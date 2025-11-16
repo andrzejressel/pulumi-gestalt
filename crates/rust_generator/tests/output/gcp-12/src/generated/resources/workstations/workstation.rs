@@ -205,8 +205,6 @@ pub mod workstation {
         name: &str,
         args: WorkstationArgs,
     ) -> WorkstationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let env_binding = args.env.get_output(context);

@@ -76,8 +76,6 @@ pub mod revision {
         name: &str,
         args: RevisionArgs,
     ) -> RevisionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let comment_binding = args.comment.get_output(context);
         let data_set_id_binding = args.data_set_id.get_output(context);
         let tags_binding = args.tags.get_output(context);

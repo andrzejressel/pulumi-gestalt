@@ -96,8 +96,6 @@ pub mod get_standard {
         context: &pulumi_gestalt_rust::Context,
         args: GetStandardArgs,
     ) -> GetStandardResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let resource_group_name_binding = args.resource_group_name.get_output(context);
         let site_config_binding = args.site_config.get_output(context);

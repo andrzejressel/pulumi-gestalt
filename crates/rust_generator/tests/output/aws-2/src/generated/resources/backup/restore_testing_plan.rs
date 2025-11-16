@@ -102,8 +102,6 @@ pub mod restore_testing_plan {
         name: &str,
         args: RestoreTestingPlanArgs,
     ) -> RestoreTestingPlanResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let recovery_point_selection_binding = args
             .recovery_point_selection

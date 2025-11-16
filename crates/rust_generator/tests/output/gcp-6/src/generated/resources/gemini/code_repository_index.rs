@@ -137,8 +137,6 @@ pub mod code_repository_index {
         name: &str,
         args: CodeRepositoryIndexArgs,
     ) -> CodeRepositoryIndexResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let code_repository_index_id_binding = args
             .code_repository_index_id
             .get_output(context);

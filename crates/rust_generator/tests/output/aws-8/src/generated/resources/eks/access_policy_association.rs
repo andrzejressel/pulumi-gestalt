@@ -77,8 +77,6 @@ pub mod access_policy_association {
         name: &str,
         args: AccessPolicyAssociationArgs,
     ) -> AccessPolicyAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let access_scope_binding = args.access_scope.get_output(context);
         let cluster_name_binding = args.cluster_name.get_output(context);
         let policy_arn_binding = args.policy_arn.get_output(context);

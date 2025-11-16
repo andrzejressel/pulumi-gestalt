@@ -227,8 +227,6 @@ pub mod volume {
         name: &str,
         args: VolumeArgs,
     ) -> VolumeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_name_binding = args.account_name.get_output(context);
         let azure_vmware_data_store_enabled_binding = args
             .azure_vmware_data_store_enabled

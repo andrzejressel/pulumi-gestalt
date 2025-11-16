@@ -51,8 +51,6 @@ pub mod get_quicksight_user {
         context: &pulumi_gestalt_rust::Context,
         args: GetQuicksightUserArgs,
     ) -> GetQuicksightUserResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let namespace_binding = args.namespace.get_output(context);
         let user_name_binding = args.user_name.get_output(context);

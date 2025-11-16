@@ -231,8 +231,6 @@ pub mod field {
         name: &str,
         args: FieldArgs,
     ) -> FieldResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let collection_binding = args.collection.get_output(context);
         let database_binding = args.database.get_output(context);
         let field_binding = args.field.get_output(context);

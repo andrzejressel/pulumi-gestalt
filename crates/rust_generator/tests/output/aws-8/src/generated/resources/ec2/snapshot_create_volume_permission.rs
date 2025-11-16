@@ -60,8 +60,6 @@ pub mod snapshot_create_volume_permission {
         name: &str,
         args: SnapshotCreateVolumePermissionArgs,
     ) -> SnapshotCreateVolumePermissionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let snapshot_id_binding = args.snapshot_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

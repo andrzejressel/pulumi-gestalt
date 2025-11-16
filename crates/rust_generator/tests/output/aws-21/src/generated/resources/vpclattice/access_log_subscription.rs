@@ -76,8 +76,6 @@ pub mod access_log_subscription {
         name: &str,
         args: AccessLogSubscriptionArgs,
     ) -> AccessLogSubscriptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destination_arn_binding = args.destination_arn.get_output(context);
         let resource_identifier_binding = args.resource_identifier.get_output(context);
         let tags_binding = args.tags.get_output(context);

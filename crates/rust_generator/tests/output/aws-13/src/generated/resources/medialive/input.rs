@@ -151,8 +151,6 @@ pub mod input {
         name: &str,
         args: InputArgs,
     ) -> InputResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let destinations_binding = args.destinations.get_output(context);
         let input_devices_binding = args.input_devices.get_output(context);
         let input_security_groups_binding = args

@@ -98,8 +98,6 @@ pub mod core_network_policy_attachment {
         name: &str,
         args: CoreNetworkPolicyAttachmentArgs,
     ) -> CoreNetworkPolicyAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let core_network_id_binding = args.core_network_id.get_output(context);
         let policy_document_binding = args.policy_document.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

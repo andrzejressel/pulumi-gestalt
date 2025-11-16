@@ -30,8 +30,6 @@ pub mod get_group_memberships {
         context: &pulumi_gestalt_rust::Context,
         args: GetGroupMembershipsArgs,
     ) -> GetGroupMembershipsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let group_binding = args.group.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:cloudidentity/getGroupMemberships:getGroupMemberships".into(),

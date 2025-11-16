@@ -142,8 +142,6 @@ pub mod web_app_active_slot {
         name: &str,
         args: WebAppActiveSlotArgs,
     ) -> WebAppActiveSlotResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let overwrite_network_config_binding = args
             .overwrite_network_config
             .get_output(context);

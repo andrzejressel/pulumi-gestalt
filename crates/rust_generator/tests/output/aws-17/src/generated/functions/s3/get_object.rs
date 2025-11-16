@@ -101,8 +101,6 @@ pub mod get_object {
         context: &pulumi_gestalt_rust::Context,
         args: GetObjectArgs,
     ) -> GetObjectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let checksum_mode_binding = args.checksum_mode.get_output(context);
         let key_binding = args.key.get_output(context);

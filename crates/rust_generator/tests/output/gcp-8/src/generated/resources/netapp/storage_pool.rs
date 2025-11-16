@@ -221,8 +221,6 @@ pub mod storage_pool {
         name: &str,
         args: StoragePoolArgs,
     ) -> StoragePoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_directory_binding = args.active_directory.get_output(context);
         let allow_auto_tiering_binding = args.allow_auto_tiering.get_output(context);
         let capacity_gib_binding = args.capacity_gib.get_output(context);

@@ -152,8 +152,6 @@ pub mod resource_collection {
         name: &str,
         args: ResourceCollectionArgs,
     ) -> ResourceCollectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cloudformation_binding = args.cloudformation.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let type__binding = args.type_.get_output(context);

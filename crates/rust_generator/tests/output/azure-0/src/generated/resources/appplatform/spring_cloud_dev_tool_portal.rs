@@ -117,8 +117,6 @@ pub mod spring_cloud_dev_tool_portal {
         name: &str,
         args: SpringCloudDevToolPortalArgs,
     ) -> SpringCloudDevToolPortalResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_accelerator_enabled_binding = args
             .application_accelerator_enabled
             .get_output(context);

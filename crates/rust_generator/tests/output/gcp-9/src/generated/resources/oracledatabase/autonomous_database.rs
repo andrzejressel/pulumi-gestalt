@@ -230,8 +230,6 @@ pub mod autonomous_database {
         name: &str,
         args: AutonomousDatabaseArgs,
     ) -> AutonomousDatabaseResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_password_binding = args.admin_password.get_output(context);
         let autonomous_database_id_binding = args
             .autonomous_database_id

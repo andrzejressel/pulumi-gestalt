@@ -31,8 +31,6 @@ pub mod get_networks {
         context: &pulumi_gestalt_rust::Context,
         args: GetNetworksArgs,
     ) -> GetNetworksResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let project_binding = args.project.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:compute/getNetworks:getNetworks".into(),

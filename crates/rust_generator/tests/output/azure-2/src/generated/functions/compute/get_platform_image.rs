@@ -42,8 +42,6 @@ pub mod get_platform_image {
         context: &pulumi_gestalt_rust::Context,
         args: GetPlatformImageArgs,
     ) -> GetPlatformImageResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let location_binding = args.location.get_output(context);
         let offer_binding = args.offer.get_output(context);
         let publisher_binding = args.publisher.get_output(context);

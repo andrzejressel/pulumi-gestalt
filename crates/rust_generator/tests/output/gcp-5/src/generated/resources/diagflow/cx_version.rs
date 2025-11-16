@@ -131,8 +131,6 @@ pub mod cx_version {
         name: &str,
         args: CxVersionArgs,
     ) -> CxVersionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let parent_binding = args.parent.get_output(context);

@@ -64,8 +64,6 @@ pub mod region {
         name: &str,
         args: RegionArgs,
     ) -> RegionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let enabled_binding = args.enabled.get_output(context);
         let region_name_binding = args.region_name.get_output(context);

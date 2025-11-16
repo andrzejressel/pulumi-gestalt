@@ -151,8 +151,6 @@ pub mod configuration_set {
         name: &str,
         args: ConfigurationSetArgs,
     ) -> ConfigurationSetResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let configuration_set_name_binding = args
             .configuration_set_name
             .get_output(context);

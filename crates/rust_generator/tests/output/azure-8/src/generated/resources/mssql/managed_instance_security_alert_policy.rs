@@ -313,8 +313,6 @@ pub mod managed_instance_security_alert_policy {
         name: &str,
         args: ManagedInstanceSecurityAlertPolicyArgs,
     ) -> ManagedInstanceSecurityAlertPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let disabled_alerts_binding = args.disabled_alerts.get_output(context);
         let email_account_admins_enabled_binding = args
             .email_account_admins_enabled

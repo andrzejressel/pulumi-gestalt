@@ -211,8 +211,6 @@ pub mod v_2_models_slot_type {
         name: &str,
         args: V2modelsSlotTypeArgs,
     ) -> V2modelsSlotTypeResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bot_id_binding = args.bot_id.get_output(context);
         let bot_version_binding = args.bot_version.get_output(context);
         let composite_slot_type_setting_binding = args

@@ -202,8 +202,6 @@ pub mod git_repository_link {
         name: &str,
         args: GitRepositoryLinkArgs,
     ) -> GitRepositoryLinkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let annotations_binding = args.annotations.get_output(context);
         let clone_uri_binding = args.clone_uri.get_output(context);
         let etag_binding = args.etag.get_output(context);

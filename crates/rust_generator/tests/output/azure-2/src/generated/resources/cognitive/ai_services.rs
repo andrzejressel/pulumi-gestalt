@@ -161,8 +161,6 @@ pub mod ai_services {
         name: &str,
         args: AIServicesArgs,
     ) -> AIServicesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let custom_subdomain_name_binding = args
             .custom_subdomain_name
             .get_output(context);

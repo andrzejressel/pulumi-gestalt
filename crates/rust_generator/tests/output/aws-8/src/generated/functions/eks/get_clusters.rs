@@ -16,8 +16,6 @@ pub mod get_clusters {
     ///
     #[allow(non_snake_case, unused_imports, dead_code)]
     pub fn invoke(context: &pulumi_gestalt_rust::Context) -> GetClustersResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:eks/getClusters:getClusters".into(),
             version: super::super::super::get_version(),

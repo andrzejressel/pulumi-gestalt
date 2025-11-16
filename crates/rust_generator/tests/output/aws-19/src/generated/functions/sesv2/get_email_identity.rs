@@ -44,8 +44,6 @@ pub mod get_email_identity {
         context: &pulumi_gestalt_rust::Context,
         args: GetEmailIdentityArgs,
     ) -> GetEmailIdentityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let email_identity_binding = args.email_identity.get_output(context);
         let tags_binding = args.tags.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

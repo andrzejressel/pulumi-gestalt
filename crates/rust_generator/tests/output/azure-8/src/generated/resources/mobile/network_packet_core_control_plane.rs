@@ -210,8 +210,6 @@ pub mod network_packet_core_control_plane {
         name: &str,
         args: NetworkPacketCoreControlPlaneArgs,
     ) -> NetworkPacketCoreControlPlaneResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let control_plane_access_ipv4_address_binding = args
             .control_plane_access_ipv4_address
             .get_output(context);

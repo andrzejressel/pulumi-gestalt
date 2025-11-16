@@ -113,8 +113,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let grpc_config_binding = args.grpc_config.get_output(context);
         let openapi_config_binding = args.openapi_config.get_output(context);
         let project_binding = args.project.get_output(context);

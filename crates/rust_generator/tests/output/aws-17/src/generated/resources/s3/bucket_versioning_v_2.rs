@@ -165,8 +165,6 @@ pub mod bucket_versioning_v_2 {
         name: &str,
         args: BucketVersioningV2Args,
     ) -> BucketVersioningV2Result {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bucket_binding = args.bucket.get_output(context);
         let expected_bucket_owner_binding = args
             .expected_bucket_owner

@@ -30,8 +30,6 @@ pub mod get_devices {
         context: &pulumi_gestalt_rust::Context,
         args: GetDevicesArgs,
     ) -> GetDevicesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let account_id_binding = args.account_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "cloudflare:index/getDevices:getDevices".into(),

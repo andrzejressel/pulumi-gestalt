@@ -132,8 +132,6 @@ pub mod hosting_site {
         name: &str,
         args: HostingSiteArgs,
     ) -> HostingSiteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_id_binding = args.app_id.get_output(context);
         let project_binding = args.project.get_output(context);
         let site_id_binding = args.site_id.get_output(context);

@@ -167,8 +167,6 @@ pub mod frontdoor_custom_domain {
         name: &str,
         args: FrontdoorCustomDomainArgs,
     ) -> FrontdoorCustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cdn_frontdoor_profile_id_binding = args
             .cdn_frontdoor_profile_id
             .get_output(context);

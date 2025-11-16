@@ -200,8 +200,6 @@ pub mod cosmosdb_data_connection {
         name: &str,
         args: CosmosdbDataConnectionArgs,
     ) -> CosmosdbDataConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cosmosdb_container_id_binding = args
             .cosmosdb_container_id
             .get_output(context);

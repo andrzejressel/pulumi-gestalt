@@ -770,8 +770,6 @@ pub mod workstation_config {
         name: &str,
         args: WorkstationConfigArgs,
     ) -> WorkstationConfigResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_ports_binding = args.allowed_ports.get_output(context);
         let annotations_binding = args.annotations.get_output(context);
         let container_binding = args.container.get_output(context);

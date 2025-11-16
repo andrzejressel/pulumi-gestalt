@@ -50,8 +50,6 @@ pub mod get_server_certificate {
         context: &pulumi_gestalt_rust::Context,
         args: GetServerCertificateArgs,
     ) -> GetServerCertificateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let latest_binding = args.latest.get_output(context);
         let name_binding = args.name.get_output(context);
         let name_prefix_binding = args.name_prefix.get_output(context);

@@ -88,8 +88,6 @@ pub mod vault_policy {
         name: &str,
         args: VaultPolicyArgs,
     ) -> VaultPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let backup_vault_name_binding = args.backup_vault_name.get_output(context);
         let policy_binding = args.policy.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

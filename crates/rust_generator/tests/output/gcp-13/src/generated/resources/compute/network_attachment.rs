@@ -258,8 +258,6 @@ pub mod network_attachment {
         name: &str,
         args: NetworkAttachmentArgs,
     ) -> NetworkAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let connection_preference_binding = args
             .connection_preference
             .get_output(context);

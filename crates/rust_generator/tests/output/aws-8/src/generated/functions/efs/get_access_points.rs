@@ -30,8 +30,6 @@ pub mod get_access_points {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccessPointsArgs,
     ) -> GetAccessPointsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let file_system_id_binding = args.file_system_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:efs/getAccessPoints:getAccessPoints".into(),

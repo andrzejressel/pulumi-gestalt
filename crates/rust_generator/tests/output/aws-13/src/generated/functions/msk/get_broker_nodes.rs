@@ -29,8 +29,6 @@ pub mod get_broker_nodes {
         context: &pulumi_gestalt_rust::Context,
         args: GetBrokerNodesArgs,
     ) -> GetBrokerNodesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_arn_binding = args.cluster_arn.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "aws:msk/getBrokerNodes:getBrokerNodes".into(),

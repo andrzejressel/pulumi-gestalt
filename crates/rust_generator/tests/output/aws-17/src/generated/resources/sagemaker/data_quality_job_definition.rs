@@ -186,8 +186,6 @@ pub mod data_quality_job_definition {
         name: &str,
         args: DataQualityJobDefinitionArgs,
     ) -> DataQualityJobDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_quality_app_specification_binding = args
             .data_quality_app_specification
             .get_output(context);

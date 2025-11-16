@@ -53,8 +53,6 @@ pub mod get_coip_pool {
         context: &pulumi_gestalt_rust::Context,
         args: GetCoipPoolArgs,
     ) -> GetCoipPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let filters_binding = args.filters.get_output(context);
         let local_gateway_route_table_id_binding = args
             .local_gateway_route_table_id

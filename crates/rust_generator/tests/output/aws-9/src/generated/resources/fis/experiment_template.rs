@@ -148,8 +148,6 @@ pub mod experiment_template {
         name: &str,
         args: ExperimentTemplateArgs,
     ) -> ExperimentTemplateResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let description_binding = args.description.get_output(context);
         let experiment_options_binding = args.experiment_options.get_output(context);

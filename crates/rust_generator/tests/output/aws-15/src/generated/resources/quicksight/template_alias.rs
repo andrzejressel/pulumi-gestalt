@@ -73,8 +73,6 @@ pub mod template_alias {
         name: &str,
         args: TemplateAliasArgs,
     ) -> TemplateAliasResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let alias_name_binding = args.alias_name.get_output(context);
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let template_id_binding = args.template_id.get_output(context);

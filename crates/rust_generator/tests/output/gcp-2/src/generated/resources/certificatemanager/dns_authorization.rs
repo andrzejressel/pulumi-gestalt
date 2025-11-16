@@ -183,8 +183,6 @@ pub mod dns_authorization {
         name: &str,
         args: DnsAuthorizationArgs,
     ) -> DnsAuthorizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let domain_binding = args.domain.get_output(context);
         let labels_binding = args.labels.get_output(context);

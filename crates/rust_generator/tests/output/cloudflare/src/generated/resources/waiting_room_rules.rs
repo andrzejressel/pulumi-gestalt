@@ -79,8 +79,6 @@ pub mod waiting_room_rules {
         name: &str,
         args: WaitingRoomRulesArgs,
     ) -> WaitingRoomRulesResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let rules_binding = args.rules.get_output(context);
         let waiting_room_id_binding = args.waiting_room_id.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

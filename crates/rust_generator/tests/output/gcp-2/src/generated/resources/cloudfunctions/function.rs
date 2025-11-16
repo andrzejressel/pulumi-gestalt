@@ -369,8 +369,6 @@ pub mod function {
         name: &str,
         args: FunctionArgs,
     ) -> FunctionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let available_memory_mb_binding = args.available_memory_mb.get_output(context);
         let build_environment_variables_binding = args
             .build_environment_variables

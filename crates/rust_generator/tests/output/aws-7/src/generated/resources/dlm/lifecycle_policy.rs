@@ -254,8 +254,6 @@ pub mod lifecycle_policy {
         name: &str,
         args: LifecyclePolicyArgs,
     ) -> LifecyclePolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let execution_role_arn_binding = args.execution_role_arn.get_output(context);
         let policy_details_binding = args.policy_details.get_output(context);

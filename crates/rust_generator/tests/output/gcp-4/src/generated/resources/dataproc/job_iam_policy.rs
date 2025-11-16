@@ -204,8 +204,6 @@ pub mod job_iam_policy {
         name: &str,
         args: JobIAMPolicyArgs,
     ) -> JobIAMPolicyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let job_id_binding = args.job_id.get_output(context);
         let policy_data_binding = args.policy_data.get_output(context);
         let project_binding = args.project.get_output(context);

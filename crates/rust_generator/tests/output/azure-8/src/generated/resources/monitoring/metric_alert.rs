@@ -226,8 +226,6 @@ pub mod metric_alert {
         name: &str,
         args: MetricAlertArgs,
     ) -> MetricAlertResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let actions_binding = args.actions.get_output(context);
         let application_insights_web_test_location_availability_criteria_binding = args
             .application_insights_web_test_location_availability_criteria

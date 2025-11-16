@@ -392,8 +392,6 @@ pub mod interconnect_attachment {
         name: &str,
         args: InterconnectAttachmentArgs,
     ) -> InterconnectAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let admin_enabled_binding = args.admin_enabled.get_output(context);
         let bandwidth_binding = args.bandwidth.get_output(context);
         let candidate_subnets_binding = args.candidate_subnets.get_output(context);

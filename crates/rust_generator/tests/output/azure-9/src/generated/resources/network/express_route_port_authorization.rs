@@ -89,8 +89,6 @@ pub mod express_route_port_authorization {
         name: &str,
         args: ExpressRoutePortAuthorizationArgs,
     ) -> ExpressRoutePortAuthorizationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let express_route_port_name_binding = args
             .express_route_port_name
             .get_output(context);

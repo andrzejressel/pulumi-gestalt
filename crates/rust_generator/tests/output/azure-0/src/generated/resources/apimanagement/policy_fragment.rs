@@ -101,8 +101,6 @@ pub mod policy_fragment {
         name: &str,
         args: PolicyFragmentArgs,
     ) -> PolicyFragmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_id_binding = args.api_management_id.get_output(context);
         let description_binding = args.description.get_output(context);
         let format_binding = args.format.get_output(context);

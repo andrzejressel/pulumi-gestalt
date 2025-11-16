@@ -32,8 +32,6 @@ pub mod get_activity {
         context: &pulumi_gestalt_rust::Context,
         args: GetActivityArgs,
     ) -> GetActivityResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let arn_binding = args.arn.get_output(context);
         let name_binding = args.name.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

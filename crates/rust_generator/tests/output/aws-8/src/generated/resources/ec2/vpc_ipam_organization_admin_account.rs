@@ -61,8 +61,6 @@ pub mod vpc_ipam_organization_admin_account {
         name: &str,
         args: VpcIpamOrganizationAdminAccountArgs,
     ) -> VpcIpamOrganizationAdminAccountResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let delegated_admin_account_id_binding = args
             .delegated_admin_account_id
             .get_output(context);

@@ -201,8 +201,6 @@ pub mod dashboard {
         name: &str,
         args: DashboardArgs,
     ) -> DashboardResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_account_id_binding = args.aws_account_id.get_output(context);
         let dashboard_id_binding = args.dashboard_id.get_output(context);
         let dashboard_publish_options_binding = args

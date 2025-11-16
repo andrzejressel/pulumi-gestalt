@@ -110,8 +110,6 @@ pub mod zone_virtual_network_link {
         name: &str,
         args: ZoneVirtualNetworkLinkArgs,
     ) -> ZoneVirtualNetworkLinkResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let name_binding = args.name.get_output(context);
         let private_dns_zone_name_binding = args
             .private_dns_zone_name

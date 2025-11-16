@@ -50,8 +50,6 @@ pub mod get_quick_connect {
         context: &pulumi_gestalt_rust::Context,
         args: GetQuickConnectArgs,
     ) -> GetQuickConnectResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let instance_id_binding = args.instance_id.get_output(context);
         let name_binding = args.name.get_output(context);
         let quick_connect_id_binding = args.quick_connect_id.get_output(context);

@@ -147,8 +147,6 @@ pub mod cluster_customer_managed_key {
         name: &str,
         args: ClusterCustomerManagedKeyArgs,
     ) -> ClusterCustomerManagedKeyResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let cluster_id_binding = args.cluster_id.get_output(context);
         let key_name_binding = args.key_name.get_output(context);
         let key_vault_id_binding = args.key_vault_id.get_output(context);

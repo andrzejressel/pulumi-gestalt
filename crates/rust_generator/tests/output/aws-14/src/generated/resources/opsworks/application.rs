@@ -174,8 +174,6 @@ pub mod application {
         name: &str,
         args: ApplicationArgs,
     ) -> ApplicationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let app_sources_binding = args.app_sources.get_output(context);
         let auto_bundle_on_deploy_binding = args
             .auto_bundle_on_deploy

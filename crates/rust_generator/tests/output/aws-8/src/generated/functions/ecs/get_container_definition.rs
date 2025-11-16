@@ -50,8 +50,6 @@ pub mod get_container_definition {
         context: &pulumi_gestalt_rust::Context,
         args: GetContainerDefinitionArgs,
     ) -> GetContainerDefinitionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let container_name_binding = args.container_name.get_output(context);
         let task_definition_binding = args.task_definition.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {

@@ -167,8 +167,6 @@ pub mod classifier {
         name: &str,
         args: ClassifierArgs,
     ) -> ClassifierResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let csv_classifier_binding = args.csv_classifier.get_output(context);
         let grok_classifier_binding = args.grok_classifier.get_output(context);
         let json_classifier_binding = args.json_classifier.get_output(context);

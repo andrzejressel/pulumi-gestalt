@@ -138,8 +138,6 @@ pub mod vpc_peering_connection_accepter {
         name: &str,
         args: VpcPeeringConnectionAccepterArgs,
     ) -> VpcPeeringConnectionAccepterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let accepter_binding = args.accepter.get_output(context);
         let auto_accept_binding = args.auto_accept.get_output(context);
         let requester_binding = args.requester.get_output(context);

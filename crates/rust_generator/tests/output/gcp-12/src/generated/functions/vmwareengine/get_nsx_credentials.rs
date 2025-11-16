@@ -30,8 +30,6 @@ pub mod get_nsx_credentials {
         context: &pulumi_gestalt_rust::Context,
         args: GetNsxCredentialsArgs,
     ) -> GetNsxCredentialsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_binding = args.parent.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:vmwareengine/getNsxCredentials:getNsxCredentials".into(),

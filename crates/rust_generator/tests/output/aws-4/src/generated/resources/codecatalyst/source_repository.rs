@@ -77,8 +77,6 @@ pub mod source_repository {
         name: &str,
         args: SourceRepositoryArgs,
     ) -> SourceRepositoryResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let description_binding = args.description.get_output(context);
         let name_binding = args.name.get_output(context);
         let project_name_binding = args.project_name.get_output(context);

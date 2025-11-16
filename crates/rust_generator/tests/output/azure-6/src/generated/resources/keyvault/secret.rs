@@ -130,8 +130,6 @@ pub mod secret {
         name: &str,
         args: SecretArgs,
     ) -> SecretResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let content_type_binding = args.content_type.get_output(context);
         let expiration_date_binding = args.expiration_date.get_output(context);
         let key_vault_id_binding = args.key_vault_id.get_output(context);

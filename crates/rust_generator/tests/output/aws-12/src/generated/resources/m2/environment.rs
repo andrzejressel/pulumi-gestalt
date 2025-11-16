@@ -218,8 +218,6 @@ pub mod environment {
         name: &str,
         args: EnvironmentArgs,
     ) -> EnvironmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let apply_changes_during_maintenance_window_binding = args
             .apply_changes_during_maintenance_window
             .get_output(context);

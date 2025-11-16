@@ -29,8 +29,6 @@ pub mod get_account_encryption {
         context: &pulumi_gestalt_rust::Context,
         args: GetAccountEncryptionArgs,
     ) -> GetAccountEncryptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let netapp_account_id_binding = args.netapp_account_id.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "azure:netapp/getAccountEncryption:getAccountEncryption".into(),

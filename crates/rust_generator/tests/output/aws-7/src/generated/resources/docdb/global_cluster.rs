@@ -163,8 +163,6 @@ pub mod global_cluster {
         name: &str,
         args: GlobalClusterArgs,
     ) -> GlobalClusterResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let database_name_binding = args.database_name.get_output(context);
         let deletion_protection_binding = args.deletion_protection.get_output(context);
         let engine_binding = args.engine.get_output(context);

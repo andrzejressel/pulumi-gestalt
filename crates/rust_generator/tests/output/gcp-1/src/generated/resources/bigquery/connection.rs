@@ -478,8 +478,6 @@ pub mod connection {
         name: &str,
         args: ConnectionArgs,
     ) -> ConnectionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let aws_binding = args.aws.get_output(context);
         let azure_binding = args.azure.get_output(context);
         let cloud_resource_binding = args.cloud_resource.get_output(context);

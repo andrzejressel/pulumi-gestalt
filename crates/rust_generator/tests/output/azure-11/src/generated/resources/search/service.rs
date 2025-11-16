@@ -259,8 +259,6 @@ pub mod service {
         name: &str,
         args: ServiceArgs,
     ) -> ServiceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allowed_ips_binding = args.allowed_ips.get_output(context);
         let authentication_failure_mode_binding = args
             .authentication_failure_mode

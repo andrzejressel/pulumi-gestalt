@@ -108,8 +108,6 @@ pub mod peering_attachment {
         name: &str,
         args: PeeringAttachmentArgs,
     ) -> PeeringAttachmentResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let options_binding = args.options.get_output(context);
         let peer_account_id_binding = args.peer_account_id.get_output(context);
         let peer_region_binding = args.peer_region.get_output(context);

@@ -96,8 +96,6 @@ pub mod workspace_application_group_association {
         name: &str,
         args: WorkspaceApplicationGroupAssociationArgs,
     ) -> WorkspaceApplicationGroupAssociationResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let application_group_id_binding = args.application_group_id.get_output(context);
         let workspace_id_binding = args.workspace_id.get_output(context);
         let request = pulumi_gestalt_rust::RegisterResourceRequest {

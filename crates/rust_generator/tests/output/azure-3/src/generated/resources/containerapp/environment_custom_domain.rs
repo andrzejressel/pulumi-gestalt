@@ -95,8 +95,6 @@ pub mod environment_custom_domain {
         name: &str,
         args: EnvironmentCustomDomainArgs,
     ) -> EnvironmentCustomDomainResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let certificate_blob_base64_binding = args
             .certificate_blob_base64
             .get_output(context);

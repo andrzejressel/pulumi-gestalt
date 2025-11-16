@@ -295,8 +295,6 @@ pub mod role {
         name: &str,
         args: RoleArgs,
     ) -> RoleResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let assume_role_policy_binding = args.assume_role_policy.get_output(context);
         let description_binding = args.description.get_output(context);
         let force_detach_policies_binding = args

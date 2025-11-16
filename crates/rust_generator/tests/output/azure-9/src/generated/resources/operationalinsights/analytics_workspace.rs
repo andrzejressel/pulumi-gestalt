@@ -185,8 +185,6 @@ pub mod analytics_workspace {
         name: &str,
         args: AnalyticsWorkspaceArgs,
     ) -> AnalyticsWorkspaceResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let allow_resource_only_permissions_binding = args
             .allow_resource_only_permissions
             .get_output(context);

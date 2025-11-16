@@ -69,8 +69,6 @@ pub mod tag_option {
         name: &str,
         args: TagOptionArgs,
     ) -> TagOptionResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let active_binding = args.active.get_output(context);
         let key_binding = args.key.get_output(context);
         let value_binding = args.value.get_output(context);

@@ -69,8 +69,6 @@ pub mod worker_route {
         name: &str,
         args: WorkerRouteArgs,
     ) -> WorkerRouteResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let pattern_binding = args.pattern.get_output(context);
         let script_name_binding = args.script_name.get_output(context);
         let zone_id_binding = args.zone_id.get_output(context);

@@ -134,8 +134,6 @@ pub mod schema {
         name: &str,
         args: SchemaArgs,
     ) -> SchemaResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let data_store_id_binding = args.data_store_id.get_output(context);
         let json_schema_binding = args.json_schema.get_output(context);
         let location_binding = args.location.get_output(context);

@@ -139,8 +139,6 @@ pub mod transfer_agent_pool {
         name: &str,
         args: TransferAgentPoolArgs,
     ) -> TransferAgentPoolResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let bandwidth_limit_binding = args.bandwidth_limit.get_output(context);
         let display_name_binding = args.display_name.get_output(context);
         let name_binding = args.name.get_output(context);

@@ -30,8 +30,6 @@ pub mod get_vcenter_credentials {
         context: &pulumi_gestalt_rust::Context,
         args: GetVcenterCredentialsArgs,
     ) -> GetVcenterCredentialsResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let parent_binding = args.parent.get_output(context);
         let request = pulumi_gestalt_rust::InvokeResourceRequest {
             token: "gcp:vmwareengine/getVcenterCredentials:getVcenterCredentials".into(),

@@ -89,8 +89,6 @@ pub mod product_group {
         name: &str,
         args: ProductGroupArgs,
     ) -> ProductGroupResult {
-        use std::collections::HashMap;
-        use pulumi_gestalt_rust::{GestaltCompositeOutput, GestaltContext, GestaltOutput};
         let api_management_name_binding = args.api_management_name.get_output(context);
         let group_name_binding = args.group_name.get_output(context);
         let product_id_binding = args.product_id.get_output(context);
