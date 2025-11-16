@@ -1,0 +1,5 @@
+type: Removed
+title: Remove Rust abstraction over Wasm
+description: |
+  This change simplifies usage from user perspective by removing Wasm Rust abstraction layer. It had no advantages over native
+  and it made abstraction more complex.
