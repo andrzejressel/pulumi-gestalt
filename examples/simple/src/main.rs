@@ -5,9 +5,7 @@ use pulumi_gestalt_rust::{ConfigValue, Context, Output};
 use pulumi_gestalt_rust::{GestaltContext, add_export, pulumi_combine, pulumi_format};
 use pulumi_gestalt_rust::{GestaltOutput, ToOutput};
 
-#[cfg(target_arch = "wasm32")]
 pulumi_gestalt_rust::pulumi_main!();
-#[allow(dead_code)]
 fn pulumi_main(context: &Context) -> Result<()> {
     let length: Output<i32> = context.new_output(&12).map(|i: i32| i * 3);
 

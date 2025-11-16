@@ -2,9 +2,7 @@ use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
 use pulumi_gestalt_rust::*;
 
-#[cfg(target_arch = "wasm32")]
 pulumi_gestalt_rust::pulumi_main!();
-#[allow(dead_code)]
 fn pulumi_main(context: &Context) -> anyhow::Result<()> {
     let length: Output<i32> = context.new_output(&4);
     let random_string_1 = random_string::create(
