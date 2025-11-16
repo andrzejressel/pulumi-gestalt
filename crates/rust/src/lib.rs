@@ -32,7 +32,7 @@ pub use native::{
 ///     let output = ctx.new_output(&"Hello, Pulumi!");
 ///     pulumi_gestalt_rust::add_export("greeting", &output);
 ///     Ok(())
-/// });
+/// }).unwrap();
 pub fn run<F: Fn(&Context) -> Result<()>>(f: F) -> Result<()> {
     let context = Context::new();
     f(&context).context("Failed to run Pulumi program")?;
