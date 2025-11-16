@@ -25,7 +25,10 @@ build:
       - mkdir $READTHEDOCS_OUTPUT/html/rust-docs
 
       - PATH="$PATH:/home/docs/.pulumi/bin" just rust-docs
+      - ls -al target/doc
       - mv target/doc $READTHEDOCS_OUTPUT/html/rust-docs
+      - ls -al $READTHEDOCS_OUTPUT/html/rust-docs
+      - ls -al $READTHEDOCS_OUTPUT/html
 
 mkdocs:
   configuration: mkdocs.yml
