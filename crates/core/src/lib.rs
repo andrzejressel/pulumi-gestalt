@@ -30,7 +30,7 @@ pub struct Output<T> {
     value: Shared<BoxFuture<'static, T>>,
 }
 
-impl<T: Clone + 'static + std::marker::Send + std::marker::Sync> Output<T> {
+impl<T: Clone + 'static + Send + Sync> Output<T> {
     pub fn from_future<F>(future: F) -> Output<T>
     where
         F: Future<Output = T> + Send + 'static,
